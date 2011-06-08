@@ -1,0 +1,24 @@
+                                   Install                                      
+--------------------------------------------------------------------------------
+
+• Build Maya
+
+  bzr branch lp:maya
+  cd maya
+  mkdir build; cd build
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+  make
+  sudo make install
+  
+  Alternatively, you could run
+  
+  ./install.sh
+  
+  in the project root to install Maya.
+
+• Bugs
+
+  If you find bugs in this installation guide or in Maya itself, please report them at
+  https://launchpad.net/maya/+filebug
+
+

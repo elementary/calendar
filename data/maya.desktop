@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Maya
+_GenericName=Maya Calendar
+_Comment=Fast calendar that syncs with popular online services
+Exec=maya
+Icon=office-calendar
+Terminal=false
+Categories=GTK;Office;Calendar;
+StartupNotify=true
