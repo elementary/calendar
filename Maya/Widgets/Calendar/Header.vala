@@ -55,7 +55,7 @@ namespace Maya.Widgets {
 		private void update_columns () {
 		
 			var date = new DateTime.now_local ();
-			date = date.add_days (Maya.prefs.week_starts_on + 1 - date.get_day_of_week ());
+			date = date.add_days (Maya.prefs.get_enum ("week-starts-on") + 1 - date.get_day_of_week ());
 			foreach (var label in labels) {
 				label.label = date.format ("%A");
 				date = date.add_days (1);

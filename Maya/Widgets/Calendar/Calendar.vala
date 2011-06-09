@@ -132,7 +132,7 @@ namespace Maya.Widgets {
 		}
 		
 		private int days_to_prepend () {
-			int days = 1 - handler.first_day_of_month + Maya.prefs.week_starts_on;
+			int days = 1 - handler.first_day_of_month + Maya.prefs.get_enum ("week-starts-on");
 			return days > 0 ? 7 - days : -days;
 		}
 		

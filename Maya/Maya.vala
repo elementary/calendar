@@ -39,9 +39,9 @@ namespace Maya {
 		
 		public static CssProvider style_provider { get; private set; default = null; }
 		
-		public static SavedState saved_state { get; private set; default = null; }
+		public static GLib.Settings saved_state { get; private set; default = null; }
 		
-		public static MayaPreferences prefs { get; private set; default = null; }
+		public static GLib.Settings prefs { get; private set; default = null; }
 		
 		construct {
 		
@@ -77,11 +77,6 @@ namespace Maya {
 				"Daniel Foré <bunny@go-docky.com>"
 			};
 			about_translators = "";
-		}
-		
-		protected override void start (string[] args) {
-		
-			base.start (args);
 			
 			// Set up global css provider
 			style_provider = new CssProvider ();
@@ -91,8 +86,9 @@ namespace Maya {
 				warning ("Could not add css provider. Some widgets will not look as intended. %s", e.message);
 			}
 			
-			saved_state = new SavedState.with_file ("state");
-			prefs = new MayaPreferences.with_file ("settings");
+			// Set up settings
+			saved_state = new GLib.Settings ("org.elementary.Maya.SavedState");
+			prefs = new GLib.Settings ("org.elementary.Maya.Settings");
 		}
 		
 		protected override void activate () {

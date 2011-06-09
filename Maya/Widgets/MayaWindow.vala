@@ -69,36 +69,36 @@ namespace Maya.Widgets {
 		private void restore_saved_state () {
 			
 			// Restore window state
-			default_width = Maya.saved_state.window_width;
-			default_height = Maya.saved_state.window_height;
+			default_width = Maya.saved_state.get_int ("window-width");
+			default_height = Maya.saved_state.get_int ("window-height");
 			
-			if (Maya.saved_state.window_state == 1)
+			if (Maya.saved_state.get_enum ("window-state") == 1)
 				maximize ();
-			else if (Maya.saved_state.window_state == 2)
+			else if (Maya.saved_state.get_enum ("window-state") == 2)
 				fullscreen ();
 			
-			hpaned.position = Maya.saved_state.hpaned_position;
+			hpaned.position = Maya.saved_state.get_int ("hpaned-position");
 		}
 		
 		private void update_saved_state () {
 			
 			// Save window state
 			if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
-				Maya.saved_state.window_state = 1;
+				Maya.saved_state.set_enum ("window-state", 1);
 			else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0)
-				Maya.saved_state.window_state = 2;
+				Maya.saved_state.set_enum ("window-state", 2);
 			else
-				Maya.saved_state.window_state = 0;
+				Maya.saved_state.set_enum ("window-state", 0);
 			
 			// Save window size
-			if (Maya.saved_state.window_state == 0) {
+			if (Maya.saved_state.get_enum ("window-state") == 0) {
 				int width, height;
 				get_size (out width, out height);
-				Maya.saved_state.window_width = width;
-				Maya.saved_state.window_height = height;
+				Maya.saved_state.set_int ("window-width", width);
+				Maya.saved_state.set_int ("window-height", height);
 			}
 			
-			Maya.saved_state.hpaned_position = hpaned.position;
+			Maya.saved_state.set_int ("hpaned-position", hpaned.position);
 		}
 		
 	}

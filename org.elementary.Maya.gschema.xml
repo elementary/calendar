@@ -1,0 +1,46 @@
+<schemalist>
+	<enum id="weekday-enum">
+		<value nick="Monday" value="0" />
+		<value nick="Tuesday" value="1" />
+		<value nick="Wednesday" value="2" />
+		<value nick="Thurday" value="3" />
+		<value nick="Friday" value="4" />
+		<value nick="Saturday" value="5" />
+		<value nick="Sunday" value="6" />
+	</enum>
+	<enum id="window-state-enum">
+		<value nick="Normal" value="0" />
+		<value nick="Maximized" value="1" />
+		<value nick="Fullscreen" value="2" />
+	</enum>
+
+	<schema path="/apps/maya/settings/" id="org.elementary.Maya.Settings" gettext-domain="maya">
+		<key name="week-starts-on" enum="weekday-enum">
+			<default>"Monday"</default>
+			<summary>The day the week starts on.</summary>
+			<description>The day the week starts on.</description>
+		</key>
+	</schema>
+	<schema path="/apps/maya/saved-state/" id="org.elementary.Maya.SavedState" gettext-domain="maya">
+		<key name="window-width" type="i">
+			<default>850</default>
+			<summary>The saved width of the window.</summary>
+			<description>The saved width of the window. Must be greater than 700, or it will not take effect.</description>
+		</key>
+		<key name="window-height" type="i">
+			<default>550</default>
+			<summary>The saved height of the window.</summary>
+			<description>The saved height of the window. Must be greater than 400, or it will not take effect.</description>
+		</key>
+		<key name="window-state" enum="window-state-enum">
+			<default>"Normal"</default>
+			<summary>The saved state of the window.</summary>
+			<description>The saved state of the window.</description>
+		</key>
+		<key name="hpaned-position" type="i">
+			<default>650</default>
+			<summary>The x coordinate of the hpaned dragger.</summary>
+			<description>The x coordinate of the hpaned dragger.</description>
+		</key>
+	</schema>
+</schemalist>

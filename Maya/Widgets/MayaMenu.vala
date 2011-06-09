@@ -57,7 +57,7 @@ namespace Maya.Widgets {
 			export.set_submenu (export_submenu);
 			
 			fullscreen = new CheckMenuItem.with_label ("Fullscreen");
-			fullscreen.active = Maya.saved_state.window_state == 2;
+			fullscreen.active = Maya.saved_state.get_enum ("window-state") == 2;
 			
 			sync = new MenuItem.with_label ("Sync...");
 			
