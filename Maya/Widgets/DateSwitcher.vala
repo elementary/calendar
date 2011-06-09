@@ -52,10 +52,10 @@ namespace Maya.Widgets {
 		
 		private HBox box;
 		
-		private Label _label;
-		public string label {
-			get { return _label.label; }
-			set { _label.label = value; }
+		public Label label { get; protected set; }
+		public string text {
+			get { return label.label; }
+			set { label.label = value; }
 		}
 
 		public DateSwitcher () {
@@ -71,12 +71,12 @@ namespace Maya.Widgets {
 			// Initialize everything
 			box = new HBox (false, 1);
 			box.border_width = 0;
-			_label = new Label ("");
+			label = new Label ("");
 			
 			// Add everything in appropriate order
 			box.pack_start (Utilities.set_paddings (new Arrow (ArrowType.LEFT, ShadowType.NONE), 0, PADDING, 0, PADDING),
 					true, true, 0);
-			box.pack_start (_label, true, true, PADDING);
+			box.pack_start (label, true, true, PADDING);
 			box.pack_start (Utilities.set_paddings (new Arrow (ArrowType.RIGHT, ShadowType.NONE), 0, PADDING, 0, PADDING),
 					true, true, 0);
 			

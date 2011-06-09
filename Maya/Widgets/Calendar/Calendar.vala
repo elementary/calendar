@@ -59,18 +59,25 @@ namespace Maya.Widgets {
 			Maya.prefs.changed["week-starts-on"].connect (update_month);
 			
 			// Change today when it changes
-			var today = new DateTime.now_local ();
-			Timeout.add (1000 * 60, () => {
-				var now = new DateTime.now_local ();
-				if (now.get_day_of_month () > today.get_day_of_month ()) {
-					if (handler.current_year == now.get_year () && handler.current_month == now.get_month ()) {
-						// if we're showing the current month/year, change focus. if not, no need to
-						days[date_to_index (today.get_day_of_month ())].name = null;
-						days[date_to_index (now.get_day_of_month ())].name = "today";
-					}
-					today = now;
-				}
-				return true;
+			var today = new DateTime.now_local ();		
+			var tomorrow = today.add_full (0, 0, 1, -today.get_hour (), -today.get_minute (), -today.get_second ());
+			TimeSpan ms_until_midnight = tomorrow.difference (today);
+			var date_listener = Timeout.add (ms_until_midnight.MILLISECOND, () => {
+				if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
+					update_month ();
+				
+				tomorrow = tomorrow.add_days (1);
+				
+				Timeout.add (1000 * 60 * 60 * 24, () => {
+					if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
+						update_month ();
+				
+					tomorrow = tomorrow.add_days (1);
+					
+					return true;
+				});
+				
+				return false;
 			});
 			
 			realize.connect (() => set_date (today));
@@ -101,8 +108,8 @@ namespace Maya.Widgets {
 			var date = new DateTime.local (year, month, 1, 0, 0, 0).add_days (-days_to_prepend ());
 			
 			// Update switcher text
-			window.toolbar.month_switcher.label = handler.format ("%B");
-			window.toolbar.year_switcher.label = handler.format ("%Y");
+			window.toolbar.month_switcher.text = handler.format ("%B");
+			window.toolbar.year_switcher.text = handler.format ("%Y");
 			
 			foreach (var day in days) {
 				if (date.get_day_of_year () == today.get_day_of_year () && date.get_year () == today.get_year ()) {

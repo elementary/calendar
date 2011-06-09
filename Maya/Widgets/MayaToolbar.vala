@@ -53,9 +53,18 @@ namespace Maya.Widgets {
 			delete_button = make_toolbutton ("edit-delete", "Delete the selected event", false);
 			
 			month_switcher = new DateSwitcher ();
-			month_switcher.label = "May";
 			year_switcher = new DateSwitcher ();
-			year_switcher.label = "2011";
+			// Calculate the size of the month switcher
+			/*var date = new DateTime.now_local ();
+			int max_chars = 0;
+			for (int month = 0; month < 12; month++) {
+				int month_chars = date.format ("%B").length;
+				if (month_chars > max_chars)
+					max_chars = month_chars;
+				date = date.add_months (1);
+			}
+			month_switcher.label.set_width_chars(20);
+			debug ("max_chars = %i", max_chars);*/
 			
 			search_bar = new SearchBar ("Search for events...");
 			
