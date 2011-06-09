@@ -98,9 +98,9 @@ namespace Maya.Widgets {
 			fullscreen.toggled.connect (toggle_fullscreen);			
 			about.activate.connect ( () => AppFactory.app.show_about ());
 			
-			help.activate.connect ( () => System.open_uri ("https://answers.launchpad.net/maya"));
-			translate.activate.connect ( () => System.open_uri ("https://translations.launchpad.net/maya"));
-			report.activate.connect ( () => System.open_uri ("https://bugs.launchpad.net/maya"));
+			help.activate.connect ( () => System.open_uri (AppFactory.app.help_url));
+			translate.activate.connect ( () => System.open_uri (AppFactory.app.translate_url));
+			report.activate.connect ( () => System.open_uri (AppFactory.app.bug_url));
 		}
 		
 		private void toggle_fullscreen () {

@@ -61,6 +61,7 @@ namespace Maya {
 			app_launcher = "maya.desktop";
 			
 			main_url = "https://launchpad.net/maya";
+			bug_url = "https://bugs.launchpad.net/maya";
 			help_url = "https://answers.launchpad.net/maya";
 			translate_url = "https://translations.launchpad.net/maya";
 			
