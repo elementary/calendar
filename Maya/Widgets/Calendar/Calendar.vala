@@ -63,10 +63,12 @@ namespace Maya.Widgets {
 			Timeout.add (1000 * 60, () => {
 				var now = new DateTime.now_local ();
 				if (now.get_day_of_month () > today.get_day_of_month ()) {
-					today = now;
-					if (handler.current_year == now.get_year () && handler.current_month == now.get_month ())
+					if (handler.current_year == now.get_year () && handler.current_month == now.get_month ()) {
 						// if we're showing the current month/year, change focus. if not, no need to
-						set_date (today);
+						days[date_to_index (today.get_day_of_month ())].name = null;
+						days[date_to_index (now.get_day_of_month ())].name = "today";
+					}
+					today = now;
 				}
 				return true;
 			});
