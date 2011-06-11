@@ -75,14 +75,13 @@ endif (${GETTEXT_FOUND} STREQUAL "TRUE")
 # Maya
 #
 
-set (MAYA_DEPS "gobject-2.0;glib-2.0;gio-2.0;gtk+-3.0;libgranite;gee-1.0")
+set (MAYA_DEPS "gobject-2.0;glib-2.0;gio-2.0;gtk+-3.0;libgranite")
 
 find_package(PkgConfig)
 pkg_check_modules(GLIB REQUIRED "glib-2.0 >= 2.26.0")
 pkg_check_modules(GOBJECT REQUIRED "gobject-2.0 >= 2.26.0")
 pkg_check_modules(GIO REQUIRED "gio-2.0 >= 2.26.0")
 pkg_check_modules(GTK+ REQUIRED "gtk+-3.0 >= 3.0.8")
-pkg_check_modules(GEE REQUIRED "gee-1.0")
 pkg_check_modules(LIBGRANITE REQUIRED "libgranite")
 pkg_check_modules(DEPS REQUIRED ${MAYA_DEPS})
 
@@ -118,7 +117,6 @@ vala_precompile(VALA_C
     Maya/Widgets/Utilities.vala
 PACKAGES
     gtk+-3.0
-    gee-1.0
     granite
 CUSTOM_VAPIS
     vapi/config.vapi
