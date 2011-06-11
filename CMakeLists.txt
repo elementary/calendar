@@ -99,6 +99,8 @@ ensure_vala_version("0.10.0" MINIMUM)
 include(ValaPrecompile)
 vala_precompile(VALA_C
     Maya/Maya.vala
+    Maya/MayaSettings.vala
+    Maya/SavedState.vala
     Maya/Dialogs/Event.vala
     Maya/Services/DateHandler.vala
     Maya/Services/Dexter.vala

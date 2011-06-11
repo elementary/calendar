@@ -38,9 +38,9 @@ namespace Maya {
 		
 		public static CssProvider style_provider { get; private set; default = null; }
 		
-		public static GLib.Settings saved_state { get; private set; default = null; }
+		public static SavedState saved_state { get; private set; default = null; }
 		
-		public static GLib.Settings prefs { get; private set; default = null; }
+		public static MayaSettings prefs { get; private set; default = null; }
 		
 		construct {
 		
@@ -77,7 +77,10 @@ namespace Maya {
 				"Daniel Foré <bunny@go-docky.com>"
 			};
 			about_translators = "";
-			
+		}
+		
+		public Maya () {
+		
 			// Set up global css provider
 			style_provider = new CssProvider ();
 			try {
@@ -87,8 +90,8 @@ namespace Maya {
 			}
 			
 			// Set up settings
-			saved_state = new GLib.Settings ("org.elementary.Maya.SavedState");
-			prefs = new GLib.Settings ("org.elementary.Maya.Settings");
+			saved_state = new SavedState ();
+			prefs = new MayaSettings ();
 		}
 		
 		protected override void activate () {
