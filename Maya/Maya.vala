@@ -31,7 +31,6 @@ namespace Maya {
 		public static int main (string[] args) {
 			var app = new Maya ();
 			AppFactory.init (app);
-			app.start (args);
 			return app.run (args);
 		}
 		

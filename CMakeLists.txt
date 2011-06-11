@@ -109,7 +109,6 @@ vala_precompile(VALA_C
     Maya/Widgets/AgendaView.vala
     Maya/Widgets/DateSwitcher.vala
     Maya/Widgets/DateTimePicker.vala
-    Maya/Widgets/GuestPicker.vala
     Maya/Widgets/MayaMenu.vala
     Maya/Widgets/MayaToolbar.vala
     Maya/Widgets/MayaWindow.vala
