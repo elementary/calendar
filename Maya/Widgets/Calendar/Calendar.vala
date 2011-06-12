@@ -62,7 +62,7 @@ namespace Maya.Widgets {
 			var today = new DateTime.now_local ();		
 			var tomorrow = today.add_full (0, 0, 1, -today.get_hour (), -today.get_minute (), -today.get_second ());
 			TimeSpan ms_until_midnight = tomorrow.difference (today);
-			var date_listener = Timeout.add (ms_until_midnight.MILLISECOND, () => {
+			Timeout.add (ms_until_midnight.MILLISECOND, () => {
 				if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
 					update_month ();
 				

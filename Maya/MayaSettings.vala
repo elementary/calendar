@@ -24,7 +24,7 @@ namespace Maya {
 		THURSDAY = 3,
 		FRIDAY = 4,
 		SATURDAY = 5,
-		SUNDARY = 6
+		SUNDAY = 6
 	}
 
 	public class MayaSettings : Granite.Services.Settings {
