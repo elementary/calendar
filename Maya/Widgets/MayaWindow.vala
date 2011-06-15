@@ -61,7 +61,7 @@ namespace Maya.Widgets {
 			destroy.connect (Gtk.main_quit);
 		}
 		
-		protected override bool delete_event (Event event) {
+		protected override bool delete_event (EventAny event) {
 			update_saved_state ();
 			return false;
 		}
