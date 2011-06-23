@@ -29,9 +29,7 @@ namespace Maya {
 	public class Maya : Granite.Application {
 		
 		public static int main (string[] args) {
-			var app = new Maya (args);
-			AppFactory.init (app);
-			return app.run (args);
+			return new Maya ().run (args);
 		}
 		
 		private MayaWindow window = null;
@@ -79,10 +77,8 @@ namespace Maya {
 			about_translators = "";
 		}
 		
-		public Maya (string[] args) {
-		
-			base (args);
-		
+		public Maya () {
+					
 			// Set up global css provider
 			style_provider = new CssProvider ();
 			try {
