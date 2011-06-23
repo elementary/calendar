@@ -8,25 +8,28 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-07 07:54-0500\n"
-"PO-Revision-Date: 2011-06-20 09:50+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2011-06-22 14:47+0000\n"
+"Last-Translator: Pietro Pecchi <Unknown>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-21 06:06+0000\n"
+"X-Launchpad-Export-Date: 2011-06-23 05:52+0000\n"
 "X-Generator: Launchpad (build 13168)\n"
 
 #: ../data/maya.desktop.in.h:1
 msgid "Fast calendar that syncs with popular online services"
 msgstr ""
+"Calendario rapido che si sincronizza con i più popolari servizi online"
 
 #: ../data/maya.desktop.in.h:2
 msgid "Maya Calendar"
-msgstr ""
+msgstr "Calendario Maya"
 
 #: ../Maya/Widgets/Sidebar.vala:37
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
+"Gli eventi prossimi saranno mostrati qui non appena avrai selezionato una "
+"data con un evento"
