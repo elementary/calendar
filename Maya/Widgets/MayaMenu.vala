@@ -61,12 +61,6 @@ namespace Maya.Widgets {
 			
 			sync = new MenuItem.with_label ("Sync...");
 			
-			var help = new MenuItem.with_label( "Get Help Online...");
-			var translate = new MenuItem.with_label ("Translate This Application...");
-			var report = new MenuItem.with_label ("Report a Problem...");
-			
-			var about = new MenuItem.with_label ("About");
-			
 			// Append in correct order
 			append (today);
 			
@@ -82,25 +76,10 @@ namespace Maya.Widgets {
 			append (new SeparatorMenuItem ());
 			
 			append (sync);
-			
-			append (new SeparatorMenuItem ());
-			
-			append (help);
-			append (translate);
-			append (report);
-			
-			append (new SeparatorMenuItem ());
-			
-			append (about);
 						
 			// Callbacks
 			today.activate.connect ( () => window.calendar_view.calendar.focus_today ());
-			fullscreen.toggled.connect (toggle_fullscreen);			
-			about.activate.connect ( () => AppFactory.app.show_about ());
-			
-			help.activate.connect ( () => System.open_uri (AppFactory.app.help_url));
-			translate.activate.connect ( () => System.open_uri (AppFactory.app.translate_url));
-			report.activate.connect ( () => System.open_uri (AppFactory.app.bug_url));
+			fullscreen.toggled.connect (toggle_fullscreen);	
 		}
 		
 		private void toggle_fullscreen () {

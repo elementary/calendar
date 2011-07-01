@@ -54,21 +54,10 @@ namespace Maya.Widgets {
 			
 			month_switcher = new DateSwitcher ();
 			year_switcher = new DateSwitcher ();
-			// Calculate the size of the month switcher
-			/*var date = new DateTime.now_local ();
-			int max_chars = 0;
-			for (int month = 0; month < 12; month++) {
-				int month_chars = date.format ("%B").length;
-				if (month_chars > max_chars)
-					max_chars = month_chars;
-				date = date.add_months (1);
-			}
-			month_switcher.label.set_width_chars(20);
-			debug ("max_chars = %i", max_chars);*/
 			
 			search_bar = new SearchBar ("Search for events...");
 			
-			app_menu = new AppMenu.from_stock (Stock.PROPERTIES, IconSize.MENU, "Menu", new MayaMenu (window));
+			app_menu = new AppMenu (new MayaMenu (window));
 			
 			// Insert into appropriate positions
 			insert (add_button, 0);
