@@ -69,7 +69,7 @@ namespace Maya {
 				"Allen Lowe <lallenlowe@gmail.com>"
 			};
 			about_documenters = {
-				"Maxwell Barvian <mbarvian@gmail.com>"
+				"Maxwell Barvian <maxwell@elementaryos.org>"
 			};
 			about_artists = {
 				"Daniel Foré <bunny@go-docky.com>"
