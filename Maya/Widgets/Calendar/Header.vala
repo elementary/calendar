@@ -22,16 +22,20 @@ namespace Maya.Widgets {
 
 	public class Header : Gtk.EventBox {
 	
+		private MayaWindow window;
+	
 		private Table table;
 		private Label[] labels;
 	
-		public Header () {
-		
+		public Header (MayaWindow window) {
+			
+			this.window = window;
+			
 			table = new Table (1, 7, true);
 		
 			// EventBox properties
 			set_visible_window (true); // needed for style
-			get_style_context ().add_provider (Maya.style_provider, 600);
+			get_style_context ().add_provider (window.style_provider, 600);
 			get_style_context ().add_class ("header");
 			
 			labels = new Label[table.n_columns];
@@ -45,17 +49,17 @@ namespace Maya.Widgets {
 			add (table);
 			
 			// Signals and handlers
-			Maya.prefs.changed["week-starts-on"].connect (update_columns);
+			window.prefs.changed["week-starts-on"].connect (update_columns);
 		}
 		
 		~Header () {
-			Maya.prefs.changed["week-starts-on"].disconnect (update_columns);
+			window.prefs.changed["week-starts-on"].disconnect (update_columns);
 		}
 		
 		private void update_columns () {
 			
 			var date = new DateTime.now_local ();
-			date = date.add_days (Maya.prefs.week_starts_on + 1 - date.get_day_of_week ());
+			date = date.add_days (window.prefs.week_starts_on + 1 - date.get_day_of_week ());
 			foreach (var label in labels) {
 				label.label = date.format ("%A");
 				date = date.add_days (1);

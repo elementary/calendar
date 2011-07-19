@@ -26,6 +26,13 @@ namespace Maya.Widgets {
 		private DateHandler handler;
 		
 		private Day[] days;
+		
+		private int days_to_prepend {
+			get {
+				int days = 1 - handler.first_day_of_month + window.prefs.week_starts_on;
+				return days > 0 ? 7 - days : -days;
+			}
+		}
 	
 		public Calendar (MayaWindow window) {
 		
@@ -56,13 +63,12 @@ namespace Maya.Widgets {
 			window.toolbar.month_switcher.right_clicked.connect (() => handler.add_month_offset (1));
 			window.toolbar.year_switcher.left_clicked.connect (() => handler.add_year_offset (-1));
 			window.toolbar.year_switcher.right_clicked.connect (() => handler.add_year_offset (1));
-			Maya.prefs.changed["week-starts-on"].connect (update_month);
+			window.prefs.changed["week-starts-on"].connect (update_month);
 			
 			// Change today when it changes
 			var today = new DateTime.now_local ();		
 			var tomorrow = today.add_full (0, 0, 1, -today.get_hour (), -today.get_minute (), -today.get_second ());
-			TimeSpan ms_until_midnight = tomorrow.difference (today);
-			Timeout.add (ms_until_midnight.MILLISECOND, () => {
+			Timeout.add (tomorrow.difference (today), () => {
 				if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
 					update_month ();
 				
@@ -84,7 +90,7 @@ namespace Maya.Widgets {
 		}
 		
 		~Calendar () {
-			Maya.prefs.changed["week-starts-on"].disconnect (update_month);
+			window.prefs.changed["week-starts-on"].disconnect (update_month);
 		}
 		
 		public void focus_today () {
@@ -105,7 +111,7 @@ namespace Maya.Widgets {
 			int month = handler.current_month;
 			int year = handler.current_year;
 			
-			var date = new DateTime.local (year, month, 1, 0, 0, 0).add_days (-days_to_prepend ());
+			var date = new DateTime.local (year, month, 1, 0, 0, 0).add_days (-days_to_prepend);
 			
 			// Update switcher text
 			window.toolbar.month_switcher.text = handler.format ("%B");
@@ -131,13 +137,10 @@ namespace Maya.Widgets {
 			}
 		}
 		
-		private int days_to_prepend () {
-			int days = 1 - handler.first_day_of_month + Maya.prefs.week_starts_on;
-			return days > 0 ? 7 - days : -days;
-		}
+		
 		
 		private int date_to_index (int day_of_month) {
-			return days_to_prepend () + day_of_month - 1;
+			return days_to_prepend + day_of_month - 1;
 		}
 		
 	}

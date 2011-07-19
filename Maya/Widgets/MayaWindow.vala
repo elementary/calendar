@@ -26,7 +26,13 @@ using Maya;
 namespace Maya.Widgets {
 
 	public class MayaWindow : Gtk.Window {
-	
+		
+		public static CssProvider style_provider { get; private set; default = null; }
+		
+		public static SavedState saved_state { get; private set; default = null; }
+		
+		public static MayaSettings prefs { get; private set; default = null; }
+		
 		private VBox vbox;
 		public MayaToolbar toolbar { get; private set; }
 		public HPaned hpaned { get; private set; }
@@ -34,6 +40,18 @@ namespace Maya.Widgets {
 		public Sidebar sidebar { get; private set; }
 		
 		public MayaWindow () {
+			
+			// Set up global css provider
+			style_provider = new CssProvider ();
+			try {
+				style_provider.load_from_path (Build.PKGDATADIR + "/style/default.css");
+			} catch (Error e) {
+				warning ("Could not add css provider. Some widgets will not look as intended. %s", e.message);
+			}
+			
+			// Set up settings
+			saved_state = new SavedState ();
+			prefs = new MayaSettings ();
 			
 			vbox = new VBox (false, 0);
 			toolbar = new MayaToolbar (this);
@@ -69,36 +87,36 @@ namespace Maya.Widgets {
 		private void restore_saved_state () {
 			
 			// Restore window state
-			default_width = Maya.saved_state.window_width;
-			default_height = Maya.saved_state.window_height;
+			default_width = saved_state.window_width;
+			default_height = saved_state.window_height;
 			
-			if (Maya.saved_state.window_state == MayaWindowState.MAXIMIZED)
+			if (saved_state.window_state == MayaWindowState.MAXIMIZED)
 				maximize ();
-			else if (Maya.saved_state.window_state == MayaWindowState.FULLSCREEN)
+			else if (saved_state.window_state == MayaWindowState.FULLSCREEN)
 				fullscreen ();
 			
-			hpaned.position = Maya.saved_state.hpaned_position;
+			hpaned.position = saved_state.hpaned_position;
 		}
 		
 		private void update_saved_state () {
 			
 			// Save window state
 			if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
-				Maya.saved_state.window_state = MayaWindowState.MAXIMIZED;
+				saved_state.window_state = MayaWindowState.MAXIMIZED;
 			else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0)
-				Maya.saved_state.window_state = MayaWindowState.FULLSCREEN;
+				saved_state.window_state = MayaWindowState.FULLSCREEN;
 			else
-				Maya.saved_state.window_state = MayaWindowState.NORMAL;
+				saved_state.window_state = MayaWindowState.NORMAL;
 			
 			// Save window size
-			if (Maya.saved_state.window_state == MayaWindowState.NORMAL) {
+			if (saved_state.window_state == MayaWindowState.NORMAL) {
 				int width, height;
 				get_size (out width, out height);
-				Maya.saved_state.window_width = width;
-				Maya.saved_state.window_height = height;
+				saved_state.window_width = width;
+				saved_state.window_height = height;
 			}
 			
-			Maya.saved_state.hpaned_position = hpaned.position;
+			saved_state.hpaned_position = hpaned.position;
 		}
 		
 	}

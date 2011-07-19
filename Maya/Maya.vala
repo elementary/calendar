@@ -32,14 +32,6 @@ namespace Maya {
 			return new Maya ().run (args);
 		}
 		
-		private MayaWindow window = null;
-		
-		public static CssProvider style_provider { get; private set; default = null; }
-		
-		public static SavedState saved_state { get; private set; default = null; }
-		
-		public static MayaSettings prefs { get; private set; default = null; }
-		
 		construct {
 		
 			// App info
@@ -77,29 +69,14 @@ namespace Maya {
 			about_translators = "";
 		}
 		
-		public Maya () {
-					
-			// Set up global css provider
-			style_provider = new CssProvider ();
-			try {
-				style_provider.load_from_path (Build.PKGDATADIR + "/style/default.css");
-			} catch (Error e) {
-				warning ("Could not add css provider. Some widgets will not look as intended. %s", e.message);
-			}
-			
-			// Set up settings
-			saved_state = new SavedState ();
-			prefs = new MayaSettings ();
-		}
-		
 		protected override void activate () {
 			
-			if (window != null) {
-				window.present (); // present window if app is already open
+			if (get_windows () != null) {
+				get_windows ().data.present (); // present window if app is already running
 				return;
 			}
 			
-			window = new MayaWindow ();
+			var window = new MayaWindow ();
 			window.set_application (this);
 			window.show_all ();
 		}

@@ -25,7 +25,7 @@ using Maya;
 namespace Maya.Widgets {
 
 	public class MayaToolbar : Gtk.Toolbar {
-	
+		
 		private MayaWindow window;
 	
 		public ToolButton add_button { get; private set; }
@@ -42,7 +42,7 @@ namespace Maya.Widgets {
 		public MayaToolbar (MayaWindow window) {
 		
 			this.window = window;
-			
+
 			// Toolbar properties
 			get_style_context ().add_class ("primary-toolbar"); // compliant with elementary HIG
 			

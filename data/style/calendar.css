@@ -25,22 +25,29 @@
 			from(shade(@bg_color, 0.9)), to(mix(@bg_color, rgb(255, 255, 255), 0.5)));
 }
 
-/* Day Styles */
+/* Cell Styles */
 
-.day {
+.cell {
 	background-color: @bg_color;
 	border-radius: 0;
+	border-color: rgba(0, 0, 0, 0.95);
+	border-top-width: 1;
+	border-left-width: 1;
 }
 
-.day:focused {
+.cell:insensitive {
+	background-color: shade(@bg_color, 0.97);
+}
+
+.cell.day:focused {
 	background-color: shade(@bg_color, 0.9);
 }
 
-#today, #today:focused {
+.cell.day#today, .cell.day#today:focused {
 	background-color: mix(@bg_color, rgb(0, 0, 255), 0.08); /* today date has nice shade of blue */
 }
 
-.day:insensitive {
-	background-color: shade(@bg_color, 0.97);
-}
+	.cell > #date {
+		font-size: 8;
+	}
 

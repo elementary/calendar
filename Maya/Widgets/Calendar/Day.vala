@@ -41,11 +41,12 @@ namespace Maya.Widgets {
 			can_focus = true;
 			set_visible_window (true);
 			events |= EventMask.BUTTON_PRESS_MASK;
-			get_style_context ().add_provider (Maya.style_provider, 600);
-			get_style_context ().add_class ("day");
+			get_style_context ().add_provider (window.style_provider, 600);
+			get_style_context ().add_class ("cell");
 			
-			label.set_halign (Align.END);
-			label.use_markup = true;
+			label.halign = Align.END;
+			label.get_style_context ().add_provider (window.style_provider, 600);
+			label.name = "date";
 			vbox.pack_start (label, false, false, 0);
 			
 			add (Utilities.set_margins (vbox, 3, 3, 3, 3));
@@ -54,9 +55,8 @@ namespace Maya.Widgets {
 			button_press_event.connect (on_button_press);
 			focus_in_event.connect (on_focus_in);
 			focus_out_event.connect (on_focus_out);
-			draw.connect (on_draw);
 			
-			notify["date"].connect (() => label.label = "<span size='8000'>" + date.get_day_of_month ().to_string () + "</span>");
+			notify["date"].connect (() => label.label = date.get_day_of_month ().to_string ());
 		}
 		
 		private bool on_button_press (EventButton event) {
@@ -74,29 +74,7 @@ namespace Maya.Widgets {
 			return false;
 		}
 		
-		private bool on_draw (Widget widget, Context cr) {
-		
-			Allocation size;
-			widget.get_allocation (out size);
-			
-			// Draw left and top black strokes
-			cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
-			cr.line_to (0.5, 0.5); // move to upper left corner
-			cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
-			
-			cr.set_source_rgba (0.0, 0.0, 0.0, 0.95);
-			cr.set_line_width (1.0);
-			cr.set_antialias (Antialias.NONE);
-			cr.stroke ();
-			
-			// Draw inner highlight stroke
-			cr.rectangle (1.5, 1.5, size.width - 1.5, size.height - 1.5);
-			cr.set_source_rgba (1.0, 1.0, 1.0, 0.2);
-			cr.stroke ();
-			
-			return false;
-		}
-		
 	}
 	
 }
+

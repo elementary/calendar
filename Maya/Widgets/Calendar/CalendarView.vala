@@ -20,15 +20,15 @@ namespace Maya.Widgets {
 	public class CalendarView : Gtk.VBox {
 	
 		private MayaWindow window;
-		
+	
 		public Header header { get; private set; }
 		public Widgets.Calendar calendar { get; private set; }
 	
 		public CalendarView (MayaWindow window) {
-		
+			
 			this.window = window;
 			
-			header = new Header ();
+			header = new Header (window);
 			calendar = new Widgets.Calendar (window);
 		
 			// VBox properties

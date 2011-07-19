@@ -40,7 +40,7 @@ namespace Maya.Widgets {
 		public MenuItem sync { get; private set; }
 
 		public MayaMenu (MayaWindow window) {
-		
+			
 			this.window = window;
 		
 			// Create everything
@@ -57,7 +57,7 @@ namespace Maya.Widgets {
 			export.set_submenu (export_submenu);
 			
 			fullscreen = new CheckMenuItem.with_label ("Fullscreen");
-			fullscreen.active = Maya.saved_state.window_state == MayaWindowState.FULLSCREEN;
+			fullscreen.active = (window.saved_state.window_state == MayaWindowState.FULLSCREEN);
 			
 			sync = new MenuItem.with_label ("Sync...");
 			
@@ -79,7 +79,7 @@ namespace Maya.Widgets {
 						
 			// Callbacks
 			today.activate.connect ( () => window.calendar_view.calendar.focus_today ());
-			fullscreen.toggled.connect (toggle_fullscreen);	
+			fullscreen.toggled.connect (toggle_fullscreen);
 		}
 		
 		private void toggle_fullscreen () {
