@@ -55,6 +55,7 @@ namespace Maya.Widgets {
 			button_press_event.connect (on_button_press);
 			focus_in_event.connect (on_focus_in);
 			focus_out_event.connect (on_focus_out);
+			draw.connect (on_draw);
 			
 			notify["date"].connect (() => label.label = date.get_day_of_month ().to_string ());
 		}
@@ -71,6 +72,29 @@ namespace Maya.Widgets {
 		
 		private bool on_focus_out (EventFocus event) {
 			window.toolbar.add_button.sensitive = false;
+			return false;
+		}
+		
+		private bool on_draw (Widget widget, Context cr) {
+		
+			Allocation size;
+			widget.get_allocation (out size);
+			
+			// Draw left and top black strokes
+			cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
+			cr.line_to (0.5, 0.5); // move to upper left corner
+			cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
+			
+			cr.set_source_rgba (0.0, 0.0, 0.0, 0.95);
+			cr.set_line_width (1.0);
+			cr.set_antialias (Antialias.NONE);
+			cr.stroke ();
+			
+			// Draw inner highlight stroke
+			cr.rectangle (1.5, 1.5, size.width - 1.5, size.height - 1.5);
+			cr.set_source_rgba (1.0, 1.0, 1.0, 0.2);
+			cr.stroke ();
+			
 			return false;
 		}
 		

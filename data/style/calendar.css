@@ -30,20 +30,17 @@
 .cell {
 	background-color: @bg_color;
 	border-radius: 0;
-	border-color: rgba(0, 0, 0, 0.95);
-	border-top-width: 1;
-	border-left-width: 1;
 }
 
 .cell:insensitive {
 	background-color: shade(@bg_color, 0.97);
 }
 
-.cell.day:focused {
+.cell:focused {
 	background-color: shade(@bg_color, 0.9);
 }
 
-.cell.day#today, .cell.day#today:focused {
+#today, #today:focused {
 	background-color: mix(@bg_color, rgb(0, 0, 255), 0.08); /* today date has nice shade of blue */
 }
 
