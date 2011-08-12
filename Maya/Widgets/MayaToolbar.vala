@@ -109,10 +109,8 @@ namespace Maya.Widgets {
 		
 		private void add_button_callback () {
 		    
-		    var add_dialog = new AddEvent (this.window);
-		    
+		    var add_dialog = new AddEvent (window);
 		    add_dialog.show ();
-		    print("Add button clicked");
 		}
 	}
 	
