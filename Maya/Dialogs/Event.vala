@@ -147,9 +147,9 @@ namespace Maya.Dialogs {
 		    
 		}
 		
-		private void on_apply () {
+		protected virtual void on_apply () {
 		
-		    message ("Apply button was clicked");
+		    print ("Event applied \n");
 		    close ();
 		
 		}
@@ -214,6 +214,13 @@ namespace Maya.Dialogs {
 	    
 	    }
 	    
+	    protected override void on_apply () {
+	    
+	        print ("Add Event applied \n");
+	        close ();
+	    
+	    }
+	    
 	}
 	
 	public class EditEvent : Event {
@@ -225,6 +232,13 @@ namespace Maya.Dialogs {
 	        // Dialog Properties
 	        title = "Edit Event";
 	        
+	    }
+	    
+	    protected override void on_apply () {
+	    
+	        print ("Edit Event applied \n");
+	        close ();
+	    
 	    }
 	    
 	}
