@@ -22,6 +22,8 @@ using Granite.Widgets;
 
 using Maya;
 
+using Maya.Dialogs;
+
 namespace Maya.Widgets {
 
 	public class MayaToolbar : Gtk.Toolbar {
@@ -49,6 +51,8 @@ namespace Maya.Widgets {
 			// Initialize everything
 			add_button = make_toolbutton (IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add",
 					"Create a new event", false);
+			add_button.clicked.connect(this.add_button_callback);
+					
 			edit_button = make_toolbutton ("gtk-edit", "Edit the selected event", false);
 			delete_button = make_toolbutton ("edit-delete", "Delete the selected event", false);
 			
@@ -103,6 +107,13 @@ namespace Maya.Widgets {
 			return toolitem;
 		}
 		
+		private void add_button_callback () {
+		    
+		    var add_dialog = new AddEvent (this.window);
+		    
+		    add_dialog.show ();
+		    print("Add button clicked");
+		}
 	}
 	
 }
