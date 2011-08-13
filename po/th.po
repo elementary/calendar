@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-07 07:54-0500\n"
-"PO-Revision-Date: 2011-08-06 08:37+0000\n"
-"Last-Translator: Anawin Wongsadit <Unknown>\n"
+"PO-Revision-Date: 2011-08-12 23:01+0000\n"
+"Last-Translator: bountonw <Unknown>\n"
 "Language-Team: Thai <th@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-07 05:00+0000\n"
-"X-Generator: Launchpad (build 13613)\n"
+"X-Launchpad-Export-Date: 2011-08-13 05:32+0000\n"
+"X-Generator: Launchpad (build 13674)\n"
 
 #: ../data/maya.desktop.in.h:1
 msgid "Fast calendar that syncs with popular online services"
@@ -23,7 +23,7 @@ msgstr "ปฏิทินที่ทำงานอย่างรวดเร
 
 #: ../data/maya.desktop.in.h:2
 msgid "Maya Calendar"
-msgstr ""
+msgstr "ปฏิทินมายา"
 
 #: ../Maya/Widgets/Sidebar.vala:37
 msgid ""
