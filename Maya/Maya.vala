@@ -90,7 +90,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.";
 				return;
 			}
 			
-			var window = new MayaWindow ();
+			var window = new MayaWindow (this);
 			window.set_application (this);
 			window.show_all ();
 		}

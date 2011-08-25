@@ -39,7 +39,11 @@ namespace Maya.Widgets {
 		public CalendarView calendar_view { get; private set; }
 		public Sidebar sidebar { get; private set; }
 		
-		public MayaWindow () {
+		public static Granite.Application app { get; private set; }
+		
+		public MayaWindow (Granite.Application app) {
+			
+			this.app = app;
 			
 			// Set up global css provider
 			style_provider = new CssProvider ();

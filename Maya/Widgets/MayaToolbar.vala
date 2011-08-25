@@ -61,7 +61,7 @@ namespace Maya.Widgets {
 			
 			search_bar = new SearchBar ("Search for events...");
 			
-			app_menu = new AppMenu (new MayaMenu (window));
+			app_menu = window.app.create_appmenu (new MayaMenu (window));
 			
 			// Insert into appropriate positions
 			insert (add_button, 0);
