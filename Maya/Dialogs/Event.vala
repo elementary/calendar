@@ -59,8 +59,10 @@ namespace Maya.Dialogs {
 		    var switch_label = new Gtk.Label ("All day:");
 		    switch_label.margin_right = 20;
 		    
+		    var allday = new Gtk.Switch ();
+		    
 		    from_box.add (switch_label);
-		    from_box.add (new Gtk.Switch ());
+		    from_box.add (allday);
 		    
 		    var to = new Gtk.Expander ("<span weight='bold'>To:</span>");
 		    to.use_markup = true;
@@ -76,6 +78,13 @@ namespace Maya.Dialogs {
 		    to_box.pack_start (to_time_picker, false, false, 0);
 		    
 		    to.add (to_box);
+		    
+		    allday.button_release_event.connect (() => { 
+		        from_time_picker.sensitive = !from_time_picker.sensitive;
+		        to_time_picker.sensitive = !to_time_picker.sensitive;
+		        
+		        return false;
+		    });
 		    
 		    var title_location_box = make_hbox ();
 		    
