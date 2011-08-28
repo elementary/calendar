@@ -9,3 +9,4 @@ Icon=office-calendar
 Terminal=false
 Categories=GTK;Office;Calendar;
 StartupNotify=true
+MimeType=text/calendar
