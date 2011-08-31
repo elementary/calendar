@@ -148,3 +148,7 @@ install (FILES ${MAYA_SCHEMAS} DESTINATION ${GSETTINGS_DIR} OPTIONAL)
 install (CODE "message (STATUS \"Compiling GSettings schemas\")")
 install (CODE "execute_process (COMMAND ${_glib_comple_schemas} ${GSETTINGS_DIR})")
 
+# Update desktop database
+install (CODE "message (STATUS \"Updating desktop database\")")
+install (CODE "execute_process (COMMAND update-desktop-database)")
+
