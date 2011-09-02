@@ -110,8 +110,7 @@ namespace Maya.Dialogs {
 		    var guest_box = make_vbox ();
 		    
 		    var guest_label = make_label ("Guests");
-			//var guest = new Granite.Widgets.HintedEntry ("Name or Email Adress");
-			var guest = new ContactSelector ("Name or Email Adress");
+			var guest = new Granite.Widgets.HintedEntry ("Name or Email Adress");
 			
 			guest_box.add (guest_label);
 			guest_box.add (guest);
