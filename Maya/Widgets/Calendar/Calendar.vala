@@ -68,7 +68,7 @@ namespace Maya.Widgets {
 			// Change today when it changes
 			var today = new DateTime.now_local ();		
 			var tomorrow = today.add_full (0, 0, 1, -today.get_hour (), -today.get_minute (), -today.get_second ());
-			var difference = tomorrow.to_unix() - today.to_unix();
+			var difference = tomorrow.to_unix() -today.to_unix();
 			
 			Timeout.add_seconds ((uint) difference, () => {
 				if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
