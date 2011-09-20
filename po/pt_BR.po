@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-07 07:54-0500\n"
-"PO-Revision-Date: 2011-06-09 16:40+0000\n"
-"Last-Translator: Leonardo Lemos <Unknown>\n"
+"PO-Revision-Date: 2011-09-19 06:20+0000\n"
+"Last-Translator: Otto Robba <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-07-27 05:07+0000\n"
-"X-Generator: Launchpad (build 13405)\n"
+"X-Launchpad-Export-Date: 2011-09-20 05:18+0000\n"
+"X-Generator: Launchpad (build 13980)\n"
 
 #: ../data/maya.desktop.in.h:1
 msgid "Fast calendar that syncs with popular online services"
-msgstr "Calendário rápido que se sincroniza com os populares serviços online"
+msgstr "Calendário rápido que sincroniza com serviços online populares"
 
 #: ../data/maya.desktop.in.h:2
 msgid "Maya Calendar"
