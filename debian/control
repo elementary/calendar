@@ -11,5 +11,4 @@ Vcs-Browser: https://code.launchpad.net/~maya-dev-team/maya/maya-0.2.0
 Package: maya
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-
 Description: Maya is a slim, lightweight, GCal-syncing GTK+ Calendar application written in Vala, specifically for the Elementary project.
