@@ -14,6 +14,8 @@ set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.2.0")
 set (VERSION_INFO "Release")
 
+list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+
 #
 # Niceties
 #
