@@ -100,6 +100,7 @@ vala_precompile(VALA_C
     Maya/Widgets/Calendar/CalendarView.vala
     Maya/Widgets/Calendar/Day.vala
     Maya/Widgets/Calendar/Header.vala
+    Maya/Widgets/Calendar/Weeks.vala
     Maya/Widgets/AgendaView.vala
     Maya/Widgets/DateSwitcher.vala
     Maya/Widgets/DateTimePicker.vala
