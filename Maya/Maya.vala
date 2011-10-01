@@ -44,7 +44,7 @@ namespace Maya {
 			program_name = "Maya";
 			exec_name = "maya";
 			
-			app_copyright = "2011";
+			app_years = "2011";
 			application_id = "net.launchpad.maya";
 			app_icon = "office-calendar";
 			app_launcher = "maya.desktop";
@@ -67,20 +67,7 @@ namespace Maya {
 				"Daniel Foré <bunny@go-docky.com>"
 			};
 			about_translators = "";
-			about_license = "Copyright (C) 2011 Maya Developers
- 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
- 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.";
+            about_license_type = License.GPL_3_0;
 		}
 		
 		protected override void activate () {

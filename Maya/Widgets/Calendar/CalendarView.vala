@@ -13,30 +13,48 @@
 // 
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-// 
+//
+
+using Gtk;
+
+using Maya.Services;
 
 namespace Maya.Widgets {
 
-	public class CalendarView : Gtk.VBox {
+	public class CalendarView : Gtk.HBox {
 	
 		private MayaWindow window;
+		private VBox box;
 	
+	    public Weeks weeks { get; private set; }
 		public Header header { get; private set; }
 		public Widgets.Calendar calendar { get; private set; }
+		
+		public DateHandler handler { get; private set; }
 	
 		public CalendarView (MayaWindow window) {
 			
 			this.window = window;
 			
+			handler = new DateHandler ();
+			
+			weeks = new Weeks (window, handler);
 			header = new Header (window);
-			calendar = new Widgets.Calendar (window);
+			calendar = new Widgets.Calendar (window, handler);
+			
+			handler = new DateHandler();
 		
-			// VBox properties
+			// HBox properties
 			spacing = 0;
 			homogeneous = false;
 			
-			pack_start (header, false, false, 0);
-			pack_end (calendar, true, true, 0);
+		    box = new VBox(false,0);
+			
+			box.pack_start (header, false, false, 0);
+			box.pack_end (calendar, true, true, 0);
+			
+			pack_start(weeks, false, false, 0);
+			pack_end(box, true, true, 0);
 		}
 		
 	}

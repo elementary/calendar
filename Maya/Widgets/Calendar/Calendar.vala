@@ -34,11 +34,10 @@ namespace Maya.Widgets {
 			}
 		}
 	
-		public Calendar (MayaWindow window) {
+		public Calendar (MayaWindow window, DateHandler handler) {
 		
 			this.window = window;
-		
-			handler = new DateHandler ();
+			this.handler = handler;
 		
 			// Gtk.Table properties
 			n_rows = 6;

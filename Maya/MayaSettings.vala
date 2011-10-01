@@ -26,10 +26,11 @@ namespace Maya {
 		SATURDAY = 5,
 		SUNDAY = 6
 	}
-
+ 
 	public class MayaSettings : Granite.Services.Settings {
 	
 		public Weekday week_starts_on { get; set; }
+		public bool show_weeks { get; set; }
 		
 		public MayaSettings () {
 			base ("org.elementary.Maya.Settings");
