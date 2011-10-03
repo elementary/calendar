@@ -10,3 +10,9 @@ Terminal=false
 Categories=GTK;Office;Calendar;
 StartupNotify=true
 MimeType=text/calendar
+X-Ayatana-Desktop-Shortcuts=AddEvent
+
+[AddEvent Shortcut Group]
+Name=_Add Event
+Exec=maya -a
+TargetEnvironment=Unity
