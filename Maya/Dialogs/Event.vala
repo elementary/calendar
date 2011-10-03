@@ -34,11 +34,22 @@ namespace Maya.Dialogs {
 			modal = true;
 			window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
 			transient_for = window;
-			response.connect(on_response);
+			response.connect (on_response);
 			
 			// Build dialog
-			this.build_dialog ();
+			build_dialog ();
 				
+		}
+		
+		public Event.without_parent (Granite.Application app) {
+		
+		    // Dialog properties
+		    response.connect (on_response);
+		    set_application (app);
+			set_position (WindowPosition.CENTER);
+		    
+		    // Build dialog
+		    build_dialog ();
 		}
 		
 		private void build_dialog () {
@@ -220,6 +231,12 @@ namespace Maya.Dialogs {
 	    
 	        // Dialog properties
 	        title = "Add Event";
+	    
+	    }
+	    
+	    public AddEvent.without_parent (Granite.Application app) {
+	    
+	        base.without_parent (app);
 	    
 	    }
 	    

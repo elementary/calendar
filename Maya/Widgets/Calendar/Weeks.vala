@@ -85,14 +85,14 @@ namespace Maya.Widgets {
 			Allocation size;
 			widget.get_allocation (out size);
 			
-			// Draw left border
+			/*/ Draw left border
 			cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
 			cr.line_to (0.5, 0.5); // move to upper left corner
 			
 			cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
 			cr.set_line_width (1.0);
 			cr.set_antialias (Antialias.NONE);
-			cr.stroke ();
+			cr.stroke ();*/
 			
 			return false;
 		}

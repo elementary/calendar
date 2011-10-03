@@ -23,14 +23,11 @@ using Granite.Services;
 
 using Maya.Widgets;
 using Maya.Services;
+using Maya.Dialogs;
 
 namespace Maya {
 
-	public class Maya : Granite.Application {
-		
-		public static int main (string[] args) {
-			return new Maya ().run (args);
-		}
+	public class MayaApp : Granite.Application {
 		
 		construct {
 		
@@ -70,17 +67,45 @@ namespace Maya {
             about_license_type = License.GPL_3_0;
 		}
 		
+		public static bool ADD;
+		
+		private const OptionEntry[] entries = {
+			{ "add-event", 'a', 0, OptionArg.NONE, out ADD, "Just show an add event dialog", null },
+			{ null }
+		};
+		
 		protected override void activate () {
 			
 			if (get_windows () != null) {
 				get_windows ().data.present (); // present window if app is already running
-				return;
+			    return;
 			}
 			
-			var window = new MayaWindow (this);
-			window.set_application (this);
-			window.show_all ();
+			if (ADD) {
+			    (new AddEvent.without_parent (this)).show_all ();
+			} else {
+			    var window = new MayaWindow (this);
+			    window.set_application (this);
+			    window.show_all ();
+			}
 		}
+		
+		public static int main (string[] args) {
+		    var context = new OptionContext("Calendar");
+            context.add_main_entries(entries, "maya");
+            context.add_group(Gtk.get_option_group(true));
+            
+            try {
+                context.parse(ref args);
+            } catch(Error e) {
+                print(e.message + "\n");
+            }
+            
+            Gtk.init(ref args);
+		
+            return new MayaApp ().run (args);
+		}
+		
 	
 	}
 	
