@@ -48,7 +48,6 @@ namespace Maya.Widgets {
 			for (int c = 0; c < table.n_columns; c++) {
 				labels[c] = new Label ("");
 				labels[c].valign = Align.START;
-				labels[c].draw.connect (on_draw);
 				table.attach_defaults (labels[c], 0, 1, c, c + 1);
 			}
 			update ();
@@ -56,12 +55,12 @@ namespace Maya.Widgets {
 			add (Utilities.set_margins (table, 20, 0, 0, 0));
 
 			// Signals and handlers
-			window.prefs.changed["show-weeks"].connect (update);
+			window.saved_state.changed["show-weeks"].connect (update);
 			handler.changed.connect(update);
 		}
 
-		~Header () {
-			window.prefs.changed["show-weeks"].disconnect (update);
+		~Weeks () {
+			window.saved_state.changed["show-weeks"].disconnect (update);
 		}
 
 		private void update () {
@@ -78,23 +77,6 @@ namespace Maya.Widgets {
 		    } else {
 		        hide ();
 		    }
-		}
-
-		private bool on_draw (Widget widget, Context cr) {
-
-			Allocation size;
-			widget.get_allocation (out size);
-
-			/*/ Draw left border
-			cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
-			cr.line_to (0.5, 0.5); // move to upper left corner
-
-			cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
-			cr.set_line_width (1.0);
-			cr.set_antialias (Antialias.NONE);
-			cr.stroke ();*/
-
-			return false;
 		}
 
 	}

@@ -85,7 +85,7 @@ namespace Maya.Widgets {
 			// Callbacks
 			today.activate.connect ( () => window.calendar_view.calendar.focus_today ());
 			fullscreen.toggled.connect (toggle_fullscreen);
-			weeknumbers.toggled.connect (toggle_weeknumbers);
+			weeknumbers.toggled.connect ( () => window.saved_state.show_weeks = weeknumbers.active );
 		}
 
 		private void toggle_fullscreen () {
@@ -94,14 +94,6 @@ namespace Maya.Widgets {
 				window.fullscreen ();
 			else
 				window.unfullscreen ();
-		}
-
-		private void toggle_weeknumbers () {
-
-		    if (weeknumbers.active)
-		        window.calendar_view.weeks.show ();
-		    else
-		        window.calendar_view.weeks.hide  ();
 		}
 
 	}
