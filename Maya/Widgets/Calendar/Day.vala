@@ -29,7 +29,7 @@ namespace Maya.Widgets {
 
 		public DateTime date { get; set; }
 
-		public EventsList eventslist { get; private set; }
+		//public EventsList eventslist { get; private set; }
 
 		public Day (MayaWindow window) {
 
@@ -50,8 +50,8 @@ namespace Maya.Widgets {
 			label.name = "date";
 			vbox.pack_start (label, false, false, 0);
 
-            eventslist = new EventsList (this);
-            vbox.pack_start (eventslist, true, false, 0);
+            //eventslist = new EventsList (this);
+            //vbox.pack_start (eventslist, true, false, 0);
 
 			add (Utilities.set_margins (vbox, 3, 3, 3, 3));
 
@@ -63,13 +63,13 @@ namespace Maya.Widgets {
 
 			notify["date"].connect (() => label.label = date.get_day_of_month ().to_string ());
 
-			// DEBUGGING:
+			/*// DEBUGGING:
 			eventslist.add_event(new Maya.Widgets.Event(window));
 			eventslist.add_event(new Maya.Widgets.Event(window));
 			eventslist.add_event(new Maya.Widgets.Event(window));
 			eventslist.add_event(new Maya.Widgets.Event(window));
 			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
+			eventslist.add_event(new Maya.Widgets.Event(window));*/
 		}
 
 		private bool on_date_change (EventFocus event) {
