@@ -46,11 +46,10 @@ namespace Maya.Widgets {
                                                "/org/elementary/contractor");
 
 		        // get the list and parse it into the menu
-		        services = contract.GetServicesByLocation ("file:///home/jaapz/Programmeren/contractor/data");
+		        services = contract.GetServicesByLocation ("file:///usr/share/contractor/");
 
                 foreach (HashTable<string,string> service in services) {
                     MenuItem item = new MenuItem.with_label(service.lookup ("Description"));
-                    //item.activate.connect ( () => GLib.Process.spawn_command_line_async (service.lookup ("Exec")) );
                     item.activate.connect (activate_contract);
                     menu.append (item);
                 }
@@ -67,7 +66,12 @@ namespace Maya.Widgets {
 
 		    foreach (HashTable<string,string> service in services) {
                 if (app_menu == service.lookup ("Description")) {
-                    GLib.Process.spawn_command_line_async (service.lookup ("Exec"));
+                    try {
+                        GLib.Process.spawn_command_line_async (service.lookup ("Exec"));
+                    } catch (SpawnError e) {
+                        stderr.printf ("%s\n", e.message);
+                    }
+
                     break;
                 }
             }

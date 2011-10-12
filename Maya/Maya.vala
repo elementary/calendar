@@ -78,11 +78,6 @@ namespace Maya {
 
 			if (get_windows () != null) {
 				get_windows ().data.present (); // present window if app is already running
-
-			    var window = (MayaWindow) get_windows ().nth_data (0);
-			    var dialog = new AddEvent (window);
-			    dialog.show_all ();
-
 			    return;
 			}
 

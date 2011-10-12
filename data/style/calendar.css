@@ -16,6 +16,7 @@
 */
 
 @define-color bg_color rgba(255, 255, 255, 0.75);
+@define-color event_color rgba(100,100,100, 0.75);
 
 /* Header Styles */
 
@@ -47,4 +48,15 @@
 	.cell > #date {
 		font-size: 8;
 	}
+
+
+/* Event Styles */
+
+.event {
+    background-color: @bg_color;
+}
+
+.event:focused {
+    background-color: shade(@bg_color, 0,9);
+}
 

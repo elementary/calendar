@@ -77,7 +77,7 @@ endif (${GETTEXT_FOUND} STREQUAL "TRUE")
 # Maya
 #
 find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED gobject-2.0 glib-2.0 gio-2.0 gtk+-3.0 granite)
+pkg_check_modules(DEPS REQUIRED gobject-2.0 glib-2.0 gio-2.0 gtk+-3.0 granite gee-1.0)
 
 add_definitions(${DEPS_CFLAGS})
 
@@ -94,14 +94,18 @@ vala_precompile(VALA_C
     Maya/MayaSettings.vala
     Maya/SavedState.vala
     Maya/Dialogs/Event.vala
+    Maya/Services/Contractor.vala
     Maya/Services/DateHandler.vala
     Maya/Services/Dexter.vala
     Maya/Widgets/Calendar/Calendar.vala
     Maya/Widgets/Calendar/CalendarView.vala
     Maya/Widgets/Calendar/Day.vala
+    Maya/Widgets/Calendar/Event.vala
+    Maya/Widgets/Calendar/EventsList.vala
     Maya/Widgets/Calendar/Header.vala
     Maya/Widgets/Calendar/Weeks.vala
     Maya/Widgets/AgendaView.vala
+    Maya/Widgets/ContractorButtonWithMenu.vala
     Maya/Widgets/DateSwitcher.vala
     Maya/Widgets/DateTimePicker.vala
     Maya/Widgets/MayaMenu.vala
@@ -112,6 +116,7 @@ vala_precompile(VALA_C
 PACKAGES
     gtk+-3.0
     granite
+    gee-1.0
 CUSTOM_VAPIS
     vapi/config.vapi
 OPTIONS

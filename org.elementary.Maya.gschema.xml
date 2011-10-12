@@ -20,11 +20,6 @@
 			<summary>The day the week starts on.</summary>
 			<description>The day the week starts on.</description>
 		</key>
-		<key name="show-weeks" type="b">
-		    <default>true</default>
-		    <summary>Whether or not to show weeknumbers.</summary>
-		    <description>Whether or not to show weeknumbers.</description>
-		</key>
 	</schema>
 	<schema path="/apps/maya/saved-state/" id="org.elementary.Maya.SavedState" gettext-domain="maya">
 		<key name="window-width" type="i">
@@ -42,6 +37,11 @@
 			<summary>The saved state of the window.</summary>
 			<description>The saved state of the window.</description>
 		</key>
+		<key name="show-weeks" type="b">
+		    <default>true</default>
+		    <summary>Whether or not to show weeknumbers.</summary>
+		    <description>Whether or not to show weeknumbers.</description>
+		</key>
 		<key name="hpaned-position" type="i">
 			<default>650</default>
 			<summary>The x coordinate of the hpaned dragger.</summary>
@@ -49,3 +49,4 @@
 		</key>
 	</schema>
 </schemalist>
+
