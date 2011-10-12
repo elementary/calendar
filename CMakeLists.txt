@@ -88,6 +88,9 @@ find_package(Vala REQUIRED)
 include(ValaVersion)
 ensure_vala_version("0.10.0" MINIMUM)
 
+# Maya/Widgets/Calendar/EventsList.vala
+# Maya/Widgets/Calendar/Event.vala
+
 include(ValaPrecompile)
 vala_precompile(VALA_C
     Maya/Maya.vala
@@ -100,8 +103,6 @@ vala_precompile(VALA_C
     Maya/Widgets/Calendar/Calendar.vala
     Maya/Widgets/Calendar/CalendarView.vala
     Maya/Widgets/Calendar/Day.vala
-    Maya/Widgets/Calendar/Event.vala
-    Maya/Widgets/Calendar/EventsList.vala
     Maya/Widgets/Calendar/Header.vala
     Maya/Widgets/Calendar/Weeks.vala
     Maya/Widgets/AgendaView.vala
