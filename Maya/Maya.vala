@@ -65,7 +65,11 @@ namespace Maya {
 			};
 			about_translators = "";
             about_license_type = License.GPL_3_0;
+            back = new Backend ();
+            back.launch_thread ();
 		}
+
+        Backend back;
 
 		private static bool ADD = false;
 
@@ -103,6 +107,7 @@ namespace Maya {
             }
 
             Gtk.init(ref args);
+
 
             return new MayaApp ().run (args);
 		}
