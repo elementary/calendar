@@ -31,7 +31,7 @@ namespace Maya.Widgets {
 
 		private MayaWindow window;
 
-		private Contractor contract;
+		private Maya.Services.Contractor contract;
 		private HashTable<string,string>[] services;
 
 		public ContractorButtonWithMenu (MayaWindow window) {

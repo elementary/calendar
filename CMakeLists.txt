@@ -77,7 +77,7 @@ endif (${GETTEXT_FOUND} STREQUAL "TRUE")
 # Maya
 #
 find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED gobject-2.0 glib-2.0 gio-2.0 gtk+-3.0 granite gee-1.0)
+pkg_check_modules(DEPS REQUIRED libecal-1.2>=3.2.0 gobject-2.0 glib-2.0 gio-2.0 gtk+-3.0 granite libical gee-1.0)
 
 add_definitions(${DEPS_CFLAGS})
 
@@ -114,14 +114,19 @@ vala_precompile(VALA_C
     Maya/Widgets/MayaWindow.vala
     Maya/Widgets/Sidebar.vala
     Maya/Widgets/Utilities.vala
+    Maya/Events/Backend.vala
 PACKAGES
     gtk+-3.0
     granite
     gee-1.0
+    libecalendar-1.2
+    libedataserver-1.2
+    libical
 CUSTOM_VAPIS
     vapi/config.vapi
 OPTIONS
     --thread
+    --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
     )
 
 add_definitions(${CFLAGS} -Wall -Winit-self -Wwrite-strings -Wunreachable-code -Wstrict-prototypes )
