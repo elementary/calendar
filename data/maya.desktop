@@ -2,8 +2,8 @@
 Type=Application
 Version=1.0
 Name=Maya
-_GenericName=Maya Calendar
-_Comment=Fast calendar that syncs with popular online services
+GenericName=Maya Calendar
+Comment=Fast calendar that syncs with popular online services
 Exec=maya
 Icon=office-calendar
 Terminal=false
