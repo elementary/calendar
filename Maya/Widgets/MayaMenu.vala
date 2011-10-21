@@ -60,7 +60,7 @@ namespace Maya.Widgets {
 			fullscreen = new CheckMenuItem.with_label ("Fullscreen");
 			fullscreen.active = (window.saved_state.window_state == MayaWindowState.FULLSCREEN);
 
-			weeknumbers = new CheckMenuItem.with_label ("Show week numbers");
+			weeknumbers = new CheckMenuItem.with_label ("Show Week Numbers");
 			weeknumbers.active = window.saved_state.show_weeks;
 
 			sync = new MenuItem.with_label ("Sync...");
