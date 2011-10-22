@@ -2,116 +2,6 @@
 
 [CCode (cprefix = "E", gir_namespace = "ECalendar", gir_version = "1.2", lower_case_cprefix = "e_")]
 namespace E {
-	[CCode (cheader_filename = "libecal/e-cal.h", type_id = "e_cal_get_type ()")]
-	[Deprecated (since = "3.2")]
-	public class Cal : GLib.Object {
-		[CCode (has_construct_function = false)]
-		[Deprecated (since = "3.2")]
-		public Cal (E.Source source, E.CalSourceType type);
-		public bool add_timezone (iCal.icaltimezone izone) throws GLib.Error;
-		public static bool check_timezones (iCal.icalcomponent comp, GLib.List comps, GLib.Callback tzlookup, void* custom) throws GLib.Error;
-		public bool create_object (iCal.icalcomponent icalcomp, string uid) throws GLib.Error;
-		public bool discard_alarm (E.CalComponent comp, string auid) throws GLib.Error;
-		public static void free_alarms (GLib.SList comp_alarms);
-		public static void free_change_list (GLib.List list);
-		public static void free_object_list (GLib.List objects);
-		[CCode (has_construct_function = false)]
-		[Deprecated (since = "3.2")]
-		public Cal.from_uri (string uri, E.CalSourceType type);
-		public void generate_instances (ulong start, ulong end, E.CalRecurInstanceFn cb, void* cb_data);
-		public void generate_instances_for_object (iCal.icalcomponent icalcomp, ulong start, ulong end, E.CalRecurInstanceFn cb, void* cb_data);
-		public bool get_alarm_email_address (string alarm_address) throws GLib.Error;
-		public bool get_alarms_for_object (E.CalComponentId id, ulong start, ulong end, out E.CalComponentAlarms alarms);
-		public unowned GLib.SList get_alarms_in_range (ulong start, ulong end);
-		public bool get_attachments_for_comp (string uid, string rid, GLib.SList list) throws GLib.Error;
-		public bool get_cal_address (string cal_address) throws GLib.Error;
-		public bool get_changes (string change_id, GLib.List changes) throws GLib.Error;
-		public unowned string get_component_as_string (iCal.icalcomponent icalcomp);
-		public bool get_default_object (out unowned iCal.icalcomponent icalcomp) throws GLib.Error;
-		public static unowned string get_error_message (E.CalendarStatus status);
-		public bool get_free_busy (GLib.List users, ulong start, ulong end, GLib.List freebusy) throws GLib.Error;
-		public bool get_ldap_attribute (string ldap_attribute) throws GLib.Error;
-		public E.CalLoadState get_load_state ();
-		public unowned string get_local_attachment_store ();
-		public bool get_object (string uid, string rid, out unowned iCal.icalcomponent icalcomp) throws GLib.Error;
-		public bool get_object_list (string query, out GLib.List<long> objects) throws GLib.Error;
-		public bool get_object_list_as_comp (string query, GLib.List objects) throws GLib.Error;
-		public bool get_objects_for_uid (string uid, GLib.List objects) throws GLib.Error;
-		public bool get_one_alarm_only ();
-		public bool get_organizer_must_accept ();
-		public bool get_organizer_must_attend ();
-		public bool get_query (string sexp, out E.CalView query) throws GLib.Error;
-		public bool get_recurrences_no_master ();
-		public bool get_refresh_supported ();
-		public bool get_save_schedules ();
-		public unowned E.Source get_source ();
-		public E.CalSourceType get_source_type ();
-		public static bool get_sources (out unowned E.SourceList sources, E.CalSourceType type) throws GLib.Error;
-		public bool get_static_capability (string cap);
-		public bool get_timezone (string tzid, out unowned iCal.icaltimezone zone) throws GLib.Error;
-		public unowned string get_uri ();
-		public bool is_read_only (bool read_only) throws GLib.Error;
-		public static unowned string match_tzid (string tzid);
-		public bool modify_object (iCal.icalcomponent icalcomp, E.CalObjModType mod) throws GLib.Error;
-		public bool open (bool only_if_exists) throws GLib.Error;
-		public void open_async (bool only_if_exists);
-		public bool open_default (E.CalSourceType type, E.CalAuthFunc func, void* data) throws GLib.Error;
-		public bool receive_objects (iCal.icalcomponent icalcomp) throws GLib.Error;
-		public static bool recur_ensure_end_dates (E.CalComponent comp, bool refresh, E.CalRecurResolveTimezoneFn tz_cb, void* tz_cb_data);
-		public static void recur_generate_instances (E.CalComponent comp, ulong start, ulong end, E.CalRecurInstanceFn cb, void* cb_data, E.CalRecurResolveTimezoneFn tz_cb, void* tz_cb_data, iCal.icaltimezone default_timezone);
-		public static ulong recur_obtain_enddate (void* ir, iCal.icalproperty prop, iCal.icaltimezone zone, bool convert_end_date);
-		public bool refresh () throws GLib.Error;
-		public bool remove () throws GLib.Error;
-		public bool remove_object (string uid) throws GLib.Error;
-		public bool remove_object_with_mod (string uid, string rid, E.CalObjModType mod) throws GLib.Error;
-		public static unowned iCal.icaltimezone resolve_tzid_cb (string tzid, void* data);
-		public bool send_objects (iCal.icalcomponent icalcomp, GLib.List users, out unowned iCal.icalcomponent modified_icalcomp) throws GLib.Error;
-		public void set_auth_func (E.CalAuthFunc func, void* data);
-		public bool set_default () throws GLib.Error;
-		public static bool set_default_source (E.Source source, E.CalSourceType type) throws GLib.Error;
-		public bool set_default_timezone (iCal.icaltimezone zone) throws GLib.Error;
-		public bool set_mode (E.CalMode mode);
-		[CCode (has_construct_function = false)]
-		[Deprecated (since = "3.2")]
-		public Cal.system_calendar ();
-		[CCode (has_construct_function = false)]
-		[Deprecated (since = "3.2")]
-		public Cal.system_memos ();
-		[CCode (has_construct_function = false)]
-		[Deprecated (since = "3.2")]
-		public Cal.system_tasks ();
-		public static unowned string system_timezone_get_location ();
-		public static unowned iCal.icaltimezone tzlookup_ecal (string tzid, void* custom) throws GLib.Error;
-		public static unowned iCal.icaltimezone tzlookup_icomp (string tzid, void* custom) throws GLib.Error;
-		public unowned GLib.List uri_list (E.CalMode mode);
-		public static void util_add_timezones_from_component (iCal.icalcomponent vcal_comp, iCal.icalcomponent icalcomp);
-		public static bool util_component_has_alarms (iCal.icalcomponent icalcomp);
-		public static bool util_component_has_attendee (iCal.icalcomponent icalcomp);
-		public static bool util_component_has_organizer (iCal.icalcomponent icalcomp);
-		public static bool util_component_has_rdates (iCal.icalcomponent icalcomp);
-		public static bool util_component_has_recurrences (iCal.icalcomponent icalcomp);
-		public static bool util_component_has_rrules (iCal.icalcomponent icalcomp);
-		public static bool util_component_is_instance (iCal.icalcomponent icalcomp);
-		public static unowned iCal.icalcomponent util_construct_instance (iCal.icalcomponent icalcomp, void* rid);
-		public static bool util_event_dates_match (iCal.icalcomponent icalcomp1, iCal.icalcomponent icalcomp2);
-		public static E.CalComponentAlarms util_generate_alarms_for_comp (E.CalComponent comp, ulong start, ulong end, E.CalComponentAlarmAction omit, E.CalRecurResolveTimezoneFn resolve_tzid, iCal.icaltimezone default_timezone);
-		public static int util_generate_alarms_for_list (GLib.List comps, ulong start, ulong end, E.CalComponentAlarmAction omit, GLib.SList comp_alarms, E.CalRecurResolveTimezoneFn resolve_tzid, iCal.icaltimezone default_timezone);
-		public static void util_get_component_occur_times (E.CalComponent comp, ulong start, ulong end, E.CalRecurResolveTimezoneFn tz_cb, void* tz_cb_data, iCal.icaltimezone default_timezone, iCal.icalcomponent_kind kind);
-		public static unowned iCal.icaltimezone util_get_system_timezone ();
-		public static string util_get_system_timezone_location ();
-		public static unowned iCal.icalcomponent util_new_component (iCal.icalcomponent_kind kind);
-		public static unowned iCal.icalcomponent util_new_top_level ();
-		public static unowned iCal.icalcomponent util_parse_ics_file (string filename);
-		public static unowned iCal.icalcomponent util_parse_ics_string (string str);
-		public static int util_priority_from_string (string str);
-		public static unowned string util_priority_to_string (int priority);
-		public static void util_remove_instances (iCal.icalcomponent icalcomp, void* rid, E.CalObjModType mod);
-		public virtual signal void backend_died ();
-		public virtual signal void backend_error (string message);
-		public virtual signal void cal_opened (int status);
-		public virtual signal void cal_opened_ex (long error);
-		public virtual signal void cal_set_mode (E.CalSetModeStatusEnum status, E.CalModeEnum mode);
-	}
 	[CCode (cheader_filename = "libecal/e-cal-client.h", type_id = "e_cal_client_get_type ()")]
 	public class CalClient : E.Client {
 		[CCode (has_construct_function = false)]
@@ -341,27 +231,6 @@ namespace E {
 		public void set_description (E.CalComponentText description);
 		public void set_repeat (E.CalComponentAlarmRepeat repeat);
 		public void set_trigger (E.CalComponentAlarmTrigger trigger);
-	}
-	[CCode (cheader_filename = "libecal/e-cal-view.h", type_id = "e_cal_view_get_type ()")]
-	[Deprecated (since = "3.2")]
-	public class CalView : GLib.Object {
-		[CCode (has_construct_function = false)]
-		protected CalView ();
-		public void* get_client ();
-		[Deprecated (since = "3.2")]
-		public void start ();
-		[Deprecated (since = "3.2")]
-		public void stop ();
-		[NoAccessorMethod]
-		public E.Cal client { owned get; construct; }
-		[NoAccessorMethod]
-		public void* view { get; construct; }
-		public virtual signal void objects_added (GLib.SList<long> objects);
-		public virtual signal void objects_modified (GLib.SList<long> objects);
-		public virtual signal void objects_removed (GLib.SList<E.CalComponentId> uids);
-		public virtual signal void view_complete (uint status, string error_msg);
-		public virtual signal void view_done (int status);
-		public virtual signal void view_progress (string message, uint percent);
 	}
 	[CCode (cheader_filename = "libecal/e-cal-types.h")]
 	public struct CalChange {
@@ -638,8 +507,6 @@ namespace E {
 		Remote,
 		AnyMode
 	}
-	[CCode (cheader_filename = "libecal/e-cal.h")]
-	public delegate unowned string CalAuthFunc (E.Cal ecal, string prompt, string key);
 	[CCode (cheader_filename = "libecal/e-cal-recur.h")]
 	public delegate bool CalRecurInstanceFn (E.CalComponent comp, ulong instance_start, ulong instance_end);
 	[CCode (cheader_filename = "libecal/e-cal-recur.h")]
