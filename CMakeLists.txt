@@ -114,14 +114,17 @@ vala_precompile(VALA_C
     Maya/Widgets/MayaWindow.vala
     Maya/Widgets/Sidebar.vala
     Maya/Widgets/Utilities.vala
-    Maya/Events/Backend.vala
+    #Maya/Events/Backend.vala
 PACKAGES
-    gtk+-3.0
-    granite
+    gconf-2.0
     gee-1.0
+    gio-2.0
+    granite
+    gtk+-3.0
     libecalendar-1.2
     libedataserver-1.2
     libical
+    libsoup-2.4
 CUSTOM_VAPIS
     vapi/config.vapi
 OPTIONS

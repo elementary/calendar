@@ -65,11 +65,11 @@ namespace Maya {
 			};
 			about_translators = "";
             about_license_type = License.GPL_3_0;
-            back = new Backend.Main ();
-            back.launch_thread ();
+            //back = new Backend.Main ();
+            //back.launch_thread ();
 		}
 
-        Backend.Main back;
+        //Backend.Main back;
 
 		private static bool ADD = false;
 
