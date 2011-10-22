@@ -60,7 +60,7 @@ namespace Maya.Widgets {
 			month_switcher = new DateSwitcher ();
 			year_switcher = new DateSwitcher ();
 
-			search_bar = new SearchBar ("Search for events...");
+			search_bar = new SearchBar ("Search For Events..");
 
 			contractor = new ContractorButtonWithMenu (window);
 			contractor.set_sensitive (false);
