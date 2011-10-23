@@ -15,9 +15,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-using Gtk;
-using Gdk;
-
 using Granite.Widgets;
 using Granite.Services;
 
@@ -27,15 +24,15 @@ namespace Maya.Widgets {
 
 	public class MayaWindow : Gtk.Window {
 		
-		public static CssProvider style_provider { get; private set; default = null; }
+		public static Gtk.CssProvider style_provider { get; private set; default = null; }
 		
 		public static Settings.SavedState saved_state { get; private set; default = null; }
 		
 		public static Settings.MayaSettings prefs { get; private set; default = null; }
 		
-		private VBox vbox;
+		private Gtk.VBox vbox;
 		public MayaToolbar toolbar { get; private set; }
-		public HPaned hpaned { get; private set; }
+		public Gtk.HPaned hpaned { get; private set; }
 		public Calendar.View calendar_view { get; private set; }
 		public Sidebar sidebar { get; private set; }
 		
@@ -46,7 +43,7 @@ namespace Maya.Widgets {
 			this.app = app;
 			
 			// Set up global css provider
-			style_provider = new CssProvider ();
+			style_provider = new Gtk.CssProvider ();
 			try {
 				style_provider.load_from_path (Build.PKGDATADIR + "/style/default.css");
 			} catch (Error e) {
@@ -57,9 +54,9 @@ namespace Maya.Widgets {
 			saved_state = new Settings.SavedState ();
 			prefs = new Settings.MayaSettings ();
 			
-			vbox = new VBox (false, 0);
+			vbox = new Gtk.VBox (false, 0);
 			toolbar = new MayaToolbar (this);
-			hpaned = new HPaned ();
+			hpaned = new Gtk.HPaned ();
 			calendar_view = new Calendar.View (this);
 			sidebar = new Sidebar (this);
 			
@@ -83,7 +80,7 @@ namespace Maya.Widgets {
 			destroy.connect (Gtk.main_quit);
 		}
 		
-		protected override bool delete_event (EventAny event) {
+		protected override bool delete_event (Gdk.EventAny event) {
 			update_saved_state ();
 			return false;
 		}
@@ -105,9 +102,9 @@ namespace Maya.Widgets {
 		private void update_saved_state () {
 			
 			// Save window state
-			if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
+			if ((get_window ().get_state () & Settings.WindowState.MAXIMIZED) != 0)
 				saved_state.window_state = Settings.WindowState.MAXIMIZED;
-			else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0)
+			else if ((get_window ().get_state () & Settings.WindowState.FULLSCREEN) != 0)
 				saved_state.window_state = Settings.WindowState.FULLSCREEN;
 			else
 				saved_state.window_state = Settings.WindowState.NORMAL;

@@ -15,9 +15,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Gtk;
-using Gdk;
-
 using Granite.Widgets;
 
 using Maya;
@@ -30,9 +27,9 @@ namespace Maya.Widgets {
 
 		private MayaWindow window;
 
-		public ToolButton add_button { get; private set; }
-		public ToolButton edit_button { get; private set; }
-		public ToolButton delete_button { get; private set; }
+		public Gtk.ToolButton add_button { get; private set; }
+		public Gtk.ToolButton edit_button { get; private set; }
+		public Gtk.ToolButton delete_button { get; private set; }
 
 		public DateSwitcher month_switcher { get; private set; }
 		public DateSwitcher year_switcher { get; private set; }
@@ -50,7 +47,7 @@ namespace Maya.Widgets {
 			get_style_context ().add_class ("primary-toolbar"); // compliant with elementary HIG
 
 			// Initialize everything
-			add_button = make_toolbutton (IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add",
+			add_button = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add",
 					"Create a new event", false);
 			add_button.clicked.connect(this.add_button_callback);
 
@@ -86,9 +83,9 @@ namespace Maya.Widgets {
 			insert (app_menu, 9);
 		}
 
-		private ToolButton make_toolbutton (string icon_name, string tooltip_text, bool sensitive = true,  bool can_focus = false) {
+		private Gtk.ToolButton make_toolbutton (string icon_name, string tooltip_text, bool sensitive = true,  bool can_focus = false) {
 
-			var toolbutton = new ToolButton (null, null);
+			var toolbutton = new Gtk.ToolButton (null, null);
 			toolbutton.icon_name = icon_name;
 			toolbutton.sensitive = sensitive;
 			toolbutton.can_focus = can_focus;
@@ -97,17 +94,17 @@ namespace Maya.Widgets {
 			return toolbutton;
 		}
 
-		private ToolItem make_spacer () {
+		private Gtk.ToolItem make_spacer () {
 
-			var spacer = new ToolItem ();
+			var spacer = new Gtk.ToolItem ();
 			spacer.set_expand (true);
 
 			return spacer;
 		}
 
-		private ToolItem make_toolitem_from_widget (Widget widget) {
+		private Gtk.ToolItem make_toolitem_from_widget (Gtk.Widget widget) {
 
-			var toolitem = new ToolItem ();
+			var toolitem = new Gtk.ToolItem ();
 			toolitem.add (widget);
 
 			return toolitem;

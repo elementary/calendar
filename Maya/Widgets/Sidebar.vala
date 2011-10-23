@@ -15,18 +15,13 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Gtk;
-using Gdk;
-
-using Pango;
-
 namespace Maya.Widgets {
 
 	public class Sidebar : Gtk.VBox {
 
 		private MayaWindow window;
 
-		public Label label { get; private set; }
+		public Gtk.Label label { get; private set; }
 		public AgendaView agenda_view { get; private set; }
 
 		/**
@@ -37,18 +32,18 @@ namespace Maya.Widgets {
 
 			this.window = window;
 
-			var scrolled_window = new ScrolledWindow (null, null);
-			scrolled_window.set_policy (PolicyType.NEVER, PolicyType.AUTOMATIC);
-			scrolled_window.set_shadow_type (ShadowType.NONE);
+			var scrolled_window = new Gtk.ScrolledWindow (null, null);
+			scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
+			scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
 
 			// label settings
-			label = new Label (_("Your upcoming events will be displayed here when you select a date with events."));
+			label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
 			label.sensitive = false;
 			label.wrap = true;
 			label.wrap_mode = Pango.WrapMode.WORD;
 			label.margin_left = 15;
 			label.margin_right = 15;
-			label.justify = Justification.CENTER;
+			label.justify = Gtk.Justification.CENTER;
 
 			agenda_view = new AgendaView (window);
 
@@ -56,8 +51,8 @@ namespace Maya.Widgets {
 			spacing = 0;
 			homogeneous = false;
 
-			var viewport = new Viewport (null, null);
-			viewport.shadow_type = ShadowType.NONE;
+			var viewport = new Gtk.Viewport (null, null);
+			viewport.shadow_type = Gtk.ShadowType.NONE;
 			viewport.add (agenda_view);
 			scrolled_window.add (viewport);
 

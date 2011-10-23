@@ -15,8 +15,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-using Gtk;
-
 using Granite.Widgets;
 using Granite.Services;
 
@@ -46,7 +44,7 @@ namespace Maya.Dialogs {
 		    // Dialog properties
 		    response.connect (on_response);
 		    set_application (app);
-			set_position (WindowPosition.CENTER);
+			set_position (Gtk.WindowPosition.CENTER);
 		    
 		    // Build dialog
 		    build_dialog ();

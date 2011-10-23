@@ -15,9 +15,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Gtk;
-using Gdk;
-
 using Granite;
 using Granite.Services;
 
@@ -64,7 +61,7 @@ namespace Maya {
 				"Daniel Foré <bunny@go-docky.com>"
 			};
 			about_translators = "";
-            about_license_type = License.GPL_3_0;
+            about_license_type = Gtk.License.GPL_3_0;
 		}
 
 		private static bool ADD = false;
