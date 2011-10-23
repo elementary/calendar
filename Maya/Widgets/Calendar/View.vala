@@ -15,24 +15,22 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Gtk;
-
 using Maya.Services;
 
-namespace Maya.Widgets {
+namespace Maya.Widgets.Calendar {
 
-	public class CalendarView : Gtk.HBox {
+	public class View : Gtk.HBox {
 	
 		private MayaWindow window;
-		private VBox box;
+		private Gtk.VBox box;
 	
 	    public Weeks weeks { get; private set; }
 		public Header header { get; private set; }
-		public Widgets.Calendar calendar { get; private set; }
+		public Grid grid { get; private set; }
 		
 		public DateHandler handler { get; private set; }
 	
-		public CalendarView (MayaWindow window) {
+		public View (MayaWindow window) {
 			
 			this.window = window;
 			
@@ -40,7 +38,7 @@ namespace Maya.Widgets {
 			
 			weeks = new Weeks (window, handler);
 			header = new Header (window);
-			calendar = new Widgets.Calendar (window, handler);
+			grid = new Grid (window, handler);
 			
 			handler = new DateHandler();
 		
@@ -48,10 +46,10 @@ namespace Maya.Widgets {
 			spacing = 0;
 			homogeneous = false;
 			
-		    box = new VBox(false,0);
+		    box = new Gtk.VBox(false,0);
 			
 			box.pack_start (header, false, false, 0);
-			box.pack_end (calendar, true, true, 0);
+			box.pack_end (grid, true, true, 0);
 			
 			pack_start(weeks, false, false, 0);
 			pack_end(box, true, true, 0);

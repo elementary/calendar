@@ -18,7 +18,7 @@
 using Gtk;
 using Cairo;
 
-namespace Maya.Widgets {
+namespace Maya.Widgets.Calendar {
 
 	public class Header : Gtk.EventBox {
 	

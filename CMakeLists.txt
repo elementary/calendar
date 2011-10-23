@@ -101,10 +101,10 @@ vala_precompile(VALA_C
     Maya/Settings/MayaSettings.vala
     Maya/Settings/SavedState.vala
     Maya/Widgets/AgendaView.vala
-    Maya/Widgets/Calendar/Calendar.vala
-    Maya/Widgets/Calendar/CalendarView.vala
     Maya/Widgets/Calendar/Day.vala
+    Maya/Widgets/Calendar/Grid.vala
     Maya/Widgets/Calendar/Header.vala
+    Maya/Widgets/Calendar/View.vala
     Maya/Widgets/Calendar/Weeks.vala
     Maya/Widgets/ContractorButtonWithMenu.vala
     Maya/Widgets/DateSwitcher.vala

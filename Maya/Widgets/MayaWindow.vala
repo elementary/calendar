@@ -36,7 +36,7 @@ namespace Maya.Widgets {
 		private VBox vbox;
 		public MayaToolbar toolbar { get; private set; }
 		public HPaned hpaned { get; private set; }
-		public CalendarView calendar_view { get; private set; }
+		public Calendar.View calendar_view { get; private set; }
 		public Sidebar sidebar { get; private set; }
 		
 		public static Granite.Application app { get; private set; }
@@ -60,7 +60,7 @@ namespace Maya.Widgets {
 			vbox = new VBox (false, 0);
 			toolbar = new MayaToolbar (this);
 			hpaned = new HPaned ();
-			calendar_view = new CalendarView (this);
+			calendar_view = new Calendar.View (this);
 			sidebar = new Sidebar (this);
 			
 			// Window Properties

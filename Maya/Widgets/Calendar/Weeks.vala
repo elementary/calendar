@@ -20,7 +20,7 @@ using Cairo;
 
 using Maya.Services;
 
-namespace Maya.Widgets {
+namespace Maya.Widgets.Calendar {
 
 	public class Weeks : Gtk.EventBox {
 

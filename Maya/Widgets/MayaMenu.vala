@@ -83,7 +83,7 @@ namespace Maya.Widgets {
 			append (sync);
 
 			// Callbacks
-			today.activate.connect ( () => window.calendar_view.calendar.focus_today ());
+			today.activate.connect ( () => window.calendar_view.grid.focus_today ());
 			fullscreen.toggled.connect (toggle_fullscreen);
 			weeknumbers.toggled.connect ( () => window.saved_state.show_weeks = weeknumbers.active );
 		}

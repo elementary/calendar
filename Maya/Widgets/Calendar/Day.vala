@@ -19,7 +19,7 @@ using Gtk;
 using Gdk;
 using Cairo;
 
-namespace Maya.Widgets {
+namespace Maya.Widgets.Calendar {
 
 	public class Day : Gtk.EventBox {
 
