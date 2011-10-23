@@ -15,27 +15,24 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya {
+namespace Maya.Settings {
 
-	public enum MayaWindowState {
-		NORMAL = 0,
-		MAXIMIZED = 1,
-		FULLSCREEN = 2
+	public enum Weekday {
+		MONDAY = 0,
+		TUESDAY = 1,
+		WEDNESDAY = 2,
+		THURSDAY = 3,
+		FRIDAY = 4,
+		SATURDAY = 5,
+		SUNDAY = 6
 	}
 
-	public class SavedState : Granite.Services.Settings {
+	public class MayaSettings : Granite.Services.Settings {
 
-		public int window_width { get; set; }
-		public int window_height { get; set; }
+		public Weekday week_starts_on { get; set; }
 
-		public MayaWindowState window_state { get; set; }
-
-		public bool show_weeks { get; set; }
-
-		public int hpaned_position { get; set; }
-
-		public SavedState () {
-			base ("org.elementary.Maya.SavedState");
+		public MayaSettings () {
+			base ("org.elementary.Maya.Settings");
 		}
 
 	}

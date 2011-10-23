@@ -58,7 +58,7 @@ namespace Maya.Widgets {
 			export.set_submenu (export_submenu);
 
 			fullscreen = new CheckMenuItem.with_label ("Fullscreen");
-			fullscreen.active = (window.saved_state.window_state == MayaWindowState.FULLSCREEN);
+			fullscreen.active = (window.saved_state.window_state == Settings.WindowState.FULLSCREEN);
 
 			weeknumbers = new CheckMenuItem.with_label ("Show Week Numbers");
 			weeknumbers.active = window.saved_state.show_weeks;

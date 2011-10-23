@@ -29,9 +29,9 @@ namespace Maya.Widgets {
 		
 		public static CssProvider style_provider { get; private set; default = null; }
 		
-		public static SavedState saved_state { get; private set; default = null; }
+		public static Settings.SavedState saved_state { get; private set; default = null; }
 		
-		public static MayaSettings prefs { get; private set; default = null; }
+		public static Settings.MayaSettings prefs { get; private set; default = null; }
 		
 		private VBox vbox;
 		public MayaToolbar toolbar { get; private set; }
@@ -54,8 +54,8 @@ namespace Maya.Widgets {
 			}
 			
 			// Set up settings
-			saved_state = new SavedState ();
-			prefs = new MayaSettings ();
+			saved_state = new Settings.SavedState ();
+			prefs = new Settings.MayaSettings ();
 			
 			vbox = new VBox (false, 0);
 			toolbar = new MayaToolbar (this);
@@ -94,9 +94,9 @@ namespace Maya.Widgets {
 			default_width = saved_state.window_width;
 			default_height = saved_state.window_height;
 			
-			if (saved_state.window_state == MayaWindowState.MAXIMIZED)
+			if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
 				maximize ();
-			else if (saved_state.window_state == MayaWindowState.FULLSCREEN)
+			else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
 				fullscreen ();
 			
 			hpaned.position = saved_state.hpaned_position;
@@ -106,14 +106,14 @@ namespace Maya.Widgets {
 			
 			// Save window state
 			if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
-				saved_state.window_state = MayaWindowState.MAXIMIZED;
+				saved_state.window_state = Settings.WindowState.MAXIMIZED;
 			else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0)
-				saved_state.window_state = MayaWindowState.FULLSCREEN;
+				saved_state.window_state = Settings.WindowState.FULLSCREEN;
 			else
-				saved_state.window_state = MayaWindowState.NORMAL;
+				saved_state.window_state = Settings.WindowState.NORMAL;
 			
 			// Save window size
-			if (saved_state.window_state == MayaWindowState.NORMAL) {
+			if (saved_state.window_state == Settings.WindowState.NORMAL) {
 				int width, height;
 				get_size (out width, out height);
 				saved_state.window_width = width;
