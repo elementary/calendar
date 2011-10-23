@@ -105,15 +105,15 @@ vala_precompile(VALA_C
     Maya/View/Calendar/Header.vala
     Maya/View/Calendar/View.vala
     Maya/View/Calendar/Weeks.vala
-    Maya/View/ContractorButtonWithMenu.vala
-    Maya/View/DateSwitcher.vala
-    Maya/View/DateTimePicker.vala
     Maya/View/EventDialog.vala
     Maya/View/MayaMenu.vala
     Maya/View/MayaToolbar.vala
     Maya/View/MayaWindow.vala
     Maya/View/Sidebar.vala
     Maya/View/Utilities.vala
+    Maya/View/Widgets/ContractorButtonWithMenu.vala
+    Maya/View/Widgets/DateSwitcher.vala
+    Maya/View/Widgets/DateTimePicker.vala
 PACKAGES
     gconf-2.0
     gee-1.0

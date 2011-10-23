@@ -29,13 +29,13 @@ namespace Maya.View {
 		public Gtk.ToolButton edit_button { get; private set; }
 		public Gtk.ToolButton delete_button { get; private set; }
 
-		public DateSwitcher month_switcher { get; private set; }
-		public DateSwitcher year_switcher { get; private set; }
+		public Widgets.DateSwitcher month_switcher { get; private set; }
+		public Widgets.DateSwitcher year_switcher { get; private set; }
 
 		public SearchBar search_bar { get; private set; }
 
 		public AppMenu app_menu { get; private set; }
-		public ContractorButtonWithMenu contractor { get; private set; }
+		public Widgets.ContractorButtonWithMenu contractor { get; private set; }
 
 		public MayaToolbar (MayaWindow window) {
 
@@ -52,12 +52,12 @@ namespace Maya.View {
 			edit_button = make_toolbutton ("gtk-edit", "Edit the selected event", false);
 			delete_button = make_toolbutton ("edit-delete", "Delete the selected event", false);
 
-			month_switcher = new DateSwitcher ();
-			year_switcher = new DateSwitcher ();
+			month_switcher = new Widgets.DateSwitcher ();
+			year_switcher = new Widgets.DateSwitcher ();
 
 			search_bar = new SearchBar ("Search For Events..");
 
-			contractor = new ContractorButtonWithMenu (window);
+			contractor = new Widgets.ContractorButtonWithMenu (window);
 			contractor.set_sensitive (false);
 			contractor.tooltip_text = "Share the selected eventmake";
 

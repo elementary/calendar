@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-namespace Maya.View {
+namespace Maya.View.Widgets {
 
 	public class DateSwitcher : Gtk.EventBox {  
 	
