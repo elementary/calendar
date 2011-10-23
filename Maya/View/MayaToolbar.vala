@@ -19,9 +19,7 @@ using Granite.Widgets;
 
 using Maya;
 
-using Maya.Dialogs;
-
-namespace Maya.Widgets {
+namespace Maya.View {
 
 	public class MayaToolbar : Gtk.Toolbar {
 
@@ -112,7 +110,7 @@ namespace Maya.Widgets {
 
 		private void add_button_callback () {
 
-		    var add_dialog = new AddEvent (window);
+		    var add_dialog = new View.AddEventDialog (window);
 		    add_dialog.show ();
 		}
 	}

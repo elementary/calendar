@@ -17,7 +17,7 @@
 
 using Maya.Services;
 
-namespace Maya.Widgets.Calendar {
+namespace Maya.View.Calendar {
 
 	public class Grid : Gtk.Table {
 

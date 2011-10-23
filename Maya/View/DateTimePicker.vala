@@ -17,7 +17,7 @@
 
 using Granite.Widgets;
 
-namespace Maya.Widgets {
+namespace Maya.View {
 
 	public class DateTimePicker : Gtk.HBox {
 	

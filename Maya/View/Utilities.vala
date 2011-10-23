@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-namespace Maya.Widgets {
+namespace Maya.View {
 
 	public class Utilities {
 	

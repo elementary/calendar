@@ -20,7 +20,7 @@ using Granite.Services;
 
 using Maya;
 
-namespace Maya.Widgets {
+namespace Maya.View {
 
 	public class MayaWindow : Gtk.Window {
 		

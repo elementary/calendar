@@ -18,15 +18,15 @@
 using Granite.Widgets;
 using Granite.Services;
 
-using Maya.Widgets;
+using Maya.View;
 
-namespace Maya.Dialogs {
+namespace Maya.View {
 
-	public class Event : Gtk.Dialog {
+	public class EventDialog : Gtk.Dialog {
 		
 		Gtk.Container container { get; private set; }
 	 
-		public Event (MayaWindow window) {
+		public EventDialog (MayaWindow window) {
 		
 			// Dialog properties
 			modal = true;
@@ -39,7 +39,7 @@ namespace Maya.Dialogs {
 				
 		}
 		
-		public Event.without_parent (Granite.Application app) {
+		public EventDialog.without_parent (Granite.Application app) {
 		
 		    // Dialog properties
 		    response.connect (on_response);
@@ -221,9 +221,9 @@ namespace Maya.Dialogs {
 		
 	}
 	
-	public class AddEvent : Event {
+	public class AddEventDialog : EventDialog {
 	    
-	    public AddEvent (MayaWindow window) {
+	    public AddEventDialog (MayaWindow window) {
 	        
 	        base(window);
 	    
@@ -232,7 +232,7 @@ namespace Maya.Dialogs {
 	    
 	    }
 	    
-	    public AddEvent.without_parent (Granite.Application app) {
+	    public AddEventDialog.without_parent (Granite.Application app) {
 	    
 	        base.without_parent (app);
 	    
@@ -247,9 +247,9 @@ namespace Maya.Dialogs {
 	    
 	}
 	
-	public class EditEvent : Event {
+	public class EditEventDialog : EventDialog {
 	    
-	    public EditEvent (MayaWindow window) {
+	    public EditEventDialog (MayaWindow window) {
 	        
 	        base(window);
 	        

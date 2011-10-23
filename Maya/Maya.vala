@@ -18,9 +18,8 @@
 using Granite;
 using Granite.Services;
 
-using Maya.Widgets;
+using Maya.View;
 using Maya.Services;
-using Maya.Dialogs;
 
 namespace Maya {
 
@@ -79,7 +78,7 @@ namespace Maya {
 			}
 
 			if (ADD) {
-			    (new AddEvent.without_parent (this)).show_all ();
+			    (new View.AddEventDialog.without_parent (this)).show_all ();
 			} else {
 			    var window = new MayaWindow (this);
 			    window.set_application (this);

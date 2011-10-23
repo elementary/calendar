@@ -19,9 +19,8 @@ using Granite;
 using Granite.Services;
 
 using Maya;
-using Maya.Dialogs;
 
-namespace Maya.Widgets {
+namespace Maya.View {
 
 	public class MayaMenu : Gtk.Menu {
 

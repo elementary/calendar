@@ -21,7 +21,7 @@ using Granite.Services;
 using Maya;
 using Maya.Services;
 
-namespace Maya.Widgets {
+namespace Maya.View {
 
 	public class ContractorButtonWithMenu : Granite.Widgets.ToolButtonWithMenu {
 

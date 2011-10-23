@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-namespace Maya.Widgets.Calendar {
+namespace Maya.View.Calendar {
 
 	public class Header : Gtk.EventBox {
 	

@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya.Widgets.Calendar {
+namespace Maya.View.Calendar {
 
 	public class Day : Gtk.EventBox {
 
@@ -60,12 +60,12 @@ namespace Maya.Widgets.Calendar {
 			notify["date"].connect (() => label.label = date.get_day_of_month ().to_string ());
 
 			/*// DEBUGGING:
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));*/
+			eventslist.add_event(new Maya.View.Event(window));
+			eventslist.add_event(new Maya.View.Event(window));
+			eventslist.add_event(new Maya.View.Event(window));
+			eventslist.add_event(new Maya.View.Event(window));
+			eventslist.add_event(new Maya.View.Event(window));
+			eventslist.add_event(new Maya.View.Event(window));*/
 		}
 
 		private bool on_date_change (Gdk.EventFocus event) {
