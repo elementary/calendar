@@ -15,13 +15,11 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Gtk;
-
 using Maya.Services;
 
-namespace Maya.Widgets {
+namespace Maya.View.Calendar {
 
-	public class Calendar : Gtk.Table {
+	public class Grid : Gtk.Table {
 
 		private MayaWindow window;
 
@@ -36,7 +34,7 @@ namespace Maya.Widgets {
 			}
 		}
 
-		public Calendar (MayaWindow window, DateHandler handler) {
+		public Grid (MayaWindow window, DateHandler handler) {
 
 			this.window = window;
 			this.handler = handler;
@@ -92,7 +90,7 @@ namespace Maya.Widgets {
 			realize.connect (() => set_date (today));
 		}
 
-		~Calendar () {
+		~Grid () {
 			window.prefs.changed["week-starts-on"].disconnect (update_month);
 		}
 

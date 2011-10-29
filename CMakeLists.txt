@@ -94,27 +94,26 @@ ensure_vala_version("0.10.0" MINIMUM)
 include(ValaPrecompile)
 vala_precompile(VALA_C
     Maya/Maya.vala
-    Maya/MayaSettings.vala
-    Maya/SavedState.vala
-    Maya/Dialogs/Event.vala
     Maya/Services/Contractor.vala
     Maya/Services/DateHandler.vala
     Maya/Services/Dexter.vala
-    Maya/Widgets/Calendar/Calendar.vala
-    Maya/Widgets/Calendar/CalendarView.vala
-    Maya/Widgets/Calendar/Day.vala
-    Maya/Widgets/Calendar/Header.vala
-    Maya/Widgets/Calendar/Weeks.vala
-    Maya/Widgets/AgendaView.vala
-    Maya/Widgets/ContractorButtonWithMenu.vala
-    Maya/Widgets/DateSwitcher.vala
-    Maya/Widgets/DateTimePicker.vala
-    Maya/Widgets/MayaMenu.vala
-    Maya/Widgets/MayaToolbar.vala
-    Maya/Widgets/MayaWindow.vala
-    Maya/Widgets/Sidebar.vala
-    Maya/Widgets/Utilities.vala
-    #Maya/Events/Backend.vala
+    Maya/Settings/MayaSettings.vala
+    Maya/Settings/SavedState.vala
+    Maya/View/AgendaView.vala
+    Maya/View/Calendar/Day.vala
+    Maya/View/Calendar/Grid.vala
+    Maya/View/Calendar/Header.vala
+    Maya/View/Calendar/View.vala
+    Maya/View/Calendar/Weeks.vala
+    Maya/View/EventDialog.vala
+    Maya/View/MayaMenu.vala
+    Maya/View/MayaToolbar.vala
+    Maya/View/MayaWindow.vala
+    Maya/View/Sidebar.vala
+    Maya/View/Utilities.vala
+    Maya/View/Widgets/ContractorButtonWithMenu.vala
+    Maya/View/Widgets/DateSwitcher.vala
+    Maya/View/Widgets/DateTimePicker.vala
 PACKAGES
     gconf-2.0
     gee-1.0

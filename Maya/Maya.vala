@@ -15,15 +15,11 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Gtk;
-using Gdk;
-
 using Granite;
 using Granite.Services;
 
-using Maya.Widgets;
+using Maya.View;
 using Maya.Services;
-using Maya.Dialogs;
 
 namespace Maya {
 
@@ -64,12 +60,8 @@ namespace Maya {
 				"Daniel Foré <bunny@go-docky.com>"
 			};
 			about_translators = "";
-            about_license_type = License.GPL_3_0;
-            //back = new Backend.Main ();
-            //back.launch_thread ();
+            about_license_type = Gtk.License.GPL_3_0;
 		}
-
-        //Backend.Main back;
 
 		private static bool ADD = false;
 
@@ -86,7 +78,7 @@ namespace Maya {
 			}
 
 			if (ADD) {
-			    (new AddEvent.without_parent (this)).show_all ();
+			    (new View.AddEventDialog.without_parent (this)).show_all ();
 			} else {
 			    var window = new MayaWindow (this);
 			    window.set_application (this);

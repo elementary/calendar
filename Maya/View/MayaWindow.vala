@@ -15,28 +15,25 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-using Gtk;
-using Gdk;
-
 using Granite.Widgets;
 using Granite.Services;
 
 using Maya;
 
-namespace Maya.Widgets {
+namespace Maya.View {
 
 	public class MayaWindow : Gtk.Window {
 		
-		public static CssProvider style_provider { get; private set; default = null; }
+		public static Gtk.CssProvider style_provider { get; private set; default = null; }
 		
-		public static SavedState saved_state { get; private set; default = null; }
+		public static Settings.SavedState saved_state { get; private set; default = null; }
 		
-		public static MayaSettings prefs { get; private set; default = null; }
+		public static Settings.MayaSettings prefs { get; private set; default = null; }
 		
-		private VBox vbox;
+		private Gtk.VBox vbox;
 		public MayaToolbar toolbar { get; private set; }
-		public HPaned hpaned { get; private set; }
-		public CalendarView calendar_view { get; private set; }
+		public Gtk.HPaned hpaned { get; private set; }
+		public Calendar.View calendar_view { get; private set; }
 		public Sidebar sidebar { get; private set; }
 		
 		public static Granite.Application app { get; private set; }
@@ -46,7 +43,7 @@ namespace Maya.Widgets {
 			this.app = app;
 			
 			// Set up global css provider
-			style_provider = new CssProvider ();
+			style_provider = new Gtk.CssProvider ();
 			try {
 				style_provider.load_from_path (Build.PKGDATADIR + "/style/default.css");
 			} catch (Error e) {
@@ -54,13 +51,13 @@ namespace Maya.Widgets {
 			}
 			
 			// Set up settings
-			saved_state = new SavedState ();
-			prefs = new MayaSettings ();
+			saved_state = new Settings.SavedState ();
+			prefs = new Settings.MayaSettings ();
 			
-			vbox = new VBox (false, 0);
+			vbox = new Gtk.VBox (false, 0);
 			toolbar = new MayaToolbar (this);
-			hpaned = new HPaned ();
-			calendar_view = new CalendarView (this);
+			hpaned = new Gtk.HPaned ();
+			calendar_view = new Calendar.View (this);
 			sidebar = new Sidebar (this);
 			
 			// Window Properties
@@ -83,7 +80,7 @@ namespace Maya.Widgets {
 			destroy.connect (Gtk.main_quit);
 		}
 		
-		protected override bool delete_event (EventAny event) {
+		protected override bool delete_event (Gdk.EventAny event) {
 			update_saved_state ();
 			return false;
 		}
@@ -94,9 +91,9 @@ namespace Maya.Widgets {
 			default_width = saved_state.window_width;
 			default_height = saved_state.window_height;
 			
-			if (saved_state.window_state == MayaWindowState.MAXIMIZED)
+			if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
 				maximize ();
-			else if (saved_state.window_state == MayaWindowState.FULLSCREEN)
+			else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
 				fullscreen ();
 			
 			hpaned.position = saved_state.hpaned_position;
@@ -105,15 +102,15 @@ namespace Maya.Widgets {
 		private void update_saved_state () {
 			
 			// Save window state
-			if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
-				saved_state.window_state = MayaWindowState.MAXIMIZED;
-			else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0)
-				saved_state.window_state = MayaWindowState.FULLSCREEN;
+			if ((get_window ().get_state () & Settings.WindowState.MAXIMIZED) != 0)
+				saved_state.window_state = Settings.WindowState.MAXIMIZED;
+			else if ((get_window ().get_state () & Settings.WindowState.FULLSCREEN) != 0)
+				saved_state.window_state = Settings.WindowState.FULLSCREEN;
 			else
-				saved_state.window_state = MayaWindowState.NORMAL;
+				saved_state.window_state = Settings.WindowState.NORMAL;
 			
 			// Save window size
-			if (saved_state.window_state == MayaWindowState.NORMAL) {
+			if (saved_state.window_state == Settings.WindowState.NORMAL) {
 				int width, height;
 				get_size (out width, out height);
 				saved_state.window_width = width;

@@ -15,32 +15,29 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-using Gtk;
-using Cairo;
-
-namespace Maya.Widgets {
+namespace Maya.View.Calendar {
 
 	public class Header : Gtk.EventBox {
 	
 		private MayaWindow window;
 	
-		private Table table;
-		private Label[] labels;
+		private Gtk.Table table;
+		private Gtk.Label[] labels;
 	
 		public Header (MayaWindow window) {
 			
 			this.window = window;
 			
-			table = new Table (1, 7, true);
+			table = new Gtk.Table (1, 7, true);
 		
 			// EventBox properties
 			set_visible_window (true); // needed for style
 			get_style_context ().add_provider (window.style_provider, 600);
 			get_style_context ().add_class ("header");
 			
-			labels = new Label[table.n_columns];
+			labels = new Gtk.Label[table.n_columns];
 			for (int c = 0; c < table.n_columns; c++) {
-				labels[c] = new Label ("");
+				labels[c] = new Gtk.Label ("");
 				labels[c].draw.connect (on_draw);
 				table.attach_defaults (labels[c], c, c + 1, 0, 1);
 			}
@@ -66,9 +63,9 @@ namespace Maya.Widgets {
 			}
 		}
 		
-		private bool on_draw (Widget widget, Context cr) {
+		private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
 		
-			Allocation size;
+			Gtk.Allocation size;
 			widget.get_allocation (out size);
 			
 			// Draw left border
@@ -77,7 +74,7 @@ namespace Maya.Widgets {
 			
 			cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
 			cr.set_line_width (1.0);
-			cr.set_antialias (Antialias.NONE);
+			cr.set_antialias (Cairo.Antialias.NONE);
 			cr.stroke ();
 			
 			return false;

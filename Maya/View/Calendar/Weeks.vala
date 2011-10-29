@@ -15,19 +15,16 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Gtk;
-using Cairo;
-
 using Maya.Services;
 
-namespace Maya.Widgets {
+namespace Maya.View.Calendar {
 
 	public class Weeks : Gtk.EventBox {
 
 		private MayaWindow window;
 
-		private Table table;
-		private Label[] labels;
+		private Gtk.Table table;
+		private Gtk.Label[] labels;
 
 		private DateHandler handler;
 
@@ -36,7 +33,7 @@ namespace Maya.Widgets {
 			this.window = window;
 			this.handler = handler;
 
-			table = new Table (1, 6, false);
+			table = new Gtk.Table (1, 6, false);
 			table.row_spacing = 1;
 
 			// EventBox properties
@@ -44,10 +41,10 @@ namespace Maya.Widgets {
 			get_style_context ().add_provider (window.style_provider, 600);
 			get_style_context ().add_class ("weeks");
 
-			labels = new Label[table.n_columns];
+			labels = new Gtk.Label[table.n_columns];
 			for (int c = 0; c < table.n_columns; c++) {
-				labels[c] = new Label ("");
-				labels[c].valign = Align.START;
+				labels[c] = new Gtk.Label ("");
+				labels[c].valign = Gtk.Align.START;
 				table.attach_defaults (labels[c], 0, 1, c, c + 1);
 			}
 			update ();

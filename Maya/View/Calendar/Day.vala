@@ -15,17 +15,13 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Gtk;
-using Gdk;
-using Cairo;
-
-namespace Maya.Widgets {
+namespace Maya.View.Calendar {
 
 	public class Day : Gtk.EventBox {
 
 		private MayaWindow window;
-		private Label label;
-		private VBox vbox;
+		private Gtk.Label label;
+		private Gtk.VBox vbox;
 
 		public DateTime date { get; set; }
 
@@ -35,17 +31,17 @@ namespace Maya.Widgets {
 
 			this.window = window;
 
-			vbox = new VBox (false, 0);
-			label = new Label ("");
+			vbox = new Gtk.VBox (false, 0);
+			label = new Gtk.Label ("");
 
 			// EventBox Properties
 			can_focus = true;
 			set_visible_window (true);
-			events |= EventMask.BUTTON_PRESS_MASK;
+			events |= Gdk.EventMask.BUTTON_PRESS_MASK;
 			get_style_context ().add_provider (window.style_provider, 600);
 			get_style_context ().add_class ("cell");
 
-			label.halign = Align.END;
+			label.halign = Gtk.Align.END;
 			label.get_style_context ().add_provider (window.style_provider, 600);
 			label.name = "date";
 			vbox.pack_start (label, false, false, 0);
@@ -64,41 +60,41 @@ namespace Maya.Widgets {
 			notify["date"].connect (() => label.label = date.get_day_of_month ().to_string ());
 
 			/*// DEBUGGING:
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));*/
+			eventslist.add_event(new Maya.View.Event(window));
+			eventslist.add_event(new Maya.View.Event(window));
+			eventslist.add_event(new Maya.View.Event(window));
+			eventslist.add_event(new Maya.View.Event(window));
+			eventslist.add_event(new Maya.View.Event(window));
+			eventslist.add_event(new Maya.View.Event(window));*/
 		}
 
-		private bool on_date_change (EventFocus event) {
+		private bool on_date_change (Gdk.EventFocus event) {
 
 		    label.label = date.get_day_of_month ().to_string ();
 		    return true;
 		}
 
-		private bool on_button_press (EventButton event) {
+		private bool on_button_press (Gdk.EventButton event) {
 
 			grab_focus ();
 			return true;
 		}
 
-		private bool on_focus_in (EventFocus event) {
+		private bool on_focus_in (Gdk.EventFocus event) {
 
 			window.toolbar.add_button.sensitive = true;
 			return false;
 		}
 
-		private bool on_focus_out (EventFocus event) {
+		private bool on_focus_out (Gdk.EventFocus event) {
 
 			window.toolbar.add_button.sensitive = false;
 			return false;
 		}
 
-		private bool on_draw (Widget widget, Context cr) {
+		private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
 
-			Allocation size;
+			Gtk.Allocation size;
 			widget.get_allocation (out size);
 
 			// Draw left and top black strokes
@@ -108,7 +104,7 @@ namespace Maya.Widgets {
 
 			cr.set_source_rgba (0.0, 0.0, 0.0, 0.95);
 			cr.set_line_width (1.0);
-			cr.set_antialias (Antialias.NONE);
+			cr.set_antialias (Cairo.Antialias.NONE);
 			cr.stroke ();
 
 			// Draw inner highlight stroke

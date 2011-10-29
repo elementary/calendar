@@ -15,17 +15,13 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Gtk;
-using Gdk;
-using GLib;
-
 using Granite;
 using Granite.Services;
 
 using Maya;
 using Maya.Services;
 
-namespace Maya.Widgets {
+namespace Maya.View.Widgets {
 
 	public class ContractorButtonWithMenu : Granite.Widgets.ToolButtonWithMenu {
 
@@ -36,7 +32,7 @@ namespace Maya.Widgets {
 
 		public ContractorButtonWithMenu (MayaWindow window) {
 
-		    base (new Image.from_icon_name ("document-export", IconSize.MENU), "Share", new Menu());
+		    base (new Gtk.Image.from_icon_name ("document-export", Gtk.IconSize.MENU), "Share", new Gtk.Menu());
 			this.window = window;
 
 			// try to connect
@@ -49,7 +45,7 @@ namespace Maya.Widgets {
 		        services = contract.GetServicesByLocation ("file:///usr/share/contractor/");
 
                 foreach (HashTable<string,string> service in services) {
-                    MenuItem item = new MenuItem.with_label(service.lookup ("Description"));
+                    Gtk.MenuItem item = new Gtk.MenuItem.with_label(service.lookup ("Description"));
                     item.activate.connect (activate_contract);
                     menu.append (item);
                 }
@@ -61,7 +57,7 @@ namespace Maya.Widgets {
 
 		private void activate_contract () {
 
-		    MenuItem menuitem = (MenuItem) menu.get_active();
+		    Gtk.MenuItem menuitem = (Gtk.MenuItem) menu.get_active();
             string app_menu = menuitem.get_label();
 
 		    foreach (HashTable<string,string> service in services) {

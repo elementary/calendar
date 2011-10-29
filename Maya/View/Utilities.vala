@@ -15,13 +15,11 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-using Gtk;
-
-namespace Maya.Widgets {
+namespace Maya.View {
 
 	public class Utilities {
 	
-		public static Widget set_margins (Widget widget, int top, int right, int bottom, int left) {
+		public static Gtk.Widget set_margins (Gtk.Widget widget, int top, int right, int bottom, int left) {
 			
 			widget.margin_top = top;
 			widget.margin_right = right;
@@ -31,7 +29,7 @@ namespace Maya.Widgets {
 			return widget;
 		}
 		
-		public static Alignment set_paddings (Widget widget, int top, int right, int bottom, int left) {
+		public static Gtk.Alignment set_paddings (Gtk.Widget widget, int top, int right, int bottom, int left) {
 		
 			var alignment = new Gtk.Alignment (0.0f, 0.0f, 1.0f, 1.0f);
 			alignment.top_padding = top;

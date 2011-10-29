@@ -15,75 +15,71 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Gtk;
-using Gdk;
-
 using Granite;
 using Granite.Services;
 
 using Maya;
-using Maya.Dialogs;
 
-namespace Maya.Widgets {
+namespace Maya.View {
 
 	public class MayaMenu : Gtk.Menu {
 
 		private MayaWindow window;
 
-		public MenuItem today { get; private set; }
+		public Gtk.MenuItem today { get; private set; }
 
-		public MenuItem import { get; private set; }
-		public MenuItem export { get; private set; }
+		public Gtk.MenuItem import { get; private set; }
+		public Gtk.MenuItem export { get; private set; }
 
-		public CheckMenuItem fullscreen { get; private set; }
-		public CheckMenuItem weeknumbers { get; private set; }
+		public Gtk.CheckMenuItem fullscreen { get; private set; }
+		public Gtk.CheckMenuItem weeknumbers { get; private set; }
 
-		public MenuItem sync { get; private set; }
+		public Gtk.MenuItem sync { get; private set; }
 
 		public MayaMenu (MayaWindow window) {
 
 			this.window = window;
 
 			// Create everything
-			today = new MenuItem.with_label ("Today");
+			today = new Gtk.MenuItem.with_label ("Today");
 
-			import = new MenuItem.with_label ("Import...");
+			import = new Gtk.MenuItem.with_label ("Import...");
 
-			var export_submenu = new Menu ();
-			var outlook = new MenuItem.with_label ("To Outlook (.csv)");
-			var ical = new MenuItem.with_label ("To iCal (.ics)");
+			var export_submenu = new Gtk.Menu ();
+			var outlook = new Gtk.MenuItem.with_label ("To Outlook (.csv)");
+			var ical = new Gtk.MenuItem.with_label ("To iCal (.ics)");
 			export_submenu.append (outlook);
 			export_submenu.append (ical);
-			export = new MenuItem.with_label ("Export...");
+			export = new Gtk.MenuItem.with_label ("Export...");
 			export.set_submenu (export_submenu);
 
-			fullscreen = new CheckMenuItem.with_label ("Fullscreen");
-			fullscreen.active = (window.saved_state.window_state == MayaWindowState.FULLSCREEN);
+			fullscreen = new Gtk.CheckMenuItem.with_label ("Fullscreen");
+			fullscreen.active = (window.saved_state.window_state == Settings.WindowState.FULLSCREEN);
 
-			weeknumbers = new CheckMenuItem.with_label ("Show Week Numbers");
+			weeknumbers = new Gtk.CheckMenuItem.with_label ("Show Week Numbers");
 			weeknumbers.active = window.saved_state.show_weeks;
 
-			sync = new MenuItem.with_label ("Sync...");
+			sync = new Gtk.MenuItem.with_label ("Sync...");
 
 			// Append in correct order
 			append (today);
 
-			append (new SeparatorMenuItem ());
+			append (new Gtk.SeparatorMenuItem ());
 
 			append (import);
 			append (export);
 
-			append (new SeparatorMenuItem ());
+			append (new Gtk.SeparatorMenuItem ());
 
 			append (fullscreen);
 			append (weeknumbers);
 
-			append (new SeparatorMenuItem ());
+			append (new Gtk.SeparatorMenuItem ());
 
 			append (sync);
 
 			// Callbacks
-			today.activate.connect ( () => window.calendar_view.calendar.focus_today ());
+			today.activate.connect ( () => window.calendar_view.grid.focus_today ());
 			fullscreen.toggled.connect (toggle_fullscreen);
 			weeknumbers.toggled.connect ( () => window.saved_state.show_weeks = weeknumbers.active );
 		}
