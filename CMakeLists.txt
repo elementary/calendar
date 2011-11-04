@@ -103,8 +103,8 @@ vala_precompile(VALA_C
     Maya/View/Calendar/Grid.vala
     Maya/View/Calendar/GridDay.vala
     Maya/View/Calendar/Header.vala
-    Maya/View/Calendar/View.vala
     Maya/View/Calendar/Weeks.vala
+    Maya/View/CalendarView.vala
     Maya/View/EventDialog.vala
     Maya/View/MayaMenu.vala
     Maya/View/MayaToolbar.vala

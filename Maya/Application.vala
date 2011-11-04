@@ -86,7 +86,7 @@ namespace Maya {
 
         private Gtk.Window window { get; set; }
 		private View.MayaToolbar toolbar { get; set; }
-		private View.Calendar.View calendar { get; set; }
+		private View.CalendarView calview { get; set; }
 		private View.Sidebar sidebar { get; set; }
         private Gtk.HPaned hpaned { get; set; }
 
@@ -110,7 +110,7 @@ namespace Maya {
         private void initialise() {
 
 			toolbar = new View.MayaToolbar ();
-			calendar = new View.Calendar.View ();
+			calview = new View.CalendarView ();
 			sidebar = new View.Sidebar ();
 
             window = new Gtk.Window ();
@@ -134,7 +134,7 @@ namespace Maya {
 			hpaned = new Gtk.HPaned ();
 			vbox.pack_start (toolbar, false, false, 0);
 			vbox.pack_end (hpaned);
-			hpaned.add (calendar);
+			hpaned.add (calview);
 			hpaned.add (sidebar);
 			window.add (vbox);
 
@@ -147,12 +147,12 @@ namespace Maya {
 			prefs.changed["week-starts-on"].connect (prefs_week_starts_on_changed);
 
             handler = new Services.DateHandler();
-			handler.changed.connect (date_changed);
+			handler.changed.connect (refresh_calendar);
 
             restore_saved_state();
 
             set_date ();
-			date_changed();
+			refresh_calendar();
 
             set_midnight_updating();
         }
@@ -173,7 +173,7 @@ namespace Maya {
 			if (handler.current_month != date.get_month () || handler.current_year != date.get_year ())
 				handler.add_full_offset (date.get_month () - handler.current_month, date.get_year () - handler.current_year);
 
-            calendar.grid.set_date (date, days_to_prepend);
+            calview.grid.set_date (date, days_to_prepend);
 		}
 
         private void set_midnight_updating() {
@@ -185,13 +185,13 @@ namespace Maya {
 			Timeout.add_seconds ((uint) difference, () => {
 
 				if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
-					calendar.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
+					calview.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
 
 				tomorrow = tomorrow.add_days (1);
 
 				Timeout.add (1000 * 60 * 60 * 24, () => {
 					if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
-						calendar.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
+						calview.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
 
 					tomorrow = tomorrow.add_days (1);
 
@@ -225,8 +225,8 @@ namespace Maya {
 
             // Calendar
 
-            calendar.weeks.update (handler.date, saved_state.show_weeks);
-            calendar.header.update_columns (prefs.week_starts_on);
+            calview.weeks.update (handler.date, saved_state.show_weeks);
+            calview.header.update_columns (prefs.week_starts_on);
 
 		}
 		
@@ -263,25 +263,25 @@ namespace Maya {
 
         //--- SIGNAL HANDLERS ---//
 
-        private void date_changed () {
-            debug("date_changed");
+        private void refresh_calendar () {
+            debug("Refreshing calendar widgets");
 
-            calendar.header.update_columns (prefs.week_starts_on);
-            calendar.weeks.update (handler.date, saved_state.show_weeks);
-            calendar.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
+            calview.header.update_columns (prefs.week_starts_on);
+            calview.weeks.update (handler.date, saved_state.show_weeks);
+            calview.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
             toolbar.month_switcher.text = handler.date.format ("%B");
             toolbar.year_switcher.text = handler.date.format ("%Y");
         }
 
         private void prefs_week_starts_on_changed () {
             debug("prefs_week_starts_on_changed");
-            date_changed ();
+            refresh_calendar ();
         }
 
         private void saved_state_show_weeks_changed () {
             debug("saved_state_show_weeks_changed");
 
-            calendar.weeks.update (handler.date, saved_state.show_weeks);
+            calview.weeks.update (handler.date, saved_state.show_weeks);
         }
 
         private bool window_delete_event_cb (Gdk.EventAny event) {

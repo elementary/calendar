@@ -15,21 +15,21 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya.View.Calendar {
+namespace Maya.View {
 
-	public class View : Gtk.HBox {
+	public class CalendarView : Gtk.HBox {
 	
 		private Gtk.VBox box;
 	
-	    public Weeks weeks { get; private set; }
-		public Header header { get; private set; }
-		public Grid grid { get; private set; }
+	    public Calendar.Weeks weeks { get; private set; }
+		public Calendar.Header header { get; private set; }
+		public Calendar.Grid grid { get; private set; }
 		
-		public View () {
+		public CalendarView () {
 			
-			weeks = new Weeks ();
-			header = new Header ();
-			grid = new Grid ();
+			weeks = new Calendar.Weeks ();
+			header = new Calendar.Header ();
+			grid = new Calendar.Grid ();
 			
 			// HBox properties
 			spacing = 0;
