@@ -42,17 +42,26 @@ namespace Maya.View.Calendar {
 				}
 		}
 
-		public void set_date (DateTime date, int days_to_prepend) {
+        private static int days_to_prepend (int year, int month, int week_starts_on) {
+            int fdom = (new DateTime.local (year, month, 1, 0, 0, 0)).get_day_of_week ();
+            int days = 1 - fdom + week_starts_on;
+            return days > 0 ? 7 - days : -days;
+        }
 
-			var date_to_index = days_to_prepend + date.get_day_of_month () - 1;
+		public void focus_date (DateTime date, int week_starts_on) {
+
+            int dtp = days_to_prepend (date.get_year(), date.get_month(), week_starts_on);
+
+			var date_to_index = dtp + date.get_day_of_month () - 1;
 			days[date_to_index].grab_focus ();
 		}
 
-		public void update_month (int month, int year, int days_to_prepend) {
+		public void update_month (int month, int year, int week_starts_on) {
 
 			var today = new DateTime.now_local ();
 
-			var date = new DateTime.local (year, month, 1, 0, 0, 0).add_days (-days_to_prepend);
+            int dtp =  days_to_prepend (year, month, week_starts_on);
+			var date = new DateTime.local (year, month, 1, 0, 0, 0).add_days (-dtp);
 
 			foreach (var day in days) {
 				if (date.get_day_of_year () == today.get_day_of_year () && date.get_year () == today.get_year ()) {

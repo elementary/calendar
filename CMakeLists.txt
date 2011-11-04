@@ -95,7 +95,6 @@ include(ValaPrecompile)
 vala_precompile(VALA_C
     Maya/Application.vala
     Maya/Services/Contractor.vala
-    Maya/Services/DateHandler.vala
     Maya/Services/Dexter.vala
     Maya/Settings/MayaSettings.vala
     Maya/Settings/SavedState.vala

@@ -90,8 +90,8 @@ namespace Maya {
 		private View.Sidebar sidebar { get; set; }
         private Gtk.HPaned hpaned { get; set; }
 
-		private Services.DateHandler handler { get; private set; }
-	
+        private DateTime date { get; set; }
+
 		protected override void activate () {
 
 			if (get_windows () != null) {
@@ -109,6 +109,8 @@ namespace Maya {
 
         private void initialise() {
 
+            date = new DateTime.now_local (); 
+
 			toolbar = new View.MayaToolbar ();
 			calview = new View.CalendarView ();
 			sidebar = new View.Sidebar ();
@@ -120,15 +122,15 @@ namespace Maya {
             window.delete_event.connect (window_delete_event_cb);
             window.destroy.connect( () => Gtk.main_quit() );
 
-			toolbar.button_add.clicked.connect(toolbutton_add_clicked);
-			toolbar.menu.today.activate.connect ( () => set_date (null));
+			toolbar.button_add.clicked.connect(toolbar_add_clicked);
+			toolbar.menu.today.activate.connect ( () => set_calendar_date (null));
 			toolbar.menu.fullscreen.toggled.connect (toggle_fullscreen);
 			toolbar.menu.weeknumbers.toggled.connect (menu_show_weeks_toggled);
 
-			toolbar.month_switcher.left_clicked.connect (() => handler.add_month_offset (-1));
-			toolbar.month_switcher.right_clicked.connect (() => handler.add_month_offset (1));
-			toolbar.year_switcher.left_clicked.connect (() => handler.add_year_offset (-1));
-			toolbar.year_switcher.right_clicked.connect (() => handler.add_year_offset (1));
+			toolbar.month_switcher.left_clicked.connect (toolbar_month_switcher_left_clicked);
+			toolbar.month_switcher.right_clicked.connect (toolbar_month_switcher_right_clicked);
+			toolbar.year_switcher.left_clicked.connect (toolbar_year_switcher_left_clicked);
+			toolbar.year_switcher.right_clicked.connect (toolbar_year_switcher_right_clicked);
 
 			var vbox = new Gtk.VBox (false, 0);
 			hpaned = new Gtk.HPaned ();
@@ -146,34 +148,24 @@ namespace Maya {
 			prefs = new Settings.MayaSettings ();
 			prefs.changed["week-starts-on"].connect (prefs_week_starts_on_changed);
 
-            handler = new Services.DateHandler();
-			handler.changed.connect (refresh_calendar);
-
             restore_saved_state();
 
-            set_date ();
+            set_calendar_date (date);
 			refresh_calendar();
 
             set_midnight_updating();
         }
 
-		private int days_to_prepend { // TODO: will be refactored
-			get {
-				int days = 1 - handler.first_day_of_month + prefs.week_starts_on;
-				return days > 0 ? 7 - days : -days;
-			}
-		}
+		private void set_calendar_date (DateTime? new_date) {
+            debug ("set_calendar_date");
 
-		public void set_date (owned DateTime? date = null) { // TODO: will be tidied up
-            debug ("set_date");
+			if (date.get_month() != new_date.get_month() || date.get_year() != new_date.get_year()) {
+                int year_diff = date.get_year() - new_date.get_year();
+                int month_diff = date.get_month() - new_date.get_month();
+                date = date.add_full (year_diff, month_diff, 0, 0, 0, 0);
+            }
 
-            if (date == null)
-                date = new DateTime.now_local ();
-
-			if (handler.current_month != date.get_month () || handler.current_year != date.get_year ())
-				handler.add_full_offset (date.get_month () - handler.current_month, date.get_year () - handler.current_year);
-
-            calview.grid.set_date (date, days_to_prepend);
+            calview.grid.focus_date (new_date, prefs.week_starts_on);
 		}
 
         private void set_midnight_updating() {
@@ -184,14 +176,14 @@ namespace Maya {
 
 			Timeout.add_seconds ((uint) difference, () => {
 
-				if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
-					calview.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
+				if (date.get_month() == tomorrow.get_month() && date.get_year() == tomorrow.get_year())
+					calview.grid.update_month (date.get_month(), date.get_year(), prefs.week_starts_on);
 
 				tomorrow = tomorrow.add_days (1);
 
 				Timeout.add (1000 * 60 * 60 * 24, () => {
-					if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
-						calview.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
+					if (date.get_month() == tomorrow.get_month() && date.get_year() == tomorrow.get_year())
+						calview.grid.update_month (date.get_month(), date.get_year(), prefs.week_starts_on);
 
 					tomorrow = tomorrow.add_days (1);
 
@@ -225,7 +217,7 @@ namespace Maya {
 
             // Calendar
 
-            calview.weeks.update (handler.date, saved_state.show_weeks);
+            calview.weeks.update (date, saved_state.show_weeks);
             calview.header.update_columns (prefs.week_starts_on);
 
 		}
@@ -265,12 +257,11 @@ namespace Maya {
 
         private void refresh_calendar () {
             debug("Refreshing calendar widgets");
-
             calview.header.update_columns (prefs.week_starts_on);
-            calview.weeks.update (handler.date, saved_state.show_weeks);
-            calview.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
-            toolbar.month_switcher.text = handler.date.format ("%B");
-            toolbar.year_switcher.text = handler.date.format ("%Y");
+            calview.weeks.update (date, saved_state.show_weeks);
+            calview.grid.update_month (date.get_month(), date.get_year(), prefs.week_starts_on);
+            toolbar.month_switcher.text = date.format ("%B");
+            toolbar.year_switcher.text = date.format ("%Y");
         }
 
         private void prefs_week_starts_on_changed () {
@@ -280,24 +271,40 @@ namespace Maya {
 
         private void saved_state_show_weeks_changed () {
             debug("saved_state_show_weeks_changed");
-
-            calview.weeks.update (handler.date, saved_state.show_weeks);
+            calview.weeks.update (date, saved_state.show_weeks);
         }
 
         private bool window_delete_event_cb (Gdk.EventAny event) {
-
             update_saved_state();
             return false;
         }
 
-        private void toolbutton_add_clicked () {
-
+        private void toolbar_add_clicked () {
 		    var add_dialog = new View.AddEventDialog (window);
 		    add_dialog.show ();
         }
 
-        private void menu_show_weeks_toggled () {
+        private void toolbar_month_switcher_left_clicked () {
+            date = date.add_months (-1);
+            refresh_calendar ();
+        }
 
+        private void toolbar_month_switcher_right_clicked () {
+            date = date.add_months (1);
+            refresh_calendar ();
+        }
+
+        private void toolbar_year_switcher_left_clicked () {
+            date = date.add_years (-1);
+            refresh_calendar ();
+        }
+
+        private void toolbar_year_switcher_right_clicked () {
+            date = date.add_years (1);
+            refresh_calendar ();
+        }
+
+        private void menu_show_weeks_toggled () {
             saved_state.show_weeks = toolbar.menu.weeknumbers.active;
         }
 	}
