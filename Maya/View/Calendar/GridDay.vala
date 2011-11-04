@@ -22,7 +22,9 @@ namespace Maya.View.Calendar {
 		private Gtk.Label label;
 		private Gtk.VBox vbox;
 
-		public GridDay (Gtk.CssProvider style_provider) {
+		public GridDay () {
+
+			var style_provider = Maya.View.Utilities.get_css_provider ();
 
 			vbox = new Gtk.VBox (false, 0);
 			label = new Gtk.Label ("");

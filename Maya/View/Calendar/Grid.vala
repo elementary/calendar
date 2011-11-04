@@ -23,8 +23,6 @@ namespace Maya.View.Calendar {
 
 		public Grid () {
 
-			var style_provider = Maya.View.Utilities.get_css_provider ();
-
 			// Gtk.Table properties
 			n_rows = 6;
 			n_columns = 7;
@@ -36,7 +34,7 @@ namespace Maya.View.Calendar {
 			days = new GridDay[n_rows * n_columns];
 			for (int row = 0; row < n_rows; row++)
 				for (int col = 0; col < n_columns; col++) {
-					var day = new GridDay (style_provider);
+					var day = new GridDay ();
 					days[row * n_columns + col] = day;
 					attach_defaults (day, col, col + 1, row, row + 1);
 				}
