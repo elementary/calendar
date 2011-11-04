@@ -177,13 +177,13 @@ namespace Maya {
 			Timeout.add_seconds ((uint) difference, () => {
 
 				if (date.get_month() == tomorrow.get_month() && date.get_year() == tomorrow.get_year())
-					calview.grid.update_month (date.get_month(), date.get_year(), prefs.week_starts_on);
+					calview.grid.change_month (date.get_month(), date.get_year(), prefs.week_starts_on);
 
 				tomorrow = tomorrow.add_days (1);
 
 				Timeout.add (1000 * 60 * 60 * 24, () => {
 					if (date.get_month() == tomorrow.get_month() && date.get_year() == tomorrow.get_year())
-						calview.grid.update_month (date.get_month(), date.get_year(), prefs.week_starts_on);
+						calview.grid.change_month (date.get_month(), date.get_year(), prefs.week_starts_on);
 
 					tomorrow = tomorrow.add_days (1);
 
@@ -195,7 +195,6 @@ namespace Maya {
         }
 
 		private void restore_saved_state () {
-
             debug("Restoring saved state");
 			
 			// Window
@@ -223,7 +222,6 @@ namespace Maya {
 		}
 		
 		private void update_saved_state () {
-			
             debug("Updating saved state");
 
 			// Save window state
@@ -253,24 +251,22 @@ namespace Maya {
 				window.unfullscreen ();
 		}
 
-        //--- SIGNAL HANDLERS ---//
-
         private void refresh_calendar () {
             debug("Refreshing calendar widgets");
             calview.header.update_columns (prefs.week_starts_on);
             calview.weeks.update (date, saved_state.show_weeks);
-            calview.grid.update_month (date.get_month(), date.get_year(), prefs.week_starts_on);
+            calview.grid.change_month (date.get_month(), date.get_year(), prefs.week_starts_on);
             toolbar.month_switcher.text = date.format ("%B");
             toolbar.year_switcher.text = date.format ("%Y");
         }
 
+        //--- SIGNAL HANDLERS ---//
+
         private void prefs_week_starts_on_changed () {
-            debug("prefs_week_starts_on_changed");
             refresh_calendar ();
         }
 
         private void saved_state_show_weeks_changed () {
-            debug("saved_state_show_weeks_changed");
             calview.weeks.update (date, saved_state.show_weeks);
         }
 

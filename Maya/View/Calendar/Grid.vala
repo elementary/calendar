@@ -54,7 +54,7 @@ namespace Maya.View.Calendar {
 			days[date_to_index].grab_focus ();
 		}
 
-		public void update_month (int month, int year, int week_starts_on) {
+		public void change_month (int month, int year, int week_starts_on) {
 
 			var today = new DateTime.now_local ();
 
