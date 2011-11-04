@@ -15,16 +15,9 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Granite;
-using Granite.Services;
-
-using Maya;
-
 namespace Maya.View {
 
 	public class MayaMenu : Gtk.Menu {
-
-		private MayaWindow window;
 
 		public Gtk.MenuItem today { get; private set; }
 
@@ -36,9 +29,7 @@ namespace Maya.View {
 
 		public Gtk.MenuItem sync { get; private set; }
 
-		public MayaMenu (MayaWindow window) {
-
-			this.window = window;
+		public MayaMenu () {
 
 			// Create everything
 			today = new Gtk.MenuItem.with_label ("Today");
@@ -54,10 +45,8 @@ namespace Maya.View {
 			export.set_submenu (export_submenu);
 
 			fullscreen = new Gtk.CheckMenuItem.with_label ("Fullscreen");
-			fullscreen.active = (window.saved_state.window_state == Settings.WindowState.FULLSCREEN);
 
 			weeknumbers = new Gtk.CheckMenuItem.with_label ("Show Week Numbers");
-			weeknumbers.active = window.saved_state.show_weeks;
 
 			sync = new Gtk.MenuItem.with_label ("Sync...");
 
@@ -77,19 +66,6 @@ namespace Maya.View {
 			append (new Gtk.SeparatorMenuItem ());
 
 			append (sync);
-
-			// Callbacks
-			today.activate.connect ( () => window.calendar_view.grid.focus_today ());
-			fullscreen.toggled.connect (toggle_fullscreen);
-			weeknumbers.toggled.connect ( () => window.saved_state.show_weeks = weeknumbers.active );
-		}
-
-		private void toggle_fullscreen () {
-
-			if (fullscreen.active)
-				window.fullscreen ();
-			else
-				window.unfullscreen ();
 		}
 
 	}

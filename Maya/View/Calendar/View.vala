@@ -21,7 +21,6 @@ namespace Maya.View.Calendar {
 
 	public class View : Gtk.HBox {
 	
-		private MayaWindow window;
 		private Gtk.VBox box;
 	
 	    public Weeks weeks { get; private set; }
@@ -30,18 +29,14 @@ namespace Maya.View.Calendar {
 		
 		public DateHandler handler { get; private set; }
 	
-		public View (MayaWindow window) {
-			
-			this.window = window;
+		public View (Gtk.CssProvider style_provider) {
 			
 			handler = new DateHandler ();
 			
-			weeks = new Weeks (window, handler);
-			header = new Header (window);
-			grid = new Grid (window, handler);
+			weeks = new Weeks (style_provider);
+			header = new Header (style_provider);
+			grid = new Grid (style_provider);
 			
-			handler = new DateHandler();
-		
 			// HBox properties
 			spacing = 0;
 			homogeneous = false;

@@ -19,8 +19,6 @@ namespace Maya.View {
 
 	public class Sidebar : Gtk.VBox {
 
-		private MayaWindow window;
-
 		public Gtk.Label label { get; private set; }
 		public AgendaView agenda_view { get; private set; }
 
@@ -28,9 +26,7 @@ namespace Maya.View {
 		 * Sidebar is a container for widgets that belong in the sidebar,
 		 * like the AgendaView
 		 */
-		public Sidebar (MayaWindow window) {
-
-			this.window = window;
+		public Sidebar () {
 
 			var scrolled_window = new Gtk.ScrolledWindow (null, null);
 			scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
@@ -45,7 +41,7 @@ namespace Maya.View {
 			label.margin_right = 15;
 			label.justify = Gtk.Justification.CENTER;
 
-			agenda_view = new AgendaView (window);
+			agenda_view = new AgendaView ();
 
 			// VBox properties
 			spacing = 0;

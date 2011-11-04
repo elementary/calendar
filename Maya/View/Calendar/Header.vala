@@ -19,20 +19,16 @@ namespace Maya.View.Calendar {
 
 	public class Header : Gtk.EventBox {
 	
-		private MayaWindow window;
-	
 		private Gtk.Table table;
 		private Gtk.Label[] labels;
 	
-		public Header (MayaWindow window) {
-			
-			this.window = window;
+		public Header (Gtk.CssProvider style_provider) {
 			
 			table = new Gtk.Table (1, 7, true);
 		
 			// EventBox properties
 			set_visible_window (true); // needed for style
-			get_style_context ().add_provider (window.style_provider, 600);
+			get_style_context ().add_provider (style_provider, 600);
 			get_style_context ().add_class ("header");
 			
 			labels = new Gtk.Label[table.n_columns];
@@ -41,22 +37,14 @@ namespace Maya.View.Calendar {
 				labels[c].draw.connect (on_draw);
 				table.attach_defaults (labels[c], c, c + 1, 0, 1);
 			}
-			update_columns ();
 			
 			add (table);
-			
-			// Signals and handlers
-			window.prefs.changed["week-starts-on"].connect (update_columns);
 		}
 		
-		~Header () {
-			window.prefs.changed["week-starts-on"].disconnect (update_columns);
-		}
-		
-		private void update_columns () {
+		public void update_columns (int week_starts_on) {
 			
 			var date = new DateTime.now_local ();
-			date = date.add_days (window.prefs.week_starts_on + 1 - date.get_day_of_week ());
+			date = date.add_days (week_starts_on + 1 - date.get_day_of_week ());
 			foreach (var label in labels) {
 				label.label = date.format ("%A");
 				date = date.add_days (1);

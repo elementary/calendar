@@ -21,24 +21,17 @@ namespace Maya.View.Calendar {
 
 	public class Weeks : Gtk.EventBox {
 
-		private MayaWindow window;
-
 		private Gtk.Table table;
 		private Gtk.Label[] labels;
 
-		private DateHandler handler;
-
-		public Weeks (MayaWindow window, DateHandler handler) {
-
-			this.window = window;
-			this.handler = handler;
+		public Weeks (Gtk.CssProvider style_provider) {
 
 			table = new Gtk.Table (1, 6, false);
 			table.row_spacing = 1;
 
 			// EventBox properties
 			set_visible_window (true); // needed for style
-			get_style_context ().add_provider (window.style_provider, 600);
+			get_style_context ().add_provider (style_provider, 600);
 			get_style_context ().add_class ("weeks");
 
 			labels = new Gtk.Label[table.n_columns];
@@ -47,29 +40,20 @@ namespace Maya.View.Calendar {
 				labels[c].valign = Gtk.Align.START;
 				table.attach_defaults (labels[c], 0, 1, c, c + 1);
 			}
-			update ();
 
 			add (Utilities.set_margins (table, 20, 0, 0, 0));
-
-			// Signals and handlers
-			window.saved_state.changed["show-weeks"].connect (update);
-			handler.changed.connect(update);
 		}
 
-		~Weeks () {
-			window.saved_state.changed["show-weeks"].disconnect (update);
-		}
+		public void update (DateTime date, bool show_weeks) {
 
-		private void update () {
-
-			if (window.saved_state.show_weeks) {
+			if (show_weeks) {
 			    if (!visible)
 			        show ();
 
-			    var date = handler.date;
+			    var next = date;
 		    	foreach (var label in labels) {
-		    		label.label = date.get_week_of_year ().to_string();
-		    		date = date.add_weeks (1);
+		    		label.label = next.get_week_of_year ().to_string();
+		    		next = next.add_weeks (1);
 		    	}
 		    } else {
 		        hide ();

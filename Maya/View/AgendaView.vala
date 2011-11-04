@@ -23,11 +23,7 @@ namespace Maya.View {
      */
 	public class AgendaView : Gtk.VBox {
 
-		private MayaWindow window;
-
-		public AgendaView (MayaWindow window) {
-
-			this.window = window;
+		public AgendaView () {
 
 			// VBox properties
 			spacing = 0;
