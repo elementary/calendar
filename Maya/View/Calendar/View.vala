@@ -15,8 +15,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Maya.Services;
-
 namespace Maya.View.Calendar {
 
 	public class View : Gtk.HBox {
@@ -27,11 +25,7 @@ namespace Maya.View.Calendar {
 		public Header header { get; private set; }
 		public Grid grid { get; private set; }
 		
-		public DateHandler handler { get; private set; }
-	
 		public View (Gtk.CssProvider style_provider) {
-			
-			handler = new DateHandler ();
 			
 			weeks = new Weeks (style_provider);
 			header = new Header (style_provider);

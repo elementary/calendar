@@ -92,6 +92,8 @@ namespace Maya {
 
         private MayaWindow window {get; set; }
 
+		private DateHandler handler { get; private set; }
+	
 		protected override void activate () {
 
 			if (get_windows () != null) {
@@ -112,6 +114,8 @@ namespace Maya {
 			saved_state = new Settings.SavedState ();
 			prefs = new Settings.MayaSettings ();
 			
+            handler = new Services.DateHandler();
+
             window = new MayaWindow ();
             add_window(window);
             window.delete_event.connect (on_window_delete_event);
@@ -125,15 +129,15 @@ namespace Maya {
 
 			saved_state.changed["show-weeks"].connect ( () => {
                 debug("State[show-weeks] changed");
-                window.calendar_view.weeks.update (window.calendar_view.handler.date, saved_state.show_weeks);
+                window.calendar_view.weeks.update (handler.date, saved_state.show_weeks);
             });
-			window.calendar_view.handler.changed.connect( () => {
+			handler.changed.connect( () => {
                 debug("DateHandler changed");
 
-                window.calendar_view.weeks.update (window.calendar_view.handler.date, saved_state.show_weeks);
+                window.calendar_view.weeks.update (handler.date, saved_state.show_weeks);
 
-                window.toolbar.month_switcher.text = window.calendar_view.handler.date.format ("%B");
-                window.toolbar.year_switcher.text = window.calendar_view.handler.date.format ("%Y");
+                window.toolbar.month_switcher.text = handler.date.format ("%B");
+                window.toolbar.year_switcher.text = handler.date.format ("%Y");
             });
 			prefs.changed["week-starts-on"].connect ( () => {
 
@@ -141,25 +145,21 @@ namespace Maya {
 
                 window.calendar_view.header.update_columns (prefs.week_starts_on);
 
-                int month = window.calendar_view.handler.current_month;
-                int year = window.calendar_view.handler.current_year;
-                window.calendar_view.grid.update_month (month, year, days_to_prepend);
+                window.calendar_view.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
 
-                window.toolbar.month_switcher.text = window.calendar_view.handler.date.format ("%B");
-                window.toolbar.year_switcher.text = window.calendar_view.handler.date.format ("%Y");
+                window.toolbar.month_switcher.text = handler.date.format ("%B");
+                window.toolbar.year_switcher.text = handler.date.format ("%Y");
             });
 
-			window.calendar_view.handler.changed.connect ( () => {
-                int month = window.calendar_view.handler.current_month;
-                int year = window.calendar_view.handler.current_year;
-                window.calendar_view.grid.update_month (month, year, days_to_prepend);
+			handler.changed.connect ( () => {
+                window.calendar_view.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
             });
-			window.calendar_view.handler.changed();
+			handler.changed();
 
-			window.toolbar.month_switcher.left_clicked.connect (() => window.calendar_view.handler.add_month_offset (-1));
-			window.toolbar.month_switcher.right_clicked.connect (() => window.calendar_view.handler.add_month_offset (1));
-			window.toolbar.year_switcher.left_clicked.connect (() => window.calendar_view.handler.add_year_offset (-1));
-			window.toolbar.year_switcher.right_clicked.connect (() => window.calendar_view.handler.add_year_offset (1));
+			window.toolbar.month_switcher.left_clicked.connect (() => handler.add_month_offset (-1));
+			window.toolbar.month_switcher.right_clicked.connect (() => handler.add_month_offset (1));
+			window.toolbar.year_switcher.left_clicked.connect (() => handler.add_year_offset (-1));
+			window.toolbar.year_switcher.right_clicked.connect (() => handler.add_year_offset (1));
 
             set_midnight_updating();
 
@@ -170,7 +170,7 @@ namespace Maya {
 
 		private int days_to_prepend { // TODO: will be refactored
 			get {
-				int days = 1 - window.calendar_view.handler.first_day_of_month + prefs.week_starts_on;
+				int days = 1 - handler.first_day_of_month + prefs.week_starts_on;
 				return days > 0 ? 7 - days : -days;
 			}
 		}
@@ -179,8 +179,6 @@ namespace Maya {
 
             if (date == null)
                 date = new DateTime.now_local ();
-
-            var handler = window.calendar_view.handler;
 
 			if (handler.current_month != date.get_month () || handler.current_year != date.get_year ())
 				handler.add_full_offset (date.get_month () - handler.current_month, date.get_year () - handler.current_year);
@@ -195,8 +193,6 @@ namespace Maya {
 			var difference = tomorrow.to_unix() -today.to_unix();
 
 			Timeout.add_seconds ((uint) difference, () => {
-
-                var handler = window.calendar_view.handler;
 
 				if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
 					window.calendar_view.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
@@ -239,7 +235,7 @@ namespace Maya {
 
             // Calendar
 
-            window.calendar_view.weeks.update (window.calendar_view.handler.date, saved_state.show_weeks);
+            window.calendar_view.weeks.update (handler.date, saved_state.show_weeks);
             window.calendar_view.header.update_columns (prefs.week_starts_on);
 
 		}
