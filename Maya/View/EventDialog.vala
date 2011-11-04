@@ -15,11 +15,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-using Granite.Widgets;
-using Granite.Services;
-
-using Maya.View;
-
 namespace Maya.View {
 
 	public class EventDialog : Gtk.Dialog {

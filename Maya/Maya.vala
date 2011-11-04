@@ -15,12 +15,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Granite;
-using Granite.Services;
-
-using Maya.View;
-using Maya.Services;
-
 namespace Maya {
 
 	public class MayaApp : Granite.Application {
@@ -90,9 +84,9 @@ namespace Maya {
 		private Settings.SavedState saved_state { get; set; }
 		private Settings.MayaSettings prefs { get; set; }
 
-        private MayaWindow window {get; set; }
+        private View.MayaWindow window {get; set; }
 
-		private DateHandler handler { get; private set; }
+		private Services.DateHandler handler { get; private set; }
 	
 		protected override void activate () {
 
@@ -116,7 +110,7 @@ namespace Maya {
 			
             handler = new Services.DateHandler();
 
-            window = new MayaWindow ();
+            window = new View.MayaWindow ();
             add_window(window);
             window.delete_event.connect (on_window_delete_event);
             window.destroy.connect( () => Gtk.main_quit() );
