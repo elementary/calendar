@@ -15,18 +15,13 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-using Granite.Widgets;
-using Granite.Services;
-
-using Maya.View;
-
 namespace Maya.View {
 
 	public class EventDialog : Gtk.Dialog {
 		
 		Gtk.Container container { get; private set; }
 	 
-		public EventDialog (MayaWindow window) {
+		public EventDialog (Gtk.Window window) {
 		
 			// Dialog properties
 			modal = true;
@@ -223,7 +218,7 @@ namespace Maya.View {
 	
 	public class AddEventDialog : EventDialog {
 	    
-	    public AddEventDialog (MayaWindow window) {
+	    public AddEventDialog (Gtk.Window window) {
 	        
 	        base(window);
 	    
@@ -249,7 +244,7 @@ namespace Maya.View {
 	
 	public class EditEventDialog : EventDialog {
 	    
-	    public EditEventDialog (MayaWindow window) {
+	    public EditEventDialog (Gtk.Window window) {
 	        
 	        base(window);
 	        

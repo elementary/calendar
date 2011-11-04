@@ -17,19 +17,14 @@
 
 namespace Maya.View.Calendar {
 
-	public class Day : Gtk.EventBox {
+	public class GridDay : Gtk.EventBox {
 
-		private MayaWindow window;
 		private Gtk.Label label;
 		private Gtk.VBox vbox;
 
-		public DateTime date { get; set; }
+		public GridDay () {
 
-		//public EventsList eventslist { get; private set; }
-
-		public Day (MayaWindow window) {
-
-			this.window = window;
+			var style_provider = Maya.View.Utilities.get_css_provider ();
 
 			vbox = new Gtk.VBox (false, 0);
 			label = new Gtk.Label ("");
@@ -38,58 +33,30 @@ namespace Maya.View.Calendar {
 			can_focus = true;
 			set_visible_window (true);
 			events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-			get_style_context ().add_provider (window.style_provider, 600);
+			get_style_context ().add_provider (style_provider, 600);
 			get_style_context ().add_class ("cell");
 
 			label.halign = Gtk.Align.END;
-			label.get_style_context ().add_provider (window.style_provider, 600);
+			label.get_style_context ().add_provider (style_provider, 600);
 			label.name = "date";
 			vbox.pack_start (label, false, false, 0);
-
-            //eventslist = new EventsList (this);
-            //vbox.pack_start (eventslist, true, false, 0);
 
 			add (Utilities.set_margins (vbox, 3, 3, 3, 3));
 
 			// Signals and handlers
 			button_press_event.connect (on_button_press);
-			focus_in_event.connect (on_focus_in);
-			focus_out_event.connect (on_focus_out);
 			draw.connect (on_draw);
-
-			notify["date"].connect (() => label.label = date.get_day_of_month ().to_string ());
-
-			/*// DEBUGGING:
-			eventslist.add_event(new Maya.View.Event(window));
-			eventslist.add_event(new Maya.View.Event(window));
-			eventslist.add_event(new Maya.View.Event(window));
-			eventslist.add_event(new Maya.View.Event(window));
-			eventslist.add_event(new Maya.View.Event(window));
-			eventslist.add_event(new Maya.View.Event(window));*/
 		}
 
-		private bool on_date_change (Gdk.EventFocus event) {
+        public void update_date (DateTime date) {
 
-		    label.label = date.get_day_of_month ().to_string ();
-		    return true;
-		}
+            label.label = date.get_day_of_month ().to_string ();
+        }
 
 		private bool on_button_press (Gdk.EventButton event) {
 
 			grab_focus ();
 			return true;
-		}
-
-		private bool on_focus_in (Gdk.EventFocus event) {
-
-			window.toolbar.add_button.sensitive = true;
-			return false;
-		}
-
-		private bool on_focus_out (Gdk.EventFocus event) {
-
-			window.toolbar.add_button.sensitive = false;
-			return false;
 		}
 
 		private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {

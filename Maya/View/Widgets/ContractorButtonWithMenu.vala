@@ -15,25 +15,16 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Granite;
-using Granite.Services;
-
-using Maya;
-using Maya.Services;
-
 namespace Maya.View.Widgets {
 
 	public class ContractorButtonWithMenu : Granite.Widgets.ToolButtonWithMenu {
 
-		private MayaWindow window;
-
 		private Maya.Services.Contractor contract;
 		private HashTable<string,string>[] services;
 
-		public ContractorButtonWithMenu (MayaWindow window) {
+		public ContractorButtonWithMenu () {
 
 		    base (new Gtk.Image.from_icon_name ("document-export", Gtk.IconSize.MENU), "Share", new Gtk.Menu());
-			this.window = window;
 
 			// try to connect
 			try {

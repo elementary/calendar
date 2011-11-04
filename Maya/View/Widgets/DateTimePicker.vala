@@ -30,7 +30,7 @@ namespace Maya.View.Widgets {
 		public DatePicker date_picker { get; private set; }
 		public TimePicker time_picker { get; private set; }
 		
-		public DateTimePicker (MayaWindow window) {
+		public DateTimePicker () {
 				
 			date_picker = new DatePicker ();
 			time_picker = new TimePicker ();

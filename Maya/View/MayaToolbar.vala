@@ -15,39 +15,32 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Granite.Widgets;
-
-using Maya;
-
 namespace Maya.View {
 
 	public class MayaToolbar : Gtk.Toolbar {
 
-		private MayaWindow window;
-
-		public Gtk.ToolButton add_button { get; private set; }
+		public Gtk.ToolButton button_add { get; private set; }
 		public Gtk.ToolButton edit_button { get; private set; }
 		public Gtk.ToolButton delete_button { get; private set; }
 
 		public Widgets.DateSwitcher month_switcher { get; private set; }
 		public Widgets.DateSwitcher year_switcher { get; private set; }
 
-		public SearchBar search_bar { get; private set; }
+		public Granite.Widgets.SearchBar search_bar { get; private set; }
 
-		public AppMenu app_menu { get; private set; }
+		public Granite.Widgets.AppMenu app_menu { get; private set; }
+		public MayaMenu menu { get; private set; }
+
 		public Widgets.ContractorButtonWithMenu contractor { get; private set; }
 
-		public MayaToolbar (MayaWindow window) {
-
-			this.window = window;
+		public MayaToolbar () {
 
 			// Toolbar properties
 			get_style_context ().add_class ("primary-toolbar"); // compliant with elementary HIG
 
 			// Initialize everything
-			add_button = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add",
-					"Create a new event", false);
-			add_button.clicked.connect(this.add_button_callback);
+			button_add = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add",
+					"Create a new event");
 
 			edit_button = make_toolbutton ("gtk-edit", "Edit the selected event", false);
 			delete_button = make_toolbutton ("edit-delete", "Delete the selected event", false);
@@ -55,16 +48,17 @@ namespace Maya.View {
 			month_switcher = new Widgets.DateSwitcher ();
 			year_switcher = new Widgets.DateSwitcher ();
 
-			search_bar = new SearchBar ("Search For Events..");
+			search_bar = new Granite.Widgets.SearchBar ("Search For Events..");
 
-			contractor = new Widgets.ContractorButtonWithMenu (window);
+			contractor = new Widgets.ContractorButtonWithMenu ();
 			contractor.set_sensitive (false);
 			contractor.tooltip_text = "Share the selected eventmake";
 
-			app_menu = window.app.create_appmenu (new MayaMenu (window));
+            menu = new MayaMenu ();
+			app_menu = new Granite.Widgets.AppMenu (menu);
 
 			// Insert into appropriate positions
-			insert (add_button, 0);
+			insert (button_add, 0);
 			insert (edit_button, 1);
 			insert (delete_button, 2);
 
@@ -108,11 +102,6 @@ namespace Maya.View {
 			return toolitem;
 		}
 
-		private void add_button_callback () {
-
-		    var add_dialog = new View.AddEventDialog (window);
-		    add_dialog.show ();
-		}
 	}
 
 }
