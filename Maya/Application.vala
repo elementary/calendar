@@ -84,7 +84,11 @@ namespace Maya {
 		private Settings.SavedState saved_state { get; set; }
 		private Settings.MayaSettings prefs { get; set; }
 
-        private View.MayaWindow window {get; set; }
+        private Gtk.Window window { get; set; }
+		private View.MayaToolbar toolbar { get; set; }
+		private View.Calendar.View calendar { get; set; }
+		private View.Sidebar sidebar { get; set; }
+        private Gtk.HPaned hpaned { get; set; }
 
 		private Services.DateHandler handler { get; private set; }
 	
@@ -103,12 +107,38 @@ namespace Maya {
 			}
 		}
 
-        private void initialise() { // TODO: this will all be refactored cleanly in due course
+        private void initialise() {
 
-            window = new View.MayaWindow ();
-            add_window(window);
+			toolbar = new View.MayaToolbar ();
+			calendar = new View.Calendar.View ();
+			sidebar = new View.Sidebar ();
+
+            window = new Gtk.Window ();
+			window.title = "Maya";
+			window.icon_name = "office-calendar";
+			window.set_size_request (700, 400);
             window.delete_event.connect (window_delete_event_cb);
             window.destroy.connect( () => Gtk.main_quit() );
+
+			toolbar.button_add.clicked.connect(toolbutton_add_clicked);
+			toolbar.menu.today.activate.connect ( () => set_date (null));
+			toolbar.menu.fullscreen.toggled.connect (toggle_fullscreen);
+			toolbar.menu.weeknumbers.toggled.connect (menu_show_weeks_toggled);
+
+			toolbar.month_switcher.left_clicked.connect (() => handler.add_month_offset (-1));
+			toolbar.month_switcher.right_clicked.connect (() => handler.add_month_offset (1));
+			toolbar.year_switcher.left_clicked.connect (() => handler.add_year_offset (-1));
+			toolbar.year_switcher.right_clicked.connect (() => handler.add_year_offset (1));
+
+			var vbox = new Gtk.VBox (false, 0);
+			hpaned = new Gtk.HPaned ();
+			vbox.pack_start (toolbar, false, false, 0);
+			vbox.pack_end (hpaned);
+			hpaned.add (calendar);
+			hpaned.add (sidebar);
+			window.add (vbox);
+
+            add_window(window);
 
 			saved_state = new Settings.SavedState ();
 			saved_state.changed["show-weeks"].connect (saved_state_show_weeks_changed);
@@ -118,16 +148,6 @@ namespace Maya {
 
             handler = new Services.DateHandler();
 			handler.changed.connect (date_changed);
-
-			window.toolbar.button_add.clicked.connect(toolbutton_add_clicked);
-			window.toolbar.menu.today.activate.connect ( () => set_date (null));
-			window.toolbar.menu.fullscreen.toggled.connect (toggle_fullscreen);
-			window.toolbar.menu.weeknumbers.toggled.connect (menu_show_weeks_toggled);
-
-			window.toolbar.month_switcher.left_clicked.connect (() => handler.add_month_offset (-1));
-			window.toolbar.month_switcher.right_clicked.connect (() => handler.add_month_offset (1));
-			window.toolbar.year_switcher.left_clicked.connect (() => handler.add_year_offset (-1));
-			window.toolbar.year_switcher.right_clicked.connect (() => handler.add_year_offset (1));
 
             restore_saved_state();
 
@@ -153,7 +173,7 @@ namespace Maya {
 			if (handler.current_month != date.get_month () || handler.current_year != date.get_year ())
 				handler.add_full_offset (date.get_month () - handler.current_month, date.get_year () - handler.current_year);
 
-            window.calendar.grid.set_date (date, days_to_prepend);
+            calendar.grid.set_date (date, days_to_prepend);
 		}
 
         private void set_midnight_updating() {
@@ -165,13 +185,13 @@ namespace Maya {
 			Timeout.add_seconds ((uint) difference, () => {
 
 				if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
-					window.calendar.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
+					calendar.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
 
 				tomorrow = tomorrow.add_days (1);
 
 				Timeout.add (1000 * 60 * 60 * 24, () => {
 					if (handler.current_month == tomorrow.get_month () && handler.current_year == tomorrow.get_year ())
-						window.calendar.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
+						calendar.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
 
 					tomorrow = tomorrow.add_days (1);
 
@@ -196,17 +216,17 @@ namespace Maya {
 			else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
 				window.fullscreen ();
 			
-			window.hpaned.position = saved_state.hpaned_position;
+			hpaned.position = saved_state.hpaned_position;
 
             // Menu
 
-			window.toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
-			window.toolbar.menu.weeknumbers.active = saved_state.show_weeks;
+			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
+			toolbar.menu.weeknumbers.active = saved_state.show_weeks;
 
             // Calendar
 
-            window.calendar.weeks.update (handler.date, saved_state.show_weeks);
-            window.calendar.header.update_columns (prefs.week_starts_on);
+            calendar.weeks.update (handler.date, saved_state.show_weeks);
+            calendar.header.update_columns (prefs.week_starts_on);
 
 		}
 		
@@ -230,12 +250,12 @@ namespace Maya {
 				saved_state.window_height = height;
 			}
 			
-			saved_state.hpaned_position = window.hpaned.position;
+			saved_state.hpaned_position = hpaned.position;
 		}
 
 		private void toggle_fullscreen () {
 
-			if (window.toolbar.menu.fullscreen.active)
+			if (toolbar.menu.fullscreen.active)
 				window.fullscreen ();
 			else
 				window.unfullscreen ();
@@ -246,11 +266,11 @@ namespace Maya {
         private void date_changed () {
             debug("date_changed");
 
-            window.calendar.header.update_columns (prefs.week_starts_on);
-            window.calendar.weeks.update (handler.date, saved_state.show_weeks);
-            window.calendar.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
-            window.toolbar.month_switcher.text = handler.date.format ("%B");
-            window.toolbar.year_switcher.text = handler.date.format ("%Y");
+            calendar.header.update_columns (prefs.week_starts_on);
+            calendar.weeks.update (handler.date, saved_state.show_weeks);
+            calendar.grid.update_month (handler.current_month, handler.current_year, days_to_prepend);
+            toolbar.month_switcher.text = handler.date.format ("%B");
+            toolbar.year_switcher.text = handler.date.format ("%Y");
         }
 
         private void prefs_week_starts_on_changed () {
@@ -261,7 +281,7 @@ namespace Maya {
         private void saved_state_show_weeks_changed () {
             debug("saved_state_show_weeks_changed");
 
-            window.calendar.weeks.update (handler.date, saved_state.show_weeks);
+            calendar.weeks.update (handler.date, saved_state.show_weeks);
         }
 
         private bool window_delete_event_cb (Gdk.EventAny event) {
@@ -278,7 +298,7 @@ namespace Maya {
 
         private void menu_show_weeks_toggled () {
 
-            saved_state.show_weeks = window.toolbar.menu.weeknumbers.active;
+            saved_state.show_weeks = toolbar.menu.weeknumbers.active;
         }
 	}
 

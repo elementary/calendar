@@ -108,7 +108,6 @@ vala_precompile(VALA_C
     Maya/View/EventDialog.vala
     Maya/View/MayaMenu.vala
     Maya/View/MayaToolbar.vala
-    Maya/View/MayaWindow.vala
     Maya/View/Sidebar.vala
     Maya/View/Utilities.vala
     Maya/View/Widgets/ContractorButtonWithMenu.vala
