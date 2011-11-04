@@ -22,10 +22,12 @@ namespace Maya.View.Calendar {
 		private Gtk.Table table;
 		private Gtk.Label[] labels;
 
-		public Weeks (Gtk.CssProvider style_provider) {
+		public Weeks () {
 
 			table = new Gtk.Table (1, 6, false);
 			table.row_spacing = 1;
+
+			var style_provider = Maya.View.Utilities.get_css_provider ();
 
 			// EventBox properties
 			set_visible_window (true); // needed for style

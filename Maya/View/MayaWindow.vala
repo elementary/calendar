@@ -19,28 +19,18 @@ namespace Maya.View {
 
 	public class MayaWindow : Gtk.Window {
 		
-		public static Gtk.CssProvider style_provider { get; private set; }
-		
 		private Gtk.VBox vbox;
 		public MayaToolbar toolbar { get; private set; }
 		public Gtk.HPaned hpaned { get; private set; }
-		public Calendar.View calendar_view { get; private set; }
+		public Calendar.View calendar { get; private set; }
 		public Sidebar sidebar { get; private set; }
 		
 		public MayaWindow () {
 			
-			// Set up global css provider
-			style_provider = new Gtk.CssProvider ();
-			try {
-				style_provider.load_from_path (Build.PKGDATADIR + "/style/default.css");
-			} catch (Error e) {
-				warning ("Could not add css provider. Some widgets will not look as intended. %s", e.message);
-			}
-			
 			vbox = new Gtk.VBox (false, 0);
 			toolbar = new MayaToolbar ();
 			hpaned = new Gtk.HPaned ();
-			calendar_view = new Calendar.View (style_provider);
+			calendar = new Calendar.View ();
 			sidebar = new Sidebar ();
 			
 			// Window Properties
@@ -52,7 +42,7 @@ namespace Maya.View {
 			vbox.pack_start (toolbar, false, false, 0);
 			vbox.pack_end (hpaned);
 
-			hpaned.add (calendar_view);
+			hpaned.add (calendar);
 			hpaned.add (sidebar);
 			
 			add (vbox);

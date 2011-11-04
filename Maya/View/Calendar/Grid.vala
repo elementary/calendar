@@ -21,7 +21,9 @@ namespace Maya.View.Calendar {
 
 		private Day[] days;
 
-		public Grid (Gtk.CssProvider style_provider) {
+		public Grid () {
+
+			var style_provider = Maya.View.Utilities.get_css_provider ();
 
 			// Gtk.Table properties
 			n_rows = 6;

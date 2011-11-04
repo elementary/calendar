@@ -25,11 +25,11 @@ namespace Maya.View.Calendar {
 		public Header header { get; private set; }
 		public Grid grid { get; private set; }
 		
-		public View (Gtk.CssProvider style_provider) {
+		public View () {
 			
-			weeks = new Weeks (style_provider);
-			header = new Header (style_provider);
-			grid = new Grid (style_provider);
+			weeks = new Weeks ();
+			header = new Header ();
+			grid = new Grid ();
 			
 			// HBox properties
 			spacing = 0;
