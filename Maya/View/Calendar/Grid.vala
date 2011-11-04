@@ -19,7 +19,7 @@ namespace Maya.View.Calendar {
 
 	public class Grid : Gtk.Table {
 
-		private Day[] days;
+		private GridDay[] days;
 
 		public Grid () {
 
@@ -33,10 +33,10 @@ namespace Maya.View.Calendar {
 			homogeneous = true;
 
 			// Initialize days
-			days = new Day[n_rows * n_columns];
+			days = new GridDay[n_rows * n_columns];
 			for (int row = 0; row < n_rows; row++)
 				for (int col = 0; col < n_columns; col++) {
-					var day = new Day (style_provider);
+					var day = new GridDay (style_provider);
 					days[row * n_columns + col] = day;
 					attach_defaults (day, col, col + 1, row, row + 1);
 				}

@@ -17,7 +17,24 @@
 
 namespace Maya {
 
-	public class MayaApp : Granite.Application {
+    public static int main (string[] args) {
+
+        var context = new OptionContext("Calendar");
+        context.add_main_entries(Application.app_options, "maya");
+        context.add_group(Gtk.get_option_group(true));
+
+        try {
+            context.parse(ref args);
+        } catch(Error e) {
+            print(e.message + "\n");
+        }
+
+        Gtk.init(ref args);
+
+        return new Application ().run (args);
+    }
+
+	public class Application : Granite.Application {
 
 		construct {
 
@@ -57,29 +74,12 @@ namespace Maya {
             about_license_type = Gtk.License.GPL_3_0;
 		}
 
-		private static bool OPTION_ADD = false;
+		private static bool APP_OPTION_ADD = false;
 
-		private const OptionEntry[] entries = {
-			{ "add-event", 'a', 0, OptionArg.NONE, out OPTION_ADD, "Just show an add event dialog", null },
+		public static const OptionEntry[] app_options = {
+			{ "add-event", 'a', 0, OptionArg.NONE, out APP_OPTION_ADD, "Just show an add event dialog", null },
 			{ null }
 		};
-
-        public static int main (string[] args) {
-
-            var context = new OptionContext("Calendar");
-            context.add_main_entries(entries, "maya");
-            context.add_group(Gtk.get_option_group(true));
-
-            try {
-                context.parse(ref args);
-            } catch(Error e) {
-                print(e.message + "\n");
-            }
-
-            Gtk.init(ref args);
-
-            return new MayaApp ().run (args);
-        }
 
 		private Settings.SavedState saved_state { get; set; }
 		private Settings.MayaSettings prefs { get; set; }
@@ -95,7 +95,7 @@ namespace Maya {
 			    return;
 			}
 
-			if (OPTION_ADD) {
+			if (APP_OPTION_ADD) {
 			    (new View.AddEventDialog.without_parent (this)).show_all ();
 			} else {
                 initialise();
@@ -105,40 +105,36 @@ namespace Maya {
 
         private void initialise() { // TODO: this will all be refactored cleanly in due course
 
-			saved_state = new Settings.SavedState ();
-			prefs = new Settings.MayaSettings ();
-			
-            handler = new Services.DateHandler();
-
             window = new View.MayaWindow ();
             add_window(window);
-            window.delete_event.connect (on_window_delete_event);
+            window.delete_event.connect (window_delete_event_cb);
             window.destroy.connect( () => Gtk.main_quit() );
 
-			window.toolbar.add_button.clicked.connect(on_toolbutton_add_clicked);
+			saved_state = new Settings.SavedState ();
+			saved_state.changed["show-weeks"].connect (saved_state_show_weeks_changed);
 
+			prefs = new Settings.MayaSettings ();
+			prefs.changed["week-starts-on"].connect (prefs_week_starts_on_changed);
+
+            handler = new Services.DateHandler();
+			handler.changed.connect (date_changed);
+
+			window.toolbar.button_add.clicked.connect(toolbutton_add_clicked);
 			window.toolbar.menu.today.activate.connect ( () => set_date (null));
 			window.toolbar.menu.fullscreen.toggled.connect (toggle_fullscreen);
-			window.toolbar.menu.weeknumbers.toggled.connect ( () => {
-                saved_state.show_weeks = window.toolbar.menu.weeknumbers.active;
-            });
-
-			saved_state.changed["show-weeks"].connect (on_saved_state_show_weeks_changed);
-			prefs.changed["week-starts-on"].connect (on_prefs_week_starts_on_changed);
+			window.toolbar.menu.weeknumbers.toggled.connect (menu_show_weeks_toggled);
 
 			window.toolbar.month_switcher.left_clicked.connect (() => handler.add_month_offset (-1));
 			window.toolbar.month_switcher.right_clicked.connect (() => handler.add_month_offset (1));
 			window.toolbar.year_switcher.left_clicked.connect (() => handler.add_year_offset (-1));
 			window.toolbar.year_switcher.right_clicked.connect (() => handler.add_year_offset (1));
 
-			handler.changed.connect (on_date_changed);
-			handler.changed();
-
-            set_midnight_updating();
-
             restore_saved_state();
 
             set_date ();
+			date_changed();
+
+            set_midnight_updating();
         }
 
 		private int days_to_prepend { // TODO: will be refactored
@@ -149,6 +145,7 @@ namespace Maya {
 		}
 
 		public void set_date (owned DateTime? date = null) { // TODO: will be tidied up
+            debug ("set_date");
 
             if (date == null)
                 date = new DateTime.now_local ();
@@ -246,8 +243,8 @@ namespace Maya {
 
         //--- SIGNAL HANDLERS ---//
 
-        private void on_date_changed () {
-            debug("on_date_changed");
+        private void date_changed () {
+            debug("date_changed");
 
             window.calendar.header.update_columns (prefs.week_starts_on);
             window.calendar.weeks.update (handler.date, saved_state.show_weeks);
@@ -256,27 +253,32 @@ namespace Maya {
             window.toolbar.year_switcher.text = handler.date.format ("%Y");
         }
 
-        private void on_prefs_week_starts_on_changed () {
-            debug("on_prefs_week_starts_on_changed");
-            on_date_changed ();
+        private void prefs_week_starts_on_changed () {
+            debug("prefs_week_starts_on_changed");
+            date_changed ();
         }
 
-        private void on_saved_state_show_weeks_changed () {
-            debug("on_saved_state_show_weeks_changed");
+        private void saved_state_show_weeks_changed () {
+            debug("saved_state_show_weeks_changed");
 
             window.calendar.weeks.update (handler.date, saved_state.show_weeks);
         }
 
-        private bool on_window_delete_event (Gdk.EventAny event) {
+        private bool window_delete_event_cb (Gdk.EventAny event) {
 
             update_saved_state();
             return false;
         }
 
-        private void on_toolbutton_add_clicked () {
+        private void toolbutton_add_clicked () {
 
 		    var add_dialog = new View.AddEventDialog (window);
 		    add_dialog.show ();
+        }
+
+        private void menu_show_weeks_toggled () {
+
+            saved_state.show_weeks = window.toolbar.menu.weeknumbers.active;
         }
 	}
 

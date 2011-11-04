@@ -17,12 +17,12 @@
 
 namespace Maya.View.Calendar {
 
-	public class Day : Gtk.EventBox {
+	public class GridDay : Gtk.EventBox {
 
 		private Gtk.Label label;
 		private Gtk.VBox vbox;
 
-		public Day (Gtk.CssProvider style_provider) {
+		public GridDay (Gtk.CssProvider style_provider) {
 
 			vbox = new Gtk.VBox (false, 0);
 			label = new Gtk.Label ("");

@@ -93,15 +93,15 @@ ensure_vala_version("0.10.0" MINIMUM)
 
 include(ValaPrecompile)
 vala_precompile(VALA_C
-    Maya/Maya.vala
+    Maya/Application.vala
     Maya/Services/Contractor.vala
     Maya/Services/DateHandler.vala
     Maya/Services/Dexter.vala
     Maya/Settings/MayaSettings.vala
     Maya/Settings/SavedState.vala
     Maya/View/AgendaView.vala
-    Maya/View/Calendar/Day.vala
     Maya/View/Calendar/Grid.vala
+    Maya/View/Calendar/GridDay.vala
     Maya/View/Calendar/Header.vala
     Maya/View/Calendar/View.vala
     Maya/View/Calendar/Weeks.vala

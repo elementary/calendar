@@ -19,7 +19,7 @@ namespace Maya.View {
 
 	public class MayaToolbar : Gtk.Toolbar {
 
-		public Gtk.ToolButton add_button { get; private set; }
+		public Gtk.ToolButton button_add { get; private set; }
 		public Gtk.ToolButton edit_button { get; private set; }
 		public Gtk.ToolButton delete_button { get; private set; }
 
@@ -39,7 +39,7 @@ namespace Maya.View {
 			get_style_context ().add_class ("primary-toolbar"); // compliant with elementary HIG
 
 			// Initialize everything
-			add_button = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add",
+			button_add = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add",
 					"Create a new event", false);
 
 			edit_button = make_toolbutton ("gtk-edit", "Edit the selected event", false);
@@ -58,7 +58,7 @@ namespace Maya.View {
 			app_menu = new Granite.Widgets.AppMenu (menu);
 
 			// Insert into appropriate positions
-			insert (add_button, 0);
+			insert (button_add, 0);
 			insert (edit_button, 1);
 			insert (delete_button, 2);
 
