@@ -28,6 +28,8 @@ namespace Maya.View {
 
 		public Granite.Widgets.SearchBar search_bar { get; private set; }
 
+		public Gtk.ToolButton button_calendar_sources { get; private set; }
+
 		public Granite.Widgets.AppMenu app_menu { get; private set; }
 		public MayaMenu menu { get; private set; }
 
@@ -45,6 +47,8 @@ namespace Maya.View {
 			edit_button = make_toolbutton ("gtk-edit", "Edit the selected event", false);
 			delete_button = make_toolbutton ("edit-delete", "Delete the selected event", false);
 
+            button_calendar_sources = make_toolbutton ("gtk-index", "Select calendars to display", true);
+
 			month_switcher = new Widgets.DateSwitcher ();
 			year_switcher = new Widgets.DateSwitcher ();
 
@@ -58,21 +62,23 @@ namespace Maya.View {
 			app_menu = new Granite.Widgets.AppMenu (menu);
 
 			// Insert into appropriate positions
-			insert (button_add, 0);
-			insert (edit_button, 1);
-			insert (delete_button, 2);
+			insert (button_add, -1);
+			insert (edit_button, -1);
+			insert (delete_button, -1);
 
-			insert (make_spacer (), 3);
+			insert (make_spacer (), -1);
 
-			insert (make_toolitem_from_widget (Utilities.set_paddings (month_switcher, 5, 0, 5, 0)), 4);
-			insert (make_toolitem_from_widget (Utilities.set_paddings (year_switcher, 5, 0, 5, 10)), 5);
+			insert (make_toolitem_from_widget (Utilities.set_paddings (month_switcher, 5, 0, 5, 0)), -1);
+			insert (make_toolitem_from_widget (Utilities.set_paddings (year_switcher, 5, 0, 5, 10)), -1);
 
-			insert (make_spacer (), 6);
+			insert (make_spacer (), -1);
 
-			insert (make_toolitem_from_widget (search_bar), 7);
+			insert (make_toolitem_from_widget (search_bar), -1);
 
-			insert (contractor, 8);
-			insert (app_menu, 9);
+			insert (button_calendar_sources, -1);
+
+			//insert (contractor, -1);
+			insert (app_menu, -1);
 		}
 
 		private Gtk.ToolButton make_toolbutton (string icon_name, string tooltip_text, bool sensitive = true,  bool can_focus = false) {

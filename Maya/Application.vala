@@ -89,6 +89,7 @@ namespace Maya {
 		private View.CalendarView calview { get; set; }
 		private View.Sidebar sidebar { get; set; }
         private Gtk.HPaned hpaned { get; set; }
+        private View.SourceSelector source_selector_view { get; set; }
 
         private DateTime date { get; set; }
 
@@ -123,6 +124,7 @@ namespace Maya {
             window.destroy.connect( () => Gtk.main_quit() );
 
 			toolbar.button_add.clicked.connect(toolbar_add_clicked);
+			toolbar.button_calendar_sources.clicked.connect(toolbar_sources_clicked);
 			toolbar.menu.today.activate.connect ( () => set_calendar_date (null));
 			toolbar.menu.fullscreen.toggled.connect (toggle_fullscreen);
 			toolbar.menu.weeknumbers.toggled.connect (menu_show_weeks_toggled);
@@ -141,6 +143,10 @@ namespace Maya {
 			window.add (vbox);
 
             add_window(window);
+
+            var source_selector_model = new Model.SourceSelector();
+            //source_selector_model.debug();
+            source_selector_view = new View.SourceSelector (window, source_selector_model);
 
 			saved_state = new Settings.SavedState ();
 			saved_state.changed["show-weeks"].connect (saved_state_show_weeks_changed);
@@ -277,7 +283,11 @@ namespace Maya {
 
         private void toolbar_add_clicked () {
 		    var add_dialog = new View.AddEventDialog (window);
-		    add_dialog.show ();
+		    add_dialog.present ();
+        }
+
+        private void toolbar_sources_clicked () {
+		    source_selector_view.show_all();
         }
 
         private void toolbar_month_switcher_left_clicked () {

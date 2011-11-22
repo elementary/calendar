@@ -98,12 +98,15 @@ vala_precompile(VALA_C
     Maya/Services/Dexter.vala
     Maya/Settings/MayaSettings.vala
     Maya/Settings/SavedState.vala
+    Maya/Model/CalendarModel.vala
+    Maya/Model/SourceSelector.vala
     Maya/View/AgendaView.vala
     Maya/View/Calendar/Grid.vala
     Maya/View/Calendar/GridDay.vala
     Maya/View/Calendar/Header.vala
     Maya/View/Calendar/Weeks.vala
     Maya/View/CalendarView.vala
+    Maya/View/SourceSelector.vala
     Maya/View/EventDialog.vala
     Maya/View/MayaMenu.vala
     Maya/View/MayaToolbar.vala

@@ -19,8 +19,12 @@ namespace Maya.View {
 
 	public class CalendarView : Gtk.HBox {
 	
+        public signal void cal_month_changed(DateTime new_date);
+        public signal void selection_changed(DateTime new_date);
+
 		private Gtk.VBox box;
 	
+        // XXX: these will all become private
 	    public Calendar.Weeks weeks { get; private set; }
 		public Calendar.Header header { get; private set; }
 		public Calendar.Grid grid { get; private set; }
@@ -43,7 +47,7 @@ namespace Maya.View {
 			pack_start(weeks, false, false, 0);
 			pack_end(box, true, true, 0);
 		}
-		
+
 	}
 
 }
