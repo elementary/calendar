@@ -9,8 +9,15 @@ class SourceSelector: GLib.Object {
 
     Gee.MultiMap<E.SourceGroup, E.Source> group_sources;
 
-    public Gee.List<E.SourceGroup> groups { get; private set; }
-    public Gee.Map<E.SourceGroup, Gtk.TreeModelSort> group_tree_model { get; private set;}
+    Gee.List<E.SourceGroup> _groups;
+    public Gee.List<E.SourceGroup> groups {
+        owned get { return _groups.read_only_view; }
+    }
+
+    Gee.Map<E.SourceGroup, Gtk.TreeModelSort> _group_tree_model;
+    public Gee.Map<E.SourceGroup, Gtk.TreeModelSort> group_tree_model {
+        owned get { return _group_tree_model.read_only_view; }
+    }
 
     public E.SourceGroup? GROUP_LOCAL { get; private set; }
     public E.SourceGroup? GROUP_REMOTE { get; private set; }
@@ -28,20 +35,20 @@ class SourceSelector: GLib.Object {
         GROUP_REMOTE = source_list.peek_group_by_base_uri("webcal://");
         GROUP_CONTACTS = source_list.peek_group_by_base_uri("contacts://");
 
-        groups = new Gee.ArrayList<E.SourceGroup>();
-        groups.add (GROUP_LOCAL);
-        groups.add (GROUP_REMOTE);
-        groups.add (GROUP_CONTACTS);
+        _groups = new Gee.ArrayList<E.SourceGroup>();
+        _groups.add (GROUP_LOCAL);
+        _groups.add (GROUP_REMOTE);
+        _groups.add (GROUP_CONTACTS);
 
         group_sources = new Gee.HashMultiMap<E.SourceGroup, E.Source>();
-        group_tree_model = new Gee.HashMap<E.SourceGroup, Gtk.TreeModelSort>();
+        _group_tree_model = new Gee.HashMap<E.SourceGroup, Gtk.TreeModelSort>();
 
-        foreach (E.SourceGroup group in groups) {
+        foreach (E.SourceGroup group in _groups) {
 
             var list_store = new Gtk.ListStore.newv ( {typeof(SourceDecorator)} );
             var tree_model = new Gtk.TreeModelSort.with_model (list_store);
             tree_model.set_default_sort_func (tree_model_sort_func);
-            group_tree_model.set (group, tree_model);
+            _group_tree_model.set (group, tree_model);
 
             foreach (unowned E.Source esource in group.peek_sources()) {
 
@@ -55,7 +62,6 @@ class SourceSelector: GLib.Object {
                 Gtk.TreeIter iter;
                 list_store.append (out iter);
                 list_store.set_value (iter, 0, source);
-
             }
         }
     }

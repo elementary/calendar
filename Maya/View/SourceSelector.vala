@@ -58,7 +58,7 @@ class SourceGroupTreeView : Gtk.TreeView {
 class SourceGroupBox : Gtk.VBox {
 
     Gtk.Label label;
-    SourceGroupTreeView tview;
+    public SourceGroupTreeView tview { get; private set; }
 
     public SourceGroupBox (E.SourceGroup group, Gtk.TreeModelSort tmodel) {
 
@@ -85,7 +85,11 @@ class SourceGroupBox : Gtk.VBox {
 class SourceSelector : Gtk.Window {
 
     SourceGroupTreeView tree_view;
-    Gee.Map<E.SourceGroup, Gtk.Widget> group_widget;
+
+    Gee.Map<E.SourceGroup, SourceGroupBox> _group_box;
+    public Gee.Map<E.SourceGroup, SourceGroupBox> group_box {
+        owned get { return _group_box.read_only_view; }
+    }
 
     public SourceSelector(Gtk.Window window, Model.SourceSelector model) {
 
@@ -93,7 +97,7 @@ class SourceSelector : Gtk.Window {
         window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
         transient_for = window;
 
-        group_widget = new Gee.HashMap<E.SourceGroup, Gtk.Widget>();
+        _group_box = new Gee.HashMap<E.SourceGroup, SourceGroupBox>();
 
         set_title ("Calendars");
 
@@ -103,6 +107,7 @@ class SourceSelector : Gtk.Window {
             
             var tmodel = model.group_tree_model.get (group);
             var box = new SourceGroupBox (group, tmodel);
+            _group_box.set (group, box);
 
             box.no_show_all = true;
             box.visible = model.get_show_group(group);

@@ -145,8 +145,10 @@ namespace Maya {
             add_window(window);
 
             var source_selector_model = new Model.SourceSelector();
-            //source_selector_model.debug();
             source_selector_view = new View.SourceSelector (window, source_selector_model);
+            foreach (var group in source_selector_model.groups) {
+                var tview = source_selector_view.group_box.get(group).tview;
+            }
 
 			saved_state = new Settings.SavedState ();
 			saved_state.changed["show-weeks"].connect (saved_state_show_weeks_changed);
