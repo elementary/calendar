@@ -46,14 +46,12 @@ class SourceGroupTreeView : Gtk.TreeView {
 
     void data_func_name (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel model, Gtk.TreeIter iter) {
         var source = get_source_for_iter(model, iter);
-        if (source != null)
-            (cell as Gtk.CellRendererText).text = source.esource.peek_name();
+        (cell as Gtk.CellRendererText).text = source.esource.peek_name();
     }
 
     void data_func_enabled (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel model, Gtk.TreeIter iter) {
         var source = get_source_for_iter(model, iter);
-        if (source != null)
-            (cell as Gtk.CellRendererToggle).active = source.enabled;
+        (cell as Gtk.CellRendererToggle).active = source.enabled;
     }
 }
 
