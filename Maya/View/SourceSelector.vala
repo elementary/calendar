@@ -2,10 +2,10 @@ namespace Maya.View {
 
 class SourceGroupTreeView : Gtk.TreeView {
 
-    Gtk.CellRendererText r_name;
-    Gtk.CellRendererToggle r_enabled;
+    public Gtk.CellRendererText r_name { get; private set; }
+    public Gtk.CellRendererToggle r_enabled { get; private set; }
 
-    public SourceGroupTreeView (Gtk.TreeModelSort model) {
+    public SourceGroupTreeView (Model.TreeModelSourceGroup model) {
 
         set_model (model);
 
@@ -26,31 +26,18 @@ class SourceGroupTreeView : Gtk.TreeView {
 
         headers_visible = false;
         set_show_expanders (true);
+        get_selection().mode = Gtk.SelectionMode.SINGLE;
 
         expand_all ();
     }
 
-    Model.SourceDecorator get_source_for_iter (Gtk.TreeModel model, Gtk.TreeIter iter_outer) {
-
-        assert((model as Gtk.TreeModelSort).iter_is_valid(iter_outer));
-
-        Gtk.TreeIter iter_inner;
-        (model as Gtk.TreeModelSort).convert_iter_to_child_iter(out iter_inner, iter_outer);
-        assert(((model as Gtk.TreeModelSort).get_model() as Gtk.ListStore).iter_is_valid(iter_inner));
-
-        Value v;
-        (model as Gtk.TreeModelSort).get_model().get_value(iter_inner, 0, out v);
-
-        return (v as Model.SourceDecorator);
-    }
-
     void data_func_name (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel model, Gtk.TreeIter iter) {
-        var source = get_source_for_iter(model, iter);
+        var source = (model as Model.TreeModelSourceGroup).get_source_for_iter(iter);
         (cell as Gtk.CellRendererText).text = source.esource.peek_name();
     }
 
     void data_func_enabled (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel model, Gtk.TreeIter iter) {
-        var source = get_source_for_iter(model, iter);
+        var source = (model as Model.TreeModelSourceGroup).get_source_for_iter(iter);
         (cell as Gtk.CellRendererToggle).active = source.enabled;
     }
 }
@@ -58,11 +45,14 @@ class SourceGroupTreeView : Gtk.TreeView {
 class SourceGroupBox : Gtk.VBox {
 
     Gtk.Label label;
+    public E.SourceGroup group { get; private set; }
     public SourceGroupTreeView tview { get; private set; }
 
-    public SourceGroupBox (E.SourceGroup group, Gtk.TreeModelSort tmodel) {
+    public SourceGroupBox (E.SourceGroup group, Model.TreeModelSourceGroup tmodel) {
 
         Object (homogeneous:false, spacing:0);
+
+        this.group = group;
 
         label = new Gtk.Label (group.peek_name());
         label.xalign = 0.0f;
@@ -85,6 +75,7 @@ class SourceGroupBox : Gtk.VBox {
 class SourceSelector : Gtk.Window {
 
     SourceGroupTreeView tree_view;
+    Model.SourceSelector model;
 
     Gee.Map<E.SourceGroup, SourceGroupBox> _group_box;
     public Gee.Map<E.SourceGroup, SourceGroupBox> group_box {
@@ -92,6 +83,8 @@ class SourceSelector : Gtk.Window {
     }
 
     public SourceSelector(Gtk.Window window, Model.SourceSelector model) {
+
+        this.model = model;
 
         modal = false;
         window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
@@ -113,6 +106,8 @@ class SourceSelector : Gtk.Window {
             box.visible = model.get_show_group(group);
 
             vbox_widget.pack_start (box, false, false, 0);
+
+            box.tview.get_selection().changed.connect(() => {treeview_selection_changed (box);});
         }
 
         var vbox_window = new Gtk.VBox (false, 0);
@@ -122,6 +117,24 @@ class SourceSelector : Gtk.Window {
         delete_event.connect (hide_on_delete);
     }
 
+    /*
+    * Ensure that only one row is selected in a treeview at any time
+    */
+    void treeview_selection_changed (SourceGroupBox box) {
+
+        // prevent recursion
+        if (box.tview.get_selection().count_selected_rows()==0)
+            return; 
+
+        var groups_to_clear = new Gee.HashSet<E.SourceGroup>();
+        groups_to_clear.add_all (model.groups);
+        groups_to_clear.remove (box.group);
+
+        foreach (var group in groups_to_clear) {
+            var box_clear = group_box.get (group);
+            box_clear.tview.get_selection().unselect_all();
+        }
+    }
 }
 
 }

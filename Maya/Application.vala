@@ -81,17 +81,19 @@ namespace Maya {
 			{ null }
 		};
 
-		private Settings.SavedState saved_state { get; set; }
-		private Settings.MayaSettings prefs { get; set; }
+		Settings.SavedState saved_state;
+		Settings.MayaSettings prefs;
 
-        private Gtk.Window window { get; set; }
-		private View.MayaToolbar toolbar { get; set; }
-		private View.CalendarView calview { get; set; }
-		private View.Sidebar sidebar { get; set; }
-        private Gtk.HPaned hpaned { get; set; }
-        private View.SourceSelector source_selector_view { get; set; }
+        Gtk.Window window;
+		View.MayaToolbar toolbar;
+		View.CalendarView calview;
+		View.Sidebar sidebar;
+        Gtk.HPaned hpaned;
 
-        private DateTime date { get; set; }
+        Model.SourceSelector source_selector_model;
+        View.SourceSelector source_selector_view;
+
+        DateTime date { get; set; }
 
 		protected override void activate () {
 
@@ -144,10 +146,11 @@ namespace Maya {
 
             add_window(window);
 
-            var source_selector_model = new Model.SourceSelector();
+            source_selector_model = new Model.SourceSelector();
             source_selector_view = new View.SourceSelector (window, source_selector_model);
             foreach (var group in source_selector_model.groups) {
                 var tview = source_selector_view.group_box.get(group).tview;
+                tview.r_enabled.toggled.connect ((path) => {source_selector_toggled(group,path);} );
             }
 
 			saved_state = new Settings.SavedState ();
@@ -226,7 +229,6 @@ namespace Maya {
 
             calview.weeks.update (date, saved_state.show_weeks);
             calview.header.update_columns (prefs.week_starts_on);
-
 		}
 		
 		private void update_saved_state () {
@@ -314,6 +316,10 @@ namespace Maya {
 
         private void menu_show_weeks_toggled () {
             saved_state.show_weeks = toolbar.menu.weeknumbers.active;
+        }
+
+        private void source_selector_toggled (E.SourceGroup group, string path) {
+            source_selector_model.toggle_source_status (group, path);
         }
 	}
 
