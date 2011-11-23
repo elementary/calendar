@@ -4,41 +4,25 @@ class SourceGroupTreeView : Gtk.TreeView {
 
     public Gtk.CellRendererText r_name { get; private set; }
     public Gtk.CellRendererToggle r_enabled { get; private set; }
+    public Gtk.TreeViewColumn column { get; private set; }
 
-    public SourceGroupTreeView (Model.TreeModelSourceGroup model) {
+    public SourceGroupTreeView (Gtk.TreeModelSort model) {
 
         set_model (model);
 
-        get_selection().mode = Gtk.SelectionMode.SINGLE;
-
-        var column = new Gtk.TreeViewColumn ();
+        column = new Gtk.TreeViewColumn ();
 
         r_enabled = new Gtk.CellRendererToggle ();
         column.pack_start (r_enabled, false);
-        column.set_cell_data_func (r_enabled, data_func_enabled);
 
         r_name = new Gtk.CellRendererText ();
         column.pack_start (r_name, true);
-        column.set_cell_data_func (r_name, data_func_name);
 
         column.set_expand (true);
         append_column (column);
 
         headers_visible = false;
-        set_show_expanders (true);
-        get_selection().mode = Gtk.SelectionMode.SINGLE;
-
-        expand_all ();
-    }
-
-    void data_func_name (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel model, Gtk.TreeIter iter) {
-        var source = (model as Model.TreeModelSourceGroup).get_source_for_iter(iter);
-        (cell as Gtk.CellRendererText).text = source.esource.peek_name();
-    }
-
-    void data_func_enabled (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel model, Gtk.TreeIter iter) {
-        var source = (model as Model.TreeModelSourceGroup).get_source_for_iter(iter);
-        (cell as Gtk.CellRendererToggle).active = source.enabled;
+        get_selection().mode = Gtk.SelectionMode.NONE; // XXX: temporary
     }
 }
 
@@ -48,7 +32,7 @@ class SourceGroupBox : Gtk.VBox {
     public E.SourceGroup group { get; private set; }
     public SourceGroupTreeView tview { get; private set; }
 
-    public SourceGroupBox (E.SourceGroup group, Model.TreeModelSourceGroup tmodel) {
+    public SourceGroupBox (E.SourceGroup group, Gtk.TreeModelSort tmodel) {
 
         Object (homogeneous:false, spacing:0);
 
@@ -84,11 +68,11 @@ class SourceSelector : Gtk.Window {
 
     public SourceSelector(Gtk.Window window, Model.SourceSelector model) {
 
+        transient_for = window;
         this.model = model;
 
         modal = false;
         window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
-        transient_for = window;
 
         _group_box = new Gee.HashMap<E.SourceGroup, SourceGroupBox>();
 
@@ -99,15 +83,18 @@ class SourceSelector : Gtk.Window {
         foreach (var group in model.groups) {
             
             var tmodel = model.group_tree_model.get (group);
-            var box = new SourceGroupBox (group, tmodel);
-            _group_box.set (group, box);
 
+            var box = new SourceGroupBox (group, tmodel);
             box.no_show_all = true;
             box.visible = model.get_show_group(group);
+            _group_box.set (group, box);
 
             vbox_widget.pack_start (box, false, false, 0);
 
             box.tview.get_selection().changed.connect(() => {treeview_selection_changed (box);});
+
+            box.tview.column.set_cell_data_func (box.tview.r_name, data_func_name);
+            box.tview.column.set_cell_data_func (box.tview.r_enabled, data_func_enabled);
         }
 
         var vbox_window = new Gtk.VBox (false, 0);
@@ -115,6 +102,16 @@ class SourceSelector : Gtk.Window {
         vbox_window.pack_start (vbox_widget, false, false, 0);
 
         delete_event.connect (hide_on_delete);
+    }
+
+    void data_func_name (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel tmodel, Gtk.TreeIter iter) {
+        var source = model.get_source_for_iter(tmodel as Gtk.TreeModelSort, iter);
+        (cell as Gtk.CellRendererText).text = source.peek_name();
+    }
+
+    void data_func_enabled (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel tmodel, Gtk.TreeIter iter) {
+        var source = model.get_source_for_iter(tmodel as Gtk.TreeModelSort, iter);
+        (cell as Gtk.CellRendererToggle).active = model.get_source_enabled(source);
     }
 
     /*
