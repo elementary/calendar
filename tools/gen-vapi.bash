@@ -5,7 +5,7 @@
 # - ensure that system libical version matches LIBICAL_VERSION below
 
 LIBICAL_VERSION="0.44"
-EDS_VERSION="3.2.0"
+EDS_VERSION="3.2.1"
 
 # --- do not modify below ---
 
