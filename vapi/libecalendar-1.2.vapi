@@ -277,7 +277,7 @@ namespace E {
 	}
 	[CCode (cheader_filename = "libecal/e-cal-component.h")]
 	public struct CalComponentDateTime {
-		public void* value;
+		public iCal.icaltimetype value;
 		public weak string tzid;
 	}
 	[CCode (cheader_filename = "libecal/e-cal-component.h")]
