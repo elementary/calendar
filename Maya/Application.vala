@@ -91,6 +91,7 @@ namespace Maya {
         Gtk.HPaned hpaned;
 
         Model.SourceSelector source_selector_model;
+        Model.CalendarModel calendar_model;
         View.SourceSelector source_selector_view;
 
         DateTime date { get; set; }
@@ -112,7 +113,7 @@ namespace Maya {
 
         private void initialise() {
 
-            date = new DateTime.now_local (); 
+            date = new DateTime.now_local ();
 
 			toolbar = new View.MayaToolbar ();
 			calview = new View.CalendarView ();
@@ -153,6 +154,9 @@ namespace Maya {
                 tview.r_enabled.toggled.connect ((path) => {source_selector_toggled(group,path);} );
             }
 
+            var enabled_sources = source_selector_model.get_enabled_sources();
+            calendar_model = new Model.CalendarModel(enabled_sources, date, DateWeekday.SUNDAY);
+
 			saved_state = new Settings.SavedState ();
 			saved_state.changed["show-weeks"].connect (saved_state_show_weeks_changed);
 
@@ -168,7 +172,6 @@ namespace Maya {
         }
 
 		private void set_calendar_date (DateTime? new_date) {
-            debug ("set_calendar_date");
 
 			if (date.get_month() != new_date.get_month() || date.get_year() != new_date.get_year()) {
                 int year_diff = date.get_year() - new_date.get_year();

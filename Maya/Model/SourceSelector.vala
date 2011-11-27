@@ -46,7 +46,7 @@ class SourceSelector: GLib.Object {
 
         foreach (E.SourceGroup group in _groups) {
 
-            debug("Processing E.SourceGroup '%s'", group.peek_name());
+            debug("Processing source group '%s'", group.peek_name());
 
             var list_store = new Gtk.ListStore.newv ( {typeof(E.Source)} );
             var tree_model = new Gtk.TreeModelSort.with_model (list_store);
@@ -56,7 +56,7 @@ class SourceSelector: GLib.Object {
 
             foreach (E.Source source in group.peek_sources()) {
 
-                debug("Adding E.Source '%s'", source.peek_name());
+                debug("Adding source '%s'", source.peek_name());
 
                 group_sources.set(group, source);
                 source_enabled.set (source, true);
@@ -98,9 +98,21 @@ class SourceSelector: GLib.Object {
         return source_enabled.get (source);
     }
 
-    public bool get_show_group (E.SourceGroup group) {
-        var sources = group_sources.get (group);
-        return sources.size>0;
+    public Gee.Collection<E.Source> get_enabled_sources () {
+
+        Gee.Collection<E.Source> sources = new Gee.HashSet<E.Source> ();
+
+        foreach (var source in group_sources.get_values()) {
+
+            if (source_enabled.get (source))
+                sources.add (source);
+        }
+
+        return sources;
+    }
+
+    public Gee.Collection<E.Source> get_sources (E.SourceGroup group) {
+        return group_sources.get(group);
     }
 
     public E.Source get_source_for_iter (Gtk.TreeModelSort model, Gtk.TreeIter iter_outer)

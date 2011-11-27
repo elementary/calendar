@@ -19,7 +19,6 @@ namespace Maya.View {
 
 	public class CalendarView : Gtk.HBox {
 	
-        public signal void cal_month_changed(DateTime new_date);
         public signal void selection_changed(DateTime new_date);
 
 		private Gtk.VBox box;

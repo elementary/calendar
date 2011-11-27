@@ -86,7 +86,7 @@ class SourceSelector : Gtk.Window {
 
             var box = new SourceGroupBox (group, tmodel);
             box.no_show_all = true;
-            box.visible = model.get_show_group(group);
+            box.visible = model.get_sources(group).size > 0;
             _group_box.set (group, box);
 
             vbox_widget.pack_start (box, false, false, 0);
@@ -105,11 +105,13 @@ class SourceSelector : Gtk.Window {
     }
 
     void data_func_name (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel tmodel, Gtk.TreeIter iter) {
+
         var source = model.get_source_for_iter(tmodel as Gtk.TreeModelSort, iter);
         (cell as Gtk.CellRendererText).text = source.peek_name();
     }
 
     void data_func_enabled (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel tmodel, Gtk.TreeIter iter) {
+
         var source = model.get_source_for_iter(tmodel as Gtk.TreeModelSort, iter);
         (cell as Gtk.CellRendererToggle).active = model.get_source_enabled(source);
     }

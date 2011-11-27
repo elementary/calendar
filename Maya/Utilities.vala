@@ -56,4 +56,12 @@ public class DateRange : Object, Gee.Iterable<DateTime> {
     }
 }
 
+public DateTime convert_to_datetime (E.CalComponentDateTime dt) {
+
+    iCal.icaltimetype* idt = dt.value;
+    var tz = new TimeZone (dt.tzid);
+
+    return new DateTime(tz, idt->year, idt->month, idt->day, idt->hour, idt->minute, idt->second);
+}
+
 }
