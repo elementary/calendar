@@ -108,6 +108,7 @@ add_libical_typedefs()
         icalproperty_impl \
         icalrecurrencetype \
         icalreqstattype \
+        icaltimetype \
         icaltimezonephase \
         icaltimezonetype \
         icaltriggertype \

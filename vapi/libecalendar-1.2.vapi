@@ -275,9 +275,9 @@ namespace E {
 		public weak string cn;
 		public weak string language;
 	}
-	[CCode (cheader_filename = "libecal/e-cal-component.h")]
+	[CCode (cheader_filename = "libecal/e-cal-component.h", has_destroy_function = false)]
 	public struct CalComponentDateTime {
-		public iCal.icaltimetype value;
+		public iCal.icaltimetype* value;
 		public weak string tzid;
 	}
 	[CCode (cheader_filename = "libecal/e-cal-component.h")]

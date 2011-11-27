@@ -91,13 +91,13 @@ namespace iCal {
 		[CCode (cname = "icalcomponent_get_description")]
 		public unowned string get_description ();
 		[CCode (cname = "icalcomponent_get_dtend")]
-		public unowned iCal.icaltimetype get_dtend ();
+		public iCal.icaltimetype get_dtend ();
 		[CCode (cname = "icalcomponent_get_dtstamp")]
-		public unowned iCal.icaltimetype get_dtstamp ();
+		public iCal.icaltimetype get_dtstamp ();
 		[CCode (cname = "icalcomponent_get_dtstart")]
-		public unowned iCal.icaltimetype get_dtstart ();
+		public iCal.icaltimetype get_dtstart ();
 		[CCode (cname = "icalcomponent_get_due")]
-		public unowned iCal.icaltimetype get_due ();
+		public iCal.icaltimetype get_due ();
 		[CCode (cname = "icalcomponent_get_duration")]
 		public unowned iCal.icaldurationtype get_duration ();
 		[CCode (cname = "icalcomponent_get_first_component")]
@@ -119,7 +119,7 @@ namespace iCal {
 		[CCode (cname = "icalcomponent_get_parent")]
 		public unowned iCal.icalcomponent get_parent ();
 		[CCode (cname = "icalcomponent_get_recurrenceid")]
-		public unowned iCal.icaltimetype get_recurrenceid ();
+		public iCal.icaltimetype get_recurrenceid ();
 		[CCode (cname = "icalcomponent_get_relcalid")]
 		public unowned string get_relcalid ();
 		[CCode (cname = "icalcomponent_get_sequence")]
@@ -621,19 +621,19 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_comment")]
 		public unowned string get_comment ();
 		[CCode (cname = "icalproperty_get_completed")]
-		public unowned iCal.icaltimetype get_completed ();
+		public iCal.icaltimetype get_completed ();
 		[CCode (cname = "icalproperty_get_components")]
 		public unowned string get_components ();
 		[CCode (cname = "icalproperty_get_contact")]
 		public unowned string get_contact ();
 		[CCode (cname = "icalproperty_get_created")]
-		public unowned iCal.icaltimetype get_created ();
+		public iCal.icaltimetype get_created ();
 		[CCode (cname = "icalproperty_get_csid")]
 		public unowned string get_csid ();
 		[CCode (cname = "icalproperty_get_datemax")]
-		public unowned iCal.icaltimetype get_datemax ();
+		public iCal.icaltimetype get_datemax ();
 		[CCode (cname = "icalproperty_get_datemin")]
-		public unowned iCal.icaltimetype get_datemin ();
+		public iCal.icaltimetype get_datemin ();
 		[CCode (cname = "icalproperty_get_decreed")]
 		public unowned string get_decreed ();
 		[CCode (cname = "icalproperty_get_defaultcharset")]
@@ -649,17 +649,17 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_description")]
 		public unowned string get_description ();
 		[CCode (cname = "icalproperty_get_dtend")]
-		public unowned iCal.icaltimetype get_dtend ();
+		public iCal.icaltimetype get_dtend ();
 		[CCode (cname = "icalproperty_get_dtstamp")]
-		public unowned iCal.icaltimetype get_dtstamp ();
+		public iCal.icaltimetype get_dtstamp ();
 		[CCode (cname = "icalproperty_get_dtstart")]
-		public unowned iCal.icaltimetype get_dtstart ();
+		public iCal.icaltimetype get_dtstart ();
 		[CCode (cname = "icalproperty_get_due")]
-		public unowned iCal.icaltimetype get_due ();
+		public iCal.icaltimetype get_due ();
 		[CCode (cname = "icalproperty_get_duration")]
 		public unowned iCal.icaldurationtype get_duration ();
 		[CCode (cname = "icalproperty_get_exdate")]
-		public unowned iCal.icaltimetype get_exdate ();
+		public iCal.icaltimetype get_exdate ();
 		[CCode (cname = "icalproperty_get_expand")]
 		public int get_expand ();
 		[CCode (cname = "icalproperty_get_exrule")]
@@ -675,13 +675,13 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_itipversion")]
 		public unowned string get_itipversion ();
 		[CCode (cname = "icalproperty_get_lastmodified")]
-		public unowned iCal.icaltimetype get_lastmodified ();
+		public iCal.icaltimetype get_lastmodified ();
 		[CCode (cname = "icalproperty_get_location")]
 		public unowned string get_location ();
 		[CCode (cname = "icalproperty_get_maxcomponentsize")]
 		public int get_maxcomponentsize ();
 		[CCode (cname = "icalproperty_get_maxdate")]
-		public unowned iCal.icaltimetype get_maxdate ();
+		public iCal.icaltimetype get_maxdate ();
 		[CCode (cname = "icalproperty_get_maxresults")]
 		public int get_maxresults ();
 		[CCode (cname = "icalproperty_get_maxresultssize")]
@@ -689,7 +689,7 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_method")]
 		public iCal.icalproperty_method get_method ();
 		[CCode (cname = "icalproperty_get_mindate")]
-		public unowned iCal.icaltimetype get_mindate ();
+		public iCal.icaltimetype get_mindate ();
 		[CCode (cname = "icalproperty_get_multipart")]
 		public unowned string get_multipart ();
 		[CCode (cname = "icalproperty_get_name")]
@@ -733,7 +733,7 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_recurlimit")]
 		public unowned string get_recurlimit ();
 		[CCode (cname = "icalproperty_get_recurrenceid")]
-		public unowned iCal.icaltimetype get_recurrenceid ();
+		public iCal.icaltimetype get_recurrenceid ();
 		[CCode (cname = "icalproperty_get_relatedto")]
 		public unowned string get_relatedto ();
 		[CCode (cname = "icalproperty_get_relcalid")]
@@ -1378,20 +1378,6 @@ namespace iCal {
 		public int is_busy;
 		public ulong start;
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	[Compact]
-	public class icaltimetype {
-		public int day;
-		public int hour;
-		public int is_date;
-		public int is_daylight;
-		public int is_utc;
-		public int minute;
-		public int month;
-		public int second;
-		public int year;
-		public weak iCal.icaltimezone zone;
-	}
 	[CCode (cheader_filename = "libical/ical.h", copy_function = "icaltimezone_copy", free_function = "icaltimezone_free")]
 	[Compact]
 	public class icaltimezone {
@@ -1510,9 +1496,9 @@ namespace iCal {
 		[CCode (cname = "icalvalue_get_cmd")]
 		public iCal.icalproperty_cmd get_cmd ();
 		[CCode (cname = "icalvalue_get_date")]
-		public unowned iCal.icaltimetype get_date ();
+		public iCal.icaltimetype get_date ();
 		[CCode (cname = "icalvalue_get_datetime")]
-		public unowned iCal.icaltimetype get_datetime ();
+		public iCal.icaltimetype get_datetime ();
 		[CCode (cname = "icalvalue_get_datetimeperiod")]
 		public iCal.icaldatetimeperiodtype get_datetimeperiod ();
 		[CCode (cname = "icalvalue_get_duration")]
@@ -1694,7 +1680,7 @@ namespace iCal {
 	}
 	[CCode (cheader_filename = "libical/ical.h")]
 	public struct icaldatetimeperiodtype {
-		public weak iCal.icaltimetype time;
+		public iCal.icaltimetype time;
 		public iCal.icalperiodtype period;
 	}
 	[CCode (cheader_filename = "libical/ical.h")]
@@ -1704,8 +1690,8 @@ namespace iCal {
 	}
 	[CCode (cheader_filename = "libical/ical.h")]
 	public struct icalperiodtype {
-		public weak iCal.icaltimetype start;
-		public weak iCal.icaltimetype end;
+		public iCal.icaltimetype start;
+		public iCal.icaltimetype end;
 		public weak iCal.icaldurationtype duration;
 		[CCode (cname = "icalperiodtype_as_ical_string")]
 		public unowned string as_ical_string ();
@@ -1723,7 +1709,7 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h")]
 	public struct icalrecurrencetype {
 		public iCal.icalrecurrencetype_frequency freq;
-		public weak iCal.icaltimetype until;
+		public iCal.icaltimetype until;
 		public int count;
 		public short interval;
 		public iCal.icalrecurrencetype_weekday week_start;
@@ -1771,10 +1757,23 @@ namespace iCal {
 		public static iCal.icalreqstattype from_string (string str);
 	}
 	[CCode (cheader_filename = "libical/ical.h")]
+	public struct icaltimetype {
+		public int year;
+		public int month;
+		public int day;
+		public int hour;
+		public int minute;
+		public int second;
+		public int is_utc;
+		public int is_date;
+		public int is_daylight;
+		public weak iCal.icaltimezone zone;
+	}
+	[CCode (cheader_filename = "libical/ical.h")]
 	public struct icaltimezonephase {
 		public weak string tzname;
 		public int is_stdandard;
-		public weak iCal.icaltimetype dtstart;
+		public iCal.icaltimetype dtstart;
 		public int offsetto;
 		public int tzoffsetfrom;
 		public weak string comment;
@@ -1784,7 +1783,7 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h")]
 	public struct icaltimezonetype {
 		public weak string tzid;
-		public weak iCal.icaltimetype last_mod;
+		public iCal.icaltimetype last_mod;
 		public weak string tzurl;
 		public iCal.icaltimezonephase phases;
 		[CCode (cname = "icaltimezonetype_free")]
@@ -1792,7 +1791,7 @@ namespace iCal {
 	}
 	[CCode (cheader_filename = "libical/ical.h")]
 	public struct icaltriggertype {
-		public weak iCal.icaltimetype time;
+		public iCal.icaltimetype time;
 		public weak iCal.icaldurationtype duration;
 		[CCode (cname = "icaltriggertype_from_int")]
 		public static iCal.icaltriggertype from_int (int reltime);
@@ -2558,7 +2557,7 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_iterator_new")]
 	public static unowned iCal.icalrecur_iterator icalrecur_iterator_new (iCal.icalrecurrencetype rule, iCal.icaltimetype dtstart);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_iterator_next")]
-	public static unowned iCal.icaltimetype icalrecur_iterator_next (iCal.icalrecur_iterator p1);
+	public static iCal.icaltimetype icalrecur_iterator_next (iCal.icalrecur_iterator p1);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_string_to_weekday")]
 	public static iCal.icalrecurrencetype_weekday icalrecur_string_to_weekday (string str);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrestriction_check")]
@@ -2568,7 +2567,7 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrestriction_is_parameter_allowed")]
 	public static int icalrestriction_is_parameter_allowed (iCal.icalproperty_kind property, iCal.icalparameter_kind parameter);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_add")]
-	public static unowned iCal.icaltimetype icaltime_add (iCal.icaltimetype t, iCal.icaldurationtype d);
+	public static iCal.icaltimetype icaltime_add (iCal.icaltimetype t, iCal.icaldurationtype d);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_adjust")]
 	public static void icaltime_adjust (iCal.icaltimetype tt, int days, int hours, int minutes, int seconds);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_as_ical_string")]
@@ -2588,9 +2587,9 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_compare_with_zone")]
 	public static int icaltime_compare_with_zone (iCal.icaltimetype a, iCal.icaltimetype b);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_convert_to_zone")]
-	public static unowned iCal.icaltimetype icaltime_convert_to_zone (iCal.icaltimetype tt, iCal.icaltimezone zone);
+	public static iCal.icaltimetype icaltime_convert_to_zone (iCal.icaltimetype tt, iCal.icaltimezone zone);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_current_time_with_zone")]
-	public static unowned iCal.icaltimetype icaltime_current_time_with_zone (iCal.icaltimezone zone);
+	public static iCal.icaltimetype icaltime_current_time_with_zone (iCal.icaltimezone zone);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_day_of_week")]
 	public static int icaltime_day_of_week (iCal.icaltimetype t);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_day_of_year")]
@@ -2600,17 +2599,17 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_days_in_year")]
 	public static int icaltime_days_in_year (int year);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_day_of_year")]
-	public static unowned iCal.icaltimetype icaltime_from_day_of_year (int doy, int year);
+	public static iCal.icaltimetype icaltime_from_day_of_year (int doy, int year);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_string")]
-	public static unowned iCal.icaltimetype icaltime_from_string (string str);
+	public static iCal.icaltimetype icaltime_from_string (string str);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_string_with_zone")]
-	public static unowned iCal.icaltimetype icaltime_from_string_with_zone (string str, iCal.icaltimezone zone);
+	public static iCal.icaltimetype icaltime_from_string_with_zone (string str, iCal.icaltimezone zone);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_timet")]
-	public static unowned iCal.icaltimetype icaltime_from_timet (ulong v, int is_date);
+	public static iCal.icaltimetype icaltime_from_timet (ulong v, int is_date);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_timet_with_zone")]
-	public static unowned iCal.icaltimetype icaltime_from_timet_with_zone (ulong tm, int is_date, iCal.icaltimezone zone);
+	public static iCal.icaltimetype icaltime_from_timet_with_zone (ulong tm, int is_date, iCal.icaltimezone zone);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_week_number")]
-	public static unowned iCal.icaltimetype icaltime_from_week_number (int week_number, int year);
+	public static iCal.icaltimetype icaltime_from_week_number (int week_number, int year);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_get_timezone")]
 	public static unowned iCal.icaltimezone icaltime_get_timezone (iCal.icaltimetype t);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_get_tzid")]
@@ -2628,13 +2627,13 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_is_valid_time")]
 	public static int icaltime_is_valid_time (iCal.icaltimetype t);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_normalize")]
-	public static unowned iCal.icaltimetype icaltime_normalize (iCal.icaltimetype t);
+	public static iCal.icaltimetype icaltime_normalize (iCal.icaltimetype t);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_null_date")]
-	public static unowned iCal.icaltimetype icaltime_null_date ();
+	public static iCal.icaltimetype icaltime_null_date ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_null_time")]
-	public static unowned iCal.icaltimetype icaltime_null_time ();
+	public static iCal.icaltimetype icaltime_null_time ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_set_timezone")]
-	public static unowned iCal.icaltimetype icaltime_set_timezone (iCal.icaltimetype t, iCal.icaltimezone zone);
+	public static iCal.icaltimetype icaltime_set_timezone (iCal.icaltimetype t, iCal.icaltimezone zone);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_span_contains")]
 	public static int icaltime_span_contains (iCal.icaltime_span s, iCal.icaltime_span container);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_span_new")]
@@ -2648,7 +2647,7 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_subtract")]
 	public static unowned iCal.icaldurationtype icaltime_subtract (iCal.icaltimetype t1, iCal.icaltimetype t2);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_today")]
-	public static unowned iCal.icaltimetype icaltime_today ();
+	public static iCal.icaltimetype icaltime_today ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_week_number")]
 	public static int icaltime_week_number (iCal.icaltimetype t);
 	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_apply")]

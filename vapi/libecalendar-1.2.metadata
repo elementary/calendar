@@ -172,8 +172,6 @@ e_cal_component_set_dtstamp.t type_name="iCal.icaltimetype"
 e_cal_component_set_geo.geo type_name="iCal.icalgeotype"
 e_cal_component_set_last_modified.t type_name="iCal.icaltimetype"
 
-ECalComponentDateTime.value type_name="iCal.icaltimetype"
-
 ECalComponentAlarm cheader_filename="libecal/e-cal-component.h"
 e_cal_component_alarm_clone transfer_ownership="1"
 e_cal_component_alarm_get_action.action is_out="1" value_owned="1"
@@ -191,7 +189,10 @@ ECalComponentAlarms is_value_type="1" cheader_filename="libecal/e-cal-component.
 ECalComponentAlarms.alarms type_arguments="E.CalComponentAlarmInstance" cheader_filename="libecal/e-cal-component.h"
 ECalComponentAttendee is_value_type="1" cheader_filename="libecal/e-cal-component.h"
 ECalComponentClassification cheader_filename="libecal/e-cal-component.h"
-ECalComponentDateTime is_value_type="1" cheader_filename="libecal/e-cal-component.h"
+
+ECalComponentDateTime is_value_type="1" cheader_filename="libecal/e-cal-component.h" has_destroy_function="0"
+ECalComponentDateTime.value type_name="iCal.icaltimetype*"
+
 ECalComponentField cheader_filename="libecal/e-cal-component.h"
 ECalComponentId is_value_type="1" cheader_filename="libecal/e-cal-component.h"
 ECalComponentOrganizer is_value_type="1" cheader_filename="libecal/e-cal-component.h"
