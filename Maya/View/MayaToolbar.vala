@@ -35,14 +35,13 @@ namespace Maya.View {
 
 		public Widgets.ContractorButtonWithMenu contractor { get; private set; }
 
-		public MayaToolbar () {
+		public MayaToolbar (DateTime target) {
 
 			// Toolbar properties
 			get_style_context ().add_class ("primary-toolbar"); // compliant with elementary HIG
 
 			// Initialize everything
-			button_add = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add",
-					"Create a new event");
+			button_add = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add", "Create a new event");
 
 			edit_button = make_toolbutton ("gtk-edit", "Edit the selected event", false);
 			delete_button = make_toolbutton ("edit-delete", "Delete the selected event", false);
@@ -51,6 +50,7 @@ namespace Maya.View {
 
 			month_switcher = new Widgets.DateSwitcher ();
 			year_switcher = new Widgets.DateSwitcher ();
+            set_switcher_date (target);
 
 			search_bar = new Granite.Widgets.SearchBar ("Search For Events..");
 
@@ -107,6 +107,11 @@ namespace Maya.View {
 
 			return toolitem;
 		}
+
+        public void set_switcher_date (DateTime date) {
+            month_switcher.text = date.format ("%B");
+            year_switcher.text = date.format ("%Y");
+        }
 
 	}
 

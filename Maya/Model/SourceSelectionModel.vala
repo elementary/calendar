@@ -1,6 +1,6 @@
 namespace Maya.Model {
 
-class SourceSelector: GLib.Object {
+class SourceSelectionModel: GLib.Object {
 
     Gee.List<E.SourceGroup> _groups;
     public Gee.List<E.SourceGroup> groups {
@@ -21,7 +21,7 @@ class SourceSelector: GLib.Object {
     E.SourceGroup? GROUP_REMOTE { get; set; }
     E.SourceGroup? GROUP_CONTACTS { get; set; }
 
-    public SourceSelector() {
+    public SourceSelectionModel() {
 
         bool status;
 

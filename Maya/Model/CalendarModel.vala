@@ -1,23 +1,39 @@
 namespace Maya.Model {
 
-class CalendarModel : Object {
+public class CalendarModel : Object {
 
+    /* Target date is the date used to determine the start date of the
+     * calendar. This does not have to be the first day of the month but can be
+     * any date that is desired. */
     public DateTime target { get; set; }
-    public DateWeekday week_starts_on { get; set; }
-    public int num_weeks { get; set; default = 5; }
 
+    /* Usually Monday=1 or Sunday=7 */
+    public Settings.Weekday week_starts_on { get; set; }
+
+    /* The start and end dates for this model. The start date is in the same
+     * week as target date. The only way to change the date ranges is to change
+     * the target date, num_weeks, or week_starts_on. */
     public DateTime cal_date_start { get; private set; }
     public DateTime cal_date_end { get; private set; }
+
+    /* The number of weeks to show in this model */
+    public int num_weeks { get; set; default = 5; }
+
+    /* The events for a source have been loaded and stored */
+    public signal void source_loaded (E.Source source);
+
+    /* The target or week_starts_on have been changed */
+    public signal void parameters_changed ();
 
     Gee.Map<E.Source, E.CalClient> source_client;
     Gee.Map<E.Source, Gee.Set<E.CalComponent>> source_events;
 
-    public signal void source_loaded(E.Source source);
+    // more signals to be implemented
     //public signal void events_added();
     //public signal void events_modified();
     //public signal void events_removed();
 
-    public CalendarModel (Gee.Collection<E.Source> sources, DateTime target, DateWeekday week_starts_on) {
+    public CalendarModel (Gee.Collection<E.Source> sources, DateTime target, Settings.Weekday week_starts_on) {
 
         this.target = target;
         this.week_starts_on = week_starts_on;
@@ -35,8 +51,13 @@ class CalendarModel : Object {
         set_date_ranges ();
         load_events ();
 
-        notify["target"].connect (on_target_changed);
-        notify["week_starts_on"].connect (on_week_starts_on_changed);
+        notify["target"].connect (set_date_ranges);
+        notify["num_weeks"].connect (set_date_ranges);
+        notify["week_starts_on"].connect (set_date_ranges);
+    }
+
+    public Gee.Set<E.CalComponent> get_events (E.Source source) {
+        return (source_events.get(source) as Gee.AbstractSet<E.CalComponent>).read_only_view;
     }
 
     void set_date_ranges () {
@@ -54,6 +75,9 @@ class CalendarModel : Object {
         cal_date_end = cal_date_start.add_weeks(num_weeks-1).add_days(6);
 
         debug(@"Date ranges set (f:$cal_date_start <= t:$target <= l:$cal_date_end)");
+
+        parameters_changed ();
+        load_events ();
     }
 
     void load_events () {
@@ -99,21 +123,10 @@ class CalendarModel : Object {
         source_loaded (source);
     }
 
-    void on_target_changed () { // TODO
-    }
-
-    void on_week_starts_on_changed () { // TODO
-    }
-
     //--- SIGNAL HANDLERS ---//
     // on_e_cal_client_view_objects_added
     // on_e_cal_client_view_objects_removed
     // on_e_cal_client_view_objects_modified
-
-    void dump () {
-    
-
-    }
 }
 
 }

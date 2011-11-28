@@ -90,11 +90,9 @@ namespace Maya {
 		View.Sidebar sidebar;
         Gtk.HPaned hpaned;
 
-        Model.SourceSelector source_selector_model;
-        Model.CalendarModel calendar_model;
+        Model.SourceSelectionModel source_selection_model;
+        Model.CalendarModel calmodel;
         View.SourceSelector source_selector_view;
-
-        DateTime date { get; set; }
 
 		protected override void activate () {
 
@@ -113,29 +111,48 @@ namespace Maya {
 
         private void initialise() {
 
-            date = new DateTime.now_local ();
+            var target = new DateTime.now_local ();
 
-			toolbar = new View.MayaToolbar ();
-			calview = new View.CalendarView ();
-			sidebar = new View.Sidebar ();
+			saved_state = new Settings.SavedState ();
+			prefs = new Settings.MayaSettings ();
 
             window = new Gtk.Window ();
 			window.title = "Maya";
 			window.icon_name = "office-calendar";
 			window.set_size_request (700, 400);
+			window.default_width = saved_state.window_width;
+			window.default_height = saved_state.window_height;
             window.delete_event.connect (window_delete_event_cb);
             window.destroy.connect( () => Gtk.main_quit() );
 
+            source_selection_model = new Model.SourceSelectionModel();
+
+            var enabled_sources = source_selection_model.get_enabled_sources();
+            calmodel = new Model.CalendarModel(enabled_sources, target, prefs.week_starts_on);
+
+            source_selector_view = new View.SourceSelector (window, source_selection_model);
+            foreach (var group in source_selection_model.groups) {
+                var tview = source_selector_view.group_box.get(group).tview;
+                tview.r_enabled.toggled.connect ((path) => {source_selector_toggled(group,path);} );
+            }
+
+			toolbar = new View.MayaToolbar (target);
 			toolbar.button_add.clicked.connect(toolbar_add_clicked);
 			toolbar.button_calendar_sources.clicked.connect(toolbar_sources_clicked);
-			toolbar.menu.today.activate.connect ( () => set_calendar_date (null));
+			toolbar.menu.today.activate.connect (today);
 			toolbar.menu.fullscreen.toggled.connect (toggle_fullscreen);
 			toolbar.menu.weeknumbers.toggled.connect (menu_show_weeks_toggled);
+			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
+			toolbar.menu.weeknumbers.active = saved_state.show_weeks;
 
 			toolbar.month_switcher.left_clicked.connect (toolbar_month_switcher_left_clicked);
 			toolbar.month_switcher.right_clicked.connect (toolbar_month_switcher_right_clicked);
 			toolbar.year_switcher.left_clicked.connect (toolbar_year_switcher_left_clicked);
 			toolbar.year_switcher.right_clicked.connect (toolbar_year_switcher_right_clicked);
+
+			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
+
+			sidebar = new View.Sidebar ();
 
 			var vbox = new Gtk.VBox (false, 0);
 			hpaned = new Gtk.HPaned ();
@@ -143,98 +160,33 @@ namespace Maya {
 			vbox.pack_end (hpaned);
 			hpaned.add (calview);
 			hpaned.add (sidebar);
+			hpaned.position = saved_state.hpaned_position;
 			window.add (vbox);
 
             add_window(window);
 
-            source_selector_model = new Model.SourceSelector();
-            source_selector_view = new View.SourceSelector (window, source_selector_model);
-            foreach (var group in source_selector_model.groups) {
-                var tview = source_selector_view.group_box.get(group).tview;
-                tview.r_enabled.toggled.connect ((path) => {source_selector_toggled(group,path);} );
-            }
-
-            var enabled_sources = source_selector_model.get_enabled_sources();
-            calendar_model = new Model.CalendarModel(enabled_sources, date, DateWeekday.SUNDAY);
-
-			saved_state = new Settings.SavedState ();
 			saved_state.changed["show-weeks"].connect (saved_state_show_weeks_changed);
-
-			prefs = new Settings.MayaSettings ();
 			prefs.changed["week-starts-on"].connect (prefs_week_starts_on_changed);
 
-            restore_saved_state();
+            calmodel.source_loaded.connect (calview.on_source_loaded);
+            calmodel.parameters_changed.connect (on_model_parameters_changed);
 
-            set_calendar_date (date);
-			refresh_calendar();
-
-            set_midnight_updating();
-        }
-
-		private void set_calendar_date (DateTime? new_date) {
-
-			if (date.get_month() != new_date.get_month() || date.get_year() != new_date.get_year()) {
-                int year_diff = date.get_year() - new_date.get_year();
-                int month_diff = date.get_month() - new_date.get_month();
-                date = date.add_full (year_diff, month_diff, 0, 0, 0, 0);
-            }
-
-            calview.grid.focus_date (new_date, prefs.week_starts_on);
-		}
-
-        private void set_midnight_updating() {
-
-			var today = new DateTime.now_local ();
-			var tomorrow = today.add_full (0, 0, 1, -today.get_hour (), -today.get_minute (), -today.get_second ());
-			var difference = tomorrow.to_unix() -today.to_unix();
-
-			Timeout.add_seconds ((uint) difference, () => {
-
-				if (date.get_month() == tomorrow.get_month() && date.get_year() == tomorrow.get_year())
-					calview.grid.change_month (date.get_month(), date.get_year(), prefs.week_starts_on);
-
-				tomorrow = tomorrow.add_days (1);
-
-				Timeout.add (1000 * 60 * 60 * 24, () => {
-					if (date.get_month() == tomorrow.get_month() && date.get_year() == tomorrow.get_year())
-						calview.grid.change_month (date.get_month(), date.get_year(), prefs.week_starts_on);
-
-					tomorrow = tomorrow.add_days (1);
-
-					return true;
-				});
-
-				return false;
-			});
-        }
-
-		private void restore_saved_state () {
-            debug("Restoring saved state");
-			
-			// Window
-
-			window.default_width = saved_state.window_width;
-			window.default_height = saved_state.window_height;
-			
 			if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
 				window.maximize ();
 			else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
 				window.fullscreen ();
-			
-			hpaned.position = saved_state.hpaned_position;
+        }
 
-            // Menu
+        void today () {
+            
+            var date = new DateTime.now_local ();
 
-			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
-			toolbar.menu.weeknumbers.active = saved_state.show_weeks;
+            if (calmodel.target.get_month() != date.get_month() || calmodel.target.get_year() != date.get_year()) {
+                calmodel.target = new DateTime.local (date.get_year(), date.get_month(), 1, 0, 0, 0);
+            }
+        }
 
-            // Calendar
-
-            calview.weeks.update (date, saved_state.show_weeks);
-            calview.header.update_columns (prefs.week_starts_on);
-		}
-		
-		private void update_saved_state () {
+		void update_saved_state () {
             debug("Updating saved state");
 
 			// Save window state
@@ -264,23 +216,18 @@ namespace Maya {
 				window.unfullscreen ();
 		}
 
-        private void refresh_calendar () {
-            debug("Refreshing calendar widgets");
-            calview.header.update_columns (prefs.week_starts_on);
-            calview.weeks.update (date, saved_state.show_weeks);
-            calview.grid.change_month (date.get_month(), date.get_year(), prefs.week_starts_on);
-            toolbar.month_switcher.text = date.format ("%B");
-            toolbar.year_switcher.text = date.format ("%Y");
-        }
-
         //--- SIGNAL HANDLERS ---//
 
+        private void on_model_parameters_changed () {
+            toolbar.set_switcher_date (calmodel.target);
+        }
+
         private void prefs_week_starts_on_changed () {
-            refresh_calendar ();
+            calmodel.week_starts_on = prefs.week_starts_on;
         }
 
         private void saved_state_show_weeks_changed () {
-            calview.weeks.update (date, saved_state.show_weeks);
+            calview.show_weeks = saved_state.show_weeks;
         }
 
         private bool window_delete_event_cb (Gdk.EventAny event) {
@@ -298,23 +245,19 @@ namespace Maya {
         }
 
         private void toolbar_month_switcher_left_clicked () {
-            date = date.add_months (-1);
-            refresh_calendar ();
+            calmodel.target = calmodel.target.add_months (-1);
         }
 
         private void toolbar_month_switcher_right_clicked () {
-            date = date.add_months (1);
-            refresh_calendar ();
+            calmodel.target = calmodel.target.add_months (1);
         }
 
         private void toolbar_year_switcher_left_clicked () {
-            date = date.add_years (-1);
-            refresh_calendar ();
+            calmodel.target = calmodel.target.add_years (-1);
         }
 
         private void toolbar_year_switcher_right_clicked () {
-            date = date.add_years (1);
-            refresh_calendar ();
+            calmodel.target = calmodel.target.add_years (1);
         }
 
         private void menu_show_weeks_toggled () {
@@ -322,7 +265,7 @@ namespace Maya {
         }
 
         private void source_selector_toggled (E.SourceGroup group, string path) {
-            source_selector_model.toggle_source_status (group, path);
+            source_selection_model.toggle_source_status (group, path);
         }
 	}
 
