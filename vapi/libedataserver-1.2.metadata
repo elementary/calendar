@@ -127,6 +127,9 @@ e_source_get_property transfer_ownership="1"
 e_source_uid_from_xml_node transfer_ownership="1"
 
 ESourceGroup type_id="e_source_group_get_type ()" cheader_filename="libedataserver/e-source-group.h" 
+ESourceGroup::source_added.source type_name="E.Source"
+ESourceGroup::source_removed.source type_name="E.Source"
+
 e_source_group_get_property transfer_ownership="1"
 e_source_group_peek_sources type_arguments="E.Source"
 e_source_group_to_xml transfer_ownership="1"

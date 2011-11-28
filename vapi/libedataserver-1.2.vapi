@@ -341,8 +341,8 @@ namespace E {
 		public bool update_from_xmldoc (Xml.Doc doc, bool changed_return);
 		public static bool xmlstr_equal (string a, string b);
 		public virtual signal void changed ();
-		public virtual signal void source_added (GLib.Object source);
-		public virtual signal void source_removed (GLib.Object source);
+		public virtual signal void source_added (E.Source source);
+		public virtual signal void source_removed (E.Source source);
 	}
 	[CCode (cheader_filename = "libedataserver/e-source-list.h", type_id = "e_source_list_get_type ()")]
 	public class SourceList : GLib.Object {
