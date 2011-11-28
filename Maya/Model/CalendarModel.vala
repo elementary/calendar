@@ -1,25 +1,65 @@
 namespace Maya.Model {
 
-class CalendarModel : Object {
+public class CalendarModel : Object {
 
-    public DateTime target { get; set; }
-    public DateWeekday week_starts_on { get; set; }
-    public int num_weeks { get; set; default = 5; }
+    /* Target date is used to determine start-end dates for calendar. */
+    DateTime _target;
+    public DateTime target {
 
+        get { return _target; }
+
+        set {
+
+            // do nothing if new date is same as target
+            if (value == _target) {
+
+                return;
+
+            // only set date & notify if day of month has changed
+            } else if (value.get_year() == _target.get_year() && value.get_month() == _target.get_month()) {
+
+                _target = value;
+                parameters_changed ();
+
+            // also recalculate range if month/year has changed
+            } else {
+
+                _target = value;
+                on_parameter_changed ();
+            }
+        }
+    }
+
+    /* Start of Week, ie. Monday=1 or Sunday=7 */
+    public Settings.Weekday week_starts_on { get; set; }
+
+    /* The start and end dates for this model. The start date is the first day
+     * of the month of the same month as target date. The only public way to
+     * change the date ranges is to change the target date, num_weeks, or
+     * week_starts_on. */
     public DateTime cal_date_start { get; private set; }
     public DateTime cal_date_end { get; private set; }
+
+    /* The number of weeks to show in this model */
+    public int num_weeks { get; set; default = 5; }
+
+    /* The events for a source have been loaded and stored */
+    public signal void source_loaded (E.Source source);
+
+    /* The target, num_weeks, or week_starts_on have been changed */
+    public signal void parameters_changed ();
 
     Gee.Map<E.Source, E.CalClient> source_client;
     Gee.Map<E.Source, Gee.Set<E.CalComponent>> source_events;
 
-    public signal void source_loaded(E.Source source);
+    // more signals to be implemented
     //public signal void events_added();
     //public signal void events_modified();
     //public signal void events_removed();
 
-    public CalendarModel (Gee.Collection<E.Source> sources, DateTime target, DateWeekday week_starts_on) {
+    public CalendarModel (Gee.Collection<E.Source> sources, DateTime target, Settings.Weekday week_starts_on) {
 
-        this.target = target;
+        _target = target;
         this.week_starts_on = week_starts_on;
 
         source_client = new Gee.HashMap<E.Source, E.CalClient> ();
@@ -32,16 +72,31 @@ class CalendarModel : Object {
             source_client.set (source, client);
         }
 
-        set_date_ranges ();
-        load_events ();
+        recalculate_range ();
+        reload_events ();
 
-        notify["target"].connect (on_target_changed);
-        notify["week_starts_on"].connect (on_week_starts_on_changed);
+        notify["num_weeks"].connect (on_parameter_changed);
+        notify["week_starts_on"].connect (on_parameter_changed);
     }
 
-    void set_date_ranges () {
+    public Gee.Set<E.CalComponent> get_events (E.Source source) {
+        return (source_events.get(source) as Gee.AbstractSet<E.CalComponent>).read_only_view;
+    }
 
-        int dow = target.get_day_of_week(); 
+    void on_parameter_changed () {
+
+        recalculate_range ();
+
+        parameters_changed ();
+
+        reload_events ();
+    }
+
+    void recalculate_range () {
+
+        DateTime som = new DateTime.local (_target.get_year(), _target.get_month(), 1, 0, 0, 0);
+
+        int dow = som.get_day_of_week(); 
         int wso = (int) week_starts_on;
         int offset = 0;
 
@@ -50,13 +105,15 @@ class CalendarModel : Object {
         else if (wso > wso)
             offset = 7 + dow - wso;
 
-        cal_date_start = target.add_days (-offset);
+        cal_date_start = som.add_days (-offset);
         cal_date_end = cal_date_start.add_weeks(num_weeks-1).add_days(6);
 
         debug(@"Date ranges set (f:$cal_date_start <= t:$target <= l:$cal_date_end)");
+
+        parameters_changed ();
     }
 
-    void load_events () {
+    void reload_events () {
         
         var iso_first = E.isodate_from_time_t((ulong) cal_date_start.to_unix());
         var iso_last = E.isodate_from_time_t((ulong) cal_date_end.to_unix());
@@ -99,21 +156,10 @@ class CalendarModel : Object {
         source_loaded (source);
     }
 
-    void on_target_changed () { // TODO
-    }
-
-    void on_week_starts_on_changed () { // TODO
-    }
-
     //--- SIGNAL HANDLERS ---//
     // on_e_cal_client_view_objects_added
     // on_e_cal_client_view_objects_removed
     // on_e_cal_client_view_objects_modified
-
-    void dump () {
-    
-
-    }
 }
 
 }
