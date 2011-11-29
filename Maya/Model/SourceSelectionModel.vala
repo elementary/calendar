@@ -12,8 +12,33 @@ class SourceSelectionModel: GLib.Object {
         owned get { return _group_tree_model.read_only_view; }
     }
 
-    public signal void source_status_changed (E.Source source, bool enabled);
+    /* The collection of enabled sources */
+    public Gee.Collection<E.Source> enabled_sources {
+    
+        owned get {
 
+            Gee.Collection<E.Source> sources = new Gee.HashSet<E.Source> ();
+
+            foreach (var source in group_sources.get_values()) {
+
+                if (source_enabled.get (source))
+                    sources.add (source);
+            }
+
+            return sources;
+        }
+    }
+
+    /* A source has been enabled or disabled */
+    public signal void status_changed (E.Source source, bool enabled);
+
+    /* A source has been added to EDS */
+    public signal void source_added (E.SourceGroup group, E.Source source);
+
+    /* A source has been removed from EDS */
+    public signal void source_removed (E.SourceGroup group, E.Source source);
+
+    E.SourceList source_list;
     Gee.MultiMap<E.SourceGroup, E.Source> group_sources;
     Gee.Map<E.Source, bool> source_enabled;
 
@@ -25,28 +50,40 @@ class SourceSelectionModel: GLib.Object {
 
         bool status;
 
-        E.SourceList source_list;
         status = E.CalClient.get_sources (out source_list, E.CalClientSourceType.EVENTS);
-        assert (status==true); // TODO
+        assert (status==true);
 
-        source_enabled = new Gee.HashMap<E.Source, bool> ();
+        source_enabled = new Gee.HashMap<E.Source, bool> (
+            (HashFunc) source_hash_func,
+            (EqualFunc) source_equal_func,
+            null);
 
         GROUP_LOCAL = source_list.peek_group_by_base_uri("local:");
         GROUP_REMOTE = source_list.peek_group_by_base_uri("webcal://");
         GROUP_CONTACTS = source_list.peek_group_by_base_uri("contacts://");
 
         // the order that groups will appear
-        _groups = new Gee.ArrayList<E.SourceGroup>();
+        _groups = new Gee.ArrayList<E.SourceGroup> ((EqualFunc) source_group_equal_func);
         _groups.add (GROUP_LOCAL);
         _groups.add (GROUP_REMOTE);
         _groups.add (GROUP_CONTACTS);
 
-        group_sources = new Gee.HashMultiMap<E.SourceGroup, E.Source>();
-        _group_tree_model = new Gee.HashMap<E.SourceGroup, Gtk.TreeModelSort>();
+        group_sources = new Gee.HashMultiMap<E.SourceGroup, E.Source> (
+            (HashFunc) source_group_hash_func,
+            (EqualFunc) source_group_equal_func,
+            (HashFunc) source_hash_func);
+
+        _group_tree_model = new Gee.HashMap<E.SourceGroup, Gtk.TreeModelSort> (
+            (HashFunc) source_group_hash_func,
+            (EqualFunc) source_group_equal_func,
+            null);
 
         foreach (E.SourceGroup group in _groups) {
 
             debug("Processing source group '%s'", group.peek_name());
+
+            group.source_added.connect ((source) => add_source (group, source));
+            group.source_removed.connect ((source) => remove_source (group, source));
 
             var list_store = new Gtk.ListStore.newv ( {typeof(E.Source)} );
             var tree_model = new Gtk.TreeModelSort.with_model (list_store);
@@ -56,16 +93,46 @@ class SourceSelectionModel: GLib.Object {
 
             foreach (E.Source source in group.peek_sources()) {
 
-                debug("Adding source '%s'", source.peek_name());
-
-                group_sources.set(group, source);
-                source_enabled.set (source, true);
-
-                Gtk.TreeIter iter;
-                list_store.append (out iter);
-                list_store.set_value (iter, 0, source);
+                add_source (group, source);
             }
         }
+    }
+
+    //--- Helper Functions ---//
+
+    void add_source (E.SourceGroup group, E.Source source) {
+
+        debug("Adding source '%s'", source.peek_name());
+
+        group_sources.set (group, source);
+        source_enabled.set (source, true);
+
+        var tree_model = _group_tree_model.get (group) as Gtk.TreeModelSort;
+        var list_store = tree_model.get_model () as Gtk.ListStore;
+
+        Gtk.TreeIter iter;
+        list_store.append (out iter);
+        list_store.set_value (iter, 0, source);
+
+        source_added (group, source);
+    }
+
+    void remove_source (E.SourceGroup group, E.Source source) {
+
+        debug("Removing source '%s'", source.peek_name());
+
+        group_sources.remove (group, source);
+        source_enabled.unset (source, null);
+
+        var tree_model = _group_tree_model.get (group) as Gtk.TreeModelSort;
+        var list_store = tree_model.get_model () as Gtk.ListStore;
+
+        Gtk.TreePath? path = find_treemodel_object<E.Source> (list_store, 0, source, (EqualFunc) source_equal_func);
+        Gtk.TreeIter iter;
+        list_store.get_iter (out iter, path);
+        list_store.remove (iter);
+
+        source_removed (group, source);
     }
 
     /* Sorts evolution sources in alphabetical order by name within each group */
@@ -94,21 +161,10 @@ class SourceSelectionModel: GLib.Object {
         return name_a.ascii_casecmp(name_b);
     }
 
+    //--- Public Methods ---//
+
     public bool get_source_enabled (E.Source source) {
         return source_enabled.get (source);
-    }
-
-    public Gee.Collection<E.Source> get_enabled_sources () {
-
-        Gee.Collection<E.Source> sources = new Gee.HashSet<E.Source> ();
-
-        foreach (var source in group_sources.get_values()) {
-
-            if (source_enabled.get (source))
-                sources.add (source);
-        }
-
-        return sources;
     }
 
     public Gee.Collection<E.Source> get_sources (E.SourceGroup group) {
@@ -153,10 +209,12 @@ class SourceSelectionModel: GLib.Object {
         Gtk.TreePath path_inner = list_store.get_path (iter_inner);
         list_store.row_changed (path_inner, iter_inner);
 
-        source_status_changed (source, new_status);
+        status_changed (source, new_status);
     }
 
-    public void dump () { // XXX: delete me
+    //--- Debugging ---//
+
+    public void _dump () { // XXX: delete me
         foreach (E.SourceGroup group in groups) {
             print ("%s\n", group.peek_name());
             foreach (E.Source source in group_sources.get(group)) {

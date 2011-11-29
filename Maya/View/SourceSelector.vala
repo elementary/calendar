@@ -58,7 +58,6 @@ class SourceGroupBox : Gtk.VBox {
 
 class SourceSelector : Gtk.Window {
 
-    SourceGroupTreeView tree_view;
     Model.SourceSelectionModel model;
 
     Gee.Map<E.SourceGroup, SourceGroupBox> _group_box;
@@ -74,7 +73,10 @@ class SourceSelector : Gtk.Window {
         modal = false;
         window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
 
-        _group_box = new Gee.HashMap<E.SourceGroup, SourceGroupBox>();
+        _group_box = new Gee.HashMap<E.SourceGroup, SourceGroupBox> (
+            (HashFunc) source_group_hash_func,
+            (EqualFunc) source_group_equal_func,
+            null);
 
         set_title ("Calendars");
 

@@ -79,7 +79,7 @@ public class CalendarModel : Object {
         notify["week_starts_on"].connect (on_parameter_changed);
     }
 
-    public Gee.Set<E.CalComponent> get_events (E.Source source) {
+    public Gee.Collection<E.CalComponent> get_events (E.Source source) {
         return (source_events.get(source) as Gee.AbstractSet<E.CalComponent>).read_only_view;
     }
 

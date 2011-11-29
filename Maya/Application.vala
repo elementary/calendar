@@ -127,7 +127,7 @@ namespace Maya {
 
             source_selection_model = new Model.SourceSelectionModel();
 
-            var enabled_sources = source_selection_model.get_enabled_sources();
+            var enabled_sources = source_selection_model.enabled_sources;
             calmodel = new Model.CalendarModel(enabled_sources, target, prefs.week_starts_on);
 
             source_selector_view = new View.SourceSelector (window, source_selection_model);
@@ -139,7 +139,7 @@ namespace Maya {
 			toolbar = new View.MayaToolbar (target);
 			toolbar.button_add.clicked.connect(toolbar_add_clicked);
 			toolbar.button_calendar_sources.clicked.connect(toolbar_sources_clicked);
-			toolbar.menu.today.activate.connect (today);
+			toolbar.menu.today.activate.connect (menu_today_toggled);
 			toolbar.menu.fullscreen.toggled.connect (toggle_fullscreen);
 			toolbar.menu.weeknumbers.toggled.connect (menu_show_weeks_toggled);
 			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
@@ -151,7 +151,6 @@ namespace Maya {
 			toolbar.year_switcher.right_clicked.connect (toolbar_year_switcher_right_clicked);
 
 			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
-            calview.selection_changed.connect (on_calview_selection_changed);
 
 			sidebar = new View.Sidebar ();
 
@@ -178,12 +177,8 @@ namespace Maya {
 				window.fullscreen ();
         }
 
-        void today () {
-            
-            calmodel.target = new DateTime.now_local ();
-        }
-
 		void update_saved_state () {
+
             debug("Updating saved state");
 
 			// Save window state
@@ -215,57 +210,57 @@ namespace Maya {
 
         //--- SIGNAL HANDLERS ---//
 
-        private void on_model_parameters_changed () {
+        void on_model_parameters_changed () {
             toolbar.set_switcher_date (calmodel.target);
         }
 
-        void on_calview_selection_changed (DateTime new_date) {
-            calmodel.target = new_date;
-        }
-
-        private void prefs_week_starts_on_changed () {
+        void prefs_week_starts_on_changed () {
             calmodel.week_starts_on = prefs.week_starts_on;
         }
 
-        private void saved_state_show_weeks_changed () {
+        void saved_state_show_weeks_changed () {
             calview.show_weeks = saved_state.show_weeks;
         }
 
-        private bool window_delete_event_cb (Gdk.EventAny event) {
+        bool window_delete_event_cb (Gdk.EventAny event) {
             update_saved_state();
             return false;
         }
 
-        private void toolbar_add_clicked () {
+        void toolbar_add_clicked () {
 		    var add_dialog = new View.AddEventDialog (window);
 		    add_dialog.present ();
         }
 
-        private void toolbar_sources_clicked () {
+        void toolbar_sources_clicked () {
 		    source_selector_view.show_all();
         }
 
-        private void toolbar_month_switcher_left_clicked () {
+        void toolbar_month_switcher_left_clicked () {
             calmodel.target = calmodel.target.add_months (-1);
         }
 
-        private void toolbar_month_switcher_right_clicked () {
+        void toolbar_month_switcher_right_clicked () {
             calmodel.target = calmodel.target.add_months (1);
         }
 
-        private void toolbar_year_switcher_left_clicked () {
+        void toolbar_year_switcher_left_clicked () {
             calmodel.target = calmodel.target.add_years (-1);
         }
 
-        private void toolbar_year_switcher_right_clicked () {
+        void toolbar_year_switcher_right_clicked () {
             calmodel.target = calmodel.target.add_years (1);
         }
 
-        private void menu_show_weeks_toggled () {
+        void menu_today_toggled () {
+            calmodel.target = new DateTime.now_local ();
+        }
+
+        void menu_show_weeks_toggled () {
             saved_state.show_weeks = toolbar.menu.weeknumbers.active;
         }
 
-        private void source_selector_toggled (E.SourceGroup group, string path) {
+        void source_selector_toggled (E.SourceGroup group, string path) {
             source_selection_model.toggle_source_status (group, path);
         }
 	}

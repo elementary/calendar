@@ -64,4 +64,48 @@ public DateTime convert_to_datetime (E.CalComponentDateTime dt) {
     return new DateTime(tz, idt->year, idt->month, idt->day, idt->hour, idt->minute, idt->second);
 }
 
+
+/* Computes hash value for E.Source */
+public uint source_hash_func (E.Source key) {
+    return str_hash (key.peek_uid());
+}
+
+/* Computes hash value for E.SourceGroup */
+public uint source_group_hash_func (E.SourceGroup key) {
+    return str_hash (key.peek_uid());
+}
+
+/* Returns true if 'a' and 'b' are the same E.SourceGroup */
+public bool source_group_equal_func (E.SourceGroup a, E.SourceGroup b) {
+    return a.peek_uid() == b.peek_uid();
+}
+
+/* Returns true if 'a' and 'b' are the same E.Source */
+public bool source_equal_func (E.Source a, E.Source b) {
+    return a.peek_uid() == b.peek_uid();
+}
+
+public Gtk.TreePath? find_treemodel_object<T> (Gtk.TreeModel model, int column, T object, EqualFunc<T>? eqfunc=null) {
+
+    Gtk.TreePath? path = null;
+
+    model.foreach( (m, p, iter) => {
+        
+        Value gvalue;
+        model.get_value (iter, column, out gvalue);
+
+        T ovalue = gvalue.get_object();
+
+        if (   (eqfunc == null && ovalue == object)
+            || (eqfunc != null && eqfunc(ovalue, object))) {
+            path = p;
+            return true;
+        }
+
+        return false;
+    });
+
+    return path;
+}
+
 }

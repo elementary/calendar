@@ -119,9 +119,13 @@ public class Grid : Gtk.Table {
 
     private GridDay[] days;
 
+    public DateTime selected_date { get; private set; }
+
     public signal void selection_changed (DateTime new_date);
 
     public Grid (DateTime date) {
+
+        selected_date = date;
 
         // Gtk.Table properties
         n_rows = 6;
@@ -134,7 +138,7 @@ public class Grid : Gtk.Table {
         days = new GridDay[n_rows * n_columns];
         for (int row = 0; row < n_rows; row++) {
             for (int col = 0; col < n_columns; col++) {
-                var day = new GridDay (date);
+                var day = new GridDay (date); // XXX: why is this "date" ?
                 day.focus_in_event.connect ((event) => {
                     on_day_focus_in(day);
                     return false;
@@ -147,7 +151,9 @@ public class Grid : Gtk.Table {
 
     void on_day_focus_in (GridDay day) {
 
-        selection_changed (day.date);
+        selected_date = day.date;
+
+        selection_changed (selected_date);
     }
 
     private static int days_to_prepend (int year, int month, int week_starts_on) {
@@ -269,7 +275,6 @@ public class CalendarView : Gtk.HBox {
     /* Indicates that selected date in grid has changed */
     public signal void selection_changed (DateTime new_date);
 
-    DateTime selected_date;
     Gtk.VBox box;
     Model.CalendarModel model;
 
@@ -316,23 +321,19 @@ public class CalendarView : Gtk.HBox {
         grid.focus_date (date, model.week_starts_on);
     }
 
-    // Signal Handlers (Private)
+    //--- Signal Handlers ---//
 
     void on_grid_selection_changed (DateTime new_date) {
 
         debug (@"Selection changed to $(new_date)");
 
-        selected_date = new_date;
-
-        selection_changed (new_date);
+        model.target = new_date;
     }
 
     void on_show_weeks_changed () {
 
         weeks.update (model.target, show_weeks);
     }
-
-    // Signal Handlers
 
     public void on_source_loaded (E.Source source) {
 
@@ -341,9 +342,8 @@ public class CalendarView : Gtk.HBox {
     }
 
     public void on_model_parameters_changed () {
-        debug ("on_model_parameters_changed");
 
-        if (model.target == selected_date)
+        if (model.target == grid.selected_date)
             return;
 
         remove_all_events ();
@@ -351,17 +351,21 @@ public class CalendarView : Gtk.HBox {
         set_date (model.target);
     }
 
-    // TODO: implement these private methods
+    //--- TODO: Need Implementation ---//
 
     /* Render the events for the source in the grid */
-    void add_source_events (E.Source source, Gee.Set<E.CalComponent> events) {
+    void add_source_events (E.Source source, Gee.Collection<E.CalComponent> events) {
+        debug ("Not Implemented: add_source_events");
     }
 
     /* Removes all events for source from the grid */
     void remove_source_events (E.Source source) {
+        debug ("Not Implemented: remove_source_events");
     }
 
+    /* Removes all events for all sources from the grid */
     void remove_all_events () {
+        debug ("Not Implemented: remove_all_events");
     }
 }
 
