@@ -14,3 +14,15 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Slim, lightweight, GCal-syncing GTK+ Calendar application
  Maya is a slim, lightweight, GCal-syncing GTK+ Calendar application written
  in Vala, specifically for the Elementary project.
+
+Package: maya-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: maya (= ${binary:Version}), ${misc:Depends}
+Enhances: maya
+Description: Slim, lightweight, GCal-syncing GTK+ Calendar application (debugging symbols)
+ Maya is a slim, lightweight, GCal-syncing GTK+ Calendar application written
+ in Vala, specifically for the Elementary project.
+ .
+ This package contains debugging symbols for maya.
