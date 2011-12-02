@@ -86,6 +86,14 @@ public class DateRange : Object, Gee.Iterable<DateTime> {
         this.last = last;
     }
 
+    public DateRange.copy (DateRange date_range) {
+        this (date_range.first, date_range.last);
+    }
+
+    public bool equals (DateRange other) {
+        return (first==other.first && last==other.last);
+    }
+
     public Type element_type {
         get { return typeof(DateTime); }
     }

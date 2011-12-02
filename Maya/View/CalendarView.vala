@@ -119,18 +119,15 @@ public class Grid : Gtk.Table {
 
     Gee.Map<DateTime, GridDay> data;
 
-    public DateTime grid_start { get; private set; }
-    public DateTime grid_end { get; private set; }
+    public DateRange grid_range { get; private set; }
 
     public DateTime? selected_date { get; private set; }
 
     public signal void selection_changed (DateTime new_date);
 
-    public Grid (DateTime dt_start, DateTime dt_end, DateTime dt_som, int weeks) {
+    public Grid (DateRange range, DateTime month_start, int weeks) {
 
-        grid_start = dt_start;
-        grid_end = dt_end;
-
+        grid_range = range;
         selected_date = null;
 
         // Gtk.Table properties
@@ -147,7 +144,7 @@ public class Grid : Gtk.Table {
 
         int row=0, col=0;
 
-        foreach (var date in new DateRange(dt_start, dt_end)) {
+        foreach (var date in range) {
 
             var day = new GridDay (date);
             data.set (date, day);
@@ -163,7 +160,7 @@ public class Grid : Gtk.Table {
             row = (col==0) ? row+1 : row;
         }
 
-        set_range (dt_start, dt_end, dt_som);
+        set_range (range, month_start);
     }
 
     void on_day_focus_in (GridDay day) {
@@ -180,12 +177,12 @@ public class Grid : Gtk.Table {
         data.get(date).grab_focus ();
     }
 
-    public void set_range (DateTime dt_start, DateTime dt_end, DateTime dt_som) {
+    public void set_range (DateRange new_range, DateTime month_start) {
 
         var today = new DateTime.now_local ();
 
-        var dates1 = new DateRange (grid_start, grid_end).to_list();
-        var dates2 = new DateRange (dt_start, dt_end).to_list();
+        var dates1 = grid_range.to_list();
+        var dates2 = new_range.to_list();
 
         assert (dates1.size == dates2.size);
 
@@ -208,7 +205,7 @@ public class Grid : Gtk.Table {
                 day.can_focus = true;
                 day.sensitive = true;
 
-            } else if (date2.get_month () != dt_som.get_month ()) {
+            } else if (date2.get_month () != month_start.get_month ()) {
                 day.name = null;
                 day.can_focus = false;
                 day.sensitive = false;
@@ -226,8 +223,7 @@ public class Grid : Gtk.Table {
         data.clear ();
         data.set_all (data_new);
 
-        grid_start = dt_start;
-        grid_end = dt_end;
+        grid_range = new_range;
     }
 }
 
@@ -323,7 +319,7 @@ public class CalendarView : Gtk.HBox {
 
         weeks = new WeekLabels ();
         header = new Header ();
-        grid = new Grid (model.data_range.first, model.data_range.last, model.month_start, model.num_weeks);
+        grid = new Grid (model.data_range, model.month_start, model.num_weeks);
         
         // HBox properties
         spacing = 0;
@@ -346,7 +342,8 @@ public class CalendarView : Gtk.HBox {
 
         header.update_columns (model.week_starts_on);
         weeks.update (model.data_range.first, show_weeks);
-        grid.set_range (model.data_range.first, model.data_range.last, model.month_start);
+
+        grid.set_range (model.data_range, model.month_start);
 
         if (grid.selected_date != null) {
             var bumpdate = model.month_start.add_days (grid.selected_date.get_day_of_month() - 1);
@@ -369,7 +366,7 @@ public class CalendarView : Gtk.HBox {
 
     public void on_model_parameters_changed () {
 
-        if (model.data_range.first == grid.grid_start && model.data_range.last == grid.grid_end)
+        if (model.data_range.equals (grid.grid_range))
             return;
 
         remove_all_events ();

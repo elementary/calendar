@@ -253,6 +253,8 @@ namespace Maya {
 
         void menu_today_toggled () {
 
+            var today = new DateTime.now_local();
+
             if (calmodel.month_start.get_month() != today.get_month())
                 calmodel.month_start = get_start_of_month ();
 
