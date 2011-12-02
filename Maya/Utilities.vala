@@ -1,5 +1,32 @@
 namespace Maya {
 
+//--- Date and Time ---//
+
+public DateTime strip_time (DateTime datetime) {
+    int y,m,d;
+    datetime.get_ymd (out y, out m, out d);
+    return new DateTime.local (y, m, d, 0, 0, 0);
+}
+
+/* Create a map interleaving DateRanges dr1 and dr2 */
+public Gee.Map<DateTime, DateTime> zip_date_ranges (DateRange dr1, DateRange dr2)
+    requires (dr1.days == dr2.days) {
+    
+    var map = new Gee.TreeMap<DateTime, DateTime>(
+        (CompareFunc) DateTime.compare,
+        (EqualFunc) datetime_equal_func);
+
+    var i1 = dr1.iterator();
+    var i2 = dr2.iterator();
+
+    while (i1.next() && i2.next()) {
+        map.set (i1.get(), i2.get());
+    }
+
+    return map;
+}
+
+/* Iterator of DateRange objects */
 public class DateIterator : Object, Gee.Iterator<DateTime> {
 
     DateTime current;
@@ -41,6 +68,10 @@ public class DateRange : Object, Gee.Iterable<DateTime> {
     public DateTime first { get; private set; }
     public DateTime last { get; private set; }
 
+    public int64 days {
+        get { return last.difference(first).DAY; }
+    }
+
     public DateRange (DateTime first, DateTime last) {
         assert (first.compare(last)==-1);
         this.first = first;
@@ -54,8 +85,29 @@ public class DateRange : Object, Gee.Iterable<DateTime> {
     public Gee.Iterator<DateTime> iterator () {
         return new DateIterator (this);
     }
+
+    public Gee.SortedSet<DateTime> to_set() {
+
+        var @set = new Gee.TreeSet<DateTime> ((CompareFunc) DateTime.compare);
+
+        foreach (var date in this)
+            set.add (date);
+
+        return @set;
+    }
+
+    public Gee.List<DateTime> to_list() {
+
+        var list = new Gee.ArrayList<DateTime> ((EqualFunc) datetime_equal_func);
+
+        foreach (var date in this)
+            list.add (date);
+
+        return list;
+    }
 }
 
+/* Convert E.CalComponentDateTime to GLib.DateTime */
 public DateTime convert_to_datetime (E.CalComponentDateTime dt) {
 
     iCal.icaltimetype* idt = dt.value;
@@ -64,6 +116,35 @@ public DateTime convert_to_datetime (E.CalComponentDateTime dt) {
     return new DateTime(tz, idt->year, idt->month, idt->day, idt->hour, idt->minute, idt->second);
 }
 
+
+//--- Gee Utility Functions ---//
+
+/* Interleaves the values of two collections into a Map */
+public void zip<F, G> (Gee.Iterable<F> iterable1, Gee.Iterable<G> iterable2, ref Gee.Map<F, G> map) {
+
+    var i1 = iterable1.iterator();
+    var i2 = iterable2.iterator();
+
+    while (i1.next() && i2.next())
+        map.set (i1, i2);
+}
+
+/* Constructs a new set with keys equal to the values of keymap */
+public void remap<K, V> (Gee.Map<K, K> keymap, Gee.Map<K, V> valmap, ref Gee.Map<K, V> remap) {
+
+    foreach (K key in valmap) {
+
+        var k = keymap.get (key);
+        var v = valmap.get (key);
+
+        remap.set (k, v);
+    }
+}
+
+/* Computes hash value for DateTime */
+public uint datetime_hash_func (DateTime key) {
+    return key.hash();
+}
 
 /* Computes hash value for E.Source */
 public uint source_hash_func (E.Source key) {
@@ -75,6 +156,11 @@ public uint source_group_hash_func (E.SourceGroup key) {
     return str_hash (key.peek_uid());
 }
 
+/* Returns true if 'a' and 'b' are the same GLib.DateTime */
+public bool datetime_equal_func (DateTime a, DateTime b) {
+    return a.equal (b);
+}
+
 /* Returns true if 'a' and 'b' are the same E.SourceGroup */
 public bool source_group_equal_func (E.SourceGroup a, E.SourceGroup b) {
     return a.peek_uid() == b.peek_uid();
@@ -84,6 +170,8 @@ public bool source_group_equal_func (E.SourceGroup a, E.SourceGroup b) {
 public bool source_equal_func (E.Source a, E.Source b) {
     return a.peek_uid() == b.peek_uid();
 }
+
+//--- TreeModel Utility Functions ---//
 
 public Gtk.TreePath? find_treemodel_object<T> (Gtk.TreeModel model, int column, T object, EqualFunc<T>? eqfunc=null) {
 

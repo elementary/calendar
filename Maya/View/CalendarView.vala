@@ -45,7 +45,7 @@ public class Header : Gtk.EventBox {
     
     public void update_columns (int week_starts_on) {
         
-        var date = new DateTime.now_local ();
+        var date = strip_time(new DateTime.now_local ());
         date = date.add_days (week_starts_on - date.get_day_of_week ());
         foreach (var label in labels) {
             label.label = date.format ("%A");
@@ -117,36 +117,53 @@ public class WeekLabels : Gtk.EventBox {
 
 public class Grid : Gtk.Table {
 
-    private GridDay[] days;
+    Gee.Map<DateTime, GridDay> data;
 
-    public DateTime selected_date { get; private set; }
+    public DateTime grid_start { get; private set; }
+    public DateTime grid_end { get; private set; }
+
+    public DateTime? selected_date { get; private set; }
 
     public signal void selection_changed (DateTime new_date);
 
-    public Grid (DateTime date) {
+    public Grid (DateTime dt_start, DateTime dt_end, DateTime dt_som, int weeks) {
 
-        selected_date = date;
+        grid_start = dt_start;
+        grid_end = dt_end;
+
+        selected_date = null;
 
         // Gtk.Table properties
-        n_rows = 6;
+        n_rows = weeks;
         n_columns = 7;
         column_spacing = 0;
         row_spacing = 0;
         homogeneous = true;
 
-        // Initialize days
-        days = new GridDay[n_rows * n_columns];
-        for (int row = 0; row < n_rows; row++) {
-            for (int col = 0; col < n_columns; col++) {
-                var day = new GridDay (date); // XXX: why is this "date" ?
-                day.focus_in_event.connect ((event) => {
-                    on_day_focus_in(day);
-                    return false;
-                });
-                days[row * n_columns + col] = day;
-                attach_defaults (day, col, col + 1, row, row + 1);
-            }
+        data = new Gee.HashMap<DateTime, GridDay>(
+            (HashFunc) DateTime.hash,
+            (EqualFunc) datetime_equal_func,
+            null);
+
+        int row=0, col=0;
+
+        foreach (var date in new DateRange(dt_start, dt_end)) {
+
+            var day = new GridDay (date);
+            data.set (date, day);
+
+            attach_defaults (day, col, col + 1, row, row + 1);
+
+            day.focus_in_event.connect ((event) => {
+                on_day_focus_in(day);
+                return false;
+            });
+
+            col = (col+1) % 7;
+            row = (col==0) ? row+1 : row;
         }
+
+        set_range (dt_start, dt_end, dt_som);
     }
 
     void on_day_focus_in (GridDay day) {
@@ -156,46 +173,61 @@ public class Grid : Gtk.Table {
         selection_changed (selected_date);
     }
 
-    private static int days_to_prepend (int year, int month, int week_starts_on) {
+    public void focus_date (DateTime date) {
 
-        int fdom = (new DateTime.local (year, month, 1, 0, 0, 0)).get_day_of_week ();
-        int days = week_starts_on - fdom;
-        return days > 0 ? 7 - days : -days;
+        debug(@"S @ $(date)");
+
+        data.get(date).grab_focus ();
     }
 
-    public void focus_date (DateTime date, int week_starts_on) {
-
-        int dtp = days_to_prepend (date.get_year(), date.get_month(), week_starts_on);
-
-        var date_to_index = dtp + date.get_day_of_month () - 1;
-        days[date_to_index].grab_focus ();
-    }
-
-    public void change_month (int month, int year, int week_starts_on) {
+    public void set_range (DateTime dt_start, DateTime dt_end, DateTime dt_som) {
 
         var today = new DateTime.now_local ();
 
-        int dtp =  days_to_prepend (year, month, week_starts_on);
-        var date = new DateTime.local (year, month, 1, 0, 0, 0).add_days (-dtp);
+        var dates1 = new DateRange (grid_start, grid_end).to_list();
+        var dates2 = new DateRange (dt_start, dt_end).to_list();
 
-        foreach (var day in days) {
-            if (date.get_day_of_year () == today.get_day_of_year () && date.get_year () == today.get_year ()) {
+        assert (dates1.size == dates2.size);
+
+        var data_new = new Gee.HashMap<DateTime, GridDay>(
+            (HashFunc) DateTime.hash,
+            (EqualFunc) datetime_equal_func,
+            null);
+
+        for (int i=0; i<dates1.size; i++) {
+
+            var date1 = dates1.get(i);
+            var date2 = dates2.get(i);
+
+            assert (data.has_key(date1));
+
+            var day = data.get (date1);
+
+            if (date2.get_day_of_year () == today.get_day_of_year () && date2.get_year () == today.get_year ()) {
                 day.name = "today";
                 day.can_focus = true;
                 day.sensitive = true;
-            } else if (date.get_month () != month) {
+
+            } else if (date2.get_month () != dt_som.get_month ()) {
                 day.name = null;
                 day.can_focus = false;
                 day.sensitive = false;
+
             } else {
                 day.name = null;
                 day.can_focus = true;
                 day.sensitive = true;
             }
 
-            day.update_date (date);
-            date = date.add_days (1);
+            day.update_date (date2);
+            data_new.set (date2, day);
         }
+
+        data.clear ();
+        data.set_all (data_new);
+
+        grid_start = dt_start;
+        grid_end = dt_end;
     }
 }
 
@@ -291,14 +323,14 @@ public class CalendarView : Gtk.HBox {
 
         weeks = new WeekLabels ();
         header = new Header ();
-        grid = new Grid (model.target);
+        grid = new Grid (model.cal_date_start, model.cal_date_end, model.start_of_month, model.num_weeks);
         grid.selection_changed.connect (on_grid_selection_changed);
         
         // HBox properties
         spacing = 0;
         homogeneous = false;
         
-        box = new Gtk.VBox(false,0);
+        box = new Gtk.VBox (false,0);
         box.pack_start (header, false, false, 0);
         box.pack_end (grid, true, true, 0);
         
@@ -311,14 +343,16 @@ public class CalendarView : Gtk.HBox {
         notify["show_weeks"].connect (on_show_weeks_changed);
     }
 
-    void set_date (DateTime date) {
+    void set_date (DateTime date) { // FIXME
 
         debug (@"Setting focus date to $(model.target)");
 
+        var stripdate = strip_time (date);
+
         header.update_columns (model.week_starts_on);
-        weeks.update (date, show_weeks);
-        grid.change_month (date.get_month(), date.get_year(), model.week_starts_on);
-        grid.focus_date (date, model.week_starts_on);
+        weeks.update (stripdate, show_weeks);
+        grid.set_range (model.cal_date_start, model.cal_date_end, model.start_of_month);
+        grid.focus_date (stripdate);
     }
 
     //--- Signal Handlers ---//
@@ -327,7 +361,7 @@ public class CalendarView : Gtk.HBox {
 
         debug (@"Selection changed to $(new_date)");
 
-        model.target = new_date;
+        model.target = strip_time (new_date);
     }
 
     void on_show_weeks_changed () {
@@ -343,7 +377,7 @@ public class CalendarView : Gtk.HBox {
 
     public void on_model_parameters_changed () {
 
-        if (model.target == grid.selected_date)
+        if (model.cal_date_start == grid.grid_start && model.cal_date_end == grid.grid_end)
             return;
 
         remove_all_events ();

@@ -50,7 +50,7 @@ public class CalendarModel : Object {
     }
 
     /* The number of weeks to show in this model */
-    public int num_weeks { get; set; default = 5; }
+    public int num_weeks { get; set; default = 6; }
 
     /* The events for a source have been loaded and stored */
     public signal void source_loaded (E.Source source);
@@ -68,7 +68,7 @@ public class CalendarModel : Object {
 
     public CalendarModel (Gee.Collection<E.Source> sources, DateTime target, Settings.Weekday week_starts_on) {
 
-        _target = target;
+        _target = strip_time(target);
         this.week_starts_on = week_starts_on;
 
         source_client = new Gee.HashMap<E.Source, E.CalClient> ();

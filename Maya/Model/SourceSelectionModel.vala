@@ -214,7 +214,7 @@ class SourceSelectionModel: GLib.Object {
 
     //--- Debugging ---//
 
-    public void _dump () { // XXX: delete me
+    public void _dump () {
         foreach (E.SourceGroup group in groups) {
             print ("%s\n", group.peek_name());
             foreach (E.Source source in group_sources.get(group)) {
