@@ -33,12 +33,21 @@ public class CalendarModel : Object {
     /* Start of Week, ie. Monday=1 or Sunday=7 */
     public Settings.Weekday week_starts_on { get; set; }
 
-    /* The start and end dates for this model. The start date is the first day
-     * of the month of the same month as target date. The only public way to
-     * change the date ranges is to change the target date, num_weeks, or
-     * week_starts_on. */
+    /* The start and end dates for this model. The start date is the first date
+     * corresponding to the week_starts_on that precedes that start of the
+     * month of the target date. In detail:
+     *
+     * cal_date_start <= start_of_month <= target < cal_date_end
+     *
+     * The only public way to change the date ranges is to change the target
+     * date, num_weeks, or week_starts_on. */
     public DateTime cal_date_start { get; private set; }
     public DateTime cal_date_end { get; private set; }
+    public DateTime start_of_month {
+        owned get {
+            return new DateTime.local (_target.get_year(), _target.get_month(), 1, 0, 0, 0);
+        }
+    }
 
     /* The number of weeks to show in this model */
     public int num_weeks { get; set; default = 5; }
@@ -94,7 +103,7 @@ public class CalendarModel : Object {
 
     void recalculate_range () {
 
-        DateTime som = new DateTime.local (_target.get_year(), _target.get_month(), 1, 0, 0, 0);
+        var som = start_of_month;
 
         int dow = som.get_day_of_week(); 
         int wso = (int) week_starts_on;
@@ -102,13 +111,13 @@ public class CalendarModel : Object {
 
         if (wso < dow)
             offset = dow - wso;
-        else if (wso > wso)
+        else if (wso > dow)
             offset = 7 + dow - wso;
 
         cal_date_start = som.add_days (-offset);
         cal_date_end = cal_date_start.add_weeks(num_weeks-1).add_days(6);
 
-        debug(@"Date ranges set (f:$cal_date_start <= t:$target <= l:$cal_date_end)");
+        debug(@"Date ranges set (f:$cal_date_start <= s:$(start_of_month) <= t:$target < l:$cal_date_end)");
 
         parameters_changed ();
     }
