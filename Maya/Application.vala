@@ -111,8 +111,6 @@ namespace Maya {
 
         private void initialise() {
 
-            var target = new DateTime.now_local ();
-
 			saved_state = new Settings.SavedState ();
 			prefs = new Settings.MayaSettings ();
 
@@ -128,7 +126,7 @@ namespace Maya {
             source_selection_model = new Model.SourceSelectionModel();
 
             var enabled_sources = source_selection_model.enabled_sources;
-            calmodel = new Model.CalendarModel(enabled_sources, target, prefs.week_starts_on);
+            calmodel = new Model.CalendarModel(enabled_sources, prefs.week_starts_on);
 
             source_selector_view = new View.SourceSelector (window, source_selection_model);
             foreach (var group in source_selection_model.groups) {
@@ -136,7 +134,7 @@ namespace Maya {
                 tview.r_enabled.toggled.connect ((path) => {source_selector_toggled(group,path);} );
             }
 
-			toolbar = new View.MayaToolbar (target);
+			toolbar = new View.MayaToolbar (calmodel.month_start);
 			toolbar.button_add.clicked.connect(toolbar_add_clicked);
 			toolbar.button_calendar_sources.clicked.connect(toolbar_sources_clicked);
 			toolbar.menu.today.activate.connect (menu_today_toggled);
@@ -151,6 +149,7 @@ namespace Maya {
 			toolbar.year_switcher.right_clicked.connect (toolbar_year_switcher_right_clicked);
 
 			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
+            calview.today();
 
 			sidebar = new View.Sidebar ();
 
@@ -211,7 +210,7 @@ namespace Maya {
         //--- SIGNAL HANDLERS ---//
 
         void on_model_parameters_changed () {
-            toolbar.set_switcher_date (calmodel.target);
+            toolbar.set_switcher_date (calmodel.month_start);
         }
 
         void prefs_week_starts_on_changed () {
@@ -237,23 +236,29 @@ namespace Maya {
         }
 
         void toolbar_month_switcher_left_clicked () {
-            calmodel.target = calmodel.target.add_months (-1);
+            calmodel.month_start = calmodel.month_start.add_months (-1);
         }
 
         void toolbar_month_switcher_right_clicked () {
-            calmodel.target = calmodel.target.add_months (1);
+            calmodel.month_start = calmodel.month_start.add_months (1);
         }
 
         void toolbar_year_switcher_left_clicked () {
-            calmodel.target = calmodel.target.add_years (-1);
+            calmodel.month_start = calmodel.month_start.add_years (-1);
         }
 
         void toolbar_year_switcher_right_clicked () {
-            calmodel.target = calmodel.target.add_years (1);
+            calmodel.month_start = calmodel.month_start.add_years (1);
         }
 
         void menu_today_toggled () {
-            calmodel.target = new DateTime.now_local ();
+
+            var today = new DateTime.now_local ();
+
+            if (calmodel.month_start.get_month() != today.get_month())
+                calmodel.month_start = new DateTime.local(today.get_year(), today.get_month(), 1, 0, 0, 0);
+
+            calview.today();
         }
 
         void menu_show_weeks_toggled () {

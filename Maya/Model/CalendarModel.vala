@@ -2,60 +2,32 @@ namespace Maya.Model {
 
 public class CalendarModel : Object {
 
-    /* Target date is used to determine start-end dates for calendar. */
-    DateTime _target;
-    public DateTime target {
-
-        get { return _target; }
-
-        set {
-
-            // do nothing if new date is same as target
-            if (value == _target) {
-
-                return;
-
-            // only set date & notify if day of month has changed
-            } else if (value.get_year() == _target.get_year() && value.get_month() == _target.get_month()) {
-
-                _target = value;
-                parameters_changed ();
-
-            // also recalculate range if month/year has changed
-            } else {
-
-                _target = value;
-                on_parameter_changed ();
-            }
-        }
-    }
-
-    /* Start of Week, ie. Monday=1 or Sunday=7 */
-    public Settings.Weekday week_starts_on { get; set; }
-
-    /* The start and end dates for this model. The start date is the first date
-     * corresponding to the week_starts_on that precedes that start of the
-     * month of the target date. In detail:
+    /* The data_range is the range of dates for which this model is storing
+     * data. The month_range is a subset of this range corresponding to the
+     * calendar month that is being focused on. In summary:
      *
-     * cal_date_start <= start_of_month <= target < cal_date_end
+     * data_range.first <= month_range.first < month_range.last <= data_range.last
      *
-     * The only public way to change the date ranges is to change the target
-     * date, num_weeks, or week_starts_on. */
-    public DateTime cal_date_start { get; private set; }
-    public DateTime cal_date_end { get; private set; }
-    public DateTime start_of_month {
-        owned get {
-            return new DateTime.local (_target.get_year(), _target.get_month(), 1, 0, 0, 0);
-        }
-    }
+     * There is no way to set the ranges publicly. They can only be modified by
+     * changing one of the following properties: month_start, num_weeks, and
+     * week_starts_on.
+    */
+    public DateRange data_range { get; private set; }
+    public DateRange month_range { get; private set; }
+
+    /* The first day of the month */
+    public DateTime month_start { get; set; }
 
     /* The number of weeks to show in this model */
     public int num_weeks { get; set; default = 6; }
 
+    /* The start of week, ie. Monday=1 or Sunday=7 */
+    public Settings.Weekday week_starts_on { get; set; }
+
     /* The events for a source have been loaded and stored */
     public signal void source_loaded (E.Source source);
 
-    /* The target, num_weeks, or week_starts_on have been changed */
+    /* The month_start, num_weeks, or week_starts_on have been changed */
     public signal void parameters_changed ();
 
     Gee.Map<E.Source, E.CalClient> source_client;
@@ -66,9 +38,9 @@ public class CalendarModel : Object {
     //public signal void events_modified();
     //public signal void events_removed();
 
-    public CalendarModel (Gee.Collection<E.Source> sources, DateTime target, Settings.Weekday week_starts_on) {
+    public CalendarModel (Gee.Collection<E.Source> sources, Settings.Weekday week_starts_on) {
 
-        _target = strip_time(target);
+        this.month_start = get_start_of_month ();
         this.week_starts_on = week_starts_on;
 
         source_client = new Gee.HashMap<E.Source, E.CalClient> ();
@@ -84,8 +56,9 @@ public class CalendarModel : Object {
         recalculate_range ();
         reload_events ();
 
-        notify["num_weeks"].connect (on_parameter_changed);
-        notify["week_starts_on"].connect (on_parameter_changed);
+        notify["month-start"].connect (on_parameter_changed);
+        notify["num-weeks"].connect (on_parameter_changed);
+        notify["week-starts-on"].connect (on_parameter_changed);
     }
 
     public Gee.Collection<E.CalComponent> get_events (E.Source source) {
@@ -103,9 +76,7 @@ public class CalendarModel : Object {
 
     void recalculate_range () {
 
-        var som = start_of_month;
-
-        int dow = som.get_day_of_week(); 
+        int dow = month_start.get_day_of_week(); 
         int wso = (int) week_starts_on;
         int offset = 0;
 
@@ -114,18 +85,23 @@ public class CalendarModel : Object {
         else if (wso > dow)
             offset = 7 + dow - wso;
 
-        cal_date_start = som.add_days (-offset);
-        cal_date_end = cal_date_start.add_weeks(num_weeks-1).add_days(6);
+        var data_range_first = month_start.add_days (-offset);
+        var data_range_last = data_range_first.add_weeks(num_weeks-1).add_days(6);
 
-        debug(@"Date ranges set (f:$cal_date_start <= s:$(start_of_month) <= t:$target < l:$cal_date_end)");
+        data_range = new DateRange (data_range_first, data_range_last);
+
+        var month_end = month_start.add_full (0, 1, -1);
+        month_range = new DateRange (month_start, month_end);
+
+        debug(@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
 
         parameters_changed ();
     }
 
     void reload_events () {
         
-        var iso_first = E.isodate_from_time_t((ulong) cal_date_start.to_unix());
-        var iso_last = E.isodate_from_time_t((ulong) cal_date_end.to_unix());
+        var iso_first = E.isodate_from_time_t((ulong) data_range.first.to_unix());
+        var iso_last = E.isodate_from_time_t((ulong) data_range.last.to_unix());
 
         var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
 

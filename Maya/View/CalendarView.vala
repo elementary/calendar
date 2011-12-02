@@ -175,7 +175,7 @@ public class Grid : Gtk.Table {
 
     public void focus_date (DateTime date) {
 
-        debug(@"S @ $(date)");
+        debug(@"Setting focus to @ $(date)");
 
         data.get(date).grab_focus ();
     }
@@ -323,8 +323,7 @@ public class CalendarView : Gtk.HBox {
 
         weeks = new WeekLabels ();
         header = new Header ();
-        grid = new Grid (model.cal_date_start, model.cal_date_end, model.start_of_month, model.num_weeks);
-        grid.selection_changed.connect (on_grid_selection_changed);
+        grid = new Grid (model.data_range.first, model.data_range.last, model.month_start, model.num_weeks);
         
         // HBox properties
         spacing = 0;
@@ -337,52 +336,53 @@ public class CalendarView : Gtk.HBox {
         pack_start(weeks, false, false, 0);
         pack_end(box, true, true, 0);
 
-        set_date (model.target);
+        sync_with_model ();
 
         model.parameters_changed.connect (on_model_parameters_changed);
         notify["show_weeks"].connect (on_show_weeks_changed);
     }
 
-    void set_date (DateTime date) { // FIXME
-
-        debug (@"Setting focus date to $(model.target)");
-
-        var stripdate = strip_time (date);
+    void sync_with_model () { // FIXME
 
         header.update_columns (model.week_starts_on);
-        weeks.update (stripdate, show_weeks);
-        grid.set_range (model.cal_date_start, model.cal_date_end, model.start_of_month);
-        grid.focus_date (stripdate);
+        weeks.update (model.data_range.first, show_weeks);
+        grid.set_range (model.data_range.first, model.data_range.last, model.month_start);
+
+        if (grid.selected_date != null) {
+            var bumpdate = model.month_start.add_days (grid.selected_date.get_day_of_month() - 1);
+            grid.focus_date (bumpdate);
+        }
     }
 
     //--- Signal Handlers ---//
 
-    void on_grid_selection_changed (DateTime new_date) {
-
-        debug (@"Selection changed to $(new_date)");
-
-        model.target = strip_time (new_date);
-    }
-
     void on_show_weeks_changed () {
 
-        weeks.update (model.target, show_weeks);
+        weeks.update (model.data_range.first, show_weeks);
     }
 
     public void on_source_loaded (E.Source source) {
 
-        remove_source_events (source);
+        remove_source_events (source );
         add_source_events (source, model.get_events (source));
     }
 
     public void on_model_parameters_changed () {
 
-        if (model.cal_date_start == grid.grid_start && model.cal_date_end == grid.grid_end)
+        if (model.data_range.first == grid.grid_start && model.data_range.last == grid.grid_end)
             return;
 
         remove_all_events ();
 
-        set_date (model.target);
+        sync_with_model ();
+    }
+
+    //--- Public Methods ---//
+    
+    public void today () {
+
+        var today = strip_time (new DateTime.now_local ());
+        grid.focus_date (today);
     }
 
     //--- TODO: Need Implementation ---//

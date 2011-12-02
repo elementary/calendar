@@ -2,6 +2,14 @@ namespace Maya {
 
 //--- Date and Time ---//
 
+public DateTime get_start_of_month (owned DateTime? date = null) {
+    
+    if (date==null)
+        date = new DateTime.now_local();
+
+    return new DateTime.local (date.get_year(), date.get_month(), 1, 0, 0, 0);
+}
+
 public DateTime strip_time (DateTime datetime) {
     int y,m,d;
     datetime.get_ymd (out y, out m, out d);
