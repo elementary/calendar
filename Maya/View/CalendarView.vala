@@ -120,7 +120,6 @@ public class Grid : Gtk.Table {
     Gee.Map<DateTime, GridDay> data;
 
     public DateRange grid_range { get; private set; }
-
     public DateTime? selected_date { get; private set; }
 
     public signal void selection_changed (DateTime new_date);
@@ -335,10 +334,12 @@ public class CalendarView : Gtk.HBox {
         sync_with_model ();
 
         model.parameters_changed.connect (on_model_parameters_changed);
+        model.source_loaded.connect (on_source_loaded);
+        model.source_unloaded.connect (on_source_unloaded);
         notify["show_weeks"].connect (on_show_weeks_changed);
     }
 
-    void sync_with_model () { // FIXME
+    void sync_with_model () {
 
         header.update_columns (model.week_starts_on);
         weeks.update (model.data_range.first, show_weeks);
@@ -358,16 +359,21 @@ public class CalendarView : Gtk.HBox {
         weeks.update (model.data_range.first, show_weeks);
     }
 
-    public void on_source_loaded (E.Source source) {
+    void on_source_loaded (E.Source source) {
 
-        remove_source_events (source );
+        remove_source_events (source);
         add_source_events (source, model.get_events (source));
     }
 
-    public void on_model_parameters_changed () {
+    void on_source_unloaded (E.Source source) {
+
+        remove_source_events (source);
+    }
+
+    void on_model_parameters_changed () {
 
         if (model.data_range.equals (grid.grid_range))
-            return;
+            return; // nothing to do
 
         remove_all_events ();
 

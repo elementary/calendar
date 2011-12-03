@@ -20,32 +20,26 @@ namespace Maya.View {
 	public class EventDialog : Gtk.Dialog {
 		
 		Gtk.Container container { get; private set; }
+
+        E.CalComponent cc;
+        public E.CalComponent calcomponent { get { return cc; }}
 	 
-		public EventDialog (Gtk.Window window) {
+		public EventDialog (Gtk.Window window, E.CalComponent calcomponent) {
 		
+            cc = calcomponent;
+
 			// Dialog properties
 			modal = true;
 			window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
 			transient_for = window;
-			response.connect (on_response);
 			
 			// Build dialog
 			build_dialog ();
-				
 		}
 		
-		public EventDialog.without_parent (Granite.Application app) {
-		
-		    // Dialog properties
-		    response.connect (on_response);
-		    set_application (app);
-			set_position (Gtk.WindowPosition.CENTER);
-		    
-		    // Build dialog
-		    build_dialog ();
-		}
-		
-		private void build_dialog () {
+		//--- Helpers ---//
+
+		void build_dialog () {
 		
 		    container = (Gtk.Container) get_content_area ();
 		    container.margin_left = 10;
@@ -141,51 +135,25 @@ namespace Maya.View {
 		    
 		    set_default_response (Gtk.ResponseType.APPLY);
 		    show_all();
-		
 		}
-		
-		public void set_fields () {
-		    
-		    //TODO: set field values
-		    
-		}
-		
-		private void on_response (int response_id) {
-		    
-		    if (response_id == Gtk.ResponseType.CANCEL)
-		        close ();
-		        
-		    if (response_id == Gtk.ResponseType.APPLY)
-		        on_apply ();
-		    
-		}
-		
-		protected virtual void on_apply () {
-		
-		    print ("Event applied \n");
-		    close ();
-		
-		}
-		
-		private Gtk.HBox make_hbox () {
+
+		Gtk.HBox make_hbox () {
 		    
 		    var box = new Gtk.HBox (false, 10);
 		    box.margin_bottom = 10;
 		
 		    return box;
-		
 		}
 		
-		private Gtk.VBox make_vbox () {
+		Gtk.VBox make_vbox () {
 		
 		    var box = new Gtk.VBox (false, 0);
 		    box.margin_bottom = 10;
 		    
 		    return box;
-		
 		}
 		
-		private Gtk.Label make_label (string text) {
+		Gtk.Label make_label (string text) {
 		
 		    var label = new Gtk.Label ("<span weight='bold'>" + text + "</span>");
 		    label.use_markup = true;
@@ -193,74 +161,48 @@ namespace Maya.View {
 			label.margin_bottom = 10;
 		    
 		    return label;
-		
 		}
 		
-		private Granite.Widgets.DatePicker make_date_picker () {
+		Granite.Widgets.DatePicker make_date_picker () {
 		    
 		    var date_picker = new Granite.Widgets.DatePicker.with_format ("%B %e, %Y");
 			date_picker.width_request = 200;
 			
 			return date_picker;
-		
 		}
 		
-		private Granite.Widgets.TimePicker make_time_picker () {
+		Granite.Widgets.TimePicker make_time_picker () {
 		    
 		    var time_picker = new Granite.Widgets.TimePicker.with_format ("%l:%M %p");
 		    time_picker.width_request = 80;
 		    
 		    return time_picker;
-		
 		}
+		
+        //--- Signal Handlers ---//
 		
 	}
 	
 	public class AddEventDialog : EventDialog {
 	    
-	    public AddEventDialog (Gtk.Window window) {
+	    public AddEventDialog (Gtk.Window window, E.CalComponent event) {
 	        
-	        base(window);
+	        base(window, event);
 	    
 	        // Dialog properties
 	        title = "Add Event";
-	    
 	    }
-	    
-	    public AddEventDialog.without_parent (Granite.Application app) {
-	    
-	        base.without_parent (app);
-	    
-	    }
-	    
-	    protected override void on_apply () {
-	    
-	        print ("Add Event applied \n");
-	        close ();
-	    
-	    }
-	    
 	}
 	
 	public class EditEventDialog : EventDialog {
-	    
-	    public EditEventDialog (Gtk.Window window) {
+	 
+	    public EditEventDialog (Gtk.Window window, E.CalComponent event) {
 	        
-	        base(window);
+	        base(window, event);
 	        
 	        // Dialog Properties
 	        title = "Edit Event";
-	        
 	    }
-	    
-	    protected override void on_apply () {
-	    
-	        print ("Edit Event applied \n");
-	        close ();
-	    
-	    }
-	    
 	}
-	
 }
 

@@ -17,6 +17,11 @@
 
 namespace Maya {
 
+    namespace Option {
+
+		private static bool ADD_EVENT = false;
+    }
+
     public static int main (string[] args) {
 
         var context = new OptionContext("Calendar");
@@ -74,10 +79,8 @@ namespace Maya {
             about_license_type = Gtk.License.GPL_3_0;
 		}
 
-		private static bool APP_OPTION_ADD = false;
-
 		public static const OptionEntry[] app_options = {
-			{ "add-event", 'a', 0, OptionArg.NONE, out APP_OPTION_ADD, "Just show an add event dialog", null },
+			{ "add-event", 'a', 0, OptionArg.NONE, out Option.ADD_EVENT, "Just show an add event dialog", null },
 			{ null }
 		};
 
@@ -101,18 +104,35 @@ namespace Maya {
 			    return;
 			}
 
-			if (APP_OPTION_ADD) {
-			    (new View.AddEventDialog.without_parent (this)).show_all ();
+			if (Option.ADD_EVENT) {
+			    // TODO: NOT IMPLEMENTED
 			} else {
-                initialise();
+                init_prefs ();
+                init_models ();
+                init_gui ();
 			    window.show_all ();
 			}
 		}
 
-        private void initialise() {
+        void init_prefs () {
 
 			saved_state = new Settings.SavedState ();
+			saved_state.changed["show-weeks"].connect (saved_state_show_weeks_changed);
+
 			prefs = new Settings.MayaSettings ();
+			prefs.changed["week-starts-on"].connect (prefs_week_starts_on_changed);
+        }
+
+        void init_models () {
+
+            source_selection_model = new Model.SourceSelectionModel();
+
+            calmodel = new Model.CalendarModel(source_selection_model, prefs.week_starts_on);
+
+            calmodel.parameters_changed.connect (on_model_parameters_changed);
+        }
+
+        void init_gui () {
 
             window = new Gtk.Window ();
 			window.title = "Maya";
@@ -122,11 +142,6 @@ namespace Maya {
 			window.default_height = saved_state.window_height;
             window.delete_event.connect (window_delete_event_cb);
             window.destroy.connect( () => Gtk.main_quit() );
-
-            source_selection_model = new Model.SourceSelectionModel();
-
-            var enabled_sources = source_selection_model.enabled_sources;
-            calmodel = new Model.CalendarModel(enabled_sources, prefs.week_starts_on);
 
             source_selector_view = new View.SourceSelector (window, source_selection_model);
             foreach (var group in source_selection_model.groups) {
@@ -164,12 +179,6 @@ namespace Maya {
 
             add_window(window);
 
-			saved_state.changed["show-weeks"].connect (saved_state_show_weeks_changed);
-			prefs.changed["week-starts-on"].connect (prefs_week_starts_on_changed);
-
-            calmodel.source_loaded.connect (calview.on_source_loaded);
-            calmodel.parameters_changed.connect (on_model_parameters_changed);
-
 			if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
 				window.maximize ();
 			else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
@@ -199,7 +208,7 @@ namespace Maya {
 			saved_state.hpaned_position = hpaned.position;
 		}
 
-		private void toggle_fullscreen () {
+		void toggle_fullscreen () {
 
 			if (toolbar.menu.fullscreen.active)
 				window.fullscreen ();
@@ -207,7 +216,35 @@ namespace Maya {
 				window.unfullscreen ();
 		}
 
+        void edit_event (E.CalComponent event, bool add_event) {
+
+		    View.EventDialog dialog;
+            
+            if (add_event)
+                dialog = new View.AddEventDialog (window, event);
+            else
+                dialog = new View.EditEventDialog (window, event);
+
+            dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, add_event));
+		    dialog.present ();
+        }
+
         //--- SIGNAL HANDLERS ---//
+
+        void on_event_dialog_response (View.EventDialog dialog, int response_id, bool add_event)  {
+
+            E.CalComponent event = dialog.calcomponent;
+
+            dialog.close();
+
+		    if (response_id != Gtk.ResponseType.APPLY)
+                return;
+            
+            //if (add_event)
+            //    calmodel.add_event (event);
+            //else
+            //    calmodel.modify_event (event);
+        }
 
         void on_model_parameters_changed () {
             toolbar.set_switcher_date (calmodel.month_start);
@@ -227,8 +264,9 @@ namespace Maya {
         }
 
         void toolbar_add_clicked () {
-		    var add_dialog = new View.AddEventDialog (window);
-		    add_dialog.present ();
+            
+            var event = new E.CalComponent ();
+            edit_event (event, true);
         }
 
         void toolbar_sources_clicked () {

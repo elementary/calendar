@@ -24,8 +24,9 @@ public class CalendarModel : Object {
     /* The start of week, ie. Monday=1 or Sunday=7 */
     public Settings.Weekday week_starts_on { get; set; }
 
-    /* The events for a source have been loaded and stored */
+    /* The events for a source have been loaded or unloaded */
     public signal void source_loaded (E.Source source);
+    public signal void source_unloaded (E.Source source);
 
     /* The month_start, num_weeks, or week_starts_on have been changed */
     public signal void parameters_changed ();
@@ -38,23 +39,26 @@ public class CalendarModel : Object {
     //public signal void events_modified();
     //public signal void events_removed();
 
-    public CalendarModel (Gee.Collection<E.Source> sources, Settings.Weekday week_starts_on) {
+    public CalendarModel (Model.SourceSelectionModel source_model, Settings.Weekday week_starts_on) {
 
         this.month_start = get_start_of_month ();
         this.week_starts_on = week_starts_on;
 
+        compute_ranges ();
+
         source_client = new Gee.HashMap<E.Source, E.CalClient> ();
         source_events = new Gee.HashMap<E.Source, Gee.Set<E.CalComponent>> ();
-        
-        // create clients for each source
-        foreach (var source in sources) {
 
-            var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
-            source_client.set (source, client);
+        var sources = source_model.enabled_sources;
+        foreach (var source in sources) {
+            add_source (source);
         }
 
-        recalculate_range ();
-        reload_events ();
+        // Signals
+
+        source_model.status_changed.connect (on_source_status_changed);
+        source_model.source_added.connect (on_source_added);
+        source_model.source_removed.connect (on_source_removed);
 
         notify["month-start"].connect (on_parameter_changed);
         notify["num-weeks"].connect (on_parameter_changed);
@@ -67,14 +71,13 @@ public class CalendarModel : Object {
 
     void on_parameter_changed () {
 
-        recalculate_range ();
-
+        compute_ranges ();
         parameters_changed ();
 
-        reload_events ();
+        load_all_source_events ();
     }
 
-    void recalculate_range () {
+    void compute_ranges () {
 
         int dow = month_start.get_day_of_week(); 
         int wso = (int) week_starts_on;
@@ -94,27 +97,62 @@ public class CalendarModel : Object {
         month_range = new DateRange (month_start, month_end);
 
         debug(@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
-
-        parameters_changed ();
     }
 
-    void reload_events () {
+    void load_all_source_events () {
+
+        foreach (var source in source_client.keys)
+            load_source_events (source);
+    }
+
+    void load_source_events (E.Source source) {
         
+        debug("Loading events for source '%s'", source.peek_name());
+
         var iso_first = E.isodate_from_time_t((ulong) data_range.first.to_unix());
         var iso_last = E.isodate_from_time_t((ulong) data_range.last.to_unix());
 
         var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
 
-        foreach (var source in source_client.keys) {
+        var client = source_client.get (source);
 
-            debug("Loading events for source '%s'", source.peek_name());
+        client.get_object_list_as_comps.begin(query, null, (obj, results) => {
+            on_events_received (results, source, client);
+        });
+    }
 
-            var client = source_client.get (source);
+    void add_source (E.Source source) {
 
-            client.get_object_list_as_comps.begin(query, null, (obj, results) => {
-                on_events_received (results, source, client);
-            });
-        }
+        var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
+        source_client.set (source, client);
+        load_source_events (source);
+    }
+
+    void remove_source (E.Source source) {
+
+        source_client.unset (source);
+        source_events.unset (source);
+        source_unloaded (source);
+    }
+
+    //--- SIGNAL HANDLERS ---//
+
+    void on_source_status_changed (E.Source source, bool enabled) {
+
+        if (enabled)
+            add_source (source);
+        else
+            remove_source (source);
+    }
+
+    void on_source_added (E.SourceGroup group, E.Source source) {
+
+        add_source (source);
+    }
+
+    void on_source_removed (E.SourceGroup group, E.Source source) {
+        
+        remove_source (source);
     }
 
     void on_events_received (AsyncResult results, E.Source source, E.CalClient client) {
@@ -141,7 +179,6 @@ public class CalendarModel : Object {
         source_loaded (source);
     }
 
-    //--- SIGNAL HANDLERS ---//
     // on_e_cal_client_view_objects_added
     // on_e_cal_client_view_objects_removed
     // on_e_cal_client_view_objects_modified

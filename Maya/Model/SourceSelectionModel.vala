@@ -1,6 +1,6 @@
 namespace Maya.Model {
 
-class SourceSelectionModel: GLib.Object {
+public class SourceSelectionModel: GLib.Object {
 
     Gee.List<E.SourceGroup> _groups;
     public Gee.List<E.SourceGroup> groups {
