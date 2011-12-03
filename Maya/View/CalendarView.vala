@@ -370,13 +370,13 @@ public class CalendarView : Gtk.HBox {
         remove_source_events (source);
     }
 
+    /* Indicates the month has changed */
     void on_model_parameters_changed () {
 
         if (model.data_range.equals (grid.grid_range))
             return; // nothing to do
 
         remove_all_events ();
-
         sync_with_model ();
     }
 
@@ -392,17 +392,29 @@ public class CalendarView : Gtk.HBox {
 
     /* Render the events for the source in the grid */
     void add_source_events (E.Source source, Gee.Collection<E.CalComponent> events) {
-        debug ("Not Implemented: add_source_events");
+
+        Idle.add ( () => {
+            debug ("Not Implemented: add_source_events");
+            return false;
+        });
     }
 
     /* Removes all events for source from the grid */
     void remove_source_events (E.Source source) {
-        debug ("Not Implemented: remove_source_events");
+
+        Idle.add ( () => {
+            debug ("Not Implemented: remove_source_events");
+            return false;
+        });
     }
 
     /* Removes all events for all sources from the grid */
     void remove_all_events () {
-        debug ("Not Implemented: remove_all_events");
+
+        Idle.add ( () => {
+            debug ("Not Implemented: remove_all_events");
+            return false;
+        });
     }
 }
 
