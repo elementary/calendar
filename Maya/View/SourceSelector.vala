@@ -58,14 +58,14 @@ class SourceGroupBox : Gtk.VBox {
 
 class SourceSelector : Gtk.Window {
 
-    Model.SourceSelectionModel model;
+    Model.SourceManager model;
 
     Gee.Map<E.SourceGroup, SourceGroupBox> _group_box;
     public Gee.Map<E.SourceGroup, SourceGroupBox> group_box {
         owned get { return _group_box.read_only_view; }
     }
 
-    public SourceSelector(Gtk.Window window, Model.SourceSelectionModel model) {
+    public SourceSelector(Gtk.Window window, Model.SourceManager model) {
 
         transient_for = window;
         this.model = model;

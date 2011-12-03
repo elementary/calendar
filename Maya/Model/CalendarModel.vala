@@ -39,7 +39,7 @@ public class CalendarModel : Object {
     //public signal void events_modified();
     //public signal void events_removed();
 
-    public CalendarModel (Model.SourceSelectionModel source_model, Settings.Weekday week_starts_on) {
+    public CalendarModel (Model.SourceManager source_model, Settings.Weekday week_starts_on) {
 
         this.month_start = get_start_of_month ();
         this.week_starts_on = week_starts_on;

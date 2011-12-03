@@ -95,7 +95,7 @@ include(ValaPrecompile)
 vala_precompile(VALA_C
     Maya/Application.vala
     Maya/Model/CalendarModel.vala
-    Maya/Model/SourceSelectionModel.vala
+    Maya/Model/SourceManager.vala
     Maya/Services/Contractor.vala
     Maya/Services/Dexter.vala
     Maya/Settings/MayaSettings.vala

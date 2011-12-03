@@ -93,7 +93,7 @@ namespace Maya {
 		View.Sidebar sidebar;
         Gtk.HPaned hpaned;
 
-        Model.SourceSelectionModel source_selection_model;
+        Model.SourceManager source_selection_model;
         Model.CalendarModel calmodel;
         View.SourceSelector source_selector_view;
 
@@ -125,7 +125,7 @@ namespace Maya {
 
         void init_models () {
 
-            source_selection_model = new Model.SourceSelectionModel();
+            source_selection_model = new Model.SourceManager();
 
             calmodel = new Model.CalendarModel(source_selection_model, prefs.week_starts_on);
 
