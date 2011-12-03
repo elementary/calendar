@@ -117,10 +117,10 @@ namespace Maya {
         void init_prefs () {
 
 			saved_state = new Settings.SavedState ();
-			saved_state.changed["show-weeks"].connect (saved_state_show_weeks_changed);
+			saved_state.changed["show-weeks"].connect (on_saved_state_show_weeks_changed);
 
 			prefs = new Settings.MayaSettings ();
-			prefs.changed["week-starts-on"].connect (prefs_week_starts_on_changed);
+			prefs.changed["week-starts-on"].connect (on_prefs_week_starts_on_changed);
         }
 
         void init_models () {
@@ -140,28 +140,28 @@ namespace Maya {
 			window.set_size_request (700, 400);
 			window.default_width = saved_state.window_width;
 			window.default_height = saved_state.window_height;
-            window.delete_event.connect (window_delete_event_cb);
+            window.delete_event.connect (on_window_delete_event);
             window.destroy.connect( () => Gtk.main_quit() );
 
             source_selector_view = new View.SourceSelector (window, source_selection_model);
             foreach (var group in source_selection_model.groups) {
                 var tview = source_selector_view.group_box.get(group).tview;
-                tview.r_enabled.toggled.connect ((path) => {source_selector_toggled(group,path);} );
+                tview.r_enabled.toggled.connect ((path) => on_source_selector_toggled (group,path));
             }
 
 			toolbar = new View.MayaToolbar (calmodel.month_start);
-			toolbar.button_add.clicked.connect(toolbar_add_clicked);
-			toolbar.button_calendar_sources.clicked.connect(toolbar_sources_clicked);
-			toolbar.menu.today.activate.connect (menu_today_toggled);
-			toolbar.menu.fullscreen.toggled.connect (toggle_fullscreen);
-			toolbar.menu.weeknumbers.toggled.connect (menu_show_weeks_toggled);
+			toolbar.button_add.clicked.connect(on_tb_add_clicked);
+			toolbar.button_calendar_sources.clicked.connect(on_tb_sources_clicked);
+			toolbar.menu.today.activate.connect (on_menu_today_toggled);
+			toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);
+			toolbar.menu.weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
 			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
 			toolbar.menu.weeknumbers.active = saved_state.show_weeks;
 
-			toolbar.month_switcher.left_clicked.connect (toolbar_month_switcher_left_clicked);
-			toolbar.month_switcher.right_clicked.connect (toolbar_month_switcher_right_clicked);
-			toolbar.year_switcher.left_clicked.connect (toolbar_year_switcher_left_clicked);
-			toolbar.year_switcher.right_clicked.connect (toolbar_year_switcher_right_clicked);
+			toolbar.month_switcher.left_clicked.connect (on_tb_month_switcher_left_clicked);
+			toolbar.month_switcher.right_clicked.connect (on_tb_month_switcher_right_clicked);
+			toolbar.year_switcher.left_clicked.connect (on_tb_year_switcher_left_clicked);
+			toolbar.year_switcher.right_clicked.connect (on_tb_year_switcher_right_clicked);
 
 			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
             calview.today();
@@ -208,14 +208,6 @@ namespace Maya {
 			saved_state.hpaned_position = hpaned.position;
 		}
 
-		void toggle_fullscreen () {
-
-			if (toolbar.menu.fullscreen.active)
-				window.fullscreen ();
-			else
-				window.unfullscreen ();
-		}
-
         void edit_event (E.CalComponent event, bool add_event) {
 
 		    View.EventDialog dialog;
@@ -230,6 +222,14 @@ namespace Maya {
         }
 
         //--- SIGNAL HANDLERS ---//
+
+		void on_toggle_fullscreen () {
+
+			if (toolbar.menu.fullscreen.active)
+				window.fullscreen ();
+			else
+				window.unfullscreen ();
+		}
 
         void on_event_dialog_response (View.EventDialog dialog, int response_id, bool add_event)  {
 
@@ -250,46 +250,46 @@ namespace Maya {
             toolbar.set_switcher_date (calmodel.month_start);
         }
 
-        void prefs_week_starts_on_changed () {
+        void on_prefs_week_starts_on_changed () {
             calmodel.week_starts_on = prefs.week_starts_on;
         }
 
-        void saved_state_show_weeks_changed () {
+        void on_saved_state_show_weeks_changed () {
             calview.show_weeks = saved_state.show_weeks;
         }
 
-        bool window_delete_event_cb (Gdk.EventAny event) {
+        bool on_window_delete_event (Gdk.EventAny event) {
             update_saved_state();
             return false;
         }
 
-        void toolbar_add_clicked () {
+        void on_tb_add_clicked () {
             
             var event = new E.CalComponent ();
             edit_event (event, true);
         }
 
-        void toolbar_sources_clicked () {
+        void on_tb_sources_clicked () {
 		    source_selector_view.show_all();
         }
 
-        void toolbar_month_switcher_left_clicked () {
+        void on_tb_month_switcher_left_clicked () {
             calmodel.month_start = calmodel.month_start.add_months (-1);
         }
 
-        void toolbar_month_switcher_right_clicked () {
+        void on_tb_month_switcher_right_clicked () {
             calmodel.month_start = calmodel.month_start.add_months (1);
         }
 
-        void toolbar_year_switcher_left_clicked () {
+        void on_tb_year_switcher_left_clicked () {
             calmodel.month_start = calmodel.month_start.add_years (-1);
         }
 
-        void toolbar_year_switcher_right_clicked () {
+        void on_tb_year_switcher_right_clicked () {
             calmodel.month_start = calmodel.month_start.add_years (1);
         }
 
-        void menu_today_toggled () {
+        void on_menu_today_toggled () {
 
             var today = new DateTime.now_local();
 
@@ -299,11 +299,11 @@ namespace Maya {
             calview.today();
         }
 
-        void menu_show_weeks_toggled () {
+        void on_menu_show_weeks_toggled () {
             saved_state.show_weeks = toolbar.menu.weeknumbers.active;
         }
 
-        void source_selector_toggled (E.SourceGroup group, string path) {
+        void on_source_selector_toggled (E.SourceGroup group, string path) {
             source_selection_model.toggle_source_status (group, path);
         }
 	}

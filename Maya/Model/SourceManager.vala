@@ -20,7 +20,6 @@ public class SourceManager: GLib.Object {
             Gee.Collection<E.Source> sources = new Gee.HashSet<E.Source> ();
 
             foreach (var source in group_sources.get_values()) {
-
                 if (source_enabled.get (source))
                     sources.add (source);
             }
