@@ -93,9 +93,9 @@ namespace Maya {
 		View.Sidebar sidebar;
         Gtk.HPaned hpaned;
 
-        Model.SourceManager source_selection_model;
+        Model.SourceManager sourcemgr;
         Model.CalendarModel calmodel;
-        View.SourceSelector source_selector_view;
+        View.SourceSelector source_selector;
 
 		protected override void activate () {
 
@@ -125,9 +125,9 @@ namespace Maya {
 
         void init_models () {
 
-            source_selection_model = new Model.SourceManager();
+            sourcemgr = new Model.SourceManager();
 
-            calmodel = new Model.CalendarModel(source_selection_model, prefs.week_starts_on);
+            calmodel = new Model.CalendarModel(sourcemgr, prefs.week_starts_on);
 
             calmodel.parameters_changed.connect (on_model_parameters_changed);
         }
@@ -143,9 +143,9 @@ namespace Maya {
             window.delete_event.connect (on_window_delete_event);
             window.destroy.connect( () => Gtk.main_quit() );
 
-            source_selector_view = new View.SourceSelector (window, source_selection_model);
-            foreach (var group in source_selection_model.groups) {
-                var tview = source_selector_view.get_group_box(group).tview;
+            source_selector = new View.SourceSelector (window, sourcemgr);
+            foreach (var group in sourcemgr.groups) {
+                var tview = source_selector.get_group_box(group).tview;
                 tview.r_enabled.toggled.connect ((path) => on_source_selector_toggled (group,path));
             }
 
@@ -213,9 +213,9 @@ namespace Maya {
 		    View.EventDialog dialog;
             
             if (add_event)
-                dialog = new View.AddEventDialog (window, event);
+                dialog = new View.AddEventDialog (window, sourcemgr, event);
             else
-                dialog = new View.EditEventDialog (window, event);
+                dialog = new View.EditEventDialog (window, sourcemgr, event);
 
             dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, add_event));
 		    dialog.present ();
@@ -233,17 +233,18 @@ namespace Maya {
 
         void on_event_dialog_response (View.EventDialog dialog, int response_id, bool add_event)  {
 
-            E.CalComponent event = dialog.calcomponent;
+            E.CalComponent event = dialog.ecal;
+            E.Source source = dialog.source;
 
-            dialog.close();
+            dialog.dispose();
 
 		    if (response_id != Gtk.ResponseType.APPLY)
                 return;
             
-            //if (add_event)
-            //    calmodel.add_event (event);
-            //else
-            //    calmodel.modify_event (event);
+            if (add_event)
+                calmodel.add_event (source, event);
+            else
+                calmodel.update_event (source, event);
         }
 
         void on_model_parameters_changed () {
@@ -267,11 +268,12 @@ namespace Maya {
             
             var event = new E.CalComponent ();
 			event.set_new_vtype (E.CalComponentVType.EVENT);
+
             edit_event (event, true);
         }
 
         void on_tb_sources_clicked () {
-		    source_selector_view.show_all();
+		    source_selector.show_all();
         }
 
         void on_tb_month_switcher_left_clicked () {
@@ -295,7 +297,7 @@ namespace Maya {
             var today = new DateTime.now_local();
 
             if (calmodel.month_start.get_month() != today.get_month())
-                calmodel.month_start = get_start_of_month ();
+                calmodel.month_start = Util.get_start_of_month ();
 
             calview.today();
         }
@@ -305,7 +307,7 @@ namespace Maya {
         }
 
         void on_source_selector_toggled (E.SourceGroup group, string path) {
-            source_selection_model.toggle_source_status (group, path);
+            sourcemgr.toggle_source_status (group, path);
         }
 	}
 

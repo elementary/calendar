@@ -70,10 +70,10 @@ namespace Maya.View.Widgets {
 			label = new Gtk.Label ("");
 			
 			// Add everything in appropriate order
-			box.pack_start (Utilities.set_paddings (new Gtk.Arrow (Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),
+			box.pack_start (Util.set_paddings (new Gtk.Arrow (Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),
 					true, true, 0);
 			box.pack_start (label, true, true, PADDING);
-			box.pack_start (Utilities.set_paddings (new Gtk.Arrow (Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),
+			box.pack_start (Util.set_paddings (new Gtk.Arrow (Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),
 					true, true, 0);
 			
 			add (box);

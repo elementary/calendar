@@ -21,12 +21,13 @@ namespace Maya.View {
 		
 		Gtk.Container container { get; private set; }
 
-        E.CalComponent cc;
-        public E.CalComponent calcomponent { get { return cc; }}
+        public E.CalComponent ecal { get; private set; }
+        public E.Source source { get; private set; }
 	 
-		public EventDialog (Gtk.Window window, E.CalComponent calcomponent) {
+		public EventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent ecal) {
 		
-            cc = calcomponent;
+            this.source = sourcemgr.DEFAULT_SOURCE;
+            this.ecal = ecal.clone ();
 
 			// Dialog properties
 			modal = true;
@@ -178,16 +179,13 @@ namespace Maya.View {
 		    
 		    return time_picker;
 		}
-		
-        //--- Signal Handlers ---//
-		
 	}
 	
 	public class AddEventDialog : EventDialog {
 	    
-	    public AddEventDialog (Gtk.Window window, E.CalComponent event) {
+	    public AddEventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent event) {
 	        
-	        base(window, event);
+	        base(window, sourcemgr, event);
 	    
 	        // Dialog properties
 	        title = "Add Event";
@@ -196,9 +194,9 @@ namespace Maya.View {
 	
 	public class EditEventDialog : EventDialog {
 	 
-	    public EditEventDialog (Gtk.Window window, E.CalComponent event) {
+	    public EditEventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent event) {
 	        
-	        base(window, event);
+	        base(window, sourcemgr, event);
 	        
 	        // Dialog Properties
 	        title = "Edit Event";

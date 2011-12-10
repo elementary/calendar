@@ -1,4 +1,4 @@
-namespace Maya {
+namespace Maya.Util {
 
 //--- Date and Time ---//
 
@@ -234,6 +234,50 @@ public Gtk.TreePath? find_treemodel_object<T> (Gtk.TreeModel model, int column, 
     });
 
     return path;
+}
+
+//--- Gtk Miscellaneous ---//
+
+public class Css {
+
+    private static Gtk.CssProvider? _css_provider;
+
+    // Retrieve global css provider
+    public static Gtk.CssProvider get_css_provider () {
+
+        if (_css_provider == null) {
+            _css_provider = new Gtk.CssProvider ();
+            try {
+                _css_provider.load_from_path (Build.PKGDATADIR + "/style/default.css");
+            } catch (Error e) {
+                warning ("Could not add css provider. Some widgets will not look as intended. %s", e.message);
+            }
+        }
+
+        return _css_provider;
+    }
+}
+
+public Gtk.Widget set_margins (Gtk.Widget widget, int top, int right, int bottom, int left) {
+    
+    widget.margin_top = top;
+    widget.margin_right = right;
+    widget.margin_bottom = bottom;
+    widget.margin_left = left;
+    
+    return widget;
+}
+
+public Gtk.Alignment set_paddings (Gtk.Widget widget, int top, int right, int bottom, int left) {
+
+    var alignment = new Gtk.Alignment (0.0f, 0.0f, 1.0f, 1.0f);
+    alignment.top_padding = top;
+    alignment.right_padding = right;
+    alignment.bottom_padding = bottom;
+    alignment.left_padding = left;
+
+    alignment.add (widget);
+    return alignment;
 }
 
 }

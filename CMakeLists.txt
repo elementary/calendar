@@ -100,7 +100,7 @@ vala_precompile(VALA_C
     Maya/Services/Dexter.vala
     Maya/Settings/MayaSettings.vala
     Maya/Settings/SavedState.vala
-    Maya/Utilities.vala
+    Maya/Utils.vala
     Maya/View/AgendaView.vala
     Maya/View/CalendarView.vala
     Maya/View/EventDialog.vala
@@ -108,7 +108,6 @@ vala_precompile(VALA_C
     Maya/View/MayaToolbar.vala
     Maya/View/Sidebar.vala
     Maya/View/SourceSelector.vala
-    Maya/View/Utilities.vala
     Maya/View/Widgets/ContractorButtonWithMenu.vala
     Maya/View/Widgets/DateSwitcher.vala
     Maya/View/Widgets/DateTimePicker.vala

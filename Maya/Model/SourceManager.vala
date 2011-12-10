@@ -22,6 +22,8 @@ public class SourceManager: GLib.Object {
     Gee.MultiMap<E.SourceGroup, E.Source> group_sources;
     Gee.Map<E.Source, bool> source_enabled;
 
+    public E.Source DEFAULT_SOURCE { get; private set; }
+
     E.SourceGroup? GROUP_LOCAL { get; set; }
     E.SourceGroup? GROUP_REMOTE { get; set; }
     E.SourceGroup? GROUP_CONTACTS { get; set; }
@@ -33,9 +35,11 @@ public class SourceManager: GLib.Object {
         status = E.CalClient.get_sources (out source_list, E.CalClientSourceType.EVENTS);
         assert (status==true);
 
+        DEFAULT_SOURCE = source_list.peek_default_source ();
+
         source_enabled = new Gee.HashMap<E.Source, bool> (
-            (HashFunc) source_hash_func,
-            (EqualFunc) source_equal_func,
+            (HashFunc) Util.source_hash_func,
+            (EqualFunc) Util.source_equal_func,
             null);
 
         // TODO: create these sourcegroups if they don't exist?
@@ -44,20 +48,20 @@ public class SourceManager: GLib.Object {
         GROUP_CONTACTS = source_list.peek_group_by_base_uri("contacts://");
 
         // the order that groups will appear
-        _groups = new Gee.ArrayList<E.SourceGroup> ((EqualFunc) source_group_equal_func);
+        _groups = new Gee.ArrayList<E.SourceGroup> ((EqualFunc) Util.source_group_equal_func);
         _groups.add (GROUP_LOCAL);
         _groups.add (GROUP_REMOTE);
         _groups.add (GROUP_CONTACTS);
 
         group_sources = new Gee.HashMultiMap<E.SourceGroup, E.Source> (
-            (HashFunc) source_group_hash_func,
-            (EqualFunc) source_group_equal_func,
-            (HashFunc) source_hash_func,
-            (EqualFunc) source_equal_func);
+            (HashFunc) Util.source_group_hash_func,
+            (EqualFunc) Util.source_group_equal_func,
+            (HashFunc) Util.source_hash_func,
+            (EqualFunc) Util.source_equal_func);
 
         _group_tree_model = new Gee.HashMap<E.SourceGroup, Gtk.TreeModelSort> (
-            (HashFunc) source_group_hash_func,
-            (EqualFunc) source_group_equal_func,
+            (HashFunc) Util.source_group_hash_func,
+            (EqualFunc) Util.source_group_equal_func,
             null);
 
         foreach (E.SourceGroup group in _groups) {
@@ -109,7 +113,7 @@ public class SourceManager: GLib.Object {
         var tree_model = _group_tree_model [group] as Gtk.TreeModelSort;
         var list_store = tree_model.get_model () as Gtk.ListStore;
 
-        Gtk.TreePath? path = find_treemodel_object<E.Source> (list_store, 0, source, (EqualFunc) source_equal_func);
+        Gtk.TreePath? path = Util.find_treemodel_object<E.Source> (list_store, 0, source, (EqualFunc) Util.source_equal_func);
         Gtk.TreeIter iter;
         list_store.get_iter (out iter, path);
         list_store.remove (iter);
@@ -149,7 +153,7 @@ public class SourceManager: GLib.Object {
     public Gee.Collection<E.Source> get_enabled_sources () {
     
         var sources = new Gee.ArrayList<E.Source> (
-            (EqualFunc) source_equal_func);
+            (EqualFunc) Util.source_equal_func);
 
         foreach (var source in group_sources.get_values()) {
             if (source_enabled [source])

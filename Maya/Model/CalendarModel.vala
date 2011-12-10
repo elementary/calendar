@@ -12,8 +12,8 @@ public class CalendarModel : Object {
      * changing one of the following properties: month_start, num_weeks, and
      * week_starts_on.
     */
-    public DateRange data_range { get; private set; }
-    public DateRange month_range { get; private set; }
+    public Util.DateRange data_range { get; private set; }
+    public Util.DateRange month_range { get; private set; }
 
     /* The first day of the month */
     public DateTime month_start { get; set; }
@@ -38,24 +38,24 @@ public class CalendarModel : Object {
 
     public CalendarModel (Model.SourceManager source_model, Settings.Weekday week_starts_on) {
 
-        this.month_start = get_start_of_month ();
+        this.month_start = Util.get_start_of_month ();
         this.week_starts_on = week_starts_on;
 
         compute_ranges ();
 
         source_client = new Gee.HashMap<E.Source, E.CalClient> (
-            (HashFunc) source_hash_func,
-            (EqualFunc) source_equal_func,
+            (HashFunc) Util.source_hash_func,
+            (EqualFunc) Util.source_equal_func,
             null);
 
         source_events = new Gee.HashMap<E.Source, Gee.Map<string, E.CalComponent>> (
-            (HashFunc) source_hash_func,
-            (EqualFunc) source_equal_func,
+            (HashFunc) Util.source_hash_func,
+            (EqualFunc) Util.source_equal_func,
             null);
 
         source_view = new Gee.HashMap<E.Source, E.CalClientView> (
-            (HashFunc) source_hash_func,
-            (EqualFunc) source_equal_func,
+            (HashFunc) Util.source_hash_func,
+            (EqualFunc) Util.source_equal_func,
             null);
 
         var sources = source_model.get_enabled_sources();
@@ -76,15 +76,15 @@ public class CalendarModel : Object {
 
     //--- Public Methods ---//
 
-    public void add_event (Source source, E.CalComponent event) {
+    public void add_event (E.Source source, E.CalComponent event) {
         debug ("Not Implemented: CalendarModel.add_event");
     }
 
-    public void update_event (Source source, E.CalComponent event) {
+    public void update_event (E.Source source, E.CalComponent event) {
         debug ("Not Implemented: CalendarModel.modify_event");
     }
 
-    public void remove_event (Source source, E.CalComponent event) {
+    public void remove_event (E.Source source, E.CalComponent event) {
         debug ("Not Implemented: CalendarModel.remove_event");
     }
 
@@ -104,10 +104,10 @@ public class CalendarModel : Object {
         var data_range_first = month_start.add_days (-offset);
         var data_range_last = data_range_first.add_weeks(num_weeks-1).add_days(6);
 
-        data_range = new DateRange (data_range_first, data_range_last);
+        data_range = new Util.DateRange (data_range_first, data_range_last);
 
         var month_end = month_start.add_full (0, 1, -1);
-        month_range = new DateRange (month_start, month_end);
+        month_range = new Util.DateRange (month_start, month_end);
 
         debug(@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
     }
@@ -123,9 +123,9 @@ public class CalendarModel : Object {
         // create empty source-event map
 
         Gee.Map<string, E.CalComponent> events = new Gee.HashMap<string, E.CalComponent> (
-            (HashFunc) string_hash_func,
-            (EqualFunc) string_equal_func,
-            (EqualFunc) calcomponent_equal_func);
+            (HashFunc) Util.string_hash_func,
+            (EqualFunc) Util.string_equal_func,
+            (EqualFunc) Util.calcomponent_equal_func);
 
         source_events.set (source, events);
         
@@ -261,7 +261,7 @@ public class CalendarModel : Object {
         debug (@"Updating $(objects.length()) events for source '%s'", source.peek_name());
         
         Gee.Collection<E.CalComponent> updated_events = new Gee.ArrayList<E.CalComponent> (
-            (EqualFunc) calcomponent_equal_func);
+            (EqualFunc) Util.calcomponent_equal_func);
 
         foreach (var comp in objects) {
 

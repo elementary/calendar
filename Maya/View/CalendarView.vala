@@ -26,7 +26,7 @@ public class Header : Gtk.EventBox {
         
         table = new Gtk.Table (1, 7, true);
 
-        var style_provider = Maya.View.Utilities.get_css_provider ();
+        var style_provider = Util.Css.get_css_provider ();
     
         // EventBox properties
         set_visible_window (true); // needed for style
@@ -45,7 +45,7 @@ public class Header : Gtk.EventBox {
     
     public void update_columns (int week_starts_on) {
         
-        var date = strip_time(new DateTime.now_local ());
+        var date = Util.strip_time(new DateTime.now_local ());
         date = date.add_days (week_starts_on - date.get_day_of_week ());
         foreach (var label in labels) {
             label.label = date.format ("%A");
@@ -81,7 +81,7 @@ public class WeekLabels : Gtk.EventBox {
         table = new Gtk.Table (1, 6, false);
         table.row_spacing = 1;
 
-        var style_provider = Maya.View.Utilities.get_css_provider ();
+        var style_provider = Util.Css.get_css_provider ();
 
         // EventBox properties
         set_visible_window (true); // needed for style
@@ -95,7 +95,7 @@ public class WeekLabels : Gtk.EventBox {
             table.attach_defaults (labels[c], 0, 1, c, c + 1);
         }
 
-        add (Utilities.set_margins (table, 20, 0, 0, 0));
+        add (Util.set_margins (table, 20, 0, 0, 0));
     }
 
     public void update (DateTime date, bool show_weeks) {
@@ -119,12 +119,12 @@ public class Grid : Gtk.Table {
 
     Gee.Map<DateTime, GridDay> data;
 
-    public DateRange grid_range { get; private set; }
+    public Util.DateRange grid_range { get; private set; }
     public DateTime? selected_date { get; private set; }
 
     public signal void selection_changed (DateTime new_date);
 
-    public Grid (DateRange range, DateTime month_start, int weeks) {
+    public Grid (Util.DateRange range, DateTime month_start, int weeks) {
 
         grid_range = range;
         selected_date = null;
@@ -138,7 +138,7 @@ public class Grid : Gtk.Table {
 
         data = new Gee.HashMap<DateTime, GridDay> (
             (HashFunc) DateTime.hash,
-            (EqualFunc) datetime_equal_func,
+            (EqualFunc) Util.datetime_equal_func,
             null);
 
         int row=0, col=0;
@@ -176,7 +176,7 @@ public class Grid : Gtk.Table {
         data [date].grab_focus ();
     }
 
-    public void set_range (DateRange new_range, DateTime month_start) {
+    public void set_range (Util.DateRange new_range, DateTime month_start) {
 
         var today = new DateTime.now_local ();
 
@@ -187,7 +187,7 @@ public class Grid : Gtk.Table {
 
         var data_new = new Gee.HashMap<DateTime, GridDay> (
             (HashFunc) DateTime.hash,
-            (EqualFunc) datetime_equal_func,
+            (EqualFunc) Util.datetime_equal_func,
             null);
 
         for (int i=0; i<dates1.size; i++) {
@@ -237,7 +237,7 @@ public class GridDay : Gtk.EventBox {
 
         this.date = date;
 
-        var style_provider = Maya.View.Utilities.get_css_provider ();
+        var style_provider = Util.Css.get_css_provider ();
 
         vbox = new Gtk.VBox (false, 0);
         label = new Gtk.Label ("");
@@ -254,7 +254,7 @@ public class GridDay : Gtk.EventBox {
         label.name = "date";
         vbox.pack_start (label, false, false, 0);
 
-        add (Utilities.set_margins (vbox, 3, 3, 3, 3));
+        add (Util.set_margins (vbox, 3, 3, 3, 3));
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
@@ -342,7 +342,7 @@ public class CalendarView : Gtk.HBox {
     
     public void today () {
 
-        var today = strip_time (new DateTime.now_local ());
+        var today = Util.strip_time (new DateTime.now_local ());
         grid.focus_date (today);
     }
 

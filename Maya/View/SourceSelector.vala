@@ -71,8 +71,8 @@ class SourceSelector : Gtk.Window {
         window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
 
         _group_box = new Gee.HashMap<E.SourceGroup, SourceGroupBox> (
-            (HashFunc) source_group_hash_func,
-            (EqualFunc) source_group_equal_func,
+            (HashFunc) Util.source_group_hash_func,
+            (EqualFunc) Util.source_group_equal_func,
             null);
 
         set_title ("Calendars");
@@ -125,8 +125,8 @@ class SourceSelector : Gtk.Window {
             return; 
 
         var groups_to_clear = new Gee.HashSet<E.SourceGroup> (
-            (HashFunc) source_group_hash_func,
-            (EqualFunc) source_group_equal_func);
+            (HashFunc) Util.source_group_hash_func,
+            (EqualFunc) Util.source_group_equal_func);
 
         groups_to_clear.add_all (model.groups);
         groups_to_clear.remove (box.group);

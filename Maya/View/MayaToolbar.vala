@@ -68,8 +68,8 @@ namespace Maya.View {
 
 			insert (make_spacer (), -1);
 
-			insert (make_toolitem_from_widget (Utilities.set_paddings (month_switcher, 5, 0, 5, 0)), -1);
-			insert (make_toolitem_from_widget (Utilities.set_paddings (year_switcher, 5, 0, 5, 10)), -1);
+			insert (make_toolitem_from_widget (Util.set_paddings (month_switcher, 5, 0, 5, 0)), -1);
+			insert (make_toolitem_from_widget (Util.set_paddings (year_switcher, 5, 0, 5, 10)), -1);
 
 			insert (make_spacer (), -1);
 
