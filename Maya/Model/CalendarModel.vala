@@ -136,7 +136,7 @@ public class CalendarModel : Object {
 
         var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
 
-        var client = source_client.get (source);
+        var client = source_client [source];
 
         debug("Getting client-view for source '%s'", source.peek_name());
 
@@ -167,15 +167,15 @@ public class CalendarModel : Object {
     void remove_source (E.Source source) {
 
         assert (source_view.has_key (source));
-        var current_view = source_view.get (source);
+        var current_view = source_view [source];
         current_view.stop();
         source_view.unset (source);
 
-        var client = source_client.get (source);
+        var client = source_client [source];
         client.cancel_all ();
         source_client.unset (source);
 
-        var events = source_events.get(source).values.read_only_view;
+        var events = source_events [source].values.read_only_view;
         events_removed (source, events);
         source_events.unset (source);
 
@@ -238,7 +238,7 @@ public class CalendarModel : Object {
 
         debug (@"Adding $(objects.length()) events for source '%s'", source.peek_name());
 
-        Gee.Map<string, E.CalComponent> events = source_events.get (source);
+        Gee.Map<string, E.CalComponent> events = source_events [source];
 
         foreach (var comp in objects) {
 
@@ -267,7 +267,7 @@ public class CalendarModel : Object {
 
             string uid = comp.get_uid();
 
-            E.CalComponent event = source_events.get(source).get(uid);
+            E.CalComponent event = source_events [source] [uid];
             updated_events.add (event);
 
             debug_event (source, event);
@@ -280,13 +280,13 @@ public class CalendarModel : Object {
 
         debug (@"Removing $(cids.length()) events for source '%s'", source.peek_name());
 
-        var events = source_events.get (source);
+        var events = source_events [source];
 
         foreach (unowned E.CalComponentId? cid in cids) {
 
             assert (cid != null);
 
-            E.CalComponent event = events.get (cid.uid);
+            E.CalComponent event = events [cid.uid];
 
             debug_event (source, event);
         }

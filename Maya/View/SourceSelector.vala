@@ -132,14 +132,14 @@ class SourceSelector : Gtk.Window {
         groups_to_clear.remove (box.group);
 
         foreach (var group in groups_to_clear) {
-            var box_clear = _group_box.get (group);
+            var box_clear = _group_box [group];
             box_clear.tview.get_selection().unselect_all();
         }
     }
 
     public SourceGroupBox get_group_box (E.SourceGroup group) {
 
-        return _group_box.get (group);
+        return _group_box [group];
     }
 }
 

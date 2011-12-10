@@ -173,7 +173,7 @@ public class Grid : Gtk.Table {
 
         debug(@"Setting focus to @ $(date)");
 
-        data.get(date).grab_focus ();
+        data [date].grab_focus ();
     }
 
     public void set_range (DateRange new_range, DateTime month_start) {
@@ -192,12 +192,12 @@ public class Grid : Gtk.Table {
 
         for (int i=0; i<dates1.size; i++) {
 
-            var date1 = dates1.get(i);
-            var date2 = dates2.get(i);
+            var date1 = dates1 [i];
+            var date2 = dates2 [i];
 
             assert (data.has_key(date1));
 
-            var day = data.get (date1);
+            var day = data [date1];
 
             if (date2.get_day_of_year () == today.get_day_of_year () && date2.get_year () == today.get_year ()) {
                 day.name = "today";

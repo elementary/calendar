@@ -149,8 +149,8 @@ public void remap<K, V> (Gee.Map<K, K> keymap, Gee.Map<K, V> valmap, ref Gee.Map
 
     foreach (K key in valmap) {
 
-        var k = keymap.get (key);
-        var v = valmap.get (key);
+        var k = keymap [key];
+        var v = valmap [key];
 
         remap.set (k, v);
     }

@@ -89,7 +89,7 @@ public class SourceManager: GLib.Object {
         group_sources.set (group, source);
         source_enabled.set (source, true);
 
-        var tree_model = _group_tree_model.get (group) as Gtk.TreeModelSort;
+        var tree_model = _group_tree_model [group] as Gtk.TreeModelSort;
         var list_store = tree_model.get_model () as Gtk.ListStore;
 
         Gtk.TreeIter iter;
@@ -106,7 +106,7 @@ public class SourceManager: GLib.Object {
         group_sources.remove (group, source);
         source_enabled.unset (source, null);
 
-        var tree_model = _group_tree_model.get (group) as Gtk.TreeModelSort;
+        var tree_model = _group_tree_model [group] as Gtk.TreeModelSort;
         var list_store = tree_model.get_model () as Gtk.ListStore;
 
         Gtk.TreePath? path = find_treemodel_object<E.Source> (list_store, 0, source, (EqualFunc) source_equal_func);
@@ -152,7 +152,7 @@ public class SourceManager: GLib.Object {
             (EqualFunc) source_equal_func);
 
         foreach (var source in group_sources.get_values()) {
-            if (source_enabled.get (source))
+            if (source_enabled [source])
                 sources.add (source);
         }
 
@@ -161,15 +161,15 @@ public class SourceManager: GLib.Object {
 
     public Gtk.TreeModelSort get_tree_model (E.SourceGroup group) {
 
-        return _group_tree_model.get(group);
+        return _group_tree_model [group];
     }
 
     public bool get_source_enabled (E.Source source) {
-        return source_enabled.get (source);
+        return source_enabled [source];
     }
 
     public Gee.Collection<E.Source> get_sources (E.SourceGroup group) {
-        return group_sources.get(group); // FIXME
+        return group_sources [group];
     }
 
     public E.Source get_source_for_iter (Gtk.TreeModelSort model, Gtk.TreeIter iter_outer)
@@ -187,7 +187,7 @@ public class SourceManager: GLib.Object {
 
     public void toggle_source_status (E.SourceGroup group, string path_string) {
 
-        var tree_model_sort = _group_tree_model.get (group);
+        var tree_model_sort = _group_tree_model [group];
         var list_store = (tree_model_sort.model as Gtk.ListStore);
 
         Gtk.TreeIter iter_outer;
@@ -202,7 +202,7 @@ public class SourceManager: GLib.Object {
         list_store.get_value(iter_inner, 0, out v);
 
         var source = (v as E.Source);
-        bool new_status = ! source_enabled.get(source);
+        bool new_status = ! source_enabled [source];
         source_enabled.set (source, new_status);
 
         debug("Source '%s' [enabled=%s]", source.peek_name(), new_status.to_string());
@@ -220,7 +220,7 @@ public class SourceManager: GLib.Object {
     public void _dump () {
         foreach (E.SourceGroup group in groups) {
             print ("%s\n", group.peek_name());
-            foreach (E.Source source in group_sources.get(group)) {
+            foreach (E.Source source in group_sources [group]) {
                 print ("-- %s\n", source.peek_name());
             }
         }
