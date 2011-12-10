@@ -61,9 +61,6 @@ class SourceSelector : Gtk.Window {
     Model.SourceManager model;
 
     Gee.Map<E.SourceGroup, SourceGroupBox> _group_box;
-    public Gee.Map<E.SourceGroup, SourceGroupBox> group_box {
-        owned get { return _group_box.read_only_view; }
-    }
 
     public SourceSelector(Gtk.Window window, Model.SourceManager model) {
 
@@ -84,7 +81,7 @@ class SourceSelector : Gtk.Window {
 
         foreach (var group in model.groups) {
             
-            var tmodel = model.group_tree_model.get (group);
+            var tmodel = model.get_tree_model (group);
 
             var box = new SourceGroupBox (group, tmodel);
             box.no_show_all = true;
@@ -127,14 +124,22 @@ class SourceSelector : Gtk.Window {
         if (box.tview.get_selection().count_selected_rows()==0)
             return; 
 
-        var groups_to_clear = new Gee.HashSet<E.SourceGroup>();
+        var groups_to_clear = new Gee.HashSet<E.SourceGroup> (
+            (HashFunc) source_group_hash_func,
+            (EqualFunc) source_group_equal_func);
+
         groups_to_clear.add_all (model.groups);
         groups_to_clear.remove (box.group);
 
         foreach (var group in groups_to_clear) {
-            var box_clear = group_box.get (group);
+            var box_clear = _group_box.get (group);
             box_clear.tview.get_selection().unselect_all();
         }
+    }
+
+    public SourceGroupBox get_group_box (E.SourceGroup group) {
+
+        return _group_box.get (group);
     }
 }
 

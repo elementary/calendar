@@ -132,7 +132,6 @@ public DateTime convert_to_datetime (E.CalComponentDateTime dt) {
     return new DateTime(tz, idt->year, idt->month, idt->day, idt->hour, idt->minute, idt->second);
 }
 
-
 //--- Gee Utility Functions ---//
 
 /* Interleaves the values of two collections into a Map */
@@ -157,9 +156,21 @@ public void remap<K, V> (Gee.Map<K, K> keymap, Gee.Map<K, V> valmap, ref Gee.Map
     }
 }
 
+/* Computes hash value for string */
+public uint string_hash_func (string key) {
+    return key.hash();
+}
+
 /* Computes hash value for DateTime */
 public uint datetime_hash_func (DateTime key) {
     return key.hash();
+}
+
+/* Computes hash value for E.CalComponent */
+public uint calcomponent_hash_func (E.CalComponent key) {
+    string uid;
+    key.get_uid (out uid);
+    return str_hash (uid);
 }
 
 /* Computes hash value for E.Source */
@@ -172,6 +183,11 @@ public uint source_group_hash_func (E.SourceGroup key) {
     return str_hash (key.peek_uid());
 }
 
+/* Returns true if 'a' and 'b' are the same string */
+public bool string_equal_func (string a, string b) {
+    return a == b;
+}
+
 /* Returns true if 'a' and 'b' are the same GLib.DateTime */
 public bool datetime_equal_func (DateTime a, DateTime b) {
     return a.equal (b);
@@ -180,6 +196,14 @@ public bool datetime_equal_func (DateTime a, DateTime b) {
 /* Returns true if 'a' and 'b' are the same E.SourceGroup */
 public bool source_group_equal_func (E.SourceGroup a, E.SourceGroup b) {
     return a.peek_uid() == b.peek_uid();
+}
+
+/* Returns true if 'a' and 'b' are the same E.CalComponent */
+public bool calcomponent_equal_func (E.CalComponent a, E.CalComponent b) {
+    string uid_a, uid_b;
+    a.get_uid (out uid_a);
+    b.get_uid (out uid_b);
+    return uid_a == uid_b;
 }
 
 /* Returns true if 'a' and 'b' are the same E.Source */

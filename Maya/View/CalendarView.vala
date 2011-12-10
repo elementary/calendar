@@ -136,7 +136,7 @@ public class Grid : Gtk.Table {
         row_spacing = 0;
         homogeneous = true;
 
-        data = new Gee.HashMap<DateTime, GridDay>(
+        data = new Gee.HashMap<DateTime, GridDay> (
             (HashFunc) DateTime.hash,
             (EqualFunc) datetime_equal_func,
             null);
@@ -185,7 +185,7 @@ public class Grid : Gtk.Table {
 
         assert (dates1.size == dates2.size);
 
-        var data_new = new Gee.HashMap<DateTime, GridDay>(
+        var data_new = new Gee.HashMap<DateTime, GridDay> (
             (HashFunc) DateTime.hash,
             (EqualFunc) datetime_equal_func,
             null);
@@ -299,9 +299,6 @@ public class GridDay : Gtk.EventBox {
 
 public class CalendarView : Gtk.HBox {
 
-    /* Indicates that selected date in grid has changed */
-    public signal void selection_changed (DateTime new_date);
-
     Gtk.VBox box;
     Model.CalendarModel model;
 
@@ -334,50 +331,11 @@ public class CalendarView : Gtk.HBox {
         sync_with_model ();
 
         model.parameters_changed.connect (on_model_parameters_changed);
-        model.source_loaded.connect (on_source_loaded);
-        model.source_unloaded.connect (on_source_unloaded);
         notify["show_weeks"].connect (on_show_weeks_changed);
-    }
 
-    void sync_with_model () {
-
-        header.update_columns (model.week_starts_on);
-        weeks.update (model.data_range.first, show_weeks);
-
-        grid.set_range (model.data_range, model.month_start);
-
-        if (grid.selected_date != null) {
-            var bumpdate = model.month_start.add_days (grid.selected_date.get_day_of_month() - 1);
-            grid.focus_date (bumpdate);
-        }
-    }
-
-    //--- Signal Handlers ---//
-
-    void on_show_weeks_changed () {
-
-        weeks.update (model.data_range.first, show_weeks);
-    }
-
-    void on_source_loaded (E.Source source) {
-
-        remove_source_events (source);
-        add_source_events (source, model.get_events (source));
-    }
-
-    void on_source_unloaded (E.Source source) {
-
-        remove_source_events (source);
-    }
-
-    /* Indicates the month has changed */
-    void on_model_parameters_changed () {
-
-        if (model.data_range.equals (grid.grid_range))
-            return; // nothing to do
-
-        remove_all_events ();
-        sync_with_model ();
+        model.events_added.connect (on_events_added);
+        model.events_updated.connect (on_events_updated);
+        model.events_removed.connect (on_events_removed);
     }
 
     //--- Public Methods ---//
@@ -388,33 +346,102 @@ public class CalendarView : Gtk.HBox {
         grid.focus_date (today);
     }
 
+    //--- Signal Handlers ---//
+
+    void on_show_weeks_changed () {
+
+        weeks.update (model.data_range.first, show_weeks);
+    }
+
+    void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
+
+        Idle.add ( () => {
+
+            foreach (var event in events)
+                add_event (source, event);
+
+            return false;
+        });
+    }
+
+    void on_events_updated (E.Source source, Gee.Collection<E.CalComponent> events) {
+
+        Idle.add ( () => {
+
+            foreach (var event in events)
+                update_event (source, event);
+
+            return false;
+        });
+    }
+
+    void on_events_removed (E.Source source, Gee.Collection<E.CalComponent> events) {
+
+        Idle.add ( () => {
+
+            foreach (var event in events)
+                remove_event (source, event);
+
+            return false;
+        });
+    }
+
+    /* Indicates the month has changed */
+    void on_model_parameters_changed () {
+
+        if (model.data_range.equals (grid.grid_range))
+            return; // nothing to do
+
+        Idle.add ( () => {
+            remove_all_events ();
+            sync_with_model ();
+            return false;
+        });
+    }
+
+    //--- Helper Methods ---//
+
+    /* Sets the calendar widgets to the date range of the model */
+    void sync_with_model () {
+
+        header.update_columns (model.week_starts_on);
+        weeks.update (model.data_range.first, show_weeks);
+
+        grid.set_range (model.data_range, model.month_start);
+
+        // keep focus date on the same day of the month
+        if (grid.selected_date != null) {
+            var bumpdate = model.month_start.add_days (grid.selected_date.get_day_of_month() - 1);
+            grid.focus_date (bumpdate);
+        }
+    }
+
     //--- TODO: Need Implementation ---//
 
-    /* Render the events for the source in the grid */
-    void add_source_events (E.Source source, Gee.Collection<E.CalComponent> events) {
+    /* Render new event on the grid */
+    void add_event (E.Source source, E.CalComponent event) {
 
-        Idle.add ( () => {
-            debug ("Not Implemented: add_source_events");
-            return false;
-        });
+        E.CalComponentText ct;
+        event.get_summary (out ct);
+        debug (@"Not Implemented: CalendarView.add_event");
     }
 
-    /* Removes all events for source from the grid */
-    void remove_source_events (E.Source source) {
+    /* Update the event on the grid */
+    void update_event (E.Source source, E.CalComponent event) {
 
-        Idle.add ( () => {
-            debug ("Not Implemented: remove_source_events");
-            return false;
-        });
+        debug (@"Not Implemented: CalendarView.update_event");
     }
 
-    /* Removes all events for all sources from the grid */
+    /* Remove event from the grid */
+    void remove_event (E.Source source, E.CalComponent event) {
+
+        debug ("Not Implemented: CalendarView.remove_event");
+    }
+
+    /* Remove all events from the grid */
     void remove_all_events () {
 
-        Idle.add ( () => {
-            debug ("Not Implemented: remove_all_events");
-            return false;
-        });
+        debug ("Not Implemented: CalendarView.remove_all_events");
     }
 }
 

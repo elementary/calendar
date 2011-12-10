@@ -145,7 +145,7 @@ namespace Maya {
 
             source_selector_view = new View.SourceSelector (window, source_selection_model);
             foreach (var group in source_selection_model.groups) {
-                var tview = source_selector_view.group_box.get(group).tview;
+                var tview = source_selector_view.get_group_box(group).tview;
                 tview.r_enabled.toggled.connect ((path) => on_source_selector_toggled (group,path));
             }
 
@@ -266,6 +266,7 @@ namespace Maya {
         void on_tb_add_clicked () {
             
             var event = new E.CalComponent ();
+			event.set_new_vtype (E.CalComponentVType.EVENT);
             edit_event (event, true);
         }
 

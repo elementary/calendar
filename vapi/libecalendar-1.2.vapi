@@ -86,9 +86,9 @@ namespace E {
 		[NoAccessorMethod]
 		public void* view { get; construct; }
 		public virtual signal void complete (GLib.Error error);
-		public virtual signal void objects_added (GLib.SList<long> objects);
-		public virtual signal void objects_modified (GLib.SList<long> objects);
-		public virtual signal void objects_removed (GLib.SList<E.CalComponentId> uids);
+		public virtual signal void objects_added (GLib.SList<weak iCal.icalcomponent> objects);
+		public virtual signal void objects_modified (GLib.SList<weak iCal.icalcomponent> objects);
+		public virtual signal void objects_removed (GLib.SList<weak E.CalComponentId?> uids);
 		public virtual signal void progress (uint percent, string message);
 	}
 	[CCode (cheader_filename = "libecal/e-cal-component.h")]
@@ -138,7 +138,7 @@ namespace E {
 		public void get_exrule_list (out GLib.SList recur_list);
 		public void get_exrule_property_list (out GLib.SList recur_list);
 		public void get_geo (out iCal.icalgeotype geo);
-		public iCal.icalcomponent get_icalcomponent ();
+		public unowned iCal.icalcomponent get_icalcomponent ();
 		public E.CalComponentId get_id ();
 		public void get_last_modified (out iCal.icaltimetype t);
 		public void get_location (out string location);
@@ -191,7 +191,7 @@ namespace E {
 		public void set_exdate_list (GLib.SList exdate_list);
 		public void set_exrule_list (GLib.SList recur_list);
 		public void set_geo (iCal.icalgeotype geo);
-		public bool set_icalcomponent (iCal.icalcomponent icalcomp);
+		public bool set_icalcomponent (owned iCal.icalcomponent icalcomp);
 		public void set_last_modified (iCal.icaltimetype t);
 		public void set_location (string location);
 		public void set_new_vtype (E.CalComponentVType type);

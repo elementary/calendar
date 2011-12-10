@@ -8,25 +8,6 @@ public class SourceManager: GLib.Object {
     }
 
     Gee.Map<E.SourceGroup, Gtk.TreeModelSort> _group_tree_model;
-    public Gee.Map<E.SourceGroup, Gtk.TreeModelSort> group_tree_model {
-        owned get { return _group_tree_model.read_only_view; }
-    }
-
-    /* The collection of enabled sources */
-    public Gee.Collection<E.Source> enabled_sources {
-    
-        owned get {
-
-            Gee.Collection<E.Source> sources = new Gee.HashSet<E.Source> ();
-
-            foreach (var source in group_sources.get_values()) {
-                if (source_enabled.get (source))
-                    sources.add (source);
-            }
-
-            return sources;
-        }
-    }
 
     /* A source has been enabled or disabled */
     public signal void status_changed (E.Source source, bool enabled);
@@ -57,6 +38,7 @@ public class SourceManager: GLib.Object {
             (EqualFunc) source_equal_func,
             null);
 
+        // TODO: create these sourcegroups if they don't exist?
         GROUP_LOCAL = source_list.peek_group_by_base_uri("local:");
         GROUP_REMOTE = source_list.peek_group_by_base_uri("webcal://");
         GROUP_CONTACTS = source_list.peek_group_by_base_uri("contacts://");
@@ -70,7 +52,8 @@ public class SourceManager: GLib.Object {
         group_sources = new Gee.HashMultiMap<E.SourceGroup, E.Source> (
             (HashFunc) source_group_hash_func,
             (EqualFunc) source_group_equal_func,
-            (HashFunc) source_hash_func);
+            (HashFunc) source_hash_func,
+            (EqualFunc) source_equal_func);
 
         _group_tree_model = new Gee.HashMap<E.SourceGroup, Gtk.TreeModelSort> (
             (HashFunc) source_group_hash_func,
@@ -162,12 +145,31 @@ public class SourceManager: GLib.Object {
 
     //--- Public Methods ---//
 
+    /* Return collection of enabled sources */
+    public Gee.Collection<E.Source> get_enabled_sources () {
+    
+        var sources = new Gee.ArrayList<E.Source> (
+            (EqualFunc) source_equal_func);
+
+        foreach (var source in group_sources.get_values()) {
+            if (source_enabled.get (source))
+                sources.add (source);
+        }
+
+        return sources;
+    }
+
+    public Gtk.TreeModelSort get_tree_model (E.SourceGroup group) {
+
+        return _group_tree_model.get(group);
+    }
+
     public bool get_source_enabled (E.Source source) {
         return source_enabled.get (source);
     }
 
     public Gee.Collection<E.Source> get_sources (E.SourceGroup group) {
-        return group_sources.get(group);
+        return group_sources.get(group); // FIXME
     }
 
     public E.Source get_source_for_iter (Gtk.TreeModelSort model, Gtk.TreeIter iter_outer)
@@ -185,7 +187,7 @@ public class SourceManager: GLib.Object {
 
     public void toggle_source_status (E.SourceGroup group, string path_string) {
 
-        var tree_model_sort = group_tree_model.get (group);
+        var tree_model_sort = _group_tree_model.get (group);
         var list_store = (tree_model_sort.model as Gtk.ListStore);
 
         Gtk.TreeIter iter_outer;
@@ -203,10 +205,12 @@ public class SourceManager: GLib.Object {
         bool new_status = ! source_enabled.get(source);
         source_enabled.set (source, new_status);
 
-        debug("Toggled source status '%s' [enabled=%s]", source.peek_name(), new_status.to_string());
+        debug("Source '%s' [enabled=%s]", source.peek_name(), new_status.to_string());
 
         Gtk.TreePath path_inner = list_store.get_path (iter_inner);
         list_store.row_changed (path_inner, iter_inner);
+
+        debug ("Emitting status_changed");
 
         status_changed (source, new_status);
     }
