@@ -56,7 +56,7 @@ class SourceGroupBox : Gtk.VBox {
     }
 }
 
-class SourceSelector : Gtk.Window {
+class SourceSelector : Granite.Widgets.PopOver {
 
     Model.SourceManager model;
 
@@ -96,8 +96,7 @@ class SourceSelector : Gtk.Window {
             box.tview.column.set_cell_data_func (box.tview.r_enabled, data_func_enabled);
         }
 
-        var vbox_window = new Gtk.VBox (false, 0);
-        add (vbox_window);
+        var vbox_window = get_content_area () as Gtk.Box;
         vbox_window.pack_start (vbox_widget, false, false, 0);
 
         delete_event.connect (hide_on_delete);

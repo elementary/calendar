@@ -277,8 +277,11 @@ namespace Maya {
             edit_event (event, true);
         }
 
-        void on_tb_sources_clicked () {
-		    source_selector.show_all();
+        void on_tb_sources_clicked (Gtk.Widget widget) {
+            source_selector.move_to_widget (widget);
+            source_selector.show_all ();
+		    source_selector.run ();
+            source_selector.hide ();
         }
 
         void on_tb_month_switcher_left_clicked () {
