@@ -15,11 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-using Gtk;
-using Gdk;
-using Cairo;
-
-namespace Maya.Widgets {
+namespace Maya.View.Widgets {
 
 	public class DateSwitcher : Gtk.EventBox {  
 	
@@ -36,7 +32,7 @@ namespace Maya.Widgets {
 			set {
 				_is_pressed = value;
 				if (hovered == 0 || hovered == 2)
-					box.get_children ().nth_data (hovered).set_state (value ? StateType.SELECTED : StateType.NORMAL);
+					box.get_children ().nth_data (hovered).set_state (value ? Gtk.StateType.SELECTED : Gtk.StateType.NORMAL);
 				queue_draw ();
 			}
 		}
@@ -50,9 +46,9 @@ namespace Maya.Widgets {
 			}
 		}
 		
-		private HBox box;
+		private Gtk.HBox box;
 		
-		public Label label { get; protected set; }
+		public Gtk.Label label { get; protected set; }
 		public string text {
 			get { return label.label; }
 			set { label.label = value; }
@@ -61,35 +57,35 @@ namespace Maya.Widgets {
 		public DateSwitcher () {
 		
 			// EventBox properties
-			events |= EventMask.POINTER_MOTION_MASK
-				   |  EventMask.BUTTON_PRESS_MASK
-				   |  EventMask.BUTTON_RELEASE_MASK
-				   |  EventMask.SCROLL_MASK
-				   |  EventMask.LEAVE_NOTIFY_MASK;
+			events |= Gdk.EventMask.POINTER_MOTION_MASK
+				   |  Gdk.EventMask.BUTTON_PRESS_MASK
+				   |  Gdk.EventMask.BUTTON_RELEASE_MASK
+				   |  Gdk.EventMask.SCROLL_MASK
+				   |  Gdk.EventMask.LEAVE_NOTIFY_MASK;
 			set_visible_window (false);
 
 			// Initialize everything
-			box = new HBox (false, 1);
+			box = new Gtk.HBox (false, 1);
 			box.border_width = 0;
-			label = new Label ("");
+			label = new Gtk.Label ("");
 			
 			// Add everything in appropriate order
-			box.pack_start (Utilities.set_paddings (new Arrow (ArrowType.LEFT, ShadowType.NONE), 0, PADDING, 0, PADDING),
+			box.pack_start (Util.set_paddings (new Gtk.Arrow (Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),
 					true, true, 0);
 			box.pack_start (label, true, true, PADDING);
-			box.pack_start (Utilities.set_paddings (new Arrow (ArrowType.RIGHT, ShadowType.NONE), 0, PADDING, 0, PADDING),
+			box.pack_start (Util.set_paddings (new Gtk.Arrow (Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),
 					true, true, 0);
 			
 			add (box);
 		}
 
-		protected override bool scroll_event (EventScroll event) {
+		protected override bool scroll_event (Gdk.EventScroll event) {
 		
 			switch (event.direction) {
-				case ScrollDirection.LEFT:
+				case Gdk.ScrollDirection.LEFT:
 					left_clicked ();
 					break;
-				case ScrollDirection.RIGHT:
+				case Gdk.ScrollDirection.RIGHT:
 					right_clicked ();
 					break;
 			}
@@ -97,14 +93,14 @@ namespace Maya.Widgets {
 			return true;	
 		}
 
-		protected override bool button_press_event (EventButton event) {
+		protected override bool button_press_event (Gdk.EventButton event) {
 		
 			is_pressed = (hovered == 0 || hovered == 2);
 
 			return true;
 		}
 		
-		protected override bool button_release_event (EventButton event) {
+		protected override bool button_release_event (Gdk.EventButton event) {
 		
 			is_pressed = false;
 			if (hovered == 0)
@@ -115,9 +111,9 @@ namespace Maya.Widgets {
 			return true;
 		}
 		
-		protected override bool motion_notify_event (EventMotion event) {
+		protected override bool motion_notify_event (Gdk.EventMotion event) {
 		
-			Allocation box_size, left_size, right_size;
+			Gtk.Allocation box_size, left_size, right_size;
 			box.get_allocation (out box_size);
 			box.get_children ().nth_data (0).get_allocation (out left_size);
 			box.get_children ().nth_data (2).get_allocation (out right_size);
@@ -134,7 +130,7 @@ namespace Maya.Widgets {
 			return true;
 		}
 
-		protected override bool leave_notify_event (EventCrossing event) {
+		protected override bool leave_notify_event (Gdk.EventCrossing event) {
 		
 			is_pressed = false;
 			hovered = -1;
@@ -142,25 +138,25 @@ namespace Maya.Widgets {
 			return true;
 		}
 
-		protected override bool draw (Context cr) {
+		protected override bool draw (Cairo.Context cr) {
 		
-			Allocation box_size;
+			Gtk.Allocation box_size;
 			box.get_allocation (out box_size);
 			
-			style.draw_box (cr, StateType.NORMAL, ShadowType.ETCHED_OUT, this, "button", 0, 0, box_size.width, box_size.height);
+			style.draw_box (cr, Gtk.StateType.NORMAL, Gtk.ShadowType.ETCHED_OUT, this, "button", 0, 0, box_size.width, box_size.height);
 			
 			if (hovered == 0 || hovered == 2) {
 
-				Allocation arrow_size;
+				Gtk.Allocation arrow_size;
 				box.get_children ().nth_data (hovered).get_allocation (out arrow_size);
 				
 				cr.rectangle (arrow_size.x - box_size.x, 0, arrow_size.width, arrow_size.height);
 				cr.clip ();
 				
 				if (is_pressed)
-					style.draw_box (cr, StateType.SELECTED, ShadowType.IN, this, "button", 0, 0, box_size.width, box_size.height);
+					style.draw_box (cr, Gtk.StateType.SELECTED, Gtk.ShadowType.IN, this, "button", 0, 0, box_size.width, box_size.height);
 				else
-					style.draw_box (cr, StateType.PRELIGHT, ShadowType.ETCHED_OUT, this, "button", 0, 0, box_size.width, box_size.height);
+					style.draw_box (cr, Gtk.StateType.PRELIGHT, Gtk.ShadowType.ETCHED_OUT, this, "button", 0, 0, box_size.width, box_size.height);
 							
 				cr.restore ();
 			}

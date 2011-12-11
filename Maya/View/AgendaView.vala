@@ -15,27 +15,19 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya {
+namespace Maya.View {
 
-	public enum MayaWindowState {
-		NORMAL = 0,
-		MAXIMIZED = 1,
-		FULLSCREEN = 2
-	}
+    /**
+     * The AgendaView shows all events for the currently selected date,
+     * even with fancy colors!
+     */
+	public class AgendaView : Gtk.VBox {
 
-	public class SavedState : Granite.Services.Settings {
+		public AgendaView () {
 
-		public int window_width { get; set; }
-		public int window_height { get; set; }
-
-		public MayaWindowState window_state { get; set; }
-
-		public bool show_weeks { get; set; }
-
-		public int hpaned_position { get; set; }
-
-		public SavedState () {
-			base ("org.elementary.Maya.SavedState");
+			// VBox properties
+			spacing = 0;
+			homogeneous = false;
 		}
 
 	}

@@ -15,26 +15,25 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Gtk;
-using Gdk;
+namespace Maya.Settings {
 
-namespace Maya.Widgets {
+	public enum Weekday {
+        BAD_WEEKDAY = 0,
+		MONDAY,
+		TUESDAY,
+		WEDNESDAY,
+		THURSDAY,
+		FRIDAY,
+		SATURDAY,
+		SUNDAY
+	}
 
-    /**
-     * The AgendaView shows all events for the currently selected date,
-     * even with fancy colors!
-     */
-	public class AgendaView : Gtk.VBox {
+	public class MayaSettings : Granite.Services.Settings {
 
-		private MayaWindow window;
+		public Weekday week_starts_on { get; set; }
 
-		public AgendaView (MayaWindow window) {
-
-			this.window = window;
-
-			// VBox properties
-			spacing = 0;
-			homogeneous = false;
+		public MayaSettings () {
+			base ("org.elementary.Maya.Settings");
 		}
 
 	}

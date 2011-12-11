@@ -54,7 +54,7 @@ add_definitions(-include config.h)
 file (GLOB _datafiles "${CMAKE_CURRENT_SOURCE_DIR}/data/style/*")
 install (FILES ${_datafiles} DESTINATION ${PKGDATADIR}/style)
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/maya.desktop DESTINATION /usr/share/applications)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/maya.desktop DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
 
 #
 # i18n
@@ -93,35 +93,34 @@ ensure_vala_version("0.10.0" MINIMUM)
 
 include(ValaPrecompile)
 vala_precompile(VALA_C
-    Maya/Maya.vala
-    Maya/MayaSettings.vala
-    Maya/SavedState.vala
-    Maya/Dialogs/Event.vala
+    Maya/Application.vala
+    Maya/Model/CalendarModel.vala
+    Maya/Model/SourceManager.vala
     Maya/Services/Contractor.vala
-    Maya/Services/DateHandler.vala
     Maya/Services/Dexter.vala
-    Maya/Widgets/Calendar/Calendar.vala
-    Maya/Widgets/Calendar/CalendarView.vala
-    Maya/Widgets/Calendar/Day.vala
-    Maya/Widgets/Calendar/Header.vala
-    Maya/Widgets/Calendar/Weeks.vala
-    Maya/Widgets/AgendaView.vala
-    Maya/Widgets/ContractorButtonWithMenu.vala
-    Maya/Widgets/DateSwitcher.vala
-    Maya/Widgets/DateTimePicker.vala
-    Maya/Widgets/MayaMenu.vala
-    Maya/Widgets/MayaToolbar.vala
-    Maya/Widgets/MayaWindow.vala
-    Maya/Widgets/Sidebar.vala
-    Maya/Widgets/Utilities.vala
-    Maya/Events/Backend.vala
+    Maya/Settings/MayaSettings.vala
+    Maya/Settings/SavedState.vala
+    Maya/Utils.vala
+    Maya/View/AgendaView.vala
+    Maya/View/CalendarView.vala
+    Maya/View/EventDialog.vala
+    Maya/View/MayaMenu.vala
+    Maya/View/MayaToolbar.vala
+    Maya/View/Sidebar.vala
+    Maya/View/SourceSelector.vala
+    Maya/View/Widgets/ContractorButtonWithMenu.vala
+    Maya/View/Widgets/DateSwitcher.vala
+    Maya/View/Widgets/DateTimePicker.vala
 PACKAGES
-    gtk+-3.0
-    granite
+    gconf-2.0
     gee-1.0
+    gio-2.0
+    granite
+    gtk+-3.0
     libecalendar-1.2
     libedataserver-1.2
     libical
+    libsoup-2.4
 CUSTOM_VAPIS
     vapi/config.vapi
 OPTIONS

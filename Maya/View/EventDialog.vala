@@ -15,44 +15,62 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 
 
-using Gtk;
+namespace Maya.View {
 
-using Granite.Widgets;
-using Granite.Services;
-
-using Maya.Widgets;
-
-namespace Maya.Dialogs {
-
-	public class Event : Gtk.Dialog {
+	public class EventDialog : Gtk.Dialog {
 		
 		Gtk.Container container { get; private set; }
-	 
-		public Event (MayaWindow window) {
+
+        public E.Source source { get; private set; }
+
+        public E.CalComponent ecal { get; private set; }
+
+        public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
+
+		public EventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent ecal) {
 		
+            this.source = sourcemgr.DEFAULT_SOURCE;
+            this.ecal = ecal;
+
+            populate ();
+
 			// Dialog properties
 			modal = true;
 			window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
 			transient_for = window;
-			response.connect (on_response);
 			
 			// Build dialog
 			build_dialog ();
-				
 		}
 		
-		public Event.without_parent (Granite.Application app) {
-		
-		    // Dialog properties
-		    response.connect (on_response);
-		    set_application (app);
-			set_position (WindowPosition.CENTER);
-		    
-		    // Build dialog
-		    build_dialog ();
-		}
-		
-		private void build_dialog () {
+        //--- Public Methods ---//
+
+            
+        /* TODO: Save the values in the dialog into the component */
+        public void save_data () {
+
+            iCal.icalcomponent comp = new iCal.icalcomponent.vevent ();
+
+            iCal.icaltimetype date = iCal.icaltime_today ();
+
+            comp.set_dtstart (date);
+            comp.set_dtend (date);
+            comp.set_summary ("Example");
+
+            ecal.set_icalcomponent ((owned) comp);
+        }
+
+		//--- Helpers ---//
+
+        /* TODO: Populate the dialog's widgets with the component's values */
+        void populate () {
+
+            unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
+
+            string summary = comp.get_summary (); // for example
+        }
+
+		void build_dialog () {
 		
 		    container = (Gtk.Container) get_content_area ();
 		    container.margin_left = 10;
@@ -148,51 +166,25 @@ namespace Maya.Dialogs {
 		    
 		    set_default_response (Gtk.ResponseType.APPLY);
 		    show_all();
-		
 		}
-		
-		public void set_fields () {
-		    
-		    //TODO: set field values
-		    
-		}
-		
-		private void on_response (int response_id) {
-		    
-		    if (response_id == Gtk.ResponseType.CANCEL)
-		        close ();
-		        
-		    if (response_id == Gtk.ResponseType.APPLY)
-		        on_apply ();
-		    
-		}
-		
-		protected virtual void on_apply () {
-		
-		    print ("Event applied \n");
-		    close ();
-		
-		}
-		
-		private Gtk.HBox make_hbox () {
+
+		Gtk.HBox make_hbox () {
 		    
 		    var box = new Gtk.HBox (false, 10);
 		    box.margin_bottom = 10;
 		
 		    return box;
-		
 		}
 		
-		private Gtk.VBox make_vbox () {
+		Gtk.VBox make_vbox () {
 		
 		    var box = new Gtk.VBox (false, 0);
 		    box.margin_bottom = 10;
 		    
 		    return box;
-		
 		}
 		
-		private Gtk.Label make_label (string text) {
+		Gtk.Label make_label (string text) {
 		
 		    var label = new Gtk.Label ("<span weight='bold'>" + text + "</span>");
 		    label.use_markup = true;
@@ -200,74 +192,45 @@ namespace Maya.Dialogs {
 			label.margin_bottom = 10;
 		    
 		    return label;
-		
 		}
 		
-		private Granite.Widgets.DatePicker make_date_picker () {
+		Granite.Widgets.DatePicker make_date_picker () {
 		    
 		    var date_picker = new Granite.Widgets.DatePicker.with_format ("%B %e, %Y");
 			date_picker.width_request = 200;
 			
 			return date_picker;
-		
 		}
 		
-		private Granite.Widgets.TimePicker make_time_picker () {
+		Granite.Widgets.TimePicker make_time_picker () {
 		    
 		    var time_picker = new Granite.Widgets.TimePicker.with_format ("%l:%M %p");
 		    time_picker.width_request = 80;
 		    
 		    return time_picker;
-		
 		}
-		
 	}
 	
-	public class AddEvent : Event {
+	public class AddEventDialog : EventDialog {
 	    
-	    public AddEvent (MayaWindow window) {
+	    public AddEventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent event) {
 	        
-	        base(window);
+	        base(window, sourcemgr, event);
 	    
 	        // Dialog properties
 	        title = "Add Event";
-	    
 	    }
-	    
-	    public AddEvent.without_parent (Granite.Application app) {
-	    
-	        base.without_parent (app);
-	    
-	    }
-	    
-	    protected override void on_apply () {
-	    
-	        print ("Add Event applied \n");
-	        close ();
-	    
-	    }
-	    
 	}
 	
-	public class EditEvent : Event {
-	    
-	    public EditEvent (MayaWindow window) {
+	public class EditEventDialog : EventDialog {
+	 
+	    public EditEventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent event) {
 	        
-	        base(window);
+	        base(window, sourcemgr, event);
 	        
 	        // Dialog Properties
 	        title = "Edit Event";
-	        
 	    }
-	    
-	    protected override void on_apply () {
-	    
-	        print ("Edit Event applied \n");
-	        close ();
-	    
-	    }
-	    
 	}
-	
 }
 
