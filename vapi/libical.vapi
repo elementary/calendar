@@ -1757,6 +1757,7 @@ namespace iCal {
 		public static iCal.icalreqstattype from_string (string str);
 	}
 	[CCode (cheader_filename = "libical/ical.h")]
+	[SimpleType]
 	public struct icaltimetype {
 		public int year;
 		public int month;
@@ -2549,7 +2550,7 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmime_parse")]
 	public static unowned iCal.icalcomponent icalmime_parse (GLib.Callback line_gen_func, void* data);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_expand_recurrence")]
-	public static int icalrecur_expand_recurrence (string rule, ulong start, int count, ulong array);
+	public static int icalrecur_expand_recurrence (string rule, time_t start, [CCode (array_length_pos = 2, array_length_type = "int")] time_t[] array);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_iterator_decrement_count")]
 	public static void icalrecur_iterator_decrement_count (iCal.icalrecur_iterator p1);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_iterator_free")]
@@ -2605,9 +2606,9 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_string_with_zone")]
 	public static iCal.icaltimetype icaltime_from_string_with_zone (string str, iCal.icaltimezone zone);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_timet")]
-	public static iCal.icaltimetype icaltime_from_timet (ulong v, int is_date);
+	public static iCal.icaltimetype icaltime_from_timet (time_t v, int is_date);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_timet_with_zone")]
-	public static iCal.icaltimetype icaltime_from_timet_with_zone (ulong tm, int is_date, iCal.icaltimezone zone);
+	public static iCal.icaltimetype icaltime_from_timet_with_zone (time_t tm, int is_date, iCal.icaltimezone zone);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_week_number")]
 	public static iCal.icaltimetype icaltime_from_week_number (int week_number, int year);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_get_timezone")]

@@ -26,6 +26,9 @@ e_cal_client_add_timezone async="1"
 e_cal_client_create_object async="1"
 e_cal_client_create_object_finish.uid is_out="1" value_owned="1"
 
+e_cal_client_create_object_sync.uid is_out="1" transfer_ownership="1"
+e_cal_client_create_object_sync.cancellable nullable="1"
+
 e_cal_client_discard_alarm async="1"
 e_cal_client_discard_alarm.cancellable nullable="1"
 e_cal_client_discard_alarm_sync.cancellable nullable="1"
@@ -191,7 +194,7 @@ ECalComponentAlarms.alarms type_arguments="E.CalComponentAlarmInstance" cheader_
 ECalComponentAttendee is_value_type="1" cheader_filename="libecal/e-cal-component.h"
 ECalComponentClassification cheader_filename="libecal/e-cal-component.h"
 
-ECalComponentDateTime is_value_type="1" cheader_filename="libecal/e-cal-component.h" has_destroy_function="0"
+ECalComponentDateTime cheader_filename="libecal/e-cal-component.h" is_value_type="1" has_destroy_function="0"
 ECalComponentDateTime.value type_name="iCal.icaltimetype*"
 
 ECalComponentField cheader_filename="libecal/e-cal-component.h"
