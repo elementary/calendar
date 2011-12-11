@@ -239,8 +239,7 @@ namespace Maya {
             E.Source source = dialog.source;
             E.CalObjModType mod_type = dialog.mod_type;
 
-            dialog.save_data ();
-
+            dialog.save ();
             dialog.dispose();
 
 		    if (response_id != Gtk.ResponseType.APPLY)

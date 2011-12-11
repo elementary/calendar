@@ -32,7 +32,7 @@ namespace Maya.View {
             this.source = sourcemgr.DEFAULT_SOURCE;
             this.ecal = ecal;
 
-            populate ();
+            load ();
 
 			// Dialog properties
 			modal = true;
@@ -47,7 +47,7 @@ namespace Maya.View {
 
             
         /* TODO: Save the values in the dialog into the component */
-        public void save_data () {
+        public void save () {
 
             iCal.icalcomponent comp = new iCal.icalcomponent.vevent ();
 
@@ -63,7 +63,7 @@ namespace Maya.View {
 		//--- Helpers ---//
 
         /* TODO: Populate the dialog's widgets with the component's values */
-        void populate () {
+        void load () {
 
             unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
 
