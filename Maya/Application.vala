@@ -211,11 +211,13 @@ namespace Maya {
         void edit_event (E.CalComponent event, bool add_event) {
 
 		    View.EventDialog dialog;
+
+            E.CalComponent event_clone = event.clone ();
             
             if (add_event)
-                dialog = new View.AddEventDialog (window, sourcemgr, event);
+                dialog = new View.AddEventDialog (window, sourcemgr, event_clone);
             else
-                dialog = new View.EditEventDialog (window, sourcemgr, event);
+                dialog = new View.EditEventDialog (window, sourcemgr, event_clone);
 
             dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, add_event));
 		    dialog.present ();
@@ -235,6 +237,7 @@ namespace Maya {
 
             E.CalComponent event = dialog.ecal;
             E.Source source = dialog.source;
+            dialog.save_data ();
 
             dialog.dispose();
 

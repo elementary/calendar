@@ -77,7 +77,22 @@ public class CalendarModel : Object {
     //--- Public Methods ---//
 
     public void add_event (E.Source source, E.CalComponent event) {
-        debug ("Not Implemented: CalendarModel.add_event");
+
+        unowned iCal.icalcomponent comp = event.get_icalcomponent();
+
+        debug (@"Adding event '$(comp.get_uid())'");
+
+        var client = source_client [source];
+        client.create_object.begin (comp, null, (obj, results) =>  {
+
+            bool status;
+            string uid;
+
+            status = client.create_object.end (results, out uid);
+            assert (status==true);
+        });
+
+        return;
     }
 
     public void update_event (E.Source source, E.CalComponent event) {
@@ -197,6 +212,23 @@ public class CalendarModel : Object {
         load_all_sources ();
     }
 
+    void on_event_added (AsyncResult results, E.Source source, E.CalClient client) {
+
+        try {
+
+            string uid;
+            bool status = client.create_object.end (results, out uid);
+            assert (status==true);
+
+            warning ("Created new event '%s' in source '%s'", uid, source.peek_name());
+
+        } catch (Error e) {
+
+            warning ("Error adding new event to source '%s': %s", source.peek_name(), e.message);
+        }
+
+    }
+
     void on_source_status_changed (E.Source source, bool enabled) {
 
         if (enabled)
@@ -236,9 +268,12 @@ public class CalendarModel : Object {
 
     void on_objects_added (E.Source source, E.CalClient client, SList<weak iCal.icalcomponent> objects) {
 
-        debug (@"Adding $(objects.length()) events for source '%s'", source.peek_name());
+        debug (@"Received $(objects.length()) added event(s) for source '%s'", source.peek_name());
 
         Gee.Map<string, E.CalComponent> events = source_events [source];
+
+        Gee.ArrayList<E.CalComponent> added_events = new Gee.ArrayList<E.CalComponent> (
+            (EqualFunc) Util.calcomponent_equal_func);
 
         foreach (var comp in objects) {
 
@@ -251,14 +286,15 @@ public class CalendarModel : Object {
             string uid = comp.get_uid();
 
             events.set (uid, event);
+            added_events.add (event);
         };
 
-        events_added (source, events.values.read_only_view);
+        events_added (source, added_events.read_only_view);
     }
 
     void on_objects_modified (E.Source source, E.CalClient client, SList<weak iCal.icalcomponent> objects) {
         
-        debug (@"Updating $(objects.length()) events for source '%s'", source.peek_name());
+        debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.peek_name());
         
         Gee.Collection<E.CalComponent> updated_events = new Gee.ArrayList<E.CalComponent> (
             (EqualFunc) Util.calcomponent_equal_func);
@@ -278,7 +314,7 @@ public class CalendarModel : Object {
 
     void on_objects_removed (E.Source source, E.CalClient client, SList<weak E.CalComponentId?> cids) {
 
-        debug (@"Removing $(cids.length()) events for source '%s'", source.peek_name());
+        debug (@"Received $(cids.length()) removed event(s) for source '%s'", source.peek_name());
 
         var events = source_events [source];
 

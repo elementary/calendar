@@ -24,6 +24,7 @@ ECalClient type_id="e_cal_client_get_type ()" cheader_filename="libecal/e-cal-cl
 e_cal_client_add_timezone async="1"
 
 e_cal_client_create_object async="1"
+e_cal_client_create_object.cancellable nullable="1"
 e_cal_client_create_object_finish.uid is_out="1" value_owned="1"
 
 e_cal_client_create_object_sync.uid is_out="1" transfer_ownership="1"

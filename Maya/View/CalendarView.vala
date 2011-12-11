@@ -416,9 +416,7 @@ public class CalendarView : Gtk.HBox {
         }
     }
 
-    //--- TODO: Need Implementation ---//
-
-    /* Render new event on the grid */
+    /* TODO: Render new event on the grid */
     void add_event (E.Source source, E.CalComponent event) {
 
         E.CalComponentText ct;
@@ -426,19 +424,19 @@ public class CalendarView : Gtk.HBox {
         debug (@"Not Implemented: CalendarView.add_event");
     }
 
-    /* Update the event on the grid */
+    /* TODO: Update the event on the grid */
     void update_event (E.Source source, E.CalComponent event) {
 
         debug (@"Not Implemented: CalendarView.update_event");
     }
 
-    /* Remove event from the grid */
+    /* TODO: Remove event from the grid */
     void remove_event (E.Source source, E.CalComponent event) {
 
         debug ("Not Implemented: CalendarView.remove_event");
     }
 
-    /* Remove all events from the grid */
+    /* TODO: Remove all events from the grid */
     void remove_all_events () {
 
         debug ("Not Implemented: CalendarView.remove_all_events");

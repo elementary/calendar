@@ -14,7 +14,7 @@ namespace E {
 		public bool check_recurrences_no_master ();
 		public bool check_save_schedules ();
 		public static bool check_timezones (iCal.icalcomponent comp, GLib.List comps, GLib.Callback tzlookup, void* ecalclient, GLib.Cancellable cancellable) throws GLib.Error;
-		public async bool create_object (iCal.icalcomponent icalcomp, GLib.Cancellable cancellable, out string uid) throws GLib.Error;
+		public async bool create_object (iCal.icalcomponent icalcomp, GLib.Cancellable? cancellable, out string uid) throws GLib.Error;
 		public bool create_object_sync (iCal.icalcomponent icalcomp, out string uid, GLib.Cancellable? cancellable) throws GLib.Error;
 		[CCode (has_construct_function = false)]
 		public CalClient.@default (E.CalClientSourceType source_type) throws GLib.Error;

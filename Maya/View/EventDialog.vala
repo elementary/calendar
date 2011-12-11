@@ -21,13 +21,16 @@ namespace Maya.View {
 		
 		Gtk.Container container { get; private set; }
 
-        public E.CalComponent ecal { get; private set; }
         public E.Source source { get; private set; }
-	 
+
+        public E.CalComponent ecal { get; private set; }
+
 		public EventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent ecal) {
 		
             this.source = sourcemgr.DEFAULT_SOURCE;
-            this.ecal = ecal.clone ();
+            this.ecal = ecal;
+
+            populate ();
 
 			// Dialog properties
 			modal = true;
@@ -38,7 +41,32 @@ namespace Maya.View {
 			build_dialog ();
 		}
 		
+        //--- Public Methods ---//
+
+            
+        /* TODO: Save the values in the dialog into the component */
+        public void save_data () {
+
+            iCal.icalcomponent comp = new iCal.icalcomponent.vevent ();
+
+            iCal.icaltimetype date = iCal.icaltime_today ();
+
+            comp.set_dtstart (date);
+            comp.set_dtend (date);
+            comp.set_summary ("Example");
+
+            ecal.set_icalcomponent ((owned) comp);
+        }
+
 		//--- Helpers ---//
+
+        /* TODO: Populate the dialog's widgets with the component's values */
+        void populate () {
+
+            iCal.icalcomponent comp = ecal.get_icalcomponent ();
+
+            string summary = comp.get_summary (); // for example
+        }
 
 		void build_dialog () {
 		
