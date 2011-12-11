@@ -245,6 +245,7 @@ generate_vapi()
 patch_vapi()
 {
     sed -i '/public enum CredentialsPromptFlags/ i\\t[Flags]' ${OUTPUT_DIR}/libedataserver-1.2.vapi
+    sed -i 's#cprefix = "CALOBJ_MOD_",#cname="CalObjModType", cprefix = "CALOBJ_MOD_",#g' ${OUTPUT_DIR}/libecalendar-1.2.vapi
 }
 
 install_vapi()

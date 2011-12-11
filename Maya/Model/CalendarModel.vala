@@ -58,11 +58,6 @@ public class CalendarModel : Object {
             (EqualFunc) Util.source_equal_func,
             null);
 
-        var sources = source_model.get_enabled_sources();
-        foreach (var source in sources) {
-            add_source (source);
-        }
-
         // Signals
 
         source_model.status_changed.connect (on_source_status_changed);
@@ -72,6 +67,13 @@ public class CalendarModel : Object {
         notify["month-start"].connect (on_parameter_changed);
         notify["num-weeks"].connect (on_parameter_changed);
         notify["week-starts-on"].connect (on_parameter_changed);
+
+        // Add sources
+
+        foreach (var source in source_model.get_enabled_sources()) {
+            add_source (source);
+        }
+
     }
 
     //--- Public Methods ---//
@@ -89,18 +91,49 @@ public class CalendarModel : Object {
             string uid;
 
             status = client.create_object.end (results, out uid);
+
+            // TODO: handle error more gracefully
             assert (status==true);
         });
-
-        return;
     }
 
-    public void update_event (E.Source source, E.CalComponent event) {
-        debug ("Not Implemented: CalendarModel.modify_event");
+    public void update_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {
+
+        unowned iCal.icalcomponent comp = event.get_icalcomponent();
+
+        debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
+
+        var client = source_client [source];
+        client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
+
+            bool status;
+
+            status = client.modify_object.end (results);
+
+            // TODO: handle error more gracefully
+            assert (status==true);
+        });
     }
 
-    public void remove_event (E.Source source, E.CalComponent event) {
-        debug ("Not Implemented: CalendarModel.remove_event");
+    public void remove_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {
+
+        unowned iCal.icalcomponent comp = event.get_icalcomponent();
+
+        string uid = comp.get_uid ();
+        string? rid = event.has_recurrences() ? null : event.get_recurid_as_string();
+
+        debug (@"Removing event '$uid'");
+
+        var client = source_client [source];
+        client.remove_object.begin (uid, rid, mod_type, null, (obj, results) =>  {
+
+            bool status;
+
+            status = client.remove_object.end (results);
+
+            // TODO: handle error more gracefully
+            assert (status==true);
+        });
     }
 
     //--- Helper Methods ---//

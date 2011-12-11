@@ -25,6 +25,8 @@ namespace Maya.View {
 
         public E.CalComponent ecal { get; private set; }
 
+        public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
+
 		public EventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent ecal) {
 		
             this.source = sourcemgr.DEFAULT_SOURCE;
@@ -63,7 +65,7 @@ namespace Maya.View {
         /* TODO: Populate the dialog's widgets with the component's values */
         void populate () {
 
-            iCal.icalcomponent comp = ecal.get_icalcomponent ();
+            unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
 
             string summary = comp.get_summary (); // for example
         }

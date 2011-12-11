@@ -443,7 +443,7 @@ namespace E {
 		CalModeRemote,
 		CalModeAny
 	}
-	[CCode (cheader_filename = "libecal/e-cal-util.h", cprefix = "CALOBJ_MOD_", has_type_id = false)]
+	[CCode (cheader_filename = "libecal/e-cal-util.h", cname="CalObjModType", cprefix = "CALOBJ_MOD_", has_type_id = false)]
 	public enum CalObjModType {
 		THIS,
 		THISANDPRIOR,

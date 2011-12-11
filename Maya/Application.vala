@@ -237,6 +237,8 @@ namespace Maya {
 
             E.CalComponent event = dialog.ecal;
             E.Source source = dialog.source;
+            E.CalObjModType mod_type = dialog.mod_type;
+
             dialog.save_data ();
 
             dialog.dispose();
@@ -247,7 +249,7 @@ namespace Maya {
             if (add_event)
                 calmodel.add_event (source, event);
             else
-                calmodel.update_event (source, event);
+                calmodel.update_event (source, event, mod_type);
         }
 
         void on_model_parameters_changed () {
