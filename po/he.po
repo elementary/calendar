@@ -1,0 +1,32 @@
+# Hebrew translation for maya
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the maya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: maya\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-06-07 07:54-0500\n"
+"PO-Revision-Date: 2012-01-11 09:40+0000\n"
+"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2012-01-12 06:09+0000\n"
+"X-Generator: Launchpad (build 14640)\n"
+
+#: ../data/maya.desktop.in.h:1
+msgid "Fast calendar that syncs with popular online services"
+msgstr "יומן מהיר שמסתנכרן עם מגוון שירותים מקוונים נפוצים"
+
+#: ../data/maya.desktop.in.h:2
+msgid "Maya Calendar"
+msgstr "יומן מאיה"
+
+#: ../Maya/Widgets/Sidebar.vala:37
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr "האירועים הקרובים שלך יוצגו כאן בעת בחירת תאריך עם אירועים."
