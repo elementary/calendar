@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2011 Jaap Broekhuizen <jaapz.b@gmail.com>
+//  Copyright (C) 2011-2012 Jaap Broekhuizen <jaapz.b@gmail.com>
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
