@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2011 Maxwell Barvian
+//  Copyright (C) 2011-2012 Maxwell Barvian
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ namespace Maya {
 			program_name = "Maya";
 			exec_name = "maya";
 
-			app_years = "2011";
+			app_years = "2011-2012";
 			application_id = "net.launchpad.maya";
 			app_icon = "office-calendar";
 			app_launcher = "maya.desktop";
@@ -75,7 +75,7 @@ namespace Maya {
 			about_artists = {
 				"Daniel Foré <bunny@go-docky.com>"
 			};
-			about_translators = "";
+			about_translators = "Launchpad Translators";
             about_license_type = Gtk.License.GPL_3_0;
 		}
 
