@@ -224,6 +224,12 @@ public class Grid : Gtk.Table {
 
         grid_range = new_range;
     }
+    
+    public void add_event_for_time(DateTime date, string event) {
+        GridDay grid_day = data[date];
+        assert(grid_day != null);
+        grid_day.add_event(event);
+    }
 }
 
 public class GridDay : Gtk.EventBox {
@@ -259,6 +265,10 @@ public class GridDay : Gtk.EventBox {
         // Signals and handlers
         button_press_event.connect (on_button_press);
         draw.connect (on_draw);
+    }
+    
+    public void add_event(string event) {
+        vbox.pack_start (new Gtk.Label(event), false, false, 0);
     }
 
     public void update_date (DateTime date) {
@@ -421,6 +431,12 @@ public class CalendarView : Gtk.HBox {
 
         E.CalComponentText ct;
         event.get_summary (out ct);
+        print("event: %s\n", ct.value);
+        ct.value = "event";
+        E.CalComponentDateTime date_time;
+        event.get_dtend (out date_time);
+        var dt = new DateTime(new TimeZone.local(), date_time.value.year, date_time.value.month, date_time.value.day, 0, 0, 0);
+        grid.add_event_for_time (dt, ct.value);
         debug (@"Not Implemented: CalendarView.add_event");
     }
 

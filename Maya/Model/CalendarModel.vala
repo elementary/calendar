@@ -85,7 +85,11 @@ public class CalendarModel : Object {
         debug (@"Adding event '$(comp.get_uid())'");
 
         var client = source_client [source];
-        client.create_object.begin (comp, null, (obj, results) =>  {
+        string uid;
+        
+        client.open_sync(false, null);
+        client.create_object_sync (comp, out uid, null);
+        /*null, (obj, results) =>  {
 
             bool status;
             string uid;
@@ -94,7 +98,7 @@ public class CalendarModel : Object {
 
             // TODO: handle error more gracefully
             assert (status==true);
-        });
+        });*/
     }
 
     public void update_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {
@@ -207,6 +211,7 @@ public class CalendarModel : Object {
         debug("Adding source '%s'", source.peek_name());
 
         var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
+        client.open(true, null);
         source_client.set (source, client);
 
         load_source (source);
