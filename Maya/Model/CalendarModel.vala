@@ -86,7 +86,6 @@ public class CalendarModel : Object {
 
         var client = source_client [source];
         
-        client.open_sync(false, null);
         client.create_object (comp, null, (obj, results) =>  {
 
             bool status;
@@ -106,7 +105,6 @@ public class CalendarModel : Object {
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
 
         var client = source_client [source];
-        client.open_sync(false, null);
         client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
 
             bool status;
@@ -128,7 +126,6 @@ public class CalendarModel : Object {
         debug (@"Removing event '$uid'");
 
         var client = source_client [source];
-        client.open_sync(false, null);
         client.remove_object.begin (uid, rid, mod_type, null, (obj, results) =>  {
 
             bool status;
@@ -211,7 +208,7 @@ public class CalendarModel : Object {
         debug("Adding source '%s'", source.peek_name());
 
         var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
-        client.open(true, null);
+        client.open_sync(false, null);
         source_client.set (source, client);
 
         load_source (source);
