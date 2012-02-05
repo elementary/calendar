@@ -35,17 +35,26 @@ public class SourceManager: GLib.Object {
         status = E.CalClient.get_sources (out source_list, E.CalClientSourceType.EVENTS);
         assert (status==true);
 
-        DEFAULT_SOURCE = source_list.peek_default_source ();
 
         source_enabled = new Gee.HashMap<E.Source, bool> (
             (HashFunc) Util.source_hash_func,
             (EqualFunc) Util.source_equal_func,
             null);
 
-        // TODO: create these sourcegroups if they don't exist?
+        /* Ensure the groups actually exist */
+        source_list.ensure_group("Personal", "local:", false);
+        source_list.ensure_group("Webcal", "webcal://", false);
+        source_list.ensure_group("Contacts", "contacts://", false);
         GROUP_LOCAL = source_list.peek_group_by_base_uri("local:");
         GROUP_REMOTE = source_list.peek_group_by_base_uri("webcal://");
         GROUP_CONTACTS = source_list.peek_group_by_base_uri("contacts://");
+        /* If we don't have any source, let's add at least one */
+        if(GROUP_LOCAL.peek_sources().length() == 0) {
+            var source = new E.Source (_("On this computer"), "system");
+            GROUP_LOCAL.add_source (source, 0);
+        }
+        DEFAULT_SOURCE = (new E.CalClient.system (E.CalClientSourceType.EVENTS)).get_source ();
+        assert(DEFAULT_SOURCE != null);
 
         // the order that groups will appear
         _groups = new Gee.ArrayList<E.SourceGroup> ((EqualFunc) Util.source_group_equal_func);
