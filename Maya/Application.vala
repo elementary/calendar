@@ -260,7 +260,7 @@ namespace Maya {
         }
 
         void on_saved_state_show_weeks_changed () {
-            calview.show_weeks = saved_state.show_weeks;
+            if (calview != null) calview.show_weeks = saved_state.show_weeks;
         }
 
         bool on_window_delete_event (Gdk.EventAny event) {
