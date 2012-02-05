@@ -121,7 +121,10 @@ namespace Maya.View {
 		    
 		    var title_label = make_label ("Title");
 		    title_entry = new Granite.Widgets.HintedEntry ("Name of Event");
-		    
+            E.CalComponentText ct;
+            ecal.get_summary (out ct);
+            title_entry.text = ct.value;
+
 		    title_box.add (title_label);
 		    title_box.add (title_entry);
 		    
@@ -160,9 +163,14 @@ namespace Maya.View {
 		    container.add (title_location_box);
 		    container.add (guest_box);
 		    container.add (comment_box);
-		    
-		    add_button (Gtk.Stock.CANCEL, Gtk.ResponseType.CANCEL);
-		    add_button ("Create Event", Gtk.ResponseType.APPLY);
+		   
+            if (this is AddEventDialog) {
+		        add_button (Gtk.Stock.CANCEL, Gtk.ResponseType.CANCEL);
+		        add_button ("Create Event", Gtk.ResponseType.APPLY);
+            }
+            else {
+		        add_button (Gtk.Stock.OK, Gtk.ResponseType.APPLY);
+            }
 		    
 		    set_default_response (Gtk.ResponseType.APPLY);
 		    show_all();

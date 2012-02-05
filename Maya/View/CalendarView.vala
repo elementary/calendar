@@ -406,7 +406,7 @@ public class CalendarView : Gtk.HBox {
     
     public void on_remove(E.CalComponent comp) {
         //model.remove_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
-        var dialog = new Maya.View.EditEventDialog2 ((Gtk.Window)get_parent(), comp.get_data<E.Source>("source"), comp);
+        var dialog = new Maya.View.EditEventDialog2 ((Gtk.Window)get_toplevel(), comp.get_data<E.Source>("source"), comp);
         dialog.show_all();
         dialog.run();
         dialog.save();
