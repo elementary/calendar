@@ -106,6 +106,7 @@ public class CalendarModel : Object {
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
 
         var client = source_client [source];
+        client.open_sync(false, null);
         client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
 
             bool status;

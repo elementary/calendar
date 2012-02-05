@@ -238,6 +238,12 @@ public class Grid : Gtk.Table {
             grid_day.remove_event (event);
         }
     }
+    
+    public void remove_all_events () {
+        foreach(var grid_day in data.values) {
+            grid_day.clear_events ();
+        }
+    }
 }
 
 class EventButton : Gtk.Button {
@@ -250,6 +256,7 @@ class EventButton : Gtk.Button {
         comp.get_summary (out ct);
         var label = new Gtk.Label(ct.value);
         add (label);
+        set_relief (Gtk.ReliefStyle.NONE);
         
         clicked.connect( () => { removed(comp); });
     }
@@ -310,6 +317,12 @@ public class GridDay : Gtk.EventBox {
                 button.destroy();
                 break;
             }
+        }
+    }
+    
+    public void clear_events () {
+        foreach(var button in event_buttons) {
+            button.destroy();
         }
     }
 
@@ -396,7 +409,9 @@ public class CalendarView : Gtk.HBox {
         var dialog = new Maya.View.EditEventDialog2 ((Gtk.Window)get_parent(), comp.get_data<E.Source>("source"), comp);
         dialog.show_all();
         dialog.run();
-        model.remove_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
+        dialog.save();
+        dialog.destroy ();
+        model.update_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
         
     }
 
@@ -484,16 +499,12 @@ public class CalendarView : Gtk.HBox {
         E.CalComponentDateTime date_time;
         event.set_data("source", source);
         event.get_dtend (out date_time);
-        print("\n\n\n\n\n\n\n\n%d %d %d\n", date_time.value.year, date_time.value.month, date_time.value.day);
         var dt = new DateTime(new TimeZone.local(), date_time.value.year, date_time.value.month, date_time.value.day, 0, 0, 0);
         grid.add_event_for_time (dt, event);
-        debug (@"Not Implemented: CalendarView.add_event");
     }
 
     /* TODO: Update the event on the grid */
     void update_event (E.Source source, E.CalComponent event) {
-
-        debug (@"Not Implemented: CalendarView.update_event");
         remove_event (source, event);
         add_event (source, event);
     }
@@ -501,14 +512,11 @@ public class CalendarView : Gtk.HBox {
     /* TODO: Remove event from the grid */
     void remove_event (E.Source source, E.CalComponent event) {
         grid.remove_event (event);
-
-        debug ("Not Implemented: CalendarView.remove_event");
     }
 
     /* TODO: Remove all events from the grid */
     void remove_all_events () {
-
-        debug ("Not Implemented: CalendarView.remove_all_events");
+        grid.remove_all_events ();
     }
 }
 

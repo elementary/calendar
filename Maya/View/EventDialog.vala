@@ -49,15 +49,13 @@ namespace Maya.View {
         /* TODO: Save the values in the dialog into the component */
         public void save () {
 
-            iCal.icalcomponent comp = new iCal.icalcomponent.vevent ();
+            unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
 
             iCal.icaltimetype date = iCal.icaltime_today ();
 
             comp.set_dtstart (date);
             comp.set_dtend (date);
             comp.set_summary (title_entry.text);
-
-            ecal.set_icalcomponent ((owned) comp);
         }
 
 		//--- Helpers ---//
