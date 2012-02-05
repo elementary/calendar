@@ -123,6 +123,7 @@ public class Grid : Gtk.Table {
     public DateTime? selected_date { get; private set; }
 
     public signal void selection_changed (DateTime new_date);
+    public signal void removed (E.CalComponent comp);
 
     public Grid (Util.DateRange range, DateTime month_start, int weeks) {
 
@@ -146,6 +147,7 @@ public class Grid : Gtk.Table {
         foreach (var date in range) {
 
             var day = new GridDay (date);
+            day.removed.connect ( (e) => { removed (e); });
             data.set (date, day);
 
             attach_defaults (day, col, col + 1, row, row + 1);
@@ -225,10 +227,31 @@ public class Grid : Gtk.Table {
         grid_range = new_range;
     }
     
-    public void add_event_for_time(DateTime date, string event) {
+    public void add_event_for_time(DateTime date, E.CalComponent event) {
         GridDay grid_day = data[date];
         assert(grid_day != null);
         grid_day.add_event(event);
+    }
+    
+    public void remove_event (E.CalComponent event) {
+        foreach(var grid_day in data.values) {
+            grid_day.remove_event (event);
+        }
+    }
+}
+
+class EventButton : Gtk.Button {
+    public E.CalComponent comp;
+    public signal void removed (E.CalComponent comp);
+    public EventButton (E.CalComponent comp) {
+        
+        E.CalComponentText ct;
+        this.comp = comp;
+        comp.get_summary (out ct);
+        var label = new Gtk.Label(ct.value);
+        add (label);
+        
+        clicked.connect( () => { removed(comp); });
     }
 }
 
@@ -238,10 +261,14 @@ public class GridDay : Gtk.EventBox {
 
     Gtk.Label label;
     Gtk.VBox vbox;
+    List<EventButton> event_buttons;
+    
+    public signal void removed (E.CalComponent event);
 
     public GridDay (DateTime date) {
 
         this.date = date;
+        event_buttons = new List<EventButton>();
 
         var style_provider = Util.Css.get_css_provider ();
 
@@ -267,8 +294,23 @@ public class GridDay : Gtk.EventBox {
         draw.connect (on_draw);
     }
     
-    public void add_event(string event) {
-        vbox.pack_start (new Gtk.Label(event), false, false, 0);
+    public void add_event(E.CalComponent comp) {
+        var button = new EventButton(comp);
+        vbox.pack_start (button, false, false, 0);
+        vbox.show_all();
+        event_buttons.append(button);
+        
+        button.removed.connect ( (e) => { removed (e); });
+    }
+    
+    public void remove_event (E.CalComponent comp) {
+        foreach(var button in event_buttons) {
+            if(comp == button.comp) {
+                event_buttons.remove(button);
+                button.destroy();
+                break;
+            }
+        }
     }
 
     public void update_date (DateTime date) {
@@ -326,6 +368,7 @@ public class CalendarView : Gtk.HBox {
         weeks = new WeekLabels ();
         header = new Header ();
         grid = new Grid (model.data_range, model.month_start, model.num_weeks);
+        grid.removed.connect (on_remove);
         
         // HBox properties
         spacing = 0;
@@ -346,6 +389,15 @@ public class CalendarView : Gtk.HBox {
         model.events_added.connect (on_events_added);
         model.events_updated.connect (on_events_updated);
         model.events_removed.connect (on_events_removed);
+    }
+    
+    public void on_remove(E.CalComponent comp) {
+        //model.remove_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
+        var dialog = new Maya.View.EditEventDialog2 ((Gtk.Window)get_parent(), comp.get_data<E.Source>("source"), comp);
+        dialog.show_all();
+        dialog.run();
+        model.remove_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
+        
     }
 
     //--- Public Methods ---//
@@ -429,14 +481,12 @@ public class CalendarView : Gtk.HBox {
     /* TODO: Render new event on the grid */
     void add_event (E.Source source, E.CalComponent event) {
 
-        E.CalComponentText ct;
-        event.get_summary (out ct);
-        print("event: %s\n", ct.value);
-        ct.value = "event";
         E.CalComponentDateTime date_time;
+        event.set_data("source", source);
         event.get_dtend (out date_time);
+        print("\n\n\n\n\n\n\n\n%d %d %d\n", date_time.value.year, date_time.value.month, date_time.value.day);
         var dt = new DateTime(new TimeZone.local(), date_time.value.year, date_time.value.month, date_time.value.day, 0, 0, 0);
-        grid.add_event_for_time (dt, ct.value);
+        grid.add_event_for_time (dt, event);
         debug (@"Not Implemented: CalendarView.add_event");
     }
 
@@ -444,10 +494,13 @@ public class CalendarView : Gtk.HBox {
     void update_event (E.Source source, E.CalComponent event) {
 
         debug (@"Not Implemented: CalendarView.update_event");
+        remove_event (source, event);
+        add_event (source, event);
     }
 
     /* TODO: Remove event from the grid */
     void remove_event (E.Source source, E.CalComponent event) {
+        grid.remove_event (event);
 
         debug ("Not Implemented: CalendarView.remove_event");
     }

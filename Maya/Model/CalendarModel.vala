@@ -85,11 +85,9 @@ public class CalendarModel : Object {
         debug (@"Adding event '$(comp.get_uid())'");
 
         var client = source_client [source];
-        string uid;
         
         client.open_sync(false, null);
-        client.create_object_sync (comp, out uid, null);
-        /*null, (obj, results) =>  {
+        client.create_object (comp, null, (obj, results) =>  {
 
             bool status;
             string uid;
@@ -98,7 +96,7 @@ public class CalendarModel : Object {
 
             // TODO: handle error more gracefully
             assert (status==true);
-        });*/
+        });
     }
 
     public void update_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {
@@ -129,6 +127,7 @@ public class CalendarModel : Object {
         debug (@"Removing event '$uid'");
 
         var client = source_client [source];
+        client.open_sync(false, null);
         client.remove_object.begin (uid, rid, mod_type, null, (obj, results) =>  {
 
             bool status;
@@ -355,15 +354,19 @@ public class CalendarModel : Object {
         debug (@"Received $(cids.length()) removed event(s) for source '%s'", source.peek_name());
 
         var events = source_events [source];
+        Gee.Collection<E.CalComponent> removed_events = new Gee.ArrayList<E.CalComponent> (
+            (EqualFunc) Util.calcomponent_equal_func);
 
         foreach (unowned E.CalComponentId? cid in cids) {
 
             assert (cid != null);
 
             E.CalComponent event = events [cid.uid];
+            removed_events.add (event);
 
             debug_event (source, event);
         }
+        events_removed (source, removed_events.read_only_view);
     }
 }
 
