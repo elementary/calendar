@@ -27,9 +27,9 @@ namespace Maya.View {
 
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
 
-		public EventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent ecal) {
+		public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null) {
 		
-            this.source = sourcemgr.DEFAULT_SOURCE;
+            this.source = source ?? sourcemgr.DEFAULT_SOURCE;
             this.ecal = ecal;
 
             load ();
@@ -49,15 +49,13 @@ namespace Maya.View {
         /* TODO: Save the values in the dialog into the component */
         public void save () {
 
-            iCal.icalcomponent comp = new iCal.icalcomponent.vevent ();
+            unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
 
             iCal.icaltimetype date = iCal.icaltime_today ();
 
             comp.set_dtstart (date);
             comp.set_dtend (date);
-            comp.set_summary ("Example");
-
-            ecal.set_icalcomponent ((owned) comp);
+            comp.set_summary (title_entry.text);
         }
 
 		//--- Helpers ---//
@@ -69,6 +67,8 @@ namespace Maya.View {
 
             string summary = comp.get_summary (); // for example
         }
+        
+        Gtk.Entry title_entry;
 
 		void build_dialog () {
 		
@@ -120,10 +120,10 @@ namespace Maya.View {
 		    var title_box = new Gtk.VBox (false, 0);
 		    
 		    var title_label = make_label ("Title");
-		    var title = new Granite.Widgets.HintedEntry ("Name of Event");
+		    title_entry = new Granite.Widgets.HintedEntry ("Name of Event");
 		    
 		    title_box.add (title_label);
-		    title_box.add (title);
+		    title_box.add (title_entry);
 		    
 		    var location_box = new Gtk.VBox (false, 0);
 		    
@@ -227,6 +227,17 @@ namespace Maya.View {
 	    public EditEventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent event) {
 	        
 	        base(window, sourcemgr, event);
+	        
+	        // Dialog Properties
+	        title = "Edit Event";
+	    }
+	}
+	
+	public class EditEventDialog2 : EventDialog {
+	 
+	    public EditEventDialog2 (Gtk.Window window, E.Source source, E.CalComponent event) {
+	        
+	        base(window, null, event, source);
 	        
 	        // Dialog Properties
 	        title = "Edit Event";
