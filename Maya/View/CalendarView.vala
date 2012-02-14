@@ -124,6 +124,7 @@ public class Grid : Gtk.Table {
 
     public signal void selection_changed (DateTime new_date);
     public signal void removed (E.CalComponent comp);
+    public signal void modified (E.CalComponent comp);
 
     public Grid (Util.DateRange range, DateTime month_start, int weeks) {
 
@@ -148,6 +149,7 @@ public class Grid : Gtk.Table {
 
             var day = new GridDay (date);
             day.removed.connect ( (e) => { removed (e); });
+            day.modified.connect ( (e) => { modified (e); });
             data.set (date, day);
 
             attach_defaults (day, col, col + 1, row, row + 1);
@@ -246,19 +248,34 @@ public class Grid : Gtk.Table {
     }
 }
 
-class EventButton : Gtk.Button {
+class EventButton : Gtk.Grid {
     public E.CalComponent comp;
     public signal void removed (E.CalComponent comp);
+    public signal void modified (E.CalComponent comp);
+    
+    Gtk.Label label;
+    Gtk.Button close_button;
+    Gtk.Button edit_button;
     public EventButton (E.CalComponent comp) {
         
         E.CalComponentText ct;
         this.comp = comp;
         comp.get_summary (out ct);
-        var label = new Gtk.Label(ct.value);
+        label = new Granite.Widgets.WrapLabel(ct.value);
         add (label);
-        set_relief (Gtk.ReliefStyle.NONE);
+        label.hexpand = true;
+        close_button = new Gtk.Button ();
+        edit_button = new Gtk.Button ();
+        close_button.add (new Gtk.Image.from_stock ("gtk-close", Gtk.IconSize.MENU));
+        edit_button.add (new Gtk.Image.from_stock ("gtk-edit", Gtk.IconSize.MENU));
+        close_button.set_relief (Gtk.ReliefStyle.NONE);
+        edit_button.set_relief (Gtk.ReliefStyle.NONE);
         
-        clicked.connect( () => { removed(comp); });
+        add (edit_button);
+        add (close_button);
+        
+        close_button.clicked.connect( () => { removed(comp); });
+        edit_button.clicked.connect( () => { modified(comp); });
     }
 }
 
@@ -271,6 +288,7 @@ public class GridDay : Gtk.EventBox {
     List<EventButton> event_buttons;
     
     public signal void removed (E.CalComponent event);
+    public signal void modified (E.CalComponent event);
 
     public GridDay (DateTime date) {
 
@@ -308,6 +326,7 @@ public class GridDay : Gtk.EventBox {
         event_buttons.append(button);
         
         button.removed.connect ( (e) => { removed (e); });
+        button.modified.connect ( (e) => { modified (e); });
     }
     
     public void remove_event (E.CalComponent comp) {
@@ -382,6 +401,7 @@ public class CalendarView : Gtk.HBox {
         header = new Header ();
         grid = new Grid (model.data_range, model.month_start, model.num_weeks);
         grid.removed.connect (on_remove);
+        grid.modified.connect (on_modified);
         
         // HBox properties
         spacing = 0;
@@ -405,14 +425,16 @@ public class CalendarView : Gtk.HBox {
     }
     
     public void on_remove(E.CalComponent comp) {
-        //model.remove_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
+        model.remove_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
+    }
+    
+    public void on_modified(E.CalComponent comp) {
         var dialog = new Maya.View.EditEventDialog2 ((Gtk.Window)get_toplevel(), comp.get_data<E.Source>("source"), comp);
         dialog.show_all();
         dialog.run();
         dialog.save();
         dialog.destroy ();
         model.update_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
-        
     }
 
     //--- Public Methods ---//
