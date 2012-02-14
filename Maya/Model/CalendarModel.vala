@@ -161,7 +161,7 @@ public class CalendarModel : Object {
         debug(@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
     }
 
-    void load_all_sources () {
+    public void load_all_sources () {
 
         foreach (var source in source_client.keys)
             load_source (source);

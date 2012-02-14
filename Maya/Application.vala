@@ -165,6 +165,7 @@ namespace Maya {
 
 			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
             calview.today();
+            calmodel.load_all_sources ();
 
 			sidebar = new View.Sidebar ();
 
