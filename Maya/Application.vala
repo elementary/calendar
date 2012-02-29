@@ -150,7 +150,7 @@ namespace Maya {
             }
 
 			toolbar = new View.MayaToolbar (calmodel.month_start);
-			toolbar.button_add.clicked.connect(on_tb_add_clicked);
+			toolbar.button_add.clicked.connect(() => on_tb_add_clicked (calview.grid.selected_date));
 			toolbar.button_calendar_sources.clicked.connect(on_tb_sources_clicked);
 			toolbar.menu.today.activate.connect (on_menu_today_toggled);
 			toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);
@@ -214,7 +214,7 @@ namespace Maya {
 		    View.EventDialog dialog;
 
             E.CalComponent event_clone = event.clone ();
-            
+
             if (add_event)
                 dialog = new View.AddEventDialog (window, sourcemgr, event_clone);
             else
@@ -269,10 +269,16 @@ namespace Maya {
             return false;
         }
 
-        void on_tb_add_clicked () {
-            
+        void on_tb_add_clicked (DateTime dt) {
             var event = new E.CalComponent ();
 			event.set_new_vtype (E.CalComponentVType.EVENT);
+
+            iCal.icaltimetype date = iCal.icaltime_from_day_of_year(calview.grid.selected_date.get_day_of_year()+1, calview.grid.selected_date.get_year());
+            unowned iCal.icalcomponent comp = event.get_icalcomponent ();
+
+            comp.set_dtstart (date);
+            comp.set_dtend (date);
+            comp.set_summary ("");
 
             edit_event (event, true);
         }

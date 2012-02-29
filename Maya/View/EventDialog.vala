@@ -50,17 +50,16 @@ namespace Maya.View {
         public void save () {
 
             unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
-
-            iCal.icaltimetype date = iCal.icaltime_today ();
-
+            iCal.icaltimetype date = iCal.icaltime_from_day_of_year(from_date_picker.date.get_day_of_year(), from_date_picker.date.get_year());
             comp.set_dtstart (date);
+            date = iCal.icaltime_from_day_of_year(to_date_picker.date.get_day_of_year(), to_date_picker.date.get_year());
             comp.set_dtend (date);
             comp.set_summary (title_entry.text);
         }
 
 		//--- Helpers ---//
 
-        /* TODO: Populate the dialog's widgets with the component's values */
+        /* TODO: End to populate the dialog's widgets with the component's values */
         void load () {
 
             unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
@@ -69,9 +68,15 @@ namespace Maya.View {
         }
         
         Gtk.Entry title_entry;
+        Granite.Widgets.DatePicker from_date_picker;
+        Granite.Widgets.TimePicker from_time_picker;
+        Granite.Widgets.DatePicker to_date_picker;
+        Granite.Widgets.TimePicker to_time_picker;
 
 		void build_dialog () {
-		
+		    
+            unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
+            
 		    container = (Gtk.Container) get_content_area ();
 		    container.margin_left = 10;
 		    container.margin_right = 10;
@@ -79,8 +84,12 @@ namespace Maya.View {
 		    var from_box = make_hbox ();
 		    
 		    var from = make_label ("From:");
-			var from_date_picker = make_date_picker ();
-			var from_time_picker = make_time_picker ();
+			from_date_picker = make_date_picker ();
+            iCal.icaltimetype date = comp.get_dtstart();
+            from_date_picker.date = new DateTime.local(date.year, date.month, date.day, date.hour, date.minute, (double) date.second);
+			from_time_picker = make_time_picker ();
+            // there is an error with the time picker…
+            //from_time_picker.time = new DateTime.local(date.year, date.month, date.day , date.hour, date.minute, (double) date.second);
 			
 			from_box.add (from_date_picker);
 			from_box.add (from_time_picker);
@@ -100,8 +109,11 @@ namespace Maya.View {
 		    
 		    var to_box = make_hbox ();
 		    
-		    var to_date_picker = make_date_picker ();
-		    var to_time_picker = make_time_picker ();
+		    to_date_picker = make_date_picker ();
+            date = comp.get_dtend();
+            to_date_picker.date = new DateTime.local(date.year, date.month, date.day, date.hour, date.minute, (double) date.second);
+			to_time_picker = make_time_picker ();
+            //to_time_picker.time = new DateTime.local(date.year, date.month, date.day, date.hour, date.minute, (double) date.second);
 		    
 		    to_box.pack_start (to_date_picker, false, false, 0);
 		    to_box.pack_start (to_time_picker, false, false, 0);
