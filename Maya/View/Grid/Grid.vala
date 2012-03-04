@@ -56,6 +56,8 @@ public class Grid : Gtk.Table {
 
     void on_day_focus_in (GridDay day) {
 
+        stdout.printf("FOCUS CHANGED\n");
+
         selected_date = day.date;
 
         selection_changed (selected_date);

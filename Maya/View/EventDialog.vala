@@ -32,8 +32,6 @@ namespace Maya.View {
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
             this.ecal = ecal;
 
-            load ();
-
 			// Dialog properties
 			modal = true;
 			window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
@@ -41,6 +39,9 @@ namespace Maya.View {
 			
 			// Build dialog
 			build_dialog ();
+
+            // Load the event's properties in to the dialog
+            load ();
 		}
 		
         //--- Public Methods ---//
@@ -66,6 +67,9 @@ namespace Maya.View {
             unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
 
             string summary = comp.get_summary (); // for example
+
+            if (summary != null)
+                title_entry.text = summary;
         }
         
         Gtk.Entry title_entry;
@@ -121,9 +125,6 @@ namespace Maya.View {
 		    
 		    var title_label = make_label ("Title");
 		    title_entry = new Granite.Widgets.HintedEntry ("Name of Event");
-            E.CalComponentText ct;
-            ecal.get_summary (out ct);
-            title_entry.text = ct.value;
 
 		    title_box.add (title_label);
 		    title_box.add (title_entry);
