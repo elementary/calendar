@@ -60,7 +60,7 @@ namespace Maya.View {
 
             
         /**
-         * Save the values in the dialog into the component
+         * Save the values in the dialog into the component.
          */
         public void save () {
 
@@ -71,19 +71,19 @@ namespace Maya.View {
 
             // Save the from date
             DateTime from_date = from_date_picker.date;
+            DateTime from_time = from_time_picker.time;
 
-            iCal.icaltimetype dt_start = iCal.icaltime_from_day_of_year (from_date.get_day_of_year (), from_date.get_year ());
+            iCal.icaltimetype dt_start = date_time_to_ical (from_date, from_time);
 
             comp.set_dtstart (dt_start);
 
             // Save the to date
             DateTime to_date = to_date_picker.date;
+            DateTime to_time = to_time_picker.time;
 
-            iCal.icaltimetype dt_end = iCal.icaltime_from_day_of_year (to_date.get_day_of_year (), to_date.get_year ());
+            iCal.icaltimetype dt_end = date_time_to_ical (to_date, to_time);
 
             comp.set_dtend (dt_end);
-
-            // TODO: set the time (hour/minute/seconds) too
 
             // TODO: save guests, comments, location, all day toggle
 
@@ -91,7 +91,22 @@ namespace Maya.View {
             string location = location_entry.text;
 
             comp.set_location (location);
+        }
 
+        /**
+         * Converts two datetimes to one icaltimetype. The first contains the date,
+         * its time settings are ignored. The second one contains the time itself.
+         */
+        iCal.icaltimetype date_time_to_ical (DateTime date, DateTime time) {
+
+            iCal.icaltimetype result = iCal.icaltime_from_day_of_year 
+                (date.get_day_of_year (), date.get_year ());
+
+            result.hour = time.get_hour ();
+            result.minute = time.get_minute ();
+            result.second = time.get_second ();
+
+            return result;
         }
 
 		//--- Helpers ---//
@@ -115,6 +130,8 @@ namespace Maya.View {
                 DateTime from_date = ical_to_date_time (dt_start);
 
                 from_date_picker.date = from_date;
+// TODO: wait for bugfix in granite to be able to do this
+//                from_time_picker.time = from_date;
             }
 
             // Load the to date
@@ -124,16 +141,13 @@ namespace Maya.View {
                 DateTime to_date = ical_to_date_time (dt_end);
 
                 to_date_picker.date = to_date;
+//                to_time_picker.time = to_date;
             }
 
             // Load the location
             string location = comp.get_location ();
             if (location != null)
                 location_entry.text = location;
-
-            // TODO: bug: when loading for the second time, the date shifts 1
-
-            // TODO: load the time (hour/minute/seconds) too
 
             // TODO: load guests, comments, all day toggle
 
@@ -147,7 +161,7 @@ namespace Maya.View {
             string tzid = date.zone.get_tzid ();
             TimeZone zone = new TimeZone (tzid);
 
-            stdout.printf ("DATE DAY %d\n", date.day);
+            stdout.printf ("Minute = %d\n", date.minute);
 
             return new DateTime (zone, date.year, date.month,
                 date.day, date.hour, date.minute, date.second);
