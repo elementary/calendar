@@ -19,6 +19,18 @@ namespace Maya.View {
 
 	public class EventDialog : Gtk.Dialog {
 		
+        /**
+         * The different widgets in the dialog.
+         */        
+        Gtk.Entry title_entry;
+        Granite.Widgets.HintedEntry location_entry;
+        Gtk.TextView comment;
+        Granite.Widgets.DatePicker from_date_picker;
+        Granite.Widgets.DatePicker to_date_picker;
+
+        Granite.Widgets.TimePicker from_time_picker;
+        Granite.Widgets.TimePicker to_time_picker;
+
 		Gtk.Container container { get; private set; }
 
         public E.Source source { get; private set; }
@@ -47,32 +59,99 @@ namespace Maya.View {
         //--- Public Methods ---//
 
             
-        /* TODO: Save the values in the dialog into the component */
+        /**
+         * Save the values in the dialog into the component
+         */
         public void save () {
 
             unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
 
-            iCal.icaltimetype date = iCal.icaltime_today ();
-
-            comp.set_dtstart (date);
-            comp.set_dtend (date);
+            // Save the title
             comp.set_summary (title_entry.text);
+
+            // Save the from date
+            DateTime from_date = from_date_picker.date;
+
+            iCal.icaltimetype dt_start = iCal.icaltime_from_day_of_year (from_date.get_day_of_year (), from_date.get_year ());
+
+            comp.set_dtstart (dt_start);
+
+            // Save the to date
+            DateTime to_date = to_date_picker.date;
+
+            iCal.icaltimetype dt_end = iCal.icaltime_from_day_of_year (to_date.get_day_of_year (), to_date.get_year ());
+
+            comp.set_dtend (dt_end);
+
+            // TODO: set the time (hour/minute/seconds) too
+
+            // TODO: save guests, comments, location, all day toggle
+
+            // Save the location
+            string location = location_entry.text;
+
+            comp.set_location (location);
+
         }
 
 		//--- Helpers ---//
 
-        /* TODO: Populate the dialog's widgets with the component's values */
+        /**
+         * Populate the dialog's widgets with the component's values.
+         */ 
         void load () {
 
             unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
 
-            string summary = comp.get_summary (); // for example
-
+            // Load the title
+            string summary = comp.get_summary ();
             if (summary != null)
                 title_entry.text = summary;
+
+            // Load the from date
+            iCal.icaltimetype dt_start = comp.get_dtstart ();
+
+            if (dt_start.year != 0) {
+                DateTime from_date = ical_to_date_time (dt_start);
+
+                from_date_picker.date = from_date;
+            }
+
+            // Load the to date
+            iCal.icaltimetype dt_end = comp.get_dtend ();
+
+            if (dt_end.year != 0) {
+                DateTime to_date = ical_to_date_time (dt_end);
+
+                to_date_picker.date = to_date;
+            }
+
+            // Load the location
+            string location = comp.get_location ();
+            if (location != null)
+                location_entry.text = location;
+
+            // TODO: bug: when loading for the second time, the date shifts 1
+
+            // TODO: load the time (hour/minute/seconds) too
+
+            // TODO: load guests, comments, all day toggle
+
         }
-        
-        Gtk.Entry title_entry;
+
+        /**
+         * Converts the given icaltimetype to the given DateTime.
+         */
+        DateTime ical_to_date_time (iCal.icaltimetype date) {
+
+            string tzid = date.zone.get_tzid ();
+            TimeZone zone = new TimeZone (tzid);
+
+            stdout.printf ("DATE DAY %d\n", date.day);
+
+            return new DateTime (zone, date.year, date.month,
+                date.day, date.hour, date.minute, date.second);
+        }
 
 		void build_dialog () {
 		
@@ -83,8 +162,8 @@ namespace Maya.View {
 		    var from_box = make_hbox ();
 		    
 		    var from = make_label ("From:");
-			var from_date_picker = make_date_picker ();
-			var from_time_picker = make_time_picker ();
+			from_date_picker = make_date_picker ();
+			from_time_picker = make_time_picker ();
 			
 			from_box.add (from_date_picker);
 			from_box.add (from_time_picker);
@@ -104,8 +183,8 @@ namespace Maya.View {
 		    
 		    var to_box = make_hbox ();
 		    
-		    var to_date_picker = make_date_picker ();
-		    var to_time_picker = make_time_picker ();
+		    to_date_picker = make_date_picker ();
+		    to_time_picker = make_time_picker ();
 		    
 		    to_box.pack_start (to_date_picker, false, false, 0);
 		    to_box.pack_start (to_time_picker, false, false, 0);
@@ -132,10 +211,10 @@ namespace Maya.View {
 		    var location_box = new Gtk.VBox (false, 0);
 		    
 		    var location_label = make_label ("Location");
-	        var location = new Granite.Widgets.HintedEntry ("John Smith OR Example St.");
+	        location_entry = new Granite.Widgets.HintedEntry ("John Smith OR Example St.");
 	        
 		    location_box.add (location_label);
-		    location_box.add (location);
+		    location_box.add (location_entry);
 		    
 		    title_location_box.add (title_box);
 		    title_location_box.add (location_box);
@@ -154,7 +233,7 @@ namespace Maya.View {
 			var comment_label = make_label ("Comments");
 			comment_box.add (comment_label);
 			
-			var comment = new Gtk.TextView ();
+			comment = new Gtk.TextView ();
 			comment.height_request = 100;
 			comment_box.add (comment);
 		    
