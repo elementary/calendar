@@ -54,7 +54,13 @@ namespace Maya.View.Widgets {
 			set { label.label = value; }
 		}
 
-		public DateSwitcher () {
+        /**
+         * Creates a new DateSwitcher.
+         *
+         * @param chars_width
+         *          The width of the label. Automatic if -1 is given.
+         */
+		public DateSwitcher (int width_chars) {
 		
 			// EventBox properties
 			events |= Gdk.EventMask.POINTER_MOTION_MASK
@@ -68,6 +74,7 @@ namespace Maya.View.Widgets {
 			box = new Gtk.HBox (false, 1);
 			box.border_width = 0;
 			label = new Gtk.Label ("");
+            label.width_chars = width_chars;
 			
 			// Add everything in appropriate order
 			box.pack_start (Util.set_paddings (new Gtk.Arrow (Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),

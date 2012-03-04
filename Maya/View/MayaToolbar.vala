@@ -48,8 +48,8 @@ namespace Maya.View {
 
             button_calendar_sources = make_toolbutton ("gtk-index", "Select calendars to display", true);
 
-			month_switcher = new Widgets.DateSwitcher ();
-			year_switcher = new Widgets.DateSwitcher ();
+			month_switcher = new Widgets.DateSwitcher (10);
+			year_switcher = new Widgets.DateSwitcher (-1);
             set_switcher_date (target);
 
 			search_bar = new Granite.Widgets.SearchBar ("Search For Events..");
