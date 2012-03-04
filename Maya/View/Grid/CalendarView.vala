@@ -56,7 +56,7 @@ public class CalendarView : Gtk.HBox {
         sync_with_model ();
 
         model.parameters_changed.connect (on_model_parameters_changed);
-        notify["show_weeks"].connect (on_show_weeks_changed);
+        notify["show-weeks"].connect (on_show_weeks_changed);
 
         model.events_added.connect (on_events_added);
         model.events_updated.connect (on_events_updated);
