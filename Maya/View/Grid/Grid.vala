@@ -17,7 +17,7 @@ public class Grid : Gtk.Table {
     public Grid (Util.DateRange range, DateTime month_start, int weeks) {
 
         grid_range = range;
-        selected_date = null;
+        selected_date = new DateTime.now_local ();
 
         // Gtk.Table properties
         n_rows = weeks;

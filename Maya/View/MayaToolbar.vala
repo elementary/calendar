@@ -43,7 +43,7 @@ namespace Maya.View {
 			// Initialize everything
 			button_add = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add", "Create a new event");
 
-			edit_button = make_toolbutton ("gtk-edit", "Edit the selected event", false);
+			edit_button = make_toolbutton ("edit", "Edit the selected event", false);
 			delete_button = make_toolbutton ("edit-delete", "Delete the selected event", false);
 
             button_calendar_sources = make_toolbutton ("gtk-index", "Select calendars to display", true);

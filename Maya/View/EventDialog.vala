@@ -54,7 +54,24 @@ namespace Maya.View {
 
             // Load the event's properties in to the dialog
             load ();
+
+            connect_signals ();
 		}
+
+        private void connect_signals () {
+            this.response.connect (on_response);
+        }
+
+        private void on_response (Gtk.Dialog source, int response_id) {
+            switch (response_id) {
+            case Gtk.ResponseType.APPLY:
+                save ();
+                break;
+            case Gtk.ResponseType.CLOSE:
+                destroy ();
+                break;
+            }
+        }
 		
         //--- Public Methods ---//
 
@@ -63,7 +80,6 @@ namespace Maya.View {
          * Save the values in the dialog into the component.
          */
         public void save () {
-
             unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
 
             // Save the title
@@ -168,7 +184,9 @@ namespace Maya.View {
         }
 
 		void build_dialog () {
-		
+		    
+            unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
+            
 		    container = (Gtk.Container) get_content_area ();
 		    container.margin_left = 10;
 		    container.margin_right = 10;
@@ -259,7 +277,6 @@ namespace Maya.View {
 		    container.add (comment_box);
 		   
             if (this is AddEventDialog) {
-		        add_button (Gtk.Stock.CANCEL, Gtk.ResponseType.CANCEL);
 		        add_button ("Create Event", Gtk.ResponseType.APPLY);
             }
             else {
