@@ -169,7 +169,7 @@ public class Grid : Gtk.Table {
     void on_day_focus_in (GridDay day) {
 
         selected_date = day.date;
-
+        warning(@"selection: @ $(day.date)");
         selection_changed (selected_date);
     }
 
@@ -432,7 +432,6 @@ public class CalendarView : Gtk.HBox {
         var dialog = new Maya.View.EditEventDialog2 ((Gtk.Window)get_toplevel(), comp.get_data<E.Source>("source"), comp);
         dialog.show_all();
         dialog.run();
-        dialog.save();
         dialog.destroy ();
         model.update_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
     }

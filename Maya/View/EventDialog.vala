@@ -41,14 +41,29 @@ namespace Maya.View {
 			
 			// Build dialog
 			build_dialog ();
+            connect_signals ();
 		}
+
+        private void connect_signals () {
+            this.response.connect (on_response);
+        }
+
+        private void on_response (Gtk.Dialog source, int response_id) {
+            switch (response_id) {
+            case Gtk.ResponseType.APPLY:
+                save ();
+                break;
+            case Gtk.ResponseType.CLOSE:
+                destroy ();
+                break;
+            }
+        }
 		
         //--- Public Methods ---//
 
             
         /* TODO: Save the values in the dialog into the component */
         public void save () {
-
             unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
             iCal.icaltimetype date = iCal.icaltime_from_day_of_year(from_date_picker.date.get_day_of_year(), from_date_picker.date.get_year());
             comp.set_dtstart (date);
@@ -72,6 +87,7 @@ namespace Maya.View {
         Granite.Widgets.TimePicker from_time_picker;
         Granite.Widgets.DatePicker to_date_picker;
         Granite.Widgets.TimePicker to_time_picker;
+        iCal.icaltimetype date;
 
 		void build_dialog () {
 		    
@@ -85,11 +101,11 @@ namespace Maya.View {
 		    
 		    var from = make_label ("From:");
 			from_date_picker = make_date_picker ();
-            iCal.icaltimetype date = comp.get_dtstart();
-            from_date_picker.date = new DateTime.local(date.year, date.month, date.day, date.hour, date.minute, (double) date.second);
+            date = comp.get_dtstart();
+             // FIXME: because the timepicker doesn't work
+            from_date_picker.date = new DateTime(new TimeZone(date.zone.get_tzid()), date.year, date.month, date.day, 0, 0, 0);
 			from_time_picker = make_time_picker ();
-            // there is an error with the time picker…
-            //from_time_picker.time = new DateTime.local(date.year, date.month, date.day , date.hour, date.minute, (double) date.second);
+            //from_time_picker.time = new DateTime(new TimeZone(date.zone.get_tzid()), 0, 0, 0 , date.hour, date.minute, 0);
 			
 			from_box.add (from_date_picker);
 			from_box.add (from_time_picker);
@@ -111,7 +127,8 @@ namespace Maya.View {
 		    
 		    to_date_picker = make_date_picker ();
             date = comp.get_dtend();
-            to_date_picker.date = new DateTime.local(date.year, date.month, date.day, date.hour, date.minute, (double) date.second);
+             // FIXME: because the timepicker doesn't work
+            to_date_picker.date = new DateTime.local(date.year, date.month, date.day, 0, 0, 0);
 			to_time_picker = make_time_picker ();
             //to_time_picker.time = new DateTime.local(date.year, date.month, date.day, date.hour, date.minute, (double) date.second);
 		    
@@ -177,7 +194,6 @@ namespace Maya.View {
 		    container.add (comment_box);
 		   
             if (this is AddEventDialog) {
-		        add_button (Gtk.Stock.CANCEL, Gtk.ResponseType.CANCEL);
 		        add_button ("Create Event", Gtk.ResponseType.APPLY);
             }
             else {
