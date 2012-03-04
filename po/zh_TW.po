@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-07 07:54-0500\n"
+"POT-Creation-Date: 2012-03-04 23:28+0100\n"
 "PO-Revision-Date: 2012-01-07 13:41+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -18,16 +18,14 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-02-22 05:09+0000\n"
 "X-Generator: Launchpad (build 14838)\n"
 
-#: ../data/maya.desktop.in.h:1
-msgid "Fast calendar that syncs with popular online services"
-msgstr "可與熱門線上服務同步的輕快行事曆程式"
-
-#: ../data/maya.desktop.in.h:2
-msgid "Maya Calendar"
-msgstr "Maya 行事曆"
-
-#: ../Maya/Widgets/Sidebar.vala:37
+#. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "當您選取的日子有活動時，未來的活動會顯示在這裡。"
+
+#~ msgid "Fast calendar that syncs with popular online services"
+#~ msgstr "可與熱門線上服務同步的輕快行事曆程式"
+
+#~ msgid "Maya Calendar"
+#~ msgstr "Maya 行事曆"

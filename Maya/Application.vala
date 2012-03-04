@@ -304,7 +304,7 @@ namespace Maya {
             var event = new E.CalComponent ();
 			event.set_new_vtype (E.CalComponentVType.EVENT);
 
-            iCal.icaltimetype date = iCal.icaltime_from_day_of_year(calview.grid.selected_date.get_day_of_year()+1, calview.grid.selected_date.get_year());
+            iCal.icaltimetype date = iCal.icaltime_from_day_of_year(dt.get_day_of_year()+1, dt.get_year());
             unowned iCal.icalcomponent comp = event.get_icalcomponent ();
 
             comp.set_dtstart (date);

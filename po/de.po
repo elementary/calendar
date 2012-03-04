@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-07 07:54-0500\n"
+"POT-Creation-Date: 2012-03-04 23:28+0100\n"
 "PO-Revision-Date: 2012-02-23 15:06+0000\n"
 "Last-Translator: Henrik Graßhoff <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -18,19 +18,17 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-02-24 05:07+0000\n"
 "X-Generator: Launchpad (build 14860)\n"
 
-#: ../data/maya.desktop.in.h:1
-msgid "Fast calendar that syncs with popular online services"
-msgstr ""
-"Ein einfacher Kalender, der den Abgleich mit Online-Diensten unterstützt"
-
-#: ../data/maya.desktop.in.h:2
-msgid "Maya Calendar"
-msgstr "Maya – Kalender"
-
-#: ../Maya/Widgets/Sidebar.vala:37
+#. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Ihre anstehenden Termine werden hier angezeigt, sobald Sie ein Datum mit "
 "Terminen auswählen."
+
+#~ msgid "Fast calendar that syncs with popular online services"
+#~ msgstr ""
+#~ "Ein einfacher Kalender, der den Abgleich mit Online-Diensten unterstützt"
+
+#~ msgid "Maya Calendar"
+#~ msgstr "Maya – Kalender"

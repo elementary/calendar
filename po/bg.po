@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-07 07:54-0500\n"
+"POT-Creation-Date: 2012-03-04 23:28+0100\n"
 "PO-Revision-Date: 2011-06-18 21:38+0000\n"
 "Last-Translator: SvinqVmraka <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -18,18 +18,16 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-02-22 05:09+0000\n"
 "X-Generator: Launchpad (build 14838)\n"
 
-#: ../data/maya.desktop.in.h:1
-msgid "Fast calendar that syncs with popular online services"
-msgstr "Бърз календар, който се синхронизира с популярни онлайн услуги."
-
-#: ../data/maya.desktop.in.h:2
-msgid "Maya Calendar"
-msgstr "Maya календар"
-
-#: ../Maya/Widgets/Sidebar.vala:37
+#. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Вашите скорошни събития ще се показват тук, след като изберете дата със "
 "събития."
+
+#~ msgid "Fast calendar that syncs with popular online services"
+#~ msgstr "Бърз календар, който се синхронизира с популярни онлайн услуги."
+
+#~ msgid "Maya Calendar"
+#~ msgstr "Maya календар"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-07 07:54-0500\n"
+"POT-Creation-Date: 2012-03-04 23:28+0100\n"
 "PO-Revision-Date: 2011-06-20 21:39+0000\n"
 "Last-Translator: Kārlis Lukstiņš <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
@@ -18,18 +18,17 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-02-22 05:09+0000\n"
 "X-Generator: Launchpad (build 14838)\n"
 
-#: ../data/maya.desktop.in.h:1
-msgid "Fast calendar that syncs with popular online services"
-msgstr "Ātrs kalendārs, kas sinhronizējas ar populāriem tiešsaistes servisiem"
-
-#: ../data/maya.desktop.in.h:2
-msgid "Maya Calendar"
-msgstr "Maya Calendar"
-
-#: ../Maya/Widgets/Sidebar.vala:37
+#. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Jūsu gaidāmie notikumi tiks attēloti šeit, kad būsiet izvēlējies datumu ar "
 "notikumiem."
+
+#~ msgid "Fast calendar that syncs with popular online services"
+#~ msgstr ""
+#~ "Ātrs kalendārs, kas sinhronizējas ar populāriem tiešsaistes servisiem"
+
+#~ msgid "Maya Calendar"
+#~ msgstr "Maya Calendar"
