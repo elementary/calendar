@@ -177,8 +177,6 @@ namespace Maya.View {
             string tzid = date.zone.get_tzid ();
             TimeZone zone = new TimeZone (tzid);
 
-            stdout.printf ("Minute = %d\n", date.minute);
-
             return new DateTime (zone, date.year, date.month,
                 date.day, date.hour, date.minute, date.second);
         }
