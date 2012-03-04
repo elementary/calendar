@@ -183,8 +183,6 @@ namespace Maya.View {
 
 		void build_dialog () {
 		    
-            unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
-            
 		    container = (Gtk.Container) get_content_area ();
 		    container.margin_left = 10;
 		    container.margin_right = 10;
