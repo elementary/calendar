@@ -17,15 +17,15 @@
 
 namespace Maya.View {
 
+	/**
+	 * Sidebar is a container for widgets that belong in the sidebar,
+	 * like the AgendaView
+	 */
 	public class Sidebar : Gtk.VBox {
 
 		public Gtk.Label label { get; private set; }
 		public AgendaView agenda_view { get; private set; }
 
-		/**
-		 * Sidebar is a container for widgets that belong in the sidebar,
-		 * like the AgendaView
-		 */
 		public Sidebar () {
 
 			var scrolled_window = new Gtk.ScrolledWindow (null, null);

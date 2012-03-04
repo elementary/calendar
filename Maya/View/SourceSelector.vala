@@ -1,5 +1,13 @@
 namespace Maya.View {
 
+/**
+ * (All classes together) represent the popover that appears when the
+ * select calendar button is clicked.
+ */
+
+/**
+ * The treeview containing the groups.
+ */
 class SourceGroupTreeView : Gtk.TreeView {
 
     public Gtk.CellRendererText r_name { get; private set; }
@@ -26,6 +34,9 @@ class SourceGroupTreeView : Gtk.TreeView {
     }
 }
 
+/**
+ * The group box containing the different groups of calendars inside the popover.
+ */
 class SourceGroupBox : Gtk.VBox {
 
     Gtk.Label label;
@@ -56,6 +67,9 @@ class SourceGroupBox : Gtk.VBox {
     }
 }
 
+/**
+ * The actual popover
+ */
 class SourceSelector : Granite.Widgets.PopOver {
 
     Model.SourceManager model;
