@@ -102,7 +102,12 @@ vala_precompile(VALA_C
     Maya/Settings/SavedState.vala
     Maya/Utils.vala
     Maya/View/AgendaView.vala
-    Maya/View/CalendarView.vala
+    Maya/View/Grid/CalendarView.vala
+    Maya/View/Grid/GridDay.vala
+    Maya/View/Grid/Grid.vala
+    Maya/View/Grid/EventButton.vala
+    Maya/View/Grid/WeekLabels.vala
+    Maya/View/Grid/Header.vala
     Maya/View/EventDialog.vala
     Maya/View/MayaMenu.vala
     Maya/View/MayaToolbar.vala
