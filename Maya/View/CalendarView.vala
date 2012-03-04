@@ -182,6 +182,8 @@ public class Grid : Gtk.Table {
 
     public void set_range (Util.DateRange new_range, DateTime month_start) {
 
+        stdout.printf("Range change!\n");
+
         var today = new DateTime.now_local ();
 
         var dates1 = grid_range.to_list();
@@ -229,7 +231,14 @@ public class Grid : Gtk.Table {
         grid_range = new_range;
     }
     
+    /**
+     * Puts the given event on the grid at the given date.
+     *
+     * If the given date is not in the current range, nothing happens.
+     */
     public void add_event_for_time(DateTime date, E.CalComponent event) {
+        if (!grid_range.contains (date))
+            return;
         GridDay grid_day = data[date];
         assert(grid_day != null);
         grid_day.add_event(event);

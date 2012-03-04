@@ -102,6 +102,10 @@ public class DateRange : Object, Gee.Iterable<DateTime> {
         return new DateIterator (this);
     }
 
+    public bool contains (DateTime time) {
+        return (first.compare (time) < 1) && (last.compare (time) > -1);
+    }
+
     public Gee.SortedSet<DateTime> to_set() {
 
         var @set = new Gee.TreeSet<DateTime> ((CompareFunc) DateTime.compare);

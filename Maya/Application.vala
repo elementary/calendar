@@ -37,10 +37,17 @@ namespace Maya {
         Gtk.init(ref args);
 
         return new Application ().run (args);
+
     }
 
+    /**
+     * Main application class.
+     */
 	public class Application : Granite.Application {
 
+        /**
+         * Initializes environment variables
+         */
 		construct {
 
 			// App info
@@ -97,8 +104,10 @@ namespace Maya {
         Model.CalendarModel calmodel;
         View.SourceSelector source_selector;
 
+        /**
+         * Called when the application is activated.
+         */
 		protected override void activate () {
-
 			if (get_windows () != null) {
 				get_windows ().data.present (); // present window if app is already running
 			    return;
@@ -114,6 +123,9 @@ namespace Maya {
 			}
 		}
 
+        /**
+         * Initializes the preferences
+         */
         void init_prefs () {
 
 			saved_state = new Settings.SavedState ();
@@ -123,6 +135,9 @@ namespace Maya {
 			prefs.changed["week-starts-on"].connect (on_prefs_week_starts_on_changed);
         }
 
+        /**
+         * Initializes the calendar model
+         */
         void init_models () {
 
             sourcemgr = new Model.SourceManager();
@@ -132,16 +147,12 @@ namespace Maya {
             calmodel.parameters_changed.connect (on_model_parameters_changed);
         }
 
+        /**
+         * Initializes the graphical window and its components
+         */
         void init_gui () {
 
-            window = new Gtk.Window ();
-			window.title = "Maya";
-			window.icon_name = "office-calendar";
-			window.set_size_request (700, 400);
-			window.default_width = saved_state.window_width;
-			window.default_height = saved_state.window_height;
-            window.delete_event.connect (on_window_delete_event);
-            window.destroy.connect( () => Gtk.main_quit() );
+            create_window ();
 
             source_selector = new View.SourceSelector (window, sourcemgr);
             foreach (var group in sourcemgr.groups) {
@@ -149,19 +160,7 @@ namespace Maya {
                 tview.r_enabled.toggled.connect ((path) => on_source_selector_toggled (group,path));
             }
 
-			toolbar = new View.MayaToolbar (calmodel.month_start);
-			toolbar.button_add.clicked.connect(on_tb_add_clicked);
-			toolbar.button_calendar_sources.clicked.connect(on_tb_sources_clicked);
-			toolbar.menu.today.activate.connect (on_menu_today_toggled);
-			toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);
-			toolbar.menu.weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
-			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
-			toolbar.menu.weeknumbers.active = saved_state.show_weeks;
-
-			toolbar.month_switcher.left_clicked.connect (on_tb_month_switcher_left_clicked);
-			toolbar.month_switcher.right_clicked.connect (on_tb_month_switcher_right_clicked);
-			toolbar.year_switcher.left_clicked.connect (on_tb_year_switcher_left_clicked);
-			toolbar.year_switcher.right_clicked.connect (on_tb_year_switcher_right_clicked);
+			create_toolbar ();
 
 			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
             calview.today();
@@ -184,6 +183,39 @@ namespace Maya {
 				window.maximize ();
 			else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
 				window.fullscreen ();
+        }
+
+        /**
+         * Creates the main window.
+         */
+        void create_window () {
+            window = new Gtk.Window ();
+			window.title = "Maya";
+			window.icon_name = "office-calendar";
+			window.set_size_request (700, 400);
+			window.default_width = saved_state.window_width;
+			window.default_height = saved_state.window_height;
+            window.delete_event.connect (on_window_delete_event);
+            window.destroy.connect( () => Gtk.main_quit() );
+        }
+
+        /**
+         * Creates the toolbar and its elements.
+         */
+        void create_toolbar () {
+            toolbar = new View.MayaToolbar (calmodel.month_start);
+			toolbar.button_add.clicked.connect(on_tb_add_clicked);
+			toolbar.button_calendar_sources.clicked.connect(on_tb_sources_clicked);
+			toolbar.menu.today.activate.connect (on_menu_today_toggled);
+			toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);
+			toolbar.menu.weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
+			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
+			toolbar.menu.weeknumbers.active = saved_state.show_weeks;
+
+			toolbar.month_switcher.left_clicked.connect (on_tb_month_switcher_left_clicked);
+			toolbar.month_switcher.right_clicked.connect (on_tb_month_switcher_right_clicked);
+			toolbar.year_switcher.left_clicked.connect (on_tb_year_switcher_left_clicked);
+			toolbar.year_switcher.right_clicked.connect (on_tb_year_switcher_right_clicked);
         }
 
 		void update_saved_state () {
