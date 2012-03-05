@@ -1,7 +1,7 @@
 namespace Maya.View {
 
 /**
- * TODO:
+ * TODO :
  *      - Events are written rather small, to fit a lot in the box,
  *      - As far as width goes: rather than wrapping the text of an event, it just falls out of the box,
  *      - As far as height goes: as many events as possible are left in the box, 
@@ -16,6 +16,7 @@ public class GridDay : Gtk.EventBox {
     public DateTime date { get; private set; }
 
     Gtk.Label label;
+    Gtk.Label more_label;
     Gtk.VBox vbox;
     List<EventButton> event_buttons;
     
@@ -33,6 +34,7 @@ public class GridDay : Gtk.EventBox {
 
         vbox = new Gtk.VBox (false, 0);
         label = new Gtk.Label ("");
+        more_label = new Gtk.Label ("");
 
         // EventBox Properties
         can_focus = true;
@@ -46,19 +48,67 @@ public class GridDay : Gtk.EventBox {
         label.name = "date";
         vbox.pack_start (label, false, false, 0);
 
+        vbox.pack_end (more_label, false, false, 0);
+
         add (Util.set_margins (vbox, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN));
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
         draw.connect (on_draw);
     }
+
+    /**
+     * Updates the widgets according to the number of events that should be displayed.
+     *
+     * This involves showing/hiding events and the 'x more events' label.
+     */
+    void update_widgets () {
+        // TODO: show the first (!) two events, not just 2 random ones.
+        // (i.e. sort the list of events by date)
+
+        int i = 0;
+        int max = get_nr_of_events ();
+
+        // Show the first 'max' widgets
+        while (i < event_buttons.length () && i < max) {
+            event_buttons.nth_data(i).show ();
+            i++;
+        }
+
+        uint more = event_buttons.length () - i;
+
+        // Hide the rest of the events
+        while (i < event_buttons.length ()) {
+            event_buttons.nth_data(i).hide ();
+            i++;
+        }
+
+        // Hide / show the label indicating that there are more events
+        if (more == 0)
+            more_label.hide ();
+        else {
+            more_label.label = more.to_string () + " more...";
+            more_label.show ();
+        }
+
+    }
     
+    /**
+     * Returns the number of events that can be displayed in a single GridDay
+     * according to the current size.
+     */
+    int get_nr_of_events () {
+        // TODO: implement this
+        return 2;
+    }
+
     public void add_event(E.CalComponent comp) {
         var button = new EventButton(comp);
         vbox.pack_start (button, false, false, 0);
         vbox.show_all();
         event_buttons.append(button);
-        
+        update_widgets ();        
+
         button.removed.connect ( (e) => { removed (e); });
         button.modified.connect ( (e) => { modified (e); });
     }
@@ -68,6 +118,7 @@ public class GridDay : Gtk.EventBox {
             if(comp == button.comp) {
                 event_buttons.remove(button);
                 button.destroy();
+                update_widgets ();
                 break;
             }
         }
@@ -76,6 +127,7 @@ public class GridDay : Gtk.EventBox {
     public void clear_events () {
         foreach(var button in event_buttons) {
             button.destroy();
+            update_widgets ();
         }
     }
 
