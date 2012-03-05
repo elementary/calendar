@@ -27,6 +27,7 @@ namespace Maya.View {
         Gtk.TextView comment;
         Granite.Widgets.DatePicker from_date_picker;
         Granite.Widgets.DatePicker to_date_picker;
+        Gtk.Switch allday;
 
         Granite.Widgets.TimePicker from_time_picker;
         Granite.Widgets.TimePicker to_time_picker;
@@ -85,23 +86,31 @@ namespace Maya.View {
             // Save the title
             comp.set_summary (title_entry.text);
 
-            // Save the from date
+            var from_time = new DateTime.now_local();
+            DateTime to_time = new DateTime.now_local();
+
+            // Save the time
+            if (allday.get_active() == true ) {
+                from_time = new DateTime.local(0, 0, 0, 0, 0, 0);
+                to_time = new DateTime.local(0, 0, 0, 0, 0, 0);
+            }
+            else {
+                from_time = from_time_picker.time;
+                to_time = to_time_picker.time;
+            }
+
+
+            // Save the dates
             DateTime from_date = from_date_picker.date;
-            DateTime from_time = from_time_picker.time;
+            DateTime to_date = to_date_picker.date;
 
             iCal.icaltimetype dt_start = date_time_to_ical (from_date, from_time);
-
-            comp.set_dtstart (dt_start);
-
-            // Save the to date
-            DateTime to_date = to_date_picker.date;
-            DateTime to_time = to_time_picker.time;
-
             iCal.icaltimetype dt_end = date_time_to_ical (to_date, to_time);
 
+            comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
 
-            // TODO: save guests, comments, location, all day toggle
+            // TODO: save guests, comments, location
 
             // Save the location
             string location = location_entry.text;
@@ -160,6 +169,18 @@ namespace Maya.View {
 //                to_time_picker.time = to_date;
             }
 
+            // Load the allday
+            if (dt_end.year != 0) {
+                DateTime to_date = ical_to_date_time (dt_end);
+                DateTime from_date = ical_to_date_time (dt_start);
+                if ((to_date.get_hour() == to_date.get_minute()) && (from_date.get_hour() == to_date.get_hour()) && (from_date.get_hour() == from_date.get_minute()) && (to_date.get_hour() == 0)) {
+                    allday.set_active(true);
+                    from_time_picker.sensitive = false;
+		            to_time_picker.sensitive = false;
+                }
+            }
+           
+
             // Load the location
             string location = comp.get_location ();
             if (location != null)
@@ -199,7 +220,7 @@ namespace Maya.View {
 		    var switch_label = new Gtk.Label ("All day:");
 		    switch_label.margin_right = 20;
 		    
-		    var allday = new Gtk.Switch ();
+		    allday = new Gtk.Switch ();
 		    
 		    from_box.add (switch_label);
 		    from_box.add (allday);
