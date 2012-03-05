@@ -157,6 +157,8 @@ namespace Maya.View.Widgets {
 				Gtk.Allocation arrow_size;
 				box.get_children ().nth_data (hovered).get_allocation (out arrow_size);
 				
+                cr.save ();
+
 				cr.rectangle (arrow_size.x - box_size.x, 0, arrow_size.width, arrow_size.height);
 				cr.clip ();
 				
