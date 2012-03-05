@@ -1,6 +1,14 @@
 namespace Maya.View {
 
 /**
+ * TODO:
+ *      - Events are written rather small, to fit a lot in the box,
+ *      - As far as width goes: rather than wrapping the text of an event, it just falls out of the box,
+ *      - As far as height goes: as many events as possible are left in the box, 
+ *        with an "x additional events" notice at the bottom if necessary.
+ */
+
+/**
  * Represents a single day on the grid.
  */
 public class GridDay : Gtk.EventBox {
@@ -11,6 +19,8 @@ public class GridDay : Gtk.EventBox {
     Gtk.VBox vbox;
     List<EventButton> event_buttons;
     
+    private static const int EVENT_MARGIN = 3;
+
     public signal void removed (E.CalComponent event);
     public signal void modified (E.CalComponent event);
 
@@ -36,7 +46,7 @@ public class GridDay : Gtk.EventBox {
         label.name = "date";
         vbox.pack_start (label, false, false, 0);
 
-        add (Util.set_margins (vbox, 3, 3, 3, 3));
+        add (Util.set_margins (vbox, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN));
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
