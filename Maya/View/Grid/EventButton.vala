@@ -5,7 +5,7 @@ namespace Maya.View {
  */
 class EventButton : Gtk.HBox {
 
-    public E.CalComponent comp;
+    public E.CalComponent comp {get; private set;}
     public signal void removed (E.CalComponent comp);
     public signal void modified (E.CalComponent comp);
     
