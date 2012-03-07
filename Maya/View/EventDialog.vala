@@ -156,8 +156,8 @@ namespace Maya.View {
 
             // Load the allday
             if (dt_end.year != 0) {
-                DateTime to_date = ical_to_date_time (dt_end);
-                DateTime from_date = ical_to_date_time (dt_start);
+                DateTime to_date = Util.ical_to_date_time (dt_end);
+                DateTime from_date = Util.ical_to_date_time (dt_start);
                 if ((to_date.get_hour() == to_date.get_minute()) && (from_date.get_hour() == to_date.get_hour()) && (from_date.get_hour() == from_date.get_minute()) && (to_date.get_hour() == 0)) {
                     allday.set_active(true);
                     from_time_picker.sensitive = false;
