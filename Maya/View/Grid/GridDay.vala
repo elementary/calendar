@@ -6,6 +6,7 @@ namespace Maya.View {
  *      - As far as width goes: rather than wrapping the text of an event, it just falls out of the box,
  *      - As far as height goes: as many events as possible are left in the box, 
  *        with an "x additional events" notice at the bottom if necessary.
+ *          (impossible with VBox? Seems to automatically assign enough space)
  */
 
 /**
