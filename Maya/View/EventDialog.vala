@@ -89,7 +89,7 @@ namespace Maya.View {
             DateTime from_date = from_date_picker.date;
             DateTime from_time = from_time_picker.time;
 
-            iCal.icaltimetype dt_start = date_time_to_ical (from_date, from_time);
+            iCal.icaltimetype dt_start = Util.date_time_to_ical (from_date, from_time);
 
             comp.set_dtstart (dt_start);
 
@@ -97,7 +97,7 @@ namespace Maya.View {
             DateTime to_date = to_date_picker.date;
             DateTime to_time = to_time_picker.time;
 
-            iCal.icaltimetype dt_end = date_time_to_ical (to_date, to_time);
+            iCal.icaltimetype dt_end = Util.date_time_to_ical (to_date, to_time);
 
             comp.set_dtend (dt_end);
 
@@ -107,22 +107,6 @@ namespace Maya.View {
             string location = location_entry.text;
 
             comp.set_location (location);
-        }
-
-        /**
-         * Converts two datetimes to one icaltimetype. The first contains the date,
-         * its time settings are ignored. The second one contains the time itself.
-         */
-        iCal.icaltimetype date_time_to_ical (DateTime date, DateTime time) {
-
-            iCal.icaltimetype result = iCal.icaltime_from_day_of_year 
-                (date.get_day_of_year (), date.get_year ());
-
-            result.hour = time.get_hour ();
-            result.minute = time.get_minute ();
-            result.second = time.get_second ();
-
-            return result;
         }
 
 		//--- Helpers ---//
@@ -143,7 +127,7 @@ namespace Maya.View {
             iCal.icaltimetype dt_start = comp.get_dtstart ();
 
             if (dt_start.year != 0) {
-                DateTime from_date = ical_to_date_time (dt_start);
+                DateTime from_date = Util.ical_to_date_time (dt_start);
 
                 from_date_picker.date = from_date;
 // TODO: wait for bugfix in granite to be able to do this
@@ -154,7 +138,7 @@ namespace Maya.View {
             iCal.icaltimetype dt_end = comp.get_dtend ();
 
             if (dt_end.year != 0) {
-                DateTime to_date = ical_to_date_time (dt_end);
+                DateTime to_date = Util.ical_to_date_time (dt_end);
 
                 to_date_picker.date = to_date;
 //                to_time_picker.time = to_date;
@@ -167,18 +151,6 @@ namespace Maya.View {
 
             // TODO: load guests, comments, all day toggle
 
-        }
-
-        /**
-         * Converts the given icaltimetype to the given DateTime.
-         */
-        DateTime ical_to_date_time (iCal.icaltimetype date) {
-
-            string tzid = date.zone.get_tzid ();
-            TimeZone zone = new TimeZone (tzid);
-
-            return new DateTime (zone, date.year, date.month,
-                date.day, date.hour, date.minute, date.second);
         }
 
 		void build_dialog () {

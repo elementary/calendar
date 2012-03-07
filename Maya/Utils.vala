@@ -2,6 +2,35 @@ namespace Maya.Util {
 
 //--- Date and Time ---//
 
+
+/**
+ * Converts two datetimes to one icaltimetype. The first contains the date,
+ * its time settings are ignored. The second one contains the time itself.
+ */
+iCal.icaltimetype date_time_to_ical (DateTime date, DateTime time) {
+
+    iCal.icaltimetype result = iCal.icaltime_from_day_of_year 
+        (date.get_day_of_year (), date.get_year ());
+
+    result.hour = time.get_hour ();
+    result.minute = time.get_minute ();
+    result.second = time.get_second ();
+
+    return result;
+}
+
+/**
+ * Converts the given icaltimetype to the given DateTime.
+ */
+DateTime ical_to_date_time (iCal.icaltimetype date) {
+
+    string tzid = date.zone.get_tzid ();
+    TimeZone zone = new TimeZone (tzid);
+
+    return new DateTime (zone, date.year, date.month,
+        date.day, date.hour, date.minute, date.second);
+}
+
 public DateTime get_start_of_month (owned DateTime? date = null) {
     
     if (date==null)
