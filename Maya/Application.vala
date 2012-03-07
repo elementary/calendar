@@ -154,12 +154,6 @@ namespace Maya {
 
             create_window ();
 
-            source_selector = new View.SourceSelector (window, sourcemgr);
-            foreach (var group in sourcemgr.groups) {
-                var tview = source_selector.get_group_box(group).tview;
-                tview.r_enabled.toggled.connect ((path) => on_source_selector_toggled (group,path));
-            }
-
 			create_toolbar ();
 
 			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
@@ -315,10 +309,15 @@ namespace Maya {
         }
 
         void on_tb_sources_clicked (Gtk.Widget widget) {
+            source_selector = new View.SourceSelector (window, sourcemgr);
+            foreach (var group in sourcemgr.groups) {
+                var tview = source_selector.get_group_box(group).tview;
+                tview.r_enabled.toggled.connect ((path) => on_source_selector_toggled (group,path));
+            }
             source_selector.move_to_widget (widget);
             source_selector.show_all ();
-		    source_selector.run ();
-            source_selector.hide ();
+	        source_selector.run ();
+            source_selector.destroy ();
         }
 
         void on_tb_month_switcher_left_clicked () {
