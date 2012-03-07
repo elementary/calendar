@@ -63,9 +63,6 @@ public class GridDay : Gtk.EventBox {
      * This involves showing/hiding events and the 'x more events' label.
      */
     void update_widgets () {
-        // TODO: show the first (!) two events, not just 2 random ones.
-        // (i.e. sort the list of events by date)
-
         int i = 0;
         int max = get_nr_of_events ();
 
@@ -106,13 +103,26 @@ public class GridDay : Gtk.EventBox {
         var button = new EventButton(comp);
         vbox.pack_start (button, false, false, 0);
         vbox.show_all();
-        event_buttons.append(button);
+        event_buttons.insert_sorted (button, compare_buttons);
         update_widgets ();        
 
         button.removed.connect ( (e) => { removed (e); });
         button.modified.connect ( (e) => { modified (e); });
     }
-    
+
+    /**
+     * Compares the given buttons according to date.
+     */
+    CompareFunc<EventButton> compare_buttons = (button1, button2) => {
+        var comp1 = button1.comp;
+        var comp2 = button2.comp;
+
+        var date1 = Util.ical_to_date_time (comp1.get_icalcomponent ().get_dtstart ());
+        var date2 = Util.ical_to_date_time (comp2.get_icalcomponent ().get_dtstart ());
+
+        return date1.compare(date2);
+    };
+
     public void remove_event (E.CalComponent comp) {
         foreach(var button in event_buttons) {
             if(comp == button.comp) {
