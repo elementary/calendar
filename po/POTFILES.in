@@ -1,2 +1,3 @@
 data/maya.desktop
 Maya/View/Sidebar.vala
+Maya/Settings/LanguagesFormat.vala

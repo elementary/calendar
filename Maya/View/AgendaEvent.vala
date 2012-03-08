@@ -8,8 +8,8 @@ public class AgendaEvent : Gtk.HBox {
         
         set_spacing (3);
 
-        create_time_label ();
-        create_subject_label ();
+        create_time_label (new DateTime.now_local ());
+        create_subject_label ("Test");
     }
 
     /**
@@ -18,7 +18,7 @@ public class AgendaEvent : Gtk.HBox {
     void create_time_label (DateTime time) {
 
         // Date.format (format)
-        string time_string = time.format (Settings.TimeFormat ());
+        string time_string = time.format (Maya.Settings.TimeFormat ());
 
         Gtk.Label time_label = new Gtk.Label (time_string);
         time_label.set_width_chars (8);
