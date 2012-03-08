@@ -28,6 +28,8 @@ namespace Maya.View {
 			// VBox properties
 			spacing = 0;
 			homogeneous = false;
+
+            add (new AgendaEvent ());
 		}
 
 	}

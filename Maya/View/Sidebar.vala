@@ -53,8 +53,10 @@ namespace Maya.View {
 			scrolled_window.add (viewport);
 
 			pack_start (label, true, true, 0);
-			pack_end (scrolled_window, false, true, 0);
+			pack_start (scrolled_window, false, true, 0);
 			scrolled_window.hide ();
+
+            label.hide ();
 		}
 
 	}
