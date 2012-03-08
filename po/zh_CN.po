@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-04 23:28+0100\n"
+"POT-Creation-Date: 2012-03-08 17:25+0100\n"
 "PO-Revision-Date: 2011-08-30 02:05+0000\n"
 "Last-Translator: Fenghao Guo <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -17,6 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-02-22 05:09+0000\n"
 "X-Generator: Launchpad (build 14838)\n"
+
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
 
 #. label settings
 msgid ""

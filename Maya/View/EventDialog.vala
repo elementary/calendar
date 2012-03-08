@@ -305,7 +305,7 @@ namespace Maya.View {
 		
 		Granite.Widgets.DatePicker make_date_picker () {
 		    
-		    var date_picker = new Granite.Widgets.DatePicker.with_format ("%B %e, %Y");
+		    var date_picker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
 			date_picker.width_request = 200;
 			
 			return date_picker;
@@ -313,7 +313,7 @@ namespace Maya.View {
 		
 		Granite.Widgets.TimePicker make_time_picker () {
 		    
-		    var time_picker = new Granite.Widgets.TimePicker.with_format ("%l:%M %p");
+		    var time_picker = new Granite.Widgets.TimePicker.with_format (Maya.Settings.TimeFormat ());
 		    time_picker.width_request = 80;
 		    
 		    return time_picker;

@@ -100,6 +100,7 @@ vala_precompile(VALA_C
     Maya/Services/Dexter.vala
     Maya/Settings/MayaSettings.vala
     Maya/Settings/SavedState.vala
+    Maya/Settings/LanguagesFormat.vala
     Maya/Utils.vala
     Maya/View/AgendaView.vala
     Maya/View/Grid/CalendarView.vala
