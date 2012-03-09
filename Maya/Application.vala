@@ -158,9 +158,11 @@ namespace Maya {
 
 			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
             calview.today();
-            calmodel.load_all_sources ();
 
-			sidebar = new View.Sidebar ();
+			sidebar = new View.Sidebar (sourcemgr, calmodel);
+            calview.grid.selection_changed.connect ((date) => sidebar.set_selected_date (date));
+
+            calmodel.load_all_sources ();
 
 			var vbox = new Gtk.VBox (false, 0);
 			hpaned = new Gtk.HPaned ();
