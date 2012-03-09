@@ -29,7 +29,6 @@ namespace Maya.View {
 			spacing = 0;
 			homogeneous = false;
 
-            add (new AgendaEvent ());
 		}
 
 	}

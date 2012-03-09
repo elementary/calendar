@@ -103,7 +103,6 @@ vala_precompile(VALA_C
     Maya/Settings/LanguagesFormat.vala
     Maya/Utils.vala
     Maya/View/AgendaView.vala
-    Maya/View/AgendaEvent.vala
     Maya/View/Grid/CalendarView.vala
     Maya/View/Grid/GridDay.vala
     Maya/View/Grid/Grid.vala
