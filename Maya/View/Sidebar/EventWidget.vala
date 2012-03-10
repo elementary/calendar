@@ -44,14 +44,14 @@ namespace Maya.View {
         public void update (E.CalComponent event) {
      
             name_label.set_markup ("<big>" + Markup.escape_text (get_label (event)) + "</big>");
-            date_label.set_markup ("<small>" + Markup.escape_text (get_date (event)) + "</small>");
+            date_label.set_markup ("<span weight=\"light\">" + get_date (event) + "</span>");
 
             unowned iCal.icalcomponent ical_event = event.get_icalcomponent ();
 
             string location = ical_event.get_location ();
 
             if (location != null && location != "") {
-                location_label.set_markup ("<small>" + Markup.escape_text (location) + "</small>");
+                location_label.set_markup ("<span weight=\"light\">" + location + "</span>");
                 location_label.show ();
             } else
                 location_label.hide ();
