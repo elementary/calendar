@@ -31,6 +31,8 @@ namespace Maya.View {
 			var scrolled_window = new Gtk.ScrolledWindow (null, null);
 			scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
 			scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
+
+// TODO: reinstate this label
 /*
 			// label settings
 			label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));

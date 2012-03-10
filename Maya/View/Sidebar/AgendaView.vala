@@ -17,6 +17,9 @@
 
 namespace Maya.View {
 
+    // TODO: listen to source_added / source_removed (+ checked / unchecked)
+    // TODO: destroy empty sources (see how it's done in SourceWidget for eventwidgets)
+
     /**
      * The AgendaView shows all events for the currently selected date,
      * even with fancy colors!
@@ -62,8 +65,6 @@ namespace Maya.View {
             foreach (var widget in source_widgets.values)
                 widget.remove_all_events ();
         }
-
-        // TODO: listen to source_added / source_removed (+ checked / unchecked)
 
         /**
          * A source has been added.
