@@ -25,12 +25,13 @@ namespace Maya.View {
         public SourceWidget (E.Source source) {
             
             // TODO: hash and equal funcs are in util but cause a crash
+            // (both for map and list)
             event_widgets = new Gee.HashMap<E.CalComponent, EventWidget> (
                 null,
                 null,
                 null);
 
-            events = new Gee.ArrayList<E.CalComponent> ( (EqualFunc) Util.calcomponent_equal_func);
+            events = new Gee.ArrayList<E.CalComponent> (null);
 
             name_label = new Gtk.Label (source.peek_name ());
             name_label.set_alignment (0, 0.5f);
