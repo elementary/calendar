@@ -157,10 +157,11 @@ namespace Maya {
 			create_toolbar ();
 
 			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
-            calview.today();
 
 			sidebar = new View.Sidebar (sourcemgr, calmodel);
             calview.grid.selection_changed.connect ((date) => sidebar.set_selected_date (date));
+
+            calview.today();
 
             calmodel.load_all_sources ();
 

@@ -47,7 +47,15 @@ namespace Maya.View {
             calmodel.events_added.connect (on_events_added);
             calmodel.events_removed.connect (on_events_removed);
             calmodel.events_updated.connect (on_events_updated);
+
+            calmodel.parameters_changed.connect (on_model_parameters_changed);
 		}
+
+        // Month changed, clear all events
+        void on_model_parameters_changed () {
+            foreach (var widget in source_widgets.values)
+                widget.remove_all_events ();
+        }
 
 //      public signal void events_added (E.Source source, Gee.Collection<E.CalComponent> events);
 //      public signal void events_updated (E.Source source, Gee.Collection<E.CalComponent> events);

@@ -3,9 +3,12 @@ namespace Maya.View {
     public class SourceWidget : Gtk.VBox {
 
         Gtk.Label name_label;
+        DateTime selected_date;
 
+        Gee.ArrayList<E.CalComponent> events;
         Gee.Map<E.CalComponent, EventWidget> event_widgets;
 
+        // TODO style
         public SourceWidget (E.Source source) {
             
             // TODO: hash and equal funcs are in util but cause a crash
@@ -14,6 +17,8 @@ namespace Maya.View {
                 null,
                 null);
 
+            events = new Gee.ArrayList<E.CalComponent> ( (EqualFunc) Util.calcomponent_equal_func);
+
             name_label = new Gtk.Label (source.peek_name ());
             name_label.set_alignment (0, 0.5f);
             pack_start (name_label, false, true, 0);
@@ -21,43 +26,92 @@ namespace Maya.View {
         }
 
         public void add_event (E.CalComponent event) {
-            stdout.printf ("ADDED\n");
+            // TODO: check this
+            if (event_widgets.has_key (event))
+                remove_event (event);
 
-            EventWidget widget = new EventWidget (event);
-            pack_start (widget, true, true, 0);
-            show_all ();
+            events.add (event);
 
-            stdout.printf ("ADDED OK\n");
-
-
-            event_widgets.set (event, widget);
-
+            if (event_in_current_date (event)) {
+                show_event (event);
+            }
         }
 
         public void remove_event (E.CalComponent event) {
-            stdout.printf ("REMOVED\n");
-            if (!event_widgets.has_key (event))
+            if (!events.contains (event))
                 return;
 
-            stdout.printf ("REMOVED OK\n");
+            events.remove (event);
 
-            var widget = event_widgets.get (event);
-            widget.destroy ();
+            if (event_widgets.has_key (event)) {
+                hide_event (event);
+            }
         }
 
         public void update_event (E.CalComponent event) {
-            stdout.printf ("UPDATED\n");
-            if (!event_widgets.has_key (event))
+            if (!events.contains (event))
                 return;
 
-            stdout.printf ("UPDATED OK\n");
+            events.remove (event);
+            events.add (event);
 
-            event_widgets.get(event).update (event);
+            if (event_widgets.has_key (event)) {
+                event_widgets.get (event).update (event);
+            }
         }
 
         public void set_selected_date (DateTime date) {
-            foreach (var widget in event_widgets.values )
-                widget.set_selected_date (date);
+            selected_date = date;
+
+            foreach (var event in events) {
+                if (event_in_current_date (event) && !event_widgets.has_key (event)) {
+                    show_event (event);
+                } else if (!event_in_current_date (event) && event_widgets.has_key (event)) {
+                    var widget = event_widgets.get (event);
+                    event_widgets.unset (event);
+                    widget.destroy ();
+                }
+            }
+        }
+
+        void show_event (E.CalComponent event) {
+            EventWidget widget = new EventWidget (event);
+            pack_start (widget, true, true, 0);
+            widget.show_all ();
+
+            event_widgets.set (event, widget);
+        }
+    
+        void hide_event (E.CalComponent event) {
+            var widget = event_widgets.get (event);
+            event_widgets.unset (event);
+            widget.destroy ();
+        }
+
+        bool event_in_current_date (E.CalComponent event) {
+            if (selected_date == null)
+                return false;
+
+            unowned iCal.icalcomponent comp = event.get_icalcomponent ();
+
+            iCal.icaltimetype time = comp.get_dtstart ();
+
+            DateTime start_date = Util.ical_to_date_time (time);
+
+            if (start_date.get_year () == selected_date.get_year () && 
+                start_date.get_day_of_year () == selected_date.get_day_of_year ())
+                return true;
+            else
+                return false;
+
+        }
+
+        public void remove_all_events () {
+            foreach (var widget in event_widgets.values) {
+                widget.destroy ();
+            }
+            events.clear ();
+            event_widgets.clear ();
         }
 
     }
