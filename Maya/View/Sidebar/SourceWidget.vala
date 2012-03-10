@@ -42,7 +42,8 @@ namespace Maya.View {
 
             events = new Gee.ArrayList<E.CalComponent> (null);
 
-            name_label = new Gtk.Label (source.peek_name ());
+            name_label = new Gtk.Label ("");
+            name_label.set_markup ("<b>" + Markup.escape_text (source.peek_name()) + "</b>");
             name_label.set_alignment (0, 0.5f);
             pack_start (name_label, false, true, 0);
 
