@@ -71,10 +71,7 @@ namespace Maya.View {
             if (!source_widgets.has_key (source))
                 return;
 
-            if (enabled)
-                source_widgets.get (source).show_all ();
-            else
-                source_widgets.get (source).hide ();
+            source_widgets.get (source).selected = enabled;
         }
 
         /**
@@ -84,17 +81,14 @@ namespace Maya.View {
             if (!source_widgets.has_key (source))
                 return;
 
-            source_widgets.get (source).destroy ();
+            remove_source (source);
         }
 
         /**
          * Called when a source is added.
          */
         void on_source_added (E.SourceGroup group, E.Source source) {
-            SourceWidget widget = new SourceWidget (source);
-
-            source_widgets.set (source, widget);
-            widget.show_all ();
+            add_source (source);
         }
 
         /**
@@ -113,6 +107,7 @@ namespace Maya.View {
             pack_start (widget, false, true, 0);
 
             source_widgets.set (source, widget);
+            widget.selected = true;
         }
 
         /**

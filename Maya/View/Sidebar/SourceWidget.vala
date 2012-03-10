@@ -17,13 +17,16 @@ namespace Maya.View {
         // All the widgets associated with the current day
         Gee.Map<E.CalComponent, EventWidget> event_widgets;
 
+        // A boolean indicating whether this source is currently selected
+        public bool selected {get; set;}
+
         // TODO style
 
         /**
          * Creates a new source widget for the given source.
          */
         public SourceWidget (E.Source source) {
-            
+
             // TODO: hash and equal funcs are in util but cause a crash
             // (both for map and list)
             event_widgets = new Gee.HashMap<E.CalComponent, EventWidget> (
@@ -36,6 +39,19 @@ namespace Maya.View {
             name_label = new Gtk.Label (source.peek_name ());
             name_label.set_alignment (0, 0.5f);
             pack_start (name_label, false, true, 0);
+
+            notify["selected"].connect (update_visibility);
+        }
+
+        /**
+         * Updates whether this widget should currently be shown or not.
+         */
+        void update_visibility () {
+            stdout.printf ("VIS %s , %d\n", selected ? "true" : "false", event_widgets.size);
+            if (selected && event_widgets.size > 0)
+                show_all ();
+            else
+                hide ();
         }
 
         /**
@@ -97,6 +113,8 @@ namespace Maya.View {
                     widget.destroy ();
                 }
             }
+
+            update_visibility ();
         }
 
         /**
