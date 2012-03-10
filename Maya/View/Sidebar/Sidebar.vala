@@ -58,12 +58,15 @@ namespace Maya.View {
 			pack_start (scrolled_window, true, true, 0);
 
             scrolled_window.hide ();
+            agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
 		}
 
         public void set_selected_date (DateTime date) {
             agenda_view.set_selected_date (date);
-            
-            if (agenda_view.is_shown ()) {
+        }
+
+        void on_agenda_view_shown_changed (bool old_shown, bool shown) {
+            if (shown) {
                 scrolled_window.show ();
                 label.hide ();
             } else {

@@ -17,10 +17,16 @@ namespace Maya.View {
         // All the widgets associated with the current day
         Gee.Map<E.CalComponent, EventWidget> event_widgets;
 
-        // A boolean indicating whether this source is currently selected
+        // Whether this source is currently selected in the source selector
         public bool selected {get; set;}
 
         // TODO style
+
+        // Sent out when the visibility of this widget changes.
+        public signal void shown_changed (bool old, bool new);
+
+        // The previous visibility status for this widget.
+        bool old_shown = false;
 
         /**
          * Creates a new source widget for the given source.
@@ -47,10 +53,17 @@ namespace Maya.View {
          * Updates whether this widget should currently be shown or not.
          */
         void update_visibility () {
+            if (is_shown () == old_shown)
+                return;
+
             if (is_shown ())
                 show_all ();
             else
                 hide ();
+
+           shown_changed (old_shown, is_shown ());
+
+            old_shown = is_shown ();
         }
 
         /**
@@ -64,7 +77,6 @@ namespace Maya.View {
          * Called when the given event for this source is added.
          */
         public void add_event (E.CalComponent event) {
-            // TODO: check this
             if (event_widgets.has_key (event))
                 remove_event (event);
 
@@ -73,6 +85,8 @@ namespace Maya.View {
             if (event_in_current_date (event)) {
                 show_event (event);
             }
+
+            update_visibility ();
         }
 
         /**
@@ -87,6 +101,8 @@ namespace Maya.View {
             if (event_widgets.has_key (event)) {
                 hide_event (event);
             }
+
+            update_visibility ();
         }
 
         /**
@@ -102,6 +118,8 @@ namespace Maya.View {
             if (event_widgets.has_key (event)) {
                 event_widgets.get (event).update (event);
             }
+
+            update_visibility ();
         }
 
         /**
@@ -161,7 +179,6 @@ namespace Maya.View {
                 return true;
             else
                 return false;
-
         }
 
         /**
@@ -173,6 +190,8 @@ namespace Maya.View {
             }
             events.clear ();
             event_widgets.clear ();
+
+            update_visibility ();
         }
 
     }

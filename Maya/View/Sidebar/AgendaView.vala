@@ -26,6 +26,12 @@ namespace Maya.View {
         // All of the sources to be displayed and their widgets.
         Gee.Map<E.Source, SourceWidget> source_widgets;
 
+        // Sent out when the visibility of this widget changes.
+        public signal void shown_changed (bool old, bool new);
+
+        // The previous visibility status for this widget.
+        bool old_shown = false;
+
         /**
          * Creates a new agendaview.
          */
@@ -105,7 +111,15 @@ namespace Maya.View {
             pack_start (widget, false, true, 0);
 
             source_widgets.set (source, widget);
+            widget.shown_changed.connect (on_source_shown_changed);
             widget.selected = true;
+        }
+
+        /**
+         * Called when the shown status of a source changes.
+         */
+        void on_source_shown_changed (bool old, bool new) {
+            update_visibility ();
         }
 
         /**
@@ -156,6 +170,23 @@ namespace Maya.View {
         public void set_selected_date (DateTime date) {
             foreach (var widget in source_widgets.values )
                 widget.set_selected_date (date);
+        }
+
+        /**
+         * Updates whether this widget should currently be shown or not.
+         */
+        void update_visibility () {
+            if (is_shown () == old_shown)
+                return;
+
+            if (is_shown ())
+                show ();
+            else
+                hide ();
+
+            shown_changed (old_shown, is_shown ());
+
+            old_shown = is_shown ();
         }
 
         /**
