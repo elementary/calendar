@@ -34,6 +34,8 @@ namespace Maya.View {
 
             // Fill in the information
             update (event);
+
+            margin_left = 20;
         }
 
         /**

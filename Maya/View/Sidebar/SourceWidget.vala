@@ -33,6 +33,8 @@ namespace Maya.View {
          */
         public SourceWidget (E.Source source) {
 
+            set_spacing (5);
+
             // TODO: hash and equal funcs are in util but cause a crash
             // (both for map and list)
             event_widgets = new Gee.HashMap<E.CalComponent, EventWidget> (
