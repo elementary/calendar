@@ -52,12 +52,14 @@ namespace Maya.View {
 			var viewport = new Gtk.Viewport (null, null);
 			viewport.shadow_type = Gtk.ShadowType.NONE;
 			viewport.add (agenda_view);
+            viewport.show ();
 			scrolled_window.add (viewport);
 
 			pack_start (label, true, true, 0);
 			pack_start (scrolled_window, true, true, 0);
 
             scrolled_window.hide ();
+            label.show ();
             agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
 		}
 

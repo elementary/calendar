@@ -120,9 +120,6 @@ namespace Maya {
                 init_models ();
                 init_gui ();
 			    window.show_all ();
-                // TODO: we shouldn't do window.show_all, some widgets might need to be hidden at startup
-                // (workaround for sidebar hidden widgets)
-                calview.today();
 			}
 		}
 
@@ -162,6 +159,9 @@ namespace Maya {
 			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
 
 			sidebar = new View.Sidebar (sourcemgr, calmodel);
+            // Don't automatically display all the widgets on the sidebar
+            sidebar.no_show_all = true;
+            sidebar.show ();
             calview.grid.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
             calview.today();
