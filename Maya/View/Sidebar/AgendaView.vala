@@ -158,6 +158,24 @@ namespace Maya.View {
                 widget.set_selected_date (date);
         }
 
+        /**
+         * Returns whether this widget is currently shown.
+         */
+        public bool is_shown () {
+            return nr_of_visible_sources () > 0;
+        }
+
+        /**
+         * Returns the number of source currently selected and containing any shown events.
+         */
+        public int nr_of_visible_sources () {
+            int result = 0;
+            foreach (var widget in source_widgets.values)
+                if (widget.is_shown ())
+                    result++;
+            return result;
+        }
+
 	}
 
 }

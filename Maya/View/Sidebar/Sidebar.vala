@@ -26,14 +26,14 @@ namespace Maya.View {
 		public Gtk.Label label { get; private set; }
 		public AgendaView agenda_view { get; private set; }
 
+        Gtk.ScrolledWindow scrolled_window;
+
 	    public Sidebar (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
 
-			var scrolled_window = new Gtk.ScrolledWindow (null, null);
+			scrolled_window = new Gtk.ScrolledWindow (null, null);
 			scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
 			scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
 
-// TODO: reinstate this label
-/*
 			// label settings
 			label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
 			label.sensitive = false;
@@ -42,7 +42,7 @@ namespace Maya.View {
 			label.margin_left = 15;
 			label.margin_right = 15;
 			label.justify = Gtk.Justification.CENTER;
-*/
+
 			agenda_view = new AgendaView (sourcemgr, calmodel);
 
 			// VBox properties
@@ -54,12 +54,22 @@ namespace Maya.View {
 			viewport.add (agenda_view);
 			scrolled_window.add (viewport);
 
-//			pack_start (label, true, true, 0);
+			pack_start (label, true, true, 0);
 			pack_start (scrolled_window, true, true, 0);
+
+            scrolled_window.hide ();
 		}
 
         public void set_selected_date (DateTime date) {
             agenda_view.set_selected_date (date);
+            
+            if (agenda_view.is_shown ()) {
+                scrolled_window.show ();
+                label.hide ();
+            } else {
+                scrolled_window.hide ();
+                label.show ();
+            }
         }
 
 	}

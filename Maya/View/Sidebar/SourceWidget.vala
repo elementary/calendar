@@ -47,10 +47,17 @@ namespace Maya.View {
          * Updates whether this widget should currently be shown or not.
          */
         void update_visibility () {
-            if (selected && event_widgets.size > 0)
+            if (is_shown ())
                 show_all ();
             else
                 hide ();
+        }
+
+        /**
+         * Indicates if this source widget is shown (selected and contains visible events)
+         */
+        public bool is_shown () {
+            return selected && event_widgets.size > 0;
         }
 
         /**
