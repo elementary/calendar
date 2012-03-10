@@ -23,8 +23,12 @@ namespace Maya.View {
      */
 	public class AgendaView : Gtk.VBox {
 
+        // All of the sources to be displayed and their widgets.
         Gee.Map<E.Source, SourceWidget> source_widgets;
 
+        /**
+         * Creates a new agendaview.
+         */
 		public AgendaView (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
 
 			// VBox properties
@@ -51,22 +55,19 @@ namespace Maya.View {
             calmodel.parameters_changed.connect (on_model_parameters_changed);
 		}
 
-        // Month changed, clear all events
+        /**
+         * The selected month has changed, all events should be cleared.
+         */
         void on_model_parameters_changed () {
             foreach (var widget in source_widgets.values)
                 widget.remove_all_events ();
         }
 
-//      public signal void events_added (E.Source source, Gee.Collection<E.CalComponent> events);
-//      public signal void events_updated (E.Source source, Gee.Collection<E.CalComponent> events);
-//      public signal void events_removed (E.Source source, Gee.Collection<E.CalComponent> events);
+        // TODO: listen to source_added / source_removed (+ checked / unchecked)
 
-
-        // TODO: listen to event_added / event_modified / event_removed
-        // TODO: listen to source_added / source_removed
-        // TODO: only show current date's events
-        
-
+        /**
+         * A source has been added.
+         */
         void add_source (E.Source source) {
             var widget = new SourceWidget (source);
             pack_start (widget, false, true, 0);
@@ -74,11 +75,17 @@ namespace Maya.View {
             source_widgets.set (source, widget);
         }
 
+        /**
+         * A source has been removed.
+         */
         void remove_source (E.Source source) {
             var widget = source_widgets.get (source);
             widget.destroy ();
         }
 
+        /**
+         * Events have been added to the given source.
+         */
         void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
             if (!source_widgets.has_key (source))
                 return;
@@ -88,6 +95,9 @@ namespace Maya.View {
                     source_widgets.get (source).add_event (event);
         }
 
+        /**
+         * Events for the given source have been updated.
+         */
         void on_events_updated (E.Source source, Gee.Collection<E.CalComponent> events) {
             if (!source_widgets.has_key (source))
                 return;
@@ -96,6 +106,9 @@ namespace Maya.View {
                 source_widgets.get (source).update_event (event);
         }
 
+        /**
+         * Events for the given source have been removed.
+         */
         void on_events_removed (E.Source source, Gee.Collection<E.CalComponent> events) {
             if (!source_widgets.has_key (source))
                 return;
@@ -104,6 +117,9 @@ namespace Maya.View {
                 source_widgets.get (source).remove_event (event);
         }
 
+        /**
+         * The given date has been selected.
+         */
         public void set_selected_date (DateTime date) {
             foreach (var widget in source_widgets.values )
                 widget.set_selected_date (date);
