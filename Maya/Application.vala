@@ -235,8 +235,8 @@ namespace Maya {
         void create_toolbar () {
             toolbar = new View.MayaToolbar (calmodel.month_start);
 			toolbar.button_add.clicked.connect(() => on_tb_add_clicked (calview.grid.selected_date));
-			toolbar.edit_button.clicked.connect(() => on_tb_edit_clicked ());
-			toolbar.delete_button.clicked.connect(() => on_tb_delete_clicked ());
+			toolbar.edit_button.clicked.connect(on_tb_edit_clicked);
+			toolbar.delete_button.clicked.connect(on_tb_delete_clicked);
 			toolbar.button_calendar_sources.clicked.connect(on_tb_sources_clicked);
 			toolbar.menu.today.activate.connect (on_menu_today_toggled);
 			toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);
