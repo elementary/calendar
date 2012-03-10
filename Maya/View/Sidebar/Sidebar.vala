@@ -59,6 +59,12 @@ namespace Maya.View {
 			pack_start (scrolled_window, true, true, 0);
 
             scrolled_window.hide ();
+
+            var style_provider = Util.Css.get_css_provider ();
+
+            viewport.get_style_context().add_provider (style_provider, 600);
+            viewport.get_style_context().add_class ("sidebar");
+
             label.show ();
             agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
 		}
