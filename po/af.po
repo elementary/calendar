@@ -18,15 +18,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-10 05:04+0000\n"
 "X-Generator: Launchpad (build 14914)\n"
 
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr ""
-
-msgid "%l:%M %p"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -34,6 +25,15 @@ msgid ""
 msgstr ""
 "Jou komende gebeurtenisse sal hier vertoon word als jy 'n datum kies met "
 "gebeurtenisse."
+
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
 
 #~ msgid "Fast calendar that syncs with popular online services"
 #~ msgstr "Vinnige kalender wat synchroniseer met populêre online dienste"

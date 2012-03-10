@@ -98,7 +98,7 @@ namespace Maya {
 		View.MayaToolbar toolbar;
 		View.CalendarView calview;
 		View.Sidebar sidebar;
-        Gtk.HPaned hpaned;
+        Gtk.Paned hpaned;
 
         Model.SourceManager sourcemgr;
         Model.CalendarModel calmodel;
@@ -167,11 +167,11 @@ namespace Maya {
             calmodel.load_all_sources ();
 
 			var vbox = new Gtk.VBox (false, 0);
-			hpaned = new Gtk.HPaned ();
+			hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
 			vbox.pack_start (toolbar, false, false, 0);
 			vbox.pack_end (hpaned);
-			hpaned.add (calview);
-			hpaned.add (sidebar);
+			hpaned.pack1 (calview, true, true);
+			hpaned.pack2 (sidebar, false, true);
 			hpaned.position = saved_state.hpaned_position;
 			window.add (vbox);
 

@@ -26,7 +26,7 @@ namespace Maya.Settings {
         var setting = new GLib.Settings ("org.gnome.desktop.interface");
         string clockformat = setting.get_string ("clock-format");
         string outputformat;
-        stdout.printf ("TESTING %s\n", clockformat);
+
         if (clockformat == "12h") {
             outputformat = (_("%l:%M %p"));
         }
