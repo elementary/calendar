@@ -120,6 +120,9 @@ namespace Maya {
                 init_models ();
                 init_gui ();
 			    window.show_all ();
+                // TODO: we shouldn't do window.show_all, some widgets might need to be hidden at startup
+                // (workaround for sidebar hidden widgets)
+                calview.today();
 			}
 		}
 
