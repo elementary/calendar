@@ -53,6 +53,7 @@ namespace Maya.View {
             set_switcher_date (target);
 
 			search_bar = new Granite.Widgets.SearchBar ("Search For Events..");
+            search_bar.sensitive = false;
 
 			contractor = new Widgets.ContractorButtonWithMenu ();
 			contractor.set_sensitive (false);
