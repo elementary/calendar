@@ -45,7 +45,7 @@ namespace Maya.View {
          * Creates a new event widget for the given event.
          */
         public EventWidget (E.CalComponent event) {
-            // TODO: style
+
             var style_provider = Util.Css.get_css_provider ();
 
             get_style_context().add_provider (style_provider, 600);

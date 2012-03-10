@@ -37,8 +37,6 @@ namespace Maya.View {
         // Whether this source is currently selected in the source selector
         public bool selected {get; set;}
 
-        // TODO style
-
         // Sent out when the visibility of this widget changes.
         public signal void shown_changed (bool old, bool new);
 
