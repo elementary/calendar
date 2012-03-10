@@ -166,6 +166,7 @@ namespace Maya {
             sidebar.show ();
             sidebar.event_selected.connect ((event) => (on_sidebar_selected (event)));
             sidebar.event_deselected.connect ((event) => (on_sidebar_deselected (event)));
+            sidebar.agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
 
             calview.grid.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
@@ -188,6 +189,10 @@ namespace Maya {
 				window.fullscreen ();
 
             calview.today();
+        }
+
+        void on_agenda_view_shown_changed (bool old, bool shown) {
+            toolbar.search_bar.sensitive = shown;
         }
 
         /**
