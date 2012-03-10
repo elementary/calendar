@@ -64,6 +64,9 @@ namespace Maya.View {
             sourcemgr.source_removed.connect (on_source_removed);
 		}
 
+        /**
+         * Called when a source is checked/unchecked in the source selector.
+         */
         void on_source_status_changed (E.Source source, bool enabled) {
             if (!source_widgets.has_key (source))
                 return;
@@ -74,6 +77,9 @@ namespace Maya.View {
                 source_widgets.get (source).hide ();
         }
 
+        /**
+         * Called when a source is removed.
+         */
         void on_source_removed (E.SourceGroup group, E.Source source) {
             if (!source_widgets.has_key (source))
                 return;
@@ -81,6 +87,9 @@ namespace Maya.View {
             source_widgets.get (source).destroy ();
         }
 
+        /**
+         * Called when a source is added.
+         */
         void on_source_added (E.SourceGroup group, E.Source source) {
             SourceWidget widget = new SourceWidget (source);
 
