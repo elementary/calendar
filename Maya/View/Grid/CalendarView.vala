@@ -158,7 +158,7 @@ public class CalendarView : Gtk.HBox {
 
         E.CalComponentDateTime date_time;
         event.set_data("source", source);
-        event.get_dtend (out date_time);
+        event.get_dtstart (out date_time);
         var dt = new DateTime(new TimeZone.local(), date_time.value.year, date_time.value.month, date_time.value.day, 0, 0, 0);
         grid.add_event_for_time (dt, event);
     }
