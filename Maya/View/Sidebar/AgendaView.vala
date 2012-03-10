@@ -1,5 +1,6 @@
 //
 //  Copyright (C) 2011-2012 Maxwell Barvian
+//  Copyright (C) 2011-2012 Niels Avonds <niels.avonds@gmail.com>
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
