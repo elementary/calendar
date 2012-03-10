@@ -17,8 +17,6 @@
 
 namespace Maya.View {
 
-    // TODO: hide empty sources
-
     /**
      * The AgendaView shows all events for the currently selected date,
      * even with fancy colors!
@@ -100,7 +98,7 @@ namespace Maya.View {
         }
 
         /**
-         * A source has been added.
+         * Adds the given source to the list.
          */
         void add_source (E.Source source) {
             var widget = new SourceWidget (source);
@@ -111,7 +109,7 @@ namespace Maya.View {
         }
 
         /**
-         * A source has been removed.
+         * Removes the given source from the list.
          */
         void remove_source (E.Source source) {
             var widget = source_widgets.get (source);
