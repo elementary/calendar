@@ -164,8 +164,6 @@ namespace Maya {
             sidebar.show ();
             calview.grid.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
-            calview.today();
-
             calmodel.load_all_sources ();
 
 			var vbox = new Gtk.VBox (false, 0);
@@ -183,6 +181,8 @@ namespace Maya {
 				window.maximize ();
 			else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
 				window.fullscreen ();
+
+            calview.today();
         }
 
         /**
