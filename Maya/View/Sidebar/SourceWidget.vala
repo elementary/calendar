@@ -47,7 +47,6 @@ namespace Maya.View {
          * Updates whether this widget should currently be shown or not.
          */
         void update_visibility () {
-            stdout.printf ("VIS %s , %d\n", selected ? "true" : "false", event_widgets.size);
             if (selected && event_widgets.size > 0)
                 show_all ();
             else
