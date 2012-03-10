@@ -23,10 +23,16 @@ namespace Maya.View {
 	 */
 	public class Sidebar : Gtk.VBox {
 
-		public Gtk.Label label { get; private set; }
+		public Gtk.EventBox label_box { get; private set; }
 		public AgendaView agenda_view { get; private set; }
 
         Gtk.ScrolledWindow scrolled_window;
+
+        // Sent out when an event is selected.
+        public signal void event_selected (E.CalComponent event);
+
+        // Sent out when an event is deselected.
+        public signal void event_deselected (E.CalComponent event);
 
 	    public Sidebar (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
 
@@ -34,8 +40,10 @@ namespace Maya.View {
 			scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
 			scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
 
+            label_box = new Gtk.EventBox ();
+
 			// label settings
-			label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
+			Gtk.Label label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
 			label.sensitive = false;
 			label.wrap = true;
 			label.wrap_mode = Pango.WrapMode.WORD;
@@ -55,18 +63,26 @@ namespace Maya.View {
             viewport.show ();
 			scrolled_window.add (viewport);
 
-			pack_start (label, true, true, 0);
+            label_box.add (label);
+
+			pack_start (label_box, true, true, 0);
 			pack_start (scrolled_window, true, true, 0);
 
             scrolled_window.hide ();
 
             var style_provider = Util.Css.get_css_provider ();
 
+            label_box.get_style_context().add_provider (style_provider, 600);
+            label_box.get_style_context().add_class ("sidebar");
+
             viewport.get_style_context().add_provider (style_provider, 600);
             viewport.get_style_context().add_class ("sidebar");
 
+            label_box.show ();
             label.show ();
             agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
+            agenda_view.event_selected.connect ((event) => (event_selected (event)));
+            agenda_view.event_deselected.connect ((event) => (event_deselected (event)));
 		}
 
         public void set_selected_date (DateTime date) {
@@ -76,10 +92,10 @@ namespace Maya.View {
         void on_agenda_view_shown_changed (bool old_shown, bool shown) {
             if (shown) {
                 scrolled_window.show ();
-                label.hide ();
+                label_box.hide ();
             } else {
                 scrolled_window.hide ();
-                label.show ();
+                label_box.show ();
             }
         }
 

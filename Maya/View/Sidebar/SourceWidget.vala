@@ -42,6 +42,12 @@ namespace Maya.View {
         // Sent out when the visibility of this widget changes.
         public signal void shown_changed (bool old, bool new);
 
+        // Sent out when an event is selected.
+        public signal void event_selected (E.CalComponent event);
+
+        // Sent out when an event is selected.
+        public signal void event_deselected (E.CalComponent event);
+
         // The previous visibility status for this widget.
         bool old_shown = false;
 
@@ -81,7 +87,7 @@ namespace Maya.View {
             else
                 hide ();
 
-           shown_changed (old_shown, is_shown ());
+            shown_changed (old_shown, is_shown ());
 
             old_shown = is_shown ();
         }
@@ -168,6 +174,8 @@ namespace Maya.View {
             EventWidget widget = new EventWidget (event);
             pack_start (widget, true, true, 0);
             widget.show_all ();
+            widget.selected.connect (() => {event_selected (event);});
+            widget.deselected.connect (() => {event_deselected (event);});
 
             event_widgets.set (event, widget);
         }

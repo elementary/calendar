@@ -22,15 +22,13 @@
     border-radius: 0;
 }
 
-.sidebar-event {
+/* The style for the events in the sidebar */
+
+.sidebarevent {
 	background-color: @bg_color;
 	border-radius: 0;
 }
 
-.sidebar-event:insensitive {
-	background-color: shade(@bg_color, 0.97);
-}
-
-.sidebar-event:focused {
+.sidebarevent:focused {
 	background-color: shade(@bg_color, 0.9);
 }

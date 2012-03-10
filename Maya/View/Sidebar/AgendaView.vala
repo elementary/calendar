@@ -33,6 +33,12 @@ namespace Maya.View {
         // The previous visibility status for this widget.
         bool old_shown = false;
 
+        // Sent out when an event is selected.
+        public signal void event_selected (E.CalComponent event);
+
+        // Sent out when an event is deselected.
+        public signal void event_deselected (E.CalComponent event);
+
         /**
          * Creates a new agendaview.
          */
@@ -113,6 +119,8 @@ namespace Maya.View {
 
             source_widgets.set (source, widget);
             widget.shown_changed.connect (on_source_shown_changed);
+            widget.event_selected.connect ((event) => (event_selected (event)));
+            widget.event_deselected.connect ((event) => (event_deselected (event)));
             widget.selected = true;
         }
 

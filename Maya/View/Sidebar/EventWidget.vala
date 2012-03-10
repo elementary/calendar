@@ -21,7 +21,7 @@ namespace Maya.View {
     /**
      * A widget displaying one event in the sidebar.
      */
-    public class EventWidget : Gtk.VBox {
+    public class EventWidget : Gtk.EventBox {
         
         // A label displaying the name of the event
         Gtk.Label name_label;
@@ -32,28 +32,73 @@ namespace Maya.View {
         // A label displaying the location of the event
         Gtk.Label location_label;
 
+        // A Vbox containing the labels
+        Gtk.VBox vbox;
+
+        // Signal sent out when the event is selected.
+        public signal void selected ();
+
+        // Signal sent out when the event is deselected.
+        public signal void deselected ();
+
         /**
          * Creates a new event widget for the given event.
          */
         public EventWidget (E.CalComponent event) {
             // TODO: style
+            var style_provider = Util.Css.get_css_provider ();
+
+            get_style_context().add_provider (style_provider, 600);
+            get_style_context().add_class ("sidebarevent");
+
+            vbox = new Gtk.VBox (false, 3);
+
             name_label = new Gtk.Label ("");
             name_label.set_alignment (0, 0.5f);
-            pack_start (name_label, false, true, 0);
+            vbox.pack_start (name_label, false, true, 0);
 
             date_label = new Gtk.Label ("");
             date_label.set_alignment (0, 0.5f);
-            pack_start (date_label, false, true, 0);
+            vbox.pack_start (date_label, false, true, 0);
 
             location_label = new Gtk.Label ("");
             location_label.set_alignment (0, 0.5f);
             location_label.no_show_all = true;
-            pack_start (location_label, false, true, 0);
+            vbox.pack_start (location_label, false, true, 0);
+
+            vbox.show ();
+            add (vbox);
+
+            can_focus = true;
+            set_visible_window (true);
+            events |= Gdk.EventMask.BUTTON_PRESS_MASK;
+            button_press_event.connect (on_button_press);
+
+            focus_in_event.connect (on_focus_in);
+            focus_out_event.connect (on_focus_out);
 
             // Fill in the information
             update (event);
 
-            margin_left = 20;
+            vbox.margin_left = 20;
+        }
+
+        private bool on_button_press (Gdk.EventButton event) {
+
+            grab_focus ();
+            return true;
+        }
+
+        private bool on_focus_in (Gdk.EventFocus event) {
+                        
+            selected ();
+            return false;
+        }
+
+        private bool on_focus_out (Gdk.EventFocus event) {
+                        
+            deselected ();
+            return false;
         }
 
         /**
