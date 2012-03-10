@@ -17,8 +17,7 @@
 
 namespace Maya.View {
 
-    // TODO: listen to source_added / source_removed (+ checked / unchecked)
-    // TODO: destroy empty sources (see how it's done in SourceWidget for eventwidgets)
+    // TODO: hide empty sources
 
     /**
      * The AgendaView shows all events for the currently selected date,
@@ -51,12 +50,43 @@ namespace Maya.View {
                 }
             }
 
+            // Listen to changes for events
             calmodel.events_added.connect (on_events_added);
             calmodel.events_removed.connect (on_events_removed);
             calmodel.events_updated.connect (on_events_updated);
 
+            // Listen to changes in the displayed month
             calmodel.parameters_changed.connect (on_model_parameters_changed);
+
+            // Listen to changes in the sources
+            sourcemgr.status_changed.connect (on_source_status_changed);
+            sourcemgr.source_added.connect (on_source_added);
+            sourcemgr.source_removed.connect (on_source_removed);
 		}
+
+        void on_source_status_changed (E.Source source, bool enabled) {
+            if (!source_widgets.has_key (source))
+                return;
+
+            if (enabled)
+                source_widgets.get (source).show_all ();
+            else
+                source_widgets.get (source).hide ();
+        }
+
+        void on_source_removed (E.SourceGroup group, E.Source source) {
+            if (!source_widgets.has_key (source))
+                return;
+
+            source_widgets.get (source).destroy ();
+        }
+
+        void on_source_added (E.SourceGroup group, E.Source source) {
+            SourceWidget widget = new SourceWidget (source);
+
+            source_widgets.set (source, widget);
+            widget.show_all ();
+        }
 
         /**
          * The selected month has changed, all events should be cleared.
