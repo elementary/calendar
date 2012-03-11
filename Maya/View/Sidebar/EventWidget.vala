@@ -176,5 +176,6 @@ namespace Maya.View {
                 return date_string + " " + _("at") + " " + time_string;
             }
         }
+
     }
 }

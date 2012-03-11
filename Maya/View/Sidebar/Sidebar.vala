@@ -104,6 +104,13 @@ namespace Maya.View {
             }
         }
 
+        /**
+         * Called when the user searches for the given text.
+         */
+        public void set_search_text (string text) {
+            agenda_view.set_search_text (text);
+        }
+
 	}
 
 }

@@ -42,6 +42,9 @@ namespace Maya.View {
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
+        // The current text in the search_bar
+        string search_text = "";
+
         /**
          * Creates a new agendaview.
          */
@@ -127,6 +130,7 @@ namespace Maya.View {
             widget.event_modified.connect ((event) => (event_modified (event)));
             widget.event_removed.connect ((event) => (event_removed (event)));
             widget.selected = true;
+            widget.set_search_text (search_text);
         }
 
         /**
@@ -219,6 +223,16 @@ namespace Maya.View {
                 if (widget.is_shown ())
                     result++;
             return result;
+        }
+
+        /**
+         * Called when the user searches for the given text.
+         */
+        public void set_search_text (string text) {
+            search_text = text;
+            foreach (var widget in source_widgets.values) {
+                widget.set_search_text (text);
+            }
         }
 
 	}

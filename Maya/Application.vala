@@ -263,6 +263,7 @@ namespace Maya {
 			toolbar.menu.weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
 			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
 			toolbar.menu.weeknumbers.active = saved_state.show_weeks;
+            toolbar.search_bar.text_changed_pause.connect ((text) => on_search (text));
 
 			toolbar.month_switcher.left_clicked.connect (on_tb_month_switcher_left_clicked);
 			toolbar.month_switcher.right_clicked.connect (on_tb_month_switcher_right_clicked);
@@ -392,6 +393,13 @@ namespace Maya {
 
         void on_tb_year_switcher_right_clicked () {
             calmodel.month_start = calmodel.month_start.add_years (1);
+        }
+
+        /**
+         * Called when the search_bar is used.
+         */
+        void on_search (string text) {
+            sidebar.set_search_text (text);
         }
 
         void on_menu_today_toggled () {

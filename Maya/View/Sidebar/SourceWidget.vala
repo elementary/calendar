@@ -52,6 +52,9 @@ namespace Maya.View {
         // The previous visibility status for this widget.
         bool old_shown = false;
 
+        // The current text in the search_bar
+        string search_text = "";
+
         /**
          * Creates a new source widget for the given source.
          */
@@ -72,6 +75,7 @@ namespace Maya.View {
             name_label.set_markup ("<b>" + Markup.escape_text (source.peek_name()) + "</b>");
             name_label.set_alignment (0, 0.5f);
             pack_start (name_label, false, true, 0);
+            name_label.show ();
 
             notify["selected"].connect (update_visibility);
         }
@@ -84,7 +88,7 @@ namespace Maya.View {
                 return;
 
             if (is_shown ())
-                show_all ();
+                show ();
             else
                 hide ();
 
@@ -155,17 +159,49 @@ namespace Maya.View {
         public void set_selected_date (DateTime date) {
             selected_date = date;
 
-            foreach (var event in events) {
-                if (event_in_current_date (event) && !event_widgets.has_key (event)) {
-                    show_event (event);
-                } else if (!event_in_current_date (event) && event_widgets.has_key (event)) {
-                    var widget = event_widgets.get (event);
-                    event_widgets.unset (event);
-                    widget.destroy ();
-                }
-            }
+            update_current_date_events ();
+
+            update_filter_events ();
 
             update_visibility ();
+        }
+
+        /**
+         * Updates the event widgets to the events in the current date.
+         *
+         * All events in the currently selected date have an event widget associated with it,
+         * even the ones that don't pass the search filter.
+         */
+        void update_current_date_events () {
+            foreach (var event in events) {
+                bool shown = is_shown_event (event);
+                if (shown && !event_widgets.has_key (event)) {
+                    show_event (event);
+                } else if (!shown && event_widgets.has_key (event)) {
+                    hide_event (event);
+                }
+            }
+        }
+
+        /**
+         * Shows / hides the event widgets that do / don't pass the filter.
+         */
+        void update_filter_events () {
+            foreach (var event in event_widgets.keys) {
+                bool passes = event_passes_search_filter (event);
+                if (passes)
+                    event_widgets.get (event).show_all ();
+                else
+                    event_widgets.get (event).hide ();
+            }
+
+        }
+
+        /**
+         * Indicates if the given event should be shown under the current circumstances.
+         */
+        bool is_shown_event (E.CalComponent event) {
+            return event_in_current_date (event);
         }
 
         /**
@@ -213,6 +249,23 @@ namespace Maya.View {
         }
 
         /**
+         * Indicates if the given event passes the current search filter.
+         */
+        bool event_passes_search_filter (E.CalComponent event) {
+            E.CalComponentText summary = E.CalComponentText ();
+            event.get_summary (out summary);
+
+            string[] filter_strings = Regex.split_simple (" ", search_text);
+
+            foreach (string filter_string in filter_strings) {
+                if (!Regex.match_simple (filter_string, summary.value, RegexCompileFlags.CASELESS))
+                    return false;
+            }
+
+            return true;
+        }
+
+        /**
          * Removes all events from the event list.
          */
         public void remove_all_events () {
@@ -223,6 +276,14 @@ namespace Maya.View {
             event_widgets.clear ();
 
             update_visibility ();
+        }
+
+        /**
+         * Called when the user searches for the given text.
+         */
+        public void set_search_text (string text) {
+            search_text = text;
+            update_filter_events ();
         }
 
     }
