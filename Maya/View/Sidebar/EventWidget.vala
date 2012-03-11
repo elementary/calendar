@@ -77,15 +77,15 @@ namespace Maya.View {
             location_label.no_show_all = true;
             grid.attach (location_label, 0, 2, 3, 1);
 
-            close_button = new Gtk.Button ();
-            close_button.add (new Gtk.Image.from_stock ("gtk-close", Gtk.IconSize.MENU));
-            close_button.set_relief (Gtk.ReliefStyle.NONE);
-            grid.attach (close_button, 1, 0, 1, 1);
-
             edit_button = new Gtk.Button ();
             edit_button.add (new Gtk.Image.from_stock ("gtk-edit", Gtk.IconSize.MENU));
             edit_button.set_relief (Gtk.ReliefStyle.NONE);
-            grid.attach (edit_button, 2, 0, 1, 1);
+            grid.attach (edit_button, 1, 0, 1, 1);
+
+            close_button = new Gtk.Button ();
+            close_button.add (new Gtk.Image.from_stock ("gtk-close", Gtk.IconSize.MENU));
+            close_button.set_relief (Gtk.ReliefStyle.NONE);
+            grid.attach (close_button, 2, 0, 1, 1);
 
             grid.show ();
             add (grid);

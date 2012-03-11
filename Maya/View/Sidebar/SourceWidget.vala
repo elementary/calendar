@@ -173,7 +173,7 @@ namespace Maya.View {
          */
         void show_event (E.CalComponent event) {
             EventWidget widget = new EventWidget (event);
-            pack_start (widget, true, true, 0);
+            pack_start (widget, false, true, 0);
             widget.show_all ();
             widget.selected.connect (() => {event_selected (event);});
             widget.deselected.connect (() => {event_deselected (event);});
