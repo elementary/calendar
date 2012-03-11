@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-09 18:46+0100\n"
-"PO-Revision-Date: 2012-03-08 17:27+0100\n"
+"POT-Creation-Date: 2012-03-11 02:29+0100\n"
+"PO-Revision-Date: 2012-03-11 02:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <fr@li.org>\n"
 "Language: fr\n"
@@ -17,6 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-02-22 05:09+0000\n"
 "X-Generator: Launchpad (build 14838)\n"
+
+msgid "%A, %b %d"
+msgstr "%A %d %b"
 
 msgid "%B %e, %Y"
 msgstr "%e %B %Y"
@@ -27,13 +30,56 @@ msgstr "%H:%M"
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
+#. Dialog properties
+msgid "Add Event"
+msgstr "Ajouter un événement"
+
+msgid "All day:"
+msgstr "Toute la journée"
+
+msgid "Comments"
+msgstr "Commentaires"
+
+msgid "Create Event"
+msgstr "Créer l'événement"
+
+#. Dialog Properties
+msgid "Edit Event"
+msgstr "Modifier un événement"
+
+msgid "From:"
+msgstr "Du :"
+
+msgid "Guests"
+msgstr "Invités"
+
+msgid "John Smith OR Example St."
+msgstr "Jean Dupont ou Rue de la Paix"
+
+msgid "Location"
+msgstr "Lieu"
+
+msgid "Name of Event"
+msgstr "Nom de l'événement"
+
+msgid "Name or Email Address"
+msgstr "Nom ou adresse de courrier électronique"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "To:"
+msgstr "Jusqu'au :"
+
 #. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Vos événements à venir seront affichés ici lorsque vous sélectionnerez un "
-"jour comprenant des événements."
+msgid "Your upcoming events will be displayed here when you select a date with events."
+msgstr "Vos événements à venir seront affichés ici lorsque vous sélectionnerez un jour comprenant des événements."
+
+msgid "all the day"
+msgstr "toute la journée"
+
+msgid "at"
+msgstr "à"
 
 #~ msgid "Fast calendar that syncs with popular online services"
 #~ msgstr ""

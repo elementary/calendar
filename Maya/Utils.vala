@@ -45,6 +45,18 @@ DateTime ical_to_date_time (iCal.icaltimetype date) {
         date.day, date.hour, date.minute, date.second);
 }
 
+/**
+ * Say if an event last the all say.
+ */
+bool is_the_all_day (DateTime dtstart, DateTime dtend) {
+    if ((dtend.get_hour() == dtend.get_minute()) && (dtstart.get_hour() == dtend.get_hour()) && (dtstart.get_hour() == dtstart.get_minute()) && (dtend.get_hour() == 0)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 public DateTime get_start_of_month (owned DateTime? date = null) {
     
     if (date==null)

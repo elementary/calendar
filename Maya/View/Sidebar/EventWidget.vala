@@ -32,14 +32,24 @@ namespace Maya.View {
         // A label displaying the location of the event
         Gtk.Label location_label;
 
-        // A Vbox containing the labels
-        Gtk.VBox vbox;
+        // A Grid containing the labels
+        Gtk.Grid grid;
+
+        // The old close and edit button
+        Gtk.Button close_button;
+        Gtk.Button edit_button;
 
         // Signal sent out when the event is selected.
         public signal void selected ();
 
         // Signal sent out when the event is deselected.
         public signal void deselected ();
+
+        // Signal sent out when a button is pressed
+    
+        public signal void removed (E.CalComponent event);
+        public signal void modified (E.CalComponent event);
+
 
         /**
          * Creates a new event widget for the given event.
@@ -51,28 +61,43 @@ namespace Maya.View {
             get_style_context().add_provider (style_provider, 600);
             get_style_context().add_class ("sidebarevent");
 
-            vbox = new Gtk.VBox (false, 3);
+            grid = new Gtk.Grid ();
 
             name_label = new Gtk.Label ("");
+            name_label.set_hexpand(true);
             name_label.set_alignment (0, 0.5f);
-            vbox.pack_start (name_label, false, true, 0);
+            grid.attach (name_label, 0, 0, 1, 1);
 
             date_label = new Gtk.Label ("");
             date_label.set_alignment (0, 0.5f);
-            vbox.pack_start (date_label, false, true, 0);
+            grid.attach (date_label, 0, 1, 3, 1);
 
             location_label = new Gtk.Label ("");
             location_label.set_alignment (0, 0.5f);
             location_label.no_show_all = true;
-            vbox.pack_start (location_label, false, true, 0);
+            grid.attach (location_label, 0, 2, 3, 1);
 
-            vbox.show ();
-            add (vbox);
+            close_button = new Gtk.Button ();
+            close_button.add (new Gtk.Image.from_stock ("gtk-close", Gtk.IconSize.MENU));
+            close_button.set_relief (Gtk.ReliefStyle.NONE);
+            grid.attach (close_button, 1, 0, 1, 1);
+
+            edit_button = new Gtk.Button ();
+            edit_button.add (new Gtk.Image.from_stock ("gtk-edit", Gtk.IconSize.MENU));
+            edit_button.set_relief (Gtk.ReliefStyle.NONE);
+            grid.attach (edit_button, 2, 0, 1, 1);
+
+            grid.show ();
+            add (grid);
 
             can_focus = true;
             set_visible_window (true);
             events |= Gdk.EventMask.BUTTON_PRESS_MASK;
+
             button_press_event.connect (on_button_press);
+
+            close_button.clicked.connect( () => { removed(event); });
+            edit_button.clicked.connect( () => { modified(event); });
 
             focus_in_event.connect (on_focus_in);
             focus_out_event.connect (on_focus_out);
@@ -80,7 +105,7 @@ namespace Maya.View {
             // Fill in the information
             update (event);
 
-            vbox.margin_left = 20;
+            grid.margin_left = 20;
         }
 
         private bool on_button_press (Gdk.EventButton event) {
@@ -134,16 +159,22 @@ namespace Maya.View {
          * Returns the date that should be displayed for the given event.
          */
         string get_date (E.CalComponent event) {
-            E.CalComponentDateTime date = E.CalComponentDateTime ();
+            var datefrom = E.CalComponentDateTime ();
+            var dateto = E.CalComponentDateTime ();
+            event.get_dtstart (out datefrom);
+            event.get_dtend (out dateto);
+            
+            DateTime date_time = Util.ical_to_date_time (*datefrom.value);
+            DateTime date_time_end = Util.ical_to_date_time (*dateto.value);
 
-            event.get_dtstart (out date);
-
-            DateTime date_time = Util.ical_to_date_time (*date.value);
-
-            string date_string = date_time.format ("%A, %b %d");
+            string date_string = date_time.format (Settings.DateFormat_Complete ());
             string time_string = date_time.format (Settings.TimeFormat ());
-
-            return date_string + " at " + time_string;
+            if (Util.is_the_all_day(date_time, date_time_end) == true) {
+                return date_string + ", " + _("all the day");
+            }
+            else {
+                return date_string + " " + _("at") + " " + time_string;
+            }
         }
     }
 }

@@ -158,7 +158,7 @@ namespace Maya.View {
             if (dt_end.year != 0) {
                 DateTime to_date = Util.ical_to_date_time (dt_end);
                 DateTime from_date = Util.ical_to_date_time (dt_start);
-                if ((to_date.get_hour() == to_date.get_minute()) && (from_date.get_hour() == to_date.get_hour()) && (from_date.get_hour() == from_date.get_minute()) && (to_date.get_hour() == 0)) {
+                if (Util.is_the_all_day(from_date, to_date) == true) {
                     allday.set_active(true);
                     from_time_picker.sensitive = false;
 		            to_time_picker.sensitive = false;
@@ -183,14 +183,14 @@ namespace Maya.View {
 		    
 		    var from_box = make_hbox ();
 		    
-		    var from = make_label ("From:");
+		    var from = make_label (_("From:"));
 			from_date_picker = make_date_picker ();
 			from_time_picker = make_time_picker ();
 			
 			from_box.add (from_date_picker);
 			from_box.add (from_time_picker);
 		    
-		    var switch_label = new Gtk.Label ("All day:");
+		    var switch_label = new Gtk.Label (_("All day:"));
 		    switch_label.margin_right = 20;
 		    
 		    allday = new Gtk.Switch ();
@@ -198,7 +198,7 @@ namespace Maya.View {
 		    from_box.add (switch_label);
 		    from_box.add (allday);
 		    
-		    var to = new Gtk.Expander ("<span weight='bold'>To:</span>");
+		    var to = new Gtk.Expander ("<span weight='bold'>"+_("To:")+"</span>");
 		    to.use_markup = true;
 		    to.spacing = 10;
 		    to.margin_bottom = 10;
@@ -224,16 +224,16 @@ namespace Maya.View {
 		    
 		    var title_box = new Gtk.VBox (false, 0);
 		    
-		    var title_label = make_label ("Title");
-		    title_entry = new Granite.Widgets.HintedEntry ("Name of Event");
+		    var title_label = make_label (_("Title"));
+		    title_entry = new Granite.Widgets.HintedEntry (_("Name of Event"));
 
 		    title_box.add (title_label);
 		    title_box.add (title_entry);
 		    
 		    var location_box = new Gtk.VBox (false, 0);
 		    
-		    var location_label = make_label ("Location");
-	        location_entry = new Granite.Widgets.HintedEntry ("John Smith OR Example St.");
+		    var location_label = make_label (_("Location"));
+	        location_entry = new Granite.Widgets.HintedEntry (_("John Smith OR Example St."));
 	        
 		    location_box.add (location_label);
 		    location_box.add (location_entry);
@@ -243,8 +243,8 @@ namespace Maya.View {
 		    
 		    var guest_box = make_vbox ();
 		    
-		    var guest_label = make_label ("Guests");
-			var guest = new Granite.Widgets.HintedEntry ("Name or Email Address");
+		    var guest_label = make_label (_("Guests"));
+			var guest = new Granite.Widgets.HintedEntry (_("Name or Email Address"));
 			
 			guest_box.add (guest_label);
 			guest_box.add (guest);
@@ -252,7 +252,7 @@ namespace Maya.View {
 			var comment_box = new Gtk.VBox (false, 0);
 			comment_box.margin_bottom = 20;
 			
-			var comment_label = make_label ("Comments");
+			var comment_label = make_label (_("Comments"));
 			comment_box.add (comment_label);
 			
 			comment = new Gtk.TextView ();
@@ -267,7 +267,7 @@ namespace Maya.View {
 		    container.add (comment_box);
 		   
             if (this is AddEventDialog) {
-		        add_button ("Create Event", Gtk.ResponseType.APPLY);
+		        add_button (_("Create Event"), Gtk.ResponseType.APPLY);
             }
             else {
 		        add_button (Gtk.Stock.OK, Gtk.ResponseType.APPLY);
@@ -327,7 +327,7 @@ namespace Maya.View {
 	        base(window, sourcemgr, event);
 	    
 	        // Dialog properties
-	        title = "Add Event";
+	        title = _("Add Event");
 	    }
 	}
 	
@@ -338,7 +338,7 @@ namespace Maya.View {
 	        base(window, sourcemgr, event);
 	        
 	        // Dialog Properties
-	        title = "Edit Event";
+	        title = _("Edit Event");
 	    }
 	}
 	
@@ -349,7 +349,7 @@ namespace Maya.View {
 	        base(window, null, event, source);
 	        
 	        // Dialog Properties
-	        title = "Edit Event";
+	        title = _("Edit Event");
 	    }
 	}
 }
