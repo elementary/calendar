@@ -232,7 +232,7 @@ namespace Maya {
             dialog.show_all();
             dialog.run();
             dialog.destroy ();
-            calmodel.update_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
+            calmodel.update_event(dialog.source, comp, dialog.mod_type);
         }
 
         /**
@@ -255,8 +255,8 @@ namespace Maya {
         void create_toolbar () {
             toolbar = new View.MayaToolbar (calmodel.month_start);
 			toolbar.button_add.clicked.connect(() => on_tb_add_clicked (calview.grid.selected_date));
-			toolbar.edit_button.clicked.connect(on_tb_edit_clicked);
-			toolbar.delete_button.clicked.connect(on_tb_delete_clicked);
+			toolbar.edit_button.clicked.connect(() => on_modified (sidebar_selected_event));
+			toolbar.delete_button.clicked.connect(() => on_remove (sidebar_selected_event));
 			toolbar.button_calendar_sources.clicked.connect(on_tb_sources_clicked);
 			toolbar.menu.today.activate.connect (on_menu_today_toggled);
 			toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);
@@ -364,14 +364,6 @@ namespace Maya {
             comp.set_summary ("");
 
             edit_event (event, true);
-        }
-
-        void on_tb_edit_clicked () {
-            edit_event (sidebar_selected_event, false);
-        }
-
-        void on_tb_delete_clicked () {
-            calmodel.remove_event(sidebar_selected_event.get_data<E.Source>("source"), sidebar_selected_event, E.CalObjModType.THIS);
         }
 
         void on_tb_sources_clicked (Gtk.Widget widget) {
