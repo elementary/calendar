@@ -166,6 +166,8 @@ namespace Maya {
             sidebar.show ();
             sidebar.event_selected.connect ((event) => (on_sidebar_selected (event)));
             sidebar.event_deselected.connect ((event) => (on_sidebar_deselected (event)));
+            sidebar.event_removed.connect (on_remove);
+            sidebar.event_modified.connect (on_modified);
             sidebar.agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
 
             calview.grid.selection_changed.connect ((date) => sidebar.set_selected_date (date));
@@ -213,6 +215,24 @@ namespace Maya {
 
             toolbar.edit_button.sensitive = false;
             toolbar.delete_button.sensitive = false;
+        }
+
+        /**
+         * Called when the remove button is selected.
+         */
+        void on_remove(E.CalComponent comp) {
+            calmodel.remove_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
+        }
+        
+        /**
+         * Called when the edit button is selected.
+         */
+        void on_modified(E.CalComponent comp) {
+            var dialog = new Maya.View.EditEventDialog2 (window, comp.get_data<E.Source>("source"), comp);
+            dialog.show_all();
+            dialog.run();
+            dialog.destroy ();
+            calmodel.update_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
         }
 
         /**

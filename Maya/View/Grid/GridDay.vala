@@ -27,9 +27,6 @@ public class GridDay : Gtk.EventBox {
     Gtk.Label label;
     Gtk.VBox vbox;
     List<EventButton> event_buttons;
-    
-    public signal void removed (E.CalComponent event);
-    public signal void modified (E.CalComponent event);
 
     public GridDay (DateTime date) {
 
@@ -66,8 +63,6 @@ public class GridDay : Gtk.EventBox {
         vbox.show_all();
         event_buttons.append(button);
         
-        button.removed.connect ( (e) => { removed (e); });
-        button.modified.connect ( (e) => { modified (e); });
     }
     
     public void remove_event (E.CalComponent comp) {

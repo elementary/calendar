@@ -45,6 +45,9 @@ namespace Maya.View {
 
         // Sent out when an event is selected.
         public signal void event_deselected (E.CalComponent event);
+    
+        public signal void event_removed (E.CalComponent event);
+        public signal void event_modified (E.CalComponent event);
 
         // The previous visibility status for this widget.
         bool old_shown = false;
@@ -174,6 +177,8 @@ namespace Maya.View {
             widget.show_all ();
             widget.selected.connect (() => {event_selected (event);});
             widget.deselected.connect (() => {event_deselected (event);});
+            widget.modified.connect ((event) => (event_modified (event)));
+            widget.removed.connect ((event) => (event_removed (event)));
 
             event_widgets.set (event, widget);
         }

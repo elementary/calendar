@@ -21,6 +21,10 @@ namespace Maya.Settings {
 		return (_("%B %e, %Y"));
 	}
 
+	public string DateFormat_Complete () {
+		return (_("%A, %b %d"));
+	}
+
 	public string TimeFormat () {
 
         var setting = new GLib.Settings ("org.gnome.desktop.interface");

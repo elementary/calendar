@@ -28,8 +28,6 @@ public class Grid : Gtk.Table {
     public DateTime? selected_date { get; private set; }
 
     public signal void selection_changed (DateTime new_date);
-    public signal void removed (E.CalComponent comp);
-    public signal void modified (E.CalComponent comp);
 
     public Grid (Util.DateRange range, DateTime month_start, int weeks) {
 
@@ -53,8 +51,6 @@ public class Grid : Gtk.Table {
         foreach (var date in range) {
 
             var day = new GridDay (date);
-            day.removed.connect ( (e) => { removed (e); });
-            day.modified.connect ( (e) => { modified (e); });
             data.set (date, day);
 
             attach_defaults (day, col, col + 1, row, row + 1);

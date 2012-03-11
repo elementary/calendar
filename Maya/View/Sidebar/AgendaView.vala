@@ -38,6 +38,9 @@ namespace Maya.View {
 
         // Sent out when an event is deselected.
         public signal void event_deselected (E.CalComponent event);
+    
+        public signal void event_removed (E.CalComponent event);
+        public signal void event_modified (E.CalComponent event);
 
         /**
          * Creates a new agendaview.
@@ -121,6 +124,8 @@ namespace Maya.View {
             widget.shown_changed.connect (on_source_shown_changed);
             widget.event_selected.connect ((event) => (event_selected (event)));
             widget.event_deselected.connect ((event) => (event_deselected (event)));
+            widget.event_modified.connect ((event) => (event_modified (event)));
+            widget.event_removed.connect ((event) => (event_removed (event)));
             widget.selected = true;
         }
 
