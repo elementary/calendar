@@ -1,18 +1,36 @@
+//
+//  Copyright (C) 2011-2012 Maxwell Barvian
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+
 namespace Maya.View {
 
 /**
  * TODO :
- *      - Events are written rather small, to fit a lot in the box,
- *      - As far as width goes: rather than wrapping the text of an event, it just falls out of the box,
+ * OK   - Events are written rather small, to fit a lot in the box,
+ * OK   - As far as width goes: rather than wrapping the text of an event, it just falls out of the box,
  *      - As far as height goes: as many events as possible are left in the box, 
  *        with an "x additional events" notice at the bottom if necessary.
  *          (impossible with VBox? Seems to automatically assign enough space)
+ *      - Style fixes
  */
 
 /**
  * Represents a single day on the grid.
  */
-public class GridDay : Gtk.EventBox {
+public class GridDay : Gtk.Viewport {
 
     public DateTime date { get; private set; }
 
@@ -20,11 +38,8 @@ public class GridDay : Gtk.EventBox {
     Gtk.Label more_label;
     Gtk.VBox vbox;
     List<EventButton> event_buttons;
-    
-    private static const int EVENT_MARGIN = 3;
 
-    public signal void removed (E.CalComponent event);
-    public signal void modified (E.CalComponent event);
+    private static const int EVENT_MARGIN = 3;
 
     public GridDay (DateTime date) {
 
@@ -39,7 +54,6 @@ public class GridDay : Gtk.EventBox {
 
         // EventBox Properties
         can_focus = true;
-        set_visible_window (true);
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         get_style_context ().add_provider (style_provider, 600);
         get_style_context ().add_class ("cell");
@@ -55,7 +69,7 @@ public class GridDay : Gtk.EventBox {
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
-        draw.connect (on_draw);
+//        draw.connect (on_draw);
     }
 
     /**
@@ -104,11 +118,9 @@ public class GridDay : Gtk.EventBox {
         var button = new EventButton(comp);
         vbox.pack_start (button, false, false, 0);
         vbox.show_all();
+
         event_buttons.insert_sorted (button, compare_buttons);
         update_widgets ();        
-
-        button.removed.connect ( (e) => { removed (e); });
-        button.modified.connect ( (e) => { modified (e); });
     }
 
     /**

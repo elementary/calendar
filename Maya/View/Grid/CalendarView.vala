@@ -39,8 +39,6 @@ public class CalendarView : Gtk.HBox {
         weeks = new WeekLabels ();
         header = new Header ();
         grid = new Grid (model.data_range, model.month_start, model.num_weeks);
-        grid.removed.connect (on_remove);
-        grid.modified.connect (on_modified);
         
         // HBox properties
         spacing = 0;
@@ -63,17 +61,7 @@ public class CalendarView : Gtk.HBox {
         model.events_removed.connect (on_events_removed);
     }
     
-    public void on_remove(E.CalComponent comp) {
-        model.remove_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
-    }
-    
-    public void on_modified(E.CalComponent comp) {
-        var dialog = new Maya.View.EditEventDialog2 ((Gtk.Window)get_toplevel(), comp.get_data<E.Source>("source"), comp);
-        dialog.show_all();
-        dialog.run();
-        dialog.destroy ();
-        model.update_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
-    }
+
 
     //--- Public Methods ---//
     

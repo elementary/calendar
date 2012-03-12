@@ -1,3 +1,17 @@
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+
 namespace Maya.Util {
 
 //--- Date and Time ---//
@@ -29,6 +43,18 @@ DateTime ical_to_date_time (iCal.icaltimetype date) {
 
     return new DateTime (zone, date.year, date.month,
         date.day, date.hour, date.minute, date.second);
+}
+
+/**
+ * Say if an event last the all say.
+ */
+bool is_the_all_day (DateTime dtstart, DateTime dtend) {
+    if ((dtend.get_hour() == dtend.get_minute()) && (dtstart.get_hour() == dtend.get_hour()) && (dtstart.get_hour() == dtstart.get_minute()) && (dtend.get_hour() == 0)) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 public DateTime get_start_of_month (owned DateTime? date = null) {

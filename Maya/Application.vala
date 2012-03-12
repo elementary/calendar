@@ -98,11 +98,13 @@ namespace Maya {
 		View.MayaToolbar toolbar;
 		View.CalendarView calview;
 		View.Sidebar sidebar;
-        Gtk.HPaned hpaned;
+        Gtk.Paned hpaned;
 
         Model.SourceManager sourcemgr;
         Model.CalendarModel calmodel;
         View.SourceSelector source_selector;
+
+        E.CalComponent sidebar_selected_event = null;
 
         /**
          * Called when the application is activated.
@@ -157,17 +159,27 @@ namespace Maya {
 			create_toolbar ();
 
 			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
-            calview.today();
+
+			sidebar = new View.Sidebar (sourcemgr, calmodel);
+            // Don't automatically display all the widgets on the sidebar
+            sidebar.no_show_all = true;
+            sidebar.show ();
+            sidebar.event_selected.connect ((event) => (on_sidebar_selected (event)));
+            sidebar.event_deselected.connect ((event) => (on_sidebar_deselected (event)));
+            sidebar.event_removed.connect (on_remove);
+            sidebar.event_modified.connect (on_modified);
+            sidebar.agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
+
+            calview.grid.selection_changed.connect ((date) => sidebar.set_selected_date (date));
+
             calmodel.load_all_sources ();
 
-			sidebar = new View.Sidebar ();
-
 			var vbox = new Gtk.VBox (false, 0);
-			hpaned = new Gtk.HPaned ();
+			hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
 			vbox.pack_start (toolbar, false, false, 0);
 			vbox.pack_end (hpaned);
-			hpaned.add (calview);
-			hpaned.add (sidebar);
+			hpaned.pack1 (calview, true, true);
+			hpaned.pack2 (sidebar, false, true);
 			hpaned.position = saved_state.hpaned_position;
 			window.add (vbox);
 
@@ -177,6 +189,50 @@ namespace Maya {
 				window.maximize ();
 			else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
 				window.fullscreen ();
+
+            calview.today();
+        }
+
+        void on_agenda_view_shown_changed (bool old, bool shown) {
+            toolbar.search_bar.sensitive = shown;
+        }
+
+        /**
+         * Called when an event is selected in the sidebar.
+         */
+        void on_sidebar_selected (E.CalComponent event) {
+            sidebar_selected_event = event;
+
+            toolbar.edit_button.sensitive = true;
+            toolbar.delete_button.sensitive = true;
+        }
+
+        /**
+         * Called when an event is deselected in the sidebar.
+         */
+        void on_sidebar_deselected (E.CalComponent event) {
+            sidebar_selected_event = null;
+
+            toolbar.edit_button.sensitive = false;
+            toolbar.delete_button.sensitive = false;
+        }
+
+        /**
+         * Called when the remove button is selected.
+         */
+        void on_remove(E.CalComponent comp) {
+            calmodel.remove_event(comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
+        }
+        
+        /**
+         * Called when the edit button is selected.
+         */
+        void on_modified(E.CalComponent comp) {
+            var dialog = new Maya.View.EditEventDialog2 (window, comp.get_data<E.Source>("source"), comp);
+            dialog.show_all();
+            dialog.run();
+            dialog.destroy ();
+            calmodel.update_event(dialog.source, comp, dialog.mod_type);
         }
 
         /**
@@ -199,12 +255,15 @@ namespace Maya {
         void create_toolbar () {
             toolbar = new View.MayaToolbar (calmodel.month_start);
 			toolbar.button_add.clicked.connect(() => on_tb_add_clicked (calview.grid.selected_date));
+			toolbar.edit_button.clicked.connect(() => on_modified (sidebar_selected_event));
+			toolbar.delete_button.clicked.connect(() => on_remove (sidebar_selected_event));
 			toolbar.button_calendar_sources.clicked.connect(on_tb_sources_clicked);
 			toolbar.menu.today.activate.connect (on_menu_today_toggled);
 			toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);
 			toolbar.menu.weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
 			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
 			toolbar.menu.weeknumbers.active = saved_state.show_weeks;
+            toolbar.search_bar.text_changed_pause.connect ((text) => on_search (text));
 
 			toolbar.month_switcher.left_clicked.connect (on_tb_month_switcher_left_clicked);
 			toolbar.month_switcher.right_clicked.connect (on_tb_month_switcher_right_clicked);
@@ -334,6 +393,13 @@ namespace Maya {
 
         void on_tb_year_switcher_right_clicked () {
             calmodel.month_start = calmodel.month_start.add_years (1);
+        }
+
+        /**
+         * Called when the search_bar is used.
+         */
+        void on_search (string text) {
+            sidebar.set_search_text (text);
         }
 
         void on_menu_today_toggled () {

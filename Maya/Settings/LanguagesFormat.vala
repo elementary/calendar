@@ -15,21 +15,29 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya.View {
+namespace Maya.Settings {
 
-    /**
-     * The AgendaView shows all events for the currently selected date,
-     * even with fancy colors!
-     */
-	public class AgendaView : Gtk.VBox {
+	public string DateFormat () {
+		return (_("%B %e, %Y"));
+	}
 
-		public AgendaView () {
+	public string DateFormat_Complete () {
+		return (_("%A, %b %d"));
+	}
 
-			// VBox properties
-			spacing = 0;
-			homogeneous = false;
-		}
+	public string TimeFormat () {
 
+        var setting = new GLib.Settings ("org.gnome.desktop.interface");
+        string clockformat = setting.get_string ("clock-format");
+        string outputformat;
+
+        if (clockformat == "12h") {
+            outputformat = (_("%l:%M %p"));
+        }
+        else {
+            outputformat = (_("%H:%M"));
+        }
+		return outputformat;
 	}
 
 }

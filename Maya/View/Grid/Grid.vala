@@ -1,3 +1,20 @@
+//
+//  Copyright (C) 2011-2012 Maxwell Barvian
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+
 namespace Maya.View {
 
 /**
@@ -11,8 +28,6 @@ public class Grid : Gtk.Table {
     public DateTime? selected_date { get; private set; }
 
     public signal void selection_changed (DateTime new_date);
-    public signal void removed (E.CalComponent comp);
-    public signal void modified (E.CalComponent comp);
 
     public Grid (Util.DateRange range, DateTime month_start, int weeks) {
 
@@ -36,11 +51,14 @@ public class Grid : Gtk.Table {
         foreach (var date in range) {
 
             var day = new GridDay (date);
-            day.removed.connect ( (e) => { removed (e); });
-            day.modified.connect ( (e) => { modified (e); });
             data.set (date, day);
 
-            attach_defaults (day, col, col + 1, row, row + 1);
+            var scrolled_window = new Gtk.ScrolledWindow (null, null);
+            scrolled_window.hscrollbar_policy = Gtk.PolicyType.NEVER;
+            scrolled_window.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
+            scrolled_window.add (day);
+
+            attach_defaults (scrolled_window, col, col + 1, row, row + 1);
 
             day.focus_in_event.connect ((event) => {
                 on_day_focus_in(day);

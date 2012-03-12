@@ -100,8 +100,12 @@ vala_precompile(VALA_C
     Maya/Services/Dexter.vala
     Maya/Settings/MayaSettings.vala
     Maya/Settings/SavedState.vala
+    Maya/Settings/LanguagesFormat.vala
     Maya/Utils.vala
-    Maya/View/AgendaView.vala
+    Maya/View/Sidebar/AgendaView.vala
+    Maya/View/Sidebar/Sidebar.vala
+    Maya/View/Sidebar/SourceWidget.vala
+    Maya/View/Sidebar/EventWidget.vala
     Maya/View/Grid/CalendarView.vala
     Maya/View/Grid/GridDay.vala
     Maya/View/Grid/Grid.vala
@@ -111,7 +115,6 @@ vala_precompile(VALA_C
     Maya/View/EventDialog.vala
     Maya/View/MayaMenu.vala
     Maya/View/MayaToolbar.vala
-    Maya/View/Sidebar.vala
     Maya/View/SourceSelector.vala
     Maya/View/Widgets/ContractorButtonWithMenu.vala
     Maya/View/Widgets/DateSwitcher.vala
