@@ -69,7 +69,6 @@ public class GridDay : Gtk.Viewport {
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
-//        draw.connect (on_draw);
     }
 
     /**
@@ -164,29 +163,6 @@ public class GridDay : Gtk.Viewport {
 
         grab_focus ();
         return true;
-    }
-
-    private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
-
-        Gtk.Allocation size;
-        widget.get_allocation (out size);
-
-        // Draw left and top black strokes
-        cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
-        cr.line_to (0.5, 0.5); // move to upper left corner
-        cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
-
-        cr.set_source_rgba (0.0, 0.0, 0.0, 0.95);
-        cr.set_line_width (1.0);
-        cr.set_antialias (Cairo.Antialias.NONE);
-        cr.stroke ();
-
-        // Draw inner highlight stroke
-        cr.rectangle (1.5, 1.5, size.width - 1.5, size.height - 1.5);
-        cr.set_source_rgba (1.0, 1.0, 1.0, 0.2);
-        cr.stroke ();
-
-        return false;
     }
 }
 
