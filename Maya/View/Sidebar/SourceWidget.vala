@@ -113,9 +113,7 @@ namespace Maya.View {
 
             events.add (event);
 
-            if (event_in_current_date (event)) {
-                show_event (event);
-            }
+            update_widget_for (event);
 
             update_visibility ();
         }
@@ -161,8 +159,6 @@ namespace Maya.View {
 
             update_current_date_events ();
 
-            update_filter_events ();
-
             update_visibility ();
         }
 
@@ -174,13 +170,27 @@ namespace Maya.View {
          */
         void update_current_date_events () {
             foreach (var event in events) {
-                bool shown = is_shown_event (event);
-                if (shown && !event_widgets.has_key (event)) {
-                    show_event (event);
-                } else if (!shown && event_widgets.has_key (event)) {
-                    hide_event (event);
-                }
+               update_widget_for (event);
             }
+        }
+
+        /**
+         * Creates / destroys and shows / hides the widget for the given event,
+         * depending on respectively the date and the search filter.
+         */
+        void update_widget_for (E.CalComponent event) {
+            bool shown = event_in_current_date (event);
+            bool has_widget = event_widgets.has_key (event);
+            if (shown && !has_widget) {
+                show_event (event);
+                has_widget = true;
+            } else if (!shown && has_widget) {
+                hide_event (event);
+                has_widget = false;
+            }
+
+            if (has_widget)
+                update_show_hide_for (event);
         }
 
         /**
@@ -188,20 +198,20 @@ namespace Maya.View {
          */
         void update_filter_events () {
             foreach (var event in event_widgets.keys) {
-                bool passes = event_passes_search_filter (event);
-                if (passes)
-                    event_widgets.get (event).show_all ();
-                else
-                    event_widgets.get (event).hide ();
+                update_show_hide_for (event);
             }
 
         }
 
         /**
-         * Indicates if the given event should be shown under the current circumstances.
+         * Shows / hides the event widget for the given event.
          */
-        bool is_shown_event (E.CalComponent event) {
-            return event_in_current_date (event);
+        void update_show_hide_for (E.CalComponent event) {
+            bool passes = event_passes_search_filter (event);
+            if (passes)
+                event_widgets.get (event).show_all ();
+            else
+                event_widgets.get (event).hide ();
         }
 
         /**
@@ -210,7 +220,6 @@ namespace Maya.View {
         void show_event (E.CalComponent event) {
             EventWidget widget = new EventWidget (event);
             pack_start (widget, false, true, 0);
-            widget.show_all ();
             widget.selected.connect (() => {event_selected (event);});
             widget.deselected.connect (() => {event_deselected (event);});
             widget.modified.connect ((event) => (event_modified (event)));
