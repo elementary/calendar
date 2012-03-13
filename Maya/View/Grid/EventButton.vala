@@ -35,6 +35,20 @@ class EventButton : Gtk.Grid {
         label.hexpand = true;
         label.wrap = false;
     }
+
+    /**
+     * Compares the given buttons according to date.
+     */
+    public static CompareFunc<EventButton> compare_buttons = (button1, button2) => {
+        var comp1 = button1.comp;
+        var comp2 = button2.comp;
+
+        var date1 = Util.ical_to_date_time (comp1.get_icalcomponent ().get_dtstart ());
+        var date2 = Util.ical_to_date_time (comp2.get_icalcomponent ().get_dtstart ());
+
+        return date1.compare(date2);
+    };
+
 }
 
 }

@@ -21,10 +21,12 @@ namespace Maya.View {
  * TODO :
  * OK   - Events are written rather small, to fit a lot in the box,
  * OK   - As far as width goes: rather than wrapping the text of an event, it just falls out of the box,
- *      - As far as height goes: as many events as possible are left in the box, 
+ *          (Width changes if a long event name is present and the height is changed)
+ * OK   - As far as height goes: as many events as possible are left in the box, 
  *        with an "x additional events" notice at the bottom if necessary.
  *          (impossible with VBox? Seems to automatically assign enough space)
  *      - Style fixes
+ *      - Height: scrollbar appears from time to time, widget needs redraw?
  */
 
 /**
@@ -69,6 +71,7 @@ public class GridDay : Gtk.Viewport {
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
+        set_redraw_on_allocate (true);
         size_allocate.connect (update_widgets);
     }
 
@@ -83,7 +86,7 @@ public class GridDay : Gtk.Viewport {
 
         // Show the first 'max' widgets
         while (i < event_buttons.size && i < max) {
-            event_buttons.get(i).show ();
+            event_buttons.get(i).show_all ();
             i++;
         }
 
@@ -136,26 +139,13 @@ public class GridDay : Gtk.Viewport {
     public void add_event(E.CalComponent comp) {
         var button = new EventButton(comp);
         vbox.pack_start (button, false, false, 0);
-        vbox.show_all();
+        vbox.show();
 
         // TODO: efficiency
         event_buttons.add (button);
-        event_buttons.sort (compare_buttons);
+        event_buttons.sort (EventButton.compare_buttons);
         update_widgets ();        
     }
-
-    /**
-     * Compares the given buttons according to date.
-     */
-    CompareFunc<EventButton> compare_buttons = (button1, button2) => {
-        var comp1 = button1.comp;
-        var comp2 = button2.comp;
-
-        var date1 = Util.ical_to_date_time (comp1.get_icalcomponent ().get_dtstart ());
-        var date2 = Util.ical_to_date_time (comp2.get_icalcomponent ().get_dtstart ());
-
-        return date1.compare(date2);
-    };
 
     public void remove_event (E.CalComponent comp) {
         foreach(var button in event_buttons) {
