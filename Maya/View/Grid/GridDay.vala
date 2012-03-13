@@ -109,8 +109,25 @@ public class GridDay : Gtk.Viewport {
      * according to the current size.
      */
     int get_nr_of_events () {
-        // TODO: implement this
-        return 2;
+        // TODO: fix this so the scrollbar is never actually shown
+
+        Gtk.Allocation vbox_size;
+        vbox.get_allocation (out vbox_size);
+
+        // If no events are to be shown, just return 0
+        if (event_buttons.length () == 0)
+            return 0;
+
+        // Otherwise, measure the height of the first event
+        Gtk.Allocation event_size;
+        event_buttons.nth_data (0).get_allocation (out event_size);
+
+        int result = (vbox_size.height / (event_size.height + EVENT_MARGIN)) - 2;
+
+        stdout.printf ("RESULT = %d\n", result);
+
+        return result;
+
     }
 
     public void add_event(E.CalComponent comp) {
