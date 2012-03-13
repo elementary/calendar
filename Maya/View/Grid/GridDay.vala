@@ -105,7 +105,6 @@ public class GridDay : Gtk.Viewport {
             more_label.label = more.to_string () + " more...";
             more_label.show ();
         }
-
     }
     
     /**
@@ -139,7 +138,6 @@ public class GridDay : Gtk.Viewport {
     public void add_event(E.CalComponent comp) {
         var button = new EventButton(comp);
         vbox.pack_start (button, false, false, 0);
-        vbox.show();
 
         // TODO: efficiency
         event_buttons.add (button);
