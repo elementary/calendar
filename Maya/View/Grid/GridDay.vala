@@ -71,7 +71,6 @@ public class GridDay : Gtk.Viewport {
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
-        set_redraw_on_allocate (true);
         size_allocate.connect (update_widgets);
     }
 
@@ -125,11 +124,7 @@ public class GridDay : Gtk.Viewport {
         Gtk.Allocation event_size;
         event_buttons.get (0).get_allocation (out event_size);
 
-        stdout.printf ("vbox = %d\n", vbox_size.height);
-        stdout.printf ("event = %d\n", event_size.height);
         int result = (vbox_size.height / (event_size.height + EVENT_MARGIN)) - 2;
-
-        stdout.printf ("RESULT = %d\n", result);
 
         return result;
 
@@ -139,7 +134,6 @@ public class GridDay : Gtk.Viewport {
         var button = new EventButton(comp);
         vbox.pack_start (button, false, false, 0);
 
-        // TODO: efficiency
         event_buttons.add (button);
         event_buttons.sort (EventButton.compare_buttons);
         update_widgets ();        
