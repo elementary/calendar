@@ -178,7 +178,7 @@ namespace Maya {
 			hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
 			vbox.pack_start (toolbar, false, false, 0);
 			vbox.pack_end (hpaned);
-			hpaned.pack1 (calview, true, true);
+			hpaned.pack1 (calview, true, false);
 			hpaned.pack2 (sidebar, false, true);
 			hpaned.position = saved_state.hpaned_position;
 			window.add (vbox);
