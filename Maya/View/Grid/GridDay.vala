@@ -37,14 +37,14 @@ public class GridDay : Gtk.Viewport {
     Gtk.Label label;
     Gtk.Label more_label;
     Gtk.VBox vbox;
-    List<EventButton> event_buttons;
+    Gee.List<EventButton> event_buttons;
 
     private static const int EVENT_MARGIN = 3;
 
     public GridDay (DateTime date) {
 
         this.date = date;
-        event_buttons = new List<EventButton>();
+        event_buttons = new Gee.ArrayList<EventButton>();
 
         var style_provider = Util.Css.get_css_provider ();
 
@@ -69,6 +69,7 @@ public class GridDay : Gtk.Viewport {
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
+        size_allocate.connect (update_widgets);
     }
 
     /**
@@ -81,16 +82,16 @@ public class GridDay : Gtk.Viewport {
         int max = get_nr_of_events ();
 
         // Show the first 'max' widgets
-        while (i < event_buttons.length () && i < max) {
-            event_buttons.nth_data(i).show ();
+        while (i < event_buttons.size && i < max) {
+            event_buttons.get(i).show ();
             i++;
         }
 
-        uint more = event_buttons.length () - i;
+        uint more = event_buttons.size - i;
 
-        // Hide the rest of the events
-        while (i < event_buttons.length ()) {
-            event_buttons.nth_data(i).hide ();
+        // Hide the rest of the events	
+        while (i < event_buttons.size	) {
+            event_buttons.get(i).hide ();
             i++;
         }
 
@@ -112,16 +113,18 @@ public class GridDay : Gtk.Viewport {
         // TODO: fix this so the scrollbar is never actually shown
 
         Gtk.Allocation vbox_size;
-        vbox.get_allocation (out vbox_size);
+        this.get_allocation (out vbox_size);
 
         // If no events are to be shown, just return 0
-        if (event_buttons.length () == 0)
+        if (event_buttons.size == 0)
             return 0;
 
         // Otherwise, measure the height of the first event
         Gtk.Allocation event_size;
-        event_buttons.nth_data (0).get_allocation (out event_size);
+        event_buttons.get (0).get_allocation (out event_size);
 
+        stdout.printf ("vbox = %d\n", vbox_size.height);
+        stdout.printf ("event = %d\n", event_size.height);
         int result = (vbox_size.height / (event_size.height + EVENT_MARGIN)) - 2;
 
         stdout.printf ("RESULT = %d\n", result);
@@ -135,7 +138,9 @@ public class GridDay : Gtk.Viewport {
         vbox.pack_start (button, false, false, 0);
         vbox.show_all();
 
-        event_buttons.insert_sorted (button, compare_buttons);
+        // TODO: efficiency
+        event_buttons.add (button);
+        event_buttons.sort (compare_buttons);
         update_widgets ();        
     }
 
@@ -168,6 +173,7 @@ public class GridDay : Gtk.Viewport {
             button.destroy();
             update_widgets ();
         }
+        event_buttons.clear ();			
     }
 
     public void update_date (DateTime date) {
