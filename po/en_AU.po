@@ -6,24 +6,70 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-06-07 07:54-0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-16 00:16+0100\n"
 "PO-Revision-Date: 2011-06-13 00:23+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-03-12 04:53+0000\n"
 "X-Generator: Launchpad (build 14933)\n"
 
-#: ../data/maya.desktop.in.h:1
-msgid "Fast calendar that syncs with popular online services"
-msgstr "Fast calendar that syncs with popular online services"
+msgid "%A, %b %d"
+msgstr ""
 
-#: ../data/maya.desktop.in.h:2
-msgid "Maya Calendar"
-msgstr "Maya Calendar"
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+#. Dialog properties
+msgid "Add Event"
+msgstr ""
+
+msgid "All day:"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Create Event"
+msgstr ""
+
+#. Dialog Properties
+msgid "Edit Event"
+msgstr ""
+
+msgid "From:"
+msgstr ""
+
+msgid "Guests"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Name of Event"
+msgstr ""
+
+msgid "Name or Email Address"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "To:"
+msgstr ""
 
 #. label settings
 msgid ""
@@ -32,3 +78,15 @@ msgid ""
 msgstr ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
+
+msgid "all the day"
+msgstr ""
+
+msgid "at"
+msgstr ""
+
+#~ msgid "Fast calendar that syncs with popular online services"
+#~ msgstr "Fast calendar that syncs with popular online services"
+
+#~ msgid "Maya Calendar"
+#~ msgstr "Maya Calendar"
