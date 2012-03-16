@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-04 23:28+0100\n"
+"POT-Creation-Date: 2012-03-16 17:17+0100\n"
 "PO-Revision-Date: 2011-07-29 07:21+0000\n"
 "Last-Translator: DaashAli <ali.sarchami@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -18,12 +18,71 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-12 04:53+0000\n"
 "X-Generator: Launchpad (build 14933)\n"
 
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+#. Dialog properties
+msgid "Add Event"
+msgstr ""
+
+msgid "All day:"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Create Event"
+msgstr ""
+
+#. Dialog Properties
+msgid "Edit Event"
+msgstr ""
+
+msgid "From:"
+msgstr ""
+
+msgid "Guests"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Name of Event"
+msgstr ""
+
+msgid "Name or Email Address"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "To:"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "در صورت انتخاب روز دارای وقایع، وقایع پیش‌رو در این قسمت نمایش داده می‌شوند."
+
+msgid "all the day"
+msgstr ""
+
+msgid "at"
+msgstr ""
 
 #~ msgid "Fast calendar that syncs with popular online services"
 #~ msgstr "تقویمی سریع که با سرویسهای آنلاین محبوب همگام می‌گردد"

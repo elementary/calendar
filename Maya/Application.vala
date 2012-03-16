@@ -130,11 +130,14 @@ namespace Maya {
          */
         void init_prefs () {
 
+            
+            
 			saved_state = new Settings.SavedState ();
 			saved_state.changed["show-weeks"].connect (on_saved_state_show_weeks_changed);
 
 			prefs = new Settings.MayaSettings ();
 			prefs.changed["week-starts-on"].connect (on_prefs_week_starts_on_changed);
+            
         }
 
         /**
