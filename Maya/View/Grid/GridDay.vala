@@ -27,6 +27,7 @@ namespace Maya.View {
  *          (impossible with VBox? Seems to automatically assign enough space)
  *      - Style fixes
  *      - Height: scrollbar appears from time to time, widget needs redraw?
+ *      - Width still behaves weird with long events?
  */
 
 /**
@@ -111,8 +112,6 @@ public class GridDay : Gtk.Viewport {
      * according to the current size.
      */
     int get_nr_of_events () {
-        // TODO: fix this so the scrollbar is never actually shown
-
         Gtk.Allocation vbox_size;
         this.get_allocation (out vbox_size);
 
