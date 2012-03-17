@@ -244,7 +244,7 @@ namespace Maya.View {
 		    var guest_box = make_vbox ();
 		    
 		    var guest_label = make_label (_("Guests"));
-			var guest = new Granite.Widgets.HintedEntry (_("Name or Email Address"));
+			var guest = new Maya.View.Widgets.GuestEntry ();
 			
 			guest_box.add (guest_label);
 			guest_box.add (guest);
