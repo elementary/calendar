@@ -112,7 +112,8 @@ public class GridDay : Gtk.Viewport {
      * according to the current size.
      */
     int get_nr_of_events () {
-        Gtk.Allocation vbox_size;
+        // TODO: implement this
+/*        Gtk.Allocation vbox_size;
         this.get_allocation (out vbox_size);
 
         // If no events are to be shown, just return 0
@@ -126,7 +127,8 @@ public class GridDay : Gtk.Viewport {
         int result = (vbox_size.height / (event_size.height + EVENT_MARGIN)) - 2;
 
         return result;
-
+*/
+        return 100;
     }
 
     public void add_event(E.CalComponent comp) {

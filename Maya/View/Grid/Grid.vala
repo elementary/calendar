@@ -53,13 +53,7 @@ public class Grid : Gtk.Table {
             var day = new GridDay (date);
             data.set (date, day);
 
-            var scrolled_window = new Gtk.ScrolledWindow (null, null);
-            scrolled_window.hscrollbar_policy = Gtk.PolicyType.NEVER;
-            scrolled_window.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
-            scrolled_window.add (day);
-
-            attach_defaults (scrolled_window, col, col + 1, row, row + 1);
-
+            attach_defaults (day, col, col + 1, row, row + 1);
             day.focus_in_event.connect ((event) => {
                 on_day_focus_in(day);
                 return false;
