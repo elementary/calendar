@@ -25,6 +25,7 @@ namespace Maya.View {
         Gtk.Entry title_entry;
         Granite.Widgets.HintedEntry location_entry;
         Gtk.TextView comment;
+        Maya.View.Widgets.GuestEntry guest;
         Granite.Widgets.DatePicker from_date_picker;
         Granite.Widgets.DatePicker to_date_picker;
         Gtk.Switch allday;
@@ -111,12 +112,31 @@ namespace Maya.View {
 
             comp.set_dtend (dt_end);
 
-            // TODO: save guests, comments, location
-
             // Save the location
             string location = location_entry.text;
 
             comp.set_location (location);
+
+            // Save the guests
+            // First, clear the guests
+            int count = comp.count_properties (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
+            
+            for (int i = 0; i < count; i++) {
+                unowned iCal.icalproperty property = comp.get_first_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
+
+                comp.remove_property (property);
+            }
+
+            // Add the new guests
+            Gee.ArrayList<string> addresses = guest.get_addresses ();
+
+            foreach (string address in addresses) {
+                iCal.icalproperty property = new iCal.icalproperty (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
+                property.set_attendee (address);
+                comp.add_property (property);
+            }
+
+            // TODO: save comments
         }
 
 		//--- Helpers ---//
@@ -164,14 +184,25 @@ namespace Maya.View {
 		            to_time_picker.sensitive = false;
                 }
             }
-           
 
             // Load the location
             string location = comp.get_location ();
             if (location != null)
                 location_entry.text = location;
 
-            // TODO: load guests, comments, all day toggle
+            // Load the guests
+            int count = comp.count_properties (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
+
+            unowned iCal.icalproperty property = comp.get_first_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
+            for (int i = 0; i < count; i++) {
+
+                if (property.get_attendee () != null)
+                    guest.add_address (property.get_attendee ());
+
+                property = comp.get_next_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
+            }
+
+            // TODO: load comments
 
         }
 
@@ -244,7 +275,7 @@ namespace Maya.View {
 		    var guest_box = make_vbox ();
 		    
 		    var guest_label = make_label (_("Guests"));
-			var guest = new Maya.View.Widgets.GuestEntry ();
+			guest = new Maya.View.Widgets.GuestEntry ();
 			
 			guest_box.add (guest_label);
 			guest_box.add (guest);

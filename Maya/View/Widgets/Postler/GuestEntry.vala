@@ -31,6 +31,17 @@ namespace Maya.View.Widgets {
             return real_text;
         }
 
+        public Gee.ArrayList<string> get_addresses () {
+            Gee.ArrayList<string> result = new Gee.ArrayList<string> ();
+
+            foreach (var button in get_children ()) {
+                if (button.tooltip_text != null)
+                    result.add (button.tooltip_text);
+            }
+
+            return result;
+        }
+
         public GuestEntry () {
             entry = new Gtk.Entry ();
             entry.show ();
@@ -45,6 +56,7 @@ namespace Maya.View.Widgets {
             entry.set_completion (completion);
             entry.changed.connect (changed);
             entry.focus_out_event.connect ((widget, event) => {
+                entry.text = entry.text + ",";
                 buttonize_text ();
                 return false;
             });
@@ -83,7 +95,7 @@ namespace Maya.View.Widgets {
             return false;
         }
 
-        void add_address (string address) {
+        public void add_address (string address) {
             if (address == "")
                 return;
 
