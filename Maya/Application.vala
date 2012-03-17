@@ -170,6 +170,7 @@ namespace Maya {
             sidebar.event_removed.connect (on_remove);
             sidebar.event_modified.connect (on_modified);
             sidebar.agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
+            sidebar.set_size_request(200,0);
 
             calview.grid.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
@@ -180,7 +181,7 @@ namespace Maya {
 			vbox.pack_start (toolbar, false, false, 0);
 			vbox.pack_end (hpaned);
 			hpaned.pack1 (calview, true, false);
-			hpaned.pack2 (sidebar, false, true);
+			hpaned.pack2 (sidebar, false, false);
 			hpaned.position = saved_state.hpaned_position;
 			window.add (vbox);
 

@@ -41,23 +41,21 @@ namespace Maya.View {
 			get_style_context ().add_class ("primary-toolbar"); // compliant with elementary HIG
 
 			// Initialize everything
-			button_add = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add", "Create a new event");
+			button_add = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add", _("Create a new event"));
 
-			edit_button = make_toolbutton ("edit", "Edit the selected event", false);
-			delete_button = make_toolbutton ("edit-delete", "Delete the selected event", false);
+			edit_button = make_toolbutton ("edit", _("Edit the selected event"), false);
+			delete_button = make_toolbutton ("edit-delete", _("Delete the selected event"), false);
 
-            button_calendar_sources = make_toolbutton ("gtk-index", "Select calendars to display", true);
+            button_calendar_sources = make_toolbutton ("gtk-index", _("Select calendars to display"), true);
 
 			month_switcher = new Widgets.DateSwitcher (10);
 			year_switcher = new Widgets.DateSwitcher (-1);
             set_switcher_date (target);
 
-			search_bar = new Granite.Widgets.SearchBar ("Search For Events..");
+			search_bar = new Granite.Widgets.SearchBar (_("Search For Events.."));
             search_bar.sensitive = false;
 
-			contractor = new Widgets.ContractorButtonWithMenu ();
-			contractor.set_sensitive (false);
-			contractor.tooltip_text = "Share the selected eventmake";
+			contractor = new Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
 
             menu = new MayaMenu ();
 			app_menu = new Granite.Widgets.AppMenu (menu);
@@ -78,7 +76,8 @@ namespace Maya.View {
 
 			insert (button_calendar_sources, -1);
 
-			//insert (contractor, -1);
+			insert (contractor, -1);
+
 			insert (app_menu, -1);
 		}
 

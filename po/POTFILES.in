@@ -3,3 +3,5 @@ Maya/View/Sidebar/Sidebar.vala
 Maya/Settings/LanguagesFormat.vala
 Maya/View/Sidebar/EventWidget.vala
 Maya/View/EventDialog.vala
+Maya/View/MayaToolbar.vala
+Maya/View/MayaMenu.vala
