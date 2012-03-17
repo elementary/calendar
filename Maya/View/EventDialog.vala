@@ -122,19 +122,33 @@ namespace Maya.View {
             int count = comp.count_properties (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
             
             for (int i = 0; i < count; i++) {
-                unowned iCal.icalproperty property = comp.get_first_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
+                unowned iCal.icalproperty remove_prop = comp.get_first_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
 
-                comp.remove_property (property);
+                comp.remove_property (remove_prop);
             }
 
             // Add the new guests
             Gee.ArrayList<string> addresses = guest.get_addresses ();
-
+            iCal.icalproperty property;
             foreach (string address in addresses) {
-                iCal.icalproperty property = new iCal.icalproperty (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
+                property = new iCal.icalproperty (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
                 property.set_attendee (address);
                 comp.add_property (property);
             }
+
+            // First, clear the comments
+            count = comp.count_properties (iCal.icalproperty_kind.COMMENT_PROPERTY);
+            
+            for (int i = 0; i < count; i++) {
+                unowned iCal.icalproperty remove_prop = comp.get_first_property (iCal.icalproperty_kind.COMMENT_PROPERTY);
+
+                comp.remove_property (remove_prop);
+            }
+
+            // Add the comment
+            property = new iCal.icalproperty (iCal.icalproperty_kind.COMMENT_PROPERTY);
+            property.set_comment (comment.get_buffer ().text);
+            comp.add_property (property);
 
             // TODO: save comments
         }
@@ -203,7 +217,13 @@ namespace Maya.View {
             }
 
             // TODO: load comments
+            property = comp.get_first_property (iCal.icalproperty_kind.COMMENT_PROPERTY);
 
+            if (property != null) {
+                Gtk.TextBuffer buffer = new Gtk.TextBuffer (null);
+                buffer.text = property.get_comment ();
+                comment.set_buffer (buffer);
+            }    
         }
 
 		void build_dialog () {
