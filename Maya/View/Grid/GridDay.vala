@@ -20,7 +20,7 @@ namespace Maya.View {
 /**
  * Represents a single day on the grid.
  */
-public class GridDay : Gtk.Viewport {
+public class GridDay : Gtk.EventBox {
 
     public DateTime date { get; private set; }
 
