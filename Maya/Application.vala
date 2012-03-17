@@ -130,8 +130,6 @@ namespace Maya {
          */
         void init_prefs () {
 
-            
-            
 			saved_state = new Settings.SavedState ();
 			saved_state.changed["show-weeks"].connect (on_saved_state_show_weeks_changed);
 
@@ -344,11 +342,13 @@ namespace Maya {
         }
 
         void on_prefs_week_starts_on_changed () {
-            calmodel.week_starts_on = prefs.week_starts_on;
+            if (calmodel != null)
+                calmodel.week_starts_on = prefs.week_starts_on;
         }
 
         void on_saved_state_show_weeks_changed () {
-            if (calview != null) calview.show_weeks = saved_state.show_weeks;
+            if (calview != null)
+                calview.show_weeks = saved_state.show_weeks;
         }
 
         bool on_window_delete_event (Gdk.EventAny event) {
