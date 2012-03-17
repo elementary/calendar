@@ -21,6 +21,16 @@
 			<summary>The day the week starts on.</summary>
 			<description>The day the week starts on.</description>
 		</key>
+		<key name="primary-calendar" type="s">
+			<default>""</default>
+			<summary>The default calendar.</summary>
+			<description>The default calendar.</description>
+		</key>
+		<key name="selected-calendars" type="s">
+			<default>""</default>
+			<summary>The selected calendars.</summary>
+			<description>The selected calendars.</description>
+		</key>
 	</schema>
 	<schema path="/apps/maya/saved-state/" id="org.elementary.Maya.SavedState" gettext-domain="maya">
 		<key name="window-width" type="i">

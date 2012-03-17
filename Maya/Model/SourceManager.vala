@@ -112,9 +112,18 @@ public class SourceManager: GLib.Object {
     void add_source (E.SourceGroup group, E.Source source) {
 
         debug("Adding source '%s'", source.peek_name());
-
         group_sources.set (group, source);
-        source_enabled.set (source, true);
+
+        // Load Sources from preferences
+        var prefs = new Settings.MayaSettings ();
+        string[] calendars = prefs.selected_calendars.split(";");
+        source_enabled.set (source, false);
+        for (int i=0; i<calendars.length;i++) {
+            if (calendars[i] == source.peek_uid())
+                source_enabled.set (source, true);
+                
+        }
+        
 
         var tree_model = _group_tree_model [group] as Gtk.TreeModelSort;
         var list_store = tree_model.get_model () as Gtk.ListStore;
@@ -129,6 +138,9 @@ public class SourceManager: GLib.Object {
     void remove_source (E.SourceGroup group, E.Source source) {
 
         debug("Removing source '%s'", source.peek_name());
+        var prefs = new Settings.MayaSettings ();
+        // Delete sources from preferences
+        prefs.selected_calendars = prefs.selected_calendars.replace (source.peek_uid ()+";", "");
 
         group_sources.remove (group, source);
         source_enabled.unset (source, null);
@@ -231,6 +243,13 @@ public class SourceManager: GLib.Object {
         var source = (v as E.Source);
         bool new_status = ! source_enabled [source];
         source_enabled.set (source, new_status);
+        
+        // Load Sources from preferences
+        var prefs = new Settings.MayaSettings ();
+        if (new_status)
+            prefs.selected_calendars = prefs.selected_calendars + source.peek_uid () + ";";
+        else
+            prefs.selected_calendars = prefs.selected_calendars.replace (source.peek_uid () + ";", "");
 
         debug("Source '%s' [enabled=%s]", source.peek_name(), new_status.to_string());
 

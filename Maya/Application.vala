@@ -135,6 +135,7 @@ namespace Maya {
 
 			prefs = new Settings.MayaSettings ();
 			prefs.changed["week-starts-on"].connect (on_prefs_week_starts_on_changed);
+            
         }
 
         /**
@@ -169,6 +170,7 @@ namespace Maya {
             sidebar.event_removed.connect (on_remove);
             sidebar.event_modified.connect (on_modified);
             sidebar.agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
+            sidebar.set_size_request(200,0);
 
             calview.grid.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
@@ -178,8 +180,8 @@ namespace Maya {
 			hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
 			vbox.pack_start (toolbar, false, false, 0);
 			vbox.pack_end (hpaned);
-			hpaned.pack1 (calview, true, true);
-			hpaned.pack2 (sidebar, false, true);
+			hpaned.pack1 (calview, true, false);
+			hpaned.pack2 (sidebar, false, false);
 			hpaned.position = saved_state.hpaned_position;
 			window.add (vbox);
 
@@ -341,11 +343,13 @@ namespace Maya {
         }
 
         void on_prefs_week_starts_on_changed () {
-            calmodel.week_starts_on = prefs.week_starts_on;
+            if (calmodel != null)
+                calmodel.week_starts_on = prefs.week_starts_on;
         }
 
         void on_saved_state_show_weeks_changed () {
-            if (calview != null) calview.show_weeks = saved_state.show_weeks;
+            if (calview != null)
+                calview.show_weeks = saved_state.show_weeks;
         }
 
         bool on_window_delete_event (Gdk.EventAny event) {

@@ -54,7 +54,6 @@ public class Grid : Gtk.Table {
             data.set (date, day);
 
             attach_defaults (day, col, col + 1, row, row + 1);
-
             day.focus_in_event.connect ((event) => {
                 on_day_focus_in(day);
                 return false;

@@ -24,13 +24,13 @@ namespace Maya.View {
     public class EventWidget : Gtk.EventBox {
         
         // A label displaying the name of the event
-        Gtk.Label name_label;
+        Granite.Widgets.WrapLabel name_label;
 
         // A label displaying the start date of the event
-        Gtk.Label date_label;
+        Granite.Widgets.WrapLabel date_label;
 
         // A label displaying the location of the event
-        Gtk.Label location_label;
+        Granite.Widgets.WrapLabel location_label;
 
         // A Grid containing the labels
         Gtk.Grid grid;
@@ -63,16 +63,16 @@ namespace Maya.View {
 
             grid = new Gtk.Grid ();
 
-            name_label = new Gtk.Label ("");
+            name_label = new Granite.Widgets.WrapLabel ("");
             name_label.set_hexpand(true);
             name_label.set_alignment (0, 0.5f);
             grid.attach (name_label, 0, 0, 1, 1);
 
-            date_label = new Gtk.Label ("");
+            date_label = new Granite.Widgets.WrapLabel ("");
             date_label.set_alignment (0, 0.5f);
             grid.attach (date_label, 0, 1, 3, 1);
 
-            location_label = new Gtk.Label ("");
+            location_label = new Granite.Widgets.WrapLabel ("");
             location_label.set_alignment (0, 0.5f);
             location_label.no_show_all = true;
             grid.attach (location_label, 0, 2, 3, 1);

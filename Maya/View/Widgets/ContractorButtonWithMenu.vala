@@ -22,9 +22,9 @@ namespace Maya.View.Widgets {
 		private Maya.Services.Contractor contract;
 		private HashTable<string,string>[] services;
 
-		public ContractorButtonWithMenu () {
+		public ContractorButtonWithMenu (string tooltiptext) {
 
-		    base (new Gtk.Image.from_icon_name ("document-export", Gtk.IconSize.MENU), "Share", new Gtk.Menu());
+		    base (new Gtk.Image.from_icon_name ("document-export", Gtk.IconSize.MENU), tooltiptext, new Gtk.Menu());
 
 			// try to connect
 			try {

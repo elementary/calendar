@@ -251,13 +251,14 @@ namespace Maya.View {
 			
 			var comment_box = new Gtk.VBox (false, 0);
 			comment_box.margin_bottom = 20;
+            comment_box.vexpand = true;
 			
 			var comment_label = make_label (_("Comments"));
-			comment_box.add (comment_label);
+			comment_box.pack_start (comment_label, false, false, 0);
 			
 			comment = new Gtk.TextView ();
 			comment.height_request = 100;
-			comment_box.add (comment);
+			comment_box.pack_start (comment, true, true, 0);
 		    
 		    container.add (from);
 		    container.add (from_box);

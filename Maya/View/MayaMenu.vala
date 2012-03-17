@@ -32,31 +32,18 @@ namespace Maya.View {
 		public MayaMenu () {
 
 			// Create everything
-			today = new Gtk.MenuItem.with_label ("Today");
+			today = new Gtk.MenuItem.with_label (_("Today"));
 
-			import = new Gtk.MenuItem.with_label ("Import...");
+			fullscreen = new Gtk.CheckMenuItem.with_label (_("Fullscreen"));
 
-			var export_submenu = new Gtk.Menu ();
-			var outlook = new Gtk.MenuItem.with_label ("To Outlook (.csv)");
-			var ical = new Gtk.MenuItem.with_label ("To iCal (.ics)");
-			export_submenu.append (outlook);
-			export_submenu.append (ical);
-			export = new Gtk.MenuItem.with_label ("Export...");
-			export.set_submenu (export_submenu);
+			weeknumbers = new Gtk.CheckMenuItem.with_label (_("Show Week Numbers"));
 
-			fullscreen = new Gtk.CheckMenuItem.with_label ("Fullscreen");
+			import = new Gtk.MenuItem.with_label (_("Import..."));
 
-			weeknumbers = new Gtk.CheckMenuItem.with_label ("Show Week Numbers");
-
-			sync = new Gtk.MenuItem.with_label ("Sync...");
+			sync = new Gtk.MenuItem.with_label (_("Sync..."));
 
 			// Append in correct order
 			append (today);
-
-			append (new Gtk.SeparatorMenuItem ());
-
-			append (import);
-			append (export);
 
 			append (new Gtk.SeparatorMenuItem ());
 
@@ -65,6 +52,7 @@ namespace Maya.View {
 
 			append (new Gtk.SeparatorMenuItem ());
 
+			append (import);
 			append (sync);
 		}
 

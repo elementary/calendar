@@ -21,7 +21,7 @@ namespace Maya.View {
  * Represents a single event on the grid.
  */
 class EventButton : Gtk.Grid {
-    public E.CalComponent comp;
+    public E.CalComponent comp {get; private set;}
     
     Gtk.Label label;
 
@@ -33,7 +33,19 @@ class EventButton : Gtk.Grid {
         label = new Granite.Widgets.WrapLabel(ct.value);
         add (label);
         label.hexpand = true;
+        label.wrap = false;
     }
+
+    /**
+     * Compares the given buttons according to date.
+     */
+    public static CompareFunc<EventButton> compare_buttons = (button1, button2) => {
+        var comp1 = button1.comp;
+        var comp2 = button2.comp;
+
+        return Util.compare_events (comp1, comp2);
+    };
+
 }
 
 }
