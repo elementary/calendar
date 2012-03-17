@@ -115,6 +115,7 @@ namespace Maya.View {
 
             update_widget_for (event);
 
+            reorder_widgets ();
             update_visibility ();
         }
 
@@ -148,8 +149,29 @@ namespace Maya.View {
                 event_widgets.get (event).update (event);
             }
 
+            reorder_widgets ();
             update_visibility ();
         }
+
+        void reorder_widgets () {
+            // Sort events list
+            events.sort (compare_comps);
+
+            foreach (var event in events) {
+                bool has_widget = event_widgets.has_key (event);
+
+                if (has_widget) {
+                    reorder_child (event_widgets.get (event), -1);
+                }
+            }
+        }
+
+        /**
+         * Compares the given buttons according to date.
+         */
+        static CompareFunc<E.CalComponent> compare_comps = (comp1, comp2) => {
+            return Util.compare_events (comp1, comp2);
+        };
 
         /**
          * Called when the selected date in the calendarview is changed.
