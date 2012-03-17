@@ -85,11 +85,6 @@ namespace Maya.View.Widgets {
         void add_address (string address) {
             if (address == "")
                 return;
-            /* Don't turn invalid addresses into buttons */
-            if (!address.contains ("@") || address.has_suffix ("@")) {
-                entry.text = entry.text + (entry.text != "" ? "," : "") + address;
-                return;
-            }
 
             var box = new Gtk.HBox (false, 0);
             var label = new Gtk.Label (Contact.name_from_string (address));
@@ -136,12 +131,10 @@ namespace Maya.View.Widgets {
         }
 
         void buttonize_text () {
-            if (entry.text.chr (-1, '@') != null) {
-                string[] addresses = entry.text.split (",");
-                entry.text = "";
-                foreach (string address in addresses)
-                    add_address (address);
-            }
+            string[] addresses = entry.text.split (",");
+            entry.text = "";
+            foreach (string address in addresses)
+                add_address (address);
         }
 
         void changed (Gtk.Editable editable) {
