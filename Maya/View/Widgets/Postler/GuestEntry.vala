@@ -57,6 +57,7 @@ namespace Maya.View.Widgets {
                     string address = last_button.get_tooltip_text ();
                     last_button.destroy ();
                     entry.text = entry.text + (entry.text != "" ? "," : "") + address;
+                    entry.set_position (-1);
                 }
             });
             entry.delete_from_cursor.connect ((entry, type, count) => {
