@@ -141,7 +141,7 @@ public class CalendarView : Gtk.HBox {
         }
     }
 
-    /* TODO: Render new event on the grid */
+    /* Render new event on the grid */
     void add_event (E.Source source, E.CalComponent event) {
 
         E.CalComponentDateTime date_time;
@@ -151,18 +151,18 @@ public class CalendarView : Gtk.HBox {
         grid.add_event_for_time (dt, event);
     }
 
-    /* TODO: Update the event on the grid */
+    /* Update the event on the grid */
     void update_event (E.Source source, E.CalComponent event) {
         remove_event (source, event);
         add_event (source, event);
     }
 
-    /* TODO: Remove event from the grid */
+    /* Remove event from the grid */
     void remove_event (E.Source source, E.CalComponent event) {
         grid.remove_event (event);
     }
 
-    /* TODO: Remove all events from the grid */
+    /* Remove all events from the grid */
     void remove_all_events () {
         grid.remove_all_events ();
     }
