@@ -40,7 +40,7 @@ namespace Maya.View {
 	    public Sidebar (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
 
 			scrolled_window = new Gtk.ScrolledWindow (null, null);
-			scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
+			scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
 			scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
 
             label_box = new Gtk.EventBox ();

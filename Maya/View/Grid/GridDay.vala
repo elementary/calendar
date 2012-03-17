@@ -18,29 +18,45 @@
 namespace Maya.View {
 
 /**
+ * TODO :
+ * OK   - Events are written rather small, to fit a lot in the box,
+ * OK   - As far as width goes: rather than wrapping the text of an event, it just falls out of the box,
+ *          (Width changes if a long event name is present and the height is changed)
+ * OK   - As far as height goes: as many events as possible are left in the box, 
+ *        with an "x additional events" notice at the bottom if necessary.
+ *          (impossible with VBox? Seems to automatically assign enough space)
+ *      - Style fixes
+ *      - Height: scrollbar appears from time to time, widget needs redraw?
+ *      - Width still behaves weird with long events?
+ */
+
+/**
  * Represents a single day on the grid.
  */
-public class GridDay : Gtk.EventBox {
+public class GridDay : Gtk.Viewport {
 
     public DateTime date { get; private set; }
 
     Gtk.Label label;
+    Gtk.Label more_label;
     Gtk.VBox vbox;
-    List<EventButton> event_buttons;
+    Gee.List<EventButton> event_buttons;
+
+    private static const int EVENT_MARGIN = 3;
 
     public GridDay (DateTime date) {
 
         this.date = date;
-        event_buttons = new List<EventButton>();
+        event_buttons = new Gee.ArrayList<EventButton>();
 
         var style_provider = Util.Css.get_css_provider ();
 
         vbox = new Gtk.VBox (false, 0);
         label = new Gtk.Label ("");
+        more_label = new Gtk.Label ("");
 
         // EventBox Properties
         can_focus = true;
-        set_visible_window (true);
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         get_style_context ().add_provider (style_provider, 600);
         get_style_context ().add_class ("cell");
@@ -50,26 +66,86 @@ public class GridDay : Gtk.EventBox {
         label.name = "date";
         vbox.pack_start (label, false, false, 0);
 
-        add (Util.set_margins (vbox, 3, 3, 3, 3));
+        vbox.pack_end (more_label, false, false, 0);
+
+        add (Util.set_margins (vbox, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN));
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
-        draw.connect (on_draw);
+        size_allocate.connect (update_widgets);
+    }
+
+    /**
+     * Updates the widgets according to the number of events that should be displayed.
+     *
+     * This involves showing/hiding events and the 'x more events' label.
+     */
+    void update_widgets () {
+        int i = 0;
+        int max = get_nr_of_events ();
+
+        // Show the first 'max' widgets
+        while (i < event_buttons.size && i < max) {
+            event_buttons.get(i).show_all ();
+            i++;
+        }
+
+        uint more = event_buttons.size - i;
+
+        // Hide the rest of the events	
+        while (i < event_buttons.size	) {
+            event_buttons.get(i).hide ();
+            i++;
+        }
+
+        // Hide / show the label indicating that there are more events
+        if (more == 0)
+            more_label.hide ();
+        else {
+            more_label.label = more.to_string () + " more...";
+            more_label.show ();
+        }
     }
     
+    /**
+     * Returns the number of events that can be displayed in a single GridDay
+     * according to the current size.
+     */
+    int get_nr_of_events () {
+        // TODO: implement this
+/*        Gtk.Allocation vbox_size;
+        this.get_allocation (out vbox_size);
+
+        // If no events are to be shown, just return 0
+        if (event_buttons.size == 0)
+            return 0;
+
+        // Otherwise, measure the height of the first event
+        Gtk.Allocation event_size;
+        event_buttons.get (0).get_allocation (out event_size);
+
+        int result = (vbox_size.height / (event_size.height + EVENT_MARGIN)) - 2;
+
+        return result;
+*/
+        return 100;
+    }
+
     public void add_event(E.CalComponent comp) {
         var button = new EventButton(comp);
         vbox.pack_start (button, false, false, 0);
-        vbox.show_all();
-        event_buttons.append(button);
-        
+
+        event_buttons.add (button);
+        event_buttons.sort (EventButton.compare_buttons);
+        update_widgets ();        
     }
-    
+
     public void remove_event (E.CalComponent comp) {
         foreach(var button in event_buttons) {
             if(comp == button.comp) {
                 event_buttons.remove(button);
                 button.destroy();
+                update_widgets ();
                 break;
             }
         }
@@ -78,7 +154,9 @@ public class GridDay : Gtk.EventBox {
     public void clear_events () {
         foreach(var button in event_buttons) {
             button.destroy();
+            update_widgets ();
         }
+        event_buttons.clear ();			
     }
 
     public void update_date (DateTime date) {
@@ -91,29 +169,6 @@ public class GridDay : Gtk.EventBox {
 
         grab_focus ();
         return true;
-    }
-
-    private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
-
-        Gtk.Allocation size;
-        widget.get_allocation (out size);
-
-        // Draw left and top black strokes
-        cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
-        cr.line_to (0.5, 0.5); // move to upper left corner
-        cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
-
-        cr.set_source_rgba (0.0, 0.0, 0.0, 0.95);
-        cr.set_line_width (1.0);
-        cr.set_antialias (Cairo.Antialias.NONE);
-        cr.stroke ();
-
-        // Draw inner highlight stroke
-        cr.rectangle (1.5, 1.5, size.width - 1.5, size.height - 1.5);
-        cr.set_source_rgba (1.0, 1.0, 1.0, 0.2);
-        cr.stroke ();
-
-        return false;
     }
 }
 
