@@ -162,8 +162,8 @@ namespace Maya.View.Widgets {
 
         async void autocomplete (string input, Gtk.ListStore model) {
             try {
-                var client = new Postler.Client ();
-                string[] contacts = yield client.autocomplete (input);
+                var client = new Maya.Services.Dexter ();
+                string[] contacts = client.autocomplete_contact (input);
                 foreach (string contact in contacts) {
                     Gtk.TreeIter iter;
                     model.append (out iter);

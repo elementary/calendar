@@ -18,56 +18,23 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-12 04:53+0000\n"
 "X-Generator: Launchpad (build 14933)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"در صورت انتخاب روز دارای وقایع، وقایع پیش‌رو در این قسمت نمایش داده می‌شوند."
-
-msgid "%B %e, %Y"
-msgstr ""
-
 msgid "%A, %b %d"
 msgstr ""
 
-msgid "%l:%M %p"
+msgid "%B %e, %Y"
 msgstr ""
 
 msgid "%H:%M"
 msgstr ""
 
-msgid "all the day"
+msgid "%l:%M %p"
 msgstr ""
 
-msgid "at"
-msgstr ""
-
-msgid "From:"
+#. Dialog properties
+msgid "Add Event"
 msgstr ""
 
 msgid "All day:"
-msgstr ""
-
-msgid "To:"
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "Name of Event"
-msgstr ""
-
-msgid "Location"
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Guests"
-msgstr ""
-
-msgid "Name or Email Address"
 msgstr ""
 
 msgid "Comments"
@@ -76,12 +43,45 @@ msgstr ""
 msgid "Create Event"
 msgstr ""
 
-#. Dialog properties
-msgid "Add Event"
-msgstr ""
-
 #. Dialog Properties
 msgid "Edit Event"
+msgstr ""
+
+msgid "From:"
+msgstr ""
+
+msgid "Guests"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Name of Event"
+msgstr ""
+
+msgid "Name or Email Address"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "To:"
+msgstr ""
+
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"در صورت انتخاب روز دارای وقایع، وقایع پیش‌رو در این قسمت نمایش داده می‌شوند."
+
+msgid "all the day"
+msgstr ""
+
+msgid "at"
 msgstr ""
 
 #~ msgid "Fast calendar that syncs with popular online services"

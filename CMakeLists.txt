@@ -122,7 +122,6 @@ vala_precompile(VALA_C
     Maya/View/Widgets/Postler/GuestEntry.vala
     Maya/View/Widgets/Postler/FlowBox.vala
     Maya/View/Widgets/Postler/Contact.vala
-    Maya/View/Widgets/Postler/PostlerClient.vala
 PACKAGES
     gconf-2.0
     gee-1.0
