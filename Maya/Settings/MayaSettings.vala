@@ -32,6 +32,10 @@ namespace Maya.Settings {
 
 		public Weekday week_starts_on { get; set; }
 
+        public string primary_calendar { get; set; }
+
+        public string selected_calendars { get; set; }
+
 		public MayaSettings () {
 			base ("org.elementary.Maya.Settings");
 		}
