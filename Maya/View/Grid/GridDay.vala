@@ -64,6 +64,11 @@ public class GridDay : Gtk.EventBox {
 
         event_buttons.add (button);
         event_buttons.sort (EventButton.compare_buttons);
+
+        // Reorder the event buttons
+        foreach (EventButton evbutton in event_buttons) {
+            vbox.reorder_child (evbutton, -1);
+        }
     }
 
     public void remove_event (E.CalComponent comp) {

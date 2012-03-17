@@ -43,10 +43,7 @@ class EventButton : Gtk.Grid {
         var comp1 = button1.comp;
         var comp2 = button2.comp;
 
-        var date1 = Util.ical_to_date_time (comp1.get_icalcomponent ().get_dtstart ());
-        var date2 = Util.ical_to_date_time (comp2.get_icalcomponent ().get_dtstart ());
-
-        return date1.compare(date2);
+        return Util.compare_events (comp1, comp2);
     };
 
 }
