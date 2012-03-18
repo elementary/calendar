@@ -83,8 +83,8 @@ public class SourceManager: GLib.Object {
                 warning (e.message);
             }
             settings.primary_calendar = DEFAULT_SOURCE.peek_uid();
-            assert (DEFAULT_SOURCE!=null);
         }
+            assert (DEFAULT_SOURCE!=null);
 
         // the order that groups will appear
         _groups = new Gee.ArrayList<E.SourceGroup> ((EqualFunc) Util.source_group_equal_func);

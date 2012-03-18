@@ -31,7 +31,7 @@ namespace Maya {
         try {
             context.parse(ref args);
         } catch(Error e) {
-            print(e.message + "\n");
+            warning(e.message);
         }
 
         Gtk.init(ref args);
@@ -114,14 +114,15 @@ namespace Maya {
 			    return;
 			}
 
+            init_prefs ();
+            init_models ();
+            init_gui ();
+		    window.show_all ();
+
 			if (Option.ADD_EVENT) {
-			    // TODO: NOT IMPLEMENTED
-			} else {
-                init_prefs ();
-                init_models ();
-                init_gui ();
-			    window.show_all ();
+			    on_tb_add_clicked (calview.grid.selected_date);
 			}
+
             Gtk.main();
 		}
 
@@ -212,7 +213,7 @@ namespace Maya {
 			vbox.pack_start (toolbar, false, false, 0);
 			vbox.pack_end (hpaned);
 			hpaned.pack1 (calview, true, false);
-			hpaned.pack2 (sidebar, false, false);
+			hpaned.pack2 (sidebar, true, false);
 			hpaned.position = saved_state.hpaned_position;
 			window.add (vbox);
 
@@ -262,7 +263,7 @@ namespace Maya {
          * Called when the edit button is selected.
          */
         void on_modified(E.CalComponent comp) {
-            var dialog = new Maya.View.EditEventDialog2 (window, comp.get_data<E.Source>("source"), comp);
+            var dialog = new Maya.View.EventDialog (window, sourcemgr, comp, comp.get_data<E.Source>("source"), false);
             dialog.show_all();
             dialog.run();
             dialog.destroy ();
@@ -328,22 +329,6 @@ namespace Maya {
 			saved_state.hpaned_position = hpaned.position;
 		}
 
-        void edit_event (E.CalComponent event, bool add_event) {
-
-		    View.EventDialog dialog;
-
-            E.CalComponent event_clone = event.clone ();
-
-            if (add_event)
-                dialog = new View.AddEventDialog (window, sourcemgr, event_clone);
-            else
-                dialog = new View.EditEventDialog (window, sourcemgr, event_clone);
-            dialog.show_all();
-            dialog.run();
-            dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, add_event));
-            dialog.destroy ();
-        }
-
         //--- SIGNAL HANDLERS ---//
 
 		void on_toggle_fullscreen () {
@@ -396,7 +381,10 @@ namespace Maya {
             comp.set_dtend (date);
             comp.set_summary ("");
 
-            edit_event (event, true);
+            var dialog = new Maya.View.EventDialog (window, sourcemgr, event, null, true);
+            dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, true));
+            dialog.present ();
+
         }
 
         void on_tb_sources_clicked (Gtk.Widget widget) {
@@ -451,6 +439,8 @@ namespace Maya {
         void on_source_selector_toggled (E.SourceGroup group, string path) {
             sourcemgr.toggle_source_status (group, path);
         }
+
+
 	}
 
 }

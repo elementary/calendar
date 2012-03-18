@@ -41,10 +41,16 @@ namespace Maya.View {
 
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
 
-		public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null) {
+		public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
 		
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
             this.ecal = ecal;
+
+            if (add_event) {
+	            title = _("Add Event");
+            } else {
+                title = _("Edit Event");
+            }
 
 			// Dialog properties
 			modal = true;
@@ -52,7 +58,7 @@ namespace Maya.View {
 			transient_for = window;
 			
 			// Build dialog
-			build_dialog ();
+			build_dialog (add_event);
 
             // Load the event's properties in to the dialog
             load ();
@@ -226,7 +232,7 @@ namespace Maya.View {
             }    
         }
 
-		void build_dialog () {
+		void build_dialog (bool add_event) {
 		    
 		    container = (Gtk.Container) get_content_area ();
 		    container.margin_left = 10;
@@ -318,7 +324,7 @@ namespace Maya.View {
 		    container.add (guest_box);
 		    container.add (comment_box);
 		   
-            if (this is AddEventDialog) {
+            if (add_event) {
 		        add_button (_("Create Event"), Gtk.ResponseType.APPLY);
             }
             else {
@@ -366,43 +372,12 @@ namespace Maya.View {
 		Granite.Widgets.TimePicker make_time_picker () {
 		    
 		    var time_picker = new Granite.Widgets.TimePicker.with_format (Maya.Settings.TimeFormat ());
-		    time_picker.width_request = 80;
+		    time_picker.width_request = 120;
 		    
 		    return time_picker;
 		}
 	}
 	
-	public class AddEventDialog : EventDialog {
-	    
-	    public AddEventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent event) {
-	        
-	        base(window, sourcemgr, event);
-	    
-	        // Dialog properties
-	        title = _("Add Event");
-	    }
-	}
-	
-	public class EditEventDialog : EventDialog {
-	 
-	    public EditEventDialog (Gtk.Window window, Model.SourceManager sourcemgr, E.CalComponent event) {
-	        
-	        base(window, sourcemgr, event);
-	        
-	        // Dialog Properties
-	        title = _("Edit Event");
-	    }
-	}
-	
-	public class EditEventDialog2 : EventDialog {
-	 
-	    public EditEventDialog2 (Gtk.Window window, E.Source source, E.CalComponent event) {
-	        
-	        base(window, null, event, source);
-	        
-	        // Dialog Properties
-	        title = _("Edit Event");
-	    }
-	}
+
 }
 
