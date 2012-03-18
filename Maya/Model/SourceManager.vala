@@ -44,9 +44,13 @@ public class SourceManager: GLib.Object {
 
     public SourceManager () {
 
-        bool status;
-
+        bool status = false;
+        
+        try {
         status = E.CalClient.get_sources (out source_list, E.CalClientSourceType.EVENTS);
+        } catch(Error e) {
+            warning (e.message);
+        }
         assert (status==true);
 
 
@@ -67,8 +71,20 @@ public class SourceManager: GLib.Object {
             var source = new E.Source (_("On this computer"), "system");
             GROUP_LOCAL.add_source (source, 0);
         }
-        DEFAULT_SOURCE = (new E.CalClient.system (E.CalClientSourceType.EVENTS)).get_source ();
-        assert(DEFAULT_SOURCE != null);
+
+        /* Set the default calendar from the configuration keys, if it doesn't exist, attribute one */
+        var settings = new Maya.Settings.MayaSettings();
+        if (settings.primary_calendar != "") {
+            DEFAULT_SOURCE = source_list.peek_source_by_uid(settings.primary_calendar);
+        } else {
+            try {
+            DEFAULT_SOURCE = (new E.CalClient.system (E.CalClientSourceType.EVENTS)).get_source ();
+            } catch(Error e) {
+                warning (e.message);
+            }
+            settings.primary_calendar = DEFAULT_SOURCE.peek_uid();
+            assert (DEFAULT_SOURCE!=null);
+        }
 
         // the order that groups will appear
         _groups = new Gee.ArrayList<E.SourceGroup> ((EqualFunc) Util.source_group_equal_func);
@@ -225,7 +241,6 @@ public class SourceManager: GLib.Object {
     }
 
     public void toggle_source_status (E.SourceGroup group, string path_string) {
-
         var tree_model_sort = _group_tree_model [group];
         var list_store = (tree_model_sort.model as Gtk.ListStore);
 

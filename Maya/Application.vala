@@ -37,7 +37,7 @@ namespace Maya {
         Gtk.init(ref args);
 
         return new Application ().run (args);
-
+        
     }
 
     /**
@@ -123,6 +123,7 @@ namespace Maya {
                 init_gui ();
 			    window.show_all ();
 			}
+            Gtk.main();
 		}
 
         /**
@@ -193,6 +194,7 @@ namespace Maya {
 				window.fullscreen ();
 
             calview.today();
+            
         }
 
         void on_agenda_view_shown_changed (bool old, bool shown) {
@@ -306,9 +308,10 @@ namespace Maya {
                 dialog = new View.AddEventDialog (window, sourcemgr, event_clone);
             else
                 dialog = new View.EditEventDialog (window, sourcemgr, event_clone);
-
+            dialog.show_all();
+            dialog.run();
             dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, add_event));
-		    dialog.present ();
+            dialog.destroy ();
         }
 
         //--- SIGNAL HANDLERS ---//

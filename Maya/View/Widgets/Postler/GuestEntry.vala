@@ -102,7 +102,7 @@ namespace Maya.View.Widgets {
             var box = new Gtk.HBox (false, 0);
             var label = new Gtk.Label (Contact.name_from_string (address));
             box.pack_start (label, true, false, 0);
-            var icon = new Gtk.Image.from_stock (Gtk.STOCK_CLOSE, Gtk.IconSize.MENU);
+            var icon = new Gtk.Image.from_stock (Gtk.Stock.CLOSE, Gtk.IconSize.MENU);
             box.pack_end (icon, false, false, 0);
             var button = new Gtk.Button ();
             button.add (box);
@@ -176,7 +176,9 @@ namespace Maya.View.Widgets {
                     model.set (iter, 0, contact);
                 }
             }
-            catch (GLib.Error error) { }
+            catch (GLib.Error error) {
+                warning (error.message);
+            }
         }
     }
 }

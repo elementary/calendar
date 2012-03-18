@@ -60,10 +60,10 @@ namespace Maya.View.Widgets {
         }
 
         public static bool equal (string contact, string? other)
-            requires (contact.chr (-1, '<') == null) {
+            requires (contact.index_of_char ('<', 0) == 0) {
             if (other == null)
                 return false;
-            if (other.chr (-1, '<') == null && contact == other)
+            if (other.index_of_char ('<', 0) == 0 && contact == other)
                 return true;
             if (contact == address_from_string (other))
                 return true;

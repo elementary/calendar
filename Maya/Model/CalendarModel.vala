@@ -102,10 +102,14 @@ public class CalendarModel : Object {
         
         client.create_object (comp, null, (obj, results) =>  {
 
-            bool status;
+            bool status = false;
             string uid;
-
-            status = client.create_object.end (results, out uid);
+            
+            try {
+                status = client.create_object.end (results, out uid);
+            } catch (Error e) {
+                warning (e.message);
+            }
 
             // TODO: handle error more gracefully
             assert (status==true);
@@ -121,9 +125,13 @@ public class CalendarModel : Object {
         var client = source_client [source];
         client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
 
-            bool status;
-
-            status = client.modify_object.end (results);
+            bool status = false;
+            
+            try {
+                status = client.modify_object.end (results);
+            } catch (Error e) {
+                warning (e.message);
+            }
 
             // TODO: handle error more gracefully
             assert (status==true);
@@ -142,9 +150,13 @@ public class CalendarModel : Object {
         var client = source_client [source];
         client.remove_object.begin (uid, rid, mod_type, null, (obj, results) =>  {
 
-            bool status;
+            bool status = false;
 
-            status = client.remove_object.end (results);
+            try {
+                status = client.remove_object.end (results);
+            } catch (Error e) {
+                warning (e.message);
+            }
 
             // TODO: handle error more gracefully
             assert (status==true);
@@ -211,7 +223,11 @@ public class CalendarModel : Object {
             view.objects_removed.connect ((objects) => on_objects_removed (source, client, objects));
             view.objects_modified.connect ((objects) => on_objects_modified (source, client, objects));
 
-            view.start ();
+            try {
+                view.start ();
+            } catch (Error e) {
+                warning (e.message);
+            }
 
             source_view.set (source, view);
         });
@@ -220,19 +236,27 @@ public class CalendarModel : Object {
     void add_source (E.Source source) {
 
         debug("Adding source '%s'", source.peek_name());
+        try {
+            var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
+            client.open_sync(false, null);
+            source_client.set (source, client);
 
-        var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
-        client.open_sync(false, null);
-        source_client.set (source, client);
-
-        load_source (source);
+            load_source (source);
+        } catch (Error e) {
+            warning (e.message);
+        }
     }
 
     void remove_source (E.Source source) {
 
         assert (source_view.has_key (source));
         var current_view = source_view [source];
-        current_view.stop();
+        
+        try {
+            current_view.stop();
+        } catch (Error e) {
+            warning (e.message);
+        }
         source_view.unset (source);
 
         var client = source_client [source];
@@ -261,7 +285,7 @@ public class CalendarModel : Object {
         load_all_sources ();
     }
 
-    void on_event_added (AsyncResult results, E.Source source, E.CalClient client) {
+    /*void on_event_added (AsyncResult results, E.Source source, E.CalClient client) {
 
         try {
 
@@ -276,7 +300,7 @@ public class CalendarModel : Object {
             warning ("Error adding new event to source '%s': %s", source.peek_name(), e.message);
         }
 
-    }
+    }*/
 
     void on_source_status_changed (E.Source source, bool enabled) {
 
