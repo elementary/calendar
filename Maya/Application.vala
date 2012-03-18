@@ -92,7 +92,6 @@ namespace Maya {
 		};
 
 		Settings.SavedState saved_state;
-		Settings.MayaSettings prefs;
 
         Gtk.Window window;
 		View.MayaToolbar toolbar;
@@ -134,9 +133,6 @@ namespace Maya {
 			saved_state = new Settings.SavedState ();
 			saved_state.changed["show-weeks"].connect (on_saved_state_show_weeks_changed);
 
-			prefs = new Settings.MayaSettings ();
-			prefs.changed["week-starts-on"].connect (on_prefs_week_starts_on_changed);
-            
         }
 
         /**
@@ -146,7 +142,41 @@ namespace Maya {
 
             sourcemgr = new Model.SourceManager();
 
-            calmodel = new Model.CalendarModel(sourcemgr, prefs.week_starts_on);
+            // It's dirty, but there is no other way to get it for the moment.
+            string output;
+            Maya.Settings.Weekday week_starts_on = Maya.Settings.Weekday.MONDAY;
+
+            GLib.Process.spawn_command_line_sync ("locale first_weekday", out output, null, null);
+
+            switch (output) {
+            case "1\n":
+                week_starts_on = Maya.Settings.Weekday.SUNDAY;
+                break;
+            case "2\n":
+                week_starts_on = Maya.Settings.Weekday.MONDAY;
+                break;
+            case "3\n":
+                week_starts_on = Maya.Settings.Weekday.TUESDAY;
+                break;
+            case "4\n":
+                week_starts_on = Maya.Settings.Weekday.WEDNESDAY;
+                break;
+            case "5\n":
+                week_starts_on = Maya.Settings.Weekday.THURSDAY;
+                break;
+            case "6\n":
+                week_starts_on = Maya.Settings.Weekday.FRIDAY;
+                break;
+            case "7\n":
+                week_starts_on = Maya.Settings.Weekday.SATURDAY;
+                break;
+            default:
+                week_starts_on = Maya.Settings.Weekday.BAD_WEEKDAY;
+                stdout.printf("Locale has a bad first_weekday value\n");
+                break;
+            }
+
+            calmodel = new Model.CalendarModel(sourcemgr, week_starts_on);
 
             calmodel.parameters_changed.connect (on_model_parameters_changed);
         }
@@ -343,11 +373,6 @@ namespace Maya {
 
         void on_model_parameters_changed () {
             toolbar.set_switcher_date (calmodel.month_start);
-        }
-
-        void on_prefs_week_starts_on_changed () {
-            if (calmodel != null)
-                calmodel.week_starts_on = prefs.week_starts_on;
         }
 
         void on_saved_state_show_weeks_changed () {

@@ -80,7 +80,6 @@ public class CalendarModel : Object {
 
         notify["month-start"].connect (on_parameter_changed);
         notify["num-weeks"].connect (on_parameter_changed);
-        notify["week-starts-on"].connect (on_parameter_changed);
 
         // Add sources
 
