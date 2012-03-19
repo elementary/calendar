@@ -44,24 +44,7 @@ public class Grid : Gtk.Table {
             (HashFunc) DateTime.hash,
             (EqualFunc) Util.datetime_equal_func,
             null);
-/*
-        int row=0, col=0;
 
-        foreach (var date in range) {
-
-            var day = new GridDay (date);
-            data.set (date, day);
-
-            attach_defaults (day, col, col + 1, row, row + 1);
-            day.focus_in_event.connect ((event) => {
-                on_day_focus_in(day);
-                return false;
-            });
-
-            col = (col+1) % 7;
-            row = (col==0) ? row+1 : row;
-        }
-*/
         set_range (range, month_start);
     }
 
@@ -132,6 +115,7 @@ public class Grid : Gtk.Table {
                     on_day_focus_in(day);
                     return false;
                 });
+                day.show_all ();
             }
 
             col = (col+1) % 7;
@@ -153,7 +137,7 @@ public class Grid : Gtk.Table {
         data.set_all (data_new);
 
         grid_range = new_range;
-
+        resize (new_dates.size / 7, 7);
     }
 
     /**
