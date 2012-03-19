@@ -33,7 +33,7 @@ public class CalendarModel : Object {
     public DateTime month_start { get; set; }
 
     /* The number of weeks to show in this model */
-    public int num_weeks { get; set; default = 6; }
+    public int num_weeks { get; private set; default = 6; }
 
     /* The start of week, ie. Monday=1 or Sunday=7 */
     public Settings.Weekday week_starts_on { get; set; }
@@ -79,7 +79,6 @@ public class CalendarModel : Object {
         source_model.source_removed.connect (on_source_removed);
 
         notify["month-start"].connect (on_parameter_changed);
-        notify["num-weeks"].connect (on_parameter_changed);
 
         // Add sources
 
@@ -166,6 +165,9 @@ public class CalendarModel : Object {
 
     void compute_ranges () {
 
+        var month_end = month_start.add_full (0, 1, -1);
+        month_range = new Util.DateRange (month_start, month_end);
+
         int dow = month_start.get_day_of_week(); 
         int wso = (int) week_starts_on;
         int offset = 0;
@@ -176,12 +178,20 @@ public class CalendarModel : Object {
             offset = 7 + dow - wso;
 
         var data_range_first = month_start.add_days (-offset);
-        var data_range_last = data_range_first.add_weeks(num_weeks-1).add_days(6);
+
+        dow = month_end.get_day_of_week(); 
+        wso = (int) (week_starts_on + 6) % 7;
+        offset = 0;
+
+        if (wso < dow)
+            offset = dow - wso;
+        else if (wso > dow)
+            offset = 7 + dow - wso;
+
+        var data_range_last = month_end.add_days(7-offset);
 
         data_range = new Util.DateRange (data_range_first, data_range_last);
-
-        var month_end = month_start.add_full (0, 1, -1);
-        month_range = new Util.DateRange (month_start, month_end);
+        num_weeks = data_range.to_list ().size / 7;
 
         debug(@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
     }

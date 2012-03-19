@@ -31,7 +31,6 @@ public class Grid : Gtk.Table {
 
     public Grid (Util.DateRange range, DateTime month_start, int weeks) {
 
-        grid_range = range;
         selected_date = new DateTime.now_local ();
 
         // Gtk.Table properties
@@ -45,23 +44,6 @@ public class Grid : Gtk.Table {
             (HashFunc) DateTime.hash,
             (EqualFunc) Util.datetime_equal_func,
             null);
-
-        int row=0, col=0;
-
-        foreach (var date in range) {
-
-            var day = new GridDay (date);
-            data.set (date, day);
-
-            attach_defaults (day, col, col + 1, row, row + 1);
-            day.focus_in_event.connect ((event) => {
-                on_day_focus_in(day);
-                return false;
-            });
-
-            col = (col+1) % 7;
-            row = (col==0) ? row+1 : row;
-        }
 
         set_range (range, month_start);
     }
@@ -88,49 +70,99 @@ public class Grid : Gtk.Table {
 
         var today = new DateTime.now_local ();
 
-        var dates1 = grid_range.to_list();
-        var dates2 = new_range.to_list();
+        Gee.List<DateTime> old_dates;
+        if (grid_range == null)
+            old_dates = new Gee.ArrayList<DateTime> ();
+        else
+            old_dates = grid_range.to_list();
 
-        assert (dates1.size == dates2.size);
+        var new_dates = new_range.to_list();
 
         var data_new = new Gee.HashMap<DateTime, GridDay> (
             (HashFunc) DateTime.hash,
             (EqualFunc) Util.datetime_equal_func,
             null);
 
-        for (int i=0; i<dates1.size; i++) {
+        // Assert that a valid number of weeks should be displayed
+        assert (new_dates.size % 7 == 0);
 
-            var date1 = dates1 [i];
-            var date2 = dates2 [i];
+        // Create new widgets for the new range
 
-            assert (data.has_key(date1));
+        int i=0;
+        int col = 0, row = 0;
 
-            var day = data [date1];
+        for (i=0; i<new_dates.size; i++) {
 
-            if (date2.get_day_of_year () == today.get_day_of_year () && date2.get_year () == today.get_year ()) {
-                day.name = "today";
-                day.can_focus = true;
-                day.sensitive = true;
+            var new_date = new_dates [i];
 
-            } else if (date2.get_month () != month_start.get_month ()) {
-                day.name = null;
-                day.can_focus = false;
-                day.sensitive = false;
+
+            GridDay day;
+            if (i < old_dates.size) {
+                // A widget already exists for this date, just change it
+
+                var old_date = old_dates [i];
+                day = update_day (data[old_date], new_date, today, month_start);
 
             } else {
-                day.name = null;
-                day.can_focus = true;
-                day.sensitive = true;
+                // No widget exists, create one
+
+                day = new GridDay (new_date);
+                // Still update_day to get the color of etc. right
+                day = update_day (day, new_date, today, month_start);
+
+                attach_defaults (day, col, col + 1, row, row + 1);
+                day.focus_in_event.connect ((event) => {
+                    on_day_focus_in(day);
+                    return false;
+                });
+                day.show_all ();
             }
 
-            day.update_date (date2);
-            data_new.set (date2, day);
+            col = (col+1) % 7;
+            row = (col==0) ? row+1 : row;
+            data_new.set (new_date, day);
+        }
+
+        // Destroy the widgets that are no longer used
+        while (i < old_dates.size) {
+            // There are widgets remaining that are no longer used, destroy them
+            var old_date = old_dates [i];
+            var old_day = data [old_date];
+
+            old_day.destroy ();
+            i++;
         }
 
         data.clear ();
         data.set_all (data_new);
 
         grid_range = new_range;
+        resize (new_dates.size / 7, 7);
+    }
+
+    /**
+     * Updates the given GridDay so that it shows the given date. Changes to its style etc.
+     */
+    GridDay update_day (GridDay day, DateTime new_date, DateTime today, DateTime month_start) {
+        if (new_date.get_day_of_year () == today.get_day_of_year () && new_date.get_year () == today.get_year ()) {
+            day.name = "today";
+            day.can_focus = true;
+            day.sensitive = true;
+
+        } else if (new_date.get_month () != month_start.get_month ()) {
+            day.name = null;
+            day.can_focus = false;
+            day.sensitive = false;
+
+        } else {
+            day.name = null;
+            day.can_focus = true;
+            day.sensitive = true;
+        }
+
+        day.update_date (new_date);
+
+        return day;
     }
     
     /**

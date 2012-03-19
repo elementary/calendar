@@ -75,7 +75,7 @@ public class CalendarView : Gtk.HBox {
 
     void on_show_weeks_changed () {
 
-        weeks.update (model.data_range.first, show_weeks);
+        weeks.update (model.data_range.first, show_weeks, model.num_weeks);
     }
 
     void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
@@ -130,7 +130,7 @@ public class CalendarView : Gtk.HBox {
     void sync_with_model () {
 
         header.update_columns (model.week_starts_on);
-        weeks.update (model.data_range.first, show_weeks);
+        weeks.update (model.data_range.first, show_weeks, model.num_weeks);
 
         grid.set_range (model.data_range, model.month_start);
 

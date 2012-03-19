@@ -37,17 +37,14 @@ public class WeekLabels : Gtk.EventBox {
         get_style_context().add_provider (style_provider, 600);
         get_style_context().add_class ("weeks");
 
-        labels = new Gtk.Label[table.n_columns];
-        for (int c = 0; c < table.n_columns; c++) {
-            labels[c] = new Gtk.Label ("");
-            labels[c].valign = Gtk.Align.START;
-            table.attach_defaults (labels[c], 0, 1, c, c + 1);
-        }
+        update_nr_of_labels (6);
 
         add (Util.set_margins (table, 20, 0, 0, 0));
     }
 
-    public void update (DateTime date, bool show_weeks) {
+    public void update (DateTime date, bool show_weeks, int nr_of_weeks) {
+
+        update_nr_of_labels (nr_of_weeks);
 
         if (show_weeks) {
             if (!visible)
@@ -62,6 +59,28 @@ public class WeekLabels : Gtk.EventBox {
             hide ();
         }
     }
+
+    void update_nr_of_labels (int nr_of_weeks) {
+        // Destroy all the old ones
+
+        if (labels != null)
+            foreach (var label in labels)
+                label.destroy ();
+        
+        table.n_columns = nr_of_weeks;
+
+        // Create new labels
+        labels = new Gtk.Label[table.n_columns];
+        for (int c = 0; c < table.n_columns; c++) {
+            labels[c] = new Gtk.Label ("");
+            labels[c].valign = Gtk.Align.START;
+            labels[c].width_chars = 2;
+            table.attach_defaults (labels[c], 0, 1, c, c + 1);
+        }
+
+        show_all ();
+    }
+
 }
 
 }
