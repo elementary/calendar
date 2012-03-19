@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-04 23:28+0100\n"
+"POT-Creation-Date: 2012-03-19 18:34+0100\n"
 "PO-Revision-Date: 2011-06-13 00:23+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
@@ -18,6 +18,93 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-12 04:53+0000\n"
 "X-Generator: Launchpad (build 14933)\n"
 
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+#. Dialog properties
+msgid "Add Event"
+msgstr ""
+
+msgid "All day:"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Create Event"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr ""
+
+msgid "Delete the selected event"
+msgstr ""
+
+#. Dialog Properties
+msgid "Edit Event"
+msgstr ""
+
+msgid "Edit the selected event"
+msgstr ""
+
+msgid "Export or Share the default Calendar"
+msgstr ""
+
+msgid "From:"
+msgstr ""
+
+msgid "Fullscreen"
+msgstr ""
+
+msgid "Guests"
+msgstr ""
+
+msgid "Import..."
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Name of Event"
+msgstr ""
+
+msgid "Search For Events.."
+msgstr ""
+
+msgid "Select calendars to display"
+msgstr ""
+
+msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Sync..."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "To:"
+msgstr ""
+
+#. Create everything
+msgid "Today"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -25,6 +112,12 @@ msgid ""
 msgstr ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
+
+msgid "all the day"
+msgstr ""
+
+msgid "at"
+msgstr ""
 
 #~ msgid "Fast calendar that syncs with popular online services"
 #~ msgstr "Fast calendar that syncs with popular online services"
