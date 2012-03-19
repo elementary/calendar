@@ -88,49 +88,87 @@ public class Grid : Gtk.Table {
 
         var today = new DateTime.now_local ();
 
-        var dates1 = grid_range.to_list();
-        var dates2 = new_range.to_list();
-
-        assert (dates1.size == dates2.size);
+        var old_dates = grid_range.to_list();
+        var new_dates = new_range.to_list();
 
         var data_new = new Gee.HashMap<DateTime, GridDay> (
             (HashFunc) DateTime.hash,
             (EqualFunc) Util.datetime_equal_func,
             null);
 
-        for (int i=0; i<dates1.size; i++) {
+        // Assert that a valid number of weeks should be displayed
+        assert (new_dates.size % 7 == 0);
 
-            var date1 = dates1 [i];
-            var date2 = dates2 [i];
+        // Create new widgets for the new range
 
-            assert (data.has_key(date1));
+        int i=0;
 
-            var day = data [date1];
+        for (i=0; i<new_dates.size; i++) {
 
-            if (date2.get_day_of_year () == today.get_day_of_year () && date2.get_year () == today.get_year ()) {
-                day.name = "today";
-                day.can_focus = true;
-                day.sensitive = true;
+            var new_date = new_dates [i];
 
-            } else if (date2.get_month () != month_start.get_month ()) {
-                day.name = null;
-                day.can_focus = false;
-                day.sensitive = false;
+
+            GridDay day;
+            if (i < old_dates.size) {
+                // A widget already exists for this date, just change it
+
+                var old_date = old_dates [i];
+                day = update_date (old_date, new_date, today, month_start);
 
             } else {
-                day.name = null;
-                day.can_focus = true;
-                day.sensitive = true;
+                // No widget exists, create one
+
+                day = new GridDay (new_date);
+                // Still update_date to get the color of etc. right
+                day = update_date (new_date, new_date, today, month_start);
             }
 
-            day.update_date (date2);
-            data_new.set (date2, day);
+            data_new.set (new_date, day);
+        }
+
+        // Destroy the widgets that are no longer used
+        while (i < old_dates.size) {
+            // There are widgets remaining that are no longer used, destroy them
+            var old_date = old_dates [i];
+            var old_day = data [old_date];
+
+            old_day.destroy ();
+            i++;
         }
 
         data.clear ();
         data.set_all (data_new);
 
         grid_range = new_range;
+
+    }
+
+    /**
+     * Updates the given old_date to the given new_date.
+     */
+    GridDay update_date (DateTime old_date, DateTime new_date, DateTime today, DateTime month_start) {
+        assert (data.has_key(old_date));
+
+        var day = data [old_date];
+
+        if (new_date.get_day_of_year () == today.get_day_of_year () && new_date.get_year () == today.get_year ()) {
+            day.name = "today";
+            day.can_focus = true;
+            day.sensitive = true;
+
+        } else if (new_date.get_month () != month_start.get_month ()) {
+            day.name = null;
+            day.can_focus = false;
+            day.sensitive = false;
+
+        } else {
+            day.name = null;
+            day.can_focus = true;
+            day.sensitive = true;
+        }
+
+        day.update_date (new_date);
+        return day;
     }
     
     /**
