@@ -31,7 +31,6 @@ public class Grid : Gtk.Table {
 
     public Grid (Util.DateRange range, DateTime month_start, int weeks) {
 
-        grid_range = range;
         selected_date = new DateTime.now_local ();
 
         // Gtk.Table properties
@@ -45,7 +44,7 @@ public class Grid : Gtk.Table {
             (HashFunc) DateTime.hash,
             (EqualFunc) Util.datetime_equal_func,
             null);
-
+/*
         int row=0, col=0;
 
         foreach (var date in range) {
@@ -62,7 +61,7 @@ public class Grid : Gtk.Table {
             col = (col+1) % 7;
             row = (col==0) ? row+1 : row;
         }
-
+*/
         set_range (range, month_start);
     }
 
@@ -88,7 +87,12 @@ public class Grid : Gtk.Table {
 
         var today = new DateTime.now_local ();
 
-        var old_dates = grid_range.to_list();
+        Gee.List<DateTime> old_dates;
+        if (grid_range == null)
+            old_dates = new Gee.ArrayList<DateTime> ();
+        else
+            old_dates = grid_range.to_list();
+
         var new_dates = new_range.to_list();
 
         var data_new = new Gee.HashMap<DateTime, GridDay> (
@@ -102,6 +106,7 @@ public class Grid : Gtk.Table {
         // Create new widgets for the new range
 
         int i=0;
+        int col = 0, row = 0;
 
         for (i=0; i<new_dates.size; i++) {
 
@@ -113,16 +118,24 @@ public class Grid : Gtk.Table {
                 // A widget already exists for this date, just change it
 
                 var old_date = old_dates [i];
-                day = update_date (old_date, new_date, today, month_start);
+                day = update_day (data[old_date], new_date, today, month_start);
 
             } else {
                 // No widget exists, create one
 
                 day = new GridDay (new_date);
-                // Still update_date to get the color of etc. right
-                day = update_date (new_date, new_date, today, month_start);
+                // Still update_day to get the color of etc. right
+                day = update_day (day, new_date, today, month_start);
+
+                attach_defaults (day, col, col + 1, row, row + 1);
+                day.focus_in_event.connect ((event) => {
+                    on_day_focus_in(day);
+                    return false;
+                });
             }
 
+            col = (col+1) % 7;
+            row = (col==0) ? row+1 : row;
             data_new.set (new_date, day);
         }
 
@@ -144,13 +157,9 @@ public class Grid : Gtk.Table {
     }
 
     /**
-     * Updates the given old_date to the given new_date.
+     * Updates the given GridDay so that it shows the given date. Changes to its style etc.
      */
-    GridDay update_date (DateTime old_date, DateTime new_date, DateTime today, DateTime month_start) {
-        assert (data.has_key(old_date));
-
-        var day = data [old_date];
-
+    GridDay update_day (GridDay day, DateTime new_date, DateTime today, DateTime month_start) {
         if (new_date.get_day_of_year () == today.get_day_of_year () && new_date.get_year () == today.get_year ()) {
             day.name = "today";
             day.can_focus = true;
@@ -168,6 +177,7 @@ public class Grid : Gtk.Table {
         }
 
         day.update_date (new_date);
+
         return day;
     }
     
