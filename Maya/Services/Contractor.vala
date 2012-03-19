@@ -20,7 +20,7 @@ namespace Maya.Services {
 	[DBus (name = "org.elementary.contractor")]
     public interface Contractor : Object
     {
-        public abstract GLib.HashTable<string,string>[] GetServicesByLocation (string strlocation, string? file_mime="") throws IOError;
+        public abstract GLib.HashTable<string,string>[] GetServicesByLocation (string strlocation, string? file_mime="text/calendar") throws IOError;
     }
 
 }

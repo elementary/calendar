@@ -31,13 +31,13 @@ namespace Maya {
         try {
             context.parse(ref args);
         } catch(Error e) {
-            print(e.message + "\n");
+            warning(e.message);
         }
 
         Gtk.init(ref args);
 
         return new Application ().run (args);
-
+        
     }
 
     /**
@@ -92,7 +92,6 @@ namespace Maya {
 		};
 
 		Settings.SavedState saved_state;
-		Settings.MayaSettings prefs;
 
         Gtk.Window window;
 		View.MayaToolbar toolbar;
@@ -115,14 +114,16 @@ namespace Maya {
 			    return;
 			}
 
+            init_prefs ();
+            init_models ();
+            init_gui ();
+		    window.show_all ();
+
 			if (Option.ADD_EVENT) {
-			    // TODO: NOT IMPLEMENTED
-			} else {
-                init_prefs ();
-                init_models ();
-                init_gui ();
-			    window.show_all ();
+			    on_tb_add_clicked (calview.grid.selected_date);
 			}
+
+            Gtk.main();
 		}
 
         /**
@@ -133,9 +134,6 @@ namespace Maya {
 			saved_state = new Settings.SavedState ();
 			saved_state.changed["show-weeks"].connect (on_saved_state_show_weeks_changed);
 
-			prefs = new Settings.MayaSettings ();
-			prefs.changed["week-starts-on"].connect (on_prefs_week_starts_on_changed);
-            
         }
 
         /**
@@ -145,7 +143,41 @@ namespace Maya {
 
             sourcemgr = new Model.SourceManager();
 
-            calmodel = new Model.CalendarModel(sourcemgr, prefs.week_starts_on);
+            // It's dirty, but there is no other way to get it for the moment.
+            string output;
+            Maya.Settings.Weekday week_starts_on = Maya.Settings.Weekday.MONDAY;
+
+            GLib.Process.spawn_command_line_sync ("locale first_weekday", out output, null, null);
+
+            switch (output) {
+            case "1\n":
+                week_starts_on = Maya.Settings.Weekday.SUNDAY;
+                break;
+            case "2\n":
+                week_starts_on = Maya.Settings.Weekday.MONDAY;
+                break;
+            case "3\n":
+                week_starts_on = Maya.Settings.Weekday.TUESDAY;
+                break;
+            case "4\n":
+                week_starts_on = Maya.Settings.Weekday.WEDNESDAY;
+                break;
+            case "5\n":
+                week_starts_on = Maya.Settings.Weekday.THURSDAY;
+                break;
+            case "6\n":
+                week_starts_on = Maya.Settings.Weekday.FRIDAY;
+                break;
+            case "7\n":
+                week_starts_on = Maya.Settings.Weekday.SATURDAY;
+                break;
+            default:
+                week_starts_on = Maya.Settings.Weekday.BAD_WEEKDAY;
+                stdout.printf("Locale has a bad first_weekday value\n");
+                break;
+            }
+
+            calmodel = new Model.CalendarModel(sourcemgr, week_starts_on);
 
             calmodel.parameters_changed.connect (on_model_parameters_changed);
         }
@@ -181,7 +213,7 @@ namespace Maya {
 			vbox.pack_start (toolbar, false, false, 0);
 			vbox.pack_end (hpaned);
 			hpaned.pack1 (calview, true, false);
-			hpaned.pack2 (sidebar, false, false);
+			hpaned.pack2 (sidebar, true, false);
 			hpaned.position = saved_state.hpaned_position;
 			window.add (vbox);
 
@@ -193,6 +225,7 @@ namespace Maya {
 				window.fullscreen ();
 
             calview.today();
+            
         }
 
         void on_agenda_view_shown_changed (bool old, bool shown) {
@@ -230,7 +263,7 @@ namespace Maya {
          * Called when the edit button is selected.
          */
         void on_modified(E.CalComponent comp) {
-            var dialog = new Maya.View.EditEventDialog2 (window, comp.get_data<E.Source>("source"), comp);
+            var dialog = new Maya.View.EventDialog (window, sourcemgr, comp, comp.get_data<E.Source>("source"), false);
             dialog.show_all();
             dialog.run();
             dialog.destroy ();
@@ -296,21 +329,6 @@ namespace Maya {
 			saved_state.hpaned_position = hpaned.position;
 		}
 
-        void edit_event (E.CalComponent event, bool add_event) {
-
-		    View.EventDialog dialog;
-
-            E.CalComponent event_clone = event.clone ();
-
-            if (add_event)
-                dialog = new View.AddEventDialog (window, sourcemgr, event_clone);
-            else
-                dialog = new View.EditEventDialog (window, sourcemgr, event_clone);
-
-            dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, add_event));
-		    dialog.present ();
-        }
-
         //--- SIGNAL HANDLERS ---//
 
 		void on_toggle_fullscreen () {
@@ -342,11 +360,6 @@ namespace Maya {
             toolbar.set_switcher_date (calmodel.month_start);
         }
 
-        void on_prefs_week_starts_on_changed () {
-            if (calmodel != null)
-                calmodel.week_starts_on = prefs.week_starts_on;
-        }
-
         void on_saved_state_show_weeks_changed () {
             if (calview != null)
                 calview.show_weeks = saved_state.show_weeks;
@@ -368,7 +381,10 @@ namespace Maya {
             comp.set_dtend (date);
             comp.set_summary ("");
 
-            edit_event (event, true);
+            var dialog = new Maya.View.EventDialog (window, sourcemgr, event, null, true);
+            dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, true));
+            dialog.present ();
+
         }
 
         void on_tb_sources_clicked (Gtk.Widget widget) {
@@ -423,6 +439,8 @@ namespace Maya {
         void on_source_selector_toggled (E.SourceGroup group, string path) {
             sourcemgr.toggle_source_status (group, path);
         }
+
+
 	}
 
 }

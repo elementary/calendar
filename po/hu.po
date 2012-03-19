@@ -8,102 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-19 18:34+0100\n"
-"PO-Revision-Date: 2011-06-23 13:59+0000\n"
-"Last-Translator: ManDressedMoose <Unknown>\n"
+"PO-Revision-Date: 2012-03-18 00:22+0000\n"
+"Last-Translator: Niels Avonds <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-03-12 04:53+0000\n"
-"X-Generator: Launchpad (build 14933)\n"
-
-msgid "%A, %b %d"
-msgstr ""
-
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr ""
-
-msgid "%l:%M %p"
-msgstr ""
-
-#. Dialog properties
-msgid "Add Event"
-msgstr ""
-
-msgid "All day:"
-msgstr ""
-
-msgid "Comments"
-msgstr ""
-
-msgid "Create Event"
-msgstr ""
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr ""
-
-msgid "Delete the selected event"
-msgstr ""
-
-#. Dialog Properties
-msgid "Edit Event"
-msgstr ""
-
-msgid "Edit the selected event"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr ""
-
-msgid "Fullscreen"
-msgstr ""
-
-msgid "Guests"
-msgstr ""
-
-msgid "Import..."
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr ""
-
-msgid "Name of Event"
-msgstr ""
-
-msgid "Search For Events.."
-msgstr ""
-
-msgid "Select calendars to display"
-msgstr ""
-
-msgid "Show Week Numbers"
-msgstr ""
-
-msgid "Sync..."
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "To:"
-msgstr ""
-
-#. Create everything
-msgid "Today"
-msgstr ""
+"X-Launchpad-Export-Date: 2012-03-19 04:56+0000\n"
+"X-Generator: Launchpad (build 14969)\n"
 
 #. label settings
 msgid ""
@@ -113,14 +26,95 @@ msgstr ""
 "Közelgő eseményeid itt jelennek meg, mikor a kiválasztott dátumkor van "
 "esemény."
 
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
 msgid "all the day"
 msgstr ""
 
 msgid "at"
 msgstr ""
 
-#~ msgid "Fast calendar that syncs with popular online services"
-#~ msgstr "Gyors naptár, mely szinkronizál a népszerű online szolgáltatásokkal"
+msgid "From:"
+msgstr ""
 
-#~ msgid "Maya Calendar"
-#~ msgstr "Maya Naptár"
+msgid "All day:"
+msgstr ""
+
+msgid "To:"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Name of Event"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Create Event"
+msgstr ""
+
+#. Dialog properties
+msgid "Add Event"
+msgstr ""
+
+#. Dialog Properties
+msgid "Edit Event"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr ""
+
+msgid "Edit the selected event"
+msgstr ""
+
+msgid "Delete the selected event"
+msgstr ""
+
+msgid "Select calendars to display"
+msgstr ""
+
+msgid "Search For Events.."
+msgstr ""
+
+msgid "Export or Share the default Calendar"
+msgstr ""
+
+#. Create everything
+msgid "Today"
+msgstr ""
+
+msgid "Fullscreen"
+msgstr ""
+
+msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Import..."
+msgstr ""
+
+msgid "Sync..."
+msgstr ""
