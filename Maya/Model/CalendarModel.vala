@@ -33,7 +33,7 @@ public class CalendarModel : Object {
     public DateTime month_start { get; set; }
 
     /* The number of weeks to show in this model */
-    public int num_weeks { get; set; default = 6; }
+    public int num_weeks { get; private set; default = 6; }
 
     /* The start of week, ie. Monday=1 or Sunday=7 */
     public Settings.Weekday week_starts_on { get; set; }
@@ -79,7 +79,6 @@ public class CalendarModel : Object {
         source_model.source_removed.connect (on_source_removed);
 
         notify["month-start"].connect (on_parameter_changed);
-        notify["num-weeks"].connect (on_parameter_changed);
         notify["week-starts-on"].connect (on_parameter_changed);
 
         // Add sources
@@ -181,10 +180,9 @@ public class CalendarModel : Object {
         var data_range_last = month_end.add_days(7-offset);
 
         data_range = new Util.DateRange (data_range_first, data_range_last);
-        num_weeks = data_range.to_list ().size;
+        num_weeks = data_range.to_list ().size / 7;
 
         debug(@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
-        stdout.printf(@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)\n");
     }
 
     public void load_all_sources () {
