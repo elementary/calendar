@@ -33,7 +33,7 @@ namespace Maya.View.Widgets {
                                                "/org/elementary/contractor");
 
 		        // get the list and parse it into the menu
-		        services = contract.GetServicesByLocation ("file:///usr/share/contractor/");
+		        services = contract.GetServicesByLocation (GLib.Environment.get_tmp_dir () + "/calendar.ics");
 
                 foreach (HashTable<string,string> service in services) {
                     Gtk.MenuItem item = new Gtk.MenuItem.with_label(service.lookup ("Description"));
@@ -47,7 +47,8 @@ namespace Maya.View.Widgets {
 		}
 
 		private void activate_contract () {
-
+            /* creates a .ics file */
+            Util.save_temp_selected_calendars ();
 		    Gtk.MenuItem menuitem = (Gtk.MenuItem) menu.get_active();
             string app_menu = menuitem.get_label();
 
