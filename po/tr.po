@@ -7,103 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-18 17:14+0100\n"
-"PO-Revision-Date: 2012-03-18 00:22+0000\n"
-"Last-Translator: Niels Avonds <Unknown>\n"
+"POT-Creation-Date: 2012-03-17 19:47+0100\n"
+"PO-Revision-Date: 2012-03-18 14:32+0000\n"
+"Last-Translator: Çağatay Çöl <cagataycol@post.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
-"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-03-18 04:59+0000\n"
-"X-Generator: Launchpad (build 14951)\n"
-
-msgid "%A, %b %d"
-msgstr ""
-
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr ""
-
-msgid "%l:%M %p"
-msgstr ""
-
-#. Dialog properties
-msgid "Add Event"
-msgstr ""
-
-msgid "All day:"
-msgstr ""
-
-msgid "Comments"
-msgstr ""
-
-msgid "Create Event"
-msgstr ""
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr ""
-
-msgid "Delete the selected event"
-msgstr ""
-
-#. Dialog Properties
-msgid "Edit Event"
-msgstr ""
-
-msgid "Edit the selected event"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr ""
-
-msgid "Fullscreen"
-msgstr ""
-
-msgid "Guests"
-msgstr ""
-
-msgid "Import..."
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr ""
-
-msgid "Name of Event"
-msgstr ""
-
-msgid "Search For Events.."
-msgstr ""
-
-msgid "Select calendars to display"
-msgstr ""
-
-msgid "Show Week Numbers"
-msgstr ""
-
-msgid "Sync..."
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "To:"
-msgstr ""
-
-#. Create everything
-msgid "Today"
-msgstr ""
+"X-Launchpad-Export-Date: 2012-03-19 04:56+0000\n"
+"X-Generator: Launchpad (build 14969)\n"
+"Language: tr\n"
 
 #. label settings
 msgid ""
@@ -113,14 +26,98 @@ msgstr ""
 "Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
 "gösterilecek."
 
-msgid "all the day"
+msgid "%B %e, %Y"
 msgstr ""
+
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
+msgid "all the day"
+msgstr "bütün gün"
 
 msgid "at"
 msgstr ""
 
-#~ msgid "Fast calendar that syncs with popular online services"
-#~ msgstr "Popüler çevrimiçi servislerle senkronize çalışan hızlı bir takvim."
+msgid "From:"
+msgstr "Başlangıç:"
 
-#~ msgid "Maya Calendar"
-#~ msgstr "Maya Takvimi"
+msgid "All day:"
+msgstr "Tüm gün:"
+
+msgid "To:"
+msgstr "Bitiş:"
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "Name of Event"
+msgstr "Etkinliğin Adı:"
+
+msgid "Location"
+msgstr "Konum"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "Misafirler"
+
+msgid "Name or Email Address"
+msgstr "İsim veya E-posta Adresi"
+
+msgid "Comments"
+msgstr "Yorumlar"
+
+msgid "Create Event"
+msgstr "Etkinlik Oluştur"
+
+#. Dialog properties
+msgid "Add Event"
+msgstr "Etkinlik Ekle"
+
+#. Dialog Properties
+msgid "Edit Event"
+msgstr "Etkinliği Düzenle"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Yeni bir etkinlik oluştur"
+
+msgid "Edit the selected event"
+msgstr "Seçili etkinliği düzenle"
+
+msgid "Delete the selected event"
+msgstr "Seçili etkinliği sil"
+
+msgid "Select calendars to display"
+msgstr "Görüntülenecek takvimleri seçin"
+
+msgid "Search For Events.."
+msgstr ""
+
+msgid "Export or Share the default Calendar"
+msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
+
+#. Create everything
+msgid "Today"
+msgstr "Bugün"
+
+msgid "Fullscreen"
+msgstr "Tam ekran"
+
+msgid "Show Week Numbers"
+msgstr "Hafta Numaralarını Göster"
+
+msgid "Import..."
+msgstr "İçe Aktar..."
+
+msgid "Sync..."
+msgstr "Eşzamanla..."
