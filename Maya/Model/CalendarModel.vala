@@ -181,7 +181,7 @@ public class CalendarModel : Object {
         var data_range_last = month_end.add_days(7-offset);
 
         data_range = new Util.DateRange (data_range_first, data_range_last);
-
+        num_weeks = data_range.to_list ().size;
 
         debug(@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
         stdout.printf(@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)\n");

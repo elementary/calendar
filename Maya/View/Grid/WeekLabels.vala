@@ -47,7 +47,7 @@ public class WeekLabels : Gtk.EventBox {
         add (Util.set_margins (table, 20, 0, 0, 0));
     }
 
-    public void update (DateTime date, bool show_weeks) {
+    public void update (DateTime date, bool show_weeks, int nr_of_weeks) {
 
         if (show_weeks) {
             if (!visible)
