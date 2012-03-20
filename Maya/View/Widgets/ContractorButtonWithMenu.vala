@@ -21,6 +21,7 @@ namespace Maya.View.Widgets {
 
 		private Maya.Services.Contractor contract;
 		private HashTable<string,string>[] services;
+        private Gtk.FileChooserDialog filechooser;
 
 		public ContractorButtonWithMenu (string tooltiptext) {
 
@@ -34,12 +35,14 @@ namespace Maya.View.Widgets {
 
 		        // get the list and parse it into the menu
 		        services = contract.GetServicesByLocation (GLib.Environment.get_tmp_dir () + "/calendar.ics");
-
                 foreach (HashTable<string,string> service in services) {
                     Gtk.MenuItem item = new Gtk.MenuItem.with_label(service.lookup ("Description"));
                     item.activate.connect (activate_contract);
                     menu.append (item);
                 }
+                    Gtk.MenuItem item = new Gtk.MenuItem.with_label(_("Export Calendar…"));
+                    item.activate.connect (savecal);
+                    menu.append (item);
             } catch (IOError e) {
                 stderr.printf ("%s\n", e.message);
             }
@@ -57,7 +60,7 @@ namespace Maya.View.Widgets {
                     try {
                         GLib.Process.spawn_command_line_async (service.lookup ("Exec"));
                     } catch (SpawnError e) {
-                        stderr.printf ("%s\n", e.message);
+                        warning (e.message);
                     }
 
                     break;
@@ -65,7 +68,41 @@ namespace Maya.View.Widgets {
             }
 		}
 
-	}
+		private void savecal () {
+            /* creates a .ics file */
+            Util.save_temp_selected_calendars ();
+		    filechooser = new Gtk.FileChooserDialog (_("Export Calendar…"), null, Gtk.FileChooserAction.SAVE);
+            var filter = new Gtk.FileFilter ();
+            filter.add_mime_type("text/calendar");
+            filechooser.set_filename("calendar.ics");
+            filechooser.set_filter(filter);
+            filechooser.add_button("Save ical", Gtk.ResponseType.APPLY);
+            filechooser.response.connect (on_response);
+            filechooser.show_all ();
+	        filechooser.run ();
+
+
+		}
+
+        private void on_response (Gtk.Dialog source, int response_id) {
+            switch (response_id) {
+            case Gtk.ResponseType.APPLY:
+                var destination = filechooser.get_filename ();
+                if (destination == null)
+                    destination = filechooser.get_current_folder();
+                try {
+                    GLib.Process.spawn_command_line_async ("mv " + GLib.Environment.get_tmp_dir () + "/calendar.ics " + destination);
+                } catch (SpawnError e) {
+                    warning (e.message);
+                }
+                filechooser.destroy ();
+                break;
+            case Gtk.ResponseType.CLOSE:
+                filechooser.destroy ();
+                break;
+            }
+        }
+    }
 
 }
 

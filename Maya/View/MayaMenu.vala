@@ -29,6 +29,8 @@ namespace Maya.View {
 
 		public Gtk.MenuItem sync { get; private set; }
 
+        public Gtk.MenuItem about { get; private set; }
+
 		public MayaMenu () {
 
 			// Create everything
@@ -42,6 +44,8 @@ namespace Maya.View {
 
 			sync = new Gtk.MenuItem.with_label (_("Sync..."));
 
+            about = new Gtk.MenuItem.with_label (_("About"));
+
 			// Append in correct order
 			append (today);
 
@@ -50,10 +54,17 @@ namespace Maya.View {
 			append (fullscreen);
 			append (weeknumbers);
 
+            /*
+            * TODO : Will be done in Maya 0.2
 			append (new Gtk.SeparatorMenuItem ());
 
 			append (import);
 			append (sync);
+            */
+
+			append (new Gtk.SeparatorMenuItem ());
+
+            append (about);
 		}
 
 	}
