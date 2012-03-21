@@ -180,15 +180,20 @@ public class CalendarModel : Object {
         var data_range_first = month_start.add_days (-offset);
 
         dow = month_end.get_day_of_week(); 
-        wso = (int) (week_starts_on + 6) % 7;
+        wso = (int) (week_starts_on + 6);
+
+        // WSO must be between 1 and 7
+        if (wso > 7)
+            wso = wso - 7;
+
         offset = 0;
 
         if (wso < dow)
-            offset = dow - wso;
+            offset = 7 + wso - dow;
         else if (wso > dow)
-            offset = 7 + dow - wso;
+            offset = wso - dow;
 
-        var data_range_last = month_end.add_days(7-offset);
+        var data_range_last = month_end.add_days(offset);
 
         data_range = new Util.DateRange (data_range_first, data_range_last);
         num_weeks = data_range.to_list ().size / 7;
