@@ -59,32 +59,34 @@ public class SourceManager: GLib.Object {
             (EqualFunc) Util.source_equal_func,
             null);
 
+        var settings = new Settings.MayaSettings();
+
         /* Ensure the groups actually exist */
-        source_list.ensure_group("Personal", "local:", false);
-        source_list.ensure_group("Webcal", "webcal://", false);
-        source_list.ensure_group("Contacts", "contacts://", false);
+        source_list.ensure_group(_("On this computer"), "local:", false);
+        source_list.ensure_group(_("Webcal"), "webcal://", false);
+        source_list.ensure_group(_("Contacts"), "contacts://", false);
         GROUP_LOCAL = source_list.peek_group_by_base_uri("local:");
         GROUP_REMOTE = source_list.peek_group_by_base_uri("webcal://");
         GROUP_CONTACTS = source_list.peek_group_by_base_uri("contacts://");
         /* If we don't have any source, let's add at least one */
         if(GROUP_LOCAL.peek_sources().length() == 0) {
-            var source = new E.Source (_("On this computer"), "system");
+            var source = new E.Source (_("Personnal"), "system");
             GROUP_LOCAL.add_source (source, 0);
         }
-
         /* Set the default calendar from the configuration keys, if it doesn't exist, attribute one */
-        var settings = new Maya.Settings.MayaSettings();
         if (settings.primary_calendar != "") {
             DEFAULT_SOURCE = source_list.peek_source_by_uid(settings.primary_calendar);
-        } else {
+        }
+        if (DEFAULT_SOURCE==null) {
             try {
-            DEFAULT_SOURCE = (new E.CalClient.system (E.CalClientSourceType.EVENTS)).get_source ();
+                DEFAULT_SOURCE = (new E.CalClient.system (E.CalClientSourceType.EVENTS)).get_source ();
             } catch(Error e) {
                 warning (e.message);
             }
             settings.primary_calendar = DEFAULT_SOURCE.peek_uid();
+            settings.selected_calendars = DEFAULT_SOURCE.peek_uid() + ";";
         }
-            assert (DEFAULT_SOURCE!=null);
+        assert (DEFAULT_SOURCE!=null);
 
         // the order that groups will appear
         _groups = new Gee.ArrayList<E.SourceGroup> ((EqualFunc) Util.source_group_equal_func);
@@ -131,8 +133,8 @@ public class SourceManager: GLib.Object {
         group_sources.set (group, source);
 
         // Load Sources from preferences
-        var prefs = new Settings.MayaSettings ();
-        string[] calendars = prefs.selected_calendars.split(";");
+        var settings = new Settings.MayaSettings();
+        string[] calendars = settings.selected_calendars.split(";");
         source_enabled.set (source, false);
         for (int i=0; i<calendars.length;i++) {
             if (calendars[i] == source.peek_uid())
@@ -154,22 +156,22 @@ public class SourceManager: GLib.Object {
     void remove_source (E.SourceGroup group, E.Source source) {
 
         debug("Removing source '%s'", source.peek_name());
-        var prefs = new Settings.MayaSettings ();
         // Delete sources from preferences
-        prefs.selected_calendars = prefs.selected_calendars.replace (source.peek_uid ()+";", "");
-
+        var settings = new Settings.MayaSettings();
+        string new_selected_calendars = settings.selected_calendars.replace (source.peek_uid ()+";", "");
+        settings.selected_calendars = new_selected_calendars;
         group_sources.remove (group, source);
         source_enabled.unset (source, null);
-
         var tree_model = _group_tree_model [group] as Gtk.TreeModelSort;
         var list_store = tree_model.get_model () as Gtk.ListStore;
-
         Gtk.TreePath? path = Util.find_treemodel_object<E.Source> (list_store, 0, source, (EqualFunc) Util.source_equal_func);
         Gtk.TreeIter iter;
         list_store.get_iter (out iter, path);
         list_store.remove (iter);
-
-        source_removed (group, source);
+        warning(new_selected_calendars);
+        if (new_selected_calendars != null) {
+            source_removed (group, source);
+        }
     }
 
     /* Sorts evolution sources in alphabetical order by name within each group */
@@ -260,11 +262,11 @@ public class SourceManager: GLib.Object {
         source_enabled.set (source, new_status);
         
         // Load Sources from preferences
-        var prefs = new Settings.MayaSettings ();
+        var settings = new Settings.MayaSettings();
         if (new_status)
-            prefs.selected_calendars = prefs.selected_calendars + source.peek_uid () + ";";
+            settings.selected_calendars = settings.selected_calendars + source.peek_uid () + ";";
         else
-            prefs.selected_calendars = prefs.selected_calendars.replace (source.peek_uid () + ";", "");
+            settings.selected_calendars = settings.selected_calendars.replace (source.peek_uid () + ";", "");
 
         debug("Source '%s' [enabled=%s]", source.peek_name(), new_status.to_string());
 
