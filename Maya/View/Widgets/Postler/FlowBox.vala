@@ -17,6 +17,7 @@ namespace Maya.View.Widgets {
 
         public FlowBox () {
             set_has_window (false);
+            set_resize_mode(Gtk.ResizeMode.IMMEDIATE);
         }
 
         public override void add (Gtk.Widget widget) {
@@ -24,6 +25,7 @@ namespace Maya.View.Widgets {
             widget.set_parent (this);
             if (get_realized ())
                 widget.realize ();
+            queue_resize ();
         }
 
         public override void remove (Gtk.Widget widget) {
@@ -42,6 +44,7 @@ namespace Maya.View.Widgets {
         public void reorder_child (Gtk.Widget widget, int position) {
             children.remove (widget);
             children.insert (widget, position);
+            queue_resize ();
         }
 
         public override void map () {
@@ -99,6 +102,7 @@ namespace Maya.View.Widgets {
                     child.size_allocate (child_allocation);
                 }
             }
+            queue_resize ();
         }
     }
 }

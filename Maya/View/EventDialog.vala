@@ -53,8 +53,9 @@ namespace Maya.View {
             }
 
 			// Dialog properties
-			modal = true;
+			//modal = true;
 			window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+            //set_flags(Gtk.DialogFlags.DESTROY_WITH_PARENT);
 			transient_for = window;
 			
 			// Build dialog
@@ -63,11 +64,14 @@ namespace Maya.View {
             // Load the event's properties in to the dialog
             load ();
 
+            set_default_response(Gtk.ResponseType.APPLY);
+
             connect_signals ();
 		}
 
         private void connect_signals () {
             this.response.connect (on_response);
+            this.close.connect (on_close);
         }
 
         private void on_response (Gtk.Dialog source, int response_id) {
@@ -79,6 +83,10 @@ namespace Maya.View {
                 destroy ();
                 break;
             }
+        }
+
+        private void on_close () {
+                destroy ();
         }
 		
         //--- Public Methods ---//
@@ -301,7 +309,8 @@ namespace Maya.View {
 		    var guest_box = make_vbox ();
 		    
 		    var guest_label = make_label (_("Guests"));
-			guest = new Maya.View.Widgets.GuestEntry ();
+			guest = new Maya.View.Widgets.GuestEntry (_("John Smith"));
+            guest.check_resize ();
 			
 			guest_box.add (guest_label);
 			guest_box.add (guest);
@@ -330,8 +339,6 @@ namespace Maya.View {
             else {
 		        add_button (Gtk.Stock.OK, Gtk.ResponseType.APPLY);
             }
-		    
-		    set_default_response (Gtk.ResponseType.APPLY);
 		    show_all();
 		}
 

@@ -1,14 +1,4 @@
 <schemalist>
-	<enum id="weekday-enum">
-		<value nick="BAD_WEEKDAY" value="0" />
-		<value nick="MONDAY" value="1" />
-		<value nick="TUESDAY" value="2" />
-		<value nick="WEDNESDAY" value="3" />
-		<value nick="THURDAY" value="4" />
-		<value nick="FRIDAY" value="5" />
-		<value nick="SATURDAY" value="6" />
-		<value nick="SUNDAY" value="7" />
-	</enum>
 	<enum id="window-state-enum">
 		<value nick="Normal" value="0" />
 		<value nick="Maximized" value="1" />
@@ -16,11 +6,6 @@
 	</enum>
 
 	<schema path="/apps/maya/settings/" id="org.elementary.Maya.Settings" gettext-domain="maya">
-		<key name="week-starts-on" enum="weekday-enum">
-			<default>"MONDAY"</default>
-			<summary>The day the week starts on.</summary>
-			<description>The day the week starts on.</description>
-		</key>
 		<key name="primary-calendar" type="s">
 			<default>""</default>
 			<summary>The default calendar.</summary>

@@ -11,9 +11,10 @@
 
 namespace Maya.View.Widgets {
     public class GuestEntry : FlowBox {
-        public Gtk.Entry entry;
+        public Granite.Widgets.HintedEntry entry;
         bool invalidated = true;
         string real_text;
+        string hintedentry_text;
         public string text { get { return get_real_text (); } }
         public bool empty { get; private set; default = true; }
 
@@ -42,8 +43,9 @@ namespace Maya.View.Widgets {
             return result;
         }
 
-        public GuestEntry () {
-            entry = new Gtk.Entry ();
+        public GuestEntry (string? tooltext_entry) {
+            hintedentry_text = tooltext_entry;
+            entry = new Granite.Widgets.HintedEntry (hintedentry_text);
             entry.show ();
             add (entry);
             var completion = new Gtk.EntryCompletion ();
@@ -55,6 +57,13 @@ namespace Maya.View.Widgets {
             completion.inline_selection = true;
             entry.set_completion (completion);
             entry.changed.connect (changed);
+            entry.key_press_event.connect ((widget, event) => {
+                if (event.keyval == Gdk.keyval_from_name ("Return")) { 
+                    entry.text = entry.text + ",";
+                    buttonize_text ();
+                }
+                return false;
+            });
             entry.focus_out_event.connect ((widget, event) => {
                 entry.text = entry.text + ",";
                 buttonize_text ();
