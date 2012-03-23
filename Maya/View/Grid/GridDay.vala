@@ -25,7 +25,7 @@ public class GridDay : Gtk.EventBox {
     public DateTime date { get; private set; }
 
     Gtk.Label label;
-    Gtk.VBox vbox;
+    VAutoHider vbox;
     Gee.List<EventButton> event_buttons;
 
     private static const int EVENT_MARGIN = 3;
@@ -37,7 +37,7 @@ public class GridDay : Gtk.EventBox {
 
         var style_provider = Util.Css.get_css_provider ();
 
-        vbox = new Gtk.VBox (false, 0);
+        vbox = new VAutoHider ();
         label = new Gtk.Label ("");
 
         // EventBox Properties
@@ -49,7 +49,7 @@ public class GridDay : Gtk.EventBox {
         label.halign = Gtk.Align.END;
         label.get_style_context ().add_provider (style_provider, 600);
         label.name = "date";
-        vbox.pack_start (label, false, false, 0);
+        vbox.add (label);
 
         add (Util.set_margins (vbox, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN));
 
@@ -59,7 +59,7 @@ public class GridDay : Gtk.EventBox {
 
     public void add_event(E.CalComponent comp) {
         var button = new EventButton(comp);
-        vbox.pack_start (button, false, false, 0);
+        vbox.add (button);
         vbox.show_all ();
 
         event_buttons.add (button);
