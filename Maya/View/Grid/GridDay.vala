@@ -55,8 +55,7 @@ public class GridDay : Gtk.EventBox {
         vbox.pack_start (event_box, true, true, 0);
 
         add (Util.set_margins (vbox, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN));
-        vbox.show ();
-        event_box.show ();
+        vbox.show_all ();
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
@@ -65,6 +64,7 @@ public class GridDay : Gtk.EventBox {
     public void add_event(E.CalComponent comp) {
         var button = new EventButton(comp);
         event_box.add (button);
+        event_box.queue_draw ();
 
         event_buttons.add (button);
         event_buttons.sort (EventButton.compare_buttons);

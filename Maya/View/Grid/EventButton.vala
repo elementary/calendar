@@ -34,6 +34,7 @@ class EventButton : Gtk.Grid {
         add (label);
         label.hexpand = true;
         label.wrap = false;
+        label.show ();
     }
 
     /**
