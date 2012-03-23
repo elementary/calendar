@@ -112,6 +112,7 @@ vala_precompile(VALA_C
     Maya/View/Grid/EventButton.vala
     Maya/View/Grid/WeekLabels.vala
     Maya/View/Grid/Header.vala
+    Maya/View/Grid/VAutoHider.vala
     Maya/View/EventDialog.vala
     Maya/View/MayaMenu.vala
     Maya/View/MayaToolbar.vala
