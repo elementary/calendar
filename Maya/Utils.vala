@@ -378,19 +378,23 @@ namespace Maya.Util {
         string output = "";
         foreach (var source in sourcemagr.get_enabled_sources ()) {
             
-            var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
+            try {
+                var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
 
-            var iso_first = E.isodate_from_time_t((ulong) calmodel.data_range.first.to_unix());
-            var iso_last = E.isodate_from_time_t((ulong) calmodel.data_range.last.to_unix());
+                var iso_first = E.isodate_from_time_t((ulong) calmodel.data_range.first.to_unix());
+                var iso_last = E.isodate_from_time_t((ulong) calmodel.data_range.last.to_unix());
 
-            var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
-            GLib.SList<weak iCal.icalcomponent> icalcomps;
-            client.get_object_list_sync(query, out icalcomps, null);
+                var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
+                GLib.SList<weak iCal.icalcomponent> icalcomps;
+                client.get_object_list_sync(query, out icalcomps, null);
 
-            foreach (var icalcomp in icalcomps) {
-                assert (icalcomp != null);
+                foreach (var icalcomp in icalcomps) {
+                    assert (icalcomp != null);
 
-                output = output + icalcomp.as_ical_string ();
+                    output = output + icalcomp.as_ical_string ();
+                }
+            } catch (GLib.Error e) {
+                warning (e.message);
             }
             
         }

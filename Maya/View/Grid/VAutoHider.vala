@@ -12,8 +12,6 @@
 namespace Maya.View {
     public class VAutoHider : Gtk.Container {
         List<Gtk.Widget> children;
-        int last_row_count;
-        int last_row_height;
 
         Gtk.Label more_label;
 
@@ -89,7 +87,7 @@ namespace Maya.View {
                 if (should_hide) {
                     child.hide ();
                 } else {
-                    var child_allocation = new Gtk.Allocation ();
+                    var child_allocation = Gtk.Allocation ();
                     child_allocation.width = allocation.width;
                     child_allocation.height = child_size.height;
                     child_allocation.x = allocation.x;
@@ -103,7 +101,7 @@ namespace Maya.View {
             if (get_shown_children () != children.length ()) {
                 uint more = children.length () - get_shown_children ();
                 more_label.show ();
-                var more_label_allocation = new Gtk.Allocation ();
+                var more_label_allocation = Gtk.Allocation ();
                 more_label_allocation.width = allocation.width;
                 more_label_allocation.height = more_label_size.height;
                 more_label_allocation.x = allocation.x;

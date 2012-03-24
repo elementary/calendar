@@ -151,7 +151,11 @@ namespace Maya {
             string output;
             Maya.Settings.Weekday week_starts_on = Maya.Settings.Weekday.MONDAY;
 
-            GLib.Process.spawn_command_line_sync ("locale first_weekday", out output, null, null);
+            try {
+                GLib.Process.spawn_command_line_sync ("locale first_weekday", out output, null, null);
+            } catch (SpawnError e) {
+                output = "";
+            }
 
             switch (output) {
             case "1\n":
