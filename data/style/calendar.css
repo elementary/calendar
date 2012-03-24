@@ -17,8 +17,6 @@
 
 
 @define-color cell_color mix(@bg_color, rgb(255, 255, 255), 0.5);
-/*@define-color event_color rgba(100,100,100, 1);
-*/
 
 /* Header Styles */
 
@@ -26,14 +24,14 @@
 .header {
 	background-image: -gtk-gradient (linear,
 			left top, left bottom,
-			from(mix(@bg_color, rgb(255, 255, 255), 0.5)), to(mix(@bg_color, rgb(255, 255, 255), 0.8)));
+			from(@cell_color), to(mix(@bg_color, rgb(255, 255, 255), 0.8)));
 }
-
 
 /* Cell Styles */
 
 .cell {
 	background-color: @cell_color;
+    border-radius: 0;
 }
 
 .cell:insensitive {

@@ -36,8 +36,6 @@ public class GridDay : Gtk.EventBox {
         this.date = date;
         event_buttons = new Gee.ArrayList<EventButton>();
 
-        var style_provider = Util.Css.get_css_provider ();
-
         vbox = new Gtk.VBox (false, 0);
         label = new Gtk.Label ("");
         event_box = new VAutoHider ();
@@ -45,20 +43,24 @@ public class GridDay : Gtk.EventBox {
         // EventBox Properties
         can_focus = true;
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
+        var style_provider = Util.Css.get_css_provider ();
         get_style_context ().add_provider (style_provider, 600);
         get_style_context ().add_class ("cell");
 
         label.halign = Gtk.Align.END;
         label.get_style_context ().add_provider (style_provider, 600);
         label.name = "date";
+        Util.set_margins (label, EVENT_MARGIN, EVENT_MARGIN, 0, EVENT_MARGIN);
+        Util.set_margins (event_box, 0, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN);
         vbox.pack_start (label, false, false, 0);
         vbox.pack_start (event_box, true, true, 0);
 
-        add (Util.set_margins (vbox, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN));
+        add (vbox);
         vbox.show_all ();
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
+        vbox.draw.connect (on_draw);
     }
 
     public void add_event(E.CalComponent comp) {
@@ -103,6 +105,29 @@ public class GridDay : Gtk.EventBox {
         grab_focus ();
         return true;
     }
+
+    private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
+
+        Gtk.Allocation size;
+        widget.get_allocation (out size);
+
+        // Draw left and top black strokes
+        cr.move_to (0, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
+        cr.line_to (0.5, 0.5); // move to upper left corner
+        cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
+
+        cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
+        cr.set_line_width (1.0);
+        cr.set_antialias (Cairo.Antialias.NONE);
+        cr.stroke ();
+
+        // Draw inner highlight stroke
+        cr.rectangle (1.5, 1.5, size.width - 1.5, size.height - 1.5);
+        cr.set_source_rgba (1.0, 1.0, 1.0, 0.2);
+        cr.stroke ();
+        return false;
+    }
+
 }
 
 }
