@@ -18,26 +18,64 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-24 05:17+0000\n"
 "X-Generator: Launchpad (build 14981)\n"
 
-msgid "%A, %b %d"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
+"Ваши предстоящие события будут показаны здесь, когда вы выберете дату с "
+"событиями."
 
 msgid "%B %e, %Y"
 msgstr ""
 
-msgid "%H:%M"
+msgid "%A, %b %d"
 msgstr ""
 
 msgid "%l:%M %p"
 msgstr ""
 
-msgid "About"
+msgid "%H:%M"
+msgstr ""
+
+msgid "all the day"
+msgstr ""
+
+msgid "at"
 msgstr ""
 
 msgid "Add Event"
 msgstr ""
 
+msgid "Edit Event"
+msgstr ""
+
+msgid "From:"
+msgstr "От:"
+
 msgid "All day:"
 msgstr "Весь день:"
+
+msgid "To:"
+msgstr "Для:"
+
+msgid "Title"
+msgstr ""
+
+msgid "Name of Event"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr ""
+
+msgid "John Smith"
+msgstr ""
 
 msgid "Comments"
 msgstr ""
@@ -51,74 +89,36 @@ msgstr "Создать событие"
 msgid "Create a new event"
 msgstr ""
 
-msgid "Delete the selected event"
-msgstr ""
-
-msgid "Edit Event"
-msgstr ""
-
 msgid "Edit the selected event"
 msgstr ""
 
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr "От:"
-
-msgid "Fullscreen"
-msgstr ""
-
-msgid "Guests"
-msgstr ""
-
-msgid "Import..."
-msgstr ""
-
-msgid "John Smith"
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr ""
-
-msgid "Name of Event"
-msgstr ""
-
-msgid "Search For Events.."
+msgid "Delete the selected event"
 msgstr ""
 
 msgid "Select calendars to display"
 msgstr ""
 
-msgid "Show Week Numbers"
+msgid "Search For Events.."
 msgstr ""
 
-msgid "Sync..."
+msgid "Export or Share the default Calendar"
 msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "To:"
-msgstr "Для:"
 
 #. Create everything
 msgid "Today"
 msgstr ""
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Ваши предстоящие события будут показаны здесь, когда вы выберете дату с "
-"событиями."
-
-msgid "all the day"
+msgid "Fullscreen"
 msgstr ""
 
-msgid "at"
+msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Import..."
+msgstr ""
+
+msgid "Sync..."
+msgstr ""
+
+msgid "About"
 msgstr ""
