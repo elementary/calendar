@@ -71,7 +71,6 @@ namespace Maya.View {
 
         private void connect_signals () {
             this.response.connect (on_response);
-            this.close.connect (on_close);
         }
 
         private void on_response (Gtk.Dialog source, int response_id) {
@@ -85,10 +84,6 @@ namespace Maya.View {
             }
         }
 
-        private void on_close () {
-                destroy ();
-        }
-		
         //--- Public Methods ---//
 
             
