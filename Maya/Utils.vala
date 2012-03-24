@@ -373,13 +373,13 @@ namespace Maya.Util {
     public void save_temp_selected_calendars (){
         var sourcemagr = new Model.SourceManager ();
         var calmodel = new Model.CalendarModel(sourcemagr, Maya.Settings.Weekday.MONDAY);
-        Gee.Map<E.Source, E.CalClient> source_client_tmp = null;
+
         var path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
         string output = "";
         foreach (var source in sourcemagr.get_enabled_sources ()) {
             
             var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
-            source_client_tmp.set (source, client);
+
             var iso_first = E.isodate_from_time_t((ulong) calmodel.data_range.first.to_unix());
             var iso_last = E.isodate_from_time_t((ulong) calmodel.data_range.last.to_unix());
 
