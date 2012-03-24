@@ -163,8 +163,6 @@ namespace Maya.View {
             property = new iCal.icalproperty (iCal.icalproperty_kind.COMMENT_PROPERTY);
             property.set_comment (comment.get_buffer ().text);
             comp.add_property (property);
-
-            // TODO: save comments
         }
 
 		//--- Helpers ---//
@@ -230,7 +228,6 @@ namespace Maya.View {
                 property = comp.get_next_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
             }
 
-            // TODO: load comments
             property = comp.get_first_property (iCal.icalproperty_kind.COMMENT_PROPERTY);
 
             if (property != null) {
