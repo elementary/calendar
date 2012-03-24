@@ -18,64 +18,26 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-19 04:56+0000\n"
 "X-Generator: Launchpad (build 14969)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
-"gösterilecek."
-
-msgid "%B %e, %Y"
-msgstr ""
-
 msgid "%A, %b %d"
 msgstr ""
 
-msgid "%l:%M %p"
+msgid "%B %e, %Y"
 msgstr ""
 
 msgid "%H:%M"
 msgstr ""
 
-msgid "all the day"
-msgstr "bütün gün"
+msgid "%l:%M %p"
+msgstr ""
 
-msgid "at"
+msgid "About"
 msgstr ""
 
 msgid "Add Event"
 msgstr "Etkinlik Ekle"
 
-msgid "Edit Event"
-msgstr "Etkinliği Düzenle"
-
-msgid "From:"
-msgstr "Başlangıç:"
-
 msgid "All day:"
 msgstr "Tüm gün:"
-
-msgid "To:"
-msgstr "Bitiş:"
-
-msgid "Title"
-msgstr "Başlık"
-
-msgid "Name of Event"
-msgstr "Etkinliğin Adı:"
-
-msgid "Location"
-msgstr "Konum"
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Guests"
-msgstr "Misafirler"
-
-msgid "John Smith"
-msgstr ""
 
 msgid "Comments"
 msgstr "Yorumlar"
@@ -89,38 +51,76 @@ msgstr "Etkinlik Oluştur"
 msgid "Create a new event"
 msgstr "Yeni bir etkinlik oluştur"
 
-msgid "Edit the selected event"
-msgstr "Seçili etkinliği düzenle"
-
 msgid "Delete the selected event"
 msgstr "Seçili etkinliği sil"
 
-msgid "Select calendars to display"
-msgstr "Görüntülenecek takvimleri seçin"
+msgid "Edit Event"
+msgstr "Etkinliği Düzenle"
+
+msgid "Edit the selected event"
+msgstr "Seçili etkinliği düzenle"
+
+msgid "Export or Share the default Calendar"
+msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
+
+msgid "From:"
+msgstr "Başlangıç:"
+
+msgid "Fullscreen"
+msgstr "Tam ekran"
+
+msgid "Guests"
+msgstr "Misafirler"
+
+msgid "Import..."
+msgstr "İçe Aktar..."
+
+msgid "John Smith"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Location"
+msgstr "Konum"
+
+msgid "Name of Event"
+msgstr "Etkinliğin Adı:"
 
 msgid "Search For Events.."
 msgstr ""
 
-msgid "Export or Share the default Calendar"
-msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
+msgid "Select calendars to display"
+msgstr "Görüntülenecek takvimleri seçin"
+
+msgid "Show Week Numbers"
+msgstr "Hafta Numaralarını Göster"
+
+msgid "Sync..."
+msgstr "Eşzamanla..."
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "To:"
+msgstr "Bitiş:"
 
 #. Create everything
 msgid "Today"
 msgstr "Bugün"
 
-msgid "Fullscreen"
-msgstr "Tam ekran"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
+"gösterilecek."
 
-msgid "Show Week Numbers"
-msgstr "Hafta Numaralarını Göster"
+msgid "all the day"
+msgstr "bütün gün"
 
-msgid "Import..."
-msgstr "İçe Aktar..."
-
-msgid "Sync..."
-msgstr "Eşzamanla..."
-
-msgid "About"
+msgid "at"
 msgstr ""
 
 #~ msgid "Name or Email Address"

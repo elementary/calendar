@@ -51,15 +51,3 @@
 	.cell > #date {
 		font-size: 8;
 	}
-
-
-/* Event Styles */
-
-.event {
-    background-color: @bg_color;
-}
-
-.event:focused {
-    background-color: shade(@bg_color, 0.9);
-}
-
