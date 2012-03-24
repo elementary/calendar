@@ -71,7 +71,6 @@ namespace Maya.View {
 
         private void connect_signals () {
             this.response.connect (on_response);
-            this.close.connect (on_close);
         }
 
         private void on_response (Gtk.Dialog source, int response_id) {
@@ -85,10 +84,6 @@ namespace Maya.View {
             }
         }
 
-        private void on_close () {
-                destroy ();
-        }
-		
         //--- Public Methods ---//
 
             
@@ -163,8 +158,6 @@ namespace Maya.View {
             property = new iCal.icalproperty (iCal.icalproperty_kind.COMMENT_PROPERTY);
             property.set_comment (comment.get_buffer ().text);
             comp.add_property (property);
-
-            // TODO: save comments
         }
 
 		//--- Helpers ---//
@@ -230,7 +223,6 @@ namespace Maya.View {
                 property = comp.get_next_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
             }
 
-            // TODO: load comments
             property = comp.get_first_property (iCal.icalproperty_kind.COMMENT_PROPERTY);
 
             if (property != null) {
