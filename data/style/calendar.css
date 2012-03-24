@@ -15,34 +15,37 @@
 *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-@define-color bg_color rgba(255, 255, 255, 1);
-@define-color event_color rgba(100,100,100, 1);
+
+@define-color cell_color mix(@bg_color, rgb(255, 255, 255), 0.5);
+/*@define-color event_color rgba(100,100,100, 1);
+*/
 
 /* Header Styles */
+
 
 .header {
 	background-image: -gtk-gradient (linear,
 			left top, left bottom,
-			from(shade(@bg_color, 0.9)), to(mix(@bg_color, rgb(255, 255, 255), 0.5)));
+			from(mix(@bg_color, rgb(255, 255, 255), 0.5)), to(mix(@bg_color, rgb(255, 255, 255), 0.8)));
 }
+
 
 /* Cell Styles */
 
 .cell {
-	background-color: @bg_color;
-	border-radius: 0;
+	background-color: @cell_color;
 }
 
 .cell:insensitive {
-	background-color: shade(@bg_color, 0.97);
+	background-color: shade(@cell_color, 0.97);
 }
 
 .cell:focused {
-	background-color: shade(@bg_color, 0.9);
+	background-color: shade(@cell_color, 0.9);
 }
 
 #today, #today:focused {
-	background-color: mix(@bg_color, rgb(0, 0, 255), 0.08); /* today date has nice shade of blue */
+	background-color: mix(@cell_color, rgb(0, 0, 255), 0.08); /* today date has nice shade of blue */
 }
 
 	.cell > #date {

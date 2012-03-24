@@ -15,7 +15,7 @@
 *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-@define-color bg_color rgba(255, 255, 255, 1);
+/*@define-color bg_color rgba(255, 255, 255, 1);*/
 
 .sidebar {
     background-color: @bg_color;
