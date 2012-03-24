@@ -29,7 +29,7 @@ namespace Maya.View {
         DateTime selected_date;
 
         // All of the events of the current date range in the CalendarView
-        Gee.ArrayList<E.CalComponent> events;
+        Gee.ArrayList<E.CalComponent> current_events;
 
         // All the widgets associated with the current day
         Gee.Map<E.CalComponent, EventWidget> event_widgets;
@@ -69,7 +69,7 @@ namespace Maya.View {
                 null,
                 null);
 
-            events = new Gee.ArrayList<E.CalComponent> (null);
+            current_events = new Gee.ArrayList<E.CalComponent> (null);
 
             name_label = new Gtk.Label ("");
             name_label.set_markup ("<b>" + Markup.escape_text (source.peek_name()) + "</b>");
@@ -111,7 +111,7 @@ namespace Maya.View {
             if (event_widgets.has_key (event))
                 remove_event (event);
 
-            events.add (event);
+            current_events.add (event);
 
             update_widget_for (event);
 
@@ -123,10 +123,10 @@ namespace Maya.View {
          * Called when the given event for this source is removed.
          */
         public void remove_event (E.CalComponent event) {
-            if (!events.contains (event))
+            if (!current_events.contains (event))
                 return;
 
-            events.remove (event);
+            current_events.remove (event);
 
             if (event_widgets.has_key (event)) {
                 hide_event (event);
@@ -139,11 +139,11 @@ namespace Maya.View {
          * Called when the given event for this source is updated.
          */
         public void update_event (E.CalComponent event) {
-            if (!events.contains (event))
+            if (!current_events.contains (event))
                 return;
 
-            events.remove (event);
-            events.add (event);
+            current_events.remove (event);
+            current_events.add (event);
 
             if (event_widgets.has_key (event)) {
                 event_widgets.get (event).update (event);
@@ -155,9 +155,9 @@ namespace Maya.View {
 
         void reorder_widgets () {
             // Sort events list
-            events.sort (compare_comps);
+            current_events.sort (compare_comps);
 
-            foreach (var event in events) {
+            foreach (var event in current_events) {
                 bool has_widget = event_widgets.has_key (event);
 
                 if (has_widget) {
@@ -191,7 +191,7 @@ namespace Maya.View {
          * even the ones that don't pass the search filter.
          */
         void update_current_date_events () {
-            foreach (var event in events) {
+            foreach (var event in current_events) {
                update_widget_for (event);
             }
         }
@@ -303,7 +303,7 @@ namespace Maya.View {
             foreach (var widget in event_widgets.values) {
                 widget.destroy ();
             }
-            events.clear ();
+            current_events.clear ();
             event_widgets.clear ();
 
             update_visibility ();

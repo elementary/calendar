@@ -94,7 +94,7 @@ namespace Maya.View.Widgets {
                         width = child_size.width;
                     }
 
-                    var child_allocation = new Gtk.Allocation ();
+                    var child_allocation = Gtk.Allocation ();
                     child_allocation.width = child_size.width;
                     child_allocation.height = row_height;
                     child_allocation.x = allocation.x + width - child_size.width;
