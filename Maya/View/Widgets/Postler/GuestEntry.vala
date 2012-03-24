@@ -65,6 +65,8 @@ namespace Maya.View.Widgets {
                 return false;
             });
             entry.focus_out_event.connect ((widget, event) => {
+                if (entry.text == "")
+                    return false;
                 entry.text = entry.text + ",";
                 buttonize_text ();
                 return false;
@@ -85,6 +87,7 @@ namespace Maya.View.Widgets {
                 var model = entry.get_completion ().model as Gtk.ListStore;
                 model.clear ();
             });
+
         }
 
         bool match_function (Gtk.EntryCompletion completion, string key,
