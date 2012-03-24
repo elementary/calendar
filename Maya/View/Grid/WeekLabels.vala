@@ -27,8 +27,11 @@ public class WeekLabels : Gtk.EventBox {
 
     public WeekLabels () {
 
+        no_show_all = true;
+
         table = new Gtk.Table (1, 6, false);
         table.row_spacing = 1;
+        table.show ();
 
         var style_provider = Util.Css.get_css_provider ();
 
@@ -76,9 +79,8 @@ public class WeekLabels : Gtk.EventBox {
             labels[c].valign = Gtk.Align.START;
             labels[c].width_chars = 2;
             table.attach_defaults (labels[c], 0, 1, c, c + 1);
+            labels[c].show ();
         }
-
-        show_all ();
     }
 
 }
