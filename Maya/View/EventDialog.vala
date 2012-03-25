@@ -94,7 +94,10 @@ namespace Maya.View {
             unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
 
             // Save the title
-            comp.set_summary (title_entry.text);
+            if (title_entry.text != "")
+                comp.set_summary (title_entry.text);
+            else
+                comp.set_summary ("<no title>");
 
             DateTime from_time = new DateTime.now_local();
             DateTime to_time = new DateTime.now_local();
