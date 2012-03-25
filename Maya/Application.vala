@@ -200,6 +200,7 @@ namespace Maya {
 			create_toolbar ();
 
 			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
+            calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
 
 			sidebar = new View.Sidebar (sourcemgr, calmodel);
             // Don't automatically display all the widgets on the sidebar

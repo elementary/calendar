@@ -31,6 +31,11 @@ public class GridDay : Gtk.EventBox {
 
     private static const int EVENT_MARGIN = 3;
 
+    /*
+     * Event emitted when the day is double clicked or the ENTER key is pressed.
+     */
+    public signal void on_event_add (DateTime date);
+
     public GridDay (DateTime date) {
 
         this.date = date;
@@ -43,6 +48,7 @@ public class GridDay : Gtk.EventBox {
         // EventBox Properties
         can_focus = true;
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
+        events |= Gdk.EventMask.KEY_PRESS_MASK;
         var style_provider = Util.Css.get_css_provider ();
         get_style_context ().add_provider (style_provider, 600);
         get_style_context ().add_class ("cell");
@@ -60,6 +66,7 @@ public class GridDay : Gtk.EventBox {
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
+        key_press_event.connect (on_key_press);
         vbox.draw.connect (on_draw);
     }
 
@@ -102,8 +109,19 @@ public class GridDay : Gtk.EventBox {
 
     private bool on_button_press (Gdk.EventButton event) {
 
+        if (event.type == Gdk.EventType.2BUTTON_PRESS)
+            on_event_add (date);
+
         grab_focus ();
         return true;
+    }
+
+    private bool on_key_press (Gdk.EventKey event) {
+        if (event.keyval == Gdk.Key.Return) {
+            on_event_add (date);
+            return true;
+        }
+        return false;
     }
 
     private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {

@@ -27,6 +27,11 @@ public class Grid : Gtk.Table {
     public Util.DateRange grid_range { get; private set; }
     public DateTime? selected_date { get; private set; }
 
+    /*
+     * Event emitted when the day is double clicked or the ENTER key is pressed.
+     */
+    public signal void on_event_add (DateTime date);
+
     public signal void selection_changed (DateTime new_date);
 
     public Grid (Util.DateRange range, DateTime month_start, int weeks) {
@@ -115,6 +120,7 @@ public class Grid : Gtk.Table {
                     on_day_focus_in(day);
                     return false;
                 });
+                day.on_event_add.connect ((date) => on_event_add (date));
                 day.show_all ();
             }
 

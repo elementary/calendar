@@ -29,6 +29,11 @@ public class CalendarView : Gtk.HBox {
     public Header header { get; private set; }
     public Grid grid { get; private set; }
 
+    /*
+     * Event emitted when the day is double clicked or the ENTER key is pressed.
+     */
+    public signal void on_event_add (DateTime date);
+
     public bool show_weeks { get; set; }
     
     public CalendarView (Model.CalendarModel model, bool show_weeks) {
@@ -39,6 +44,7 @@ public class CalendarView : Gtk.HBox {
         weeks = new WeekLabels ();
         header = new Header ();
         grid = new Grid (model.data_range, model.month_start, model.num_weeks);
+        grid.on_event_add.connect ((date) => on_event_add (date));
         
         // HBox properties
         spacing = 0;
