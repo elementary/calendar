@@ -20,7 +20,7 @@ namespace Maya.View {
 /**
  * Represents the entire date grid as a table.
  */
-public class Grid : Gtk.Table {
+public class Grid : Gtk.Grid {
 
     Gee.Map<DateTime, GridDay> data;
 
@@ -38,12 +38,13 @@ public class Grid : Gtk.Table {
 
         selected_date = new DateTime.now_local ();
 
-        // Gtk.Table properties
-        n_rows = weeks;
-        n_columns = 7;
+        // Gtk.Grid properties
+        insert_column (7);
+        insert_row (weeks);
+        set_column_homogeneous (true);
+        set_row_homogeneous (true);
         column_spacing = 0;
         row_spacing = 0;
-        homogeneous = true;
 
         data = new Gee.HashMap<DateTime, GridDay> (
             (HashFunc) DateTime.hash,
@@ -115,7 +116,7 @@ public class Grid : Gtk.Table {
                 // Still update_day to get the color of etc. right
                 day = update_day (day, new_date, today, month_start);
 
-                attach_defaults (day, col, col + 1, row, row + 1);
+                attach (day, col, row, 1, 1);
                 day.focus_in_event.connect ((event) => {
                     on_day_focus_in(day);
                     return false;
@@ -143,7 +144,6 @@ public class Grid : Gtk.Table {
         data.set_all (data_new);
 
         grid_range = new_range;
-        resize (new_dates.size / 7, 7);
     }
 
     /**
@@ -152,8 +152,11 @@ public class Grid : Gtk.Table {
     GridDay update_day (GridDay day, DateTime new_date, DateTime today, DateTime month_start) {
         if (new_date.get_day_of_year () == today.get_day_of_year () && new_date.get_year () == today.get_year ()) {
             day.name = "today";
-            day.can_focus = true;
-            day.sensitive = true;
+            if (new_date.get_month () == month_start.get_month ())
+            {
+                day.can_focus = true;
+                day.sensitive = true;
+            }
 
         } else if (new_date.get_month () != month_start.get_month ()) {
             day.name = null;

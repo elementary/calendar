@@ -22,7 +22,7 @@ namespace Maya.View {
      * The AgendaView shows all events for the currently selected date,
      * even with fancy colors!
      */
-	public class AgendaView : Gtk.VBox {
+	public class AgendaView : Gtk.Box {
 
         // All of the sources to be displayed and their widgets.
         Gee.Map<E.Source, SourceWidget> source_widgets;
@@ -51,6 +51,7 @@ namespace Maya.View {
 		public AgendaView (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
 
 			// VBox properties
+            this.orientation = Gtk.Orientation.VERTICAL;
 			spacing = 0;
 			homogeneous = false;
 

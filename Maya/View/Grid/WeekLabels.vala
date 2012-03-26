@@ -22,16 +22,21 @@ namespace Maya.View {
  */
 public class WeekLabels : Gtk.EventBox {
 
-    private Gtk.Table table;
+    private Gtk.Grid day_grid;
     private Gtk.Label[] labels;
+    private int nr_of_weeks;
 
     public WeekLabels () {
 
         no_show_all = true;
 
-        table = new Gtk.Table (1, 6, false);
-        table.row_spacing = 1;
-        table.show ();
+        day_grid = new Gtk.Grid ();
+        set_nr_of_weeks (5);
+        day_grid.insert_row (1);
+        day_grid.set_column_homogeneous (true);
+        day_grid.set_row_homogeneous (true);
+        day_grid.row_spacing = 0;
+        day_grid.show ();
 
         var style_provider = Util.Css.get_css_provider ();
 
@@ -42,7 +47,7 @@ public class WeekLabels : Gtk.EventBox {
 
         update_nr_of_labels (6);
 
-        add (Util.set_margins (table, 20, 0, 0, 0));
+        add (Util.set_margins (day_grid, 20, 0, 0, 0));
     }
 
     public void update (DateTime date, bool show_weeks, int nr_of_weeks) {
@@ -63,24 +68,48 @@ public class WeekLabels : Gtk.EventBox {
         }
     }
 
+    public void set_nr_of_weeks (int new_number) {
+        day_grid.insert_row (new_number);
+        nr_of_weeks = new_number;
+    }
+
+    public int get_nr_of_weeks () {
+        return nr_of_weeks;
+    }
+
     void update_nr_of_labels (int nr_of_weeks) {
         // Destroy all the old ones
 
         if (labels != null)
             foreach (var label in labels)
                 label.destroy ();
-        
-        table.n_columns = nr_of_weeks;
 
         // Create new labels
-        labels = new Gtk.Label[table.n_columns];
-        for (int c = 0; c < table.n_columns; c++) {
+        labels = new Gtk.Label[nr_of_weeks];
+        for (int c = 0; c < nr_of_weeks; c++) {
             labels[c] = new Gtk.Label ("");
             labels[c].valign = Gtk.Align.START;
             labels[c].width_chars = 2;
-            table.attach_defaults (labels[c], 0, 1, c, c + 1);
+            labels[c].draw.connect (on_draw);
+            day_grid.attach (labels[c], 0, c, 1, 1);
             labels[c].show ();
         }
+    }
+
+    private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
+
+        Gtk.Allocation size;
+        widget.get_allocation (out size);
+
+        // Draw left and top black strokes
+        cr.move_to (0, 0); // start on upper left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
+        cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
+
+        cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
+        cr.set_line_width (1.0);
+        cr.set_antialias (Cairo.Antialias.NONE);
+        cr.stroke ();
+        return false;
     }
 
 }

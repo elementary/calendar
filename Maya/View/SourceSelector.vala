@@ -51,7 +51,7 @@ class SourceGroupTreeView : Gtk.TreeView {
 /**
  * The group box containing the different groups of calendars inside the popover.
  */
-class SourceGroupBox : Gtk.VBox {
+class SourceGroupBox : Gtk.Grid {
 
     Gtk.Label label;
     public E.SourceGroup group { get; private set; }
@@ -59,7 +59,7 @@ class SourceGroupBox : Gtk.VBox {
 
     public SourceGroupBox (E.SourceGroup group, Gtk.TreeModelSort tmodel) {
 
-        Object (homogeneous:false, spacing:0);
+        //Object (homogeneous:false, spacing:0);
 
         this.group = group;
 
@@ -68,10 +68,10 @@ class SourceGroupBox : Gtk.VBox {
 
         var evbox = new Gtk.EventBox();
         evbox.add(label);
-        pack_start (evbox, false, false, 0);
+        attach (evbox, 0, 0, 1, 1);
 
         tview = new SourceGroupTreeView (tmodel);
-        pack_start (tview, false, false, 0);
+        attach (tview, 0, 1, 1, 1);
 
         evbox.modify_bg (Gtk.StateType.NORMAL, tview.style.base[Gtk.StateType.NORMAL]);
         label.margin_top = 8;
@@ -105,8 +105,8 @@ class SourceSelector : Granite.Widgets.PopOver {
 
         set_title ("Calendars");
 
-        var vbox_widget = new Gtk.VBox (false, 0);
-
+        var sources_grid = new Gtk.Grid ();
+        int groupnumer = 0;
         foreach (var group in model.groups) {
             
             var tmodel = model.get_tree_model (group);
@@ -116,16 +116,17 @@ class SourceSelector : Granite.Widgets.PopOver {
             box.visible = model.get_sources(group).size > 0;
             _group_box.set (group, box);
 
-            vbox_widget.pack_start (box, false, false, 0);
+            sources_grid.attach (box, 0, groupnumer, 1, 1);
 
             box.tview.get_selection().changed.connect(() => {treeview_selection_changed (box);});
 
             box.tview.column.set_cell_data_func (box.tview.r_name, data_func_name);
             box.tview.column.set_cell_data_func (box.tview.r_enabled, data_func_enabled);
+            groupnumer++;
         }
 
         var vbox_window = get_content_area () as Gtk.Box;
-        vbox_window.pack_start (vbox_widget, false, false, 0);
+        vbox_window.pack_start (sources_grid, false, false, 0);
 
         delete_event.connect (hide_on_delete);
     }

@@ -25,7 +25,7 @@ public class GridDay : Gtk.EventBox {
     public DateTime date { get; private set; }
 
     Gtk.Label label;
-    Gtk.VBox vbox;
+    Gtk.Grid container_grid;
     VAutoHider event_box;
     Gee.List<EventButton> event_buttons;
 
@@ -41,7 +41,7 @@ public class GridDay : Gtk.EventBox {
         this.date = date;
         event_buttons = new Gee.ArrayList<EventButton>();
 
-        vbox = new Gtk.VBox (false, 0);
+        container_grid = new Gtk.Grid ();
         label = new Gtk.Label ("");
         event_box = new VAutoHider ();
 
@@ -56,18 +56,20 @@ public class GridDay : Gtk.EventBox {
         label.halign = Gtk.Align.END;
         label.get_style_context ().add_provider (style_provider, 600);
         label.name = "date";
+        event_box.set_vexpand(true);
+        event_box.set_hexpand(true);
         Util.set_margins (label, EVENT_MARGIN, EVENT_MARGIN, 0, EVENT_MARGIN);
         Util.set_margins (event_box, 0, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN);
-        vbox.pack_start (label, false, false, 0);
-        vbox.pack_start (event_box, true, true, 0);
+        container_grid.attach (label, 0, 0, 1, 1);
+        container_grid.attach (event_box, 0, 1, 1, 1);
 
-        add (vbox);
-        vbox.show_all ();
+        add (container_grid);
+        container_grid.show_all ();
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
         key_press_event.connect (on_key_press);
-        vbox.draw.connect (on_draw);
+        container_grid.draw.connect (on_draw);
     }
 
     public void add_event(E.CalComponent comp) {
@@ -117,7 +119,7 @@ public class GridDay : Gtk.EventBox {
     }
 
     private bool on_key_press (Gdk.EventKey event) {
-        if (event.keyval == Gdk.Key.Return) {
+        if (event.keyval == Gdk.keyval_from_name("Return") ) {
             on_event_add (date);
             return true;
         }

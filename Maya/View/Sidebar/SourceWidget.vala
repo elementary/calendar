@@ -20,7 +20,7 @@ namespace Maya.View {
     /**
      * A widget containing one source to be displayed in the sidebar.
      */
-    public class SourceWidget : Gtk.VBox {
+    public class SourceWidget : Gtk.Box {
 
         // The label displaying the name of this source.
         Gtk.Label name_label;
@@ -59,7 +59,7 @@ namespace Maya.View {
          * Creates a new source widget for the given source.
          */
         public SourceWidget (E.Source source) {
-
+            this.orientation = Gtk.Orientation.VERTICAL;
             set_spacing (5);
 
             // TODO: hash and equal funcs are in util but cause a crash

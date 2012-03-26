@@ -22,18 +22,19 @@ namespace Maya.View {
         /**
          * The different widgets in the dialog.
          */        
-        Gtk.Entry title_entry;
-        Granite.Widgets.HintedEntry location_entry;
-        Gtk.TextView comment;
-        Maya.View.Widgets.GuestEntry guest;
-        Granite.Widgets.DatePicker from_date_picker;
-        Granite.Widgets.DatePicker to_date_picker;
-        Gtk.Switch allday;
+        private Gtk.Entry title_entry;
+        private Granite.Widgets.HintedEntry location_entry;
+        private Gtk.TextView comment_textview;
+        private Maya.View.Widgets.GuestEntry guest_entry;
+        private Granite.Widgets.DatePicker from_date_picker;
+        private Granite.Widgets.DatePicker to_date_picker;
+        private Gtk.Switch allday_switch;
+        private Gtk.Widget create_button;
 
-        Granite.Widgets.TimePicker from_time_picker;
-        Granite.Widgets.TimePicker to_time_picker;
+        private Granite.Widgets.TimePicker from_time_picker;
+        private Granite.Widgets.TimePicker to_time_picker;
 
-		Gtk.Container container { get; private set; }
+		private Gtk.Grid content_grid { get; private set; }
 
         public E.Source source { get; private set; }
 
@@ -93,17 +94,11 @@ namespace Maya.View {
         public void save () {
             unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
 
-            // Save the title
-            if (title_entry.text != "")
-                comp.set_summary (title_entry.text);
-            else
-                comp.set_summary ("<no title>");
-
             DateTime from_time = new DateTime.now_local();
             DateTime to_time = new DateTime.now_local();
 
             // Save the time
-            if (allday.get_active() == true ) {
+            if (allday_switch.get_active() == true ) {
                 from_time = new DateTime.local(0, 0, 0, 0, 0, 0);
                 to_time = new DateTime.local(0, 0, 0, 0, 0, 0);
             }
@@ -140,7 +135,7 @@ namespace Maya.View {
             }
 
             // Add the new guests
-            Gee.ArrayList<string> addresses = guest.get_addresses ();
+            Gee.ArrayList<string> addresses = guest_entry.get_addresses ();
             iCal.icalproperty property;
             foreach (string address in addresses) {
                 property = new iCal.icalproperty (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
@@ -159,7 +154,7 @@ namespace Maya.View {
 
             // Add the comment
             property = new iCal.icalproperty (iCal.icalproperty_kind.COMMENT_PROPERTY);
-            property.set_comment (comment.get_buffer ().text);
+            property.set_comment (comment_textview.get_buffer ().text);
             comp.add_property (property);
         }
 
@@ -198,12 +193,12 @@ namespace Maya.View {
 //                to_time_picker.time = to_date;
             }
 
-            // Load the allday
+            // Load the allday_switch
             if (dt_end.year != 0) {
                 DateTime to_date = Util.ical_to_date_time (dt_end);
                 DateTime from_date = Util.ical_to_date_time (dt_start);
                 if (Util.is_the_all_day(from_date, to_date) == true) {
-                    allday.set_active(true);
+                    allday_switch.set_active(true);
                     from_time_picker.sensitive = false;
 		            to_time_picker.sensitive = false;
                 }
@@ -221,7 +216,7 @@ namespace Maya.View {
             for (int i = 0; i < count; i++) {
 
                 if (property.get_attendee () != null)
-                    guest.add_address (property.get_attendee ());
+                    guest_entry.add_address (property.get_attendee ());
 
                 property = comp.get_next_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
             }
@@ -231,126 +226,91 @@ namespace Maya.View {
             if (property != null) {
                 Gtk.TextBuffer buffer = new Gtk.TextBuffer (null);
                 buffer.text = property.get_comment ();
-                comment.set_buffer (buffer);
+                comment_textview.set_buffer (buffer);
             }    
         }
 
 		void build_dialog (bool add_event) {
 		    
-		    container = (Gtk.Container) get_content_area ();
-		    container.margin_left = 10;
-		    container.margin_right = 10;
+		    var container = (Gtk.Container) get_content_area ();
+            content_grid = new Gtk.Grid ();
+            content_grid.set_vexpand(true);
+            content_grid.set_hexpand(true);
+		    content_grid.margin_left = 10;
+		    content_grid.margin_right = 10;
+		    content_grid.margin_top = 10;
 		    
-		    var from_box = make_hbox ();
-		    
-		    var from = make_label (_("From:"));
+		    var from_label = make_label (_("From:"));
 			from_date_picker = make_date_picker ();
 			from_time_picker = make_time_picker ();
-			
-			from_box.add (from_date_picker);
-			from_box.add (from_time_picker);
 		    
-		    var switch_label = new Gtk.Label (_("All day:"));
-		    switch_label.margin_right = 20;
+		    var allday_label = new Gtk.Label (_("All day:"));
+		    allday_label.margin_left = 10;
 		    
-		    allday = new Gtk.Switch ();
+		    allday_switch = new Gtk.Switch ();
 		    
-		    from_box.add (switch_label);
-		    from_box.add (allday);
+		    var to_expander = new Gtk.Expander ("<span weight='bold'>"+_("To:")+"</span>");
+		    to_expander.use_markup = true;
+		    to_expander.spacing = 10;
+		    to_expander.margin_bottom = 10;
 		    
-		    var to = new Gtk.Expander ("<span weight='bold'>"+_("To:")+"</span>");
-		    to.use_markup = true;
-		    to.spacing = 10;
-		    to.margin_bottom = 10;
-		    
-		    var to_box = make_hbox ();
+		    var to_grid = new Gtk.Grid ();
 		    
 		    to_date_picker = make_date_picker ();
 		    to_time_picker = make_time_picker ();
 		    
-		    to_box.pack_start (to_date_picker, false, false, 0);
-		    to_box.pack_start (to_time_picker, false, false, 0);
+		    to_grid.attach (to_date_picker, 0, 0, 1, 1);
+		    to_grid.attach (to_time_picker, 1, 0, 1, 1);
 		    
-		    to.add (to_box);
+		    to_expander.add (to_grid);
 		    
-		    allday.button_release_event.connect (() => { 
+		    allday_switch.button_release_event.connect (() => { 
 		        from_time_picker.sensitive = !from_time_picker.sensitive;
 		        to_time_picker.sensitive = !to_time_picker.sensitive;
 		        
 		        return false;
 		    });
 		    
-		    var title_location_box = make_hbox ();
-		    
-		    var title_box = new Gtk.VBox (false, 0);
-		    
 		    var title_label = make_label (_("Title"));
 		    title_entry = new Granite.Widgets.HintedEntry (_("Name of Event"));
-
-		    title_box.add (title_label);
-		    title_box.add (title_entry);
-		    
-		    var location_box = new Gtk.VBox (false, 0);
+            title_entry.changed.connect(on_title_entry_modified);
 		    
 		    var location_label = make_label (_("Location"));
 	        location_entry = new Granite.Widgets.HintedEntry (_("John Smith OR Example St."));
-	        
-		    location_box.add (location_label);
-		    location_box.add (location_entry);
-		    
-		    title_location_box.add (title_box);
-		    title_location_box.add (location_box);
-		    
-		    var guest_box = make_vbox ();
 		    
 		    var guest_label = make_label (_("Guests"));
-			guest = new Maya.View.Widgets.GuestEntry (_("John Smith"));
-            guest.check_resize ();
-			
-			guest_box.add (guest_label);
-			guest_box.add (guest);
-			
-			var comment_box = new Gtk.VBox (false, 0);
-			comment_box.margin_bottom = 20;
-            comment_box.vexpand = true;
+			guest_entry = new Maya.View.Widgets.GuestEntry (_("Name or Email Address"));
+            guest_entry.check_resize ();
 			
 			var comment_label = make_label (_("Comments"));
-			comment_box.pack_start (comment_label, false, false, 0);
-			
-			comment = new Gtk.TextView ();
-			comment.height_request = 100;
-			comment_box.pack_start (comment, true, true, 0);
+			comment_textview = new Gtk.TextView ();
+			comment_textview.height_request = 100;
+            comment_textview.vexpand = true;
 		    
-		    container.add (from);
-		    container.add (from_box);
-		    container.add (to);
-		    container.add (title_location_box);
-		    container.add (guest_box);
-		    container.add (comment_box);
+		    content_grid.attach (from_label, 0, 0, 4, 1);
+		    content_grid.attach (from_date_picker, 0, 1, 1, 1);
+		    content_grid.attach (from_time_picker, 1, 1, 1, 1);
+		    content_grid.attach (allday_label, 2, 1, 1, 1);
+		    content_grid.attach (allday_switch, 3, 1, 1, 1);
+		    content_grid.attach (to_expander, 0, 2, 2, 1);
+		    content_grid.attach (title_label, 0, 3, 1, 1);
+		    content_grid.attach (location_label, 1, 3, 3, 1);
+		    content_grid.attach (title_entry, 0, 4, 1, 1);
+		    content_grid.attach (location_entry, 1, 4, 3, 1);
+		    content_grid.attach (guest_label, 0, 5, 4, 1);
+		    content_grid.attach (guest_entry, 0, 6, 4, 1);
+		    content_grid.attach (comment_label, 0, 7, 4, 1);
+		    content_grid.attach (comment_textview, 0, 8, 4, 1);
+            container.add (content_grid);
 		   
             if (add_event) {
-		        add_button (_("Create Event"), Gtk.ResponseType.APPLY);
+		        create_button = add_button (_("Create Event"), Gtk.ResponseType.APPLY);
+                create_button.sensitive = false;
             }
             else {
-		        add_button (Gtk.Stock.OK, Gtk.ResponseType.APPLY);
+		        create_button = add_button (Gtk.Stock.OK, Gtk.ResponseType.APPLY);
             }
 		    show_all();
-		}
-
-		Gtk.HBox make_hbox () {
-		    
-		    var box = new Gtk.HBox (false, 10);
-		    box.margin_bottom = 10;
-		
-		    return box;
-		}
-		
-		Gtk.VBox make_vbox () {
-		
-		    var box = new Gtk.VBox (false, 0);
-		    box.margin_bottom = 10;
-		    
-		    return box;
 		}
 		
 		Gtk.Label make_label (string text) {
@@ -378,6 +338,14 @@ namespace Maya.View {
 		    
 		    return time_picker;
 		}
+
+        void on_title_entry_modified () {
+
+            if (title_entry.text != "")
+                create_button.sensitive = true;
+            else
+                create_button.sensitive = false;
+        }
 	}
 	
 

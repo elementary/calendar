@@ -22,12 +22,18 @@ namespace Maya.View {
  */
 public class Header : Gtk.EventBox {
 
-    private Gtk.Table table;
+    private Gtk.Grid header_grid;
     private Gtk.Label[] labels;
 
     public Header () {
         
-        table = new Gtk.Table (1, 7, true);
+        header_grid = new Gtk.Grid();
+        header_grid.insert_column (7);
+        header_grid.insert_row (1);
+        header_grid.set_column_homogeneous (true);
+        header_grid.set_row_homogeneous (true);
+        header_grid.column_spacing = 0;
+        header_grid.row_spacing = 0;
 
         var style_provider = Util.Css.get_css_provider ();
     
@@ -36,14 +42,14 @@ public class Header : Gtk.EventBox {
         get_style_context ().add_provider (style_provider, 600);
         get_style_context ().add_class ("header");
         
-        labels = new Gtk.Label[table.n_columns];
-        for (int c = 0; c < table.n_columns; c++) {
+        labels = new Gtk.Label[7];
+        for (int c = 0; c < 7; c++) {
             labels[c] = new Gtk.Label ("");
             labels[c].draw.connect (on_draw);
-            table.attach_defaults (labels[c], c, c + 1, 0, 1);
+            header_grid.attach (labels[c], c, 0, 1, 1);
         }
         
-        add (table);
+        add (header_grid);
     }
     
     public void update_columns (int week_starts_on) {

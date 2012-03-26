@@ -217,14 +217,15 @@ namespace Maya {
 
             calmodel.load_all_sources ();
 
-			var vbox = new Gtk.VBox (false, 0);
+			var gridcontainer = new Gtk.Grid ();
 			hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-			vbox.pack_start (toolbar, false, false, 0);
-			vbox.pack_end (hpaned);
+            calview.set_vexpand(true);
 			hpaned.pack1 (calview, true, false);
 			hpaned.pack2 (sidebar, true, false);
 			hpaned.position = saved_state.hpaned_position;
-			window.add (vbox);
+			gridcontainer.attach (toolbar, 0, 0, 1, 1);
+			gridcontainer.attach (hpaned, 0, 1, 1, 1);
+			window.add (gridcontainer);
 
             add_window(window);
 

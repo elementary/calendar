@@ -21,7 +21,7 @@ namespace Maya.View {
 	 * Sidebar is a container for widgets that belong in the sidebar,
 	 * like the AgendaView
 	 */
-	public class Sidebar : Gtk.VBox {
+	public class Sidebar : Gtk.Grid {
 
 		public Gtk.EventBox label_box { get; private set; }
 		public AgendaView agenda_view { get; private set; }
@@ -38,7 +38,7 @@ namespace Maya.View {
         public signal void event_modified (E.CalComponent event);
 
 	    public Sidebar (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
-
+            
 			scrolled_window = new Gtk.ScrolledWindow (null, null);
 			scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
 			scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
@@ -56,10 +56,6 @@ namespace Maya.View {
 
 			agenda_view = new AgendaView (sourcemgr, calmodel);
 
-			// VBox properties
-			spacing = 0;
-			homogeneous = false;
-
 			var viewport = new Gtk.Viewport (null, null);
 			viewport.shadow_type = Gtk.ShadowType.NONE;
 			viewport.add (agenda_view);
@@ -68,8 +64,8 @@ namespace Maya.View {
 
             label_box.add (label);
 
-			pack_start (label_box, true, true, 0);
-			pack_start (scrolled_window, true, true, 0);
+			attach (label_box, 0, 0, 1, 1);
+			attach (scrolled_window, 0, 1, 1, 1);
 
             scrolled_window.hide ();
 
@@ -80,6 +76,13 @@ namespace Maya.View {
 
             viewport.get_style_context().add_provider (style_provider, 600);
             viewport.get_style_context().add_class ("sidebar");
+
+            viewport.set_vexpand(true);
+            viewport.set_hexpand(true);
+            label_box.set_vexpand(true);
+            label_box.set_hexpand(true);
+            set_vexpand(true);
+            set_hexpand(true);
 
             label_box.show ();
             label.show ();
