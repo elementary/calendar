@@ -266,14 +266,9 @@ namespace Maya.View {
             if (selected_date == null)
                 return false;
 
-            unowned iCal.icalcomponent comp = event.get_icalcomponent ();
+            Util.DateRange dt_range = Util.event_date_range (event);
 
-            iCal.icaltimetype time = comp.get_dtstart ();
-
-            DateTime start_date = Util.ical_to_date_time (time);
-
-            if (start_date.get_year () == selected_date.get_year () && 
-                start_date.get_day_of_year () == selected_date.get_day_of_year ())
+            if (dt_range.contains (selected_date))
                 return true;
             else
                 return false;

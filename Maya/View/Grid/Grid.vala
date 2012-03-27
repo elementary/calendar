@@ -179,24 +179,14 @@ public class Grid : Gtk.Grid {
      */
     public void add_event (E.CalComponent event) {
 
-        E.CalComponentDateTime dt_start;
-        event.get_dtstart (out dt_start);
-
-        E.CalComponentDateTime dt_end;
-        event.get_dtend (out dt_end);
-
-        var start = new DateTime(new TimeZone.local(), dt_start.value.year, dt_start.value.month, dt_start.value.day, 0, 0, 0);
-        var end = new DateTime(new TimeZone.local(), dt_end.value.year, dt_end.value.month, dt_end.value.day, 0, 0, 0);
-        
-        var dt_range = new Util.DateRange (start, end);
-
-        add_buttons_for_range (start, dt_range, event);
+        var dt_range = Util.event_date_range (event);
+        add_buttons_for_range (dt_range, event);
     }
 
     /**
      * Adds an eventbutton to the grid for the given event at each day of the given range.
      */
-    void add_buttons_for_range (DateTime event_start, Util.DateRange dt_range, E.CalComponent event) {
+    void add_buttons_for_range (Util.DateRange dt_range, E.CalComponent event) {
         foreach (var date in dt_range) {
             EventButton button;
             if (dt_range.to_list ().size == 1)

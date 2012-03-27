@@ -67,6 +67,19 @@ namespace Maya.Util {
             date.day, date.hour, date.minute, date.second);
     }
 
+    DateRange event_date_range (E.CalComponent event) {
+        E.CalComponentDateTime dt_start;
+        event.get_dtstart (out dt_start);
+
+        E.CalComponentDateTime dt_end;
+        event.get_dtend (out dt_end);
+
+        var start = new DateTime(new TimeZone.local(), dt_start.value.year, dt_start.value.month, dt_start.value.day, 0, 0, 0);
+        var end = new DateTime(new TimeZone.local(), dt_end.value.year, dt_end.value.month, dt_end.value.day, 0, 0, 0);
+        
+        return new Util.DateRange (start, end);
+    }
+
     /**
      * Say if an event last the all say.
      */
