@@ -7,67 +7,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-17 19:47+0100\n"
+"POT-Creation-Date: 2012-03-28 00:00+0200\n"
 "PO-Revision-Date: 2012-03-26 03:10+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-03-27 05:01+0000\n"
 "X-Generator: Launchpad (build 15011)\n"
-"Language: \n"
-
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr "當您選取的日子有活動時，未來的活動會顯示在這裡。"
-
-msgid "%B %e, %Y"
-msgstr "%Y年%b%e日"
 
 msgid "%A, %b %d"
 msgstr "%b%d日 (%A)"
 
-msgid "%l:%M %p"
-msgstr "%p %l:%M"
+msgid "%B %e, %Y"
+msgstr "%Y年%b%e日"
 
 msgid "%H:%M"
 msgstr "%H:%M"
 
-msgid "all the day"
-msgstr "整天"
+msgid "%l:%M %p"
+msgstr "%p %l:%M"
 
-msgid "at"
-msgstr "於"
+msgid "About"
+msgstr ""
 
-msgid "From:"
-msgstr "從："
+msgid "Add Event"
+msgstr "加入事件"
 
 msgid "All day:"
 msgstr "整天："
-
-msgid "To:"
-msgstr "到："
-
-msgid "Title"
-msgstr "標題"
-
-msgid "Name of Event"
-msgstr "事件名稱"
-
-msgid "Location"
-msgstr "地點"
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Guests"
-msgstr "客人"
-
-msgid "Name or Email Address"
-msgstr "名稱或電子郵件位址"
 
 msgid "Comments"
 msgstr "評註"
@@ -75,47 +45,78 @@ msgstr "評註"
 msgid "Create Event"
 msgstr "建立事件"
 
-#. Dialog properties
-msgid "Add Event"
-msgstr "加入事件"
-
-#. Dialog Properties
-msgid "Edit Event"
-msgstr "編輯事件"
-
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
 msgstr "建立新事件"
 
-msgid "Edit the selected event"
-msgstr "編輯所選事件"
-
 msgid "Delete the selected event"
 msgstr "刪除所選事件"
 
-msgid "Select calendars to display"
-msgstr "選取要顯示的行事曆"
+msgid "Edit Event"
+msgstr "編輯事件"
+
+msgid "Edit the selected event"
+msgstr "編輯所選事件"
+
+msgid "Export or Share the default Calendar"
+msgstr "匯出或分享預設行事曆"
+
+msgid "From:"
+msgstr "從："
+
+msgid "Fullscreen"
+msgstr "全螢幕"
+
+msgid "Guests"
+msgstr "客人"
+
+msgid "Import..."
+msgstr "匯入..."
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Location"
+msgstr "地點"
+
+msgid "Name of Event"
+msgstr "事件名稱"
+
+msgid "Name or Email Address"
+msgstr "名稱或電子郵件位址"
 
 msgid "Search For Events.."
 msgstr "搜尋事件..."
 
-msgid "Export or Share the default Calendar"
-msgstr "匯出或分享預設行事曆"
+msgid "Select calendars to display"
+msgstr "選取要顯示的行事曆"
+
+msgid "Show Week Numbers"
+msgstr "顯示週數"
+
+msgid "Sync..."
+msgstr "同步..."
+
+msgid "Title"
+msgstr "標題"
+
+msgid "To:"
+msgstr "到："
 
 #. Create everything
 msgid "Today"
 msgstr "今日"
 
-msgid "Fullscreen"
-msgstr "全螢幕"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr "當您選取的日子有活動時，未來的活動會顯示在這裡。"
 
-msgid "Show Week Numbers"
-msgstr "顯示週數"
+msgid "all the day"
+msgstr "整天"
 
-msgid "Import..."
-msgstr "匯入..."
-
-msgid "Sync..."
-msgstr "同步..."
+msgid "at"
+msgstr "於"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-03-28 00:00+0200\n"
 "PO-Revision-Date: 2012-03-24 20:34+0000\n"
 "Last-Translator: Anducar <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -75,9 +75,6 @@ msgstr "Gäste"
 msgid "Import..."
 msgstr "Importieren …"
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "John Smith ODER Beispiel St."
 
@@ -86,6 +83,9 @@ msgstr "Ort"
 
 msgid "Name of Event"
 msgstr "Terminbezeichnung"
+
+msgid "Name or Email Address"
+msgstr "Name oder E-Mail Adresse"
 
 msgid "Search For Events.."
 msgstr "Termine durchsuchen..."
@@ -122,6 +122,3 @@ msgstr "Ganztägig"
 
 msgid "at"
 msgstr "um"
-
-#~ msgid "Name or Email Address"
-#~ msgstr "Name oder E-Mail Adresse"

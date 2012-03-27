@@ -330,6 +330,7 @@ namespace Maya.View {
 		    
 		    var date_picker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
 			date_picker.width_request = 200;
+            date_picker.notify["date"].connect (on_date_modified);
 			
 			return date_picker;
 		}
@@ -338,17 +339,61 @@ namespace Maya.View {
 		    
 		    var time_picker = new Granite.Widgets.TimePicker.with_format (Maya.Settings.TimeFormat ());
 		    time_picker.width_request = 120;
+            time_picker.notify["time"].connect (on_date_modified);
 		    
 		    return time_picker;
 		}
 
         void on_title_entry_modified () {
-
-            if (title_entry.text != "")
-                create_button.sensitive = true;
-            else
-                create_button.sensitive = false;
+            update_create_sensitivity ();
         }
+
+        void on_date_modified () {
+            update_create_sensitivity ();
+        }
+
+        void update_create_sensitivity () {
+            create_button.sensitive = is_valid_event ();
+        }
+
+        bool is_valid_event () {
+            return title_entry.text != "" && is_valid_dates ();
+        }
+
+        bool is_valid_dates () {
+            // TODO: is it possible to only keep the date or time from a DateTime?
+
+            var start_date = from_date_picker.date;
+            var end_date = to_date_picker.date;
+            var start_time = from_time_picker.time;
+            var end_time = to_time_picker.time;
+
+            if (start_date.get_year () == end_date.get_year ()) {
+
+                // Same year, compare dates.
+
+                if (start_date.get_day_of_year () == end_date.get_day_of_year ()) {
+                    // Same date, compare times.
+
+                    if (start_time.get_hour () == end_time.get_hour ()) {
+                        // Same hour, compare minutes
+                        return start_time.get_minute () < end_time.get_minute ();
+                    }
+
+                    // Different hour, start should be smaller
+                    return start_time.get_hour () < end_time.get_hour ();
+
+                }
+
+                // Same year but different day, start should be smaller.
+                return start_date.get_day_of_year () < end_date.get_day_of_year ();
+
+            }
+
+            // Different years, start should be smaller.
+            return start_date.get_year () < end_date.get_year ();
+        }
+
 	}
 	
 
