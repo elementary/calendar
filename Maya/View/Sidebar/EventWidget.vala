@@ -170,7 +170,7 @@ namespace Maya.View {
             string date_string = date_time.format (Settings.DateFormat_Complete ());
             string time_string = date_time.format (Settings.TimeFormat ());
             if (Util.is_the_all_day(date_time, date_time_end) == true) {
-                return date_string + ", " + _("all the day");
+                return date_string + ", " + _("all day");
             }
             else {
                 return date_string + " " + _("at") + " " + time_string;
