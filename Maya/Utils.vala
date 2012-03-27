@@ -77,6 +77,13 @@ namespace Maya.Util {
         var start = new DateTime(new TimeZone.local(), dt_start.value.year, dt_start.value.month, dt_start.value.day, 0, 0, 0);
         var end = new DateTime(new TimeZone.local(), dt_end.value.year, dt_end.value.month, dt_end.value.day, 0, 0, 0);
         
+        // If end is before start, switch the two
+        if (end.compare (start) < 0) {
+            var temp = end;
+            end = start;
+            start = temp;
+        }
+
         return new Util.DateRange (start, end);
     }
 
