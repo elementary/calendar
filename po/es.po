@@ -18,26 +18,64 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-27 05:01+0000\n"
 "X-Generator: Launchpad (build 15011)\n"
 
-msgid "%A, %b %d"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
+"Sus próximos eventos se mostrarán aquí cuando seleccione una fecha con "
+"eventos."
 
 msgid "%B %e, %Y"
 msgstr ""
 
-msgid "%H:%M"
+msgid "%A, %b %d"
 msgstr ""
 
 msgid "%l:%M %p"
 msgstr ""
 
-msgid "About"
+msgid "%H:%M"
 msgstr ""
+
+msgid "all the day"
+msgstr "todo el día"
+
+msgid "at"
+msgstr "en"
 
 msgid "Add Event"
 msgstr ""
 
+msgid "Edit Event"
+msgstr "Editar Evento"
+
+msgid "From:"
+msgstr "Desde:"
+
 msgid "All day:"
 msgstr ""
+
+msgid "To:"
+msgstr "A:"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "Name of Event"
+msgstr "Nombre del Evento"
+
+msgid "Location"
+msgstr "Ubicación"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "Invitados"
+
+msgid "Name or Email Address"
+msgstr "Nombre o Dirección de Correo Electrónico"
 
 msgid "Comments"
 msgstr "Comentarios"
@@ -51,74 +89,36 @@ msgstr "Crear Evento"
 msgid "Create a new event"
 msgstr "Crear un evento nuevo"
 
-msgid "Delete the selected event"
-msgstr "Eliminar el evento seleccionado"
-
-msgid "Edit Event"
-msgstr "Editar Evento"
-
 msgid "Edit the selected event"
 msgstr "Editar el evento seleccionado"
 
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr "Desde:"
-
-msgid "Fullscreen"
-msgstr "Pantalla completa"
-
-msgid "Guests"
-msgstr "Invitados"
-
-msgid "Import..."
-msgstr "Importar..."
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "Ubicación"
-
-msgid "Name of Event"
-msgstr "Nombre del Evento"
-
-msgid "Name or Email Address"
-msgstr "Nombre o Dirección de Correo Electrónico"
-
-msgid "Search For Events.."
-msgstr ""
+msgid "Delete the selected event"
+msgstr "Eliminar el evento seleccionado"
 
 msgid "Select calendars to display"
 msgstr "Seleccionar calendarios a mostrar"
 
-msgid "Show Week Numbers"
+msgid "Search For Events.."
 msgstr ""
 
-msgid "Sync..."
-msgstr "Sincronizar..."
-
-msgid "Title"
-msgstr "Título"
-
-msgid "To:"
-msgstr "A:"
+msgid "Export or Share the default Calendar"
+msgstr ""
 
 #. Create everything
 msgid "Today"
 msgstr "Hoy"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+msgid "Show Week Numbers"
 msgstr ""
-"Sus próximos eventos se mostrarán aquí cuando seleccione una fecha con "
-"eventos."
 
-msgid "all the day"
-msgstr "todo el día"
+msgid "Import..."
+msgstr "Importar..."
 
-msgid "at"
-msgstr "en"
+msgid "Sync..."
+msgstr "Sincronizar..."
+
+msgid "About"
+msgstr ""

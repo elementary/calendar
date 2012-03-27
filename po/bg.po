@@ -18,26 +18,64 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-26 05:10+0000\n"
 "X-Generator: Launchpad (build 15008)\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Вашите скорошни събития ще се показват тук, след като изберете дата със "
+"събития."
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%H:%M"
-msgstr "%H:%M"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-msgid "About"
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "all the day"
 msgstr ""
+
+msgid "at"
+msgstr "в"
 
 msgid "Add Event"
 msgstr "Добавяне на събитие"
 
+msgid "Edit Event"
+msgstr "Редактиране на събитие"
+
+msgid "From:"
+msgstr "От:"
+
 msgid "All day:"
 msgstr "Цял ден:"
+
+msgid "To:"
+msgstr "До:"
+
+msgid "Title"
+msgstr "Заглавие"
+
+msgid "Name of Event"
+msgstr "Име на събитието"
+
+msgid "Location"
+msgstr "Място"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "Гости"
+
+msgid "Name or Email Address"
+msgstr "Име или имейл адрес"
 
 msgid "Comments"
 msgstr "Коментари"
@@ -51,74 +89,36 @@ msgstr "Създай събитието"
 msgid "Create a new event"
 msgstr "Създаване на ново събитие"
 
-msgid "Delete the selected event"
-msgstr "Изтриване на избраното събитие"
-
-msgid "Edit Event"
-msgstr "Редактиране на събитие"
-
 msgid "Edit the selected event"
 msgstr "Редактиране на избраното събитие"
 
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr "От:"
-
-msgid "Fullscreen"
-msgstr "Цял екран"
-
-msgid "Guests"
-msgstr "Гости"
-
-msgid "Import..."
-msgstr "Импортиране..."
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "Място"
-
-msgid "Name of Event"
-msgstr "Име на събитието"
-
-msgid "Name or Email Address"
-msgstr "Име или имейл адрес"
-
-msgid "Search For Events.."
-msgstr "Търсене на събития..."
+msgid "Delete the selected event"
+msgstr "Изтриване на избраното събитие"
 
 msgid "Select calendars to display"
 msgstr "Избор на календар за показване"
 
-msgid "Show Week Numbers"
-msgstr "Показване на номерата на седмиците"
+msgid "Search For Events.."
+msgstr "Търсене на събития..."
 
-msgid "Sync..."
-msgstr "Синхронизация..."
-
-msgid "Title"
-msgstr "Заглавие"
-
-msgid "To:"
-msgstr "До:"
+msgid "Export or Share the default Calendar"
+msgstr ""
 
 #. Create everything
 msgid "Today"
 msgstr "Днес"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Вашите скорошни събития ще се показват тук, след като изберете дата със "
-"събития."
+msgid "Fullscreen"
+msgstr "Цял екран"
 
-msgid "all the day"
-msgstr ""
+msgid "Show Week Numbers"
+msgstr "Показване на номерата на седмиците"
 
-msgid "at"
-msgstr "в"
+msgid "Import..."
+msgstr "Импортиране..."
+
+msgid "Sync..."
+msgstr "Синхронизация..."
+
+msgid "About"
+msgstr ""
