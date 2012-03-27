@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 19:48+0100\n"
+"POT-Creation-Date: 2012-03-27 22:51+0200\n"
 "PO-Revision-Date: 2012-03-18 14:32+0000\n"
 "Last-Translator: Çağatay Çöl <cagataycol@post.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -75,9 +75,6 @@ msgstr "Misafirler"
 msgid "Import..."
 msgstr "İçe Aktar..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -86,6 +83,9 @@ msgstr "Konum"
 
 msgid "Name of Event"
 msgstr "Etkinliğin Adı:"
+
+msgid "Name or Email Address"
+msgstr "İsim veya E-posta Adresi"
 
 msgid "Search For Events.."
 msgstr ""
@@ -122,6 +122,3 @@ msgstr "bütün gün"
 
 msgid "at"
 msgstr ""
-
-#~ msgid "Name or Email Address"
-#~ msgstr "İsim veya E-posta Adresi"

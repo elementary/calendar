@@ -7,16 +7,107 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-17 19:47+0100\n"
+"POT-Creation-Date: 2012-03-27 22:51+0200\n"
 "PO-Revision-Date: 2012-03-26 12:16+0000\n"
 "Last-Translator: George Fragos <fragos.george@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-03-27 05:01+0000\n"
 "X-Generator: Launchpad (build 15011)\n"
-"Language: el\n"
+
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Add Event"
+msgstr "Προσθήκη συμβάντος"
+
+msgid "All day:"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Create Event"
+msgstr "Δημιουργία συμβάντος"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Δημιουργία ενός νέου συμβάντος"
+
+msgid "Delete the selected event"
+msgstr "Διαγραφή του επιλεγμένου συμβάντος"
+
+msgid "Edit Event"
+msgstr "Επεξεργασία συμβάντος"
+
+msgid "Edit the selected event"
+msgstr "Επεξεργασία του επιλεγμένου συμβάντος"
+
+msgid "Export or Share the default Calendar"
+msgstr "Εξαγωγή η κοινή χρήση του αρχικού ημερολογίου"
+
+msgid "From:"
+msgstr ""
+
+msgid "Fullscreen"
+msgstr ""
+
+msgid "Guests"
+msgstr ""
+
+msgid "Import..."
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr "Γιάννης Παπαδόπουλος ή Οδός Τάδε"
+
+msgid "Location"
+msgstr ""
+
+msgid "Name of Event"
+msgstr "Όνομα συμβάντος"
+
+msgid "Name or Email Address"
+msgstr "Όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
+
+msgid "Search For Events.."
+msgstr "Αναζήτηση συμβάντος"
+
+msgid "Select calendars to display"
+msgstr "Επιλέξτε τα προς εμφάνιση ημερολόγια"
+
+msgid "Show Week Numbers"
+msgstr "Εμφάνιση αύξοντα αριθμού εβδομάδος"
+
+msgid "Sync..."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "To:"
+msgstr ""
+
+#. Create everything
+msgid "Today"
+msgstr ""
 
 #. label settings
 msgid ""
@@ -26,98 +117,8 @@ msgstr ""
 "Τα προσεχή γεγονότα σας θα εμφανίζονται εδώ όταν επιλέξετε μια ημερομηνία "
 "γεγονότων."
 
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%A, %b %d"
-msgstr ""
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "%H:%M"
-msgstr ""
-
 msgid "all the day"
 msgstr "ολόκληρη την ημέρα"
 
 msgid "at"
-msgstr ""
-
-msgid "From:"
-msgstr ""
-
-msgid "All day:"
-msgstr ""
-
-msgid "To:"
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "Name of Event"
-msgstr "Όνομα συμβάντος"
-
-msgid "Location"
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr "Γιάννης Παπαδόπουλος ή Οδός Τάδε"
-
-msgid "Guests"
-msgstr ""
-
-msgid "Name or Email Address"
-msgstr "Όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
-
-msgid "Comments"
-msgstr ""
-
-msgid "Create Event"
-msgstr "Δημιουργία συμβάντος"
-
-#. Dialog properties
-msgid "Add Event"
-msgstr "Προσθήκη συμβάντος"
-
-#. Dialog Properties
-msgid "Edit Event"
-msgstr "Επεξεργασία συμβάντος"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Δημιουργία ενός νέου συμβάντος"
-
-msgid "Edit the selected event"
-msgstr "Επεξεργασία του επιλεγμένου συμβάντος"
-
-msgid "Delete the selected event"
-msgstr "Διαγραφή του επιλεγμένου συμβάντος"
-
-msgid "Select calendars to display"
-msgstr "Επιλέξτε τα προς εμφάνιση ημερολόγια"
-
-msgid "Search For Events.."
-msgstr "Αναζήτηση συμβάντος"
-
-msgid "Export or Share the default Calendar"
-msgstr "Εξαγωγή η κοινή χρήση του αρχικού ημερολογίου"
-
-#. Create everything
-msgid "Today"
-msgstr ""
-
-msgid "Fullscreen"
-msgstr ""
-
-msgid "Show Week Numbers"
-msgstr "Εμφάνιση αύξοντα αριθμού εβδομάδος"
-
-msgid "Import..."
-msgstr ""
-
-msgid "Sync..."
 msgstr ""

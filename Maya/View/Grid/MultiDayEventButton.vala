@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2011-2012 Maxwell Barvian
+//  Copyright (C) 2012 Niels Avonds <niels.avonds@gmail.com>
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -20,32 +20,19 @@ namespace Maya.View {
 /**
  * Represents a single event on the grid.
  */
-class EventButton : Gtk.Grid {
-    public E.CalComponent comp {get; private set;}
-    
+class MultiDayEventButton : EventButton {
+
     Gtk.Label label;
 
-    public EventButton (E.CalComponent comp) {
-        
-        E.CalComponentText ct;
-        this.comp = comp;
-        comp.get_summary (out ct);
-        label = new Granite.Widgets.WrapLabel(ct.value);
+    public MultiDayEventButton (E.CalComponent comp) {
+        base (comp);        
+
+        label = new Granite.Widgets.WrapLabel("Multiday");
         add (label);
         label.hexpand = true;
         label.wrap = false;
         label.show ();
     }
-
-    /**
-     * Compares the given buttons according to date.
-     */
-    public static CompareFunc<EventButton> compare_buttons = (button1, button2) => {
-        var comp1 = button1.comp;
-        var comp2 = button2.comp;
-
-        return Util.compare_events (comp1, comp2);
-    };
 
 }
 

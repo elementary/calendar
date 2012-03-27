@@ -158,7 +158,7 @@ namespace Maya.Util {
         }
 
         public DateRange (DateTime first, DateTime last) {
-            assert (first.compare(last)==-1);
+            assert (first.compare(last)<=0);
             this.first = first;
             this.last = last;
         }

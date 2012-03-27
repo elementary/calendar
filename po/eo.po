@@ -7,16 +7,107 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-17 19:47+0100\n"
+"POT-Creation-Date: 2012-03-27 22:51+0200\n"
 "PO-Revision-Date: 2012-03-26 11:06+0000\n"
 "Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-03-27 05:01+0000\n"
 "X-Generator: Launchpad (build 15011)\n"
-"Language: eo\n"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr ""
+
+msgid "Add Event"
+msgstr "Aldoni eventon"
+
+msgid "All day:"
+msgstr "Tuttage:"
+
+msgid "Comments"
+msgstr "Komentoj"
+
+msgid "Create Event"
+msgstr "Krei eventon"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Krei novan eventon"
+
+msgid "Delete the selected event"
+msgstr "Forigi la elektitan eventon"
+
+msgid "Edit Event"
+msgstr "Redakti eventon"
+
+msgid "Edit the selected event"
+msgstr "Redakti la elektitan eventon"
+
+msgid "Export or Share the default Calendar"
+msgstr "Eksporti aŭ kunhavigi la aprioran kalendaron"
+
+msgid "From:"
+msgstr "De:"
+
+msgid "Fullscreen"
+msgstr "Tutekrane"
+
+msgid "Guests"
+msgstr "Gastoj"
+
+msgid "Import..."
+msgstr "Importi..."
+
+msgid "John Smith OR Example St."
+msgstr "John Smith AŬ Example St."
+
+msgid "Location"
+msgstr "Loko"
+
+msgid "Name of Event"
+msgstr "Nomo de la evento"
+
+msgid "Name or Email Address"
+msgstr "Nomo aŭ retpoŝtadreso"
+
+msgid "Search For Events.."
+msgstr "Serĉi eventon..."
+
+msgid "Select calendars to display"
+msgstr "Elekti montrendajn klendarojn"
+
+msgid "Show Week Numbers"
+msgstr "Montri semajnnumerojn"
+
+msgid "Sync..."
+msgstr "Sinkronigi..."
+
+msgid "Title"
+msgstr "Titolo"
+
+msgid "To:"
+msgstr "Al:"
+
+#. Create everything
+msgid "Today"
+msgstr "Hodiaŭ"
 
 #. label settings
 msgid ""
@@ -26,98 +117,8 @@ msgstr ""
 "Viaj venontaj eventoj estos montrataj ĉi tie, kiam vi elektas daton, kiu "
 "enhavas eventon."
 
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
 msgid "all the day"
 msgstr "tuttage"
 
 msgid "at"
 msgstr "je"
-
-msgid "From:"
-msgstr "De:"
-
-msgid "All day:"
-msgstr "Tuttage:"
-
-msgid "To:"
-msgstr "Al:"
-
-msgid "Title"
-msgstr "Titolo"
-
-msgid "Name of Event"
-msgstr "Nomo de la evento"
-
-msgid "Location"
-msgstr "Loko"
-
-msgid "John Smith OR Example St."
-msgstr "John Smith AŬ Example St."
-
-msgid "Guests"
-msgstr "Gastoj"
-
-msgid "Name or Email Address"
-msgstr "Nomo aŭ retpoŝtadreso"
-
-msgid "Comments"
-msgstr "Komentoj"
-
-msgid "Create Event"
-msgstr "Krei eventon"
-
-#. Dialog properties
-msgid "Add Event"
-msgstr "Aldoni eventon"
-
-#. Dialog Properties
-msgid "Edit Event"
-msgstr "Redakti eventon"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Krei novan eventon"
-
-msgid "Edit the selected event"
-msgstr "Redakti la elektitan eventon"
-
-msgid "Delete the selected event"
-msgstr "Forigi la elektitan eventon"
-
-msgid "Select calendars to display"
-msgstr "Elekti montrendajn klendarojn"
-
-msgid "Search For Events.."
-msgstr "Serĉi eventon..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Eksporti aŭ kunhavigi la aprioran kalendaron"
-
-#. Create everything
-msgid "Today"
-msgstr "Hodiaŭ"
-
-msgid "Fullscreen"
-msgstr "Tutekrane"
-
-msgid "Show Week Numbers"
-msgstr "Montri semajnnumerojn"
-
-msgid "Import..."
-msgstr "Importi..."
-
-msgid "Sync..."
-msgstr "Sinkronigi..."

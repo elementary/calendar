@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-26 19:30+0200\n"
+"POT-Creation-Date: 2012-03-27 22:51+0200\n"
 "PO-Revision-Date: 2012-03-25 13:26+0000\n"
 "Last-Translator: Dimitar Dimitrov <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -75,9 +75,6 @@ msgstr "Гости"
 msgid "Import..."
 msgstr "Импортиране..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -86,6 +83,9 @@ msgstr "Място"
 
 msgid "Name of Event"
 msgstr "Име на събитието"
+
+msgid "Name or Email Address"
+msgstr "Име или имейл адрес"
 
 msgid "Search For Events.."
 msgstr "Търсене на събития..."
@@ -122,6 +122,3 @@ msgstr ""
 
 msgid "at"
 msgstr "в"
-
-#~ msgid "Name or Email Address"
-#~ msgstr "Име или имейл адрес"

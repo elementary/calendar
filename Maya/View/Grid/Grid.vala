@@ -175,16 +175,44 @@ public class Grid : Gtk.Grid {
     }
     
     /**
-     * Puts the given event on the grid at the given date.
-     *
-     * If the given date is not in the current range, nothing happens.
+     * Puts the given event on the grid.
      */
-    public void add_event_for_time(DateTime date, E.CalComponent event) {
+    public void add_event (E.CalComponent event) {
+
+        E.CalComponentDateTime dt_start;
+        event.get_dtstart (out dt_start);
+
+        E.CalComponentDateTime dt_end;
+        event.get_dtend (out dt_end);
+
+        var start = new DateTime(new TimeZone.local(), dt_start.value.year, dt_start.value.month, dt_start.value.day, 0, 0, 0);
+        var end = new DateTime(new TimeZone.local(), dt_end.value.year, dt_end.value.month, dt_end.value.day, 0, 0, 0);
+        
+        var dt_range = new Util.DateRange (start, end);
+
+        add_buttons_for_range (start, dt_range, event);
+    }
+
+    /**
+     * Adds an eventbutton to the grid for the given event at each day of the given range.
+     */
+    void add_buttons_for_range (DateTime event_start, Util.DateRange dt_range, E.CalComponent event) {
+        foreach (var date in dt_range) {
+            EventButton button;
+            if (dt_range.to_list ().size == 1)
+                button = new SingleDayEventButton (event);
+            else
+                button = new MultiDayEventButton (event);
+            add_button_for_day (date, button);
+        }
+    }
+
+    void add_button_for_day (DateTime date, EventButton button) {
         if (!grid_range.contains (date))
             return;
         GridDay grid_day = data[date];
         assert(grid_day != null);
-        grid_day.add_event(event);
+        grid_day.add_event_button(button);
     }
     
     /**
