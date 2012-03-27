@@ -109,7 +109,9 @@ vala_precompile(VALA_C
     Maya/View/Grid/CalendarView.vala
     Maya/View/Grid/GridDay.vala
     Maya/View/Grid/Grid.vala
-    Maya/View/Grid/EventButton.vala
+    Maya/View/Grid/EventButton/EventButton.vala
+    Maya/View/Grid/EventButton/MultiDayEventButton.vala
+    Maya/View/Grid/EventButton/SingleDayEventButton.vala
     Maya/View/Grid/WeekLabels.vala
     Maya/View/Grid/Header.vala
     Maya/View/Grid/VAutoHider.vala

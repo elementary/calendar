@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-28 00:00+0200\n"
+"POT-Creation-Date: 2012-03-27 22:51+0200\n"
 "PO-Revision-Date: 2012-03-18 00:22+0000\n"
 "Last-Translator: Niels Avonds <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -18,26 +18,64 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-19 04:56+0000\n"
 "X-Generator: Launchpad (build 14969)\n"
 
-msgid "%A, %b %d"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
+"Nadchodzące wydarzenia będą wyświetlone w tym miejscu, po zaznaczeniu ich "
+"daty."
 
 msgid "%B %e, %Y"
 msgstr ""
 
-msgid "%H:%M"
+msgid "%A, %b %d"
 msgstr ""
 
 msgid "%l:%M %p"
 msgstr ""
 
-msgid "About"
+msgid "%H:%M"
+msgstr ""
+
+msgid "all the day"
+msgstr "cały dzień"
+
+msgid "at"
 msgstr ""
 
 msgid "Add Event"
 msgstr "Dodaj wydarzenie"
 
+msgid "Edit Event"
+msgstr "Edytuj wydarzenie"
+
+msgid "From:"
+msgstr "Od:"
+
 msgid "All day:"
 msgstr "Cały dzień:"
+
+msgid "To:"
+msgstr "Do:"
+
+msgid "Title"
+msgstr "Tytuł"
+
+msgid "Name of Event"
+msgstr "Nazwa wydarzenia"
+
+msgid "Location"
+msgstr "Lokalizacja"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "Goście"
+
+msgid "Name or Email Address"
+msgstr ""
 
 msgid "Comments"
 msgstr ""
@@ -51,74 +89,36 @@ msgstr "Utwórz wydarzenie"
 msgid "Create a new event"
 msgstr "Utwórz nowe wydarzenie"
 
-msgid "Delete the selected event"
-msgstr "Usuń wybrane wydarzenie"
-
-msgid "Edit Event"
-msgstr "Edytuj wydarzenie"
-
 msgid "Edit the selected event"
 msgstr "Edytuj wybrane wydarzenie"
 
-msgid "Export or Share the default Calendar"
-msgstr "Eksportuj lub udostępnij domyślny kalendarz"
-
-msgid "From:"
-msgstr "Od:"
-
-msgid "Fullscreen"
-msgstr "Pełny ekran"
-
-msgid "Guests"
-msgstr "Goście"
-
-msgid "Import..."
-msgstr "Importuj..."
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "Lokalizacja"
-
-msgid "Name of Event"
-msgstr "Nazwa wydarzenia"
-
-msgid "Name or Email Address"
-msgstr ""
-
-msgid "Search For Events.."
-msgstr "Szukaj wydarzeń..."
+msgid "Delete the selected event"
+msgstr "Usuń wybrane wydarzenie"
 
 msgid "Select calendars to display"
 msgstr "Wybierz kalendarze do wyświetlenia"
 
-msgid "Show Week Numbers"
-msgstr "Wyświetlanie numerów tygodni"
+msgid "Search For Events.."
+msgstr "Szukaj wydarzeń..."
 
-msgid "Sync..."
-msgstr "Synchronizuj..."
-
-msgid "Title"
-msgstr "Tytuł"
-
-msgid "To:"
-msgstr "Do:"
+msgid "Export or Share the default Calendar"
+msgstr "Eksportuj lub udostępnij domyślny kalendarz"
 
 #. Create everything
 msgid "Today"
 msgstr "Dziś"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Nadchodzące wydarzenia będą wyświetlone w tym miejscu, po zaznaczeniu ich "
-"daty."
+msgid "Fullscreen"
+msgstr "Pełny ekran"
 
-msgid "all the day"
-msgstr "cały dzień"
+msgid "Show Week Numbers"
+msgstr "Wyświetlanie numerów tygodni"
 
-msgid "at"
+msgid "Import..."
+msgstr "Importuj..."
+
+msgid "Sync..."
+msgstr "Synchronizuj..."
+
+msgid "About"
 msgstr ""

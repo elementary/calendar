@@ -175,16 +175,34 @@ public class Grid : Gtk.Grid {
     }
     
     /**
-     * Puts the given event on the grid at the given date.
-     *
-     * If the given date is not in the current range, nothing happens.
+     * Puts the given event on the grid.
      */
-    public void add_event_for_time(DateTime date, E.CalComponent event) {
+    public void add_event (E.CalComponent event) {
+
+        var dt_range = Util.event_date_range (event);
+        add_buttons_for_range (dt_range, event);
+    }
+
+    /**
+     * Adds an eventbutton to the grid for the given event at each day of the given range.
+     */
+    void add_buttons_for_range (Util.DateRange dt_range, E.CalComponent event) {
+        foreach (var date in dt_range) {
+            EventButton button;
+            if (dt_range.to_list ().size == 1)
+                button = new SingleDayEventButton (event);
+            else
+                button = new MultiDayEventButton (event);
+            add_button_for_day (date, button);
+        }
+    }
+
+    void add_button_for_day (DateTime date, EventButton button) {
         if (!grid_range.contains (date))
             return;
         GridDay grid_day = data[date];
         assert(grid_day != null);
-        grid_day.add_event(event);
+        grid_day.add_event_button(button);
     }
     
     /**

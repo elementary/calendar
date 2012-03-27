@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-28 00:00+0200\n"
+"POT-Creation-Date: 2012-03-27 22:51+0200\n"
 "PO-Revision-Date: 2012-03-24 20:34+0000\n"
 "Last-Translator: Anducar <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -18,26 +18,64 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-25 05:41+0000\n"
 "X-Generator: Launchpad (build 14981)\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Ihre anstehenden Termine werden hier angezeigt, sobald Sie ein Datum mit "
+"Terminen auswählen."
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%H:%M"
-msgstr "%H:%M"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
 msgid "%l:%M %p"
 msgstr "%I:%M %p"
 
-msgid "About"
-msgstr ""
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "all the day"
+msgstr "Ganztägig"
+
+msgid "at"
+msgstr "um"
 
 msgid "Add Event"
 msgstr "Ereignis hinzufügen"
 
+msgid "Edit Event"
+msgstr "Ereignis bearbeiten"
+
+msgid "From:"
+msgstr "Von:"
+
 msgid "All day:"
 msgstr "Ganztägig:"
+
+msgid "To:"
+msgstr "Bis:"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Name of Event"
+msgstr "Terminbezeichnung"
+
+msgid "Location"
+msgstr "Ort"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith ODER Beispiel St."
+
+msgid "Guests"
+msgstr "Gäste"
+
+msgid "Name or Email Address"
+msgstr "Name oder E-Mail Adresse"
 
 msgid "Comments"
 msgstr "Kommentare"
@@ -51,74 +89,36 @@ msgstr "Termin erstellen"
 msgid "Create a new event"
 msgstr "Ein neues Ereignis erstellen"
 
-msgid "Delete the selected event"
-msgstr "Gewählten Termin löschen"
-
-msgid "Edit Event"
-msgstr "Ereignis bearbeiten"
-
 msgid "Edit the selected event"
 msgstr "Gewählten Termin bearbeiten"
 
-msgid "Export or Share the default Calendar"
-msgstr "Standartkalender exportieren oder teilen"
-
-msgid "From:"
-msgstr "Von:"
-
-msgid "Fullscreen"
-msgstr "Vollbild"
-
-msgid "Guests"
-msgstr "Gäste"
-
-msgid "Import..."
-msgstr "Importieren …"
-
-msgid "John Smith OR Example St."
-msgstr "John Smith ODER Beispiel St."
-
-msgid "Location"
-msgstr "Ort"
-
-msgid "Name of Event"
-msgstr "Terminbezeichnung"
-
-msgid "Name or Email Address"
-msgstr "Name oder E-Mail Adresse"
-
-msgid "Search For Events.."
-msgstr "Termine durchsuchen..."
+msgid "Delete the selected event"
+msgstr "Gewählten Termin löschen"
 
 msgid "Select calendars to display"
 msgstr "Anzuzeigende Kalender auswählen"
 
-msgid "Show Week Numbers"
-msgstr "Kalenderwochen anzeigen"
+msgid "Search For Events.."
+msgstr "Termine durchsuchen..."
 
-msgid "Sync..."
-msgstr "Synchronisieren..."
-
-msgid "Title"
-msgstr "Titel"
-
-msgid "To:"
-msgstr "Bis:"
+msgid "Export or Share the default Calendar"
+msgstr "Standartkalender exportieren oder teilen"
 
 #. Create everything
 msgid "Today"
 msgstr "Heute"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
+msgid "Fullscreen"
+msgstr "Vollbild"
+
+msgid "Show Week Numbers"
+msgstr "Kalenderwochen anzeigen"
+
+msgid "Import..."
+msgstr "Importieren …"
+
+msgid "Sync..."
+msgstr "Synchronisieren..."
+
+msgid "About"
 msgstr ""
-"Ihre anstehenden Termine werden hier angezeigt, sobald Sie ein Datum mit "
-"Terminen auswählen."
-
-msgid "all the day"
-msgstr "Ganztägig"
-
-msgid "at"
-msgstr "um"

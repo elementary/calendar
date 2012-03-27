@@ -72,8 +72,7 @@ public class GridDay : Gtk.EventBox {
         container_grid.draw.connect (on_draw);
     }
 
-    public void add_event(E.CalComponent comp) {
-        var button = new EventButton(comp);
+    public void add_event_button(EventButton button) {
         event_box.add (button);
         event_box.queue_draw ();
 

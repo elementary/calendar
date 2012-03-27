@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-28 00:00+0200\n"
+"POT-Creation-Date: 2012-03-27 22:51+0200\n"
 "PO-Revision-Date: 2012-03-18 14:32+0000\n"
 "Last-Translator: Çağatay Çöl <cagataycol@post.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -18,26 +18,64 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-19 04:56+0000\n"
 "X-Generator: Launchpad (build 14969)\n"
 
-msgid "%A, %b %d"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
+"Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
+"gösterilecek."
 
 msgid "%B %e, %Y"
 msgstr ""
 
-msgid "%H:%M"
+msgid "%A, %b %d"
 msgstr ""
 
 msgid "%l:%M %p"
 msgstr ""
 
-msgid "About"
+msgid "%H:%M"
+msgstr ""
+
+msgid "all the day"
+msgstr "bütün gün"
+
+msgid "at"
 msgstr ""
 
 msgid "Add Event"
 msgstr "Etkinlik Ekle"
 
+msgid "Edit Event"
+msgstr "Etkinliği Düzenle"
+
+msgid "From:"
+msgstr "Başlangıç:"
+
 msgid "All day:"
 msgstr "Tüm gün:"
+
+msgid "To:"
+msgstr "Bitiş:"
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "Name of Event"
+msgstr "Etkinliğin Adı:"
+
+msgid "Location"
+msgstr "Konum"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "Misafirler"
+
+msgid "Name or Email Address"
+msgstr "İsim veya E-posta Adresi"
 
 msgid "Comments"
 msgstr "Yorumlar"
@@ -51,74 +89,36 @@ msgstr "Etkinlik Oluştur"
 msgid "Create a new event"
 msgstr "Yeni bir etkinlik oluştur"
 
-msgid "Delete the selected event"
-msgstr "Seçili etkinliği sil"
-
-msgid "Edit Event"
-msgstr "Etkinliği Düzenle"
-
 msgid "Edit the selected event"
 msgstr "Seçili etkinliği düzenle"
 
-msgid "Export or Share the default Calendar"
-msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
-
-msgid "From:"
-msgstr "Başlangıç:"
-
-msgid "Fullscreen"
-msgstr "Tam ekran"
-
-msgid "Guests"
-msgstr "Misafirler"
-
-msgid "Import..."
-msgstr "İçe Aktar..."
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "Konum"
-
-msgid "Name of Event"
-msgstr "Etkinliğin Adı:"
-
-msgid "Name or Email Address"
-msgstr "İsim veya E-posta Adresi"
-
-msgid "Search For Events.."
-msgstr ""
+msgid "Delete the selected event"
+msgstr "Seçili etkinliği sil"
 
 msgid "Select calendars to display"
 msgstr "Görüntülenecek takvimleri seçin"
 
-msgid "Show Week Numbers"
-msgstr "Hafta Numaralarını Göster"
+msgid "Search For Events.."
+msgstr ""
 
-msgid "Sync..."
-msgstr "Eşzamanla..."
-
-msgid "Title"
-msgstr "Başlık"
-
-msgid "To:"
-msgstr "Bitiş:"
+msgid "Export or Share the default Calendar"
+msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
 
 #. Create everything
 msgid "Today"
 msgstr "Bugün"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
-"gösterilecek."
+msgid "Fullscreen"
+msgstr "Tam ekran"
 
-msgid "all the day"
-msgstr "bütün gün"
+msgid "Show Week Numbers"
+msgstr "Hafta Numaralarını Göster"
 
-msgid "at"
+msgid "Import..."
+msgstr "İçe Aktar..."
+
+msgid "Sync..."
+msgstr "Eşzamanla..."
+
+msgid "About"
 msgstr ""

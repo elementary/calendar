@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-28 00:00+0200\n"
+"POT-Creation-Date: 2012-03-27 22:51+0200\n"
 "PO-Revision-Date: 2012-03-26 12:16+0000\n"
 "Last-Translator: George Fragos <fragos.george@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -18,26 +18,64 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-27 05:01+0000\n"
 "X-Generator: Launchpad (build 15011)\n"
 
-msgid "%A, %b %d"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
+"Τα προσεχή γεγονότα σας θα εμφανίζονται εδώ όταν επιλέξετε μια ημερομηνία "
+"γεγονότων."
 
 msgid "%B %e, %Y"
 msgstr ""
 
-msgid "%H:%M"
+msgid "%A, %b %d"
 msgstr ""
 
 msgid "%l:%M %p"
 msgstr ""
 
-msgid "About"
+msgid "%H:%M"
+msgstr ""
+
+msgid "all the day"
+msgstr "ολόκληρη την ημέρα"
+
+msgid "at"
 msgstr ""
 
 msgid "Add Event"
 msgstr "Προσθήκη συμβάντος"
 
+msgid "Edit Event"
+msgstr "Επεξεργασία συμβάντος"
+
+msgid "From:"
+msgstr ""
+
 msgid "All day:"
 msgstr ""
+
+msgid "To:"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Name of Event"
+msgstr "Όνομα συμβάντος"
+
+msgid "Location"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr "Γιάννης Παπαδόπουλος ή Οδός Τάδε"
+
+msgid "Guests"
+msgstr ""
+
+msgid "Name or Email Address"
+msgstr "Όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
 
 msgid "Comments"
 msgstr ""
@@ -51,74 +89,36 @@ msgstr "Δημιουργία συμβάντος"
 msgid "Create a new event"
 msgstr "Δημιουργία ενός νέου συμβάντος"
 
-msgid "Delete the selected event"
-msgstr "Διαγραφή του επιλεγμένου συμβάντος"
-
-msgid "Edit Event"
-msgstr "Επεξεργασία συμβάντος"
-
 msgid "Edit the selected event"
 msgstr "Επεξεργασία του επιλεγμένου συμβάντος"
 
-msgid "Export or Share the default Calendar"
-msgstr "Εξαγωγή η κοινή χρήση του αρχικού ημερολογίου"
-
-msgid "From:"
-msgstr ""
-
-msgid "Fullscreen"
-msgstr ""
-
-msgid "Guests"
-msgstr ""
-
-msgid "Import..."
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr "Γιάννης Παπαδόπουλος ή Οδός Τάδε"
-
-msgid "Location"
-msgstr ""
-
-msgid "Name of Event"
-msgstr "Όνομα συμβάντος"
-
-msgid "Name or Email Address"
-msgstr "Όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
-
-msgid "Search For Events.."
-msgstr "Αναζήτηση συμβάντος"
+msgid "Delete the selected event"
+msgstr "Διαγραφή του επιλεγμένου συμβάντος"
 
 msgid "Select calendars to display"
 msgstr "Επιλέξτε τα προς εμφάνιση ημερολόγια"
 
-msgid "Show Week Numbers"
-msgstr "Εμφάνιση αύξοντα αριθμού εβδομάδος"
+msgid "Search For Events.."
+msgstr "Αναζήτηση συμβάντος"
 
-msgid "Sync..."
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "To:"
-msgstr ""
+msgid "Export or Share the default Calendar"
+msgstr "Εξαγωγή η κοινή χρήση του αρχικού ημερολογίου"
 
 #. Create everything
 msgid "Today"
 msgstr ""
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
+msgid "Fullscreen"
 msgstr ""
-"Τα προσεχή γεγονότα σας θα εμφανίζονται εδώ όταν επιλέξετε μια ημερομηνία "
-"γεγονότων."
 
-msgid "all the day"
-msgstr "ολόκληρη την ημέρα"
+msgid "Show Week Numbers"
+msgstr "Εμφάνιση αύξοντα αριθμού εβδομάδος"
 
-msgid "at"
+msgid "Import..."
+msgstr ""
+
+msgid "Sync..."
+msgstr ""
+
+msgid "About"
 msgstr ""
