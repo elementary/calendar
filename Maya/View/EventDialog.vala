@@ -267,11 +267,10 @@ namespace Maya.View {
 		    
 		    to_expander.add (to_grid);
 		    
-		    allday_switch.button_release_event.connect (() => { 
-		        from_time_picker.sensitive = !from_time_picker.sensitive;
-		        to_time_picker.sensitive = !to_time_picker.sensitive;
-		        
-		        return false;
+		    allday_switch.notify["active"].connect (() => { 
+                on_date_modified ();
+		        from_time_picker.sensitive = !allday_switch.get_active ();
+		        to_time_picker.sensitive = !allday_switch.get_active ();
 		    });
 		    
 		    var title_label = make_label (_("Title"));
@@ -374,6 +373,10 @@ namespace Maya.View {
 
                 if (start_date.get_day_of_year () == end_date.get_day_of_year ()) {
                     // Same date, compare times.
+
+                    // If it's all day, just return ok
+                    if (allday_switch.get_active ())
+                        return true;
 
                     if (start_time.get_hour () == end_time.get_hour ()) {
                         // Same hour, compare minutes

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-27 22:51+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-03-18 00:22+0000\n"
 "Last-Translator: Niels Avonds <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -18,62 +18,25 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-19 04:56+0000\n"
 "X-Generator: Launchpad (build 14969)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Ваші майбутні події будуть відображені тут коли ви виберете дату з подіями."
-
-msgid "%B %e, %Y"
-msgstr ""
-
 msgid "%A, %b %d"
 msgstr ""
 
-msgid "%l:%M %p"
+msgid "%B %e, %Y"
 msgstr ""
 
 msgid "%H:%M"
 msgstr ""
 
-msgid "all the day"
+msgid "%l:%M %p"
 msgstr ""
 
-msgid "at"
+msgid "About"
 msgstr ""
 
 msgid "Add Event"
 msgstr ""
 
-msgid "Edit Event"
-msgstr ""
-
-msgid "From:"
-msgstr ""
-
 msgid "All day:"
-msgstr ""
-
-msgid "To:"
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "Name of Event"
-msgstr ""
-
-msgid "Location"
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Guests"
-msgstr ""
-
-msgid "Name or Email Address"
 msgstr ""
 
 msgid "Comments"
@@ -88,36 +51,73 @@ msgstr ""
 msgid "Create a new event"
 msgstr ""
 
-msgid "Edit the selected event"
-msgstr ""
-
 msgid "Delete the selected event"
 msgstr ""
 
-msgid "Select calendars to display"
+msgid "Edit Event"
+msgstr ""
+
+msgid "Edit the selected event"
+msgstr ""
+
+msgid "Export or Share the default Calendar"
+msgstr ""
+
+msgid "From:"
+msgstr ""
+
+msgid "Fullscreen"
+msgstr ""
+
+msgid "Guests"
+msgstr ""
+
+msgid "Import..."
+msgstr ""
+
+msgid "John Smith"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Name of Event"
 msgstr ""
 
 msgid "Search For Events.."
 msgstr ""
 
-msgid "Export or Share the default Calendar"
+msgid "Select calendars to display"
+msgstr ""
+
+msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Sync..."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "To:"
 msgstr ""
 
 #. Create everything
 msgid "Today"
 msgstr ""
 
-msgid "Fullscreen"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Ваші майбутні події будуть відображені тут коли ви виберете дату з подіями."
+
+msgid "all the day"
 msgstr ""
 
-msgid "Show Week Numbers"
-msgstr ""
-
-msgid "Import..."
-msgstr ""
-
-msgid "Sync..."
-msgstr ""
-
-msgid "About"
+msgid "at"
 msgstr ""
