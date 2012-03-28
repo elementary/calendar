@@ -108,7 +108,6 @@ namespace Maya.View.Widgets {
             }
 
             if (last_row_count != row_count || last_row_height != row_height) {
-                stdout.printf ("CHANGING SIZE to %d rows of %d\n", row_count, row_height);
                 last_row_count = row_count;
                 last_row_height = row_height;
                 set_size_request (-1, row_height * row_count);
