@@ -27,7 +27,10 @@ namespace Maya.View {
         Granite.Widgets.WrapLabel name_label;
 
         // A label displaying the start date of the event
-        Granite.Widgets.WrapLabel date_label;
+        Granite.Widgets.WrapLabel start_date_label;
+
+        // A label displaying the end date of the event
+        Granite.Widgets.WrapLabel end_date_label;
 
         // A label displaying the location of the event
         Granite.Widgets.WrapLabel location_label;
@@ -68,14 +71,18 @@ namespace Maya.View {
             name_label.set_alignment (0, 0.5f);
             grid.attach (name_label, 0, 0, 1, 1);
 
-            date_label = new Granite.Widgets.WrapLabel ("");
-            date_label.set_alignment (0, 0.5f);
-            grid.attach (date_label, 0, 1, 3, 1);
+            start_date_label = new Granite.Widgets.WrapLabel ("");
+            start_date_label.set_alignment (0, 0.5f);
+            grid.attach (start_date_label, 0, 1, 3, 1);
+
+            end_date_label = new Granite.Widgets.WrapLabel ("");
+            end_date_label.set_alignment (0, 0.5f);
+            grid.attach (end_date_label, 0, 2, 3, 1);
 
             location_label = new Granite.Widgets.WrapLabel ("");
             location_label.set_alignment (0, 0.5f);
             location_label.no_show_all = true;
-            grid.attach (location_label, 0, 2, 3, 1);
+            grid.attach (location_label, 0, 3, 3, 1);
 
             edit_button = new Gtk.Button ();
             edit_button.add (new Gtk.Image.from_stock ("gtk-edit", Gtk.IconSize.MENU));
@@ -132,8 +139,17 @@ namespace Maya.View {
         public void update (E.CalComponent event) {
      
             name_label.set_markup ("<big>" + Markup.escape_text (get_label (event)) + "</big>");
-            date_label.set_markup ("<span weight=\"light\">" + get_date (event) + "</span>");
 
+            string end_string = get_end_string (event);
+            string start_add = end_string == "" ? "" : _("Starts") + ": \t";
+
+            start_date_label.set_markup ("<span weight=\"light\">" + start_add + get_start_string (event) + "</span>");
+
+            if (end_string != "") {
+                end_date_label.set_markup ("<span weight=\"light\">" + _("Ends") + ": \t\t" + end_string  + "</span>");
+                end_date_label.show ();
+            } else
+                end_date_label.hide ();
             unowned iCal.icalcomponent ical_event = event.get_icalcomponent ();
 
             string location = ical_event.get_location ();
@@ -158,23 +174,53 @@ namespace Maya.View {
         /**
          * Returns the date that should be displayed for the given event.
          */
-        string get_date (E.CalComponent event) {
+        string get_start_string (E.CalComponent event) {
+            DateTime start_date, end_date;
+            get_dates (event, out start_date, out end_date);
+
+            string date_string = start_date.format (Settings.DateFormat_Complete ());
+            string time_string = start_date.format (Settings.TimeFormat ());
+            if (Util.is_the_all_day(start_date, end_date) == true) {
+                if (Util.is_multiday_event (event))
+                    return date_string;
+                else
+                    return date_string + ", " + _("all day");
+            }
+            else {
+                if (Util.is_multiday_event (event))
+                    return date_string + " " + _("at") + " " + time_string;
+                else {
+                    string end_time_string = end_date.format (Settings.TimeFormat ());
+                    return date_string + ", " + time_string + " - " + end_time_string;
+                }    
+            }
+        }
+
+        string get_end_string (E.CalComponent event) {
+            if (! Util.is_multiday_event (event))
+                return "";
+
+            DateTime start_date, end_date;
+            get_dates (event, out start_date, out end_date);
+
+            string date_string = end_date.format (Settings.DateFormat_Complete ());
+            string time_string = end_date.format (Settings.TimeFormat ());
+            if (Util.is_the_all_day(start_date, end_date) == true) {
+                return date_string;
+            }
+            else {
+                return date_string + " " + _("at") + " " + time_string;
+            }
+        }
+
+        void get_dates (E.CalComponent event, out DateTime start_date, out DateTime end_date) {
             var datefrom = E.CalComponentDateTime ();
             var dateto = E.CalComponentDateTime ();
             event.get_dtstart (out datefrom);
             event.get_dtend (out dateto);
             
-            DateTime date_time = Util.ical_to_date_time (*datefrom.value);
-            DateTime date_time_end = Util.ical_to_date_time (*dateto.value);
-
-            string date_string = date_time.format (Settings.DateFormat_Complete ());
-            string time_string = date_time.format (Settings.TimeFormat ());
-            if (Util.is_the_all_day(date_time, date_time_end) == true) {
-                return date_string + ", " + _("all day");
-            }
-            else {
-                return date_string + " " + _("at") + " " + time_string;
-            }
+            start_date = Util.ical_to_date_time (*datefrom.value);
+            end_date = Util.ical_to_date_time (*dateto.value);
         }
 
     }

@@ -87,8 +87,12 @@ namespace Maya.Util {
         return new Util.DateRange (start, end);
     }
 
+    bool is_multiday_event (E.CalComponent event) {
+        return event_date_range (event).to_list() .size > 1;
+    }
+
     /**
-     * Say if an event last the all say.
+     * Say if an event lasts all day.
      */
     bool is_the_all_day (DateTime dtstart, DateTime dtend) {
         if ((dtend.get_hour() == dtend.get_minute()) && (dtstart.get_hour() == dtend.get_hour()) && (dtstart.get_hour() == dtstart.get_minute()) && (dtend.get_hour() == 0)) {
