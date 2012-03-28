@@ -43,7 +43,7 @@ public class CalendarView : Gtk.HBox {
 
         weeks = new WeekLabels ();
         header = new Header ();
-        grid = new Grid (model.data_range, model.month_start, model.num_weeks);
+        grid = new Grid ();
         grid.on_event_add.connect ((date) => on_event_add (date));
         
         // HBox properties
@@ -72,8 +72,8 @@ public class CalendarView : Gtk.HBox {
     //--- Public Methods ---//
     
     public void today () {
-
         var today = Util.strip_time (new DateTime.now_local ());
+        sync_with_model ();
         grid.focus_date (today);
     }
 
@@ -120,7 +120,7 @@ public class CalendarView : Gtk.HBox {
     /* Indicates the month has changed */
     void on_model_parameters_changed () {
 
-        if (model.data_range.equals (grid.grid_range))
+        if (grid.grid_range != null && model.data_range.equals (grid.grid_range))
             return; // nothing to do
 
         Idle.add ( () => {
@@ -134,6 +134,8 @@ public class CalendarView : Gtk.HBox {
 
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_model () {
+        if (grid.grid_range != null && model.data_range.equals (grid.grid_range))
+            return; // nothing to do
 
         header.update_columns (model.week_starts_on);
         weeks.update (model.data_range.first, show_weeks, model.num_weeks);

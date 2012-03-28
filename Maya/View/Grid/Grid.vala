@@ -34,13 +34,12 @@ public class Grid : Gtk.Grid {
 
     public signal void selection_changed (DateTime new_date);
 
-    public Grid (Util.DateRange range, DateTime month_start, int weeks) {
+    public Grid () {
 
         selected_date = new DateTime.now_local ();
 
         // Gtk.Grid properties
         insert_column (7);
-        insert_row (weeks);
         set_column_homogeneous (true);
         set_row_homogeneous (true);
         column_spacing = 0;
@@ -50,8 +49,6 @@ public class Grid : Gtk.Grid {
             (HashFunc) DateTime.hash,
             (EqualFunc) Util.datetime_equal_func,
             null);
-
-        set_range (range, month_start);
     }
 
     void on_day_focus_in (GridDay day) {
