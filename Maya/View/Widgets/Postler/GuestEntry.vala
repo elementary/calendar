@@ -137,9 +137,9 @@ namespace Maya.View.Widgets {
                 if (get_children ().nth_data (1) == null)
                     empty = true;
             });
+            button.show_all ();
             add (button);
             reorder_child (entry, -1);
-            button.show_all ();
             empty = false;
         }
 

@@ -30,6 +30,7 @@ namespace Maya.View.Widgets {
 
         public override void remove (Gtk.Widget widget) {
             children.remove (widget);
+            check_preferred_size (null, null);
             widget.unparent ();
             if (widget.get_realized ())
                 widget.unrealize ();
@@ -58,31 +59,10 @@ namespace Maya.View.Widgets {
         public override void size_allocate (Gtk.Allocation allocation) {
             set_allocation (allocation);
 
+            int row_count;
+            int row_height;
+            check_preferred_size (out row_count, out row_height);
             int width = 0;
-            int row_count = 1;
-            int row_height = 1;
-
-            foreach (var child in children) {
-                if (child.visible) {
-                    Gtk.Requisition child_size;
-                    child.get_preferred_size (out child_size, null);
-                    width += child_size.width;
-
-                    if (width > allocation.width && width != child_size.width) {
-                        row_count++;
-                        width = child_size.width;
-                    }
-                    row_height = int.max (row_height, child_size.height);
-                }
-            }
-
-            if (last_row_count != row_count || last_row_height != row_height) {
-                last_row_count = row_count;
-                last_row_height = row_height;
-                set_size_request (-1, row_height * row_count);
-            }
-
-            width = 0;
             int row = 1;
             foreach (var child in children) {
                 if (child.visible) {
@@ -104,5 +84,36 @@ namespace Maya.View.Widgets {
             }
             queue_resize ();
         }
+
+        void check_preferred_size (out int row_count, out int row_height) {
+            Gtk.Allocation allocation;
+            get_allocation (out allocation);
+
+            int width = 0;
+            row_count = 1;
+            row_height = 1;
+
+            foreach (var child in children) {
+                if (child.visible) {
+                    Gtk.Requisition child_size;
+                    child.get_preferred_size (out child_size, null);
+                    width += child_size.width;
+
+                    if (width > allocation.width && width != child_size.width) {
+                        row_count++;
+                        width = child_size.width;
+                    }
+                    row_height = int.max (row_height, child_size.height);
+                }
+            }
+
+            if (last_row_count != row_count || last_row_height != row_height) {
+                stdout.printf ("CHANGING SIZE to %d rows of %d\n", row_count, row_height);
+                last_row_count = row_count;
+                last_row_height = row_height;
+                set_size_request (-1, row_height * row_count);
+            }
+        }
+
     }
 }
