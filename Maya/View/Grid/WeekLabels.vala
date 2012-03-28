@@ -45,9 +45,7 @@ public class WeekLabels : Gtk.EventBox {
         get_style_context().add_provider (style_provider, 600);
         get_style_context().add_class ("weeks");
 
-        update_nr_of_labels (6);
-
-        add (Util.set_margins (day_grid, 20, 0, 0, 0));
+        add (Util.set_margins (day_grid, 19, 0, 0, 0));
     }
 
     public void update (DateTime date, bool show_weeks, int nr_of_weeks) {
