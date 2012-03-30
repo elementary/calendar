@@ -236,6 +236,8 @@ namespace Maya.View {
 		void build_dialog (bool add_event) {
 		    
 		    var container = (Gtk.Container) get_content_area ();
+            container.set_vexpand(true);
+            container.set_hexpand(true);
             content_grid = new Gtk.Grid ();
             content_grid.set_vexpand(true);
             content_grid.set_hexpand(true);
@@ -312,6 +314,7 @@ namespace Maya.View {
             else {
 		        create_button = add_button (Gtk.Stock.OK, Gtk.ResponseType.APPLY);
             }
+            create_button.set_tooltip_text (_("Your event has to be named and has to have a valid date"));
 		    show_all();
 		}
 		

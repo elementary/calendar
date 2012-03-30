@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-03-30 09:32+0200\n"
 "PO-Revision-Date: 2012-03-27 15:57+0000\n"
 "Last-Translator: Juan David Angarita <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "Editar Evento"
 msgid "Edit the selected event"
 msgstr "Editar el evento seleccionado"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "Exportar o Compartir el Calendario por defecto"
 
@@ -75,9 +78,6 @@ msgstr "Invitados"
 msgid "Import..."
 msgstr "Importar..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "John Smith o por ejemplo Sr."
 
@@ -87,6 +87,9 @@ msgstr "Ubicación"
 msgid "Name of Event"
 msgstr "Nombre del Evento"
 
+msgid "Name or Email Address"
+msgstr "Nombre o Dirección de Correo Electrónico"
+
 msgid "Search For Events.."
 msgstr "Buscar Eventos"
 
@@ -95,6 +98,9 @@ msgstr "Seleccionar calendarios a mostrar"
 
 msgid "Show Week Numbers"
 msgstr "Mostrar números de las semanas"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Sincronizar..."
@@ -117,11 +123,12 @@ msgstr ""
 "Sus próximos eventos se mostrarán aquí cuando seleccione una fecha con "
 "eventos."
 
-msgid "all the day"
-msgstr "todo el día"
+#, fuzzy
+msgid "all day"
+msgstr "Todo el día:"
 
 msgid "at"
 msgstr "en"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Nombre o Dirección de Correo Electrónico"
+#~ msgid "all the day"
+#~ msgstr "todo el día"

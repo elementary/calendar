@@ -19,7 +19,7 @@ using Granite.Widgets;
 
 namespace Maya.View.Widgets {
 
-	public class DateTimePicker : Gtk.HBox {
+	public class DateTimePicker : Gtk.Grid {
 	
 		public DateTime date_time {
 			owned get { return new DateTime.local (date_picker.date.get_year (), date_picker.date.get_month (),
@@ -36,11 +36,11 @@ namespace Maya.View.Widgets {
 			time_picker = new TimePicker ();
 			
 			// VBox properties
-			spacing = 10;
-			homogeneous = false;
+			set_column_spacing (10);
+			set_column_homogeneous (false);
 			
-			pack_start (date_picker);
-			pack_end (time_picker);
+			attach (date_picker, 0, 0, 1, 1);
+			attach (time_picker, 1, 0, 1, 1);
 		}
 		
 	}

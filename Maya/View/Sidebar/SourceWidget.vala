@@ -20,7 +20,7 @@ namespace Maya.View {
     /**
      * A widget containing one source to be displayed in the sidebar.
      */
-    public class SourceWidget : Gtk.Box {
+    public class SourceWidget : Gtk.Grid {
 
         // The label displaying the name of this source.
         Gtk.Label name_label;
@@ -33,6 +33,9 @@ namespace Maya.View {
 
         // All the widgets associated with the current day
         Gee.Map<E.CalComponent, EventWidget> event_widgets;
+
+        // Count how many events are shown (+1)
+        int number_of_events = 1;
 
         // Whether this source is currently selected in the source selector
         public bool selected {get; set;}
@@ -59,8 +62,7 @@ namespace Maya.View {
          * Creates a new source widget for the given source.
          */
         public SourceWidget (E.Source source) {
-            this.orientation = Gtk.Orientation.VERTICAL;
-            set_spacing (5);
+            set_row_spacing (5);
 
             // TODO: hash and equal funcs are in util but cause a crash
             // (both for map and list)
@@ -74,7 +76,7 @@ namespace Maya.View {
             name_label = new Gtk.Label ("");
             name_label.set_markup ("<b>" + Markup.escape_text (source.peek_name()) + "</b>");
             name_label.set_alignment (0, 0.5f);
-            pack_start (name_label, false, true, 0);
+            attach (name_label, 0, 0, 1, 1);
             name_label.show ();
 
             notify["selected"].connect (update_visibility);
@@ -156,12 +158,15 @@ namespace Maya.View {
         void reorder_widgets () {
             // Sort events list
             current_events.sort (compare_comps);
-
+            number_of_events = 1;
             foreach (var event in current_events) {
                 bool has_widget = event_widgets.has_key (event);
 
                 if (has_widget) {
-                    reorder_child (event_widgets.get (event), -1);
+                    Gtk.Widget temp_widget = event_widgets.get (event);
+                    remove (event_widgets.get (event));
+                    attach (temp_widget, 0, number_of_events, 1, 1);
+                    number_of_events++;
                 }
             }
         }
@@ -241,7 +246,8 @@ namespace Maya.View {
          */
         void show_event (E.CalComponent event) {
             EventWidget widget = new EventWidget (event);
-            pack_start (widget, false, true, 0);
+            attach (widget, 0, number_of_events, 1, 1);
+            number_of_events++;
             widget.selected.connect (() => {event_selected (event);});
             widget.deselected.connect (() => {event_deselected (event);});
             widget.modified.connect ((event) => (event_modified (event)));

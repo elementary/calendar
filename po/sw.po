@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-03-30 09:32+0200\n"
 "PO-Revision-Date: 2012-03-22 00:10+0000\n"
 "Last-Translator: Jkakolwa <Unknown>\n"
 "Language-Team: Swahili <sw@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "Hariri Tukio"
 msgid "Edit the selected event"
 msgstr "Hariri hili tukio"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr ""
 
@@ -75,9 +78,6 @@ msgstr "Mgeni"
 msgid "Import..."
 msgstr "Ingiza"
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "John Smith au mfano St."
 
@@ -87,6 +87,9 @@ msgstr "Mahali"
 msgid "Name of Event"
 msgstr "Jina la tukio"
 
+msgid "Name or Email Address"
+msgstr "Jina au Anwani ya barua pepe"
+
 msgid "Search For Events.."
 msgstr "Tafuta matukio"
 
@@ -95,6 +98,9 @@ msgstr "Chagua kalenda zionyeshwe"
 
 msgid "Show Week Numbers"
 msgstr "Onesha namba za wiki"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Sync..."
@@ -116,11 +122,12 @@ msgid ""
 msgstr ""
 "Matukio yako ya jayo yataoshwa hapa wakati kama utachagua tarehe na matukio."
 
-msgid "all the day"
-msgstr "Siku nzima"
+#, fuzzy
+msgid "all day"
+msgstr "Siku yote"
 
 msgid "at"
 msgstr "katika"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Jina au Anwani ya barua pepe"
+#~ msgid "all the day"
+#~ msgstr "Siku nzima"

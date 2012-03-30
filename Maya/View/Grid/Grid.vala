@@ -153,6 +153,9 @@ public class Grid : Gtk.Grid {
             {
                 day.can_focus = true;
                 day.sensitive = true;
+            } else {
+                day.can_focus = false;
+                day.sensitive = false;
             }
 
         } else if (new_date.get_month () != month_start.get_month ()) {

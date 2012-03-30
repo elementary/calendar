@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-03-30 09:32+0200\n"
 "PO-Revision-Date: 2012-03-26 12:16+0000\n"
 "Last-Translator: George Fragos <fragos.george@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "Επεξεργασία συμβάντος"
 msgid "Edit the selected event"
 msgstr "Επεξεργασία του επιλεγμένου συμβάντος"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "Εξαγωγή η κοινή χρήση του αρχικού ημερολογίου"
 
@@ -75,9 +78,6 @@ msgstr ""
 msgid "Import..."
 msgstr ""
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "Γιάννης Παπαδόπουλος ή Οδός Τάδε"
 
@@ -87,6 +87,9 @@ msgstr ""
 msgid "Name of Event"
 msgstr "Όνομα συμβάντος"
 
+msgid "Name or Email Address"
+msgstr "Όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
+
 msgid "Search For Events.."
 msgstr "Αναζήτηση συμβάντος"
 
@@ -95,6 +98,9 @@ msgstr "Επιλέξτε τα προς εμφάνιση ημερολόγια"
 
 msgid "Show Week Numbers"
 msgstr "Εμφάνιση αύξοντα αριθμού εβδομάδος"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr ""
@@ -117,11 +123,9 @@ msgstr ""
 "Τα προσεχή γεγονότα σας θα εμφανίζονται εδώ όταν επιλέξετε μια ημερομηνία "
 "γεγονότων."
 
-msgid "all the day"
+#, fuzzy
+msgid "all day"
 msgstr "ολόκληρη την ημέρα"
 
 msgid "at"
 msgstr ""
-
-#~ msgid "Name or Email Address"
-#~ msgstr "Όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"

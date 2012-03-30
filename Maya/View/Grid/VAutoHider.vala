@@ -107,7 +107,7 @@ namespace Maya.View {
                 more_label_allocation.x = allocation.x;
                 more_label_allocation.y = allocation.y + allocation.height - more_label_size.height;
                 more_label.size_allocate (more_label_allocation);
-                more_label.set_label (@"$more more ...");
+                more_label.set_label (_(@"$more more ..."));
             } else {
                 more_label.hide ();
             }

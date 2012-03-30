@@ -111,13 +111,13 @@ namespace Maya.View.Widgets {
             if (address == "")
                 return;
 
-            var box = new Gtk.HBox (false, 0);
+            var content_grid = new Gtk.Grid();
             var label = new Gtk.Label (Contact.name_from_string (address));
-            box.pack_start (label, true, false, 0);
+            content_grid.attach (label, 0, 0, 1, 1);
             var icon = new Gtk.Image.from_stock (Gtk.Stock.CLOSE, Gtk.IconSize.MENU);
-            box.pack_end (icon, false, false, 0);
+            content_grid.attach (icon, 1, 0, 1, 1);
             var button = new Gtk.Button ();
-            button.add (box);
+            button.add (content_grid);
             button.set_tooltip_text (address);
             button.clicked.connect ((button) => {
                 button.destroy ();

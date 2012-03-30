@@ -32,7 +32,7 @@ namespace Maya.View.Widgets {
 			set {
 				_is_pressed = value;
 				if (hovered == 0 || hovered == 2)
-					box.get_children ().nth_data (hovered).set_state (value ? Gtk.StateType.SELECTED : Gtk.StateType.NORMAL);
+					container_grid.get_children ().nth_data (hovered).set_state (value ? Gtk.StateType.SELECTED : Gtk.StateType.NORMAL);
 				queue_draw ();
 			}
 		}
@@ -46,7 +46,7 @@ namespace Maya.View.Widgets {
 			}
 		}
 		
-		private Gtk.HBox box;
+		private Gtk.Grid container_grid;
 		
 		public Gtk.Label label { get; protected set; }
 		public string text {
@@ -71,19 +71,20 @@ namespace Maya.View.Widgets {
 			set_visible_window (false);
 
 			// Initialize everything
-			box = new Gtk.HBox (false, 1);
-			box.border_width = 0;
+			container_grid = new Gtk.Grid();
+			container_grid.border_width = 0;
+            container_grid.set_row_homogeneous (true);
 			label = new Gtk.Label ("");
             label.width_chars = width_chars;
 			
 			// Add everything in appropriate order
-			box.pack_start (Util.set_paddings (new Gtk.Arrow (Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),
-					true, true, 0);
-			box.pack_start (label, true, true, PADDING);
-			box.pack_start (Util.set_paddings (new Gtk.Arrow (Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),
-					true, true, 0);
+			container_grid.attach (Util.set_paddings (new Gtk.Arrow (Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING), 
+                    0, 0, 1, 1);
+			container_grid.attach (label, 1, 0, 1, 1);
+			container_grid.attach (Util.set_paddings (new Gtk.Arrow (Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),
+					2, 0, 1, 1);
 			
-			add (box);
+			add (container_grid);
 		}
 
 		protected override bool scroll_event (Gdk.EventScroll event) {
@@ -111,9 +112,9 @@ namespace Maya.View.Widgets {
 		
 			is_pressed = false;
 			if (hovered == 0)
-				left_clicked ();
-			else if (hovered == 2)
 				right_clicked ();
+			else if (hovered == 2)
+				left_clicked ();
 
 			return true;
 		}
@@ -121,9 +122,9 @@ namespace Maya.View.Widgets {
 		protected override bool motion_notify_event (Gdk.EventMotion event) {
 		
 			Gtk.Allocation box_size, left_size, right_size;
-			box.get_allocation (out box_size);
-			box.get_children ().nth_data (0).get_allocation (out left_size);
-			box.get_children ().nth_data (2).get_allocation (out right_size);
+			container_grid.get_allocation (out box_size);
+			container_grid.get_children ().nth_data (0).get_allocation (out left_size);
+			container_grid.get_children ().nth_data (2).get_allocation (out right_size);
 			
 			double x = event.x + box_size.x;
 
@@ -148,14 +149,14 @@ namespace Maya.View.Widgets {
 		protected override bool draw (Cairo.Context cr) {
 		
 			Gtk.Allocation box_size;
-			box.get_allocation (out box_size);
+			container_grid.get_allocation (out box_size);
 			
 			style.draw_box (cr, Gtk.StateType.NORMAL, Gtk.ShadowType.ETCHED_OUT, this, "button", 0, 0, box_size.width, box_size.height);
 			
 			if (hovered == 0 || hovered == 2) {
 
 				Gtk.Allocation arrow_size;
-				box.get_children ().nth_data (hovered).get_allocation (out arrow_size);
+				container_grid.get_children ().nth_data (hovered).get_allocation (out arrow_size);
 				
                 cr.save ();
 
@@ -170,7 +171,7 @@ namespace Maya.View.Widgets {
 				cr.restore ();
 			}
 			
-			propagate_draw (box, cr);
+			propagate_draw (container_grid, cr);
 			
 			return true;
 		}

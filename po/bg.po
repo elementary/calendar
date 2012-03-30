@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-03-30 09:32+0200\n"
 "PO-Revision-Date: 2012-03-25 13:26+0000\n"
 "Last-Translator: Dimitar Dimitrov <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "Редактиране на събитие"
 msgid "Edit the selected event"
 msgstr "Редактиране на избраното събитие"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr ""
 
@@ -75,9 +78,6 @@ msgstr "Гости"
 msgid "Import..."
 msgstr "Импортиране..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +87,9 @@ msgstr "Място"
 msgid "Name of Event"
 msgstr "Име на събитието"
 
+msgid "Name or Email Address"
+msgstr "Име или имейл адрес"
+
 msgid "Search For Events.."
 msgstr "Търсене на събития..."
 
@@ -95,6 +98,9 @@ msgstr "Избор на календар за показване"
 
 msgid "Show Week Numbers"
 msgstr "Показване на номерата на седмиците"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Синхронизация..."
@@ -117,11 +123,9 @@ msgstr ""
 "Вашите скорошни събития ще се показват тук, след като изберете дата със "
 "събития."
 
-msgid "all the day"
-msgstr ""
+#, fuzzy
+msgid "all day"
+msgstr "Цял ден:"
 
 msgid "at"
 msgstr "в"
-
-#~ msgid "Name or Email Address"
-#~ msgstr "Име или имейл адрес"

@@ -125,8 +125,8 @@ class SourceSelector : Granite.Widgets.PopOver {
             groupnumer++;
         }
 
-        var vbox_window = get_content_area () as Gtk.Box;
-        vbox_window.pack_start (sources_grid, false, false, 0);
+        var container = (Gtk.Container) get_content_area ();
+        container.add (sources_grid);
 
         delete_event.connect (hide_on_delete);
     }

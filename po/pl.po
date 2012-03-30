@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-03-30 09:32+0200\n"
 "PO-Revision-Date: 2012-03-18 00:22+0000\n"
 "Last-Translator: Niels Avonds <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "Edytuj wydarzenie"
 msgid "Edit the selected event"
 msgstr "Edytuj wybrane wydarzenie"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "Eksportuj lub udostępnij domyślny kalendarz"
 
@@ -75,9 +78,6 @@ msgstr "Goście"
 msgid "Import..."
 msgstr "Importuj..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +87,9 @@ msgstr "Lokalizacja"
 msgid "Name of Event"
 msgstr "Nazwa wydarzenia"
 
+msgid "Name or Email Address"
+msgstr ""
+
 msgid "Search For Events.."
 msgstr "Szukaj wydarzeń..."
 
@@ -95,6 +98,9 @@ msgstr "Wybierz kalendarze do wyświetlenia"
 
 msgid "Show Week Numbers"
 msgstr "Wyświetlanie numerów tygodni"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Synchronizuj..."
@@ -117,8 +123,12 @@ msgstr ""
 "Nadchodzące wydarzenia będą wyświetlone w tym miejscu, po zaznaczeniu ich "
 "daty."
 
-msgid "all the day"
-msgstr "cały dzień"
+#, fuzzy
+msgid "all day"
+msgstr "Cały dzień:"
 
 msgid "at"
 msgstr ""
+
+#~ msgid "all the day"
+#~ msgstr "cały dzień"

@@ -20,9 +20,8 @@ namespace Maya.View {
 /**
  * Represents the entire calendar, including the headers, the week labels and the grid.
  */
-public class CalendarView : Gtk.HBox {
+public class CalendarView : Gtk.Grid {
 
-    Gtk.VBox box;
     Model.CalendarModel model;
 
     public WeekLabels weeks { get; private set; }
@@ -47,15 +46,12 @@ public class CalendarView : Gtk.HBox {
         grid.on_event_add.connect ((date) => on_event_add (date));
         
         // HBox properties
-        spacing = 0;
-        homogeneous = false;
+        //spacing = 0;
+        //homogeneous = false;
         
-        box = new Gtk.VBox (false,0);
-        box.pack_start (header, false, false, 0);
-        box.pack_end (grid, true, true, 0);
-        
-        pack_start(weeks, false, false, 0);
-        pack_end(box, true, true, 0);
+        attach (header, 1, 0, 1, 1);
+        attach (grid, 1, 1, 1, 1);
+        attach (weeks, 0, 1, 1, 1);
 
         sync_with_model ();
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-03-30 09:32+0200\n"
 "PO-Revision-Date: 2012-03-26 03:10+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "編輯事件"
 msgid "Edit the selected event"
 msgstr "編輯所選事件"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "匯出或分享預設行事曆"
 
@@ -75,9 +78,6 @@ msgstr "客人"
 msgid "Import..."
 msgstr "匯入..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +87,9 @@ msgstr "地點"
 msgid "Name of Event"
 msgstr "事件名稱"
 
+msgid "Name or Email Address"
+msgstr "名稱或電子郵件位址"
+
 msgid "Search For Events.."
 msgstr "搜尋事件..."
 
@@ -95,6 +98,9 @@ msgstr "選取要顯示的行事曆"
 
 msgid "Show Week Numbers"
 msgstr "顯示週數"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "同步..."
@@ -115,11 +121,12 @@ msgid ""
 "events."
 msgstr "當您選取的日子有活動時，未來的活動會顯示在這裡。"
 
-msgid "all the day"
-msgstr "整天"
+#, fuzzy
+msgid "all day"
+msgstr "整天："
 
 msgid "at"
 msgstr "於"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "名稱或電子郵件位址"
+#~ msgid "all the day"
+#~ msgstr "整天"

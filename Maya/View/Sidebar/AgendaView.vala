@@ -22,7 +22,7 @@ namespace Maya.View {
      * The AgendaView shows all events for the currently selected date,
      * even with fancy colors!
      */
-	public class AgendaView : Gtk.Box {
+	public class AgendaView : Gtk.Grid {
 
         // All of the sources to be displayed and their widgets.
         Gee.Map<E.Source, SourceWidget> source_widgets;
@@ -32,6 +32,9 @@ namespace Maya.View {
 
         // The previous visibility status for this widget.
         bool old_shown = false;
+
+        // 
+        int row_number = 0;
 
         // Sent out when an event is selected.
         public signal void event_selected (E.CalComponent event);
@@ -50,10 +53,11 @@ namespace Maya.View {
          */
 		public AgendaView (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
 
-			// VBox properties
-            this.orientation = Gtk.Orientation.VERTICAL;
-			spacing = 0;
-			homogeneous = false;
+            // Gtk.Grid properties
+            set_column_homogeneous (true);
+            set_row_homogeneous (true);
+            column_spacing = 0;
+            row_spacing = 0;
 
             source_widgets = new Gee.HashMap<E.Source, SourceWidget> (
                 (HashFunc) Util.source_hash_func,
@@ -122,7 +126,8 @@ namespace Maya.View {
          */
         void add_source (E.Source source) {
             var widget = new SourceWidget (source);
-            pack_start (widget, false, true, 0);
+            attach (widget, 0, row_number, 1, 1);
+            row_number++;
 
             source_widgets.set (source, widget);
             widget.shown_changed.connect (on_source_shown_changed);
