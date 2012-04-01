@@ -7,113 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-30 09:32+0200\n"
-"PO-Revision-Date: 2012-03-27 15:57+0000\n"
-"Last-Translator: Juan David Angarita <Unknown>\n"
+"POT-Creation-Date: 2012-03-17 19:47+0100\n"
+"PO-Revision-Date: 2012-03-31 19:15+0000\n"
+"Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-03-28 05:01+0000\n"
-"X-Generator: Launchpad (build 15027)\n"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Añadir evento"
-
-msgid "All day:"
-msgstr "Todo el día:"
-
-msgid "Comments"
-msgstr "Comentarios"
-
-msgid "Create Event"
-msgstr "Crear Evento"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Crear un evento nuevo"
-
-msgid "Delete the selected event"
-msgstr "Eliminar el evento seleccionado"
-
-msgid "Edit Event"
-msgstr "Editar Evento"
-
-msgid "Edit the selected event"
-msgstr "Editar el evento seleccionado"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "Exportar o Compartir el Calendario por defecto"
-
-msgid "From:"
-msgstr "Desde:"
-
-msgid "Fullscreen"
-msgstr "Pantalla completa"
-
-msgid "Guests"
-msgstr "Invitados"
-
-msgid "Import..."
-msgstr "Importar..."
-
-msgid "John Smith OR Example St."
-msgstr "John Smith o por ejemplo Sr."
-
-msgid "Location"
-msgstr "Ubicación"
-
-msgid "Name of Event"
-msgstr "Nombre del Evento"
-
-msgid "Name or Email Address"
-msgstr "Nombre o Dirección de Correo Electrónico"
-
-msgid "Search For Events.."
-msgstr "Buscar Eventos"
-
-msgid "Select calendars to display"
-msgstr "Seleccionar calendarios a mostrar"
-
-msgid "Show Week Numbers"
-msgstr "Mostrar números de las semanas"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Sincronizar..."
-
-msgid "Title"
-msgstr "Título"
-
-msgid "To:"
-msgstr "A:"
-
-#. Create everything
-msgid "Today"
-msgstr "Hoy"
+"X-Launchpad-Export-Date: 2012-04-01 04:52+0000\n"
+"X-Generator: Launchpad (build 15032)\n"
+"Language: es\n"
 
 #. label settings
 msgid ""
@@ -123,12 +26,98 @@ msgstr ""
 "Sus próximos eventos se mostrarán aquí cuando seleccione una fecha con "
 "eventos."
 
-#, fuzzy
-msgid "all day"
-msgstr "Todo el día:"
+msgid "%B %e, %Y"
+msgstr "%e de %B del %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %d de %b"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "all the day"
+msgstr "todo el día"
 
 msgid "at"
 msgstr "en"
 
-#~ msgid "all the day"
-#~ msgstr "todo el día"
+msgid "From:"
+msgstr "Desde:"
+
+msgid "All day:"
+msgstr "Todo el día:"
+
+msgid "To:"
+msgstr "Hasta:"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "Name of Event"
+msgstr "Nombre del evento"
+
+msgid "Location"
+msgstr "Ubicación"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith o Calle Ejemplo"
+
+msgid "Guests"
+msgstr "Invitados"
+
+msgid "Name or Email Address"
+msgstr "Nombre o dirección de correo electrónico"
+
+msgid "Comments"
+msgstr "Comentarios"
+
+msgid "Create Event"
+msgstr "Crear evento"
+
+#. Dialog properties
+msgid "Add Event"
+msgstr "Añadir evento"
+
+#. Dialog Properties
+msgid "Edit Event"
+msgstr "Editar evento"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Crear un evento nuevo"
+
+msgid "Edit the selected event"
+msgstr "Editar el evento seleccionado"
+
+msgid "Delete the selected event"
+msgstr "Eliminar el evento seleccionado"
+
+msgid "Select calendars to display"
+msgstr "Seleccionar los calendarios a mostrar"
+
+msgid "Search For Events.."
+msgstr "Buscar eventos..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Exportar o compartir el calendario predeterminado"
+
+#. Create everything
+msgid "Today"
+msgstr "Hoy"
+
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+msgid "Show Week Numbers"
+msgstr "Mostrar los números de las semanas"
+
+msgid "Import..."
+msgstr "Importar..."
+
+msgid "Sync..."
+msgstr "Sincronizar..."
