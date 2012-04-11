@@ -17,8 +17,8 @@
 
 namespace Maya.View {
 
-	public class EventDialog : Gtk.Dialog {
-		
+    public class EventDialog : Gtk.Dialog {
+        
         /**
          * The different widgets in the dialog.
          */        
@@ -34,7 +34,7 @@ namespace Maya.View {
         private Granite.Widgets.TimePicker from_time_picker;
         private Granite.Widgets.TimePicker to_time_picker;
 
-		private Gtk.Grid content_grid { get; private set; }
+        private Gtk.Grid content_grid { get; private set; }
 
         public E.Source source { get; private set; }
 
@@ -42,25 +42,25 @@ namespace Maya.View {
 
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
 
-		public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
-		
+        public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
+        
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
             this.ecal = ecal;
 
             if (add_event) {
-	            title = _("Add Event");
+                title = _("Add Event");
             } else {
                 title = _("Edit Event");
             }
 
-			// Dialog properties
-			//modal = true;
-			window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+            // Dialog properties
+            //modal = true;
+            window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
             //set_flags(Gtk.DialogFlags.DESTROY_WITH_PARENT);
-			transient_for = window;
-			
-			// Build dialog
-			build_dialog (add_event);
+            transient_for = window;
+            
+            // Build dialog
+            build_dialog (add_event);
 
             // Load the event's properties in to the dialog
             load ();
@@ -68,7 +68,7 @@ namespace Maya.View {
             set_default_response(Gtk.ResponseType.APPLY);
 
             connect_signals ();
-		}
+        }
 
         private void connect_signals () {
             this.response.connect (on_response);
@@ -161,7 +161,7 @@ namespace Maya.View {
             comp.add_property (property);
         }
 
-		//--- Helpers ---//
+        //--- Helpers ---//
 
         /**
          * Populate the dialog's widgets with the component's values.
@@ -182,8 +182,7 @@ namespace Maya.View {
                 DateTime from_date = Util.ical_to_date_time (dt_start);
 
                 from_date_picker.date = from_date;
-// TODO: wait for bugfix in granite to be able to do this
-//                from_time_picker.time = from_date;
+                from_time_picker.time = from_date;
             }
 
             // Load the to date
@@ -193,7 +192,7 @@ namespace Maya.View {
                 DateTime to_date = Util.ical_to_date_time (dt_end);
 
                 to_date_picker.date = to_date;
-//                to_time_picker.time = to_date;
+                to_time_picker.time = to_date;
             }
 
             // Load the allday_switch
@@ -203,7 +202,7 @@ namespace Maya.View {
                 if (Util.is_the_all_day(from_date, to_date) == true) {
                     allday_switch.set_active(true);
                     from_time_picker.sensitive = false;
-		            to_time_picker.sensitive = false;
+                    to_time_picker.sensitive = false;
                 }
             }
 
@@ -233,124 +232,163 @@ namespace Maya.View {
             }    
         }
 
-		void build_dialog (bool add_event) {
-		    
-		    var container = (Gtk.Container) get_content_area ();
+        void build_dialog (bool add_event) {
+            
+            var container = (Gtk.Container) get_content_area ();
             container.set_vexpand(true);
             container.set_hexpand(true);
             content_grid = new Gtk.Grid ();
             content_grid.set_vexpand(true);
             content_grid.set_hexpand(true);
-		    content_grid.margin_left = 10;
-		    content_grid.margin_right = 10;
-		    content_grid.margin_top = 10;
-		    
-		    var from_label = make_label (_("From:"));
-			from_date_picker = make_date_picker ();
-			from_time_picker = make_time_picker ();
-		    
-		    var allday_label = new Gtk.Label (_("All day:"));
-		    allday_label.margin_left = 10;
-		    
-		    allday_switch = new Gtk.Switch ();
-		    
-		    var to_expander = new Gtk.Expander ("<span weight='bold'>"+_("To:")+"</span>");
-		    to_expander.use_markup = true;
-		    to_expander.spacing = 10;
-		    to_expander.margin_bottom = 10;
-		    
-		    var to_grid = new Gtk.Grid ();
-		    
-		    to_date_picker = make_date_picker ();
-		    to_time_picker = make_time_picker ();
-		    
-		    to_grid.attach (to_date_picker, 0, 0, 1, 1);
-		    to_grid.attach (to_time_picker, 1, 0, 1, 1);
-		    
-		    to_expander.add (to_grid);
-		    
-		    allday_switch.notify["active"].connect (() => { 
-                on_date_modified ();
-		        from_time_picker.sensitive = !allday_switch.get_active ();
-		        to_time_picker.sensitive = !allday_switch.get_active ();
-		    });
-		    
-		    var title_label = make_label (_("Title"));
-		    title_entry = new Granite.Widgets.HintedEntry (_("Name of Event"));
+            content_grid.margin_left = 10;
+            content_grid.margin_right = 10;
+            
+            var from_label = make_label (_("From:"));
+            from_date_picker = make_date_picker ();
+            from_date_picker.notify["date"].connect ( () => {on_date_modified(0);} );
+            from_time_picker = make_time_picker ();
+            from_time_picker.notify["time"].connect ( () => {on_time_modified(0);} );
+            
+            var allday_label = new Gtk.Label (_("All day:"));
+            allday_label.margin_left = 10;
+            
+            allday_switch = new Gtk.Switch ();
+            
+            var to_label = make_label (_("To:"));
+            
+            var allday_switch_grid = new Gtk.Grid ();
+            
+            to_date_picker = make_date_picker ();
+            to_date_picker.notify["date"].connect ( () => {on_date_modified(1);} );
+            to_time_picker = make_time_picker ();
+            to_time_picker.notify["time"].connect ( () => {on_time_modified(1);} );
+            
+            allday_switch_grid.attach (allday_switch, 0, 0, 1, 1);
+            
+            
+            allday_switch.notify["active"].connect (() => { 
+                on_date_modified (1);
+                from_time_picker.sensitive = !allday_switch.get_active ();
+                to_time_picker.sensitive = !allday_switch.get_active ();
+            });
+            
+            var title_label = make_label (_("Title"));
+            title_entry = new Granite.Widgets.HintedEntry (_("Name of Event"));
             title_entry.changed.connect(on_title_entry_modified);
-		    
-		    var location_label = make_label (_("Location"));
-	        location_entry = new Granite.Widgets.HintedEntry (_("John Smith OR Example St."));
-		    
-		    var guest_label = make_label (_("Guests"));
-			guest_entry = new Maya.View.Widgets.GuestEntry (_("Name or Email Address"));
+            
+            var location_label = make_label (_("Location"));
+            location_entry = new Granite.Widgets.HintedEntry (_("John Smith OR Example St."));
+            
+            var guest_label = make_label (_("Guests"));
+            guest_entry = new Maya.View.Widgets.GuestEntry (_("Name or Email Address"));
             guest_entry.check_resize ();
-			
-			var comment_label = make_label (_("Comments"));
-			comment_textview = new Gtk.TextView ();
-			comment_textview.height_request = 100;
+            
+            var comment_label = make_label (_("Comments"));
+            comment_textview = new Gtk.TextView ();
+            comment_textview.height_request = 100;
             comment_textview.vexpand = true;
-		    
-		    content_grid.attach (from_label, 0, 0, 4, 1);
-		    content_grid.attach (from_date_picker, 0, 1, 1, 1);
-		    content_grid.attach (from_time_picker, 1, 1, 1, 1);
-		    content_grid.attach (allday_label, 2, 1, 1, 1);
-		    content_grid.attach (allday_switch, 3, 1, 1, 1);
-		    content_grid.attach (to_expander, 0, 2, 2, 1);
-		    content_grid.attach (title_label, 0, 3, 1, 1);
-		    content_grid.attach (location_label, 1, 3, 3, 1);
-		    content_grid.attach (title_entry, 0, 4, 1, 1);
-		    content_grid.attach (location_entry, 1, 4, 3, 1);
-		    content_grid.attach (guest_label, 0, 5, 4, 1);
-		    content_grid.attach (guest_entry, 0, 6, 4, 1);
-		    content_grid.attach (comment_label, 0, 7, 4, 1);
-		    content_grid.attach (comment_textview, 0, 8, 4, 1);
+            
+            content_grid.attach (from_label, 0, 0, 4, 1);
+            content_grid.attach (from_date_picker, 0, 1, 1, 1);
+            content_grid.attach (from_time_picker, 1, 1, 1, 1);
+            content_grid.attach (allday_label, 2, 1, 1, 1);
+            content_grid.attach (allday_switch_grid, 3, 1, 1, 1);
+            content_grid.attach (to_label, 0, 2, 2, 1);
+            content_grid.attach (to_date_picker, 0, 3, 1, 1);
+            content_grid.attach (to_time_picker, 1, 3, 1, 1);
+            content_grid.attach (title_label, 0, 4, 1, 1);
+            content_grid.attach (location_label, 1, 4, 3, 1);
+            content_grid.attach (title_entry, 0, 5, 1, 1);
+            content_grid.attach (location_entry, 1, 5, 3, 1);
+            content_grid.attach (guest_label, 0, 6, 4, 1);
+            content_grid.attach (guest_entry, 0, 7, 4, 1);
+            content_grid.attach (comment_label, 0, 8, 4, 1);
+            content_grid.attach (comment_textview, 0, 9, 4, 1);
             container.add (content_grid);
-		   
+           
             if (add_event) {
-		        create_button = add_button (_("Create Event"), Gtk.ResponseType.APPLY);
+                create_button = add_button (_("Create Event"), Gtk.ResponseType.APPLY);
                 create_button.sensitive = false;
             }
             else {
-		        create_button = add_button (Gtk.Stock.OK, Gtk.ResponseType.APPLY);
+                create_button = add_button (Gtk.Stock.OK, Gtk.ResponseType.APPLY);
             }
             create_button.set_tooltip_text (_("Your event has to be named and has to have a valid date"));
-		    show_all();
-		}
-		
-		Gtk.Label make_label (string text) {
-		
-		    var label = new Gtk.Label ("<span weight='bold'>" + text + "</span>");
-		    label.use_markup = true;
-			label.set_alignment (0.0f, 0.5f);
-			label.margin_bottom = 10;
-		    
-		    return label;
-		}
-		
-		Granite.Widgets.DatePicker make_date_picker () {
-		    
-		    var date_picker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
-			date_picker.width_request = 200;
-            date_picker.notify["date"].connect (on_date_modified);
-			
-			return date_picker;
-		}
-		
-		Granite.Widgets.TimePicker make_time_picker () {
-		    
-		    var time_picker = new Granite.Widgets.TimePicker.with_format (Maya.Settings.TimeFormat ());
-		    time_picker.width_request = 120;
-            time_picker.notify["time"].connect (on_date_modified);
-		    
-		    return time_picker;
-		}
+            show_all();
+        }
+        
+        Gtk.Label make_label (string text) {
+        
+            var label = new Gtk.Label ("<span weight='bold'>" + text + "</span>");
+            label.use_markup = true;
+            label.set_alignment (0.0f, 0.5f);
+            label.margin_top = 10;
+            
+            return label;
+        }
+        
+        Granite.Widgets.DatePicker make_date_picker () {
+            
+            var date_picker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
+            date_picker.width_request = 200;
+            
+            return date_picker;
+        }
+        
+        Granite.Widgets.TimePicker make_time_picker () {
+            
+            var time_picker = new Granite.Widgets.TimePicker.with_format (Maya.Settings.TimeFormat ());
+            time_picker.width_request = 120;
+            
+            return time_picker;
+        }
 
         void on_title_entry_modified () {
             update_create_sensitivity ();
         }
 
-        void on_date_modified () {
+        void on_date_modified (int index) {
+            var start_date = from_date_picker.date;
+            var end_date = to_date_picker.date;
+            
+            switch (index) {
+            case 0:
+                if (start_date.get_year () == end_date.get_year ()) {
+                    
+                    if (start_date.get_day_of_year () >= end_date.get_day_of_year ()) {
+                        to_date_picker.date = from_date_picker.date;
+                    }
+                }
+                break;
+            case 1:
+                break;
+            }
+            update_create_sensitivity ();
+        }
+
+        void on_time_modified (int index) {
+            var start_date = from_date_picker.date;
+            var end_date = to_date_picker.date;
+            var start_time = from_time_picker.time;
+            var end_time = to_time_picker.time;
+            
+            switch (index) {
+            case 0:
+                if (start_date.get_year () == end_date.get_year ()) {
+                    
+                    if (start_date.get_day_of_year () == end_date.get_day_of_year ()) {
+
+                        if (start_time.get_hour () > end_time.get_hour ()) 
+                            to_time_picker.time = from_time_picker.time.add_hours(1);
+                        
+                        if ((start_time.get_hour () == end_time.get_hour ()) && (start_time.get_minute () >= end_time.get_minute ()))
+                            to_time_picker.time = from_time_picker.time.add_hours(1);
+                    }
+                }
+                break;
+            case 1:
+                break;
+            }
             update_create_sensitivity ();
         }
 
@@ -400,8 +438,8 @@ namespace Maya.View {
             return start_date.get_year () < end_date.get_year ();
         }
 
-	}
-	
+    }
+    
 
 }
 

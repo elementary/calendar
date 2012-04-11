@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-30 09:32+0200\n"
+"POT-Creation-Date: 2012-04-11 21:29+0200\n"
 "PO-Revision-Date: 2012-03-21 01:39+0000\n"
 "Last-Translator: Corentin Noël <tintou@mailoo.org>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -114,6 +114,9 @@ msgstr "Au :"
 #. Create everything
 msgid "Today"
 msgstr "Aujourd'hui"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
 
 #. label settings
 msgid ""

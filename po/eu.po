@@ -7,16 +7,116 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-17 19:47+0100\n"
+"POT-Creation-Date: 2012-04-11 21:29+0200\n"
 "PO-Revision-Date: 2012-04-06 19:25+0000\n"
 "Last-Translator: Eneko Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-04-07 05:06+0000\n"
 "X-Generator: Launchpad (build 15060)\n"
-"Language: eu\n"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%Y %B %e"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%I:%M %p"
+
+msgid "About"
+msgstr ""
+
+msgid "Add Event"
+msgstr "Ekitaldia gehitu"
+
+msgid "All day:"
+msgstr "Egun osoa:"
+
+msgid "Comments"
+msgstr "Iruzkinak"
+
+msgid "Create Event"
+msgstr "Ekitaldia Sortu"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Ekitaldi berri bat sortu"
+
+msgid "Delete the selected event"
+msgstr "Aukeratutako ekitaldia ezabatu"
+
+msgid "Edit Event"
+msgstr "Ekitaldia Aldatu"
+
+msgid "Edit the selected event"
+msgstr "Aukeratutako ekitaldia aldatu"
+
+msgid "Ends"
+msgstr ""
+
+msgid "Export or Share the default Calendar"
+msgstr "Esportatu edo Partekatu  Egutegi lehenetsia"
+
+msgid "From:"
+msgstr "Nondik:"
+
+msgid "Fullscreen"
+msgstr "Pantaila osoa"
+
+msgid "Guests"
+msgstr "Gonbidatuak"
+
+msgid "Import..."
+msgstr "Inportatu..."
+
+msgid "John Smith OR Example St."
+msgstr "John Smith edo Adibide kalea"
+
+msgid "Location"
+msgstr "Kokapena"
+
+msgid "Name of Event"
+msgstr "Ekitaldiaren Izena"
+
+msgid "Name or Email Address"
+msgstr "Izena edo Email-helbidea"
+
+msgid "Search For Events.."
+msgstr "Ekitaldiak Bilatu..."
+
+msgid "Select calendars to display"
+msgstr "Hautatu bistaratuko diren egutegiak"
+
+msgid "Show Week Numbers"
+msgstr "Erakutsi asteen zenbakiak"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Sync..."
+msgstr "Sinkronizatu..."
+
+msgid "Title"
+msgstr "Izenburua"
+
+msgid "To:"
+msgstr "Noiz arte:"
+
+#. Create everything
+msgid "Today"
+msgstr "Gaur"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
 
 #. label settings
 msgid ""
@@ -26,98 +126,12 @@ msgstr ""
 "Zure hurrengo gertakizunak hemen erakutsiko dira data bat aukeratzen "
 "duzunean."
 
-msgid "%B %e, %Y"
-msgstr "%Y %B %e"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%I:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "all the day"
-msgstr "egun osoa"
+#, fuzzy
+msgid "all day"
+msgstr "Egun osoa:"
 
 msgid "at"
 msgstr "nondik:"
 
-msgid "From:"
-msgstr "Nondik:"
-
-msgid "All day:"
-msgstr "Egun osoa:"
-
-msgid "To:"
-msgstr "Noiz arte:"
-
-msgid "Title"
-msgstr "Izenburua"
-
-msgid "Name of Event"
-msgstr "Ekitaldiaren Izena"
-
-msgid "Location"
-msgstr "Kokapena"
-
-msgid "John Smith OR Example St."
-msgstr "John Smith edo Adibide kalea"
-
-msgid "Guests"
-msgstr "Gonbidatuak"
-
-msgid "Name or Email Address"
-msgstr "Izena edo Email-helbidea"
-
-msgid "Comments"
-msgstr "Iruzkinak"
-
-msgid "Create Event"
-msgstr "Ekitaldia Sortu"
-
-#. Dialog properties
-msgid "Add Event"
-msgstr "Ekitaldia gehitu"
-
-#. Dialog Properties
-msgid "Edit Event"
-msgstr "Ekitaldia Aldatu"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Ekitaldi berri bat sortu"
-
-msgid "Edit the selected event"
-msgstr "Aukeratutako ekitaldia aldatu"
-
-msgid "Delete the selected event"
-msgstr "Aukeratutako ekitaldia ezabatu"
-
-msgid "Select calendars to display"
-msgstr "Hautatu bistaratuko diren egutegiak"
-
-msgid "Search For Events.."
-msgstr "Ekitaldiak Bilatu..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Esportatu edo Partekatu  Egutegi lehenetsia"
-
-#. Create everything
-msgid "Today"
-msgstr "Gaur"
-
-msgid "Fullscreen"
-msgstr "Pantaila osoa"
-
-msgid "Show Week Numbers"
-msgstr "Erakutsi asteen zenbakiak"
-
-msgid "Import..."
-msgstr "Inportatu..."
-
-msgid "Sync..."
-msgstr "Sinkronizatu..."
+#~ msgid "all the day"
+#~ msgstr "egun osoa"
