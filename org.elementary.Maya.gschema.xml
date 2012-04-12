@@ -11,8 +11,8 @@
 			<summary>The default calendar.</summary>
 			<description>The default calendar.</description>
 		</key>
-		<key name="selected-calendars" type="s">
-			<default>""</default>
+		<key name="selected-calendars" type="as">
+			<default>[]</default>
 			<summary>The selected calendars.</summary>
 			<description>The selected calendars.</description>
 		</key>

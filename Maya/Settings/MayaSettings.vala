@@ -17,28 +17,28 @@
 
 namespace Maya.Settings {
 
-	public enum Weekday {
+    public enum Weekday {
         BAD_WEEKDAY = 0,
-		MONDAY,
-		TUESDAY,
-		WEDNESDAY,
-		THURSDAY,
-		FRIDAY,
-		SATURDAY,
-		SUNDAY
-	}
+        MONDAY,
+        TUESDAY,
+        WEDNESDAY,
+        THURSDAY,
+        FRIDAY,
+        SATURDAY,
+        SUNDAY
+    }
 
-	public class MayaSettings : Granite.Services.Settings {
+    public class MayaSettings : Granite.Services.Settings {
 
         public string primary_calendar { get; set; }
 
-        public string selected_calendars { get; set; }
+        public string[] selected_calendars { get; set; }
 
-		public MayaSettings () {
-			base ("org.elementary.Maya.Settings");
-		}
+        public MayaSettings () {
+            base ("org.elementary.Maya.Settings");
+        }
 
-	}
+    }
 
 }
 
