@@ -7,116 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-11 21:29+0200\n"
-"PO-Revision-Date: 2012-03-18 00:22+0000\n"
-"Last-Translator: Niels Avonds <Unknown>\n"
+"POT-Creation-Date: 2012-03-17 19:47+0100\n"
+"PO-Revision-Date: 2012-04-16 11:27+0000\n"
+"Last-Translator: Teemu Kielinen <teemu.kielinen@gmail.com>\n"
 "Language-Team: Finnish <fi@li.org>\n"
-"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-03-19 04:56+0000\n"
-"X-Generator: Launchpad (build 14969)\n"
-
-msgid "%A, %b %d"
-msgstr ""
-
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr ""
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr ""
-
-msgid "All day:"
-msgstr ""
-
-msgid "Comments"
-msgstr ""
-
-msgid "Create Event"
-msgstr ""
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr ""
-
-msgid "Delete the selected event"
-msgstr ""
-
-msgid "Edit Event"
-msgstr ""
-
-msgid "Edit the selected event"
-msgstr ""
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr ""
-
-msgid "Fullscreen"
-msgstr ""
-
-msgid "Guests"
-msgstr ""
-
-msgid "Import..."
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr ""
-
-msgid "Name of Event"
-msgstr ""
-
-msgid "Name or Email Address"
-msgstr ""
-
-msgid "Search For Events.."
-msgstr ""
-
-msgid "Select calendars to display"
-msgstr ""
-
-msgid "Show Week Numbers"
-msgstr ""
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "To:"
-msgstr ""
-
-#. Create everything
-msgid "Today"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+"X-Launchpad-Export-Date: 2012-04-17 05:27+0000\n"
+"X-Generator: Launchpad (build 15099)\n"
+"Language: fi\n"
 
 #. label settings
 msgid ""
@@ -126,8 +26,98 @@ msgstr ""
 "Tulevat tapahtumat näytetään tässä, kun valitset tapahtumia sisältävän "
 "päivämäärän."
 
-msgid "all day"
-msgstr ""
+msgid "%B %e, %Y"
+msgstr "%e. %Bta %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %d. %b"
+
+msgid "%l:%M %p"
+msgstr "%I.%M %p"
+
+msgid "%H:%M"
+msgstr "%H.%M"
+
+msgid "all the day"
+msgstr "koko päivän"
 
 msgid "at"
-msgstr ""
+msgstr "paikassa"
+
+msgid "From:"
+msgstr "Alkaen:"
+
+msgid "All day:"
+msgstr "Koko päivä:"
+
+msgid "To:"
+msgstr "Päättyen:"
+
+msgid "Title"
+msgstr "Otsikko"
+
+msgid "Name of Event"
+msgstr "Tapahtuman nimi"
+
+msgid "Location"
+msgstr "Paikka"
+
+msgid "John Smith OR Example St."
+msgstr "Matti Meikäläinen TAI Esimerkkikatu"
+
+msgid "Guests"
+msgstr "Vieraat"
+
+msgid "Name or Email Address"
+msgstr "Nimi tai sähköposti"
+
+msgid "Comments"
+msgstr "Huomautukset"
+
+msgid "Create Event"
+msgstr "Luo tapahtuma"
+
+#. Dialog properties
+msgid "Add Event"
+msgstr "Lisää tapahtuma"
+
+#. Dialog Properties
+msgid "Edit Event"
+msgstr "Muokkaa tapahtumaa"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Luo uusi tapahtuma"
+
+msgid "Edit the selected event"
+msgstr "Muokkaa valittua tapahtumaa"
+
+msgid "Delete the selected event"
+msgstr "Poista valittu tapahtuma"
+
+msgid "Select calendars to display"
+msgstr "Valitse näytettävät kalenterit"
+
+msgid "Search For Events.."
+msgstr "Etsi tapahtumia."
+
+msgid "Export or Share the default Calendar"
+msgstr "Vie tai jaa vakiokalenteri"
+
+#. Create everything
+msgid "Today"
+msgstr "Tänään"
+
+msgid "Fullscreen"
+msgstr "Kokoruutu"
+
+msgid "Show Week Numbers"
+msgstr "Näytä viikkonumerot"
+
+msgid "Import..."
+msgstr "Tuo..."
+
+msgid "Sync..."
+msgstr "Synkronoi..."
