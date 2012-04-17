@@ -86,7 +86,7 @@ link_directories(${DEPS_LIBRARY_DIRS})
 
 find_package(Vala REQUIRED)
 include(ValaVersion)
-ensure_vala_version("0.10.0" MINIMUM)
+ensure_vala_version("0.15.1" MINIMUM)
 
 # Maya/Widgets/Calendar/EventsList.vala
 # Maya/Widgets/Calendar/Event.vala
