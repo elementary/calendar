@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-17 19:47+0100\n"
-"PO-Revision-Date: 2012-04-14 08:17+0000\n"
+"PO-Revision-Date: 2012-04-19 13:48+0000\n"
 "Last-Translator: Laurentino <laurentinolopes@gmail.com>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-15 04:52+0000\n"
-"X-Generator: Launchpad (build 15070)\n"
+"X-Launchpad-Export-Date: 2012-04-20 05:02+0000\n"
+"X-Generator: Launchpad (build 15120)\n"
 "Language: pt\n"
 
 #. label settings
@@ -42,16 +42,16 @@ msgid "all the day"
 msgstr "Todo o dia"
 
 msgid "at"
-msgstr ""
+msgstr "em"
 
 msgid "From:"
-msgstr ""
+msgstr "A partir de:"
 
 msgid "All day:"
 msgstr "Dia completo:"
 
 msgid "To:"
-msgstr ""
+msgstr "Para:"
 
 msgid "Title"
 msgstr "Título"
@@ -60,7 +60,7 @@ msgid "Name of Event"
 msgstr "Nome do Evento"
 
 msgid "Location"
-msgstr ""
+msgstr "Localização"
 
 msgid "John Smith OR Example St."
 msgstr "John Smith OR rua Exemplo"
@@ -104,14 +104,14 @@ msgid "Search For Events.."
 msgstr "Pesquisar Por Eventos.."
 
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "Exporte ou Partilhe o Calendário por defeito"
 
 #. Create everything
 msgid "Today"
 msgstr "Hoje"
 
 msgid "Fullscreen"
-msgstr ""
+msgstr "Ecrã completo"
 
 msgid "Show Week Numbers"
 msgstr "Mostrar os Números das Semanas"
@@ -120,4 +120,4 @@ msgid "Import..."
 msgstr "Importar..."
 
 msgid "Sync..."
-msgstr ""
+msgstr "Sincronizar..."
