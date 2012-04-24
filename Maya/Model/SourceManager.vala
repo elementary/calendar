@@ -70,7 +70,7 @@ public class SourceManager: GLib.Object {
         GROUP_CONTACTS = source_list.peek_group_by_base_uri("contacts://");
         /* If we don't have any source, let's add at least one */
         if(GROUP_LOCAL.peek_sources().length() == 0) {
-            var source = new E.Source (_("Personnal"), "system");
+            var source = new E.Source (_("Personal"), "system");
             GROUP_LOCAL.add_source (source, 0);
         }
         /* Set the default calendar from the configuration keys, if it doesn't exist, attribute one */
