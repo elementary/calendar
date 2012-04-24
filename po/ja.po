@@ -1,123 +1,120 @@
-# Danish translation for maya
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# Japanese translation for maya
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the maya package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-03-17 19:47+0100\n"
-"PO-Revision-Date: 2012-04-23 13:48+0000\n"
-"Last-Translator: Simon <Unknown>\n"
-"Language-Team: Danish <da@li.org>\n"
+"PO-Revision-Date: 2012-04-23 17:54+0000\n"
+"Last-Translator: Naoki Kephart <Unknown>\n"
+"Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-04-24 05:17+0000\n"
 "X-Generator: Launchpad (build 15135)\n"
-"Language: da\n"
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Dine kommende begivenheder vil blive vist her, når du vælger en dato med "
-"begivenheder."
 
 msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
+msgstr "%Y年%B%e日"
 
 msgid "%A, %b %d"
-msgstr "%A, %b %d"
+msgstr "%B%e日 %A"
 
 msgid "%l:%M %p"
-msgstr "%l:%M %p"
+msgstr "%p %l:%M"
 
 msgid "%H:%M"
 msgstr "%H:%M"
 
 msgid "all the day"
-msgstr "hele dagen"
+msgstr "終日"
 
 msgid "at"
 msgstr ""
 
 msgid "From:"
-msgstr "Fra:"
+msgstr "開始時:"
 
 msgid "All day:"
-msgstr "Hele dagen:"
+msgstr "終日:"
 
 msgid "To:"
-msgstr "Til:"
+msgstr "終了時:"
 
 msgid "Title"
-msgstr "Titel"
+msgstr "タイトル"
 
 msgid "Name of Event"
-msgstr "Navn på begivenhed"
+msgstr "イベント名"
 
 msgid "Location"
-msgstr "Sted"
+msgstr "場所"
 
 msgid "John Smith OR Example St."
 msgstr ""
 
 msgid "Guests"
-msgstr "Gæster"
+msgstr "ゲスト"
 
 msgid "Name or Email Address"
-msgstr "Navn eller emailadresse"
+msgstr "名前またはメールアドレス"
 
 msgid "Comments"
-msgstr "Kommentarer"
+msgstr "備考"
 
 msgid "Create Event"
-msgstr "Opret begivenhed"
+msgstr "イベントを作成"
 
 #. Dialog properties
 msgid "Add Event"
-msgstr "Tilføj begivenhed"
+msgstr "イベントを追加"
 
 #. Dialog Properties
 msgid "Edit Event"
-msgstr "Redigér begivenhed"
+msgstr "イベントを編集"
 
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
-msgstr "Opret en ny begivenhed"
+msgstr "新しいイベントを作成"
 
 msgid "Edit the selected event"
-msgstr "Redigér den valgte begivenhed"
+msgstr "選択されたイベントを編集"
 
 msgid "Delete the selected event"
-msgstr "Slet den valgte begivenhed"
+msgstr "選択されたイベントを削除"
 
 msgid "Select calendars to display"
-msgstr "Vælg kalendere til visning"
+msgstr "表示するカレンダーを選択"
 
 msgid "Search For Events.."
-msgstr "Søg på begivenheder.."
+msgstr "イベントを検索.."
 
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "デフォルトのカレンダーを共有または書き出す"
 
 #. Create everything
 msgid "Today"
-msgstr "I dag"
+msgstr "今日"
 
 msgid "Fullscreen"
-msgstr "Fuldskærm"
+msgstr "全画面"
 
 msgid "Show Week Numbers"
-msgstr "Vis ugenumre"
+msgstr "週番号を表示"
 
 msgid "Import..."
-msgstr "Importér..."
+msgstr "取り込む..."
 
 msgid "Sync..."
-msgstr "Synkronisér..."
+msgstr "同期..."
