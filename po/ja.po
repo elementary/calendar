@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-03-17 19:47+0100\n"
-"PO-Revision-Date: 2012-04-23 17:54+0000\n"
+"PO-Revision-Date: 2012-04-24 09:00+0000\n"
 "Last-Translator: Naoki Kephart <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-24 05:17+0000\n"
-"X-Generator: Launchpad (build 15135)\n"
+"X-Launchpad-Export-Date: 2012-04-25 05:07+0000\n"
+"X-Generator: Launchpad (build 15139)\n"
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr ""
+msgstr "予定が入っている日付を選択すると、ここに予定の内容が表示されます。"
 
 msgid "%B %e, %Y"
 msgstr "%Y年%B%e日"
@@ -54,16 +54,16 @@ msgid "Title"
 msgstr "タイトル"
 
 msgid "Name of Event"
-msgstr "イベント名"
+msgstr "予定のタイトル"
 
 msgid "Location"
 msgstr "場所"
 
 msgid "John Smith OR Example St."
-msgstr ""
+msgstr "場所を入力"
 
 msgid "Guests"
-msgstr "ゲスト"
+msgstr "参加者"
 
 msgid "Name or Email Address"
 msgstr "名前またはメールアドレス"
@@ -72,33 +72,33 @@ msgid "Comments"
 msgstr "備考"
 
 msgid "Create Event"
-msgstr "イベントを作成"
+msgstr "予定を作成"
 
 #. Dialog properties
 msgid "Add Event"
-msgstr "イベントを追加"
+msgstr "予定を追加"
 
 #. Dialog Properties
 msgid "Edit Event"
-msgstr "イベントを編集"
+msgstr "予定を編集"
 
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
-msgstr "新しいイベントを作成"
+msgstr "新しい予定を作成"
 
 msgid "Edit the selected event"
-msgstr "選択されたイベントを編集"
+msgstr "選択された予定を編集"
 
 msgid "Delete the selected event"
-msgstr "選択されたイベントを削除"
+msgstr "選択された予定を削除"
 
 msgid "Select calendars to display"
 msgstr "表示するカレンダーを選択"
 
 msgid "Search For Events.."
-msgstr "イベントを検索.."
+msgstr "予定を検索.."
 
 msgid "Export or Share the default Calendar"
 msgstr "デフォルトのカレンダーを共有または書き出す"
@@ -111,7 +111,7 @@ msgid "Fullscreen"
 msgstr "全画面"
 
 msgid "Show Week Numbers"
-msgstr "週番号を表示"
+msgstr "週の通し番号を表示"
 
 msgid "Import..."
 msgstr "取り込む..."
