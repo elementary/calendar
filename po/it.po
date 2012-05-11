@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-17 19:47+0100\n"
-"PO-Revision-Date: 2012-04-27 12:44+0000\n"
-"Last-Translator: Fabio Gaudenzi <bafio.fruges@gmail.com>\n"
+"PO-Revision-Date: 2012-05-10 15:01+0000\n"
+"Last-Translator: Ivan <Unknown>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-28 05:04+0000\n"
-"X-Generator: Launchpad (build 15149)\n"
+"X-Launchpad-Export-Date: 2012-05-11 05:29+0000\n"
+"X-Generator: Launchpad (build 15225)\n"
 "Language: it\n"
 
 #. label settings
@@ -42,19 +42,19 @@ msgid "all the day"
 msgstr "tutto il giorno"
 
 msgid "at"
-msgstr "a"
+msgstr "alle"
 
 msgid "From:"
 msgstr "Da:"
 
 msgid "All day:"
-msgstr "Intera giornata:"
+msgstr "Giornata intera"
 
 msgid "To:"
-msgstr "A:"
+msgstr "a:"
 
 msgid "Title"
-msgstr "Titolo"
+msgstr "Nome"
 
 msgid "Name of Event"
 msgstr "Nome dell'evento"
@@ -101,10 +101,10 @@ msgid "Select calendars to display"
 msgstr "Seleziona i calendari da mostrare"
 
 msgid "Search For Events.."
-msgstr "Cerca eventi..."
+msgstr "Cerca eventi.."
 
 msgid "Export or Share the default Calendar"
-msgstr "Esporta o Condividi il calendario default"
+msgstr "Esporta o Condividi il calendario predefinito"
 
 #. Create everything
 msgid "Today"
