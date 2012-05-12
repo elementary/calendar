@@ -309,11 +309,11 @@ namespace Maya.View {
             if (add_event) {
                 create_button = add_button (_("Create Event"), Gtk.ResponseType.APPLY);
                 create_button.sensitive = false;
+                create_button.set_tooltip_text (_("Your event has to be named and has to have a valid date"));
             }
             else {
                 create_button = add_button (Gtk.Stock.OK, Gtk.ResponseType.APPLY);
             }
-            create_button.set_tooltip_text (_("Your event has to be named and has to have a valid date"));
             show_all();
         }
         
@@ -394,6 +394,10 @@ namespace Maya.View {
 
         void update_create_sensitivity () {
             create_button.sensitive = is_valid_event ();
+            if (!is_valid_event())
+                create_button.set_tooltip_text (_("Your event has to be named and has to have a valid date"));
+            else
+                create_button.set_tooltip_text ("");
         }
 
         bool is_valid_event () {
