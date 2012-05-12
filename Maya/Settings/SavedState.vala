@@ -17,7 +17,7 @@
 
 namespace Maya.Settings {
 
-	public enum WindowState {
+	public enum WindowStateMaya {
 		NORMAL = 0,
 		MAXIMIZED = 1,
 		FULLSCREEN = 2
@@ -28,14 +28,14 @@ namespace Maya.Settings {
 		public int window_width { get; set; }
 		public int window_height { get; set; }
 
-		public WindowState window_state { get; set; }
+		public WindowStateMaya window_state { get; set; }
 
 		public bool show_weeks { get; set; }
 
 		public int hpaned_position { get; set; }
 
 		public SavedState () {
-			base ("org.elementary.Maya.SavedState");
+			base ("org.pantheon.Maya.SavedState");
 		}
 
 	}

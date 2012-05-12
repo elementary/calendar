@@ -151,5 +151,5 @@ install(TARGETS maya RUNTIME DESTINATION bin)
 # GSettings Schema
 #
 include(GSettings)
-add_schema("org.elementary.Maya.gschema.xml")
+add_schema("org.pantheon.Maya.gschema.xml")
 

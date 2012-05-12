@@ -35,7 +35,7 @@ namespace Maya.Settings {
         public string[] selected_calendars { get; set; }
 
         public MayaSettings () {
-            base ("org.elementary.Maya.Settings");
+            base ("org.pantheon.Maya.Settings");
         }
 
     }

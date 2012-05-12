@@ -229,9 +229,9 @@ namespace Maya {
 
             add_window(window);
 
-			if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
+			if (saved_state.window_state == Settings.WindowStateMaya.MAXIMIZED)
 				window.maximize ();
-			else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
+			else if (saved_state.window_state == Settings.WindowStateMaya.FULLSCREEN)
 				window.fullscreen ();
 
             calview.today();
@@ -306,7 +306,7 @@ namespace Maya {
 			toolbar.menu.today.activate.connect (on_menu_today_toggled);
 			toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);
 			toolbar.menu.weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
-			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
+			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowStateMaya.FULLSCREEN);
             toolbar.menu.about.activate.connect (() => show_about(window));
 			toolbar.menu.weeknumbers.active = saved_state.show_weeks;
             toolbar.search_bar.text_changed_pause.connect ((text) => on_search (text));
@@ -322,15 +322,15 @@ namespace Maya {
             debug("Updating saved state");
 
 			// Save window state
-			if ((window.get_window ().get_state () & Settings.WindowState.MAXIMIZED) != 0)
-				saved_state.window_state = Settings.WindowState.MAXIMIZED;
-			else if ((window.get_window ().get_state () & Settings.WindowState.FULLSCREEN) != 0)
-				saved_state.window_state = Settings.WindowState.FULLSCREEN;
+			if ((window.get_window ().get_state () & Settings.WindowStateMaya.MAXIMIZED) != 0)
+				saved_state.window_state = Settings.WindowStateMaya.MAXIMIZED;
+			else if ((window.get_window ().get_state () & Settings.WindowStateMaya.FULLSCREEN) != 0)
+				saved_state.window_state = Settings.WindowStateMaya.FULLSCREEN;
 			else
-				saved_state.window_state = Settings.WindowState.NORMAL;
+				saved_state.window_state = Settings.WindowStateMaya.NORMAL;
 			
 			// Save window size
-			if (saved_state.window_state == Settings.WindowState.NORMAL) {
+			if (saved_state.window_state == Settings.WindowStateMaya.NORMAL) {
 				int width, height;
 				window.get_size (out width, out height);
 				saved_state.window_width = width;
