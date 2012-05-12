@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-11 21:29+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-03-26 11:06+0000\n"
 "Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -60,9 +60,6 @@ msgstr "Redakti eventon"
 msgid "Edit the selected event"
 msgstr "Redakti la elektitan eventon"
 
-msgid "Ends"
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr "Eksporti aŭ kunhavigi la aprioran kalendaron"
 
@@ -78,6 +75,9 @@ msgstr "Gastoj"
 msgid "Import..."
 msgstr "Importi..."
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr "John Smith AŬ Example St."
 
@@ -87,9 +87,6 @@ msgstr "Loko"
 msgid "Name of Event"
 msgstr "Nomo de la evento"
 
-msgid "Name or Email Address"
-msgstr "Nomo aŭ retpoŝtadreso"
-
 msgid "Search For Events.."
 msgstr "Serĉi eventon..."
 
@@ -98,9 +95,6 @@ msgstr "Elekti montrendajn klendarojn"
 
 msgid "Show Week Numbers"
 msgstr "Montri semajnnumerojn"
-
-msgid "Starts"
-msgstr ""
 
 msgid "Sync..."
 msgstr "Sinkronigi..."
@@ -115,9 +109,6 @@ msgstr "Al:"
 msgid "Today"
 msgstr "Hodiaŭ"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -126,12 +117,15 @@ msgstr ""
 "Viaj venontaj eventoj estos montrataj ĉi tie, kiam vi elektas daton, kiu "
 "enhavas eventon."
 
-#, fuzzy
-msgid "all day"
-msgstr "Tuttage:"
+msgid "all the day"
+msgstr "tuttage"
 
 msgid "at"
 msgstr "je"
 
-#~ msgid "all the day"
-#~ msgstr "tuttage"
+#~ msgid "Name or Email Address"
+#~ msgstr "Nomo aŭ retpoŝtadreso"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Tuttage:"

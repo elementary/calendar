@@ -7,16 +7,107 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-17 19:47+0100\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-05-06 21:44+0000\n"
 "Last-Translator: iman <Unknown>\n"
 "Language-Team: Indonesian <id@li.org>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-05-07 04:52+0000\n"
 "X-Generator: Launchpad (build 15195)\n"
-"Language: id\n"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr ""
+
+msgid "Add Event"
+msgstr "Tambah Kegiatan"
+
+msgid "All day:"
+msgstr "Sepanjang hari:"
+
+msgid "Comments"
+msgstr "Komentar"
+
+msgid "Create Event"
+msgstr "Buat Kegiatan"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Buat kegiatan baru"
+
+msgid "Delete the selected event"
+msgstr "Hapus kegiatan yang terpilih"
+
+msgid "Edit Event"
+msgstr "Ubah Kegiatan"
+
+msgid "Edit the selected event"
+msgstr "Ubah kegiatan yang terpilih"
+
+msgid "Export or Share the default Calendar"
+msgstr "Ekspor atau Bagikan Kalendar asal"
+
+msgid "From:"
+msgstr "Dari:"
+
+msgid "Fullscreen"
+msgstr "Layar Penuh"
+
+msgid "Guests"
+msgstr "Tamu"
+
+msgid "Import..."
+msgstr "Impor..."
+
+msgid "John Smith"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr "John Smith OR Example St."
+
+msgid "Location"
+msgstr "Lokasi"
+
+msgid "Name of Event"
+msgstr "Nama Kegiatan"
+
+msgid "Search For Events.."
+msgstr "Cari Kegiatan..."
+
+msgid "Select calendars to display"
+msgstr "Pilih kalender untuk ditampilkan"
+
+msgid "Show Week Numbers"
+msgstr "Tampilkan Nomor Minggu"
+
+msgid "Sync..."
+msgstr "Sinkronkan..."
+
+msgid "Title"
+msgstr "Judul"
+
+msgid "To:"
+msgstr "Hingga:"
+
+#. Create everything
+msgid "Today"
+msgstr "Hari ini"
 
 #. label settings
 msgid ""
@@ -26,98 +117,11 @@ msgstr ""
 "Jadwal kegiatan-kegiatan Anda berikutnya akan ditampilkan disini saat Anda "
 "memilih tanggal yang disertai kegiatan."
 
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
 msgid "all the day"
 msgstr "sepanjang hari"
 
 msgid "at"
 msgstr "pada"
 
-msgid "From:"
-msgstr "Dari:"
-
-msgid "All day:"
-msgstr "Sepanjang hari:"
-
-msgid "To:"
-msgstr "Hingga:"
-
-msgid "Title"
-msgstr "Judul"
-
-msgid "Name of Event"
-msgstr "Nama Kegiatan"
-
-msgid "Location"
-msgstr "Lokasi"
-
-msgid "John Smith OR Example St."
-msgstr "John Smith OR Example St."
-
-msgid "Guests"
-msgstr "Tamu"
-
-msgid "Name or Email Address"
-msgstr "Nama atau Alamat Email"
-
-msgid "Comments"
-msgstr "Komentar"
-
-msgid "Create Event"
-msgstr "Buat Kegiatan"
-
-#. Dialog properties
-msgid "Add Event"
-msgstr "Tambah Kegiatan"
-
-#. Dialog Properties
-msgid "Edit Event"
-msgstr "Ubah Kegiatan"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Buat kegiatan baru"
-
-msgid "Edit the selected event"
-msgstr "Ubah kegiatan yang terpilih"
-
-msgid "Delete the selected event"
-msgstr "Hapus kegiatan yang terpilih"
-
-msgid "Select calendars to display"
-msgstr "Pilih kalender untuk ditampilkan"
-
-msgid "Search For Events.."
-msgstr "Cari Kegiatan..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Ekspor atau Bagikan Kalendar asal"
-
-#. Create everything
-msgid "Today"
-msgstr "Hari ini"
-
-msgid "Fullscreen"
-msgstr "Layar Penuh"
-
-msgid "Show Week Numbers"
-msgstr "Tampilkan Nomor Minggu"
-
-msgid "Import..."
-msgstr "Impor..."
-
-msgid "Sync..."
-msgstr "Sinkronkan..."
+#~ msgid "Name or Email Address"
+#~ msgstr "Nama atau Alamat Email"

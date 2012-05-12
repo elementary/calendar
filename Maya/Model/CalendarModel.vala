@@ -97,7 +97,14 @@ public class CalendarModel : Object {
         debug (@"Adding event '$(comp.get_uid())'");
 
         var client = source_client [source];
-        
+
+        // Temporary workaround
+        bool found = (client != null);
+        if (!found) {
+            client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
+            client.open_sync(false, null);
+        }
+
         client.create_object (comp, null, (obj, results) =>  {
 
             bool status = false;
@@ -111,7 +118,12 @@ public class CalendarModel : Object {
 
             // TODO: handle error more gracefully
             assert (status==true);
+
+            if (!found) {
+                client.cancel_all();
+            }
         });
+
     }
 
     public void update_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-11 21:29+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-04-05 18:48+0000\n"
 "Last-Translator: Jiří Šebele <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -60,9 +60,6 @@ msgstr "Upravit událost"
 msgid "Edit the selected event"
 msgstr "Upravit vybranou událost"
 
-msgid "Ends"
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr "Exportovat nebo Sdílet výchozí kalendář"
 
@@ -78,6 +75,9 @@ msgstr "Hosté"
 msgid "Import..."
 msgstr "Importovat..."
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,9 +87,6 @@ msgstr "Místo"
 msgid "Name of Event"
 msgstr "Název události"
 
-msgid "Name or Email Address"
-msgstr "Jméno nebo Email"
-
 msgid "Search For Events.."
 msgstr "Vyhledávat události"
 
@@ -98,9 +95,6 @@ msgstr "Vyberte kalendáře, které zobrazit"
 
 msgid "Show Week Numbers"
 msgstr "Zobrazovat čísla týdnů"
-
-msgid "Starts"
-msgstr ""
 
 msgid "Sync..."
 msgstr "Synchronizovat..."
@@ -115,21 +109,21 @@ msgstr "Pro:"
 msgid "Today"
 msgstr "Dnes"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Poté co  vyberete datum se zde zobrazí nadcházející události."
 
-#, fuzzy
-msgid "all day"
-msgstr "Celý den:"
+msgid "all the day"
+msgstr "celý den"
 
 msgid "at"
 msgstr "v"
 
-#~ msgid "all the day"
-#~ msgstr "celý den"
+#~ msgid "Name or Email Address"
+#~ msgstr "Jméno nebo Email"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Celý den:"

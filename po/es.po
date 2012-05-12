@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-11 21:29+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-03-31 19:15+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -60,9 +60,6 @@ msgstr "Editar evento"
 msgid "Edit the selected event"
 msgstr "Editar el evento seleccionado"
 
-msgid "Ends"
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr "Exportar o compartir el calendario predeterminado"
 
@@ -78,6 +75,9 @@ msgstr "Invitados"
 msgid "Import..."
 msgstr "Importar..."
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr "John Smith o Calle Ejemplo"
 
@@ -87,9 +87,6 @@ msgstr "Ubicación"
 msgid "Name of Event"
 msgstr "Nombre del evento"
 
-msgid "Name or Email Address"
-msgstr "Nombre o dirección de correo electrónico"
-
 msgid "Search For Events.."
 msgstr "Buscar eventos..."
 
@@ -98,9 +95,6 @@ msgstr "Seleccionar los calendarios a mostrar"
 
 msgid "Show Week Numbers"
 msgstr "Mostrar los números de las semanas"
-
-msgid "Starts"
-msgstr ""
 
 msgid "Sync..."
 msgstr "Sincronizar..."
@@ -115,9 +109,6 @@ msgstr "Hasta:"
 msgid "Today"
 msgstr "Hoy"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -126,12 +117,15 @@ msgstr ""
 "Sus próximos eventos se mostrarán aquí cuando seleccione una fecha con "
 "eventos."
 
-#, fuzzy
-msgid "all day"
-msgstr "Todo el día:"
+msgid "all the day"
+msgstr "todo el día"
 
 msgid "at"
 msgstr "en"
 
-#~ msgid "all the day"
-#~ msgstr "todo el día"
+#~ msgid "Name or Email Address"
+#~ msgstr "Nombre o dirección de correo electrónico"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Todo el día:"

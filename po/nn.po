@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-11 21:29+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-03-28 10:34+0000\n"
 "Last-Translator: Martin Myrvold <Unknown>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
@@ -60,9 +60,6 @@ msgstr "Endre hending"
 msgid "Edit the selected event"
 msgstr "Endre denne hendinga"
 
-msgid "Ends"
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr "Eksporter eller del kalenderen som er standard"
 
@@ -78,6 +75,9 @@ msgstr "Gjestar"
 msgid "Import..."
 msgstr "Importer..."
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr "John Smith ELLER Eksempel gate"
 
@@ -87,9 +87,6 @@ msgstr "Stad"
 msgid "Name of Event"
 msgstr "Namn på hending"
 
-msgid "Name or Email Address"
-msgstr "Namn eller epostadresse"
-
 msgid "Search For Events.."
 msgstr "Søk etter hendingar.."
 
@@ -98,9 +95,6 @@ msgstr "Vel kva kalenderar som skal visast"
 
 msgid "Show Week Numbers"
 msgstr "Vis vekenummer"
-
-msgid "Starts"
-msgstr ""
 
 msgid "Sync..."
 msgstr "Synkroniser..."
@@ -115,9 +109,6 @@ msgstr "Til:"
 msgid "Today"
 msgstr "I dag"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -125,12 +116,15 @@ msgid ""
 msgstr ""
 "Dine komande hendingar vil verta vist her, når du vel ein dato med hendingar."
 
-#, fuzzy
-msgid "all day"
-msgstr "Heile dagen:"
+msgid "all the day"
+msgstr "heile dagen"
 
 msgid "at"
 msgstr "til"
 
-#~ msgid "all the day"
-#~ msgstr "heile dagen"
+#~ msgid "Name or Email Address"
+#~ msgstr "Namn eller epostadresse"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Heile dagen:"
