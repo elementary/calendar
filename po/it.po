@@ -7,107 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
-"PO-Revision-Date: 2012-05-10 15:01+0000\n"
-"Last-Translator: Ivan <Unknown>\n"
+"POT-Creation-Date: 2012-03-17 19:47+0100\n"
+"PO-Revision-Date: 2012-05-13 11:05+0000\n"
+"Last-Translator: Bennici Piercarlo <vesnarteach@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-11 05:29+0000\n"
-"X-Generator: Launchpad (build 15225)\n"
-
-msgid "%A, %b %d"
-msgstr ""
-
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr ""
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Aggiungi evento"
-
-msgid "All day:"
-msgstr "Giornata intera"
-
-msgid "Comments"
-msgstr "Commenti"
-
-msgid "Create Event"
-msgstr "Crea evento"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Crea un nuovo evento"
-
-msgid "Delete the selected event"
-msgstr "Cancella l'evento selezionato"
-
-msgid "Edit Event"
-msgstr "Modifica evento"
-
-msgid "Edit the selected event"
-msgstr "Modifica l'evento selezionato"
-
-msgid "Export or Share the default Calendar"
-msgstr "Esporta o Condividi il calendario predefinito"
-
-msgid "From:"
-msgstr "Da:"
-
-msgid "Fullscreen"
-msgstr "Schermo intero"
-
-msgid "Guests"
-msgstr "Ospiti"
-
-msgid "Import..."
-msgstr "Importa..."
-
-msgid "John Smith"
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr "Mario Rossi  O Viale Esempio"
-
-msgid "Location"
-msgstr "Luogo"
-
-msgid "Name of Event"
-msgstr "Nome dell'evento"
-
-msgid "Search For Events.."
-msgstr "Cerca eventi.."
-
-msgid "Select calendars to display"
-msgstr "Seleziona i calendari da mostrare"
-
-msgid "Show Week Numbers"
-msgstr "Mostra i numeri delle settimane"
-
-msgid "Sync..."
-msgstr "Sincronizza..."
-
-msgid "Title"
-msgstr "Nome"
-
-msgid "To:"
-msgstr "a:"
-
-#. Create everything
-msgid "Today"
-msgstr "Oggi"
+"X-Launchpad-Export-Date: 2012-05-14 04:52+0000\n"
+"X-Generator: Launchpad (build 15238)\n"
+"Language: it\n"
 
 #. label settings
 msgid ""
@@ -117,11 +26,98 @@ msgstr ""
 "Gli eventi prossimi saranno mostrati qui non appena avrai selezionato una "
 "data con un evento"
 
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
 msgid "all the day"
 msgstr "tutto il giorno"
 
 msgid "at"
 msgstr "alle"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Nome o Indirizzo email"
+msgid "From:"
+msgstr "Da:"
+
+msgid "All day:"
+msgstr "Giornata intera"
+
+msgid "To:"
+msgstr "a:"
+
+msgid "Title"
+msgstr "Nome"
+
+msgid "Name of Event"
+msgstr "Nome dell'evento"
+
+msgid "Location"
+msgstr "Luogo"
+
+msgid "John Smith OR Example St."
+msgstr "Mario Rossi  O Viale Esempio"
+
+msgid "Guests"
+msgstr "Ospiti"
+
+msgid "Name or Email Address"
+msgstr "Nome o Indirizzo email"
+
+msgid "Comments"
+msgstr "Commenti"
+
+msgid "Create Event"
+msgstr "Crea evento"
+
+#. Dialog properties
+msgid "Add Event"
+msgstr "Aggiungi evento"
+
+#. Dialog Properties
+msgid "Edit Event"
+msgstr "Modifica evento"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Crea un nuovo evento"
+
+msgid "Edit the selected event"
+msgstr "Modifica l'evento selezionato"
+
+msgid "Delete the selected event"
+msgstr "Cancella l'evento selezionato"
+
+msgid "Select calendars to display"
+msgstr "Seleziona i calendari da mostrare"
+
+msgid "Search For Events.."
+msgstr "Cerca eventi.."
+
+msgid "Export or Share the default Calendar"
+msgstr "Esporta o Condividi il calendario predefinito"
+
+#. Create everything
+msgid "Today"
+msgstr "Oggi"
+
+msgid "Fullscreen"
+msgstr "Schermo intero"
+
+msgid "Show Week Numbers"
+msgstr "Mostra i numeri delle settimane"
+
+msgid "Import..."
+msgstr "Importa..."
+
+msgid "Sync..."
+msgstr "Sincronizza..."
