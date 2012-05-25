@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-25 16:08+0200\n"
 "PO-Revision-Date: 2012-04-06 19:25+0000\n"
 "Last-Translator: Eneko Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
@@ -39,8 +39,15 @@ msgstr "Ekitaldia gehitu"
 msgid "All day:"
 msgstr "Egun osoa:"
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
 msgid "Comments"
 msgstr "Iruzkinak"
+
+msgid "Contacts"
+msgstr ""
 
 msgid "Create Event"
 msgstr "Ekitaldia Sortu"
@@ -60,6 +67,12 @@ msgstr "Ekitaldia Aldatu"
 msgid "Edit the selected event"
 msgstr "Aukeratutako ekitaldia aldatu"
 
+msgid "Ends: \t\t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "Esportatu edo Partekatu  Egutegi lehenetsia"
 
@@ -75,9 +88,6 @@ msgstr "Gonbidatuak"
 msgid "Import..."
 msgstr "Inportatu..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "John Smith edo Adibide kalea"
 
@@ -87,6 +97,19 @@ msgstr "Kokapena"
 msgid "Name of Event"
 msgstr "Ekitaldiaren Izena"
 
+msgid "Name or Email Address"
+msgstr "Izena edo Email-helbidea"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Save ical"
+msgstr ""
+
 msgid "Search For Events.."
 msgstr "Ekitaldiak Bilatu..."
 
@@ -95,6 +118,9 @@ msgstr "Hautatu bistaratuko diren egutegiak"
 
 msgid "Show Week Numbers"
 msgstr "Erakutsi asteen zenbakiak"
+
+msgid "Starts: \t"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Sinkronizatu..."
@@ -109,6 +135,16 @@ msgstr "Noiz arte:"
 msgid "Today"
 msgstr "Gaur"
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,15 +153,20 @@ msgstr ""
 "Zure hurrengo gertakizunak hemen erakutsiko dira data bat aukeratzen "
 "duzunean."
 
-msgid "all the day"
-msgstr "egun osoa"
+#. maya.desktop:18
+#, fuzzy
+msgid "_Add Event"
+msgstr "Ekitaldia gehitu"
+
+#, fuzzy
+msgid "all day"
+msgstr "Egun osoa:"
 
 msgid "at"
 msgstr "nondik:"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Izena edo Email-helbidea"
+msgid "calendar.ics"
+msgstr ""
 
-#, fuzzy
-#~ msgid "all day"
-#~ msgstr "Egun osoa:"
+#~ msgid "all the day"
+#~ msgstr "egun osoa"

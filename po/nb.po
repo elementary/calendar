@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-25 16:08+0200\n"
 "PO-Revision-Date: 2012-04-17 20:28+0000\n"
 "Last-Translator: Einar Svensen <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
@@ -39,8 +39,15 @@ msgstr "Legg til hendelse"
 msgid "All day:"
 msgstr "Hele dagen:"
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
 msgid "Comments"
 msgstr "Kommentarer"
+
+msgid "Contacts"
+msgstr ""
 
 msgid "Create Event"
 msgstr "Lag hendelse"
@@ -60,6 +67,12 @@ msgstr "Rediger Hendelse"
 msgid "Edit the selected event"
 msgstr "Rediger den valgte hendelsen"
 
+msgid "Ends: \t\t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "Eksportere eller dele standard kalender"
 
@@ -75,9 +88,6 @@ msgstr "Gjester"
 msgid "Import..."
 msgstr "Importer …"
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "John Smith eller eksempel st."
 
@@ -87,6 +97,19 @@ msgstr "Sted"
 msgid "Name of Event"
 msgstr "Navn på hendelse"
 
+msgid "Name or Email Address"
+msgstr "Navn eller epost addresse"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Save ical"
+msgstr ""
+
 msgid "Search For Events.."
 msgstr "Søk etter hendelse"
 
@@ -95,6 +118,9 @@ msgstr "Velg en kalender som skal vises"
 
 msgid "Show Week Numbers"
 msgstr "Vis ukenummer"
+
+msgid "Starts: \t"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Synkroniser ..."
@@ -109,6 +135,16 @@ msgstr "Til:"
 msgid "Today"
 msgstr "I dag"
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,11 +153,20 @@ msgstr ""
 "Dine kommende hendelser vil bli vist her, når du velger en dato med "
 "begivenheter"
 
-msgid "all the day"
-msgstr "Hele dagen"
+#. maya.desktop:18
+#, fuzzy
+msgid "_Add Event"
+msgstr "Legg til hendelse"
+
+#, fuzzy
+msgid "all day"
+msgstr "Hele dagen:"
 
 msgid "at"
 msgstr "på"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Navn eller epost addresse"
+msgid "calendar.ics"
+msgstr ""
+
+#~ msgid "all the day"
+#~ msgstr "Hele dagen"

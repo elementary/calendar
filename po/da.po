@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-25 16:08+0200\n"
 "PO-Revision-Date: 2012-04-23 13:48+0000\n"
 "Last-Translator: Simon <Unknown>\n"
 "Language-Team: Danish <da@li.org>\n"
@@ -39,8 +39,15 @@ msgstr "Tilføj begivenhed"
 msgid "All day:"
 msgstr "Hele dagen:"
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
 msgid "Comments"
 msgstr "Kommentarer"
+
+msgid "Contacts"
+msgstr ""
 
 msgid "Create Event"
 msgstr "Opret begivenhed"
@@ -60,6 +67,12 @@ msgstr "Redigér begivenhed"
 msgid "Edit the selected event"
 msgstr "Redigér den valgte begivenhed"
 
+msgid "Ends: \t\t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr ""
 
@@ -75,9 +88,6 @@ msgstr "Gæster"
 msgid "Import..."
 msgstr "Importér..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +97,19 @@ msgstr "Sted"
 msgid "Name of Event"
 msgstr "Navn på begivenhed"
 
+msgid "Name or Email Address"
+msgstr "Navn eller emailadresse"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Save ical"
+msgstr ""
+
 msgid "Search For Events.."
 msgstr "Søg på begivenheder.."
 
@@ -95,6 +118,9 @@ msgstr "Vælg kalendere til visning"
 
 msgid "Show Week Numbers"
 msgstr "Vis ugenumre"
+
+msgid "Starts: \t"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Synkronisér..."
@@ -109,6 +135,16 @@ msgstr "Til:"
 msgid "Today"
 msgstr "I dag"
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,11 +153,20 @@ msgstr ""
 "Dine kommende begivenheder vil blive vist her, når du vælger en dato med "
 "begivenheder."
 
-msgid "all the day"
-msgstr "hele dagen"
+#. maya.desktop:18
+#, fuzzy
+msgid "_Add Event"
+msgstr "Tilføj begivenhed"
+
+#, fuzzy
+msgid "all day"
+msgstr "Hele dagen:"
 
 msgid "at"
 msgstr ""
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Navn eller emailadresse"
+msgid "calendar.ics"
+msgstr ""
+
+#~ msgid "all the day"
+#~ msgstr "hele dagen"

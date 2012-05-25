@@ -1,7 +1,10 @@
 data/maya.desktop
-Maya/View/Sidebar/Sidebar.vala
+Maya/Application.vala
+Maya/Model/SourceManager.vala
 Maya/Settings/LanguagesFormat.vala
-Maya/View/Sidebar/EventWidget.vala
 Maya/View/EventDialog.vala
 Maya/View/MayaToolbar.vala
 Maya/View/MayaMenu.vala
+Maya/View/Sidebar/Sidebar.vala
+Maya/View/Sidebar/EventWidget.vala
+Maya/View/Widgets/ContractorButtonWithMenu.vala

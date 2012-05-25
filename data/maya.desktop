@@ -10,6 +10,8 @@ Terminal=false
 Categories=GTK;Office;Calendar;
 StartupNotify=true
 MimeType=text/calendar
+X-GNOME-Gettext-Domain=maya
+
 X-Ayatana-Desktop-Shortcuts=AddEvent
 
 [AddEvent Shortcut Group]

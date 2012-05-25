@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-25 16:08+0200\n"
 "PO-Revision-Date: 2012-05-05 13:42+0000\n"
 "Last-Translator: KVG <kvgkvg@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -39,8 +39,15 @@ msgstr "Добавяне на събитие"
 msgid "All day:"
 msgstr "Цял ден:"
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
 msgid "Comments"
 msgstr "Коментари"
+
+msgid "Contacts"
+msgstr ""
 
 msgid "Create Event"
 msgstr "Създай събитието"
@@ -60,6 +67,12 @@ msgstr "Редактиране на събитие"
 msgid "Edit the selected event"
 msgstr "Редактиране на избраното събитие"
 
+msgid "Ends: \t\t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr ""
 
@@ -75,9 +88,6 @@ msgstr "Гости"
 msgid "Import..."
 msgstr "Импортиране..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "John Smith или Example St."
 
@@ -87,6 +97,19 @@ msgstr "Място"
 msgid "Name of Event"
 msgstr "Име на събитието"
 
+msgid "Name or Email Address"
+msgstr "Име или имейл адрес"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Save ical"
+msgstr ""
+
 msgid "Search For Events.."
 msgstr "Търсене на събития..."
 
@@ -95,6 +118,9 @@ msgstr "Избор на календари за показване"
 
 msgid "Show Week Numbers"
 msgstr "Показване на номерата на седмиците"
+
+msgid "Starts: \t"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Синхронизация..."
@@ -109,6 +135,16 @@ msgstr "До:"
 msgid "Today"
 msgstr "Днес"
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,11 +153,20 @@ msgstr ""
 "Вашите скорошни събития ще се показват тук, след като изберете дата със "
 "събития."
 
-msgid "all the day"
-msgstr "през целия ден"
+#. maya.desktop:18
+#, fuzzy
+msgid "_Add Event"
+msgstr "Добавяне на събитие"
+
+#, fuzzy
+msgid "all day"
+msgstr "Цял ден:"
 
 msgid "at"
 msgstr "в"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Име или имейл адрес"
+msgid "calendar.ics"
+msgstr ""
+
+#~ msgid "all the day"
+#~ msgstr "през целия ден"
