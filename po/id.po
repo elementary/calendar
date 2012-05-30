@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-19 20:55+0200\n"
 "PO-Revision-Date: 2012-05-06 21:44+0000\n"
 "Last-Translator: iman <Unknown>\n"
 "Language-Team: Indonesian <id@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "Ubah Kegiatan"
 msgid "Edit the selected event"
 msgstr "Ubah kegiatan yang terpilih"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "Ekspor atau Bagikan Kalendar asal"
 
@@ -75,9 +78,6 @@ msgstr "Tamu"
 msgid "Import..."
 msgstr "Impor..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "John Smith OR Example St."
 
@@ -87,6 +87,9 @@ msgstr "Lokasi"
 msgid "Name of Event"
 msgstr "Nama Kegiatan"
 
+msgid "Name or Email Address"
+msgstr "Nama atau Alamat Email"
+
 msgid "Search For Events.."
 msgstr "Cari Kegiatan..."
 
@@ -95,6 +98,9 @@ msgstr "Pilih kalender untuk ditampilkan"
 
 msgid "Show Week Numbers"
 msgstr "Tampilkan Nomor Minggu"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Sinkronkan..."
@@ -109,6 +115,9 @@ msgstr "Hingga:"
 msgid "Today"
 msgstr "Hari ini"
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,11 +126,12 @@ msgstr ""
 "Jadwal kegiatan-kegiatan Anda berikutnya akan ditampilkan disini saat Anda "
 "memilih tanggal yang disertai kegiatan."
 
-msgid "all the day"
-msgstr "sepanjang hari"
+#, fuzzy
+msgid "all day"
+msgstr "Sepanjang hari:"
 
 msgid "at"
 msgstr "pada"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Nama atau Alamat Email"
+#~ msgid "all the day"
+#~ msgstr "sepanjang hari"

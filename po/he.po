@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-19 20:55+0200\n"
 "PO-Revision-Date: 2012-04-26 20:55+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "עריכת אירוע"
 msgid "Edit the selected event"
 msgstr "עריכת האירוע הנבחר"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "יצוא או שיתוף יומן בררת המחדל"
 
@@ -75,9 +78,6 @@ msgstr "אורחים"
 msgid "Import..."
 msgstr "יבוא..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "ישראל ישראלי או רחוב לדוגמה"
 
@@ -87,6 +87,9 @@ msgstr "מיקום"
 msgid "Name of Event"
 msgstr "שם האירוע"
 
+msgid "Name or Email Address"
+msgstr "שם או כתובת דוא״ל"
+
 msgid "Search For Events.."
 msgstr "חיפוש אחר אירועים..."
 
@@ -95,6 +98,9 @@ msgstr "בחירת יומנים להצגה"
 
 msgid "Show Week Numbers"
 msgstr "הצגת מספרי שבועות"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "סנכרון..."
@@ -109,17 +115,21 @@ msgstr "עד:"
 msgid "Today"
 msgstr "היום"
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "האירועים הקרובים שלך יוצגו כאן בעת בחירת תאריך עם אירועים."
 
-msgid "all the day"
-msgstr "כל היום"
+#, fuzzy
+msgid "all day"
+msgstr "כל היום:"
 
 msgid "at"
 msgstr "ב־"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "שם או כתובת דוא״ל"
+#~ msgid "all the day"
+#~ msgstr "כל היום"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-19 20:55+0200\n"
 "PO-Revision-Date: 2012-04-24 09:00+0000\n"
 "Last-Translator: Naoki Kephart <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "予定を編集"
 msgid "Edit the selected event"
 msgstr "選択された予定を編集"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "デフォルトのカレンダーを共有または書き出す"
 
@@ -75,9 +78,6 @@ msgstr "参加者"
 msgid "Import..."
 msgstr "取り込む..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "場所を入力"
 
@@ -87,6 +87,9 @@ msgstr "場所"
 msgid "Name of Event"
 msgstr "予定のタイトル"
 
+msgid "Name or Email Address"
+msgstr "名前またはメールアドレス"
+
 msgid "Search For Events.."
 msgstr "予定を検索.."
 
@@ -95,6 +98,9 @@ msgstr "表示するカレンダーを選択"
 
 msgid "Show Week Numbers"
 msgstr "週の通し番号を表示"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "同期..."
@@ -109,17 +115,21 @@ msgstr "終了時:"
 msgid "Today"
 msgstr "今日"
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "予定が入っている日付を選択すると、ここに予定の内容が表示されます。"
 
-msgid "all the day"
-msgstr "終日"
+#, fuzzy
+msgid "all day"
+msgstr "終日:"
 
 msgid "at"
 msgstr ""
 
-#~ msgid "Name or Email Address"
-#~ msgstr "名前またはメールアドレス"
+#~ msgid "all the day"
+#~ msgstr "終日"

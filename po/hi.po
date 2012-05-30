@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-19 20:55+0200\n"
 "PO-Revision-Date: 2012-04-20 11:26+0000\n"
 "Last-Translator: ray1claw <ray1claw@gmail.com>\n"
 "Language-Team: Hindi <hi@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "घटना का संपादन करें..."
 msgid "Edit the selected event"
 msgstr "चयनित घटना संपादित करें"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "देफौल्ट कैलेंडर को बाँटे या निर्यात करें"
 
@@ -75,9 +78,6 @@ msgstr "मेहमान"
 msgid "Import..."
 msgstr "आयात करें..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +87,9 @@ msgstr "स्थान"
 msgid "Name of Event"
 msgstr "घटना का नाम"
 
+msgid "Name or Email Address"
+msgstr "नाम या ईमेल पता"
+
 msgid "Search For Events.."
 msgstr "घटना की खोज करें"
 
@@ -95,6 +98,9 @@ msgstr "कैलेंडर देखने के लिए चयन कर�
 
 msgid "Show Week Numbers"
 msgstr "साप्ताहिक अंक दिखाएँ"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "समकालित करें..."
@@ -109,6 +115,9 @@ msgstr "प्रति:"
 msgid "Today"
 msgstr "आज"
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,11 +126,12 @@ msgstr ""
 "आपकी आने वाली घटनाओं को प्रदर्शित किया जाएगा जब आप घटनाओं के साथ एक तिथि का चयन "
 "करेंगे."
 
-msgid "all the day"
-msgstr "सारा दिन"
+#, fuzzy
+msgid "all day"
+msgstr "पूरा दिन:"
 
 msgid "at"
 msgstr "पर"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "नाम या ईमेल पता"
+#~ msgid "all the day"
+#~ msgstr "सारा दिन"

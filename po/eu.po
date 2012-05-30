@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-19 20:55+0200\n"
 "PO-Revision-Date: 2012-04-06 19:25+0000\n"
 "Last-Translator: Eneko Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "Ekitaldia Aldatu"
 msgid "Edit the selected event"
 msgstr "Aukeratutako ekitaldia aldatu"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "Esportatu edo Partekatu  Egutegi lehenetsia"
 
@@ -75,9 +78,6 @@ msgstr "Gonbidatuak"
 msgid "Import..."
 msgstr "Inportatu..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "John Smith edo Adibide kalea"
 
@@ -87,6 +87,9 @@ msgstr "Kokapena"
 msgid "Name of Event"
 msgstr "Ekitaldiaren Izena"
 
+msgid "Name or Email Address"
+msgstr "Izena edo Email-helbidea"
+
 msgid "Search For Events.."
 msgstr "Ekitaldiak Bilatu..."
 
@@ -95,6 +98,9 @@ msgstr "Hautatu bistaratuko diren egutegiak"
 
 msgid "Show Week Numbers"
 msgstr "Erakutsi asteen zenbakiak"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Sinkronizatu..."
@@ -109,6 +115,9 @@ msgstr "Noiz arte:"
 msgid "Today"
 msgstr "Gaur"
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,15 +126,12 @@ msgstr ""
 "Zure hurrengo gertakizunak hemen erakutsiko dira data bat aukeratzen "
 "duzunean."
 
-msgid "all the day"
-msgstr "egun osoa"
+#, fuzzy
+msgid "all day"
+msgstr "Egun osoa:"
 
 msgid "at"
 msgstr "nondik:"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Izena edo Email-helbidea"
-
-#, fuzzy
-#~ msgid "all day"
-#~ msgstr "Egun osoa:"
+#~ msgid "all the day"
+#~ msgstr "egun osoa"

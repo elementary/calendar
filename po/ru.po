@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-19 20:55+0200\n"
 "PO-Revision-Date: 2012-04-05 18:00+0000\n"
 "Last-Translator: Kirill Ivaha <kirill.ivaha@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "Изменить событие"
 msgid "Edit the selected event"
 msgstr "Редактировать выбранное событие"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "Экспорт или поделиться календарём по умолчанию"
 
@@ -75,9 +78,6 @@ msgstr "Гости"
 msgid "Import..."
 msgstr "Импортировать…"
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "Джон Смит или например ул."
 
@@ -87,6 +87,9 @@ msgstr "Местоположение"
 msgid "Name of Event"
 msgstr "Название события"
 
+msgid "Name or Email Address"
+msgstr "Имя или адрес электронной почты"
+
 msgid "Search For Events.."
 msgstr "Поиск  событий"
 
@@ -95,6 +98,9 @@ msgstr "Выберите календари для просмотра"
 
 msgid "Show Week Numbers"
 msgstr "Показать номера недель"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Синхронизация"
@@ -109,6 +115,9 @@ msgstr "Для:"
 msgid "Today"
 msgstr "Сегодня"
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,15 +126,12 @@ msgstr ""
 "Ваши предстоящие события будут показаны здесь, когда вы выберете дату с "
 "событиями."
 
-msgid "all the day"
-msgstr "Весь день"
+#, fuzzy
+msgid "all day"
+msgstr "Весь день:"
 
 msgid "at"
 msgstr "в"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Имя или адрес электронной почты"
-
-#, fuzzy
-#~ msgid "all day"
-#~ msgstr "Весь день:"
+#~ msgid "all the day"
+#~ msgstr "Весь день"

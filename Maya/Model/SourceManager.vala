@@ -92,9 +92,13 @@ public class SourceManager: GLib.Object {
 
         // the order that groups will appear
         _groups = new Gee.ArrayList<E.SourceGroup> ((EqualFunc) Util.source_group_equal_func);
-        _groups.add (GROUP_LOCAL);
-        _groups.add (GROUP_REMOTE);
-        _groups.add (GROUP_CONTACTS);
+        foreach (E.SourceGroup group in source_list.peek_groups()) {
+            
+            _groups.add (group);
+        }
+//        _groups.add (GROUP_LOCAL);
+//        _groups.add (GROUP_REMOTE);
+//        _groups.add (GROUP_CONTACTS);
 
         group_sources = new Gee.HashMultiMap<E.SourceGroup, E.Source> (
             (HashFunc) Util.source_group_hash_func,
@@ -125,12 +129,46 @@ public class SourceManager: GLib.Object {
                 add_source (group, source);
             }
         }
+
+
+        // create_source (source_list.peek_group_by_base_uri ("google://"), new E.Source("Ontspanning", "https://www.google.com/calendar/feeds/niels.avonds%40gmail.com/private-a9d7f47e1e20f92e0f367bc045638f5e/basic"));;
+
+    }
+
+    /**
+     * The given group is added to the list of groups and will thus be persisted.
+     */
+    public void create_group (E.SourceGroup group) {
+        source_list.add_group(group, -1);
+        source_list.sync ();
+    }
+
+    /**
+     * The given group is destroyed and will no longer exist.
+     */
+    public void destroy_group (E.SourceGroup group) {
+        source_list.remove_group(group);
+        source_list.sync ();
+    }
+
+    /**
+     * The given source is added to the list of sources and will thus be persisted.
+     */
+    public void create_source (E.SourceGroup group, E.Source source) {
+        group.add_source (source, -1);
+    }
+
+    /**
+     * The given source is destroyed and will no longer exist.
+     */
+    public void destroy_source (E.SourceGroup group, E.Source source) {
+        group.remove_source (source);
     }
 
     //--- Helper Functions ---//
 
     void add_source (E.SourceGroup group, E.Source source) {
-
+        stdout.printf("Adding source '%s'\n", source.peek_name());
         debug("Adding source '%s'", source.peek_name());
         group_sources.set (group, source);
 
@@ -205,6 +243,11 @@ public class SourceManager: GLib.Object {
     }
 
     //--- Public Methods ---//
+
+    /* Return all sources */
+    public Gee.Collection<E.Source> get_all_sources () {
+        return group_sources.get_values();
+    }
 
     /* Return collection of enabled sources */
     public Gee.Collection<E.Source> get_enabled_sources () {

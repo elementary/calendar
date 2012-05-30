@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-19 20:55+0200\n"
 "PO-Revision-Date: 2012-05-01 10:29+0000\n"
 "Last-Translator: Eduard Gotwig <eduardgotwig@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "Termin bearbeiten"
 msgid "Edit the selected event"
 msgstr "Augewählten Termin bearbeiten"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "Standartkalender exportieren oder teilen"
 
@@ -75,9 +78,6 @@ msgstr "Gäste"
 msgid "Import..."
 msgstr "Importieren …"
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "John Smith ODER Beispiel St."
 
@@ -87,6 +87,9 @@ msgstr "Ort"
 msgid "Name of Event"
 msgstr "Terminbezeichnung"
 
+msgid "Name or Email Address"
+msgstr "Name oder E-Mail"
+
 msgid "Search For Events.."
 msgstr "Termine suchen..."
 
@@ -95,6 +98,9 @@ msgstr "Anzuzeigende Kalender auswählen"
 
 msgid "Show Week Numbers"
 msgstr "Kalenderwochen anzeigen"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Synchronisieren..."
@@ -109,6 +115,9 @@ msgstr "Bis:"
 msgid "Today"
 msgstr "Heute"
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,11 +126,12 @@ msgstr ""
 "Ihre anstehenden Termine werden hier angezeigt, sobald Sie ein Datum mit "
 "Terminen auswählen."
 
-msgid "all the day"
-msgstr "Ganztägig"
+#, fuzzy
+msgid "all day"
+msgstr "Ganztägig:"
 
 msgid "at"
 msgstr "um"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Name oder E-Mail"
+#~ msgid "all the day"
+#~ msgstr "Ganztägig"

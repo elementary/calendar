@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-19 20:55+0200\n"
 "PO-Revision-Date: 2012-03-18 00:22+0000\n"
 "Last-Translator: Niels Avonds <Unknown>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -60,6 +60,9 @@ msgstr ""
 msgid "Edit the selected event"
 msgstr ""
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr ""
 
@@ -75,9 +78,6 @@ msgstr ""
 msgid "Import..."
 msgstr ""
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +87,9 @@ msgstr ""
 msgid "Name of Event"
 msgstr ""
 
+msgid "Name or Email Address"
+msgstr ""
+
 msgid "Search For Events.."
 msgstr ""
 
@@ -94,6 +97,9 @@ msgid "Select calendars to display"
 msgstr ""
 
 msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Starts"
 msgstr ""
 
 msgid "Sync..."
@@ -109,6 +115,9 @@ msgstr ""
 msgid "Today"
 msgstr ""
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,7 +126,7 @@ msgstr ""
 "Evenimentele viitoare vor fi afişate aici când selectezi o dată cu "
 "evenimente."
 
-msgid "all the day"
+msgid "all day"
 msgstr ""
 
 msgid "at"

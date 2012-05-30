@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-19 20:55+0200\n"
 "PO-Revision-Date: 2012-04-23 13:48+0000\n"
 "Last-Translator: Simon <Unknown>\n"
 "Language-Team: Danish <da@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "Redigér begivenhed"
 msgid "Edit the selected event"
 msgstr "Redigér den valgte begivenhed"
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr ""
 
@@ -75,9 +78,6 @@ msgstr "Gæster"
 msgid "Import..."
 msgstr "Importér..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +87,9 @@ msgstr "Sted"
 msgid "Name of Event"
 msgstr "Navn på begivenhed"
 
+msgid "Name or Email Address"
+msgstr "Navn eller emailadresse"
+
 msgid "Search For Events.."
 msgstr "Søg på begivenheder.."
 
@@ -95,6 +98,9 @@ msgstr "Vælg kalendere til visning"
 
 msgid "Show Week Numbers"
 msgstr "Vis ugenumre"
+
+msgid "Starts"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Synkronisér..."
@@ -109,6 +115,9 @@ msgstr "Til:"
 msgid "Today"
 msgstr "I dag"
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,11 +126,12 @@ msgstr ""
 "Dine kommende begivenheder vil blive vist her, når du vælger en dato med "
 "begivenheder."
 
-msgid "all the day"
-msgstr "hele dagen"
+#, fuzzy
+msgid "all day"
+msgstr "Hele dagen:"
 
 msgid "at"
 msgstr ""
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Navn eller emailadresse"
+#~ msgid "all the day"
+#~ msgstr "hele dagen"
