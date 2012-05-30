@@ -167,6 +167,16 @@ namespace Maya.View {
             property = new iCal.icalproperty (iCal.icalproperty_kind.COMMENT_PROPERTY);
             property.set_comment (comment_textview.get_buffer ().text);
             comp.add_property (property);
+
+            // Save the selected source
+            string id = calendar_box.get_active_id ();
+
+            foreach (E.Source possible_source in sources) {
+                if (possible_source.peek_uid () == id) {
+                    this.source = possible_source;
+                    break;
+                }
+            }
         }
 
         //--- Helpers ---//
@@ -238,6 +248,9 @@ namespace Maya.View {
                 buffer.text = property.get_comment ();
                 comment_textview.set_buffer (buffer);
             }    
+
+            // Load the source
+            calendar_box.set_active_id (this.source.peek_uid());
         }
 
         void build_dialog (bool add_event) {
@@ -294,7 +307,6 @@ namespace Maya.View {
 
             calendar_box = new Gtk.ComboBox.with_model (liststore);
             calendar_box.set_id_column (1);
-            calendar_box.set_active_id (this.source.peek_uid());
 
             Gtk.CellRenderer cell = new Gtk.CellRendererText();
             calendar_box.pack_start( cell, false );
