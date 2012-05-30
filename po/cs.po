@@ -18,111 +18,29 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-06 04:45+0000\n"
 "X-Generator: Launchpad (build 15060)\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Přidat událost"
-
-msgid "All day:"
-msgstr "Celý den:"
-
-msgid "Comments"
-msgstr "Komentáře"
-
-msgid "Create Event"
-msgstr "Vytvořit událost"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Vytvořit novou událost"
-
-msgid "Delete the selected event"
-msgstr "Odstranit vybranou událost"
-
-msgid "Edit Event"
-msgstr "Upravit událost"
-
-msgid "Edit the selected event"
-msgstr "Upravit vybranou událost"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "Exportovat nebo Sdílet výchozí kalendář"
-
-msgid "From:"
-msgstr "From:"
-
-msgid "Fullscreen"
-msgstr "Na celou obrazovku"
-
-msgid "Guests"
-msgstr "Hosté"
-
-msgid "Import..."
-msgstr "Importovat..."
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "Místo"
-
-msgid "Name of Event"
-msgstr "Název události"
-
-msgid "Name or Email Address"
-msgstr "Jméno nebo Email"
-
-msgid "Search For Events.."
-msgstr "Vyhledávat události"
-
-msgid "Select calendars to display"
-msgstr "Vyberte kalendáře, které zobrazit"
-
-msgid "Show Week Numbers"
-msgstr "Zobrazovat čísla týdnů"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Synchronizovat..."
-
-msgid "Title"
-msgstr "Název"
-
-msgid "To:"
-msgstr "Pro:"
-
-#. Create everything
-msgid "Today"
-msgstr "Dnes"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Poté co  vyberete datum se zde zobrazí nadcházející události."
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
 
 #, fuzzy
 msgid "all day"
@@ -130,6 +48,92 @@ msgstr "Celý den:"
 
 msgid "at"
 msgstr "v"
+
+msgid "Add Event"
+msgstr "Přidat událost"
+
+msgid "Edit Event"
+msgstr "Upravit událost"
+
+msgid "From:"
+msgstr "From:"
+
+msgid "All day:"
+msgstr "Celý den:"
+
+msgid "To:"
+msgstr "Pro:"
+
+msgid "Title"
+msgstr "Název"
+
+msgid "Name of Event"
+msgstr "Název události"
+
+msgid "Location"
+msgstr "Místo"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "Hosté"
+
+msgid "Name or Email Address"
+msgstr "Jméno nebo Email"
+
+msgid "Comments"
+msgstr "Komentáře"
+
+msgid "Create Event"
+msgstr "Vytvořit událost"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Vytvořit novou událost"
+
+msgid "Edit the selected event"
+msgstr "Upravit vybranou událost"
+
+msgid "Delete the selected event"
+msgstr "Odstranit vybranou událost"
+
+msgid "Select calendars to display"
+msgstr "Vyberte kalendáře, které zobrazit"
+
+msgid "Search For Events.."
+msgstr "Vyhledávat události"
+
+msgid "Export or Share the default Calendar"
+msgstr "Exportovat nebo Sdílet výchozí kalendář"
+
+#. Create everything
+msgid "Today"
+msgstr "Dnes"
+
+msgid "Fullscreen"
+msgstr "Na celou obrazovku"
+
+msgid "Show Week Numbers"
+msgstr "Zobrazovat čísla týdnů"
+
+msgid "Import..."
+msgstr "Importovat..."
+
+msgid "Sync..."
+msgstr "Synchronizovat..."
+
+msgid "About"
+msgstr ""
+
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Přidat událost"
 
 #~ msgid "all the day"
 #~ msgstr "celý den"

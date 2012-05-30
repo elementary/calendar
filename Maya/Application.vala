@@ -453,5 +453,14 @@ namespace Maya {
 
 	}
 
+    internal void desktop_translations () {
+        // maya.desktop:6
+        var comment = _("View and schedule events");
+        // maya.desktop:5
+        var generic_name = _("Calendar");
+        // maya.desktop:18
+        var add_event = _("_Add Event");
+    }
+
 }
 

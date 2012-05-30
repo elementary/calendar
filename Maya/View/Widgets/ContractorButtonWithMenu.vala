@@ -17,45 +17,45 @@
 
 namespace Maya.View.Widgets {
 
-	public class ContractorButtonWithMenu : Granite.Widgets.ToolButtonWithMenu {
+    public class ContractorButtonWithMenu : Granite.Widgets.ToolButtonWithMenu {
 
-		private Maya.Services.Contractor contract;
-		private HashTable<string,string>[] services;
+        private Maya.Services.Contractor contract;
+        private HashTable<string,string>[] services;
         private Gtk.FileChooserDialog filechooser;
 
-		public ContractorButtonWithMenu (string tooltiptext) {
+        public ContractorButtonWithMenu (string tooltiptext) {
 
-		    base (new Gtk.Image.from_icon_name ("document-export", Gtk.IconSize.MENU), tooltiptext, new Gtk.Menu());
+            base (new Gtk.Image.from_icon_name ("document-export", Gtk.IconSize.MENU), tooltiptext, new Gtk.Menu());
 
-			// try to connect
-			try {
+            // try to connect
+            try {
                 contract = Bus.get_proxy_sync (BusType.SESSION,
                                                "org.elementary.contractor",
                                                "/org/elementary/contractor");
 
-		        // get the list and parse it into the menu
-		        services = contract.GetServicesByLocation (GLib.Environment.get_tmp_dir () + "/calendar.ics");
+                // get the list and parse it into the menu
+                services = contract.GetServicesByLocation (GLib.Environment.get_tmp_dir () + "/calendar.ics");
                 foreach (HashTable<string,string> service in services) {
                     Gtk.MenuItem item = new Gtk.MenuItem.with_label(service.lookup ("Description"));
                     item.activate.connect (activate_contract);
                     menu.append (item);
                 }
-                    Gtk.MenuItem item = new Gtk.MenuItem.with_label(_("Export Calendar…"));
+                    Gtk.MenuItem item = new Gtk.MenuItem.with_label(_("Export Calendar..."));
                     item.activate.connect (savecal);
                     menu.append (item);
             } catch (IOError e) {
                 stderr.printf ("%s\n", e.message);
             }
 
-		}
+        }
 
-		private void activate_contract () {
+        private void activate_contract () {
             /* creates a .ics file */
             Util.save_temp_selected_calendars ();
-		    Gtk.MenuItem menuitem = (Gtk.MenuItem) menu.get_active();
+            Gtk.MenuItem menuitem = (Gtk.MenuItem) menu.get_active();
             string app_menu = menuitem.get_label();
 
-		    foreach (HashTable<string,string> service in services) {
+            foreach (HashTable<string,string> service in services) {
                 if (app_menu == service.lookup ("Description")) {
                     try {
                         GLib.Process.spawn_command_line_async (service.lookup ("Exec"));
@@ -66,23 +66,23 @@ namespace Maya.View.Widgets {
                     break;
                 }
             }
-		}
+        }
 
-		private void savecal () {
+        private void savecal () {
             /* creates a .ics file */
             Util.save_temp_selected_calendars ();
-		    filechooser = new Gtk.FileChooserDialog (_("Export Calendar…"), null, Gtk.FileChooserAction.SAVE);
+            filechooser = new Gtk.FileChooserDialog (_("Export Calendar..."), null, Gtk.FileChooserAction.SAVE);
             var filter = new Gtk.FileFilter ();
             filter.add_mime_type("text/calendar");
-            filechooser.set_filename("calendar.ics");
+            filechooser.set_filename(_("calendar.ics"));
             filechooser.set_filter(filter);
-            filechooser.add_button("Save ical", Gtk.ResponseType.APPLY);
+            filechooser.add_button(_("Save ical"), Gtk.ResponseType.APPLY);
             filechooser.response.connect (on_response);
             filechooser.show_all ();
-	        filechooser.run ();
+            filechooser.run ();
 
 
-		}
+        }
 
         private void on_response (Gtk.Dialog source, int response_id) {
             switch (response_id) {

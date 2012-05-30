@@ -8,123 +8,40 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-19 20:55+0200\n"
-"PO-Revision-Date: 2012-05-05 13:42+0000\n"
+"PO-Revision-Date: 2012-05-27 11:29+0000\n"
 "Last-Translator: KVG <kvgkvg@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-06 04:52+0000\n"
-"X-Generator: Launchpad (build 15195)\n"
-
-msgid "%A, %b %d"
-msgstr "%A, %d, %b"
-
-msgid "%B %e, %Y"
-msgstr "%e %B %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Добавяне на събитие"
-
-msgid "All day:"
-msgstr "Цял ден:"
-
-msgid "Comments"
-msgstr "Коментари"
-
-msgid "Create Event"
-msgstr "Създай събитието"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Създаване на ново събитие"
-
-msgid "Delete the selected event"
-msgstr "Изтриване на избраното събитие"
-
-msgid "Edit Event"
-msgstr "Редактиране на събитие"
-
-msgid "Edit the selected event"
-msgstr "Редактиране на избраното събитие"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr "От:"
-
-msgid "Fullscreen"
-msgstr "Цял екран"
-
-msgid "Guests"
-msgstr "Гости"
-
-msgid "Import..."
-msgstr "Импортиране..."
-
-msgid "John Smith OR Example St."
-msgstr "John Smith или Example St."
-
-msgid "Location"
-msgstr "Място"
-
-msgid "Name of Event"
-msgstr "Име на събитието"
-
-msgid "Name or Email Address"
-msgstr "Име или имейл адрес"
-
-msgid "Search For Events.."
-msgstr "Търсене на събития..."
-
-msgid "Select calendars to display"
-msgstr "Избор на календари за показване"
-
-msgid "Show Week Numbers"
-msgstr "Показване на номерата на седмиците"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Синхронизация..."
-
-msgid "Title"
-msgstr "Заглавие"
-
-msgid "To:"
-msgstr "До:"
-
-#. Create everything
-msgid "Today"
-msgstr "Днес"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+"X-Launchpad-Export-Date: 2012-05-28 05:40+0000\n"
+"X-Generator: Launchpad (build 15288)\n"
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Вашите скорошни събития ще се показват тук, след като изберете дата със "
-"събития."
+"Предстоящите събития ще се появят тук, след като изберете дата със събития."
+
+msgid "%B %e, %Y"
+msgstr "%e %B %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %d, %b"
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
 
 #, fuzzy
 msgid "all day"
@@ -132,6 +49,88 @@ msgstr "Цял ден:"
 
 msgid "at"
 msgstr "в"
+
+msgid "Add Event"
+msgstr "Добавяне на събитие"
+
+msgid "Edit Event"
+msgstr "Редактиране на събитие"
+
+msgid "From:"
+msgstr "От:"
+
+msgid "All day:"
+msgstr "Цял ден:"
+
+msgid "To:"
+msgstr "До:"
+
+msgid "Title"
+msgstr "Заглавие"
+
+msgid "Name of Event"
+msgstr "Име на събитието"
+
+msgid "Location"
+msgstr "Място"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith или Example St."
+
+msgid "Guests"
+msgstr "Гости"
+
+msgid "Name or Email Address"
+msgstr "Име или имейл адрес"
+
+msgid "Comments"
+msgstr "Коментари"
+
+msgid "Create Event"
+msgstr "Създаване на събитието"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Създаване на ново събитие"
+
+msgid "Edit the selected event"
+msgstr "Редактиране на избраното събитие"
+
+msgid "Delete the selected event"
+msgstr "Изтриване на избраното събитие"
+
+msgid "Select calendars to display"
+msgstr "Избор на календари за показване"
+
+msgid "Search For Events.."
+msgstr "Търсене на Събития"
+
+msgid "Export or Share the default Calendar"
+msgstr "Експортиране или Споделяне на Календара по подразбиране"
+
+#. Create everything
+msgid "Today"
+msgstr "Днес"
+
+msgid "Fullscreen"
+msgstr "На цял екран"
+
+msgid "Show Week Numbers"
+msgstr "Показване на Номерата на Седмиците"
+
+msgid "Import..."
+msgstr "Импортиране..."
+
+msgid "Sync..."
+msgstr "Синхронизация..."
+
+msgid "About"
+msgstr ""
 
 #~ msgid "all the day"
 #~ msgstr "през целия ден"

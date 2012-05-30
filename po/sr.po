@@ -18,106 +18,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-17 05:27+0000\n"
 "X-Generator: Launchpad (build 15099)\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Додај догађај"
-
-msgid "All day:"
-msgstr "Целодневно:"
-
-msgid "Comments"
-msgstr "Коментари"
-
-msgid "Create Event"
-msgstr "Креирај догађај"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Направи нови догађај"
-
-msgid "Delete the selected event"
-msgstr ""
-
-msgid "Edit Event"
-msgstr "Измени догађај"
-
-msgid "Edit the selected event"
-msgstr ""
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr "Од:"
-
-msgid "Fullscreen"
-msgstr ""
-
-msgid "Guests"
-msgstr "Гости"
-
-msgid "Import..."
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "Локација"
-
-msgid "Name of Event"
-msgstr ""
-
-msgid "Name or Email Address"
-msgstr ""
-
-msgid "Search For Events.."
-msgstr ""
-
-msgid "Select calendars to display"
-msgstr ""
-
-msgid "Show Week Numbers"
-msgstr ""
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "To:"
-msgstr "За:"
-
-#. Create everything
-msgid "Today"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -126,9 +26,113 @@ msgstr ""
 "Ваши надолазећи догађаји ће бити приказани овде када будете изабрали датум "
 "са догађајем."
 
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
+
 #, fuzzy
 msgid "all day"
 msgstr "Целодневно:"
 
 msgid "at"
 msgstr ""
+
+msgid "Add Event"
+msgstr "Додај догађај"
+
+msgid "Edit Event"
+msgstr "Измени догађај"
+
+msgid "From:"
+msgstr "Од:"
+
+msgid "All day:"
+msgstr "Целодневно:"
+
+msgid "To:"
+msgstr "За:"
+
+msgid "Title"
+msgstr ""
+
+msgid "Name of Event"
+msgstr ""
+
+msgid "Location"
+msgstr "Локација"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "Гости"
+
+msgid "Name or Email Address"
+msgstr ""
+
+msgid "Comments"
+msgstr "Коментари"
+
+msgid "Create Event"
+msgstr "Креирај догађај"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Направи нови догађај"
+
+msgid "Edit the selected event"
+msgstr ""
+
+msgid "Delete the selected event"
+msgstr ""
+
+msgid "Select calendars to display"
+msgstr ""
+
+msgid "Search For Events.."
+msgstr ""
+
+msgid "Export or Share the default Calendar"
+msgstr ""
+
+#. Create everything
+msgid "Today"
+msgstr ""
+
+msgid "Fullscreen"
+msgstr ""
+
+msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Import..."
+msgstr ""
+
+msgid "Sync..."
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Додај догађај"

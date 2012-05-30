@@ -18,106 +18,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-06 04:45+0000\n"
 "X-Generator: Launchpad (build 15060)\n"
 
-msgid "%A, %b %d"
-msgstr ""
-
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr ""
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Добавить событие"
-
-msgid "All day:"
-msgstr "Весь день:"
-
-msgid "Comments"
-msgstr "Комментарии"
-
-msgid "Create Event"
-msgstr "Создать событие"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Создать новое событие"
-
-msgid "Delete the selected event"
-msgstr "Удалить выбранное событие"
-
-msgid "Edit Event"
-msgstr "Изменить событие"
-
-msgid "Edit the selected event"
-msgstr "Редактировать выбранное событие"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "Экспорт или поделиться календарём по умолчанию"
-
-msgid "From:"
-msgstr "От:"
-
-msgid "Fullscreen"
-msgstr "На весь экран"
-
-msgid "Guests"
-msgstr "Гости"
-
-msgid "Import..."
-msgstr "Импортировать…"
-
-msgid "John Smith OR Example St."
-msgstr "Джон Смит или например ул."
-
-msgid "Location"
-msgstr "Местоположение"
-
-msgid "Name of Event"
-msgstr "Название события"
-
-msgid "Name or Email Address"
-msgstr "Имя или адрес электронной почты"
-
-msgid "Search For Events.."
-msgstr "Поиск  событий"
-
-msgid "Select calendars to display"
-msgstr "Выберите календари для просмотра"
-
-msgid "Show Week Numbers"
-msgstr "Показать номера недель"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Синхронизация"
-
-msgid "Title"
-msgstr "Заголовок"
-
-msgid "To:"
-msgstr "Для:"
-
-#. Create everything
-msgid "Today"
-msgstr "Сегодня"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -126,12 +26,116 @@ msgstr ""
 "Ваши предстоящие события будут показаны здесь, когда вы выберете дату с "
 "событиями."
 
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
+
 #, fuzzy
 msgid "all day"
 msgstr "Весь день:"
 
 msgid "at"
 msgstr "в"
+
+msgid "Add Event"
+msgstr "Добавить событие"
+
+msgid "Edit Event"
+msgstr "Изменить событие"
+
+msgid "From:"
+msgstr "От:"
+
+msgid "All day:"
+msgstr "Весь день:"
+
+msgid "To:"
+msgstr "Для:"
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Name of Event"
+msgstr "Название события"
+
+msgid "Location"
+msgstr "Местоположение"
+
+msgid "John Smith OR Example St."
+msgstr "Джон Смит или например ул."
+
+msgid "Guests"
+msgstr "Гости"
+
+msgid "Name or Email Address"
+msgstr "Имя или адрес электронной почты"
+
+msgid "Comments"
+msgstr "Комментарии"
+
+msgid "Create Event"
+msgstr "Создать событие"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Создать новое событие"
+
+msgid "Edit the selected event"
+msgstr "Редактировать выбранное событие"
+
+msgid "Delete the selected event"
+msgstr "Удалить выбранное событие"
+
+msgid "Select calendars to display"
+msgstr "Выберите календари для просмотра"
+
+msgid "Search For Events.."
+msgstr "Поиск  событий"
+
+msgid "Export or Share the default Calendar"
+msgstr "Экспорт или поделиться календарём по умолчанию"
+
+#. Create everything
+msgid "Today"
+msgstr "Сегодня"
+
+msgid "Fullscreen"
+msgstr "На весь экран"
+
+msgid "Show Week Numbers"
+msgstr "Показать номера недель"
+
+msgid "Import..."
+msgstr "Импортировать…"
+
+msgid "Sync..."
+msgstr "Синхронизация"
+
+msgid "About"
+msgstr ""
+
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Добавить событие"
 
 #~ msgid "all the day"
 #~ msgstr "Весь день"
