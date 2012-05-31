@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-03-28 10:34+0000\n"
 "Last-Translator: Martin Myrvold <Unknown>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
@@ -39,15 +39,8 @@ msgstr "Lag hending"
 msgid "All day:"
 msgstr "Heile dagen:"
 
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
-
 msgid "Comments"
 msgstr "Kommentarar"
-
-msgid "Contacts"
-msgstr ""
 
 msgid "Create Event"
 msgstr "Lag hending"
@@ -67,12 +60,6 @@ msgstr "Endre hending"
 msgid "Edit the selected event"
 msgstr "Endre denne hendinga"
 
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr "Eksporter eller del kalenderen som er standard"
 
@@ -88,6 +75,9 @@ msgstr "Gjestar"
 msgid "Import..."
 msgstr "Importer..."
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr "John Smith ELLER Eksempel gate"
 
@@ -97,19 +87,6 @@ msgstr "Stad"
 msgid "Name of Event"
 msgstr "Namn på hending"
 
-msgid "Name or Email Address"
-msgstr "Namn eller epostadresse"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
 msgid "Search For Events.."
 msgstr "Søk etter hendingar.."
 
@@ -118,9 +95,6 @@ msgstr "Vel kva kalenderar som skal visast"
 
 msgid "Show Week Numbers"
 msgstr "Vis vekenummer"
-
-msgid "Starts: \t"
-msgstr ""
 
 msgid "Sync..."
 msgstr "Synkroniser..."
@@ -135,16 +109,6 @@ msgstr "Til:"
 msgid "Today"
 msgstr "I dag"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -152,20 +116,19 @@ msgid ""
 msgstr ""
 "Dine komande hendingar vil verta vist her, når du vel ein dato med hendingar."
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "Lag hending"
-
-#, fuzzy
-msgid "all day"
-msgstr "Heile dagen:"
+msgid "all the day"
+msgstr "heile dagen"
 
 msgid "at"
 msgstr "til"
 
-msgid "calendar.ics"
-msgstr ""
+#~ msgid "Name or Email Address"
+#~ msgstr "Namn eller epostadresse"
 
-#~ msgid "all the day"
-#~ msgstr "heile dagen"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Lag hending"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Heile dagen:"

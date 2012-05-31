@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-04-05 18:00+0000\n"
 "Last-Translator: Kirill Ivaha <kirill.ivaha@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -39,15 +39,8 @@ msgstr "Добавить событие"
 msgid "All day:"
 msgstr "Весь день:"
 
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
-
 msgid "Comments"
 msgstr "Комментарии"
-
-msgid "Contacts"
-msgstr ""
 
 msgid "Create Event"
 msgstr "Создать событие"
@@ -67,12 +60,6 @@ msgstr "Изменить событие"
 msgid "Edit the selected event"
 msgstr "Редактировать выбранное событие"
 
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr "Экспорт или поделиться календарём по умолчанию"
 
@@ -88,6 +75,9 @@ msgstr "Гости"
 msgid "Import..."
 msgstr "Импортировать…"
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr "Джон Смит или например ул."
 
@@ -97,19 +87,6 @@ msgstr "Местоположение"
 msgid "Name of Event"
 msgstr "Название события"
 
-msgid "Name or Email Address"
-msgstr "Имя или адрес электронной почты"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
 msgid "Search For Events.."
 msgstr "Поиск  событий"
 
@@ -118,9 +95,6 @@ msgstr "Выберите календари для просмотра"
 
 msgid "Show Week Numbers"
 msgstr "Показать номера недель"
-
-msgid "Starts: \t"
-msgstr ""
 
 msgid "Sync..."
 msgstr "Синхронизация"
@@ -135,16 +109,6 @@ msgstr "Для:"
 msgid "Today"
 msgstr "Сегодня"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -153,20 +117,19 @@ msgstr ""
 "Ваши предстоящие события будут показаны здесь, когда вы выберете дату с "
 "событиями."
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "Добавить событие"
-
-#, fuzzy
-msgid "all day"
-msgstr "Весь день:"
+msgid "all the day"
+msgstr "Весь день"
 
 msgid "at"
 msgstr "в"
 
-msgid "calendar.ics"
-msgstr ""
+#~ msgid "Name or Email Address"
+#~ msgstr "Имя или адрес электронной почты"
 
-#~ msgid "all the day"
-#~ msgstr "Весь день"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Добавить событие"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Весь день:"

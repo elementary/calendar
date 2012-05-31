@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-03-26 11:06+0000\n"
 "Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -39,15 +39,8 @@ msgstr "Aldoni eventon"
 msgid "All day:"
 msgstr "Tuttage:"
 
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
-
 msgid "Comments"
 msgstr "Komentoj"
-
-msgid "Contacts"
-msgstr ""
 
 msgid "Create Event"
 msgstr "Krei eventon"
@@ -67,12 +60,6 @@ msgstr "Redakti eventon"
 msgid "Edit the selected event"
 msgstr "Redakti la elektitan eventon"
 
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr "Eksporti aŭ kunhavigi la aprioran kalendaron"
 
@@ -88,6 +75,9 @@ msgstr "Gastoj"
 msgid "Import..."
 msgstr "Importi..."
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr "John Smith AŬ Example St."
 
@@ -97,19 +87,6 @@ msgstr "Loko"
 msgid "Name of Event"
 msgstr "Nomo de la evento"
 
-msgid "Name or Email Address"
-msgstr "Nomo aŭ retpoŝtadreso"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
 msgid "Search For Events.."
 msgstr "Serĉi eventon..."
 
@@ -118,9 +95,6 @@ msgstr "Elekti montrendajn klendarojn"
 
 msgid "Show Week Numbers"
 msgstr "Montri semajnnumerojn"
-
-msgid "Starts: \t"
-msgstr ""
 
 msgid "Sync..."
 msgstr "Sinkronigi..."
@@ -135,16 +109,6 @@ msgstr "Al:"
 msgid "Today"
 msgstr "Hodiaŭ"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -153,20 +117,19 @@ msgstr ""
 "Viaj venontaj eventoj estos montrataj ĉi tie, kiam vi elektas daton, kiu "
 "enhavas eventon."
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "Aldoni eventon"
-
-#, fuzzy
-msgid "all day"
-msgstr "Tuttage:"
+msgid "all the day"
+msgstr "tuttage"
 
 msgid "at"
 msgstr "je"
 
-msgid "calendar.ics"
-msgstr ""
+#~ msgid "Name or Email Address"
+#~ msgstr "Nomo aŭ retpoŝtadreso"
 
-#~ msgid "all the day"
-#~ msgstr "tuttage"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Aldoni eventon"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Tuttage:"

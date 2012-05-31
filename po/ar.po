@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-05-07 22:53+0000\n"
 "Last-Translator: Anas Mohamed <anasm7m@gmail.com>\n"
 "Language-Team: Arabic <ar@li.org>\n"
@@ -39,15 +39,8 @@ msgstr "إضافة حدث"
 msgid "All day:"
 msgstr "اليوم بأكمله:"
 
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
-
 msgid "Comments"
 msgstr "التعليقات"
-
-msgid "Contacts"
-msgstr ""
 
 msgid "Create Event"
 msgstr "إنشاء حدث"
@@ -67,12 +60,6 @@ msgstr "تعديل الحدث"
 msgid "Edit the selected event"
 msgstr "تعديل الحدث المحدد"
 
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr "تصدير أو مشاركة التقويم الإفتراضي"
 
@@ -88,6 +75,9 @@ msgstr "المدعويين"
 msgid "Import..."
 msgstr "إستيراد..."
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr "جون سميث أو شارع (إسم شارع)"
 
@@ -97,19 +87,6 @@ msgstr "المكان"
 msgid "Name of Event"
 msgstr "إسم الحدث"
 
-msgid "Name or Email Address"
-msgstr "الإسم أو البريد الإلكتروني"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
 msgid "Search For Events.."
 msgstr "البحث عن أحداث.."
 
@@ -118,9 +95,6 @@ msgstr "إختار التقويمات التي تود عرضها"
 
 msgid "Show Week Numbers"
 msgstr "إظهار أرقام الأسابيع"
-
-msgid "Starts: \t"
-msgstr ""
 
 msgid "Sync..."
 msgstr "تزامن..."
@@ -135,36 +109,25 @@ msgstr "إلى:"
 msgid "Today"
 msgstr "اليوم"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "يتم هنا عرض الأحداث القادمة الخاصة بك عند إختيارك لتاريخ مسجل به أحداث"
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "إضافة حدث"
-
-#, fuzzy
-msgid "all day"
-msgstr "اليوم بأكمله:"
+msgid "all the day"
+msgstr "اليوم بأكمله"
 
 msgid "at"
 msgstr "في"
 
-msgid "calendar.ics"
-msgstr ""
+#~ msgid "Name or Email Address"
+#~ msgstr "الإسم أو البريد الإلكتروني"
 
-#~ msgid "all the day"
-#~ msgstr "اليوم بأكمله"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "إضافة حدث"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "اليوم بأكمله:"

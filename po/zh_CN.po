@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-05-11 07:12+0000\n"
 "Last-Translator: Wang Dianjin <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -39,15 +39,8 @@ msgstr "添加事件"
 msgid "All day:"
 msgstr "全天："
 
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
-
 msgid "Comments"
 msgstr "备注"
-
-msgid "Contacts"
-msgstr ""
 
 msgid "Create Event"
 msgstr "创建事件"
@@ -67,12 +60,6 @@ msgstr "编辑事件"
 msgid "Edit the selected event"
 msgstr "编辑选中的事件"
 
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr "导出或分享默认日历"
 
@@ -88,6 +75,9 @@ msgstr "访客"
 msgid "Import..."
 msgstr "导入..."
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr "John Smith 或例如 St."
 
@@ -97,19 +87,6 @@ msgstr "位置"
 msgid "Name of Event"
 msgstr "事件名称"
 
-msgid "Name or Email Address"
-msgstr "姓名或邮件地址"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
 msgid "Search For Events.."
 msgstr "搜索事件.."
 
@@ -118,9 +95,6 @@ msgstr "选择要显示的日历"
 
 msgid "Show Week Numbers"
 msgstr "显示周数"
-
-msgid "Starts: \t"
-msgstr ""
 
 msgid "Sync..."
 msgstr "同步..."
@@ -135,36 +109,25 @@ msgstr "结束日期："
 msgid "Today"
 msgstr "今天"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "当您选择一个含有任务的日期时，您最近的事件将会显示在这里。"
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "添加事件"
-
-#, fuzzy
-msgid "all day"
-msgstr "全天："
+msgid "all the day"
+msgstr "整天"
 
 msgid "at"
 msgstr ""
 
-msgid "calendar.ics"
-msgstr ""
+#~ msgid "Name or Email Address"
+#~ msgstr "姓名或邮件地址"
 
-#~ msgid "all the day"
-#~ msgstr "整天"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "添加事件"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "全天："

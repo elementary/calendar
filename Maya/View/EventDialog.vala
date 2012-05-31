@@ -44,6 +44,8 @@ namespace Maya.View {
 
         public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
         
+            this.resizable = false;
+
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
             this.ecal = ecal;
 
@@ -287,6 +289,7 @@ namespace Maya.View {
             comment_textview = new Gtk.TextView ();
             comment_textview.height_request = 100;
             comment_textview.vexpand = true;
+            comment_textview.wrap_mode = Gtk.WrapMode.WORD_CHAR;
             
             content_grid.attach (from_label, 0, 0, 4, 1);
             content_grid.attach (from_date_picker, 0, 1, 1, 1);

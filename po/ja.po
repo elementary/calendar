@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-04-24 09:00+0000\n"
 "Last-Translator: Naoki Kephart <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -39,15 +39,8 @@ msgstr "予定を追加"
 msgid "All day:"
 msgstr "終日:"
 
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
-
 msgid "Comments"
 msgstr "備考"
-
-msgid "Contacts"
-msgstr ""
 
 msgid "Create Event"
 msgstr "予定を作成"
@@ -67,12 +60,6 @@ msgstr "予定を編集"
 msgid "Edit the selected event"
 msgstr "選択された予定を編集"
 
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr "デフォルトのカレンダーを共有または書き出す"
 
@@ -88,6 +75,9 @@ msgstr "参加者"
 msgid "Import..."
 msgstr "取り込む..."
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr "場所を入力"
 
@@ -97,19 +87,6 @@ msgstr "場所"
 msgid "Name of Event"
 msgstr "予定のタイトル"
 
-msgid "Name or Email Address"
-msgstr "名前またはメールアドレス"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
 msgid "Search For Events.."
 msgstr "予定を検索.."
 
@@ -118,9 +95,6 @@ msgstr "表示するカレンダーを選択"
 
 msgid "Show Week Numbers"
 msgstr "週の通し番号を表示"
-
-msgid "Starts: \t"
-msgstr ""
 
 msgid "Sync..."
 msgstr "同期..."
@@ -135,36 +109,25 @@ msgstr "終了時:"
 msgid "Today"
 msgstr "今日"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "予定が入っている日付を選択すると、ここに予定の内容が表示されます。"
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "予定を追加"
-
-#, fuzzy
-msgid "all day"
-msgstr "終日:"
+msgid "all the day"
+msgstr "終日"
 
 msgid "at"
 msgstr ""
 
-msgid "calendar.ics"
-msgstr ""
+#~ msgid "Name or Email Address"
+#~ msgstr "名前またはメールアドレス"
 
-#~ msgid "all the day"
-#~ msgstr "終日"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "予定を追加"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "終日:"

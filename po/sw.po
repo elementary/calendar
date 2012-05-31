@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-03-22 00:10+0000\n"
 "Last-Translator: Jkakolwa <Unknown>\n"
 "Language-Team: Swahili <sw@li.org>\n"
@@ -39,15 +39,8 @@ msgstr "Ongeza tukio"
 msgid "All day:"
 msgstr "Siku yote"
 
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
-
 msgid "Comments"
 msgstr "Maoni"
-
-msgid "Contacts"
-msgstr ""
 
 msgid "Create Event"
 msgstr "Tengeneza tukio"
@@ -67,12 +60,6 @@ msgstr "Hariri Tukio"
 msgid "Edit the selected event"
 msgstr "Hariri hili tukio"
 
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr ""
 
@@ -88,6 +75,9 @@ msgstr "Mgeni"
 msgid "Import..."
 msgstr "Ingiza"
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr "John Smith au mfano St."
 
@@ -97,19 +87,6 @@ msgstr "Mahali"
 msgid "Name of Event"
 msgstr "Jina la tukio"
 
-msgid "Name or Email Address"
-msgstr "Jina au Anwani ya barua pepe"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
 msgid "Search For Events.."
 msgstr "Tafuta matukio"
 
@@ -118,9 +95,6 @@ msgstr "Chagua kalenda zionyeshwe"
 
 msgid "Show Week Numbers"
 msgstr "Onesha namba za wiki"
-
-msgid "Starts: \t"
-msgstr ""
 
 msgid "Sync..."
 msgstr "Sync..."
@@ -135,16 +109,6 @@ msgstr "Kwa:"
 msgid "Today"
 msgstr "Leo"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -152,20 +116,19 @@ msgid ""
 msgstr ""
 "Matukio yako ya jayo yataoshwa hapa wakati kama utachagua tarehe na matukio."
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "Ongeza tukio"
-
-#, fuzzy
-msgid "all day"
-msgstr "Siku yote"
+msgid "all the day"
+msgstr "Siku nzima"
 
 msgid "at"
 msgstr "katika"
 
-msgid "calendar.ics"
-msgstr ""
+#~ msgid "Name or Email Address"
+#~ msgstr "Jina au Anwani ya barua pepe"
 
-#~ msgid "all the day"
-#~ msgstr "Siku nzima"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Ongeza tukio"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Siku yote"

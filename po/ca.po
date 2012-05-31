@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-04-01 11:28+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Catalan <ca@li.org>\n"
@@ -39,15 +39,8 @@ msgstr "Afegeix un esdeveniment"
 msgid "All day:"
 msgstr "Tot el dia:"
 
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
-
 msgid "Comments"
 msgstr "Comentaris"
-
-msgid "Contacts"
-msgstr ""
 
 msgid "Create Event"
 msgstr "Crea un esdeveniment"
@@ -67,12 +60,6 @@ msgstr "Edita l'esdeveniment"
 msgid "Edit the selected event"
 msgstr "Edita l'esdeveniment seleccionat"
 
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
 msgid "Export or Share the default Calendar"
 msgstr "Exporta o comparteix el calendari predeterminat"
 
@@ -88,6 +75,9 @@ msgstr "Convidats"
 msgid "Import..."
 msgstr "Importa..."
 
+msgid "John Smith"
+msgstr ""
+
 msgid "John Smith OR Example St."
 msgstr "John Smith o C/ Exemple"
 
@@ -97,19 +87,6 @@ msgstr "Ubicació"
 msgid "Name of Event"
 msgstr "Nom de l'esdeveniment"
 
-msgid "Name or Email Address"
-msgstr "Nom o adreça electrònica"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
 msgid "Search For Events.."
 msgstr "Cerca esdeveniments..."
 
@@ -118,9 +95,6 @@ msgstr "Selecciona els calendaris a mostrar"
 
 msgid "Show Week Numbers"
 msgstr "Mostra els números de la setmana"
-
-msgid "Starts: \t"
-msgstr ""
 
 msgid "Sync..."
 msgstr "Sincronitza..."
@@ -135,16 +109,6 @@ msgstr "Fins a:"
 msgid "Today"
 msgstr "Avui"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -152,20 +116,19 @@ msgid ""
 msgstr ""
 "Els pròxims events es mostren aquí quan és seleccionada una data amb events."
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "Afegeix un esdeveniment"
-
-#, fuzzy
-msgid "all day"
-msgstr "Tot el dia:"
+msgid "all the day"
+msgstr "tot el dia"
 
 msgid "at"
 msgstr "a"
 
-msgid "calendar.ics"
-msgstr ""
+#~ msgid "Name or Email Address"
+#~ msgstr "Nom o adreça electrònica"
 
-#~ msgid "all the day"
-#~ msgstr "tot el dia"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Afegeix un esdeveniment"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Tot el dia:"
