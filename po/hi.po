@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-05-31 12:01+0200\n"
 "PO-Revision-Date: 2012-04-20 11:26+0000\n"
 "Last-Translator: ray1claw <ray1claw@gmail.com>\n"
 "Language-Team: Hindi <hi@li.org>\n"
@@ -58,6 +58,9 @@ msgstr "घटना बनाएँ"
 msgid "Create a new event"
 msgstr "नई घटना बनाएँ"
 
+msgid "Day"
+msgstr ""
+
 msgid "Delete the selected event"
 msgstr "चयनित घटना का नष्ट करें"
 
@@ -93,6 +96,9 @@ msgstr ""
 
 msgid "Location"
 msgstr "स्थान"
+
+msgid "Mounth"
+msgstr ""
 
 msgid "Name of Event"
 msgstr "घटना का नाम"
@@ -140,6 +146,9 @@ msgid "View and schedule events"
 msgstr ""
 
 msgid "Webcal"
+msgstr ""
+
+msgid "Week"
 msgstr ""
 
 msgid "Your event has to be named and has to have a valid date"

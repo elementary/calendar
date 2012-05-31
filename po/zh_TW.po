@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-05-31 12:01+0200\n"
 "PO-Revision-Date: 2012-03-31 09:18+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -58,6 +58,9 @@ msgstr "建立事件"
 msgid "Create a new event"
 msgstr "建立新事件"
 
+msgid "Day"
+msgstr ""
+
 msgid "Delete the selected event"
 msgstr "刪除所選事件"
 
@@ -93,6 +96,9 @@ msgstr "王小明 或 某某街"
 
 msgid "Location"
 msgstr "地點"
+
+msgid "Mounth"
+msgstr ""
 
 msgid "Name of Event"
 msgstr "事件名稱"
@@ -140,6 +146,9 @@ msgid "View and schedule events"
 msgstr ""
 
 msgid "Webcal"
+msgstr ""
+
+msgid "Week"
 msgstr ""
 
 msgid "Your event has to be named and has to have a valid date"

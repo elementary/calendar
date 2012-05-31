@@ -17,57 +17,57 @@
 
 namespace Maya.View {
 
-	public class MayaMenu : Gtk.Menu {
+    public class MayaMenu : Gtk.Menu {
 
-		public Gtk.MenuItem today { get; private set; }
+        public Gtk.MenuItem today { get; private set; }
 
-		public Gtk.MenuItem import { get; private set; }
-		public Gtk.MenuItem export { get; private set; }
+        public Gtk.MenuItem import { get; private set; }
+        public Gtk.MenuItem export { get; private set; }
 
-		public Gtk.CheckMenuItem fullscreen { get; private set; }
-		public Gtk.CheckMenuItem weeknumbers { get; private set; }
+        public Gtk.CheckMenuItem fullscreen { get; private set; }
+        public Gtk.CheckMenuItem weeknumbers { get; private set; }
 
-		public Gtk.MenuItem sync { get; private set; }
+        public Gtk.MenuItem sync { get; private set; }
 
         public Gtk.MenuItem about { get; private set; }
 
-		public MayaMenu () {
+        public MayaMenu () {
 
-			// Create everything
-			today = new Gtk.MenuItem.with_label (_("Today"));
+            // Create everything
+            today = new Gtk.MenuItem.with_label (_("Today"));
 
-			fullscreen = new Gtk.CheckMenuItem.with_label (_("Fullscreen"));
+            fullscreen = new Gtk.CheckMenuItem.with_label (_("Fullscreen"));
 
-			weeknumbers = new Gtk.CheckMenuItem.with_label (_("Show Week Numbers"));
+            weeknumbers = new Gtk.CheckMenuItem.with_label (_("Show Week Numbers"));
 
-			import = new Gtk.MenuItem.with_label (_("Import..."));
+            import = new Gtk.MenuItem.with_label (_("Import..."));
 
-			sync = new Gtk.MenuItem.with_label (_("Sync..."));
+            sync = new Gtk.MenuItem.with_label (_("Sync..."));
 
             about = new Gtk.MenuItem.with_label (_("About"));
 
-			// Append in correct order
-			append (today);
+            // Append in correct order
+            append (today);
 
-			append (new Gtk.SeparatorMenuItem ());
+            append (new Gtk.SeparatorMenuItem ());
 
-			append (fullscreen);
-			append (weeknumbers);
+            append (fullscreen);
+            append (weeknumbers);
 
             /*
             * TODO : Will be done in Maya 0.2
-			append (new Gtk.SeparatorMenuItem ());
+            append (new Gtk.SeparatorMenuItem ());
 
-			append (import);
-			append (sync);
+            append (import);
+            append (sync);
             */
 
-			append (new Gtk.SeparatorMenuItem ());
+            append (new Gtk.SeparatorMenuItem ());
 
             append (about);
-		}
+        }
 
-	}
+    }
 
 }
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-05-31 12:01+0200\n"
 "PO-Revision-Date: 2012-05-04 11:04+0000\n"
 "Last-Translator: wonderjake <jakob.axelson@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -58,6 +58,9 @@ msgstr "Skapa händelse"
 msgid "Create a new event"
 msgstr "Skapa en ny händelse"
 
+msgid "Day"
+msgstr ""
+
 msgid "Delete the selected event"
 msgstr "Ta bort den valda händelsen"
 
@@ -93,6 +96,9 @@ msgstr "Sven Svensson ELLER Exempelgatan"
 
 msgid "Location"
 msgstr "Plats"
+
+msgid "Mounth"
+msgstr ""
 
 msgid "Name of Event"
 msgstr "Händelsens namn"
@@ -140,6 +146,9 @@ msgid "View and schedule events"
 msgstr ""
 
 msgid "Webcal"
+msgstr ""
+
+msgid "Week"
 msgstr ""
 
 msgid "Your event has to be named and has to have a valid date"

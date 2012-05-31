@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-05-31 12:01+0200\n"
 "PO-Revision-Date: 2012-05-11 07:12+0000\n"
 "Last-Translator: Wang Dianjin <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -58,6 +58,9 @@ msgstr "创建事件"
 msgid "Create a new event"
 msgstr "创建新事件"
 
+msgid "Day"
+msgstr ""
+
 msgid "Delete the selected event"
 msgstr "删除选中的事件"
 
@@ -93,6 +96,9 @@ msgstr "John Smith 或例如 St."
 
 msgid "Location"
 msgstr "位置"
+
+msgid "Mounth"
+msgstr ""
 
 msgid "Name of Event"
 msgstr "事件名称"
@@ -140,6 +146,9 @@ msgid "View and schedule events"
 msgstr ""
 
 msgid "Webcal"
+msgstr ""
+
+msgid "Week"
 msgstr ""
 
 msgid "Your event has to be named and has to have a valid date"

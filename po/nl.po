@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-05-31 12:01+0200\n"
 "PO-Revision-Date: 2012-04-05 18:57+0000\n"
 "Last-Translator: Sirolf10 <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -58,6 +58,9 @@ msgstr "Maak gebeurtenis"
 msgid "Create a new event"
 msgstr "Maak een nieuwe gebeurtenis aan"
 
+msgid "Day"
+msgstr ""
+
 msgid "Delete the selected event"
 msgstr "De geselecteerde gebeurtenis verwijderen"
 
@@ -93,6 +96,9 @@ msgstr "Jan Smit OF Voorbeeldlaan"
 
 msgid "Location"
 msgstr "Plaats"
+
+msgid "Mounth"
+msgstr ""
 
 msgid "Name of Event"
 msgstr "Gebeurtenisnaam"
@@ -140,6 +146,9 @@ msgid "View and schedule events"
 msgstr ""
 
 msgid "Webcal"
+msgstr ""
+
+msgid "Week"
 msgstr ""
 
 msgid "Your event has to be named and has to have a valid date"

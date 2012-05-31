@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-05-31 12:01+0200\n"
 "PO-Revision-Date: 2012-03-26 17:51+0000\n"
 "Last-Translator: Leonardo Lemos <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
@@ -58,6 +58,9 @@ msgstr "Criar Evento"
 msgid "Create a new event"
 msgstr "Criar um novo evento"
 
+msgid "Day"
+msgstr ""
+
 msgid "Delete the selected event"
 msgstr "Deletar o evento selecionado"
 
@@ -93,6 +96,9 @@ msgstr "John Smith ou Sr. Exemplo"
 
 msgid "Location"
 msgstr "Localização"
+
+msgid "Mounth"
+msgstr ""
 
 msgid "Name of Event"
 msgstr "Nome do evento"
@@ -140,6 +146,9 @@ msgid "View and schedule events"
 msgstr ""
 
 msgid "Webcal"
+msgstr ""
+
+msgid "Week"
 msgstr ""
 
 msgid "Your event has to be named and has to have a valid date"

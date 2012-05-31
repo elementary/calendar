@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 16:08+0200\n"
+"POT-Creation-Date: 2012-05-31 12:01+0200\n"
 "PO-Revision-Date: 2012-05-11 18:51+0000\n"
 "Last-Translator: Adam Brzęcki <adambrzecki@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -58,6 +58,9 @@ msgstr "Utwórz wydarzenie"
 msgid "Create a new event"
 msgstr "Tworzy nowe wydarzenie"
 
+msgid "Day"
+msgstr ""
+
 msgid "Delete the selected event"
 msgstr "Usuń wybrane zdarzenie"
 
@@ -93,6 +96,9 @@ msgstr "Jan Kowalski lub przykładowa ulica"
 
 msgid "Location"
 msgstr "Lokalizacja"
+
+msgid "Mounth"
+msgstr ""
 
 msgid "Name of Event"
 msgstr "Nazwa wydarzenia"
@@ -140,6 +146,9 @@ msgid "View and schedule events"
 msgstr ""
 
 msgid "Webcal"
+msgstr ""
+
+msgid "Week"
 msgstr ""
 
 msgid "Your event has to be named and has to have a valid date"
