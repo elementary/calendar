@@ -125,10 +125,37 @@ class SourceSelector : Granite.Widgets.PopOver {
             groupnumer++;
         }
 
+        var entry = new Granite.Widgets.HintedEntry ("Add calendar");
+        sources_grid.attach (entry, 0, groupnumer, 1, 1);
+        entry.activate.connect (() => on_entry_activate (entry.text));
         var container = (Gtk.Container) get_content_area ();
         container.add (sources_grid);
 
         delete_event.connect (hide_on_delete);
+    }
+
+    /**
+     * Called when enter is pressed in the add source entry
+     */
+    void on_entry_activate (string entry_text) {
+        stdout.printf ("text = %s\n", entry_text);
+
+        var new_source = new E.Source (entry_text, entry_text);
+
+        E.SourceGroup? group = null;
+        foreach (var existing_group in model.groups) {
+            if (existing_group.peek_base_uri() == "local:") {
+                group = existing_group;
+                break;
+            }
+        }
+        if (group == null) {
+            // No local group => create it
+            group = new E.SourceGroup ("_(On this computer)", "local:");
+            model.create_group (group);
+        }
+
+        model.create_source (group, new_source);
     }
 
     void data_func_name (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel tmodel, Gtk.TreeIter iter) {
