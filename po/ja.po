@@ -18,111 +18,29 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-25 05:07+0000\n"
 "X-Generator: Launchpad (build 15139)\n"
 
-msgid "%A, %b %d"
-msgstr "%B%e日 %A"
-
-msgid "%B %e, %Y"
-msgstr "%Y年%B%e日"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%p %l:%M"
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "予定を追加"
-
-msgid "All day:"
-msgstr "終日:"
-
-msgid "Comments"
-msgstr "備考"
-
-msgid "Create Event"
-msgstr "予定を作成"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "新しい予定を作成"
-
-msgid "Delete the selected event"
-msgstr "選択された予定を削除"
-
-msgid "Edit Event"
-msgstr "予定を編集"
-
-msgid "Edit the selected event"
-msgstr "選択された予定を編集"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "デフォルトのカレンダーを共有または書き出す"
-
-msgid "From:"
-msgstr "開始時:"
-
-msgid "Fullscreen"
-msgstr "全画面"
-
-msgid "Guests"
-msgstr "参加者"
-
-msgid "Import..."
-msgstr "取り込む..."
-
-msgid "John Smith OR Example St."
-msgstr "場所を入力"
-
-msgid "Location"
-msgstr "場所"
-
-msgid "Name of Event"
-msgstr "予定のタイトル"
-
-msgid "Name or Email Address"
-msgstr "名前またはメールアドレス"
-
-msgid "Search For Events.."
-msgstr "予定を検索.."
-
-msgid "Select calendars to display"
-msgstr "表示するカレンダーを選択"
-
-msgid "Show Week Numbers"
-msgstr "週の通し番号を表示"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "同期..."
-
-msgid "Title"
-msgstr "タイトル"
-
-msgid "To:"
-msgstr "終了時:"
-
-#. Create everything
-msgid "Today"
-msgstr "今日"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "予定が入っている日付を選択すると、ここに予定の内容が表示されます。"
+
+msgid "%B %e, %Y"
+msgstr "%Y年%B%e日"
+
+msgid "%A, %b %d"
+msgstr "%B%e日 %A"
+
+msgid "%l:%M %p"
+msgstr "%p %l:%M"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
 
 #, fuzzy
 msgid "all day"
@@ -131,9 +49,91 @@ msgstr "終日:"
 msgid "at"
 msgstr ""
 
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "予定を追加"
+msgid "Add Event"
+msgstr "予定を追加"
+
+msgid "Edit Event"
+msgstr "予定を編集"
+
+msgid "From:"
+msgstr "開始時:"
+
+msgid "All day:"
+msgstr "終日:"
+
+msgid "To:"
+msgstr "終了時:"
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "Name of Event"
+msgstr "予定のタイトル"
+
+msgid "Location"
+msgstr "場所"
+
+msgid "John Smith OR Example St."
+msgstr "場所を入力"
+
+msgid "Guests"
+msgstr "参加者"
+
+msgid "Name or Email Address"
+msgstr "名前またはメールアドレス"
+
+msgid "Comments"
+msgstr "備考"
+
+msgid "Create Event"
+msgstr "予定を作成"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "新しい予定を作成"
+
+msgid "Edit the selected event"
+msgstr "選択された予定を編集"
+
+msgid "Delete the selected event"
+msgstr "選択された予定を削除"
+
+msgid "Select calendars to display"
+msgstr "表示するカレンダーを選択"
+
+msgid "Search For Events.."
+msgstr "予定を検索.."
+
+msgid "Export or Share the default Calendar"
+msgstr "デフォルトのカレンダーを共有または書き出す"
+
+#. Create everything
+msgid "Today"
+msgstr "今日"
+
+msgid "Fullscreen"
+msgstr "全画面"
+
+msgid "Show Week Numbers"
+msgstr "週の通し番号を表示"
+
+msgid "Import..."
+msgstr "取り込む..."
+
+msgid "Sync..."
+msgstr "同期..."
+
+msgid "About"
+msgstr ""
 
 #~ msgid "all the day"
 #~ msgstr "終日"
+
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "予定を追加"

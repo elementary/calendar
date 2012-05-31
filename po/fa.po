@@ -18,25 +18,68 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-19 04:56+0000\n"
 "X-Generator: Launchpad (build 14969)\n"
 
-msgid "%A, %b %d"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
+"در صورت انتخاب روز دارای وقایع، وقایع پیش‌رو در این قسمت نمایش داده می‌شوند."
 
 msgid "%B %e, %Y"
 msgstr ""
 
-msgid "%H:%M"
+msgid "%A, %b %d"
 msgstr ""
 
 msgid "%l:%M %p"
 msgstr ""
 
-msgid "About"
+msgid "%H:%M"
+msgstr ""
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
+
+msgid "all day"
+msgstr ""
+
+msgid "at"
 msgstr ""
 
 msgid "Add Event"
 msgstr ""
 
+msgid "Edit Event"
+msgstr ""
+
+msgid "From:"
+msgstr ""
+
 msgid "All day:"
+msgstr ""
+
+msgid "To:"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Name of Event"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr ""
+
+msgid "Name or Email Address"
 msgstr ""
 
 msgid "Comments"
@@ -45,88 +88,45 @@ msgstr ""
 msgid "Create Event"
 msgstr ""
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
 msgstr ""
 
-msgid "Delete the selected event"
-msgstr ""
-
-msgid "Edit Event"
-msgstr ""
-
 msgid "Edit the selected event"
 msgstr ""
 
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr ""
-
-msgid "Fullscreen"
-msgstr ""
-
-msgid "Guests"
-msgstr ""
-
-msgid "Import..."
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr ""
-
-msgid "Name of Event"
-msgstr ""
-
-msgid "Name or Email Address"
-msgstr ""
-
-msgid "Search For Events.."
+msgid "Delete the selected event"
 msgstr ""
 
 msgid "Select calendars to display"
 msgstr ""
 
-msgid "Show Week Numbers"
+msgid "Search For Events.."
 msgstr ""
 
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "To:"
+msgid "Export or Share the default Calendar"
 msgstr ""
 
 #. Create everything
 msgid "Today"
 msgstr ""
 
-msgid "Your event has to be named and has to have a valid date"
+msgid "Fullscreen"
 msgstr ""
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"در صورت انتخاب روز دارای وقایع، وقایع پیش‌رو در این قسمت نمایش داده می‌شوند."
-
-msgid "all day"
+msgid "Show Week Numbers"
 msgstr ""
 
-msgid "at"
+msgid "Import..."
+msgstr ""
+
+msgid "Sync..."
+msgstr ""
+
+msgid "About"
 msgstr ""

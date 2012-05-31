@@ -18,106 +18,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-05-02 05:45+0000\n"
 "X-Generator: Launchpad (build 15177)\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%I:%M %p"
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Termin hinzufügen"
-
-msgid "All day:"
-msgstr "Ganztägig:"
-
-msgid "Comments"
-msgstr "Kommentare"
-
-msgid "Create Event"
-msgstr "Termin erstellen"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Einen neuen Termin erstellen"
-
-msgid "Delete the selected event"
-msgstr "Ausgewählten Termin löschen"
-
-msgid "Edit Event"
-msgstr "Termin bearbeiten"
-
-msgid "Edit the selected event"
-msgstr "Augewählten Termin bearbeiten"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "Standartkalender exportieren oder teilen"
-
-msgid "From:"
-msgstr "Von:"
-
-msgid "Fullscreen"
-msgstr "Vollbild"
-
-msgid "Guests"
-msgstr "Gäste"
-
-msgid "Import..."
-msgstr "Importieren …"
-
-msgid "John Smith OR Example St."
-msgstr "John Smith ODER Beispiel St."
-
-msgid "Location"
-msgstr "Ort"
-
-msgid "Name of Event"
-msgstr "Terminbezeichnung"
-
-msgid "Name or Email Address"
-msgstr "Name oder E-Mail"
-
-msgid "Search For Events.."
-msgstr "Termine suchen..."
-
-msgid "Select calendars to display"
-msgstr "Anzuzeigende Kalender auswählen"
-
-msgid "Show Week Numbers"
-msgstr "Kalenderwochen anzeigen"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Synchronisieren..."
-
-msgid "Title"
-msgstr "Titel"
-
-msgid "To:"
-msgstr "Bis:"
-
-#. Create everything
-msgid "Today"
-msgstr "Heute"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -126,6 +26,24 @@ msgstr ""
 "Ihre anstehenden Termine werden hier angezeigt, sobald Sie ein Datum mit "
 "Terminen auswählen."
 
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%I:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
+
 #, fuzzy
 msgid "all day"
 msgstr "Ganztägig:"
@@ -133,9 +51,91 @@ msgstr "Ganztägig:"
 msgid "at"
 msgstr "um"
 
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "Termin hinzufügen"
+msgid "Add Event"
+msgstr "Termin hinzufügen"
+
+msgid "Edit Event"
+msgstr "Termin bearbeiten"
+
+msgid "From:"
+msgstr "Von:"
+
+msgid "All day:"
+msgstr "Ganztägig:"
+
+msgid "To:"
+msgstr "Bis:"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Name of Event"
+msgstr "Terminbezeichnung"
+
+msgid "Location"
+msgstr "Ort"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith ODER Beispiel St."
+
+msgid "Guests"
+msgstr "Gäste"
+
+msgid "Name or Email Address"
+msgstr "Name oder E-Mail"
+
+msgid "Comments"
+msgstr "Kommentare"
+
+msgid "Create Event"
+msgstr "Termin erstellen"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Einen neuen Termin erstellen"
+
+msgid "Edit the selected event"
+msgstr "Augewählten Termin bearbeiten"
+
+msgid "Delete the selected event"
+msgstr "Ausgewählten Termin löschen"
+
+msgid "Select calendars to display"
+msgstr "Anzuzeigende Kalender auswählen"
+
+msgid "Search For Events.."
+msgstr "Termine suchen..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Standartkalender exportieren oder teilen"
+
+#. Create everything
+msgid "Today"
+msgstr "Heute"
+
+msgid "Fullscreen"
+msgstr "Vollbild"
+
+msgid "Show Week Numbers"
+msgstr "Kalenderwochen anzeigen"
+
+msgid "Import..."
+msgstr "Importieren …"
+
+msgid "Sync..."
+msgstr "Synchronisieren..."
+
+msgid "About"
+msgstr ""
 
 #~ msgid "all the day"
 #~ msgstr "Ganztägig"
+
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Termin hinzufügen"

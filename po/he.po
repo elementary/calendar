@@ -18,111 +18,29 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-27 04:52+0000\n"
 "X-Generator: Launchpad (build 15149)\n"
 
-msgid "%A, %b %d"
-msgstr "%A, ה־%d ב%b"
-
-msgid "%B %e, %Y"
-msgstr "%e ב%B,‏ %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%H:%M"
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "הוספת אירוע"
-
-msgid "All day:"
-msgstr "כל היום:"
-
-msgid "Comments"
-msgstr "הערות"
-
-msgid "Create Event"
-msgstr "יצירת אירוע"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "יצירת אירוע חדש"
-
-msgid "Delete the selected event"
-msgstr "מחיקת האירוע הנבחר"
-
-msgid "Edit Event"
-msgstr "עריכת אירוע"
-
-msgid "Edit the selected event"
-msgstr "עריכת האירוע הנבחר"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "יצוא או שיתוף יומן בררת המחדל"
-
-msgid "From:"
-msgstr "מ־:"
-
-msgid "Fullscreen"
-msgstr "מסך מלא"
-
-msgid "Guests"
-msgstr "אורחים"
-
-msgid "Import..."
-msgstr "יבוא..."
-
-msgid "John Smith OR Example St."
-msgstr "ישראל ישראלי או רחוב לדוגמה"
-
-msgid "Location"
-msgstr "מיקום"
-
-msgid "Name of Event"
-msgstr "שם האירוע"
-
-msgid "Name or Email Address"
-msgstr "שם או כתובת דוא״ל"
-
-msgid "Search For Events.."
-msgstr "חיפוש אחר אירועים..."
-
-msgid "Select calendars to display"
-msgstr "בחירת יומנים להצגה"
-
-msgid "Show Week Numbers"
-msgstr "הצגת מספרי שבועות"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "סנכרון..."
-
-msgid "Title"
-msgstr "כותרת"
-
-msgid "To:"
-msgstr "עד:"
-
-#. Create everything
-msgid "Today"
-msgstr "היום"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "האירועים הקרובים שלך יוצגו כאן בעת בחירת תאריך עם אירועים."
+
+msgid "%B %e, %Y"
+msgstr "%e ב%B,‏ %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, ה־%d ב%b"
+
+msgid "%l:%M %p"
+msgstr "%H:%M"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
 
 #, fuzzy
 msgid "all day"
@@ -131,9 +49,91 @@ msgstr "כל היום:"
 msgid "at"
 msgstr "ב־"
 
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "הוספת אירוע"
+msgid "Add Event"
+msgstr "הוספת אירוע"
+
+msgid "Edit Event"
+msgstr "עריכת אירוע"
+
+msgid "From:"
+msgstr "מ־:"
+
+msgid "All day:"
+msgstr "כל היום:"
+
+msgid "To:"
+msgstr "עד:"
+
+msgid "Title"
+msgstr "כותרת"
+
+msgid "Name of Event"
+msgstr "שם האירוע"
+
+msgid "Location"
+msgstr "מיקום"
+
+msgid "John Smith OR Example St."
+msgstr "ישראל ישראלי או רחוב לדוגמה"
+
+msgid "Guests"
+msgstr "אורחים"
+
+msgid "Name or Email Address"
+msgstr "שם או כתובת דוא״ל"
+
+msgid "Comments"
+msgstr "הערות"
+
+msgid "Create Event"
+msgstr "יצירת אירוע"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "יצירת אירוע חדש"
+
+msgid "Edit the selected event"
+msgstr "עריכת האירוע הנבחר"
+
+msgid "Delete the selected event"
+msgstr "מחיקת האירוע הנבחר"
+
+msgid "Select calendars to display"
+msgstr "בחירת יומנים להצגה"
+
+msgid "Search For Events.."
+msgstr "חיפוש אחר אירועים..."
+
+msgid "Export or Share the default Calendar"
+msgstr "יצוא או שיתוף יומן בררת המחדל"
+
+#. Create everything
+msgid "Today"
+msgstr "היום"
+
+msgid "Fullscreen"
+msgstr "מסך מלא"
+
+msgid "Show Week Numbers"
+msgstr "הצגת מספרי שבועות"
+
+msgid "Import..."
+msgstr "יבוא..."
+
+msgid "Sync..."
+msgstr "סנכרון..."
+
+msgid "About"
+msgstr ""
 
 #~ msgid "all the day"
 #~ msgstr "כל היום"
+
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "הוספת אירוע"

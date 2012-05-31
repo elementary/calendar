@@ -18,111 +18,29 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-05-12 05:55+0000\n"
 "X-Generator: Launchpad (build 15225)\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %d %b"
-
-msgid "%B %e, %Y"
-msgstr "%e %B %Y"
-
-msgid "%H:%M"
-msgstr "%H.%M"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Dodaj dogodek"
-
-msgid "All day:"
-msgstr "Celodnevno:"
-
-msgid "Comments"
-msgstr "Opombe"
-
-msgid "Create Event"
-msgstr "Ustvari dogodek"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Ustvari nov dogodek"
-
-msgid "Delete the selected event"
-msgstr "Izbriši izbrani dogodek"
-
-msgid "Edit Event"
-msgstr "Uredi dogodek"
-
-msgid "Edit the selected event"
-msgstr "Uredi izbrani dogodek"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr "Od:"
-
-msgid "Fullscreen"
-msgstr "Celozaslonski način"
-
-msgid "Guests"
-msgstr "Gostje"
-
-msgid "Import..."
-msgstr "Uvozi ..."
-
-msgid "John Smith OR Example St."
-msgstr "Janez Kranjski ALI Neka ul."
-
-msgid "Location"
-msgstr "Kraj"
-
-msgid "Name of Event"
-msgstr "Ime dogodka"
-
-msgid "Name or Email Address"
-msgstr "Ime ali e-mail naslov"
-
-msgid "Search For Events.."
-msgstr "Iskanje dogodkov..."
-
-msgid "Select calendars to display"
-msgstr "Izberite koledarje za prikaz"
-
-msgid "Show Week Numbers"
-msgstr "Pokaži številke tednov"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr ""
-
-msgid "Title"
-msgstr "Naslov"
-
-msgid "To:"
-msgstr "Do:"
-
-#. Create everything
-msgid "Today"
-msgstr "Danes"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Ko boste izbrali ustrezen datum, bodo tukaj prikazani bližnji dogodki."
+
+msgid "%B %e, %Y"
+msgstr "%e %B %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %d %b"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H.%M"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
 
 #, fuzzy
 msgid "all day"
@@ -131,9 +49,91 @@ msgstr "Celodnevno:"
 msgid "at"
 msgstr "ob"
 
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "Dodaj dogodek"
+msgid "Add Event"
+msgstr "Dodaj dogodek"
+
+msgid "Edit Event"
+msgstr "Uredi dogodek"
+
+msgid "From:"
+msgstr "Od:"
+
+msgid "All day:"
+msgstr "Celodnevno:"
+
+msgid "To:"
+msgstr "Do:"
+
+msgid "Title"
+msgstr "Naslov"
+
+msgid "Name of Event"
+msgstr "Ime dogodka"
+
+msgid "Location"
+msgstr "Kraj"
+
+msgid "John Smith OR Example St."
+msgstr "Janez Kranjski ALI Neka ul."
+
+msgid "Guests"
+msgstr "Gostje"
+
+msgid "Name or Email Address"
+msgstr "Ime ali e-mail naslov"
+
+msgid "Comments"
+msgstr "Opombe"
+
+msgid "Create Event"
+msgstr "Ustvari dogodek"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Ustvari nov dogodek"
+
+msgid "Edit the selected event"
+msgstr "Uredi izbrani dogodek"
+
+msgid "Delete the selected event"
+msgstr "Izbriši izbrani dogodek"
+
+msgid "Select calendars to display"
+msgstr "Izberite koledarje za prikaz"
+
+msgid "Search For Events.."
+msgstr "Iskanje dogodkov..."
+
+msgid "Export or Share the default Calendar"
+msgstr ""
+
+#. Create everything
+msgid "Today"
+msgstr "Danes"
+
+msgid "Fullscreen"
+msgstr "Celozaslonski način"
+
+msgid "Show Week Numbers"
+msgstr "Pokaži številke tednov"
+
+msgid "Import..."
+msgstr "Uvozi ..."
+
+msgid "Sync..."
+msgstr ""
+
+msgid "About"
+msgstr ""
 
 #~ msgid "all the day"
 #~ msgstr "cel dan"
+
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Dodaj dogodek"

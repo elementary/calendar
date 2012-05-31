@@ -18,106 +18,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-05-12 05:55+0000\n"
 "X-Generator: Launchpad (build 15225)\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Dodaj zdarzenie"
-
-msgid "All day:"
-msgstr "Cały dzień:"
-
-msgid "Comments"
-msgstr "Komentarze"
-
-msgid "Create Event"
-msgstr "Utwórz wydarzenie"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Tworzy nowe wydarzenie"
-
-msgid "Delete the selected event"
-msgstr "Usuń wybrane zdarzenie"
-
-msgid "Edit Event"
-msgstr "Edytowanie wydarzenia"
-
-msgid "Edit the selected event"
-msgstr "Edytuj wybrane zdarzenie"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "Eksportuje lub udostępnia domyślny kalendarz"
-
-msgid "From:"
-msgstr "Od:"
-
-msgid "Fullscreen"
-msgstr "Pełny ekran"
-
-msgid "Guests"
-msgstr "Goście"
-
-msgid "Import..."
-msgstr "Importuj..."
-
-msgid "John Smith OR Example St."
-msgstr "Jan Kowalski lub przykładowa ulica"
-
-msgid "Location"
-msgstr "Lokalizacja"
-
-msgid "Name of Event"
-msgstr "Nazwa wydarzenia"
-
-msgid "Name or Email Address"
-msgstr "Imię lub adres e-mail"
-
-msgid "Search For Events.."
-msgstr "Wyszukiwanie wydarzeń..."
-
-msgid "Select calendars to display"
-msgstr "Wybierz kalendarze do wyświetlenia"
-
-msgid "Show Week Numbers"
-msgstr "Wyświetlanie numerów tygodni"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Synchronizuj..."
-
-msgid "Title"
-msgstr "Tytuł"
-
-msgid "To:"
-msgstr "Do:"
-
-#. Create everything
-msgid "Today"
-msgstr "Przejdź do bieżącej daty"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -126,6 +26,24 @@ msgstr ""
 "Nadchodzące wydarzenia będą wyświetlone w tym miejscu, po zaznaczeniu ich "
 "daty."
 
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
+
 #, fuzzy
 msgid "all day"
 msgstr "Cały dzień:"
@@ -133,9 +51,91 @@ msgstr "Cały dzień:"
 msgid "at"
 msgstr "o"
 
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "Dodaj zdarzenie"
+msgid "Add Event"
+msgstr "Dodaj zdarzenie"
+
+msgid "Edit Event"
+msgstr "Edytowanie wydarzenia"
+
+msgid "From:"
+msgstr "Od:"
+
+msgid "All day:"
+msgstr "Cały dzień:"
+
+msgid "To:"
+msgstr "Do:"
+
+msgid "Title"
+msgstr "Tytuł"
+
+msgid "Name of Event"
+msgstr "Nazwa wydarzenia"
+
+msgid "Location"
+msgstr "Lokalizacja"
+
+msgid "John Smith OR Example St."
+msgstr "Jan Kowalski lub przykładowa ulica"
+
+msgid "Guests"
+msgstr "Goście"
+
+msgid "Name or Email Address"
+msgstr "Imię lub adres e-mail"
+
+msgid "Comments"
+msgstr "Komentarze"
+
+msgid "Create Event"
+msgstr "Utwórz wydarzenie"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Tworzy nowe wydarzenie"
+
+msgid "Edit the selected event"
+msgstr "Edytuj wybrane zdarzenie"
+
+msgid "Delete the selected event"
+msgstr "Usuń wybrane zdarzenie"
+
+msgid "Select calendars to display"
+msgstr "Wybierz kalendarze do wyświetlenia"
+
+msgid "Search For Events.."
+msgstr "Wyszukiwanie wydarzeń..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Eksportuje lub udostępnia domyślny kalendarz"
+
+#. Create everything
+msgid "Today"
+msgstr "Przejdź do bieżącej daty"
+
+msgid "Fullscreen"
+msgstr "Pełny ekran"
+
+msgid "Show Week Numbers"
+msgstr "Wyświetlanie numerów tygodni"
+
+msgid "Import..."
+msgstr "Importuj..."
+
+msgid "Sync..."
+msgstr "Synchronizuj..."
+
+msgid "About"
+msgstr ""
 
 #~ msgid "all the day"
 #~ msgstr "cały dzień"
+
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Dodaj zdarzenie"
