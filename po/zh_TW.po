@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-31 12:17+0200\n"
 "PO-Revision-Date: 2012-03-31 09:18+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -39,8 +39,15 @@ msgstr "加入事件"
 msgid "All day:"
 msgstr "整天："
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
 msgid "Comments"
 msgstr "評註"
+
+msgid "Contacts"
+msgstr ""
 
 msgid "Create Event"
 msgstr "建立事件"
@@ -51,6 +58,9 @@ msgstr "建立事件"
 msgid "Create a new event"
 msgstr "建立新事件"
 
+msgid "Day"
+msgstr ""
+
 msgid "Delete the selected event"
 msgstr "刪除所選事件"
 
@@ -59,6 +69,12 @@ msgstr "編輯事件"
 
 msgid "Edit the selected event"
 msgstr "編輯所選事件"
+
+msgid "Ends: \t\t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr ""
 
 msgid "Export or Share the default Calendar"
 msgstr "匯出或分享預設行事曆"
@@ -75,17 +91,30 @@ msgstr "客人"
 msgid "Import..."
 msgstr "匯入..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "王小明 或 某某街"
 
 msgid "Location"
 msgstr "地點"
 
+msgid "Month"
+msgstr ""
+
 msgid "Name of Event"
 msgstr "事件名稱"
+
+msgid "Name or Email Address"
+msgstr "名稱或電子郵件位址"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Save ical"
+msgstr ""
 
 msgid "Search For Events.."
 msgstr "搜尋事件..."
@@ -95,6 +124,9 @@ msgstr "選取要顯示的行事曆"
 
 msgid "Show Week Numbers"
 msgstr "顯示週數"
+
+msgid "Starts: \t"
+msgstr ""
 
 msgid "Sync..."
 msgstr "同步..."
@@ -109,25 +141,39 @@ msgstr "到："
 msgid "Today"
 msgstr "今日"
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Week"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "當您選取的日子有活動時，未來的活動會顯示在這裡。"
 
-msgid "all the day"
-msgstr "整天"
+#. maya.desktop:18
+#, fuzzy
+msgid "_Add Event"
+msgstr "加入事件"
+
+#, fuzzy
+msgid "all day"
+msgstr "整天："
 
 msgid "at"
 msgstr "於"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "名稱或電子郵件位址"
+msgid "calendar.ics"
+msgstr ""
 
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "加入事件"
-
-#, fuzzy
-#~ msgid "all day"
-#~ msgstr "整天："
+#~ msgid "all the day"
+#~ msgstr "整天"

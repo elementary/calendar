@@ -17,14 +17,14 @@
 
 namespace Maya.View {
 
-	/**
-	 * Sidebar is a container for widgets that belong in the sidebar,
-	 * like the AgendaView
-	 */
-	public class Sidebar : Gtk.Grid {
+    /**
+     * Sidebar is a container for widgets that belong in the sidebar,
+     * like the AgendaView
+     */
+    public class Sidebar : Gtk.Grid {
 
-		public Gtk.EventBox label_box { get; private set; }
-		public AgendaView agenda_view { get; private set; }
+        public Gtk.EventBox label_box { get; private set; }
+        public AgendaView agenda_view { get; private set; }
 
         Gtk.ScrolledWindow scrolled_window;
 
@@ -37,35 +37,35 @@ namespace Maya.View {
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
-	    public Sidebar (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
+        public Sidebar (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
             
-			scrolled_window = new Gtk.ScrolledWindow (null, null);
-			scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-			scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
-
+            scrolled_window = new Gtk.ScrolledWindow (null, null);
+            scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+            scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
+            
             label_box = new Gtk.EventBox ();
+            
+            /* label settings */
+            Gtk.Label label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
+            label.sensitive = false;
+            label.wrap = true;
+            label.wrap_mode = Pango.WrapMode.WORD;
+            label.margin_left = 12;
+            label.margin_right = 12;
+            label.justify = Gtk.Justification.CENTER;
 
-			// label settings
-			Gtk.Label label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
-			label.sensitive = false;
-			label.wrap = true;
-			label.wrap_mode = Pango.WrapMode.WORD;
-			label.margin_left = 15;
-			label.margin_right = 15;
-			label.justify = Gtk.Justification.CENTER;
+            agenda_view = new AgendaView (sourcemgr, calmodel);
 
-			agenda_view = new AgendaView (sourcemgr, calmodel);
-
-			var viewport = new Gtk.Viewport (null, null);
-			viewport.shadow_type = Gtk.ShadowType.NONE;
-			viewport.add (agenda_view);
+            var viewport = new Gtk.Viewport (null, null);
+            viewport.shadow_type = Gtk.ShadowType.NONE;
+            viewport.add (agenda_view);
             viewport.show ();
-			scrolled_window.add (viewport);
+            scrolled_window.add (viewport);
 
             label_box.add (label);
 
-			attach (label_box, 0, 0, 1, 1);
-			attach (scrolled_window, 0, 1, 1, 1);
+            attach (label_box, 0, 0, 1, 1);
+            attach (scrolled_window, 0, 1, 1, 1);
 
             scrolled_window.hide ();
 
@@ -91,7 +91,7 @@ namespace Maya.View {
             agenda_view.event_deselected.connect ((event) => (event_deselected (event)));
             agenda_view.event_removed.connect ((event) => (event_removed (event)));
             agenda_view.event_modified.connect ((event) => (event_modified (event)));
-		}
+        }
 
         public void set_selected_date (DateTime date) {
             agenda_view.set_selected_date (date);
@@ -114,7 +114,7 @@ namespace Maya.View {
             agenda_view.set_search_text (text);
         }
 
-	}
+    }
 
 }
 

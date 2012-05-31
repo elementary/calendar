@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-31 12:17+0200\n"
 "PO-Revision-Date: 2012-04-26 20:55+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -39,8 +39,15 @@ msgstr "הוספת אירוע"
 msgid "All day:"
 msgstr "כל היום:"
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
 msgid "Comments"
 msgstr "הערות"
+
+msgid "Contacts"
+msgstr ""
 
 msgid "Create Event"
 msgstr "יצירת אירוע"
@@ -51,6 +58,9 @@ msgstr "יצירת אירוע"
 msgid "Create a new event"
 msgstr "יצירת אירוע חדש"
 
+msgid "Day"
+msgstr ""
+
 msgid "Delete the selected event"
 msgstr "מחיקת האירוע הנבחר"
 
@@ -59,6 +69,12 @@ msgstr "עריכת אירוע"
 
 msgid "Edit the selected event"
 msgstr "עריכת האירוע הנבחר"
+
+msgid "Ends: \t\t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr ""
 
 msgid "Export or Share the default Calendar"
 msgstr "יצוא או שיתוף יומן בררת המחדל"
@@ -75,17 +91,30 @@ msgstr "אורחים"
 msgid "Import..."
 msgstr "יבוא..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "ישראל ישראלי או רחוב לדוגמה"
 
 msgid "Location"
 msgstr "מיקום"
 
+msgid "Month"
+msgstr ""
+
 msgid "Name of Event"
 msgstr "שם האירוע"
+
+msgid "Name or Email Address"
+msgstr "שם או כתובת דוא״ל"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Save ical"
+msgstr ""
 
 msgid "Search For Events.."
 msgstr "חיפוש אחר אירועים..."
@@ -95,6 +124,9 @@ msgstr "בחירת יומנים להצגה"
 
 msgid "Show Week Numbers"
 msgstr "הצגת מספרי שבועות"
+
+msgid "Starts: \t"
+msgstr ""
 
 msgid "Sync..."
 msgstr "סנכרון..."
@@ -109,25 +141,39 @@ msgstr "עד:"
 msgid "Today"
 msgstr "היום"
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Week"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "האירועים הקרובים שלך יוצגו כאן בעת בחירת תאריך עם אירועים."
 
-msgid "all the day"
-msgstr "כל היום"
+#. maya.desktop:18
+#, fuzzy
+msgid "_Add Event"
+msgstr "הוספת אירוע"
+
+#, fuzzy
+msgid "all day"
+msgstr "כל היום:"
 
 msgid "at"
 msgstr "ב־"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "שם או כתובת דוא״ל"
+msgid "calendar.ics"
+msgstr ""
 
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "הוספת אירוע"
-
-#, fuzzy
-#~ msgid "all day"
-#~ msgstr "כל היום:"
+#~ msgid "all the day"
+#~ msgstr "כל היום"
