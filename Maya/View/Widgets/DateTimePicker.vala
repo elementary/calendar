@@ -19,31 +19,31 @@ using Granite.Widgets;
 
 namespace Maya.View.Widgets {
 
-	public class DateTimePicker : Gtk.Grid {
-	
-		public DateTime date_time {
-			owned get { return new DateTime.local (date_picker.date.get_year (), date_picker.date.get_month (),
-					date_picker.date.get_day_of_month (), time_picker.time.get_hour (), time_picker.time.get_minute (),
-					time_picker.time.get_second ()); }
-		}
-		
-		public DatePicker date_picker { get; private set; }
-		public TimePicker time_picker { get; private set; }
-		
-		public DateTimePicker () {
-				
-			date_picker = new DatePicker ();
-			time_picker = new TimePicker ();
-			
-			// VBox properties
-			set_column_spacing (10);
-			set_column_homogeneous (false);
-			
-			attach (date_picker, 0, 0, 1, 1);
-			attach (time_picker, 1, 0, 1, 1);
-		}
-		
-	}
-	
+    public class DateTimePicker : Gtk.Grid {
+    
+        public DateTime date_time {
+            owned get { return new DateTime.local (date_picker.date.get_year (), date_picker.date.get_month (),
+                    date_picker.date.get_day_of_month (), time_picker.time.get_hour (), time_picker.time.get_minute (),
+                    time_picker.time.get_second ()); }
+        }
+        
+        public DatePicker date_picker { get; private set; }
+        public TimePicker time_picker { get; private set; }
+        
+        public DateTimePicker () {
+                
+            date_picker = new DatePicker ();
+            time_picker = new TimePicker ();
+            
+            // Grid properties
+            set_column_spacing (10);
+            set_column_homogeneous (false);
+            
+            attach (date_picker, 0, 0, 1, 1);
+            attach (time_picker, 1, 0, 1, 1);
+        }
+        
+    }
+    
 }
 

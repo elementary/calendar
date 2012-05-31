@@ -258,13 +258,12 @@ namespace Maya.View {
         void build_dialog (bool add_event) {
             
             var container = (Gtk.Container) get_content_area ();
-            container.set_vexpand(true);
-            container.set_hexpand(true);
             content_grid = new Gtk.Grid ();
-            content_grid.set_vexpand(true);
-            content_grid.set_hexpand(true);
-            content_grid.margin_left = 10;
-            content_grid.margin_right = 10;
+            content_grid.margin_left = 12;
+            content_grid.margin_right = 12;
+            content_grid.margin_top = 12;
+            content_grid.set_row_spacing (6);
+            content_grid.set_column_spacing (12);
             
             var from_label = make_label (_("From:"));
             from_date_picker = make_date_picker ();
@@ -273,7 +272,7 @@ namespace Maya.View {
             from_time_picker.notify["time"].connect ( () => {on_time_modified(0);} );
             
             var allday_label = new Gtk.Label (_("All day:"));
-            allday_label.margin_left = 10;
+            allday_label.set_alignment (1.0f, 0.5f);
             
             allday_switch = new Gtk.Switch ();
             
@@ -287,7 +286,7 @@ namespace Maya.View {
             to_time_picker.notify["time"].connect ( () => {on_time_modified(1);} );
             
             allday_switch_grid.attach (allday_switch, 0, 0, 1, 1);
-            
+            allday_switch_grid.set_valign (Gtk.Align.CENTER);
             
             allday_switch.notify["active"].connect (() => { 
                 on_date_modified (1);
@@ -324,8 +323,8 @@ namespace Maya.View {
             var comment_label = make_label (_("Comments"));
             comment_textview = new Gtk.TextView ();
             comment_textview.height_request = 100;
-            comment_textview.vexpand = true;
-            comment_textview.wrap_mode = Gtk.WrapMode.WORD_CHAR;
+            comment_textview.set_vexpand(true);
+            comment_textview.set_hexpand(true);
             
             content_grid.attach (from_label, 0, 0, 4, 1);
             content_grid.attach (from_date_picker, 0, 1, 1, 1);
@@ -355,6 +354,7 @@ namespace Maya.View {
             else {
                 create_button = add_button (Gtk.Stock.OK, Gtk.ResponseType.APPLY);
             }
+            create_button.margin_right = 5;
             show_all();
         }
         
@@ -363,7 +363,6 @@ namespace Maya.View {
             var label = new Gtk.Label ("<span weight='bold'>" + text + "</span>");
             label.use_markup = true;
             label.set_alignment (0.0f, 0.5f);
-            label.margin_top = 10;
             
             return label;
         }

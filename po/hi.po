@@ -18,106 +18,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-21 05:20+0000\n"
 "X-Generator: Launchpad (build 15120)\n"
 
-msgid "%A, %b %d"
-msgstr ""
-
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr ""
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "घटना जोडें"
-
-msgid "All day:"
-msgstr "पूरा दिन:"
-
-msgid "Comments"
-msgstr "टिप्पणियाँ"
-
-msgid "Create Event"
-msgstr "घटना बनाएँ"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "नई घटना बनाएँ"
-
-msgid "Delete the selected event"
-msgstr "चयनित घटना का नष्ट करें"
-
-msgid "Edit Event"
-msgstr "घटना का संपादन करें..."
-
-msgid "Edit the selected event"
-msgstr "चयनित घटना संपादित करें"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "देफौल्ट कैलेंडर को बाँटे या निर्यात करें"
-
-msgid "From:"
-msgstr "प्रेषक :"
-
-msgid "Fullscreen"
-msgstr "पूरी स्क्रीन"
-
-msgid "Guests"
-msgstr "मेहमान"
-
-msgid "Import..."
-msgstr "आयात करें..."
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "स्थान"
-
-msgid "Name of Event"
-msgstr "घटना का नाम"
-
-msgid "Name or Email Address"
-msgstr "नाम या ईमेल पता"
-
-msgid "Search For Events.."
-msgstr "घटना की खोज करें"
-
-msgid "Select calendars to display"
-msgstr "कैलेंडर देखने के लिए चयन करें"
-
-msgid "Show Week Numbers"
-msgstr "साप्ताहिक अंक दिखाएँ"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "समकालित करें..."
-
-msgid "Title"
-msgstr "शीर्षक"
-
-msgid "To:"
-msgstr "प्रति:"
-
-#. Create everything
-msgid "Today"
-msgstr "आज"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -126,12 +26,112 @@ msgstr ""
 "आपकी आने वाली घटनाओं को प्रदर्शित किया जाएगा जब आप घटनाओं के साथ एक तिथि का चयन "
 "करेंगे."
 
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
+
 #, fuzzy
 msgid "all day"
 msgstr "पूरा दिन:"
 
 msgid "at"
 msgstr "पर"
+
+msgid "Add Event"
+msgstr "घटना जोडें"
+
+msgid "Edit Event"
+msgstr "घटना का संपादन करें..."
+
+msgid "From:"
+msgstr "प्रेषक :"
+
+msgid "All day:"
+msgstr "पूरा दिन:"
+
+msgid "To:"
+msgstr "प्रति:"
+
+msgid "Title"
+msgstr "शीर्षक"
+
+msgid "Name of Event"
+msgstr "घटना का नाम"
+
+msgid "Location"
+msgstr "स्थान"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "मेहमान"
+
+msgid "Name or Email Address"
+msgstr "नाम या ईमेल पता"
+
+msgid "Comments"
+msgstr "टिप्पणियाँ"
+
+msgid "Create Event"
+msgstr "घटना बनाएँ"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "नई घटना बनाएँ"
+
+msgid "Edit the selected event"
+msgstr "चयनित घटना संपादित करें"
+
+msgid "Delete the selected event"
+msgstr "चयनित घटना का नष्ट करें"
+
+msgid "Select calendars to display"
+msgstr "कैलेंडर देखने के लिए चयन करें"
+
+msgid "Search For Events.."
+msgstr "घटना की खोज करें"
+
+msgid "Export or Share the default Calendar"
+msgstr "देफौल्ट कैलेंडर को बाँटे या निर्यात करें"
+
+#. Create everything
+msgid "Today"
+msgstr "आज"
+
+msgid "Fullscreen"
+msgstr "पूरी स्क्रीन"
+
+msgid "Show Week Numbers"
+msgstr "साप्ताहिक अंक दिखाएँ"
+
+msgid "Import..."
+msgstr "आयात करें..."
+
+msgid "Sync..."
+msgstr "समकालित करें..."
+
+msgid "About"
+msgstr ""
 
 #, fuzzy
 #~ msgid "_Add Event"

@@ -18,106 +18,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-25 05:07+0000\n"
 "X-Generator: Launchpad (build 15139)\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Add Event"
-
-msgid "All day:"
-msgstr "All day:"
-
-msgid "Comments"
-msgstr "Comments"
-
-msgid "Create Event"
-msgstr "Create Event"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Create a new event"
-
-msgid "Delete the selected event"
-msgstr "Delete the selected event"
-
-msgid "Edit Event"
-msgstr "Edit Event"
-
-msgid "Edit the selected event"
-msgstr "Edit the selected event"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "Export or Share the default Calendar"
-
-msgid "From:"
-msgstr "From:"
-
-msgid "Fullscreen"
-msgstr "Fullscreen"
-
-msgid "Guests"
-msgstr "Guests"
-
-msgid "Import..."
-msgstr "Import..."
-
-msgid "John Smith OR Example St."
-msgstr "John Smith OR Example St."
-
-msgid "Location"
-msgstr "Location"
-
-msgid "Name of Event"
-msgstr "Name of Event"
-
-msgid "Name or Email Address"
-msgstr "Name or Email Address"
-
-msgid "Search For Events.."
-msgstr "Search For Events.."
-
-msgid "Select calendars to display"
-msgstr "Select calendars to display"
-
-msgid "Show Week Numbers"
-msgstr "Show Week Numbers"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Sync..."
-
-msgid "Title"
-msgstr "Title"
-
-msgid "To:"
-msgstr "To:"
-
-#. Create everything
-msgid "Today"
-msgstr "Today"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -126,12 +26,112 @@ msgstr ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
+
 #, fuzzy
 msgid "all day"
 msgstr "All day:"
 
 msgid "at"
 msgstr "at"
+
+msgid "Add Event"
+msgstr "Add Event"
+
+msgid "Edit Event"
+msgstr "Edit Event"
+
+msgid "From:"
+msgstr "From:"
+
+msgid "All day:"
+msgstr "All day:"
+
+msgid "To:"
+msgstr "To:"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Name of Event"
+msgstr "Name of Event"
+
+msgid "Location"
+msgstr "Location"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith OR Example St."
+
+msgid "Guests"
+msgstr "Guests"
+
+msgid "Name or Email Address"
+msgstr "Name or Email Address"
+
+msgid "Comments"
+msgstr "Comments"
+
+msgid "Create Event"
+msgstr "Create Event"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Create a new event"
+
+msgid "Edit the selected event"
+msgstr "Edit the selected event"
+
+msgid "Delete the selected event"
+msgstr "Delete the selected event"
+
+msgid "Select calendars to display"
+msgstr "Select calendars to display"
+
+msgid "Search For Events.."
+msgstr "Search For Events.."
+
+msgid "Export or Share the default Calendar"
+msgstr "Export or Share the default Calendar"
+
+#. Create everything
+msgid "Today"
+msgstr "Today"
+
+msgid "Fullscreen"
+msgstr "Fullscreen"
+
+msgid "Show Week Numbers"
+msgstr "Show Week Numbers"
+
+msgid "Import..."
+msgstr "Import..."
+
+msgid "Sync..."
+msgstr "Sync..."
+
+msgid "About"
+msgstr ""
 
 #, fuzzy
 #~ msgid "_Add Event"

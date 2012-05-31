@@ -18,106 +18,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-23 05:05+0000\n"
 "X-Generator: Launchpad (build 14996)\n"
 
-msgid "%A, %b %d"
-msgstr ""
-
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr "%saa:%dakika"
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Ongeza tukio"
-
-msgid "All day:"
-msgstr "Siku yote"
-
-msgid "Comments"
-msgstr "Maoni"
-
-msgid "Create Event"
-msgstr "Tengeneza tukio"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Andika tukio jipya"
-
-msgid "Delete the selected event"
-msgstr "Futa hili tukio"
-
-msgid "Edit Event"
-msgstr "Hariri Tukio"
-
-msgid "Edit the selected event"
-msgstr "Hariri hili tukio"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr "Kutoka:"
-
-msgid "Fullscreen"
-msgstr "Skrini-yote"
-
-msgid "Guests"
-msgstr "Mgeni"
-
-msgid "Import..."
-msgstr "Ingiza"
-
-msgid "John Smith OR Example St."
-msgstr "John Smith au mfano St."
-
-msgid "Location"
-msgstr "Mahali"
-
-msgid "Name of Event"
-msgstr "Jina la tukio"
-
-msgid "Name or Email Address"
-msgstr "Jina au Anwani ya barua pepe"
-
-msgid "Search For Events.."
-msgstr "Tafuta matukio"
-
-msgid "Select calendars to display"
-msgstr "Chagua kalenda zionyeshwe"
-
-msgid "Show Week Numbers"
-msgstr "Onesha namba za wiki"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Sync..."
-
-msgid "Title"
-msgstr ""
-
-msgid "To:"
-msgstr "Kwa:"
-
-#. Create everything
-msgid "Today"
-msgstr "Leo"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -125,12 +25,112 @@ msgid ""
 msgstr ""
 "Matukio yako ya jayo yataoshwa hapa wakati kama utachagua tarehe na matukio."
 
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "%H:%M"
+msgstr "%saa:%dakika"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
+
 #, fuzzy
 msgid "all day"
 msgstr "Siku yote"
 
 msgid "at"
 msgstr "katika"
+
+msgid "Add Event"
+msgstr "Ongeza tukio"
+
+msgid "Edit Event"
+msgstr "Hariri Tukio"
+
+msgid "From:"
+msgstr "Kutoka:"
+
+msgid "All day:"
+msgstr "Siku yote"
+
+msgid "To:"
+msgstr "Kwa:"
+
+msgid "Title"
+msgstr ""
+
+msgid "Name of Event"
+msgstr "Jina la tukio"
+
+msgid "Location"
+msgstr "Mahali"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith au mfano St."
+
+msgid "Guests"
+msgstr "Mgeni"
+
+msgid "Name or Email Address"
+msgstr "Jina au Anwani ya barua pepe"
+
+msgid "Comments"
+msgstr "Maoni"
+
+msgid "Create Event"
+msgstr "Tengeneza tukio"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Andika tukio jipya"
+
+msgid "Edit the selected event"
+msgstr "Hariri hili tukio"
+
+msgid "Delete the selected event"
+msgstr "Futa hili tukio"
+
+msgid "Select calendars to display"
+msgstr "Chagua kalenda zionyeshwe"
+
+msgid "Search For Events.."
+msgstr "Tafuta matukio"
+
+msgid "Export or Share the default Calendar"
+msgstr ""
+
+#. Create everything
+msgid "Today"
+msgstr "Leo"
+
+msgid "Fullscreen"
+msgstr "Skrini-yote"
+
+msgid "Show Week Numbers"
+msgstr "Onesha namba za wiki"
+
+msgid "Import..."
+msgstr "Ingiza"
+
+msgid "Sync..."
+msgstr "Sync..."
+
+msgid "About"
+msgstr ""
 
 #, fuzzy
 #~ msgid "_Add Event"

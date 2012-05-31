@@ -18,110 +18,28 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-05-31 05:12+0000\n"
 "X-Generator: Launchpad (build 15322)\n"
 
-msgid "%A, %b %d"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
 
 msgid "%B %e, %Y"
 msgstr ""
 
-msgid "%H:%M"
-msgstr "%ঘন্টা:%মিনিট"
+msgid "%A, %b %d"
+msgstr ""
 
 msgid "%l:%M %p"
 msgstr ""
 
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "নতুন অনুষ্ঠান"
-
-msgid "All day:"
-msgstr "দিনব্যাপী"
-
-msgid "Comments"
-msgstr "মন্তব্য"
-
-msgid "Create Event"
-msgstr "নতুন অনুষ্ঠান"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "নতুন অনুষ্ঠান"
-
-msgid "Delete the selected event"
-msgstr ""
-
-msgid "Edit Event"
-msgstr "অনুষ্ঠান সম্পাদনা"
-
-msgid "Edit the selected event"
-msgstr ""
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr "প্রেরক:"
-
-msgid "Fullscreen"
-msgstr ""
-
-msgid "Guests"
-msgstr "অতিথি"
-
-msgid "Import..."
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "ঠিকানা"
-
-msgid "Name of Event"
-msgstr "অনুষ্ঠানের নাম"
-
-msgid "Name or Email Address"
-msgstr "নাম এবন্দ ইমেল এড্রেস"
-
-msgid "Search For Events.."
-msgstr ""
-
-msgid "Select calendars to display"
-msgstr ""
-
-msgid "Show Week Numbers"
-msgstr ""
+msgid "%H:%M"
+msgstr "%ঘন্টা:%মিনিট"
 
 msgid "Starts"
 msgstr ""
 
-msgid "Sync..."
-msgstr ""
-
-msgid "Title"
-msgstr "পদ"
-
-msgid "To:"
-msgstr "প্রাপক:"
-
-#. Create everything
-msgid "Today"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
+msgid "Ends"
 msgstr ""
 
 #, fuzzy
@@ -130,3 +48,89 @@ msgstr "দিনব্যাপী"
 
 msgid "at"
 msgstr "তে"
+
+msgid "Add Event"
+msgstr "নতুন অনুষ্ঠান"
+
+msgid "Edit Event"
+msgstr "অনুষ্ঠান সম্পাদনা"
+
+msgid "From:"
+msgstr "প্রেরক:"
+
+msgid "All day:"
+msgstr "দিনব্যাপী"
+
+msgid "To:"
+msgstr "প্রাপক:"
+
+msgid "Title"
+msgstr "পদ"
+
+msgid "Name of Event"
+msgstr "অনুষ্ঠানের নাম"
+
+msgid "Location"
+msgstr "ঠিকানা"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "অতিথি"
+
+msgid "Name or Email Address"
+msgstr "নাম এবন্দ ইমেল এড্রেস"
+
+msgid "Comments"
+msgstr "মন্তব্য"
+
+msgid "Create Event"
+msgstr "নতুন অনুষ্ঠান"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "নতুন অনুষ্ঠান"
+
+msgid "Edit the selected event"
+msgstr ""
+
+msgid "Delete the selected event"
+msgstr ""
+
+msgid "Select calendars to display"
+msgstr ""
+
+msgid "Search For Events.."
+msgstr ""
+
+msgid "Export or Share the default Calendar"
+msgstr ""
+
+#. Create everything
+msgid "Today"
+msgstr ""
+
+msgid "Fullscreen"
+msgstr ""
+
+msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Import..."
+msgstr ""
+
+msgid "Sync..."
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "নতুন অনুষ্ঠান"

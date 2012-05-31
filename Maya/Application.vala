@@ -19,7 +19,7 @@ namespace Maya {
 
     namespace Option {
 
-		private static bool ADD_EVENT = false;
+        private static bool ADD_EVENT = false;
         private static bool IMPORT_CALENDAR = false;
     }
 
@@ -44,63 +44,63 @@ namespace Maya {
     /**
      * Main application class.
      */
-	public class Application : Granite.Application {
+    public class Application : Granite.Application {
 
         /**
          * Initializes environment variables
          */
-		construct {
+        construct {
 
-			// App info
-			build_data_dir = Build.DATADIR;
-			build_pkg_data_dir = Build.PKGDATADIR;
-			build_release_name = Build.RELEASE_NAME;
-			build_version = Build.VERSION;
-			build_version_info = Build.VERSION_INFO;
+            // App info
+            build_data_dir = Build.DATADIR;
+            build_pkg_data_dir = Build.PKGDATADIR;
+            build_release_name = Build.RELEASE_NAME;
+            build_version = Build.VERSION;
+            build_version_info = Build.VERSION_INFO;
 
-			program_name = "Maya";
-			exec_name = "maya";
+            program_name = "Maya";
+            exec_name = "maya";
 
-			app_years = "2011-2012";
-			application_id = "net.launchpad.maya";
-			app_icon = "office-calendar";
-			app_launcher = "maya.desktop";
+            app_years = "2011-2012";
+            application_id = "net.launchpad.maya";
+            app_icon = "office-calendar";
+            app_launcher = "maya.desktop";
 
-			main_url = "https://launchpad.net/maya";
-			bug_url = "https://bugs.launchpad.net/maya";
-			help_url = "https://answers.launchpad.net/maya";
-			translate_url = "https://translations.launchpad.net/maya";
+            main_url = "https://launchpad.net/maya";
+            bug_url = "https://bugs.launchpad.net/maya";
+            help_url = "https://answers.launchpad.net/maya";
+            translate_url = "https://translations.launchpad.net/maya";
 
-			about_authors = {
-				"Maxwell Barvian <maxwell@elementaryos.org>",
-				"Jaap Broekhuizen <jaapz.b@gmail.com>",
-				"Avi Romanoff <aviromanoff@gmail.com>",
-				"Allen Lowe <lallenlowe@gmail.com>",
-				"Niels Avonds <niels.avonds@gmail.com>",
-				"Corentin Noël <tintou@mailoo.org>"
-			};
-			about_documenters = {
-				"Maxwell Barvian <maxwell@elementaryos.org>"
-			};
-			about_artists = {
-				"Daniel Foré <bunny@go-docky.com>"
-			};
-			about_translators = "Launchpad Translators";
+            about_authors = {
+                "Maxwell Barvian <maxwell@elementaryos.org>",
+                "Jaap Broekhuizen <jaapz.b@gmail.com>",
+                "Avi Romanoff <aviromanoff@gmail.com>",
+                "Allen Lowe <lallenlowe@gmail.com>",
+                "Niels Avonds <niels.avonds@gmail.com>",
+                "Corentin Noël <tintou@mailoo.org>"
+            };
+            about_documenters = {
+                "Maxwell Barvian <maxwell@elementaryos.org>"
+            };
+            about_artists = {
+                "Daniel Foré <bunny@go-docky.com>"
+            };
+            about_translators = "Launchpad Translators";
             about_license_type = Gtk.License.GPL_3_0;
-		}
+        }
 
-		public static const OptionEntry[] app_options = {
-			{ "add-event", 'a', 0, OptionArg.NONE, out Option.ADD_EVENT, "Show an add event dialog", null },
-			{ "import-ical", 'i', 0, OptionArg.STRING, out Option.IMPORT_CALENDAR, "Import quickly an ical", null },
-			{ null }
-		};
+        public static const OptionEntry[] app_options = {
+            { "add-event", 'a', 0, OptionArg.NONE, out Option.ADD_EVENT, "Show an add event dialog", null },
+            { "import-ical", 'i', 0, OptionArg.STRING, out Option.IMPORT_CALENDAR, "Import quickly an ical", null },
+            { null }
+        };
 
-		Settings.SavedState saved_state;
+        Settings.SavedState saved_state;
 
         Gtk.Window window;
-		View.MayaToolbar toolbar;
-		View.CalendarView calview;
-		View.Sidebar sidebar;
+        View.MayaToolbar toolbar;
+        View.CalendarView calview;
+        View.Sidebar sidebar;
         Gtk.Paned hpaned;
 
         Model.SourceManager sourcemgr;
@@ -112,31 +112,31 @@ namespace Maya {
         /**
          * Called when the application is activated.
          */
-		protected override void activate () {
-			if (get_windows () != null) {
-				get_windows ().data.present (); // present window if app is already running
-			    return;
-			}
+        protected override void activate () {
+            if (get_windows () != null) {
+                get_windows ().data.present (); // present window if app is already running
+                return;
+            }
 
             init_prefs ();
             init_models ();
             init_gui ();
-		    window.show_all ();
+            window.show_all ();
 
-			if (Option.ADD_EVENT) {
-			    on_tb_add_clicked (calview.grid.selected_date);
-			}
+            if (Option.ADD_EVENT) {
+                on_tb_add_clicked (calview.grid.selected_date);
+            }
 
-            Gtk.main();
-		}
+            Gtk.main ();
+        }
 
         /**
          * Initializes the preferences
          */
         void init_prefs () {
 
-			saved_state = new Settings.SavedState ();
-			saved_state.changed["show-weeks"].connect (on_saved_state_show_weeks_changed);
+            saved_state = new Settings.SavedState ();
+            saved_state.changed["show-weeks"].connect (on_saved_state_show_weeks_changed);
 
         }
 
@@ -197,12 +197,12 @@ namespace Maya {
 
             create_window ();
 
-			create_toolbar ();
+            create_toolbar ();
 
-			calview = new View.CalendarView (calmodel, saved_state.show_weeks);
+            calview = new View.CalendarView (calmodel, saved_state.show_weeks);
             calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
 
-			sidebar = new View.Sidebar (sourcemgr, calmodel);
+            sidebar = new View.Sidebar (sourcemgr, calmodel);
             // Don't automatically display all the widgets on the sidebar
             sidebar.no_show_all = true;
             sidebar.show ();
@@ -217,22 +217,22 @@ namespace Maya {
 
             calmodel.load_all_sources ();
 
-			var gridcontainer = new Gtk.Grid ();
-			hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
+            var gridcontainer = new Gtk.Grid ();
+            hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
             calview.set_vexpand(true);
-			hpaned.pack1 (calview, true, false);
-			hpaned.pack2 (sidebar, true, false);
-			hpaned.position = saved_state.hpaned_position;
-			gridcontainer.attach (toolbar, 0, 0, 1, 1);
-			gridcontainer.attach (hpaned, 0, 1, 1, 1);
-			window.add (gridcontainer);
+            hpaned.pack1 (calview, true, false);
+            hpaned.pack2 (sidebar, true, false);
+            hpaned.position = saved_state.hpaned_position;
+            gridcontainer.attach (toolbar, 0, 0, 1, 1);
+            gridcontainer.attach (hpaned, 0, 1, 1, 1);
+            window.add (gridcontainer);
 
             add_window(window);
 
-			if (saved_state.window_state == Settings.WindowStateMaya.MAXIMIZED)
-				window.maximize ();
-			else if (saved_state.window_state == Settings.WindowStateMaya.FULLSCREEN)
-				window.fullscreen ();
+            if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
+                window.maximize ();
+            else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
+                window.fullscreen ();
 
             calview.today();
             
@@ -285,11 +285,11 @@ namespace Maya {
          */
         void create_window () {
             window = new Gtk.Window ();
-			window.title = "Maya";
-			window.icon_name = "office-calendar";
-			window.set_size_request (700, 400);
-			window.default_width = saved_state.window_width;
-			window.default_height = saved_state.window_height;
+            window.title = "Maya";
+            window.icon_name = "office-calendar";
+            window.set_size_request (700, 400);
+            window.default_width = saved_state.window_width;
+            window.default_height = saved_state.window_height;
             window.delete_event.connect (on_window_delete_event);
             window.destroy.connect (() => Gtk.main_quit ());
         }
@@ -299,56 +299,56 @@ namespace Maya {
          */
         void create_toolbar () {
             toolbar = new View.MayaToolbar (calmodel.month_start);
-			toolbar.button_add.clicked.connect (() => on_tb_add_clicked (calview.grid.selected_date));
-			toolbar.edit_button.clicked.connect (() => on_modified (sidebar_selected_event));
-			toolbar.delete_button.clicked.connect (() => on_remove (sidebar_selected_event));
-			toolbar.button_calendar_sources.clicked.connect (on_tb_sources_clicked);
-			toolbar.menu.today.activate.connect (on_menu_today_toggled);
-			toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);
-			toolbar.menu.weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
-			toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowStateMaya.FULLSCREEN);
+            toolbar.button_add.clicked.connect (() => on_tb_add_clicked (calview.grid.selected_date));
+            toolbar.edit_button.clicked.connect (() => on_modified (sidebar_selected_event));
+            toolbar.delete_button.clicked.connect (() => on_remove (sidebar_selected_event));
+            toolbar.button_calendar_sources.clicked.connect (on_tb_sources_clicked);
+            toolbar.menu.today.activate.connect (on_menu_today_toggled);
+            toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);
+            toolbar.menu.weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
+            toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
             toolbar.menu.about.activate.connect (() => show_about(window));
-			toolbar.menu.weeknumbers.active = saved_state.show_weeks;
+            toolbar.menu.weeknumbers.active = saved_state.show_weeks;
             toolbar.search_bar.text_changed_pause.connect ((text) => on_search (text));
 
-			toolbar.month_switcher.left_clicked.connect (on_tb_month_switcher_left_clicked);
-			toolbar.month_switcher.right_clicked.connect (on_tb_month_switcher_right_clicked);
-			toolbar.year_switcher.left_clicked.connect (on_tb_year_switcher_left_clicked);
-			toolbar.year_switcher.right_clicked.connect (on_tb_year_switcher_right_clicked);
+            toolbar.month_switcher.left_clicked.connect (on_tb_month_switcher_left_clicked);
+            toolbar.month_switcher.right_clicked.connect (on_tb_month_switcher_right_clicked);
+            toolbar.year_switcher.left_clicked.connect (on_tb_year_switcher_left_clicked);
+            toolbar.year_switcher.right_clicked.connect (on_tb_year_switcher_right_clicked);
         }
 
-		void update_saved_state () {
+        void update_saved_state () {
 
             debug("Updating saved state");
 
-			// Save window state
-			if ((window.get_window ().get_state () & Settings.WindowStateMaya.MAXIMIZED) != 0)
-				saved_state.window_state = Settings.WindowStateMaya.MAXIMIZED;
-			else if ((window.get_window ().get_state () & Settings.WindowStateMaya.FULLSCREEN) != 0)
-				saved_state.window_state = Settings.WindowStateMaya.FULLSCREEN;
-			else
-				saved_state.window_state = Settings.WindowStateMaya.NORMAL;
-			
-			// Save window size
-			if (saved_state.window_state == Settings.WindowStateMaya.NORMAL) {
-				int width, height;
-				window.get_size (out width, out height);
-				saved_state.window_width = width;
-				saved_state.window_height = height;
-			}
-			
-			saved_state.hpaned_position = hpaned.position;
-		}
+            // Save window state
+            if ((window.get_window ().get_state () & Settings.WindowState.MAXIMIZED) != 0)
+                saved_state.window_state = Settings.WindowState.MAXIMIZED;
+            else if ((window.get_window ().get_state () & Settings.WindowState.FULLSCREEN) != 0)
+                saved_state.window_state = Settings.WindowState.FULLSCREEN;
+            else
+                saved_state.window_state = Settings.WindowState.NORMAL;
+            
+            // Save window size
+            if (saved_state.window_state == Settings.WindowState.NORMAL) {
+                int width, height;
+                window.get_size (out width, out height);
+                saved_state.window_width = width;
+                saved_state.window_height = height;
+            }
+            
+            saved_state.hpaned_position = hpaned.position;
+        }
 
         //--- SIGNAL HANDLERS ---//
 
-		void on_toggle_fullscreen () {
+        void on_toggle_fullscreen () {
 
-			if (toolbar.menu.fullscreen.active)
-				window.fullscreen ();
-			else
-				window.unfullscreen ();
-		}
+            if (toolbar.menu.fullscreen.active)
+                window.fullscreen ();
+            else
+                window.unfullscreen ();
+        }
 
         void on_event_dialog_response (View.EventDialog dialog, int response_id, bool add_event)  {
 
@@ -358,7 +358,7 @@ namespace Maya {
 
             dialog.dispose ();
 
-		    if (response_id != Gtk.ResponseType.APPLY)
+            if (response_id != Gtk.ResponseType.APPLY)
                 return;
             
             if (add_event)
@@ -383,7 +383,7 @@ namespace Maya {
 
         void on_tb_add_clicked (DateTime dt) {
             var event = new E.CalComponent ();
-			event.set_new_vtype (E.CalComponentVType.EVENT);
+            event.set_new_vtype (E.CalComponentVType.EVENT);
 
             iCal.icaltimetype date = iCal.icaltime_from_day_of_year (dt.get_day_of_year()+1, dt.get_year());
             unowned iCal.icalcomponent comp = event.get_icalcomponent ();
@@ -406,7 +406,7 @@ namespace Maya {
             }
             source_selector.move_to_widget (widget);
             source_selector.show_all ();
-	        source_selector.run ();
+            source_selector.run ();
             source_selector.destroy ();
         }
 
@@ -451,7 +451,7 @@ namespace Maya {
             sourcemgr.toggle_source_status (group, path);
         }
 
-	}
+    }
 
     internal void desktop_translations () {
         // maya.desktop:6

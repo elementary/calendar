@@ -18,106 +18,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-06 04:45+0000\n"
 "X-Generator: Launchpad (build 15060)\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b, %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Gebeurtenis toevoegen"
-
-msgid "All day:"
-msgstr "De hele dag:"
-
-msgid "Comments"
-msgstr "Opmerkingen"
-
-msgid "Create Event"
-msgstr "Maak gebeurtenis"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Maak een nieuwe gebeurtenis aan"
-
-msgid "Delete the selected event"
-msgstr "De geselecteerde gebeurtenis verwijderen"
-
-msgid "Edit Event"
-msgstr "Gebeurtenis bewerken"
-
-msgid "Edit the selected event"
-msgstr "De geselecteerde gebeurtenis bewerken"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "Exporteer of Deel de standaardagenda"
-
-msgid "From:"
-msgstr "Van:"
-
-msgid "Fullscreen"
-msgstr "Volledig Scherm"
-
-msgid "Guests"
-msgstr "Gasten"
-
-msgid "Import..."
-msgstr "Importeren..."
-
-msgid "John Smith OR Example St."
-msgstr "Jan Smit OF Voorbeeldlaan"
-
-msgid "Location"
-msgstr "Plaats"
-
-msgid "Name of Event"
-msgstr "Gebeurtenisnaam"
-
-msgid "Name or Email Address"
-msgstr "Naam of Emailadres"
-
-msgid "Search For Events.."
-msgstr "Gebeurtenissen zoeken."
-
-msgid "Select calendars to display"
-msgstr "Selecteer agenda's om weer te geven"
-
-msgid "Show Week Numbers"
-msgstr "Weeknummers tonen"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Synchroniseren..."
-
-msgid "Title"
-msgstr "Titel"
-
-msgid "To:"
-msgstr "Tot:"
-
-#. Create everything
-msgid "Today"
-msgstr "Vandaag"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -126,12 +26,112 @@ msgstr ""
 "Uw aanstaande gebeurtenissen zullen hier getoond worden wanneer u een datum "
 "met gebeurtenissen selecteert."
 
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b, %d"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
+
 #, fuzzy
 msgid "all day"
 msgstr "De hele dag:"
 
 msgid "at"
 msgstr "om"
+
+msgid "Add Event"
+msgstr "Gebeurtenis toevoegen"
+
+msgid "Edit Event"
+msgstr "Gebeurtenis bewerken"
+
+msgid "From:"
+msgstr "Van:"
+
+msgid "All day:"
+msgstr "De hele dag:"
+
+msgid "To:"
+msgstr "Tot:"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Name of Event"
+msgstr "Gebeurtenisnaam"
+
+msgid "Location"
+msgstr "Plaats"
+
+msgid "John Smith OR Example St."
+msgstr "Jan Smit OF Voorbeeldlaan"
+
+msgid "Guests"
+msgstr "Gasten"
+
+msgid "Name or Email Address"
+msgstr "Naam of Emailadres"
+
+msgid "Comments"
+msgstr "Opmerkingen"
+
+msgid "Create Event"
+msgstr "Maak gebeurtenis"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Maak een nieuwe gebeurtenis aan"
+
+msgid "Edit the selected event"
+msgstr "De geselecteerde gebeurtenis bewerken"
+
+msgid "Delete the selected event"
+msgstr "De geselecteerde gebeurtenis verwijderen"
+
+msgid "Select calendars to display"
+msgstr "Selecteer agenda's om weer te geven"
+
+msgid "Search For Events.."
+msgstr "Gebeurtenissen zoeken."
+
+msgid "Export or Share the default Calendar"
+msgstr "Exporteer of Deel de standaardagenda"
+
+#. Create everything
+msgid "Today"
+msgstr "Vandaag"
+
+msgid "Fullscreen"
+msgstr "Volledig Scherm"
+
+msgid "Show Week Numbers"
+msgstr "Weeknummers tonen"
+
+msgid "Import..."
+msgstr "Importeren..."
+
+msgid "Sync..."
+msgstr "Synchroniseren..."
+
+msgid "About"
+msgstr ""
 
 #, fuzzy
 #~ msgid "_Add Event"

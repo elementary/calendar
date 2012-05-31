@@ -18,106 +18,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-29 04:51+0000\n"
 "X-Generator: Launchpad (build 15032)\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%l.%M %p"
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "Lag hending"
-
-msgid "All day:"
-msgstr "Heile dagen:"
-
-msgid "Comments"
-msgstr "Kommentarar"
-
-msgid "Create Event"
-msgstr "Lag hending"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Lag ei ny hending"
-
-msgid "Delete the selected event"
-msgstr "Slett denne hendinga"
-
-msgid "Edit Event"
-msgstr "Endre hending"
-
-msgid "Edit the selected event"
-msgstr "Endre denne hendinga"
-
-msgid "Ends"
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "Eksporter eller del kalenderen som er standard"
-
-msgid "From:"
-msgstr "Frå:"
-
-msgid "Fullscreen"
-msgstr "Fullskjerm"
-
-msgid "Guests"
-msgstr "Gjestar"
-
-msgid "Import..."
-msgstr "Importer..."
-
-msgid "John Smith OR Example St."
-msgstr "John Smith ELLER Eksempel gate"
-
-msgid "Location"
-msgstr "Stad"
-
-msgid "Name of Event"
-msgstr "Namn på hending"
-
-msgid "Name or Email Address"
-msgstr "Namn eller epostadresse"
-
-msgid "Search For Events.."
-msgstr "Søk etter hendingar.."
-
-msgid "Select calendars to display"
-msgstr "Vel kva kalenderar som skal visast"
-
-msgid "Show Week Numbers"
-msgstr "Vis vekenummer"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Synkroniser..."
-
-msgid "Title"
-msgstr "Tittel"
-
-msgid "To:"
-msgstr "Til:"
-
-#. Create everything
-msgid "Today"
-msgstr "I dag"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -125,12 +25,112 @@ msgid ""
 msgstr ""
 "Dine komande hendingar vil verta vist her, når du vel ein dato med hendingar."
 
+msgid "%B %e, %Y"
+msgstr "%B %e %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%l.%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Ends"
+msgstr ""
+
 #, fuzzy
 msgid "all day"
 msgstr "Heile dagen:"
 
 msgid "at"
 msgstr "til"
+
+msgid "Add Event"
+msgstr "Lag hending"
+
+msgid "Edit Event"
+msgstr "Endre hending"
+
+msgid "From:"
+msgstr "Frå:"
+
+msgid "All day:"
+msgstr "Heile dagen:"
+
+msgid "To:"
+msgstr "Til:"
+
+msgid "Title"
+msgstr "Tittel"
+
+msgid "Name of Event"
+msgstr "Namn på hending"
+
+msgid "Location"
+msgstr "Stad"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith ELLER Eksempel gate"
+
+msgid "Guests"
+msgstr "Gjestar"
+
+msgid "Name or Email Address"
+msgstr "Namn eller epostadresse"
+
+msgid "Comments"
+msgstr "Kommentarar"
+
+msgid "Create Event"
+msgstr "Lag hending"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Lag ei ny hending"
+
+msgid "Edit the selected event"
+msgstr "Endre denne hendinga"
+
+msgid "Delete the selected event"
+msgstr "Slett denne hendinga"
+
+msgid "Select calendars to display"
+msgstr "Vel kva kalenderar som skal visast"
+
+msgid "Search For Events.."
+msgstr "Søk etter hendingar.."
+
+msgid "Export or Share the default Calendar"
+msgstr "Eksporter eller del kalenderen som er standard"
+
+#. Create everything
+msgid "Today"
+msgstr "I dag"
+
+msgid "Fullscreen"
+msgstr "Fullskjerm"
+
+msgid "Show Week Numbers"
+msgstr "Vis vekenummer"
+
+msgid "Import..."
+msgstr "Importer..."
+
+msgid "Sync..."
+msgstr "Synkroniser..."
+
+msgid "About"
+msgstr ""
 
 #, fuzzy
 #~ msgid "_Add Event"

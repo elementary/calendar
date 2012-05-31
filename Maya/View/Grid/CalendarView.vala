@@ -45,9 +45,7 @@ public class CalendarView : Gtk.Grid {
         grid = new Grid ();
         grid.on_event_add.connect ((date) => on_event_add (date));
         
-        // HBox properties
-        //spacing = 0;
-        //homogeneous = false;
+        // Grid properties
         
         attach (header, 1, 0, 1, 1);
         attach (grid, 1, 1, 1, 1);
