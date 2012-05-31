@@ -48,8 +48,6 @@ namespace Maya.View {
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
 
         public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
-        
-            this.resizable = false;
 
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
 

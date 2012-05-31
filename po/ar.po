@@ -18,69 +18,26 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-05-08 05:22+0000\n"
 "X-Generator: Launchpad (build 15204)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr "يتم هنا عرض الأحداث القادمة الخاصة بك عند إختيارك لتاريخ مسجل به أحداث"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+msgid "%H:%M"
+msgstr "%H:%M"
 
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Starts"
+msgid "About"
 msgstr ""
-
-msgid "Ends"
-msgstr ""
-
-#, fuzzy
-msgid "all day"
-msgstr "اليوم بأكمله:"
-
-msgid "at"
-msgstr "في"
 
 msgid "Add Event"
 msgstr "إضافة حدث"
 
-msgid "Edit Event"
-msgstr "تعديل الحدث"
-
-msgid "From:"
-msgstr "من:"
-
 msgid "All day:"
 msgstr "اليوم بأكمله:"
-
-msgid "To:"
-msgstr "إلى:"
-
-msgid "Title"
-msgstr "العنوان"
-
-msgid "Name of Event"
-msgstr "إسم الحدث"
-
-msgid "Location"
-msgstr "المكان"
-
-msgid "John Smith OR Example St."
-msgstr "جون سميث أو شارع (إسم شارع)"
-
-msgid "Guests"
-msgstr "المدعويين"
-
-msgid "Name or Email Address"
-msgstr "الإسم أو البريد الإلكتروني"
 
 msgid "Comments"
 msgstr "التعليقات"
@@ -88,48 +45,91 @@ msgstr "التعليقات"
 msgid "Create Event"
 msgstr "إنشاء حدث"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
 msgstr "إنشاء حدث جديد"
 
-msgid "Edit the selected event"
-msgstr "تعديل الحدث المحدد"
-
 msgid "Delete the selected event"
 msgstr "إلغاء الحدث المحدد"
 
-msgid "Select calendars to display"
-msgstr "إختار التقويمات التي تود عرضها"
+msgid "Edit Event"
+msgstr "تعديل الحدث"
+
+msgid "Edit the selected event"
+msgstr "تعديل الحدث المحدد"
+
+msgid "Ends"
+msgstr ""
+
+msgid "Export or Share the default Calendar"
+msgstr "تصدير أو مشاركة التقويم الإفتراضي"
+
+msgid "From:"
+msgstr "من:"
+
+msgid "Fullscreen"
+msgstr "عرض على كامل الشاشة"
+
+msgid "Guests"
+msgstr "المدعويين"
+
+msgid "Import..."
+msgstr "إستيراد..."
+
+msgid "John Smith OR Example St."
+msgstr "جون سميث أو شارع (إسم شارع)"
+
+msgid "Location"
+msgstr "المكان"
+
+msgid "Name of Event"
+msgstr "إسم الحدث"
+
+msgid "Name or Email Address"
+msgstr "الإسم أو البريد الإلكتروني"
 
 msgid "Search For Events.."
 msgstr "البحث عن أحداث.."
 
-msgid "Export or Share the default Calendar"
-msgstr "تصدير أو مشاركة التقويم الإفتراضي"
+msgid "Select calendars to display"
+msgstr "إختار التقويمات التي تود عرضها"
+
+msgid "Show Week Numbers"
+msgstr "إظهار أرقام الأسابيع"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Sync..."
+msgstr "تزامن..."
+
+msgid "Title"
+msgstr "العنوان"
+
+msgid "To:"
+msgstr "إلى:"
 
 #. Create everything
 msgid "Today"
 msgstr "اليوم"
 
-msgid "Fullscreen"
-msgstr "عرض على كامل الشاشة"
-
-msgid "Show Week Numbers"
-msgstr "إظهار أرقام الأسابيع"
-
-msgid "Import..."
-msgstr "إستيراد..."
-
-msgid "Sync..."
-msgstr "تزامن..."
-
-msgid "About"
+msgid "Your event has to be named and has to have a valid date"
 msgstr ""
+
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr "يتم هنا عرض الأحداث القادمة الخاصة بك عند إختيارك لتاريخ مسجل به أحداث"
+
+#, fuzzy
+msgid "all day"
+msgstr "اليوم بأكمله:"
+
+msgid "at"
+msgstr "في"
 
 #, fuzzy
 #~ msgid "_Add Event"

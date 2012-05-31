@@ -18,6 +18,106 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-05-15 05:13+0000\n"
 "X-Generator: Launchpad (build 15238)\n"
 
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr ""
+
+msgid "Add Event"
+msgstr "Aggiungi evento"
+
+msgid "All day:"
+msgstr "Giornata intera"
+
+msgid "Comments"
+msgstr "Commenti"
+
+msgid "Create Event"
+msgstr "Crea evento"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Crea un nuovo evento"
+
+msgid "Delete the selected event"
+msgstr "Cancella l'evento selezionato"
+
+msgid "Edit Event"
+msgstr "Modifica evento"
+
+msgid "Edit the selected event"
+msgstr "Modifica l'evento selezionato"
+
+msgid "Ends"
+msgstr ""
+
+msgid "Export or Share the default Calendar"
+msgstr "Esporta o Condividi il calendario predefinito"
+
+msgid "From:"
+msgstr "Da:"
+
+msgid "Fullscreen"
+msgstr "Schermo intero"
+
+msgid "Guests"
+msgstr "Ospiti"
+
+msgid "Import..."
+msgstr "Importa..."
+
+msgid "John Smith OR Example St."
+msgstr "Mario Rossi  O Viale Esempio"
+
+msgid "Location"
+msgstr "Luogo"
+
+msgid "Name of Event"
+msgstr "Nome dell'evento"
+
+msgid "Name or Email Address"
+msgstr "Nome o Indirizzo email"
+
+msgid "Search For Events.."
+msgstr "Cerca eventi.."
+
+msgid "Select calendars to display"
+msgstr "Seleziona i calendari da mostrare"
+
+msgid "Show Week Numbers"
+msgstr "Mostra i numeri delle settimane"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Sync..."
+msgstr "Sincronizza..."
+
+msgid "Title"
+msgstr "Nome"
+
+msgid "To:"
+msgstr "a:"
+
+#. Create everything
+msgid "Today"
+msgstr "Oggi"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -26,112 +126,12 @@ msgstr ""
 "Gli eventi prossimi saranno mostrati qui non appena avrai selezionato una "
 "data con un evento"
 
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Ends"
-msgstr ""
-
 #, fuzzy
 msgid "all day"
 msgstr "Giornata intera"
 
 msgid "at"
 msgstr "alle"
-
-msgid "Add Event"
-msgstr "Aggiungi evento"
-
-msgid "Edit Event"
-msgstr "Modifica evento"
-
-msgid "From:"
-msgstr "Da:"
-
-msgid "All day:"
-msgstr "Giornata intera"
-
-msgid "To:"
-msgstr "a:"
-
-msgid "Title"
-msgstr "Nome"
-
-msgid "Name of Event"
-msgstr "Nome dell'evento"
-
-msgid "Location"
-msgstr "Luogo"
-
-msgid "John Smith OR Example St."
-msgstr "Mario Rossi  O Viale Esempio"
-
-msgid "Guests"
-msgstr "Ospiti"
-
-msgid "Name or Email Address"
-msgstr "Nome o Indirizzo email"
-
-msgid "Comments"
-msgstr "Commenti"
-
-msgid "Create Event"
-msgstr "Crea evento"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Crea un nuovo evento"
-
-msgid "Edit the selected event"
-msgstr "Modifica l'evento selezionato"
-
-msgid "Delete the selected event"
-msgstr "Cancella l'evento selezionato"
-
-msgid "Select calendars to display"
-msgstr "Seleziona i calendari da mostrare"
-
-msgid "Search For Events.."
-msgstr "Cerca eventi.."
-
-msgid "Export or Share the default Calendar"
-msgstr "Esporta o Condividi il calendario predefinito"
-
-#. Create everything
-msgid "Today"
-msgstr "Oggi"
-
-msgid "Fullscreen"
-msgstr "Schermo intero"
-
-msgid "Show Week Numbers"
-msgstr "Mostra i numeri delle settimane"
-
-msgid "Import..."
-msgstr "Importa..."
-
-msgid "Sync..."
-msgstr "Sincronizza..."
-
-msgid "About"
-msgstr ""
 
 #, fuzzy
 #~ msgid "_Add Event"
