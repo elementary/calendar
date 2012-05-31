@@ -1,123 +1,120 @@
-# Turkish translation for maya
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# Bengali translation for maya
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the maya package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-03-17 19:47+0100\n"
-"PO-Revision-Date: 2012-05-30 14:01+0000\n"
-"Last-Translator: Ebubekir KARUL <Unknown>\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"PO-Revision-Date: 2012-05-30 20:50+0000\n"
+"Last-Translator: shahriar <shahriar.haque@gmail.com>\n"
+"Language-Team: Bengali <bn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-05-31 05:12+0000\n"
 "X-Generator: Launchpad (build 15322)\n"
-"Language: tr\n"
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
-"gösterilecek."
 
 msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
+msgstr ""
 
 msgid "%A, %b %d"
-msgstr "%A, %b %d"
+msgstr ""
 
 msgid "%l:%M %p"
-msgstr "%l:%M %p"
+msgstr ""
 
 msgid "%H:%M"
-msgstr "%H:%M"
+msgstr "%ঘন্টা:%মিনিট"
 
 msgid "all the day"
-msgstr "bütün gün"
+msgstr ""
 
 msgid "at"
-msgstr "de/da"
+msgstr "তে"
 
 msgid "From:"
-msgstr "Başlangıç:"
+msgstr "প্রেরক:"
 
 msgid "All day:"
-msgstr "Tüm gün:"
+msgstr "দিনব্যাপী"
 
 msgid "To:"
-msgstr "Bitiş:"
+msgstr "প্রাপক:"
 
 msgid "Title"
-msgstr "Başlık"
+msgstr "পদ"
 
 msgid "Name of Event"
-msgstr "Etkinliğin Adı:"
+msgstr "অনুষ্ঠানের নাম"
 
 msgid "Location"
-msgstr "Konum"
+msgstr "ঠিকানা"
 
 msgid "John Smith OR Example St."
-msgstr "Hasan Hüseyin veya Örnek Sokak"
+msgstr ""
 
 msgid "Guests"
-msgstr "Misafirler"
+msgstr "অতিথি"
 
 msgid "Name or Email Address"
-msgstr "İsim veya E-posta Adresi"
+msgstr "নাম এবন্দ ইমেল এড্রেস"
 
 msgid "Comments"
-msgstr "Yorumlar"
+msgstr "মন্তব্য"
 
 msgid "Create Event"
-msgstr "Etkinlik Oluştur"
+msgstr "নতুন অনুষ্ঠান"
 
 #. Dialog properties
 msgid "Add Event"
-msgstr "Etkinlik Ekle"
+msgstr "নতুন অনুষ্ঠান"
 
 #. Dialog Properties
 msgid "Edit Event"
-msgstr "Etkinliği Düzenle"
+msgstr "অনুষ্ঠান সম্পাদনা"
 
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
-msgstr "Yeni bir etkinlik oluştur"
+msgstr "নতুন অনুষ্ঠান"
 
 msgid "Edit the selected event"
-msgstr "Seçili etkinliği düzenle"
+msgstr ""
 
 msgid "Delete the selected event"
-msgstr "Seçili etkinliği sil"
+msgstr ""
 
 msgid "Select calendars to display"
-msgstr "Görüntülenecek takvimleri seçin"
+msgstr ""
 
 msgid "Search For Events.."
-msgstr "Etkinlikleri Ara..."
+msgstr ""
 
 msgid "Export or Share the default Calendar"
-msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
+msgstr ""
 
 #. Create everything
 msgid "Today"
-msgstr "Bugün"
+msgstr ""
 
 msgid "Fullscreen"
-msgstr "Tam ekran"
+msgstr ""
 
 msgid "Show Week Numbers"
-msgstr "Hafta Numaralarını Göster"
+msgstr ""
 
 msgid "Import..."
-msgstr "İçe Aktar..."
+msgstr ""
 
 msgid "Sync..."
-msgstr "Eşzamanla..."
+msgstr ""
