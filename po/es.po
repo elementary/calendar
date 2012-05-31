@@ -18,6 +18,106 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-01 04:52+0000\n"
 "X-Generator: Launchpad (build 15032)\n"
 
+msgid "%A, %b %d"
+msgstr "%A, %d de %b"
+
+msgid "%B %e, %Y"
+msgstr "%e de %B del %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr ""
+
+msgid "Add Event"
+msgstr "Añadir evento"
+
+msgid "All day:"
+msgstr "Todo el día:"
+
+msgid "Comments"
+msgstr "Comentarios"
+
+msgid "Create Event"
+msgstr "Crear evento"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Crear un evento nuevo"
+
+msgid "Delete the selected event"
+msgstr "Eliminar el evento seleccionado"
+
+msgid "Edit Event"
+msgstr "Editar evento"
+
+msgid "Edit the selected event"
+msgstr "Editar el evento seleccionado"
+
+msgid "Ends"
+msgstr ""
+
+msgid "Export or Share the default Calendar"
+msgstr "Exportar o compartir el calendario predeterminado"
+
+msgid "From:"
+msgstr "Desde:"
+
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+msgid "Guests"
+msgstr "Invitados"
+
+msgid "Import..."
+msgstr "Importar..."
+
+msgid "John Smith OR Example St."
+msgstr "John Smith o Calle Ejemplo"
+
+msgid "Location"
+msgstr "Ubicación"
+
+msgid "Name of Event"
+msgstr "Nombre del evento"
+
+msgid "Name or Email Address"
+msgstr "Nombre o dirección de correo electrónico"
+
+msgid "Search For Events.."
+msgstr "Buscar eventos..."
+
+msgid "Select calendars to display"
+msgstr "Seleccionar los calendarios a mostrar"
+
+msgid "Show Week Numbers"
+msgstr "Mostrar los números de las semanas"
+
+msgid "Starts"
+msgstr ""
+
+msgid "Sync..."
+msgstr "Sincronizar..."
+
+msgid "Title"
+msgstr "Título"
+
+msgid "To:"
+msgstr "Hasta:"
+
+#. Create everything
+msgid "Today"
+msgstr "Hoy"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -26,24 +126,6 @@ msgstr ""
 "Sus próximos eventos se mostrarán aquí cuando seleccione una fecha con "
 "eventos."
 
-msgid "%B %e, %Y"
-msgstr "%e de %B del %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %d de %b"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Starts"
-msgstr ""
-
-msgid "Ends"
-msgstr ""
-
 #, fuzzy
 msgid "all day"
 msgstr "Todo el día:"
@@ -51,91 +133,9 @@ msgstr "Todo el día:"
 msgid "at"
 msgstr "en"
 
-msgid "Add Event"
-msgstr "Añadir evento"
-
-msgid "Edit Event"
-msgstr "Editar evento"
-
-msgid "From:"
-msgstr "Desde:"
-
-msgid "All day:"
-msgstr "Todo el día:"
-
-msgid "To:"
-msgstr "Hasta:"
-
-msgid "Title"
-msgstr "Título"
-
-msgid "Name of Event"
-msgstr "Nombre del evento"
-
-msgid "Location"
-msgstr "Ubicación"
-
-msgid "John Smith OR Example St."
-msgstr "John Smith o Calle Ejemplo"
-
-msgid "Guests"
-msgstr "Invitados"
-
-msgid "Name or Email Address"
-msgstr "Nombre o dirección de correo electrónico"
-
-msgid "Comments"
-msgstr "Comentarios"
-
-msgid "Create Event"
-msgstr "Crear evento"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Crear un evento nuevo"
-
-msgid "Edit the selected event"
-msgstr "Editar el evento seleccionado"
-
-msgid "Delete the selected event"
-msgstr "Eliminar el evento seleccionado"
-
-msgid "Select calendars to display"
-msgstr "Seleccionar los calendarios a mostrar"
-
-msgid "Search For Events.."
-msgstr "Buscar eventos..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Exportar o compartir el calendario predeterminado"
-
-#. Create everything
-msgid "Today"
-msgstr "Hoy"
-
-msgid "Fullscreen"
-msgstr "Pantalla completa"
-
-msgid "Show Week Numbers"
-msgstr "Mostrar los números de las semanas"
-
-msgid "Import..."
-msgstr "Importar..."
-
-msgid "Sync..."
-msgstr "Sincronizar..."
-
-msgid "About"
-msgstr ""
-
-#~ msgid "all the day"
-#~ msgstr "todo el día"
-
 #, fuzzy
 #~ msgid "_Add Event"
 #~ msgstr "Añadir evento"
+
+#~ msgid "all the day"
+#~ msgstr "todo el día"

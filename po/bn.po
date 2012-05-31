@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-05-19 20:55+0200\n"
 "PO-Revision-Date: 2012-05-30 20:50+0000\n"
 "Last-Translator: shahriar <shahriar.haque@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
@@ -60,6 +60,9 @@ msgstr "অনুষ্ঠান সম্পাদনা"
 msgid "Edit the selected event"
 msgstr ""
 
+msgid "Ends"
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr ""
 
@@ -75,9 +78,6 @@ msgstr "অতিথি"
 msgid "Import..."
 msgstr ""
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +87,9 @@ msgstr "ঠিকানা"
 msgid "Name of Event"
 msgstr "অনুষ্ঠানের নাম"
 
+msgid "Name or Email Address"
+msgstr "নাম এবন্দ ইমেল এড্রেস"
+
 msgid "Search For Events.."
 msgstr ""
 
@@ -94,6 +97,9 @@ msgid "Select calendars to display"
 msgstr ""
 
 msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Starts"
 msgstr ""
 
 msgid "Sync..."
@@ -109,17 +115,18 @@ msgstr "প্রাপক:"
 msgid "Today"
 msgstr ""
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 
-msgid "all the day"
-msgstr ""
+#, fuzzy
+msgid "all day"
+msgstr "দিনব্যাপী"
 
 msgid "at"
 msgstr "তে"
-
-#~ msgid "Name or Email Address"
-#~ msgstr "নাম এবন্দ ইমেল এড্রেস"
