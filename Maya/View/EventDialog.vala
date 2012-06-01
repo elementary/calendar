@@ -43,12 +43,15 @@ namespace Maya.View {
 
         public E.Source source { get; private set; }
 
+        public E.Source? original_source { get; private set; }
+
         public E.CalComponent ecal { get; private set; }
 
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
 
         public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
 
+            this.original_source = source;
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
 
             sources = sourcemgr.get_all_sources ();
