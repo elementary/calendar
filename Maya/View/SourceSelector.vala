@@ -29,7 +29,7 @@ class SourceGroupTreeView : Gtk.TreeView {
     public Gtk.CellRendererPixbuf r_close {get; private set; }
     public Gtk.TreeViewColumn column { get; private set; }
 
-    public SourceGroupTreeView (Gtk.TreeModelSort model) {
+    public SourceGroupTreeView (E.SourceGroup group, Gtk.TreeModelSort model) {
 
         hexpand = true;
         set_model (model);
@@ -45,15 +45,18 @@ class SourceGroupTreeView : Gtk.TreeView {
         column.set_expand (true);
         append_column (column);
 
-        column = new Gtk.TreeViewColumn ();
-        
-        r_close = new Gtk.CellRendererPixbuf ();
-        r_close.stock_id = "gtk-close";
-        column.pack_start (r_close, false);
+        // Only show close buttons for the local group
+        if (group.peek_base_uri() == "local:") {
+            column = new Gtk.TreeViewColumn ();
+            
+            r_close = new Gtk.CellRendererPixbuf ();
+            r_close.stock_id = "gtk-close";
+            column.pack_start (r_close, false);
 
-        column.set_expand (false);
-        column.set_title ("closebuttons");
-        append_column (column);
+            column.set_expand (false);
+            column.set_title ("closebuttons");
+            append_column (column);
+        }
 
         headers_visible = false;
         get_selection().mode = Gtk.SelectionMode.NONE; // XXX: temporary
@@ -82,7 +85,7 @@ class SourceGroupBox : Gtk.Grid {
         evbox.add(label);
         attach (evbox, 0, 0, 1, 1);
 
-        tview = new SourceGroupTreeView (tmodel);
+        tview = new SourceGroupTreeView (group, tmodel);
         attach (tview, 0, 1, 1, 1);
 
         evbox.modify_bg (Gtk.StateType.NORMAL, tview.style.base[Gtk.StateType.NORMAL]);
