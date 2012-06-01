@@ -26,10 +26,12 @@ class SourceGroupTreeView : Gtk.TreeView {
 
     public Gtk.CellRendererText r_name { get; private set; }
     public Gtk.CellRendererToggle r_enabled { get; private set; }
+    public Gtk.CellRendererPixbuf r_close {get; private set; }
     public Gtk.TreeViewColumn column { get; private set; }
 
     public SourceGroupTreeView (Gtk.TreeModelSort model) {
 
+        hexpand = true;
         set_model (model);
 
         column = new Gtk.TreeViewColumn ();
@@ -41,6 +43,16 @@ class SourceGroupTreeView : Gtk.TreeView {
         column.pack_start (r_name, true);
 
         column.set_expand (true);
+        append_column (column);
+
+        column = new Gtk.TreeViewColumn ();
+        
+        r_close = new Gtk.CellRendererPixbuf ();
+        r_close.stock_id = "gtk-close";
+        column.pack_start (r_close, false);
+
+        column.set_expand (false);
+        column.set_title ("closebuttons");
         append_column (column);
 
         headers_visible = false;
@@ -57,7 +69,7 @@ class SourceGroupBox : Gtk.Grid {
     public E.SourceGroup group { get; private set; }
     public SourceGroupTreeView tview { get; private set; }
 
-    public SourceGroupBox (E.SourceGroup group, Gtk.TreeModelSort tmodel) {
+    public SourceGroupBox (E.SourceGroup group, Gtk.TreeModelSort tmodel, Model.SourceManager model) {
 
         //Object (homogeneous:false, spacing:0);
 
@@ -78,7 +90,38 @@ class SourceGroupBox : Gtk.Grid {
         label.margin_bottom = 2;
 
         show_all();
+
+        // Listen to clicks on the treeview
+        tview.button_press_event.connect ((button) => (on_click(button, tmodel, model)));
     }
+
+    bool on_click (Gdk.EventButton button, Gtk.TreeModelSort tmodel, Model.SourceManager model) {
+
+        // Only react on single left click
+        if (button.type != Gdk.EventType.BUTTON_PRESS || button.button != 1)
+            return false;
+
+        // Check where the user clicked
+        Gtk.TreePath path;
+        Gtk.TreeViewColumn col;
+        tview.get_path_at_pos ((int) button.x, (int) button.y, out path, out col, null, null);
+        
+        // Column other than close was clicked, don't handle it
+        if (col.get_title () != "closebuttons")
+            return false;
+
+        // Search for the corresponding source
+        Gtk.TreeIter iter;
+        bool result = tmodel.get_iter (out iter, path);
+
+        var source = model.get_source_for_iter (tmodel, iter);
+
+        // Destroy the source
+        model.destroy_source (group, source);
+
+        return true;
+    }
+
 }
 
 /**
@@ -111,7 +154,7 @@ class SourceSelector : Granite.Widgets.PopOver {
             
             var tmodel = model.get_tree_model (group);
 
-            var box = new SourceGroupBox (group, tmodel);
+            var box = new SourceGroupBox (group, tmodel, model);
             box.no_show_all = true;
             box.visible = model.get_sources(group).size > 0;
             _group_box.set (group, box);
@@ -128,6 +171,7 @@ class SourceSelector : Granite.Widgets.PopOver {
         var entry = new Granite.Widgets.HintedEntry ("Add calendar");
         sources_grid.attach (entry, 0, groupnumber, 1, 1);
         entry.activate.connect (() => on_entry_activate (entry.text));
+
         var container = (Gtk.Container) get_content_area ();
         container.add (sources_grid);
 
@@ -138,7 +182,6 @@ class SourceSelector : Granite.Widgets.PopOver {
      * Called when enter is pressed in the add source entry
      */
     void on_entry_activate (string entry_text) {
-        stdout.printf ("text = %s\n", entry_text);
 
         var new_source = new E.Source (entry_text, entry_text);
 

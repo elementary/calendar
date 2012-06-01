@@ -168,7 +168,6 @@ public class SourceManager: GLib.Object {
     //--- Helper Functions ---//
 
     void add_source (E.SourceGroup group, E.Source source) {
-        stdout.printf("Adding source '%s'\n", source.peek_name());
         debug("Adding source '%s'", source.peek_name());
         group_sources.set (group, source);
 
