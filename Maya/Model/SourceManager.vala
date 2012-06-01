@@ -131,9 +131,6 @@ public class SourceManager: GLib.Object {
             }
         }
 
-
-        // create_source (source_list.peek_group_by_base_uri ("google://"), new E.Source("Ontspanning", "https://www.google.com/calendar/feeds/niels.avonds%40gmail.com/private-a9d7f47e1e20f92e0f367bc045638f5e/basic"));;
-
     }
 
     /**
