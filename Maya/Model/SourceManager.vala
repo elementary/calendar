@@ -171,7 +171,7 @@ public class SourceManager: GLib.Object {
 
         // Load Sources from preferences
         var settings = new Settings.MayaSettings();
-        source_enabled.set (source, false);
+        source_enabled.set (source, true); // By default, a source is enabled
         for (int i=0; i<settings.selected_calendars.length;i++) {
             if (settings.selected_calendars[i] == source.peek_uid())
                 source_enabled.set (source, true);
