@@ -106,7 +106,7 @@ class SourceSelector : Granite.Widgets.PopOver {
         set_title ("Calendars");
 
         var sources_grid = new Gtk.Grid ();
-        int groupnumer = 0;
+        int groupnumber = 0;
         foreach (var group in model.groups) {
             
             var tmodel = model.get_tree_model (group);
@@ -116,17 +116,17 @@ class SourceSelector : Granite.Widgets.PopOver {
             box.visible = model.get_sources(group).size > 0;
             _group_box.set (group, box);
 
-            sources_grid.attach (box, 0, groupnumer, 1, 1);
+            sources_grid.attach (box, 0, groupnumber, 1, 1);
 
             box.tview.get_selection().changed.connect(() => {treeview_selection_changed (box);});
 
             box.tview.column.set_cell_data_func (box.tview.r_name, data_func_name);
             box.tview.column.set_cell_data_func (box.tview.r_enabled, data_func_enabled);
-            groupnumer++;
+            groupnumber++;
         }
 
         var entry = new Granite.Widgets.HintedEntry ("Add calendar");
-        sources_grid.attach (entry, 0, groupnumer, 1, 1);
+        sources_grid.attach (entry, 0, groupnumber, 1, 1);
         entry.activate.connect (() => on_entry_activate (entry.text));
         var container = (Gtk.Container) get_content_area ();
         container.add (sources_grid);
