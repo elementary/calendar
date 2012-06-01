@@ -173,7 +173,7 @@ class SourceSelector : Granite.Widgets.PopOver {
 
         var entry = new Granite.Widgets.HintedEntry ("Add calendar");
         sources_grid.attach (entry, 0, groupnumber, 1, 1);
-        entry.activate.connect (() => on_entry_activate (entry.text));
+        entry.activate.connect (() => {on_entry_activate (entry.text);entry.text = "";});
 
         var container = (Gtk.Container) get_content_area ();
         container.add (sources_grid);
