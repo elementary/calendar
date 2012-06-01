@@ -8,167 +8,171 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-31 12:17+0200\n"
-"PO-Revision-Date: 2012-03-18 00:22+0000\n"
-"Last-Translator: Niels Avonds <Unknown>\n"
+"PO-Revision-Date: 2012-05-31 11:25+0000\n"
+"Last-Translator: Sitdhi <gvdosk124@gmail.com>\n"
 "Language-Team: Thai <th@li.org>\n"
-"Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-03-19 04:56+0000\n"
-"X-Generator: Launchpad (build 14969)\n"
+"X-Launchpad-Export-Date: 2012-06-01 05:41+0000\n"
+"X-Generator: Launchpad (build 15342)\n"
+"Language: th\n"
 
-msgid "%A, %b %d"
-msgstr ""
-
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr ""
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr ""
-
-msgid "All day:"
+#. maya.desktop:6
+msgid "View and schedule events"
 msgstr ""
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr ""
 
-msgid "Comments"
-msgstr ""
-
-msgid "Contacts"
-msgstr ""
-
-msgid "Create Event"
-msgstr ""
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr ""
-
-msgid "Day"
-msgstr ""
-
-msgid "Delete the selected event"
-msgstr ""
-
-msgid "Edit Event"
-msgstr ""
-
-msgid "Edit the selected event"
-msgstr ""
-
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr ""
-
-msgid "Fullscreen"
-msgstr ""
-
-msgid "Guests"
-msgstr ""
-
-msgid "Import..."
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr ""
-
-msgid "Month"
-msgstr ""
-
-msgid "Name of Event"
-msgstr ""
-
-msgid "Name or Email Address"
+#. maya.desktop:18
+msgid "_Add Event"
 msgstr ""
 
 #. Ensure the groups actually exist
 msgid "On this computer"
 msgstr ""
 
+msgid "Webcal"
+msgstr ""
+
+msgid "Contacts"
+msgstr ""
+
 msgid "Personal"
 msgstr ""
 
-msgid "Save ical"
+msgid "%B %e, %Y"
 msgstr ""
 
-msgid "Search For Events.."
+msgid "%A, %b %d"
 msgstr ""
 
-msgid "Select calendars to display"
+msgid "%l:%M %p"
 msgstr ""
 
-msgid "Show Week Numbers"
+msgid "%H:%M"
 msgstr ""
 
-msgid "Starts: \t"
-msgstr ""
+msgid "Add Event"
+msgstr "เพิ่มกิจกรรม"
 
-msgid "Sync..."
-msgstr ""
+msgid "Edit Event"
+msgstr "แก้ไขกิจกรรม"
+
+msgid "From:"
+msgstr "จาก:"
+
+msgid "All day:"
+msgstr "ทั้งวัน:"
+
+msgid "To:"
+msgstr "ถึง:"
 
 msgid "Title"
 msgstr ""
 
-msgid "To:"
+msgid "Name of Event"
+msgstr "ชื่อกิจกรรม"
+
+msgid "Location"
+msgstr "สถานที่"
+
+msgid "John Smith OR Example St."
 msgstr ""
+
+msgid "Guests"
+msgstr "แขก"
+
+msgid "Name or Email Address"
+msgstr "ชื่อหรืออีเมล"
+
+msgid "Comments"
+msgstr ""
+
+msgid "Create Event"
+msgstr "สร้างกิจกรรม"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "สร้างกิจกรรมใหม่"
+
+msgid "Edit the selected event"
+msgstr "แก้ไขกิจกรรมที่เลือก"
+
+msgid "Delete the selected event"
+msgstr "ลบกิจกรรมที่เลือก"
+
+msgid "Select calendars to display"
+msgstr "เลือกปฏิทินที่จะแสดง"
+
+msgid "Search For Events.."
+msgstr "ค้นหากิจกรรม.."
+
+msgid "Export or Share the default Calendar"
+msgstr "ส่งหรือแบ่งปันปฏิทินที่ตั้งไว้เป็นค่าเริ่มต้น"
 
 #. Create everything
 msgid "Today"
+msgstr "วันนี้"
+
+msgid "Fullscreen"
+msgstr "เต็มจอ"
+
+msgid "Show Week Numbers"
+msgstr "แสดงสัปดาห์ที่"
+
+msgid "Import..."
+msgstr "นำ...เข้่า"
+
+msgid "Sync..."
+msgstr "ปรับข้อมูลให้ตรงกัน"
+
+msgid "About"
 msgstr ""
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-msgid "Webcal"
+msgid "Day"
 msgstr ""
 
 msgid "Week"
 msgstr ""
 
-msgid "Your event has to be named and has to have a valid date"
+msgid "Month"
 msgstr ""
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr "กิจกรรมที่ใกล้จะมาถึงของคุณจะถูกแสดงที่นี่หากคุณเลือกวันที่ที่มีกิจกรรมอยู่"
+msgstr ""
+"กิจกรรมที่ใกล้จะมาถึงของคุณจะถูกแสดงที่นี่หากคุณเลือกวันที่ที่มีกิจกรรมอยู่"
 
-#. maya.desktop:18
-msgid "_Add Event"
+msgid "Starts: \t"
+msgstr ""
+
+msgid "Ends: \t\t"
 msgstr ""
 
 msgid "all day"
 msgstr ""
 
 msgid "at"
+msgstr "ที่"
+
+msgid "Export Calendar..."
 msgstr ""
 
 msgid "calendar.ics"
 msgstr ""
+
+msgid "Save ical"
+msgstr ""
+
+#~ msgid "all the day"
+#~ msgstr "ทั้งวัน"

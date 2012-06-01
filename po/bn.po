@@ -11,46 +11,91 @@ msgstr ""
 "PO-Revision-Date: 2012-05-30 20:50+0000\n"
 "Last-Translator: shahriar <shahriar.haque@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
-"Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-31 05:12+0000\n"
-"X-Generator: Launchpad (build 15322)\n"
+"X-Launchpad-Export-Date: 2012-06-01 05:41+0000\n"
+"X-Generator: Launchpad (build 15342)\n"
+"Language: bn\n"
 
-msgid "%A, %b %d"
+#. maya.desktop:6
+msgid "View and schedule events"
 msgstr ""
-
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr "%ঘন্টা:%মিনিট"
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "নতুন অনুষ্ঠান"
-
-msgid "All day:"
-msgstr "দিনব্যাপী"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr ""
 
-msgid "Comments"
-msgstr "মন্তব্য"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr ""
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
 
 msgid "Contacts"
 msgstr ""
 
+msgid "Personal"
+msgstr ""
+
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "%H:%M"
+msgstr "%ঘন্টা:%মিনিট"
+
+msgid "Add Event"
+msgstr "নতুন অনুষ্ঠান"
+
+msgid "Edit Event"
+msgstr "অনুষ্ঠান সম্পাদনা"
+
+msgid "From:"
+msgstr "প্রেরক:"
+
+msgid "All day:"
+msgstr "দিনব্যাপী"
+
+msgid "To:"
+msgstr "প্রাপক:"
+
+msgid "Title"
+msgstr "পদ"
+
+msgid "Name of Event"
+msgstr "অনুষ্ঠানের নাম"
+
+msgid "Location"
+msgstr "ঠিকানা"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "অতিথি"
+
+msgid "Name or Email Address"
+msgstr "নাম এবন্দ ইমেল এড্রেস"
+
+msgid "Comments"
+msgstr "মন্তব্য"
+
 msgid "Create Event"
 msgstr "নতুন অনুষ্ঠান"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -58,100 +103,47 @@ msgstr "নতুন অনুষ্ঠান"
 msgid "Create a new event"
 msgstr "নতুন অনুষ্ঠান"
 
-msgid "Day"
+msgid "Edit the selected event"
 msgstr ""
 
 msgid "Delete the selected event"
 msgstr ""
 
-msgid "Edit Event"
-msgstr "অনুষ্ঠান সম্পাদনা"
-
-msgid "Edit the selected event"
-msgstr ""
-
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr ""
-
-msgid "From:"
-msgstr "প্রেরক:"
-
-msgid "Fullscreen"
-msgstr ""
-
-msgid "Guests"
-msgstr "অতিথি"
-
-msgid "Import..."
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "ঠিকানা"
-
-msgid "Month"
-msgstr ""
-
-msgid "Name of Event"
-msgstr "অনুষ্ঠানের নাম"
-
-msgid "Name or Email Address"
-msgstr "নাম এবন্দ ইমেল এড্রেস"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
+msgid "Select calendars to display"
 msgstr ""
 
 msgid "Search For Events.."
 msgstr ""
 
-msgid "Select calendars to display"
+msgid "Export or Share the default Calendar"
 msgstr ""
-
-msgid "Show Week Numbers"
-msgstr ""
-
-msgid "Starts: \t"
-msgstr ""
-
-msgid "Sync..."
-msgstr ""
-
-msgid "Title"
-msgstr "পদ"
-
-msgid "To:"
-msgstr "প্রাপক:"
 
 #. Create everything
 msgid "Today"
 msgstr ""
 
-#. maya.desktop:6
-msgid "View and schedule events"
+msgid "Fullscreen"
 msgstr ""
 
-msgid "Webcal"
+msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Import..."
+msgstr ""
+
+msgid "Sync..."
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Day"
 msgstr ""
 
 msgid "Week"
 msgstr ""
 
-msgid "Your event has to be named and has to have a valid date"
+msgid "Month"
 msgstr ""
 
 #. label settings
@@ -160,17 +152,23 @@ msgid ""
 "events."
 msgstr ""
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "নতুন অনুষ্ঠান"
+msgid "Starts: \t"
+msgstr ""
 
-#, fuzzy
+msgid "Ends: \t\t"
+msgstr ""
+
 msgid "all day"
-msgstr "দিনব্যাপী"
+msgstr ""
 
 msgid "at"
 msgstr "তে"
 
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "calendar.ics"
+msgstr ""
+
+msgid "Save ical"
 msgstr ""

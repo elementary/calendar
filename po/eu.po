@@ -11,46 +11,91 @@ msgstr ""
 "PO-Revision-Date: 2012-04-06 19:25+0000\n"
 "Last-Translator: Eneko Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
-"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-07 05:06+0000\n"
-"X-Generator: Launchpad (build 15060)\n"
+"X-Launchpad-Export-Date: 2012-06-01 05:41+0000\n"
+"X-Generator: Launchpad (build 15342)\n"
+"Language: eu\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%Y %B %e"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%I:%M %p"
-
-msgid "About"
+#. maya.desktop:6
+msgid "View and schedule events"
 msgstr ""
-
-msgid "Add Event"
-msgstr "Ekitaldia gehitu"
-
-msgid "All day:"
-msgstr "Egun osoa:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr ""
 
-msgid "Comments"
-msgstr "Iruzkinak"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr ""
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
 
 msgid "Contacts"
 msgstr ""
 
+msgid "Personal"
+msgstr ""
+
+msgid "%B %e, %Y"
+msgstr "%Y %B %e"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%I:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Add Event"
+msgstr "Ekitaldia gehitu"
+
+msgid "Edit Event"
+msgstr "Ekitaldia Aldatu"
+
+msgid "From:"
+msgstr "Nondik:"
+
+msgid "All day:"
+msgstr "Egun osoa:"
+
+msgid "To:"
+msgstr "Noiz arte:"
+
+msgid "Title"
+msgstr "Izenburua"
+
+msgid "Name of Event"
+msgstr "Ekitaldiaren Izena"
+
+msgid "Location"
+msgstr "Kokapena"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith edo Adibide kalea"
+
+msgid "Guests"
+msgstr "Gonbidatuak"
+
+msgid "Name or Email Address"
+msgstr "Izena edo Email-helbidea"
+
+msgid "Comments"
+msgstr "Iruzkinak"
+
 msgid "Create Event"
 msgstr "Ekitaldia Sortu"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -58,100 +103,47 @@ msgstr "Ekitaldia Sortu"
 msgid "Create a new event"
 msgstr "Ekitaldi berri bat sortu"
 
-msgid "Day"
-msgstr ""
+msgid "Edit the selected event"
+msgstr "Aukeratutako ekitaldia aldatu"
 
 msgid "Delete the selected event"
 msgstr "Aukeratutako ekitaldia ezabatu"
 
-msgid "Edit Event"
-msgstr "Ekitaldia Aldatu"
-
-msgid "Edit the selected event"
-msgstr "Aukeratutako ekitaldia aldatu"
-
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "Esportatu edo Partekatu  Egutegi lehenetsia"
-
-msgid "From:"
-msgstr "Nondik:"
-
-msgid "Fullscreen"
-msgstr "Pantaila osoa"
-
-msgid "Guests"
-msgstr "Gonbidatuak"
-
-msgid "Import..."
-msgstr "Inportatu..."
-
-msgid "John Smith OR Example St."
-msgstr "John Smith edo Adibide kalea"
-
-msgid "Location"
-msgstr "Kokapena"
-
-msgid "Month"
-msgstr ""
-
-msgid "Name of Event"
-msgstr "Ekitaldiaren Izena"
-
-msgid "Name or Email Address"
-msgstr "Izena edo Email-helbidea"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
+msgid "Select calendars to display"
+msgstr "Hautatu bistaratuko diren egutegiak"
 
 msgid "Search For Events.."
 msgstr "Ekitaldiak Bilatu..."
 
-msgid "Select calendars to display"
-msgstr "Hautatu bistaratuko diren egutegiak"
-
-msgid "Show Week Numbers"
-msgstr "Erakutsi asteen zenbakiak"
-
-msgid "Starts: \t"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Sinkronizatu..."
-
-msgid "Title"
-msgstr "Izenburua"
-
-msgid "To:"
-msgstr "Noiz arte:"
+msgid "Export or Share the default Calendar"
+msgstr "Esportatu edo Partekatu  Egutegi lehenetsia"
 
 #. Create everything
 msgid "Today"
 msgstr "Gaur"
 
-#. maya.desktop:6
-msgid "View and schedule events"
+msgid "Fullscreen"
+msgstr "Pantaila osoa"
+
+msgid "Show Week Numbers"
+msgstr "Erakutsi asteen zenbakiak"
+
+msgid "Import..."
+msgstr "Inportatu..."
+
+msgid "Sync..."
+msgstr "Sinkronizatu..."
+
+msgid "About"
 msgstr ""
 
-msgid "Webcal"
+msgid "Day"
 msgstr ""
 
 msgid "Week"
 msgstr ""
 
-msgid "Your event has to be named and has to have a valid date"
+msgid "Month"
 msgstr ""
 
 #. label settings
@@ -162,19 +154,25 @@ msgstr ""
 "Zure hurrengo gertakizunak hemen erakutsiko dira data bat aukeratzen "
 "duzunean."
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "Ekitaldia gehitu"
+msgid "Starts: \t"
+msgstr ""
 
-#, fuzzy
+msgid "Ends: \t\t"
+msgstr ""
+
 msgid "all day"
-msgstr "Egun osoa:"
+msgstr ""
 
 msgid "at"
 msgstr "nondik:"
 
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "calendar.ics"
+msgstr ""
+
+msgid "Save ical"
 msgstr ""
 
 #~ msgid "all the day"
