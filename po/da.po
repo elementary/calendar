@@ -18,64 +18,26 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-24 05:17+0000\n"
 "X-Generator: Launchpad (build 15135)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Dine kommende begivenheder vil blive vist her, når du vælger en dato med "
-"begivenheder."
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+msgid "%H:%M"
+msgstr "%H:%M"
 
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "all the day"
-msgstr "hele dagen"
-
-msgid "at"
+msgid "About"
 msgstr ""
 
 msgid "Add Event"
 msgstr "Tilføj begivenhed"
 
-msgid "Edit Event"
-msgstr "Redigér begivenhed"
-
-msgid "From:"
-msgstr "Fra:"
-
 msgid "All day:"
 msgstr "Hele dagen:"
-
-msgid "To:"
-msgstr "Til:"
-
-msgid "Title"
-msgstr "Titel"
-
-msgid "Name of Event"
-msgstr "Navn på begivenhed"
-
-msgid "Location"
-msgstr "Sted"
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Guests"
-msgstr "Gæster"
-
-msgid "John Smith"
-msgstr ""
 
 msgid "Comments"
 msgstr "Kommentarer"
@@ -89,47 +51,85 @@ msgstr "Opret begivenhed"
 msgid "Create a new event"
 msgstr "Opret en ny begivenhed"
 
-msgid "Edit the selected event"
-msgstr "Redigér den valgte begivenhed"
-
 msgid "Delete the selected event"
 msgstr "Slet den valgte begivenhed"
 
-msgid "Select calendars to display"
-msgstr "Vælg kalendere til visning"
+msgid "Edit Event"
+msgstr "Redigér begivenhed"
+
+msgid "Edit the selected event"
+msgstr "Redigér den valgte begivenhed"
+
+msgid "Export or Share the default Calendar"
+msgstr ""
+
+msgid "From:"
+msgstr "Fra:"
+
+msgid "Fullscreen"
+msgstr "Fuldskærm"
+
+msgid "Guests"
+msgstr "Gæster"
+
+msgid "Import..."
+msgstr "Importér..."
+
+msgid "John Smith"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Location"
+msgstr "Sted"
+
+msgid "Name of Event"
+msgstr "Navn på begivenhed"
 
 msgid "Search For Events.."
 msgstr "Søg på begivenheder.."
 
-msgid "Export or Share the default Calendar"
-msgstr ""
+msgid "Select calendars to display"
+msgstr "Vælg kalendere til visning"
+
+msgid "Show Week Numbers"
+msgstr "Vis ugenumre"
+
+msgid "Sync..."
+msgstr "Synkronisér..."
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "To:"
+msgstr "Til:"
 
 #. Create everything
 msgid "Today"
 msgstr "I dag"
 
-msgid "Fullscreen"
-msgstr "Fuldskærm"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Dine kommende begivenheder vil blive vist her, når du vælger en dato med "
+"begivenheder."
 
-msgid "Show Week Numbers"
-msgstr "Vis ugenumre"
+msgid "all the day"
+msgstr "hele dagen"
 
-msgid "Import..."
-msgstr "Importér..."
-
-msgid "Sync..."
-msgstr "Synkronisér..."
-
-msgid "About"
+msgid "at"
 msgstr ""
 
 #~ msgid "Name or Email Address"
 #~ msgstr "Navn eller emailadresse"
 
 #, fuzzy
-#~ msgid "all day"
-#~ msgstr "Hele dagen:"
-
-#, fuzzy
 #~ msgid "_Add Event"
 #~ msgstr "Tilføj begivenhed"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Hele dagen:"

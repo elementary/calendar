@@ -18,64 +18,26 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-17 05:27+0000\n"
 "X-Generator: Launchpad (build 15099)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Tulevat tapahtumat näytetään tässä, kun valitset tapahtumia sisältävän "
-"päivämäärän."
+msgid "%A, %b %d"
+msgstr "%A, %d. %b"
 
 msgid "%B %e, %Y"
 msgstr "%e. %Bta %Y"
 
-msgid "%A, %b %d"
-msgstr "%A, %d. %b"
+msgid "%H:%M"
+msgstr "%H.%M"
 
 msgid "%l:%M %p"
 msgstr "%I.%M %p"
 
-msgid "%H:%M"
-msgstr "%H.%M"
-
-msgid "all the day"
-msgstr "koko päivän"
-
-msgid "at"
-msgstr "paikassa"
+msgid "About"
+msgstr ""
 
 msgid "Add Event"
 msgstr "Lisää tapahtuma"
 
-msgid "Edit Event"
-msgstr "Muokkaa tapahtumaa"
-
-msgid "From:"
-msgstr "Alkaen:"
-
 msgid "All day:"
 msgstr "Koko päivä:"
-
-msgid "To:"
-msgstr "Päättyen:"
-
-msgid "Title"
-msgstr "Otsikko"
-
-msgid "Name of Event"
-msgstr "Tapahtuman nimi"
-
-msgid "Location"
-msgstr "Paikka"
-
-msgid "John Smith OR Example St."
-msgstr "Matti Meikäläinen TAI Esimerkkikatu"
-
-msgid "Guests"
-msgstr "Vieraat"
-
-msgid "John Smith"
-msgstr ""
 
 msgid "Comments"
 msgstr "Huomautukset"
@@ -89,47 +51,85 @@ msgstr "Luo tapahtuma"
 msgid "Create a new event"
 msgstr "Luo uusi tapahtuma"
 
-msgid "Edit the selected event"
-msgstr "Muokkaa valittua tapahtumaa"
-
 msgid "Delete the selected event"
 msgstr "Poista valittu tapahtuma"
 
-msgid "Select calendars to display"
-msgstr "Valitse näytettävät kalenterit"
+msgid "Edit Event"
+msgstr "Muokkaa tapahtumaa"
+
+msgid "Edit the selected event"
+msgstr "Muokkaa valittua tapahtumaa"
+
+msgid "Export or Share the default Calendar"
+msgstr "Vie tai jaa vakiokalenteri"
+
+msgid "From:"
+msgstr "Alkaen:"
+
+msgid "Fullscreen"
+msgstr "Kokoruutu"
+
+msgid "Guests"
+msgstr "Vieraat"
+
+msgid "Import..."
+msgstr "Tuo..."
+
+msgid "John Smith"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr "Matti Meikäläinen TAI Esimerkkikatu"
+
+msgid "Location"
+msgstr "Paikka"
+
+msgid "Name of Event"
+msgstr "Tapahtuman nimi"
 
 msgid "Search For Events.."
 msgstr "Etsi tapahtumia."
 
-msgid "Export or Share the default Calendar"
-msgstr "Vie tai jaa vakiokalenteri"
+msgid "Select calendars to display"
+msgstr "Valitse näytettävät kalenterit"
+
+msgid "Show Week Numbers"
+msgstr "Näytä viikkonumerot"
+
+msgid "Sync..."
+msgstr "Synkronoi..."
+
+msgid "Title"
+msgstr "Otsikko"
+
+msgid "To:"
+msgstr "Päättyen:"
 
 #. Create everything
 msgid "Today"
 msgstr "Tänään"
 
-msgid "Fullscreen"
-msgstr "Kokoruutu"
-
-msgid "Show Week Numbers"
-msgstr "Näytä viikkonumerot"
-
-msgid "Import..."
-msgstr "Tuo..."
-
-msgid "Sync..."
-msgstr "Synkronoi..."
-
-msgid "About"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
+"Tulevat tapahtumat näytetään tässä, kun valitset tapahtumia sisältävän "
+"päivämäärän."
+
+msgid "all the day"
+msgstr "koko päivän"
+
+msgid "at"
+msgstr "paikassa"
 
 #~ msgid "Name or Email Address"
 #~ msgstr "Nimi tai sähköposti"
 
 #, fuzzy
-#~ msgid "all day"
-#~ msgstr "Koko päivä:"
-
-#, fuzzy
 #~ msgid "_Add Event"
 #~ msgstr "Lisää tapahtuma"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Koko päivä:"

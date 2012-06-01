@@ -18,64 +18,26 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-06 04:45+0000\n"
 "X-Generator: Launchpad (build 15060)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Uw aanstaande gebeurtenissen zullen hier getoond worden wanneer u een datum "
-"met gebeurtenissen selecteert."
+msgid "%A, %b %d"
+msgstr "%A, %b, %d"
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%A, %b %d"
-msgstr "%A, %b, %d"
+msgid "%H:%M"
+msgstr "%H:%M"
 
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "all the day"
-msgstr "heel de dag"
-
-msgid "at"
-msgstr "om"
+msgid "About"
+msgstr ""
 
 msgid "Add Event"
 msgstr "Gebeurtenis toevoegen"
 
-msgid "Edit Event"
-msgstr "Gebeurtenis bewerken"
-
-msgid "From:"
-msgstr "Van:"
-
 msgid "All day:"
 msgstr "De hele dag:"
-
-msgid "To:"
-msgstr "Tot:"
-
-msgid "Title"
-msgstr "Titel"
-
-msgid "Name of Event"
-msgstr "Gebeurtenisnaam"
-
-msgid "Location"
-msgstr "Plaats"
-
-msgid "John Smith OR Example St."
-msgstr "Jan Smit OF Voorbeeldlaan"
-
-msgid "Guests"
-msgstr "Gasten"
-
-msgid "John Smith"
-msgstr ""
 
 msgid "Comments"
 msgstr "Opmerkingen"
@@ -89,47 +51,85 @@ msgstr "Maak gebeurtenis"
 msgid "Create a new event"
 msgstr "Maak een nieuwe gebeurtenis aan"
 
-msgid "Edit the selected event"
-msgstr "De geselecteerde gebeurtenis bewerken"
-
 msgid "Delete the selected event"
 msgstr "De geselecteerde gebeurtenis verwijderen"
 
-msgid "Select calendars to display"
-msgstr "Selecteer agenda's om weer te geven"
+msgid "Edit Event"
+msgstr "Gebeurtenis bewerken"
+
+msgid "Edit the selected event"
+msgstr "De geselecteerde gebeurtenis bewerken"
+
+msgid "Export or Share the default Calendar"
+msgstr "Exporteer of Deel de standaardagenda"
+
+msgid "From:"
+msgstr "Van:"
+
+msgid "Fullscreen"
+msgstr "Volledig Scherm"
+
+msgid "Guests"
+msgstr "Gasten"
+
+msgid "Import..."
+msgstr "Importeren..."
+
+msgid "John Smith"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr "Jan Smit OF Voorbeeldlaan"
+
+msgid "Location"
+msgstr "Plaats"
+
+msgid "Name of Event"
+msgstr "Gebeurtenisnaam"
 
 msgid "Search For Events.."
 msgstr "Gebeurtenissen zoeken."
 
-msgid "Export or Share the default Calendar"
-msgstr "Exporteer of Deel de standaardagenda"
+msgid "Select calendars to display"
+msgstr "Selecteer agenda's om weer te geven"
+
+msgid "Show Week Numbers"
+msgstr "Weeknummers tonen"
+
+msgid "Sync..."
+msgstr "Synchroniseren..."
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "To:"
+msgstr "Tot:"
 
 #. Create everything
 msgid "Today"
 msgstr "Vandaag"
 
-msgid "Fullscreen"
-msgstr "Volledig Scherm"
-
-msgid "Show Week Numbers"
-msgstr "Weeknummers tonen"
-
-msgid "Import..."
-msgstr "Importeren..."
-
-msgid "Sync..."
-msgstr "Synchroniseren..."
-
-msgid "About"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
+"Uw aanstaande gebeurtenissen zullen hier getoond worden wanneer u een datum "
+"met gebeurtenissen selecteert."
+
+msgid "all the day"
+msgstr "heel de dag"
+
+msgid "at"
+msgstr "om"
 
 #~ msgid "Name or Email Address"
 #~ msgstr "Naam of Emailadres"
 
 #, fuzzy
-#~ msgid "all day"
-#~ msgstr "De hele dag:"
-
-#, fuzzy
 #~ msgid "_Add Event"
 #~ msgstr "Gebeurtenis toevoegen"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "De hele dag:"

@@ -18,64 +18,26 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-05-27 04:51+0000\n"
 "X-Generator: Launchpad (build 15288)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Os seus eventos futuros serão mostrados aqui assim que selecionar uma data "
-"com eventos"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+msgid "%H:%M"
+msgstr "%H:%M"
 
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "all the day"
-msgstr "Todo o dia"
-
-msgid "at"
-msgstr "em"
+msgid "About"
+msgstr ""
 
 msgid "Add Event"
 msgstr "Adicionar Evento"
 
-msgid "Edit Event"
-msgstr "Editar Evento"
-
-msgid "From:"
-msgstr "De:"
-
 msgid "All day:"
 msgstr "Todo o dia"
-
-msgid "To:"
-msgstr "Para:"
-
-msgid "Title"
-msgstr "Título"
-
-msgid "Name of Event"
-msgstr "Nome do Evento"
-
-msgid "Location"
-msgstr "Local"
-
-msgid "John Smith OR Example St."
-msgstr "John Smith ou Rua Exemplo"
-
-msgid "Guests"
-msgstr "Convidados"
-
-msgid "John Smith"
-msgstr ""
 
 msgid "Comments"
 msgstr "Comentários"
@@ -89,47 +51,85 @@ msgstr "Criar Evento"
 msgid "Create a new event"
 msgstr "Novo evento"
 
-msgid "Edit the selected event"
-msgstr "Editar o evento seleccionado"
-
 msgid "Delete the selected event"
 msgstr "Apagar o evento seleccionado"
 
-msgid "Select calendars to display"
-msgstr "Selecionar calendários para mostrar"
+msgid "Edit Event"
+msgstr "Editar Evento"
+
+msgid "Edit the selected event"
+msgstr "Editar o evento seleccionado"
+
+msgid "Export or Share the default Calendar"
+msgstr "Exporte ou Partilhe o Calendário por defeito"
+
+msgid "From:"
+msgstr "De:"
+
+msgid "Fullscreen"
+msgstr "Ecrã Inteiro"
+
+msgid "Guests"
+msgstr "Convidados"
+
+msgid "Import..."
+msgstr "Importar..."
+
+msgid "John Smith"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr "John Smith ou Rua Exemplo"
+
+msgid "Location"
+msgstr "Local"
+
+msgid "Name of Event"
+msgstr "Nome do Evento"
 
 msgid "Search For Events.."
 msgstr "Pesquisar Eventos"
 
-msgid "Export or Share the default Calendar"
-msgstr "Exporte ou Partilhe o Calendário por defeito"
+msgid "Select calendars to display"
+msgstr "Selecionar calendários para mostrar"
+
+msgid "Show Week Numbers"
+msgstr "Mostrar os Números das Semanas"
+
+msgid "Sync..."
+msgstr "Sincronizar..."
+
+msgid "Title"
+msgstr "Título"
+
+msgid "To:"
+msgstr "Para:"
 
 #. Create everything
 msgid "Today"
 msgstr "Hoje"
 
-msgid "Fullscreen"
-msgstr "Ecrã Inteiro"
-
-msgid "Show Week Numbers"
-msgstr "Mostrar os Números das Semanas"
-
-msgid "Import..."
-msgstr "Importar..."
-
-msgid "Sync..."
-msgstr "Sincronizar..."
-
-msgid "About"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
+"Os seus eventos futuros serão mostrados aqui assim que selecionar uma data "
+"com eventos"
+
+msgid "all the day"
+msgstr "Todo o dia"
+
+msgid "at"
+msgstr "em"
 
 #~ msgid "Name or Email Address"
 #~ msgstr "Nome ou Endereço de Correio Electrónico"
 
 #, fuzzy
-#~ msgid "all day"
-#~ msgstr "Todo o dia"
-
-#, fuzzy
 #~ msgid "_Add Event"
 #~ msgstr "Adicionar Evento"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Todo o dia"

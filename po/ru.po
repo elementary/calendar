@@ -18,64 +18,26 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-06 04:45+0000\n"
 "X-Generator: Launchpad (build 15060)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Ваши предстоящие события будут показаны здесь, когда вы выберете дату с "
-"событиями."
-
-msgid "%B %e, %Y"
-msgstr ""
-
 msgid "%A, %b %d"
 msgstr ""
 
-msgid "%l:%M %p"
+msgid "%B %e, %Y"
 msgstr ""
 
 msgid "%H:%M"
 msgstr ""
 
-msgid "all the day"
-msgstr "Весь день"
+msgid "%l:%M %p"
+msgstr ""
 
-msgid "at"
-msgstr "в"
+msgid "About"
+msgstr ""
 
 msgid "Add Event"
 msgstr "Добавить событие"
 
-msgid "Edit Event"
-msgstr "Изменить событие"
-
-msgid "From:"
-msgstr "От:"
-
 msgid "All day:"
 msgstr "Весь день:"
-
-msgid "To:"
-msgstr "Для:"
-
-msgid "Title"
-msgstr "Заголовок"
-
-msgid "Name of Event"
-msgstr "Название события"
-
-msgid "Location"
-msgstr "Местоположение"
-
-msgid "John Smith OR Example St."
-msgstr "Джон Смит или например ул."
-
-msgid "Guests"
-msgstr "Гости"
-
-msgid "John Smith"
-msgstr ""
 
 msgid "Comments"
 msgstr "Комментарии"
@@ -89,47 +51,85 @@ msgstr "Создать событие"
 msgid "Create a new event"
 msgstr "Создать новое событие"
 
-msgid "Edit the selected event"
-msgstr "Редактировать выбранное событие"
-
 msgid "Delete the selected event"
 msgstr "Удалить выбранное событие"
 
-msgid "Select calendars to display"
-msgstr "Выберите календари для просмотра"
+msgid "Edit Event"
+msgstr "Изменить событие"
+
+msgid "Edit the selected event"
+msgstr "Редактировать выбранное событие"
+
+msgid "Export or Share the default Calendar"
+msgstr "Экспорт или поделиться календарём по умолчанию"
+
+msgid "From:"
+msgstr "От:"
+
+msgid "Fullscreen"
+msgstr "На весь экран"
+
+msgid "Guests"
+msgstr "Гости"
+
+msgid "Import..."
+msgstr "Импортировать…"
+
+msgid "John Smith"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr "Джон Смит или например ул."
+
+msgid "Location"
+msgstr "Местоположение"
+
+msgid "Name of Event"
+msgstr "Название события"
 
 msgid "Search For Events.."
 msgstr "Поиск  событий"
 
-msgid "Export or Share the default Calendar"
-msgstr "Экспорт или поделиться календарём по умолчанию"
+msgid "Select calendars to display"
+msgstr "Выберите календари для просмотра"
+
+msgid "Show Week Numbers"
+msgstr "Показать номера недель"
+
+msgid "Sync..."
+msgstr "Синхронизация"
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "To:"
+msgstr "Для:"
 
 #. Create everything
 msgid "Today"
 msgstr "Сегодня"
 
-msgid "Fullscreen"
-msgstr "На весь экран"
-
-msgid "Show Week Numbers"
-msgstr "Показать номера недель"
-
-msgid "Import..."
-msgstr "Импортировать…"
-
-msgid "Sync..."
-msgstr "Синхронизация"
-
-msgid "About"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
+"Ваши предстоящие события будут показаны здесь, когда вы выберете дату с "
+"событиями."
+
+msgid "all the day"
+msgstr "Весь день"
+
+msgid "at"
+msgstr "в"
 
 #~ msgid "Name or Email Address"
 #~ msgstr "Имя или адрес электронной почты"
 
 #, fuzzy
-#~ msgid "all day"
-#~ msgstr "Весь день:"
-
-#, fuzzy
 #~ msgid "_Add Event"
 #~ msgstr "Добавить событие"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Весь день:"

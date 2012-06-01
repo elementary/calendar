@@ -18,62 +18,26 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-04-06 04:45+0000\n"
 "X-Generator: Launchpad (build 15060)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr "Poté co  vyberete datum se zde zobrazí nadcházející události."
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+msgid "%H:%M"
+msgstr "%H:%M"
 
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "all the day"
-msgstr "celý den"
-
-msgid "at"
-msgstr "v"
+msgid "About"
+msgstr ""
 
 msgid "Add Event"
 msgstr "Přidat událost"
 
-msgid "Edit Event"
-msgstr "Upravit událost"
-
-msgid "From:"
-msgstr "From:"
-
 msgid "All day:"
 msgstr "Celý den:"
-
-msgid "To:"
-msgstr "Pro:"
-
-msgid "Title"
-msgstr "Název"
-
-msgid "Name of Event"
-msgstr "Název události"
-
-msgid "Location"
-msgstr "Místo"
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Guests"
-msgstr "Hosté"
-
-msgid "John Smith"
-msgstr ""
 
 msgid "Comments"
 msgstr "Komentáře"
@@ -87,47 +51,83 @@ msgstr "Vytvořit událost"
 msgid "Create a new event"
 msgstr "Vytvořit novou událost"
 
-msgid "Edit the selected event"
-msgstr "Upravit vybranou událost"
-
 msgid "Delete the selected event"
 msgstr "Odstranit vybranou událost"
 
-msgid "Select calendars to display"
-msgstr "Vyberte kalendáře, které zobrazit"
+msgid "Edit Event"
+msgstr "Upravit událost"
+
+msgid "Edit the selected event"
+msgstr "Upravit vybranou událost"
+
+msgid "Export or Share the default Calendar"
+msgstr "Exportovat nebo Sdílet výchozí kalendář"
+
+msgid "From:"
+msgstr "From:"
+
+msgid "Fullscreen"
+msgstr "Na celou obrazovku"
+
+msgid "Guests"
+msgstr "Hosté"
+
+msgid "Import..."
+msgstr "Importovat..."
+
+msgid "John Smith"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Location"
+msgstr "Místo"
+
+msgid "Name of Event"
+msgstr "Název události"
 
 msgid "Search For Events.."
 msgstr "Vyhledávat události"
 
-msgid "Export or Share the default Calendar"
-msgstr "Exportovat nebo Sdílet výchozí kalendář"
+msgid "Select calendars to display"
+msgstr "Vyberte kalendáře, které zobrazit"
+
+msgid "Show Week Numbers"
+msgstr "Zobrazovat čísla týdnů"
+
+msgid "Sync..."
+msgstr "Synchronizovat..."
+
+msgid "Title"
+msgstr "Název"
+
+msgid "To:"
+msgstr "Pro:"
 
 #. Create everything
 msgid "Today"
 msgstr "Dnes"
 
-msgid "Fullscreen"
-msgstr "Na celou obrazovku"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr "Poté co  vyberete datum se zde zobrazí nadcházející události."
 
-msgid "Show Week Numbers"
-msgstr "Zobrazovat čísla týdnů"
+msgid "all the day"
+msgstr "celý den"
 
-msgid "Import..."
-msgstr "Importovat..."
-
-msgid "Sync..."
-msgstr "Synchronizovat..."
-
-msgid "About"
-msgstr ""
+msgid "at"
+msgstr "v"
 
 #~ msgid "Name or Email Address"
 #~ msgstr "Jméno nebo Email"
 
 #, fuzzy
-#~ msgid "all day"
-#~ msgstr "Celý den:"
-
-#, fuzzy
 #~ msgid "_Add Event"
 #~ msgstr "Přidat událost"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Celý den:"

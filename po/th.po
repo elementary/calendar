@@ -18,62 +18,26 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-19 04:56+0000\n"
 "X-Generator: Launchpad (build 14969)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr "กิจกรรมที่ใกล้จะมาถึงของคุณจะถูกแสดงที่นี่หากคุณเลือกวันที่ที่มีกิจกรรมอยู่"
-
-msgid "%B %e, %Y"
-msgstr ""
-
 msgid "%A, %b %d"
 msgstr ""
 
-msgid "%l:%M %p"
+msgid "%B %e, %Y"
 msgstr ""
 
 msgid "%H:%M"
 msgstr ""
 
-msgid "all the day"
-msgstr "ทั้งวัน"
+msgid "%l:%M %p"
+msgstr ""
 
-msgid "at"
-msgstr "ที่"
+msgid "About"
+msgstr ""
 
 msgid "Add Event"
 msgstr "เพิ่มกิจกรรม"
 
-msgid "Edit Event"
-msgstr "แก้ไขกิจกรรม"
-
-msgid "From:"
-msgstr "จาก:"
-
 msgid "All day:"
 msgstr "ทั้งวัน:"
-
-msgid "To:"
-msgstr "ถึง:"
-
-msgid "Title"
-msgstr ""
-
-msgid "Name of Event"
-msgstr "ชื่อกิจกรรม"
-
-msgid "Location"
-msgstr "สถานที่"
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Guests"
-msgstr "แขก"
-
-msgid "John Smith"
-msgstr ""
 
 msgid "Comments"
 msgstr ""
@@ -87,36 +51,72 @@ msgstr "สร้างกิจกรรม"
 msgid "Create a new event"
 msgstr "สร้างกิจกรรมใหม่"
 
-msgid "Edit the selected event"
-msgstr "แก้ไขกิจกรรมที่เลือก"
-
 msgid "Delete the selected event"
 msgstr "ลบกิจกรรมที่เลือก"
 
-msgid "Select calendars to display"
-msgstr "เลือกปฏิทินที่จะแสดง"
+msgid "Edit Event"
+msgstr "แก้ไขกิจกรรม"
+
+msgid "Edit the selected event"
+msgstr "แก้ไขกิจกรรมที่เลือก"
+
+msgid "Export or Share the default Calendar"
+msgstr "ส่งหรือแบ่งปันปฏิทินที่ตั้งไว้เป็นค่าเริ่มต้น"
+
+msgid "From:"
+msgstr "จาก:"
+
+msgid "Fullscreen"
+msgstr "เต็มจอ"
+
+msgid "Guests"
+msgstr "แขก"
+
+msgid "Import..."
+msgstr "นำ...เข้่า"
+
+msgid "John Smith"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Location"
+msgstr "สถานที่"
+
+msgid "Name of Event"
+msgstr "ชื่อกิจกรรม"
 
 msgid "Search For Events.."
 msgstr "ค้นหากิจกรรม.."
 
-msgid "Export or Share the default Calendar"
-msgstr "ส่งหรือแบ่งปันปฏิทินที่ตั้งไว้เป็นค่าเริ่มต้น"
+msgid "Select calendars to display"
+msgstr "เลือกปฏิทินที่จะแสดง"
+
+msgid "Show Week Numbers"
+msgstr "แสดงสัปดาห์ที่"
+
+msgid "Sync..."
+msgstr "ปรับข้อมูลให้ตรงกัน"
+
+msgid "Title"
+msgstr ""
+
+msgid "To:"
+msgstr "ถึง:"
 
 #. Create everything
 msgid "Today"
 msgstr "วันนี้"
 
-msgid "Fullscreen"
-msgstr "เต็มจอ"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr "กิจกรรมที่ใกล้จะมาถึงของคุณจะถูกแสดงที่นี่หากคุณเลือกวันที่ที่มีกิจกรรมอยู่"
 
-msgid "Show Week Numbers"
-msgstr "แสดงสัปดาห์ที่"
+msgid "all the day"
+msgstr "ทั้งวัน"
 
-msgid "Import..."
-msgstr "นำ...เข้่า"
-
-msgid "Sync..."
-msgstr "ปรับข้อมูลให้ตรงกัน"
-
-msgid "About"
-msgstr ""
+msgid "at"
+msgstr "ที่"

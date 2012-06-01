@@ -18,63 +18,25 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-03-27 05:01+0000\n"
 "X-Generator: Launchpad (build 15011)\n"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Τα προσεχή γεγονότα σας θα εμφανίζονται εδώ όταν επιλέξετε μια ημερομηνία "
-"γεγονότων."
-
-msgid "%B %e, %Y"
-msgstr ""
-
 msgid "%A, %b %d"
 msgstr ""
 
-msgid "%l:%M %p"
+msgid "%B %e, %Y"
 msgstr ""
 
 msgid "%H:%M"
 msgstr ""
 
-msgid "all the day"
-msgstr "ολόκληρη την ημέρα"
+msgid "%l:%M %p"
+msgstr ""
 
-msgid "at"
+msgid "About"
 msgstr ""
 
 msgid "Add Event"
 msgstr "Προσθήκη συμβάντος"
 
-msgid "Edit Event"
-msgstr "Επεξεργασία συμβάντος"
-
-msgid "From:"
-msgstr ""
-
 msgid "All day:"
-msgstr ""
-
-msgid "To:"
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "Name of Event"
-msgstr "Όνομα συμβάντος"
-
-msgid "Location"
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr "Γιάννης Παπαδόπουλος ή Οδός Τάδε"
-
-msgid "Guests"
-msgstr ""
-
-msgid "John Smith"
 msgstr ""
 
 msgid "Comments"
@@ -89,47 +51,85 @@ msgstr "Δημιουργία συμβάντος"
 msgid "Create a new event"
 msgstr "Δημιουργία ενός νέου συμβάντος"
 
-msgid "Edit the selected event"
-msgstr "Επεξεργασία του επιλεγμένου συμβάντος"
-
 msgid "Delete the selected event"
 msgstr "Διαγραφή του επιλεγμένου συμβάντος"
 
-msgid "Select calendars to display"
-msgstr "Επιλέξτε τα προς εμφάνιση ημερολόγια"
+msgid "Edit Event"
+msgstr "Επεξεργασία συμβάντος"
 
-msgid "Search For Events.."
-msgstr "Αναζήτηση συμβάντος"
+msgid "Edit the selected event"
+msgstr "Επεξεργασία του επιλεγμένου συμβάντος"
 
 msgid "Export or Share the default Calendar"
 msgstr "Εξαγωγή η κοινή χρήση του αρχικού ημερολογίου"
 
-#. Create everything
-msgid "Today"
+msgid "From:"
 msgstr ""
 
 msgid "Fullscreen"
 msgstr ""
 
-msgid "Show Week Numbers"
-msgstr "Εμφάνιση αύξοντα αριθμού εβδομάδος"
+msgid "Guests"
+msgstr ""
 
 msgid "Import..."
 msgstr ""
 
+msgid "John Smith"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr "Γιάννης Παπαδόπουλος ή Οδός Τάδε"
+
+msgid "Location"
+msgstr ""
+
+msgid "Name of Event"
+msgstr "Όνομα συμβάντος"
+
+msgid "Search For Events.."
+msgstr "Αναζήτηση συμβάντος"
+
+msgid "Select calendars to display"
+msgstr "Επιλέξτε τα προς εμφάνιση ημερολόγια"
+
+msgid "Show Week Numbers"
+msgstr "Εμφάνιση αύξοντα αριθμού εβδομάδος"
+
 msgid "Sync..."
 msgstr ""
 
-msgid "About"
+msgid "Title"
+msgstr ""
+
+msgid "To:"
+msgstr ""
+
+#. Create everything
+msgid "Today"
+msgstr ""
+
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Τα προσεχή γεγονότα σας θα εμφανίζονται εδώ όταν επιλέξετε μια ημερομηνία "
+"γεγονότων."
+
+msgid "all the day"
+msgstr "ολόκληρη την ημέρα"
+
+msgid "at"
 msgstr ""
 
 #~ msgid "Name or Email Address"
 #~ msgstr "Όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
 
 #, fuzzy
-#~ msgid "all day"
-#~ msgstr "ολόκληρη την ημέρα"
-
-#, fuzzy
 #~ msgid "_Add Event"
 #~ msgstr "Προσθήκη συμβάντος"
+
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "ολόκληρη την ημέρα"
