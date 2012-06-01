@@ -92,13 +92,14 @@ public class SourceManager: GLib.Object {
 
         // the order that groups will appear
         _groups = new Gee.ArrayList<E.SourceGroup> ((EqualFunc) Util.source_group_equal_func);
-        foreach (E.SourceGroup group in source_list.peek_groups()) {
-            
-            _groups.add (group);
-        }
-//        _groups.add (GROUP_LOCAL);
-//        _groups.add (GROUP_REMOTE);
-//        _groups.add (GROUP_CONTACTS);
+
+//        foreach (E.SourceGroup group in source_list.peek_groups()) {
+//            
+//            _groups.add (group);
+//        }
+        _groups.add (GROUP_LOCAL);
+        _groups.add (GROUP_REMOTE);
+        _groups.add (GROUP_CONTACTS);
 
         group_sources = new Gee.HashMultiMap<E.SourceGroup, E.Source> (
             (HashFunc) Util.source_group_hash_func,
