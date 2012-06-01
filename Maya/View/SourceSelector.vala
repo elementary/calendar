@@ -29,7 +29,7 @@ class SourceGroupTreeView : Gtk.TreeView {
     public Gtk.CellRendererPixbuf r_close {get; private set; }
     public Gtk.TreeViewColumn column { get; private set; }
 
-    public SourceGroupTreeView (E.SourceGroup group, Gtk.TreeModelSort model) {
+    public SourceGroupTreeView (E.SourceGroup group, Gtk.TreeModelSort model, bool editable) {
 
         hexpand = true;
         set_model (model);
@@ -46,7 +46,7 @@ class SourceGroupTreeView : Gtk.TreeView {
         append_column (column);
 
         // Only show close buttons for the local group
-        if (group.peek_base_uri() == "local:") {
+        if (editable) {
             column = new Gtk.TreeViewColumn ();
             
             r_close = new Gtk.CellRendererPixbuf ();
@@ -72,7 +72,7 @@ class SourceGroupBox : Gtk.Grid {
     public E.SourceGroup group { get; private set; }
     public SourceGroupTreeView tview { get; private set; }
 
-    public SourceGroupBox (E.SourceGroup group, Gtk.TreeModelSort tmodel, Model.SourceManager model) {
+    public SourceGroupBox (E.SourceGroup group, Gtk.TreeModelSort tmodel, Model.SourceManager model, bool editable) {
 
         //Object (homogeneous:false, spacing:0);
 
@@ -85,12 +85,19 @@ class SourceGroupBox : Gtk.Grid {
         evbox.add(label);
         attach (evbox, 0, 0, 1, 1);
 
-        tview = new SourceGroupTreeView (group, tmodel);
+        tview = new SourceGroupTreeView (group, tmodel, editable);
         attach (tview, 0, 1, 1, 1);
 
         evbox.modify_bg (Gtk.StateType.NORMAL, tview.style.base[Gtk.StateType.NORMAL]);
         label.margin_top = 8;
         label.margin_bottom = 2;
+
+        // Add entry to editable groups
+        if (editable) {
+            var entry = new Granite.Widgets.HintedEntry ("Add calendar");
+            attach (entry, 0, 2, 1, 1);
+            entry.activate.connect (() => {on_entry_activate (model, group, entry.text);entry.text = "";});
+        }
 
         show_all();
 
@@ -125,6 +132,15 @@ class SourceGroupBox : Gtk.Grid {
         return true;
     }
 
+    /**
+     * Called when enter is pressed in the add source entry
+     */
+    void on_entry_activate (Model.SourceManager model, E.SourceGroup group, string entry_text) {
+
+        var new_source = new E.Source (entry_text, entry_text);
+        model.create_source (group, new_source);
+    }
+
 }
 
 /**
@@ -157,9 +173,13 @@ class SourceSelector : Granite.Widgets.PopOver {
             
             var tmodel = model.get_tree_model (group);
 
-            var box = new SourceGroupBox (group, tmodel, model);
+            // Only local group is editable for now
+            bool editable = group.peek_base_uri() == "local:";
+            
+            var box = new SourceGroupBox (group, tmodel, model, editable);
             box.no_show_all = true;
-            box.visible = model.get_sources(group).size > 0;
+            // Don't show empty groups (but always show editable groups)
+            box.visible = model.get_sources(group).size > 0 || editable;
             _group_box.set (group, box);
 
             sources_grid.attach (box, 0, groupnumber, 1, 1);
@@ -171,38 +191,13 @@ class SourceSelector : Granite.Widgets.PopOver {
             groupnumber++;
         }
 
-        var entry = new Granite.Widgets.HintedEntry ("Add calendar");
-        sources_grid.attach (entry, 0, groupnumber, 1, 1);
-        entry.activate.connect (() => {on_entry_activate (entry.text);entry.text = "";});
-
         var container = (Gtk.Container) get_content_area ();
         container.add (sources_grid);
 
         delete_event.connect (hide_on_delete);
     }
 
-    /**
-     * Called when enter is pressed in the add source entry
-     */
-    void on_entry_activate (string entry_text) {
 
-        var new_source = new E.Source (entry_text, entry_text);
-
-        E.SourceGroup? group = null;
-        foreach (var existing_group in model.groups) {
-            if (existing_group.peek_base_uri() == "local:") {
-                group = existing_group;
-                break;
-            }
-        }
-        if (group == null) {
-            // No local group => create it
-            group = new E.SourceGroup ("_(On this computer)", "local:");
-            model.create_group (group);
-        }
-
-        model.create_source (group, new_source);
-    }
 
     void data_func_name (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel tmodel, Gtk.TreeIter iter) {
 
