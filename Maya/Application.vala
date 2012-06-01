@@ -274,10 +274,8 @@ namespace Maya {
          */
         void on_modified (E.CalComponent comp) {
             var dialog = new Maya.View.EventDialog (window, sourcemgr, comp, comp.get_data<E.Source>("source"), false);
-            dialog.show_all ();
-            dialog.run ();
-            dialog.destroy ();
-            calmodel.update_event (dialog.source, comp, dialog.mod_type);
+            dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, false));
+            dialog.present ();
         }
 
         /**
@@ -354,6 +352,7 @@ namespace Maya {
 
             E.CalComponent event = dialog.ecal;
             E.Source source = dialog.source;
+            E.Source? original_source = dialog.original_source;
             E.CalObjModType mod_type = dialog.mod_type;
 
             dialog.dispose ();
@@ -363,8 +362,19 @@ namespace Maya {
             
             if (add_event)
                 calmodel.add_event (source, event);
-            else
-                calmodel.update_event (source, event, mod_type);
+            else {
+
+                assert(original_source != null);
+
+                if (original_source.peek_uid () == source.peek_uid ()) {
+                    // Same uids, just modify
+                    calmodel.update_event (source, event, mod_type);
+                } else {
+                    // Different calendar, remove and readd
+                    calmodel.remove_event (original_source, event, mod_type);
+                    calmodel.add_event (source, event);
+                }
+            }
         }
 
         void on_model_parameters_changed () {

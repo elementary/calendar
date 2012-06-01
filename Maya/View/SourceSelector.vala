@@ -26,10 +26,12 @@ class SourceGroupTreeView : Gtk.TreeView {
 
     public Gtk.CellRendererText r_name { get; private set; }
     public Gtk.CellRendererToggle r_enabled { get; private set; }
+    public Gtk.CellRendererPixbuf r_close {get; private set; }
     public Gtk.TreeViewColumn column { get; private set; }
 
-    public SourceGroupTreeView (Gtk.TreeModelSort model) {
+    public SourceGroupTreeView (E.SourceGroup group, Gtk.TreeModelSort model, bool editable) {
 
+        hexpand = true;
         set_model (model);
 
         column = new Gtk.TreeViewColumn ();
@@ -42,6 +44,19 @@ class SourceGroupTreeView : Gtk.TreeView {
 
         column.set_expand (true);
         append_column (column);
+
+        // Only show close buttons for the local group
+        if (editable) {
+            column = new Gtk.TreeViewColumn ();
+            
+            r_close = new Gtk.CellRendererPixbuf ();
+            r_close.stock_id = "gtk-close";
+            column.pack_start (r_close, false);
+
+            column.set_expand (false);
+            column.set_title ("closebuttons");
+            append_column (column);
+        }
 
         headers_visible = false;
         get_selection().mode = Gtk.SelectionMode.NONE; // XXX: temporary
@@ -57,7 +72,7 @@ class SourceGroupBox : Gtk.Grid {
     public E.SourceGroup group { get; private set; }
     public SourceGroupTreeView tview { get; private set; }
 
-    public SourceGroupBox (E.SourceGroup group, Gtk.TreeModelSort tmodel) {
+    public SourceGroupBox (E.SourceGroup group, Gtk.TreeModelSort tmodel, Model.SourceManager model, bool editable) {
 
         //Object (homogeneous:false, spacing:0);
 
@@ -70,15 +85,62 @@ class SourceGroupBox : Gtk.Grid {
         evbox.add(label);
         attach (evbox, 0, 0, 1, 1);
 
-        tview = new SourceGroupTreeView (tmodel);
+        tview = new SourceGroupTreeView (group, tmodel, editable);
         attach (tview, 0, 1, 1, 1);
 
         evbox.modify_bg (Gtk.StateType.NORMAL, tview.style.base[Gtk.StateType.NORMAL]);
         label.margin_top = 8;
         label.margin_bottom = 2;
 
+        // Add entry to editable groups
+        if (editable) {
+            var entry = new Granite.Widgets.HintedEntry ("Add calendar");
+            attach (entry, 0, 2, 1, 1);
+            entry.activate.connect (() => {on_entry_activate (model, group, entry.text);entry.text = "";});
+        }
+
         show_all();
+
+        // Listen to clicks on the treeview
+        tview.button_press_event.connect ((button) => (on_click(button, tmodel, model)));
     }
+
+    bool on_click (Gdk.EventButton button, Gtk.TreeModelSort tmodel, Model.SourceManager model) {
+
+        // Only react on single left click
+        if (button.type != Gdk.EventType.BUTTON_PRESS || button.button != 1)
+            return false;
+
+        // Check where the user clicked
+        Gtk.TreePath path;
+        Gtk.TreeViewColumn col;
+        tview.get_path_at_pos ((int) button.x, (int) button.y, out path, out col, null, null);
+        
+        // Column other than close was clicked, don't handle it
+        if (col.get_title () != "closebuttons")
+            return false;
+
+        // Search for the corresponding source
+        Gtk.TreeIter iter;
+        bool result = tmodel.get_iter (out iter, path);
+
+        var source = model.get_source_for_iter (tmodel, iter);
+
+        // Destroy the source
+        model.destroy_source (group, source);
+
+        return true;
+    }
+
+    /**
+     * Called when enter is pressed in the add source entry
+     */
+    void on_entry_activate (Model.SourceManager model, E.SourceGroup group, string entry_text) {
+
+        var new_source = new E.Source (entry_text, entry_text);
+        model.create_source (group, new_source);
+    }
+
 }
 
 /**
@@ -106,23 +168,27 @@ class SourceSelector : Granite.Widgets.PopOver {
         set_title ("Calendars");
 
         var sources_grid = new Gtk.Grid ();
-        int groupnumer = 0;
+        int groupnumber = 0;
         foreach (var group in model.groups) {
             
             var tmodel = model.get_tree_model (group);
 
-            var box = new SourceGroupBox (group, tmodel);
+            // Only local group is editable for now
+            bool editable = group.peek_base_uri() == "local:";
+            
+            var box = new SourceGroupBox (group, tmodel, model, editable);
             box.no_show_all = true;
-            box.visible = model.get_sources(group).size > 0;
+            // Don't show empty groups (but always show editable groups)
+            box.visible = model.get_sources(group).size > 0 || editable;
             _group_box.set (group, box);
 
-            sources_grid.attach (box, 0, groupnumer, 1, 1);
+            sources_grid.attach (box, 0, groupnumber, 1, 1);
 
             box.tview.get_selection().changed.connect(() => {treeview_selection_changed (box);});
 
             box.tview.column.set_cell_data_func (box.tview.r_name, data_func_name);
             box.tview.column.set_cell_data_func (box.tview.r_enabled, data_func_enabled);
-            groupnumer++;
+            groupnumber++;
         }
 
         var container = (Gtk.Container) get_content_area ();
@@ -130,6 +196,8 @@ class SourceSelector : Granite.Widgets.PopOver {
 
         delete_event.connect (hide_on_delete);
     }
+
+
 
     void data_func_name (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel tmodel, Gtk.TreeIter iter) {
 

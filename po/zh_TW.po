@@ -7,41 +7,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-31 12:17+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-03-31 09:18+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-01 05:41+0000\n"
-"X-Generator: Launchpad (build 15342)\n"
-"Language: \n"
+"X-Launchpad-Export-Date: 2012-04-01 04:52+0000\n"
+"X-Generator: Launchpad (build 15032)\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
-
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr ""
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Contacts"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr "當您選取的日子有活動時，未來的活動會顯示在這裡。"
 
 msgid "%B %e, %Y"
 msgstr "%Y年%b%e日"
@@ -54,6 +35,12 @@ msgstr "%p %l:%M"
 
 msgid "%H:%M"
 msgstr "%H:%M"
+
+msgid "all the day"
+msgstr "整天"
+
+msgid "at"
+msgstr "於"
 
 msgid "Add Event"
 msgstr "加入事件"
@@ -85,17 +72,14 @@ msgstr "王小明 或 某某街"
 msgid "Guests"
 msgstr "客人"
 
-msgid "Name or Email Address"
-msgstr "名稱或電子郵件位址"
+msgid "John Smith"
+msgstr ""
 
 msgid "Comments"
 msgstr "評註"
 
 msgid "Create Event"
 msgstr "建立事件"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -137,41 +121,13 @@ msgstr "同步..."
 msgid "About"
 msgstr ""
 
-msgid "Day"
-msgstr ""
+#~ msgid "Name or Email Address"
+#~ msgstr "名稱或電子郵件位址"
 
-msgid "Week"
-msgstr ""
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "整天："
 
-msgid "Month"
-msgstr ""
-
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr "當您選取的日子有活動時，未來的活動會顯示在這裡。"
-
-msgid "Starts: \t"
-msgstr ""
-
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "all day"
-msgstr ""
-
-msgid "at"
-msgstr "於"
-
-msgid "Export Calendar..."
-msgstr ""
-
-msgid "calendar.ics"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
-#~ msgid "all the day"
-#~ msgstr "整天"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "加入事件"

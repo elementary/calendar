@@ -275,7 +275,10 @@ public class CalendarModel : Object {
 
     void remove_source (E.Source source) {
 
-        assert (source_view.has_key (source));
+        // Already out of the model, so do nothing
+        if (!source_view.has_key (source))
+            return;
+
         var current_view = source_view [source];
         
         try {

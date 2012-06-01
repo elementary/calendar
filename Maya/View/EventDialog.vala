@@ -30,21 +30,33 @@ namespace Maya.View {
         private Granite.Widgets.DatePicker to_date_picker;
         private Gtk.Switch allday_switch;
         private Gtk.Widget create_button;
+        
 
         private Granite.Widgets.TimePicker from_time_picker;
         private Granite.Widgets.TimePicker to_time_picker;
 
         private Gtk.Grid content_grid { get; private set; }
 
+        private Gee.Collection<E.Source> sources;
+
+        private Gtk.ComboBox calendar_box;
+
         public E.Source source { get; private set; }
+
+        public E.Source? original_source { get; private set; }
 
         public E.CalComponent ecal { get; private set; }
 
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
 
         public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
-        
+
+            this.original_source = source;
+
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
+
+            sources = sourcemgr.get_all_sources ();
+
             this.ecal = ecal;
 
             if (add_event) {
@@ -159,6 +171,16 @@ namespace Maya.View {
             property = new iCal.icalproperty (iCal.icalproperty_kind.COMMENT_PROPERTY);
             property.set_comment (comment_textview.get_buffer ().text);
             comp.add_property (property);
+
+            // Save the selected source
+            string id = calendar_box.get_active_id ();
+
+            foreach (E.Source possible_source in sources) {
+                if (possible_source.peek_uid () == id) {
+                    this.source = possible_source;
+                    break;
+                }
+            }
         }
 
         //--- Helpers ---//
@@ -230,6 +252,9 @@ namespace Maya.View {
                 buffer.text = property.get_comment ();
                 comment_textview.set_buffer (buffer);
             }    
+
+            // Load the source
+            calendar_box.set_active_id (this.source.peek_uid());
         }
 
         void build_dialog (bool add_event) {
@@ -263,7 +288,7 @@ namespace Maya.View {
             to_time_picker.notify["time"].connect ( () => {on_time_modified(1);} );
             
             allday_switch_grid.attach (allday_switch, 0, 0, 1, 1);
-            
+
             allday_switch_grid.set_valign (Gtk.Align.CENTER);
             
             allday_switch.notify["active"].connect (() => { 
@@ -276,6 +301,21 @@ namespace Maya.View {
             title_entry = new Granite.Widgets.HintedEntry (_("Name of Event"));
             title_entry.changed.connect(on_title_entry_modified);
             
+            var calendar_label = make_label (_("Calendar"));
+
+            var liststore = new Gtk.ListStore (2, typeof (string), typeof(string));
+            
+            // Add all the sources
+            foreach (E.Source source in sources)
+                liststore.insert_with_values (null, 0, 0, source.peek_name(), 1, source.peek_uid());
+
+            calendar_box = new Gtk.ComboBox.with_model (liststore);
+            calendar_box.set_id_column (1);
+
+            Gtk.CellRenderer cell = new Gtk.CellRendererText();
+            calendar_box.pack_start( cell, false );
+            calendar_box.set_attributes( cell, "text", 0 );
+
             var location_label = make_label (_("Location"));
             location_entry = new Granite.Widgets.HintedEntry (_("John Smith OR Example St."));
             
@@ -302,10 +342,12 @@ namespace Maya.View {
             content_grid.attach (location_label, 1, 4, 3, 1);
             content_grid.attach (title_entry, 0, 5, 1, 1);
             content_grid.attach (location_entry, 1, 5, 3, 1);
-            content_grid.attach (guest_label, 0, 6, 4, 1);
-            content_grid.attach (guest_entry, 0, 7, 4, 1);
-            content_grid.attach (comment_label, 0, 8, 4, 1);
-            content_grid.attach (comment_textview, 0, 9, 4, 1);
+            content_grid.attach (calendar_label, 0, 6, 4, 1);
+            content_grid.attach (calendar_box, 0, 7, 4, 1);
+            content_grid.attach (guest_label, 0, 8, 4, 1);
+            content_grid.attach (guest_entry, 0, 9, 4, 1);
+            content_grid.attach (comment_label, 0, 10, 4, 1);
+            content_grid.attach (comment_textview, 0, 11, 4, 1);
             container.add (content_grid);
            
             if (add_event) {

@@ -7,41 +7,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-31 12:17+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-05-27 11:29+0000\n"
 "Last-Translator: KVG <kvgkvg@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-01 05:41+0000\n"
-"X-Generator: Launchpad (build 15342)\n"
-"Language: bg\n"
+"X-Launchpad-Export-Date: 2012-05-28 05:40+0000\n"
+"X-Generator: Launchpad (build 15288)\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
-
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr ""
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Contacts"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
+"Предстоящите събития ще се появят тук, след като изберете дата със събития."
 
 msgid "%B %e, %Y"
 msgstr "%e %B %Y"
@@ -54,6 +36,12 @@ msgstr ""
 
 msgid "%H:%M"
 msgstr "%H:%M"
+
+msgid "all the day"
+msgstr "през целия ден"
+
+msgid "at"
+msgstr "в"
 
 msgid "Add Event"
 msgstr "Добавяне на събитие"
@@ -85,17 +73,14 @@ msgstr "John Smith или Example St."
 msgid "Guests"
 msgstr "Гости"
 
-msgid "Name or Email Address"
-msgstr "Име или имейл адрес"
+msgid "John Smith"
+msgstr ""
 
 msgid "Comments"
 msgstr "Коментари"
 
 msgid "Create Event"
 msgstr "Създаване на събитието"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -137,42 +122,13 @@ msgstr "Синхронизация..."
 msgid "About"
 msgstr ""
 
-msgid "Day"
-msgstr ""
+#~ msgid "Name or Email Address"
+#~ msgstr "Име или имейл адрес"
 
-msgid "Week"
-msgstr ""
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Цял ден:"
 
-msgid "Month"
-msgstr ""
-
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Предстоящите събития ще се появят тук, след като изберете дата със събития."
-
-msgid "Starts: \t"
-msgstr ""
-
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "all day"
-msgstr ""
-
-msgid "at"
-msgstr "в"
-
-msgid "Export Calendar..."
-msgstr ""
-
-msgid "calendar.ics"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
-#~ msgid "all the day"
-#~ msgstr "през целия ден"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Добавяне на събитие"

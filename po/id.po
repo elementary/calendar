@@ -7,41 +7,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-31 12:17+0200\n"
-"PO-Revision-Date: 2012-06-01 01:19+0000\n"
-"Last-Translator: Iswanto <mcs.iswanto@yahoo.com>\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"PO-Revision-Date: 2012-05-06 21:44+0000\n"
+"Last-Translator: iman <Unknown>\n"
 "Language-Team: Indonesian <id@li.org>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-01 05:41+0000\n"
-"X-Generator: Launchpad (build 15342)\n"
-"Language: id\n"
+"X-Launchpad-Export-Date: 2012-05-07 04:52+0000\n"
+"X-Generator: Launchpad (build 15195)\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr "Kalender"
-
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr ""
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Di komputer ini"
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Contacts"
-msgstr "Daftar kontak"
-
-msgid "Personal"
-msgstr "Pribadi"
+"Jadwal kegiatan-kegiatan Anda berikutnya akan ditampilkan disini saat Anda "
+"memilih tanggal yang disertai kegiatan."
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
@@ -54,6 +37,12 @@ msgstr "%l:%M %p"
 
 msgid "%H:%M"
 msgstr "%H:%M"
+
+msgid "all the day"
+msgstr "sepanjang hari"
+
+msgid "at"
+msgstr "pada"
 
 msgid "Add Event"
 msgstr "Tambah Kegiatan"
@@ -85,17 +74,14 @@ msgstr "John Smith OR Example St."
 msgid "Guests"
 msgstr "Tamu"
 
-msgid "Name or Email Address"
-msgstr "Nama atau Alamat Email"
+msgid "John Smith"
+msgstr ""
 
 msgid "Comments"
 msgstr "Komentar"
 
 msgid "Create Event"
 msgstr "Buat Kegiatan"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -137,43 +123,13 @@ msgstr "Sinkronkan..."
 msgid "About"
 msgstr "Tentang"
 
-msgid "Day"
-msgstr "Hari"
+#~ msgid "Name or Email Address"
+#~ msgstr "Nama atau Alamat Email"
 
-msgid "Week"
-msgstr "Minggu"
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Sepanjang hari:"
 
-msgid "Month"
-msgstr "Bulan"
-
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Jadwal kegiatan-kegiatan Anda berikutnya akan ditampilkan disini saat Anda "
-"memilih tanggal yang disertai kegiatan."
-
-msgid "Starts: \t"
-msgstr "Mulai: \t"
-
-msgid "Ends: \t\t"
-msgstr "Selesai: \t\t"
-
-msgid "all day"
-msgstr "sepanjang hari"
-
-msgid "at"
-msgstr "pada"
-
-msgid "Export Calendar..."
-msgstr ""
-
-msgid "calendar.ics"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
-#~ msgid "all the day"
-#~ msgstr "sepanjang hari"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Tambah Kegiatan"

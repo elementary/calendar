@@ -7,41 +7,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-31 12:17+0200\n"
+"POT-Creation-Date: 2012-03-24 21:53+0100\n"
 "PO-Revision-Date: 2012-05-04 11:04+0000\n"
 "Last-Translator: wonderjake <jakob.axelson@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-01 05:41+0000\n"
-"X-Generator: Launchpad (build 15342)\n"
-"Language: sv\n"
+"X-Launchpad-Export-Date: 2012-05-05 05:22+0000\n"
+"X-Generator: Launchpad (build 15195)\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
 msgstr ""
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
-
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr ""
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Contacts"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
+"Dina kommande händelser kommer visas här när du markerar ett datum med "
+"händelser."
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
@@ -54,6 +37,12 @@ msgstr "%l:%M %p"
 
 msgid "%H:%M"
 msgstr "%H:%M"
+
+msgid "all the day"
+msgstr "hela dagen"
+
+msgid "at"
+msgstr "klockan"
 
 msgid "Add Event"
 msgstr "Lägg till händelse"
@@ -85,17 +74,14 @@ msgstr "Sven Svensson ELLER Exempelgatan"
 msgid "Guests"
 msgstr "Gäster"
 
-msgid "Name or Email Address"
-msgstr "Namn eller mailadress"
+msgid "John Smith"
+msgstr ""
 
 msgid "Comments"
 msgstr "Kommentarer"
 
 msgid "Create Event"
 msgstr "Skapa händelse"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -137,43 +123,13 @@ msgstr "Synkronisera..."
 msgid "About"
 msgstr ""
 
-msgid "Day"
-msgstr ""
+#~ msgid "Name or Email Address"
+#~ msgstr "Namn eller mailadress"
 
-msgid "Week"
-msgstr ""
+#, fuzzy
+#~ msgid "all day"
+#~ msgstr "Hela dagen:"
 
-msgid "Month"
-msgstr ""
-
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Dina kommande händelser kommer visas här när du markerar ett datum med "
-"händelser."
-
-msgid "Starts: \t"
-msgstr ""
-
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "all day"
-msgstr ""
-
-msgid "at"
-msgstr "klockan"
-
-msgid "Export Calendar..."
-msgstr ""
-
-msgid "calendar.ics"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
-#~ msgid "all the day"
-#~ msgstr "hela dagen"
+#, fuzzy
+#~ msgid "_Add Event"
+#~ msgstr "Lägg till händelse"

@@ -1,5 +1,5 @@
 <schemalist>
-	<enum id="window-state-maya-enum">
+	<enum id="org.pantheon.Maya.SavedState.window-state">
 		<value nick="Normal" value="0" />
 		<value nick="Maximized" value="1" />
 		<value nick="Fullscreen" value="2" />
@@ -28,7 +28,7 @@
 			<summary>The saved height of the window.</summary>
 			<description>The saved height of the window. Must be greater than 400, or it will not take effect.</description>
 		</key>
-		<key name="window-state" enum="window-state-maya-enum">
+		<key name="window-state" enum="org.pantheon.Maya.SavedState.window-state">
 			<default>"Normal"</default>
 			<summary>The saved state of the window.</summary>
 			<description>The saved state of the window.</description>
