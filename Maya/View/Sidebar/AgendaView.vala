@@ -55,7 +55,6 @@ namespace Maya.View {
 
             // Gtk.Grid properties
             set_column_homogeneous (true);
-            set_row_homogeneous (true);
             column_spacing = 0;
             row_spacing = 0;
 
