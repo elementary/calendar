@@ -7,37 +7,86 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
-"PO-Revision-Date: 2012-05-01 10:29+0000\n"
+"POT-Creation-Date: 2012-05-31 12:17+0200\n"
+"PO-Revision-Date: 2012-06-01 11:43+0000\n"
 "Last-Translator: Eduard Gotwig <eduardgotwig@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-02 05:45+0000\n"
-"X-Generator: Launchpad (build 15177)\n"
+"X-Launchpad-Export-Date: 2012-06-02 05:55+0000\n"
+"X-Generator: Launchpad (build 15342)\n"
+"Language: de\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Termine ansehen und planen"
+
+#. maya.desktop:5
+msgid "Calendar"
+msgstr "Kalender"
+
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Ereignis hinzufügen"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Auf diesem Computer"
+
+msgid "Webcal"
+msgstr "Webcal"
+
+msgid "Contacts"
+msgstr "Kontakte"
+
+msgid "Personal"
+msgstr "Persönlich"
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%H:%M"
-msgstr "%H:%M"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
 msgid "%l:%M %p"
 msgstr "%I:%M %p"
 
-msgid "About"
-msgstr ""
+msgid "%H:%M"
+msgstr "%H:%M"
 
 msgid "Add Event"
 msgstr "Termin hinzufügen"
 
+msgid "Edit Event"
+msgstr "Termin bearbeiten"
+
+msgid "From:"
+msgstr "Von:"
+
 msgid "All day:"
 msgstr "Ganztägig:"
+
+msgid "To:"
+msgstr "Bis:"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Name of Event"
+msgstr "Terminbezeichnung"
+
+msgid "Location"
+msgstr "Ort"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith ODER Beispiel St."
+
+msgid "Guests"
+msgstr "Gäste"
+
+msgid "Name or Email Address"
+msgstr "Name oder E-Mail"
 
 msgid "Comments"
 msgstr "Kommentare"
@@ -45,69 +94,57 @@ msgstr "Kommentare"
 msgid "Create Event"
 msgstr "Termin erstellen"
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Ihr Ereignis muss benannt sein und ein gültiges Datum haben"
+
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
 msgstr "Einen neuen Termin erstellen"
 
-msgid "Delete the selected event"
-msgstr "Ausgewählten Termin löschen"
-
-msgid "Edit Event"
-msgstr "Termin bearbeiten"
-
 msgid "Edit the selected event"
 msgstr "Augewählten Termin bearbeiten"
 
-msgid "Export or Share the default Calendar"
-msgstr "Standartkalender exportieren oder teilen"
-
-msgid "From:"
-msgstr "Von:"
-
-msgid "Fullscreen"
-msgstr "Vollbild"
-
-msgid "Guests"
-msgstr "Gäste"
-
-msgid "Import..."
-msgstr "Importieren …"
-
-msgid "John Smith"
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr "John Smith ODER Beispiel St."
-
-msgid "Location"
-msgstr "Ort"
-
-msgid "Name of Event"
-msgstr "Terminbezeichnung"
-
-msgid "Search For Events.."
-msgstr "Termine suchen..."
+msgid "Delete the selected event"
+msgstr "Ausgewählten Termin löschen"
 
 msgid "Select calendars to display"
 msgstr "Anzuzeigende Kalender auswählen"
 
-msgid "Show Week Numbers"
-msgstr "Kalenderwochen anzeigen"
+msgid "Search For Events.."
+msgstr "Termine suchen..."
 
-msgid "Sync..."
-msgstr "Synchronisieren..."
-
-msgid "Title"
-msgstr "Titel"
-
-msgid "To:"
-msgstr "Bis:"
+msgid "Export or Share the default Calendar"
+msgstr "Standartkalender exportieren oder teilen"
 
 #. Create everything
 msgid "Today"
 msgstr "Heute"
+
+msgid "Fullscreen"
+msgstr "Vollbild"
+
+msgid "Show Week Numbers"
+msgstr "Kalenderwochen anzeigen"
+
+msgid "Import..."
+msgstr "Importieren …"
+
+msgid "Sync..."
+msgstr "Synchronisieren..."
+
+msgid "About"
+msgstr "Über"
+
+msgid "Day"
+msgstr "Tag"
+
+msgid "Week"
+msgstr "Woche"
+
+msgid "Month"
+msgstr "Monat"
 
 #. label settings
 msgid ""
@@ -117,19 +154,26 @@ msgstr ""
 "Ihre anstehenden Termine werden hier angezeigt, sobald Sie ein Datum mit "
 "Terminen auswählen."
 
-msgid "all the day"
+msgid "Starts: \t"
+msgstr "Startet am: \t"
+
+msgid "Ends: \t\t"
+msgstr "Endet am: \t\t"
+
+msgid "all day"
 msgstr "Ganztägig"
 
 msgid "at"
 msgstr "um"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Name oder E-Mail"
+msgid "Export Calendar..."
+msgstr "Kalender exportieren..."
 
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "Termin hinzufügen"
+msgid "calendar.ics"
+msgstr "kalender.ics"
 
-#, fuzzy
-#~ msgid "all day"
-#~ msgstr "Ganztägig:"
+msgid "Save ical"
+msgstr "Als ical Speichern"
+
+#~ msgid "all the day"
+#~ msgstr "Ganztägig"
