@@ -7,37 +7,86 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
-"PO-Revision-Date: 2012-04-16 11:27+0000\n"
-"Last-Translator: Teemu Kielinen <teemu.kielinen@gmail.com>\n"
+"POT-Creation-Date: 2012-05-31 12:17+0200\n"
+"PO-Revision-Date: 2012-06-02 18:20+0000\n"
+"Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
-"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-17 05:27+0000\n"
-"X-Generator: Launchpad (build 15099)\n"
+"X-Launchpad-Export-Date: 2012-06-03 05:11+0000\n"
+"X-Generator: Launchpad (build 15342)\n"
+"Language: fi\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %d. %b"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Katsele ja aikatauluta tapahtumia"
+
+#. maya.desktop:5
+msgid "Calendar"
+msgstr "Kalenteri"
+
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Lisää tapahtuma"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Webcal"
+msgstr "Webcal"
+
+msgid "Contacts"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
 
 msgid "%B %e, %Y"
 msgstr "%e. %Bta %Y"
 
-msgid "%H:%M"
-msgstr "%H.%M"
+msgid "%A, %b %d"
+msgstr "%A, %d. %b"
 
 msgid "%l:%M %p"
 msgstr "%I.%M %p"
 
-msgid "About"
-msgstr ""
+msgid "%H:%M"
+msgstr "%H.%M"
 
 msgid "Add Event"
 msgstr "Lisää tapahtuma"
 
+msgid "Edit Event"
+msgstr "Muokkaa tapahtumaa"
+
+msgid "From:"
+msgstr "Alkaen:"
+
 msgid "All day:"
 msgstr "Koko päivä:"
+
+msgid "To:"
+msgstr "Päättyen:"
+
+msgid "Title"
+msgstr "Otsikko"
+
+msgid "Name of Event"
+msgstr "Tapahtuman nimi"
+
+msgid "Location"
+msgstr "Paikka"
+
+msgid "John Smith OR Example St."
+msgstr "Matti Meikäläinen TAI Esimerkkikatu"
+
+msgid "Guests"
+msgstr "Vieraat"
+
+msgid "Name or Email Address"
+msgstr "Nimi tai sähköposti"
 
 msgid "Comments"
 msgstr "Huomautukset"
@@ -45,69 +94,57 @@ msgstr "Huomautukset"
 msgid "Create Event"
 msgstr "Luo tapahtuma"
 
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Tapahtumalle on annettava nimi sekä kelvollinen päivä"
+
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
 msgstr "Luo uusi tapahtuma"
 
-msgid "Delete the selected event"
-msgstr "Poista valittu tapahtuma"
-
-msgid "Edit Event"
-msgstr "Muokkaa tapahtumaa"
-
 msgid "Edit the selected event"
 msgstr "Muokkaa valittua tapahtumaa"
 
-msgid "Export or Share the default Calendar"
-msgstr "Vie tai jaa vakiokalenteri"
-
-msgid "From:"
-msgstr "Alkaen:"
-
-msgid "Fullscreen"
-msgstr "Kokoruutu"
-
-msgid "Guests"
-msgstr "Vieraat"
-
-msgid "Import..."
-msgstr "Tuo..."
-
-msgid "John Smith"
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr "Matti Meikäläinen TAI Esimerkkikatu"
-
-msgid "Location"
-msgstr "Paikka"
-
-msgid "Name of Event"
-msgstr "Tapahtuman nimi"
-
-msgid "Search For Events.."
-msgstr "Etsi tapahtumia."
+msgid "Delete the selected event"
+msgstr "Poista valittu tapahtuma"
 
 msgid "Select calendars to display"
 msgstr "Valitse näytettävät kalenterit"
 
-msgid "Show Week Numbers"
-msgstr "Näytä viikkonumerot"
+msgid "Search For Events.."
+msgstr "Etsi tapahtumia."
 
-msgid "Sync..."
-msgstr "Synkronoi..."
-
-msgid "Title"
-msgstr "Otsikko"
-
-msgid "To:"
-msgstr "Päättyen:"
+msgid "Export or Share the default Calendar"
+msgstr "Vie tai jaa vakiokalenteri"
 
 #. Create everything
 msgid "Today"
 msgstr "Tänään"
+
+msgid "Fullscreen"
+msgstr "Kokoruutu"
+
+msgid "Show Week Numbers"
+msgstr "Näytä viikkonumerot"
+
+msgid "Import..."
+msgstr "Tuo..."
+
+msgid "Sync..."
+msgstr "Synkronoi..."
+
+msgid "About"
+msgstr "Tietoja"
+
+msgid "Day"
+msgstr "Päivä"
+
+msgid "Week"
+msgstr "Viikko"
+
+msgid "Month"
+msgstr "Kuukausi"
 
 #. label settings
 msgid ""
@@ -117,19 +154,26 @@ msgstr ""
 "Tulevat tapahtumat näytetään tässä, kun valitset tapahtumia sisältävän "
 "päivämäärän."
 
-msgid "all the day"
-msgstr "koko päivän"
+msgid "Starts: \t"
+msgstr "Alkaa: \t"
+
+msgid "Ends: \t\t"
+msgstr "Päättyy: \t\t"
+
+msgid "all day"
+msgstr "koko päivä"
 
 msgid "at"
 msgstr "paikassa"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Nimi tai sähköposti"
+msgid "Export Calendar..."
+msgstr "Vie kalenteri..."
 
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "Lisää tapahtuma"
+msgid "calendar.ics"
+msgstr "kalenteri.ics"
 
-#, fuzzy
-#~ msgid "all day"
-#~ msgstr "Koko päivä:"
+msgid "Save ical"
+msgstr ""
+
+#~ msgid "all the day"
+#~ msgstr "koko päivän"
