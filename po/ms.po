@@ -6,95 +6,51 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-31 12:17+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-05 22:33+0200\n"
 "PO-Revision-Date: 2012-06-01 09:10+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
+"Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-06-02 05:55+0000\n"
 "X-Generator: Launchpad (build 15342)\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Lihat dan jadualkan peristiwa"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr "Perihal"
+
+msgid "Add Event"
+msgstr "Tambah Peristiwa"
+
+msgid "All day:"
+msgstr "Sepanjang Hari:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Kalendar"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Tambah Peristiwa"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Pada komputer ini"
-
-msgid "Webcal"
-msgstr "Webcal"
+msgid "Comments"
+msgstr "Ulasan"
 
 msgid "Contacts"
 msgstr "Kenalan"
 
-msgid "Personal"
-msgstr "Peribadi"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "Tambah Peristiwa"
-
-msgid "Edit Event"
-msgstr "Sunting Peristiwa"
-
-msgid "From:"
-msgstr "Dari:"
-
-msgid "All day:"
-msgstr "Sepanjang Hari:"
-
-msgid "To:"
-msgstr "Hingga:"
-
-msgid "Title"
-msgstr "Tajuk"
-
-msgid "Name of Event"
-msgstr "Nama Peristiwa"
-
-msgid "Location"
-msgstr "Lokasi"
-
-msgid "John Smith OR Example St."
-msgstr "John Smith ATAU Contoh St."
-
-msgid "Guests"
-msgstr "Tetamu"
-
-msgid "Name or Email Address"
-msgstr "Nama atau Alamat E-mel"
-
-msgid "Comments"
-msgstr "Ulasan"
-
 msgid "Create Event"
 msgstr "Cipta Peristiwa"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Peristiwa anda telah dinamakan dan mempunyai tarikh yang sah"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -102,48 +58,92 @@ msgstr "Peristiwa anda telah dinamakan dan mempunyai tarikh yang sah"
 msgid "Create a new event"
 msgstr "Cipta peristiwa baru"
 
-msgid "Edit the selected event"
-msgstr "Sunting peristiwa terpilih"
-
 msgid "Delete the selected event"
 msgstr "Padam peristiwa terpilih"
 
-msgid "Select calendars to display"
-msgstr "Pilih kalendar untuk dipaparkan"
+msgid "Edit Event"
+msgstr "Sunting Peristiwa"
+
+msgid "Edit the selected event"
+msgstr "Sunting peristiwa terpilih"
+
+msgid "Ends: \t\t"
+msgstr "Tamat: \t\t"
+
+msgid "Export Calendar..."
+msgstr "Eksport Kalendar..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Eksport atau Kongsi Kalendar lalai"
+
+msgid "From:"
+msgstr "Dari:"
+
+msgid "Fullscreen"
+msgstr "Skrin Penuh"
+
+msgid "Guests"
+msgstr "Tetamu"
+
+msgid "Import..."
+msgstr "Import..."
+
+msgid "John Smith OR Example St."
+msgstr "John Smith ATAU Contoh St."
+
+msgid "Location"
+msgstr "Lokasi"
+
+msgid "Name of Event"
+msgstr "Nama Peristiwa"
+
+msgid "Name or Email Address"
+msgstr "Nama atau Alamat E-mel"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Pada komputer ini"
+
+msgid "Personal"
+msgstr "Peribadi"
+
+msgid "Save ical"
+msgstr "Simpan ical"
 
 msgid "Search For Events.."
 msgstr "Gelintar Peristiwa.."
 
-msgid "Export or Share the default Calendar"
-msgstr "Eksport atau Kongsi Kalendar lalai"
+msgid "Select calendars to display"
+msgstr "Pilih kalendar untuk dipaparkan"
+
+msgid "Show Week Numbers"
+msgstr "Papar Bilangan Minggu"
+
+msgid "Starts: \t"
+msgstr "Mula: \t"
+
+msgid "Sync..."
+msgstr "Segerak..."
+
+msgid "Title"
+msgstr "Tajuk"
+
+msgid "To:"
+msgstr "Hingga:"
 
 #. Create everything
 msgid "Today"
 msgstr "Hari Ini"
 
-msgid "Fullscreen"
-msgstr "Skrin Penuh"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Lihat dan jadualkan peristiwa"
 
-msgid "Show Week Numbers"
-msgstr "Papar Bilangan Minggu"
+msgid "Webcal"
+msgstr "Webcal"
 
-msgid "Import..."
-msgstr "Import..."
-
-msgid "Sync..."
-msgstr "Segerak..."
-
-msgid "About"
-msgstr "Perihal"
-
-msgid "Day"
-msgstr "Hari"
-
-msgid "Week"
-msgstr "Minggu"
-
-msgid "Month"
-msgstr "Bulan"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Peristiwa anda telah dinamakan dan mempunyai tarikh yang sah"
 
 #. label settings
 msgid ""
@@ -153,11 +153,9 @@ msgstr ""
 "Peristiwa mendatang anda akan dipaparkan disini bila anda pilih tarikh "
 "dengan peristiwa."
 
-msgid "Starts: \t"
-msgstr "Mula: \t"
-
-msgid "Ends: \t\t"
-msgstr "Tamat: \t\t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Tambah Peristiwa"
 
 msgid "all day"
 msgstr "sepanjang hari"
@@ -165,11 +163,14 @@ msgstr "sepanjang hari"
 msgid "at"
 msgstr "pada"
 
-msgid "Export Calendar..."
-msgstr "Eksport Kalendar..."
-
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-msgid "Save ical"
-msgstr "Simpan ical"
+#~ msgid "Day"
+#~ msgstr "Hari"
+
+#~ msgid "Month"
+#~ msgstr "Bulan"
+
+#~ msgid "Week"
+#~ msgstr "Minggu"

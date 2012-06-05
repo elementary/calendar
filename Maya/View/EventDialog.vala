@@ -350,6 +350,8 @@ namespace Maya.View {
             content_grid.attach (comment_textview, 0, 11, 4, 1);
             container.add (content_grid);
            
+			var cancel_button = add_button (Gtk.Stock.CANCEL, Gtk.ResponseType.CLOSE);
+
             if (add_event) {
                 create_button = add_button (_("Create Event"), Gtk.ResponseType.APPLY);
                 create_button.sensitive = false;

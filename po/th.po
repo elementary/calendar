@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-06-05 22:33+0200\n"
 "PO-Revision-Date: 2012-03-18 00:22+0000\n"
 "Last-Translator: Niels Avonds <Unknown>\n"
 "Language-Team: Thai <th@li.org>\n"
@@ -39,7 +39,14 @@ msgstr "เพิ่มกิจกรรม"
 msgid "All day:"
 msgstr "ทั้งวัน:"
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
 msgid "Comments"
+msgstr ""
+
+msgid "Contacts"
 msgstr ""
 
 msgid "Create Event"
@@ -60,6 +67,12 @@ msgstr "แก้ไขกิจกรรม"
 msgid "Edit the selected event"
 msgstr "แก้ไขกิจกรรมที่เลือก"
 
+msgid "Ends: \t\t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "ส่งหรือแบ่งปันปฏิทินที่ตั้งไว้เป็นค่าเริ่มต้น"
 
@@ -75,9 +88,6 @@ msgstr "แขก"
 msgid "Import..."
 msgstr "นำ...เข้่า"
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +97,19 @@ msgstr "สถานที่"
 msgid "Name of Event"
 msgstr "ชื่อกิจกรรม"
 
+msgid "Name or Email Address"
+msgstr ""
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Save ical"
+msgstr ""
+
 msgid "Search For Events.."
 msgstr "ค้นหากิจกรรม.."
 
@@ -95,6 +118,9 @@ msgstr "เลือกปฏิทินที่จะแสดง"
 
 msgid "Show Week Numbers"
 msgstr "แสดงสัปดาห์ที่"
+
+msgid "Starts: \t"
+msgstr ""
 
 msgid "Sync..."
 msgstr "ปรับข้อมูลให้ตรงกัน"
@@ -109,14 +135,36 @@ msgstr "ถึง:"
 msgid "Today"
 msgstr "วันนี้"
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "กิจกรรมที่ใกล้จะมาถึงของคุณจะถูกแสดงที่นี่หากคุณเลือกวันที่ที่มีกิจกรรมอยู่"
 
-msgid "all the day"
-msgstr "ทั้งวัน"
+#. maya.desktop:18
+#, fuzzy
+msgid "_Add Event"
+msgstr "เพิ่มกิจกรรม"
+
+#, fuzzy
+msgid "all day"
+msgstr "ทั้งวัน:"
 
 msgid "at"
 msgstr "ที่"
+
+msgid "calendar.ics"
+msgstr ""
+
+#~ msgid "all the day"
+#~ msgstr "ทั้งวัน"

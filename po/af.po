@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-06-05 22:33+0200\n"
 "PO-Revision-Date: 2012-03-18 00:22+0000\n"
 "Last-Translator: Niels Avonds <Unknown>\n"
 "Language-Team: Afrikaans <af@li.org>\n"
@@ -39,7 +39,14 @@ msgstr ""
 msgid "All day:"
 msgstr ""
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
 msgid "Comments"
+msgstr ""
+
+msgid "Contacts"
 msgstr ""
 
 msgid "Create Event"
@@ -60,6 +67,12 @@ msgstr ""
 msgid "Edit the selected event"
 msgstr ""
 
+msgid "Ends: \t\t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr ""
 
@@ -75,9 +88,6 @@ msgstr ""
 msgid "Import..."
 msgstr ""
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +97,19 @@ msgstr ""
 msgid "Name of Event"
 msgstr ""
 
+msgid "Name or Email Address"
+msgstr ""
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Save ical"
+msgstr ""
+
 msgid "Search For Events.."
 msgstr ""
 
@@ -94,6 +117,9 @@ msgid "Select calendars to display"
 msgstr ""
 
 msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Starts: \t"
 msgstr ""
 
 msgid "Sync..."
@@ -109,6 +135,16 @@ msgstr ""
 msgid "Today"
 msgstr ""
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,8 +153,15 @@ msgstr ""
 "Jou komende gebeurtenisse sal hier vertoon word als jy 'n datum kies met "
 "gebeurtenisse."
 
-msgid "all the day"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr ""
+
+msgid "all day"
 msgstr ""
 
 msgid "at"
+msgstr ""
+
+msgid "calendar.ics"
 msgstr ""

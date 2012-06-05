@@ -7,95 +7,50 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-31 12:17+0200\n"
+"POT-Creation-Date: 2012-06-05 22:33+0200\n"
 "PO-Revision-Date: 2012-06-01 19:39+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-06-02 05:56+0000\n"
 "X-Generator: Launchpad (build 15342)\n"
-"Language: es\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Vea y programe eventos"
+msgid "%A, %b %d"
+msgstr "%A, %d de %b"
+
+msgid "%B %e, %Y"
+msgstr "%e de %B del %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr "Acerca de"
+
+msgid "Add Event"
+msgstr "Añadir evento"
+
+msgid "All day:"
+msgstr "Todo el día:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Calendario"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Añadir evento"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "En este equipo"
-
-msgid "Webcal"
-msgstr "Calendario web"
+msgid "Comments"
+msgstr "Comentarios"
 
 msgid "Contacts"
 msgstr "Contactos"
 
-msgid "Personal"
-msgstr "Personal"
-
-msgid "%B %e, %Y"
-msgstr "%e de %B del %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %d de %b"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "Añadir evento"
-
-msgid "Edit Event"
-msgstr "Editar evento"
-
-msgid "From:"
-msgstr "Desde:"
-
-msgid "All day:"
-msgstr "Todo el día:"
-
-msgid "To:"
-msgstr "Hasta:"
-
-msgid "Title"
-msgstr "Título"
-
-msgid "Name of Event"
-msgstr "Nombre del evento"
-
-msgid "Location"
-msgstr "Ubicación"
-
-msgid "John Smith OR Example St."
-msgstr "John Smith o Calle Ejemplo"
-
-msgid "Guests"
-msgstr "Invitados"
-
-msgid "Name or Email Address"
-msgstr "Nombre o dirección de correo electrónico"
-
-msgid "Comments"
-msgstr "Comentarios"
-
 msgid "Create Event"
 msgstr "Crear evento"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "El evento tiene que tener un nombre y una fecha válida"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,48 +58,92 @@ msgstr "El evento tiene que tener un nombre y una fecha válida"
 msgid "Create a new event"
 msgstr "Crear un evento nuevo"
 
-msgid "Edit the selected event"
-msgstr "Editar el evento seleccionado"
-
 msgid "Delete the selected event"
 msgstr "Eliminar el evento seleccionado"
 
-msgid "Select calendars to display"
-msgstr "Seleccionar los calendarios a mostrar"
+msgid "Edit Event"
+msgstr "Editar evento"
+
+msgid "Edit the selected event"
+msgstr "Editar el evento seleccionado"
+
+msgid "Ends: \t\t"
+msgstr "Finaliza: \t\t"
+
+msgid "Export Calendar..."
+msgstr "Exportar el calendario..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Exportar o compartir el calendario predeterminado"
+
+msgid "From:"
+msgstr "Desde:"
+
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+msgid "Guests"
+msgstr "Invitados"
+
+msgid "Import..."
+msgstr "Importar..."
+
+msgid "John Smith OR Example St."
+msgstr "John Smith o Calle Ejemplo"
+
+msgid "Location"
+msgstr "Ubicación"
+
+msgid "Name of Event"
+msgstr "Nombre del evento"
+
+msgid "Name or Email Address"
+msgstr "Nombre o dirección de correo electrónico"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "En este equipo"
+
+msgid "Personal"
+msgstr "Personal"
+
+msgid "Save ical"
+msgstr "Guardar ical"
 
 msgid "Search For Events.."
 msgstr "Buscar eventos..."
 
-msgid "Export or Share the default Calendar"
-msgstr "Exportar o compartir el calendario predeterminado"
+msgid "Select calendars to display"
+msgstr "Seleccionar los calendarios a mostrar"
+
+msgid "Show Week Numbers"
+msgstr "Mostrar los números de las semanas"
+
+msgid "Starts: \t"
+msgstr "Comienza: \t"
+
+msgid "Sync..."
+msgstr "Sincronizar..."
+
+msgid "Title"
+msgstr "Título"
+
+msgid "To:"
+msgstr "Hasta:"
 
 #. Create everything
 msgid "Today"
 msgstr "Hoy"
 
-msgid "Fullscreen"
-msgstr "Pantalla completa"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Vea y programe eventos"
 
-msgid "Show Week Numbers"
-msgstr "Mostrar los números de las semanas"
+msgid "Webcal"
+msgstr "Calendario web"
 
-msgid "Import..."
-msgstr "Importar..."
-
-msgid "Sync..."
-msgstr "Sincronizar..."
-
-msgid "About"
-msgstr "Acerca de"
-
-msgid "Day"
-msgstr "Día"
-
-msgid "Week"
-msgstr "Semana"
-
-msgid "Month"
-msgstr "Mes"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "El evento tiene que tener un nombre y una fecha válida"
 
 #. label settings
 msgid ""
@@ -154,11 +153,9 @@ msgstr ""
 "Sus próximos eventos se mostrarán aquí cuando seleccione una fecha con "
 "eventos."
 
-msgid "Starts: \t"
-msgstr "Comienza: \t"
-
-msgid "Ends: \t\t"
-msgstr "Finaliza: \t\t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Añadir evento"
 
 msgid "all day"
 msgstr "todo el día"
@@ -166,14 +163,17 @@ msgstr "todo el día"
 msgid "at"
 msgstr "en"
 
-msgid "Export Calendar..."
-msgstr "Exportar el calendario..."
-
 msgid "calendar.ics"
 msgstr "calendario.ics"
 
-msgid "Save ical"
-msgstr "Guardar ical"
+#~ msgid "Day"
+#~ msgstr "Día"
+
+#~ msgid "Month"
+#~ msgstr "Mes"
+
+#~ msgid "Week"
+#~ msgstr "Semana"
 
 #~ msgid "all the day"
 #~ msgstr "todo el día"

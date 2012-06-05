@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-06-05 22:33+0200\n"
 "PO-Revision-Date: 2012-05-14 18:39+0000\n"
 "Last-Translator: Bennici Piercarlo <vesnarteach@gmail.com>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
@@ -39,8 +39,15 @@ msgstr "Add Event"
 msgid "All day:"
 msgstr "All day:"
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
 msgid "Comments"
 msgstr "Comments"
+
+msgid "Contacts"
+msgstr ""
 
 msgid "Create Event"
 msgstr "Create Event"
@@ -60,6 +67,12 @@ msgstr "Edit Event"
 msgid "Edit the selected event"
 msgstr "Edit the selected event"
 
+msgid "Ends: \t\t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "Export or Share the default Calendar"
 
@@ -75,9 +88,6 @@ msgstr "Guests"
 msgid "Import..."
 msgstr "Import..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "John Smith OR Example St."
 
@@ -87,6 +97,19 @@ msgstr "Location"
 msgid "Name of Event"
 msgstr "Name of Event"
 
+msgid "Name or Email Address"
+msgstr "Name or Email Address"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Save ical"
+msgstr ""
+
 msgid "Search For Events.."
 msgstr "Search For Events.."
 
@@ -95,6 +118,9 @@ msgstr "Select calendars to display"
 
 msgid "Show Week Numbers"
 msgstr "Show Week Numbers"
+
+msgid "Starts: \t"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Sync..."
@@ -109,6 +135,16 @@ msgstr "To:"
 msgid "Today"
 msgstr "Today"
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,19 +153,20 @@ msgstr ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 
-msgid "all the day"
-msgstr "all the day"
+#. maya.desktop:18
+#, fuzzy
+msgid "_Add Event"
+msgstr "Add Event"
+
+#, fuzzy
+msgid "all day"
+msgstr "All day:"
 
 msgid "at"
 msgstr "at"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Name or Email Address"
+msgid "calendar.ics"
+msgstr ""
 
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "Add Event"
-
-#, fuzzy
-#~ msgid "all day"
-#~ msgstr "All day:"
+#~ msgid "all the day"
+#~ msgstr "all the day"

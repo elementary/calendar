@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-06-05 22:33+0200\n"
 "PO-Revision-Date: 2012-04-05 18:48+0000\n"
 "Last-Translator: Jiří Šebele <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -39,8 +39,15 @@ msgstr "Přidat událost"
 msgid "All day:"
 msgstr "Celý den:"
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
 msgid "Comments"
 msgstr "Komentáře"
+
+msgid "Contacts"
+msgstr ""
 
 msgid "Create Event"
 msgstr "Vytvořit událost"
@@ -60,6 +67,12 @@ msgstr "Upravit událost"
 msgid "Edit the selected event"
 msgstr "Upravit vybranou událost"
 
+msgid "Ends: \t\t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr "Exportovat nebo Sdílet výchozí kalendář"
 
@@ -75,9 +88,6 @@ msgstr "Hosté"
 msgid "Import..."
 msgstr "Importovat..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +97,19 @@ msgstr "Místo"
 msgid "Name of Event"
 msgstr "Název události"
 
+msgid "Name or Email Address"
+msgstr "Jméno nebo Email"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Save ical"
+msgstr ""
+
 msgid "Search For Events.."
 msgstr "Vyhledávat události"
 
@@ -95,6 +118,9 @@ msgstr "Vyberte kalendáře, které zobrazit"
 
 msgid "Show Week Numbers"
 msgstr "Zobrazovat čísla týdnů"
+
+msgid "Starts: \t"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Synchronizovat..."
@@ -109,25 +135,36 @@ msgstr "Pro:"
 msgid "Today"
 msgstr "Dnes"
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Poté co  vyberete datum se zde zobrazí nadcházející události."
 
-msgid "all the day"
-msgstr "celý den"
+#. maya.desktop:18
+#, fuzzy
+msgid "_Add Event"
+msgstr "Přidat událost"
+
+#, fuzzy
+msgid "all day"
+msgstr "Celý den:"
 
 msgid "at"
 msgstr "v"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "Jméno nebo Email"
+msgid "calendar.ics"
+msgstr ""
 
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "Přidat událost"
-
-#, fuzzy
-#~ msgid "all day"
-#~ msgstr "Celý den:"
+#~ msgid "all the day"
+#~ msgstr "celý den"

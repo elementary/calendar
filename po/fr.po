@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-06-05 22:33+0200\n"
 "PO-Revision-Date: 2012-05-31 12:17+0100\n"
 "Last-Translator: Corentin Noël <tintou@mailoo.org>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -39,8 +39,15 @@ msgstr "Ajouter un évènement"
 msgid "All day:"
 msgstr "Journée entière :"
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr "Calendrier"
+
 msgid "Comments"
 msgstr "Commentaires"
+
+msgid "Contacts"
+msgstr "Contacts"
 
 msgid "Create Event"
 msgstr "Créer un événement"
@@ -60,6 +67,12 @@ msgstr "Modifier l'évènement"
 msgid "Edit the selected event"
 msgstr "Modifier l'événement sélectionné"
 
+msgid "Ends: \t\t"
+msgstr "Fin : \t\t"
+
+msgid "Export Calendar..."
+msgstr "Exporter le calendrier…"
+
 msgid "Export or Share the default Calendar"
 msgstr "Exporter ou partager le calendrier par défaut"
 
@@ -75,9 +88,6 @@ msgstr "Invités"
 msgid "Import..."
 msgstr "Importer..."
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr "Jean Dupont ou Rue de la Paix"
 
@@ -87,6 +97,19 @@ msgstr "Emplacement"
 msgid "Name of Event"
 msgstr "Nom de l'événement"
 
+msgid "Name or Email Address"
+msgstr "Nom ou adresse électronique"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Sur cet ordinateur"
+
+msgid "Personal"
+msgstr "Personnel"
+
+msgid "Save ical"
+msgstr "Enregistrer l'ical"
+
 msgid "Search For Events.."
 msgstr "Rechercher un événement…"
 
@@ -95,6 +118,9 @@ msgstr "Sélectionner les calendriers à afficher"
 
 msgid "Show Week Numbers"
 msgstr "Afficher les numéros de semaine"
+
+msgid "Starts: \t"
+msgstr "Début : \t"
 
 msgid "Sync..."
 msgstr "Synchroniser..."
@@ -109,6 +135,16 @@ msgstr "Au :"
 msgid "Today"
 msgstr "Aujourd'hui"
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Organiser et planifier des événements"
+
+msgid "Webcal"
+msgstr "Webcal"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Votre événement doit être nommé et posséder une date valide"
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
@@ -117,62 +153,27 @@ msgstr ""
 "Vos événements à venir seront affichés ici lorsque vous sélectionnerez un "
 "jour comprenant des événements."
 
-msgid "all the day"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Ajouter un évènement"
+
+msgid "all day"
 msgstr "toute la journée"
 
 msgid "at"
 msgstr "à"
 
-#~ msgid "Calendar"
-#~ msgstr "Calendrier"
-
-#~ msgid "Contacts"
-#~ msgstr "Contacts"
+msgid "calendar.ics"
+msgstr "calendrier.ics"
 
 #~ msgid "Day"
 #~ msgstr "Jour"
 
-#~ msgid "Ends: \t\t"
-#~ msgstr "Fin : \t\t"
-
-#~ msgid "Export Calendar..."
-#~ msgstr "Exporter le calendrier…"
-
 #~ msgid "Mounth"
 #~ msgstr "Mois"
-
-#~ msgid "Name or Email Address"
-#~ msgstr "Nom ou adresse électronique"
-
-#~ msgid "On this computer"
-#~ msgstr "Sur cet ordinateur"
-
-#~ msgid "Personal"
-#~ msgstr "Personnel"
-
-#~ msgid "Save ical"
-#~ msgstr "Enregistrer l'ical"
-
-#~ msgid "Starts: \t"
-#~ msgstr "Début : \t"
-
-#~ msgid "View and schedule events"
-#~ msgstr "Organiser et planifier des événements"
-
-#~ msgid "Webcal"
-#~ msgstr "Webcal"
 
 #~ msgid "Week"
 #~ msgstr "Semaine"
 
-#~ msgid "Your event has to be named and has to have a valid date"
-#~ msgstr "Votre événement doit être nommé et posséder une date valide"
-
-#~ msgid "_Add Event"
-#~ msgstr "_Ajouter un évènement"
-
-#~ msgid "all day"
+#~ msgid "all the day"
 #~ msgstr "toute la journée"
-
-#~ msgid "calendar.ics"
-#~ msgstr "calendrier.ics"

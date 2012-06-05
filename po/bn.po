@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 21:53+0100\n"
+"POT-Creation-Date: 2012-06-05 22:33+0200\n"
 "PO-Revision-Date: 2012-05-30 20:50+0000\n"
 "Last-Translator: shahriar <shahriar.haque@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
@@ -39,8 +39,15 @@ msgstr "নতুন অনুষ্ঠান"
 msgid "All day:"
 msgstr "দিনব্যাপী"
 
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
 msgid "Comments"
 msgstr "মন্তব্য"
+
+msgid "Contacts"
+msgstr ""
 
 msgid "Create Event"
 msgstr "নতুন অনুষ্ঠান"
@@ -60,6 +67,12 @@ msgstr "অনুষ্ঠান সম্পাদনা"
 msgid "Edit the selected event"
 msgstr ""
 
+msgid "Ends: \t\t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "Export or Share the default Calendar"
 msgstr ""
 
@@ -75,9 +88,6 @@ msgstr "অতিথি"
 msgid "Import..."
 msgstr ""
 
-msgid "John Smith"
-msgstr ""
-
 msgid "John Smith OR Example St."
 msgstr ""
 
@@ -87,6 +97,19 @@ msgstr "ঠিকানা"
 msgid "Name of Event"
 msgstr "অনুষ্ঠানের নাম"
 
+msgid "Name or Email Address"
+msgstr "নাম এবন্দ ইমেল এড্রেস"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Save ical"
+msgstr ""
+
 msgid "Search For Events.."
 msgstr ""
 
@@ -94,6 +117,9 @@ msgid "Select calendars to display"
 msgstr ""
 
 msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Starts: \t"
 msgstr ""
 
 msgid "Sync..."
@@ -109,25 +135,33 @@ msgstr "প্রাপক:"
 msgid "Today"
 msgstr ""
 
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 
-msgid "all the day"
-msgstr ""
+#. maya.desktop:18
+#, fuzzy
+msgid "_Add Event"
+msgstr "নতুন অনুষ্ঠান"
+
+#, fuzzy
+msgid "all day"
+msgstr "দিনব্যাপী"
 
 msgid "at"
 msgstr "তে"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "নাম এবন্দ ইমেল এড্রেস"
-
-#, fuzzy
-#~ msgid "_Add Event"
-#~ msgstr "নতুন অনুষ্ঠান"
-
-#, fuzzy
-#~ msgid "all day"
-#~ msgstr "দিনব্যাপী"
+msgid "calendar.ics"
+msgstr ""
