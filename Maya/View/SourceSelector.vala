@@ -94,7 +94,7 @@ class SourceGroupBox : Gtk.Grid {
 
         // Add entry to editable groups
         if (editable) {
-            var entry = new Granite.Widgets.HintedEntry ("Add calendar");
+            var entry = new Granite.Widgets.HintedEntry (_("Add calendar"));
             attach (entry, 0, 2, 1, 1);
             entry.activate.connect (() => {on_entry_activate (model, group, entry.text);entry.text = "";});
         }

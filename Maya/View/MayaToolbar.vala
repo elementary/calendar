@@ -52,7 +52,7 @@ namespace Maya.View {
             year_switcher = new Widgets.DateSwitcher (-1);
             set_switcher_date (target);
 
-            search_bar = new Granite.Widgets.SearchBar (_("Search For Events.."));
+            search_bar = new Granite.Widgets.SearchBar (_("Search For Events..."));
             search_bar.sensitive = false;
 
             contractor = new Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));

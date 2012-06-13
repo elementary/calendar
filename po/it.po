@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-05 22:33+0200\n"
+"POT-Creation-Date: 2012-06-13 15:38+0200\n"
 "PO-Revision-Date: 2012-06-03 13:57+0000\n"
 "Last-Translator: Bennici Piercarlo <vesnarteach@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -35,6 +35,10 @@ msgstr "Circa"
 
 msgid "Add Event"
 msgstr "Aggiungi evento"
+
+#, fuzzy
+msgid "Add calendar"
+msgstr "Calendario"
 
 msgid "All day:"
 msgstr "Giornata intera"
@@ -110,7 +114,8 @@ msgstr "Personale"
 msgid "Save ical"
 msgstr "Salva ical"
 
-msgid "Search For Events.."
+#, fuzzy
+msgid "Search For Events..."
 msgstr "Cerca eventi.."
 
 msgid "Select calendars to display"

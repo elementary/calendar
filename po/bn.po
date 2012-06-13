@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-05 22:33+0200\n"
+"POT-Creation-Date: 2012-06-13 15:38+0200\n"
 "PO-Revision-Date: 2012-05-30 20:50+0000\n"
 "Last-Translator: shahriar <shahriar.haque@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
@@ -35,6 +35,9 @@ msgstr ""
 
 msgid "Add Event"
 msgstr "নতুন অনুষ্ঠান"
+
+msgid "Add calendar"
+msgstr ""
 
 msgid "All day:"
 msgstr "দিনব্যাপী"
@@ -110,7 +113,7 @@ msgstr ""
 msgid "Save ical"
 msgstr ""
 
-msgid "Search For Events.."
+msgid "Search For Events..."
 msgstr ""
 
 msgid "Select calendars to display"

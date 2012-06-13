@@ -5,6 +5,7 @@ Maya/Settings/LanguagesFormat.vala
 Maya/View/EventDialog.vala
 Maya/View/MayaToolbar.vala
 Maya/View/MayaMenu.vala
+Maya/View/SourceSelector.vala
 Maya/View/Sidebar/Sidebar.vala
 Maya/View/Sidebar/EventWidget.vala
 Maya/View/Widgets/ContractorButtonWithMenu.vala

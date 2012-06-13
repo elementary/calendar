@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-05 22:33+0200\n"
+"POT-Creation-Date: 2012-06-13 15:38+0200\n"
 "PO-Revision-Date: 2012-04-05 18:48+0000\n"
 "Last-Translator: Jiří Šebele <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -35,6 +35,9 @@ msgstr ""
 
 msgid "Add Event"
 msgstr "Přidat událost"
+
+msgid "Add calendar"
+msgstr ""
 
 msgid "All day:"
 msgstr "Celý den:"
@@ -110,7 +113,8 @@ msgstr ""
 msgid "Save ical"
 msgstr ""
 
-msgid "Search For Events.."
+#, fuzzy
+msgid "Search For Events..."
 msgstr "Vyhledávat události"
 
 msgid "Select calendars to display"
