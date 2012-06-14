@@ -11,49 +11,91 @@ msgstr ""
 "PO-Revision-Date: 2012-04-26 20:55+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
-"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-27 04:52+0000\n"
-"X-Generator: Launchpad (build 15149)\n"
+"X-Launchpad-Export-Date: 2012-06-14 04:46+0000\n"
+"X-Generator: Launchpad (build 15405)\n"
+"Language: he\n"
 
-msgid "%A, %b %d"
-msgstr "%A, ה־%d ב%b"
-
-msgid "%B %e, %Y"
-msgstr "%e ב%B,‏ %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%H:%M"
-
-msgid "About"
+#. maya.desktop:6
+msgid "View and schedule events"
 msgstr ""
-
-msgid "Add Event"
-msgstr "הוספת אירוע"
-
-msgid "Add calendar"
-msgstr ""
-
-msgid "All day:"
-msgstr "כל היום:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr ""
 
-msgid "Comments"
-msgstr "הערות"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr ""
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
 
 msgid "Contacts"
 msgstr ""
 
+msgid "Personal"
+msgstr ""
+
+msgid "%B %e, %Y"
+msgstr "%e ב%B,‏ %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, ה־%d ב%b"
+
+msgid "%l:%M %p"
+msgstr "%H:%M"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Add Event"
+msgstr "הוספת אירוע"
+
+msgid "Edit Event"
+msgstr "עריכת אירוע"
+
+msgid "From:"
+msgstr "מ־:"
+
+msgid "All day:"
+msgstr "כל היום:"
+
+msgid "To:"
+msgstr "עד:"
+
+msgid "Title"
+msgstr "כותרת"
+
+msgid "Name of Event"
+msgstr "שם האירוע"
+
+msgid "Location"
+msgstr "מיקום"
+
+msgid "John Smith OR Example St."
+msgstr "ישראל ישראלי או רחוב לדוגמה"
+
+msgid "Guests"
+msgstr "אורחים"
+
+msgid "Name or Email Address"
+msgstr "שם או כתובת דוא״ל"
+
+msgid "Comments"
+msgstr "הערות"
+
 msgid "Create Event"
 msgstr "יצירת אירוע"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,92 +103,41 @@ msgstr "יצירת אירוע"
 msgid "Create a new event"
 msgstr "יצירת אירוע חדש"
 
-msgid "Delete the selected event"
-msgstr "מחיקת האירוע הנבחר"
-
-msgid "Edit Event"
-msgstr "עריכת אירוע"
-
 msgid "Edit the selected event"
 msgstr "עריכת האירוע הנבחר"
 
-msgid "Ends: \t\t"
-msgstr ""
+msgid "Delete the selected event"
+msgstr "מחיקת האירוע הנבחר"
 
-msgid "Export Calendar..."
+msgid "Select calendars to display"
+msgstr "בחירת יומנים להצגה"
+
+msgid "Search For Events..."
 msgstr ""
 
 msgid "Export or Share the default Calendar"
 msgstr "יצוא או שיתוף יומן בררת המחדל"
 
-msgid "From:"
-msgstr "מ־:"
-
-msgid "Fullscreen"
-msgstr "מסך מלא"
-
-msgid "Guests"
-msgstr "אורחים"
-
-msgid "Import..."
-msgstr "יבוא..."
-
-msgid "John Smith OR Example St."
-msgstr "ישראל ישראלי או רחוב לדוגמה"
-
-msgid "Location"
-msgstr "מיקום"
-
-msgid "Name of Event"
-msgstr "שם האירוע"
-
-msgid "Name or Email Address"
-msgstr "שם או כתובת דוא״ל"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
-#, fuzzy
-msgid "Search For Events..."
-msgstr "חיפוש אחר אירועים..."
-
-msgid "Select calendars to display"
-msgstr "בחירת יומנים להצגה"
-
-msgid "Show Week Numbers"
-msgstr "הצגת מספרי שבועות"
-
-msgid "Starts: \t"
-msgstr ""
-
-msgid "Sync..."
-msgstr "סנכרון..."
-
-msgid "Title"
-msgstr "כותרת"
-
-msgid "To:"
-msgstr "עד:"
-
 #. Create everything
 msgid "Today"
 msgstr "היום"
 
-#. maya.desktop:6
-msgid "View and schedule events"
+msgid "Fullscreen"
+msgstr "מסך מלא"
+
+msgid "Show Week Numbers"
+msgstr "הצגת מספרי שבועות"
+
+msgid "Import..."
+msgstr "יבוא..."
+
+msgid "Sync..."
+msgstr "סנכרון..."
+
+msgid "About"
 msgstr ""
 
-msgid "Webcal"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
+msgid "Add calendar"
 msgstr ""
 
 #. label settings
@@ -155,19 +146,25 @@ msgid ""
 "events."
 msgstr "האירועים הקרובים שלך יוצגו כאן בעת בחירת תאריך עם אירועים."
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "הוספת אירוע"
+msgid "Starts: \t"
+msgstr ""
 
-#, fuzzy
+msgid "Ends: \t\t"
+msgstr ""
+
 msgid "all day"
-msgstr "כל היום:"
+msgstr ""
 
 msgid "at"
 msgstr "ב־"
 
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "calendar.ics"
+msgstr ""
+
+msgid "Save ical"
 msgstr ""
 
 #~ msgid "all the day"

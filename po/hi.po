@@ -11,49 +11,91 @@ msgstr ""
 "PO-Revision-Date: 2012-04-20 11:26+0000\n"
 "Last-Translator: ray1claw <ray1claw@gmail.com>\n"
 "Language-Team: Hindi <hi@li.org>\n"
-"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-21 05:20+0000\n"
-"X-Generator: Launchpad (build 15120)\n"
+"X-Launchpad-Export-Date: 2012-06-14 04:46+0000\n"
+"X-Generator: Launchpad (build 15405)\n"
+"Language: hi\n"
 
-msgid "%A, %b %d"
+#. maya.desktop:6
+msgid "View and schedule events"
 msgstr ""
-
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr ""
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "About"
-msgstr ""
-
-msgid "Add Event"
-msgstr "घटना जोडें"
-
-msgid "Add calendar"
-msgstr ""
-
-msgid "All day:"
-msgstr "पूरा दिन:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr ""
 
-msgid "Comments"
-msgstr "टिप्पणियाँ"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr ""
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
 
 msgid "Contacts"
 msgstr ""
 
+msgid "Personal"
+msgstr ""
+
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
+msgid "Add Event"
+msgstr "घटना जोडें"
+
+msgid "Edit Event"
+msgstr "घटना का संपादन करें..."
+
+msgid "From:"
+msgstr "प्रेषक :"
+
+msgid "All day:"
+msgstr "पूरा दिन:"
+
+msgid "To:"
+msgstr "प्रति:"
+
+msgid "Title"
+msgstr "शीर्षक"
+
+msgid "Name of Event"
+msgstr "घटना का नाम"
+
+msgid "Location"
+msgstr "स्थान"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "मेहमान"
+
+msgid "Name or Email Address"
+msgstr "नाम या ईमेल पता"
+
+msgid "Comments"
+msgstr "टिप्पणियाँ"
+
 msgid "Create Event"
 msgstr "घटना बनाएँ"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,92 +103,41 @@ msgstr "घटना बनाएँ"
 msgid "Create a new event"
 msgstr "नई घटना बनाएँ"
 
-msgid "Delete the selected event"
-msgstr "चयनित घटना का नष्ट करें"
-
-msgid "Edit Event"
-msgstr "घटना का संपादन करें..."
-
 msgid "Edit the selected event"
 msgstr "चयनित घटना संपादित करें"
 
-msgid "Ends: \t\t"
-msgstr ""
+msgid "Delete the selected event"
+msgstr "चयनित घटना का नष्ट करें"
 
-msgid "Export Calendar..."
+msgid "Select calendars to display"
+msgstr "कैलेंडर देखने के लिए चयन करें"
+
+msgid "Search For Events..."
 msgstr ""
 
 msgid "Export or Share the default Calendar"
 msgstr "देफौल्ट कैलेंडर को बाँटे या निर्यात करें"
 
-msgid "From:"
-msgstr "प्रेषक :"
-
-msgid "Fullscreen"
-msgstr "पूरी स्क्रीन"
-
-msgid "Guests"
-msgstr "मेहमान"
-
-msgid "Import..."
-msgstr "आयात करें..."
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "स्थान"
-
-msgid "Name of Event"
-msgstr "घटना का नाम"
-
-msgid "Name or Email Address"
-msgstr "नाम या ईमेल पता"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save ical"
-msgstr ""
-
-#, fuzzy
-msgid "Search For Events..."
-msgstr "घटना की खोज करें"
-
-msgid "Select calendars to display"
-msgstr "कैलेंडर देखने के लिए चयन करें"
-
-msgid "Show Week Numbers"
-msgstr "साप्ताहिक अंक दिखाएँ"
-
-msgid "Starts: \t"
-msgstr ""
-
-msgid "Sync..."
-msgstr "समकालित करें..."
-
-msgid "Title"
-msgstr "शीर्षक"
-
-msgid "To:"
-msgstr "प्रति:"
-
 #. Create everything
 msgid "Today"
 msgstr "आज"
 
-#. maya.desktop:6
-msgid "View and schedule events"
+msgid "Fullscreen"
+msgstr "पूरी स्क्रीन"
+
+msgid "Show Week Numbers"
+msgstr "साप्ताहिक अंक दिखाएँ"
+
+msgid "Import..."
+msgstr "आयात करें..."
+
+msgid "Sync..."
+msgstr "समकालित करें..."
+
+msgid "About"
 msgstr ""
 
-msgid "Webcal"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
+msgid "Add calendar"
 msgstr ""
 
 #. label settings
@@ -154,22 +145,28 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"आपकी आने वाली घटनाओं को प्रदर्शित किया जाएगा जब आप घटनाओं के साथ एक तिथि का चयन "
-"करेंगे."
+"आपकी आने वाली घटनाओं को प्रदर्शित किया जाएगा जब आप घटनाओं के साथ एक तिथि का "
+"चयन करेंगे."
 
-#. maya.desktop:18
-#, fuzzy
-msgid "_Add Event"
-msgstr "घटना जोडें"
+msgid "Starts: \t"
+msgstr ""
 
-#, fuzzy
+msgid "Ends: \t\t"
+msgstr ""
+
 msgid "all day"
-msgstr "पूरा दिन:"
+msgstr ""
 
 msgid "at"
 msgstr "पर"
 
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "calendar.ics"
+msgstr ""
+
+msgid "Save ical"
 msgstr ""
 
 #~ msgid "all the day"

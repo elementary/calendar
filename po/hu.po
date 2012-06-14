@@ -11,50 +11,91 @@ msgstr ""
 "PO-Revision-Date: 2012-06-10 15:48+0000\n"
 "Last-Translator: Mark Lutring <marcus@elitemail.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
-"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-11 04:59+0000\n"
-"X-Generator: Launchpad (build 15376)\n"
+"X-Launchpad-Export-Date: 2012-06-14 04:46+0000\n"
+"X-Generator: Launchpad (build 15405)\n"
+"Language: hu\n"
 
-msgid "%A, %b %d"
+#. maya.desktop:6
+msgid "View and schedule events"
 msgstr ""
-
-msgid "%B %e, %Y"
-msgstr "%Y. %b. %e."
-
-msgid "%H:%M"
-msgstr "%H.%M"
-
-msgid "%l:%M %p"
-msgstr "%k.%M"
-
-msgid "About"
-msgstr "Névjegy"
-
-msgid "Add Event"
-msgstr "Esemény hozzáadása"
-
-#, fuzzy
-msgid "Add calendar"
-msgstr "Naptár"
-
-msgid "All day:"
-msgstr "Egész nap:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Naptár"
 
-msgid "Comments"
-msgstr "Megjegyzések"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr ""
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
 
 msgid "Contacts"
 msgstr "Névjegyek"
 
+msgid "Personal"
+msgstr "Személyes"
+
+msgid "%B %e, %Y"
+msgstr "%Y. %b. %e."
+
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr "%k.%M"
+
+msgid "%H:%M"
+msgstr "%H.%M"
+
+msgid "Add Event"
+msgstr "Esemény hozzáadása"
+
+msgid "Edit Event"
+msgstr "Esemény szerkesztése"
+
+msgid "From:"
+msgstr ""
+
+msgid "All day:"
+msgstr "Egész nap:"
+
+msgid "To:"
+msgstr "Eddig:"
+
+msgid "Title"
+msgstr ""
+
+msgid "Name of Event"
+msgstr "Esemény neve"
+
+msgid "Location"
+msgstr "Hely"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Guests"
+msgstr "Vendégek"
+
+msgid "Name or Email Address"
+msgstr "Név vagy e-mail cím"
+
+msgid "Comments"
+msgstr "Megjegyzések"
+
 msgid "Create Event"
 msgstr "Esemény létrehozása"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -62,92 +103,41 @@ msgstr "Esemény létrehozása"
 msgid "Create a new event"
 msgstr "Új esemény létrehozása"
 
-msgid "Delete the selected event"
-msgstr ""
-
-msgid "Edit Event"
-msgstr "Esemény szerkesztése"
-
 msgid "Edit the selected event"
 msgstr ""
 
-msgid "Ends: \t\t"
+msgid "Delete the selected event"
 msgstr ""
 
-msgid "Export Calendar..."
+msgid "Select calendars to display"
+msgstr ""
+
+msgid "Search For Events..."
 msgstr ""
 
 msgid "Export or Share the default Calendar"
 msgstr ""
 
-msgid "From:"
-msgstr ""
-
-msgid "Fullscreen"
-msgstr "Teljes képernyő"
-
-msgid "Guests"
-msgstr "Vendégek"
-
-msgid "Import..."
-msgstr "Importálás…"
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "Hely"
-
-msgid "Name of Event"
-msgstr "Esemény neve"
-
-msgid "Name or Email Address"
-msgstr "Név vagy e-mail cím"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Personal"
-msgstr "Személyes"
-
-msgid "Save ical"
-msgstr ""
-
-#, fuzzy
-msgid "Search For Events..."
-msgstr "Esemény keresése..."
-
-msgid "Select calendars to display"
-msgstr ""
-
-msgid "Show Week Numbers"
-msgstr "Hetek számának megjelenítése"
-
-msgid "Starts: \t"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Szinkronizálás..."
-
-msgid "Title"
-msgstr ""
-
-msgid "To:"
-msgstr "Eddig:"
-
 #. Create everything
 msgid "Today"
 msgstr "Ma"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
+msgid "Fullscreen"
+msgstr "Teljes képernyő"
 
-msgid "Webcal"
-msgstr ""
+msgid "Show Week Numbers"
+msgstr "Hetek számának megjelenítése"
 
-msgid "Your event has to be named and has to have a valid date"
+msgid "Import..."
+msgstr "Importálás…"
+
+msgid "Sync..."
+msgstr "Szinkronizálás..."
+
+msgid "About"
+msgstr "Névjegy"
+
+msgid "Add calendar"
 msgstr ""
 
 #. label settings
@@ -158,8 +148,10 @@ msgstr ""
 "Közelgő eseményeid itt jelennek meg, mikor a kiválasztott dátumkor van "
 "esemény."
 
-#. maya.desktop:18
-msgid "_Add Event"
+msgid "Starts: \t"
+msgstr ""
+
+msgid "Ends: \t\t"
 msgstr ""
 
 msgid "all day"
@@ -168,14 +160,11 @@ msgstr ""
 msgid "at"
 msgstr ""
 
+msgid "Export Calendar..."
+msgstr ""
+
 msgid "calendar.ics"
 msgstr ""
 
-#~ msgid "Day"
-#~ msgstr "Nap"
-
-#~ msgid "Month"
-#~ msgstr "Hónap"
-
-#~ msgid "Week"
-#~ msgstr "Hét"
+msgid "Save ical"
+msgstr ""
