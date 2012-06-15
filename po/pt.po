@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-13 15:38+0200\n"
-"PO-Revision-Date: 2012-06-11 23:12+0000\n"
+"PO-Revision-Date: 2012-06-14 13:59+0000\n"
 "Last-Translator: Sérgio Marques <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-14 04:46+0000\n"
-"X-Generator: Launchpad (build 15405)\n"
+"X-Launchpad-Export-Date: 2012-06-15 04:50+0000\n"
+"X-Generator: Launchpad (build 15414)\n"
 "Language: pt\n"
 
 #. maya.desktop:6
@@ -113,7 +113,7 @@ msgid "Select calendars to display"
 msgstr "Selecione os calendários a mostrar"
 
 msgid "Search For Events..."
-msgstr ""
+msgstr "Procurar eventos..."
 
 msgid "Export or Share the default Calendar"
 msgstr "Exportar ou partilhar o calendário pré-definido"
@@ -138,7 +138,7 @@ msgid "About"
 msgstr "Sobre"
 
 msgid "Add calendar"
-msgstr ""
+msgstr "Adicionar um calendário"
 
 #. label settings
 msgid ""
