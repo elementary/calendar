@@ -140,6 +140,7 @@ CUSTOM_VAPIS
 OPTIONS
     --thread
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
+    --define=USE_GRANITE_DECORATED_WINDOW
     )
 
 add_definitions(${CFLAGS} -Wall -Winit-self -Wwrite-strings -Wunreachable-code -Wstrict-prototypes )

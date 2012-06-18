@@ -17,7 +17,11 @@
 
 namespace Maya.View {
 
-    public class EventDialog : Gtk.Dialog {
+#if USE_GRANITE_DECORATED_WINDOW
+public class EventDialog : Granite.Widgets.LightWindow {
+#else
+public class EventDialog : Gtk.Window {
+#endif
         
         /**
          * The different widgets in the dialog.
@@ -29,11 +33,11 @@ namespace Maya.View {
         private Granite.Widgets.DatePicker from_date_picker;
         private Granite.Widgets.DatePicker to_date_picker;
         private Gtk.Switch allday_switch;
-        private Gtk.Widget create_button;
-        
-
         private Granite.Widgets.TimePicker from_time_picker;
         private Granite.Widgets.TimePicker to_time_picker;
+        private Gtk.Button create_button;
+
+        public signal void response (bool response);
 
         private Gtk.Grid content_grid { get; private set; }
 
@@ -77,24 +81,6 @@ namespace Maya.View {
             // Load the event's properties in to the dialog
             load ();
 
-            set_default_response(Gtk.ResponseType.APPLY);
-
-            connect_signals ();
-        }
-
-        private void connect_signals () {
-            this.response.connect (on_response);
-        }
-
-        private void on_response (Gtk.Dialog source, int response_id) {
-            switch (response_id) {
-            case Gtk.ResponseType.APPLY:
-                save ();
-                break;
-            case Gtk.ResponseType.CLOSE:
-                destroy ();
-                break;
-            }
         }
 
         //--- Public Methods ---//
@@ -181,6 +167,7 @@ namespace Maya.View {
                     break;
                 }
             }
+            response (true);
         }
 
         //--- Helpers ---//
@@ -259,11 +246,11 @@ namespace Maya.View {
 
         void build_dialog (bool add_event) {
             
-            var container = (Gtk.Container) get_content_area ();
             content_grid = new Gtk.Grid ();
             content_grid.margin_left = 12;
             content_grid.margin_right = 12;
             content_grid.margin_top = 12;
+            content_grid.margin_bottom = 12;
             content_grid.set_row_spacing (6);
             content_grid.set_column_spacing (12);
             
@@ -348,19 +335,33 @@ namespace Maya.View {
             content_grid.attach (guest_entry, 0, 9, 4, 1);
             content_grid.attach (comment_label, 0, 10, 4, 1);
             content_grid.attach (comment_textview, 0, 11, 4, 1);
-            container.add (content_grid);
-           
-			var cancel_button = add_button (Gtk.Stock.CANCEL, Gtk.ResponseType.CLOSE);
+            
+            var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
+            buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
+            
+            #if !USE_GRANITE_DECORATED_WINDOW
+            var cancel_button = new Gtk.Button.from_stock (Gtk.Stock.CANCEL);
+            cancel_button.clicked.connect (() => {response (false);this.destroy();});
+            buttonbox.pack_end (cancel_button);
+            #endif
 
             if (add_event) {
-                create_button = add_button (_("Create Event"), Gtk.ResponseType.APPLY);
+                create_button = new Gtk.Button.with_label (_("Create Event"));
                 create_button.sensitive = false;
                 create_button.set_tooltip_text (_("Your event has to be named and has to have a valid date"));
             }
             else {
-                create_button = add_button (Gtk.Stock.OK, Gtk.ResponseType.APPLY);
+                create_button = new Gtk.Button.from_stock (Gtk.Stock.OK);
             }
+            create_button.clicked.connect (save);
+            buttonbox.pack_end (create_button);
+            
             create_button.margin_right = 5;
+            
+            content_grid.attach (buttonbox, 0, 12, 4, 1);
+            
+            this.add (content_grid);
+            
             show_all();
         }
         

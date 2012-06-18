@@ -348,7 +348,7 @@ namespace Maya {
                 window.unfullscreen ();
         }
 
-        void on_event_dialog_response (View.EventDialog dialog, int response_id, bool add_event)  {
+        void on_event_dialog_response (View.EventDialog dialog, bool response_id, bool add_event)  {
 
             E.CalComponent event = dialog.ecal;
             E.Source source = dialog.source;
@@ -357,7 +357,7 @@ namespace Maya {
 
             dialog.dispose ();
 
-            if (response_id != Gtk.ResponseType.APPLY)
+            if (response_id != true)
                 return;
             
             if (add_event)
