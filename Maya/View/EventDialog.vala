@@ -306,7 +306,7 @@ public class EventDialog : Gtk.Window {
             var location_label = make_label (_("Location"));
             location_entry = new Granite.Widgets.HintedEntry (_("John Smith OR Example St."));
             
-            var guest_label = make_label (_("Guests"));
+            var guest_label = make_label (_("Participants"));
             guest_entry = new Maya.View.Widgets.GuestEntry (_("Name or Email Address"));
             guest_entry.check_resize ();
             

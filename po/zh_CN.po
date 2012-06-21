@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-18 14:22+0200\n"
+"POT-Creation-Date: 2012-06-21 20:22+0200\n"
 "PO-Revision-Date: 2012-06-14 07:49+0000\n"
 "Last-Translator: Wang Dianjin <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -110,7 +110,8 @@ msgstr "在本机上"
 msgid "Personal"
 msgstr "个人"
 
-msgid "Search For Events..."
+#, fuzzy
+msgid "Search Events"
 msgstr "搜索活动..."
 
 msgid "Select calendars to display"

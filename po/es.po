@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-18 14:22+0200\n"
+"POT-Creation-Date: 2012-06-21 20:22+0200\n"
 "PO-Revision-Date: 2012-06-13 21:56+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -110,7 +110,8 @@ msgstr "En este equipo"
 msgid "Personal"
 msgstr "Personal"
 
-msgid "Search For Events..."
+#, fuzzy
+msgid "Search Events"
 msgstr "Buscar eventos..."
 
 msgid "Select calendars to display"
