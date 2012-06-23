@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 20:22+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-06-14 07:49+0000\n"
 "Last-Translator: Wang Dianjin <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -85,9 +85,6 @@ msgstr "起始日期："
 msgid "Fullscreen"
 msgstr "全屏"
 
-msgid "Guests"
-msgstr "访客"
-
 msgid "Import..."
 msgstr "导入..."
 
@@ -106,6 +103,9 @@ msgstr "姓名或邮件地址"
 #. Ensure the groups actually exist
 msgid "On this computer"
 msgstr "在本机上"
+
+msgid "Participants"
+msgstr ""
 
 msgid "Personal"
 msgstr "个人"
@@ -164,6 +164,9 @@ msgstr "于"
 
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#~ msgid "Guests"
+#~ msgstr "访客"
 
 #~ msgid "Save ical"
 #~ msgstr "保存 ical"

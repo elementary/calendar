@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 20:22+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-05-11 20:07+0000\n"
 "Last-Translator: Marko Gajšt <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
@@ -85,9 +85,6 @@ msgstr "Od:"
 msgid "Fullscreen"
 msgstr "Celozaslonski način"
 
-msgid "Guests"
-msgstr "Gostje"
-
 msgid "Import..."
 msgstr "Uvozi ..."
 
@@ -105,6 +102,9 @@ msgstr "Ime ali e-mail naslov"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
+msgstr ""
+
+msgid "Participants"
 msgstr ""
 
 msgid "Personal"
@@ -164,6 +164,9 @@ msgstr "ob"
 
 msgid "calendar.ics"
 msgstr ""
+
+#~ msgid "Guests"
+#~ msgstr "Gostje"
 
 #~ msgid "all the day"
 #~ msgstr "cel dan"

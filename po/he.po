@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 20:22+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-04-26 20:55+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -85,9 +85,6 @@ msgstr "מ־:"
 msgid "Fullscreen"
 msgstr "מסך מלא"
 
-msgid "Guests"
-msgstr "אורחים"
-
 msgid "Import..."
 msgstr "יבוא..."
 
@@ -105,6 +102,9 @@ msgstr "שם או כתובת דוא״ל"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
+msgstr ""
+
+msgid "Participants"
 msgstr ""
 
 msgid "Personal"
@@ -164,6 +164,9 @@ msgstr "ב־"
 
 msgid "calendar.ics"
 msgstr ""
+
+#~ msgid "Guests"
+#~ msgstr "אורחים"
 
 #~ msgid "all the day"
 #~ msgstr "כל היום"

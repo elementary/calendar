@@ -49,6 +49,8 @@ public class EventDialog : Gtk.Window {
 
         public E.Source? original_source { get; private set; }
 
+        Model.SourceManager sourcemgr;
+
         public E.CalComponent ecal { get; private set; }
 
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
@@ -60,6 +62,8 @@ public class EventDialog : Gtk.Window {
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
 
             sources = sourcemgr.get_all_sources ();
+
+            this.sourcemgr = sourcemgr;
 
             this.ecal = ecal;
 
@@ -293,8 +297,12 @@ public class EventDialog : Gtk.Window {
             var liststore = new Gtk.ListStore (2, typeof (string), typeof(string));
             
             // Add all the sources
-            foreach (E.Source source in sources)
-                liststore.insert_with_values (null, 0, 0, source.peek_name(), 1, source.peek_uid());
+            foreach (E.SourceGroup group in sourcemgr.groups)
+                // Only allow local sources for now
+                if (group.peek_base_uri() == "local:")
+                    foreach (E.Source source in group.peek_sources())
+                        if (!source.get_readonly())
+                            liststore.insert_with_values (null, 0, 0, source.peek_name(), 1, source.peek_uid());
 
             calendar_box = new Gtk.ComboBox.with_model (liststore);
             calendar_box.set_id_column (1);

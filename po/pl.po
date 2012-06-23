@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 20:22+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-06-15 21:51+0000\n"
 "Last-Translator: Piotr Łukomiak <cieplak32@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -85,9 +85,6 @@ msgstr "Od:"
 msgid "Fullscreen"
 msgstr "Pełny ekran"
 
-msgid "Guests"
-msgstr "Goście"
-
 msgid "Import..."
 msgstr "Importuj..."
 
@@ -106,6 +103,9 @@ msgstr "Imię lub adres e-mail"
 #. Ensure the groups actually exist
 msgid "On this computer"
 msgstr "Na tym komputerze"
+
+msgid "Participants"
+msgstr ""
 
 msgid "Personal"
 msgstr "Osobisty"
@@ -166,6 +166,9 @@ msgstr "o"
 
 msgid "calendar.ics"
 msgstr "kalendarz.ics"
+
+#~ msgid "Guests"
+#~ msgstr "Goście"
 
 #~ msgid "Save ical"
 #~ msgstr "Zapisz"

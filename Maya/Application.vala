@@ -409,6 +409,9 @@ namespace Maya {
         }
 
         void on_tb_sources_clicked (Gtk.Widget widget) {
+			stdout.printf ("CLICKED!\n");
+			if (source_selector.get_visible ())
+				stdout.printf ("STILL SHOWN!\n");
             source_selector = new View.SourceSelector (window, sourcemgr);
             foreach (var group in sourcemgr.groups) {
                 var tview = source_selector.get_group_box(group).tview;

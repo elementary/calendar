@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 20:22+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-05-30 20:50+0000\n"
 "Last-Translator: shahriar <shahriar.haque@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
@@ -85,9 +85,6 @@ msgstr "প্রেরক:"
 msgid "Fullscreen"
 msgstr ""
 
-msgid "Guests"
-msgstr "অতিথি"
-
 msgid "Import..."
 msgstr ""
 
@@ -105,6 +102,9 @@ msgstr "নাম এবন্দ ইমেল এড্রেস"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
+msgstr ""
+
+msgid "Participants"
 msgstr ""
 
 msgid "Personal"
@@ -164,3 +164,6 @@ msgstr "তে"
 
 msgid "calendar.ics"
 msgstr ""
+
+#~ msgid "Guests"
+#~ msgstr "অতিথি"

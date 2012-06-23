@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 20:22+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-06-13 21:54+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Catalan <ca@li.org>\n"
@@ -85,9 +85,6 @@ msgstr "Des de:"
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
-msgid "Guests"
-msgstr "Convidats"
-
 msgid "Import..."
 msgstr "Importa..."
 
@@ -106,6 +103,9 @@ msgstr "Nom o adreça electrònica"
 #. Ensure the groups actually exist
 msgid "On this computer"
 msgstr "En aquest ordinador"
+
+msgid "Participants"
+msgstr ""
 
 msgid "Personal"
 msgstr "Personal"
@@ -165,6 +165,9 @@ msgstr "a"
 
 msgid "calendar.ics"
 msgstr "calendari.ics"
+
+#~ msgid "Guests"
+#~ msgstr "Convidats"
 
 #~ msgid "Save ical"
 #~ msgstr "Desa en format ical"

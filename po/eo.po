@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 20:22+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-06-12 20:18+0000\n"
 "Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -85,9 +85,6 @@ msgstr "De:"
 msgid "Fullscreen"
 msgstr "Tutekrane"
 
-msgid "Guests"
-msgstr "Gastoj"
-
 msgid "Import..."
 msgstr "Importi..."
 
@@ -106,6 +103,9 @@ msgstr "Nomo aŭ retpoŝtadreso"
 #. Ensure the groups actually exist
 msgid "On this computer"
 msgstr "En ĉi tiu komputilo"
+
+msgid "Participants"
+msgstr ""
 
 msgid "Personal"
 msgstr "Persona"
@@ -166,6 +166,9 @@ msgstr "je"
 
 msgid "calendar.ics"
 msgstr "kalendaro.ics"
+
+#~ msgid "Guests"
+#~ msgstr "Gastoj"
 
 #~ msgid "Save ical"
 #~ msgstr "Konservi ical"
