@@ -41,11 +41,11 @@ public class EventDialog : Gtk.Window {
 
         private Gtk.Grid content_grid { get; private set; }
 
-        private Gee.Collection<E.Source> sources;
+        private Gee.ArrayList<E.Source> sources;
 
         private Gtk.ComboBox calendar_box;
 
-        public E.Source source { get; private set; }
+        public E.Source? source { get; private set; }
 
         public E.Source? original_source { get; private set; }
 
@@ -61,7 +61,14 @@ public class EventDialog : Gtk.Window {
 
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
 
-            sources = sourcemgr.get_all_sources ();
+            sources = sourcemgr.get_editable_sources ();       
+
+            // Since we created one that is editable, we must have at least one
+            assert (!sources.is_empty);
+
+            // Select the first calendar we can find, if none is default
+            if (this.source == null)
+                this.source = sources.get (0);       
 
             this.sourcemgr = sourcemgr;
 
@@ -296,13 +303,12 @@ public class EventDialog : Gtk.Window {
 
             var liststore = new Gtk.ListStore (2, typeof (string), typeof(string));
             
-            // Add all the sources
-            foreach (E.SourceGroup group in sourcemgr.groups)
-                // Only allow local sources for now
-                if (group.peek_base_uri() == "local:")
-                    foreach (E.Source source in group.peek_sources())
-                        if (!source.get_readonly())
-                            liststore.insert_with_values (null, 0, 0, source.peek_name(), 1, source.peek_uid());
+            var calcount = 0;
+            // Add all the editable sources
+            foreach (E.Source source in sources) {
+                calcount++;
+                liststore.insert_with_values (null, 0, 0, source.peek_name(), 1, source.peek_uid());
+            }
 
             calendar_box = new Gtk.ComboBox.with_model (liststore);
             calendar_box.set_id_column (1);
@@ -337,8 +343,10 @@ public class EventDialog : Gtk.Window {
             content_grid.attach (location_label, 1, 4, 3, 1);
             content_grid.attach (title_entry, 0, 5, 1, 1);
             content_grid.attach (location_entry, 1, 5, 3, 1);
-            content_grid.attach (calendar_label, 0, 6, 4, 1);
-            content_grid.attach (calendar_box, 0, 7, 4, 1);
+            if (calcount > 1) {
+                content_grid.attach (calendar_label, 0, 6, 4, 1);
+                content_grid.attach (calendar_box, 0, 7, 4, 1);
+            }
             content_grid.attach (guest_label, 0, 8, 4, 1);
             content_grid.attach (guest_entry, 0, 9, 4, 1);
             content_grid.attach (comment_label, 0, 10, 4, 1);

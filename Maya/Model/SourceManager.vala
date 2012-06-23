@@ -42,6 +42,8 @@ public class SourceManager: GLib.Object {
     E.SourceGroup? GROUP_REMOTE { get; set; }
     E.SourceGroup? GROUP_CONTACTS { get; set; }
 
+    Settings.MayaSettings settings;
+
     public SourceManager () {
 
         bool status = false;
@@ -59,7 +61,7 @@ public class SourceManager: GLib.Object {
             (EqualFunc) Util.source_equal_func,
             null);
 
-        var settings = new Settings.MayaSettings();
+        settings = new Settings.MayaSettings();
 
         /* Ensure the groups actually exist */
         source_list.ensure_group(_("On this computer"), "local:", false);
@@ -69,10 +71,7 @@ public class SourceManager: GLib.Object {
         GROUP_REMOTE = source_list.peek_group_by_base_uri("webcal://");
         GROUP_CONTACTS = source_list.peek_group_by_base_uri("contacts://");
         /* If we don't have any source, let's add at least one */
-        if(GROUP_LOCAL.peek_sources().length() == 0) {
-            var source = new E.Source (_("Personal"), "system");
-            GROUP_LOCAL.add_source (source, 0);
-        }
+        create_source_if_needed ();
         /* Set the default calendar from the configuration keys, if it doesn't exist, attribute one */
         if (settings.primary_calendar != "") {
             DEFAULT_SOURCE = source_list.peek_source_by_uid(settings.primary_calendar);
@@ -133,6 +132,22 @@ public class SourceManager: GLib.Object {
 
     }
 
+    public void create_source_if_needed () {
+        if(GROUP_LOCAL.peek_sources().length() == 0) {
+            var source = new E.Source (_("Personal"), "system");
+            GROUP_LOCAL.add_source (source, 0);
+        }
+    }
+
+    public bool can_edit_group (E.SourceGroup group) {
+        // TODO: better criterium
+        return group.peek_base_uri () == "local:";
+    }
+
+    public bool can_edit_source (E.SourceGroup group, E.Source source) {
+        return can_edit_group(group) && !source.get_readonly();
+    }
+
     /**
      * The given group is added to the list of groups and will thus be persisted.
      */
@@ -160,7 +175,39 @@ public class SourceManager: GLib.Object {
      * The given source is destroyed and will no longer exist.
      */
     public void destroy_source (E.SourceGroup group, E.Source source) {
-        group.remove_source (source);
+            group.remove_source (source);
+            if (source.peek_uid () == DEFAULT_SOURCE.peek_uid ()) {
+                // Choose a new default source
+                Gee.ArrayList<E.Source> sources = get_editable_sources ();
+                assert (!sources.is_empty);
+                Gee.Iterator<E.Source> it = sources.iterator();
+                it.next ();
+                E.Source first = it.get ();
+                DEFAULT_SOURCE = first;
+                settings.primary_calendar = DEFAULT_SOURCE.peek_uid ();
+            }
+    }
+
+    /**
+     * Retrieves all sources that can be edited, i.e. to which events can be added / removed / edited.
+     */
+    public Gee.ArrayList<E.Source> get_editable_sources () {
+
+        Gee.ArrayList<E.Source> sources = new Gee.ArrayList<E.Source>(null);
+
+        // Make sure the result will contain at least 1 source
+        create_source_if_needed ();
+
+        // Add all the editable sources to the sources list
+        foreach (E.SourceGroup group in groups)
+            // Only allow local sources for now
+            if (can_edit_group (group))
+                foreach (E.Source group_source in group.peek_sources())
+                    if (can_edit_source (group, group_source)) {
+                        sources.add (group_source);
+                    }
+
+        return sources;
     }
 
     //--- Helper Functions ---//
