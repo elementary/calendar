@@ -52,6 +52,9 @@ namespace Maya.View {
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
+        E.SourceGroup group;
+        E.Source source;
+
         // The previous visibility status for this widget.
         bool old_shown = false;
 
@@ -61,8 +64,11 @@ namespace Maya.View {
         /**
          * Creates a new source widget for the given source.
          */
-        public SourceWidget (E.Source source) {
+        public SourceWidget (E.SourceGroup group, E.Source source) {
             set_row_spacing (5);
+
+            this.group = group;
+            this.source = source;
 
             // TODO: hash and equal funcs are in util but cause a crash
             // (both for map and list)
@@ -245,7 +251,7 @@ namespace Maya.View {
          * Creates a widget to show the given event.
          */
         void show_event (E.CalComponent event) {
-            EventWidget widget = new EventWidget (event);
+            EventWidget widget = new EventWidget (this.group, this.source, event);
             attach (widget, 0, number_of_events, 1, 1);
             number_of_events++;
             widget.selected.connect (() => {event_selected (event);});

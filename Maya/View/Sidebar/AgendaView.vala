@@ -30,7 +30,7 @@ namespace Maya.View {
         // Sent out when the visibility of this widget changes.
         public signal void shown_changed (bool old, bool new);
 
-        // The previous visibility status for this widget.
+        // The previous visibility status for thissou widget.
         bool old_shown = false;
 
         // 
@@ -67,7 +67,7 @@ namespace Maya.View {
             
             foreach (E.SourceGroup group in groups) {
                 foreach (E.Source source in group.peek_sources () ) {
-                    add_source (source);
+                    add_source (group, source);
                 }
             }
 
@@ -109,7 +109,7 @@ namespace Maya.View {
          * Called when a source is added.
          */
         void on_source_added (E.SourceGroup group, E.Source source) {
-            add_source (source);
+            add_source (group, source);
         }
 
         /**
@@ -123,8 +123,8 @@ namespace Maya.View {
         /**
          * Adds the given source to the list.
          */
-        void add_source (E.Source source) {
-            var widget = new SourceWidget (source);
+        void add_source (E.SourceGroup group, E.Source source) {
+            var widget = new SourceWidget (group, source);
             attach (widget, 0, row_number, 1, 1);
             row_number++;
 
