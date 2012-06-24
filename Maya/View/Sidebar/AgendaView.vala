@@ -36,6 +36,8 @@ namespace Maya.View {
         // 
         int row_number = 0;
 
+        Model.SourceManager sourcemgr;
+
         // Sent out when an event is selected.
         public signal void event_selected (E.CalComponent event);
 
@@ -52,6 +54,8 @@ namespace Maya.View {
          * Creates a new agendaview.
          */
 		public AgendaView (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
+
+            this.sourcemgr = sourcemgr;
 
             // Gtk.Grid properties
             set_column_homogeneous (true);
@@ -124,7 +128,7 @@ namespace Maya.View {
          * Adds the given source to the list.
          */
         void add_source (E.SourceGroup group, E.Source source) {
-            var widget = new SourceWidget (group, source);
+            var widget = new SourceWidget (sourcemgr, group, source);
             attach (widget, 0, row_number, 1, 1);
             row_number++;
 
