@@ -56,7 +56,7 @@ namespace Maya.Util {
     }
 
     /**
-     * Converts the given icaltimetype to the given DateTime.
+     * Converts the given icaltimetype to a DateTime.
      */
     DateTime ical_to_date_time (iCal.icaltimetype date) {
 
@@ -67,6 +67,12 @@ namespace Maya.Util {
             date.day, date.hour, date.minute, date.second);
     }
 
+    DateTime ecal_to_date_time (E.CalComponentDateTime date) {
+        DateTime result = new DateTime(new TimeZone.local(), date.value.year, date.value.month, date.value.day, date.value.hour, date.value.minute, date.value.second);
+
+        return result;
+    }
+
     DateRange event_date_range (E.CalComponent event) {
         E.CalComponentDateTime dt_start;
         event.get_dtstart (out dt_start);
@@ -74,9 +80,13 @@ namespace Maya.Util {
         E.CalComponentDateTime dt_end;
         event.get_dtend (out dt_end);
 
-        var start = new DateTime(new TimeZone.local(), dt_start.value.year, dt_start.value.month, dt_start.value.day, 0, 0, 0);
-        var end = new DateTime(new TimeZone.local(), dt_end.value.year, dt_end.value.month, dt_end.value.day, 0, 0, 0);
-        
+        var start = ecal_to_date_time (dt_start);
+        var end = ecal_to_date_time (dt_end);
+
+        bool allday = is_the_all_day (start, end);
+        if (allday)
+            end = end.add_days (-1);
+
         // If end is before start, switch the two
         if (end.compare (start) < 0) {
             var temp = end;
@@ -84,7 +94,7 @@ namespace Maya.Util {
             start = temp;
         }
 
-        return new Util.DateRange (start, end);
+        return new Util.DateRange (strip_time(start), strip_time(end));
     }
 
     bool is_multiday_event (E.CalComponent event) {

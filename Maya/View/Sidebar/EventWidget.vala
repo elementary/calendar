@@ -149,7 +149,7 @@ namespace Maya.View {
             start_date_label.set_markup ("<span weight=\"light\">" + start_add + get_start_string (event) + "</span>");
 
             if (end_string != "") {
-                end_date_label.set_markup ("<span weight=\"light\">" + _("Ends: \t\t") + end_string  + "</span>");
+                end_date_label.set_markup ("<span weight=\"light\">" + _("Ends: \t") + end_string  + "</span>");
                 end_date_label.show ();
             } else
                 end_date_label.hide ();

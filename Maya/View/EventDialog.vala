@@ -130,6 +130,9 @@ public class EventDialog : Gtk.Window {
             DateTime from_date = from_date_picker.date;
             DateTime to_date = to_date_picker.date;
 
+            if (allday_switch.get_active())
+                to_date = to_date.add_days (1);
+
             iCal.icaltimetype dt_start = Util.date_time_to_ical (from_date, from_time);
             iCal.icaltimetype dt_end = Util.date_time_to_ical (to_date, to_time);
 
@@ -201,31 +204,33 @@ public class EventDialog : Gtk.Window {
             if (summary != null)
                 title_entry.text = summary;
 
-            // Load the from date
+            // Load the dates
             iCal.icaltimetype dt_start = comp.get_dtstart ();
+            iCal.icaltimetype dt_end = comp.get_dtend ();
+
+            // Convert the dates
+            DateTime to_date = Util.ical_to_date_time (dt_end);
+            DateTime from_date = Util.ical_to_date_time (dt_start);
+
+            // Is this all day
+            bool allday = Util.is_the_all_day(from_date, to_date);
 
             if (dt_start.year != 0) {
-                DateTime from_date = Util.ical_to_date_time (dt_start);
-
                 from_date_picker.date = from_date;
                 from_time_picker.time = from_date;
             }
 
-            // Load the to date
-            iCal.icaltimetype dt_end = comp.get_dtend ();
-
             if (dt_end.year != 0) {
-                DateTime to_date = Util.ical_to_date_time (dt_end);
-
+                // If it's an all day event, subtract 1 from the end date
+                if (allday)
+                    to_date = to_date.add_days (-1);
                 to_date_picker.date = to_date;
                 to_time_picker.time = to_date;
             }
 
             // Load the allday_switch
             if (dt_end.year != 0) {
-                DateTime to_date = Util.ical_to_date_time (dt_end);
-                DateTime from_date = Util.ical_to_date_time (dt_start);
-                if (Util.is_the_all_day(from_date, to_date) == true) {
+                if (allday) {
                     allday_switch.set_active(true);
                     from_time_picker.sensitive = false;
                     to_time_picker.sensitive = false;
