@@ -47,6 +47,7 @@ public class EventDialog : Gtk.Window {
 
         public E.Source? source { get; private set; }
 
+        public E.SourceGroup? original_group { get; private set; }
         public E.Source? original_source { get; private set; }
 
         Model.SourceManager sourcemgr;
@@ -55,13 +56,18 @@ public class EventDialog : Gtk.Window {
 
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
 
-        public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
+        public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.SourceGroup? group = null, E.Source? source = null, bool? add_event = false) {
 
+            this.original_group = group;
             this.original_source = source;
 
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
 
             sources = sourcemgr.get_editable_sources ();       
+
+            bool can_edit = true;
+            if (original_group != null && original_source != null)
+                can_edit = sourcemgr.can_edit_source (group, source);
 
             // Since we created one that is editable, we must have at least one
             assert (!sources.is_empty);
@@ -87,7 +93,7 @@ public class EventDialog : Gtk.Window {
             transient_for = window;
             
             // Build dialog
-            build_dialog (add_event);
+            build_dialog (add_event, can_edit);
 
             // Load the event's properties in to the dialog
             load ();
@@ -255,7 +261,7 @@ public class EventDialog : Gtk.Window {
             calendar_box.set_active_id (this.source.peek_uid());
         }
 
-        void build_dialog (bool add_event) {
+        void build_dialog (bool add_event, bool can_edit) {
             
             content_grid = new Gtk.Grid ();
             content_grid.margin_left = 12;
@@ -264,13 +270,14 @@ public class EventDialog : Gtk.Window {
             content_grid.margin_bottom = 12;
             content_grid.set_row_spacing (6);
             content_grid.set_column_spacing (12);
+            content_grid.set_enabled(false);
             
             var from_label = make_label (_("From:"));
             from_date_picker = make_date_picker ();
             from_date_picker.notify["date"].connect ( () => {on_date_modified(0);} );
             from_time_picker = make_time_picker ();
             from_time_picker.notify["time"].connect ( () => {on_time_modified(0);} );
-            
+
             var allday_label = new Gtk.Label (_("All day:"));
             allday_label.set_alignment (1.0f, 0.5f);
             
