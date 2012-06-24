@@ -209,7 +209,7 @@ namespace Maya.View {
             string date_string = end_date.format (Settings.DateFormat_Complete ());
             string time_string = end_date.format (Settings.TimeFormat ());
             if (Util.is_the_all_day(start_date, end_date) == true) {
-                return date_string;
+                return end_date.add_days (-1).format (Settings.DateFormat_Complete ());
             }
             else {
                 return date_string + " " + _("at") + " " + time_string;
