@@ -89,11 +89,13 @@ namespace Maya.View {
             edit_button.set_relief (Gtk.ReliefStyle.NONE);
             grid.attach (edit_button, 1, 0, 1, 1);
 
-            // Don't show the delete button if the event can't be edited
             close_button = new Gtk.Button ();
             close_button.add (new Gtk.Image.from_stock ("gtk-close", Gtk.IconSize.MENU));
             close_button.set_relief (Gtk.ReliefStyle.NONE);
-            grid.attach (close_button, 2, 0, 1, 1);
+            // Don't show the delete button if the event can't be edited
+            if (sourcemgr.can_edit_source (group, source)) {
+                grid.attach (close_button, 2, 0, 1, 1);
+            }
 
             grid.show ();
             add (grid);
