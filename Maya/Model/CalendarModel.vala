@@ -178,7 +178,7 @@ public class CalendarModel : Object {
     void compute_ranges () {
 
         var month_end = month_start.add_full (0, 1, -1);
-        month_range = new Util.DateRangmonth_rangee (month_start, month_end);
+        month_range = new Util.DateRange (month_start, month_end);
 
         int dow = month_start.get_day_of_week(); 
         int wso = (int) week_starts_on;
