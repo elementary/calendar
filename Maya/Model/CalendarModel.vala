@@ -233,7 +233,7 @@ public class CalendarModel : Object {
         // query client view
 
         var iso_first = E.isodate_from_time_t((ulong) data_range.first.to_unix());
-        var iso_last = E.isodate_from_time_t((ulong) data_range.last.to_unix());
+        var iso_last = E.isodate_from_time_t((ulong) data_range.last.add_days(1).to_unix());
 
         var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
 

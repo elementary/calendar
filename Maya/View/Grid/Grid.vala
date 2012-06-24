@@ -198,7 +198,7 @@ public class Grid : Gtk.Grid {
     }
 
     void add_button_for_day (DateTime date, EventButton button) {
-        if (!grid_range.contains (date))
+        if (data[date] == null)
             return;
         GridDay grid_day = data[date];
         assert(grid_day != null);
