@@ -189,7 +189,6 @@ public class Grid : Gtk.Grid {
     void add_buttons_for_range (Util.DateRange dt_range, E.CalComponent event) {
         foreach (var date in dt_range) {
             EventButton button;
-            stdout.printf ("size = %d\n", dt_range.to_list ().size);
             if (dt_range.to_list ().size == 1)
                 button = new SingleDayEventButton (event);
             else
