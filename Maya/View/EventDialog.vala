@@ -270,8 +270,7 @@ public class EventDialog : Gtk.Window {
             content_grid.margin_bottom = 12;
             content_grid.set_row_spacing (6);
             content_grid.set_column_spacing (12);
-            content_grid.set_enabled(false);
-            
+
             var from_label = make_label (_("From:"));
             from_date_picker = make_date_picker ();
             from_date_picker.notify["date"].connect ( () => {on_date_modified(0);} );
