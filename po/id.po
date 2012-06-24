@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-21 22:15+0200\n"
-"PO-Revision-Date: 2012-06-18 01:41+0000\n"
+"PO-Revision-Date: 2012-06-21 10:44+0000\n"
 "Last-Translator: Dani Pratomo <Unknown>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-19 05:03+0000\n"
-"X-Generator: Launchpad (build 15435)\n"
+"X-Launchpad-Export-Date: 2012-06-22 04:56+0000\n"
+"X-Generator: Launchpad (build 15461)\n"
 
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
@@ -31,10 +31,10 @@ msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 msgid "About"
-msgstr "Tentang"
+msgstr "Perihal"
 
 msgid "Add Event"
-msgstr "Tambah Kegiatan"
+msgstr "Tambah Acara"
 
 msgid "Add calendar"
 msgstr "Tambah kalender"
@@ -50,25 +50,25 @@ msgid "Comments"
 msgstr "Komentar"
 
 msgid "Contacts"
-msgstr "Daftar kontak"
+msgstr "Kontak"
 
 msgid "Create Event"
-msgstr "Buat Kegiatan"
+msgstr "Buat Acara"
 
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
-msgstr "Buat kegiatan baru"
+msgstr "Buat acara baru"
 
 msgid "Delete the selected event"
-msgstr "Hapus kegiatan yang terpilih"
+msgstr "Hapus acara terpilih"
 
 msgid "Edit Event"
-msgstr "Ubah Kegiatan"
+msgstr "Sunting Acara"
 
 msgid "Edit the selected event"
-msgstr "Ubah kegiatan yang terpilih"
+msgstr "Sunting acara terpilih"
 
 msgid "Ends: \t\t"
 msgstr "Selesai: \t\t"
@@ -77,7 +77,7 @@ msgid "Export Calendar..."
 msgstr "Ekspor Kalender..."
 
 msgid "Export or Share the default Calendar"
-msgstr "Ekspor atau Bagikan Kalendar asal"
+msgstr "Ekspor atau Bagikan Kalender utama"
 
 msgid "From:"
 msgstr "Dari:"
@@ -89,13 +89,13 @@ msgid "Import..."
 msgstr "Impor..."
 
 msgid "John Smith OR Example St."
-msgstr "John Smith OR Example St."
+msgstr "Joko Setiawan ATAU Jalan Kelinci"
 
 msgid "Location"
 msgstr "Lokasi"
 
 msgid "Name of Event"
-msgstr "Nama Kegiatan"
+msgstr "Nama Acara"
 
 msgid "Name or Email Address"
 msgstr "Nama atau Alamat Email"
@@ -115,7 +115,7 @@ msgid "Search Events"
 msgstr "Cari Acara..."
 
 msgid "Select calendars to display"
-msgstr "Pilih kalender untuk ditampilkan"
+msgstr "Pilih kalender 'tuk ditampilkan"
 
 msgid "Show Week Numbers"
 msgstr "Tampilkan Nomor Minggu"
@@ -151,8 +151,7 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Jadwal kegiatan-kegiatan Anda berikutnya akan ditampilkan disini saat Anda "
-"memilih tanggal yang disertai kegiatan."
+"Acara kedepan mu akan tampil di sini saat kamu klik tanggal dengan acara."
 
 #. maya.desktop:18
 msgid "_Add Event"
@@ -172,6 +171,9 @@ msgstr "calendar.ics"
 
 #~ msgid "Save ical"
 #~ msgstr "Simpan ical"
+
+#~ msgid "Search For Events..."
+#~ msgstr "Cari Acara..."
 
 #~ msgid "all the day"
 #~ msgstr "sepanjang hari"
