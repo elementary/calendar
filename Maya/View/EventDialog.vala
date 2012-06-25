@@ -139,6 +139,9 @@ public class EventDialog : Gtk.Window {
             iCal.icaltimetype dt_start = Util.date_time_to_ical (from_date, from_time);
             iCal.icaltimetype dt_end = Util.date_time_to_ical (to_date, to_time);
 
+            dt_start.is_date = 0;
+            dt_end.is_date = 0;
+
             comp.set_dtstart (dt_start);
 
             comp.set_dtend (dt_end);
