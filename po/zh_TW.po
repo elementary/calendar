@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-06-26 01:24+0200\n"
 "PO-Revision-Date: 2012-06-08 17:22+0000\n"
 "Last-Translator: honki <honkiaa@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -70,7 +70,8 @@ msgstr "編輯事件"
 msgid "Edit the selected event"
 msgstr "編輯所選事件"
 
-msgid "Ends: \t\t"
+#, fuzzy
+msgid "Ends: \t"
 msgstr "結束︰ \t\t"
 
 msgid "Export Calendar..."

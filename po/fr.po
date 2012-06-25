@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-06-26 01:24+0200\n"
 "PO-Revision-Date: 2012-06-13 13:48+0000\n"
 "Last-Translator: Corentin Noël <tintou@mailoo.org>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -70,7 +70,8 @@ msgstr "Modifier l'évènement"
 msgid "Edit the selected event"
 msgstr "Modifier l'événement sélectionné"
 
-msgid "Ends: \t\t"
+#, fuzzy
+msgid "Ends: \t"
 msgstr "Fin : \t\t"
 
 msgid "Export Calendar..."

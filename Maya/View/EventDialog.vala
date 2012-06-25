@@ -295,7 +295,7 @@ public class EventDialog : Gtk.Window {
             from_date_picker = make_date_picker ();
             from_date_picker.notify["date"].connect ( () => {on_date_modified(0);} );
             from_time_picker = make_time_picker ();
-            from_time_picker.notify["time"].connect ( () => {on_time_modified(0);} );
+            from_time_picker.time_changed.connect ( () => {on_time_modified(0);} );
 
             var allday_label = new Gtk.Label (_("All day:"));
             allday_label.set_alignment (1.0f, 0.5f);
@@ -309,7 +309,7 @@ public class EventDialog : Gtk.Window {
             to_date_picker = make_date_picker ();
             to_date_picker.notify["date"].connect ( () => {on_date_modified(1);} );
             to_time_picker = make_time_picker ();
-            to_time_picker.notify["time"].connect ( () => {on_time_modified(1);} );
+            to_time_picker.time_changed.connect ( () => {on_time_modified(1);} );
             
             allday_switch_grid.attach (allday_switch, 0, 0, 1, 1);
 
