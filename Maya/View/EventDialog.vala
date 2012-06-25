@@ -56,10 +56,13 @@ public class EventDialog : Gtk.Window {
 
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
 
-        public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.SourceGroup? group = null, E.Source? source = null, bool? add_event = false) {
+        public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
 
-            this.original_group = group;
             this.original_source = source;
+            if (this.original_source != null)
+                this.original_group = (E.SourceGroup) original_source.peek_group ();
+            else
+                this.original_group = null;
 
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
 
@@ -67,7 +70,7 @@ public class EventDialog : Gtk.Window {
 
             bool can_edit = true;
             if (original_group != null && original_source != null)
-                can_edit = sourcemgr.can_edit_source (group, source);
+                can_edit = sourcemgr.can_edit_source (original_group, original_source);
 
             // Since we created one that is editable, we must have at least one
             assert (!sources.is_empty);
@@ -276,6 +279,15 @@ public class EventDialog : Gtk.Window {
             content_grid.set_row_spacing (6);
             content_grid.set_column_spacing (12);
 
+            Gtk.Grid subgrid = new Gtk.Grid ();
+            subgrid.set_sensitive (can_edit);
+            subgrid.margin_left = 0;
+            subgrid.margin_right = 0;
+            subgrid.margin_top = 0;
+            subgrid.margin_bottom = 0;
+            subgrid.set_row_spacing (6);
+            subgrid.set_column_spacing (12);
+
             var from_label = make_label (_("From:"));
             from_date_picker = make_date_picker ();
             from_date_picker.notify["date"].connect ( () => {on_date_modified(0);} );
@@ -342,26 +354,26 @@ public class EventDialog : Gtk.Window {
             comment_textview.set_hexpand(true);
             comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
             
-            content_grid.attach (from_label, 0, 0, 4, 1);
-            content_grid.attach (from_date_picker, 0, 1, 1, 1);
-            content_grid.attach (from_time_picker, 1, 1, 1, 1);
-            content_grid.attach (allday_label, 2, 1, 1, 1);
-            content_grid.attach (allday_switch_grid, 3, 1, 1, 1);
-            content_grid.attach (to_label, 0, 2, 2, 1);
-            content_grid.attach (to_date_picker, 0, 3, 1, 1);
-            content_grid.attach (to_time_picker, 1, 3, 1, 1);
-            content_grid.attach (title_label, 0, 4, 1, 1);
-            content_grid.attach (location_label, 1, 4, 3, 1);
-            content_grid.attach (title_entry, 0, 5, 1, 1);
-            content_grid.attach (location_entry, 1, 5, 3, 1);
-            if (calcount > 1) {
-                content_grid.attach (calendar_label, 0, 6, 4, 1);
-                content_grid.attach (calendar_box, 0, 7, 4, 1);
+            subgrid.attach (from_label, 0, 0, 4, 1);
+            subgrid.attach (from_date_picker, 0, 1, 1, 1);
+            subgrid.attach (from_time_picker, 1, 1, 1, 1);
+            subgrid.attach (allday_label, 2, 1, 1, 1);
+            subgrid.attach (allday_switch_grid, 3, 1, 1, 1);
+            subgrid.attach (to_label, 0, 2, 2, 1);
+            subgrid.attach (to_date_picker, 0, 3, 1, 1);
+            subgrid.attach (to_time_picker, 1, 3, 1, 1);
+            subgrid.attach (title_label, 0, 4, 1, 1);
+            subgrid.attach (location_label, 1, 4, 3, 1);
+            subgrid.attach (title_entry, 0, 5, 1, 1);
+            subgrid.attach (location_entry, 1, 5, 3, 1);
+            if (calcount > 1 && can_edit) {
+                subgrid.attach (calendar_label, 0, 6, 4, 1);
+                subgrid.attach (calendar_box, 0, 7, 4, 1);
             }
-            content_grid.attach (guest_label, 0, 8, 4, 1);
-            content_grid.attach (guest_entry, 0, 9, 4, 1);
-            content_grid.attach (comment_label, 0, 10, 4, 1);
-            content_grid.attach (comment_textview, 0, 11, 4, 1);
+            subgrid.attach (guest_label, 0, 8, 4, 1);
+            subgrid.attach (guest_entry, 0, 9, 4, 1);
+            subgrid.attach (comment_label, 0, 10, 4, 1);
+            subgrid.attach (comment_textview, 0, 11, 4, 1);
             
             var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
             buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
@@ -380,12 +392,16 @@ public class EventDialog : Gtk.Window {
             else {
                 create_button = new Gtk.Button.from_stock (Gtk.Stock.OK);
             }
-            create_button.clicked.connect (save);
+            if (can_edit)
+                create_button.clicked.connect (save);
+            else
+                create_button.clicked.connect (() => {response (false);this.destroy();});
             buttonbox.pack_end (create_button);
             
             create_button.margin_right = 5;
             
-            content_grid.attach (buttonbox, 0, 12, 4, 1);
+            content_grid.attach (subgrid, 0, 0, 1, 1);
+            content_grid.attach (buttonbox, 0, 1, 1, 1);
             
             this.add (content_grid);
             

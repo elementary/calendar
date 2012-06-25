@@ -273,7 +273,7 @@ namespace Maya {
          * Called when the edit button is selected.
          */
         void on_modified (E.CalComponent comp) {
-            var dialog = new Maya.View.EventDialog (window, sourcemgr, comp, comp.get_data<E.SourceGroup>("group"), comp.get_data<E.Source>("source"), false);
+            var dialog = new Maya.View.EventDialog (window, sourcemgr, comp, comp.get_data<E.Source>("source"), false);
             dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, false));
             dialog.present ();
         }
@@ -402,7 +402,7 @@ namespace Maya {
             comp.set_dtend (date);
             comp.set_summary ("");
 
-            var dialog = new Maya.View.EventDialog (window, sourcemgr, event, null, null, true);
+            var dialog = new Maya.View.EventDialog (window, sourcemgr, event, null, true);
             dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, true));
             dialog.present ();
 
