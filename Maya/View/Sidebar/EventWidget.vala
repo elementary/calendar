@@ -77,6 +77,7 @@ namespace Maya.View {
 
             end_date_label = new Granite.Widgets.WrapLabel ("");
             end_date_label.set_alignment (0, 0.5f);
+            end_date_label.no_show_all = true;
             grid.attach (end_date_label, 0, 2, 3, 1);
 
             location_label = new Granite.Widgets.WrapLabel ("");
