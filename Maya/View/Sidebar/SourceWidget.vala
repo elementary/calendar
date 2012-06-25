@@ -156,9 +156,13 @@ namespace Maya.View {
             current_events.remove (event);
             current_events.add (event);
 
-            if (event_widgets.has_key (event)) {
+            bool shown = event_in_current_date (event);
+
+            if (event_widgets.has_key (event) && shown) {
                 event_widgets.get (event).update (event);
             }
+            if (!shown)
+                hide_event (event);
 
             reorder_widgets ();
             update_visibility ();
