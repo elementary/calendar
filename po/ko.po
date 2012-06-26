@@ -1,47 +1,46 @@
-# Esperanto translation for maya
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# Korean translation for maya
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the maya package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-06-26 03:29+0000\n"
-"Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
-"Language-Team: Esperanto <eo@li.org>\n"
+"PO-Revision-Date: 2012-06-25 23:15+0000\n"
+"Last-Translator: MinSik CHO <Unknown>\n"
+"Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-06-26 05:39+0000\n"
 "X-Generator: Launchpad (build 15482)\n"
-"Language: eo\n"
 
 #. maya.desktop:6
 msgid "View and schedule events"
-msgstr "Vidi kaj plani eventojn"
+msgstr "이벤트를 보고 설정합니다."
 
 #. maya.desktop:5
 msgid "Calendar"
-msgstr "Kalendaro"
+msgstr "달력"
 
 #. maya.desktop:18
 msgid "_Add Event"
-msgstr "_Aldoni eventon"
+msgstr "이벤트 추가 (_A)"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
-msgstr "En ĉi tiu komputilo"
+msgstr "이 컴퓨터에서"
 
 msgid "Webcal"
-msgstr "Retkalendaro"
+msgstr "웹 캘린더"
 
 msgid "Contacts"
-msgstr "Kontaktoj"
+msgstr "연락처"
 
 msgid "Personal"
-msgstr "Persona"
+msgstr "개인"
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
@@ -50,92 +49,92 @@ msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
 msgid "%l:%M %p"
-msgstr "%l:%M %p"
+msgstr "%p %l:%M"
 
 msgid "%H:%M"
 msgstr "%H:%M"
 
 msgid "Add Event"
-msgstr "Aldoni eventon"
+msgstr "이벤트 추가"
 
 msgid "Edit Event"
-msgstr "Redakti eventon"
+msgstr "이벤트 편집"
 
 msgid "From:"
-msgstr "De:"
+msgstr "보낸이:"
 
 msgid "All day:"
-msgstr "Tuttage:"
+msgstr "하루 종일:"
 
 msgid "To:"
-msgstr "Al:"
+msgstr "받는이:"
 
 msgid "Title"
-msgstr "Titolo"
+msgstr "제목"
 
 msgid "Name of Event"
-msgstr "Nomo de la evento"
+msgstr "이벤트 이름"
 
 msgid "Location"
-msgstr "Loko"
+msgstr "위치"
 
 msgid "John Smith OR Example St."
-msgstr "John Smith AŬ Example St."
+msgstr "김철수 또는 종로"
 
 msgid "Participants"
-msgstr ""
+msgstr "참가자"
 
 msgid "Name or Email Address"
-msgstr "Nomo aŭ retpoŝtadreso"
+msgstr "이름 또는 이메일 주소"
 
 msgid "Comments"
-msgstr "Komentoj"
+msgstr "설명"
 
 msgid "Create Event"
-msgstr "Krei eventon"
+msgstr "이벤트 추가하기"
 
 msgid "Your event has to be named and has to have a valid date"
-msgstr "Via evento havu nomon kaj havu validan daton"
+msgstr "이벤트는 이름을 가지고, 실존하는 날짜를 가져야 합니다."
 
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
-msgstr "Krei novan eventon"
+msgstr "새 이벤트 추가하기"
 
 msgid "Edit the selected event"
-msgstr "Redakti la elektitan eventon"
+msgstr "선택한 이벤트를 수정하기"
 
 msgid "Delete the selected event"
-msgstr "Forigi la elektitan eventon"
+msgstr "선택한 이벤트를 삭제하기"
 
 msgid "Select calendars to display"
-msgstr "Elekti montrendajn kalendarojn"
+msgstr "표시하고자 하는 캘린더를 선택하세요."
 
 msgid "Search Events"
-msgstr ""
+msgstr "이벤트 검색"
 
 msgid "Export or Share the default Calendar"
-msgstr "Eksporti aŭ kunhavigi la aprioran kalendaron"
+msgstr ""
 
 #. Create everything
 msgid "Today"
-msgstr "Hodiaŭ"
+msgstr ""
 
 msgid "Fullscreen"
-msgstr "Tutekrane"
+msgstr ""
 
 msgid "Show Week Numbers"
-msgstr "Montri semajnnumerojn"
+msgstr ""
 
 msgid "Import..."
-msgstr "Importi..."
+msgstr ""
 
 msgid "Sync..."
-msgstr "Sinkronigi..."
+msgstr ""
 
 msgid "About"
-msgstr "Pri"
+msgstr ""
 
 msgid "Add calendar"
 msgstr ""
@@ -145,32 +144,21 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Viaj venontaj eventoj estos montrataj ĉi tie, kiam vi elektas daton kun "
-"evento."
 
 msgid "Starts: \t"
-msgstr "Ĝi komencas: \t"
+msgstr ""
 
 msgid "Ends: \t"
 msgstr ""
 
 msgid "all day"
-msgstr "tuttage"
+msgstr ""
 
 msgid "at"
-msgstr "je"
+msgstr ""
 
 msgid "Export Calendar..."
-msgstr "Eksporti kalendaron..."
+msgstr ""
 
 msgid "calendar.ics"
-msgstr "kalendaro.ics"
-
-#~ msgid "all the day"
-#~ msgstr "tuttage"
-
-#~ msgid "Guests"
-#~ msgstr "Gastoj"
-
-#~ msgid "Save ical"
-#~ msgstr "Konservi ical"
+msgstr ""

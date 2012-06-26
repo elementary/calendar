@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-26 01:24+0200\n"
-"PO-Revision-Date: 2012-06-05 21:41+0000\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"PO-Revision-Date: 2012-06-26 03:31+0000\n"
 "Last-Translator: Benjamin Bultman <bultman.ben@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
-"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-14 04:46+0000\n"
-"X-Generator: Launchpad (build 15405)\n"
+"X-Launchpad-Export-Date: 2012-06-26 05:39+0000\n"
+"X-Generator: Launchpad (build 15482)\n"
+"Language: sv\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "About"
-msgstr "Om"
-
-msgid "Add Event"
-msgstr "Lägg till händelse"
-
-msgid "Add calendar"
-msgstr ""
-
-msgid "All day:"
-msgstr "Hela dagen:"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Visa och schemalägg händelser"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Kalender"
 
-msgid "Comments"
-msgstr "Kommentarer"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Lägg till evenemang"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "På den här datorn"
+
+msgid "Webcal"
+msgstr "Webcal"
 
 msgid "Contacts"
 msgstr "Kontakter"
 
+msgid "Personal"
+msgstr "Personlig"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Add Event"
+msgstr "Lägg till händelse"
+
+msgid "Edit Event"
+msgstr "Redigera händelse"
+
+msgid "From:"
+msgstr "Från:"
+
+msgid "All day:"
+msgstr "Hela dagen:"
+
+msgid "To:"
+msgstr "Till:"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Name of Event"
+msgstr "Händelsens namn"
+
+msgid "Location"
+msgstr "Plats"
+
+msgid "John Smith OR Example St."
+msgstr "Sven Svensson ELLER Exempelgatan"
+
+msgid "Participants"
+msgstr ""
+
+msgid "Name or Email Address"
+msgstr "Namn eller mailadress"
+
+msgid "Comments"
+msgstr "Kommentarer"
+
 msgid "Create Event"
 msgstr "Skapa händelse"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Din händelse måste namnges och ha ett giltig datum"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,91 +103,42 @@ msgstr "Skapa händelse"
 msgid "Create a new event"
 msgstr "Skapa en ny händelse"
 
-msgid "Delete the selected event"
-msgstr "Ta bort den valda händelsen"
-
-msgid "Edit Event"
-msgstr "Redigera händelse"
-
 msgid "Edit the selected event"
 msgstr "Redigera den valda händelsen"
 
-#, fuzzy
-msgid "Ends: \t"
-msgstr "Slutar: \t\t"
-
-msgid "Export Calendar..."
-msgstr "Exportera kalender..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Exportera eller dela din standard kalender"
-
-msgid "From:"
-msgstr "Från:"
-
-msgid "Fullscreen"
-msgstr "Fullskärm"
-
-msgid "Import..."
-msgstr "Importera..."
-
-msgid "John Smith OR Example St."
-msgstr "Sven Svensson ELLER Exempelgatan"
-
-msgid "Location"
-msgstr "Plats"
-
-msgid "Name of Event"
-msgstr "Händelsens namn"
-
-msgid "Name or Email Address"
-msgstr "Namn eller mailadress"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "På den här datorn"
-
-msgid "Participants"
-msgstr ""
-
-msgid "Personal"
-msgstr "Personlig"
-
-#, fuzzy
-msgid "Search Events"
-msgstr "Skapa händelse"
+msgid "Delete the selected event"
+msgstr "Ta bort den valda händelsen"
 
 msgid "Select calendars to display"
 msgstr "Välj kalender att visa"
 
-msgid "Show Week Numbers"
-msgstr "Visa veckonummer"
+msgid "Search Events"
+msgstr ""
 
-msgid "Starts: \t"
-msgstr "Börjar: \t"
-
-msgid "Sync..."
-msgstr "Synkronisera..."
-
-msgid "Title"
-msgstr "Titel"
-
-msgid "To:"
-msgstr "Till:"
+msgid "Export or Share the default Calendar"
+msgstr "Exportera eller dela din standard kalender"
 
 #. Create everything
 msgid "Today"
 msgstr "Idag"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Visa och schemalägg händelser"
+msgid "Fullscreen"
+msgstr "Fullskärm"
 
-msgid "Webcal"
-msgstr "Webcal"
+msgid "Show Week Numbers"
+msgstr "Visa veckonummer"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Din händelse måste namnges och ha ett giltig datum"
+msgid "Import..."
+msgstr "Importera..."
+
+msgid "Sync..."
+msgstr "Synkronisera..."
+
+msgid "About"
+msgstr "Om"
+
+msgid "Add calendar"
+msgstr ""
 
 #. label settings
 msgid ""
@@ -155,9 +148,11 @@ msgstr ""
 "Dina kommande händelser kommer visas här när du markerar ett datum med "
 "händelser."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Lägg till evenemang"
+msgid "Starts: \t"
+msgstr "Börjar: \t"
+
+msgid "Ends: \t"
+msgstr ""
 
 msgid "all day"
 msgstr "hela dagen"
@@ -165,14 +160,17 @@ msgstr "hela dagen"
 msgid "at"
 msgstr "klockan"
 
+msgid "Export Calendar..."
+msgstr "Exportera kalender..."
+
 msgid "calendar.ics"
 msgstr "kalender.ics"
+
+#~ msgid "all the day"
+#~ msgstr "hela dagen"
 
 #~ msgid "Guests"
 #~ msgstr "Gäster"
 
 #~ msgid "Save ical"
 #~ msgstr "Spara ical"
-
-#~ msgid "all the day"
-#~ msgstr "hela dagen"

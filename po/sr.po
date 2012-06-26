@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-26 01:24+0200\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
 "PO-Revision-Date: 2012-04-16 16:56+0000\n"
 "Last-Translator: Maroje Delibasic <Unknown>\n"
 "Language-Team: Serbian <sr@li.org>\n"
-"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-14 04:46+0000\n"
-"X-Generator: Launchpad (build 15405)\n"
+"X-Launchpad-Export-Date: 2012-06-26 05:39+0000\n"
+"X-Generator: Launchpad (build 15482)\n"
+"Language: sr\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "About"
+#. maya.desktop:6
+msgid "View and schedule events"
 msgstr ""
-
-msgid "Add Event"
-msgstr "Додај догађај"
-
-msgid "Add calendar"
-msgstr ""
-
-msgid "All day:"
-msgstr "Целодневно:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr ""
 
-msgid "Comments"
-msgstr "Коментари"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr ""
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
 
 msgid "Contacts"
 msgstr ""
 
+msgid "Personal"
+msgstr ""
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Add Event"
+msgstr "Додај догађај"
+
+msgid "Edit Event"
+msgstr "Измени догађај"
+
+msgid "From:"
+msgstr "Од:"
+
+msgid "All day:"
+msgstr "Целодневно:"
+
+msgid "To:"
+msgstr "За:"
+
+msgid "Title"
+msgstr ""
+
+msgid "Name of Event"
+msgstr ""
+
+msgid "Location"
+msgstr "Локација"
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Participants"
+msgstr ""
+
+msgid "Name or Email Address"
+msgstr ""
+
+msgid "Comments"
+msgstr "Коментари"
+
 msgid "Create Event"
 msgstr "Креирај догађај"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,89 +103,41 @@ msgstr "Креирај догађај"
 msgid "Create a new event"
 msgstr "Направи нови догађај"
 
-msgid "Delete the selected event"
-msgstr ""
-
-msgid "Edit Event"
-msgstr "Измени догађај"
-
 msgid "Edit the selected event"
 msgstr ""
 
-msgid "Ends: \t"
+msgid "Delete the selected event"
 msgstr ""
 
-msgid "Export Calendar..."
+msgid "Select calendars to display"
+msgstr ""
+
+msgid "Search Events"
 msgstr ""
 
 msgid "Export or Share the default Calendar"
 msgstr ""
 
-msgid "From:"
-msgstr "Од:"
+#. Create everything
+msgid "Today"
+msgstr ""
 
 msgid "Fullscreen"
-msgstr ""
-
-msgid "Import..."
-msgstr ""
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "Локација"
-
-msgid "Name of Event"
-msgstr ""
-
-msgid "Name or Email Address"
-msgstr ""
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Participants"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-#, fuzzy
-msgid "Search Events"
-msgstr "Креирај догађај"
-
-msgid "Select calendars to display"
 msgstr ""
 
 msgid "Show Week Numbers"
 msgstr ""
 
-msgid "Starts: \t"
+msgid "Import..."
 msgstr ""
 
 msgid "Sync..."
 msgstr ""
 
-msgid "Title"
+msgid "About"
 msgstr ""
 
-msgid "To:"
-msgstr "За:"
-
-#. Create everything
-msgid "Today"
-msgstr ""
-
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
+msgid "Add calendar"
 msgstr ""
 
 #. label settings
@@ -154,14 +148,19 @@ msgstr ""
 "Ваши надолазећи догађаји ће бити приказани овде када будете изабрали датум "
 "са догађајем."
 
-#. maya.desktop:18
-msgid "_Add Event"
+msgid "Starts: \t"
+msgstr ""
+
+msgid "Ends: \t"
 msgstr ""
 
 msgid "all day"
 msgstr ""
 
 msgid "at"
+msgstr ""
+
+msgid "Export Calendar..."
 msgstr ""
 
 msgid "calendar.ics"
