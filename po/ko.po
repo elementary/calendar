@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-06-25 23:15+0000\n"
+"PO-Revision-Date: 2012-06-26 22:41+0000\n"
 "Last-Translator: MinSik CHO <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-26 05:39+0000\n"
+"X-Launchpad-Export-Date: 2012-06-27 05:45+0000\n"
 "X-Generator: Launchpad (build 15482)\n"
 
 #. maya.desktop:6
@@ -115,50 +115,50 @@ msgid "Search Events"
 msgstr "이벤트 검색"
 
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "기본 달력을 내보내거나 공유합니다."
 
 #. Create everything
 msgid "Today"
-msgstr ""
+msgstr "오늘"
 
 msgid "Fullscreen"
-msgstr ""
+msgstr "전체화면"
 
 msgid "Show Week Numbers"
-msgstr ""
+msgstr "몇 번째 주인지 표시"
 
 msgid "Import..."
-msgstr ""
+msgstr "가져오기..."
 
 msgid "Sync..."
-msgstr ""
+msgstr "동기화하기..."
 
 msgid "About"
-msgstr ""
+msgstr "정보"
 
 msgid "Add calendar"
-msgstr ""
+msgstr "달력 추가"
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr ""
+msgstr "이벤트가 예정된 날짜를 선택하면 그 날짜에 일어날 이벤트를 볼 수 있습니다."
 
 msgid "Starts: \t"
-msgstr ""
+msgstr "시작 날짜: \t"
 
 msgid "Ends: \t"
-msgstr ""
+msgstr "종료 시간: \t"
 
 msgid "all day"
-msgstr ""
+msgstr "하루 종일"
 
 msgid "at"
-msgstr ""
+msgstr "장소"
 
 msgid "Export Calendar..."
-msgstr ""
+msgstr "달력 내보내기"
 
 msgid "calendar.ics"
-msgstr ""
+msgstr "달력.ics"
