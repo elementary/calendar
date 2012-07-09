@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-06-10 15:48+0000\n"
-"Last-Translator: Mark Lutring <marcus@elitemail.hu>\n"
+"PO-Revision-Date: 2012-07-08 10:01+0000\n"
+"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-26 05:39+0000\n"
-"X-Generator: Launchpad (build 15482)\n"
+"X-Launchpad-Export-Date: 2012-07-09 04:57+0000\n"
+"X-Generator: Launchpad (build 15558)\n"
 "Language: hu\n"
 
 #. maya.desktop:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Események tervezése és megtekintése"
 
 #. maya.desktop:5
 msgid "Calendar"
@@ -28,14 +28,14 @@ msgstr "Naptár"
 
 #. maya.desktop:18
 msgid "_Add Event"
-msgstr ""
+msgstr "_Esemény hozzáadása"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
-msgstr ""
+msgstr "Ezen a számítógépen"
 
 msgid "Webcal"
-msgstr ""
+msgstr "Webcal"
 
 msgid "Contacts"
 msgstr "Névjegyek"
@@ -47,7 +47,7 @@ msgid "%B %e, %Y"
 msgstr "%Y. %b. %e."
 
 msgid "%A, %b %d"
-msgstr ""
+msgstr "%A, %b %d"
 
 msgid "%l:%M %p"
 msgstr "%k.%M"
@@ -62,7 +62,7 @@ msgid "Edit Event"
 msgstr "Esemény szerkesztése"
 
 msgid "From:"
-msgstr ""
+msgstr "Ettől:"
 
 msgid "All day:"
 msgstr "Egész nap:"
@@ -71,7 +71,7 @@ msgid "To:"
 msgstr "Eddig:"
 
 msgid "Title"
-msgstr ""
+msgstr "Cím"
 
 msgid "Name of Event"
 msgstr "Esemény neve"
@@ -80,10 +80,10 @@ msgid "Location"
 msgstr "Hely"
 
 msgid "John Smith OR Example St."
-msgstr ""
+msgstr "Kovács János VAGY Példa utca"
 
 msgid "Participants"
-msgstr ""
+msgstr "Résztvevők"
 
 msgid "Name or Email Address"
 msgstr "Név vagy e-mail cím"
@@ -95,7 +95,7 @@ msgid "Create Event"
 msgstr "Esemény létrehozása"
 
 msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgstr "Az eseményt el kell nevezni és valós dátumon kell lennie"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -104,19 +104,19 @@ msgid "Create a new event"
 msgstr "Új esemény létrehozása"
 
 msgid "Edit the selected event"
-msgstr ""
+msgstr "Kiválasztott esemény szerkesztése"
 
 msgid "Delete the selected event"
-msgstr ""
+msgstr "Kiválasztott esemény törlése"
 
 msgid "Select calendars to display"
-msgstr ""
+msgstr "Megjelenítendő naptárak kiválasztása"
 
 msgid "Search Events"
-msgstr ""
+msgstr "Esemény keresése"
 
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "Alapértelmezett naptár exportálása vagy megosztása"
 
 #. Create everything
 msgid "Today"
@@ -138,7 +138,7 @@ msgid "About"
 msgstr "Névjegy"
 
 msgid "Add calendar"
-msgstr ""
+msgstr "Új naptár hozzáadása"
 
 #. label settings
 msgid ""
@@ -149,22 +149,22 @@ msgstr ""
 "esemény."
 
 msgid "Starts: \t"
-msgstr ""
+msgstr "Kezdet: \t"
 
 msgid "Ends: \t"
-msgstr ""
+msgstr "Vég: \t"
 
 msgid "all day"
-msgstr ""
+msgstr "egész nap"
 
 msgid "at"
-msgstr ""
+msgstr "ekkor:"
 
 msgid "Export Calendar..."
-msgstr ""
+msgstr "Naptár exportálása…"
 
 msgid "calendar.ics"
-msgstr ""
+msgstr "Naptár.ics"
 
 #~ msgid "Guests"
 #~ msgstr "Vendégek"
