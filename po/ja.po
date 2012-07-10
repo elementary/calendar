@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-06-09 23:55+0000\n"
+"PO-Revision-Date: 2012-07-09 05:36+0000\n"
 "Last-Translator: Joji Bronner <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-26 05:39+0000\n"
-"X-Generator: Launchpad (build 15482)\n"
+"X-Launchpad-Export-Date: 2012-07-10 05:46+0000\n"
+"X-Generator: Launchpad (build 15558)\n"
 "Language: ja\n"
 
 #. maya.desktop:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "イベントを見てスケジュールする"
 
 #. maya.desktop:5
 msgid "Calendar"
@@ -83,7 +83,7 @@ msgid "John Smith OR Example St."
 msgstr "場所を入力"
 
 msgid "Participants"
-msgstr ""
+msgstr "参加者"
 
 msgid "Name or Email Address"
 msgstr "名前またはメールアドレス"
@@ -95,7 +95,7 @@ msgid "Create Event"
 msgstr "予定を作成"
 
 msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgstr "イベントを名付ける必要と有効な日にちに変える必要が有ります"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -113,7 +113,7 @@ msgid "Select calendars to display"
 msgstr "表示するカレンダーを選択"
 
 msgid "Search Events"
-msgstr ""
+msgstr "イベントの検索"
 
 msgid "Export or Share the default Calendar"
 msgstr "デフォルトのカレンダーを共有または書き出す"
@@ -135,10 +135,10 @@ msgid "Sync..."
 msgstr "同期..."
 
 msgid "About"
-msgstr ""
+msgstr "$productについて"
 
 msgid "Add calendar"
-msgstr ""
+msgstr "カレンダーを追加"
 
 #. label settings
 msgid ""
@@ -150,19 +150,19 @@ msgid "Starts: \t"
 msgstr "始まる時間: \t"
 
 msgid "Ends: \t"
-msgstr ""
+msgstr "終了時刻: \t"
 
 msgid "all day"
 msgstr "日住"
 
 msgid "at"
-msgstr ""
+msgstr "時刻"
 
 msgid "Export Calendar..."
-msgstr ""
+msgstr "カレンダーを移す"
 
 msgid "calendar.ics"
-msgstr ""
+msgstr "カレンダー.ics"
 
 #~ msgid "all the day"
 #~ msgstr "終日"
