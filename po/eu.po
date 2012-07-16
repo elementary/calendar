@@ -8,40 +8,40 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-06-16 17:24+0000\n"
+"PO-Revision-Date: 2012-07-15 11:31+0000\n"
 "Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-26 05:39+0000\n"
-"X-Generator: Launchpad (build 15482)\n"
+"X-Launchpad-Export-Date: 2012-07-16 05:24+0000\n"
+"X-Generator: Launchpad (build 15614)\n"
 "Language: eu\n"
 
 #. maya.desktop:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Ikusi eta programatu gertaerak"
 
 #. maya.desktop:5
 msgid "Calendar"
-msgstr ""
+msgstr "Egutegia"
 
 #. maya.desktop:18
 msgid "_Add Event"
-msgstr ""
+msgstr "_Gehitu gertaera"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
-msgstr ""
+msgstr "Ordenagailu honetan"
 
 msgid "Webcal"
-msgstr ""
+msgstr "Webcal"
 
 msgid "Contacts"
-msgstr ""
+msgstr "Kontaktuak"
 
 msgid "Personal"
-msgstr ""
+msgstr "Pertsonala"
 
 msgid "%B %e, %Y"
 msgstr "%Y %B %e"
@@ -56,13 +56,13 @@ msgid "%H:%M"
 msgstr "%H:%M"
 
 msgid "Add Event"
-msgstr "Ekitaldia gehitu"
+msgstr "Gehitu gertaera"
 
 msgid "Edit Event"
-msgstr "Ekitaldia Aldatu"
+msgstr "Editatu gertaera"
 
 msgid "From:"
-msgstr "Nondik:"
+msgstr "Noiztik:"
 
 msgid "All day:"
 msgstr "Egun osoa:"
@@ -74,49 +74,49 @@ msgid "Title"
 msgstr "Izenburua"
 
 msgid "Name of Event"
-msgstr "Ekitaldiaren Izena"
+msgstr "Gertaeraren izena"
 
 msgid "Location"
 msgstr "Kokapena"
 
 msgid "John Smith OR Example St."
-msgstr "John Smith edo Adibide kalea"
+msgstr "Jone Agirre edo Adibide kalea"
 
 msgid "Participants"
-msgstr ""
+msgstr "Parte-hartzaileak"
 
 msgid "Name or Email Address"
-msgstr "Izena edo Email-helbidea"
+msgstr "Izena edo e-posta helbidea"
 
 msgid "Comments"
 msgstr "Iruzkinak"
 
 msgid "Create Event"
-msgstr "Ekitaldia Sortu"
+msgstr "Sortu gertaera"
 
 msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgstr "Zure gertaerak izena eta baliozko data behar ditu"
 
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
-msgstr "Ekitaldi berri bat sortu"
+msgstr "Sortu gertaera berri bat"
 
 msgid "Edit the selected event"
-msgstr "Aukeratutako ekitaldia aldatu"
+msgstr "Editatu hautatutako gertaera"
 
 msgid "Delete the selected event"
-msgstr "Aukeratutako ekitaldia ezabatu"
+msgstr "Ezabatu hautatutako gertaera"
 
 msgid "Select calendars to display"
 msgstr "Hautatu bistaratuko diren egutegiak"
 
 msgid "Search Events"
-msgstr ""
+msgstr "Bilatu gertaerak"
 
 msgid "Export or Share the default Calendar"
-msgstr "Esportatu edo Partekatu  Egutegi lehenetsia"
+msgstr "Esportatu edo partekatu egutegi lehenetsia"
 
 #. Create everything
 msgid "Today"
@@ -135,36 +135,35 @@ msgid "Sync..."
 msgstr "Sinkronizatu..."
 
 msgid "About"
-msgstr ""
+msgstr "Honi buruz"
 
 msgid "Add calendar"
-msgstr ""
+msgstr "Gehitu egutegia"
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Zure hurrengo gertakizunak hemen erakutsiko dira data bat aukeratzen "
-"duzunean."
+"Zure hurrengo gertaerak hemen erakutsiko dira data bat hautatzen duzunean."
 
 msgid "Starts: \t"
-msgstr ""
+msgstr "Hasiera: \t"
 
 msgid "Ends: \t"
-msgstr ""
+msgstr "Bukaera: \t"
 
 msgid "all day"
-msgstr ""
+msgstr "egun osoan"
 
 msgid "at"
-msgstr "nondik:"
+msgstr "noiz:"
 
 msgid "Export Calendar..."
-msgstr ""
+msgstr "Esportatu egutegia..."
 
 msgid "calendar.ics"
-msgstr ""
+msgstr "egutegia.ics"
 
 #~ msgid "all the day"
 #~ msgstr "egun osoa"
