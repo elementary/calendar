@@ -88,7 +88,6 @@ class SourceGroupBox : Gtk.Grid {
         tview = new SourceGroupTreeView (group, tmodel, editable);
         attach (tview, 0, 1, 1, 1);
 
-        evbox.modify_bg (Gtk.StateType.NORMAL, tview.style.base[Gtk.StateType.NORMAL]);
         label.margin_top = 8;
         label.margin_bottom = 2;
 
