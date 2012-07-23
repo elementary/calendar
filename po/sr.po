@@ -8,40 +8,40 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-04-16 16:56+0000\n"
-"Last-Translator: Maroje Delibasic <Unknown>\n"
+"PO-Revision-Date: 2012-07-22 20:55+0000\n"
+"Last-Translator: Igor <Unknown>\n"
 "Language-Team: Serbian <sr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-26 05:39+0000\n"
-"X-Generator: Launchpad (build 15482)\n"
+"X-Launchpad-Export-Date: 2012-07-23 05:23+0000\n"
+"X-Generator: Launchpad (build 15654)\n"
 "Language: sr\n"
 
 #. maya.desktop:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Прикажи и распореди догађаје"
 
 #. maya.desktop:5
 msgid "Calendar"
-msgstr ""
+msgstr "Календар"
 
 #. maya.desktop:18
 msgid "_Add Event"
-msgstr ""
+msgstr "Додај Догађај"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
-msgstr ""
+msgstr "На овом рачунару"
 
 msgid "Webcal"
-msgstr ""
+msgstr "Вебкал"
 
 msgid "Contacts"
-msgstr ""
+msgstr "Контакти"
 
 msgid "Personal"
-msgstr ""
+msgstr "Лично"
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
@@ -71,22 +71,22 @@ msgid "To:"
 msgstr "За:"
 
 msgid "Title"
-msgstr ""
+msgstr "Наслов"
 
 msgid "Name of Event"
-msgstr ""
+msgstr "Име Догађаја"
 
 msgid "Location"
 msgstr "Локација"
 
 msgid "John Smith OR Example St."
-msgstr ""
+msgstr "Петар Петровић ИЛИ Улица Примера"
 
 msgid "Participants"
-msgstr ""
+msgstr "Учесници"
 
 msgid "Name or Email Address"
-msgstr ""
+msgstr "Име или Адреса Е-поште"
 
 msgid "Comments"
 msgstr "Коментари"
@@ -95,7 +95,7 @@ msgid "Create Event"
 msgstr "Креирај догађај"
 
 msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgstr "Догађај мора имати име и датум који је могућ"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -104,41 +104,41 @@ msgid "Create a new event"
 msgstr "Направи нови догађај"
 
 msgid "Edit the selected event"
-msgstr ""
+msgstr "Измени изабрани догађај"
 
 msgid "Delete the selected event"
-msgstr ""
+msgstr "Избриши изабрани догађај"
 
 msgid "Select calendars to display"
-msgstr ""
+msgstr "Изабери календаре за приказивање"
 
 msgid "Search Events"
-msgstr ""
+msgstr "Претражи догађаје"
 
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "Извези или Подели подразумевани Календар"
 
 #. Create everything
 msgid "Today"
-msgstr ""
+msgstr "Данас"
 
 msgid "Fullscreen"
-msgstr ""
+msgstr "Цео екран"
 
 msgid "Show Week Numbers"
-msgstr ""
+msgstr "Прикажи бројеве недеља"
 
 msgid "Import..."
-msgstr ""
+msgstr "Увези..."
 
 msgid "Sync..."
-msgstr ""
+msgstr "Синхронизуј..."
 
 msgid "About"
-msgstr ""
+msgstr "О програму"
 
 msgid "Add calendar"
-msgstr ""
+msgstr "Додај календар"
 
 #. label settings
 msgid ""
@@ -149,22 +149,22 @@ msgstr ""
 "са догађајем."
 
 msgid "Starts: \t"
-msgstr ""
+msgstr "Почиње: \t"
 
 msgid "Ends: \t"
-msgstr ""
+msgstr "Завршава: \t"
 
 msgid "all day"
-msgstr ""
+msgstr "цео дан"
 
 msgid "at"
-msgstr ""
+msgstr "у"
 
 msgid "Export Calendar..."
-msgstr ""
+msgstr "Извези Календар...."
 
 msgid "calendar.ics"
-msgstr ""
+msgstr "calendar.ics"
 
 #~ msgid "Guests"
 #~ msgstr "Гости"
