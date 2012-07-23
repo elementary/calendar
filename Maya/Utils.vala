@@ -433,7 +433,10 @@ namespace Maya.Util {
             
         }
         try {
-            GLib.FileUtils.set_contents (path, output);
+            GLib.File file = GLib.File.new_for_path (path);
+            uint8[] data = output.data;
+            string s;
+            file.replace_contents (data, null, false, 0, out s);
         } catch (GLib.Error e){
             warning (e.message);
         }
