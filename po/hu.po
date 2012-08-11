@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-07-08 10:01+0000\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-07-09 04:57+0000\n"
 "X-Generator: Launchpad (build 15558)\n"
-"Language: hu\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Események tervezése és megtekintése"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%Y. %b. %e."
+
+msgid "%H:%M"
+msgstr "%H.%M"
+
+msgid "%l:%M %p"
+msgstr "%k.%M"
+
+msgid "About"
+msgstr "Névjegy"
+
+msgid "Add Event"
+msgstr "Esemény hozzáadása"
+
+msgid "Add calendar"
+msgstr "Új naptár hozzáadása"
+
+msgid "All day:"
+msgstr "Egész nap:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Naptár"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Esemény hozzáadása"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Ezen a számítógépen"
-
-msgid "Webcal"
-msgstr "Webcal"
+msgid "Comments"
+msgstr "Megjegyzések"
 
 msgid "Contacts"
 msgstr "Névjegyek"
 
-msgid "Personal"
-msgstr "Személyes"
-
-msgid "%B %e, %Y"
-msgstr "%Y. %b. %e."
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%k.%M"
-
-msgid "%H:%M"
-msgstr "%H.%M"
-
-msgid "Add Event"
-msgstr "Esemény hozzáadása"
-
-msgid "Edit Event"
-msgstr "Esemény szerkesztése"
-
-msgid "From:"
-msgstr "Ettől:"
-
-msgid "All day:"
-msgstr "Egész nap:"
-
-msgid "To:"
-msgstr "Eddig:"
-
-msgid "Title"
-msgstr "Cím"
-
-msgid "Name of Event"
-msgstr "Esemény neve"
-
-msgid "Location"
-msgstr "Hely"
-
-msgid "John Smith OR Example St."
-msgstr "Kovács János VAGY Példa utca"
-
-msgid "Participants"
-msgstr "Résztvevők"
-
-msgid "Name or Email Address"
-msgstr "Név vagy e-mail cím"
-
-msgid "Comments"
-msgstr "Megjegyzések"
-
 msgid "Create Event"
 msgstr "Esemény létrehozása"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Az eseményt el kell nevezni és valós dátumon kell lennie"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,42 +61,90 @@ msgstr "Az eseményt el kell nevezni és valós dátumon kell lennie"
 msgid "Create a new event"
 msgstr "Új esemény létrehozása"
 
-msgid "Edit the selected event"
-msgstr "Kiválasztott esemény szerkesztése"
-
 msgid "Delete the selected event"
 msgstr "Kiválasztott esemény törlése"
 
-msgid "Select calendars to display"
-msgstr "Megjelenítendő naptárak kiválasztása"
+msgid "Edit Event"
+msgstr "Esemény szerkesztése"
+
+msgid "Edit the selected event"
+msgstr "Kiválasztott esemény szerkesztése"
+
+#, fuzzy
+msgid "Ends: \t\t"
+msgstr "Vég: \t"
+
+msgid "Export Calendar..."
+msgstr "Naptár exportálása…"
+
+msgid "Export or Share the default Calendar"
+msgstr "Alapértelmezett naptár exportálása vagy megosztása"
+
+msgid "From:"
+msgstr "Ettől:"
+
+msgid "Fullscreen"
+msgstr "Teljes képernyő"
+
+msgid "Import..."
+msgstr "Importálás…"
+
+msgid "John Smith OR Example St."
+msgstr "Kovács János VAGY Példa utca"
+
+msgid "Location"
+msgstr "Hely"
+
+msgid "Name of Event"
+msgstr "Esemény neve"
+
+msgid "Name or Email Address"
+msgstr "Név vagy e-mail cím"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Ezen a számítógépen"
+
+msgid "Participants"
+msgstr "Résztvevők"
+
+msgid "Personal"
+msgstr "Személyes"
 
 msgid "Search Events"
 msgstr "Esemény keresése"
 
-msgid "Export or Share the default Calendar"
-msgstr "Alapértelmezett naptár exportálása vagy megosztása"
+msgid "Select calendars to display"
+msgstr "Megjelenítendő naptárak kiválasztása"
+
+msgid "Show Week Numbers"
+msgstr "Hetek számának megjelenítése"
+
+msgid "Starts: \t"
+msgstr "Kezdet: \t"
+
+msgid "Sync..."
+msgstr "Szinkronizálás..."
+
+msgid "Title"
+msgstr "Cím"
+
+msgid "To:"
+msgstr "Eddig:"
 
 #. Create everything
 msgid "Today"
 msgstr "Ma"
 
-msgid "Fullscreen"
-msgstr "Teljes képernyő"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Események tervezése és megtekintése"
 
-msgid "Show Week Numbers"
-msgstr "Hetek számának megjelenítése"
+msgid "Webcal"
+msgstr "Webcal"
 
-msgid "Import..."
-msgstr "Importálás…"
-
-msgid "Sync..."
-msgstr "Szinkronizálás..."
-
-msgid "About"
-msgstr "Névjegy"
-
-msgid "Add calendar"
-msgstr "Új naptár hozzáadása"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Az eseményt el kell nevezni és valós dátumon kell lennie"
 
 #. label settings
 msgid ""
@@ -148,20 +154,15 @@ msgstr ""
 "Közelgő eseményeid itt jelennek meg, mikor a kiválasztott dátumkor van "
 "esemény."
 
-msgid "Starts: \t"
-msgstr "Kezdet: \t"
-
-msgid "Ends: \t"
-msgstr "Vég: \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Esemény hozzáadása"
 
 msgid "all day"
 msgstr "egész nap"
 
 msgid "at"
 msgstr "ekkor:"
-
-msgid "Export Calendar..."
-msgstr "Naptár exportálása…"
 
 msgid "calendar.ics"
 msgstr "Naptár.ics"

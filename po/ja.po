@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-07-09 05:36+0000\n"
 "Last-Translator: Joji Bronner <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-07-10 05:46+0000\n"
 "X-Generator: Launchpad (build 15558)\n"
-"Language: ja\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "イベントを見てスケジュールする"
+msgid "%A, %b %d"
+msgstr "%B%e日 %A"
+
+msgid "%B %e, %Y"
+msgstr "%Y年%B%e日"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%p %l:%M"
+
+msgid "About"
+msgstr "$productについて"
+
+msgid "Add Event"
+msgstr "予定を追加"
+
+msgid "Add calendar"
+msgstr "カレンダーを追加"
+
+msgid "All day:"
+msgstr "終日:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "カレンダー"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_イベントを追加する"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "このコンピューター"
-
-msgid "Webcal"
-msgstr "Webcal"
+msgid "Comments"
+msgstr "備考"
 
 msgid "Contacts"
 msgstr "連絡先"
 
-msgid "Personal"
-msgstr "パーソナル"
-
-msgid "%B %e, %Y"
-msgstr "%Y年%B%e日"
-
-msgid "%A, %b %d"
-msgstr "%B%e日 %A"
-
-msgid "%l:%M %p"
-msgstr "%p %l:%M"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "予定を追加"
-
-msgid "Edit Event"
-msgstr "予定を編集"
-
-msgid "From:"
-msgstr "開始時:"
-
-msgid "All day:"
-msgstr "終日:"
-
-msgid "To:"
-msgstr "終了時:"
-
-msgid "Title"
-msgstr "タイトル"
-
-msgid "Name of Event"
-msgstr "予定のタイトル"
-
-msgid "Location"
-msgstr "場所"
-
-msgid "John Smith OR Example St."
-msgstr "場所を入力"
-
-msgid "Participants"
-msgstr "参加者"
-
-msgid "Name or Email Address"
-msgstr "名前またはメールアドレス"
-
-msgid "Comments"
-msgstr "備考"
-
 msgid "Create Event"
 msgstr "予定を作成"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "イベントを名付ける必要と有効な日にちに変える必要が有ります"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,42 +61,90 @@ msgstr "イベントを名付ける必要と有効な日にちに変える必要
 msgid "Create a new event"
 msgstr "新しい予定を作成"
 
-msgid "Edit the selected event"
-msgstr "選択された予定を編集"
-
 msgid "Delete the selected event"
 msgstr "選択された予定を削除"
 
-msgid "Select calendars to display"
-msgstr "表示するカレンダーを選択"
+msgid "Edit Event"
+msgstr "予定を編集"
+
+msgid "Edit the selected event"
+msgstr "選択された予定を編集"
+
+#, fuzzy
+msgid "Ends: \t\t"
+msgstr "終了時刻: \t"
+
+msgid "Export Calendar..."
+msgstr "カレンダーを移す"
+
+msgid "Export or Share the default Calendar"
+msgstr "デフォルトのカレンダーを共有または書き出す"
+
+msgid "From:"
+msgstr "開始時:"
+
+msgid "Fullscreen"
+msgstr "全画面"
+
+msgid "Import..."
+msgstr "取り込む..."
+
+msgid "John Smith OR Example St."
+msgstr "場所を入力"
+
+msgid "Location"
+msgstr "場所"
+
+msgid "Name of Event"
+msgstr "予定のタイトル"
+
+msgid "Name or Email Address"
+msgstr "名前またはメールアドレス"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "このコンピューター"
+
+msgid "Participants"
+msgstr "参加者"
+
+msgid "Personal"
+msgstr "パーソナル"
 
 msgid "Search Events"
 msgstr "イベントの検索"
 
-msgid "Export or Share the default Calendar"
-msgstr "デフォルトのカレンダーを共有または書き出す"
+msgid "Select calendars to display"
+msgstr "表示するカレンダーを選択"
+
+msgid "Show Week Numbers"
+msgstr "週の通し番号を表示"
+
+msgid "Starts: \t"
+msgstr "始まる時間: \t"
+
+msgid "Sync..."
+msgstr "同期..."
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "To:"
+msgstr "終了時:"
 
 #. Create everything
 msgid "Today"
 msgstr "今日"
 
-msgid "Fullscreen"
-msgstr "全画面"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "イベントを見てスケジュールする"
 
-msgid "Show Week Numbers"
-msgstr "週の通し番号を表示"
+msgid "Webcal"
+msgstr "Webcal"
 
-msgid "Import..."
-msgstr "取り込む..."
-
-msgid "Sync..."
-msgstr "同期..."
-
-msgid "About"
-msgstr "$productについて"
-
-msgid "Add calendar"
-msgstr "カレンダーを追加"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "イベントを名付ける必要と有効な日にちに変える必要が有ります"
 
 #. label settings
 msgid ""
@@ -146,11 +152,9 @@ msgid ""
 "events."
 msgstr "予定が入っている日付を選択すると、ここに予定の内容が表示されます。"
 
-msgid "Starts: \t"
-msgstr "始まる時間: \t"
-
-msgid "Ends: \t"
-msgstr "終了時刻: \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_イベントを追加する"
 
 msgid "all day"
 msgstr "日住"
@@ -158,14 +162,11 @@ msgstr "日住"
 msgid "at"
 msgstr "時刻"
 
-msgid "Export Calendar..."
-msgstr "カレンダーを移す"
-
 msgid "calendar.ics"
 msgstr "カレンダー.ics"
 
-#~ msgid "all the day"
-#~ msgstr "終日"
-
 #~ msgid "Guests"
 #~ msgstr "参加者"
+
+#~ msgid "all the day"
+#~ msgstr "終日"
