@@ -352,10 +352,13 @@ public class EventDialog : Gtk.Window {
             
             var comment_label = make_label (_("Comments"));
             comment_textview = new Gtk.TextView ();
-            comment_textview.height_request = 100;
-            comment_textview.set_vexpand(true);
-            comment_textview.set_hexpand(true);
             comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
+            
+            var scrolled = new Gtk.ScrolledWindow (null, null);
+            scrolled.add (comment_textview);
+            scrolled.height_request = 100;
+            scrolled.set_vexpand(true);
+            scrolled.set_hexpand(true);
             
             subgrid.attach (from_label, 0, 0, 4, 1);
             subgrid.attach (from_date_picker, 0, 1, 1, 1);
@@ -376,7 +379,7 @@ public class EventDialog : Gtk.Window {
             subgrid.attach (guest_label, 0, 8, 4, 1);
             subgrid.attach (guest_entry, 0, 9, 4, 1);
             subgrid.attach (comment_label, 0, 10, 4, 1);
-            subgrid.attach (comment_textview, 0, 11, 4, 1);
+            subgrid.attach (scrolled, 0, 11, 4, 1);
             
             var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
             buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
