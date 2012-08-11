@@ -167,5 +167,8 @@ msgstr "ekkor:"
 msgid "calendar.ics"
 msgstr "Naptár.ics"
 
+#~ msgid "Ends: \t"
+#~ msgstr "Vég: \t"
+
 #~ msgid "Guests"
 #~ msgstr "Vendégek"

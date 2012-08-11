@@ -167,6 +167,9 @@ msgstr "в"
 msgid "calendar.ics"
 msgstr "календарь.ics"
 
+#~ msgid "Ends: \t"
+#~ msgstr "Конец: \t"
+
 #~ msgid "Guests"
 #~ msgstr "Гости"
 

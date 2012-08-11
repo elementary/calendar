@@ -165,3 +165,6 @@ msgstr "장소"
 
 msgid "calendar.ics"
 msgstr "달력.ics"
+
+#~ msgid "Ends: \t"
+#~ msgstr "종료 시간: \t"

@@ -165,6 +165,9 @@ msgstr "時刻"
 msgid "calendar.ics"
 msgstr "カレンダー.ics"
 
+#~ msgid "Ends: \t"
+#~ msgstr "終了時刻: \t"
+
 #~ msgid "Guests"
 #~ msgstr "参加者"
 

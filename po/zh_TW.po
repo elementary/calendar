@@ -165,6 +165,9 @@ msgstr "於"
 msgid "calendar.ics"
 msgstr "行事曆.ics"
 
+#~ msgid "Ends: \t"
+#~ msgstr "結束： \t"
+
 #~ msgid "Guests"
 #~ msgstr "客人"
 

@@ -166,6 +166,9 @@ msgstr "pada"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
+#~ msgid "Ends: \t"
+#~ msgstr "Berakhir: \t"
+
 #~ msgid "Guests"
 #~ msgstr "Tamu"
 

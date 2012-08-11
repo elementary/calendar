@@ -17,6 +17,11 @@
 
 namespace Maya.View {
 
+public enum EventType {
+    ADD,
+    EDIT
+}
+
 #if USE_GRANITE_DECORATED_WINDOW
 public class EventDialog : Granite.Widgets.LightWindow {
 #else
@@ -55,7 +60,9 @@ public class EventDialog : Gtk.Window {
         public E.CalComponent ecal { get; private set; }
 
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
-
+        
+        public EventType event_type { get; private set; }
+        
         public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
 
             this.original_source = source;
@@ -85,8 +92,10 @@ public class EventDialog : Gtk.Window {
 
             if (add_event) {
                 title = _("Add Event");
+                event_type = EventType.ADD;
             } else {
                 title = _("Edit Event");
+                event_type = EventType.EDIT;
             }
 
             // Dialog properties
@@ -352,10 +361,13 @@ public class EventDialog : Gtk.Window {
             
             var comment_label = make_label (_("Comments"));
             comment_textview = new Gtk.TextView ();
-            comment_textview.height_request = 100;
-            comment_textview.set_vexpand(true);
-            comment_textview.set_hexpand(true);
             comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
+            
+            var scrolled = new Gtk.ScrolledWindow (null, null);
+            scrolled.add (comment_textview);
+            scrolled.height_request = 100;
+            scrolled.set_vexpand(true);
+            scrolled.set_hexpand(true);
             
             subgrid.attach (from_label, 0, 0, 4, 1);
             subgrid.attach (from_date_picker, 0, 1, 1, 1);
@@ -376,7 +388,7 @@ public class EventDialog : Gtk.Window {
             subgrid.attach (guest_label, 0, 8, 4, 1);
             subgrid.attach (guest_entry, 0, 9, 4, 1);
             subgrid.attach (comment_label, 0, 10, 4, 1);
-            subgrid.attach (comment_textview, 0, 11, 4, 1);
+            subgrid.attach (scrolled, 0, 11, 4, 1);
             
             var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
             buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
@@ -486,7 +498,11 @@ public class EventDialog : Gtk.Window {
         }
 
         void update_create_sensitivity () {
-            create_button.sensitive = is_valid_event ();
+            if (event_type == EventType.EDIT)
+                create_button.sensitive = true;
+            else
+                create_button.sensitive = is_valid_event ();
+            
             if (!is_valid_event())
                 create_button.set_tooltip_text (_("Your event has to be named and has to have a valid date"));
             else

@@ -167,6 +167,9 @@ msgstr "paikassa"
 msgid "calendar.ics"
 msgstr "kalenteri.ics"
 
+#~ msgid "Ends: \t"
+#~ msgstr "Päättyy: \t"
+
 #~ msgid "Guests"
 #~ msgstr "Vieraat"
 

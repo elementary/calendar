@@ -166,6 +166,9 @@ msgstr "noiz:"
 msgid "calendar.ics"
 msgstr "egutegia.ics"
 
+#~ msgid "Ends: \t"
+#~ msgstr "Bukaera: \t"
+
 #~ msgid "Guests"
 #~ msgstr "Gonbidatuak"
 

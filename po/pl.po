@@ -167,6 +167,9 @@ msgstr "o"
 msgid "calendar.ics"
 msgstr "kalendarz.ics"
 
+#~ msgid "Ends: \t"
+#~ msgstr "Koniec: \t"
+
 #~ msgid "Guests"
 #~ msgstr "Goście"
 
