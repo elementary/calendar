@@ -21,6 +21,8 @@ namespace Maya {
 
         private static bool ADD_EVENT = false;
         private static bool IMPORT_CALENDAR = false;
+        private static bool PRINT_VERSION = false;
+
     }
 
     public static int main (string[] args) {
@@ -33,6 +35,12 @@ namespace Maya {
             context.parse (ref args);
         } catch (Error e) {
             warning (e.message);
+        }
+
+        if (Option.PRINT_VERSION) {
+            stdout.printf("Maya %s\n", Build.VERSION);
+            stdout.printf("Copyright 2011-2012 Maya Developers.\n");
+            return 0;
         }
 
         Gtk.init (ref args);
@@ -92,6 +100,7 @@ namespace Maya {
         public static const OptionEntry[] app_options = {
             { "add-event", 'a', 0, OptionArg.NONE, out Option.ADD_EVENT, "Show an add event dialog", null },
             { "import-ical", 'i', 0, OptionArg.STRING, out Option.IMPORT_CALENDAR, "Import quickly an ical", null },
+            { "version", 'v', 0, OptionArg.NONE, out Option.PRINT_VERSION, "Print version info and exit", null },
             { null }
         };
 
