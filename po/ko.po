@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
 "PO-Revision-Date: 2012-06-26 22:41+0000\n"
 "Last-Translator: MinSik CHO <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
-"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-27 05:45+0000\n"
-"X-Generator: Launchpad (build 15482)\n"
+"X-Launchpad-Export-Date: 2012-09-01 05:22+0000\n"
+"X-Generator: Launchpad (build 15890)\n"
+"Language: ko\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%p %l:%M"
-
-msgid "About"
-msgstr "정보"
-
-msgid "Add Event"
-msgstr "이벤트 추가"
-
-msgid "Add calendar"
-msgstr "달력 추가"
-
-msgid "All day:"
-msgstr "하루 종일:"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "이벤트를 보고 설정합니다."
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "달력"
 
-msgid "Comments"
-msgstr "설명"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "이벤트 추가 (_A)"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "이 컴퓨터에서"
+
+msgid "Webcal"
+msgstr "웹 캘린더"
 
 msgid "Contacts"
 msgstr "연락처"
 
+msgid "Personal"
+msgstr "개인"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%p %l:%M"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Add Event"
+msgstr "이벤트 추가"
+
+msgid "Edit Event"
+msgstr "이벤트 편집"
+
+msgid "From:"
+msgstr "보낸이:"
+
+msgid "All day:"
+msgstr "하루 종일:"
+
+msgid "To:"
+msgstr "받는이:"
+
+msgid "Title"
+msgstr "제목"
+
+msgid "Name of Event"
+msgstr "이벤트 이름"
+
+msgid "Location"
+msgstr "위치"
+
+msgid "John Smith OR Example St."
+msgstr "김철수 또는 종로"
+
+msgid "Participants"
+msgstr "참가자"
+
+msgid "Name or Email Address"
+msgstr "이름 또는 이메일 주소"
+
+msgid "Comments"
+msgstr "설명"
+
 msgid "Create Event"
 msgstr "이벤트 추가하기"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "이벤트는 이름을 가지고, 실존하는 날짜를 가져야 합니다."
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,101 +103,54 @@ msgstr "이벤트 추가하기"
 msgid "Create a new event"
 msgstr "새 이벤트 추가하기"
 
-msgid "Delete the selected event"
-msgstr "선택한 이벤트를 삭제하기"
-
-msgid "Edit Event"
-msgstr "이벤트 편집"
-
 msgid "Edit the selected event"
 msgstr "선택한 이벤트를 수정하기"
 
-#, fuzzy
-msgid "Ends: \t\t"
-msgstr "종료 시간: \t"
-
-msgid "Export Calendar..."
-msgstr "달력 내보내기"
-
-msgid "Export or Share the default Calendar"
-msgstr "기본 달력을 내보내거나 공유합니다."
-
-msgid "From:"
-msgstr "보낸이:"
-
-msgid "Fullscreen"
-msgstr "전체화면"
-
-msgid "Import..."
-msgstr "가져오기..."
-
-msgid "John Smith OR Example St."
-msgstr "김철수 또는 종로"
-
-msgid "Location"
-msgstr "위치"
-
-msgid "Name of Event"
-msgstr "이벤트 이름"
-
-msgid "Name or Email Address"
-msgstr "이름 또는 이메일 주소"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "이 컴퓨터에서"
-
-msgid "Participants"
-msgstr "참가자"
-
-msgid "Personal"
-msgstr "개인"
-
-msgid "Search Events"
-msgstr "이벤트 검색"
+msgid "Delete the selected event"
+msgstr "선택한 이벤트를 삭제하기"
 
 msgid "Select calendars to display"
 msgstr "표시하고자 하는 캘린더를 선택하세요."
 
-msgid "Show Week Numbers"
-msgstr "몇 번째 주인지 표시"
+msgid "Search Events"
+msgstr "이벤트 검색"
 
-msgid "Starts: \t"
-msgstr "시작 날짜: \t"
-
-msgid "Sync..."
-msgstr "동기화하기..."
-
-msgid "Title"
-msgstr "제목"
-
-msgid "To:"
-msgstr "받는이:"
+msgid "Export or Share the default Calendar"
+msgstr "기본 달력을 내보내거나 공유합니다."
 
 #. Create everything
 msgid "Today"
 msgstr "오늘"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "이벤트를 보고 설정합니다."
+msgid "Fullscreen"
+msgstr "전체화면"
 
-msgid "Webcal"
-msgstr "웹 캘린더"
+msgid "Show Week Numbers"
+msgstr "몇 번째 주인지 표시"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "이벤트는 이름을 가지고, 실존하는 날짜를 가져야 합니다."
+msgid "Import..."
+msgstr "가져오기..."
+
+msgid "Sync..."
+msgstr "동기화하기..."
+
+msgid "About"
+msgstr "정보"
+
+msgid "Add calendar"
+msgstr "달력 추가"
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr ""
-"이벤트가 예정된 날짜를 선택하면 그 날짜에 일어날 이벤트를 볼 수 있습니다."
+msgstr "이벤트가 예정된 날짜를 선택하면 그 날짜에 일어날 이벤트를 볼 수 있습니다."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "이벤트 추가 (_A)"
+msgid "Starts: \t"
+msgstr "시작 날짜: \t"
+
+msgid "Ends: \t"
+msgstr "종료 시간: \t"
 
 msgid "all day"
 msgstr "하루 종일"
@@ -163,8 +158,8 @@ msgstr "하루 종일"
 msgid "at"
 msgstr "장소"
 
+msgid "Export Calendar..."
+msgstr "달력 내보내기"
+
 msgid "calendar.ics"
 msgstr "달력.ics"
-
-#~ msgid "Ends: \t"
-#~ msgstr "종료 시간: \t"
