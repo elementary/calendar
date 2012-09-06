@@ -8,40 +8,40 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-05-08 02:07+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2012-09-05 21:44+0000\n"
+"Last-Translator: Simon <Unknown>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-01 05:22+0000\n"
-"X-Generator: Launchpad (build 15890)\n"
+"X-Launchpad-Export-Date: 2012-09-06 04:49+0000\n"
+"X-Generator: Launchpad (build 15909)\n"
 "Language: \n"
 
 #. maya.desktop:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Organiser et planifier des événements"
 
 #. maya.desktop:5
 msgid "Calendar"
-msgstr ""
+msgstr "Calendrier"
 
 #. maya.desktop:18
 msgid "_Add Event"
-msgstr ""
+msgstr "_Ajouter un événement"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
-msgstr ""
+msgstr "Sur cet ordinateur"
 
 msgid "Webcal"
-msgstr ""
+msgstr "Webcal"
 
 msgid "Contacts"
-msgstr ""
+msgstr "Contacts"
 
 msgid "Personal"
-msgstr ""
+msgstr "Personnel"
 
 msgid "%B %e, %Y"
 msgstr ""
@@ -56,13 +56,13 @@ msgid "%H:%M"
 msgstr ""
 
 msgid "Add Event"
-msgstr ""
+msgstr "Ajouter un évènement"
 
 msgid "Edit Event"
-msgstr ""
+msgstr "Modifier l'évènement"
 
 msgid "From:"
-msgstr ""
+msgstr "Du :"
 
 msgid "All day:"
 msgstr ""
@@ -71,89 +71,91 @@ msgid "To:"
 msgstr ""
 
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 msgid "Name of Event"
-msgstr ""
+msgstr "Nom de l'événement"
 
 msgid "Location"
-msgstr ""
+msgstr "Emplacement"
 
 msgid "John Smith OR Example St."
 msgstr ""
 
 msgid "Participants"
-msgstr ""
+msgstr "Participants"
 
 msgid "Name or Email Address"
-msgstr ""
+msgstr "Nom ou adresse électronique"
 
 msgid "Comments"
-msgstr ""
+msgstr "Commentaires"
 
 msgid "Create Event"
-msgstr ""
+msgstr "Créer un événement"
 
 msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgstr "Votre événement doit être nommé et posséder une date valide"
 
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
-msgstr ""
+msgstr "Créer un nouvel évènement"
 
 msgid "Edit the selected event"
-msgstr ""
+msgstr "Modifier l'événement sélectionné"
 
 msgid "Delete the selected event"
-msgstr ""
+msgstr "Supprimer l'événement sélectionné"
 
 msgid "Select calendars to display"
-msgstr ""
+msgstr "Sélectionner les calendriers à afficher"
 
 msgid "Search Events"
-msgstr ""
+msgstr "Rechercher des événements"
 
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "Exporter ou partager le calendrier par défaut"
 
 #. Create everything
 msgid "Today"
-msgstr ""
+msgstr "Aujourd'hui"
 
 msgid "Fullscreen"
-msgstr ""
+msgstr "Plein écran"
 
 msgid "Show Week Numbers"
-msgstr ""
+msgstr "Afficher les numéros de semaine"
 
 msgid "Import..."
-msgstr ""
+msgstr "Importer..."
 
 msgid "Sync..."
-msgstr ""
+msgstr "Synchroniser..."
 
 msgid "About"
-msgstr ""
+msgstr "À propos"
 
 msgid "Add calendar"
-msgstr ""
+msgstr "Ajouter un calendrier"
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
+"Vos événements à venir seront affichés ici lorsque vous sélectionnerez un "
+"jour comprenant des événements."
 
 msgid "Starts: \t"
-msgstr ""
+msgstr "Du : \t"
 
 msgid "Ends: \t"
-msgstr ""
+msgstr "Au : \t"
 
 msgid "all day"
-msgstr ""
+msgstr "toute la journée"
 
 msgid "at"
 msgstr ""
