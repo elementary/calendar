@@ -110,6 +110,7 @@ public class EventDialog : Gtk.Window {
             // Load the event's properties in to the dialog
             load ();
 
+            update_create_sensitivity ();
         }
 
         //--- Public Methods ---//
@@ -498,10 +499,7 @@ public class EventDialog : Gtk.Window {
         }
 
         void update_create_sensitivity () {
-            if (event_type == EventType.EDIT)
-                create_button.sensitive = true;
-            else
-                create_button.sensitive = is_valid_event ();
+            create_button.sensitive = is_valid_event ();
             
             if (!is_valid_event())
                 create_button.set_tooltip_text (_("Your event has to be named and has to have a valid date"));

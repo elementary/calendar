@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-06-30 13:33+0000\n"
 "Last-Translator: Viko Adi Rahmawan <Unknown>\n"
 "Language-Team: Indonesian <id@li.org>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-09-01 05:22+0000\n"
 "X-Generator: Launchpad (build 15890)\n"
-"Language: id\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Lihat dan jadwalkan acara"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr "Perihal"
+
+msgid "Add Event"
+msgstr "Tambah Acara"
+
+msgid "Add calendar"
+msgstr "Tambah kalender"
+
+msgid "All day:"
+msgstr "Sepanjang hari:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Kalender"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Tambah Acara"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Di komputer ini"
-
-msgid "Webcal"
-msgstr "Webcal"
+msgid "Comments"
+msgstr "Komentar"
 
 msgid "Contacts"
 msgstr "Kontak"
 
-msgid "Personal"
-msgstr "Pribadi"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "Tambah Acara"
-
-msgid "Edit Event"
-msgstr "Sunting Acara"
-
-msgid "From:"
-msgstr "Dari:"
-
-msgid "All day:"
-msgstr "Sepanjang hari:"
-
-msgid "To:"
-msgstr "Hingga:"
-
-msgid "Title"
-msgstr "Judul"
-
-msgid "Name of Event"
-msgstr "Nama Acara"
-
-msgid "Location"
-msgstr "Lokasi"
-
-msgid "John Smith OR Example St."
-msgstr "Joko Setiawan ATAU Jalan Kelinci"
-
-msgid "Participants"
-msgstr "Peserta"
-
-msgid "Name or Email Address"
-msgstr "Nama atau Alamat Email"
-
-msgid "Comments"
-msgstr "Komentar"
-
 msgid "Create Event"
 msgstr "Buat Acara"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Namai acaramu dan beri tanggal yang benar"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,42 +61,90 @@ msgstr "Namai acaramu dan beri tanggal yang benar"
 msgid "Create a new event"
 msgstr "Buat acara baru"
 
-msgid "Edit the selected event"
-msgstr "Sunting acara terpilih"
-
 msgid "Delete the selected event"
 msgstr "Hapus acara terpilih"
 
-msgid "Select calendars to display"
-msgstr "Pilih kalender 'tuk ditampilkan"
+msgid "Edit Event"
+msgstr "Sunting Acara"
+
+msgid "Edit the selected event"
+msgstr "Sunting acara terpilih"
+
+#, fuzzy
+msgid "Ends: \t\t"
+msgstr "Berakhir: \t"
+
+msgid "Export Calendar..."
+msgstr "Ekspor Kalender..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Ekspor atau Bagikan Kalender utama"
+
+msgid "From:"
+msgstr "Dari:"
+
+msgid "Fullscreen"
+msgstr "Layar Penuh"
+
+msgid "Import..."
+msgstr "Impor..."
+
+msgid "John Smith OR Example St."
+msgstr "Joko Setiawan ATAU Jalan Kelinci"
+
+msgid "Location"
+msgstr "Lokasi"
+
+msgid "Name of Event"
+msgstr "Nama Acara"
+
+msgid "Name or Email Address"
+msgstr "Nama atau Alamat Email"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Di komputer ini"
+
+msgid "Participants"
+msgstr "Peserta"
+
+msgid "Personal"
+msgstr "Pribadi"
 
 msgid "Search Events"
 msgstr "Cari Acara"
 
-msgid "Export or Share the default Calendar"
-msgstr "Ekspor atau Bagikan Kalender utama"
+msgid "Select calendars to display"
+msgstr "Pilih kalender 'tuk ditampilkan"
+
+msgid "Show Week Numbers"
+msgstr "Tampilkan Nomor Minggu"
+
+msgid "Starts: \t"
+msgstr "Mulai: \t"
+
+msgid "Sync..."
+msgstr "Sinkronkan..."
+
+msgid "Title"
+msgstr "Judul"
+
+msgid "To:"
+msgstr "Hingga:"
 
 #. Create everything
 msgid "Today"
 msgstr "Hari ini"
 
-msgid "Fullscreen"
-msgstr "Layar Penuh"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Lihat dan jadwalkan acara"
 
-msgid "Show Week Numbers"
-msgstr "Tampilkan Nomor Minggu"
+msgid "Webcal"
+msgstr "Webcal"
 
-msgid "Import..."
-msgstr "Impor..."
-
-msgid "Sync..."
-msgstr "Sinkronkan..."
-
-msgid "About"
-msgstr "Perihal"
-
-msgid "Add calendar"
-msgstr "Tambah kalender"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Namai acaramu dan beri tanggal yang benar"
 
 #. label settings
 msgid ""
@@ -147,11 +153,9 @@ msgid ""
 msgstr ""
 "Acara kedepan mu akan tampil di sini saat kamu klik tanggal dengan acara."
 
-msgid "Starts: \t"
-msgstr "Mulai: \t"
-
-msgid "Ends: \t"
-msgstr "Berakhir: \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Tambah Acara"
 
 msgid "all day"
 msgstr "sepanjang hari"
@@ -159,14 +163,11 @@ msgstr "sepanjang hari"
 msgid "at"
 msgstr "pada"
 
-msgid "Export Calendar..."
-msgstr "Ekspor Kalender..."
-
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#~ msgid "all the day"
-#~ msgstr "sepanjang hari"
-
 #~ msgid "Guests"
 #~ msgstr "Tamu"
+
+#~ msgid "all the day"
+#~ msgstr "sepanjang hari"

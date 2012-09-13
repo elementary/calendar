@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-07-15 11:31+0000\n"
 "Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-09-01 05:22+0000\n"
 "X-Generator: Launchpad (build 15890)\n"
-"Language: eu\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Ikusi eta programatu gertaerak"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%Y %B %e"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr "Honi buruz"
+
+msgid "Add Event"
+msgstr "Gehitu gertaera"
+
+msgid "Add calendar"
+msgstr "Gehitu egutegia"
+
+msgid "All day:"
+msgstr "Egun osoa:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Egutegia"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Gehitu gertaera"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Ordenagailu honetan"
-
-msgid "Webcal"
-msgstr "Webcal"
+msgid "Comments"
+msgstr "Iruzkinak"
 
 msgid "Contacts"
 msgstr "Kontaktuak"
 
-msgid "Personal"
-msgstr "Pertsonala"
-
-msgid "%B %e, %Y"
-msgstr "%Y %B %e"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "Gehitu gertaera"
-
-msgid "Edit Event"
-msgstr "Editatu gertaera"
-
-msgid "From:"
-msgstr "Noiztik:"
-
-msgid "All day:"
-msgstr "Egun osoa:"
-
-msgid "To:"
-msgstr "Noiz arte:"
-
-msgid "Title"
-msgstr "Izenburua"
-
-msgid "Name of Event"
-msgstr "Gertaeraren izena"
-
-msgid "Location"
-msgstr "Kokapena"
-
-msgid "John Smith OR Example St."
-msgstr "Jone Agirre edo Adibide kalea"
-
-msgid "Participants"
-msgstr "Parte-hartzaileak"
-
-msgid "Name or Email Address"
-msgstr "Izena edo e-posta helbidea"
-
-msgid "Comments"
-msgstr "Iruzkinak"
-
 msgid "Create Event"
 msgstr "Sortu gertaera"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Zure gertaerak izena eta baliozko data behar ditu"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,42 +61,90 @@ msgstr "Zure gertaerak izena eta baliozko data behar ditu"
 msgid "Create a new event"
 msgstr "Sortu gertaera berri bat"
 
-msgid "Edit the selected event"
-msgstr "Editatu hautatutako gertaera"
-
 msgid "Delete the selected event"
 msgstr "Ezabatu hautatutako gertaera"
 
-msgid "Select calendars to display"
-msgstr "Hautatu bistaratuko diren egutegiak"
+msgid "Edit Event"
+msgstr "Editatu gertaera"
+
+msgid "Edit the selected event"
+msgstr "Editatu hautatutako gertaera"
+
+#, fuzzy
+msgid "Ends: \t\t"
+msgstr "Bukaera: \t"
+
+msgid "Export Calendar..."
+msgstr "Esportatu egutegia..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Esportatu edo partekatu egutegi lehenetsia"
+
+msgid "From:"
+msgstr "Noiztik:"
+
+msgid "Fullscreen"
+msgstr "Pantaila osoa"
+
+msgid "Import..."
+msgstr "Inportatu..."
+
+msgid "John Smith OR Example St."
+msgstr "Jone Agirre edo Adibide kalea"
+
+msgid "Location"
+msgstr "Kokapena"
+
+msgid "Name of Event"
+msgstr "Gertaeraren izena"
+
+msgid "Name or Email Address"
+msgstr "Izena edo e-posta helbidea"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Ordenagailu honetan"
+
+msgid "Participants"
+msgstr "Parte-hartzaileak"
+
+msgid "Personal"
+msgstr "Pertsonala"
 
 msgid "Search Events"
 msgstr "Bilatu gertaerak"
 
-msgid "Export or Share the default Calendar"
-msgstr "Esportatu edo partekatu egutegi lehenetsia"
+msgid "Select calendars to display"
+msgstr "Hautatu bistaratuko diren egutegiak"
+
+msgid "Show Week Numbers"
+msgstr "Erakutsi asteen zenbakiak"
+
+msgid "Starts: \t"
+msgstr "Hasiera: \t"
+
+msgid "Sync..."
+msgstr "Sinkronizatu..."
+
+msgid "Title"
+msgstr "Izenburua"
+
+msgid "To:"
+msgstr "Noiz arte:"
 
 #. Create everything
 msgid "Today"
 msgstr "Gaur"
 
-msgid "Fullscreen"
-msgstr "Pantaila osoa"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Ikusi eta programatu gertaerak"
 
-msgid "Show Week Numbers"
-msgstr "Erakutsi asteen zenbakiak"
+msgid "Webcal"
+msgstr "Webcal"
 
-msgid "Import..."
-msgstr "Inportatu..."
-
-msgid "Sync..."
-msgstr "Sinkronizatu..."
-
-msgid "About"
-msgstr "Honi buruz"
-
-msgid "Add calendar"
-msgstr "Gehitu egutegia"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Zure gertaerak izena eta baliozko data behar ditu"
 
 #. label settings
 msgid ""
@@ -147,11 +153,9 @@ msgid ""
 msgstr ""
 "Zure hurrengo gertaerak hemen erakutsiko dira data bat hautatzen duzunean."
 
-msgid "Starts: \t"
-msgstr "Hasiera: \t"
-
-msgid "Ends: \t"
-msgstr "Bukaera: \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Gehitu gertaera"
 
 msgid "all day"
 msgstr "egun osoan"
@@ -159,14 +163,11 @@ msgstr "egun osoan"
 msgid "at"
 msgstr "noiz:"
 
-msgid "Export Calendar..."
-msgstr "Esportatu egutegia..."
-
 msgid "calendar.ics"
 msgstr "egutegia.ics"
 
-#~ msgid "all the day"
-#~ msgstr "egun osoa"
-
 #~ msgid "Guests"
 #~ msgstr "Gonbidatuak"
+
+#~ msgid "all the day"
+#~ msgstr "egun osoa"
