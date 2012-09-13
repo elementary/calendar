@@ -42,6 +42,11 @@ public class EventDialog : Gtk.Window {
         private Granite.Widgets.TimePicker to_time_picker;
         private Gtk.Button create_button;
 
+        /**
+         * A boolean indicating whether we can edit the current event.
+         */
+        private bool can_edit = true;
+
         public signal void response (bool response);
 
         private Gtk.Grid content_grid { get; private set; }
@@ -75,9 +80,8 @@ public class EventDialog : Gtk.Window {
 
             sources = sourcemgr.get_editable_sources ();       
 
-            bool can_edit = true;
             if (original_group != null && original_source != null)
-                can_edit = sourcemgr.can_edit_source (original_group, original_source);
+                this.can_edit = sourcemgr.can_edit_source (original_group, original_source);
 
             // Since we created one that is editable, we must have at least one
             assert (!sources.is_empty);
@@ -105,7 +109,7 @@ public class EventDialog : Gtk.Window {
             transient_for = window;
             
             // Build dialog
-            build_dialog (add_event, can_edit);
+            build_dialog (add_event);
 
             // Load the event's properties in to the dialog
             load ();
@@ -282,7 +286,7 @@ public class EventDialog : Gtk.Window {
             calendar_box.set_active_id (this.source.peek_uid());
         }
 
-        void build_dialog (bool add_event, bool can_edit) {
+        void build_dialog (bool add_event) {
             
             content_grid = new Gtk.Grid ();
             content_grid.margin_left = 12;
@@ -400,22 +404,22 @@ public class EventDialog : Gtk.Window {
             buttonbox.pack_end (cancel_button);
             #endif
 
+            var cancel_button = new Gtk.Button.from_stock("Cancel");
             if (add_event) {
                 create_button = new Gtk.Button.with_label (_("Create Event"));
-                create_button.sensitive = false;
-                create_button.set_tooltip_text (_("Your event has to be named and has to have a valid date"));
             }
             else {
                 create_button = new Gtk.Button.with_label (_("Save Changes"));
             }
-            if (can_edit)
-                create_button.clicked.connect (save);
-            else
-                create_button.clicked.connect (() => {response (false);this.destroy();});
+
+            create_button.clicked.connect (save);
+            cancel_button.clicked.connect (() => {response (false);this.destroy();});
+
+            buttonbox.pack_end (cancel_button);
             buttonbox.pack_end (create_button);
-            
+
             create_button.margin_right = 5;
-            
+
             content_grid.attach (subgrid, 0, 0, 1, 1);
             content_grid.attach (buttonbox, 0, 1, 1, 1);
             
@@ -499,6 +503,12 @@ public class EventDialog : Gtk.Window {
         }
 
         void update_create_sensitivity () {
+            if (!this.can_edit) {
+                create_button.sensitive = false;
+                create_button.set_tooltip_text (_("This event can't be edited"));
+                return;
+            }
+
             create_button.sensitive = is_valid_event ();
             
             if (!is_valid_event())
