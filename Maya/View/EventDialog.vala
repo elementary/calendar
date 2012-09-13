@@ -406,7 +406,7 @@ public class EventDialog : Gtk.Window {
                 create_button.set_tooltip_text (_("Your event has to be named and has to have a valid date"));
             }
             else {
-                create_button = new Gtk.Button.from_stock (Gtk.Stock.OK);
+                create_button = new Gtk.Button.with_label (_("Save Changes"));
             }
             if (can_edit)
                 create_button.clicked.connect (save);
