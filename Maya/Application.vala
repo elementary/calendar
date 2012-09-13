@@ -46,7 +46,7 @@ namespace Maya {
         Gtk.init (ref args);
 
         return new Application ().run (args);
-        
+
     }
 
     /**
@@ -244,7 +244,7 @@ namespace Maya {
                 window.fullscreen ();
 
             calview.today();
-            
+
         }
 
         void on_agenda_view_shown_changed (bool old, bool shown) {
@@ -277,7 +277,7 @@ namespace Maya {
         void on_remove (E.CalComponent comp) {
             calmodel.remove_event (comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
         }
-        
+
         /**
          * Called when the edit button is selected.
          */
@@ -297,8 +297,22 @@ namespace Maya {
             window.set_size_request (700, 400);
             window.default_width = saved_state.window_width;
             window.default_height = saved_state.window_height;
+
             window.delete_event.connect (on_window_delete_event);
             window.destroy.connect (() => Gtk.main_quit ());
+            window.key_press_event.connect ((e) => {
+                    switch (e.keyval) {
+                        case Gdk.Key.@q:
+                        case Gdk.Key.@w:
+                            if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                                window.destroy ();
+                            }
+
+                            break;
+                        }
+
+                        return false;
+            });
         }
 
         /**
@@ -335,7 +349,7 @@ namespace Maya {
                 saved_state.window_state = Settings.WindowState.FULLSCREEN;
             else
                 saved_state.window_state = Settings.WindowState.NORMAL;
-            
+
             // Save window size
             if (saved_state.window_state == Settings.WindowState.NORMAL) {
                 int width, height;
@@ -343,7 +357,7 @@ namespace Maya {
                 saved_state.window_width = width;
                 saved_state.window_height = height;
             }
-            
+
             saved_state.hpaned_position = hpaned.position;
         }
 
@@ -368,7 +382,7 @@ namespace Maya {
 
             if (response_id != true)
                 return;
-            
+
             if (add_event)
                 calmodel.add_event (source, event);
             else {
@@ -482,4 +496,3 @@ namespace Maya {
     }
 
 }
-
