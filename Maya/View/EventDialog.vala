@@ -110,7 +110,7 @@ public class EventDialog : Gtk.Window {
             // Load the event's properties in to the dialog
             load ();
 
-			update_create_sensitivity ();
+            update_create_sensitivity ();
         }
 
         //--- Public Methods ---//
