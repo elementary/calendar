@@ -28,12 +28,12 @@ class MultiDayEventButton : EventButton {
         base (comp);
 
         label = new Gtk.Label(get_summary ());
+        label.set_ellipsize(Pango.EllipsizeMode.END);
         add (label);
         label.hexpand = true;
         label.wrap = false;
         label.show ();
     }
-
 }
 
 }

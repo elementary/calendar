@@ -21,12 +21,14 @@ namespace Maya.View {
  * Represents a single event on the grid.
  */
 class SingleDayEventButton : EventButton {
+
     Gtk.Label label;
 
     public SingleDayEventButton (E.CalComponent comp) {
         base (comp);
 
         label = new Gtk.Label(get_summary ());
+        label.set_ellipsize(Pango.EllipsizeMode.END);
         add (label);
         label.hexpand = true;
         label.wrap = false;
