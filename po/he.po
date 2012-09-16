@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2012-06-21 22:15+0200\n"
 "PO-Revision-Date: 2012-09-15 22:42+0000\n"
 "Last-Translator: דוביקס <dovix2003@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-09-16 04:49+0000\n"
 "X-Generator: Launchpad (build 15944)\n"
-"Language: he\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "צפה ותזמן ארועים"
+msgid "%A, %b %d"
+msgstr "%A, ה־%d ב%b"
+
+msgid "%B %e, %Y"
+msgstr "%e ב%B,‏ %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%H:%M"
+
+msgid "About"
+msgstr "אודות"
+
+msgid "Add Event"
+msgstr "הוספת אירוע"
+
+msgid "Add calendar"
+msgstr "הוסף לוח שנה"
+
+msgid "All day:"
+msgstr "כל היום:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "לוח שנה"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "הוסף _ארוע"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "על מחשב זה"
-
-msgid "Webcal"
-msgstr ""
+msgid "Comments"
+msgstr "הערות"
 
 msgid "Contacts"
 msgstr "אנשי קשר"
 
-msgid "Personal"
-msgstr "אישי"
-
-msgid "%B %e, %Y"
-msgstr "%e ב%B,‏ %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, ה־%d ב%b"
-
-msgid "%l:%M %p"
-msgstr "%H:%M"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "הוספת אירוע"
-
-msgid "Edit Event"
-msgstr "עריכת אירוע"
-
-msgid "From:"
-msgstr "מ־:"
-
-msgid "All day:"
-msgstr "כל היום:"
-
-msgid "To:"
-msgstr "עד:"
-
-msgid "Title"
-msgstr "כותרת"
-
-msgid "Name of Event"
-msgstr "שם האירוע"
-
-msgid "Location"
-msgstr "מיקום"
-
-msgid "John Smith OR Example St."
-msgstr "ישראל ישראלי או רחוב לדוגמה"
-
-msgid "Participants"
-msgstr "משתתפים"
-
-msgid "Name or Email Address"
-msgstr "שם או כתובת דוא״ל"
-
-msgid "Comments"
-msgstr "הערות"
-
 msgid "Create Event"
 msgstr "יצירת אירוע"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "יש לשייך כותרת לארוע שלך ולהגדיר לו תאריך תקף"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,42 +61,90 @@ msgstr "יש לשייך כותרת לארוע שלך ולהגדיר לו תאר�
 msgid "Create a new event"
 msgstr "יצירת אירוע חדש"
 
-msgid "Edit the selected event"
-msgstr "עריכת האירוע הנבחר"
-
 msgid "Delete the selected event"
 msgstr "מחיקת האירוע הנבחר"
 
-msgid "Select calendars to display"
-msgstr "בחירת יומנים להצגה"
+msgid "Edit Event"
+msgstr "עריכת אירוע"
+
+msgid "Edit the selected event"
+msgstr "עריכת האירוע הנבחר"
+
+#, fuzzy
+msgid "Ends: \t\t"
+msgstr "מסתיים: \t"
+
+msgid "Export Calendar..."
+msgstr "ייצא לוח שנה..."
+
+msgid "Export or Share the default Calendar"
+msgstr "יצוא או שיתוף יומן בררת המחדל"
+
+msgid "From:"
+msgstr "מ־:"
+
+msgid "Fullscreen"
+msgstr "מסך מלא"
+
+msgid "Import..."
+msgstr "יבוא..."
+
+msgid "John Smith OR Example St."
+msgstr "ישראל ישראלי או רחוב לדוגמה"
+
+msgid "Location"
+msgstr "מיקום"
+
+msgid "Name of Event"
+msgstr "שם האירוע"
+
+msgid "Name or Email Address"
+msgstr "שם או כתובת דוא״ל"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "על מחשב זה"
+
+msgid "Participants"
+msgstr "משתתפים"
+
+msgid "Personal"
+msgstr "אישי"
 
 msgid "Search Events"
 msgstr "חפש ארועים"
 
-msgid "Export or Share the default Calendar"
-msgstr "יצוא או שיתוף יומן בררת המחדל"
+msgid "Select calendars to display"
+msgstr "בחירת יומנים להצגה"
+
+msgid "Show Week Numbers"
+msgstr "הצגת מספרי שבועות"
+
+msgid "Starts: \t"
+msgstr "מתחיל: \t"
+
+msgid "Sync..."
+msgstr "סנכרון..."
+
+msgid "Title"
+msgstr "כותרת"
+
+msgid "To:"
+msgstr "עד:"
 
 #. Create everything
 msgid "Today"
 msgstr "היום"
 
-msgid "Fullscreen"
-msgstr "מסך מלא"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "צפה ותזמן ארועים"
 
-msgid "Show Week Numbers"
-msgstr "הצגת מספרי שבועות"
+msgid "Webcal"
+msgstr ""
 
-msgid "Import..."
-msgstr "יבוא..."
-
-msgid "Sync..."
-msgstr "סנכרון..."
-
-msgid "About"
-msgstr "אודות"
-
-msgid "Add calendar"
-msgstr "הוסף לוח שנה"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "יש לשייך כותרת לארוע שלך ולהגדיר לו תאריך תקף"
 
 #. label settings
 msgid ""
@@ -146,11 +152,9 @@ msgid ""
 "events."
 msgstr "האירועים הקרובים שלך יוצגו כאן בעת בחירת תאריך עם אירועים."
 
-msgid "Starts: \t"
-msgstr "מתחיל: \t"
-
-msgid "Ends: \t"
-msgstr "מסתיים: \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "הוסף _ארוע"
 
 msgid "all day"
 msgstr "כל היום"
@@ -158,14 +162,11 @@ msgstr "כל היום"
 msgid "at"
 msgstr "ב־"
 
-msgid "Export Calendar..."
-msgstr "ייצא לוח שנה..."
-
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#~ msgid "all the day"
-#~ msgstr "כל היום"
-
 #~ msgid "Guests"
 #~ msgstr "אורחים"
+
+#~ msgid "all the day"
+#~ msgstr "כל היום"

@@ -121,7 +121,7 @@ class SourceGroupBox : Gtk.Grid {
 
         // Search for the corresponding source
         Gtk.TreeIter iter;
-        bool result = tmodel.get_iter (out iter, path);
+        tmodel.get_iter (out iter, path);
 
         var source = model.get_source_for_iter (tmodel, iter);
 
