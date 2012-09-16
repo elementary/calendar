@@ -1,19 +1,19 @@
-//  
+//
 //  Copyright (C) 2011-2012 Christian Dywan <christian@twotoasts.de>
-// 
+//
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 3 of the License, or
 //  (at your option) any later version.
-// 
+//
 //  This program is distributed in the hope that it will be useful,
 //  but WITHOUT ANY WARRANTY; without even the implied warranty of
 //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //  GNU General Public License for more details.
-// 
+//
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-// 
+//
 
 using Granite.Services;
 
@@ -28,16 +28,16 @@ namespace Maya.Services {
 	}
 
 	public class Dexter : Object {
-	
+
 		DexterService? service = null;
-		
+
 		public Dexter () {
-		
+
 			try {
 				service = Bus.get_proxy_sync (BusType.SESSION,
 											  "org.elementary.dexterserver",
 											  "/org/elementary/dexterserver");
-			
+
 				/* Ensure Dexter is running, ignore errors, without is fine */
 				Process.spawn_async (null, { "dexter-server" }, null,
 					SpawnFlags.SEARCH_PATH
@@ -46,9 +46,9 @@ namespace Maya.Services {
 					null, null);
 			} catch (GLib.Error error) {  }
 		}
-		
+
 		public void edit_contact (string name, string email_address) {
-			
+
 			try {
 				if (service == null)
 					throw new GLib.IOError.FAILED ("Service unavailable");
@@ -57,9 +57,9 @@ namespace Maya.Services {
 				System.execute_command ("dexter");
 			}
 		}
-		
+
 		public string? get_name (string email_address) {
-		
+
 			try {
 				if (service == null)
 					throw new GLib.IOError.FAILED ("Service unavailable");
@@ -69,9 +69,9 @@ namespace Maya.Services {
 				return null;
 			}
 		}
-		
+
 		public string[] autocomplete_contact (string keywords) {
-		
+
 			try {
 				if (service == null)
 					throw new GLib.IOError.FAILED ("Service unavailable");
@@ -80,9 +80,9 @@ namespace Maya.Services {
 				return {};
 			}
 		}
-		
+
 		public void show_window () {
-		
+
 			try {
 				if (service == null)
 					throw new GLib.IOError.FAILED ("Service unavailable");
@@ -91,8 +91,8 @@ namespace Maya.Services {
 				System.execute_command ("dexter");
 			}
 		}
-		
+
 	}
-	
+
 }
 

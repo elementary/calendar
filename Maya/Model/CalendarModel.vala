@@ -109,7 +109,7 @@ public class CalendarModel : Object {
 
             bool status = false;
             string uid;
-            
+
             try {
                 status = client.create_object.end (results, out uid);
             } catch (Error e) {
@@ -136,7 +136,7 @@ public class CalendarModel : Object {
         client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
 
             bool status = false;
-            
+
             try {
                 status = client.modify_object.end (results);
             } catch (Error e) {
@@ -180,7 +180,7 @@ public class CalendarModel : Object {
         var month_end = month_start.add_full (0, 1, -1);
         month_range = new Util.DateRange (month_start, month_end);
 
-        int dow = month_start.get_day_of_week(); 
+        int dow = month_start.get_day_of_week();
         int wso = (int) week_starts_on;
         int offset = 0;
 
@@ -191,7 +191,7 @@ public class CalendarModel : Object {
 
         var data_range_first = month_start.add_days (-offset);
 
-        dow = month_end.get_day_of_week(); 
+        dow = month_end.get_day_of_week();
         wso = (int) (week_starts_on + 6);
 
         // WSO must be between 1 and 7
@@ -229,7 +229,7 @@ public class CalendarModel : Object {
             (EqualFunc) Util.calcomponent_equal_func);
 
         source_events.set (source, events);
-        
+
         // query client view
 
         var iso_first = E.isodate_from_time_t((ulong) data_range.first.to_unix());
@@ -280,7 +280,7 @@ public class CalendarModel : Object {
             return;
 
         var current_view = source_view [source];
-        
+
         try {
             current_view.stop();
         } catch (Error e) {
@@ -345,7 +345,7 @@ public class CalendarModel : Object {
     }
 
     void on_source_removed (E.SourceGroup group, E.Source source) {
-        
+
         remove_source (source);
     }
 
@@ -395,9 +395,9 @@ public class CalendarModel : Object {
     }
 
     void on_objects_modified (E.Source source, E.CalClient client, SList<weak iCal.icalcomponent> objects) {
-        
+
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.peek_name());
-        
+
         Gee.Collection<E.CalComponent> updated_events = new Gee.ArrayList<E.CalComponent> (
             (EqualFunc) Util.calcomponent_equal_func);
 

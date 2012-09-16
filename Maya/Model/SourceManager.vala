@@ -47,7 +47,7 @@ public class SourceManager: GLib.Object {
     public SourceManager () {
 
         bool status = false;
-        
+
         try {
         status = E.CalClient.get_sources (out source_list, E.CalClientSourceType.EVENTS);
         } catch(Error e) {
@@ -93,7 +93,7 @@ public class SourceManager: GLib.Object {
         _groups = new Gee.ArrayList<E.SourceGroup> ((EqualFunc) Util.source_group_equal_func);
 
 //        foreach (E.SourceGroup group in source_list.peek_groups()) {
-//            
+//
 //            _groups.add (group);
 //        }
         _groups.add (GROUP_LOCAL);
@@ -222,9 +222,9 @@ public class SourceManager: GLib.Object {
         for (int i=0; i<settings.selected_calendars.length;i++) {
             if (settings.selected_calendars[i] == source.peek_uid())
                 source_enabled.set (source, true);
-                
+
         }
-        
+
 
         var tree_model = _group_tree_model [group] as Gtk.TreeModelSort;
         var list_store = tree_model.get_model () as Gtk.ListStore;
@@ -295,7 +295,7 @@ public class SourceManager: GLib.Object {
 
     /* Return collection of enabled sources */
     public Gee.Collection<E.Source> get_enabled_sources () {
-    
+
         var sources = new Gee.ArrayList<E.Source> (
             (EqualFunc) Util.source_equal_func);
 
@@ -351,7 +351,7 @@ public class SourceManager: GLib.Object {
         var source = (v as E.Source);
         bool new_status = ! source_enabled [source];
         source_enabled.set (source, new_status);
-        
+
         // Load Sources from preferences
         var settings = new Settings.MayaSettings();
         if (new_status) {
@@ -360,7 +360,7 @@ public class SourceManager: GLib.Object {
             settings.selected_calendars = selected_calendars_copy;
         }
         else {
-            
+
             string[] new_selected_calendars = {};
             for (int i=0; i<settings.selected_calendars.length;i++) {
                 if (settings.selected_calendars[i] != source.peek_uid())
