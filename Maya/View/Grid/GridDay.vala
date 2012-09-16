@@ -57,7 +57,7 @@ public class GridDay : Gtk.EventBox {
         label.get_style_context ().add_provider (style_provider, 600);
         label.name = "date";
         event_box.set_vexpand(true);
-        event_box.set_hexpand(true);
+        //event_box.set_hexpand(true);
         Util.set_margins (label, EVENT_MARGIN, EVENT_MARGIN, 0, EVENT_MARGIN);
         Util.set_margins (event_box, 0, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN);
         container_grid.attach (label, 0, 0, 1, 1);

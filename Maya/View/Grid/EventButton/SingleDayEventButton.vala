@@ -26,7 +26,7 @@ class SingleDayEventButton : EventButton {
     public SingleDayEventButton (E.CalComponent comp) {
         base (comp);
 
-        label = new Granite.Widgets.WrapLabel(get_summary ());
+        label = new Gtk.Label(get_summary ());
         add (label);
         label.hexpand = true;
         label.wrap = false;
