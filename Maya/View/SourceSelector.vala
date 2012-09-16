@@ -48,7 +48,7 @@ class SourceGroupTreeView : Gtk.TreeView {
         // Only show close buttons for the local group
         if (editable) {
             column = new Gtk.TreeViewColumn ();
-            
+
             r_close = new Gtk.CellRendererPixbuf ();
             r_close.stock_id = "gtk-close";
             column.pack_start (r_close, false);
@@ -114,7 +114,7 @@ class SourceGroupBox : Gtk.Grid {
         Gtk.TreePath path;
         Gtk.TreeViewColumn col;
         tview.get_path_at_pos ((int) button.x, (int) button.y, out path, out col, null, null);
-        
+
         // Column other than close was clicked, don't handle it
         if (col.get_title () != "closebuttons")
             return false;
@@ -169,12 +169,12 @@ class SourceSelector : Granite.Widgets.PopOver {
         var sources_grid = new Gtk.Grid ();
         int groupnumber = 0;
         foreach (var group in model.groups) {
-            
+
             var tmodel = model.get_tree_model (group);
 
             // Only local group is editable for now
             bool editable = group.peek_base_uri() == "local:";
-            
+
             var box = new SourceGroupBox (group, tmodel, model, editable);
             box.no_show_all = true;
             // Don't show empty groups (but always show editable groups)
@@ -217,7 +217,7 @@ class SourceSelector : Granite.Widgets.PopOver {
 
         // prevent recursion
         if (box.tview.get_selection().count_selected_rows()==0)
-            return; 
+            return;
 
         var groups_to_clear = new Gee.HashSet<E.SourceGroup> (
             (HashFunc) Util.source_group_hash_func,

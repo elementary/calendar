@@ -22,7 +22,7 @@ namespace Maya.View {
      * A widget displaying one event in the sidebar.
      */
     public class EventWidget : Gtk.EventBox {
-        
+
         // A label displaying the name of the event
         Granite.Widgets.WrapLabel name_label;
 
@@ -49,7 +49,7 @@ namespace Maya.View {
         public signal void deselected ();
 
         // Signal sent out when a button is pressed
-    
+
         public signal void removed (E.CalComponent event);
         public signal void modified (E.CalComponent event);
 
@@ -126,13 +126,13 @@ namespace Maya.View {
         }
 
         private bool on_focus_in (Gdk.EventFocus event) {
-                        
+
             selected ();
             return false;
         }
 
         private bool on_focus_out (Gdk.EventFocus event) {
-                        
+
             deselected ();
             return false;
         }
@@ -141,7 +141,7 @@ namespace Maya.View {
          * Updates the event to match the given event.
          */
         public void update (E.CalComponent event) {
-     
+
             name_label.set_markup ("<big>" + Markup.escape_text (get_label (event)) + "</big>");
 
             string end_string = get_end_string (event);
@@ -196,7 +196,7 @@ namespace Maya.View {
                 else {
                     string end_time_string = end_date.format (Settings.TimeFormat ());
                     return date_string + ", " + time_string + " - " + end_time_string;
-                }    
+                }
             }
         }
 
@@ -222,7 +222,7 @@ namespace Maya.View {
             var dateto = E.CalComponentDateTime ();
             event.get_dtstart (out datefrom);
             event.get_dtend (out dateto);
-            
+
             start_date = Util.ical_to_date_time (*datefrom.value);
             end_date = Util.ical_to_date_time (*dateto.value);
         }

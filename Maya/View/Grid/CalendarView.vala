@@ -1,16 +1,16 @@
-//  
+//
 //  Copyright (C) 2011-2012 Maxwell Barvian
-// 
+//
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 3 of the License, or
 //  (at your option) any later version.
-// 
+//
 //  This program is distributed in the hope that it will be useful,
 //  but WITHOUT ANY WARRANTY; without even the implied warranty of
 //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //  GNU General Public License for more details.
-// 
+//
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
@@ -34,7 +34,7 @@ public class CalendarView : Gtk.Grid {
     public signal void on_event_add (DateTime date);
 
     public bool show_weeks { get; set; }
-    
+
     public CalendarView (Model.CalendarModel model, bool show_weeks) {
 
         this.model = model;
@@ -44,9 +44,9 @@ public class CalendarView : Gtk.Grid {
         header = new Header ();
         grid = new Grid ();
         grid.on_event_add.connect ((date) => on_event_add (date));
-        
+
         // Grid properties
-        
+
         attach (header, 1, 0, 1, 1);
         attach (grid, 1, 1, 1, 1);
         attach (weeks, 0, 1, 1, 1);
@@ -60,11 +60,11 @@ public class CalendarView : Gtk.Grid {
         model.events_updated.connect (on_events_updated);
         model.events_removed.connect (on_events_removed);
     }
-    
+
 
 
     //--- Public Methods ---//
-    
+
     public void today () {
         var today = Util.strip_time (new DateTime.now_local ());
         sync_with_model ();

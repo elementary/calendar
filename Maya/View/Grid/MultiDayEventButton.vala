@@ -25,7 +25,7 @@ class MultiDayEventButton : EventButton {
     Gtk.Label label;
 
     public MultiDayEventButton (E.CalComponent comp) {
-        base (comp);        
+        base (comp);
 
         label = new Granite.Widgets.WrapLabel("Multiday");
         add (label);

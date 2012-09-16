@@ -45,7 +45,7 @@ namespace Maya.Util {
      */
     iCal.icaltimetype date_time_to_ical (DateTime date, DateTime time) {
 
-        iCal.icaltimetype result = iCal.icaltime_from_day_of_year 
+        iCal.icaltimetype result = iCal.icaltime_from_day_of_year
             (date.get_day_of_year (), date.get_year ());
 
         result.hour = time.get_hour ();
@@ -114,7 +114,7 @@ namespace Maya.Util {
     }
 
     public DateTime get_start_of_month (owned DateTime? date = null) {
-        
+
         if (date==null)
             date = new DateTime.now_local();
 
@@ -130,7 +130,7 @@ namespace Maya.Util {
     /* Create a map interleaving DateRanges dr1 and dr2 */
     public Gee.Map<DateTime, DateTime> zip_date_ranges (DateRange dr1, DateRange dr2)
         requires (dr1.days == dr2.days) {
-        
+
         var map = new Gee.TreeMap<DateTime, DateTime>(
             (CompareFunc) DateTime.compare,
             (EqualFunc) datetime_equal_func);
@@ -240,10 +240,10 @@ namespace Maya.Util {
 
     // /* Convert E.CalComponentDateTime to GLib.DateTime */
     // public DateTime convert_to_datetime (E.CalComponentDateTime dt) {
-    // 
+    //
     //     unowned iCal.icaltimetype idt = dt.value;
     //     var tz = new TimeZone (dt.tzid);
-    // 
+    //
     //     return new DateTime(tz, idt.year, idt.month, idt.day, idt.hour, idt.minute, idt.second);
     // }
 
@@ -333,7 +333,7 @@ namespace Maya.Util {
         Gtk.TreePath? path = null;
 
         model.foreach( (m, p, iter) => {
-            
+
             Value gvalue;
             model.get_value (iter, column, out gvalue);
 
@@ -374,12 +374,12 @@ namespace Maya.Util {
     }
 
     public Gtk.Widget set_margins (Gtk.Widget widget, int top, int right, int bottom, int left) {
-        
+
         widget.margin_top = top;
         widget.margin_right = right;
         widget.margin_bottom = bottom;
         widget.margin_left = left;
-        
+
         return widget;
     }
 
@@ -394,7 +394,7 @@ namespace Maya.Util {
         alignment.add (widget);
         return alignment;
     }
-    
+
 
     //--- ical Exportation ---//
 
@@ -411,7 +411,7 @@ namespace Maya.Util {
         var path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
         string output = "";
         foreach (var source in sourcemagr.get_enabled_sources ()) {
-            
+
             try {
                 var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
 
@@ -430,7 +430,7 @@ namespace Maya.Util {
             } catch (GLib.Error e) {
                 warning (e.message);
             }
-            
+
         }
         try {
             GLib.File file = GLib.File.new_for_path (path);

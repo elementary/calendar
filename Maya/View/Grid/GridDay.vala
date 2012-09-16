@@ -94,12 +94,12 @@ public class GridDay : Gtk.EventBox {
             }
         }
     }
-    
+
     public void clear_events () {
         foreach(var button in event_buttons) {
             button.destroy();
         }
-        event_buttons.clear ();			
+        event_buttons.clear ();
     }
 
     public void update_date (DateTime date) {

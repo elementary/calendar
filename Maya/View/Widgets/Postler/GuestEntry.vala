@@ -58,7 +58,7 @@ namespace Maya.View.Widgets {
             entry.set_completion (completion);
             entry.changed.connect (changed);
             entry.key_press_event.connect ((widget, event) => {
-                if (event.keyval == Gdk.keyval_from_name ("Return")) { 
+                if (event.keyval == Gdk.keyval_from_name ("Return")) {
                     entry.text = entry.text + ",";
                     buttonize_text ();
                 }
@@ -148,7 +148,7 @@ namespace Maya.View.Widgets {
 
             string address;
             model.get (iter, completion.text_column, out address);
-            
+
             entry.text = "";
             add_address (address);
             entry.grab_focus ();

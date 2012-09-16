@@ -33,7 +33,7 @@ namespace Maya.View {
         // The previous visibility status for thissou widget.
         bool old_shown = false;
 
-        // 
+        //
         int row_number = 0;
 
         Model.SourceManager sourcemgr;
@@ -43,7 +43,7 @@ namespace Maya.View {
 
         // Sent out when an event is deselected.
         public signal void event_deselected (E.CalComponent event);
-    
+
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
@@ -68,7 +68,7 @@ namespace Maya.View {
                 null);
 
             Gee.List<E.SourceGroup> groups = sourcemgr.groups;
-            
+
             foreach (E.SourceGroup group in groups) {
                 foreach (E.Source source in group.peek_sources () ) {
                     add_source (group, source);

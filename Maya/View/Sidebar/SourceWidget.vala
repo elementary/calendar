@@ -16,7 +16,7 @@
 //
 
 namespace Maya.View {
-    
+
     /**
      * A widget containing one source to be displayed in the sidebar.
      */
@@ -24,7 +24,7 @@ namespace Maya.View {
 
         // The label displaying the name of this source.
         Gtk.Label name_label;
-        
+
         // The selected date
         DateTime selected_date;
 
@@ -48,7 +48,7 @@ namespace Maya.View {
 
         // Sent out when an event is selected.
         public signal void event_deselected (E.CalComponent event);
-    
+
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
@@ -268,7 +268,7 @@ namespace Maya.View {
 
             event_widgets.set (event, widget);
         }
-    
+
         /**
          * Destroys the widget associated with the given event.
          */

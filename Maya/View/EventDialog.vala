@@ -1,19 +1,19 @@
-//  
+//
 //  Copyright (C) 2011-2012 Jaap Broekhuizen
-// 
+//
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 3 of the License, or
 //  (at your option) any later version.
-// 
+//
 //  This program is distributed in the hope that it will be useful,
 //  but WITHOUT ANY WARRANTY; without even the implied warranty of
 //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //  GNU General Public License for more details.
-// 
+//
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-// 
+//
 
 namespace Maya.View {
 
@@ -27,10 +27,10 @@ public class EventDialog : Granite.Widgets.LightWindow {
 #else
 public class EventDialog : Gtk.Window {
 #endif
-        
+
         /**
          * The different widgets in the dialog.
-         */        
+         */
         private Gtk.Entry title_entry;
         private Granite.Widgets.HintedEntry location_entry;
         private Gtk.TextView comment_textview;
@@ -65,9 +65,9 @@ public class EventDialog : Gtk.Window {
         public E.CalComponent ecal { get; private set; }
 
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
-        
+
         public EventType event_type { get; private set; }
-        
+
         public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
 
             this.original_source = source;
@@ -78,7 +78,7 @@ public class EventDialog : Gtk.Window {
 
             this.source = source ?? sourcemgr.DEFAULT_SOURCE;
 
-            sources = sourcemgr.get_editable_sources ();       
+            sources = sourcemgr.get_editable_sources ();
 
             if (original_group != null && original_source != null)
                 this.can_edit = sourcemgr.can_edit_source (original_group, original_source);
@@ -88,7 +88,7 @@ public class EventDialog : Gtk.Window {
 
             // Select the first calendar we can find, if none is default
             if (this.source == null)
-                this.source = sources.get (0);       
+                this.source = sources.get (0);
 
             this.sourcemgr = sourcemgr;
 
@@ -107,7 +107,7 @@ public class EventDialog : Gtk.Window {
             window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
             //set_flags(Gtk.DialogFlags.DESTROY_WITH_PARENT);
             transient_for = window;
-            
+
             // Build dialog
             build_dialog (add_event);
 
@@ -119,7 +119,7 @@ public class EventDialog : Gtk.Window {
 
         //--- Public Methods ---//
 
-            
+
         /**
          * Save the values in the dialog into the component.
          */
@@ -168,7 +168,7 @@ public class EventDialog : Gtk.Window {
             // Save the guests
             // First, clear the guests
             int count = comp.count_properties (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
-            
+
             for (int i = 0; i < count; i++) {
                 unowned iCal.icalproperty remove_prop = comp.get_first_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
 
@@ -186,7 +186,7 @@ public class EventDialog : Gtk.Window {
 
             // First, clear the comments
             count = comp.count_properties (iCal.icalproperty_kind.COMMENT_PROPERTY);
-            
+
             for (int i = 0; i < count; i++) {
                 unowned iCal.icalproperty remove_prop = comp.get_first_property (iCal.icalproperty_kind.COMMENT_PROPERTY);
 
@@ -214,7 +214,7 @@ public class EventDialog : Gtk.Window {
 
         /**
          * Populate the dialog's widgets with the component's values.
-         */ 
+         */
         void load () {
 
             unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
@@ -280,14 +280,14 @@ public class EventDialog : Gtk.Window {
                 Gtk.TextBuffer buffer = new Gtk.TextBuffer (null);
                 buffer.text = property.get_comment ();
                 comment_textview.set_buffer (buffer);
-            }    
+            }
 
             // Load the source
             calendar_box.set_active_id (this.source.peek_uid());
         }
 
         void build_dialog (bool add_event) {
-            
+
             content_grid = new Gtk.Grid ();
             content_grid.margin_left = 12;
             content_grid.margin_right = 12;
@@ -313,36 +313,36 @@ public class EventDialog : Gtk.Window {
 
             var allday_label = new Gtk.Label (_("All day:"));
             allday_label.set_alignment (1.0f, 0.5f);
-            
+
             allday_switch = new Gtk.Switch ();
-            
+
             var to_label = make_label (_("To:"));
-            
+
             var allday_switch_grid = new Gtk.Grid ();
-            
+
             to_date_picker = make_date_picker ();
             to_date_picker.notify["date"].connect ( () => {on_date_modified(1);} );
             to_time_picker = make_time_picker ();
             to_time_picker.time_changed.connect ( () => {on_time_modified(1);} );
-            
+
             allday_switch_grid.attach (allday_switch, 0, 0, 1, 1);
 
             allday_switch_grid.set_valign (Gtk.Align.CENTER);
-            
-            allday_switch.notify["active"].connect (() => { 
+
+            allday_switch.notify["active"].connect (() => {
                 on_date_modified (1);
                 from_time_picker.sensitive = !allday_switch.get_active ();
                 to_time_picker.sensitive = !allday_switch.get_active ();
             });
-            
+
             var title_label = make_label (_("Title"));
             title_entry = new Granite.Widgets.HintedEntry (_("Name of Event"));
             title_entry.changed.connect(on_title_entry_modified);
-            
+
             var calendar_label = make_label (_("Calendar"));
 
             var liststore = new Gtk.ListStore (2, typeof (string), typeof(string));
-            
+
             var calcount = 0;
             // Add all the editable sources
             foreach (E.Source source in sources) {
@@ -359,21 +359,21 @@ public class EventDialog : Gtk.Window {
 
             var location_label = make_label (_("Location"));
             location_entry = new Granite.Widgets.HintedEntry (_("John Smith OR Example St."));
-            
+
             var guest_label = make_label (_("Participants"));
             guest_entry = new Maya.View.Widgets.GuestEntry (_("Name or Email Address"));
             guest_entry.check_resize ();
-            
+
             var comment_label = make_label (_("Comments"));
             comment_textview = new Gtk.TextView ();
             comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
-            
+
             var scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.add (comment_textview);
             scrolled.height_request = 100;
             scrolled.set_vexpand(true);
             scrolled.set_hexpand(true);
-            
+
             subgrid.attach (from_label, 0, 0, 4, 1);
             subgrid.attach (from_date_picker, 0, 1, 1, 1);
             subgrid.attach (from_time_picker, 1, 1, 1, 1);
@@ -394,10 +394,10 @@ public class EventDialog : Gtk.Window {
             subgrid.attach (guest_entry, 0, 9, 4, 1);
             subgrid.attach (comment_label, 0, 10, 4, 1);
             subgrid.attach (scrolled, 0, 11, 4, 1);
-            
+
             var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
             buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
-            
+
             #if !USE_GRANITE_DECORATED_WINDOW
             var cancel_button = new Gtk.Button.from_stock (Gtk.Stock.CANCEL);
             cancel_button.clicked.connect (() => {response (false);this.destroy();});
@@ -422,34 +422,34 @@ public class EventDialog : Gtk.Window {
 
             content_grid.attach (subgrid, 0, 0, 1, 1);
             content_grid.attach (buttonbox, 0, 1, 1, 1);
-            
+
             this.add (content_grid);
-            
+
             show_all();
         }
-        
+
         Gtk.Label make_label (string text) {
-        
+
             var label = new Gtk.Label ("<span weight='bold'>" + text + "</span>");
             label.use_markup = true;
             label.set_alignment (0.0f, 0.5f);
-            
+
             return label;
         }
-        
+
         Granite.Widgets.DatePicker make_date_picker () {
-            
+
             var date_picker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
             date_picker.width_request = 200;
-            
+
             return date_picker;
         }
-        
+
         Granite.Widgets.TimePicker make_time_picker () {
-            
+
             var time_picker = new Granite.Widgets.TimePicker.with_format (Maya.Settings.TimeFormat ());
             time_picker.width_request = 120;
-            
+
             return time_picker;
         }
 
@@ -460,11 +460,11 @@ public class EventDialog : Gtk.Window {
         void on_date_modified (int index) {
             var start_date = from_date_picker.date;
             var end_date = to_date_picker.date;
-            
+
             switch (index) {
             case 0:
                 if (start_date.get_year () == end_date.get_year ()) {
-                    
+
                     if (start_date.get_day_of_year () >= end_date.get_day_of_year ()) {
                         to_date_picker.date = from_date_picker.date;
                     }
@@ -481,16 +481,16 @@ public class EventDialog : Gtk.Window {
             var end_date = to_date_picker.date;
             var start_time = from_time_picker.time;
             var end_time = to_time_picker.time;
-            
+
             switch (index) {
             case 0:
                 if (start_date.get_year () == end_date.get_year ()) {
-                    
+
                     if (start_date.get_day_of_year () == end_date.get_day_of_year ()) {
 
-                        if (start_time.get_hour () > end_time.get_hour ()) 
+                        if (start_time.get_hour () > end_time.get_hour ())
                             to_time_picker.time = from_time_picker.time.add_hours(1);
-                        
+
                         if ((start_time.get_hour () == end_time.get_hour ()) && (start_time.get_minute () >= end_time.get_minute ()))
                             to_time_picker.time = from_time_picker.time.add_hours(1);
                     }
@@ -510,7 +510,7 @@ public class EventDialog : Gtk.Window {
             }
 
             create_button.sensitive = is_valid_event ();
-            
+
             if (!is_valid_event())
                 create_button.set_tooltip_text (_("Your event has to be named and has to have a valid date"));
             else
@@ -560,7 +560,7 @@ public class EventDialog : Gtk.Window {
         }
 
     }
-    
+
 
 }
 

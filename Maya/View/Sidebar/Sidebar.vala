@@ -33,18 +33,18 @@ namespace Maya.View {
 
         // Sent out when an event is deselected.
         public signal void event_deselected (E.CalComponent event);
-    
+
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
         public Sidebar (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
-            
+
             scrolled_window = new Gtk.ScrolledWindow (null, null);
             scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
             scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
-            
+
             label_box = new Gtk.EventBox ();
-            
+
             /* label settings */
             Gtk.Label label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
             label.sensitive = false;

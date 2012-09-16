@@ -173,7 +173,7 @@ public class Grid : Gtk.Grid {
 
         return day;
     }
-    
+
     /**
      * Puts the given event on the grid.
      */
@@ -204,7 +204,7 @@ public class Grid : Gtk.Grid {
         assert(grid_day != null);
         grid_day.add_event_button(button);
     }
-    
+
     /**
      * Removes the given event from the grid.
      */
@@ -213,7 +213,7 @@ public class Grid : Gtk.Grid {
             grid_day.remove_event (event);
         }
     }
-    
+
     /**
      * Removes all events from the grid.
      */

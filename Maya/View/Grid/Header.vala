@@ -26,7 +26,7 @@ public class Header : Gtk.EventBox {
     private Gtk.Label[] labels;
 
     public Header () {
-        
+
         header_grid = new Gtk.Grid();
         header_grid.insert_column (7);
         header_grid.insert_row (1);
@@ -36,24 +36,24 @@ public class Header : Gtk.EventBox {
         header_grid.row_spacing = 0;
 
         var style_provider = Util.Css.get_css_provider ();
-    
+
         // EventBox properties
         set_visible_window (true); // needed for style
         get_style_context ().add_provider (style_provider, 600);
         get_style_context ().add_class ("header");
-        
+
         labels = new Gtk.Label[7];
         for (int c = 0; c < 7; c++) {
             labels[c] = new Gtk.Label ("");
             labels[c].draw.connect (on_draw);
             header_grid.attach (labels[c], c, 0, 1, 1);
         }
-        
+
         add (header_grid);
     }
-    
+
     public void update_columns (int week_starts_on) {
-        
+
         var date = Util.strip_time(new DateTime.now_local ());
         date = date.add_days (week_starts_on - date.get_day_of_week ());
         foreach (var label in labels) {
@@ -61,21 +61,21 @@ public class Header : Gtk.EventBox {
             date = date.add_days (1);
         }
     }
-    
+
     private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
-    
+
         Gtk.Allocation size;
         widget.get_allocation (out size);
-        
+
         // Draw left border
         cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
         cr.line_to (0.5, 0.5); // move to upper left corner
-        
+
         cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
         cr.set_line_width (1.0);
         cr.set_antialias (Cairo.Antialias.NONE);
         cr.stroke ();
-        
+
         return false;
     }
 }
