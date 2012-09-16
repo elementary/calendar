@@ -398,13 +398,7 @@ public class EventDialog : Gtk.Window {
             var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
             buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
 
-            #if !USE_GRANITE_DECORATED_WINDOW
             var cancel_button = new Gtk.Button.from_stock (Gtk.Stock.CANCEL);
-            cancel_button.clicked.connect (() => {response (false);this.destroy();});
-            buttonbox.pack_end (cancel_button);
-            #endif
-
-            var cancel_button = new Gtk.Button.from_stock("Cancel");
             if (add_event) {
                 create_button = new Gtk.Button.with_label (_("Create Event"));
             }
