@@ -1,0 +1,164 @@
+# Estonian translation for maya
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the maya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: maya\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"PO-Revision-Date: 2012-09-22 15:59+0000\n"
+"Last-Translator: Kristjan Vool <Unknown>\n"
+"Language-Team: Estonian <et@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2012-09-23 04:48+0000\n"
+"X-Generator: Launchpad (build 15985)\n"
+
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Sündmuste vaatamine ja haldamine"
+
+#. maya.desktop:5
+msgid "Calendar"
+msgstr "Kalender"
+
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Lisa sündmus"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Selles arvutis"
+
+msgid "Webcal"
+msgstr "Veebikalender"
+
+msgid "Contacts"
+msgstr "Kontaktid"
+
+msgid "Personal"
+msgstr "Personaalne"
+
+msgid "%B %e, %Y"
+msgstr "%e. %B, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %e. %B"
+
+msgid "%l:%M %p"
+msgstr "%H:%M"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Add Event"
+msgstr "Lisa sündmus"
+
+msgid "Edit Event"
+msgstr "Muuda sündmust"
+
+msgid "From:"
+msgstr "Alates:"
+
+msgid "All day:"
+msgstr "Terve päev:"
+
+msgid "To:"
+msgstr "Kuni:"
+
+msgid "Title"
+msgstr "Nimi:"
+
+msgid "Name of Event"
+msgstr "Sündmuse nimi"
+
+msgid "Location"
+msgstr "Asukoht:"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith / Näite tn."
+
+msgid "Participants"
+msgstr "Osalejad:"
+
+msgid "Name or Email Address"
+msgstr "Nimi või e-maili aadress"
+
+msgid "Comments"
+msgstr "Märkmed:"
+
+msgid "Create Event"
+msgstr "Lisa sündmus"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Sündmusel peab olema nimi ja sobiv kuupäev"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Lisa uus sündmus"
+
+msgid "Edit the selected event"
+msgstr "Muuda valitud sündmust"
+
+msgid "Delete the selected event"
+msgstr "Kustuta valitud sündmus"
+
+msgid "Select calendars to display"
+msgstr "Vali kuvatavad kalendrid"
+
+msgid "Search Events"
+msgstr "Otsi sündmusi..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Ekspordi või jaga vaikimisi kalendrit"
+
+#. Create everything
+msgid "Today"
+msgstr "Täna"
+
+msgid "Fullscreen"
+msgstr "Täisekraan"
+
+msgid "Show Week Numbers"
+msgstr "Näita nädalate anumbreid"
+
+msgid "Import..."
+msgstr "Impordi..."
+
+msgid "Sync..."
+msgstr "Sünkroniseeri..."
+
+msgid "About"
+msgstr "Programmist"
+
+msgid "Add calendar"
+msgstr "Lisa kalender..."
+
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr "Kuupäeva valides kuvatakse valitud sündmused siia."
+
+msgid "Starts: \t"
+msgstr "Algab: \t"
+
+msgid "Ends: \t"
+msgstr "Lõpeb: \t"
+
+msgid "all day"
+msgstr "terve päev"
+
+msgid "at"
+msgstr "kell"
+
+msgid "Export Calendar..."
+msgstr "Ekspordi kalender..."
+
+msgid "calendar.ics"
+msgstr "kalender.ics"
