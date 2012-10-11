@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
-"PO-Revision-Date: 2012-04-05 18:48+0000\n"
-"Last-Translator: Jiří Šebele <Unknown>\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"PO-Revision-Date: 2012-10-10 18:14+0000\n"
+"Last-Translator: plopp <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-01 05:22+0000\n"
-"X-Generator: Launchpad (build 15890)\n"
+"X-Launchpad-Export-Date: 2012-10-11 05:24+0000\n"
+"X-Generator: Launchpad (build 16118)\n"
+"Language: cs\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+#. maya.desktop:5
+msgid "Calendar"
+msgstr "Kalendář"
+
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "Přidat událost"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "V tomto počítači"
+
+msgid "Webcal"
+msgstr "Webcal"
+
+msgid "Contacts"
+msgstr "Kontakty"
+
+msgid "Personal"
+msgstr "Osobní"
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%H:%M"
-msgstr "%H:%M"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-msgid "About"
-msgstr ""
+msgid "%H:%M"
+msgstr "%H:%M"
 
 msgid "Add Event"
 msgstr "Přidat událost"
 
-msgid "Add calendar"
-msgstr ""
+msgid "Edit Event"
+msgstr "Upravit událost"
+
+msgid "From:"
+msgstr "From:"
 
 msgid "All day:"
 msgstr "Celý den:"
 
-#. maya.desktop:5
-msgid "Calendar"
+msgid "To:"
+msgstr "Pro:"
+
+msgid "Title"
+msgstr "Název"
+
+msgid "Name of Event"
+msgstr "Název události"
+
+msgid "Location"
+msgstr "Místo"
+
+msgid "John Smith OR Example St."
 msgstr ""
+
+msgid "Participants"
+msgstr "Účastníci"
+
+msgid "Name or Email Address"
+msgstr "Jméno nebo Email"
 
 msgid "Comments"
 msgstr "Komentáře"
 
-msgid "Contacts"
-msgstr ""
-
 msgid "Create Event"
 msgstr "Vytvořit událost"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Tvá událost musí být pojmenována a mít platné datum"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,89 +103,42 @@ msgstr "Vytvořit událost"
 msgid "Create a new event"
 msgstr "Vytvořit novou událost"
 
-msgid "Delete the selected event"
-msgstr "Odstranit vybranou událost"
-
-msgid "Edit Event"
-msgstr "Upravit událost"
-
 msgid "Edit the selected event"
 msgstr "Upravit vybranou událost"
 
-msgid "Ends: \t\t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "Exportovat nebo Sdílet výchozí kalendář"
-
-msgid "From:"
-msgstr "From:"
-
-msgid "Fullscreen"
-msgstr "Na celou obrazovku"
-
-msgid "Import..."
-msgstr "Importovat..."
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Location"
-msgstr "Místo"
-
-msgid "Name of Event"
-msgstr "Název události"
-
-msgid "Name or Email Address"
-msgstr "Jméno nebo Email"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Participants"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Search Events"
-msgstr ""
+msgid "Delete the selected event"
+msgstr "Odstranit vybranou událost"
 
 msgid "Select calendars to display"
 msgstr "Vyberte kalendáře, které zobrazit"
 
-msgid "Show Week Numbers"
-msgstr "Zobrazovat čísla týdnů"
+msgid "Search Events"
+msgstr "Hledat události"
 
-msgid "Starts: \t"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Synchronizovat..."
-
-msgid "Title"
-msgstr "Název"
-
-msgid "To:"
-msgstr "Pro:"
+msgid "Export or Share the default Calendar"
+msgstr "Exportovat nebo Sdílet výchozí kalendář"
 
 #. Create everything
 msgid "Today"
 msgstr "Dnes"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
+msgid "Fullscreen"
+msgstr "Na celou obrazovku"
 
-msgid "Webcal"
-msgstr ""
+msgid "Show Week Numbers"
+msgstr "Zobrazovat čísla týdnů"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgid "Import..."
+msgstr "Importovat..."
+
+msgid "Sync..."
+msgstr "Synchronizovat..."
+
+msgid "About"
+msgstr "O aplikaci"
+
+msgid "Add calendar"
+msgstr "Přidat kalendář"
 
 #. label settings
 msgid ""
@@ -151,21 +146,26 @@ msgid ""
 "events."
 msgstr "Poté co  vyberete datum se zde zobrazí nadcházející události."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr ""
+msgid "Starts: \t"
+msgstr "Začátek: \t"
+
+msgid "Ends: \t"
+msgstr "Konec: \t"
 
 msgid "all day"
-msgstr ""
+msgstr "celý den"
 
 msgid "at"
 msgstr "v"
 
+msgid "Export Calendar..."
+msgstr "Exportovat kalendář..."
+
 msgid "calendar.ics"
 msgstr ""
 
-#~ msgid "Guests"
-#~ msgstr "Hosté"
-
 #~ msgid "all the day"
 #~ msgstr "celý den"
+
+#~ msgid "Guests"
+#~ msgstr "Hosté"
