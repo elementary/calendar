@@ -1,174 +1,164 @@
-# Turkish translation for maya
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# Galician translation for maya
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the maya package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-10-17 20:03+0000\n"
-"Last-Translator: Ferhat TUNÇTAN <ferhattnctn66@gmail.com>\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"PO-Revision-Date: 2012-10-17 14:17+0000\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
+"Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-10-18 04:52+0000\n"
 "X-Generator: Launchpad (build 16160)\n"
-"Language: tr\n"
 
 #. maya.desktop:6
 msgid "View and schedule events"
-msgstr "Etkinlikleri Görüntüle ve Düzenle"
+msgstr "Vexa e programe actividades"
 
 #. maya.desktop:5
 msgid "Calendar"
-msgstr "Takvim"
+msgstr "Calendario"
 
 #. maya.desktop:18
 msgid "_Add Event"
-msgstr "Olay _Ekle"
+msgstr "_Añadir actividade"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
-msgstr "Bu bilgisayarda"
+msgstr "Neste computador"
 
 msgid "Webcal"
-msgstr "Webcal"
+msgstr "Calendario web"
 
 msgid "Contacts"
-msgstr "Kişiler"
+msgstr "Contactos"
 
 msgid "Personal"
-msgstr "Kişisel"
+msgstr "Persoal"
 
 msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
+msgstr "%e de %B de %Y"
 
 msgid "%A, %b %d"
-msgstr "%A, %b %d"
+msgstr "%A, %d de %b"
 
 msgid "%l:%M %p"
-msgstr "%l:%M %p"
+msgstr "%H:%M"
 
 msgid "%H:%M"
 msgstr "%H:%M"
 
 msgid "Add Event"
-msgstr "Etkinlik Ekle"
+msgstr "Engadir actividade"
 
 msgid "Edit Event"
-msgstr "Etkinliği Düzenle"
+msgstr "Modificar actividade"
 
 msgid "From:"
-msgstr "Başlangıç:"
+msgstr "Desde:"
 
 msgid "All day:"
-msgstr "Tüm gün:"
+msgstr "Todo o día:"
 
 msgid "To:"
-msgstr "Bitiş:"
+msgstr "Ata:"
 
 msgid "Title"
-msgstr "Başlık"
+msgstr "Titulo"
 
 msgid "Name of Event"
-msgstr "Etkinliğin Adı:"
+msgstr "Nome da actividade"
 
 msgid "Location"
-msgstr "Konum"
+msgstr "Localización"
 
 msgid "John Smith OR Example St."
-msgstr "Hasan Hüseyin veya Örnek Sokak"
+msgstr ""
 
 msgid "Participants"
-msgstr "Katılımcılar"
+msgstr "Participantes"
 
 msgid "Name or Email Address"
-msgstr "İsim veya E-posta Adresi"
+msgstr "Nome ou enderezo de correo"
 
 msgid "Comments"
-msgstr "Yorumlar"
+msgstr "Comentários"
 
 msgid "Create Event"
-msgstr "Etkinlik Oluştur"
+msgstr "Crear actividade"
 
 msgid "Your event has to be named and has to have a valid date"
 msgstr ""
-"Etkinliğinizin isimlendirilmiş olması ve geçerli bir tarihte olması gerekiyor"
 
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
-msgstr "Yeni bir etkinlik oluştur"
+msgstr "Crear unha actividade nova"
 
 msgid "Edit the selected event"
-msgstr "Seçili etkinliği düzenle"
+msgstr ""
 
 msgid "Delete the selected event"
-msgstr "Seçili etkinliği sil"
+msgstr "Eliminar a actividade seleccionada"
 
 msgid "Select calendars to display"
-msgstr "Görüntülenecek takvimleri seçin"
+msgstr "Seleccionar axendas para amosar"
 
 msgid "Search Events"
-msgstr "Etkinlikleri Ara"
+msgstr "Buscar actividades"
 
 msgid "Export or Share the default Calendar"
-msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
+msgstr "Exportar ou compartir o calendario predeterminado"
 
 #. Create everything
 msgid "Today"
-msgstr "Bugün"
+msgstr "Hoxe"
 
 msgid "Fullscreen"
-msgstr "Tam ekran"
+msgstr "Pantalla completa"
 
 msgid "Show Week Numbers"
-msgstr "Hafta Numaralarını Göster"
+msgstr "Amosar o número da semana"
 
 msgid "Import..."
-msgstr "İçe Aktar..."
+msgstr "importar..."
 
 msgid "Sync..."
-msgstr "Eşzamanla..."
+msgstr "Sincronizar..."
 
 msgid "About"
-msgstr "Hakkında"
+msgstr "Sobre"
 
 msgid "Add calendar"
-msgstr "Takvim ekle"
+msgstr "Engadir un calendario"
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
-"gösterilecek."
 
 msgid "Starts: \t"
-msgstr "Başlar: \t"
+msgstr "Do: \t"
 
 msgid "Ends: \t"
-msgstr "Biter: \t"
+msgstr "Ao : \t"
 
 msgid "all day"
-msgstr "tüm gün"
+msgstr "todo o día"
 
 msgid "at"
-msgstr "de/da"
+msgstr "ás"
 
 msgid "Export Calendar..."
-msgstr "Takvimi Dışarı Aktar"
+msgstr "Exportar o calendario..."
 
 msgid "calendar.ics"
-msgstr "takvim.ics"
-
-#~ msgid "all the day"
-#~ msgstr "bütün gün"
-
-#~ msgid "Guests"
-#~ msgstr "Misafirler"
+msgstr "calendar.ics"
