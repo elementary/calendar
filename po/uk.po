@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-10-03 17:44+0000\n"
-"Last-Translator: Sergey Kostyuk <ks.hot.ua@gmail.com>\n"
+"PO-Revision-Date: 2012-10-18 22:54+0000\n"
+"Last-Translator: Sho0ter <Sho0ter@mail.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-04 05:43+0000\n"
-"X-Generator: Launchpad (build 16061)\n"
+"X-Launchpad-Export-Date: 2012-10-19 05:58+0000\n"
+"X-Generator: Launchpad (build 16165)\n"
 "Language: uk\n"
 
 #. maya.desktop:6
@@ -28,14 +28,14 @@ msgstr "Календар"
 
 #. maya.desktop:18
 msgid "_Add Event"
-msgstr ""
+msgstr "Додати подію"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
 msgstr "На цьому комп'ютері"
 
 msgid "Webcal"
-msgstr ""
+msgstr "Календар в інтеренеті"
 
 msgid "Contacts"
 msgstr "Контакти"
@@ -47,7 +47,7 @@ msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
 msgid "%A, %b %d"
-msgstr ""
+msgstr "%A, %b %d"
 
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
@@ -86,7 +86,7 @@ msgid "Participants"
 msgstr "Учасники"
 
 msgid "Name or Email Address"
-msgstr ""
+msgstr "Ім'я або адреса електорнної пошти"
 
 msgid "Comments"
 msgstr "Коментарі"
@@ -101,7 +101,7 @@ msgstr "Ваша подія повинна мати назву та корект
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
-msgstr ""
+msgstr "Створити нову подію"
 
 msgid "Edit the selected event"
 msgstr "Редагувати обрану подію"
@@ -113,10 +113,10 @@ msgid "Select calendars to display"
 msgstr "Виберіть календарі для відображення"
 
 msgid "Search Events"
-msgstr ""
+msgstr "Знайти подію"
 
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "Експорт або імпорт календаря по-замовчуванню"
 
 #. Create everything
 msgid "Today"
@@ -126,7 +126,7 @@ msgid "Fullscreen"
 msgstr "Повноекранний режим"
 
 msgid "Show Week Numbers"
-msgstr ""
+msgstr "Показувати номери тижнів"
 
 msgid "Import..."
 msgstr "Імпортувати..."
@@ -135,10 +135,10 @@ msgid "Sync..."
 msgstr "Синхронізація..."
 
 msgid "About"
-msgstr ""
+msgstr "Про програму"
 
 msgid "Add calendar"
-msgstr ""
+msgstr "Додати календар"
 
 #. label settings
 msgid ""
@@ -148,19 +148,19 @@ msgstr ""
 "Ваші майбутні події будуть відображені тут коли ви виберете дату з подіями."
 
 msgid "Starts: \t"
-msgstr ""
+msgstr "Початок: \t"
 
 msgid "Ends: \t"
-msgstr ""
+msgstr "Кінець: \t"
 
 msgid "all day"
-msgstr ""
+msgstr "весь день"
 
 msgid "at"
-msgstr ""
+msgstr "в"
 
 msgid "Export Calendar..."
-msgstr ""
+msgstr "Експортувати календар..."
 
 msgid "calendar.ics"
-msgstr ""
+msgstr "календар.ics"
