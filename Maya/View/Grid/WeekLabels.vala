@@ -57,6 +57,9 @@ public class WeekLabels : Gtk.EventBox {
                 show ();
 
             var next = date;
+            // Find the beginning of the week which is apparently always a monday
+            int days_to_add = (8 - next.get_day_of_week()) % 7;
+            next = next.add_days(days_to_add);
             foreach (var label in labels) {
                 label.label = next.get_week_of_year ().to_string();
                 next = next.add_weeks (1);

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-09 22:37+0100\n"
+"POT-Creation-Date: 2012-11-09 23:04+0100\n"
 "PO-Revision-Date: 2012-11-06 22:03+0000\n"
 "Last-Translator: Tsano Ivanov Vushev <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -18,90 +18,42 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-11-07 05:02+0000\n"
 "X-Generator: Launchpad (build 16232)\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
+msgid "%A, %b %d"
+msgstr "%A, %d, %b"
+
+msgid "%B %e, %Y"
+msgstr "%e %B %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
 msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Add Event"
+msgstr "Добавяне на събитие"
+
+msgid "Add calendar"
+msgstr ""
+
+msgid "All day:"
+msgstr "Цял ден:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Календар"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr ""
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Webcal"
-msgstr ""
+msgid "Comments"
+msgstr "Коментари"
 
 msgid "Contacts"
 msgstr ""
 
-msgid "Personal"
-msgstr "Лично"
-
-msgid "%B %e, %Y"
-msgstr "%e %B %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %d, %b"
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "Добавяне на събитие"
-
-msgid "Edit Event"
-msgstr "Редактиране на събитие"
-
-msgid "From:"
-msgstr "От:"
-
-msgid "All day:"
-msgstr "Цял ден:"
-
-msgid "To:"
-msgstr "До:"
-
-msgid "Title"
-msgstr "Заглавие"
-
-msgid "Name of Event"
-msgstr "Име на събитието"
-
-msgid "Location"
-msgstr "Място"
-
-msgid "John Smith OR Example St."
-msgstr "John Smith или Example St."
-
-msgid "Participants"
-msgstr ""
-
-msgid "Name or Email Address"
-msgstr "Име или имейл адрес"
-
-msgid "Comments"
-msgstr "Коментари"
-
 msgid "Create Event"
 msgstr "Създаване на събитието"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -109,41 +61,94 @@ msgstr ""
 msgid "Create a new event"
 msgstr "Създаване на ново събитие"
 
-msgid "Edit the selected event"
-msgstr "Редактиране на избраното събитие"
-
 msgid "Delete the selected event"
 msgstr "Изтриване на избраното събитие"
 
-msgid "Select calendars to display"
-msgstr "Избор на календари за показване"
+msgid "Edit Event"
+msgstr "Редактиране на събитие"
 
-msgid "Search Events"
+msgid "Edit the selected event"
+msgstr "Редактиране на избраното събитие"
+
+msgid "Ends: \t"
+msgstr ""
+
+msgid "Export Calendar..."
 msgstr ""
 
 msgid "Export or Share the default Calendar"
 msgstr "Експортиране или Споделяне на Календара по подразбиране"
 
-#. Create everything
-msgid "Today"
-msgstr "Днес"
+msgid "From:"
+msgstr "От:"
 
 msgid "Fullscreen"
 msgstr "На цял екран"
 
+msgid "Import..."
+msgstr "Импортиране..."
+
+msgid "John Smith OR Example St."
+msgstr "John Smith или Example St."
+
+msgid "Location"
+msgstr "Място"
+
+msgid "Name of Event"
+msgstr "Име на събитието"
+
+msgid "Name or Email Address"
+msgstr "Име или имейл адрес"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr ""
+
+msgid "Participants"
+msgstr ""
+
+msgid "Personal"
+msgstr "Лично"
+
+msgid "Save Changes"
+msgstr ""
+
+msgid "Search Events"
+msgstr ""
+
+msgid "Select calendars to display"
+msgstr "Избор на календари за показване"
+
 msgid "Show Week Numbers"
 msgstr "Показване на Номерата на Седмиците"
 
-msgid "Import..."
-msgstr "Импортиране..."
+msgid "Starts: \t"
+msgstr ""
 
 msgid "Sync..."
 msgstr "Синхронизация..."
 
-msgid "About"
+msgid "This event can't be edited"
 msgstr ""
 
-msgid "Add calendar"
+msgid "Title"
+msgstr "Заглавие"
+
+msgid "To:"
+msgstr "До:"
+
+#. Create everything
+msgid "Today"
+msgstr "Днес"
+
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Your event has to be named and has to have a valid date"
 msgstr ""
 
 #. label settings
@@ -153,10 +158,8 @@ msgid ""
 msgstr ""
 "Предстоящите събития ще се появят тук, след като изберете дата със събития."
 
-msgid "Starts: \t"
-msgstr ""
-
-msgid "Ends: \t"
+#. maya.desktop:18
+msgid "_Add Event"
 msgstr ""
 
 msgid "all day"
@@ -164,9 +167,6 @@ msgstr ""
 
 msgid "at"
 msgstr "в"
-
-msgid "Export Calendar..."
-msgstr ""
 
 msgid "calendar.ics"
 msgstr ""
