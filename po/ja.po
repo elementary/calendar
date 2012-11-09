@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-11-09 22:37+0100\n"
 "PO-Revision-Date: 2012-07-09 05:36+0000\n"
 "Last-Translator: Joji Bronner <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -71,7 +71,7 @@ msgid "Edit the selected event"
 msgstr "選択された予定を編集"
 
 #, fuzzy
-msgid "Ends: \t\t"
+msgid "Ends: \t"
 msgstr "終了時刻: \t"
 
 msgid "Export Calendar..."
@@ -111,6 +111,9 @@ msgstr "参加者"
 msgid "Personal"
 msgstr "パーソナル"
 
+msgid "Save Changes"
+msgstr ""
+
 msgid "Search Events"
 msgstr "イベントの検索"
 
@@ -125,6 +128,9 @@ msgstr "始まる時間: \t"
 
 msgid "Sync..."
 msgstr "同期..."
+
+msgid "This event can't be edited"
+msgstr ""
 
 msgid "Title"
 msgstr "タイトル"

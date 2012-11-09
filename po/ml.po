@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-11-09 22:37+0100\n"
 "PO-Revision-Date: 2012-06-25 23:42+0000\n"
 "Last-Translator: Niels Avonds <Unknown>\n"
 "Language-Team: Malayalam <ml@li.org>\n"
@@ -70,7 +70,7 @@ msgstr "ഇവന്റില്‍ മാറ്റം വരുത്തുക"
 msgid "Edit the selected event"
 msgstr "തിരഞ്ഞെടുത്ത ഇവന്റില്‍ മാറ്റം വരുത്തുക"
 
-msgid "Ends: \t\t"
+msgid "Ends: \t"
 msgstr ""
 
 msgid "Export Calendar..."
@@ -110,6 +110,9 @@ msgstr ""
 msgid "Personal"
 msgstr "വ്യക്തിപരം"
 
+msgid "Save Changes"
+msgstr ""
+
 msgid "Search Events"
 msgstr ""
 
@@ -123,6 +126,9 @@ msgid "Starts: \t"
 msgstr "തുടക്കം: \t"
 
 msgid "Sync..."
+msgstr ""
+
+msgid "This event can't be edited"
 msgstr ""
 
 msgid "Title"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-11-09 22:37+0100\n"
 "PO-Revision-Date: 2012-07-15 11:31+0000\n"
 "Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
@@ -71,7 +71,7 @@ msgid "Edit the selected event"
 msgstr "Editatu hautatutako gertaera"
 
 #, fuzzy
-msgid "Ends: \t\t"
+msgid "Ends: \t"
 msgstr "Bukaera: \t"
 
 msgid "Export Calendar..."
@@ -111,6 +111,9 @@ msgstr "Parte-hartzaileak"
 msgid "Personal"
 msgstr "Pertsonala"
 
+msgid "Save Changes"
+msgstr ""
+
 msgid "Search Events"
 msgstr "Bilatu gertaerak"
 
@@ -125,6 +128,9 @@ msgstr "Hasiera: \t"
 
 msgid "Sync..."
 msgstr "Sinkronizatu..."
+
+msgid "This event can't be edited"
+msgstr ""
 
 msgid "Title"
 msgstr "Izenburua"

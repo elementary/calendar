@@ -9,7 +9,7 @@ Icon=office-calendar
 Terminal=false
 Categories=GTK;Office;Calendar;
 StartupNotify=true
-MimeType=text/calendar
+MimeType=text/calendar;
 X-GNOME-Gettext-Domain=maya
 
 X-Ayatana-Desktop-Shortcuts=AddEvent

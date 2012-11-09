@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-11-09 22:37+0100\n"
 "PO-Revision-Date: 2012-07-08 10:01+0000\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -71,7 +71,7 @@ msgid "Edit the selected event"
 msgstr "Kiválasztott esemény szerkesztése"
 
 #, fuzzy
-msgid "Ends: \t\t"
+msgid "Ends: \t"
 msgstr "Vég: \t"
 
 msgid "Export Calendar..."
@@ -111,6 +111,9 @@ msgstr "Résztvevők"
 msgid "Personal"
 msgstr "Személyes"
 
+msgid "Save Changes"
+msgstr ""
+
 msgid "Search Events"
 msgstr "Esemény keresése"
 
@@ -125,6 +128,9 @@ msgstr "Kezdet: \t"
 
 msgid "Sync..."
 msgstr "Szinkronizálás..."
+
+msgid "This event can't be edited"
+msgstr ""
 
 msgid "Title"
 msgstr "Cím"

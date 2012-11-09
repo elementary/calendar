@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-11-09 22:37+0100\n"
 "PO-Revision-Date: 2012-07-09 16:56+0000\n"
 "Last-Translator: Ivlev Denis <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -71,7 +71,7 @@ msgid "Edit the selected event"
 msgstr "Редактировать выбранное событие"
 
 #, fuzzy
-msgid "Ends: \t\t"
+msgid "Ends: \t"
 msgstr "Конец: \t"
 
 msgid "Export Calendar..."
@@ -111,6 +111,9 @@ msgstr "Участники"
 msgid "Personal"
 msgstr "Личное"
 
+msgid "Save Changes"
+msgstr ""
+
 msgid "Search Events"
 msgstr "Поиск событий"
 
@@ -125,6 +128,9 @@ msgstr "Начало: \t"
 
 msgid "Sync..."
 msgstr "Синхронизация"
+
+msgid "This event can't be edited"
+msgstr ""
 
 msgid "Title"
 msgstr "Заголовок"

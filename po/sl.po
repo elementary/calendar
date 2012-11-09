@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-11-09 22:37+0100\n"
 "PO-Revision-Date: 2012-06-25 15:34+0000\n"
 "Last-Translator: MarkoD <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
@@ -70,7 +70,7 @@ msgstr "Uredi dogodek"
 msgid "Edit the selected event"
 msgstr "Uredi izbrani dogodek"
 
-msgid "Ends: \t\t"
+msgid "Ends: \t"
 msgstr ""
 
 msgid "Export Calendar..."
@@ -110,6 +110,9 @@ msgstr "Udeleženci"
 msgid "Personal"
 msgstr "Osebno"
 
+msgid "Save Changes"
+msgstr ""
+
 msgid "Search Events"
 msgstr "Išči dogodke"
 
@@ -124,6 +127,9 @@ msgstr ""
 
 msgid "Sync..."
 msgstr "Uskladi ..."
+
+msgid "This event can't be edited"
+msgstr ""
 
 msgid "Title"
 msgstr "Naslov"

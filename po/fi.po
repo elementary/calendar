@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-11-09 22:37+0100\n"
 "PO-Revision-Date: 2012-09-09 20:34+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -71,7 +71,7 @@ msgid "Edit the selected event"
 msgstr "Muokkaa valittua tapahtumaa"
 
 #, fuzzy
-msgid "Ends: \t\t"
+msgid "Ends: \t"
 msgstr "Päättyy: \t"
 
 msgid "Export Calendar..."
@@ -111,6 +111,9 @@ msgstr "Osallistujat"
 msgid "Personal"
 msgstr "Henkilökohtaiset"
 
+msgid "Save Changes"
+msgstr ""
+
 msgid "Search Events"
 msgstr "Etsi tapahtumia"
 
@@ -125,6 +128,9 @@ msgstr "Alkaa: \t"
 
 msgid "Sync..."
 msgstr "Synkronoi..."
+
+msgid "This event can't be edited"
+msgstr ""
 
 msgid "Title"
 msgstr "Otsikko"

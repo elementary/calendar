@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-11-09 22:37+0100\n"
 "PO-Revision-Date: 2012-05-30 20:50+0000\n"
 "Last-Translator: shahriar <shahriar.haque@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
@@ -70,7 +70,7 @@ msgstr "অনুষ্ঠান সম্পাদনা"
 msgid "Edit the selected event"
 msgstr ""
 
-msgid "Ends: \t\t"
+msgid "Ends: \t"
 msgstr ""
 
 msgid "Export Calendar..."
@@ -110,6 +110,9 @@ msgstr ""
 msgid "Personal"
 msgstr ""
 
+msgid "Save Changes"
+msgstr ""
+
 msgid "Search Events"
 msgstr ""
 
@@ -123,6 +126,9 @@ msgid "Starts: \t"
 msgstr ""
 
 msgid "Sync..."
+msgstr ""
+
+msgid "This event can't be edited"
 msgstr ""
 
 msgid "Title"

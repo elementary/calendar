@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-11-09 22:37+0100\n"
 "PO-Revision-Date: 2012-08-13 22:31+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
@@ -71,7 +71,7 @@ msgid "Edit the selected event"
 msgstr "Sunting peristiwa terpilih"
 
 #, fuzzy
-msgid "Ends: \t\t"
+msgid "Ends: \t"
 msgstr "Tamat: \t"
 
 msgid "Export Calendar..."
@@ -111,6 +111,9 @@ msgstr "Peserta"
 msgid "Personal"
 msgstr "Peribadi"
 
+msgid "Save Changes"
+msgstr ""
+
 msgid "Search Events"
 msgstr "Gelintar Peristiwa"
 
@@ -125,6 +128,9 @@ msgstr "Mula: \t"
 
 msgid "Sync..."
 msgstr "Segerak..."
+
+msgid "This event can't be edited"
+msgstr ""
 
 msgid "Title"
 msgstr "Tajuk"

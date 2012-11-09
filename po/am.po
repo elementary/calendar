@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-11-09 22:37+0100\n"
 "PO-Revision-Date: 2012-09-23 18:28+0000\n"
 "Last-Translator: samson <Unknown>\n"
 "Language-Team: Amharic <am@li.org>\n"
@@ -71,7 +71,7 @@ msgid "Edit the selected event"
 msgstr "የተመረጠውን ሁኔታ ማረሚያ"
 
 #, fuzzy
-msgid "Ends: \t\t"
+msgid "Ends: \t"
 msgstr "መጨረሻ : [ንዑስ] \t"
 
 msgid "Export Calendar..."
@@ -111,6 +111,9 @@ msgstr "ተሳታፊዎች"
 msgid "Personal"
 msgstr "የግል"
 
+msgid "Save Changes"
+msgstr ""
+
 msgid "Search Events"
 msgstr "ሁኔታዎችን መፈለጊያ"
 
@@ -125,6 +128,9 @@ msgstr "መጀመሪያ : [ንዑስ] \t"
 
 msgid "Sync..."
 msgstr "ማስማሚያ..."
+
+msgid "This event can't be edited"
+msgstr ""
 
 msgid "Title"
 msgstr "አርእስት"

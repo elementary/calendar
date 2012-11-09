@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-21 22:15+0200\n"
+"POT-Creation-Date: 2012-11-09 22:37+0100\n"
 "PO-Revision-Date: 2012-07-27 15:14+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -71,7 +71,7 @@ msgid "Edit the selected event"
 msgstr "編輯所選事件"
 
 #, fuzzy
-msgid "Ends: \t\t"
+msgid "Ends: \t"
 msgstr "結束： \t"
 
 msgid "Export Calendar..."
@@ -111,6 +111,9 @@ msgstr "參與者"
 msgid "Personal"
 msgstr "個人"
 
+msgid "Save Changes"
+msgstr ""
+
 msgid "Search Events"
 msgstr "搜尋事件"
 
@@ -125,6 +128,9 @@ msgstr "開始︰ \t"
 
 msgid "Sync..."
 msgstr "同步..."
+
+msgid "This event can't be edited"
+msgstr ""
 
 msgid "Title"
 msgstr "標題"
