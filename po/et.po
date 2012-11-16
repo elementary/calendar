@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-11-14 21:09+0000\n"
+"PO-Revision-Date: 2012-11-15 09:03+0000\n"
 "Last-Translator: Kristjan Vool <Unknown>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-15 05:11+0000\n"
-"X-Generator: Launchpad (build 16265)\n"
+"X-Launchpad-Export-Date: 2012-11-16 04:51+0000\n"
+"X-Generator: Launchpad (build 16272)\n"
 "Language: et\n"
 
 #. maya.desktop:6
 msgid "View and schedule events"
-msgstr "Sündmuste vaatamine ja haldamine"
+msgstr "Sündmuste planeerimine ja haldamine"
 
 #. maya.desktop:5
 msgid "Calendar"
@@ -56,10 +56,10 @@ msgid "%H:%M"
 msgstr "%H:%M"
 
 msgid "Add Event"
-msgstr "Lisa sündmus"
+msgstr "Sündmuse lisamine"
 
 msgid "Edit Event"
-msgstr "Muuda sündmust"
+msgstr "Sündmuse redigeerimine"
 
 msgid "From:"
 msgstr "Alates:"
@@ -126,7 +126,7 @@ msgid "Fullscreen"
 msgstr "Täisekraan"
 
 msgid "Show Week Numbers"
-msgstr "Näita nädalate anumbreid"
+msgstr "Näita nädalate numbreid"
 
 msgid "Import..."
 msgstr "Impordi..."
