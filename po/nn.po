@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-09 22:37+0100\n"
-"PO-Revision-Date: 2012-03-28 10:34+0000\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"PO-Revision-Date: 2012-11-19 07:59+0000\n"
 "Last-Translator: Martin Myrvold <Unknown>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
-"Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-01 05:22+0000\n"
-"X-Generator: Launchpad (build 15890)\n"
+"X-Launchpad-Export-Date: 2012-11-20 05:09+0000\n"
+"X-Generator: Launchpad (build 16286)\n"
+"Language: nn\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Vis og planlegg hendingar"
+
+#. maya.desktop:5
+msgid "Calendar"
+msgstr "Kalendar"
+
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Lag ny hending"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "På denne datamaskina"
+
+msgid "Webcal"
+msgstr "Internettkalendar"
+
+msgid "Contacts"
+msgstr "Kontaktar"
+
+msgid "Personal"
+msgstr "Personleg"
 
 msgid "%B %e, %Y"
 msgstr "%B %e %Y"
 
-msgid "%H:%M"
-msgstr "%H:%M"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
 msgid "%l:%M %p"
 msgstr "%l.%M %p"
 
-msgid "About"
-msgstr ""
+msgid "%H:%M"
+msgstr "%H:%M"
 
 msgid "Add Event"
 msgstr "Lag hending"
 
-msgid "Add calendar"
-msgstr ""
+msgid "Edit Event"
+msgstr "Endre hending"
+
+msgid "From:"
+msgstr "Frå:"
 
 msgid "All day:"
 msgstr "Heile dagen:"
 
-#. maya.desktop:5
-msgid "Calendar"
-msgstr ""
+msgid "To:"
+msgstr "Til:"
+
+msgid "Title"
+msgstr "Tittel"
+
+msgid "Name of Event"
+msgstr "Namn på hending"
+
+msgid "Location"
+msgstr "Stad"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith ELLER Eksempel gate"
+
+msgid "Participants"
+msgstr "Deltakarar"
+
+msgid "Name or Email Address"
+msgstr "Namn eller epostadresse"
 
 msgid "Comments"
 msgstr "Kommentarar"
 
-msgid "Contacts"
-msgstr ""
-
 msgid "Create Event"
 msgstr "Lag hending"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Hendinga er nødt til å ha eit namn og ein gyldig dato"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,95 +103,42 @@ msgstr "Lag hending"
 msgid "Create a new event"
 msgstr "Lag ei ny hending"
 
-msgid "Delete the selected event"
-msgstr "Slett denne hendinga"
-
-msgid "Edit Event"
-msgstr "Endre hending"
-
 msgid "Edit the selected event"
 msgstr "Endre denne hendinga"
 
-msgid "Ends: \t"
-msgstr ""
-
-msgid "Export Calendar..."
-msgstr ""
-
-msgid "Export or Share the default Calendar"
-msgstr "Eksporter eller del kalenderen som er standard"
-
-msgid "From:"
-msgstr "Frå:"
-
-msgid "Fullscreen"
-msgstr "Fullskjerm"
-
-msgid "Import..."
-msgstr "Importer..."
-
-msgid "John Smith OR Example St."
-msgstr "John Smith ELLER Eksempel gate"
-
-msgid "Location"
-msgstr "Stad"
-
-msgid "Name of Event"
-msgstr "Namn på hending"
-
-msgid "Name or Email Address"
-msgstr "Namn eller epostadresse"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr ""
-
-msgid "Participants"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr ""
+msgid "Delete the selected event"
+msgstr "Slett denne hendinga"
 
 msgid "Select calendars to display"
 msgstr "Vel kva kalenderar som skal visast"
 
-msgid "Show Week Numbers"
-msgstr "Vis vekenummer"
+msgid "Search Events"
+msgstr "Søk hendingar"
 
-msgid "Starts: \t"
-msgstr ""
-
-msgid "Sync..."
-msgstr "Synkroniser..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "Tittel"
-
-msgid "To:"
-msgstr "Til:"
+msgid "Export or Share the default Calendar"
+msgstr "Eksporter eller del kalenderen som er standard"
 
 #. Create everything
 msgid "Today"
 msgstr "I dag"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
+msgid "Fullscreen"
+msgstr "Fullskjerm"
 
-msgid "Webcal"
-msgstr ""
+msgid "Show Week Numbers"
+msgstr "Vis vekenummer"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgid "Import..."
+msgstr "Importer..."
+
+msgid "Sync..."
+msgstr "Synkroniser..."
+
+msgid "About"
+msgstr "Om"
+
+msgid "Add calendar"
+msgstr "Legg til kalendar"
 
 #. label settings
 msgid ""
@@ -158,21 +147,26 @@ msgid ""
 msgstr ""
 "Dine komande hendingar vil verta vist her, når du vel ein dato med hendingar."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr ""
+msgid "Starts: \t"
+msgstr "Startar: \t"
+
+msgid "Ends: \t"
+msgstr "Sluttar: \t"
 
 msgid "all day"
-msgstr ""
+msgstr "heile dagen"
 
 msgid "at"
 msgstr "til"
 
-msgid "calendar.ics"
-msgstr ""
+msgid "Export Calendar..."
+msgstr "Eksporter kalendar..."
 
-#~ msgid "Guests"
-#~ msgstr "Gjestar"
+msgid "calendar.ics"
+msgstr "kalendar.ics"
 
 #~ msgid "all the day"
 #~ msgstr "heile dagen"
+
+#~ msgid "Guests"
+#~ msgstr "Gjestar"
