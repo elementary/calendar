@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-11-20 15:08+0000\n"
+"PO-Revision-Date: 2012-11-21 17:55+0000\n"
 "Last-Translator: Martin Myrvold <Unknown>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-21 04:58+0000\n"
+"X-Launchpad-Export-Date: 2012-11-22 05:18+0000\n"
 "X-Generator: Launchpad (build 16293)\n"
 "Language: nn\n"
 
@@ -28,14 +28,14 @@ msgstr "Kalender"
 
 #. maya.desktop:18
 msgid "_Add Event"
-msgstr "_Lag ny hending"
+msgstr "_Lag ei ny hending"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
 msgstr "På denne datamaskina"
 
 msgid "Webcal"
-msgstr "Internettkalendar"
+msgstr "Internettkalender"
 
 msgid "Contacts"
 msgstr "Kontaktar"
@@ -56,7 +56,7 @@ msgid "%H:%M"
 msgstr "%H:%M"
 
 msgid "Add Event"
-msgstr "Lag hending"
+msgstr "Lag ei ny hending"
 
 msgid "Edit Event"
 msgstr "Endre hending"
@@ -74,13 +74,13 @@ msgid "Title"
 msgstr "Tittel"
 
 msgid "Name of Event"
-msgstr "Namn på hending"
+msgstr "Namn på hendinga"
 
 msgid "Location"
 msgstr "Stad"
 
 msgid "John Smith OR Example St."
-msgstr "Ola Nordmann ELLER Karl Johans Gate"
+msgstr "Ola Nordmann ELLER Karl Eksempel Gate"
 
 msgid "Participants"
 msgstr "Deltakarar"
@@ -92,7 +92,7 @@ msgid "Comments"
 msgstr "Kommentarar"
 
 msgid "Create Event"
-msgstr "Lag hending"
+msgstr "Lag hendinga"
 
 msgid "Your event has to be named and has to have a valid date"
 msgstr "Hendinga er nødt til å ha eit namn og ein gyldig dato"
@@ -104,10 +104,10 @@ msgid "Create a new event"
 msgstr "Lag ei ny hending"
 
 msgid "Edit the selected event"
-msgstr "Endre denne hendinga"
+msgstr "Endre dei valgte hendingane"
 
 msgid "Delete the selected event"
-msgstr "Slett denne hendinga"
+msgstr "Slett dei valgte hendingane"
 
 msgid "Select calendars to display"
 msgstr "Vel kva kalenderar som skal visast"
@@ -116,7 +116,7 @@ msgid "Search Events"
 msgstr "Søk i hendingane"
 
 msgid "Export or Share the default Calendar"
-msgstr "Eksporter eller del kalenderen som er standard"
+msgstr "Eksporter eller del kalenderen"
 
 #. Create everything
 msgid "Today"
@@ -160,7 +160,7 @@ msgid "at"
 msgstr "til"
 
 msgid "Export Calendar..."
-msgstr "Eksporter kalendar..."
+msgstr "Eksporter kalender..."
 
 msgid "calendar.ics"
 msgstr "kalendar.ics"
