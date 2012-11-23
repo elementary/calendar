@@ -309,6 +309,9 @@ namespace Maya {
                             }
 
                             break;
+                        case Gdk.Key.@F11:
+                            toolbar.menu.fullscreen.active = !toolbar.menu.fullscreen.active;
+                            break;
                         }
 
                         return false;
