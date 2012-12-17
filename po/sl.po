@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-06-25 15:34+0000\n"
-"Last-Translator: MarkoD <Unknown>\n"
+"PO-Revision-Date: 2012-12-16 13:10+0000\n"
+"Last-Translator: Damir Jerovsek <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-01 05:24+0000\n"
-"X-Generator: Launchpad (build 16319)\n"
+"X-Launchpad-Export-Date: 2012-12-17 05:00+0000\n"
+"X-Generator: Launchpad (build 16372)\n"
 "Language: sl\n"
 
 #. maya.desktop:6
@@ -28,7 +28,7 @@ msgstr "Koledar"
 
 #. maya.desktop:18
 msgid "_Add Event"
-msgstr ""
+msgstr "_Dodaj dogodek"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
@@ -116,7 +116,7 @@ msgid "Search Events"
 msgstr "Išči dogodke"
 
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "Izvozi ali souporabi privzeti koledar"
 
 #. Create everything
 msgid "Today"
@@ -148,10 +148,10 @@ msgstr ""
 "Ko boste izbrali ustrezen datum, bodo tukaj prikazani bližnji dogodki."
 
 msgid "Starts: \t"
-msgstr ""
+msgstr "Začetek: \t"
 
 msgid "Ends: \t"
-msgstr ""
+msgstr "Konec: \t"
 
 msgid "all day"
 msgstr "ves dan"
@@ -163,7 +163,7 @@ msgid "Export Calendar..."
 msgstr "Izvozi koledar ..."
 
 msgid "calendar.ics"
-msgstr ""
+msgstr "koledar.ics"
 
 #~ msgid "all the day"
 #~ msgstr "cel dan"
