@@ -4,7 +4,7 @@ Version=1.0
 Name=Maya
 GenericName=Calendar
 Comment=View and schedule events
-Exec=maya
+Exec=maya-calendar
 Icon=office-calendar
 Terminal=false
 Categories=GTK;Office;Calendar;
@@ -16,5 +16,5 @@ X-Ayatana-Desktop-Shortcuts=AddEvent
 
 [AddEvent Shortcut Group]
 Name=_Add Event
-Exec=maya -a
+Exec=maya-calendar -a
 TargetEnvironment=Unity

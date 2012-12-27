@@ -145,9 +145,9 @@ OPTIONS
     )
 
 add_definitions(${CFLAGS} -Wall -Winit-self -Wwrite-strings -Wunreachable-code -Wstrict-prototypes )
-add_executable(maya ${VALA_C})
+add_executable(maya-calendar ${VALA_C})
 
-install(TARGETS maya RUNTIME DESTINATION bin)
+install(TARGETS maya-calendar RUNTIME DESTINATION bin)
 
 #
 # GSettings Schema
