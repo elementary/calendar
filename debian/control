@@ -1,4 +1,4 @@
-Source: maya
+Source: maya-calendar
 Section: utils
 Priority: optional
 Maintainer: Cody Garver <codygarver@gmail.com>
@@ -17,16 +17,22 @@ Homepage: https://launchpad.net/maya
 
 Package: maya
 Architecture: any
+Depends: maya-calendar, ${misc:Depends}
+Description: transitional dummy package
+ This is a transitional dummy package. It can safely be removed.
+
+Package: maya-calendar
+Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: GCal-syncing GTK+ calendar application
  Maya is a slim, lightweight, GCal-syncing GTK+ calendar application written
  in Vala, specifically for the Elementary project.
 
-Package: maya-dbg
+Package: maya-calendar-dbg
 Architecture: any
 Section: debug
 Priority: extra
-Depends: maya (= ${binary:Version}), ${misc:Depends}
+Depends: maya-calendar (= ${binary:Version}), ${misc:Depends}
 Description: GCal-syncing GTK+ calendar application (debugging symbols)
  Maya is a slim, lightweight, GCal-syncing GTK+ Calendar application written
  in Vala, specifically for the Elementary project.
