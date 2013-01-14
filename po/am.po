@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2013-01-14 01:17-0600\n"
 "PO-Revision-Date: 2012-09-23 18:28+0000\n"
 "Last-Translator: samson <Unknown>\n"
 "Language-Team: Amharic <am@li.org>\n"
+"Language: am\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-12-01 05:24+0000\n"
 "X-Generator: Launchpad (build 16319)\n"
-"Language: am\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "ሁኔታዎችን ማቀጃ እና መመልከቻ"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr "ስለ"
+
+msgid "Add Event"
+msgstr "ሁኔታዎች መጨመሪያ"
+
+msgid "Add calendar"
+msgstr "የቀን መቁጠሪያ መጨመሪያ"
+
+msgid "All day:"
+msgstr "ሙሉ ቀን"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "ቀን መቁጠሪያ"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "ሁኔታዎችን _መጨመሪያ"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "በእዚህ ኮምፒዩተር ላይ"
-
-msgid "Webcal"
-msgstr "የዌብ ቀን መቁጠሪያ"
+msgid "Comments"
+msgstr "አስተያየቶች"
 
 msgid "Contacts"
 msgstr "ግንኙነቶች"
 
-msgid "Personal"
-msgstr "የግል"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "ሁኔታዎች መጨመሪያ"
-
-msgid "Edit Event"
-msgstr "ሁኔታዎችን ማረሚያ"
-
-msgid "From:"
-msgstr "ከ :"
-
-msgid "All day:"
-msgstr "ሙሉ ቀን"
-
-msgid "To:"
-msgstr "ወደ :"
-
-msgid "Title"
-msgstr "አርእስት"
-
-msgid "Name of Event"
-msgstr "የሁኔታዎች ስም"
-
-msgid "Location"
-msgstr "አካባቢ"
-
-msgid "John Smith OR Example St."
-msgstr "ሙሉ ስም ወይንም ለምሳሌ አድራሻ"
-
-msgid "Participants"
-msgstr "ተሳታፊዎች"
-
-msgid "Name or Email Address"
-msgstr "ስም ወይንም የኢሜይል አድራሻ"
-
-msgid "Comments"
-msgstr "አስተያየቶች"
-
 msgid "Create Event"
 msgstr "ሁኔታዎች መፍጠሪያ"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "የእርስዎ ሁኔታዎች ስም እና ዋጋ ያለው ቀን ሊኖራቸው ይገባል"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,42 +61,95 @@ msgstr "የእርስዎ ሁኔታዎች ስም እና ዋጋ ያለው ቀን �
 msgid "Create a new event"
 msgstr "አዲስ ሁኔታ መፍጠሪያ"
 
-msgid "Edit the selected event"
-msgstr "የተመረጠውን ሁኔታ ማረሚያ"
-
 msgid "Delete the selected event"
 msgstr "የተመረጠውን ሁኔታ ማጥፊያ"
 
-msgid "Select calendars to display"
-msgstr "ላማሳየት ቀን መቁጠሪያ ይምረጡ"
+msgid "Edit Event"
+msgstr "ሁኔታዎችን ማረሚያ"
+
+msgid "Edit the selected event"
+msgstr "የተመረጠውን ሁኔታ ማረሚያ"
+
+msgid "Ends: \t"
+msgstr "መጨረሻ : [ንዑስ] \t"
+
+msgid "Export Calendar..."
+msgstr "ቀን መቁጠሪያ መላኪያ..."
+
+msgid "Export or Share the default Calendar"
+msgstr "ነባር ቀን መቁጠሪያውን መላኪያ ወይንም መካፈያ"
+
+msgid "From:"
+msgstr "ከ :"
+
+msgid "Fullscreen"
+msgstr "በሙሉ መመልከቻ ዘዴ"
+
+msgid "Import..."
+msgstr "ማምጫ..."
+
+msgid "John Smith OR Example St."
+msgstr "ሙሉ ስም ወይንም ለምሳሌ አድራሻ"
+
+msgid "Location"
+msgstr "አካባቢ"
+
+msgid "Name of Event"
+msgstr "የሁኔታዎች ስም"
+
+msgid "Name or Email Address"
+msgstr "ስም ወይንም የኢሜይል አድራሻ"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "በእዚህ ኮምፒዩተር ላይ"
+
+msgid "Participants"
+msgstr "ተሳታፊዎች"
+
+msgid "Personal"
+msgstr "የግል"
+
+msgid "Save Changes"
+msgstr ""
 
 msgid "Search Events"
 msgstr "ሁኔታዎችን መፈለጊያ"
 
-msgid "Export or Share the default Calendar"
-msgstr "ነባር ቀን መቁጠሪያውን መላኪያ ወይንም መካፈያ"
+msgid "Select calendars to display"
+msgstr "ላማሳየት ቀን መቁጠሪያ ይምረጡ"
+
+msgid "Show Week Numbers"
+msgstr "የሳምንቶቹን ቁጥር ማሳያ"
+
+msgid "Starts: \t"
+msgstr "መጀመሪያ : [ንዑስ] \t"
+
+msgid "Sync..."
+msgstr "ማስማሚያ..."
+
+msgid "This event can't be edited"
+msgstr ""
+
+msgid "Title"
+msgstr "አርእስት"
+
+msgid "To:"
+msgstr "ወደ :"
 
 #. Create everything
 msgid "Today"
 msgstr "ዛሬ"
 
-msgid "Fullscreen"
-msgstr "በሙሉ መመልከቻ ዘዴ"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "ሁኔታዎችን ማቀጃ እና መመልከቻ"
 
-msgid "Show Week Numbers"
-msgstr "የሳምንቶቹን ቁጥር ማሳያ"
+msgid "Webcal"
+msgstr "የዌብ ቀን መቁጠሪያ"
 
-msgid "Import..."
-msgstr "ማምጫ..."
-
-msgid "Sync..."
-msgstr "ማስማሚያ..."
-
-msgid "About"
-msgstr "ስለ"
-
-msgid "Add calendar"
-msgstr "የቀን መቁጠሪያ መጨመሪያ"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "የእርስዎ ሁኔታዎች ስም እና ዋጋ ያለው ቀን ሊኖራቸው ይገባል"
 
 #. label settings
 msgid ""
@@ -146,20 +157,15 @@ msgid ""
 "events."
 msgstr "የእርስዎ ወደ ፊት የሚመጡ ሁኔታዎች የሚታዩት እዚህ ነው ቀን እና ሁኔታዎች ሲመርጡ"
 
-msgid "Starts: \t"
-msgstr "መጀመሪያ : [ንዑስ] \t"
-
-msgid "Ends: \t"
-msgstr "መጨረሻ : [ንዑስ] \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "ሁኔታዎችን _መጨመሪያ"
 
 msgid "all day"
 msgstr "ሙሉ ቀን"
 
 msgid "at"
 msgstr "በ"
-
-msgid "Export Calendar..."
-msgstr "ቀን መቁጠሪያ መላኪያ..."
 
 msgid "calendar.ics"
 msgstr "calendar.ics"
