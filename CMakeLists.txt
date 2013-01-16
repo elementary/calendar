@@ -54,7 +54,7 @@ add_definitions(-include config.h)
 file (GLOB _datafiles "${CMAKE_CURRENT_SOURCE_DIR}/data/style/*")
 install (FILES ${_datafiles} DESTINATION ${PKGDATADIR}/style)
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/maya.desktop DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/maya-calendar.desktop DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
 
 #
 # i18n
