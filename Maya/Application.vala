@@ -72,7 +72,7 @@ namespace Maya {
             app_years = "2011-2012";
             application_id = "net.launchpad.maya";
             app_icon = "office-calendar";
-            app_launcher = "maya.desktop";
+            app_launcher = "maya-calendar.desktop";
 
             main_url = "https://launchpad.net/maya";
             bug_url = "https://bugs.launchpad.net/maya";
