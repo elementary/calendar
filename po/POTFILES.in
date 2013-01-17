@@ -1,4 +1,4 @@
-data/maya.desktop
+data/maya-calendar.desktop
 Maya/Application.vala
 Maya/Model/SourceManager.vala
 Maya/Settings/LanguagesFormat.vala
