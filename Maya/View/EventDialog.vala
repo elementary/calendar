@@ -106,6 +106,7 @@ public class EventDialog : Gtk.Window {
             //modal = true;
             window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
             //set_flags(Gtk.DialogFlags.DESTROY_WITH_PARENT);
+            type_hint = Gdk.WindowTypeHint.DIALOG;
             transient_for = window;
 
             // Build dialog
