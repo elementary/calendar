@@ -8,10 +8,10 @@ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)
 # Base bits
 #
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
-set (PKGDATADIR "${DATADIR}/maya")
+set (PKGDATADIR "${DATADIR}/maya-calendar")
 set (GETTEXT_PACKAGE "maya")
 set (RELEASE_NAME "Fast and connected.")
-set (VERSION "0.1")
+set (VERSION "0.2")
 set (VERSION_INFO "Release")
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
@@ -19,7 +19,7 @@ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 #
 # Niceties
 #
-set (ARCHIVE_NAME maya-${VERSION})
+set (ARCHIVE_NAME maya-calendar-${VERSION})
 add_custom_target (dist
     COMMAND bzr export --root=${ARCHIVE_NAME} ${CMAKE_BINARY_DIR}/${ARCHIVE_NAME}.tar.bz2
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
