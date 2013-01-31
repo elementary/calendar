@@ -67,7 +67,7 @@ namespace Maya {
             build_version_info = Build.VERSION_INFO;
 
             program_name = "Maya";
-            exec_name = "maya";
+            exec_name = "maya-calendar";
 
             app_years = "2011-2012";
             application_id = "net.launchpad.maya";
