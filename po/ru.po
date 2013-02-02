@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-14 01:17-0600\n"
-"PO-Revision-Date: 2012-07-09 16:56+0000\n"
-"Last-Translator: Ivlev Denis <Unknown>\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"PO-Revision-Date: 2013-02-01 19:00+0000\n"
+"Last-Translator: Sergey \"Shnatsel\" Davidoff <Shnatsel@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-01 05:24+0000\n"
-"X-Generator: Launchpad (build 16319)\n"
+"X-Launchpad-Export-Date: 2013-02-02 05:34+0000\n"
+"X-Generator: Launchpad (build 16462)\n"
+"Language: ru\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%k:%M"
-
-msgid "About"
-msgstr "О программе"
-
-msgid "Add Event"
-msgstr "Добавить событие"
-
-msgid "Add calendar"
-msgstr "Добавить календарь"
-
-msgid "All day:"
-msgstr "Весь день:"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Просмотр и создание событий"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Календарь"
 
-msgid "Comments"
-msgstr "Комментарии"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "Добавить _событие"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "На этом компьютере"
+
+msgid "Webcal"
+msgstr "Календарь в Интернете"
 
 msgid "Contacts"
 msgstr "Контакты"
 
+msgid "Personal"
+msgstr "Личное"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%k:%M"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Add Event"
+msgstr "Добавить событие"
+
+msgid "Edit Event"
+msgstr "Изменить событие"
+
+msgid "From:"
+msgstr "От:"
+
+msgid "All day:"
+msgstr "Весь день:"
+
+msgid "To:"
+msgstr "Для:"
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Name of Event"
+msgstr "Название события"
+
+msgid "Location"
+msgstr "Местоположение"
+
+msgid "John Smith OR Example St."
+msgstr "Джон Смит или например ул."
+
+msgid "Participants"
+msgstr "Участники"
+
+msgid "Name or Email Address"
+msgstr "Имя или адрес электронной почты"
+
+msgid "Comments"
+msgstr "Комментарии"
+
 msgid "Create Event"
 msgstr "Создать событие"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Событие должно иметь правильные название и дату"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,95 +103,42 @@ msgstr "Создать событие"
 msgid "Create a new event"
 msgstr "Создать новое событие"
 
-msgid "Delete the selected event"
-msgstr "Удалить выбранное событие"
-
-msgid "Edit Event"
-msgstr "Изменить событие"
-
 msgid "Edit the selected event"
 msgstr "Редактировать выбранное событие"
 
-msgid "Ends: \t"
-msgstr "Конец: \t"
-
-msgid "Export Calendar..."
-msgstr "Экспорт календаря..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Экспорт или поделиться календарём по умолчанию"
-
-msgid "From:"
-msgstr "От:"
-
-msgid "Fullscreen"
-msgstr "На весь экран"
-
-msgid "Import..."
-msgstr "Импортировать…"
-
-msgid "John Smith OR Example St."
-msgstr "Джон Смит или например ул."
-
-msgid "Location"
-msgstr "Местоположение"
-
-msgid "Name of Event"
-msgstr "Название события"
-
-msgid "Name or Email Address"
-msgstr "Имя или адрес электронной почты"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "На этом компьютере"
-
-msgid "Participants"
-msgstr "Участники"
-
-msgid "Personal"
-msgstr "Личное"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "Поиск событий"
+msgid "Delete the selected event"
+msgstr "Удалить выбранное событие"
 
 msgid "Select calendars to display"
 msgstr "Выберите календари для просмотра"
 
-msgid "Show Week Numbers"
-msgstr "Показать номера недель"
+msgid "Search Events"
+msgstr "Поиск событий"
 
-msgid "Starts: \t"
-msgstr "Начало: \t"
-
-msgid "Sync..."
-msgstr "Синхронизация"
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "Заголовок"
-
-msgid "To:"
-msgstr "Для:"
+msgid "Export or Share the default Calendar"
+msgstr "Экспортировать или поделиться календарём по умолчанию"
 
 #. Create everything
 msgid "Today"
 msgstr "Сегодня"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Просмотр и создание событий"
+msgid "Fullscreen"
+msgstr "На весь экран"
 
-msgid "Webcal"
-msgstr "Календарь в Интернете"
+msgid "Show Week Numbers"
+msgstr "Показать номера недель"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Событие должно иметь правильные название и дату"
+msgid "Import..."
+msgstr "Импортировать…"
+
+msgid "Sync..."
+msgstr "Синхронизация"
+
+msgid "About"
+msgstr "О программе"
+
+msgid "Add calendar"
+msgstr "Добавить календарь"
 
 #. label settings
 msgid ""
@@ -159,15 +148,20 @@ msgstr ""
 "Ваши предстоящие события будут показаны здесь, когда вы выберете дату с "
 "событиями."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "Добавить _событие"
+msgid "Starts: \t"
+msgstr "Начало: \t"
+
+msgid "Ends: \t"
+msgstr "Конец: \t"
 
 msgid "all day"
 msgstr "весь день"
 
 msgid "at"
 msgstr "в"
+
+msgid "Export Calendar..."
+msgstr "Экспортировать календарь..."
 
 msgid "calendar.ics"
 msgstr "календарь.ics"
