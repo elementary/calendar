@@ -1,6 +1,5 @@
 [Desktop Entry]
 Type=Application
-Version=1.0
 Name=Maya
 GenericName=Calendar
 Comment=View and schedule events
@@ -8,6 +7,7 @@ Exec=maya-calendar
 Icon=office-calendar
 Terminal=false
 Categories=GTK;Office;Calendar;
+Keywords=Planner;Dates;Days;Events;
 StartupNotify=true
 MimeType=text/calendar;
 X-GNOME-Gettext-Domain=maya
