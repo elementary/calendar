@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-14 01:17-0600\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
 "PO-Revision-Date: 2012-10-20 09:39+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <gl@li.org>\n"
-"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-01 05:24+0000\n"
-"X-Generator: Launchpad (build 16319)\n"
+"X-Launchpad-Export-Date: 2013-02-13 04:54+0000\n"
+"X-Generator: Launchpad (build 16491)\n"
+"Language: gl\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %d de %b"
-
-msgid "%B %e, %Y"
-msgstr "%e de %B de %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%H:%M"
-
-msgid "About"
-msgstr "Sobre"
-
-msgid "Add Event"
-msgstr "Engadir actividade"
-
-msgid "Add calendar"
-msgstr "Engadir un calendario"
-
-msgid "All day:"
-msgstr "Todo o día:"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Vexa e programe actividades"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Calendario"
 
-msgid "Comments"
-msgstr "Comentários"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Añadir actividade"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Neste computador"
+
+msgid "Webcal"
+msgstr "Calendario web"
 
 msgid "Contacts"
 msgstr "Contactos"
 
+msgid "Personal"
+msgstr "Persoal"
+
+msgid "%B %e, %Y"
+msgstr "%e de %B de %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %d de %b"
+
+msgid "%l:%M %p"
+msgstr "%H:%M"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Add Event"
+msgstr "Engadir actividade"
+
+msgid "Edit Event"
+msgstr "Modificar actividade"
+
+msgid "From:"
+msgstr "Desde:"
+
+msgid "All day:"
+msgstr "Todo o día:"
+
+msgid "To:"
+msgstr "Ata:"
+
+msgid "Title"
+msgstr "Titulo"
+
+msgid "Name of Event"
+msgstr "Nome da actividade"
+
+msgid "Location"
+msgstr "Localización"
+
+msgid "John Smith OR Example St."
+msgstr "Alfonso Rodriguez OU Rúa Castelao."
+
+msgid "Participants"
+msgstr "Participantes"
+
+msgid "Name or Email Address"
+msgstr "Nome ou enderezo de correo"
+
+msgid "Comments"
+msgstr "Comentários"
+
 msgid "Create Event"
 msgstr "Crear actividade"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "A actividade ten que ter un nome e unha data correcta"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,95 +103,42 @@ msgstr "Crear actividade"
 msgid "Create a new event"
 msgstr "Crear unha actividade nova"
 
-msgid "Delete the selected event"
-msgstr "Eliminar a actividade seleccionada"
-
-msgid "Edit Event"
-msgstr "Modificar actividade"
-
 msgid "Edit the selected event"
 msgstr "Modificar a actividade seleccionada"
 
-msgid "Ends: \t"
-msgstr "Ao : \t"
-
-msgid "Export Calendar..."
-msgstr "Exportar o calendario..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Exportar ou compartir o calendario predeterminado"
-
-msgid "From:"
-msgstr "Desde:"
-
-msgid "Fullscreen"
-msgstr "Pantalla completa"
-
-msgid "Import..."
-msgstr "importar..."
-
-msgid "John Smith OR Example St."
-msgstr "Alfonso Rodriguez OU Rúa Castelao."
-
-msgid "Location"
-msgstr "Localización"
-
-msgid "Name of Event"
-msgstr "Nome da actividade"
-
-msgid "Name or Email Address"
-msgstr "Nome ou enderezo de correo"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Neste computador"
-
-msgid "Participants"
-msgstr "Participantes"
-
-msgid "Personal"
-msgstr "Persoal"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "Buscar actividades"
+msgid "Delete the selected event"
+msgstr "Eliminar a actividade seleccionada"
 
 msgid "Select calendars to display"
 msgstr "Seleccionar axendas para amosar"
 
-msgid "Show Week Numbers"
-msgstr "Amosar o número da semana"
+msgid "Search Events"
+msgstr "Buscar actividades"
 
-msgid "Starts: \t"
-msgstr "Do: \t"
-
-msgid "Sync..."
-msgstr "Sincronizar..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "Titulo"
-
-msgid "To:"
-msgstr "Ata:"
+msgid "Export or Share the default Calendar"
+msgstr "Exportar ou compartir o calendario predeterminado"
 
 #. Create everything
 msgid "Today"
 msgstr "Hoxe"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Vexa e programe actividades"
+msgid "Fullscreen"
+msgstr "Pantalla completa"
 
-msgid "Webcal"
-msgstr "Calendario web"
+msgid "Show Week Numbers"
+msgstr "Amosar o número da semana"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "A actividade ten que ter un nome e unha data correcta"
+msgid "Import..."
+msgstr "importar..."
+
+msgid "Sync..."
+msgstr "Sincronizar..."
+
+msgid "About"
+msgstr "Sobre"
+
+msgid "Add calendar"
+msgstr "Engadir un calendario"
 
 #. label settings
 msgid ""
@@ -159,15 +148,20 @@ msgstr ""
 "As súas próximas actividades amosaranse aquí cando escolla unha data con "
 "actividades."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Añadir actividade"
+msgid "Starts: \t"
+msgstr "Do: \t"
+
+msgid "Ends: \t"
+msgstr "Ao : \t"
 
 msgid "all day"
 msgstr "todo o día"
 
 msgid "at"
 msgstr "ás"
+
+msgid "Export Calendar..."
+msgstr "Exportar o calendario..."
 
 msgid "calendar.ics"
 msgstr "calendar.ics"

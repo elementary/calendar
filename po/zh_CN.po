@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-14 01:17-0600\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
 "PO-Revision-Date: 2012-07-09 10:58+0000\n"
 "Last-Translator: Wang Dianjin <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-01 05:24+0000\n"
-"X-Generator: Launchpad (build 16319)\n"
+"X-Launchpad-Export-Date: 2013-02-13 04:54+0000\n"
+"X-Generator: Launchpad (build 16491)\n"
+"Language: \n"
 
-msgid "%A, %b %d"
-msgstr "%A，%b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e，%Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%p %l:%M"
-
-msgid "About"
-msgstr "关于"
-
-msgid "Add Event"
-msgstr "添加活动"
-
-msgid "Add calendar"
-msgstr "添加日历"
-
-msgid "All day:"
-msgstr "全天："
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "查看并安排活动"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "日历"
 
-msgid "Comments"
-msgstr "备注"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "添加活动(_A)"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "在本机上"
+
+msgid "Webcal"
+msgstr "在线日历"
 
 msgid "Contacts"
 msgstr "联系人"
 
+msgid "Personal"
+msgstr "个人"
+
+msgid "%B %e, %Y"
+msgstr "%B %e，%Y"
+
+msgid "%A, %b %d"
+msgstr "%A，%b %d"
+
+msgid "%l:%M %p"
+msgstr "%p %l:%M"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Add Event"
+msgstr "添加活动"
+
+msgid "Edit Event"
+msgstr "编辑活动"
+
+msgid "From:"
+msgstr "起始日期："
+
+msgid "All day:"
+msgstr "全天："
+
+msgid "To:"
+msgstr "结束日期："
+
+msgid "Title"
+msgstr "标题"
+
+msgid "Name of Event"
+msgstr "活动名称"
+
+msgid "Location"
+msgstr "位置"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith 或如 St."
+
+msgid "Participants"
+msgstr "参与者"
+
+msgid "Name or Email Address"
+msgstr "姓名或邮件地址"
+
+msgid "Comments"
+msgstr "备注"
+
 msgid "Create Event"
 msgstr "创建活动"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "您的活动必须命名且具备一个有效日期"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,95 +103,42 @@ msgstr "创建活动"
 msgid "Create a new event"
 msgstr "创建新活动"
 
-msgid "Delete the selected event"
-msgstr "删除选中的活动"
-
-msgid "Edit Event"
-msgstr "编辑活动"
-
 msgid "Edit the selected event"
 msgstr "编辑选中的活动"
 
-msgid "Ends: \t"
-msgstr "结束： \t"
-
-msgid "Export Calendar..."
-msgstr "导出日历..."
-
-msgid "Export or Share the default Calendar"
-msgstr "导出或分享默认日历"
-
-msgid "From:"
-msgstr "起始日期："
-
-msgid "Fullscreen"
-msgstr "全屏"
-
-msgid "Import..."
-msgstr "导入..."
-
-msgid "John Smith OR Example St."
-msgstr "John Smith 或如 St."
-
-msgid "Location"
-msgstr "位置"
-
-msgid "Name of Event"
-msgstr "活动名称"
-
-msgid "Name or Email Address"
-msgstr "姓名或邮件地址"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "在本机上"
-
-msgid "Participants"
-msgstr "参与者"
-
-msgid "Personal"
-msgstr "个人"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "搜索活动"
+msgid "Delete the selected event"
+msgstr "删除选中的活动"
 
 msgid "Select calendars to display"
 msgstr "选择要显示的日历"
 
-msgid "Show Week Numbers"
-msgstr "显示周数"
+msgid "Search Events"
+msgstr "搜索活动"
 
-msgid "Starts: \t"
-msgstr "开始： \t"
-
-msgid "Sync..."
-msgstr "同步..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "标题"
-
-msgid "To:"
-msgstr "结束日期："
+msgid "Export or Share the default Calendar"
+msgstr "导出或分享默认日历"
 
 #. Create everything
 msgid "Today"
 msgstr "今天"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "查看并安排活动"
+msgid "Fullscreen"
+msgstr "全屏"
 
-msgid "Webcal"
-msgstr "在线日历"
+msgid "Show Week Numbers"
+msgstr "显示周数"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "您的活动必须命名且具备一个有效日期"
+msgid "Import..."
+msgstr "导入..."
+
+msgid "Sync..."
+msgstr "同步..."
+
+msgid "About"
+msgstr "关于"
+
+msgid "Add calendar"
+msgstr "添加日历"
 
 #. label settings
 msgid ""
@@ -157,9 +146,11 @@ msgid ""
 "events."
 msgstr "当您选择一个含有任务的日期时，您最近的活动将会显示在这里。"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "添加活动(_A)"
+msgid "Starts: \t"
+msgstr "开始： \t"
+
+msgid "Ends: \t"
+msgstr "结束： \t"
 
 msgid "all day"
 msgstr "全天"
@@ -167,11 +158,14 @@ msgstr "全天"
 msgid "at"
 msgstr "于"
 
+msgid "Export Calendar..."
+msgstr "导出日历..."
+
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#~ msgid "Guests"
-#~ msgstr "访客"
-
 #~ msgid "all the day"
 #~ msgstr "整天"
+
+#~ msgid "Guests"
+#~ msgstr "访客"

@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-14 01:17-0600\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
 "PO-Revision-Date: 2012-12-28 18:21+0000\n"
 "Last-Translator: Mohammad Zali <mohamadzali@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
-"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-29 05:09+0000\n"
-"X-Generator: Launchpad (build 16378)\n"
+"X-Launchpad-Export-Date: 2013-02-13 04:54+0000\n"
+"X-Generator: Launchpad (build 16491)\n"
+"Language: fa\n"
 
-msgid "%A, %b %d"
-msgstr ""
-
-msgid "%B %e, %Y"
-msgstr ""
-
-msgid "%H:%M"
-msgstr ""
-
-msgid "%l:%M %p"
-msgstr ""
-
-msgid "About"
-msgstr "درباره"
-
-msgid "Add Event"
-msgstr "افزودن رویداد"
-
-msgid "Add calendar"
-msgstr "افزودن تقویم"
-
-msgid "All day:"
-msgstr "هر روز:"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "مشاهده و زمانبندی رویدادها"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "تقویم"
 
-msgid "Comments"
-msgstr "توضیحات"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_افزودن رویداد"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "روی این رایانه"
+
+msgid "Webcal"
+msgstr ""
 
 msgid "Contacts"
 msgstr "تماس‌ها"
 
+msgid "Personal"
+msgstr "شخصی"
+
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%A, %b %d"
+msgstr ""
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
+msgid "Add Event"
+msgstr "افزودن رویداد"
+
+msgid "Edit Event"
+msgstr "ویرایش رویداد"
+
+msgid "From:"
+msgstr "از:"
+
+msgid "All day:"
+msgstr "هر روز:"
+
+msgid "To:"
+msgstr "تا:"
+
+msgid "Title"
+msgstr "عنوان"
+
+msgid "Name of Event"
+msgstr "نام رویداد"
+
+msgid "Location"
+msgstr "مکان"
+
+msgid "John Smith OR Example St."
+msgstr "قلی قلوی"
+
+msgid "Participants"
+msgstr "شرکت کنندگان"
+
+msgid "Name or Email Address"
+msgstr "نام و یا رایانامه"
+
+msgid "Comments"
+msgstr "توضیحات"
+
 msgid "Create Event"
 msgstr "ساخت رویداد"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "هر رویداد باید یک نام و یک تاریخ معتبر داشته باشد"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,95 +103,42 @@ msgstr "ساخت رویداد"
 msgid "Create a new event"
 msgstr "ساخت یک رویداد"
 
-msgid "Delete the selected event"
-msgstr "حذف رویداد انتخاب شده"
-
-msgid "Edit Event"
-msgstr "ویرایش رویداد"
-
 msgid "Edit the selected event"
 msgstr "ویرایش رویداد انتخاب شده"
 
-msgid "Ends: \t"
-msgstr "پایان: \t"
-
-msgid "Export Calendar..."
-msgstr "صادرات تقویم..."
-
-msgid "Export or Share the default Calendar"
-msgstr "صادرات و یا اشتراک‌گذاری تقویم پیش‌فرض"
-
-msgid "From:"
-msgstr "از:"
-
-msgid "Fullscreen"
-msgstr "تمام‌صفحه"
-
-msgid "Import..."
-msgstr "واردات..."
-
-msgid "John Smith OR Example St."
-msgstr "قلی قلوی"
-
-msgid "Location"
-msgstr "مکان"
-
-msgid "Name of Event"
-msgstr "نام رویداد"
-
-msgid "Name or Email Address"
-msgstr "نام و یا رایانامه"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "روی این رایانه"
-
-msgid "Participants"
-msgstr "شرکت کنندگان"
-
-msgid "Personal"
-msgstr "شخصی"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "جستجوی رویداد"
+msgid "Delete the selected event"
+msgstr "حذف رویداد انتخاب شده"
 
 msgid "Select calendars to display"
 msgstr "انتخاب تقویم برای نمایش"
 
-msgid "Show Week Numbers"
-msgstr "نمایش شماره هفته"
+msgid "Search Events"
+msgstr "جستجوی رویداد"
 
-msgid "Starts: \t"
-msgstr "آغاز: \t"
-
-msgid "Sync..."
-msgstr "هماهنگ‌سازی..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "عنوان"
-
-msgid "To:"
-msgstr "تا:"
+msgid "Export or Share the default Calendar"
+msgstr "صادرات و یا اشتراک‌گذاری تقویم پیش‌فرض"
 
 #. Create everything
 msgid "Today"
 msgstr "امروز"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "مشاهده و زمانبندی رویدادها"
+msgid "Fullscreen"
+msgstr "تمام‌صفحه"
 
-msgid "Webcal"
-msgstr ""
+msgid "Show Week Numbers"
+msgstr "نمایش شماره هفته"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "هر رویداد باید یک نام و یک تاریخ معتبر داشته باشد"
+msgid "Import..."
+msgstr "واردات..."
+
+msgid "Sync..."
+msgstr "هماهنگ‌سازی..."
+
+msgid "About"
+msgstr "درباره"
+
+msgid "Add calendar"
+msgstr "افزودن تقویم"
 
 #. label settings
 msgid ""
@@ -159,15 +148,20 @@ msgstr ""
 "در صورت انتخاب روز دارای رویداد، رویدادهای آن روز در این قسمت نمایش داده "
 "می‌شوند."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_افزودن رویداد"
+msgid "Starts: \t"
+msgstr "آغاز: \t"
+
+msgid "Ends: \t"
+msgstr "پایان: \t"
 
 msgid "all day"
 msgstr "هر روز"
 
 msgid "at"
 msgstr "در"
+
+msgid "Export Calendar..."
+msgstr "صادرات تقویم..."
 
 msgid "calendar.ics"
 msgstr ""
