@@ -15,6 +15,9 @@ namespace Maya.View {
 
         Gtk.Label more_label;
 
+        //true if the object gets destroyed and notified via the destroy-signal
+        bool end = false;
+
         public VAutoHider () {
             set_has_window (false);
             set_resize_mode(Gtk.ResizeMode.IMMEDIATE);
@@ -22,6 +25,9 @@ namespace Maya.View {
             more_label.set_parent (this);
             if (get_realized ())
                 more_label.realize ();
+            destroy.connect (() => {
+                end = true;
+            });
         }
 
         public override void add (Gtk.Widget widget) {
@@ -40,6 +46,9 @@ namespace Maya.View {
         }
 
         public override void forall_internal (bool internal, Gtk.Callback callback) {
+            if (end) { //if widget already destroyed, abort the forall
+                return;
+            }
             foreach (var child in children)
                 callback (child);
             callback (more_label);
