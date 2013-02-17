@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-17 16:57+0100\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
 "PO-Revision-Date: 2012-08-14 16:58+0000\n"
 "Last-Translator: Arturo Torres Sánchez <r2d2.art2005@gmail.com>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
-"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-02-13 04:54+0000\n"
 "X-Generator: Launchpad (build 16491)\n"
+"Language: eo\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "About"
-msgstr "Pri"
-
-msgid "Add Event"
-msgstr "Aldoni eventon"
-
-msgid "Add calendar"
-msgstr "Aldoni kalendaron"
-
-msgid "All day:"
-msgstr "Tuttage:"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Vidi kaj plani eventojn"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Kalendaro"
 
-msgid "Comments"
-msgstr "Komentoj"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Aldoni eventon"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "En ĉi tiu komputilo"
+
+msgid "Webcal"
+msgstr "Retkalendaro"
 
 msgid "Contacts"
 msgstr "Kontaktoj"
 
+msgid "Personal"
+msgstr "Persona"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Add Event"
+msgstr "Aldoni eventon"
+
+msgid "Edit Event"
+msgstr "Redakti eventon"
+
+msgid "From:"
+msgstr "De:"
+
+msgid "All day:"
+msgstr "Tuttage:"
+
+msgid "To:"
+msgstr "Al:"
+
+msgid "Title"
+msgstr "Titolo"
+
+msgid "Name of Event"
+msgstr "Nomo de la evento"
+
+msgid "Location"
+msgstr "Loko"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith AŬ Example St."
+
+msgid "Participants"
+msgstr "Partoprenantoj"
+
+msgid "Name or Email Address"
+msgstr "Nomo aŭ retpoŝtadreso"
+
+msgid "Comments"
+msgstr "Komentoj"
+
 msgid "Create Event"
 msgstr "Krei eventon"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Via evento havu nomon kaj havu validan daton"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,95 +103,42 @@ msgstr "Krei eventon"
 msgid "Create a new event"
 msgstr "Krei novan eventon"
 
-msgid "Delete the selected event"
-msgstr "Forigi la elektitan eventon"
-
-msgid "Edit Event"
-msgstr "Redakti eventon"
-
 msgid "Edit the selected event"
 msgstr "Redakti la elektitan eventon"
 
-msgid "Ends: \t"
-msgstr "Ĝi finas: \t"
-
-msgid "Export Calendar..."
-msgstr "Eksporti kalendaron..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Eksporti aŭ kunhavigi la aprioran kalendaron"
-
-msgid "From:"
-msgstr "De:"
-
-msgid "Fullscreen"
-msgstr "Tutekrane"
-
-msgid "Import..."
-msgstr "Importi..."
-
-msgid "John Smith OR Example St."
-msgstr "John Smith AŬ Example St."
-
-msgid "Location"
-msgstr "Loko"
-
-msgid "Name of Event"
-msgstr "Nomo de la evento"
-
-msgid "Name or Email Address"
-msgstr "Nomo aŭ retpoŝtadreso"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "En ĉi tiu komputilo"
-
-msgid "Participants"
-msgstr "Partoprenantoj"
-
-msgid "Personal"
-msgstr "Persona"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "Serĉi eventojn"
+msgid "Delete the selected event"
+msgstr "Forigi la elektitan eventon"
 
 msgid "Select calendars to display"
 msgstr "Elekti montrendajn kalendarojn"
 
-msgid "Show Week Numbers"
-msgstr "Montri semajnnumerojn"
+msgid "Search Events"
+msgstr "Serĉi eventojn"
 
-msgid "Starts: \t"
-msgstr "Ĝi komencas: \t"
-
-msgid "Sync..."
-msgstr "Sinkronigi..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "Titolo"
-
-msgid "To:"
-msgstr "Al:"
+msgid "Export or Share the default Calendar"
+msgstr "Eksporti aŭ kunhavigi la aprioran kalendaron"
 
 #. Create everything
 msgid "Today"
 msgstr "Hodiaŭ"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Vidi kaj plani eventojn"
+msgid "Fullscreen"
+msgstr "Tutekrane"
 
-msgid "Webcal"
-msgstr "Retkalendaro"
+msgid "Show Week Numbers"
+msgstr "Montri semajnnumerojn"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Via evento havu nomon kaj havu validan daton"
+msgid "Import..."
+msgstr "Importi..."
+
+msgid "Sync..."
+msgstr "Sinkronigi..."
+
+msgid "About"
+msgstr "Pri"
+
+msgid "Add calendar"
+msgstr "Aldoni kalendaron"
 
 #. label settings
 msgid ""
@@ -159,9 +148,11 @@ msgstr ""
 "Viaj venontaj eventoj estos montrataj ĉi tie, kiam vi elektas daton kun "
 "evento."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Aldoni eventon"
+msgid "Starts: \t"
+msgstr "Ĝi komencas: \t"
+
+msgid "Ends: \t"
+msgstr "Ĝi finas: \t"
 
 msgid "all day"
 msgstr "tuttage"
@@ -169,11 +160,14 @@ msgstr "tuttage"
 msgid "at"
 msgstr "je"
 
+msgid "Export Calendar..."
+msgstr "Eksporti kalendaron..."
+
 msgid "calendar.ics"
 msgstr "kalendaro.ics"
 
-#~ msgid "Guests"
-#~ msgstr "Gastoj"
-
 #~ msgid "all the day"
 #~ msgstr "tuttage"
+
+#~ msgid "Guests"
+#~ msgstr "Gastoj"
