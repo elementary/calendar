@@ -74,7 +74,7 @@ namespace Maya.View.Widgets {
             filechooser = new Gtk.FileChooserDialog (_("Export Calendar..."), null, Gtk.FileChooserAction.SAVE);
             var filter = new Gtk.FileFilter ();
             filter.add_mime_type("text/calendar");
-            filechooser.set_filename(_("calendar.ics"));
+            filechooser.set_current_name(_("calendar.ics"));
             filechooser.set_filter(filter);
             filechooser.add_button(Gtk.Stock.CANCEL, Gtk.ResponseType.CLOSE);
             filechooser.add_button(Gtk.Stock.SAVE, Gtk.ResponseType.APPLY);
