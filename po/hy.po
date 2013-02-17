@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2013-02-17 16:57+0100\n"
 "PO-Revision-Date: 2012-11-15 14:26+0000\n"
 "Last-Translator: V.A.M <Unknown>\n"
 "Language-Team: Armenian <hy@li.org>\n"
+"Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-02-13 04:54+0000\n"
 "X-Generator: Launchpad (build 16491)\n"
-"Language: hy\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Դիտել և պլանավորել իրադարձություննեըը"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr "Մասին"
+
+msgid "Add Event"
+msgstr "Ավելացնել Իրադարձություն"
+
+msgid "Add calendar"
+msgstr "Ավելացնել օրացույց"
+
+msgid "All day:"
+msgstr "Ողջ օրը"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Օրացույց"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "Ավելացնել իրադարձություն"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Այս համակարգիչում"
-
-msgid "Webcal"
-msgstr "Webcal"
+msgid "Comments"
+msgstr "Մեկնաբանություններ"
 
 msgid "Contacts"
 msgstr "Կապորդներ"
 
-msgid "Personal"
-msgstr "Անձնական"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "Ավելացնել Իրադարձություն"
-
-msgid "Edit Event"
-msgstr "Փոփոխել իրադարձությունը"
-
-msgid "From:"
-msgstr "Ումից՝"
-
-msgid "All day:"
-msgstr "Ողջ օրը"
-
-msgid "To:"
-msgstr "Ում՝"
-
-msgid "Title"
-msgstr "Վերնագիր"
-
-msgid "Name of Event"
-msgstr "Իրադարձության անվանումը"
-
-msgid "Location"
-msgstr "Վայր"
-
-msgid "John Smith OR Example St."
-msgstr "Արմեն Մկրտչյան ԿԱՄ Թումանյան փ․"
-
-msgid "Participants"
-msgstr "Մասնակիցներ"
-
-msgid "Name or Email Address"
-msgstr "Անուն կամ Էլ-հասցե"
-
-msgid "Comments"
-msgstr "Մեկնաբանություններ"
-
 msgid "Create Event"
 msgstr "Ստեղծել իրադարձություն"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Իրադարձությունը պետք է ունենա անուն և վավերական օր"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,42 +61,95 @@ msgstr "Իրադարձությունը պետք է ունենա անուն և վ
 msgid "Create a new event"
 msgstr "Ստեղծել նոր իրադարձություն"
 
-msgid "Edit the selected event"
-msgstr "Փոփոխել նշված իրադարձությունը"
-
 msgid "Delete the selected event"
 msgstr "Ջնջել նշված իրադարձությունը"
 
-msgid "Select calendars to display"
-msgstr "Նշեք օրացույցը ցուցադրելու համար"
+msgid "Edit Event"
+msgstr "Փոփոխել իրադարձությունը"
+
+msgid "Edit the selected event"
+msgstr "Փոփոխել նշված իրադարձությունը"
+
+msgid "Ends: \t"
+msgstr "Ավարտ՝ \t"
+
+msgid "Export Calendar..."
+msgstr "Արտահանել Օրացույց․․․"
+
+msgid "Export or Share the default Calendar"
+msgstr "Արտահանել կամ բաշխել հիմնական օրացույցը"
+
+msgid "From:"
+msgstr "Ումից՝"
+
+msgid "Fullscreen"
+msgstr "Ամբողջ եկրանով"
+
+msgid "Import..."
+msgstr "Ներմուծել․․․"
+
+msgid "John Smith OR Example St."
+msgstr "Արմեն Մկրտչյան ԿԱՄ Թումանյան փ․"
+
+msgid "Location"
+msgstr "Վայր"
+
+msgid "Name of Event"
+msgstr "Իրադարձության անվանումը"
+
+msgid "Name or Email Address"
+msgstr "Անուն կամ Էլ-հասցե"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Այս համակարգիչում"
+
+msgid "Participants"
+msgstr "Մասնակիցներ"
+
+msgid "Personal"
+msgstr "Անձնական"
+
+msgid "Save Changes"
+msgstr ""
 
 msgid "Search Events"
 msgstr "Փնտրել իրադարձություններ"
 
-msgid "Export or Share the default Calendar"
-msgstr "Արտահանել կամ բաշխել հիմնական օրացույցը"
+msgid "Select calendars to display"
+msgstr "Նշեք օրացույցը ցուցադրելու համար"
+
+msgid "Show Week Numbers"
+msgstr "Ցույց տալ Շաբաթվա Համարները"
+
+msgid "Starts: \t"
+msgstr "Սկսվում է՝ \t"
+
+msgid "Sync..."
+msgstr "Sync..."
+
+msgid "This event can't be edited"
+msgstr ""
+
+msgid "Title"
+msgstr "Վերնագիր"
+
+msgid "To:"
+msgstr "Ում՝"
 
 #. Create everything
 msgid "Today"
 msgstr "Այսօր"
 
-msgid "Fullscreen"
-msgstr "Ամբողջ եկրանով"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Դիտել և պլանավորել իրադարձություննեըը"
 
-msgid "Show Week Numbers"
-msgstr "Ցույց տալ Շաբաթվա Համարները"
+msgid "Webcal"
+msgstr "Webcal"
 
-msgid "Import..."
-msgstr "Ներմուծել․․․"
-
-msgid "Sync..."
-msgstr "Sync..."
-
-msgid "About"
-msgstr "Մասին"
-
-msgid "Add calendar"
-msgstr "Ավելացնել օրացույց"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Իրադարձությունը պետք է ունենա անուն և վավերական օր"
 
 #. label settings
 msgid ""
@@ -148,20 +159,15 @@ msgstr ""
 "Ձեր գալիք իրադարձությունները ցուցադրվելու են այստեղ, երբ ընտրեք օր "
 "իրադարձություններով"
 
-msgid "Starts: \t"
-msgstr "Սկսվում է՝ \t"
-
-msgid "Ends: \t"
-msgstr "Ավարտ՝ \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "Ավելացնել իրադարձություն"
 
 msgid "all day"
 msgstr "Ողջ օրը"
 
 msgid "at"
 msgstr "տեղ"
-
-msgid "Export Calendar..."
-msgstr "Արտահանել Օրացույց․․․"
 
 msgid "calendar.ics"
 msgstr "calendar.ics"

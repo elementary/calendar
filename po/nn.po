@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2013-02-17 16:57+0100\n"
 "PO-Revision-Date: 2012-11-21 17:55+0000\n"
 "Last-Translator: Martin Myrvold <Unknown>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
+"Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-02-13 04:54+0000\n"
 "X-Generator: Launchpad (build 16491)\n"
-"Language: nn\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Vis og planlegg hendingar"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l.%M %p"
+
+msgid "About"
+msgstr "Om"
+
+msgid "Add Event"
+msgstr "Lag ei ny hending"
+
+msgid "Add calendar"
+msgstr "Legg til kalender"
+
+msgid "All day:"
+msgstr "Heile dagen:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Kalender"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Lag ei ny hending"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "På denne datamaskina"
-
-msgid "Webcal"
-msgstr "Internettkalender"
+msgid "Comments"
+msgstr "Kommentarar"
 
 msgid "Contacts"
 msgstr "Kontaktar"
 
-msgid "Personal"
-msgstr "Personleg"
-
-msgid "%B %e, %Y"
-msgstr "%B %e %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l.%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "Lag ei ny hending"
-
-msgid "Edit Event"
-msgstr "Endre hending"
-
-msgid "From:"
-msgstr "Frå:"
-
-msgid "All day:"
-msgstr "Heile dagen:"
-
-msgid "To:"
-msgstr "Til:"
-
-msgid "Title"
-msgstr "Tittel"
-
-msgid "Name of Event"
-msgstr "Namn på hendinga"
-
-msgid "Location"
-msgstr "Stad"
-
-msgid "John Smith OR Example St."
-msgstr "Ola Nordmann ELLER Karl Eksempel Gate"
-
-msgid "Participants"
-msgstr "Deltakarar"
-
-msgid "Name or Email Address"
-msgstr "Namn eller epostadresse"
-
-msgid "Comments"
-msgstr "Kommentarar"
-
 msgid "Create Event"
 msgstr "Lag hendinga"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Hendinga er nødt til å ha eit namn og ein gyldig dato"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,42 +61,95 @@ msgstr "Hendinga er nødt til å ha eit namn og ein gyldig dato"
 msgid "Create a new event"
 msgstr "Lag ei ny hending"
 
-msgid "Edit the selected event"
-msgstr "Endre dei valgte hendingane"
-
 msgid "Delete the selected event"
 msgstr "Slett dei valgte hendingane"
 
-msgid "Select calendars to display"
-msgstr "Vel kva kalenderar som skal visast"
+msgid "Edit Event"
+msgstr "Endre hending"
+
+msgid "Edit the selected event"
+msgstr "Endre dei valgte hendingane"
+
+msgid "Ends: \t"
+msgstr "Sluttar: \t"
+
+msgid "Export Calendar..."
+msgstr "Eksporter kalender..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Eksporter eller del kalenderen"
+
+msgid "From:"
+msgstr "Frå:"
+
+msgid "Fullscreen"
+msgstr "Fullskjerm"
+
+msgid "Import..."
+msgstr "Importer..."
+
+msgid "John Smith OR Example St."
+msgstr "Ola Nordmann ELLER Karl Eksempel Gate"
+
+msgid "Location"
+msgstr "Stad"
+
+msgid "Name of Event"
+msgstr "Namn på hendinga"
+
+msgid "Name or Email Address"
+msgstr "Namn eller epostadresse"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "På denne datamaskina"
+
+msgid "Participants"
+msgstr "Deltakarar"
+
+msgid "Personal"
+msgstr "Personleg"
+
+msgid "Save Changes"
+msgstr ""
 
 msgid "Search Events"
 msgstr "Søk i hendingane"
 
-msgid "Export or Share the default Calendar"
-msgstr "Eksporter eller del kalenderen"
+msgid "Select calendars to display"
+msgstr "Vel kva kalenderar som skal visast"
+
+msgid "Show Week Numbers"
+msgstr "Vis vekenummer"
+
+msgid "Starts: \t"
+msgstr "Startar: \t"
+
+msgid "Sync..."
+msgstr "Synkroniser..."
+
+msgid "This event can't be edited"
+msgstr ""
+
+msgid "Title"
+msgstr "Tittel"
+
+msgid "To:"
+msgstr "Til:"
 
 #. Create everything
 msgid "Today"
 msgstr "I dag"
 
-msgid "Fullscreen"
-msgstr "Fullskjerm"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Vis og planlegg hendingar"
 
-msgid "Show Week Numbers"
-msgstr "Vis vekenummer"
+msgid "Webcal"
+msgstr "Internettkalender"
 
-msgid "Import..."
-msgstr "Importer..."
-
-msgid "Sync..."
-msgstr "Synkroniser..."
-
-msgid "About"
-msgstr "Om"
-
-msgid "Add calendar"
-msgstr "Legg til kalender"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Hendinga er nødt til å ha eit namn og ein gyldig dato"
 
 #. label settings
 msgid ""
@@ -147,11 +158,9 @@ msgid ""
 msgstr ""
 "Dine komande hendingar vil bli vist her, når du vel ein dato med hendingar."
 
-msgid "Starts: \t"
-msgstr "Startar: \t"
-
-msgid "Ends: \t"
-msgstr "Sluttar: \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Lag ei ny hending"
 
 msgid "all day"
 msgstr "heile dagen"
@@ -159,14 +168,11 @@ msgstr "heile dagen"
 msgid "at"
 msgstr "til"
 
-msgid "Export Calendar..."
-msgstr "Eksporter kalender..."
-
 msgid "calendar.ics"
 msgstr "kalendar.ics"
 
-#~ msgid "all the day"
-#~ msgstr "heile dagen"
-
 #~ msgid "Guests"
 #~ msgstr "Gjestar"
+
+#~ msgid "all the day"
+#~ msgstr "heile dagen"

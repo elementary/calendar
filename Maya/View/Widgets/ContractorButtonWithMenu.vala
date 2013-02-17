@@ -89,8 +89,11 @@ namespace Maya.View.Widgets {
             switch (response_id) {
             case Gtk.ResponseType.APPLY:
                 var destination = filechooser.get_filename ();
-                if (destination == null)
+                if (destination == null) {
                     destination = filechooser.get_current_folder();
+                } else if (!destination.has_suffix(".ics")) {
+                    destination += ".ics";
+                }
                 try {
                     GLib.Process.spawn_command_line_async ("mv " + GLib.Environment.get_tmp_dir () + "/calendar.ics " + destination);
                 } catch (SpawnError e) {
