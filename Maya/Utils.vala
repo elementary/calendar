@@ -409,7 +409,9 @@ namespace Maya.Util {
         var calmodel = new Model.CalendarModel(sourcemagr, Maya.Settings.Weekday.MONDAY);
 
         var path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
-        string output = "";
+        string output = "BEGIN:VCALENDAR\n";
+        output += "VERSION:2.0\n";
+        output += "PRODID:-//elementary project//maya-calendar\n";
         foreach (var source in sourcemagr.get_enabled_sources ()) {
 
             try {
@@ -434,6 +436,7 @@ namespace Maya.Util {
         }
         try {
             GLib.File file = GLib.File.new_for_path (path);
+            output += "END:VCALENDAR";
             uint8[] data = output.data;
             string s;
             file.replace_contents (data, null, false, 0, out s);

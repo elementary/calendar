@@ -74,7 +74,7 @@ namespace Maya.View.Widgets {
             filechooser = new Gtk.FileChooserDialog (_("Export Calendar..."), null, Gtk.FileChooserAction.SAVE);
             var filter = new Gtk.FileFilter ();
             filter.add_mime_type("text/calendar");
-            filechooser.set_filename(_("calendar.ics"));
+            filechooser.set_current_name(_("calendar.ics"));
             filechooser.set_filter(filter);
             filechooser.add_button(Gtk.Stock.CANCEL, Gtk.ResponseType.CLOSE);
             filechooser.add_button(Gtk.Stock.SAVE, Gtk.ResponseType.APPLY);
@@ -89,8 +89,11 @@ namespace Maya.View.Widgets {
             switch (response_id) {
             case Gtk.ResponseType.APPLY:
                 var destination = filechooser.get_filename ();
-                if (destination == null)
+                if (destination == null) {
                     destination = filechooser.get_current_folder();
+                } else if (!destination.has_suffix(".ics")) {
+                    destination += ".ics";
+                }
                 try {
                     GLib.Process.spawn_command_line_async ("mv " + GLib.Environment.get_tmp_dir () + "/calendar.ics " + destination);
                 } catch (SpawnError e) {
