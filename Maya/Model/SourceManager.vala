@@ -175,17 +175,10 @@ public class SourceManager: GLib.Object {
      * The given source is destroyed and will no longer exist.
      */
     public void destroy_source (E.SourceGroup group, E.Source source) {
-            group.remove_source (source);
             if (source.peek_uid () == DEFAULT_SOURCE.peek_uid ()) {
-                // Choose a new default source
-                Gee.ArrayList<E.Source> sources = get_editable_sources ();
-                assert (!sources.is_empty);
-                Gee.Iterator<E.Source> it = sources.iterator();
-                it.next ();
-                E.Source first = it.get ();
-                DEFAULT_SOURCE = first;
-                settings.primary_calendar = DEFAULT_SOURCE.peek_uid ();
+                return;
             }
+            group.remove_source (source);
     }
 
     /**
