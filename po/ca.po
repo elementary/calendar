@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-17 20:56-0600\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
 "PO-Revision-Date: 2013-01-07 12:08+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Catalan <ca@li.org>\n"
-"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-02-13 04:54+0000\n"
-"X-Generator: Launchpad (build 16491)\n"
+"X-Launchpad-Export-Date: 2013-02-23 05:44+0000\n"
+"X-Generator: Launchpad (build 16506)\n"
+"Language: ca\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %-d de %b"
-
-msgid "%B %e, %Y"
-msgstr "%e de %B de %Y"
-
-msgid "%H:%M"
-msgstr "%-H:%M"
-
-msgid "%l:%M %p"
-msgstr "%-I:%M %p"
-
-msgid "About"
-msgstr "Quant a"
-
-msgid "Add Event"
-msgstr "Afegeix un esdeveniment"
-
-msgid "Add calendar"
-msgstr "Afegeix un calendari"
-
-msgid "All day:"
-msgstr "Tot el dia:"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Visualitzeu i programeu esdeveniments"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Calendari"
 
-msgid "Comments"
-msgstr "Comentaris"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Afegeix un esdeveniment"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "En aquest ordinador"
+
+msgid "Webcal"
+msgstr "Calendari web"
 
 msgid "Contacts"
 msgstr "Contactes"
 
+msgid "Personal"
+msgstr "Personal"
+
+msgid "%B %e, %Y"
+msgstr "%e de %B de %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %-d de %b"
+
+msgid "%l:%M %p"
+msgstr "%-I:%M %p"
+
+msgid "%H:%M"
+msgstr "%-H:%M"
+
+msgid "Add Event"
+msgstr "Afegeix un esdeveniment"
+
+msgid "Edit Event"
+msgstr "Edita l'esdeveniment"
+
+msgid "From:"
+msgstr "Des de:"
+
+msgid "All day:"
+msgstr "Tot el dia:"
+
+msgid "To:"
+msgstr "Fins a:"
+
+msgid "Title"
+msgstr "Títol"
+
+msgid "Name of Event"
+msgstr "Nom de l'esdeveniment"
+
+msgid "Location"
+msgstr "Ubicació"
+
+msgid "John Smith OR Example St."
+msgstr "John Smith o C/ Exemple"
+
+msgid "Participants"
+msgstr "Participants"
+
+msgid "Name or Email Address"
+msgstr "Nom o adreça electrònica"
+
+msgid "Comments"
+msgstr "Comentaris"
+
 msgid "Create Event"
 msgstr "Crea un esdeveniment"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "L'esdeveniment ha de tenir un nom i una data vàlida"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,95 +103,42 @@ msgstr "Crea un esdeveniment"
 msgid "Create a new event"
 msgstr "Crea un esdeveniment nou"
 
-msgid "Delete the selected event"
-msgstr "Suprimeix l'esdeveniment seleccionat"
-
-msgid "Edit Event"
-msgstr "Edita l'esdeveniment"
-
 msgid "Edit the selected event"
 msgstr "Edita l'esdeveniment seleccionat"
 
-msgid "Ends: \t"
-msgstr "Acaba: \t"
-
-msgid "Export Calendar..."
-msgstr "Exporta el calendari..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Exporta o comparteix el calendari predeterminat"
-
-msgid "From:"
-msgstr "Des de:"
-
-msgid "Fullscreen"
-msgstr "Pantalla completa"
-
-msgid "Import..."
-msgstr "Importa..."
-
-msgid "John Smith OR Example St."
-msgstr "John Smith o C/ Exemple"
-
-msgid "Location"
-msgstr "Ubicació"
-
-msgid "Name of Event"
-msgstr "Nom de l'esdeveniment"
-
-msgid "Name or Email Address"
-msgstr "Nom o adreça electrònica"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "En aquest ordinador"
-
-msgid "Participants"
-msgstr "Participants"
-
-msgid "Personal"
-msgstr "Personal"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "Cerca esdeveniments"
+msgid "Delete the selected event"
+msgstr "Suprimeix l'esdeveniment seleccionat"
 
 msgid "Select calendars to display"
 msgstr "Seleccioneu els calendaris a mostrar"
 
-msgid "Show Week Numbers"
-msgstr "Mostra els números de la setmana"
+msgid "Search Events"
+msgstr "Cerca esdeveniments"
 
-msgid "Starts: \t"
-msgstr "Comença: \t"
-
-msgid "Sync..."
-msgstr "Sincronitza..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "Títol"
-
-msgid "To:"
-msgstr "Fins a:"
+msgid "Export or Share the default Calendar"
+msgstr "Exporta o comparteix el calendari predeterminat"
 
 #. Create everything
 msgid "Today"
 msgstr "Avui"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Visualitzeu i programeu esdeveniments"
+msgid "Fullscreen"
+msgstr "Pantalla completa"
 
-msgid "Webcal"
-msgstr "Calendari web"
+msgid "Show Week Numbers"
+msgstr "Mostra els números de la setmana"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "L'esdeveniment ha de tenir un nom i una data vàlida"
+msgid "Import..."
+msgstr "Importa..."
+
+msgid "Sync..."
+msgstr "Sincronitza..."
+
+msgid "About"
+msgstr "Quant a"
+
+msgid "Add calendar"
+msgstr "Afegeix un calendari"
 
 #. label settings
 msgid ""
@@ -158,9 +147,11 @@ msgid ""
 msgstr ""
 "Els pròxims events es mostren aquí quan és seleccionada una data amb events."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Afegeix un esdeveniment"
+msgid "Starts: \t"
+msgstr "Comença: \t"
+
+msgid "Ends: \t"
+msgstr "Acaba: \t"
 
 msgid "all day"
 msgstr "tot el dia"
@@ -168,11 +159,14 @@ msgstr "tot el dia"
 msgid "at"
 msgstr "a"
 
+msgid "Export Calendar..."
+msgstr "Exporta el calendari..."
+
 msgid "calendar.ics"
 msgstr "calendari.ics"
 
-#~ msgid "Guests"
-#~ msgstr "Convidats"
-
 #~ msgid "all the day"
 #~ msgstr "tot el dia"
+
+#~ msgid "Guests"
+#~ msgstr "Convidats"
