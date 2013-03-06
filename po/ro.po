@@ -8,137 +8,137 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-03-18 00:22+0000\n"
-"Last-Translator: Niels Avonds <Unknown>\n"
+"PO-Revision-Date: 2013-03-05 20:40+0000\n"
+"Last-Translator: Richard B. <Unknown>\n"
 "Language-Team: Romanian <ro@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-02-23 05:45+0000\n"
-"X-Generator: Launchpad (build 16506)\n"
+"X-Launchpad-Export-Date: 2013-03-06 06:01+0000\n"
+"X-Generator: Launchpad (build 16514)\n"
 "Language: ro\n"
 
 #. maya.desktop:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Vizualizare si programare evenimente"
 
 #. maya.desktop:5
 msgid "Calendar"
-msgstr ""
+msgstr "Calendar"
 
 #. maya.desktop:18
 msgid "_Add Event"
-msgstr ""
+msgstr "_Adaugă eveniment"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
-msgstr ""
+msgstr "Pe acest calculator"
 
 msgid "Webcal"
-msgstr ""
+msgstr "Webcal"
 
 msgid "Contacts"
-msgstr ""
+msgstr "Contacte"
 
 msgid "Personal"
-msgstr ""
+msgstr "Personal"
 
 msgid "%B %e, %Y"
-msgstr ""
+msgstr "%e %B %Y"
 
 msgid "%A, %b %d"
-msgstr ""
+msgstr "%A, %b %d"
 
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%l:%M %p"
 
 msgid "%H:%M"
-msgstr ""
+msgstr "%H:%M"
 
 msgid "Add Event"
-msgstr ""
+msgstr "Adăugare eveniment"
 
 msgid "Edit Event"
-msgstr ""
+msgstr "Editare eveniment"
 
 msgid "From:"
-msgstr ""
+msgstr "De la:"
 
 msgid "All day:"
-msgstr ""
+msgstr "Toată ziua:"
 
 msgid "To:"
-msgstr ""
+msgstr "Către"
 
 msgid "Title"
-msgstr ""
+msgstr "Titlu"
 
 msgid "Name of Event"
-msgstr ""
+msgstr "Numele evenimentului"
 
 msgid "Location"
-msgstr ""
+msgstr "Locaţie"
 
 msgid "John Smith OR Example St."
-msgstr ""
+msgstr "Ion Creanga SAU Exemplu Str."
 
 msgid "Participants"
-msgstr ""
+msgstr "Participanți"
 
 msgid "Name or Email Address"
-msgstr ""
+msgstr "Nume sau adresa de email"
 
 msgid "Comments"
-msgstr ""
+msgstr "Comentarii"
 
 msgid "Create Event"
-msgstr ""
+msgstr "Creează eveniment"
 
 msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgstr "Evenimentul trebuie denumit și trebuie să aibă o dată validă"
 
 #. Toolbar properties
 #. compliant with elementary HIG
 #. Initialize everything
 msgid "Create a new event"
-msgstr ""
+msgstr "Creează un eveniment nou"
 
 msgid "Edit the selected event"
-msgstr ""
+msgstr "Editează evenimentul selectat"
 
 msgid "Delete the selected event"
-msgstr ""
+msgstr "Şterge evenimentul selectat"
 
 msgid "Select calendars to display"
-msgstr ""
+msgstr "Selectați calendarele pentru afișare"
 
 msgid "Search Events"
-msgstr ""
+msgstr "Caută Evenimente"
 
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "Transferă sau Distribuie calendarul implicit"
 
 #. Create everything
 msgid "Today"
-msgstr ""
+msgstr "Astăzi"
 
 msgid "Fullscreen"
-msgstr ""
+msgstr "Ecran complet"
 
 msgid "Show Week Numbers"
-msgstr ""
+msgstr "Arată numerele săptămânilor"
 
 msgid "Import..."
-msgstr ""
+msgstr "Importă..."
 
 msgid "Sync..."
-msgstr ""
+msgstr "Sincronizare..."
 
 msgid "About"
-msgstr ""
+msgstr "Despre"
 
 msgid "Add calendar"
-msgstr ""
+msgstr "Adaugă calendar"
 
 #. label settings
 msgid ""
@@ -149,19 +149,19 @@ msgstr ""
 "evenimente."
 
 msgid "Starts: \t"
-msgstr ""
+msgstr "Începe: \t"
 
 msgid "Ends: \t"
-msgstr ""
+msgstr "Se termină: \t"
 
 msgid "all day"
-msgstr ""
+msgstr "toată ziua"
 
 msgid "at"
-msgstr ""
+msgstr "la"
 
 msgid "Export Calendar..."
-msgstr ""
+msgstr "Exportă calendarul..."
 
 msgid "calendar.ics"
-msgstr ""
+msgstr "calendar.ics"
