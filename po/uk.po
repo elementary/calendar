@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2013-03-11 05:00-0500\n"
 "PO-Revision-Date: 2012-10-18 22:54+0000\n"
 "Last-Translator: Sho0ter <Sho0ter@mail.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-02-23 05:45+0000\n"
 "X-Generator: Launchpad (build 16506)\n"
-"Language: uk\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Показати та скласти розклад подій."
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr "Про програму"
+
+msgid "Add Event"
+msgstr "Додати подію"
+
+msgid "Add calendar"
+msgstr "Додати календар"
+
+msgid "All day:"
+msgstr "Весь день:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Календар"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "Додати подію"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "На цьому комп'ютері"
-
-msgid "Webcal"
-msgstr "Календар в інтеренеті"
+msgid "Comments"
+msgstr "Коментарі"
 
 msgid "Contacts"
 msgstr "Контакти"
 
-msgid "Personal"
-msgstr "Особисте"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "Додати подію"
-
-msgid "Edit Event"
-msgstr "Змінити подію"
-
-msgid "From:"
-msgstr "З:"
-
-msgid "All day:"
-msgstr "Весь день:"
-
-msgid "To:"
-msgstr "До:"
-
-msgid "Title"
-msgstr "Назва"
-
-msgid "Name of Event"
-msgstr "Назва події"
-
-msgid "Location"
-msgstr "Розташування"
-
-msgid "John Smith OR Example St."
-msgstr "Джон Сміт АБО вулиця Зразок"
-
-msgid "Participants"
-msgstr "Учасники"
-
-msgid "Name or Email Address"
-msgstr "Ім'я або адреса електорнної пошти"
-
-msgid "Comments"
-msgstr "Коментарі"
-
 msgid "Create Event"
 msgstr "Додати подію"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Ваша подія повинна мати назву та коректний час"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,42 +61,95 @@ msgstr "Ваша подія повинна мати назву та корект
 msgid "Create a new event"
 msgstr "Створити нову подію"
 
-msgid "Edit the selected event"
-msgstr "Редагувати обрану подію"
-
 msgid "Delete the selected event"
 msgstr "Знищити обрану подію"
 
-msgid "Select calendars to display"
-msgstr "Виберіть календарі для відображення"
+msgid "Edit Event"
+msgstr "Змінити подію"
+
+msgid "Edit the selected event"
+msgstr "Редагувати обрану подію"
+
+msgid "Ends: \t"
+msgstr "Кінець: \t"
+
+msgid "Export Calendar..."
+msgstr "Експортувати календар..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Експорт або імпорт календаря по-замовчуванню"
+
+msgid "From:"
+msgstr "З:"
+
+msgid "Fullscreen"
+msgstr "Повноекранний режим"
+
+msgid "Import..."
+msgstr "Імпортувати..."
+
+msgid "John Smith OR Example St."
+msgstr "Джон Сміт АБО вулиця Зразок"
+
+msgid "Location"
+msgstr "Розташування"
+
+msgid "Name of Event"
+msgstr "Назва події"
+
+msgid "Name or Email Address"
+msgstr "Ім'я або адреса електорнної пошти"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "На цьому комп'ютері"
+
+msgid "Participants"
+msgstr "Учасники"
+
+msgid "Personal"
+msgstr "Особисте"
+
+msgid "Save Changes"
+msgstr ""
 
 msgid "Search Events"
 msgstr "Знайти подію"
 
-msgid "Export or Share the default Calendar"
-msgstr "Експорт або імпорт календаря по-замовчуванню"
+msgid "Select calendars to display"
+msgstr "Виберіть календарі для відображення"
+
+msgid "Show Week Numbers"
+msgstr "Показувати номери тижнів"
+
+msgid "Starts: \t"
+msgstr "Початок: \t"
+
+msgid "Sync..."
+msgstr "Синхронізація..."
+
+msgid "This event can't be edited"
+msgstr ""
+
+msgid "Title"
+msgstr "Назва"
+
+msgid "To:"
+msgstr "До:"
 
 #. Create everything
 msgid "Today"
 msgstr "Сьогодні"
 
-msgid "Fullscreen"
-msgstr "Повноекранний режим"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Показати та скласти розклад подій."
 
-msgid "Show Week Numbers"
-msgstr "Показувати номери тижнів"
+msgid "Webcal"
+msgstr "Календар в інтеренеті"
 
-msgid "Import..."
-msgstr "Імпортувати..."
-
-msgid "Sync..."
-msgstr "Синхронізація..."
-
-msgid "About"
-msgstr "Про програму"
-
-msgid "Add calendar"
-msgstr "Додати календар"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Ваша подія повинна мати назву та коректний час"
 
 #. label settings
 msgid ""
@@ -147,20 +158,15 @@ msgid ""
 msgstr ""
 "Ваші майбутні події будуть відображені тут коли ви виберете дату з подіями."
 
-msgid "Starts: \t"
-msgstr "Початок: \t"
-
-msgid "Ends: \t"
-msgstr "Кінець: \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "Додати подію"
 
 msgid "all day"
 msgstr "весь день"
 
 msgid "at"
 msgstr "в"
-
-msgid "Export Calendar..."
-msgstr "Експортувати календар..."
 
 msgid "calendar.ics"
 msgstr "календар.ics"

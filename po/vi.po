@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2013-03-11 05:00-0500\n"
 "PO-Revision-Date: 2012-08-16 18:54+0000\n"
 "Last-Translator: Ngô Trung <ndtrung4419@gmail.com>\n"
 "Language-Team: Vietnamese <vi@li.org>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-02-23 05:45+0000\n"
 "X-Generator: Launchpad (build 16506)\n"
-"Language: vi\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Hiển thị và lên lịch sự kiện"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr "Giới thiệu"
+
+msgid "Add Event"
+msgstr "Thêm sự kiện"
+
+msgid "Add calendar"
+msgstr "Thêm lịch"
+
+msgid "All day:"
+msgstr "Cả ngày:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Lịch"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Thêm sự kiện"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Trên máy này"
-
-msgid "Webcal"
-msgstr "Webcal"
+msgid "Comments"
+msgstr "Ghi chú"
 
 msgid "Contacts"
 msgstr "Liên lạc"
 
-msgid "Personal"
-msgstr "Cá nhân"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "Thêm sự kiện"
-
-msgid "Edit Event"
-msgstr "Sửa sự kiện"
-
-msgid "From:"
-msgstr "Từ:"
-
-msgid "All day:"
-msgstr "Cả ngày:"
-
-msgid "To:"
-msgstr "Đến:"
-
-msgid "Title"
-msgstr "Tên"
-
-msgid "Name of Event"
-msgstr "Tên của sự kiện"
-
-msgid "Location"
-msgstr "Địa điểm"
-
-msgid "John Smith OR Example St."
-msgstr "'Nhà bạn thân' chẳng hạn"
-
-msgid "Participants"
-msgstr "Người tham dự"
-
-msgid "Name or Email Address"
-msgstr "Tên hoặc địa chỉ email"
-
-msgid "Comments"
-msgstr "Ghi chú"
-
 msgid "Create Event"
 msgstr "Tạo sự kiện"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Sự kiện của bạn phải có tên và thời gian diễn ra"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,42 +61,95 @@ msgstr "Sự kiện của bạn phải có tên và thời gian diễn ra"
 msgid "Create a new event"
 msgstr "Tạo sự kiện"
 
-msgid "Edit the selected event"
-msgstr "Sửa sự kiện được chọn"
-
 msgid "Delete the selected event"
 msgstr "Xóa sự kiện được chọn"
 
-msgid "Select calendars to display"
-msgstr "Chọn các lịch được hiển thị"
+msgid "Edit Event"
+msgstr "Sửa sự kiện"
+
+msgid "Edit the selected event"
+msgstr "Sửa sự kiện được chọn"
+
+msgid "Ends: \t"
+msgstr "Kết thúc: \t"
+
+msgid "Export Calendar..."
+msgstr "Xuất lịch..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Xuất hoặc chia sẻ lịch mặc định"
+
+msgid "From:"
+msgstr "Từ:"
+
+msgid "Fullscreen"
+msgstr "Toàn màn hình"
+
+msgid "Import..."
+msgstr "Nhập..."
+
+msgid "John Smith OR Example St."
+msgstr "'Nhà bạn thân' chẳng hạn"
+
+msgid "Location"
+msgstr "Địa điểm"
+
+msgid "Name of Event"
+msgstr "Tên của sự kiện"
+
+msgid "Name or Email Address"
+msgstr "Tên hoặc địa chỉ email"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Trên máy này"
+
+msgid "Participants"
+msgstr "Người tham dự"
+
+msgid "Personal"
+msgstr "Cá nhân"
+
+msgid "Save Changes"
+msgstr ""
 
 msgid "Search Events"
 msgstr "Tìm kiếm sự kiện"
 
-msgid "Export or Share the default Calendar"
-msgstr "Xuất hoặc chia sẻ lịch mặc định"
+msgid "Select calendars to display"
+msgstr "Chọn các lịch được hiển thị"
+
+msgid "Show Week Numbers"
+msgstr "Hiển thị số thứ tự tuần"
+
+msgid "Starts: \t"
+msgstr "Bắt đầu: \t"
+
+msgid "Sync..."
+msgstr "Đồng bộ..."
+
+msgid "This event can't be edited"
+msgstr ""
+
+msgid "Title"
+msgstr "Tên"
+
+msgid "To:"
+msgstr "Đến:"
 
 #. Create everything
 msgid "Today"
 msgstr "Hôm nay"
 
-msgid "Fullscreen"
-msgstr "Toàn màn hình"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Hiển thị và lên lịch sự kiện"
 
-msgid "Show Week Numbers"
-msgstr "Hiển thị số thứ tự tuần"
+msgid "Webcal"
+msgstr "Webcal"
 
-msgid "Import..."
-msgstr "Nhập..."
-
-msgid "Sync..."
-msgstr "Đồng bộ..."
-
-msgid "About"
-msgstr "Giới thiệu"
-
-msgid "Add calendar"
-msgstr "Thêm lịch"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Sự kiện của bạn phải có tên và thời gian diễn ra"
 
 #. label settings
 msgid ""
@@ -148,20 +159,15 @@ msgstr ""
 "Những sự kiện sắp tới của bạn sẽ được hiển thị tại đây khi bạn chọn một ngày "
 "có chứa sự kiện."
 
-msgid "Starts: \t"
-msgstr "Bắt đầu: \t"
-
-msgid "Ends: \t"
-msgstr "Kết thúc: \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Thêm sự kiện"
 
 msgid "all day"
 msgstr "cả ngày"
 
 msgid "at"
 msgstr "lúc"
-
-msgid "Export Calendar..."
-msgstr "Xuất lịch..."
 
 msgid "calendar.ics"
 msgstr "calendar.ics"
