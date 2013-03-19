@@ -7,53 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-11 05:00-0500\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
 "PO-Revision-Date: 2013-03-05 20:40+0000\n"
 "Last-Translator: Richard B. <Unknown>\n"
 "Language-Team: Romanian <ro@li.org>\n"
-"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-06 06:01+0000\n"
-"X-Generator: Launchpad (build 16514)\n"
+"X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
+"X-Generator: Launchpad (build 16532)\n"
+"Language: ro\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%B %e, %Y"
-msgstr "%e %B %Y"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "About"
-msgstr "Despre"
-
-msgid "Add Event"
-msgstr "Adăugare eveniment"
-
-msgid "Add calendar"
-msgstr "Adaugă calendar"
-
-msgid "All day:"
-msgstr "Toată ziua:"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Vizualizare si programare evenimente"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Calendar"
 
-msgid "Comments"
-msgstr "Comentarii"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Adaugă eveniment"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Pe acest calculator"
+
+msgid "Webcal"
+msgstr "Webcal"
 
 msgid "Contacts"
 msgstr "Contacte"
 
+msgid "Personal"
+msgstr "Personal"
+
+msgid "%B %e, %Y"
+msgstr "%e %B %Y"
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "Add Event"
+msgstr "Adăugare eveniment"
+
+msgid "Edit Event"
+msgstr "Editare eveniment"
+
+msgid "From:"
+msgstr "De la:"
+
+msgid "All day:"
+msgstr "Toată ziua:"
+
+msgid "To:"
+msgstr "Către"
+
+msgid "Title"
+msgstr "Titlu"
+
+msgid "Name of Event"
+msgstr "Numele evenimentului"
+
+msgid "Location"
+msgstr "Locaţie"
+
+msgid "John Smith OR Example St."
+msgstr "Ion Creanga SAU Exemplu Str."
+
+msgid "Participants"
+msgstr "Participanți"
+
+msgid "Name or Email Address"
+msgstr "Nume sau adresa de email"
+
+msgid "Comments"
+msgstr "Comentarii"
+
 msgid "Create Event"
 msgstr "Creează eveniment"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Evenimentul trebuie denumit și trebuie să aibă o dată validă"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -61,95 +103,42 @@ msgstr "Creează eveniment"
 msgid "Create a new event"
 msgstr "Creează un eveniment nou"
 
-msgid "Delete the selected event"
-msgstr "Şterge evenimentul selectat"
-
-msgid "Edit Event"
-msgstr "Editare eveniment"
-
 msgid "Edit the selected event"
 msgstr "Editează evenimentul selectat"
 
-msgid "Ends: \t"
-msgstr "Se termină: \t"
-
-msgid "Export Calendar..."
-msgstr "Exportă calendarul..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Transferă sau Distribuie calendarul implicit"
-
-msgid "From:"
-msgstr "De la:"
-
-msgid "Fullscreen"
-msgstr "Ecran complet"
-
-msgid "Import..."
-msgstr "Importă..."
-
-msgid "John Smith OR Example St."
-msgstr "Ion Creanga SAU Exemplu Str."
-
-msgid "Location"
-msgstr "Locaţie"
-
-msgid "Name of Event"
-msgstr "Numele evenimentului"
-
-msgid "Name or Email Address"
-msgstr "Nume sau adresa de email"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Pe acest calculator"
-
-msgid "Participants"
-msgstr "Participanți"
-
-msgid "Personal"
-msgstr "Personal"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "Caută Evenimente"
+msgid "Delete the selected event"
+msgstr "Şterge evenimentul selectat"
 
 msgid "Select calendars to display"
 msgstr "Selectați calendarele pentru afișare"
 
-msgid "Show Week Numbers"
-msgstr "Arată numerele săptămânilor"
+msgid "Search Events"
+msgstr "Caută Evenimente"
 
-msgid "Starts: \t"
-msgstr "Începe: \t"
-
-msgid "Sync..."
-msgstr "Sincronizare..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "Titlu"
-
-msgid "To:"
-msgstr "Către"
+msgid "Export or Share the default Calendar"
+msgstr "Transferă sau Distribuie calendarul implicit"
 
 #. Create everything
 msgid "Today"
 msgstr "Astăzi"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Vizualizare si programare evenimente"
+msgid "Fullscreen"
+msgstr "Ecran complet"
 
-msgid "Webcal"
-msgstr "Webcal"
+msgid "Show Week Numbers"
+msgstr "Arată numerele săptămânilor"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Evenimentul trebuie denumit și trebuie să aibă o dată validă"
+msgid "Import..."
+msgstr "Importă..."
+
+msgid "Sync..."
+msgstr "Sincronizare..."
+
+msgid "About"
+msgstr "Despre"
+
+msgid "Add calendar"
+msgstr "Adaugă calendar"
 
 #. label settings
 msgid ""
@@ -159,15 +148,20 @@ msgstr ""
 "Evenimentele viitoare vor fi afişate aici când selectezi o dată cu "
 "evenimente."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Adaugă eveniment"
+msgid "Starts: \t"
+msgstr "Începe: \t"
+
+msgid "Ends: \t"
+msgstr "Se termină: \t"
 
 msgid "all day"
 msgstr "toată ziua"
 
 msgid "at"
 msgstr "la"
+
+msgid "Export Calendar..."
+msgstr "Exportă calendarul..."
 
 msgid "calendar.ics"
 msgstr "calendar.ics"
