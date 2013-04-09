@@ -8,40 +8,40 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2012-04-23 13:48+0000\n"
-"Last-Translator: Simon <Unknown>\n"
+"PO-Revision-Date: 2013-04-08 16:43+0000\n"
+"Last-Translator: Mads Dyrmann Larsen <madsdyrmannlarsen@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
-"X-Generator: Launchpad (build 16532)\n"
+"X-Launchpad-Export-Date: 2013-04-09 05:39+0000\n"
+"X-Generator: Launchpad (build 16550)\n"
 "Language: da\n"
 
 #. maya.desktop:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Vis og planlæg begivenheder"
 
 #. maya.desktop:5
 msgid "Calendar"
-msgstr ""
+msgstr "Kalender"
 
 #. maya.desktop:18
 msgid "_Add Event"
-msgstr ""
+msgstr "_Tilføj Begivenhed"
 
 #. Ensure the groups actually exist
 msgid "On this computer"
-msgstr ""
+msgstr "På denne computer"
 
 msgid "Webcal"
-msgstr ""
+msgstr "Webcal"
 
 msgid "Contacts"
-msgstr ""
+msgstr "Adressebog"
 
 msgid "Personal"
-msgstr ""
+msgstr "Personlig"
 
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
@@ -77,13 +77,13 @@ msgid "Name of Event"
 msgstr "Navn på begivenhed"
 
 msgid "Location"
-msgstr "Sted"
+msgstr "Placering"
 
 msgid "John Smith OR Example St."
-msgstr ""
+msgstr "John Smith ELLER Eksempel St."
 
 msgid "Participants"
-msgstr ""
+msgstr "Deltagere"
 
 msgid "Name or Email Address"
 msgstr "Navn eller emailadresse"
@@ -95,7 +95,7 @@ msgid "Create Event"
 msgstr "Opret begivenhed"
 
 msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgstr "Din begivenhed skal have et navn og en gyldig dato"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -113,10 +113,10 @@ msgid "Select calendars to display"
 msgstr "Vælg kalendere til visning"
 
 msgid "Search Events"
-msgstr ""
+msgstr "Søg i Begivenheder"
 
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "Eksporter eller Del standardkalenderen"
 
 #. Create everything
 msgid "Today"
@@ -135,10 +135,10 @@ msgid "Sync..."
 msgstr "Synkronisér..."
 
 msgid "About"
-msgstr ""
+msgstr "Om"
 
 msgid "Add calendar"
-msgstr ""
+msgstr "Tilføj kalender"
 
 #. label settings
 msgid ""
@@ -149,22 +149,22 @@ msgstr ""
 "begivenheder."
 
 msgid "Starts: \t"
-msgstr ""
+msgstr "Begynder: \t"
 
 msgid "Ends: \t"
-msgstr ""
+msgstr "Slutter: \t"
 
 msgid "all day"
-msgstr ""
+msgstr "hele dagen"
 
 msgid "at"
-msgstr ""
+msgstr "klokken"
 
 msgid "Export Calendar..."
-msgstr ""
+msgstr "Eksporter Kalender..."
 
 msgid "calendar.ics"
-msgstr ""
+msgstr "kalender.ics"
 
 #~ msgid "all the day"
 #~ msgstr "hele dagen"
