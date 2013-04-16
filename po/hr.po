@@ -1,0 +1,164 @@
+# Croatian translation for maya
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the maya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: maya\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"PO-Revision-Date: 2013-04-15 14:52+0000\n"
+"Last-Translator: zvacet <ikoli@yahoo.com>\n"
+"Language-Team: Croatian <hr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-04-16 04:59+0000\n"
+"X-Generator: Launchpad (build 16564)\n"
+
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr ""
+
+#. maya.desktop:5
+msgid "Calendar"
+msgstr ""
+
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Dodaj događaj"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Na ovom računalu"
+
+msgid "Webcal"
+msgstr ""
+
+msgid "Contacts"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "%B %e, %Y"
+msgstr ""
+
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "%H:%M"
+msgstr ""
+
+msgid "Add Event"
+msgstr ""
+
+msgid "Edit Event"
+msgstr ""
+
+msgid "From:"
+msgstr ""
+
+msgid "All day:"
+msgstr ""
+
+msgid "To:"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Name of Event"
+msgstr "Ime događaja"
+
+msgid "Location"
+msgstr ""
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Participants"
+msgstr ""
+
+msgid "Name or Email Address"
+msgstr "Ime ili email adresa"
+
+msgid "Comments"
+msgstr ""
+
+msgid "Create Event"
+msgstr "Napravi događaj"
+
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Vaš događaj mora biti imenovan i mora imati valjan datum"
+
+#. Toolbar properties
+#. compliant with elementary HIG
+#. Initialize everything
+msgid "Create a new event"
+msgstr "Napravi novi događaj"
+
+msgid "Edit the selected event"
+msgstr "Uredi odabrani događaj"
+
+msgid "Delete the selected event"
+msgstr "Izbriši odabrani događaj"
+
+msgid "Select calendars to display"
+msgstr ""
+
+msgid "Search Events"
+msgstr ""
+
+msgid "Export or Share the default Calendar"
+msgstr "Izvezi ili dijeli zadani kalendar"
+
+#. Create everything
+msgid "Today"
+msgstr ""
+
+msgid "Fullscreen"
+msgstr ""
+
+msgid "Show Week Numbers"
+msgstr ""
+
+msgid "Import..."
+msgstr ""
+
+msgid "Sync..."
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Add calendar"
+msgstr "Dodaj kalendar"
+
+#. label settings
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+
+msgid "Starts: \t"
+msgstr "Počinje: \t"
+
+msgid "Ends: \t"
+msgstr "Završava: \t"
+
+msgid "all day"
+msgstr ""
+
+msgid "at"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr "Izvezi kalendar..."
+
+msgid "calendar.ics"
+msgstr ""
