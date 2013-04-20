@@ -8,22 +8,22 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-25 16:46+0200\n"
-"PO-Revision-Date: 2013-04-15 14:52+0000\n"
-"Last-Translator: zvacet <ikoli@yahoo.com>\n"
+"PO-Revision-Date: 2013-04-19 19:14+0000\n"
+"Last-Translator: Ivan <ivan-os@live.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-16 04:59+0000\n"
-"X-Generator: Launchpad (build 16564)\n"
+"X-Launchpad-Export-Date: 2013-04-20 05:33+0000\n"
+"X-Generator: Launchpad (build 16567)\n"
 
 #. maya.desktop:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Pregledaj i zakaži događaje"
 
 #. maya.desktop:5
 msgid "Calendar"
-msgstr ""
+msgstr "Kalendar"
 
 #. maya.desktop:18
 msgid "_Add Event"
@@ -34,61 +34,61 @@ msgid "On this computer"
 msgstr "Na ovom računalu"
 
 msgid "Webcal"
-msgstr ""
+msgstr "Webcal"
 
 msgid "Contacts"
-msgstr ""
+msgstr "Kontakti"
 
 msgid "Personal"
-msgstr ""
+msgstr "Osobno"
 
 msgid "%B %e, %Y"
-msgstr ""
+msgstr "%B %e, %Y"
 
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%l:%M %p"
 
 msgid "%H:%M"
-msgstr ""
+msgstr "%H:%M"
 
 msgid "Add Event"
-msgstr ""
+msgstr "Dodaj događaj"
 
 msgid "Edit Event"
-msgstr ""
+msgstr "Uredi Događaj"
 
 msgid "From:"
-msgstr ""
+msgstr "Šalje:"
 
 msgid "All day:"
-msgstr ""
+msgstr "Cijeli dan:"
 
 msgid "To:"
-msgstr ""
+msgstr "Za:"
 
 msgid "Title"
-msgstr ""
+msgstr "Naslov"
 
 msgid "Name of Event"
 msgstr "Ime događaja"
 
 msgid "Location"
-msgstr ""
+msgstr "Lokacija"
 
 msgid "John Smith OR Example St."
-msgstr ""
+msgstr "Ime Prezime ILI Ulica X"
 
 msgid "Participants"
-msgstr ""
+msgstr "Sudionici"
 
 msgid "Name or Email Address"
 msgstr "Ime ili email adresa"
 
 msgid "Comments"
-msgstr ""
+msgstr "Komentari"
 
 msgid "Create Event"
 msgstr "Napravi događaj"
@@ -109,32 +109,32 @@ msgid "Delete the selected event"
 msgstr "Izbriši odabrani događaj"
 
 msgid "Select calendars to display"
-msgstr ""
+msgstr "Odaberite kalendare za prikaz"
 
 msgid "Search Events"
-msgstr ""
+msgstr "Pretraži događaje"
 
 msgid "Export or Share the default Calendar"
 msgstr "Izvezi ili dijeli zadani kalendar"
 
 #. Create everything
 msgid "Today"
-msgstr ""
+msgstr "Danas"
 
 msgid "Fullscreen"
-msgstr ""
+msgstr "Puni zaslon"
 
 msgid "Show Week Numbers"
-msgstr ""
+msgstr "Prikaži broj tjedna"
 
 msgid "Import..."
-msgstr ""
+msgstr "Uvezi…"
 
 msgid "Sync..."
-msgstr ""
+msgstr "Sinkroniziraj..."
 
 msgid "About"
-msgstr ""
+msgstr "O programu"
 
 msgid "Add calendar"
 msgstr "Dodaj kalendar"
@@ -144,6 +144,8 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
+"Vaši nadolazeći događaji će biti prikazani kada odaberete datum sa zakazanim "
+"događajima"
 
 msgid "Starts: \t"
 msgstr "Počinje: \t"
@@ -152,13 +154,13 @@ msgid "Ends: \t"
 msgstr "Završava: \t"
 
 msgid "all day"
-msgstr ""
+msgstr "cijeli dan"
 
 msgid "at"
-msgstr ""
+msgstr "na"
 
 msgid "Export Calendar..."
 msgstr "Izvezi kalendar..."
 
 msgid "calendar.ics"
-msgstr ""
+msgstr "calendar.ics"
