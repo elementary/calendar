@@ -1,24 +1,28 @@
-                                   Install                                      
 --------------------------------------------------------------------------------
+OPTIONAL
+--------------------------------------------------------------------------------
+sudo add-apt-repository ppa:elementary-os/daily
+sudo apt-get build-dep maya
 
-• Build Maya
+--------------------------------------------------------------------------------
+DEPENDENCIES
+--------------------------------------------------------------------------------
+cmake (>= 2.8)
+libecal1.2-dev (>= 3.2.0)
+libgee-dev
+libglib2.0-dev (>= 2.29.0)
+libgranite-dev
+libgtk-3-dev
+libical-dev
+valac-0.16 | valac (>= 0.16)
 
-  bzr branch lp:maya
-  cd maya
-  mkdir build; cd build
-  cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-  make
-  sudo make install
-  
-  Alternatively, you could run
-  
-  ./install.sh
-  
-  in the project root to install Maya.
-
-• Bugs
-
-  If you find bugs in this installation guide or in Maya itself, please report them at
-  https://launchpad.net/maya/+filebug
-
-
+--------------------------------------------------------------------------------
+BUILDING
+--------------------------------------------------------------------------------
+bzr branch lp:maya
+cd maya
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+make
+sudo make install
