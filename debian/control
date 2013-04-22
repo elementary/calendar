@@ -12,7 +12,7 @@ Build-Depends: cmake (>= 2.8),
                libical-dev,
                pkg-config,
                valac-0.16 | valac (>= 0.16)
-Standards-Version: 3.8.4
+Standards-Version: 3.9.3
 Homepage: https://launchpad.net/maya
 
 Package: maya
@@ -27,7 +27,7 @@ Conflicts: maya (<< 0.2.0~r394)
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: GCal-syncing GTK+ calendar application
- Maya is a slim, lightweight, GCal-syncing GTK+ calendar application written
+ Maya is a slim, lightweight, GTK+ calendar application written
  in Vala, specifically for the Elementary project.
 
 Package: maya-calendar-dbg
@@ -36,7 +36,7 @@ Section: debug
 Priority: extra
 Depends: maya-calendar (= ${binary:Version}), ${misc:Depends}
 Description: GCal-syncing GTK+ calendar application (debugging symbols)
- Maya is a slim, lightweight, GCal-syncing GTK+ Calendar application written
- in Vala, specifically for the Elementary project.
+ Maya is a slim, lightweight, GTK+ Calendar application written
+ in Vala, specifically for the elementary project.
  .
  This package contains debugging symbols for maya.
