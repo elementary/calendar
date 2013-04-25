@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2013-04-25 00:38-0500\n"
 "PO-Revision-Date: 2012-06-25 23:42+0000\n"
 "Last-Translator: Niels Avonds <Unknown>\n"
 "Language-Team: Malayalam <ml@li.org>\n"
+"Language: ml\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
 "X-Generator: Launchpad (build 16532)\n"
-"Language: ml\n"
-
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr ""
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr "കലണ്ടര്‍"
-
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "ഇവന്റ് _ചേര്‍ക്കുക"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "ഈ കമ്പ്യൂട്ടറില്‍"
-
-msgid "Webcal"
-msgstr ""
-
-msgid "Contacts"
-msgstr "വിലാസങ്ങള്‍"
-
-msgid "Personal"
-msgstr "വ്യക്തിപരം"
-
-msgid "%B %e, %Y"
-msgstr ""
 
 msgid "%A, %b %d"
 msgstr ""
 
-msgid "%l:%M %p"
+msgid "%B %e, %Y"
 msgstr ""
 
 msgid "%H:%M"
 msgstr ""
 
+msgid "%l:%M %p"
+msgstr ""
+
+msgid "About"
+msgstr "സംബന്ധിച്ച്"
+
 msgid "Add Event"
 msgstr "ഇവന്റ് ചേര്‍ക്കുക"
 
-msgid "Edit Event"
-msgstr "ഇവന്റില്‍ മാറ്റം വരുത്തുക"
-
-msgid "From:"
-msgstr "മുതല്‍:"
+msgid "Add calendar"
+msgstr "കലണ്ടര്‍ ചേര്‍ക്കുക"
 
 msgid "All day:"
 msgstr "മുഴുവന്‍ ദിവസവും:"
 
-msgid "To:"
-msgstr "വരെ:"
-
-msgid "Title"
-msgstr "തലക്കെട്ട്"
-
-msgid "Name of Event"
-msgstr "ഇവന്റിന്റെ പേര്"
-
-msgid "Location"
-msgstr "സ്ഥലം"
-
-msgid "John Smith OR Example St."
-msgstr ""
-
-msgid "Participants"
-msgstr ""
-
-msgid "Name or Email Address"
-msgstr "പേര് അല്ലെങ്കില്‍ ഇമെയില്‍ വിലാസം"
+#. maya.desktop:5
+msgid "Calendar"
+msgstr "കലണ്ടര്‍"
 
 msgid "Comments"
 msgstr "വിവരണം"
 
+msgid "Contacts"
+msgstr "വിലാസങ്ങള്‍"
+
 msgid "Create Event"
 msgstr "ഇവന്റ് ഉണ്ടാക്കുക"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "നിങ്ങളുടെ ഇവന്റിന് ഒരു പേരും തീയതിയും ഉണ്ടായിരിക്കണം"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,65 +61,111 @@ msgstr "നിങ്ങളുടെ ഇവന്റിന് ഒരു പേര
 msgid "Create a new event"
 msgstr "പുതിയ ഇവന്റ് ഉണ്ടാക്കുക"
 
-msgid "Edit the selected event"
-msgstr "തിരഞ്ഞെടുത്ത ഇവന്റില്‍ മാറ്റം വരുത്തുക"
-
 msgid "Delete the selected event"
 msgstr "തിരഞ്ഞെടുത്ത ഇവന്റ് നീക്കംചെയ്യുക"
 
-msgid "Select calendars to display"
-msgstr "പ്രദര്‍ശിപ്പിക്കേണ്ട കലണ്ടറുകള്‍ തിരഞ്ഞെടുക്കുക"
+msgid "Edit Event"
+msgstr "ഇവന്റില്‍ മാറ്റം വരുത്തുക"
+
+msgid "Edit the selected event"
+msgstr "തിരഞ്ഞെടുത്ത ഇവന്റില്‍ മാറ്റം വരുത്തുക"
+
+msgid "Ends: \t"
+msgstr ""
+
+msgid "Export Calendar..."
+msgstr "കലണ്ടര്‍ പുറത്തെടുക്കുക..."
+
+msgid "Export or Share the default Calendar"
+msgstr "സഹജമായ കലണ്ടര്‍ പങ്കിടുക"
+
+msgid "From:"
+msgstr "മുതല്‍:"
+
+msgid "Fullscreen"
+msgstr "പരമാവധി വലുപ്പത്തിലുള്ള സ്ക്രീന്‍"
+
+msgid "Import..."
+msgstr "ഇറക്കുമതി ചെയ്യുക..."
+
+msgid "John Smith OR Example St."
+msgstr ""
+
+msgid "Location"
+msgstr "സ്ഥലം"
+
+msgid "Name of Event"
+msgstr "ഇവന്റിന്റെ പേര്"
+
+msgid "Name or Email Address"
+msgstr "പേര് അല്ലെങ്കില്‍ ഇമെയില്‍ വിലാസം"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "ഈ കമ്പ്യൂട്ടറില്‍"
+
+msgid "Participants"
+msgstr ""
+
+msgid "Personal"
+msgstr "വ്യക്തിപരം"
+
+msgid "Save Changes"
+msgstr ""
 
 msgid "Search Events"
 msgstr ""
 
-msgid "Export or Share the default Calendar"
-msgstr "സഹജമായ കലണ്ടര്‍ പങ്കിടുക"
+msgid "Select calendars to display"
+msgstr "പ്രദര്‍ശിപ്പിക്കേണ്ട കലണ്ടറുകള്‍ തിരഞ്ഞെടുക്കുക"
+
+msgid "Show Week Numbers"
+msgstr "ആഴ്ചയുടെ സംഖ്യ കാണിക്കുക"
+
+msgid "Starts: \t"
+msgstr "തുടക്കം: \t"
+
+msgid "Sync..."
+msgstr ""
+
+msgid "This event can't be edited"
+msgstr ""
+
+msgid "Title"
+msgstr "തലക്കെട്ട്"
+
+msgid "To:"
+msgstr "വരെ:"
 
 #. Create everything
 msgid "Today"
 msgstr "ഇന്ന്"
 
-msgid "Fullscreen"
-msgstr "പരമാവധി വലുപ്പത്തിലുള്ള സ്ക്രീന്‍"
-
-msgid "Show Week Numbers"
-msgstr "ആഴ്ചയുടെ സംഖ്യ കാണിക്കുക"
-
-msgid "Import..."
-msgstr "ഇറക്കുമതി ചെയ്യുക..."
-
-msgid "Sync..."
+#. maya.desktop:6
+msgid "View and schedule events"
 msgstr ""
 
-msgid "About"
-msgstr "സംബന്ധിച്ച്"
+msgid "Webcal"
+msgstr ""
 
-msgid "Add calendar"
-msgstr "കലണ്ടര്‍ ചേര്‍ക്കുക"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "നിങ്ങളുടെ ഇവന്റിന് ഒരു പേരും തീയതിയും ഉണ്ടായിരിക്കണം"
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr ""
-"തീയതി തിരഞ്ഞെടുക്കുമ്പോള്‍ നിങ്ങളുടെ ഇനി വരുവാനുള്ള ഇവന്റുകള്‍ "
-"പ്രദര്‍ശിപ്പിക്കുന്നതാണ്."
+msgstr "തീയതി തിരഞ്ഞെടുക്കുമ്പോള്‍ നിങ്ങളുടെ ഇനി വരുവാനുള്ള ഇവന്റുകള്‍ പ്രദര്‍ശിപ്പിക്കുന്നതാണ്."
 
-msgid "Starts: \t"
-msgstr "തുടക്കം: \t"
-
-msgid "Ends: \t"
-msgstr ""
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "ഇവന്റ് _ചേര്‍ക്കുക"
 
 msgid "all day"
 msgstr "മുഴുവന്‍ ദിവസവും"
 
 msgid "at"
 msgstr ""
-
-msgid "Export Calendar..."
-msgstr "കലണ്ടര്‍ പുറത്തെടുക്കുക..."
 
 msgid "calendar.ics"
 msgstr ""

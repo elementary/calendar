@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2013-04-25 00:38-0500\n"
 "PO-Revision-Date: 2012-12-13 17:39+0000\n"
 "Last-Translator: Wesley <js4918177@gmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
 "X-Generator: Launchpad (build 16532)\n"
-"Language: nl\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Bekijk en maak afspraken"
+msgid "%A, %b %d"
+msgstr "%A, %b, %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr "Over"
+
+msgid "Add Event"
+msgstr "Gebeurtenis toevoegen"
+
+msgid "Add calendar"
+msgstr "Agenda toevoegen"
+
+msgid "All day:"
+msgstr "De hele dag:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Kalender"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Nieuwe afspraak"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Op deze computer"
-
-msgid "Webcal"
-msgstr "Webkalender"
+msgid "Comments"
+msgstr "Opmerkingen"
 
 msgid "Contacts"
 msgstr "Contactpersonen"
 
-msgid "Personal"
-msgstr "Persoonlijk"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b, %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "Gebeurtenis toevoegen"
-
-msgid "Edit Event"
-msgstr "Gebeurtenis bewerken"
-
-msgid "From:"
-msgstr "Van:"
-
-msgid "All day:"
-msgstr "De hele dag:"
-
-msgid "To:"
-msgstr "Tot:"
-
-msgid "Title"
-msgstr "Titel"
-
-msgid "Name of Event"
-msgstr "Gebeurtenisnaam"
-
-msgid "Location"
-msgstr "Plaats"
-
-msgid "John Smith OR Example St."
-msgstr "Jan Smit OF Voorbeeldlaan"
-
-msgid "Participants"
-msgstr "Deelnemers"
-
-msgid "Name or Email Address"
-msgstr "Naam of Emailadres"
-
-msgid "Comments"
-msgstr "Opmerkingen"
-
 msgid "Create Event"
 msgstr "Maak gebeurtenis"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Je afspraak moemt een naam en een geldige datum hebben"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,42 +61,95 @@ msgstr "Je afspraak moemt een naam en een geldige datum hebben"
 msgid "Create a new event"
 msgstr "Maak een nieuwe gebeurtenis aan"
 
-msgid "Edit the selected event"
-msgstr "De geselecteerde gebeurtenis bewerken"
-
 msgid "Delete the selected event"
 msgstr "De geselecteerde gebeurtenis verwijderen"
 
-msgid "Select calendars to display"
-msgstr "Selecteer agenda's om weer te geven"
+msgid "Edit Event"
+msgstr "Gebeurtenis bewerken"
+
+msgid "Edit the selected event"
+msgstr "De geselecteerde gebeurtenis bewerken"
+
+msgid "Ends: \t"
+msgstr "Eindigt: \t"
+
+msgid "Export Calendar..."
+msgstr "Exporteer Kalender..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Exporteer of Deel de standaardagenda"
+
+msgid "From:"
+msgstr "Van:"
+
+msgid "Fullscreen"
+msgstr "Volledig Scherm"
+
+msgid "Import..."
+msgstr "Importeren..."
+
+msgid "John Smith OR Example St."
+msgstr "Jan Smit OF Voorbeeldlaan"
+
+msgid "Location"
+msgstr "Plaats"
+
+msgid "Name of Event"
+msgstr "Gebeurtenisnaam"
+
+msgid "Name or Email Address"
+msgstr "Naam of Emailadres"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Op deze computer"
+
+msgid "Participants"
+msgstr "Deelnemers"
+
+msgid "Personal"
+msgstr "Persoonlijk"
+
+msgid "Save Changes"
+msgstr ""
 
 msgid "Search Events"
 msgstr "Zoek Evenementen"
 
-msgid "Export or Share the default Calendar"
-msgstr "Exporteer of Deel de standaardagenda"
+msgid "Select calendars to display"
+msgstr "Selecteer agenda's om weer te geven"
+
+msgid "Show Week Numbers"
+msgstr "Weeknummers tonen"
+
+msgid "Starts: \t"
+msgstr "Begint: \t"
+
+msgid "Sync..."
+msgstr "Synchroniseren..."
+
+msgid "This event can't be edited"
+msgstr ""
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "To:"
+msgstr "Tot:"
 
 #. Create everything
 msgid "Today"
 msgstr "Vandaag"
 
-msgid "Fullscreen"
-msgstr "Volledig Scherm"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Bekijk en maak afspraken"
 
-msgid "Show Week Numbers"
-msgstr "Weeknummers tonen"
+msgid "Webcal"
+msgstr "Webkalender"
 
-msgid "Import..."
-msgstr "Importeren..."
-
-msgid "Sync..."
-msgstr "Synchroniseren..."
-
-msgid "About"
-msgstr "Over"
-
-msgid "Add calendar"
-msgstr "Agenda toevoegen"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Je afspraak moemt een naam en een geldige datum hebben"
 
 #. label settings
 msgid ""
@@ -148,11 +159,9 @@ msgstr ""
 "Uw aanstaande gebeurtenissen zullen hier getoond worden wanneer u een datum "
 "met gebeurtenissen selecteert."
 
-msgid "Starts: \t"
-msgstr "Begint: \t"
-
-msgid "Ends: \t"
-msgstr "Eindigt: \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Nieuwe afspraak"
 
 msgid "all day"
 msgstr "de hele dag"
@@ -160,14 +169,11 @@ msgstr "de hele dag"
 msgid "at"
 msgstr "om"
 
-msgid "Export Calendar..."
-msgstr "Exporteer Kalender..."
-
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#~ msgid "all the day"
-#~ msgstr "heel de dag"
-
 #~ msgid "Guests"
 #~ msgstr "Gasten"
+
+#~ msgid "all the day"
+#~ msgstr "heel de dag"

@@ -297,6 +297,7 @@ namespace Maya {
             window.set_size_request (700, 400);
             window.default_width = saved_state.window_width;
             window.default_height = saved_state.window_height;
+            window.window_position = Gtk.WindowPosition.CENTER;
 
             window.delete_event.connect (on_window_delete_event);
             window.destroy.connect (() => Gtk.main_quit ());

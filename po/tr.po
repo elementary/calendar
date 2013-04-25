@@ -7,96 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2013-04-25 00:38-0500\n"
 "PO-Revision-Date: 2012-10-17 20:03+0000\n"
 "Last-Translator: Ferhat TUNÇTAN <ferhattnctn66@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
 "X-Generator: Launchpad (build 16532)\n"
-"Language: tr\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Etkinlikleri Görüntüle ve Düzenle"
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+msgid "%H:%M"
+msgstr "%H:%M"
+
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+msgid "About"
+msgstr "Hakkında"
+
+msgid "Add Event"
+msgstr "Etkinlik Ekle"
+
+msgid "Add calendar"
+msgstr "Takvim ekle"
+
+msgid "All day:"
+msgstr "Tüm gün:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Takvim"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "Olay _Ekle"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Bu bilgisayarda"
-
-msgid "Webcal"
-msgstr "Webcal"
+msgid "Comments"
+msgstr "Yorumlar"
 
 msgid "Contacts"
 msgstr "Kişiler"
 
-msgid "Personal"
-msgstr "Kişisel"
-
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-msgid "%H:%M"
-msgstr "%H:%M"
-
-msgid "Add Event"
-msgstr "Etkinlik Ekle"
-
-msgid "Edit Event"
-msgstr "Etkinliği Düzenle"
-
-msgid "From:"
-msgstr "Başlangıç:"
-
-msgid "All day:"
-msgstr "Tüm gün:"
-
-msgid "To:"
-msgstr "Bitiş:"
-
-msgid "Title"
-msgstr "Başlık"
-
-msgid "Name of Event"
-msgstr "Etkinliğin Adı:"
-
-msgid "Location"
-msgstr "Konum"
-
-msgid "John Smith OR Example St."
-msgstr "Hasan Hüseyin veya Örnek Sokak"
-
-msgid "Participants"
-msgstr "Katılımcılar"
-
-msgid "Name or Email Address"
-msgstr "İsim veya E-posta Adresi"
-
-msgid "Comments"
-msgstr "Yorumlar"
-
 msgid "Create Event"
 msgstr "Etkinlik Oluştur"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-"Etkinliğinizin isimlendirilmiş olması ve geçerli bir tarihte olması gerekiyor"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -104,42 +61,96 @@ msgstr ""
 msgid "Create a new event"
 msgstr "Yeni bir etkinlik oluştur"
 
-msgid "Edit the selected event"
-msgstr "Seçili etkinliği düzenle"
-
 msgid "Delete the selected event"
 msgstr "Seçili etkinliği sil"
 
-msgid "Select calendars to display"
-msgstr "Görüntülenecek takvimleri seçin"
+msgid "Edit Event"
+msgstr "Etkinliği Düzenle"
+
+msgid "Edit the selected event"
+msgstr "Seçili etkinliği düzenle"
+
+msgid "Ends: \t"
+msgstr "Biter: \t"
+
+msgid "Export Calendar..."
+msgstr "Takvimi Dışarı Aktar"
+
+msgid "Export or Share the default Calendar"
+msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
+
+msgid "From:"
+msgstr "Başlangıç:"
+
+msgid "Fullscreen"
+msgstr "Tam ekran"
+
+msgid "Import..."
+msgstr "İçe Aktar..."
+
+msgid "John Smith OR Example St."
+msgstr "Hasan Hüseyin veya Örnek Sokak"
+
+msgid "Location"
+msgstr "Konum"
+
+msgid "Name of Event"
+msgstr "Etkinliğin Adı:"
+
+msgid "Name or Email Address"
+msgstr "İsim veya E-posta Adresi"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Bu bilgisayarda"
+
+msgid "Participants"
+msgstr "Katılımcılar"
+
+msgid "Personal"
+msgstr "Kişisel"
+
+msgid "Save Changes"
+msgstr ""
 
 msgid "Search Events"
 msgstr "Etkinlikleri Ara"
 
-msgid "Export or Share the default Calendar"
-msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
+msgid "Select calendars to display"
+msgstr "Görüntülenecek takvimleri seçin"
+
+msgid "Show Week Numbers"
+msgstr "Hafta Numaralarını Göster"
+
+msgid "Starts: \t"
+msgstr "Başlar: \t"
+
+msgid "Sync..."
+msgstr "Eşzamanla..."
+
+msgid "This event can't be edited"
+msgstr ""
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "To:"
+msgstr "Bitiş:"
 
 #. Create everything
 msgid "Today"
 msgstr "Bugün"
 
-msgid "Fullscreen"
-msgstr "Tam ekran"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Etkinlikleri Görüntüle ve Düzenle"
 
-msgid "Show Week Numbers"
-msgstr "Hafta Numaralarını Göster"
+msgid "Webcal"
+msgstr "Webcal"
 
-msgid "Import..."
-msgstr "İçe Aktar..."
-
-msgid "Sync..."
-msgstr "Eşzamanla..."
-
-msgid "About"
-msgstr "Hakkında"
-
-msgid "Add calendar"
-msgstr "Takvim ekle"
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+"Etkinliğinizin isimlendirilmiş olması ve geçerli bir tarihte olması gerekiyor"
 
 #. label settings
 msgid ""
@@ -149,11 +160,9 @@ msgstr ""
 "Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
 "gösterilecek."
 
-msgid "Starts: \t"
-msgstr "Başlar: \t"
-
-msgid "Ends: \t"
-msgstr "Biter: \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "Olay _Ekle"
 
 msgid "all day"
 msgstr "tüm gün"
@@ -161,14 +170,11 @@ msgstr "tüm gün"
 msgid "at"
 msgstr "de/da"
 
-msgid "Export Calendar..."
-msgstr "Takvimi Dışarı Aktar"
-
 msgid "calendar.ics"
 msgstr "takvim.ics"
 
-#~ msgid "all the day"
-#~ msgstr "bütün gün"
-
 #~ msgid "Guests"
 #~ msgstr "Misafirler"
+
+#~ msgid "all the day"
+#~ msgstr "bütün gün"
