@@ -7,95 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-25 16:46+0200\n"
+"POT-Creation-Date: 2013-04-25 00:38-0500\n"
 "PO-Revision-Date: 2013-03-02 16:13+0000\n"
 "Last-Translator: Damir Jerovšek <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
 "X-Generator: Launchpad (build 16532)\n"
-"Language: sl\n"
 
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Preglej in načrtuj dogodke"
+msgid "%A, %b %d"
+msgstr "%A, %k. %b"
+
+msgid "%B %e, %Y"
+msgstr "%e. %B %Y"
+
+msgid "%H:%M"
+msgstr "%H.%M"
+
+msgid "%l:%M %p"
+msgstr "%k.%M"
+
+msgid "About"
+msgstr "O programu"
+
+msgid "Add Event"
+msgstr "Dodaj dogodek"
+
+msgid "Add calendar"
+msgstr "Dodaj koledar"
+
+msgid "All day:"
+msgstr "Celodnevno:"
 
 #. maya.desktop:5
 msgid "Calendar"
 msgstr "Koledar"
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Dodaj dogodek"
-
-#. Ensure the groups actually exist
-msgid "On this computer"
-msgstr "Na tem računalniku"
-
-msgid "Webcal"
-msgstr "Webcal"
+msgid "Comments"
+msgstr "Opombe"
 
 msgid "Contacts"
 msgstr "Kontakti"
 
-msgid "Personal"
-msgstr "Osebno"
-
-msgid "%B %e, %Y"
-msgstr "%e. %B %Y"
-
-msgid "%A, %b %d"
-msgstr "%A, %k. %b"
-
-msgid "%l:%M %p"
-msgstr "%k.%M"
-
-msgid "%H:%M"
-msgstr "%H.%M"
-
-msgid "Add Event"
-msgstr "Dodaj dogodek"
-
-msgid "Edit Event"
-msgstr "Uredi dogodek"
-
-msgid "From:"
-msgstr "Od:"
-
-msgid "All day:"
-msgstr "Celodnevno:"
-
-msgid "To:"
-msgstr "Do:"
-
-msgid "Title"
-msgstr "Naslov"
-
-msgid "Name of Event"
-msgstr "Ime dogodka"
-
-msgid "Location"
-msgstr "Kraj"
-
-msgid "John Smith OR Example St."
-msgstr "Janez Kranjski ALI Neka ul."
-
-msgid "Participants"
-msgstr "Udeleženci"
-
-msgid "Name or Email Address"
-msgstr "Ime ali e-poštni naslov"
-
-msgid "Comments"
-msgstr "Opombe"
-
 msgid "Create Event"
 msgstr "Ustvari dogodek"
-
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Tvoj dogodek mora biti imenovan in mora imeti veljaven datum"
 
 #. Toolbar properties
 #. compliant with elementary HIG
@@ -103,55 +61,105 @@ msgstr "Tvoj dogodek mora biti imenovan in mora imeti veljaven datum"
 msgid "Create a new event"
 msgstr "Ustvari nov dogodek"
 
-msgid "Edit the selected event"
-msgstr "Uredi izbrani dogodek"
-
 msgid "Delete the selected event"
 msgstr "Izbriši izbrani dogodek"
 
-msgid "Select calendars to display"
-msgstr "Izberite koledarje za prikaz"
+msgid "Edit Event"
+msgstr "Uredi dogodek"
+
+msgid "Edit the selected event"
+msgstr "Uredi izbrani dogodek"
+
+msgid "Ends: \t"
+msgstr "Konec: \t"
+
+msgid "Export Calendar..."
+msgstr "Izvozi koledar ..."
+
+msgid "Export or Share the default Calendar"
+msgstr "Izvozi ali souporabi privzeti koledar"
+
+msgid "From:"
+msgstr "Od:"
+
+msgid "Fullscreen"
+msgstr "Celozaslonski način"
+
+msgid "Import..."
+msgstr "Uvozi ..."
+
+msgid "John Smith OR Example St."
+msgstr "Janez Kranjski ALI Neka ul."
+
+msgid "Location"
+msgstr "Kraj"
+
+msgid "Name of Event"
+msgstr "Ime dogodka"
+
+msgid "Name or Email Address"
+msgstr "Ime ali e-poštni naslov"
+
+#. Ensure the groups actually exist
+msgid "On this computer"
+msgstr "Na tem računalniku"
+
+msgid "Participants"
+msgstr "Udeleženci"
+
+msgid "Personal"
+msgstr "Osebno"
+
+msgid "Save Changes"
+msgstr ""
 
 msgid "Search Events"
 msgstr "Išči dogodke"
 
-msgid "Export or Share the default Calendar"
-msgstr "Izvozi ali souporabi privzeti koledar"
+msgid "Select calendars to display"
+msgstr "Izberite koledarje za prikaz"
+
+msgid "Show Week Numbers"
+msgstr "Pokaži številke tednov"
+
+msgid "Starts: \t"
+msgstr "Začetek: \t"
+
+msgid "Sync..."
+msgstr "Uskladi ..."
+
+msgid "This event can't be edited"
+msgstr ""
+
+msgid "Title"
+msgstr "Naslov"
+
+msgid "To:"
+msgstr "Do:"
 
 #. Create everything
 msgid "Today"
 msgstr "Danes"
 
-msgid "Fullscreen"
-msgstr "Celozaslonski način"
+#. maya.desktop:6
+msgid "View and schedule events"
+msgstr "Preglej in načrtuj dogodke"
 
-msgid "Show Week Numbers"
-msgstr "Pokaži številke tednov"
+msgid "Webcal"
+msgstr "Webcal"
 
-msgid "Import..."
-msgstr "Uvozi ..."
-
-msgid "Sync..."
-msgstr "Uskladi ..."
-
-msgid "About"
-msgstr "O programu"
-
-msgid "Add calendar"
-msgstr "Dodaj koledar"
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Tvoj dogodek mora biti imenovan in mora imeti veljaven datum"
 
 #. label settings
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr ""
-"Ko boste izbrali ustrezen datum, bodo tukaj prikazani bližnji dogodki."
+msgstr "Ko boste izbrali ustrezen datum, bodo tukaj prikazani bližnji dogodki."
 
-msgid "Starts: \t"
-msgstr "Začetek: \t"
-
-msgid "Ends: \t"
-msgstr "Konec: \t"
+#. maya.desktop:18
+msgid "_Add Event"
+msgstr "_Dodaj dogodek"
 
 msgid "all day"
 msgstr "ves dan"
@@ -159,14 +167,11 @@ msgstr "ves dan"
 msgid "at"
 msgstr "ob"
 
-msgid "Export Calendar..."
-msgstr "Izvozi koledar ..."
-
 msgid "calendar.ics"
 msgstr "koledar.ics"
 
-#~ msgid "all the day"
-#~ msgstr "cel dan"
-
 #~ msgid "Guests"
 #~ msgstr "Gostje"
+
+#~ msgid "all the day"
+#~ msgstr "cel dan"
