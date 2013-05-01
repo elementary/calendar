@@ -39,7 +39,7 @@ namespace Maya {
 
         if (Option.PRINT_VERSION) {
             stdout.printf("Maya %s\n", Build.VERSION);
-            stdout.printf("Copyright 2011-2012 Maya Developers.\n");
+            stdout.printf("Copyright 2011-2013 Maya Developers.\n");
             return 0;
         }
 
@@ -66,10 +66,10 @@ namespace Maya {
             build_version = Build.VERSION;
             build_version_info = Build.VERSION_INFO;
 
-            program_name = "Maya";
+            program_name = _("Calendar");
             exec_name = "maya-calendar";
 
-            app_years = "2011-2012";
+            app_years = "2011-2013";
             application_id = "net.launchpad.maya";
             app_icon = "office-calendar";
             app_launcher = "maya-calendar.desktop";
@@ -292,7 +292,7 @@ namespace Maya {
          */
         void create_window () {
             window = new Gtk.Window ();
-            window.title = "Maya";
+            window.title = _("Calendar");
             window.icon_name = "office-calendar";
             window.set_size_request (700, 400);
             window.default_width = saved_state.window_width;
@@ -491,12 +491,10 @@ namespace Maya {
     }
 
     internal void desktop_translations () {
-        // maya.desktop:6
         var comment = _("View and schedule events");
-        // maya.desktop:5
         var generic_name = _("Calendar");
-        // maya.desktop:18
         var add_event = _("_Add Event");
+        var keywords = _("Maya;Planner;Dates;Days;Events;");
     }
 
 }

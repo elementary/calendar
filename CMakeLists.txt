@@ -13,13 +13,14 @@ set (GETTEXT_PACKAGE "maya")
 set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.2")
 set (VERSION_INFO "Release")
+set (SRC_TARGET ${CMAKE_PROJECT_NAME}-calendar)
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
 #
 # Niceties
 #
-set (ARCHIVE_NAME maya-calendar-${VERSION})
+set (ARCHIVE_NAME ${SRC_TARGET}-${VERSION})
 add_custom_target (dist
     COMMAND bzr export --root=${ARCHIVE_NAME} ${CMAKE_BINARY_DIR}/${ARCHIVE_NAME}.tar.bz2
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
@@ -59,20 +60,8 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/maya-calendar.desktop DESTINATION
 #
 # i18n
 #
-find_package (Gettext REQUIRED)
 
-add_custom_command (OUTPUT ${CMAKE_SOURCE_DIR}/po/maya.pot
-        COMMAND xgettext -c --files-from ${CMAKE_SOURCE_DIR}/po/POTFILES.in --keyword=_ -o ${CMAKE_SOURCE_DIR}/po/maya.pot --no-wrap --no-location
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        )
-
-if (GETTEXT_FOUND)
-	message(STATUS GETTEXT_FOUND = ${GETTEXT_FOUND})
-        set (HAVE_GETTEXT true)
-        file (GLOB _translations ${CMAKE_SOURCE_DIR}/po/*.po)
-        GETTEXT_CREATE_TRANSLATIONS (${CMAKE_SOURCE_DIR}/po/${PROJECT_NAME}.pot
-                ALL ${_translations})
-endif (GETTEXT_FOUND)
+add_subdirectory(po)
 
 #
 # Maya
@@ -93,7 +82,7 @@ ensure_vala_version("0.15.1" MINIMUM)
 # Maya/Widgets/Calendar/Event.vala
 
 include(ValaPrecompile)
-vala_precompile(VALA_C
+vala_precompile(VALA_C ${SRC_TARGET}
     Maya/Application.vala
     Maya/Model/CalendarModel.vala
     Maya/Model/SourceManager.vala
@@ -145,9 +134,9 @@ OPTIONS
     )
 
 add_definitions(${CFLAGS} -Wall -Winit-self -Wwrite-strings -Wunreachable-code -Wstrict-prototypes )
-add_executable(maya-calendar ${VALA_C})
+add_executable(${SRC_TARGET} ${VALA_C})
 
-install(TARGETS maya-calendar RUNTIME DESTINATION bin)
+install(TARGETS ${SRC_TARGET} RUNTIME DESTINATION bin)
 
 #
 # GSettings Schema
