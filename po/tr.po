@@ -7,152 +7,147 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-25 00:38-0500\n"
+"POT-Creation-Date: 2013-05-02 01:45+0200\n"
 "PO-Revision-Date: 2012-10-17 20:03+0000\n"
 "Last-Translator: Ferhat TUNÇTAN <ferhattnctn66@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
-"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
-"X-Generator: Launchpad (build 16532)\n"
+"X-Launchpad-Export-Date: 2013-05-02 05:17+0000\n"
+"X-Generator: Launchpad (build 16580)\n"
+"Language: tr\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%H:%M"
-msgstr "%H:%M"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-msgid "About"
-msgstr "Hakkında"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr "%H:%M"
 
-msgid "Add Event"
-msgstr "Etkinlik Ekle"
-
-msgid "Add calendar"
-msgstr "Takvim ekle"
-
-msgid "All day:"
-msgstr "Tüm gün:"
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr "Takvim"
-
-msgid "Comments"
-msgstr "Yorumlar"
-
-msgid "Contacts"
-msgstr "Kişiler"
-
-msgid "Create Event"
-msgstr "Etkinlik Oluştur"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Yeni bir etkinlik oluştur"
-
-msgid "Delete the selected event"
-msgstr "Seçili etkinliği sil"
-
-msgid "Edit Event"
-msgstr "Etkinliği Düzenle"
-
-msgid "Edit the selected event"
-msgstr "Seçili etkinliği düzenle"
-
-msgid "Ends: \t"
-msgstr "Biter: \t"
-
-msgid "Export Calendar..."
-msgstr "Takvimi Dışarı Aktar"
-
-msgid "Export or Share the default Calendar"
-msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
-
-msgid "From:"
-msgstr "Başlangıç:"
-
-msgid "Fullscreen"
-msgstr "Tam ekran"
-
-msgid "Import..."
-msgstr "İçe Aktar..."
-
-msgid "John Smith OR Example St."
-msgstr "Hasan Hüseyin veya Örnek Sokak"
-
-msgid "Location"
-msgstr "Konum"
-
-msgid "Name of Event"
-msgstr "Etkinliğin Adı:"
-
-msgid "Name or Email Address"
-msgstr "İsim veya E-posta Adresi"
-
-#. Ensure the groups actually exist
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
 msgstr "Bu bilgisayarda"
 
-msgid "Participants"
-msgstr "Katılımcılar"
-
-msgid "Personal"
-msgstr "Kişisel"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "Etkinlikleri Ara"
-
-msgid "Select calendars to display"
-msgstr "Görüntülenecek takvimleri seçin"
-
-msgid "Show Week Numbers"
-msgstr "Hafta Numaralarını Göster"
-
-msgid "Starts: \t"
-msgstr "Başlar: \t"
-
-msgid "Sync..."
-msgstr "Eşzamanla..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "Başlık"
-
-msgid "To:"
-msgstr "Bitiş:"
-
-#. Create everything
-msgid "Today"
-msgstr "Bugün"
-
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Etkinlikleri Görüntüle ve Düzenle"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
 msgstr "Webcal"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr ""
-"Etkinliğinizin isimlendirilmiş olması ve geçerli bir tarihte olması gerekiyor"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "Kişiler"
 
-#. label settings
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "Kişisel"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:69
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:295
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:495
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:343
+msgid "Calendar"
+msgstr "Takvim"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:494
+msgid "View and schedule events"
+msgstr "Etkinlikleri Görüntüle ve Düzenle"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:496
+msgid "_Add Event"
+msgstr "Olay _Ekle"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
+msgid "Maya;Planner;Dates;Days;Events;"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "Yeni bir etkinlik oluştur"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:46
+msgid "Edit the selected event"
+msgstr "Seçili etkinliği düzenle"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:47
+msgid "Delete the selected event"
+msgstr "Seçili etkinliği sil"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:49
+msgid "Select calendars to display"
+msgstr "Görüntülenecek takvimleri seçin"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:55
+msgid "Search Events"
+msgstr "Etkinlikleri Ara"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:58
+msgid "Export or Share the default Calendar"
+msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/SourceSelector.vala:96
+msgid "Add calendar"
+msgstr "Takvim ekle"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:37
+msgid "Today"
+msgstr "Bugün"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:39
+msgid "Fullscreen"
+msgstr "Tam ekran"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:41
+msgid "Show Week Numbers"
+msgstr "Hafta Numaralarını Göster"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:43
+msgid "Import..."
+msgstr "İçe Aktar..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:45
+msgid "Sync..."
+msgstr "Eşzamanla..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:47
+msgid "About"
+msgstr "Hakkında"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
+msgid "Export Calendar..."
+msgstr "Takvimi Dışarı Aktar"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
+msgid "calendar.ics"
+msgstr "takvim.ics"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+msgid "Starts: \t"
+msgstr "Başlar: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+msgid "Ends: \t"
+msgstr "Biter: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
+msgid "all day"
+msgstr "tüm gün"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
+msgid "at"
+msgstr "de/da"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -160,21 +155,77 @@ msgstr ""
 "Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
 "gösterilecek."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "Olay _Ekle"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:98
+msgid "Add Event"
+msgstr "Etkinlik Ekle"
 
-msgid "all day"
-msgstr "tüm gün"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:101
+msgid "Edit Event"
+msgstr "Etkinliği Düzenle"
 
-msgid "at"
-msgstr "de/da"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:309
+msgid "From:"
+msgstr "Başlangıç:"
 
-msgid "calendar.ics"
-msgstr "takvim.ics"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:315
+msgid "All day:"
+msgstr "Tüm gün:"
 
-#~ msgid "Guests"
-#~ msgstr "Misafirler"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:320
+msgid "To:"
+msgstr "Bitiş:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:339
+msgid "Title"
+msgstr "Başlık"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:340
+msgid "Name of Event"
+msgstr "Etkinliğin Adı:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:361
+msgid "Location"
+msgstr "Konum"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:362
+msgid "John Smith OR Example St."
+msgstr "Hasan Hüseyin veya Örnek Sokak"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:364
+msgid "Participants"
+msgstr "Katılımcılar"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:365
+msgid "Name or Email Address"
+msgstr "İsim veya E-posta Adresi"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:368
+msgid "Comments"
+msgstr "Yorumlar"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:404
+msgid "Create Event"
+msgstr "Etkinlik Oluştur"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
+msgid "Save Changes"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
+msgid "This event can't be edited"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+"Etkinliğinizin isimlendirilmiş olması ve geçerli bir tarihte olması gerekiyor"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
+msgstr ""
 
 #~ msgid "all the day"
 #~ msgstr "bütün gün"
+
+#~ msgid "Guests"
+#~ msgstr "Misafirler"

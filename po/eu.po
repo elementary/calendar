@@ -7,172 +7,223 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-25 00:38-0500\n"
+"POT-Creation-Date: 2013-05-02 01:45+0200\n"
 "PO-Revision-Date: 2012-07-15 11:31+0000\n"
 "Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
-"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
-"X-Generator: Launchpad (build 16532)\n"
+"X-Launchpad-Export-Date: 2013-05-02 05:17+0000\n"
+"X-Generator: Launchpad (build 16580)\n"
+"Language: eu\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr "%Y %B %e"
 
-msgid "%H:%M"
-msgstr "%H:%M"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-msgid "About"
-msgstr "Honi buruz"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr "%H:%M"
 
-msgid "Add Event"
-msgstr "Gehitu gertaera"
-
-msgid "Add calendar"
-msgstr "Gehitu egutegia"
-
-msgid "All day:"
-msgstr "Egun osoa:"
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr "Egutegia"
-
-msgid "Comments"
-msgstr "Iruzkinak"
-
-msgid "Contacts"
-msgstr "Kontaktuak"
-
-msgid "Create Event"
-msgstr "Sortu gertaera"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Sortu gertaera berri bat"
-
-msgid "Delete the selected event"
-msgstr "Ezabatu hautatutako gertaera"
-
-msgid "Edit Event"
-msgstr "Editatu gertaera"
-
-msgid "Edit the selected event"
-msgstr "Editatu hautatutako gertaera"
-
-msgid "Ends: \t"
-msgstr "Bukaera: \t"
-
-msgid "Export Calendar..."
-msgstr "Esportatu egutegia..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Esportatu edo partekatu egutegi lehenetsia"
-
-msgid "From:"
-msgstr "Noiztik:"
-
-msgid "Fullscreen"
-msgstr "Pantaila osoa"
-
-msgid "Import..."
-msgstr "Inportatu..."
-
-msgid "John Smith OR Example St."
-msgstr "Jone Agirre edo Adibide kalea"
-
-msgid "Location"
-msgstr "Kokapena"
-
-msgid "Name of Event"
-msgstr "Gertaeraren izena"
-
-msgid "Name or Email Address"
-msgstr "Izena edo e-posta helbidea"
-
-#. Ensure the groups actually exist
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
 msgstr "Ordenagailu honetan"
 
-msgid "Participants"
-msgstr "Parte-hartzaileak"
-
-msgid "Personal"
-msgstr "Pertsonala"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "Bilatu gertaerak"
-
-msgid "Select calendars to display"
-msgstr "Hautatu bistaratuko diren egutegiak"
-
-msgid "Show Week Numbers"
-msgstr "Erakutsi asteen zenbakiak"
-
-msgid "Starts: \t"
-msgstr "Hasiera: \t"
-
-msgid "Sync..."
-msgstr "Sinkronizatu..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "Izenburua"
-
-msgid "To:"
-msgstr "Noiz arte:"
-
-#. Create everything
-msgid "Today"
-msgstr "Gaur"
-
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Ikusi eta programatu gertaerak"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
 msgstr "Webcal"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Zure gertaerak izena eta baliozko data behar ditu"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "Kontaktuak"
 
-#. label settings
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "Pertsonala"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:69
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:295
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:495
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:343
+msgid "Calendar"
+msgstr "Egutegia"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:494
+msgid "View and schedule events"
+msgstr "Ikusi eta programatu gertaerak"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:496
+msgid "_Add Event"
+msgstr "_Gehitu gertaera"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
+msgid "Maya;Planner;Dates;Days;Events;"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "Sortu gertaera berri bat"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:46
+msgid "Edit the selected event"
+msgstr "Editatu hautatutako gertaera"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:47
+msgid "Delete the selected event"
+msgstr "Ezabatu hautatutako gertaera"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:49
+msgid "Select calendars to display"
+msgstr "Hautatu bistaratuko diren egutegiak"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:55
+msgid "Search Events"
+msgstr "Bilatu gertaerak"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:58
+msgid "Export or Share the default Calendar"
+msgstr "Esportatu edo partekatu egutegi lehenetsia"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/SourceSelector.vala:96
+msgid "Add calendar"
+msgstr "Gehitu egutegia"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:37
+msgid "Today"
+msgstr "Gaur"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:39
+msgid "Fullscreen"
+msgstr "Pantaila osoa"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:41
+msgid "Show Week Numbers"
+msgstr "Erakutsi asteen zenbakiak"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:43
+msgid "Import..."
+msgstr "Inportatu..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:45
+msgid "Sync..."
+msgstr "Sinkronizatu..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:47
+msgid "About"
+msgstr "Honi buruz"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
+msgid "Export Calendar..."
+msgstr "Esportatu egutegia..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
+msgid "calendar.ics"
+msgstr "egutegia.ics"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+msgid "Starts: \t"
+msgstr "Hasiera: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+msgid "Ends: \t"
+msgstr "Bukaera: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
+msgid "all day"
+msgstr "egun osoan"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
+msgid "at"
+msgstr "noiz:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Zure hurrengo gertaerak hemen erakutsiko dira data bat hautatzen duzunean."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Gehitu gertaera"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:98
+msgid "Add Event"
+msgstr "Gehitu gertaera"
 
-msgid "all day"
-msgstr "egun osoan"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:101
+msgid "Edit Event"
+msgstr "Editatu gertaera"
 
-msgid "at"
-msgstr "noiz:"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:309
+msgid "From:"
+msgstr "Noiztik:"
 
-msgid "calendar.ics"
-msgstr "egutegia.ics"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:315
+msgid "All day:"
+msgstr "Egun osoa:"
 
-#~ msgid "Guests"
-#~ msgstr "Gonbidatuak"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:320
+msgid "To:"
+msgstr "Noiz arte:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:339
+msgid "Title"
+msgstr "Izenburua"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:340
+msgid "Name of Event"
+msgstr "Gertaeraren izena"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:361
+msgid "Location"
+msgstr "Kokapena"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:362
+msgid "John Smith OR Example St."
+msgstr "Jone Agirre edo Adibide kalea"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:364
+msgid "Participants"
+msgstr "Parte-hartzaileak"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:365
+msgid "Name or Email Address"
+msgstr "Izena edo e-posta helbidea"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:368
+msgid "Comments"
+msgstr "Iruzkinak"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:404
+msgid "Create Event"
+msgstr "Sortu gertaera"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
+msgid "Save Changes"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
+msgid "This event can't be edited"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Zure gertaerak izena eta baliozko data behar ditu"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
+msgstr ""
 
 #~ msgid "all the day"
 #~ msgstr "egun osoa"
+
+#~ msgid "Guests"
+#~ msgstr "Gonbidatuak"

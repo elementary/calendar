@@ -7,166 +7,217 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-25 00:38-0500\n"
+"POT-Creation-Date: 2013-05-02 01:45+0200\n"
 "PO-Revision-Date: 2012-10-18 22:54+0000\n"
 "Last-Translator: Sho0ter <Sho0ter@mail.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
-"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
-"X-Generator: Launchpad (build 16532)\n"
+"X-Launchpad-Export-Date: 2013-05-02 05:17+0000\n"
+"X-Generator: Launchpad (build 16580)\n"
+"Language: uk\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%H:%M"
-msgstr "%H:%M"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-msgid "About"
-msgstr "Про програму"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr "%H:%M"
 
-msgid "Add Event"
-msgstr "Додати подію"
-
-msgid "Add calendar"
-msgstr "Додати календар"
-
-msgid "All day:"
-msgstr "Весь день:"
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr "Календар"
-
-msgid "Comments"
-msgstr "Коментарі"
-
-msgid "Contacts"
-msgstr "Контакти"
-
-msgid "Create Event"
-msgstr "Додати подію"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Створити нову подію"
-
-msgid "Delete the selected event"
-msgstr "Знищити обрану подію"
-
-msgid "Edit Event"
-msgstr "Змінити подію"
-
-msgid "Edit the selected event"
-msgstr "Редагувати обрану подію"
-
-msgid "Ends: \t"
-msgstr "Кінець: \t"
-
-msgid "Export Calendar..."
-msgstr "Експортувати календар..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Експорт або імпорт календаря по-замовчуванню"
-
-msgid "From:"
-msgstr "З:"
-
-msgid "Fullscreen"
-msgstr "Повноекранний режим"
-
-msgid "Import..."
-msgstr "Імпортувати..."
-
-msgid "John Smith OR Example St."
-msgstr "Джон Сміт АБО вулиця Зразок"
-
-msgid "Location"
-msgstr "Розташування"
-
-msgid "Name of Event"
-msgstr "Назва події"
-
-msgid "Name or Email Address"
-msgstr "Ім'я або адреса електорнної пошти"
-
-#. Ensure the groups actually exist
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
 msgstr "На цьому комп'ютері"
 
-msgid "Participants"
-msgstr "Учасники"
-
-msgid "Personal"
-msgstr "Особисте"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "Знайти подію"
-
-msgid "Select calendars to display"
-msgstr "Виберіть календарі для відображення"
-
-msgid "Show Week Numbers"
-msgstr "Показувати номери тижнів"
-
-msgid "Starts: \t"
-msgstr "Початок: \t"
-
-msgid "Sync..."
-msgstr "Синхронізація..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "Назва"
-
-msgid "To:"
-msgstr "До:"
-
-#. Create everything
-msgid "Today"
-msgstr "Сьогодні"
-
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Показати та скласти розклад подій."
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
 msgstr "Календар в інтеренеті"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Ваша подія повинна мати назву та коректний час"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "Контакти"
 
-#. label settings
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "Особисте"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:69
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:295
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:495
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:343
+msgid "Calendar"
+msgstr "Календар"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:494
+msgid "View and schedule events"
+msgstr "Показати та скласти розклад подій."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:496
+msgid "_Add Event"
+msgstr "Додати подію"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
+msgid "Maya;Planner;Dates;Days;Events;"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "Створити нову подію"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:46
+msgid "Edit the selected event"
+msgstr "Редагувати обрану подію"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:47
+msgid "Delete the selected event"
+msgstr "Знищити обрану подію"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:49
+msgid "Select calendars to display"
+msgstr "Виберіть календарі для відображення"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:55
+msgid "Search Events"
+msgstr "Знайти подію"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:58
+msgid "Export or Share the default Calendar"
+msgstr "Експорт або імпорт календаря по-замовчуванню"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/SourceSelector.vala:96
+msgid "Add calendar"
+msgstr "Додати календар"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:37
+msgid "Today"
+msgstr "Сьогодні"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:39
+msgid "Fullscreen"
+msgstr "Повноекранний режим"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:41
+msgid "Show Week Numbers"
+msgstr "Показувати номери тижнів"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:43
+msgid "Import..."
+msgstr "Імпортувати..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:45
+msgid "Sync..."
+msgstr "Синхронізація..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:47
+msgid "About"
+msgstr "Про програму"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
+msgid "Export Calendar..."
+msgstr "Експортувати календар..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
+msgid "calendar.ics"
+msgstr "календар.ics"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+msgid "Starts: \t"
+msgstr "Початок: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+msgid "Ends: \t"
+msgstr "Кінець: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
+msgid "all day"
+msgstr "весь день"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
+msgid "at"
+msgstr "в"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Ваші майбутні події будуть відображені тут коли ви виберете дату з подіями."
 
-#. maya.desktop:18
-msgid "_Add Event"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:98
+msgid "Add Event"
 msgstr "Додати подію"
 
-msgid "all day"
-msgstr "весь день"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:101
+msgid "Edit Event"
+msgstr "Змінити подію"
 
-msgid "at"
-msgstr "в"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:309
+msgid "From:"
+msgstr "З:"
 
-msgid "calendar.ics"
-msgstr "календар.ics"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:315
+msgid "All day:"
+msgstr "Весь день:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:320
+msgid "To:"
+msgstr "До:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:339
+msgid "Title"
+msgstr "Назва"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:340
+msgid "Name of Event"
+msgstr "Назва події"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:361
+msgid "Location"
+msgstr "Розташування"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:362
+msgid "John Smith OR Example St."
+msgstr "Джон Сміт АБО вулиця Зразок"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:364
+msgid "Participants"
+msgstr "Учасники"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:365
+msgid "Name or Email Address"
+msgstr "Ім'я або адреса електорнної пошти"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:368
+msgid "Comments"
+msgstr "Коментарі"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:404
+msgid "Create Event"
+msgstr "Додати подію"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
+msgid "Save Changes"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
+msgid "This event can't be edited"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Ваша подія повинна мати назву та коректний час"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
+msgstr ""

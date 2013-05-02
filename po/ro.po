@@ -7,151 +7,147 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-25 00:38-0500\n"
+"POT-Creation-Date: 2013-05-02 01:45+0200\n"
 "PO-Revision-Date: 2013-03-05 20:40+0000\n"
 "Last-Translator: Richard B. <Unknown>\n"
 "Language-Team: Romanian <ro@li.org>\n"
-"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
-"X-Generator: Launchpad (build 16532)\n"
+"X-Launchpad-Export-Date: 2013-05-02 05:17+0000\n"
+"X-Generator: Launchpad (build 16580)\n"
+"Language: ro\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr "%e %B %Y"
 
-msgid "%H:%M"
-msgstr "%H:%M"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-msgid "About"
-msgstr "Despre"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr "%H:%M"
 
-msgid "Add Event"
-msgstr "Adăugare eveniment"
-
-msgid "Add calendar"
-msgstr "Adaugă calendar"
-
-msgid "All day:"
-msgstr "Toată ziua:"
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr "Calendar"
-
-msgid "Comments"
-msgstr "Comentarii"
-
-msgid "Contacts"
-msgstr "Contacte"
-
-msgid "Create Event"
-msgstr "Creează eveniment"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Creează un eveniment nou"
-
-msgid "Delete the selected event"
-msgstr "Şterge evenimentul selectat"
-
-msgid "Edit Event"
-msgstr "Editare eveniment"
-
-msgid "Edit the selected event"
-msgstr "Editează evenimentul selectat"
-
-msgid "Ends: \t"
-msgstr "Se termină: \t"
-
-msgid "Export Calendar..."
-msgstr "Exportă calendarul..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Transferă sau Distribuie calendarul implicit"
-
-msgid "From:"
-msgstr "De la:"
-
-msgid "Fullscreen"
-msgstr "Ecran complet"
-
-msgid "Import..."
-msgstr "Importă..."
-
-msgid "John Smith OR Example St."
-msgstr "Ion Creanga SAU Exemplu Str."
-
-msgid "Location"
-msgstr "Locaţie"
-
-msgid "Name of Event"
-msgstr "Numele evenimentului"
-
-msgid "Name or Email Address"
-msgstr "Nume sau adresa de email"
-
-#. Ensure the groups actually exist
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
 msgstr "Pe acest calculator"
 
-msgid "Participants"
-msgstr "Participanți"
-
-msgid "Personal"
-msgstr "Personal"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "Caută Evenimente"
-
-msgid "Select calendars to display"
-msgstr "Selectați calendarele pentru afișare"
-
-msgid "Show Week Numbers"
-msgstr "Arată numerele săptămânilor"
-
-msgid "Starts: \t"
-msgstr "Începe: \t"
-
-msgid "Sync..."
-msgstr "Sincronizare..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "Titlu"
-
-msgid "To:"
-msgstr "Către"
-
-#. Create everything
-msgid "Today"
-msgstr "Astăzi"
-
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Vizualizare si programare evenimente"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
 msgstr "Webcal"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Evenimentul trebuie denumit și trebuie să aibă o dată validă"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "Contacte"
 
-#. label settings
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "Personal"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:69
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:295
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:495
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:343
+msgid "Calendar"
+msgstr "Calendar"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:494
+msgid "View and schedule events"
+msgstr "Vizualizare si programare evenimente"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:496
+msgid "_Add Event"
+msgstr "_Adaugă eveniment"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
+msgid "Maya;Planner;Dates;Days;Events;"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "Creează un eveniment nou"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:46
+msgid "Edit the selected event"
+msgstr "Editează evenimentul selectat"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:47
+msgid "Delete the selected event"
+msgstr "Şterge evenimentul selectat"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:49
+msgid "Select calendars to display"
+msgstr "Selectați calendarele pentru afișare"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:55
+msgid "Search Events"
+msgstr "Caută Evenimente"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:58
+msgid "Export or Share the default Calendar"
+msgstr "Transferă sau Distribuie calendarul implicit"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/SourceSelector.vala:96
+msgid "Add calendar"
+msgstr "Adaugă calendar"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:37
+msgid "Today"
+msgstr "Astăzi"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:39
+msgid "Fullscreen"
+msgstr "Ecran complet"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:41
+msgid "Show Week Numbers"
+msgstr "Arată numerele săptămânilor"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:43
+msgid "Import..."
+msgstr "Importă..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:45
+msgid "Sync..."
+msgstr "Sincronizare..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:47
+msgid "About"
+msgstr "Despre"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
+msgid "Export Calendar..."
+msgstr "Exportă calendarul..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
+msgid "calendar.ics"
+msgstr "calendar.ics"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+msgid "Starts: \t"
+msgstr "Începe: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+msgid "Ends: \t"
+msgstr "Se termină: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
+msgid "all day"
+msgstr "toată ziua"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
+msgid "at"
+msgstr "la"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -159,15 +155,70 @@ msgstr ""
 "Evenimentele viitoare vor fi afişate aici când selectezi o dată cu "
 "evenimente."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_Adaugă eveniment"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:98
+msgid "Add Event"
+msgstr "Adăugare eveniment"
 
-msgid "all day"
-msgstr "toată ziua"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:101
+msgid "Edit Event"
+msgstr "Editare eveniment"
 
-msgid "at"
-msgstr "la"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:309
+msgid "From:"
+msgstr "De la:"
 
-msgid "calendar.ics"
-msgstr "calendar.ics"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:315
+msgid "All day:"
+msgstr "Toată ziua:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:320
+msgid "To:"
+msgstr "Către"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:339
+msgid "Title"
+msgstr "Titlu"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:340
+msgid "Name of Event"
+msgstr "Numele evenimentului"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:361
+msgid "Location"
+msgstr "Locaţie"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:362
+msgid "John Smith OR Example St."
+msgstr "Ion Creanga SAU Exemplu Str."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:364
+msgid "Participants"
+msgstr "Participanți"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:365
+msgid "Name or Email Address"
+msgstr "Nume sau adresa de email"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:368
+msgid "Comments"
+msgstr "Comentarii"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:404
+msgid "Create Event"
+msgstr "Creează eveniment"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
+msgid "Save Changes"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
+msgid "This event can't be edited"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Evenimentul trebuie denumit și trebuie să aibă o dată validă"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
+msgstr ""

@@ -7,171 +7,222 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-25 00:38-0500\n"
+"POT-Creation-Date: 2013-05-02 01:45+0200\n"
 "PO-Revision-Date: 2013-02-25 20:04+0000\n"
 "Last-Translator: Danny Damsky <dannydamsky99@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
-"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
-"X-Generator: Launchpad (build 16532)\n"
+"X-Launchpad-Export-Date: 2013-05-02 05:17+0000\n"
+"X-Generator: Launchpad (build 16580)\n"
+"Language: he\n"
 
-msgid "%A, %b %d"
-msgstr "%A, ה־%d ב%b"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr "%e ב%B,‏ %Y"
 
-msgid "%H:%M"
-msgstr "%H:%M"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, ה־%d ב%b"
 
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
 msgstr "%H:%M"
 
-msgid "About"
-msgstr "על אודות"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr "%H:%M"
 
-msgid "Add Event"
-msgstr "הוספת אירוע"
-
-msgid "Add calendar"
-msgstr "הוסף לוח שנה"
-
-msgid "All day:"
-msgstr "כל היום:"
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr "לוח שנה"
-
-msgid "Comments"
-msgstr "הערות"
-
-msgid "Contacts"
-msgstr "אנשי קשר"
-
-msgid "Create Event"
-msgstr "יצירת אירוע"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "יצירת אירוע חדש"
-
-msgid "Delete the selected event"
-msgstr "מחיקת האירוע הנבחר"
-
-msgid "Edit Event"
-msgstr "ערוך אירוע"
-
-msgid "Edit the selected event"
-msgstr "עריכת האירוע הנבחר"
-
-msgid "Ends: \t"
-msgstr "מסתיים: \t"
-
-msgid "Export Calendar..."
-msgstr "ייצא לוח שנה..."
-
-msgid "Export or Share the default Calendar"
-msgstr "יצוא או שיתוף יומן בררת המחדל"
-
-msgid "From:"
-msgstr "מ־:"
-
-msgid "Fullscreen"
-msgstr "מסך מלא"
-
-msgid "Import..."
-msgstr "יבוא..."
-
-msgid "John Smith OR Example St."
-msgstr "גון סמיט או רחוב הדוגמה"
-
-msgid "Location"
-msgstr "מיקום"
-
-msgid "Name of Event"
-msgstr "שם האירוע"
-
-msgid "Name or Email Address"
-msgstr "שם או כתובת דוא״ל"
-
-#. Ensure the groups actually exist
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
 msgstr "על מחשב זה"
 
-msgid "Participants"
-msgstr "משתתפים"
-
-msgid "Personal"
-msgstr "אישי"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "חפש ארועים"
-
-msgid "Select calendars to display"
-msgstr "בחר יומנים לתצוגה"
-
-msgid "Show Week Numbers"
-msgstr "הצגת מספרי שבועות"
-
-msgid "Starts: \t"
-msgstr "מתחיל: \t"
-
-msgid "Sync..."
-msgstr "סנכרון..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "כותרת"
-
-msgid "To:"
-msgstr "ל:"
-
-#. Create everything
-msgid "Today"
-msgstr "היום"
-
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "צפה ותזמן ארועים"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
 msgstr "לוח שנה רשתי"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "יש לשייך כותרת לארוע שלך ולהגדיר לו תאריך תקף"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "אנשי קשר"
 
-#. label settings
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "אישי"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:69
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:295
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:495
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:343
+msgid "Calendar"
+msgstr "לוח שנה"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:494
+msgid "View and schedule events"
+msgstr "צפה ותזמן ארועים"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:496
+msgid "_Add Event"
+msgstr "הוסף _ארוע"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
+msgid "Maya;Planner;Dates;Days;Events;"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "יצירת אירוע חדש"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:46
+msgid "Edit the selected event"
+msgstr "עריכת האירוע הנבחר"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:47
+msgid "Delete the selected event"
+msgstr "מחיקת האירוע הנבחר"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:49
+msgid "Select calendars to display"
+msgstr "בחר יומנים לתצוגה"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:55
+msgid "Search Events"
+msgstr "חפש ארועים"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:58
+msgid "Export or Share the default Calendar"
+msgstr "יצוא או שיתוף יומן בררת המחדל"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/SourceSelector.vala:96
+msgid "Add calendar"
+msgstr "הוסף לוח שנה"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:37
+msgid "Today"
+msgstr "היום"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:39
+msgid "Fullscreen"
+msgstr "מסך מלא"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:41
+msgid "Show Week Numbers"
+msgstr "הצגת מספרי שבועות"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:43
+msgid "Import..."
+msgstr "יבוא..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:45
+msgid "Sync..."
+msgstr "סנכרון..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:47
+msgid "About"
+msgstr "על אודות"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
+msgid "Export Calendar..."
+msgstr "ייצא לוח שנה..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
+msgid "calendar.ics"
+msgstr "calendar.ics"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+msgid "Starts: \t"
+msgstr "מתחיל: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+msgid "Ends: \t"
+msgstr "מסתיים: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
+msgid "all day"
+msgstr "כל היום"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
+msgid "at"
+msgstr "ב־"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "האירועים הקרובים שלך יוצגו כאן בעת בחירת תאריך עם אירועים."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "הוסף _ארוע"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:98
+msgid "Add Event"
+msgstr "הוספת אירוע"
 
-msgid "all day"
-msgstr "כל היום"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:101
+msgid "Edit Event"
+msgstr "ערוך אירוע"
 
-msgid "at"
-msgstr "ב־"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:309
+msgid "From:"
+msgstr "מ־:"
 
-msgid "calendar.ics"
-msgstr "calendar.ics"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:315
+msgid "All day:"
+msgstr "כל היום:"
 
-#~ msgid "Guests"
-#~ msgstr "אורחים"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:320
+msgid "To:"
+msgstr "ל:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:339
+msgid "Title"
+msgstr "כותרת"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:340
+msgid "Name of Event"
+msgstr "שם האירוע"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:361
+msgid "Location"
+msgstr "מיקום"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:362
+msgid "John Smith OR Example St."
+msgstr "גון סמיט או רחוב הדוגמה"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:364
+msgid "Participants"
+msgstr "משתתפים"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:365
+msgid "Name or Email Address"
+msgstr "שם או כתובת דוא״ל"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:368
+msgid "Comments"
+msgstr "הערות"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:404
+msgid "Create Event"
+msgstr "יצירת אירוע"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
+msgid "Save Changes"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
+msgid "This event can't be edited"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
+msgid "Your event has to be named and has to have a valid date"
+msgstr "יש לשייך כותרת לארוע שלך ולהגדיר לו תאריך תקף"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
+msgstr ""
 
 #~ msgid "all the day"
 #~ msgstr "כל היום"
+
+#~ msgid "Guests"
+#~ msgstr "אורחים"

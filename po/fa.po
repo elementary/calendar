@@ -7,151 +7,147 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-25 00:38-0500\n"
+"POT-Creation-Date: 2013-05-02 01:45+0200\n"
 "PO-Revision-Date: 2012-12-28 18:21+0000\n"
 "Last-Translator: Mohammad Zali <mohamadzali@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
-"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
-"X-Generator: Launchpad (build 16532)\n"
+"X-Launchpad-Export-Date: 2013-05-02 05:17+0000\n"
+"X-Generator: Launchpad (build 16580)\n"
+"Language: fa\n"
 
-msgid "%A, %b %d"
-msgstr ""
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr ""
 
-msgid "%H:%M"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
 msgstr ""
 
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
 msgstr ""
 
-msgid "About"
-msgstr "درباره"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr ""
 
-msgid "Add Event"
-msgstr "افزودن رویداد"
-
-msgid "Add calendar"
-msgstr "افزودن تقویم"
-
-msgid "All day:"
-msgstr "هر روز:"
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr "تقویم"
-
-msgid "Comments"
-msgstr "توضیحات"
-
-msgid "Contacts"
-msgstr "تماس‌ها"
-
-msgid "Create Event"
-msgstr "ساخت رویداد"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "ساخت یک رویداد"
-
-msgid "Delete the selected event"
-msgstr "حذف رویداد انتخاب شده"
-
-msgid "Edit Event"
-msgstr "ویرایش رویداد"
-
-msgid "Edit the selected event"
-msgstr "ویرایش رویداد انتخاب شده"
-
-msgid "Ends: \t"
-msgstr "پایان: \t"
-
-msgid "Export Calendar..."
-msgstr "صادرات تقویم..."
-
-msgid "Export or Share the default Calendar"
-msgstr "صادرات و یا اشتراک‌گذاری تقویم پیش‌فرض"
-
-msgid "From:"
-msgstr "از:"
-
-msgid "Fullscreen"
-msgstr "تمام‌صفحه"
-
-msgid "Import..."
-msgstr "واردات..."
-
-msgid "John Smith OR Example St."
-msgstr "قلی قلوی"
-
-msgid "Location"
-msgstr "مکان"
-
-msgid "Name of Event"
-msgstr "نام رویداد"
-
-msgid "Name or Email Address"
-msgstr "نام و یا رایانامه"
-
-#. Ensure the groups actually exist
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
 msgstr "روی این رایانه"
 
-msgid "Participants"
-msgstr "شرکت کنندگان"
-
-msgid "Personal"
-msgstr "شخصی"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "جستجوی رویداد"
-
-msgid "Select calendars to display"
-msgstr "انتخاب تقویم برای نمایش"
-
-msgid "Show Week Numbers"
-msgstr "نمایش شماره هفته"
-
-msgid "Starts: \t"
-msgstr "آغاز: \t"
-
-msgid "Sync..."
-msgstr "هماهنگ‌سازی..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "عنوان"
-
-msgid "To:"
-msgstr "تا:"
-
-#. Create everything
-msgid "Today"
-msgstr "امروز"
-
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "مشاهده و زمانبندی رویدادها"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
 msgstr ""
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "هر رویداد باید یک نام و یک تاریخ معتبر داشته باشد"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "تماس‌ها"
 
-#. label settings
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "شخصی"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:69
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:295
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:495
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:343
+msgid "Calendar"
+msgstr "تقویم"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:494
+msgid "View and schedule events"
+msgstr "مشاهده و زمانبندی رویدادها"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:496
+msgid "_Add Event"
+msgstr "_افزودن رویداد"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
+msgid "Maya;Planner;Dates;Days;Events;"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "ساخت یک رویداد"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:46
+msgid "Edit the selected event"
+msgstr "ویرایش رویداد انتخاب شده"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:47
+msgid "Delete the selected event"
+msgstr "حذف رویداد انتخاب شده"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:49
+msgid "Select calendars to display"
+msgstr "انتخاب تقویم برای نمایش"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:55
+msgid "Search Events"
+msgstr "جستجوی رویداد"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:58
+msgid "Export or Share the default Calendar"
+msgstr "صادرات و یا اشتراک‌گذاری تقویم پیش‌فرض"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/SourceSelector.vala:96
+msgid "Add calendar"
+msgstr "افزودن تقویم"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:37
+msgid "Today"
+msgstr "امروز"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:39
+msgid "Fullscreen"
+msgstr "تمام‌صفحه"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:41
+msgid "Show Week Numbers"
+msgstr "نمایش شماره هفته"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:43
+msgid "Import..."
+msgstr "واردات..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:45
+msgid "Sync..."
+msgstr "هماهنگ‌سازی..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:47
+msgid "About"
+msgstr "درباره"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
+msgid "Export Calendar..."
+msgstr "صادرات تقویم..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
+msgid "calendar.ics"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+msgid "Starts: \t"
+msgstr "آغاز: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+msgid "Ends: \t"
+msgstr "پایان: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
+msgid "all day"
+msgstr "هر روز"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
+msgid "at"
+msgstr "در"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -159,15 +155,70 @@ msgstr ""
 "در صورت انتخاب روز دارای رویداد، رویدادهای آن روز در این قسمت نمایش داده "
 "می‌شوند."
 
-#. maya.desktop:18
-msgid "_Add Event"
-msgstr "_افزودن رویداد"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:98
+msgid "Add Event"
+msgstr "افزودن رویداد"
 
-msgid "all day"
-msgstr "هر روز"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:101
+msgid "Edit Event"
+msgstr "ویرایش رویداد"
 
-msgid "at"
-msgstr "در"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:309
+msgid "From:"
+msgstr "از:"
 
-msgid "calendar.ics"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:315
+msgid "All day:"
+msgstr "هر روز:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:320
+msgid "To:"
+msgstr "تا:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:339
+msgid "Title"
+msgstr "عنوان"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:340
+msgid "Name of Event"
+msgstr "نام رویداد"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:361
+msgid "Location"
+msgstr "مکان"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:362
+msgid "John Smith OR Example St."
+msgstr "قلی قلوی"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:364
+msgid "Participants"
+msgstr "شرکت کنندگان"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:365
+msgid "Name or Email Address"
+msgstr "نام و یا رایانامه"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:368
+msgid "Comments"
+msgstr "توضیحات"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:404
+msgid "Create Event"
+msgstr "ساخت رویداد"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
+msgid "Save Changes"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
+msgid "This event can't be edited"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
+msgid "Your event has to be named and has to have a valid date"
+msgstr "هر رویداد باید یک نام و یک تاریخ معتبر داشته باشد"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
 msgstr ""

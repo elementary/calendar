@@ -7,166 +7,216 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-25 00:38-0500\n"
+"POT-Creation-Date: 2013-05-02 01:45+0200\n"
 "PO-Revision-Date: 2013-01-01 10:39+0000\n"
 "Last-Translator: Ahn Nyeoung <compiztab@naver.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
-"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
-"X-Generator: Launchpad (build 16532)\n"
+"X-Launchpad-Export-Date: 2013-05-02 05:17+0000\n"
+"X-Generator: Launchpad (build 16580)\n"
+"Language: ko\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-msgid "%H:%M"
-msgstr "%H:%M"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
 msgstr "%p %l:%M"
 
-msgid "About"
-msgstr "정보"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr "%H:%M"
 
-msgid "Add Event"
-msgstr "이벤트 추가"
-
-msgid "Add calendar"
-msgstr "달력 추가"
-
-msgid "All day:"
-msgstr "하루 종일:"
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr "달력"
-
-msgid "Comments"
-msgstr "설명"
-
-msgid "Contacts"
-msgstr "연락처"
-
-msgid "Create Event"
-msgstr "이벤트 추가하기"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "새 이벤트 추가하기"
-
-msgid "Delete the selected event"
-msgstr "선택한 이벤트를 삭제하기"
-
-msgid "Edit Event"
-msgstr "이벤트 편집"
-
-msgid "Edit the selected event"
-msgstr "선택한 이벤트를 수정하기"
-
-msgid "Ends: \t"
-msgstr "종료 시간: \t"
-
-msgid "Export Calendar..."
-msgstr "달력 내보내기"
-
-msgid "Export or Share the default Calendar"
-msgstr "기본 달력을 내보내거나 공유합니다."
-
-msgid "From:"
-msgstr "이때부터:"
-
-msgid "Fullscreen"
-msgstr "전체화면"
-
-msgid "Import..."
-msgstr "가져오기..."
-
-msgid "John Smith OR Example St."
-msgstr "김철수 또는 종로"
-
-msgid "Location"
-msgstr "위치"
-
-msgid "Name of Event"
-msgstr "이벤트 이름"
-
-msgid "Name or Email Address"
-msgstr "이름 또는 이메일 주소"
-
-#. Ensure the groups actually exist
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
 msgstr "이 컴퓨터에서"
 
-msgid "Participants"
-msgstr "참가자"
-
-msgid "Personal"
-msgstr "개인"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "이벤트 검색"
-
-msgid "Select calendars to display"
-msgstr "표시하고자 하는 캘린더를 선택하세요."
-
-msgid "Show Week Numbers"
-msgstr "몇 번째 주인지 표시"
-
-msgid "Starts: \t"
-msgstr "시작 날짜: \t"
-
-msgid "Sync..."
-msgstr "동기화하기..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "제목"
-
-msgid "To:"
-msgstr "이때까지:"
-
-#. Create everything
-msgid "Today"
-msgstr "오늘"
-
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "이벤트를 보고 설정합니다."
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
 msgstr "웹 캘린더"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "이벤트는 이름을 가지고, 실존하는 날짜를 가져야 합니다."
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "연락처"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"이벤트가 예정된 날짜를 선택하면 그 날짜에 일어날 이벤트를 볼 수 있습니다."
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "개인"
 
-#. maya.desktop:18
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:69
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:295
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:495
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:343
+msgid "Calendar"
+msgstr "달력"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:494
+msgid "View and schedule events"
+msgstr "이벤트를 보고 설정합니다."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:496
 msgid "_Add Event"
 msgstr "이벤트 추가 (_A)"
 
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
+msgid "Maya;Planner;Dates;Days;Events;"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "새 이벤트 추가하기"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:46
+msgid "Edit the selected event"
+msgstr "선택한 이벤트를 수정하기"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:47
+msgid "Delete the selected event"
+msgstr "선택한 이벤트를 삭제하기"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:49
+msgid "Select calendars to display"
+msgstr "표시하고자 하는 캘린더를 선택하세요."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:55
+msgid "Search Events"
+msgstr "이벤트 검색"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:58
+msgid "Export or Share the default Calendar"
+msgstr "기본 달력을 내보내거나 공유합니다."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/SourceSelector.vala:96
+msgid "Add calendar"
+msgstr "달력 추가"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:37
+msgid "Today"
+msgstr "오늘"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:39
+msgid "Fullscreen"
+msgstr "전체화면"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:41
+msgid "Show Week Numbers"
+msgstr "몇 번째 주인지 표시"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:43
+msgid "Import..."
+msgstr "가져오기..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:45
+msgid "Sync..."
+msgstr "동기화하기..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:47
+msgid "About"
+msgstr "정보"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
+msgid "Export Calendar..."
+msgstr "달력 내보내기"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
+msgid "calendar.ics"
+msgstr "달력.ics"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+msgid "Starts: \t"
+msgstr "시작 날짜: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+msgid "Ends: \t"
+msgstr "종료 시간: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
 msgid "all day"
 msgstr "하루 종일"
 
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
 msgid "at"
 msgstr "장소"
 
-msgid "calendar.ics"
-msgstr "달력.ics"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr "이벤트가 예정된 날짜를 선택하면 그 날짜에 일어날 이벤트를 볼 수 있습니다."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:98
+msgid "Add Event"
+msgstr "이벤트 추가"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:101
+msgid "Edit Event"
+msgstr "이벤트 편집"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:309
+msgid "From:"
+msgstr "이때부터:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:315
+msgid "All day:"
+msgstr "하루 종일:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:320
+msgid "To:"
+msgstr "이때까지:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:339
+msgid "Title"
+msgstr "제목"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:340
+msgid "Name of Event"
+msgstr "이벤트 이름"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:361
+msgid "Location"
+msgstr "위치"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:362
+msgid "John Smith OR Example St."
+msgstr "김철수 또는 종로"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:364
+msgid "Participants"
+msgstr "참가자"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:365
+msgid "Name or Email Address"
+msgstr "이름 또는 이메일 주소"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:368
+msgid "Comments"
+msgstr "설명"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:404
+msgid "Create Event"
+msgstr "이벤트 추가하기"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
+msgid "Save Changes"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
+msgid "This event can't be edited"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
+msgid "Your event has to be named and has to have a valid date"
+msgstr "이벤트는 이름을 가지고, 실존하는 날짜를 가져야 합니다."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
+msgstr ""

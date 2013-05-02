@@ -7,171 +7,223 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-25 00:38-0500\n"
+"POT-Creation-Date: 2013-05-02 01:45+0200\n"
 "PO-Revision-Date: 2013-03-02 16:13+0000\n"
 "Last-Translator: Damir Jerovšek <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
-"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-19 05:55+0000\n"
-"X-Generator: Launchpad (build 16532)\n"
+"X-Launchpad-Export-Date: 2013-05-02 05:17+0000\n"
+"X-Generator: Launchpad (build 16580)\n"
+"Language: sl\n"
 
-msgid "%A, %b %d"
-msgstr "%A, %k. %b"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr "%e. %B %Y"
 
-msgid "%H:%M"
-msgstr "%H.%M"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %k. %b"
 
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
 msgstr "%k.%M"
 
-msgid "About"
-msgstr "O programu"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr "%H.%M"
 
-msgid "Add Event"
-msgstr "Dodaj dogodek"
-
-msgid "Add calendar"
-msgstr "Dodaj koledar"
-
-msgid "All day:"
-msgstr "Celodnevno:"
-
-#. maya.desktop:5
-msgid "Calendar"
-msgstr "Koledar"
-
-msgid "Comments"
-msgstr "Opombe"
-
-msgid "Contacts"
-msgstr "Kontakti"
-
-msgid "Create Event"
-msgstr "Ustvari dogodek"
-
-#. Toolbar properties
-#. compliant with elementary HIG
-#. Initialize everything
-msgid "Create a new event"
-msgstr "Ustvari nov dogodek"
-
-msgid "Delete the selected event"
-msgstr "Izbriši izbrani dogodek"
-
-msgid "Edit Event"
-msgstr "Uredi dogodek"
-
-msgid "Edit the selected event"
-msgstr "Uredi izbrani dogodek"
-
-msgid "Ends: \t"
-msgstr "Konec: \t"
-
-msgid "Export Calendar..."
-msgstr "Izvozi koledar ..."
-
-msgid "Export or Share the default Calendar"
-msgstr "Izvozi ali souporabi privzeti koledar"
-
-msgid "From:"
-msgstr "Od:"
-
-msgid "Fullscreen"
-msgstr "Celozaslonski način"
-
-msgid "Import..."
-msgstr "Uvozi ..."
-
-msgid "John Smith OR Example St."
-msgstr "Janez Kranjski ALI Neka ul."
-
-msgid "Location"
-msgstr "Kraj"
-
-msgid "Name of Event"
-msgstr "Ime dogodka"
-
-msgid "Name or Email Address"
-msgstr "Ime ali e-poštni naslov"
-
-#. Ensure the groups actually exist
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
 msgstr "Na tem računalniku"
 
-msgid "Participants"
-msgstr "Udeleženci"
-
-msgid "Personal"
-msgstr "Osebno"
-
-msgid "Save Changes"
-msgstr ""
-
-msgid "Search Events"
-msgstr "Išči dogodke"
-
-msgid "Select calendars to display"
-msgstr "Izberite koledarje za prikaz"
-
-msgid "Show Week Numbers"
-msgstr "Pokaži številke tednov"
-
-msgid "Starts: \t"
-msgstr "Začetek: \t"
-
-msgid "Sync..."
-msgstr "Uskladi ..."
-
-msgid "This event can't be edited"
-msgstr ""
-
-msgid "Title"
-msgstr "Naslov"
-
-msgid "To:"
-msgstr "Do:"
-
-#. Create everything
-msgid "Today"
-msgstr "Danes"
-
-#. maya.desktop:6
-msgid "View and schedule events"
-msgstr "Preglej in načrtuj dogodke"
-
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
 msgstr "Webcal"
 
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Tvoj dogodek mora biti imenovan in mora imeti veljaven datum"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "Kontakti"
 
-#. label settings
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr "Ko boste izbrali ustrezen datum, bodo tukaj prikazani bližnji dogodki."
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "Osebno"
 
-#. maya.desktop:18
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:69
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:295
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:495
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:343
+msgid "Calendar"
+msgstr "Koledar"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:494
+msgid "View and schedule events"
+msgstr "Preglej in načrtuj dogodke"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:496
 msgid "_Add Event"
 msgstr "_Dodaj dogodek"
 
-msgid "all day"
-msgstr "ves dan"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
+msgid "Maya;Planner;Dates;Days;Events;"
+msgstr ""
 
-msgid "at"
-msgstr "ob"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "Ustvari nov dogodek"
 
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:46
+msgid "Edit the selected event"
+msgstr "Uredi izbrani dogodek"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:47
+msgid "Delete the selected event"
+msgstr "Izbriši izbrani dogodek"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:49
+msgid "Select calendars to display"
+msgstr "Izberite koledarje za prikaz"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:55
+msgid "Search Events"
+msgstr "Išči dogodke"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:58
+msgid "Export or Share the default Calendar"
+msgstr "Izvozi ali souporabi privzeti koledar"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/SourceSelector.vala:96
+msgid "Add calendar"
+msgstr "Dodaj koledar"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:37
+msgid "Today"
+msgstr "Danes"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:39
+msgid "Fullscreen"
+msgstr "Celozaslonski način"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:41
+msgid "Show Week Numbers"
+msgstr "Pokaži številke tednov"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:43
+msgid "Import..."
+msgstr "Uvozi ..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:45
+msgid "Sync..."
+msgstr "Uskladi ..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:47
+msgid "About"
+msgstr "O programu"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
+msgid "Export Calendar..."
+msgstr "Izvozi koledar ..."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
 msgid "calendar.ics"
 msgstr "koledar.ics"
 
-#~ msgid "Guests"
-#~ msgstr "Gostje"
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+msgid "Starts: \t"
+msgstr "Začetek: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+msgid "Ends: \t"
+msgstr "Konec: \t"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
+msgid "all day"
+msgstr "ves dan"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
+msgid "at"
+msgstr "ob"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Ko boste izbrali ustrezen datum, bodo tukaj prikazani bližnji dogodki."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:98
+msgid "Add Event"
+msgstr "Dodaj dogodek"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:101
+msgid "Edit Event"
+msgstr "Uredi dogodek"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:309
+msgid "From:"
+msgstr "Od:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:315
+msgid "All day:"
+msgstr "Celodnevno:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:320
+msgid "To:"
+msgstr "Do:"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:339
+msgid "Title"
+msgstr "Naslov"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:340
+msgid "Name of Event"
+msgstr "Ime dogodka"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:361
+msgid "Location"
+msgstr "Kraj"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:362
+msgid "John Smith OR Example St."
+msgstr "Janez Kranjski ALI Neka ul."
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:364
+msgid "Participants"
+msgstr "Udeleženci"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:365
+msgid "Name or Email Address"
+msgstr "Ime ali e-poštni naslov"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:368
+msgid "Comments"
+msgstr "Opombe"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:404
+msgid "Create Event"
+msgstr "Ustvari dogodek"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
+msgid "Save Changes"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
+msgid "This event can't be edited"
+msgstr ""
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Tvoj dogodek mora biti imenovan in mora imeti veljaven datum"
+
+#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
+msgstr ""
 
 #~ msgid "all the day"
 #~ msgstr "cel dan"
+
+#~ msgid "Guests"
+#~ msgstr "Gostje"
