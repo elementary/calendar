@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-02 01:45+0200\n"
-"PO-Revision-Date: 2012-07-04 10:50+0000\n"
-"Last-Translator: Vesnar Teach <vesnarteach@gmail.com>\n"
+"PO-Revision-Date: 2013-05-05 08:09+0000\n"
+"Last-Translator: Bennici Piercarlo <piercarlo.bennici@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-03 05:21+0000\n"
+"X-Launchpad-Export-Date: 2013-05-06 05:47+0000\n"
 "X-Generator: Launchpad (build 16598)\n"
 "Language: it\n"
 
@@ -67,7 +67,7 @@ msgstr "_Aggiungi Evento"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "Maya;Progetti;Date,Giorni;Eventi;"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
 msgid "Create a new event"
@@ -209,11 +209,11 @@ msgstr "Crea evento"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
-msgstr ""
+msgstr "Salva modifiche"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
-msgstr ""
+msgstr "Questo evento non può essere modificato"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
@@ -221,7 +221,7 @@ msgstr "Il tuo evento deve essere nominato e deve avere una data valida"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
 msgid "$more more ..."
-msgstr ""
+msgstr "$ di più di più ..."
 
 #~ msgid "all the day"
 #~ msgstr "tutto il giorno"
