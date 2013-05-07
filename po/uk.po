@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-02 01:45+0200\n"
-"PO-Revision-Date: 2012-10-18 22:54+0000\n"
-"Last-Translator: Sho0ter <Sho0ter@mail.ua>\n"
+"PO-Revision-Date: 2013-05-06 21:05+0000\n"
+"Last-Translator: Сергей Цинайло <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-03 05:21+0000\n"
+"X-Launchpad-Export-Date: 2013-05-07 05:38+0000\n"
 "X-Generator: Launchpad (build 16598)\n"
 "Language: uk\n"
 
@@ -67,7 +67,7 @@ msgstr "Додати подію"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "Maya;Planner;Dates;Days;Events;"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
 msgid "Create a new event"
@@ -208,11 +208,11 @@ msgstr "Додати подію"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
-msgstr ""
+msgstr "Зберегти зміни"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
-msgstr ""
+msgstr "Ця подія не може бути змінена"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
@@ -220,4 +220,4 @@ msgstr "Ваша подія повинна мати назву та корект
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
 msgid "$more more ..."
-msgstr ""
+msgstr "$більше ..."
