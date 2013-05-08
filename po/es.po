@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-02 01:45+0200\n"
-"PO-Revision-Date: 2013-01-07 12:08+0000\n"
+"PO-Revision-Date: 2013-05-07 20:42+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-03 05:21+0000\n"
+"X-Launchpad-Export-Date: 2013-05-08 05:39+0000\n"
 "X-Generator: Launchpad (build 16598)\n"
 "Language: es\n"
 
@@ -67,7 +67,7 @@ msgstr "_Añadir evento"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "Maya;Planificador;Fechas;Días;Eventos;"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
 msgid "Create a new event"
@@ -83,7 +83,7 @@ msgstr "Eliminar el evento seleccionado"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:49
 msgid "Select calendars to display"
-msgstr "Seleccione los calendarios a mostrar"
+msgstr "Seleccionar los calendarios para mostrar"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:55
 msgid "Search Events"
@@ -107,15 +107,15 @@ msgstr "Pantalla completa"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:41
 msgid "Show Week Numbers"
-msgstr "Mostrar los números de las semanas"
+msgstr "Mostrar número de semana"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:43
 msgid "Import..."
-msgstr "Importar..."
+msgstr "Importar…"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:45
 msgid "Sync..."
-msgstr "Sincronizar..."
+msgstr "Sincronizar…"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:47
 msgid "About"
@@ -124,7 +124,7 @@ msgstr "Acerca de"
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
 msgid "Export Calendar..."
-msgstr "Exportar el calendario..."
+msgstr "Exportar calendario…"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
 msgid "calendar.ics"
@@ -209,11 +209,11 @@ msgstr "Crear evento"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
-msgstr ""
+msgstr "Guardar los cambios"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
-msgstr ""
+msgstr "No se puede editar este evento"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
@@ -221,7 +221,7 @@ msgstr "El evento tiene que tener un nombre y una fecha válida"
 
 #: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
 msgid "$more more ..."
-msgstr ""
+msgstr "$more más …"
 
 #~ msgid "all the day"
 #~ msgstr "todo el día"
