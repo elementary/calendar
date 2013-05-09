@@ -26,7 +26,7 @@ Replaces: maya (<< 0.2.0~r394)
 Conflicts: maya (<< 0.2.0~r394)
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: GCal-syncing GTK+ calendar application
+Description: GTK+ calendar application
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala, specifically for the Elementary project.
 
@@ -35,7 +35,7 @@ Architecture: any
 Section: debug
 Priority: extra
 Depends: maya-calendar (= ${binary:Version}), ${misc:Depends}
-Description: GCal-syncing GTK+ calendar application (debugging symbols)
+Description: GTK+ calendar application (debugging symbols)
  Maya is a slim, lightweight, GTK+ Calendar application written
  in Vala, specifically for the elementary project.
  .
