@@ -7,147 +7,88 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-02 01:45+0200\n"
+"POT-Creation-Date: 2013-05-09 15:32-0500\n"
 "PO-Revision-Date: 2012-07-08 10:01+0000\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-03 05:21+0000\n"
+"X-Launchpad-Export-Date: 2013-05-10 06:12+0000\n"
 "X-Generator: Launchpad (build 16598)\n"
 "Language: hu\n"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%Y. %b. %e."
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:35
-msgid "%l:%M %p"
-msgstr "%k.%M"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:38
-msgid "%H:%M"
-msgstr "%H.%M"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:67
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
 msgstr "Ezen a számítógépen"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:68
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
 msgstr "Webcal"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:69
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:69
 msgid "Contacts"
 msgstr "Névjegyek"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:137
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:137
 msgid "Personal"
 msgstr "Személyes"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:69
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:295
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:495
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:343
-msgid "Calendar"
-msgstr "Naptár"
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%Y. %b. %e."
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:494
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:35
+msgid "%l:%M %p"
+msgstr "%k.%M"
+
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr "%H.%M"
+
+#: /home/codygarver/maya/po/../Maya//Application.vala:494
 msgid "View and schedule events"
 msgstr "Események tervezése és megtekintése"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:496
+#: /home/codygarver/maya/po/../Maya//Application.vala:495
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:343
+msgid "Calendar"
+msgstr "Naptár"
+
+#: /home/codygarver/maya/po/../Maya//Application.vala:496
 msgid "_Add Event"
 msgstr "_Esemény hozzáadása"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
+#: /home/codygarver/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr ""
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
-msgid "Create a new event"
-msgstr "Új esemény létrehozása"
+#: /home/codygarver/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
+msgstr ""
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:46
-msgid "Edit the selected event"
-msgstr "Kiválasztott esemény szerkesztése"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:47
-msgid "Delete the selected event"
-msgstr "Kiválasztott esemény törlése"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:49
-msgid "Select calendars to display"
-msgstr "Megjelenítendő naptárak kiválasztása"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:55
-msgid "Search Events"
-msgstr "Esemény keresése"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:58
-msgid "Export or Share the default Calendar"
-msgstr "Alapértelmezett naptár exportálása vagy megosztása"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/SourceSelector.vala:96
-msgid "Add calendar"
-msgstr "Új naptár hozzáadása"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:37
-msgid "Today"
-msgstr "Ma"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:39
-msgid "Fullscreen"
-msgstr "Teljes képernyő"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:41
-msgid "Show Week Numbers"
-msgstr "Hetek számának megjelenítése"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:43
-msgid "Import..."
-msgstr "Importálás…"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:45
-msgid "Sync..."
-msgstr "Szinkronizálás..."
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:47
-msgid "About"
-msgstr "Névjegy"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
-msgid "Export Calendar..."
-msgstr "Naptár exportálása…"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
-msgid "calendar.ics"
-msgstr "Naptár.ics"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
 msgid "Starts: \t"
 msgstr "Kezdet: \t"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
 msgid "Ends: \t"
 msgstr "Vég: \t"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
 msgid "all day"
 msgstr "egész nap"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
 msgid "at"
 msgstr "ekkor:"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -155,73 +96,130 @@ msgstr ""
 "Közelgő eseményeid itt jelennek meg, mikor a kiválasztott dátumkor van "
 "esemény."
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:98
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:98
 msgid "Add Event"
 msgstr "Esemény hozzáadása"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:101
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:101
 msgid "Edit Event"
 msgstr "Esemény szerkesztése"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:309
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:309
 msgid "From:"
 msgstr "Ettől:"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:315
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:315
 msgid "All day:"
 msgstr "Egész nap:"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:320
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:320
 msgid "To:"
 msgstr "Eddig:"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:339
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:339
 msgid "Title"
 msgstr "Cím"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:340
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:340
 msgid "Name of Event"
 msgstr "Esemény neve"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:361
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:361
 msgid "Location"
 msgstr "Hely"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:362
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:362
 msgid "John Smith OR Example St."
 msgstr "Kovács János VAGY Példa utca"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:364
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:364
 msgid "Participants"
 msgstr "Résztvevők"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:365
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:365
 msgid "Name or Email Address"
 msgstr "Név vagy e-mail cím"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:368
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:368
 msgid "Comments"
 msgstr "Megjegyzések"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:404
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:404
 msgid "Create Event"
 msgstr "Esemény létrehozása"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
 msgstr ""
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
 msgstr ""
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
 msgstr "Az eseményt el kell nevezni és valós dátumon kell lennie"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
-msgid "$more more ..."
-msgstr ""
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "Új esemény létrehozása"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:46
+msgid "Edit the selected event"
+msgstr "Kiválasztott esemény szerkesztése"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:47
+msgid "Delete the selected event"
+msgstr "Kiválasztott esemény törlése"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:49
+msgid "Select calendars to display"
+msgstr "Megjelenítendő naptárak kiválasztása"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:55
+msgid "Search Events"
+msgstr "Esemény keresése"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:58
+msgid "Export or Share the default Calendar"
+msgstr "Alapértelmezett naptár exportálása vagy megosztása"
+
+#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
+#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
+msgid "Export Calendar..."
+msgstr "Naptár exportálása…"
+
+#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
+msgid "calendar.ics"
+msgstr "Naptár.ics"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:37
+msgid "Today"
+msgstr "Ma"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:39
+msgid "Fullscreen"
+msgstr "Teljes képernyő"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:41
+msgid "Show Week Numbers"
+msgstr "Hetek számának megjelenítése"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:43
+msgid "Import..."
+msgstr "Importálás…"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:45
+msgid "Sync..."
+msgstr "Szinkronizálás..."
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:47
+msgid "About"
+msgstr "Névjegy"
+
+#: /home/codygarver/maya/po/../Maya//View/SourceSelector.vala:96
+msgid "Add calendar"
+msgstr "Új naptár hozzáadása"
 
 #~ msgid "Guests"
 #~ msgstr "Vendégek"

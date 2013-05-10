@@ -7,147 +7,88 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-02 01:45+0200\n"
+"POT-Creation-Date: 2013-05-09 15:32-0500\n"
 "PO-Revision-Date: 2013-02-01 19:00+0000\n"
 "Last-Translator: Sergey \"Shnatsel\" Davidoff <Shnatsel@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-03 05:21+0000\n"
+"X-Launchpad-Export-Date: 2013-05-10 06:12+0000\n"
 "X-Generator: Launchpad (build 16598)\n"
 "Language: ru\n"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:35
-msgid "%l:%M %p"
-msgstr "%k:%M"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Settings/LanguagesFormat.vala:38
-msgid "%H:%M"
-msgstr "%H:%M"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:67
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
 msgstr "На этом компьютере"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:68
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
 msgstr "Календарь в Интернете"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:69
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:69
 msgid "Contacts"
 msgstr "Контакты"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Model/SourceManager.vala:137
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:137
 msgid "Personal"
 msgstr "Личное"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:69
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:295
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:495
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:343
-msgid "Calendar"
-msgstr "Календарь"
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:494
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:35
+msgid "%l:%M %p"
+msgstr "%k:%M"
+
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: /home/codygarver/maya/po/../Maya//Application.vala:494
 msgid "View and schedule events"
 msgstr "Просмотр и создание событий"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:496
+#: /home/codygarver/maya/po/../Maya//Application.vala:495
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:343
+msgid "Calendar"
+msgstr "Календарь"
+
+#: /home/codygarver/maya/po/../Maya//Application.vala:496
 msgid "_Add Event"
 msgstr "Добавить _событие"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//Application.vala:497
+#: /home/codygarver/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr ""
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:44
-msgid "Create a new event"
-msgstr "Создать новое событие"
+#: /home/codygarver/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
+msgstr ""
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:46
-msgid "Edit the selected event"
-msgstr "Редактировать выбранное событие"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:47
-msgid "Delete the selected event"
-msgstr "Удалить выбранное событие"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:49
-msgid "Select calendars to display"
-msgstr "Выберите календари для просмотра"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:55
-msgid "Search Events"
-msgstr "Поиск событий"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaToolbar.vala:58
-msgid "Export or Share the default Calendar"
-msgstr "Экспортировать или поделиться календарём по умолчанию"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/SourceSelector.vala:96
-msgid "Add calendar"
-msgstr "Добавить календарь"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:37
-msgid "Today"
-msgstr "Сегодня"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:39
-msgid "Fullscreen"
-msgstr "На весь экран"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:41
-msgid "Show Week Numbers"
-msgstr "Показать номера недель"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:43
-msgid "Import..."
-msgstr "Импортировать…"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:45
-msgid "Sync..."
-msgstr "Синхронизация"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/MayaMenu.vala:47
-msgid "About"
-msgstr "О программе"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
-msgid "Export Calendar..."
-msgstr "Экспортировать календарь..."
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
-msgid "calendar.ics"
-msgstr "календарь.ics"
-
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
 msgid "Starts: \t"
 msgstr "Начало: \t"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
 msgid "Ends: \t"
 msgstr "Конец: \t"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
 msgid "all day"
 msgstr "весь день"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
 msgid "at"
 msgstr "в"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -155,73 +96,130 @@ msgstr ""
 "Ваши предстоящие события будут показаны здесь, когда вы выберете дату с "
 "событиями."
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:98
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:98
 msgid "Add Event"
 msgstr "Добавить событие"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:101
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:101
 msgid "Edit Event"
 msgstr "Изменить событие"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:309
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:309
 msgid "From:"
 msgstr "От:"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:315
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:315
 msgid "All day:"
 msgstr "Весь день:"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:320
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:320
 msgid "To:"
 msgstr "Для:"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:339
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:339
 msgid "Title"
 msgstr "Заголовок"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:340
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:340
 msgid "Name of Event"
 msgstr "Название события"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:361
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:361
 msgid "Location"
 msgstr "Местоположение"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:362
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:362
 msgid "John Smith OR Example St."
 msgstr "Джон Смит или например ул."
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:364
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:364
 msgid "Participants"
 msgstr "Участники"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:365
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:365
 msgid "Name or Email Address"
 msgstr "Имя или адрес электронной почты"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:368
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:368
 msgid "Comments"
 msgstr "Комментарии"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:404
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:404
 msgid "Create Event"
 msgstr "Создать событие"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:407
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
 msgstr ""
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:503
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
 msgstr ""
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/EventDialog.vala:510
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
 msgstr "Событие должно иметь правильные название и дату"
 
-#: /home/noelco/Programmation/Projets/maya/po/../Maya//View/Grid/VAutoHider.vala:119
-msgid "$more more ..."
-msgstr ""
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "Создать новое событие"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:46
+msgid "Edit the selected event"
+msgstr "Редактировать выбранное событие"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:47
+msgid "Delete the selected event"
+msgstr "Удалить выбранное событие"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:49
+msgid "Select calendars to display"
+msgstr "Выберите календари для просмотра"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:55
+msgid "Search Events"
+msgstr "Поиск событий"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:58
+msgid "Export or Share the default Calendar"
+msgstr "Экспортировать или поделиться календарём по умолчанию"
+
+#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
+#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
+msgid "Export Calendar..."
+msgstr "Экспортировать календарь..."
+
+#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
+msgid "calendar.ics"
+msgstr "календарь.ics"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:37
+msgid "Today"
+msgstr "Сегодня"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:39
+msgid "Fullscreen"
+msgstr "На весь экран"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:41
+msgid "Show Week Numbers"
+msgstr "Показать номера недель"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:43
+msgid "Import..."
+msgstr "Импортировать…"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:45
+msgid "Sync..."
+msgstr "Синхронизация"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:47
+msgid "About"
+msgstr "О программе"
+
+#: /home/codygarver/maya/po/../Maya//View/SourceSelector.vala:96
+msgid "Add calendar"
+msgstr "Добавить календарь"
 
 #~ msgid "Guests"
 #~ msgstr "Гости"
