@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2012-10-20 09:39+0000\n"
+"PO-Revision-Date: 2013-05-12 08:08+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-10 06:12+0000\n"
-"X-Generator: Launchpad (build 16598)\n"
+"X-Launchpad-Export-Date: 2013-05-13 05:44+0000\n"
+"X-Generator: Launchpad (build 16614)\n"
 "Language: gl\n"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
@@ -65,11 +65,11 @@ msgstr "_Añadir actividade"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "Maya;Planificador;Datas;Días;Actividadess;"
 
 #: /home/codygarver/maya/po/../Maya//View/Grid/VAutoHider.vala:119
 msgid "$more more ..."
-msgstr ""
+msgstr "$máis maís ..."
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
 msgid "Starts: \t"
@@ -150,11 +150,11 @@ msgstr "Crear actividade"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
-msgstr ""
+msgstr "Gardar os cambios"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
-msgstr ""
+msgstr "Esta actividade non é editábel"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
