@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2013-01-09 23:05+0000\n"
-"Last-Translator: Kristjan Vool <Unknown>\n"
+"PO-Revision-Date: 2013-05-18 14:11+0000\n"
+"Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-10 06:12+0000\n"
-"X-Generator: Launchpad (build 16598)\n"
+"X-Launchpad-Export-Date: 2013-05-19 05:25+0000\n"
+"X-Generator: Launchpad (build 16626)\n"
 "Language: et\n"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
@@ -213,7 +213,7 @@ msgstr "Sünkroniseeri..."
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:47
 msgid "About"
-msgstr "Programmist lähemalt..."
+msgstr "Rakendusest..."
 
 #: /home/codygarver/maya/po/../Maya//View/SourceSelector.vala:96
 msgid "Add calendar"
