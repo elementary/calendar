@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2013-05-22 03:39+0000\n"
-"Last-Translator: Uri Damsker <ud1955@gmail.com>\n"
+"PO-Revision-Date: 2013-05-23 13:03+0000\n"
+"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-23 05:43+0000\n"
+"X-Launchpad-Export-Date: 2013-05-24 06:03+0000\n"
 "X-Generator: Launchpad (build 16640)\n"
 "Language: he\n"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
-msgstr ""
+msgstr "במחשב זה"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
@@ -52,7 +52,7 @@ msgstr "%H:%M"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:494
 msgid "View and schedule events"
-msgstr "צפה ותזמן ארועים"
+msgstr "צפייה ותזמון של אירועים"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:495
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:343
@@ -61,7 +61,7 @@ msgstr "לוח שנה"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:496
 msgid "_Add Event"
-msgstr "הוסף _ארוע"
+msgstr "הוספת _ארוע"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
@@ -100,7 +100,7 @@ msgstr "הוספת אירוע"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:101
 msgid "Edit Event"
-msgstr "ערוך אירוע"
+msgstr "עריכת אירוע"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:309
 msgid "From:"
