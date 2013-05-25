@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2013-05-23 13:03+0000\n"
-"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
+"PO-Revision-Date: 2013-05-25 03:27+0000\n"
+"Last-Translator: דוביקס <dovix2003@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-24 06:03+0000\n"
+"X-Launchpad-Export-Date: 2013-05-25 05:35+0000\n"
 "X-Generator: Launchpad (build 16640)\n"
 "Language: he\n"
 
@@ -128,7 +128,7 @@ msgstr "מיקום"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:362
 msgid "John Smith OR Example St."
-msgstr "גון סמיט או רחוב הדוגמה"
+msgstr "שם או רחוב לדוגמא"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:364
 msgid "Participants"
@@ -148,11 +148,11 @@ msgstr "יצירת אירוע"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
-msgstr ""
+msgstr "שמירת שינויים"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
-msgstr ""
+msgstr "אירוע זה אינו ניתן לעריכה"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
@@ -213,7 +213,7 @@ msgstr "סנכרון..."
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:47
 msgid "About"
-msgstr "על אודות"
+msgstr "אודות"
 
 #: /home/codygarver/maya/po/../Maya//View/SourceSelector.vala:96
 msgid "Add calendar"
