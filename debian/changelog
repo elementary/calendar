@@ -1,3 +1,9 @@
+maya-calendar (0.2.1) precise; urgency=low
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementaryos.org>  Sun, 09 Jun 2013 18:26:43 -0500
+
 maya-calendar (0.2.0) UNRELEASED; urgency=low
 
   * Initial Release.
