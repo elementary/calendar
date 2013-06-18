@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2013-05-26 20:10+0000\n"
+"PO-Revision-Date: 2013-06-17 09:52+0000\n"
 "Last-Translator: Joachim Johansson <joachim.j@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-27 05:29+0000\n"
-"X-Generator: Launchpad (build 16640)\n"
+"X-Launchpad-Export-Date: 2013-06-18 06:20+0000\n"
+"X-Generator: Launchpad (build 16673)\n"
 "Language: sv\n"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
@@ -198,7 +198,7 @@ msgstr "Idag"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:39
 msgid "Fullscreen"
-msgstr "Fullskärm"
+msgstr "Helskärm"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:41
 msgid "Show Week Numbers"
@@ -219,9 +219,3 @@ msgstr "Om"
 #: /home/codygarver/maya/po/../Maya//View/SourceSelector.vala:96
 msgid "Add calendar"
 msgstr "Lägg till kalender"
-
-#~ msgid "all the day"
-#~ msgstr "hela dagen"
-
-#~ msgid "Guests"
-#~ msgstr "Gäster"
