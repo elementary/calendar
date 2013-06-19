@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2013-06-17 09:52+0000\n"
-"Last-Translator: Joachim Johansson <joachim.j@gmail.com>\n"
+"PO-Revision-Date: 2013-06-19 01:21+0000\n"
+"Last-Translator: wonderjake <jakob.axelson@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-06-18 06:20+0000\n"
+"X-Launchpad-Export-Date: 2013-06-19 05:39+0000\n"
 "X-Generator: Launchpad (build 16673)\n"
 "Language: sv\n"
 
@@ -161,7 +161,7 @@ msgstr "Händelsen måste namnges och ha ett giltigt datum"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:44
 msgid "Create a new event"
-msgstr "Skapa ny händelse"
+msgstr "Skapa en ny händelse"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:46
 msgid "Edit the selected event"
