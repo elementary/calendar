@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2012-05-31 11:25+0000\n"
-"Last-Translator: Sitdhi <gvdosk124@gmail.com>\n"
+"PO-Revision-Date: 2013-06-24 02:46+0000\n"
+"Last-Translator: Tharawut Paripaiboon <Unknown>\n"
 "Language-Team: Thai <th@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-10 06:12+0000\n"
-"X-Generator: Launchpad (build 16598)\n"
+"X-Launchpad-Export-Date: 2013-06-24 04:51+0000\n"
+"X-Generator: Launchpad (build 16677)\n"
 "Language: th\n"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
-msgstr ""
+msgstr "บนคอมพิวเตอร์เครื่องนี้"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
@@ -28,27 +28,27 @@ msgstr ""
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:69
 msgid "Contacts"
-msgstr ""
+msgstr "รายชื่อ"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:137
 msgid "Personal"
-msgstr ""
+msgstr "ส่วนตัว"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr ""
+msgstr "%B %e, %Y"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
-msgstr ""
+msgstr "%A, %b %d"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%l:%M %p"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:38
 msgid "%H:%M"
-msgstr ""
+msgstr "%H:%M"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:494
 msgid "View and schedule events"
@@ -57,7 +57,7 @@ msgstr ""
 #: /home/codygarver/maya/po/../Maya//Application.vala:495
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:343
 msgid "Calendar"
-msgstr ""
+msgstr "ปฏิทิน"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:496
 msgid "_Add Event"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
 msgid "all day"
-msgstr ""
+msgstr "ทั้งวัน"
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
@@ -219,9 +219,3 @@ msgstr ""
 #: /home/codygarver/maya/po/../Maya//View/SourceSelector.vala:96
 msgid "Add calendar"
 msgstr ""
-
-#~ msgid "all the day"
-#~ msgstr "ทั้งวัน"
-
-#~ msgid "Guests"
-#~ msgstr "แขก"
