@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2013-06-01 06:28+0000\n"
-"Last-Translator: Veselin Trakiyski <Unknown>\n"
+"PO-Revision-Date: 2013-06-29 19:52+0000\n"
+"Last-Translator: Ivan <i.kazandjiev@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-06-02 05:35+0000\n"
-"X-Generator: Launchpad (build 16660)\n"
+"X-Launchpad-Export-Date: 2013-06-30 06:04+0000\n"
+"X-Generator: Launchpad (build 16692)\n"
 "Language: bg\n"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
@@ -24,7 +24,7 @@ msgstr "На този компютър"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
-msgstr ""
+msgstr "Уебкалендар"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:69
 msgid "Contacts"
@@ -44,7 +44,7 @@ msgstr "%A, %d, %b"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%l:%M %p"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:38
 msgid "%H:%M"
@@ -52,7 +52,7 @@ msgstr "%H:%M"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:494
 msgid "View and schedule events"
-msgstr ""
+msgstr "Разгледай и насрочи събитие"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:495
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:343
@@ -65,7 +65,7 @@ msgstr ""
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "Майя;Планер;Дати;Дни;Събития;"
 
 #: /home/codygarver/maya/po/../Maya//View/Grid/VAutoHider.vala:119
 msgid "$more more ..."
@@ -133,7 +133,7 @@ msgstr "John Smith или Example St."
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:364
 msgid "Participants"
-msgstr ""
+msgstr "Участници"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:365
 msgid "Name or Email Address"
@@ -149,15 +149,15 @@ msgstr "Създаване на събитието"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
-msgstr ""
+msgstr "Запазване на промените"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
-msgstr ""
+msgstr "Това събитие не може да бъде редактирано"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgstr "Вашето събитие трябва да има име и валидна дата"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:44
 msgid "Create a new event"
@@ -177,7 +177,7 @@ msgstr "Избор на календари за показване"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:55
 msgid "Search Events"
-msgstr ""
+msgstr "Търсене на събития"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:58
 msgid "Export or Share the default Calendar"
@@ -190,7 +190,7 @@ msgstr ""
 
 #: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
 msgid "calendar.ics"
-msgstr ""
+msgstr "календар.ics"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:37
 msgid "Today"
@@ -214,14 +214,8 @@ msgstr "Синхронизация..."
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:47
 msgid "About"
-msgstr ""
+msgstr "Относно"
 
 #: /home/codygarver/maya/po/../Maya//View/SourceSelector.vala:96
 msgid "Add calendar"
-msgstr ""
-
-#~ msgid "Guests"
-#~ msgstr "Гости"
-
-#~ msgid "all the day"
-#~ msgstr "през целия ден"
+msgstr "Добавяне на календар"
