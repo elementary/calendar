@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2012-08-16 18:54+0000\n"
-"Last-Translator: Ngô Trung <ndtrung4419@gmail.com>\n"
+"PO-Revision-Date: 2013-07-06 14:25+0000\n"
+"Last-Translator: Trung Ngô <ndtrung4419@gmail.com>\n"
 "Language-Team: Vietnamese <vi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-10 06:12+0000\n"
-"X-Generator: Launchpad (build 16598)\n"
+"X-Launchpad-Export-Date: 2013-07-07 05:35+0000\n"
+"X-Generator: Launchpad (build 16696)\n"
 "Language: vi\n"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
@@ -150,11 +150,11 @@ msgstr "Tạo sự kiện"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
-msgstr ""
+msgstr "Lưu thay đổi"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
-msgstr ""
+msgstr "Không thể chỉnh sửa sự kiện này"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
