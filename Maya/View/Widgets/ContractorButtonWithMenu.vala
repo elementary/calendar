@@ -15,57 +15,41 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+using Maya.Services;
+
 namespace Maya.View.Widgets {
 
     public class ContractorButtonWithMenu : Granite.Widgets.ToolButtonWithMenu {
 
-        private Maya.Services.Contractor contract;
-        private HashTable<string,string>[] services;
         private Gtk.FileChooserDialog filechooser;
 
         public ContractorButtonWithMenu (string tooltiptext) {
 
             base (new Gtk.Image.from_icon_name ("document-export", Gtk.IconSize.MENU), tooltiptext, new Gtk.Menu());
+            var services = Contractor.get_services ();
 
-            // try to connect
-            try {
-                contract = Bus.get_proxy_sync (BusType.SESSION,
-                                               "org.elementary.contractor",
-                                               "/org/elementary/contractor");
-
-                // get the list and parse it into the menu
-                services = contract.GetServicesByLocation (GLib.Environment.get_tmp_dir () + "/calendar.ics");
-                foreach (HashTable<string,string> service in services) {
-                    Gtk.MenuItem item = new Gtk.MenuItem.with_label(service.lookup ("Description"));
-                    item.activate.connect (activate_contract);
-                    menu.append (item);
-                }
-                    Gtk.MenuItem item = new Gtk.MenuItem.with_label(_("Export Calendar..."));
-                    item.activate.connect (savecal);
-                    menu.append (item);
-            } catch (IOError e) {
-                stderr.printf ("%s\n", e.message);
+            foreach (var service in services) {
+                Gtk.MenuItem item = new Gtk.MenuItem.with_label(service.get_display_name());
+                item.activate.connect (activate_contract);
+                menu.append (item);
             }
+                Gtk.MenuItem item = new Gtk.MenuItem.with_label(_("Export Calendar..."));
+                item.activate.connect (savecal);
+                menu.append (item);
 
         }
 
         private void activate_contract () {
             /* creates a .ics file */
             Util.save_temp_selected_calendars ();
+
+            string file_path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
+            File cal_file = File.new_for_path(file_path);
+
             Gtk.MenuItem menuitem = (Gtk.MenuItem) menu.get_active();
             string app_menu = menuitem.get_label();
 
-            foreach (HashTable<string,string> service in services) {
-                if (app_menu == service.lookup ("Description")) {
-                    try {
-                        GLib.Process.spawn_command_line_async (service.lookup ("Exec"));
-                    } catch (SpawnError e) {
-                        warning (e.message);
-                    }
-
-                    break;
-                }
-            }
+            Contractor.execute_service_for_display_name (app_menu, cal_file);
         }
 
         private void savecal () {

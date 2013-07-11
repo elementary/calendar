@@ -14,13 +14,28 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
+using Granite.Services;
 
 namespace Maya.Services {
 
-	[DBus (name = "org.elementary.contractor")]
-    public interface Contractor : Object
-    {
-        public abstract GLib.HashTable<string,string>[] GetServicesByLocation (string strlocation, string? file_mime="text/calendar") throws IOError;
+    public class Contractor {
+        private static Gee.List<Contract> contracts;
+
+        public static Gee.List<Contract> get_services () {
+            if (contracts == null) {
+                contracts = ContractorProxy.get_contracts_by_mime ("text/calender");
+            }
+            return contracts;
+        }
+
+        public static void execute_service_for_display_name (string display_name, File des_file) {
+            foreach (Contract  contract in contracts) {
+                if (contract.get_display_name () == display_name) {
+                    contract.execute_with_file (des_file);
+                    break;
+                }
+            }
+        }
     }
 
 }
