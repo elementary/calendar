@@ -54,12 +54,6 @@ namespace Maya.View.Widgets {
                 var contract = contracts.get (i);
                 Gtk.MenuItem menu_item;
 
-                // insert separator if we got at least 1 contract
-                if (i == 0) {
-                    menu_item = new Gtk.SeparatorMenuItem ();
-                    menu.append (menu_item);
-                }
-
                 menu_item = new ContractorMenuItem (contract);
                 menu.append (menu_item);
             }
