@@ -20,8 +20,6 @@ namespace Maya.View {
     public class MayaToolbar : Gtk.Toolbar {
 
         public Gtk.ToolButton button_add { get; private set; }
-        public Gtk.ToolButton edit_button { get; private set; }
-        public Gtk.ToolButton delete_button { get; private set; }
 
         public Widgets.DateSwitcher month_switcher { get; private set; }
         public Widgets.DateSwitcher year_switcher { get; private set; }
@@ -43,9 +41,6 @@ namespace Maya.View {
             // Initialize everything
             button_add = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add", _("Create a new event"));
 
-            edit_button = make_toolbutton ("edit", _("Edit the selected event"), false);
-            delete_button = make_toolbutton ("edit-delete", _("Delete the selected event"), false);
-
             button_calendar_sources = make_toolbutton ("gtk-index", _("Select calendars to display"), true);
 
             month_switcher = new Widgets.DateSwitcher (10);
@@ -62,8 +57,6 @@ namespace Maya.View {
 
             // Insert into appropriate positions
             insert (button_add, -1);
-            insert (edit_button, -1);
-            insert (delete_button, -1);
 
             insert (make_spacer (), -1);
 
