@@ -43,12 +43,6 @@ namespace Maya.View {
         // Sent out when the visibility of this widget changes.
         public signal void shown_changed (bool old, bool new);
 
-        // Sent out when an event is selected.
-        public signal void event_selected (E.CalComponent event);
-
-        // Sent out when an event is selected.
-        public signal void event_deselected (E.CalComponent event);
-
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
@@ -261,8 +255,6 @@ namespace Maya.View {
             EventWidget widget = new EventWidget (this.sourcemgr, this.group, this.source, event);
             attach (widget, 0, number_of_events, 1, 1);
             number_of_events++;
-            widget.selected.connect (() => {event_selected (event);});
-            widget.deselected.connect (() => {event_deselected (event);});
             widget.modified.connect ((event) => (event_modified (event)));
             widget.removed.connect ((event) => (event_removed (event)));
 

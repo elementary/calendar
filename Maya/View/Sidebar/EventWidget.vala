@@ -42,12 +42,6 @@ namespace Maya.View {
         Gtk.Button close_button;
         Gtk.Button edit_button;
 
-        // Signal sent out when the event is selected.
-        public signal void selected ();
-
-        // Signal sent out when the event is deselected.
-        public signal void deselected ();
-
         // Signal sent out when a button is pressed
 
         public signal void removed (E.CalComponent event);
@@ -120,20 +114,15 @@ namespace Maya.View {
         }
 
         private bool on_button_press (Gdk.EventButton event) {
-
             grab_focus ();
             return true;
         }
 
         private bool on_focus_in (Gdk.EventFocus event) {
-
-            selected ();
             return false;
         }
 
         private bool on_focus_out (Gdk.EventFocus event) {
-
-            deselected ();
             return false;
         }
 
@@ -141,7 +130,6 @@ namespace Maya.View {
          * Updates the event to match the given event.
          */
         public void update (E.CalComponent event) {
-
             name_label.set_markup ("<big>" + Markup.escape_text (get_label (event)) + "</big>");
 
             string end_string = get_end_string (event);
