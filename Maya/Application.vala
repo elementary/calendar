@@ -116,8 +116,6 @@ namespace Maya {
         Model.CalendarModel calmodel;
         View.SourceSelector source_selector;
 
-        E.CalComponent sidebar_selected_event = null;
-
         /**
          * Called when the application is activated.
          */
@@ -215,8 +213,6 @@ namespace Maya {
             // Don't automatically display all the widgets on the sidebar
             sidebar.no_show_all = true;
             sidebar.show ();
-            sidebar.event_selected.connect ((event) => (on_sidebar_selected (event)));
-            sidebar.event_deselected.connect ((event) => (on_sidebar_deselected (event)));
             sidebar.event_removed.connect (on_remove);
             sidebar.event_modified.connect (on_modified);
             sidebar.agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
@@ -249,26 +245,6 @@ namespace Maya {
 
         void on_agenda_view_shown_changed (bool old, bool shown) {
             toolbar.search_bar.sensitive = shown;
-        }
-
-        /**
-         * Called when an event is selected in the sidebar.
-         */
-        void on_sidebar_selected (E.CalComponent event) {
-            sidebar_selected_event = event;
-
-            toolbar.edit_button.sensitive = true;
-            toolbar.delete_button.sensitive = true;
-        }
-
-        /**
-         * Called when an event is deselected in the sidebar.
-         */
-        void on_sidebar_deselected (E.CalComponent event) {
-            sidebar_selected_event = null;
-
-            toolbar.edit_button.sensitive = false;
-            toolbar.delete_button.sensitive = false;
         }
 
         /**
@@ -325,8 +301,6 @@ namespace Maya {
         void create_toolbar () {
             toolbar = new View.MayaToolbar (calmodel.month_start);
             toolbar.button_add.clicked.connect (() => on_tb_add_clicked (calview.grid.selected_date));
-            toolbar.edit_button.clicked.connect (() => on_modified (sidebar_selected_event));
-            toolbar.delete_button.clicked.connect (() => on_remove (sidebar_selected_event));
             toolbar.button_calendar_sources.clicked.connect (on_tb_sources_clicked);
             toolbar.menu.today.activate.connect (on_menu_today_toggled);
             toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);

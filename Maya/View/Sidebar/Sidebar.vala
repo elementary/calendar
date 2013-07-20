@@ -28,12 +28,6 @@ namespace Maya.View {
 
         Gtk.ScrolledWindow scrolled_window;
 
-        // Sent out when an event is selected.
-        public signal void event_selected (E.CalComponent event);
-
-        // Sent out when an event is deselected.
-        public signal void event_deselected (E.CalComponent event);
-
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
@@ -87,8 +81,6 @@ namespace Maya.View {
             label_box.show ();
             label.show ();
             agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
-            agenda_view.event_selected.connect ((event) => (event_selected (event)));
-            agenda_view.event_deselected.connect ((event) => (event_deselected (event)));
             agenda_view.event_removed.connect ((event) => (event_removed (event)));
             agenda_view.event_modified.connect ((event) => (event_modified (event)));
         }
