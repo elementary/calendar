@@ -28,7 +28,7 @@ Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: GTK+ calendar application
  Maya is a slim, lightweight, GTK+ calendar application written
- in Vala, specifically for the Elementary project.
+ in Vala, specifically for the elementary project.
 
 Package: maya-calendar-dbg
 Architecture: any
