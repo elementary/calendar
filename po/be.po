@@ -1,0 +1,219 @@
+# Belarusian translation for maya
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the maya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: maya\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-05-09 15:32-0500\n"
+"PO-Revision-Date: 2013-07-24 18:11+0000\n"
+"Last-Translator: Alexander Rosolko <rosolko@gmail.com>\n"
+"Language-Team: Belarusian <be@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-07-25 05:25+0000\n"
+"X-Generator: Launchpad (build 16700)\n"
+
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
+msgid "On this computer"
+msgstr "На гэтым камп'ютэры"
+
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:68
+msgid "Webcal"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "Кантакты"
+
+#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "Асабістая"
+
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:35
+msgid "%l:%M %p"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//Application.vala:494
+msgid "View and schedule events"
+msgstr "Прагляд і планаванне падзей"
+
+#: /home/codygarver/maya/po/../Maya//Application.vala:495
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:343
+msgid "Calendar"
+msgstr "Каляндар"
+
+#: /home/codygarver/maya/po/../Maya//Application.vala:496
+msgid "_Add Event"
+msgstr "_Дадаць падзею"
+
+#: /home/codygarver/maya/po/../Maya//Application.vala:497
+msgid "Maya;Planner;Dates;Days;Events;"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+msgid "Starts: \t"
+msgstr "Пачатак: \t"
+
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+msgid "Ends: \t"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
+msgid "all day"
+msgstr "увесь дзень"
+
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
+msgid "at"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:98
+msgid "Add Event"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:101
+msgid "Edit Event"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:309
+msgid "From:"
+msgstr "З:"
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:315
+msgid "All day:"
+msgstr "Увесь дзень:"
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:320
+msgid "To:"
+msgstr "Да:"
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:339
+msgid "Title"
+msgstr "Назва"
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:340
+msgid "Name of Event"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:361
+msgid "Location"
+msgstr "Месца"
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:362
+msgid "John Smith OR Example St."
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:364
+msgid "Participants"
+msgstr "Удзельнікі"
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:365
+msgid "Name or Email Address"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:368
+msgid "Comments"
+msgstr "Каментарыі"
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:404
+msgid "Create Event"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
+msgid "Save Changes"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
+msgid "This event can't be edited"
+msgstr "Гэта падзея не можа быць зменена"
+
+#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:510
+msgid "Your event has to be named and has to have a valid date"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:46
+msgid "Edit the selected event"
+msgstr "Змяніць выбраную падзею"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:47
+msgid "Delete the selected event"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:49
+msgid "Select calendars to display"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:55
+msgid "Search Events"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:58
+msgid "Export or Share the default Calendar"
+msgstr ""
+
+#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
+#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
+msgid "Export Calendar..."
+msgstr "Экспартаваць Каляндар..."
+
+#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
+msgid "calendar.ics"
+msgstr "каляндар.ics"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:37
+msgid "Today"
+msgstr "Сёння"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:39
+msgid "Fullscreen"
+msgstr "На ўвесь экран"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:41
+msgid "Show Week Numbers"
+msgstr "Паказваць нумары тыдняў"
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:43
+msgid "Import..."
+msgstr "Імпартаваць..."
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:45
+msgid "Sync..."
+msgstr "Сінхранізаваць..."
+
+#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:47
+msgid "About"
+msgstr "Пра праграму"
+
+#: /home/codygarver/maya/po/../Maya//View/SourceSelector.vala:96
+msgid "Add calendar"
+msgstr ""
