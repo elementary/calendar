@@ -11,7 +11,7 @@ set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
 set (PKGDATADIR "${DATADIR}/maya-calendar")
 set (GETTEXT_PACKAGE "maya")
 set (RELEASE_NAME "Fast and connected.")
-set (VERSION "0.2.1")
+set (VERSION "0.2.2")
 set (VERSION_INFO "Release")
 set (SRC_TARGET ${CMAKE_PROJECT_NAME}-calendar)
 
