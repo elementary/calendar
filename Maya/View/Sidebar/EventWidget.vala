@@ -51,7 +51,7 @@ namespace Maya.View {
         /**
          * Creates a new event widget for the given event.
          */
-        public EventWidget (Model.SourceManager sourcemgr, E.SourceGroup group, E.Source source, E.CalComponent event) {
+        public EventWidget (E.Source source, E.CalComponent event) {
 
             var style_provider = Util.Css.get_css_provider ();
 
@@ -88,7 +88,7 @@ namespace Maya.View {
             close_button.add (new Gtk.Image.from_stock ("gtk-close", Gtk.IconSize.MENU));
             close_button.set_relief (Gtk.ReliefStyle.NONE);
             // Don't show the delete button if the event can't be edited
-            if (sourcemgr.can_edit_source (group, source)) {
+            if (source.writable == true) {
                 grid.attach (close_button, 2, 0, 1, 1);
             }
 

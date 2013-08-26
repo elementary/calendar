@@ -290,13 +290,13 @@ namespace Maya.Util {
 
     /* Computes hash value for E.Source */
     public uint source_hash_func (E.Source key) {
-        return str_hash (key.peek_uid());
+        return str_hash (key.dup_uid());
     }
 
     /* Computes hash value for E.SourceGroup */
-    public uint source_group_hash_func (E.SourceGroup key) {
+    /*public uint source_group_hash_func (E.SourceGroup key) {
         return str_hash (key.peek_uid());
-    }
+    }*/
 
     /* Returns true if 'a' and 'b' are the same string */
     public bool string_equal_func (string a, string b) {
@@ -309,9 +309,9 @@ namespace Maya.Util {
     }
 
     /* Returns true if 'a' and 'b' are the same E.SourceGroup */
-    public bool source_group_equal_func (E.SourceGroup a, E.SourceGroup b) {
+    /*public bool source_group_equal_func (E.SourceGroup a, E.SourceGroup b) {
         return a.peek_uid() == b.peek_uid();
-    }
+    }*/
 
     /* Returns true if 'a' and 'b' are the same E.CalComponent */
     public bool calcomponent_equal_func (E.CalComponent a, E.CalComponent b) {
@@ -323,7 +323,7 @@ namespace Maya.Util {
 
     /* Returns true if 'a' and 'b' are the same E.Source */
     public bool source_equal_func (E.Source a, E.Source b) {
-        return a.peek_uid() == b.peek_uid();
+        return a.dup_uid() == b.dup_uid();
     }
 
     //--- TreeModel Utility Functions ---//
@@ -405,10 +405,9 @@ namespace Maya.Util {
      */
 
     public void save_temp_selected_calendars (){
-        var sourcemagr = new Model.SourceManager ();
-        var calmodel = new Model.CalendarModel(sourcemagr, Maya.Settings.Weekday.MONDAY);
+        var calmodel = new Model.CalendarModel(Maya.Settings.Weekday.MONDAY);
 
-        var path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
+        /*var path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
         string output = "BEGIN:VCALENDAR\n";
         output += "VERSION:2.0\n";
         output += "PRODID:-//elementary project//maya-calendar\n";
@@ -442,7 +441,7 @@ namespace Maya.Util {
             file.replace_contents (data, null, false, 0, out s);
         } catch (GLib.Error e){
             warning (e.message);
-        }
+        }*/
     }
 
 }

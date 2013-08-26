@@ -36,8 +36,6 @@ namespace Maya.View {
         //
         int row_number = 0;
 
-        Model.SourceManager sourcemgr;
-
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
@@ -47,9 +45,7 @@ namespace Maya.View {
         /**
          * Creates a new agendaview.
          */
-		public AgendaView (Model.SourceManager sourcemgr, Model.CalendarModel calmodel) {
-
-            this.sourcemgr = sourcemgr;
+		public AgendaView (Model.CalendarModel calmodel) {
 
             // Gtk.Grid properties
             set_column_homogeneous (true);
@@ -61,12 +57,9 @@ namespace Maya.View {
                 (EqualFunc) Util.source_equal_func,
                 null);
 
-            Gee.List<E.SourceGroup> groups = sourcemgr.groups;
-
-            foreach (E.SourceGroup group in groups) {
-                foreach (E.Source source in group.peek_sources () ) {
-                    add_source (group, source);
-                }
+            var registry = new E.SourceRegistry.sync (null);
+            foreach (var src in registry.list_sources(null)) {
+                add_source (src);
             }
 
             // Listen to changes for events
@@ -78,25 +71,33 @@ namespace Maya.View {
             calmodel.parameters_changed.connect (on_model_parameters_changed);
 
             // Listen to changes in the sources
-            sourcemgr.status_changed.connect (on_source_status_changed);
-            sourcemgr.source_added.connect (on_source_added);
-            sourcemgr.source_removed.connect (on_source_removed);
+            registry.source_enabled.connect (on_source_enabled);
+            registry.source_disabled.connect (on_source_disabled);
+            registry.source_added.connect (on_source_added);
+            registry.source_removed.connect (on_source_removed);
 		}
 
         /**
          * Called when a source is checked/unchecked in the source selector.
          */
-        void on_source_status_changed (E.Source source, bool enabled) {
+        void on_source_enabled (E.Source source) {
             if (!source_widgets.has_key (source))
                 return;
 
-            source_widgets.get (source).selected = enabled;
+            source_widgets.get (source).selected = true;
+        }
+        
+        void on_source_disabled (E.Source source) {
+            if (!source_widgets.has_key (source))
+                return;
+
+            source_widgets.get (source).selected = false;
         }
 
         /**
          * Called when a source is removed.
          */
-        void on_source_removed (E.SourceGroup group, E.Source source) {
+        void on_source_removed (E.Source source) {
             if (!source_widgets.has_key (source))
                 return;
 
@@ -106,8 +107,8 @@ namespace Maya.View {
         /**
          * Called when a source is added.
          */
-        void on_source_added (E.SourceGroup group, E.Source source) {
-            add_source (group, source);
+        void on_source_added (E.Source source) {
+            add_source (source);
         }
 
         /**
@@ -121,8 +122,8 @@ namespace Maya.View {
         /**
          * Adds the given source to the list.
          */
-        void add_source (E.SourceGroup group, E.Source source) {
-            var widget = new SourceWidget (sourcemgr, group, source);
+        void add_source (E.Source source) {
+            var widget = new SourceWidget (source);
             attach (widget, 0, row_number, 1, 1);
             row_number++;
 

@@ -112,9 +112,7 @@ namespace Maya {
         View.Sidebar sidebar;
         Gtk.Paned hpaned;
 
-        Model.SourceManager sourcemgr;
         Model.CalendarModel calmodel;
-        View.SourceSelector source_selector;
 
         /**
          * Called when the application is activated.
@@ -151,8 +149,6 @@ namespace Maya {
          * Initializes the calendar model
          */
         void init_models () {
-
-            sourcemgr = new Model.SourceManager ();
 
             // It's dirty, but there is no other way to get it for the moment.
             string output;
@@ -192,7 +188,7 @@ namespace Maya {
                 break;
             }
 
-            calmodel = new Model.CalendarModel (sourcemgr, week_starts_on);
+            calmodel = new Model.CalendarModel (week_starts_on);
 
             calmodel.parameters_changed.connect (on_model_parameters_changed);
         }
@@ -209,7 +205,7 @@ namespace Maya {
             calview = new View.CalendarView (calmodel, saved_state.show_weeks);
             calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
 
-            sidebar = new View.Sidebar (sourcemgr, calmodel);
+            sidebar = new View.Sidebar (calmodel);
             // Don't automatically display all the widgets on the sidebar
             sidebar.no_show_all = true;
             sidebar.show ();
@@ -258,7 +254,7 @@ namespace Maya {
          * Called when the edit button is selected.
          */
         void on_modified (E.CalComponent comp) {
-            var dialog = new Maya.View.EventDialog (window, sourcemgr, comp, comp.get_data<E.Source>("source"), false);
+            var dialog = new Maya.View.EventDialog (window, comp, comp.get_data<E.Source>("source"), false);
             dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, false));
             dialog.present ();
         }
@@ -367,7 +363,7 @@ namespace Maya {
 
                 assert(original_source != null);
 
-                if (original_source.peek_uid () == source.peek_uid ()) {
+                if (original_source.dup_uid () == source.dup_uid ()) {
                     // Same uids, just modify
                     calmodel.update_event (source, event, mod_type);
                 } else {
@@ -396,25 +392,14 @@ namespace Maya {
             var event = new E.CalComponent ();
             event.set_new_vtype (E.CalComponentVType.EVENT);
 
-            iCal.icaltimetype date = iCal.icaltime_from_day_of_year (dt.get_day_of_year()+1, dt.get_year());
-            unowned iCal.icalcomponent comp = event.get_icalcomponent ();
-
-            comp.set_dtstart (date);
-            comp.set_dtend (date);
-            comp.set_summary ("");
-
-            var dialog = new Maya.View.EventDialog (window, sourcemgr, event, null, true);
+            var dialog = new Maya.View.EventDialog (window, event, null, true);
             dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, true));
             dialog.present ();
 
         }
 
         void on_tb_sources_clicked (Gtk.Widget widget) {
-            source_selector = new View.SourceSelector (window, sourcemgr);
-            foreach (var group in sourcemgr.groups) {
-                var tview = source_selector.get_group_box(group).tview;
-                tview.r_enabled.toggled.connect ((path) => on_source_selector_toggled (group,path));
-            }
+            var source_selector = new View.SourceSelector ();
             source_selector.move_to_widget (widget);
             source_selector.show_all ();
             source_selector.run ();
@@ -458,8 +443,8 @@ namespace Maya {
             saved_state.show_weeks = toolbar.menu.weeknumbers.active;
         }
 
-        void on_source_selector_toggled (E.SourceGroup group, string path) {
-            sourcemgr.toggle_source_status (group, path);
+        void on_source_selector_toggled (string path) {
+            //sourcemgr.toggle_source_status (group, path);
         }
 
     }

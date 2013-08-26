@@ -20,7 +20,7 @@ namespace Maya.View {
 
         public VAutoHider () {
             set_has_window (false);
-            set_resize_mode(Gtk.ResizeMode.IMMEDIATE);
+            set_resize_mode(Gtk.ResizeMode.QUEUE);
             more_label = new Gtk.Label ("");
             more_label.set_parent (this);
             if (get_realized ())

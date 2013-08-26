@@ -85,7 +85,6 @@ include(ValaPrecompile)
 vala_precompile(VALA_C ${SRC_TARGET}
     Maya/Application.vala
     Maya/Model/CalendarModel.vala
-    Maya/Model/SourceManager.vala
     Maya/Services/Dexter.vala
     Maya/Settings/MayaSettings.vala
     Maya/Settings/SavedState.vala

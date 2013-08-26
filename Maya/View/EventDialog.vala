@@ -56,11 +56,7 @@ public class EventDialog : Gtk.Window {
         private Gtk.ComboBox calendar_box;
 
         public E.Source? source { get; private set; }
-
-        public E.SourceGroup? original_group { get; private set; }
         public E.Source? original_source { get; private set; }
-
-        Model.SourceManager sourcemgr;
 
         public E.CalComponent ecal { get; private set; }
 
@@ -68,29 +64,22 @@ public class EventDialog : Gtk.Window {
 
         public EventType event_type { get; private set; }
 
-        public EventDialog (Gtk.Window window, Model.SourceManager? sourcemgr, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
+        public EventDialog (Gtk.Window window, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
 
             this.original_source = source;
-            if (this.original_source != null)
-                this.original_group = (E.SourceGroup) original_source.peek_group ();
-            else
-                this.original_group = null;
-
-            this.source = source ?? sourcemgr.DEFAULT_SOURCE;
-
-            sources = sourcemgr.get_editable_sources ();
-
-            if (original_group != null && original_source != null)
-                this.can_edit = sourcemgr.can_edit_source (original_group, original_source);
-
-            // Since we created one that is editable, we must have at least one
-            assert (!sources.is_empty);
+            var registry = new E.SourceRegistry.sync (null);
+            sources = new Gee.ArrayList<E.Source> ();
+            foreach (var src in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
+                if (src.writable == true) {
+                    warning (src.parent);
+                    sources.add (src);
+                }
+            }
 
             // Select the first calendar we can find, if none is default
-            if (this.source == null)
-                this.source = sources.get (0);
-
-            this.sourcemgr = sourcemgr;
+            if (this.source == null) {
+                this.source = registry.default_calendar;
+            }
 
             this.ecal = ecal;
 
@@ -203,7 +192,7 @@ public class EventDialog : Gtk.Window {
             string id = calendar_box.get_active_id ();
 
             foreach (E.Source possible_source in sources) {
-                if (possible_source.peek_uid () == id) {
+                if (possible_source.dup_uid () == id) {
                     this.source = possible_source;
                     break;
                 }
@@ -284,7 +273,7 @@ public class EventDialog : Gtk.Window {
             }
 
             // Load the source
-            calendar_box.set_active_id (this.source.peek_uid());
+            calendar_box.set_active_id (this.source.dup_uid());
         }
 
         void build_dialog (bool add_event) {
@@ -348,7 +337,7 @@ public class EventDialog : Gtk.Window {
             // Add all the editable sources
             foreach (E.Source source in sources) {
                 calcount++;
-                liststore.insert_with_values (null, 0, 0, source.peek_name(), 1, source.peek_uid());
+                liststore.insert_with_values (null, 0, 0, source.dup_display_name(), 1, source.dup_uid());
             }
 
             calendar_box = new Gtk.ComboBox.with_model (liststore);

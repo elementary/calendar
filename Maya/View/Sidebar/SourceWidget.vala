@@ -46,10 +46,7 @@ namespace Maya.View {
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
-        E.SourceGroup group;
         E.Source source;
-
-        Model.SourceManager sourcemgr;
 
         // The previous visibility status for this widget.
         bool old_shown = false;
@@ -60,12 +57,10 @@ namespace Maya.View {
         /**
          * Creates a new source widget for the given source.
          */
-        public SourceWidget (Model.SourceManager sourcemgr, E.SourceGroup group, E.Source source) {
+        public SourceWidget (E.Source source) {
             set_row_spacing (5);
 
-            this.group = group;
             this.source = source;
-            this.sourcemgr = sourcemgr;
 
             // TODO: hash and equal funcs are in util but cause a crash
             // (both for map and list)
@@ -77,7 +72,7 @@ namespace Maya.View {
             current_events = new Gee.ArrayList<E.CalComponent> (null);
 
             name_label = new Gtk.Label ("");
-            name_label.set_markup ("<b>" + Markup.escape_text (source.peek_name()) + "</b>");
+            name_label.set_markup ("<b>" + Markup.escape_text (source.dup_display_name()) + "</b>");
             name_label.set_alignment (0, 0.5f);
             attach (name_label, 0, 0, 1, 1);
             name_label.show ();
@@ -252,7 +247,7 @@ namespace Maya.View {
          * Creates a widget to show the given event.
          */
         void show_event (E.CalComponent event) {
-            EventWidget widget = new EventWidget (this.sourcemgr, this.group, this.source, event);
+            EventWidget widget = new EventWidget (this.source, event);
             attach (widget, 0, number_of_events, 1, 1);
             number_of_events++;
             widget.modified.connect ((event) => (event_modified (event)));
