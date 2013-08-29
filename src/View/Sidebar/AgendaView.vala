@@ -58,8 +58,10 @@ namespace Maya.View {
                 null);
 
             var registry = new E.SourceRegistry.sync (null);
-            foreach (var src in registry.list_sources(null)) {
-                add_source (src);
+            foreach (var src in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
+                E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+                if (cal.selected)
+                    add_source (src);
             }
 
             // Listen to changes for events

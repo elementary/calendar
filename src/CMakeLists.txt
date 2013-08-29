@@ -1,0 +1,68 @@
+
+set(CLIENT_VALAC_OPTIONS
+    --thread
+    --vapidir=${CMAKE_SOURCE_DIR}/vapi/
+    --define=USE_GRANITE_DECORATED_WINDOW
+)
+
+set(CONFIG_FILE ${CMAKE_CURRENT_BINARY_DIR}/config.vala)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.vala.cmake ${CONFIG_FILE})
+
+set(CLIENT_SOURCE
+    ${CONFIG_FILE}
+    Application.vala
+    Model/CalendarModel.vala
+    Services/Dexter.vala
+    Settings/MayaSettings.vala
+    Settings/SavedState.vala
+    Settings/LanguagesFormat.vala
+    Utils.vala
+    View/Sidebar/AgendaView.vala
+    View/Sidebar/Sidebar.vala
+    View/Sidebar/SourceWidget.vala
+    View/Sidebar/EventWidget.vala
+    View/Grid/CalendarView.vala
+    View/Grid/GridDay.vala
+    View/Grid/Grid.vala
+    View/Grid/EventButton/EventButton.vala
+    View/Grid/EventButton/MultiDayEventButton.vala
+    View/Grid/EventButton/SingleDayEventButton.vala
+    View/Grid/WeekLabels.vala
+    View/Grid/Header.vala
+    View/Grid/VAutoHider.vala
+    View/EventDialog.vala
+    View/SourceDialog.vala
+    View/MayaMenu.vala
+    View/MayaToolbar.vala
+    View/SourceSelector.vala
+    View/Widgets/ContractorButtonWithMenu.vala
+    View/Widgets/DateSwitcher.vala
+    View/Widgets/DateTimePicker.vala
+    View/Widgets/Postler/GuestEntry.vala
+    View/Widgets/Postler/FlowBox.vala
+    View/Widgets/Postler/Contact.vala
+)
+
+set(CLIENT_VAPI ${SRC_TARGET})
+
+vala_precompile(CLIENT_VALA_C ${SRC_TARGET}
+    ${CLIENT_SOURCE}
+PACKAGES
+    ${DEPS_PACKAGES}
+OPTIONS
+    ${CLIENT_VALAC_OPTIONS}
+GENERATE_VAPI
+    ${CLIENT_VAPI}
+GENERATE_HEADER
+    ${CLIENT_VAPI}
+)
+
+set(EXEC_NAME ${SRC_TARGET})
+
+add_definitions(${DEPS_CFLAGS})
+link_directories(${DEPS_LIBRARY_DIRS})
+add_executable(${EXEC_NAME} ${CLIENT_VALA_C})
+
+target_link_libraries(${EXEC_NAME} ${DEPS_LIBRARIES})
+
+install(TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)

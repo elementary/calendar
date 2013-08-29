@@ -79,13 +79,18 @@ public class CalendarModel : Object {
         registry.source_enabled.connect (on_source_enabled);
         registry.source_added.connect (on_source_added);
         registry.source_removed.connect (on_source_removed);
+        registry.source_changed.connect (on_source_changed);
 
         notify["month-start"].connect (on_parameter_changed);
 
         // Add sources
         
         foreach (var source in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
-            add_source (source);
+            
+            E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+            if (cal.selected == true) {
+                add_source (source);
+            }
         }
     }
 
@@ -157,8 +162,14 @@ public class CalendarModel : Object {
         string? rid = event.has_recurrences() ? null : event.get_recurid_as_string();
 
         debug (@"Removing event '$uid'");
-
-        var client = source_client [source];
+        
+        E.CalClient client = null;
+        foreach (var entry in source_client.entries) {
+            if (source.uid == ((E.Source)entry.key).uid) {
+                client = entry.value;
+                break;
+            }
+        }
         client.remove_object.begin (uid, rid, mod_type, null, (obj, results) =>  {
 
             bool status = false;
@@ -216,8 +227,9 @@ public class CalendarModel : Object {
 
     public void load_all_sources () {
 
-        foreach (var source in source_client.keys)
+        foreach (var source in source_client.keys) {
             load_source (source);
+        }
     }
 
     void load_source (E.Source source) {
@@ -238,7 +250,13 @@ public class CalendarModel : Object {
 
         var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
 
-        var client = source_client [source];
+        E.CalClient client = null;
+        foreach (var entry in source_client.entries) {
+            if (source.uid == ((E.Source)entry.key).uid) {
+                client = entry.value;
+                break;
+            }
+        }
 
         debug("Getting client-view for source '%s'", source.dup_display_name ());
 
@@ -260,21 +278,20 @@ public class CalendarModel : Object {
         });
     }
 
-    void add_source (E.Source source) {
+    public void add_source (E.Source source) {
 
         debug("Adding source '%s'", source.dup_display_name());
         try {
             var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
             client.open_sync(false, null);
             source_client.set (source, client);
-
             load_source (source);
         } catch (Error e) {
             warning (e.message);
         }
     }
 
-    void remove_source (E.Source source) {
+    public void remove_source (E.Source source) {
 
         // Already out of the model, so do nothing
         if (!source_view.has_key (source))
@@ -289,7 +306,13 @@ public class CalendarModel : Object {
         }
         source_view.unset (source);
 
-        var client = source_client [source];
+        E.CalClient client = null;
+        foreach (var entry in source_client.entries) {
+            if (source.uid == ((E.Source)entry.key).uid) {
+                client = entry.value;
+                break;
+            }
+        }
         client.cancel_all ();
         source_client.unset (source);
 
@@ -333,23 +356,27 @@ public class CalendarModel : Object {
     }*/
 
     void on_source_enabled (E.Source source) {
-
+        
         add_source (source);
     }
 
     void on_source_disabled (E.Source source) {
-
+        
         remove_source (source);
     }
 
     void on_source_added (E.Source source) {
-
+        
         add_source (source);
     }
 
     void on_source_removed (E.Source source) {
-
+        
         remove_source (source);
+    }
+
+    void on_source_changed (E.Source source) {
+        
     }
 
     E.CalClientView on_client_view_received (AsyncResult results, E.Source source, E.CalClient client) {

@@ -24,6 +24,7 @@ namespace Maya {
         private static bool PRINT_VERSION = false;
 
     }
+    public Application app;
 
     public static int main (string[] args) {
 
@@ -44,8 +45,9 @@ namespace Maya {
         }
 
         Gtk.init (ref args);
+        app = new Application ();
 
-        return new Application ().run (args);
+        return app.run (args);
 
     }
 
@@ -112,7 +114,7 @@ namespace Maya {
         View.Sidebar sidebar;
         Gtk.Paned hpaned;
 
-        Model.CalendarModel calmodel;
+        public Model.CalendarModel calmodel;
 
         /**
          * Called when the application is activated.

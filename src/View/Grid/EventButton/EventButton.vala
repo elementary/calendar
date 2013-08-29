@@ -22,15 +22,33 @@ namespace Maya.View {
  */
 public class EventButton : Gtk.Grid {
     public E.CalComponent comp {get; private set;}
+    private Gtk.EventBox event_box;
 
     public EventButton (E.CalComponent comp) {
         this.comp = comp;
+        column_spacing = 6;
+        event_box = new Gtk.EventBox ();
+        var fake_label = new Gtk.Label (" ");
+        event_box.add (fake_label);
+        event_box.set_size_request (4, 2);
+        attach (event_box, 0, 0, 1, 1);
+        event_box.show ();
     }
 
     public string get_summary () {
         E.CalComponentText ct;
         comp.get_summary (out ct);
         return ct.value;
+    }
+    
+    public override void add (Gtk.Widget widget) {
+        attach (widget, 1, 0, 1, 1);
+    }
+    
+    public void set_color (string color) {
+        var rgba = new Gdk.RGBA();
+        rgba.parse (color);
+        event_box.override_background_color (Gtk.StateFlags.NORMAL, rgba);
     }
 
     /**

@@ -20,11 +20,11 @@ namespace Maya.View {
 /**
  * Represents a single event on the grid.
  */
-class MultiDayEventButton : EventButton {
+class SingleDayEventButton : EventButton {
 
     Gtk.Label label;
 
-    public MultiDayEventButton (E.CalComponent comp) {
+    public SingleDayEventButton (E.CalComponent comp) {
         base (comp);
 
         label = new Gtk.Label(get_summary ());
@@ -32,6 +32,7 @@ class MultiDayEventButton : EventButton {
         add (label);
         label.hexpand = true;
         label.wrap = false;
+        label.xalign = 0;
         label.show ();
     }
 }
