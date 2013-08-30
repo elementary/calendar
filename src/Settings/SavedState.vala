@@ -35,7 +35,7 @@ namespace Maya.Settings {
         public int hpaned_position { get; set; }
 
         public SavedState () {
-            base ("org.pantheon.Maya.SavedState");
+            base ("org.pantheon.maya.savedstate");
         }
 
     }

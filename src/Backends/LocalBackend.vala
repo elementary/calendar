@@ -1,0 +1,46 @@
+// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
+/*-
+ * Copyright (c) 2013 Maya Developers (http://launchpad.net/maya)
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA.
+ *
+ * Authored by: Corentin Noël <tintou@mailoo.org>
+ */
+
+public class Maya.LocalBackend : GLib.Object, Maya.Backend {
+    
+    public string get_name () {
+        return _("On this computer");
+    }
+    
+    public string get_uid () {
+        return "local-stub";
+    }
+    
+    public Gtk.Widget get_new_calendar_widget (E.Source? to_edit = null) {
+        return new Gtk.Grid ();
+    }
+    public void add_new_calendar (string name, string color, Gtk.Widget widget) {
+        var new_source = new E.Source (null, null);
+        new_source.display_name = name;
+        new_source.parent = get_uid ();
+        E.SourceCalendar cal = (E.SourceCalendar)new_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+        cal.color = color;
+        cal.backend_name = "local";
+        var registry = new E.SourceRegistry.sync (null);
+        registry.commit_source_sync (new_source);
+    }
+}

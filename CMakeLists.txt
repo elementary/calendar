@@ -80,6 +80,7 @@ set(DEPS_PACKAGES
     libedataserver-1.2
     libical
     libsoup-2.4
+    libpeas-1.0
 )
 
 set(DEPS_PKG
@@ -92,6 +93,15 @@ set(DEPS_PKG
     granite
     libecal-1.2>=3.8.0
     libical
+    libpeas-1.0
+)
+
+set(GLOBAL_VALAC_OPTIONS
+    --define=USE_GRANITE_DECORATED_WINDOW
+    --vapidir=${CMAKE_SOURCE_DIR}/vapi
+    --vapidir=${CMAKE_BINARY_DIR}/src
+    --target-glib=2.32
+    --thread
 )
 
 find_package(PkgConfig)
@@ -104,10 +114,4 @@ include(ValaPrecompile)
 
 add_subdirectory(src)
 add_subdirectory(plugins)
-
-#
-# GSettings Schema
-#
-include(GSettings)
-add_schema("org.pantheon.Maya.gschema.xml")
-
+add_subdirectory(schemas)

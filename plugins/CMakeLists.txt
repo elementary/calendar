@@ -9,7 +9,7 @@ if (BUILD_PLUGINS AND BUILD_SHARED_LIBS)
     set(DEPS_PACKAGES ${DEPS_PACKAGES} ${SRC_TARGET})
     include_directories(${CMAKE_BINARY_DIR}/src)
 
-    #add_subdirectory(Google)
+    add_subdirectory(CalDAV)
 else ()
     message("-- Plugins disabled")
 endif ()

@@ -14,15 +14,18 @@
 
 public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
     
-    private Gtk.ListStore list_store;
+    private Gtk.TreeStore tree_store;
     private Gtk.TreeView tree_view;
     private Gee.HashMap<string, Gtk.TreeIter?> iter_map;
+    private Gtk.TreeIter default_iter;
 
     private enum Columns {
         TOGGLE,
         TEXT,
         COLOR,
         SOURCE,
+        VISIBLE,
+        DEFAULT,
         N_COLUMNS
     }
     
@@ -30,17 +33,18 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
         
         var main_grid = new Gtk.Grid ();
         
-        list_store = new Gtk.ListStore (Columns.N_COLUMNS, typeof (bool), typeof (string), typeof (string), typeof (E.Source));
-        tree_view = new Gtk.TreeView.with_model (list_store);
+        tree_store = new Gtk.TreeStore (Columns.N_COLUMNS, typeof (bool), typeof (string), typeof (string), typeof (E.Source), typeof (bool), typeof (bool));
+        tree_view = new Gtk.TreeView.with_model (tree_store);
+        iter_map = new Gee.HashMap<string, Gtk.TreeIter?>();
 
         var toggle = new Gtk.CellRendererToggle ();
         toggle.toggled.connect ((toggle, path) => {
             var tree_path = new Gtk.TreePath.from_string (path);
             Gtk.TreeIter iter;
-            list_store.get_iter (out iter, tree_path);
-            list_store.set (iter, Columns.TOGGLE, !toggle.active);
+            tree_store.get_iter (out iter, tree_path);
+            tree_store.set (iter, Columns.TOGGLE, !toggle.active);
             GLib.Value src;
-            list_store.get_value (iter, 3, out src);
+            tree_store.get_value (iter, 3, out src);
             E.SourceCalendar cal = (E.SourceCalendar)((E.Source)src).get_extension (E.SOURCE_EXTENSION_CALENDAR);
             if (!cal.selected == true) {
                 app.calmodel.add_source ((E.Source)src);
@@ -50,36 +54,89 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
             cal.set_selected (!cal.selected);
             ((E.Source)src).write_sync ();
         });
-
-        var column = new Gtk.TreeViewColumn ();
-        column.pack_start (toggle, false);
-        column.add_attribute (toggle, "active", Columns.TOGGLE);
-        column.add_attribute (toggle, "cell_background", Columns.COLOR);
-        tree_view.append_column (column);
+        
+        var radio = new Gtk.CellRendererToggle ();
+        radio.radio = true;
+        radio.toggled.connect ((toggle, path) => {
+            var tree_path = new Gtk.TreePath.from_string (path);
+            Gtk.TreeIter iter;
+            tree_store.get_iter (out iter, tree_path);
+            tree_store.set (default_iter, Columns.DEFAULT, false);
+            tree_store.set (iter, Columns.DEFAULT, true);
+            default_iter = iter;
+            GLib.Value src;
+            tree_store.get_value (iter, 3, out src);
+            var registry = new E.SourceRegistry.sync (null);
+            registry.default_calendar = (E.Source)src;
+        });
 
         var text = new Gtk.CellRendererText ();
-
-        column = new Gtk.TreeViewColumn ();
+        var column = new Gtk.TreeViewColumn ();
         column.pack_start (text, true);
         column.add_attribute (text, "text", Columns.TEXT);
         column.add_attribute (text, "cell_background", Columns.COLOR);
         tree_view.append_column (column);
+
+        column = new Gtk.TreeViewColumn ();
+        column.pack_start (toggle, false);
+        column.add_attribute (toggle, "active", Columns.TOGGLE);
+        column.add_attribute (toggle, "cell_background", Columns.COLOR);
+        column.add_attribute (toggle, "visible", Columns.VISIBLE);
+        tree_view.append_column (column);
+
+        column = new Gtk.TreeViewColumn ();
+        column.pack_start (radio, false);
+        column.add_attribute (radio, "active", Columns.DEFAULT);
+        column.add_attribute (radio, "cell_background", Columns.COLOR);
+        column.add_attribute (radio, "visible", Columns.VISIBLE);
+        tree_view.append_column (column);
  
         tree_view.set_headers_visible (false);
         
-        // Populate the view FIXME: there is no way to remove them for now
-        iter_map = new Gee.HashMap<string, Gtk.TreeIter?>();
-        Gtk.TreeIter iter;
+        var backend_map = new Gee.HashMap<string, Gtk.TreeIter?>();
+        foreach (var backend in backends_manager.backends) {
+            Gtk.TreeIter b_iter;
+            tree_store.append (out b_iter, null);
+            tree_store.set (b_iter, Columns.TEXT, backend.get_name (), Columns.VISIBLE, false);
+            backend_map.set (backend.get_uid (), b_iter);
+        }
+        
         var registry = new E.SourceRegistry.sync (null);
-        foreach (var src in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
-            E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-            list_store.append (out iter);
-            list_store.set (iter, Columns.TOGGLE, cal.selected, Columns.TEXT, src.dup_display_name (), Columns.COLOR, cal.dup_color(), Columns.SOURCE, src);
-            iter_map.set (src.dup_uid (), iter);
+        var sources = registry.list_sources (E.SOURCE_EXTENSION_CALENDAR);
+        
+        Gtk.TreeIter iter;
+        foreach (var entry in backend_map.entries) {
+            foreach (var src in sources) {
+                if (src.parent == entry.key) {
+                    E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+                    tree_store.append (out iter, entry.value);
+                    tree_store.set (iter, Columns.TOGGLE, cal.selected, Columns.TEXT, src.dup_display_name (), 
+                                           Columns.COLOR, cal.dup_color(), Columns.SOURCE, src, 
+                                           Columns.VISIBLE, true, Columns.DEFAULT, src.get_uid() == registry.default_calendar.uid);
+                    if (src.get_uid() == registry.default_calendar.uid)
+                        default_iter = iter;
+                    iter_map.set (src.dup_uid (), iter);
+                }
+            }
         }
-        foreach (var src in registry.list_sources (E.SOURCE_EXTENSION_COLLECTION)) {
-            warning ("");
+        
+        Gtk.TreeIter other;
+        tree_store.append (out other, null);
+        tree_store.set (other, Columns.TEXT, _("Other"), Columns.VISIBLE, false);
+        foreach (var src in sources) {
+            if (!backend_map.keys.contains (src.parent)) {
+                E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+                tree_store.append (out iter, other);
+                tree_store.set (iter, Columns.TOGGLE, cal.selected, Columns.TEXT, src.dup_display_name (), 
+                                           Columns.COLOR, cal.dup_color(), Columns.SOURCE, src, 
+                                           Columns.VISIBLE, true, Columns.DEFAULT, src.get_uid() == registry.default_calendar.uid);
+                if (src.get_uid() == registry.default_calendar.uid)
+                    default_iter = iter;
+                iter_map.set (src.dup_uid (), iter);
+            }
         }
+        
+        tree_view.expand_all ();
         
         registry.source_removed.connect (source_removed);
         registry.source_added.connect (source_added);
@@ -109,14 +166,17 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
         var add_button = new Gtk.ToolButton (null, _("Add…"));
         add_button.set_tooltip_text (_("Add…"));
         add_button.set_icon_name ("list-add-symbolic");
+        add_button.clicked.connect (create_source);
         
         var remove_button = new Gtk.ToolButton (null, _("Remove"));
         remove_button.set_tooltip_text (_("Remove"));
         remove_button.set_icon_name ("list-remove-symbolic");
+        remove_button.clicked.connect (remove_source);
         
         var edit_button = new Gtk.ToolButton (null, _("Edit…"));
         edit_button.set_tooltip_text (_("Edit…"));
         edit_button.set_icon_name ("document-properties-symbolic");
+        edit_button.clicked.connect (edit_source);
         
         toolbar.insert (add_button, -1);
         toolbar.insert (remove_button, -1);
@@ -130,7 +190,8 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
     
     private void source_removed (E.Source source) {
         if (iter_map.has_key (source.dup_uid ())) {
-            list_store.remove (iter_map.get (source.dup_uid ()));
+            var iter = iter_map.get (source.dup_uid ());
+            tree_store.remove (ref iter);
             iter_map.unset (source.dup_uid (), null);
         }
     }
@@ -138,8 +199,8 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
     private void source_added (E.Source source) {
         Gtk.TreeIter iter;
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-        list_store.append (out iter);
-        list_store.set (iter, Columns.TOGGLE, cal.selected, Columns.TEXT, source.dup_display_name ());
+        tree_store.append (out iter, null);
+        tree_store.set (iter, Columns.TOGGLE, cal.selected, Columns.TEXT, source.dup_display_name ());
         iter_map.set (source.dup_uid (), iter);
     }
     
@@ -153,6 +214,19 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
     
     private void source_changed (E.Source source) {
         
+    }
+    
+    private void create_source () {
+        var dialog = new SourceDialog ();
+        dialog.present ();
+    }
+    
+    private void remove_source () {
+    
+    }
+    
+    private void edit_source () {
+    
     }
     
 }

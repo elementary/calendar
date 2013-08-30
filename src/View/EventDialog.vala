@@ -71,7 +71,6 @@ public class EventDialog : Gtk.Window {
             sources = new Gee.ArrayList<E.Source> ();
             foreach (var src in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
                 if (src.writable == true) {
-                    warning (src.parent);
                     sources.add (src);
                 }
             }

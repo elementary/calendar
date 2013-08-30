@@ -30,12 +30,10 @@ namespace Maya.Settings {
 
     public class MayaSettings : Granite.Services.Settings {
 
-        public string primary_calendar { get; set; }
-
-        public string[] selected_calendars { get; set; }
+        public string[] plugins_disabled { get; set; }
 
         public MayaSettings () {
-            base ("org.pantheon.Maya.Settings");
+            base ("org.pantheon.maya.settings");
         }
 
     }

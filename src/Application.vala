@@ -25,6 +25,8 @@ namespace Maya {
 
     }
     public Application app;
+    public Plugins.Manager plugins_manager;
+    public BackendsManager backends_manager;
 
     public static int main (string[] args) {
 
@@ -108,7 +110,7 @@ namespace Maya {
 
         Settings.SavedState saved_state;
 
-        Gtk.Window window;
+        public Gtk.Window window;
         View.MayaToolbar toolbar;
         View.CalendarView calview;
         View.Sidebar sidebar;
@@ -129,10 +131,16 @@ namespace Maya {
             init_models ();
             init_gui ();
             window.show_all ();
+            
+            backends_manager = new BackendsManager ();
+            
+            plugins_manager = new Plugins.Manager (Build.PLUGIN_DIR, exec_name, null);
+            plugins_manager.hook_app (this);
 
             if (Option.ADD_EVENT) {
                 on_tb_add_clicked (calview.grid.selected_date);
             }
+            
 
             Gtk.main ();
         }
