@@ -33,19 +33,23 @@ namespace Maya.Plugins {
     
     public class CalDAVPlugin : Peas.ExtensionBase, Peas.Activatable {
         public GLib.Object object { owned get; construct; }
-        private Interface plugins;
+
+        public CalDAVPlugin () {
+          GLib.Object ();
+        }
+        
+        private CalDavBackend caldav_backend;
         
         public void activate () {
-            Value value = Value(typeof(GLib.Object));
-            get_property("object", ref value);
-            plugins = (Maya.Plugins.Interface)value.get_object();
 
             message ("Activating CalDAV plugin");
-            
+            caldav_backend = new CalDavBackend ();
+            backends_manager.add_backend (caldav_backend);
         }
 
         public void deactivate () {
-            
+            message ("Deactivating CalDAV plugin");
+            backends_manager.remove_backend (caldav_backend);
         }
 
         public void update_state () {

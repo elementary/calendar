@@ -603,6 +603,7 @@ namespace E {
 		public string dup_resource_path ();
 		public string dup_resource_query ();
 		public string dup_ssl_trust ();
+		public Soup.URI dup_soup_uri ();
 		public bool get_avoid_ifmatch ();
 		public bool get_calendar_auto_schedule ();
 		public unowned string get_display_name ();
@@ -621,6 +622,7 @@ namespace E {
 		public void set_resource_path (string? resource_path);
 		public void set_resource_query (string? resource_query);
 		public void set_ssl_trust (string? ssl_trust);
+		public void set_soup_uri (Soup.URI? soup_uri);
 		public void unset_temporary_ssl_trust ();
 		public bool avoid_ifmatch { get; set construct; }
 		public bool calendar_auto_schedule { get; set construct; }
@@ -630,6 +632,7 @@ namespace E {
 		public string resource_path { get; set construct; }
 		public string resource_query { get; set construct; }
 		public string ssl_trust { get; set construct; }
+		public Soup.URI soup_uri { get; set construct; }
 	}
 	[CCode (cheader_filename = "libedataserver/libedataserver.h")]
 	[Compact]

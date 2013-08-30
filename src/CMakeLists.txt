@@ -42,6 +42,7 @@ set(CLIENT_SOURCE
     Backends/Backend.vala
     Backends/BackendsManager.vala
     Backends/LocalBackend.vala
+    Backends/PlacementWidget.vala
 )
 
 vala_precompile(CLIENT_VALA_C ${SRC_TARGET}

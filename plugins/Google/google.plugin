@@ -2,7 +2,7 @@
 Module=google
 IAge=2
 Name=Google Calendar
-Description=Enable the google calendar
+Description=Enable Google calendar support
 Authors=Maya Developers
 Copyright=Copyright © 2013 Maya Developers
 Website=http://launchpad.net/maya

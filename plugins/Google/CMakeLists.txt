@@ -1,4 +1,4 @@
-pkg_check_modules(GOOGLE_DEPS libxml-2.0 json-glib-1.0 libsoup-2.4)
+pkg_check_modules(GOOGLE_DEPS libsoup-2.4)
 
 if (GOOGLE_DEPS_FOUND)
 
@@ -12,10 +12,9 @@ link_directories(${DEPS_LIBRARY_DIRS})
 set(TARGET_NAME google)
 vala_precompile(GOOGLE_VALA_C ${TARGET_NAME}
     Google.vala
+    GoogleBackend.vala
 PACKAGES
     ${DEPS_PACKAGES}
-    libxml-2.0
-    json-glib-1.0
     libsoup-2.4
 OPTIONS
     ${GLOBAL_VALAC_OPTIONS}

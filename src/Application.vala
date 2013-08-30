@@ -27,6 +27,7 @@ namespace Maya {
     public Application app;
     public Plugins.Manager plugins_manager;
     public BackendsManager backends_manager;
+    public Settings.MayaSettings global_settings;
 
     public static int main (string[] args) {
 
@@ -152,6 +153,7 @@ namespace Maya {
 
             saved_state = new Settings.SavedState ();
             saved_state.changed["show-weeks"].connect (on_saved_state_show_weeks_changed);
+            global_settings = new Settings.MayaSettings ();
 
         }
 

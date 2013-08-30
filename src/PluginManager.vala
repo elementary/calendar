@@ -55,11 +55,11 @@ public class Maya.Plugins.Manager : Object {
         engine.enable_loader ("gjs");
         engine.add_search_path (d, null);
         
-        /* TODO:Do not load blacklisted plugins */
+        /* Do not load blacklisted plugins */
         var disabled_plugins = new Gee.LinkedList<string> ();
-        /*foreach (var plugin in main_settings.plugins_disabled) {
+        foreach (var plugin in global_settings.plugins_disabled) {
             disabled_plugins.add (plugin);
-        }*/
+        }
         
         foreach (var plugin in engine.get_plugin_list ()) {
             if (!disabled_plugins.contains (plugin.get_module_name ())) {
@@ -82,23 +82,16 @@ public class Maya.Plugins.Manager : Object {
         
     }
     
-    void on_extension_added(Peas.ExtensionSet set, Peas.PluginInfo info, Peas.Extension extension) {
-        var core_list = engine.get_plugin_list ().copy ();
-        for (int i = 0; i < core_list.length(); i++) {
-            string module = core_list.nth_data (i).get_module_name ();
-            if (module == info.get_module_name ()) 
-                ((Peas.Activatable)extension).activate();
-            /* Enable plugin set */
-            else if (module == plugin_iface.set_name) {
-                debug ("Loaded %s", module);
+    void on_extension_added (Peas.ExtensionSet set, Peas.PluginInfo info, Peas.Extension extension) {
+        foreach (var plugin in engine.get_plugin_list ()) {
+            string module = plugin.get_module_name ();
+            if (module == info.get_module_name ()) {
                 ((Peas.Activatable)extension).activate();
             }
-            else
-                ((Peas.Activatable)extension).deactivate();
         }
     }
 
-    void on_extension_removed(Peas.PluginInfo info, Object extension) {
+    void on_extension_removed (Peas.PluginInfo info, Object extension) {
         ((Peas.Activatable)extension).deactivate();
     }
 

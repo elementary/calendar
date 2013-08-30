@@ -30,10 +30,10 @@ public class Maya.LocalBackend : GLib.Object, Maya.Backend {
         return "local-stub";
     }
     
-    public Gtk.Widget get_new_calendar_widget (E.Source? to_edit = null) {
-        return new Gtk.Grid ();
+    public Gee.Collection<PlacementWidget> get_new_calendar_widget (E.Source? to_edit = null) {
+        return new Gee.LinkedList<PlacementWidget> ();
     }
-    public void add_new_calendar (string name, string color, Gtk.Widget widget) {
+    public void add_new_calendar (string name, string color, Gee.Collection<PlacementWidget> widgets) {
         var new_source = new E.Source (null, null);
         new_source.display_name = name;
         new_source.parent = get_uid ();

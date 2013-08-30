@@ -20,10 +20,12 @@
  * Authored by: Corentin Noël <tintou@mailoo.org>
  */
 
-public interface Maya.Backend : GLib.Object {
+// This is needed in order to have good placement for widgets
+public class Maya.PlacementWidget : GLib.Object {
     
-    public abstract string get_name (); // A backend should never change his name
-    public abstract string get_uid ();
-    public abstract Gee.Collection<PlacementWidget> get_new_calendar_widget (E.Source? to_edit = null);
-    public abstract void add_new_calendar (string name, string color, Gee.Collection<PlacementWidget> widgets);
+    public Gtk.Widget widget;
+    public int row;
+    public int column;
+    public string ref_name;
+    
 }

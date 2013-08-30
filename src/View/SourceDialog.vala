@@ -27,7 +27,9 @@ public class Maya.View.SourceDialog : Gtk.Window {
     private Gtk.ColorButton color_button;
     private bool set_as_default = false;
     private Backend current_backend;
-    private Gtk.Widget backend_widget;
+    private Gee.Collection<PlacementWidget> backend_widgets;
+    private Gtk.Grid main_grid;
+    private Gtk.Grid general_grid;
 
     public SourceDialog (E.Source? source = null) {
         if (source == null) {
@@ -42,13 +44,17 @@ public class Maya.View.SourceDialog : Gtk.Window {
         type_hint = Gdk.WindowTypeHint.DIALOG;
         transient_for = app.window;
 
-        var main_grid = new Gtk.Grid ();
-        main_grid.margin_left = 12;
-        main_grid.margin_right = 12;
-        main_grid.margin_top = 12;
-        main_grid.margin_bottom = 12;
+        main_grid = new Gtk.Grid ();
         main_grid.set_row_spacing (6);
         main_grid.set_column_spacing (12);
+        
+        general_grid = new Gtk.Grid ();
+        general_grid.margin_left = 12;
+        general_grid.margin_right = 12;
+        general_grid.margin_top = 12;
+        general_grid.margin_bottom = 12;
+        general_grid.set_row_spacing (6);
+        general_grid.set_column_spacing (12);
 
         // Type Combobox
         Gtk.ListStore list_store = new Gtk.ListStore (2, typeof (string), typeof (Backend));
@@ -71,16 +77,15 @@ public class Maya.View.SourceDialog : Gtk.Window {
             type_combobox.get_active_iter (out b_iter);
             list_store.get_value (b_iter, 1, out backend);
             current_backend = ((Backend)backend);
-            if (backend_widget != null) {
-                backend_widget.hide ();
-            }
-            backend_widget = ((Backend)backend).get_new_calendar_widget ();
-            main_grid.attach (backend_widget,  0, 4, 2, 1);
-            backend_widget.show ();
+            remove_backend_widgets ();
+            backend_widgets = ((Backend)backend).get_new_calendar_widget ();
+            add_backend_widgets ();
         });
         type_combobox.set_active (0);
         
         var type_label = new Gtk.Label (_("Type:"));
+        type_label.expand = true;
+        type_label.xalign = 1;
         
         if (backends_manager.backends.size == 1) {
             type_combobox.no_show_all = true;
@@ -90,11 +95,13 @@ public class Maya.View.SourceDialog : Gtk.Window {
         // Name
         
         var name_label = new Gtk.Label (_("Name:"));
+        name_label.xalign = 1;
         name_entry = new Gtk.Entry ();
         
         // Color
         
         var color_label = new Gtk.Label (_("Color:"));
+        color_label.xalign = 1;
         color_button = new Gtk.ColorButton ();
         color_button.use_alpha = false;
         
@@ -131,11 +138,30 @@ public class Maya.View.SourceDialog : Gtk.Window {
         main_grid.attach (name_entry,    1, 1, 1, 1);
         main_grid.attach (color_label,   0, 2, 1, 1);
         main_grid.attach (color_button,  1, 2, 1, 1);
-        main_grid.attach (check_button,  0, 3, 2, 1);
-        main_grid.attach (buttonbox,  0, 5, 2, 1);
-        this.add (main_grid);
+        main_grid.attach (check_button,  1, 3, 1, 1);
+        
+        general_grid.attach (main_grid,  0, 0, 2, 1);
+        general_grid.attach (buttonbox,  0, 1, 2, 1);
+        
+        this.add (general_grid);
         
         show_all ();
+    }
+    
+    private void remove_backend_widgets () {
+        if (backend_widgets == null)
+            return;
+        foreach (var widget in backend_widgets) {
+            widget.widget.hide ();
+        }
+        backend_widgets.clear ();
+    }
+    
+    private void add_backend_widgets () {
+        foreach (var widget in backend_widgets) {
+            main_grid.attach (widget.widget, widget.column, 4 + widget.row, 1, 1);
+            widget.widget.show ();
+        }
     }
 
     //--- Public Methods ---//
@@ -144,7 +170,7 @@ public class Maya.View.SourceDialog : Gtk.Window {
     public void save () {
         
         if (event_type == EventType.ADD) {
-            current_backend.add_new_calendar (name_entry.text, Util.get_hexa_color (color_button.rgba), backend_widget);
+            current_backend.add_new_calendar (name_entry.text, Util.get_hexa_color (color_button.rgba), backend_widgets);
             this.destroy();
         } else {
             

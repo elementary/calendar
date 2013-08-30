@@ -94,22 +94,22 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
         tree_view.set_headers_visible (false);
         
         var backend_map = new Gee.HashMap<string, Gtk.TreeIter?>();
-        foreach (var backend in backends_manager.backends) {
-            Gtk.TreeIter b_iter;
-            tree_store.append (out b_iter, null);
-            tree_store.set (b_iter, Columns.TEXT, backend.get_name (), Columns.VISIBLE, false);
-            backend_map.set (backend.get_uid (), b_iter);
-        }
         
         var registry = new E.SourceRegistry.sync (null);
         var sources = registry.list_sources (E.SOURCE_EXTENSION_CALENDAR);
         
-        Gtk.TreeIter iter;
-        foreach (var entry in backend_map.entries) {
+        foreach (var backend in backends_manager.backends) {
+            Gtk.TreeIter? b_iter = null;
             foreach (var src in sources) {
-                if (src.parent == entry.key) {
+                Gtk.TreeIter iter;
+                if (src.parent == backend.get_uid ()) {
+                    if (b_iter == null) {
+                        tree_store.append (out b_iter, null);
+                        tree_store.set (b_iter, Columns.TEXT, backend.get_name (), Columns.VISIBLE, false);
+                        backend_map.set (backend.get_uid (), b_iter);
+                    }
                     E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-                    tree_store.append (out iter, entry.value);
+                    tree_store.append (out iter, b_iter);
                     tree_store.set (iter, Columns.TOGGLE, cal.selected, Columns.TEXT, src.dup_display_name (), 
                                            Columns.COLOR, cal.dup_color(), Columns.SOURCE, src, 
                                            Columns.VISIBLE, true, Columns.DEFAULT, src.get_uid() == registry.default_calendar.uid);
@@ -120,11 +120,14 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
             }
         }
         
-        Gtk.TreeIter other;
-        tree_store.append (out other, null);
-        tree_store.set (other, Columns.TEXT, _("Other"), Columns.VISIBLE, false);
+        Gtk.TreeIter? other = null;
         foreach (var src in sources) {
             if (!backend_map.keys.contains (src.parent)) {
+                if (other == null) {
+                    tree_store.append (out other, null);
+                    tree_store.set (other, Columns.TEXT, _("Other"), Columns.VISIBLE, false);
+                }
+                Gtk.TreeIter iter;
                 E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
                 tree_store.append (out iter, other);
                 tree_store.set (iter, Columns.TOGGLE, cal.selected, Columns.TEXT, src.dup_display_name (), 
@@ -218,6 +221,7 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
     
     private void create_source () {
         var dialog = new SourceDialog ();
+        this.hide ();
         dialog.present ();
     }
     

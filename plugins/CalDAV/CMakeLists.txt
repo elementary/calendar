@@ -12,6 +12,7 @@ link_directories(${DEPS_LIBRARY_DIRS})
 set(TARGET_NAME caldav)
 vala_precompile(CALDAV_VALA_C ${TARGET_NAME}
     CalDAV.vala
+    CalDAVBackend.vala
 PACKAGES
     ${DEPS_PACKAGES}
     libsoup-2.4
