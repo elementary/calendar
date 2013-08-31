@@ -175,7 +175,7 @@ namespace Maya.View.Widgets {
             var model = entry.get_completion ().model as Gtk.ListStore;
             if (model.iter_n_children (null) > 0)
                 return;
-            autocomplete (entry.text, model);
+            autocomplete.begin (entry.text, model);
         }
 
         async void autocomplete (string input, Gtk.ListStore model) {

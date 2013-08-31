@@ -455,10 +455,6 @@ namespace Maya {
             saved_state.show_weeks = toolbar.menu.weeknumbers.active;
         }
 
-        void on_source_selector_toggled (string path) {
-            //sourcemgr.toggle_source_status (group, path);
-        }
-
     }
 
     internal void desktop_translations () {

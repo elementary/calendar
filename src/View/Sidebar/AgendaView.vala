@@ -57,11 +57,21 @@ namespace Maya.View {
                 (EqualFunc) Util.source_equal_func,
                 null);
 
-            var registry = new E.SourceRegistry.sync (null);
-            foreach (var src in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
-                E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-                if (cal.selected)
-                    add_source (src);
+            try {
+                var registry = new E.SourceRegistry.sync (null);
+                foreach (var src in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
+                    E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+                    if (cal.selected)
+                        add_source (src);
+                }
+
+                // Listen to changes in the sources
+                registry.source_enabled.connect (on_source_enabled);
+                registry.source_disabled.connect (on_source_disabled);
+                registry.source_added.connect (on_source_added);
+                registry.source_removed.connect (on_source_removed);
+            } catch (GLib.Error error) {
+                critical (error.message);
             }
 
             // Listen to changes for events
@@ -71,12 +81,6 @@ namespace Maya.View {
 
             // Listen to changes in the displayed month
             calmodel.parameters_changed.connect (on_model_parameters_changed);
-
-            // Listen to changes in the sources
-            registry.source_enabled.connect (on_source_enabled);
-            registry.source_disabled.connect (on_source_disabled);
-            registry.source_added.connect (on_source_added);
-            registry.source_removed.connect (on_source_removed);
 		}
 
         /**

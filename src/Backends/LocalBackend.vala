@@ -34,13 +34,17 @@ public class Maya.LocalBackend : GLib.Object, Maya.Backend {
         return new Gee.LinkedList<PlacementWidget> ();
     }
     public void add_new_calendar (string name, string color, Gee.Collection<PlacementWidget> widgets) {
-        var new_source = new E.Source (null, null);
-        new_source.display_name = name;
-        new_source.parent = get_uid ();
-        E.SourceCalendar cal = (E.SourceCalendar)new_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-        cal.color = color;
-        cal.backend_name = "local";
-        var registry = new E.SourceRegistry.sync (null);
-        registry.commit_source_sync (new_source);
+        try {
+            var new_source = new E.Source (null, null);
+            new_source.display_name = name;
+            new_source.parent = get_uid ();
+            E.SourceCalendar cal = (E.SourceCalendar)new_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+            cal.color = color;
+            cal.backend_name = "local";
+            var registry = new E.SourceRegistry.sync (null);
+            registry.commit_source_sync (new_source);
+        } catch (GLib.Error error) {
+            critical (error.message);
+        }
     }
 }

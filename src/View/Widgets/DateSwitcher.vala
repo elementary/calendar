@@ -32,7 +32,7 @@ namespace Maya.View.Widgets {
             set {
                 _is_pressed = value;
                 if (hovered == 0 || hovered == 2)
-                    container_grid.get_children ().nth_data (hovered).set_state (value ? Gtk.StateType.SELECTED : Gtk.StateType.NORMAL);
+                    container_grid.get_children ().nth_data (hovered).set_state_flags (value ? Gtk.StateFlags.SELECTED : Gtk.StateFlags.NORMAL, true);
                 queue_draw ();
             }
         }

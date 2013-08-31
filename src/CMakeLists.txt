@@ -15,6 +15,7 @@ set(CLIENT_SOURCE
     Settings/SavedState.vala
     Settings/LanguagesFormat.vala
     Utils.vala
+    Threads.vala
     View/Sidebar/AgendaView.vala
     View/Sidebar/Sidebar.vala
     View/Sidebar/SourceWidget.vala

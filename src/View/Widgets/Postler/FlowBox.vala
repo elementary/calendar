@@ -17,7 +17,7 @@ namespace Maya.View.Widgets {
 
         public FlowBox () {
             set_has_window (false);
-            set_resize_mode(Gtk.ResizeMode.IMMEDIATE);
+            set_resize_mode(Gtk.ResizeMode.QUEUE);
         }
 
         public override void add (Gtk.Widget widget) {

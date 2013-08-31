@@ -67,17 +67,21 @@ public class EventDialog : Gtk.Window {
         public EventDialog (Gtk.Window window, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
 
             this.original_source = source;
-            var registry = new E.SourceRegistry.sync (null);
-            sources = new Gee.ArrayList<E.Source> ();
-            foreach (var src in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
-                if (src.writable == true) {
-                    sources.add (src);
+            try {
+                var registry = new E.SourceRegistry.sync (null);
+                sources = new Gee.ArrayList<E.Source> ();
+                foreach (var src in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
+                    if (src.writable == true) {
+                        sources.add (src);
+                    }
                 }
-            }
 
-            // Select the first calendar we can find, if none is default
-            if (this.source == null) {
-                this.source = registry.default_calendar;
+                // Select the first calendar we can find, if none is default
+                if (this.source == null) {
+                    this.source = registry.default_calendar;
+                }
+            } catch (GLib.Error error) {
+                critical (error.message);
             }
 
             this.ecal = ecal;

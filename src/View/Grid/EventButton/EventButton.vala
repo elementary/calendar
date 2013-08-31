@@ -46,7 +46,7 @@ public class EventButton : Gtk.Grid {
     }
     
     public void set_color (string color) {
-        var rgba = new Gdk.RGBA();
+        var rgba = Gdk.RGBA();
         rgba.parse (color);
         event_box.override_background_color (Gtk.StateFlags.NORMAL, rgba);
     }

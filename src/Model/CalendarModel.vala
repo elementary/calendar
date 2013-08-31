@@ -72,26 +72,38 @@ public class CalendarModel : Object {
             (EqualFunc) Util.source_equal_func,
             null);
 
-        // Signals
-
-        var registry = new E.SourceRegistry.sync (null);
-        registry.source_disabled.connect (on_source_disabled);
-        registry.source_enabled.connect (on_source_enabled);
-        registry.source_added.connect (on_source_added);
-        registry.source_removed.connect (on_source_removed);
-        registry.source_changed.connect (on_source_changed);
-
         notify["month-start"].connect (on_parameter_changed);
+        setup_sources_async.begin ();
+    }
+    
+    public async void setup_sources_async () {
+        SourceFunc callback = setup_sources_async.callback;
+        Threads.add (() => {
+            try {
+                var registry = new E.SourceRegistry.sync (null);
+                registry.source_disabled.connect (on_source_disabled);
+                registry.source_enabled.connect (on_source_enabled);
+                registry.source_added.connect (on_source_added);
+                registry.source_removed.connect (on_source_removed);
+                registry.source_changed.connect (on_source_changed);
 
-        // Add sources
-        
-        foreach (var source in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
-            
-            E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-            if (cal.selected == true) {
-                add_source (source);
+                // Add sources
+                
+                foreach (var source in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
+                    
+                    E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+                    if (cal.selected == true) {
+                        add_source (source);
+                    }
+                }
+            } catch (GLib.Error error) {
+                critical (error.message);
             }
-        }
+            
+            Idle.add ((owned) callback);
+        });
+
+        yield;
     }
 
     //--- Public Methods ---//
@@ -107,11 +119,14 @@ public class CalendarModel : Object {
         // Temporary workaround
         bool found = (client != null);
         if (!found) {
-            client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
-            client.open_sync(false, null);
+            try {
+                client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
+            } catch (GLib.Error error) {
+                critical (error.message);
+            }
         }
 
-        client.create_object (comp, null, (obj, results) =>  {
+        client.create_object.begin (comp, null, (obj, results) =>  {
 
             bool status = false;
             string uid;
@@ -124,10 +139,6 @@ public class CalendarModel : Object {
 
             // TODO: handle error more gracefully
             assert (status==true);
-
-            if (!found) {
-                client.cancel_all();
-            }
         });
 
     }
@@ -283,7 +294,6 @@ public class CalendarModel : Object {
         debug("Adding source '%s'", source.dup_display_name());
         try {
             var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
-            client.open_sync(false, null);
             source_client.set (source, client);
             load_source (source);
         } catch (Error e) {
@@ -313,7 +323,6 @@ public class CalendarModel : Object {
                 break;
             }
         }
-        client.cancel_all ();
         source_client.unset (source);
 
         var events = source_events [source].values.read_only_view;

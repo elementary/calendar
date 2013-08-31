@@ -48,14 +48,18 @@ namespace Maya.View.Widgets {
         public ContractorButtonWithMenu (string tooltiptext) {
 
             base (new Gtk.Image.from_icon_name ("document-export", Gtk.IconSize.MENU), tooltiptext, new Gtk.Menu());
-            var contracts = Granite.Services.ContractorProxy.get_contracts_by_mime ("text/calender");
+            try {
+                var contracts = Granite.Services.ContractorProxy.get_contracts_by_mime ("text/calender");
 
-            for (int i = 0; i < contracts.size; i++) {
-                var contract = contracts.get (i);
-                Gtk.MenuItem menu_item;
+                for (int i = 0; i < contracts.size; i++) {
+                    var contract = contracts.get (i);
+                    Gtk.MenuItem menu_item;
 
-                menu_item = new ContractorMenuItem (contract);
-                menu.append (menu_item);
+                    menu_item = new ContractorMenuItem (contract);
+                    menu.append (menu_item);
+                }
+            } catch (GLib.Error error) {
+                critical (error.message);
             }
             Gtk.MenuItem item = new Gtk.MenuItem.with_label(_("Export Calendar..."));
             item.activate.connect (savecal);
