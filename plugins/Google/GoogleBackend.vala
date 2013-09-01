@@ -43,42 +43,51 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
         
         var user_entry = new PlacementWidget ();
         user_entry.widget = new Gtk.Entry ();
+        ((Gtk.Entry)user_entry.widget).placeholder_text = _("user.name or user.name@gmail.com");
         user_entry.row = 3;
         user_entry.column = 1;
         user_entry.ref_name = "user_entry";
+        user_entry.needed = true;
         collection.add (user_entry);
         
         return collection;
     }
     public void add_new_calendar (string name, string color, Gee.Collection<PlacementWidget> widgets) {
-        var new_source = new E.Source (null, null);
-        new_source.display_name = name;
-        new_source.parent = get_uid ();
-        E.SourceCalendar cal = (E.SourceCalendar)new_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-        cal.color = color;
-        cal.backend_name = "caldav";
-        E.SourceWebdav webdav = (E.SourceWebdav)new_source.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
-        E.SourceAuthentication auth = (E.SourceAuthentication)new_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
-        
-        foreach (var widget in widgets) {
-            switch (widget.ref_name) {
-                case "user_entry":
-                    string decoded_user = ((Gtk.Entry)widget.widget).text;
-                    if (!decoded_user.contains ("@") && !decoded_user.contains ("%40")) {
-                        decoded_user = "%s@gmail.com".printf (decoded_user);
-                    }
-                    auth.user = decoded_user;
-                    var soup_uri = new Soup.URI (null);
-                    soup_uri.set_host ("www.google.com");
-                    soup_uri.set_scheme ("https");
-                    soup_uri.set_user (decoded_user);
-                    soup_uri.set_path ("/calendar/dav/%s/events".printf (decoded_user));
-                    webdav.soup_uri = soup_uri;
-                    break;
+        try {
+            var new_source = new E.Source (null, null);
+            new_source.display_name = name;
+            new_source.parent = get_uid ();
+            E.SourceCalendar cal = (E.SourceCalendar)new_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+            cal.color = color;
+            cal.backend_name = "caldav";
+            E.SourceWebdav webdav = (E.SourceWebdav)new_source.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
+            E.SourceAuthentication auth = (E.SourceAuthentication)new_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+            
+            foreach (var widget in widgets) {
+                switch (widget.ref_name) {
+                    case "user_entry":
+                        string decoded_user = ((Gtk.Entry)widget.widget).text;
+                        if (!decoded_user.contains ("@") && !decoded_user.contains ("%40")) {
+                            decoded_user = "%s@gmail.com".printf (decoded_user);
+                        }
+                        auth.user = decoded_user;
+                        var soup_uri = new Soup.URI (null);
+                        soup_uri.set_host ("www.google.com");
+                        soup_uri.set_scheme ("https");
+                        soup_uri.set_user (decoded_user);
+                        soup_uri.set_path ("/calendar/dav/%s/events".printf (decoded_user));
+                        webdav.soup_uri = soup_uri;
+                        break;
+                }
             }
-        }
         
-        var registry = new E.SourceRegistry.sync (null);
-        registry.commit_source_sync (new_source);
+            var registry = new E.SourceRegistry.sync (null);
+            var list = new List<E.Source> ();
+            list.append (new_source);
+            registry.create_sources_sync (list);
+            app.calmodel.add_source (new_source);
+        } catch (GLib.Error error) {
+            critical (error.message);
+        }
     }
 }

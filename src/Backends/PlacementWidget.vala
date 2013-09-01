@@ -24,8 +24,8 @@
 public class Maya.PlacementWidget : GLib.Object {
     
     public Gtk.Widget widget;
-    public int row;
-    public int column;
+    public int row = 0;
+    public int column = 0;
     public string ref_name;
-    
+    public bool needed = false; // Only usefull for Gtk.Entry and his derivates
 }

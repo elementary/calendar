@@ -30,8 +30,13 @@ public class Maya.View.SourceDialog : Gtk.Window {
     private Gee.Collection<PlacementWidget> backend_widgets;
     private Gtk.Grid main_grid;
     private Gtk.Grid general_grid;
+    private Gee.HashMap<string, bool> widgets_checked;
+    private Gtk.Button create_button;
 
     public SourceDialog (E.Source? source = null) {
+        
+        widgets_checked = new Gee.HashMap<string, bool> (null, null);
+        
         if (source == null) {
             title = _("Add Calendar");
             event_type = EventType.ADD;
@@ -55,7 +60,34 @@ public class Maya.View.SourceDialog : Gtk.Window {
         general_grid.margin_bottom = 12;
         general_grid.set_row_spacing (6);
         general_grid.set_column_spacing (12);
+        
+        // Buttons
+        
+        var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
+        buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
+        
 
+        var cancel_button = new Gtk.Button.from_stock (Gtk.Stock.CANCEL);
+        if (event_type == EventType.ADD) {
+            create_button = new Gtk.Button.with_label (_("Create Calendar"));
+        } else {
+            create_button = new Gtk.Button.from_stock (Gtk.Stock.SAVE);
+        }
+
+        create_button.clicked.connect (save);
+        cancel_button.clicked.connect (() => {this.destroy();});
+
+        buttonbox.pack_end (cancel_button);
+        buttonbox.pack_end (create_button);
+        
+        // Name
+        
+        var name_label = new Gtk.Label (_("Name:"));
+        name_label.xalign = 1;
+        name_entry = new Gtk.Entry ();
+        name_entry.placeholder_text = _("Calendar Name");
+        name_entry.changed.connect (() => {check_can_validate ();});
+        
         // Type Combobox
         Gtk.ListStore list_store = new Gtk.ListStore (2, typeof (string), typeof (Backend));
         Gtk.TreeIter iter;
@@ -92,17 +124,14 @@ public class Maya.View.SourceDialog : Gtk.Window {
             type_label.no_show_all = true;
         }
         
-        // Name
-        
-        var name_label = new Gtk.Label (_("Name:"));
-        name_label.xalign = 1;
-        name_entry = new Gtk.Entry ();
-        
         // Color
-        
+        var rgba = Gdk.RGBA ();
+        rgba.red = 0.13;
+        rgba.green = 0.42;
+        rgba.blue = 0.70;
         var color_label = new Gtk.Label (_("Color:"));
         color_label.xalign = 1;
-        color_button = new Gtk.ColorButton ();
+        color_button = new Gtk.ColorButton.with_rgba (rgba);
         color_button.use_alpha = false;
         
         
@@ -111,26 +140,6 @@ public class Maya.View.SourceDialog : Gtk.Window {
         check_button.toggled.connect (() => {
             set_as_default = !set_as_default;
         });
-        
-        // Buttons
-        
-        var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
-        buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
-        
-        Gtk.Button create_button;
-
-        var cancel_button = new Gtk.Button.from_stock (Gtk.Stock.CANCEL);
-        if (event_type == EventType.ADD) {
-            create_button = new Gtk.Button.with_label (_("Create Calendar"));
-        } else {
-            create_button = new Gtk.Button.from_stock (Gtk.Stock.SAVE);
-        }
-
-        create_button.clicked.connect (save);
-        cancel_button.clicked.connect (() => {this.destroy();});
-
-        buttonbox.pack_end (cancel_button);
-        buttonbox.pack_end (create_button);
 
         main_grid.attach (type_label,    0, 0, 1, 1);
         main_grid.attach (type_combobox, 1, 0, 1, 1);
@@ -160,7 +169,34 @@ public class Maya.View.SourceDialog : Gtk.Window {
     private void add_backend_widgets () {
         foreach (var widget in backend_widgets) {
             main_grid.attach (widget.widget, widget.column, 4 + widget.row, 1, 1);
+            if (widget.needed == true && widget.widget is Gtk.Entry) {
+                var entry = widget.widget as Gtk.Entry;
+                entry.changed.connect (() => {entry_changed (widget);});
+                widgets_checked.set (widget.ref_name, ((Gtk.Entry)widget.widget).text != "");
+            }
             widget.widget.show ();
+        }
+        check_can_validate ();
+    }
+    
+    private void entry_changed (PlacementWidget widget) {
+        widgets_checked.unset (widget.ref_name);
+        widgets_checked.set (widget.ref_name, ((Gtk.Entry)widget.widget).text != "");
+        check_can_validate ();
+    }
+    
+    private void check_can_validate () {
+        bool result = true;
+        foreach (var valid in widgets_checked.values) {
+            if (valid == false) {
+                result = false;
+                break;
+            }
+        }
+        if (result == true && name_entry.text != "") {
+            create_button.sensitive = true;
+        } else {
+            create_button.sensitive = false;
         }
     }
 

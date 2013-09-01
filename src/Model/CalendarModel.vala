@@ -110,36 +110,55 @@ public class CalendarModel : Object {
 
     public void add_event (E.Source source, E.CalComponent event) {
 
-        unowned iCal.icalcomponent comp = event.get_icalcomponent();
+        add_event_async.begin (source, event);
 
-        debug (@"Adding event '$(comp.get_uid())'");
+    }
+    
+    private async void add_event_async (E.Source source, E.CalComponent event) {
+        SourceFunc callback = add_event_async.callback;
+        Threads.add (() => {
+            unowned iCal.icalcomponent comp = event.get_icalcomponent();
 
-        var client = source_client [source];
+            debug (@"Adding event '$(comp.get_uid())'");
 
-        // Temporary workaround
-        bool found = (client != null);
-        if (!found) {
-            try {
-                client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
-            } catch (GLib.Error error) {
-                critical (error.message);
-            }
-        }
-
-        client.create_object.begin (comp, null, (obj, results) =>  {
-
-            bool status = false;
-            string uid;
-
-            try {
-                status = client.create_object.end (results, out uid);
-            } catch (Error e) {
-                warning (e.message);
+            E.CalClient client = null;
+            lock (source_client) {
+                foreach (var entry in source_client.entries) {
+                    if (source.uid == ((E.Source)entry.key).uid) {
+                        client = entry.value;
+                        break;
+                    }
+                }
             }
 
-            // TODO: handle error more gracefully
-            assert (status==true);
+            // Temporary workaround
+            bool found = (client != null);
+            if (!found) {
+                try {
+                    client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS);
+
+                    client.create_object.begin (comp, null, (obj, results) =>  {
+
+                        bool status = false;
+                        string uid;
+
+                        try {
+                            status = client.create_object.end (results, out uid);
+                        } catch (Error e) {
+                            warning (e.message);
+                        }
+                    });
+                } catch (GLib.Error error) {
+                    critical (error.message);
+                }
+            } else {
+                critical ("No calendar was found, event not added");
+            }
+            
+            Idle.add ((owned) callback);
         });
+
+        yield;
 
     }
 
@@ -149,7 +168,15 @@ public class CalendarModel : Object {
 
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
 
-        var client = source_client [source];
+        E.CalClient client = null;
+        lock (source_client) {
+            foreach (var entry in source_client.entries) {
+                if (source.uid == ((E.Source)entry.key).uid) {
+                    client = entry.value;
+                    break;
+                }
+            }
+        }
         client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
 
             bool status = false;
@@ -161,7 +188,7 @@ public class CalendarModel : Object {
             }
 
             // TODO: handle error more gracefully
-            assert (status==true);
+            //assert (status==true);
         });
     }
 
@@ -175,10 +202,12 @@ public class CalendarModel : Object {
         debug (@"Removing event '$uid'");
         
         E.CalClient client = null;
-        foreach (var entry in source_client.entries) {
-            if (source.uid == ((E.Source)entry.key).uid) {
-                client = entry.value;
-                break;
+        lock (source_client) {
+            foreach (var entry in source_client.entries) {
+                if (source.uid == ((E.Source)entry.key).uid) {
+                    client = entry.value;
+                    break;
+                }
             }
         }
         client.remove_object.begin (uid, rid, mod_type, null, (obj, results) =>  {
@@ -192,7 +221,7 @@ public class CalendarModel : Object {
             }
 
             // TODO: handle error more gracefully
-            assert (status==true);
+            //assert (status==true);
         });
     }
 
@@ -237,9 +266,11 @@ public class CalendarModel : Object {
     }
 
     public void load_all_sources () {
-
-        foreach (var source in source_client.keys) {
-            load_source (source);
+        
+        lock (source_client) {
+            foreach (var source in source_client.keys) {
+                load_source (source);
+            }
         }
     }
 
@@ -262,10 +293,12 @@ public class CalendarModel : Object {
         var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
 
         E.CalClient client = null;
-        foreach (var entry in source_client.entries) {
-            if (source.uid == ((E.Source)entry.key).uid) {
-                client = entry.value;
-                break;
+        lock (source_client) {
+            foreach (var entry in source_client.entries) {
+                if (source.uid == ((E.Source)entry.key).uid) {
+                    client = entry.value;
+                    break;
+                }
             }
         }
 
@@ -291,14 +324,28 @@ public class CalendarModel : Object {
 
     public void add_source (E.Source source) {
 
-        debug("Adding source '%s'", source.dup_display_name());
-        try {
-            var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
-            source_client.set (source, client);
-            load_source (source);
-        } catch (Error e) {
-            warning (e.message);
-        }
+        add_source_async.begin (source);
+    }
+    
+    private async void add_source_async (E.Source source) {
+        Threads.add (() => {
+            debug("Adding source '%s'", source.dup_display_name());
+            try {
+                var client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS);
+                lock (source_client) {
+                    source_client.set (source, client);
+                }
+            } catch (Error e) {
+                warning (e.message);
+            }
+            
+            Idle.add( () => {
+                load_source (source);
+                return false;
+            });
+        });
+
+        yield;
     }
 
     public void remove_source (E.Source source) {
@@ -317,6 +364,7 @@ public class CalendarModel : Object {
         source_view.unset (source);
 
         E.CalClient client = null;
+        lock (source_client) {
         foreach (var entry in source_client.entries) {
             if (source.uid == ((E.Source)entry.key).uid) {
                 client = entry.value;
@@ -324,6 +372,7 @@ public class CalendarModel : Object {
             }
         }
         source_client.unset (source);
+        }
 
         var events = source_events [source].values.read_only_view;
         events_removed (source, events);

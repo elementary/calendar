@@ -115,7 +115,7 @@ public class Maya.Threads {
 
     /**
      * Pushes //task// into the thread pool.
-     * @see Noise.Threads.add
+     * @see Maya.Threads.add
      */
     private void push_task (TaskFunc task) throws Error {
         lock (thread_pool) {

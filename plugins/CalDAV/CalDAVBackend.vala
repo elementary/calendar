@@ -44,9 +44,11 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         
         var url_entry = new PlacementWidget ();
         url_entry.widget = new Gtk.Entry ();
+        ((Gtk.Entry)url_entry.widget).text = "http://";
         url_entry.row = 0;
         url_entry.column = 1;
         url_entry.ref_name = "url_entry";
+        url_entry.needed = true;
         collection.add (url_entry);
         
         var secure_checkbutton = new PlacementWidget ();
@@ -66,9 +68,11 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         
         var user_entry = new PlacementWidget ();
         user_entry.widget = new Gtk.Entry ();
+        ((Gtk.Entry)user_entry.widget).placeholder_text = _("user.name");
         user_entry.row = 3;
         user_entry.column = 1;
         user_entry.ref_name = "user_entry";
+        user_entry.needed = true;
         collection.add (user_entry);
         
         var email_label = new PlacementWidget ();
@@ -81,9 +85,11 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         
         var email_entry = new PlacementWidget ();
         email_entry.widget = new Gtk.Entry ();
+        ((Gtk.Entry)email_entry.widget).placeholder_text = _("john@doe.com");
         email_entry.row = 5;
         email_entry.column = 1;
         email_entry.ref_name = "email_entry";
+        email_entry.needed = true;
         collection.add (email_entry);
         
         var server_checkbutton = new PlacementWidget ();
@@ -96,32 +102,39 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         return collection;
     }
     public void add_new_calendar (string name, string color, Gee.Collection<PlacementWidget> widgets) {
-        var new_source = new E.Source (null, null);
-        new_source.display_name = name;
-        new_source.parent = get_uid ();
-        E.SourceCalendar cal = (E.SourceCalendar)new_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-        cal.color = color;
-        cal.backend_name = "caldav";
-        E.SourceWebdav webdav = (E.SourceWebdav)new_source.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
-        E.SourceAuthentication auth = (E.SourceAuthentication)new_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
-        
-        foreach (var widget in widgets) {
-            switch (widget.ref_name) {
-                case "url_entry":
-                    webdav.soup_uri = new Soup.URI (((Gtk.Entry)widget.widget).text);
-                    break;
-                case "user_entry":
-                    auth.user = ((Gtk.Entry)widget.widget).text;
-                    break;
-                case "email_entry":
-                    webdav.email_address = ((Gtk.Entry)widget.widget).text;
-                    break;
-                case "server_checkbutton":
-                    webdav.calendar_auto_schedule = ((Gtk.CheckButton)widget.widget).active;
-                    break;
+        try {
+            var new_source = new E.Source (null, null);
+            new_source.display_name = name;
+            new_source.parent = get_uid ();
+            E.SourceCalendar cal = (E.SourceCalendar)new_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+            cal.color = color;
+            cal.backend_name = "caldav";
+            E.SourceWebdav webdav = (E.SourceWebdav)new_source.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
+            E.SourceAuthentication auth = (E.SourceAuthentication)new_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+            
+            foreach (var widget in widgets) {
+                switch (widget.ref_name) {
+                    case "url_entry":
+                        webdav.soup_uri = new Soup.URI (((Gtk.Entry)widget.widget).text);
+                        break;
+                    case "user_entry":
+                        auth.user = ((Gtk.Entry)widget.widget).text;
+                        break;
+                    case "email_entry":
+                        webdav.email_address = ((Gtk.Entry)widget.widget).text;
+                        break;
+                    case "server_checkbutton":
+                        webdav.calendar_auto_schedule = ((Gtk.CheckButton)widget.widget).active;
+                        break;
+                }
             }
+            var registry = new E.SourceRegistry.sync (null);
+            var list = new List<E.Source> ();
+            list.append (new_source);
+            registry.create_sources_sync (list);
+            app.calmodel.add_source (new_source);
+        } catch (GLib.Error error) {
+            critical (error.message);
         }
-        var registry = new E.SourceRegistry.sync (null);
-        registry.commit_source_sync (new_source);
     }
 }

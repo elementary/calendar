@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-30 00:52+0200\n"
-"PO-Revision-Date: 2013-08-30 00:55+0100\n"
-"Last-Translator: Florent (LSc) <Unknown>\n"
+"POT-Creation-Date: 2013-09-01 16:40+0200\n"
+"PO-Revision-Date: 2013-09-01 16:45+0100\n"
+"Last-Translator: \n"
 "Language-Team: French <fr@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -18,20 +18,20 @@ msgstr ""
 "X-Launchpad-Export-Date: 2013-08-19 04:47+0000\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: /home/noelco/maya/po/../src//Application.vala:463
+#: /home/noelco/maya/po/../src//Application.vala:461
 msgid "View and schedule events"
 msgstr "Organiser et planifier des événements"
 
-#: /home/noelco/maya/po/../src//Application.vala:464
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:331
+#: /home/noelco/maya/po/../src//Application.vala:462
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:335
 msgid "Calendar"
 msgstr "Calendrier"
 
-#: /home/noelco/maya/po/../src//Application.vala:465
+#: /home/noelco/maya/po/../src//Application.vala:463
 msgid "_Add Event"
 msgstr "_Ajouter un événement"
 
-#: /home/noelco/maya/po/../src//Application.vala:466
+#: /home/noelco/maya/po/../src//Application.vala:464
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr "Maya;Planning;Dates;Jours;Evénements;"
 
@@ -55,50 +55,54 @@ msgstr "%l:%M %p"
 msgid "%H:%M"
 msgstr "%Hh%M"
 
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:34
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:36
 msgid "Add Calendar"
 msgstr "Ajouter un calendrier"
 
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:37
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:39
 msgid "Edit Calendar"
 msgstr "Modifier le calendrier"
 
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:83
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:86
 msgid "Type:"
 msgstr "Type :"
 
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:92
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:97
 msgid "Name:"
 msgstr "Nom :"
 
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:97
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:100
+msgid "Calendar Name"
+msgstr "Nom du calendrier"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:107
 msgid "Color:"
 msgstr "Couleur :"
 
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:102
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:113
 msgid "Mark as default calendar"
 msgstr "Définir comme calendrier par défaut"
 
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:117
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:128
 msgid "Create Calendar"
 msgstr "Créer le calendrier"
 
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:125
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:146
 msgid "Other"
 msgstr "Autres"
 
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:166
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:167
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:192
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:193
 msgid "Add…"
 msgstr "Ajouter…"
 
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:171
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:172
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:197
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:198
 msgid "Remove"
 msgstr "Supprimer"
 
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:176
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:177
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:203
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:204
 msgid "Edit…"
 msgstr "Modifier…"
 
@@ -127,67 +131,67 @@ msgstr ""
 "Vos événements à venir seront affichés ici lorsque vous sélectionnerez un "
 "jour comprenant des événements."
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:86
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:90
 msgid "Add Event"
 msgstr "Ajouter un évènement"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:89
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:93
 msgid "Edit Event"
 msgstr "Modifier l'évènement"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:297
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:301
 msgid "From:"
 msgstr "Du :"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:303
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:307
 msgid "All day:"
 msgstr "Journée entière :"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:308
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:312
 msgid "To:"
 msgstr "Au :"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:327
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:331
 msgid "Title"
 msgstr "Titre"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:328
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:332
 msgid "Name of Event"
 msgstr "Nom de l'événement"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:349
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:353
 msgid "Location"
 msgstr "Emplacement"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:350
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:354
 msgid "John Smith OR Example St."
 msgstr "Jean Dupont ou Rue de la Paix"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:352
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:356
 msgid "Participants"
 msgstr "Participants"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:353
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:357
 msgid "Name or Email Address"
 msgstr "Nom ou adresse électronique"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:356
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:360
 msgid "Comments"
 msgstr "Commentaires"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:392
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:396
 msgid "Create Event"
 msgstr "Créer un événement"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:395
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:399
 msgid "Save Changes"
 msgstr "Sauvegarder les changements"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:491
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:495
 msgid "This event can't be edited"
 msgstr "Cet évnement ne peut pas être éditer"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:498
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:502
 msgid "Your event has to be named and has to have a valid date"
 msgstr "Votre événement doit être nommé et posséder une date valide"
 
@@ -231,12 +235,12 @@ msgstr "Synchroniser..."
 msgid "About"
 msgstr "À propos"
 
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:60
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:69
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
 msgid "Export Calendar..."
 msgstr "Exporter le calendrier…"
 
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:72
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
 msgid "calendar.ics"
 msgstr "calendrier.ics"
 
@@ -244,18 +248,46 @@ msgstr "calendrier.ics"
 msgid "$more more ..."
 msgstr "$plus plus ..."
 
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAV.vala:75
-#: /home/noelco/maya/po/../plugins//Google/Google.vala:75
-msgid "No similar songs found"
-msgstr ""
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
+msgid "CalDAV"
+msgstr "CalDAV"
 
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAV.vala:75
-#: /home/noelco/maya/po/../plugins//Google/Google.vala:75
-msgid ""
-"There are no songs similar to the current song in your library. Make sure "
-"all song info is correct and you are connected to the Internet. Some songs "
-"may not have matches."
-msgstr ""
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
+msgid "URL:"
+msgstr "URL :"
+
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:55
+msgid "Use a secure connection"
+msgstr "Utiliser une connexion sécurisée"
+
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:62
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:37
+msgid "User:"
+msgstr "Utilisateur :"
+
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:71
+msgid "user.name"
+msgstr "nom.utilisateur"
+
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:79
+msgid "Email:"
+msgstr "Adresse électronique :"
+
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:88
+msgid "john@doe.com"
+msgstr "jean@dupont.com"
+
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
+msgid "Server handles meeting invitations"
+msgstr "Le serveur gère les invitations aux réunions"
+
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:26
+msgid "Google"
+msgstr "Google"
+
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:46
+msgid "user.name or user.name@gmail.com"
+msgstr "nom.utilisateur ou nom.utilisateur@gmail.com"
 
 #~ msgid "Webcal"
 #~ msgstr "Webcal"
