@@ -116,6 +116,7 @@ namespace Maya {
         View.CalendarView calview;
         View.Sidebar sidebar;
         Gtk.Paned hpaned;
+        Gtk.Grid gridcontainer;
 
         public Model.CalendarModel calmodel;
 
@@ -230,14 +231,14 @@ namespace Maya {
 
             calmodel.load_all_sources ();
 
-            var gridcontainer = new Gtk.Grid ();
+            gridcontainer = new Gtk.Grid ();
             hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
             calview.set_vexpand(true);
             hpaned.pack1 (calview, true, false);
             hpaned.pack2 (sidebar, true, false);
             hpaned.position = saved_state.hpaned_position;
             gridcontainer.attach (toolbar, 0, 0, 1, 1);
-            gridcontainer.attach (hpaned, 0, 1, 1, 1);
+            gridcontainer.attach (hpaned, 0, 2, 1, 1);
             window.add (gridcontainer);
 
             add_window(window);
@@ -284,7 +285,7 @@ namespace Maya {
             window.window_position = Gtk.WindowPosition.CENTER;
 
             window.delete_event.connect (on_window_delete_event);
-            window.destroy.connect (() => Gtk.main_quit ());
+            window.destroy.connect (on_quit);
             window.key_press_event.connect ((e) => {
                     switch (e.keyval) {
                         case Gdk.Key.@q:
@@ -322,6 +323,11 @@ namespace Maya {
             toolbar.month_switcher.right_clicked.connect (on_tb_month_switcher_right_clicked);
             toolbar.year_switcher.left_clicked.connect (on_tb_year_switcher_left_clicked);
             toolbar.year_switcher.right_clicked.connect (on_tb_year_switcher_right_clicked);
+        }
+        
+        void on_quit () {
+            calmodel.do_real_deletion ();
+            Gtk.main_quit ();
         }
 
         void update_saved_state () {
@@ -453,6 +459,27 @@ namespace Maya {
 
         void on_menu_show_weeks_toggled () {
             saved_state.show_weeks = toolbar.menu.weeknumbers.active;
+        }
+        
+        public void show_calendar_removed (string calendar_name) {
+            var info_bar = new Gtk.InfoBar ();
+            ((Gtk.Orientable)info_bar.get_action_area ()).orientation = Gtk.Orientation.HORIZONTAL;
+            //warning (info_bar.get_action_area ().name);
+            info_bar.set_message_type (Gtk.MessageType.INFO);
+            info_bar.add_button (Gtk.Stock.UNDO, 0);
+            info_bar.add_button (Gtk.Stock.CLOSE, 1);
+            var message_label = new Gtk.Label (_("Calendar \"%s\" removed.").printf (calendar_name));
+            info_bar.get_content_area ().add (message_label);
+            info_bar.response.connect ((id) => {
+                if (id == 0) {
+                    calmodel.restore_calendar ();
+                    info_bar.hide ();
+                } else {
+                    info_bar.hide ();
+                }
+            });
+            gridcontainer.attach (info_bar, 0, 1, 1, 1);
+            info_bar.show_all ();
         }
 
     }

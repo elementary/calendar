@@ -25,5 +25,6 @@ public interface Maya.Backend : GLib.Object {
     public abstract string get_name (); // A backend should never change his name
     public abstract string get_uid ();
     public abstract Gee.Collection<PlacementWidget> get_new_calendar_widget (E.Source? to_edit = null);
-    public abstract void add_new_calendar (string name, string color, Gee.Collection<PlacementWidget> widgets);
+    public abstract void add_new_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets);
+    public abstract void modify_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets, E.Source source);
 }

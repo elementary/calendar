@@ -48,11 +48,15 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
         user_entry.column = 1;
         user_entry.ref_name = "user_entry";
         user_entry.needed = true;
+        if (to_edit != null) {
+            E.SourceAuthentication auth = (E.SourceAuthentication)to_edit.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+            ((Gtk.Entry)user_entry.widget).text = auth.user;
+        }
         collection.add (user_entry);
         
         return collection;
     }
-    public void add_new_calendar (string name, string color, Gee.Collection<PlacementWidget> widgets) {
+    public void add_new_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets) {
         try {
             var new_source = new E.Source (null, null);
             new_source.display_name = name;
@@ -86,6 +90,44 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
             list.append (new_source);
             registry.create_sources_sync (list);
             app.calmodel.add_source (new_source);
+            if (set_default) {
+                registry.default_calendar = new_source;
+            }
+        } catch (GLib.Error error) {
+            critical (error.message);
+        }
+    }
+    
+    public void modify_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets, E.Source source) {
+        try {
+            source.display_name = name;
+            E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+            cal.color = color;
+            E.SourceWebdav webdav = (E.SourceWebdav)source.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
+            E.SourceAuthentication auth = (E.SourceAuthentication)source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+            
+            foreach (var widget in widgets) {
+                switch (widget.ref_name) {
+                    case "user_entry":
+                        string decoded_user = ((Gtk.Entry)widget.widget).text;
+                        if (!decoded_user.contains ("@") && !decoded_user.contains ("%40")) {
+                            decoded_user = "%s@gmail.com".printf (decoded_user);
+                        }
+                        auth.user = decoded_user;
+                        var soup_uri = new Soup.URI (null);
+                        soup_uri.set_host ("www.google.com");
+                        soup_uri.set_scheme ("https");
+                        soup_uri.set_user (decoded_user);
+                        soup_uri.set_path ("/calendar/dav/%s/events".printf (decoded_user));
+                        webdav.soup_uri = soup_uri;
+                        break;
+                }
+            }
+            source.write.begin (null);
+            if (set_default) {
+                var registry = new E.SourceRegistry.sync (null);
+                registry.default_calendar = source;
+            }
         } catch (GLib.Error error) {
             critical (error.message);
         }

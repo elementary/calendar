@@ -32,9 +32,9 @@ public class Maya.View.SourceDialog : Gtk.Window {
     private Gtk.Grid general_grid;
     private Gee.HashMap<string, bool> widgets_checked;
     private Gtk.Button create_button;
+    private E.Source source;
 
     public SourceDialog (E.Source? source = null) {
-        
         widgets_checked = new Gee.HashMap<string, bool> (null, null);
         
         if (source == null) {
@@ -42,6 +42,7 @@ public class Maya.View.SourceDialog : Gtk.Window {
             event_type = EventType.ADD;
         } else {
             title = _("Edit Calendar");
+            this.source = source;
         }
 
         // Dialog properties
@@ -87,13 +88,24 @@ public class Maya.View.SourceDialog : Gtk.Window {
         name_entry = new Gtk.Entry ();
         name_entry.placeholder_text = _("Calendar Name");
         name_entry.changed.connect (() => {check_can_validate ();});
+        if (event_type == EventType.EDIT) {
+            name_entry.text = source.display_name;
+        }
         
         // Type Combobox
         Gtk.ListStore list_store = new Gtk.ListStore (2, typeof (string), typeof (Backend));
         Gtk.TreeIter iter;
+        int number = 0;
+        int i =0;
         foreach (var backend in backends_manager.backends) {
             list_store.append (out iter);
             list_store.set (iter, 0, backend.get_name (), 1, backend);
+            if (event_type == EventType.EDIT) {
+                if (backend.get_uid () == source.dup_parent ()) {
+                    number = i;
+                }
+            }
+            i++;
         }
         
         var type_combobox = new Gtk.ComboBox.with_model (list_store);
@@ -110,10 +122,11 @@ public class Maya.View.SourceDialog : Gtk.Window {
             list_store.get_value (b_iter, 1, out backend);
             current_backend = ((Backend)backend);
             remove_backend_widgets ();
-            backend_widgets = ((Backend)backend).get_new_calendar_widget ();
+            backend_widgets = ((Backend)backend).get_new_calendar_widget (source);
             add_backend_widgets ();
         });
-        type_combobox.set_active (0);
+        
+        type_combobox.set_active (number);
         
         var type_label = new Gtk.Label (_("Type:"));
         type_label.expand = true;
@@ -124,11 +137,20 @@ public class Maya.View.SourceDialog : Gtk.Window {
             type_label.no_show_all = true;
         }
         
+        if (event_type == EventType.EDIT) {
+            type_combobox.sensitive = false;
+        }
+        
         // Color
         var rgba = Gdk.RGBA ();
-        rgba.red = 0.13;
-        rgba.green = 0.42;
-        rgba.blue = 0.70;
+        if (event_type == EventType.EDIT) {
+            var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+            rgba.parse (cal.dup_color ());
+        } else {
+            rgba.red = 0.13;
+            rgba.green = 0.42;
+            rgba.blue = 0.70;
+        }
         var color_label = new Gtk.Label (_("Color:"));
         color_label.xalign = 1;
         color_button = new Gtk.ColorButton.with_rgba (rgba);
@@ -206,10 +228,11 @@ public class Maya.View.SourceDialog : Gtk.Window {
     public void save () {
         
         if (event_type == EventType.ADD) {
-            current_backend.add_new_calendar (name_entry.text, Util.get_hexa_color (color_button.rgba), backend_widgets);
+            current_backend.add_new_calendar (name_entry.text, Util.get_hexa_color (color_button.rgba), set_as_default, backend_widgets);
             this.destroy();
         } else {
-            
+            current_backend.modify_calendar (name_entry.text, Util.get_hexa_color (color_button.rgba), set_as_default, backend_widgets, source);
+            this.destroy();
         }
     }
 }

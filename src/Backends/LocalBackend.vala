@@ -33,7 +33,8 @@ public class Maya.LocalBackend : GLib.Object, Maya.Backend {
     public Gee.Collection<PlacementWidget> get_new_calendar_widget (E.Source? to_edit = null) {
         return new Gee.LinkedList<PlacementWidget> ();
     }
-    public void add_new_calendar (string name, string color, Gee.Collection<PlacementWidget> widgets) {
+    
+    public void add_new_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets) {
         try {
             var new_source = new E.Source (null, null);
             new_source.display_name = name;
@@ -43,6 +44,24 @@ public class Maya.LocalBackend : GLib.Object, Maya.Backend {
             cal.backend_name = "local";
             var registry = new E.SourceRegistry.sync (null);
             registry.commit_source_sync (new_source);
+            if (set_default) {
+                registry.default_calendar = new_source;
+            }
+        } catch (GLib.Error error) {
+            critical (error.message);
+        }
+    }
+    
+    public void modify_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets, E.Source source) {
+        try {
+            source.display_name = name;
+            E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+            cal.color = color;
+            source.write.begin (null);
+            if (set_default) {
+                var registry = new E.SourceRegistry.sync (null);
+                registry.default_calendar = source;
+            }
         } catch (GLib.Error error) {
             critical (error.message);
         }

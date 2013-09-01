@@ -49,6 +49,8 @@ public class CalendarModel : Object {
     Gee.Map<E.Source, E.CalClient> source_client;
     Gee.Map<E.Source, E.CalClientView> source_view;
     Gee.Map<E.Source, Gee.Map<string, E.CalComponent>> source_events;
+    
+    public Gee.LinkedList<E.Source> calendar_trash;
 
     public CalendarModel (Settings.Weekday week_starts_on) {
 
@@ -71,6 +73,8 @@ public class CalendarModel : Object {
             (HashFunc) Util.source_hash_func,
             (EqualFunc) Util.source_equal_func,
             null);
+
+        calendar_trash = new Gee.LinkedList<E.Source> ();
 
         notify["month-start"].connect (on_parameter_changed);
         setup_sources_async.begin ();
@@ -354,7 +358,7 @@ public class CalendarModel : Object {
         if (!source_view.has_key (source))
             return;
 
-        var current_view = source_view [source];
+        var current_view = source_view.get (source);
 
         try {
             current_view.stop();
@@ -374,7 +378,7 @@ public class CalendarModel : Object {
         source_client.unset (source);
         }
 
-        var events = source_events [source].values.read_only_view;
+        var events = source_events.get (source).values.read_only_view;
         events_removed (source, events);
         source_events.unset (source);
 
@@ -460,7 +464,7 @@ public class CalendarModel : Object {
 
         debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name());
 
-        Gee.Map<string, E.CalComponent> events = source_events [source];
+        Gee.Map<string, E.CalComponent> events = source_events.get (source);
 
         Gee.ArrayList<E.CalComponent> added_events = new Gee.ArrayList<E.CalComponent> (
             (EqualFunc) Util.calcomponent_equal_func);
@@ -493,7 +497,7 @@ public class CalendarModel : Object {
 
             string uid = comp.get_uid();
 
-            E.CalComponent event = source_events [source] [uid];
+            E.CalComponent event = source_events.get (source).get(uid);
             updated_events.add (event);
 
             debug_event (source, event);
@@ -506,7 +510,7 @@ public class CalendarModel : Object {
 
         debug (@"Received $(cids.length()) removed event(s) for source '%s'", source.dup_display_name ());
 
-        var events = source_events [source];
+        var events = source_events.get (source);
         Gee.Collection<E.CalComponent> removed_events = new Gee.ArrayList<E.CalComponent> (
             (EqualFunc) Util.calcomponent_equal_func);
 
@@ -514,12 +518,34 @@ public class CalendarModel : Object {
 
             assert (cid != null);
 
-            E.CalComponent event = events [cid.uid];
+            E.CalComponent event = events.get (cid.uid);
             removed_events.add (event);
 
             debug_event (source, event);
         }
         events_removed (source, removed_events.read_only_view);
+    }
+    
+    public void delete_calendar (E.Source source) {
+        calendar_trash.add (source);
+        remove_source (source);
+    }
+    
+    public void restore_calendar () {
+        if (calendar_trash.is_empty)
+            return;
+        var source = calendar_trash.poll_tail ();
+        add_source (source);
+    }
+    
+    public void do_real_deletion () {
+        foreach (var source in calendar_trash) {
+            try {
+                source.remove.begin (null);
+            } catch (Error error) {
+                critical (error.message);
+            }
+        }
     }
 }
 
