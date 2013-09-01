@@ -134,10 +134,8 @@ public class CalendarModel : Object {
                     }
                 }
             }
-
-            // Temporary workaround
-            bool found = (client != null);
-            if (!found) {
+            
+            if (client != null) {
                 try {
                     client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS);
 
@@ -190,9 +188,6 @@ public class CalendarModel : Object {
             } catch (Error e) {
                 warning (e.message);
             }
-
-            // TODO: handle error more gracefully
-            //assert (status==true);
         });
     }
 
@@ -223,9 +218,6 @@ public class CalendarModel : Object {
             } catch (Error e) {
                 warning (e.message);
             }
-
-            // TODO: handle error more gracefully
-            //assert (status==true);
         });
     }
 
