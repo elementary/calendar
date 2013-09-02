@@ -57,11 +57,11 @@ public class Maya.LocalBackend : GLib.Object, Maya.Backend {
             source.display_name = name;
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             cal.color = color;
-            source.write.begin (null);
             if (set_default) {
                 var registry = new E.SourceRegistry.sync (null);
                 registry.default_calendar = source;
             }
+            source.write.begin (null);
         } catch (GLib.Error error) {
             critical (error.message);
         }

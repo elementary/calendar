@@ -59,14 +59,16 @@ public class EventDialog : Gtk.Window {
         public E.Source? original_source { get; private set; }
 
         public E.CalComponent ecal { get; private set; }
+        private GLib.DateTime date_time;
 
         public E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
 
         public EventType event_type { get; private set; }
 
-        public EventDialog (Gtk.Window window, E.CalComponent ecal, E.Source? source = null, bool? add_event = false) {
-
+        public EventDialog (Gtk.Window window, E.CalComponent? ecal = null, E.Source? source = null, GLib.DateTime? date_time = null) {
+    
             this.original_source = source;
+            this.date_time = date_time;
             try {
                 var registry = new E.SourceRegistry.sync (null);
                 sources = new Gee.ArrayList<E.Source> ();
@@ -86,7 +88,7 @@ public class EventDialog : Gtk.Window {
 
             this.ecal = ecal;
 
-            if (add_event) {
+            if (date_time != null) {
                 title = _("Add Event");
                 event_type = EventType.ADD;
             } else {
@@ -102,7 +104,7 @@ public class EventDialog : Gtk.Window {
             transient_for = window;
 
             // Build dialog
-            build_dialog (add_event);
+            build_dialog (date_time != null);
 
             // Load the event's properties in to the dialog
             load ();
@@ -122,36 +124,30 @@ public class EventDialog : Gtk.Window {
             // Save the title
             comp.set_summary (title_entry.text);
 
-            DateTime from_time = new DateTime.now_local();
-            DateTime to_time = new DateTime.now_local();
-
             // Save the time
-            if (allday_switch.get_active() == true ) {
-                from_time = new DateTime.local(0, 0, 0, 0, 0, 0);
-                to_time = new DateTime.local(0, 0, 0, 0, 0, 0);
+            if (allday_switch.get_active () == true) {
+
+                iCal.icaltimetype dt_start = Util.date_time_to_ical (from_date_picker.date, new DateTime.local (2000, 12, 12, 0, 0, 0));
+                iCal.icaltimetype dt_end = Util.date_time_to_ical (to_date_picker.date.add_days (1), new DateTime.local (2000, 12, 12, 0, 0, 0));
+
+                dt_start.is_date = 0;
+                dt_end.is_date = 0;
+
+                comp.set_dtstart (dt_start);
+
+                comp.set_dtend (dt_end);
+            } else {
+                
+                iCal.icaltimetype dt_start = Util.date_time_to_ical (from_date_picker.date, from_time_picker.time);
+                iCal.icaltimetype dt_end = Util.date_time_to_ical (to_date_picker.date, to_time_picker.time);
+
+                dt_start.is_date = 0;
+                dt_end.is_date = 0;
+
+                comp.set_dtstart (dt_start);
+
+                comp.set_dtend (dt_end);
             }
-            else {
-                from_time = from_time_picker.time;
-                to_time = to_time_picker.time;
-            }
-
-
-            // Save the dates
-            DateTime from_date = from_date_picker.date;
-            DateTime to_date = to_date_picker.date;
-
-            if (allday_switch.get_active())
-                to_date = to_date.add_days (1);
-
-            iCal.icaltimetype dt_start = Util.date_time_to_ical (from_date, from_time);
-            iCal.icaltimetype dt_end = Util.date_time_to_ical (to_date, to_time);
-
-            dt_start.is_date = 0;
-            dt_end.is_date = 0;
-
-            comp.set_dtstart (dt_start);
-
-            comp.set_dtend (dt_end);
 
             // Save the location
             string location = location_entry.text;
@@ -210,73 +206,86 @@ public class EventDialog : Gtk.Window {
          */
         void load () {
 
-            unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
+            if (ecal != null) {
+                unowned iCal.icalcomponent comp = ecal.get_icalcomponent ();
 
-            // Load the title
-            string summary = comp.get_summary ();
-            if (summary != null)
-                title_entry.text = summary;
+                // Load the title
+                string summary = comp.get_summary ();
+                if (summary != null)
+                    title_entry.text = summary;
 
-            // Load the dates
-            iCal.icaltimetype dt_start = comp.get_dtstart ();
-            iCal.icaltimetype dt_end = comp.get_dtend ();
+                // Load the dates
+                iCal.icaltimetype dt_start = comp.get_dtstart ();
+                iCal.icaltimetype dt_end = comp.get_dtend ();
 
-            // Convert the dates
-            DateTime to_date = Util.ical_to_date_time (dt_end);
-            DateTime from_date = Util.ical_to_date_time (dt_start);
+                // Convert the dates
+                DateTime to_date = Util.ical_to_date_time (dt_end);
+                DateTime from_date = Util.ical_to_date_time (dt_start);
 
-            // Is this all day
-            bool allday = Util.is_the_all_day(from_date, to_date);
-
-            if (dt_start.year != 0) {
-                from_date_picker.date = from_date;
-                from_time_picker.time = from_date;
-            }
-
-            if (dt_end.year != 0) {
-                // If it's an all day event, subtract 1 from the end date
-                if (allday)
-                    to_date = to_date.add_days (-1);
-                to_date_picker.date = to_date;
-                to_time_picker.time = to_date;
-            }
-
-            // Load the allday_switch
-            if (dt_end.year != 0) {
-                if (allday) {
-                    allday_switch.set_active(true);
-                    from_time_picker.sensitive = false;
-                    to_time_picker.sensitive = false;
+                if (dt_start.year != 0) {
+                    from_date_picker.date = from_date;
+                    from_time_picker.time = from_date;
                 }
+
+                // Is this all day
+                bool allday = Util.is_the_all_day(from_date, to_date);
+
+                if (dt_end.year != 0) {
+                    // If it's an all day event, subtract 1 from the end date
+                    if (allday)
+                        to_date = to_date.add_days (-1);
+                    to_date_picker.date = to_date;
+                    to_time_picker.time = to_date;
+                }
+
+                // Load the allday_switch
+                if (dt_end.year != 0) {
+                    if (allday) {
+                        allday_switch.set_active(true);
+                        from_time_picker.sensitive = false;
+                        to_time_picker.sensitive = false;
+                    }
+                }
+
+                // Load the location
+                string location = comp.get_location ();
+                if (location != null)
+                    location_entry.text = location;
+
+                // Load the guests
+                int count = comp.count_properties (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
+
+                unowned iCal.icalproperty property = comp.get_first_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
+                for (int i = 0; i < count; i++) {
+
+                    if (property.get_attendee () != null)
+                        guest_entry.add_address (property.get_attendee ());
+
+                    property = comp.get_next_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
+                }
+
+                property = comp.get_first_property (iCal.icalproperty_kind.COMMENT_PROPERTY);
+
+                if (property != null) {
+                    Gtk.TextBuffer buffer = new Gtk.TextBuffer (null);
+                    buffer.text = property.get_comment ();
+                    comment_textview.set_buffer (buffer);
+                }
+
+                // Load the source
+                calendar_box.set_active_id (this.original_source.dup_uid ());
+            } else {
+            
+                ecal = new E.CalComponent ();
+                ecal.set_new_vtype (E.CalComponentVType.EVENT);
+                
+                from_date_picker.date = date_time;
+                from_time_picker.time = new DateTime.now_local ();
+                to_date_picker.date = date_time;
+                to_time_picker.time = new DateTime.now_local ();
+                // Load the source
+                calendar_box.set_active_id (this.source.dup_uid ());
             }
-
-            // Load the location
-            string location = comp.get_location ();
-            if (location != null)
-                location_entry.text = location;
-
-            // Load the guests
-            int count = comp.count_properties (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
-
-            unowned iCal.icalproperty property = comp.get_first_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
-            for (int i = 0; i < count; i++) {
-
-                if (property.get_attendee () != null)
-                    guest_entry.add_address (property.get_attendee ());
-
-                property = comp.get_next_property (iCal.icalproperty_kind.ATTENDEE_PROPERTY);
-            }
-
-            property = comp.get_first_property (iCal.icalproperty_kind.COMMENT_PROPERTY);
-
-            if (property != null) {
-                Gtk.TextBuffer buffer = new Gtk.TextBuffer (null);
-                buffer.text = property.get_comment ();
-                comment_textview.set_buffer (buffer);
-            }
-
-            // Load the source
-            calendar_box.set_active_id (this.source.dup_uid());
         }
 
         void build_dialog (bool add_event) {

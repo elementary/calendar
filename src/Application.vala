@@ -267,7 +267,7 @@ namespace Maya {
          * Called when the edit button is selected.
          */
         void on_modified (E.CalComponent comp) {
-            var dialog = new Maya.View.EventDialog (window, comp, comp.get_data<E.Source>("source"), false);
+            var dialog = new Maya.View.EventDialog (window, comp, comp.get_data<E.Source>("source"), null);
             dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, false));
             dialog.present ();
         }
@@ -407,10 +407,7 @@ namespace Maya {
         }
 
         void on_tb_add_clicked (DateTime dt) {
-            var event = new E.CalComponent ();
-            event.set_new_vtype (E.CalComponentVType.EVENT);
-
-            var dialog = new Maya.View.EventDialog (window, event, null, true);
+            var dialog = new Maya.View.EventDialog (window, null, null, dt);
             dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, true));
             dialog.present ();
 
