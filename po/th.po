@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2013-06-24 02:46+0000\n"
-"Last-Translator: Tharawut Paripaiboon <Unknown>\n"
+"PO-Revision-Date: 2013-09-20 17:36+0000\n"
+"Last-Translator: Jirayu Yingthawornsuk <me@jirayu.in.th>\n"
 "Language-Team: Thai <th@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-19 04:47+0000\n"
-"X-Generator: Launchpad (build 16723)\n"
+"X-Launchpad-Export-Date: 2013-09-21 05:50+0000\n"
+"X-Generator: Launchpad (build 16765)\n"
 "Language: th\n"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
@@ -24,7 +24,7 @@ msgstr "บนคอมพิวเตอร์เครื่องนี้"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
-msgstr ""
+msgstr "Webcal"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:69
 msgid "Contacts"
@@ -52,7 +52,7 @@ msgstr "%H:%M"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:494
 msgid "View and schedule events"
-msgstr ""
+msgstr "ดูและลงเวลาเหตุการณ์"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:495
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:343
@@ -61,7 +61,7 @@ msgstr "ปฏิทิน"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:496
 msgid "_Add Event"
-msgstr ""
+msgstr "เพิ่มเหตุการณ์"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
@@ -73,11 +73,11 @@ msgstr ""
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
 msgid "Starts: \t"
-msgstr ""
+msgstr "เริ่ม: \t"
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
 msgid "Ends: \t"
-msgstr ""
+msgstr "สิ้นสุด: \t"
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
 msgid "all day"
@@ -117,7 +117,7 @@ msgstr "ถึง:"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:339
 msgid "Title"
-msgstr ""
+msgstr "เรื่อง"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:340
 msgid "Name of Event"
@@ -133,7 +133,7 @@ msgstr ""
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:364
 msgid "Participants"
-msgstr ""
+msgstr "ผู้เข้าร่วม"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:365
 msgid "Name or Email Address"
@@ -141,7 +141,7 @@ msgstr "ชื่อหรืออีเมล"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:368
 msgid "Comments"
-msgstr ""
+msgstr "ความคิดเห็น"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:404
 msgid "Create Event"
@@ -149,15 +149,15 @@ msgstr "สร้างกิจกรรม"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
-msgstr ""
+msgstr "บันทึกการเปลี่ยนแปลง"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
-msgstr ""
+msgstr "เหตุการณ์นี้ไม่สามารถแก้ไขได้"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgstr "คุณจะต้องตั้งชื่อและลงเวลาให้เหตุการณ์นี้"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:44
 msgid "Create a new event"
@@ -177,7 +177,7 @@ msgstr "เลือกปฏิทินที่จะแสดง"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:55
 msgid "Search Events"
-msgstr ""
+msgstr "ค้นหาเหตุการณ์"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:58
 msgid "Export or Share the default Calendar"
@@ -186,11 +186,11 @@ msgstr "ส่งหรือแบ่งปันปฏิทินที่ต
 #: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
 #: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
 msgid "Export Calendar..."
-msgstr ""
+msgstr "ส่งออกปฏิทิน..."
 
 #: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
 msgid "calendar.ics"
-msgstr ""
+msgstr "calendar.ics"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:37
 msgid "Today"
@@ -214,8 +214,8 @@ msgstr "ปรับข้อมูลให้ตรงกัน"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:47
 msgid "About"
-msgstr ""
+msgstr "เกี่ยวกับ"
 
 #: /home/codygarver/maya/po/../Maya//View/SourceSelector.vala:96
 msgid "Add calendar"
-msgstr ""
+msgstr "เพิ่มปฏิทิน"
