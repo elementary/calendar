@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2013-01-22 20:46+0000\n"
-"Last-Translator: david prommer <dadoprom@gmail.com>\n"
+"PO-Revision-Date: 2013-10-26 18:45+0000\n"
+"Last-Translator: Milan Slovák <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-19 04:47+0000\n"
-"X-Generator: Launchpad (build 16723)\n"
+"X-Launchpad-Export-Date: 2013-10-27 06:00+0000\n"
+"X-Generator: Launchpad (build 16810)\n"
 "Language: sk\n"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
@@ -36,19 +36,19 @@ msgstr "Osobné"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr ""
+msgstr "%B %e, %Y"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
-msgstr ""
+msgstr "%A, %b %d"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%l:%M %p"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:38
 msgid "%H:%M"
-msgstr ""
+msgstr "%H:%M"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:494
 msgid "View and schedule events"
@@ -65,23 +65,23 @@ msgstr "Pridať udalosť"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "Maya;Plánovač;Dátum;Dni;Udalosti;"
 
 #: /home/codygarver/maya/po/../Maya//View/Grid/VAutoHider.vala:119
 msgid "$more more ..."
-msgstr ""
+msgstr "$viac viac ..."
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
 msgid "Starts: \t"
-msgstr ""
+msgstr "Začiatok: \t"
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
 msgid "Ends: \t"
-msgstr ""
+msgstr "Koniec: \t"
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
 msgid "all day"
-msgstr ""
+msgstr "každý deň"
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
@@ -105,7 +105,7 @@ msgstr "Upraviť udalosť"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:309
 msgid "From:"
-msgstr ""
+msgstr "Od:"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:315
 msgid "All day:"
@@ -133,7 +133,7 @@ msgstr ""
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:364
 msgid "Participants"
-msgstr ""
+msgstr "Účastníci"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:365
 msgid "Name or Email Address"
@@ -141,7 +141,7 @@ msgstr "Meno alebo e-mailová adresa"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:368
 msgid "Comments"
-msgstr ""
+msgstr "Komentáre"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:404
 msgid "Create Event"
@@ -149,11 +149,11 @@ msgstr "Vytvoriť udalosť"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
-msgstr ""
+msgstr "Uložiť zmeny"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
-msgstr ""
+msgstr "Túto udalosť nie je možné upravovať"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
@@ -165,11 +165,11 @@ msgstr "Vytvoriť novú udalosť"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:46
 msgid "Edit the selected event"
-msgstr ""
+msgstr "Upraviť vybranú udalosť"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:47
 msgid "Delete the selected event"
-msgstr ""
+msgstr "Zmazať vybranú udalosť"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:49
 msgid "Select calendars to display"
@@ -181,16 +181,16 @@ msgstr "Vyhľadať udalosti"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:58
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "Exportovať alebo zdieľať základný kalendár"
 
 #: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
 #: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
 msgid "Export Calendar..."
-msgstr ""
+msgstr "Exportovať kalendár..."
 
 #: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
 msgid "calendar.ics"
-msgstr ""
+msgstr "kalendár.ics"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:37
 msgid "Today"
