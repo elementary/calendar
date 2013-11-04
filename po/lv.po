@@ -8,85 +8,85 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2012-03-18 00:22+0000\n"
-"Last-Translator: Niels Avonds <Unknown>\n"
+"PO-Revision-Date: 2013-11-03 21:18+0000\n"
+"Last-Translator: Matiss Roberts Treinis <mrtreinis@gmail.com>\n"
 "Language-Team: Latvian <lv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-19 04:47+0000\n"
-"X-Generator: Launchpad (build 16723)\n"
+"X-Launchpad-Export-Date: 2013-11-04 05:52+0000\n"
+"X-Generator: Launchpad (build 16820)\n"
 "Language: lv\n"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
 msgid "On this computer"
-msgstr ""
+msgstr "Šajā datorā"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:68
 msgid "Webcal"
-msgstr ""
+msgstr "Webcal"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:69
 msgid "Contacts"
-msgstr ""
+msgstr "Kontakti"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:137
 msgid "Personal"
-msgstr ""
+msgstr "Personiskie"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr ""
+msgstr "%B %e, %Y"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
-msgstr ""
+msgstr "%A, %b %d"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:35
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%l:%M %p"
 
 #: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:38
 msgid "%H:%M"
-msgstr ""
+msgstr "%H.%M"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:494
 msgid "View and schedule events"
-msgstr ""
+msgstr "Skatīt un plānot notikumus"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:495
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:343
 msgid "Calendar"
-msgstr ""
+msgstr "Kalendārs"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:496
 msgid "_Add Event"
-msgstr ""
+msgstr "_Pievienot notikumu"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "Maya;Plānotājs;Datumi;Dienas;Notikumi;"
 
 #: /home/codygarver/maya/po/../Maya//View/Grid/VAutoHider.vala:119
 msgid "$more more ..."
-msgstr ""
+msgstr "$more vairāk ..."
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
 msgid "Starts: \t"
-msgstr ""
+msgstr "Sākas: \t"
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
 msgid "Ends: \t"
-msgstr ""
+msgstr "Beidzas: \t"
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
 msgid "all day"
-msgstr ""
+msgstr "visu dienu"
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
 msgid "at"
-msgstr ""
+msgstr ","
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
 msgid ""
@@ -98,125 +98,125 @@ msgstr ""
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:98
 msgid "Add Event"
-msgstr ""
+msgstr "Pievienot  notikumu"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:101
 msgid "Edit Event"
-msgstr ""
+msgstr "Rediģēt notikumu"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:309
 msgid "From:"
-msgstr ""
+msgstr "No:"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:315
 msgid "All day:"
-msgstr ""
+msgstr "Visu dienu:"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:320
 msgid "To:"
-msgstr ""
+msgstr "Līdz:"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:339
 msgid "Title"
-msgstr ""
+msgstr "Nosaukums"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:340
 msgid "Name of Event"
-msgstr ""
+msgstr "Notikuma nosaukums"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:361
 msgid "Location"
-msgstr ""
+msgstr "Vieta"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:362
 msgid "John Smith OR Example St."
-msgstr ""
+msgstr "Jānis Bērziņš VAI Brīvības iela"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:364
 msgid "Participants"
-msgstr ""
+msgstr "Dalībnieki"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:365
 msgid "Name or Email Address"
-msgstr ""
+msgstr "Vārds vai Epasta adrese"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:368
 msgid "Comments"
-msgstr ""
+msgstr "Piezīmes"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:404
 msgid "Create Event"
-msgstr ""
+msgstr "Izveidot notikumu"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
-msgstr ""
+msgstr "Saglabāt izmaiņas"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
-msgstr ""
+msgstr "Šis notikums nevar tikt labots"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:510
 msgid "Your event has to be named and has to have a valid date"
-msgstr ""
+msgstr "Notikumam jābūt ar nosaukumu un derīgu datumu"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:44
 msgid "Create a new event"
-msgstr ""
+msgstr "Izveidot jaunu notikumu"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:46
 msgid "Edit the selected event"
-msgstr ""
+msgstr "Rediģēt izvēlēto notikumu"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:47
 msgid "Delete the selected event"
-msgstr ""
+msgstr "Dzēst izvēlēto notikumu"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:49
 msgid "Select calendars to display"
-msgstr ""
+msgstr "Izvelties kalendārus, ko rādīt"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:55
 msgid "Search Events"
-msgstr ""
+msgstr "Meklēt notikumus"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:58
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "Eksportēt un dalīties ar noklusējuma kalendāru"
 
 #: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
 #: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
 msgid "Export Calendar..."
-msgstr ""
+msgstr "Eksportēt kalendāru"
 
 #: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
 msgid "calendar.ics"
-msgstr ""
+msgstr "kalendārs.ics"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:37
 msgid "Today"
-msgstr ""
+msgstr "Šodien"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:39
 msgid "Fullscreen"
-msgstr ""
+msgstr "Pilnekrāna"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:41
 msgid "Show Week Numbers"
-msgstr ""
+msgstr "Rādīt nedēļu numurus"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:43
 msgid "Import..."
-msgstr ""
+msgstr "Importēt..."
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:45
 msgid "Sync..."
-msgstr ""
+msgstr "Sinhronizēt"
 
 #: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:47
 msgid "About"
-msgstr ""
+msgstr "Par"
 
 #: /home/codygarver/maya/po/../Maya//View/SourceSelector.vala:96
 msgid "Add calendar"
-msgstr ""
+msgstr "Pievienot kalendāru"
