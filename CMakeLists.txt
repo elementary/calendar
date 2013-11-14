@@ -70,7 +70,7 @@ add_subdirectory(po)
 # Maya
 #
 
-set(DEPS_PACKAGES
+set (DEPS_PACKAGES
     gconf-2.0
     gee-1.0
     gio-2.0
@@ -83,7 +83,7 @@ set(DEPS_PACKAGES
     libpeas-1.0
 )
 
-set(DEPS_PKG
+set (DEPS_PKG
     gobject-2.0
     gthread-2.0
     glib-2.0
@@ -96,22 +96,22 @@ set(DEPS_PKG
     libpeas-1.0
 )
 
-set(GLOBAL_VALAC_OPTIONS
+set (GLOBAL_VALAC_OPTIONS
     --define=USE_GRANITE_DECORATED_WINDOW
-    --vapidir=${CMAKE_SOURCE_DIR}/vapi
-    --vapidir=${CMAKE_BINARY_DIR}/src
     --target-glib=2.32
     --thread
+    --vapidir=${CMAKE_BINARY_DIR}/src
+    --vapidir=${CMAKE_SOURCE_DIR}/vapi
 )
 
-find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED ${DEPS_PKG})
+find_package (PkgConfig)
+pkg_check_modules (DEPS REQUIRED ${DEPS_PKG})
 
-find_package(Vala REQUIRED)
-include(ValaVersion)
-ensure_vala_version("0.18.0" MINIMUM)
-include(ValaPrecompile)
+find_package (Vala REQUIRED)
+include (ValaVersion)
+ensure_vala_version ("0.18.0" MINIMUM)
+include (ValaPrecompile)
 
-add_subdirectory(src)
-add_subdirectory(plugins)
-add_subdirectory(schemas)
+add_subdirectory (src)
+add_subdirectory (plugins)
+add_subdirectory (schemas)
