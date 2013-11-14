@@ -14,15 +14,4 @@ libglib2.0-dev (>= 2.29.0)
 libgranite-dev
 libgtk-3-dev
 libical-dev
-valac-0.16 | valac (>= 0.16)
-
---------------------------------------------------------------------------------
-BUILDING
---------------------------------------------------------------------------------
-bzr branch lp:maya
-cd maya
-mkdir build
-cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-make
-sudo make install
+valac (>= 0.16)
