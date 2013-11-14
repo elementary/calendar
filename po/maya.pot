@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-02 01:14+0200\n"
+"POT-Creation-Date: 2013-08-29 18:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,29 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/noelco/maya/po/../src//Application.vala:471
-msgid "Calendar \"%s\" removed."
-msgstr ""
-
-#: /home/noelco/maya/po/../src//Application.vala:488
+#: /home/noelco/maya/po/../src//Application.vala:455
 msgid "View and schedule events"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//Application.vala:489
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:335
+#: /home/noelco/maya/po/../src//Application.vala:456
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:332
 msgid "Calendar"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//Application.vala:490
+#: /home/noelco/maya/po/../src//Application.vala:457
 msgid "_Add Event"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//Application.vala:491
+#: /home/noelco/maya/po/../src//Application.vala:458
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
-
-#: /home/noelco/maya/po/../src//Backends/LocalBackend.vala:26
-msgid "On this computer"
 msgstr ""
 
 #: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:21
@@ -58,54 +50,18 @@ msgstr ""
 msgid "%H:%M"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:41
-msgid "Add Calendar"
-msgstr ""
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:44
-msgid "Edit Calendar"
-msgstr ""
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:73
-msgid "Create Calendar"
-msgstr ""
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:86
-msgid "Name:"
-msgstr ""
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:89
-msgid "Calendar Name"
-msgstr ""
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:131
-msgid "Type:"
-msgstr ""
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:150
-msgid "Color:"
-msgstr ""
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:156
-msgid "Mark as default calendar"
-msgstr ""
-
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:128
-msgid "Other"
-msgstr ""
-
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:174
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:175
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:109
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:110
 msgid "Add…"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:179
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:180
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:113
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:114
 msgid "Remove"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:185
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:186
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:117
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:118
 msgid "Edit…"
 msgstr ""
 
@@ -132,67 +88,67 @@ msgid ""
 "events."
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:90
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:87
 msgid "Add Event"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:93
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:90
 msgid "Edit Event"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:301
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:298
 msgid "From:"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:307
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:304
 msgid "All day:"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:312
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:309
 msgid "To:"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:331
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:328
 msgid "Title"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:332
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:329
 msgid "Name of Event"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:353
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:350
 msgid "Location"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:354
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:351
 msgid "John Smith OR Example St."
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:356
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:353
 msgid "Participants"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:357
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:354
 msgid "Name or Email Address"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:360
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:357
 msgid "Comments"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:396
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:393
 msgid "Create Event"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:399
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:396
 msgid "Save Changes"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:495
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:492
 msgid "This event can't be edited"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:502
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:499
 msgid "Your event has to be named and has to have a valid date"
 msgstr ""
 
@@ -236,12 +192,12 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:60
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:69
 msgid "Export Calendar..."
 msgstr ""
 
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:72
 msgid "calendar.ics"
 msgstr ""
 
@@ -249,43 +205,188 @@ msgstr ""
 msgid "$more more ..."
 msgstr ""
 
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
-msgid "CalDAV"
+#: /home/noelco/maya/po/../plugins//MPRIS/MPRIS.vala:643
+msgid "Playlists"
 msgstr ""
 
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
-msgid "URL:"
+#: /home/noelco/maya/po/../plugins//LastFM/PreferencesSection.vala:30
+msgid "Give %s Permission"
 msgstr ""
 
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
-msgid "Use a secure connection"
+#: /home/noelco/maya/po/../plugins//LastFM/PreferencesSection.vala:31
+msgid "Unsuccessful. Click To Try Again."
 msgstr ""
 
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
-#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:37
-msgid "User:"
+#: /home/noelco/maya/po/../plugins//LastFM/PreferencesSection.vala:32
+msgid "Scrobbling Already Enabled"
 msgstr ""
 
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
-msgid "user.name"
+#: /home/noelco/maya/po/../plugins//LastFM/PreferencesSection.vala:33
+msgid "Success!"
 msgstr ""
 
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
-msgid "Email:"
+#: /home/noelco/maya/po/../plugins//LastFM/PreferencesSection.vala:34
+msgid "Complete Login"
 msgstr ""
 
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
-msgid "john@doe.com"
+#: /home/noelco/maya/po/../plugins//LastFM/PreferencesSection.vala:43
+msgid "Last.fm"
 msgstr ""
 
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
-msgid "Server handles meeting invitations"
+#: /home/noelco/maya/po/../plugins//LastFM/PreferencesSection.vala:48
+msgid "Last.fm Integration"
 msgstr ""
 
-#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:26
-msgid "Google"
+#: /home/noelco/maya/po/../plugins//LastFM/PreferencesSection.vala:55
+msgid "Click to redo the Last.fm login process"
 msgstr ""
 
-#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:46
-msgid "user.name or user.name@gmail.com"
+#: /home/noelco/maya/po/../plugins//LastFM/PreferencesSection.vala:58
+msgid ""
+"To allow for Last.fm integration, you must give permission to %s. You only "
+"need to do this once."
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//LastFM/SimilarMedia.vala:44
+msgid "Similar"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//LastFM/LastFM.vala:75
+msgid "No similar songs found"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//LastFM/LastFM.vala:75
+msgid ""
+"There are no songs similar to the current song in your library. Make sure "
+"all song info is correct and you are connected to the Internet. Some songs "
+"may not have matches."
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//LastFM/SimilarMediaView.vala:44
+msgid "media"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//LastFM/SimilarMediaView.vala:48
+msgid "Similar Media"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDView.vala:90
+msgid "Import"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDViewWrapper.vala:32
+msgid "An Error Occured"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDViewWrapper.vala:33
+msgid "There was an error while loading this Audio CD."
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDRomDevice.vala:96
+msgid "Audio CD Invalid"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDRomDevice.vala:100
+msgid "Impossible to read the contents of this Audio CD"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDRomDevice.vala:252
+msgid "Could not find Music Folder"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDRomDevice.vala:252
+msgid ""
+"Please make sure that your music folder is accessible and mounted before "
+"importing the CD."
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDRomDevice.vala:258
+msgid ""
+"The Application could not find any songs on the CD. No songs can be imported"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDRomDevice.vala:359
+msgid "Importation of a song from Audio CD finished."
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDRomDevice.vala:359
+msgid "Importation of %i songs from Audio CD finished."
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDRomDevice.vala:364
+msgid "Importing track %i: %s"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDRomDevice.vala:369
+msgid "CD import will be <b>cancelled</b> after current import."
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDRomDevice.vala:388
+msgid "An error occured during the Import of this CD"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/CDRom/CDPlayer.vala:210
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodStreamer.vala:201
+msgid "Unknown Artist"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodDevice.vala:75
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerDevice.vala:114
+msgid "Empty device!"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodDevice.vala:79
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerDevice.vala:118
+msgid "This device does not contain any music."
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:176
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerLibrary.vala:140
+msgid "Adding <b>$NAME</b> by <b>$ARTIST</b> to $DEVICE"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:241
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:651
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerLibrary.vala:164
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerLibrary.vala:202
+msgid "Syncing <b>%s</b>…"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:268
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:438
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:707
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerLibrary.vala:256
+msgid "Finishing sync process…"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:282
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:454
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:728
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerLibrary.vala:259
+msgid "Cancelling Sync…"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:394
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerLibrary.vala:393
+msgid "Removing from <b>%s</b>…"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:601
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerLibrary.vala:362
+msgid "Removing <b>$NAME</b> by <b>$ARTIST</b> from $DEVICE"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:738
+#: /home/noelco/maya/po/../plugins//Devices/iPod/iPodLibrary.vala:739
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerLibrary.vala:263
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerLibrary.vala:264
+msgid "There is not enough space on Device to complete the Sync…"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerDevice.vala:162
+msgid "Android Phone"
+msgstr ""
+
+#: /home/noelco/maya/po/../plugins//Devices/AudioPlayers/AudioPlayerDevice.vala:164
+msgid "Audio Player"
 msgstr ""
