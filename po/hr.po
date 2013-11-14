@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-09 15:32-0500\n"
-"PO-Revision-Date: 2013-05-03 08:04+0000\n"
-"Last-Translator: zvacet <ikoli@yahoo.com>\n"
+"PO-Revision-Date: 2013-09-01 18:58+0000\n"
+"Last-Translator: Paulo Pavačić <pavacic.p@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-19 04:47+0000\n"
-"X-Generator: Launchpad (build 16723)\n"
+"X-Launchpad-Export-Date: 2013-09-02 05:19+0000\n"
+"X-Generator: Launchpad (build 16750)\n"
 "Language: hr\n"
 
 #: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
@@ -65,11 +65,11 @@ msgstr "_Dodaj događaj"
 
 #: /home/codygarver/maya/po/../Maya//Application.vala:497
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "Maya;Planer;Datumi;Dani;Događaji"
 
 #: /home/codygarver/maya/po/../Maya//View/Grid/VAutoHider.vala:119
 msgid "$more more ..."
-msgstr ""
+msgstr "$više više ..."
 
 #: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
 msgid "Starts: \t"
@@ -150,7 +150,7 @@ msgstr "Napravi događaj"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
 msgid "Save Changes"
-msgstr ""
+msgstr "Spremi promjene"
 
 #: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
 msgid "This event can't be edited"
