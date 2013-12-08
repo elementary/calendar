@@ -14,8 +14,18 @@ set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.2.2")
 set (VERSION_INFO "Release")
 set (SRC_TARGET ${CMAKE_PROJECT_NAME}-calendar)
+set (PLUGIN_DIR ${CMAKE_INSTALL_PREFIX}/lib/${CMAKE_PROJECT_NAME}/plugins)
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+add_definitions ("-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\"")
+
+option (BUILD_SHARED_LIBS "Switch between shared and static libraries" ON)
+
+if (BUILD_SHARED_LIBS)
+    message("-- Shared libraries enabled")
+else ()
+    message("-- Shared libraries disabled")
+endif ()
 
 #
 # Niceties
@@ -43,13 +53,6 @@ add_custom_target (uninstall "${CMAKE_COMMAND}" -P
   "${CMAKE_SOURCE_DIR}/cmake/uninstall.cmake")
 
 #
-# config.h
-#
-
-configure_file (${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_BINARY_DIR}/config.h)
-add_definitions(-include config.h)
-
-#
 # Data
 #
 file (GLOB _datafiles "${CMAKE_CURRENT_SOURCE_DIR}/data/style/*")
@@ -66,55 +69,8 @@ add_subdirectory(po)
 #
 # Maya
 #
-find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED libecal-1.2>=3.2.0 gobject-2.0 glib-2.0 gio-2.0 gtk+-3.0 gthread-2.0 granite libical gee-1.0)
 
-add_definitions(${DEPS_CFLAGS})
-
-link_libraries(${DEPS_LIBRARIES})
-link_directories(${DEPS_LIBRARY_DIRS})
-
-find_package(Vala REQUIRED)
-include(ValaVersion)
-ensure_vala_version("0.15.1" MINIMUM)
-
-# Maya/Widgets/Calendar/EventsList.vala
-# Maya/Widgets/Calendar/Event.vala
-
-include(ValaPrecompile)
-vala_precompile(VALA_C ${SRC_TARGET}
-    Maya/Application.vala
-    Maya/Model/CalendarModel.vala
-    Maya/Model/SourceManager.vala
-    Maya/Services/Dexter.vala
-    Maya/Settings/MayaSettings.vala
-    Maya/Settings/SavedState.vala
-    Maya/Settings/LanguagesFormat.vala
-    Maya/Utils.vala
-    Maya/View/Sidebar/AgendaView.vala
-    Maya/View/Sidebar/Sidebar.vala
-    Maya/View/Sidebar/SourceWidget.vala
-    Maya/View/Sidebar/EventWidget.vala
-    Maya/View/Grid/CalendarView.vala
-    Maya/View/Grid/GridDay.vala
-    Maya/View/Grid/Grid.vala
-    Maya/View/Grid/EventButton/EventButton.vala
-    Maya/View/Grid/EventButton/MultiDayEventButton.vala
-    Maya/View/Grid/EventButton/SingleDayEventButton.vala
-    Maya/View/Grid/WeekLabels.vala
-    Maya/View/Grid/Header.vala
-    Maya/View/Grid/VAutoHider.vala
-    Maya/View/EventDialog.vala
-    Maya/View/MayaMenu.vala
-    Maya/View/MayaToolbar.vala
-    Maya/View/SourceSelector.vala
-    Maya/View/Widgets/ContractorButtonWithMenu.vala
-    Maya/View/Widgets/DateSwitcher.vala
-    Maya/View/Widgets/DateTimePicker.vala
-    Maya/View/Widgets/Postler/GuestEntry.vala
-    Maya/View/Widgets/Postler/FlowBox.vala
-    Maya/View/Widgets/Postler/Contact.vala
-PACKAGES
+set (DEPS_PACKAGES
     gconf-2.0
     gee-1.0
     gio-2.0
@@ -124,22 +80,38 @@ PACKAGES
     libedataserver-1.2
     libical
     libsoup-2.4
-CUSTOM_VAPIS
-    vapi/config.vapi
-OPTIONS
-    --thread
-    --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
+    libpeas-1.0
+)
+
+set (DEPS_PKG
+    gobject-2.0
+    gthread-2.0
+    glib-2.0
+    gio-2.0
+    gee-1.0
+    gtk+-3.0
+    granite
+    libecal-1.2>=3.8.0
+    libical
+    libpeas-1.0
+)
+
+set (GLOBAL_VALAC_OPTIONS
     --define=USE_GRANITE_DECORATED_WINDOW
-    )
+    --target-glib=2.32
+    --thread
+    --vapidir=${CMAKE_BINARY_DIR}/src
+    --vapidir=${CMAKE_SOURCE_DIR}/vapi
+)
 
-add_definitions(${CFLAGS} -Wall -Winit-self -Wwrite-strings -Wunreachable-code -Wstrict-prototypes )
-add_executable(${SRC_TARGET} ${VALA_C})
+find_package (PkgConfig)
+pkg_check_modules (DEPS REQUIRED ${DEPS_PKG})
 
-install(TARGETS ${SRC_TARGET} RUNTIME DESTINATION bin)
+find_package (Vala REQUIRED)
+include (ValaVersion)
+ensure_vala_version ("0.18.0" MINIMUM)
+include (ValaPrecompile)
 
-#
-# GSettings Schema
-#
-include(GSettings)
-add_schema("org.pantheon.Maya.gschema.xml")
-
+add_subdirectory (src)
+add_subdirectory (plugins)
+add_subdirectory (schemas)

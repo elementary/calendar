@@ -1,0 +1,8 @@
+[Plugin]
+Module=caldav
+IAge=2
+Name=CalDAV Calendar
+Description=Enable any CalDAV calendar
+Authors=Maya Developers
+Copyright=Copyright © 2013 Maya Developers
+Website=https://launchpad.net/maya
