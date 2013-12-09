@@ -277,7 +277,7 @@ namespace Maya {
          */
         void create_window () {
             window = new Gtk.Window ();
-            window.title = "Maya";
+            window.title = program_name;
             window.icon_name = "office-calendar";
             window.set_size_request (700, 400);
             window.default_width = saved_state.window_width;
