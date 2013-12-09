@@ -188,7 +188,7 @@ namespace Maya.Util {
         public DateTime last { get; private set; }
 
         public int64 days {
-            get { return last.difference(first).DAY; }
+            get { return last.difference (first) / GLib.TimeSpan.DAY; }
         }
 
         public DateRange (DateTime first, DateTime last) {
