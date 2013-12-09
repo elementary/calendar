@@ -19,6 +19,9 @@ set (PLUGIN_DIR ${CMAKE_INSTALL_PREFIX}/lib/${CMAKE_PROJECT_NAME}/plugins)
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 add_definitions ("-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\"")
 
+# Comment this out to enable C compiler warnings
+add_definitions (-w)
+
 option (BUILD_SHARED_LIBS "Switch between shared and static libraries" ON)
 
 if (BUILD_SHARED_LIBS)
