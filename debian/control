@@ -12,7 +12,7 @@ Build-Depends: cmake (>= 2.8),
                libical-dev,
                libpeas-dev,
                pkg-config,
-               valac-0.16 | valac (>= 0.16)
+               valac
 Standards-Version: 3.9.3
 Homepage: https://launchpad.net/maya
 
