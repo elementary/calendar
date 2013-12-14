@@ -7,88 +7,211 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-09 15:32-0500\n"
+"POT-Creation-Date: 2013-12-13 14:32-0600\n"
 "PO-Revision-Date: 2013-05-06 23:41+0000\n"
 "Last-Translator: Leonardo Lemos <leonardolemos@live.com>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-22 05:53+0000\n"
-"X-Generator: Launchpad (build 16831)\n"
+"X-Launchpad-Export-Date: 2013-12-14 06:03+0000\n"
+"X-Generator: Launchpad (build 16869)\n"
 "Language: pt_BR\n"
 
-#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:67
-msgid "On this computer"
-msgstr "Neste computador"
+#: /home/codygarver/maya/po/../src//Application.vala:468
+msgid "Calendar \"%s\" removed."
+msgstr ""
 
-#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:68
-msgid "Webcal"
-msgstr "Webcal"
-
-#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:69
-msgid "Contacts"
-msgstr "Contatos"
-
-#: /home/codygarver/maya/po/../Maya//Model/SourceManager.vala:137
-msgid "Personal"
-msgstr "Pessoal"
-
-#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:35
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-#: /home/codygarver/maya/po/../Maya//Settings/LanguagesFormat.vala:38
-msgid "%H:%M"
-msgstr "%H:%M"
-
-#: /home/codygarver/maya/po/../Maya//Application.vala:494
+#: /home/codygarver/maya/po/../src//Application.vala:485
 msgid "View and schedule events"
 msgstr "Visualizar e agendar eventos"
 
-#: /home/codygarver/maya/po/../Maya//Application.vala:495
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:343
+#: /home/codygarver/maya/po/../src//Application.vala:486
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:344
 msgid "Calendar"
 msgstr "Calendário"
 
-#: /home/codygarver/maya/po/../Maya//Application.vala:496
+#: /home/codygarver/maya/po/../src//Application.vala:487
 msgid "_Add Event"
 msgstr "_Adicionar Evento"
 
-#: /home/codygarver/maya/po/../Maya//Application.vala:497
+#: /home/codygarver/maya/po/../src//Application.vala:488
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr "Maya;Planejador;Datas;Dias;Eventos;"
 
-#: /home/codygarver/maya/po/../Maya//View/Grid/VAutoHider.vala:119
+#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:35
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:38
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: /home/codygarver/maya/po/../src//Backends/LocalBackend.vala:26
+msgid "On this computer"
+msgstr "Neste computador"
+
+#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:128
+msgid "Other"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:174
+#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:175
+msgid "Add…"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:179
+#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:180
+msgid "Remove"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:185
+#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:186
+msgid "Edit…"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:92
+msgid "Add Event"
+msgstr "Adicionar evento"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:95
+msgid "Edit Event"
+msgstr "Editar evento"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:310
+msgid "From:"
+msgstr "De:"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:316
+msgid "All day:"
+msgstr "Todo dia:"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:321
+msgid "To:"
+msgstr "Para:"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:340
+msgid "Title"
+msgstr "Título"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:341
+msgid "Name of Event"
+msgstr "Nome do evento"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:362
+msgid "Location"
+msgstr "Localização"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:363
+msgid "John Smith OR Example St."
+msgstr "João da Silva ou Sr. Fulano"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:365
+msgid "Participants"
+msgstr "Participantes"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:366
+msgid "Name or Email Address"
+msgstr "Nome ou endereço de email"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:369
+msgid "Comments"
+msgstr "Observações"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:405
+msgid "Create Event"
+msgstr "Criar evento"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:408
+msgid "Save Changes"
+msgstr "Salvar mudanças"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:504
+msgid "This event can't be edited"
+msgstr "Este evento não pode ser editado"
+
+#: /home/codygarver/maya/po/../src//View/EventDialog.vala:511
+msgid "Your event has to be named and has to have a valid date"
+msgstr "O seu evento precisa ter um nome e uma data válida"
+
+#: /home/codygarver/maya/po/../src//View/Grid/VAutoHider.vala:119
 msgid "$more more ..."
 msgstr "$more mais  ..."
 
-#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:148
+#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:41
+msgid "Add Calendar"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:44
+msgid "Edit Calendar"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:73
+msgid "Create Calendar"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:86
+msgid "Name:"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:89
+msgid "Calendar Name"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:131
+msgid "Type:"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:154
+msgid "Color:"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:160
+msgid "Mark as default calendar"
+msgstr ""
+
+#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:42
+msgid "Create a new event"
+msgstr "Criar um novo evento"
+
+#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:44
+msgid "Select calendars to display"
+msgstr "Selecionar calendários para exibir"
+
+#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:50
+msgid "Search Events"
+msgstr "Pesquisar eventos"
+
+#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:53
+msgid "Export or Share the default Calendar"
+msgstr "Exportar ou compartilhar o calendário padrão"
+
+#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:136
 msgid "Starts: \t"
 msgstr "Começa: \t"
 
-#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:153
+#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:141
 msgid "Ends: \t"
 msgstr "Termina: \t"
 
-#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:191
+#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:179
 msgid "all day"
 msgstr "o dia inteiro"
 
-#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:195
-#: /home/codygarver/maya/po/../Maya//View/Sidebar/EventWidget.vala:216
+#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:183
+#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:204
 msgid "at"
 msgstr "em"
 
-#: /home/codygarver/maya/po/../Maya//View/Sidebar/Sidebar.vala:49
+#: /home/codygarver/maya/po/../src//View/Sidebar/Sidebar.vala:43
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -96,127 +219,94 @@ msgstr ""
 "Seu eventos programados serão exibidos aqui quando você selecionar uma data "
 "com eventos."
 
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:98
-msgid "Add Event"
-msgstr "Adicionar evento"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:101
-msgid "Edit Event"
-msgstr "Editar evento"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:309
-msgid "From:"
-msgstr "De:"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:315
-msgid "All day:"
-msgstr "Todo dia:"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:320
-msgid "To:"
-msgstr "Para:"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:339
-msgid "Title"
-msgstr "Título"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:340
-msgid "Name of Event"
-msgstr "Nome do evento"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:361
-msgid "Location"
-msgstr "Localização"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:362
-msgid "John Smith OR Example St."
-msgstr "João da Silva ou Sr. Fulano"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:364
-msgid "Participants"
-msgstr "Participantes"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:365
-msgid "Name or Email Address"
-msgstr "Nome ou endereço de email"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:368
-msgid "Comments"
-msgstr "Observações"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:404
-msgid "Create Event"
-msgstr "Criar evento"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:407
-msgid "Save Changes"
-msgstr "Salvar mudanças"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:503
-msgid "This event can't be edited"
-msgstr "Este evento não pode ser editado"
-
-#: /home/codygarver/maya/po/../Maya//View/EventDialog.vala:510
-msgid "Your event has to be named and has to have a valid date"
-msgstr "O seu evento precisa ter um nome e uma data válida"
-
-#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:44
-msgid "Create a new event"
-msgstr "Criar um novo evento"
-
-#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:46
-msgid "Edit the selected event"
-msgstr "Editar o evento selecionado"
-
-#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:47
-msgid "Delete the selected event"
-msgstr "Deletar o evento selecionado"
-
-#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:49
-msgid "Select calendars to display"
-msgstr "Selecionar calendários para exibir"
-
-#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:55
-msgid "Search Events"
-msgstr "Pesquisar eventos"
-
-#: /home/codygarver/maya/po/../Maya//View/MayaToolbar.vala:58
-msgid "Export or Share the default Calendar"
-msgstr "Exportar ou compartilhar o calendário padrão"
-
-#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:43
-#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:74
-msgid "Export Calendar..."
-msgstr "Exportar calendário..."
-
-#: /home/codygarver/maya/po/../Maya//View/Widgets/ContractorButtonWithMenu.vala:77
-msgid "calendar.ics"
-msgstr "calendário.ics"
-
-#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:37
+#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:37
 msgid "Today"
 msgstr "Hoje"
 
-#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:39
+#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:39
 msgid "Fullscreen"
 msgstr "Tela cheia"
 
-#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:41
+#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:41
 msgid "Show Week Numbers"
 msgstr "Exibir números de semana"
 
-#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:43
+#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:43
 msgid "Import..."
 msgstr "Importar..."
 
-#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:45
+#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:45
 msgid "Sync..."
 msgstr "Sincronizar..."
 
-#: /home/codygarver/maya/po/../Maya//View/MayaMenu.vala:47
+#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:47
 msgid "About"
 msgstr "Sobre"
 
-#: /home/codygarver/maya/po/../Maya//View/SourceSelector.vala:96
-msgid "Add calendar"
-msgstr "Adicionar calendário"
+#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
+#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
+msgid "Export Calendar..."
+msgstr "Exportar calendário..."
+
+#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
+msgid "calendar.ics"
+msgstr "calendário.ics"
+
+#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
+msgid "CalDAV"
+msgstr ""
+
+#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
+msgid "URL:"
+msgstr ""
+
+#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
+msgid "Use a secure connection"
+msgstr ""
+
+#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
+#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:37
+msgid "User:"
+msgstr ""
+
+#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
+msgid "user.name"
+msgstr ""
+
+#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
+msgid "Email:"
+msgstr ""
+
+#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
+msgid "john@doe.com"
+msgstr ""
+
+#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
+msgid "Server handles meeting invitations"
+msgstr ""
+
+#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:26
+msgid "Google"
+msgstr ""
+
+#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:46
+msgid "user.name or user.name@gmail.com"
+msgstr ""
+
+#~ msgid "Edit the selected event"
+#~ msgstr "Editar o evento selecionado"
+
+#~ msgid "Delete the selected event"
+#~ msgstr "Deletar o evento selecionado"
+
+#~ msgid "Contacts"
+#~ msgstr "Contatos"
+
+#~ msgid "Webcal"
+#~ msgstr "Webcal"
+
+#~ msgid "Personal"
+#~ msgstr "Pessoal"
+
+#~ msgid "Add calendar"
+#~ msgstr "Adicionar calendário"
