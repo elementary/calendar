@@ -15,8 +15,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Granite.Services;
-
 namespace Maya.Services {
 
 	[DBus (name = "org.elementary.dexterserver")]
@@ -54,7 +52,7 @@ namespace Maya.Services {
 					throw new GLib.IOError.FAILED ("Service unavailable");
 				service.edit_contact (name, email_address);
 			} catch (GLib.Error error) {
-				System.execute_command ("dexter");
+				Granite.Services.System.execute_command ("dexter");
 			}
 		}
 
@@ -88,7 +86,7 @@ namespace Maya.Services {
 					throw new GLib.IOError.FAILED ("Service unavailable");
 				service.show_window ();
 			} catch (GLib.Error error) {
-				System.execute_command ("dexter");
+				Granite.Services.System.execute_command ("dexter");
 			}
 		}
 

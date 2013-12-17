@@ -15,8 +15,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Granite.Widgets;
-
 namespace Maya.View.Widgets {
 
     public class DateTimePicker : Gtk.Grid {
@@ -27,13 +25,13 @@ namespace Maya.View.Widgets {
                     time_picker.time.get_second ()); }
         }
 
-        public DatePicker date_picker { get; private set; }
-        public TimePicker time_picker { get; private set; }
+        public Granite.Widgets.DatePicker date_picker { get; private set; }
+        public Granite.Widgets.TimePicker time_picker { get; private set; }
 
         public DateTimePicker () {
 
-            date_picker = new DatePicker ();
-            time_picker = new TimePicker ();
+            date_picker = new Granite.Widgets.DatePicker ();
+            time_picker = new Granite.Widgets.TimePicker ();
 
             // Grid properties
             set_column_spacing (10);
