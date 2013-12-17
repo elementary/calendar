@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-13 14:32-0600\n"
-"PO-Revision-Date: 2013-05-06 07:08+0000\n"
-"Last-Translator: Florent (LSc) <Unknown>\n"
+"PO-Revision-Date: 2013-12-16 16:55+0000\n"
+"Last-Translator: Corentin Noël <tintou@mailoo.org>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-12-14 06:03+0000\n"
+"X-Launchpad-Export-Date: 2013-12-17 05:47+0000\n"
 "X-Generator: Launchpad (build 16869)\n"
 "Language: fr\n"
 
 #: /home/codygarver/maya/po/../src//Application.vala:468
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "Calendrier \"%s\" supprimé."
 
 #: /home/codygarver/maya/po/../src//Application.vala:485
 msgid "View and schedule events"
@@ -61,22 +61,22 @@ msgstr "Sur cet ordinateur"
 
 #: /home/codygarver/maya/po/../src//View/SourceSelector.vala:128
 msgid "Other"
-msgstr ""
+msgstr "Autres"
 
 #: /home/codygarver/maya/po/../src//View/SourceSelector.vala:174
 #: /home/codygarver/maya/po/../src//View/SourceSelector.vala:175
 msgid "Add…"
-msgstr ""
+msgstr "Ajouter..."
 
 #: /home/codygarver/maya/po/../src//View/SourceSelector.vala:179
 #: /home/codygarver/maya/po/../src//View/SourceSelector.vala:180
 msgid "Remove"
-msgstr ""
+msgstr "Supprimer"
 
 #: /home/codygarver/maya/po/../src//View/SourceSelector.vala:185
 #: /home/codygarver/maya/po/../src//View/SourceSelector.vala:186
 msgid "Edit…"
-msgstr ""
+msgstr "Modifier…"
 
 #: /home/codygarver/maya/po/../src//View/EventDialog.vala:92
 msgid "Add Event"
@@ -148,35 +148,35 @@ msgstr "$plus plus ..."
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:41
 msgid "Add Calendar"
-msgstr ""
+msgstr "Ajouter un calendrier"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:44
 msgid "Edit Calendar"
-msgstr ""
+msgstr "Modifier le calendrier"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:73
 msgid "Create Calendar"
-msgstr ""
+msgstr "Créer un calendrier"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:86
 msgid "Name:"
-msgstr ""
+msgstr "Nom :"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:89
 msgid "Calendar Name"
-msgstr ""
+msgstr "Nom du calendrier"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:131
 msgid "Type:"
-msgstr ""
+msgstr "Type :"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:154
 msgid "Color:"
-msgstr ""
+msgstr "Couleur :"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:160
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "Définir comme calendrier par défaut"
 
 #: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:42
 msgid "Create a new event"
@@ -254,44 +254,44 @@ msgstr "calendrier.ics"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
 msgid "URL:"
-msgstr ""
+msgstr "URL :"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
 msgid "Use a secure connection"
-msgstr ""
+msgstr "Utiliser une connexion sécurisée"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
 #: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:37
 msgid "User:"
-msgstr ""
+msgstr "Utilisateur :"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
 msgid "user.name"
-msgstr ""
+msgstr "nom.utilisateur"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
 msgid "Email:"
-msgstr ""
+msgstr "Email :"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
 msgid "john@doe.com"
-msgstr ""
+msgstr "jean@dupont.com"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
 msgid "Server handles meeting invitations"
-msgstr ""
+msgstr "Le serveur gère les invitations aux réunions"
 
 #: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:26
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:46
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "nom.utilisateur ou nom.utilisateur@gmail.com"
 
 #~ msgid "Edit the selected event"
 #~ msgstr "Modifier l'événement sélectionné"
