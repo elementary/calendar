@@ -7,7 +7,8 @@ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)
 #
 # Base bits
 #
-set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
+include (GNUInstallDirs)
+set (DATADIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}")
 set (PKGDATADIR "${DATADIR}/maya-calendar")
 set (GETTEXT_PACKAGE "maya")
 set (APP_NAME "Maya")
@@ -15,7 +16,7 @@ set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.2.2")
 set (VERSION_INFO "Release")
 set (SRC_TARGET ${CMAKE_PROJECT_NAME}-calendar)
-set (PLUGIN_DIR ${CMAKE_INSTALL_PREFIX}/lib/${CMAKE_PROJECT_NAME}/plugins)
+set (PLUGIN_DIR ${CMAKE_INSTALL_FULL_LIBDIR}/${CMAKE_PROJECT_NAME}/plugins)
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 add_definitions ("-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\"")
@@ -62,7 +63,7 @@ add_custom_target (uninstall "${CMAKE_COMMAND}" -P
 file (GLOB _datafiles "${CMAKE_CURRENT_SOURCE_DIR}/data/style/*")
 install (FILES ${_datafiles} DESTINATION ${PKGDATADIR}/style)
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/maya-calendar.desktop DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/maya-calendar.desktop DESTINATION "${DATADIR}/applications")
 
 #
 # i18n
@@ -93,7 +94,7 @@ set (DEPS_PKG
     glib-2.0
     gio-2.0
     gee-1.0
-    gtk+-3.0
+    gtk+-3.0>=3.10
     granite
     libecal-1.2>=3.8.0
     libical
@@ -113,7 +114,7 @@ pkg_check_modules (DEPS REQUIRED ${DEPS_PKG})
 
 find_package (Vala REQUIRED)
 include (ValaVersion)
-ensure_vala_version ("0.18.0" MINIMUM)
+ensure_vala_version ("0.22.0" MINIMUM)
 include (ValaPrecompile)
 
 add_subdirectory (src)
