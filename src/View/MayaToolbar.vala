@@ -39,10 +39,11 @@ namespace Maya.View {
             this.calmodel = calmodel;
             show_close_button = true;
             
-            var button_add = new Gtk.Button.from_icon_name ("event-new", Gtk.IconSize.LARGE_TOOLBAR);
+            var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
             button_add.tooltip_text = _("Create a new event");
             
-            var button_calendar_sources = new Gtk.Button.with_label ("Calendars");
+            var button_calendar_sources = new Gtk.Button.from_icon_name ("event-new", Gtk.IconSize.LARGE_TOOLBAR);
+            button_calendar_sources.tooltip_text = _("Manage Calendars");
             
             month_switcher = new Widgets.DateSwitcher (10);
             year_switcher = new Widgets.DateSwitcher (-1);
@@ -58,10 +59,8 @@ namespace Maya.View {
             var menu_button = new Granite.Widgets.AppMenu (menu);
             
             var title_grid = new Gtk.Grid ();
-            var app_label = new Gtk.Label ("");
-            app_label.set_markup ("<b>%s</b>".printf (Build.APP_NAME));
-            title_grid.expand = true;
-            year_switcher.expand = true;
+            title_grid.column_spacing = 6;
+            
             title_grid.attach (year_switcher, 0, 0, 1, 1);
             title_grid.attach (month_switcher, 1, 0, 1, 1);
             this.set_custom_title (title_grid);
@@ -71,8 +70,7 @@ namespace Maya.View {
             var today = new Gtk.MenuItem.with_label (_("Today"));
             fullscreen = new Gtk.CheckMenuItem.with_label (_("Fullscreen"));
             weeknumbers = new Gtk.CheckMenuItem.with_label (_("Show Week Numbers"));
-            var import = new Gtk.MenuItem.with_label (_("Import..."));
-            var sync = new Gtk.MenuItem.with_label (_("Sync..."));
+            //var import = new Gtk.MenuItem.with_label (_("Import…"));
             var about = new Gtk.MenuItem.with_label (_("About"));
             
             // Append in correct order
@@ -115,6 +113,8 @@ namespace Maya.View {
             year_switcher.left_clicked.connect (() => {change_year (-1);});
             year_switcher.right_clicked.connect (() => {change_year (-1);});
             
+            button_calendar_sources.size_allocate.connect (button_size_allocate);
+            
             fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
             weeknumbers.active = saved_state.show_weeks;
         }
@@ -135,6 +135,11 @@ namespace Maya.View {
 
         void on_menu_show_weeks_toggled () {
             saved_state.show_weeks = weeknumbers.active;
+        }
+        
+        void button_size_allocate (Gtk.Allocation allocation) {
+            month_switcher.height_request = allocation.height;
+            year_switcher.height_request = allocation.height;
         }
 
         void on_tb_sources_clicked (Gtk.Widget widget) {

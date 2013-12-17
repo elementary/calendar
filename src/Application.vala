@@ -229,14 +229,14 @@ namespace Maya {
 
             gridcontainer = new Gtk.Grid ();
             hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-            calview.set_vexpand(true);
+            calview.vexpand = true;
             hpaned.pack1 (calview, true, false);
             hpaned.pack2 (sidebar, true, false);
             hpaned.position = saved_state.hpaned_position;
             gridcontainer.attach (hpaned, 0, 2, 1, 1);
             window.add (gridcontainer);
 
-            add_window(window);
+            add_window (window);
 
             if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
                 window.maximize ();
@@ -423,13 +423,6 @@ namespace Maya {
             info_bar.show_all ();
         }
 
-    }
-
-    internal void desktop_translations () {
-        var comment = _("View and schedule events");
-        var generic_name = _("Calendar");
-        var add_event = _("_Add Event");
-        var keywords = _("Maya;Planner;Dates;Days;Events;");
     }
 
 }

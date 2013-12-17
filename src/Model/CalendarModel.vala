@@ -532,11 +532,7 @@ public class CalendarModel : Object {
     
     public void do_real_deletion () {
         foreach (var source in calendar_trash) {
-            try {
-                source.remove.begin (null);
-            } catch (Error error) {
-                critical (error.message);
-            }
+            source.remove.begin (null);
         }
     }
 }
