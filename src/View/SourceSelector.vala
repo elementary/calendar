@@ -21,6 +21,8 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
     
     private Gtk.ToolButton remove_button;
     private Gtk.ToolButton edit_button;
+    
+    private Model.CalendarModel calmodel;
 
     private enum Columns {
         TOGGLE,
@@ -31,7 +33,9 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
         N_COLUMNS
     }
     
-    public SourceSelector () {
+    public SourceSelector (Model.CalendarModel calmodel) {
+        
+        this.calmodel = calmodel;
         
         var main_grid = new Gtk.Grid ();
         
@@ -49,9 +53,9 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
             tree_store.get_value (iter, 3, out src);
             E.SourceCalendar cal = (E.SourceCalendar)((E.Source)src).get_extension (E.SOURCE_EXTENSION_CALENDAR);
             if (!cal.selected == true) {
-                app.calmodel.add_source ((E.Source)src);
+                calmodel.add_source ((E.Source)src);
             } else {
-                app.calmodel.remove_source ((E.Source)src);
+                calmodel.remove_source ((E.Source)src);
             }
             cal.set_selected (!cal.selected);
             try {
@@ -83,7 +87,7 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
             var registry = new E.SourceRegistry.sync (null);
             var sources = registry.list_sources (E.SOURCE_EXTENSION_CALENDAR);
             // Do not show sources that are on the trash
-            foreach (var source in app.calmodel.calendar_trash) {
+            foreach (var source in calmodel.calendar_trash) {
                 foreach (var source2 in sources) {
                     if (source.dup_uid () == source2.dup_uid ()) {
                         sources.remove (source2);
@@ -260,8 +264,8 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
         GLib.Value src;
         tree_store.get_value (iter, 3, out src);
         var source = src as E.Source;
-        app.calmodel.delete_calendar (source);
-        app.show_calendar_removed (source.display_name);
+        calmodel.delete_calendar (source);
+        ((Maya.Application)GLib.Application.get_default ()).show_calendar_removed (source.display_name);
         this.hide ();
     }
     

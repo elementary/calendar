@@ -48,7 +48,7 @@ public class Maya.View.SourceDialog : Gtk.Window {
         // Dialog properties
         window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
         type_hint = Gdk.WindowTypeHint.DIALOG;
-        transient_for = app.window;
+        transient_for = ((Maya.Application)GLib.Application.get_default ()).window;
 
         main_grid = new Gtk.Grid ();
         main_grid.set_row_spacing (6);

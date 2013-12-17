@@ -24,10 +24,10 @@ namespace Maya {
         private static bool PRINT_VERSION = false;
 
     }
-    public Application app;
     public Plugins.Manager plugins_manager;
     public BackendsManager backends_manager;
     public Settings.MayaSettings global_settings;
+    public Settings.SavedState saved_state;
 
     public static int main (string[] args) {
 
@@ -48,7 +48,7 @@ namespace Maya {
         }
 
         Gtk.init (ref args);
-        app = new Application ();
+        var app = new Application ();
 
         return app.run (args);
 
@@ -71,7 +71,7 @@ namespace Maya {
             build_version = Build.VERSION;
             build_version_info = Build.VERSION_INFO;
 
-            program_name = "Maya";
+            program_name = Build.APP_NAME;
             exec_name = "maya-calendar";
 
             app_years = "2011-2013";
@@ -108,8 +108,6 @@ namespace Maya {
             { "version", 'v', 0, OptionArg.NONE, out Option.PRINT_VERSION, "Print version info and exit", null },
             { null }
         };
-
-        Settings.SavedState saved_state;
 
         public Gtk.Window window;
         View.MayaToolbar toolbar;
@@ -213,8 +211,6 @@ namespace Maya {
 
             create_window ();
 
-            create_toolbar ();
-
             calview = new View.CalendarView (calmodel, saved_state.show_weeks);
             calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
 
@@ -237,7 +233,6 @@ namespace Maya {
             hpaned.pack1 (calview, true, false);
             hpaned.pack2 (sidebar, true, false);
             hpaned.position = saved_state.hpaned_position;
-            gridcontainer.attach (toolbar, 0, 0, 1, 1);
             gridcontainer.attach (hpaned, 0, 2, 1, 1);
             window.add (gridcontainer);
 
@@ -296,33 +291,18 @@ namespace Maya {
 
                             break;
                         case Gdk.Key.@F11:
-                            toolbar.menu.fullscreen.active = !toolbar.menu.fullscreen.active;
+                            toolbar.fullscreen.active = !toolbar.fullscreen.active;
                             break;
                         }
 
                         return false;
             });
-        }
-
-        /**
-         * Creates the toolbar and its elements.
-         */
-        void create_toolbar () {
-            toolbar = new View.MayaToolbar (calmodel.month_start);
-            toolbar.button_add.clicked.connect (() => on_tb_add_clicked (calview.grid.selected_date));
-            toolbar.button_calendar_sources.clicked.connect (on_tb_sources_clicked);
-            toolbar.menu.today.activate.connect (on_menu_today_toggled);
-            toolbar.menu.fullscreen.toggled.connect (on_toggle_fullscreen);
-            toolbar.menu.weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
-            toolbar.menu.fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
-            toolbar.menu.about.activate.connect (() => show_about(window));
-            toolbar.menu.weeknumbers.active = saved_state.show_weeks;
-            toolbar.search_bar.text_changed_pause.connect ((text) => on_search (text));
-
-            toolbar.month_switcher.left_clicked.connect (on_tb_month_switcher_left_clicked);
-            toolbar.month_switcher.right_clicked.connect (on_tb_month_switcher_right_clicked);
-            toolbar.year_switcher.left_clicked.connect (on_tb_year_switcher_left_clicked);
-            toolbar.year_switcher.right_clicked.connect (on_tb_year_switcher_right_clicked);
+            
+            toolbar = new View.MayaToolbar (calmodel);
+            toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.grid.selected_date));
+            toolbar.on_menu_today_toggled.connect (on_menu_today_toggled);
+            toolbar.on_search.connect ((text) => on_search (text));
+            window.set_titlebar (toolbar);
         }
         
         void on_quit () {
@@ -354,14 +334,6 @@ namespace Maya {
         }
 
         //--- SIGNAL HANDLERS ---//
-
-        void on_toggle_fullscreen () {
-
-            if (toolbar.menu.fullscreen.active)
-                window.fullscreen ();
-            else
-                window.unfullscreen ();
-        }
 
         void on_event_dialog_response (View.EventDialog dialog, bool response_id, bool add_event)  {
 
@@ -413,30 +385,6 @@ namespace Maya {
 
         }
 
-        void on_tb_sources_clicked (Gtk.Widget widget) {
-            var source_selector = new View.SourceSelector ();
-            source_selector.move_to_widget (widget);
-            source_selector.show_all ();
-            source_selector.run ();
-            source_selector.destroy ();
-        }
-
-        void on_tb_month_switcher_left_clicked () {
-            calmodel.month_start = calmodel.month_start.add_months (-1);
-        }
-
-        void on_tb_month_switcher_right_clicked () {
-            calmodel.month_start = calmodel.month_start.add_months (1);
-        }
-
-        void on_tb_year_switcher_left_clicked () {
-            calmodel.month_start = calmodel.month_start.add_years (-1);
-        }
-
-        void on_tb_year_switcher_right_clicked () {
-            calmodel.month_start = calmodel.month_start.add_years (1);
-        }
-
         /**
          * Called when the search_bar is used.
          */
@@ -452,10 +400,6 @@ namespace Maya {
                 calmodel.month_start = Util.get_start_of_month ();
 
             calview.today ();
-        }
-
-        void on_menu_show_weeks_toggled () {
-            saved_state.show_weeks = toolbar.menu.weeknumbers.active;
         }
         
         public void show_calendar_removed (string calendar_name) {

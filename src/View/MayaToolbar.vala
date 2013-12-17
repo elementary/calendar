@@ -17,88 +17,106 @@
 
 namespace Maya.View {
 
-    public class MayaToolbar : Gtk.Toolbar {
-
-        public Gtk.ToolButton button_add { get; private set; }
-
-        public Widgets.DateSwitcher month_switcher { get; private set; }
-        public Widgets.DateSwitcher year_switcher { get; private set; }
-
-        public Granite.Widgets.SearchBar search_bar { get; private set; }
-
-        public Gtk.ToolButton button_calendar_sources { get; private set; }
-
-        public Granite.Widgets.AppMenu app_menu { get; private set; }
-        public MayaMenu menu { get; private set; }
-
-        public Widgets.ContractorButtonWithMenu contractor { get; private set; }
-
-        public MayaToolbar (DateTime target) {
-
-            // Toolbar properties
-            get_style_context ().add_class ("primary-toolbar"); // compliant with elementary HIG
-
-            // Initialize everything
-            button_add = make_toolbutton (Gtk.IconTheme.get_default ().has_icon ("event-new") ? "event-new" : "list-add", _("Create a new event"));
-
-            button_calendar_sources = make_toolbutton ("gtk-index", _("Select calendars to display"), true);
-
+    public class MayaToolbar : Gtk.HeaderBar {
+        
+        // Signals
+        public signal void on_search (string search);
+        public signal void on_menu_today_toggled ();
+        public signal void add_calendar_clicked ();
+        
+        Model.CalendarModel calmodel;
+        
+        // Toolbar items
+        Widgets.DateSwitcher month_switcher;
+        Widgets.DateSwitcher year_switcher;
+        public Gtk.SearchEntry search_bar;
+        
+        // Menu items
+        public Gtk.CheckMenuItem fullscreen;
+        Gtk.CheckMenuItem weeknumbers;
+        
+        public MayaToolbar (Model.CalendarModel calmodel) {
+            this.calmodel = calmodel;
+            show_close_button = true;
+            
+            var button_add = new Gtk.Button.from_icon_name ("event-new", Gtk.IconSize.LARGE_TOOLBAR);
+            button_add.tooltip_text = _("Create a new event");
+            
+            var button_calendar_sources = new Gtk.Button.with_label ("Calendars");
+            
             month_switcher = new Widgets.DateSwitcher (10);
             year_switcher = new Widgets.DateSwitcher (-1);
-            set_switcher_date (target);
-
-            search_bar = new Granite.Widgets.SearchBar (_("Search Events"));
+            set_switcher_date (calmodel.month_start);
+            
+            search_bar = new Gtk.SearchEntry ();
+            search_bar.placeholder_text = _("Search Events");
             search_bar.sensitive = false;
+            
+            var contractor = new Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
+            
+            var menu = new Gtk.Menu ();
+            var menu_button = new Granite.Widgets.AppMenu (menu);
+            
+            var title_grid = new Gtk.Grid ();
+            var app_label = new Gtk.Label ("");
+            app_label.set_markup ("<b>%s</b>".printf (Build.APP_NAME));
+            title_grid.expand = true;
+            year_switcher.expand = true;
+            title_grid.attach (year_switcher, 0, 0, 1, 1);
+            title_grid.attach (month_switcher, 1, 0, 1, 1);
+            this.set_custom_title (title_grid);
+            
+            // Create the menu
+            
+            var today = new Gtk.MenuItem.with_label (_("Today"));
+            fullscreen = new Gtk.CheckMenuItem.with_label (_("Fullscreen"));
+            weeknumbers = new Gtk.CheckMenuItem.with_label (_("Show Week Numbers"));
+            var import = new Gtk.MenuItem.with_label (_("Import..."));
+            var sync = new Gtk.MenuItem.with_label (_("Sync..."));
+            var about = new Gtk.MenuItem.with_label (_("About"));
+            
+            // Append in correct order
+            menu.add (today);
+            menu.add (new Gtk.SeparatorMenuItem ());
+            menu.add (fullscreen);
+            menu.add (weeknumbers);
+            
+            /* TODO : Will be done in Maya 0.2
+            menu.append (new Gtk.SeparatorMenuItem ());
+            menu.append (import);
+            menu.append (sync);
+            */
+            
+            menu.append (new Gtk.SeparatorMenuItem ());
+            menu.append (about);
+            
+            pack_start (button_add);
+            
+            pack_end (contractor);
+            pack_end (button_calendar_sources);
+            pack_end (search_bar);
+            pack_end (menu_button);
+            
+            // Connect to signals
+            
+            button_add.clicked.connect (() => add_calendar_clicked ());
+            button_calendar_sources.clicked.connect (on_tb_sources_clicked);
+            today.activate.connect (() => on_menu_today_toggled);
+            fullscreen.toggled.connect (on_toggle_fullscreen);
+            weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
+            about.activate.connect (() => {
+                var app = ((Maya.Application)GLib.Application.get_default ());
+                app.show_about (app.window);
+            });
+            search_bar.search_changed.connect (() => on_search (search_bar.text));
 
-            contractor = new Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
-
-            menu = new MayaMenu ();
-            app_menu = new Granite.Widgets.AppMenu (menu);
-
-            // Insert into appropriate positions
-            insert (button_add, -1);
-
-            insert (make_spacer (), -1);
-
-            insert (make_toolitem_from_widget (Util.set_paddings (month_switcher, 5, 0, 5, 0)), -1);
-            insert (make_toolitem_from_widget (Util.set_paddings (year_switcher, 5, 0, 5, 10)), -1);
-
-            insert (make_spacer (), -1);
-
-            insert (make_toolitem_from_widget (search_bar), -1);
-
-            insert (button_calendar_sources, -1);
-
-            insert (contractor, -1);
-
-            insert (app_menu, -1);
-        }
-
-        private Gtk.ToolButton make_toolbutton (string icon_name, string tooltip_text, bool sensitive = true,  bool can_focus = false) {
-
-            var toolbutton = new Gtk.ToolButton (null, null);
-            toolbutton.icon_name = icon_name;
-            toolbutton.sensitive = sensitive;
-            toolbutton.can_focus = can_focus;
-            toolbutton.tooltip_text = tooltip_text;
-
-            return toolbutton;
-        }
-
-        private Gtk.ToolItem make_spacer () {
-
-            var spacer = new Gtk.ToolItem ();
-            spacer.set_expand (true);
-
-            return spacer;
-        }
-
-        private Gtk.ToolItem make_toolitem_from_widget (Gtk.Widget widget) {
-
-            var toolitem = new Gtk.ToolItem ();
-            toolitem.add (widget);
-
-            return toolitem;
+            month_switcher.left_clicked.connect (() => {change_month (-1);});
+            month_switcher.right_clicked.connect (() => {change_month (1);});
+            year_switcher.left_clicked.connect (() => {change_year (-1);});
+            year_switcher.right_clicked.connect (() => {change_year (-1);});
+            
+            fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
+            weeknumbers.active = saved_state.show_weeks;
         }
 
         public void set_switcher_date (DateTime date) {
@@ -106,7 +124,35 @@ namespace Maya.View {
             year_switcher.text = date.format ("%Y");
         }
 
+        void on_toggle_fullscreen () {
+            var window = ((Maya.Application)GLib.Application.get_default ()).window;
+            
+            if (fullscreen.active)
+                window.fullscreen ();
+            else
+                window.unfullscreen ();
+        }
+
+        void on_menu_show_weeks_toggled () {
+            saved_state.show_weeks = weeknumbers.active;
+        }
+
+        void on_tb_sources_clicked (Gtk.Widget widget) {
+            var source_selector = new View.SourceSelector (calmodel);
+            source_selector.move_to_widget (widget);
+            source_selector.show_all ();
+            source_selector.run ();
+            source_selector.destroy ();
+        }
+
+        void change_month (int relative) {
+            calmodel.month_start = calmodel.month_start.add_months (relative);
+        }
+
+        void change_year (int relative) {
+            calmodel.month_start = calmodel.month_start.add_years (relative);
+        }
+
     }
 
 }
-
