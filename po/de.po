@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-13 14:32-0600\n"
-"PO-Revision-Date: 2013-12-14 15:47+0000\n"
+"PO-Revision-Date: 2013-12-18 14:55+0000\n"
 "Last-Translator: Phillip Sz <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-12-15 05:36+0000\n"
-"X-Generator: Launchpad (build 16869)\n"
+"X-Launchpad-Export-Date: 2013-12-19 05:48+0000\n"
+"X-Generator: Launchpad (build 16872)\n"
 "Language: de\n"
 
 #: /home/codygarver/maya/po/../src//Application.vala:468
@@ -61,7 +61,7 @@ msgstr "Auf diesem Computer"
 
 #: /home/codygarver/maya/po/../src//View/SourceSelector.vala:128
 msgid "Other"
-msgstr ""
+msgstr "Andere"
 
 #: /home/codygarver/maya/po/../src//View/SourceSelector.vala:174
 #: /home/codygarver/maya/po/../src//View/SourceSelector.vala:175
@@ -152,7 +152,7 @@ msgstr "Kalender hinzufügen"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:44
 msgid "Edit Calendar"
-msgstr ""
+msgstr "Kalender bearbeiten"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:73
 msgid "Create Calendar"
@@ -271,7 +271,7 @@ msgstr "Benutzer:"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
 msgid "user.name"
-msgstr ""
+msgstr "Benutzer.Name"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
 msgid "Email:"
@@ -291,7 +291,7 @@ msgstr "Google"
 
 #: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:46
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "Benutzer.Name oder Benutzer.Name@gmail.com"
 
 #~ msgid "Edit the selected event"
 #~ msgstr "Augewählten Termin bearbeiten"
