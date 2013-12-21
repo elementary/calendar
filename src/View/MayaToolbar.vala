@@ -42,7 +42,7 @@ namespace Maya.View {
             var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
             button_add.tooltip_text = _("Create a new event");
             
-            var button_calendar_sources = new Gtk.Button.from_icon_name ("event-new", Gtk.IconSize.LARGE_TOOLBAR);
+            var button_calendar_sources = new Gtk.Button.from_icon_name ("office-calendar", Gtk.IconSize.LARGE_TOOLBAR);
             button_calendar_sources.tooltip_text = _("Manage Calendars");
             
             month_switcher = new Widgets.DateSwitcher (10);
@@ -111,7 +111,7 @@ namespace Maya.View {
             month_switcher.left_clicked.connect (() => {change_month (-1);});
             month_switcher.right_clicked.connect (() => {change_month (1);});
             year_switcher.left_clicked.connect (() => {change_year (-1);});
-            year_switcher.right_clicked.connect (() => {change_year (-1);});
+            year_switcher.right_clicked.connect (() => {change_year (1);});
             
             button_calendar_sources.size_allocate.connect (button_size_allocate);
             
