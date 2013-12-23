@@ -15,11 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#if USE_GRANITE_DECORATED_WINDOW
-public class Maya.View.SourceDialog : Granite.Widgets.LightWindow {
-#else
-public class Maya.View.SourceDialog : Gtk.Window {
-#endif
+public class Maya.View.SourceDialog : Gtk.Grid {
 
     public EventType event_type { get; private set; default=EventType.EDIT;}
     
@@ -29,54 +25,38 @@ public class Maya.View.SourceDialog : Gtk.Window {
     private Backend current_backend;
     private Gee.Collection<PlacementWidget> backend_widgets;
     private Gtk.Grid main_grid;
-    private Gtk.Grid general_grid;
     private Gee.HashMap<string, bool> widgets_checked;
     private Gtk.Button create_button;
-    private E.Source source;
+    private Gtk.ComboBox type_combobox;
+    private Gtk.ListStore list_store;
+    private E.Source source = null;
+    
+    public signal void go_back ();
 
-    public SourceDialog (E.Source? source = null) {
+    public SourceDialog () {
         widgets_checked = new Gee.HashMap<string, bool> (null, null);
-        
-        if (source == null) {
-            title = _("Add Calendar");
-            event_type = EventType.ADD;
-        } else {
-            title = _("Edit Calendar");
-            this.source = source;
-        }
-
-        // Dialog properties
-        window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
-        type_hint = Gdk.WindowTypeHint.DIALOG;
-        transient_for = ((Maya.Application)GLib.Application.get_default ()).window;
 
         main_grid = new Gtk.Grid ();
         main_grid.set_row_spacing (6);
         main_grid.set_column_spacing (12);
         
-        general_grid = new Gtk.Grid ();
-        general_grid.margin_left = 12;
-        general_grid.margin_right = 12;
-        general_grid.margin_top = 12;
-        general_grid.margin_bottom = 12;
-        general_grid.set_row_spacing (6);
-        general_grid.set_column_spacing (12);
+        margin_left = 6;
+        margin_right = 6;
+        margin_top = 6;
+        set_row_spacing (6);
+        set_column_spacing (12);
+        expand = true;
         
         // Buttons
         
         var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
         buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
         
-
-        var cancel_button = new Gtk.Button.from_stock (Gtk.Stock.CANCEL);
-        if (event_type == EventType.ADD) {
-            create_button = new Gtk.Button.with_label (_("Create Calendar"));
-        } else {
-            create_button = new Gtk.Button.from_stock (Gtk.Stock.SAVE);
-        }
+        var cancel_button = new Gtk.Button.with_label (_("Cancel"));
+        create_button = new Gtk.Button.with_label (_("Create"));
 
         create_button.clicked.connect (save);
-        cancel_button.clicked.connect (() => {this.destroy();});
+        cancel_button.clicked.connect (() => go_back ());
 
         buttonbox.pack_end (cancel_button);
         buttonbox.pack_end (create_button);
@@ -88,27 +68,11 @@ public class Maya.View.SourceDialog : Gtk.Window {
         name_entry = new Gtk.Entry ();
         name_entry.placeholder_text = _("Calendar Name");
         name_entry.changed.connect (() => {check_can_validate ();});
-        if (event_type == EventType.EDIT) {
-            name_entry.text = source.display_name;
-        }
         
         // Type Combobox
-        Gtk.ListStore list_store = new Gtk.ListStore (2, typeof (string), typeof (Backend));
-        Gtk.TreeIter iter;
-        int number = 0;
-        int i =0;
-        foreach (var backend in backends_manager.backends) {
-            list_store.append (out iter);
-            list_store.set (iter, 0, backend.get_name (), 1, backend);
-            if (event_type == EventType.EDIT) {
-                if (backend.get_uid () == source.dup_parent ()) {
-                    number = i;
-                }
-            }
-            i++;
-        }
+        list_store = new Gtk.ListStore (2, typeof (string), typeof (Backend));
         
-        var type_combobox = new Gtk.ComboBox.with_model (list_store);
+        type_combobox = new Gtk.ComboBox.with_model (list_store);
 
         Gtk.CellRendererText renderer = new Gtk.CellRendererText ();
         type_combobox.pack_start (renderer, true);
@@ -126,43 +90,37 @@ public class Maya.View.SourceDialog : Gtk.Window {
             add_backend_widgets ();
         });
         
-        type_combobox.set_active (number);
-        
         var type_label = new Gtk.Label (_("Type:"));
-        type_label.expand = true;
         type_label.xalign = 1;
         
-        if (backends_manager.backends.size == 1) {
+        Gtk.TreeIter iter;
+        foreach (var backend in backends_manager.backends) {
+            list_store.append (out iter);
+            list_store.set (iter, 0, backend.get_name (), 1, backend);
+        }
+        
+        if (backends_manager.backends.size <= 1) {
             type_combobox.no_show_all = true;
             type_label.no_show_all = true;
         }
-        
-        if (event_type == EventType.EDIT) {
-            type_combobox.sensitive = false;
-        }
+        type_combobox.set_active (0);
         
         // Color
         var rgba = Gdk.RGBA ();
-        if (event_type == EventType.EDIT) {
-            var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-            rgba.parse (cal.dup_color ());
-        } else {
-            rgba.red = 0.13;
-            rgba.green = 0.42;
-            rgba.blue = 0.70;
-        }
+        rgba.red = 0.13;
+        rgba.green = 0.42;
+        rgba.blue = 0.70;
         var color_label = new Gtk.Label (_("Color:"));
         color_label.xalign = 1;
         color_button = new Gtk.ColorButton.with_rgba (rgba);
         color_button.use_alpha = false;
         
-        
         var check_button = new Gtk.CheckButton.with_label (_("Mark as default calendar"));
-
+        
         check_button.toggled.connect (() => {
             set_as_default = !set_as_default;
         });
-
+        
         main_grid.attach (type_label,    0, 0, 1, 1);
         main_grid.attach (type_combobox, 1, 0, 1, 1);
         main_grid.attach (name_label,    0, 1, 1, 1);
@@ -171,12 +129,50 @@ public class Maya.View.SourceDialog : Gtk.Window {
         main_grid.attach (color_button,  1, 2, 1, 1);
         main_grid.attach (check_button,  1, 3, 1, 1);
         
-        general_grid.attach (main_grid,  0, 0, 2, 1);
-        general_grid.attach (buttonbox,  0, 1, 2, 1);
+        attach (main_grid, 0, 0, 2, 1);
         
-        this.add (general_grid);
+        var fake_label = new Gtk.Grid ();
+        fake_label.expand = true;
+        attach (fake_label, 0, 1, 2, 1);
+        attach (buttonbox, 0, 2, 2, 1);
         
         show_all ();
+    }
+    
+    public void set_source (E.Source? source = null) {
+        this.source = source;
+        if (source == null) {
+            event_type = EventType.ADD;
+            name_entry.text = "";
+            type_combobox.sensitive = true;
+            create_button.set_label (_("Create Calendar"));
+            var rgba = Gdk.RGBA ();
+            rgba.red = 0.13;
+            rgba.green = 0.42;
+            rgba.blue = 0.70;
+            color_button.set_rgba (rgba);
+        } else {
+            create_button.set_label (_("Save"));
+            name_entry.text = source.display_name;
+            type_combobox.sensitive = false;
+            var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+            var rgba = Gdk.RGBA ();
+            rgba.parse (cal.dup_color ());
+            color_button.set_rgba (rgba);
+            list_store.foreach (tree_foreach);
+        }
+    }
+    
+    private bool tree_foreach (Gtk.TreeModel model, Gtk.TreePath path, Gtk.TreeIter iter) {
+        GLib.Value backend;
+        list_store.get_value (iter, 1, out backend);
+        var current_backend = ((Backend)backend);
+        if (current_backend.get_uid () == source.dup_parent ()) {
+            type_combobox.set_active_iter (iter);
+            return true;
+        }
+        return false;
+        
     }
     
     private void remove_backend_widgets () {
@@ -229,10 +225,10 @@ public class Maya.View.SourceDialog : Gtk.Window {
         
         if (event_type == EventType.ADD) {
             current_backend.add_new_calendar (name_entry.text, Util.get_hexa_color (color_button.rgba), set_as_default, backend_widgets);
-            this.destroy();
+            go_back ();
         } else {
             current_backend.modify_calendar (name_entry.text, Util.get_hexa_color (color_button.rgba), set_as_default, backend_widgets, source);
-            this.destroy();
+            go_back ();
         }
     }
 }

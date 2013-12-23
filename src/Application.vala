@@ -401,27 +401,6 @@ namespace Maya {
 
             calview.today ();
         }
-        
-        public void show_calendar_removed (string calendar_name) {
-            var info_bar = new Gtk.InfoBar ();
-            ((Gtk.Orientable)info_bar.get_action_area ()).orientation = Gtk.Orientation.HORIZONTAL;
-            //warning (info_bar.get_action_area ().name);
-            info_bar.set_message_type (Gtk.MessageType.INFO);
-            info_bar.add_button (Gtk.Stock.UNDO, 0);
-            info_bar.add_button (Gtk.Stock.CLOSE, 1);
-            var message_label = new Gtk.Label (_("Calendar \"%s\" removed.").printf (calendar_name));
-            info_bar.get_content_area ().add (message_label);
-            info_bar.response.connect ((id) => {
-                if (id == 0) {
-                    calmodel.restore_calendar ();
-                    info_bar.hide ();
-                } else {
-                    info_bar.hide ();
-                }
-            });
-            gridcontainer.attach (info_bar, 0, 1, 1, 1);
-            info_bar.show_all ();
-        }
 
     }
 

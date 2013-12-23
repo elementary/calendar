@@ -34,6 +34,7 @@ namespace Maya.View {
         // Menu items
         public Gtk.CheckMenuItem fullscreen;
         Gtk.CheckMenuItem weeknumbers;
+        View.SourceSelector source_selector;
         
         public MayaToolbar (Model.CalendarModel calmodel) {
             this.calmodel = calmodel;
@@ -143,11 +144,12 @@ namespace Maya.View {
         }
 
         void on_tb_sources_clicked (Gtk.Widget widget) {
-            var source_selector = new View.SourceSelector (calmodel);
+            if (source_selector == null) {
+                source_selector = new View.SourceSelector (calmodel);
+            }
             source_selector.move_to_widget (widget);
-            source_selector.show_all ();
+            source_selector.show ();
             source_selector.run ();
-            source_selector.destroy ();
         }
 
         void change_month (int relative) {

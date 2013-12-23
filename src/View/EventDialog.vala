@@ -443,7 +443,7 @@ public class EventDialog : Gtk.Window {
 
         Granite.Widgets.TimePicker make_time_picker () {
 
-            var time_picker = new Granite.Widgets.TimePicker.with_format (Maya.Settings.TimeFormat ());
+            var time_picker = new Granite.Widgets.TimePicker ();
             time_picker.width_request = 120;
 
             return time_picker;
@@ -559,4 +559,3 @@ public class EventDialog : Gtk.Window {
 
 
 }
-

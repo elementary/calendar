@@ -31,6 +31,7 @@ set(CLIENT_SOURCE
     View/Grid/VAutoHider.vala
     View/EventDialog.vala
     View/SourceDialog.vala
+    View/SourceItem.vala
     View/MayaToolbar.vala
     View/SourceSelector.vala
     View/Widgets/ContractorButtonWithMenu.vala

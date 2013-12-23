@@ -9,13 +9,13 @@ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)
 #
 include (GNUInstallDirs)
 set (DATADIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}")
-set (PKGDATADIR "${DATADIR}/maya-calendar")
+set (SRC_TARGET ${CMAKE_PROJECT_NAME}-calendar)
+set (PKGDATADIR "${DATADIR}/${SRC_TARGET}")
 set (GETTEXT_PACKAGE "maya")
 set (APP_NAME "Maya")
 set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.2.2")
 set (VERSION_INFO "Release")
-set (SRC_TARGET ${CMAKE_PROJECT_NAME}-calendar)
 set (PLUGIN_DIR ${CMAKE_INSTALL_FULL_LIBDIR}/${CMAKE_PROJECT_NAME}/plugins)
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
@@ -63,7 +63,7 @@ add_custom_target (uninstall "${CMAKE_COMMAND}" -P
 file (GLOB _datafiles "${CMAKE_CURRENT_SOURCE_DIR}/data/style/*")
 install (FILES ${_datafiles} DESTINATION ${PKGDATADIR}/style)
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/maya-calendar.desktop DESTINATION "${DATADIR}/applications")
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${SRC_TARGET}.desktop DESTINATION "${DATADIR}/applications")
 
 #
 # i18n

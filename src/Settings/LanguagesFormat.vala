@@ -17,28 +17,24 @@
 
 namespace Maya.Settings {
 
-	public string DateFormat () {
-		return (_("%B %e, %Y"));
-	}
+    public string DateFormat () {
+        return _("%B %e, %Y");
+    }
 
-	public string DateFormat_Complete () {
-		return (_("%A, %b %d"));
-	}
+    public string DateFormat_Complete () {
+        return _("%A, %b %d");
+    }
 
-	public string TimeFormat () {
-
+    public string TimeFormat () {
         var setting = new GLib.Settings ("org.gnome.desktop.interface");
         string clockformat = setting.get_string ("clock-format");
-        string outputformat;
 
-        if (clockformat == "12h") {
-            outputformat = (_("%l:%M %p"));
+        if (clockformat.contains ("12h")) {
+            return _("%l:%M %p");
         }
         else {
-            outputformat = (_("%H:%M"));
+            return _("%H:%M");
         }
-		return outputformat;
-	}
+    }
 
 }
-

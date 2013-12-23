@@ -14,135 +14,47 @@
 
 public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
     
-    private Gtk.TreeStore tree_store;
-    private Gtk.TreeView tree_view;
-    private Gee.HashMap<string, Gtk.TreeIter?> iter_map;
-    private Gtk.TreeIter default_iter;
-    
-    private Gtk.ToolButton remove_button;
-    private Gtk.ToolButton edit_button;
+    private Gee.HashMap<string, SourceItem?> src_map;
     
     private Model.CalendarModel calmodel;
-
-    private enum Columns {
-        TOGGLE,
-        TEXT,
-        COLOR,
-        SOURCE,
-        VISIBLE,
-        N_COLUMNS
-    }
+    
+    private Gtk.Stack stack;
+    private SourceDialog src_dialog = null;
+    
+    private Gtk.Grid main_grid;
+    private Gtk.Grid calendar_grid;
+    private int calendar_index = 0;
+    private Gtk.ScrolledWindow scroll;
+    private E.SourceRegistry registry;
     
     public SourceSelector (Model.CalendarModel calmodel) {
         
         this.calmodel = calmodel;
         
-        var main_grid = new Gtk.Grid ();
+        stack = new Gtk.Stack ();
         
-        tree_store = new Gtk.TreeStore (Columns.N_COLUMNS, typeof (bool), typeof (string), typeof (string), typeof (E.Source), typeof (bool));
-        tree_view = new Gtk.TreeView.with_model (tree_store);
-        iter_map = new Gee.HashMap<string, Gtk.TreeIter?>();
-
-        var toggle = new Gtk.CellRendererToggle ();
-        toggle.toggled.connect ((toggle, path) => {
-            var tree_path = new Gtk.TreePath.from_string (path);
-            Gtk.TreeIter iter;
-            tree_store.get_iter (out iter, tree_path);
-            tree_store.set (iter, Columns.TOGGLE, !toggle.active);
-            GLib.Value src;
-            tree_store.get_value (iter, 3, out src);
-            E.SourceCalendar cal = (E.SourceCalendar)((E.Source)src).get_extension (E.SOURCE_EXTENSION_CALENDAR);
-            if (!cal.selected == true) {
-                calmodel.add_source ((E.Source)src);
-            } else {
-                calmodel.remove_source ((E.Source)src);
-            }
-            cal.set_selected (!cal.selected);
-            try {
-                ((E.Source)src).write_sync ();
-            } catch (GLib.Error error) {
-                critical (error.message);
-            }
-        });
-
-        var text = new Gtk.CellRendererText ();
-        var column = new Gtk.TreeViewColumn ();
-        column.pack_start (text, true);
-        column.add_attribute (text, "text", Columns.TEXT);
-        column.add_attribute (text, "cell_background", Columns.COLOR);
-        tree_view.append_column (column);
-
-        column = new Gtk.TreeViewColumn ();
-        column.pack_start (toggle, false);
-        column.add_attribute (toggle, "active", Columns.TOGGLE);
-        column.add_attribute (toggle, "cell_background", Columns.COLOR);
-        column.add_attribute (toggle, "visible", Columns.VISIBLE);
-        tree_view.append_column (column);
- 
-        tree_view.set_headers_visible (false);
+        calendar_grid = new Gtk.Grid ();
+        calendar_grid.row_spacing = 12;
+        calendar_grid.margin_left = 6;
+        calendar_grid.margin_right = 6;
         
-        var backend_map = new Gee.HashMap<string, Gtk.TreeIter?>();
+        scroll = new Gtk.ScrolledWindow (null, null);
+        scroll.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        scroll.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
+        scroll.expand = true;
+        scroll.add (calendar_grid);
+        
+        main_grid = new Gtk.Grid ();
+        main_grid.row_spacing = 12;
+        main_grid.margin_top = 6;
+        
+        src_map = new Gee.HashMap<string, SourceItem?>();
         
         try {
-            var registry = new E.SourceRegistry.sync (null);
+            registry = new E.SourceRegistry.sync (null);
             var sources = registry.list_sources (E.SOURCE_EXTENSION_CALENDAR);
-            // Do not show sources that are on the trash
-            foreach (var source in calmodel.calendar_trash) {
-                foreach (var source2 in sources) {
-                    if (source.dup_uid () == source2.dup_uid ()) {
-                        sources.remove (source2);
-                        break;
-                    }
-                }
-            }
-            
-            var selection = tree_view.get_selection ();
-            selection.mode = Gtk.SelectionMode.BROWSE;
-            selection.set_select_function (select_func);
-            
-            foreach (var backend in backends_manager.backends) {
-                Gtk.TreeIter? b_iter = null;
-                foreach (var src in sources) {
-                    Gtk.TreeIter iter;
-                    if (src.parent == backend.get_uid ()) {
-                        if (b_iter == null) {
-                            tree_store.append (out b_iter, null);
-                            tree_store.set (b_iter, Columns.TEXT, backend.get_name (), Columns.VISIBLE, false);
-                            backend_map.set (backend.get_uid (), b_iter);
-                        }
-                        E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-                        tree_store.append (out iter, b_iter);
-                        tree_store.set (iter, Columns.TOGGLE, cal.selected, Columns.TEXT, src.dup_display_name (), 
-                                               Columns.COLOR, cal.dup_color(), Columns.SOURCE, src, 
-                                               Columns.VISIBLE, true);
-                        iter_map.set (src.dup_uid (), iter);
-                        if (src.get_uid() == registry.default_calendar.uid) {
-                            default_iter = iter;
-                            selection.select_iter (iter);
-                        }
-                    }
-                }
-            }
-            
-            Gtk.TreeIter? other = null;
             foreach (var src in sources) {
-                if (!backend_map.keys.contains (src.parent)) {
-                    if (other == null) {
-                        tree_store.append (out other, null);
-                        tree_store.set (other, Columns.TEXT, _("Other"), Columns.VISIBLE, false);
-                    }
-                    Gtk.TreeIter iter;
-                    E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-                    tree_store.append (out iter, other);
-                    tree_store.set (iter, Columns.TOGGLE, cal.selected, Columns.TEXT, src.dup_display_name (), 
-                                               Columns.COLOR, cal.dup_color(), Columns.SOURCE, src, 
-                                               Columns.VISIBLE, true);
-                    iter_map.set (src.dup_uid (), iter);
-                    if (src.get_uid() == registry.default_calendar.uid) {
-                        default_iter = iter;
-                        selection.select_iter (iter);
-                    }
-                }
+                source_added (src);
             }
             
             registry.source_removed.connect (source_removed);
@@ -154,132 +66,104 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
             critical (error.message);
         }
         
-        tree_view.expand_all ();
+        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+        separator.hexpand = true;
         
-        var scroll = new Gtk.ScrolledWindow (null, null);
-        scroll.set_size_request (150, 150);
-        scroll.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        scroll.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
-        scroll.shadow_type = Gtk.ShadowType.IN;
-        scroll.expand = true;
-        scroll.add (tree_view);
-
-        var toolbar = new Gtk.Toolbar();
-        toolbar.set_style (Gtk.ToolbarStyle.ICONS);
-        toolbar.get_style_context ().add_class ("inline-toolbar");
-        toolbar.set_icon_size (Gtk.IconSize.SMALL_TOOLBAR);
-        toolbar.set_show_arrow (false);
-        toolbar.hexpand = true;
-
-        scroll.get_style_context ().set_junction_sides (Gtk.JunctionSides.BOTTOM);
-        toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-        toolbar.get_style_context ().set_junction_sides (Gtk.JunctionSides.TOP);
+        var add_calendar_button = new Gtk.Button.with_label (_("Add New Calendar…"));
+        add_calendar_button.relief = Gtk.ReliefStyle.NONE;
+        add_calendar_button.clicked.connect (create_source);
         
-        var add_button = new Gtk.ToolButton (null, _("Add…"));
-        add_button.set_tooltip_text (_("Add…"));
-        add_button.set_icon_name ("list-add-symbolic");
-        add_button.clicked.connect (create_source);
+        var add_calendar_grid = new Gtk.Grid ();
+        add_calendar_grid.attach (add_calendar_button, 0, 0, 1, 1);
         
-        remove_button = new Gtk.ToolButton (null, _("Remove"));
-        remove_button.set_tooltip_text (_("Remove"));
-        remove_button.set_icon_name ("list-remove-symbolic");
-        remove_button.clicked.connect (remove_source);
-        remove_button.sensitive = false;
+        main_grid.attach (scroll, 0, 0, 1, 1);
+        main_grid.attach (separator, 0, 1, 1, 1);
+        main_grid.attach (add_calendar_grid, 0, 2, 1, 1);
         
-        edit_button = new Gtk.ToolButton (null, _("Edit…"));
-        edit_button.set_tooltip_text (_("Edit…"));
-        edit_button.set_icon_name ("document-properties-symbolic");
-        edit_button.clicked.connect (edit_source);
-        edit_button.sensitive = false;
-        
-        toolbar.insert (add_button, -1);
-        toolbar.insert (remove_button, -1);
-        toolbar.insert (edit_button, -1);
+        stack.add_named (main_grid, "main");
         
         var container = (Gtk.Container) get_content_area ();
-        container.add (main_grid);
-        main_grid.attach (scroll, 0, 0, 1, 1);
-        main_grid.attach (toolbar, 0, 1, 1, 1);
-    }
-    
-    private bool select_func (Gtk.TreeSelection selection, Gtk.TreeModel model,
-                              Gtk.TreePath path, bool path_currently_selected) {
-        bool selectable = true;
-        Gtk.TreeIter iter;
-        tree_store.get_iter (out iter, path);
-
-        if (tree_store.iter_has_child (iter)) {
-            selectable = false;
-        } else {
-            activate_buttons ();
-        }
-        
-        return selectable;
-    }
-    
-    private void activate_buttons () {
-        edit_button.sensitive = true;
-        remove_button.sensitive = true;
+        container.add (stack);
+        main_grid.show_all ();
     }
     
     private void source_removed (E.Source source) {
-        if (iter_map.has_key (source.dup_uid ())) {
-            var iter = iter_map.get (source.dup_uid ());
-            tree_store.remove (ref iter);
-            iter_map.unset (source.dup_uid (), null);
-        }
+        var source_item = src_map.get (source.dup_uid ());
+        source_item.hide ();
     }
     
     private void source_added (E.Source source) {
-        Gtk.TreeIter iter;
-        E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-        tree_store.append (out iter, null);
-        tree_store.set (iter, Columns.TOGGLE, cal.selected, Columns.TEXT, source.dup_display_name ());
-        iter_map.set (source.dup_uid (), iter);
+        var source_item = new SourceItem (source, calmodel);
+        source_item.edit_request.connect (edit_source);
+        source_item.remove_request.connect (remove_source);
+        
+        calendar_grid.attach (source_item, 0, calendar_index, 1, 1);
+        int minimum_height;
+        int natural_height;
+        calendar_index++;
+        calendar_grid.show_all ();
+        calendar_grid.get_preferred_height (out minimum_height, out natural_height);
+        if (natural_height > 150) {
+            scroll.set_size_request (-1, 150);
+        } else {
+            scroll.set_size_request (-1, natural_height);
+        }
+        
+        src_map.set (source.dup_uid (), source_item);
+        
     }
     
     private void source_disabled (E.Source source) {
-        
+        var source_item = src_map.get (source.dup_uid ());
+        source_item.source_has_changed ();
     }
     
     private void source_enabled (E.Source source) {
-        
+        var source_item = src_map.get (source.dup_uid ());
+        source_item.source_has_changed ();
     }
     
     private void source_changed (E.Source source) {
-        
+        var source_item = src_map.get (source.dup_uid ());
+        source_item.source_has_changed ();
     }
     
     private void create_source () {
-        var dialog = new SourceDialog ();
-        this.hide ();
-        dialog.present ();
+        if (src_dialog == null) {
+            src_dialog = new SourceDialog ();
+            src_dialog.go_back.connect (() => {switch_to_main ();});
+            stack.add_named (src_dialog, "source");
+        }
+        src_dialog.set_source (null);
+        switch_to_source ();
     }
     
-    private void remove_source () {
-        var selection = tree_view.get_selection ();
-        Gtk.TreeModel model;
-        Gtk.TreeIter iter;
-        selection.get_selected (out model, out iter);
-        GLib.Value src;
-        tree_store.get_value (iter, 3, out src);
-        var source = src as E.Source;
+    private void remove_source (E.Source source) {
         calmodel.delete_calendar (source);
-        ((Maya.Application)GLib.Application.get_default ()).show_calendar_removed (source.display_name);
-        this.hide ();
+        var source_item = src_map.get (source.dup_uid ());
+        source_item.show_calendar_removed ();
     }
     
-    private void edit_source () {
-        var selection = tree_view.get_selection ();
-        Gtk.TreeModel model;
-        Gtk.TreeIter iter;
-        selection.get_selected (out model, out iter);
-        GLib.Value src;
-        tree_store.get_value (iter, 3, out src);
-        var source = src as E.Source;
-        var dialog = new SourceDialog (source);
-        this.hide ();
-        dialog.present ();
+    private void edit_source (E.Source source) {
+        if (src_dialog == null) {
+            src_dialog = new SourceDialog ();
+            src_dialog.go_back.connect (() => {switch_to_main ();});
+            stack.add_named (src_dialog, "source");
+        }
+        src_dialog.set_source (source);
+        switch_to_source ();
+    }
+    
+    private void switch_to_main () {
+        main_grid.show ();
+        stack.set_visible_child_full ("main", Gtk.StackTransitionType.SLIDE_RIGHT);
+        src_dialog.hide ();
+    }
+    
+    private void switch_to_source () {
+        src_dialog.show ();
+        stack.set_visible_child_full ("source", Gtk.StackTransitionType.SLIDE_LEFT);
+        main_grid.hide ();
     }
     
 }
