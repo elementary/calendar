@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-13 14:32-0600\n"
-"PO-Revision-Date: 2013-12-21 17:19+0000\n"
+"PO-Revision-Date: 2014-01-09 16:56+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-12-22 05:34+0000\n"
-"X-Generator: Launchpad (build 16872)\n"
+"X-Launchpad-Export-Date: 2014-01-10 05:16+0000\n"
+"X-Generator: Launchpad (build 16884)\n"
 "Language: et\n"
 
 #: /home/codygarver/maya/po/../src//Application.vala:468
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "Kalender \"%s\" eemaldati."
 
 #: /home/codygarver/maya/po/../src//Application.vala:485
 msgid "View and schedule events"
@@ -148,15 +148,15 @@ msgstr "$veel veel ..."
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:41
 msgid "Add Calendar"
-msgstr ""
+msgstr "Kalendri lisamine"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:44
 msgid "Edit Calendar"
-msgstr ""
+msgstr "Kalendri muutmine"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:73
 msgid "Create Calendar"
-msgstr ""
+msgstr "Kalendri loomine"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:86
 msgid "Name:"
@@ -164,7 +164,7 @@ msgstr "Nimi:"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:89
 msgid "Calendar Name"
-msgstr ""
+msgstr "Kalendri nimi"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:131
 msgid "Type:"
@@ -176,7 +176,7 @@ msgstr "Värv:"
 
 #: /home/codygarver/maya/po/../src//View/SourceDialog.vala:160
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "Määra vaikimisi kalendriks"
 
 #: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:42
 msgid "Create a new event"
@@ -260,7 +260,7 @@ msgstr "URL:"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
 msgid "Use a secure connection"
-msgstr ""
+msgstr "Turvalise ühenduse kasutamine"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
 #: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:37
@@ -269,7 +269,7 @@ msgstr "Kasutaja:"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
 msgid "user.name"
-msgstr ""
+msgstr "kasutaja.nimi"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
 msgid "Email:"
@@ -277,19 +277,19 @@ msgstr "E-mail:"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
 msgid "john@doe.com"
-msgstr ""
+msgstr "juhan@julm.ee"
 
 #: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
 msgid "Server handles meeting invitations"
-msgstr ""
+msgstr "Kokkusaamiskutseid hallatakse serveri poolt"
 
 #: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:26
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:46
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "kasutaja.nimi või kasutaja.nimi@gmail.com"
 
 #~ msgid "Contacts"
 #~ msgstr "Kontaktid"
