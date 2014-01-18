@@ -47,7 +47,7 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         revealer_grid.row_spacing = 12;
 
         calendar_name_label = new Gtk.Label (source.dup_display_name ());
-        calendar_name_label.set_markup ("<b>%s</b>".printf (source.dup_display_name ()));
+        calendar_name_label.set_markup ("<b>%s</b>".printf (GLib.Markup.escape_text (source.dup_display_name ())));
         calendar_name_label.xalign = 0;
 
         Maya.Backend selected_backend = null;
@@ -190,7 +190,7 @@ public class Maya.View.SourceItem : Gtk.EventBox {
     }
 
     public void source_has_changed () {
-        calendar_name_label.set_markup ("<b>%s</b>".printf (source.dup_display_name ()));
+        calendar_name_label.set_markup ("<b>%s</b>".printf (GLib.Markup.escape_text (source.dup_display_name ())));
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
         var color = Gdk.RGBA ();
