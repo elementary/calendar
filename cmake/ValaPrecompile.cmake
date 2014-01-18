@@ -185,10 +185,21 @@ macro(vala_precompile output target_name)
     endif(ARGS_GENERATE_HEADER)
 
     set(gir_arguments "")
+    set(gircomp_command "")
     if(ARGS_GENERATE_GIR)
         list(APPEND out_files "${DIRECTORY}/${ARGS_GENERATE_GIR}.gir")
         list(APPEND out_files_display "${ARGS_GENERATE_GIR}.gir")
         set(gir_arguments "--gir=${ARGS_GENERATE_GIR}.gir")
+
+        include (FindGirCompiler)
+        find_package(GirCompiler REQUIRED)
+        
+        set(gircomp_command 
+            COMMAND 
+                ${G_IR_COMPILER_EXECUTABLE}
+            ARGS 
+                "${DIRECTORY}/${ARGS_GENERATE_GIR}.gir"
+                -o "${DIRECTORY}/${ARGS_GENERATE_GIR}.typelib")
     endif(ARGS_GENERATE_GIR)
 
     set(symbols_arguments "")
@@ -201,7 +212,7 @@ macro(vala_precompile output target_name)
     # Workaround for a bug that would make valac run twice. This file is written
     # after the vala compiler generates C source code.
     set(OUTPUT_STAMP ${CMAKE_CURRENT_BINARY_DIR}/${target_name}_valac.stamp)
-
+        
     add_custom_command(
     OUTPUT
         ${OUTPUT_STAMP}
@@ -228,6 +239,7 @@ macro(vala_precompile output target_name)
         ${ARGS_CUSTOM_VAPIS}
     COMMENT
         "Generating ${out_files_display}"
+    ${gircomp_command}
     )
 
     # This command will be run twice for some reason (pass a non-empty string to COMMENT

@@ -31,7 +31,7 @@ set(CLIENT_SOURCE
     View/Grid/VAutoHider.vala
     View/EventDialog.vala
     View/SourceDialog.vala
-    View/MayaMenu.vala
+    View/SourceItem.vala
     View/MayaToolbar.vala
     View/SourceSelector.vala
     View/Widgets/ContractorButtonWithMenu.vala
@@ -67,12 +67,12 @@ add_executable(${EXEC_NAME} ${CLIENT_VALA_C})
 target_link_libraries(${EXEC_NAME} ${DEPS_LIBRARIES})
 
 if (BUILD_SHARED_LIBS)
-    install(TARGETS ${CLIENT_LIBRARY_NAME} DESTINATION lib)
+    install(TARGETS ${CLIENT_LIBRARY_NAME} DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
     # Install lib stuffs
-    install (FILES ${CMAKE_BINARY_DIR}/src/${CLIENT_VAPI}.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig/)
-    install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CLIENT_VAPI}.vapi DESTINATION share/vala/vapi/)
-    install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/${CLIENT_VAPI}.deps DESTINATION share/vala/vapi/)
-    install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CLIENT_VAPI}.h DESTINATION include/${CLIENT_VAPI}/)
+    install (FILES ${CMAKE_BINARY_DIR}/src/${CLIENT_VAPI}.pc DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/pkgconfig/)
+    install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CLIENT_VAPI}.vapi DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/vala/vapi/)
+    install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/${CLIENT_VAPI}.deps DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/vala/vapi/)
+    install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CLIENT_VAPI}.h DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR}/${CLIENT_VAPI}/)
 endif ()
 
-install(TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
+install(TARGETS ${EXEC_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_FULL_BINDIR})
