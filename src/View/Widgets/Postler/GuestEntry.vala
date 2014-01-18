@@ -139,7 +139,7 @@ namespace Maya.View.Widgets {
             });
             button.show_all ();
             add (button);
-            reorder_child (entry, -1);
+            add_child (entry);
             empty = false;
         }
 

@@ -89,13 +89,13 @@ public class Maya.View.SourceItem : Gtk.EventBox {
             }
         });
         
-        delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
         delete_button.set_tooltip_text (_("Remove"));
         delete_button.clicked.connect (() => {remove_request (source);});
         delete_button.relief = Gtk.ReliefStyle.NONE;
         delete_button.no_show_all = true;
         
-        edit_button = new Gtk.Button.from_icon_name ("document-properties-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        edit_button = new Gtk.Button.from_icon_name ("document-properties-symbolic", Gtk.IconSize.MENU);
         edit_button.set_tooltip_text (_("Edit…"));
         edit_button.clicked.connect (() => {edit_request (source);});
         edit_button.relief = Gtk.ReliefStyle.NONE;
@@ -131,6 +131,7 @@ public class Maya.View.SourceItem : Gtk.EventBox {
             info_revealer.set_reveal_child (false);
             info_revealer.hide ();
             hide ();
+            destroy ();
         });
         var message_label = new Gtk.Label (_("Calendar \"%s\" removed.").printf (source.display_name));
         message_label.hexpand = true;

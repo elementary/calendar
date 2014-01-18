@@ -180,11 +180,13 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             return;
         foreach (var widget in backend_widgets) {
             widget.widget.hide ();
+            widget.widget.destroy ();
         }
         backend_widgets.clear ();
     }
     
     private void add_backend_widgets () {
+        widgets_checked.clear ();
         foreach (var widget in backend_widgets) {
             main_grid.attach (widget.widget, widget.column, 4 + widget.row, 1, 1);
             if (widget.needed == true && widget.widget is Gtk.Entry) {
@@ -199,22 +201,19 @@ public class Maya.View.SourceDialog : Gtk.Grid {
     
     private void entry_changed (PlacementWidget widget) {
         widgets_checked.unset (widget.ref_name);
-        widgets_checked.set (widget.ref_name, ((Gtk.Entry)widget.widget).text != "");
+        widgets_checked.set (widget.ref_name, ((Gtk.Entry)widget.widget).text.chug ().char_count () > 0);
         check_can_validate ();
     }
     
     private void check_can_validate () {
-        bool result = true;
         foreach (var valid in widgets_checked.values) {
             if (valid == false) {
-                result = false;
-                break;
+                create_button.sensitive = false;
+                return;
             }
         }
-        if (result == true && name_entry.text != "") {
+        if (name_entry.text != "") {
             create_button.sensitive = true;
-        } else {
-            create_button.sensitive = false;
         }
     }
 

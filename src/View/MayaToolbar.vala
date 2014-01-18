@@ -89,10 +89,10 @@ namespace Maya.View {
             menu.append (new Gtk.SeparatorMenuItem ());
             menu.append (about);
             
+            pack_start (button_calendar_sources);
             pack_start (button_add);
             
             pack_end (contractor);
-            pack_end (button_calendar_sources);
             pack_end (search_bar);
             pack_end (menu_button);
             

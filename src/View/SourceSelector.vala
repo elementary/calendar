@@ -45,7 +45,7 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
         scroll.add (calendar_grid);
         
         main_grid = new Gtk.Grid ();
-        main_grid.row_spacing = 12;
+        main_grid.row_spacing = 6;
         main_grid.margin_top = 6;
         
         src_map = new Gee.HashMap<string, SourceItem?>();
@@ -71,9 +71,13 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
         
         var add_calendar_button = new Gtk.Button.with_label (_("Add New Calendar…"));
         add_calendar_button.relief = Gtk.ReliefStyle.NONE;
+        add_calendar_button.hexpand = true;
+        add_calendar_button.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+        add_calendar_button.get_style_context ().remove_class (Gtk.STYLE_CLASS_BUTTON);
         add_calendar_button.clicked.connect (create_source);
         
         var add_calendar_grid = new Gtk.Grid ();
+        add_calendar_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_MENU);
         add_calendar_grid.attach (add_calendar_button, 0, 0, 1, 1);
         
         main_grid.attach (scroll, 0, 0, 1, 1);
@@ -83,6 +87,8 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
         stack.add_named (main_grid, "main");
         
         var container = (Gtk.Container) get_content_area ();
+        container.margin_right = container.margin_right - 5;
+        container.margin_left = container.margin_left - 5;
         container.add (stack);
         main_grid.show_all ();
     }

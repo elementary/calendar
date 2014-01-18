@@ -11,17 +11,18 @@
 
 namespace Maya.View.Widgets {
     public class FlowBox : Gtk.Container {
-        List<Gtk.Widget> children;
+        Gee.LinkedList<Gtk.Widget> children;
         int last_row_count;
         int last_row_height;
 
         public FlowBox () {
+            children = new Gee.LinkedList<Gtk.Widget> ();
             set_has_window (false);
             set_resize_mode (Gtk.ResizeMode.QUEUE);
         }
 
         public override void add (Gtk.Widget widget) {
-            children.append (widget);
+            children.add (widget);
             widget.set_parent (this);
             if (get_realized ())
                 widget.realize ();
@@ -42,9 +43,9 @@ namespace Maya.View.Widgets {
                 callback (child);
         }
 
-        public void reorder_child (Gtk.Widget widget, int position) {
+        public void add_child (Gtk.Widget widget) {
             children.remove (widget);
-            children.insert (widget, position);
+            children.add (widget);
             queue_resize ();
         }
 
