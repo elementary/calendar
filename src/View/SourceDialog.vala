@@ -16,9 +16,8 @@
 //
 
 public class Maya.View.SourceDialog : Gtk.Grid {
-
     public EventType event_type { get; private set; default=EventType.EDIT;}
-    
+
     private Gtk.Entry name_entry;
     private Gtk.ColorButton color_button;
     private bool set_as_default = false;
@@ -30,7 +29,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
     private Gtk.ComboBox type_combobox;
     private Gtk.ListStore list_store;
     private E.Source source = null;
-    
+
     public signal void go_back ();
 
     public SourceDialog () {
@@ -39,19 +38,19 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         main_grid = new Gtk.Grid ();
         main_grid.set_row_spacing (6);
         main_grid.set_column_spacing (12);
-        
+
         margin_left = 6;
         margin_right = 6;
         margin_top = 6;
         set_row_spacing (6);
         set_column_spacing (12);
         expand = true;
-        
+
         // Buttons
-        
+
         var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
         buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
-        
+
         var cancel_button = new Gtk.Button.with_label (_("Cancel"));
         create_button = new Gtk.Button.with_label (_("Create"));
 
@@ -60,18 +59,17 @@ public class Maya.View.SourceDialog : Gtk.Grid {
 
         buttonbox.pack_end (cancel_button);
         buttonbox.pack_end (create_button);
-        
+
         // Name
-        
         var name_label = new Gtk.Label (_("Name:"));
         name_label.xalign = 1;
         name_entry = new Gtk.Entry ();
         name_entry.placeholder_text = _("Calendar Name");
         name_entry.changed.connect (() => {check_can_validate ();});
-        
+
         // Type Combobox
         list_store = new Gtk.ListStore (2, typeof (string), typeof (Backend));
-        
+
         type_combobox = new Gtk.ComboBox.with_model (list_store);
 
         Gtk.CellRendererText renderer = new Gtk.CellRendererText ();
@@ -80,7 +78,6 @@ public class Maya.View.SourceDialog : Gtk.Grid {
 
         type_combobox.changed.connect (() => {
             GLib.Value backend;
-            
             Gtk.TreeIter b_iter;
             type_combobox.get_active_iter (out b_iter);
             list_store.get_value (b_iter, 1, out backend);
@@ -89,22 +86,23 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             backend_widgets = ((Backend)backend).get_new_calendar_widget (source);
             add_backend_widgets ();
         });
-        
+
         var type_label = new Gtk.Label (_("Type:"));
         type_label.xalign = 1;
-        
+
         Gtk.TreeIter iter;
         foreach (var backend in backends_manager.backends) {
             list_store.append (out iter);
             list_store.set (iter, 0, backend.get_name (), 1, backend);
         }
-        
+
         if (backends_manager.backends.size <= 1) {
             type_combobox.no_show_all = true;
             type_label.no_show_all = true;
         }
+
         type_combobox.set_active (0);
-        
+
         // Color
         var rgba = Gdk.RGBA ();
         rgba.red = 0.13;
@@ -114,13 +112,13 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         color_label.xalign = 1;
         color_button = new Gtk.ColorButton.with_rgba (rgba);
         color_button.use_alpha = false;
-        
+
         var check_button = new Gtk.CheckButton.with_label (_("Mark as default calendar"));
-        
+
         check_button.toggled.connect (() => {
             set_as_default = !set_as_default;
         });
-        
+
         main_grid.attach (type_label,    0, 0, 1, 1);
         main_grid.attach (type_combobox, 1, 0, 1, 1);
         main_grid.attach (name_label,    0, 1, 1, 1);
@@ -128,14 +126,14 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         main_grid.attach (color_label,   0, 2, 1, 1);
         main_grid.attach (color_button,  1, 2, 1, 1);
         main_grid.attach (check_button,  1, 3, 1, 1);
-        
+
         attach (main_grid, 0, 0, 2, 1);
-        
+
         var fake_label = new Gtk.Grid ();
         fake_label.expand = true;
         attach (fake_label, 0, 1, 2, 1);
         attach (buttonbox, 0, 2, 2, 1);
-        
+
         show_all ();
     }
     
@@ -162,7 +160,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             list_store.foreach (tree_foreach);
         }
     }
-    
+
     private bool tree_foreach (Gtk.TreeModel model, Gtk.TreePath path, Gtk.TreeIter iter) {
         GLib.Value backend;
         list_store.get_value (iter, 1, out backend);
@@ -171,20 +169,22 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             type_combobox.set_active_iter (iter);
             return true;
         }
+
         return false;
-        
     }
-    
+
     private void remove_backend_widgets () {
         if (backend_widgets == null)
             return;
+
         foreach (var widget in backend_widgets) {
             widget.widget.hide ();
             widget.widget.destroy ();
         }
+
         backend_widgets.clear ();
     }
-    
+
     private void add_backend_widgets () {
         widgets_checked.clear ();
         foreach (var widget in backend_widgets) {
@@ -198,13 +198,13 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         }
         check_can_validate ();
     }
-    
+
     private void entry_changed (PlacementWidget widget) {
         widgets_checked.unset (widget.ref_name);
         widgets_checked.set (widget.ref_name, ((Gtk.Entry)widget.widget).text.chug ().char_count () > 0);
         check_can_validate ();
     }
-    
+
     private void check_can_validate () {
         foreach (var valid in widgets_checked.values) {
             if (valid == false) {
@@ -212,16 +212,13 @@ public class Maya.View.SourceDialog : Gtk.Grid {
                 return;
             }
         }
+
         if (name_entry.text != "") {
             create_button.sensitive = true;
         }
     }
 
-    //--- Public Methods ---//
-    
-    
     public void save () {
-        
         if (event_type == EventType.ADD) {
             current_backend.add_new_calendar (name_entry.text, Util.get_hexa_color (color_button.rgba), set_as_default, backend_widgets);
             go_back ();

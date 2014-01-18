@@ -96,6 +96,8 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
     private void source_removed (E.Source source) {
         var source_item = src_map.get (source.dup_uid ());
         source_item.hide ();
+        src_map.unset (source.dup_uid ());
+        source_item.destroy ();
     }
     
     private void source_added (E.Source source) {
@@ -161,15 +163,19 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
     }
     
     private void switch_to_main () {
+        main_grid.no_show_all = false;
         main_grid.show ();
         stack.set_visible_child_full ("main", Gtk.StackTransitionType.SLIDE_RIGHT);
         src_dialog.hide ();
+        src_dialog.no_show_all = true;
     }
     
     private void switch_to_source () {
+        src_dialog.no_show_all = false;
         src_dialog.show ();
         stack.set_visible_child_full ("source", Gtk.StackTransitionType.SLIDE_LEFT);
         main_grid.hide ();
+        main_grid.no_show_all = true;
     }
     
 }
