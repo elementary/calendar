@@ -132,8 +132,8 @@ namespace Maya.Util {
         requires (dr1.days == dr2.days) {
 
         var map = new Gee.TreeMap<DateTime, DateTime>(
-            (CompareFunc) DateTime.compare,
-            (EqualFunc) datetime_equal_func);
+            (GLib.CompareDataFunc<E.CalComponent>?) DateTime.compare,
+            (Gee.EqualDataFunc<GLib.DateTime>?) datetime_equal_func);
 
         var i1 = dr1.iterator();
         var i2 = dr2.iterator();
@@ -146,14 +146,28 @@ namespace Maya.Util {
     }
 
     /* Iterator of DateRange objects */
-    public class DateIterator : Object, Gee.Iterator<DateTime> {
+    public class DateIterator : Object, Gee.Traversable<DateTime>, Gee.Iterator<DateTime> {
 
         DateTime current;
         DateRange range;
+        
+        public bool valid { get {return true;} }
+        public bool read_only { get {return false;} }
 
         public DateIterator (DateRange range) {
             this.range = range;
             this.current = range.first.add_days (-1);
+        }
+        
+        public bool @foreach (Gee.ForallFunc<DateTime> f) {
+            var element = range.first;
+            while (element.compare(range.last) < 0) {
+                if (f (element) == false) {
+                    return false;
+                }
+                element = element.add_days (1);
+            }
+            return true;
         }
 
         public bool next () {
@@ -182,10 +196,20 @@ namespace Maya.Util {
     }
 
     /* Represents date range from 'first' to 'last' inclusive */
-    public class DateRange : Object, Gee.Iterable<DateTime> {
+    public class DateRange : Object, Gee.Traversable<DateTime>, Gee.Iterable<DateTime> {
 
         public DateTime first { get; private set; }
         public DateTime last { get; private set; }
+        
+        public bool @foreach (Gee.ForallFunc<DateTime> f) {
+
+            foreach (var date in this) {
+                if (f (date) == false) {
+                    return false;
+                }
+            }
+            return true;
+        }
 
         public int64 days {
             get { return last.difference (first) / GLib.TimeSpan.DAY; }
@@ -219,7 +243,7 @@ namespace Maya.Util {
 
         public Gee.SortedSet<DateTime> to_set() {
 
-            var @set = new Gee.TreeSet<DateTime> ((CompareFunc) DateTime.compare);
+            var @set = new Gee.TreeSet<DateTime> ((GLib.CompareDataFunc<GLib.DateTime>?) DateTime.compare);
 
             foreach (var date in this)
                 set.add (date);
@@ -229,7 +253,7 @@ namespace Maya.Util {
 
         public Gee.List<DateTime> to_list() {
 
-            var list = new Gee.ArrayList<DateTime> ((EqualFunc) datetime_equal_func);
+            var list = new Gee.ArrayList<DateTime> ((Gee.EqualDataFunc<GLib.DateTime>?) datetime_equal_func);
 
             foreach (var date in this)
                 list.add (date);

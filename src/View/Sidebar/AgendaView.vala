@@ -53,8 +53,8 @@ namespace Maya.View {
             row_spacing = 0;
 
             source_widgets = new Gee.HashMap<E.Source, SourceWidget> (
-                (HashFunc) Util.source_hash_func,
-                (EqualFunc) Util.source_equal_func,
+                (Gee.HashDataFunc<E.Source>?) Util.source_hash_func,
+                (Gee.EqualDataFunc<E.Source>?) Util.source_equal_func,
                 null);
 
             try {
@@ -246,4 +246,3 @@ namespace Maya.View {
 	}
 
 }
-

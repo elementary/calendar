@@ -54,7 +54,7 @@ public class EventButton : Gtk.Grid {
     /**
      * Compares the given buttons according to date.
      */
-    public static CompareFunc<EventButton> compare_buttons = (button1, button2) => {
+    public static GLib.CompareDataFunc<Maya.View.EventButton>? compare_buttons = (button1, button2) => {
         var comp1 = button1.comp;
         var comp2 = button2.comp;
 

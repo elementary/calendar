@@ -60,18 +60,18 @@ public class CalendarModel : Object {
         compute_ranges ();
 
         source_client = new Gee.HashMap<E.Source, E.CalClient> (
-            (HashFunc) Util.source_hash_func,
-            (EqualFunc) Util.source_equal_func,
+            (Gee.HashDataFunc<E.Source>?) Util.source_hash_func,
+            (Gee.EqualDataFunc<E.CalComponent>?) Util.source_equal_func,
             null);
 
         source_events = new Gee.HashMap<E.Source, Gee.Map<string, E.CalComponent>> (
-            (HashFunc) Util.source_hash_func,
-            (EqualFunc) Util.source_equal_func,
+            (Gee.HashDataFunc<E.Source>?) Util.source_hash_func,
+            (Gee.EqualDataFunc<E.CalComponent>?) Util.source_equal_func,
             null);
 
         source_view = new Gee.HashMap<E.Source, E.CalClientView> (
-            (HashFunc) Util.source_hash_func,
-            (EqualFunc) Util.source_equal_func,
+            (Gee.HashDataFunc<E.Source>?) Util.source_hash_func,
+            (Gee.EqualDataFunc<E.CalComponent>?) Util.source_equal_func,
             null);
 
         calendar_trash = new Gee.LinkedList<E.Source> ();
@@ -275,9 +275,9 @@ public class CalendarModel : Object {
         // create empty source-event map
 
         Gee.Map<string, E.CalComponent> events = new Gee.HashMap<string, E.CalComponent> (
-            (HashFunc) Util.string_hash_func,
-            (EqualFunc) Util.string_equal_func,
-            (EqualFunc) Util.calcomponent_equal_func);
+            (Gee.HashDataFunc<string>?) Util.string_hash_func,
+            (Gee.EqualDataFunc<E.CalComponent>?) Util.string_equal_func,
+            (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
 
         source_events.set (source, events);
 
@@ -459,7 +459,7 @@ public class CalendarModel : Object {
         Gee.Map<string, E.CalComponent> events = source_events.get (source);
 
         Gee.ArrayList<E.CalComponent> added_events = new Gee.ArrayList<E.CalComponent> (
-            (EqualFunc) Util.calcomponent_equal_func);
+            (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
 
         foreach (var comp in objects) {
 
@@ -483,7 +483,7 @@ public class CalendarModel : Object {
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
 
         Gee.Collection<E.CalComponent> updated_events = new Gee.ArrayList<E.CalComponent> (
-            (EqualFunc) Util.calcomponent_equal_func);
+            (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
 
         foreach (var comp in objects) {
 
@@ -504,7 +504,7 @@ public class CalendarModel : Object {
 
         var events = source_events.get (source);
         Gee.Collection<E.CalComponent> removed_events = new Gee.ArrayList<E.CalComponent> (
-            (EqualFunc) Util.calcomponent_equal_func);
+            (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
 
         foreach (unowned E.CalComponentId? cid in cids) {
 
