@@ -7,211 +7,38 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-13 14:32-0600\n"
+"POT-Creation-Date: 2014-02-01 21:48+0100\n"
 "PO-Revision-Date: 2012-06-25 23:42+0000\n"
 "Last-Translator: Niels Avonds <Unknown>\n"
 "Language-Team: Malayalam <ml@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-12-14 06:03+0000\n"
-"X-Generator: Launchpad (build 16869)\n"
+"X-Launchpad-Export-Date: 2014-02-02 05:43+0000\n"
+"X-Generator: Launchpad (build 16916)\n"
 "Language: ml\n"
 
-#: /home/codygarver/maya/po/../src//Application.vala:468
-msgid "Calendar \"%s\" removed."
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//Application.vala:485
-msgid "View and schedule events"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//Application.vala:486
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:344
-msgid "Calendar"
-msgstr "കലണ്ടര്‍"
-
-#: /home/codygarver/maya/po/../src//Application.vala:487
-msgid "_Add Event"
-msgstr "ഇവന്റ് _ചേര്‍ക്കുക"
-
-#: /home/codygarver/maya/po/../src//Application.vala:488
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:21
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr ""
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:25
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr ""
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:35
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:33
 msgid "%l:%M %p"
 msgstr ""
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:38
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:36
 msgid "%H:%M"
 msgstr ""
 
-#: /home/codygarver/maya/po/../src//Backends/LocalBackend.vala:26
+#: /home/noelco/maya/po/../src//Backends/LocalBackend.vala:26
 msgid "On this computer"
 msgstr "ഈ കമ്പ്യൂട്ടറില്‍"
 
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:128
-msgid "Other"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:174
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:175
-msgid "Add…"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:179
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:180
-msgid "Remove"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:185
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:186
-msgid "Edit…"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:92
-msgid "Add Event"
-msgstr "ഇവന്റ് ചേര്‍ക്കുക"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:95
-msgid "Edit Event"
-msgstr "ഇവന്റില്‍ മാറ്റം വരുത്തുക"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:310
-msgid "From:"
-msgstr "മുതല്‍:"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:316
-msgid "All day:"
-msgstr "മുഴുവന്‍ ദിവസവും:"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:321
-msgid "To:"
-msgstr "വരെ:"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:340
-msgid "Title"
-msgstr "തലക്കെട്ട്"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:341
-msgid "Name of Event"
-msgstr "ഇവന്റിന്റെ പേര്"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:362
-msgid "Location"
-msgstr "സ്ഥലം"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:363
-msgid "John Smith OR Example St."
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:365
-msgid "Participants"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:366
-msgid "Name or Email Address"
-msgstr "പേര് അല്ലെങ്കില്‍ ഇമെയില്‍ വിലാസം"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:369
-msgid "Comments"
-msgstr "വിവരണം"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:405
-msgid "Create Event"
-msgstr "ഇവന്റ് ഉണ്ടാക്കുക"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:408
-msgid "Save Changes"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:504
-msgid "This event can't be edited"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:511
-msgid "Your event has to be named and has to have a valid date"
-msgstr "നിങ്ങളുടെ ഇവന്റിന് ഒരു പേരും തീയതിയും ഉണ്ടായിരിക്കണം"
-
-#: /home/codygarver/maya/po/../src//View/Grid/VAutoHider.vala:119
-msgid "$more more ..."
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:41
-msgid "Add Calendar"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:44
-msgid "Edit Calendar"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:73
-msgid "Create Calendar"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:86
-msgid "Name:"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:89
-msgid "Calendar Name"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:131
-msgid "Type:"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:154
-msgid "Color:"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:160
-msgid "Mark as default calendar"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:42
-msgid "Create a new event"
-msgstr "പുതിയ ഇവന്റ് ഉണ്ടാക്കുക"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:44
-msgid "Select calendars to display"
-msgstr "പ്രദര്‍ശിപ്പിക്കേണ്ട കലണ്ടറുകള്‍ തിരഞ്ഞെടുക്കുക"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:50
-msgid "Search Events"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:53
-msgid "Export or Share the default Calendar"
-msgstr "സഹജമായ കലണ്ടര്‍ പങ്കിടുക"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:136
-msgid "Starts: \t"
-msgstr "തുടക്കം: \t"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:141
-msgid "Ends: \t"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:179
-msgid "all day"
-msgstr "മുഴുവന്‍ ദിവസവും"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:183
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:204
-msgid "at"
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/Sidebar.vala:43
+#: /home/noelco/maya/po/../src//View/Sidebar/Sidebar.vala:43
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -219,79 +46,232 @@ msgstr ""
 "തീയതി തിരഞ്ഞെടുക്കുമ്പോള്‍ നിങ്ങളുടെ ഇനി വരുവാനുള്ള ഇവന്റുകള്‍ "
 "പ്രദര്‍ശിപ്പിക്കുന്നതാണ്."
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:37
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:136
+msgid "Starts: \t"
+msgstr "തുടക്കം: \t"
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:141
+msgid "Ends: \t"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:179
+msgid "all day"
+msgstr "മുഴുവന്‍ ദിവസവും"
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:183
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:204
+msgid "at"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:92
+msgid "Add Event"
+msgstr "ഇവന്റ് ചേര്‍ക്കുക"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:95
+msgid "Edit Event"
+msgstr "ഇവന്റില്‍ മാറ്റം വരുത്തുക"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:310
+msgid "From:"
+msgstr "മുതല്‍:"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:316
+msgid "All day:"
+msgstr "മുഴുവന്‍ ദിവസവും:"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:321
+msgid "To:"
+msgstr "വരെ:"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:340
+msgid "Title"
+msgstr "തലക്കെട്ട്"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:341
+msgid "Name of Event"
+msgstr "ഇവന്റിന്റെ പേര്"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:344
+msgid "Calendar"
+msgstr "കലണ്ടര്‍"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:362
+msgid "Location"
+msgstr "സ്ഥലം"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:363
+msgid "John Smith OR Example St."
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:365
+msgid "Participants"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:366
+msgid "Name or Email Address"
+msgstr "പേര് അല്ലെങ്കില്‍ ഇമെയില്‍ വിലാസം"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:369
+msgid "Comments"
+msgstr "വിവരണം"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:405
+msgid "Create Event"
+msgstr "ഇവന്റ് ഉണ്ടാക്കുക"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:408
+msgid "Save Changes"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:504
+msgid "This event can't be edited"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:511
+msgid "Your event has to be named and has to have a valid date"
+msgstr "നിങ്ങളുടെ ഇവന്റിന് ഒരു പേരും തീയതിയും ഉണ്ടായിരിക്കണം"
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:93
+msgid "Remove"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:99
+msgid "Edit…"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:120
+msgid "Undo"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:138
+#, c-format
+msgid "Calendar \"%s\" removed."
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "പുതിയ ഇവന്റ് ഉണ്ടാക്കുക"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:47
+msgid "Manage Calendars"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:54
+msgid "Search Events"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:57
+msgid "Export or Share the default Calendar"
+msgstr "സഹജമായ കലണ്ടര്‍ പങ്കിടുക"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:71
 msgid "Today"
 msgstr "ഇന്ന്"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:39
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:72
 msgid "Fullscreen"
 msgstr "പരമാവധി വലുപ്പത്തിലുള്ള സ്ക്രീന്‍"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:41
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:73
 msgid "Show Week Numbers"
 msgstr "ആഴ്ചയുടെ സംഖ്യ കാണിക്കുക"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:43
-msgid "Import..."
-msgstr "ഇറക്കുമതി ചെയ്യുക..."
-
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:45
-msgid "Sync..."
-msgstr ""
-
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:47
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:75
 msgid "About"
 msgstr "സംബന്ധിച്ച്"
 
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:54
+msgid "Cancel"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:55
+msgid "Create"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:64
+msgid "Name:"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:67
+msgid "Calendar Name"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:90
+msgid "Type:"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:111
+msgid "Color:"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:116
+msgid "Mark as default calendar"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:146
+msgid "Create Calendar"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:153
+msgid "Save"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:72
+msgid "Add New Calendar…"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
 msgid "Export Calendar..."
 msgstr "കലണ്ടര്‍ പുറത്തെടുക്കുക..."
 
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
 msgid "calendar.ics"
 msgstr ""
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
 msgid "CalDAV"
 msgstr ""
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
 msgid "URL:"
 msgstr ""
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
 msgid "Use a secure connection"
 msgstr ""
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:37
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:37
 msgid "User:"
 msgstr ""
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
 msgid "user.name"
 msgstr ""
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
 msgid "Email:"
 msgstr ""
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
 msgid "john@doe.com"
 msgstr ""
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
 msgid "Server handles meeting invitations"
 msgstr ""
 
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:26
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:26
 msgid "Google"
 msgstr ""
 
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:46
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:46
 msgid "user.name or user.name@gmail.com"
 msgstr ""
+
+#~ msgid "_Add Event"
+#~ msgstr "ഇവന്റ് _ചേര്‍ക്കുക"
 
 #~ msgid "Contacts"
 #~ msgstr "വിലാസങ്ങള്‍"
@@ -304,6 +284,12 @@ msgstr ""
 
 #~ msgid "Delete the selected event"
 #~ msgstr "തിരഞ്ഞെടുത്ത ഇവന്റ് നീക്കംചെയ്യുക"
+
+#~ msgid "Select calendars to display"
+#~ msgstr "പ്രദര്‍ശിപ്പിക്കേണ്ട കലണ്ടറുകള്‍ തിരഞ്ഞെടുക്കുക"
+
+#~ msgid "Import..."
+#~ msgstr "ഇറക്കുമതി ചെയ്യുക..."
 
 #~ msgid "Add calendar"
 #~ msgstr "കലണ്ടര്‍ ചേര്‍ക്കുക"

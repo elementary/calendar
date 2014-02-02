@@ -7,211 +7,38 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-13 14:32-0600\n"
+"POT-Creation-Date: 2014-02-01 21:48+0100\n"
 "PO-Revision-Date: 2014-01-16 07:41+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-17 06:37+0000\n"
-"X-Generator: Launchpad (build 16901)\n"
+"X-Launchpad-Export-Date: 2014-02-02 05:43+0000\n"
+"X-Generator: Launchpad (build 16916)\n"
 "Language: ms\n"
 
-#: /home/codygarver/maya/po/../src//Application.vala:468
-msgid "Calendar \"%s\" removed."
-msgstr "Kalendar \"%s\" dibuang."
-
-#: /home/codygarver/maya/po/../src//Application.vala:485
-msgid "View and schedule events"
-msgstr "Lihat dan jadualkan peristiwa"
-
-#: /home/codygarver/maya/po/../src//Application.vala:486
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:344
-msgid "Calendar"
-msgstr "Kalendar"
-
-#: /home/codygarver/maya/po/../src//Application.vala:487
-msgid "_Add Event"
-msgstr "_Tambah Peristiwa"
-
-#: /home/codygarver/maya/po/../src//Application.vala:488
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Maya;Perancang;Tarikh;Hari;Peristiwa;"
-
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:21
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:25
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:35
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:33
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:38
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:36
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: /home/codygarver/maya/po/../src//Backends/LocalBackend.vala:26
+#: /home/noelco/maya/po/../src//Backends/LocalBackend.vala:26
 msgid "On this computer"
 msgstr "Pada komputer ini"
 
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:128
-msgid "Other"
-msgstr "Lain-lain"
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:174
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:175
-msgid "Add…"
-msgstr "Tambah..."
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:179
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:180
-msgid "Remove"
-msgstr "Buang"
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:185
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:186
-msgid "Edit…"
-msgstr "Sunting..."
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:92
-msgid "Add Event"
-msgstr "Tambah Peristiwa"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:95
-msgid "Edit Event"
-msgstr "Sunting Peristiwa"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:310
-msgid "From:"
-msgstr "Dari:"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:316
-msgid "All day:"
-msgstr "Sepanjang Hari:"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:321
-msgid "To:"
-msgstr "Hingga:"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:340
-msgid "Title"
-msgstr "Tajuk"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:341
-msgid "Name of Event"
-msgstr "Nama Peristiwa"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:362
-msgid "Location"
-msgstr "Lokasi"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:363
-msgid "John Smith OR Example St."
-msgstr "John Smith ATAU Contoh St."
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:365
-msgid "Participants"
-msgstr "Peserta"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:366
-msgid "Name or Email Address"
-msgstr "Nama atau Alamat E-mel"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:369
-msgid "Comments"
-msgstr "Ulasan"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:405
-msgid "Create Event"
-msgstr "Cipta Peristiwa"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:408
-msgid "Save Changes"
-msgstr "Simpan Perubahan"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:504
-msgid "This event can't be edited"
-msgstr "Peristiwa ini tidak boleh disunting"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:511
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Peristiwa anda telah dinamakan dan mempunyai tarikh yang sah"
-
-#: /home/codygarver/maya/po/../src//View/Grid/VAutoHider.vala:119
-msgid "$more more ..."
-msgstr "$more lagi ..."
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:41
-msgid "Add Calendar"
-msgstr "Tambah Kalendar"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:44
-msgid "Edit Calendar"
-msgstr "Sunting Kalendar"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:73
-msgid "Create Calendar"
-msgstr "Cipta Kalendar"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:86
-msgid "Name:"
-msgstr "Nama:"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:89
-msgid "Calendar Name"
-msgstr "Nama Kalendar"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:131
-msgid "Type:"
-msgstr "Jenis:"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:154
-msgid "Color:"
-msgstr "Warna:"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:160
-msgid "Mark as default calendar"
-msgstr "Tanda sebagai kalendar lalai"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:42
-msgid "Create a new event"
-msgstr "Cipta peristiwa baru"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:44
-msgid "Select calendars to display"
-msgstr "Pilih kalendar untuk dipaparkan"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:50
-msgid "Search Events"
-msgstr "Gelintar Peristiwa"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:53
-msgid "Export or Share the default Calendar"
-msgstr "Eksport atau Kongsi Kalendar lalai"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:136
-msgid "Starts: \t"
-msgstr "Mula: \t"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:141
-msgid "Ends: \t"
-msgstr "Tamat: \t"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:179
-msgid "all day"
-msgstr "sepanjang hari"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:183
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:204
-msgid "at"
-msgstr "pada"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/Sidebar.vala:43
+#: /home/noelco/maya/po/../src//View/Sidebar/Sidebar.vala:43
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -219,77 +46,227 @@ msgstr ""
 "Peristiwa mendatang anda akan dipaparkan disini bila anda pilih tarikh "
 "dengan peristiwa."
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:37
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:136
+msgid "Starts: \t"
+msgstr "Mula: \t"
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:141
+msgid "Ends: \t"
+msgstr "Tamat: \t"
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:179
+msgid "all day"
+msgstr "sepanjang hari"
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:183
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:204
+msgid "at"
+msgstr "pada"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:92
+msgid "Add Event"
+msgstr "Tambah Peristiwa"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:95
+msgid "Edit Event"
+msgstr "Sunting Peristiwa"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:310
+msgid "From:"
+msgstr "Dari:"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:316
+msgid "All day:"
+msgstr "Sepanjang Hari:"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:321
+msgid "To:"
+msgstr "Hingga:"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:340
+msgid "Title"
+msgstr "Tajuk"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:341
+msgid "Name of Event"
+msgstr "Nama Peristiwa"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:344
+msgid "Calendar"
+msgstr "Kalendar"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:362
+msgid "Location"
+msgstr "Lokasi"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:363
+msgid "John Smith OR Example St."
+msgstr "John Smith ATAU Contoh St."
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:365
+msgid "Participants"
+msgstr "Peserta"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:366
+msgid "Name or Email Address"
+msgstr "Nama atau Alamat E-mel"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:369
+msgid "Comments"
+msgstr "Ulasan"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:405
+msgid "Create Event"
+msgstr "Cipta Peristiwa"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:408
+msgid "Save Changes"
+msgstr "Simpan Perubahan"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:504
+msgid "This event can't be edited"
+msgstr "Peristiwa ini tidak boleh disunting"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:511
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Peristiwa anda telah dinamakan dan mempunyai tarikh yang sah"
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:93
+msgid "Remove"
+msgstr "Buang"
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:99
+msgid "Edit…"
+msgstr "Sunting..."
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:120
+msgid "Undo"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:138
+#, c-format
+msgid "Calendar \"%s\" removed."
+msgstr "Kalendar \"%s\" dibuang."
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "Cipta peristiwa baru"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:47
+msgid "Manage Calendars"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:54
+msgid "Search Events"
+msgstr "Gelintar Peristiwa"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:57
+msgid "Export or Share the default Calendar"
+msgstr "Eksport atau Kongsi Kalendar lalai"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:71
 msgid "Today"
 msgstr "Hari Ini"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:39
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:72
 msgid "Fullscreen"
 msgstr "Skrin Penuh"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:41
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:73
 msgid "Show Week Numbers"
 msgstr "Papar Bilangan Minggu"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:43
-msgid "Import..."
-msgstr "Import..."
-
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:45
-msgid "Sync..."
-msgstr "Segerak..."
-
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:47
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:75
 msgid "About"
 msgstr "Perihal"
 
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:54
+msgid "Cancel"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:55
+msgid "Create"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:64
+msgid "Name:"
+msgstr "Nama:"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:67
+msgid "Calendar Name"
+msgstr "Nama Kalendar"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:90
+msgid "Type:"
+msgstr "Jenis:"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:111
+msgid "Color:"
+msgstr "Warna:"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:116
+msgid "Mark as default calendar"
+msgstr "Tanda sebagai kalendar lalai"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:146
+msgid "Create Calendar"
+msgstr "Cipta Kalendar"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:153
+msgid "Save"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:72
+msgid "Add New Calendar…"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
 msgid "Export Calendar..."
 msgstr "Eksport Kalendar..."
 
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
 msgid "URL:"
 msgstr "URL:"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
 msgid "Use a secure connection"
 msgstr "Guna sambungan selamat"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:37
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:37
 msgid "User:"
 msgstr "Pengguna:"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
 msgid "user.name"
 msgstr "nama.pengguna"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
 msgid "Email:"
 msgstr "Emel:"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
 msgid "john@doe.com"
 msgstr "abuyop@doe.com"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
 msgid "Server handles meeting invitations"
 msgstr "Pelayan mengendali jemputan mesyuarat"
 
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:26
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:26
 msgid "Google"
 msgstr "Google"
 
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:46
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:46
 msgid "user.name or user.name@gmail.com"
 msgstr "nama.penguna atau nama.pengguna@gmail.com"
 
@@ -299,8 +276,17 @@ msgstr "nama.penguna atau nama.pengguna@gmail.com"
 #~ msgid "Webcal"
 #~ msgstr "Webcal"
 
+#~ msgid "_Add Event"
+#~ msgstr "_Tambah Peristiwa"
+
 #~ msgid "Personal"
 #~ msgstr "Peribadi"
+
+#~ msgid "View and schedule events"
+#~ msgstr "Lihat dan jadualkan peristiwa"
+
+#~ msgid "Select calendars to display"
+#~ msgstr "Pilih kalendar untuk dipaparkan"
 
 #~ msgid "Edit the selected event"
 #~ msgstr "Sunting peristiwa terpilih"
@@ -308,5 +294,17 @@ msgstr "nama.penguna atau nama.pengguna@gmail.com"
 #~ msgid "Delete the selected event"
 #~ msgstr "Padam peristiwa terpilih"
 
+#~ msgid "Sync..."
+#~ msgstr "Segerak..."
+
+#~ msgid "Import..."
+#~ msgstr "Import..."
+
 #~ msgid "Add calendar"
 #~ msgstr "Tambah kalendar"
+
+#~ msgid "$more more ..."
+#~ msgstr "$more lagi ..."
+
+#~ msgid "Maya;Planner;Dates;Days;Events;"
+#~ msgstr "Maya;Perancang;Tarikh;Hari;Peristiwa;"

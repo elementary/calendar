@@ -7,211 +7,38 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-13 14:32-0600\n"
+"POT-Creation-Date: 2014-02-01 21:48+0100\n"
 "PO-Revision-Date: 2013-12-18 14:55+0000\n"
 "Last-Translator: Phillip Sz <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-12-19 05:48+0000\n"
-"X-Generator: Launchpad (build 16872)\n"
+"X-Launchpad-Export-Date: 2014-02-02 05:43+0000\n"
+"X-Generator: Launchpad (build 16916)\n"
 "Language: de\n"
 
-#: /home/codygarver/maya/po/../src//Application.vala:468
-msgid "Calendar \"%s\" removed."
-msgstr "Kalender »%s« wurde entfernt."
-
-#: /home/codygarver/maya/po/../src//Application.vala:485
-msgid "View and schedule events"
-msgstr "Termine ansehen und planen"
-
-#: /home/codygarver/maya/po/../src//Application.vala:486
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:344
-msgid "Calendar"
-msgstr "Kalender"
-
-#: /home/codygarver/maya/po/../src//Application.vala:487
-msgid "_Add Event"
-msgstr "_Ereignis hinzufügen"
-
-#: /home/codygarver/maya/po/../src//Application.vala:488
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Maya;Planer;Termine;Tage;Ereignise;"
-
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:21
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr "%e. %B %Y"
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:25
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %e. %b"
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:35
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:33
 msgid "%l:%M %p"
 msgstr "%H:%M"
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:38
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:36
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: /home/codygarver/maya/po/../src//Backends/LocalBackend.vala:26
+#: /home/noelco/maya/po/../src//Backends/LocalBackend.vala:26
 msgid "On this computer"
 msgstr "Auf diesem Computer"
 
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:128
-msgid "Other"
-msgstr "Andere"
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:174
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:175
-msgid "Add…"
-msgstr "Hinzufügen …"
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:179
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:180
-msgid "Remove"
-msgstr "Entfernen"
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:185
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:186
-msgid "Edit…"
-msgstr "Bearbeiten …"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:92
-msgid "Add Event"
-msgstr "Termin hinzufügen"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:95
-msgid "Edit Event"
-msgstr "Termin bearbeiten"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:310
-msgid "From:"
-msgstr "Von:"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:316
-msgid "All day:"
-msgstr "Ganztägig:"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:321
-msgid "To:"
-msgstr "Bis:"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:340
-msgid "Title"
-msgstr "Titel"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:341
-msgid "Name of Event"
-msgstr "Terminbezeichnung"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:362
-msgid "Location"
-msgstr "Ort"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:363
-msgid "John Smith OR Example St."
-msgstr "Max Mustermann ODER Beispielstraße"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:365
-msgid "Participants"
-msgstr "Teilnehmer"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:366
-msgid "Name or Email Address"
-msgstr "Name oder E-Mail"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:369
-msgid "Comments"
-msgstr "Kommentare"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:405
-msgid "Create Event"
-msgstr "Termin erstellen"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:408
-msgid "Save Changes"
-msgstr "Änderungen speichern"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:504
-msgid "This event can't be edited"
-msgstr "Dieser Termin kann nicht bearbeitet werden"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:511
-msgid "Your event has to be named and has to have a valid date"
-msgstr "Ihr Ereignis muss benannt sein und ein gültiges Datum haben"
-
-#: /home/codygarver/maya/po/../src//View/Grid/VAutoHider.vala:119
-msgid "$more more ..."
-msgstr "$more mehr …"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:41
-msgid "Add Calendar"
-msgstr "Kalender hinzufügen"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:44
-msgid "Edit Calendar"
-msgstr "Kalender bearbeiten"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:73
-msgid "Create Calendar"
-msgstr "Kalender erstellen"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:86
-msgid "Name:"
-msgstr "Name:"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:89
-msgid "Calendar Name"
-msgstr "Kalendername"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:131
-msgid "Type:"
-msgstr "Typ:"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:154
-msgid "Color:"
-msgstr "Farbe:"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:160
-msgid "Mark as default calendar"
-msgstr "Als Vorgabekalender markieren"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:42
-msgid "Create a new event"
-msgstr "Einen neuen Termin erstellen"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:44
-msgid "Select calendars to display"
-msgstr "Anzuzeigende Kalender auswählen"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:50
-msgid "Search Events"
-msgstr "Termine suchen"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:53
-msgid "Export or Share the default Calendar"
-msgstr "Standardkalender exportieren oder teilen"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:136
-msgid "Starts: \t"
-msgstr "Startet am: \t"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:141
-msgid "Ends: \t"
-msgstr "Endet: \t"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:179
-msgid "all day"
-msgstr "Ganztägig"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:183
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:204
-msgid "at"
-msgstr "um"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/Sidebar.vala:43
+#: /home/noelco/maya/po/../src//View/Sidebar/Sidebar.vala:43
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -219,79 +46,235 @@ msgstr ""
 "Ihre anstehenden Termine werden hier angezeigt, sobald Sie ein Datum mit "
 "Terminen auswählen."
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:37
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:136
+msgid "Starts: \t"
+msgstr "Startet am: \t"
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:141
+msgid "Ends: \t"
+msgstr "Endet: \t"
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:179
+msgid "all day"
+msgstr "Ganztägig"
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:183
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:204
+msgid "at"
+msgstr "um"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:92
+msgid "Add Event"
+msgstr "Termin hinzufügen"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:95
+msgid "Edit Event"
+msgstr "Termin bearbeiten"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:310
+msgid "From:"
+msgstr "Von:"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:316
+msgid "All day:"
+msgstr "Ganztägig:"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:321
+msgid "To:"
+msgstr "Bis:"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:340
+msgid "Title"
+msgstr "Titel"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:341
+msgid "Name of Event"
+msgstr "Terminbezeichnung"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:344
+msgid "Calendar"
+msgstr "Kalender"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:362
+msgid "Location"
+msgstr "Ort"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:363
+msgid "John Smith OR Example St."
+msgstr "Max Mustermann ODER Beispielstraße"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:365
+msgid "Participants"
+msgstr "Teilnehmer"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:366
+msgid "Name or Email Address"
+msgstr "Name oder E-Mail"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:369
+msgid "Comments"
+msgstr "Kommentare"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:405
+msgid "Create Event"
+msgstr "Termin erstellen"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:408
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:504
+msgid "This event can't be edited"
+msgstr "Dieser Termin kann nicht bearbeitet werden"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:511
+msgid "Your event has to be named and has to have a valid date"
+msgstr "Ihr Ereignis muss benannt sein und ein gültiges Datum haben"
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:93
+msgid "Remove"
+msgstr "Entfernen"
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:99
+msgid "Edit…"
+msgstr "Bearbeiten …"
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:120
+msgid "Undo"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:138
+#, c-format
+msgid "Calendar \"%s\" removed."
+msgstr "Kalender »%s« wurde entfernt."
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "Einen neuen Termin erstellen"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:47
+msgid "Manage Calendars"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:54
+msgid "Search Events"
+msgstr "Termine suchen"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:57
+msgid "Export or Share the default Calendar"
+msgstr "Standardkalender exportieren oder teilen"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:71
 msgid "Today"
 msgstr "Heute"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:39
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:72
 msgid "Fullscreen"
 msgstr "Vollbild"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:41
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:73
 msgid "Show Week Numbers"
 msgstr "Kalenderwochen anzeigen"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:43
-msgid "Import..."
-msgstr "Importieren …"
-
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:45
-msgid "Sync..."
-msgstr "Synchronisieren …"
-
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:47
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:75
 msgid "About"
 msgstr "Über"
 
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:54
+msgid "Cancel"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:55
+msgid "Create"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:64
+msgid "Name:"
+msgstr "Name:"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:67
+msgid "Calendar Name"
+msgstr "Kalendername"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:90
+msgid "Type:"
+msgstr "Typ:"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:111
+msgid "Color:"
+msgstr "Farbe:"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:116
+msgid "Mark as default calendar"
+msgstr "Als Vorgabekalender markieren"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:146
+msgid "Create Calendar"
+msgstr "Kalender erstellen"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:153
+msgid "Save"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:72
+msgid "Add New Calendar…"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
 msgid "Export Calendar..."
 msgstr "Kalender exportieren …"
 
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
 msgid "calendar.ics"
 msgstr "kalender.ics"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
 msgid "URL:"
 msgstr "URL:"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
 msgid "Use a secure connection"
 msgstr "Eine sichere Verbindung verwenden"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:37
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:37
 msgid "User:"
 msgstr "Benutzer:"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
 msgid "user.name"
 msgstr "Benutzer.Name"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
 msgid "Email:"
 msgstr "E-Mail:"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
 msgid "john@doe.com"
 msgstr "max@mustermann.de"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
 msgid "Server handles meeting invitations"
 msgstr "Server unterstützt Einladungen zu Besprechungen"
 
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:26
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:26
 msgid "Google"
 msgstr "Google"
 
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:46
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:46
 msgid "user.name or user.name@gmail.com"
 msgstr "Benutzer.Name oder Benutzer.Name@gmail.com"
+
+#~ msgid "Select calendars to display"
+#~ msgstr "Anzuzeigende Kalender auswählen"
+
+#~ msgid "Import..."
+#~ msgstr "Importieren …"
 
 #~ msgid "Edit the selected event"
 #~ msgstr "Augewählten Termin bearbeiten"
@@ -305,8 +288,23 @@ msgstr "Benutzer.Name oder Benutzer.Name@gmail.com"
 #~ msgid "Webcal"
 #~ msgstr "Webcal"
 
+#~ msgid "_Add Event"
+#~ msgstr "_Ereignis hinzufügen"
+
 #~ msgid "Personal"
 #~ msgstr "Persönlich"
 
+#~ msgid "View and schedule events"
+#~ msgstr "Termine ansehen und planen"
+
 #~ msgid "Add calendar"
 #~ msgstr "Kalender hinzufügen"
+
+#~ msgid "Sync..."
+#~ msgstr "Synchronisieren …"
+
+#~ msgid "$more more ..."
+#~ msgstr "$more mehr …"
+
+#~ msgid "Maya;Planner;Dates;Days;Events;"
+#~ msgstr "Maya;Planer;Termine;Tage;Ereignise;"

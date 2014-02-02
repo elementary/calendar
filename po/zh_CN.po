@@ -7,289 +7,275 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-13 14:32-0600\n"
+"POT-Creation-Date: 2014-02-01 21:48+0100\n"
 "PO-Revision-Date: 2014-01-04 12:18+0000\n"
 "Last-Translator: Yangyu Huang <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-05 05:34+0000\n"
-"X-Generator: Launchpad (build 16877)\n"
+"X-Launchpad-Export-Date: 2014-02-02 05:44+0000\n"
+"X-Generator: Launchpad (build 16916)\n"
 "Language: \n"
 
-#: /home/codygarver/maya/po/../src//Application.vala:468
-msgid "Calendar \"%s\" removed."
-msgstr "日历“%s”已被删除。"
-
-#: /home/codygarver/maya/po/../src//Application.vala:485
-msgid "View and schedule events"
-msgstr "查看并安排活动"
-
-#: /home/codygarver/maya/po/../src//Application.vala:486
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:344
-msgid "Calendar"
-msgstr "日历"
-
-#: /home/codygarver/maya/po/../src//Application.vala:487
-msgid "_Add Event"
-msgstr "添加活动(_A)"
-
-#: /home/codygarver/maya/po/../src//Application.vala:488
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Maya;Planner;Dates;Days;Events;规划;日期;活动;"
-
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:21
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
 msgstr "%B %e，%Y"
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:25
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A，%b %d"
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:35
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:33
 msgid "%l:%M %p"
 msgstr "%p %l:%M"
 
-#: /home/codygarver/maya/po/../src//Settings/LanguagesFormat.vala:38
+#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:36
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: /home/codygarver/maya/po/../src//Backends/LocalBackend.vala:26
+#: /home/noelco/maya/po/../src//Backends/LocalBackend.vala:26
 msgid "On this computer"
 msgstr "在本机上"
 
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:128
-msgid "Other"
-msgstr "其他"
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:174
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:175
-msgid "Add…"
-msgstr "添加..."
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:179
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:180
-msgid "Remove"
-msgstr "删除"
-
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:185
-#: /home/codygarver/maya/po/../src//View/SourceSelector.vala:186
-msgid "Edit…"
-msgstr "编辑..."
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:92
-msgid "Add Event"
-msgstr "添加活动"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:95
-msgid "Edit Event"
-msgstr "编辑活动"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:310
-msgid "From:"
-msgstr "起始日期："
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:316
-msgid "All day:"
-msgstr "全天："
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:321
-msgid "To:"
-msgstr "结束日期："
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:340
-msgid "Title"
-msgstr "标题"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:341
-msgid "Name of Event"
-msgstr "活动名称"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:362
-msgid "Location"
-msgstr "位置"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:363
-msgid "John Smith OR Example St."
-msgstr "John Smith 或如 St."
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:365
-msgid "Participants"
-msgstr "参与者"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:366
-msgid "Name or Email Address"
-msgstr "姓名或邮件地址"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:369
-msgid "Comments"
-msgstr "备注"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:405
-msgid "Create Event"
-msgstr "创建活动"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:408
-msgid "Save Changes"
-msgstr "保存更改"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:504
-msgid "This event can't be edited"
-msgstr "该活动无法编辑"
-
-#: /home/codygarver/maya/po/../src//View/EventDialog.vala:511
-msgid "Your event has to be named and has to have a valid date"
-msgstr "您的活动必须命名且具备一个有效日期"
-
-#: /home/codygarver/maya/po/../src//View/Grid/VAutoHider.vala:119
-msgid "$more more ..."
-msgstr "$more 更多..."
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:41
-msgid "Add Calendar"
-msgstr "添加日历"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:44
-msgid "Edit Calendar"
-msgstr "编辑日历"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:73
-msgid "Create Calendar"
-msgstr "创建日历"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:86
-msgid "Name:"
-msgstr "名称："
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:89
-msgid "Calendar Name"
-msgstr "日历名称"
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:131
-msgid "Type:"
-msgstr "类型："
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:154
-msgid "Color:"
-msgstr "颜色："
-
-#: /home/codygarver/maya/po/../src//View/SourceDialog.vala:160
-msgid "Mark as default calendar"
-msgstr "标记为默认日历"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:42
-msgid "Create a new event"
-msgstr "创建新活动"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:44
-msgid "Select calendars to display"
-msgstr "选择要显示的日历"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:50
-msgid "Search Events"
-msgstr "搜索活动"
-
-#: /home/codygarver/maya/po/../src//View/MayaToolbar.vala:53
-msgid "Export or Share the default Calendar"
-msgstr "导出或分享默认日历"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:136
-msgid "Starts: \t"
-msgstr "开始： \t"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:141
-msgid "Ends: \t"
-msgstr "结束： \t"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:179
-msgid "all day"
-msgstr "全天"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:183
-#: /home/codygarver/maya/po/../src//View/Sidebar/EventWidget.vala:204
-msgid "at"
-msgstr "于"
-
-#: /home/codygarver/maya/po/../src//View/Sidebar/Sidebar.vala:43
+#: /home/noelco/maya/po/../src//View/Sidebar/Sidebar.vala:43
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "当您选择一个含有任务的日期时，您最近的活动将会显示在这里。"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:37
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:136
+msgid "Starts: \t"
+msgstr "开始： \t"
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:141
+msgid "Ends: \t"
+msgstr "结束： \t"
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:179
+msgid "all day"
+msgstr "全天"
+
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:183
+#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:204
+msgid "at"
+msgstr "于"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:92
+msgid "Add Event"
+msgstr "添加活动"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:95
+msgid "Edit Event"
+msgstr "编辑活动"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:310
+msgid "From:"
+msgstr "起始日期："
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:316
+msgid "All day:"
+msgstr "全天："
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:321
+msgid "To:"
+msgstr "结束日期："
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:340
+msgid "Title"
+msgstr "标题"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:341
+msgid "Name of Event"
+msgstr "活动名称"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:344
+msgid "Calendar"
+msgstr "日历"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:362
+msgid "Location"
+msgstr "位置"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:363
+msgid "John Smith OR Example St."
+msgstr "John Smith 或如 St."
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:365
+msgid "Participants"
+msgstr "参与者"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:366
+msgid "Name or Email Address"
+msgstr "姓名或邮件地址"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:369
+msgid "Comments"
+msgstr "备注"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:405
+msgid "Create Event"
+msgstr "创建活动"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:408
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:504
+msgid "This event can't be edited"
+msgstr "该活动无法编辑"
+
+#: /home/noelco/maya/po/../src//View/EventDialog.vala:511
+msgid "Your event has to be named and has to have a valid date"
+msgstr "您的活动必须命名且具备一个有效日期"
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:93
+msgid "Remove"
+msgstr "删除"
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:99
+msgid "Edit…"
+msgstr "编辑..."
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:120
+msgid "Undo"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceItem.vala:138
+#, c-format
+msgid "Calendar \"%s\" removed."
+msgstr "日历“%s”已被删除。"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:44
+msgid "Create a new event"
+msgstr "创建新活动"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:47
+msgid "Manage Calendars"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:54
+msgid "Search Events"
+msgstr "搜索活动"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:57
+msgid "Export or Share the default Calendar"
+msgstr "导出或分享默认日历"
+
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:71
 msgid "Today"
 msgstr "今天"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:39
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:72
 msgid "Fullscreen"
 msgstr "全屏"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:41
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:73
 msgid "Show Week Numbers"
 msgstr "显示周数"
 
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:43
-msgid "Import..."
-msgstr "导入..."
-
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:45
-msgid "Sync..."
-msgstr "同步..."
-
-#: /home/codygarver/maya/po/../src//View/MayaMenu.vala:47
+#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:75
 msgid "About"
 msgstr "关于"
 
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:54
+msgid "Cancel"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:55
+msgid "Create"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:64
+msgid "Name:"
+msgstr "名称："
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:67
+msgid "Calendar Name"
+msgstr "日历名称"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:90
+msgid "Type:"
+msgstr "类型："
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:111
+msgid "Color:"
+msgstr "颜色："
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:116
+msgid "Mark as default calendar"
+msgstr "标记为默认日历"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:146
+msgid "Create Calendar"
+msgstr "创建日历"
+
+#: /home/noelco/maya/po/../src//View/SourceDialog.vala:153
+msgid "Save"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/SourceSelector.vala:72
+msgid "Add New Calendar…"
+msgstr ""
+
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
 msgid "Export Calendar..."
 msgstr "导出日历..."
 
-#: /home/codygarver/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
+#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
 msgid "URL:"
 msgstr "网址："
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
 msgid "Use a secure connection"
 msgstr "使用安全连接"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:37
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:37
 msgid "User:"
 msgstr "用户:"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
 msgid "user.name"
 msgstr "用户.名字"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
 msgid "Email:"
 msgstr "电子邮件："
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
-#: /home/codygarver/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
+#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
 msgid "Server handles meeting invitations"
 msgstr "服务器处理会议邀请"
 
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:26
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:26
 msgid "Google"
 msgstr "Google"
 
-#: /home/codygarver/maya/po/../plugins//Google/GoogleBackend.vala:46
+#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:46
 msgid "user.name or user.name@gmail.com"
 msgstr "用户.名字 或 用户.名字@gmail.com"
+
+#~ msgid "Import..."
+#~ msgstr "导入..."
+
+#~ msgid "Select calendars to display"
+#~ msgstr "选择要显示的日历"
+
+#~ msgid "Sync..."
+#~ msgstr "同步..."
 
 #~ msgid "Contacts"
 #~ msgstr "联系人"
@@ -303,8 +289,20 @@ msgstr "用户.名字 或 用户.名字@gmail.com"
 #~ msgid "Add calendar"
 #~ msgstr "添加日历"
 
+#~ msgid "_Add Event"
+#~ msgstr "添加活动(_A)"
+
 #~ msgid "Edit the selected event"
 #~ msgstr "编辑选中的活动"
 
 #~ msgid "Delete the selected event"
 #~ msgstr "删除选中的活动"
+
+#~ msgid "View and schedule events"
+#~ msgstr "查看并安排活动"
+
+#~ msgid "$more more ..."
+#~ msgstr "$more 更多..."
+
+#~ msgid "Maya;Planner;Dates;Days;Events;"
+#~ msgstr "Maya;Planner;Dates;Days;Events;规划;日期;活动;"
