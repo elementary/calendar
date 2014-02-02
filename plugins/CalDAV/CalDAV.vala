@@ -20,9 +20,6 @@
  * Authored by: Corentin Noël <tintou@mailoo.org>
  */
 
-using Gtk;
-using Peas;
-
 namespace Maya.Plugins {
     
     public class CalDAVPlugin : Peas.ExtensionBase, Peas.Activatable {
