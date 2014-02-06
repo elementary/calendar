@@ -238,15 +238,6 @@ namespace Maya.Util {
         }
     }
 
-    // /* Convert E.CalComponentDateTime to GLib.DateTime */
-    // public DateTime convert_to_datetime (E.CalComponentDateTime dt) {
-    //
-    //     unowned iCal.icaltimetype idt = dt.value;
-    //     var tz = new TimeZone (dt.tzid);
-    //
-    //     return new DateTime(tz, idt.year, idt.month, idt.day, idt.hour, idt.minute, idt.second);
-    // }
-
     //--- Gee Utility Functions ---//
 
     /* Interleaves the values of two collections into a Map */
@@ -293,11 +284,6 @@ namespace Maya.Util {
         return str_hash (key.dup_uid());
     }
 
-    /* Computes hash value for E.SourceGroup */
-    /*public uint source_group_hash_func (E.SourceGroup key) {
-        return str_hash (key.peek_uid());
-    }*/
-
     /* Returns true if 'a' and 'b' are the same string */
     public bool string_equal_func (string a, string b) {
         return a == b;
@@ -307,11 +293,6 @@ namespace Maya.Util {
     public bool datetime_equal_func (DateTime a, DateTime b) {
         return a.equal (b);
     }
-
-    /* Returns true if 'a' and 'b' are the same E.SourceGroup */
-    /*public bool source_group_equal_func (E.SourceGroup a, E.SourceGroup b) {
-        return a.peek_uid() == b.peek_uid();
-    }*/
 
     /* Returns true if 'a' and 'b' are the same E.CalComponent */
     public bool calcomponent_equal_func (E.CalComponent a, E.CalComponent b) {
@@ -406,42 +387,6 @@ namespace Maya.Util {
 
     public void save_temp_selected_calendars (){
         var calmodel = new Model.CalendarModel(Maya.Settings.Weekday.MONDAY);
-
-        /*var path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
-        string output = "BEGIN:VCALENDAR\n";
-        output += "VERSION:2.0\n";
-        output += "PRODID:-//elementary project//maya-calendar\n";
-        foreach (var source in sourcemagr.get_enabled_sources ()) {
-
-            try {
-                var client = new E.CalClient(source, E.CalClientSourceType.EVENTS);
-
-                var iso_first = E.isodate_from_time_t((ulong) calmodel.data_range.first.to_unix());
-                var iso_last = E.isodate_from_time_t((ulong) calmodel.data_range.last.to_unix());
-
-                var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
-                GLib.SList<weak iCal.icalcomponent> icalcomps;
-                client.get_object_list_sync(query, out icalcomps, null);
-
-                foreach (var icalcomp in icalcomps) {
-                    assert (icalcomp != null);
-
-                    output = output + icalcomp.as_ical_string ();
-                }
-            } catch (GLib.Error e) {
-                warning (e.message);
-            }
-
-        }
-        try {
-            GLib.File file = GLib.File.new_for_path (path);
-            output += "END:VCALENDAR";
-            uint8[] data = output.data;
-            string s;
-            file.replace_contents (data, null, false, 0, out s);
-        } catch (GLib.Error e){
-            warning (e.message);
-        }*/
     }
     
     public string get_hexa_color (Gdk.RGBA color) {
