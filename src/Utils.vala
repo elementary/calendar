@@ -150,7 +150,7 @@ namespace Maya.Util {
 
         DateTime current;
         DateRange range;
-        
+
         public bool valid { get {return true;} }
         public bool read_only { get {return false;} }
 
@@ -158,15 +158,18 @@ namespace Maya.Util {
             this.range = range;
             this.current = range.first.add_days (-1);
         }
-        
+
         public bool @foreach (Gee.ForallFunc<DateTime> f) {
             var element = range.first;
-            while (element.compare(range.last) < 0) {
+
+            while (element.compare (range.last) < 0) {
                 if (f (element) == false) {
                     return false;
                 }
+
                 element = element.add_days (1);
             }
+
             return true;
         }
 
@@ -200,14 +203,14 @@ namespace Maya.Util {
 
         public DateTime first { get; private set; }
         public DateTime last { get; private set; }
-        
-        public bool @foreach (Gee.ForallFunc<DateTime> f) {
 
+        public bool @foreach (Gee.ForallFunc<DateTime> f) {
             foreach (var date in this) {
                 if (f (date) == false) {
                     return false;
                 }
             }
+
             return true;
         }
 
@@ -467,7 +470,7 @@ namespace Maya.Util {
             warning (e.message);
         }*/
     }
-    
+
     public string get_hexa_color (Gdk.RGBA color) {
         return "#%02X%02X%02X".printf ((uint)(color.red*255), (uint)(color.green*255), (uint)(color.blue*255));
     }
