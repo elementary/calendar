@@ -5,7 +5,7 @@ Maintainer: Cody Garver <cody@elementaryos.org>
 Build-Depends: cmake (>= 2.8),
                debhelper,
                libecal1.2-dev (>= 3.8.0),
-               libgee-dev,
+               libgee-0.8-dev,
                libglib2.0-dev (>= 2.29.0),
                libgranite-dev,
                libgtk-3-dev (>= 3.10),
