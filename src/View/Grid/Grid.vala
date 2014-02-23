@@ -46,8 +46,8 @@ public class Grid : Gtk.Grid {
         row_spacing = 0;
 
         data = new Gee.HashMap<DateTime, GridDay> (
-            (HashFunc) DateTime.hash,
-            (EqualFunc) Util.datetime_equal_func,
+            (Gee.HashDataFunc<GLib.DateTime>?) DateTime.hash,
+            (Gee.EqualDataFunc<GLib.DateTime>?) Util.datetime_equal_func,
             null);
     }
 
@@ -82,8 +82,8 @@ public class Grid : Gtk.Grid {
         var new_dates = new_range.to_list();
 
         var data_new = new Gee.HashMap<DateTime, GridDay> (
-            (HashFunc) DateTime.hash,
-            (EqualFunc) Util.datetime_equal_func,
+            (Gee.HashDataFunc<GLib.DateTime>?) DateTime.hash,
+            (Gee.EqualDataFunc<GLib.DateTime>?) Util.datetime_equal_func,
             null);
 
         // Assert that a valid number of weeks should be displayed

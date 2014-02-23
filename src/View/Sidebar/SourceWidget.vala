@@ -176,7 +176,7 @@ namespace Maya.View {
         /**
          * Compares the given buttons according to date.
          */
-        static CompareFunc<E.CalComponent> compare_comps = (comp1, comp2) => {
+        static GLib.CompareDataFunc<E.CalComponent>? compare_comps = (comp1, comp2) => {
             return Util.compare_events (comp1, comp2);
         };
 

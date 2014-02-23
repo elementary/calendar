@@ -77,7 +77,7 @@ add_subdirectory(po)
 
 set (DEPS_PACKAGES
     gconf-2.0
-    gee-1.0
+    gee-0.8
     gio-2.0
     granite
     gtk+-3.0
@@ -93,7 +93,7 @@ set (DEPS_PKG
     gthread-2.0
     glib-2.0
     gio-2.0
-    gee-1.0
+    gee-0.8
     gtk+-3.0>=3.10
     granite
     libecal-1.2>=3.8.0
