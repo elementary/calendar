@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-01 21:48+0100\n"
-"PO-Revision-Date: 2013-06-27 21:16+0000\n"
-"Last-Translator: Joachim Johansson <Unknown>\n"
+"PO-Revision-Date: 2014-03-04 01:39+0000\n"
+"Last-Translator: Jon Persson <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-02-02 05:44+0000\n"
-"X-Generator: Launchpad (build 16916)\n"
+"X-Launchpad-Export-Date: 2014-03-04 08:04+0000\n"
+"X-Generator: Launchpad (build 16948)\n"
 "Language: sv\n"
 
 #: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:21
@@ -132,20 +132,20 @@ msgstr "Händelsen måste ha ett namn och ett giltigt datum"
 
 #: /home/noelco/maya/po/../src//View/SourceItem.vala:93
 msgid "Remove"
-msgstr ""
+msgstr "Ta bort"
 
 #: /home/noelco/maya/po/../src//View/SourceItem.vala:99
 msgid "Edit…"
-msgstr ""
+msgstr "Redigera…"
 
 #: /home/noelco/maya/po/../src//View/SourceItem.vala:120
 msgid "Undo"
-msgstr ""
+msgstr "Ångra"
 
 #: /home/noelco/maya/po/../src//View/SourceItem.vala:138
 #, c-format
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "Kalender \"%s\" borttagen."
 
 #: /home/noelco/maya/po/../src//View/MayaToolbar.vala:44
 msgid "Create a new event"
@@ -153,7 +153,7 @@ msgstr "Skapa en ny händelse"
 
 #: /home/noelco/maya/po/../src//View/MayaToolbar.vala:47
 msgid "Manage Calendars"
-msgstr ""
+msgstr "Hantera kalendrar"
 
 #: /home/noelco/maya/po/../src//View/MayaToolbar.vala:54
 msgid "Search Events"
@@ -181,43 +181,43 @@ msgstr "Om"
 
 #: /home/noelco/maya/po/../src//View/SourceDialog.vala:54
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: /home/noelco/maya/po/../src//View/SourceDialog.vala:55
 msgid "Create"
-msgstr ""
+msgstr "Skapa"
 
 #: /home/noelco/maya/po/../src//View/SourceDialog.vala:64
 msgid "Name:"
-msgstr ""
+msgstr "Namn:"
 
 #: /home/noelco/maya/po/../src//View/SourceDialog.vala:67
 msgid "Calendar Name"
-msgstr ""
+msgstr "Kalendernamn"
 
 #: /home/noelco/maya/po/../src//View/SourceDialog.vala:90
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
 #: /home/noelco/maya/po/../src//View/SourceDialog.vala:111
 msgid "Color:"
-msgstr ""
+msgstr "Färg:"
 
 #: /home/noelco/maya/po/../src//View/SourceDialog.vala:116
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "Använd som standardkalender"
 
 #: /home/noelco/maya/po/../src//View/SourceDialog.vala:146
 msgid "Create Calendar"
-msgstr ""
+msgstr "Skapa kalender"
 
 #: /home/noelco/maya/po/../src//View/SourceDialog.vala:153
 msgid "Save"
-msgstr ""
+msgstr "Spara"
 
 #: /home/noelco/maya/po/../src//View/SourceSelector.vala:72
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "Lägg till en ny kalender..."
 
 #: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
 #: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
@@ -230,44 +230,44 @@ msgstr "kalender.ics"
 
 #: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
 
 #: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
 msgid "URL:"
-msgstr ""
+msgstr "Webbadress:"
 
 #: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
 msgid "Use a secure connection"
-msgstr ""
+msgstr "Använd en säker anslutning"
 
 #: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
 #: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:37
 msgid "User:"
-msgstr ""
+msgstr "Användare:"
 
 #: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
 msgid "user.name"
-msgstr ""
+msgstr "användar.namn"
 
 #: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
 msgid "Email:"
-msgstr ""
+msgstr "E-post:"
 
 #: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
 msgid "john@doe.com"
-msgstr ""
+msgstr "epost@adress.se"
 
 #: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
 msgid "Server handles meeting invitations"
-msgstr ""
+msgstr "Servern hanterar mötesinbjudningar"
 
 #: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:26
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:46
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "användar.namn eller användar.namn@gmail.com"
 
 #~ msgid "Import..."
 #~ msgstr "Importera..."
