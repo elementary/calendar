@@ -52,7 +52,45 @@ public class CalendarModel : Object {
     
     public Gee.LinkedList<E.Source> calendar_trash;
 
-    public CalendarModel (Settings.Weekday week_starts_on) {
+    public CalendarModel () {
+
+        // It's dirty, but there is no other way to get it for the moment.
+        string output;
+        Settings.Weekday week_starts_on = Maya.Settings.Weekday.MONDAY;
+
+        try {
+            GLib.Process.spawn_command_line_sync ("locale first_weekday", out output, null, null);
+        } catch (SpawnError e) {
+            output = "";
+        }
+
+        switch (output) {
+        case "1\n":
+            week_starts_on = Maya.Settings.Weekday.SUNDAY;
+            break;
+        case "2\n":
+            week_starts_on = Maya.Settings.Weekday.MONDAY;
+            break;
+        case "3\n":
+            week_starts_on = Maya.Settings.Weekday.TUESDAY;
+            break;
+        case "4\n":
+            week_starts_on = Maya.Settings.Weekday.WEDNESDAY;
+            break;
+        case "5\n":
+            week_starts_on = Maya.Settings.Weekday.THURSDAY;
+            break;
+        case "6\n":
+            week_starts_on = Maya.Settings.Weekday.FRIDAY;
+            break;
+        case "7\n":
+            week_starts_on = Maya.Settings.Weekday.SATURDAY;
+            break;
+        default:
+            week_starts_on = Maya.Settings.Weekday.BAD_WEEKDAY;
+            stdout.printf ("Locale has a bad first_weekday value\n");
+            break;
+        }
 
         this.month_start = Util.get_start_of_month ();
         this.week_starts_on = week_starts_on;
