@@ -94,7 +94,7 @@ set (DEPS_PKG
     glib-2.0
     gio-2.0
     gee-0.8
-    gtk+-3.0>=3.10
+    gtk+-3.0>=3.11.6
     granite
     libecal-1.2>=3.8.0
     libical
@@ -114,7 +114,7 @@ pkg_check_modules (DEPS REQUIRED ${DEPS_PKG})
 
 find_package (Vala REQUIRED)
 include (ValaVersion)
-ensure_vala_version ("0.22.0" MINIMUM)
+ensure_vala_version ("0.23.2" MINIMUM)
 include (ValaPrecompile)
 
 add_subdirectory (src)
