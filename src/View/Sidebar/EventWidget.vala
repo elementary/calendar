@@ -135,10 +135,10 @@ namespace Maya.View {
             string end_string = get_end_string (event);
             string start_add = end_string == "" ? "" : _("Starts: \t");
 
-            start_date_label.set_markup ("<span weight=\"light\">" + start_add + get_start_string (event) + "</span>");
+            start_date_label.set_markup ("<span weight=\"light\">" + Markup.escape_text (start_add + get_start_string (event)) + "</span>");
 
             if (end_string != "") {
-                end_date_label.set_markup ("<span weight=\"light\">" + _("Ends: \t") + end_string  + "</span>");
+                end_date_label.set_markup ("<span weight=\"light\">" + Markup.escape_text (_("Ends: \t") + end_string)  + "</span>");
                 end_date_label.show ();
             } else
                 end_date_label.hide ();
@@ -147,7 +147,7 @@ namespace Maya.View {
             string location = ical_event.get_location ();
 
             if (location != null && location != "") {
-                location_label.set_markup ("<span weight=\"light\">" + location + "</span>");
+                location_label.set_markup ("<span weight=\"light\">" + Markup.escape_text (location) + "</span>");
                 location_label.show ();
             } else
                 location_label.hide ();
