@@ -24,8 +24,6 @@ namespace Maya.View {
         public signal void on_menu_today_toggled ();
         public signal void add_calendar_clicked ();
         
-        Model.CalendarModel calmodel;
-        
         // Toolbar items
         Widgets.DateSwitcher month_switcher;
         Widgets.DateSwitcher year_switcher;
@@ -36,8 +34,7 @@ namespace Maya.View {
         Gtk.CheckMenuItem weeknumbers;
         View.SourceSelector source_selector;
         
-        public MayaToolbar (Model.CalendarModel calmodel) {
-            this.calmodel = calmodel;
+        public MayaToolbar () {
             show_close_button = true;
             
             var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
@@ -48,6 +45,7 @@ namespace Maya.View {
             
             month_switcher = new Widgets.DateSwitcher (10);
             year_switcher = new Widgets.DateSwitcher (-1);
+            var calmodel = Model.CalendarModel.get_default ();
             set_switcher_date (calmodel.month_start);
             
             search_bar = new Gtk.SearchEntry ();
@@ -118,6 +116,9 @@ namespace Maya.View {
             
             fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
             weeknumbers.active = saved_state.show_weeks;
+            calmodel.parameters_changed.connect (() => {
+                set_switcher_date (calmodel.month_start);
+            });
         }
 
         public void set_switcher_date (DateTime date) {
@@ -145,7 +146,7 @@ namespace Maya.View {
 
         void on_tb_sources_clicked (Gtk.Widget widget) {
             if (source_selector == null) {
-                source_selector = new View.SourceSelector (calmodel);
+                source_selector = new View.SourceSelector ();
             }
             source_selector.move_to_widget (widget);
             source_selector.show ();
@@ -153,10 +154,12 @@ namespace Maya.View {
         }
 
         void change_month (int relative) {
+            var calmodel = Model.CalendarModel.get_default ();
             calmodel.month_start = calmodel.month_start.add_months (relative);
         }
 
         void change_year (int relative) {
+            var calmodel = Model.CalendarModel.get_default ();
             calmodel.month_start = calmodel.month_start.add_years (relative);
         }
 

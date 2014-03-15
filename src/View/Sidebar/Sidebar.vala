@@ -31,7 +31,7 @@ namespace Maya.View {
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
-        public Sidebar (Model.CalendarModel calmodel) {
+        public Sidebar () {
 
             scrolled_window = new Gtk.ScrolledWindow (null, null);
             scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
@@ -48,7 +48,7 @@ namespace Maya.View {
             label.margin_right = 12;
             label.justify = Gtk.Justification.CENTER;
 
-            agenda_view = new AgendaView (calmodel);
+            agenda_view = new AgendaView ();
 
             var viewport = new Gtk.Viewport (null, null);
             viewport.shadow_type = Gtk.ShadowType.NONE;
@@ -109,4 +109,3 @@ namespace Maya.View {
     }
 
 }
-

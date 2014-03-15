@@ -22,7 +22,7 @@ namespace Maya.View {
      * The AgendaView shows all events for the currently selected date,
      * even with fancy colors!
      */
-	public class AgendaView : Gtk.Grid {
+    public class AgendaView : Gtk.Grid {
 
         // All of the sources to be displayed and their widgets.
         Gee.Map<E.Source, SourceWidget> source_widgets;
@@ -45,7 +45,7 @@ namespace Maya.View {
         /**
          * Creates a new agendaview.
          */
-		public AgendaView (Model.CalendarModel calmodel) {
+        public AgendaView () {
 
             // Gtk.Grid properties
             set_column_homogeneous (true);
@@ -75,13 +75,14 @@ namespace Maya.View {
             }
 
             // Listen to changes for events
+            var calmodel = Model.CalendarModel.get_default ();
             calmodel.events_added.connect (on_events_added);
             calmodel.events_removed.connect (on_events_removed);
             calmodel.events_updated.connect (on_events_updated);
 
             // Listen to changes in the displayed month
             calmodel.parameters_changed.connect (on_model_parameters_changed);
-		}
+        }
 
         /**
          * Called when a source is checked/unchecked in the source selector.
@@ -243,6 +244,6 @@ namespace Maya.View {
             }
         }
 
-	}
+    }
 
 }

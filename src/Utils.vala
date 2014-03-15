@@ -413,7 +413,7 @@ namespace Maya.Util {
      */
 
     public void save_temp_selected_calendars (){
-        var calmodel = new Model.CalendarModel(Maya.Settings.Weekday.MONDAY);
+        
     }
 
     public string get_hexa_color (Gdk.RGBA color) {
