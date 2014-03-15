@@ -578,6 +578,14 @@ public class CalendarModel : Object {
             source.remove.begin (null);
         }
     }
+
+    public void change_month (int relative) {
+        month_start = month_start.add_months (relative);
+    }
+
+    public void change_year (int relative) {
+        month_start = month_start.add_years (relative);
+    }
 }
 
 }

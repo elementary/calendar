@@ -107,10 +107,10 @@ namespace Maya.View {
             });
             search_bar.search_changed.connect (() => on_search (search_bar.text));
 
-            month_switcher.left_clicked.connect (() => {change_month (-1);});
-            month_switcher.right_clicked.connect (() => {change_month (1);});
-            year_switcher.left_clicked.connect (() => {change_year (-1);});
-            year_switcher.right_clicked.connect (() => {change_year (1);});
+            month_switcher.left_clicked.connect (() => {Model.CalendarModel.get_default ().change_month (-1);});
+            month_switcher.right_clicked.connect (() => {Model.CalendarModel.get_default ().change_month (1);});
+            year_switcher.left_clicked.connect (() => {Model.CalendarModel.get_default ().change_year (-1);});
+            year_switcher.right_clicked.connect (() => {Model.CalendarModel.get_default ().change_year (1);});
             
             button_calendar_sources.size_allocate.connect (button_size_allocate);
             
@@ -151,16 +151,6 @@ namespace Maya.View {
             source_selector.move_to_widget (widget);
             source_selector.show ();
             source_selector.run ();
-        }
-
-        void change_month (int relative) {
-            var calmodel = Model.CalendarModel.get_default ();
-            calmodel.month_start = calmodel.month_start.add_months (relative);
-        }
-
-        void change_year (int relative) {
-            var calmodel = Model.CalendarModel.get_default ();
-            calmodel.month_start = calmodel.month_start.add_years (relative);
         }
 
     }
