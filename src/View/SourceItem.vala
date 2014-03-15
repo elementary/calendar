@@ -149,13 +149,13 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         enter_notify_event.connect ((event) => {
             delete_button.visible = true;
             edit_button.visible = true;
-            return false;
+            return true;
         });
 
         leave_notify_event.connect_after ((event) => {
             delete_button.visible = false;
             edit_button.visible = false;
-            return false;
+            return true;
         });
     }
 

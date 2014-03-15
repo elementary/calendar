@@ -73,8 +73,8 @@ namespace Maya.View {
 
             name_label = new Gtk.Label ("");
             name_label.set_markup ("<b>" + Markup.escape_text (source.dup_display_name()) + "</b>");
-            name_label.set_alignment (0, 0.5f);
-            attach (name_label, 0, 0, 1, 1);
+            name_label.set_alignment (0.5f, 0.5f);
+            //attach (name_label, 0, 0, 1, 1);
             name_label.show ();
 
             notify["selected"].connect (update_visibility);
