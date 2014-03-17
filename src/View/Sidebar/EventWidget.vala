@@ -53,6 +53,9 @@ namespace Maya.View {
          * Creates a new event widget for the given event.
          */
         public EventWidget (E.Source source, E.CalComponent calevent) {
+            var style_provider = Util.Css.get_css_provider ();
+            get_style_context().add_provider (style_provider, 600);
+            get_style_context().add_class ("sidebarevent");
             this.calevent = calevent;
             var main_grid = new Gtk.Grid ();
             main_grid.column_spacing = 12;
@@ -96,7 +99,7 @@ namespace Maya.View {
             location_label.no_show_all = true;
             content_grid.attach (location_label, 2, 3, 2, 1);
 
-            location_image = new Gtk.Image.from_icon_name ("go-next-symbolic", Gtk.IconSize.MENU);
+            location_image = new Gtk.Image.from_icon_name ("mark-location-symbolic", Gtk.IconSize.MENU);
             location_image.no_show_all = true;
             content_grid.attach (location_image, 1, 3, 1, 1);
 
@@ -154,7 +157,7 @@ namespace Maya.View {
 
             date_label.set_markup ("<span weight=\"light\">" + Markup.escape_text (get_day_string (event)) + "</span>");
             hour_label.set_markup ("<span weight=\"light\">" + Markup.escape_text (get_hour_string (event)) + "</span>");
-            unowned iCal.icalcomponent ical_event = event.get_icalcomponent ();
+            unowned iCal.Component ical_event = event.get_icalcomponent ();
 
             string location = ical_event.get_location ();
 
@@ -163,9 +166,10 @@ namespace Maya.View {
                 location_image.no_show_all = false;
                 location_label.show ();
                 location_image.show ();
-            } else
+            } else {
                 location_label.hide ();
                 location_image.hide ();
+            }
         }
 
         /**
@@ -187,6 +191,10 @@ namespace Maya.View {
             string start_date_string = start_date.format (Settings.DateFormat_Complete ());
             if (Util.is_multiday_event (event) == true) {
                 string end_date_string = end_date.format (Settings.DateFormat_Complete ());
+                date_label.no_show_all = false;
+                date_image.no_show_all = false;
+                date_label.show ();
+                date_image.show ();
                 return ("%s to %s".printf (start_date_string, end_date_string));
             } else {
                 date_label.no_show_all = true;
@@ -201,7 +209,7 @@ namespace Maya.View {
             DateTime start_date, end_date;
             get_dates (event, out start_date, out end_date);
             if (Util.is_the_all_day(start_date, end_date) == true) {
-                return _("all day");
+                return _("All day");
             } else {
                 string start_time_string = start_date.format (Settings.TimeFormat ());
                 string end_time_string = end_date.format (Settings.TimeFormat ());

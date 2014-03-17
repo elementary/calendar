@@ -29,7 +29,12 @@ set(CLIENT_SOURCE
     View/Grid/WeekLabels.vala
     View/Grid/Header.vala
     View/Grid/VAutoHider.vala
-    View/EventDialog.vala
+    View/EventEdition/EventDialog.vala
+    View/EventEdition/GuestsPanel.vala
+    View/EventEdition/InfoPanel.vala
+    View/EventEdition/LocationPanel.vala
+    View/EventEdition/ReminderPanel.vala
+    View/EventEdition/RepeatPanel.vala
     View/SourceDialog.vala
     View/SourceItem.vala
     View/MayaToolbar.vala

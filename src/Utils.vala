@@ -40,12 +40,12 @@ namespace Maya.Util {
 
 
     /**
-     * Converts two datetimes to one icaltimetype. The first contains the date,
+     * Converts two datetimes to one TimeType. The first contains the date,
      * its time settings are ignored. The second one contains the time itself.
      */
-    iCal.icaltimetype date_time_to_ical (DateTime date, DateTime time) {
+    iCal.TimeType date_time_to_ical (DateTime date, DateTime time) {
 
-        iCal.icaltimetype result = iCal.icaltime_from_day_of_year
+        iCal.TimeType result = iCal.TimeType.from_day_of_year
             (date.get_day_of_year (), date.get_year ());
 
         result.hour = time.get_hour ();
@@ -56,9 +56,9 @@ namespace Maya.Util {
     }
 
     /**
-     * Converts the given icaltimetype to a DateTime.
+     * Converts the given TimeType to a DateTime.
      */
-    DateTime ical_to_date_time (iCal.icaltimetype date) {
+    DateTime ical_to_date_time (iCal.TimeType date) {
 
         string tzid = date.zone.get_tzid ();
         TimeZone zone = new TimeZone (tzid);

@@ -48,6 +48,7 @@ namespace Maya {
         }
 
         Gtk.init (ref args);
+        Clutter.init (ref args);
         var app = new Application ();
 
         return app.run (args);
@@ -211,7 +212,6 @@ namespace Maya {
          */
         void on_modified (E.CalComponent comp) {
             var dialog = new Maya.View.EventDialog (window, comp, comp.get_data<E.Source>("source"), null);
-            dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, false));
             dialog.present ();
         }
 
@@ -283,36 +283,6 @@ namespace Maya {
 
         //--- SIGNAL HANDLERS ---//
 
-        void on_event_dialog_response (View.EventDialog dialog, bool response_id, bool add_event)  {
-
-            E.CalComponent event = dialog.ecal;
-            E.Source source = dialog.source;
-            E.Source? original_source = dialog.original_source;
-            E.CalObjModType mod_type = dialog.mod_type;
-
-            dialog.dispose ();
-
-            if (response_id != true)
-                return;
-
-            var calmodel = Model.CalendarModel.get_default ();
-            if (add_event)
-                calmodel.add_event (source, event);
-            else {
-
-                assert(original_source != null);
-
-                if (original_source.dup_uid () == source.dup_uid ()) {
-                    // Same uids, just modify
-                    calmodel.update_event (source, event, mod_type);
-                } else {
-                    // Different calendar, remove and readd
-                    calmodel.remove_event (original_source, event, mod_type);
-                    calmodel.add_event (source, event);
-                }
-            }
-        }
-
         bool on_window_delete_event (Gdk.EventAny event) {
             update_saved_state ();
             return false;
@@ -320,7 +290,6 @@ namespace Maya {
 
         void on_tb_add_clicked (DateTime dt) {
             var dialog = new Maya.View.EventDialog (window, null, null, dt);
-            dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, true));
             dialog.present ();
 
         }
