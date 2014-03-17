@@ -86,6 +86,10 @@ set (DEPS_PACKAGES
     libical
     libsoup-2.4
     libpeas-1.0
+    champlain-gtk-0.12
+    champlain-0.12
+    clutter-1.0
+    geocode-glib-1.0
 )
 
 set (DEPS_PKG
@@ -99,10 +103,13 @@ set (DEPS_PKG
     libecal-1.2>=3.8.0
     libical
     libpeas-1.0
+    champlain-gtk-0.12
+    champlain-0.12
+    clutter-1.0
+    geocode-glib-1.0
 )
 
 set (GLOBAL_VALAC_OPTIONS
-    --define=USE_GRANITE_DECORATED_WINDOW
     --target-glib=2.32
     --thread
     --vapidir=${CMAKE_BINARY_DIR}/src
@@ -114,7 +121,7 @@ pkg_check_modules (DEPS REQUIRED ${DEPS_PKG})
 
 find_package (Vala REQUIRED)
 include (ValaVersion)
-ensure_vala_version ("0.22.0" MINIMUM)
+ensure_vala_version ("0.23.2" MINIMUM)
 include (ValaPrecompile)
 
 add_subdirectory (src)

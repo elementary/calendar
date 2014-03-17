@@ -30,7 +30,6 @@ namespace Maya.View {
         public Gtk.SearchEntry search_bar;
         
         // Menu items
-        public Gtk.CheckMenuItem fullscreen;
         Gtk.CheckMenuItem weeknumbers;
         View.SourceSelector source_selector;
         
@@ -67,7 +66,6 @@ namespace Maya.View {
             // Create the menu
             
             var today = new Gtk.MenuItem.with_label (_("Today"));
-            fullscreen = new Gtk.CheckMenuItem.with_label (_("Fullscreen"));
             weeknumbers = new Gtk.CheckMenuItem.with_label (_("Show Week Numbers"));
             //var import = new Gtk.MenuItem.with_label (_("Import…"));
             var about = new Gtk.MenuItem.with_label (_("About"));
@@ -75,7 +73,6 @@ namespace Maya.View {
             // Append in correct order
             menu.add (today);
             menu.add (new Gtk.SeparatorMenuItem ());
-            menu.add (fullscreen);
             menu.add (weeknumbers);
             
             /* TODO : Will be done in Maya 0.2
@@ -90,16 +87,15 @@ namespace Maya.View {
             pack_start (button_calendar_sources);
             pack_start (button_add);
             
-            pack_end (contractor);
-            pack_end (search_bar);
             pack_end (menu_button);
+            pack_end (search_bar);
+            pack_end (contractor);
             
             // Connect to signals
             
             button_add.clicked.connect (() => add_calendar_clicked ());
             button_calendar_sources.clicked.connect (on_tb_sources_clicked);
             today.activate.connect (() => on_menu_today_toggled);
-            fullscreen.toggled.connect (on_toggle_fullscreen);
             weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
             about.activate.connect (() => {
                 var app = ((Maya.Application)GLib.Application.get_default ());
@@ -114,7 +110,6 @@ namespace Maya.View {
             
             button_calendar_sources.size_allocate.connect (button_size_allocate);
             
-            fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
             weeknumbers.active = saved_state.show_weeks;
             calmodel.parameters_changed.connect (() => {
                 set_switcher_date (calmodel.month_start);
@@ -124,15 +119,6 @@ namespace Maya.View {
         public void set_switcher_date (DateTime date) {
             month_switcher.text = date.format ("%B");
             year_switcher.text = date.format ("%Y");
-        }
-
-        void on_toggle_fullscreen () {
-            var window = ((Maya.Application)GLib.Application.get_default ()).window;
-            
-            if (fullscreen.active)
-                window.fullscreen ();
-            else
-                window.unfullscreen ();
         }
 
         void on_menu_show_weeks_toggled () {

@@ -48,7 +48,6 @@ namespace Maya.View {
          * Creates a new agendaview.
          */
         public AgendaView () {
-
             // Gtk.Grid properties
             set_column_homogeneous (true);
             column_spacing = 0;
@@ -62,7 +61,7 @@ namespace Maya.View {
 
             var toolbar = new Gtk.Toolbar ();
             toolbar.add (label_toolitem);
-            toolbar.get_style_context ().add_class ("inline-toolbar");
+            toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
 
             attach (toolbar, 0, 0, 1, 1);
             toolbar.show_all ();
@@ -74,6 +73,9 @@ namespace Maya.View {
             scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
             scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
             scrolled_window.add_with_viewport (sources_grid);
+            var style_provider = Util.Css.get_css_provider ();
+            scrolled_window.get_style_context().add_provider (style_provider, 600);
+            scrolled_window.get_style_context().add_class ("sidebarevent");
             attach (scrolled_window, 0, 1, 1, 1);
             scrolled_window.expand = true;
             scrolled_window.show_all ();

@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2011-2012 Maxwell Barvian
+//  Copyright (C) 2011-2012 Jaap Broekhuizen
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -15,28 +15,22 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya.Settings {
+public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
+    private EventDialog parent_dialog;
+    public RepeatPanel (EventDialog parent_dialog) {
+        this.parent_dialog = parent_dialog;
 
-    public enum WindowState {
-        NORMAL = 0,
-        MAXIMIZED = 1
+        margin_left = 12;
+        margin_right = 12;
+        set_row_spacing (6);
+        set_column_spacing (12);
+        set_sensitive (parent_dialog.can_edit);
     }
-
-    public class SavedState : Granite.Services.Settings {
-
-        public int window_width { get; set; }
-        public int window_height { get; set; }
-
-        public WindowState window_state { get; set; }
-
-        public bool show_weeks { get; set; }
-
-        public int hpaned_position { get; set; }
-
-        public SavedState () {
-            base ("org.pantheon.maya.savedstate");
-        }
-
+    
+    /**
+     * Save the values in the dialog into the component.
+     */
+    public void save () {
+        
     }
-
 }

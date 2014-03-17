@@ -164,7 +164,7 @@ public class CalendarModel : Object {
     private async void add_event_async (E.Source source, E.CalComponent event) {
         SourceFunc callback = add_event_async.callback;
         Threads.add (() => {
-            unowned iCal.icalcomponent comp = event.get_icalcomponent();
+            unowned iCal.Component comp = event.get_icalcomponent();
 
             debug (@"Adding event '$(comp.get_uid())'");
 
@@ -209,7 +209,7 @@ public class CalendarModel : Object {
 
     public void update_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {
 
-        unowned iCal.icalcomponent comp = event.get_icalcomponent();
+        unowned iCal.Component comp = event.get_icalcomponent();
 
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
 
@@ -236,7 +236,7 @@ public class CalendarModel : Object {
 
     public void remove_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {
 
-        unowned iCal.icalcomponent comp = event.get_icalcomponent();
+        unowned iCal.Component comp = event.get_icalcomponent();
 
         string uid = comp.get_uid ();
         string? rid = event.has_recurrences() ? null : event.get_recurid_as_string();
@@ -421,7 +421,7 @@ public class CalendarModel : Object {
 
     void debug_event (E.Source source, E.CalComponent event) {
 
-        unowned iCal.icalcomponent comp = event.get_icalcomponent ();
+        unowned iCal.Component comp = event.get_icalcomponent ();
         debug (@"Event ['$(comp.get_summary())', $(source.dup_display_name()), $(comp.get_uid()))]");
     }
 
@@ -495,7 +495,7 @@ public class CalendarModel : Object {
         return view;
     }
 
-    void on_objects_added (E.Source source, E.CalClient client, SList<weak iCal.icalcomponent> objects) {
+    void on_objects_added (E.Source source, E.CalClient client, SList<weak iCal.Component> objects) {
 
         debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name());
 
@@ -507,7 +507,7 @@ public class CalendarModel : Object {
         foreach (var comp in objects) {
 
             var event = new E.CalComponent ();
-            iCal.icalcomponent comp_clone = new iCal.icalcomponent.clone (comp);
+            iCal.Component comp_clone = new iCal.Component.clone (comp);
             event.set_icalcomponent ((owned) comp_clone);
 
             debug_event (source, event);
@@ -521,7 +521,7 @@ public class CalendarModel : Object {
         events_added (source, added_events.read_only_view);
     }
 
-    void on_objects_modified (E.Source source, E.CalClient client, SList<weak iCal.icalcomponent> objects) {
+    void on_objects_modified (E.Source source, E.CalClient client, SList<weak iCal.Component> objects) {
 
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
 
