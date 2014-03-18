@@ -189,8 +189,6 @@ namespace Maya {
 
             if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
                 window.maximize ();
-            else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
-                window.fullscreen ();
 
             calview.today();
 
@@ -238,9 +236,6 @@ namespace Maya {
                             }
 
                             break;
-                        case Gdk.Key.@F11:
-                            toolbar.fullscreen.active = !toolbar.fullscreen.active;
-                            break;
                         }
 
                         return false;
@@ -265,8 +260,6 @@ namespace Maya {
             // Save window state
             if ((window.get_window ().get_state () & Settings.WindowState.MAXIMIZED) != 0)
                 saved_state.window_state = Settings.WindowState.MAXIMIZED;
-            else if ((window.get_window ().get_state () & Settings.WindowState.FULLSCREEN) != 0)
-                saved_state.window_state = Settings.WindowState.FULLSCREEN;
             else
                 saved_state.window_state = Settings.WindowState.NORMAL;
 

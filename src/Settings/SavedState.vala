@@ -19,8 +19,7 @@ namespace Maya.Settings {
 
     public enum WindowState {
         NORMAL = 0,
-        MAXIMIZED = 1,
-        FULLSCREEN = 2
+        MAXIMIZED = 1
     }
 
     public class SavedState : Granite.Services.Settings {
