@@ -20,9 +20,12 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private Gtk.Switch repeat_switch;
     private Gtk.ComboBoxText repeat_combobox;
     private Gtk.ComboBoxText ends_combobox;
+    private Gtk.SpinButton end_entry;
+    private Granite.Widgets.DatePicker end_datepicker;
     private Gtk.Grid week_grid;
     private Gtk.Grid month_grid;
     private Gtk.SpinButton every_entry;
+    private Gtk.Label every_unit_label;
 
     public RepeatPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -43,6 +46,29 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         repeat_combobox.append_text (_("Yearly"));
         repeat_combobox.active = 1;
         repeat_combobox.hexpand = true;
+        repeat_combobox.changed.connect (() => {
+            switch (repeat_combobox.active) {
+                case 1:
+                    week_grid.no_show_all = false;
+                    week_grid.show_all ();
+                    month_grid.no_show_all = true;
+                    month_grid.hide ();
+                    break;
+                case 2:
+                    week_grid.no_show_all = true;
+                    week_grid.hide ();
+                    month_grid.no_show_all = false;
+                    month_grid.show_all ();
+                    break;
+                default:
+                    month_grid.no_show_all = true;
+                    month_grid.hide ();
+                    week_grid.no_show_all = true;
+                    week_grid.hide ();
+                    break;
+            }
+            every_entry.value_changed ();
+        });
 
         var repeat_grid = new Gtk.Grid ();
         repeat_grid.row_spacing = 6;
@@ -55,8 +81,24 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         every_entry = new Gtk.SpinButton.with_range (1, 99, 1);
         every_entry.hexpand = true;
+        every_entry.value_changed.connect (() => {
+            switch (repeat_combobox.active) {
+                case 0:
+                    every_unit_label.label = ngettext (_("Day"), _("Days"), (ulong)every_entry.value);
+                    break;
+                case 1:
+                    every_unit_label.label = ngettext (_("Week"), _("Weeks"), (ulong)every_entry.value);
+                    break;
+                case 2:
+                    every_unit_label.label = ngettext (_("Month"), _("Months"), (ulong)every_entry.value);
+                    break;
+                case 3:
+                    every_unit_label.label = ngettext (_("Year"), _("Years"), (ulong)every_entry.value);
+                    break;
+            }
+        });
 
-        var every_unit_label = new Gtk.Label (_("Week"));
+        every_unit_label = new Gtk.Label (_("Week"));
 
         var every_grid = new Gtk.Grid ();
         every_grid.row_spacing = 6;
@@ -74,13 +116,33 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         ends_combobox.hexpand = true;
         ends_combobox.active = 0;
 
-        create_week_grid ();
+        var end_label = new Gtk.Label (_("Repeats"));
+
+        end_entry = new Gtk.SpinButton.with_range (1, 99, 1);
+        end_entry.hexpand = true;
+        end_entry.value_changed.connect (() => {
+            end_label.label = ngettext (_("Repeat"), _("Repeats"), (ulong)end_entry.value);
+        });
 
         var ends_grid = new Gtk.Grid ();
         ends_grid.row_spacing = 6;
         ends_grid.column_spacing = 12;
         ends_grid.orientation = Gtk.Orientation.HORIZONTAL;
         ends_grid.add (ends_combobox);
+        ends_grid.add (end_entry);
+        ends_grid.add (end_label);
+
+        create_week_grid ();
+
+        var same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
+        var every_radiobutton = new Gtk.RadioButton.with_label_from_widget (same_radiobutton, _("Same"));
+
+        month_grid = new Gtk.Grid ();
+        month_grid.row_spacing = 6;
+        month_grid.orientation = Gtk.Orientation.VERTICAL;
+        month_grid.no_show_all = true;
+        month_grid.add (same_radiobutton);
+        month_grid.add (every_radiobutton);
 
         var fake_grid_left = new Gtk.Grid ();
         fake_grid_left.hexpand = true;
@@ -94,6 +156,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         attach (every_label, 1, 2, 1, 1);
         attach (every_grid, 1, 3, 1, 1);
         attach (week_grid, 1, 4, 1, 1);
+        attach (month_grid, 1, 4, 1, 1);
         attach (ends_label, 1, 5, 1, 1);
         attach (ends_grid, 1, 6, 1, 1);
     }

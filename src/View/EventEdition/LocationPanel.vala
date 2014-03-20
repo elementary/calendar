@@ -103,20 +103,28 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         property.set_geo (geo);
         comp.add_property (property);
     }
-    
+
     private async void compute_location () {
-        var forward = new Geocode.Forward.for_string (location_entry.text);
-        try {
-            forward.set_answer_count (1);
-            var places = forward.search ();
-            foreach (var place in places) {
-                point.latitude = place.location.latitude;
-                point.longitude = place.location.longitude;
-                champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
+        SourceFunc callback = compute_location.callback;
+        Threads.add (() => {
+            var forward = new Geocode.Forward.for_string (location_entry.text);
+            try {
+                forward.set_answer_count (1);
+                var places = forward.search ();
+                foreach (var place in places) {
+                    point.latitude = place.location.latitude;
+                    point.longitude = place.location.longitude;
+                    champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
+                }
+
+                location_entry.has_focus = true;
+            } catch (GLib.Error error) {
+                critical (error.message);
             }
-            location_entry.has_focus = true;
-        } catch (Error e) {
-        
-        }
+
+            Idle.add ((owned) callback);
+        });
+
+        yield;
     }
 }
