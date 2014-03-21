@@ -278,11 +278,11 @@ public class EventDialog : Gtk.Window {
             
                 ecal = new E.CalComponent ();
                 ecal.set_new_vtype (E.CalComponentVType.EVENT);
-                
+
                 from_date_picker.date = date_time;
                 from_time_picker.time = new DateTime.now_local ();
                 to_date_picker.date = date_time;
-                to_time_picker.time = new DateTime.now_local ();
+                to_time_picker.time = from_time_picker.time.add_hours (1);
                 // Load the source
                 calendar_box.set_active_id (this.source.dup_uid ());
             }
