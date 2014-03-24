@@ -92,9 +92,9 @@ namespace Maya.View {
             pack_start (button_calendar_sources);
             pack_start (button_add);
             
-            pack_end (contractor);
-            pack_end (search_bar);
             pack_end (menu_button);
+            pack_end (search_bar);
+            pack_end (contractor);
             
             // Connect to signals
             
@@ -147,9 +147,8 @@ namespace Maya.View {
             if (source_selector == null) {
                 source_selector = new View.SourceSelector (calmodel);
             }
-            source_selector.move_to_widget (widget);
-            source_selector.show ();
-            source_selector.run ();
+            source_selector.set_relative_to (widget);
+            source_selector.show_all ();
         }
 
         void change_month (int relative) {

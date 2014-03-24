@@ -12,7 +12,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
+public class Maya.View.SourceSelector : Gtk.Popover {
     
     private Gee.HashMap<string, SourceItem?> src_map;
     
@@ -85,11 +85,9 @@ public class Maya.View.SourceSelector : Granite.Widgets.PopOver {
         main_grid.attach (add_calendar_grid, 0, 2, 1, 1);
         
         stack.add_named (main_grid, "main");
+        stack.margin_bottom = 5;
         
-        var container = (Gtk.Container) get_content_area ();
-        container.margin_right = container.margin_right - 5;
-        container.margin_left = container.margin_left - 5;
-        container.add (stack);
+        this.add (stack);
         main_grid.show_all ();
     }
     
