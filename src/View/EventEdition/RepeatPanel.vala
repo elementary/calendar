@@ -46,6 +46,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         repeat_combobox.append_text (_("Yearly"));
         repeat_combobox.active = 1;
         repeat_combobox.hexpand = true;
+        repeat_combobox.sensitive = false;
         repeat_combobox.changed.connect (() => {
             switch (repeat_combobox.active) {
                 case 1:
@@ -104,10 +105,14 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         every_grid.row_spacing = 6;
         every_grid.column_spacing = 12;
         every_grid.orientation = Gtk.Orientation.HORIZONTAL;
+        every_grid.sensitive = false;
         every_grid.add (every_entry);
         every_grid.add (every_unit_label);
 
         var ends_label = Maya.View.EventDialog.make_label (_("Ends:"));
+
+        var end_label = new Gtk.Label (_("Repeats"));
+        end_label.no_show_all = true;
 
         ends_combobox = new Gtk.ComboBoxText ();
         ends_combobox.append_text (_("Never"));
@@ -115,24 +120,48 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         ends_combobox.append_text (_("After"));
         ends_combobox.hexpand = true;
         ends_combobox.active = 0;
-
-        var end_label = new Gtk.Label (_("Repeats"));
+        ends_combobox.changed.connect (() => {
+            switch (ends_combobox.active) {
+                case 0:
+                    end_label.hide ();
+                    end_entry.hide ();
+                    end_datepicker.hide ();
+                    break;
+                case 1:
+                    end_label.hide ();
+                    end_entry.hide ();
+                    end_datepicker.show ();
+                    break;
+                case 2:
+                    end_label.show ();
+                    end_entry.show ();
+                    end_datepicker.hide ();
+                    break;
+            }
+        });
 
         end_entry = new Gtk.SpinButton.with_range (1, 99, 1);
+        end_entry.no_show_all = true;
         end_entry.hexpand = true;
         end_entry.value_changed.connect (() => {
             end_label.label = ngettext (_("Repeat"), _("Repeats"), (ulong)end_entry.value);
         });
 
+        end_datepicker = new Granite.Widgets.DatePicker ();
+        end_datepicker.no_show_all = true;
+
         var ends_grid = new Gtk.Grid ();
         ends_grid.row_spacing = 6;
         ends_grid.column_spacing = 12;
         ends_grid.orientation = Gtk.Orientation.HORIZONTAL;
+        ends_grid.sensitive = false;
         ends_grid.add (ends_combobox);
         ends_grid.add (end_entry);
         ends_grid.add (end_label);
+        ends_grid.add (end_datepicker);
 
         create_week_grid ();
+        week_grid.sensitive = false;
 
         var same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
         var every_radiobutton = new Gtk.RadioButton.with_label_from_widget (same_radiobutton, _("Same"));
@@ -141,6 +170,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         month_grid.row_spacing = 6;
         month_grid.orientation = Gtk.Orientation.VERTICAL;
         month_grid.no_show_all = true;
+        month_grid.sensitive = false;
         month_grid.add (same_radiobutton);
         month_grid.add (every_radiobutton);
 
@@ -148,6 +178,16 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         fake_grid_left.hexpand = true;
         var fake_grid_right = new Gtk.Grid ();
         fake_grid_right.hexpand = true;
+
+        repeat_switch.notify["active"].connect (() => {
+            bool active = repeat_switch.active;
+            repeat_combobox.sensitive = active;
+            every_grid.sensitive = active;
+            week_grid.sensitive = active;
+            month_grid.sensitive = active;
+            ends_grid.sensitive = active;
+        });
+        repeat_switch.active = false;
 
         attach (fake_grid_left, 0, 0, 1, 1);
         attach (fake_grid_right, 2, 0, 1, 1);
@@ -239,7 +279,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 break;
         }
     }
-    
+
     /**
      * Save the values in the dialog into the component.
      */

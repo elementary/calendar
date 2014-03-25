@@ -2,6 +2,20 @@
 
 [CCode (cprefix = "E", gir_namespace = "ECalendar", gir_version = "1.2", lower_case_cprefix = "e_")]
 namespace E {
+	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_cal_get_type ()")]
+	public class Cal : GLib.Object {
+		public static void marshal_VOID__ENUM_ENUM (GLib.Closure closure, GLib.Value return_value, uint n_param_values, GLib.Value param_values, void* invocation_hint, void* marshal_data);
+		public static void marshal_VOID__STRING_UINT (GLib.Closure closure, GLib.Value return_value, uint n_param_values, GLib.Value param_values, void* invocation_hint, void* marshal_data);
+		public static void marshal_VOID__UINT_STRING (GLib.Closure closure, GLib.Value return_value, uint n_param_values, GLib.Value param_values, void* invocation_hint, void* marshal_data);
+		public static string system_timezone_get_location ();
+		public static string util_get_system_timezone_location ();
+		public static int util_priority_from_string (string string);
+		public static unowned string util_priority_to_string (int priority);
+		public virtual signal void backend_died ();
+		public virtual signal void backend_error (string message);
+		public virtual signal void cal_opened (int status);
+		public virtual signal void cal_opened_ex (long error);
+	}
 	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_cal_client_get_type ()")]
 	public class CalClient : E.Client {
 		[CCode (has_construct_function = false)]
@@ -120,7 +134,7 @@ namespace E {
 		public CalComponent.from_string (string calobj);
 		public static string gen_uid ();
 		public unowned E.CalComponentAlarm get_alarm (string auid);
-		public GLib.List get_alarm_uids ();
+		public GLib.List<string> get_alarm_uids ();
 		public string get_as_string ();
 		public void get_attachment_list (out GLib.SList attachment_list);
 		public void get_attendee_list (out GLib.SList attendee_list);
@@ -238,6 +252,25 @@ namespace E {
 	public struct CalChange {
 		public weak E.CalComponent comp;
 		public E.CalChangeType type;
+	}
+	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_cal_view_get_type ()")]
+	public class CalView : GLib.Object {
+		[CCode (has_construct_function = false)]
+		protected CalView ();
+		[Deprecated (since = "3.2")]
+		public void start ();
+		[Deprecated (since = "3.2")]
+		public void stop ();
+		[NoAccessorMethod]
+		public E.Cal client { owned get; construct; }
+		[NoAccessorMethod]
+		public void* view { get; construct; }
+		public signal void objects_added (GLib.List<long> objects);
+		public signal void objects_modified (GLib.List<long> objects);
+		public signal void objects_removed (GLib.List<E.CalComponentId> objects);
+		public virtual signal void view_complete (uint status, string error_msg);
+		public virtual signal void view_done (int status);
+		public virtual signal void view_progress (string message, uint percent);
 	}
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct CalComponentAlarmInstance {

@@ -22,6 +22,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 
     private GtkChamplain.Embed champlain_embed;
     private Champlain.Point point;
+     // Only set the geo property if map_selected is true, this is a smart behavior!
+    private bool map_selected = false;
 
     public LocationPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -36,7 +38,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         location_entry = new Gtk.SearchEntry ();
         location_entry.placeholder_text = _("John Smith OR Example St.");
         location_entry.hexpand = true;
-        location_entry.activate.connect (() => {compute_location.begin ();});
+        location_entry.activate.connect (() => {compute_location.begin (location_entry.text);});
         attach (location_label, 0, 0, 1, 1);
         attach (location_entry, 0, 1, 1, 1);
 
@@ -50,6 +52,10 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         // Load the location
         point = new Champlain.Point ();
         point.draggable = parent_dialog.can_edit;
+        point.drag_finish.connect (() => {
+            map_selected = true;
+        });
+
         if (parent_dialog.ecal != null) {
             unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
             string location = comp.get_location ();
@@ -58,16 +64,24 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 
             unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.GEO);
             iCal.GeoType? geo = property.get_geo ();
+            bool need_relocation = true;
             if (geo != null) {
-                if (geo.latitude < Champlain.MIN_LATITUDE || geo.longitude < Champlain.MIN_LONGITUDE ||
-                    geo.latitude > Champlain.MAX_LATITUDE || geo.longitude > Champlain.MAX_LONGITUDE) {
-                    compute_location.begin ();
-                } else {
+                if (geo.latitude >= Champlain.MIN_LATITUDE && geo.longitude >= Champlain.MIN_LONGITUDE &&
+                    geo.latitude <= Champlain.MAX_LATITUDE && geo.longitude <= Champlain.MAX_LONGITUDE) {
+                    need_relocation = false;
                     point.latitude = geo.latitude;
                     point.longitude = geo.longitude;
+                    if (geo.latitude == 0 && geo.longitude == 0)
+                        need_relocation = true;
                 }
-            } else if (location != null) {
-                compute_location.begin ();
+            }
+            if (need_relocation == true) {
+                if (location != null && location != "") {
+                    compute_location.begin (location_entry.text);
+                } else {
+                    // A little hacky but seems to work as expected (search for the timezone position)
+                    compute_location.begin (E.Cal.util_get_system_timezone_location ());
+                }
             }
         }
         view.zoom_level = 8;
@@ -85,29 +99,30 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         string location = location_entry.text;
 
         comp.set_location (location);
-        
-        // First, clear the geo
-        int count = comp.count_properties (iCal.PropertyKind.GEO);
+        if (map_selected == true) {
+            // First, clear the geo
+            int count = comp.count_properties (iCal.PropertyKind.GEO);
 
-        for (int i = 0; i < count; i++) {
-            unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.GEO);
+            for (int i = 0; i < count; i++) {
+                unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.GEO);
 
-            comp.remove_property (remove_prop);
+                comp.remove_property (remove_prop);
+            }
+
+            // Add the comment
+            var property = new iCal.Property (iCal.PropertyKind.GEO);
+            iCal.GeoType geo = {0, 0};
+            geo.latitude = (float)point.latitude;
+            geo.longitude = (float)point.longitude;
+            property.set_geo (geo);
+            comp.add_property (property);
         }
-
-        // Add the comment
-        var property = new iCal.Property (iCal.PropertyKind.GEO);
-        iCal.GeoType geo = {0, 0};
-        geo.latitude = (float)point.latitude;
-        geo.longitude = (float)point.longitude;
-        property.set_geo (geo);
-        comp.add_property (property);
     }
 
-    private async void compute_location () {
+    private async void compute_location (string loc) {
         SourceFunc callback = compute_location.callback;
         Threads.add (() => {
-            var forward = new Geocode.Forward.for_string (location_entry.text);
+            var forward = new Geocode.Forward.for_string (loc);
             try {
                 forward.set_answer_count (1);
                 var places = forward.search ();
@@ -116,6 +131,9 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                     point.longitude = place.location.longitude;
                     champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
                 }
+
+                if (loc == location_entry.text)
+                    map_selected = true;
 
                 location_entry.has_focus = true;
             } catch (GLib.Error error) {
