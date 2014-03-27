@@ -26,6 +26,14 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private Gtk.Grid month_grid;
     private Gtk.SpinButton every_entry;
     private Gtk.Label every_unit_label;
+    
+    private Gtk.ToggleButton mon_button;
+    private Gtk.ToggleButton tue_button;
+    private Gtk.ToggleButton wed_button;
+    private Gtk.ToggleButton thu_button;
+    private Gtk.ToggleButton fri_button;
+    private Gtk.ToggleButton sat_button;
+    private Gtk.ToggleButton sun_button;
 
     public RepeatPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -204,13 +212,13 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private void create_week_grid () {
         week_grid = new Gtk.Grid ();
         week_grid.column_homogeneous = true;
-        var mon_button = new Gtk.ToggleButton.with_label (_("Mon"));
-        var tue_button = new Gtk.ToggleButton.with_label (_("Tue"));
-        var wed_button = new Gtk.ToggleButton.with_label (_("Wed"));
-        var thu_button = new Gtk.ToggleButton.with_label (_("Thu"));
-        var fri_button = new Gtk.ToggleButton.with_label (_("Fri"));
-        var sat_button = new Gtk.ToggleButton.with_label (_("Sat"));
-        var sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
+        mon_button = new Gtk.ToggleButton.with_label (_("Mon"));
+        tue_button = new Gtk.ToggleButton.with_label (_("Tue"));
+        wed_button = new Gtk.ToggleButton.with_label (_("Wed"));
+        thu_button = new Gtk.ToggleButton.with_label (_("Thu"));
+        fri_button = new Gtk.ToggleButton.with_label (_("Fri"));
+        sat_button = new Gtk.ToggleButton.with_label (_("Sat"));
+        sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
         week_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         week_grid.get_style_context ().add_class ("raised");
         switch (Maya.Model.CalendarModel.get_default ().week_starts_on) {
