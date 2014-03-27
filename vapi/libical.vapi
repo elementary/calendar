@@ -213,9 +213,9 @@ namespace iCal {
 		[CCode (cname = "icalcomponent_new_xstandard", has_construct_function = false)]
 		public Component.xstandard ();
 	}
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaldurationtype")]
-	[Compact]
-	public class DurationType {
+	[SimpleType]
+	[CCode (cheader_filename = "libical/ical.h", cname = "struct icaldurationtype", has_type_id = false)]
+	public struct DurationType {
 		public uint days;
 		public uint hours;
 		public int is_neg;

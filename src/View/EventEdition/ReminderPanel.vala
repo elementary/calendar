@@ -66,6 +66,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         attach (reminder_label, 0, 0, 1, 1);
         attach (scrolled, 0, 1, 1, 1);
         attach (button_box, 0, 2, 1, 1);
+        load ();
     }
     
     private void add_reminder () {
@@ -82,6 +83,36 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         });
         no_reminder_label.no_show_all = true;
         no_reminder_label.hide ();
+    }
+
+    private void load () {
+        if (parent_dialog.ecal == null)
+            return;
+        warning ("");
+        foreach (var alarm_uid in parent_dialog.ecal.get_alarm_uids ()) {
+            unowned E.CalComponentAlarm e_alarm = parent_dialog.ecal.get_alarm (alarm_uid);
+            E.CalComponentAlarmAction action;
+            e_alarm.get_action (out action);
+            switch (action) {
+                case (E.CalComponentAlarmAction.DISPLAY):
+                    E.CalComponentText description;
+                    e_alarm.get_description (out description);
+                    warning (description.value);
+                    break;
+                case (E.CalComponentAlarmAction.EMAIL):
+                    E.CalComponentAlarmTrigger trigger;
+                    e_alarm.get_trigger (out trigger);
+                    if (trigger.type == E.CalComponentAlarmTriggerType.RELATIVE_START) {
+                        iCal.DurationType duration = trigger.rel_duration;
+                        
+                    }
+                    warning ("%d", (int)trigger.type);
+                    break;
+                default:
+                    warning ("%d", (int)action);
+                    break;
+            }
+        }
     }
 
     /**
@@ -169,5 +200,9 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.Grid {
         attach (choice, 1, 0, 1, 1);
         attach (email_entry, 2, 0, 1, 1);
         attach (remove_button, 3, 0, 1, 1);
+    }
+    
+    public void set_duration (iCal.DurationType duration) {
+    
     }
 }

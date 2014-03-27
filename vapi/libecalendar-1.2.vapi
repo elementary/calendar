@@ -237,8 +237,8 @@ namespace E {
 		public void get_attendee_list (out GLib.SList attendee_list);
 		public void get_description (out E.CalComponentText description);
 		public iCal.Component get_icalcomponent ();
-		public void get_repeat (E.CalComponentAlarmRepeat repeat);
-		public void get_trigger (E.CalComponentAlarmTrigger trigger);
+		public void get_repeat (out E.CalComponentAlarmRepeat repeat);
+		public void get_trigger (out E.CalComponentAlarmTrigger trigger);
 		public unowned string get_uid ();
 		public bool has_attendees ();
 		public void set_action (E.CalComponentAlarmAction action);
@@ -287,7 +287,10 @@ namespace E {
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct CalComponentAlarmTrigger {
 		public E.CalComponentAlarmTriggerType type;
-		public void* u;
+		[CCode(cname = "u.rel_duration")]
+		public iCal.DurationType rel_duration;
+		[CCode(cname = "u.abs_time")]
+		public iCal.TimeType abs_time;
 	}
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct CalComponentAlarms {
