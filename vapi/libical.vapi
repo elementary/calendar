@@ -241,7 +241,7 @@ namespace iCal {
 		[CCode (cname = "icaldurationtype_null_duration")]
 		public static unowned iCal.DurationType null_duration ();
 	}
-	[CCode (cheader_filename = "libical/ical.h", free_function = "icalparameter_free", cname = "icalparameter")]
+	[CCode (cheader_filename = "libical/ical.h", copy_function = "icalparameter_new_clone", free_function = "icalparameter_free", cname = "icalparameter")]
 	[Compact]
 	public class Parameter {
 		[CCode (cname = "icalparameter_new", has_construct_function = false)]
@@ -321,7 +321,7 @@ namespace iCal {
 		[CCode (cname = "icalparameter_get_options")]
 		public unowned string get_options ();
 		[CCode (cname = "icalparameter_get_partstat")]
-		public iCal.ParameterPartstat get_partstat ();
+		public iCal.ParameterPartStat get_partstat ();
 		[CCode (cname = "icalparameter_get_range")]
 		public iCal.ParameterRange get_range ();
 		[CCode (cname = "icalparameter_get_related")]
@@ -371,7 +371,7 @@ namespace iCal {
 		[CCode (cname = "icalparameter_new_options", has_construct_function = false)]
 		public Parameter.options (string v);
 		[CCode (cname = "icalparameter_new_partstat", has_construct_function = false)]
-		public Parameter.partstat (iCal.ParameterPartstat v);
+		public Parameter.partstat (iCal.ParameterPartStat v);
 		[CCode (cname = "icalparameter_new_range", has_construct_function = false)]
 		public Parameter.range (iCal.ParameterRange v);
 		[CCode (cname = "icalparameter_new_related", has_construct_function = false)]
@@ -423,7 +423,7 @@ namespace iCal {
 		[CCode (cname = "icalparameter_set_options")]
 		public void set_options (string v);
 		[CCode (cname = "icalparameter_set_partstat")]
-		public void set_partstat (iCal.ParameterPartstat v);
+		public void set_partstat (iCal.ParameterPartStat v);
 		[CCode (cname = "icalparameter_set_range")]
 		public void set_range (iCal.ParameterRange v);
 		[CCode (cname = "icalparameter_set_related")]
@@ -491,7 +491,7 @@ namespace iCal {
 		[CCode (cname = "icalparser_string_line_generator")]
 		public static unowned string string_line_generator (string @out, size_t buf_size, void* d);
 	}
-	[CCode (cheader_filename = "libical/ical.h", free_function = "icalproperty_free", cname = "icalproperty")]
+	[CCode (cheader_filename = "libical/ical.h", copy_function = "icalproperty_new_clone", free_function = "icalproperty_free", cname = "icalproperty")]
 	[Compact]
 	public class Property {
 		[CCode (cname = "icalproperty_new", has_construct_function = false)]
@@ -1442,7 +1442,7 @@ namespace iCal {
 		[CCode (cname = "icaltimezone_set_tzid_prefix")]
 		public static void set_tzid_prefix (string new_prefix);
 	}
-	[CCode (cheader_filename = "libical/ical.h", free_function = "icalvalue_free", cname = "icalvalue")]
+	[CCode (cheader_filename = "libical/ical.h", copy_function = "icalvalue_new_clone", free_function = "icalvalue_free", cname = "icalvalue")]
 	[Compact]
 	public class Value {
 		[CCode (cname = "icalvalue_new", has_construct_function = false)]
@@ -2128,8 +2128,8 @@ namespace iCal {
 		FALSE,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_PARTSTAT_", has_type_id = false)]
-	public enum ParameterPartstat {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_PARTSTAT_", has_type_id = false, cname = "icalproperty_status")]
+	public enum ParameterPartStat {
 		X,
 		NEEDSACTION,
 		ACCEPTED,

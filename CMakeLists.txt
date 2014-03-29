@@ -90,6 +90,7 @@ set (DEPS_PACKAGES
     champlain-0.12
     clutter-1.0
     geocode-glib-1.0
+    folks
 )
 
 set (DEPS_PKG
@@ -107,6 +108,7 @@ set (DEPS_PKG
     champlain-0.12
     clutter-1.0
     geocode-glib-1.0
+    folks
 )
 
 set (GLOBAL_VALAC_OPTIONS

@@ -42,9 +42,6 @@ set(CLIENT_SOURCE
     View/Widgets/ContractorButtonWithMenu.vala
     View/Widgets/DateSwitcher.vala
     View/Widgets/DateTimePicker.vala
-    View/Widgets/Postler/GuestEntry.vala
-    View/Widgets/Postler/FlowBox.vala
-    View/Widgets/Postler/Contact.vala
     Backends/Backend.vala
     Backends/BackendsManager.vala
     Backends/LocalBackend.vala

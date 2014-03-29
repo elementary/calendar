@@ -41,7 +41,7 @@ namespace E {
 		public static GLib.Quark error_quark ();
 		public static unowned string error_to_string (E.CalClientError code);
 		public static void free_ecalcomp_slist (GLib.SList<E.CalComponent> ecalcomps);
-		public static void free_icalcomp_slist (GLib.SList icalcomps);
+		public static void free_icalcomp_slist (GLib.SList<iCal.Component> icalcomps);
 		[CCode (has_construct_function = false)]
 		public CalClient.from_uri (string uri, E.CalClientSourceType source_type) throws GLib.Error;
 		public void generate_instances (ulong start, ulong end, GLib.Cancellable? cancellable, E.CalRecurInstanceFn cb, void* cb_data, owned GLib.DestroyNotify? destroy_cb_data);
@@ -88,17 +88,16 @@ namespace E {
 		public static unowned iCal.TimeZone tzlookup_icomp (string tzid, void* custom, GLib.Cancellable cancellable) throws GLib.Error;
 		public virtual signal void free_busy_data (void* free_busy_ecalcomps);
 	}
-	[CCode (cheader_filename = "libecal/libecal.h")]
+	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_cal_client_view_get_type ()")]
 	public class CalClientView : GLib.Object {
 		[CCode (has_construct_function = false)]
 		protected CalClientView ();
-		public void* get_client ();
 		public bool is_running ();
-		public void set_fields_of_interest (GLib.SList fields_of_interest) throws GLib.Error;
+		public void set_fields_of_interest (GLib.SList<string>? fields_of_interest) throws GLib.Error;
+		public void set_flags (E.CalClientViewFlags flags) throws GLib.Error;
 		public void start () throws GLib.Error;
 		public void stop () throws GLib.Error;
-		[NoAccessorMethod]
-		public E.CalClient client { owned get; construct; }
+		public E.CalClient client { get; construct; }
 		[NoAccessorMethod]
 		public void* view { get; construct; }
 		public virtual signal void complete (GLib.Error error);
@@ -107,7 +106,7 @@ namespace E {
 		public virtual signal void objects_removed (GLib.SList<weak E.CalComponentId?> uids);
 		public virtual signal void progress (uint percent, string message);
 	}
-	[CCode (cheader_filename = "libecal/libecal.h")]
+	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_cal_component_get_type ()")]
 	public class CalComponent : GLib.Object {
 		[CCode (has_construct_function = false)]
 		public CalComponent ();
@@ -116,43 +115,43 @@ namespace E {
 		public unowned E.CalComponent clone ();
 		public void commit_sequence ();
 		public bool event_dates_match (E.CalComponent comp2);
-		public static void free_attendee_list (GLib.SList attendee_list);
-		public static void free_categories_list (GLib.SList categ_list);
+		public static void free_attendee_list (GLib.SList<E.CalComponentAttendee> attendee_list);
+		public static void free_categories_list (GLib.SList<string> categ_list);
 		public static void free_datetime (E.CalComponentDateTime dt);
 		public static void free_exdate_list (GLib.SList exdate_list);
-		public static void free_geo (void* geo);
-		public static void free_TimeType (void* t);
+		public static void free_geo (iCal.GeoType geo);
+		public static void free_TimeType (iCal.TimeType t);
 		public static void free_id (E.CalComponentId id);
 		public static void free_percent (int percent);
 		public static void free_period_list (GLib.SList period_list);
 		public static void free_priority (int priority);
 		public static void free_range (E.CalComponentRange range);
-		public static void free_recur_list (GLib.SList recur_list);
+		public static void free_recur_list (GLib.SList<E.CalComponentRange> recur_list);
 		public static void free_sequence (int sequence);
-		public static void free_text_list (GLib.SList text_list);
+		public static void free_text_list (GLib.SList<E.CalComponentText> text_list);
 		[CCode (has_construct_function = false)]
 		public CalComponent.from_string (string calobj);
 		public static string gen_uid ();
-		public unowned E.CalComponentAlarm get_alarm (string auid);
+		public E.CalComponentAlarm get_alarm (string auid);
 		public GLib.List<string> get_alarm_uids ();
 		public string get_as_string ();
-		public void get_attachment_list (out GLib.SList attachment_list);
-		public void get_attendee_list (out GLib.SList attendee_list);
+		public void get_attachment_list (out GLib.SList<string> attachment_list);
+		public void get_attendee_list (out GLib.SList<E.CalComponentAttendee?> attendee_list);
 		public void get_categories (out string categories);
-		public void get_categories_list (out GLib.SList categ_list);
+		public void get_categories_list (out GLib.SList<string> categ_list);
 		public void get_classification (out E.CalComponentClassification classif);
-		public void get_comment_list (out GLib.SList text_list);
+		public void get_comment_list (out GLib.SList<E.CalComponentText> text_list);
 		public void get_completed (out iCal.TimeType t);
-		public void get_contact_list (out GLib.SList text_list);
+		public void get_contact_list (out GLib.SList<E.CalComponentText> text_list);
 		public void get_created (out iCal.TimeType t);
-		public void get_description_list (out GLib.SList text_list);
+		public void get_description_list (out GLib.SList<E.CalComponentText> text_list);
 		public void get_dtend (out E.CalComponentDateTime dt);
 		public void get_dtstamp (out iCal.TimeType t);
 		public void get_dtstart (out E.CalComponentDateTime dt);
 		public void get_due (out E.CalComponentDateTime dt);
-		public void get_exdate_list (out GLib.SList exdate_list);
-		public void get_exrule_list (out GLib.SList recur_list);
-		public void get_exrule_property_list (out GLib.SList recur_list);
+		public void get_exdate_list (out GLib.SList<E.CalComponentDateTime> exdate_list);
+		public void get_exrule_list (out GLib.SList<E.CalComponentRange> recur_list);
+		public void get_exrule_property_list (out GLib.SList<E.CalComponentRange> recur_list);
 		public void get_geo (out iCal.GeoType geo);
 		public unowned iCal.Component get_icalcomponent ();
 		public E.CalComponentId get_id ();
@@ -163,11 +162,11 @@ namespace E {
 		public void get_percent (out int percent);
 		public int get_percent_as_int ();
 		public void get_priority (out int priority);
-		public void get_rdate_list (out GLib.SList period_list);
+		public void get_rdate_list (out GLib.SList<E.CalComponentPeriod> period_list);
 		public void get_recurid (out E.CalComponentRange recur_id);
 		public string get_recurid_as_string ();
-		public void get_rrule_list (out GLib.SList recur_list);
-		public void get_rrule_property_list (out GLib.SList recur_list);
+		public void get_rrule_list (out GLib.SList<E.CalComponentRange> recur_list);
+		public void get_rrule_property_list (out GLib.SList<E.CalComponentRange> recur_list);
 		public void get_sequence (out int sequence);
 		public void get_status (out iCal.PropertyStatus status);
 		public void get_summary (out E.CalComponentText summary);
@@ -190,23 +189,23 @@ namespace E {
 		public void remove_alarm (string auid);
 		public void remove_all_alarms ();
 		public void rescan ();
-		public void set_attachment_list (GLib.SList attachment_list);
-		public void set_attendee_list (GLib.SList attendee_list);
+		public void set_attachment_list (GLib.SList<string> attachment_list);
+		public void set_attendee_list (GLib.SList<E.CalComponentAttendee> attendee_list);
 		public void set_categories (string categories);
-		public void set_categories_list (GLib.SList categ_list);
+		public void set_categories_list (GLib.SList<string> categ_list);
 		public void set_classification (E.CalComponentClassification classif);
-		public void set_comment_list (GLib.SList text_list);
+		public void set_comment_list (GLib.SList<E.CalComponentText> text_list);
 		public void set_completed (iCal.TimeType t);
-		public void set_contact_list (GLib.SList text_list);
+		public void set_contact_list (GLib.SList<E.CalComponentText> text_list);
 		public void set_created (iCal.TimeType t);
-		public void set_description_list (GLib.SList text_list);
+		public void set_description_list (GLib.SList<E.CalComponentText> text_list);
 		public void set_dtend (E.CalComponentDateTime dt);
 		public void set_dtstamp (iCal.TimeType t);
 		public void set_dtstart (E.CalComponentDateTime dt);
 		public void set_due (E.CalComponentDateTime dt);
 		public void set_exdate_list (GLib.SList exdate_list);
-		public void set_exrule_list (GLib.SList recur_list);
-		public void set_geo (iCal.GeoType geo);
+		public void set_exrule_list (GLib.SList<E.CalComponentRange> recur_list);
+		public void set_geo (iCal.GeoType* geo);
 		public bool set_icalcomponent (owned iCal.Component icalcomp);
 		public void set_last_modified (iCal.TimeType t);
 		public void set_location (string location);
@@ -215,9 +214,9 @@ namespace E {
 		public void set_percent (int percent);
 		public void set_percent_as_int (int percent);
 		public void set_priority (int priority);
-		public void set_rdate_list (GLib.SList period_list);
+		public void set_rdate_list (GLib.SList<E.CalComponentPeriod> period_list);
 		public void set_recurid (E.CalComponentRange recur_id);
-		public void set_rrule_list (GLib.SList recur_list);
+		public void set_rrule_list (GLib.SList<E.CalComponentRange> recur_list);
 		public void set_sequence (int sequence);
 		public void set_status (iCal.PropertyStatus status);
 		public void set_summary (E.CalComponentText summary);
@@ -226,7 +225,7 @@ namespace E {
 		public void set_url (string url);
 		public void strip_errors ();
 	}
-	[CCode (cheader_filename = "libecal/libecal.h")]
+	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_alarm_free")]
 	[Compact]
 	public class CalComponentAlarm {
 		[CCode (has_construct_function = false)]
@@ -234,7 +233,7 @@ namespace E {
 		public E.CalComponentAlarm clone ();
 		public void get_action (out E.CalComponentAlarmAction action);
 		public void get_attach (out iCal.Attach attach);
-		public void get_attendee_list (out GLib.SList attendee_list);
+		public void get_attendee_list (out GLib.SList<E.CalComponentAttendee> attendee_list);
 		public void get_description (out E.CalComponentText description);
 		public iCal.Component get_icalcomponent ();
 		public void get_repeat (out E.CalComponentAlarmRepeat repeat);
@@ -243,7 +242,7 @@ namespace E {
 		public bool has_attendees ();
 		public void set_action (E.CalComponentAlarmAction action);
 		public void set_attach (iCal.Attach attach);
-		public void set_attendee_list (GLib.SList attendee_list);
+		public void set_attendee_list (GLib.SList<E.CalComponentAttendee> attendee_list);
 		public void set_description (E.CalComponentText description);
 		public void set_repeat (E.CalComponentAlarmRepeat repeat);
 		public void set_trigger (E.CalComponentAlarmTrigger trigger);
@@ -275,15 +274,16 @@ namespace E {
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct CalComponentAlarmInstance {
 		public weak string auid;
-		public ulong trigger;
-		public ulong occur_start;
-		public ulong occur_end;
+		public time_t trigger;
+		public time_t occur_start;
+		public time_t occur_end;
 	}
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct CalComponentAlarmRepeat {
 		public int repetitions;
-		public void* duration;
+		public iCal.DurationType duration;
 	}
+	[SimpleType]
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct CalComponentAlarmTrigger {
 		public E.CalComponentAlarmTriggerType type;
@@ -292,20 +292,20 @@ namespace E {
 		[CCode(cname = "u.abs_time")]
 		public iCal.TimeType abs_time;
 	}
-	[CCode (cheader_filename = "libecal/libecal.h")]
+	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_alarms_free")]
 	public struct CalComponentAlarms {
 		public weak E.CalComponent comp;
 		[CCode (cheader_filename = "libecal/libecal.h")]
 		public weak GLib.SList<E.CalComponentAlarmInstance> alarms;
 		public void free ();
 	}
-	[CCode (cheader_filename = "libecal/libecal.h")]
+	[CCode (cheader_filename = "libecal/libecal.h", has_type_id = false)]
 	public struct CalComponentAttendee {
 		public weak string value;
 		public weak string member;
 		public iCal.ParameterCutype cutype;
 		public iCal.ParameterRole role;
-		public iCal.ParameterPartstat status;
+		public iCal.ParameterPartStat status;
 		public bool rsvp;
 		public weak string delto;
 		public weak string delfrom;
@@ -313,12 +313,12 @@ namespace E {
 		public weak string cn;
 		public weak string language;
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", has_destroy_function = false)]
+	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_free_datetime")]
 	public struct CalComponentDateTime {
 		public iCal.TimeType* value;
 		public weak string tzid;
 	}
-	[CCode (cheader_filename = "libecal/libecal.h")]
+	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_free_id", copy_function = "e_cal_component_id_copy")]
 	public struct CalComponentId {
 		public weak string uid;
 		public weak string rid;
@@ -335,9 +335,12 @@ namespace E {
 		public E.CalComponentPeriodType type;
 		[CCode (cheader_filename = "libecal/libecal.h")]
 		public iCal.TimeType start;
-		public void* u;
+		[CCode(cname = "u.duration")]
+		public iCal.DurationType duration;
+		[CCode(cname = "u.end")]
+		public iCal.TimeType end;
 	}
-	[CCode (cheader_filename = "libecal/libecal.h")]
+	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_free_range")]
 	public struct CalComponentRange {
 		public E.CalComponentRangeType type;
 		public E.CalComponentDateTime datetime;
@@ -392,6 +395,12 @@ namespace E {
 		EMAIL,
 		PROCEDURE,
 		UNKNOWN
+	}
+	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_CLIENT_VIEW_FLAGS_")]
+	[Flags]
+	public enum CalClientViewFlags {
+		NONE,
+		NOTIFY_INITIAL
 	}
 	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_COMPONENT_ALARM_TRIGGER_", has_type_id = false)]
 	public enum CalComponentAlarmTriggerType {

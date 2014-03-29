@@ -57,13 +57,13 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         });
 
         if (parent_dialog.ecal != null) {
-            unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
-            string location = comp.get_location ();
+            string location;
+            parent_dialog.ecal.get_location (out location);
             if (location != null)
                 location_entry.text = location;
 
-            unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.GEO);
-            iCal.GeoType? geo = property.get_geo ();
+            iCal.GeoType? geo;
+            parent_dialog.ecal.get_geo (out geo);
             bool need_relocation = true;
             if (geo != null) {
                 if (geo.latitude >= Champlain.MIN_LATITUDE && geo.longitude >= Champlain.MIN_LONGITUDE &&
@@ -93,14 +93,13 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
      * Save the values in the dialog into the component.
      */
     public void save () {
-
-        unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
         // Save the location
         string location = location_entry.text;
 
-        comp.set_location (location);
+        parent_dialog.ecal.set_location (location);
         if (map_selected == true) {
             // First, clear the geo
+            unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
             int count = comp.count_properties (iCal.PropertyKind.GEO);
 
             for (int i = 0; i < count; i++) {
@@ -137,7 +136,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 
                 location_entry.has_focus = true;
             } catch (GLib.Error error) {
-                critical (error.message);
+                debug (error.message);
             }
 
             Idle.add ((owned) callback);

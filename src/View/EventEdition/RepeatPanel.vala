@@ -22,10 +22,18 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private Gtk.ComboBoxText ends_combobox;
     private Gtk.SpinButton end_entry;
     private Granite.Widgets.DatePicker end_datepicker;
-    private Gtk.Grid week_grid;
+    private Gtk.Box week_box;
     private Gtk.Grid month_grid;
     private Gtk.SpinButton every_entry;
     private Gtk.Label every_unit_label;
+
+    private Gtk.ToggleButton mon_button;
+    private Gtk.ToggleButton tue_button;
+    private Gtk.ToggleButton wed_button;
+    private Gtk.ToggleButton thu_button;
+    private Gtk.ToggleButton fri_button;
+    private Gtk.ToggleButton sat_button;
+    private Gtk.ToggleButton sun_button;
 
     public RepeatPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -50,22 +58,22 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         repeat_combobox.changed.connect (() => {
             switch (repeat_combobox.active) {
                 case 1:
-                    week_grid.no_show_all = false;
-                    week_grid.show_all ();
+                    week_box.no_show_all = false;
+                    week_box.show_all ();
                     month_grid.no_show_all = true;
                     month_grid.hide ();
                     break;
                 case 2:
-                    week_grid.no_show_all = true;
-                    week_grid.hide ();
+                    week_box.no_show_all = true;
+                    week_box.hide ();
                     month_grid.no_show_all = false;
                     month_grid.show_all ();
                     break;
                 default:
                     month_grid.no_show_all = true;
                     month_grid.hide ();
-                    week_grid.no_show_all = true;
-                    week_grid.hide ();
+                    week_box.no_show_all = true;
+                    week_box.hide ();
                     break;
             }
             every_entry.value_changed ();
@@ -160,8 +168,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         ends_grid.add (end_label);
         ends_grid.add (end_datepicker);
 
-        create_week_grid ();
-        week_grid.sensitive = false;
+        create_week_box ();
+        week_box.sensitive = false;
 
         var same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
         var every_radiobutton = new Gtk.RadioButton.with_label_from_widget (same_radiobutton, _("Same"));
@@ -183,7 +191,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             bool active = repeat_switch.active;
             repeat_combobox.sensitive = active;
             every_grid.sensitive = active;
-            week_grid.sensitive = active;
+            week_box.sensitive = active;
             month_grid.sensitive = active;
             ends_grid.sensitive = active;
         });
@@ -195,87 +203,92 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         attach (repeat_grid, 1, 1, 1, 1);
         attach (every_label, 1, 2, 1, 1);
         attach (every_grid, 1, 3, 1, 1);
-        attach (week_grid, 1, 4, 1, 1);
+        attach (week_box, 1, 4, 1, 1);
         attach (month_grid, 1, 4, 1, 1);
         attach (ends_label, 1, 5, 1, 1);
         attach (ends_grid, 1, 6, 1, 1);
     }
 
-    private void create_week_grid () {
-        week_grid = new Gtk.Grid ();
-        week_grid.column_homogeneous = true;
-        var mon_button = new Gtk.ToggleButton.with_label (_("Mon"));
-        var tue_button = new Gtk.ToggleButton.with_label (_("Tue"));
-        var wed_button = new Gtk.ToggleButton.with_label (_("Wed"));
-        var thu_button = new Gtk.ToggleButton.with_label (_("Thu"));
-        var fri_button = new Gtk.ToggleButton.with_label (_("Fri"));
-        var sat_button = new Gtk.ToggleButton.with_label (_("Sat"));
-        var sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
-        week_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        week_grid.get_style_context ().add_class ("raised");
+    private void load () {
+        if (parent_dialog.ecal == null)
+            return;
+    }
+
+    private void create_week_box () {
+        week_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        week_box.homogeneous = true;
+        mon_button = new Gtk.ToggleButton.with_label (_("Mon"));
+        tue_button = new Gtk.ToggleButton.with_label (_("Tue"));
+        wed_button = new Gtk.ToggleButton.with_label (_("Wed"));
+        thu_button = new Gtk.ToggleButton.with_label (_("Thu"));
+        fri_button = new Gtk.ToggleButton.with_label (_("Fri"));
+        sat_button = new Gtk.ToggleButton.with_label (_("Sat"));
+        sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
+        week_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        week_box.get_style_context ().add_class ("raised");
         switch (Maya.Model.CalendarModel.get_default ().week_starts_on) {
             case Settings.Weekday.TUESDAY:
-                week_grid.add (thu_button);
-                week_grid.add (fri_button);
-                week_grid.add (sat_button);
-                week_grid.add (sun_button);
-                week_grid.add (mon_button);
-                week_grid.add (tue_button);
-                week_grid.add (wed_button);
+                week_box.add (thu_button);
+                week_box.add (fri_button);
+                week_box.add (sat_button);
+                week_box.add (sun_button);
+                week_box.add (mon_button);
+                week_box.add (tue_button);
+                week_box.add (wed_button);
                 break;
             case Settings.Weekday.WEDNESDAY:
-                week_grid.add (wed_button);
-                week_grid.add (thu_button);
-                week_grid.add (fri_button);
-                week_grid.add (sat_button);
-                week_grid.add (sun_button);
-                week_grid.add (mon_button);
-                week_grid.add (tue_button);
+                week_box.add (wed_button);
+                week_box.add (thu_button);
+                week_box.add (fri_button);
+                week_box.add (sat_button);
+                week_box.add (sun_button);
+                week_box.add (mon_button);
+                week_box.add (tue_button);
                 break;
             case Settings.Weekday.THURSDAY:
-                week_grid.add (thu_button);
-                week_grid.add (fri_button);
-                week_grid.add (sat_button);
-                week_grid.add (sun_button);
-                week_grid.add (mon_button);
-                week_grid.add (tue_button);
-                week_grid.add (wed_button);
+                week_box.add (thu_button);
+                week_box.add (fri_button);
+                week_box.add (sat_button);
+                week_box.add (sun_button);
+                week_box.add (mon_button);
+                week_box.add (tue_button);
+                week_box.add (wed_button);
                 break;
             case Settings.Weekday.FRIDAY:
-                week_grid.add (fri_button);
-                week_grid.add (sat_button);
-                week_grid.add (sun_button);
-                week_grid.add (mon_button);
-                week_grid.add (tue_button);
-                week_grid.add (wed_button);
-                week_grid.add (thu_button);
+                week_box.add (fri_button);
+                week_box.add (sat_button);
+                week_box.add (sun_button);
+                week_box.add (mon_button);
+                week_box.add (tue_button);
+                week_box.add (wed_button);
+                week_box.add (thu_button);
                 break;
             case Settings.Weekday.SATURDAY:
-                week_grid.add (sat_button);
-                week_grid.add (sun_button);
-                week_grid.add (mon_button);
-                week_grid.add (tue_button);
-                week_grid.add (wed_button);
-                week_grid.add (thu_button);
-                week_grid.add (fri_button);
+                week_box.add (sat_button);
+                week_box.add (sun_button);
+                week_box.add (mon_button);
+                week_box.add (tue_button);
+                week_box.add (wed_button);
+                week_box.add (thu_button);
+                week_box.add (fri_button);
                 break;
             case Settings.Weekday.SUNDAY:
-                week_grid.add (sun_button);
-                week_grid.add (mon_button);
-                week_grid.add (tue_button);
-                week_grid.add (wed_button);
-                week_grid.add (thu_button);
-                week_grid.add (fri_button);
-                week_grid.add (sat_button);
+                week_box.add (sun_button);
+                week_box.add (mon_button);
+                week_box.add (tue_button);
+                week_box.add (wed_button);
+                week_box.add (thu_button);
+                week_box.add (fri_button);
+                week_box.add (sat_button);
                 break;
             default:
-                week_grid.add (mon_button);
-                week_grid.add (tue_button);
-                week_grid.add (wed_button);
-                week_grid.add (thu_button);
-                week_grid.add (fri_button);
-                week_grid.add (sat_button);
-                week_grid.add (sun_button);
+                week_box.add (mon_button);
+                week_box.add (tue_button);
+                week_box.add (wed_button);
+                week_box.add (thu_button);
+                week_box.add (fri_button);
+                week_box.add (sat_button);
+                week_box.add (sun_button);
                 break;
         }
     }
