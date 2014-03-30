@@ -207,11 +207,63 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         attach (month_grid, 1, 4, 1, 1);
         attach (ends_label, 1, 5, 1, 1);
         attach (ends_grid, 1, 6, 1, 1);
+        load ();
     }
 
     private void load () {
         if (parent_dialog.ecal == null)
             return;
+
+        unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+        // Load the guests
+        unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.RRULE);
+        if (property != null) {
+            repeat_switch.active = true;
+            var rrule = property.get_rrule ();
+            switch (rrule.freq) {
+                case (iCal.RecurrenceTypeFrequency.WEEKLY_RECURRENCE):
+                    repeat_combobox.active = 1;
+                    for (int i = 0; i <= 7; i++) {
+                        if (rrule.by_day[i] > 7)
+                            break;
+                        switch (rrule.by_day[i]) {
+                            case 1:
+                                sun_button.active = true;
+                                break;
+                            case 2:
+                                mon_button.active = true;
+                                break;
+                            case 3:
+                                tue_button.active = true;
+                                break;
+                            case 4:
+                                wed_button.active = true;
+                                break;
+                            case 5:
+                                thu_button.active = true;
+                                break;
+                            case 6:
+                                fri_button.active = true;
+                                break;
+                            default:
+                                sat_button.active = true;
+                                break;
+                        }
+                    }
+                    break;
+                case (iCal.RecurrenceTypeFrequency.MONTHLY_RECURRENCE):
+                    repeat_combobox.active = 2;
+                    break;
+                case (iCal.RecurrenceTypeFrequency.YEARLY_RECURRENCE):
+                    repeat_combobox.active = 3;
+                    break;
+                default:
+                    warning ("%d", (int)rrule.freq);
+                    repeat_combobox.active = 0;
+                    break;
+            }
+            every_entry.value = rrule.interval;
+        }
     }
 
     private void create_week_box () {

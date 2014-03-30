@@ -1701,7 +1701,8 @@ namespace iCal {
 		[CCode (cname = "lon")]
 		public float longitude;
 	}
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalperiodtype")]
+	[SimpleType]
+	[CCode (cheader_filename = "libical/ical.h", cname = "struct icalperiodtype", has_type_id = false)]
 	public struct PeriodType {
 		public iCal.TimeType start;
 		public iCal.TimeType end;
@@ -1719,7 +1720,8 @@ namespace iCal {
 		[CCode (cname = "icalperiodtype_null_period")]
 		public static iCal.PeriodType null ();
 	}
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecurrencetype")]
+	[SimpleType]
+	[CCode (cheader_filename = "libical/ical.h", cname = "struct icalrecurrencetype", has_type_id = false)]
 	public struct RecurrenceType {
 		public iCal.RecurrenceTypeFrequency freq;
 		public iCal.TimeType until;
@@ -2568,7 +2570,7 @@ namespace iCal {
 		UNKNOWN,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", cname = "icalrecurrencetype_frequency")]
 	public enum RecurrenceTypeFrequency {
 		SECONDLY_RECURRENCE,
 		MINUTELY_RECURRENCE,
