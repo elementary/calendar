@@ -35,6 +35,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private Gtk.ToggleButton sat_button;
     private Gtk.ToggleButton sun_button;
 
+    private Gtk.RadioButton every_radiobutton;
+
     public RepeatPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
         margin_left = 12;
@@ -172,7 +174,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         week_box.sensitive = false;
 
         var same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
-        var every_radiobutton = new Gtk.RadioButton.with_label_from_widget (same_radiobutton, _("Same"));
+        every_radiobutton = new Gtk.RadioButton.with_label_from_widget (same_radiobutton, _("Same"));
 
         month_grid = new Gtk.Grid ();
         month_grid.row_spacing = 6;
@@ -221,9 +223,9 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             repeat_switch.active = true;
             var rrule = property.get_rrule ();
             switch (rrule.freq) {
-                case (iCal.RecurrenceTypeFrequency.WEEKLY_RECURRENCE):
+                case (iCal.RecurrenceTypeFrequency.WEEKLY):
                     repeat_combobox.active = 1;
-                    for (int i = 0; i <= 7; i++) {
+                    for (int i = 0; i <= iCal.Size.BY_DAY; i++) {
                         if (rrule.by_day[i] > 7)
                             break;
                         switch (rrule.by_day[i]) {
@@ -251,10 +253,16 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                         }
                     }
                     break;
-                case (iCal.RecurrenceTypeFrequency.MONTHLY_RECURRENCE):
+                case (iCal.RecurrenceTypeFrequency.MONTHLY):
                     repeat_combobox.active = 2;
+                    for (int i = 0; i <= iCal.Size.BY_DAY; i++) {
+                        if (rrule.by_day[i] < iCal.Size.BY_DAY) {
+                            warning ("%d", rrule.by_day[i]);
+                            set_every_day (rrule.by_day[i]);
+                        }
+                    }
                     break;
-                case (iCal.RecurrenceTypeFrequency.YEARLY_RECURRENCE):
+                case (iCal.RecurrenceTypeFrequency.YEARLY):
                     repeat_combobox.active = 3;
                     break;
                 default:
@@ -264,6 +272,54 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             }
             every_entry.value = rrule.interval;
         }
+    }
+
+    private void set_every_day (short day) {
+        string weekday;
+        switch (iCal.RecurrenceType.day_day_of_week (day)) {
+            case iCal.RecurrenceTypeWeekday.SUNDAY:
+                weekday = _("Sunday");
+                break;
+            case iCal.RecurrenceTypeWeekday.MONDAY:
+                weekday = _("Monday");
+                break;
+            case iCal.RecurrenceTypeWeekday.TUESDAY:
+                weekday = _("Tuesday");
+                break;
+            case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                weekday = _("Wednesday");
+                break;
+            case iCal.RecurrenceTypeWeekday.THURSDAY:
+                weekday = _("Thursday");
+                break;
+            case iCal.RecurrenceTypeWeekday.FRIDAY:
+                weekday = _("Friday");
+                break;
+            default:
+                weekday = _("Saturday");
+                break;
+        }
+        switch (iCal.RecurrenceType.day_position (day)) {
+            case -1:
+                every_radiobutton.label = _("Every last %s").printf (weekday);
+                break;
+            case 1:
+                every_radiobutton.label = _("Every first %s").printf (weekday);
+                break;
+            case 2:
+                every_radiobutton.label = _("Every second %s").printf (weekday);
+                break;
+            case 3:
+                every_radiobutton.label = _("Every third %s").printf (weekday);
+                break;
+            case 4:
+                every_radiobutton.label = _("Every fourth %s").printf (weekday);
+                break;
+            default:
+                every_radiobutton.label = _("Every fifth %s").printf (weekday);
+                break;
+        }
+        every_radiobutton.active = true;
     }
 
     private void create_week_box () {

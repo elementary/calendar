@@ -2572,25 +2572,41 @@ namespace iCal {
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", cname = "icalrecurrencetype_frequency")]
 	public enum RecurrenceTypeFrequency {
-		SECONDLY_RECURRENCE,
-		MINUTELY_RECURRENCE,
-		HOURLY_RECURRENCE,
-		DAILY_RECURRENCE,
-		WEEKLY_RECURRENCE,
-		MONTHLY_RECURRENCE,
-		YEARLY_RECURRENCE,
-		NO_RECURRENCE
+		[CCode (cname = "ICAL_SECONDLY_RECURRENCE")]
+		SECONDLY,
+		[CCode (cname = "ICAL_MINUTELY_RECURRENCE")]
+		MINUTELY,
+		[CCode (cname = "ICAL_HOURLY_RECURRENCE")]
+		HOURLY,
+		[CCode (cname = "ICAL_DAILY_RECURRENCE")]
+		DAILY,
+		[CCode (cname = "ICAL_WEEKLY_RECURRENCE")]
+		WEEKLY,
+		[CCode (cname = "ICAL_MONTHLY_RECURRENCE")]
+		MONTHLY,
+		[CCode (cname = "ICAL_YEARLY_RECURRENCE")]
+		YEARLY,
+		[CCode (cname = "ICAL_NO_RECURRENCE")]
+		NO
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", cname = "icalrecurrencetype_weekday")]
 	public enum RecurrenceTypeWeekday {
-		NO_WEEKDAY,
-		SUNDAY_WEEKDAY,
-		MONDAY_WEEKDAY,
-		TUESDAY_WEEKDAY,
-		WEDNESDAY_WEEKDAY,
-		THURSDAY_WEEKDAY,
-		FRIDAY_WEEKDAY,
-		SATURDAY_WEEKDAY
+		[CCode (cname = "ICAL_NO_WEEKDAY")]
+		NO,
+		[CCode (cname = "ICAL_SUNDAY_WEEKDAY")]
+		SUNDAY,
+		[CCode (cname = "ICAL_MONDAY_WEEKDAY")]
+		MONDAY,
+		[CCode (cname = "ICAL_TUESDAY_WEEKDAY")]
+		TUESDAY,
+		[CCode (cname = "ICAL_WEDNESDAY_WEEKDAY")]
+		WEDNESDAY,
+		[CCode (cname = "ICAL_THURSDAY_WEEKDAY")]
+		THURSDAY,
+		[CCode (cname = "ICAL_FRIDAY_WEEKDAY")]
+		FRIDAY,
+		[CCode (cname = "ICAL_SATURDAY_WEEKDAY")]
+		SATURDAY
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
 	public enum RequestStatus {
@@ -2689,24 +2705,6 @@ namespace iCal {
 	public delegate int pvl_comparef (void* a, void* b);
 	[CCode (cheader_filename = "libical/ical.h", has_target = false)]
 	public delegate int pvl_findf (void* a, void* b);
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_DAY_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_HOUR_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_MINUTE_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_MONTHDAY_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_MONTH_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_SECOND_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_SETPOS_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_WEEKNO_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_YEARDAY_SIZE;
 	[CCode (cheader_filename = "libical/ical.h")]
 	public const int ICALPARAMETER_FIRST_ENUM;
 	[CCode (cheader_filename = "libical/ical.h")]
@@ -2887,4 +2885,25 @@ namespace iCal {
 	public static int sspm_parse_mime (iCal.sspm_part parts, size_t max_parts, iCal.sspm_action_map actions, GLib.Callback get_string, void* get_string_data, ...);
 	[CCode (cheader_filename = "libical/ical.h", cname = "sspm_write_mime")]
 	public static int sspm_write_mime (iCal.sspm_part parts, size_t num_parts, out unowned string output_string, string header);
+	
+	namespace Size {
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_DAY_SIZE")]
+		public const int BY_SECOND;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_MINUTE_SIZE")]
+		public const int BY_MINUTE;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_HOUR_SIZE")]
+		public const int BY_HOUR;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_DAY_SIZE")]
+		public const int BY_DAY;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_MONTHDAY_SIZE")]
+		public const int BY_MONTHDAY;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_YEARDAY_SIZE")]
+		public const int BY_YEARDAY;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_WEEKNO_SIZE")]
+		public const int BY_WEEKNO;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_MONTH_SIZE")]
+		public const int BY_MONTH;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_SETPOS_SIZE")]
+		public const int BY_SETPOS;
+	}
 }
