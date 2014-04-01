@@ -483,13 +483,6 @@ namespace E {
 		REMOTE,
 		ANY
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "")]
-	public enum CalModeEnum {
-		CalModeInvalid,
-		CalModeLocal,
-		CalModeRemote,
-		CalModeAny
-	}
 	[CCode (cheader_filename = "libecal/libecal.h", cname="CalObjModType", cprefix = "CALOBJ_MOD_", has_type_id = false)]
 	public enum CalObjModType {
 		THIS,
@@ -516,13 +509,6 @@ namespace E {
 		TODO,
 		JOURNAL,
 		LAST
-	}
-	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "")]
-	public enum CalSourceTypeEnum {
-		Event,
-		ToDo,
-		Journal,
-		Invalid
 	}
 	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CALENDAR_STATUS_", has_type_id = false)]
 	public enum CalendarStatus {

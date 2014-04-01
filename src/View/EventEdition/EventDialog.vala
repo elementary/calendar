@@ -25,8 +25,22 @@ public enum EventType {
 public class EventDialog : Gtk.Dialog {
 
         /**
+         * A boolean indicating whether we can edit the current event.
+         */
+        public E.Source? source { get; set; }
+        public E.Source? original_source { get; private set; }
+        public E.CalComponent ecal { get; set; }
+        public GLib.DateTime date_time; { get; set; }
+
+        public bool can_edit = true;
+
+        private E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
+        private EventType event_type { get; private set; }
+
+        /**
          * The different widgets in the dialog.
          */
+        private Gtk.Stack stack;
         private Gtk.Button create_button;
         private Granite.Widgets.ModeButton mode_button;
 
@@ -35,21 +49,6 @@ public class EventDialog : Gtk.Dialog {
         private EventEdition.LocationPanel location_panel;
         private EventEdition.ReminderPanel reminder_panel;
         private EventEdition.RepeatPanel repeat_panel;
-
-        /**
-         * A boolean indicating whether we can edit the current event.
-         */
-
-        private Gtk.Stack stack { get; private set; }
-
-        public E.Source? source { get; set; }
-        public E.Source? original_source { get; private set; }
-        public E.CalComponent ecal { get; set; }
-        private E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
-        private EventType event_type { get; private set; }
-        public GLib.DateTime date_time;
-        
-        public bool can_edit = true;
 
         public EventDialog (Gtk.Window window, E.CalComponent? ecal = null, E.Source? source = null, GLib.DateTime? date_time = null) {
             Object (use_header_bar: 1);

@@ -66,7 +66,7 @@ add_definitions(${DEPS_CFLAGS})
 link_directories(${DEPS_LIBRARY_DIRS})
 add_executable(${EXEC_NAME} ${CLIENT_VALA_C})
 
-target_link_libraries(${EXEC_NAME} ${DEPS_LIBRARIES})
+target_link_libraries(${EXEC_NAME} ${DEPS_LIBRARIES} -lm)
 
 if (BUILD_SHARED_LIBS)
     install(TARGETS ${CLIENT_LIBRARY_NAME} DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
