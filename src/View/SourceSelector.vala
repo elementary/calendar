@@ -16,8 +16,6 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     
     private Gee.HashMap<string, SourceItem?> src_map;
     
-    private Model.CalendarModel calmodel;
-    
     private Gtk.Stack stack;
     private SourceDialog src_dialog = null;
     
@@ -27,10 +25,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     private Gtk.ScrolledWindow scroll;
     private E.SourceRegistry registry;
     
-    public SourceSelector (Model.CalendarModel calmodel) {
-        
-        this.calmodel = calmodel;
-        
+    public SourceSelector () {
         stack = new Gtk.Stack ();
         
         calendar_grid = new Gtk.Grid ();
@@ -99,7 +94,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     }
     
     private void source_added (E.Source source) {
-        var source_item = new SourceItem (source, calmodel);
+        var source_item = new SourceItem (source);
         source_item.edit_request.connect (edit_source);
         source_item.remove_request.connect (remove_source);
         
@@ -145,7 +140,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     }
     
     private void remove_source (E.Source source) {
-        calmodel.delete_calendar (source);
+        Model.CalendarModel.get_default ().delete_calendar (source);
         var source_item = src_map.get (source.dup_uid ());
         source_item.show_calendar_removed ();
     }

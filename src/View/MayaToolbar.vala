@@ -24,20 +24,16 @@ namespace Maya.View {
         public signal void on_menu_today_toggled ();
         public signal void add_calendar_clicked ();
         
-        Model.CalendarModel calmodel;
-        
         // Toolbar items
         Widgets.DateSwitcher month_switcher;
         Widgets.DateSwitcher year_switcher;
         public Gtk.SearchEntry search_bar;
         
         // Menu items
-        public Gtk.CheckMenuItem fullscreen;
         Gtk.CheckMenuItem weeknumbers;
         View.SourceSelector source_selector;
         
-        public MayaToolbar (Model.CalendarModel calmodel) {
-            this.calmodel = calmodel;
+        public MayaToolbar () {
             show_close_button = true;
             
             var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
@@ -48,6 +44,7 @@ namespace Maya.View {
             
             month_switcher = new Widgets.DateSwitcher (10);
             year_switcher = new Widgets.DateSwitcher (-1);
+            var calmodel = Model.CalendarModel.get_default ();
             set_switcher_date (calmodel.month_start);
             
             search_bar = new Gtk.SearchEntry ();
@@ -69,7 +66,6 @@ namespace Maya.View {
             // Create the menu
             
             var today = new Gtk.MenuItem.with_label (_("Today"));
-            fullscreen = new Gtk.CheckMenuItem.with_label (_("Fullscreen"));
             weeknumbers = new Gtk.CheckMenuItem.with_label (_("Show Week Numbers"));
             //var import = new Gtk.MenuItem.with_label (_("Import…"));
             var about = new Gtk.MenuItem.with_label (_("About"));
@@ -77,7 +73,6 @@ namespace Maya.View {
             // Append in correct order
             menu.add (today);
             menu.add (new Gtk.SeparatorMenuItem ());
-            menu.add (fullscreen);
             menu.add (weeknumbers);
             
             /* TODO : Will be done in Maya 0.2
@@ -101,7 +96,6 @@ namespace Maya.View {
             button_add.clicked.connect (() => add_calendar_clicked ());
             button_calendar_sources.clicked.connect (on_tb_sources_clicked);
             today.activate.connect (() => on_menu_today_toggled);
-            fullscreen.toggled.connect (on_toggle_fullscreen);
             weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
             about.activate.connect (() => {
                 var app = ((Maya.Application)GLib.Application.get_default ());
@@ -109,29 +103,22 @@ namespace Maya.View {
             });
             search_bar.search_changed.connect (() => on_search (search_bar.text));
 
-            month_switcher.left_clicked.connect (() => {change_month (-1);});
-            month_switcher.right_clicked.connect (() => {change_month (1);});
-            year_switcher.left_clicked.connect (() => {change_year (-1);});
-            year_switcher.right_clicked.connect (() => {change_year (1);});
+            month_switcher.left_clicked.connect (() => {Model.CalendarModel.get_default ().change_month (-1);});
+            month_switcher.right_clicked.connect (() => {Model.CalendarModel.get_default ().change_month (1);});
+            year_switcher.left_clicked.connect (() => {Model.CalendarModel.get_default ().change_year (-1);});
+            year_switcher.right_clicked.connect (() => {Model.CalendarModel.get_default ().change_year (1);});
             
             button_calendar_sources.size_allocate.connect (button_size_allocate);
             
-            fullscreen.active = (saved_state.window_state == Settings.WindowState.FULLSCREEN);
             weeknumbers.active = saved_state.show_weeks;
+            calmodel.parameters_changed.connect (() => {
+                set_switcher_date (calmodel.month_start);
+            });
         }
 
         public void set_switcher_date (DateTime date) {
             month_switcher.text = date.format ("%B");
             year_switcher.text = date.format ("%Y");
-        }
-
-        void on_toggle_fullscreen () {
-            var window = ((Maya.Application)GLib.Application.get_default ()).window;
-            
-            if (fullscreen.active)
-                window.fullscreen ();
-            else
-                window.unfullscreen ();
         }
 
         void on_menu_show_weeks_toggled () {
@@ -145,18 +132,10 @@ namespace Maya.View {
 
         void on_tb_sources_clicked (Gtk.Widget widget) {
             if (source_selector == null) {
-                source_selector = new View.SourceSelector (calmodel);
+                source_selector = new View.SourceSelector ();
             }
             source_selector.set_relative_to (widget);
             source_selector.show_all ();
-        }
-
-        void change_month (int relative) {
-            calmodel.month_start = calmodel.month_start.add_months (relative);
-        }
-
-        void change_year (int relative) {
-            calmodel.month_start = calmodel.month_start.add_years (relative);
         }
 
     }

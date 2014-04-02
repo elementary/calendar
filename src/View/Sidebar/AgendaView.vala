@@ -22,7 +22,7 @@ namespace Maya.View {
      * The AgendaView shows all events for the currently selected date,
      * even with fancy colors!
      */
-	public class AgendaView : Gtk.Grid {
+    public class AgendaView : Gtk.Grid {
 
         // All of the sources to be displayed and their widgets.
         Gee.Map<E.Source, SourceWidget> source_widgets;
@@ -34,23 +34,51 @@ namespace Maya.View {
         bool old_shown = false;
 
         //
-        int row_number = 0;
+        int row_number = 1;
 
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
         // The current text in the search_bar
         string search_text = "";
+        Gtk.Label day_label;
+        Gtk.Grid sources_grid;
 
         /**
          * Creates a new agendaview.
          */
-		public AgendaView (Model.CalendarModel calmodel) {
-
+        public AgendaView () {
             // Gtk.Grid properties
             set_column_homogeneous (true);
             column_spacing = 0;
             row_spacing = 0;
+
+            day_label = new Gtk.Label ("");
+            day_label.margin = 6;
+            var label_toolitem = new Gtk.ToolItem ();
+            label_toolitem.set_expand (true);
+            label_toolitem.add (day_label);
+
+            var toolbar = new Gtk.Toolbar ();
+            toolbar.add (label_toolitem);
+            toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+
+            attach (toolbar, 0, 0, 1, 1);
+            toolbar.show_all ();
+
+            sources_grid = new Gtk.Grid ();
+            sources_grid.row_spacing = 6;
+            sources_grid.margin_top = sources_grid.margin_bottom = 6;
+            var scrolled_window = new Gtk.ScrolledWindow (null, null);
+            scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
+            scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
+            scrolled_window.add_with_viewport (sources_grid);
+            var style_provider = Util.Css.get_css_provider ();
+            scrolled_window.get_style_context().add_provider (style_provider, 600);
+            scrolled_window.get_style_context().add_class ("sidebarevent");
+            attach (scrolled_window, 0, 1, 1, 1);
+            scrolled_window.expand = true;
+            scrolled_window.show_all ();
 
             source_widgets = new Gee.HashMap<E.Source, SourceWidget> (
                 (Gee.HashDataFunc<E.Source>?) Util.source_hash_func,
@@ -75,13 +103,14 @@ namespace Maya.View {
             }
 
             // Listen to changes for events
+            var calmodel = Model.CalendarModel.get_default ();
             calmodel.events_added.connect (on_events_added);
             calmodel.events_removed.connect (on_events_removed);
             calmodel.events_updated.connect (on_events_updated);
 
             // Listen to changes in the displayed month
             calmodel.parameters_changed.connect (on_model_parameters_changed);
-		}
+        }
 
         /**
          * Called when a source is checked/unchecked in the source selector.
@@ -130,7 +159,7 @@ namespace Maya.View {
          */
         void add_source (E.Source source) {
             var widget = new SourceWidget (source);
-            attach (widget, 0, row_number, 1, 1);
+            sources_grid.attach (widget, 0, row_number, 1, 1);
             row_number++;
 
             source_widgets.set (source, widget);
@@ -194,6 +223,7 @@ namespace Maya.View {
          * The given date has been selected.
          */
         public void set_selected_date (DateTime date) {
+            day_label.label = date.format (Settings.DateFormat_Complete ());
             foreach (var widget in source_widgets.values )
                 widget.set_selected_date (date);
         }
@@ -243,6 +273,6 @@ namespace Maya.View {
             }
         }
 
-	}
+    }
 
 }

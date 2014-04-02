@@ -48,6 +48,7 @@ namespace Maya {
         }
 
         Gtk.init (ref args);
+        Clutter.init (ref args);
         var app = new Application ();
 
         return app.run (args);
@@ -116,8 +117,6 @@ namespace Maya {
         Gtk.Paned hpaned;
         Gtk.Grid gridcontainer;
 
-        public Model.CalendarModel calmodel;
-
         /**
          * Called when the application is activated.
          */
@@ -127,20 +126,21 @@ namespace Maya {
                 return;
             }
 
+            var calmodel = Model.CalendarModel.get_default ();
+            calmodel.load_all_sources ();
+
             init_prefs ();
-            init_models ();
             init_gui ();
             window.show_all ();
-            
+
             backends_manager = new BackendsManager ();
-            
+
             plugins_manager = new Plugins.Manager (Build.PLUGIN_DIR, exec_name, null);
             plugins_manager.hook_app (this);
 
             if (Option.ADD_EVENT) {
                 on_tb_add_clicked (calview.grid.selected_date);
             }
-            
 
             Gtk.main ();
         }
@@ -151,19 +151,8 @@ namespace Maya {
         void init_prefs () {
 
             saved_state = new Settings.SavedState ();
-            saved_state.changed["show-weeks"].connect (on_saved_state_show_weeks_changed);
             global_settings = new Settings.MayaSettings ();
 
-        }
-
-        /**
-         * Initializes the calendar model
-         */
-        void init_models () {
-
-            calmodel = new Model.CalendarModel ();
-
-            calmodel.parameters_changed.connect (on_model_parameters_changed);
         }
 
         /**
@@ -173,10 +162,10 @@ namespace Maya {
 
             create_window ();
 
-            calview = new View.CalendarView (calmodel, saved_state.show_weeks);
+            calview = new View.CalendarView ();
             calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
 
-            sidebar = new View.Sidebar (calmodel);
+            sidebar = new View.Sidebar ();
             // Don't automatically display all the widgets on the sidebar
             sidebar.no_show_all = true;
             sidebar.show ();
@@ -186,8 +175,6 @@ namespace Maya {
             sidebar.set_size_request(160,0);
 
             calview.grid.selection_changed.connect ((date) => sidebar.set_selected_date (date));
-
-            calmodel.load_all_sources ();
 
             gridcontainer = new Gtk.Grid ();
             hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
@@ -202,8 +189,6 @@ namespace Maya {
 
             if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
                 window.maximize ();
-            else if (saved_state.window_state == Settings.WindowState.FULLSCREEN)
-                window.fullscreen ();
 
             calview.today();
 
@@ -217,7 +202,7 @@ namespace Maya {
          * Called when the remove button is selected.
          */
         void on_remove (E.CalComponent comp) {
-            calmodel.remove_event (comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
+            Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
         }
 
         /**
@@ -225,7 +210,6 @@ namespace Maya {
          */
         void on_modified (E.CalComponent comp) {
             var dialog = new Maya.View.EventDialog (window, comp, comp.get_data<E.Source>("source"), null);
-            dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, false));
             dialog.present ();
         }
 
@@ -252,15 +236,12 @@ namespace Maya {
                             }
 
                             break;
-                        case Gdk.Key.@F11:
-                            toolbar.fullscreen.active = !toolbar.fullscreen.active;
-                            break;
                         }
 
                         return false;
             });
             
-            toolbar = new View.MayaToolbar (calmodel);
+            toolbar = new View.MayaToolbar ();
             toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.grid.selected_date));
             toolbar.on_menu_today_toggled.connect (on_menu_today_toggled);
             toolbar.on_search.connect ((text) => on_search (text));
@@ -268,7 +249,7 @@ namespace Maya {
         }
         
         void on_quit () {
-            calmodel.do_real_deletion ();
+            Model.CalendarModel.get_default ().do_real_deletion ();
             Gtk.main_quit ();
         }
 
@@ -279,8 +260,6 @@ namespace Maya {
             // Save window state
             if ((window.get_window ().get_state () & Settings.WindowState.MAXIMIZED) != 0)
                 saved_state.window_state = Settings.WindowState.MAXIMIZED;
-            else if ((window.get_window ().get_state () & Settings.WindowState.FULLSCREEN) != 0)
-                saved_state.window_state = Settings.WindowState.FULLSCREEN;
             else
                 saved_state.window_state = Settings.WindowState.NORMAL;
 
@@ -297,44 +276,6 @@ namespace Maya {
 
         //--- SIGNAL HANDLERS ---//
 
-        void on_event_dialog_response (View.EventDialog dialog, bool response_id, bool add_event)  {
-
-            E.CalComponent event = dialog.ecal;
-            E.Source source = dialog.source;
-            E.Source? original_source = dialog.original_source;
-            E.CalObjModType mod_type = dialog.mod_type;
-
-            dialog.dispose ();
-
-            if (response_id != true)
-                return;
-
-            if (add_event)
-                calmodel.add_event (source, event);
-            else {
-
-                assert(original_source != null);
-
-                if (original_source.dup_uid () == source.dup_uid ()) {
-                    // Same uids, just modify
-                    calmodel.update_event (source, event, mod_type);
-                } else {
-                    // Different calendar, remove and readd
-                    calmodel.remove_event (original_source, event, mod_type);
-                    calmodel.add_event (source, event);
-                }
-            }
-        }
-
-        void on_model_parameters_changed () {
-            toolbar.set_switcher_date (calmodel.month_start);
-        }
-
-        void on_saved_state_show_weeks_changed () {
-            if (calview != null)
-                calview.show_weeks = saved_state.show_weeks;
-        }
-
         bool on_window_delete_event (Gdk.EventAny event) {
             update_saved_state ();
             return false;
@@ -342,7 +283,6 @@ namespace Maya {
 
         void on_tb_add_clicked (DateTime dt) {
             var dialog = new Maya.View.EventDialog (window, null, null, dt);
-            dialog.response.connect ((response_id) => on_event_dialog_response(dialog, response_id, true));
             dialog.present ();
 
         }
@@ -358,6 +298,7 @@ namespace Maya {
 
             var today = new DateTime.now_local ();
 
+            var calmodel = Model.CalendarModel.get_default ();
             if (calmodel.month_start.get_month () != today.get_month ())
                 calmodel.month_start = Util.get_start_of_month ();
 

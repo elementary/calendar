@@ -22,9 +22,6 @@ namespace Maya.View {
      */
     public class SourceWidget : Gtk.Grid {
 
-        // The label displaying the name of this source.
-        Gtk.Label name_label;
-
         // The selected date
         DateTime selected_date;
 
@@ -70,12 +67,6 @@ namespace Maya.View {
                 null);
 
             current_events = new Gee.ArrayList<E.CalComponent> (null);
-
-            name_label = new Gtk.Label ("");
-            name_label.set_markup ("<b>" + Markup.escape_text (source.dup_display_name()) + "</b>");
-            name_label.set_alignment (0, 0.5f);
-            attach (name_label, 0, 0, 1, 1);
-            name_label.show ();
 
             notify["selected"].connect (update_visibility);
         }

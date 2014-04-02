@@ -22,8 +22,6 @@ namespace Maya.View {
  */
 public class CalendarView : Gtk.Grid {
 
-    Model.CalendarModel model;
-
     public WeekLabels weeks { get; private set; }
     public Header header { get; private set; }
     public Grid grid { get; private set; }
@@ -33,12 +31,7 @@ public class CalendarView : Gtk.Grid {
      */
     public signal void on_event_add (DateTime date);
 
-    public bool show_weeks { get; set; }
-
-    public CalendarView (Model.CalendarModel model, bool show_weeks) {
-
-        this.model = model;
-        this.show_weeks = show_weeks;
+    public CalendarView () {
 
         weeks = new WeekLabels ();
         header = new Header ();
@@ -53,12 +46,14 @@ public class CalendarView : Gtk.Grid {
 
         sync_with_model ();
 
+        var model = Model.CalendarModel.get_default ();
         model.parameters_changed.connect (on_model_parameters_changed);
-        notify["show-weeks"].connect (on_show_weeks_changed);
 
         model.events_added.connect (on_events_added);
         model.events_updated.connect (on_events_updated);
         model.events_removed.connect (on_events_removed);
+        
+        saved_state.changed["show-weeks"].connect (on_show_weeks_changed);
     }
 
 
@@ -75,7 +70,8 @@ public class CalendarView : Gtk.Grid {
 
     void on_show_weeks_changed () {
 
-        weeks.update (model.data_range.first, show_weeks, model.num_weeks);
+        var model = Model.CalendarModel.get_default ();
+        weeks.update (model.data_range.first, model.num_weeks);
     }
 
     void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
@@ -114,6 +110,7 @@ public class CalendarView : Gtk.Grid {
     /* Indicates the month has changed */
     void on_model_parameters_changed () {
 
+        var model = Model.CalendarModel.get_default ();
         if (grid.grid_range != null && model.data_range.equals (grid.grid_range))
             return; // nothing to do
 
@@ -128,11 +125,12 @@ public class CalendarView : Gtk.Grid {
 
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_model () {
+        var model = Model.CalendarModel.get_default ();
         if (grid.grid_range != null && model.data_range.equals (grid.grid_range))
             return; // nothing to do
 
         header.update_columns (model.week_starts_on);
-        weeks.update (model.data_range.first, show_weeks, model.num_weeks);
+        weeks.update (model.data_range.first, model.num_weeks);
 
         grid.set_range (model.data_range, model.month_start);
 
@@ -168,4 +166,3 @@ public class CalendarView : Gtk.Grid {
 }
 
 }
-

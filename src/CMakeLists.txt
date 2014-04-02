@@ -29,7 +29,12 @@ set(CLIENT_SOURCE
     View/Grid/WeekLabels.vala
     View/Grid/Header.vala
     View/Grid/VAutoHider.vala
-    View/EventDialog.vala
+    View/EventEdition/EventDialog.vala
+    View/EventEdition/GuestsPanel.vala
+    View/EventEdition/InfoPanel.vala
+    View/EventEdition/LocationPanel.vala
+    View/EventEdition/ReminderPanel.vala
+    View/EventEdition/RepeatPanel.vala
     View/SourceDialog.vala
     View/SourceItem.vala
     View/MayaToolbar.vala
@@ -37,9 +42,6 @@ set(CLIENT_SOURCE
     View/Widgets/ContractorButtonWithMenu.vala
     View/Widgets/DateSwitcher.vala
     View/Widgets/DateTimePicker.vala
-    View/Widgets/Postler/GuestEntry.vala
-    View/Widgets/Postler/FlowBox.vala
-    View/Widgets/Postler/Contact.vala
     Backends/Backend.vala
     Backends/BackendsManager.vala
     Backends/LocalBackend.vala
@@ -64,7 +66,7 @@ add_definitions(${DEPS_CFLAGS})
 link_directories(${DEPS_LIBRARY_DIRS})
 add_executable(${EXEC_NAME} ${CLIENT_VALA_C})
 
-target_link_libraries(${EXEC_NAME} ${DEPS_LIBRARIES})
+target_link_libraries(${EXEC_NAME} ${DEPS_LIBRARIES} -lm)
 
 if (BUILD_SHARED_LIBS)
     install(TARGETS ${CLIENT_LIBRARY_NAME} DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
