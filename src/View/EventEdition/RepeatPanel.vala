@@ -36,6 +36,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private Gtk.ToggleButton sun_button;
 
     private Gtk.RadioButton every_radiobutton;
+    private Gtk.RadioButton same_radiobutton;
 
     public RepeatPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -161,7 +162,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             end_label.label = ngettext (_("Repeat"), _("Repeats"), (ulong)end_entry.value);
         });
 
-        end_datepicker = new Granite.Widgets.DatePicker ();
+        end_datepicker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
         end_datepicker.no_show_all = true;
 
         var ends_grid = new Gtk.Grid ();
@@ -177,8 +178,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         create_week_box ();
         week_box.sensitive = false;
 
-        var same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
-        every_radiobutton = new Gtk.RadioButton.with_label_from_widget (same_radiobutton, _("Same"));
+        same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
+        every_radiobutton = new Gtk.RadioButton.from_widget (same_radiobutton);
 
         month_grid = new Gtk.Grid ();
         month_grid.row_spacing = 6;
@@ -261,9 +262,12 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                     repeat_combobox.active = 2;
                     for (int i = 0; i <= iCal.Size.BY_DAY; i++) {
                         if (rrule.by_day[i] < iCal.Size.BY_DAY) {
-                            warning ("%d", rrule.by_day[i]);
                             set_every_day (rrule.by_day[i]);
+                            every_radiobutton.active = true;
                         }
+                    }
+                    if (rrule.by_month_day[0] < iCal.Size.BY_MONTHDAY) {
+                        same_radiobutton.active = true;
                     }
                     break;
                 case (iCal.RecurrenceTypeFrequency.YEARLY):
@@ -275,6 +279,16 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                     break;
             }
             every_entry.value = rrule.interval;
+            if (rrule.until.is_null_time () == 1) {
+                ends_combobox.active = 0;
+            } else {
+                ends_combobox.active = 1;
+                end_datepicker.date = Util.ical_to_date_time (rrule.until);
+            }
+            if (rrule.count > 0) {
+                end_entry.value = rrule.count;
+                ends_combobox.active = 2;
+            }
         }
     }
 
@@ -303,6 +317,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 weekday = _("Saturday");
                 break;
         }
+
         switch (iCal.RecurrenceType.day_position (day)) {
             case -1:
                 every_radiobutton.label = _("Every last %s").printf (weekday);
@@ -323,7 +338,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 every_radiobutton.label = _("Every fifth %s").printf (weekday);
                 break;
         }
-        every_radiobutton.active = true;
     }
 
     private void create_week_box () {
@@ -409,6 +423,88 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
      * Save the values in the dialog into the component.
      */
     public void save () {
-        
+        // First clear all rrules
+        unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+        int count = comp.count_properties (iCal.PropertyKind.RRULE);
+
+        for (int i = 0; i < count; i++) {
+            unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.RRULE);
+
+            comp.remove_property (remove_prop);
+        }
+
+        if (repeat_switch.active == false)
+            return;
+
+        // Add the rrule
+        var property = new iCal.Property (iCal.PropertyKind.RRULE);
+
+        iCal.RecurrenceType rrule = iCal.RecurrenceType.from_string ("");
+        switch (repeat_combobox.active) {
+            case 1:
+                rrule.freq = iCal.RecurrenceTypeFrequency.WEEKLY;
+                int index = 0;
+                if (sun_button.active == true) {
+                    rrule.by_day[index] = 1;
+                    index++;
+                }
+
+                if (mon_button.active == true) {
+                    rrule.by_day[index] = 2;
+                    index++;
+                }
+
+                if (tue_button.active == true) {
+                    rrule.by_day[index] = 3;
+                    index++;
+                }
+
+                if (wed_button.active == true) {
+                    rrule.by_day[index] = 4;
+                    index++;
+                }
+
+                if (thu_button.active == true) {
+                    rrule.by_day[index] = 5;
+                    index++;
+                }
+
+                if (fri_button.active == true) {
+                    rrule.by_day[index] = 6;
+                    index++;
+                }
+
+                if (sat_button.active == true) {
+                    rrule.by_day[index] = 7;
+                    index++;
+                }
+                break;
+            case 2:
+                rrule.freq = iCal.RecurrenceTypeFrequency.MONTHLY;
+                if (every_radiobutton.active == true) {
+                    int day_of_week = parent_dialog.date_time.get_day_of_week ()+1;
+                    if (day_of_week > 7)
+                        day_of_week = 1;
+                    rrule.by_day[0] = (short)(day_of_week + GLib.Math.ceil ((double)parent_dialog.date_time.get_day_of_month ()/(double)7) * 8);
+                } else {
+                    rrule.by_month_day[0] = (short)parent_dialog.date_time.get_day_of_month ();
+                }
+                break;
+            case (3):
+                rrule.freq = iCal.RecurrenceTypeFrequency.YEARLY;
+                break;
+            default:
+                rrule.freq = iCal.RecurrenceTypeFrequency.DAILY;
+                break;
+        }
+        if (ends_combobox.active == 2) {
+            rrule.count = (int)end_entry.value;
+        } else if (ends_combobox.active == 1) {
+            rrule.until = iCal.TimeType.from_day_of_year (end_datepicker.date.get_day_of_year (), end_datepicker.date.get_year ());
+        }
+
+        rrule.interval = (short)every_entry.value;
+        property.set_rrule (rrule);
+        comp.add_property (property);
     }
 }

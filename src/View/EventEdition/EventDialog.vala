@@ -30,7 +30,7 @@ public class EventDialog : Gtk.Dialog {
         public E.Source? source { get; set; }
         public E.Source? original_source { get; private set; }
         public E.CalComponent ecal { get; set; }
-        public GLib.DateTime date_time; { get; set; }
+        public GLib.DateTime date_time { get; set; }
 
         public bool can_edit = true;
 

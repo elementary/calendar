@@ -224,6 +224,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             if (dt_start.year != 0) {
                 from_date_picker.date = from_date;
                 from_time_picker.time = from_date;
+                parent_dialog.date_time = from_date;
             }
 
             // Is this all day
@@ -291,6 +292,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     }
 
     void on_date_modified (int index) {
+        parent_dialog.date_time = from_date_picker.date;
         var start_date = from_date_picker.date;
         var end_date = to_date_picker.date;
 
