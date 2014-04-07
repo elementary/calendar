@@ -3,8 +3,5 @@
 %:
 	dh $@ 
 
-override_dh_auto_install:
-	dh_auto_install --destdir=debian/maya-calendar
-
 override_dh_strip:
 	dh_strip --dbg-package=maya-calendar-dbg
