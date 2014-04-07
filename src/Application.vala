@@ -33,7 +33,7 @@ namespace Maya {
 
         var context = new OptionContext ("Calendar");
         context.add_main_entries (Application.app_options, "maya");
-        context.add_group (Gtk.get_option_group(true));
+        context.add_group (Gtk.get_option_group (true));
 
         try {
             context.parse (ref args);
@@ -75,14 +75,14 @@ namespace Maya {
             program_name = Build.APP_NAME;
             exec_name = "maya-calendar";
 
-            app_years = "2011-2013";
+            app_years = "2011-2014";
             application_id = "net.launchpad.maya";
             app_icon = "office-calendar";
             app_launcher = "maya-calendar.desktop";
 
             main_url = "https://launchpad.net/maya";
             bug_url = "https://bugs.launchpad.net/maya";
-            help_url = "https://answers.launchpad.net/maya";
+            help_url = "http://elementaryos.org/answers/+/maya/all/newest";
             translate_url = "https://translations.launchpad.net/maya";
 
             about_authors = {
@@ -190,7 +190,7 @@ namespace Maya {
             if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
                 window.maximize ();
 
-            calview.today();
+            calview.today ();
 
         }
 
@@ -202,14 +202,14 @@ namespace Maya {
          * Called when the remove button is selected.
          */
         void on_remove (E.CalComponent comp) {
-            Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source>("source"), comp, E.CalObjModType.THIS);
+            Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, E.CalObjModType.THIS);
         }
 
         /**
          * Called when the edit button is selected.
          */
         void on_modified (E.CalComponent comp) {
-            var dialog = new Maya.View.EventDialog (window, comp, comp.get_data<E.Source>("source"), null);
+            var dialog = new Maya.View.EventDialog (window, comp, comp.get_data<E.Source> ("source"), null);
             dialog.present ();
         }
 
