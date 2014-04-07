@@ -48,11 +48,11 @@ public class WeekLabels : Gtk.EventBox {
         add (day_grid);
     }
 
-    public void update (DateTime date, bool show_weeks, int nr_of_weeks) {
+    public void update (DateTime date, int nr_of_weeks) {
 
         update_nr_of_labels (nr_of_weeks);
 
-        if (show_weeks) {
+        if (saved_state.show_weeks) {
             if (!visible)
                 show ();
 

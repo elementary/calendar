@@ -12,9 +12,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya.Model {
-
-public class CalendarModel : Object {
+public class Maya.Model.CalendarModel : Object {
 
     /* The data_range is the range of dates for which this model is storing
      * data. The month_range is a subset of this range corresponding to the
@@ -49,15 +47,20 @@ public class CalendarModel : Object {
     Gee.Map<E.Source, E.CalClient> source_client;
     Gee.Map<E.Source, E.CalClientView> source_view;
     Gee.Map<E.Source, Gee.Map<string, E.CalComponent>> source_events;
-    
+
     public Gee.LinkedList<E.Source> calendar_trash;
 
-    public CalendarModel () {
+    private static Maya.Model.CalendarModel? calendar_model = null;
 
+    public static CalendarModel get_default () {
+        if (calendar_model == null)
+            calendar_model = new CalendarModel ();
+        return calendar_model;
+    }
+
+    private CalendarModel () {
         // It's dirty, but there is no other way to get it for the moment.
         string output;
-        Settings.Weekday week_starts_on = Maya.Settings.Weekday.MONDAY;
-
         try {
             GLib.Process.spawn_command_line_sync ("locale first_weekday", out output, null, null);
         } catch (SpawnError e) {
@@ -93,8 +96,6 @@ public class CalendarModel : Object {
         }
 
         this.month_start = Util.get_start_of_month ();
-        this.week_starts_on = week_starts_on;
-
         compute_ranges ();
 
         source_client = new Gee.HashMap<E.Source, E.CalClient> (
@@ -123,10 +124,10 @@ public class CalendarModel : Object {
         Threads.add (() => {
             try {
                 var registry = new E.SourceRegistry.sync (null);
-                registry.source_disabled.connect (on_source_disabled);
-                registry.source_enabled.connect (on_source_enabled);
-                registry.source_added.connect (on_source_added);
-                registry.source_removed.connect (on_source_removed);
+                registry.source_disabled.connect (remove_source);
+                registry.source_enabled.connect (add_source);
+                registry.source_added.connect (add_source);
+                registry.source_removed.connect (remove_source);
                 registry.source_changed.connect (on_source_changed);
 
                 // Add sources
@@ -151,15 +152,13 @@ public class CalendarModel : Object {
     //--- Public Methods ---//
 
     public void add_event (E.Source source, E.CalComponent event) {
-
         add_event_async.begin (source, event);
-
     }
     
     private async void add_event_async (E.Source source, E.CalComponent event) {
         SourceFunc callback = add_event_async.callback;
         Threads.add (() => {
-            unowned iCal.icalcomponent comp = event.get_icalcomponent();
+            unowned iCal.Component comp = event.get_icalcomponent();
 
             debug (@"Adding event '$(comp.get_uid())'");
 
@@ -172,16 +171,13 @@ public class CalendarModel : Object {
                     }
                 }
             }
-            
+
             if (client != null) {
                 try {
                     client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS);
-
-                    client.create_object.begin (comp, null, (obj, results) =>  {
-
+                    client.create_object.begin (comp, null, (obj, results) => {
                         bool status = false;
                         string uid;
-
                         try {
                             status = client.create_object.end (results, out uid);
                         } catch (Error e) {
@@ -194,18 +190,14 @@ public class CalendarModel : Object {
             } else {
                 critical ("No calendar was found, event not added");
             }
-            
             Idle.add ((owned) callback);
         });
 
         yield;
-
     }
 
     public void update_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {
-
-        unowned iCal.icalcomponent comp = event.get_icalcomponent();
-
+        unowned iCal.Component comp = event.get_icalcomponent();
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
 
         E.CalClient client = null;
@@ -217,10 +209,9 @@ public class CalendarModel : Object {
                 }
             }
         }
+
         client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
-
             bool status = false;
-
             try {
                 status = client.modify_object.end (results);
             } catch (Error e) {
@@ -230,14 +221,10 @@ public class CalendarModel : Object {
     }
 
     public void remove_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {
-
-        unowned iCal.icalcomponent comp = event.get_icalcomponent();
-
+        unowned iCal.Component comp = event.get_icalcomponent();
         string uid = comp.get_uid ();
         string? rid = event.has_recurrences() ? null : event.get_recurid_as_string();
-
         debug (@"Removing event '$uid'");
-        
         E.CalClient client = null;
         lock (source_client) {
             foreach (var entry in source_client.entries) {
@@ -247,10 +234,9 @@ public class CalendarModel : Object {
                 }
             }
         }
+
         client.remove_object.begin (uid, rid, mod_type, null, (obj, results) =>  {
-
             bool status = false;
-
             try {
                 status = client.remove_object.end (results);
             } catch (Error e) {
@@ -262,7 +248,6 @@ public class CalendarModel : Object {
     //--- Helper Methods ---//
 
     void compute_ranges () {
-
         var month_end = month_start.add_full (0, 1, -1);
         month_range = new Util.DateRange (month_start, month_end);
 
@@ -300,7 +285,6 @@ public class CalendarModel : Object {
     }
 
     public void load_all_sources () {
-        
         lock (source_client) {
             foreach (var source in source_client.keys) {
                 load_source (source);
@@ -309,23 +293,16 @@ public class CalendarModel : Object {
     }
 
     void load_source (E.Source source) {
-
         // create empty source-event map
-
         Gee.Map<string, E.CalComponent> events = new Gee.HashMap<string, E.CalComponent> (
             (Gee.HashDataFunc<string>?) Util.string_hash_func,
             (Gee.EqualDataFunc<E.CalComponent>?) Util.string_equal_func,
             (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
-
         source_events.set (source, events);
-
         // query client view
-
         var iso_first = E.isodate_from_time_t((ulong) data_range.first.to_unix());
         var iso_last = E.isodate_from_time_t((ulong) data_range.last.add_days(1).to_unix());
-
         var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
-
         E.CalClient client = null;
         lock (source_client) {
             foreach (var entry in source_client.entries) {
@@ -337,15 +314,11 @@ public class CalendarModel : Object {
         }
 
         debug("Getting client-view for source '%s'", source.dup_display_name ());
-
         client.get_view.begin (query, null, (obj, results) => {
-
             var view = on_client_view_received (results, source, client);
-
             view.objects_added.connect ((objects) => on_objects_added (source, client, objects));
             view.objects_removed.connect ((objects) => on_objects_removed (source, client, objects));
             view.objects_modified.connect ((objects) => on_objects_modified (source, client, objects));
-
             try {
                 view.start ();
             } catch (Error e) {
@@ -357,10 +330,9 @@ public class CalendarModel : Object {
     }
 
     public void add_source (E.Source source) {
-
         add_source_async.begin (source);
     }
-    
+
     private async void add_source_async (E.Source source) {
         Threads.add (() => {
             debug("Adding source '%s'", source.dup_display_name());
@@ -372,7 +344,7 @@ public class CalendarModel : Object {
             } catch (Error e) {
                 warning (e.message);
             }
-            
+
             Idle.add( () => {
                 load_source (source);
                 return false;
@@ -383,88 +355,44 @@ public class CalendarModel : Object {
     }
 
     public void remove_source (E.Source source) {
-
         // Already out of the model, so do nothing
         if (!source_view.has_key (source))
             return;
 
         var current_view = source_view.get (source);
-
         try {
             current_view.stop();
         } catch (Error e) {
             warning (e.message);
         }
-        source_view.unset (source);
 
+        source_view.unset (source);
         E.CalClient client = null;
         lock (source_client) {
-        foreach (var entry in source_client.entries) {
-            if (source.uid == ((E.Source)entry.key).uid) {
-                client = entry.value;
-                break;
+            foreach (var entry in source_client.entries) {
+                if (source.uid == ((E.Source)entry.key).uid) {
+                    client = entry.value;
+                    break;
+                }
             }
-        }
-        source_client.unset (source);
+            source_client.unset (source);
         }
 
         var events = source_events.get (source).values.read_only_view;
         events_removed (source, events);
         source_events.unset (source);
-
     }
 
     void debug_event (E.Source source, E.CalComponent event) {
-
-        unowned iCal.icalcomponent comp = event.get_icalcomponent ();
+        unowned iCal.Component comp = event.get_icalcomponent ();
         debug (@"Event ['$(comp.get_summary())', $(source.dup_display_name()), $(comp.get_uid()))]");
     }
 
     //--- Signal Handlers ---//
-
     void on_parameter_changed () {
-
         compute_ranges ();
         parameters_changed ();
-
         load_all_sources ();
-    }
-
-    /*void on_event_added (AsyncResult results, E.Source source, E.CalClient client) {
-
-        try {
-
-            string uid;
-            bool status = client.create_object.end (results, out uid);
-            assert (status==true);
-
-            warning ("Created new event '%s' in source '%s'", uid, source.peek_name());
-
-        } catch (Error e) {
-
-            warning ("Error adding new event to source '%s': %s", source.peek_name(), e.message);
-        }
-
-    }*/
-
-    void on_source_enabled (E.Source source) {
-        
-        add_source (source);
-    }
-
-    void on_source_disabled (E.Source source) {
-        
-        remove_source (source);
-    }
-
-    void on_source_added (E.Source source) {
-        
-        add_source (source);
-    }
-
-    void on_source_removed (E.Source source) {
-        
-        remove_source (source);
     }
 
     void on_source_changed (E.Source source) {
@@ -472,43 +400,29 @@ public class CalendarModel : Object {
     }
 
     E.CalClientView on_client_view_received (AsyncResult results, E.Source source, E.CalClient client) {
-
         E.CalClientView view;
-
         try {
-
             debug (@"Received client-view for source '%s'", source.dup_display_name());
-
             bool status = client.get_view.end (results, out view);
             assert (status==true);
-
         } catch (Error e) {
-
             critical ("Error loading client-view from source '%s': %s", source.dup_display_name(), e.message);
         }
 
         return view;
     }
 
-    void on_objects_added (E.Source source, E.CalClient client, SList<weak iCal.icalcomponent> objects) {
-
+    void on_objects_added (E.Source source, E.CalClient client, SList<weak iCal.Component> objects) {
         debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name());
-
         Gee.Map<string, E.CalComponent> events = source_events.get (source);
-
         Gee.ArrayList<E.CalComponent> added_events = new Gee.ArrayList<E.CalComponent> (
             (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
-
         foreach (var comp in objects) {
-
             var event = new E.CalComponent ();
-            iCal.icalcomponent comp_clone = new iCal.icalcomponent.clone (comp);
+            iCal.Component comp_clone = new iCal.Component.clone (comp);
             event.set_icalcomponent ((owned) comp_clone);
-
             debug_event (source, event);
-
             string uid = comp.get_uid();
-
             events.set (uid, event);
             added_events.add (event);
         };
@@ -516,20 +430,14 @@ public class CalendarModel : Object {
         events_added (source, added_events.read_only_view);
     }
 
-    void on_objects_modified (E.Source source, E.CalClient client, SList<weak iCal.icalcomponent> objects) {
-
+    void on_objects_modified (E.Source source, E.CalClient client, SList<weak iCal.Component> objects) {
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
-
         Gee.Collection<E.CalComponent> updated_events = new Gee.ArrayList<E.CalComponent> (
             (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
-
         foreach (var comp in objects) {
-
-            string uid = comp.get_uid();
-
-            E.CalComponent event = source_events.get (source).get(uid);
+            string uid = comp.get_uid ();
+            E.CalComponent event = source_events.get (source).get (uid);
             updated_events.add (event);
-
             debug_event (source, event);
         };
 
@@ -537,42 +445,43 @@ public class CalendarModel : Object {
     }
 
     void on_objects_removed (E.Source source, E.CalClient client, SList<weak E.CalComponentId?> cids) {
-
         debug (@"Received $(cids.length()) removed event(s) for source '%s'", source.dup_display_name ());
-
         var events = source_events.get (source);
         Gee.Collection<E.CalComponent> removed_events = new Gee.ArrayList<E.CalComponent> (
             (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
-
         foreach (unowned E.CalComponentId? cid in cids) {
-
             assert (cid != null);
-
             E.CalComponent event = events.get (cid.uid);
             removed_events.add (event);
-
             debug_event (source, event);
         }
+
         events_removed (source, removed_events.read_only_view);
     }
-    
+
     public void delete_calendar (E.Source source) {
         calendar_trash.add (source);
         remove_source (source);
     }
-    
+
     public void restore_calendar () {
         if (calendar_trash.is_empty)
             return;
         var source = calendar_trash.poll_tail ();
         add_source (source);
     }
-    
+
     public void do_real_deletion () {
         foreach (var source in calendar_trash) {
             source.remove.begin (null);
         }
     }
-}
 
+    public void change_month (int relative) {
+        month_start = month_start.add_months (relative);
+    }
+
+    public void change_year (int relative) {
+        month_start = month_start.add_years (relative);
+    }
 }

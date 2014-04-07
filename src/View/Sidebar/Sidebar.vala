@@ -26,16 +26,11 @@ namespace Maya.View {
         public Gtk.EventBox label_box { get; private set; }
         public AgendaView agenda_view { get; private set; }
 
-        Gtk.ScrolledWindow scrolled_window;
-
         public signal void event_removed (E.CalComponent event);
         public signal void event_modified (E.CalComponent event);
 
-        public Sidebar (Model.CalendarModel calmodel) {
+        public Sidebar () {
 
-            scrolled_window = new Gtk.ScrolledWindow (null, null);
-            scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-            scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
 
             label_box = new Gtk.EventBox ();
 
@@ -48,31 +43,16 @@ namespace Maya.View {
             label.margin_right = 12;
             label.justify = Gtk.Justification.CENTER;
 
-            agenda_view = new AgendaView (calmodel);
-
-            var viewport = new Gtk.Viewport (null, null);
-            viewport.shadow_type = Gtk.ShadowType.NONE;
-            viewport.add (agenda_view);
-            viewport.show ();
-            scrolled_window.add (viewport);
+            agenda_view = new AgendaView ();
+            agenda_view.expand = true;
 
             label_box.add (label);
 
             attach (label_box, 0, 0, 1, 1);
-            attach (scrolled_window, 0, 1, 1, 1);
+            attach (agenda_view, 0, 1, 1, 1);
 
-            scrolled_window.hide ();
+            agenda_view.hide ();
 
-            var style_provider = Util.Css.get_css_provider ();
-
-            label_box.get_style_context().add_provider (style_provider, 600);
-            label_box.get_style_context().add_class ("sidebar");
-
-            viewport.get_style_context().add_provider (style_provider, 600);
-            viewport.get_style_context().add_class ("sidebar");
-
-            viewport.set_vexpand(true);
-            viewport.set_hexpand(true);
             label_box.set_vexpand(true);
             label_box.set_hexpand(true);
             set_vexpand(true);
@@ -91,10 +71,10 @@ namespace Maya.View {
 
         void on_agenda_view_shown_changed (bool old_shown, bool shown) {
             if (shown) {
-                scrolled_window.show ();
+                agenda_view.show ();
                 label_box.hide ();
             } else {
-                scrolled_window.hide ();
+                agenda_view.hide ();
                 label_box.show ();
             }
         }
@@ -109,4 +89,3 @@ namespace Maya.View {
     }
 
 }
-

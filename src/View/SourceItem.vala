@@ -17,7 +17,6 @@ public class Maya.View.SourceItem : Gtk.EventBox {
 
     private Gtk.Revealer revealer;
     private Gtk.Revealer info_revealer;
-    private Model.CalendarModel calmodel;
     private Gtk.Grid main_grid;
 
     private Gtk.Button delete_button;
@@ -31,9 +30,8 @@ public class Maya.View.SourceItem : Gtk.EventBox {
     public signal void remove_request (E.Source source);
     public signal void edit_request (E.Source source);
 
-    public SourceItem (E.Source source, Model.CalendarModel calmodel) {
+    public SourceItem (E.Source source) {
         this.source = source;
-        this.calmodel = calmodel;
 
         main_grid = new Gtk.Grid ();
 
@@ -75,6 +73,7 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         visible_checkbutton = new Gtk.CheckButton ();
         visible_checkbutton.active = cal.selected;
         visible_checkbutton.toggled.connect (() => {
+            var calmodel = Model.CalendarModel.get_default ();
             if (visible_checkbutton.active == true) {
                 calmodel.add_source (source);
             } else {
@@ -120,7 +119,7 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         var undo_button = new Gtk.Button.with_label (_("Undo"));
         undo_button.clicked.connect (() => {
             revealer.show ();
-            calmodel.restore_calendar ();
+            Model.CalendarModel.get_default ().restore_calendar ();
             revealer.set_reveal_child (true);
             info_revealer.set_reveal_child (false);
             info_revealer.hide ();
@@ -150,13 +149,13 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         enter_notify_event.connect ((event) => {
             delete_button.visible = true;
             edit_button.visible = true;
-            return false;
+            return true;
         });
 
         leave_notify_event.connect_after ((event) => {
             delete_button.visible = false;
             edit_button.visible = false;
-            return false;
+            return true;
         });
     }
 

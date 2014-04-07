@@ -2,16 +2,16 @@
 
 [CCode (cprefix = "")]
 namespace iCal {
-	[CCode (cheader_filename = "libical/ical.h", free_function = "icalarray_free")]
+	[CCode (cheader_filename = "libical/ical.h", free_function = "icalarray_free", cname = "icalarray")]
 	[Compact]
-	public class icalarray {
+	public class Array {
 		public void* data;
 		public uint element_size;
 		public uint increment_size;
 		public uint num_elements;
 		public uint space_allocated;
 		[CCode (cname = "icalarray_new", has_construct_function = false)]
-		public icalarray (int element_size, int increment_size);
+		public Array (int element_size, int increment_size);
 		[CCode (cname = "icalarray_append")]
 		public void append (void* element);
 		[CCode (cname = "icalarray_element_at")]
@@ -21,13 +21,13 @@ namespace iCal {
 		[CCode (cname = "icalarray_sort")]
 		public void sort (GLib.Callback compare);
 	}
-	[CCode (cheader_filename = "libical/ical.h", ref_function = "icalattach_ref", ref_function_void = true, unref_function = "icalattach_unref")]
+	[CCode (cheader_filename = "libical/ical.h", ref_function = "icalattach_ref", ref_function_void = true, unref_function = "icalattach_unref", cname = "icalattach")]
 	[Compact]
-	public class icalattach {
+	public class Attach {
 		[CCode (cname = "icalattach_new_from_data", has_construct_function = false)]
-		public icalattach.from_data (uint data, iCal.icalattach_free_fn_t free_fn, void* free_fn_data);
+		public Attach.from_data (uint data, iCal.icalattach_free_fn_t free_fn, void* free_fn_data);
 		[CCode (cname = "icalattach_new_from_url", has_construct_function = false)]
-		public icalattach.from_url (string url);
+		public Attach.from_url (string url);
 		[CCode (cname = "icalattach_get_data")]
 		public uint get_data ();
 		[CCode (cname = "icalattach_get_is_url")]
@@ -35,187 +35,187 @@ namespace iCal {
 		[CCode (cname = "icalattach_get_url")]
 		public unowned string get_url ();
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
+	[CCode (cheader_filename = "libical/ical.h", cname = "icalcompiter")]
 	[Compact]
-	public class icalcompiter {
+	public class Compiter {
 		public weak iCal.pvl_elem iter;
-		public iCal.icalcomponent_kind kind;
+		public iCal.ComponentKind kind;
 		[CCode (cname = "icalcompiter_deref")]
-		public unowned iCal.icalcomponent deref ();
+		public unowned iCal.Component  deref ();
 		[CCode (cname = "icalcompiter_next")]
-		public unowned iCal.icalcomponent next ();
+		public unowned iCal.Component  next ();
 		[CCode (cname = "icalcompiter_prior")]
-		public unowned iCal.icalcomponent prior ();
+		public unowned iCal.Component  prior ();
 	}
-	[CCode (cheader_filename = "libical/ical.h", free_function = "icalcomponent_free")]
+	[CCode (cheader_filename = "libical/ical.h", free_function = "icalcomponent_free", cname = "icalcomponent")]
 	[Compact]
-	public class icalcomponent {
+	public class Component {
 		[CCode (cname = "icalcomponent_new", has_construct_function = false)]
-		public icalcomponent (iCal.icalcomponent_kind kind);
+		public Component (iCal.ComponentKind kind);
 		[CCode (cname = "icalcomponent_add_component")]
-		public void add_component (iCal.icalcomponent child);
+		public void add_component (iCal.Component child);
 		[CCode (cname = "icalcomponent_add_property")]
-		public void add_property (iCal.icalproperty property);
+		public void add_property (iCal.Property property);
 		[CCode (cname = "icalcomponent_as_ical_string")]
 		public unowned string as_ical_string ();
 		[CCode (cname = "icalcomponent_as_ical_string_r")]
 		public unowned string as_ical_string_r ();
 		[CCode (cname = "icalcomponent_begin_component")]
-		public unowned iCal.icalcompiter begin_component (iCal.icalcomponent_kind kind);
+		public unowned iCal.Compiter begin_component (iCal.ComponentKind kind);
 		[CCode (cname = "icalcomponent_check_restrictions")]
 		public int check_restrictions ();
 		[CCode (cname = "icalcomponent_new_clone", has_construct_function = false)]
-		public icalcomponent.clone (iCal.icalcomponent component);
+		public Component.clone (iCal.Component component);
 		[CCode (cname = "icalcomponent_convert_errors")]
 		public void convert_errors ();
 		[CCode (cname = "icalcomponent_count_components")]
-		public int count_components (iCal.icalcomponent_kind kind);
+		public int count_components (iCal.ComponentKind kind);
 		[CCode (cname = "icalcomponent_count_errors")]
 		public int count_errors ();
 		[CCode (cname = "icalcomponent_count_properties")]
-		public int count_properties (iCal.icalproperty_kind kind);
+		public int count_properties (iCal.PropertyKind kind);
 		[CCode (cname = "icalcomponent_end_component")]
-		public unowned iCal.icalcompiter end_component (iCal.icalcomponent_kind kind);
+		public unowned iCal.Compiter end_component (iCal.ComponentKind kind);
 		[CCode (cname = "icalcomponent_foreach_recurrence")]
-		public void foreach_recurrence (iCal.icaltimetype start, iCal.icaltimetype end, GLib.Callback callback, void* callback_data);
+		public void foreach_recurrence (iCal.TimeType start, iCal.TimeType end, GLib.Callback callback, void* callback_data);
 		[CCode (cname = "icalcomponent_foreach_tzid")]
 		public void foreach_tzid (GLib.Callback callback, void* callback_data);
 		[CCode (cname = "icalcomponent_new_from_string", has_construct_function = false)]
-		public icalcomponent.from_string (string str);
+		public Component.from_string (string str);
 		[CCode (cname = "icalcomponent_get_comment")]
 		public unowned string get_comment ();
 		[CCode (cname = "icalcomponent_get_current_component")]
-		public unowned iCal.icalcomponent get_current_component ();
+		public unowned iCal.Component  get_current_component ();
 		[CCode (cname = "icalcomponent_get_current_property")]
-		public unowned iCal.icalproperty get_current_property ();
+		public unowned iCal.Property get_current_property ();
 		[CCode (cname = "icalcomponent_get_description")]
 		public unowned string get_description ();
 		[CCode (cname = "icalcomponent_get_dtend")]
-		public iCal.icaltimetype get_dtend ();
+		public iCal.TimeType get_dtend ();
 		[CCode (cname = "icalcomponent_get_dtstamp")]
-		public iCal.icaltimetype get_dtstamp ();
+		public iCal.TimeType get_dtstamp ();
 		[CCode (cname = "icalcomponent_get_dtstart")]
-		public iCal.icaltimetype get_dtstart ();
+		public iCal.TimeType get_dtstart ();
 		[CCode (cname = "icalcomponent_get_due")]
-		public iCal.icaltimetype get_due ();
+		public iCal.TimeType get_due ();
 		[CCode (cname = "icalcomponent_get_duration")]
-		public unowned iCal.icaldurationtype get_duration ();
+		public unowned iCal.DurationType get_duration ();
 		[CCode (cname = "icalcomponent_get_first_component")]
-		public unowned iCal.icalcomponent get_first_component (iCal.icalcomponent_kind kind);
+		public unowned iCal.Component  get_first_component (iCal.ComponentKind kind);
 		[CCode (cname = "icalcomponent_get_first_property")]
-		public unowned iCal.icalproperty get_first_property (iCal.icalproperty_kind kind);
+		public unowned iCal.Property get_first_property (iCal.PropertyKind kind);
 		[CCode (cname = "icalcomponent_get_first_real_component")]
-		public unowned iCal.icalcomponent get_first_real_component ();
+		public unowned iCal.Component  get_first_real_component ();
 		[CCode (cname = "icalcomponent_get_inner")]
-		public unowned iCal.icalcomponent get_inner ();
+		public unowned iCal.Component  get_inner ();
 		[CCode (cname = "icalcomponent_get_location")]
 		public unowned string get_location ();
 		[CCode (cname = "icalcomponent_get_method")]
-		public iCal.icalproperty_method get_method ();
+		public iCal.PropertyMethod get_method ();
 		[CCode (cname = "icalcomponent_get_next_component")]
-		public unowned iCal.icalcomponent get_next_component (iCal.icalcomponent_kind kind);
+		public unowned iCal.Component  get_next_component (iCal.ComponentKind kind);
 		[CCode (cname = "icalcomponent_get_next_property")]
-		public unowned iCal.icalproperty get_next_property (iCal.icalproperty_kind kind);
+		public unowned iCal.Property get_next_property (iCal.PropertyKind kind);
 		[CCode (cname = "icalcomponent_get_parent")]
-		public unowned iCal.icalcomponent get_parent ();
+		public unowned iCal.Component  get_parent ();
 		[CCode (cname = "icalcomponent_get_recurrenceid")]
-		public iCal.icaltimetype get_recurrenceid ();
+		public iCal.TimeType get_recurrenceid ();
 		[CCode (cname = "icalcomponent_get_relcalid")]
 		public unowned string get_relcalid ();
 		[CCode (cname = "icalcomponent_get_sequence")]
 		public int get_sequence ();
 		[CCode (cname = "icalcomponent_get_span")]
-		public unowned iCal.icaltime_span get_span ();
+		public unowned iCal.TimeSpan get_span ();
 		[CCode (cname = "icalcomponent_get_status")]
-		public iCal.icalproperty_status get_status ();
+		public iCal.PropertyStatus get_status ();
 		[CCode (cname = "icalcomponent_get_summary")]
 		public unowned string get_summary ();
 		[CCode (cname = "icalcomponent_get_timezone")]
-		public unowned iCal.icaltimezone get_timezone (string tzid);
+		public unowned iCal.TimeZone get_timezone (string tzid);
 		[CCode (cname = "icalcomponent_get_uid")]
 		public unowned string get_uid ();
 		[CCode (cname = "icalcomponent_is_valid")]
 		public int is_valid ();
 		[CCode (cname = "icalcomponent_isa")]
-		public iCal.icalcomponent_kind isa ();
+		public iCal.ComponentKind isa ();
 		[CCode (cname = "icalcomponent_isa_component")]
 		public static int isa_component (void* component);
 		[CCode (cname = "icalcomponent_kind_is_valid")]
-		public static int kind_is_valid (iCal.icalcomponent_kind kind);
+		public static int kind_is_valid (iCal.ComponentKind kind);
 		[CCode (cname = "icalcomponent_kind_to_string")]
-		public static unowned string kind_to_string (iCal.icalcomponent_kind kind);
+		public static unowned string kind_to_string (iCal.ComponentKind kind);
 		[CCode (cname = "icalcomponent_merge_component")]
-		public void merge_component (iCal.icalcomponent comp_to_merge);
+		public void merge_component (iCal.Component  comp_to_merge);
 		[CCode (cname = "icalcomponent_remove_component")]
-		public void remove_component (iCal.icalcomponent child);
+		public void remove_component (iCal.Component  child);
 		[CCode (cname = "icalcomponent_remove_property")]
-		public void remove_property (iCal.icalproperty property);
+		public void remove_property (iCal.Property property);
 		[CCode (cname = "icalcomponent_set_comment")]
 		public void set_comment (string v);
 		[CCode (cname = "icalcomponent_set_description")]
 		public void set_description (string v);
 		[CCode (cname = "icalcomponent_set_dtend")]
-		public void set_dtend (iCal.icaltimetype v);
+		public void set_dtend (iCal.TimeType v);
 		[CCode (cname = "icalcomponent_set_dtstamp")]
-		public void set_dtstamp (iCal.icaltimetype v);
+		public void set_dtstamp (iCal.TimeType v);
 		[CCode (cname = "icalcomponent_set_dtstart")]
-		public void set_dtstart (iCal.icaltimetype v);
+		public void set_dtstart (iCal.TimeType v);
 		[CCode (cname = "icalcomponent_set_due")]
-		public void set_due (iCal.icaltimetype v);
+		public void set_due (iCal.TimeType v);
 		[CCode (cname = "icalcomponent_set_duration")]
-		public void set_duration (iCal.icaldurationtype v);
+		public void set_duration (iCal.DurationType v);
 		[CCode (cname = "icalcomponent_set_location")]
 		public void set_location (string v);
 		[CCode (cname = "icalcomponent_set_method")]
-		public void set_method (iCal.icalproperty_method method);
+		public void set_method (iCal.PropertyMethod method);
 		[CCode (cname = "icalcomponent_set_parent")]
-		public void set_parent (iCal.icalcomponent parent);
+		public void set_parent (iCal.Component  parent);
 		[CCode (cname = "icalcomponent_set_recurrenceid")]
-		public void set_recurrenceid (iCal.icaltimetype v);
+		public void set_recurrenceid (iCal.TimeType v);
 		[CCode (cname = "icalcomponent_set_relcalid")]
 		public void set_relcalid (string v);
 		[CCode (cname = "icalcomponent_set_sequence")]
 		public void set_sequence (int v);
 		[CCode (cname = "icalcomponent_set_status")]
-		public void set_status (iCal.icalproperty_status v);
+		public void set_status (iCal.PropertyStatus v);
 		[CCode (cname = "icalcomponent_set_summary")]
 		public void set_summary (string v);
 		[CCode (cname = "icalcomponent_set_uid")]
 		public void set_uid (string v);
 		[CCode (cname = "icalcomponent_string_to_kind")]
-		public static iCal.icalcomponent_kind string_to_kind (string str);
+		public static iCal.ComponentKind string_to_kind (string str);
 		[CCode (cname = "icalcomponent_strip_errors")]
 		public void strip_errors ();
 		[CCode (cname = "icalcomponent_new_vagenda", has_construct_function = false)]
-		public icalcomponent.vagenda ();
+		public Component.vagenda ();
 		[CCode (cname = "icalcomponent_new_valarm", has_construct_function = false)]
-		public icalcomponent.valarm ();
+		public Component.valarm ();
 		[CCode (cname = "icalcomponent_vanew")]
-		public static unowned iCal.icalcomponent vanew (iCal.icalcomponent_kind kind);
+		public static unowned iCal.Component  vanew (iCal.ComponentKind kind);
 		[CCode (cname = "icalcomponent_new_vcalendar", has_construct_function = false)]
-		public icalcomponent.vcalendar ();
+		public Component.vcalendar ();
 		[CCode (cname = "icalcomponent_new_vevent", has_construct_function = false)]
-		public icalcomponent.vevent ();
+		public Component.vevent ();
 		[CCode (cname = "icalcomponent_new_vfreebusy", has_construct_function = false)]
-		public icalcomponent.vfreebusy ();
+		public Component.vfreebusy ();
 		[CCode (cname = "icalcomponent_new_vjournal", has_construct_function = false)]
-		public icalcomponent.vjournal ();
+		public Component.vjournal ();
 		[CCode (cname = "icalcomponent_new_vquery", has_construct_function = false)]
-		public icalcomponent.vquery ();
+		public Component.vquery ();
 		[CCode (cname = "icalcomponent_new_vtimezone", has_construct_function = false)]
-		public icalcomponent.vtimezone ();
+		public Component.vtimezone ();
 		[CCode (cname = "icalcomponent_new_vtodo", has_construct_function = false)]
-		public icalcomponent.vtodo ();
+		public Component.vtodo ();
 		[CCode (cname = "icalcomponent_new_x", has_construct_function = false)]
-		public icalcomponent.x (string x_name);
+		public Component.x (string x_name);
 		[CCode (cname = "icalcomponent_new_xdaylight", has_construct_function = false)]
-		public icalcomponent.xdaylight ();
+		public Component.xdaylight ();
 		[CCode (cname = "icalcomponent_new_xstandard", has_construct_function = false)]
-		public icalcomponent.xstandard ();
+		public Component.xstandard ();
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	[Compact]
-	public class icaldurationtype {
+	[SimpleType]
+	[CCode (cheader_filename = "libical/ical.h", cname = "struct icaldurationtype", has_type_id = false)]
+	public struct DurationType {
 		public uint days;
 		public uint hours;
 		public int is_neg;
@@ -229,61 +229,61 @@ namespace iCal {
 		[CCode (cname = "icaldurationtype_as_int")]
 		public int as_int ();
 		[CCode (cname = "icaldurationtype_bad_duration")]
-		public static unowned iCal.icaldurationtype bad_duration ();
+		public static unowned iCal.DurationType bad_duration ();
 		[CCode (cname = "icaldurationtype_from_int")]
-		public static unowned iCal.icaldurationtype from_int (int t);
+		public static unowned iCal.DurationType from_int (int t);
 		[CCode (cname = "icaldurationtype_from_string")]
-		public static unowned iCal.icaldurationtype from_string (string p1);
+		public static unowned iCal.DurationType from_string (string p1);
 		[CCode (cname = "icaldurationtype_is_bad_duration")]
 		public int is_bad_duration ();
 		[CCode (cname = "icaldurationtype_is_null_duration")]
 		public int is_null_duration ();
 		[CCode (cname = "icaldurationtype_null_duration")]
-		public static unowned iCal.icaldurationtype null_duration ();
+		public static unowned iCal.DurationType null_duration ();
 	}
-	[CCode (cheader_filename = "libical/ical.h", free_function = "icalparameter_free")]
+	[CCode (cheader_filename = "libical/ical.h", copy_function = "icalparameter_new_clone", free_function = "icalparameter_free", cname = "icalparameter")]
 	[Compact]
-	public class icalparameter {
+	public class Parameter {
 		[CCode (cname = "icalparameter_new", has_construct_function = false)]
-		public icalparameter (iCal.icalparameter_kind kind);
+		public Parameter (iCal.ParameterKind kind);
 		[CCode (cname = "icalparameter_new_actionparam", has_construct_function = false)]
-		public icalparameter.actionparam (iCal.icalparameter_action v);
+		public Parameter.actionparam (iCal.ParameterAction v);
 		[CCode (cname = "icalparameter_new_altrep", has_construct_function = false)]
-		public icalparameter.altrep (string v);
+		public Parameter.altrep (string v);
 		[CCode (cname = "icalparameter_as_ical_string")]
 		public unowned string as_ical_string ();
 		[CCode (cname = "icalparameter_as_ical_string_r")]
 		public unowned string as_ical_string_r ();
 		[CCode (cname = "icalparameter_new_charset", has_construct_function = false)]
-		public icalparameter.charset (string v);
+		public Parameter.charset (string v);
 		[CCode (cname = "icalparameter_new_clone", has_construct_function = false)]
-		public icalparameter.clone (iCal.icalparameter p);
+		public Parameter.clone (iCal.Parameter p);
 		[CCode (cname = "icalparameter_new_cn", has_construct_function = false)]
-		public icalparameter.cn (string v);
+		public Parameter.cn (string v);
 		[CCode (cname = "icalparameter_new_cutype", has_construct_function = false)]
-		public icalparameter.cutype (iCal.icalparameter_cutype v);
+		public Parameter.cutype (iCal.ParameterCutype v);
 		[CCode (cname = "icalparameter_new_delegatedfrom", has_construct_function = false)]
-		public icalparameter.delegatedfrom (string v);
+		public Parameter.delegatedfrom (string v);
 		[CCode (cname = "icalparameter_new_delegatedto", has_construct_function = false)]
-		public icalparameter.delegatedto (string v);
+		public Parameter.delegatedto (string v);
 		[CCode (cname = "icalparameter_new_dir", has_construct_function = false)]
-		public icalparameter.dir (string v);
+		public Parameter.dir (string v);
 		[CCode (cname = "icalparameter_new_enable", has_construct_function = false)]
-		public icalparameter.enable (iCal.icalparameter_enable v);
+		public Parameter.enable (iCal.ParameterEnable v);
 		[CCode (cname = "icalparameter_new_encoding", has_construct_function = false)]
-		public icalparameter.encoding (iCal.icalparameter_encoding v);
+		public Parameter.encoding (iCal.ParameterEncoding v);
 		[CCode (cname = "icalparameter_enum_to_string")]
 		public static unowned string enum_to_string (int e);
 		[CCode (cname = "icalparameter_new_fbtype", has_construct_function = false)]
-		public icalparameter.fbtype (iCal.icalparameter_fbtype v);
+		public Parameter.fbtype (iCal.ParameterFbType v);
 		[CCode (cname = "icalparameter_new_fmttype", has_construct_function = false)]
-		public icalparameter.fmttype (string v);
+		public Parameter.fmttype (string v);
 		[CCode (cname = "icalparameter_new_from_string", has_construct_function = false)]
-		public icalparameter.from_string (string value);
+		public Parameter.from_string (string value);
 		[CCode (cname = "icalparameter_new_from_value_string", has_construct_function = false)]
-		public icalparameter.from_value_string (iCal.icalparameter_kind kind, string value);
+		public Parameter.from_value_string (iCal.ParameterKind kind, string value);
 		[CCode (cname = "icalparameter_get_actionparam")]
-		public iCal.icalparameter_action get_actionparam ();
+		public iCal.ParameterAction get_actionparam ();
 		[CCode (cname = "icalparameter_get_altrep")]
 		public unowned string get_altrep ();
 		[CCode (cname = "icalparameter_get_charset")]
@@ -291,7 +291,7 @@ namespace iCal {
 		[CCode (cname = "icalparameter_get_cn")]
 		public unowned string get_cn ();
 		[CCode (cname = "icalparameter_get_cutype")]
-		public iCal.icalparameter_cutype get_cutype ();
+		public iCal.ParameterCutype get_cutype ();
 		[CCode (cname = "icalparameter_get_delegatedfrom")]
 		public unowned string get_delegatedfrom ();
 		[CCode (cname = "icalparameter_get_delegatedto")]
@@ -299,11 +299,11 @@ namespace iCal {
 		[CCode (cname = "icalparameter_get_dir")]
 		public unowned string get_dir ();
 		[CCode (cname = "icalparameter_get_enable")]
-		public iCal.icalparameter_enable get_enable ();
+		public iCal.ParameterEnable get_enable ();
 		[CCode (cname = "icalparameter_get_encoding")]
-		public iCal.icalparameter_encoding get_encoding ();
+		public iCal.ParameterEncoding get_encoding ();
 		[CCode (cname = "icalparameter_get_fbtype")]
-		public iCal.icalparameter_fbtype get_fbtype ();
+		public iCal.ParameterFbType get_fbtype ();
 		[CCode (cname = "icalparameter_get_fmttype")]
 		public unowned string get_fmttype ();
 		[CCode (cname = "icalparameter_get_id")]
@@ -313,7 +313,7 @@ namespace iCal {
 		[CCode (cname = "icalparameter_get_latency")]
 		public unowned string get_latency ();
 		[CCode (cname = "icalparameter_get_local")]
-		public iCal.icalparameter_local get_local ();
+		public iCal.ParameterLocal get_local ();
 		[CCode (cname = "icalparameter_get_localize")]
 		public unowned string get_localize ();
 		[CCode (cname = "icalparameter_get_member")]
@@ -321,71 +321,71 @@ namespace iCal {
 		[CCode (cname = "icalparameter_get_options")]
 		public unowned string get_options ();
 		[CCode (cname = "icalparameter_get_partstat")]
-		public iCal.icalparameter_partstat get_partstat ();
+		public iCal.ParameterPartStat get_partstat ();
 		[CCode (cname = "icalparameter_get_range")]
-		public iCal.icalparameter_range get_range ();
+		public iCal.ParameterRange get_range ();
 		[CCode (cname = "icalparameter_get_related")]
-		public iCal.icalparameter_related get_related ();
+		public iCal.ParameterRelated get_related ();
 		[CCode (cname = "icalparameter_get_reltype")]
-		public iCal.icalparameter_reltype get_reltype ();
+		public iCal.ParameterRelationType get_relation_type ();
 		[CCode (cname = "icalparameter_get_role")]
-		public iCal.icalparameter_role get_role ();
+		public iCal.ParameterRole get_role ();
 		[CCode (cname = "icalparameter_get_rsvp")]
-		public iCal.icalparameter_rsvp get_rsvp ();
+		public iCal.ParameterRsvp get_rsvp ();
 		[CCode (cname = "icalparameter_get_sentby")]
 		public unowned string get_sentby ();
 		[CCode (cname = "icalparameter_get_tzid")]
 		public unowned string get_tzid ();
 		[CCode (cname = "icalparameter_get_value")]
-		public iCal.icalparameter_value get_value ();
+		public iCal.ParameterValue get_value ();
 		[CCode (cname = "icalparameter_get_x")]
 		public unowned string get_x ();
 		[CCode (cname = "icalparameter_get_xliccomparetype")]
-		public iCal.icalparameter_xliccomparetype get_xliccomparetype ();
+		public iCal.ParameterXlicCompareType get_xliccomparetype ();
 		[CCode (cname = "icalparameter_get_xlicerrortype")]
-		public iCal.icalparameter_xlicerrortype get_xlicerrortype ();
+		public iCal.ParameterXlicErrorType get_xlicerrortype ();
 		[CCode (cname = "icalparameter_get_xname")]
 		public unowned string get_xname ();
 		[CCode (cname = "icalparameter_get_xvalue")]
 		public unowned string get_xvalue ();
 		[CCode (cname = "icalparameter_new_id", has_construct_function = false)]
-		public icalparameter.id (string v);
+		public Parameter.id (string v);
 		[CCode (cname = "icalparameter_is_valid")]
 		public int is_valid ();
 		[CCode (cname = "icalparameter_isa")]
-		public iCal.icalparameter_kind isa ();
+		public iCal.ParameterKind isa ();
 		[CCode (cname = "icalparameter_isa_parameter")]
 		public static int isa_parameter (void* param);
 		[CCode (cname = "icalparameter_kind_to_string")]
-		public static unowned string kind_to_string (iCal.icalparameter_kind kind);
+		public static unowned string kind_to_string (iCal.ParameterKind kind);
 		[CCode (cname = "icalparameter_new_language", has_construct_function = false)]
-		public icalparameter.language (string v);
+		public Parameter.language (string v);
 		[CCode (cname = "icalparameter_new_latency", has_construct_function = false)]
-		public icalparameter.latency (string v);
+		public Parameter.latency (string v);
 		[CCode (cname = "icalparameter_new_local", has_construct_function = false)]
-		public icalparameter.local (iCal.icalparameter_local v);
+		public Parameter.local (iCal.ParameterLocal v);
 		[CCode (cname = "icalparameter_new_localize", has_construct_function = false)]
-		public icalparameter.localize (string v);
+		public Parameter.localize (string v);
 		[CCode (cname = "icalparameter_new_member", has_construct_function = false)]
-		public icalparameter.member (string v);
+		public Parameter.member (string v);
 		[CCode (cname = "icalparameter_new_options", has_construct_function = false)]
-		public icalparameter.options (string v);
+		public Parameter.options (string v);
 		[CCode (cname = "icalparameter_new_partstat", has_construct_function = false)]
-		public icalparameter.partstat (iCal.icalparameter_partstat v);
+		public Parameter.partstat (iCal.ParameterPartStat v);
 		[CCode (cname = "icalparameter_new_range", has_construct_function = false)]
-		public icalparameter.range (iCal.icalparameter_range v);
+		public Parameter.range (iCal.ParameterRange v);
 		[CCode (cname = "icalparameter_new_related", has_construct_function = false)]
-		public icalparameter.related (iCal.icalparameter_related v);
+		public Parameter.related (iCal.ParameterRelated v);
 		[CCode (cname = "icalparameter_new_reltype", has_construct_function = false)]
-		public icalparameter.reltype (iCal.icalparameter_reltype v);
+		public Parameter.relation_type (iCal.ParameterRelationType v);
 		[CCode (cname = "icalparameter_new_role", has_construct_function = false)]
-		public icalparameter.role (iCal.icalparameter_role v);
+		public Parameter.role (iCal.ParameterRole v);
 		[CCode (cname = "icalparameter_new_rsvp", has_construct_function = false)]
-		public icalparameter.rsvp (iCal.icalparameter_rsvp v);
+		public Parameter.rsvp (iCal.ParameterRsvp v);
 		[CCode (cname = "icalparameter_new_sentby", has_construct_function = false)]
-		public icalparameter.sentby (string v);
+		public Parameter.sentby (string v);
 		[CCode (cname = "icalparameter_set_actionparam")]
-		public void set_actionparam (iCal.icalparameter_action v);
+		public void set_actionparam (iCal.ParameterAction v);
 		[CCode (cname = "icalparameter_set_altrep")]
 		public void set_altrep (string v);
 		[CCode (cname = "icalparameter_set_charset")]
@@ -393,7 +393,7 @@ namespace iCal {
 		[CCode (cname = "icalparameter_set_cn")]
 		public void set_cn (string v);
 		[CCode (cname = "icalparameter_set_cutype")]
-		public void set_cutype (iCal.icalparameter_cutype v);
+		public void set_cutype (iCal.ParameterCutype v);
 		[CCode (cname = "icalparameter_set_delegatedfrom")]
 		public void set_delegatedfrom (string v);
 		[CCode (cname = "icalparameter_set_delegatedto")]
@@ -401,11 +401,11 @@ namespace iCal {
 		[CCode (cname = "icalparameter_set_dir")]
 		public void set_dir (string v);
 		[CCode (cname = "icalparameter_set_enable")]
-		public void set_enable (iCal.icalparameter_enable v);
+		public void set_enable (iCal.ParameterEnable v);
 		[CCode (cname = "icalparameter_set_encoding")]
-		public void set_encoding (iCal.icalparameter_encoding v);
+		public void set_encoding (iCal.ParameterEncoding v);
 		[CCode (cname = "icalparameter_set_fbtype")]
-		public void set_fbtype (iCal.icalparameter_fbtype v);
+		public void set_fbtype (iCal.ParameterFbType v);
 		[CCode (cname = "icalparameter_set_fmttype")]
 		public void set_fmttype (string v);
 		[CCode (cname = "icalparameter_set_id")]
@@ -415,7 +415,7 @@ namespace iCal {
 		[CCode (cname = "icalparameter_set_latency")]
 		public void set_latency (string v);
 		[CCode (cname = "icalparameter_set_local")]
-		public void set_local (iCal.icalparameter_local v);
+		public void set_local (iCal.ParameterLocal v);
 		[CCode (cname = "icalparameter_set_localize")]
 		public void set_localize (string v);
 		[CCode (cname = "icalparameter_set_member")]
@@ -423,29 +423,29 @@ namespace iCal {
 		[CCode (cname = "icalparameter_set_options")]
 		public void set_options (string v);
 		[CCode (cname = "icalparameter_set_partstat")]
-		public void set_partstat (iCal.icalparameter_partstat v);
+		public void set_partstat (iCal.ParameterPartStat v);
 		[CCode (cname = "icalparameter_set_range")]
-		public void set_range (iCal.icalparameter_range v);
+		public void set_range (iCal.ParameterRange v);
 		[CCode (cname = "icalparameter_set_related")]
-		public void set_related (iCal.icalparameter_related v);
+		public void set_related (iCal.ParameterRelated v);
 		[CCode (cname = "icalparameter_set_reltype")]
-		public void set_reltype (iCal.icalparameter_reltype v);
+		public void set_relation_type (iCal.ParameterRelationType v);
 		[CCode (cname = "icalparameter_set_role")]
-		public void set_role (iCal.icalparameter_role v);
+		public void set_role (iCal.ParameterRole v);
 		[CCode (cname = "icalparameter_set_rsvp")]
-		public void set_rsvp (iCal.icalparameter_rsvp v);
+		public void set_rsvp (iCal.ParameterRsvp v);
 		[CCode (cname = "icalparameter_set_sentby")]
 		public void set_sentby (string v);
 		[CCode (cname = "icalparameter_set_tzid")]
 		public void set_tzid (string v);
 		[CCode (cname = "icalparameter_set_value")]
-		public void set_value (iCal.icalparameter_value v);
+		public void set_value (iCal.ParameterValue v);
 		[CCode (cname = "icalparameter_set_x")]
 		public void set_x (string v);
 		[CCode (cname = "icalparameter_set_xliccomparetype")]
-		public void set_xliccomparetype (iCal.icalparameter_xliccomparetype v);
+		public void set_xliccomparetype (iCal.ParameterXlicCompareType v);
 		[CCode (cname = "icalparameter_set_xlicerrortype")]
-		public void set_xlicerrortype (iCal.icalparameter_xlicerrortype v);
+		public void set_xlicerrortype (iCal.ParameterXlicErrorType v);
 		[CCode (cname = "icalparameter_set_xname")]
 		public void set_xname (string v);
 		[CCode (cname = "icalparameter_set_xvalue")]
@@ -453,151 +453,151 @@ namespace iCal {
 		[CCode (cname = "icalparameter_string_to_enum")]
 		public static int string_to_enum (string str);
 		[CCode (cname = "icalparameter_string_to_kind")]
-		public static iCal.icalparameter_kind string_to_kind (string str);
+		public static iCal.ParameterKind string_to_kind (string str);
 		[CCode (cname = "icalparameter_new_tzid", has_construct_function = false)]
-		public icalparameter.tzid (string v);
+		public Parameter.tzid (string v);
 		[CCode (cname = "icalparameter_new_value", has_construct_function = false)]
-		public icalparameter.value (iCal.icalparameter_value v);
+		public Parameter.value (iCal.ParameterValue v);
 		[CCode (cname = "icalparameter_value_to_value_kind")]
-		public static iCal.icalvalue_kind value_to_value_kind (iCal.icalparameter_value value);
+		public static iCal.ValueKind value_to_value_kind (iCal.ParameterValue value);
 		[CCode (cname = "icalparameter_new_x", has_construct_function = false)]
-		public icalparameter.x (string v);
+		public Parameter.x (string v);
 		[CCode (cname = "icalparameter_new_xliccomparetype", has_construct_function = false)]
-		public icalparameter.xliccomparetype (iCal.icalparameter_xliccomparetype v);
+		public Parameter.xliccomparetype (iCal.ParameterXlicCompareType v);
 		[CCode (cname = "icalparameter_new_xlicerrortype", has_construct_function = false)]
-		public icalparameter.xlicerrortype (iCal.icalparameter_xlicerrortype v);
+		public Parameter.xlicerrortype (iCal.ParameterXlicErrorType v);
 	}
-	[CCode (cheader_filename = "libical/ical.h", free_function = "icalparser_free")]
+	[CCode (cheader_filename = "libical/ical.h", free_function = "icalparser_free", cname = "icalparser")]
 	[Compact]
-	public class icalparser {
+	public class Parser {
 		[CCode (cname = "icalparser_new", has_construct_function = false)]
-		public icalparser ();
+		public Parser ();
 		[CCode (cname = "icalparser_add_line")]
-		public unowned iCal.icalcomponent add_line (string str);
+		public unowned iCal.Component add_line (string str);
 		[CCode (cname = "icalparser_clean")]
-		public unowned iCal.icalcomponent clean ();
+		public unowned iCal.Component clean ();
 		[CCode (cname = "icalparser_get_line")]
 		public unowned string get_line (GLib.Callback line_gen_func);
 		[CCode (cname = "icalparser_get_state")]
-		public iCal.icalparser_state get_state ();
+		public iCal.ParserState get_state ();
 		[CCode (cname = "icalparser_parse")]
-		public unowned iCal.icalcomponent parse (GLib.Callback line_gen_func);
+		public unowned iCal.Component  parse (GLib.Callback line_gen_func);
 		[CCode (cname = "icalparser_parse_string")]
-		public static unowned iCal.icalcomponent parse_string (string str);
+		public static unowned iCal.Component  parse_string (string str);
 		[CCode (cname = "icalparser_parse_value")]
-		public static unowned iCal.icalvalue parse_value (iCal.icalvalue_kind kind, string str, out unowned iCal.icalcomponent errors);
+		public static unowned iCal.Value parse_value (iCal.ValueKind kind, string str, out unowned iCal.Component  errors);
 		[CCode (cname = "icalparser_set_gen_data")]
 		public void set_gen_data (void* data);
 		[CCode (cname = "icalparser_string_line_generator")]
 		public static unowned string string_line_generator (string @out, size_t buf_size, void* d);
 	}
-	[CCode (cheader_filename = "libical/ical.h", free_function = "icalproperty_free")]
+	[CCode (cheader_filename = "libical/ical.h", copy_function = "icalproperty_new_clone", free_function = "icalproperty_free", cname = "icalproperty")]
 	[Compact]
-	public class icalproperty {
+	public class Property {
 		[CCode (cname = "icalproperty_new", has_construct_function = false)]
-		public icalproperty (iCal.icalproperty_kind kind);
+		public Property (iCal.PropertyKind kind);
 		[CCode (cname = "icalproperty_new_action", has_construct_function = false)]
-		public icalproperty.action (iCal.icalproperty_action v);
+		public Property.action (iCal.PropertyAction v);
 		[CCode (cname = "icalproperty_add_parameter")]
-		public void add_parameter (iCal.icalparameter parameter);
+		public void add_parameter (iCal.Parameter parameter);
 		[CCode (cname = "icalproperty_add_parameters")]
-		public static void add_parameters (iCal.icalproperty prop, void* args);
+		public static void add_parameters (iCal.Property prop, void* args);
 		[CCode (cname = "icalproperty_new_allowconflict", has_construct_function = false)]
-		public icalproperty.allowconflict (string v);
+		public Property.allowconflict (string v);
 		[CCode (cname = "icalproperty_as_ical_string")]
 		public unowned string as_ical_string ();
 		[CCode (cname = "icalproperty_as_ical_string_r")]
 		public unowned string as_ical_string_r ();
 		[CCode (cname = "icalproperty_new_attach", has_construct_function = false)]
-		public icalproperty.attach (iCal.icalattach v);
+		public Property.attach (iCal.Attach v);
 		[CCode (cname = "icalproperty_new_attendee", has_construct_function = false)]
-		public icalproperty.attendee (string v);
+		public Property.attendee (string v);
 		[CCode (cname = "icalproperty_new_calid", has_construct_function = false)]
-		public icalproperty.calid (string v);
+		public Property.calid (string v);
 		[CCode (cname = "icalproperty_new_calmaster", has_construct_function = false)]
-		public icalproperty.calmaster (string v);
+		public Property.calmaster (string v);
 		[CCode (cname = "icalproperty_new_calscale", has_construct_function = false)]
-		public icalproperty.calscale (string v);
+		public Property.calscale (string v);
 		[CCode (cname = "icalproperty_new_capversion", has_construct_function = false)]
-		public icalproperty.capversion (string v);
+		public Property.capversion (string v);
 		[CCode (cname = "icalproperty_new_carid", has_construct_function = false)]
-		public icalproperty.carid (string v);
+		public Property.carid (string v);
 		[CCode (cname = "icalproperty_new_carlevel", has_construct_function = false)]
-		public icalproperty.carlevel (iCal.icalproperty_carlevel v);
+		public Property.carlevel (iCal.PropertyCarlevel v);
 		[CCode (cname = "icalproperty_new_categories", has_construct_function = false)]
-		public icalproperty.categories (string v);
+		public Property.categories (string v);
 		[CCode (cname = "icalproperty_new_class", has_construct_function = false)]
-		public icalproperty.@class (iCal.icalproperty_class v);
+		public Property.@class (iCal.PropertyClass v);
 		[CCode (cname = "icalproperty_new_clone", has_construct_function = false)]
-		public icalproperty.clone (iCal.icalproperty prop);
+		public Property.clone (iCal.Property prop);
 		[CCode (cname = "icalproperty_new_cmd", has_construct_function = false)]
-		public icalproperty.cmd (iCal.icalproperty_cmd v);
+		public Property.cmd (iCal.PropertyCmd v);
 		[CCode (cname = "icalproperty_new_comment", has_construct_function = false)]
-		public icalproperty.comment (string v);
+		public Property.comment (string v);
 		[CCode (cname = "icalproperty_new_completed", has_construct_function = false)]
-		public icalproperty.completed (iCal.icaltimetype v);
+		public Property.completed (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_components", has_construct_function = false)]
-		public icalproperty.components (string v);
+		public Property.components (string v);
 		[CCode (cname = "icalproperty_new_contact", has_construct_function = false)]
-		public icalproperty.contact (string v);
+		public Property.contact (string v);
 		[CCode (cname = "icalproperty_count_parameters")]
 		public int count_parameters ();
 		[CCode (cname = "icalproperty_new_created", has_construct_function = false)]
-		public icalproperty.created (iCal.icaltimetype v);
+		public Property.created (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_csid", has_construct_function = false)]
-		public icalproperty.csid (string v);
+		public Property.csid (string v);
 		[CCode (cname = "icalproperty_new_datemax", has_construct_function = false)]
-		public icalproperty.datemax (iCal.icaltimetype v);
+		public Property.datemax (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_datemin", has_construct_function = false)]
-		public icalproperty.datemin (iCal.icaltimetype v);
+		public Property.datemin (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_decreed", has_construct_function = false)]
-		public icalproperty.decreed (string v);
+		public Property.decreed (string v);
 		[CCode (cname = "icalproperty_new_defaultcharset", has_construct_function = false)]
-		public icalproperty.defaultcharset (string v);
+		public Property.defaultcharset (string v);
 		[CCode (cname = "icalproperty_new_defaultlocale", has_construct_function = false)]
-		public icalproperty.defaultlocale (string v);
+		public Property.defaultlocale (string v);
 		[CCode (cname = "icalproperty_new_defaulttzid", has_construct_function = false)]
-		public icalproperty.defaulttzid (string v);
+		public Property.defaulttzid (string v);
 		[CCode (cname = "icalproperty_new_defaultvcars", has_construct_function = false)]
-		public icalproperty.defaultvcars (string v);
+		public Property.defaultvcars (string v);
 		[CCode (cname = "icalproperty_new_deny", has_construct_function = false)]
-		public icalproperty.deny (string v);
+		public Property.deny (string v);
 		[CCode (cname = "icalproperty_new_description", has_construct_function = false)]
-		public icalproperty.description (string v);
+		public Property.description (string v);
 		[CCode (cname = "icalproperty_new_dtend", has_construct_function = false)]
-		public icalproperty.dtend (iCal.icaltimetype v);
+		public Property.dtend (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_dtstamp", has_construct_function = false)]
-		public icalproperty.dtstamp (iCal.icaltimetype v);
+		public Property.dtstamp (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_dtstart", has_construct_function = false)]
-		public icalproperty.dtstart (iCal.icaltimetype v);
+		public Property.dtstart (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_due", has_construct_function = false)]
-		public icalproperty.due (iCal.icaltimetype v);
+		public Property.due (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_duration", has_construct_function = false)]
-		public icalproperty.duration (iCal.icaldurationtype v);
+		public Property.duration (iCal.DurationType v);
 		[CCode (cname = "icalproperty_enum_belongs_to_property")]
-		public static int enum_belongs_to_property (iCal.icalproperty_kind kind, int e);
+		public static int enum_belongs_to_property (iCal.PropertyKind kind, int e);
 		[CCode (cname = "icalproperty_enum_to_string")]
 		public static unowned string enum_to_string (int e);
 		[CCode (cname = "icalproperty_enum_to_string_r")]
 		public static unowned string enum_to_string_r (int e);
 		[CCode (cname = "icalproperty_new_exdate", has_construct_function = false)]
-		public icalproperty.exdate (iCal.icaltimetype v);
+		public Property.exdate (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_expand", has_construct_function = false)]
-		public icalproperty.expand (int v);
+		public Property.expand (int v);
 		[CCode (cname = "icalproperty_new_exrule", has_construct_function = false)]
-		public icalproperty.exrule (iCal.icalrecurrencetype v);
+		public Property.exrule (iCal.RecurrenceType v);
 		[CCode (cname = "icalproperty_new_freebusy", has_construct_function = false)]
-		public icalproperty.freebusy (iCal.icalperiodtype v);
+		public Property.freebusy (iCal.PeriodType v);
 		[CCode (cname = "icalproperty_new_from_string", has_construct_function = false)]
-		public icalproperty.from_string (string str);
+		public Property.from_string (string str);
 		[CCode (cname = "icalproperty_new_geo", has_construct_function = false)]
-		public icalproperty.geo (iCal.icalgeotype v);
+		public Property.geo (iCal.GeoType v);
 		[CCode (cname = "icalproperty_get_action")]
-		public iCal.icalproperty_action get_action ();
+		public iCal.PropertyAction get_action ();
 		[CCode (cname = "icalproperty_get_allowconflict")]
 		public unowned string get_allowconflict ();
 		[CCode (cname = "icalproperty_get_attach")]
-		public unowned iCal.icalattach get_attach ();
+		public unowned iCal.Attach get_attach ();
 		[CCode (cname = "icalproperty_get_attendee")]
 		public unowned string get_attendee ();
 		[CCode (cname = "icalproperty_get_calid")]
@@ -611,29 +611,29 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_carid")]
 		public unowned string get_carid ();
 		[CCode (cname = "icalproperty_get_carlevel")]
-		public iCal.icalproperty_carlevel get_carlevel ();
+		public iCal.PropertyCarlevel get_carlevel ();
 		[CCode (cname = "icalproperty_get_categories")]
 		public unowned string get_categories ();
 		[CCode (cname = "icalproperty_get_class")]
-		public iCal.icalproperty_class get_class ();
+		public iCal.PropertyClass get_class ();
 		[CCode (cname = "icalproperty_get_cmd")]
-		public iCal.icalproperty_cmd get_cmd ();
+		public iCal.PropertyCmd get_cmd ();
 		[CCode (cname = "icalproperty_get_comment")]
 		public unowned string get_comment ();
 		[CCode (cname = "icalproperty_get_completed")]
-		public iCal.icaltimetype get_completed ();
+		public iCal.TimeType get_completed ();
 		[CCode (cname = "icalproperty_get_components")]
 		public unowned string get_components ();
 		[CCode (cname = "icalproperty_get_contact")]
 		public unowned string get_contact ();
 		[CCode (cname = "icalproperty_get_created")]
-		public iCal.icaltimetype get_created ();
+		public iCal.TimeType get_created ();
 		[CCode (cname = "icalproperty_get_csid")]
 		public unowned string get_csid ();
 		[CCode (cname = "icalproperty_get_datemax")]
-		public iCal.icaltimetype get_datemax ();
+		public iCal.TimeType get_datemax ();
 		[CCode (cname = "icalproperty_get_datemin")]
-		public iCal.icaltimetype get_datemin ();
+		public iCal.TimeType get_datemin ();
 		[CCode (cname = "icalproperty_get_decreed")]
 		public unowned string get_decreed ();
 		[CCode (cname = "icalproperty_get_defaultcharset")]
@@ -649,53 +649,53 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_description")]
 		public unowned string get_description ();
 		[CCode (cname = "icalproperty_get_dtend")]
-		public iCal.icaltimetype get_dtend ();
+		public iCal.TimeType get_dtend ();
 		[CCode (cname = "icalproperty_get_dtstamp")]
-		public iCal.icaltimetype get_dtstamp ();
+		public iCal.TimeType get_dtstamp ();
 		[CCode (cname = "icalproperty_get_dtstart")]
-		public iCal.icaltimetype get_dtstart ();
+		public iCal.TimeType get_dtstart ();
 		[CCode (cname = "icalproperty_get_due")]
-		public iCal.icaltimetype get_due ();
+		public iCal.TimeType get_due ();
 		[CCode (cname = "icalproperty_get_duration")]
-		public unowned iCal.icaldurationtype get_duration ();
+		public unowned iCal.DurationType get_duration ();
 		[CCode (cname = "icalproperty_get_exdate")]
-		public iCal.icaltimetype get_exdate ();
+		public iCal.TimeType get_exdate ();
 		[CCode (cname = "icalproperty_get_expand")]
 		public int get_expand ();
 		[CCode (cname = "icalproperty_get_exrule")]
-		public iCal.icalrecurrencetype get_exrule ();
+		public iCal.RecurrenceType get_exrule ();
 		[CCode (cname = "icalproperty_get_first_parameter")]
-		public unowned iCal.icalparameter get_first_parameter (iCal.icalparameter_kind kind);
+		public unowned iCal.Parameter get_first_parameter (iCal.ParameterKind kind);
 		[CCode (cname = "icalproperty_get_freebusy")]
-		public iCal.icalperiodtype get_freebusy ();
+		public iCal.PeriodType get_freebusy ();
 		[CCode (cname = "icalproperty_get_geo")]
-		public iCal.icalgeotype get_geo ();
+		public iCal.GeoType get_geo ();
 		[CCode (cname = "icalproperty_get_grant")]
 		public unowned string get_grant ();
 		[CCode (cname = "icalproperty_get_itipversion")]
 		public unowned string get_itipversion ();
 		[CCode (cname = "icalproperty_get_lastmodified")]
-		public iCal.icaltimetype get_lastmodified ();
+		public iCal.TimeType get_lastmodified ();
 		[CCode (cname = "icalproperty_get_location")]
 		public unowned string get_location ();
 		[CCode (cname = "icalproperty_get_maxcomponentsize")]
 		public int get_maxcomponentsize ();
 		[CCode (cname = "icalproperty_get_maxdate")]
-		public iCal.icaltimetype get_maxdate ();
+		public iCal.TimeType get_maxdate ();
 		[CCode (cname = "icalproperty_get_maxresults")]
 		public int get_maxresults ();
 		[CCode (cname = "icalproperty_get_maxresultssize")]
 		public int get_maxresultssize ();
 		[CCode (cname = "icalproperty_get_method")]
-		public iCal.icalproperty_method get_method ();
+		public iCal.PropertyMethod get_method ();
 		[CCode (cname = "icalproperty_get_mindate")]
-		public iCal.icaltimetype get_mindate ();
+		public iCal.TimeType get_mindate ();
 		[CCode (cname = "icalproperty_get_multipart")]
 		public unowned string get_multipart ();
 		[CCode (cname = "icalproperty_get_name")]
 		public unowned string get_name ();
 		[CCode (cname = "icalproperty_get_next_parameter")]
-		public unowned iCal.icalparameter get_next_parameter (iCal.icalparameter_kind kind);
+		public unowned iCal.Parameter get_next_parameter (iCal.ParameterKind kind);
 		[CCode (cname = "icalproperty_get_organizer")]
 		public unowned string get_organizer ();
 		[CCode (cname = "icalproperty_get_owner")]
@@ -721,11 +721,11 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_queryid")]
 		public unowned string get_queryid ();
 		[CCode (cname = "icalproperty_get_querylevel")]
-		public iCal.icalproperty_querylevel get_querylevel ();
+		public iCal.PropertyQueryLevel get_querylevel ();
 		[CCode (cname = "icalproperty_get_queryname")]
 		public unowned string get_queryname ();
 		[CCode (cname = "icalproperty_get_rdate")]
-		public iCal.icaldatetimeperiodtype get_rdate ();
+		public iCal.DateTimePeriodType get_rdate ();
 		[CCode (cname = "icalproperty_get_recuraccepted")]
 		public unowned string get_recuraccepted ();
 		[CCode (cname = "icalproperty_get_recurexpand")]
@@ -733,7 +733,7 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_recurlimit")]
 		public unowned string get_recurlimit ();
 		[CCode (cname = "icalproperty_get_recurrenceid")]
-		public iCal.icaltimetype get_recurrenceid ();
+		public iCal.TimeType get_recurrenceid ();
 		[CCode (cname = "icalproperty_get_relatedto")]
 		public unowned string get_relatedto ();
 		[CCode (cname = "icalproperty_get_relcalid")]
@@ -741,19 +741,19 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_repeat")]
 		public int get_repeat ();
 		[CCode (cname = "icalproperty_get_requeststatus")]
-		public iCal.icalreqstattype get_requeststatus ();
+		public iCal.RequestStatusType get_requeststatus ();
 		[CCode (cname = "icalproperty_get_resources")]
 		public unowned string get_resources ();
 		[CCode (cname = "icalproperty_get_restriction")]
 		public unowned string get_restriction ();
 		[CCode (cname = "icalproperty_get_rrule")]
-		public iCal.icalrecurrencetype get_rrule ();
+		public iCal.RecurrenceType get_rrule ();
 		[CCode (cname = "icalproperty_get_scope")]
 		public unowned string get_scope ();
 		[CCode (cname = "icalproperty_get_sequence")]
 		public int get_sequence ();
 		[CCode (cname = "icalproperty_get_status")]
-		public iCal.icalproperty_status get_status ();
+		public iCal.PropertyStatus get_status ();
 		[CCode (cname = "icalproperty_get_storesexpanded")]
 		public unowned string get_storesexpanded ();
 		[CCode (cname = "icalproperty_get_summary")]
@@ -761,9 +761,9 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_target")]
 		public unowned string get_target ();
 		[CCode (cname = "icalproperty_get_transp")]
-		public iCal.icalproperty_transp get_transp ();
+		public iCal.PropertyTransparency get_transparency ();
 		[CCode (cname = "icalproperty_get_trigger")]
-		public iCal.icaltriggertype get_trigger ();
+		public iCal.TriggerType get_trigger ();
 		[CCode (cname = "icalproperty_get_tzid")]
 		public unowned string get_tzid ();
 		[CCode (cname = "icalproperty_get_tzname")]
@@ -779,7 +779,7 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_url")]
 		public unowned string get_url ();
 		[CCode (cname = "icalproperty_get_value")]
-		public unowned iCal.icalvalue get_value ();
+		public unowned iCal.Value get_value ();
 		[CCode (cname = "icalproperty_get_value_as_string")]
 		public unowned string get_value_as_string ();
 		[CCode (cname = "icalproperty_get_value_as_string_r")]
@@ -791,7 +791,7 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_x_name")]
 		public unowned string get_x_name ();
 		[CCode (cname = "icalproperty_get_xlicclass")]
-		public iCal.icalproperty_xlicclass get_xlicclass ();
+		public iCal.PropertyXlicClass get_xlicclass ();
 		[CCode (cname = "icalproperty_get_xlicclustercount")]
 		public unowned string get_xlicclustercount ();
 		[CCode (cname = "icalproperty_get_xlicerror")]
@@ -809,107 +809,107 @@ namespace iCal {
 		[CCode (cname = "icalproperty_get_xlicmimeoptinfo")]
 		public unowned string get_xlicmimeoptinfo ();
 		[CCode (cname = "icalproperty_new_grant", has_construct_function = false)]
-		public icalproperty.grant (string v);
+		public Property.grant (string v);
 		[CCode (cname = "icalproperty_isa")]
-		public iCal.icalproperty_kind isa ();
+		public iCal.PropertyKind isa ();
 		[CCode (cname = "icalproperty_isa_property")]
 		public static int isa_property (void* property);
 		[CCode (cname = "icalproperty_new_itipversion", has_construct_function = false)]
-		public icalproperty.itipversion (string v);
+		public Property.itipversion (string v);
 		[CCode (cname = "icalproperty_kind_and_string_to_enum")]
 		public static int kind_and_string_to_enum (int kind, string str);
 		[CCode (cname = "icalproperty_kind_is_valid")]
-		public static int kind_is_valid (iCal.icalproperty_kind kind);
+		public static int kind_is_valid (iCal.PropertyKind kind);
 		[CCode (cname = "icalproperty_kind_to_string")]
-		public static unowned string kind_to_string (iCal.icalproperty_kind kind);
+		public static unowned string kind_to_string (iCal.PropertyKind kind);
 		[CCode (cname = "icalproperty_kind_to_value_kind")]
-		public static iCal.icalvalue_kind kind_to_value_kind (iCal.icalproperty_kind kind);
+		public static iCal.ValueKind kind_to_value_kind (iCal.PropertyKind kind);
 		[CCode (cname = "icalproperty_new_lastmodified", has_construct_function = false)]
-		public icalproperty.lastmodified (iCal.icaltimetype v);
+		public Property.lastmodified (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_location", has_construct_function = false)]
-		public icalproperty.location (string v);
+		public Property.location (string v);
 		[CCode (cname = "icalproperty_new_maxcomponentsize", has_construct_function = false)]
-		public icalproperty.maxcomponentsize (int v);
+		public Property.maxcomponentsize (int v);
 		[CCode (cname = "icalproperty_new_maxdate", has_construct_function = false)]
-		public icalproperty.maxdate (iCal.icaltimetype v);
+		public Property.maxdate (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_maxresults", has_construct_function = false)]
-		public icalproperty.maxresults (int v);
+		public Property.maxresults (int v);
 		[CCode (cname = "icalproperty_new_maxresultssize", has_construct_function = false)]
-		public icalproperty.maxresultssize (int v);
+		public Property.maxresultssize (int v);
 		[CCode (cname = "icalproperty_new_method", has_construct_function = false)]
-		public icalproperty.method (iCal.icalproperty_method v);
+		public Property.method (iCal.PropertyMethod v);
 		[CCode (cname = "icalproperty_method_to_string")]
-		public static unowned string method_to_string (iCal.icalproperty_method method);
+		public static unowned string method_to_string (iCal.PropertyMethod method);
 		[CCode (cname = "icalproperty_new_mindate", has_construct_function = false)]
-		public icalproperty.mindate (iCal.icaltimetype v);
+		public Property.mindate (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_multipart", has_construct_function = false)]
-		public icalproperty.multipart (string v);
+		public Property.multipart (string v);
 		[CCode (cname = "icalproperty_new_name", has_construct_function = false)]
-		public icalproperty.name (string v);
+		public Property.name (string v);
 		[CCode (cname = "icalproperty_new_organizer", has_construct_function = false)]
-		public icalproperty.organizer (string v);
+		public Property.organizer (string v);
 		[CCode (cname = "icalproperty_new_owner", has_construct_function = false)]
-		public icalproperty.owner (string v);
+		public Property.owner (string v);
 		[CCode (cname = "icalproperty_new_percentcomplete", has_construct_function = false)]
-		public icalproperty.percentcomplete (int v);
+		public Property.percentcomplete (int v);
 		[CCode (cname = "icalproperty_new_permission", has_construct_function = false)]
-		public icalproperty.permission (string v);
+		public Property.permission (string v);
 		[CCode (cname = "icalproperty_new_priority", has_construct_function = false)]
-		public icalproperty.priority (int v);
+		public Property.priority (int v);
 		[CCode (cname = "icalproperty_new_prodid", has_construct_function = false)]
-		public icalproperty.prodid (string v);
+		public Property.prodid (string v);
 		[CCode (cname = "icalproperty_new_query", has_construct_function = false)]
-		public icalproperty.query (string v);
+		public Property.query (string v);
 		[CCode (cname = "icalproperty_new_queryid", has_construct_function = false)]
-		public icalproperty.queryid (string v);
+		public Property.queryid (string v);
 		[CCode (cname = "icalproperty_new_querylevel", has_construct_function = false)]
-		public icalproperty.querylevel (iCal.icalproperty_querylevel v);
+		public Property.querylevel (iCal.PropertyQueryLevel v);
 		[CCode (cname = "icalproperty_new_queryname", has_construct_function = false)]
-		public icalproperty.queryname (string v);
+		public Property.queryname (string v);
 		[CCode (cname = "icalproperty_new_rdate", has_construct_function = false)]
-		public icalproperty.rdate (iCal.icaldatetimeperiodtype v);
+		public Property.rdate (iCal.DateTimePeriodType v);
 		[CCode (cname = "icalproperty_new_recuraccepted", has_construct_function = false)]
-		public icalproperty.recuraccepted (string v);
+		public Property.recuraccepted (string v);
 		[CCode (cname = "icalproperty_new_recurexpand", has_construct_function = false)]
-		public icalproperty.recurexpand (string v);
+		public Property.recurexpand (string v);
 		[CCode (cname = "icalproperty_new_recurlimit", has_construct_function = false)]
-		public icalproperty.recurlimit (string v);
+		public Property.recurlimit (string v);
 		[CCode (cname = "icalproperty_recurrence_is_excluded")]
-		public static int recurrence_is_excluded (iCal.icalcomponent comp, iCal.icaltimetype dtstart, iCal.icaltimetype recurtime);
+		public static int recurrence_is_excluded (iCal.Component  comp, iCal.TimeType dtstart, iCal.TimeType recurtime);
 		[CCode (cname = "icalproperty_new_recurrenceid", has_construct_function = false)]
-		public icalproperty.recurrenceid (iCal.icaltimetype v);
+		public Property.recurrenceid (iCal.TimeType v);
 		[CCode (cname = "icalproperty_new_relatedto", has_construct_function = false)]
-		public icalproperty.relatedto (string v);
+		public Property.relatedto (string v);
 		[CCode (cname = "icalproperty_new_relcalid", has_construct_function = false)]
-		public icalproperty.relcalid (string v);
+		public Property.relcalid (string v);
 		[CCode (cname = "icalproperty_remove_parameter")]
-		public void remove_parameter (iCal.icalparameter_kind kind);
+		public void remove_parameter (iCal.ParameterKind kind);
 		[CCode (cname = "icalproperty_remove_parameter_by_kind")]
-		public void remove_parameter_by_kind (iCal.icalparameter_kind kind);
+		public void remove_parameter_by_kind (iCal.ParameterKind kind);
 		[CCode (cname = "icalproperty_remove_parameter_by_name")]
 		public void remove_parameter_by_name (string name);
 		[CCode (cname = "icalproperty_remove_parameter_by_ref")]
-		public void remove_parameter_by_ref (iCal.icalparameter param);
+		public void remove_parameter_by_ref (iCal.Parameter param);
 		[CCode (cname = "icalproperty_new_repeat", has_construct_function = false)]
-		public icalproperty.repeat (int v);
+		public Property.repeat (int v);
 		[CCode (cname = "icalproperty_new_requeststatus", has_construct_function = false)]
-		public icalproperty.requeststatus (iCal.icalreqstattype v);
+		public Property.requeststatus (iCal.RequestStatusType v);
 		[CCode (cname = "icalproperty_new_resources", has_construct_function = false)]
-		public icalproperty.resources (string v);
+		public Property.resources (string v);
 		[CCode (cname = "icalproperty_new_restriction", has_construct_function = false)]
-		public icalproperty.restriction (string v);
+		public Property.restriction (string v);
 		[CCode (cname = "icalproperty_new_rrule", has_construct_function = false)]
-		public icalproperty.rrule (iCal.icalrecurrencetype v);
+		public Property.rrule (iCal.RecurrenceType v);
 		[CCode (cname = "icalproperty_new_scope", has_construct_function = false)]
-		public icalproperty.scope (string v);
+		public Property.scope (string v);
 		[CCode (cname = "icalproperty_new_sequence", has_construct_function = false)]
-		public icalproperty.sequence (int v);
+		public Property.sequence (int v);
 		[CCode (cname = "icalproperty_set_action")]
-		public void set_action (iCal.icalproperty_action v);
+		public void set_action (iCal.PropertyAction v);
 		[CCode (cname = "icalproperty_set_allowconflict")]
 		public void set_allowconflict (string v);
 		[CCode (cname = "icalproperty_set_attach")]
-		public void set_attach (iCal.icalattach v);
+		public void set_attach (iCal.Attach v);
 		[CCode (cname = "icalproperty_set_attendee")]
 		public void set_attendee (string v);
 		[CCode (cname = "icalproperty_set_calid")]
@@ -923,29 +923,29 @@ namespace iCal {
 		[CCode (cname = "icalproperty_set_carid")]
 		public void set_carid (string v);
 		[CCode (cname = "icalproperty_set_carlevel")]
-		public void set_carlevel (iCal.icalproperty_carlevel v);
+		public void set_carlevel (iCal.PropertyCarlevel v);
 		[CCode (cname = "icalproperty_set_categories")]
 		public void set_categories (string v);
 		[CCode (cname = "icalproperty_set_class")]
-		public void set_class (iCal.icalproperty_class v);
+		public void set_class (iCal.PropertyClass v);
 		[CCode (cname = "icalproperty_set_cmd")]
-		public void set_cmd (iCal.icalproperty_cmd v);
+		public void set_cmd (iCal.PropertyCmd v);
 		[CCode (cname = "icalproperty_set_comment")]
 		public void set_comment (string v);
 		[CCode (cname = "icalproperty_set_completed")]
-		public void set_completed (iCal.icaltimetype v);
+		public void set_completed (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_components")]
 		public void set_components (string v);
 		[CCode (cname = "icalproperty_set_contact")]
 		public void set_contact (string v);
 		[CCode (cname = "icalproperty_set_created")]
-		public void set_created (iCal.icaltimetype v);
+		public void set_created (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_csid")]
 		public void set_csid (string v);
 		[CCode (cname = "icalproperty_set_datemax")]
-		public void set_datemax (iCal.icaltimetype v);
+		public void set_datemax (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_datemin")]
-		public void set_datemin (iCal.icaltimetype v);
+		public void set_datemin (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_decreed")]
 		public void set_decreed (string v);
 		[CCode (cname = "icalproperty_set_defaultcharset")]
@@ -961,45 +961,45 @@ namespace iCal {
 		[CCode (cname = "icalproperty_set_description")]
 		public void set_description (string v);
 		[CCode (cname = "icalproperty_set_dtend")]
-		public void set_dtend (iCal.icaltimetype v);
+		public void set_dtend (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_dtstamp")]
-		public void set_dtstamp (iCal.icaltimetype v);
+		public void set_dtstamp (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_dtstart")]
-		public void set_dtstart (iCal.icaltimetype v);
+		public void set_dtstart (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_due")]
-		public void set_due (iCal.icaltimetype v);
+		public void set_due (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_duration")]
-		public void set_duration (iCal.icaldurationtype v);
+		public void set_duration (iCal.DurationType v);
 		[CCode (cname = "icalproperty_set_exdate")]
-		public void set_exdate (iCal.icaltimetype v);
+		public void set_exdate (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_expand")]
 		public void set_expand (int v);
 		[CCode (cname = "icalproperty_set_exrule")]
-		public void set_exrule (iCal.icalrecurrencetype v);
+		public void set_exrule (iCal.RecurrenceType v);
 		[CCode (cname = "icalproperty_set_freebusy")]
-		public void set_freebusy (iCal.icalperiodtype v);
+		public void set_freebusy (iCal.PeriodType v);
 		[CCode (cname = "icalproperty_set_geo")]
-		public void set_geo (iCal.icalgeotype v);
+		public void set_geo (iCal.GeoType v);
 		[CCode (cname = "icalproperty_set_grant")]
 		public void set_grant (string v);
 		[CCode (cname = "icalproperty_set_itipversion")]
 		public void set_itipversion (string v);
 		[CCode (cname = "icalproperty_set_lastmodified")]
-		public void set_lastmodified (iCal.icaltimetype v);
+		public void set_lastmodified (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_location")]
 		public void set_location (string v);
 		[CCode (cname = "icalproperty_set_maxcomponentsize")]
 		public void set_maxcomponentsize (int v);
 		[CCode (cname = "icalproperty_set_maxdate")]
-		public void set_maxdate (iCal.icaltimetype v);
+		public void set_maxdate (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_maxresults")]
 		public void set_maxresults (int v);
 		[CCode (cname = "icalproperty_set_maxresultssize")]
 		public void set_maxresultssize (int v);
 		[CCode (cname = "icalproperty_set_method")]
-		public void set_method (iCal.icalproperty_method v);
+		public void set_method (iCal.PropertyMethod v);
 		[CCode (cname = "icalproperty_set_mindate")]
-		public void set_mindate (iCal.icaltimetype v);
+		public void set_mindate (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_multipart")]
 		public void set_multipart (string v);
 		[CCode (cname = "icalproperty_set_name")]
@@ -1009,7 +1009,7 @@ namespace iCal {
 		[CCode (cname = "icalproperty_set_owner")]
 		public void set_owner (string v);
 		[CCode (cname = "icalproperty_set_parameter")]
-		public void set_parameter (iCal.icalparameter parameter);
+		public void set_parameter (iCal.Parameter parameter);
 		[CCode (cname = "icalproperty_set_parameter_from_string")]
 		public void set_parameter_from_string (string name, string value);
 		[CCode (cname = "icalproperty_set_percentcomplete")]
@@ -1025,11 +1025,11 @@ namespace iCal {
 		[CCode (cname = "icalproperty_set_queryid")]
 		public void set_queryid (string v);
 		[CCode (cname = "icalproperty_set_querylevel")]
-		public void set_querylevel (iCal.icalproperty_querylevel v);
+		public void set_querylevel (iCal.PropertyQueryLevel v);
 		[CCode (cname = "icalproperty_set_queryname")]
 		public void set_queryname (string v);
 		[CCode (cname = "icalproperty_set_rdate")]
-		public void set_rdate (iCal.icaldatetimeperiodtype v);
+		public void set_rdate (iCal.DateTimePeriodType v);
 		[CCode (cname = "icalproperty_set_recuraccepted")]
 		public void set_recuraccepted (string v);
 		[CCode (cname = "icalproperty_set_recurexpand")]
@@ -1037,7 +1037,7 @@ namespace iCal {
 		[CCode (cname = "icalproperty_set_recurlimit")]
 		public void set_recurlimit (string v);
 		[CCode (cname = "icalproperty_set_recurrenceid")]
-		public void set_recurrenceid (iCal.icaltimetype v);
+		public void set_recurrenceid (iCal.TimeType v);
 		[CCode (cname = "icalproperty_set_relatedto")]
 		public void set_relatedto (string v);
 		[CCode (cname = "icalproperty_set_relcalid")]
@@ -1045,19 +1045,19 @@ namespace iCal {
 		[CCode (cname = "icalproperty_set_repeat")]
 		public void set_repeat (int v);
 		[CCode (cname = "icalproperty_set_requeststatus")]
-		public void set_requeststatus (iCal.icalreqstattype v);
+		public void set_requeststatus (iCal.RequestStatusType v);
 		[CCode (cname = "icalproperty_set_resources")]
 		public void set_resources (string v);
 		[CCode (cname = "icalproperty_set_restriction")]
 		public void set_restriction (string v);
 		[CCode (cname = "icalproperty_set_rrule")]
-		public void set_rrule (iCal.icalrecurrencetype v);
+		public void set_rrule (iCal.RecurrenceType v);
 		[CCode (cname = "icalproperty_set_scope")]
 		public void set_scope (string v);
 		[CCode (cname = "icalproperty_set_sequence")]
 		public void set_sequence (int v);
 		[CCode (cname = "icalproperty_set_status")]
-		public void set_status (iCal.icalproperty_status v);
+		public void set_status (iCal.PropertyStatus v);
 		[CCode (cname = "icalproperty_set_storesexpanded")]
 		public void set_storesexpanded (string v);
 		[CCode (cname = "icalproperty_set_summary")]
@@ -1065,9 +1065,9 @@ namespace iCal {
 		[CCode (cname = "icalproperty_set_target")]
 		public void set_target (string v);
 		[CCode (cname = "icalproperty_set_transp")]
-		public void set_transp (iCal.icalproperty_transp v);
+		public void set_transparency (iCal.PropertyTransparency v);
 		[CCode (cname = "icalproperty_set_trigger")]
-		public void set_trigger (iCal.icaltriggertype v);
+		public void set_trigger (iCal.TriggerType v);
 		[CCode (cname = "icalproperty_set_tzid")]
 		public void set_tzid (string v);
 		[CCode (cname = "icalproperty_set_tzname")]
@@ -1083,7 +1083,7 @@ namespace iCal {
 		[CCode (cname = "icalproperty_set_url")]
 		public void set_url (string v);
 		[CCode (cname = "icalproperty_set_value")]
-		public void set_value (iCal.icalvalue value);
+		public void set_value (iCal.Value value);
 		[CCode (cname = "icalproperty_set_value_from_string")]
 		public void set_value_from_string (string value, string kind);
 		[CCode (cname = "icalproperty_set_version")]
@@ -1093,7 +1093,7 @@ namespace iCal {
 		[CCode (cname = "icalproperty_set_x_name")]
 		public void set_x_name (string name);
 		[CCode (cname = "icalproperty_set_xlicclass")]
-		public void set_xlicclass (iCal.icalproperty_xlicclass v);
+		public void set_xlicclass (iCal.PropertyXlicClass v);
 		[CCode (cname = "icalproperty_set_xlicclustercount")]
 		public void set_xlicclustercount (string v);
 		[CCode (cname = "icalproperty_set_xlicerror")]
@@ -1111,302 +1111,312 @@ namespace iCal {
 		[CCode (cname = "icalproperty_set_xlicmimeoptinfo")]
 		public void set_xlicmimeoptinfo (string v);
 		[CCode (cname = "icalproperty_new_status", has_construct_function = false)]
-		public icalproperty.status (iCal.icalproperty_status v);
+		public Property.status (iCal.PropertyStatus v);
 		[CCode (cname = "icalproperty_status_to_string")]
-		public static unowned string status_to_string (iCal.icalproperty_status p1);
+		public static unowned string status_to_string (iCal.PropertyStatus p1);
 		[CCode (cname = "icalproperty_new_storesexpanded", has_construct_function = false)]
-		public icalproperty.storesexpanded (string v);
+		public Property.storesexpanded (string v);
 		[CCode (cname = "icalproperty_string_to_enum")]
 		public static int string_to_enum (string str);
 		[CCode (cname = "icalproperty_string_to_kind")]
-		public static iCal.icalproperty_kind string_to_kind (string str);
+		public static iCal.PropertyKind string_to_kind (string str);
 		[CCode (cname = "icalproperty_string_to_method")]
-		public static iCal.icalproperty_method string_to_method (string str);
+		public static iCal.PropertyMethod string_to_method (string str);
 		[CCode (cname = "icalproperty_string_to_status")]
-		public static iCal.icalproperty_status string_to_status (string str);
+		public static iCal.PropertyStatus string_to_status (string str);
 		[CCode (cname = "icalproperty_new_summary", has_construct_function = false)]
-		public icalproperty.summary (string v);
+		public Property.summary (string v);
 		[CCode (cname = "icalproperty_new_target", has_construct_function = false)]
-		public icalproperty.target (string v);
+		public Property.target (string v);
 		[CCode (cname = "icalproperty_new_transp", has_construct_function = false)]
-		public icalproperty.transp (iCal.icalproperty_transp v);
+		public Property.transparency (iCal.PropertyTransparency v);
 		[CCode (cname = "icalproperty_new_trigger", has_construct_function = false)]
-		public icalproperty.trigger (iCal.icaltriggertype v);
+		public Property.trigger (iCal.TriggerType v);
 		[CCode (cname = "icalproperty_new_tzid", has_construct_function = false)]
-		public icalproperty.tzid (string v);
+		public Property.tzid (string v);
 		[CCode (cname = "icalproperty_new_tzname", has_construct_function = false)]
-		public icalproperty.tzname (string v);
+		public Property.tzname (string v);
 		[CCode (cname = "icalproperty_new_tzoffsetfrom", has_construct_function = false)]
-		public icalproperty.tzoffsetfrom (int v);
+		public Property.tzoffsetfrom (int v);
 		[CCode (cname = "icalproperty_new_tzoffsetto", has_construct_function = false)]
-		public icalproperty.tzoffsetto (int v);
+		public Property.tzoffsetto (int v);
 		[CCode (cname = "icalproperty_new_tzurl", has_construct_function = false)]
-		public icalproperty.tzurl (string v);
+		public Property.tzurl (string v);
 		[CCode (cname = "icalproperty_new_uid", has_construct_function = false)]
-		public icalproperty.uid (string v);
+		public Property.uid (string v);
 		[CCode (cname = "icalproperty_new_url", has_construct_function = false)]
-		public icalproperty.url (string v);
+		public Property.url (string v);
 		[CCode (cname = "icalproperty_value_kind_to_kind")]
-		public static iCal.icalproperty_kind value_kind_to_kind (iCal.icalvalue_kind kind);
+		public static iCal.PropertyKind value_kind_to_kind (iCal.ValueKind kind);
 		[CCode (cname = "icalproperty_vanew_action")]
-		public static unowned iCal.icalproperty vanew_action (iCal.icalproperty_action v);
+		public static unowned iCal.Property vanew_action (iCal.PropertyAction v);
 		[CCode (cname = "icalproperty_vanew_allowconflict")]
-		public static unowned iCal.icalproperty vanew_allowconflict (string v);
+		public static unowned iCal.Property vanew_allowconflict (string v);
 		[CCode (cname = "icalproperty_vanew_attach")]
-		public static unowned iCal.icalproperty vanew_attach (iCal.icalattach v);
+		public static unowned iCal.Property vanew_attach (iCal.Attach v);
 		[CCode (cname = "icalproperty_vanew_attendee")]
-		public static unowned iCal.icalproperty vanew_attendee (string v);
+		public static unowned iCal.Property vanew_attendee (string v);
 		[CCode (cname = "icalproperty_vanew_calid")]
-		public static unowned iCal.icalproperty vanew_calid (string v);
+		public static unowned iCal.Property vanew_calid (string v);
 		[CCode (cname = "icalproperty_vanew_calmaster")]
-		public static unowned iCal.icalproperty vanew_calmaster (string v);
+		public static unowned iCal.Property vanew_calmaster (string v);
 		[CCode (cname = "icalproperty_vanew_calscale")]
-		public static unowned iCal.icalproperty vanew_calscale (string v);
+		public static unowned iCal.Property vanew_calscale (string v);
 		[CCode (cname = "icalproperty_vanew_capversion")]
-		public static unowned iCal.icalproperty vanew_capversion (string v);
+		public static unowned iCal.Property vanew_capversion (string v);
 		[CCode (cname = "icalproperty_vanew_carid")]
-		public static unowned iCal.icalproperty vanew_carid (string v);
+		public static unowned iCal.Property vanew_carid (string v);
 		[CCode (cname = "icalproperty_vanew_carlevel")]
-		public static unowned iCal.icalproperty vanew_carlevel (iCal.icalproperty_carlevel v);
+		public static unowned iCal.Property vanew_carlevel (iCal.PropertyCarlevel v);
 		[CCode (cname = "icalproperty_vanew_categories")]
-		public static unowned iCal.icalproperty vanew_categories (string v);
+		public static unowned iCal.Property vanew_categories (string v);
 		[CCode (cname = "icalproperty_vanew_class")]
-		public static unowned iCal.icalproperty vanew_class (iCal.icalproperty_class v);
+		public static unowned iCal.Property vanew_class (iCal.PropertyClass v);
 		[CCode (cname = "icalproperty_vanew_cmd")]
-		public static unowned iCal.icalproperty vanew_cmd (iCal.icalproperty_cmd v);
+		public static unowned iCal.Property vanew_cmd (iCal.PropertyCmd v);
 		[CCode (cname = "icalproperty_vanew_comment")]
-		public static unowned iCal.icalproperty vanew_comment (string v);
+		public static unowned iCal.Property vanew_comment (string v);
 		[CCode (cname = "icalproperty_vanew_completed")]
-		public static unowned iCal.icalproperty vanew_completed (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_completed (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_components")]
-		public static unowned iCal.icalproperty vanew_components (string v);
+		public static unowned iCal.Property vanew_components (string v);
 		[CCode (cname = "icalproperty_vanew_contact")]
-		public static unowned iCal.icalproperty vanew_contact (string v);
+		public static unowned iCal.Property vanew_contact (string v);
 		[CCode (cname = "icalproperty_vanew_created")]
-		public static unowned iCal.icalproperty vanew_created (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_created (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_csid")]
-		public static unowned iCal.icalproperty vanew_csid (string v);
+		public static unowned iCal.Property vanew_csid (string v);
 		[CCode (cname = "icalproperty_vanew_datemax")]
-		public static unowned iCal.icalproperty vanew_datemax (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_datemax (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_datemin")]
-		public static unowned iCal.icalproperty vanew_datemin (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_datemin (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_decreed")]
-		public static unowned iCal.icalproperty vanew_decreed (string v);
+		public static unowned iCal.Property vanew_decreed (string v);
 		[CCode (cname = "icalproperty_vanew_defaultcharset")]
-		public static unowned iCal.icalproperty vanew_defaultcharset (string v);
+		public static unowned iCal.Property vanew_defaultcharset (string v);
 		[CCode (cname = "icalproperty_vanew_defaultlocale")]
-		public static unowned iCal.icalproperty vanew_defaultlocale (string v);
+		public static unowned iCal.Property vanew_defaultlocale (string v);
 		[CCode (cname = "icalproperty_vanew_defaulttzid")]
-		public static unowned iCal.icalproperty vanew_defaulttzid (string v);
+		public static unowned iCal.Property vanew_defaulttzid (string v);
 		[CCode (cname = "icalproperty_vanew_defaultvcars")]
-		public static unowned iCal.icalproperty vanew_defaultvcars (string v);
+		public static unowned iCal.Property vanew_defaultvcars (string v);
 		[CCode (cname = "icalproperty_vanew_deny")]
-		public static unowned iCal.icalproperty vanew_deny (string v);
+		public static unowned iCal.Property vanew_deny (string v);
 		[CCode (cname = "icalproperty_vanew_description")]
-		public static unowned iCal.icalproperty vanew_description (string v);
+		public static unowned iCal.Property vanew_description (string v);
 		[CCode (cname = "icalproperty_vanew_dtend")]
-		public static unowned iCal.icalproperty vanew_dtend (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_dtend (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_dtstamp")]
-		public static unowned iCal.icalproperty vanew_dtstamp (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_dtstamp (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_dtstart")]
-		public static unowned iCal.icalproperty vanew_dtstart (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_dtstart (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_due")]
-		public static unowned iCal.icalproperty vanew_due (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_due (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_duration")]
-		public static unowned iCal.icalproperty vanew_duration (iCal.icaldurationtype v);
+		public static unowned iCal.Property vanew_duration (iCal.DurationType v);
 		[CCode (cname = "icalproperty_vanew_exdate")]
-		public static unowned iCal.icalproperty vanew_exdate (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_exdate (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_expand")]
-		public static unowned iCal.icalproperty vanew_expand (int v);
+		public static unowned iCal.Property vanew_expand (int v);
 		[CCode (cname = "icalproperty_vanew_exrule")]
-		public static unowned iCal.icalproperty vanew_exrule (iCal.icalrecurrencetype v);
+		public static unowned iCal.Property vanew_exrule (iCal.RecurrenceType v);
 		[CCode (cname = "icalproperty_vanew_freebusy")]
-		public static unowned iCal.icalproperty vanew_freebusy (iCal.icalperiodtype v);
+		public static unowned iCal.Property vanew_freebusy (iCal.PeriodType v);
 		[CCode (cname = "icalproperty_vanew_geo")]
-		public static unowned iCal.icalproperty vanew_geo (iCal.icalgeotype v);
+		public static unowned iCal.Property vanew_geo (iCal.GeoType v);
 		[CCode (cname = "icalproperty_vanew_grant")]
-		public static unowned iCal.icalproperty vanew_grant (string v);
+		public static unowned iCal.Property vanew_grant (string v);
 		[CCode (cname = "icalproperty_vanew_itipversion")]
-		public static unowned iCal.icalproperty vanew_itipversion (string v);
+		public static unowned iCal.Property vanew_itipversion (string v);
 		[CCode (cname = "icalproperty_vanew_lastmodified")]
-		public static unowned iCal.icalproperty vanew_lastmodified (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_lastmodified (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_location")]
-		public static unowned iCal.icalproperty vanew_location (string v);
+		public static unowned iCal.Property vanew_location (string v);
 		[CCode (cname = "icalproperty_vanew_maxcomponentsize")]
-		public static unowned iCal.icalproperty vanew_maxcomponentsize (int v);
+		public static unowned iCal.Property vanew_maxcomponentsize (int v);
 		[CCode (cname = "icalproperty_vanew_maxdate")]
-		public static unowned iCal.icalproperty vanew_maxdate (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_maxdate (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_maxresults")]
-		public static unowned iCal.icalproperty vanew_maxresults (int v);
+		public static unowned iCal.Property vanew_maxresults (int v);
 		[CCode (cname = "icalproperty_vanew_maxresultssize")]
-		public static unowned iCal.icalproperty vanew_maxresultssize (int v);
+		public static unowned iCal.Property vanew_maxresultssize (int v);
 		[CCode (cname = "icalproperty_vanew_method")]
-		public static unowned iCal.icalproperty vanew_method (iCal.icalproperty_method v);
+		public static unowned iCal.Property vanew_method (iCal.PropertyMethod v);
 		[CCode (cname = "icalproperty_vanew_mindate")]
-		public static unowned iCal.icalproperty vanew_mindate (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_mindate (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_multipart")]
-		public static unowned iCal.icalproperty vanew_multipart (string v);
+		public static unowned iCal.Property vanew_multipart (string v);
 		[CCode (cname = "icalproperty_vanew_name")]
-		public static unowned iCal.icalproperty vanew_name (string v);
+		public static unowned iCal.Property vanew_name (string v);
 		[CCode (cname = "icalproperty_vanew_organizer")]
-		public static unowned iCal.icalproperty vanew_organizer (string v);
+		public static unowned iCal.Property vanew_organizer (string v);
 		[CCode (cname = "icalproperty_vanew_owner")]
-		public static unowned iCal.icalproperty vanew_owner (string v);
+		public static unowned iCal.Property vanew_owner (string v);
 		[CCode (cname = "icalproperty_vanew_percentcomplete")]
-		public static unowned iCal.icalproperty vanew_percentcomplete (int v);
+		public static unowned iCal.Property vanew_percentcomplete (int v);
 		[CCode (cname = "icalproperty_vanew_permission")]
-		public static unowned iCal.icalproperty vanew_permission (string v);
+		public static unowned iCal.Property vanew_permission (string v);
 		[CCode (cname = "icalproperty_vanew_priority")]
-		public static unowned iCal.icalproperty vanew_priority (int v);
+		public static unowned iCal.Property vanew_priority (int v);
 		[CCode (cname = "icalproperty_vanew_prodid")]
-		public static unowned iCal.icalproperty vanew_prodid (string v);
+		public static unowned iCal.Property vanew_prodid (string v);
 		[CCode (cname = "icalproperty_vanew_query")]
-		public static unowned iCal.icalproperty vanew_query (string v);
+		public static unowned iCal.Property vanew_query (string v);
 		[CCode (cname = "icalproperty_vanew_queryid")]
-		public static unowned iCal.icalproperty vanew_queryid (string v);
+		public static unowned iCal.Property vanew_queryid (string v);
 		[CCode (cname = "icalproperty_vanew_querylevel")]
-		public static unowned iCal.icalproperty vanew_querylevel (iCal.icalproperty_querylevel v);
+		public static unowned iCal.Property vanew_querylevel (iCal.PropertyQueryLevel v);
 		[CCode (cname = "icalproperty_vanew_queryname")]
-		public static unowned iCal.icalproperty vanew_queryname (string v);
+		public static unowned iCal.Property vanew_queryname (string v);
 		[CCode (cname = "icalproperty_vanew_rdate")]
-		public static unowned iCal.icalproperty vanew_rdate (iCal.icaldatetimeperiodtype v);
+		public static unowned iCal.Property vanew_rdate (iCal.DateTimePeriodType v);
 		[CCode (cname = "icalproperty_vanew_recuraccepted")]
-		public static unowned iCal.icalproperty vanew_recuraccepted (string v);
+		public static unowned iCal.Property vanew_recuraccepted (string v);
 		[CCode (cname = "icalproperty_vanew_recurexpand")]
-		public static unowned iCal.icalproperty vanew_recurexpand (string v);
+		public static unowned iCal.Property vanew_recurexpand (string v);
 		[CCode (cname = "icalproperty_vanew_recurlimit")]
-		public static unowned iCal.icalproperty vanew_recurlimit (string v);
+		public static unowned iCal.Property vanew_recurlimit (string v);
 		[CCode (cname = "icalproperty_vanew_recurrenceid")]
-		public static unowned iCal.icalproperty vanew_recurrenceid (iCal.icaltimetype v);
+		public static unowned iCal.Property vanew_recurrenceid (iCal.TimeType v);
 		[CCode (cname = "icalproperty_vanew_relatedto")]
-		public static unowned iCal.icalproperty vanew_relatedto (string v);
+		public static unowned iCal.Property vanew_relatedto (string v);
 		[CCode (cname = "icalproperty_vanew_relcalid")]
-		public static unowned iCal.icalproperty vanew_relcalid (string v);
+		public static unowned iCal.Property vanew_relcalid (string v);
 		[CCode (cname = "icalproperty_vanew_repeat")]
-		public static unowned iCal.icalproperty vanew_repeat (int v);
+		public static unowned iCal.Property vanew_repeat (int v);
 		[CCode (cname = "icalproperty_vanew_requeststatus")]
-		public static unowned iCal.icalproperty vanew_requeststatus (iCal.icalreqstattype v);
+		public static unowned iCal.Property vanew_requeststatus (iCal.RequestStatusType v);
 		[CCode (cname = "icalproperty_vanew_resources")]
-		public static unowned iCal.icalproperty vanew_resources (string v);
+		public static unowned iCal.Property vanew_resources (string v);
 		[CCode (cname = "icalproperty_vanew_restriction")]
-		public static unowned iCal.icalproperty vanew_restriction (string v);
+		public static unowned iCal.Property vanew_restriction (string v);
 		[CCode (cname = "icalproperty_vanew_rrule")]
-		public static unowned iCal.icalproperty vanew_rrule (iCal.icalrecurrencetype v);
+		public static unowned iCal.Property vanew_rrule (iCal.RecurrenceType v);
 		[CCode (cname = "icalproperty_vanew_scope")]
-		public static unowned iCal.icalproperty vanew_scope (string v);
+		public static unowned iCal.Property vanew_scope (string v);
 		[CCode (cname = "icalproperty_vanew_sequence")]
-		public static unowned iCal.icalproperty vanew_sequence (int v);
+		public static unowned iCal.Property vanew_sequence (int v);
 		[CCode (cname = "icalproperty_vanew_status")]
-		public static unowned iCal.icalproperty vanew_status (iCal.icalproperty_status v);
+		public static unowned iCal.Property vanew_status (iCal.PropertyStatus v);
 		[CCode (cname = "icalproperty_vanew_storesexpanded")]
-		public static unowned iCal.icalproperty vanew_storesexpanded (string v);
+		public static unowned iCal.Property vanew_storesexpanded (string v);
 		[CCode (cname = "icalproperty_vanew_summary")]
-		public static unowned iCal.icalproperty vanew_summary (string v);
+		public static unowned iCal.Property vanew_summary (string v);
 		[CCode (cname = "icalproperty_vanew_target")]
-		public static unowned iCal.icalproperty vanew_target (string v);
+		public static unowned iCal.Property vanew_target (string v);
 		[CCode (cname = "icalproperty_vanew_transp")]
-		public static unowned iCal.icalproperty vanew_transp (iCal.icalproperty_transp v);
+		public static unowned iCal.Property vanew_transparency (iCal.PropertyTransparency v);
 		[CCode (cname = "icalproperty_vanew_trigger")]
-		public static unowned iCal.icalproperty vanew_trigger (iCal.icaltriggertype v);
+		public static unowned iCal.Property vanew_trigger (iCal.TriggerType v);
 		[CCode (cname = "icalproperty_vanew_tzid")]
-		public static unowned iCal.icalproperty vanew_tzid (string v);
+		public static unowned iCal.Property vanew_tzid (string v);
 		[CCode (cname = "icalproperty_vanew_tzname")]
-		public static unowned iCal.icalproperty vanew_tzname (string v);
+		public static unowned iCal.Property vanew_tzname (string v);
 		[CCode (cname = "icalproperty_vanew_tzoffsetfrom")]
-		public static unowned iCal.icalproperty vanew_tzoffsetfrom (int v);
+		public static unowned iCal.Property vanew_tzoffsetfrom (int v);
 		[CCode (cname = "icalproperty_vanew_tzoffsetto")]
-		public static unowned iCal.icalproperty vanew_tzoffsetto (int v);
+		public static unowned iCal.Property vanew_tzoffsetto (int v);
 		[CCode (cname = "icalproperty_vanew_tzurl")]
-		public static unowned iCal.icalproperty vanew_tzurl (string v);
+		public static unowned iCal.Property vanew_tzurl (string v);
 		[CCode (cname = "icalproperty_vanew_uid")]
-		public static unowned iCal.icalproperty vanew_uid (string v);
+		public static unowned iCal.Property vanew_uid (string v);
 		[CCode (cname = "icalproperty_vanew_url")]
-		public static unowned iCal.icalproperty vanew_url (string v);
+		public static unowned iCal.Property vanew_url (string v);
 		[CCode (cname = "icalproperty_vanew_version")]
-		public static unowned iCal.icalproperty vanew_version (string v);
+		public static unowned iCal.Property vanew_version (string v);
 		[CCode (cname = "icalproperty_vanew_x")]
-		public static unowned iCal.icalproperty vanew_x (string v);
+		public static unowned iCal.Property vanew_x (string v);
 		[CCode (cname = "icalproperty_vanew_xlicclass")]
-		public static unowned iCal.icalproperty vanew_xlicclass (iCal.icalproperty_xlicclass v);
+		public static unowned iCal.Property vanew_xlicclass (iCal.PropertyXlicClass v);
 		[CCode (cname = "icalproperty_vanew_xlicclustercount")]
-		public static unowned iCal.icalproperty vanew_xlicclustercount (string v);
+		public static unowned iCal.Property vanew_xlicclustercount (string v);
 		[CCode (cname = "icalproperty_vanew_xlicerror")]
-		public static unowned iCal.icalproperty vanew_xlicerror (string v);
+		public static unowned iCal.Property vanew_xlicerror (string v);
 		[CCode (cname = "icalproperty_vanew_xlicmimecharset")]
-		public static unowned iCal.icalproperty vanew_xlicmimecharset (string v);
+		public static unowned iCal.Property vanew_xlicmimecharset (string v);
 		[CCode (cname = "icalproperty_vanew_xlicmimecid")]
-		public static unowned iCal.icalproperty vanew_xlicmimecid (string v);
+		public static unowned iCal.Property vanew_xlicmimecid (string v);
 		[CCode (cname = "icalproperty_vanew_xlicmimecontenttype")]
-		public static unowned iCal.icalproperty vanew_xlicmimecontenttype (string v);
+		public static unowned iCal.Property vanew_xlicmimecontenttype (string v);
 		[CCode (cname = "icalproperty_vanew_xlicmimeencoding")]
-		public static unowned iCal.icalproperty vanew_xlicmimeencoding (string v);
+		public static unowned iCal.Property vanew_xlicmimeencoding (string v);
 		[CCode (cname = "icalproperty_vanew_xlicmimefilename")]
-		public static unowned iCal.icalproperty vanew_xlicmimefilename (string v);
+		public static unowned iCal.Property vanew_xlicmimefilename (string v);
 		[CCode (cname = "icalproperty_vanew_xlicmimeoptinfo")]
-		public static unowned iCal.icalproperty vanew_xlicmimeoptinfo (string v);
+		public static unowned iCal.Property vanew_xlicmimeoptinfo (string v);
 		[CCode (cname = "icalproperty_new_version", has_construct_function = false)]
-		public icalproperty.version (string v);
+		public Property.version (string v);
 		[CCode (cname = "icalproperty_new_x", has_construct_function = false)]
-		public icalproperty.x (string v);
+		public Property.x (string v);
 		[CCode (cname = "icalproperty_new_xlicclass", has_construct_function = false)]
-		public icalproperty.xlicclass (iCal.icalproperty_xlicclass v);
+		public Property.xlicclass (iCal.PropertyXlicClass v);
 		[CCode (cname = "icalproperty_new_xlicclustercount", has_construct_function = false)]
-		public icalproperty.xlicclustercount (string v);
+		public Property.xlicclustercount (string v);
 		[CCode (cname = "icalproperty_new_xlicerror", has_construct_function = false)]
-		public icalproperty.xlicerror (string v);
+		public Property.xlicerror (string v);
 		[CCode (cname = "icalproperty_new_xlicmimecharset", has_construct_function = false)]
-		public icalproperty.xlicmimecharset (string v);
+		public Property.xlicmimecharset (string v);
 		[CCode (cname = "icalproperty_new_xlicmimecid", has_construct_function = false)]
-		public icalproperty.xlicmimecid (string v);
+		public Property.xlicmimecid (string v);
 		[CCode (cname = "icalproperty_new_xlicmimecontenttype", has_construct_function = false)]
-		public icalproperty.xlicmimecontenttype (string v);
+		public Property.xlicmimecontenttype (string v);
 		[CCode (cname = "icalproperty_new_xlicmimeencoding", has_construct_function = false)]
-		public icalproperty.xlicmimeencoding (string v);
+		public Property.xlicmimeencoding (string v);
 		[CCode (cname = "icalproperty_new_xlicmimefilename", has_construct_function = false)]
-		public icalproperty.xlicmimefilename (string v);
+		public Property.xlicmimefilename (string v);
 		[CCode (cname = "icalproperty_new_xlicmimeoptinfo", has_construct_function = false)]
-		public icalproperty.xlicmimeoptinfo (string v);
+		public Property.xlicmimeoptinfo (string v);
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
+	[CCode (cheader_filename = "libical/ical.h", free_function = "icalrecur_iterator_free", cname = "icalrecur_iterator", unref_function = "icalrecur_iterator_decrement_count")]
 	[Compact]
-	public class icalrecur_iterator {
+	public class RecurIterator {
+		[CCode (cname = "icalrecur_iterator_new", has_construct_function = false)]
+		public RecurIterator (iCal.RecurrenceType rule, iCal.TimeType dtstart);
+		[CCode (cname = "icalrecur_iterator_next")]
+		public static iCal.TimeType next (iCal.RecurIterator iterator);
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
+	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_span")]
 	[Compact]
-	public class icaltime_span {
+	public class TimeSpan {
+		[CCode (cname = "icaltime_span_new", has_construct_function = false)]
+		public TimeSpan (iCal.TimeType dtstart, iCal.TimeType dtend, int is_busy);
 		public ulong end;
 		public int is_busy;
 		public ulong start;
+		[CCode (cname = "icaltime_span_contains")]
+		public int contains (iCal.TimeSpan container);
+		[CCode (cname = "icaltime_span_overlaps")]
+		public int overlaps (iCal.TimeSpan second);
 	}
-	[CCode (cheader_filename = "libical/ical.h", copy_function = "icaltimezone_copy", free_function = "icaltimezone_free")]
+	[CCode (cheader_filename = "libical/ical.h", copy_function = "icaltimezone_copy", free_function = "icaltimezone_free", cname = "icaltimezone")]
 	[Compact]
-	public class icaltimezone {
+	public class TimeZone {
 		[CCode (cname = "icaltimezone_new", has_construct_function = false)]
-		public icaltimezone ();
+		public TimeZone ();
 		[CCode (cname = "icaltimezone_array_append_from_vtimezone")]
-		public static void array_append_from_vtimezone (iCal.icalarray timezones, iCal.icalcomponent child);
+		public static void array_append_from_vtimezone (iCal.Array timezones, iCal.Component  child);
 		[CCode (cname = "icaltimezone_array_free")]
-		public static void array_free (iCal.icalarray timezones);
+		public static void array_free (iCal.Array timezones);
 		[CCode (cname = "icaltimezone_array_new")]
-		public static unowned iCal.icalarray array_new ();
+		public static unowned iCal.Array array_new ();
 		[CCode (cname = "icaltimezone_convert_time")]
-		public static void convert_time (iCal.icaltimetype tt, iCal.icaltimezone from_zone, iCal.icaltimezone to_zone);
+		public static void convert_time (iCal.TimeType tt, iCal.TimeZone from_zone, iCal.TimeZone to_zone);
 		[CCode (cname = "icaltimezone_copy")]
-		public unowned iCal.icaltimezone copy ();
+		public unowned iCal.TimeZone copy ();
 		[CCode (cname = "icaltimezone_dump_changes")]
 		public int dump_changes (int max_year, GLib.FileStream fp);
 		[CCode (cname = "icaltimezone_free_builtin_timezones")]
 		public static void free_builtin_timezones ();
 		[CCode (cname = "icaltimezone_get_builtin_timezone")]
-		public static unowned iCal.icaltimezone get_builtin_timezone (string location);
+		public static unowned iCal.TimeZone get_builtin_timezone (string location);
 		[CCode (cname = "icaltimezone_get_builtin_timezone_from_offset")]
-		public static unowned iCal.icaltimezone get_builtin_timezone_from_offset (int offset, string tzname);
+		public static unowned iCal.TimeZone get_builtin_timezone_from_offset (int offset, string tzname);
 		[CCode (cname = "icaltimezone_get_builtin_timezone_from_tzid")]
-		public static unowned iCal.icaltimezone get_builtin_timezone_from_tzid (string tzid);
+		public static unowned iCal.TimeZone get_builtin_timezone_from_tzid (string tzid);
 		[CCode (cname = "icaltimezone_get_builtin_timezones")]
-		public static unowned iCal.icalarray get_builtin_timezones ();
+		public static unowned iCal.Array get_builtin_timezones ();
 		[CCode (cname = "icaltimezone_get_component")]
-		public unowned iCal.icalcomponent get_component ();
+		public unowned iCal.Component  get_component ();
 		[CCode (cname = "icaltimezone_get_display_name")]
 		public unowned string get_display_name ();
 		[CCode (cname = "icaltimezone_get_latitude")]
@@ -1420,69 +1430,69 @@ namespace iCal {
 		[CCode (cname = "icaltimezone_get_tznames")]
 		public unowned string get_tznames ();
 		[CCode (cname = "icaltimezone_get_utc_offset")]
-		public int get_utc_offset (iCal.icaltimetype tt, int is_daylight);
+		public int get_utc_offset (iCal.TimeType tt, int is_daylight);
 		[CCode (cname = "icaltimezone_get_utc_offset_of_utc_time")]
-		public int get_utc_offset_of_utc_time (iCal.icaltimetype tt, int is_daylight);
+		public int get_utc_offset_of_utc_time (iCal.TimeType tt, int is_daylight);
 		[CCode (cname = "icaltimezone_get_utc_timezone")]
-		public static unowned iCal.icaltimezone get_utc_timezone ();
+		public static unowned iCal.TimeZone get_utc_timezone ();
 		[CCode (cname = "icaltimezone_release_zone_tab")]
 		public static void release_zone_tab ();
 		[CCode (cname = "icaltimezone_set_component")]
-		public int set_component (iCal.icalcomponent comp);
+		public int set_component (iCal.Component  comp);
 		[CCode (cname = "icaltimezone_set_tzid_prefix")]
 		public static void set_tzid_prefix (string new_prefix);
 	}
-	[CCode (cheader_filename = "libical/ical.h", free_function = "icalvalue_free")]
+	[CCode (cheader_filename = "libical/ical.h", copy_function = "icalvalue_new_clone", free_function = "icalvalue_free", cname = "icalvalue")]
 	[Compact]
-	public class icalvalue {
+	public class Value {
 		[CCode (cname = "icalvalue_new", has_construct_function = false)]
-		public icalvalue (iCal.icalvalue_kind kind);
+		public Value (iCal.ValueKind kind);
 		[CCode (cname = "icalvalue_new_action", has_construct_function = false)]
-		public icalvalue.action (iCal.icalproperty_action v);
+		public Value.action (iCal.PropertyAction v);
 		[CCode (cname = "icalvalue_as_ical_string")]
 		public unowned global::string as_ical_string ();
 		[CCode (cname = "icalvalue_as_ical_string_r")]
 		public unowned global::string as_ical_string_r ();
 		[CCode (cname = "icalvalue_new_attach", has_construct_function = false)]
-		public icalvalue.attach (iCal.icalattach attach);
+		public Value.attach (iCal.Attach attach);
 		[CCode (cname = "icalvalue_new_binary", has_construct_function = false)]
-		public icalvalue.binary (global::string v);
+		public Value.binary (global::string v);
 		[CCode (cname = "icalvalue_new_boolean", has_construct_function = false)]
-		public icalvalue.boolean (int v);
+		public Value.boolean (int v);
 		[CCode (cname = "icalvalue_new_caladdress", has_construct_function = false)]
-		public icalvalue.caladdress (global::string v);
+		public Value.caladdress (global::string v);
 		[CCode (cname = "icalvalue_new_carlevel", has_construct_function = false)]
-		public icalvalue.carlevel (iCal.icalproperty_carlevel v);
+		public Value.carlevel (iCal.PropertyCarlevel v);
 		[CCode (cname = "icalvalue_new_class", has_construct_function = false)]
-		public icalvalue.@class (iCal.icalproperty_class v);
+		public Value.@class (iCal.PropertyClass v);
 		[CCode (cname = "icalvalue_new_clone", has_construct_function = false)]
-		public icalvalue.clone (iCal.icalvalue value);
+		public Value.clone (iCal.Value value);
 		[CCode (cname = "icalvalue_new_cmd", has_construct_function = false)]
-		public icalvalue.cmd (iCal.icalproperty_cmd v);
+		public Value.cmd (iCal.PropertyCmd v);
 		[CCode (cname = "icalvalue_compare")]
-		public iCal.icalparameter_xliccomparetype compare (iCal.icalvalue b);
+		public iCal.ParameterXlicCompareType compare (iCal.Value b);
 		[CCode (cname = "icalvalue_new_date", has_construct_function = false)]
-		public icalvalue.date (iCal.icaltimetype v);
+		public Value.date (iCal.TimeType v);
 		[CCode (cname = "icalvalue_new_datetime", has_construct_function = false)]
-		public icalvalue.datetime (iCal.icaltimetype v);
+		public Value.datetime (iCal.TimeType v);
 		[CCode (cname = "icalvalue_new_datetimeperiod", has_construct_function = false)]
-		public icalvalue.datetimeperiod (iCal.icaldatetimeperiodtype v);
+		public Value.datetimeperiod (iCal.DateTimePeriodType v);
 		[CCode (cname = "icalvalue_decode_ical_string")]
 		public static int decode_ical_string (global::string szText, global::string szDecText, int nMaxBufferLen);
 		[CCode (cname = "icalvalue_new_duration", has_construct_function = false)]
-		public icalvalue.duration (iCal.icaldurationtype v);
+		public Value.duration (iCal.DurationType v);
 		[CCode (cname = "icalvalue_encode_ical_string")]
 		public static int encode_ical_string (global::string szText, global::string szEncText, int MaxBufferLen);
 		[CCode (cname = "icalvalue_new_float", has_construct_function = false)]
-		public icalvalue.float (global::float v);
+		public Value.float (global::float v);
 		[CCode (cname = "icalvalue_new_from_string", has_construct_function = false)]
-		public icalvalue.from_string (iCal.icalvalue_kind kind, global::string str);
+		public Value.from_string (iCal.ValueKind kind, global::string str);
 		[CCode (cname = "icalvalue_new_geo", has_construct_function = false)]
-		public icalvalue.geo (iCal.icalgeotype v);
+		public Value.geo (iCal.GeoType v);
 		[CCode (cname = "icalvalue_get_action")]
-		public iCal.icalproperty_action get_action ();
+		public iCal.PropertyAction get_action ();
 		[CCode (cname = "icalvalue_get_attach")]
-		public unowned iCal.icalattach get_attach ();
+		public unowned iCal.Attach get_attach ();
 		[CCode (cname = "icalvalue_get_binary")]
 		public unowned global::string get_binary ();
 		[CCode (cname = "icalvalue_get_boolean")]
@@ -1490,47 +1500,47 @@ namespace iCal {
 		[CCode (cname = "icalvalue_get_caladdress")]
 		public unowned global::string get_caladdress ();
 		[CCode (cname = "icalvalue_get_carlevel")]
-		public iCal.icalproperty_carlevel get_carlevel ();
+		public iCal.PropertyCarlevel get_carlevel ();
 		[CCode (cname = "icalvalue_get_class")]
-		public iCal.icalproperty_class get_class ();
+		public iCal.PropertyClass get_class ();
 		[CCode (cname = "icalvalue_get_cmd")]
-		public iCal.icalproperty_cmd get_cmd ();
+		public iCal.PropertyCmd get_cmd ();
 		[CCode (cname = "icalvalue_get_date")]
-		public iCal.icaltimetype get_date ();
+		public iCal.TimeType get_date ();
 		[CCode (cname = "icalvalue_get_datetime")]
-		public iCal.icaltimetype get_datetime ();
+		public iCal.TimeType get_datetime ();
 		[CCode (cname = "icalvalue_get_datetimeperiod")]
-		public iCal.icaldatetimeperiodtype get_datetimeperiod ();
+		public iCal.DateTimePeriodType get_datetimeperiod ();
 		[CCode (cname = "icalvalue_get_duration")]
-		public unowned iCal.icaldurationtype get_duration ();
+		public unowned iCal.DurationType get_duration ();
 		[CCode (cname = "icalvalue_get_float")]
 		public global::float get_float ();
 		[CCode (cname = "icalvalue_get_geo")]
-		public iCal.icalgeotype get_geo ();
+		public iCal.GeoType get_geo ();
 		[CCode (cname = "icalvalue_get_integer")]
 		public int get_integer ();
 		[CCode (cname = "icalvalue_get_method")]
-		public iCal.icalproperty_method get_method ();
+		public iCal.PropertyMethod get_method ();
 		[CCode (cname = "icalvalue_get_period")]
-		public iCal.icalperiodtype get_period ();
+		public iCal.PeriodType get_period ();
 		[CCode (cname = "icalvalue_get_query")]
 		public unowned global::string get_query ();
 		[CCode (cname = "icalvalue_get_querylevel")]
-		public iCal.icalproperty_querylevel get_querylevel ();
+		public iCal.PropertyQueryLevel get_querylevel ();
 		[CCode (cname = "icalvalue_get_recur")]
-		public iCal.icalrecurrencetype get_recur ();
+		public iCal.RecurrenceType get_recur ();
 		[CCode (cname = "icalvalue_get_requeststatus")]
-		public iCal.icalreqstattype get_requeststatus ();
+		public iCal.RequestStatusType get_requeststatus ();
 		[CCode (cname = "icalvalue_get_status")]
-		public iCal.icalproperty_status get_status ();
+		public iCal.PropertyStatus get_status ();
 		[CCode (cname = "icalvalue_get_string")]
 		public unowned global::string get_string ();
 		[CCode (cname = "icalvalue_get_text")]
 		public unowned global::string get_text ();
 		[CCode (cname = "icalvalue_get_transp")]
-		public iCal.icalproperty_transp get_transp ();
+		public iCal.PropertyTransparency get_transparency ();
 		[CCode (cname = "icalvalue_get_trigger")]
-		public iCal.icaltriggertype get_trigger ();
+		public iCal.TriggerType get_trigger ();
 		[CCode (cname = "icalvalue_get_uri")]
 		public unowned global::string get_uri ();
 		[CCode (cname = "icalvalue_get_utcoffset")]
@@ -1538,37 +1548,37 @@ namespace iCal {
 		[CCode (cname = "icalvalue_get_x")]
 		public unowned global::string get_x ();
 		[CCode (cname = "icalvalue_get_xlicclass")]
-		public iCal.icalproperty_xlicclass get_xlicclass ();
+		public iCal.PropertyXlicClass get_xlicclass ();
 		[CCode (cname = "icalvalue_new_integer", has_construct_function = false)]
-		public icalvalue.integer (int v);
+		public Value.integer (int v);
 		[CCode (cname = "icalvalue_is_valid")]
 		public int is_valid ();
 		[CCode (cname = "icalvalue_isa")]
-		public iCal.icalvalue_kind isa ();
+		public iCal.ValueKind isa ();
 		[CCode (cname = "icalvalue_isa_value")]
 		public static int isa_value (void* p1);
 		[CCode (cname = "icalvalue_kind_is_valid")]
-		public static int kind_is_valid (iCal.icalvalue_kind kind);
+		public static int kind_is_valid (iCal.ValueKind kind);
 		[CCode (cname = "icalvalue_kind_to_string")]
-		public static unowned global::string kind_to_string (iCal.icalvalue_kind kind);
+		public static unowned global::string kind_to_string (iCal.ValueKind kind);
 		[CCode (cname = "icalvalue_new_method", has_construct_function = false)]
-		public icalvalue.method (iCal.icalproperty_method v);
+		public Value.method (iCal.PropertyMethod v);
 		[CCode (cname = "icalvalue_new_period", has_construct_function = false)]
-		public icalvalue.period (iCal.icalperiodtype v);
+		public Value.period (iCal.PeriodType v);
 		[CCode (cname = "icalvalue_new_query", has_construct_function = false)]
-		public icalvalue.query (global::string v);
+		public Value.query (global::string v);
 		[CCode (cname = "icalvalue_new_querylevel", has_construct_function = false)]
-		public icalvalue.querylevel (iCal.icalproperty_querylevel v);
+		public Value.querylevel (iCal.PropertyQueryLevel v);
 		[CCode (cname = "icalvalue_new_recur", has_construct_function = false)]
-		public icalvalue.recur (iCal.icalrecurrencetype v);
+		public Value.recur (iCal.RecurrenceType v);
 		[CCode (cname = "icalvalue_new_requeststatus", has_construct_function = false)]
-		public icalvalue.requeststatus (iCal.icalreqstattype v);
+		public Value.requeststatus (iCal.RequestStatusType v);
 		[CCode (cname = "icalvalue_reset_kind")]
 		public void reset_kind ();
 		[CCode (cname = "icalvalue_set_action")]
-		public void set_action (iCal.icalproperty_action v);
+		public void set_action (iCal.PropertyAction v);
 		[CCode (cname = "icalvalue_set_attach")]
-		public void set_attach (iCal.icalattach attach);
+		public void set_attach (iCal.Attach attach);
 		[CCode (cname = "icalvalue_set_binary")]
 		public void set_binary (global::string v);
 		[CCode (cname = "icalvalue_set_boolean")]
@@ -1576,47 +1586,47 @@ namespace iCal {
 		[CCode (cname = "icalvalue_set_caladdress")]
 		public void set_caladdress (global::string v);
 		[CCode (cname = "icalvalue_set_carlevel")]
-		public void set_carlevel (iCal.icalproperty_carlevel v);
+		public void set_carlevel (iCal.PropertyCarlevel v);
 		[CCode (cname = "icalvalue_set_class")]
-		public void set_class (iCal.icalproperty_class v);
+		public void set_class (iCal.PropertyClass v);
 		[CCode (cname = "icalvalue_set_cmd")]
-		public void set_cmd (iCal.icalproperty_cmd v);
+		public void set_cmd (iCal.PropertyCmd v);
 		[CCode (cname = "icalvalue_set_date")]
-		public void set_date (iCal.icaltimetype v);
+		public void set_date (iCal.TimeType v);
 		[CCode (cname = "icalvalue_set_datetime")]
-		public void set_datetime (iCal.icaltimetype v);
+		public void set_datetime (iCal.TimeType v);
 		[CCode (cname = "icalvalue_set_datetimeperiod")]
-		public void set_datetimeperiod (iCal.icaldatetimeperiodtype v);
+		public void set_datetimeperiod (iCal.DateTimePeriodType v);
 		[CCode (cname = "icalvalue_set_duration")]
-		public void set_duration (iCal.icaldurationtype v);
+		public void set_duration (iCal.DurationType v);
 		[CCode (cname = "icalvalue_set_float")]
 		public void set_float (global::float v);
 		[CCode (cname = "icalvalue_set_geo")]
-		public void set_geo (iCal.icalgeotype v);
+		public void set_geo (iCal.GeoType v);
 		[CCode (cname = "icalvalue_set_integer")]
 		public void set_integer (int v);
 		[CCode (cname = "icalvalue_set_method")]
-		public void set_method (iCal.icalproperty_method v);
+		public void set_method (iCal.PropertyMethod v);
 		[CCode (cname = "icalvalue_set_period")]
-		public void set_period (iCal.icalperiodtype v);
+		public void set_period (iCal.PeriodType v);
 		[CCode (cname = "icalvalue_set_query")]
 		public void set_query (global::string v);
 		[CCode (cname = "icalvalue_set_querylevel")]
-		public void set_querylevel (iCal.icalproperty_querylevel v);
+		public void set_querylevel (iCal.PropertyQueryLevel v);
 		[CCode (cname = "icalvalue_set_recur")]
-		public void set_recur (iCal.icalrecurrencetype v);
+		public void set_recur (iCal.RecurrenceType v);
 		[CCode (cname = "icalvalue_set_requeststatus")]
-		public void set_requeststatus (iCal.icalreqstattype v);
+		public void set_requeststatus (iCal.RequestStatusType v);
 		[CCode (cname = "icalvalue_set_status")]
-		public void set_status (iCal.icalproperty_status v);
+		public void set_status (iCal.PropertyStatus v);
 		[CCode (cname = "icalvalue_set_string")]
 		public void set_string (global::string v);
 		[CCode (cname = "icalvalue_set_text")]
 		public void set_text (global::string v);
 		[CCode (cname = "icalvalue_set_transp")]
-		public void set_transp (iCal.icalproperty_transp v);
+		public void set_transparency (iCal.PropertyTransparency v);
 		[CCode (cname = "icalvalue_set_trigger")]
-		public void set_trigger (iCal.icaltriggertype v);
+		public void set_trigger (iCal.TriggerType v);
 		[CCode (cname = "icalvalue_set_uri")]
 		public void set_uri (global::string v);
 		[CCode (cname = "icalvalue_set_utcoffset")]
@@ -1624,27 +1634,27 @@ namespace iCal {
 		[CCode (cname = "icalvalue_set_x")]
 		public void set_x (global::string v);
 		[CCode (cname = "icalvalue_set_xlicclass")]
-		public void set_xlicclass (iCal.icalproperty_xlicclass v);
+		public void set_xlicclass (iCal.PropertyXlicClass v);
 		[CCode (cname = "icalvalue_new_status", has_construct_function = false)]
-		public icalvalue.status (iCal.icalproperty_status v);
+		public Value.status (iCal.PropertyStatus v);
 		[CCode (cname = "icalvalue_new_string", has_construct_function = false)]
-		public icalvalue.string (global::string v);
+		public Value.string (global::string v);
 		[CCode (cname = "icalvalue_string_to_kind")]
-		public static iCal.icalvalue_kind string_to_kind (global::string str);
+		public static iCal.ValueKind string_to_kind (global::string str);
 		[CCode (cname = "icalvalue_new_text", has_construct_function = false)]
-		public icalvalue.text (global::string v);
+		public Value.text (global::string v);
 		[CCode (cname = "icalvalue_new_transp", has_construct_function = false)]
-		public icalvalue.transp (iCal.icalproperty_transp v);
+		public Value.transparency (iCal.PropertyTransparency v);
 		[CCode (cname = "icalvalue_new_trigger", has_construct_function = false)]
-		public icalvalue.trigger (iCal.icaltriggertype v);
+		public Value.trigger (iCal.TriggerType v);
 		[CCode (cname = "icalvalue_new_uri", has_construct_function = false)]
-		public icalvalue.uri (global::string v);
+		public Value.uri (global::string v);
 		[CCode (cname = "icalvalue_new_utcoffset", has_construct_function = false)]
-		public icalvalue.utcoffset (int v);
+		public Value.utcoffset (int v);
 		[CCode (cname = "icalvalue_new_x", has_construct_function = false)]
-		public icalvalue.x (global::string v);
+		public Value.x (global::string v);
 		[CCode (cname = "icalvalue_new_xlicclass", has_construct_function = false)]
-		public icalvalue.xlicclass (iCal.icalproperty_xlicclass v);
+		public Value.xlicclass (iCal.PropertyXlicClass v);
 	}
 	[CCode (cheader_filename = "libical/ical.h")]
 	[Compact]
@@ -1678,41 +1688,46 @@ namespace iCal {
 	[Compact]
 	public class sspm_minor_type {
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	public struct icaldatetimeperiodtype {
-		public iCal.icaltimetype time;
-		public iCal.icalperiodtype period;
+	[CCode (cheader_filename = "libical/ical.h", cname = "icaldatetimeperiodtype")]
+	public struct DateTimePeriodType {
+		public iCal.TimeType time;
+		public iCal.PeriodType period;
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	public struct icalgeotype {
-		public float lat;
-		public float lon;
+	[SimpleType]
+	[CCode (cheader_filename = "libical/ical.h", cname = "struct icalgeotype", has_type_id = false)]
+	public struct GeoType {
+		[CCode (cname = "lat")]
+		public float latitude;
+		[CCode (cname = "lon")]
+		public float longitude;
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	public struct icalperiodtype {
-		public iCal.icaltimetype start;
-		public iCal.icaltimetype end;
-		public weak iCal.icaldurationtype duration;
+	[SimpleType]
+	[CCode (cheader_filename = "libical/ical.h", cname = "struct icalperiodtype", has_type_id = false)]
+	public struct PeriodType {
+		public iCal.TimeType start;
+		public iCal.TimeType end;
+		public weak iCal.DurationType duration;
 		[CCode (cname = "icalperiodtype_as_ical_string")]
 		public unowned string as_ical_string ();
 		[CCode (cname = "icalperiodtype_as_ical_string_r")]
 		public unowned string as_ical_string_r ();
 		[CCode (cname = "icalperiodtype_from_string")]
-		public static iCal.icalperiodtype from_string (string str);
+		public static iCal.PeriodType from_string (string str);
 		[CCode (cname = "icalperiodtype_is_null_period")]
-		public int is_null_period ();
+		public int is_null ();
 		[CCode (cname = "icalperiodtype_is_valid_period")]
-		public int is_valid_period ();
+		public int is_valid ();
 		[CCode (cname = "icalperiodtype_null_period")]
-		public static iCal.icalperiodtype null_period ();
+		public static iCal.PeriodType null ();
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	public struct icalrecurrencetype {
-		public iCal.icalrecurrencetype_frequency freq;
-		public iCal.icaltimetype until;
+	[SimpleType]
+	[CCode (cheader_filename = "libical/ical.h", cname = "struct icalrecurrencetype", has_type_id = false)]
+	public struct RecurrenceType {
+		public iCal.RecurrenceTypeFrequency freq;
+		public iCal.TimeType until;
 		public int count;
 		public short interval;
-		public iCal.icalrecurrencetype_weekday week_start;
+		public iCal.RecurrenceTypeWeekday week_start;
 		[CCode (array_length = false)]
 		public weak short[] by_second;
 		[CCode (array_length = false)]
@@ -1738,15 +1753,15 @@ namespace iCal {
 		[CCode (cname = "icalrecurrencetype_clear")]
 		public void clear ();
 		[CCode (cname = "icalrecurrencetype_day_day_of_week")]
-		public static iCal.icalrecurrencetype_weekday day_day_of_week (short day);
+		public static iCal.RecurrenceTypeWeekday day_day_of_week (short day);
 		[CCode (cname = "icalrecurrencetype_day_position")]
 		public static int day_position (short day);
 		[CCode (cname = "icalrecurrencetype_from_string")]
-		public static iCal.icalrecurrencetype from_string (string str);
+		public static iCal.RecurrenceType from_string (string str);
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	public struct icalreqstattype {
-		public iCal.icalrequeststatus code;
+	[CCode (cheader_filename = "libical/ical.h", cname = "icalreqstattype")]
+	public struct RequestStatusType {
+		public iCal.RequestStatus code;
 		public weak string desc;
 		public weak string debug;
 		[CCode (cname = "icalreqstattype_as_string")]
@@ -1754,11 +1769,11 @@ namespace iCal {
 		[CCode (cname = "icalreqstattype_as_string_r")]
 		public unowned string as_string_r ();
 		[CCode (cname = "icalreqstattype_from_string")]
-		public static iCal.icalreqstattype from_string (string str);
+		public static iCal.RequestStatusType from_string (string str);
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
+	[CCode (cheader_filename = "libical/ical.h", cname = "icaltimetype")]
 	[SimpleType]
-	public struct icaltimetype {
+	public struct TimeType {
 		public int year;
 		public int month;
 		public int day;
@@ -1768,40 +1783,118 @@ namespace iCal {
 		public int is_utc;
 		public int is_date;
 		public int is_daylight;
-		public weak iCal.icaltimezone zone;
+		public weak iCal.TimeZone zone;
+		[CCode (cname = "icaltime_today", has_construct_function = false)]
+		public iCal.TimeType.today ();
+		[CCode (cname = "icaltime_from_day_of_year", has_construct_function = false)]
+		public iCal.TimeType.from_day_of_year (int doy, int year);
+		[CCode (cname = "icaltime_from_string", has_construct_function = false)]
+		public iCal.TimeType.from_string (string str);
+		[CCode (cname = "icaltime_from_string_with_zone", has_construct_function = false)]
+		public iCal.TimeType.from_string_with_zone (string str, iCal.TimeZone zone);
+		[CCode (cname = "icaltime_from_timet", has_construct_function = false)]
+		public iCal.TimeType.from_timet (time_t v, int is_date);
+		[CCode (cname = "icaltime_from_timet_with_zone", has_construct_function = false)]
+		public iCal.TimeType.from_timet_with_zone (time_t tm, int is_date, iCal.TimeZone zone);
+		[CCode (cname = "icaltime_from_week_number", has_construct_function = false)]
+		public iCal.TimeType.from_week_number (int week_number, int year);
+		[CCode (cname = "icaltime_add")]
+		public iCal.TimeType add (iCal.DurationType d);
+		[CCode (cname = "icaltime_adjust")]
+		public void adjust (int days, int hours, int minutes, int seconds);
+		[CCode (cname = "icaltime_as_ical_string")]
+		public unowned string as_ical_string ();
+		[CCode (cname = "icaltime_as_ical_string_r")]
+		public unowned string as_ical_string_r ();
+		[CCode (cname = "icaltime_as_timet")]
+		public ulong as_timet ();
+		[CCode (cname = "icaltime_as_timet_with_zone")]
+		public ulong as_timet_with_zone (iCal.TimeZone zone);
+		[CCode (cname = "icaltime_compare")]
+		public int compare (iCal.TimeType b);
+		[CCode (cname = "icaltime_compare_date_only")]
+		public int compare_date_only (iCal.TimeType b);
+		[CCode (cname = "icaltime_compare_date_only_tz")]
+		public int compare_date_only_tz (iCal.TimeType b, iCal.TimeZone tz);
+		[CCode (cname = "icaltime_compare_with_zone")]
+		public int compare_with_zone (iCal.TimeType b);
+		[CCode (cname = "icaltime_convert_to_zone")]
+		public iCal.TimeType convert_to_zone (iCal.TimeZone zone);
+		[CCode (cname = "icaltime_current_time_with_zone")]
+		public iCal.TimeType current_time_with_zone (iCal.TimeZone zone);
+		[CCode (cname = "icaltime_day_of_week")]
+		public int day_of_week ();
+		[CCode (cname = "icaltime_day_of_year")]
+		public int day_of_year ();
+		[CCode (cname = "icaltime_days_in_month")]
+		public int days_in_month (int month, int year);
+		[CCode (cname = "icaltime_days_in_year")]
+		public int days_in_year (int year);
+		[CCode (cname = "icaltime_get_timezone")]
+		public unowned iCal.TimeZone get_timezone ();
+		[CCode (cname = "icaltime_get_tzid")]
+		public unowned string get_tzid ();
+		[CCode (cname = "icaltime_is_date")]
+		public int is_it_date ();
+		[CCode (cname = "icaltime_is_floating")]
+		public int is_floating ();
+		[CCode (cname = "icaltime_is_leap_year")]
+		public int is_leap_year (int year);
+		[CCode (cname = "icaltime_is_null_time")]
+		public int is_null_time ();
+		[CCode (cname = "icaltime_is_utc")]
+		public int is_it_utc ();
+		[CCode (cname = "icaltime_is_valid_time")]
+		public int is_valid_time ();
+		[CCode (cname = "icaltime_normalize")]
+		public iCal.TimeType normalize ();
+		[CCode (cname = "icaltime_null_date")]
+		public iCal.TimeType null_date ();
+		[CCode (cname = "icaltime_null_time")]
+		public iCal.TimeType null_time ();
+		[CCode (cname = "icaltime_set_timezone")]
+		public iCal.TimeType set_timezone (iCal.TimeZone zone);
+		[CCode (cname = "icaltime_start_doy_of_week")]
+		public int start_doy_of_week ();
+		[CCode (cname = "icaltime_start_doy_week")]
+		public int start_doy_week (int fdow);
+		[CCode (cname = "icaltime_subtract")]
+		public unowned iCal.DurationType subtract (iCal.TimeType t2);
+		[CCode (cname = "icaltime_week_number")]
+		public int week_number ();
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	public struct icaltimezonephase {
+	[CCode (cheader_filename = "libical/ical.h", cname = "icaltimezonephase")]
+	public struct TimeZonePhase {
 		public weak string tzname;
 		public int is_stdandard;
-		public iCal.icaltimetype dtstart;
+		public iCal.TimeType dtstart;
 		public int offsetto;
 		public int tzoffsetfrom;
 		public weak string comment;
-		public iCal.icaldatetimeperiodtype rdate;
+		public iCal.DateTimePeriodType rdate;
 		public weak string rrule;
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	public struct icaltimezonetype {
+	[CCode (cheader_filename = "libical/ical.h", cname = "icaltimezonetype")]
+	public struct TimeZoneType {
 		public weak string tzid;
-		public iCal.icaltimetype last_mod;
+		public iCal.TimeType last_mod;
 		public weak string tzurl;
-		public iCal.icaltimezonephase phases;
+		public iCal.TimeZonePhase phases;
 		[CCode (cname = "icaltimezonetype_free")]
 		public void free ();
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	public struct icaltriggertype {
-		public iCal.icaltimetype time;
-		public weak iCal.icaldurationtype duration;
+	[CCode (cheader_filename = "libical/ical.h", cname = "icalperiodtype")]
+	public struct TriggerType {
+		public iCal.TimeType time;
+		public weak iCal.DurationType duration;
 		[CCode (cname = "icaltriggertype_from_int")]
-		public static iCal.icaltriggertype from_int (int reltime);
+		public static iCal.TriggerType from_int (int reltime);
 		[CCode (cname = "icaltriggertype_from_string")]
-		public static iCal.icaltriggertype from_string (string str);
+		public static iCal.TriggerType from_string (string str);
 		[CCode (cname = "icaltriggertype_is_bad_trigger")]
-		public int is_bad_trigger ();
+		public int is_bad ();
 		[CCode (cname = "icaltriggertype_is_null_trigger")]
-		public int is_null_trigger ();
+		public int is_null ();
 	}
 	[CCode (cheader_filename = "libical/ical.h")]
 	public struct sspm_action_map {
@@ -1835,64 +1928,101 @@ namespace iCal {
 		public void* data;
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
-	public enum icalcomponent_kind {
-		NO_COMPONENT,
-		ANY_COMPONENT,
-		XROOT_COMPONENT,
-		XATTACH_COMPONENT,
-		VEVENT_COMPONENT,
-		VTODO_COMPONENT,
-		VJOURNAL_COMPONENT,
-		VCALENDAR_COMPONENT,
-		VAGENDA_COMPONENT,
-		VFREEBUSY_COMPONENT,
-		VALARM_COMPONENT,
-		XAUDIOALARM_COMPONENT,
-		XDISPLAYALARM_COMPONENT,
-		XEMAILALARM_COMPONENT,
-		XPROCEDUREALARM_COMPONENT,
-		VTIMEZONE_COMPONENT,
-		XSTANDARD_COMPONENT,
-		XDAYLIGHT_COMPONENT,
-		X_COMPONENT,
-		VSCHEDULE_COMPONENT,
-		VQUERY_COMPONENT,
-		VREPLY_COMPONENT,
-		VCAR_COMPONENT,
-		VCOMMAND_COMPONENT,
-		XLICINVALID_COMPONENT,
-		XLICMIMEPART_COMPONENT
+	public enum ComponentKind {
+		[CCode (cname = "ICAL_NO_COMPONENT")]
+		NO,
+		[CCode (cname = "ICAL_ANY_COMPONENT")]
+		ANY,
+		[CCode (cname = "ICAL_XROOT_COMPONENT")]
+		XROOT,
+		[CCode (cname = "ICAL_XATTACH_COMPONENT")]
+		XATTACH,
+		[CCode (cname = "ICAL_VEVENT_COMPONENT")]
+		VEVENT,
+		[CCode (cname = "ICAL_VTODO_COMPONENT")]
+		VTODO,
+		[CCode (cname = "ICAL_VJOURNAL_COMPONENT")]
+		VJOURNAL,
+		[CCode (cname = "ICAL_VCALENDAR_COMPONENT")]
+		VCALENDAR,
+		[CCode (cname = "ICAL_VAGENDA_COMPONENT")]
+		VAGENDA,
+		[CCode (cname = "ICAL_VFREEBUSY_COMPONENT")]
+		VFREEBUSY,
+		[CCode (cname = "ICAL_VALARM_COMPONENT")]
+		VALARM,
+		[CCode (cname = "ICAL_XAUDIOALARM_COMPONENT")]
+		XAUDIOALARM,
+		[CCode (cname = "ICAL_XDISPLAYALARM_COMPONENT")]
+		XDISPLAYALARM,
+		[CCode (cname = "ICAL_XEMAILALARM_COMPONENT")]
+		XEMAILALARM,
+		[CCode (cname = "ICAL_XPROCEDUREALARM_COMPONENT")]
+		XPROCEDUREALARM,
+		[CCode (cname = "ICAL_VTIMEZONE_COMPONENT")]
+		VTIMEZONE,
+		[CCode (cname = "ICAL_XSTANDARD_COMPONENT")]
+		XSTANDARD,
+		[CCode (cname = "ICAL_XDAYLIGHT_COMPONENT")]
+		XDAYLIGHT,
+		[CCode (cname = "ICAL_X_COMPONENT")]
+		X,
+		[CCode (cname = "ICAL_VSCHEDULE_COMPONENT")]
+		VSCHEDULE,
+		[CCode (cname = "ICAL_VQUERY_COMPONENT")]
+		VQUERY,
+		[CCode (cname = "ICAL_VREPLY_COMPONENT")]
+		VREPLY,
+		[CCode (cname = "ICAL_VCAR_COMPONENT")]
+		VCAR,
+		[CCode (cname = "ICAL_VCOMMAND_COMPONENT")]
+		VCOMMAND,
+		[CCode (cname = "ICAL_XLICINVALID_COMPONENT")]
+		XLICINVALID,
+		[CCode (cname = "ICAL_XLICMIMEPART_COMPONENT")]
+		XLICMIMEPART
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
-	public enum icalerrorenum {
-		NO_ERROR,
-		BADARG_ERROR,
-		NEWFAILED_ERROR,
-		ALLOCATION_ERROR,
-		MALFORMEDDATA_ERROR,
-		PARSE_ERROR,
-		INTERNAL_ERROR,
-		FILE_ERROR,
-		USAGE_ERROR,
-		UNIMPLEMENTED_ERROR,
-		UNKNOWN_ERROR
+	public enum Error {
+		[CCode (cname = "ICAL_NO_ERROR")]
+		NO,
+		[CCode (cname = "ICAL_BADARG_ERROR")]
+		BADARG,
+		[CCode (cname = "ICAL_NEWFAILED_ERROR")]
+		NEWFAILED,
+		[CCode (cname = "ICAL_ALLOCATION_ERROR")]
+		ALLOCATION,
+		[CCode (cname = "ICAL_MALFORMEDDATA_ERROR")]
+		MALFORMEDDATA,
+		[CCode (cname = "ICAL_PARSE_ERROR")]
+		PARSE,
+		[CCode (cname = "ICAL_INTERNAL_ERROR")]
+		INTERNAL,
+		[CCode (cname = "ICAL_FILE_ERROR")]
+		FILE,
+		[CCode (cname = "ICAL_USAGE_ERROR")]
+		USAGE,
+		[CCode (cname = "ICAL_UNIMPLEMENTED_ERROR")]
+		UNIMPLEMENTED,
+		[CCode (cname = "ICAL_UNKNOWN_ERROR")]
+		UNKNOWN
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_ERROR_", has_type_id = false)]
-	public enum icalerrorstate {
+	public enum ErrorState {
 		FATAL,
 		NONFATAL,
 		DEFAULT,
 		UNKNOWN
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_ACTIONPARAM_", has_type_id = false)]
-	public enum icalparameter_action {
+	public enum ParameterAction {
 		X,
 		ASK,
 		ABORT,
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_CUTYPE_", has_type_id = false)]
-	public enum icalparameter_cutype {
+	public enum ParameterCutype {
 		X,
 		INDIVIDUAL,
 		GROUP,
@@ -1902,21 +2032,21 @@ namespace iCal {
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_ENABLE_", has_type_id = false)]
-	public enum icalparameter_enable {
+	public enum ParameterEnable {
 		X,
 		TRUE,
 		FALSE,
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_ENCODING_", has_type_id = false)]
-	public enum icalparameter_encoding {
+	public enum ParameterEncoding {
 		X,
 		@8BIT,
 		BASE64,
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_FBTYPE_", has_type_id = false)]
-	public enum icalparameter_fbtype {
+	public enum ParameterFbType {
 		X,
 		FREE,
 		BUSY,
@@ -1925,50 +2055,83 @@ namespace iCal {
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
-	public enum icalparameter_kind {
-		ANY_PARAMETER,
-		ACTIONPARAM_PARAMETER,
-		ALTREP_PARAMETER,
-		CHARSET_PARAMETER,
-		CN_PARAMETER,
-		CUTYPE_PARAMETER,
-		DELEGATEDFROM_PARAMETER,
-		DELEGATEDTO_PARAMETER,
-		DIR_PARAMETER,
-		ENABLE_PARAMETER,
-		ENCODING_PARAMETER,
-		FBTYPE_PARAMETER,
-		FMTTYPE_PARAMETER,
-		ID_PARAMETER,
-		LANGUAGE_PARAMETER,
-		LATENCY_PARAMETER,
-		LOCAL_PARAMETER,
-		LOCALIZE_PARAMETER,
-		MEMBER_PARAMETER,
-		OPTIONS_PARAMETER,
-		PARTSTAT_PARAMETER,
-		RANGE_PARAMETER,
-		RELATED_PARAMETER,
-		RELTYPE_PARAMETER,
-		ROLE_PARAMETER,
-		RSVP_PARAMETER,
-		SENTBY_PARAMETER,
-		TZID_PARAMETER,
-		VALUE_PARAMETER,
-		X_PARAMETER,
-		XLICCOMPARETYPE_PARAMETER,
-		XLICERRORTYPE_PARAMETER,
-		NO_PARAMETER
+	public enum ParameterKind {
+		[CCode (cname = "ICAL_ANY_PARAMETER")]
+		ANY,
+		[CCode (cname = "ICAL_ACTIONPARAM_PARAMETER")]
+		ACTIONPARAM,
+		[CCode (cname = "ICAL_ALTREP_PARAMETER")]
+		ALTREP,
+		[CCode (cname = "ICAL_CHARSET_PARAMETER")]
+		CHARSET,
+		[CCode (cname = "ICAL_CN_PARAMETER")]
+		CN,
+		[CCode (cname = "ICAL_CUTYPE_PARAMETER")]
+		CUTYPE,
+		[CCode (cname = "ICAL_DELEGATEDFROM_PARAMETER")]
+		DELEGATEDFROM,
+		[CCode (cname = "ICAL_DELEGATEDTO_PARAMETER")]
+		DELEGATEDTO,
+		[CCode (cname = "ICAL_DIR_PARAMETER")]
+		DIR,
+		[CCode (cname = "ICAL_ENABLE_PARAMETER")]
+		ENABLE,
+		[CCode (cname = "ICAL_ENCODING_PARAMETER")]
+		ENCODING,
+		[CCode (cname = "ICAL_FBTYPE_PARAMETER")]
+		FBTYPE,
+		[CCode (cname = "ICAL_FMTTYPE_PARAMETER")]
+		FMTTYPE,
+		[CCode (cname = "ICAL_ID_PARAMETER")]
+		ID,
+		[CCode (cname = "ICAL_LANGUAGE_PARAMETER")]
+		LANGUAGE,
+		[CCode (cname = "ICAL_LATENCY_PARAMETER")]
+		LATENCY,
+		[CCode (cname = "ICAL_LOCAL_PARAMETER")]
+		LOCAL,
+		[CCode (cname = "ICAL_LOCALIZE_PARAMETER")]
+		LOCALIZE,
+		[CCode (cname = "ICAL_MEMBER_PARAMETER")]
+		MEMBER,
+		[CCode (cname = "ICAL_OPTIONS_PARAMETER")]
+		OPTIONS,
+		[CCode (cname = "ICAL_PARTSTAT_PARAMETER")]
+		PARTSTAT,
+		[CCode (cname = "ICAL_RANGE_PARAMETER")]
+		RANGE,
+		[CCode (cname = "ICAL_RELATED_PARAMETER")]
+		RELATED,
+		[CCode (cname = "ICAL_RELTYPE_PARAMETER")]
+		RELTYPE,
+		[CCode (cname = "ICAL_ROLE_PARAMETER")]
+		ROLE,
+		[CCode (cname = "ICAL_RSVP_PARAMETER")]
+		RSVP,
+		[CCode (cname = "ICAL_SENTBY_PARAMETER")]
+		SENTBY,
+		[CCode (cname = "ICAL_TZID_PARAMETER")]
+		TZID,
+		[CCode (cname = "ICAL_VALUE_PARAMETER")]
+		VALUE,
+		[CCode (cname = "ICAL_X_PARAMETER")]
+		X,
+		[CCode (cname = "ICAL_XLICCOMPARETYPE_PARAMETER")]
+		XLICCOMPARETYPE,
+		[CCode (cname = "ICAL_XLICERRORTYPE_PARAMETER")]
+		XLICERRORTYPE,
+		[CCode (cname = "ICAL_NO_PARAMETER")]
+		NO
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_LOCAL_", has_type_id = false)]
-	public enum icalparameter_local {
+	public enum ParameterLocal {
 		X,
 		TRUE,
 		FALSE,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_PARTSTAT_", has_type_id = false)]
-	public enum icalparameter_partstat {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_PARTSTAT_", has_type_id = false, cname = "icalproperty_status")]
+	public enum ParameterPartStat {
 		X,
 		NEEDSACTION,
 		ACCEPTED,
@@ -1980,21 +2143,21 @@ namespace iCal {
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_RANGE_", has_type_id = false)]
-	public enum icalparameter_range {
+	public enum ParameterRange {
 		X,
 		THISANDPRIOR,
 		THISANDFUTURE,
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_RELATED_", has_type_id = false)]
-	public enum icalparameter_related {
+	public enum ParameterRelated {
 		X,
 		START,
 		END,
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_RELTYPE_", has_type_id = false)]
-	public enum icalparameter_reltype {
+	public enum ParameterRelationType {
 		X,
 		PARENT,
 		CHILD,
@@ -2002,7 +2165,7 @@ namespace iCal {
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_ROLE_", has_type_id = false)]
-	public enum icalparameter_role {
+	public enum ParameterRole {
 		X,
 		CHAIR,
 		REQPARTICIPANT,
@@ -2011,14 +2174,14 @@ namespace iCal {
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_RSVP_", has_type_id = false)]
-	public enum icalparameter_rsvp {
+	public enum ParameterRsvp {
 		X,
 		TRUE,
 		FALSE,
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_VALUE_", has_type_id = false)]
-	public enum icalparameter_value {
+	public enum ParameterValue {
 		X,
 		BINARY,
 		BOOLEAN,
@@ -2037,7 +2200,7 @@ namespace iCal {
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_XLICCOMPARETYPE_", has_type_id = false)]
-	public enum icalparameter_xliccomparetype {
+	public enum ParameterXlicCompareType {
 		X,
 		EQUAL,
 		NOTEQUAL,
@@ -2051,29 +2214,38 @@ namespace iCal {
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_XLICERRORTYPE_", has_type_id = false)]
-	public enum icalparameter_xlicerrortype {
+	public enum ParameterXlicErrorType {
 		X,
-		COMPONENTPARSEERROR,
-		PROPERTYPARSEERROR,
-		PARAMETERNAMEPARSEERROR,
-		PARAMETERVALUEPARSEERROR,
-		VALUEPARSEERROR,
-		INVALIDITIP,
-		UNKNOWNVCALPROPERROR,
-		MIMEPARSEERROR,
-		VCALPROPPARSEERROR,
+		[CCode (cname = "ICAL_XLICERRORTYPE_COMPONENTPARSEERROR")]
+		COMPONENT_PARSE,
+		[CCode (cname = "ICAL_XLICERRORTYPE_PROPERTYPARSEERROR")]
+		PROPERTY_PARSE,
+		[CCode (cname = "ICAL_XLICERRORTYPE_PARAMETERNAMEPARSEERROR")]
+		PARAMETER_NAME_PARSE,
+		[CCode (cname = "ICAL_XLICERRORTYPE_PARAMETERVALUEPARSEERROR")]
+		PARAMETER_VALUE_PARSE,
+		[CCode (cname = "ICAL_XLICERRORTYPE_VALUEPARSEERROR")]
+		VALUE_PARSE,
+		[CCode (cname = "ICAL_XLICERRORTYPE_INVALIDITIP")]
+		INVALID_ITIP,
+		[CCode (cname = "ICAL_XLICERRORTYPE_UNKNOWNVCALPROPERROR")]
+		UNKNOWN_VCAL_PROPERTY,
+		[CCode (cname = "ICAL_XLICERRORTYPE_MIMEPARSEERROR")]
+		MIME_PARSE,
+		[CCode (cname = "ICAL_XLICERRORTYPE_VCALPROPPARSEERROR")]
+		VCAL_PROPERTY_PARSE,
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICALPARSER_", has_type_id = false)]
-	public enum icalparser_state {
+	public enum ParserState {
 		ERROR,
 		SUCCESS,
 		BEGIN_COMP,
 		END_COMP,
 		IN_PROGRESS
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_ACTION_", has_type_id = false)]
-	public enum icalproperty_action {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_ACTION_", has_type_id = false, cname = "icalproperty_action")]
+	public enum PropertyAction {
 		X,
 		AUDIO,
 		DISPLAY,
@@ -2081,24 +2253,24 @@ namespace iCal {
 		PROCEDURE,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_CARLEVEL_", has_type_id = false)]
-	public enum icalproperty_carlevel {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_CARLEVEL_", has_type_id = false, cname = "icalproperty_carlevel")]
+	public enum PropertyCarlevel {
 		X,
 		CARNONE,
 		CARMIN,
 		CARFULL1,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_CLASS_", has_type_id = false)]
-	public enum icalproperty_class {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_CLASS_", has_type_id = false, cname = "icalproperty_class")]
+	public enum PropertyClass {
 		X,
 		PUBLIC,
 		PRIVATE,
 		CONFIDENTIAL,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_CMD_", has_type_id = false)]
-	public enum icalproperty_cmd {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_CMD_", has_type_id = false, cname = "icalproperty_cmd")]
+	public enum PropertyCmd {
 		X,
 		ABORT,
 		CONTINUE,
@@ -2114,111 +2286,211 @@ namespace iCal {
 		SETLOCALE,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
-	public enum icalproperty_kind {
-		ANY_PROPERTY,
-		ACTION_PROPERTY,
-		ALLOWCONFLICT_PROPERTY,
-		ATTACH_PROPERTY,
-		ATTENDEE_PROPERTY,
-		CALID_PROPERTY,
-		CALMASTER_PROPERTY,
-		CALSCALE_PROPERTY,
-		CAPVERSION_PROPERTY,
-		CARLEVEL_PROPERTY,
-		CARID_PROPERTY,
-		CATEGORIES_PROPERTY,
-		CLASS_PROPERTY,
-		CMD_PROPERTY,
-		COMMENT_PROPERTY,
-		COMPLETED_PROPERTY,
-		COMPONENTS_PROPERTY,
-		CONTACT_PROPERTY,
-		CREATED_PROPERTY,
-		CSID_PROPERTY,
-		DATEMAX_PROPERTY,
-		DATEMIN_PROPERTY,
-		DECREED_PROPERTY,
-		DEFAULTCHARSET_PROPERTY,
-		DEFAULTLOCALE_PROPERTY,
-		DEFAULTTZID_PROPERTY,
-		DEFAULTVCARS_PROPERTY,
-		DENY_PROPERTY,
-		DESCRIPTION_PROPERTY,
-		DTEND_PROPERTY,
-		DTSTAMP_PROPERTY,
-		DTSTART_PROPERTY,
-		DUE_PROPERTY,
-		DURATION_PROPERTY,
-		EXDATE_PROPERTY,
-		EXPAND_PROPERTY,
-		EXRULE_PROPERTY,
-		FREEBUSY_PROPERTY,
-		GEO_PROPERTY,
-		GRANT_PROPERTY,
-		ITIPVERSION_PROPERTY,
-		LASTMODIFIED_PROPERTY,
-		LOCATION_PROPERTY,
-		MAXCOMPONENTSIZE_PROPERTY,
-		MAXDATE_PROPERTY,
-		MAXRESULTS_PROPERTY,
-		MAXRESULTSSIZE_PROPERTY,
-		METHOD_PROPERTY,
-		MINDATE_PROPERTY,
-		MULTIPART_PROPERTY,
-		NAME_PROPERTY,
-		ORGANIZER_PROPERTY,
-		OWNER_PROPERTY,
-		PERCENTCOMPLETE_PROPERTY,
-		PERMISSION_PROPERTY,
-		PRIORITY_PROPERTY,
-		PRODID_PROPERTY,
-		QUERY_PROPERTY,
-		QUERYLEVEL_PROPERTY,
-		QUERYID_PROPERTY,
-		QUERYNAME_PROPERTY,
-		RDATE_PROPERTY,
-		RECURACCEPTED_PROPERTY,
-		RECUREXPAND_PROPERTY,
-		RECURLIMIT_PROPERTY,
-		RECURRENCEID_PROPERTY,
-		RELATEDTO_PROPERTY,
-		RELCALID_PROPERTY,
-		REPEAT_PROPERTY,
-		REQUESTSTATUS_PROPERTY,
-		RESOURCES_PROPERTY,
-		RESTRICTION_PROPERTY,
-		RRULE_PROPERTY,
-		SCOPE_PROPERTY,
-		SEQUENCE_PROPERTY,
-		STATUS_PROPERTY,
-		STORESEXPANDED_PROPERTY,
-		SUMMARY_PROPERTY,
-		TARGET_PROPERTY,
-		TRANSP_PROPERTY,
-		TRIGGER_PROPERTY,
-		TZID_PROPERTY,
-		TZNAME_PROPERTY,
-		TZOFFSETFROM_PROPERTY,
-		TZOFFSETTO_PROPERTY,
-		TZURL_PROPERTY,
-		UID_PROPERTY,
-		URL_PROPERTY,
-		VERSION_PROPERTY,
-		X_PROPERTY,
-		XLICCLASS_PROPERTY,
-		XLICCLUSTERCOUNT_PROPERTY,
-		XLICERROR_PROPERTY,
-		XLICMIMECHARSET_PROPERTY,
-		XLICMIMECID_PROPERTY,
-		XLICMIMECONTENTTYPE_PROPERTY,
-		XLICMIMEENCODING_PROPERTY,
-		XLICMIMEFILENAME_PROPERTY,
-		XLICMIMEOPTINFO_PROPERTY,
-		NO_PROPERTY
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false, cname = "icalproperty_kind")]
+	public enum PropertyKind {
+		[CCode (cname = "ICAL_ANY_PROPERTY")]
+		ANY,
+		[CCode (cname = "ICAL_ACTION_PROPERTY")]
+		ACTION,
+		[CCode (cname = "ICAL_ALLOWCONFLICT_PROPERTY")]
+		ALLOWCONFLICT,
+		[CCode (cname = "ICAL_ATTACH_PROPERTY")]
+		ATTACH,
+		[CCode (cname = "ICAL_ATTENDEE_PROPERTY")]
+		ATTENDEE,
+		[CCode (cname = "ICAL_CALID_PROPERTY")]
+		CALID,
+		[CCode (cname = "ICAL_CALMASTER_PROPERTY")]
+		CALMASTER,
+		[CCode (cname = "ICAL_CALSCALE_PROPERTY")]
+		CALSCALE,
+		[CCode (cname = "ICAL_CAPVERSION_PROPERTY")]
+		CAPVERSION,
+		[CCode (cname = "ICAL_CARLEVEL_PROPERTY")]
+		CARLEVEL,
+		[CCode (cname = "ICAL_CARID_PROPERTY")]
+		CARID,
+		[CCode (cname = "ICAL_CATEGORIES_PROPERTY")]
+		CATEGORIES,
+		[CCode (cname = "ICAL_CLASS_PROPERTY")]
+		CLASS,
+		[CCode (cname = "ICAL_CMD_PROPERTY")]
+		CMD,
+		[CCode (cname = "ICAL_COMMENT_PROPERTY")]
+		COMMENT,
+		[CCode (cname = "ICAL_COMPLETED_PROPERTY")]
+		COMPLETED,
+		[CCode (cname = "ICAL_COMPONENTS_PROPERTY")]
+		COMPONENTS,
+		[CCode (cname = "ICAL_CONTACT_PROPERTY")]
+		CONTACT,
+		[CCode (cname = "ICAL_CREATED_PROPERTY")]
+		CREATED,
+		[CCode (cname = "ICAL_CSID_PROPERTY")]
+		CSID,
+		[CCode (cname = "ICAL_DATEMAX_PROPERTY")]
+		DATEMAX,
+		[CCode (cname = "ICAL_DATEMIN_PROPERTY")]
+		DATEMIN,
+		[CCode (cname = "ICAL_DECREED_PROPERTY")]
+		DECREED,
+		[CCode (cname = "ICAL_DEFAULTCHARSET_PROPERTY")]
+		DEFAULTCHARSET,
+		[CCode (cname = "ICAL_DEFAULTLOCALE_PROPERTY")]
+		DEFAULTLOCALE,
+		[CCode (cname = "ICAL_DEFAULTTZID_PROPERTY")]
+		DEFAULTTZID,
+		[CCode (cname = "ICAL_DEFAULTVCARS_PROPERTY")]
+		DEFAULTVCARS,
+		[CCode (cname = "ICAL_DENY_PROPERTY")]
+		DENY,
+		[CCode (cname = "ICAL_DESCRIPTION_PROPERTY")]
+		DESCRIPTION,
+		[CCode (cname = "ICAL_DTEND_PROPERTY")]
+		DTEND,
+		[CCode (cname = "ICAL_DTSTAMP_PROPERTY")]
+		DTSTAMP,
+		[CCode (cname = "ICAL_DTSTART_PROPERTY")]
+		DTSTART,
+		[CCode (cname = "ICAL_DUE_PROPERTY")]
+		DUE,
+		[CCode (cname = "ICAL_DURATION_PROPERTY")]
+		DURATION,
+		[CCode (cname = "ICAL_EXDATE_PROPERTY")]
+		EXDATE,
+		[CCode (cname = "ICAL_EXPAND_PROPERTY")]
+		EXPAND,
+		[CCode (cname = "ICAL_EXRULE_PROPERTY")]
+		EXRULE,
+		[CCode (cname = "ICAL_FREEBUSY_PROPERTY")]
+		FREEBUSY,
+		[CCode (cname = "ICAL_GEO_PROPERTY")]
+		GEO,
+		[CCode (cname = "ICAL_GRANT_PROPERTY")]
+		GRANT,
+		[CCode (cname = "ICAL_ITIPVERSION_PROPERTY")]
+		ITIPVERSION,
+		[CCode (cname = "ICAL_LASTMODIFIED_PROPERTY")]
+		LASTMODIFIED,
+		[CCode (cname = "ICAL_LOCATION_PROPERTY")]
+		LOCATION,
+		[CCode (cname = "ICAL_MAXCOMPONENTSIZE_PROPERTY")]
+		MAXCOMPONENTSIZE,
+		[CCode (cname = "ICAL_MAXDATE_PROPERTY")]
+		MAXDATE,
+		[CCode (cname = "ICAL_MAXRESULTS_PROPERTY")]
+		MAXRESULTS,
+		[CCode (cname = "ICAL_MAXRESULTSSIZE_PROPERTY")]
+		MAXRESULTSSIZE,
+		[CCode (cname = "ICAL_METHOD_PROPERTY")]
+		METHOD,
+		[CCode (cname = "ICAL_MINDATE_PROPERTY")]
+		MINDATE,
+		[CCode (cname = "ICAL_MULTIPART_PROPERTY")]
+		MULTIPART,
+		[CCode (cname = "ICAL_NAME_PROPERTY")]
+		NAME,
+		[CCode (cname = "ICAL_ORGANIZER_PROPERTY")]
+		ORGANIZER,
+		[CCode (cname = "ICAL_OWNER_PROPERTY")]
+		OWNER,
+		[CCode (cname = "ICAL_PERCENTCOMPLETE_PROPERTY")]
+		PERCENTCOMPLETE,
+		[CCode (cname = "ICAL_PERMISSION_PROPERTY")]
+		PERMISSION,
+		[CCode (cname = "ICAL_PRIORITY_PROPERTY")]
+		PRIORITY,
+		[CCode (cname = "ICAL_PRODID_PROPERTY")]
+		PRODID,
+		[CCode (cname = "ICAL_QUERY_PROPERTY")]
+		QUERY,
+		[CCode (cname = "ICAL_QUERYLEVEL_PROPERTY")]
+		QUERYLEVEL,
+		[CCode (cname = "ICAL_QUERYID_PROPERTY")]
+		QUERYID,
+		[CCode (cname = "ICAL_QUERYNAME_PROPERTY")]
+		QUERYNAME,
+		[CCode (cname = "ICAL_RDATE_PROPERTY")]
+		RDATE,
+		[CCode (cname = "ICAL_RECURACCEPTED_PROPERTY")]
+		RECURACCEPTED,
+		[CCode (cname = "ICAL_RECUREXPAND_PROPERTY")]
+		RECUREXPAND,
+		[CCode (cname = "ICAL_RECURLIMIT_PROPERTY")]
+		RECURLIMIT,
+		[CCode (cname = "ICAL_RECURRENCEID_PROPERTY")]
+		RECURRENCEID,
+		[CCode (cname = "ICAL_RELATEDTO_PROPERTY")]
+		RELATEDTO,
+		[CCode (cname = "ICAL_RELCALID_PROPERTY")]
+		RELCALID,
+		[CCode (cname = "ICAL_REPEAT_PROPERTY")]
+		REPEAT,
+		[CCode (cname = "ICAL_REQUESTSTATUS_PROPERTY")]
+		REQUESTSTATUS,
+		[CCode (cname = "ICAL_RESOURCES_PROPERTY")]
+		RESOURCES,
+		[CCode (cname = "ICAL_RESTRICTION_PROPERTY")]
+		RESTRICTION,
+		[CCode (cname = "ICAL_RRULE_PROPERTY")]
+		RRULE,
+		[CCode (cname = "ICAL_SCOPE_PROPERTY")]
+		SCOPE,
+		[CCode (cname = "ICAL_SEQUENCE_PROPERTY")]
+		SEQUENCE,
+		[CCode (cname = "ICAL_STATUS_PROPERTY")]
+		STATUS,
+		[CCode (cname = "ICAL_STORESEXPANDED_PROPERTY")]
+		STORESEXPANDED,
+		[CCode (cname = "ICAL_SUMMARY_PROPERTY")]
+		SUMMARY,
+		[CCode (cname = "ICAL_TARGET_PROPERTY")]
+		TARGET,
+		[CCode (cname = "ICAL_TRANSP_PROPERTY")]
+		TRANSP,
+		[CCode (cname = "ICAL_TRIGGER_PROPERTY")]
+		TRIGGER,
+		[CCode (cname = "ICAL_TZID_PROPERTY")]
+		TZID,
+		[CCode (cname = "ICAL_TZNAME_PROPERTY")]
+		TZNAME,
+		[CCode (cname = "ICAL_TZOFFSETFROM_PROPERTY")]
+		TZOFFSETFROM,
+		[CCode (cname = "ICAL_TZOFFSETTO_PROPERTY")]
+		TZOFFSETTO,
+		[CCode (cname = "ICAL_TZURL_PROPERTY")]
+		TZURL,
+		[CCode (cname = "ICAL_UID_PROPERTY")]
+		UID,
+		[CCode (cname = "ICAL_URL_PROPERTY")]
+		URL,
+		[CCode (cname = "ICAL_VERSION_PROPERTY")]
+		VERSION,
+		[CCode (cname = "ICAL_X_PROPERTY")]
+		X,
+		[CCode (cname = "ICAL_XLICCLASS_PROPERTY")]
+		XLICCLASS,
+		[CCode (cname = "ICAL_XLICCLUSTERCOUNT_PROPERTY")]
+		XLICCLUSTERCOUNT,
+		[CCode (cname = "ICAL_XLICERROR_PROPERTY")]
+		XLICERROR,
+		[CCode (cname = "ICAL_XLICMIMECHARSET_PROPERTY")]
+		XLICMIMECHARSET,
+		[CCode (cname = "ICAL_XLICMIMECID_PROPERTY")]
+		XLICMIMECID,
+		[CCode (cname = "ICAL_XLICMIMECONTENTTYPE_PROPERTY")]
+		XLICMIMECONTENTTYPE,
+		[CCode (cname = "ICAL_XLICMIMEENCODING_PROPERTY")]
+		XLICMIMEENCODING,
+		[CCode (cname = "ICAL_XLICMIMEFILENAME_PROPERTY")]
+		XLICMIMEFILENAME,
+		[CCode (cname = "ICAL_XLICMIMEOPTINFO_PROPERTY")]
+		XLICMIMEOPTINFO,
+		[CCode (cname = "ICAL_NO_PROPERTY")]
+		NO
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_METHOD_", has_type_id = false)]
-	public enum icalproperty_method {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_METHOD_", has_type_id = false, cname = "icalproperty_method")]
+	public enum PropertyMethod {
 		X,
 		PUBLISH,
 		REQUEST,
@@ -2237,15 +2509,15 @@ namespace iCal {
 		DELETE,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_QUERYLEVEL_", has_type_id = false)]
-	public enum icalproperty_querylevel {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_QUERYLEVEL_", has_type_id = false, cname = "icalproperty_querylevel")]
+	public enum PropertyQueryLevel {
 		X,
 		CALQL1,
 		CALQLNONE,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_STATUS_", has_type_id = false)]
-	public enum icalproperty_status {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_STATUS_", has_type_id = false, cname = "icalproperty_status")]
+	public enum PropertyStatus {
 		X,
 		TENTATIVE,
 		CONFIRMED,
@@ -2257,8 +2529,8 @@ namespace iCal {
 		FINAL,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_TRANSP_", has_type_id = false)]
-	public enum icalproperty_transp {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_TRANSP_", has_type_id = false, cname = "icalproperty_transp")]
+	public enum PropertyTransparency {
 		X,
 		OPAQUE,
 		OPAQUENOCONFLICT,
@@ -2266,8 +2538,8 @@ namespace iCal {
 		TRANSPARENTNOCONFLICT,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_XLICCLASS_", has_type_id = false)]
-	public enum icalproperty_xlicclass {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_XLICCLASS_", has_type_id = false, cname = "icalproperty_xlicclass")]
+	public enum PropertyXlicClass {
 		X,
 		PUBLISHNEW,
 		PUBLISHUPDATE,
@@ -2298,30 +2570,46 @@ namespace iCal {
 		UNKNOWN,
 		NONE
 	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
-	public enum icalrecurrencetype_frequency {
-		SECONDLY_RECURRENCE,
-		MINUTELY_RECURRENCE,
-		HOURLY_RECURRENCE,
-		DAILY_RECURRENCE,
-		WEEKLY_RECURRENCE,
-		MONTHLY_RECURRENCE,
-		YEARLY_RECURRENCE,
-		NO_RECURRENCE
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", cname = "icalrecurrencetype_frequency")]
+	public enum RecurrenceTypeFrequency {
+		[CCode (cname = "ICAL_SECONDLY_RECURRENCE")]
+		SECONDLY,
+		[CCode (cname = "ICAL_MINUTELY_RECURRENCE")]
+		MINUTELY,
+		[CCode (cname = "ICAL_HOURLY_RECURRENCE")]
+		HOURLY,
+		[CCode (cname = "ICAL_DAILY_RECURRENCE")]
+		DAILY,
+		[CCode (cname = "ICAL_WEEKLY_RECURRENCE")]
+		WEEKLY,
+		[CCode (cname = "ICAL_MONTHLY_RECURRENCE")]
+		MONTHLY,
+		[CCode (cname = "ICAL_YEARLY_RECURRENCE")]
+		YEARLY,
+		[CCode (cname = "ICAL_NO_RECURRENCE")]
+		NO
+	}
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", cname = "icalrecurrencetype_weekday")]
+	public enum RecurrenceTypeWeekday {
+		[CCode (cname = "ICAL_NO_WEEKDAY")]
+		NO,
+		[CCode (cname = "ICAL_SUNDAY_WEEKDAY")]
+		SUNDAY,
+		[CCode (cname = "ICAL_MONDAY_WEEKDAY")]
+		MONDAY,
+		[CCode (cname = "ICAL_TUESDAY_WEEKDAY")]
+		TUESDAY,
+		[CCode (cname = "ICAL_WEDNESDAY_WEEKDAY")]
+		WEDNESDAY,
+		[CCode (cname = "ICAL_THURSDAY_WEEKDAY")]
+		THURSDAY,
+		[CCode (cname = "ICAL_FRIDAY_WEEKDAY")]
+		FRIDAY,
+		[CCode (cname = "ICAL_SATURDAY_WEEKDAY")]
+		SATURDAY
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
-	public enum icalrecurrencetype_weekday {
-		NO_WEEKDAY,
-		SUNDAY_WEEKDAY,
-		MONDAY_WEEKDAY,
-		TUESDAY_WEEKDAY,
-		WEDNESDAY_WEEKDAY,
-		THURSDAY_WEEKDAY,
-		FRIDAY_WEEKDAY,
-		SATURDAY_WEEKDAY
-	}
-	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
-	public enum icalrequeststatus {
+	public enum RequestStatus {
 		UNKNOWN_STATUS,
 		@2_0_SUCCESS_STATUS,
 		@2_1_FALLBACK_STATUS,
@@ -2363,7 +2651,7 @@ namespace iCal {
 		@9_0_UNRECOGNIZED_COMMAND
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_RESTRICTION_", has_type_id = false)]
-	public enum icalrestriction_kind {
+	public enum RestrictionKind {
 		NONE,
 		ZERO,
 		ONE,
@@ -2375,7 +2663,7 @@ namespace iCal {
 		UNKNOWN
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
-	public enum icalvalue_kind {
+	public enum ValueKind {
 		ANY_VALUE,
 		QUERY_VALUE,
 		DATE_VALUE,
@@ -2418,24 +2706,6 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", has_target = false)]
 	public delegate int pvl_findf (void* a, void* b);
 	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_DAY_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_HOUR_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_MINUTE_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_MONTHDAY_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_MONTH_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_SECOND_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_SETPOS_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_WEEKNO_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
-	public const int BY_YEARDAY_SIZE;
-	[CCode (cheader_filename = "libical/ical.h")]
 	public const int ICALPARAMETER_FIRST_ENUM;
 	[CCode (cheader_filename = "libical/ical.h")]
 	public const int ICALPARAMETER_LAST_ENUM;
@@ -2456,201 +2726,109 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", cname = "ical_bt")]
 	public static void ical_bt ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_num_to_reqstat")]
-	public static iCal.icalrequeststatus icalenum_num_to_reqstat (short major, short minor);
+	public static iCal.RequestStatus enum_num_to_reqstat (short major, short minor);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_code")]
-	public static unowned string icalenum_reqstat_code (iCal.icalrequeststatus stat);
+	public static unowned string enum_reqstat_code (iCal.RequestStatus stat);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_code_r")]
-	public static unowned string icalenum_reqstat_code_r (iCal.icalrequeststatus stat);
+	public static unowned string enum_reqstat_code_r (iCal.RequestStatus stat);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_desc")]
-	public static unowned string icalenum_reqstat_desc (iCal.icalrequeststatus stat);
+	public static unowned string enum_reqstat_desc (iCal.RequestStatus stat);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_major")]
-	public static short icalenum_reqstat_major (iCal.icalrequeststatus stat);
+	public static short enum_reqstat_major (iCal.RequestStatus stat);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_minor")]
-	public static short icalenum_reqstat_minor (iCal.icalrequeststatus stat);
+	public static short enum_reqstat_minor (iCal.RequestStatus stat);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerrno_return")]
-	public static iCal.icalerrorenum icalerrno_return ();
+	public static iCal.Error errno_return ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerror_clear_errno")]
-	public static void icalerror_clear_errno ();
+	public static void error_clear_errno ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerror_crash_here")]
-	public static void icalerror_crash_here ();
+	public static void error_crash_here ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerror_get_error_state")]
-	public static iCal.icalerrorstate icalerror_get_error_state (iCal.icalerrorenum error);
+	public static iCal.ErrorState error_get_error_state (iCal.Error error);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerror_perror")]
-	public static unowned string icalerror_perror ();
+	public static unowned string error_perror ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerror_restore")]
-	public static void icalerror_restore (string error, iCal.icalerrorstate es);
+	public static void error_restore (string error, iCal.ErrorState es);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerror_set_errno")]
-	public static void icalerror_set_errno (iCal.icalerrorenum x);
+	public static void error_set_errno (iCal.Error x);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerror_set_error_state")]
-	public static void icalerror_set_error_state (iCal.icalerrorenum error, iCal.icalerrorstate p2);
+	public static void error_set_error_state (iCal.Error error, iCal.ErrorState p2);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerror_stop_here")]
-	public static void icalerror_stop_here ();
+	public static void error_stop_here ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerror_strerror")]
-	public static unowned string icalerror_strerror (iCal.icalerrorenum e);
+	public static unowned string error_strerror (iCal.Error e);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerror_supress")]
-	public static iCal.icalerrorstate icalerror_supress (string error);
+	public static iCal.ErrorState error_supress (string error);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_access_array")]
-	public static int icallangbind_access_array (int array, int index);
+	public static int langbind_access_array (int array, int index);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_free_array")]
-	public static void icallangbind_free_array (int array);
+	public static void langbind_free_array (int array);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_get_component")]
-	public static unowned iCal.icalcomponent icallangbind_get_component (iCal.icalcomponent c, string comp);
+	public static unowned iCal.Component  langbind_get_component (iCal.Component  c, string comp);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_get_first_component")]
-	public static unowned iCal.icalcomponent icallangbind_get_first_component (iCal.icalcomponent c, string comp);
+	public static unowned iCal.Component  langbind_get_first_component (iCal.Component  c, string comp);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_get_first_parameter")]
-	public static unowned iCal.icalparameter icallangbind_get_first_parameter (iCal.icalproperty prop);
+	public static unowned iCal.Parameter langbind_get_first_parameter (iCal.Property prop);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_get_first_property")]
-	public static unowned iCal.icalproperty icallangbind_get_first_property (iCal.icalcomponent c, string prop);
+	public static unowned iCal.Property langbind_get_first_property (iCal.Component  c, string prop);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_get_next_component")]
-	public static unowned iCal.icalcomponent icallangbind_get_next_component (iCal.icalcomponent c, string comp);
+	public static unowned iCal.Component  langbind_get_next_component (iCal.Component  c, string comp);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_get_next_parameter")]
-	public static unowned iCal.icalparameter icallangbind_get_next_parameter (iCal.icalproperty prop);
+	public static unowned iCal.Parameter langbind_get_next_parameter (iCal.Property prop);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_get_next_property")]
-	public static unowned iCal.icalproperty icallangbind_get_next_property (iCal.icalcomponent c, string prop);
+	public static unowned iCal.Property langbind_get_next_property (iCal.Component  c, string prop);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_get_parameter")]
-	public static unowned string icallangbind_get_parameter (iCal.icalproperty p, string parameter);
+	public static unowned string langbind_get_parameter (iCal.Property p, string parameter);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_get_property")]
-	public static unowned iCal.icalproperty icallangbind_get_property (iCal.icalcomponent c, int n, string prop);
+	public static unowned iCal.Property langbind_get_property (iCal.Component  c, int n, string prop);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_get_property_val")]
-	public static unowned string icallangbind_get_property_val (iCal.icalproperty p);
+	public static unowned string langbind_get_property_val (iCal.Property p);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_new_array")]
-	public static int icallangbind_new_array (int size);
+	public static int langbind_new_array (int size);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_property_eval_string")]
-	public static unowned string icallangbind_property_eval_string (iCal.icalproperty prop, string sep);
+	public static unowned string langbind_property_eval_string (iCal.Property prop, string sep);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_property_eval_string_r")]
-	public static unowned string icallangbind_property_eval_string_r (iCal.icalproperty prop, string sep);
+	public static unowned string langbind_property_eval_string_r (iCal.Property prop, string sep);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_quote_as_ical")]
-	public static unowned string icallangbind_quote_as_ical (string str);
+	public static unowned string langbind_quote_as_ical (string str);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_quote_as_ical_r")]
-	public static unowned string icallangbind_quote_as_ical_r (string str);
+	public static unowned string langbind_quote_as_ical_r (string str);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icallangbind_string_to_open_flag")]
-	public static int icallangbind_string_to_open_flag (string str);
+	public static int langbind_string_to_open_flag (string str);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmemory_add_tmp_buffer")]
-	public static void icalmemory_add_tmp_buffer (void* p1);
+	public static void memory_add_tmp_buffer (void* p1);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmemory_append_char")]
-	public static void icalmemory_append_char (out unowned string buf, out unowned string pos, size_t buf_size, GLib.ObjectPath ch);
+	public static void memory_append_char (out unowned string buf, out unowned string pos, size_t buf_size, GLib.ObjectPath ch);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmemory_append_string")]
-	public static void icalmemory_append_string (out unowned string buf, out unowned string pos, size_t buf_size, string str);
+	public static void memory_append_string (out unowned string buf, out unowned string pos, size_t buf_size, string str);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmemory_free_buffer")]
-	public static void icalmemory_free_buffer (void* buf);
+	public static void memory_free_buffer (void* buf);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmemory_free_ring")]
-	public static void icalmemory_free_ring ();
+	public static void memory_free_ring ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmemory_new_buffer")]
-	public static void* icalmemory_new_buffer (size_t size);
+	public static void* memory_new_buffer (size_t size);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmemory_resize_buffer")]
-	public static void* icalmemory_resize_buffer (void* buf, size_t size);
+	public static void* memory_resize_buffer (void* buf, size_t size);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmemory_strdup")]
-	public static unowned string icalmemory_strdup (string s);
+	public static unowned string memory_strdup (string s);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmemory_tmp_buffer")]
-	public static void* icalmemory_tmp_buffer (size_t size);
+	public static void* memory_tmp_buffer (size_t size);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmemory_tmp_copy")]
-	public static unowned string icalmemory_tmp_copy (string str);
+	public static unowned string memory_tmp_copy (string str);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmime_as_mime_string")]
-	public static unowned string icalmime_as_mime_string (string component);
+	public static unowned string mime_as_mime_string (string component);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalmime_parse")]
-	public static unowned iCal.icalcomponent icalmime_parse (GLib.Callback line_gen_func, void* data);
+	public static unowned iCal.Component mime_parse (GLib.Callback line_gen_func, void* data);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_expand_recurrence")]
-	public static int icalrecur_expand_recurrence (string rule, time_t start, [CCode (array_length_pos = 2, array_length_type = "int")] time_t[] array);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_iterator_decrement_count")]
-	public static void icalrecur_iterator_decrement_count (iCal.icalrecur_iterator p1);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_iterator_free")]
-	public static void icalrecur_iterator_free (iCal.icalrecur_iterator p1);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_iterator_new")]
-	public static unowned iCal.icalrecur_iterator icalrecur_iterator_new (iCal.icalrecurrencetype rule, iCal.icaltimetype dtstart);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_iterator_next")]
-	public static iCal.icaltimetype icalrecur_iterator_next (iCal.icalrecur_iterator p1);
+	public static int recur_expand_recurrence (string rule, time_t start, [CCode (array_length_pos = 2, array_length_type = "int")] time_t[] array);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_string_to_weekday")]
-	public static iCal.icalrecurrencetype_weekday icalrecur_string_to_weekday (string str);
+	public static iCal.RecurrenceTypeWeekday icalrecur_string_to_weekday (string str);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrestriction_check")]
-	public static int icalrestriction_check (iCal.icalcomponent comp);
+	public static int icalrestriction_check (iCal.Component  comp);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrestriction_compare")]
-	public static int icalrestriction_compare (iCal.icalrestriction_kind restr, int count);
+	public static int icalrestriction_compare (iCal.RestrictionKind restr, int count);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrestriction_is_parameter_allowed")]
-	public static int icalrestriction_is_parameter_allowed (iCal.icalproperty_kind property, iCal.icalparameter_kind parameter);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_add")]
-	public static iCal.icaltimetype icaltime_add (iCal.icaltimetype t, iCal.icaldurationtype d);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_adjust")]
-	public static void icaltime_adjust (iCal.icaltimetype tt, int days, int hours, int minutes, int seconds);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_as_ical_string")]
-	public static unowned string icaltime_as_ical_string (iCal.icaltimetype tt);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_as_ical_string_r")]
-	public static unowned string icaltime_as_ical_string_r (iCal.icaltimetype tt);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_as_timet")]
-	public static ulong icaltime_as_timet (iCal.icaltimetype p1);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_as_timet_with_zone")]
-	public static ulong icaltime_as_timet_with_zone (iCal.icaltimetype tt, iCal.icaltimezone zone);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_compare")]
-	public static int icaltime_compare (iCal.icaltimetype a, iCal.icaltimetype b);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_compare_date_only")]
-	public static int icaltime_compare_date_only (iCal.icaltimetype a, iCal.icaltimetype b);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_compare_date_only_tz")]
-	public static int icaltime_compare_date_only_tz (iCal.icaltimetype a, iCal.icaltimetype b, iCal.icaltimezone tz);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_compare_with_zone")]
-	public static int icaltime_compare_with_zone (iCal.icaltimetype a, iCal.icaltimetype b);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_convert_to_zone")]
-	public static iCal.icaltimetype icaltime_convert_to_zone (iCal.icaltimetype tt, iCal.icaltimezone zone);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_current_time_with_zone")]
-	public static iCal.icaltimetype icaltime_current_time_with_zone (iCal.icaltimezone zone);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_day_of_week")]
-	public static int icaltime_day_of_week (iCal.icaltimetype t);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_day_of_year")]
-	public static int icaltime_day_of_year (iCal.icaltimetype t);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_days_in_month")]
-	public static int icaltime_days_in_month (int month, int year);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_days_in_year")]
-	public static int icaltime_days_in_year (int year);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_day_of_year")]
-	public static iCal.icaltimetype icaltime_from_day_of_year (int doy, int year);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_string")]
-	public static iCal.icaltimetype icaltime_from_string (string str);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_string_with_zone")]
-	public static iCal.icaltimetype icaltime_from_string_with_zone (string str, iCal.icaltimezone zone);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_timet")]
-	public static iCal.icaltimetype icaltime_from_timet (time_t v, int is_date);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_timet_with_zone")]
-	public static iCal.icaltimetype icaltime_from_timet_with_zone (time_t tm, int is_date, iCal.icaltimezone zone);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_from_week_number")]
-	public static iCal.icaltimetype icaltime_from_week_number (int week_number, int year);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_get_timezone")]
-	public static unowned iCal.icaltimezone icaltime_get_timezone (iCal.icaltimetype t);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_get_tzid")]
-	public static unowned string icaltime_get_tzid (iCal.icaltimetype t);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_is_date")]
-	public static int icaltime_is_date (iCal.icaltimetype t);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_is_floating")]
-	public static int icaltime_is_floating (iCal.icaltimetype t);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_is_leap_year")]
-	public static int icaltime_is_leap_year (int year);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_is_null_time")]
-	public static int icaltime_is_null_time (iCal.icaltimetype t);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_is_utc")]
-	public static int icaltime_is_utc (iCal.icaltimetype t);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_is_valid_time")]
-	public static int icaltime_is_valid_time (iCal.icaltimetype t);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_normalize")]
-	public static iCal.icaltimetype icaltime_normalize (iCal.icaltimetype t);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_null_date")]
-	public static iCal.icaltimetype icaltime_null_date ();
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_null_time")]
-	public static iCal.icaltimetype icaltime_null_time ();
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_set_timezone")]
-	public static iCal.icaltimetype icaltime_set_timezone (iCal.icaltimetype t, iCal.icaltimezone zone);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_span_contains")]
-	public static int icaltime_span_contains (iCal.icaltime_span s, iCal.icaltime_span container);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_span_new")]
-	public static unowned iCal.icaltime_span icaltime_span_new (iCal.icaltimetype dtstart, iCal.icaltimetype dtend, int is_busy);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_span_overlaps")]
-	public static int icaltime_span_overlaps (iCal.icaltime_span s1, iCal.icaltime_span s2);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_start_doy_of_week")]
-	public static int icaltime_start_doy_of_week (iCal.icaltimetype t);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_start_doy_week")]
-	public static int icaltime_start_doy_week (iCal.icaltimetype t, int fdow);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_subtract")]
-	public static unowned iCal.icaldurationtype icaltime_subtract (iCal.icaltimetype t1, iCal.icaltimetype t2);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_today")]
-	public static iCal.icaltimetype icaltime_today ();
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltime_week_number")]
-	public static int icaltime_week_number (iCal.icaltimetype t);
+	public static int icalrestriction_is_parameter_allowed (iCal.PropertyKind property, iCal.ParameterKind parameter);
 	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_apply")]
 	public static void pvl_apply (iCal.pvl_list l, iCal.pvl_applyf f, void* v);
 	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_clear")]
@@ -2707,4 +2885,25 @@ namespace iCal {
 	public static int sspm_parse_mime (iCal.sspm_part parts, size_t max_parts, iCal.sspm_action_map actions, GLib.Callback get_string, void* get_string_data, ...);
 	[CCode (cheader_filename = "libical/ical.h", cname = "sspm_write_mime")]
 	public static int sspm_write_mime (iCal.sspm_part parts, size_t num_parts, out unowned string output_string, string header);
+	
+	namespace Size {
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_DAY_SIZE")]
+		public const int BY_SECOND;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_MINUTE_SIZE")]
+		public const int BY_MINUTE;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_HOUR_SIZE")]
+		public const int BY_HOUR;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_DAY_SIZE")]
+		public const int BY_DAY;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_MONTHDAY_SIZE")]
+		public const int BY_MONTHDAY;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_YEARDAY_SIZE")]
+		public const int BY_YEARDAY;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_WEEKNO_SIZE")]
+		public const int BY_WEEKNO;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_MONTH_SIZE")]
+		public const int BY_MONTH;
+		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_SETPOS_SIZE")]
+		public const int BY_SETPOS;
+	}
 }
