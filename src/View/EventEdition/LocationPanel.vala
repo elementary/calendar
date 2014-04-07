@@ -135,7 +135,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                     map_selected = true;
 
                 location_entry.has_focus = true;
-            } catch (GLib.Error error) {
+            } catch (Error error) {
                 debug (error.message);
             }
 

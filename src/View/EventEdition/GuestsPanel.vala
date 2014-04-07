@@ -174,12 +174,12 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
 
         var name_label = new Gtk.Label ("");
         name_label.xalign = 0;
-        name_label.set_markup ("<b><big>%s</big></b>".printf (GLib.Markup.escape_text (mail.split ("@", 2)[0])));
+        name_label.set_markup ("<b><big>%s</big></b>".printf (Markup.escape_text (mail.split ("@", 2)[0])));
 
         var mail_label = new Gtk.Label ("");
         mail_label.hexpand = true;
         mail_label.xalign = 0;
-        mail_label.set_markup ("<b><span color=\'darkgrey\'>%s</span></b>".printf (GLib.Markup.escape_text (mail)));
+        mail_label.set_markup ("<b><span color=\'darkgrey\'>%s</span></b>".printf (Markup.escape_text (mail)));
 
         var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);
         remove_button.relief = Gtk.ReliefStyle.NONE;

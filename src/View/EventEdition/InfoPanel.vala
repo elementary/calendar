@@ -52,7 +52,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             if (parent_dialog.source == null) {
                 parent_dialog.source = registry.default_calendar;
             }
-        } catch (GLib.Error error) {
+        } catch (Error error) {
             critical (error.message);
         }
 
