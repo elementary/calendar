@@ -7,38 +7,114 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-01 21:48+0100\n"
+"POT-Creation-Date: 2014-04-08 14:10+0200\n"
 "PO-Revision-Date: 2014-02-17 09:44+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-02-18 05:31+0000\n"
-"X-Generator: Launchpad (build 16916)\n"
+"X-Launchpad-Export-Date: 2014-04-09 06:48+0000\n"
+"X-Generator: Launchpad (build 16976)\n"
 "Language: gl\n"
 
-#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e de %B de %Y"
+#: /tmp/maya/po/../src//View/SourceSelector.vala:67
+msgid "Add New Calendar…"
+msgstr "Engadir un calendario novo..."
 
-#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %d de %b"
+#: /tmp/maya/po/../src//View/SourceItem.vala:92
+#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:132
+msgid "Remove"
+msgstr "Retirar"
 
-#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:33
-msgid "%l:%M %p"
-msgstr "%H:%M"
+#: /tmp/maya/po/../src//View/SourceItem.vala:98
+#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:131
+msgid "Edit…"
+msgstr "Editar…"
 
-#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:36
-msgid "%H:%M"
-msgstr "%H:%M"
+#: /tmp/maya/po/../src//View/SourceItem.vala:119
+msgid "Undo"
+msgstr "Desfacer"
 
-#: /home/noelco/maya/po/../src//Backends/LocalBackend.vala:26
-msgid "On this computer"
-msgstr "Neste computador"
+#: /tmp/maya/po/../src//View/SourceItem.vala:137
+#, c-format
+msgid "Calendar \"%s\" removed."
+msgstr "O calendario «%s» foi retirado."
 
-#: /home/noelco/maya/po/../src//View/Sidebar/Sidebar.vala:43
+#: /tmp/maya/po/../src//View/SourceDialog.vala:54
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:55
+msgid "Create"
+msgstr "Crear"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:64
+msgid "Name:"
+msgstr "Nome:"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:67
+msgid "Calendar Name"
+msgstr "Nome do clendario"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:90
+msgid "Type:"
+msgstr "Tipo:"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:111
+msgid "Color:"
+msgstr "Cor:"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:116
+msgid "Mark as default calendar"
+msgstr "Marcar como calendario predefinido"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:146
+msgid "Create Calendar"
+msgstr "Crear un calendario"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:153
+msgid "Save"
+msgstr "Gardar"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:40
+msgid "Create a new event"
+msgstr "Crear unha actividade nova"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:43
+msgid "Manage Calendars"
+msgstr "Xestionar os calendarios"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:51
+msgid "Search Events"
+msgstr "Buscar actividades"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:54
+msgid "Export or Share the default Calendar"
+msgstr "Exportar ou compartir o calendario predeterminado"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:68
+msgid "Today"
+msgstr "Hoxe"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:69
+msgid "Show Week Numbers"
+msgstr "Amosar o número da semana"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:71
+msgid "About"
+msgstr "Sobre"
+
+#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
+#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
+msgid "Export Calendar..."
+msgstr "Exportar o calendario..."
+
+#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
+msgid "calendar.ics"
+msgstr "calendar.ics"
+
+#: /tmp/maya/po/../src//View/Sidebar/Sidebar.vala:38
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -46,229 +122,416 @@ msgstr ""
 "As súas próximas actividades amosaranse aquí cando escolla unha data con "
 "actividades."
 
-#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:136
-msgid "Starts: \t"
-msgstr "Do: \t"
+#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:212
+msgid "All day"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:141
-msgid "Ends: \t"
-msgstr "Ao : \t"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:49
+msgid "Repeat:"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:179
-msgid "all day"
-msgstr "todo o día"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:54
+msgid "Daily"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:183
-#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:204
-msgid "at"
-msgstr "ás"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:55
+msgid "Weekly"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:92
-msgid "Add Event"
-msgstr "Engadir actividade"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:56
+msgid "Monthly"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:95
-msgid "Edit Event"
-msgstr "Modificar actividade"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:57
+msgid "Yearly"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:310
-msgid "From:"
-msgstr "Desde:"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:96
+msgid "Every:"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:316
-msgid "All day:"
-msgstr "Todo o día:"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:103
+msgid "Day"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:321
-msgid "To:"
-msgstr "Ata:"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:103
+msgid "Days"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:340
-msgid "Title"
-msgstr "Titulo"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:106
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:117
+msgid "Week"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:341
-msgid "Name of Event"
-msgstr "Nome da actividade"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:106
+msgid "Weeks"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:344
-msgid "Calendar"
-msgstr "Calendario"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:109
+msgid "Month"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:362
-msgid "Location"
-msgstr "Localización"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:109
+msgid "Months"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:363
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:112
+msgid "Year"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:112
+msgid "Years"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:127
+msgid "Ends:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:129
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:162
+msgid "Repeats"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:133
+msgid "Never"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:134
+msgid "Until"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:135
+msgid "After"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:162
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:104
+msgid "Repeat"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:181
+msgid "The same day every month"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:299
+msgid "Sunday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:302
+msgid "Monday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:305
+msgid "Tuesday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:308
+msgid "Wednesday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:311
+msgid "Thursday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:314
+msgid "Friday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:317
+msgid "Saturday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:323
+#, c-format
+msgid "Every last %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:326
+#, c-format
+msgid "Every first %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:329
+#, c-format
+msgid "Every second %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:332
+#, c-format
+msgid "Every third %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:335
+#, c-format
+msgid "Every fourth %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:338
+#, c-format
+msgid "Every fifth %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:346
+msgid "Mon"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:347
+msgid "Tue"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:348
+msgid "Wed"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:349
+msgid "Thu"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:350
+msgid "Fri"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:351
+msgid "Sat"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:352
+msgid "Sun"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:32
+msgid "Reminders:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:35
+msgid "No Reminders."
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:47
+msgid "Add Reminder"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:176
+msgid "0 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:177
+msgid "1 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:178
+msgid "5 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:179
+msgid "10 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:180
+msgid "15 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:181
+msgid "20 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:182
+msgid "25 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:183
+msgid "30 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:184
+msgid "45 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:185
+msgid "1 hour"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:186
+msgid "2 hours"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:187
+msgid "3 hours"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:188
+msgid "12 hours"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:189
+msgid "24 hours"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:190
+msgid "2 days"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:191
+msgid "1 week"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:200
+msgid "Notification"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:201
+msgid "Email"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/LocationPanel.vala:37
+msgid "Location:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/LocationPanel.vala:39
 msgid "John Smith OR Example St."
 msgstr "Alfonso Rodriguez OU Rúa Castelao."
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:365
-msgid "Participants"
-msgstr "Participantes"
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:59
+msgid "From:"
+msgstr "Desde:"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:366
-msgid "Name or Email Address"
-msgstr "Nome ou enderezo de correo"
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:65
+msgid "All day:"
+msgstr "Todo o día:"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:369
-msgid "Comments"
-msgstr "Comentários"
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:70
+msgid "To:"
+msgstr "Ata:"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:405
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:89
+msgid "Title:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:91
+msgid "Name of Event"
+msgstr "Nome da actividade"
+
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:94
+msgid "Calendar:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:112
+msgid "Comments:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:44
+msgid "Participants:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:47
+msgid "Invite…"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:151
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:162
+msgid "Pending"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:156
+msgid "Accepted"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:159
+msgid "Declined"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:61
+msgid "Add Event"
+msgstr "Engadir actividade"
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:64
+msgid "Edit Event"
+msgstr "Modificar actividade"
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:92
+msgid "General Informations"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:95
+msgid "Location"
+msgstr "Localización"
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:98
+msgid "Guests"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:101
+msgid "Reminders"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:134
 msgid "Create Event"
 msgstr "Crear actividade"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:408
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:136
 msgid "Save Changes"
 msgstr "Gardar os cambios"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:504
-msgid "This event can't be edited"
-msgstr "Esta actividade non é editábel"
+#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e de %B de %Y"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:511
-msgid "Your event has to be named and has to have a valid date"
-msgstr "A actividade ten que ter un nome e unha data correcta"
+#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %d de %b"
 
-#: /home/noelco/maya/po/../src//View/SourceItem.vala:93
-msgid "Remove"
-msgstr "Retirar"
+#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:33
+msgid "%l:%M %p"
+msgstr "%H:%M"
 
-#: /home/noelco/maya/po/../src//View/SourceItem.vala:99
-msgid "Edit…"
-msgstr "Editar…"
+#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:36
+msgid "%H:%M"
+msgstr "%H:%M"
 
-#: /home/noelco/maya/po/../src//View/SourceItem.vala:120
-msgid "Undo"
-msgstr "Desfacer"
+#: /tmp/maya/po/../src//Backends/LocalBackend.vala:26
+msgid "On this computer"
+msgstr "Neste computador"
 
-#: /home/noelco/maya/po/../src//View/SourceItem.vala:138
-#, c-format
-msgid "Calendar \"%s\" removed."
-msgstr "O calendario «%s» foi retirado."
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:44
-msgid "Create a new event"
-msgstr "Crear unha actividade nova"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:47
-msgid "Manage Calendars"
-msgstr "Xestionar os calendarios"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:54
-msgid "Search Events"
-msgstr "Buscar actividades"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:57
-msgid "Export or Share the default Calendar"
-msgstr "Exportar ou compartir o calendario predeterminado"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:71
-msgid "Today"
-msgstr "Hoxe"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:72
-msgid "Fullscreen"
-msgstr "Pantalla completa"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:73
-msgid "Show Week Numbers"
-msgstr "Amosar o número da semana"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:75
-msgid "About"
-msgstr "Sobre"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:54
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:55
-msgid "Create"
-msgstr "Crear"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:64
-msgid "Name:"
-msgstr "Nome:"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:67
-msgid "Calendar Name"
-msgstr "Nome do clendario"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:90
-msgid "Type:"
-msgstr "Tipo:"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:111
-msgid "Color:"
-msgstr "Cor:"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:116
-msgid "Mark as default calendar"
-msgstr "Marcar como calendario predefinido"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:146
-msgid "Create Calendar"
-msgstr "Crear un calendario"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:153
-msgid "Save"
-msgstr "Gardar"
-
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:72
-msgid "Add New Calendar…"
-msgstr "Engadir un calendario novo..."
-
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
-msgid "Export Calendar..."
-msgstr "Exportar o calendario..."
-
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
-msgid "calendar.ics"
-msgstr "calendar.ics"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
-msgid "CalDAV"
-msgstr "CalDAV"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
-msgid "URL:"
-msgstr "URL :"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
-msgid "Use a secure connection"
-msgstr "Usar unha conexión segura"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
-#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:37
-msgid "User:"
-msgstr "Usuario:"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
-msgid "user.name"
-msgstr "nome.usuario"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
-msgid "Email:"
-msgstr "Correo:"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
-msgid "john@doe.com"
-msgstr "xan@perillan.com"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
-msgid "Server handles meeting invitations"
-msgstr "O servidor xestiona os convites a reunións"
-
-#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:26
+#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:26
 msgid "Google"
 msgstr "Google"
 
-#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:46
+#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:37
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
+msgid "User:"
+msgstr "Usuario:"
+
+#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:46
 msgid "user.name or user.name@gmail.com"
 msgstr "nome.usuario ou nome.usuario@gmail.com"
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
+msgid "CalDAV"
+msgstr "CalDAV"
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
+msgid "URL:"
+msgstr "URL :"
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
+msgid "Use a secure connection"
+msgstr "Usar unha conexión segura"
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
+msgid "user.name"
+msgstr "nome.usuario"
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
+msgid "Email:"
+msgstr "Correo:"
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
+msgid "john@doe.com"
+msgstr "xan@perillan.com"
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
+msgid "Server handles meeting invitations"
+msgstr "O servidor xestiona os convites a reunións"
 
 #~ msgid "View and schedule events"
 #~ msgstr "Vexa e programe actividades"
@@ -285,14 +548,32 @@ msgstr "nome.usuario ou nome.usuario@gmail.com"
 #~ msgid "Personal"
 #~ msgstr "Persoal"
 
+#~ msgid "Calendar"
+#~ msgstr "Calendario"
+
+#~ msgid "Title"
+#~ msgstr "Titulo"
+
 #~ msgid "Select calendars to display"
 #~ msgstr "Seleccionar axendas para amosar"
 
 #~ msgid "Delete the selected event"
 #~ msgstr "Eliminar a actividade seleccionada"
 
+#~ msgid "Participants"
+#~ msgstr "Participantes"
+
+#~ msgid "Comments"
+#~ msgstr "Comentários"
+
+#~ msgid "Name or Email Address"
+#~ msgstr "Nome ou enderezo de correo"
+
 #~ msgid "Sync..."
 #~ msgstr "Sincronizar..."
+
+#~ msgid "Fullscreen"
+#~ msgstr "Pantalla completa"
 
 #~ msgid "Import..."
 #~ msgstr "importar..."
@@ -300,11 +581,29 @@ msgstr "nome.usuario ou nome.usuario@gmail.com"
 #~ msgid "Add calendar"
 #~ msgstr "Engadir un calendario"
 
+#~ msgid "at"
+#~ msgstr "ás"
+
+#~ msgid "all day"
+#~ msgstr "todo o día"
+
+#~ msgid "Ends: \t"
+#~ msgstr "Ao : \t"
+
+#~ msgid "Starts: \t"
+#~ msgstr "Do: \t"
+
 #~ msgid "Edit the selected event"
 #~ msgstr "Modificar a actividade seleccionada"
+
+#~ msgid "Your event has to be named and has to have a valid date"
+#~ msgstr "A actividade ten que ter un nome e unha data correcta"
 
 #~ msgid "$more more ..."
 #~ msgstr "$máis maís ..."
 
 #~ msgid "Maya;Planner;Dates;Days;Events;"
 #~ msgstr "Maya;Planificador;Datas;Días;Actividadess;"
+
+#~ msgid "This event can't be edited"
+#~ msgstr "Esta actividade non é editábel"

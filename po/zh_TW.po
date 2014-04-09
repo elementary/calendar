@@ -7,269 +7,547 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-01 21:48+0100\n"
+"POT-Creation-Date: 2014-04-08 14:10+0200\n"
 "PO-Revision-Date: 2014-03-16 07:17+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-03-17 04:58+0000\n"
-"X-Generator: Launchpad (build 16963)\n"
+"X-Launchpad-Export-Date: 2014-04-09 06:49+0000\n"
+"X-Generator: Launchpad (build 16976)\n"
 "Language: \n"
 
-#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%Y年%b%e日"
+#: /tmp/maya/po/../src//View/SourceSelector.vala:67
+msgid "Add New Calendar…"
+msgstr "新增行事曆…"
 
-#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%b%d日 (%A)"
+#: /tmp/maya/po/../src//View/SourceItem.vala:92
+#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:132
+msgid "Remove"
+msgstr "移除"
 
-#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:33
-msgid "%l:%M %p"
-msgstr "%p %l:%M"
+#: /tmp/maya/po/../src//View/SourceItem.vala:98
+#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:131
+msgid "Edit…"
+msgstr "編輯…"
 
-#: /home/noelco/maya/po/../src//Settings/LanguagesFormat.vala:36
-msgid "%H:%M"
-msgstr "%H:%M"
+#: /tmp/maya/po/../src//View/SourceItem.vala:119
+msgid "Undo"
+msgstr "回復"
 
-#: /home/noelco/maya/po/../src//Backends/LocalBackend.vala:26
-msgid "On this computer"
-msgstr "在此電腦上"
+#: /tmp/maya/po/../src//View/SourceItem.vala:137
+#, c-format
+msgid "Calendar \"%s\" removed."
+msgstr "行事曆「%s」已移除。"
 
-#: /home/noelco/maya/po/../src//View/Sidebar/Sidebar.vala:43
+#: /tmp/maya/po/../src//View/SourceDialog.vala:54
+msgid "Cancel"
+msgstr "取消"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:55
+msgid "Create"
+msgstr "建立"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:64
+msgid "Name:"
+msgstr "名稱："
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:67
+msgid "Calendar Name"
+msgstr "行事曆名稱"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:90
+msgid "Type:"
+msgstr "類型："
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:111
+msgid "Color:"
+msgstr "色彩："
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:116
+msgid "Mark as default calendar"
+msgstr "標記爲預設行事曆"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:146
+msgid "Create Calendar"
+msgstr "新建行事曆"
+
+#: /tmp/maya/po/../src//View/SourceDialog.vala:153
+msgid "Save"
+msgstr "儲存"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:40
+msgid "Create a new event"
+msgstr "建立新事件"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:43
+msgid "Manage Calendars"
+msgstr "管理行事曆"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:51
+msgid "Search Events"
+msgstr "搜尋事件"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:54
+msgid "Export or Share the default Calendar"
+msgstr "匯出或分享預設行事曆"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:68
+msgid "Today"
+msgstr "今日"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:69
+msgid "Show Week Numbers"
+msgstr "顯示週數"
+
+#: /tmp/maya/po/../src//View/MayaToolbar.vala:71
+msgid "About"
+msgstr "關於"
+
+#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
+#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
+msgid "Export Calendar..."
+msgstr "匯出行事曆..."
+
+#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
+msgid "calendar.ics"
+msgstr "行事曆.ics"
+
+#: /tmp/maya/po/../src//View/Sidebar/Sidebar.vala:38
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "當您選取的日子有活動事件時，未來的事件會顯示在這裡。"
 
-#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:136
-msgid "Starts: \t"
-msgstr "開始︰ \t"
+#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:212
+msgid "All day"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:141
-msgid "Ends: \t"
-msgstr "結束： \t"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:49
+msgid "Repeat:"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:179
-msgid "all day"
-msgstr "全天"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:54
+msgid "Daily"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:183
-#: /home/noelco/maya/po/../src//View/Sidebar/EventWidget.vala:204
-msgid "at"
-msgstr "於"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:55
+msgid "Weekly"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:92
-msgid "Add Event"
-msgstr "加入事件"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:56
+msgid "Monthly"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:95
-msgid "Edit Event"
-msgstr "編輯事件"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:57
+msgid "Yearly"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:310
-msgid "From:"
-msgstr "從："
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:96
+msgid "Every:"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:316
-msgid "All day:"
-msgstr "整天："
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:103
+msgid "Day"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:321
-msgid "To:"
-msgstr "到："
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:103
+msgid "Days"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:340
-msgid "Title"
-msgstr "標題"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:106
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:117
+msgid "Week"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:341
-msgid "Name of Event"
-msgstr "事件名稱"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:106
+msgid "Weeks"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:344
-msgid "Calendar"
-msgstr "行事曆"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:109
+msgid "Month"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:362
-msgid "Location"
-msgstr "地點"
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:109
+msgid "Months"
+msgstr ""
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:363
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:112
+msgid "Year"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:112
+msgid "Years"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:127
+msgid "Ends:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:129
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:162
+msgid "Repeats"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:133
+msgid "Never"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:134
+msgid "Until"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:135
+msgid "After"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:162
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:104
+msgid "Repeat"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:181
+msgid "The same day every month"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:299
+msgid "Sunday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:302
+msgid "Monday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:305
+msgid "Tuesday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:308
+msgid "Wednesday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:311
+msgid "Thursday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:314
+msgid "Friday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:317
+msgid "Saturday"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:323
+#, c-format
+msgid "Every last %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:326
+#, c-format
+msgid "Every first %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:329
+#, c-format
+msgid "Every second %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:332
+#, c-format
+msgid "Every third %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:335
+#, c-format
+msgid "Every fourth %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:338
+#, c-format
+msgid "Every fifth %s"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:346
+msgid "Mon"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:347
+msgid "Tue"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:348
+msgid "Wed"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:349
+msgid "Thu"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:350
+msgid "Fri"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:351
+msgid "Sat"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:352
+msgid "Sun"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:32
+msgid "Reminders:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:35
+msgid "No Reminders."
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:47
+msgid "Add Reminder"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:176
+msgid "0 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:177
+msgid "1 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:178
+msgid "5 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:179
+msgid "10 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:180
+msgid "15 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:181
+msgid "20 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:182
+msgid "25 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:183
+msgid "30 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:184
+msgid "45 minutes"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:185
+msgid "1 hour"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:186
+msgid "2 hours"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:187
+msgid "3 hours"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:188
+msgid "12 hours"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:189
+msgid "24 hours"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:190
+msgid "2 days"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:191
+msgid "1 week"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:200
+msgid "Notification"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:201
+msgid "Email"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/LocationPanel.vala:37
+msgid "Location:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/LocationPanel.vala:39
 msgid "John Smith OR Example St."
 msgstr "王小明 或 某某街"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:365
-msgid "Participants"
-msgstr "參與者"
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:59
+msgid "From:"
+msgstr "從："
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:366
-msgid "Name or Email Address"
-msgstr "名稱或電子郵件位址"
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:65
+msgid "All day:"
+msgstr "整天："
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:369
-msgid "Comments"
-msgstr "評註"
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:70
+msgid "To:"
+msgstr "到："
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:405
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:89
+msgid "Title:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:91
+msgid "Name of Event"
+msgstr "事件名稱"
+
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:94
+msgid "Calendar:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:112
+msgid "Comments:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:44
+msgid "Participants:"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:47
+msgid "Invite…"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:151
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:162
+msgid "Pending"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:156
+msgid "Accepted"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:159
+msgid "Declined"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:61
+msgid "Add Event"
+msgstr "加入事件"
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:64
+msgid "Edit Event"
+msgstr "編輯事件"
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:92
+msgid "General Informations"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:95
+msgid "Location"
+msgstr "地點"
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:98
+msgid "Guests"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:101
+msgid "Reminders"
+msgstr ""
+
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:134
 msgid "Create Event"
 msgstr "建立事件"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:408
+#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:136
 msgid "Save Changes"
 msgstr "儲存變更"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:504
-msgid "This event can't be edited"
-msgstr "無法編輯此事件"
+#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%Y年%b%e日"
 
-#: /home/noelco/maya/po/../src//View/EventDialog.vala:511
-msgid "Your event has to be named and has to have a valid date"
-msgstr "您的事件必須有名稱，且必須有個有效日期"
+#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%b%d日 (%A)"
 
-#: /home/noelco/maya/po/../src//View/SourceItem.vala:93
-msgid "Remove"
-msgstr "移除"
+#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:33
+msgid "%l:%M %p"
+msgstr "%p %l:%M"
 
-#: /home/noelco/maya/po/../src//View/SourceItem.vala:99
-msgid "Edit…"
-msgstr "編輯…"
+#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:36
+msgid "%H:%M"
+msgstr "%H:%M"
 
-#: /home/noelco/maya/po/../src//View/SourceItem.vala:120
-msgid "Undo"
-msgstr "回復"
+#: /tmp/maya/po/../src//Backends/LocalBackend.vala:26
+msgid "On this computer"
+msgstr "在此電腦上"
 
-#: /home/noelco/maya/po/../src//View/SourceItem.vala:138
-#, c-format
-msgid "Calendar \"%s\" removed."
-msgstr "行事曆「%s」已移除。"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:44
-msgid "Create a new event"
-msgstr "建立新事件"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:47
-msgid "Manage Calendars"
-msgstr "管理行事曆"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:54
-msgid "Search Events"
-msgstr "搜尋事件"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:57
-msgid "Export or Share the default Calendar"
-msgstr "匯出或分享預設行事曆"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:71
-msgid "Today"
-msgstr "今日"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:72
-msgid "Fullscreen"
-msgstr "全螢幕"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:73
-msgid "Show Week Numbers"
-msgstr "顯示週數"
-
-#: /home/noelco/maya/po/../src//View/MayaToolbar.vala:75
-msgid "About"
-msgstr "關於"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:54
-msgid "Cancel"
-msgstr "取消"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:55
-msgid "Create"
-msgstr "建立"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:64
-msgid "Name:"
-msgstr "名稱："
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:67
-msgid "Calendar Name"
-msgstr "行事曆名稱"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:90
-msgid "Type:"
-msgstr "類型："
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:111
-msgid "Color:"
-msgstr "色彩："
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:116
-msgid "Mark as default calendar"
-msgstr "標記爲預設行事曆"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:146
-msgid "Create Calendar"
-msgstr "新建行事曆"
-
-#: /home/noelco/maya/po/../src//View/SourceDialog.vala:153
-msgid "Save"
-msgstr "儲存"
-
-#: /home/noelco/maya/po/../src//View/SourceSelector.vala:72
-msgid "Add New Calendar…"
-msgstr "新增行事曆…"
-
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
-msgid "Export Calendar..."
-msgstr "匯出行事曆..."
-
-#: /home/noelco/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
-msgid "calendar.ics"
-msgstr "行事曆.ics"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
-msgid "CalDAV"
-msgstr "CalDAV"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
-msgid "URL:"
-msgstr "URL："
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
-msgid "Use a secure connection"
-msgstr "使用安全連線"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
-#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:37
-msgid "User:"
-msgstr "使用者："
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
-msgid "user.name"
-msgstr "user.name"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
-msgid "Email:"
-msgstr "電子郵件："
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
-msgid "john@doe.com"
-msgstr "john@doe.com"
-
-#: /home/noelco/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
-msgid "Server handles meeting invitations"
-msgstr "伺服器處理會議邀請"
-
-#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:26
+#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:26
 msgid "Google"
 msgstr "Google"
 
-#: /home/noelco/maya/po/../plugins//Google/GoogleBackend.vala:46
+#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:37
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
+msgid "User:"
+msgstr "使用者："
+
+#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:46
 msgid "user.name or user.name@gmail.com"
 msgstr "user.name 或 user.name@gmail.com"
 
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
+msgid "CalDAV"
+msgstr "CalDAV"
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
+msgid "URL:"
+msgstr "URL："
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
+msgid "Use a secure connection"
+msgstr "使用安全連線"
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
+msgid "user.name"
+msgstr "user.name"
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
+msgid "Email:"
+msgstr "電子郵件："
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
+msgid "john@doe.com"
+msgstr "john@doe.com"
+
+#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
+msgid "Server handles meeting invitations"
+msgstr "伺服器處理會議邀請"
+
+#~ msgid "at"
+#~ msgstr "於"
+
+#~ msgid "Title"
+#~ msgstr "標題"
+
+#~ msgid "Comments"
+#~ msgstr "評註"
+
+#~ msgid "Name or Email Address"
+#~ msgstr "名稱或電子郵件位址"
+
 #~ msgid "Sync..."
 #~ msgstr "同步..."
+
+#~ msgid "Fullscreen"
+#~ msgstr "全螢幕"
 
 #~ msgid "Import..."
 #~ msgstr "匯入..."
@@ -286,20 +564,41 @@ msgstr "user.name 或 user.name@gmail.com"
 #~ msgid "Contacts"
 #~ msgstr "聯絡人"
 
+#~ msgid "Calendar"
+#~ msgstr "行事曆"
+
 #~ msgid "Webcal"
 #~ msgstr "網路行事曆"
 
 #~ msgid "View and schedule events"
 #~ msgstr "查看和安排事件"
 
+#~ msgid "all day"
+#~ msgstr "全天"
+
+#~ msgid "Starts: \t"
+#~ msgstr "開始︰ \t"
+
 #~ msgid "_Add Event"
 #~ msgstr "加入事件(_A)"
+
+#~ msgid "Your event has to be named and has to have a valid date"
+#~ msgstr "您的事件必須有名稱，且必須有個有效日期"
 
 #~ msgid "Add calendar"
 #~ msgstr "增加行事曆"
 
+#~ msgid "Participants"
+#~ msgstr "參與者"
+
 #~ msgid "Personal"
 #~ msgstr "個人"
+
+#~ msgid "Ends: \t"
+#~ msgstr "結束： \t"
+
+#~ msgid "This event can't be edited"
+#~ msgstr "無法編輯此事件"
 
 #~ msgid "$more more ..."
 #~ msgstr "還有其他 $more 項 ..."
