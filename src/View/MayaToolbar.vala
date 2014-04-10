@@ -95,7 +95,7 @@ namespace Maya.View {
             
             button_add.clicked.connect (() => add_calendar_clicked ());
             button_calendar_sources.clicked.connect (on_tb_sources_clicked);
-            today.activate.connect (() => on_menu_today_toggled);
+            today.activate.connect (() => { on_menu_today_toggled (); });
             weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
             about.activate.connect (() => {
                 var app = ((Maya.Application)GLib.Application.get_default ());
