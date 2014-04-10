@@ -263,12 +263,12 @@ namespace Maya.View {
             if (selected_date == null)
                 return false;
 
-            Util.DateRange dt_range = Util.event_date_range (event);
+            foreach (var dt_range in Util.event_date_ranges (event, new Util.DateRange (Util.strip_time(selected_date), Util.strip_time(selected_date.add_days (1))))) {
+                if (dt_range.contains (selected_date))
+                    return true;
+            }
 
-            if (dt_range.contains (selected_date))
-                return true;
-            else
-                return false;
+            return false;
         }
 
         /**

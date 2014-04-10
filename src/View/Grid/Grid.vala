@@ -85,7 +85,6 @@ public class Grid : Gtk.Grid {
      * must remain the same.
      */
     public void set_range (Util.DateRange new_range, DateTime month_start) {
-
         var today = new DateTime.now_local ();
 
         Gee.List<DateTime> old_dates;
@@ -193,9 +192,9 @@ public class Grid : Gtk.Grid {
      * Puts the given event on the grid.
      */
     public void add_event (E.CalComponent event) {
-
-        var dt_range = Util.event_date_range (event);
-        add_buttons_for_range (dt_range, event);
+        foreach (var dt_range in Util.event_date_ranges (event, grid_range)) {
+            add_buttons_for_range (dt_range, event);
+        }
     }
 
     /**

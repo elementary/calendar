@@ -94,12 +94,12 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
      */
     public void save () {
         // Save the location
+        unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
         string location = location_entry.text;
 
-        parent_dialog.ecal.set_location (location);
+        comp.set_location (location);
         if (map_selected == true) {
             // First, clear the geo
-            unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
             int count = comp.count_properties (iCal.PropertyKind.GEO);
 
             for (int i = 0; i < count; i++) {
