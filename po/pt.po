@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-08 14:10+0200\n"
-"PO-Revision-Date: 2014-03-29 21:37+0000\n"
-"Last-Translator: Pedro Monteiro <Unknown>\n"
+"PO-Revision-Date: 2014-04-10 12:15+0000\n"
+"Last-Translator: Toupas <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-09 06:49+0000\n"
+"X-Launchpad-Export-Date: 2014-04-11 05:42+0000\n"
 "X-Generator: Launchpad (build 16976)\n"
 "Language: pt\n"
 
 #: /tmp/maya/po/../src//View/SourceSelector.vala:67
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "Adicionar novo calendário..."
 
 #: /tmp/maya/po/../src//View/SourceItem.vala:92
 #: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:132
@@ -34,7 +34,7 @@ msgstr "Editar…"
 
 #: /tmp/maya/po/../src//View/SourceItem.vala:119
 msgid "Undo"
-msgstr ""
+msgstr "Anular"
 
 #: /tmp/maya/po/../src//View/SourceItem.vala:137
 #, c-format
@@ -43,11 +43,11 @@ msgstr "O calendário \"%s\" foi removido."
 
 #: /tmp/maya/po/../src//View/SourceDialog.vala:54
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: /tmp/maya/po/../src//View/SourceDialog.vala:55
 msgid "Create"
-msgstr ""
+msgstr "Criar"
 
 #: /tmp/maya/po/../src//View/SourceDialog.vala:64
 msgid "Name:"
@@ -75,7 +75,7 @@ msgstr "Criar calendário"
 
 #: /tmp/maya/po/../src//View/SourceDialog.vala:153
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
 
 #: /tmp/maya/po/../src//View/MayaToolbar.vala:40
 msgid "Create a new event"
@@ -83,7 +83,7 @@ msgstr "Criar um novo evento"
 
 #: /tmp/maya/po/../src//View/MayaToolbar.vala:43
 msgid "Manage Calendars"
-msgstr ""
+msgstr "Gerir calendários"
 
 #: /tmp/maya/po/../src//View/MayaToolbar.vala:51
 msgid "Search Events"
@@ -124,268 +124,268 @@ msgstr ""
 
 #: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:212
 msgid "All day"
-msgstr ""
+msgstr "Dia completo"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:49
 msgid "Repeat:"
-msgstr ""
+msgstr "Repetição:"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:54
 msgid "Daily"
-msgstr ""
+msgstr "Diária"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:55
 msgid "Weekly"
-msgstr ""
+msgstr "Semanal"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:56
 msgid "Monthly"
-msgstr ""
+msgstr "Mensal"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:57
 msgid "Yearly"
-msgstr ""
+msgstr "Anual"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:96
 msgid "Every:"
-msgstr ""
+msgstr "Cada:"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:103
 msgid "Day"
-msgstr ""
+msgstr "Dia"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:103
 msgid "Days"
-msgstr ""
+msgstr "Dias"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:106
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:117
 msgid "Week"
-msgstr ""
+msgstr "Semana"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:106
 msgid "Weeks"
-msgstr ""
+msgstr "Semanas"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:109
 msgid "Month"
-msgstr ""
+msgstr "Mês"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:109
 msgid "Months"
-msgstr ""
+msgstr "Meses"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:112
 msgid "Year"
-msgstr ""
+msgstr "Ano"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:112
 msgid "Years"
-msgstr ""
+msgstr "Anos"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:127
 msgid "Ends:"
-msgstr ""
+msgstr "Termina:"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:129
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:162
 msgid "Repeats"
-msgstr ""
+msgstr "Repete"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:133
 msgid "Never"
-msgstr ""
+msgstr "Nunca"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:134
 msgid "Until"
-msgstr ""
+msgstr "Até"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:135
 msgid "After"
-msgstr ""
+msgstr "Após"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:162
 #: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:104
 msgid "Repeat"
-msgstr ""
+msgstr "Repetir"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:181
 msgid "The same day every month"
-msgstr ""
+msgstr "Mesmo dia todos os meses"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:299
 msgid "Sunday"
-msgstr ""
+msgstr "domingo"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:302
 msgid "Monday"
-msgstr ""
+msgstr "segunda"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:305
 msgid "Tuesday"
-msgstr ""
+msgstr "terça"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:308
 msgid "Wednesday"
-msgstr ""
+msgstr "quarta"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:311
 msgid "Thursday"
-msgstr ""
+msgstr "quinta"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:314
 msgid "Friday"
-msgstr ""
+msgstr "sexta"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:317
 msgid "Saturday"
-msgstr ""
+msgstr "sábado"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:323
 #, c-format
 msgid "Every last %s"
-msgstr ""
+msgstr "Cada último %s"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:326
 #, c-format
 msgid "Every first %s"
-msgstr ""
+msgstr "Cada primeiro %s"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:329
 #, c-format
 msgid "Every second %s"
-msgstr ""
+msgstr "Cada segundo %s"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:332
 #, c-format
 msgid "Every third %s"
-msgstr ""
+msgstr "Cada terceiro %s"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:335
 #, c-format
 msgid "Every fourth %s"
-msgstr ""
+msgstr "Cada quarto %s"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:338
 #, c-format
 msgid "Every fifth %s"
-msgstr ""
+msgstr "Cada quinto %s"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:346
 msgid "Mon"
-msgstr ""
+msgstr "seg"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:347
 msgid "Tue"
-msgstr ""
+msgstr "ter"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:348
 msgid "Wed"
-msgstr ""
+msgstr "qua"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:349
 msgid "Thu"
-msgstr ""
+msgstr "qui"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:350
 msgid "Fri"
-msgstr ""
+msgstr "sex"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:351
 msgid "Sat"
-msgstr ""
+msgstr "sáb"
 
 #: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:352
 msgid "Sun"
-msgstr ""
+msgstr "dom"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:32
 msgid "Reminders:"
-msgstr ""
+msgstr "Lembretes:"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:35
 msgid "No Reminders."
-msgstr ""
+msgstr "Sem lembretes"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:47
 msgid "Add Reminder"
-msgstr ""
+msgstr "Adicionar lembrete"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:176
 msgid "0 minutes"
-msgstr ""
+msgstr "0 minutos"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:177
 msgid "1 minutes"
-msgstr ""
+msgstr "1 minuto"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:178
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minutos"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:179
 msgid "10 minutes"
-msgstr ""
+msgstr "10 minutos"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:180
 msgid "15 minutes"
-msgstr ""
+msgstr "15 minutos"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:181
 msgid "20 minutes"
-msgstr ""
+msgstr "20 minutos"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:182
 msgid "25 minutes"
-msgstr ""
+msgstr "25 minutos"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:183
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minutos"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:184
 msgid "45 minutes"
-msgstr ""
+msgstr "45 minutos"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:185
 msgid "1 hour"
-msgstr ""
+msgstr "1 hora"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:186
 msgid "2 hours"
-msgstr ""
+msgstr "2 horas"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:187
 msgid "3 hours"
-msgstr ""
+msgstr "3 horas"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:188
 msgid "12 hours"
-msgstr ""
+msgstr "12 horas"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:189
 msgid "24 hours"
-msgstr ""
+msgstr "24 horas"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:190
 msgid "2 days"
-msgstr ""
+msgstr "2 dias"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:191
 msgid "1 week"
-msgstr ""
+msgstr "1 semana"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:200
 msgid "Notification"
-msgstr ""
+msgstr "Notificação"
 
 #: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:201
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: /tmp/maya/po/../src//View/EventEdition/LocationPanel.vala:37
 msgid "Location:"
-msgstr ""
+msgstr "Localização:"
 
 #: /tmp/maya/po/../src//View/EventEdition/LocationPanel.vala:39
 msgid "John Smith OR Example St."
@@ -405,7 +405,7 @@ msgstr "Até"
 
 #: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:89
 msgid "Title:"
-msgstr ""
+msgstr "Título:"
 
 #: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:91
 msgid "Name of Event"
@@ -413,32 +413,32 @@ msgstr "Nome do evento"
 
 #: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:94
 msgid "Calendar:"
-msgstr ""
+msgstr "Calendário:"
 
 #: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:112
 msgid "Comments:"
-msgstr ""
+msgstr "Comentários:"
 
 #: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:44
 msgid "Participants:"
-msgstr ""
+msgstr "Participantes:"
 
 #: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:47
 msgid "Invite…"
-msgstr ""
+msgstr "Convidar..."
 
 #: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:151
 #: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:162
 msgid "Pending"
-msgstr ""
+msgstr "Pendente"
 
 #: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:156
 msgid "Accepted"
-msgstr ""
+msgstr "Aceite"
 
 #: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:159
 msgid "Declined"
-msgstr ""
+msgstr "Rejeitado"
 
 #: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:61
 msgid "Add Event"
@@ -450,7 +450,7 @@ msgstr "Editar evento"
 
 #: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:92
 msgid "General Informations"
-msgstr ""
+msgstr "Informações gerais"
 
 #: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:95
 msgid "Location"
@@ -458,11 +458,11 @@ msgstr "Local"
 
 #: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:98
 msgid "Guests"
-msgstr ""
+msgstr "Convidados"
 
 #: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:101
 msgid "Reminders"
-msgstr ""
+msgstr "Lembretes"
 
 #: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:134
 msgid "Create Event"
