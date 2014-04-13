@@ -32,6 +32,7 @@ namespace Maya.View {
         // Menu items
         Gtk.CheckMenuItem weeknumbers;
         View.SourceSelector source_selector;
+        Gtk.ToggleButton button_calendar_sources;
         
         public MayaToolbar () {
             show_close_button = true;
@@ -39,7 +40,8 @@ namespace Maya.View {
             var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
             button_add.tooltip_text = _("Create a new event");
             
-            var button_calendar_sources = new Gtk.Button.from_icon_name ("office-calendar", Gtk.IconSize.LARGE_TOOLBAR);
+            button_calendar_sources = new Gtk.ToggleButton ();
+            button_calendar_sources.image = new Gtk.Image.from_icon_name ("office-calendar", Gtk.IconSize.LARGE_TOOLBAR);
             button_calendar_sources.tooltip_text = _("Manage Calendars");
             
             month_switcher = new Widgets.DateSwitcher (10);
@@ -133,9 +135,16 @@ namespace Maya.View {
         void on_tb_sources_clicked (Gtk.Widget widget) {
             if (source_selector == null) {
                 source_selector = new View.SourceSelector ();
+                source_selector.set_relative_to (widget);
+                source_selector.hide.connect (() => {
+                    button_calendar_sources.active = false;
+                    source_selector.visible = false;
+                });
             }
-            source_selector.set_relative_to (widget);
-            source_selector.show_all ();
+            if (source_selector.visible == false)
+                source_selector.show_all ();
+            else
+                source_selector.hide ();
         }
 
     }

@@ -26,6 +26,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     private E.SourceRegistry registry;
     
     public SourceSelector () {
+        modal = false;
         stack = new Gtk.Stack ();
         
         calendar_grid = new Gtk.Grid ();
