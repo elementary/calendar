@@ -24,17 +24,17 @@ macro(add_translations_catalog NLS_PACKAGE)
     set(C_SOURCE "")
 
     foreach(FILES_INPUT ${ARGN})
-        file (GLOB_RECURSE SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/${FILES_INPUT}/*.c)
+        file (GLOB_RECURSE SOURCE_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/ ${CMAKE_CURRENT_SOURCE_DIR}/${FILES_INPUT}/*.c)
         foreach(C_FILE ${SOURCE_FILES})
             set(C_SOURCE ${C_SOURCE} ${C_FILE})
         endforeach()
-        file (GLOB_RECURSE SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/${FILES_INPUT}/*.vala)
+        file (GLOB_RECURSE SOURCE_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/ ${CMAKE_CURRENT_SOURCE_DIR}/${FILES_INPUT}/*.vala)
         foreach(C_FILE ${SOURCE_FILES})
             set(C_SOURCE ${C_SOURCE} ${C_FILE})
         endforeach()
     endforeach()
 
-    add_custom_command (TARGET pot COMMAND
+    add_custom_command (TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND
         ${XGETTEXT_EXECUTABLE} -d ${NLS_PACKAGE} -o ${CMAKE_CURRENT_SOURCE_DIR}/${NLS_PACKAGE}.pot
         ${VALA_SOURCE} ${C_SOURCE} --add-comments="/" --keyword="_" --keyword="N_" --keyword="C_:1c,2"
         --keyword="NC_:1c,2" --keyword="ngettext:1,2" --keyword="N_" --keyword="Q_:1g" --from-code=UTF-8

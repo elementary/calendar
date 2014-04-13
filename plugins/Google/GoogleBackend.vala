@@ -32,27 +32,21 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
     public Gee.Collection<PlacementWidget> get_new_calendar_widget (E.Source? to_edit = null) {
         var collection = new Gee.LinkedList<PlacementWidget> ();
 
-        var user_label = new PlacementWidget ();
-        user_label.widget = new Gtk.Label (_("User:"));
-        ((Gtk.Label) user_label.widget).xalign = 1;
-        user_label.row = 3;
-        user_label.column = 0;
-        user_label.ref_name = "user_label";
-        collection.add (user_label);
+        bool keep_copy = false;
+        if (to_edit != null) {
+            E.SourceOffline source_offline = (E.SourceOffline)to_edit.get_extension (E.SOURCE_EXTENSION_OFFLINE);
+            keep_copy = source_offline.stay_synchronized;
+        }
+        collection.add (Maya.DefaultPlacementWidgets.get_keep_copy (3, keep_copy));
 
-        var user_entry = new PlacementWidget ();
-        user_entry.widget = new Gtk.Entry ();
-        ((Gtk.Entry)user_entry.widget).placeholder_text = _("user.name or user.name@gmail.com");
-        user_entry.row = 3;
-        user_entry.column = 1;
-        user_entry.ref_name = "user_entry";
-        user_entry.needed = true;
+        string user = "";
         if (to_edit != null) {
             E.SourceAuthentication auth = (E.SourceAuthentication)to_edit.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
-            ((Gtk.Entry)user_entry.widget).text = auth.user;
+            user = auth.user;
         }
+        
+        collection.add_all (Maya.DefaultPlacementWidgets.get_user (4, true, user, _("user.name or user.name@gmail.com")));
 
-        collection.add (user_entry);
         return collection;
     }
 
@@ -65,6 +59,7 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
             cal.color = color;
             cal.backend_name = "caldav";
             E.SourceWebdav webdav = (E.SourceWebdav)new_source.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
+            E.SourceOffline offline = (E.SourceOffline)new_source.get_extension (E.SOURCE_EXTENSION_OFFLINE);
             E.SourceAuthentication auth = (E.SourceAuthentication)new_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
@@ -81,6 +76,9 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                         soup_uri.set_user (decoded_user);
                         soup_uri.set_path ("/calendar/dav/%s/events".printf (decoded_user));
                         webdav.soup_uri = soup_uri;
+                        break;
+                    case "keep_copy":
+                        offline.set_stay_synchronized (((Gtk.CheckButton)widget.widget).active);
                         break;
                 }
             }
@@ -105,6 +103,7 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             cal.color = color;
             E.SourceWebdav webdav = (E.SourceWebdav)source.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
+            E.SourceOffline offline = (E.SourceOffline)source.get_extension (E.SOURCE_EXTENSION_OFFLINE);
             E.SourceAuthentication auth = (E.SourceAuthentication)source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
@@ -121,6 +120,9 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                         soup_uri.set_user (decoded_user);
                         soup_uri.set_path ("/calendar/dav/%s/events".printf (decoded_user));
                         webdav.soup_uri = soup_uri;
+                        break;
+                    case "keep_copy":
+                        offline.set_stay_synchronized (((Gtk.CheckButton)widget.widget).active);
                         break;
                 }
             }
