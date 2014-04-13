@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-13 18:12+0200\n"
+"POT-Creation-Date: 2014-04-13 18:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -254,32 +254,26 @@ msgid "Saturday"
 msgstr ""
 
 #: ../src/View/EventEdition/RepeatPanel.vala:323
-#, c-format
 msgid "Every last %s"
 msgstr ""
 
 #: ../src/View/EventEdition/RepeatPanel.vala:326
-#, c-format
 msgid "Every first %s"
 msgstr ""
 
 #: ../src/View/EventEdition/RepeatPanel.vala:329
-#, c-format
 msgid "Every second %s"
 msgstr ""
 
 #: ../src/View/EventEdition/RepeatPanel.vala:332
-#, c-format
 msgid "Every third %s"
 msgstr ""
 
 #: ../src/View/EventEdition/RepeatPanel.vala:335
-#, c-format
 msgid "Every fourth %s"
 msgstr ""
 
 #: ../src/View/EventEdition/RepeatPanel.vala:338
-#, c-format
 msgid "Every fifth %s"
 msgstr ""
 
@@ -426,7 +420,6 @@ msgid "Undo"
 msgstr ""
 
 #: ../src/View/SourceItem.vala:137
-#, c-format
 msgid "Calendar \"%s\" removed."
 msgstr ""
 
@@ -496,6 +489,10 @@ msgstr ""
 
 #: ../src/View/SourceSelector.vala:68
 msgid "Add New Calendar…"
+msgstr ""
+
+#: ../src/View/Grid/VAutoHider.vala:119
+msgid "$more more ..."
 msgstr ""
 
 #: ../src/View/Widgets/ContractorButtonWithMenu.vala:64
