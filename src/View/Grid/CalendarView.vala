@@ -69,15 +69,12 @@ public class CalendarView : Gtk.Grid {
     //--- Signal Handlers ---//
 
     void on_show_weeks_changed () {
-
         var model = Model.CalendarModel.get_default ();
         weeks.update (model.data_range.first, model.num_weeks);
     }
 
     void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
-
         Idle.add ( () => {
-
             foreach (var event in events)
                 add_event (source, event);
 
@@ -86,9 +83,7 @@ public class CalendarView : Gtk.Grid {
     }
 
     void on_events_updated (E.Source source, Gee.Collection<E.CalComponent> events) {
-
         Idle.add ( () => {
-
             foreach (var event in events)
                 update_event (source, event);
 
@@ -97,9 +92,7 @@ public class CalendarView : Gtk.Grid {
     }
 
     void on_events_removed (E.Source source, Gee.Collection<E.CalComponent> events) {
-
         Idle.add ( () => {
-
             foreach (var event in events)
                 remove_event (source, event);
 
@@ -109,7 +102,6 @@ public class CalendarView : Gtk.Grid {
 
     /* Indicates the month has changed */
     void on_model_parameters_changed () {
-
         var model = Model.CalendarModel.get_default ();
         if (grid.grid_range != null && model.data_range.equals (grid.grid_range))
             return; // nothing to do
@@ -131,7 +123,6 @@ public class CalendarView : Gtk.Grid {
 
         header.update_columns (model.week_starts_on);
         weeks.update (model.data_range.first, model.num_weeks);
-
         grid.set_range (model.data_range, model.month_start);
 
         // keep focus date on the same day of the month
@@ -143,7 +134,6 @@ public class CalendarView : Gtk.Grid {
 
     /* Render new event on the grid */
     void add_event (E.Source source, E.CalComponent event) {
-
         event.set_data("source", source);
         grid.add_event (event);
     }

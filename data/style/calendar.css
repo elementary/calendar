@@ -42,8 +42,12 @@
 	background-color: shade(@cell_color, 0.9);
 }
 
-#today, #today:focused {
-	background-color: mix(@cell_color, @selected_bg_color, 0.25); /* today date has nice shade of blue */
+#today {
+	background-color: mix(@cell_color, @selected_bg_color, 0.15); /* today date has nice shade of blue */
+}
+
+#today:focused {
+	background-color: mix(@cell_color, @selected_bg_color, 0.35); /* today date has nice shade of blue */
 }
 
 	.cell > #date {

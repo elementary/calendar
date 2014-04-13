@@ -21,16 +21,15 @@
  */
 
 namespace Maya.Plugins {
-    
     public class GooglePlugin : Peas.ExtensionBase, Peas.Activatable {
         public GLib.Object object { owned get; construct; }
 
         public GooglePlugin () {
           GLib.Object ();
         }
-        
+
         private GoogleBackend google_backend;
-        
+
         public void activate () {
             message ("Activating Google plugin");
             google_backend = new GoogleBackend ();

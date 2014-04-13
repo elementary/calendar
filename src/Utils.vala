@@ -707,7 +707,7 @@ namespace Maya.Util {
      */
 
     public void save_temp_selected_calendars (){
-        
+        //TODO:Create the code !
     }
 
     public string get_hexa_color (Gdk.RGBA color) {

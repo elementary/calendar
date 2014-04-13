@@ -95,7 +95,7 @@ public class Maya.Model.CalendarModel : Object {
             break;
         }
 
-        this.month_start = Util.get_start_of_month ();
+        this.month_start = Util.get_start_of_month (saved_state.get_page ());
         compute_ranges ();
 
         source_client = new Gee.HashMap<E.Source, E.CalClient> (
@@ -248,6 +248,7 @@ public class Maya.Model.CalendarModel : Object {
     //--- Helper Methods ---//
 
     void compute_ranges () {
+        saved_state.month_page = month_start.format ("%Y-%m");
         var month_end = month_start.add_full (0, 1, -1);
         month_range = new Util.DateRange (month_start, month_end);
 

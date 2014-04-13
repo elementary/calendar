@@ -126,10 +126,11 @@ namespace Maya {
                 return;
             }
 
+            init_prefs ();
+
             var calmodel = Model.CalendarModel.get_default ();
             calmodel.load_all_sources ();
 
-            init_prefs ();
             init_gui ();
             window.show_all ();
 
@@ -189,9 +190,6 @@ namespace Maya {
 
             if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
                 window.maximize ();
-
-            calview.today ();
-
         }
 
         void on_agenda_view_shown_changed (bool old, bool shown) {

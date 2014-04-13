@@ -26,17 +26,37 @@ namespace Maya.Settings {
 
         public int window_width { get; set; }
         public int window_height { get; set; }
-
         public WindowState window_state { get; set; }
-
         public bool show_weeks { get; set; }
-
         public int hpaned_position { get; set; }
+        public string month_page { get; set; }
+        public string selected_day { get; set; }
 
         public SavedState () {
             base ("org.pantheon.maya.savedstate");
         }
 
+        public DateTime get_page () {
+            if (month_page == null)
+                return new DateTime.now_local ();
+            if (month_page == "")
+                return new DateTime.now_local ();
+            var numbers = month_page.split ("-", 2);
+            var dt = new DateTime.local (int.parse (numbers[0]), 1, 1, 0, 0, 0);
+            dt = dt.add_months (int.parse (numbers[1])-1);
+            return dt;
+        }
+        
+        public DateTime get_selected () {
+            if (selected_day == null)
+                return new DateTime.now_local ();
+            if (selected_day == "")
+                return new DateTime.now_local ();
+            var numbers = selected_day.split ("-", 2);
+            var dt = new DateTime.local (int.parse (numbers[0]), 1, 1, 0, 0, 0);
+            dt = dt.add_days (int.parse (numbers[1])-1);
+            return dt;
+        }
     }
 
 }

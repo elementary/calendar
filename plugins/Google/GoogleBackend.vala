@@ -21,18 +21,17 @@
  */
 
 public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
-    
     public string get_name () {
         return _("Google");
     }
-    
+
     public string get_uid () {
         return "google-stub";
     }
-    
+
     public Gee.Collection<PlacementWidget> get_new_calendar_widget (E.Source? to_edit = null) {
         var collection = new Gee.LinkedList<PlacementWidget> ();
-        
+
         var user_label = new PlacementWidget ();
         user_label.widget = new Gtk.Label (_("User:"));
         ((Gtk.Label) user_label.widget).xalign = 1;
@@ -40,7 +39,7 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
         user_label.column = 0;
         user_label.ref_name = "user_label";
         collection.add (user_label);
-        
+
         var user_entry = new PlacementWidget ();
         user_entry.widget = new Gtk.Entry ();
         ((Gtk.Entry)user_entry.widget).placeholder_text = _("user.name or user.name@gmail.com");
@@ -52,10 +51,11 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
             E.SourceAuthentication auth = (E.SourceAuthentication)to_edit.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
             ((Gtk.Entry)user_entry.widget).text = auth.user;
         }
+
         collection.add (user_entry);
-        
         return collection;
     }
+
     public void add_new_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets) {
         try {
             var new_source = new E.Source (null, null);
@@ -66,7 +66,6 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
             cal.backend_name = "caldav";
             E.SourceWebdav webdav = (E.SourceWebdav)new_source.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
             E.SourceAuthentication auth = (E.SourceAuthentication)new_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
-            
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
                     case "user_entry":
@@ -74,6 +73,7 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                         if (!decoded_user.contains ("@") && !decoded_user.contains ("%40")) {
                             decoded_user = "%s@gmail.com".printf (decoded_user);
                         }
+
                         auth.user = decoded_user;
                         var soup_uri = new Soup.URI (null);
                         soup_uri.set_host ("www.google.com");
@@ -84,7 +84,7 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                         break;
                 }
             }
-        
+
             var registry = new E.SourceRegistry.sync (null);
             var list = new List<E.Source> ();
             list.append (new_source);
@@ -93,11 +93,12 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
             if (set_default) {
                 registry.default_calendar = new_source;
             }
+
         } catch (GLib.Error error) {
             critical (error.message);
         }
     }
-    
+
     public void modify_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets, E.Source source) {
         try {
             source.display_name = name;
@@ -105,7 +106,6 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
             cal.color = color;
             E.SourceWebdav webdav = (E.SourceWebdav)source.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
             E.SourceAuthentication auth = (E.SourceAuthentication)source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
-            
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
                     case "user_entry":
@@ -113,6 +113,7 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                         if (!decoded_user.contains ("@") && !decoded_user.contains ("%40")) {
                             decoded_user = "%s@gmail.com".printf (decoded_user);
                         }
+
                         auth.user = decoded_user;
                         var soup_uri = new Soup.URI (null);
                         soup_uri.set_host ("www.google.com");
@@ -123,11 +124,13 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                         break;
                 }
             }
+
             source.write.begin (null);
             if (set_default) {
                 var registry = new E.SourceRegistry.sync (null);
                 registry.default_calendar = source;
             }
+
         } catch (GLib.Error error) {
             critical (error.message);
         }
