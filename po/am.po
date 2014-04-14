@@ -7,529 +7,527 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-08 14:10+0200\n"
-"PO-Revision-Date: 2014-03-26 15:41+0000\n"
+"POT-Creation-Date: 2014-04-13 18:27+0200\n"
+"PO-Revision-Date: 2014-04-14 00:35+0000\n"
 "Last-Translator: samson <Unknown>\n"
 "Language-Team: Amharic <am@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-09 06:48+0000\n"
+"X-Launchpad-Export-Date: 2014-04-14 05:46+0000\n"
 "X-Generator: Launchpad (build 16976)\n"
 "Language: am\n"
 
-#: /tmp/maya/po/../src//View/SourceSelector.vala:67
-msgid "Add New Calendar…"
-msgstr "አዲስ ቀን መቁጠሪያ መጨመሪያ…"
+#: ../src/Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
 
-#: /tmp/maya/po/../src//View/SourceItem.vala:92
-#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:132
-msgid "Remove"
-msgstr ""
+#: ../src/Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
-#: /tmp/maya/po/../src//View/SourceItem.vala:98
-#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:131
-msgid "Edit…"
-msgstr "ማረሚያ…"
+#: ../src/Settings/LanguagesFormat.vala:33
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
 
-#: /tmp/maya/po/../src//View/SourceItem.vala:119
-msgid "Undo"
-msgstr ""
+#: ../src/Settings/LanguagesFormat.vala:36
+msgid "%H:%M"
+msgstr "%H:%M"
 
-#: /tmp/maya/po/../src//View/SourceItem.vala:137
-#, c-format
-msgid "Calendar \"%s\" removed."
-msgstr "ቀን መቁጠሪያው \"%s\" ተወግዷል"
+#: ../src/Backends/PlacementWidget.vala:37
+msgid "User:"
+msgstr "ተጠቃሚ:"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:54
-msgid "Cancel"
-msgstr "መሰረዣ"
+#: ../src/Backends/PlacementWidget.vala:46
+msgid "user.name"
+msgstr "የተጠቃሚ.ስም"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:55
-msgid "Create"
-msgstr ""
+#: ../src/Backends/PlacementWidget.vala:59
+msgid "Email:"
+msgstr "ኢሜይል:"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:64
-msgid "Name:"
-msgstr ""
+#: ../src/Backends/PlacementWidget.vala:68
+msgid "john@doe.com"
+msgstr "john@doe.com"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:67
-msgid "Calendar Name"
-msgstr "የ ቀን መቁጠሪያ ስም"
+#: ../src/Backends/PlacementWidget.vala:80
+msgid "Keep a copy locally"
+msgstr "ኮፒ በ አካባቢው ማስቀመጫ"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:90
-msgid "Type:"
-msgstr ""
+#: ../src/Backends/LocalBackend.vala:26
+msgid "On this computer"
+msgstr "በእዚህ ኮምፒዩተር ላይ"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:111
-msgid "Color:"
-msgstr ""
+#: ../src/View/EventEdition/GuestsPanel.vala:44
+msgid "Participants:"
+msgstr "ተሳታፊዎች:"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:116
-msgid "Mark as default calendar"
-msgstr "እንደ ነባር ቀን መቁጠሪያ ምልክት ማድረጊያ"
+#: ../src/View/EventEdition/GuestsPanel.vala:47
+msgid "Invite…"
+msgstr "መጋበዣ…"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:146
-msgid "Create Calendar"
-msgstr ""
+#: ../src/View/EventEdition/GuestsPanel.vala:151
+#: ../src/View/EventEdition/GuestsPanel.vala:162
+msgid "Pending"
+msgstr "ያልተወሰነ"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:153
-msgid "Save"
-msgstr ""
+#: ../src/View/EventEdition/GuestsPanel.vala:156
+msgid "Accepted"
+msgstr "ተቀብያለሁ"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:40
-msgid "Create a new event"
-msgstr "አዲስ ሁኔታ መፍጠሪያ"
+#: ../src/View/EventEdition/GuestsPanel.vala:159
+msgid "Declined"
+msgstr "አልቀበልም"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:43
-msgid "Manage Calendars"
-msgstr "ቀን መቁጠሪያ አስተዳዳሪ"
+#: ../src/View/EventEdition/InfoPanel.vala:59
+msgid "From:"
+msgstr "ከ :"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:51
-msgid "Search Events"
-msgstr "ሁኔታዎችን መፈለጊያ"
+#: ../src/View/EventEdition/InfoPanel.vala:65
+msgid "All day:"
+msgstr "ሙሉ ቀን"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:54
-msgid "Export or Share the default Calendar"
-msgstr "ነባር ቀን መቁጠሪያውን መላኪያ ወይንም መካፈያ"
+#: ../src/View/EventEdition/InfoPanel.vala:70
+msgid "To:"
+msgstr "ወደ :"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:68
-msgid "Today"
-msgstr "ዛሬ"
+#: ../src/View/EventEdition/InfoPanel.vala:89
+msgid "Title:"
+msgstr "አርእስት:"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:69
-msgid "Show Week Numbers"
-msgstr "የሳምንቶቹን ቁጥር ማሳያ"
+#: ../src/View/EventEdition/InfoPanel.vala:91
+msgid "Name of Event"
+msgstr "የሁኔታዎች ስም"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:71
-msgid "About"
-msgstr "ስለ"
+#: ../src/View/EventEdition/InfoPanel.vala:94
+msgid "Calendar:"
+msgstr "ቀን መቁጠሪያ:"
 
-#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
-#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
-msgid "Export Calendar..."
-msgstr "ቀን መቁጠሪያ መላኪያ..."
+#: ../src/View/EventEdition/InfoPanel.vala:112
+msgid "Comments:"
+msgstr "አስተያየት:"
 
-#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
-msgid "calendar.ics"
-msgstr "calendar.ics"
+#: ../src/View/EventEdition/EventDialog.vala:61
+msgid "Add Event"
+msgstr "ሁኔታዎች መጨመሪያ"
 
-#: /tmp/maya/po/../src//View/Sidebar/Sidebar.vala:38
+#: ../src/View/EventEdition/EventDialog.vala:64
+msgid "Edit Event"
+msgstr "ሁኔታዎችን ማረሚያ"
+
+#: ../src/View/EventEdition/EventDialog.vala:92
+msgid "General Informations"
+msgstr "ባጠቃላይ መረጃዎች"
+
+#: ../src/View/EventEdition/EventDialog.vala:95
+msgid "Location"
+msgstr "አካባቢ"
+
+#: ../src/View/EventEdition/EventDialog.vala:98
+msgid "Guests"
+msgstr "እንግዶች"
+
+#: ../src/View/EventEdition/EventDialog.vala:101
+msgid "Reminders"
+msgstr "አስታዋሾች"
+
+#: ../src/View/EventEdition/EventDialog.vala:104
+#: ../src/View/EventEdition/RepeatPanel.vala:162
+msgid "Repeat"
+msgstr "መድገሚያ"
+
+#: ../src/View/EventEdition/EventDialog.vala:134
+msgid "Create Event"
+msgstr "ሁኔታዎች መፍጠሪያ"
+
+#: ../src/View/EventEdition/EventDialog.vala:136
+msgid "Save Changes"
+msgstr "ለውጦቹን ማስቀመጫ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:49
+msgid "Repeat:"
+msgstr "መድገሚያ:"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:54
+msgid "Daily"
+msgstr "በየቀኑ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:55
+msgid "Weekly"
+msgstr "በየሳምንቱ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:56
+msgid "Monthly"
+msgstr "በየወሩ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:57
+msgid "Yearly"
+msgstr "በየአመቱ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:96
+msgid "Every:"
+msgstr "በየ:"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:103
+msgid "Day"
+msgstr "ቀን"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:103
+msgid "Days"
+msgstr "ቀኖች"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:106
+#: ../src/View/EventEdition/RepeatPanel.vala:117
+msgid "Week"
+msgstr "ሳምንት"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:106
+msgid "Weeks"
+msgstr "ሳምንቶች"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:109
+msgid "Month"
+msgstr "ወር"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:109
+msgid "Months"
+msgstr "ወሮች"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:112
+msgid "Year"
+msgstr "አመት"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:112
+msgid "Years"
+msgstr "አመቶች"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:127
+msgid "Ends:"
+msgstr "መጨረሻ:"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:129
+#: ../src/View/EventEdition/RepeatPanel.vala:162
+msgid "Repeats"
+msgstr "መድገሚያ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:133
+msgid "Never"
+msgstr "በፍጹም"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:134
+msgid "Until"
+msgstr "እስከ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:135
+msgid "After"
+msgstr "በኋላ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:181
+msgid "The same day every month"
+msgstr "በ የወሩ በዚህ ቀን"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:299
+msgid "Sunday"
+msgstr "እሑድ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:302
+msgid "Monday"
+msgstr "ሰኞ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:305
+msgid "Tuesday"
+msgstr "ማክሰኞ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:308
+msgid "Wednesday"
+msgstr "ረቡዕ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:311
+msgid "Thursday"
+msgstr "ሐሙስ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:314
+msgid "Friday"
+msgstr "አርብ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:317
+msgid "Saturday"
+msgstr "ቅዳሜ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:323
+msgid "Every last %s"
+msgstr "በየ መጨረሻው %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:326
+msgid "Every first %s"
+msgstr "በየ መጀመሪያው first %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:329
+msgid "Every second %s"
+msgstr "በየ ሰከንድ %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:332
+msgid "Every third %s"
+msgstr "በየ ሶስት %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:335
+msgid "Every fourth %s"
+msgstr "በየ አራት %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:338
+msgid "Every fifth %s"
+msgstr "በየ አምስት %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:346
+msgid "Mon"
+msgstr "ሰኞ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:347
+msgid "Tue"
+msgstr "ማክ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:348
+msgid "Wed"
+msgstr "ረቡ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:349
+msgid "Thu"
+msgstr "ሐሙ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:350
+msgid "Fri"
+msgstr "አር"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:351
+msgid "Sat"
+msgstr "ቅዳ"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:352
+msgid "Sun"
+msgstr "እሑ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:32
+msgid "Reminders:"
+msgstr "አስታዋሾች:"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:35
+msgid "No Reminders."
+msgstr "አስታዋሾች የሉም"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:47
+msgid "Add Reminder"
+msgstr "አስታዋሽ መጨመሪያ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:176
+msgid "0 minutes"
+msgstr "በ 0 ደቂቆች ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:177
+msgid "1 minutes"
+msgstr "በ 1 ደቂቆች ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:178
+msgid "5 minutes"
+msgstr "በ 5 ደቂቆች ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:179
+msgid "10 minutes"
+msgstr "በ 10 ደቂቆች ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:180
+msgid "15 minutes"
+msgstr "በ 15 ደቂቆች ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:181
+msgid "20 minutes"
+msgstr "በ 20 ደቂቆች ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:182
+msgid "25 minutes"
+msgstr "በ 25 ደቂቆች ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:183
+msgid "30 minutes"
+msgstr "በ 30 ደቂቆች ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:184
+msgid "45 minutes"
+msgstr "በ 45 ደቂቆች ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:185
+msgid "1 hour"
+msgstr "በ 1 ሰአት ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:186
+msgid "2 hours"
+msgstr "በ 2 ሰአት ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:187
+msgid "3 hours"
+msgstr "በ 3 ሰአት ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:188
+msgid "12 hours"
+msgstr "በ 12 ሰአት ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:189
+msgid "24 hours"
+msgstr "በ 24 ሰአት ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:190
+msgid "2 days"
+msgstr "በ 2 ቀኖች ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:191
+msgid "1 week"
+msgstr "በ 1 ሳምንት ውስጥ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:200
+msgid "Notification"
+msgstr "ማስታወቂያ"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:201
+msgid "Email"
+msgstr "ኢሜይል"
+
+#: ../src/View/EventEdition/LocationPanel.vala:37
+msgid "Location:"
+msgstr "አካባቢ:"
+
+#: ../src/View/EventEdition/LocationPanel.vala:39
+msgid "John Smith OR Example St."
+msgstr "ሙሉ ስም ወይንም ለምሳሌ አድራሻ"
+
+#: ../src/View/Sidebar/Sidebar.vala:38
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "የእርስዎ ወደ ፊት የሚመጡ ሁኔታዎች የሚታዩት እዚህ ነው ቀን እና ሁኔታዎች ሲመርጡ"
 
-#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:212
+#: ../src/View/Sidebar/EventWidget.vala:131 ../src/View/SourceItem.vala:98
+msgid "Edit…"
+msgstr "ማረሚያ…"
+
+#: ../src/View/Sidebar/EventWidget.vala:132 ../src/View/SourceItem.vala:92
+msgid "Remove"
+msgstr "ማስወገጃ"
+
+#: ../src/View/Sidebar/EventWidget.vala:212
 msgid "All day"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:49
-msgid "Repeat:"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:54
-msgid "Daily"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:55
-msgid "Weekly"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:56
-msgid "Monthly"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:57
-msgid "Yearly"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:96
-msgid "Every:"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:103
-msgid "Day"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:103
-msgid "Days"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:106
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:117
-msgid "Week"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:106
-msgid "Weeks"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:109
-msgid "Month"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:109
-msgid "Months"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:112
-msgid "Year"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:112
-msgid "Years"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:127
-msgid "Ends:"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:129
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:162
-msgid "Repeats"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:133
-msgid "Never"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:134
-msgid "Until"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:135
-msgid "After"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:162
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:104
-msgid "Repeat"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:181
-msgid "The same day every month"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:299
-msgid "Sunday"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:302
-msgid "Monday"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:305
-msgid "Tuesday"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:308
-msgid "Wednesday"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:311
-msgid "Thursday"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:314
-msgid "Friday"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:317
-msgid "Saturday"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:323
-#, c-format
-msgid "Every last %s"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:326
-#, c-format
-msgid "Every first %s"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:329
-#, c-format
-msgid "Every second %s"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:332
-#, c-format
-msgid "Every third %s"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:335
-#, c-format
-msgid "Every fourth %s"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:338
-#, c-format
-msgid "Every fifth %s"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:346
-msgid "Mon"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:347
-msgid "Tue"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:348
-msgid "Wed"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:349
-msgid "Thu"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:350
-msgid "Fri"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:351
-msgid "Sat"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:352
-msgid "Sun"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:32
-msgid "Reminders:"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:35
-msgid "No Reminders."
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:47
-msgid "Add Reminder"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:176
-msgid "0 minutes"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:177
-msgid "1 minutes"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:178
-msgid "5 minutes"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:179
-msgid "10 minutes"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:180
-msgid "15 minutes"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:181
-msgid "20 minutes"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:182
-msgid "25 minutes"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:183
-msgid "30 minutes"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:184
-msgid "45 minutes"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:185
-msgid "1 hour"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:186
-msgid "2 hours"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:187
-msgid "3 hours"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:188
-msgid "12 hours"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:189
-msgid "24 hours"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:190
-msgid "2 days"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:191
-msgid "1 week"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:200
-msgid "Notification"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:201
-msgid "Email"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/LocationPanel.vala:37
-msgid "Location:"
-msgstr ""
-
-#: /tmp/maya/po/../src//View/EventEdition/LocationPanel.vala:39
-msgid "John Smith OR Example St."
-msgstr "ሙሉ ስም ወይንም ለምሳሌ አድራሻ"
-
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:59
-msgid "From:"
-msgstr "ከ :"
-
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:65
-msgid "All day:"
 msgstr "ሙሉ ቀን"
 
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:70
-msgid "To:"
-msgstr "ወደ :"
+#: ../src/View/SourceItem.vala:119
+msgid "Undo"
+msgstr "መተው"
 
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:89
-msgid "Title:"
-msgstr ""
+#: ../src/View/SourceItem.vala:137
+msgid "Calendar \"%s\" removed."
+msgstr "ቀን መቁጠሪያው \"%s\" ተወግዷል"
 
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:91
-msgid "Name of Event"
-msgstr "የሁኔታዎች ስም"
+#: ../src/View/MayaToolbar.vala:41
+msgid "Create a new event"
+msgstr "አዲስ ሁኔታ መፍጠሪያ"
 
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:94
-msgid "Calendar:"
-msgstr ""
+#: ../src/View/MayaToolbar.vala:45
+msgid "Manage Calendars"
+msgstr "ቀን መቁጠሪያ አስተዳዳሪ"
 
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:112
-msgid "Comments:"
-msgstr ""
+#: ../src/View/MayaToolbar.vala:53
+msgid "Search Events"
+msgstr "ሁኔታዎችን መፈለጊያ"
 
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:44
-msgid "Participants:"
-msgstr ""
+#: ../src/View/MayaToolbar.vala:56
+msgid "Export or Share the default Calendar"
+msgstr "ነባር ቀን መቁጠሪያውን መላኪያ ወይንም መካፈያ"
 
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:47
-msgid "Invite…"
-msgstr ""
+#: ../src/View/MayaToolbar.vala:70
+msgid "Today"
+msgstr "ዛሬ"
 
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:151
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:162
-msgid "Pending"
-msgstr ""
+#: ../src/View/MayaToolbar.vala:71
+msgid "Show Week Numbers"
+msgstr "የሳምንቶቹን ቁጥር ማሳያ"
 
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:156
-msgid "Accepted"
-msgstr ""
+#: ../src/View/MayaToolbar.vala:73
+msgid "About"
+msgstr "ስለ"
 
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:159
-msgid "Declined"
-msgstr ""
+#: ../src/View/SourceDialog.vala:54
+msgid "Cancel"
+msgstr "መሰረዣ"
 
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:61
-msgid "Add Event"
-msgstr "ሁኔታዎች መጨመሪያ"
+#: ../src/View/SourceDialog.vala:55
+msgid "Create"
+msgstr "መፍጠሪያ"
 
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:64
-msgid "Edit Event"
-msgstr "ሁኔታዎችን ማረሚያ"
+#: ../src/View/SourceDialog.vala:64
+msgid "Name:"
+msgstr "ስም:"
 
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:92
-msgid "General Informations"
-msgstr ""
+#: ../src/View/SourceDialog.vala:67
+msgid "Calendar Name"
+msgstr "የ ቀን መቁጠሪያ ስም"
 
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:95
-msgid "Location"
-msgstr "አካባቢ"
+#: ../src/View/SourceDialog.vala:90
+msgid "Type:"
+msgstr "አይነት:"
 
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:98
-msgid "Guests"
-msgstr ""
+#: ../src/View/SourceDialog.vala:111
+msgid "Color:"
+msgstr "ቀለም:"
 
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:101
-msgid "Reminders"
-msgstr ""
+#: ../src/View/SourceDialog.vala:116
+msgid "Mark as default calendar"
+msgstr "እንደ ነባር ቀን መቁጠሪያ ምልክት ማድረጊያ"
 
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:134
-msgid "Create Event"
-msgstr "ሁኔታዎች መፍጠሪያ"
+#: ../src/View/SourceDialog.vala:146
+msgid "Create Calendar"
+msgstr "የ ቀን መቁጠሪያ መፍጠሪያ"
 
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:136
-msgid "Save Changes"
-msgstr "ለውጦቹን ማስቀመጫ"
+#: ../src/View/SourceDialog.vala:153
+msgid "Save"
+msgstr "ማስቀመጫ"
 
-#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
+#: ../src/View/SourceSelector.vala:68
+msgid "Add New Calendar…"
+msgstr "አዲስ ቀን መቁጠሪያ መጨመሪያ…"
 
-#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+#: ../src/View/Grid/VAutoHider.vala:119
+msgid "%u more…"
+msgstr "%u ተጨማሪ…"
 
-#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:33
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
+#: ../src/View/Widgets/ContractorButtonWithMenu.vala:64
+#: ../src/View/Widgets/ContractorButtonWithMenu.vala:73
+msgid "Export Calendar..."
+msgstr "ቀን መቁጠሪያ መላኪያ..."
 
-#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:36
-msgid "%H:%M"
-msgstr "%H:%M"
+#: ../src/View/Widgets/ContractorButtonWithMenu.vala:76
+msgid "calendar.ics"
+msgstr "calendar.ics"
 
-#: /tmp/maya/po/../src//Backends/LocalBackend.vala:26
-msgid "On this computer"
-msgstr "በእዚህ ኮምፒዩተር ላይ"
+#: ../plugins/CalDAV/CalDAVBackend.vala:26
+msgid "CalDAV"
+msgstr "CalDAV"
 
-#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:26
+#: ../plugins/CalDAV/CalDAVBackend.vala:45
+msgid "URL:"
+msgstr "URL:"
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:68
+msgid "Use a secure connection"
+msgstr "ታማኝ ግንኙነቶች መጠቀሚያ"
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:90
+msgid "Server handles meeting invitations"
+msgstr "ሰርቨሩ የስብሰባ ግብዣዎችን ይይዛል"
+
+#: ../plugins/Google/GoogleBackend.vala:25
 msgid "Google"
 msgstr "ጉግል"
 
-#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:37
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
-msgid "User:"
-msgstr ""
-
-#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:46
+#: ../plugins/Google/GoogleBackend.vala:48
 msgid "user.name or user.name@gmail.com"
 msgstr "የተጠቃሚ.ስም ወይንም የተጠቃሚ.ስም@gmail.com"
-
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
-msgid "CalDAV"
-msgstr ""
-
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
-msgid "URL:"
-msgstr ""
-
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
-msgid "Use a secure connection"
-msgstr ""
-
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
-msgid "user.name"
-msgstr "የተጠቃሚ.ስም"
-
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
-msgid "Email:"
-msgstr "ኢሜይል:"
-
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
-msgid "john@doe.com"
-msgstr "john@doe.com"
-
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
-msgid "Server handles meeting invitations"
-msgstr ""
 
 #~ msgid "Contacts"
 #~ msgstr "ግንኙነቶች"

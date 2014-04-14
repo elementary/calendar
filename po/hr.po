@@ -7,114 +7,398 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-08 14:10+0200\n"
+"POT-Creation-Date: 2014-04-13 18:27+0200\n"
 "PO-Revision-Date: 2014-04-10 12:39+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-11 05:42+0000\n"
+"X-Launchpad-Export-Date: 2014-04-14 05:47+0000\n"
 "X-Generator: Launchpad (build 16976)\n"
 "Language: hr\n"
 
-#: /tmp/maya/po/../src//View/SourceSelector.vala:67
-msgid "Add New Calendar…"
-msgstr "Dodaj novi kalendar..."
+#: ../src/Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
 
-#: /tmp/maya/po/../src//View/SourceItem.vala:92
-#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:132
-msgid "Remove"
-msgstr "Ukloni"
+#: ../src/Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
-#: /tmp/maya/po/../src//View/SourceItem.vala:98
-#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:131
-msgid "Edit…"
-msgstr "Uredi..."
+#: ../src/Settings/LanguagesFormat.vala:33
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
 
-#: /tmp/maya/po/../src//View/SourceItem.vala:119
-msgid "Undo"
-msgstr "Poništi"
+#: ../src/Settings/LanguagesFormat.vala:36
+msgid "%H:%M"
+msgstr "%H:%M"
 
-#: /tmp/maya/po/../src//View/SourceItem.vala:137
-#, c-format
-msgid "Calendar \"%s\" removed."
-msgstr "Kalendar \"%s\" uklonjen."
+#: ../src/Backends/PlacementWidget.vala:37
+msgid "User:"
+msgstr "Korisnik:"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:54
-msgid "Cancel"
-msgstr "Poništi"
+#: ../src/Backends/PlacementWidget.vala:46
+msgid "user.name"
+msgstr "korisničko.ime"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:55
-msgid "Create"
-msgstr "Napravi"
+#: ../src/Backends/PlacementWidget.vala:59
+msgid "Email:"
+msgstr "E-pošta:"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:64
-msgid "Name:"
-msgstr "Naziv:"
+#: ../src/Backends/PlacementWidget.vala:68
+msgid "john@doe.com"
+msgstr "goran@gogo.com"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:67
-msgid "Calendar Name"
-msgstr "Naziv kalendara"
+#: ../src/Backends/PlacementWidget.vala:80
+msgid "Keep a copy locally"
+msgstr ""
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:90
-msgid "Type:"
-msgstr "Vrsta:"
+#: ../src/Backends/LocalBackend.vala:26
+msgid "On this computer"
+msgstr "Na ovom računalu"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:111
-msgid "Color:"
-msgstr "Boja:"
+#: ../src/View/EventEdition/GuestsPanel.vala:44
+msgid "Participants:"
+msgstr "Sudionici:"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:116
-msgid "Mark as default calendar"
-msgstr "Označi kao uobičajeni kalendar"
+#: ../src/View/EventEdition/GuestsPanel.vala:47
+msgid "Invite…"
+msgstr "Pozovi..."
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:146
-msgid "Create Calendar"
-msgstr "Napravi kalendar"
+#: ../src/View/EventEdition/GuestsPanel.vala:151
+#: ../src/View/EventEdition/GuestsPanel.vala:162
+msgid "Pending"
+msgstr "Na čekanju"
 
-#: /tmp/maya/po/../src//View/SourceDialog.vala:153
-msgid "Save"
-msgstr "Spremi"
+#: ../src/View/EventEdition/GuestsPanel.vala:156
+msgid "Accepted"
+msgstr "Prihvaćen"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:40
-msgid "Create a new event"
-msgstr "Napravi novi događaj"
+#: ../src/View/EventEdition/GuestsPanel.vala:159
+msgid "Declined"
+msgstr "Odbijen"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:43
-msgid "Manage Calendars"
-msgstr "Upravljanje kalendarima"
+#: ../src/View/EventEdition/InfoPanel.vala:59
+msgid "From:"
+msgstr "Šalje:"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:51
-msgid "Search Events"
-msgstr "Pretraži događaje"
+#: ../src/View/EventEdition/InfoPanel.vala:65
+msgid "All day:"
+msgstr "Cijeli dan:"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:54
-msgid "Export or Share the default Calendar"
-msgstr "Izvezi ili dijeli uobičajeni kalendar"
+#: ../src/View/EventEdition/InfoPanel.vala:70
+msgid "To:"
+msgstr "Za:"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:68
-msgid "Today"
-msgstr "Danas"
+#: ../src/View/EventEdition/InfoPanel.vala:89
+msgid "Title:"
+msgstr "Naslov:"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:69
-msgid "Show Week Numbers"
-msgstr "Prikaži brojeve tjedna"
+#: ../src/View/EventEdition/InfoPanel.vala:91
+msgid "Name of Event"
+msgstr "Naziv događaja"
 
-#: /tmp/maya/po/../src//View/MayaToolbar.vala:71
-msgid "About"
-msgstr "O programu"
+#: ../src/View/EventEdition/InfoPanel.vala:94
+msgid "Calendar:"
+msgstr "Kalendar:"
 
-#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:64
-#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:73
-msgid "Export Calendar..."
-msgstr "Izvezi kalendar..."
+#: ../src/View/EventEdition/InfoPanel.vala:112
+msgid "Comments:"
+msgstr "Komentari:"
 
-#: /tmp/maya/po/../src//View/Widgets/ContractorButtonWithMenu.vala:76
-msgid "calendar.ics"
-msgstr "calendar.ics"
+#: ../src/View/EventEdition/EventDialog.vala:61
+msgid "Add Event"
+msgstr "Dodaj događaj"
 
-#: /tmp/maya/po/../src//View/Sidebar/Sidebar.vala:38
+#: ../src/View/EventEdition/EventDialog.vala:64
+msgid "Edit Event"
+msgstr "Uredi događaj"
+
+#: ../src/View/EventEdition/EventDialog.vala:92
+msgid "General Informations"
+msgstr "Opće informacije"
+
+#: ../src/View/EventEdition/EventDialog.vala:95
+msgid "Location"
+msgstr "Lokacija"
+
+#: ../src/View/EventEdition/EventDialog.vala:98
+msgid "Guests"
+msgstr "Gosti"
+
+#: ../src/View/EventEdition/EventDialog.vala:101
+msgid "Reminders"
+msgstr "Podsjetnici"
+
+#: ../src/View/EventEdition/EventDialog.vala:104
+#: ../src/View/EventEdition/RepeatPanel.vala:162
+msgid "Repeat"
+msgstr "Ponovi"
+
+#: ../src/View/EventEdition/EventDialog.vala:134
+msgid "Create Event"
+msgstr "Napravi događaj"
+
+#: ../src/View/EventEdition/EventDialog.vala:136
+msgid "Save Changes"
+msgstr "Spremi promjene"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:49
+msgid "Repeat:"
+msgstr "Ponovi:"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:54
+msgid "Daily"
+msgstr "Dnevno"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:55
+msgid "Weekly"
+msgstr "Tjedno"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:56
+msgid "Monthly"
+msgstr "Mjesečno"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:57
+msgid "Yearly"
+msgstr "Godišnje"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:96
+msgid "Every:"
+msgstr "Svaki:"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:103
+msgid "Day"
+msgstr "Dan"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:103
+msgid "Days"
+msgstr "Dana"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:106
+#: ../src/View/EventEdition/RepeatPanel.vala:117
+msgid "Week"
+msgstr "Tjedan"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:106
+msgid "Weeks"
+msgstr "Tjedana"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:109
+msgid "Month"
+msgstr "Mjesec"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:109
+msgid "Months"
+msgstr "Mjeseci"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:112
+msgid "Year"
+msgstr "Godina"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:112
+msgid "Years"
+msgstr "Godina"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:127
+msgid "Ends:"
+msgstr "Završava:"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:129
+#: ../src/View/EventEdition/RepeatPanel.vala:162
+msgid "Repeats"
+msgstr "Ponavlja se"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:133
+msgid "Never"
+msgstr "Nikad"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:134
+msgid "Until"
+msgstr "Do"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:135
+msgid "After"
+msgstr "Nakon"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:181
+msgid "The same day every month"
+msgstr "Isti dan svaki mjesec"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:299
+msgid "Sunday"
+msgstr "Nedjelja"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:302
+msgid "Monday"
+msgstr "Ponedjeljak"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:305
+msgid "Tuesday"
+msgstr "Utorak"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:308
+msgid "Wednesday"
+msgstr "Srijeda"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:311
+msgid "Thursday"
+msgstr "Četvrtak"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:314
+msgid "Friday"
+msgstr "Petak"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:317
+msgid "Saturday"
+msgstr "Subota"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:323
+msgid "Every last %s"
+msgstr "Svaki posljednji %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:326
+msgid "Every first %s"
+msgstr "Svaki prvi %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:329
+msgid "Every second %s"
+msgstr "Svaki drugi %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:332
+msgid "Every third %s"
+msgstr "Svaki treći %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:335
+msgid "Every fourth %s"
+msgstr "Svaki četvrti %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:338
+msgid "Every fifth %s"
+msgstr "Svaki peti %s"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:346
+msgid "Mon"
+msgstr "Pon"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:347
+msgid "Tue"
+msgstr "Uto"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:348
+msgid "Wed"
+msgstr "Sri"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:349
+msgid "Thu"
+msgstr "Čet"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:350
+msgid "Fri"
+msgstr "Pet"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:351
+msgid "Sat"
+msgstr "Sub"
+
+#: ../src/View/EventEdition/RepeatPanel.vala:352
+msgid "Sun"
+msgstr "Ned"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:32
+msgid "Reminders:"
+msgstr "Podsjetnici:"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:35
+msgid "No Reminders."
+msgstr "Bez podsjetnika."
+
+#: ../src/View/EventEdition/ReminderPanel.vala:47
+msgid "Add Reminder"
+msgstr "Dodaj podsjetnik"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:176
+msgid "0 minutes"
+msgstr "0 minuta"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:177
+msgid "1 minutes"
+msgstr "1 minuta"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:178
+msgid "5 minutes"
+msgstr "5 minuta"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:179
+msgid "10 minutes"
+msgstr "10 minuta"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:180
+msgid "15 minutes"
+msgstr "15 minuta"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:181
+msgid "20 minutes"
+msgstr "20 minuta"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:182
+msgid "25 minutes"
+msgstr "25 minuta"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:183
+msgid "30 minutes"
+msgstr "30 minuta"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:184
+msgid "45 minutes"
+msgstr "45 minuta"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:185
+msgid "1 hour"
+msgstr "1 sat"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:186
+msgid "2 hours"
+msgstr "2 sata"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:187
+msgid "3 hours"
+msgstr "3 sata"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:188
+msgid "12 hours"
+msgstr "12 sati"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:189
+msgid "24 hours"
+msgstr "24 sata"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:190
+msgid "2 days"
+msgstr "2 dana"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:191
+msgid "1 week"
+msgstr "1 tjedan"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:200
+msgid "Notification"
+msgstr "Obavijest"
+
+#: ../src/View/EventEdition/ReminderPanel.vala:201
+msgid "Email"
+msgstr "E-pošta"
+
+#: ../src/View/EventEdition/LocationPanel.vala:37
+msgid "Location:"
+msgstr "Lokacija:"
+
+#: ../src/View/EventEdition/LocationPanel.vala:39
+msgid "John Smith OR Example St."
+msgstr "Goran Gogić ILI npr. Ulica"
+
+#: ../src/View/Sidebar/Sidebar.vala:38
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -122,416 +406,130 @@ msgstr ""
 "Vaši nadolazeći događaji će biti prikazani kada odaberete datum sa zakazanim "
 "događajima."
 
-#: /tmp/maya/po/../src//View/Sidebar/EventWidget.vala:212
+#: ../src/View/Sidebar/EventWidget.vala:131 ../src/View/SourceItem.vala:98
+msgid "Edit…"
+msgstr "Uredi..."
+
+#: ../src/View/Sidebar/EventWidget.vala:132 ../src/View/SourceItem.vala:92
+msgid "Remove"
+msgstr "Ukloni"
+
+#: ../src/View/Sidebar/EventWidget.vala:212
 msgid "All day"
 msgstr "Cijeli dan"
 
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:49
-msgid "Repeat:"
-msgstr "Ponovi:"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:54
-msgid "Daily"
-msgstr "Dnevno"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:55
-msgid "Weekly"
-msgstr "Tjedno"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:56
-msgid "Monthly"
-msgstr "Mjesečno"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:57
-msgid "Yearly"
-msgstr "Godišnje"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:96
-msgid "Every:"
-msgstr "Svaki:"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:103
-msgid "Day"
-msgstr "Dan"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:103
-msgid "Days"
-msgstr "Dana"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:106
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:117
-msgid "Week"
-msgstr "Tjedan"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:106
-msgid "Weeks"
-msgstr "Tjedana"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:109
-msgid "Month"
-msgstr "Mjesec"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:109
-msgid "Months"
-msgstr "Mjeseci"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:112
-msgid "Year"
-msgstr "Godina"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:112
-msgid "Years"
-msgstr "Godina"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:127
-msgid "Ends:"
-msgstr "Završava:"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:129
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:162
-msgid "Repeats"
-msgstr "Ponavlja se"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:133
-msgid "Never"
-msgstr "Nikad"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:134
-msgid "Until"
-msgstr "Do"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:135
-msgid "After"
-msgstr "Nakon"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:162
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:104
-msgid "Repeat"
-msgstr "Ponovi"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:181
-msgid "The same day every month"
-msgstr "Isti dan svaki mjesec"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:299
-msgid "Sunday"
-msgstr "Nedjelja"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:302
-msgid "Monday"
-msgstr "Ponedjeljak"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:305
-msgid "Tuesday"
-msgstr "Utorak"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:308
-msgid "Wednesday"
-msgstr "Srijeda"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:311
-msgid "Thursday"
-msgstr "Četvrtak"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:314
-msgid "Friday"
-msgstr "Petak"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:317
-msgid "Saturday"
-msgstr "Subota"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:323
-#, c-format
-msgid "Every last %s"
-msgstr "Svaki posljednji %s"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:326
-#, c-format
-msgid "Every first %s"
-msgstr "Svaki prvi %s"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:329
-#, c-format
-msgid "Every second %s"
-msgstr "Svaki drugi %s"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:332
-#, c-format
-msgid "Every third %s"
-msgstr "Svaki treći %s"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:335
-#, c-format
-msgid "Every fourth %s"
-msgstr "Svaki četvrti %s"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:338
-#, c-format
-msgid "Every fifth %s"
-msgstr "Svaki peti %s"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:346
-msgid "Mon"
-msgstr "Pon"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:347
-msgid "Tue"
-msgstr "Uto"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:348
-msgid "Wed"
-msgstr "Sri"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:349
-msgid "Thu"
-msgstr "Čet"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:350
-msgid "Fri"
-msgstr "Pet"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:351
-msgid "Sat"
-msgstr "Sub"
-
-#: /tmp/maya/po/../src//View/EventEdition/RepeatPanel.vala:352
-msgid "Sun"
-msgstr "Ned"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:32
-msgid "Reminders:"
-msgstr "Podsjetnici:"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:35
-msgid "No Reminders."
-msgstr "Bez podsjetnika."
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:47
-msgid "Add Reminder"
-msgstr "Dodaj podsjetnik"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:176
-msgid "0 minutes"
-msgstr "0 minuta"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:177
-msgid "1 minutes"
-msgstr "1 minuta"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:178
-msgid "5 minutes"
-msgstr "5 minuta"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:179
-msgid "10 minutes"
-msgstr "10 minuta"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:180
-msgid "15 minutes"
-msgstr "15 minuta"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:181
-msgid "20 minutes"
-msgstr "20 minuta"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:182
-msgid "25 minutes"
-msgstr "25 minuta"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:183
-msgid "30 minutes"
-msgstr "30 minuta"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:184
-msgid "45 minutes"
-msgstr "45 minuta"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:185
-msgid "1 hour"
-msgstr "1 sat"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:186
-msgid "2 hours"
-msgstr "2 sata"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:187
-msgid "3 hours"
-msgstr "3 sata"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:188
-msgid "12 hours"
-msgstr "12 sati"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:189
-msgid "24 hours"
-msgstr "24 sata"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:190
-msgid "2 days"
-msgstr "2 dana"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:191
-msgid "1 week"
-msgstr "1 tjedan"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:200
-msgid "Notification"
-msgstr "Obavijest"
-
-#: /tmp/maya/po/../src//View/EventEdition/ReminderPanel.vala:201
-msgid "Email"
-msgstr "E-pošta"
-
-#: /tmp/maya/po/../src//View/EventEdition/LocationPanel.vala:37
-msgid "Location:"
-msgstr "Lokacija:"
-
-#: /tmp/maya/po/../src//View/EventEdition/LocationPanel.vala:39
-msgid "John Smith OR Example St."
-msgstr "Goran Gogić ILI npr. Ulica"
-
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:59
-msgid "From:"
-msgstr "Šalje:"
-
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:65
-msgid "All day:"
-msgstr "Cijeli dan:"
-
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:70
-msgid "To:"
-msgstr "Za:"
-
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:89
-msgid "Title:"
-msgstr "Naslov:"
-
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:91
-msgid "Name of Event"
-msgstr "Naziv događaja"
-
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:94
-msgid "Calendar:"
-msgstr "Kalendar:"
-
-#: /tmp/maya/po/../src//View/EventEdition/InfoPanel.vala:112
-msgid "Comments:"
-msgstr "Komentari:"
-
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:44
-msgid "Participants:"
-msgstr "Sudionici:"
-
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:47
-msgid "Invite…"
-msgstr "Pozovi..."
-
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:151
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:162
-msgid "Pending"
-msgstr "Na čekanju"
-
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:156
-msgid "Accepted"
-msgstr "Prihvaćen"
-
-#: /tmp/maya/po/../src//View/EventEdition/GuestsPanel.vala:159
-msgid "Declined"
-msgstr "Odbijen"
-
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:61
-msgid "Add Event"
-msgstr "Dodaj događaj"
-
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:64
-msgid "Edit Event"
-msgstr "Uredi događaj"
-
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:92
-msgid "General Informations"
-msgstr "Opće informacije"
-
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:95
-msgid "Location"
-msgstr "Lokacija"
-
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:98
-msgid "Guests"
-msgstr "Gosti"
-
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:101
-msgid "Reminders"
-msgstr "Podsjetnici"
-
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:134
-msgid "Create Event"
-msgstr "Napravi događaj"
-
-#: /tmp/maya/po/../src//View/EventEdition/EventDialog.vala:136
-msgid "Save Changes"
-msgstr "Spremi promjene"
-
-#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:33
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-#: /tmp/maya/po/../src//Settings/LanguagesFormat.vala:36
-msgid "%H:%M"
-msgstr "%H:%M"
-
-#: /tmp/maya/po/../src//Backends/LocalBackend.vala:26
-msgid "On this computer"
-msgstr "Na ovom računalu"
-
-#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:26
-msgid "Google"
-msgstr "Google"
-
-#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:37
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:66
-msgid "User:"
-msgstr "Korisnik:"
-
-#: /tmp/maya/po/../plugins//Google/GoogleBackend.vala:46
-msgid "user.name or user.name@gmail.com"
-msgstr "korisničko.ime ili korisničko.ime@gmail.com"
-
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:26
+#: ../src/View/SourceItem.vala:119
+msgid "Undo"
+msgstr "Poništi"
+
+#: ../src/View/SourceItem.vala:137
+msgid "Calendar \"%s\" removed."
+msgstr "Kalendar \"%s\" uklonjen."
+
+#: ../src/View/MayaToolbar.vala:41
+msgid "Create a new event"
+msgstr "Napravi novi događaj"
+
+#: ../src/View/MayaToolbar.vala:45
+msgid "Manage Calendars"
+msgstr "Upravljanje kalendarima"
+
+#: ../src/View/MayaToolbar.vala:53
+msgid "Search Events"
+msgstr "Pretraži događaje"
+
+#: ../src/View/MayaToolbar.vala:56
+msgid "Export or Share the default Calendar"
+msgstr "Izvezi ili dijeli uobičajeni kalendar"
+
+#: ../src/View/MayaToolbar.vala:70
+msgid "Today"
+msgstr "Danas"
+
+#: ../src/View/MayaToolbar.vala:71
+msgid "Show Week Numbers"
+msgstr "Prikaži brojeve tjedna"
+
+#: ../src/View/MayaToolbar.vala:73
+msgid "About"
+msgstr "O programu"
+
+#: ../src/View/SourceDialog.vala:54
+msgid "Cancel"
+msgstr "Poništi"
+
+#: ../src/View/SourceDialog.vala:55
+msgid "Create"
+msgstr "Napravi"
+
+#: ../src/View/SourceDialog.vala:64
+msgid "Name:"
+msgstr "Naziv:"
+
+#: ../src/View/SourceDialog.vala:67
+msgid "Calendar Name"
+msgstr "Naziv kalendara"
+
+#: ../src/View/SourceDialog.vala:90
+msgid "Type:"
+msgstr "Vrsta:"
+
+#: ../src/View/SourceDialog.vala:111
+msgid "Color:"
+msgstr "Boja:"
+
+#: ../src/View/SourceDialog.vala:116
+msgid "Mark as default calendar"
+msgstr "Označi kao uobičajeni kalendar"
+
+#: ../src/View/SourceDialog.vala:146
+msgid "Create Calendar"
+msgstr "Napravi kalendar"
+
+#: ../src/View/SourceDialog.vala:153
+msgid "Save"
+msgstr "Spremi"
+
+#: ../src/View/SourceSelector.vala:68
+msgid "Add New Calendar…"
+msgstr "Dodaj novi kalendar..."
+
+#: ../src/View/Grid/VAutoHider.vala:119
+msgid "%u more…"
+msgstr ""
+
+#: ../src/View/Widgets/ContractorButtonWithMenu.vala:64
+#: ../src/View/Widgets/ContractorButtonWithMenu.vala:73
+msgid "Export Calendar..."
+msgstr "Izvezi kalendar..."
+
+#: ../src/View/Widgets/ContractorButtonWithMenu.vala:76
+msgid "calendar.ics"
+msgstr "calendar.ics"
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:26
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:37
+#: ../plugins/CalDAV/CalDAVBackend.vala:45
 msgid "URL:"
 msgstr "URL:"
 
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:59
+#: ../plugins/CalDAV/CalDAVBackend.vala:68
 msgid "Use a secure connection"
 msgstr "Koristi sigurno povezivanje"
 
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:75
-msgid "user.name"
-msgstr "korisničko.ime"
-
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:87
-msgid "Email:"
-msgstr "E-pošta:"
-
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:96
-msgid "john@doe.com"
-msgstr "goran@gogo.com"
-
-#: /tmp/maya/po/../plugins//CalDAV/CalDAVBackend.vala:108
+#: ../plugins/CalDAV/CalDAVBackend.vala:90
 msgid "Server handles meeting invitations"
 msgstr "Rukovanje poslužitelja pozivnicama sastanka"
+
+#: ../plugins/Google/GoogleBackend.vala:25
+msgid "Google"
+msgstr "Google"
+
+#: ../plugins/Google/GoogleBackend.vala:48
+msgid "user.name or user.name@gmail.com"
+msgstr "korisničko.ime ili korisničko.ime@gmail.com"
 
 #~ msgid "_Add Event"
 #~ msgstr "_Dodaj događaj"
