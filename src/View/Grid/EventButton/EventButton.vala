@@ -40,11 +40,11 @@ public class EventButton : Gtk.Grid {
         comp.get_summary (out ct);
         return ct.value;
     }
-    
+
     public override void add (Gtk.Widget widget) {
         attach (widget, 1, 0, 1, 1);
     }
-    
+
     public void set_color (string color) {
         var rgba = Gdk.RGBA();
         rgba.parse (color);
