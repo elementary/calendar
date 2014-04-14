@@ -27,6 +27,7 @@ public class GridDay : Gtk.EventBox {
     Gtk.Label label;
     Gtk.Grid container_grid;
     VAutoHider event_box;
+    Gtk.Layout event_layout;
     Gee.List<EventButton> event_buttons;
 
     private static const int EVENT_MARGIN = 3;
@@ -49,6 +50,7 @@ public class GridDay : Gtk.EventBox {
         can_focus = true;
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         events |= Gdk.EventMask.KEY_PRESS_MASK;
+        events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         var style_provider = Util.Css.get_css_provider ();
         get_style_context ().add_provider (style_provider, 600);
         get_style_context ().add_class ("cell");
@@ -56,12 +58,23 @@ public class GridDay : Gtk.EventBox {
         label.halign = Gtk.Align.END;
         label.get_style_context ().add_provider (style_provider, 600);
         label.name = "date";
-        event_box.set_vexpand(true);
-        event_box.set_hexpand(true);
+        event_layout = new Gtk.Layout ();
+        event_layout.put (event_box, 0, 0);
+        event_layout.expand = true;
+        event_layout.size_allocate.connect ((alloc) => {
+            event_layout.width = alloc.width;
+            event_layout.height = alloc.height;
+            event_box.change_allocation (alloc);
+        });
+
+        var scrolled_window = new Gtk.ScrolledWindow (null, null);
+        scrolled_window.add (event_layout);
+        scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER);
+        scrolled_window.scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
         Util.set_margins (label, EVENT_MARGIN, EVENT_MARGIN, 0, EVENT_MARGIN);
-        Util.set_margins (event_box, 0, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN);
+        Util.set_margins (event_layout, 0, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN);
         container_grid.attach (label, 0, 0, 1, 1);
-        container_grid.attach (event_box, 0, 1, 1, 1);
+        container_grid.attach (scrolled_window, 0, 1, 1, 1);
 
         add (container_grid);
         container_grid.show_all ();
@@ -69,12 +82,15 @@ public class GridDay : Gtk.EventBox {
         // Signals and handlers
         button_press_event.connect (on_button_press);
         key_press_event.connect (on_key_press);
+        scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
         container_grid.draw.connect (on_draw);
     }
 
     public void add_event_button(EventButton button) {
+        if (button.get_parent () != null)
+            button.unparent ();
         event_box.add (button);
-        event_box.queue_draw ();
+        button.show_all ();
 
         event_buttons.add (button);
         event_buttons.sort (EventButton.compare_buttons);
@@ -83,6 +99,10 @@ public class GridDay : Gtk.EventBox {
         foreach (EventButton evbutton in event_buttons) {
             event_box.reorder_child (evbutton, -1);
         }
+
+        Gtk.Allocation alloc;
+        event_layout.get_allocation (out alloc);
+        event_box.change_allocation (alloc);
     }
 
     public void remove_event (E.CalComponent comp) {
@@ -99,17 +119,16 @@ public class GridDay : Gtk.EventBox {
         foreach(var button in event_buttons) {
             button.destroy();
         }
+
         event_buttons.clear ();
     }
 
     public void update_date (DateTime date) {
-
         this.date = date;
         label.label = date.get_day_of_month ().to_string ();
     }
 
     private bool on_button_press (Gdk.EventButton event) {
-
         if (event.type == Gdk.EventType.2BUTTON_PRESS)
             on_event_add (date);
 
@@ -122,11 +141,11 @@ public class GridDay : Gtk.EventBox {
             on_event_add (date);
             return true;
         }
+
         return false;
     }
 
     private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
-
         Gtk.Allocation size;
         widget.get_allocation (out size);
 

@@ -10,80 +10,58 @@
 */
 
 namespace Maya.View {
-    public class VAutoHider : Gtk.Container {
-        List<Gtk.Widget> children;
+    public class VAutoHider : Gtk.Box {
 
         Gtk.Label more_label;
 
-        //true if the object gets destroyed and notified via the destroy-signal
-        bool end = false;
-
         public VAutoHider () {
-            set_has_window (false);
-            set_resize_mode(Gtk.ResizeMode.QUEUE);
+            resize_mode = Gtk.ResizeMode.QUEUE;
+            orientation = Gtk.Orientation.VERTICAL;
             more_label = new Gtk.Label ("");
-            more_label.set_parent (this);
-            if (get_realized ())
-                more_label.realize ();
-            destroy.connect (() => {
-                end = true;
+            pack_end (more_label);
+            add.connect (() => {
+                Gtk.Allocation allocation;
+                get_allocation (out allocation);
+                change_shown_events (allocation);
             });
+
+            events |= Gdk.EventMask.SCROLL_MASK;
+            events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         }
 
-        public override void add (Gtk.Widget widget) {
-            children.append (widget);
-            widget.set_parent (this);
-            if (get_realized ())
-                widget.realize ();
+        public void change_allocation (Gtk.Allocation allocation) {
+            set_size_request (allocation.width, allocation.height);
+            change_shown_events (allocation);
         }
 
-        public override void remove (Gtk.Widget widget) {
-            children.remove (widget);
-            widget.unparent ();
-            if (widget.get_realized ())
-                widget.unrealize ();
-            queue_resize ();
+        public override void show_all () {
+            base.show_all ();
+            Gtk.Allocation alloc;
+            get_allocation (out alloc);
+            change_shown_events (alloc);
         }
 
-        public override void forall_internal (bool internal, Gtk.Callback callback) {
-            if (end) { //if widget already destroyed, abort the forall
-                return;
-            }
-            foreach (var child in children)
-                callback (child);
-            callback (more_label);
+        public override void show () {
+            base.show ();
+            Gtk.Allocation alloc;
+            get_allocation (out alloc);
+            change_shown_events (alloc);
         }
 
-        public void reorder_child (Gtk.Widget widget, int position) {
-            children.remove (widget);
-            children.insert (widget, position);
-        }
-
-        public override void map () {
-            set_mapped (true);
-            foreach (var child in children) {
-                if (child.visible && !child.get_mapped ())
-                    child.map ();
-            }
-            if (more_label.visible && !more_label.get_mapped ())
-                more_label.map ();
-        }
-
-        public override void size_allocate (Gtk.Allocation allocation) {
-
-            set_allocation (allocation);
-
+        public void change_shown_events (Gtk.Allocation allocation) {
             int height = 0;
 
             Gtk.Requisition more_label_size;
+            more_label.show ();
             more_label.get_preferred_size (out more_label_size, null);
 
-            for (int i = 0; i < children.length (); i++) {
-                var child = children.nth_data (i);
+            for (int i = 0; i < get_children ().length (); i++) {
+                var child = get_children ().nth_data (i);
 
-                bool last = (i == children.length () - 1);
+                bool last = (i == get_children ().length () - 1);
 
                 Gtk.Requisition child_size;
+                child.show ();
                 child.get_preferred_size (out child_size, null);
                 height += child_size.height;
 
@@ -104,11 +82,10 @@ namespace Maya.View {
                     child.size_allocate (child_allocation);
                     child.show ();
                 }
-
             }
 
-            if (get_shown_children () != children.length ()) {
-                uint more = children.length () - get_shown_children ();
+            if (get_shown_children () != get_children ().length ()) {
+                uint more = get_children ().length () - get_shown_children () -1;
                 more_label.show ();
                 var more_label_allocation = Gtk.Allocation ();
                 more_label_allocation.width = allocation.width;
@@ -120,7 +97,6 @@ namespace Maya.View {
             } else {
                 more_label.hide ();
             }
-
         }
 
         /**
@@ -128,8 +104,7 @@ namespace Maya.View {
          */
         public int get_shown_children () {
             int result = 0;
-
-            foreach (var child in children)
+            foreach (var child in get_children ())
                 if (child.visible)
                     result++;
             return result;

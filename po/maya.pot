@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-13 18:27+0200\n"
+"POT-Creation-Date: 2014-04-14 13:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -491,7 +491,7 @@ msgstr ""
 msgid "Add New Calendar…"
 msgstr ""
 
-#: ../src/View/Grid/VAutoHider.vala:119
+#: ../src/View/Grid/VAutoHider.vala:80
 msgid "%u more…"
 msgstr ""
 
@@ -502,6 +502,10 @@ msgstr ""
 
 #: ../src/View/Widgets/ContractorButtonWithMenu.vala:76
 msgid "calendar.ics"
+msgstr ""
+
+#: ../src/Application.vala:34
+msgid "Calendar"
 msgstr ""
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:26

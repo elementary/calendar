@@ -49,21 +49,8 @@ public class Grid : Gtk.Grid {
             (Gee.HashDataFunc<GLib.DateTime>?) DateTime.hash,
             (Gee.EqualDataFunc<GLib.DateTime>?) Util.datetime_equal_func,
             null);
-        
-        add_events (Gdk.EventMask.SCROLL_MASK);
-        scroll_event.connect ((event) => {
-            switch (event.direction) {
-                case Gdk.ScrollDirection.UP:
-                case Gdk.ScrollDirection.LEFT:
-                    Model.CalendarModel.get_default ().change_month (1);
-                    break;
-                case Gdk.ScrollDirection.DOWN:
-                case Gdk.ScrollDirection.RIGHT:
-                    Model.CalendarModel.get_default ().change_month (-1);
-                    break;
-            }
-            return false;
-        });
+        events |= Gdk.EventMask.SCROLL_MASK;
+        events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
     }
 
     void on_day_focus_in (GridDay day) {
@@ -134,6 +121,7 @@ public class Grid : Gtk.Grid {
                     return false;
                 });
                 day.on_event_add.connect ((date) => on_event_add (date));
+                day.scroll_event.connect ((event) => {scroll_event (event); return false;});
                 day.show_all ();
             }
 

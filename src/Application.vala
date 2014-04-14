@@ -31,7 +31,7 @@ namespace Maya {
 
     public static int main (string[] args) {
 
-        var context = new OptionContext ("Calendar");
+        var context = new OptionContext (_("Calendar"));
         context.add_main_entries (Application.app_options, "maya");
         context.add_group (Gtk.get_option_group (true));
 
@@ -72,7 +72,7 @@ namespace Maya {
             build_version = Build.VERSION;
             build_version_info = Build.VERSION_INFO;
 
-            program_name = Build.APP_NAME;
+            program_name = _(Build.APP_NAME);
             exec_name = "maya-calendar";
 
             app_years = "2011-2014";

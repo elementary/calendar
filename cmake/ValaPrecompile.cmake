@@ -219,6 +219,7 @@ macro(vala_precompile output target_name)
     COMMAND 
         ${VALA_EXECUTABLE} 
     ARGS 
+        "-g"
         "-C" 
         ${header_arguments} 
         ${vapi_arguments} 
