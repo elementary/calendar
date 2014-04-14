@@ -112,6 +112,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         var comment_label = Maya.View.EventDialog.make_label (_("Comments:"));
         comment_textview = new Gtk.TextView ();
         comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
+        comment_textview.accepts_tab = false;
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.add (comment_textview);
