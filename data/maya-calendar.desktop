@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Maya
+Name=Calendar
 GenericName=Calendar
 Comment=View and schedule events
 Exec=maya-calendar

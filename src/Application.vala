@@ -68,7 +68,7 @@ namespace Maya {
             build_version = Build.VERSION;
             build_version_info = Build.VERSION_INFO;
 
-            program_name = _(Build.APP_NAME);
+            program_name = _("Calendar");
             exec_name = "maya-calendar";
 
             app_years = "2011-2014";
