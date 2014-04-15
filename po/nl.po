@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-13 18:27+0200\n"
-"PO-Revision-Date: 2013-05-03 07:52+0000\n"
+"POT-Creation-Date: 2014-04-14 13:19+0200\n"
+"PO-Revision-Date: 2014-04-14 17:44+0000\n"
 "Last-Translator: Thomas Berends <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-14 05:46+0000\n"
+"X-Launchpad-Export-Date: 2014-04-15 06:31+0000\n"
 "X-Generator: Launchpad (build 16976)\n"
 "Language: nl\n"
 
@@ -36,23 +36,23 @@ msgstr "%H:%M"
 
 #: ../src/Backends/PlacementWidget.vala:37
 msgid "User:"
-msgstr ""
+msgstr "Gebruiker:"
 
 #: ../src/Backends/PlacementWidget.vala:46
 msgid "user.name"
-msgstr ""
+msgstr "gebruiker.naam"
 
 #: ../src/Backends/PlacementWidget.vala:59
 msgid "Email:"
-msgstr ""
+msgstr "E-mail:"
 
 #: ../src/Backends/PlacementWidget.vala:68
 msgid "john@doe.com"
-msgstr ""
+msgstr "john@doe.com"
 
 #: ../src/Backends/PlacementWidget.vala:80
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Houdt een lokale kopie"
 
 #: ../src/Backends/LocalBackend.vala:26
 msgid "On this computer"
@@ -60,24 +60,24 @@ msgstr "Op deze computer"
 
 #: ../src/View/EventEdition/GuestsPanel.vala:44
 msgid "Participants:"
-msgstr ""
+msgstr "Deelnemers:"
 
 #: ../src/View/EventEdition/GuestsPanel.vala:47
 msgid "Invite…"
-msgstr ""
+msgstr "Uitnodigen..."
 
 #: ../src/View/EventEdition/GuestsPanel.vala:151
 #: ../src/View/EventEdition/GuestsPanel.vala:162
 msgid "Pending"
-msgstr ""
+msgstr "In afwachting"
 
 #: ../src/View/EventEdition/GuestsPanel.vala:156
 msgid "Accepted"
-msgstr ""
+msgstr "Geaccepteerd"
 
 #: ../src/View/EventEdition/GuestsPanel.vala:159
 msgid "Declined"
-msgstr ""
+msgstr "Afgewezen"
 
 #: ../src/View/EventEdition/InfoPanel.vala:59
 msgid "From:"
@@ -93,7 +93,7 @@ msgstr "Tot:"
 
 #: ../src/View/EventEdition/InfoPanel.vala:89
 msgid "Title:"
-msgstr ""
+msgstr "Titel:"
 
 #: ../src/View/EventEdition/InfoPanel.vala:91
 msgid "Name of Event"
@@ -101,11 +101,11 @@ msgstr "Gebeurtenisnaam"
 
 #: ../src/View/EventEdition/InfoPanel.vala:94
 msgid "Calendar:"
-msgstr ""
+msgstr "Agenda:"
 
 #: ../src/View/EventEdition/InfoPanel.vala:112
 msgid "Comments:"
-msgstr ""
+msgstr "Opmerkingen:"
 
 #: ../src/View/EventEdition/EventDialog.vala:61
 msgid "Add Event"
@@ -117,7 +117,7 @@ msgstr "Gebeurtenis bewerken"
 
 #: ../src/View/EventEdition/EventDialog.vala:92
 msgid "General Informations"
-msgstr ""
+msgstr "Algemene Informatie"
 
 #: ../src/View/EventEdition/EventDialog.vala:95
 msgid "Location"
@@ -125,16 +125,16 @@ msgstr "Plaats"
 
 #: ../src/View/EventEdition/EventDialog.vala:98
 msgid "Guests"
-msgstr ""
+msgstr "Gasten"
 
 #: ../src/View/EventEdition/EventDialog.vala:101
 msgid "Reminders"
-msgstr ""
+msgstr "Herinneringen"
 
 #: ../src/View/EventEdition/EventDialog.vala:104
 #: ../src/View/EventEdition/RepeatPanel.vala:162
 msgid "Repeat"
-msgstr ""
+msgstr "Herhaal"
 
 #: ../src/View/EventEdition/EventDialog.vala:134
 msgid "Create Event"
@@ -146,253 +146,253 @@ msgstr "Wijzigingen opslaan"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:49
 msgid "Repeat:"
-msgstr ""
+msgstr "Herhaal:"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:54
 msgid "Daily"
-msgstr ""
+msgstr "Dagelijks"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:55
 msgid "Weekly"
-msgstr ""
+msgstr "Wekelijks"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:56
 msgid "Monthly"
-msgstr ""
+msgstr "Maandelijks"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:57
 msgid "Yearly"
-msgstr ""
+msgstr "Jaarlijks"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:96
 msgid "Every:"
-msgstr ""
+msgstr "Elke:"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:103
 msgid "Day"
-msgstr ""
+msgstr "Dag"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:103
 msgid "Days"
-msgstr ""
+msgstr "Dagen"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:106
 #: ../src/View/EventEdition/RepeatPanel.vala:117
 msgid "Week"
-msgstr ""
+msgstr "Week"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:106
 msgid "Weeks"
-msgstr ""
+msgstr "Weken"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:109
 msgid "Month"
-msgstr ""
+msgstr "Maand"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:109
 msgid "Months"
-msgstr ""
+msgstr "Maanden"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:112
 msgid "Year"
-msgstr ""
+msgstr "Jaar"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:112
 msgid "Years"
-msgstr ""
+msgstr "Jaren"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:127
 msgid "Ends:"
-msgstr ""
+msgstr "Eindigt:"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:129
 #: ../src/View/EventEdition/RepeatPanel.vala:162
 msgid "Repeats"
-msgstr ""
+msgstr "Herhalingen"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:133
 msgid "Never"
-msgstr ""
+msgstr "Nooit"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:134
 msgid "Until"
-msgstr ""
+msgstr "Tot"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:135
 msgid "After"
-msgstr ""
+msgstr "Na"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:181
 msgid "The same day every month"
-msgstr ""
+msgstr "Dezelfde dag elke maand"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:299
 msgid "Sunday"
-msgstr ""
+msgstr "Zondag"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:302
 msgid "Monday"
-msgstr ""
+msgstr "Maandag"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:305
 msgid "Tuesday"
-msgstr ""
+msgstr "Dinsdag"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:308
 msgid "Wednesday"
-msgstr ""
+msgstr "Woensdag"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:311
 msgid "Thursday"
-msgstr ""
+msgstr "Donderdag"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:314
 msgid "Friday"
-msgstr ""
+msgstr "Vrijdag"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:317
 msgid "Saturday"
-msgstr ""
+msgstr "Zaterdag"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:323
 msgid "Every last %s"
-msgstr ""
+msgstr "Elke laatste %s"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:326
 msgid "Every first %s"
-msgstr ""
+msgstr "Elke eerste %s"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:329
 msgid "Every second %s"
-msgstr ""
+msgstr "Elke tweede %s"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:332
 msgid "Every third %s"
-msgstr ""
+msgstr "Elke derde %s"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:335
 msgid "Every fourth %s"
-msgstr ""
+msgstr "Elke vierde %s"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:338
 msgid "Every fifth %s"
-msgstr ""
+msgstr "Elke vijfde %s"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:346
 msgid "Mon"
-msgstr ""
+msgstr "Ma"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:347
 msgid "Tue"
-msgstr ""
+msgstr "Di"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:348
 msgid "Wed"
-msgstr ""
+msgstr "Wo"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:349
 msgid "Thu"
-msgstr ""
+msgstr "Do"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:350
 msgid "Fri"
-msgstr ""
+msgstr "Vr"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:351
 msgid "Sat"
-msgstr ""
+msgstr "Za"
 
 #: ../src/View/EventEdition/RepeatPanel.vala:352
 msgid "Sun"
-msgstr ""
+msgstr "Zo"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:32
 msgid "Reminders:"
-msgstr ""
+msgstr "Herinneringen:"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:35
 msgid "No Reminders."
-msgstr ""
+msgstr "Geen herinneringen."
 
 #: ../src/View/EventEdition/ReminderPanel.vala:47
 msgid "Add Reminder"
-msgstr ""
+msgstr "Voeg herinnering toe"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:176
 msgid "0 minutes"
-msgstr ""
+msgstr "0 minuten"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:177
 msgid "1 minutes"
-msgstr ""
+msgstr "1 minuut"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:178
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minuten"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:179
 msgid "10 minutes"
-msgstr ""
+msgstr "10 minuten"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:180
 msgid "15 minutes"
-msgstr ""
+msgstr "15 minuten"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:181
 msgid "20 minutes"
-msgstr ""
+msgstr "20 minuten"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:182
 msgid "25 minutes"
-msgstr ""
+msgstr "25 minuten"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:183
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minuten"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:184
 msgid "45 minutes"
-msgstr ""
+msgstr "45 minuten"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:185
 msgid "1 hour"
-msgstr ""
+msgstr "1 uur"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:186
 msgid "2 hours"
-msgstr ""
+msgstr "2 uur"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:187
 msgid "3 hours"
-msgstr ""
+msgstr "3 uur"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:188
 msgid "12 hours"
-msgstr ""
+msgstr "12 uur"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:189
 msgid "24 hours"
-msgstr ""
+msgstr "24 uur"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:190
 msgid "2 days"
-msgstr ""
+msgstr "2 dagen"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:191
 msgid "1 week"
-msgstr ""
+msgstr "1 week"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:200
 msgid "Notification"
-msgstr ""
+msgstr "Notificatie"
 
 #: ../src/View/EventEdition/ReminderPanel.vala:201
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: ../src/View/EventEdition/LocationPanel.vala:37
 msgid "Location:"
-msgstr ""
+msgstr "Locatie:"
 
 #: ../src/View/EventEdition/LocationPanel.vala:39
 msgid "John Smith OR Example St."
@@ -408,23 +408,23 @@ msgstr ""
 
 #: ../src/View/Sidebar/EventWidget.vala:131 ../src/View/SourceItem.vala:98
 msgid "Edit…"
-msgstr ""
+msgstr "Bewerken..."
 
 #: ../src/View/Sidebar/EventWidget.vala:132 ../src/View/SourceItem.vala:92
 msgid "Remove"
-msgstr ""
+msgstr "Verwijderen"
 
 #: ../src/View/Sidebar/EventWidget.vala:212
 msgid "All day"
-msgstr ""
+msgstr "Hele dag"
 
 #: ../src/View/SourceItem.vala:119
 msgid "Undo"
-msgstr ""
+msgstr "Ongedaan maken"
 
 #: ../src/View/SourceItem.vala:137
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "Agenda \"%s\" verwijderd."
 
 #: ../src/View/MayaToolbar.vala:41
 msgid "Create a new event"
@@ -432,7 +432,7 @@ msgstr "Maak een nieuwe gebeurtenis aan"
 
 #: ../src/View/MayaToolbar.vala:45
 msgid "Manage Calendars"
-msgstr ""
+msgstr "Beheer agenda's"
 
 #: ../src/View/MayaToolbar.vala:53
 msgid "Search Events"
@@ -456,80 +456,84 @@ msgstr "Over"
 
 #: ../src/View/SourceDialog.vala:54
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 #: ../src/View/SourceDialog.vala:55
 msgid "Create"
-msgstr ""
+msgstr "Aanmaken"
 
 #: ../src/View/SourceDialog.vala:64
 msgid "Name:"
-msgstr ""
+msgstr "Naam:"
 
 #: ../src/View/SourceDialog.vala:67
 msgid "Calendar Name"
-msgstr ""
+msgstr "Agendanaam"
 
 #: ../src/View/SourceDialog.vala:90
 msgid "Type:"
-msgstr ""
+msgstr "Type:"
 
 #: ../src/View/SourceDialog.vala:111
 msgid "Color:"
-msgstr ""
+msgstr "Kleur:"
 
 #: ../src/View/SourceDialog.vala:116
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "Markeer als standaard agenda"
 
 #: ../src/View/SourceDialog.vala:146
 msgid "Create Calendar"
-msgstr ""
+msgstr "Agenda aanmaken"
 
 #: ../src/View/SourceDialog.vala:153
 msgid "Save"
-msgstr ""
+msgstr "Opslaan"
 
 #: ../src/View/SourceSelector.vala:68
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "Voeg nieuwe agenda toe..."
 
-#: ../src/View/Grid/VAutoHider.vala:119
+#: ../src/View/Grid/VAutoHider.vala:80
 msgid "%u more…"
-msgstr ""
+msgstr "%u meer..."
 
 #: ../src/View/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/View/Widgets/ContractorButtonWithMenu.vala:73
 msgid "Export Calendar..."
-msgstr "Exporteer Kalender..."
+msgstr "Exporteer agenda..."
 
 #: ../src/View/Widgets/ContractorButtonWithMenu.vala:76
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
+#: ../src/Application.vala:34
+msgid "Calendar"
+msgstr "Agenda"
+
 #: ../plugins/CalDAV/CalDAVBackend.vala:26
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:45
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:68
 msgid "Use a secure connection"
-msgstr ""
+msgstr "Gebruik een veilige verbinding"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:90
 msgid "Server handles meeting invitations"
-msgstr ""
+msgstr "Uitnodigingen voor bijeenkomsten worden door de server afgehandeld"
 
 #: ../plugins/Google/GoogleBackend.vala:25
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: ../plugins/Google/GoogleBackend.vala:48
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "gebruiker.naam of gebruiker.naam@gmail.com"
 
 #~ msgid "at"
 #~ msgstr "om"
@@ -575,9 +579,6 @@ msgstr ""
 
 #~ msgid "Personal"
 #~ msgstr "Persoonlijk"
-
-#~ msgid "Calendar"
-#~ msgstr "Kalender"
 
 #~ msgid "all day"
 #~ msgstr "de hele dag"
