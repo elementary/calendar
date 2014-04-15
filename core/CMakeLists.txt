@@ -1,0 +1,59 @@
+set (CORE_LIB_VERSION 0.1)
+set (CORE_LIB_SOVERSION 0)
+
+######################
+# lib PC file
+######################
+set (CONFIG_FILE ${CMAKE_CURRENT_BINARY_DIR}/config.vala)
+set (PREFIX ${CMAKE_INSTALL_PREFIX})
+set (DOLLAR "$") # You hear that? It's kittens being killed by the gods of cmake
+
+configure_file (${CMAKE_CURRENT_SOURCE_DIR}/config.vala.cmake ${CONFIG_FILE})
+configure_file (${CMAKE_CURRENT_SOURCE_DIR}/${CORE_LIBRARY_NAME}.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/${CORE_LIBRARY_NAME}.pc)
+
+set (CORE_SOURCE
+  ${CONFIG_FILE}
+    Backends/Backend.vala
+    Backends/BackendsManager.vala
+    Backends/LocalBackend.vala
+    Backends/PlacementWidget.vala
+    Model/CalendarModel.vala
+    Settings/MayaSettings.vala
+    Settings/SavedState.vala
+    Settings/LanguagesFormat.vala
+    Utils.vala
+    GesturesUtils.vala
+    Threads.vala
+)
+
+vala_precompile (CORE_VALA_C ${CORE_LIBRARY_NAME}
+  ${CORE_SOURCE}
+  PACKAGES
+  ${CORE_PACKAGES}
+  OPTIONS
+  ${BASIC_VALAC_OPTIONS}
+  GENERATE_VAPI
+  ${CORE_LIBRARY_NAME}
+  GENERATE_HEADER
+  ${CORE_LIBRARY_NAME}
+)
+
+add_definitions (${CORE_DEPS_CFLAGS})
+link_directories (${CORE_DEPS_LIBRARY_DIRS})
+
+add_library (${CORE_LIBRARY_NAME} SHARED ${CORE_VALA_C})
+
+set_target_properties (${CORE_LIBRARY_NAME} PROPERTIES
+  OUTPUT_NAME ${CORE_LIBRARY_NAME}
+  VERSION ${CORE_LIB_VERSION}
+  SOVERSION ${CORE_LIB_SOVERSION}
+)
+
+target_link_libraries (${CORE_LIBRARY_NAME} ${CORE_DEPS_LIBRARIES})
+
+install (TARGETS ${CORE_LIBRARY_NAME} DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
+# Install lib stuffs
+install (FILES ${CMAKE_BINARY_DIR}/core/${CORE_LIBRARY_NAME}.pc DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/pkgconfig/)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CORE_LIBRARY_NAME}.vapi DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/vala/vapi/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/${CORE_LIBRARY_NAME}.deps DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/vala/vapi/)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CORE_LIBRARY_NAME}.h DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR}/${SRC_TARGET}/)
