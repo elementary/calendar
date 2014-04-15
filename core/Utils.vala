@@ -14,7 +14,7 @@
 
 namespace Maya.Util {
 
-    int compare_events (E.CalComponent comp1, E.CalComponent comp2) {
+    public int compare_events (E.CalComponent comp1, E.CalComponent comp2) {
 
         var date1 = Util.ical_to_date_time (comp1.get_icalcomponent ().get_dtstart ());
         var date2 = Util.ical_to_date_time (comp2.get_icalcomponent ().get_dtstart ());
@@ -43,7 +43,7 @@ namespace Maya.Util {
      * Converts two datetimes to one TimeType. The first contains the date,
      * its time settings are ignored. The second one contains the time itself.
      */
-    iCal.TimeType date_time_to_ical (DateTime date, DateTime time) {
+    public iCal.TimeType date_time_to_ical (DateTime date, DateTime time) {
 
         iCal.TimeType result = iCal.TimeType.from_day_of_year
             (date.get_day_of_year (), date.get_year ());
@@ -58,7 +58,7 @@ namespace Maya.Util {
     /**
      * Converts the given TimeType to a DateTime.
      */
-    DateTime ical_to_date_time (iCal.TimeType date) {
+    public DateTime ical_to_date_time (iCal.TimeType date) {
 
         string tzid = date.zone.get_tzid ();
         TimeZone zone = new TimeZone (tzid);
@@ -67,13 +67,13 @@ namespace Maya.Util {
             date.day, date.hour, date.minute, date.second);
     }
 
-    DateTime ecal_to_date_time (E.CalComponentDateTime date) {
+    public DateTime ecal_to_date_time (E.CalComponentDateTime date) {
         DateTime result = new DateTime(new TimeZone.local(), date.value.year, date.value.month, date.value.day, date.value.hour, date.value.minute, date.value.second);
 
         return result;
     }
 
-    Gee.Collection<DateRange> event_date_ranges (E.CalComponent event, Util.DateRange view_range) {
+    public Gee.Collection<DateRange> event_date_ranges (E.CalComponent event, Util.DateRange view_range) {
         var dateranges = new Gee.LinkedList<DateRange> ();
 
         E.CalComponentDateTime dt_start;
@@ -321,7 +321,7 @@ namespace Maya.Util {
         }
     }
 
-    bool is_multiday_event (E.CalComponent event) {
+    public bool is_multiday_event (E.CalComponent event) {
         E.CalComponentDateTime dt_start;
         event.get_dtstart (out dt_start);
 
@@ -348,7 +348,7 @@ namespace Maya.Util {
     /**
      * Say if an event lasts all day.
      */
-    bool is_the_all_day (DateTime dtstart, DateTime dtend) {
+    public bool is_the_all_day (DateTime dtstart, DateTime dtend) {
         if ((dtend.get_hour() == dtend.get_minute()) && (dtstart.get_hour() == dtend.get_hour()) && (dtstart.get_hour() == dtstart.get_minute()) && (dtend.get_hour() == 0)) {
             return true;
         }

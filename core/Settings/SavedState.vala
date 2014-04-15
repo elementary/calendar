@@ -16,13 +16,19 @@
 //
 
 namespace Maya.Settings {
-
     public enum WindowState {
         NORMAL = 0,
         MAXIMIZED = 1
     }
 
     public class SavedState : Granite.Services.Settings {
+        private static Settings.SavedState? saved_state = null;
+
+        public static SavedState get_default () {
+            if (saved_state == null)
+                saved_state = new SavedState ();
+            return saved_state;
+        }
 
         public int window_width { get; set; }
         public int window_height { get; set; }
@@ -32,7 +38,7 @@ namespace Maya.Settings {
         public string month_page { get; set; }
         public string selected_day { get; set; }
 
-        public SavedState () {
+        private SavedState () {
             base ("org.pantheon.maya.savedstate");
         }
 
@@ -46,7 +52,7 @@ namespace Maya.Settings {
             dt = dt.add_months (int.parse (numbers[1])-1);
             return dt;
         }
-        
+
         public DateTime get_selected () {
             if (selected_day == null)
                 return new DateTime.now_local ();
@@ -58,5 +64,4 @@ namespace Maya.Settings {
             return dt;
         }
     }
-
 }

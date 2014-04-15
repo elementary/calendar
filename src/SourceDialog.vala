@@ -91,6 +91,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         type_label.xalign = 1;
 
         Gtk.TreeIter iter;
+        var backends_manager = BackendsManager.get_default ();
         foreach (var backend in backends_manager.backends) {
             list_store.append (out iter);
             list_store.set (iter, 0, backend.get_name (), 1, backend);

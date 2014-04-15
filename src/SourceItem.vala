@@ -49,7 +49,7 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         calendar_name_label.xalign = 0;
 
         Maya.Backend selected_backend = null;
-        foreach (var backend in backends_manager.backends) {
+        foreach (var backend in BackendsManager.get_default ().backends) {
             if (source.dup_parent () == backend.get_uid ()) {
                 selected_backend = backend;
                 break;

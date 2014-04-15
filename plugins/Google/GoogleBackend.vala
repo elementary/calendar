@@ -20,7 +20,20 @@
  * Authored by: Corentin Noël <tintou@mailoo.org>
  */
 
+public Maya.Backend get_backend (Module module) {
+    debug ("Activating Google Backend");
+    var b = new Maya.GoogleBackend ();
+    b.ref ();
+    return b;
+}
+
+public static Maya.Backend backend;
+
 public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
+    public GoogleBackend () {
+        backend = this;
+    }
+
     public string get_name () {
         return _("Google");
     }

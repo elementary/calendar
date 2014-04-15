@@ -1,6 +1,6 @@
-project (maya)
 cmake_minimum_required (VERSION 2.8)
-
+cmake_policy (VERSION 2.8)
+project (maya-calendar C)
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)
 
@@ -9,14 +9,14 @@ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)
 #
 include (GNUInstallDirs)
 set (DATADIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}")
-set (SRC_TARGET ${CMAKE_PROJECT_NAME}-calendar)
-set (PKGDATADIR "${DATADIR}/${SRC_TARGET}")
-set (GETTEXT_PACKAGE "maya")
+set (PKGDATADIR "${DATADIR}/${CMAKE_PROJECT_NAME}")
+set (GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
 set (APP_NAME "Maya")
 set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.2.2")
 set (VERSION_INFO "Release")
 set (PLUGIN_DIR ${CMAKE_INSTALL_FULL_LIBDIR}/${CMAKE_PROJECT_NAME}/plugins)
+set (CORE_LIBRARY_NAME ${CMAKE_PROJECT_NAME}-1)
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 add_definitions ("-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\"")
@@ -24,18 +24,10 @@ add_definitions ("-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\"")
 # Comment this out to enable C compiler warnings
 add_definitions (-w)
 
-option (BUILD_SHARED_LIBS "Switch between shared and static libraries" ON)
-
-if (BUILD_SHARED_LIBS)
-    message("-- Shared libraries enabled")
-else ()
-    message("-- Shared libraries disabled")
-endif ()
-
 #
 # Niceties
 #
-set (ARCHIVE_NAME ${SRC_TARGET}-${VERSION})
+set (ARCHIVE_NAME ${CMAKE_PROJECT_NAME}-${VERSION})
 add_custom_target (dist
     COMMAND bzr export --root=${ARCHIVE_NAME} ${CMAKE_BINARY_DIR}/${ARCHIVE_NAME}.tar.bz2
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
@@ -63,7 +55,7 @@ add_custom_target (uninstall "${CMAKE_COMMAND}" -P
 file (GLOB _datafiles "${CMAKE_CURRENT_SOURCE_DIR}/data/style/*")
 install (FILES ${_datafiles} DESTINATION ${PKGDATADIR}/style)
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${SRC_TARGET}.desktop DESTINATION "${DATADIR}/applications")
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}.desktop DESTINATION "${DATADIR}/applications")
 
 #
 # i18n
@@ -75,7 +67,7 @@ add_subdirectory(po)
 # Maya
 #
 
-set (DEPS_PACKAGES
+set (CORE_PACKAGES
     gconf-2.0
     gee-0.8
     gio-2.0
@@ -85,14 +77,10 @@ set (DEPS_PACKAGES
     libedataserver-1.2
     libical
     libsoup-2.4
-    libpeas-1.0
-    champlain-gtk-0.12
-    champlain-0.12
-    clutter-1.0
-    geocode-glib-1.0
+    gmodule-2.0
 )
 
-set (DEPS_PKG
+set (CORE_PKG
     gobject-2.0
     gthread-2.0
     glib-2.0
@@ -102,28 +90,49 @@ set (DEPS_PKG
     granite
     libecal-1.2>=3.8.0
     libical
-    libpeas-1.0
+    gmodule-2.0
+)
+
+set (DEPS_PACKAGES
+    ${CORE_LIBRARY_NAME}
+    ${CORE_PACKAGES} # this is needed until we provide a ${CORE_LIBRARY_NAME}.deps file
     champlain-gtk-0.12
     champlain-0.12
     clutter-1.0
     geocode-glib-1.0
 )
 
+set (DEPS_PKG
+    champlain-gtk-0.12
+    champlain-0.12
+    clutter-1.0
+    geocode-glib-1.0
+)
+
+set (BASIC_VALAC_OPTIONS
+  --vapidir=${CMAKE_SOURCE_DIR}/vapi
+  --target-glib=2.32
+  --thread
+)
+
 set (GLOBAL_VALAC_OPTIONS
-    --target-glib=2.32
-    --thread
-    --vapidir=${CMAKE_BINARY_DIR}/src
-    --vapidir=${CMAKE_SOURCE_DIR}/vapi
+  ${BASIC_VALAC_OPTIONS}
+  --vapidir=${CMAKE_BINARY_DIR}/core
 )
 
 find_package (PkgConfig)
-pkg_check_modules (DEPS REQUIRED ${DEPS_PKG})
+pkg_check_modules (CORE_DEPS REQUIRED ${CORE_PKG})
+pkg_check_modules (DEPS REQUIRED ${DEPS_PKG} ${CORE_PKG})
 
 find_package (Vala REQUIRED)
 include (ValaVersion)
 ensure_vala_version ("0.23.2" MINIMUM)
 include (ValaPrecompile)
 
+add_subdirectory (core)
+include_directories (${CMAKE_BINARY_DIR}/core)
+set (DEPS_LIBRARIES ${DEPS_LIBRARIES} ${CORE_LIBRARY_NAME})
 add_subdirectory (src)
+add_subdirectory (daemon)
 add_subdirectory (plugins)
 add_subdirectory (schemas)

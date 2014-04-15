@@ -1,5 +1,4 @@
-pkg_check_modules (CALDAV_DEPS libsoup-2.4)
-
+pkg_check_modules (CALDAV_DEPS QUIET libsoup-2.4)
 if (CALDAV_DEPS_FOUND)
 
 set (DEPS_CFLAGS ${DEPS_CFLAGS} ${CALDAV_DEPS_CFLAGS})
@@ -11,7 +10,6 @@ link_directories (${DEPS_LIBRARY_DIRS})
 
 set (TARGET_NAME caldav)
 vala_precompile (CALDAV_VALA_C ${TARGET_NAME}
-    CalDAV.vala
     CalDAVBackend.vala
 PACKAGES
     ${DEPS_PACKAGES}
@@ -23,10 +21,9 @@ OPTIONS
 add_library (${TARGET_NAME} MODULE ${CALDAV_VALA_C})
 
 target_link_libraries (${TARGET_NAME} ${DEPS_LIBRARIES})
-add_dependencies (${TARGET_NAME} ${SRC_TARGET})
+add_dependencies (${TARGET_NAME} ${CMAKE_PROJECT_NAME})
 
 install (TARGETS ${TARGET_NAME} DESTINATION ${PLUGIN_DIR}/CalDAV/)
-install (FILES caldav.plugin DESTINATION ${PLUGIN_DIR}/CalDAV/)
 
 else ()
 

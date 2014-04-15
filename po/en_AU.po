@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-14 13:19+0200\n"
+"POT-Creation-Date: 2014-04-13 18:27+0200\n"
 "PO-Revision-Date: 2013-05-22 23:52+0000\n"
 "Last-Translator: evanjt <evan@evanjt.com>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-15 06:31+0000\n"
+"X-Launchpad-Export-Date: 2014-04-14 05:47+0000\n"
 "X-Generator: Launchpad (build 16976)\n"
 "Language: \n"
 
@@ -494,7 +494,7 @@ msgstr ""
 msgid "Add New Calendar…"
 msgstr ""
 
-#: ../src/View/Grid/VAutoHider.vala:80
+#: ../src/View/Grid/VAutoHider.vala:119
 msgid "%u more…"
 msgstr ""
 
@@ -506,10 +506,6 @@ msgstr "Export Calendar..."
 #: ../src/View/Widgets/ContractorButtonWithMenu.vala:76
 msgid "calendar.ics"
 msgstr "calendar.ics"
-
-#: ../src/Application.vala:34
-msgid "Calendar"
-msgstr "Calendar"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:26
 msgid "CalDAV"
@@ -585,6 +581,9 @@ msgstr ""
 
 #~ msgid "View and schedule events"
 #~ msgstr "View and schedule events"
+
+#~ msgid "Calendar"
+#~ msgstr "Calendar"
 
 #~ msgid "Add calendar"
 #~ msgstr "Add calendar"

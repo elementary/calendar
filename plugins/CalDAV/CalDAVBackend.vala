@@ -20,7 +20,20 @@
  * Authored by: Corentin Noël <tintou@mailoo.org>
  */
 
+public Maya.Backend get_backend (Module module) {
+    debug ("Activating CalDAV Backend");
+    var b = new Maya.CalDavBackend ();
+    b.ref ();
+    return b;
+}
+
+public static Maya.Backend backend;
+
 public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
+
+    public CalDavBackend () {
+        backend = this;
+    }
 
     public string get_name () {
         return _("CalDAV");

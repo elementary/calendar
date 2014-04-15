@@ -95,7 +95,7 @@ public class Maya.Model.CalendarModel : Object {
             break;
         }
 
-        this.month_start = Util.get_start_of_month (saved_state.get_page ());
+        this.month_start = Util.get_start_of_month (Settings.SavedState.get_default ().get_page ());
         compute_ranges ();
 
         source_client = new Gee.HashMap<E.Source, E.CalClient> (
@@ -248,7 +248,7 @@ public class Maya.Model.CalendarModel : Object {
     //--- Helper Methods ---//
 
     void compute_ranges () {
-        saved_state.month_page = month_start.format ("%Y-%m");
+        Settings.SavedState.get_default ().month_page = month_start.format ("%Y-%m");
         var month_end = month_start.add_full (0, 1, -1);
         month_range = new Util.DateRange (month_start, month_end);
 
@@ -435,9 +435,10 @@ public class Maya.Model.CalendarModel : Object {
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
         Gee.Collection<E.CalComponent> updated_events = new Gee.ArrayList<E.CalComponent> (
             (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
-        foreach (var comp in objects) {
+        foreach (weak iCal.Component comp in objects) {
             string uid = comp.get_uid ();
             E.CalComponent event = source_events.get (source).get (uid);
+            event.set_icalcomponent (new iCal.Component.clone (comp));
             updated_events.add (event);
             debug_event (source, event);
         };

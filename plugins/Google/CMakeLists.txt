@@ -1,5 +1,4 @@
-pkg_check_modules (GOOGLE_DEPS libsoup-2.4)
-
+pkg_check_modules (GOOGLE_DEPS QUIET libsoup-2.4)
 if (GOOGLE_DEPS_FOUND)
 
 set (DEPS_CFLAGS ${DEPS_CFLAGS} ${GOOGLE_DEPS_CFLAGS})
@@ -11,7 +10,6 @@ link_directories (${DEPS_LIBRARY_DIRS})
 
 set (TARGET_NAME google)
 vala_precompile (GOOGLE_VALA_C ${TARGET_NAME}
-    Google.vala
     GoogleBackend.vala
 PACKAGES
     ${DEPS_PACKAGES}
@@ -23,10 +21,9 @@ OPTIONS
 add_library (${TARGET_NAME} MODULE ${GOOGLE_VALA_C})
 
 target_link_libraries (${TARGET_NAME} ${DEPS_LIBRARIES})
-add_dependencies (${TARGET_NAME} ${SRC_TARGET})
+add_dependencies (${TARGET_NAME} ${CMAKE_PROJECT_NAME})
 
 install (TARGETS ${TARGET_NAME} DESTINATION ${PLUGIN_DIR}/Google/)
-install (FILES google.plugin DESTINATION ${PLUGIN_DIR}/Google/)
 
 else ()
 

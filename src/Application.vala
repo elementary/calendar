@@ -24,10 +24,6 @@ namespace Maya {
         private static bool PRINT_VERSION = false;
 
     }
-    public Plugins.Manager plugins_manager;
-    public BackendsManager backends_manager;
-    public Settings.MayaSettings global_settings;
-    public Settings.SavedState saved_state;
 
     public static int main (string[] args) {
 
@@ -126,34 +122,17 @@ namespace Maya {
                 return;
             }
 
-            init_prefs ();
-
             var calmodel = Model.CalendarModel.get_default ();
             calmodel.load_all_sources ();
 
             init_gui ();
             window.show_all ();
 
-            backends_manager = new BackendsManager ();
-
-            plugins_manager = new Plugins.Manager (Build.PLUGIN_DIR, exec_name, null);
-            plugins_manager.hook_app (this);
-
             if (Option.ADD_EVENT) {
                 on_tb_add_clicked (calview.grid.selected_date);
             }
 
             Gtk.main ();
-        }
-
-        /**
-         * Initializes the preferences
-         */
-        void init_prefs () {
-
-            saved_state = new Settings.SavedState ();
-            global_settings = new Settings.MayaSettings ();
-
         }
 
         /**
@@ -182,6 +161,7 @@ namespace Maya {
             calview.vexpand = true;
             hpaned.pack1 (calview, true, false);
             hpaned.pack2 (sidebar, true, false);
+            var saved_state = Settings.SavedState.get_default ();
             hpaned.position = saved_state.hpaned_position;
             gridcontainer.attach (hpaned, 0, 2, 1, 1);
             window.add (gridcontainer);
@@ -215,6 +195,7 @@ namespace Maya {
          * Creates the main window.
          */
         void create_window () {
+            var saved_state = Settings.SavedState.get_default ();
             window = new Gtk.Window ();
             window.title = program_name;
             window.icon_name = "office-calendar";
@@ -226,19 +207,19 @@ namespace Maya {
             window.delete_event.connect (on_window_delete_event);
             window.destroy.connect (on_quit);
             window.key_press_event.connect ((e) => {
-                    switch (e.keyval) {
-                        case Gdk.Key.@q:
-                        case Gdk.Key.@w:
-                            if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                                window.destroy ();
-                            }
-
-                            break;
+                switch (e.keyval) {
+                    case Gdk.Key.@q:
+                    case Gdk.Key.@w:
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                            window.destroy ();
                         }
 
-                        return false;
+                        break;
+                    }
+
+                    return false;
             });
-            
+
             toolbar = new View.MayaToolbar ();
             toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.grid.selected_date));
             toolbar.on_menu_today_toggled.connect (on_menu_today_toggled);
@@ -256,6 +237,7 @@ namespace Maya {
             debug("Updating saved state");
 
             // Save window state
+            var saved_state = Settings.SavedState.get_default ();
             if ((window.get_window ().get_state () & Settings.WindowState.MAXIMIZED) != 0)
                 saved_state.window_state = Settings.WindowState.MAXIMIZED;
             else

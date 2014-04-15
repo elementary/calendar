@@ -1,8 +1,0 @@
-[Plugin]
-Module=google
-IAge=2
-Name=Google Calendar
-Description=Enable Google calendar support
-Authors=Maya Developers
-Copyright=Copyright © 2013 Maya Developers
-Website=https://launchpad.net/maya

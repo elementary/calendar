@@ -53,7 +53,7 @@ public class CalendarView : Gtk.Grid {
         model.events_updated.connect (on_events_updated);
         model.events_removed.connect (on_events_removed);
         
-        saved_state.changed["show-weeks"].connect (on_show_weeks_changed);
+        Settings.SavedState.get_default ().changed["show-weeks"].connect (on_show_weeks_changed);
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         events |= Gdk.EventMask.KEY_PRESS_MASK;
         events |= Gdk.EventMask.SCROLL_MASK;

@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-14 13:19+0200\n"
+"POT-Creation-Date: 2014-04-13 18:27+0200\n"
 "PO-Revision-Date: 2014-04-10 12:39+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-15 06:31+0000\n"
+"X-Launchpad-Export-Date: 2014-04-14 05:47+0000\n"
 "X-Generator: Launchpad (build 16976)\n"
 "Language: hr\n"
 
@@ -494,7 +494,7 @@ msgstr "Spremi"
 msgid "Add New Calendar…"
 msgstr "Dodaj novi kalendar..."
 
-#: ../src/View/Grid/VAutoHider.vala:80
+#: ../src/View/Grid/VAutoHider.vala:119
 msgid "%u more…"
 msgstr ""
 
@@ -506,10 +506,6 @@ msgstr "Izvezi kalendar..."
 #: ../src/View/Widgets/ContractorButtonWithMenu.vala:76
 msgid "calendar.ics"
 msgstr "calendar.ics"
-
-#: ../src/Application.vala:34
-msgid "Calendar"
-msgstr "Kalendar"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:26
 msgid "CalDAV"
@@ -570,6 +566,9 @@ msgstr "korisničko.ime ili korisničko.ime@gmail.com"
 
 #~ msgid "View and schedule events"
 #~ msgstr "Pregledaj i zakaži događaje"
+
+#~ msgid "Calendar"
+#~ msgstr "Kalendar"
 
 #~ msgid "Title"
 #~ msgstr "Naslov"

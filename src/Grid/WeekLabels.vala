@@ -52,7 +52,7 @@ public class WeekLabels : Gtk.EventBox {
 
         update_nr_of_labels (nr_of_weeks);
 
-        if (saved_state.show_weeks) {
+        if (Settings.SavedState.get_default ().show_weeks) {
             if (!visible)
                 show ();
 

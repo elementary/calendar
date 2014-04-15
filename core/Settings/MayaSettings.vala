@@ -16,7 +16,6 @@
 //
 
 namespace Maya.Settings {
-
     public enum Weekday {
         BAD_WEEKDAY = 0,
         MONDAY,
@@ -29,14 +28,20 @@ namespace Maya.Settings {
     }
 
     public class MayaSettings : Granite.Services.Settings {
+        private static Settings.MayaSettings? global_settings = null;
+
+        public static MayaSettings get_default () {
+            if (global_settings == null)
+                global_settings = new MayaSettings ();
+            return global_settings;
+        }
 
         public string[] plugins_disabled { get; set; }
 
-        public MayaSettings () {
+        private MayaSettings () {
             base ("org.pantheon.maya.settings");
         }
 
     }
 
 }
-

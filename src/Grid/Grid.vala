@@ -36,7 +36,7 @@ public class Grid : Gtk.Grid {
 
     public Grid () {
 
-        selected_date = saved_state.get_selected ();
+        selected_date = Settings.SavedState.get_default ().get_selected ();
 
         // Gtk.Grid properties
         insert_column (7);
@@ -58,7 +58,7 @@ public class Grid : Gtk.Grid {
         selected_date = day.date;
 
         selection_changed (selected_date);
-        saved_state.selected_day = selected_date.format ("%Y-%j");
+        Settings.SavedState.get_default ().selected_day = selected_date.format ("%Y-%j");
     }
 
     public void focus_date (DateTime date) {

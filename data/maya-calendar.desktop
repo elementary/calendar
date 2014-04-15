@@ -9,7 +9,7 @@ Terminal=false
 Categories=GTK;Office;Calendar;
 StartupNotify=true
 MimeType=text/calendar;
-X-GNOME-Gettext-Domain=maya
+X-GNOME-Gettext-Domain=maya-calendar
 X-GNOME-Keywords=Maya;Planner;Dates;Days;Events;
 X-AppInstall-Keywords=Maya;Planner;Dates;Days;Events;
 

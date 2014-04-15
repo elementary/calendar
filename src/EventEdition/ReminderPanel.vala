@@ -108,7 +108,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                         reminder.set_duration (duration);
                         reminder.set_choice (false);
                     }
-                    break;
+                    continue;
                 case (E.CalComponentAlarmAction.EMAIL):
                     E.CalComponentAlarmTrigger trigger;
                     e_alarm.get_trigger (out trigger);
@@ -118,9 +118,9 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                         reminder.set_duration (duration);
                         reminder.set_choice (true);
                     }
-                    break;
+                    continue;
                 default:
-                    break;
+                    continue;
             }
         }
     }

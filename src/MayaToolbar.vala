@@ -112,7 +112,7 @@ namespace Maya.View {
             
             button_calendar_sources.size_allocate.connect (button_size_allocate);
             
-            weeknumbers.active = saved_state.show_weeks;
+            weeknumbers.active = Settings.SavedState.get_default ().show_weeks;
             calmodel.parameters_changed.connect (() => {
                 set_switcher_date (calmodel.month_start);
             });
@@ -124,7 +124,7 @@ namespace Maya.View {
         }
 
         void on_menu_show_weeks_toggled () {
-            saved_state.show_weeks = weeknumbers.active;
+            Settings.SavedState.get_default ().show_weeks = weeknumbers.active;
         }
         
         void button_size_allocate (Gtk.Allocation allocation) {
