@@ -1,0 +1,5 @@
+usr/include/maya-calendar/maya-calendar.h
+usr/lib/*/libmaya-calendar.so
+usr/lib/*/pkgconfig/maya-calendar.pc
+usr/share/vala/vapi/maya-calendar.deps
+usr/share/vala/vapi/maya-calendar.vapi
