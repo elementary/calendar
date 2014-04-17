@@ -16,7 +16,7 @@ set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.2.2")
 set (VERSION_INFO "Release")
 set (PLUGIN_DIR ${CMAKE_INSTALL_FULL_LIBDIR}/${CMAKE_PROJECT_NAME}/plugins)
-set (CORE_LIBRARY_NAME ${CMAKE_PROJECT_NAME}-1)
+set (CORE_LIBRARY_NAME lib${CMAKE_PROJECT_NAME})
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 add_definitions ("-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\"")
@@ -95,7 +95,7 @@ set (CORE_PKG
 )
 
 set (DEPS_PACKAGES
-    ${CORE_LIBRARY_NAME}
+    ${CMAKE_PROJECT_NAME}
     ${CORE_PACKAGES} # this is needed until we provide a ${CORE_LIBRARY_NAME}.deps file
     champlain-gtk-0.12
     champlain-0.12
