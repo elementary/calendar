@@ -3,9 +3,9 @@ Section: utils
 Priority: optional
 Maintainer: Cody Garver <cody@elementaryos.org>
 Build-Depends: cmake (>= 2.8),
-               debhelper,
-               libchamplain-gtk-0.12-dev,
+               debhelper (>= 9),
                libchamplain-0.12-dev,
+               libchamplain-gtk-0.12-dev,
                libclutter-1.0-dev,
                libecal1.2-dev (>= 3.8.0),
                libgee-0.8-dev,
@@ -24,10 +24,10 @@ Package: maya-calendar
 Replaces: maya (<< 0.2.0~r394)
 Conflicts: maya (<< 0.2.0~r394)
 Architecture: any
-Depends: ${misc:Depends},
-         ${shlibs:Depends},
+Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar-common (= ${source:Version}),
-         libmaya-calendar-0 (= ${binary:Version})
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: GTK+ calendar application
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala, specifically for elementary.
@@ -44,14 +44,14 @@ Description: GTK+ calendar application
 Package: maya-calendar-daemon
 Architecture: any
 Enhances: maya-calendar
-Depends: ${misc:Depends},
-         ${shlibs:Depends},
-         libmaya-calendar-0 (= ${binary:Version})
+Depends: libmaya-calendar0 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: GTK+ calendar application (library)
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala, specifically for elementary.
 
-Package: libmaya-calendar-0
+Package: libmaya-calendar0
 Architecture: any
 Section: libs
 Enhances: maya-calendar
@@ -60,12 +60,12 @@ Description: GTK+ calendar application (library)
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala, specifically for elementary.
 
-Package: libmaya-calendar-0-dev
+Package: libmaya-calendar-dev
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends},
-         ${shlibs:Depends},
-         libmaya-calendar-0 (= ${binary:Version})
+Depends: libmaya-calendar0 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: GTK+ calendar application (developpment headers)
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala, specifically for elementary.
@@ -73,10 +73,10 @@ Description: GTK+ calendar application (developpment headers)
 Package: maya-calendar-plugin-google
 Architecture: any
 Enhances: maya-calendar
-Depends: ${misc:Depends},
-         ${shlibs:Depends},
+Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar (= ${binary:Version}),
-         libmaya-calendar-0 (= ${binary:Version})
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: GTK+ calendar application
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala, specifically for elementary.
@@ -84,10 +84,10 @@ Description: GTK+ calendar application
 Package: maya-calendar-plugin-caldav
 Architecture: any
 Enhances: maya-calendar
-Depends: ${misc:Depends},
-         ${shlibs:Depends},
+Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar (= ${binary:Version}),
-         libmaya-calendar-0 (= ${binary:Version})
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: GTK+ calendar application
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala, specifically for elementary.
