@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-15 23:40+0200\n"
-"PO-Revision-Date: 2014-04-10 11:42+0000\n"
+"PO-Revision-Date: 2014-04-21 15:24+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-16 06:47+0000\n"
-"X-Generator: Launchpad (build 16976)\n"
+"X-Launchpad-Export-Date: 2014-04-22 08:02+0000\n"
+"X-Generator: Launchpad (build 16985)\n"
 "Language: ms\n"
 
 #: ../src/EventEdition/GuestsPanel.vala:44
@@ -460,7 +460,7 @@ msgstr "Kalendar"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
-msgstr ""
+msgstr "%u lagi..."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -529,7 +529,7 @@ msgstr "abuyop@doe.com"
 
 #: ../core/Backends/PlacementWidget.vala:80
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Simpan salinan secara setempat"
 
 #: ../core/Backends/LocalBackend.vala:26
 msgid "On this computer"
