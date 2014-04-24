@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-15 23:40+0200\n"
+"POT-Creation-Date: 2014-04-24 17:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -371,7 +371,12 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: ../src/Sidebar/EventWidget.vala:212
+#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
+#: ../src/Sidebar/EventWidget.vala:199
+msgid "%s to %s"
+msgstr ""
+
+#: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
 msgstr ""
 
@@ -498,14 +503,6 @@ msgstr ""
 
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
-msgstr ""
-
-#: ../core/Settings/LanguagesFormat.vala:33
-msgid "%l:%M %p"
-msgstr ""
-
-#: ../core/Settings/LanguagesFormat.vala:36
-msgid "%H:%M"
 msgstr ""
 
 #: ../core/Backends/PlacementWidget.vala:37

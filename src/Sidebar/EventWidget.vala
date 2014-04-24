@@ -195,7 +195,8 @@ namespace Maya.View {
                 date_image.no_show_all = false;
                 date_label.show ();
                 date_image.show ();
-                return ("%s to %s".printf (start_date_string, end_date_string));
+                /// TRANSLATORS: for multiple days events, shows: (date) to (date)
+                return (_("%s to %s").printf (start_date_string, end_date_string));
             } else {
                 date_label.no_show_all = true;
                 date_image.no_show_all = true;

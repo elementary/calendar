@@ -219,7 +219,6 @@ macro(vala_precompile output target_name)
     COMMAND 
         ${VALA_EXECUTABLE} 
     ARGS 
-        "-g"
         "-C" 
         ${header_arguments} 
         ${vapi_arguments} 
@@ -229,6 +228,8 @@ macro(vala_precompile output target_name)
         "-d" ${DIRECTORY} 
         ${vala_pkg_opts} 
         ${ARGS_OPTIONS} 
+        "-g"
+        "--save-temps"
         ${in_files} 
         ${custom_vapi_arguments}
     COMMAND

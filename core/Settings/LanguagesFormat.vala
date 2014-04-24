@@ -30,10 +30,9 @@ namespace Maya.Settings {
         string clockformat = setting.get_string ("clock-format");
 
         if (clockformat.contains ("12h")) {
-            return _("%l:%M %p");
-        }
-        else {
-            return _("%H:%M");
+            return Granite.DateTime.get_default_time_format (true);
+        } else {
+            return Granite.DateTime.get_default_time_format (false);
         }
     }
 

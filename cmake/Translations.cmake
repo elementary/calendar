@@ -46,7 +46,7 @@ macro(add_translations_catalog NLS_PACKAGE)
     set(BASE_XGETTEXT_COMMAND
         ${XGETTEXT_EXECUTABLE} -d ${NLS_PACKAGE}
         -o ${CMAKE_CURRENT_SOURCE_DIR}/${NLS_PACKAGE}.pot
-        --keyword="_" --keyword="N_" --from-code=UTF-8)
+        --add-comments="/" --keyword="_" --keyword="N_" --keyword="C_:1c,2" --keyword="NC_:1c,2" --keyword="ngettext:1,2" --keyword="Q_:1g" --from-code=UTF-8)
 
    set(CONTINUE_FLAG "")
 
