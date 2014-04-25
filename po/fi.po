@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-15 23:40+0200\n"
-"PO-Revision-Date: 2014-04-16 19:26+0000\n"
+"POT-Creation-Date: 2014-04-24 17:24+0200\n"
+"PO-Revision-Date: 2014-04-24 18:47+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-17 06:04+0000\n"
+"X-Launchpad-Export-Date: 2014-04-25 06:37+0000\n"
 "X-Generator: Launchpad (build 16985)\n"
 "Language: fi\n"
 
@@ -374,7 +374,12 @@ msgstr "Muokkaa…"
 msgid "Remove"
 msgstr "Poista"
 
-#: ../src/Sidebar/EventWidget.vala:212
+#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
+#: ../src/Sidebar/EventWidget.vala:199
+msgid "%s to %s"
+msgstr "%s-%s"
+
+#: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
 msgstr "Koko päivä"
 
@@ -503,14 +508,6 @@ msgstr "%e. %Bta %Y"
 msgid "%A, %b %d"
 msgstr "%A, %d. %b"
 
-#: ../core/Settings/LanguagesFormat.vala:33
-msgid "%l:%M %p"
-msgstr "%I.%M %p"
-
-#: ../core/Settings/LanguagesFormat.vala:36
-msgid "%H:%M"
-msgstr "%H.%M"
-
 #: ../core/Backends/PlacementWidget.vala:37
 msgid "User:"
 msgstr "Käyttäjä:"
@@ -537,6 +534,12 @@ msgstr "Tällä tietokoneella"
 
 #~ msgid "at"
 #~ msgstr "paikassa"
+
+#~ msgid "%l:%M %p"
+#~ msgstr "%I.%M %p"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H.%M"
 
 #~ msgid "Title"
 #~ msgstr "Otsikko"

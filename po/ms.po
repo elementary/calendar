@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-15 23:40+0200\n"
+"POT-Creation-Date: 2014-04-24 17:24+0200\n"
 "PO-Revision-Date: 2014-04-21 15:24+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-22 08:02+0000\n"
+"X-Launchpad-Export-Date: 2014-04-25 06:37+0000\n"
 "X-Generator: Launchpad (build 16985)\n"
 "Language: ms\n"
 
@@ -374,7 +374,12 @@ msgstr "Sunting..."
 msgid "Remove"
 msgstr "Buang"
 
-#: ../src/Sidebar/EventWidget.vala:212
+#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
+#: ../src/Sidebar/EventWidget.vala:199
+msgid "%s to %s"
+msgstr ""
+
+#: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
 msgstr "Sepanjang Hari"
 
@@ -503,14 +508,6 @@ msgstr "%B %e, %Y"
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
-#: ../core/Settings/LanguagesFormat.vala:33
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-#: ../core/Settings/LanguagesFormat.vala:36
-msgid "%H:%M"
-msgstr "%H:%M"
-
 #: ../core/Backends/PlacementWidget.vala:37
 msgid "User:"
 msgstr "Pengguna:"
@@ -549,6 +546,12 @@ msgstr "Pada komputer ini"
 
 #~ msgid "View and schedule events"
 #~ msgstr "Lihat dan jadualkan peristiwa"
+
+#~ msgid "%l:%M %p"
+#~ msgstr "%l:%M %p"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
 
 #~ msgid "Title"
 #~ msgstr "Tajuk"

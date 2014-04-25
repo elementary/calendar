@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-15 23:40+0200\n"
+"POT-Creation-Date: 2014-04-24 17:24+0200\n"
 "PO-Revision-Date: 2014-04-07 20:56+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-16 06:47+0000\n"
-"X-Generator: Launchpad (build 16976)\n"
+"X-Launchpad-Export-Date: 2014-04-25 06:36+0000\n"
+"X-Generator: Launchpad (build 16985)\n"
 "Language: ca\n"
 
 #: ../src/EventEdition/GuestsPanel.vala:44
@@ -374,7 +374,12 @@ msgstr "Edita…"
 msgid "Remove"
 msgstr "Suprimeix"
 
-#: ../src/Sidebar/EventWidget.vala:212
+#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
+#: ../src/Sidebar/EventWidget.vala:199
+msgid "%s to %s"
+msgstr ""
+
+#: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
 msgstr ""
 
@@ -503,14 +508,6 @@ msgstr "%e de %B de %Y"
 msgid "%A, %b %d"
 msgstr "%A, %-d de %b"
 
-#: ../core/Settings/LanguagesFormat.vala:33
-msgid "%l:%M %p"
-msgstr "%-I:%M %p"
-
-#: ../core/Settings/LanguagesFormat.vala:36
-msgid "%H:%M"
-msgstr "%-H:%M"
-
 #: ../core/Backends/PlacementWidget.vala:37
 msgid "User:"
 msgstr "Usuari:"
@@ -582,6 +579,12 @@ msgstr "En aquest ordinador"
 
 #~ msgid "Add calendar"
 #~ msgstr "Afegeix un calendari"
+
+#~ msgid "%l:%M %p"
+#~ msgstr "%-I:%M %p"
+
+#~ msgid "%H:%M"
+#~ msgstr "%-H:%M"
 
 #~ msgid "Participants"
 #~ msgstr "Participants"

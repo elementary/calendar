@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-15 23:40+0200\n"
+"POT-Creation-Date: 2014-04-24 17:24+0200\n"
 "PO-Revision-Date: 2014-02-19 22:31+0000\n"
 "Last-Translator: MinSik CHO <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-16 06:47+0000\n"
-"X-Generator: Launchpad (build 16976)\n"
+"X-Launchpad-Export-Date: 2014-04-25 06:37+0000\n"
+"X-Generator: Launchpad (build 16985)\n"
 "Language: ko\n"
 
 #: ../src/EventEdition/GuestsPanel.vala:44
@@ -372,7 +372,12 @@ msgstr "편집..."
 msgid "Remove"
 msgstr "제거"
 
-#: ../src/Sidebar/EventWidget.vala:212
+#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
+#: ../src/Sidebar/EventWidget.vala:199
+msgid "%s to %s"
+msgstr ""
+
+#: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
 msgstr ""
 
@@ -501,14 +506,6 @@ msgstr "%B %e, %Y"
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
-#: ../core/Settings/LanguagesFormat.vala:33
-msgid "%l:%M %p"
-msgstr "%p %l:%M"
-
-#: ../core/Settings/LanguagesFormat.vala:36
-msgid "%H:%M"
-msgstr "%H:%M"
-
 #: ../core/Backends/PlacementWidget.vala:37
 msgid "User:"
 msgstr "사용자:"
@@ -533,6 +530,9 @@ msgstr ""
 msgid "On this computer"
 msgstr "이 컴퓨터에서"
 
+#~ msgid "%l:%M %p"
+#~ msgstr "%p %l:%M"
+
 #~ msgid "Contacts"
 #~ msgstr "연락처"
 
@@ -547,6 +547,9 @@ msgstr "이 컴퓨터에서"
 
 #~ msgid "View and schedule events"
 #~ msgstr "이벤트를 보고 설정합니다."
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
 
 #~ msgid "Title"
 #~ msgstr "제목"

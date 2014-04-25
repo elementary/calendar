@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-15 23:40+0200\n"
+"POT-Creation-Date: 2014-04-24 17:24+0200\n"
 "PO-Revision-Date: 2014-03-22 18:07+0000\n"
 "Last-Translator: Pasha. P. Komar <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-16 06:47+0000\n"
-"X-Generator: Launchpad (build 16976)\n"
+"X-Launchpad-Export-Date: 2014-04-25 06:37+0000\n"
+"X-Generator: Launchpad (build 16985)\n"
 "Language: ru\n"
 
 #: ../src/EventEdition/GuestsPanel.vala:44
@@ -374,7 +374,12 @@ msgstr "Изменить..."
 msgid "Remove"
 msgstr "Удалить"
 
-#: ../src/Sidebar/EventWidget.vala:212
+#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
+#: ../src/Sidebar/EventWidget.vala:199
+msgid "%s to %s"
+msgstr ""
+
+#: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
 msgstr ""
 
@@ -503,14 +508,6 @@ msgstr "%B %e, %Y"
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
-#: ../core/Settings/LanguagesFormat.vala:33
-msgid "%l:%M %p"
-msgstr "%k:%M"
-
-#: ../core/Settings/LanguagesFormat.vala:36
-msgid "%H:%M"
-msgstr "%H:%M"
-
 #: ../core/Backends/PlacementWidget.vala:37
 msgid "User:"
 msgstr "Пользователь:"
@@ -580,6 +577,9 @@ msgstr "На этом компьютере"
 #~ msgid "Personal"
 #~ msgstr "Личное"
 
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
+
 #~ msgid "Your event has to be named and has to have a valid date"
 #~ msgstr "Событие должно иметь правильные название и дату"
 
@@ -588,6 +588,9 @@ msgstr "На этом компьютере"
 
 #~ msgid "Starts: \t"
 #~ msgstr "Начало: \t"
+
+#~ msgid "%l:%M %p"
+#~ msgstr "%k:%M"
 
 #~ msgid "Add calendar"
 #~ msgstr "Добавить календарь"

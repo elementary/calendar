@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-15 23:40+0200\n"
+"POT-Creation-Date: 2014-04-24 17:24+0200\n"
 "PO-Revision-Date: 2014-04-18 22:37+0000\n"
 "Last-Translator: ITPROJECTS <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-19 06:14+0000\n"
+"X-Launchpad-Export-Date: 2014-04-25 06:36+0000\n"
 "X-Generator: Launchpad (build 16985)\n"
 "Language: bg\n"
 
@@ -373,7 +373,12 @@ msgstr "Редактирай..."
 msgid "Remove"
 msgstr "Премахни"
 
-#: ../src/Sidebar/EventWidget.vala:212
+#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
+#: ../src/Sidebar/EventWidget.vala:199
+msgid "%s to %s"
+msgstr ""
+
+#: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
 msgstr "Целия ден"
 
@@ -502,14 +507,6 @@ msgstr "%e %B %Y"
 msgid "%A, %b %d"
 msgstr "%A, %d, %b"
 
-#: ../core/Settings/LanguagesFormat.vala:33
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-#: ../core/Settings/LanguagesFormat.vala:36
-msgid "%H:%M"
-msgstr "%H:%M"
-
 #: ../core/Backends/PlacementWidget.vala:37
 msgid "User:"
 msgstr "Потребител:"
@@ -536,6 +533,12 @@ msgstr "На този компютър"
 
 #~ msgid "at"
 #~ msgstr "в"
+
+#~ msgid "%l:%M %p"
+#~ msgstr "%l:%M %p"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
 
 #~ msgid "Title"
 #~ msgstr "Заглавие"
