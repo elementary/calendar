@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-24 17:24+0200\n"
-"PO-Revision-Date: 2013-03-09 14:56+0000\n"
-"Last-Translator: Dani Pratomo <Unknown>\n"
+"PO-Revision-Date: 2014-04-27 16:21+0000\n"
+"Last-Translator: Alfie Ilhamsyah <reikanou.issen@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-25 06:37+0000\n"
+"X-Launchpad-Export-Date: 2014-04-28 05:52+0000\n"
 "X-Generator: Launchpad (build 16985)\n"
 "Language: id\n"
 
@@ -388,7 +388,7 @@ msgstr ""
 
 #: ../src/SourceItem.vala:137
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "Kalender \"%s\" telah dihapus"
 
 #: ../src/MayaToolbar.vala:41
 msgid "Create a new event"
@@ -432,7 +432,7 @@ msgstr ""
 
 #: ../src/SourceDialog.vala:67
 msgid "Calendar Name"
-msgstr ""
+msgstr "Nama Kalender"
 
 #: ../src/SourceDialog.vala:90
 msgid "Type:"
@@ -555,9 +555,6 @@ msgstr "Di komputer ini"
 #~ msgid "at"
 #~ msgstr "pada"
 
-#~ msgid "Sync..."
-#~ msgstr "Sinkronkan..."
-
 #~ msgid "Personal"
 #~ msgstr "Pribadi"
 
@@ -599,3 +596,9 @@ msgstr "Di komputer ini"
 
 #~ msgid "Participants"
 #~ msgstr "Peserta"
+
+#~ msgid "Sync..."
+#~ msgstr "Lakukan Sinkronisasi..."
+
+#~ msgid "This event can't be edited"
+#~ msgstr "Acara ini tidak bisa diubah"
