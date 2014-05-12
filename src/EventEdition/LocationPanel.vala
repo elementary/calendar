@@ -21,7 +21,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
     private Gtk.SearchEntry location_entry;
 
     private GtkChamplain.Embed champlain_embed;
-    private Champlain.Point point;
+    private Maya.Marker point;
      // Only set the geo property if map_selected is true, this is a smart behavior!
     private bool map_selected = false;
 
@@ -50,7 +50,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         attach (champlain_embed, 0, 2, 1, 1);
 
         // Load the location
-        point = new Champlain.Point ();
+        point = new Maya.Marker ();
         point.draggable = parent_dialog.can_edit;
         point.drag_finish.connect (() => {
             map_selected = true;
@@ -88,7 +88,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         view.center_on (point.latitude, point.longitude);
         marker_layer.add_marker (point);
     }
-    
+
     /**
      * Save the values in the dialog into the component.
      */
@@ -143,5 +143,21 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         });
 
         yield;
+    }
+}
+
+public class Maya.Marker : Champlain.Marker {
+    public Marker () {
+        Gdk.Pixbuf pixbuf = new Gdk.Pixbuf.from_file ("%s/LocationMarker.svg".printf (Build.PKGDATADIR));
+        Clutter.Image image = new Clutter.Image ();
+        image.set_data (pixbuf.get_pixels (),
+                      pixbuf.has_alpha ? Cogl.PixelFormat.RGBA_8888 : Cogl.PixelFormat.RGB_888,
+                      pixbuf.width,
+                      pixbuf.height,
+                      pixbuf.rowstride);
+        content = image;
+        set_size (pixbuf.width, pixbuf.height);
+        translation_x = -pixbuf.width/2;
+        translation_y = -pixbuf.height;
     }
 }
