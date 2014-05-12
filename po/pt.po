@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-24 17:24+0200\n"
-"PO-Revision-Date: 2014-04-10 12:15+0000\n"
+"PO-Revision-Date: 2014-05-11 16:31+0000\n"
 "Last-Translator: Toupas <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-25 06:37+0000\n"
-"X-Generator: Launchpad (build 16985)\n"
+"X-Launchpad-Export-Date: 2014-05-12 05:54+0000\n"
+"X-Generator: Launchpad (build 16996)\n"
 "Language: pt\n"
 
 #: ../src/EventEdition/GuestsPanel.vala:44
@@ -45,7 +45,7 @@ msgstr "De:"
 
 #: ../src/EventEdition/InfoPanel.vala:65
 msgid "All day:"
-msgstr "Dia completo:"
+msgstr "Todo dia:"
 
 #: ../src/EventEdition/InfoPanel.vala:70
 msgid "To:"
@@ -377,7 +377,7 @@ msgstr "Remover"
 #. / TRANSLATORS: for multiple days events, shows: (date) to (date)
 #: ../src/Sidebar/EventWidget.vala:199
 msgid "%s to %s"
-msgstr ""
+msgstr "%s até %s"
 
 #: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
@@ -526,7 +526,7 @@ msgstr "john@doe.com"
 
 #: ../core/Backends/PlacementWidget.vala:80
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Manter uma cópia local"
 
 #: ../core/Backends/LocalBackend.vala:26
 msgid "On this computer"
