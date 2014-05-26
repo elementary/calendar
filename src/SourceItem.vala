@@ -38,6 +38,7 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         // Source widget
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
         revealer = new Gtk.Revealer ();
+        revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
         revealer.set_reveal_child (true);
 
         var revealer_grid = new Gtk.Grid ();
@@ -111,6 +112,7 @@ public class Maya.View.SourceItem : Gtk.EventBox {
 
         // Info bar
         info_revealer = new Gtk.Revealer ();
+        info_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
         info_revealer.no_show_all = true;
         var info_revealer_grid = new Gtk.Grid ();
         info_revealer_grid.column_spacing = 6;
