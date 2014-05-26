@@ -74,9 +74,9 @@ namespace Maya.View.Widgets {
             var filter = new Gtk.FileFilter ();
             filter.add_mime_type("text/calendar");
             filechooser.set_current_name(_("calendar.ics"));
-            filechooser.set_filter(filter);
-            filechooser.add_button(Gtk.Stock.CANCEL, Gtk.ResponseType.CLOSE);
-            filechooser.add_button(Gtk.Stock.SAVE, Gtk.ResponseType.APPLY);
+            filechooser.set_filter (filter);
+            filechooser.add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
+            filechooser.add_button (_("Save"), Gtk.ResponseType.APPLY);
             filechooser.response.connect (on_response);
             filechooser.show_all ();
             filechooser.run ();
@@ -108,4 +108,3 @@ namespace Maya.View.Widgets {
     }
 
 }
-

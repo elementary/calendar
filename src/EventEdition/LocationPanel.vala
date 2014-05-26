@@ -148,16 +148,20 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 
 public class Maya.Marker : Champlain.Marker {
     public Marker () {
-        Gdk.Pixbuf pixbuf = new Gdk.Pixbuf.from_file ("%s/LocationMarker.svg".printf (Build.PKGDATADIR));
-        Clutter.Image image = new Clutter.Image ();
-        image.set_data (pixbuf.get_pixels (),
-                      pixbuf.has_alpha ? Cogl.PixelFormat.RGBA_8888 : Cogl.PixelFormat.RGB_888,
-                      pixbuf.width,
-                      pixbuf.height,
-                      pixbuf.rowstride);
-        content = image;
-        set_size (pixbuf.width, pixbuf.height);
-        translation_x = -pixbuf.width/2;
-        translation_y = -pixbuf.height;
+        try {
+            Gdk.Pixbuf pixbuf = new Gdk.Pixbuf.from_file ("%s/LocationMarker.svg".printf (Build.PKGDATADIR));
+            Clutter.Image image = new Clutter.Image ();
+            image.set_data (pixbuf.get_pixels (),
+                          pixbuf.has_alpha ? Cogl.PixelFormat.RGBA_8888 : Cogl.PixelFormat.RGB_888,
+                          pixbuf.width,
+                          pixbuf.height,
+                          pixbuf.rowstride);
+            content = image;
+            set_size (pixbuf.width, pixbuf.height);
+            translation_x = -pixbuf.width/2;
+            translation_y = -pixbuf.height;
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 }

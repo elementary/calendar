@@ -8,6 +8,5 @@ Type=Application
 Categories=System
 OnlyShowIn=Pantheon
 NoDisplay=true
-X-GNOME-Autostart-Notify=true
-X-GNOME-AutoRestart=false
+X-GNOME-AutoRestart=true
 X-GNOME-Autostart-Phase=Applications
