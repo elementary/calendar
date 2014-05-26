@@ -41,7 +41,6 @@ public class EventDialog : Gtk.Dialog {
          * The different widgets in the dialog.
          */
         private Gtk.Stack stack;
-        private Gtk.Button create_button;
         private Granite.Widgets.ModeButton mode_button;
 
         private EventEdition.GuestsPanel guests_panel;
@@ -130,19 +129,31 @@ public class EventDialog : Gtk.Dialog {
             stack.add_named (reminder_panel, "reminderpanel");
             stack.add_named (repeat_panel, "repeatpanel");
 
-            if (add_event) {
-                create_button = new Gtk.Button.with_label (_("Create Event"));
-            } else {
-                create_button = new Gtk.Button.with_label (_("Save Changes"));
-            }
-            create_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            create_button.clicked.connect (save_dialog);
-            
             var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
             buttonbox.margin_right = 12;
+            buttonbox.margin_left = 12;
+            buttonbox.baseline_position = Gtk.BaselinePosition.CENTER;
             buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
-            buttonbox.pack_end (create_button);
-            
+
+            Gtk.Button create_button = new Gtk.Button ();
+            create_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            create_button.clicked.connect (save_dialog);
+            if (add_event == true) {
+                create_button.label = _("Create Event");
+            } else {
+                create_button.label = _("Save Changes");
+            }
+
+            if (add_event == false) {
+                var delete_button = new Gtk.Button.with_label (_("Delete Event"));
+                delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+                delete_button.clicked.connect (remove_event);
+                buttonbox.add (delete_button);
+                buttonbox.set_child_secondary (delete_button, true);
+                buttonbox.set_child_non_homogeneous (delete_button, true);
+            }
+            buttonbox.add (create_button);
+
             grid.attach (stack, 0, 0, 1, 1);
             grid.attach (buttonbox, 0, 1, 1, 1);
 
@@ -184,6 +195,12 @@ public class EventDialog : Gtk.Dialog {
                     calmodel.add_event (source, ecal);
                 }
             }
+            this.destroy();
+        }
+
+        private void remove_event () {
+            var calmodel = Model.CalendarModel.get_default ();
+            calmodel.remove_event (original_source, ecal, mod_type);
             this.destroy();
         }
     }
