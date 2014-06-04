@@ -8,36 +8,36 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-24 17:24+0200\n"
-"PO-Revision-Date: 2013-05-25 12:38+0000\n"
-"Last-Translator: Theodoros Kentistos <theokent@gmail.com>\n"
+"PO-Revision-Date: 2014-06-03 11:46+0000\n"
+"Last-Translator: James Spentzos <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-25 06:37+0000\n"
-"X-Generator: Launchpad (build 16985)\n"
+"X-Launchpad-Export-Date: 2014-06-04 06:12+0000\n"
+"X-Generator: Launchpad (build 17031)\n"
 "Language: el\n"
 
 #: ../src/EventEdition/GuestsPanel.vala:44
 msgid "Participants:"
-msgstr ""
+msgstr "Συμμετέχοντες:"
 
 #: ../src/EventEdition/GuestsPanel.vala:47
 msgid "Invite…"
-msgstr ""
+msgstr "Πρόσκληση…"
 
 #: ../src/EventEdition/GuestsPanel.vala:151
 #: ../src/EventEdition/GuestsPanel.vala:162
 msgid "Pending"
-msgstr ""
+msgstr "Εκκρεμεί"
 
 #: ../src/EventEdition/GuestsPanel.vala:156
 msgid "Accepted"
-msgstr ""
+msgstr "Αποδέχτηκε"
 
 #: ../src/EventEdition/GuestsPanel.vala:159
 msgid "Declined"
-msgstr ""
+msgstr "Απορρίφθηκε"
 
 #: ../src/EventEdition/InfoPanel.vala:59
 msgid "From:"
@@ -53,7 +53,7 @@ msgstr "Προς:"
 
 #: ../src/EventEdition/InfoPanel.vala:89
 msgid "Title:"
-msgstr ""
+msgstr "Τίτλος:"
 
 #: ../src/EventEdition/InfoPanel.vala:91
 msgid "Name of Event"
@@ -61,11 +61,11 @@ msgstr "Όνομα γεγονότος"
 
 #: ../src/EventEdition/InfoPanel.vala:94
 msgid "Calendar:"
-msgstr ""
+msgstr "Ημερολόγιο:"
 
 #: ../src/EventEdition/InfoPanel.vala:112
 msgid "Comments:"
-msgstr ""
+msgstr "Σχόλια:"
 
 #: ../src/EventEdition/EventDialog.vala:61
 msgid "Add Event"
@@ -77,7 +77,7 @@ msgstr "Επεξεργασία γεγονότος"
 
 #: ../src/EventEdition/EventDialog.vala:92
 msgid "General Informations"
-msgstr ""
+msgstr "Γενικές Πληροφορίες"
 
 #: ../src/EventEdition/EventDialog.vala:95
 msgid "Location"
@@ -85,16 +85,16 @@ msgstr "Τοποθεσία"
 
 #: ../src/EventEdition/EventDialog.vala:98
 msgid "Guests"
-msgstr ""
+msgstr "Καλεσμένοι"
 
 #: ../src/EventEdition/EventDialog.vala:101
 msgid "Reminders"
-msgstr ""
+msgstr "Υπενθυμίσεις"
 
 #: ../src/EventEdition/EventDialog.vala:104
 #: ../src/EventEdition/RepeatPanel.vala:162
 msgid "Repeat"
-msgstr ""
+msgstr "Επανάληψη"
 
 #: ../src/EventEdition/EventDialog.vala:134
 msgid "Create Event"
@@ -106,253 +106,253 @@ msgstr "Αποθήκευση αλλαγών"
 
 #: ../src/EventEdition/RepeatPanel.vala:49
 msgid "Repeat:"
-msgstr ""
+msgstr "Επανάληψη:"
 
 #: ../src/EventEdition/RepeatPanel.vala:54
 msgid "Daily"
-msgstr ""
+msgstr "Καθημερινά"
 
 #: ../src/EventEdition/RepeatPanel.vala:55
 msgid "Weekly"
-msgstr ""
+msgstr "Εβδομαδιαία"
 
 #: ../src/EventEdition/RepeatPanel.vala:56
 msgid "Monthly"
-msgstr ""
+msgstr "Μηνιαία"
 
 #: ../src/EventEdition/RepeatPanel.vala:57
 msgid "Yearly"
-msgstr ""
+msgstr "Ετήσια"
 
 #: ../src/EventEdition/RepeatPanel.vala:96
 msgid "Every:"
-msgstr ""
+msgstr "Κάθε:"
 
 #: ../src/EventEdition/RepeatPanel.vala:103
 msgid "Day"
-msgstr ""
+msgstr "Ημέρα"
 
 #: ../src/EventEdition/RepeatPanel.vala:103
 msgid "Days"
-msgstr ""
+msgstr "Ημέρες"
 
 #: ../src/EventEdition/RepeatPanel.vala:106
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Week"
-msgstr ""
+msgstr "Εβδομάδα"
 
 #: ../src/EventEdition/RepeatPanel.vala:106
 msgid "Weeks"
-msgstr ""
+msgstr "Εβδομάδες"
 
 #: ../src/EventEdition/RepeatPanel.vala:109
 msgid "Month"
-msgstr ""
+msgstr "Μήνα"
 
 #: ../src/EventEdition/RepeatPanel.vala:109
 msgid "Months"
-msgstr ""
+msgstr "Μήνες"
 
 #: ../src/EventEdition/RepeatPanel.vala:112
 msgid "Year"
-msgstr ""
+msgstr "Έτος"
 
 #: ../src/EventEdition/RepeatPanel.vala:112
 msgid "Years"
-msgstr ""
+msgstr "Έτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:127
 msgid "Ends:"
-msgstr ""
+msgstr "Λήγει:"
 
 #: ../src/EventEdition/RepeatPanel.vala:129
 #: ../src/EventEdition/RepeatPanel.vala:162
 msgid "Repeats"
-msgstr ""
+msgstr "Επαναλήψεις"
 
 #: ../src/EventEdition/RepeatPanel.vala:133
 msgid "Never"
-msgstr ""
+msgstr "Ποτέ"
 
 #: ../src/EventEdition/RepeatPanel.vala:134
 msgid "Until"
-msgstr ""
+msgstr "Μέχρι"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "After"
-msgstr ""
+msgstr "Μετά"
 
 #: ../src/EventEdition/RepeatPanel.vala:181
 msgid "The same day every month"
-msgstr ""
+msgstr "Την ίδια ημέρα κάθε μήνα"
 
 #: ../src/EventEdition/RepeatPanel.vala:299
 msgid "Sunday"
-msgstr ""
+msgstr "Κυριακή"
 
 #: ../src/EventEdition/RepeatPanel.vala:302
 msgid "Monday"
-msgstr ""
+msgstr "Δευτέρα"
 
 #: ../src/EventEdition/RepeatPanel.vala:305
 msgid "Tuesday"
-msgstr ""
+msgstr "Τρίτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:308
 msgid "Wednesday"
-msgstr ""
+msgstr "Τετάρτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:311
 msgid "Thursday"
-msgstr ""
+msgstr "Πέμπτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:314
 msgid "Friday"
-msgstr ""
+msgstr "Παρασκευή"
 
 #: ../src/EventEdition/RepeatPanel.vala:317
 msgid "Saturday"
-msgstr ""
+msgstr "Σάββατο"
 
 #: ../src/EventEdition/RepeatPanel.vala:323
 msgid "Every last %s"
-msgstr ""
+msgstr "Κάθε τελευταία %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:326
 msgid "Every first %s"
-msgstr ""
+msgstr "Κάθε πρώτη %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:329
 msgid "Every second %s"
-msgstr ""
+msgstr "Κάθε δεύτερη %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:332
 msgid "Every third %s"
-msgstr ""
+msgstr "Κάθε τρίτη %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:335
 msgid "Every fourth %s"
-msgstr ""
+msgstr "Καθέ τέταρτη %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:338
 msgid "Every fifth %s"
-msgstr ""
+msgstr "Κάθε πέμπτη %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:346
 msgid "Mon"
-msgstr ""
+msgstr "Δευ"
 
 #: ../src/EventEdition/RepeatPanel.vala:347
 msgid "Tue"
-msgstr ""
+msgstr "Τρι"
 
 #: ../src/EventEdition/RepeatPanel.vala:348
 msgid "Wed"
-msgstr ""
+msgstr "Τετ"
 
 #: ../src/EventEdition/RepeatPanel.vala:349
 msgid "Thu"
-msgstr ""
+msgstr "Πεμ"
 
 #: ../src/EventEdition/RepeatPanel.vala:350
 msgid "Fri"
-msgstr ""
+msgstr "Παρ"
 
 #: ../src/EventEdition/RepeatPanel.vala:351
 msgid "Sat"
-msgstr ""
+msgstr "Σαβ"
 
 #: ../src/EventEdition/RepeatPanel.vala:352
 msgid "Sun"
-msgstr ""
+msgstr "Κυρ"
 
 #: ../src/EventEdition/ReminderPanel.vala:32
 msgid "Reminders:"
-msgstr ""
+msgstr "Υπενθυμίσεις:"
 
 #: ../src/EventEdition/ReminderPanel.vala:35
 msgid "No Reminders."
-msgstr ""
+msgstr "Καμία Υπενθύμιση."
 
 #: ../src/EventEdition/ReminderPanel.vala:47
 msgid "Add Reminder"
-msgstr ""
+msgstr "Προσθήκη Υπενθύμισης"
 
 #: ../src/EventEdition/ReminderPanel.vala:176
 msgid "0 minutes"
-msgstr ""
+msgstr "0 λεπτά"
 
 #: ../src/EventEdition/ReminderPanel.vala:177
 msgid "1 minutes"
-msgstr ""
+msgstr "1 λεπτό"
 
 #: ../src/EventEdition/ReminderPanel.vala:178
 msgid "5 minutes"
-msgstr ""
+msgstr "5 λεπτά"
 
 #: ../src/EventEdition/ReminderPanel.vala:179
 msgid "10 minutes"
-msgstr ""
+msgstr "10 λεπτά"
 
 #: ../src/EventEdition/ReminderPanel.vala:180
 msgid "15 minutes"
-msgstr ""
+msgstr "15 λεπτά"
 
 #: ../src/EventEdition/ReminderPanel.vala:181
 msgid "20 minutes"
-msgstr ""
+msgstr "20 λεπτά"
 
 #: ../src/EventEdition/ReminderPanel.vala:182
 msgid "25 minutes"
-msgstr ""
+msgstr "25 λεπτά"
 
 #: ../src/EventEdition/ReminderPanel.vala:183
 msgid "30 minutes"
-msgstr ""
+msgstr "30 λεπτά"
 
 #: ../src/EventEdition/ReminderPanel.vala:184
 msgid "45 minutes"
-msgstr ""
+msgstr "45 λεπτά"
 
 #: ../src/EventEdition/ReminderPanel.vala:185
 msgid "1 hour"
-msgstr ""
+msgstr "1 ώρα"
 
 #: ../src/EventEdition/ReminderPanel.vala:186
 msgid "2 hours"
-msgstr ""
+msgstr "2 ώρες"
 
 #: ../src/EventEdition/ReminderPanel.vala:187
 msgid "3 hours"
-msgstr ""
+msgstr "3 ώρες"
 
 #: ../src/EventEdition/ReminderPanel.vala:188
 msgid "12 hours"
-msgstr ""
+msgstr "12 ώρες"
 
 #: ../src/EventEdition/ReminderPanel.vala:189
 msgid "24 hours"
-msgstr ""
+msgstr "24 ώρες"
 
 #: ../src/EventEdition/ReminderPanel.vala:190
 msgid "2 days"
-msgstr ""
+msgstr "2 ημέρες"
 
 #: ../src/EventEdition/ReminderPanel.vala:191
 msgid "1 week"
-msgstr ""
+msgstr "1 εβδομάδα"
 
 #: ../src/EventEdition/ReminderPanel.vala:200
 msgid "Notification"
-msgstr ""
+msgstr "Ειδοποίηση"
 
 #: ../src/EventEdition/ReminderPanel.vala:201
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: ../src/EventEdition/LocationPanel.vala:37
 msgid "Location:"
-msgstr ""
+msgstr "Τοποθεσία:"
 
 #: ../src/EventEdition/LocationPanel.vala:39
 msgid "John Smith OR Example St."
@@ -368,28 +368,28 @@ msgstr ""
 
 #: ../src/Sidebar/EventWidget.vala:131 ../src/SourceItem.vala:98
 msgid "Edit…"
-msgstr ""
+msgstr "Επεξεργασία..."
 
 #: ../src/Sidebar/EventWidget.vala:132 ../src/SourceItem.vala:92
 msgid "Remove"
-msgstr ""
+msgstr "Αφαίρεση"
 
 #. / TRANSLATORS: for multiple days events, shows: (date) to (date)
 #: ../src/Sidebar/EventWidget.vala:199
 msgid "%s to %s"
-msgstr ""
+msgstr "%s ως %s"
 
 #: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
-msgstr ""
+msgstr "Όλη μέρα"
 
 #: ../src/SourceItem.vala:119
 msgid "Undo"
-msgstr ""
+msgstr "Αναίρεση"
 
 #: ../src/SourceItem.vala:137
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "Το ημερολόγιο \"%s\" αφαιρέθηκε."
 
 #: ../src/MayaToolbar.vala:41
 msgid "Create a new event"
@@ -397,7 +397,7 @@ msgstr "Δημιουργία ενός νέου γεγονότος"
 
 #: ../src/MayaToolbar.vala:45
 msgid "Manage Calendars"
-msgstr ""
+msgstr "Διαχείριση Ημερολογίων"
 
 #: ../src/MayaToolbar.vala:53
 msgid "Search Events"
@@ -421,43 +421,43 @@ msgstr "Σχετικά"
 
 #: ../src/SourceDialog.vala:54
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 #: ../src/SourceDialog.vala:55
 msgid "Create"
-msgstr ""
+msgstr "Δημιουργία"
 
 #: ../src/SourceDialog.vala:64
 msgid "Name:"
-msgstr ""
+msgstr "Όνομα:"
 
 #: ../src/SourceDialog.vala:67
 msgid "Calendar Name"
-msgstr ""
+msgstr "Όνομα Ημερολογίου"
 
 #: ../src/SourceDialog.vala:90
 msgid "Type:"
-msgstr ""
+msgstr "Τύπος:"
 
 #: ../src/SourceDialog.vala:112
 msgid "Color:"
-msgstr ""
+msgstr "Χρώμα:"
 
 #: ../src/SourceDialog.vala:117
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "Σήμανση ως προεπιλγμένο ημερολόγιο"
 
 #: ../src/SourceDialog.vala:147
 msgid "Create Calendar"
-msgstr ""
+msgstr "Δημιουργία Ημερολογίου"
 
 #: ../src/SourceDialog.vala:154
 msgid "Save"
-msgstr ""
+msgstr "Αποθήκευση"
 
 #: ../src/SourceSelector.vala:68
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "Προσθήκη Νέου Ημερολογίου..."
 
 #: ../src/Application.vala:30
 msgid "Calendar"
@@ -465,7 +465,7 @@ msgstr "Ημερολόγιο"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
-msgstr ""
+msgstr "%u περισσότερα…"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -478,27 +478,27 @@ msgstr "ημερολόγιο.ics"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:81
 msgid "Use a secure connection"
-msgstr ""
+msgstr "Χρήση μιας ασφαλούς σύνδεσης"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:103
 msgid "Server handles meeting invitations"
-msgstr ""
+msgstr "Ο διακομιστής χειρίζεται τις προσκλήσεις συναντήσεων"
 
 #: ../plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: ../plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "user.name ή user.name@gmail.com"
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
@@ -510,23 +510,23 @@ msgstr "%A, %b %d"
 
 #: ../core/Backends/PlacementWidget.vala:37
 msgid "User:"
-msgstr ""
+msgstr "Χρήστης:"
 
 #: ../core/Backends/PlacementWidget.vala:46
 msgid "user.name"
-msgstr ""
+msgstr "user.name"
 
 #: ../core/Backends/PlacementWidget.vala:59
 msgid "Email:"
-msgstr ""
+msgstr "Ηλ. διεύθυνση:"
 
 #: ../core/Backends/PlacementWidget.vala:68
 msgid "john@doe.com"
-msgstr ""
+msgstr "john@doe.com"
 
 #: ../core/Backends/PlacementWidget.vala:80
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Διατήρηση ένος τοπικού αντιγράφου"
 
 #: ../core/Backends/LocalBackend.vala:26
 msgid "On this computer"
