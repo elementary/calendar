@@ -36,7 +36,7 @@ Package: maya-calendar-common
 Replaces: maya (<< 0.2.0~r394)
 Conflicts: maya (<< 0.2.0~r394)
 Architecture: all
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}
 Description: GTK+ calendar application
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala, specifically for elementary.
@@ -64,8 +64,7 @@ Package: libmaya-calendar-dev
 Architecture: any
 Section: libdevel
 Depends: libmaya-calendar0 (= ${binary:Version}),
-         ${misc:Depends},
-         ${shlibs:Depends}
+         ${misc:Depends}
 Description: GTK+ calendar application (developpment headers)
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala, specifically for elementary.
