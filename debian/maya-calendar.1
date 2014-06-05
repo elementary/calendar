@@ -1,0 +1,33 @@
+.TH maya-calendar 1 "Jun 5, 2014"
+.SH NAME
+maya\-calendar \- GTK+ calendar application
+.PP
+\fBMaya\fP is a slim, lightweight, GTK+ calendar application written
+in Vala and designed for elementary OS.
+It features an easy to use yet powerful user interface, provides a daemon
+to notify the user about upcoming events and supports synchronization with 
+Google Calendar as well as CalDAV-supporting services such as OwnCloud.
+.SH SYNOPSIS
+.B maya\-calendar
+[\fB\-\-add\-event\fR | \fB\-\-import-ical\fR \fIPATH\fR]
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Show help message and exit
+.TP
+.BR \-v ", " \-\-version
+Print version info and exit
+.TP
+.BR \-a ", " \-\-add\-event
+Show the "Add Event" dialog
+.TP
+.BR \-i ", " \-\-import\-ical   \fIPATH\fR
+Import all events from the specified iCal file to Maya
+.SH BUGS
+iCal import is not yet implemented as of version 0.3
+.SH AUTHOR
+Maya was written by Maxwell Barvian <maxwell@elementaryos.org>,
+Corentin Noël <corentin@elementaryos.org> et al.
+.PP
+This manual page was written by Sergey "Shnatsel" Davidoff <sergey@elementaryos.org>,
+for the Debian project (but may be used by others).
