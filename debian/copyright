@@ -9,7 +9,6 @@ Copyright: 2011-2012 Maxwell Barvian <maxwell@elementaryos.org>
            2011 Jaap Broekhuizen <jaapz.b@gmail.com>
            2011-2012 Lucas Baudin <xapantu@gmail.com>
            2011-2013 Cody Garver <cody@elementaryos.org>
-           2012 Niels Avonds <niels.avonds@gmail.com>
            2013 Marcus Lundgren <marcus.lundgren@gmail.com>
            2012-2014 Corentin Noël <corentin@elementaryos.org>
 License: GPL-3.0+
@@ -17,7 +16,6 @@ License: GPL-3.0+
 
 Files: Maya/Application.vala
 Copyright: 2011-2012 Maxwell Barvian <maxwell@elementaryos.org>
-           2011-2012 Maya Developers
 License: GPL-3.0+
 
 
@@ -52,15 +50,45 @@ Copyright: 2011-2012 Niels Avonds <niels.avonds@gmail.com>
 License: GPL-3.0+
 
 
-Files: cmake/vala/ParseArguments.cmake
+Files: cmake/ParseArguments.cmake
 Copyright: 2000-2009 Kitware, Inc., Insight Software Consortium
 License: 2-clause BSD
 
 
-Files: cmake/vala/FindVala.cmake
-       cmake/vala/ValaPrecompile.cmake
-       cmake/vala/ValaVersion.cmake
+Files: cmake/FindVala.cmake
+       cmake/ValaVersion.cmake
 Copyright: 2009-2010 Jakob Westhoff
+License: 2-clause BSD
+
+
+Files: cmake/FindGirCompiler.cmake
+Copyright: 2009-2010 Jakob Westhoff
+           2014 Corentin Noël <corentin@elementaryos.org>
+License: 2-clause BSD
+
+
+Files: cmake/ValaPrecompile.cmake
+Copyright: 2009-2010 Jakob Westhoff
+           2011-2012 Lucas Baudin <xapantu@gmail.com>
+           2013 Victor Martinez <victor@elementaryos.org>
+           2014 Corentin Noël <corentin@elementaryos.org>
+
+Files: cmake/GSettings.cmake
+       cmake/Tests.cmake
+Copyright: 2011 ammonkey <am.monkeyd@gmail.com>
+License: 2-clause BSD
+
+
+Files: cmake/Translations.cmake
+Copyright: 2011 ammonkey <am.monkeyd@gmail.com>
+           2013 Victor Martinez <victor@elementaryos.org>
+           2013 Sergio Costas <rastersoft@gmail.com>
+           2014 Corentin Noël <corentin@elementaryos.org>
+License: 2-clause BSD
+
+
+Files: cmake/GObjectIntrospectionMacros.cmake
+Copyright: 2012 Lucas Baudin <xapantu@gmail.com>
 License: 2-clause BSD
 
 
@@ -70,6 +98,11 @@ Copyright: 2011 Maxwell Barvian <maxwell@elementaryos.org>
            2011-2014 Sergey "Shnatsel" Davidoff <sergey@elementaryos.org>
            2012 Devid Antonio Filoni <d.filoni@ubuntu.com>
            2014 Corentin Noël <corentin@elementaryos.org>
+License: GPL-3.0+
+
+
+Files: debian/watch
+Copyright: Bart Martens <bartm@debian.org>
 License: GPL-3.0+
 
 
