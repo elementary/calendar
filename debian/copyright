@@ -72,6 +72,8 @@ Copyright: 2009-2010 Jakob Westhoff
            2011-2012 Lucas Baudin <xapantu@gmail.com>
            2013 Victor Martinez <victor@elementaryos.org>
            2014 Corentin Noël <corentin@elementaryos.org>
+License: 2-clause BSD
+
 
 Files: cmake/GSettings.cmake
        cmake/Tests.cmake
