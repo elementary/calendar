@@ -22,7 +22,7 @@ Homepage: https://launchpad.net/maya
 
 Package: maya-calendar
 Replaces: maya (<< 0.2.0~r394)
-Conflicts: maya (<< 0.2.0~r394)
+Breaks: maya (<< 0.2.0~r394)
 Architecture: any
 Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar-common (= ${source:Version}),
@@ -38,7 +38,7 @@ Description: GTK+ calendar application
 
 Package: maya-calendar-common
 Replaces: maya (<< 0.2.0~r394)
-Conflicts: maya (<< 0.2.0~r394)
+Breaks: maya (<< 0.2.0~r394)
 Architecture: all
 Depends: ${misc:Depends}
 Description: GTK+ calendar application (architecture-independent files)
