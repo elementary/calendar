@@ -41,7 +41,7 @@ Replaces: maya (<< 0.2.0~r394)
 Conflicts: maya (<< 0.2.0~r394)
 Architecture: all
 Depends: ${misc:Depends}
-Description: GTK+ calendar application
+Description: GTK+ calendar application (architecture-independent files)
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala and designed for elementary OS.
  .
@@ -57,7 +57,7 @@ Enhances: maya-calendar
 Depends: libmaya-calendar0 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: GTK+ calendar application (library)
+Description: GTK+ calendar application (event notification daemon)
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala and designed for elementary OS.
  .
@@ -72,7 +72,7 @@ Architecture: any
 Section: libs
 Enhances: maya-calendar
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: GTK+ calendar application (library)
+Description: GTK+ calendar application (shared library)
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala and designed for elementary OS.
  .
@@ -87,7 +87,7 @@ Architecture: any
 Section: libdevel
 Depends: libmaya-calendar0 (= ${binary:Version}),
          ${misc:Depends}
-Description: GTK+ calendar application (developpment headers)
+Description: GTK+ calendar application (development files)
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala and designed for elementary OS.
  .
@@ -104,7 +104,7 @@ Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: GTK+ calendar application
+Description: GTK+ calendar application (Google Calendar plugin)
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala, specifically forelementary OS.
  .
@@ -121,7 +121,7 @@ Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: GTK+ calendar application
+Description: GTK+ calendar application (CalDAV plugin)
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala and designed for elementary OS.
  .
