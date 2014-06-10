@@ -70,6 +70,7 @@ Description: GTK+ calendar application (event notification daemon)
 Package: libmaya-calendar0
 Architecture: any
 Section: libs
+Multi-Arch: same
 Enhances: maya-calendar
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: GTK+ calendar application (shared library)
