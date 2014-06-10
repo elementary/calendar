@@ -33,7 +33,7 @@ Description: GTK+ calendar application
  in Vala and designed for elementary OS.
  .
  It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with 
+ to notify the user about upcoming events and supports synchronization with
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
 
 Package: maya-calendar-common
@@ -46,7 +46,7 @@ Description: GTK+ calendar application
  in Vala and designed for elementary OS.
  .
  It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with 
+ to notify the user about upcoming events and supports synchronization with
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
  .
  This package contains architecture-independent files for Maya.
@@ -62,7 +62,7 @@ Description: GTK+ calendar application (library)
  in Vala and designed for elementary OS.
  .
  It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with 
+ to notify the user about upcoming events and supports synchronization with
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
  .
  This package provides the daemon to notify the user about upcoming events.
@@ -77,7 +77,7 @@ Description: GTK+ calendar application (library)
  in Vala and designed for elementary OS.
  .
  It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with 
+ to notify the user about upcoming events and supports synchronization with
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
  .
  This package provides the shared library used by Maya plugins.
@@ -92,7 +92,7 @@ Description: GTK+ calendar application (developpment headers)
  in Vala and designed for elementary OS.
  .
  It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with 
+ to notify the user about upcoming events and supports synchronization with
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
  .
  This package provides the development files required to write Maya plugins.
@@ -109,7 +109,7 @@ Description: GTK+ calendar application
  in Vala, specifically forelementary OS.
  .
  It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with 
+ to notify the user about upcoming events and supports synchronization with
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
  .
  This package provides Google Calendar integration.
@@ -126,7 +126,7 @@ Description: GTK+ calendar application
  in Vala and designed for elementary OS.
  .
  It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with 
+ to notify the user about upcoming events and supports synchronization with
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
  .
  This package provides integration with CalDAV-supporting services.
@@ -141,7 +141,7 @@ Description: GTK+ calendar application (debugging symbols)
  in Vala and designed for elementary OS.
  .
  It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with 
+ to notify the user about upcoming events and supports synchronization with
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
  .
  This package contains debugging symbols for Maya.
