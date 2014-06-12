@@ -23,6 +23,7 @@ public class Maya.View.SourceItem : Gtk.EventBox {
     private Gtk.Button edit_button;
 
     private Gtk.Label calendar_name_label;
+    private Gtk.Label user_name_label;
     private Gtk.Label backend_label;
     private Gtk.Label calendar_color_label;
     private Gtk.CheckButton visible_checkbutton;
@@ -43,7 +44,6 @@ public class Maya.View.SourceItem : Gtk.EventBox {
 
         var revealer_grid = new Gtk.Grid ();
         revealer_grid.column_spacing = 6;
-        revealer_grid.row_spacing = 12;
 
         calendar_name_label = new Gtk.Label (source.dup_display_name ());
         calendar_name_label.set_markup ("<b>%s</b>".printf (GLib.Markup.escape_text (source.dup_display_name ())));
@@ -65,6 +65,18 @@ public class Maya.View.SourceItem : Gtk.EventBox {
 
         backend_label.hexpand = true;
         backend_label.xalign = 0;
+
+        if (source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
+            var collection = (E.SourceAuthentication)source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+            if (collection.user != null) {
+                user_name_label = new Gtk.Label (collection.user);
+            }
+        }
+
+        if (user_name_label == null)
+            user_name_label = new Gtk.Label (GLib.Environment.get_real_name ());
+
+        user_name_label.xalign = 0;
 
         calendar_color_label = new Gtk.Label ("  ");
         var color = Gdk.RGBA ();
@@ -105,6 +117,8 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         revealer_grid.attach (calendar_color_label, 1, 0, 1, 2);
         revealer_grid.attach (calendar_name_label, 2, 0, 1, 1);
         revealer_grid.attach (backend_label, 3, 0, 1, 1);
+        revealer_grid.attach (user_name_label, 2, 1, 2, 1);
+
         revealer_grid.attach (delete_button, 4, 0, 1, 2);
         revealer_grid.attach (edit_button, 5, 0, 1, 2);
 
@@ -149,15 +163,19 @@ public class Maya.View.SourceItem : Gtk.EventBox {
 
         add_events (Gdk.EventMask.ENTER_NOTIFY_MASK|Gdk.EventMask.LEAVE_NOTIFY_MASK);
         enter_notify_event.connect ((event) => {
-            delete_button.visible = true;
-            edit_button.visible = true;
-            return true;
+            if (source.removable == true)
+                delete_button.visible = true;
+            if (source.writable == true)
+                edit_button.visible = true;
+            return false;
         });
 
         leave_notify_event.connect_after ((event) => {
-            delete_button.visible = false;
-            edit_button.visible = false;
-            return true;
+            if (source.removable == true)
+                delete_button.visible = false;
+            if (source.writable == true)
+                edit_button.visible = false;
+            return false;
         });
     }
 

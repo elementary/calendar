@@ -158,7 +158,6 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             var rgba = Gdk.RGBA ();
             rgba.parse (cal.dup_color ());
             color_button.set_rgba (rgba);
-            list_store.foreach (tree_foreach);
         }
     }
 
@@ -168,6 +167,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         var current_backend = ((Backend)backend);
         if (current_backend.get_uid () == source.dup_parent ()) {
             type_combobox.set_active_iter (iter);
+            type_combobox.sensitive = true;
             return true;
         }
 

@@ -95,6 +95,8 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     }
     
     private void source_added (E.Source source) {
+        if (source.enabled == false)
+            return;
         var source_item = new SourceItem (source);
         source_item.edit_request.connect (edit_source);
         source_item.remove_request.connect (remove_source);
@@ -110,52 +112,69 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         } else {
             scroll.set_size_request (-1, natural_height);
         }
-        
+
         src_map.set (source.dup_uid (), source_item);
         
     }
-    
+
     private void source_disabled (E.Source source) {
         var source_item = src_map.get (source.dup_uid ());
         source_item.source_has_changed ();
     }
-    
+
     private void source_enabled (E.Source source) {
-        var source_item = src_map.get (source.dup_uid ());
-        source_item.source_has_changed ();
+        var source_item = new SourceItem (source);
+        source_item.edit_request.connect (edit_source);
+        source_item.remove_request.connect (remove_source);
+
+        calendar_grid.attach (source_item, 0, calendar_index, 1, 1);
+        int minimum_height;
+        int natural_height;
+        calendar_index++;
+        calendar_grid.show_all ();
+        calendar_grid.get_preferred_height (out minimum_height, out natural_height);
+        if (natural_height > 150) {
+            scroll.set_size_request (-1, 150);
+        } else {
+            scroll.set_size_request (-1, natural_height);
+        }
+
+        src_map.set (source.dup_uid (), source_item);
     }
-    
+
     private void source_changed (E.Source source) {
         var source_item = src_map.get (source.dup_uid ());
         source_item.source_has_changed ();
     }
-    
+
     private void create_source () {
         if (src_dialog == null) {
             src_dialog = new SourceDialog ();
             src_dialog.go_back.connect (() => {switch_to_main ();});
             stack.add_named (src_dialog, "source");
         }
+
         src_dialog.set_source (null);
         switch_to_source ();
     }
-    
+
     private void remove_source (E.Source source) {
         Model.CalendarModel.get_default ().delete_calendar (source);
         var source_item = src_map.get (source.dup_uid ());
         source_item.show_calendar_removed ();
     }
-    
+
     private void edit_source (E.Source source) {
         if (src_dialog == null) {
             src_dialog = new SourceDialog ();
             src_dialog.go_back.connect (() => {switch_to_main ();});
             stack.add_named (src_dialog, "source");
         }
+
         src_dialog.set_source (source);
         switch_to_source ();
     }
-    
+
     private void switch_to_main () {
         main_grid.no_show_all = false;
         main_grid.show ();
@@ -163,7 +182,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         src_dialog.hide ();
         src_dialog.no_show_all = true;
     }
-    
+
     private void switch_to_source () {
         src_dialog.no_show_all = false;
         src_dialog.show ();
@@ -171,5 +190,4 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         main_grid.hide ();
         main_grid.no_show_all = true;
     }
-    
 }
