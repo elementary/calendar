@@ -70,8 +70,8 @@ public class Header : Gtk.EventBox {
         widget.get_allocation (out size);
 
         // Draw left border
-        cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
-        cr.line_to (0.5, 0.5); // move to upper left corner
+        cr.move_to (0.5, size.height +2); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
+        cr.line_to (0.5, -4); // move to upper left corner
 
         cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
         cr.set_line_width (1.0);
