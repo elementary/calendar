@@ -21,8 +21,8 @@ Standards-Version: 3.9.5
 Homepage: https://launchpad.net/maya
 
 Package: maya-calendar
-Replaces: maya (<< 0.2.0~r394)
-Breaks: maya (<< 0.2.0~r394)
+Replaces: maya (<< 0.2.0~r394), maya-common (<< 0.3.0~r558+pkg50)
+Breaks: maya (<< 0.2.0~r394), maya-common (<< 0.3.0~r558+pkg50)
 Architecture: any
 Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar-common (= ${source:Version}),
