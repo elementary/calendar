@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-24 17:24+0200\n"
-"PO-Revision-Date: 2014-03-19 20:45+0000\n"
-"Last-Translator: Jon Persson <Unknown>\n"
+"PO-Revision-Date: 2014-07-02 07:44+0000\n"
+"Last-Translator: Zahirovic Mensur <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-06-20 05:49+0000\n"
-"X-Generator: Launchpad (build 17058)\n"
+"X-Launchpad-Export-Date: 2014-07-03 05:44+0000\n"
+"X-Generator: Launchpad (build 17082)\n"
 "Language: sv\n"
 
 #: ../src/EventEdition/GuestsPanel.vala:44
@@ -53,7 +53,7 @@ msgstr "Till:"
 
 #: ../src/EventEdition/InfoPanel.vala:89
 msgid "Title:"
-msgstr ""
+msgstr "Rubrik:"
 
 #: ../src/EventEdition/InfoPanel.vala:91
 msgid "Name of Event"
@@ -89,12 +89,12 @@ msgstr "Gäster"
 
 #: ../src/EventEdition/EventDialog.vala:101
 msgid "Reminders"
-msgstr ""
+msgstr "Påminnelser"
 
 #: ../src/EventEdition/EventDialog.vala:104
 #: ../src/EventEdition/RepeatPanel.vala:162
 msgid "Repeat"
-msgstr ""
+msgstr "Upprepa"
 
 #: ../src/EventEdition/EventDialog.vala:134
 msgid "Create Event"
@@ -106,253 +106,253 @@ msgstr "Spara ändringar"
 
 #: ../src/EventEdition/RepeatPanel.vala:49
 msgid "Repeat:"
-msgstr ""
+msgstr "Upprepa:"
 
 #: ../src/EventEdition/RepeatPanel.vala:54
 msgid "Daily"
-msgstr ""
+msgstr "Varje dag"
 
 #: ../src/EventEdition/RepeatPanel.vala:55
 msgid "Weekly"
-msgstr ""
+msgstr "Varje vecka"
 
 #: ../src/EventEdition/RepeatPanel.vala:56
 msgid "Monthly"
-msgstr ""
+msgstr "Varje månad"
 
 #: ../src/EventEdition/RepeatPanel.vala:57
 msgid "Yearly"
-msgstr ""
+msgstr "Årligen"
 
 #: ../src/EventEdition/RepeatPanel.vala:96
 msgid "Every:"
-msgstr ""
+msgstr "Varje:"
 
 #: ../src/EventEdition/RepeatPanel.vala:103
 msgid "Day"
-msgstr ""
+msgstr "Dag"
 
 #: ../src/EventEdition/RepeatPanel.vala:103
 msgid "Days"
-msgstr ""
+msgstr "Dagar"
 
 #: ../src/EventEdition/RepeatPanel.vala:106
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Week"
-msgstr ""
+msgstr "Vecka"
 
 #: ../src/EventEdition/RepeatPanel.vala:106
 msgid "Weeks"
-msgstr ""
+msgstr "Veckor"
 
 #: ../src/EventEdition/RepeatPanel.vala:109
 msgid "Month"
-msgstr ""
+msgstr "Månad"
 
 #: ../src/EventEdition/RepeatPanel.vala:109
 msgid "Months"
-msgstr ""
+msgstr "Månader"
 
 #: ../src/EventEdition/RepeatPanel.vala:112
 msgid "Year"
-msgstr ""
+msgstr "År"
 
 #: ../src/EventEdition/RepeatPanel.vala:112
 msgid "Years"
-msgstr ""
+msgstr "År"
 
 #: ../src/EventEdition/RepeatPanel.vala:127
 msgid "Ends:"
-msgstr ""
+msgstr "Slutar:"
 
 #: ../src/EventEdition/RepeatPanel.vala:129
 #: ../src/EventEdition/RepeatPanel.vala:162
 msgid "Repeats"
-msgstr ""
+msgstr "Upprepas"
 
 #: ../src/EventEdition/RepeatPanel.vala:133
 msgid "Never"
-msgstr ""
+msgstr "Aldrig"
 
 #: ../src/EventEdition/RepeatPanel.vala:134
 msgid "Until"
-msgstr ""
+msgstr "Till"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "After"
-msgstr ""
+msgstr "Efter"
 
 #: ../src/EventEdition/RepeatPanel.vala:181
 msgid "The same day every month"
-msgstr ""
+msgstr "Samma dag varje månad"
 
 #: ../src/EventEdition/RepeatPanel.vala:299
 msgid "Sunday"
-msgstr ""
+msgstr "Söndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:302
 msgid "Monday"
-msgstr ""
+msgstr "Måndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:305
 msgid "Tuesday"
-msgstr ""
+msgstr "Tisdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:308
 msgid "Wednesday"
-msgstr ""
+msgstr "Onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:311
 msgid "Thursday"
-msgstr ""
+msgstr "Torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:314
 msgid "Friday"
-msgstr ""
+msgstr "Fredag"
 
 #: ../src/EventEdition/RepeatPanel.vala:317
 msgid "Saturday"
-msgstr ""
+msgstr "Lördag"
 
 #: ../src/EventEdition/RepeatPanel.vala:323
 msgid "Every last %s"
-msgstr ""
+msgstr "Varje sista %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:326
 msgid "Every first %s"
-msgstr ""
+msgstr "Varje första %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:329
 msgid "Every second %s"
-msgstr ""
+msgstr "Varannan %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:332
 msgid "Every third %s"
-msgstr ""
+msgstr "Varje tredje %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:335
 msgid "Every fourth %s"
-msgstr ""
+msgstr "Varje fjärde %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:338
 msgid "Every fifth %s"
-msgstr ""
+msgstr "Varje femte %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:346
 msgid "Mon"
-msgstr ""
+msgstr "Mån"
 
 #: ../src/EventEdition/RepeatPanel.vala:347
 msgid "Tue"
-msgstr ""
+msgstr "Tis"
 
 #: ../src/EventEdition/RepeatPanel.vala:348
 msgid "Wed"
-msgstr ""
+msgstr "Ons"
 
 #: ../src/EventEdition/RepeatPanel.vala:349
 msgid "Thu"
-msgstr ""
+msgstr "Tor"
 
 #: ../src/EventEdition/RepeatPanel.vala:350
 msgid "Fri"
-msgstr ""
+msgstr "Fre"
 
 #: ../src/EventEdition/RepeatPanel.vala:351
 msgid "Sat"
-msgstr ""
+msgstr "Lör"
 
 #: ../src/EventEdition/RepeatPanel.vala:352
 msgid "Sun"
-msgstr ""
+msgstr "Sön"
 
 #: ../src/EventEdition/ReminderPanel.vala:32
 msgid "Reminders:"
-msgstr ""
+msgstr "Påminnelser:"
 
 #: ../src/EventEdition/ReminderPanel.vala:35
 msgid "No Reminders."
-msgstr ""
+msgstr "Inga påminnelser"
 
 #: ../src/EventEdition/ReminderPanel.vala:47
 msgid "Add Reminder"
-msgstr ""
+msgstr "Lägg till påminnelse"
 
 #: ../src/EventEdition/ReminderPanel.vala:176
 msgid "0 minutes"
-msgstr ""
+msgstr "0 minuter"
 
 #: ../src/EventEdition/ReminderPanel.vala:177
 msgid "1 minutes"
-msgstr ""
+msgstr "1 minut"
 
 #: ../src/EventEdition/ReminderPanel.vala:178
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minuter"
 
 #: ../src/EventEdition/ReminderPanel.vala:179
 msgid "10 minutes"
-msgstr ""
+msgstr "10 minuter"
 
 #: ../src/EventEdition/ReminderPanel.vala:180
 msgid "15 minutes"
-msgstr ""
+msgstr "15 minuter"
 
 #: ../src/EventEdition/ReminderPanel.vala:181
 msgid "20 minutes"
-msgstr ""
+msgstr "20 minuter"
 
 #: ../src/EventEdition/ReminderPanel.vala:182
 msgid "25 minutes"
-msgstr ""
+msgstr "25 minuter"
 
 #: ../src/EventEdition/ReminderPanel.vala:183
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minuter"
 
 #: ../src/EventEdition/ReminderPanel.vala:184
 msgid "45 minutes"
-msgstr ""
+msgstr "45 minuter"
 
 #: ../src/EventEdition/ReminderPanel.vala:185
 msgid "1 hour"
-msgstr ""
+msgstr "1 timme"
 
 #: ../src/EventEdition/ReminderPanel.vala:186
 msgid "2 hours"
-msgstr ""
+msgstr "2 timmar"
 
 #: ../src/EventEdition/ReminderPanel.vala:187
 msgid "3 hours"
-msgstr ""
+msgstr "3 timmar"
 
 #: ../src/EventEdition/ReminderPanel.vala:188
 msgid "12 hours"
-msgstr ""
+msgstr "12 timmar"
 
 #: ../src/EventEdition/ReminderPanel.vala:189
 msgid "24 hours"
-msgstr ""
+msgstr "24 timmar"
 
 #: ../src/EventEdition/ReminderPanel.vala:190
 msgid "2 days"
-msgstr ""
+msgstr "2 dagar"
 
 #: ../src/EventEdition/ReminderPanel.vala:191
 msgid "1 week"
-msgstr ""
+msgstr "1 vecka"
 
 #: ../src/EventEdition/ReminderPanel.vala:200
 msgid "Notification"
-msgstr ""
+msgstr "Notifiering"
 
 #: ../src/EventEdition/ReminderPanel.vala:201
 msgid "Email"
-msgstr ""
+msgstr "E-post"
 
 #: ../src/EventEdition/LocationPanel.vala:37
 msgid "Location:"
-msgstr ""
+msgstr "Plats:"
 
 #: ../src/EventEdition/LocationPanel.vala:39
 msgid "John Smith OR Example St."
@@ -376,11 +376,11 @@ msgstr "Ta bort"
 #. / TRANSLATORS: for multiple days events, shows: (date) to (date)
 #: ../src/Sidebar/EventWidget.vala:199
 msgid "%s to %s"
-msgstr ""
+msgstr "%s till %s"
 
 #: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
-msgstr ""
+msgstr "Hela dagen"
 
 #: ../src/SourceItem.vala:119
 msgid "Undo"
@@ -464,7 +464,7 @@ msgstr "Kalender"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
-msgstr ""
+msgstr "%u mer..."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -525,7 +525,7 @@ msgstr "epost@adress.se"
 
 #: ../core/Backends/PlacementWidget.vala:80
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Behåll en kopia lokalt"
 
 #: ../core/Backends/LocalBackend.vala:26
 msgid "On this computer"
