@@ -45,6 +45,8 @@ public class Header : Gtk.EventBox {
         labels = new Gtk.Label[7];
         for (int c = 0; c < 7; c++) {
             labels[c] = new Gtk.Label ("");
+            labels[c].set_margin_top (4);
+            labels[c].set_margin_bottom (2);
             labels[c].draw.connect (on_draw);
             header_grid.attach (labels[c], c, 0, 1, 1);
         }
@@ -57,7 +59,7 @@ public class Header : Gtk.EventBox {
         var date = Util.strip_time(new DateTime.now_local ());
         date = date.add_days (week_starts_on - date.get_day_of_week ());
         foreach (var label in labels) {
-            label.label = date.format ("%A");
+            label.label = date.format ("%a");
             date = date.add_days (1);
         }
     }
@@ -68,8 +70,8 @@ public class Header : Gtk.EventBox {
         widget.get_allocation (out size);
 
         // Draw left border
-        cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
-        cr.line_to (0.5, 0.5); // move to upper left corner
+        cr.move_to (0.5, size.height +2); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
+        cr.line_to (0.5, -4); // move to upper left corner
 
         cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
         cr.set_line_width (1.0);
