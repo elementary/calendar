@@ -86,11 +86,15 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             every_entry.value_changed ();
         });
 
+        var repeat_switch_grid = new Gtk.Grid ();
+        repeat_switch_grid.valign = Gtk.Align.CENTER;
+        repeat_switch_grid.add (repeat_switch);
+
         var repeat_grid = new Gtk.Grid ();
         repeat_grid.row_spacing = 6;
         repeat_grid.column_spacing = 12;
         repeat_grid.orientation = Gtk.Orientation.HORIZONTAL;
-        repeat_grid.add (repeat_switch);
+        repeat_grid.add (repeat_switch_grid);
         repeat_grid.add (repeat_combobox);
 
         var every_label = Maya.View.EventDialog.make_label (_("Every:"));
