@@ -266,8 +266,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             from_time_picker.time = new DateTime.now_local ();
             to_date_picker.date = parent_dialog.date_time;
             to_time_picker.time = new DateTime.now_local ().add_hours (1);
-
-            //parent_dialog.ecal.set_dtend (E.CalComponentDateTime());
             
             // Load the source
             calendar_box.set_active_id (parent_dialog.source.dup_uid ());
