@@ -259,14 +259,16 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             // Load the source
             calendar_box.set_active_id (parent_dialog.original_source.dup_uid ());
         } else {
-        
             parent_dialog.ecal = new E.CalComponent ();
             parent_dialog.ecal.set_new_vtype (E.CalComponentVType.EVENT);
             
             from_date_picker.date = parent_dialog.date_time;
             from_time_picker.time = new DateTime.now_local ();
             to_date_picker.date = parent_dialog.date_time;
-            to_time_picker.time = new DateTime.now_local ();
+            to_time_picker.time = new DateTime.now_local ().add_hours (1);
+
+            //parent_dialog.ecal.set_dtend (E.CalComponentDateTime());
+            
             // Load the source
             calendar_box.set_active_id (parent_dialog.source.dup_uid ());
         }

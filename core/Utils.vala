@@ -68,7 +68,9 @@ namespace Maya.Util {
     }
 
     public DateTime ecal_to_date_time (E.CalComponentDateTime date) {
-        DateTime result = new DateTime(new TimeZone.local(), date.value.year, date.value.month, date.value.day, date.value.hour, date.value.minute, date.value.second);
+        DateTime result = new DateTime(new TimeZone.local(), 
+                date.value.year, date.value.month, date.value.day, 
+                date.value.hour, date.value.minute, date.value.second);
 
         return result;
     }
@@ -81,7 +83,7 @@ namespace Maya.Util {
 
         E.CalComponentDateTime dt_end;
         event.get_dtend (out dt_end);
-
+ 
         var start = ecal_to_date_time (dt_start);
         var end = ecal_to_date_time (dt_end);
 
