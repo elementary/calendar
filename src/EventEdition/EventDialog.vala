@@ -49,7 +49,8 @@ public class EventDialog : Gtk.Dialog {
         private EventEdition.ReminderPanel reminder_panel;
         private EventEdition.RepeatPanel repeat_panel;
 
-        public EventDialog (Gtk.Window window, E.CalComponent? ecal = null, E.Source? source = null, DateTime? date_time = null) {
+        public EventDialog (Gtk.Window window, E.CalComponent? 
+        ecal = null, E.Source? source = null, DateTime? date_time = null) {
             Object (use_header_bar: 1);
             this.original_source = source;
             this.date_time = date_time;
