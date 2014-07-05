@@ -81,7 +81,7 @@ namespace Maya.Util {
         E.CalComponentDateTime dt_start;
         event.get_dtstart (out dt_start);
 
-        E.CalComponentDateTime dt_end;
+        E.CalComponentDateTime dt_end = dt_start;
         event.get_dtend (out dt_end);
  
         var start = ecal_to_date_time (dt_start);
