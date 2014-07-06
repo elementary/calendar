@@ -177,6 +177,8 @@ public class Maya.View.SourceItem : Gtk.EventBox {
                 edit_button.visible = false;
             return false;
         });
+
+        source.changed.connect (source_has_changed);
     }
 
     // We need a custom one because the buttons are hidden if the calendar is not shown.

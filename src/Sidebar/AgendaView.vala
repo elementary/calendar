@@ -182,7 +182,8 @@ namespace Maya.View {
          */
         void remove_source (E.Source source) {
             var widget = source_widgets.get (source);
-            widget.destroy ();
+            if (widget != null)
+                widget.destroy ();
         }
 
         /**
@@ -192,9 +193,11 @@ namespace Maya.View {
             if (!source_widgets.has_key (source))
                 return;
 
-            foreach (var event in events)
-                if (event != null)
+            foreach (var event in events) {
+                if (event != null) {
                     source_widgets.get (source).add_event (event);
+                }
+            }
         }
 
         /**

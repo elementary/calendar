@@ -13,136 +13,86 @@
 //
 
 public class Maya.View.SourceSelector : Gtk.Popover {
-    
     private Gee.HashMap<string, SourceItem?> src_map;
-    
+
     private Gtk.Stack stack;
     private SourceDialog src_dialog = null;
-    
+
     private Gtk.Grid main_grid;
     private Gtk.Grid calendar_grid;
     private int calendar_index = 0;
     private Gtk.ScrolledWindow scroll;
     private E.SourceRegistry registry;
-    
+
     public SourceSelector () {
         modal = false;
         stack = new Gtk.Stack ();
-        
+
         calendar_grid = new Gtk.Grid ();
         calendar_grid.row_spacing = 12;
         calendar_grid.margin_left = 6;
         calendar_grid.margin_right = 6;
-        
+
         scroll = new Gtk.ScrolledWindow (null, null);
         scroll.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scroll.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
         scroll.expand = true;
         scroll.add (calendar_grid);
-        
+
         main_grid = new Gtk.Grid ();
         main_grid.row_spacing = 6;
         main_grid.margin_top = 6;
-        
+
         src_map = new Gee.HashMap<string, SourceItem?>();
-        
+
         try {
             registry = new E.SourceRegistry.sync (null);
             var sources = registry.list_sources (E.SOURCE_EXTENSION_CALENDAR);
             foreach (var src in sources) {
-                source_added (src);
+                add_source_to_view (src);
             }
-            
+
             registry.source_removed.connect (source_removed);
-            registry.source_added.connect (source_added);
+            registry.source_added.connect (add_source_to_view);
             registry.source_disabled.connect (source_disabled);
-            registry.source_enabled.connect (source_enabled);
-            registry.source_changed.connect (source_changed);
+            registry.source_enabled.connect (add_source_to_view);
         } catch (GLib.Error error) {
             critical (error.message);
         }
-        
+
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
-        
+
         var add_calendar_button = new Gtk.Button.with_label (_("Add New Calendar…"));
         add_calendar_button.relief = Gtk.ReliefStyle.NONE;
         add_calendar_button.hexpand = true;
         add_calendar_button.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
         add_calendar_button.get_style_context ().remove_class (Gtk.STYLE_CLASS_BUTTON);
         add_calendar_button.clicked.connect (create_source);
-        
+
         var add_calendar_grid = new Gtk.Grid ();
         add_calendar_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_MENU);
         add_calendar_grid.attach (add_calendar_button, 0, 0, 1, 1);
-        
+
         main_grid.attach (scroll, 0, 0, 1, 1);
         main_grid.attach (separator, 0, 1, 1, 1);
         main_grid.attach (add_calendar_grid, 0, 2, 1, 1);
-        
+
         stack.add_named (main_grid, "main");
         stack.margin_bottom = 5;
-        
+
         this.add (stack);
         main_grid.show_all ();
     }
-    
+
     private void source_removed (E.Source source) {
         var source_item = src_map.get (source.dup_uid ());
         source_item.hide ();
         src_map.unset (source.dup_uid ());
         source_item.destroy ();
     }
-    
-    private void source_added (E.Source source) {
-        if (source.enabled == false)
-            return;
-        var source_item = new SourceItem (source);
-        source_item.edit_request.connect (edit_source);
-        source_item.remove_request.connect (remove_source);
-        
-        calendar_grid.attach (source_item, 0, calendar_index, 1, 1);
-        int minimum_height;
-        int natural_height;
-        calendar_index++;
-        calendar_grid.show_all ();
-        calendar_grid.get_preferred_height (out minimum_height, out natural_height);
-        if (natural_height > 150) {
-            scroll.set_size_request (-1, 150);
-        } else {
-            scroll.set_size_request (-1, natural_height);
-        }
-
-        src_map.set (source.dup_uid (), source_item);
-        
-    }
 
     private void source_disabled (E.Source source) {
-        var source_item = src_map.get (source.dup_uid ());
-        source_item.source_has_changed ();
-    }
-
-    private void source_enabled (E.Source source) {
-        var source_item = new SourceItem (source);
-        source_item.edit_request.connect (edit_source);
-        source_item.remove_request.connect (remove_source);
-
-        calendar_grid.attach (source_item, 0, calendar_index, 1, 1);
-        int minimum_height;
-        int natural_height;
-        calendar_index++;
-        calendar_grid.show_all ();
-        calendar_grid.get_preferred_height (out minimum_height, out natural_height);
-        if (natural_height > 150) {
-            scroll.set_size_request (-1, 150);
-        } else {
-            scroll.set_size_request (-1, natural_height);
-        }
-
-        src_map.set (source.dup_uid (), source_item);
-    }
-
-    private void source_changed (E.Source source) {
         var source_item = src_map.get (source.dup_uid ());
         source_item.source_has_changed ();
     }
@@ -156,6 +106,32 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
         src_dialog.set_source (null);
         switch_to_source ();
+    }
+
+    private void add_source_to_view (E.Source source) {
+        if (source.enabled == false)
+            return;
+
+        if (src_map.has_key (source.dup_uid ()))
+            return;
+
+        var source_item = new SourceItem (source);
+        source_item.edit_request.connect (edit_source);
+        source_item.remove_request.connect (remove_source);
+
+        calendar_grid.attach (source_item, 0, calendar_index, 1, 1);
+        int minimum_height;
+        int natural_height;
+        calendar_index++;
+        calendar_grid.show_all ();
+        calendar_grid.get_preferred_height (out minimum_height, out natural_height);
+        if (natural_height > 150) {
+            scroll.set_size_request (-1, 150);
+        } else {
+            scroll.set_size_request (-1, natural_height);
+        }
+
+        src_map.set (source.dup_uid (), source_item);
     }
 
     private void remove_source (E.Source source) {
