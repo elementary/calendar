@@ -312,6 +312,11 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
             break;
         case 1:
+            if (start_date.get_year () == end_date.get_year ()) {
+            
+                if (end_date.get_day_of_year () < start_date.get_day_of_year ())
+                    from_date_picker.date = to_date_picker.date;
+            }
             break;
         }
         update_create_sensitivity ();
