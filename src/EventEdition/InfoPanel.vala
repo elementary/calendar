@@ -28,7 +28,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
     private EventDialog parent_dialog;
 
-    public bool is_valid = false;
+    public signal void valid_event (bool is_valid);
 
     public InfoPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -95,7 +95,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         var liststore = new Gtk.ListStore (2, typeof (string), typeof(string));
 
-        var calcount = 0;
+        uint calcount = 0;
         // Add all the editable sources
         foreach (E.Source src in sources) {
             calcount++;
@@ -141,10 +141,10 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         }
         attach (comment_label, 0, 10, 4, 1);
         attach (scrolled, 0, 11, 5, 1);
-        
+
         load ();
     }
-    
+
     /**
      * Save the values in the dialog into the component.
      */
@@ -156,7 +156,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         // Save the time
         if (allday_switch.get_active () == true) {
-
             iCal.TimeType dt_start = Util.date_time_to_ical (from_date_picker.date, new DateTime.local (2000, 12, 12, 0, 0, 0));
             iCal.TimeType dt_end = Util.date_time_to_ical (to_date_picker.date.add_days (1), new DateTime.local (2000, 12, 12, 0, 0, 0));
 
@@ -164,10 +163,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             dt_end.is_date = 0;
 
             comp.set_dtstart (dt_start);
-
             comp.set_dtend (dt_end);
         } else {
-            
             iCal.TimeType dt_start = Util.date_time_to_ical (from_date_picker.date, from_time_picker.time);
             iCal.TimeType dt_end = Util.date_time_to_ical (to_date_picker.date, to_time_picker.time);
 
@@ -175,16 +172,13 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             dt_end.is_date = 0;
 
             comp.set_dtstart (dt_start);
-
             comp.set_dtend (dt_end);
         }
 
         // First, clear the comments
         int count = comp.count_properties (iCal.PropertyKind.COMMENT);
-
         for (int i = 0; i < count; i++) {
             unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.COMMENT);
-
             comp.remove_property (remove_prop);
         }
 
@@ -195,7 +189,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         // Save the selected source
         string id = calendar_box.get_active_id ();
-
         foreach (E.Source possible_source in sources) {
             if (possible_source.dup_uid () == id) {
                 parent_dialog.source = possible_source;
@@ -210,7 +203,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
      * Populate the dialog's widgets with the component's values.
      */
     void load () {
-
         if (parent_dialog.ecal != null) {
             unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
 
@@ -254,7 +246,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
 
             unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.COMMENT);
-
             if (property != null) {
                 Gtk.TextBuffer buffer = new Gtk.TextBuffer (null);
                 buffer.text = property.get_comment ();
@@ -266,30 +257,26 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         } else {
             parent_dialog.ecal = new E.CalComponent ();
             parent_dialog.ecal.set_new_vtype (E.CalComponentVType.EVENT);
-            
+
             from_date_picker.date = parent_dialog.date_time;
             from_time_picker.time = new DateTime.now_local ();
             to_date_picker.date = parent_dialog.date_time;
             to_time_picker.time = new DateTime.now_local ().add_hours (1);
-            
+
             // Load the source
             calendar_box.set_active_id (parent_dialog.source.dup_uid ());
         }
     }
 
     Granite.Widgets.DatePicker make_date_picker () {
-
         var date_picker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
         date_picker.width_request = 200;
-
         return date_picker;
     }
 
     Granite.Widgets.TimePicker make_time_picker () {
-
         var time_picker = new Granite.Widgets.TimePicker ();
         time_picker.width_request = 120;
-
         return time_picker;
     }
 
@@ -317,6 +304,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
             break;
         }
+
         update_create_sensitivity ();
     }
 
@@ -343,11 +331,12 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         case 1:
             break;
         }
+
         update_create_sensitivity ();
     }
 
     void update_create_sensitivity () {
-        is_valid = is_valid_event ();
+        valid_event (is_valid_event ());
     }
 
     bool is_valid_event () {
