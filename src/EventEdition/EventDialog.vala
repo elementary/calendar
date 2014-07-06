@@ -136,15 +136,6 @@ public class EventDialog : Gtk.Dialog {
             buttonbox.baseline_position = Gtk.BaselinePosition.CENTER;
             buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
 
-            Gtk.Button create_button = new Gtk.Button ();
-            create_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            create_button.clicked.connect (save_dialog);
-            if (add_event == true) {
-                create_button.label = _("Create Event");
-            } else {
-                create_button.label = _("Save Changes");
-            }
-
             if (add_event == false) {
                 var delete_button = new Gtk.Button.with_label (_("Delete Event"));
                 delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
@@ -153,6 +144,17 @@ public class EventDialog : Gtk.Dialog {
                 buttonbox.set_child_secondary (delete_button, true);
                 buttonbox.set_child_non_homogeneous (delete_button, true);
             }
+
+            Gtk.Button create_button = new Gtk.Button ();
+            create_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            create_button.clicked.connect (save_dialog);
+            if (add_event == true) {
+                create_button.label = _("Create Event");
+                create_button.sensitive = false;
+            } else {
+                create_button.label = _("Save Changes");
+            }
+
             buttonbox.add (create_button);
 
             grid.attach (stack, 0, 0, 1, 1);
@@ -161,12 +163,15 @@ public class EventDialog : Gtk.Dialog {
             ((Gtk.Container)get_content_area ()).add (grid);
             ((Gtk.HeaderBar)get_header_bar ()).set_custom_title (mode_button);
 
+            info_panel.valid_event.connect ((is_valid) => {
+                create_button.sensitive = is_valid;
+            });
+
             show_all ();
             stack.set_visible_child_name ("infopanel");
         }
 
         public static Gtk.Label make_label (string text) {
-
             var label = new Gtk.Label ("<span weight='bold'>%s</span>".printf (text));
             label.use_markup = true;
             label.set_alignment (0.0f, 0.5f);
