@@ -20,9 +20,12 @@
 public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     private EventDialog parent_dialog;
     private Gtk.Entry guest_entry;
+    private Gtk.EntryCompletion guest_completion;
     private Gtk.Grid guest_grid;
     private int guest_grid_id = 0;
     private Gee.ArrayList<unowned iCal.Property> attendees;
+    private ContactLookup contact_lookup;
+    private Gtk.ListStore guest_store;
 
     private enum COLUMNS {
         ICON = 0,
@@ -51,6 +54,16 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
             attendee.set_attendee (guest_entry.text);
             add_attendee ((owned)attendee);
         });
+        
+        contact_lookup = new ContactLookup ();
+        contact_lookup.contacts_loaded.connect( (contacts) => apply_contact_store_model (contacts));
+        
+        guest_completion = new Gtk.EntryCompletion ();
+        guest_entry.set_completion (guest_completion);
+        
+        guest_store = new Gtk.ListStore(1, typeof (string));
+        guest_completion.set_model (guest_store);
+        guest_completion.set_text_column (0);
 
         guest_grid = new Gtk.Grid ();
         var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null);
@@ -85,6 +98,15 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         }
 
         show_all ();
+    }
+    
+    private void apply_contact_store_model (Gee.Collection<Folks.Individual> contacts) {
+        Gtk.TreeIter iter;
+        
+        foreach (var contact in contacts) {
+            guest_store.append (out iter);
+            guest_store.set (iter, 0, (string) contact.full_name);
+        }
     }
 
     /**
@@ -139,6 +161,39 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     }
 }
 
+public class Maya.View.EventEdition.ContactLookup {
+
+    private Folks.IndividualAggregator aggregator;
+    public bool ready;
+    public signal void contacts_loaded (Gee.Collection<Folks.Individual> contacts);
+    
+    public ContactLookup () {
+        aggregator = Folks.IndividualAggregator.dup ();
+        
+        aggregator.notify["is-quiescent"].connect (() => {
+            contacts_loaded (get_contacts ());
+        });
+        
+        ready = false;
+        aggregator.prepare ();
+    }
+    
+    public Gee.Collection<Folks.Individual> get_contacts () {
+        return aggregator.individuals.values;
+    }
+    
+    public void search_contact (string name) {
+        if (ready) {
+            foreach (var contact in aggregator.individuals.values) {
+                if (contact.full_name.contains(name)) {
+                    warning("Match: %s", contact.full_name);  
+                }                  
+            }
+        } 
+    }
+}
+
+
 public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
     public signal void removed ();
     public iCal.Property attendee;
@@ -167,7 +222,6 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         var status_label = new Gtk.Label ("");
         status_label.set_markup (status);
         status_label.justify = Gtk.Justification.RIGHT;
-
         var icon_image = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.DIALOG);
         
         var mail = attendee.get_attendee ().replace ("mailto:", "");

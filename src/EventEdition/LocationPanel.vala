@@ -123,7 +123,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         Threads.add (() => {
             var forward = new Geocode.Forward.for_string (loc);
             try {
-                forward.set_answer_count (1);
+                forward.set_answer_count (10);
                 var places = forward.search ();
                 foreach (var place in places) {
                     point.latitude = place.location.latitude;
