@@ -100,9 +100,13 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         show_all ();
     }
     
+    /**
+     * Add the contacts to the EntryCompletion model.
+     */
     private void apply_contact_store_model (Gee.Collection<Folks.Individual> contacts) {
         Gtk.TreeIter iter;
         
+        //TODO Check all values and maybe remove contacts with too less information.
         foreach (var contact in contacts) {
             guest_store.append (out iter);
             guest_store.set (iter, 0, (string) contact.full_name);
