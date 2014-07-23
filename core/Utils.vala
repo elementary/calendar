@@ -77,7 +77,8 @@ namespace Maya.Util {
     }
 
     public DateTime ecal_to_date_time (E.CalComponentDateTime date) {
-        DateTime result = new DateTime(new TimeZone.local(), 
+        TimeZone zone = new TimeZone (date.tzid);
+        DateTime result = new DateTime(zone, 
                 date.value.year, date.value.month, date.value.day, 
                 date.value.hour, date.value.minute, date.value.second);
 
@@ -116,16 +117,16 @@ namespace Maya.Util {
             var rrule = property.get_rrule ();
             switch (rrule.freq) {
                 case (iCal.RecurrenceTypeFrequency.WEEKLY):
-                    generate_week_reccurence (ref dateranges, view_range, rrule, start, end);
+                    generate_week_reccurence (dateranges, view_range, rrule, start, end);
                     break;
                 case (iCal.RecurrenceTypeFrequency.MONTHLY):
-                    generate_month_reccurence (ref dateranges, view_range, rrule, start, end);
+                    generate_month_reccurence (dateranges, view_range, rrule, start, end);
                     break;
                 case (iCal.RecurrenceTypeFrequency.YEARLY):
-                    generate_year_reccurence (ref dateranges, view_range, rrule, start, end);
+                    generate_year_reccurence (dateranges, view_range, rrule, start, end);
                     break;
                 default:
-                    generate_day_reccurence (ref dateranges, view_range, rrule, start, end);
+                    generate_day_reccurence (dateranges, view_range, rrule, start, end);
                     break;
             }
         }
@@ -133,7 +134,7 @@ namespace Maya.Util {
         return dateranges;
     }
 
-    private void generate_day_reccurence (ref Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
+    private void generate_day_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
                                            iCal.RecurrenceType rrule, DateTime start, DateTime end) {
         if (rrule.until.is_null_time () == 0) {
             for (int i = 1; i <= (int)(rrule.until.day/rrule.interval); i++) {
@@ -158,7 +159,7 @@ namespace Maya.Util {
         }
     }
 
-    private void generate_year_reccurence (ref Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
+    private void generate_year_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
                                            iCal.RecurrenceType rrule, DateTime start, DateTime end) {
         if (rrule.until.is_null_time () == 0) {
             /*for (int i = 0; i <= rrule.until.year; i++) {
@@ -195,7 +196,7 @@ namespace Maya.Util {
         }
     }
 
-    private void generate_month_reccurence (ref Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
+    private void generate_month_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
                                            iCal.RecurrenceType rrule, DateTime start, DateTime end) {
         for (int k = 0; k <= iCal.Size.BY_DAY; k++) {
             if (rrule.by_day[k] < iCal.Size.BY_DAY) {
@@ -223,7 +224,6 @@ namespace Maya.Util {
                         }
 
                         int interval = start_ical_day.get_day_of_month () - start.get_day_of_month ();
-                        warning ("%d", start_ical_day.get_day_of_month ());
                         dateranges.add (new Util.DateRange (start_ical_day, strip_time(end).add_months (n).add_days (interval)));
                         i++;
                         n = i*rrule.interval;
@@ -265,7 +265,7 @@ namespace Maya.Util {
         }
     }
 
-    private void generate_week_reccurence (ref Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
+    private void generate_week_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
                                            iCal.RecurrenceType rrule, DateTime start_, DateTime end_) {
         DateTime start = start_;
         DateTime end = end_;
@@ -687,7 +687,6 @@ namespace Maya.Util {
     }
 
     public Gtk.Widget set_margins (Gtk.Widget widget, int top, int right, int bottom, int left) {
-
         widget.margin_top = top;
         widget.margin_right = right;
         widget.margin_bottom = bottom;
@@ -697,7 +696,6 @@ namespace Maya.Util {
     }
 
     public Gtk.Alignment set_paddings (Gtk.Widget widget, int top, int right, int bottom, int left) {
-
         var alignment = new Gtk.Alignment (0.0f, 0.0f, 1.0f, 1.0f);
         alignment.top_padding = top;
         alignment.right_padding = right;
