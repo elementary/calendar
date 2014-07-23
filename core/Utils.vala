@@ -43,14 +43,23 @@ namespace Maya.Util {
      * Converts two datetimes to one TimeType. The first contains the date,
      * its time settings are ignored. The second one contains the time itself.
      */
-    public iCal.TimeType date_time_to_ical (DateTime date, DateTime time) {
+    public iCal.TimeType date_time_to_ical (DateTime date, DateTime? time) {
 
-        iCal.TimeType result = iCal.TimeType.from_day_of_year
+        var result = iCal.TimeType.from_day_of_year
             (date.get_day_of_year (), date.get_year ());
+        result.zone = iCal.TimeZone.get_builtin_timezone (E.Cal.util_get_system_timezone_location ());
 
-        result.hour = time.get_hour ();
-        result.minute = time.get_minute ();
-        result.second = time.get_second ();
+        if (time != null) {
+            result.is_date = 0;
+            result.hour = time.get_hour ();
+            result.minute = time.get_minute ();
+            result.second = time.get_second ();
+        } else {
+            result.is_date = 1;
+            result.hour = 0;
+            result.minute = 0;
+            result.second = 0;
+        }
 
         return result;
     }

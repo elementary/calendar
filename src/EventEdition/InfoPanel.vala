@@ -156,20 +156,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         // Save the time
         if (allday_switch.get_active () == true) {
-            iCal.TimeType dt_start = Util.date_time_to_ical (from_date_picker.date, new DateTime.local (2000, 12, 12, 0, 0, 0));
-            iCal.TimeType dt_end = Util.date_time_to_ical (to_date_picker.date.add_days (1), new DateTime.local (2000, 12, 12, 0, 0, 0));
-
-            dt_start.is_date = 0;
-            dt_end.is_date = 0;
+            iCal.TimeType dt_start = Util.date_time_to_ical (from_date_picker.date, null);
+            iCal.TimeType dt_end = Util.date_time_to_ical (to_date_picker.date.add_days (1), null);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
         } else {
             iCal.TimeType dt_start = Util.date_time_to_ical (from_date_picker.date, from_time_picker.time);
             iCal.TimeType dt_end = Util.date_time_to_ical (to_date_picker.date, to_time_picker.time);
-
-            dt_start.is_date = 0;
-            dt_end.is_date = 0;
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
