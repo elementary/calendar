@@ -49,6 +49,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_entry = new Gtk.SearchEntry ();
         guest_entry.placeholder_text = _("Invite…");
         guest_entry.hexpand = true;
+        
         guest_entry.activate.connect (() => {
             var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
             attendee.set_attendee (guest_entry.text);
@@ -56,14 +57,17 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         });
         
         contact_lookup = new ContactLookup ();
-        contact_lookup.contacts_loaded.connect( (contacts) => apply_contact_store_model (contacts));
+        contact_lookup.contacts_loaded.connect((contacts) => apply_contact_store_model (contacts));
         
         guest_completion = new Gtk.EntryCompletion ();
         guest_entry.set_completion (guest_completion);
         
-        guest_store = new Gtk.ListStore(1, typeof (string));
+        guest_store = new Gtk.ListStore(2, typeof (string), typeof (string));
         guest_completion.set_model (guest_store);
         guest_completion.set_text_column (0);
+        guest_completion.set_text_column (1);
+        
+        guest_completion.match_selected.connect ((model, iter) => suggestion_selected (model, iter));
 
         guest_grid = new Gtk.Grid ();
         var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null);
@@ -103,13 +107,18 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     /**
      * Add the contacts to the EntryCompletion model.
      */
-    private void apply_contact_store_model (Gee.Collection<Folks.Individual> contacts) {
-        Gtk.TreeIter iter;
+    private void apply_contact_store_model (Gee.Map<string, Folks.Individual> contacts) {        
+        Gtk.TreeIter contact;
+        Gee.MapIterator<string, Folks.Individual> map_iterator;
         
-        //TODO Check all values and maybe remove contacts with too less information.
-        foreach (var contact in contacts) {
-            guest_store.append (out iter);
-            guest_store.set (iter, 0, (string) contact.full_name);
+        map_iterator = contacts.map_iterator ();
+        
+        while (map_iterator.next ()) {
+        
+            foreach (var address in map_iterator.get_value ().email_addresses) {
+                guest_store.append (out contact);
+                guest_store.set (contact, 0, map_iterator.get_value ().full_name, 1, address.value, address);
+            }
         }
     }
 
@@ -163,13 +172,26 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         });
         guest_element.show_all ();
     }
+    
+        
+    private bool suggestion_selected (Gtk.TreeModel model, Gtk.TreeIter iter) {
+        var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
+        Value selected_value;
+        
+        model.get_value (iter, 1, out selected_value);
+        attendee.set_attendee ((string)selected_value);
+        add_attendee ((owned)attendee);
+        return true;
+    }
 }
 
 public class Maya.View.EventEdition.ContactLookup {
 
     private Folks.IndividualAggregator aggregator;
     public bool ready;
-    public signal void contacts_loaded (Gee.Collection<Folks.Individual> contacts);
+    
+    public signal void contacts_loaded (Gee.Map<string, Folks.Individual> contacts);
+    public signal void contact_found (Folks.Individual contact);
     
     public ContactLookup () {
         aggregator = Folks.IndividualAggregator.dup ();
@@ -182,18 +204,42 @@ public class Maya.View.EventEdition.ContactLookup {
         aggregator.prepare ();
     }
     
-    public Gee.Collection<Folks.Individual> get_contacts () {
-        return aggregator.individuals.values;
+    public Gee.Map<string, Folks.Individual> get_contacts () {
+        return aggregator.individuals;
     }
     
-    public void search_contact (string name) {
-        if (ready) {
-            foreach (var contact in aggregator.individuals.values) {
-                if (contact.full_name.contains(name)) {
-                    warning("Match: %s", contact.full_name);  
-                }                  
+    public async Folks.Individual get_individual_for_mail (string mail_address) {
+        Gee.MapIterator <string, Folks.Individual> map_iterator;
+        
+        map_iterator = aggregator.individuals.map_iterator ();
+        
+        while (map_iterator.next ()) {
+            foreach (var address in map_iterator.get_value ().email_addresses) {
+                if(address.value == mail_address) {
+                    return map_iterator.get_value ();
+                }
             }
-        } 
+        }
+        
+        return null;
+    }
+    
+    public async GLib.LoadableIcon? get_image_for_mail (string mail_address) {     
+        Gee.MapIterator<string, Folks.Individual> map_iterator;
+        
+        map_iterator = aggregator.individuals.map_iterator ();
+        
+        while (map_iterator.next ()) {
+            
+            foreach (var address in map_iterator.get_value ().email_addresses) {
+                if (address.value == mail_address) {
+                    if(map_iterator.get_value ().avatar != null) {
+                        return map_iterator.get_value ().avatar;
+                        }
+                }   
+            }
+        }
+        return null;
     }
 }
 
@@ -201,6 +247,7 @@ public class Maya.View.EventEdition.ContactLookup {
 public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
     public signal void removed ();
     public iCal.Property attendee;
+    private Folks.Individual individual;
 
     public GuestGrid (iCal.Property attendee) {
         this.attendee = new iCal.Property.clone (attendee);
@@ -228,6 +275,8 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         status_label.justify = Gtk.Justification.RIGHT;
         var icon_image = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.DIALOG);
         
+        var contact_lookup = new ContactLookup();
+        
         var mail = attendee.get_attendee ().replace ("mailto:", "");
 
         var name_label = new Gtk.Label ("");
@@ -246,9 +295,21 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         remove_grid.add (remove_button);
         remove_grid.valign = Gtk.Align.CENTER;
 
+        contact_lookup.get_individual_for_mail.begin (attendee.get_attendee ().replace ("mailto:", ""), (obj, res) => {
+            individual = contact_lookup.get_individual_for_mail.end (res);
+            
+            if (individual.avatar != null)
+                icon_image.set_from_gicon (individual.avatar, Gtk.IconSize.DIALOG);
+                
+            if (individual.full_name != null) {
+                name_label.set_text (individual.full_name);
+                mail_label.set_text (attendee.get_attendee ());
+            }
+        });
+        
         attach (icon_image, 0, 0, 1, 4);
-        attach (name_label, 1, 1, 1, 2/*1*/);
-        //attach (mail_label, 1, 2, 1, 1); Once Folks is enabled, separate email and name !
+        attach (name_label, 1, 1, 1, 1);
+        attach (mail_label, 1, 2, 1, 1); 
         attach (status_label, 2, 1, 1, 2);
         attach (remove_grid, 3, 1, 1, 2);
     }
