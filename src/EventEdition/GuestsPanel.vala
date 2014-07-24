@@ -185,6 +185,8 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     }
 }
 
+
+//TODO split and remove class 
 public class Maya.View.EventEdition.ContactLookup {
 
     private Folks.IndividualAggregator aggregator;
@@ -239,6 +241,7 @@ public class Maya.View.EventEdition.ContactLookup {
                 }   
             }
         }
+        
         return null;
     }
 }
@@ -253,6 +256,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         this.attendee = new iCal.Property.clone (attendee);
         row_spacing = 6;
         column_spacing = 12;
+        individual = null;
 
         string status = "<b><span color=\'darkgrey\'>%s</span></b>".printf (_("Pending"));
         unowned iCal.Parameter parameter = attendee.get_first_parameter (iCal.ParameterKind.PARTSTAT);
@@ -274,6 +278,33 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         status_label.set_markup (status);
         status_label.justify = Gtk.Justification.RIGHT;
         var icon_image = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.DIALOG);
+        
+        icon_image.draw.connect ((cr) => {
+            try {
+                var width = get_allocated_width ();
+                var height = get_allocated_height ();
+                int size = (int) double.min (width, height);
+                var img_pixbuf = Gtk.IconTheme.get_default ().load_icon ("avatar-default", size, Gtk.IconLookupFlags.GENERIC_FALLBACK);
+//                var img_pixbuf = icon_image.get_pixbuf ();
+                cr.set_operator (Cairo.Operator.OVER);
+                var x = (width-size)/2;
+                var y = (height-size)/2;
+                Granite.Drawing.Utilities.cairo_rounded_rectangle (cr, x, y, size, size, size/2);
+                Gdk.cairo_set_source_pixbuf (cr, img_pixbuf, x, y);
+                cr.fill_preserve ();
+                cr.set_line_width (0);
+                cr.set_source_rgba (0, 0, 0, 0.3);
+                cr.stroke ();
+            } catch (Error e) {
+                critical (e.message);
+                return false;
+            } 
+            
+            icon_image.show ();
+            warning ("drawed");
+            
+            return true;
+        });
         
         var contact_lookup = new ContactLookup();
         
@@ -297,13 +328,15 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
 
         contact_lookup.get_individual_for_mail.begin (attendee.get_attendee ().replace ("mailto:", ""), (obj, res) => {
             individual = contact_lookup.get_individual_for_mail.end (res);
-            
-            if (individual.avatar != null)
-                icon_image.set_from_gicon (individual.avatar, Gtk.IconSize.DIALOG);
+            if (individual != null) {
+                if (individual.avatar != null) {
+                    icon_image.set_from_gicon (individual.avatar, Gtk.IconSize.DIALOG);
+                }
                 
-            if (individual.full_name != null) {
-                name_label.set_text (individual.full_name);
-                mail_label.set_text (attendee.get_attendee ());
+                if (individual.full_name != null) {
+                    name_label.set_text (individual.full_name);
+                    mail_label.set_text (attendee.get_attendee ());
+                }
             }
         });
         
