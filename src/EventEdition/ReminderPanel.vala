@@ -21,6 +21,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
     private Gee.ArrayList<ReminderGrid> reminders;
     private Gee.ArrayList<string> reminders_to_remove;
     private Gtk.Label no_reminder_label;
+    private Gtk.ListBox reminder_list;
 
     public ReminderPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -37,13 +38,12 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
 
         reminders = new Gee.ArrayList<ReminderGrid> ();
         reminders_to_remove = new Gee.ArrayList<string> ();
+        
+        reminder_list = new Gtk.ListBox ();
+        reminder_list.expand = true;
+        reminder_list.set_selection_mode (Gtk.SelectionMode.NONE);
+        reminder_list.add (no_reminder_label);
 
-        reminder_grid = new Gtk.Grid ();
-        reminder_grid.row_spacing = 6;
-        reminder_grid.column_spacing = 12;
-        reminder_grid.orientation = Gtk.Orientation.VERTICAL;
-        reminder_grid.expand = true;
-        reminder_grid.add (no_reminder_label);
         var add_reminder_button = new Gtk.Button.with_label (_("Add Reminder"));
         add_reminder_button.clicked.connect (() => {
             add_reminder ("");
@@ -56,14 +56,9 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         var fake_grid_right = new Gtk.Grid ();
         fake_grid_right.hexpand = true;
 
-        var main_grid = new Gtk.Grid ();
         var scrolled = new Gtk.ScrolledWindow (null, null);
-        scrolled.add_with_viewport (main_grid);
+        scrolled.add_with_viewport (reminder_list);
         scrolled.expand = true;
-
-        main_grid.attach (fake_grid_left, 0, 0, 1, 1);
-        main_grid.attach (fake_grid_right, 2, 0, 1, 1);
-        main_grid.attach (reminder_grid, 1, 0, 1, 1);
 
         attach (reminder_label, 0, 0, 1, 1);
         attach (scrolled, 0, 1, 1, 1);
@@ -73,8 +68,10 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
     
     private ReminderGrid add_reminder (string uid) {
         var reminder = new ReminderGrid (uid);
+        var row = new Gtk.ListBoxRow ();
+        row.add (reminder);
         reminders.add (reminder);
-        reminder_grid.add (reminder);
+        reminder_list.add (row);
         reminder.show_all ();
         reminder.removed.connect (() => {
             reminders.remove (reminder);
@@ -84,7 +81,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
             }
             reminders_to_remove.add (reminder.uid);
         });
-
+        row.show_all ();
         no_reminder_label.no_show_all = true;
         no_reminder_label.hide ();
         return reminder;
@@ -169,6 +166,9 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.Grid {
 
     public ReminderGrid (string uid) {
         this.uid = uid;
+        set_margin_bottom (7);
+        set_margin_left (7);
+        set_margin_right (7);
         row_spacing = 6;
         column_spacing = 12;
 
