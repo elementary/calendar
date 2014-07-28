@@ -192,6 +192,10 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         row_spacing = 6;
         column_spacing = 12;
         individual = null;
+        
+        set_margin_bottom (7);
+        set_margin_right (7);
+        set_margin_left (7);
 
         string status = "<b><span color=\'darkgrey\'>%s</span></b>".printf (_("Pending"));
         unowned iCal.Parameter parameter = attendee.get_first_parameter (iCal.ParameterKind.PARTSTAT);
