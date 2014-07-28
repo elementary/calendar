@@ -15,13 +15,11 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-// TODO: Use Folks to get contact informations such as name and picture.
-
 public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     private EventDialog parent_dialog;
     private Gtk.Entry guest_entry;
     private Gtk.EntryCompletion guest_completion;
-    private Gtk.Grid guest_grid;
+    private Gtk.ListBox guest_list;
     private int guest_grid_id = 0;
     private Gee.ArrayList<unowned iCal.Property> attendees;
     private Gtk.ListStore guest_store;
@@ -52,7 +50,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_entry.activate.connect (() => {
             var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
             attendee.set_attendee (guest_entry.text);
-            add_attendee ((owned)attendee);
+            add_guest ((owned)attendee);
         });
 
         load_contacts.begin ();
@@ -66,18 +64,11 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_completion.set_text_column (1);
         guest_completion.match_selected.connect ((model, iter) => suggestion_selected (model, iter));
 
-        guest_grid = new Gtk.Grid ();
-        var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null);
-        guest_scrolledwindow.add_with_viewport (guest_grid);
+	    guest_list = new Gtk.ListBox ();    
+	    guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
+	    var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null);
+        guest_scrolledwindow.add_with_viewport (guest_list);
         guest_scrolledwindow.expand = true;
-
-        var fake_grid_l = new Gtk.Grid ();
-        fake_grid_l.hexpand = true;
-        guest_grid.attach (fake_grid_l, 0, 0, 1, 1);
-
-        var fake_grid_r = new Gtk.Grid ();
-        fake_grid_r.hexpand = true;
-        guest_grid.attach (fake_grid_r, 2, 0, 1, 1);
 
         attach (guest_label, 0, 0, 1, 1);
         attach (guest_entry, 0, 1, 1, 1);
@@ -91,7 +82,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
             unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.ATTENDEE);
             for (int i = 0; i < count; i++) {
                 if (property.get_attendee () != null)
-                    add_attendee (property);
+                    add_guest (property);
 
                 property = comp.get_next_property (iCal.PropertyKind.ATTENDEE);
             }
@@ -154,16 +145,17 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         }
     }
 
-    private void add_attendee (iCal.Property attendee) {
-        var guest_element = new GuestGrid (attendee);
-        guest_grid.attach (guest_element, 1, guest_grid_id, 1, 1);
-        guest_grid_id++;
-        attendees.add (guest_element.attendee);
-        guest_element.removed.connect (() => {
-            attendees.remove (guest_element.attendee);
-        });
+    private void add_guest (iCal.Property attendee) {
+	var row = new Gtk.ListBox ();
+	var guest_element = new GuestGrid (attendee);
+	row.add (guest_element);
+	guest_list.add (row);
 
-        guest_element.show_all ();
+/*	guest_element.removed.connect (() => {
+	    attendees.remove (guest_element.attendee);
+	}); */	
+	
+	row.show_all ();
     }
 
     private bool suggestion_selected (Gtk.TreeModel model, Gtk.TreeIter iter) {
@@ -172,7 +164,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         
         model.get_value (iter, 1, out selected_value);
         attendee.set_attendee ((string)selected_value);
-        add_attendee ((owned)attendee);
+        add_guest ((owned)attendee);
         return true;
     }
 
