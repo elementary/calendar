@@ -24,7 +24,6 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     private Gtk.Grid guest_grid;
     private int guest_grid_id = 0;
     private Gee.ArrayList<unowned iCal.Property> attendees;
-    private ContactLookup contact_lookup;
     private Gtk.ListStore guest_store;
 
     private enum COLUMNS {
@@ -56,8 +55,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
             add_attendee ((owned)attendee);
         });
         
-        contact_lookup = new ContactLookup ();
-        contact_lookup.contacts_loaded.connect((contacts) => apply_contact_store_model (contacts));
+        load_contacts ();
         
         guest_completion = new Gtk.EntryCompletion ();
         guest_entry.set_completion (guest_completion);
@@ -183,69 +181,20 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         add_attendee ((owned)attendee);
         return true;
     }
-}
-
-
-//TODO split and remove class 
-public class Maya.View.EventEdition.ContactLookup {
-
-    private Folks.IndividualAggregator aggregator;
-    public bool ready;
     
-    public signal void contacts_loaded (Gee.Map<string, Folks.Individual> contacts);
-    public signal void contact_found (Folks.Individual contact);
-    
-    public ContactLookup () {
-        aggregator = Folks.IndividualAggregator.dup ();
+    private async void load_contacts () {
+        var aggregator = Folks.IndividualAggregator.dup ();
         
-        aggregator.notify["is-quiescent"].connect (() => {
-            contacts_loaded (get_contacts ());
-        });
-        
-        ready = false;
-        aggregator.prepare ();
-    }
-    
-    public Gee.Map<string, Folks.Individual> get_contacts () {
-        return aggregator.individuals;
-    }
-    
-    public async Folks.Individual get_individual_for_mail (string mail_address) {
-        Gee.MapIterator <string, Folks.Individual> map_iterator;
-        
-        map_iterator = aggregator.individuals.map_iterator ();
-        
-        while (map_iterator.next ()) {
-            foreach (var address in map_iterator.get_value ().email_addresses) {
-                if(address.value == mail_address) {
-                    return map_iterator.get_value ();
-                }
-            }
+        if (aggregator.is_prepared) {
+            apply_contact_store_model (aggregator.individuals);
+        } else {
+            aggregator.notify["is-quiescent"].connect (() => {
+                load_contacts ();
+            });
+            aggregator.prepare ();
         }
-        
-        return null;
-    }
-    
-    public async GLib.LoadableIcon? get_image_for_mail (string mail_address) {     
-        Gee.MapIterator<string, Folks.Individual> map_iterator;
-        
-        map_iterator = aggregator.individuals.map_iterator ();
-        
-        while (map_iterator.next ()) {
-            
-            foreach (var address in map_iterator.get_value ().email_addresses) {
-                if (address.value == mail_address) {
-                    if(map_iterator.get_value ().avatar != null) {
-                        return map_iterator.get_value ().avatar;
-                        }
-                }   
-            }
-        }
-        
-        return null;
     }
 }
-
 
 public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
     public signal void removed ();
@@ -279,34 +228,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         status_label.justify = Gtk.Justification.RIGHT;
         var icon_image = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.DIALOG);
         
-        icon_image.draw.connect ((cr) => {
-            try {
-                var width = get_allocated_width ();
-                var height = get_allocated_height ();
-                int size = (int) double.min (width, height);
-                var img_pixbuf = Gtk.IconTheme.get_default ().load_icon ("avatar-default", size, Gtk.IconLookupFlags.GENERIC_FALLBACK);
-//                var img_pixbuf = icon_image.get_pixbuf ();
-                cr.set_operator (Cairo.Operator.OVER);
-                var x = (width-size)/2;
-                var y = (height-size)/2;
-                Granite.Drawing.Utilities.cairo_rounded_rectangle (cr, x, y, size, size, size/2);
-                Gdk.cairo_set_source_pixbuf (cr, img_pixbuf, x, y);
-                cr.fill_preserve ();
-                cr.set_line_width (0);
-                cr.set_source_rgba (0, 0, 0, 0.3);
-                cr.stroke ();
-            } catch (Error e) {
-                critical (e.message);
-                return false;
-            } 
-            
-            icon_image.show ();
-            warning ("drawed");
-            
-            return true;
-        });
         
-        var contact_lookup = new ContactLookup();
         
         var mail = attendee.get_attendee ().replace ("mailto:", "");
 
@@ -326,8 +248,9 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         remove_grid.add (remove_button);
         remove_grid.valign = Gtk.Align.CENTER;
 
-        contact_lookup.get_individual_for_mail.begin (attendee.get_attendee ().replace ("mailto:", ""), (obj, res) => {
-            individual = contact_lookup.get_individual_for_mail.end (res);
+        get_contact_by_mail.begin (attendee.get_attendee ().replace ("mailto:", ""), (obj, res) => {
+            individual = get_contact_by_mail.end (res);
+            
             if (individual != null) {
                 if (individual.avatar != null) {
                     icon_image.set_from_gicon (individual.avatar, Gtk.IconSize.DIALOG);
@@ -337,13 +260,42 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                     name_label.set_text (individual.full_name);
                     mail_label.set_text (attendee.get_attendee ());
                 }
+            } else {
+                warning ("Contact is null");
             }
-        });
+        });  
         
         attach (icon_image, 0, 0, 1, 4);
         attach (name_label, 1, 1, 1, 1);
         attach (mail_label, 1, 2, 1, 1); 
         attach (status_label, 2, 1, 1, 2);
         attach (remove_grid, 3, 1, 1, 2);
+    }
+    
+    private async Folks.Individual get_contact_by_mail (string mail_address) {
+    
+        Folks.IndividualAggregator aggregator = Folks.IndividualAggregator.dup ();
+        
+        if (aggregator.is_prepared) {
+            Gee.MapIterator <string, Folks.Individual> map_iterator;
+         
+        
+            map_iterator = aggregator.individuals.map_iterator ();
+        
+            while (map_iterator.next ()) {
+                foreach (var address in map_iterator.get_value ().email_addresses) {
+                    if(address.value == mail_address) {
+                        warning ("account found");
+                        return map_iterator.get_value ();
+                    }
+                }
+            }
+        } else {
+            aggregator.notify["is-quiescent"].connect (() => {
+                get_contact_by_mail(mail_address);
+            });
+            
+            yield aggregator.prepare ();
+        }
     }
 }
