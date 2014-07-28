@@ -13,14 +13,12 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-//
 
 public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     private EventDialog parent_dialog;
     private Gtk.Entry guest_entry;
     private Gtk.EntryCompletion guest_completion;
     private Gtk.ListBox guest_list;
-    private int guest_grid_id = 0;
     private Gee.ArrayList<unowned iCal.Property> attendees;
     private Gtk.ListStore guest_store;
 
@@ -50,6 +48,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_entry.activate.connect (() => {
             var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
             attendee.set_attendee (guest_entry.text);
+            attendees.add (attendee);
             add_guest ((owned)attendee);
         });
 
@@ -113,7 +112,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         // Save the guests
         // First, clear the guests
         int count = comp.count_properties (iCal.PropertyKind.ATTENDEE);
-
+        
         for (int i = 0; i < count; i++) {
             unowned iCal.Property remove_prop;
             if (i == 0) {
@@ -146,16 +145,12 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     }
 
     private void add_guest (iCal.Property attendee) {
-	var row = new Gtk.ListBox ();
-	var guest_element = new GuestGrid (attendee);
-	row.add (guest_element);
-	guest_list.add (row);
-
-/*	guest_element.removed.connect (() => {
-	    attendees.remove (guest_element.attendee);
-	}); */	
+	    var row = new Gtk.ListBoxRow ();
+	    var guest_element = new GuestGrid (attendee);
+	    row.add (guest_element);
+	    guest_list.add (row);
 	
-	row.show_all ();
+	    row.show_all ();
     }
 
     private bool suggestion_selected (Gtk.TreeModel model, Gtk.TreeIter iter) {
@@ -164,6 +159,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         
         model.get_value (iter, 1, out selected_value);
         attendee.set_attendee ((string)selected_value);
+        attendees.add (attendee);
         add_guest ((owned)attendee);
         return true;
     }
@@ -257,7 +253,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                         individual = map_iterator.get_value ();
                         if (individual != null) {
                             icon_image.add_contact (individual);
-                            if (individual.full_name != null) {
+                            if (individual.full_name != null && individual.full_name != "") {
                                 set_name_label (individual.full_name);
                                 set_mail_label (attendee.get_attendee ());
                             }
