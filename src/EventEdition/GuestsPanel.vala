@@ -48,23 +48,22 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_entry = new Gtk.SearchEntry ();
         guest_entry.placeholder_text = _("Invite…");
         guest_entry.hexpand = true;
-        
+
         guest_entry.activate.connect (() => {
             var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
             attendee.set_attendee (guest_entry.text);
             add_attendee ((owned)attendee);
         });
-        
-        load_contacts ();
-        
+
+        load_contacts.begin ();
+
         guest_completion = new Gtk.EntryCompletion ();
         guest_entry.set_completion (guest_completion);
-        
+
         guest_store = new Gtk.ListStore(2, typeof (string), typeof (string));
         guest_completion.set_model (guest_store);
         guest_completion.set_text_column (0);
         guest_completion.set_text_column (1);
-        
         guest_completion.match_selected.connect ((model, iter) => suggestion_selected (model, iter));
 
         guest_grid = new Gtk.Grid ();
@@ -91,7 +90,6 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
             unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.ATTENDEE);
             for (int i = 0; i < count; i++) {
-
                 if (property.get_attendee () != null)
                     add_attendee (property);
 
@@ -101,21 +99,17 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
         show_all ();
     }
-    
+
     /**
      * Add the contacts to the EntryCompletion model.
      */
-    private void apply_contact_store_model (Gee.Map<string, Folks.Individual> contacts) {        
+    private void apply_contact_store_model (Gee.Map<string, Folks.Individual> contacts) {
         Gtk.TreeIter contact;
-        Gee.MapIterator<string, Folks.Individual> map_iterator;
-        
-        map_iterator = contacts.map_iterator ();
-        
+        var map_iterator = contacts.map_iterator ();
         while (map_iterator.next ()) {
-        
             foreach (var address in map_iterator.get_value ().email_addresses) {
                 guest_store.append (out contact);
-                guest_store.set (contact, 0, map_iterator.get_value ().full_name, 1, address.value, address);
+                guest_store.set (contact, 0, map_iterator.get_value ().full_name, 1, address.value);
             }
         }
     }
@@ -168,10 +162,10 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_element.removed.connect (() => {
             attendees.remove (guest_element.attendee);
         });
+
         guest_element.show_all ();
     }
-    
-        
+
     private bool suggestion_selected (Gtk.TreeModel model, Gtk.TreeIter iter) {
         var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
         Value selected_value;
@@ -181,17 +175,18 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         add_attendee ((owned)attendee);
         return true;
     }
-    
+
     private async void load_contacts () {
         var aggregator = Folks.IndividualAggregator.dup ();
-        
+
         if (aggregator.is_prepared) {
             apply_contact_store_model (aggregator.individuals);
         } else {
             aggregator.notify["is-quiescent"].connect (() => {
-                load_contacts ();
+                load_contacts.begin ();
             });
-            aggregator.prepare ();
+
+            aggregator.prepare.begin ();
         }
     }
 }
@@ -200,6 +195,9 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
     public signal void removed ();
     public iCal.Property attendee;
     private Folks.Individual individual;
+    private Gtk.Label name_label;
+    private Gtk.Label mail_label;
+    private ContactImage icon_image;
 
     public GuestGrid (iCal.Property attendee) {
         this.attendee = new iCal.Property.clone (attendee);
@@ -226,20 +224,18 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         var status_label = new Gtk.Label ("");
         status_label.set_markup (status);
         status_label.justify = Gtk.Justification.RIGHT;
-        var icon_image = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.DIALOG);
-        
-        
-        
+        icon_image = new ContactImage (Gtk.IconSize.DIALOG);
+
         var mail = attendee.get_attendee ().replace ("mailto:", "");
 
-        var name_label = new Gtk.Label ("");
+        name_label = new Gtk.Label ("");
         name_label.xalign = 0;
-        name_label.set_markup ("<b><big>%s</big></b>".printf (Markup.escape_text (mail.split ("@", 2)[0])));
+        set_name_label (mail.split ("@", 2)[0]);
 
-        var mail_label = new Gtk.Label ("");
+        mail_label = new Gtk.Label ("");
         mail_label.hexpand = true;
         mail_label.xalign = 0;
-        mail_label.set_markup ("<b><span color=\'darkgrey\'>%s</span></b>".printf (Markup.escape_text (mail)));
+        set_mail_label (mail);
 
         var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);
         remove_button.relief = Gtk.ReliefStyle.NONE;
@@ -248,54 +244,53 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         remove_grid.add (remove_button);
         remove_grid.valign = Gtk.Align.CENTER;
 
-        get_contact_by_mail.begin (attendee.get_attendee ().replace ("mailto:", ""), (obj, res) => {
-            individual = get_contact_by_mail.end (res);
-            
-            if (individual != null) {
-                if (individual.avatar != null) {
-                    icon_image.set_from_gicon (individual.avatar, Gtk.IconSize.DIALOG);
-                }
-                
-                if (individual.full_name != null) {
-                    name_label.set_text (individual.full_name);
-                    mail_label.set_text (attendee.get_attendee ());
-                }
-            } else {
-                warning ("Contact is null");
-            }
-        });  
-        
+        get_contact_by_mail.begin (attendee.get_attendee ().replace ("mailto:", ""));
+
         attach (icon_image, 0, 0, 1, 4);
         attach (name_label, 1, 1, 1, 1);
         attach (mail_label, 1, 2, 1, 1); 
         attach (status_label, 2, 1, 1, 2);
         attach (remove_grid, 3, 1, 1, 2);
     }
-    
-    private async Folks.Individual get_contact_by_mail (string mail_address) {
-    
+
+    private async void get_contact_by_mail (string mail_address) {
         Folks.IndividualAggregator aggregator = Folks.IndividualAggregator.dup ();
-        
         if (aggregator.is_prepared) {
             Gee.MapIterator <string, Folks.Individual> map_iterator;
-         
-        
             map_iterator = aggregator.individuals.map_iterator ();
-        
+
             while (map_iterator.next ()) {
                 foreach (var address in map_iterator.get_value ().email_addresses) {
                     if(address.value == mail_address) {
-                        warning ("account found");
-                        return map_iterator.get_value ();
+                        individual = map_iterator.get_value ();
+                        if (individual != null) {
+                            icon_image.add_contact (individual);
+                            if (individual.full_name != null) {
+                                set_name_label (individual.full_name);
+                                set_mail_label (attendee.get_attendee ());
+                            }
+                        }
                     }
                 }
             }
         } else {
             aggregator.notify["is-quiescent"].connect (() => {
-                get_contact_by_mail(mail_address);
+                get_contact_by_mail.begin (mail_address);
             });
-            
-            yield aggregator.prepare ();
+
+            try {
+                yield aggregator.prepare ();
+            } catch (Error e) {
+                critical (e.message);
+            }
         }
+    }
+
+    private void set_name_label (string name) {
+        name_label.set_markup ("<b><big>%s</big></b>".printf (Markup.escape_text (name)));
+    }
+
+    private void set_mail_label (string mail) {
+        mail_label.set_markup ("<b><span color=\'darkgrey\'>%s</span></b>".printf (Markup.escape_text (mail)));
     }
 }
