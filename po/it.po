@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-24 17:24+0200\n"
-"PO-Revision-Date: 2014-07-17 10:12+0000\n"
+"PO-Revision-Date: 2014-07-28 12:47+0000\n"
 "Last-Translator: Fabio Gaudenzi <bafio.fruges@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-07-18 05:02+0000\n"
-"X-Generator: Launchpad (build 17114)\n"
+"X-Launchpad-Export-Date: 2014-07-29 06:28+0000\n"
+"X-Generator: Launchpad (build 17131)\n"
 "Language: it\n"
 
 #: ../src/EventEdition/GuestsPanel.vala:44
@@ -465,7 +465,7 @@ msgstr "Calendario"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
-msgstr ""
+msgstr "% più..."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
