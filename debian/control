@@ -16,6 +16,7 @@ Build-Depends: cmake (>= 2.8),
                libical-dev,
                libnotify-dev,
                pkg-config,
+               quilt,
                valac-0.24 | valac (>= 0.23.2)
 Standards-Version: 3.9.5
 Homepage: https://launchpad.net/maya
