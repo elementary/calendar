@@ -56,6 +56,22 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
         guest_completion = new Gtk.EntryCompletion ();
         guest_entry.set_completion (guest_completion);
+        
+        Gtk.EntryCompletionMatchFunc matcher = (completion, key, iter) => {
+            Value val1, val2;
+            Gtk.ListStore model = (Gtk.ListStore)completion.get_model ();
+            
+            model.get_value (iter, 0, out val1);
+            model.get_value (iter, 1, out val2);
+
+            if (val1.get_string ().casefold (-1).contains (key) || val2.get_string ().casefold (-1).contains (key)) 
+                return true;
+            
+            return false;
+        };
+        
+        guest_completion.set_match_func (matcher);
+        guest_completion.set_minimum_key_length (3);
 
         guest_store = new Gtk.ListStore(2, typeof (string), typeof (string));
         guest_completion.set_model (guest_store);
