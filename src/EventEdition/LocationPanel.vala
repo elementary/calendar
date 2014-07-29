@@ -44,21 +44,17 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         attach (location_entry, 0, 1, 1, 1);
         
         location_completion = new Gtk.EntryCompletion ();
+        location_completion.set_minimum_key_length (3);
         location_entry.set_completion (location_completion);
         
         Gtk.EntryCompletionMatchFunc matcher = (completion, key, iter) => {
-            var val1 = Value (typeof (string));
-            var val2 = Value (typeof (string));
+            Value val1, val2;
             Gtk.ListStore model = (Gtk.ListStore)completion.get_model ();
             
             model.get_value (iter, 0, out val1);
             model.get_value (iter, 1, out val2);
-            
-            if (val1.get_string ().contains (key)) {
-                return true;
-            }
-            
-            if (val2.get_string ().contains (key))
+
+            if (val1.get_string ().casefold (-1).contains (key) || val2.get_string ().casefold (-1).contains (key)) 
                 return true;
             
             return false;
@@ -70,7 +66,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         location_completion.set_model (location_store);
         location_completion.set_text_column (0);
         location_completion.set_text_column (1);
-//        location_completion.match_selected.connect ((model, iter) => suggestion_selected (model, iter));
+        location_completion.match_selected.connect ((model, iter) => suggestion_selected (model, iter));
 
         champlain_embed = new GtkChamplain.Embed ();
         var view = champlain_embed.champlain_view;
@@ -201,18 +197,24 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         var aggregator = Folks.IndividualAggregator.dup ();
         
         if (aggregator.is_prepared) {
-            add_contacts_store (aggregator.individuals);
+            add_contacts_store.begin (aggregator.individuals);
         } else {
             aggregator.notify["is-quiescent"].connect (() => {
-            add_contacts_store (aggregator.individuals);
+                add_contacts_store.begin (aggregator.individuals);
             });
             
             aggregator.prepare.begin();
         }        
     }
 
-    private void suggestion_selected (Gtk.TreeModel model, Gtk.TreeIter iter) {
-    
+    private bool suggestion_selected (Gtk.TreeModel model, Gtk.TreeIter iter) {
+        Value address;
+        
+        model.get_value (iter, 1, out address);
+        location_entry.set_text (address.get_string ());
+        compute_location.begin (address.get_string ());
+        
+        return true;
     }
 }
 
