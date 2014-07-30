@@ -179,6 +179,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         Value selected_value;
         
         model.get_value (iter, 1, out selected_value);
+        warning ("Value: %s", selected_value.get_string ());
         attendee.set_attendee (selected_value.get_string ());
         add_guest ((owned)attendee);
         return true;
