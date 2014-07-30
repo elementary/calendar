@@ -165,6 +165,11 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 	    var guest_element = new GuestGrid (attendee);
 	    row.add (guest_element);
 	    guest_list.add (row);
+	    
+	    attendees.add (guest_element.attendee);
+	    guest_element.removed.connect (() => {
+            attendees.remove (guest_element.attendee);
+        });
 	
 	    row.show_all ();
     }
@@ -174,8 +179,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         Value selected_value;
         
         model.get_value (iter, 1, out selected_value);
-        attendee.set_attendee ((string)selected_value);
-        attendees.add (attendee);
+        attendee.set_attendee (selected_value.get_string ());
         add_guest ((owned)attendee);
         return true;
     }
