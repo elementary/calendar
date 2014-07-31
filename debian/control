@@ -29,6 +29,7 @@ Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar-common (= ${source:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
+Recommends: maya-calendar-plugin-caldav, maya-calendar-plugin-google
 Description: GTK+ calendar application
  Maya is a slim, lightweight, GTK+ calendar application written
  in Vala and designed for elementary OS.
