@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-24 17:24+0200\n"
-"PO-Revision-Date: 2014-03-06 14:13+0000\n"
-"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
+"PO-Revision-Date: 2014-08-04 09:14+0000\n"
+"Last-Translator: Damian Korcz <damikiller@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-07-14 06:50+0000\n"
-"X-Generator: Launchpad (build 17111)\n"
+"X-Launchpad-Export-Date: 2014-08-05 06:23+0000\n"
+"X-Generator: Launchpad (build 17147)\n"
 "Language: pl\n"
 
 #: ../src/EventEdition/GuestsPanel.vala:44
@@ -377,7 +377,7 @@ msgstr "Usuń"
 #. / TRANSLATORS: for multiple days events, shows: (date) to (date)
 #: ../src/Sidebar/EventWidget.vala:199
 msgid "%s to %s"
-msgstr ""
+msgstr "%s do %s"
 
 #: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
@@ -465,7 +465,7 @@ msgstr "Kalendarz"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
-msgstr ""
+msgstr "%u więcej…"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -526,7 +526,7 @@ msgstr "jan@kowalski.pl"
 
 #: ../core/Backends/PlacementWidget.vala:80
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Zachowaj lokalną kopię"
 
 #: ../core/Backends/LocalBackend.vala:26
 msgid "On this computer"
