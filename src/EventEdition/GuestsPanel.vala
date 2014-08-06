@@ -218,7 +218,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         set_margin_right (6);
         set_margin_left (6);
 
-        string status = "<b><span color=\'darkgrey\'>%s</span></b>".printf (_("Pending"));
+        string status = "";
         unowned iCal.Parameter parameter = attendee.get_first_parameter (iCal.ParameterKind.PARTSTAT);
         if (parameter != null) {
             switch (parameter.get_partstat ()) {
@@ -229,10 +229,10 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                     status = "<b><span color=\'red\'>%s</span></b>".printf (_("Declined"));
                     break;
                 default:
-                    status = "<b><span color=\'darkgrey\'>%s</span></b>".printf (_("Pending"));
+                    status = "";
                     break;
             }
-        }
+        } 
 
         var status_label = new Gtk.Label ("");
         status_label.set_markup (status);
