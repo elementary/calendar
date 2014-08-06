@@ -42,7 +42,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         var guest_label = Maya.View.EventDialog.make_label (_("Participants:"));
 
         guest_entry = new Gtk.SearchEntry ();
-        guest_entry.placeholder_text = _("Invite…");
+        guest_entry.placeholder_text = _("Invite");
         guest_entry.hexpand = true;
 
         guest_entry.activate.connect (() => {
@@ -178,10 +178,10 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
         Value selected_value;
         
-        model.get_value (iter, 1, out selected_value);
-        warning ("Value: %s", selected_value.get_string ());
+        model.get_value (iter, 1, out selected_value);;
         attendee.set_attendee (selected_value.get_string ());
         add_guest ((owned)attendee);
+	guest_entry.delete_text (0, -1);
         return true;
     }
 
