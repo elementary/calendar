@@ -4,6 +4,7 @@ set(CLIENT_SOURCE
     SourceItem.vala
     MayaToolbar.vala
     SourceSelector.vala
+    EventEdition/ContactImage.vala
     EventEdition/EventDialog.vala
     EventEdition/GuestsPanel.vala
     EventEdition/InfoPanel.vala
