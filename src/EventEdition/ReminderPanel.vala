@@ -17,7 +17,6 @@
 
 public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
     private EventDialog parent_dialog;
-    private Gtk.Grid reminder_grid;
     private Gee.ArrayList<ReminderGrid> reminders;
     private Gee.ArrayList<string> reminders_to_remove;
     private Gtk.ListBox reminder_list;
