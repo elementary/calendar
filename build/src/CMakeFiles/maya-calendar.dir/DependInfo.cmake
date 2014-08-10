@@ -1,0 +1,87 @@
+# The set of languages for which implicit dependencies are needed:
+SET(CMAKE_DEPENDS_LANGUAGES
+  "C"
+  )
+# The set of files for implicit dependencies of each language:
+SET(CMAKE_DEPENDS_CHECK_C
+  "/home/phillip/maya/fix-1329550/build/src/Application.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Application.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/ContactImage.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/EventEdition/ContactImage.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/EventDialog.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/EventEdition/EventDialog.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/GuestsPanel.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/EventEdition/GuestsPanel.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/InfoPanel.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/EventEdition/InfoPanel.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/LocationPanel.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/EventEdition/LocationPanel.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/ReminderPanel.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/EventEdition/ReminderPanel.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/RepeatPanel.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/EventEdition/RepeatPanel.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/CalendarView.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Grid/CalendarView.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/EventButton/EventButton.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Grid/EventButton/EventButton.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/EventButton/MultiDayEventButton.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Grid/EventButton/MultiDayEventButton.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/EventButton/SingleDayEventButton.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Grid/EventButton/SingleDayEventButton.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/Grid.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Grid/Grid.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/GridDay.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Grid/GridDay.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/Header.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Grid/Header.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/VAutoHider.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Grid/VAutoHider.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/WeekLabels.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Grid/WeekLabels.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/MayaToolbar.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/MayaToolbar.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Sidebar/AgendaView.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Sidebar/AgendaView.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Sidebar/EventWidget.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Sidebar/EventWidget.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Sidebar/Sidebar.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Sidebar/Sidebar.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Sidebar/SourceWidget.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Sidebar/SourceWidget.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/SourceDialog.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/SourceDialog.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/SourceItem.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/SourceItem.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/SourceSelector.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/SourceSelector.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Widgets/ContractorButtonWithMenu.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Widgets/ContractorButtonWithMenu.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Widgets/DateSwitcher.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Widgets/DateSwitcher.c.o"
+  "/home/phillip/maya/fix-1329550/build/src/Widgets/DateTimePicker.c" "/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir/Widgets/DateTimePicker.c.o"
+  )
+SET(CMAKE_C_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+SET(CMAKE_TARGET_DEFINITIONS
+  "GETTEXT_PACKAGE=\"maya-calendar\""
+  )
+
+# Pairs of files generated by the same build rule.
+SET(CMAKE_MULTIPLE_OUTPUT_PAIRS
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/ContactImage.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/EventDialog.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/GuestsPanel.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/InfoPanel.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/LocationPanel.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/ReminderPanel.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/EventEdition/RepeatPanel.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/CalendarView.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/EventButton/EventButton.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/EventButton/MultiDayEventButton.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/EventButton/SingleDayEventButton.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/Grid.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/GridDay.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/Header.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/VAutoHider.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Grid/WeekLabels.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/MayaToolbar.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Sidebar/AgendaView.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Sidebar/EventWidget.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Sidebar/Sidebar.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Sidebar/SourceWidget.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/SourceDialog.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/SourceItem.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/SourceSelector.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Widgets/ContractorButtonWithMenu.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Widgets/DateSwitcher.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  "/home/phillip/maya/fix-1329550/build/src/Widgets/DateTimePicker.c" "/home/phillip/maya/fix-1329550/build/src/Application.c"
+  )
+
+
+# Targets to which this target links.
+SET(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/phillip/maya/fix-1329550/build/core/CMakeFiles/libmaya-calendar.dir/DependInfo.cmake"
+  )
+
+# The include file search paths:
+SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "core"
+  "src"
+  )
+SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_ASM_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

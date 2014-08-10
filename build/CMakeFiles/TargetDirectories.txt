@@ -1,0 +1,10 @@
+/home/phillip/maya/fix-1329550/build/plugins/CalDAV/CMakeFiles/caldav.dir
+/home/phillip/maya/fix-1329550/build/CMakeFiles/dist.dir
+/home/phillip/maya/fix-1329550/build/CMakeFiles/distcheck.dir
+/home/phillip/maya/fix-1329550/build/plugins/Google/CMakeFiles/google.dir
+/home/phillip/maya/fix-1329550/build/po/CMakeFiles/i18n.dir
+/home/phillip/maya/fix-1329550/build/core/CMakeFiles/libmaya-calendar.dir
+/home/phillip/maya/fix-1329550/build/src/CMakeFiles/maya-calendar.dir
+/home/phillip/maya/fix-1329550/build/daemon/CMakeFiles/maya-calendar-daemon.dir
+/home/phillip/maya/fix-1329550/build/po/CMakeFiles/pot.dir
+/home/phillip/maya/fix-1329550/build/CMakeFiles/uninstall.dir

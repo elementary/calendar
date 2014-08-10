@@ -13,9 +13,13 @@ X-GNOME-Gettext-Domain=maya-calendar
 X-GNOME-Keywords=Maya;Planner;Dates;Days;Events;
 X-AppInstall-Keywords=Maya;Planner;Dates;Days;Events;
 
-X-Ayatana-Desktop-Shortcuts=AddEvent
+Actions=AddEvent;AboutDialog;
 
 [AddEvent Shortcut Group]
 Name=_Add Event
 Exec=maya-calendar -a
 TargetEnvironment=Unity
+
+[Desktop Action AboutDialog]
+Exec=maya-calendar --about
+Name=About Maya
