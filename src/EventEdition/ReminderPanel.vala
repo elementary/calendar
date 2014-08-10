@@ -17,10 +17,9 @@
 
 public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
     private EventDialog parent_dialog;
-    private Gtk.Grid reminder_grid;
     private Gee.ArrayList<ReminderGrid> reminders;
     private Gee.ArrayList<string> reminders_to_remove;
-    private Gtk.Label no_reminder_label;
+    private Gtk.ListBox reminder_list;
 
     public ReminderPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -32,18 +31,18 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         var reminder_label = Maya.View.EventDialog.make_label (_("Reminders:"));
         reminder_label.margin_left = 12;
 
-        no_reminder_label = new Gtk.Label (_("No Reminders."));
-        no_reminder_label.hexpand = true;
+        var no_reminder_label = new Gtk.Label ("");
+        no_reminder_label.set_markup ("<b><span color=\'darkgrey\'>%s</span></b>".printf (_("No Reminders")));
+        no_reminder_label.show ();
 
         reminders = new Gee.ArrayList<ReminderGrid> ();
         reminders_to_remove = new Gee.ArrayList<string> ();
+        
+        reminder_list = new Gtk.ListBox ();
+        reminder_list.expand = true;
+        reminder_list.set_selection_mode (Gtk.SelectionMode.NONE);
+        reminder_list.set_placeholder (no_reminder_label);
 
-        reminder_grid = new Gtk.Grid ();
-        reminder_grid.row_spacing = 6;
-        reminder_grid.column_spacing = 12;
-        reminder_grid.orientation = Gtk.Orientation.VERTICAL;
-        reminder_grid.expand = true;
-        reminder_grid.add (no_reminder_label);
         var add_reminder_button = new Gtk.Button.with_label (_("Add Reminder"));
         add_reminder_button.clicked.connect (() => {
             add_reminder ("");
@@ -56,14 +55,9 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         var fake_grid_right = new Gtk.Grid ();
         fake_grid_right.hexpand = true;
 
-        var main_grid = new Gtk.Grid ();
         var scrolled = new Gtk.ScrolledWindow (null, null);
-        scrolled.add_with_viewport (main_grid);
+        scrolled.add_with_viewport (reminder_list);
         scrolled.expand = true;
-
-        main_grid.attach (fake_grid_left, 0, 0, 1, 1);
-        main_grid.attach (fake_grid_right, 2, 0, 1, 1);
-        main_grid.attach (reminder_grid, 1, 0, 1, 1);
 
         attach (reminder_label, 0, 0, 1, 1);
         attach (scrolled, 0, 1, 1, 1);
@@ -73,20 +67,14 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
     
     private ReminderGrid add_reminder (string uid) {
         var reminder = new ReminderGrid (uid);
-        reminders.add (reminder);
-        reminder_grid.add (reminder);
+        var row = new Gtk.ListBoxRow ();
+        reminder_list.add (reminder);
         reminder.show_all ();
         reminder.removed.connect (() => {
             reminders.remove (reminder);
-            if (reminders.is_empty == true) {
-                no_reminder_label.no_show_all = false;
-                no_reminder_label.show ();
-            }
             reminders_to_remove.add (reminder.uid);
         });
-
-        no_reminder_label.no_show_all = true;
-        no_reminder_label.hide ();
+        row.show_all ();
         return reminder;
     }
 
@@ -140,7 +128,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 trigger.type = E.CalComponentAlarmTriggerType.RELATIVE_START;
                 alarm.set_trigger (trigger);
                 parent_dialog.ecal.add_alarm (alarm);
-            } else if (reminder.changed == true) {
+            } else if (reminder.change == true) {
                 var alarm = parent_dialog.ecal.get_alarm (reminder.uid);
                 alarm.set_action (reminder.get_action ());
                 E.CalComponentAlarmTrigger trigger;
@@ -157,9 +145,9 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
     }
 }
 
-public class Maya.View.EventEdition.ReminderGrid : Gtk.Grid {
+public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
     public signal void removed ();
-    public bool changed = false;
+    public bool change = false;
     public string uid;
 
     private bool is_human_change = true;
@@ -169,8 +157,9 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.Grid {
 
     public ReminderGrid (string uid) {
         this.uid = uid;
-        row_spacing = 6;
-        column_spacing = 12;
+        set_margin_bottom (6);
+        set_margin_left (6);
+        set_margin_right (6);
 
         time = new Gtk.ComboBoxText ();
         time.append_text (_("0 minutes"));
@@ -192,7 +181,7 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.Grid {
         time.active = 3;
         time.changed.connect (() => {
             if (is_human_change == true) {
-                changed = true;
+                change = true;
             }
         });
 
@@ -203,7 +192,7 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.Grid {
         choice.hexpand = true;
         choice.changed.connect (() => {
             if (is_human_change == true) {
-                changed = true;
+                change = true;
             }
         });
 
@@ -211,9 +200,14 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.Grid {
         remove_button.relief = Gtk.ReliefStyle.NONE;
         remove_button.clicked.connect (() => {removed (); hide (); destroy ();});
 
-        attach (time, 0, 0, 1, 1);
-        attach (choice, 1, 0, 1, 1);
-        attach (remove_button, 2, 0, 1, 1);
+        var grid = new Gtk.Grid ();
+        grid.row_spacing = 6;
+        grid.column_spacing = 12;
+        grid.attach (time, 0, 0, 1, 1);
+        grid.attach (choice, 1, 0, 1, 1);
+        grid.attach (remove_button, 2, 0, 1, 1);
+        
+        add (grid);
     }
 
     public void set_choice (bool is_email = true) {
