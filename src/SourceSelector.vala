@@ -30,8 +30,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
         calendar_grid = new Gtk.Grid ();
         calendar_grid.row_spacing = 12;
-        calendar_grid.margin_left = 6;
-        calendar_grid.margin_right = 6;
+        calendar_grid.margin_start = calendar_grid.margin_end = 6;
 
         scroll = new Gtk.ScrolledWindow (null, null);
         scroll.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -60,22 +59,15 @@ public class Maya.View.SourceSelector : Gtk.Popover {
             critical (error.message);
         }
 
-        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-        separator.hexpand = true;
-
         var add_calendar_button = new Gtk.Button.with_label (_("Add New Calendar…"));
-        add_calendar_button.relief = Gtk.ReliefStyle.NONE;
         add_calendar_button.hexpand = true;
-        add_calendar_button.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
-        add_calendar_button.get_style_context ().remove_class (Gtk.STYLE_CLASS_BUTTON);
+        add_calendar_button.margin_start = add_calendar_button.margin_end = 6;
         add_calendar_button.clicked.connect (create_source);
 
         var add_calendar_grid = new Gtk.Grid ();
-        add_calendar_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_MENU);
         add_calendar_grid.attach (add_calendar_button, 0, 0, 1, 1);
 
         main_grid.attach (scroll, 0, 0, 1, 1);
-        main_grid.attach (separator, 0, 1, 1, 1);
         main_grid.attach (add_calendar_grid, 0, 2, 1, 1);
 
         stack.add_named (main_grid, "main");
