@@ -20,7 +20,6 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
     private Gtk.Grid reminder_grid;
     private Gee.ArrayList<ReminderGrid> reminders;
     private Gee.ArrayList<string> reminders_to_remove;
-    private Gtk.Label no_reminder_label;
     private Gtk.ListBox reminder_list;
 
     public ReminderPanel (EventDialog parent_dialog) {
@@ -33,8 +32,9 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         var reminder_label = Maya.View.EventDialog.make_label (_("Reminders:"));
         reminder_label.margin_left = 12;
 
-        no_reminder_label = new Gtk.Label (_("No Reminders."));
-        no_reminder_label.hexpand = true;
+        var no_reminder_label = new Gtk.Label ("");
+        no_reminder_label.set_markup ("<b><span color=\'darkgrey\'>%s</span></b>".printf (_("No Reminders")));
+        no_reminder_label.show ();
 
         reminders = new Gee.ArrayList<ReminderGrid> ();
         reminders_to_remove = new Gee.ArrayList<string> ();
@@ -42,7 +42,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         reminder_list = new Gtk.ListBox ();
         reminder_list.expand = true;
         reminder_list.set_selection_mode (Gtk.SelectionMode.NONE);
-        reminder_list.add (no_reminder_label);
+        reminder_list.set_placeholder (no_reminder_label);
 
         var add_reminder_button = new Gtk.Button.with_label (_("Add Reminder"));
         add_reminder_button.clicked.connect (() => {
@@ -73,15 +73,9 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         reminder.show_all ();
         reminder.removed.connect (() => {
             reminders.remove (reminder);
-            if (reminders.is_empty == true) {
-                no_reminder_label.no_show_all = false;
-                no_reminder_label.show ();
-            }
             reminders_to_remove.add (reminder.uid);
         });
         row.show_all ();
-        no_reminder_label.no_show_all = true;
-        no_reminder_label.hide ();
         return reminder;
     }
 
