@@ -15,10 +15,9 @@ X-AppInstall-Keywords=Maya;Planner;Dates;Days;Events;
 
 Actions=AddEvent;AboutDialog;
 
-[AddEvent Shortcut Group]
+[Desktop Action AddEvent]
 Name=_Add Event
 Exec=maya-calendar -a
-TargetEnvironment=Unity
 
 [Desktop Action AboutDialog]
 Exec=maya-calendar --about
