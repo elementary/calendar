@@ -9,16 +9,15 @@ Terminal=false
 Categories=GTK;Office;Calendar;
 StartupNotify=true
 MimeType=text/calendar;
-X-GNOME-Gettext-Domain=maya-calendar
-X-GNOME-Keywords=Maya;Planner;Dates;Days;Events;
+Keywords=Maya;Planner;Dates;Days;Events;
 X-AppInstall-Keywords=Maya;Planner;Dates;Days;Events;
-
 Actions=AddEvent;AboutDialog;
+X-GNOME-Gettext-Domain=maya-calendar
 
 [Desktop Action AddEvent]
-Name=_Add Event
+Name=Add Event
 Exec=maya-calendar -a
 
 [Desktop Action AboutDialog]
-Exec=maya-calendar --about
 Name=About Maya
+Exec=maya-calendar --about
