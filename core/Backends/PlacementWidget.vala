@@ -22,7 +22,11 @@
 
 // This is needed in order to have good placement for widgets
 public class Maya.PlacementWidget : GLib.Object {
-    
+
+    ~PlacementWidget () {
+        widget.destroy ();
+    }
+
     public Gtk.Widget widget;
     public int row = 0;
     public int column = 0;

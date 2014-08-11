@@ -151,9 +151,12 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             rgba.blue = 0.70;
             color_button.set_rgba (rgba);
         } else {
+            event_type = EventType.EDIT;
             create_button.set_label (_("Save"));
             name_entry.text = source.display_name;
             type_combobox.sensitive = false;
+            type_combobox.set_active (0);
+            list_store.foreach (tree_foreach);
             var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             var rgba = Gdk.RGBA ();
             rgba.parse (cal.dup_color ());

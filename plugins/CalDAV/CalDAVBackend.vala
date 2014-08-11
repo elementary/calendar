@@ -70,38 +70,54 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         url_entry.column = 1;
         url_entry.ref_name = "url_entry";
         url_entry.needed = true;
+        collection.add (url_entry);
         if (to_edit != null) {
             E.SourceWebdav webdav = (E.SourceWebdav)to_edit.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
-            ((Gtk.Entry)url_entry.widget).text = webdav.dup_soup_uri ().to_string (false);
+            var uri = webdav.dup_soup_uri ();
+            ((Gtk.Entry)url_entry.widget).text = "%s://%s%s".printf (uri.get_scheme (), uri.get_host (), uri.get_path ());
         }
 
-        collection.add (url_entry);
+        /*var find_button = new PlacementWidget ();
+        find_button.widget = new Gtk.Button.with_label (_("Find Calendars"));
+        find_button.row = 2;
+        find_button.column = 1;
+        find_button.ref_name = "search_button";
+        collection.add (find_button);
+        ((Gtk.Button)find_button.widget).clicked.connect (() => {
+            
+        };*/
 
         var secure_checkbutton = new PlacementWidget ();
         secure_checkbutton.widget = new Gtk.CheckButton.with_label (_("Use a secure connection"));
-        secure_checkbutton.row = 2;
+        secure_checkbutton.row = 3;
         secure_checkbutton.column = 1;
         secure_checkbutton.ref_name = "secure_checkbutton";
         collection.add (secure_checkbutton);
+        if (to_edit != null) {
+            E.SourceSecurity security = (E.SourceSecurity)to_edit.get_extension (E.SOURCE_EXTENSION_SECURITY);
+            ((Gtk.CheckButton)secure_checkbutton.widget).active = security.secure;
+        }
 
         string user = "";
         if (to_edit != null) {
             E.SourceAuthentication auth = (E.SourceAuthentication)to_edit.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
-            user = auth.user;
+            if (auth.user != null)
+                user = auth.user;
         }
-        collection.add_all (Maya.DefaultPlacementWidgets.get_user (3, true, user));
+        collection.add_all (Maya.DefaultPlacementWidgets.get_user (4, true, user));
 
         string email = "";
         if (to_edit != null) {
             E.SourceWebdav webdav = (E.SourceWebdav)to_edit.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
-            email = webdav.email_address;
+            if (webdav.email_address != null)
+                email = webdav.email_address;
         }
 
-        collection.add_all (Maya.DefaultPlacementWidgets.get_email (4, true, email));
+        collection.add_all (Maya.DefaultPlacementWidgets.get_email (5, false, email));
 
         var server_checkbutton = new PlacementWidget ();
         server_checkbutton.widget = new Gtk.CheckButton.with_label (_("Server handles meeting invitations"));
-        server_checkbutton.row = 5;
+        server_checkbutton.row = 6;
         server_checkbutton.column = 1;
         server_checkbutton.ref_name = "server_checkbutton";
         if (to_edit != null) {
