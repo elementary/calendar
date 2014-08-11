@@ -50,6 +50,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
             attendee.set_attendee (guest_entry.text);
             attendees.add (attendee);
             add_guest ((owned)attendee);
+	    guest_entry.delete_text (0, -1);
         });
 
         load_contacts.begin ();
