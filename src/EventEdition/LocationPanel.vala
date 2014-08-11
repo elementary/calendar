@@ -184,7 +184,6 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             foreach (var address in map_iterator.get_value ().postal_addresses) {
                 location_store.append (out contact);
                 location_store.set (contact, 0, map_iterator.get_value ().full_name, 1, address.value.street);
-                warning ("Contact added %s", address.value.street);
             }
         }
     }
