@@ -70,7 +70,6 @@ namespace Maya.View {
             var today = new Gtk.MenuItem.with_label (_("Today"));
             weeknumbers = new Gtk.CheckMenuItem.with_label (_("Show Week Numbers"));
             //var import = new Gtk.MenuItem.with_label (_("Import…"));
-            var about = new Gtk.MenuItem.with_label (_("About"));
             
             // Append in correct order
             menu.add (today);
@@ -82,9 +81,6 @@ namespace Maya.View {
             menu.append (import);
             menu.append (sync);
             */
-            
-            menu.append (new Gtk.SeparatorMenuItem ());
-            menu.append (about);
             
             pack_start (button_calendar_sources);
             pack_start (button_add);
@@ -99,10 +95,6 @@ namespace Maya.View {
             button_calendar_sources.clicked.connect (on_tb_sources_clicked);
             today.activate.connect (() => { on_menu_today_toggled (); });
             weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
-            about.activate.connect (() => {
-                var app = ((Maya.Application)GLib.Application.get_default ());
-                app.show_about (app.window);
-            });
             search_bar.search_changed.connect (() => on_search (search_bar.text));
 
             month_switcher.left_clicked.connect (() => {Model.CalendarModel.get_default ().change_month (-1);});

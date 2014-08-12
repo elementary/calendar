@@ -9,13 +9,15 @@ Terminal=false
 Categories=GTK;Office;Calendar;
 StartupNotify=true
 MimeType=text/calendar;
-X-GNOME-Gettext-Domain=maya-calendar
-X-GNOME-Keywords=Maya;Planner;Dates;Days;Events;
+Keywords=Maya;Planner;Dates;Days;Events;
 X-AppInstall-Keywords=Maya;Planner;Dates;Days;Events;
+Actions=AddEvent;AboutDialog;
+X-GNOME-Gettext-Domain=maya-calendar
 
-X-Ayatana-Desktop-Shortcuts=AddEvent
-
-[AddEvent Shortcut Group]
-Name=_Add Event
+[Desktop Action AddEvent]
+Name=Add Event
 Exec=maya-calendar -a
-TargetEnvironment=Unity
+
+[Desktop Action AboutDialog]
+Name=About Maya
+Exec=maya-calendar --about
