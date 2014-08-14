@@ -8,23 +8,23 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-08-12 01:12+0200\n"
-"PO-Revision-Date: 2014-08-09 01:35+0000\n"
-"Last-Translator: Rizal Muttaqin <sundaralinux@gmail.com>\n"
+"PO-Revision-Date: 2014-08-14 04:25+0000\n"
+"Last-Translator: Anna Erdiawan <Unknown>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-13 06:27+0000\n"
+"X-Launchpad-Export-Date: 2014-08-14 05:50+0000\n"
 "X-Generator: Launchpad (build 17156)\n"
 "Language: id\n"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
-msgstr ""
+msgstr "%u lainnya..."
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
-msgstr "Lihat dan jadwalkan acara"
+msgstr "Lihat dan jadwal acara"
 
 #: ../src/Translations.vala:6 ../src/Application.vala:30
 msgid "Calendar"
@@ -40,11 +40,11 @@ msgstr "Tambah Acara"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "Tentang Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "Tentang Kalender"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -57,20 +57,20 @@ msgstr "calendar.ics"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:78 ../src/SourceDialog.vala:54
 msgid "Cancel"
-msgstr ""
+msgstr "Batal"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 #: ../src/SourceDialog.vala:154
 msgid "Save"
-msgstr ""
+msgstr "Simpan"
 
 #: ../src/EventEdition/LocationPanel.vala:38
 msgid "Location:"
-msgstr ""
+msgstr "Lokasi:"
 
 #: ../src/EventEdition/LocationPanel.vala:40
 msgid "John Smith OR Example St."
-msgstr "Joko Setiawan ATAU Jalan Kelinci"
+msgstr "John Smith ATAU Contoh St."
 
 #: ../src/EventEdition/RepeatPanel.vala:49
 msgid "Repeat:"
@@ -94,7 +94,7 @@ msgstr "Tahunan"
 
 #: ../src/EventEdition/RepeatPanel.vala:100
 msgid "Every:"
-msgstr ""
+msgstr "Setiap:"
 
 #: ../src/EventEdition/RepeatPanel.vala:107
 msgid "Day"
@@ -102,12 +102,12 @@ msgstr "Hari"
 
 #: ../src/EventEdition/RepeatPanel.vala:107
 msgid "Days"
-msgstr ""
+msgstr "Hari-hari"
 
 #: ../src/EventEdition/RepeatPanel.vala:110
 #: ../src/EventEdition/RepeatPanel.vala:121
 msgid "Week"
-msgstr ""
+msgstr "Minggu"
 
 #: ../src/EventEdition/RepeatPanel.vala:110
 msgid "Weeks"
@@ -115,7 +115,7 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:113
 msgid "Month"
-msgstr ""
+msgstr "Bulan"
 
 #: ../src/EventEdition/RepeatPanel.vala:113
 msgid "Months"
@@ -123,7 +123,7 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:116
 msgid "Year"
-msgstr ""
+msgstr "Tahun"
 
 #: ../src/EventEdition/RepeatPanel.vala:116
 msgid "Years"
@@ -131,24 +131,24 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:131
 msgid "Ends:"
-msgstr ""
+msgstr "Selesai"
 
 #: ../src/EventEdition/RepeatPanel.vala:133
 #: ../src/EventEdition/RepeatPanel.vala:166
 msgid "Repeats"
-msgstr ""
+msgstr "Berulang"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 msgid "Never"
-msgstr ""
+msgstr "Tidak pernah"
 
 #: ../src/EventEdition/RepeatPanel.vala:138
 msgid "Until"
-msgstr ""
+msgstr "Hingga"
 
 #: ../src/EventEdition/RepeatPanel.vala:139
 msgid "After"
-msgstr ""
+msgstr "Setelah"
 
 #: ../src/EventEdition/RepeatPanel.vala:166
 #: ../src/EventEdition/EventDialog.vala:104
@@ -157,27 +157,27 @@ msgstr "Ulangi"
 
 #: ../src/EventEdition/RepeatPanel.vala:185
 msgid "The same day every month"
-msgstr ""
+msgstr "Hari yang sama setiap bulan"
 
 #: ../src/EventEdition/RepeatPanel.vala:303
 msgid "Sunday"
-msgstr ""
+msgstr "Minggu"
 
 #: ../src/EventEdition/RepeatPanel.vala:306
 msgid "Monday"
-msgstr ""
+msgstr "Senin"
 
 #: ../src/EventEdition/RepeatPanel.vala:309
 msgid "Tuesday"
-msgstr ""
+msgstr "Selasa"
 
 #: ../src/EventEdition/RepeatPanel.vala:312
 msgid "Wednesday"
-msgstr ""
+msgstr "Rabu"
 
 #: ../src/EventEdition/RepeatPanel.vala:315
 msgid "Thursday"
-msgstr ""
+msgstr "Kamis"
 
 #: ../src/EventEdition/RepeatPanel.vala:318
 msgid "Friday"
