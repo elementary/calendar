@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-08-12 01:12+0200\n"
-"PO-Revision-Date: 2012-11-15 14:26+0000\n"
-"Last-Translator: V.A.M <Unknown>\n"
+"PO-Revision-Date: 2014-08-25 23:44+0000\n"
+"Last-Translator: Arsen Khachatryan <arsench2000@gmail.com>\n"
 "Language-Team: Armenian <hy@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-13 06:27+0000\n"
-"X-Generator: Launchpad (build 17156)\n"
+"X-Launchpad-Export-Date: 2014-08-26 06:42+0000\n"
+"X-Generator: Launchpad (build 17163)\n"
 "Language: hy\n"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
-msgstr ""
+msgstr "%u ավելին..."
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
@@ -32,7 +32,7 @@ msgstr "Օրացույց"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "Մայա;Պլանավորող;Ամսաթվեր;Օրեր;Իրադարձություններ"
 
 #: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:61
 msgid "Add Event"
@@ -40,11 +40,11 @@ msgstr "Ավելացնել Իրադարձություն"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "Մայայի մասին"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "Օրացույցի մասին"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -57,271 +57,271 @@ msgstr "calendar.ics"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:78 ../src/SourceDialog.vala:54
 msgid "Cancel"
-msgstr ""
+msgstr "Հրաժարվել"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 #: ../src/SourceDialog.vala:154
 msgid "Save"
-msgstr ""
+msgstr "Պահել"
 
 #: ../src/EventEdition/LocationPanel.vala:38
 msgid "Location:"
-msgstr ""
+msgstr "Տեղակայություն"
 
 #: ../src/EventEdition/LocationPanel.vala:40
 msgid "John Smith OR Example St."
-msgstr "Արմեն Մկրտչյան ԿԱՄ Թումանյան փ․"
+msgstr "Մոնթե Մելքոնյան ԿԱՄ Նժդեհի փ."
 
 #: ../src/EventEdition/RepeatPanel.vala:49
 msgid "Repeat:"
-msgstr ""
+msgstr "Կրկնել"
 
 #: ../src/EventEdition/RepeatPanel.vala:54
 msgid "Daily"
-msgstr ""
+msgstr "Օրեկան"
 
 #: ../src/EventEdition/RepeatPanel.vala:55
 msgid "Weekly"
-msgstr ""
+msgstr "Շաբաթական"
 
 #: ../src/EventEdition/RepeatPanel.vala:56
 msgid "Monthly"
-msgstr ""
+msgstr "Ամսեկան"
 
 #: ../src/EventEdition/RepeatPanel.vala:57
 msgid "Yearly"
-msgstr ""
+msgstr "Տարեկան"
 
 #: ../src/EventEdition/RepeatPanel.vala:100
 msgid "Every:"
-msgstr ""
+msgstr "Յուրաքանչյուր"
 
 #: ../src/EventEdition/RepeatPanel.vala:107
 msgid "Day"
-msgstr ""
+msgstr "Օր"
 
 #: ../src/EventEdition/RepeatPanel.vala:107
 msgid "Days"
-msgstr ""
+msgstr "Օրեր"
 
 #: ../src/EventEdition/RepeatPanel.vala:110
 #: ../src/EventEdition/RepeatPanel.vala:121
 msgid "Week"
-msgstr ""
+msgstr "Շաբաթ"
 
 #: ../src/EventEdition/RepeatPanel.vala:110
 msgid "Weeks"
-msgstr ""
+msgstr "Շաբաթ"
 
 #: ../src/EventEdition/RepeatPanel.vala:113
 msgid "Month"
-msgstr ""
+msgstr "Ամիս"
 
 #: ../src/EventEdition/RepeatPanel.vala:113
 msgid "Months"
-msgstr ""
+msgstr "Ամիսներ"
 
 #: ../src/EventEdition/RepeatPanel.vala:116
 msgid "Year"
-msgstr ""
+msgstr "Տարի"
 
 #: ../src/EventEdition/RepeatPanel.vala:116
 msgid "Years"
-msgstr ""
+msgstr "Տարիներ"
 
 #: ../src/EventEdition/RepeatPanel.vala:131
 msgid "Ends:"
-msgstr ""
+msgstr "Ավարտվում է"
 
 #: ../src/EventEdition/RepeatPanel.vala:133
 #: ../src/EventEdition/RepeatPanel.vala:166
 msgid "Repeats"
-msgstr ""
+msgstr "Կրկնվողներ"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 msgid "Never"
-msgstr ""
+msgstr "Երբեք"
 
 #: ../src/EventEdition/RepeatPanel.vala:138
 msgid "Until"
-msgstr ""
+msgstr "Մինչև"
 
 #: ../src/EventEdition/RepeatPanel.vala:139
 msgid "After"
-msgstr ""
+msgstr "Հետո"
 
 #: ../src/EventEdition/RepeatPanel.vala:166
 #: ../src/EventEdition/EventDialog.vala:104
 msgid "Repeat"
-msgstr ""
+msgstr "Կրկնել"
 
 #: ../src/EventEdition/RepeatPanel.vala:185
 msgid "The same day every month"
-msgstr ""
+msgstr "Ամեն ամսվա նույն օրը"
 
 #: ../src/EventEdition/RepeatPanel.vala:303
 msgid "Sunday"
-msgstr ""
+msgstr "Կիրակի"
 
 #: ../src/EventEdition/RepeatPanel.vala:306
 msgid "Monday"
-msgstr ""
+msgstr "Երկուշաբթի"
 
 #: ../src/EventEdition/RepeatPanel.vala:309
 msgid "Tuesday"
-msgstr ""
+msgstr "Երեքշաբթի"
 
 #: ../src/EventEdition/RepeatPanel.vala:312
 msgid "Wednesday"
-msgstr ""
+msgstr "Չորեքշաբթի"
 
 #: ../src/EventEdition/RepeatPanel.vala:315
 msgid "Thursday"
-msgstr ""
+msgstr "Հինգշաբթի"
 
 #: ../src/EventEdition/RepeatPanel.vala:318
 msgid "Friday"
-msgstr ""
+msgstr "Ուրբաթ"
 
 #: ../src/EventEdition/RepeatPanel.vala:321
 msgid "Saturday"
-msgstr ""
+msgstr "Շաբաթ"
 
 #: ../src/EventEdition/RepeatPanel.vala:327
 msgid "Every last %s"
-msgstr ""
+msgstr "Յուրաքանչյուր վերջին %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:330
 msgid "Every first %s"
-msgstr ""
+msgstr "Յուրաքանչյուր սկզբի  %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:333
 msgid "Every second %s"
-msgstr ""
+msgstr "Ամեն վարկյան %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:336
 msgid "Every third %s"
-msgstr ""
+msgstr "Ամեն երրորդ %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:339
 msgid "Every fourth %s"
-msgstr ""
+msgstr "Ամեն չորրորդ %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:342
 msgid "Every fifth %s"
-msgstr ""
+msgstr "Ամեն հինգերրորդ %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:350
 msgid "Mon"
-msgstr ""
+msgstr "Երկ"
 
 #: ../src/EventEdition/RepeatPanel.vala:351
 msgid "Tue"
-msgstr ""
+msgstr "Երք"
 
 #: ../src/EventEdition/RepeatPanel.vala:352
 msgid "Wed"
-msgstr ""
+msgstr "Չրք"
 
 #: ../src/EventEdition/RepeatPanel.vala:353
 msgid "Thu"
-msgstr ""
+msgstr "Հնգ"
 
 #: ../src/EventEdition/RepeatPanel.vala:354
 msgid "Fri"
-msgstr ""
+msgstr "Ուրբ"
 
 #: ../src/EventEdition/RepeatPanel.vala:355
 msgid "Sat"
-msgstr ""
+msgstr "Շբթ"
 
 #: ../src/EventEdition/RepeatPanel.vala:356
 msgid "Sun"
-msgstr ""
+msgstr "Կիր"
 
 #: ../src/EventEdition/ReminderPanel.vala:32
 msgid "Reminders:"
-msgstr ""
+msgstr "Հիշեցումներ"
 
 #: ../src/EventEdition/ReminderPanel.vala:35
 msgid "No Reminders."
-msgstr ""
+msgstr "Առանց հիշեցումներ"
 
 #: ../src/EventEdition/ReminderPanel.vala:47
 msgid "Add Reminder"
-msgstr ""
+msgstr "Ավելացնել հիշեցում"
 
 #: ../src/EventEdition/ReminderPanel.vala:176
 msgid "0 minutes"
-msgstr ""
+msgstr "0 րոպե"
 
 #: ../src/EventEdition/ReminderPanel.vala:177
 msgid "1 minutes"
-msgstr ""
+msgstr "1 րոպե"
 
 #: ../src/EventEdition/ReminderPanel.vala:178
 msgid "5 minutes"
-msgstr ""
+msgstr "5 րոպե"
 
 #: ../src/EventEdition/ReminderPanel.vala:179
 msgid "10 minutes"
-msgstr ""
+msgstr "10 րոպե"
 
 #: ../src/EventEdition/ReminderPanel.vala:180
 msgid "15 minutes"
-msgstr ""
+msgstr "15 րոպե"
 
 #: ../src/EventEdition/ReminderPanel.vala:181
 msgid "20 minutes"
-msgstr ""
+msgstr "20 րոպե"
 
 #: ../src/EventEdition/ReminderPanel.vala:182
 msgid "25 minutes"
-msgstr ""
+msgstr "25 րոպե"
 
 #: ../src/EventEdition/ReminderPanel.vala:183
 msgid "30 minutes"
-msgstr ""
+msgstr "30 րոպե"
 
 #: ../src/EventEdition/ReminderPanel.vala:184
 msgid "45 minutes"
-msgstr ""
+msgstr "45 րոպե"
 
 #: ../src/EventEdition/ReminderPanel.vala:185
 msgid "1 hour"
-msgstr ""
+msgstr "1 ժամ"
 
 #: ../src/EventEdition/ReminderPanel.vala:186
 msgid "2 hours"
-msgstr ""
+msgstr "2 ժամ"
 
 #: ../src/EventEdition/ReminderPanel.vala:187
 msgid "3 hours"
-msgstr ""
+msgstr "3 ժամ"
 
 #: ../src/EventEdition/ReminderPanel.vala:188
 msgid "12 hours"
-msgstr ""
+msgstr "12 ժամ"
 
 #: ../src/EventEdition/ReminderPanel.vala:189
 msgid "24 hours"
-msgstr ""
+msgstr "24 ժամ"
 
 #: ../src/EventEdition/ReminderPanel.vala:190
 msgid "2 days"
-msgstr ""
+msgstr "2 օր"
 
 #: ../src/EventEdition/ReminderPanel.vala:191
 msgid "1 week"
-msgstr ""
+msgstr "1 շաբաթ"
 
 #: ../src/EventEdition/ReminderPanel.vala:200
 msgid "Notification"
-msgstr ""
+msgstr "Ծանուցում"
 
 #: ../src/EventEdition/ReminderPanel.vala:201
 msgid "Email"
-msgstr ""
+msgstr "էլ.փոստ"
 
 #: ../src/EventEdition/EventDialog.vala:64
 msgid "Edit Event"
@@ -329,7 +329,7 @@ msgstr "Փոփոխել իրադարձությունը"
 
 #: ../src/EventEdition/EventDialog.vala:92
 msgid "General Informations"
-msgstr ""
+msgstr "Ընդհանուր ինֆորմացիա"
 
 #: ../src/EventEdition/EventDialog.vala:95
 msgid "Location"
@@ -337,15 +337,15 @@ msgstr "Վայր"
 
 #: ../src/EventEdition/EventDialog.vala:98
 msgid "Guests"
-msgstr ""
+msgstr "Հյուրեր"
 
 #: ../src/EventEdition/EventDialog.vala:101
 msgid "Reminders"
-msgstr ""
+msgstr "Հիշեցուցիչներ"
 
 #: ../src/EventEdition/EventDialog.vala:140
 msgid "Delete Event"
-msgstr ""
+msgstr "Ջնջել իրադարձությունը"
 
 #: ../src/EventEdition/EventDialog.vala:152
 msgid "Create Event"
@@ -353,27 +353,27 @@ msgstr "Ստեղծել իրադարձություն"
 
 #: ../src/EventEdition/EventDialog.vala:155
 msgid "Save Changes"
-msgstr ""
+msgstr "Հիշել փոփոխությունները"
 
 #: ../src/EventEdition/GuestsPanel.vala:42
 msgid "Participants:"
-msgstr ""
+msgstr "Մասնակիցներ"
 
 #: ../src/EventEdition/GuestsPanel.vala:45
 msgid "Invite"
-msgstr ""
+msgstr "Հրավիրել"
 
 #: ../src/EventEdition/GuestsPanel.vala:226
 msgid "Accepted"
-msgstr ""
+msgstr "Ընդունված է"
 
 #: ../src/EventEdition/GuestsPanel.vala:229
 msgid "Declined"
-msgstr ""
+msgstr "Մերժված է"
 
 #: ../src/EventEdition/InfoPanel.vala:59
 msgid "From:"
-msgstr "Ումից՝"
+msgstr "–ից"
 
 #: ../src/EventEdition/InfoPanel.vala:65
 msgid "All day:"
@@ -385,7 +385,7 @@ msgstr "Ում՝"
 
 #: ../src/EventEdition/InfoPanel.vala:89
 msgid "Title:"
-msgstr ""
+msgstr "Վերնագիր."
 
 #: ../src/EventEdition/InfoPanel.vala:91
 msgid "Name of Event"
@@ -393,27 +393,27 @@ msgstr "Իրադարձության անվանումը"
 
 #: ../src/EventEdition/InfoPanel.vala:94
 msgid "Calendar:"
-msgstr ""
+msgstr "Օրացույց"
 
 #: ../src/EventEdition/InfoPanel.vala:112
 msgid "Comments:"
-msgstr ""
+msgstr "Մեկնաբանություններ"
 
 #: ../src/SourceItem.vala:105 ../src/Sidebar/EventWidget.vala:132
 msgid "Remove"
-msgstr ""
+msgstr "Ջնջել"
 
 #: ../src/SourceItem.vala:111 ../src/Sidebar/EventWidget.vala:131
 msgid "Edit…"
-msgstr ""
+msgstr "Փոփոխել"
 
 #: ../src/SourceItem.vala:135
 msgid "Undo"
-msgstr ""
+msgstr "Չեղարկել"
 
 #: ../src/SourceItem.vala:153
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "Օրացույց  \"%s\" -ը ջնջված է"
 
 #: ../src/MayaToolbar.vala:41
 msgid "Create a new event"
@@ -421,7 +421,7 @@ msgstr "Ստեղծել նոր իրադարձություն"
 
 #: ../src/MayaToolbar.vala:45
 msgid "Manage Calendars"
-msgstr ""
+msgstr "Կարգավորել օրացույցները"
 
 #: ../src/MayaToolbar.vala:53
 msgid "Search Events"
@@ -450,67 +450,67 @@ msgstr ""
 #. / TRANSLATORS: for multiple days events, shows: (date) to (date)
 #: ../src/Sidebar/EventWidget.vala:199
 msgid "%s to %s"
-msgstr ""
+msgstr "%s -ից դեպի %s"
 
 #: ../src/Sidebar/EventWidget.vala:213
 msgid "All day"
-msgstr ""
+msgstr "Ամբողջ օրը"
 
 #: ../src/SourceSelector.vala:62
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "Ավելացնել նոր օրացույց"
 
 #: ../src/SourceDialog.vala:55
 msgid "Create"
-msgstr ""
+msgstr "Ստեղծել"
 
 #: ../src/SourceDialog.vala:64
 msgid "Name:"
-msgstr ""
+msgstr "Անուն․"
 
 #: ../src/SourceDialog.vala:67
 msgid "Calendar Name"
-msgstr ""
+msgstr "Օրացույցի անունը"
 
 #: ../src/SourceDialog.vala:90
 msgid "Type:"
-msgstr ""
+msgstr "Տեսակը՝"
 
 #: ../src/SourceDialog.vala:112
 msgid "Color:"
-msgstr ""
+msgstr "Գույն."
 
 #: ../src/SourceDialog.vala:117
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "Նշել որպես հիմնական օրացույց"
 
 #: ../src/SourceDialog.vala:147
 msgid "Create Calendar"
-msgstr ""
+msgstr "Ստեղծել օրացույց"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:81
 msgid "Use a secure connection"
-msgstr ""
+msgstr "Օգտագործել անվտանգ կապ"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:103
 msgid "Server handles meeting invitations"
-msgstr ""
+msgstr "Սերվերը գործածում է հանդիպումների հրավերքները"
 
 #: ../plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: ../plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "օգտատերի.անուն կամ օգտատերի.անուն@gmail.com"
 
 #: ../core/Backends/LocalBackend.vala:26
 msgid "On this computer"
@@ -518,23 +518,23 @@ msgstr "Այս համակարգիչում"
 
 #: ../core/Backends/PlacementWidget.vala:37
 msgid "User:"
-msgstr ""
+msgstr "Օգտատեր`"
 
 #: ../core/Backends/PlacementWidget.vala:46
 msgid "user.name"
-msgstr ""
+msgstr "օգտատերի.անուն"
 
 #: ../core/Backends/PlacementWidget.vala:59
 msgid "Email:"
-msgstr ""
+msgstr "Էլ փոստ"
 
 #: ../core/Backends/PlacementWidget.vala:68
 msgid "john@doe.com"
-msgstr ""
+msgstr "john@doe.com"
 
 #: ../core/Backends/PlacementWidget.vala:80
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Պահպանել պատճեն տեղում"
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"

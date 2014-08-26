@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-08-12 01:12+0200\n"
-"PO-Revision-Date: 2014-06-29 07:01+0000\n"
-"Last-Translator: George Wells <cimmia@outlook.com>\n"
+"PO-Revision-Date: 2014-08-26 04:49+0000\n"
+"Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-13 06:28+0000\n"
-"X-Generator: Launchpad (build 17156)\n"
+"X-Launchpad-Export-Date: 2014-08-26 06:42+0000\n"
+"X-Generator: Launchpad (build 17163)\n"
 "Language: \n"
 
 #: ../src/Grid/VAutoHider.vala:96
@@ -40,11 +40,11 @@ msgstr "添加活动"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "关于Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "关于日历"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -148,7 +148,7 @@ msgstr "到此日期为止"
 
 #: ../src/EventEdition/RepeatPanel.vala:139
 msgid "After"
-msgstr "在此之后"
+msgstr "在此日期之后"
 
 #: ../src/EventEdition/RepeatPanel.vala:166
 #: ../src/EventEdition/EventDialog.vala:104
@@ -345,7 +345,7 @@ msgstr "提醒"
 
 #: ../src/EventEdition/EventDialog.vala:140
 msgid "Delete Event"
-msgstr ""
+msgstr "删除事件"
 
 #: ../src/EventEdition/EventDialog.vala:152
 msgid "Create Event"
@@ -361,7 +361,7 @@ msgstr "参与者："
 
 #: ../src/EventEdition/GuestsPanel.vala:45
 msgid "Invite"
-msgstr ""
+msgstr "邀请"
 
 #: ../src/EventEdition/GuestsPanel.vala:226
 msgid "Accepted"
