@@ -174,7 +174,6 @@ public class EventDialog : Gtk.Dialog {
             grid.attach (buttonbox, 0, 2, 1, 1);
 
             ((Gtk.Container)get_content_area ()).add (grid);
-            //((Gtk.HeaderBar)get_header_bar ()).set_custom_title (mode_button);
 
             info_panel.valid_event.connect ((is_valid) => {
                 create_button.sensitive = is_valid;
