@@ -40,8 +40,11 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         
         reminder_list = new Gtk.ListBox ();
         reminder_list.expand = true;
+        reminder_list.margin_start = 12;
+        reminder_list.margin_end = 12;
         reminder_list.set_selection_mode (Gtk.SelectionMode.NONE);
         reminder_list.set_placeholder (no_reminder_label);
+        reminder_list.get_style_context ().add_class (Gtk.STYLE_CLASS_ENTRY);
 
         var add_reminder_button = new Gtk.Button.with_label (_("Add Reminder"));
         add_reminder_button.clicked.connect (() => {

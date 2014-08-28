@@ -39,7 +39,7 @@ namespace Maya {
 
         if (Option.PRINT_VERSION) {
             stdout.printf("Maya %s\n", Build.VERSION);
-            stdout.printf("Copyright 2011-2013 Maya Developers.\n");
+            stdout.printf("Copyright 2011-2014 Maya Developers.\n");
             return 0;
         }
 

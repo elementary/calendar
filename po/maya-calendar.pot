@@ -346,12 +346,16 @@ msgstr ""
 msgid "Delete Event"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:152
+#: ../src/EventEdition/EventDialog.vala:159
 msgid "Create Event"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:155
+#: ../src/EventEdition/EventDialog.vala:162
 msgid "Save Changes"
+msgstr ""
+
+#: ../src/EventEdition/EventDialog.vala:165
+msgid "Close"
 msgstr ""
 
 #: ../src/EventEdition/GuestsPanel.vala:42

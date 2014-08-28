@@ -82,6 +82,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
 	    guest_list = new Gtk.ListBox ();    
 	    guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
+	    guest_list.get_style_context ().add_class (Gtk.STYLE_CLASS_ENTRY);
 	    var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null);
         guest_scrolledwindow.add_with_viewport (guest_list);
         guest_scrolledwindow.expand = true;
