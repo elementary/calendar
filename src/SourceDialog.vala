@@ -52,6 +52,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
 
         var cancel_button = new Gtk.Button.with_label (_("Cancel"));
+        cancel_button.margin_end = 6;
         create_button = new Gtk.Button.with_label (_("Create"));
 
         create_button.clicked.connect (save);
