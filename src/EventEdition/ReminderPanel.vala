@@ -160,7 +160,7 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
 
     public ReminderGrid (string uid) {
         this.uid = uid;
-        set_margin_bottom (6);
+        set_margin_top (6);
         set_margin_left (6);
         set_margin_right (6);
 
