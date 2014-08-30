@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-08-12 01:12+0200\n"
-"PO-Revision-Date: 2014-08-26 16:21+0000\n"
-"Last-Translator: alessandro <pepealex98@gmail.com>\n"
+"PO-Revision-Date: 2014-08-28 20:48+0000\n"
+"Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-27 06:40+0000\n"
-"X-Generator: Launchpad (build 17174)\n"
+"X-Launchpad-Export-Date: 2014-08-30 07:12+0000\n"
+"X-Generator: Launchpad (build 17176)\n"
 "Language: it\n"
 
 #: ../src/Grid/VAutoHider.vala:96
@@ -57,7 +57,7 @@ msgstr "calendario.ics"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:78 ../src/SourceDialog.vala:54
 msgid "Cancel"
-msgstr "Cancella"
+msgstr "Annulla"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 #: ../src/SourceDialog.vala:154
@@ -90,11 +90,11 @@ msgstr "Ogni Mese"
 
 #: ../src/EventEdition/RepeatPanel.vala:57
 msgid "Yearly"
-msgstr "Annualmente"
+msgstr "Ogni anno"
 
 #: ../src/EventEdition/RepeatPanel.vala:100
 msgid "Every:"
-msgstr "Ogni"
+msgstr "Ogni:"
 
 #: ../src/EventEdition/RepeatPanel.vala:107
 msgid "Day"
@@ -421,7 +421,7 @@ msgstr "Crea un nuovo evento"
 
 #: ../src/MayaToolbar.vala:45
 msgid "Manage Calendars"
-msgstr "Gestire Calendari"
+msgstr "Gestisci Calendari"
 
 #: ../src/MayaToolbar.vala:53
 msgid "Search Events"
@@ -458,7 +458,7 @@ msgstr "Tutto il giorno"
 
 #: ../src/SourceSelector.vala:62
 msgid "Add New Calendar…"
-msgstr "Aggiungere Nuovo Calendario"
+msgstr "Aggiungi Calendario"
 
 #: ../src/SourceDialog.vala:55
 msgid "Create"
