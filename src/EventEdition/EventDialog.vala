@@ -53,7 +53,6 @@ public class EventDialog : Gtk.Dialog {
         ecal = null, E.Source? source = null, DateTime? date_time = null) {
             Object (use_header_bar: 1);
             (get_header_bar () as Gtk.HeaderBar).show_close_button = false;
-            get_header_bar ().get_style_context ().remove_class ("header-bar");
 
             this.original_source = source;
             this.date_time = date_time;
@@ -107,9 +106,8 @@ public class EventDialog : Gtk.Dialog {
             repeat_icon.tooltip_text = _("Repeat");
             mode_button.append (repeat_icon);
             mode_button.selected = 0;
-            mode_button.homogeneous = false;
-            mode_button.margin_bottom = 6;
-            mode_button.halign = Gtk.Align.CENTER;
+            mode_button.margin_top = 12;
+            mode_button.margin_bottom = 12;
             mode_button.mode_changed.connect ((widget) => {
                 switch (mode_button.selected) {
                     case 0:
@@ -169,11 +167,11 @@ public class EventDialog : Gtk.Dialog {
             buttonbox.add (cancel_button);
             buttonbox.add (create_button);
 
-            grid.attach (mode_button, 0, 0, 1, 1);
             grid.attach (stack, 0, 1, 1, 1);
             grid.attach (buttonbox, 0, 2, 1, 1);
 
             ((Gtk.Container)get_content_area ()).add (grid);
+            ((Gtk.HeaderBar)get_header_bar ()).set_custom_title (mode_button);
 
             info_panel.valid_event.connect ((is_valid) => {
                 create_button.sensitive = is_valid;
