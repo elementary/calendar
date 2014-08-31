@@ -160,7 +160,7 @@ public class EventDialog : Gtk.Dialog {
                 create_button.label = _("Save Changes");
             }
 
-            Gtk.Button cancel_button = new Gtk.Button.with_label (_("Close"));
+            Gtk.Button cancel_button = new Gtk.Button.with_label (_("Cancel"));
             cancel_button.margin_end = 6;
             cancel_button.clicked.connect (() => {this.destroy ();});
 
