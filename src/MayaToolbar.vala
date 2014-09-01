@@ -40,7 +40,7 @@ namespace Maya.View {
             var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
             button_add.tooltip_text = _("Create a new event");
             
-            var button_today = new Gtk.Button.with_label (_("Today"));
+            var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR);
             button_today.tooltip_text = _("Go to today's date");
 
             button_calendar_sources = new Gtk.ToggleButton ();
