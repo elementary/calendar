@@ -57,10 +57,9 @@ public class Grid : Gtk.Grid {
     }
 
     public void focus_date (DateTime date) {
-
         debug(@"Setting focus to @ $(date)");
-
-        data [date].grab_focus ();
+        if (data [date] != null)
+            data [date].grab_focus ();
     }
 
     /**

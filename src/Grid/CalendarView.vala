@@ -91,6 +91,8 @@ public class CalendarView : Gtk.Grid {
 
     public void today () {
         var today = Util.strip_time (new DateTime.now_local ());
+        var calmodel = Model.CalendarModel.get_default ();
+        calmodel.month_start = Util.get_start_of_month (today);
         sync_with_model ();
         grid.focus_date (today);
     }
@@ -147,7 +149,7 @@ public class CalendarView : Gtk.Grid {
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_model () {
         var model = Model.CalendarModel.get_default ();
-        if (grid.grid_range != null && model.data_range.equals (grid.grid_range))
+        if (grid.grid_range != null && (model.data_range.equals (grid.grid_range) || grid.grid_range.first.compare (model.data_range.first) == 0))
             return; // nothing to do
 
         DateTime previous_first = null;
