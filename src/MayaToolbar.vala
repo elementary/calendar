@@ -64,8 +64,9 @@ namespace Maya.View {
             var title_grid = new Gtk.Grid ();
             title_grid.column_spacing = 6;
             
-            title_grid.attach (year_switcher, 0, 0, 1, 1);
-            title_grid.attach (month_switcher, 1, 0, 1, 1);
+            title_grid.add (button_today);
+            title_grid.add (year_switcher);
+            title_grid.add (month_switcher);
             this.set_custom_title (title_grid);
             
             // Create the menu
