@@ -109,19 +109,17 @@ public class Grid : Gtk.Grid {
                 day = update_day (data[old_date], new_date, today, month_start);
 
             } else {
-                // No widget exists, create one
-
-                day = new GridDay (new_date);
                 // Still update_day to get the color of etc. right
-                day = update_day (day, new_date, today, month_start);
-
-                attach (day, col, row, 1, 1);
+                day = update_day (new GridDay (new_date), new_date, today, month_start);
+                day.is_first_column = col == 0;
+                day.on_event_add.connect ((date) => on_event_add (date));
+                day.scroll_event.connect ((event) => {scroll_event (event); return false;});
                 day.focus_in_event.connect ((event) => {
                     on_day_focus_in(day);
                     return false;
                 });
-                day.on_event_add.connect ((date) => on_event_add (date));
-                day.scroll_event.connect ((event) => {scroll_event (event); return false;});
+
+                attach (day, col, row, 1, 1);
                 day.show_all ();
             }
 

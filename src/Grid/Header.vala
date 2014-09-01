@@ -21,7 +21,6 @@ namespace Maya.View {
  * Represents the header at the top of the calendar grid.
  */
 public class Header : Gtk.EventBox {
-
     private Gtk.Grid header_grid;
     private Gtk.Label[] labels;
 
@@ -87,11 +86,14 @@ public class Header : Gtk.EventBox {
     }
 
     private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
-
         Gtk.Allocation size;
         widget.get_allocation (out size);
 
         // Draw left border
+        if (widget == labels[0] && Settings.SavedState.get_default ().show_weeks == false) {
+            return false;
+        }
+
         cr.move_to (0.5, size.height +2); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
         cr.line_to (0.5, -4); // move to upper left corner
 
