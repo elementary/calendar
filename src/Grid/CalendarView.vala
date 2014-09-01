@@ -21,19 +21,22 @@ namespace Maya.View {
  * Represents the entire calendar, including the headers, the week labels and the grid.
  */
 public class CalendarView : Gtk.Grid {
-
-    public WeekLabels weeks { get; private set; }
-    public Header header { get; private set; }
-    public Grid grid { get; private set; }
-    private Gtk.Stack stack { get; private set; }
-    private Gtk.Grid big_grid { get; private set; }
-
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
     public signal void on_event_add (DateTime date);
+    public signal void selection_changed (DateTime new_date);
+
+    public DateTime? selected_date { get; private set; }
+
+    private WeekLabels weeks { get; private set; }
+    private Header header { get; private set; }
+    private Grid grid { get; private set; }
+    private Gtk.Stack stack { get; private set; }
+    private Gtk.Grid big_grid { get; private set; }
 
     public CalendarView () {
+        selected_date = Settings.SavedState.get_default ().get_selected ();
         big_grid = create_big_grid ();
 
         stack = new Gtk.Stack ();
@@ -62,7 +65,12 @@ public class CalendarView : Gtk.Grid {
         weeks = new WeekLabels ();
         header = new Header ();
         grid = new Grid ();
+        grid.focus_date (selected_date);
         grid.on_event_add.connect ((date) => on_event_add (date));
+        grid.selection_changed.connect ((date) => {
+            selected_date = date;
+            selection_changed (date);
+        });
 
         // Grid properties
 
@@ -154,8 +162,8 @@ public class CalendarView : Gtk.Grid {
         grid.set_range (model.data_range, model.month_start);
 
         // keep focus date on the same day of the month
-        if (grid.selected_date != null) {
-            var bumpdate = model.month_start.add_days (grid.selected_date.get_day_of_month() - 1);
+        if (selected_date != null) {
+            var bumpdate = model.month_start.add_days (selected_date.get_day_of_month() - 1);
             grid.focus_date (bumpdate);
         }
 

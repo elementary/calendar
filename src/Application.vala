@@ -129,7 +129,7 @@ namespace Maya {
             window.show_all ();
 
             if (Option.ADD_EVENT) {
-                on_tb_add_clicked (calview.grid.selected_date);
+                on_tb_add_clicked (calview.selected_date);
             }
 
             Gtk.main ();
@@ -154,7 +154,7 @@ namespace Maya {
             sidebar.agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
             sidebar.set_size_request(160,0);
 
-            calview.grid.selection_changed.connect ((date) => sidebar.set_selected_date (date));
+            calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
             gridcontainer = new Gtk.Grid ();
             hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
@@ -221,7 +221,7 @@ namespace Maya {
             });
 
             toolbar = new View.MayaToolbar ();
-            toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.grid.selected_date));
+            toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.selected_date));
             toolbar.on_menu_today_toggled.connect (on_menu_today_toggled);
             toolbar.on_search.connect ((text) => on_search (text));
             window.set_titlebar (toolbar);

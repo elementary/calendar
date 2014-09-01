@@ -25,7 +25,6 @@ public class Grid : Gtk.Grid {
     Gee.Map<DateTime, GridDay> data;
 
     public Util.DateRange grid_range { get; private set; }
-    public DateTime? selected_date { get; private set; }
 
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
@@ -35,8 +34,6 @@ public class Grid : Gtk.Grid {
     public signal void selection_changed (DateTime new_date);
 
     public Grid () {
-
-        selected_date = Settings.SavedState.get_default ().get_selected ();
 
         // Gtk.Grid properties
         insert_column (7);
@@ -54,9 +51,7 @@ public class Grid : Gtk.Grid {
     }
 
     void on_day_focus_in (GridDay day) {
-
-        selected_date = day.date;
-
+        var selected_date = day.date;
         selection_changed (selected_date);
         Settings.SavedState.get_default ().selected_day = selected_date.format ("%Y-%j");
     }
@@ -115,7 +110,7 @@ public class Grid : Gtk.Grid {
                 day.on_event_add.connect ((date) => on_event_add (date));
                 day.scroll_event.connect ((event) => {scroll_event (event); return false;});
                 day.focus_in_event.connect ((event) => {
-                    on_day_focus_in(day);
+                    on_day_focus_in (day);
                     return false;
                 });
 
