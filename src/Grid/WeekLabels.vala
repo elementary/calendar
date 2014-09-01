@@ -27,7 +27,7 @@ public class WeekLabels : Gtk.EventBox {
     private int nr_of_weeks;
 
     public WeekLabels () {
-
+        events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         no_show_all = true;
 
         day_grid = new Gtk.Grid ();
@@ -44,6 +44,27 @@ public class WeekLabels : Gtk.EventBox {
         set_visible_window (true); // needed for style
         get_style_context().add_provider (style_provider, 600);
         get_style_context().add_class ("weeks");
+        button_press_event.connect ((event) => {
+            if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
+                var menu = new Gtk.Menu ();
+                menu.attach_to_widget (this, null);
+                var show_weeks_menuitem = new Gtk.MenuItem ();
+                if (Settings.SavedState.get_default ().show_weeks == true) {
+                    show_weeks_menuitem.label = _("Hide Week Numbers");
+                } else {
+                    show_weeks_menuitem.label = _("Show Week Numbers");
+                }
+
+                show_weeks_menuitem.activate.connect (() => {
+                    Settings.SavedState.get_default ().show_weeks = !Settings.SavedState.get_default ().show_weeks;
+                });
+                menu.add (show_weeks_menuitem);
+                menu.show_all ();
+                menu.popup (null, null, null, event.button, event.time);
+            }
+
+            return false;
+        });
 
         add (day_grid);
     }
@@ -98,7 +119,6 @@ public class WeekLabels : Gtk.EventBox {
     }
 
     private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
-
         Gtk.Allocation size;
         widget.get_allocation (out size);
 
