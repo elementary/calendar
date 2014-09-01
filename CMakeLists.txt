@@ -58,6 +58,7 @@ install (FILES ${_datafiles} DESTINATION ${PKGDATADIR}/style)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}.desktop DESTINATION "${DATADIR}/applications")
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}-daemon.desktop DESTINATION "${DATADIR}/applications")
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/LocationMarker.svg DESTINATION "${PKGDATADIR}")
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/calendar-go-today.svg DESTINATION "${DATADIR}/icons/hicolor/scalable/actions")
 
 #
 # i18n

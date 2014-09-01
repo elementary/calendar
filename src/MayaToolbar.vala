@@ -40,6 +40,9 @@ namespace Maya.View {
             var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
             button_add.tooltip_text = _("Create a new event");
             
+            var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR);
+            button_today.tooltip_text = _("Go to today's date");
+
             button_calendar_sources = new Gtk.ToggleButton ();
             button_calendar_sources.image = new Gtk.Image.from_icon_name ("office-calendar", Gtk.IconSize.LARGE_TOOLBAR);
             button_calendar_sources.tooltip_text = _("Manage Calendars");
@@ -61,19 +64,17 @@ namespace Maya.View {
             var title_grid = new Gtk.Grid ();
             title_grid.column_spacing = 6;
             
-            title_grid.attach (year_switcher, 0, 0, 1, 1);
-            title_grid.attach (month_switcher, 1, 0, 1, 1);
+            title_grid.add (button_today);
+            title_grid.add (year_switcher);
+            title_grid.add (month_switcher);
             this.set_custom_title (title_grid);
             
             // Create the menu
             
-            var today = new Gtk.MenuItem.with_label (_("Today"));
             weeknumbers = new Gtk.CheckMenuItem.with_label (_("Show Week Numbers"));
             //var import = new Gtk.MenuItem.with_label (_("Import…"));
             
             // Append in correct order
-            menu.add (today);
-            menu.add (new Gtk.SeparatorMenuItem ());
             menu.add (weeknumbers);
             
             /* TODO : Will be done in Maya 0.2
@@ -84,6 +85,7 @@ namespace Maya.View {
             
             pack_start (button_calendar_sources);
             pack_start (button_add);
+            pack_start (button_today);
             
             pack_end (menu_button);
             pack_end (search_bar);
@@ -93,7 +95,7 @@ namespace Maya.View {
             
             button_add.clicked.connect (() => add_calendar_clicked ());
             button_calendar_sources.clicked.connect (on_tb_sources_clicked);
-            today.activate.connect (() => { on_menu_today_toggled (); });
+            button_today.clicked.connect (() => { on_menu_today_toggled (); });
             weeknumbers.toggled.connect (on_menu_show_weeks_toggled);
             search_bar.search_changed.connect (() => on_search (search_bar.text));
 
