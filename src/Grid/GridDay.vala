@@ -22,7 +22,14 @@ namespace Maya.View {
  */
 public class GridDay : Gtk.EventBox {
 
+    /*
+     * Event emitted when the day is double clicked or the ENTER key is pressed.
+     */
+    public signal void on_event_add (DateTime date);
+
     public DateTime date { get; private set; }
+    // We need to know if it is the first column in order to not draw it's left border
+    public bool is_first_column = false;
 
     Gtk.Label label;
     Gtk.Grid container_grid;
@@ -32,13 +39,7 @@ public class GridDay : Gtk.EventBox {
 
     private static const int EVENT_MARGIN = 3;
 
-    /*
-     * Event emitted when the day is double clicked or the ENTER key is pressed.
-     */
-    public signal void on_event_add (DateTime date);
-
     public GridDay (DateTime date) {
-
         this.date = date;
         event_buttons = new Gee.ArrayList<EventButton>();
 
@@ -150,8 +151,13 @@ public class GridDay : Gtk.EventBox {
         widget.get_allocation (out size);
 
         // Draw left and top black strokes
-        cr.move_to (0, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
-        cr.line_to (0.5, 0.5); // move to upper left corner
+        if (is_first_column == true && Settings.SavedState.get_default ().show_weeks == false) {
+            cr.move_to (0.5, 0.5);
+        } else {
+            cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
+            cr.line_to (0.5, 0.5); // move to upper left corner
+        }
+
         cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
 
         cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);

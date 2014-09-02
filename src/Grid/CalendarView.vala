@@ -21,28 +21,28 @@ namespace Maya.View {
  * Represents the entire calendar, including the headers, the week labels and the grid.
  */
 public class CalendarView : Gtk.Grid {
-
-    public WeekLabels weeks { get; private set; }
-    public Header header { get; private set; }
-    public Grid grid { get; private set; }
-
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
     public signal void on_event_add (DateTime date);
+    public signal void selection_changed (DateTime new_date);
+
+    public DateTime? selected_date { get; private set; }
+
+    private WeekLabels weeks { get; private set; }
+    private Header header { get; private set; }
+    private Grid grid { get; private set; }
+    private Gtk.Stack stack { get; private set; }
+    private Gtk.Grid big_grid { get; private set; }
 
     public CalendarView () {
+        selected_date = Settings.SavedState.get_default ().get_selected ();
+        big_grid = create_big_grid ();
 
-        weeks = new WeekLabels ();
-        header = new Header ();
-        grid = new Grid ();
-        grid.on_event_add.connect ((date) => on_event_add (date));
-
-        // Grid properties
-
-        attach (header, 1, 0, 1, 1);
-        attach (grid, 1, 1, 1, 1);
-        attach (weeks, 0, 1, 1, 1);
+        stack = new Gtk.Stack ();
+        stack.add (big_grid);
+        stack.show_all ();
+        stack.expand = true;
 
         sync_with_model ();
 
@@ -58,6 +58,29 @@ public class CalendarView : Gtk.Grid {
         events |= Gdk.EventMask.KEY_PRESS_MASK;
         events |= Gdk.EventMask.SCROLL_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
+        add (stack);
+    }
+
+    public Gtk.Grid create_big_grid () {
+        weeks = new WeekLabels ();
+        header = new Header ();
+        grid = new Grid ();
+        grid.focus_date (selected_date);
+        grid.on_event_add.connect ((date) => on_event_add (date));
+        grid.selection_changed.connect ((date) => {
+            selected_date = date;
+            selection_changed (date);
+        });
+
+        // Grid properties
+
+        var new_big_grid = new Gtk.Grid ();
+        new_big_grid.attach (header, 1, 0, 1, 1);
+        new_big_grid.attach (grid, 1, 1, 1, 1);
+        new_big_grid.attach (weeks, 0, 1, 1, 1);
+        new_big_grid.show_all ();
+        new_big_grid.expand = true;
+        return new_big_grid;
     }
 
     public override bool scroll_event (Gdk.EventScroll event) {
@@ -68,6 +91,8 @@ public class CalendarView : Gtk.Grid {
 
     public void today () {
         var today = Util.strip_time (new DateTime.now_local ());
+        var calmodel = Model.CalendarModel.get_default ();
+        calmodel.month_start = Util.get_start_of_month (today);
         sync_with_model ();
         grid.focus_date (today);
     }
@@ -124,18 +149,39 @@ public class CalendarView : Gtk.Grid {
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_model () {
         var model = Model.CalendarModel.get_default ();
-        if (grid.grid_range != null && model.data_range.equals (grid.grid_range))
+        if (grid.grid_range != null && (model.data_range.equals (grid.grid_range) || grid.grid_range.first.compare (model.data_range.first) == 0))
             return; // nothing to do
+
+        DateTime previous_first = null;
+        if (grid.grid_range != null)
+            previous_first = grid.grid_range.first;
+        var previous_big_grid = big_grid;
+        big_grid = create_big_grid ();
+        stack.add (big_grid);
 
         header.update_columns (model.week_starts_on);
         weeks.update (model.data_range.first, model.num_weeks);
         grid.set_range (model.data_range, model.month_start);
 
         // keep focus date on the same day of the month
-        if (grid.selected_date != null) {
-            var bumpdate = model.month_start.add_days (grid.selected_date.get_day_of_month() - 1);
+        if (selected_date != null) {
+            var bumpdate = model.month_start.add_days (selected_date.get_day_of_month() - 1);
             grid.focus_date (bumpdate);
         }
+
+        if (previous_first != null) {
+            if (previous_first.compare (grid.grid_range.first) == -1) {
+                stack.transition_type = Gtk.StackTransitionType.SLIDE_UP;
+            } else {
+                stack.transition_type = Gtk.StackTransitionType.SLIDE_DOWN;
+            }
+        }
+
+        stack.set_visible_child (big_grid);
+        Timeout.add (stack.transition_duration, () => {
+            previous_big_grid.destroy ();
+            return false;
+        });
     }
 
     /* Render new event on the grid */

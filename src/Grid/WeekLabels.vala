@@ -20,15 +20,17 @@ namespace Maya.View {
 /**
  * Represent the week labels at the left side of the grid.
  */
-public class WeekLabels : Gtk.EventBox {
+public class WeekLabels : Gtk.Revealer {
 
     private Gtk.Grid day_grid;
+    private Gtk.EventBox eventbox;
     private Gtk.Label[] labels;
     private int nr_of_weeks;
 
     public WeekLabels () {
-        events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        no_show_all = true;
+        vexpand = true;
+        eventbox = new Gtk.EventBox ();
+        eventbox.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
 
         day_grid = new Gtk.Grid ();
         set_nr_of_weeks (5);
@@ -41,9 +43,9 @@ public class WeekLabels : Gtk.EventBox {
         var style_provider = Util.Css.get_css_provider ();
 
         // EventBox properties
-        set_visible_window (true); // needed for style
-        get_style_context().add_provider (style_provider, 600);
-        get_style_context().add_class ("weeks");
+        eventbox.set_visible_window (true); // needed for style
+        eventbox.get_style_context().add_provider (style_provider, 600);
+        eventbox.get_style_context().add_class ("weeks");
         button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
                 var menu = new Gtk.Menu ();
@@ -66,7 +68,8 @@ public class WeekLabels : Gtk.EventBox {
             return false;
         });
 
-        add (day_grid);
+        eventbox.add (day_grid);
+        add (eventbox);
     }
 
     public void update (DateTime date, int nr_of_weeks) {
@@ -74,8 +77,8 @@ public class WeekLabels : Gtk.EventBox {
         update_nr_of_labels (nr_of_weeks);
 
         if (Settings.SavedState.get_default ().show_weeks) {
-            if (!visible)
-                show ();
+            transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;
+            set_reveal_child (true);
 
             var next = date;
             // Find the beginning of the week which is apparently always a monday
@@ -86,7 +89,8 @@ public class WeekLabels : Gtk.EventBox {
                 next = next.add_weeks (1);
             }
         } else {
-            hide ();
+            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
+            set_reveal_child (false);
         }
     }
 

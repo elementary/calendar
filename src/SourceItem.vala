@@ -20,7 +20,9 @@ public class Maya.View.SourceItem : Gtk.EventBox {
     private Gtk.Grid main_grid;
 
     private Gtk.Button delete_button;
+    private Gtk.Revealer delete_revealer;
     private Gtk.Button edit_button;
+    private Gtk.Revealer edit_revealer;
 
     private Gtk.Label calendar_name_label;
     private Gtk.Label user_name_label;
@@ -105,13 +107,21 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         delete_button.set_tooltip_text (_("Remove"));
         delete_button.clicked.connect (() => {remove_request (source);});
         delete_button.relief = Gtk.ReliefStyle.NONE;
-        delete_button.no_show_all = true;
+        delete_revealer = new Gtk.Revealer ();
+        delete_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        delete_revealer.add (delete_button);
+        delete_revealer.show_all ();
+        delete_revealer.set_reveal_child (false);
 
         edit_button = new Gtk.Button.from_icon_name ("document-properties-symbolic", Gtk.IconSize.MENU);
         edit_button.set_tooltip_text (_("Edit…"));
         edit_button.clicked.connect (() => {edit_request (source);});
         edit_button.relief = Gtk.ReliefStyle.NONE;
-        edit_button.no_show_all = true;
+        edit_revealer = new Gtk.Revealer ();
+        edit_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        edit_revealer.add (edit_button);
+        edit_revealer.show_all ();
+        edit_revealer.set_reveal_child (false);
 
         revealer_grid.attach (visible_checkbutton, 0, 0, 1, 2);
         revealer_grid.attach (calendar_color_label, 1, 0, 1, 2);
@@ -119,8 +129,8 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         revealer_grid.attach (backend_label, 3, 0, 1, 1);
         revealer_grid.attach (user_name_label, 2, 1, 2, 1);
 
-        revealer_grid.attach (delete_button, 4, 0, 1, 2);
-        revealer_grid.attach (edit_button, 5, 0, 1, 2);
+        revealer_grid.attach (delete_revealer, 4, 0, 1, 2);
+        revealer_grid.attach (edit_revealer, 5, 0, 1, 2);
 
         revealer.add (revealer_grid);
 
@@ -164,50 +174,21 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         add_events (Gdk.EventMask.ENTER_NOTIFY_MASK|Gdk.EventMask.LEAVE_NOTIFY_MASK);
         enter_notify_event.connect ((event) => {
             if (source.removable == true)
-                delete_button.visible = true;
+                delete_revealer.set_reveal_child (true);
             if (source.writable == true)
-                edit_button.visible = true;
+                edit_revealer.set_reveal_child (true);
             return false;
         });
 
-        leave_notify_event.connect_after ((event) => {
+        leave_notify_event.connect ((event) => {
             if (source.removable == true)
-                delete_button.visible = false;
+                delete_revealer.set_reveal_child (false);
             if (source.writable == true)
-                edit_button.visible = false;
+                edit_revealer.set_reveal_child (false);
             return false;
         });
 
         source.changed.connect (source_has_changed);
-    }
-
-    // We need a custom one because the buttons are hidden if the calendar is not shown.
-    public override void get_preferred_width (out int minimum_width, out int natural_width) {
-        base.get_preferred_width (out minimum_width, out natural_width);
-        if (visible == false)
-            return;
-
-        int total_natural_width = 0;
-        int _minimum_width;
-        int _natural_width;
-        if (edit_button.visible == false && info_revealer.visible == false) {
-            edit_button.show ();
-            edit_button.get_preferred_width (out _minimum_width, out _natural_width);
-            edit_button.hide ();
-            // +6 because the grid has a 6px margin between every columns
-            total_natural_width = total_natural_width + _natural_width + 6;
-        }
-
-        if (delete_button.visible == false && info_revealer.visible == false) {
-            delete_button.show ();
-            delete_button.get_preferred_width (out _minimum_width, out _natural_width);
-            delete_button.hide ();
-            // +6 because the grid has a 6px margin between every columns
-            total_natural_width = total_natural_width + _natural_width + 6;
-        }
-
-        minimum_width = minimum_width + total_natural_width;
-        natural_width = natural_width + total_natural_width;
     }
 
     public void source_has_changed () {

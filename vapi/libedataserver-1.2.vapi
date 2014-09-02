@@ -140,8 +140,8 @@ namespace E {
 		public unowned string get_display_name ();
 		public bool get_enabled ();
 		public unowned E.SourceExtension get_extension (string extension_name);
-		public virtual async bool get_oauth2_access_token (GLib.Cancellable? cancellable) throws GLib.Error;
-		public virtual bool get_oauth2_access_token_sync (GLib.Cancellable? cancellable, string? out_access_token, int? out_expires_in) throws GLib.Error;
+		public virtual async bool get_oauth2_access_token (GLib.Cancellable? cancellable, out string? access_token, out int? expires_in) throws GLib.Error;
+		public virtual bool get_oauth2_access_token_sync (GLib.Cancellable? cancellable, out string? access_token, out int? expires_in) throws GLib.Error;
 		public unowned string get_parent ();
 		public bool get_remote_creatable ();
 		public bool get_remote_deletable ();
