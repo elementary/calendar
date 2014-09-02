@@ -7,20 +7,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-12 01:12+0200\n"
+"POT-Creation-Date: 2014-09-01 21:29+0200\n"
 "PO-Revision-Date: 2014-06-22 15:01+0000\n"
 "Last-Translator: Milan Slovák <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-13 06:28+0000\n"
-"X-Generator: Launchpad (build 17156)\n"
+"X-Launchpad-Export-Date: 2014-09-02 06:53+0000\n"
+"X-Generator: Launchpad (build 17192)\n"
 "Language: sk\n"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
 msgstr "%u viac..."
+
+#: ../src/Grid/WeekLabels.vala:53 ../src/Grid/Header.vala:62
+msgid "Hide Week Numbers"
+msgstr ""
+
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:64
+msgid "Show Week Numbers"
+msgstr "Zobraziť čísla týždňov"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
@@ -60,7 +68,7 @@ msgid "Cancel"
 msgstr "Zrušiť"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
-#: ../src/SourceDialog.vala:154
+#: ../src/SourceDialog.vala:155
 msgid "Save"
 msgstr "Uložiť"
 
@@ -239,87 +247,87 @@ msgstr "Sob"
 msgid "Sun"
 msgstr "Ned"
 
-#: ../src/EventEdition/ReminderPanel.vala:32
+#: ../src/EventEdition/ReminderPanel.vala:31
 msgid "Reminders:"
 msgstr "Pripomienky:"
 
 #: ../src/EventEdition/ReminderPanel.vala:35
-msgid "No Reminders."
-msgstr "Žiadne  pripomienky"
+msgid "No Reminders"
+msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:47
+#: ../src/EventEdition/ReminderPanel.vala:46
 msgid "Add Reminder"
 msgstr "Pridať Pripomienku"
 
-#: ../src/EventEdition/ReminderPanel.vala:176
+#: ../src/EventEdition/ReminderPanel.vala:165
 msgid "0 minutes"
 msgstr "0 minút"
 
-#: ../src/EventEdition/ReminderPanel.vala:177
+#: ../src/EventEdition/ReminderPanel.vala:166
 msgid "1 minutes"
 msgstr "1 minúta"
 
-#: ../src/EventEdition/ReminderPanel.vala:178
+#: ../src/EventEdition/ReminderPanel.vala:167
 msgid "5 minutes"
 msgstr "5 minút"
 
-#: ../src/EventEdition/ReminderPanel.vala:179
+#: ../src/EventEdition/ReminderPanel.vala:168
 msgid "10 minutes"
 msgstr "10 minút"
 
-#: ../src/EventEdition/ReminderPanel.vala:180
+#: ../src/EventEdition/ReminderPanel.vala:169
 msgid "15 minutes"
 msgstr "15 minút"
 
-#: ../src/EventEdition/ReminderPanel.vala:181
+#: ../src/EventEdition/ReminderPanel.vala:170
 msgid "20 minutes"
 msgstr "20 minút"
 
-#: ../src/EventEdition/ReminderPanel.vala:182
+#: ../src/EventEdition/ReminderPanel.vala:171
 msgid "25 minutes"
 msgstr "25 minút"
 
-#: ../src/EventEdition/ReminderPanel.vala:183
+#: ../src/EventEdition/ReminderPanel.vala:172
 msgid "30 minutes"
 msgstr "30 minútach"
 
-#: ../src/EventEdition/ReminderPanel.vala:184
+#: ../src/EventEdition/ReminderPanel.vala:173
 msgid "45 minutes"
 msgstr "45 minút"
 
-#: ../src/EventEdition/ReminderPanel.vala:185
+#: ../src/EventEdition/ReminderPanel.vala:174
 msgid "1 hour"
 msgstr "1 hodina"
 
-#: ../src/EventEdition/ReminderPanel.vala:186
+#: ../src/EventEdition/ReminderPanel.vala:175
 msgid "2 hours"
 msgstr "2 hodiny"
 
-#: ../src/EventEdition/ReminderPanel.vala:187
+#: ../src/EventEdition/ReminderPanel.vala:176
 msgid "3 hours"
 msgstr "3 hodiny"
 
-#: ../src/EventEdition/ReminderPanel.vala:188
+#: ../src/EventEdition/ReminderPanel.vala:177
 msgid "12 hours"
 msgstr "12 hodín"
 
-#: ../src/EventEdition/ReminderPanel.vala:189
+#: ../src/EventEdition/ReminderPanel.vala:178
 msgid "24 hours"
 msgstr "24 hodín"
 
-#: ../src/EventEdition/ReminderPanel.vala:190
+#: ../src/EventEdition/ReminderPanel.vala:179
 msgid "2 days"
 msgstr "2 dni"
 
-#: ../src/EventEdition/ReminderPanel.vala:191
+#: ../src/EventEdition/ReminderPanel.vala:180
 msgid "1 week"
 msgstr "1 týždeň"
 
-#: ../src/EventEdition/ReminderPanel.vala:200
+#: ../src/EventEdition/ReminderPanel.vala:189
 msgid "Notification"
 msgstr "Oznámenie"
 
-#: ../src/EventEdition/ReminderPanel.vala:201
+#: ../src/EventEdition/ReminderPanel.vala:190
 msgid "Email"
 msgstr "Email"
 
@@ -363,11 +371,11 @@ msgstr "Účastníci:"
 msgid "Invite"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:226
+#: ../src/EventEdition/GuestsPanel.vala:227
 msgid "Accepted"
 msgstr "Akceptované"
 
-#: ../src/EventEdition/GuestsPanel.vala:229
+#: ../src/EventEdition/GuestsPanel.vala:230
 msgid "Declined"
 msgstr "Zamietnuté"
 
@@ -415,29 +423,25 @@ msgstr "Vrátiť späť"
 msgid "Calendar \"%s\" removed."
 msgstr "Kalendár \"%s\" odstránený."
 
-#: ../src/MayaToolbar.vala:41
+#: ../src/MayaToolbar.vala:40
 msgid "Create a new event"
 msgstr "Vytvoriť novú udalosť"
 
-#: ../src/MayaToolbar.vala:45
+#: ../src/MayaToolbar.vala:43
+msgid "Go to today's date"
+msgstr ""
+
+#: ../src/MayaToolbar.vala:47
 msgid "Manage Calendars"
 msgstr "Spravovať kalendáre"
 
-#: ../src/MayaToolbar.vala:53
+#: ../src/MayaToolbar.vala:55
 msgid "Search Events"
 msgstr "Vyhľadať udalosti"
 
-#: ../src/MayaToolbar.vala:56
+#: ../src/MayaToolbar.vala:58
 msgid "Export or Share the default Calendar"
 msgstr "Exportovať alebo zdieľať základný kalendár"
-
-#: ../src/MayaToolbar.vala:70
-msgid "Today"
-msgstr "Dnes"
-
-#: ../src/MayaToolbar.vala:71
-msgid "Show Week Numbers"
-msgstr "Zobraziť čísla týždňov"
 
 #: ../src/Sidebar/Sidebar.vala:38
 msgid ""
@@ -495,11 +499,11 @@ msgstr "CalDAV"
 msgid "URL:"
 msgstr "URL adresa:"
 
-#: ../plugins/CalDAV/CalDAVBackend.vala:81
+#: ../plugins/CalDAV/CalDAVBackend.vala:91
 msgid "Use a secure connection"
 msgstr "Použiť bezpečné pripojenie"
 
-#: ../plugins/CalDAV/CalDAVBackend.vala:103
+#: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
 msgstr ""
 
@@ -515,23 +519,23 @@ msgstr "používateľ alebo používateľ@gmail.com"
 msgid "On this computer"
 msgstr "Na tomto počítači"
 
-#: ../core/Backends/PlacementWidget.vala:37
+#: ../core/Backends/PlacementWidget.vala:41
 msgid "User:"
 msgstr "Používateľ:"
 
-#: ../core/Backends/PlacementWidget.vala:46
+#: ../core/Backends/PlacementWidget.vala:50
 msgid "user.name"
 msgstr "meno používateľa"
 
-#: ../core/Backends/PlacementWidget.vala:59
+#: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
 msgstr "Email:"
 
-#: ../core/Backends/PlacementWidget.vala:68
+#: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
-#: ../core/Backends/PlacementWidget.vala:80
+#: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Ponechať kópiu"
 
@@ -579,6 +583,9 @@ msgstr "%A, %b %d"
 #~ msgid "Sync..."
 #~ msgstr "Synchronizovať..."
 
+#~ msgid "Today"
+#~ msgstr "Dnes"
+
 #~ msgid "Fullscreen"
 #~ msgstr "Na celú obrazovku"
 
@@ -620,3 +627,6 @@ msgstr "%A, %b %d"
 
 #~ msgid "Pending"
 #~ msgstr "Čaká sa"
+
+#~ msgid "No Reminders."
+#~ msgstr "Žiadne  pripomienky"
