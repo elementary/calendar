@@ -112,6 +112,8 @@ namespace Maya {
         View.Sidebar sidebar;
         Gtk.Paned hpaned;
         Gtk.Grid gridcontainer;
+        Gtk.InfoBar infobar;
+        Gtk.Label infobar_label;
 
         /**
          * Called when the application is activated.
@@ -139,11 +141,8 @@ namespace Maya {
          * Initializes the graphical window and its components
          */
         void init_gui () {
-
             create_window ();
-
-            calview = new View.CalendarView ();
-            calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
+            var saved_state = Settings.SavedState.get_default ();
 
             sidebar = new View.Sidebar ();
             // Don't automatically display all the widgets on the sidebar
@@ -154,16 +153,37 @@ namespace Maya {
             sidebar.agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
             sidebar.set_size_request(160,0);
 
+            calview = new View.CalendarView ();
+            calview.vexpand = true;
+            calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
             calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
             gridcontainer = new Gtk.Grid ();
+            gridcontainer.orientation = Gtk.Orientation.VERTICAL;
+
             hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-            calview.vexpand = true;
             hpaned.pack1 (calview, true, false);
             hpaned.pack2 (sidebar, true, false);
-            var saved_state = Settings.SavedState.get_default ();
             hpaned.position = saved_state.hpaned_position;
-            gridcontainer.attach (hpaned, 0, 2, 1, 1);
+
+            infobar_label = new Gtk.Label (null);
+            infobar_label.show ();
+            infobar = new Gtk.InfoBar ();
+            infobar.message_type = Gtk.MessageType.ERROR;
+            infobar.show_close_button = true;
+            infobar.get_content_area ().add (infobar_label);
+            infobar.no_show_all = true;
+            infobar.response.connect ((id) => infobar.hide ());
+            Model.CalendarModel.get_default ().error_received.connect ((message) => {
+                Idle.add (() => {
+                    infobar_label.label = message;
+                    infobar.show ();
+                    return false;
+                });
+            });
+
+            gridcontainer.add (infobar);
+            gridcontainer.add (hpaned);
             window.add (gridcontainer);
 
             add_window (window);

@@ -27,6 +27,7 @@ set(CLIENT_SOURCE
     Widgets/ContractorButtonWithMenu.vala
     Widgets/DateSwitcher.vala
     Widgets/DateTimePicker.vala
+    Widgets/DynamicSpinner.vala
 )
 
 vala_precompile(CLIENT_VALA_C ${CMAKE_PROJECT_NAME}
