@@ -75,7 +75,10 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         
         load_contact.begin ();
 
-        attach (champlain_embed, 0, 2, 1, 1);
+        var frame = new Gtk.Frame (null);
+        frame.add (champlain_embed);        
+
+        attach (frame, 0, 2, 1, 1);
 
         // Load the location
         point = new Maya.Marker ();

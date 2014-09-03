@@ -82,14 +82,17 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
 	    guest_list = new Gtk.ListBox ();    
 	    guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
-	    guest_list.get_style_context ().add_class (Gtk.STYLE_CLASS_ENTRY);
+
 	    var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null);
         guest_scrolledwindow.add_with_viewport (guest_list);
         guest_scrolledwindow.expand = true;
 
+        var frame = new Gtk.Frame (null);
+        frame.add (guest_scrolledwindow);
+
         attach (guest_label, 0, 0, 1, 1);
         attach (guest_entry, 0, 1, 1, 1);
-        attach (guest_scrolledwindow, 0, 2, 1, 1);
+        attach (frame, 0, 2, 1, 1);
 
         if (parent_dialog.ecal != null) {
             unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
