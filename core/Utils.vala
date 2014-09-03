@@ -686,11 +686,11 @@ namespace Maya.Util {
         }
     }
 
-    public Gtk.Widget set_margins (Gtk.Widget widget, int top, int right, int bottom, int left) {
+    public Gtk.Widget set_margins (Gtk.Widget widget, int top, int end, int bottom, int start) {
         widget.margin_top = top;
-        widget.margin_right = right;
+        widget.margin_end = end;
         widget.margin_bottom = bottom;
-        widget.margin_left = left;
+        widget.margin_start = start;
 
         return widget;
     }
