@@ -131,8 +131,8 @@ public class EventDialog : Gtk.Dialog {
             stack.add_named (repeat_panel, "repeatpanel");
 
             var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
-            buttonbox.margin_right = 12;
-            buttonbox.margin_left = 12;
+            buttonbox.margin_end = 12;
+            buttonbox.margin_start = 12;
             buttonbox.baseline_position = Gtk.BaselinePosition.CENTER;
             buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
 

@@ -29,7 +29,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         sensitive = parent_dialog.can_edit;
 
         var reminder_label = Maya.View.EventDialog.make_label (_("Reminders:"));
-        reminder_label.margin_left = 12;
+        reminder_label.margin_start = 12;
 
         var no_reminder_label = new Gtk.Label ("");
         no_reminder_label.set_markup ("<b><span color=\'darkgrey\'>%s</span></b>".printf (_("No Reminders")));
@@ -158,8 +158,8 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
     public ReminderGrid (string uid) {
         this.uid = uid;
         set_margin_bottom (6);
-        set_margin_left (6);
-        set_margin_right (6);
+        set_margin_start (6);
+        set_margin_end (6);
 
         time = new Gtk.ComboBoxText ();
         time.append_text (_("0 minutes"));

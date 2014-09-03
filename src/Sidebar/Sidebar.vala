@@ -39,8 +39,8 @@ namespace Maya.View {
             label.sensitive = false;
             label.wrap = true;
             label.wrap_mode = Pango.WrapMode.WORD;
-            label.margin_left = 12;
-            label.margin_right = 12;
+            label.margin_start = 12;
+            label.margin_end = 12;
             label.justify = Gtk.Justification.CENTER;
 
             agenda_view = new AgendaView ();
