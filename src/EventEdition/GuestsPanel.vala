@@ -80,10 +80,10 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_completion.set_text_column (1);
         guest_completion.match_selected.connect ((model, iter) => suggestion_selected (model, iter));
 
-	    guest_list = new Gtk.ListBox ();    
-	    guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
+        guest_list = new Gtk.ListBox ();    
+        guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
 
-	    var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null);
+        var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null);
         guest_scrolledwindow.add_with_viewport (guest_list);
         guest_scrolledwindow.expand = true;
 
