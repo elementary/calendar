@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2011-2012 Maxwell Barvian
+//  Copyright (C) 2014 Corentin Noël
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ public class Maya.View.Widgets.DynamicSpinner : Gtk.Revealer {
         info_popover.add (list_box);
 
         var calmodel = Model.CalendarModel.get_default ();
-        calmodel.connect.connect ((source, cancellable) => add_source.begin (source, cancellable));
+        calmodel.connecting.connect ((source, cancellable) => add_source.begin (source, cancellable));
         calmodel.connected.connect ((source) => remove_source.begin (source));
 
         add (button);
