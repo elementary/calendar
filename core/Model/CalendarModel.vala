@@ -41,7 +41,7 @@ public class Maya.Model.CalendarModel : Object {
     public signal void events_updated (E.Source source, Gee.Collection<E.CalComponent> events);
     public signal void events_removed (E.Source source, Gee.Collection<E.CalComponent> events);
 
-    public signal void connect (E.Source source, Cancellable cancellable);
+    public signal void connecting (E.Source source, Cancellable cancellable);
     public signal void connected (E.Source source);
     public signal void error_received (string error);
 
@@ -313,7 +313,7 @@ public class Maya.Model.CalendarModel : Object {
             try {
                 view.start ();
             } catch (Error e) {
-                warning (e.message);
+                critical (e.message);
             }
 
             source_view.set (source, view);
@@ -329,7 +329,7 @@ public class Maya.Model.CalendarModel : Object {
             debug ("Adding source '%s'", source.dup_display_name ());
             try {
                 var cancellable = new GLib.Cancellable ();
-                connect (source, cancellable);
+                connecting (source, cancellable);
                 var client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS, cancellable);
                 source_client.insert (source, client);
             } catch (Error e) {
