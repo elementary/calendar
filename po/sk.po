@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-01 21:29+0200\n"
-"PO-Revision-Date: 2014-06-22 15:01+0000\n"
-"Last-Translator: Milan Slovák <Unknown>\n"
+"PO-Revision-Date: 2014-09-14 21:39+0000\n"
+"Last-Translator: Marek <sveco86@gmail.com>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-02 06:53+0000\n"
-"X-Generator: Launchpad (build 17192)\n"
+"X-Launchpad-Export-Date: 2014-09-15 06:30+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 "Language: sk\n"
 
 #: ../src/Grid/VAutoHider.vala:96
@@ -24,7 +24,7 @@ msgstr "%u viac..."
 
 #: ../src/Grid/WeekLabels.vala:53 ../src/Grid/Header.vala:62
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Skryť čísla týždňov"
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:64
 msgid "Show Week Numbers"
@@ -48,11 +48,11 @@ msgstr "Pridať udalosť"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "O Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "O Kalendári"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -253,7 +253,7 @@ msgstr "Pripomienky:"
 
 #: ../src/EventEdition/ReminderPanel.vala:35
 msgid "No Reminders"
-msgstr ""
+msgstr "Žiadne pripomienky"
 
 #: ../src/EventEdition/ReminderPanel.vala:46
 msgid "Add Reminder"
@@ -353,7 +353,7 @@ msgstr "Pripomienky"
 
 #: ../src/EventEdition/EventDialog.vala:140
 msgid "Delete Event"
-msgstr ""
+msgstr "Odstrániť udalosť"
 
 #: ../src/EventEdition/EventDialog.vala:152
 msgid "Create Event"
@@ -369,7 +369,7 @@ msgstr "Účastníci:"
 
 #: ../src/EventEdition/GuestsPanel.vala:45
 msgid "Invite"
-msgstr ""
+msgstr "Pozvať"
 
 #: ../src/EventEdition/GuestsPanel.vala:227
 msgid "Accepted"
@@ -429,7 +429,7 @@ msgstr "Vytvoriť novú udalosť"
 
 #: ../src/MayaToolbar.vala:43
 msgid "Go to today's date"
-msgstr ""
+msgstr "Ísť na dnešný dátum"
 
 #: ../src/MayaToolbar.vala:47
 msgid "Manage Calendars"
