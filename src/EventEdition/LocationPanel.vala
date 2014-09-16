@@ -29,8 +29,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
     public LocationPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
 
-        margin_left = 12;
-        margin_right = 12;
+        margin_start = 12;
+        margin_end = 12;
         set_row_spacing (6);
         set_column_spacing (12);
         set_sensitive (parent_dialog.can_edit);

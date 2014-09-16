@@ -7,19 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-12 01:12+0200\n"
+"POT-Creation-Date: 2014-09-01 21:29+0200\n"
 "PO-Revision-Date: 2014-03-18 17:22+0000\n"
-"Last-Translator: SyedKhaleel Jageer <jskcse4@gmail.com>\n"
+"Last-Translator: Khaleel Jageer <jskcse4@gmail.com>\n"
 "Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-13 06:28+0000\n"
-"X-Generator: Launchpad (build 17156)\n"
+"X-Launchpad-Export-Date: 2014-09-02 06:53+0000\n"
+"X-Generator: Launchpad (build 17192)\n"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
 msgstr ""
+
+#: ../src/Grid/WeekLabels.vala:53 ../src/Grid/Header.vala:62
+msgid "Hide Week Numbers"
+msgstr ""
+
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:64
+msgid "Show Week Numbers"
+msgstr "வார எண்களை காட்டு"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
@@ -59,7 +67,7 @@ msgid "Cancel"
 msgstr "இரத்துசெய்"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
-#: ../src/SourceDialog.vala:154
+#: ../src/SourceDialog.vala:155
 msgid "Save"
 msgstr "சேமி"
 
@@ -238,87 +246,87 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:32
+#: ../src/EventEdition/ReminderPanel.vala:31
 msgid "Reminders:"
 msgstr ""
 
 #: ../src/EventEdition/ReminderPanel.vala:35
-msgid "No Reminders."
+msgid "No Reminders"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:47
+#: ../src/EventEdition/ReminderPanel.vala:46
 msgid "Add Reminder"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:176
+#: ../src/EventEdition/ReminderPanel.vala:165
 msgid "0 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:177
+#: ../src/EventEdition/ReminderPanel.vala:166
 msgid "1 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:178
+#: ../src/EventEdition/ReminderPanel.vala:167
 msgid "5 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:179
+#: ../src/EventEdition/ReminderPanel.vala:168
 msgid "10 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:180
+#: ../src/EventEdition/ReminderPanel.vala:169
 msgid "15 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:181
+#: ../src/EventEdition/ReminderPanel.vala:170
 msgid "20 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:182
+#: ../src/EventEdition/ReminderPanel.vala:171
 msgid "25 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:183
+#: ../src/EventEdition/ReminderPanel.vala:172
 msgid "30 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:184
+#: ../src/EventEdition/ReminderPanel.vala:173
 msgid "45 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:185
+#: ../src/EventEdition/ReminderPanel.vala:174
 msgid "1 hour"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:186
+#: ../src/EventEdition/ReminderPanel.vala:175
 msgid "2 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:187
+#: ../src/EventEdition/ReminderPanel.vala:176
 msgid "3 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:188
+#: ../src/EventEdition/ReminderPanel.vala:177
 msgid "12 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:189
+#: ../src/EventEdition/ReminderPanel.vala:178
 msgid "24 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:190
+#: ../src/EventEdition/ReminderPanel.vala:179
 msgid "2 days"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:191
+#: ../src/EventEdition/ReminderPanel.vala:180
 msgid "1 week"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:200
+#: ../src/EventEdition/ReminderPanel.vala:189
 msgid "Notification"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:201
+#: ../src/EventEdition/ReminderPanel.vala:190
 msgid "Email"
 msgstr ""
 
@@ -362,11 +370,11 @@ msgstr ""
 msgid "Invite"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:226
+#: ../src/EventEdition/GuestsPanel.vala:227
 msgid "Accepted"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:229
+#: ../src/EventEdition/GuestsPanel.vala:230
 msgid "Declined"
 msgstr ""
 
@@ -414,29 +422,25 @@ msgstr "தவிர்"
 msgid "Calendar \"%s\" removed."
 msgstr "நாட்காட்டி \"%s\" நீக்கப்பட்டது."
 
-#: ../src/MayaToolbar.vala:41
+#: ../src/MayaToolbar.vala:40
 msgid "Create a new event"
 msgstr "ஒரு புதிய நிகழ்வை உருவாக்கவும்"
 
-#: ../src/MayaToolbar.vala:45
+#: ../src/MayaToolbar.vala:43
+msgid "Go to today's date"
+msgstr ""
+
+#: ../src/MayaToolbar.vala:47
 msgid "Manage Calendars"
 msgstr "காலெண்டர்களை நிர்வகி"
 
-#: ../src/MayaToolbar.vala:53
+#: ../src/MayaToolbar.vala:55
 msgid "Search Events"
 msgstr "நிகழ்வுகளை தேடு"
 
-#: ../src/MayaToolbar.vala:56
+#: ../src/MayaToolbar.vala:58
 msgid "Export or Share the default Calendar"
 msgstr "முன்னிருப்பு நாள்காட்டியை ஏற்றுமதி செய் அல்லது பகிர்"
-
-#: ../src/MayaToolbar.vala:70
-msgid "Today"
-msgstr "இன்று"
-
-#: ../src/MayaToolbar.vala:71
-msgid "Show Week Numbers"
-msgstr "வார எண்களை காட்டு"
 
 #: ../src/Sidebar/Sidebar.vala:38
 msgid ""
@@ -495,11 +499,11 @@ msgstr "CalDAV"
 msgid "URL:"
 msgstr "URL:"
 
-#: ../plugins/CalDAV/CalDAVBackend.vala:81
+#: ../plugins/CalDAV/CalDAVBackend.vala:91
 msgid "Use a secure connection"
 msgstr "ஒரு பாதுகாப்பான இணைப்பை பயன்படுத்தவும்"
 
-#: ../plugins/CalDAV/CalDAVBackend.vala:103
+#: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
 msgstr "சர்வர் கையாளுவது சந்திப்பு அழைப்புகள்"
 
@@ -515,23 +519,23 @@ msgstr "user.name or user.name@gmail.com"
 msgid "On this computer"
 msgstr "இந்த கணினியில்"
 
-#: ../core/Backends/PlacementWidget.vala:37
+#: ../core/Backends/PlacementWidget.vala:41
 msgid "User:"
 msgstr "பயனர்:"
 
-#: ../core/Backends/PlacementWidget.vala:46
+#: ../core/Backends/PlacementWidget.vala:50
 msgid "user.name"
 msgstr "user.name"
 
-#: ../core/Backends/PlacementWidget.vala:59
+#: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
 msgstr "மின்னஞ்சல்:"
 
-#: ../core/Backends/PlacementWidget.vala:68
+#: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
-#: ../core/Backends/PlacementWidget.vala:80
+#: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr ""
 
@@ -575,6 +579,9 @@ msgstr "%A, %b %d"
 
 #~ msgid "Name or Email Address"
 #~ msgstr "பெயர் அல்லது மின்னஞ்சல் முகவரி"
+
+#~ msgid "Today"
+#~ msgstr "இன்று"
 
 #~ msgid "Fullscreen"
 #~ msgstr "முழுத்திரை"

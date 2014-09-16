@@ -39,8 +39,8 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         main_grid.set_row_spacing (6);
         main_grid.set_column_spacing (12);
 
-        margin_left = 6;
-        margin_right = 6;
+        margin_start = 6;
+        margin_end = 6;
         margin_top = 6;
         set_row_spacing (6);
         set_column_spacing (12);

@@ -33,8 +33,8 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         this.parent_dialog = parent_dialog;
         attendees = new Gee.ArrayList<unowned iCal.Property> ();
 
-        margin_left = 12;
-        margin_right = 12;
+        margin_start = 12;
+        margin_end = 12;
         set_row_spacing (6);
         set_column_spacing (12);
         set_sensitive (parent_dialog.can_edit);
@@ -220,8 +220,8 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         individual = null;
         
         set_margin_bottom (6);
-        set_margin_right (6);
-        set_margin_left (6);
+        set_margin_end (6);
+        set_margin_start (6);
 
         string status = "";
         unowned iCal.Parameter parameter = attendee.get_first_parameter (iCal.ParameterKind.PARTSTAT);

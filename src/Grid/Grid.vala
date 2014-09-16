@@ -25,7 +25,6 @@ public class Grid : Gtk.Grid {
     Gee.Map<DateTime, GridDay> data;
 
     public Util.DateRange grid_range { get; private set; }
-    public DateTime? selected_date { get; private set; }
 
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
@@ -35,8 +34,6 @@ public class Grid : Gtk.Grid {
     public signal void selection_changed (DateTime new_date);
 
     public Grid () {
-
-        selected_date = Settings.SavedState.get_default ().get_selected ();
 
         // Gtk.Grid properties
         insert_column (7);
@@ -54,18 +51,15 @@ public class Grid : Gtk.Grid {
     }
 
     void on_day_focus_in (GridDay day) {
-
-        selected_date = day.date;
-
+        var selected_date = day.date;
         selection_changed (selected_date);
         Settings.SavedState.get_default ().selected_day = selected_date.format ("%Y-%j");
     }
 
     public void focus_date (DateTime date) {
-
         debug(@"Setting focus to @ $(date)");
-
-        data [date].grab_focus ();
+        if (data [date] != null)
+            data [date].grab_focus ();
     }
 
     /**
@@ -109,19 +103,17 @@ public class Grid : Gtk.Grid {
                 day = update_day (data[old_date], new_date, today, month_start);
 
             } else {
-                // No widget exists, create one
-
-                day = new GridDay (new_date);
                 // Still update_day to get the color of etc. right
-                day = update_day (day, new_date, today, month_start);
-
-                attach (day, col, row, 1, 1);
-                day.focus_in_event.connect ((event) => {
-                    on_day_focus_in(day);
-                    return false;
-                });
+                day = update_day (new GridDay (new_date), new_date, today, month_start);
+                day.is_first_column = col == 0;
                 day.on_event_add.connect ((date) => on_event_add (date));
                 day.scroll_event.connect ((event) => {scroll_event (event); return false;});
+                day.focus_in_event.connect ((event) => {
+                    on_day_focus_in (day);
+                    return false;
+                });
+
+                attach (day, col, row, 1, 1);
                 day.show_all ();
             }
 

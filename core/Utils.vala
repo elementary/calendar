@@ -88,14 +88,9 @@ namespace Maya.Util {
     public Gee.Collection<DateRange> event_date_ranges (E.CalComponent event, Util.DateRange view_range) {
         var dateranges = new Gee.LinkedList<DateRange> ();
 
-        E.CalComponentDateTime dt_start;
-        event.get_dtstart (out dt_start);
-
-        E.CalComponentDateTime dt_end = dt_start;
-        event.get_dtend (out dt_end);
- 
-        var start = ecal_to_date_time (dt_start);
-        var end = ecal_to_date_time (dt_end);
+        unowned iCal.Component comp = event.get_icalcomponent ();
+        var start = ical_to_date_time (comp.get_dtstart ());
+        var end = ical_to_date_time (comp.get_dtend ());
 
         bool allday = is_the_all_day (start, end);
         if (allday)
@@ -111,7 +106,6 @@ namespace Maya.Util {
         dateranges.add (new Util.DateRange (strip_time(start), strip_time(end)));
 
         // Search for recursive events.
-        unowned iCal.Component comp = event.get_icalcomponent ();
         unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.RRULE);
         if (property != null) {
             var rrule = property.get_rrule ();
@@ -686,11 +680,11 @@ namespace Maya.Util {
         }
     }
 
-    public Gtk.Widget set_margins (Gtk.Widget widget, int top, int right, int bottom, int left) {
+    public Gtk.Widget set_margins (Gtk.Widget widget, int top, int end, int bottom, int start) {
         widget.margin_top = top;
-        widget.margin_right = right;
+        widget.margin_end = end;
         widget.margin_bottom = bottom;
-        widget.margin_left = left;
+        widget.margin_start = start;
 
         return widget;
     }

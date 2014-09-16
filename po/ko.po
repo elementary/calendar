@@ -7,20 +7,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-12 01:12+0200\n"
+"POT-Creation-Date: 2014-09-01 21:29+0200\n"
 "PO-Revision-Date: 2014-02-19 22:31+0000\n"
 "Last-Translator: MinSik CHO <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-13 06:27+0000\n"
-"X-Generator: Launchpad (build 17156)\n"
+"X-Launchpad-Export-Date: 2014-09-02 06:52+0000\n"
+"X-Generator: Launchpad (build 17192)\n"
 "Language: ko\n"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
 msgstr ""
+
+#: ../src/Grid/WeekLabels.vala:53 ../src/Grid/Header.vala:62
+msgid "Hide Week Numbers"
+msgstr ""
+
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:64
+msgid "Show Week Numbers"
+msgstr "몇 번째 주인지 표시"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
@@ -60,7 +68,7 @@ msgid "Cancel"
 msgstr "취소"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
-#: ../src/SourceDialog.vala:154
+#: ../src/SourceDialog.vala:155
 msgid "Save"
 msgstr "저장"
 
@@ -239,87 +247,87 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:32
+#: ../src/EventEdition/ReminderPanel.vala:31
 msgid "Reminders:"
 msgstr ""
 
 #: ../src/EventEdition/ReminderPanel.vala:35
-msgid "No Reminders."
+msgid "No Reminders"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:47
+#: ../src/EventEdition/ReminderPanel.vala:46
 msgid "Add Reminder"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:176
+#: ../src/EventEdition/ReminderPanel.vala:165
 msgid "0 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:177
+#: ../src/EventEdition/ReminderPanel.vala:166
 msgid "1 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:178
+#: ../src/EventEdition/ReminderPanel.vala:167
 msgid "5 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:179
+#: ../src/EventEdition/ReminderPanel.vala:168
 msgid "10 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:180
+#: ../src/EventEdition/ReminderPanel.vala:169
 msgid "15 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:181
+#: ../src/EventEdition/ReminderPanel.vala:170
 msgid "20 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:182
+#: ../src/EventEdition/ReminderPanel.vala:171
 msgid "25 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:183
+#: ../src/EventEdition/ReminderPanel.vala:172
 msgid "30 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:184
+#: ../src/EventEdition/ReminderPanel.vala:173
 msgid "45 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:185
+#: ../src/EventEdition/ReminderPanel.vala:174
 msgid "1 hour"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:186
+#: ../src/EventEdition/ReminderPanel.vala:175
 msgid "2 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:187
+#: ../src/EventEdition/ReminderPanel.vala:176
 msgid "3 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:188
+#: ../src/EventEdition/ReminderPanel.vala:177
 msgid "12 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:189
+#: ../src/EventEdition/ReminderPanel.vala:178
 msgid "24 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:190
+#: ../src/EventEdition/ReminderPanel.vala:179
 msgid "2 days"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:191
+#: ../src/EventEdition/ReminderPanel.vala:180
 msgid "1 week"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:200
+#: ../src/EventEdition/ReminderPanel.vala:189
 msgid "Notification"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:201
+#: ../src/EventEdition/ReminderPanel.vala:190
 msgid "Email"
 msgstr ""
 
@@ -363,11 +371,11 @@ msgstr ""
 msgid "Invite"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:226
+#: ../src/EventEdition/GuestsPanel.vala:227
 msgid "Accepted"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:229
+#: ../src/EventEdition/GuestsPanel.vala:230
 msgid "Declined"
 msgstr ""
 
@@ -415,29 +423,25 @@ msgstr "실행 취소"
 msgid "Calendar \"%s\" removed."
 msgstr "달력 \"%s\" 가 삭제되었습니다."
 
-#: ../src/MayaToolbar.vala:41
+#: ../src/MayaToolbar.vala:40
 msgid "Create a new event"
 msgstr "새 이벤트 추가하기"
 
-#: ../src/MayaToolbar.vala:45
+#: ../src/MayaToolbar.vala:43
+msgid "Go to today's date"
+msgstr ""
+
+#: ../src/MayaToolbar.vala:47
 msgid "Manage Calendars"
 msgstr "달력 관리"
 
-#: ../src/MayaToolbar.vala:53
+#: ../src/MayaToolbar.vala:55
 msgid "Search Events"
 msgstr "이벤트 검색"
 
-#: ../src/MayaToolbar.vala:56
+#: ../src/MayaToolbar.vala:58
 msgid "Export or Share the default Calendar"
 msgstr "기본 달력을 내보내거나 공유합니다."
-
-#: ../src/MayaToolbar.vala:70
-msgid "Today"
-msgstr "오늘"
-
-#: ../src/MayaToolbar.vala:71
-msgid "Show Week Numbers"
-msgstr "몇 번째 주인지 표시"
 
 #: ../src/Sidebar/Sidebar.vala:38
 msgid ""
@@ -494,11 +498,11 @@ msgstr "CalDAV"
 msgid "URL:"
 msgstr "URL:"
 
-#: ../plugins/CalDAV/CalDAVBackend.vala:81
+#: ../plugins/CalDAV/CalDAVBackend.vala:91
 msgid "Use a secure connection"
 msgstr "보안 연결 사용"
 
-#: ../plugins/CalDAV/CalDAVBackend.vala:103
+#: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
 msgstr "서버가 약속 초대를 관리합니다."
 
@@ -514,23 +518,23 @@ msgstr "사용자.이름 또는 사용자.이름@gmail.com"
 msgid "On this computer"
 msgstr "이 컴퓨터에서"
 
-#: ../core/Backends/PlacementWidget.vala:37
+#: ../core/Backends/PlacementWidget.vala:41
 msgid "User:"
 msgstr "사용자:"
 
-#: ../core/Backends/PlacementWidget.vala:46
+#: ../core/Backends/PlacementWidget.vala:50
 msgid "user.name"
 msgstr "사용자 이름"
 
-#: ../core/Backends/PlacementWidget.vala:59
+#: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
 msgstr "전자메일:"
 
-#: ../core/Backends/PlacementWidget.vala:68
+#: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
-#: ../core/Backends/PlacementWidget.vala:80
+#: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr ""
 
@@ -586,6 +590,9 @@ msgstr "%A, %b %d"
 
 #~ msgid "Sync..."
 #~ msgstr "동기화하기..."
+
+#~ msgid "Today"
+#~ msgstr "오늘"
 
 #~ msgid "Fullscreen"
 #~ msgstr "전체화면"

@@ -17,7 +17,6 @@
 
 namespace Maya.Settings {
     public enum Weekday {
-        BAD_WEEKDAY = 0,
         MONDAY,
         TUESDAY,
         WEDNESDAY,
