@@ -44,7 +44,7 @@ namespace Maya.View {
             button_today.tooltip_text = _("Go to today's date");
 
             button_calendar_sources = new Gtk.ToggleButton ();
-            button_calendar_sources.image = new Gtk.Image.from_icon_name ("office-calendar", Gtk.IconSize.LARGE_TOOLBAR);
+            button_calendar_sources.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
             button_calendar_sources.tooltip_text = _("Manage Calendars");
 
             month_switcher = new Widgets.DateSwitcher (10);
