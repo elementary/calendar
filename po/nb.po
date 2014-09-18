@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-01 21:29+0200\n"
-"PO-Revision-Date: 2014-09-11 12:09+0000\n"
-"Last-Translator: Beren <berencamlost@msn.com>\n"
+"PO-Revision-Date: 2014-09-17 18:02+0000\n"
+"Last-Translator: ProsjektX <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-12 06:37+0000\n"
+"X-Launchpad-Export-Date: 2014-09-18 06:09+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 "Language: nb\n"
 
@@ -32,7 +32,7 @@ msgstr "Vis ukenummer"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
-msgstr "Vis og planlegg hendingar"
+msgstr "Vis og planlegg hendelser"
 
 #: ../src/Translations.vala:6 ../src/Application.vala:30
 msgid "Calendar"
@@ -74,7 +74,7 @@ msgstr "Lagre"
 
 #: ../src/EventEdition/LocationPanel.vala:38
 msgid "Location:"
-msgstr "Tilhørighet:"
+msgstr "Sted:"
 
 #: ../src/EventEdition/LocationPanel.vala:40
 msgid "John Smith OR Example St."
@@ -265,15 +265,15 @@ msgstr "Null minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:166
 msgid "1 minutes"
-msgstr "Ett minutt"
+msgstr "1 minutt"
 
 #: ../src/EventEdition/ReminderPanel.vala:167
 msgid "5 minutes"
-msgstr "Fem minutter"
+msgstr "5 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:168
 msgid "10 minutes"
-msgstr "Ti minutter"
+msgstr "10 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:169
 msgid "15 minutes"
@@ -285,27 +285,27 @@ msgstr "20 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:171
 msgid "25 minutes"
-msgstr "25 minutt"
+msgstr "25 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:172
 msgid "30 minutes"
-msgstr "30 minutt"
+msgstr "30 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:173
 msgid "45 minutes"
-msgstr "45 minutt"
+msgstr "45 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:174
 msgid "1 hour"
-msgstr "Én time"
+msgstr "1 time"
 
 #: ../src/EventEdition/ReminderPanel.vala:175
 msgid "2 hours"
-msgstr "To timer"
+msgstr "2 timer"
 
 #: ../src/EventEdition/ReminderPanel.vala:176
 msgid "3 hours"
-msgstr "Tre timer"
+msgstr "3 timer"
 
 #: ../src/EventEdition/ReminderPanel.vala:177
 msgid "12 hours"
@@ -321,7 +321,7 @@ msgstr "2 dager"
 
 #: ../src/EventEdition/ReminderPanel.vala:180
 msgid "1 week"
-msgstr "Ei uke"
+msgstr "1 uke"
 
 #: ../src/EventEdition/ReminderPanel.vala:189
 msgid "Notification"
@@ -357,7 +357,7 @@ msgstr "Slett hendelse"
 
 #: ../src/EventEdition/EventDialog.vala:152
 msgid "Create Event"
-msgstr "Opprett oppføring i hendelsesforløp"
+msgstr "Opprett hendelse"
 
 #: ../src/EventEdition/EventDialog.vala:155
 msgid "Save Changes"
@@ -397,7 +397,7 @@ msgstr "Tittel:"
 
 #: ../src/EventEdition/InfoPanel.vala:91
 msgid "Name of Event"
-msgstr "Navn på begivenhet"
+msgstr "Navn på hendelse"
 
 #: ../src/EventEdition/InfoPanel.vala:94
 msgid "Calendar:"
@@ -425,7 +425,7 @@ msgstr "Kalender \"%s\" fjernet."
 
 #: ../src/MayaToolbar.vala:40
 msgid "Create a new event"
-msgstr "Før opp ny begivenhet"
+msgstr "Lag en ny hendelse"
 
 #: ../src/MayaToolbar.vala:43
 msgid "Go to today's date"
@@ -437,7 +437,7 @@ msgstr "Organiser kalendere"
 
 #: ../src/MayaToolbar.vala:55
 msgid "Search Events"
-msgstr "Søk i begivenheter"
+msgstr "Søk hendelser"
 
 #: ../src/MayaToolbar.vala:58
 msgid "Export or Share the default Calendar"
@@ -449,7 +449,7 @@ msgid ""
 "events."
 msgstr ""
 "Dine kommende hendelser vil bli vist her, når du velger en dato med "
-"begivenheter"
+"hendelser."
 
 #. / TRANSLATORS: for multiple days events, shows: (date) to (date)
 #: ../src/Sidebar/EventWidget.vala:199
@@ -502,7 +502,7 @@ msgstr "Nettadresse (URL):"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:91
 msgid "Use a secure connection"
-msgstr "Bruk sikker kobling"
+msgstr "Bruk sikker tilkobling"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
@@ -530,7 +530,7 @@ msgstr "bruker.navn"
 
 #: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr "E-post"
+msgstr "E-post:"
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
