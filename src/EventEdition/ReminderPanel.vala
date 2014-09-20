@@ -59,8 +59,13 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         scrolled.add_with_viewport (reminder_list);
         scrolled.expand = true;
 
+        var frame = new Gtk.Frame (null);
+        frame.margin_start = 12;
+        frame.margin_end = 12;
+        frame.add (scrolled);
+
         attach (reminder_label, 0, 0, 1, 1);
-        attach (scrolled, 0, 1, 1, 1);
+        attach (frame, 0, 1, 1, 1);
         attach (button_box, 0, 2, 1, 1);
         load ();
     }
@@ -157,7 +162,8 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
 
     public ReminderGrid (string uid) {
         this.uid = uid;
-        set_margin_bottom (6);
+
+        set_margin_top (6);
         set_margin_start (6);
         set_margin_end (6);
 

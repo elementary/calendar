@@ -113,7 +113,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         comment_textview = new Gtk.TextView ();
         comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
         comment_textview.accepts_tab = false;
-        comment_textview.get_style_context ().add_class (Gtk.STYLE_CLASS_ENTRY);
         comment_textview.set_border_window_size (Gtk.TextWindowType.LEFT, 2);
         comment_textview.set_border_window_size (Gtk.TextWindowType.RIGHT, 2);
         comment_textview.set_border_window_size (Gtk.TextWindowType.TOP, 2);
@@ -124,6 +123,9 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         scrolled.add (comment_textview);
         scrolled.height_request = 100;
         scrolled.expand = true;
+
+        var frame = new Gtk.Frame (null);
+        frame.add (scrolled);
 
         attach (from_label, 0, 2, 4, 1);
         attach (from_date_picker, 0, 3, 1, 1);
@@ -140,7 +142,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             attach (calendar_box, 1, 1, 4, 1);
         }
         attach (comment_label, 0, 10, 4, 1);
-        attach (scrolled, 0, 11, 5, 1);
+        attach (frame, 0, 11, 5, 1);
 
         load ();
     }
