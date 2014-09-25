@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-01 21:29+0200\n"
-"PO-Revision-Date: 2014-07-13 10:55+0000\n"
-"Last-Translator: Mark Lutring <marcus@elitemail.hu>\n"
+"PO-Revision-Date: 2014-09-24 06:55+0000\n"
+"Last-Translator: Laszlo Espadas <kw@kardiweb.org>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-02 06:52+0000\n"
-"X-Generator: Launchpad (build 17192)\n"
+"X-Launchpad-Export-Date: 2014-09-25 05:56+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 "Language: hu\n"
 
 #: ../src/Grid/VAutoHider.vala:96
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../src/Grid/WeekLabels.vala:53 ../src/Grid/Header.vala:62
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Hetek számának elrejtése"
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:64
 msgid "Show Week Numbers"
@@ -48,11 +48,11 @@ msgstr "Esemény hozzáadása"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "Maja névjegye"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "Naptár névjegye"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -156,7 +156,7 @@ msgstr "Eddig"
 
 #: ../src/EventEdition/RepeatPanel.vala:139
 msgid "After"
-msgstr ""
+msgstr "Után"
 
 #: ../src/EventEdition/RepeatPanel.vala:166
 #: ../src/EventEdition/EventDialog.vala:104
@@ -165,7 +165,7 @@ msgstr "Ismétlés"
 
 #: ../src/EventEdition/RepeatPanel.vala:185
 msgid "The same day every month"
-msgstr ""
+msgstr "Minden hónapban ugyanazon a napon"
 
 #: ../src/EventEdition/RepeatPanel.vala:303
 msgid "Sunday"
@@ -197,27 +197,27 @@ msgstr "Szombat"
 
 #: ../src/EventEdition/RepeatPanel.vala:327
 msgid "Every last %s"
-msgstr ""
+msgstr "Minden utolsó %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:330
 msgid "Every first %s"
-msgstr ""
+msgstr "Minden első %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:333
 msgid "Every second %s"
-msgstr ""
+msgstr "Minden második %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:336
 msgid "Every third %s"
-msgstr ""
+msgstr "Minden harmadik %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:339
 msgid "Every fourth %s"
-msgstr ""
+msgstr "Minden negyedik %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:342
 msgid "Every fifth %s"
-msgstr ""
+msgstr "Minden ötödik %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:350
 msgid "Mon"
@@ -253,7 +253,7 @@ msgstr "Emlékeztetők:"
 
 #: ../src/EventEdition/ReminderPanel.vala:35
 msgid "No Reminders"
-msgstr ""
+msgstr "Nincsenek emlékeztetők"
 
 #: ../src/EventEdition/ReminderPanel.vala:46
 msgid "Add Reminder"
@@ -353,7 +353,7 @@ msgstr "Emlékeztetők"
 
 #: ../src/EventEdition/EventDialog.vala:140
 msgid "Delete Event"
-msgstr ""
+msgstr "Esemény törlése"
 
 #: ../src/EventEdition/EventDialog.vala:152
 msgid "Create Event"
@@ -369,7 +369,7 @@ msgstr "Résztvevők:"
 
 #: ../src/EventEdition/GuestsPanel.vala:45
 msgid "Invite"
-msgstr ""
+msgstr "Emberek meghívása"
 
 #: ../src/EventEdition/GuestsPanel.vala:227
 msgid "Accepted"
@@ -393,7 +393,7 @@ msgstr "Eddig:"
 
 #: ../src/EventEdition/InfoPanel.vala:89
 msgid "Title:"
-msgstr ""
+msgstr "Cím:"
 
 #: ../src/EventEdition/InfoPanel.vala:91
 msgid "Name of Event"
@@ -429,7 +429,7 @@ msgstr "Új esemény létrehozása"
 
 #: ../src/MayaToolbar.vala:43
 msgid "Go to today's date"
-msgstr ""
+msgstr "Ugrás a mai napra"
 
 #: ../src/MayaToolbar.vala:47
 msgid "Manage Calendars"
@@ -494,7 +494,7 @@ msgstr "Naptár létrehozása"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
@@ -530,15 +530,15 @@ msgstr "felhasználó.név"
 
 #: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr ""
+msgstr "E-mail:"
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr ""
+msgstr "pelda@email.hu"
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Egy másolat megtartása helyileg"
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
