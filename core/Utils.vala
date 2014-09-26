@@ -192,6 +192,7 @@ namespace Maya.Util {
 
     private void generate_month_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
                                            iCal.RecurrenceType rrule, DateTime start, DateTime end) {
+        // Computes month recurrences by day (for example: third friday of the month).
         for (int k = 0; k <= iCal.Size.BY_DAY; k++) {
             if (rrule.by_day[k] < iCal.Size.BY_DAY) {
                 if (rrule.count > 0) {
@@ -206,6 +207,7 @@ namespace Maya.Util {
                     int n = i*rrule.interval;
                     bool is_null_time = rrule.until.is_null_time () == 1;
                     var start_ical_day = get_date_from_ical_day (strip_time(start).add_months (n), rrule.by_day[k]);
+                    int week_of_month = (int)GLib.Math.ceil ((double)start.get_day_of_month () / 7);
                     while (view_range.last.compare (start_ical_day) > 0) {
                         if (is_null_time == false) {
                             if (start_ical_day.get_year () > rrule.until.year)
@@ -217,8 +219,18 @@ namespace Maya.Util {
                         
                         }
 
+                        // Set it at the right weekday
                         int interval = start_ical_day.get_day_of_month () - start.get_day_of_month ();
-                        dateranges.add (new Util.DateRange (start_ical_day, strip_time(end).add_months (n).add_days (interval)));
+                        var start_daterange_date = start_ical_day;
+                        var end_daterange_date = strip_time(end).add_months (n).add_days (interval);
+                        var new_week_of_month = (int)GLib.Math.ceil ((double)start_daterange_date.get_day_of_month () / 7);
+                        // Set it at the right week
+                        if (week_of_month != new_week_of_month) {
+                            start_daterange_date = start_daterange_date.add_weeks (week_of_month - new_week_of_month);
+                            end_daterange_date = end_daterange_date.add_weeks (week_of_month - new_week_of_month);
+                        }
+
+                        dateranges.add (new Util.DateRange (start_daterange_date, end_daterange_date));
                         i++;
                         n = i*rrule.interval;
                         start_ical_day = get_date_from_ical_day (strip_time(start).add_months (n), rrule.by_day[k]);
@@ -229,6 +241,7 @@ namespace Maya.Util {
             }
         }
 
+        // Computes month recurrences by month day (for example: 4th of the month).
         if (rrule.by_month_day[0] < iCal.Size.BY_MONTHDAY) {
             if (rrule.count > 0) {
                 for (int i = 1; i<=rrule.count; i++) {
