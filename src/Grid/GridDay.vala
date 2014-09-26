@@ -124,13 +124,17 @@ public class GridDay : Gtk.EventBox {
         event_buttons.clear ();
     }
 
+    public void sensitive_container (bool sens) {
+        container_grid.sensitive = sens;
+    }
+
     public void update_date (DateTime date) {
         this.date = date;
         label.label = date.get_day_of_month ().to_string ();
     }
 
     private bool on_button_press (Gdk.EventButton event) {
-        if (event.type == Gdk.EventType.2BUTTON_PRESS)
+        if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY)
             on_event_add (date);
 
         grab_focus ();

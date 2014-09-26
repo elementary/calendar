@@ -54,6 +54,13 @@ public class Grid : Gtk.Grid {
         var selected_date = day.date;
         selection_changed (selected_date);
         Settings.SavedState.get_default ().selected_day = selected_date.format ("%Y-%j");
+        var calmodel = Maya.Model.CalendarModel.get_default ();
+        var date_month = selected_date.get_month () - calmodel.month_start.get_month ();
+        var date_year = selected_date.get_year () - calmodel.month_start.get_year ();
+        if (date_month != 0 || date_year != 0) {
+            calmodel.change_month (date_month);
+            calmodel.change_year (date_year);
+        }
     }
 
     public void focus_date (DateTime date) {
@@ -144,28 +151,15 @@ public class Grid : Gtk.Grid {
     GridDay update_day (GridDay day, DateTime new_date, DateTime today, DateTime month_start) {
         if (new_date.get_day_of_year () == today.get_day_of_year () && new_date.get_year () == today.get_year ()) {
             day.name = "today";
-            if (new_date.get_month () == month_start.get_month ())
-            {
-                day.can_focus = true;
-                day.sensitive = true;
-            } else {
-                day.can_focus = false;
-                day.sensitive = false;
-            }
+        }
 
-        } else if (new_date.get_month () != month_start.get_month ()) {
-            day.name = null;
-            day.can_focus = false;
-            day.sensitive = false;
-
+        if (new_date.get_month () == month_start.get_month ()) {
+            day.sensitive_container (true);
         } else {
-            day.name = null;
-            day.can_focus = true;
-            day.sensitive = true;
+            day.sensitive_container (false);
         }
 
         day.update_date (new_date);
-
         return day;
     }
 
@@ -188,7 +182,7 @@ public class Grid : Gtk.Grid {
                 button = new SingleDayEventButton (event);
             else
                 button = new MultiDayEventButton (event);
-                
+
             E.Source source = event.get_data("source");
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             button.set_color (cal.dup_color ());
