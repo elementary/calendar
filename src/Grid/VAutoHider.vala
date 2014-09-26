@@ -84,8 +84,8 @@ namespace Maya.View {
                 }
             }
 
-            if (get_shown_children () != get_children ().length ()) {
-                uint more = get_children ().length () - get_shown_children () -1;
+            uint more = get_children ().length () - get_shown_children () -1;
+            if (get_shown_children () != get_children ().length () && more > 0) {
                 more_label.show ();
                 var more_label_allocation = Gtk.Allocation ();
                 more_label_allocation.width = allocation.width;
