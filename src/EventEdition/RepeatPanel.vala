@@ -130,7 +130,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         var ends_label = Maya.View.EventDialog.make_label (_("Ends:"));
 
-        var end_label = new Gtk.Label (_("Repeats"));
+        var end_label = new Gtk.Label (ngettext (_("Repeat"), _("Repeats"), 1));
         end_label.no_show_all = true;
 
         ends_combobox = new Gtk.ComboBoxText ();
@@ -193,11 +193,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         month_grid.add (same_radiobutton);
         month_grid.add (every_radiobutton);
 
-        var fake_grid_left = new Gtk.Grid ();
-        fake_grid_left.hexpand = true;
-        var fake_grid_right = new Gtk.Grid ();
-        fake_grid_right.hexpand = true;
-
         repeat_switch.notify["active"].connect (() => {
             bool active = repeat_switch.active;
             repeat_combobox.sensitive = active;
@@ -208,8 +203,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         });
         repeat_switch.active = false;
 
-        attach (fake_grid_left, 0, 0, 1, 1);
-        attach (fake_grid_right, 2, 0, 1, 1);
         attach (reminder_label, 1, 0, 1, 1);
         attach (repeat_grid, 1, 1, 1, 1);
         attach (every_label, 1, 2, 1, 1);

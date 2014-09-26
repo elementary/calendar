@@ -283,8 +283,7 @@ namespace Maya {
 
         void on_tb_add_clicked (DateTime dt) {
             var dialog = new Maya.View.EventDialog (window, null, null, dt);
-            dialog.present ();
-
+            dialog.show_all ();
         }
 
         /**

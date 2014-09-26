@@ -35,64 +35,67 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
         margin_start = 12;
         margin_end = 12;
-        set_row_spacing (6);
-        set_column_spacing (12);
+        row_spacing = 6;
         set_sensitive (parent_dialog.can_edit);
+        orientation = Gtk.Orientation.VERTICAL;
+
+        guest_store = new Gtk.ListStore(2, typeof (string), typeof (string));
 
         var guest_label = Maya.View.EventDialog.make_label (_("Participants:"));
 
-        guest_entry = new Gtk.SearchEntry ();
-        guest_entry.placeholder_text = _("Invite");
-        guest_entry.hexpand = true;
-
-        guest_entry.activate.connect (() => {
-            var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
-            attendee.set_attendee (guest_entry.text);
-            attendees.add (attendee);
-            add_guest ((owned)attendee);
-	    guest_entry.delete_text (0, -1);
-        });
-
         load_contacts.begin ();
 
-        guest_completion = new Gtk.EntryCompletion ();
-        guest_entry.set_completion (guest_completion);
-        
-        Gtk.EntryCompletionMatchFunc matcher = (completion, key, iter) => {
-            Value val1, val2;
-            Gtk.ListStore model = (Gtk.ListStore)completion.get_model ();
-            
-            model.get_value (iter, 0, out val1);
-            model.get_value (iter, 1, out val2);
+        var no_guests_label = new Gtk.Label ("");
+        no_guests_label.set_markup (_("No Participants"));
+        no_guests_label.sensitive = false;
+        no_guests_label.show ();
 
-            if (val1.get_string ().casefold (-1).contains (key) || val2.get_string ().casefold (-1).contains (key)) 
-                return true;
-            
-            return false;
-        };
-        
-        guest_completion.set_match_func (matcher);
-        guest_completion.set_minimum_key_length (3);
-
-        guest_store = new Gtk.ListStore(2, typeof (string), typeof (string));
-        guest_completion.set_model (guest_store);
-        guest_completion.set_text_column (0);
-        guest_completion.set_text_column (1);
-        guest_completion.match_selected.connect ((model, iter) => suggestion_selected (model, iter));
-
-        guest_list = new Gtk.ListBox ();    
+        guest_list = new Gtk.ListBox ();
         guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
+        guest_list.set_placeholder (no_guests_label);
 
         var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null);
         guest_scrolledwindow.add_with_viewport (guest_list);
         guest_scrolledwindow.expand = true;
 
         var frame = new Gtk.Frame (null);
+        frame.margin_top = 6;
         frame.add (guest_scrolledwindow);
 
-        attach (guest_label, 0, 0, 1, 1);
-        attach (guest_entry, 0, 1, 1, 1);
-        attach (frame, 0, 2, 1, 1);
+        guest_completion = new Gtk.EntryCompletion ();
+        guest_completion.set_minimum_key_length (3);
+        guest_completion.set_model (guest_store);
+        guest_completion.set_text_column (0);
+        guest_completion.set_text_column (1);
+        guest_completion.match_selected.connect ((model, iter) => suggestion_selected (model, iter));
+        guest_completion.set_match_func ((completion, key, iter) => {
+            Value val1, val2;
+            Gtk.ListStore model = (Gtk.ListStore)completion.get_model ();
+
+            model.get_value (iter, 0, out val1);
+            model.get_value (iter, 1, out val2);
+
+            if (val1.get_string ().casefold (-1).contains (key) || val2.get_string ().casefold (-1).contains (key)) 
+                return true;
+
+            return false;
+        });
+
+        guest_entry = new Gtk.SearchEntry ();
+        guest_entry.placeholder_text = _("Invite");
+        guest_entry.hexpand = true;
+        guest_entry.set_completion (guest_completion);
+        guest_entry.activate.connect (() => {
+            var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
+            attendee.set_attendee (guest_entry.text);
+            attendees.add (attendee);
+            add_guest ((owned)attendee);
+            guest_entry.delete_text (0, -1);
+        });
+
+        add (guest_label);
+        add (guest_entry);
+        add (frame);
 
         if (parent_dialog.ecal != null) {
             unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
@@ -166,27 +169,27 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     }
 
     private void add_guest (iCal.Property attendee) {
-	    var row = new Gtk.ListBoxRow ();
-	    var guest_element = new GuestGrid (attendee);
-	    row.add (guest_element);
-	    guest_list.add (row);
-	    
-	    attendees.add (guest_element.attendee);
-	    guest_element.removed.connect (() => {
+        var row = new Gtk.ListBoxRow ();
+        var guest_element = new GuestGrid (attendee);
+        row.add (guest_element);
+        guest_list.add (row);
+
+        attendees.add (guest_element.attendee);
+        guest_element.removed.connect (() => {
             attendees.remove (guest_element.attendee);
         });
-	
-	    row.show_all ();
+
+        row.show_all ();
     }
 
     private bool suggestion_selected (Gtk.TreeModel model, Gtk.TreeIter iter) {
         var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
         Value selected_value;
-        
+
         model.get_value (iter, 1, out selected_value);;
         attendee.set_attendee (selected_value.get_string ());
         add_guest ((owned)attendee);
-	guest_entry.delete_text (0, -1);
+        guest_entry.delete_text (0, -1);
         return true;
     }
 

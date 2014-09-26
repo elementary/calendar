@@ -23,15 +23,14 @@ public enum EventType {
 }
 
 public class EventDialog : Gtk.Dialog {
-
-        /**
-         * A boolean indicating whether we can edit the current event.
-         */
         public E.Source? source { get; set; }
         public E.Source? original_source { get; private set; }
         public E.CalComponent ecal { get; set; }
         public DateTime date_time { get; set; }
 
+        /**
+         * A boolean indicating whether we can edit the current event.
+         */
         public bool can_edit = true;
 
         private E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
@@ -76,6 +75,10 @@ public class EventDialog : Gtk.Dialog {
             build_dialog (date_time != null);
         }
 
+        ~EventDialog () {
+            warning ("destroying");
+        }
+
         //--- Public Methods ---//
 
         void build_dialog (bool add_event) {
@@ -88,7 +91,7 @@ public class EventDialog : Gtk.Dialog {
             location_panel = new EventEdition.LocationPanel (this);
             reminder_panel = new EventEdition.ReminderPanel (this);
             repeat_panel = new EventEdition.RepeatPanel (this);
-            
+
             mode_button = new Granite.Widgets.ModeButton ();
             var info_icon = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.BUTTON);
             info_icon.tooltip_text = _("General Informations");
@@ -187,7 +190,6 @@ public class EventDialog : Gtk.Dialog {
             var label = new Gtk.Label ("<span weight='bold'>%s</span>".printf (text));
             label.use_markup = true;
             label.set_alignment (0.0f, 0.5f);
-
             return label;
         }
 
@@ -197,7 +199,7 @@ public class EventDialog : Gtk.Dialog {
             guests_panel.save ();
             reminder_panel.save ();
             repeat_panel.save ();
-            
+
             var calmodel = Model.CalendarModel.get_default ();
             if (event_type == EventType.ADD)
                 calmodel.add_event (source, ecal);
@@ -213,13 +215,14 @@ public class EventDialog : Gtk.Dialog {
                     calmodel.add_event (source, ecal);
                 }
             }
-            this.destroy();
+
+            this.destroy ();
         }
 
         private void remove_event () {
             var calmodel = Model.CalendarModel.get_default ();
             calmodel.remove_event (original_source, ecal, mod_type);
-            this.destroy();
+            this.destroy ();
         }
     }
 }

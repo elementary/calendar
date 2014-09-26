@@ -35,6 +35,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         set_column_spacing (12);
         set_sensitive (parent_dialog.can_edit);
 
+        location_store = new Gtk.ListStore (2, typeof (string), typeof (string));
+
         var location_label = Maya.View.EventDialog.make_label (_("Location:"));
         location_entry = new Gtk.SearchEntry ();
         location_entry.placeholder_text = _("John Smith OR Example St.");
@@ -42,27 +44,22 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         location_entry.activate.connect (() => {compute_location.begin (location_entry.text);});
         attach (location_label, 0, 0, 1, 1);
         attach (location_entry, 0, 1, 1, 1);
-        
+
         location_completion = new Gtk.EntryCompletion ();
         location_completion.set_minimum_key_length (3);
         location_entry.set_completion (location_completion);
-        
-        Gtk.EntryCompletionMatchFunc matcher = (completion, key, iter) => {
+
+        location_completion.set_match_func ((completion, key, iter) => {
             Value val1, val2;
             Gtk.ListStore model = (Gtk.ListStore)completion.get_model ();
-            
             model.get_value (iter, 0, out val1);
             model.get_value (iter, 1, out val2);
 
             if (val1.get_string ().casefold (-1).contains (key) || val2.get_string ().casefold (-1).contains (key)) 
                 return true;
-            
+
             return false;
-        };
-        
-        location_completion.set_match_func (matcher);
-        
-        location_store = new Gtk.ListStore (2, typeof (string), typeof (string));
+        });
         location_completion.set_model (location_store);
         location_completion.set_text_column (0);
         location_completion.set_text_column (1);
@@ -72,11 +69,11 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         var view = champlain_embed.champlain_view;
         var marker_layer = new Champlain.MarkerLayer.full (Champlain.SelectionMode.SINGLE);
         view.add_layer (marker_layer);
-        
+
         load_contact.begin ();
 
         var frame = new Gtk.Frame (null);
-        frame.add (champlain_embed);        
+        frame.add (champlain_embed);
 
         attach (frame, 0, 2, 1, 1);
 
@@ -106,6 +103,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                         need_relocation = true;
                 }
             }
+
             if (need_relocation == true) {
                 if (location != null && location != "") {
                     compute_location.begin (location_entry.text);
@@ -115,6 +113,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                 }
             }
         }
+
         view.zoom_level = 8;
         view.center_on (point.latitude, point.longitude);
         marker_layer.add_marker (point);
@@ -135,7 +134,6 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 
             for (int i = 0; i < count; i++) {
                 unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.GEO);
-
                 comp.remove_property (remove_prop);
             }
 
@@ -159,7 +157,10 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                 foreach (var place in places) {
                     point.latitude = place.location.latitude;
                     point.longitude = place.location.longitude;
-                    champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
+                    Idle.add (() => {
+                        champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
+                        return false;
+                    });
                 }
 
                 if (loc == location_entry.text)
@@ -197,7 +198,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
      */
     private async void load_contact () {
         var aggregator = Folks.IndividualAggregator.dup ();
-        
+
         if (aggregator.is_prepared) {
             add_contacts_store.begin (aggregator.individuals);
         } else {
@@ -211,11 +212,9 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 
     private bool suggestion_selected (Gtk.TreeModel model, Gtk.TreeIter iter) {
         Value address;
-        
         model.get_value (iter, 1, out address);
         location_entry.set_text (address.get_string ());
         compute_location.begin (address.get_string ());
-        
         return true;
     }
 }

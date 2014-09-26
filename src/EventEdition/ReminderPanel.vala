@@ -24,31 +24,24 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
     public ReminderPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
         expand = true;
-        row_spacing = 6;
-        column_spacing = 12;
+        orientation = Gtk.Orientation.VERTICAL;
         sensitive = parent_dialog.can_edit;
 
         var reminder_label = Maya.View.EventDialog.make_label (_("Reminders:"));
         reminder_label.margin_start = 12;
 
         var no_reminder_label = new Gtk.Label ("");
-        no_reminder_label.set_markup ("<b><span color=\'darkgrey\'>%s</span></b>".printf (_("No Reminders")));
+        no_reminder_label.set_markup (_("No Reminders"));
+        no_reminder_label.sensitive = false;
         no_reminder_label.show ();
 
         reminders = new Gee.ArrayList<ReminderGrid> ();
         reminders_to_remove = new Gee.ArrayList<string> ();
-        
+
         reminder_list = new Gtk.ListBox ();
         reminder_list.expand = true;
         reminder_list.set_selection_mode (Gtk.SelectionMode.NONE);
         reminder_list.set_placeholder (no_reminder_label);
-
-        var add_reminder_button = new Gtk.Button.with_label (_("Add Reminder"));
-        add_reminder_button.clicked.connect (() => {
-            add_reminder ("");
-        });
-        var button_box = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
-        button_box.add (add_reminder_button);
 
         var fake_grid_left = new Gtk.Grid ();
         fake_grid_left.hexpand = true;
@@ -60,13 +53,28 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         scrolled.expand = true;
 
         var frame = new Gtk.Frame (null);
+        frame.margin_top = 6;
         frame.margin_start = 12;
         frame.margin_end = 12;
         frame.add (scrolled);
 
-        attach (reminder_label, 0, 0, 1, 1);
-        attach (frame, 0, 1, 1, 1);
-        attach (button_box, 0, 2, 1, 1);
+        var inline_toolbar = new Gtk.Toolbar ();
+        inline_toolbar.margin_start = 12;
+        inline_toolbar.margin_end = 12;
+        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        inline_toolbar.icon_size = Gtk.IconSize.SMALL_TOOLBAR;
+
+        var add_button = new Gtk.ToolButton (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON), null);
+        add_button.tooltip_text = _("Add Reminder");
+        add_button.clicked.connect (() => {
+            add_reminder ("");
+        });
+
+        inline_toolbar.add (add_button);
+
+        add (reminder_label);
+        add (frame);
+        add (inline_toolbar);
         load ();
     }
     
