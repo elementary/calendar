@@ -3,6 +3,17 @@
 macro(add_translations_directory NLS_PACKAGE)
     add_custom_target (i18n ALL COMMENT “Building i18n messages.”)
     find_program (MSGFMT_EXECUTABLE msgfmt)
+    # be sure that all languages are present
+    set (LANGUAGES_NEEDED af am ar ast az be bg bn bs ca ckb cs da de el en_AU en_CA en_GB eo es et eu fa fi fr fr_CA gl he hi hr hu hy id it ja ka ko ky lb lo lt lv ml mr ms nb nl nn pl pt pt_BR ro ru rue si sk sl sma sq sr sv sw ta te th tr uk vi zh_CN zh_HK zh_TW)
+    foreach (LANGUAGE_NEEDED ${LANGUAGES_NEEDED})
+        if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${LANGUAGE_NEEDED}.po)
+            file (APPEND ${CMAKE_CURRENT_SOURCE_DIR}/${LANGUAGE_NEEDED}.po "msgid \"\"\n")
+            file (APPEND ${CMAKE_CURRENT_SOURCE_DIR}/${LANGUAGE_NEEDED}.po "msgstr \"\"\n")
+            file (APPEND ${CMAKE_CURRENT_SOURCE_DIR}/${LANGUAGE_NEEDED}.po "\"MIME-Version: 1.0\\n\"\n")
+            file (APPEND ${CMAKE_CURRENT_SOURCE_DIR}/${LANGUAGE_NEEDED}.po "\"Content-Type: text/plain; charset=UTF-8\\n\"\n")
+        endif ()
+    endforeach (LANGUAGE_NEEDED ${LANGUAGES_NEEDED})
+    # generate .mo from .po
     file (GLOB PO_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.po)
     foreach (PO_INPUT ${PO_FILES})
         get_filename_component (PO_INPUT_BASE ${PO_INPUT} NAME_WE)
@@ -14,7 +25,6 @@ macro(add_translations_directory NLS_PACKAGE)
             RENAME ${NLS_PACKAGE}.mo)
     endforeach (PO_INPUT ${PO_FILES})
 endmacro(add_translations_directory)
-
 
 macro(add_translations_catalog NLS_PACKAGE)
     add_custom_target (pot COMMENT “Building translation catalog.”)
