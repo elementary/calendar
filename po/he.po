@@ -7,26 +7,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-01 21:29+0200\n"
+"POT-Creation-Date: 2014-09-26 13:39+0200\n"
 "PO-Revision-Date: 2013-07-21 20:44+0000\n"
 "Last-Translator: Danny Damsky <dannydamsky99@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-02 06:52+0000\n"
-"X-Generator: Launchpad (build 17192)\n"
+"X-Launchpad-Export-Date: 2014-09-27 05:57+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 "Language: he\n"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
 msgstr ""
 
-#: ../src/Grid/WeekLabels.vala:53 ../src/Grid/Header.vala:62
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:61
 msgid "Hide Week Numbers"
 msgstr ""
 
-#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:64
+#: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:63
 msgid "Show Week Numbers"
 msgstr "הצגת מספרי שבועות"
 
@@ -42,7 +42,7 @@ msgstr "לוח שנה"
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr "Maya;מתכנן;תאריכים;ימים;אירועים;"
 
-#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:61
+#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:62
 msgid "Add Event"
 msgstr "הוספת אירוע"
 
@@ -63,20 +63,21 @@ msgstr "יצוא לוח שנה"
 msgid "calendar.ics"
 msgstr "קובץ calendar.ics"
 
-#: ../src/Widgets/ContractorButtonWithMenu.vala:78 ../src/SourceDialog.vala:54
+#: ../src/Widgets/ContractorButtonWithMenu.vala:78
+#: ../src/EventEdition/EventDialog.vala:168 ../src/SourceDialog.vala:54
 msgid "Cancel"
 msgstr ""
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
-#: ../src/SourceDialog.vala:155
+#: ../src/SourceDialog.vala:156
 msgid "Save"
 msgstr ""
 
-#: ../src/EventEdition/LocationPanel.vala:38
+#: ../src/EventEdition/LocationPanel.vala:40
 msgid "Location:"
 msgstr ""
 
-#: ../src/EventEdition/LocationPanel.vala:40
+#: ../src/EventEdition/LocationPanel.vala:42
 msgid "John Smith OR Example St."
 msgstr "שם או רחוב לדוגמא"
 
@@ -143,6 +144,12 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:133
 #: ../src/EventEdition/RepeatPanel.vala:166
+#: ../src/EventEdition/EventDialog.vala:109
+msgid "Repeat"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:133
+#: ../src/EventEdition/RepeatPanel.vala:166
 msgid "Repeats"
 msgstr ""
 
@@ -158,224 +165,223 @@ msgstr ""
 msgid "After"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:166
-#: ../src/EventEdition/EventDialog.vala:104
-msgid "Repeat"
-msgstr ""
-
 #: ../src/EventEdition/RepeatPanel.vala:185
 msgid "The same day every month"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:303
+#: ../src/EventEdition/RepeatPanel.vala:296
 msgid "Sunday"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:306
+#: ../src/EventEdition/RepeatPanel.vala:299
 msgid "Monday"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:309
+#: ../src/EventEdition/RepeatPanel.vala:302
 msgid "Tuesday"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:312
+#: ../src/EventEdition/RepeatPanel.vala:305
 msgid "Wednesday"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:315
+#: ../src/EventEdition/RepeatPanel.vala:308
 msgid "Thursday"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:318
+#: ../src/EventEdition/RepeatPanel.vala:311
 msgid "Friday"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:321
+#: ../src/EventEdition/RepeatPanel.vala:314
 msgid "Saturday"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:327
+#: ../src/EventEdition/RepeatPanel.vala:320
 msgid "Every last %s"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:330
+#: ../src/EventEdition/RepeatPanel.vala:323
 msgid "Every first %s"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:333
+#: ../src/EventEdition/RepeatPanel.vala:326
 msgid "Every second %s"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:336
+#: ../src/EventEdition/RepeatPanel.vala:329
 msgid "Every third %s"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:339
+#: ../src/EventEdition/RepeatPanel.vala:332
 msgid "Every fourth %s"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:342
+#: ../src/EventEdition/RepeatPanel.vala:335
 msgid "Every fifth %s"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:350
+#: ../src/EventEdition/RepeatPanel.vala:343
 msgid "Mon"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:351
+#: ../src/EventEdition/RepeatPanel.vala:344
 msgid "Tue"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:352
+#: ../src/EventEdition/RepeatPanel.vala:345
 msgid "Wed"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:353
+#: ../src/EventEdition/RepeatPanel.vala:346
 msgid "Thu"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:354
+#: ../src/EventEdition/RepeatPanel.vala:347
 msgid "Fri"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:355
+#: ../src/EventEdition/RepeatPanel.vala:348
 msgid "Sat"
 msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:356
+#: ../src/EventEdition/RepeatPanel.vala:349
 msgid "Sun"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:31
+#: ../src/EventEdition/ReminderPanel.vala:30
 msgid "Reminders:"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:35
+#: ../src/EventEdition/ReminderPanel.vala:34
 msgid "No Reminders"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:46
+#: ../src/EventEdition/ReminderPanel.vala:68
 msgid "Add Reminder"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:165
+#: ../src/EventEdition/ReminderPanel.vala:179
 msgid "0 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:166
+#: ../src/EventEdition/ReminderPanel.vala:180
 msgid "1 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:167
+#: ../src/EventEdition/ReminderPanel.vala:181
 msgid "5 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:168
+#: ../src/EventEdition/ReminderPanel.vala:182
 msgid "10 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:169
+#: ../src/EventEdition/ReminderPanel.vala:183
 msgid "15 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:170
+#: ../src/EventEdition/ReminderPanel.vala:184
 msgid "20 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:171
+#: ../src/EventEdition/ReminderPanel.vala:185
 msgid "25 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:172
+#: ../src/EventEdition/ReminderPanel.vala:186
 msgid "30 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:173
+#: ../src/EventEdition/ReminderPanel.vala:187
 msgid "45 minutes"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:174
+#: ../src/EventEdition/ReminderPanel.vala:188
 msgid "1 hour"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:175
+#: ../src/EventEdition/ReminderPanel.vala:189
 msgid "2 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:176
+#: ../src/EventEdition/ReminderPanel.vala:190
 msgid "3 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:177
+#: ../src/EventEdition/ReminderPanel.vala:191
 msgid "12 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:178
+#: ../src/EventEdition/ReminderPanel.vala:192
 msgid "24 hours"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:179
+#: ../src/EventEdition/ReminderPanel.vala:193
 msgid "2 days"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:180
+#: ../src/EventEdition/ReminderPanel.vala:194
 msgid "1 week"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:189
+#: ../src/EventEdition/ReminderPanel.vala:203
 msgid "Notification"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:190
+#: ../src/EventEdition/ReminderPanel.vala:204
 msgid "Email"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:64
+#: ../src/EventEdition/EventDialog.vala:65
 msgid "Edit Event"
 msgstr "עריכת אירוע"
 
-#: ../src/EventEdition/EventDialog.vala:92
+#: ../src/EventEdition/EventDialog.vala:97
 msgid "General Informations"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:95
+#: ../src/EventEdition/EventDialog.vala:100
 msgid "Location"
 msgstr "מקום"
 
-#: ../src/EventEdition/EventDialog.vala:98
+#: ../src/EventEdition/EventDialog.vala:103
 msgid "Guests"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:101
+#: ../src/EventEdition/EventDialog.vala:106
 msgid "Reminders"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:140
+#: ../src/EventEdition/EventDialog.vala:150
 msgid "Delete Event"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:152
+#: ../src/EventEdition/EventDialog.vala:162
 msgid "Create Event"
 msgstr "יצירת אירוע"
 
-#: ../src/EventEdition/EventDialog.vala:155
+#: ../src/EventEdition/EventDialog.vala:165
 msgid "Save Changes"
 msgstr "שמירת השינויים"
 
-#: ../src/EventEdition/GuestsPanel.vala:42
+#: ../src/EventEdition/GuestsPanel.vala:44
 msgid "Participants:"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:45
+#: ../src/EventEdition/GuestsPanel.vala:49
+msgid "No Participants"
+msgstr ""
+
+#: ../src/EventEdition/GuestsPanel.vala:85
 msgid "Invite"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:227
+#: ../src/EventEdition/GuestsPanel.vala:234
 msgid "Accepted"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:230
+#: ../src/EventEdition/GuestsPanel.vala:237
 msgid "Declined"
 msgstr ""
 
@@ -407,39 +413,39 @@ msgstr ""
 msgid "Comments:"
 msgstr ""
 
-#: ../src/SourceItem.vala:105 ../src/Sidebar/EventWidget.vala:132
+#: ../src/SourceItem.vala:107 ../src/Sidebar/EventWidget.vala:132
 msgid "Remove"
 msgstr ""
 
-#: ../src/SourceItem.vala:111 ../src/Sidebar/EventWidget.vala:131
+#: ../src/SourceItem.vala:117 ../src/Sidebar/EventWidget.vala:131
 msgid "Edit…"
 msgstr ""
 
-#: ../src/SourceItem.vala:135
+#: ../src/SourceItem.vala:145
 msgid "Undo"
 msgstr ""
 
-#: ../src/SourceItem.vala:153
+#: ../src/SourceItem.vala:163
 msgid "Calendar \"%s\" removed."
 msgstr ""
 
-#: ../src/MayaToolbar.vala:40
+#: ../src/MayaToolbar.vala:41
 msgid "Create a new event"
 msgstr "יצירת אירוע חדש"
 
-#: ../src/MayaToolbar.vala:43
+#: ../src/MayaToolbar.vala:44
 msgid "Go to today's date"
 msgstr ""
 
-#: ../src/MayaToolbar.vala:47
+#: ../src/MayaToolbar.vala:48
 msgid "Manage Calendars"
 msgstr ""
 
-#: ../src/MayaToolbar.vala:55
+#: ../src/MayaToolbar.vala:56
 msgid "Search Events"
 msgstr "חיפוש אירועים"
 
-#: ../src/MayaToolbar.vala:58
+#: ../src/MayaToolbar.vala:59
 msgid "Export or Share the default Calendar"
 msgstr "יצוא או שיתוף יומן בררת המחדל"
 
@@ -462,31 +468,31 @@ msgstr ""
 msgid "Add New Calendar…"
 msgstr ""
 
-#: ../src/SourceDialog.vala:55
+#: ../src/SourceDialog.vala:56
 msgid "Create"
 msgstr ""
 
-#: ../src/SourceDialog.vala:64
+#: ../src/SourceDialog.vala:65
 msgid "Name:"
 msgstr ""
 
-#: ../src/SourceDialog.vala:67
+#: ../src/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr ""
 
-#: ../src/SourceDialog.vala:90
+#: ../src/SourceDialog.vala:91
 msgid "Type:"
 msgstr ""
 
-#: ../src/SourceDialog.vala:112
+#: ../src/SourceDialog.vala:113
 msgid "Color:"
 msgstr ""
 
-#: ../src/SourceDialog.vala:117
+#: ../src/SourceDialog.vala:118
 msgid "Mark as default calendar"
 msgstr ""
 
-#: ../src/SourceDialog.vala:147
+#: ../src/SourceDialog.vala:148
 msgid "Create Calendar"
 msgstr ""
 

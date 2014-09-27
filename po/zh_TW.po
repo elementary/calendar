@@ -7,25 +7,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-01 21:29+0200\n"
+"POT-Creation-Date: 2014-09-26 13:39+0200\n"
 "PO-Revision-Date: 2014-07-05 13:23+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-02 06:53+0000\n"
-"X-Generator: Launchpad (build 17192)\n"
+"X-Launchpad-Export-Date: 2014-09-27 05:58+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
 msgstr "還有 %u 個…"
 
-#: ../src/Grid/WeekLabels.vala:53 ../src/Grid/Header.vala:62
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:61
 msgid "Hide Week Numbers"
 msgstr ""
 
-#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:64
+#: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:63
 msgid "Show Week Numbers"
 msgstr "顯示週數"
 
@@ -41,7 +41,7 @@ msgstr "行事曆"
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr "Maya;Planner;Dates;Days;Events;規劃;日期;事件;排程;安排;約會;活動;"
 
-#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:61
+#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:62
 msgid "Add Event"
 msgstr "加入事件"
 
@@ -62,20 +62,21 @@ msgstr "匯出行事曆..."
 msgid "calendar.ics"
 msgstr "行事曆.ics"
 
-#: ../src/Widgets/ContractorButtonWithMenu.vala:78 ../src/SourceDialog.vala:54
+#: ../src/Widgets/ContractorButtonWithMenu.vala:78
+#: ../src/EventEdition/EventDialog.vala:168 ../src/SourceDialog.vala:54
 msgid "Cancel"
 msgstr "取消"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
-#: ../src/SourceDialog.vala:155
+#: ../src/SourceDialog.vala:156
 msgid "Save"
 msgstr "儲存"
 
-#: ../src/EventEdition/LocationPanel.vala:38
+#: ../src/EventEdition/LocationPanel.vala:40
 msgid "Location:"
 msgstr "位置："
 
-#: ../src/EventEdition/LocationPanel.vala:40
+#: ../src/EventEdition/LocationPanel.vala:42
 msgid "John Smith OR Example St."
 msgstr "王小明 或 某某街"
 
@@ -142,6 +143,12 @@ msgstr "結束："
 
 #: ../src/EventEdition/RepeatPanel.vala:133
 #: ../src/EventEdition/RepeatPanel.vala:166
+#: ../src/EventEdition/EventDialog.vala:109
+msgid "Repeat"
+msgstr "重復"
+
+#: ../src/EventEdition/RepeatPanel.vala:133
+#: ../src/EventEdition/RepeatPanel.vala:166
 msgid "Repeats"
 msgstr "重複次數"
 
@@ -157,224 +164,223 @@ msgstr "直到"
 msgid "After"
 msgstr "之後"
 
-#: ../src/EventEdition/RepeatPanel.vala:166
-#: ../src/EventEdition/EventDialog.vala:104
-msgid "Repeat"
-msgstr "重復"
-
 #: ../src/EventEdition/RepeatPanel.vala:185
 msgid "The same day every month"
 msgstr "每月的同一天"
 
-#: ../src/EventEdition/RepeatPanel.vala:303
+#: ../src/EventEdition/RepeatPanel.vala:296
 msgid "Sunday"
 msgstr "週日"
 
-#: ../src/EventEdition/RepeatPanel.vala:306
+#: ../src/EventEdition/RepeatPanel.vala:299
 msgid "Monday"
 msgstr "週一"
 
-#: ../src/EventEdition/RepeatPanel.vala:309
+#: ../src/EventEdition/RepeatPanel.vala:302
 msgid "Tuesday"
 msgstr "週二"
 
-#: ../src/EventEdition/RepeatPanel.vala:312
+#: ../src/EventEdition/RepeatPanel.vala:305
 msgid "Wednesday"
 msgstr "週三"
 
-#: ../src/EventEdition/RepeatPanel.vala:315
+#: ../src/EventEdition/RepeatPanel.vala:308
 msgid "Thursday"
 msgstr "週四"
 
-#: ../src/EventEdition/RepeatPanel.vala:318
+#: ../src/EventEdition/RepeatPanel.vala:311
 msgid "Friday"
 msgstr "週五"
 
-#: ../src/EventEdition/RepeatPanel.vala:321
+#: ../src/EventEdition/RepeatPanel.vala:314
 msgid "Saturday"
 msgstr "週六"
 
-#: ../src/EventEdition/RepeatPanel.vala:327
+#: ../src/EventEdition/RepeatPanel.vala:320
 msgid "Every last %s"
 msgstr "每最後一個 %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:330
+#: ../src/EventEdition/RepeatPanel.vala:323
 msgid "Every first %s"
 msgstr "每第一個 %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:333
+#: ../src/EventEdition/RepeatPanel.vala:326
 msgid "Every second %s"
 msgstr "每第二個 %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:336
+#: ../src/EventEdition/RepeatPanel.vala:329
 msgid "Every third %s"
 msgstr "每第三個 %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:339
+#: ../src/EventEdition/RepeatPanel.vala:332
 msgid "Every fourth %s"
 msgstr "每第四個 %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:342
+#: ../src/EventEdition/RepeatPanel.vala:335
 msgid "Every fifth %s"
 msgstr "每第五個 %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:350
+#: ../src/EventEdition/RepeatPanel.vala:343
 msgid "Mon"
 msgstr "一"
 
-#: ../src/EventEdition/RepeatPanel.vala:351
+#: ../src/EventEdition/RepeatPanel.vala:344
 msgid "Tue"
 msgstr "二"
 
-#: ../src/EventEdition/RepeatPanel.vala:352
+#: ../src/EventEdition/RepeatPanel.vala:345
 msgid "Wed"
 msgstr "三"
 
-#: ../src/EventEdition/RepeatPanel.vala:353
+#: ../src/EventEdition/RepeatPanel.vala:346
 msgid "Thu"
 msgstr "四"
 
-#: ../src/EventEdition/RepeatPanel.vala:354
+#: ../src/EventEdition/RepeatPanel.vala:347
 msgid "Fri"
 msgstr "五"
 
-#: ../src/EventEdition/RepeatPanel.vala:355
+#: ../src/EventEdition/RepeatPanel.vala:348
 msgid "Sat"
 msgstr "六"
 
-#: ../src/EventEdition/RepeatPanel.vala:356
+#: ../src/EventEdition/RepeatPanel.vala:349
 msgid "Sun"
 msgstr "日"
 
-#: ../src/EventEdition/ReminderPanel.vala:31
+#: ../src/EventEdition/ReminderPanel.vala:30
 msgid "Reminders:"
 msgstr "提醒："
 
-#: ../src/EventEdition/ReminderPanel.vala:35
+#: ../src/EventEdition/ReminderPanel.vala:34
 msgid "No Reminders"
 msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:46
+#: ../src/EventEdition/ReminderPanel.vala:68
 msgid "Add Reminder"
 msgstr "加入提醒"
 
-#: ../src/EventEdition/ReminderPanel.vala:165
+#: ../src/EventEdition/ReminderPanel.vala:179
 msgid "0 minutes"
 msgstr "0 分鐘"
 
-#: ../src/EventEdition/ReminderPanel.vala:166
+#: ../src/EventEdition/ReminderPanel.vala:180
 msgid "1 minutes"
 msgstr "1 分鐘"
 
-#: ../src/EventEdition/ReminderPanel.vala:167
+#: ../src/EventEdition/ReminderPanel.vala:181
 msgid "5 minutes"
 msgstr "5 5 分鐘"
 
-#: ../src/EventEdition/ReminderPanel.vala:168
+#: ../src/EventEdition/ReminderPanel.vala:182
 msgid "10 minutes"
 msgstr "10 分鐘"
 
-#: ../src/EventEdition/ReminderPanel.vala:169
+#: ../src/EventEdition/ReminderPanel.vala:183
 msgid "15 minutes"
 msgstr "15 分鐘"
 
-#: ../src/EventEdition/ReminderPanel.vala:170
+#: ../src/EventEdition/ReminderPanel.vala:184
 msgid "20 minutes"
 msgstr "20 分鐘"
 
-#: ../src/EventEdition/ReminderPanel.vala:171
+#: ../src/EventEdition/ReminderPanel.vala:185
 msgid "25 minutes"
 msgstr "25 分鐘"
 
-#: ../src/EventEdition/ReminderPanel.vala:172
+#: ../src/EventEdition/ReminderPanel.vala:186
 msgid "30 minutes"
 msgstr "30 分鐘"
 
-#: ../src/EventEdition/ReminderPanel.vala:173
+#: ../src/EventEdition/ReminderPanel.vala:187
 msgid "45 minutes"
 msgstr "45 分鐘"
 
-#: ../src/EventEdition/ReminderPanel.vala:174
+#: ../src/EventEdition/ReminderPanel.vala:188
 msgid "1 hour"
 msgstr "1 小時"
 
-#: ../src/EventEdition/ReminderPanel.vala:175
+#: ../src/EventEdition/ReminderPanel.vala:189
 msgid "2 hours"
 msgstr "2 小時"
 
-#: ../src/EventEdition/ReminderPanel.vala:176
+#: ../src/EventEdition/ReminderPanel.vala:190
 msgid "3 hours"
 msgstr "3 小時"
 
-#: ../src/EventEdition/ReminderPanel.vala:177
+#: ../src/EventEdition/ReminderPanel.vala:191
 msgid "12 hours"
 msgstr "12 小時"
 
-#: ../src/EventEdition/ReminderPanel.vala:178
+#: ../src/EventEdition/ReminderPanel.vala:192
 msgid "24 hours"
 msgstr "24 小時"
 
-#: ../src/EventEdition/ReminderPanel.vala:179
+#: ../src/EventEdition/ReminderPanel.vala:193
 msgid "2 days"
 msgstr "2 天"
 
-#: ../src/EventEdition/ReminderPanel.vala:180
+#: ../src/EventEdition/ReminderPanel.vala:194
 msgid "1 week"
 msgstr "1 週"
 
-#: ../src/EventEdition/ReminderPanel.vala:189
+#: ../src/EventEdition/ReminderPanel.vala:203
 msgid "Notification"
 msgstr "通知"
 
-#: ../src/EventEdition/ReminderPanel.vala:190
+#: ../src/EventEdition/ReminderPanel.vala:204
 msgid "Email"
 msgstr "電子郵件"
 
-#: ../src/EventEdition/EventDialog.vala:64
+#: ../src/EventEdition/EventDialog.vala:65
 msgid "Edit Event"
 msgstr "編輯事件"
 
-#: ../src/EventEdition/EventDialog.vala:92
+#: ../src/EventEdition/EventDialog.vala:97
 msgid "General Informations"
 msgstr "一般資訊"
 
-#: ../src/EventEdition/EventDialog.vala:95
+#: ../src/EventEdition/EventDialog.vala:100
 msgid "Location"
 msgstr "地點"
 
-#: ../src/EventEdition/EventDialog.vala:98
+#: ../src/EventEdition/EventDialog.vala:103
 msgid "Guests"
 msgstr "客人"
 
-#: ../src/EventEdition/EventDialog.vala:101
+#: ../src/EventEdition/EventDialog.vala:106
 msgid "Reminders"
 msgstr "提醒"
 
-#: ../src/EventEdition/EventDialog.vala:140
+#: ../src/EventEdition/EventDialog.vala:150
 msgid "Delete Event"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:152
+#: ../src/EventEdition/EventDialog.vala:162
 msgid "Create Event"
 msgstr "建立事件"
 
-#: ../src/EventEdition/EventDialog.vala:155
+#: ../src/EventEdition/EventDialog.vala:165
 msgid "Save Changes"
 msgstr "儲存變更"
 
-#: ../src/EventEdition/GuestsPanel.vala:42
+#: ../src/EventEdition/GuestsPanel.vala:44
 msgid "Participants:"
 msgstr "參加者："
 
-#: ../src/EventEdition/GuestsPanel.vala:45
+#: ../src/EventEdition/GuestsPanel.vala:49
+msgid "No Participants"
+msgstr ""
+
+#: ../src/EventEdition/GuestsPanel.vala:85
 msgid "Invite"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:227
+#: ../src/EventEdition/GuestsPanel.vala:234
 msgid "Accepted"
 msgstr "已接受"
 
-#: ../src/EventEdition/GuestsPanel.vala:230
+#: ../src/EventEdition/GuestsPanel.vala:237
 msgid "Declined"
 msgstr "已拒絕"
 
@@ -406,39 +412,39 @@ msgstr "行事曆："
 msgid "Comments:"
 msgstr "評註："
 
-#: ../src/SourceItem.vala:105 ../src/Sidebar/EventWidget.vala:132
+#: ../src/SourceItem.vala:107 ../src/Sidebar/EventWidget.vala:132
 msgid "Remove"
 msgstr "移除"
 
-#: ../src/SourceItem.vala:111 ../src/Sidebar/EventWidget.vala:131
+#: ../src/SourceItem.vala:117 ../src/Sidebar/EventWidget.vala:131
 msgid "Edit…"
 msgstr "編輯…"
 
-#: ../src/SourceItem.vala:135
+#: ../src/SourceItem.vala:145
 msgid "Undo"
 msgstr "回復"
 
-#: ../src/SourceItem.vala:153
+#: ../src/SourceItem.vala:163
 msgid "Calendar \"%s\" removed."
 msgstr "行事曆「%s」已移除。"
 
-#: ../src/MayaToolbar.vala:40
+#: ../src/MayaToolbar.vala:41
 msgid "Create a new event"
 msgstr "建立新事件"
 
-#: ../src/MayaToolbar.vala:43
+#: ../src/MayaToolbar.vala:44
 msgid "Go to today's date"
 msgstr ""
 
-#: ../src/MayaToolbar.vala:47
+#: ../src/MayaToolbar.vala:48
 msgid "Manage Calendars"
 msgstr "管理行事曆"
 
-#: ../src/MayaToolbar.vala:55
+#: ../src/MayaToolbar.vala:56
 msgid "Search Events"
 msgstr "搜尋事件"
 
-#: ../src/MayaToolbar.vala:58
+#: ../src/MayaToolbar.vala:59
 msgid "Export or Share the default Calendar"
 msgstr "匯出或分享預設行事曆"
 
@@ -461,31 +467,31 @@ msgstr "整天"
 msgid "Add New Calendar…"
 msgstr "新增行事曆…"
 
-#: ../src/SourceDialog.vala:55
+#: ../src/SourceDialog.vala:56
 msgid "Create"
 msgstr "建立"
 
-#: ../src/SourceDialog.vala:64
+#: ../src/SourceDialog.vala:65
 msgid "Name:"
 msgstr "名稱："
 
-#: ../src/SourceDialog.vala:67
+#: ../src/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "行事曆名稱"
 
-#: ../src/SourceDialog.vala:90
+#: ../src/SourceDialog.vala:91
 msgid "Type:"
 msgstr "類型："
 
-#: ../src/SourceDialog.vala:112
+#: ../src/SourceDialog.vala:113
 msgid "Color:"
 msgstr "色彩："
 
-#: ../src/SourceDialog.vala:117
+#: ../src/SourceDialog.vala:118
 msgid "Mark as default calendar"
 msgstr "標記爲預設行事曆"
 
-#: ../src/SourceDialog.vala:147
+#: ../src/SourceDialog.vala:148
 msgid "Create Calendar"
 msgstr "新建行事曆"
 

@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-01 21:29+0200\n"
+"POT-Creation-Date: 2014-09-26 13:39+0200\n"
 "PO-Revision-Date: 2014-09-02 11:54+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-03 06:10+0000\n"
+"X-Launchpad-Export-Date: 2014-09-27 05:57+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 "Language: fi\n"
 
@@ -22,11 +22,11 @@ msgstr ""
 msgid "%u more…"
 msgstr "%u lisää…"
 
-#: ../src/Grid/WeekLabels.vala:53 ../src/Grid/Header.vala:62
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:61
 msgid "Hide Week Numbers"
 msgstr "Piilota viikkonumerot"
 
-#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:64
+#: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:63
 msgid "Show Week Numbers"
 msgstr "Näytä viikkonumerot"
 
@@ -42,7 +42,7 @@ msgstr "Kalenteri"
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr "Maya;Planner;Dates;Days;Events;päivyri;kalenteri;tapahtumat;"
 
-#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:61
+#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:62
 msgid "Add Event"
 msgstr "Lisää tapahtuma"
 
@@ -63,20 +63,21 @@ msgstr "Vie kalenteri..."
 msgid "calendar.ics"
 msgstr "kalenteri.ics"
 
-#: ../src/Widgets/ContractorButtonWithMenu.vala:78 ../src/SourceDialog.vala:54
+#: ../src/Widgets/ContractorButtonWithMenu.vala:78
+#: ../src/EventEdition/EventDialog.vala:168 ../src/SourceDialog.vala:54
 msgid "Cancel"
 msgstr "Peru"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
-#: ../src/SourceDialog.vala:155
+#: ../src/SourceDialog.vala:156
 msgid "Save"
 msgstr "Tallenna"
 
-#: ../src/EventEdition/LocationPanel.vala:38
+#: ../src/EventEdition/LocationPanel.vala:40
 msgid "Location:"
 msgstr "Sijainti:"
 
-#: ../src/EventEdition/LocationPanel.vala:40
+#: ../src/EventEdition/LocationPanel.vala:42
 msgid "John Smith OR Example St."
 msgstr "Matti Meikäläinen TAI Esimerkkikatu"
 
@@ -143,6 +144,12 @@ msgstr "Päättyy:"
 
 #: ../src/EventEdition/RepeatPanel.vala:133
 #: ../src/EventEdition/RepeatPanel.vala:166
+#: ../src/EventEdition/EventDialog.vala:109
+msgid "Repeat"
+msgstr "Toista"
+
+#: ../src/EventEdition/RepeatPanel.vala:133
+#: ../src/EventEdition/RepeatPanel.vala:166
 msgid "Repeats"
 msgstr "Toistokerran"
 
@@ -158,224 +165,223 @@ msgstr "Päättyen"
 msgid "After"
 msgstr "Toistokertojen mukaan"
 
-#: ../src/EventEdition/RepeatPanel.vala:166
-#: ../src/EventEdition/EventDialog.vala:104
-msgid "Repeat"
-msgstr "Toista"
-
 #: ../src/EventEdition/RepeatPanel.vala:185
 msgid "The same day every month"
 msgstr "Samana päivänä joka kuussa"
 
-#: ../src/EventEdition/RepeatPanel.vala:303
+#: ../src/EventEdition/RepeatPanel.vala:296
 msgid "Sunday"
 msgstr "sunnuntai"
 
-#: ../src/EventEdition/RepeatPanel.vala:306
+#: ../src/EventEdition/RepeatPanel.vala:299
 msgid "Monday"
 msgstr "maanantai"
 
-#: ../src/EventEdition/RepeatPanel.vala:309
+#: ../src/EventEdition/RepeatPanel.vala:302
 msgid "Tuesday"
 msgstr "tiistai"
 
-#: ../src/EventEdition/RepeatPanel.vala:312
+#: ../src/EventEdition/RepeatPanel.vala:305
 msgid "Wednesday"
 msgstr "keskiviikko"
 
-#: ../src/EventEdition/RepeatPanel.vala:315
+#: ../src/EventEdition/RepeatPanel.vala:308
 msgid "Thursday"
 msgstr "torstai"
 
-#: ../src/EventEdition/RepeatPanel.vala:318
+#: ../src/EventEdition/RepeatPanel.vala:311
 msgid "Friday"
 msgstr "perjantai"
 
-#: ../src/EventEdition/RepeatPanel.vala:321
+#: ../src/EventEdition/RepeatPanel.vala:314
 msgid "Saturday"
 msgstr "lauantai"
 
-#: ../src/EventEdition/RepeatPanel.vala:327
+#: ../src/EventEdition/RepeatPanel.vala:320
 msgid "Every last %s"
 msgstr "Joka viimeinen %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:330
+#: ../src/EventEdition/RepeatPanel.vala:323
 msgid "Every first %s"
 msgstr "Joka ensimmäinen %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:333
+#: ../src/EventEdition/RepeatPanel.vala:326
 msgid "Every second %s"
 msgstr "Joka toinen %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:336
+#: ../src/EventEdition/RepeatPanel.vala:329
 msgid "Every third %s"
 msgstr "Joka kolmas %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:339
+#: ../src/EventEdition/RepeatPanel.vala:332
 msgid "Every fourth %s"
 msgstr "Joka neljäs %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:342
+#: ../src/EventEdition/RepeatPanel.vala:335
 msgid "Every fifth %s"
 msgstr "Joka viides %s"
 
-#: ../src/EventEdition/RepeatPanel.vala:350
+#: ../src/EventEdition/RepeatPanel.vala:343
 msgid "Mon"
 msgstr "Ma"
 
-#: ../src/EventEdition/RepeatPanel.vala:351
+#: ../src/EventEdition/RepeatPanel.vala:344
 msgid "Tue"
 msgstr "Ti"
 
-#: ../src/EventEdition/RepeatPanel.vala:352
+#: ../src/EventEdition/RepeatPanel.vala:345
 msgid "Wed"
 msgstr "Ke"
 
-#: ../src/EventEdition/RepeatPanel.vala:353
+#: ../src/EventEdition/RepeatPanel.vala:346
 msgid "Thu"
 msgstr "To"
 
-#: ../src/EventEdition/RepeatPanel.vala:354
+#: ../src/EventEdition/RepeatPanel.vala:347
 msgid "Fri"
 msgstr "Pe"
 
-#: ../src/EventEdition/RepeatPanel.vala:355
+#: ../src/EventEdition/RepeatPanel.vala:348
 msgid "Sat"
 msgstr "La"
 
-#: ../src/EventEdition/RepeatPanel.vala:356
+#: ../src/EventEdition/RepeatPanel.vala:349
 msgid "Sun"
 msgstr "Su"
 
-#: ../src/EventEdition/ReminderPanel.vala:31
+#: ../src/EventEdition/ReminderPanel.vala:30
 msgid "Reminders:"
 msgstr "Muistutukset:"
 
-#: ../src/EventEdition/ReminderPanel.vala:35
+#: ../src/EventEdition/ReminderPanel.vala:34
 msgid "No Reminders"
 msgstr "Ei muistutuksia"
 
-#: ../src/EventEdition/ReminderPanel.vala:46
+#: ../src/EventEdition/ReminderPanel.vala:68
 msgid "Add Reminder"
 msgstr "Lisää muistutus"
 
-#: ../src/EventEdition/ReminderPanel.vala:165
+#: ../src/EventEdition/ReminderPanel.vala:179
 msgid "0 minutes"
 msgstr "0 minuuttia"
 
-#: ../src/EventEdition/ReminderPanel.vala:166
+#: ../src/EventEdition/ReminderPanel.vala:180
 msgid "1 minutes"
 msgstr "1 minuutti"
 
-#: ../src/EventEdition/ReminderPanel.vala:167
+#: ../src/EventEdition/ReminderPanel.vala:181
 msgid "5 minutes"
 msgstr "5 minuuttia"
 
-#: ../src/EventEdition/ReminderPanel.vala:168
+#: ../src/EventEdition/ReminderPanel.vala:182
 msgid "10 minutes"
 msgstr "10 minuuttia"
 
-#: ../src/EventEdition/ReminderPanel.vala:169
+#: ../src/EventEdition/ReminderPanel.vala:183
 msgid "15 minutes"
 msgstr "15 minuuttia"
 
-#: ../src/EventEdition/ReminderPanel.vala:170
+#: ../src/EventEdition/ReminderPanel.vala:184
 msgid "20 minutes"
 msgstr "20 minuuttia"
 
-#: ../src/EventEdition/ReminderPanel.vala:171
+#: ../src/EventEdition/ReminderPanel.vala:185
 msgid "25 minutes"
 msgstr "25 minuuttia"
 
-#: ../src/EventEdition/ReminderPanel.vala:172
+#: ../src/EventEdition/ReminderPanel.vala:186
 msgid "30 minutes"
 msgstr "30 minuuttia"
 
-#: ../src/EventEdition/ReminderPanel.vala:173
+#: ../src/EventEdition/ReminderPanel.vala:187
 msgid "45 minutes"
 msgstr "45 minuuttia"
 
-#: ../src/EventEdition/ReminderPanel.vala:174
+#: ../src/EventEdition/ReminderPanel.vala:188
 msgid "1 hour"
 msgstr "1 tunti"
 
-#: ../src/EventEdition/ReminderPanel.vala:175
+#: ../src/EventEdition/ReminderPanel.vala:189
 msgid "2 hours"
 msgstr "2 tuntia"
 
-#: ../src/EventEdition/ReminderPanel.vala:176
+#: ../src/EventEdition/ReminderPanel.vala:190
 msgid "3 hours"
 msgstr "3 tuntia"
 
-#: ../src/EventEdition/ReminderPanel.vala:177
+#: ../src/EventEdition/ReminderPanel.vala:191
 msgid "12 hours"
 msgstr "12 tuntia"
 
-#: ../src/EventEdition/ReminderPanel.vala:178
+#: ../src/EventEdition/ReminderPanel.vala:192
 msgid "24 hours"
 msgstr "24 tuntia"
 
-#: ../src/EventEdition/ReminderPanel.vala:179
+#: ../src/EventEdition/ReminderPanel.vala:193
 msgid "2 days"
 msgstr "2 päivää"
 
-#: ../src/EventEdition/ReminderPanel.vala:180
+#: ../src/EventEdition/ReminderPanel.vala:194
 msgid "1 week"
 msgstr "1 viikko"
 
-#: ../src/EventEdition/ReminderPanel.vala:189
+#: ../src/EventEdition/ReminderPanel.vala:203
 msgid "Notification"
 msgstr "Ilmoitus"
 
-#: ../src/EventEdition/ReminderPanel.vala:190
+#: ../src/EventEdition/ReminderPanel.vala:204
 msgid "Email"
 msgstr "Sähköposti"
 
-#: ../src/EventEdition/EventDialog.vala:64
+#: ../src/EventEdition/EventDialog.vala:65
 msgid "Edit Event"
 msgstr "Muokkaa tapahtumaa"
 
-#: ../src/EventEdition/EventDialog.vala:92
+#: ../src/EventEdition/EventDialog.vala:97
 msgid "General Informations"
 msgstr "Yleiset tiedot"
 
-#: ../src/EventEdition/EventDialog.vala:95
+#: ../src/EventEdition/EventDialog.vala:100
 msgid "Location"
 msgstr "Paikka"
 
-#: ../src/EventEdition/EventDialog.vala:98
+#: ../src/EventEdition/EventDialog.vala:103
 msgid "Guests"
 msgstr "Vieraat"
 
-#: ../src/EventEdition/EventDialog.vala:101
+#: ../src/EventEdition/EventDialog.vala:106
 msgid "Reminders"
 msgstr "Muistutukset"
 
-#: ../src/EventEdition/EventDialog.vala:140
+#: ../src/EventEdition/EventDialog.vala:150
 msgid "Delete Event"
 msgstr "Poista tapahtuma"
 
-#: ../src/EventEdition/EventDialog.vala:152
+#: ../src/EventEdition/EventDialog.vala:162
 msgid "Create Event"
 msgstr "Luo tapahtuma"
 
-#: ../src/EventEdition/EventDialog.vala:155
+#: ../src/EventEdition/EventDialog.vala:165
 msgid "Save Changes"
 msgstr "Tallenna muutokset"
 
-#: ../src/EventEdition/GuestsPanel.vala:42
+#: ../src/EventEdition/GuestsPanel.vala:44
 msgid "Participants:"
 msgstr "Osanottajat:"
 
-#: ../src/EventEdition/GuestsPanel.vala:45
+#: ../src/EventEdition/GuestsPanel.vala:49
+msgid "No Participants"
+msgstr ""
+
+#: ../src/EventEdition/GuestsPanel.vala:85
 msgid "Invite"
 msgstr "Kutsu"
 
-#: ../src/EventEdition/GuestsPanel.vala:227
+#: ../src/EventEdition/GuestsPanel.vala:234
 msgid "Accepted"
 msgstr "Hyväksynyt"
 
-#: ../src/EventEdition/GuestsPanel.vala:230
+#: ../src/EventEdition/GuestsPanel.vala:237
 msgid "Declined"
 msgstr "Hylännyt"
 
@@ -407,39 +413,39 @@ msgstr "Kalenteri:"
 msgid "Comments:"
 msgstr "Kommentit:"
 
-#: ../src/SourceItem.vala:105 ../src/Sidebar/EventWidget.vala:132
+#: ../src/SourceItem.vala:107 ../src/Sidebar/EventWidget.vala:132
 msgid "Remove"
 msgstr "Poista"
 
-#: ../src/SourceItem.vala:111 ../src/Sidebar/EventWidget.vala:131
+#: ../src/SourceItem.vala:117 ../src/Sidebar/EventWidget.vala:131
 msgid "Edit…"
 msgstr "Muokkaa…"
 
-#: ../src/SourceItem.vala:135
+#: ../src/SourceItem.vala:145
 msgid "Undo"
 msgstr "Kumoa"
 
-#: ../src/SourceItem.vala:153
+#: ../src/SourceItem.vala:163
 msgid "Calendar \"%s\" removed."
 msgstr "Kalenteri \"%s\" poistettiin."
 
-#: ../src/MayaToolbar.vala:40
+#: ../src/MayaToolbar.vala:41
 msgid "Create a new event"
 msgstr "Luo uusi tapahtuma"
 
-#: ../src/MayaToolbar.vala:43
+#: ../src/MayaToolbar.vala:44
 msgid "Go to today's date"
 msgstr "Siirry kuluvaan päivään"
 
-#: ../src/MayaToolbar.vala:47
+#: ../src/MayaToolbar.vala:48
 msgid "Manage Calendars"
 msgstr "Hallitse kalentereita"
 
-#: ../src/MayaToolbar.vala:55
+#: ../src/MayaToolbar.vala:56
 msgid "Search Events"
 msgstr "Etsi tapahtumia"
 
-#: ../src/MayaToolbar.vala:58
+#: ../src/MayaToolbar.vala:59
 msgid "Export or Share the default Calendar"
 msgstr "Vie tai jaa vakiokalenteri"
 
@@ -464,31 +470,31 @@ msgstr "Koko päivä"
 msgid "Add New Calendar…"
 msgstr "Lisää uusi kalenteri…"
 
-#: ../src/SourceDialog.vala:55
+#: ../src/SourceDialog.vala:56
 msgid "Create"
 msgstr "Luo"
 
-#: ../src/SourceDialog.vala:64
+#: ../src/SourceDialog.vala:65
 msgid "Name:"
 msgstr "Nimi:"
 
-#: ../src/SourceDialog.vala:67
+#: ../src/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "Kalenterin nimi"
 
-#: ../src/SourceDialog.vala:90
+#: ../src/SourceDialog.vala:91
 msgid "Type:"
 msgstr "Tyyppi:"
 
-#: ../src/SourceDialog.vala:112
+#: ../src/SourceDialog.vala:113
 msgid "Color:"
 msgstr "Väri:"
 
-#: ../src/SourceDialog.vala:117
+#: ../src/SourceDialog.vala:118
 msgid "Mark as default calendar"
 msgstr "Merkitse oletuskalenteriksi"
 
-#: ../src/SourceDialog.vala:147
+#: ../src/SourceDialog.vala:148
 msgid "Create Calendar"
 msgstr "Luo kalenteri"
 
