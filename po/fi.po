@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-26 13:39+0200\n"
-"PO-Revision-Date: 2014-09-02 11:54+0000\n"
+"PO-Revision-Date: 2014-09-27 16:36+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-27 05:57+0000\n"
+"X-Launchpad-Export-Date: 2014-09-28 06:08+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 "Language: fi\n"
 
@@ -371,7 +371,7 @@ msgstr "Osanottajat:"
 
 #: ../src/EventEdition/GuestsPanel.vala:49
 msgid "No Participants"
-msgstr ""
+msgstr "Ei osanottajia"
 
 #: ../src/EventEdition/GuestsPanel.vala:85
 msgid "Invite"
