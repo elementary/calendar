@@ -76,7 +76,6 @@ public class Header : Gtk.EventBox {
     }
 
     public void update_columns (int week_starts_on) {
-
         var date = Util.strip_time(new DateTime.now_local ());
         date = date.add_days (week_starts_on - date.get_day_of_week ());
         foreach (var label in labels) {

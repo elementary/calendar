@@ -45,16 +45,15 @@ namespace Maya.Util {
      */
     public iCal.TimeType date_time_to_ical (DateTime date, DateTime? time) {
 
-        var result = iCal.TimeType.from_day_of_year
-            (date.get_day_of_year (), date.get_year ());
-        result.zone = iCal.TimeZone.get_builtin_timezone (E.Cal.util_get_system_timezone_location ());
-
+        var result = iCal.TimeType.from_day_of_year (date.get_day_of_year (), date.get_year ());
         if (time != null) {
+            result.zone = iCal.TimeZone.get_builtin_timezone_from_offset (time.get_utc_offset (), time.get_timezone_abbreviation ());
             result.is_date = 0;
             result.hour = time.get_hour ();
             result.minute = time.get_minute ();
             result.second = time.get_second ();
         } else {
+            result.zone = iCal.TimeZone.get_builtin_timezone_from_offset (date.get_utc_offset (), date.get_timezone_abbreviation ());
             result.is_date = 1;
             result.hour = 0;
             result.minute = 0;
@@ -66,23 +65,39 @@ namespace Maya.Util {
 
     /**
      * Converts the given TimeType to a DateTime.
+     * XXX : Track next versions of evolution in order to convert iCal.Timezone to GLib.TimeZone with a dedicated function…
      */
-    public DateTime ical_to_date_time (iCal.TimeType date) {
+    public TimeZone timezone_from_ical (iCal.TimeType date) {
+        var interval = date.zone.get_utc_offset (date, date.is_daylight);
+        var hours = (interval / 3600);
+        string hour_string = "";
+        if (hours >= 0) {
+            hour_string = "+";
+        }
 
-        string tzid = date.zone.get_tzid ();
-        TimeZone zone = new TimeZone (tzid);
+        if (hours > 9 || hours < -9) {
+            hour_string = "%s%d".printf (hour_string, hours);
+        } else {
+            hour_string = "%s0%d".printf (hour_string, hours);
+        }
 
-        return new DateTime (zone, date.year, date.month,
-            date.day, date.hour, date.minute, date.second);
+        var minutes = ((interval - hours*3600)/60).abs ();
+        if (minutes > 9) {
+            hour_string = "%s:%d".printf (hour_string, minutes);
+        } else {
+            hour_string = "%s:0%d".printf (hour_string, minutes);
+        }
+
+        return new TimeZone (hour_string);
     }
 
-    public DateTime ecal_to_date_time (E.CalComponentDateTime date) {
-        TimeZone zone = new TimeZone (date.tzid);
-        DateTime result = new DateTime(zone, 
-                date.value.year, date.value.month, date.value.day, 
-                date.value.hour, date.value.minute, date.value.second);
-
-        return result;
+    /**
+     * Converts the given TimeType to a DateTime.
+     * XXX : Track next versions of evolution in order to convert iCal.Timezone to GLib.TimeZone with a dedicated function…
+     */
+    public DateTime ical_to_date_time (iCal.TimeType date) {
+        return new DateTime (timezone_from_ical (date), date.year, date.month,
+            date.day, date.hour, date.minute, date.second);
     }
 
     public Gee.Collection<DateRange> event_date_ranges (E.CalComponent event, Util.DateRange view_range) {
@@ -340,14 +355,9 @@ namespace Maya.Util {
     }
 
     public bool is_multiday_event (E.CalComponent event) {
-        E.CalComponentDateTime dt_start;
-        event.get_dtstart (out dt_start);
-
-        E.CalComponentDateTime dt_end;
-        event.get_dtend (out dt_end);
-
-        var start = ecal_to_date_time (dt_start);
-        var end = ecal_to_date_time (dt_end);
+        unowned iCal.Component comp = event.get_icalcomponent ();
+        var start = ical_to_date_time (comp.get_dtstart ());
+        var end = ical_to_date_time (comp.get_dtend ());
 
         bool allday = is_the_all_day (start, end);
         if (allday)
@@ -359,8 +369,9 @@ namespace Maya.Util {
             end = start;
             start = temp;
         }
+
         var event_range = new Util.DateRange (strip_time(start), strip_time(end));
-        return event_range.to_list() .size > 1;
+        return event_range.to_list ().size > 1;
     }
 
     /**
@@ -459,7 +470,6 @@ namespace Maya.Util {
 
     /* Iterator of DateRange objects */
     public class DateIterator : Object, Gee.Traversable<DateTime>, Gee.Iterator<DateTime> {
-
         DateTime current;
         DateRange range;
 
@@ -512,10 +522,8 @@ namespace Maya.Util {
 
     /* Represents date range from 'first' to 'last' inclusive */
     public class DateRange : Object, Gee.Traversable<DateTime>, Gee.Iterable<DateTime> {
-
         public DateTime first { get; private set; }
         public DateTime last { get; private set; }
-
         public bool @foreach (Gee.ForallFunc<DateTime> f) {
             foreach (var date in this) {
                 if (f (date) == false) {
@@ -566,10 +574,8 @@ namespace Maya.Util {
             return @set;
         }
 
-        public Gee.List<DateTime> to_list() {
-
+        public Gee.List<DateTime> to_list () {
             var list = new Gee.ArrayList<DateTime> ((Gee.EqualDataFunc<GLib.DateTime>?) datetime_equal_func);
-
             foreach (var date in this)
                 list.add (date);
 
@@ -580,7 +586,7 @@ namespace Maya.Util {
     //--- Gee Utility Functions ---//
 
     /* Interleaves the values of two collections into a Map */
-    public void zip<F, G> (Gee.Iterable<F> iterable1, Gee.Iterable<G> iterable2, ref Gee.Map<F, G> map) {
+    public void zip<F, G> (Gee.Iterable<F> iterable1, Gee.Iterable<G> iterable2, Gee.Map<F, G> map) {
 
         var i1 = iterable1.iterator();
         var i2 = iterable2.iterator();

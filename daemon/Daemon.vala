@@ -72,9 +72,7 @@ namespace MayaDaemon {
 
         // Start GLib mainloop
         mainloop.run ();
-
         return 0;
-
     }
 
     public void load_today_events () {
@@ -87,6 +85,11 @@ namespace MayaDaemon {
     }
 
     void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
+        var extension = (E.SourceAlarms)source.get_extension (E.SOURCE_EXTENSION_ALARMS);
+        if (extension.get_include_me () == false) {
+            return;
+        }
+
         Idle.add ( () => {
             foreach (var event in events)
                 add_event (source, event);
@@ -139,7 +142,7 @@ namespace MayaDaemon {
                         if (start_time.get_year () == now.get_year () && start_time.get_day_of_year () == now.get_day_of_year ()) {
                             var time = time_until_now (start_time);
                             if (time >= 0) {
-                                add_timeout.begin (event, (uint)time);
+                                add_timeout.begin (source, event, (uint)time);
                             }
                         }
                     }
@@ -157,17 +160,22 @@ namespace MayaDaemon {
         }
     }
     
-    public async void add_timeout (E.CalComponent event, uint interval) {
+    public async void add_timeout (E.Source source, E.CalComponent event, uint interval) {
         var uid = "%u-%u".printf (interval, GLib.Random.next_int ());
         event_uid.set (event, uid);
         debug ("adding timeout uid:%s", uid);
         Timeout.add_seconds (interval, () => {
+            var extension = (E.SourceAlarms)source.get_extension (E.SOURCE_EXTENSION_ALARMS);
+            if (extension != null) {
+                extension.set_last_notified (new DateTime.now_local ().to_string ());
+            }
+
             queue_event_notification (event, uid);
             return false;
         });
     }
 
-    public void queue_event_notification (E.CalComponent event, string uid) {
+    public void queue_event_notification (E.CalComponent event, string uid, bool missed = false) {
         if (event_uid.values.contains (uid) == false)
             return;
 #if HAVE_LIBNOTIFY
@@ -206,12 +214,22 @@ namespace MayaDaemon {
             notification.clear_actions ();
             notification.update (primary_text, secondary_text, "");
         }
-        notification.icon_name = "appointment-soon";
+
+        if (missed == false) {
+            notification.icon_name = "appointment-soon";
+        } else {
+            notification.icon_name = "appointment-missed";
+        }
 
         notification.set_urgency (Notify.Urgency.NORMAL);
 
         try {
             notification.show ();
+            E.Source source;
+            event.get ("source", out source);
+            if (source != null) {
+                var extension = (E.SourceAlarms)source.get_extension (E.SOURCE_EXTENSION_ALARMS);
+            }
         } catch (GLib.Error err) {
             warning ("Could not show notification: %s", err.message);
         }

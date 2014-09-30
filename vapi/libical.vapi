@@ -1410,13 +1410,13 @@ namespace iCal {
 		[CCode (cname = "icaltimezone_get_builtin_timezone")]
 		public static unowned iCal.TimeZone get_builtin_timezone (string location);
 		[CCode (cname = "icaltimezone_get_builtin_timezone_from_offset")]
-		public static unowned iCal.TimeZone get_builtin_timezone_from_offset (int offset, string tzname);
+		public static unowned iCal.TimeZone get_builtin_timezone_from_offset (int64 offset, string tzname);
 		[CCode (cname = "icaltimezone_get_builtin_timezone_from_tzid")]
 		public static unowned iCal.TimeZone get_builtin_timezone_from_tzid (string tzid);
 		[CCode (cname = "icaltimezone_get_builtin_timezones")]
 		public static unowned iCal.Array get_builtin_timezones ();
 		[CCode (cname = "icaltimezone_get_component")]
-		public unowned iCal.Component  get_component ();
+		public unowned iCal.Component get_component ();
 		[CCode (cname = "icaltimezone_get_display_name")]
 		public unowned string get_display_name ();
 		[CCode (cname = "icaltimezone_get_latitude")]
@@ -1430,7 +1430,7 @@ namespace iCal {
 		[CCode (cname = "icaltimezone_get_tznames")]
 		public unowned string get_tznames ();
 		[CCode (cname = "icaltimezone_get_utc_offset")]
-		public int get_utc_offset (iCal.TimeType tt, int is_daylight);
+		public int get_utc_offset (iCal.TimeType? tt, int is_daylight);
 		[CCode (cname = "icaltimezone_get_utc_offset_of_utc_time")]
 		public int get_utc_offset_of_utc_time (iCal.TimeType tt, int is_daylight);
 		[CCode (cname = "icaltimezone_get_utc_timezone")]
@@ -1438,7 +1438,7 @@ namespace iCal {
 		[CCode (cname = "icaltimezone_release_zone_tab")]
 		public static void release_zone_tab ();
 		[CCode (cname = "icaltimezone_set_component")]
-		public int set_component (iCal.Component  comp);
+		public int set_component (iCal.Component comp);
 		[CCode (cname = "icaltimezone_set_tzid_prefix")]
 		public static void set_tzid_prefix (string new_prefix);
 	}
@@ -1771,7 +1771,7 @@ namespace iCal {
 		[CCode (cname = "icalreqstattype_from_string")]
 		public static iCal.RequestStatusType from_string (string str);
 	}
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltimetype")]
+	[CCode (cheader_filename = "libical/ical.h", cname = "struct icaltimetype")]
 	[SimpleType]
 	public struct TimeType {
 		public int year;
