@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-26 13:39+0200\n"
-"PO-Revision-Date: 2014-08-28 20:48+0000\n"
-"Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
+"PO-Revision-Date: 2014-10-07 12:41+0000\n"
+"Last-Translator: frao0 <francesco987@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-27 05:57+0000\n"
+"X-Launchpad-Export-Date: 2014-10-08 06:47+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 "Language: it\n"
 
@@ -24,7 +24,7 @@ msgstr "% più..."
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:61
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Nascondi i numeri della settimana"
 
 #: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:63
 msgid "Show Week Numbers"
@@ -255,7 +255,7 @@ msgstr "Promemoria:"
 
 #: ../src/EventEdition/ReminderPanel.vala:34
 msgid "No Reminders"
-msgstr ""
+msgstr "Nessun promemoria"
 
 #: ../src/EventEdition/ReminderPanel.vala:68
 msgid "Add Reminder"
@@ -371,7 +371,7 @@ msgstr "Partecipanti:"
 
 #: ../src/EventEdition/GuestsPanel.vala:49
 msgid "No Participants"
-msgstr ""
+msgstr "Nessun partecipante"
 
 #: ../src/EventEdition/GuestsPanel.vala:85
 msgid "Invite"
@@ -435,7 +435,7 @@ msgstr "Crea un nuovo evento"
 
 #: ../src/MayaToolbar.vala:44
 msgid "Go to today's date"
-msgstr ""
+msgstr "Vai alla data odierna"
 
 #: ../src/MayaToolbar.vala:48
 msgid "Manage Calendars"
