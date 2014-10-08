@@ -87,7 +87,6 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_entry.activate.connect (() => {
             var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
             attendee.set_attendee (guest_entry.text);
-            attendees.add (attendee);
             add_guest ((owned)attendee);
             guest_entry.delete_text (0, -1);
         });
