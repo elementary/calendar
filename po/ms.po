@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-26 13:39+0200\n"
-"PO-Revision-Date: 2014-04-27 03:51+0000\n"
+"PO-Revision-Date: 2014-10-11 07:33+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-27 05:57+0000\n"
+"X-Launchpad-Export-Date: 2014-10-12 06:38+0000\n"
 "X-Generator: Launchpad (build 17196)\n"
 "Language: ms\n"
 
@@ -24,7 +24,7 @@ msgstr "%u lagi..."
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:61
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Sembunyi Bilangan Minggu"
 
 #: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:63
 msgid "Show Week Numbers"
@@ -48,11 +48,11 @@ msgstr "Tambah Peristiwa"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "Perihal Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "Perihal Kalendar"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -255,7 +255,7 @@ msgstr "Peringatan"
 
 #: ../src/EventEdition/ReminderPanel.vala:34
 msgid "No Reminders"
-msgstr ""
+msgstr "Tiada Peringatan"
 
 #: ../src/EventEdition/ReminderPanel.vala:68
 msgid "Add Reminder"
@@ -355,7 +355,7 @@ msgstr "Peringatan"
 
 #: ../src/EventEdition/EventDialog.vala:150
 msgid "Delete Event"
-msgstr ""
+msgstr "Padam Peristiwa"
 
 #: ../src/EventEdition/EventDialog.vala:162
 msgid "Create Event"
@@ -371,11 +371,11 @@ msgstr "Peserta:"
 
 #: ../src/EventEdition/GuestsPanel.vala:49
 msgid "No Participants"
-msgstr ""
+msgstr "Tiada Peserta"
 
 #: ../src/EventEdition/GuestsPanel.vala:85
 msgid "Invite"
-msgstr ""
+msgstr "Jemput"
 
 #: ../src/EventEdition/GuestsPanel.vala:234
 msgid "Accepted"
@@ -435,7 +435,7 @@ msgstr "Cipta peristiwa baru"
 
 #: ../src/MayaToolbar.vala:44
 msgid "Go to today's date"
-msgstr ""
+msgstr "Pergi ke tarikh hari ini"
 
 #: ../src/MayaToolbar.vala:48
 msgid "Manage Calendars"
