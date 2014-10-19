@@ -127,7 +127,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     }
 
     private void remove_source (E.Source source) {
-        Model.CalendarModel.get_default ().delete_calendar (source);
+        Model.CalendarModel.get_default ().trash_calendar (source);
         var source_item = src_map.get (source.dup_uid ());
         source_item.show_calendar_removed ();
     }
