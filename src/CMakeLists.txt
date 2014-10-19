@@ -40,10 +40,10 @@ OPTIONS
 
 set(EXEC_NAME ${CMAKE_PROJECT_NAME})
 
-add_definitions(${DEPS_CFLAGS})
-link_directories(${DEPS_LIBRARY_DIRS})
+add_definitions(${DEPS_CFLAGS} ${CORE_CFLAGS})
+link_directories(${DEPS_LIBRARY_DIRS} ${CORE_LIBRARY_DIRS})
 add_executable(${EXEC_NAME} ${CLIENT_VALA_C})
 
-target_link_libraries(${EXEC_NAME} ${DEPS_LIBRARIES} -lm)
+target_link_libraries(${EXEC_NAME} ${DEPS_LIBRARIES} ${CORE_LIBRARIES} -lm)
 
 install(TARGETS ${EXEC_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_FULL_BINDIR})

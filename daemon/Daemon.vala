@@ -225,11 +225,6 @@ namespace MayaDaemon {
 
         try {
             notification.show ();
-            E.Source source;
-            event.get ("source", out source);
-            if (source != null) {
-                var extension = (E.SourceAlarms)source.get_extension (E.SOURCE_EXTENSION_ALARMS);
-            }
         } catch (GLib.Error err) {
             warning ("Could not show notification: %s", err.message);
         }

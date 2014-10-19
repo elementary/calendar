@@ -126,8 +126,8 @@ set (GLOBAL_VALAC_OPTIONS
 )
 
 find_package (PkgConfig)
-pkg_check_modules (CORE_DEPS REQUIRED ${CORE_PKG})
-pkg_check_modules (DEPS REQUIRED ${DEPS_PKG} ${CORE_PKG})
+pkg_check_modules (CORE REQUIRED ${CORE_PKG})
+pkg_check_modules (DEPS REQUIRED ${DEPS_PKG})
 
 find_package (Vala REQUIRED)
 include (ValaVersion)

@@ -38,8 +38,8 @@ vala_precompile (CORE_VALA_C ${CORE_LIBRARY_NAME}
   ${CMAKE_PROJECT_NAME}
 )
 
-add_definitions (${CORE_DEPS_CFLAGS})
-link_directories (${CORE_DEPS_LIBRARY_DIRS})
+add_definitions (${CORE_CFLAGS})
+link_directories (${CORE_LIBRARY_DIRS})
 
 add_library (${CORE_LIBRARY_NAME} SHARED ${CORE_VALA_C})
 
@@ -50,7 +50,7 @@ set_target_properties (${CORE_LIBRARY_NAME} PROPERTIES
   SOVERSION ${CORE_LIB_SOVERSION}
 )
 
-target_link_libraries (${CORE_LIBRARY_NAME} ${CORE_DEPS_LIBRARIES})
+target_link_libraries (${CORE_LIBRARY_NAME} ${CORE_LIBRARIES})
 
 install (TARGETS ${CORE_LIBRARY_NAME} DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
 # Install lib stuffs
