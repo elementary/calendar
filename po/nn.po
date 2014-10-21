@@ -8,23 +8,23 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-26 13:39+0200\n"
-"PO-Revision-Date: 2013-06-28 23:45+0000\n"
-"Last-Translator: Skandee <Unknown>\n"
+"PO-Revision-Date: 2014-10-20 21:23+0000\n"
+"Last-Translator: Magnus Meyer Hustveit <Unknown>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-27 05:57+0000\n"
-"X-Generator: Launchpad (build 17196)\n"
+"X-Launchpad-Export-Date: 2014-10-21 06:29+0000\n"
+"X-Generator: Launchpad (build 17203)\n"
 "Language: nn\n"
 
 #: ../src/Grid/VAutoHider.vala:96
 msgid "%u more…"
-msgstr ""
+msgstr "%u meir..."
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:61
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Gøym vekenummer"
 
 #: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:63
 msgid "Show Week Numbers"
@@ -40,7 +40,7 @@ msgstr "Kalender"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "Maya;Planleggjer;Datoar;Dagar;Hendinger"
 
 #: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:62
 msgid "Add Event"
@@ -48,11 +48,11 @@ msgstr "Lag ei ny hending"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "Om Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "Om kalender"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -66,16 +66,16 @@ msgstr "kalendar.ics"
 #: ../src/Widgets/ContractorButtonWithMenu.vala:78
 #: ../src/EventEdition/EventDialog.vala:168 ../src/SourceDialog.vala:54
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 #: ../src/SourceDialog.vala:156
 msgid "Save"
-msgstr ""
+msgstr "Lagra"
 
 #: ../src/EventEdition/LocationPanel.vala:40
 msgid "Location:"
-msgstr ""
+msgstr "Plassering:"
 
 #: ../src/EventEdition/LocationPanel.vala:42
 msgid "John Smith OR Example St."
@@ -83,11 +83,11 @@ msgstr "Ola Nordmann ELLER Karl Eksempel Gate"
 
 #: ../src/EventEdition/RepeatPanel.vala:49
 msgid "Repeat:"
-msgstr ""
+msgstr "Gjenta:"
 
 #: ../src/EventEdition/RepeatPanel.vala:54
 msgid "Daily"
-msgstr ""
+msgstr "Dagleg"
 
 #: ../src/EventEdition/RepeatPanel.vala:55
 msgid "Weekly"
