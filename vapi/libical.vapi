@@ -4,8 +4,8 @@
 namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", free_function = "icalarray_free", cname = "icalarray")]
 	[Compact]
-	public class Array {
-		public void* data;
+	public class Array<G> {
+		public G data;
 		public uint element_size;
 		public uint increment_size;
 		public uint num_elements;
@@ -13,9 +13,9 @@ namespace iCal {
 		[CCode (cname = "icalarray_new", has_construct_function = false)]
 		public Array (int element_size, int increment_size);
 		[CCode (cname = "icalarray_append")]
-		public void append (void* element);
+		public void append (G element);
 		[CCode (cname = "icalarray_element_at")]
-		public void* element_at (int position);
+		public G element_at (int position);
 		[CCode (cname = "icalarray_remove_element_at")]
 		public void remove_element_at (int position);
 		[CCode (cname = "icalarray_sort")]
@@ -1394,11 +1394,11 @@ namespace iCal {
 		[CCode (cname = "icaltimezone_new", has_construct_function = false)]
 		public TimeZone ();
 		[CCode (cname = "icaltimezone_array_append_from_vtimezone")]
-		public static void array_append_from_vtimezone (iCal.Array timezones, iCal.Component  child);
+		public static void array_append_from_vtimezone (iCal.Array<unowned iCal.TimeZone> timezones, iCal.Component  child);
 		[CCode (cname = "icaltimezone_array_free")]
-		public static void array_free (iCal.Array timezones);
+		public static void array_free (iCal.Array<unowned iCal.TimeZone> timezones);
 		[CCode (cname = "icaltimezone_array_new")]
-		public static unowned iCal.Array array_new ();
+		public static unowned iCal.Array<unowned iCal.TimeZone> array_new ();
 		[CCode (cname = "icaltimezone_convert_time")]
 		public static void convert_time (iCal.TimeType tt, iCal.TimeZone from_zone, iCal.TimeZone to_zone);
 		[CCode (cname = "icaltimezone_copy")]
@@ -1414,7 +1414,7 @@ namespace iCal {
 		[CCode (cname = "icaltimezone_get_builtin_timezone_from_tzid")]
 		public static unowned iCal.TimeZone get_builtin_timezone_from_tzid (string tzid);
 		[CCode (cname = "icaltimezone_get_builtin_timezones")]
-		public static unowned iCal.Array get_builtin_timezones ();
+		public static unowned iCal.Array<unowned iCal.TimeZone> get_builtin_timezones ();
 		[CCode (cname = "icaltimezone_get_component")]
 		public unowned iCal.Component get_component ();
 		[CCode (cname = "icaltimezone_get_display_name")]

@@ -42,18 +42,18 @@ namespace Maya.Util {
     /**
      * Converts two datetimes to one TimeType. The first contains the date,
      * its time settings are ignored. The second one contains the time itself.
+     * XXX: We need to convert to UTC because of some bugs with the Google backend…
      */
-    public iCal.TimeType date_time_to_ical (DateTime date, DateTime? time) {
-
+    public iCal.TimeType date_time_to_ical (DateTime date, DateTime? time_local) {
         var result = iCal.TimeType.from_day_of_year (date.get_day_of_year (), date.get_year ());
-        if (time != null) {
-            result.zone = iCal.TimeZone.get_builtin_timezone_from_offset (time.get_utc_offset (), time.get_timezone_abbreviation ());
+        if (time_local != null) {
+            var time = time_local.to_timezone (new TimeZone.utc ());
+            result.zone = iCal.TimeZone.get_utc_timezone ();
             result.is_date = 0;
             result.hour = time.get_hour ();
             result.minute = time.get_minute ();
             result.second = time.get_second ();
         } else {
-            result.zone = iCal.TimeZone.get_builtin_timezone_from_offset (date.get_utc_offset (), date.get_timezone_abbreviation ());
             result.is_date = 1;
             result.hour = 0;
             result.minute = 0;
