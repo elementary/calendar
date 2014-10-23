@@ -211,9 +211,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             iCal.TimeType dt_start = comp.get_dtstart ();
             iCal.TimeType dt_end = comp.get_dtend ();
 
-            // Convert the dates
-            DateTime to_date = Util.ical_to_date_time (dt_end);
-            DateTime from_date = Util.ical_to_date_time (dt_start);
+            DateTime from_date, to_date;
+            Util.get_local_datetimes_from_icalcomponent (comp, out from_date, out to_date);
 
             if (dt_start.year != 0) {
                 from_date_picker.date = from_date;
@@ -340,8 +339,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     }
 
     bool is_valid_dates () {
-        // TODO: is it possible to only keep the date or time from a DateTime?
-
         var start_date = from_date_picker.date;
         var end_date = to_date_picker.date;
         var start_time = from_time_picker.time;

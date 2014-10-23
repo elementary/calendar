@@ -100,10 +100,17 @@ namespace Maya.Util {
             date.day, date.hour, date.minute, date.second);
     }
 
-    public Gee.Collection<DateRange> event_date_ranges (E.CalComponent event, Util.DateRange view_range) {
+    public void get_local_datetimes_from_icalcomponent (iCal.Component comp, out DateTime start_date, out DateTime end_date) {
+        iCal.TimeType dt_start = comp.get_dtstart ();
+        iCal.TimeType dt_end = comp.get_dtend ();
+
+        start_date = Util.ical_to_date_time (dt_start).to_timezone (new TimeZone.local ());
+        end_date = Util.ical_to_date_time (dt_end).to_timezone (new TimeZone.local ());
+    }
+
+    public Gee.Collection<DateRange> event_date_ranges (iCal.Component comp, Util.DateRange view_range) {
         var dateranges = new Gee.LinkedList<DateRange> ();
 
-        unowned iCal.Component comp = event.get_icalcomponent ();
         var start = ical_to_date_time (comp.get_dtstart ());
         var end = ical_to_date_time (comp.get_dtend ());
 
@@ -118,7 +125,9 @@ namespace Maya.Util {
             start = temp;
         }
 
-        dateranges.add (new Util.DateRange (strip_time(start), strip_time(end)));
+        start = strip_time (start.to_timezone (new TimeZone.local ()));
+        end = strip_time (end.to_timezone (new TimeZone.local ()));
+        dateranges.add (new Util.DateRange (start, end));
 
         // Search for recursive events.
         unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.RRULE);
@@ -148,20 +157,20 @@ namespace Maya.Util {
         if (rrule.until.is_null_time () == 0) {
             for (int i = 1; i <= (int)(rrule.until.day/rrule.interval); i++) {
                 int n = i*rrule.interval;
-                if (view_range.contains (strip_time(start).add_days (n)) || view_range.contains (strip_time(end).add_days (n)))
-                    dateranges.add (new Util.DateRange (strip_time(start).add_days (n), strip_time(end).add_days (n)));
+                if (view_range.contains (start.add_days (n)) || view_range.contains (end.add_days (n)))
+                    dateranges.add (new Util.DateRange (start.add_days (n), end.add_days (n)));
             }
         } else if (rrule.count > 0) {
             for (int i = 1; i<=rrule.count; i++) {
                 int n = i*rrule.interval;
-                if (view_range.contains (strip_time(start).add_days (n)) || view_range.contains (strip_time(end).add_days (n)))
-                    dateranges.add (new Util.DateRange (strip_time(start).add_days (n), strip_time(end).add_days (n)));
+                if (view_range.contains (start.add_days (n)) || view_range.contains (end.add_days (n)))
+                    dateranges.add (new Util.DateRange (start.add_days (n), end.add_days (n)));
             }
         } else {
             int i = 1;
             int n = i*rrule.interval;
-            while (view_range.last.compare (strip_time(start).add_days (n)) > 0) {
-                dateranges.add (new Util.DateRange (strip_time(start).add_days (n), strip_time(end).add_days (n)));
+            while (view_range.last.compare (start.add_days (n)) > 0) {
+                dateranges.add (new Util.DateRange (start.add_days (n), end.add_days (n)));
                 i++;
                 n = i*rrule.interval;
             }
@@ -173,20 +182,20 @@ namespace Maya.Util {
         if (rrule.until.is_null_time () == 0) {
             /*for (int i = 0; i <= rrule.until.year; i++) {
                 int n = i*rrule.interval;
-                if (view_range.contains (strip_time(start).add_years (n)) || view_range.contains (strip_time(end).add_years (n)))
-                    dateranges.add (new Util.DateRange (strip_time(start).add_years (n), strip_time(end).add_years (n)));
+                if (view_range.contains (start.add_years (n)) || view_range.contains (end.add_years (n)))
+                    dateranges.add (new Util.DateRange (start.add_years (n), end.add_years (n)));
             }*/
         } else if (rrule.count > 0) {
             for (int i = 1; i<=rrule.count; i++) {
                 int n = i*rrule.interval;
-                if (view_range.contains (strip_time(start).add_years (n)) || view_range.contains (strip_time(end).add_years (n)))
-                    dateranges.add (new Util.DateRange (strip_time(start).add_years (n), strip_time(end).add_years (n)));
+                if (view_range.contains (start.add_years (n)) || view_range.contains (end.add_years (n)))
+                    dateranges.add (new Util.DateRange (start.add_years (n), end.add_years (n)));
             }
         } else {
             int i = 1;
             int n = i*rrule.interval;
             bool is_null_time = rrule.until.is_null_time () == 1;
-            var temp_start = strip_time(start).add_years (n);
+            var temp_start = start.add_years (n);
             while (view_range.last.compare (temp_start) > 0) {
                 if (is_null_time == false) {
                     if (temp_start.get_year () > rrule.until.year)
@@ -197,10 +206,10 @@ namespace Maya.Util {
                         break;
                 
                 }
-                dateranges.add (new Util.DateRange (temp_start, strip_time(end).add_years (n)));
+                dateranges.add (new Util.DateRange (temp_start, end.add_years (n)));
                 i++;
                 n = i*rrule.interval;
-                temp_start = strip_time(start).add_years (n);
+                temp_start = start.add_years (n);
             }
         }
     }
@@ -213,15 +222,15 @@ namespace Maya.Util {
                 if (rrule.count > 0) {
                     for (int i = 1; i<=rrule.count; i++) {
                         int n = i*rrule.interval;
-                        var start_ical_day = get_date_from_ical_day (strip_time(start).add_months (n), rrule.by_day[k]);
+                        var start_ical_day = get_date_from_ical_day (start.add_months (n), rrule.by_day[k]);
                         int interval = start_ical_day.get_day_of_month () - start.get_day_of_month ();
-                        dateranges.add (new Util.DateRange (start_ical_day, strip_time(end).add_months (n).add_days (interval)));
+                        dateranges.add (new Util.DateRange (start_ical_day, end.add_months (n).add_days (interval)));
                     }
                 } else {
                     int i = 1;
                     int n = i*rrule.interval;
                     bool is_null_time = rrule.until.is_null_time () == 1;
-                    var start_ical_day = get_date_from_ical_day (strip_time(start).add_months (n), rrule.by_day[k]);
+                    var start_ical_day = get_date_from_ical_day (start.add_months (n), rrule.by_day[k]);
                     int week_of_month = (int)GLib.Math.ceil ((double)start.get_day_of_month () / 7);
                     while (view_range.last.compare (start_ical_day) > 0) {
                         if (is_null_time == false) {
@@ -237,7 +246,7 @@ namespace Maya.Util {
                         // Set it at the right weekday
                         int interval = start_ical_day.get_day_of_month () - start.get_day_of_month ();
                         var start_daterange_date = start_ical_day;
-                        var end_daterange_date = strip_time(end).add_months (n).add_days (interval);
+                        var end_daterange_date = end.add_months (n).add_days (interval);
                         var new_week_of_month = (int)GLib.Math.ceil ((double)start_daterange_date.get_day_of_month () / 7);
                         // Set it at the right week
                         if (week_of_month != new_week_of_month) {
@@ -248,7 +257,7 @@ namespace Maya.Util {
                         dateranges.add (new Util.DateRange (start_daterange_date, end_daterange_date));
                         i++;
                         n = i*rrule.interval;
-                        start_ical_day = get_date_from_ical_day (strip_time(start).add_months (n), rrule.by_day[k]);
+                        start_ical_day = get_date_from_ical_day (start.add_months (n), rrule.by_day[k]);
                     }
                 }
             } else {
@@ -261,13 +270,13 @@ namespace Maya.Util {
             if (rrule.count > 0) {
                 for (int i = 1; i<=rrule.count; i++) {
                     int n = i*rrule.interval;
-                    dateranges.add (new Util.DateRange (strip_time(start).add_months (n), strip_time(end).add_months (n)));
+                    dateranges.add (new Util.DateRange (start.add_months (n), end.add_months (n)));
                 }
             } else {
                 int i = 1;
                 int n = i*rrule.interval;
                 bool is_null_time = rrule.until.is_null_time () == 1;
-                var temp_start = strip_time(start).add_months (n);
+                var temp_start = start.add_months (n);
                 while (view_range.last.compare (temp_start) > 0) {
                     if (is_null_time == false) {
                         if (temp_start.get_year () > rrule.until.year)
@@ -278,10 +287,10 @@ namespace Maya.Util {
                             break;
                     
                     }
-                    dateranges.add (new Util.DateRange (temp_start, strip_time(end).add_months (n)));
+                    dateranges.add (new Util.DateRange (temp_start, end.add_months (n)));
                     i++;
                     n = i*rrule.interval;
-                    temp_start = strip_time(start).add_months (n);
+                    temp_start = start.add_months (n);
                 }
             }
         }
@@ -327,14 +336,14 @@ namespace Maya.Util {
             if (rrule.count > 0) {
                 for (int i = 1; i<=rrule.count; i++) {
                     int n = i*rrule.interval*7;
-                    if (view_range.contains (strip_time(start).add_days (n)) || view_range.contains (strip_time(end).add_days (n)))
-                        dateranges.add (new Util.DateRange (strip_time(start).add_days (n), strip_time(end).add_days (n)));
+                    if (view_range.contains (start.add_days (n)) || view_range.contains (end.add_days (n)))
+                        dateranges.add (new Util.DateRange (start.add_days (n), end.add_days (n)));
                 }
             } else {
                 int i = 1;
                 int n = i*rrule.interval*7;
                 bool is_null_time = rrule.until.is_null_time () == 1;
-                var temp_start = strip_time(start).add_days (n);
+                var temp_start = start.add_days (n);
                 while (view_range.last.compare (temp_start) > 0) {
                     if (is_null_time == false) {
                         if (temp_start.get_year () > rrule.until.year)
@@ -345,17 +354,16 @@ namespace Maya.Util {
                             break;
                     
                     }
-                    dateranges.add (new Util.DateRange (temp_start, strip_time(end).add_days (n)));
+                    dateranges.add (new Util.DateRange (temp_start, end.add_days (n)));
                     i++;
                     n = i*rrule.interval*7;
-                    temp_start = strip_time(start).add_days (n);
+                    temp_start = start.add_days (n);
                 }
             }
         }
     }
 
-    public bool is_multiday_event (E.CalComponent event) {
-        unowned iCal.Component comp = event.get_icalcomponent ();
+    public bool is_multiday_event (iCal.Component comp) {
         var start = ical_to_date_time (comp.get_dtstart ());
         var end = ical_to_date_time (comp.get_dtend ());
 
@@ -370,15 +378,17 @@ namespace Maya.Util {
             start = temp;
         }
 
-        var event_range = new Util.DateRange (strip_time(start), strip_time(end));
-        return event_range.to_list ().size > 1;
+        var timespan = start.difference (end);
+        return timespan >= GLib.TimeSpan.DAY;
     }
 
     /**
      * Say if an event lasts all day.
      */
     public bool is_the_all_day (DateTime dtstart, DateTime dtend) {
-        if ((dtend.get_hour() == dtend.get_minute()) && (dtstart.get_hour() == dtend.get_hour()) && (dtstart.get_hour() == dtstart.get_minute()) && (dtend.get_hour() == 0)) {
+        var UTC_start = dtstart.to_timezone (new TimeZone.utc ());
+        var timespan = dtend.difference (dtstart);
+        if (timespan == GLib.TimeSpan.DAY && UTC_start.get_hour() == 0) {
             return true;
         }
         else {
@@ -438,16 +448,14 @@ namespace Maya.Util {
 
     public DateTime get_start_of_month (owned DateTime? date = null) {
 
-        if (date==null)
-            date = new DateTime.now_local();
+        if (date == null)
+            date = new DateTime.now_local ();
 
-        return new DateTime.local (date.get_year(), date.get_month(), 1, 0, 0, 0);
+        return new DateTime.local (date.get_year (), date.get_month (), 1, 0, 0, 0);
     }
 
     public DateTime strip_time (DateTime datetime) {
-        int y,m,d;
-        datetime.get_ymd (out y, out m, out d);
-        return new DateTime.local (y, m, d, 0, 0, 0);
+        return datetime.add_full (0, 0, 0, -datetime.get_hour (), -datetime.get_minute (), -datetime.get_second ());
     }
 
     /* Create a map interleaving DateRanges dr1 and dr2 */
@@ -721,12 +729,6 @@ namespace Maya.Util {
 
 
     //--- ical Exportation ---//
-
-
-    /**
-     * Export all the selected calendars to a temporary ical file
-     * TODO : The code can surely be optimised, it is just a first try.
-     */
 
     public void save_temp_selected_calendars (){
         //TODO:Create the code !

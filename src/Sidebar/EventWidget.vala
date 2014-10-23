@@ -153,11 +153,11 @@ namespace Maya.View {
          * Updates the event to match the given event.
          */
         public void update (E.CalComponent event) {
-            name_label.set_markup ("<big><span size=\"xx-large\">" + Markup.escape_text (get_label (event)) + "</span></big>");
-
-            date_label.set_markup ("<span weight=\"light\">" + Markup.escape_text (get_day_string (event)) + "</span>");
-            hour_label.set_markup ("<span weight=\"light\">" + Markup.escape_text (get_hour_string (event)) + "</span>");
             unowned iCal.Component ical_event = event.get_icalcomponent ();
+            name_label.set_markup ("<big><span size=\"xx-large\">" + Markup.escape_text (get_label (ical_event)) + "</span></big>");
+
+            date_label.set_markup ("<span weight=\"light\">" + Markup.escape_text (get_day_string (ical_event)) + "</span>");
+            hour_label.set_markup ("<span weight=\"light\">" + Markup.escape_text (get_hour_string (ical_event)) + "</span>");
 
             string location = ical_event.get_location ();
 
@@ -175,21 +175,18 @@ namespace Maya.View {
         /**
          * Returns the name that should be displayed for the given event.
          */
-        string get_label (E.CalComponent event) {
-            E.CalComponentText summary = E.CalComponentText ();
-            event.get_summary (out summary);
-
-            return summary.value;
+        string get_label (iCal.Component comp) {
+            return comp.get_summary ();
         }
 
         /**
          * Returns the date that should be displayed for the given event.
          */
-        string get_day_string (E.CalComponent event) {
+        string get_day_string (iCal.Component comp) {
             DateTime start_date, end_date;
-            get_dates (event, out start_date, out end_date);
+            Util.get_local_datetimes_from_icalcomponent (comp, out start_date, out end_date);
             string start_date_string = start_date.format (Settings.DateFormat_Complete ());
-            if (Util.is_multiday_event (event) == true) {
+            if (Util.is_multiday_event (comp) == true) {
                 string end_date_string = end_date.format (Settings.DateFormat_Complete ());
                 date_label.no_show_all = false;
                 date_image.no_show_all = false;
@@ -206,9 +203,9 @@ namespace Maya.View {
             }
         }
 
-        string get_hour_string (E.CalComponent event) {
+        string get_hour_string (iCal.Component comp) {
             DateTime start_date, end_date;
-            get_dates (event, out start_date, out end_date);
+            Util.get_local_datetimes_from_icalcomponent (comp, out start_date, out end_date);
             if (Util.is_the_all_day(start_date, end_date) == true) {
                 return _("All day");
             } else {
@@ -216,16 +213,6 @@ namespace Maya.View {
                 string end_time_string = end_date.format (Settings.TimeFormat ());
                 return "%s - %s".printf (start_time_string, end_time_string);
             }
-        }
-
-        void get_dates (E.CalComponent event, out DateTime start_date, out DateTime end_date) {
-            var datefrom = E.CalComponentDateTime ();
-            var dateto = E.CalComponentDateTime ();
-            event.get_dtstart (out datefrom);
-            event.get_dtend (out dateto);
-
-            start_date = Util.ical_to_date_time (*datefrom.value);
-            end_date = Util.ical_to_date_time (*dateto.value);
         }
 
     }

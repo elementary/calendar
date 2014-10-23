@@ -263,7 +263,9 @@ namespace Maya.View {
             if (selected_date == null)
                 return false;
 
-            foreach (var dt_range in Util.event_date_ranges (event, new Util.DateRange (Util.strip_time(selected_date), Util.strip_time(selected_date.add_days (1))))) {
+            unowned iCal.Component comp = event.get_icalcomponent ();
+            var stripped_time = Util.strip_time (selected_date);
+            foreach (var dt_range in Util.event_date_ranges (comp, new Util.DateRange (stripped_time, stripped_time.add_days (1)))) {
                 if (dt_range.contains (selected_date))
                     return true;
             }

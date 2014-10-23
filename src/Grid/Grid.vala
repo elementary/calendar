@@ -167,7 +167,8 @@ public class Grid : Gtk.Grid {
      * Puts the given event on the grid.
      */
     public void add_event (E.CalComponent event) {
-        foreach (var dt_range in Util.event_date_ranges (event, grid_range)) {
+        unowned iCal.Component comp = event.get_icalcomponent ();
+        foreach (var dt_range in Util.event_date_ranges (comp, grid_range)) {
             add_buttons_for_range (dt_range, event);
         }
     }
