@@ -12,7 +12,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-public class Maya.View.SourceItem : Gtk.EventBox {
+public class Maya.View.SourceItem : Gtk.FlowBoxChild {
     private E.Source source;
 
     private Gtk.Revealer revealer;
@@ -26,7 +26,6 @@ public class Maya.View.SourceItem : Gtk.EventBox {
 
     private Gtk.Label calendar_name_label;
     private Gtk.Label user_name_label;
-    private Gtk.Label backend_label;
     private Gtk.Label calendar_color_label;
     private Gtk.CheckButton visible_checkbutton;
 
@@ -51,23 +50,6 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         calendar_name_label.set_markup ("<b>%s</b>".printf (GLib.Markup.escape_text (source.dup_display_name ())));
         calendar_name_label.xalign = 0;
 
-        Maya.Backend selected_backend = null;
-        foreach (var backend in BackendsManager.get_default ().backends) {
-            if (source.dup_parent () == backend.get_uid ()) {
-                selected_backend = backend;
-                break;
-            }
-        }
-
-        if (selected_backend == null) {
-            backend_label = new Gtk.Label ("");
-        } else {
-            backend_label = new Gtk.Label (selected_backend.get_name ());
-        }
-
-        backend_label.hexpand = true;
-        backend_label.xalign = 0;
-
         if (source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
             var collection = (E.SourceAuthentication)source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
             if (collection.user != null) {
@@ -76,9 +58,10 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         }
 
         if (user_name_label == null)
-            user_name_label = new Gtk.Label (GLib.Environment.get_real_name ());
+            user_name_label = new Gtk.Label (_("On this computer"));
 
         user_name_label.xalign = 0;
+        user_name_label.hexpand = true;
 
         calendar_color_label = new Gtk.Label ("  ");
         var color = Gdk.RGBA ();
@@ -112,8 +95,12 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         delete_revealer.add (delete_button);
         delete_revealer.show_all ();
         delete_revealer.set_reveal_child (false);
+        if (source.removable == false) {
+            delete_revealer.hide ();
+            delete_revealer.no_show_all = true;
+        }
 
-        edit_button = new Gtk.Button.from_icon_name ("document-properties-symbolic", Gtk.IconSize.MENU);
+        edit_button = new Gtk.Button.from_icon_name ("edit-symbolic", Gtk.IconSize.MENU);
         edit_button.set_tooltip_text (_("Edit…"));
         edit_button.clicked.connect (() => {edit_request (source);});
         edit_button.relief = Gtk.ReliefStyle.NONE;
@@ -122,15 +109,18 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         edit_revealer.add (edit_button);
         edit_revealer.show_all ();
         edit_revealer.set_reveal_child (false);
+        if (source.writable == false) {
+            edit_revealer.hide ();
+            edit_revealer.no_show_all = true;
+        }
 
         revealer_grid.attach (visible_checkbutton, 0, 0, 1, 2);
         revealer_grid.attach (calendar_color_label, 1, 0, 1, 2);
         revealer_grid.attach (calendar_name_label, 2, 0, 1, 1);
-        revealer_grid.attach (backend_label, 3, 0, 1, 1);
-        revealer_grid.attach (user_name_label, 2, 1, 2, 1);
+        revealer_grid.attach (user_name_label, 2, 1, 1, 1);
 
-        revealer_grid.attach (delete_revealer, 4, 0, 1, 2);
-        revealer_grid.attach (edit_revealer, 5, 0, 1, 2);
+        revealer_grid.attach (delete_revealer, 3, 0, 1, 2);
+        revealer_grid.attach (edit_revealer, 4, 0, 1, 2);
 
         revealer.add (revealer_grid);
 
@@ -169,10 +159,12 @@ public class Maya.View.SourceItem : Gtk.EventBox {
 
         main_grid.attach (info_revealer, 0, 0, 1, 1);
         main_grid.attach (revealer, 0, 1, 1, 1);
-        add (main_grid);
+        var event_box = new Gtk.EventBox ();
+        event_box.add (main_grid);
+        add (event_box);
 
-        add_events (Gdk.EventMask.ENTER_NOTIFY_MASK|Gdk.EventMask.LEAVE_NOTIFY_MASK);
-        enter_notify_event.connect ((event) => {
+        event_box.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK|Gdk.EventMask.LEAVE_NOTIFY_MASK);
+        event_box.enter_notify_event.connect ((event) => {
             if (source.removable == true)
                 delete_revealer.set_reveal_child (true);
             if (source.writable == true)
@@ -180,7 +172,7 @@ public class Maya.View.SourceItem : Gtk.EventBox {
             return false;
         });
 
-        leave_notify_event.connect ((event) => {
+        event_box.leave_notify_event.connect ((event) => {
             if (source.removable == true)
                 delete_revealer.set_reveal_child (false);
             if (source.writable == true)
@@ -208,5 +200,9 @@ public class Maya.View.SourceItem : Gtk.EventBox {
         revealer.set_reveal_child (false);
         revealer.hide ();
         info_revealer.set_reveal_child (true);
+    }
+    
+    public string get_user_name () {
+        return user_name_label.label;
     }
 }

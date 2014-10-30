@@ -19,8 +19,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     private SourceDialog src_dialog = null;
 
     private Gtk.Grid main_grid;
-    private Gtk.Grid calendar_grid;
-    private int calendar_index = 0;
+    private Gtk.FlowBox calendar_box;
     private Gtk.ScrolledWindow scroll;
     private E.SourceRegistry registry;
 
@@ -28,15 +27,20 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         modal = false;
         stack = new Gtk.Stack ();
 
-        calendar_grid = new Gtk.Grid ();
-        calendar_grid.row_spacing = 12;
-        calendar_grid.margin_start = calendar_grid.margin_end = 6;
+        calendar_box = new Gtk.FlowBox ();
+        calendar_box.selection_mode = Gtk.SelectionMode.NONE;
+        calendar_box.orientation = Gtk.Orientation.HORIZONTAL;
+        calendar_box.row_spacing = 12;
+        calendar_box.margin_start = calendar_box.margin_end = 6;
+        calendar_box.set_sort_func ((child1, child2) => {
+            return strcmp (((SourceItem)child1).get_user_name (), ((SourceItem)child2).get_user_name ());
+        });
 
         scroll = new Gtk.ScrolledWindow (null, null);
         scroll.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scroll.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
         scroll.expand = true;
-        scroll.add (calendar_grid);
+        scroll.add (calendar_box);
 
         main_grid = new Gtk.Grid ();
         main_grid.row_spacing = 6;
@@ -111,17 +115,28 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         source_item.edit_request.connect (edit_source);
         source_item.remove_request.connect (remove_source);
 
-        calendar_grid.attach (source_item, 0, calendar_index, 1, 1);
+        calendar_box.add (source_item);
         int minimum_height;
         int natural_height;
-        calendar_index++;
-        calendar_grid.show_all ();
-        calendar_grid.get_preferred_height (out minimum_height, out natural_height);
-        if (natural_height > 150) {
+        source_item.show_all ();
+        source_item.get_preferred_height (out minimum_height, out natural_height);
+        var number_of_children = calendar_box.get_children ().length ();
+        var real_size = natural_height * number_of_children + 12 * number_of_children - 1;
+        if (real_size > 150) {
             scroll.set_size_request (-1, 150);
         } else {
-            scroll.set_size_request (-1, natural_height);
+            scroll.set_size_request (-1, (int)real_size);
         }
+
+        source_item.destroy.connect (() => {
+            number_of_children = calendar_box.get_children ().length ();
+            real_size = natural_height * number_of_children + 12 * number_of_children - 1;
+            if (real_size > 150) {
+                scroll.set_size_request (-1, 150);
+            } else {
+                scroll.set_size_request (-1, (int)real_size);
+            }
+        });
 
         src_map.set (source.dup_uid (), source_item);
     }
