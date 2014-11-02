@@ -43,7 +43,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             var registry = new E.SourceRegistry.sync (null);
             sources = new Gee.ArrayList<E.Source> ();
             foreach (var src in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
-                if (src.writable == true) {
+                if (src.writable == true && src.enabled == true) {
                     sources.add (src);
                 }
             }
