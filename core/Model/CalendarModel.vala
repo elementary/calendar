@@ -120,14 +120,13 @@ public class Maya.Model.CalendarModel : Object {
                 var registry = new E.SourceRegistry.sync (null);
                 registry.source_disabled.connect (remove_source);
                 registry.source_enabled.connect (add_source);
-                registry.source_added.connect (add_source);
                 registry.source_removed.connect (remove_source);
                 registry.source_changed.connect (on_source_changed);
 
                 // Add sources
                 foreach (var source in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
                     E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-                    if (cal.selected == true) {
+                    if (cal.selected == true && source.enabled == true) {
                         add_source (source);
                     }
                 }

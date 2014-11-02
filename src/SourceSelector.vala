@@ -16,6 +16,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     private Gee.HashMap<string, SourceItem?> src_map;
 
     private Gtk.Stack stack;
+    private HashTable<string, SourceItemHeader> headers;
     private SourceDialog src_dialog = null;
 
     private Gtk.Grid main_grid;
@@ -27,13 +28,31 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         modal = false;
         stack = new Gtk.Stack ();
 
+        headers = new HashTable<string, SourceItemHeader> (str_hash, str_equal);
+
         calendar_box = new Gtk.FlowBox ();
         calendar_box.selection_mode = Gtk.SelectionMode.NONE;
         calendar_box.orientation = Gtk.Orientation.HORIZONTAL;
-        calendar_box.row_spacing = 12;
+        calendar_box.row_spacing = 6;
         calendar_box.margin_start = calendar_box.margin_end = 6;
         calendar_box.set_sort_func ((child1, child2) => {
-            return strcmp (((SourceItem)child1).get_user_name (), ((SourceItem)child2).get_user_name ());
+            if (child1 is SourceItemHeader) {
+                if (child2 is SourceItemHeader) {
+                    return ((SourceItemHeader)child1).label.collate (((SourceItemHeader)child2).label);
+                } else {
+                    return ((SourceItemHeader)child1).label.collate (((SourceItem)child2).location);
+                }
+            } else {
+                if (child2 is SourceItemHeader) {
+                    return ((SourceItem)child1).location.collate (((SourceItemHeader)child2).label);
+                } else {
+                    var comparison = ((SourceItem)child1).location.collate (((SourceItem)child2).location);
+                    if (comparison == 0)
+                        return ((SourceItem)child1).label.collate (((SourceItem)child2).label);
+                    else
+                        return comparison;
+                }
+            }
         });
 
         scroll = new Gtk.ScrolledWindow (null, null);
@@ -56,7 +75,6 @@ public class Maya.View.SourceSelector : Gtk.Popover {
             }
 
             registry.source_removed.connect (source_removed);
-            registry.source_added.connect (add_source_to_view);
             registry.source_disabled.connect (source_disabled);
             registry.source_enabled.connect (add_source_to_view);
         } catch (GLib.Error error) {
@@ -83,6 +101,13 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
     private void source_removed (E.Source source) {
         var source_item = src_map.get (source.dup_uid ());
+        var source_header = headers.get (source_item.location);
+        source_header.children--;
+        if (source_header.children == 0) {
+            headers.remove (source_item.location);
+            source_header.hide ();
+            source_header.destroy ();
+        }
         source_item.hide ();
         src_map.unset (source.dup_uid ());
         source_item.destroy ();
@@ -115,13 +140,22 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         source_item.edit_request.connect (edit_source);
         source_item.remove_request.connect (remove_source);
 
+        if (source_item.location in headers) {
+            var source_header = headers.get (source_item.location);
+            source_header.children++;
+        } else {
+            var source_header = new SourceItemHeader (source_item.location);
+            headers.set (source_item.location, source_header);
+            calendar_box.add (source_header);
+        }
+
         calendar_box.add (source_item);
         int minimum_height;
         int natural_height;
         source_item.show_all ();
         source_item.get_preferred_height (out minimum_height, out natural_height);
         var number_of_children = calendar_box.get_children ().length ();
-        var real_size = natural_height * number_of_children + 12 * number_of_children - 1;
+        var real_size = natural_height * number_of_children + 6 * number_of_children - 1;
         if (real_size > 150) {
             scroll.set_size_request (-1, 150);
         } else {
@@ -130,7 +164,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
         source_item.destroy.connect (() => {
             number_of_children = calendar_box.get_children ().length ();
-            real_size = natural_height * number_of_children + 12 * number_of_children - 1;
+            real_size = natural_height * number_of_children + 6 * number_of_children - 1;
             if (real_size > 150) {
                 scroll.set_size_request (-1, 150);
             } else {

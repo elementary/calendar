@@ -13,11 +13,15 @@
 //
 
 public class Maya.View.SourceItem : Gtk.FlowBoxChild {
-    private E.Source source;
+    public signal void remove_request (E.Source source);
+    public signal void edit_request (E.Source source);
 
-    private Gtk.Revealer revealer;
-    private Gtk.Revealer info_revealer;
-    private Gtk.Grid main_grid;
+    public string location { public get; private set; }
+    public string label { public get; private set; }
+    public E.Source source { public get; private set; }
+
+    private Gtk.Stack stack;
+    private Gtk.Grid info_grid;
 
     private Gtk.Button delete_button;
     private Gtk.Revealer delete_revealer;
@@ -25,43 +29,25 @@ public class Maya.View.SourceItem : Gtk.FlowBoxChild {
     private Gtk.Revealer edit_revealer;
 
     private Gtk.Label calendar_name_label;
-    private Gtk.Label user_name_label;
     private Gtk.Label calendar_color_label;
     private Gtk.CheckButton visible_checkbutton;
-
-    public signal void remove_request (E.Source source);
-    public signal void edit_request (E.Source source);
 
     public SourceItem (E.Source source) {
         this.source = source;
 
-        main_grid = new Gtk.Grid ();
+        margin_start = 6;
+        stack = new Gtk.Stack ();
+        stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
 
         // Source widget
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-        revealer = new Gtk.Revealer ();
-        revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-        revealer.set_reveal_child (true);
-
-        var revealer_grid = new Gtk.Grid ();
-        revealer_grid.column_spacing = 6;
 
         calendar_name_label = new Gtk.Label (source.dup_display_name ());
-        calendar_name_label.set_markup ("<b>%s</b>".printf (GLib.Markup.escape_text (source.dup_display_name ())));
         calendar_name_label.xalign = 0;
+        calendar_name_label.hexpand = true;
 
-        if (source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
-            var collection = (E.SourceAuthentication)source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
-            if (collection.user != null) {
-                user_name_label = new Gtk.Label (collection.user);
-            }
-        }
-
-        if (user_name_label == null)
-            user_name_label = new Gtk.Label (_("On this computer"));
-
-        user_name_label.xalign = 0;
-        user_name_label.hexpand = true;
+        label = source.dup_display_name ();
+        location = get_source_location ();
 
         calendar_color_label = new Gtk.Label ("  ");
         var color = Gdk.RGBA ();
@@ -114,38 +100,35 @@ public class Maya.View.SourceItem : Gtk.FlowBoxChild {
             edit_revealer.no_show_all = true;
         }
 
-        revealer_grid.attach (visible_checkbutton, 0, 0, 1, 2);
-        revealer_grid.attach (calendar_color_label, 1, 0, 1, 2);
-        revealer_grid.attach (calendar_name_label, 2, 0, 1, 1);
-        revealer_grid.attach (user_name_label, 2, 1, 1, 1);
+        var calendar_grid = new Gtk.Grid ();
+        calendar_grid.column_spacing = 6;
+        calendar_grid.attach (visible_checkbutton, 0, 0, 1, 1);
+        calendar_grid.attach (calendar_color_label, 1, 0, 1, 1);
+        calendar_grid.attach (calendar_name_label, 2, 0, 1, 1);
+        calendar_grid.attach (delete_revealer, 3, 0, 1, 1);
+        calendar_grid.attach (edit_revealer, 4, 0, 1, 1);
 
-        revealer_grid.attach (delete_revealer, 3, 0, 1, 2);
-        revealer_grid.attach (edit_revealer, 4, 0, 1, 2);
+        var calendar_event_box = new Gtk.EventBox ();
+        calendar_event_box.add (calendar_grid);
 
-        revealer.add (revealer_grid);
+        stack.add_named (calendar_event_box, "calendar");
 
         // Info bar
-        info_revealer = new Gtk.Revealer ();
-        info_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-        info_revealer.no_show_all = true;
-        var info_revealer_grid = new Gtk.Grid ();
-        info_revealer_grid.column_spacing = 6;
-        info_revealer_grid.row_spacing = 12;
-        info_revealer.add (info_revealer_grid);
+        info_grid = new Gtk.Grid ();
+        info_grid.column_spacing = 6;
+        info_grid.row_spacing = 12;
+        info_grid.no_show_all = true;
         var undo_button = new Gtk.Button.with_label (_("Undo"));
         undo_button.clicked.connect (() => {
-            revealer.show ();
             Model.CalendarModel.get_default ().restore_calendar ();
-            revealer.set_reveal_child (true);
-            info_revealer.set_reveal_child (false);
-            info_revealer.hide ();
+            stack.set_visible_child_name ("calendar");
+            info_grid.no_show_all = true;
+            info_grid.hide ();
         });
 
         var close_button = new Gtk.Button.from_icon_name ("window-close-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
         close_button.relief = Gtk.ReliefStyle.NONE;
         close_button.clicked.connect (() => {
-            info_revealer.set_reveal_child (false);
-            info_revealer.hide ();
             hide ();
             destroy ();
         });
@@ -153,30 +136,24 @@ public class Maya.View.SourceItem : Gtk.FlowBoxChild {
         var message_label = new Gtk.Label (_("Calendar \"%s\" removed.").printf (source.display_name));
         message_label.hexpand = true;
         message_label.xalign = 0;
-        info_revealer_grid.attach (message_label, 0, 0, 1, 1);
-        info_revealer_grid.attach (undo_button, 1, 0, 1, 1);
-        info_revealer_grid.attach (close_button, 2, 0, 1, 1);
+        info_grid.attach (message_label, 0, 0, 1, 1);
+        info_grid.attach (undo_button, 1, 0, 1, 1);
+        info_grid.attach (close_button, 2, 0, 1, 1);
+        stack.add_named (info_grid, "info");
+        stack.set_visible_child_name ("calendar");
 
-        main_grid.attach (info_revealer, 0, 0, 1, 1);
-        main_grid.attach (revealer, 0, 1, 1, 1);
-        var event_box = new Gtk.EventBox ();
-        event_box.add (main_grid);
-        add (event_box);
+        add (stack);
 
-        event_box.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK|Gdk.EventMask.LEAVE_NOTIFY_MASK);
-        event_box.enter_notify_event.connect ((event) => {
-            if (source.removable == true)
-                delete_revealer.set_reveal_child (true);
-            if (source.writable == true)
-                edit_revealer.set_reveal_child (true);
+        calendar_event_box.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK);
+        calendar_event_box.enter_notify_event.connect ((event) => {
+            delete_revealer.set_reveal_child (true);
+            edit_revealer.set_reveal_child (true);
             return false;
         });
 
-        event_box.leave_notify_event.connect ((event) => {
-            if (source.removable == true)
-                delete_revealer.set_reveal_child (false);
-            if (source.writable == true)
-                edit_revealer.set_reveal_child (false);
+        calendar_event_box.leave_notify_event.connect ((event) => {
+            delete_revealer.set_reveal_child (false);
+            edit_revealer.set_reveal_child (false);
             return false;
         });
 
@@ -184,7 +161,7 @@ public class Maya.View.SourceItem : Gtk.FlowBoxChild {
     }
 
     public void source_has_changed () {
-        calendar_name_label.set_markup ("<b>%s</b>".printf (GLib.Markup.escape_text (source.dup_display_name ())));
+        calendar_name_label.label = source.dup_display_name ();
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
         var color = Gdk.RGBA ();
@@ -195,14 +172,55 @@ public class Maya.View.SourceItem : Gtk.FlowBoxChild {
     }
 
     public void show_calendar_removed () {
-        info_revealer.no_show_all = false;
-        info_revealer.show_all ();
-        revealer.set_reveal_child (false);
-        revealer.hide ();
-        info_revealer.set_reveal_child (true);
+        info_grid.no_show_all = false;
+        info_grid.show_all ();
+        stack.set_visible_child_name ("info");
     }
-    
-    public string get_user_name () {
-        return user_name_label.label;
+
+    private string get_source_location () {
+        try {
+            var registry = new E.SourceRegistry.sync (null);
+            string parent_uid = source.parent;
+            E.Source parent_source = source;
+            while (parent_source != null) {
+                parent_uid = parent_source.parent;
+
+                if (parent_source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
+                    var collection = (E.SourceAuthentication)parent_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+                    if (collection.user != null) {
+                        return collection.user;
+                    }
+                }
+
+                if (parent_source.has_extension (E.SOURCE_EXTENSION_COLLECTION)) {
+                    var collection = (E.SourceCollection)parent_source.get_extension (E.SOURCE_EXTENSION_COLLECTION);
+                    if (collection.identity != null) {
+                        return collection.identity;
+                    }
+                }
+
+                if (parent_uid == null)
+                    break;
+
+                parent_source = registry.ref_source (parent_uid);
+            }
+        } catch (Error error) {
+            critical (error.message);
+        }
+
+        return _("On this computer");
+    }
+}
+
+public class Maya.View.SourceItemHeader : Gtk.FlowBoxChild {
+    public string label { public get; private set; }
+    public uint children = 1;
+    public SourceItemHeader (string label) {
+        this.label = label;
+        var header_label = new Gtk.Label ("<b>%s</b>".printf (GLib.Markup.escape_text (label)));
+        header_label.use_markup = true;
+        header_label.xalign = 0;
+        header_label.hexpand = true;
+        add (header_label);
     }
 }
