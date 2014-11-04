@@ -65,6 +65,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         registry.source_removed.connect (source_removed);
         registry.source_disabled.connect (source_disabled);
         registry.source_enabled.connect (add_source_to_view);
+        registry.source_added.connect (add_source_to_view);
 
         var add_calendar_button = new Gtk.Button.with_label (_("Add New Calendar…"));
         add_calendar_button.hexpand = true;

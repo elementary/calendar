@@ -115,6 +115,7 @@ public class Maya.Model.CalendarModel : Object {
             registry = new E.SourceRegistry.sync (null);
             registry.source_removed.connect (remove_source);
             registry.source_changed.connect (on_source_changed);
+            registry.source_added.connect (add_source);
 
             // Add sources
             foreach (var source in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
@@ -211,6 +212,7 @@ public class Maya.Model.CalendarModel : Object {
     public void trash_calendar (E.Source source) {
         calendar_trash.push_tail (source);
         remove_source (source);
+        source.set_enabled (false);
     }
 
     public void restore_calendar () {
@@ -218,6 +220,7 @@ public class Maya.Model.CalendarModel : Object {
             return;
 
         var source = calendar_trash.pop_tail ();
+        source.set_enabled (true);
         add_source (source);
     }
 
