@@ -25,7 +25,7 @@ namespace Maya.View {
     public class AgendaView : Gtk.Grid {
 
         // All of the sources to be displayed and their widgets.
-        Gee.Map<E.Source, SourceWidget> source_widgets;
+        GLib.HashTable<string, SourceWidget> source_widgets;
 
         // Sent out when the visibility of this widget changes.
         public signal void shown_changed (bool old, bool new);
@@ -80,27 +80,20 @@ namespace Maya.View {
             scrolled_window.expand = true;
             scrolled_window.show_all ();
 
-            source_widgets = new Gee.HashMap<E.Source, SourceWidget> (
-                (Gee.HashDataFunc<E.Source>?) Util.source_hash_func,
-                (Gee.EqualDataFunc<E.Source>?) Util.source_equal_func,
-                null);
+            source_widgets = new GLib.HashTable<string, SourceWidget> (str_hash, str_equal);
 
-            try {
-                var registry = new E.SourceRegistry.sync (null);
-                foreach (var src in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
-                    E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-                    if (cal.selected)
-                        add_source (src);
-                }
-
-                // Listen to changes in the sources
-                registry.source_enabled.connect (on_source_enabled);
-                registry.source_disabled.connect (on_source_disabled);
-                registry.source_added.connect (on_source_added);
-                registry.source_removed.connect (on_source_removed);
-            } catch (GLib.Error error) {
-                critical (error.message);
+            var registry = Maya.Model.CalendarModel.get_default ().registry;
+            foreach (var src in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
+                E.SourceCalendar cal = (E.SourceCalendar)src.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+                if (cal.selected)
+                    add_source (src);
             }
+
+            // Listen to changes in the sources
+            registry.source_enabled.connect (on_source_enabled);
+            registry.source_disabled.connect (on_source_disabled);
+            registry.source_added.connect (on_source_added);
+            registry.source_removed.connect (on_source_removed);
 
             // Listen to changes for events
             var calmodel = Model.CalendarModel.get_default ();
@@ -116,24 +109,24 @@ namespace Maya.View {
          * Called when a source is checked/unchecked in the source selector.
          */
         void on_source_enabled (E.Source source) {
-            if (!source_widgets.has_key (source))
+            if (!source_widgets.contains (source.dup_uid ()))
                 return;
 
-            source_widgets.get (source).selected = true;
+            source_widgets.get (source.dup_uid ()).selected = true;
         }
         
         void on_source_disabled (E.Source source) {
-            if (!source_widgets.has_key (source))
+            if (!source_widgets.contains (source.dup_uid ()))
                 return;
 
-            source_widgets.get (source).selected = false;
+            source_widgets.get (source.dup_uid ()).selected = false;
         }
 
         /**
          * Called when a source is removed.
          */
         void on_source_removed (E.Source source) {
-            if (!source_widgets.has_key (source))
+            if (!source_widgets.contains (source.dup_uid ()))
                 return;
 
             remove_source (source);
@@ -150,7 +143,7 @@ namespace Maya.View {
          * The selected month has changed, all events should be cleared.
          */
         void on_model_parameters_changed () {
-            foreach (var widget in source_widgets.values)
+            foreach (var widget in source_widgets.get_values ())
                 widget.remove_all_events ();
         }
 
@@ -162,12 +155,13 @@ namespace Maya.View {
             sources_grid.attach (widget, 0, row_number, 1, 1);
             row_number++;
 
-            source_widgets.set (source, widget);
+            source_widgets.set (source.dup_uid (), widget);
             widget.shown_changed.connect (on_source_shown_changed);
             widget.event_modified.connect ((event) => (event_modified (event)));
             widget.event_removed.connect ((event) => (event_removed (event)));
             widget.selected = true;
             widget.set_search_text (search_text);
+            update_visibility ();
         }
 
         /**
@@ -181,7 +175,7 @@ namespace Maya.View {
          * Removes the given source from the list.
          */
         void remove_source (E.Source source) {
-            var widget = source_widgets.get (source);
+            var widget = source_widgets.get (source.dup_uid ());
             if (widget != null)
                 widget.destroy ();
         }
@@ -190,12 +184,12 @@ namespace Maya.View {
          * Events have been added to the given source.
          */
         void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
-            if (!source_widgets.has_key (source))
+            if (!source_widgets.contains (source.dup_uid ()))
                 return;
 
             foreach (var event in events) {
                 if (event != null) {
-                    source_widgets.get (source).add_event (event);
+                    source_widgets.get (source.dup_uid ()).add_event (event);
                 }
             }
         }
@@ -204,22 +198,22 @@ namespace Maya.View {
          * Events for the given source have been updated.
          */
         void on_events_updated (E.Source source, Gee.Collection<E.CalComponent> events) {
-            if (!source_widgets.has_key (source))
+            if (!source_widgets.contains (source.dup_uid ()))
                 return;
 
             foreach (var event in events)
-                source_widgets.get (source).update_event (event);
+                source_widgets.get (source.dup_uid ()).update_event (event);
         }
 
         /**
          * Events for the given source have been removed.
          */
         void on_events_removed (E.Source source, Gee.Collection<E.CalComponent> events) {
-            if (!source_widgets.has_key (source))
+            if (!source_widgets.contains (source.dup_uid ()))
                 return;
 
             foreach (var event in events)
-                source_widgets.get (source).remove_event (event);
+                source_widgets.get (source.dup_uid ()).remove_event (event);
         }
 
         /**
@@ -227,7 +221,7 @@ namespace Maya.View {
          */
         public void set_selected_date (DateTime date) {
             day_label.label = date.format (Settings.DateFormat_Complete ());
-            foreach (var widget in source_widgets.values )
+            foreach (var widget in source_widgets.get_values ())
                 widget.set_selected_date (date);
         }
 
@@ -260,7 +254,7 @@ namespace Maya.View {
          */
         public int nr_of_visible_sources () {
             int result = 0;
-            foreach (var widget in source_widgets.values)
+            foreach (var widget in source_widgets.get_values ())
                 if (widget.is_shown ())
                     result++;
             return result;
@@ -271,7 +265,7 @@ namespace Maya.View {
          */
         public void set_search_text (string text) {
             search_text = text;
-            foreach (var widget in source_widgets.values) {
+            foreach (var widget in source_widgets.get_values ()) {
                 widget.set_search_text (text);
             }
         }

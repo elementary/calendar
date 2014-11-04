@@ -591,7 +591,9 @@ namespace Maya.Util {
         }
     }
 
-    //--- Gee Utility Functions ---//
+    /*
+     * Gee Utility Functions
+     */
 
     /* Interleaves the values of two collections into a Map */
     public void zip<F, G> (Gee.Iterable<F> iterable1, Gee.Iterable<G> iterable2, Gee.Map<F, G> map) {
@@ -660,7 +662,9 @@ namespace Maya.Util {
         return a.dup_uid() == b.dup_uid();
     }
 
-    //--- TreeModel Utility Functions ---//
+    /*
+     * TreeModel Utility Functions
+     */
 
     public Gtk.TreePath? find_treemodel_object<T> (Gtk.TreeModel model, int column, T object, EqualFunc<T>? eqfunc=null) {
 
@@ -685,7 +689,9 @@ namespace Maya.Util {
         return path;
     }
 
-    //--- Gtk Miscellaneous ---//
+    /*
+     * Gtk Miscellaneous
+     */
 
     public class Css {
 
@@ -727,8 +733,42 @@ namespace Maya.Util {
         return alignment;
     }
 
+    /*
+     * E.Source Utils
+     */
+    public string get_source_location (E.Source source) {
+        var registry = Maya.Model.CalendarModel.get_default ().registry;
+        string parent_uid = source.parent;
+        E.Source parent_source = source;
+        while (parent_source != null) {
+            parent_uid = parent_source.parent;
 
-    //--- ical Exportation ---//
+            if (parent_source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
+                var collection = (E.SourceAuthentication)parent_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+                if (collection.user != null) {
+                    return collection.user;
+                }
+            }
+
+            if (parent_source.has_extension (E.SOURCE_EXTENSION_COLLECTION)) {
+                var collection = (E.SourceCollection)parent_source.get_extension (E.SOURCE_EXTENSION_COLLECTION);
+                if (collection.identity != null) {
+                    return collection.identity;
+                }
+            }
+
+            if (parent_uid == null)
+                break;
+
+            parent_source = registry.ref_source (parent_uid);
+        }
+
+        return _("On this computer");
+    }
+
+    /*
+     * ical Exportation
+     */
 
     public void save_temp_selected_calendars (){
         //TODO:Create the code !

@@ -109,8 +109,8 @@ public class GridDay : Gtk.EventBox {
     public void remove_event (E.CalComponent comp) {
         foreach(var button in event_buttons) {
             if(comp == button.comp) {
-                event_buttons.remove(button);
-                button.destroy();
+                event_buttons.remove (button);
+                destroy_button (button);
                 break;
             }
         }
@@ -118,10 +118,18 @@ public class GridDay : Gtk.EventBox {
 
     public void clear_events () {
         foreach(var button in event_buttons) {
-            button.destroy();
+            destroy_button (button);
         }
 
         event_buttons.clear ();
+    }
+
+    private void destroy_button (EventButton button) {
+        button.set_reveal_child (false);
+        Timeout.add (button.transition_duration, () => {
+            button.destroy ();
+            return false;
+        });
     }
 
     public void sensitive_container (bool sens) {

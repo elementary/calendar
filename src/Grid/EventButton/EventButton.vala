@@ -20,19 +20,23 @@ namespace Maya.View {
 /**
  * Represents a single event on the grid.
  */
-public class EventButton : Gtk.Grid {
+public class EventButton : Gtk.Revealer {
     public E.CalComponent comp {get; private set;}
     private Gtk.EventBox event_box;
+    private Gtk.Grid internal_grid;
 
     public EventButton (E.CalComponent comp) {
         this.comp = comp;
-        column_spacing = 6;
+        transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        internal_grid = new Gtk.Grid ();
+        internal_grid.column_spacing = 6;
         event_box = new Gtk.EventBox ();
         var fake_label = new Gtk.Label (" ");
         event_box.add (fake_label);
         event_box.set_size_request (4, 2);
-        attach (event_box, 0, 0, 1, 1);
+        internal_grid.attach (event_box, 0, 0, 1, 1);
         event_box.show ();
+        base.add (internal_grid);
     }
 
     public string get_summary () {
@@ -42,7 +46,7 @@ public class EventButton : Gtk.Grid {
     }
 
     public override void add (Gtk.Widget widget) {
-        attach (widget, 1, 0, 1, 1);
+        internal_grid.attach (widget, 1, 0, 1, 1);
     }
 
     public void set_color (string color) {

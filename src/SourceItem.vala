@@ -1,18 +1,24 @@
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-//
+// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
+/*-
+ * Copyright (c) 2013-2014 Maya Developers (http://launchpad.net/maya)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authored by: Corentin Noël <corentin@elementaryos.org>
+ */
 
-public class Maya.View.SourceItem : Gtk.FlowBoxChild {
+public class Maya.View.SourceItem : Gtk.ListBoxRow {
     public signal void remove_request (E.Source source);
     public signal void edit_request (E.Source source);
 
@@ -35,8 +41,9 @@ public class Maya.View.SourceItem : Gtk.FlowBoxChild {
     public SourceItem (E.Source source) {
         this.source = source;
 
-        margin_start = 6;
         stack = new Gtk.Stack ();
+        stack.margin_start = 6;
+        stack.margin_bottom = 6;
         stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
 
         // Source widget
@@ -47,7 +54,7 @@ public class Maya.View.SourceItem : Gtk.FlowBoxChild {
         calendar_name_label.hexpand = true;
 
         label = source.dup_display_name ();
-        location = get_source_location ();
+        location = Maya.Util.get_source_location (source);
 
         calendar_color_label = new Gtk.Label ("  ");
         var color = Gdk.RGBA ();
@@ -176,46 +183,13 @@ public class Maya.View.SourceItem : Gtk.FlowBoxChild {
         info_grid.show_all ();
         stack.set_visible_child_name ("info");
     }
-
-    private string get_source_location () {
-        try {
-            var registry = new E.SourceRegistry.sync (null);
-            string parent_uid = source.parent;
-            E.Source parent_source = source;
-            while (parent_source != null) {
-                parent_uid = parent_source.parent;
-
-                if (parent_source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
-                    var collection = (E.SourceAuthentication)parent_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
-                    if (collection.user != null) {
-                        return collection.user;
-                    }
-                }
-
-                if (parent_source.has_extension (E.SOURCE_EXTENSION_COLLECTION)) {
-                    var collection = (E.SourceCollection)parent_source.get_extension (E.SOURCE_EXTENSION_COLLECTION);
-                    if (collection.identity != null) {
-                        return collection.identity;
-                    }
-                }
-
-                if (parent_uid == null)
-                    break;
-
-                parent_source = registry.ref_source (parent_uid);
-            }
-        } catch (Error error) {
-            critical (error.message);
-        }
-
-        return _("On this computer");
-    }
 }
 
-public class Maya.View.SourceItemHeader : Gtk.FlowBoxChild {
+public class Maya.View.SourceItemHeader : Gtk.ListBoxRow {
     public string label { public get; private set; }
     public uint children = 1;
     public SourceItemHeader (string label) {
+        margin_bottom = 6;
         this.label = label;
         var header_label = new Gtk.Label ("<b>%s</b>".printf (GLib.Markup.escape_text (label)));
         header_label.use_markup = true;

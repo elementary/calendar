@@ -96,11 +96,12 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                 }
             }
 
-            var registry = new E.SourceRegistry.sync (null);
+            var calmodel = Maya.Model.CalendarModel.get_default ();
+            var registry = calmodel.registry;
             var list = new List<E.Source> ();
             list.append (new_source);
             registry.create_sources_sync (list);
-            Model.CalendarModel.get_default ().add_source (new_source);
+            calmodel.add_source (new_source);
             if (set_default) {
                 registry.default_calendar = new_source;
             }

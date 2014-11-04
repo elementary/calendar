@@ -24,6 +24,7 @@ set(CLIENT_SOURCE
     Sidebar/Sidebar.vala
     Sidebar/SourceWidget.vala
     Sidebar/EventWidget.vala
+    Widgets/CalendarButton.vala
     Widgets/ContractorButtonWithMenu.vala
     Widgets/DateSwitcher.vala
     Widgets/DateTimePicker.vala

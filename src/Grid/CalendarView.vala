@@ -52,7 +52,7 @@ public class CalendarView : Gtk.Grid {
         model.events_added.connect (on_events_added);
         model.events_updated.connect (on_events_updated);
         model.events_removed.connect (on_events_removed);
-        
+
         Settings.SavedState.get_default ().changed["show-weeks"].connect (on_show_weeks_changed);
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         events |= Gdk.EventMask.KEY_PRESS_MASK;
@@ -92,7 +92,9 @@ public class CalendarView : Gtk.Grid {
     public void today () {
         var today = Util.strip_time (new DateTime.now_local ());
         var calmodel = Model.CalendarModel.get_default ();
-        calmodel.month_start = Util.get_start_of_month (today);
+        var start = Util.get_start_of_month (today);
+        if (!start.equal (calmodel.month_start))
+            calmodel.month_start = start;
         sync_with_model ();
         grid.focus_date (today);
     }

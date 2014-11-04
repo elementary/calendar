@@ -21,19 +21,18 @@
  */
 
 public class Maya.LocalBackend : GLib.Object, Maya.Backend {
-    
     public string get_name () {
         return _("On this computer");
     }
-    
+
     public string get_uid () {
         return "local-stub";
     }
-    
+
     public Gee.Collection<PlacementWidget> get_new_calendar_widget (E.Source? to_edit = null) {
         return new Gee.LinkedList<PlacementWidget> ();
     }
-    
+
     public void add_new_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets) {
         try {
             var new_source = new E.Source (null, null);
@@ -42,7 +41,7 @@ public class Maya.LocalBackend : GLib.Object, Maya.Backend {
             E.SourceCalendar cal = (E.SourceCalendar)new_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             cal.color = color;
             cal.backend_name = "local";
-            var registry = new E.SourceRegistry.sync (null);
+            var registry = Maya.Model.CalendarModel.get_default ().registry;
             registry.commit_source_sync (new_source);
             if (set_default) {
                 registry.default_calendar = new_source;
@@ -51,19 +50,15 @@ public class Maya.LocalBackend : GLib.Object, Maya.Backend {
             critical (error.message);
         }
     }
-    
+
     public void modify_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets, E.Source source) {
-        try {
-            source.display_name = name;
-            E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-            cal.color = color;
-            if (set_default) {
-                var registry = new E.SourceRegistry.sync (null);
-                registry.default_calendar = source;
-            }
-            source.write.begin (null);
-        } catch (GLib.Error error) {
-            critical (error.message);
+        source.display_name = name;
+        E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+        cal.color = color;
+        if (set_default) {
+            Maya.Model.CalendarModel.get_default ().registry.default_calendar = source;
         }
+
+        source.write.begin (null);
     }
 }

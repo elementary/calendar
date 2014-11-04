@@ -1,19 +1,22 @@
-//
-//  Copyright (C) 2011-2012 Jaap Broekhuizen
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-//
+// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
+/*-
+ * Copyright (c) 2013-2014 Maya Developers (http://launchpad.net/maya)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authored by: Corentin Noël <corentin@elementaryos.org>
+ */
 
 public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     private Gtk.Entry title_entry;
@@ -23,8 +26,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     private Gtk.Switch allday_switch;
     private Granite.Widgets.TimePicker from_time_picker;
     private Granite.Widgets.TimePicker to_time_picker;
-    private Gee.ArrayList<E.Source> sources;
-    private Gtk.ComboBox calendar_box;
+    private Maya.View.Widgets.CalendarButton calendar_button;
 
     private EventDialog parent_dialog;
 
@@ -38,23 +40,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         row_spacing = 6;
         column_spacing = 12;
         sensitive = parent_dialog.can_edit;
-
-        try {
-            var registry = new E.SourceRegistry.sync (null);
-            sources = new Gee.ArrayList<E.Source> ();
-            foreach (var src in registry.list_sources(E.SOURCE_EXTENSION_CALENDAR)) {
-                if (src.writable == true && src.enabled == true) {
-                    sources.add (src);
-                }
-            }
-
-            // Select the first calendar we can find, if none is default
-            if (parent_dialog.source == null) {
-                parent_dialog.source = registry.default_calendar;
-            }
-        } catch (Error error) {
-            critical (error.message);
-        }
 
         var from_label = Maya.View.EventDialog.make_label (_("From:"));
         from_date_picker = make_date_picker ();
@@ -77,7 +62,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         to_time_picker.time_changed.connect ( () => {on_time_modified(1);} );
 
         allday_switch_grid.attach (allday_switch, 0, 0, 1, 1);
-
         allday_switch_grid.set_valign (Gtk.Align.CENTER);
 
         allday_switch.notify["active"].connect (() => {
@@ -92,22 +76,11 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         title_entry.changed.connect (on_title_entry_modified);
 
         var calendar_label = Maya.View.EventDialog.make_label (_("Calendar:"));
-
-        var liststore = new Gtk.ListStore (2, typeof (string), typeof(string));
-
-        uint calcount = 0;
-        // Add all the editable sources
-        foreach (E.Source src in sources) {
-            calcount++;
-            liststore.insert_with_values (null, 0, 0, src.dup_display_name(), 1, src.dup_uid());
+        calendar_button = new Maya.View.Widgets.CalendarButton ();
+        // Select the first calendar we can find, if none is default
+        if (parent_dialog.source == null) {
+            parent_dialog.source = calendar_button.current_source;
         }
-
-        calendar_box = new Gtk.ComboBox.with_model (liststore);
-        calendar_box.set_id_column (1);
-
-        Gtk.CellRenderer cell = new Gtk.CellRendererText();
-        calendar_box.pack_start( cell, false );
-        calendar_box.set_attributes( cell, "text", 0 );
 
         var comment_label = Maya.View.EventDialog.make_label (_("Comments:"));
         comment_textview = new Gtk.TextView ();
@@ -137,9 +110,9 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         attach (to_time_picker, 1, 5, 1, 1);
         attach (title_label, 0, 0, 1, 1);
         attach (title_entry, 0, 1, 1, 1);
-        if (calcount > 1 && parent_dialog.can_edit) {
+        if (calendar_button.sources.length () > 1 && parent_dialog.can_edit) {
             attach (calendar_label, 1, 0, 4, 1);
-            attach (calendar_box, 1, 1, 4, 1);
+            attach (calendar_button, 1, 1, 4, 1);
         }
         attach (comment_label, 0, 10, 4, 1);
         attach (frame, 0, 11, 5, 1);
@@ -184,13 +157,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         comp.add_property (property);
 
         // Save the selected source
-        string id = calendar_box.get_active_id ();
-        foreach (E.Source possible_source in sources) {
-            if (possible_source.dup_uid () == id) {
-                parent_dialog.source = possible_source;
-                break;
-            }
-        }
+        parent_dialog.source = calendar_button.current_source;
     }
 
     //--- Helpers ---//
@@ -248,7 +215,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
 
             // Load the source
-            calendar_box.set_active_id (parent_dialog.original_source.dup_uid ());
+            calendar_button.current_source = parent_dialog.original_source;
         } else {
             parent_dialog.ecal = new E.CalComponent ();
             parent_dialog.ecal.set_new_vtype (E.CalComponentVType.EVENT);
@@ -259,7 +226,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             to_time_picker.time = new DateTime.now_local ().add_hours (1);
 
             // Load the source
-            calendar_box.set_active_id (parent_dialog.source.dup_uid ());
+            calendar_button.current_source = parent_dialog.source;
         }
     }
 

@@ -13,12 +13,17 @@ namespace Maya.View {
     public class VAutoHider : Gtk.Box {
 
         Gtk.Label more_label;
+        Gtk.Revealer more_revealer;
 
         public VAutoHider () {
             resize_mode = Gtk.ResizeMode.QUEUE;
             orientation = Gtk.Orientation.VERTICAL;
             more_label = new Gtk.Label ("");
-            pack_end (more_label);
+            more_revealer = new Gtk.Revealer ();
+            more_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+            more_revealer.add (more_label);
+            more_revealer.show_all ();
+            pack_end (more_revealer);
             add.connect (() => {
                 Gtk.Allocation allocation;
                 get_allocation (out allocation);
@@ -49,16 +54,22 @@ namespace Maya.View {
         }
 
         public void change_shown_events (Gtk.Allocation allocation) {
+            int children_length = (int)get_children ().length ();
+            if (children_length == 0)
+                return;
             int height = 0;
 
             Gtk.Requisition more_label_size;
-            more_label.show ();
-            more_label.get_preferred_size (out more_label_size, null);
-
-            for (int i = 0; i < get_children ().length (); i++) {
+            more_revealer.set_reveal_child (true);
+            more_revealer.transition_type = Gtk.RevealerTransitionType.NONE;
+            more_revealer.get_preferred_size (out more_label_size, null);
+            more_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+            for (int i = 0; i < children_length; i++) {
                 var child = get_children ().nth_data (i);
+                if (child == more_revealer)
+                    continue;
 
-                bool last = (i == get_children ().length () - 1);
+                bool last = (i == children_length - 1);
 
                 Gtk.Requisition child_size;
                 child.show ();
@@ -72,6 +83,7 @@ namespace Maya.View {
                     should_hide = height > allocation.height - more_label_size.height;
 
                 if (should_hide) {
+                    ((Gtk.Revealer)child).set_reveal_child (false);
                     child.hide ();
                 } else {
                     var child_allocation = Gtk.Allocation ();
@@ -81,21 +93,16 @@ namespace Maya.View {
                     child_allocation.y = allocation.y + height - child_size.height;
                     child.size_allocate (child_allocation);
                     child.show ();
+                    ((Gtk.Revealer)child).set_reveal_child (true);
                 }
             }
 
-            uint more = get_children ().length () - get_shown_children () -1;
-            if (get_shown_children () != get_children ().length () && more > 0) {
-                more_label.show ();
-                var more_label_allocation = Gtk.Allocation ();
-                more_label_allocation.width = allocation.width;
-                more_label_allocation.height = more_label_size.height;
-                more_label_allocation.x = allocation.x;
-                more_label_allocation.y = allocation.y + allocation.height - more_label_size.height;
-                more_label.size_allocate (more_label_allocation);
+            int more = children_length - get_shown_children ();
+            if (get_shown_children () != children_length && more > 0) {
+                more_revealer.set_reveal_child (true);
                 more_label.set_label (_("%u more…").printf (more));
             } else {
-                more_label.hide ();
+                more_revealer.set_reveal_child (false);
             }
         }
 

@@ -1,58 +1,47 @@
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-//
+// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
+/*-
+ * Copyright (c) 2013-2014 Maya Developers (http://launchpad.net/maya)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authored by: Corentin Noël <corentin@elementaryos.org>
+ */
 
 public class Maya.View.SourceSelector : Gtk.Popover {
-    private Gee.HashMap<string, SourceItem?> src_map;
+    private GLib.HashTable<string, SourceItem?> src_map;
 
     private Gtk.Stack stack;
-    private HashTable<string, SourceItemHeader> headers;
     private SourceDialog src_dialog = null;
 
     private Gtk.Grid main_grid;
-    private Gtk.FlowBox calendar_box;
+    private Gtk.ListBox calendar_box;
     private Gtk.ScrolledWindow scroll;
-    private E.SourceRegistry registry;
 
     public SourceSelector () {
         modal = false;
         stack = new Gtk.Stack ();
 
-        headers = new HashTable<string, SourceItemHeader> (str_hash, str_equal);
-
-        calendar_box = new Gtk.FlowBox ();
+        calendar_box = new Gtk.ListBox ();
         calendar_box.selection_mode = Gtk.SelectionMode.NONE;
-        calendar_box.orientation = Gtk.Orientation.HORIZONTAL;
-        calendar_box.row_spacing = 6;
         calendar_box.margin_start = calendar_box.margin_end = 6;
+        calendar_box.set_header_func (header_update_func);
         calendar_box.set_sort_func ((child1, child2) => {
-            if (child1 is SourceItemHeader) {
-                if (child2 is SourceItemHeader) {
-                    return ((SourceItemHeader)child1).label.collate (((SourceItemHeader)child2).label);
-                } else {
-                    return ((SourceItemHeader)child1).label.collate (((SourceItem)child2).location);
-                }
-            } else {
-                if (child2 is SourceItemHeader) {
-                    return ((SourceItem)child1).location.collate (((SourceItemHeader)child2).label);
-                } else {
-                    var comparison = ((SourceItem)child1).location.collate (((SourceItem)child2).location);
-                    if (comparison == 0)
-                        return ((SourceItem)child1).label.collate (((SourceItem)child2).label);
-                    else
-                        return comparison;
-                }
-            }
+            var comparison = ((SourceItem)child1).location.collate (((SourceItem)child2).location);
+            if (comparison == 0)
+                return ((SourceItem)child1).label.collate (((SourceItem)child2).label);
+            else
+                return comparison;
         });
 
         scroll = new Gtk.ScrolledWindow (null, null);
@@ -65,21 +54,17 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         main_grid.row_spacing = 6;
         main_grid.margin_top = 6;
 
-        src_map = new Gee.HashMap<string, SourceItem?>();
+        src_map = new GLib.HashTable<string, SourceItem?>(str_hash, str_equal);
 
-        try {
-            registry = new E.SourceRegistry.sync (null);
-            var sources = registry.list_sources (E.SOURCE_EXTENSION_CALENDAR);
-            foreach (var src in sources) {
-                add_source_to_view (src);
-            }
-
-            registry.source_removed.connect (source_removed);
-            registry.source_disabled.connect (source_disabled);
-            registry.source_enabled.connect (add_source_to_view);
-        } catch (GLib.Error error) {
-            critical (error.message);
+        var registry = Maya.Model.CalendarModel.get_default ().registry;
+        var sources = registry.list_sources (E.SOURCE_EXTENSION_CALENDAR);
+        foreach (var src in sources) {
+            add_source_to_view (src);
         }
+
+        registry.source_removed.connect (source_removed);
+        registry.source_disabled.connect (source_disabled);
+        registry.source_enabled.connect (add_source_to_view);
 
         var add_calendar_button = new Gtk.Button.with_label (_("Add New Calendar…"));
         add_calendar_button.hexpand = true;
@@ -99,17 +84,25 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         main_grid.show_all ();
     }
 
+    private void header_update_func (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
+        var row_location = ((SourceItem)row).location;
+        if (before != null) {
+            var before_row_location = ((SourceItem)before).location;
+            if (before_row_location == row_location) {
+                row.set_header (null);
+                return;
+            }
+        }
+
+        var header = new SourceItemHeader (row_location);
+        row.set_header (header);
+        header.show_all ();
+    }
+
     private void source_removed (E.Source source) {
         var source_item = src_map.get (source.dup_uid ());
-        var source_header = headers.get (source_item.location);
-        source_header.children--;
-        if (source_header.children == 0) {
-            headers.remove (source_item.location);
-            source_header.hide ();
-            source_header.destroy ();
-        }
         source_item.hide ();
-        src_map.unset (source.dup_uid ());
+        src_map.remove (source.dup_uid ());
         source_item.destroy ();
     }
 
@@ -133,23 +126,15 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         if (source.enabled == false)
             return;
 
-        if (src_map.has_key (source.dup_uid ()))
+        if (source.dup_uid () in src_map)
             return;
 
         var source_item = new SourceItem (source);
         source_item.edit_request.connect (edit_source);
         source_item.remove_request.connect (remove_source);
 
-        if (source_item.location in headers) {
-            var source_header = headers.get (source_item.location);
-            source_header.children++;
-        } else {
-            var source_header = new SourceItemHeader (source_item.location);
-            headers.set (source_item.location, source_header);
-            calendar_box.add (source_header);
-        }
-
         calendar_box.add (source_item);
+
         int minimum_height;
         int natural_height;
         source_item.show_all ();

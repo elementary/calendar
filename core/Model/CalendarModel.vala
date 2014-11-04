@@ -26,6 +26,7 @@ public class Maya.Model.CalendarModel : Object {
     */
     public Util.DateRange data_range { get; private set; }
     public Util.DateRange month_range { get; private set; }
+    public E.SourceRegistry registry { get; private set; }
 
     /* The first day of the month */
     public DateTime month_start { get; set; }
@@ -48,11 +49,11 @@ public class Maya.Model.CalendarModel : Object {
     /* The month_start, num_weeks, or week_starts_on have been changed */
     public signal void parameters_changed ();
 
-    HashTable<E.Source, E.CalClient> source_client;
-    HashTable<E.Source, E.CalClientView> source_view;
+    HashTable<string, E.CalClient> source_client;
+    HashTable<string, E.CalClientView> source_view;
     HashTable<E.Source, Gee.Map<string, E.CalComponent>> source_events;
 
-    public Gee.LinkedList<E.Source> calendar_trash;
+    public GLib.Queue<E.Source> calendar_trash;
 
     private static Maya.Model.CalendarModel? calendar_model = null;
 
@@ -104,40 +105,27 @@ public class Maya.Model.CalendarModel : Object {
         this.month_start = Util.get_start_of_month (Settings.SavedState.get_default ().get_page ());
         compute_ranges ();
 
-        source_client = new HashTable<E.Source, E.CalClient> (Util.source_hash_func, Util.source_equal_func);
+        source_client = new HashTable<string, E.CalClient> (str_hash, str_equal);
         source_events = new HashTable<E.Source, Gee.Map<string, E.CalComponent>> (Util.source_hash_func, Util.source_equal_func);
-        source_view = new HashTable<E.Source, E.CalClientView> (Util.source_hash_func, Util.source_equal_func);
-        calendar_trash = new Gee.LinkedList<E.Source> ();
+        source_view = new HashTable<string, E.CalClientView> (str_hash, str_equal);
+        calendar_trash = new GLib.Queue<E.Source> ();
 
         notify["month-start"].connect (on_parameter_changed);
-        setup_sources_async.begin ();
-    }
-    
-    public async void setup_sources_async () {
-        SourceFunc callback = setup_sources_async.callback;
-        Threads.add (() => {
-            try {
-                var registry = new E.SourceRegistry.sync (null);
-                registry.source_disabled.connect (remove_source);
-                registry.source_enabled.connect (add_source);
-                registry.source_removed.connect (remove_source);
-                registry.source_changed.connect (on_source_changed);
+        try {
+            registry = new E.SourceRegistry.sync (null);
+            registry.source_removed.connect (remove_source);
+            registry.source_changed.connect (on_source_changed);
 
-                // Add sources
-                foreach (var source in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
-                    E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-                    if (cal.selected == true && source.enabled == true) {
-                        add_source (source);
-                    }
+            // Add sources
+            foreach (var source in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
+                E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+                if (cal.selected == true && source.enabled == true) {
+                    add_source (source);
                 }
-            } catch (GLib.Error error) {
-                critical (error.message);
             }
-            
-            Idle.add ((owned) callback);
-        });
-
-        yield;
+        } catch (GLib.Error error) {
+            critical (error.message);
+        }
     }
 
     //--- Public Methods ---//
@@ -151,14 +139,9 @@ public class Maya.Model.CalendarModel : Object {
         Threads.add (() => {
             unowned iCal.Component comp = event.get_icalcomponent();
             debug (@"Adding event '$(comp.get_uid())'");
-            E.CalClient client = null;
+            E.CalClient client;
             lock (source_client) {
-                source_client.foreach ((key, val) => {
-                    if (source.dup_uid () == ((E.Source)key).dup_uid ()) {
-                        client = val;
-                        return;
-                    }
-                });
+                client = source_client.get (source.dup_uid ());
             }
 
             if (client != null) {
@@ -190,14 +173,9 @@ public class Maya.Model.CalendarModel : Object {
         unowned iCal.Component comp = event.get_icalcomponent();
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
 
-        E.CalClient client = null;
+        E.CalClient client;
         lock (source_client) {
-            source_client.foreach ((key, val) => {
-                if (source.dup_uid () == ((E.Source)key).dup_uid ()) {
-                    client = val;
-                    return;
-                }
-            });
+            client = source_client.get (source.dup_uid ());
         }
 
         client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
@@ -215,14 +193,9 @@ public class Maya.Model.CalendarModel : Object {
         string uid = comp.get_uid ();
         string? rid = event.has_recurrences() ? null : event.get_recurid_as_string();
         debug (@"Removing event '$uid'");
-        E.CalClient client = null;
+        E.CalClient client;
         lock (source_client) {
-            source_client.foreach ((key, val) => {
-                if (source.dup_uid () == ((E.Source)key).dup_uid ()) {
-                    client = val;
-                    return;
-                }
-            });
+            client = source_client.get (source.dup_uid ());
         }
 
         client.remove_object.begin (uid, rid, mod_type, null, (obj, results) =>  {
@@ -236,21 +209,23 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     public void trash_calendar (E.Source source) {
-        calendar_trash.add (source);
+        calendar_trash.push_tail (source);
         remove_source (source);
     }
 
     public void restore_calendar () {
-        if (calendar_trash.is_empty)
+        if (calendar_trash.is_empty ())
             return;
 
-        var source = calendar_trash.poll_tail ();
+        var source = calendar_trash.pop_tail ();
         add_source (source);
     }
 
     public void delete_trashed_calendars () {
-        foreach (var source in calendar_trash) {
+        E.Source source = calendar_trash.pop_tail ();
+        while (source != null) {
             source.remove.begin (null);
+            source = calendar_trash.pop_tail ();
         }
     }
 
@@ -264,8 +239,12 @@ public class Maya.Model.CalendarModel : Object {
 
     public void load_all_sources () {
         lock (source_client) {
-            foreach (var source in source_client.get_keys ()) {
-                load_source (source);
+            foreach (var id in source_client.get_keys ()) {
+                var source = registry.ref_source (id);
+                E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+                if (cal.selected == true && source.enabled == true) {
+                    load_source (source);
+                }
             }
         }
     }
@@ -277,27 +256,20 @@ public class Maya.Model.CalendarModel : Object {
     public void remove_source (E.Source source) {
         debug ("Removing source '%s'", source.dup_display_name());
         // Already out of the model, so do nothing
-        if (!source_view.contains (source))
+        var uid = source.dup_uid ();
+        if (!source_view.contains (uid))
             return;
 
-        var current_view = source_view.get (source);
+        var current_view = source_view.get (uid);
         try {
-            current_view.stop();
+            current_view.stop ();
         } catch (Error e) {
             warning (e.message);
         }
 
-        source_view.remove (source);
-        E.CalClient client = null;
+        source_view.remove (uid);
         lock (source_client) {
-            source_client.foreach ((key, val) => {
-                if (source.dup_uid () == ((E.Source)key).dup_uid ()) {
-                    client = val;
-                    return;
-                }
-            });
-
-            source_client.remove (source);
+            source_client.remove (uid);
         }
 
         var events = source_events.get (source).values.read_only_view;
@@ -356,17 +328,16 @@ public class Maya.Model.CalendarModel : Object {
         var iso_first = E.isodate_from_time_t((ulong) data_range.first.to_unix());
         var iso_last = E.isodate_from_time_t((ulong) data_range.last.add_days(1).to_unix());
         var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
-        E.CalClient client = null;
+
+        E.CalClient client;
         lock (source_client) {
-            source_client.foreach ((key, val) => {
-                if (source.dup_uid () == ((E.Source)key).dup_uid ()) {
-                    client = val;
-                    return;
-                }
-            });
+            client = source_client.get (source.dup_uid ());
         }
 
-        debug("Getting client-view for source '%s'", source.dup_display_name ());
+        if (client == null)
+            return;
+
+        debug ("Getting client-view for source '%s'", source.dup_display_name ());
         client.get_view.begin (query, null, (obj, results) => {
             var view = on_client_view_received (results, source, client);
             view.objects_added.connect ((objects) => on_objects_added (source, client, objects));
@@ -378,7 +349,7 @@ public class Maya.Model.CalendarModel : Object {
                 critical (e.message);
             }
 
-            source_view.set (source, view);
+            source_view.set (source.dup_uid (), view);
         });
     }
 
@@ -389,7 +360,7 @@ public class Maya.Model.CalendarModel : Object {
                 var cancellable = new GLib.Cancellable ();
                 connecting (source, cancellable);
                 var client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS, cancellable);
-                source_client.insert (source, client);
+                source_client.insert (source.dup_uid (), client);
             } catch (Error e) {
                 error_received (e.message);
             }
