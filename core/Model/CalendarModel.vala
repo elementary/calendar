@@ -137,13 +137,16 @@ public class Maya.Model.CalendarModel : Object {
 
     public bool calclient_is_readonly (E.Source source) {
         E.CalClient client;
-        client = source_client.get (source.dup_uid ());
+        lock (source_client) {
+            client = source_client.get (source.dup_uid ());
+        }
         if (client != null) {
             return client.is_readonly ();
         } else {
                 critical ("No calendar client was found");
         }
-	return true;
+
+        return true;
     }
 
     private async void add_event_async (E.Source source, E.CalComponent event) {

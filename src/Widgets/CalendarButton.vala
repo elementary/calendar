@@ -43,7 +43,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         var calmodel = Model.CalendarModel.get_default ();
         var registry = calmodel.registry;
         foreach (var src in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
-            if (src.writable == true && src.enabled == true && calmodel.calclient_is_readonly(src)) {
+            if (src.writable == true && src.enabled == true && calmodel.calclient_is_readonly (src) == false) {
                 sources.append (src);
             }
         }
