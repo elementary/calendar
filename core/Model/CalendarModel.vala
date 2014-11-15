@@ -143,7 +143,7 @@ public class Maya.Model.CalendarModel : Object {
         } else {
                 critical ("No calendar client was found");
         }
-	return false;
+	return true;
     }
 
     private async void add_event_async (E.Source source, E.CalComponent event) {
