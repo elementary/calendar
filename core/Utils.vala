@@ -366,20 +366,17 @@ namespace Maya.Util {
     public bool is_multiday_event (iCal.Component comp) {
         var start = ical_to_date_time (comp.get_dtstart ());
         var end = ical_to_date_time (comp.get_dtend ());
+        var start= start.to_timezone (new TimeZone.utc ());
+        var end = end.to_timezone (new TimeZone.utc ());
 
         bool allday = is_the_all_day (start, end);
         if (allday)
             end = end.add_days (-1);
 
-        // If end is before start, switch the two
-        if (end.compare (start) < 0) {
-            var temp = end;
-            end = start;
-            start = temp;
-        }
+        if (start.get_year () != end.get_year () || start.get_day_of_year () != end.get_day_of_year ())
+            return true;
 
-        var timespan = start.difference (end);
-        return timespan >= GLib.TimeSpan.DAY;
+        return false;
     }
 
     /**
@@ -390,8 +387,7 @@ namespace Maya.Util {
         var timespan = dtend.difference (dtstart);
         if (timespan == GLib.TimeSpan.DAY && UTC_start.get_hour() == 0) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

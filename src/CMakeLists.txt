@@ -20,10 +20,7 @@ set(CLIENT_SOURCE
     Grid/WeekLabels.vala
     Grid/Header.vala
     Grid/VAutoHider.vala
-    Sidebar/AgendaView.vala
-    Sidebar/Sidebar.vala
-    Sidebar/SourceWidget.vala
-    Sidebar/EventWidget.vala
+    Widgets/AgendaView.vala
     Widgets/CalendarButton.vala
     Widgets/ContractorButtonWithMenu.vala
     Widgets/DateSwitcher.vala

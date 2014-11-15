@@ -109,7 +109,7 @@ namespace Maya {
         public Gtk.Window window;
         View.MayaToolbar toolbar;
         View.CalendarView calview;
-        View.Sidebar sidebar;
+        View.AgendaView sidebar;
         Gtk.Paned hpaned;
         Gtk.Grid gridcontainer;
         Gtk.InfoBar infobar;
@@ -144,13 +144,12 @@ namespace Maya {
             create_window ();
             var saved_state = Settings.SavedState.get_default ();
 
-            sidebar = new View.Sidebar ();
+            sidebar = new View.AgendaView ();
             // Don't automatically display all the widgets on the sidebar
             sidebar.no_show_all = true;
             sidebar.show ();
             sidebar.event_removed.connect (on_remove);
             sidebar.event_modified.connect (on_modified);
-            sidebar.agenda_view.shown_changed.connect (on_agenda_view_shown_changed);
             sidebar.set_size_request(160,0);
 
             calview = new View.CalendarView ();
@@ -190,10 +189,6 @@ namespace Maya {
 
             if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
                 window.maximize ();
-        }
-
-        void on_agenda_view_shown_changed (bool old, bool shown) {
-            toolbar.search_bar.sensitive = shown;
         }
 
         /**
