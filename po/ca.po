@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-26 13:39+0200\n"
+"POT-Creation-Date: 2014-11-15 01:33+0100\n"
 "PO-Revision-Date: 2014-04-07 20:56+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-27 05:57+0000\n"
-"X-Generator: Launchpad (build 17196)\n"
+"X-Launchpad-Export-Date: 2014-11-15 06:38+0000\n"
+"X-Generator: Launchpad (build 17241)\n"
 "Language: ca\n"
 
-#: ../src/Grid/VAutoHider.vala:96
+#: ../src/Grid/VAutoHider.vala:103
 msgid "%u more…"
 msgstr ""
 
@@ -52,6 +52,35 @@ msgstr ""
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
+msgstr ""
+
+#: ../src/Widgets/AgendaView.vala:56
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Els pròxims esdeveniments es mostren aquí quan és seleccionada una data amb "
+"events."
+
+#: ../src/Widgets/AgendaView.vala:147
+msgid "During the day"
+msgstr ""
+
+#: ../src/Widgets/AgendaView.vala:152
+msgid "All day"
+msgstr ""
+
+#: ../src/Widgets/AgendaView.vala:332 ../src/SourceItem.vala:97
+msgid "Edit…"
+msgstr "Edita…"
+
+#: ../src/Widgets/AgendaView.vala:333 ../src/SourceItem.vala:83
+msgid "Remove"
+msgstr "Suprimeix"
+
+#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
+#: ../src/Widgets/AgendaView.vala:370
+msgid "%s, %s - %s, %s"
 msgstr ""
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
@@ -373,59 +402,51 @@ msgstr ""
 msgid "No Participants"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:85
+#: ../src/EventEdition/GuestsPanel.vala:84
 msgid "Invite"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:234
+#: ../src/EventEdition/GuestsPanel.vala:232
 msgid "Accepted"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:237
+#: ../src/EventEdition/GuestsPanel.vala:235
 msgid "Declined"
 msgstr ""
 
-#: ../src/EventEdition/InfoPanel.vala:59
+#: ../src/EventEdition/InfoPanel.vala:44
 msgid "From:"
 msgstr "Des de:"
 
-#: ../src/EventEdition/InfoPanel.vala:65
+#: ../src/EventEdition/InfoPanel.vala:50
 msgid "All day:"
 msgstr "Tot el dia:"
 
-#: ../src/EventEdition/InfoPanel.vala:70
+#: ../src/EventEdition/InfoPanel.vala:55
 msgid "To:"
 msgstr "Fins a:"
 
-#: ../src/EventEdition/InfoPanel.vala:89
+#: ../src/EventEdition/InfoPanel.vala:73
 msgid "Title:"
 msgstr ""
 
-#: ../src/EventEdition/InfoPanel.vala:91
+#: ../src/EventEdition/InfoPanel.vala:75
 msgid "Name of Event"
 msgstr "Nom de l'esdeveniment"
 
-#: ../src/EventEdition/InfoPanel.vala:94
+#: ../src/EventEdition/InfoPanel.vala:78
 msgid "Calendar:"
 msgstr ""
 
-#: ../src/EventEdition/InfoPanel.vala:112
+#: ../src/EventEdition/InfoPanel.vala:85
 msgid "Comments:"
 msgstr ""
 
-#: ../src/SourceItem.vala:107 ../src/Sidebar/EventWidget.vala:132
-msgid "Remove"
-msgstr "Suprimeix"
-
-#: ../src/SourceItem.vala:117 ../src/Sidebar/EventWidget.vala:131
-msgid "Edit…"
-msgstr "Edita…"
-
-#: ../src/SourceItem.vala:145
+#: ../src/SourceItem.vala:128
 msgid "Undo"
 msgstr "Desfés"
 
-#: ../src/SourceItem.vala:163
+#: ../src/SourceItem.vala:143
 msgid "Calendar \"%s\" removed."
 msgstr "S'ha suprimit el calendari «%s»."
 
@@ -449,24 +470,7 @@ msgstr "Cerca esdeveniments"
 msgid "Export or Share the default Calendar"
 msgstr "Exporta o comparteix el calendari predeterminat"
 
-#: ../src/Sidebar/Sidebar.vala:38
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Els pròxims esdeveniments es mostren aquí quan és seleccionada una data amb "
-"events."
-
-#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
-#: ../src/Sidebar/EventWidget.vala:199
-msgid "%s to %s"
-msgstr ""
-
-#: ../src/Sidebar/EventWidget.vala:213
-msgid "All day"
-msgstr ""
-
-#: ../src/SourceSelector.vala:62
+#: ../src/SourceSelector.vala:70
 msgid "Add New Calendar…"
 msgstr "Afegeix un calendari nou…"
 
@@ -522,7 +526,7 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "nom.usuari o nom.usuari@gmail.com"
 
-#: ../core/Backends/LocalBackend.vala:26
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:762
 msgid "On this computer"
 msgstr "En aquest ordinador"
 

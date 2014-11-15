@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-26 13:39+0200\n"
+"POT-Creation-Date: 2014-11-15 01:33+0100\n"
 "PO-Revision-Date: 2014-11-06 08:06+0000\n"
 "Last-Translator: Vahan Harutyunyan <Unknown>\n"
 "Language-Team: Armenian <hy@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-11-07 06:04+0000\n"
-"X-Generator: Launchpad (build 17231)\n"
+"X-Launchpad-Export-Date: 2014-11-15 06:38+0000\n"
+"X-Generator: Launchpad (build 17241)\n"
 "Language: hy\n"
 
-#: ../src/Grid/VAutoHider.vala:96
+#: ../src/Grid/VAutoHider.vala:103
 msgid "%u more…"
 msgstr "%u ավելին..."
 
@@ -53,6 +53,35 @@ msgstr "Մայայի մասին"
 #: ../src/Translations.vala:10
 msgid "About Calendar"
 msgstr "Օրացույցի մասին"
+
+#: ../src/Widgets/AgendaView.vala:56
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Ձեր գալիք իրադարձությունները ցուցադրվելու են այստեղ, երբ ընտրեք օր "
+"իրադարձություններով"
+
+#: ../src/Widgets/AgendaView.vala:147
+msgid "During the day"
+msgstr ""
+
+#: ../src/Widgets/AgendaView.vala:152
+msgid "All day"
+msgstr "Ամբողջ օրը"
+
+#: ../src/Widgets/AgendaView.vala:332 ../src/SourceItem.vala:97
+msgid "Edit…"
+msgstr "Փոփոխել"
+
+#: ../src/Widgets/AgendaView.vala:333 ../src/SourceItem.vala:83
+msgid "Remove"
+msgstr "Ջնջել"
+
+#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
+#: ../src/Widgets/AgendaView.vala:370
+msgid "%s, %s - %s, %s"
+msgstr ""
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -373,59 +402,51 @@ msgstr "Մասնակիցներ"
 msgid "No Participants"
 msgstr "Մասնակիցներ չկան"
 
-#: ../src/EventEdition/GuestsPanel.vala:85
+#: ../src/EventEdition/GuestsPanel.vala:84
 msgid "Invite"
 msgstr "Հրավիրել"
 
-#: ../src/EventEdition/GuestsPanel.vala:234
+#: ../src/EventEdition/GuestsPanel.vala:232
 msgid "Accepted"
 msgstr "Ընդունված է"
 
-#: ../src/EventEdition/GuestsPanel.vala:237
+#: ../src/EventEdition/GuestsPanel.vala:235
 msgid "Declined"
 msgstr "Մերժված է"
 
-#: ../src/EventEdition/InfoPanel.vala:59
+#: ../src/EventEdition/InfoPanel.vala:44
 msgid "From:"
 msgstr "–ից"
 
-#: ../src/EventEdition/InfoPanel.vala:65
+#: ../src/EventEdition/InfoPanel.vala:50
 msgid "All day:"
 msgstr "Ողջ օրը"
 
-#: ../src/EventEdition/InfoPanel.vala:70
+#: ../src/EventEdition/InfoPanel.vala:55
 msgid "To:"
 msgstr "Ում՝"
 
-#: ../src/EventEdition/InfoPanel.vala:89
+#: ../src/EventEdition/InfoPanel.vala:73
 msgid "Title:"
 msgstr "Վերնագիր."
 
-#: ../src/EventEdition/InfoPanel.vala:91
+#: ../src/EventEdition/InfoPanel.vala:75
 msgid "Name of Event"
 msgstr "Իրադարձության անվանումը"
 
-#: ../src/EventEdition/InfoPanel.vala:94
+#: ../src/EventEdition/InfoPanel.vala:78
 msgid "Calendar:"
 msgstr "Օրացույց"
 
-#: ../src/EventEdition/InfoPanel.vala:112
+#: ../src/EventEdition/InfoPanel.vala:85
 msgid "Comments:"
 msgstr "Մեկնաբանություններ"
 
-#: ../src/SourceItem.vala:107 ../src/Sidebar/EventWidget.vala:132
-msgid "Remove"
-msgstr "Ջնջել"
-
-#: ../src/SourceItem.vala:117 ../src/Sidebar/EventWidget.vala:131
-msgid "Edit…"
-msgstr "Փոփոխել"
-
-#: ../src/SourceItem.vala:145
+#: ../src/SourceItem.vala:128
 msgid "Undo"
 msgstr "Չեղարկել"
 
-#: ../src/SourceItem.vala:163
+#: ../src/SourceItem.vala:143
 msgid "Calendar \"%s\" removed."
 msgstr "Օրացույց  \"%s\" -ը ջնջված է"
 
@@ -449,24 +470,7 @@ msgstr "Փնտրել իրադարձություններ"
 msgid "Export or Share the default Calendar"
 msgstr "Արտահանել կամ բաշխել հիմնական օրացույցը"
 
-#: ../src/Sidebar/Sidebar.vala:38
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Ձեր գալիք իրադարձությունները ցուցադրվելու են այստեղ, երբ ընտրեք օր "
-"իրադարձություններով"
-
-#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
-#: ../src/Sidebar/EventWidget.vala:199
-msgid "%s to %s"
-msgstr "%s -ից դեպի %s"
-
-#: ../src/Sidebar/EventWidget.vala:213
-msgid "All day"
-msgstr "Ամբողջ օրը"
-
-#: ../src/SourceSelector.vala:62
+#: ../src/SourceSelector.vala:70
 msgid "Add New Calendar…"
 msgstr "Ավելացնել նոր օրացույց"
 
@@ -522,7 +526,7 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "օգտատերի.անուն կամ օգտատերի.անուն@gmail.com"
 
-#: ../core/Backends/LocalBackend.vala:26
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:762
 msgid "On this computer"
 msgstr "Այս համակարգիչում"
 
@@ -628,3 +632,6 @@ msgstr "%A, %b %d"
 
 #~ msgid "No Reminders."
 #~ msgstr "Առանց հիշեցումներ"
+
+#~ msgid "%s to %s"
+#~ msgstr "%s -ից դեպի %s"

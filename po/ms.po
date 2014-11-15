@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-26 13:39+0200\n"
+"POT-Creation-Date: 2014-11-15 01:33+0100\n"
 "PO-Revision-Date: 2014-10-11 07:33+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-10-12 06:38+0000\n"
-"X-Generator: Launchpad (build 17196)\n"
+"X-Launchpad-Export-Date: 2014-11-15 06:38+0000\n"
+"X-Generator: Launchpad (build 17241)\n"
 "Language: ms\n"
 
-#: ../src/Grid/VAutoHider.vala:96
+#: ../src/Grid/VAutoHider.vala:103
 msgid "%u more…"
 msgstr "%u lagi..."
 
@@ -53,6 +53,35 @@ msgstr "Perihal Maya"
 #: ../src/Translations.vala:10
 msgid "About Calendar"
 msgstr "Perihal Kalendar"
+
+#: ../src/Widgets/AgendaView.vala:56
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Peristiwa mendatang anda akan dipaparkan disini bila anda pilih tarikh "
+"dengan peristiwa."
+
+#: ../src/Widgets/AgendaView.vala:147
+msgid "During the day"
+msgstr ""
+
+#: ../src/Widgets/AgendaView.vala:152
+msgid "All day"
+msgstr "Sepanjang Hari"
+
+#: ../src/Widgets/AgendaView.vala:332 ../src/SourceItem.vala:97
+msgid "Edit…"
+msgstr "Sunting..."
+
+#: ../src/Widgets/AgendaView.vala:333 ../src/SourceItem.vala:83
+msgid "Remove"
+msgstr "Buang"
+
+#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
+#: ../src/Widgets/AgendaView.vala:370
+msgid "%s, %s - %s, %s"
+msgstr ""
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -373,59 +402,51 @@ msgstr "Peserta:"
 msgid "No Participants"
 msgstr "Tiada Peserta"
 
-#: ../src/EventEdition/GuestsPanel.vala:85
+#: ../src/EventEdition/GuestsPanel.vala:84
 msgid "Invite"
 msgstr "Jemput"
 
-#: ../src/EventEdition/GuestsPanel.vala:234
+#: ../src/EventEdition/GuestsPanel.vala:232
 msgid "Accepted"
 msgstr "Diterima"
 
-#: ../src/EventEdition/GuestsPanel.vala:237
+#: ../src/EventEdition/GuestsPanel.vala:235
 msgid "Declined"
 msgstr "Ditolak"
 
-#: ../src/EventEdition/InfoPanel.vala:59
+#: ../src/EventEdition/InfoPanel.vala:44
 msgid "From:"
 msgstr "Dari:"
 
-#: ../src/EventEdition/InfoPanel.vala:65
+#: ../src/EventEdition/InfoPanel.vala:50
 msgid "All day:"
 msgstr "Sepanjang Hari:"
 
-#: ../src/EventEdition/InfoPanel.vala:70
+#: ../src/EventEdition/InfoPanel.vala:55
 msgid "To:"
 msgstr "Hingga:"
 
-#: ../src/EventEdition/InfoPanel.vala:89
+#: ../src/EventEdition/InfoPanel.vala:73
 msgid "Title:"
 msgstr "Tajuk:"
 
-#: ../src/EventEdition/InfoPanel.vala:91
+#: ../src/EventEdition/InfoPanel.vala:75
 msgid "Name of Event"
 msgstr "Nama Peristiwa"
 
-#: ../src/EventEdition/InfoPanel.vala:94
+#: ../src/EventEdition/InfoPanel.vala:78
 msgid "Calendar:"
 msgstr "Kalendar:"
 
-#: ../src/EventEdition/InfoPanel.vala:112
+#: ../src/EventEdition/InfoPanel.vala:85
 msgid "Comments:"
 msgstr "Komen:"
 
-#: ../src/SourceItem.vala:107 ../src/Sidebar/EventWidget.vala:132
-msgid "Remove"
-msgstr "Buang"
-
-#: ../src/SourceItem.vala:117 ../src/Sidebar/EventWidget.vala:131
-msgid "Edit…"
-msgstr "Sunting..."
-
-#: ../src/SourceItem.vala:145
+#: ../src/SourceItem.vala:128
 msgid "Undo"
 msgstr "Buat Asal"
 
-#: ../src/SourceItem.vala:163
+#: ../src/SourceItem.vala:143
 msgid "Calendar \"%s\" removed."
 msgstr "Kalendar \"%s\" dibuang."
 
@@ -449,24 +470,7 @@ msgstr "Gelintar Peristiwa"
 msgid "Export or Share the default Calendar"
 msgstr "Eksport atau Kongsi Kalendar lalai"
 
-#: ../src/Sidebar/Sidebar.vala:38
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Peristiwa mendatang anda akan dipaparkan disini bila anda pilih tarikh "
-"dengan peristiwa."
-
-#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
-#: ../src/Sidebar/EventWidget.vala:199
-msgid "%s to %s"
-msgstr "%s ke %s"
-
-#: ../src/Sidebar/EventWidget.vala:213
-msgid "All day"
-msgstr "Sepanjang Hari"
-
-#: ../src/SourceSelector.vala:62
+#: ../src/SourceSelector.vala:70
 msgid "Add New Calendar…"
 msgstr "Tambah Kalendar Baharu..."
 
@@ -522,7 +526,7 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "nama.penguna atau nama.pengguna@gmail.com"
 
-#: ../core/Backends/LocalBackend.vala:26
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:762
 msgid "On this computer"
 msgstr "Pada komputer ini"
 
@@ -640,3 +644,6 @@ msgstr "%A, %b %d"
 
 #~ msgid "Pending"
 #~ msgstr "Tertangguh"
+
+#~ msgid "%s to %s"
+#~ msgstr "%s ke %s"

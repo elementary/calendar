@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-26 13:39+0200\n"
+"POT-Creation-Date: 2014-11-15 01:33+0100\n"
 "PO-Revision-Date: 2014-09-29 09:01+0000\n"
 "Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-30 06:44+0000\n"
-"X-Generator: Launchpad (build 17196)\n"
+"X-Launchpad-Export-Date: 2014-11-15 06:39+0000\n"
+"X-Generator: Launchpad (build 17241)\n"
 "Language: \n"
 
-#: ../src/Grid/VAutoHider.vala:96
+#: ../src/Grid/VAutoHider.vala:103
 msgid "%u more…"
 msgstr "%u 更多…"
 
@@ -53,6 +53,33 @@ msgstr "关于Maya"
 #: ../src/Translations.vala:10
 msgid "About Calendar"
 msgstr "关于日历"
+
+#: ../src/Widgets/AgendaView.vala:56
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr "当您选择一个含有任务的日期时，您最近的活动将会显示在这里。"
+
+#: ../src/Widgets/AgendaView.vala:147
+msgid "During the day"
+msgstr ""
+
+#: ../src/Widgets/AgendaView.vala:152
+msgid "All day"
+msgstr "全天"
+
+#: ../src/Widgets/AgendaView.vala:332 ../src/SourceItem.vala:97
+msgid "Edit…"
+msgstr "编辑..."
+
+#: ../src/Widgets/AgendaView.vala:333 ../src/SourceItem.vala:83
+msgid "Remove"
+msgstr "删除"
+
+#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
+#: ../src/Widgets/AgendaView.vala:370
+msgid "%s, %s - %s, %s"
+msgstr ""
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -373,59 +400,51 @@ msgstr "参与者："
 msgid "No Participants"
 msgstr "无参与者"
 
-#: ../src/EventEdition/GuestsPanel.vala:85
+#: ../src/EventEdition/GuestsPanel.vala:84
 msgid "Invite"
 msgstr "邀请"
 
-#: ../src/EventEdition/GuestsPanel.vala:234
+#: ../src/EventEdition/GuestsPanel.vala:232
 msgid "Accepted"
 msgstr "已接受"
 
-#: ../src/EventEdition/GuestsPanel.vala:237
+#: ../src/EventEdition/GuestsPanel.vala:235
 msgid "Declined"
 msgstr "已拒绝"
 
-#: ../src/EventEdition/InfoPanel.vala:59
+#: ../src/EventEdition/InfoPanel.vala:44
 msgid "From:"
 msgstr "起始日期："
 
-#: ../src/EventEdition/InfoPanel.vala:65
+#: ../src/EventEdition/InfoPanel.vala:50
 msgid "All day:"
 msgstr "全天："
 
-#: ../src/EventEdition/InfoPanel.vala:70
+#: ../src/EventEdition/InfoPanel.vala:55
 msgid "To:"
 msgstr "结束日期："
 
-#: ../src/EventEdition/InfoPanel.vala:89
+#: ../src/EventEdition/InfoPanel.vala:73
 msgid "Title:"
 msgstr "标题："
 
-#: ../src/EventEdition/InfoPanel.vala:91
+#: ../src/EventEdition/InfoPanel.vala:75
 msgid "Name of Event"
 msgstr "活动名称"
 
-#: ../src/EventEdition/InfoPanel.vala:94
+#: ../src/EventEdition/InfoPanel.vala:78
 msgid "Calendar:"
 msgstr "日历："
 
-#: ../src/EventEdition/InfoPanel.vala:112
+#: ../src/EventEdition/InfoPanel.vala:85
 msgid "Comments:"
 msgstr "注释："
 
-#: ../src/SourceItem.vala:107 ../src/Sidebar/EventWidget.vala:132
-msgid "Remove"
-msgstr "删除"
-
-#: ../src/SourceItem.vala:117 ../src/Sidebar/EventWidget.vala:131
-msgid "Edit…"
-msgstr "编辑..."
-
-#: ../src/SourceItem.vala:145
+#: ../src/SourceItem.vala:128
 msgid "Undo"
 msgstr "撤销"
 
-#: ../src/SourceItem.vala:163
+#: ../src/SourceItem.vala:143
 msgid "Calendar \"%s\" removed."
 msgstr "日历“%s”已被删除。"
 
@@ -449,22 +468,7 @@ msgstr "搜索活动"
 msgid "Export or Share the default Calendar"
 msgstr "导出或分享默认日历"
 
-#: ../src/Sidebar/Sidebar.vala:38
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr "当您选择一个含有任务的日期时，您最近的活动将会显示在这里。"
-
-#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
-#: ../src/Sidebar/EventWidget.vala:199
-msgid "%s to %s"
-msgstr "%s 到 %s"
-
-#: ../src/Sidebar/EventWidget.vala:213
-msgid "All day"
-msgstr "全天"
-
-#: ../src/SourceSelector.vala:62
+#: ../src/SourceSelector.vala:70
 msgid "Add New Calendar…"
 msgstr "添加一个新日历..."
 
@@ -520,7 +524,7 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "用户.名字 或 用户.名字@gmail.com"
 
-#: ../core/Backends/LocalBackend.vala:26
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:762
 msgid "On this computer"
 msgstr "在本机上"
 
@@ -638,3 +642,6 @@ msgstr "%A，%b %d"
 
 #~ msgid "No Reminders."
 #~ msgstr "没有提醒。"
+
+#~ msgid "%s to %s"
+#~ msgstr "%s 到 %s"

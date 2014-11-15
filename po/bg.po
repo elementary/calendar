@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-26 13:39+0200\n"
+"POT-Creation-Date: 2014-11-15 01:33+0100\n"
 "PO-Revision-Date: 2014-05-14 20:20+0000\n"
 "Last-Translator: radovid <radovid@vmail.me>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-27 05:57+0000\n"
-"X-Generator: Launchpad (build 17196)\n"
+"X-Launchpad-Export-Date: 2014-11-15 06:38+0000\n"
+"X-Generator: Launchpad (build 17241)\n"
 "Language: bg\n"
 
-#: ../src/Grid/VAutoHider.vala:96
+#: ../src/Grid/VAutoHider.vala:103
 msgid "%u more…"
 msgstr "%u още…"
 
@@ -52,6 +52,34 @@ msgstr ""
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
+msgstr ""
+
+#: ../src/Widgets/AgendaView.vala:56
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Предстоящите събития ще се появят тук, след като изберете дата със събития."
+
+#: ../src/Widgets/AgendaView.vala:147
+msgid "During the day"
+msgstr ""
+
+#: ../src/Widgets/AgendaView.vala:152
+msgid "All day"
+msgstr "Целия ден"
+
+#: ../src/Widgets/AgendaView.vala:332 ../src/SourceItem.vala:97
+msgid "Edit…"
+msgstr "Редактирай..."
+
+#: ../src/Widgets/AgendaView.vala:333 ../src/SourceItem.vala:83
+msgid "Remove"
+msgstr "Премахни"
+
+#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
+#: ../src/Widgets/AgendaView.vala:370
+msgid "%s, %s - %s, %s"
 msgstr ""
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
@@ -373,59 +401,51 @@ msgstr "Участници:"
 msgid "No Participants"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:85
+#: ../src/EventEdition/GuestsPanel.vala:84
 msgid "Invite"
 msgstr ""
 
-#: ../src/EventEdition/GuestsPanel.vala:234
+#: ../src/EventEdition/GuestsPanel.vala:232
 msgid "Accepted"
 msgstr "Прието"
 
-#: ../src/EventEdition/GuestsPanel.vala:237
+#: ../src/EventEdition/GuestsPanel.vala:235
 msgid "Declined"
 msgstr "Отхвърлено"
 
-#: ../src/EventEdition/InfoPanel.vala:59
+#: ../src/EventEdition/InfoPanel.vala:44
 msgid "From:"
 msgstr "От:"
 
-#: ../src/EventEdition/InfoPanel.vala:65
+#: ../src/EventEdition/InfoPanel.vala:50
 msgid "All day:"
 msgstr "Цял ден:"
 
-#: ../src/EventEdition/InfoPanel.vala:70
+#: ../src/EventEdition/InfoPanel.vala:55
 msgid "To:"
 msgstr "До:"
 
-#: ../src/EventEdition/InfoPanel.vala:89
+#: ../src/EventEdition/InfoPanel.vala:73
 msgid "Title:"
 msgstr "Заглавие:"
 
-#: ../src/EventEdition/InfoPanel.vala:91
+#: ../src/EventEdition/InfoPanel.vala:75
 msgid "Name of Event"
 msgstr "Име на събитието"
 
-#: ../src/EventEdition/InfoPanel.vala:94
+#: ../src/EventEdition/InfoPanel.vala:78
 msgid "Calendar:"
 msgstr "Календар:"
 
-#: ../src/EventEdition/InfoPanel.vala:112
+#: ../src/EventEdition/InfoPanel.vala:85
 msgid "Comments:"
 msgstr "Забележки:"
 
-#: ../src/SourceItem.vala:107 ../src/Sidebar/EventWidget.vala:132
-msgid "Remove"
-msgstr "Премахни"
-
-#: ../src/SourceItem.vala:117 ../src/Sidebar/EventWidget.vala:131
-msgid "Edit…"
-msgstr "Редактирай..."
-
-#: ../src/SourceItem.vala:145
+#: ../src/SourceItem.vala:128
 msgid "Undo"
 msgstr "Отмени"
 
-#: ../src/SourceItem.vala:163
+#: ../src/SourceItem.vala:143
 msgid "Calendar \"%s\" removed."
 msgstr "Календар \"%s\" премахнат."
 
@@ -449,23 +469,7 @@ msgstr "Търсене на събития"
 msgid "Export or Share the default Calendar"
 msgstr "Експортиране или Споделяне на Календара по подразбиране"
 
-#: ../src/Sidebar/Sidebar.vala:38
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Предстоящите събития ще се появят тук, след като изберете дата със събития."
-
-#. / TRANSLATORS: for multiple days events, shows: (date) to (date)
-#: ../src/Sidebar/EventWidget.vala:199
-msgid "%s to %s"
-msgstr "%s до %s"
-
-#: ../src/Sidebar/EventWidget.vala:213
-msgid "All day"
-msgstr "Целия ден"
-
-#: ../src/SourceSelector.vala:62
+#: ../src/SourceSelector.vala:70
 msgid "Add New Calendar…"
 msgstr "Добави Нов Календар..."
 
@@ -521,7 +525,7 @@ msgstr "Гугъл"
 msgid "user.name or user.name@gmail.com"
 msgstr "потребителско.име or потребителско.име@abv.bg"
 
-#: ../core/Backends/LocalBackend.vala:26
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:762
 msgid "On this computer"
 msgstr "На този компютър"
 
@@ -633,3 +637,6 @@ msgstr "%A, %d, %b"
 
 #~ msgid "No Reminders."
 #~ msgstr "Без Напомняния."
+
+#~ msgid "%s to %s"
+#~ msgstr "%s до %s"
