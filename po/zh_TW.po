@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-15 01:33+0100\n"
-"PO-Revision-Date: 2014-11-13 13:30+0000\n"
+"PO-Revision-Date: 2014-11-16 14:56+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-11-16 05:42+0000\n"
+"X-Launchpad-Export-Date: 2014-11-17 05:44+0000\n"
 "X-Generator: Launchpad (build 17241)\n"
 
 #: ../src/Grid/VAutoHider.vala:103
@@ -61,7 +61,7 @@ msgstr "當您選取的日子有活動事件時，未來的事件會顯示在這
 
 #: ../src/Widgets/AgendaView.vala:147
 msgid "During the day"
-msgstr ""
+msgstr "當日"
 
 #: ../src/Widgets/AgendaView.vala:152
 msgid "All day"
@@ -78,7 +78,7 @@ msgstr "移除"
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
 #: ../src/Widgets/AgendaView.vala:370
 msgid "%s, %s - %s, %s"
-msgstr ""
+msgstr "%s %s - %s %s"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
