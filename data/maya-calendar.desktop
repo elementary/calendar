@@ -13,6 +13,7 @@ Keywords=Maya;Planner;Dates;Days;Events;
 X-AppInstall-Keywords=Maya;Planner;Dates;Days;Events;
 Actions=AddEvent;AboutDialog;
 X-GNOME-Gettext-Domain=maya-calendar
+X-GNOME-UsesNotifications=true
 
 [Desktop Action AddEvent]
 Name=Add Event
