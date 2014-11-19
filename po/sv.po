@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-15 01:33+0100\n"
-"PO-Revision-Date: 2014-10-31 20:08+0000\n"
+"PO-Revision-Date: 2014-11-18 23:02+0000\n"
 "Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-11-16 05:42+0000\n"
-"X-Generator: Launchpad (build 17241)\n"
+"X-Launchpad-Export-Date: 2014-11-19 06:08+0000\n"
+"X-Generator: Launchpad (build 17252)\n"
 "Language: sv\n"
 
 #: ../src/Grid/VAutoHider.vala:103
@@ -24,7 +24,7 @@ msgstr "%u mer..."
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:61
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Dölj veckonummer"
 
 #: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:63
 msgid "Show Week Numbers"
@@ -48,11 +48,11 @@ msgstr "Lägg till händelse"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "Om Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "Om Kalender"
 
 #: ../src/Widgets/AgendaView.vala:56
 msgid ""
@@ -283,7 +283,7 @@ msgstr "Påminnelser:"
 
 #: ../src/EventEdition/ReminderPanel.vala:34
 msgid "No Reminders"
-msgstr ""
+msgstr "Inga påminnelser"
 
 #: ../src/EventEdition/ReminderPanel.vala:68
 msgid "Add Reminder"
@@ -383,7 +383,7 @@ msgstr "Påminnelser"
 
 #: ../src/EventEdition/EventDialog.vala:150
 msgid "Delete Event"
-msgstr ""
+msgstr "Ta bort händelse"
 
 #: ../src/EventEdition/EventDialog.vala:162
 msgid "Create Event"
@@ -399,7 +399,7 @@ msgstr "Deltagare:"
 
 #: ../src/EventEdition/GuestsPanel.vala:49
 msgid "No Participants"
-msgstr ""
+msgstr "Inga deltagare"
 
 #: ../src/EventEdition/GuestsPanel.vala:84
 msgid "Invite"
@@ -455,7 +455,7 @@ msgstr "Skapa en ny händelse"
 
 #: ../src/MayaToolbar.vala:44
 msgid "Go to today's date"
-msgstr ""
+msgstr "Gå till dagens datum"
 
 #: ../src/MayaToolbar.vala:48
 msgid "Manage Calendars"
