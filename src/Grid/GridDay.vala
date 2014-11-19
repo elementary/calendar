@@ -141,6 +141,14 @@ public class GridDay : Gtk.EventBox {
         label.label = date.get_day_of_month ().to_string ();
     }
 
+    public void set_selected (bool selected) {
+        if (selected) {
+            set_state_flags (Gtk.StateFlags.SELECTED, true);
+        } else {
+            set_state_flags (Gtk.StateFlags.NORMAL, true);
+        }
+    }
+
     private bool on_button_press (Gdk.EventButton event) {
         if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY)
             on_event_add (date);
@@ -178,7 +186,7 @@ public class GridDay : Gtk.EventBox {
         cr.stroke ();
 
         // Draw inner highlight stroke
-        cr.rectangle (1.5, 1.5, size.width - 1.5, size.height - 1.5);
+        cr.rectangle (1, 1, size.width - 1, size.height - 1);
         cr.set_source_rgba (1.0, 1.0, 1.0, 0.2);
         cr.stroke ();
         return false;

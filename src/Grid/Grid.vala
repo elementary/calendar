@@ -30,8 +30,10 @@ public class Grid : Gtk.Grid {
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
     public signal void on_event_add (DateTime date);
+    public signal void edition_request (E.CalComponent comp);
 
     public signal void selection_changed (DateTime new_date);
+    private GridDay selected_gridday;
 
     public Grid () {
 
@@ -51,7 +53,11 @@ public class Grid : Gtk.Grid {
     }
 
     void on_day_focus_in (GridDay day) {
+        if (selected_gridday != null)
+            selected_gridday.set_selected (false);
         var selected_date = day.date;
+        selected_gridday = day;
+        day.set_selected (true);
         day.set_state_flags (Gtk.StateFlags.FOCUSED, false);
         selection_changed (selected_date);
         Settings.SavedState.get_default ().selected_day = selected_date.format ("%Y-%j");
@@ -66,8 +72,10 @@ public class Grid : Gtk.Grid {
 
     public void focus_date (DateTime date) {
         debug(@"Setting focus to @ $(date)");
-        if (data [date] != null)
+        if (data [date] != null) {
             data [date].grab_focus ();
+            on_day_focus_in (data [date]);
+        }
     }
 
     /**
@@ -185,10 +193,13 @@ public class Grid : Gtk.Grid {
             else
                 button = new MultiDayEventButton (event);
 
-            E.Source source = event.get_data("source");
+            E.Source source = event.get_data ("source");
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             button.set_color (cal.dup_color ());
             add_button_for_day (date, button);
+            button.edition_request.connect (() => {
+                edition_request (event);
+            });
         }
     }
 

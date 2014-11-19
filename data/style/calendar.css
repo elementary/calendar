@@ -17,6 +17,7 @@
 
 
 @define-color cell_color mix(@bg_color, rgb(255, 255, 255), 0.5);
+@define-color text_color #333;
 
 /* Header Styles */
 
@@ -38,15 +39,16 @@
 	background-color: shade(@cell_color, 0.97);
 }
 
-.cell:focused {
+.cell:selected {
 	background-color: shade(@cell_color, 0.9);
+	color: @text_color;
 }
 
 #today {
 	background-color: mix(@cell_color, @selected_bg_color, 0.15); /* today date has nice shade of blue */
 }
 
-#today:focused {
+#today:selected {
 	background-color: mix(@cell_color, @selected_bg_color, 0.35); /* today date has nice shade of blue */
 }
 

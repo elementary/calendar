@@ -21,6 +21,7 @@ namespace Maya.View {
  * Represents a single event on the grid.
  */
 public class EventButton : Gtk.Revealer {
+    public signal void edition_request ();
     public E.CalComponent comp {get; private set;}
     private Gtk.EventBox event_box;
     private Gtk.Grid internal_grid;
@@ -36,7 +37,21 @@ public class EventButton : Gtk.Revealer {
         event_box.set_size_request (4, 2);
         internal_grid.attach (event_box, 0, 0, 1, 1);
         event_box.show ();
-        base.add (internal_grid);
+        var event_box = new Gtk.EventBox ();
+        event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
+        event_box.add (internal_grid);
+        event_box.button_press_event.connect ((event) => {
+            if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY) {
+                E.Source src = comp.get_data ("source");
+                if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
+                    edition_request ();
+                    return true;
+                }
+            }
+
+            return false;
+        });
+        base.add (event_box);
     }
 
     public string get_summary () {
