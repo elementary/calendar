@@ -155,6 +155,7 @@ namespace Maya {
             calview = new View.CalendarView ();
             calview.vexpand = true;
             calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
+            calview.edition_request.connect (on_modified);
             calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
             gridcontainer = new Gtk.Grid ();
@@ -202,7 +203,8 @@ namespace Maya {
          * Called when the edit button is selected.
          */
         void on_modified (E.CalComponent comp) {
-            var dialog = new Maya.View.EventDialog (window, comp, comp.get_data<E.Source> ("source"), null);
+            var source = comp.get_data<E.Source> ("source");
+            var dialog = new Maya.View.EventDialog (window, comp, source, null);
             dialog.present ();
         }
 

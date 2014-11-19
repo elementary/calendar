@@ -30,6 +30,7 @@ public class Grid : Gtk.Grid {
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
     public signal void on_event_add (DateTime date);
+    public signal void edition_request (E.CalComponent comp);
 
     public signal void selection_changed (DateTime new_date);
 
@@ -189,6 +190,9 @@ public class Grid : Gtk.Grid {
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             button.set_color (cal.dup_color ());
             add_button_for_day (date, button);
+            button.edition_request.connect (() => {
+                edition_request (event);
+            });
         }
     }
 
