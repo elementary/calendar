@@ -3,77 +3,79 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-15 01:33+0100\n"
-"PO-Revision-Date: 2014-09-26 17:20+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-11-23 13:33+0000\n"
+"Last-Translator: Giorgi Gvaramia <gvaramia01@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-11-16 05:41+0000\n"
-"X-Generator: Launchpad (build 17241)\n"
+"X-Launchpad-Export-Date: 2014-11-24 06:04+0000\n"
+"X-Generator: Launchpad (build 17252)\n"
 
 #: ../src/Grid/VAutoHider.vala:103
 msgid "%u more…"
-msgstr ""
+msgstr "%u მეტი…"
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:61
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "დაფარე კვირის ციფრები"
 
 #: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:63
 msgid "Show Week Numbers"
-msgstr ""
+msgstr "გამოაჩინე კვირის ციფრები"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
-msgstr ""
+msgstr "გამოაჩინე და დაგეგმე ივენთები"
 
 #: ../src/Translations.vala:6 ../src/Application.vala:30
 msgid "Calendar"
-msgstr ""
+msgstr "კალენდარი"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "მაია;დამგეგმავი;თარიღები;დღეები;ივენთები;"
 
 #: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:62
 msgid "Add Event"
-msgstr ""
+msgstr "ივენთის დამატება"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "მაიას შესახებ"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "კალენდრის შესახებ"
 
 #: ../src/Widgets/AgendaView.vala:56
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
+"შენი  მომავალი ივენთები გამოჩნდება აქ, როდესაც მონიშნავ თარიღს რომელიშიც "
+"ივენთია დაგეგმილი"
 
 #: ../src/Widgets/AgendaView.vala:147
 msgid "During the day"
-msgstr ""
+msgstr "დღის განმავლობაში"
 
 #: ../src/Widgets/AgendaView.vala:152
 msgid "All day"
-msgstr ""
+msgstr "მთელი დღე"
 
 #: ../src/Widgets/AgendaView.vala:332 ../src/SourceItem.vala:97
 msgid "Edit…"
-msgstr ""
+msgstr "კორექტირება"
 
 #: ../src/Widgets/AgendaView.vala:333 ../src/SourceItem.vala:83
 msgid "Remove"
-msgstr ""
+msgstr "წაშლა"
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
 #: ../src/Widgets/AgendaView.vala:370
 msgid "%s, %s - %s, %s"
-msgstr ""
+msgstr "%s, %s - %s, %s"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:64
 #: ../src/Widgets/ContractorButtonWithMenu.vala:73
@@ -82,21 +84,21 @@ msgstr ""
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
 msgid "calendar.ics"
-msgstr ""
+msgstr "კალენდარ.ics"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:78
 #: ../src/EventEdition/EventDialog.vala:168 ../src/SourceDialog.vala:54
 msgid "Cancel"
-msgstr ""
+msgstr "გუქმება"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 #: ../src/SourceDialog.vala:156
 msgid "Save"
-msgstr ""
+msgstr "შენახვა"
 
 #: ../src/EventEdition/LocationPanel.vala:40
 msgid "Location:"
-msgstr ""
+msgstr "მდებარეობა:"
 
 #: ../src/EventEdition/LocationPanel.vala:42
 msgid "John Smith OR Example St."
@@ -104,40 +106,40 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:49
 msgid "Repeat:"
-msgstr ""
+msgstr "გამეორება:"
 
 #: ../src/EventEdition/RepeatPanel.vala:54
 msgid "Daily"
-msgstr ""
+msgstr "ყოველდღიურად"
 
 #: ../src/EventEdition/RepeatPanel.vala:55
 msgid "Weekly"
-msgstr ""
+msgstr "ყოველკვირეულად"
 
 #: ../src/EventEdition/RepeatPanel.vala:56
 msgid "Monthly"
-msgstr ""
+msgstr "ყოველთვიურად"
 
 #: ../src/EventEdition/RepeatPanel.vala:57
 msgid "Yearly"
-msgstr ""
+msgstr "ყოველწლიურად"
 
 #: ../src/EventEdition/RepeatPanel.vala:100
 msgid "Every:"
-msgstr ""
+msgstr "ყველა:"
 
 #: ../src/EventEdition/RepeatPanel.vala:107
 msgid "Day"
-msgstr ""
+msgstr "დღე"
 
 #: ../src/EventEdition/RepeatPanel.vala:107
 msgid "Days"
-msgstr ""
+msgstr "დღეები"
 
 #: ../src/EventEdition/RepeatPanel.vala:110
 #: ../src/EventEdition/RepeatPanel.vala:121
 msgid "Week"
-msgstr ""
+msgstr "კვირა"
 
 #: ../src/EventEdition/RepeatPanel.vala:110
 msgid "Weeks"
@@ -145,19 +147,19 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:113
 msgid "Month"
-msgstr ""
+msgstr "თვე"
 
 #: ../src/EventEdition/RepeatPanel.vala:113
 msgid "Months"
-msgstr ""
+msgstr "თვეები"
 
 #: ../src/EventEdition/RepeatPanel.vala:116
 msgid "Year"
-msgstr ""
+msgstr "წელი"
 
 #: ../src/EventEdition/RepeatPanel.vala:116
 msgid "Years"
-msgstr ""
+msgstr "წლები"
 
 #: ../src/EventEdition/RepeatPanel.vala:131
 msgid "Ends:"
@@ -167,7 +169,7 @@ msgstr ""
 #: ../src/EventEdition/RepeatPanel.vala:166
 #: ../src/EventEdition/EventDialog.vala:109
 msgid "Repeat"
-msgstr ""
+msgstr "გამეორება"
 
 #: ../src/EventEdition/RepeatPanel.vala:133
 #: ../src/EventEdition/RepeatPanel.vala:166
@@ -176,267 +178,267 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 msgid "Never"
-msgstr ""
+msgstr "しない"
 
 #: ../src/EventEdition/RepeatPanel.vala:138
 msgid "Until"
-msgstr ""
+msgstr "სანამ"
 
 #: ../src/EventEdition/RepeatPanel.vala:139
 msgid "After"
-msgstr ""
+msgstr "შემდეგ"
 
 #: ../src/EventEdition/RepeatPanel.vala:185
 msgid "The same day every month"
-msgstr ""
+msgstr "იგივე დღეს ყოველთვიურად"
 
 #: ../src/EventEdition/RepeatPanel.vala:296
 msgid "Sunday"
-msgstr ""
+msgstr "კვირა"
 
 #: ../src/EventEdition/RepeatPanel.vala:299
 msgid "Monday"
-msgstr ""
+msgstr "ორშაბათი"
 
 #: ../src/EventEdition/RepeatPanel.vala:302
 msgid "Tuesday"
-msgstr ""
+msgstr "სამშაბათი"
 
 #: ../src/EventEdition/RepeatPanel.vala:305
 msgid "Wednesday"
-msgstr ""
+msgstr "ოთხშაბათი"
 
 #: ../src/EventEdition/RepeatPanel.vala:308
 msgid "Thursday"
-msgstr ""
+msgstr "ხუთშაბათი"
 
 #: ../src/EventEdition/RepeatPanel.vala:311
 msgid "Friday"
-msgstr ""
+msgstr "პარასკევი"
 
 #: ../src/EventEdition/RepeatPanel.vala:314
 msgid "Saturday"
-msgstr ""
+msgstr "შაბათი"
 
 #: ../src/EventEdition/RepeatPanel.vala:320
 msgid "Every last %s"
-msgstr ""
+msgstr "ყველა ბოლო %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:323
 msgid "Every first %s"
-msgstr ""
+msgstr "ყველა პირველი %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:326
 msgid "Every second %s"
-msgstr ""
+msgstr "ყველა მეორე %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:329
 msgid "Every third %s"
-msgstr ""
+msgstr "ყველა მესამე %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:332
 msgid "Every fourth %s"
-msgstr ""
+msgstr "ყველა მეოთხე %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:335
 msgid "Every fifth %s"
-msgstr ""
+msgstr "ყველა მეხუთე %s"
 
 #: ../src/EventEdition/RepeatPanel.vala:343
 msgid "Mon"
-msgstr ""
+msgstr "ორშ"
 
 #: ../src/EventEdition/RepeatPanel.vala:344
 msgid "Tue"
-msgstr ""
+msgstr "სამ"
 
 #: ../src/EventEdition/RepeatPanel.vala:345
 msgid "Wed"
-msgstr ""
+msgstr "ოთხ"
 
 #: ../src/EventEdition/RepeatPanel.vala:346
 msgid "Thu"
-msgstr ""
+msgstr "ხუთ"
 
 #: ../src/EventEdition/RepeatPanel.vala:347
 msgid "Fri"
-msgstr ""
+msgstr "პარ"
 
 #: ../src/EventEdition/RepeatPanel.vala:348
 msgid "Sat"
-msgstr ""
+msgstr "შაბ"
 
 #: ../src/EventEdition/RepeatPanel.vala:349
 msgid "Sun"
-msgstr ""
+msgstr "კვი"
 
 #: ../src/EventEdition/ReminderPanel.vala:30
 msgid "Reminders:"
-msgstr ""
+msgstr "შეგახსენებთ:"
 
 #: ../src/EventEdition/ReminderPanel.vala:34
 msgid "No Reminders"
-msgstr ""
+msgstr "არაფერია შესახსენებელი"
 
 #: ../src/EventEdition/ReminderPanel.vala:68
 msgid "Add Reminder"
-msgstr ""
+msgstr "შესახსენებლის დამატება"
 
 #: ../src/EventEdition/ReminderPanel.vala:179
 msgid "0 minutes"
-msgstr ""
+msgstr "0 წუთი"
 
 #: ../src/EventEdition/ReminderPanel.vala:180
 msgid "1 minutes"
-msgstr ""
+msgstr "1 წუთი"
 
 #: ../src/EventEdition/ReminderPanel.vala:181
 msgid "5 minutes"
-msgstr ""
+msgstr "5 წუთი"
 
 #: ../src/EventEdition/ReminderPanel.vala:182
 msgid "10 minutes"
-msgstr ""
+msgstr "10 წუთი"
 
 #: ../src/EventEdition/ReminderPanel.vala:183
 msgid "15 minutes"
-msgstr ""
+msgstr "15 წუთი"
 
 #: ../src/EventEdition/ReminderPanel.vala:184
 msgid "20 minutes"
-msgstr ""
+msgstr "20 წუთი"
 
 #: ../src/EventEdition/ReminderPanel.vala:185
 msgid "25 minutes"
-msgstr ""
+msgstr "25 წუთი"
 
 #: ../src/EventEdition/ReminderPanel.vala:186
 msgid "30 minutes"
-msgstr ""
+msgstr "30 წუთი"
 
 #: ../src/EventEdition/ReminderPanel.vala:187
 msgid "45 minutes"
-msgstr ""
+msgstr "45 წუთი"
 
 #: ../src/EventEdition/ReminderPanel.vala:188
 msgid "1 hour"
-msgstr ""
+msgstr "1 საათი"
 
 #: ../src/EventEdition/ReminderPanel.vala:189
 msgid "2 hours"
-msgstr ""
+msgstr "2 საათი"
 
 #: ../src/EventEdition/ReminderPanel.vala:190
 msgid "3 hours"
-msgstr ""
+msgstr "3 საათი"
 
 #: ../src/EventEdition/ReminderPanel.vala:191
 msgid "12 hours"
-msgstr ""
+msgstr "12 საათი"
 
 #: ../src/EventEdition/ReminderPanel.vala:192
 msgid "24 hours"
-msgstr ""
+msgstr "24 საათი"
 
 #: ../src/EventEdition/ReminderPanel.vala:193
 msgid "2 days"
-msgstr ""
+msgstr "2 დღე"
 
 #: ../src/EventEdition/ReminderPanel.vala:194
 msgid "1 week"
-msgstr ""
+msgstr "1 კვირა"
 
 #: ../src/EventEdition/ReminderPanel.vala:203
 msgid "Notification"
-msgstr ""
+msgstr "შეტყობინება"
 
 #: ../src/EventEdition/ReminderPanel.vala:204
 msgid "Email"
-msgstr ""
+msgstr "ელ.ფოსტა"
 
 #: ../src/EventEdition/EventDialog.vala:65
 msgid "Edit Event"
-msgstr ""
+msgstr "ივენთის შესწორება"
 
 #: ../src/EventEdition/EventDialog.vala:97
 msgid "General Informations"
-msgstr ""
+msgstr "ზოგადი ინფორმაცია"
 
 #: ../src/EventEdition/EventDialog.vala:100
 msgid "Location"
-msgstr ""
+msgstr "ადგილმდებარეობა"
 
 #: ../src/EventEdition/EventDialog.vala:103
 msgid "Guests"
-msgstr ""
+msgstr "სტუმრები"
 
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Reminders"
-msgstr ""
+msgstr "შემხსენებლები"
 
 #: ../src/EventEdition/EventDialog.vala:150
 msgid "Delete Event"
-msgstr ""
+msgstr "ივენთის წაშლა"
 
 #: ../src/EventEdition/EventDialog.vala:162
 msgid "Create Event"
-msgstr ""
+msgstr "ივენთის შექმნა"
 
 #: ../src/EventEdition/EventDialog.vala:165
 msgid "Save Changes"
-msgstr ""
+msgstr "ცვლილებების შენახვა"
 
 #: ../src/EventEdition/GuestsPanel.vala:44
 msgid "Participants:"
-msgstr ""
+msgstr "მონაწილეები"
 
 #: ../src/EventEdition/GuestsPanel.vala:49
 msgid "No Participants"
-msgstr ""
+msgstr "არავინ მონაწილეობს"
 
 #: ../src/EventEdition/GuestsPanel.vala:84
 msgid "Invite"
-msgstr ""
+msgstr "მოიწვიე"
 
 #: ../src/EventEdition/GuestsPanel.vala:232
 msgid "Accepted"
-msgstr ""
+msgstr "მიღებულია"
 
 #: ../src/EventEdition/GuestsPanel.vala:235
 msgid "Declined"
-msgstr ""
+msgstr "უარყოფილია"
 
 #: ../src/EventEdition/InfoPanel.vala:44
 msgid "From:"
-msgstr ""
+msgstr "საწყისი თარიღი:"
 
 #: ../src/EventEdition/InfoPanel.vala:50
 msgid "All day:"
-msgstr ""
+msgstr "მთელი დღე"
 
 #: ../src/EventEdition/InfoPanel.vala:55
 msgid "To:"
-msgstr ""
+msgstr "საბოლოო თარიღი:"
 
 #: ../src/EventEdition/InfoPanel.vala:73
 msgid "Title:"
-msgstr ""
+msgstr "სათაური:"
 
 #: ../src/EventEdition/InfoPanel.vala:75
 msgid "Name of Event"
-msgstr ""
+msgstr "ივენთის სახელი"
 
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "Calendar:"
-msgstr ""
+msgstr "კალენდარი:"
 
 #: ../src/EventEdition/InfoPanel.vala:85
 msgid "Comments:"
-msgstr ""
+msgstr "კომენტარები:"
 
 #: ../src/SourceItem.vala:128
 msgid "Undo"
-msgstr ""
+msgstr "გაუქმება"
 
 #: ../src/SourceItem.vala:143
 msgid "Calendar \"%s\" removed."
@@ -444,67 +446,67 @@ msgstr ""
 
 #: ../src/MayaToolbar.vala:41
 msgid "Create a new event"
-msgstr ""
+msgstr "ახალი ივენთის შექმნა"
 
 #: ../src/MayaToolbar.vala:44
 msgid "Go to today's date"
-msgstr ""
+msgstr "გადადი დღევანდელ თარიღზე"
 
 #: ../src/MayaToolbar.vala:48
 msgid "Manage Calendars"
-msgstr ""
+msgstr "კალენდრების მართვა"
 
 #: ../src/MayaToolbar.vala:56
 msgid "Search Events"
-msgstr ""
+msgstr "ივენთის ძიება"
 
 #: ../src/MayaToolbar.vala:59
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "ძირითადი კალენდრის გატანა ან გაზიარება"
 
 #: ../src/SourceSelector.vala:70
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "ახალი კალენდრის დამატება..."
 
 #: ../src/SourceDialog.vala:56
 msgid "Create"
-msgstr ""
+msgstr "შექმნა"
 
 #: ../src/SourceDialog.vala:65
 msgid "Name:"
-msgstr ""
+msgstr "სახელი:"
 
 #: ../src/SourceDialog.vala:68
 msgid "Calendar Name"
-msgstr ""
+msgstr "კალენდრის სახელი"
 
 #: ../src/SourceDialog.vala:91
 msgid "Type:"
-msgstr ""
+msgstr "სახეობა:"
 
 #: ../src/SourceDialog.vala:113
 msgid "Color:"
-msgstr ""
+msgstr "ფერი:"
 
 #: ../src/SourceDialog.vala:118
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "მონიშნე ძირითად კალენდარად"
 
 #: ../src/SourceDialog.vala:148
 msgid "Create Calendar"
-msgstr ""
+msgstr "კალენდრის შექმნა"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV(ფორმატი)"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr ""
+msgstr "ბმული:"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:91
 msgid "Use a secure connection"
-msgstr ""
+msgstr "გამოიყენე დაცული კავშირი"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
@@ -512,35 +514,35 @@ msgstr ""
 
 #: ../plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: ../plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "მომხმარებელი.სახელი ან მომხმარებელი.სახელი@gmail.com"
 
 #: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:762
 msgid "On this computer"
-msgstr ""
+msgstr "ამ კომპიუტერზე"
 
 #: ../core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr ""
+msgstr "მომხმარებელი:"
 
 #: ../core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr ""
+msgstr "მომხმარებელი.სახელი"
 
 #: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr ""
+msgstr "ელ.ფოსტა"
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr ""
+msgstr "john@doe.com"
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "ასლის ლოკალურად შენახვა"
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
