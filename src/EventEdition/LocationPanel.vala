@@ -25,6 +25,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
     private Maya.Marker point;
      // Only set the geo property if map_selected is true, this is a smart behavior!
     private bool map_selected = false;
+    private GLib.Cancellable search_cancellable;
 
     public LocationPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -117,6 +118,11 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         view.zoom_level = 8;
         view.center_on (point.latitude, point.longitude);
         marker_layer.add_marker (point);
+
+        destroy.connect (() => {
+            if (search_cancellable != null)
+                search_cancellable.cancel ();
+        });
     }
 
     /**
@@ -148,33 +154,30 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
     }
 
     private async void compute_location (string loc) {
-        SourceFunc callback = compute_location.callback;
-        Threads.add (() => {
-            var forward = new Geocode.Forward.for_string (loc);
-            try {
-                forward.set_answer_count (1);
-                var places = forward.search ();
-                foreach (var place in places) {
-                    point.latitude = place.location.latitude;
-                    point.longitude = place.location.longitude;
-                    Idle.add (() => {
+        if (search_cancellable != null)
+            search_cancellable.cancel ();
+        search_cancellable = new GLib.Cancellable ();
+        var forward = new Geocode.Forward.for_string (loc);
+        try {
+            forward.set_answer_count (1);
+            var places = yield forward.search_async (search_cancellable);
+            foreach (var place in places) {
+                point.latitude = place.location.latitude;
+                point.longitude = place.location.longitude;
+                Idle.add (() => {
+                    if (search_cancellable.is_cancelled () == false)
                         champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
-                        return false;
-                    });
-                }
-
-                if (loc == location_entry.text)
-                    map_selected = true;
-
-                location_entry.has_focus = true;
-            } catch (Error error) {
-                debug (error.message);
+                    return false;
+                });
             }
 
-            Idle.add ((owned) callback);
-        });
+            if (loc == location_entry.text)
+                map_selected = true;
 
-        yield;
+            location_entry.has_focus = true;
+        } catch (Error error) {
+            debug (error.message);
+        }
     }
     
     /**
@@ -205,9 +208,9 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             aggregator.notify["is-quiescent"].connect (() => {
                 add_contacts_store.begin (aggregator.individuals);
             });
-            
-            aggregator.prepare.begin();
-        }        
+
+            aggregator.prepare.begin ();
+        }
     }
 
     private bool suggestion_selected (Gtk.TreeModel model, Gtk.TreeIter iter) {
