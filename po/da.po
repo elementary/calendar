@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-15 01:33+0100\n"
-"PO-Revision-Date: 2014-03-18 18:53+0000\n"
-"Last-Translator: Niels Fyhring <niels@fyhring.net>\n"
+"PO-Revision-Date: 2014-12-07 18:26+0000\n"
+"Last-Translator: Mickas Jensen <qrank@live.dk>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-11-16 05:41+0000\n"
-"X-Generator: Launchpad (build 17241)\n"
+"X-Launchpad-Export-Date: 2014-12-08 06:25+0000\n"
+"X-Generator: Launchpad (build 17274)\n"
 "Language: da\n"
 
 #: ../src/Grid/VAutoHider.vala:103
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:61
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Gem uge numre"
 
 #: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:63
 msgid "Show Week Numbers"
@@ -48,11 +48,11 @@ msgstr "Tilføj begivenhed"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "Om Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "Om Kalender"
 
 #: ../src/Widgets/AgendaView.vala:56
 msgid ""
@@ -64,7 +64,7 @@ msgstr ""
 
 #: ../src/Widgets/AgendaView.vala:147
 msgid "During the day"
-msgstr ""
+msgstr "Under dagen"
 
 #: ../src/Widgets/AgendaView.vala:152
 msgid "All day"
