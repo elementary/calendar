@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-11-25 06:47+0000\n"
 "X-Generator: Launchpad (build 17252)\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
 "Language: fr\n"
 
 #: ../src/Grid/VAutoHider.vala:103
