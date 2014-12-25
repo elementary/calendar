@@ -289,50 +289,163 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         }
     }
 
+    /**
+     * This can't be simplified because of some problems with the translation.
+     * see https://bugs.launchpad.net/maya/+bug/1405605 for reference.
+     */
     private void set_every_day (short day) {
-        string weekday;
-        switch (iCal.RecurrenceType.day_day_of_week (day)) {
-            case iCal.RecurrenceTypeWeekday.SUNDAY:
-                weekday = _("Sunday");
-                break;
-            case iCal.RecurrenceTypeWeekday.MONDAY:
-                weekday = _("Monday");
-                break;
-            case iCal.RecurrenceTypeWeekday.TUESDAY:
-                weekday = _("Tuesday");
-                break;
-            case iCal.RecurrenceTypeWeekday.WEDNESDAY:
-                weekday = _("Wednesday");
-                break;
-            case iCal.RecurrenceTypeWeekday.THURSDAY:
-                weekday = _("Thursday");
-                break;
-            case iCal.RecurrenceTypeWeekday.FRIDAY:
-                weekday = _("Friday");
-                break;
-            default:
-                weekday = _("Saturday");
-                break;
-        }
-
-        switch (iCal.RecurrenceType.day_position (day)) {
+        var day_position = iCal.RecurrenceType.day_position (day);
+        var weekday = iCal.RecurrenceType.day_day_of_week (day);
+        switch (day_position) {
             case -1:
-                every_radiobutton.label = _("Every last %s").printf (weekday);
+                switch (weekday) {
+                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                        every_radiobutton.label = _("Every last Sunday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                        every_radiobutton.label = _("Every last Monday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                        every_radiobutton.label = _("Every last Tuesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                        every_radiobutton.label = _("Every last Wednesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                        every_radiobutton.label = _("Every last Thursday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                        every_radiobutton.label = _("Every last Friday");
+                        break;
+                    default:
+                        every_radiobutton.label = _("Every last Saturday");
+                        break;
+                }
                 break;
             case 1:
-                every_radiobutton.label = _("Every first %s").printf (weekday);
+                switch (weekday) {
+                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                        every_radiobutton.label = _("Every first Sunday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                        every_radiobutton.label = _("Every first Monday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                        every_radiobutton.label = _("Every first Tuesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                        every_radiobutton.label = _("Every first Wednesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                        every_radiobutton.label = _("Every first Thursday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                        every_radiobutton.label = _("Every first Friday");
+                        break;
+                    default:
+                        every_radiobutton.label = _("Every first Saturday");
+                        break;
+                }
                 break;
             case 2:
-                every_radiobutton.label = _("Every second %s").printf (weekday);
+                switch (weekday) {
+                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                        every_radiobutton.label = _("Every second Sunday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                        every_radiobutton.label = _("Every second Monday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                        every_radiobutton.label = _("Every second Tuesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                        every_radiobutton.label = _("Every second Wednesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                        every_radiobutton.label = _("Every second Thursday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                        every_radiobutton.label = _("Every second Friday");
+                        break;
+                    default:
+                        every_radiobutton.label = _("Every second Saturday");
+                        break;
+                }
                 break;
             case 3:
-                every_radiobutton.label = _("Every third %s").printf (weekday);
+                switch (weekday) {
+                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                        every_radiobutton.label = _("Every third Sunday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                        every_radiobutton.label = _("Every third Monday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                        every_radiobutton.label = _("Every third Tuesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                        every_radiobutton.label = _("Every third Wednesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                        every_radiobutton.label = _("Every third Thursday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                        every_radiobutton.label = _("Every third Friday");
+                        break;
+                    default:
+                        every_radiobutton.label = _("Every third Saturday");
+                        break;
+                }
                 break;
             case 4:
-                every_radiobutton.label = _("Every fourth %s").printf (weekday);
+                switch (weekday) {
+                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                        every_radiobutton.label = _("Every fourth Sunday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                        every_radiobutton.label = _("Every fourth Monday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                        every_radiobutton.label = _("Every fourth Tuesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                        every_radiobutton.label = _("Every fourth Wednesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                        every_radiobutton.label = _("Every fourth Thursday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                        every_radiobutton.label = _("Every fourth Friday");
+                        break;
+                    default:
+                        every_radiobutton.label = _("Every fourth Saturday");
+                        break;
+                }
                 break;
             default:
-                every_radiobutton.label = _("Every fifth %s").printf (weekday);
+                switch (weekday) {
+                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                        every_radiobutton.label = _("Every fifth Sunday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                        every_radiobutton.label = _("Every fifth Monday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                        every_radiobutton.label = _("Every fifth Tuesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                        every_radiobutton.label = _("Every fifth Wednesday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                        every_radiobutton.label = _("Every fifth Thursday");
+                        break;
+                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                        every_radiobutton.label = _("Every fifth Friday");
+                        break;
+                    default:
+                        every_radiobutton.label = _("Every fifth Saturday");
+                        break;
+                }
                 break;
         }
     }
