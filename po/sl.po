@@ -7,16 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-15 01:33+0100\n"
-"PO-Revision-Date: 2014-12-24 14:27+0000\n"
+"POT-Creation-Date: 2014-12-25 20:49+0100\n"
+"PO-Revision-Date: 2014-12-25 22:06+0000\n"
 "Last-Translator: Jernej Virag <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-12-25 05:54+0000\n"
+"X-Launchpad-Export-Date: 2014-12-26 06:03+0000\n"
 "X-Generator: Launchpad (build 17286)\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
 "Language: sl\n"
 
 #: ../src/Grid/VAutoHider.vala:103
@@ -102,11 +101,11 @@ msgstr "Prekliči"
 msgid "Save"
 msgstr "Shrani"
 
-#: ../src/EventEdition/LocationPanel.vala:40
+#: ../src/EventEdition/LocationPanel.vala:41
 msgid "Location:"
 msgstr "Kraj:"
 
-#: ../src/EventEdition/LocationPanel.vala:42
+#: ../src/EventEdition/LocationPanel.vala:43
 msgid "John Smith OR Example St."
 msgstr "Janez Kranjski ALI Neka ul."
 
@@ -136,36 +135,36 @@ msgstr "Vsak:"
 
 #: ../src/EventEdition/RepeatPanel.vala:107
 msgid "Day"
-msgstr "Dan"
+msgstr "dan"
 
 #: ../src/EventEdition/RepeatPanel.vala:107
 msgid "Days"
-msgstr "Dnevi"
+msgstr "dni"
 
 #: ../src/EventEdition/RepeatPanel.vala:110
 #: ../src/EventEdition/RepeatPanel.vala:121
 msgid "Week"
-msgstr "Teden"
+msgstr "teden"
 
 #: ../src/EventEdition/RepeatPanel.vala:110
 msgid "Weeks"
-msgstr "Tedni"
+msgstr "tedni"
 
 #: ../src/EventEdition/RepeatPanel.vala:113
 msgid "Month"
-msgstr "Mesec"
+msgstr "mesec"
 
 #: ../src/EventEdition/RepeatPanel.vala:113
 msgid "Months"
-msgstr "Meseci"
+msgstr "meseci"
 
 #: ../src/EventEdition/RepeatPanel.vala:116
 msgid "Year"
-msgstr "Leto"
+msgstr "leto"
 
 #: ../src/EventEdition/RepeatPanel.vala:116
 msgid "Years"
-msgstr "Leta"
+msgstr "leta"
 
 #: ../src/EventEdition/RepeatPanel.vala:131
 msgid "Ends:"
@@ -198,83 +197,199 @@ msgstr "Po"
 msgid "The same day every month"
 msgstr "Isti dan vsak mesec"
 
-#: ../src/EventEdition/RepeatPanel.vala:296
-msgid "Sunday"
-msgstr "Nedelja"
+#: ../src/EventEdition/RepeatPanel.vala:303
+msgid "Every last Sunday"
+msgstr "Vsako zadnjo nedeljo"
 
-#: ../src/EventEdition/RepeatPanel.vala:299
-msgid "Monday"
-msgstr "Ponedeljek"
+#: ../src/EventEdition/RepeatPanel.vala:306
+msgid "Every last Monday"
+msgstr "Vsak zadnji ponedeljek"
 
-#: ../src/EventEdition/RepeatPanel.vala:302
-msgid "Tuesday"
-msgstr "Torek"
+#: ../src/EventEdition/RepeatPanel.vala:309
+msgid "Every last Tuesday"
+msgstr "Vsak zadnji torek"
 
-#: ../src/EventEdition/RepeatPanel.vala:305
-msgid "Wednesday"
-msgstr "Sreda"
+#: ../src/EventEdition/RepeatPanel.vala:312
+msgid "Every last Wednesday"
+msgstr "Vsako zadnjo sredo"
 
-#: ../src/EventEdition/RepeatPanel.vala:308
-msgid "Thursday"
-msgstr "Četrtek"
+#: ../src/EventEdition/RepeatPanel.vala:315
+msgid "Every last Thursday"
+msgstr "Vsak zadnji četrtek"
 
-#: ../src/EventEdition/RepeatPanel.vala:311
-msgid "Friday"
-msgstr "Petek"
+#: ../src/EventEdition/RepeatPanel.vala:318
+msgid "Every last Friday"
+msgstr "Vsak zadnji petek"
 
-#: ../src/EventEdition/RepeatPanel.vala:314
-msgid "Saturday"
-msgstr "Sobota"
+#: ../src/EventEdition/RepeatPanel.vala:321
+msgid "Every last Saturday"
+msgstr "Vsako zadnjo soboto"
 
-#: ../src/EventEdition/RepeatPanel.vala:320
-msgid "Every last %s"
-msgstr "Vsak zadnji %s"
+#: ../src/EventEdition/RepeatPanel.vala:328
+msgid "Every first Sunday"
+msgstr "Vsako prvo nedeljo"
 
-#: ../src/EventEdition/RepeatPanel.vala:323
-msgid "Every first %s"
-msgstr "Vsak prvi %s"
+#: ../src/EventEdition/RepeatPanel.vala:331
+msgid "Every first Monday"
+msgstr "Vsak prvi ponedeljek"
 
-#: ../src/EventEdition/RepeatPanel.vala:326
-msgid "Every second %s"
-msgstr "Vsak drugi %s"
+#: ../src/EventEdition/RepeatPanel.vala:334
+msgid "Every first Tuesday"
+msgstr "Vsaki prvi torek"
 
-#: ../src/EventEdition/RepeatPanel.vala:329
-msgid "Every third %s"
-msgstr "Vsak tretji %s"
+#: ../src/EventEdition/RepeatPanel.vala:337
+msgid "Every first Wednesday"
+msgstr "Vsako prvo sredo"
 
-#: ../src/EventEdition/RepeatPanel.vala:332
-msgid "Every fourth %s"
-msgstr "Vsak četrti %s"
-
-#: ../src/EventEdition/RepeatPanel.vala:335
-msgid "Every fifth %s"
-msgstr "Vsak peti %s"
+#: ../src/EventEdition/RepeatPanel.vala:340
+msgid "Every first Thursday"
+msgstr "Vsak prvi četrtek"
 
 #: ../src/EventEdition/RepeatPanel.vala:343
+msgid "Every first Friday"
+msgstr "Vsak prvi petek"
+
+#: ../src/EventEdition/RepeatPanel.vala:346
+msgid "Every first Saturday"
+msgstr "Vsako prvo soboto"
+
+#: ../src/EventEdition/RepeatPanel.vala:353
+msgid "Every second Sunday"
+msgstr "Vsako prvo nedeljo"
+
+#: ../src/EventEdition/RepeatPanel.vala:356
+msgid "Every second Monday"
+msgstr "Vsak drugi ponedeljek"
+
+#: ../src/EventEdition/RepeatPanel.vala:359
+msgid "Every second Tuesday"
+msgstr "Vsak drugi torek"
+
+#: ../src/EventEdition/RepeatPanel.vala:362
+msgid "Every second Wednesday"
+msgstr "Vsako drugo sredo"
+
+#: ../src/EventEdition/RepeatPanel.vala:365
+msgid "Every second Thursday"
+msgstr "Vsaki drugi četrtek"
+
+#: ../src/EventEdition/RepeatPanel.vala:368
+msgid "Every second Friday"
+msgstr "Vsaki drugi petek"
+
+#: ../src/EventEdition/RepeatPanel.vala:371
+msgid "Every second Saturday"
+msgstr "Vsako drugo soboto"
+
+#: ../src/EventEdition/RepeatPanel.vala:378
+msgid "Every third Sunday"
+msgstr "Vsako tretjo nedeljo"
+
+#: ../src/EventEdition/RepeatPanel.vala:381
+msgid "Every third Monday"
+msgstr "Vsak tretji ponedeljek"
+
+#: ../src/EventEdition/RepeatPanel.vala:384
+msgid "Every third Tuesday"
+msgstr "Vsak tretji torek"
+
+#: ../src/EventEdition/RepeatPanel.vala:387
+msgid "Every third Wednesday"
+msgstr "Vsako tretjo sredo"
+
+#: ../src/EventEdition/RepeatPanel.vala:390
+msgid "Every third Thursday"
+msgstr "Vsak tretji četrtek"
+
+#: ../src/EventEdition/RepeatPanel.vala:393
+msgid "Every third Friday"
+msgstr "Vsak tretji petek"
+
+#: ../src/EventEdition/RepeatPanel.vala:396
+msgid "Every third Saturday"
+msgstr "Vsako tretjo soboto"
+
+#: ../src/EventEdition/RepeatPanel.vala:403
+msgid "Every fourth Sunday"
+msgstr "Vsako četrto nedeljo"
+
+#: ../src/EventEdition/RepeatPanel.vala:406
+msgid "Every fourth Monday"
+msgstr "Vsak četrti ponedeljek"
+
+#: ../src/EventEdition/RepeatPanel.vala:409
+msgid "Every fourth Tuesday"
+msgstr "Vsak četrti torek"
+
+#: ../src/EventEdition/RepeatPanel.vala:412
+msgid "Every fourth Wednesday"
+msgstr "Vsako četrto sredo"
+
+#: ../src/EventEdition/RepeatPanel.vala:415
+msgid "Every fourth Thursday"
+msgstr "Vsak četrti četrtek"
+
+#: ../src/EventEdition/RepeatPanel.vala:418
+msgid "Every fourth Friday"
+msgstr "Vsak četrti petek"
+
+#: ../src/EventEdition/RepeatPanel.vala:421
+msgid "Every fourth Saturday"
+msgstr "Vsako četrto soboto"
+
+#: ../src/EventEdition/RepeatPanel.vala:428
+msgid "Every fifth Sunday"
+msgstr "Vsako peto nedeljo"
+
+#: ../src/EventEdition/RepeatPanel.vala:431
+msgid "Every fifth Monday"
+msgstr "Vsak peti ponedeljek"
+
+#: ../src/EventEdition/RepeatPanel.vala:434
+msgid "Every fifth Tuesday"
+msgstr "Vsaki peti torek"
+
+#: ../src/EventEdition/RepeatPanel.vala:437
+msgid "Every fifth Wednesday"
+msgstr "Vsako peto sredo"
+
+#: ../src/EventEdition/RepeatPanel.vala:440
+msgid "Every fifth Thursday"
+msgstr "Vsak peti četrtek"
+
+#: ../src/EventEdition/RepeatPanel.vala:443
+msgid "Every fifth Friday"
+msgstr "Vsak peti petek"
+
+#: ../src/EventEdition/RepeatPanel.vala:446
+msgid "Every fifth Saturday"
+msgstr "Vsako peto soboto"
+
+#: ../src/EventEdition/RepeatPanel.vala:456
 msgid "Mon"
 msgstr "Pon"
 
-#: ../src/EventEdition/RepeatPanel.vala:344
+#: ../src/EventEdition/RepeatPanel.vala:457
 msgid "Tue"
 msgstr "Tor"
 
-#: ../src/EventEdition/RepeatPanel.vala:345
+#: ../src/EventEdition/RepeatPanel.vala:458
 msgid "Wed"
 msgstr "Sre"
 
-#: ../src/EventEdition/RepeatPanel.vala:346
+#: ../src/EventEdition/RepeatPanel.vala:459
 msgid "Thu"
 msgstr "Čet"
 
-#: ../src/EventEdition/RepeatPanel.vala:347
+#: ../src/EventEdition/RepeatPanel.vala:460
 msgid "Fri"
 msgstr "Pet"
 
-#: ../src/EventEdition/RepeatPanel.vala:348
+#: ../src/EventEdition/RepeatPanel.vala:461
 msgid "Sat"
 msgstr "Sob"
 
-#: ../src/EventEdition/RepeatPanel.vala:349
+#: ../src/EventEdition/RepeatPanel.vala:462
 msgid "Sun"
 msgstr "Ned"
 
@@ -632,3 +747,42 @@ msgstr "%A, %k. %b"
 
 #~ msgid "This event can't be edited"
 #~ msgstr "Tega dogodka ni mogoče urediti."
+
+#~ msgid "Every fifth %s"
+#~ msgstr "Vsak peti %s"
+
+#~ msgid "Every first %s"
+#~ msgstr "Vsak prvi %s"
+
+#~ msgid "Every second %s"
+#~ msgstr "Vsak drugi %s"
+
+#~ msgid "Every third %s"
+#~ msgstr "Vsak tretji %s"
+
+#~ msgid "Every fourth %s"
+#~ msgstr "Vsak četrti %s"
+
+#~ msgid "Every last %s"
+#~ msgstr "Vsak zadnji %s"
+
+#~ msgid "Tuesday"
+#~ msgstr "torek"
+
+#~ msgid "Monday"
+#~ msgstr "ponedeljek"
+
+#~ msgid "Wednesday"
+#~ msgstr "sredo"
+
+#~ msgid "Thursday"
+#~ msgstr "četrtek"
+
+#~ msgid "Friday"
+#~ msgstr "petek"
+
+#~ msgid "Saturday"
+#~ msgstr "sobota"
+
+#~ msgid "Sunday"
+#~ msgstr "nedelja"

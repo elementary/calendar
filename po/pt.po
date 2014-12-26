@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-15 01:33+0100\n"
+"POT-Creation-Date: 2014-12-25 20:49+0100\n"
 "PO-Revision-Date: 2014-11-27 22:00+0000\n"
 "Last-Translator: Pedro Monteiro <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-11-28 06:47+0000\n"
-"X-Generator: Launchpad (build 17261)\n"
+"X-Launchpad-Export-Date: 2014-12-26 06:02+0000\n"
+"X-Generator: Launchpad (build 17286)\n"
 "Language: pt\n"
 
 #: ../src/Grid/VAutoHider.vala:103
@@ -102,11 +102,11 @@ msgstr "Cancelar"
 msgid "Save"
 msgstr "Guardar"
 
-#: ../src/EventEdition/LocationPanel.vala:40
+#: ../src/EventEdition/LocationPanel.vala:41
 msgid "Location:"
 msgstr "Localização:"
 
-#: ../src/EventEdition/LocationPanel.vala:42
+#: ../src/EventEdition/LocationPanel.vala:43
 msgid "John Smith OR Example St."
 msgstr "João Simões ou na Rua X"
 
@@ -198,83 +198,199 @@ msgstr "Após"
 msgid "The same day every month"
 msgstr "Mesmo dia todos os meses"
 
-#: ../src/EventEdition/RepeatPanel.vala:296
-msgid "Sunday"
-msgstr "domingo"
+#: ../src/EventEdition/RepeatPanel.vala:303
+msgid "Every last Sunday"
+msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:299
-msgid "Monday"
-msgstr "segunda"
+#: ../src/EventEdition/RepeatPanel.vala:306
+msgid "Every last Monday"
+msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:302
-msgid "Tuesday"
-msgstr "terça"
+#: ../src/EventEdition/RepeatPanel.vala:309
+msgid "Every last Tuesday"
+msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:305
-msgid "Wednesday"
-msgstr "quarta"
+#: ../src/EventEdition/RepeatPanel.vala:312
+msgid "Every last Wednesday"
+msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:308
-msgid "Thursday"
-msgstr "quinta"
+#: ../src/EventEdition/RepeatPanel.vala:315
+msgid "Every last Thursday"
+msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:311
-msgid "Friday"
-msgstr "sexta"
+#: ../src/EventEdition/RepeatPanel.vala:318
+msgid "Every last Friday"
+msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:314
-msgid "Saturday"
-msgstr "sábado"
+#: ../src/EventEdition/RepeatPanel.vala:321
+msgid "Every last Saturday"
+msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:320
-msgid "Every last %s"
-msgstr "Cada último %s"
+#: ../src/EventEdition/RepeatPanel.vala:328
+msgid "Every first Sunday"
+msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:323
-msgid "Every first %s"
-msgstr "Cada primeiro %s"
+#: ../src/EventEdition/RepeatPanel.vala:331
+msgid "Every first Monday"
+msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:326
-msgid "Every second %s"
-msgstr "Cada segundo %s"
+#: ../src/EventEdition/RepeatPanel.vala:334
+msgid "Every first Tuesday"
+msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:329
-msgid "Every third %s"
-msgstr "Cada terceiro %s"
+#: ../src/EventEdition/RepeatPanel.vala:337
+msgid "Every first Wednesday"
+msgstr ""
 
-#: ../src/EventEdition/RepeatPanel.vala:332
-msgid "Every fourth %s"
-msgstr "Cada quarto %s"
-
-#: ../src/EventEdition/RepeatPanel.vala:335
-msgid "Every fifth %s"
-msgstr "Cada quinto %s"
+#: ../src/EventEdition/RepeatPanel.vala:340
+msgid "Every first Thursday"
+msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:343
+msgid "Every first Friday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:346
+msgid "Every first Saturday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:353
+msgid "Every second Sunday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:356
+msgid "Every second Monday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:359
+msgid "Every second Tuesday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:362
+msgid "Every second Wednesday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:365
+msgid "Every second Thursday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:368
+msgid "Every second Friday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:371
+msgid "Every second Saturday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:378
+msgid "Every third Sunday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:381
+msgid "Every third Monday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:384
+msgid "Every third Tuesday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:387
+msgid "Every third Wednesday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:390
+msgid "Every third Thursday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:393
+msgid "Every third Friday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:396
+msgid "Every third Saturday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:403
+msgid "Every fourth Sunday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:406
+msgid "Every fourth Monday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:409
+msgid "Every fourth Tuesday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:412
+msgid "Every fourth Wednesday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:415
+msgid "Every fourth Thursday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:418
+msgid "Every fourth Friday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:421
+msgid "Every fourth Saturday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:428
+msgid "Every fifth Sunday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:431
+msgid "Every fifth Monday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:434
+msgid "Every fifth Tuesday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:437
+msgid "Every fifth Wednesday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:440
+msgid "Every fifth Thursday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:443
+msgid "Every fifth Friday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:446
+msgid "Every fifth Saturday"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:456
 msgid "Mon"
 msgstr "seg"
 
-#: ../src/EventEdition/RepeatPanel.vala:344
+#: ../src/EventEdition/RepeatPanel.vala:457
 msgid "Tue"
 msgstr "ter"
 
-#: ../src/EventEdition/RepeatPanel.vala:345
+#: ../src/EventEdition/RepeatPanel.vala:458
 msgid "Wed"
 msgstr "qua"
 
-#: ../src/EventEdition/RepeatPanel.vala:346
+#: ../src/EventEdition/RepeatPanel.vala:459
 msgid "Thu"
 msgstr "qui"
 
-#: ../src/EventEdition/RepeatPanel.vala:347
+#: ../src/EventEdition/RepeatPanel.vala:460
 msgid "Fri"
 msgstr "sex"
 
-#: ../src/EventEdition/RepeatPanel.vala:348
+#: ../src/EventEdition/RepeatPanel.vala:461
 msgid "Sat"
 msgstr "sáb"
 
-#: ../src/EventEdition/RepeatPanel.vala:349
+#: ../src/EventEdition/RepeatPanel.vala:462
 msgid "Sun"
 msgstr "dom"
 
@@ -636,11 +752,41 @@ msgstr "%A, %d %b"
 #~ msgid "Starts: \t"
 #~ msgstr "Início: \t"
 
-#~ msgid "Invite…"
-#~ msgstr "Convidar..."
+#~ msgid "Every fifth %s"
+#~ msgstr "Cada quinto %s"
 
-#~ msgid "Pending"
-#~ msgstr "Pendente"
+#~ msgid "Every first %s"
+#~ msgstr "Cada primeiro %s"
 
-#~ msgid "No Reminders."
-#~ msgstr "Sem lembretes"
+#~ msgid "Every second %s"
+#~ msgstr "Cada segundo %s"
+
+#~ msgid "Every third %s"
+#~ msgstr "Cada terceiro %s"
+
+#~ msgid "Every fourth %s"
+#~ msgstr "Cada quarto %s"
+
+#~ msgid "Every last %s"
+#~ msgstr "Cada último %s"
+
+#~ msgid "Monday"
+#~ msgstr "segunda"
+
+#~ msgid "Sunday"
+#~ msgstr "domingo"
+
+#~ msgid "Saturday"
+#~ msgstr "sábado"
+
+#~ msgid "Wednesday"
+#~ msgstr "quarta"
+
+#~ msgid "Tuesday"
+#~ msgstr "terça"
+
+#~ msgid "Friday"
+#~ msgstr "sexta"
+
+#~ msgid "Thursday"
+#~ msgstr "quinta"
