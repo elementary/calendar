@@ -1,9 +1,7 @@
 set(CLIENT_SOURCE
+    AgendaView.vala
     Application.vala
-    SourceDialog.vala
-    SourceItem.vala
     MayaToolbar.vala
-    SourceSelector.vala
     EventEdition/ContactImage.vala
     EventEdition/EventDialog.vala
     EventEdition/GuestsPanel.vala
@@ -18,7 +16,9 @@ set(CLIENT_SOURCE
     Grid/WeekLabels.vala
     Grid/Header.vala
     Grid/VAutoHider.vala
-    Widgets/AgendaView.vala
+    SourceDialog/SourceDialog.vala
+    SourceDialog/SourceItem.vala
+    SourceDialog/SourceSelector.vala
     Widgets/CalendarButton.vala
     Widgets/ContractorButtonWithMenu.vala
     Widgets/DateSwitcher.vala
