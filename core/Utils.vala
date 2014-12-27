@@ -75,18 +75,19 @@ namespace Maya.Util {
     public TimeZone timezone_from_ical (iCal.TimeType date) {
         var interval = date.zone.get_utc_offset (date, date.is_daylight);
         var hours = (interval / 3600);
-        string hour_string = "";
+        string hour_string = "-";
         if (hours >= 0) {
             hour_string = "+";
         }
 
-        if (hours > 9 || hours < -9) {
+        hours = hours.abs();
+        if (hours > 9) {
             hour_string = "%s%d".printf (hour_string, hours);
         } else {
             hour_string = "%s0%d".printf (hour_string, hours);
         }
 
-        var minutes = ((interval - hours*3600)/60).abs ();
+        var minutes = (interval.abs () % 3600)/60;
         if (minutes > 9) {
             hour_string = "%s:%d".printf (hour_string, minutes);
         } else {
