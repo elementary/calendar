@@ -14,9 +14,7 @@ set(CLIENT_SOURCE
     Grid/CalendarView.vala
     Grid/GridDay.vala
     Grid/Grid.vala
-    Grid/EventButton/EventButton.vala
-    Grid/EventButton/MultiDayEventButton.vala
-    Grid/EventButton/SingleDayEventButton.vala
+    Grid/EventButton.vala
     Grid/WeekLabels.vala
     Grid/Header.vala
     Grid/VAutoHider.vala

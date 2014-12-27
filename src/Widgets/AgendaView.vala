@@ -34,24 +34,27 @@ public class Maya.View.AgendaView : Gtk.Grid {
         weekday_label = new Gtk.Label ("");
         weekday_label.set_alignment (0, 0.5f);
         weekday_label.use_markup = true;
-        weekday_label.get_style_context ().add_class ("h3");
+        weekday_label.get_style_context ().add_class ("h2");
+        weekday_label.margin = 12;
+        weekday_label.margin_bottom = 0;
         day_label = new Gtk.Label ("");
         day_label.set_alignment (0, 0.5f);
         day_label.use_markup = true;
+        day_label.get_style_context ().add_class ("h3");
+        day_label.margin = 12;
+        day_label.margin_top = 0;
+        day_label.margin_bottom = 6;
+        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+        separator.hexpand = true;
         var day_grid = new Gtk.Grid ();
-        day_grid.margin = 12;
         day_grid.row_spacing = 6;
         day_grid.orientation = Gtk.Orientation.VERTICAL;
         day_grid.add (weekday_label);
         day_grid.add (day_label);
-        var label_toolitem = new Gtk.ToolItem ();
-        label_toolitem.set_expand (true);
-        label_toolitem.add (day_grid);
-
-        var toolbar = new Gtk.Toolbar ();
-        toolbar.hexpand = true;
-        toolbar.add (label_toolitem);
-        toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        day_grid.add (separator);
+        var style_provider = Util.Css.get_css_provider ();
+        day_grid.get_style_context ().add_provider (style_provider, 600);
+        day_grid.get_style_context ().add_class ("cell");
 
         var placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
         placeholder_label.sensitive = false;
@@ -63,7 +66,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
         placeholder_label.show_all ();
 
         events_list = new Gtk.ListBox ();
-        events_list.selection_mode = Gtk.SelectionMode.NONE;
+        events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         events_list.set_header_func (header_update_func);
         events_list.set_placeholder (placeholder_label);
         events_list.set_sort_func ((child1, child2) => {
@@ -120,7 +123,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
         scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scrolled.add (events_list);
 
-        add (toolbar);
+        add (day_grid);
         add (scrolled);
 
         row_table = new HashTable<string, AgendaEventRow> (str_hash, str_equal);
@@ -160,15 +163,14 @@ public class Maya.View.AgendaView : Gtk.Grid {
     private Gtk.Widget header_with_label (string text) {
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
-        grid.margin_top = 6;
         grid.row_spacing = 6;
         var label = new Gtk.Label (text);
+        label.get_style_context ().add_class ("category-label");
         label.hexpand = true;
-        label.margin_start = 6;
+        label.margin = 6;
+        label.use_markup = true;
         label.set_alignment (0, 0.5f);
         grid.add (label);
-        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-        grid.add (separator);
         grid.show_all ();
         return grid;
     }
@@ -234,7 +236,10 @@ public class Maya.View.AgendaView : Gtk.Grid {
      */
     public void set_selected_date (DateTime date) {
         selected_date = date;
-        weekday_label.label = date.format ("%A");
+        string formated_weekday = date.format ("%A");
+        string new_value = formated_weekday.substring (formated_weekday.index_of_nth_char (1));
+        new_value = formated_weekday.get_char (0).totitle ().to_string () + new_value;
+        weekday_label.label = new_value;
         day_label.label = date.format (Settings.DateFormat ());
         events_list.invalidate_filter ();
     }
@@ -261,8 +266,9 @@ public class Maya.View.AgendaView : Gtk.Grid {
             unowned iCal.Component ical_event = calevent.get_icalcomponent ();
             uid = ical_event.get_uid ();
             var main_grid = new Gtk.Grid ();
-            main_grid.column_spacing = 12;
+            main_grid.column_spacing = 6;
             main_grid.row_spacing = 6;
+            main_grid.margin = 6;
 
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             var rgba = Gdk.RGBA();
@@ -270,14 +276,14 @@ public class Maya.View.AgendaView : Gtk.Grid {
 
             event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
             event_image.override_color (Gtk.StateFlags.NORMAL, rgba);
-            event_image.margin_left = 12;
-            event_image.margin_top = 12;
+            event_image.margin_start = 6;
+            event_image.margin_top = 6;
 
             name_label = new Gtk.Label ("");
             name_label.set_line_wrap (true);
             name_label.set_alignment (0, 0.5f);
             name_label.hexpand = true;
-            name_label.margin_top = 12;
+            name_label.margin_top = 6;
 
             hour_label = new Gtk.Label ("");
             hour_label.set_alignment (0, 0.5f);
@@ -290,14 +296,10 @@ public class Maya.View.AgendaView : Gtk.Grid {
             location_label.set_alignment (0, 0.5f);
             location_label.no_show_all = true;
 
-            var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-            separator.margin_top = 6;
-
             main_grid.attach (event_image, 0, 0, 1, 1);
             main_grid.attach (name_label, 1, 0, 1, 1);
             main_grid.attach (hour_label, 1, 1, 1, 1);
             main_grid.attach (location_label, 1, 2, 1, 1);
-            main_grid.attach (separator, 0, 3, 2, 1);
             var event_box = new Gtk.EventBox ();
             event_box.add (main_grid);
             revealer = new Gtk.Revealer ();
@@ -321,7 +323,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
         }
 
         private bool on_button_press (Gdk.EventButton event) {
-            grab_focus ();
             if (event.type == Gdk.EventType.@2BUTTON_PRESS) {
                  modified (calevent);
             }
