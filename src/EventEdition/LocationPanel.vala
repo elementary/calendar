@@ -113,7 +113,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                     compute_location.begin (location_entry.text);
                 } else {
                     // A little hacky but seems to work as expected (search for the timezone position)
-                    compute_location.begin (E.Cal.util_get_system_timezone_location ());
+                    compute_location.begin (E.Util.get_system_timezone_location ());
                 }
             }
         }

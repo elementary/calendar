@@ -29,6 +29,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private Gtk.Grid month_grid;
     private Gtk.SpinButton every_entry;
     private Gtk.Label every_unit_label;
+    private Gtk.ListBox exceptions_list;
 
     private Gtk.ToggleButton mon_button;
     private Gtk.ToggleButton tue_button;
@@ -196,6 +197,44 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         month_grid.add (same_radiobutton);
         month_grid.add (every_radiobutton);
 
+        var exceptions_label = Maya.View.EventDialog.make_label (_("Exceptions:"));
+
+        var no_exceptions_label = new Gtk.Label ("");
+        no_exceptions_label.set_markup (_("No Exceptions"));
+        no_exceptions_label.sensitive = false;
+        no_exceptions_label.show ();
+
+        exceptions_list = new Gtk.ListBox ();
+        exceptions_list.expand = true;
+        exceptions_list.set_selection_mode (Gtk.SelectionMode.NONE);
+        exceptions_list.set_placeholder (no_exceptions_label);
+
+        var exceptions_scrolled = new Gtk.ScrolledWindow (null, null);
+        exceptions_scrolled.add_with_viewport (exceptions_list);
+        exceptions_scrolled.expand = true;
+
+        var exceptions_frame = new Gtk.Frame (null);
+        exceptions_frame.add (exceptions_scrolled);
+
+        var inline_toolbar = new Gtk.Toolbar ();
+        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        inline_toolbar.icon_size = Gtk.IconSize.SMALL_TOOLBAR;
+
+        var add_button = new Gtk.ToolButton (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON), null);
+        add_button.tooltip_text = _("Add Exception");
+        add_button.clicked.connect (() => {
+            var exception_grid = new ExceptionGrid (new GLib.DateTime.now_local ());
+            exception_grid.show_all ();
+            exceptions_list.add (exception_grid);
+        });
+
+        inline_toolbar.add (add_button);
+        var exceptions_grid = new Gtk.Grid ();
+        exceptions_grid.sensitive = false;
+        exceptions_grid.orientation = Gtk.Orientation.VERTICAL;
+        exceptions_grid.add (exceptions_frame);
+        exceptions_grid.add (inline_toolbar);
+
         repeat_switch.notify["active"].connect (() => {
             bool active = repeat_switch.active;
             repeat_combobox.sensitive = active;
@@ -203,6 +242,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             week_box.sensitive = active;
             month_grid.sensitive = active;
             ends_grid.sensitive = active;
+            exceptions_grid.sensitive = active;
         });
         repeat_switch.active = false;
 
@@ -214,6 +254,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         attach (month_grid, 1, 4, 1, 1);
         attach (ends_label, 1, 5, 1, 1);
         attach (ends_grid, 1, 6, 1, 1);
+        attach (exceptions_label, 1, 7, 1, 1);
+        attach (exceptions_grid, 1, 8, 1, 1);
         load ();
     }
 
@@ -278,6 +320,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                     repeat_combobox.active = 0;
                     break;
             }
+
             every_entry.value = rrule.interval;
             if (rrule.until.is_null_time () == 1) {
                 ends_combobox.active = 0;
@@ -289,6 +332,15 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 end_entry.value = rrule.count;
                 ends_combobox.active = 2;
             }
+        }
+
+        property = comp.get_first_property (iCal.PropertyKind.EXDATE);
+        while (property != null) {
+            var exdate = property.get_exdate ();
+            var exception_grid = new ExceptionGrid (Util.ical_to_date_time (exdate));
+            exception_grid.show_all ();
+            exceptions_list.add (exception_grid);
+            property = comp.get_next_property (iCal.PropertyKind.EXDATE);
         }
     }
 
@@ -542,7 +594,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         for (int i = 0; i < count; i++) {
             unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.RRULE);
-
             comp.remove_property (remove_prop);
         }
 
@@ -603,7 +654,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                     rrule.by_month_day[0] = (short)parent_dialog.date_time.get_day_of_month ();
                 }
                 break;
-            case (3):
+            case 3:
                 rrule.freq = iCal.RecurrenceTypeFrequency.YEARLY;
                 break;
             default:
@@ -619,5 +670,51 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         rrule.interval = (short)every_entry.value;
         property.set_rrule (rrule);
         comp.add_property (property);
+
+        // Save exceptions
+        count = comp.count_properties (iCal.PropertyKind.EXDATE);
+        for (int i = 0; i < count; i++) {
+            unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.EXDATE);
+            comp.remove_property (remove_prop);
+        }
+
+        foreach (var child in exceptions_list.get_children ()) {
+            if (child is ExceptionGrid == false)
+                continue;
+            var exgrid = (ExceptionGrid)child;
+            var date = exgrid.get_date ();
+            var exdate = new iCal.Property (iCal.PropertyKind.EXDATE);
+            exdate.set_exdate (Util.date_time_to_ical (date, null));
+            comp.add_property (exdate);
+        }
+    }
+}
+
+public class Maya.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
+    private Granite.Widgets.DatePicker date;
+    public ExceptionGrid (GLib.DateTime dt) {
+        set_margin_top (6);
+        set_margin_start (6);
+        set_margin_end (6);
+
+        date = new Granite.Widgets.DatePicker ();
+        date.date = dt;
+        date.hexpand = true;
+
+        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);
+        remove_button.relief = Gtk.ReliefStyle.NONE;
+        remove_button.clicked.connect (() => {hide (); destroy ();});
+
+        var grid = new Gtk.Grid ();
+        grid.row_spacing = 6;
+        grid.column_spacing = 12;
+        grid.attach (date, 0, 0, 1, 1);
+        grid.attach (remove_button, 2, 0, 1, 1);
+
+        add (grid);
+    }
+    
+    public GLib.DateTime get_date () {
+        return date.date;
     }
 }

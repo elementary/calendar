@@ -149,6 +149,27 @@ namespace Maya.Util {
             }
         }
 
+        // EXDATEs elements are exceptions dates that should not appear.
+        property = comp.get_first_property (iCal.PropertyKind.EXDATE);
+        while (property != null) {
+            var exdate = property.get_exdate ();
+            var date = ical_to_date_time (exdate);
+            dateranges.@foreach ((daterange) => {
+                var first = daterange.first;
+                var last = daterange.last;
+                if (first.get_year () <= date.get_year () && last.get_year () >= date.get_year ()) {
+                    if (first.get_day_of_year () <= date.get_day_of_year () && last.get_day_of_year () >= date.get_day_of_year ()) {
+                        dateranges.remove (daterange);
+                        return false;
+                    }
+                }
+
+                return true;
+            });
+
+            property = comp.get_next_property (iCal.PropertyKind.EXDATE);
+        }
+
         return dateranges;
     }
 

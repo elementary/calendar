@@ -78,10 +78,6 @@ public class Header : Gtk.EventBox {
 
             return false;
         });
-
-        notify.connect ((p) => {
-            stdout.printf ("property '%s' has changed!\n", p.name);
-        });
     }
 
     public void update_columns (int week_starts_on) {

@@ -3,18 +3,20 @@
 [CCode (cprefix = "E", gir_namespace = "ECalendar", gir_version = "1.2", lower_case_cprefix = "e_")]
 namespace E {
 	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_cal_get_type ()")]
+	[Deprecated (since = "3.2")]
 	public class Cal : GLib.Object {
-		public static void marshal_VOID__ENUM_ENUM (GLib.Closure closure, GLib.Value return_value, uint n_param_values, GLib.Value param_values, void* invocation_hint, void* marshal_data);
-		public static void marshal_VOID__STRING_UINT (GLib.Closure closure, GLib.Value return_value, uint n_param_values, GLib.Value param_values, void* invocation_hint, void* marshal_data);
-		public static void marshal_VOID__UINT_STRING (GLib.Closure closure, GLib.Value return_value, uint n_param_values, GLib.Value param_values, void* invocation_hint, void* marshal_data);
-		public static string system_timezone_get_location ();
-		public static string util_get_system_timezone_location ();
-		public static int util_priority_from_string (string string);
-		public static unowned string util_priority_to_string (int priority);
 		public virtual signal void backend_died ();
 		public virtual signal void backend_error (string message);
 		public virtual signal void cal_opened (int status);
 		public virtual signal void cal_opened_ex (long error);
+	}
+	namespace CalBackendProperty {
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_BACKEND_PROPERTY_ALARM_EMAIL_ADDRESS")]
+		public const string ALARM_EMAIL_ADDRESS;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_BACKEND_PROPERTY_CAL_EMAIL_ADDRESS")]
+		public const string CAL_EMAIL_ADDRESS;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_BACKEND_PROPERTY_DEFAULT_OBJECT")]
+		public const string DEFAULT_OBJECT;
 	}
 	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_cal_client_get_type ()")]
 	public class CalClient : E.Client {
@@ -37,9 +39,6 @@ namespace E {
 		public CalClient.@default (E.CalClientSourceType source_type) throws GLib.Error;
 		public async bool discard_alarm (string uid, string rid, string auid, GLib.Cancellable? cancellable) throws GLib.Error;
 		public bool discard_alarm_sync (string uid, string rid, string auid, GLib.Cancellable? cancellable) throws GLib.Error;
-		public static GLib.Error error_create (E.CalClientError code, string custom_msg);
-		public static GLib.Quark error_quark ();
-		public static unowned string error_to_string (E.CalClientError code);
 		public static void free_ecalcomp_slist (GLib.SList<E.CalComponent> ecalcomps);
 		public static void free_icalcomp_slist (GLib.SList<iCal.Component> icalcomps);
 		[CCode (has_construct_function = false)]
@@ -120,7 +119,7 @@ namespace E {
 		public static void free_datetime (E.CalComponentDateTime dt);
 		public static void free_exdate_list (GLib.SList exdate_list);
 		public static void free_geo (iCal.GeoType geo);
-		public static void free_TimeType (iCal.TimeType t);
+		public static void free_icaltimetype (iCal.TimeType t);
 		public static void free_id (E.CalComponentId id);
 		public static void free_percent (int percent);
 		public static void free_period_list (GLib.SList period_list);
@@ -253,6 +252,7 @@ namespace E {
 		public E.CalChangeType type;
 	}
 	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_cal_view_get_type ()")]
+	[Deprecated (since = "3.2")]
 	public class CalView : GLib.Object {
 		[CCode (has_construct_function = false)]
 		protected CalView ();
@@ -358,34 +358,37 @@ namespace E {
 		[CCode (cname = "cal_obj_instance_list_free")]
 		public static void list_free (GLib.List list);
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_CHANGE_", has_type_id = false)]
+	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_timezone_cache_get_type")]
+	public interface TimezoneCache {
+		public void add_timezone (iCal.TimeZone zone);
+		public iCal.TimeZone get_timezone (string tzid);
+		public GLib.List<iCal.TimeZone> list_timezones ();
+		public signal void timezone_added (iCal.TimeZone zone);
+	}
+	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_CHANGE_", type_id = "e_cal_change_type_get_type ()")]
 	public enum CalChangeType {
 		ADDED,
 		MODIFIED,
 		DELETED
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_CLIENT_ERROR_", has_type_id = false)]
-	public enum CalClientError {
+	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_CLIENT_ERROR_")]
+	public errordomain CalClientError {
 		NO_SUCH_CALENDAR,
 		OBJECT_NOT_FOUND,
 		INVALID_OBJECT,
 		UNKNOWN_USER,
 		OBJECT_ID_ALREADY_EXISTS,
-		INVALID_RANGE
+		INVALID_RANGE;
+		public static GLib.Error create (E.CalClientError code, string custom_msg);
+		public static GLib.Quark quark ();
+		public static unowned string to_string (E.CalClientError code);
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_CLIENT_SOURCE_TYPE_", has_type_id = false)]
+	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_CLIENT_SOURCE_TYPE_", type_id = "e_cal_client_source_type_get_type ()")]
 	public enum CalClientSourceType {
 		EVENTS,
 		TASKS,
 		MEMOS,
 		LAST
-	}
-	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "")]
-	public enum CalClientSourceTypeEnum {
-		Events,
-		Tasks,
-		Memos,
-		Invalid
 	}
 	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_COMPONENT_ALARM_", has_type_id = false)]
 	public enum CalComponentAlarmAction {
@@ -483,7 +486,7 @@ namespace E {
 		REMOTE,
 		ANY
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", cname="CalObjModType", cprefix = "CALOBJ_MOD_", has_type_id = false)]
+	[CCode (cheader_filename = "libecal/libecal.h", cname="CalObjModType", cprefix = "CALOBJ_MOD_", type_id = "e_cal_obj_mod_type_get_type()")]
 	public enum CalObjModType {
 		THIS,
 		THISANDPRIOR,
@@ -497,12 +500,6 @@ namespace E {
 		ERROR,
 		NOT_SUPPORTED
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "")]
-	public enum CalSetModeStatusEnum {
-		ECalSetModeSuccess,
-		ECalSetModeError,
-		ECalSetModeNotSupported
-	}
 	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_SOURCE_TYPE_", has_type_id = false)]
 	public enum CalSourceType {
 		EVENT,
@@ -510,7 +507,7 @@ namespace E {
 		JOURNAL,
 		LAST
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CALENDAR_STATUS_", has_type_id = false)]
+	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CALENDAR_STATUS_", type_id = "e_calendar_status_get_type ()")]
 	public enum CalendarStatus {
 		OK,
 		INVALID_ARG,
@@ -534,6 +531,62 @@ namespace E {
 		INVALID_SERVER_VERSION,
 		NOT_SUPPORTED
 	}
+	namespace CalStaticCapability {
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_CREATE_MESSAGES")]
+		public const string CREATE_MESSAGES;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_DELEGATE_SUPPORTED")]
+		public const string DELEGATE_SUPPORTED;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_DELEGATE_TO_MANY")]
+		public const string DELEGATE_TO_MANY;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_HAS_UNACCEPTED_MEETING")]
+		public const string HAS_UNACCEPTED_MEETING;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_ALARM_REPEAT")]
+		public const string NO_ALARM_REPEAT;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_AUDIO_ALARMS")]
+		public const string NO_AUDIO_ALARMS;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_CONV_TO_ASSIGN_TASK")]
+		public const string NO_CONV_TO_ASSIGN_TASK;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_CONV_TO_RECUR")]
+		public const string NO_CONV_TO_RECUR;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_DISPLAY_ALARMS")]
+		public const string NO_DISPLAY_ALARMS;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_EMAIL_ALARMS")]
+		public const string NO_EMAIL_ALARMS;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_GEN_OPTIONS")]
+		public const string NO_GEN_OPTIONS;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_ORGANIZER")]
+		public const string NO_ORGANIZER;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_PROCEDURE_ALARMS")]
+		public const string NO_PROCEDURE_ALARMS;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_TASK_ASSIGNMENT")]
+		public const string NO_TASK_ASSIGNMENT;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_THISANDFUTURE")]
+		public const string NO_THISANDFUTURE;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_THISANDPRIOR")]
+		public const string NO_THISANDPRIOR;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_NO_TRANSPARENCY")]
+		public const string NO_TRANSPARENCY;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_ONE_ALARM_ONLY")]
+		public const string ONE_ALARM_ONLY;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_ORGANIZER_MUST_ACCEPT")]
+		public const string ORGANIZER_MUST_ACCEPT;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_ORGANIZER_MUST_ATTEND")]
+		public const string ORGANIZER_MUST_ATTEND;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_ORGANIZER_NOT_EMAIL_ADDRESS")]
+		public const string ORGANIZER_NOT_EMAIL_ADDRESS;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_RECURRENCES_NO_MASTER")]
+		public const string RECURRENCES_NO_MASTER;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_REFRESH_SUPPORTED")]
+		public const string REFRESH_SUPPORTED;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_REMOVE_ALARMS")]
+		public const string REMOVE_ALARMS;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_REMOVE_ONLY_THIS")]
+		public const string REMOVE_ONLY_THIS;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_REQ_SEND_OPTIONS")]
+		public const string REQ_SEND_OPTIONS;
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "CAL_STATIC_CAPABILITY_SAVE_SCHEDULES")]
+		public const string SAVE_SCHEDULES;
+	}
 	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "", has_type_id = false)]
 	public enum DataCalMode {
 		Local,
@@ -545,113 +598,69 @@ namespace E {
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public delegate iCal.TimeZone CalRecurResolveTimezoneFn (string tzid);
 	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_BACKEND_PROPERTY_ALARM_EMAIL_ADDRESS;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_BACKEND_PROPERTY_CAL_EMAIL_ADDRESS;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_BACKEND_PROPERTY_DEFAULT_OBJECT;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_CREATE_MESSAGES;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_DELEGATE_SUPPORTED;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_DELEGATE_TO_MANY;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_HAS_UNACCEPTED_MEETING;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_ALARM_REPEAT;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_AUDIO_ALARMS;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_CONV_TO_ASSIGN_TASK;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_CONV_TO_RECUR;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_DISPLAY_ALARMS;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_EMAIL_ALARMS;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_GEN_OPTIONS;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_ORGANIZER;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_PROCEDURE_ALARMS;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_TASK_ASSIGNMENT;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_THISANDFUTURE;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_THISANDPRIOR;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_NO_TRANSPARENCY;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_ONE_ALARM_ONLY;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_ORGANIZER_MUST_ACCEPT;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_ORGANIZER_MUST_ATTEND;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_ORGANIZER_NOT_EMAIL_ADDRESS;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_RECURRENCES_NO_MASTER;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_REFRESH_SUPPORTED;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_REMOVE_ALARMS;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_REMOVE_ONLY_THIS;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_REQ_SEND_OPTIONS;
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public const string CAL_STATIC_CAPABILITY_SAVE_SCHEDULES;
+	public delegate iCal.TimeZone TzLookup (string tzid, E.CalClient ecalclient, GLib.Cancellable? cancellable = null) throws GLib.Error;
 	[CCode (cheader_filename = "libecal/libecal.h", cname = "cal_obj_uid_list_free")]
 	public static void cal_obj_uid_list_free (GLib.List list);
-	[CCode (cheader_filename = "libecal/libecal.h")]
-	public static GLib.Quark calendar_error_quark ();
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "icaltimetype_to_tm")]
-	public static void* icaltimetype_to_tm (void* itt);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "icaltimetype_to_tm_with_zone")]
-	public static void* icaltimetype_to_tm_with_zone (void* itt, iCal.TimeZone from_zone, iCal.TimeZone to_zone);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "isodate_from_time_t")]
-	public static unowned string isodate_from_time_t (ulong t);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_add_day")]
-	public static ulong time_add_day (ulong time, int days);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_add_day_with_zone")]
-	public static ulong time_add_day_with_zone (ulong time, int days, iCal.TimeZone zone);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_add_month_with_zone")]
-	public static ulong time_add_month_with_zone (ulong time, int months, iCal.TimeZone zone);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_add_week")]
-	public static ulong time_add_week (ulong time, int weeks);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_add_week_with_zone")]
-	public static ulong time_add_week_with_zone (ulong time, int weeks, iCal.TimeZone zone);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_begin")]
-	public static ulong time_day_begin (ulong t);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_begin_with_zone")]
-	public static ulong time_day_begin_with_zone (ulong time, iCal.TimeZone zone);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_end")]
-	public static ulong time_day_end (ulong t);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_end_with_zone")]
-	public static ulong time_day_end_with_zone (ulong time, iCal.TimeZone zone);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_of_week")]
-	public static int time_day_of_week (int day, int month, int year);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_of_year")]
-	public static int time_day_of_year (int day, int month, int year);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_days_in_month")]
-	public static int time_days_in_month (int year, int month);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_from_isodate")]
-	public static ulong time_from_isodate (string str);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_is_leap_year")]
-	public static bool time_is_leap_year (int year);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_leap_years_up_to")]
-	public static int time_leap_years_up_to (int year);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_month_begin_with_zone")]
-	public static ulong time_month_begin_with_zone (ulong time, iCal.TimeZone zone);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_to_gdate_with_zone")]
-	public static void time_to_gdate_with_zone (GLib.Date date, ulong time, iCal.TimeZone zone);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_week_begin_with_zone")]
-	public static ulong time_week_begin_with_zone (ulong time, int week_start_day, iCal.TimeZone zone);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "time_year_begin_with_zone")]
-	public static ulong time_year_begin_with_zone (ulong time, iCal.TimeZone zone);
-	[CCode (cheader_filename = "libecal/libecal.h", cname = "tm_to_icaltimetype")]
-	public static void* tm_to_TimeType (void* tm, bool is_date);
+	public static string cal_system_timezone_get_location ();
+	namespace Util {
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "icaltimetype_to_tm")]
+		public static Posix.tm icaltimetype_to_tm (iCal.TimeType itt);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "icaltimetype_to_tm_with_zone")]
+		public static Posix.tm icaltimetype_to_tm_with_zone (iCal.TimeType itt, iCal.TimeZone from_zone, iCal.TimeZone to_zone);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "isodate_from_time_t")]
+		public static unowned string isodate_from_time_t (time_t t);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_add_day")]
+		public static time_t time_add_day (time_t time, int days);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_add_day_with_zone")]
+		public static time_t time_add_day_with_zone (time_t time, int days, iCal.TimeZone zone);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_add_month_with_zone")]
+		public static time_t time_add_month_with_zone (time_t time, int months, iCal.TimeZone zone);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_add_week")]
+		public static time_t time_add_week (time_t time, int weeks);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_add_week_with_zone")]
+		public static time_t time_add_week_with_zone (time_t time, int weeks, iCal.TimeZone zone);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_begin")]
+		public static time_t time_day_begin (time_t t);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_begin_with_zone")]
+		public static time_t time_day_begin_with_zone (time_t time, iCal.TimeZone zone);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_end")]
+		public static time_t time_day_end (time_t t);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_end_with_zone")]
+		public static time_t time_day_end_with_zone (time_t time, iCal.TimeZone zone);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_of_week")]
+		public static int time_day_of_week (int day, int month, int year);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_day_of_year")]
+		public static int time_day_of_year (int day, int month, int year);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_days_in_month")]
+		public static int time_days_in_month (int year, int month);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_from_isodate")]
+		public static time_t time_from_isodate (string str);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_is_leap_year")]
+		public static bool time_is_leap_year (int year);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_leap_years_up_to")]
+		public static int time_leap_years_up_to (int year);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_month_begin_with_zone")]
+		public static time_t time_month_begin_with_zone (time_t time, iCal.TimeZone zone);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_to_gdate_with_zone")]
+		public static void time_to_gdate_with_zone (GLib.Date date, time_t time, iCal.TimeZone zone);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_week_begin_with_zone")]
+		public static time_t time_week_begin_with_zone (time_t time, int week_start_day, iCal.TimeZone zone);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "time_year_begin_with_zone")]
+		public static time_t time_year_begin_with_zone (time_t time, iCal.TimeZone zone);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "tm_to_icaltimetype")]
+		public static iCal.TimeType tm_to_icaltimetype (Posix.tm time, bool is_date);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_get_system_timezone_location")]
+		public static string get_system_timezone_location ();
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_priority_from_string")]
+		public static int priority_from_string (string string);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_priority_to_string")]
+		public static unowned string priority_to_string (int priority);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_new_component")]
+		public static iCal.Component new_component (iCal.ComponentKind kind);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_parse_ics_string")]
+		public static iCal.Component parse_ics_string (string string);
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_parse_ics_file")]
+		public static iCal.Component parse_ics_file (string filename);
+		public static bool cal_client_check_timezones (iCal.Component comp, GLib.List<iCal.Component> comps, TzLookup tzlookup, E.CalClient ecalclient, GLib.Cancellable? cancellable = null) throws GLib.Error;
+	}
 }

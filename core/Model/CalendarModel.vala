@@ -342,8 +342,8 @@ public class Maya.Model.CalendarModel : Object {
             (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
         source_events.set (source, events);
         // query client view
-        var iso_first = E.isodate_from_time_t((ulong) data_range.first.to_unix());
-        var iso_last = E.isodate_from_time_t((ulong) data_range.last.add_days(1).to_unix());
+        var iso_first = E.Util.isodate_from_time_t((time_t) data_range.first.to_unix());
+        var iso_last = E.Util.isodate_from_time_t((time_t) data_range.last.add_days(1).to_unix());
         var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
 
         E.CalClient client;
