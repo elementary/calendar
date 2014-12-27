@@ -30,11 +30,10 @@ public class GridDay : Gtk.EventBox {
     public DateTime date { get; private set; }
     // We need to know if it is the first column in order to not draw it's left border
     public bool is_first_column = false;
-
+    Gtk.Overlay overlay;
     Gtk.Label label;
     Gtk.Grid container_grid;
     VAutoHider event_box;
-    Gtk.Layout event_layout;
     Gee.List<EventButton> event_buttons;
 
     private static const int EVENT_MARGIN = 3;
@@ -43,9 +42,11 @@ public class GridDay : Gtk.EventBox {
         this.date = date;
         event_buttons = new Gee.ArrayList<EventButton>();
 
+        overlay = new Gtk.Overlay ();
         container_grid = new Gtk.Grid ();
         label = new Gtk.Label ("");
         event_box = new VAutoHider ();
+        event_box.expand = true;
 
         // EventBox Properties
         can_focus = true;
@@ -59,25 +60,14 @@ public class GridDay : Gtk.EventBox {
         label.halign = Gtk.Align.END;
         label.get_style_context ().add_provider (style_provider, 600);
         label.name = "date";
-        event_layout = new Gtk.Layout ();
-        event_layout.put (event_box, 0, 0);
-        event_layout.expand = true;
-        event_layout.size_allocate.connect ((alloc) => {
-            event_layout.width = alloc.width;
-            event_layout.height = alloc.height;
-            event_box.change_allocation (alloc);
-        });
 
-        var scrolled_window = new Gtk.ScrolledWindow (null, null);
-        scrolled_window.add (event_layout);
-        scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER);
-        scrolled_window.scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
         Util.set_margins (label, EVENT_MARGIN, EVENT_MARGIN, 0, EVENT_MARGIN);
-        Util.set_margins (event_layout, 0, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN);
+        Util.set_margins (event_box, 0, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN);
         container_grid.attach (label, 0, 0, 1, 1);
-        container_grid.attach (scrolled_window, 0, 1, 1, 1);
+        container_grid.attach (event_box, 0, 1, 1, 1);
 
-        add (container_grid);
+        add (overlay);
+        overlay.add (container_grid);
         container_grid.show_all ();
 
         // Signals and handlers
@@ -87,7 +77,7 @@ public class GridDay : Gtk.EventBox {
         container_grid.draw.connect (on_draw);
     }
 
-    public void add_event_button(EventButton button) {
+    public void add_event_button (EventButton button) {
         if (button.get_parent () != null)
             button.unparent ();
         event_box.add (button);
@@ -95,15 +85,6 @@ public class GridDay : Gtk.EventBox {
 
         event_buttons.add (button);
         event_buttons.sort (EventButton.compare_buttons);
-
-        // Reorder the event buttons
-        foreach (EventButton evbutton in event_buttons) {
-            event_box.reorder_child (evbutton, -1);
-        }
-
-        Gtk.Allocation alloc;
-        event_layout.get_allocation (out alloc);
-        event_box.change_allocation (alloc);
     }
 
     public void remove_event (E.CalComponent comp) {
@@ -154,7 +135,7 @@ public class GridDay : Gtk.EventBox {
             on_event_add (date);
 
         grab_focus ();
-        return true;
+        return false;
     }
 
     private bool on_key_press (Gdk.EventKey event) {

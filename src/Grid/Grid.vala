@@ -187,12 +187,7 @@ public class Grid : Gtk.Grid {
      */
     void add_buttons_for_range (Util.DateRange dt_range, E.CalComponent event) {
         foreach (var date in dt_range) {
-            EventButton button;
-            if (dt_range.to_list ().size == 1)
-                button = new SingleDayEventButton (event);
-            else
-                button = new MultiDayEventButton (event);
-
+            EventButton button = new EventButton (event);
             E.Source source = event.get_data ("source");
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             button.set_color (cal.dup_color ());

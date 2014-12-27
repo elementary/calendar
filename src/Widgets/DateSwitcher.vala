@@ -51,7 +51,11 @@ namespace Maya.View.Widgets {
         public Gtk.Label label { get; protected set; }
         public string text {
             get { return label.label; }
-            set { label.label = value; }
+            set {
+                string new_value = value.substring (value.index_of_nth_char (1));
+                new_value = value.get_char (0).totitle ().to_string () + new_value;
+                label.label = new_value;
+            }
         }
 
         /**

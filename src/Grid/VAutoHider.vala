@@ -10,111 +10,123 @@
 */
 
 namespace Maya.View {
-    public class VAutoHider : Gtk.Box {
+    public class VAutoHider : Gtk.EventBox {
 
         Gtk.Label more_label;
-        Gtk.Revealer more_revealer;
+        Gtk.Box main_box;
 
         public VAutoHider () {
-            resize_mode = Gtk.ResizeMode.QUEUE;
-            orientation = Gtk.Orientation.VERTICAL;
             more_label = new Gtk.Label ("");
-            more_revealer = new Gtk.Revealer ();
-            more_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-            more_revealer.add (more_label);
-            more_revealer.show_all ();
-            pack_end (more_revealer);
-            add.connect (() => {
-                Gtk.Allocation allocation;
-                get_allocation (out allocation);
-                change_shown_events (allocation);
-            });
+            more_label.set_alignment (0.5f, 1);
+            main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            main_box.pack_end (more_label);
+            base.add (main_box);
 
             events |= Gdk.EventMask.SCROLL_MASK;
             events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
+            scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
         }
 
-        public void change_allocation (Gtk.Allocation allocation) {
-            set_size_request (allocation.width, allocation.height);
-            change_shown_events (allocation);
+        public override void add (Gtk.Widget widget) {
+            main_box.add (widget);
+            widget.destroy.connect (() => {
+                queue_resize ();
+            });
+            queue_resize ();
         }
 
-        public override void show_all () {
-            base.show_all ();
-            Gtk.Allocation alloc;
-            get_allocation (out alloc);
-            change_shown_events (alloc);
-        }
-
-        public override void show () {
-            base.show ();
-            Gtk.Allocation alloc;
-            get_allocation (out alloc);
-            change_shown_events (alloc);
-        }
-
-        public void change_shown_events (Gtk.Allocation allocation) {
-            int children_length = (int)get_children ().length ();
-            if (children_length == 0)
+        public override void size_allocate (Gtk.Allocation allocation) {
+            base.size_allocate (allocation);
+            int global_height = allocation.height;
+            int children_length = (int)main_box.get_children ().length () - 1;
+            if (children_length == 0) {
+                more_label.hide ();
                 return;
-            int height = 0;
+            }
 
-            Gtk.Requisition more_label_size;
-            more_revealer.set_reveal_child (true);
-            more_revealer.transition_type = Gtk.RevealerTransitionType.NONE;
-            more_revealer.get_preferred_size (out more_label_size, null);
-            more_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-            for (int i = 0; i < children_length; i++) {
-                var child = get_children ().nth_data (i);
-                if (child == more_revealer)
+            int height = 0;
+            int more_label_height;
+            int shown_children = 0;
+            more_label.show ();
+            more_label.vexpand = false;
+            more_label.get_preferred_height (out more_label_height, null);
+            more_label.vexpand = true;
+            more_label.hide ();
+            foreach (var child in main_box.get_children ()) {
+                if (child == more_label)
                     continue;
 
-                bool last = (i == children_length - 1);
+                bool last = (shown_children == children_length - 1);
 
-                Gtk.Requisition child_size;
+                int child_height;
                 child.show ();
-                child.get_preferred_size (out child_size, null);
-                height += child_size.height;
+                child.get_preferred_height (out child_height, null);
+                child.hide ();
 
                 bool should_hide;
-                if (last)
-                    should_hide = height > allocation.height;
-                else
-                    should_hide = height > allocation.height - more_label_size.height;
+                if (global_height - more_label_height < child_height + height) {
+                    should_hide = true;
+                    if (last && (global_height >= child_height + height)) {
+                        should_hide = false;
+                    }
+                } else {
+                    should_hide = false;
+                    height += child_height;
+                }
 
                 if (should_hide) {
-                    ((Gtk.Revealer)child).set_reveal_child (false);
+                    hide_revealer_now ((Gtk.Revealer)child);
                     child.hide ();
                 } else {
-                    var child_allocation = Gtk.Allocation ();
-                    child_allocation.width = allocation.width;
-                    child_allocation.height = child_size.height;
-                    child_allocation.x = allocation.x;
-                    child_allocation.y = allocation.y + height - child_size.height;
-                    child.size_allocate (child_allocation);
+                    show_revealer_now ((Gtk.Revealer)child);
                     child.show ();
-                    ((Gtk.Revealer)child).set_reveal_child (true);
+                    shown_children++;
                 }
             }
 
-            int more = children_length - get_shown_children ();
-            if (get_shown_children () != children_length && more > 0) {
-                more_revealer.set_reveal_child (true);
-                more_label.set_label (_("%u more…").printf (more));
+            int more = children_length  - shown_children;
+            if (shown_children != children_length && more > 0) {
+                more_label.show ();
+                more_label.set_label (_("%u more…").printf ((uint)more));
             } else {
-                more_revealer.set_reveal_child (false);
+                more_label.hide ();
             }
         }
 
-        /**
-         * Returns the number of currently visible children.
-         */
-        public int get_shown_children () {
-            int result = 0;
-            foreach (var child in get_children ())
-                if (child.visible)
-                    result++;
-            return result;
+        private void hide_revealer_now (Gtk.Revealer revealer) {
+            if (revealer.child_revealed == false)
+                return;
+
+            var reveal_duration = revealer.transition_duration;
+            revealer.transition_duration = 0;
+            revealer.set_reveal_child (false);
+            revealer.transition_duration = reveal_duration;
+            revealer.hide ();
+        }
+
+        private void show_revealer_now (Gtk.Revealer revealer) {
+            if (revealer.child_revealed == true)
+                return;
+
+            var reveal_duration = revealer.transition_duration;
+            revealer.transition_duration = 0;
+            revealer.set_reveal_child (true);
+            revealer.transition_duration = reveal_duration;
+            revealer.show ();
+        }
+
+        public override void get_preferred_width (out int minimum_width, out int natural_width) {
+            base.get_preferred_width (out minimum_width, out natural_width);
+            more_label.get_preferred_width (out minimum_width, null);
+            if (minimum_width > natural_width)
+                natural_width = minimum_width;
+        }
+
+        public override void get_preferred_height (out int minimum_height, out int natural_height) {
+            base.get_preferred_height (out minimum_height, out natural_height);
+            more_label.get_preferred_height (out minimum_height, null);
+            if (minimum_height > natural_height)
+                natural_height = minimum_height;
         }
 
     }

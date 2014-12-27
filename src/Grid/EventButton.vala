@@ -25,6 +25,7 @@ public class EventButton : Gtk.Revealer {
     public E.CalComponent comp {get; private set;}
     private Gtk.EventBox event_box;
     private Gtk.Grid internal_grid;
+    Gtk.Label label;
 
     public EventButton (E.CalComponent comp) {
         this.comp = comp;
@@ -35,10 +36,14 @@ public class EventButton : Gtk.Revealer {
         var fake_label = new Gtk.Label (" ");
         event_box.add (fake_label);
         event_box.set_size_request (4, 2);
+
+        event_box.scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
         internal_grid.attach (event_box, 0, 0, 1, 1);
         event_box.show ();
         var event_box = new Gtk.EventBox ();
         event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
+        event_box.events |= Gdk.EventMask.SCROLL_MASK;
+        event_box.events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         event_box.add (internal_grid);
         event_box.button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY) {
@@ -51,17 +56,21 @@ public class EventButton : Gtk.Revealer {
 
             return false;
         });
-        base.add (event_box);
+
+        add (event_box);
+        label = new Gtk.Label(get_summary ());
+        label.set_ellipsize(Pango.EllipsizeMode.END);
+        internal_grid.attach (label, 1, 0, 1, 1);
+        label.hexpand = true;
+        label.wrap = false;
+        label.xalign = 0;
+        label.show ();
     }
 
     public string get_summary () {
         E.CalComponentText ct;
         comp.get_summary (out ct);
         return ct.value;
-    }
-
-    public override void add (Gtk.Widget widget) {
-        internal_grid.attach (widget, 1, 0, 1, 1);
     }
 
     public void set_color (string color) {
