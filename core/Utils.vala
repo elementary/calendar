@@ -44,15 +44,21 @@ namespace Maya.Util {
      * its time settings are ignored. The second one contains the time itself.
      * XXX: We need to convert to UTC because of some bugs with the Google backend…
      */
-    public iCal.TimeType date_time_to_ical (DateTime date, DateTime? time_local) {
+    public iCal.TimeType date_time_to_ical (DateTime date, DateTime? time_local, string? timezone = E.Util.get_system_timezone_location ()) {
         var result = iCal.TimeType.from_day_of_year (date.get_day_of_year (), date.get_year ());
         if (time_local != null) {
-            var time = time_local.to_timezone (new TimeZone.utc ());
-            result.zone = iCal.TimeZone.get_utc_timezone ();
+            unowned iCal.Array<unowned iCal.TimeZone> tzs = iCal.TimeZone.get_builtin_timezones ();
+            for (int i = 0; i<tzs.num_elements; i++) {
+                unowned iCal.TimeZone tz = tzs.element_at (i);
+                if (tz.get_display_name () == timezone) {
+                    result.zone = tz;
+                    break;
+                }
+            }
             result.is_date = 0;
-            result.hour = time.get_hour ();
-            result.minute = time.get_minute ();
-            result.second = time.get_second ();
+            result.hour = time_local.get_hour ();
+            result.minute = time_local.get_minute ();
+            result.second = time_local.get_second ();
         } else {
             result.is_date = 1;
             result.hour = 0;
@@ -65,7 +71,6 @@ namespace Maya.Util {
 
     /**
      * Converts the given TimeType to a DateTime.
-     * XXX : Track next versions of evolution in order to convert iCal.Timezone to GLib.TimeZone with a dedicated function…
      */
     public TimeZone timezone_from_ical (iCal.TimeType date) {
         var interval = date.zone.get_utc_offset (date, date.is_daylight);
@@ -104,8 +109,8 @@ namespace Maya.Util {
         iCal.TimeType dt_start = comp.get_dtstart ();
         iCal.TimeType dt_end = comp.get_dtend ();
 
-        start_date = Util.ical_to_date_time (dt_start).to_timezone (new TimeZone.local ());
-        end_date = Util.ical_to_date_time (dt_end).to_timezone (new TimeZone.local ());
+        start_date = Util.ical_to_date_time (dt_start);
+        end_date = Util.ical_to_date_time (dt_end);
     }
 
     public Gee.Collection<DateRange> event_date_ranges (iCal.Component comp, Util.DateRange view_range) {
@@ -491,121 +496,6 @@ namespace Maya.Util {
         }
 
         return map;
-    }
-
-    /* Iterator of DateRange objects */
-    public class DateIterator : Object, Gee.Traversable<DateTime>, Gee.Iterator<DateTime> {
-        DateTime current;
-        DateRange range;
-
-        public bool valid { get {return true;} }
-        public bool read_only { get {return false;} }
-
-        public DateIterator (DateRange range) {
-            this.range = range;
-            this.current = range.first.add_days (-1);
-        }
-
-        public bool @foreach (Gee.ForallFunc<DateTime> f) {
-            var element = range.first;
-
-            while (element.compare (range.last) < 0) {
-                if (f (element) == false) {
-                    return false;
-                }
-
-                element = element.add_days (1);
-            }
-
-            return true;
-        }
-
-        public bool next () {
-            if (! has_next ())
-                return false;
-            current = this.current.add_days (1);
-            return true;
-        }
-
-        public bool has_next() {
-            return current.compare(range.last) < 0;
-        }
-
-        public bool first () {
-            current = range.first;
-            return true;
-        }
-
-        public new DateTime get () {
-            return current;
-        }
-
-        public void remove() {
-            assert_not_reached();
-        }
-    }
-
-    /* Represents date range from 'first' to 'last' inclusive */
-    public class DateRange : Object, Gee.Traversable<DateTime>, Gee.Iterable<DateTime> {
-        public DateTime first { get; private set; }
-        public DateTime last { get; private set; }
-        public bool @foreach (Gee.ForallFunc<DateTime> f) {
-            foreach (var date in this) {
-                if (f (date) == false) {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        public int64 days {
-            get { return last.difference (first) / GLib.TimeSpan.DAY; }
-        }
-
-        public DateRange (DateTime first, DateTime last) {
-            assert (first.compare(last)<=0);
-            this.first = first;
-            this.last = last;
-        }
-
-        public DateRange.copy (DateRange date_range) {
-            this (date_range.first, date_range.last);
-        }
-
-        public bool equals (DateRange other) {
-            return (first==other.first && last==other.last);
-        }
-
-        public Type element_type {
-            get { return typeof(DateTime); }
-        }
-
-        public Gee.Iterator<DateTime> iterator () {
-            return new DateIterator (this);
-        }
-
-        public bool contains (DateTime time) {
-            return (first.compare (time) < 1) && (last.compare (time) > -1);
-        }
-
-        public Gee.SortedSet<DateTime> to_set() {
-
-            var @set = new Gee.TreeSet<DateTime> ((GLib.CompareDataFunc<GLib.DateTime>?) DateTime.compare);
-
-            foreach (var date in this)
-                set.add (date);
-
-            return @set;
-        }
-
-        public Gee.List<DateTime> to_list () {
-            var list = new Gee.ArrayList<DateTime> ((Gee.EqualDataFunc<GLib.DateTime>?) datetime_equal_func);
-            foreach (var date in this)
-                list.add (date);
-
-            return list;
-        }
     }
 
     /*
