@@ -125,7 +125,9 @@ public class Grid : Gtk.Grid {
             } else {
                 // Still update_day to get the color of etc. right
                 day = update_day (new GridDay (new_date), new_date, today, month_start);
-                day.is_first_column = col == 0;
+                if (col == 0) {
+                
+                }
                 day.on_event_add.connect ((date) => on_event_add (date));
                 day.scroll_event.connect ((event) => {scroll_event (event); return false;});
                 day.focus_in_event.connect ((event) => {
@@ -183,6 +185,18 @@ public class Grid : Gtk.Grid {
         unowned iCal.Component comp = event.get_icalcomponent ();
         foreach (var dt_range in Util.event_date_ranges (comp, grid_range)) {
             add_buttons_for_range (dt_range, event);
+        }
+    }
+
+    /**
+     * Notify when the week number revealer is revealed
+     */
+    public void draw_first_line_column (bool draw) {
+        var lines = get_children ().length () / 7;
+        for (int i = 0; i < lines; i++) {
+            var child = get_child_at (0, i);
+            ((GridDay)child).draw_left_border = draw;
+            child.queue_draw ();
         }
     }
 

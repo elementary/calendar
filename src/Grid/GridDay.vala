@@ -19,12 +19,10 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-namespace Maya.View {
-
 /**
  * Represents a single day on the grid.
  */
-public class GridDay : Gtk.EventBox {
+public class Maya.View.GridDay : Gtk.EventBox {
 
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
@@ -33,8 +31,7 @@ public class GridDay : Gtk.EventBox {
 
     public DateTime date { get; private set; }
     // We need to know if it is the first column in order to not draw it's left border
-    public bool is_first_column = false;
-    Gtk.Overlay overlay;
+    public bool draw_left_border = true;
     Gtk.Label label;
     Gtk.Grid container_grid;
     VAutoHider event_box;
@@ -46,7 +43,6 @@ public class GridDay : Gtk.EventBox {
         this.date = date;
         event_buttons = new Gee.ArrayList<EventButton>();
 
-        overlay = new Gtk.Overlay ();
         container_grid = new Gtk.Grid ();
         label = new Gtk.Label ("");
         event_box = new VAutoHider ();
@@ -70,15 +66,40 @@ public class GridDay : Gtk.EventBox {
         container_grid.attach (label, 0, 0, 1, 1);
         container_grid.attach (event_box, 0, 1, 1, 1);
 
-        add (overlay);
-        overlay.add (container_grid);
+        add (container_grid);
         container_grid.show_all ();
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
         key_press_event.connect (on_key_press);
         scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
-        container_grid.draw.connect (on_draw);
+    }
+
+    public override bool draw (Cairo.Context cr) {
+        base.draw (cr);
+        Gtk.Allocation size;
+        get_allocation (out size);
+
+        // Draw left and top black strokes
+        if (draw_left_border == false) {
+            cr.move_to (0.5, 0.5);
+        } else {
+            cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
+            cr.line_to (0.5, 0.5); // move to upper left corner
+        }
+
+        cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
+
+        cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
+        cr.set_line_width (1.0);
+        cr.set_antialias (Cairo.Antialias.NONE);
+        cr.stroke ();
+
+        // Draw inner highlight stroke
+        cr.rectangle (1, 1, size.width - 1, size.height - 1);
+        cr.set_source_rgba (1.0, 1.0, 1.0, 0.2);
+        cr.stroke ();
+        return false;
     }
 
     public void add_event_button (EventButton button) {
@@ -150,33 +171,4 @@ public class GridDay : Gtk.EventBox {
 
         return false;
     }
-
-    private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
-        Gtk.Allocation size;
-        widget.get_allocation (out size);
-
-        // Draw left and top black strokes
-        if (is_first_column == true && Settings.SavedState.get_default ().show_weeks == false) {
-            cr.move_to (0.5, 0.5);
-        } else {
-            cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
-            cr.line_to (0.5, 0.5); // move to upper left corner
-        }
-
-        cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
-
-        cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
-        cr.set_line_width (1.0);
-        cr.set_antialias (Cairo.Antialias.NONE);
-        cr.stroke ();
-
-        // Draw inner highlight stroke
-        cr.rectangle (1, 1, size.width - 1, size.height - 1);
-        cr.set_source_rgba (1.0, 1.0, 1.0, 0.2);
-        cr.stroke ();
-        return false;
-    }
-
-}
-
 }

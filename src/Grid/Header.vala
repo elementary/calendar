@@ -28,6 +28,7 @@ public class Header : Gtk.EventBox {
     private Gtk.Grid header_grid;
     private Gtk.Label[] labels;
 
+    public bool draw_left_border = true;
     public Header () {
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
 
@@ -77,6 +78,10 @@ public class Header : Gtk.EventBox {
 
             return false;
         });
+
+        notify.connect ((p) => {
+            stdout.printf ("property '%s' has changed!\n", p.name);
+        });
     }
 
     public void update_columns (int week_starts_on) {
@@ -93,7 +98,7 @@ public class Header : Gtk.EventBox {
         widget.get_allocation (out size);
 
         // Draw left border
-        if (widget == labels[0] && Settings.SavedState.get_default ().show_weeks == false) {
+        if (widget == labels[0] && draw_left_border == false) {
             return false;
         }
 

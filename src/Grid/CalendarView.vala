@@ -19,12 +19,10 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-namespace Maya.View {
-
 /**
  * Represents the entire calendar, including the headers, the week labels and the grid.
  */
-public class CalendarView : Gtk.Grid {
+public class Maya.View.CalendarView : Gtk.Grid {
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
@@ -68,6 +66,12 @@ public class CalendarView : Gtk.Grid {
 
     public Gtk.Grid create_big_grid () {
         weeks = new WeekLabels ();
+        weeks.notify["child-revealed"].connect (() => {
+            grid.draw_first_line_column (weeks.child_revealed);
+            header.draw_left_border = weeks.child_revealed;
+            header.queue_draw ();
+        });
+
         header = new Header ();
         grid = new Grid ();
         grid.focus_date (selected_date);
@@ -79,7 +83,6 @@ public class CalendarView : Gtk.Grid {
         });
 
         // Grid properties
-
         var new_big_grid = new Gtk.Grid ();
         new_big_grid.attach (header, 1, 0, 1, 1);
         new_big_grid.attach (grid, 1, 1, 1, 1);
@@ -110,6 +113,10 @@ public class CalendarView : Gtk.Grid {
     void on_show_weeks_changed () {
         var model = Model.CalendarModel.get_default ();
         weeks.update (model.data_range.first, model.num_weeks);
+        if (Settings.SavedState.get_default ().show_weeks == true) {
+            grid.draw_first_line_column (true);
+            header.draw_left_border = true;
+        }
     }
 
     void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
@@ -213,6 +220,4 @@ public class CalendarView : Gtk.Grid {
     void remove_all_events () {
         grid.remove_all_events ();
     }
-}
-
 }
