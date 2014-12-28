@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-25 20:49+0100\n"
-"PO-Revision-Date: 2014-01-25 14:46+0000\n"
-"Last-Translator: Max_ym <kontact.cat@gmail.com>\n"
+"PO-Revision-Date: 2014-12-27 20:22+0000\n"
+"Last-Translator: Max_ym <b.maxym.naumtchyk@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-12-26 06:03+0000\n"
+"X-Launchpad-Export-Date: 2014-12-28 05:50+0000\n"
 "X-Generator: Launchpad (build 17286)\n"
 "Language: uk\n"
 
@@ -41,7 +41,8 @@ msgstr "Календар"
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr ""
-"Maya;Планування;Планувальник;Planner;Дати;Дні;Dates;Days;Події;Events;"
+"Maya;Планування;Планувальник;Planner;Дати;Дні;Dates;Days;Події;Events;Calenda"
+"r;Календар;"
 
 #: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:62
 msgid "Add Event"
@@ -49,11 +50,11 @@ msgstr "Додати Подію"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "Про Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "Про Календар"
 
 #: ../src/Widgets/AgendaView.vala:56
 msgid ""
@@ -69,7 +70,7 @@ msgstr ""
 
 #: ../src/Widgets/AgendaView.vala:152
 msgid "All day"
-msgstr ""
+msgstr "Весь день"
 
 #: ../src/Widgets/AgendaView.vala:332 ../src/SourceItem.vala:97
 msgid "Edit…"
@@ -96,108 +97,108 @@ msgstr "календар.ics"
 #: ../src/Widgets/ContractorButtonWithMenu.vala:78
 #: ../src/EventEdition/EventDialog.vala:168 ../src/SourceDialog.vala:54
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 #: ../src/SourceDialog.vala:156
 msgid "Save"
-msgstr ""
+msgstr "Зберегти"
 
 #: ../src/EventEdition/LocationPanel.vala:41
 msgid "Location:"
-msgstr ""
+msgstr "Розташування:"
 
 #: ../src/EventEdition/LocationPanel.vala:43
 msgid "John Smith OR Example St."
-msgstr "Джон Сміт АБО вулиця Зразок"
+msgstr "`Джон Сміт' або `вул. Зразок'"
 
 #: ../src/EventEdition/RepeatPanel.vala:49
 msgid "Repeat:"
-msgstr ""
+msgstr "Повторювати:"
 
 #: ../src/EventEdition/RepeatPanel.vala:54
 msgid "Daily"
-msgstr ""
+msgstr "Щодня"
 
 #: ../src/EventEdition/RepeatPanel.vala:55
 msgid "Weekly"
-msgstr ""
+msgstr "Щотижня"
 
 #: ../src/EventEdition/RepeatPanel.vala:56
 msgid "Monthly"
-msgstr ""
+msgstr "Щомісяця"
 
 #: ../src/EventEdition/RepeatPanel.vala:57
 msgid "Yearly"
-msgstr ""
+msgstr "Щороку"
 
 #: ../src/EventEdition/RepeatPanel.vala:100
 msgid "Every:"
-msgstr ""
+msgstr "Через:"
 
 #: ../src/EventEdition/RepeatPanel.vala:107
 msgid "Day"
-msgstr ""
+msgstr "День"
 
 #: ../src/EventEdition/RepeatPanel.vala:107
 msgid "Days"
-msgstr ""
+msgstr "Дні"
 
 #: ../src/EventEdition/RepeatPanel.vala:110
 #: ../src/EventEdition/RepeatPanel.vala:121
 msgid "Week"
-msgstr ""
+msgstr "Тиждень"
 
 #: ../src/EventEdition/RepeatPanel.vala:110
 msgid "Weeks"
-msgstr ""
+msgstr "Тижнів"
 
 #: ../src/EventEdition/RepeatPanel.vala:113
 msgid "Month"
-msgstr ""
+msgstr "Місяць"
 
 #: ../src/EventEdition/RepeatPanel.vala:113
 msgid "Months"
-msgstr ""
+msgstr "Місяці"
 
 #: ../src/EventEdition/RepeatPanel.vala:116
 msgid "Year"
-msgstr ""
+msgstr "Рік"
 
 #: ../src/EventEdition/RepeatPanel.vala:116
 msgid "Years"
-msgstr ""
+msgstr "Років"
 
 #: ../src/EventEdition/RepeatPanel.vala:131
 msgid "Ends:"
-msgstr ""
+msgstr "Завершити:"
 
 #: ../src/EventEdition/RepeatPanel.vala:133
 #: ../src/EventEdition/RepeatPanel.vala:166
 #: ../src/EventEdition/EventDialog.vala:109
 msgid "Repeat"
-msgstr ""
+msgstr "Повтор"
 
 #: ../src/EventEdition/RepeatPanel.vala:133
 #: ../src/EventEdition/RepeatPanel.vala:166
 msgid "Repeats"
-msgstr ""
+msgstr "Повторів"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 msgid "Never"
-msgstr ""
+msgstr "Ніколи"
 
 #: ../src/EventEdition/RepeatPanel.vala:138
 msgid "Until"
-msgstr ""
+msgstr "До"
 
 #: ../src/EventEdition/RepeatPanel.vala:139
 msgid "After"
-msgstr ""
+msgstr "Через"
 
 #: ../src/EventEdition/RepeatPanel.vala:185
 msgid "The same day every month"
-msgstr ""
+msgstr "Однаковий день щомісяця"
 
 #: ../src/EventEdition/RepeatPanel.vala:303
 msgid "Every last Sunday"
@@ -369,43 +370,43 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:456
 msgid "Mon"
-msgstr ""
+msgstr "Пн"
 
 #: ../src/EventEdition/RepeatPanel.vala:457
 msgid "Tue"
-msgstr ""
+msgstr "Вт"
 
 #: ../src/EventEdition/RepeatPanel.vala:458
 msgid "Wed"
-msgstr ""
+msgstr "Ср"
 
 #: ../src/EventEdition/RepeatPanel.vala:459
 msgid "Thu"
-msgstr ""
+msgstr "Чт"
 
 #: ../src/EventEdition/RepeatPanel.vala:460
 msgid "Fri"
-msgstr ""
+msgstr "Пт"
 
 #: ../src/EventEdition/RepeatPanel.vala:461
 msgid "Sat"
-msgstr ""
+msgstr "Сб"
 
 #: ../src/EventEdition/RepeatPanel.vala:462
 msgid "Sun"
-msgstr ""
+msgstr "Нд"
 
 #: ../src/EventEdition/ReminderPanel.vala:30
 msgid "Reminders:"
-msgstr ""
+msgstr "Нагадування:"
 
 #: ../src/EventEdition/ReminderPanel.vala:34
 msgid "No Reminders"
-msgstr ""
+msgstr "Немає Нагадувань"
 
 #: ../src/EventEdition/ReminderPanel.vala:68
 msgid "Add Reminder"
-msgstr ""
+msgstr "Створити Нагадування"
 
 #: ../src/EventEdition/ReminderPanel.vala:179
 msgid "0 minutes"
@@ -417,67 +418,67 @@ msgstr ""
 
 #: ../src/EventEdition/ReminderPanel.vala:181
 msgid "5 minutes"
-msgstr ""
+msgstr "5 хвилин"
 
 #: ../src/EventEdition/ReminderPanel.vala:182
 msgid "10 minutes"
-msgstr ""
+msgstr "10 хвилин"
 
 #: ../src/EventEdition/ReminderPanel.vala:183
 msgid "15 minutes"
-msgstr ""
+msgstr "15 хвилин"
 
 #: ../src/EventEdition/ReminderPanel.vala:184
 msgid "20 minutes"
-msgstr ""
+msgstr "20 хвилин"
 
 #: ../src/EventEdition/ReminderPanel.vala:185
 msgid "25 minutes"
-msgstr ""
+msgstr "25 хвилин"
 
 #: ../src/EventEdition/ReminderPanel.vala:186
 msgid "30 minutes"
-msgstr ""
+msgstr "30 хвилин"
 
 #: ../src/EventEdition/ReminderPanel.vala:187
 msgid "45 minutes"
-msgstr ""
+msgstr "45 хвилин"
 
 #: ../src/EventEdition/ReminderPanel.vala:188
 msgid "1 hour"
-msgstr ""
+msgstr "1 година"
 
 #: ../src/EventEdition/ReminderPanel.vala:189
 msgid "2 hours"
-msgstr ""
+msgstr "2 години"
 
 #: ../src/EventEdition/ReminderPanel.vala:190
 msgid "3 hours"
-msgstr ""
+msgstr "3 години"
 
 #: ../src/EventEdition/ReminderPanel.vala:191
 msgid "12 hours"
-msgstr ""
+msgstr "12 годин"
 
 #: ../src/EventEdition/ReminderPanel.vala:192
 msgid "24 hours"
-msgstr ""
+msgstr "24 години"
 
 #: ../src/EventEdition/ReminderPanel.vala:193
 msgid "2 days"
-msgstr ""
+msgstr "2 дня"
 
 #: ../src/EventEdition/ReminderPanel.vala:194
 msgid "1 week"
-msgstr ""
+msgstr "1 тиждень"
 
 #: ../src/EventEdition/ReminderPanel.vala:203
 msgid "Notification"
-msgstr ""
+msgstr "Сповіщення"
 
 #: ../src/EventEdition/ReminderPanel.vala:204
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: ../src/EventEdition/EventDialog.vala:65
 msgid "Edit Event"
@@ -485,7 +486,7 @@ msgstr "Змінити Подію"
 
 #: ../src/EventEdition/EventDialog.vala:97
 msgid "General Informations"
-msgstr ""
+msgstr "Основні Дані"
 
 #: ../src/EventEdition/EventDialog.vala:100
 msgid "Location"
@@ -493,15 +494,15 @@ msgstr "Розташування"
 
 #: ../src/EventEdition/EventDialog.vala:103
 msgid "Guests"
-msgstr ""
+msgstr "Запрошені"
 
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Reminders"
-msgstr ""
+msgstr "Нагадування"
 
 #: ../src/EventEdition/EventDialog.vala:150
 msgid "Delete Event"
-msgstr ""
+msgstr "Вилучити Подію"
 
 #: ../src/EventEdition/EventDialog.vala:162
 msgid "Create Event"
@@ -513,15 +514,15 @@ msgstr "Зберегти Зміни"
 
 #: ../src/EventEdition/GuestsPanel.vala:44
 msgid "Participants:"
-msgstr ""
+msgstr "Учасники:"
 
 #: ../src/EventEdition/GuestsPanel.vala:49
 msgid "No Participants"
-msgstr ""
+msgstr "Немає Учасників"
 
 #: ../src/EventEdition/GuestsPanel.vala:84
 msgid "Invite"
-msgstr ""
+msgstr "Запросити"
 
 #: ../src/EventEdition/GuestsPanel.vala:232
 msgid "Accepted"
@@ -533,7 +534,7 @@ msgstr ""
 
 #: ../src/EventEdition/InfoPanel.vala:44
 msgid "From:"
-msgstr "З:"
+msgstr "Від:"
 
 #: ../src/EventEdition/InfoPanel.vala:50
 msgid "All day:"
@@ -545,7 +546,7 @@ msgstr "До:"
 
 #: ../src/EventEdition/InfoPanel.vala:73
 msgid "Title:"
-msgstr ""
+msgstr "Заголовок:"
 
 #: ../src/EventEdition/InfoPanel.vala:75
 msgid "Name of Event"
@@ -553,15 +554,15 @@ msgstr "Назва Події"
 
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "Calendar:"
-msgstr ""
+msgstr "Календар:"
 
 #: ../src/EventEdition/InfoPanel.vala:85
 msgid "Comments:"
-msgstr ""
+msgstr "Примітки:"
 
 #: ../src/SourceItem.vala:128
 msgid "Undo"
-msgstr ""
+msgstr "Повернути"
 
 #: ../src/SourceItem.vala:143
 msgid "Calendar \"%s\" removed."
@@ -573,11 +574,11 @@ msgstr "Створити нову подію"
 
 #: ../src/MayaToolbar.vala:44
 msgid "Go to today's date"
-msgstr ""
+msgstr "Перейти на сьогоднішній день"
 
 #: ../src/MayaToolbar.vala:48
 msgid "Manage Calendars"
-msgstr ""
+msgstr "Керувати Календарями"
 
 #: ../src/MayaToolbar.vala:56
 msgid "Search Events"
@@ -585,15 +586,15 @@ msgstr "Знайти Подію"
 
 #: ../src/MayaToolbar.vala:59
 msgid "Export or Share the default Calendar"
-msgstr "Експорт або імпорт календаря по-замовчуванню"
+msgstr "Експортувати або Поділитися типовим календарем"
 
 #: ../src/SourceSelector.vala:70
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "Створити Новий Календар..."
 
 #: ../src/SourceDialog.vala:56
 msgid "Create"
-msgstr ""
+msgstr "Створити"
 
 #: ../src/SourceDialog.vala:65
 msgid "Name:"
@@ -641,7 +642,7 @@ msgstr "Google"
 
 #: ../plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "`користувач' або `користувач@gmail.com'"
 
 #: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:762
 msgid "On this computer"
