@@ -486,11 +486,12 @@ namespace E {
 		REMOTE,
 		ANY
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", cname="CalObjModType", cprefix = "CALOBJ_MOD_", type_id = "e_cal_obj_mod_type_get_type()")]
+	[CCode (cheader_filename = "libecal/libecal.h", cname="CalObjModType", cprefix = "E_CAL_OBJ_MOD_", has_type_id = false)]
+	[Flags]
 	public enum CalObjModType {
 		THIS,
-		THISANDPRIOR,
-		THISANDFUTURE,
+		THIS_AND_PRIOR,
+		THIS_AND_FUTURE,
 		ONLY_THIS,
 		ALL
 	}

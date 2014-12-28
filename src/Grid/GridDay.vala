@@ -73,6 +73,31 @@ public class Maya.View.GridDay : Gtk.EventBox {
         button_press_event.connect (on_button_press);
         key_press_event.connect (on_key_press);
         scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
+
+        Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
+        Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
+    }
+
+    public override bool drag_drop (Gdk.DragContext context, int x, int y, uint time_) {
+        Gtk.drag_finish (context, true, false, time_);
+        Gdk.Atom atom = Gtk.drag_dest_find_target (this, context, Gtk.drag_dest_get_target_list (this));
+        Gtk.drag_get_data (this, context, atom, time_);
+        return true;
+    }
+
+    public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
+        var calmodel = Model.CalendarModel.get_default ();
+        var comp = calmodel.drag_component;
+        unowned iCal.Component icalcomp = comp.get_icalcomponent ();
+        E.Source src = comp.get_data ("source");
+        var start = icalcomp.get_dtstart ();
+        var end = icalcomp.get_dtend ();
+        var gap = date.get_day_of_month () - start.day;
+        start.day += gap;
+        end.day += gap;
+        icalcomp.set_dtstart (start);
+        icalcomp.set_dtend (end);
+        calmodel.update_event (src, comp, E.CalObjModType.ALL);
     }
 
     public override bool draw (Cairo.Context cr) {

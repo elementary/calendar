@@ -37,6 +37,9 @@ public class Maya.Model.CalendarModel : Object {
     /* The start of week, ie. Monday=1 or Sunday=7 */
     public Settings.Weekday week_starts_on { get; set; }
 
+    /* The event that is currently dragged */
+    public E.CalComponent drag_component {get; set;}
+
     /* Notifies when events are added, updated, or removed */
     public signal void events_added (E.Source source, Gee.Collection<E.CalComponent> events);
     public signal void events_updated (E.Source source, Gee.Collection<E.CalComponent> events);

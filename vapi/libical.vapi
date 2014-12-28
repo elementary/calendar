@@ -38,14 +38,14 @@ namespace iCal {
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalcompiter")]
 	[Compact]
 	public class Compiter {
-		public weak iCal.pvl_elem iter;
+		public weak iCal.PvlElement iter;
 		public iCal.ComponentKind kind;
 		[CCode (cname = "icalcompiter_deref")]
-		public unowned iCal.Component  deref ();
+		public unowned iCal.Component deref ();
 		[CCode (cname = "icalcompiter_next")]
-		public unowned iCal.Component  next ();
+		public unowned iCal.Component next ();
 		[CCode (cname = "icalcompiter_prior")]
-		public unowned iCal.Component  prior ();
+		public unowned iCal.Component prior ();
 	}
 	[CCode (cheader_filename = "libical/ical.h", free_function = "icalcomponent_free", cname = "icalcomponent")]
 	[Compact]
@@ -1656,37 +1656,146 @@ namespace iCal {
 		[CCode (cname = "icalvalue_new_xlicclass", has_construct_function = false)]
 		public Value.xlicclass (iCal.PropertyXlicClass v);
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
+	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_elem")]
 	[Compact]
-	public class pvl_elem {
-	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	[Compact]
-	public class pvl_elem_t {
+	public class PvlElement {
 		public int MAGIC;
 		public void* d;
-		public weak iCal.pvl_elem_t next;
-		public weak iCal.pvl_elem_t prior;
+		public weak iCal.PvlElement next;
+		public weak iCal.PvlElement prior;
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_new_element")]
+		public PvlElement (void* d, iCal.PvlElement next, iCal.PvlElement prior);
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
+	[CCode (cheader_filename = "libical/ical.h", free_function = "pvl_free", cname = "pvl_list")]
 	[Compact]
-	public class pvl_list {
+	public class PvlList {
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_apply")]
+		public void apply (iCal.pvl_applyf f, void* v);
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_clear")]
+		public void clear ();
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_count")]
+		public int count ();
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_data")]
+		public static void* data (iCal.PvlElement p1);
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_find")]
+		public unowned iCal.PvlElement find (iCal.pvl_findf f, void* v);
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_find_next")]
+		public unowned iCal.PvlElement find_next (iCal.pvl_findf f, void* v);
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_free")]
+		public void free ();
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_head")]
+		public unowned iCal.PvlElement head ();
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_insert_after")]
+		public void insert_after (iCal.PvlElement e, void* d);
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_insert_before")]
+		public void insert_before (iCal.PvlElement e, void* d);
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_insert_ordered")]
+		public void insert_ordered (iCal.pvl_comparef f, void* d);
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_newlist")]
+		public PvlList.newlist ();
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_pop")]
+		public void* pop ();
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_push")]
+		public void push (void* d);
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_remove")]
+		public void* remove (iCal.PvlElement p2);
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_shift")]
+		public void* shift ();
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_tail")]
+		public unowned iCal.PvlElement tail ();
+		[CCode (cheader_filename = "libical/ical.h", cname = "pvl_unshift")]
+		public void unshift (void* d);
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "SSPM_", has_type_id = false)]
 	[Compact]
-	public class sspm_encoding {
+	public enum sspm_encoding {
+		[CCode (cname = "SSPM_NO_ENCODING")]
+		NO,
+		[CCode (cname = "SSPM_QUOTED_PRINTABLE_ENCODING")]
+		QUOTED_PRINTABLE,
+		[CCode (cname = "SSPM_8BIT_ENCODING")]
+		8BIT,
+		[CCode (cname = "SSPM_7BIT_ENCODING")]
+		7BIT,
+		[CCode (cname = "SSPM_BINARY_ENCODING")]
+		BINARY,
+		[CCode (cname = "SSPM_BASE64_ENCODING")]
+		BASE64,
+		[CCode (cname = "SSPM_UNKNOWN_ENCODING")]
+		UNKNOWN;
+		[CCode (cheader_filename = "libical/ical.h", cname = "sspm_encoding_string")]
+		public static unowned string to_string (sspm_encoding type);
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	[Compact]
-	public class sspm_error {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "SSPM_", has_type_id = false)]
+	public enum sspm_error {
+		[CCode (cname = "SSPM_NO_ERROR")]
+		NO,
+		[CCode (cname = "SSPM_UNEXPECTED_BOUNDARY_ERROR")]
+		UNEXPECTED_BOUNDARY,
+		[CCode (cname = "SSPM_WRONG_BOUNDARY_ERROR")]
+		WRONG_BOUNDARY,
+		[CCode (cname = "SSPM_NO_BOUNDARY_ERROR")]
+		NO_BOUNDARY,
+		[CCode (cname = "SSPM_NO_HEADER_ERROR")]
+		NO_HEADER,
+		[CCode (cname = "SSPM_MALFORMED_HEADER_ERROR")]
+		MALFORMED_HEADER
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	[Compact]
-	public class sspm_major_type {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "SSPM_", has_type_id = false)]
+	public enum sspm_major_type {
+		[CCode (cname = "SSPM_NO_MAJOR_TYPE")]
+		NO,
+		[CCode (cname = "SSPM_TEXT_MAJOR_TYPE")]
+		TEXT,
+		[CCode (cname = "SSPM_IMAGE_MAJOR_TYPE")]
+		IMAGE,
+		[CCode (cname = "SSPM_AUDIO_MAJOR_TYPE")]
+		AUDIO,
+		[CCode (cname = "SSPM_VIDEO_MAJOR_TYPE")]
+		VIDEO,
+		[CCode (cname = "SSPM_APPLICATION_MAJOR_TYPE")]
+		APPLICATION,
+		[CCode (cname = "SSPM_MULTIPART_MAJOR_TYPE")]
+		MULTIPART,
+		[CCode (cname = "SSPM_MESSAGE_MAJOR_TYPE")]
+		MESSAGE,
+		[CCode (cname = "SSPM_UNKNOWN_MAJOR_TYPE")]
+		UNKNOWN;
+		[CCode (cheader_filename = "libical/ical.h", cname = "sspm_major_type_string")]
+		public static unowned string to_string (sspm_major_type type);
+		[CCode (cheader_filename = "libical/ical.h", cname = "sspm_free_parts")]
+		public static void free_parts (sspm_major_type type, size_t max_parts);
+		[CCode (cheader_filename = "libical/ical.h", cname = "sspm_write_mime")]
+		public static int write_mime (sspm_major_type type, size_t num_parts, out unowned string output_string, string header);
+		[CCode (cheader_filename = "libical/ical.h", cname = "sspm_parse_mime")]
+		public static int parse_mime (sspm_major_type type, size_t max_parts, iCal.sspm_action_map actions, GLib.Callback get_string, void* get_string_data, ...);
 	}
-	[CCode (cheader_filename = "libical/ical.h")]
-	[Compact]
-	public class sspm_minor_type {
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "SSPM_", has_type_id = false)]
+	public enum sspm_minor_type {
+		[CCode (cname = "SSPM_NO_MINOR_TYPE")]
+		NO,
+		[CCode (cname = "SSPM_ANY_MINOR_TYPE")]
+		ANY,
+		[CCode (cname = "SSPM_PLAIN_MINOR_TYPE")]
+		PLAIN,
+		[CCode (cname = "SSPM_RFC822_MINOR_TYPE")]
+		RFC822,
+		[CCode (cname = "SSPM_DIGEST_MINOR_TYPE")]
+		DIGEST,
+		[CCode (cname = "SSPM_CALENDAR_MINOR_TYPE")]
+		CALENDAR,
+		[CCode (cname = "SSPM_MIXED_MINOR_TYPE")]
+		MIXED,
+		[CCode (cname = "SSPM_RELATED_MINOR_TYPE")]
+		RELATED,
+		[CCode (cname = "SSPM_ALTERNATIVE_MINOR_TYPE")]
+		ALTERNATIVE,
+		[CCode (cname = "SSPM_PARALLEL_MINOR_TYPE")]
+		PARALLEL,
+		[CCode (cname = "SSPM_UNKNOWN_MINOR_TYPE")]
+		UNKNOWN;
+		[CCode (cheader_filename = "libical/ical.h", cname = "sspm_minor_type_string")]
+		public static unowned string to_string (iCal.sspm_minor_type type);
 	}
 	[CCode (cheader_filename = "libical/ical.h", cname = "icaldatetimeperiodtype")]
 	public struct DateTimePeriodType {
@@ -1801,7 +1910,7 @@ namespace iCal {
 		[CCode (cname = "icaltime_add")]
 		public iCal.TimeType add (iCal.DurationType d);
 		[CCode (cname = "icaltime_adjust")]
-		public void adjust (int days, int hours, int minutes, int seconds);
+		public static void adjust (out iCal.TimeType time_type, int days, int hours, int minutes, int seconds);
 		[CCode (cname = "icaltime_as_ical_string")]
 		public unowned string as_ical_string ();
 		[CCode (cname = "icaltime_as_ical_string_r")]
@@ -2648,7 +2757,19 @@ namespace iCal {
 		@5_2_NOSERVICE_STATUS,
 		@5_3_NOSCHED_STATUS,
 		@6_1_CONTAINER_NOT_FOUND,
-		@9_0_UNRECOGNIZED_COMMAND
+		@9_0_UNRECOGNIZED_COMMAND;
+		[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_num_to_reqstat")]
+		public static iCal.RequestStatus num_to_reqstat (short major, short minor);
+		[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_code")]
+		public static unowned string code (iCal.RequestStatus stat);
+		[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_code_r")]
+		public static unowned string code_r (iCal.RequestStatus stat);
+		[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_desc")]
+		public static unowned string description (iCal.RequestStatus stat);
+		[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_major")]
+		public static short major (iCal.RequestStatus stat);
+		[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_minor")]
+		public static short minor (iCal.RequestStatus stat);
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_RESTRICTION_", has_type_id = false)]
 	public enum RestrictionKind {
@@ -2660,7 +2781,13 @@ namespace iCal {
 		ZEROORONE,
 		ONEEXCLUSIVE,
 		ONEMUTUAL,
-		UNKNOWN
+		UNKNOWN;
+		[CCode (cheader_filename = "libical/ical.h", cname = "icalrestriction_check")]
+		public static int check (iCal.Component  comp);
+		[CCode (cheader_filename = "libical/ical.h", cname = "icalrestriction_compare")]
+		public static int compare (iCal.RestrictionKind restr, int count);
+		[CCode (cheader_filename = "libical/ical.h", cname = "icalrestriction_is_parameter_allowed")]
+		public static int is_parameter_allowed (iCal.PropertyKind property, iCal.ParameterKind parameter);
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
 	public enum ValueKind {
@@ -2725,18 +2852,6 @@ namespace iCal {
 	public static void free_zone_directory ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "ical_bt")]
 	public static void ical_bt ();
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_num_to_reqstat")]
-	public static iCal.RequestStatus enum_num_to_reqstat (short major, short minor);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_code")]
-	public static unowned string enum_reqstat_code (iCal.RequestStatus stat);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_code_r")]
-	public static unowned string enum_reqstat_code_r (iCal.RequestStatus stat);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_desc")]
-	public static unowned string enum_reqstat_desc (iCal.RequestStatus stat);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_major")]
-	public static short enum_reqstat_major (iCal.RequestStatus stat);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalenum_reqstat_minor")]
-	public static short enum_reqstat_minor (iCal.RequestStatus stat);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerrno_return")]
 	public static iCal.Error errno_return ();
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalerror_clear_errno")]
@@ -2823,68 +2938,8 @@ namespace iCal {
 	public static int recur_expand_recurrence (string rule, time_t start, [CCode (array_length_pos = 2, array_length_type = "int")] time_t[] array);
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalrecur_string_to_weekday")]
 	public static iCal.RecurrenceTypeWeekday icalrecur_string_to_weekday (string str);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalrestriction_check")]
-	public static int icalrestriction_check (iCal.Component  comp);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalrestriction_compare")]
-	public static int icalrestriction_compare (iCal.RestrictionKind restr, int count);
-	[CCode (cheader_filename = "libical/ical.h", cname = "icalrestriction_is_parameter_allowed")]
-	public static int icalrestriction_is_parameter_allowed (iCal.PropertyKind property, iCal.ParameterKind parameter);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_apply")]
-	public static void pvl_apply (iCal.pvl_list l, iCal.pvl_applyf f, void* v);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_clear")]
-	public static void pvl_clear (iCal.pvl_list p1);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_count")]
-	public static int pvl_count (iCal.pvl_list p1);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_data")]
-	public static void* pvl_data (iCal.pvl_elem p1);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_find")]
-	public static unowned iCal.pvl_elem pvl_find (iCal.pvl_list l, iCal.pvl_findf f, void* v);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_find_next")]
-	public static unowned iCal.pvl_elem pvl_find_next (iCal.pvl_list l, iCal.pvl_findf f, void* v);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_free")]
-	public static void pvl_free (iCal.pvl_list p1);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_head")]
-	public static unowned iCal.pvl_elem pvl_head (iCal.pvl_list p1);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_insert_after")]
-	public static void pvl_insert_after (iCal.pvl_list l, iCal.pvl_elem e, void* d);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_insert_before")]
-	public static void pvl_insert_before (iCal.pvl_list l, iCal.pvl_elem e, void* d);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_insert_ordered")]
-	public static void pvl_insert_ordered (iCal.pvl_list l, iCal.pvl_comparef f, void* d);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_new_element")]
-	public static unowned iCal.pvl_elem pvl_new_element (void* d, iCal.pvl_elem next, iCal.pvl_elem prior);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_newlist")]
-	public static unowned iCal.pvl_list pvl_newlist ();
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_next")]
-	public static unowned iCal.pvl_elem pvl_next (iCal.pvl_elem e);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_pop")]
-	public static void* pvl_pop (iCal.pvl_list l);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_prior")]
-	public static unowned iCal.pvl_elem pvl_prior (iCal.pvl_elem e);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_push")]
-	public static void pvl_push (iCal.pvl_list l, void* d);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_remove")]
-	public static void* pvl_remove (iCal.pvl_list p1, iCal.pvl_elem p2);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_shift")]
-	public static void* pvl_shift (iCal.pvl_list l);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_tail")]
-	public static unowned iCal.pvl_elem pvl_tail (iCal.pvl_list p1);
-	[CCode (cheader_filename = "libical/ical.h", cname = "pvl_unshift")]
-	public static void pvl_unshift (iCal.pvl_list l, void* d);
 	[CCode (cheader_filename = "libical/ical.h", cname = "set_zone_directory")]
 	public static void set_zone_directory (string path);
-	[CCode (cheader_filename = "libical/ical.h", cname = "sspm_encoding_string")]
-	public static unowned string sspm_encoding_string (iCal.sspm_encoding type);
-	[CCode (cheader_filename = "libical/ical.h", cname = "sspm_free_parts")]
-	public static void sspm_free_parts (iCal.sspm_part parts, size_t max_parts);
-	[CCode (cheader_filename = "libical/ical.h", cname = "sspm_major_type_string")]
-	public static unowned string sspm_major_type_string (iCal.sspm_major_type type);
-	[CCode (cheader_filename = "libical/ical.h", cname = "sspm_minor_type_string")]
-	public static unowned string sspm_minor_type_string (iCal.sspm_minor_type type);
-	[CCode (cheader_filename = "libical/ical.h", cname = "sspm_parse_mime")]
-	public static int sspm_parse_mime (iCal.sspm_part parts, size_t max_parts, iCal.sspm_action_map actions, GLib.Callback get_string, void* get_string_data, ...);
-	[CCode (cheader_filename = "libical/ical.h", cname = "sspm_write_mime")]
-	public static int sspm_write_mime (iCal.sspm_part parts, size_t num_parts, out unowned string output_string, string header);
 	
 	namespace Size {
 		[CCode (cheader_filename = "libical/ical.h", cname = "ICAL_BY_DAY_SIZE")]
