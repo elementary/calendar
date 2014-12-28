@@ -275,6 +275,11 @@ public class Maya.View.AgendaView : Gtk.Grid {
             main_grid.margin = 6;
 
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+            cal.notify["color"].connect (() => {
+                var rgba = Gdk.RGBA();
+                rgba.parse (cal.dup_color ());
+                event_image.override_color (Gtk.StateFlags.NORMAL, rgba);
+            });
             var rgba = Gdk.RGBA();
             rgba.parse (cal.dup_color ());
 

@@ -85,6 +85,14 @@ public class Maya.View.EventButton : Gtk.Revealer {
         label.wrap = false;
         label.xalign = 0;
         label.show ();
+
+        E.Source source = comp.get_data ("source");
+        E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+        cal.notify["color"].connect (() => {
+            set_color (cal.dup_color ());
+        });
+
+        set_color (cal.dup_color ());
     }
 
     public string get_summary () {
