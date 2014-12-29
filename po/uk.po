@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-25 20:49+0100\n"
-"PO-Revision-Date: 2014-12-27 20:22+0000\n"
+"PO-Revision-Date: 2014-12-28 13:41+0000\n"
 "Last-Translator: Max_ym <b.maxym.naumtchyk@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-12-28 05:50+0000\n"
+"X-Launchpad-Export-Date: 2014-12-29 05:59+0000\n"
 "X-Generator: Launchpad (build 17286)\n"
 "Language: uk\n"
 
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:61
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Сховати Номера Тижнів"
 
 #: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:63
 msgid "Show Week Numbers"
@@ -202,171 +202,171 @@ msgstr "Однаковий день щомісяця"
 
 #: ../src/EventEdition/RepeatPanel.vala:303
 msgid "Every last Sunday"
-msgstr ""
+msgstr "Кожної останньої неділі"
 
 #: ../src/EventEdition/RepeatPanel.vala:306
 msgid "Every last Monday"
-msgstr ""
+msgstr "Кожного останнього понеділка"
 
 #: ../src/EventEdition/RepeatPanel.vala:309
 msgid "Every last Tuesday"
-msgstr ""
+msgstr "Кожного останнього вівторка"
 
 #: ../src/EventEdition/RepeatPanel.vala:312
 msgid "Every last Wednesday"
-msgstr ""
+msgstr "Кожної останньої середи"
 
 #: ../src/EventEdition/RepeatPanel.vala:315
 msgid "Every last Thursday"
-msgstr ""
+msgstr "Кожного останнього четверга"
 
 #: ../src/EventEdition/RepeatPanel.vala:318
 msgid "Every last Friday"
-msgstr ""
+msgstr "Кожної останньої п’ятниці"
 
 #: ../src/EventEdition/RepeatPanel.vala:321
 msgid "Every last Saturday"
-msgstr ""
+msgstr "Кожної останньої суботи"
 
 #: ../src/EventEdition/RepeatPanel.vala:328
 msgid "Every first Sunday"
-msgstr ""
+msgstr "Кожної першої неділі"
 
 #: ../src/EventEdition/RepeatPanel.vala:331
 msgid "Every first Monday"
-msgstr ""
+msgstr "Кожного першого понеділка"
 
 #: ../src/EventEdition/RepeatPanel.vala:334
 msgid "Every first Tuesday"
-msgstr ""
+msgstr "Кожного першого вівторка"
 
 #: ../src/EventEdition/RepeatPanel.vala:337
 msgid "Every first Wednesday"
-msgstr ""
+msgstr "Кожної першої середи"
 
 #: ../src/EventEdition/RepeatPanel.vala:340
 msgid "Every first Thursday"
-msgstr ""
+msgstr "Кожного першого четверга"
 
 #: ../src/EventEdition/RepeatPanel.vala:343
 msgid "Every first Friday"
-msgstr ""
+msgstr "Кожної першої п’ятниці"
 
 #: ../src/EventEdition/RepeatPanel.vala:346
 msgid "Every first Saturday"
-msgstr ""
+msgstr "Кожної першої суботи"
 
 #: ../src/EventEdition/RepeatPanel.vala:353
 msgid "Every second Sunday"
-msgstr ""
+msgstr "Кожної другої неділі"
 
 #: ../src/EventEdition/RepeatPanel.vala:356
 msgid "Every second Monday"
-msgstr ""
+msgstr "Кожного другого понеділка"
 
 #: ../src/EventEdition/RepeatPanel.vala:359
 msgid "Every second Tuesday"
-msgstr ""
+msgstr "Кожного другого вівторка"
 
 #: ../src/EventEdition/RepeatPanel.vala:362
 msgid "Every second Wednesday"
-msgstr ""
+msgstr "Кожної другої середи"
 
 #: ../src/EventEdition/RepeatPanel.vala:365
 msgid "Every second Thursday"
-msgstr ""
+msgstr "Кожного другого четверга"
 
 #: ../src/EventEdition/RepeatPanel.vala:368
 msgid "Every second Friday"
-msgstr ""
+msgstr "Кожної другої п’ятниці"
 
 #: ../src/EventEdition/RepeatPanel.vala:371
 msgid "Every second Saturday"
-msgstr ""
+msgstr "Кожної другої суботи"
 
 #: ../src/EventEdition/RepeatPanel.vala:378
 msgid "Every third Sunday"
-msgstr ""
+msgstr "Кожної третьої неділі"
 
 #: ../src/EventEdition/RepeatPanel.vala:381
 msgid "Every third Monday"
-msgstr ""
+msgstr "Кожного третього понеділка"
 
 #: ../src/EventEdition/RepeatPanel.vala:384
 msgid "Every third Tuesday"
-msgstr ""
+msgstr "Кожного третього вівторка"
 
 #: ../src/EventEdition/RepeatPanel.vala:387
 msgid "Every third Wednesday"
-msgstr ""
+msgstr "Кожної третьої середи"
 
 #: ../src/EventEdition/RepeatPanel.vala:390
 msgid "Every third Thursday"
-msgstr ""
+msgstr "Кожного третього четверга"
 
 #: ../src/EventEdition/RepeatPanel.vala:393
 msgid "Every third Friday"
-msgstr ""
+msgstr "Кожної третьої п’ятниці"
 
 #: ../src/EventEdition/RepeatPanel.vala:396
 msgid "Every third Saturday"
-msgstr ""
+msgstr "Кожної третьої суботи"
 
 #: ../src/EventEdition/RepeatPanel.vala:403
 msgid "Every fourth Sunday"
-msgstr ""
+msgstr "Кожної четвертої неділі"
 
 #: ../src/EventEdition/RepeatPanel.vala:406
 msgid "Every fourth Monday"
-msgstr ""
+msgstr "Кожного четвертого понеділка"
 
 #: ../src/EventEdition/RepeatPanel.vala:409
 msgid "Every fourth Tuesday"
-msgstr ""
+msgstr "Кожного четвертого вівторка"
 
 #: ../src/EventEdition/RepeatPanel.vala:412
 msgid "Every fourth Wednesday"
-msgstr ""
+msgstr "Кожної четвертої середи"
 
 #: ../src/EventEdition/RepeatPanel.vala:415
 msgid "Every fourth Thursday"
-msgstr ""
+msgstr "Кожного четвертого четверга"
 
 #: ../src/EventEdition/RepeatPanel.vala:418
 msgid "Every fourth Friday"
-msgstr ""
+msgstr "Кожної четвертої п’ятниці"
 
 #: ../src/EventEdition/RepeatPanel.vala:421
 msgid "Every fourth Saturday"
-msgstr ""
+msgstr "Кожної четвертої суботи"
 
 #: ../src/EventEdition/RepeatPanel.vala:428
 msgid "Every fifth Sunday"
-msgstr ""
+msgstr "Кожної п’ятої неділі"
 
 #: ../src/EventEdition/RepeatPanel.vala:431
 msgid "Every fifth Monday"
-msgstr ""
+msgstr "Кожного п’ятого понеділка"
 
 #: ../src/EventEdition/RepeatPanel.vala:434
 msgid "Every fifth Tuesday"
-msgstr ""
+msgstr "Кожного п’ятого вівторка"
 
 #: ../src/EventEdition/RepeatPanel.vala:437
 msgid "Every fifth Wednesday"
-msgstr ""
+msgstr "Кожної п’ятої середи"
 
 #: ../src/EventEdition/RepeatPanel.vala:440
 msgid "Every fifth Thursday"
-msgstr ""
+msgstr "Кожного п’ятого четверга"
 
 #: ../src/EventEdition/RepeatPanel.vala:443
 msgid "Every fifth Friday"
-msgstr ""
+msgstr "Кожної п’ятої п’ятниці"
 
 #: ../src/EventEdition/RepeatPanel.vala:446
 msgid "Every fifth Saturday"
-msgstr ""
+msgstr "Кожної п’ятої суботи"
 
 #: ../src/EventEdition/RepeatPanel.vala:456
 msgid "Mon"
@@ -410,11 +410,11 @@ msgstr "Створити Нагадування"
 
 #: ../src/EventEdition/ReminderPanel.vala:179
 msgid "0 minutes"
-msgstr ""
+msgstr "0 хвилин"
 
 #: ../src/EventEdition/ReminderPanel.vala:180
 msgid "1 minutes"
-msgstr ""
+msgstr "1 хвилину"
 
 #: ../src/EventEdition/ReminderPanel.vala:181
 msgid "5 minutes"
