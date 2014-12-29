@@ -55,6 +55,7 @@ namespace Maya.Util {
                     break;
                 }
             }
+
             result.is_date = 0;
             result.hour = time_local.get_hour ();
             result.minute = time_local.get_minute ();
@@ -120,15 +121,13 @@ namespace Maya.Util {
         var start = ical_to_date_time (comp.get_dtstart ());
         var end = ical_to_date_time (comp.get_dtend ());
 
+        // All days events are stored in UTC time and should only being shown at one day.
         bool allday = is_the_all_day (start, end);
-        if (allday)
+        if (allday) {
             end = end.add_days (-1);
-
-        // If end is before start, switch the two
-        if (end.compare (start) < 0) {
-            var temp = end;
-            end = start;
-            start = temp;
+            var interval = (new DateTime.now_local ()).get_utc_offset ();
+            start = start.add (-interval);
+            end = end.add (-interval);
         }
 
         start = strip_time (start.to_timezone (new TimeZone.local ()));
@@ -314,6 +313,7 @@ namespace Maya.Util {
                             break;
                     
                     }
+
                     dateranges.add (new Util.DateRange (temp_start, end.add_months (n)));
                     i++;
                     n = i*rrule.interval;
@@ -330,6 +330,7 @@ namespace Maya.Util {
         for (int k = 0; k <= iCal.Size.BY_DAY; k++) {
             if (rrule.by_day[k] > 7)
                 break;
+
             int day_to_add = 0;
             switch (rrule.by_day[k]) {
                 case 1:
@@ -354,6 +355,7 @@ namespace Maya.Util {
                     day_to_add = 6 - start.get_day_of_week ();
                     break;
             }
+
             if (start.add_days (day_to_add).get_month () < start.get_month ())
                 day_to_add = day_to_add + 7;
 
@@ -375,12 +377,14 @@ namespace Maya.Util {
                     if (is_null_time == false) {
                         if (temp_start.get_year () > rrule.until.year)
                             break;
-                        else if (temp_start.get_year () == rrule.until.year && temp_start.get_month () > rrule.until.month)
-                            break;
-                        else if (temp_start.get_year () == rrule.until.year && temp_start.get_month () == rrule.until.month &&temp_start.get_day_of_month () > rrule.until.day)
-                            break;
-                    
+                        else if (temp_start.get_year () == rrule.until.year) {
+                            if (temp_start.get_month () > rrule.until.month)
+                                break;
+                            else if (temp_start.get_month () == rrule.until.month && temp_start.get_day_of_month () > rrule.until.day)
+                                break;
+                        }
                     }
+
                     dateranges.add (new Util.DateRange (temp_start, end.add_days (n)));
                     i++;
                     n = i*rrule.interval*7;
@@ -412,7 +416,7 @@ namespace Maya.Util {
     public bool is_the_all_day (DateTime dtstart, DateTime dtend) {
         var UTC_start = dtstart.to_timezone (new TimeZone.utc ());
         var timespan = dtend.difference (dtstart);
-        if (timespan == GLib.TimeSpan.DAY && UTC_start.get_hour() == 0) {
+        if (timespan % GLib.TimeSpan.DAY == 0 && UTC_start.get_hour() == 0) {
             return true;
         } else {
             return false;
