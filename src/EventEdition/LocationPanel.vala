@@ -72,6 +72,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         champlain_embed = new GtkChamplain.Embed ();
         var view = champlain_embed.champlain_view;
         var marker_layer = new Champlain.MarkerLayer.full (Champlain.SelectionMode.SINGLE);
+        var factory = Champlain.MapSourceFactory.dup_default ();
+        view.map_source = factory.create_cached_source (Champlain.MAP_SOURCE_OSM_MAPQUEST);
         view.add_layer (marker_layer);
 
         load_contact.begin ();
