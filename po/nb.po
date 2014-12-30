@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-25 20:49+0100\n"
-"PO-Revision-Date: 2014-11-15 08:31+0000\n"
+"PO-Revision-Date: 2014-12-29 15:42+0000\n"
 "Last-Translator: ProsjektX <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-12-26 06:02+0000\n"
+"X-Launchpad-Export-Date: 2014-12-30 06:08+0000\n"
 "X-Generator: Launchpad (build 17286)\n"
 "Language: nb\n"
 
@@ -200,171 +200,171 @@ msgstr "Samme dag hver måned"
 
 #: ../src/EventEdition/RepeatPanel.vala:303
 msgid "Every last Sunday"
-msgstr ""
+msgstr "Hver siste søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:306
 msgid "Every last Monday"
-msgstr ""
+msgstr "Hver siste mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:309
 msgid "Every last Tuesday"
-msgstr ""
+msgstr "Hver siste tirsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:312
 msgid "Every last Wednesday"
-msgstr ""
+msgstr "Hver siste onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:315
 msgid "Every last Thursday"
-msgstr ""
+msgstr "Hver siste torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:318
 msgid "Every last Friday"
-msgstr ""
+msgstr "Hver siste fredag"
 
 #: ../src/EventEdition/RepeatPanel.vala:321
 msgid "Every last Saturday"
-msgstr ""
+msgstr "Hver siste lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:328
 msgid "Every first Sunday"
-msgstr ""
+msgstr "Hver første søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:331
 msgid "Every first Monday"
-msgstr ""
+msgstr "Hver første mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:334
 msgid "Every first Tuesday"
-msgstr ""
+msgstr "Hver første tirsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:337
 msgid "Every first Wednesday"
-msgstr ""
+msgstr "Hver første onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:340
 msgid "Every first Thursday"
-msgstr ""
+msgstr "Hver første torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:343
 msgid "Every first Friday"
-msgstr ""
+msgstr "Hver første fredag"
 
 #: ../src/EventEdition/RepeatPanel.vala:346
 msgid "Every first Saturday"
-msgstr ""
+msgstr "Hver første lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:353
 msgid "Every second Sunday"
-msgstr ""
+msgstr "Hver andre søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:356
 msgid "Every second Monday"
-msgstr ""
+msgstr "Hver andre mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:359
 msgid "Every second Tuesday"
-msgstr ""
+msgstr "Hver andre tirsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:362
 msgid "Every second Wednesday"
-msgstr ""
+msgstr "Hver andre onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:365
 msgid "Every second Thursday"
-msgstr ""
+msgstr "Hver andre torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:368
 msgid "Every second Friday"
-msgstr ""
+msgstr "Hver andre fredag"
 
 #: ../src/EventEdition/RepeatPanel.vala:371
 msgid "Every second Saturday"
-msgstr ""
+msgstr "Hver andre lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:378
 msgid "Every third Sunday"
-msgstr ""
+msgstr "Hver tredje søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:381
 msgid "Every third Monday"
-msgstr ""
+msgstr "Hver tredje mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:384
 msgid "Every third Tuesday"
-msgstr ""
+msgstr "Hver tredje tirsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:387
 msgid "Every third Wednesday"
-msgstr ""
+msgstr "Hver tredje onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:390
 msgid "Every third Thursday"
-msgstr ""
+msgstr "Hver tredje torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:393
 msgid "Every third Friday"
-msgstr ""
+msgstr "Hver tredje fredag"
 
 #: ../src/EventEdition/RepeatPanel.vala:396
 msgid "Every third Saturday"
-msgstr ""
+msgstr "Hver tredje lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:403
 msgid "Every fourth Sunday"
-msgstr ""
+msgstr "Hver fjerde søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:406
 msgid "Every fourth Monday"
-msgstr ""
+msgstr "Hver fjerde mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:409
 msgid "Every fourth Tuesday"
-msgstr ""
+msgstr "Hver fjerde torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:412
 msgid "Every fourth Wednesday"
-msgstr ""
+msgstr "Hver fjerde onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:415
 msgid "Every fourth Thursday"
-msgstr ""
+msgstr "Hver fjerde torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:418
 msgid "Every fourth Friday"
-msgstr ""
+msgstr "Hver fjerde fredag"
 
 #: ../src/EventEdition/RepeatPanel.vala:421
 msgid "Every fourth Saturday"
-msgstr ""
+msgstr "Hver fjerde lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:428
 msgid "Every fifth Sunday"
-msgstr ""
+msgstr "Hver femte søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:431
 msgid "Every fifth Monday"
-msgstr ""
+msgstr "Hver femte mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:434
 msgid "Every fifth Tuesday"
-msgstr ""
+msgstr "Hver femte tirsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:437
 msgid "Every fifth Wednesday"
-msgstr ""
+msgstr "Hver femte onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:440
 msgid "Every fifth Thursday"
-msgstr ""
+msgstr "Hver femte torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:443
 msgid "Every fifth Friday"
-msgstr ""
+msgstr "Hver femte fredag"
 
 #: ../src/EventEdition/RepeatPanel.vala:446
 msgid "Every fifth Saturday"
-msgstr ""
+msgstr "Hver femte lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:456
 msgid "Mon"

@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-25 20:49+0100\n"
-"PO-Revision-Date: 2014-12-26 09:25+0000\n"
-"Last-Translator: Simeon <Unknown>\n"
+"PO-Revision-Date: 2014-12-29 23:52+0000\n"
+"Last-Translator: Tobias Bannert <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-12-27 05:49+0000\n"
+"X-Launchpad-Export-Date: 2014-12-30 06:08+0000\n"
 "X-Generator: Launchpad (build 17286)\n"
 "Language: de\n"
 
@@ -52,7 +52,7 @@ msgstr "Info zu Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr "Info zu Kalender"
+msgstr "Info zum Kalender"
 
 #: ../src/Widgets/AgendaView.vala:56
 msgid ""
@@ -104,7 +104,7 @@ msgstr "Speichern"
 
 #: ../src/EventEdition/LocationPanel.vala:41
 msgid "Location:"
-msgstr "Ort :"
+msgstr "Ort:"
 
 #: ../src/EventEdition/LocationPanel.vala:43
 msgid "John Smith OR Example St."
