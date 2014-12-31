@@ -74,14 +74,13 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = true;
         list_box.add.connect ((widget) => {
-            widget.show_all ();
+            list_box.show_all ();
             int minimum_height;
             int natural_height;
-            widget.get_preferred_height (out minimum_height, out natural_height);
-            var number_of_children = list_box.get_children ().length ();
-            var real_size = natural_height * number_of_children;
-            if (real_size > 150) {
-                scrolled.set_size_request (-1, 150);
+            list_box.get_preferred_height (out minimum_height, out natural_height);
+            var real_size = natural_height;
+            if (real_size > 300) {
+                scrolled.set_size_request (-1, 300);
             } else {
                 scrolled.set_size_request (-1, (int)real_size);
             }
@@ -90,11 +89,11 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         list_box.set_header_func (header_update_func);
 
         list_box.set_sort_func ((row1, row2) => {
-            var child1 = row1.get_child ();
-            var child2 = row2.get_child ();
-            var comparison = ((CalendarGrid)child1).location.collate (((CalendarGrid)child2).location);
+            var child1 = (CalendarGrid)row1.get_child ();
+            var child2 = (CalendarGrid)row2.get_child ();
+            var comparison = child1.location.collate (child2.location);
             if (comparison == 0)
-                return ((CalendarGrid)child1).label.collate (((CalendarGrid)child2).label);
+                return child1.label.collate (child2.label);
             else
                 return comparison;
         });
@@ -136,9 +135,13 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         }
 
         var header = new SourceItemHeader (row_location);
+        header.margin_top = 6;
         header.margin_start = 6;
         row.set_header (header);
         header.show_all ();
+        if (before == null) {
+            header.margin_top = 0;
+        }
     }
 
     public class CalendarGrid : Gtk.Grid {

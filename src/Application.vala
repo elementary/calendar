@@ -24,7 +24,7 @@ namespace Maya {
     namespace Option {
 
         private static bool ADD_EVENT = false;
-        private static bool IMPORT_CALENDAR = false;
+        private static string SHOW_DAY = null;
         private static bool PRINT_VERSION = false;
 
     }
@@ -64,6 +64,7 @@ namespace Maya {
          * Initializes environment variables
          */
         construct {
+            flags |= ApplicationFlags.HANDLES_OPEN;
 
             // App info
             build_data_dir = Build.DATADIR;
@@ -105,7 +106,7 @@ namespace Maya {
 
         public static const OptionEntry[] app_options = {
             { "add-event", 'a', 0, OptionArg.NONE, out Option.ADD_EVENT, "Show an add event dialog", null },
-            { "import-ical", 'i', 0, OptionArg.STRING, out Option.IMPORT_CALENDAR, "Import quickly an ical", null },
+            { "show-day", 's', 0, OptionArg.STRING, out Option.SHOW_DAY, "Start focused to the given day", null },
             { "version", 'v', 0, OptionArg.NONE, out Option.PRINT_VERSION, "Print version info and exit", null },
             { null }
         };
@@ -128,6 +129,20 @@ namespace Maya {
                 return;
             }
 
+            if (Option.SHOW_DAY != null) {
+                var date = Date ();
+                date.set_parse (Option.SHOW_DAY);
+                if (date.valid () == true) {
+                    var datetime = Settings.SavedState.get_default ().get_selected ();
+                    datetime = datetime.add_years ((int)date.get_year () - datetime.get_year ());
+                    datetime = datetime.add_days ((int)date.get_day_of_year () - datetime.get_day_of_year ());
+                    Settings.SavedState.get_default ().selected_day = datetime.format ("%Y-%j");
+                    Settings.SavedState.get_default ().month_page = datetime.format ("%Y-%m");
+                } else {
+                    warning ("Invalid date '%s' - Ignoring", Option.SHOW_DAY);
+                }
+            }
+
             var calmodel = Model.CalendarModel.get_default ();
             calmodel.load_all_sources ();
 
@@ -139,6 +154,24 @@ namespace Maya {
             }
 
             Gtk.main ();
+        }
+
+        public override void open (File[] files, string hint) {
+            bool first_start = false;
+            if (get_windows () == null) {
+                var calmodel = Model.CalendarModel.get_default ();
+                calmodel.load_all_sources ();
+
+                init_gui ();
+                window.show_all ();
+                first_start = true;
+            }
+
+            var dialog = new Maya.View.ImportDialog (files);
+            dialog.transient_for = window;
+            dialog.show_all ();
+            if (first_start)
+                Gtk.main ();
         }
 
         /**
@@ -207,8 +240,8 @@ namespace Maya {
          * Called when the edit button is selected.
          */
         void on_modified (E.CalComponent comp) {
-            var source = comp.get_data<E.Source> ("source");
-            var dialog = new Maya.View.EventDialog (window, comp, source, null);
+            var dialog = new Maya.View.EventDialog (comp, null);
+            dialog.transient_for = window;
             dialog.present ();
         }
 
@@ -283,7 +316,8 @@ namespace Maya {
         }
 
         void on_tb_add_clicked (DateTime dt) {
-            var dialog = new Maya.View.EventDialog (window, null, null, dt);
+            var dialog = new Maya.View.EventDialog (null, dt);
+            dialog.transient_for = window;
             dialog.show_all ();
         }
 

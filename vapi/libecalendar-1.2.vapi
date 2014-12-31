@@ -109,6 +109,10 @@ namespace E {
 	public class CalComponent : GLib.Object {
 		[CCode (has_construct_function = false)]
 		public CalComponent ();
+		[CCode (has_construct_function = false)]
+		public CalComponent.from_string (string calobj);
+		[CCode (has_construct_function = false)]
+		public CalComponent.from_icalcomponent (iCal.Component icalcomp);
 		public void abort_sequence ();
 		public void add_alarm (E.CalComponentAlarm alarm);
 		public unowned E.CalComponent clone ();
@@ -128,8 +132,6 @@ namespace E {
 		public static void free_recur_list (GLib.SList<E.CalComponentRange> recur_list);
 		public static void free_sequence (int sequence);
 		public static void free_text_list (GLib.SList<E.CalComponentText> text_list);
-		[CCode (has_construct_function = false)]
-		public CalComponent.from_string (string calobj);
 		public static string gen_uid ();
 		public E.CalComponentAlarm get_alarm (string auid);
 		public GLib.List<string> get_alarm_uids ();

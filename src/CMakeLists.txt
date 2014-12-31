@@ -1,6 +1,7 @@
 set(CLIENT_SOURCE
     AgendaView.vala
     Application.vala
+    ImportDialog.vala
     MayaToolbar.vala
     EventEdition/ContactImage.vala
     EventEdition/EventDialog.vala

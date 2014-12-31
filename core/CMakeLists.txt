@@ -24,7 +24,6 @@ set (CORE_SOURCE
     DateRange.vala
     Utils.vala
     GesturesUtils.vala
-    Threads.vala
 )
 
 vala_precompile (CORE_VALA_C ${CORE_LIBRARY_NAME}

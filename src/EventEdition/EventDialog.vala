@@ -51,12 +51,12 @@ public class EventDialog : Gtk.Dialog {
         private EventEdition.ReminderPanel reminder_panel;
         private EventEdition.RepeatPanel repeat_panel;
 
-        public EventDialog (Gtk.Window window, E.CalComponent? 
-        ecal = null, E.Source? source = null, DateTime? date_time = null) {
+        public EventDialog (E.CalComponent? ecal = null, DateTime? date_time = null) {
             Object (use_header_bar: 1);
             (get_header_bar () as Gtk.HeaderBar).show_close_button = false;
 
-            this.original_source = source;
+            if (ecal != null)
+                original_source = ecal.get_data<E.Source> ("source");
             this.date_time = date_time;
 
             this.ecal = ecal;
@@ -72,14 +72,9 @@ public class EventDialog : Gtk.Dialog {
             // Dialog properties
             window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
             type_hint = Gdk.WindowTypeHint.DIALOG;
-            transient_for = window;
 
             // Build dialog
             build_dialog (date_time != null);
-        }
-
-        ~EventDialog () {
-            warning ("destroying");
         }
 
         //--- Public Methods ---//
