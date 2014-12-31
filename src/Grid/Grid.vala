@@ -26,7 +26,7 @@ namespace Maya.View {
  */
 public class Grid : Gtk.Grid {
 
-    Gee.Map<DateTime, GridDay> data;
+    Gee.HashMap<uint, GridDay> data;
 
     public Util.DateRange grid_range { get; private set; }
 
@@ -48,10 +48,7 @@ public class Grid : Gtk.Grid {
         column_spacing = 0;
         row_spacing = 0;
 
-        data = new Gee.HashMap<DateTime, GridDay> (
-            (Gee.HashDataFunc<GLib.DateTime>?) DateTime.hash,
-            (Gee.EqualDataFunc<GLib.DateTime>?) Util.datetime_equal_func,
-            null);
+        data = new Gee.HashMap<uint, GridDay> ();
         events |= Gdk.EventMask.SCROLL_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
     }
@@ -75,10 +72,11 @@ public class Grid : Gtk.Grid {
     }
 
     public void focus_date (DateTime date) {
-        debug(@"Setting focus to @ $(date)");
-        if (data [date] != null) {
-            data [date].grab_focus ();
-            on_day_focus_in (data [date]);
+        debug (@"Setting focus to @ $(date)");
+        var date_hash = day_hash (date);
+        if (data.get (date_hash) != null) {
+            data.get (date_hash).grab_focus ();
+            on_day_focus_in (data.get (date_hash));
         }
     }
 
@@ -97,10 +95,7 @@ public class Grid : Gtk.Grid {
 
         var new_dates = new_range.to_list();
 
-        var data_new = new Gee.HashMap<DateTime, GridDay> (
-            (Gee.HashDataFunc<GLib.DateTime>?) DateTime.hash,
-            (Gee.EqualDataFunc<GLib.DateTime>?) Util.datetime_equal_func,
-            null);
+        var data_new = new Gee.HashMap<uint, GridDay> ();
 
         // Assert that a valid number of weeks should be displayed
         assert (new_dates.size % 7 == 0);
@@ -111,23 +106,17 @@ public class Grid : Gtk.Grid {
         int col = 0, row = 0;
 
         for (i=0; i<new_dates.size; i++) {
-
             var new_date = new_dates [i];
-
-
             GridDay day;
             if (i < old_dates.size) {
                 // A widget already exists for this date, just change it
 
                 var old_date = old_dates [i];
-                day = update_day (data[old_date], new_date, today, month_start);
+                day = update_day (data[day_hash (old_date)], new_date, today, month_start);
 
             } else {
                 // Still update_day to get the color of etc. right
                 day = update_day (new GridDay (new_date), new_date, today, month_start);
-                if (col == 0) {
-                
-                }
                 day.on_event_add.connect ((date) => on_event_add (date));
                 day.scroll_event.connect ((event) => {scroll_event (event); return false;});
                 day.focus_in_event.connect ((event) => {
@@ -141,14 +130,14 @@ public class Grid : Gtk.Grid {
 
             col = (col+1) % 7;
             row = (col==0) ? row+1 : row;
-            data_new.set (new_date, day);
+            data_new.set (day_hash (new_date), day);
         }
 
         // Destroy the widgets that are no longer used
         while (i < old_dates.size) {
             // There are widgets remaining that are no longer used, destroy them
             var old_date = old_dates [i];
-            var old_day = data [old_date];
+            var old_day = data.get (day_hash (old_date));
 
             old_day.destroy ();
             i++;
@@ -214,11 +203,15 @@ public class Grid : Gtk.Grid {
     }
 
     void add_button_for_day (DateTime date, EventButton button) {
-        if (data[date] == null)
+        var hash = day_hash (date);
+        if (data.get (hash) == null)
             return;
-        GridDay grid_day = data[date];
-        assert(grid_day != null);
+        GridDay grid_day = data.get (hash);
         grid_day.add_event_button(button);
+    }
+    
+    uint day_hash (DateTime date) {
+        return date.get_year () * 10000 + date.get_month () * 100 + date.get_day_of_month ();
     }
 
     /**
