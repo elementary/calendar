@@ -138,23 +138,21 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
         int minimum_height;
         int natural_height;
-        source_item.show_all ();
-        source_item.get_preferred_height (out minimum_height, out natural_height);
-        var number_of_children = calendar_box.get_children ().length ();
-        var real_size = natural_height * number_of_children + 6 * number_of_children - 1;
-        if (real_size > 150) {
-            scroll.set_size_request (-1, 150);
+        calendar_box.show_all ();
+        calendar_box.get_preferred_height (out minimum_height, out natural_height);
+        if (natural_height > 200) {
+            scroll.set_size_request (-1, 200);
         } else {
-            scroll.set_size_request (-1, (int)real_size);
+            scroll.set_size_request (-1, natural_height);
         }
 
         source_item.destroy.connect (() => {
-            number_of_children = calendar_box.get_children ().length ();
-            real_size = natural_height * number_of_children + 6 * number_of_children - 1;
-            if (real_size > 150) {
-                scroll.set_size_request (-1, 150);
+            calendar_box.show_all ();
+            calendar_box.get_preferred_height (out minimum_height, out natural_height);
+            if (natural_height > 200) {
+                scroll.set_size_request (-1, 200);
             } else {
-                scroll.set_size_request (-1, (int)real_size);
+                scroll.set_size_request (-1, natural_height);
             }
         });
 

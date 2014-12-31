@@ -153,38 +153,31 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     private async void add_event_async (E.Source source, E.CalComponent event) {
-        SourceFunc callback = add_event_async.callback;
-        Threads.add (() => {
-            unowned iCal.Component comp = event.get_icalcomponent();
-            debug (@"Adding event '$(comp.get_uid())'");
-            E.CalClient client;
-            lock (source_client) {
-                client = source_client.get (source.dup_uid ());
+        unowned iCal.Component comp = event.get_icalcomponent();
+        debug (@"Adding event '$(comp.get_uid())'");
+        E.CalClient client;
+        lock (source_client) {
+            client = source_client.get (source.dup_uid ());
+        }
+
+        if (client != null) {
+            try {
+                client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS);
+                client.create_object.begin (comp, null, (obj, results) => {
+                    bool status = false;
+                    string uid;
+                    try {
+                        status = client.create_object.end (results, out uid);
+                    } catch (Error e) {
+                        warning (e.message);
+                    }
+                });
+            } catch (GLib.Error error) {
+                critical (error.message);
             }
-
-            if (client != null) {
-                try {
-                    client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS);
-                    client.create_object.begin (comp, null, (obj, results) => {
-                        bool status = false;
-                        string uid;
-                        try {
-                            status = client.create_object.end (results, out uid);
-                        } catch (Error e) {
-                            warning (e.message);
-                        }
-                    });
-                } catch (GLib.Error error) {
-                    critical (error.message);
-                }
-            } else {
-                critical ("No calendar was found, event not added");
-            }
-
-            Idle.add ((owned) callback);
-        });
-
-        yield;
+        } else {
+            critical ("No calendar was found, event not added");
+        }
     }
 
     public void update_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {
@@ -374,25 +367,21 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     private async void add_source_async (E.Source source) {
-        Threads.add (() => {
-            debug ("Adding source '%s'", source.dup_display_name ());
-            try {
-                var cancellable = new GLib.Cancellable ();
-                connecting (source, cancellable);
-                var client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS, cancellable);
-                source_client.insert (source.dup_uid (), client);
-            } catch (Error e) {
-                error_received (e.message);
-            }
+        debug ("Adding source '%s'", source.dup_display_name ());
+        try {
+            var cancellable = new GLib.Cancellable ();
+            connecting (source, cancellable);
+            var client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS, cancellable);
+            source_client.insert (source.dup_uid (), client);
+        } catch (Error e) {
+            error_received (e.message);
+        }
 
-            Idle.add (() => {
-                connected (source);
-                load_source (source);
-                return false;
-            });
+        Idle.add (() => {
+            connected (source);
+            load_source (source);
+            return false;
         });
-
-        yield;
     }
 
     private void debug_event (E.Source source, E.CalComponent event) {
