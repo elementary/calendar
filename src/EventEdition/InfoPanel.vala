@@ -287,6 +287,9 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
                     if ((start_time.get_hour () == end_time.get_hour ()) && (start_time.get_minute () >= end_time.get_minute ()))
                         to_time_picker.time = from_time_picker.time.add_hours(1);
+                        
+                    if (start_time.get_hour () >= 23) 
+                        to_date_picker.date = from_date_picker.date.add_days (1);
                 }
             }
             break;
