@@ -159,6 +159,9 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         });
 
         calendar_event_box.leave_notify_event.connect ((event) => {
+            if (event.detail == Gdk.NotifyType.INFERIOR)
+                return false;
+
             delete_revealer.set_reveal_child (false);
             edit_revealer.set_reveal_child (false);
             return false;
