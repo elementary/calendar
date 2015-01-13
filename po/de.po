@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-31 17:39+0100\n"
-"PO-Revision-Date: 2015-01-09 16:48+0000\n"
-"Last-Translator: Phillip Sz <Unknown>\n"
+"PO-Revision-Date: 2015-01-12 17:05+0000\n"
+"Last-Translator: Tobias Bannert <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-01-10 06:46+0000\n"
+"X-Launchpad-Export-Date: 2015-01-13 06:13+0000\n"
 "X-Generator: Launchpad (build 17298)\n"
 "Language: de\n"
 
@@ -62,13 +62,13 @@ msgstr "Kalenderwochen anzeigen"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
-msgstr ""
+msgstr "Termine aus »%s« in den folgenden Kalender importieren:"
 
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Termine aus der Datei %d in den folgenden Kalender importieren:"
+msgstr[1] "Termine aus den Dateien %d in den folgenden Kalender importieren:"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
@@ -260,11 +260,11 @@ msgstr "Ausnahmen:"
 
 #: ../src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
-msgstr ""
+msgstr "Keine Ausnahmen"
 
 #: ../src/EventEdition/RepeatPanel.vala:224
 msgid "Add Exception"
-msgstr ""
+msgstr "Ausnahme hinzufügen"
 
 #: ../src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
