@@ -47,7 +47,7 @@ namespace iCal {
 		[CCode (cname = "icalcompiter_prior")]
 		public unowned iCal.Component prior ();
 	}
-	[CCode (cheader_filename = "libical/ical.h", free_function = "icalcomponent_free", cname = "icalcomponent")]
+	[CCode (cheader_filename = "libical/ical.h", copy_function = "icalcomponent_new_clone", free_function = "icalcomponent_free", cname = "icalcomponent")]
 	[Compact]
 	public class Component {
 		[CCode (cname = "icalcomponent_new", has_construct_function = false)]
@@ -85,7 +85,7 @@ namespace iCal {
 		[CCode (cname = "icalcomponent_get_comment")]
 		public unowned string get_comment ();
 		[CCode (cname = "icalcomponent_get_current_component")]
-		public unowned iCal.Component  get_current_component ();
+		public unowned iCal.Component get_current_component ();
 		[CCode (cname = "icalcomponent_get_current_property")]
 		public unowned iCal.Property get_current_property ();
 		[CCode (cname = "icalcomponent_get_description")]

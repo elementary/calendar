@@ -74,9 +74,10 @@ public class Grid : Gtk.Grid {
     public void focus_date (DateTime date) {
         debug (@"Setting focus to @ $(date)");
         var date_hash = day_hash (date);
-        if (data.get (date_hash) != null) {
-            data.get (date_hash).grab_focus ();
-            on_day_focus_in (data.get (date_hash));
+        if (data.has_key (date_hash) == true) {
+            var day_widget = data.get (date_hash);
+            day_widget.grab_focus ();
+            on_day_focus_in (day_widget);
         }
     }
 
@@ -204,12 +205,12 @@ public class Grid : Gtk.Grid {
 
     void add_button_for_day (DateTime date, EventButton button) {
         var hash = day_hash (date);
-        if (data.get (hash) == null)
+        if (data.has_key (hash) == false)
             return;
         GridDay grid_day = data.get (hash);
-        grid_day.add_event_button(button);
+        grid_day.add_event_button (button);
     }
-    
+
     uint day_hash (DateTime date) {
         return date.get_year () * 10000 + date.get_month () * 100 + date.get_day_of_month ();
     }

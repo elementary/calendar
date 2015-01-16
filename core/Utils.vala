@@ -531,24 +531,24 @@ namespace Maya.Util {
 
     /* Computes hash value for string */
     public uint string_hash_func (string key) {
-        return key.hash();
+        return key.hash ();
     }
 
     /* Computes hash value for DateTime */
     public uint datetime_hash_func (DateTime key) {
-        return key.hash();
+        return key.hash ();
     }
 
     /* Computes hash value for E.CalComponent */
     public uint calcomponent_hash_func (E.CalComponent key) {
-        string uid;
-        key.get_uid (out uid);
-        return str_hash (uid);
+        unowned iCal.Component comp = key.get_icalcomponent ();
+        string uid = comp.get_uid ();
+        return uid.hash ();
     }
 
     /* Computes hash value for E.Source */
     public uint source_hash_func (E.Source key) {
-        return str_hash (key.dup_uid());
+        return key.dup_uid (). hash ();
     }
 
     /* Returns true if 'a' and 'b' are the same string */
@@ -563,15 +563,14 @@ namespace Maya.Util {
 
     /* Returns true if 'a' and 'b' are the same E.CalComponent */
     public bool calcomponent_equal_func (E.CalComponent a, E.CalComponent b) {
-        string uid_a, uid_b;
-        a.get_uid (out uid_a);
-        b.get_uid (out uid_b);
-        return uid_a == uid_b;
+        unowned iCal.Component comp_a = a.get_icalcomponent ();
+        unowned iCal.Component comp_b = b.get_icalcomponent ();
+        return comp_a.get_uid () == comp_b.get_uid ();
     }
 
     /* Returns true if 'a' and 'b' are the same E.Source */
     public bool source_equal_func (E.Source a, E.Source b) {
-        return a.dup_uid() == b.dup_uid();
+        return a.dup_uid () == b.dup_uid ();
     }
 
     /*
@@ -579,18 +578,15 @@ namespace Maya.Util {
      */
 
     public Gtk.TreePath? find_treemodel_object<T> (Gtk.TreeModel model, int column, T object, EqualFunc<T>? eqfunc=null) {
-
         Gtk.TreePath? path = null;
-
-        model.foreach( (m, p, iter) => {
-
+        model.foreach ((m, p, iter) => {
             Value gvalue;
             model.get_value (iter, column, out gvalue);
 
-            T ovalue = gvalue.get_object();
+            T ovalue = gvalue.get_object ();
 
-            if (   (eqfunc == null && ovalue == object)
-                || (eqfunc != null && eqfunc(ovalue, object))) {
+            if ((eqfunc == null && ovalue == object) 
+                    || (eqfunc != null && eqfunc (ovalue, object))) {
                 path = p;
                 return true;
             }
@@ -606,12 +602,9 @@ namespace Maya.Util {
      */
 
     public class Css {
-
         private static Gtk.CssProvider? _css_provider;
-
         // Retrieve global css provider
         public static Gtk.CssProvider get_css_provider () {
-
             if (_css_provider == null) {
                 _css_provider = new Gtk.CssProvider ();
                 try {
@@ -630,7 +623,6 @@ namespace Maya.Util {
         widget.margin_end = end;
         widget.margin_bottom = bottom;
         widget.margin_start = start;
-
         return widget;
     }
 
@@ -640,7 +632,6 @@ namespace Maya.Util {
         alignment.right_padding = right;
         alignment.bottom_padding = bottom;
         alignment.left_padding = left;
-
         alignment.add (widget);
         return alignment;
     }

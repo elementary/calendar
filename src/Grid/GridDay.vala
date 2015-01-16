@@ -35,13 +35,13 @@ public class Maya.View.GridDay : Gtk.EventBox {
     Gtk.Label label;
     Gtk.Grid container_grid;
     VAutoHider event_box;
-    Gee.List<EventButton> event_buttons;
+    GLib.HashTable<string, EventButton> event_buttons;
 
     private static const int EVENT_MARGIN = 3;
 
     public GridDay (DateTime date) {
         this.date = date;
-        event_buttons = new Gee.ArrayList<EventButton>();
+        event_buttons = new GLib.HashTable<string, EventButton> (str_hash, str_equal);
 
         container_grid = new Gtk.Grid ();
         label = new Gtk.Label ("");
@@ -128,31 +128,42 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     public void add_event_button (EventButton button) {
+        unowned iCal.Component calcomp = button.comp.get_icalcomponent ();
+        string uid = calcomp.get_uid ();
+        lock (event_buttons) {
+            if (event_buttons.contains (uid))
+                return;
+
+            event_buttons.set (uid, button);
+        }
+        warning (uid + " " + calcomp.get_summary ());
+
         if (button.get_parent () != null)
             button.unparent ();
+
         event_box.add (button);
         button.show_all ();
 
-        event_buttons.add (button);
-        event_buttons.sort (EventButton.compare_buttons);
     }
 
     public void remove_event (E.CalComponent comp) {
-        foreach(var button in event_buttons) {
-            if(comp == button.comp) {
-                event_buttons.remove (button);
+        unowned iCal.Component calcomp = comp.get_icalcomponent ();
+        string uid = calcomp.get_uid ();
+        lock (event_buttons) {
+            var button = event_buttons.get (uid);
+            if (button != null) {
+                event_buttons.remove (uid);
                 destroy_button (button);
-                break;
             }
         }
     }
 
     public void clear_events () {
-        foreach(var button in event_buttons) {
+        foreach (weak EventButton button in event_buttons.get_values ()) {
             destroy_button (button);
         }
 
-        event_buttons.clear ();
+        event_buttons.remove_all ();
     }
 
     private void destroy_button (EventButton button) {
