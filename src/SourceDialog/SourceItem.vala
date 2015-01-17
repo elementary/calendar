@@ -40,10 +40,9 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
 
     public SourceItem (E.Source source) {
         this.source = source;
+        margin_start = 6;
 
         stack = new Gtk.Stack ();
-        stack.margin_start = 6;
-        stack.margin_bottom = 6;
         stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
 
         // Source widget
@@ -122,8 +121,8 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
 
         // Info bar
         info_grid = new Gtk.Grid ();
-        info_grid.column_spacing = 6;
-        info_grid.row_spacing = 12;
+        info_grid.column_spacing = 12;
+        info_grid.row_spacing = 6;
         info_grid.no_show_all = true;
         var undo_button = new Gtk.Button.with_label (_("Undo"));
         undo_button.clicked.connect (() => {
@@ -192,10 +191,9 @@ public class Maya.View.SourceItemHeader : Gtk.ListBoxRow {
     public string label { public get; private set; }
     public uint children = 1;
     public SourceItemHeader (string label) {
-        margin_bottom = 6;
         this.label = label;
-        var header_label = new Gtk.Label ("<b>%s</b>".printf (GLib.Markup.escape_text (label)));
-        header_label.use_markup = true;
+        var header_label = new Gtk.Label (label);
+        header_label.get_style_context ().add_class ("h4");
         header_label.xalign = 0;
         header_label.hexpand = true;
         add (header_label);

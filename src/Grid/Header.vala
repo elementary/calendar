@@ -50,10 +50,13 @@ public class Header : Gtk.EventBox {
         labels = new Gtk.Label[7];
         for (int c = 0; c < 7; c++) {
             labels[c] = new Gtk.Label ("");
-            labels[c].set_margin_top (4);
-            labels[c].set_margin_bottom (2);
-            labels[c].draw.connect (on_draw);
-            header_grid.attach (labels[c], c, 0, 1, 1);
+            labels[c].hexpand = true;
+            labels[c].margin_top = 4;
+            labels[c].margin_bottom = 2;
+            var label_grid = new Gtk.Grid ();
+            label_grid.draw.connect (on_draw);
+            label_grid.add (labels[c]);
+            header_grid.attach (label_grid, c, 0, 1, 1);
         }
 
         add (header_grid);
@@ -94,12 +97,12 @@ public class Header : Gtk.EventBox {
         widget.get_allocation (out size);
 
         // Draw left border
-        if (widget == labels[0] && draw_left_border == false) {
+        if (widget == header_grid.get_child_at (0, 0) && draw_left_border == false) {
             return false;
         }
 
-        cr.move_to (0.5, size.height +2); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
-        cr.line_to (0.5, -4); // move to upper left corner
+        cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
+        cr.line_to (0.5, 0.5); // move to upper left corner
 
         cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
         cr.set_line_width (1.0);

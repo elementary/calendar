@@ -114,6 +114,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         rgba.red = 0.13;
         rgba.green = 0.42;
         rgba.blue = 0.70;
+        rgba.alpha = 1;
         var color_label = new Gtk.Label (_("Color:"));
         color_label.xalign = 1;
         color_button = new Gtk.ColorButton.with_rgba (rgba);
@@ -154,6 +155,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             rgba.red = 0.13;
             rgba.green = 0.42;
             rgba.blue = 0.70;
+            rgba.alpha = 1;
             color_button.set_rgba (rgba);
         } else {
             event_type = EventType.EDIT;

@@ -291,6 +291,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
             hour_label = new Gtk.Label ("");
             hour_label.set_alignment (0, 0.5f);
             hour_label.sensitive = false;
+            hour_label.opacity = 0.8;
             hour_label.ellipsize = Pango.EllipsizeMode.END;
 
             location_label = new Gtk.Label ("");
@@ -298,6 +299,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
             location_label.set_line_wrap (true);
             location_label.set_alignment (0, 0.5f);
             location_label.no_show_all = true;
+            location_label.opacity = 0.8;
 
             main_grid.attach (event_image, 0, 0, 1, 1);
             main_grid.attach (name_label, 1, 0, 1, 1);
@@ -328,8 +330,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
         private bool on_button_press (Gdk.EventButton event) {
             if (event.type == Gdk.EventType.@2BUTTON_PRESS) {
                  modified (calevent);
-            }
-            if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
+            } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
                 if (menu == null) {
                     menu = new Gtk.Menu ();
                     menu.attach_to_widget (this, null);
@@ -340,9 +341,11 @@ public class Maya.View.AgendaView : Gtk.Grid {
                     menu.append (edit_item);
                     menu.append (remove_item);
                 }
+
                 menu.popup (null, null, null, event.button, event.time);
                 menu.show_all ();
             }
+
             return true;
         }
 
@@ -366,23 +369,19 @@ public class Maya.View.AgendaView : Gtk.Grid {
                 hour_label.no_show_all = false;
                 string start_time_string = start_date.format (Settings.TimeFormat ());
                 string end_time_string = end_date.format (Settings.TimeFormat ());
-                string day_string;
                 if (Util.is_multiday_event (ical_event) == true) {
                     string start_date_string = start_date.format (Settings.DateFormat_Complete ());
                     string end_date_string = end_date.format (Settings.DateFormat_Complete ());
                     /// TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-                    day_string = _("%s, %s - %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
+                    hour_label.label = _("%s, %s - %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
                 } else {
-                    day_string = "%s - %s".printf (start_time_string, end_time_string);
+                    hour_label.label = "%s - %s".printf (start_time_string, end_time_string);
                 }
-
-                hour_label.set_markup ("<span weight=\"light\">" + Markup.escape_text (day_string) + "</span>");
             }
 
             string location = ical_event.get_location ();
-
             if (location != null && location != "") {
-                location_label.set_markup ("<span weight=\"light\">" + Markup.escape_text (location) + "</span>");
+                location_label.label = location;
                 location_label.show ();
             } else {
                 location_label.hide ();

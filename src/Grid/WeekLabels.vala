@@ -27,14 +27,11 @@ namespace Maya.View {
 public class WeekLabels : Gtk.Revealer {
 
     private Gtk.Grid day_grid;
-    private Gtk.EventBox eventbox;
     private Gtk.Label[] labels;
     private int nr_of_weeks;
 
     public WeekLabels () {
         vexpand = true;
-        eventbox = new Gtk.EventBox ();
-        eventbox.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
 
         day_grid = new Gtk.Grid ();
         set_nr_of_weeks (5);
@@ -47,9 +44,8 @@ public class WeekLabels : Gtk.Revealer {
         var style_provider = Util.Css.get_css_provider ();
 
         // EventBox properties
-        eventbox.set_visible_window (true); // needed for style
-        eventbox.get_style_context().add_provider (style_provider, 600);
-        eventbox.get_style_context().add_class ("weeks");
+        day_grid.get_style_context().add_provider (style_provider, 600);
+        day_grid.get_style_context().add_class ("weeks");
         button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
                 var menu = new Gtk.Menu ();
@@ -72,8 +68,7 @@ public class WeekLabels : Gtk.Revealer {
             return false;
         });
 
-        eventbox.add (day_grid);
-        add (eventbox);
+        add (day_grid);
     }
 
     public void update (DateTime date, int nr_of_weeks) {
@@ -131,7 +126,7 @@ public class WeekLabels : Gtk.Revealer {
         widget.get_allocation (out size);
 
         // Draw left and top black strokes
-        cr.move_to (0, 0); // start on upper left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
+        cr.move_to (0, 0); // start on upper left.
         cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
 
         cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
