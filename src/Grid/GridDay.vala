@@ -136,7 +136,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
             event_buttons.set (uid, button);
         }
-        warning (uid + " " + calcomp.get_summary ());
 
         if (button.get_parent () != null)
             button.unparent ();

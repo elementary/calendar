@@ -165,18 +165,14 @@ public class Maya.View.AgendaView : Gtk.Grid {
     }
 
     private Gtk.Widget header_with_label (string text) {
-        var grid = new Gtk.Grid ();
-        grid.orientation = Gtk.Orientation.VERTICAL;
-        grid.row_spacing = 6;
         var label = new Gtk.Label (text);
-        label.get_style_context ().add_class ("category-label");
+        label.get_style_context ().add_class ("h4");
         label.hexpand = true;
-        label.margin = 6;
+        label.margin_start = 6;
+        label.margin_top = 6;
         label.use_markup = true;
         label.set_alignment (0, 0.5f);
-        grid.add (label);
-        grid.show_all ();
-        return grid;
+        return label;
     }
 
     /**
@@ -286,13 +282,11 @@ public class Maya.View.AgendaView : Gtk.Grid {
             event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
             event_image.override_color (Gtk.StateFlags.NORMAL, rgba);
             event_image.margin_start = 6;
-            event_image.margin_top = 6;
 
             name_label = new Gtk.Label ("");
             name_label.set_line_wrap (true);
             name_label.set_alignment (0, 0.5f);
             name_label.hexpand = true;
-            name_label.margin_top = 6;
 
             hour_label = new Gtk.Label ("");
             hour_label.set_alignment (0, 0.5f);
