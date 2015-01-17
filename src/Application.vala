@@ -92,7 +92,7 @@ namespace Maya {
                 "Avi Romanoff <aviromanoff@gmail.com>",
                 "Allen Lowe <lallenlowe@gmail.com>",
                 "Niels Avonds <niels.avonds@gmail.com>",
-                "Corentin Noël <tintou@mailoo.org>"
+                "Corentin Noël <corentin@elementaryos.org>"
             };
             about_documenters = {
                 "Maxwell Barvian <maxwell@elementaryos.org>"
@@ -100,7 +100,7 @@ namespace Maya {
             about_artists = {
                 "Daniel Foré <bunny@go-docky.com>"
             };
-            about_translators = "Launchpad Translators";
+            about_translators = _("translator-credits");
             about_license_type = Gtk.License.GPL_3_0;
         }
 
