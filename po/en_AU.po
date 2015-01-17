@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-31 17:39+0100\n"
-"PO-Revision-Date: 2013-05-22 23:52+0000\n"
-"Last-Translator: evanjt <evan@evanjt.com>\n"
+"PO-Revision-Date: 2015-01-16 20:46+0000\n"
+"Last-Translator: Anthony Harrington <untaintableangel@ubuntu.com>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-01-01 05:54+0000\n"
-"X-Generator: Launchpad (build 17286)\n"
+"X-Launchpad-Export-Date: 2015-01-17 06:43+0000\n"
+"X-Generator: Launchpad (build 17304)\n"
 "Language: \n"
 
 #: ../src/AgendaView.vala:63
@@ -29,32 +29,32 @@ msgstr ""
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
-msgstr ""
+msgstr "During the day"
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
-msgstr ""
+msgstr "All day"
 
 #: ../src/AgendaView.vala:342 ../src/SourceDialog/SourceItem.vala:97
 msgid "Edit…"
-msgstr ""
+msgstr "Edit…"
 
 #: ../src/AgendaView.vala:343 ../src/SourceDialog/SourceItem.vala:83
 msgid "Remove"
-msgstr ""
+msgstr "Remove"
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
 #: ../src/AgendaView.vala:380
 msgid "%s, %s - %s, %s"
-msgstr ""
+msgstr "%s, %s - %s, %s"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
-msgstr ""
+msgstr "%u more…"
 
 #: ../src/Grid/WeekLabels.vala:59 ../src/Grid/Header.vala:66
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Hide Week Numbers"
 
 #: ../src/Grid/WeekLabels.vala:61 ../src/Grid/Header.vala:68
 msgid "Show Week Numbers"
@@ -62,59 +62,59 @@ msgstr "Show Week Numbers"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
-msgstr ""
+msgstr "Import events from \"%s\" into the following calendar:"
 
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Import events from %d file into the following calendar:"
+msgstr[1] "Import events from %d files into the following calendar:"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
-msgstr ""
+msgstr "Import"
 
 #: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
 #: ../src/EventEdition/EventDialog.vala:166
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 #: ../src/SourceDialog/SourceItem.vala:128
 msgid "Undo"
-msgstr ""
+msgstr "Undo"
 
 #: ../src/SourceDialog/SourceItem.vala:143
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "Calendar \"%s\" removed."
 
 #: ../src/SourceDialog/SourceSelector.vala:70
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "Add New Calendar…"
 
 #: ../src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
-msgstr ""
+msgstr "Create"
 
 #: ../src/SourceDialog/SourceDialog.vala:69
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: ../src/SourceDialog/SourceDialog.vala:72
 msgid "Calendar Name"
-msgstr ""
+msgstr "Calendar Name"
 
 #: ../src/SourceDialog/SourceDialog.vala:95
 msgid "Type:"
-msgstr ""
+msgstr "Type:"
 
 #: ../src/SourceDialog/SourceDialog.vala:117
 msgid "Color:"
-msgstr ""
+msgstr "Colour:"
 
 #: ../src/SourceDialog/SourceDialog.vala:122
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "Mark as default calendar"
 
 #: ../src/SourceDialog/SourceDialog.vala:152
 msgid "Create Calendar"
