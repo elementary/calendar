@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-31 17:39+0100\n"
-"PO-Revision-Date: 2014-12-25 20:07+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-01-17 11:41+0100\n"
+"PO-Revision-Date: 2015-01-17 10:51+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-01-01 05:54+0000\n"
-"X-Generator: Launchpad (build 17286)\n"
+"X-Launchpad-Export-Date: 2015-01-18 04:46+0000\n"
+"X-Generator: Launchpad (build 17304)\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -27,16 +27,16 @@ msgstr ""
 msgid "All day"
 msgstr ""
 
-#: ../src/AgendaView.vala:342 ../src/SourceDialog/SourceItem.vala:97
+#: ../src/AgendaView.vala:337 ../src/SourceDialog/SourceItem.vala:96
 msgid "Edit…"
 msgstr ""
 
-#: ../src/AgendaView.vala:343 ../src/SourceDialog/SourceItem.vala:83
+#: ../src/AgendaView.vala:338 ../src/SourceDialog/SourceItem.vala:82
 msgid "Remove"
 msgstr ""
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:380
+#: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
 msgstr ""
 
@@ -44,11 +44,11 @@ msgstr ""
 msgid "%u more…"
 msgstr ""
 
-#: ../src/Grid/WeekLabels.vala:59 ../src/Grid/Header.vala:66
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
 msgstr ""
 
-#: ../src/Grid/WeekLabels.vala:61 ../src/Grid/Header.vala:68
+#: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:71
 msgid "Show Week Numbers"
 msgstr ""
 
@@ -68,15 +68,15 @@ msgstr ""
 
 #: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:166
+#: ../src/EventEdition/EventDialog.vala:163
 msgid "Cancel"
 msgstr ""
 
-#: ../src/SourceDialog/SourceItem.vala:128
+#: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
 msgstr ""
 
-#: ../src/SourceDialog/SourceItem.vala:143
+#: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
 msgstr ""
 
@@ -100,19 +100,19 @@ msgstr ""
 msgid "Type:"
 msgstr ""
 
-#: ../src/SourceDialog/SourceDialog.vala:117
+#: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
 msgstr ""
 
-#: ../src/SourceDialog/SourceDialog.vala:122
+#: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
 msgstr ""
 
-#: ../src/SourceDialog/SourceDialog.vala:152
+#: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
 msgstr ""
 
-#: ../src/SourceDialog/SourceDialog.vala:160
+#: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
 msgstr ""
@@ -129,7 +129,7 @@ msgstr ""
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr ""
 
-#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:65
+#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
 msgstr ""
 
@@ -221,7 +221,7 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:107
+#: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgstr ""
 
@@ -538,35 +538,35 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:68
+#: ../src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:95
+#: ../src/EventEdition/EventDialog.vala:94
 msgid "General Informations"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:98
+#: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:101
+#: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:104
+#: ../src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:148
+#: ../src/EventEdition/EventDialog.vala:145
 msgid "Delete Event"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:160
+#: ../src/EventEdition/EventDialog.vala:157
 msgid "Create Event"
 msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:163
+#: ../src/EventEdition/EventDialog.vala:160
 msgid "Save Changes"
 msgstr ""
 
@@ -638,6 +638,10 @@ msgstr ""
 msgid "Export or Share the default Calendar"
 msgstr ""
 
+#: ../src/Application.vala:103
+msgid "translator-credits"
+msgstr ""
+
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
 msgstr ""
@@ -662,7 +666,7 @@ msgstr ""
 msgid "user.name or user.name@gmail.com"
 msgstr ""
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:678
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:669
 msgid "On this computer"
 msgstr ""
 

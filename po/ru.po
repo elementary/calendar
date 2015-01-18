@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-31 17:39+0100\n"
-"PO-Revision-Date: 2014-12-20 17:37+0000\n"
-"Last-Translator: Artem Anufrij <Unknown>\n"
+"POT-Creation-Date: 2015-01-17 11:41+0100\n"
+"PO-Revision-Date: 2015-01-17 10:51+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-01-01 05:53+0000\n"
-"X-Generator: Launchpad (build 17286)\n"
+"X-Launchpad-Export-Date: 2015-01-18 04:45+0000\n"
+"X-Generator: Launchpad (build 17304)\n"
 "Language: ru\n"
 
 #: ../src/AgendaView.vala:63
@@ -36,16 +36,16 @@ msgstr "В течение дня"
 msgid "All day"
 msgstr "Весь день"
 
-#: ../src/AgendaView.vala:342 ../src/SourceDialog/SourceItem.vala:97
+#: ../src/AgendaView.vala:337 ../src/SourceDialog/SourceItem.vala:96
 msgid "Edit…"
 msgstr "Изменить..."
 
-#: ../src/AgendaView.vala:343 ../src/SourceDialog/SourceItem.vala:83
+#: ../src/AgendaView.vala:338 ../src/SourceDialog/SourceItem.vala:82
 msgid "Remove"
 msgstr "Удалить"
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:380
+#: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
 msgstr "%s, %s - %s, %s"
 
@@ -53,11 +53,11 @@ msgstr "%s, %s - %s, %s"
 msgid "%u more…"
 msgstr "%u больше..."
 
-#: ../src/Grid/WeekLabels.vala:59 ../src/Grid/Header.vala:66
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
 msgstr "Скрыть номера недель"
 
-#: ../src/Grid/WeekLabels.vala:61 ../src/Grid/Header.vala:68
+#: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:71
 msgid "Show Week Numbers"
 msgstr "Показать номера недель"
 
@@ -77,15 +77,15 @@ msgstr ""
 
 #: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:166
+#: ../src/EventEdition/EventDialog.vala:163
 msgid "Cancel"
 msgstr "Отменить"
 
-#: ../src/SourceDialog/SourceItem.vala:128
+#: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
 msgstr "Возврат"
 
-#: ../src/SourceDialog/SourceItem.vala:143
+#: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
 msgstr "Календарь \"%s\" удалён."
 
@@ -109,19 +109,19 @@ msgstr "Название календаря"
 msgid "Type:"
 msgstr "Тип:"
 
-#: ../src/SourceDialog/SourceDialog.vala:117
+#: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
 msgstr "Цвет:"
 
-#: ../src/SourceDialog/SourceDialog.vala:122
+#: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
 msgstr "Сделать календарём по умолчанию"
 
-#: ../src/SourceDialog/SourceDialog.vala:152
+#: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
 msgstr "Создать календарь"
 
-#: ../src/SourceDialog/SourceDialog.vala:160
+#: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
 msgstr "Сохранить"
@@ -138,7 +138,7 @@ msgstr "Календарь"
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr "Maya;Планировщик;Даты;Дни;События;"
 
-#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:65
+#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
 msgstr "Добавить событие"
 
@@ -230,7 +230,7 @@ msgstr "Заканчивается:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:107
+#: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgstr "Повтор"
 
@@ -547,35 +547,35 @@ msgstr "Уведомление"
 msgid "Email"
 msgstr "Email"
 
-#: ../src/EventEdition/EventDialog.vala:68
+#: ../src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
 msgstr "Изменить событие"
 
-#: ../src/EventEdition/EventDialog.vala:95
+#: ../src/EventEdition/EventDialog.vala:94
 msgid "General Informations"
 msgstr "Общая информация"
 
-#: ../src/EventEdition/EventDialog.vala:98
+#: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
 msgstr "Местоположение"
 
-#: ../src/EventEdition/EventDialog.vala:101
+#: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
 msgstr "Участники"
 
-#: ../src/EventEdition/EventDialog.vala:104
+#: ../src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr "Напоминания"
 
-#: ../src/EventEdition/EventDialog.vala:148
+#: ../src/EventEdition/EventDialog.vala:145
 msgid "Delete Event"
 msgstr "Удалить событие"
 
-#: ../src/EventEdition/EventDialog.vala:160
+#: ../src/EventEdition/EventDialog.vala:157
 msgid "Create Event"
 msgstr "Создать событие"
 
-#: ../src/EventEdition/EventDialog.vala:163
+#: ../src/EventEdition/EventDialog.vala:160
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
@@ -647,6 +647,28 @@ msgstr "Поиск событий"
 msgid "Export or Share the default Calendar"
 msgstr "Экспортировать или поделиться календарём по умолчанию"
 
+#: ../src/Application.vala:103
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  0crash0 https://launchpad.net/~0crash0\n"
+"  Alexey Ivanov https://launchpad.net/~alexey-ivanov\n"
+"  Andrew Sudarikov https://launchpad.net/~andrewsudarikov\n"
+"  Andrey Gulitskiy https://launchpad.net/~wyorma\n"
+"  ArtKun https://launchpad.net/~artkun\n"
+"  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
+"  Eugene L https://launchpad.net/~eggandlyre\n"
+"  Eugene Marshal https://launchpad.net/~lowrider\n"
+"  Kirill Ivaha https://launchpad.net/~kirill-ivaha\n"
+"  Maxim Taranov https://launchpad.net/~png2378\n"
+"  Mukusev Vladimir https://launchpad.net/~damon95\n"
+"  Nikita Putko https://launchpad.net/~ktototam98\n"
+"  Oleg https://launchpad.net/~oopseekoleg\n"
+"  Pasha. P. Komar https://launchpad.net/~cellachain\n"
+"  Sergey \"Shnatsel\" Davidoff https://launchpad.net/~shnatsel\n"
+"  Victor Markin https://launchpad.net/~marvic\n"
+"  Цымбарович Петр https://launchpad.net/~mentaljam119"
+
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
 msgstr "CalDAV"
@@ -671,7 +693,7 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "имя.пользователя или имя.пользователя@gmail.com"
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:678
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:669
 msgid "On this computer"
 msgstr "На этом компьютере"
 

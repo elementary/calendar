@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-31 17:39+0100\n"
-"PO-Revision-Date: 2014-12-24 12:17+0000\n"
-"Last-Translator: Marek Doležel <marekdolezel@gmail.com>\n"
+"POT-Creation-Date: 2015-01-17 11:41+0100\n"
+"PO-Revision-Date: 2015-01-17 10:51+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-01-01 05:51+0000\n"
-"X-Generator: Launchpad (build 17286)\n"
+"X-Launchpad-Export-Date: 2015-01-18 04:43+0000\n"
+"X-Generator: Launchpad (build 17304)\n"
 "Language: cs\n"
 
 #: ../src/AgendaView.vala:63
@@ -33,16 +33,16 @@ msgstr "Během dne"
 msgid "All day"
 msgstr "Celý den"
 
-#: ../src/AgendaView.vala:342 ../src/SourceDialog/SourceItem.vala:97
+#: ../src/AgendaView.vala:337 ../src/SourceDialog/SourceItem.vala:96
 msgid "Edit…"
 msgstr "Upravit…"
 
-#: ../src/AgendaView.vala:343 ../src/SourceDialog/SourceItem.vala:83
+#: ../src/AgendaView.vala:338 ../src/SourceDialog/SourceItem.vala:82
 msgid "Remove"
 msgstr "Odstranit"
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:380
+#: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
 msgstr "%s, %s - %s, %s"
 
@@ -50,11 +50,11 @@ msgstr "%s, %s - %s, %s"
 msgid "%u more…"
 msgstr "%u více..."
 
-#: ../src/Grid/WeekLabels.vala:59 ../src/Grid/Header.vala:66
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
 msgstr "Skrýt čísla týdnů"
 
-#: ../src/Grid/WeekLabels.vala:61 ../src/Grid/Header.vala:68
+#: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:71
 msgid "Show Week Numbers"
 msgstr "Zobrazovat čísla týdnů"
 
@@ -74,15 +74,15 @@ msgstr ""
 
 #: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:166
+#: ../src/EventEdition/EventDialog.vala:163
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: ../src/SourceDialog/SourceItem.vala:128
+#: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
 msgstr "Zpět"
 
-#: ../src/SourceDialog/SourceItem.vala:143
+#: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
 msgstr "Kalendář \"%s\" odstraněn."
 
@@ -106,19 +106,19 @@ msgstr "Název kalendáře"
 msgid "Type:"
 msgstr "Typ:"
 
-#: ../src/SourceDialog/SourceDialog.vala:117
+#: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
 msgstr "Barva:"
 
-#: ../src/SourceDialog/SourceDialog.vala:122
+#: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
 msgstr "Označit jako výchozí kalendář"
 
-#: ../src/SourceDialog/SourceDialog.vala:152
+#: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
 msgstr "Vytvořit kalendář"
 
-#: ../src/SourceDialog/SourceDialog.vala:160
+#: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
 msgstr "Uložit"
@@ -135,7 +135,7 @@ msgstr "Kalendář"
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr "Maya;Plánovač;Data;Dny;Události;"
 
-#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:65
+#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
 msgstr "Přidat událost"
 
@@ -227,7 +227,7 @@ msgstr "Končí:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:107
+#: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgstr "Opakovat"
 
@@ -544,35 +544,35 @@ msgstr "Oznámení"
 msgid "Email"
 msgstr "E-mail"
 
-#: ../src/EventEdition/EventDialog.vala:68
+#: ../src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
 msgstr "Upravit událost"
 
-#: ../src/EventEdition/EventDialog.vala:95
+#: ../src/EventEdition/EventDialog.vala:94
 msgid "General Informations"
 msgstr "Obecné informace"
 
-#: ../src/EventEdition/EventDialog.vala:98
+#: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
 msgstr "Místo"
 
-#: ../src/EventEdition/EventDialog.vala:101
+#: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
 msgstr "Hosté"
 
-#: ../src/EventEdition/EventDialog.vala:104
+#: ../src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr "Připomenutí"
 
-#: ../src/EventEdition/EventDialog.vala:148
+#: ../src/EventEdition/EventDialog.vala:145
 msgid "Delete Event"
 msgstr "Smazat událost"
 
-#: ../src/EventEdition/EventDialog.vala:160
+#: ../src/EventEdition/EventDialog.vala:157
 msgid "Create Event"
 msgstr "Vytvořit událost"
 
-#: ../src/EventEdition/EventDialog.vala:163
+#: ../src/EventEdition/EventDialog.vala:160
 msgid "Save Changes"
 msgstr "Uložit změny"
 
@@ -644,6 +644,21 @@ msgstr "Hledat události"
 msgid "Export or Share the default Calendar"
 msgstr "Exportovat nebo sdílet výchozí kalendář"
 
+#: ../src/Application.vala:103
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Hlobil Vaclav https://launchpad.net/~vaclav-hlobil\n"
+"  Honza Bittner https://launchpad.net/~the-z\n"
+"  Jiří Šebele https://launchpad.net/~sindriava+launchpad\n"
+"  Marek Doležel https://launchpad.net/~marekdolezel\n"
+"  Marek Suchánek https://launchpad.net/~suchm\n"
+"  Ondřej Brabec https://launchpad.net/~kaktus-ob\n"
+"  Ondřej Doněk https://launchpad.net/~ondrejd\n"
+"  Vladimir Zdenek https://launchpad.net/~ydenek-v\n"
+"  plopp https://launchpad.net/~jirihusak\n"
+"  t.m https://launchpad.net/~t-martykan-m"
+
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
 msgstr "CalDAV"
@@ -668,7 +683,7 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr ""
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:678
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:669
 msgid "On this computer"
 msgstr "V tomto počítači"
 

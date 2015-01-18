@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-31 17:39+0100\n"
-"PO-Revision-Date: 2014-12-27 22:46+0000\n"
-"Last-Translator: Ivan Vrljić <vrlja92@gmail.com>\n"
+"POT-Creation-Date: 2015-01-17 11:41+0100\n"
+"PO-Revision-Date: 2015-01-17 10:51+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-01-01 05:53+0000\n"
-"X-Generator: Launchpad (build 17286)\n"
+"X-Launchpad-Export-Date: 2015-01-18 04:45+0000\n"
+"X-Generator: Launchpad (build 17304)\n"
 "Language: hr\n"
 
 #: ../src/AgendaView.vala:63
@@ -36,16 +36,16 @@ msgstr "Tokom dana"
 msgid "All day"
 msgstr "Cijeli dan"
 
-#: ../src/AgendaView.vala:342 ../src/SourceDialog/SourceItem.vala:97
+#: ../src/AgendaView.vala:337 ../src/SourceDialog/SourceItem.vala:96
 msgid "Edit…"
 msgstr "Uredi..."
 
-#: ../src/AgendaView.vala:343 ../src/SourceDialog/SourceItem.vala:83
+#: ../src/AgendaView.vala:338 ../src/SourceDialog/SourceItem.vala:82
 msgid "Remove"
 msgstr "Ukloni"
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:380
+#: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
 msgstr "%s, %s - %s, %s"
 
@@ -53,11 +53,11 @@ msgstr "%s, %s - %s, %s"
 msgid "%u more…"
 msgstr "%u više…"
 
-#: ../src/Grid/WeekLabels.vala:59 ../src/Grid/Header.vala:66
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
 msgstr "Sakrij brojeve tjedna"
 
-#: ../src/Grid/WeekLabels.vala:61 ../src/Grid/Header.vala:68
+#: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:71
 msgid "Show Week Numbers"
 msgstr "Prikaži brojeve tjedna"
 
@@ -77,15 +77,15 @@ msgstr ""
 
 #: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:166
+#: ../src/EventEdition/EventDialog.vala:163
 msgid "Cancel"
 msgstr "Poništi"
 
-#: ../src/SourceDialog/SourceItem.vala:128
+#: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
 msgstr "Poništi"
 
-#: ../src/SourceDialog/SourceItem.vala:143
+#: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
 msgstr "Kalendar \"%s\" uklonjen."
 
@@ -109,19 +109,19 @@ msgstr "Naziv kalendara"
 msgid "Type:"
 msgstr "Vrsta:"
 
-#: ../src/SourceDialog/SourceDialog.vala:117
+#: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
 msgstr "Boja:"
 
-#: ../src/SourceDialog/SourceDialog.vala:122
+#: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
 msgstr "Označi kao uobičajeni kalendar"
 
-#: ../src/SourceDialog/SourceDialog.vala:152
+#: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
 msgstr "Napravi kalendar"
 
-#: ../src/SourceDialog/SourceDialog.vala:160
+#: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
 msgstr "Spremi"
@@ -138,7 +138,7 @@ msgstr "Kalendar"
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr "Maya;Planer;Datumi;Dani;Događaji"
 
-#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:65
+#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
 msgstr "Dodaj događaj"
 
@@ -230,7 +230,7 @@ msgstr "Završava:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:107
+#: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgstr "Ponovi"
 
@@ -547,35 +547,35 @@ msgstr "Obavijest"
 msgid "Email"
 msgstr "E-pošta"
 
-#: ../src/EventEdition/EventDialog.vala:68
+#: ../src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
 msgstr "Uredi događaj"
 
-#: ../src/EventEdition/EventDialog.vala:95
+#: ../src/EventEdition/EventDialog.vala:94
 msgid "General Informations"
 msgstr "Opće informacije"
 
-#: ../src/EventEdition/EventDialog.vala:98
+#: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
 msgstr "Lokacija"
 
-#: ../src/EventEdition/EventDialog.vala:101
+#: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
 msgstr "Gosti"
 
-#: ../src/EventEdition/EventDialog.vala:104
+#: ../src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr "Podsjetnici"
 
-#: ../src/EventEdition/EventDialog.vala:148
+#: ../src/EventEdition/EventDialog.vala:145
 msgid "Delete Event"
 msgstr "Ukloni događaj"
 
-#: ../src/EventEdition/EventDialog.vala:160
+#: ../src/EventEdition/EventDialog.vala:157
 msgid "Create Event"
 msgstr "Napravi događaj"
 
-#: ../src/EventEdition/EventDialog.vala:163
+#: ../src/EventEdition/EventDialog.vala:160
 msgid "Save Changes"
 msgstr "Spremi promjene"
 
@@ -647,6 +647,17 @@ msgstr "Pretraži događaje"
 msgid "Export or Share the default Calendar"
 msgstr "Izvezi ili dijeli uobičajeni kalendar"
 
+#: ../src/Application.vala:103
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  AnSukkal https://launchpad.net/~ansukkal\n"
+"  Ivan https://launchpad.net/~ivan-os\n"
+"  Ivan Vrljić https://launchpad.net/~vrlja92\n"
+"  Paulo Pavačić https://launchpad.net/~pavacic-p\n"
+"  gogo https://launchpad.net/~trebelnik-stefina\n"
+"  zvacet https://launchpad.net/~ivicakolic"
+
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
 msgstr "CalDAV"
@@ -671,7 +682,7 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "korisničko.ime ili korisničko.ime@gmail.com"
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:678
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:669
 msgid "On this computer"
 msgstr "Na ovom računalu"
 

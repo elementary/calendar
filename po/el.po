@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-31 17:39+0100\n"
-"PO-Revision-Date: 2014-08-28 10:46+0000\n"
-"Last-Translator: Jim Spentzos <Unknown>\n"
+"POT-Creation-Date: 2015-01-17 11:41+0100\n"
+"PO-Revision-Date: 2015-01-17 10:51+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-01-01 05:51+0000\n"
-"X-Generator: Launchpad (build 17286)\n"
+"X-Launchpad-Export-Date: 2015-01-18 04:44+0000\n"
+"X-Generator: Launchpad (build 17304)\n"
 "Language: el\n"
 
 #: ../src/AgendaView.vala:63
@@ -35,16 +35,16 @@ msgstr ""
 msgid "All day"
 msgstr "Όλη μέρα"
 
-#: ../src/AgendaView.vala:342 ../src/SourceDialog/SourceItem.vala:97
+#: ../src/AgendaView.vala:337 ../src/SourceDialog/SourceItem.vala:96
 msgid "Edit…"
 msgstr "Επεξεργασία..."
 
-#: ../src/AgendaView.vala:343 ../src/SourceDialog/SourceItem.vala:83
+#: ../src/AgendaView.vala:338 ../src/SourceDialog/SourceItem.vala:82
 msgid "Remove"
 msgstr "Αφαίρεση"
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:380
+#: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
 msgstr ""
 
@@ -52,11 +52,11 @@ msgstr ""
 msgid "%u more…"
 msgstr "%u περισσότερα…"
 
-#: ../src/Grid/WeekLabels.vala:59 ../src/Grid/Header.vala:66
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
 msgstr ""
 
-#: ../src/Grid/WeekLabels.vala:61 ../src/Grid/Header.vala:68
+#: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:71
 msgid "Show Week Numbers"
 msgstr "Εμφάνιση αύξοντα αριθμού εβδομάδος"
 
@@ -76,15 +76,15 @@ msgstr ""
 
 #: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:166
+#: ../src/EventEdition/EventDialog.vala:163
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: ../src/SourceDialog/SourceItem.vala:128
+#: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
 msgstr "Αναίρεση"
 
-#: ../src/SourceDialog/SourceItem.vala:143
+#: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
 msgstr "Το ημερολόγιο \"%s\" αφαιρέθηκε."
 
@@ -108,19 +108,19 @@ msgstr "Όνομα Ημερολογίου"
 msgid "Type:"
 msgstr "Τύπος:"
 
-#: ../src/SourceDialog/SourceDialog.vala:117
+#: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
 msgstr "Χρώμα:"
 
-#: ../src/SourceDialog/SourceDialog.vala:122
+#: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
 msgstr "Σήμανση ως προεπιλγμένο ημερολόγιο"
 
-#: ../src/SourceDialog/SourceDialog.vala:152
+#: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
 msgstr "Δημιουργία Ημερολογίου"
 
-#: ../src/SourceDialog/SourceDialog.vala:160
+#: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
 msgstr "Αποθήκευση"
@@ -137,7 +137,7 @@ msgstr "Ημερολόγιο"
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr "Maya;Προγραμματισμός;Ημερομηνίες;Ημέρες;Γεγονότα;"
 
-#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:65
+#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
 msgstr "Προσθήκη γεγονότος"
 
@@ -229,7 +229,7 @@ msgstr "Λήγει:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:107
+#: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgstr "Επανάληψη"
 
@@ -546,35 +546,35 @@ msgstr "Ειδοποίηση"
 msgid "Email"
 msgstr "Email"
 
-#: ../src/EventEdition/EventDialog.vala:68
+#: ../src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
 msgstr "Επεξεργασία γεγονότος"
 
-#: ../src/EventEdition/EventDialog.vala:95
+#: ../src/EventEdition/EventDialog.vala:94
 msgid "General Informations"
 msgstr "Γενικές Πληροφορίες"
 
-#: ../src/EventEdition/EventDialog.vala:98
+#: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
 msgstr "Τοποθεσία"
 
-#: ../src/EventEdition/EventDialog.vala:101
+#: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
 msgstr "Καλεσμένοι"
 
-#: ../src/EventEdition/EventDialog.vala:104
+#: ../src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr "Υπενθυμίσεις"
 
-#: ../src/EventEdition/EventDialog.vala:148
+#: ../src/EventEdition/EventDialog.vala:145
 msgid "Delete Event"
 msgstr "Διαγραφή Γεγονότος"
 
-#: ../src/EventEdition/EventDialog.vala:160
+#: ../src/EventEdition/EventDialog.vala:157
 msgid "Create Event"
 msgstr "Δημιουργία γεγονότος"
 
-#: ../src/EventEdition/EventDialog.vala:163
+#: ../src/EventEdition/EventDialog.vala:160
 msgid "Save Changes"
 msgstr "Αποθήκευση αλλαγών"
 
@@ -646,6 +646,20 @@ msgstr "Αναζήτηση γεγονότων"
 msgid "Export or Share the default Calendar"
 msgstr "Εξαγωγή ή Κοινή Χρήση του προεπιλεγμένου Ημερολογίου"
 
+#: ../src/Application.vala:103
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Filippos Kolyvas https://launchpad.net/~fkol-k4\n"
+"  George Fragos https://launchpad.net/~anvo\n"
+"  Jim Spentzos https://launchpad.net/~jamesspentzos\n"
+"  Nikos Raptopoulos https://launchpad.net/~nraptopoulos\n"
+"  Thanasis Naskos https://launchpad.net/~naskoos\n"
+"  Theodoros Kentistos https://launchpad.net/~theokent\n"
+"  adem https://launchpad.net/~haliladem111\n"
+"  deuce https://launchpad.net/~azinas\n"
+"  iakovos athanasiadhs https://launchpad.net/~liam21iakovos"
+
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
 msgstr "CalDAV"
@@ -670,7 +684,7 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "user.name ή user.name@gmail.com"
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:678
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:669
 msgid "On this computer"
 msgstr "Σε αυτόν τον υπολογιστή"
 

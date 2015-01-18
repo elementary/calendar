@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-31 17:39+0100\n"
-"PO-Revision-Date: 2015-01-07 07:01+0000\n"
-"Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
+"POT-Creation-Date: 2015-01-17 11:41+0100\n"
+"PO-Revision-Date: 2015-01-17 10:51+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-01-08 06:46+0000\n"
-"X-Generator: Launchpad (build 17298)\n"
+"X-Launchpad-Export-Date: 2015-01-18 04:46+0000\n"
+"X-Generator: Launchpad (build 17304)\n"
 "Language: es\n"
 
 #: ../src/AgendaView.vala:63
@@ -35,16 +35,16 @@ msgstr "Durante el día"
 msgid "All day"
 msgstr "Todo el día"
 
-#: ../src/AgendaView.vala:342 ../src/SourceDialog/SourceItem.vala:97
+#: ../src/AgendaView.vala:337 ../src/SourceDialog/SourceItem.vala:96
 msgid "Edit…"
 msgstr "Editar…"
 
-#: ../src/AgendaView.vala:343 ../src/SourceDialog/SourceItem.vala:83
+#: ../src/AgendaView.vala:338 ../src/SourceDialog/SourceItem.vala:82
 msgid "Remove"
 msgstr "Eliminar"
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:380
+#: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
 msgstr "%s, %s-%s, %s"
 
@@ -52,11 +52,11 @@ msgstr "%s, %s-%s, %s"
 msgid "%u more…"
 msgstr "%u más…"
 
-#: ../src/Grid/WeekLabels.vala:59 ../src/Grid/Header.vala:66
+#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
 msgstr "Ocultar números de semana"
 
-#: ../src/Grid/WeekLabels.vala:61 ../src/Grid/Header.vala:68
+#: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:71
 msgid "Show Week Numbers"
 msgstr "Mostrar número de semana"
 
@@ -76,15 +76,15 @@ msgstr "Importar"
 
 #: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:166
+#: ../src/EventEdition/EventDialog.vala:163
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../src/SourceDialog/SourceItem.vala:128
+#: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
 msgstr "Deshacer"
 
-#: ../src/SourceDialog/SourceItem.vala:143
+#: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
 msgstr "Se ha eliminado el calendario «%s»."
 
@@ -108,19 +108,19 @@ msgstr "Nombre del calendario"
 msgid "Type:"
 msgstr "Tipo:"
 
-#: ../src/SourceDialog/SourceDialog.vala:117
+#: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
 msgstr "Color:"
 
-#: ../src/SourceDialog/SourceDialog.vala:122
+#: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
 msgstr "Marcar como calendario predeterminado"
 
-#: ../src/SourceDialog/SourceDialog.vala:152
+#: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
 msgstr "Crear un calendario"
 
-#: ../src/SourceDialog/SourceDialog.vala:160
+#: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
 msgstr "Guardar"
@@ -137,7 +137,7 @@ msgstr "Calendario"
 msgid "Maya;Planner;Dates;Days;Events;"
 msgstr "Maya;Planificador;Fechas;Días;Eventos;"
 
-#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:65
+#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
 msgstr "Añadir evento"
 
@@ -229,7 +229,7 @@ msgstr "Termina:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:107
+#: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgstr "Repetir"
 
@@ -546,35 +546,35 @@ msgstr "Notificación"
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: ../src/EventEdition/EventDialog.vala:68
+#: ../src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
 msgstr "Editar evento"
 
-#: ../src/EventEdition/EventDialog.vala:95
+#: ../src/EventEdition/EventDialog.vala:94
 msgid "General Informations"
 msgstr "Información general"
 
-#: ../src/EventEdition/EventDialog.vala:98
+#: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
 msgstr "Ubicación"
 
-#: ../src/EventEdition/EventDialog.vala:101
+#: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
 msgstr "Invitados"
 
-#: ../src/EventEdition/EventDialog.vala:104
+#: ../src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr "Recordatorios"
 
-#: ../src/EventEdition/EventDialog.vala:148
+#: ../src/EventEdition/EventDialog.vala:145
 msgid "Delete Event"
 msgstr "Eliminar evento"
 
-#: ../src/EventEdition/EventDialog.vala:160
+#: ../src/EventEdition/EventDialog.vala:157
 msgid "Create Event"
 msgstr "Crear evento"
 
-#: ../src/EventEdition/EventDialog.vala:163
+#: ../src/EventEdition/EventDialog.vala:160
 msgid "Save Changes"
 msgstr "Guardar los cambios"
 
@@ -646,6 +646,28 @@ msgstr "Buscar eventos"
 msgid "Export or Share the default Calendar"
 msgstr "Exportar o compartir el calendario predeterminado"
 
+#: ../src/Application.vala:103
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Adolfo Jayme https://launchpad.net/~fitojb\n"
+"  Alfredo Hernández https://launchpad.net/~aldomann\n"
+"  Arsen Khachatryan https://launchpad.net/~arsench2000\n"
+"  Champan https://launchpad.net/~xdango-dai\n"
+"  Christian https://launchpad.net/~christian-redyt\n"
+"  Christopher https://launchpad.net/~cdhornb\n"
+"  Ezequiel Sapo https://launchpad.net/~ezesapo\n"
+"  Gerson Alvarado https://launchpad.net/~lewatoto\n"
+"  Haggen https://launchpad.net/~h2gn\n"
+"  Iain Johnston https://launchpad.net/~iainrj18\n"
+"  Juan David Angarita https://launchpad.net/~jangarita11\n"
+"  Pablo Dávila https://launchpad.net/~pablo-davila95\n"
+"  Spuigdengolas https://launchpad.net/~spuigdengolas\n"
+"  daniel villalobos https://launchpad.net/~elcodigo12-p\n"
+"  dbinary https://launchpad.net/~luis-luimarin\n"
+"  opensas https://launchpad.net/~opensas\n"
+"  toni https://launchpad.net/~a-hidalgomas"
+
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
 msgstr "CalDAV"
@@ -670,7 +692,7 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "nombre.usuario o nombre.usuario@gmail.com"
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:678
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:669
 msgid "On this computer"
 msgstr "En este equipo"
 
@@ -780,6 +802,9 @@ msgstr "%A, %-d de %b"
 #~ msgid "Import..."
 #~ msgstr "Importar…"
 
+#~ msgid "Every last %s"
+#~ msgstr "Cada último %s"
+
 #~ msgid "Friday"
 #~ msgstr "Viernes"
 
@@ -800,3 +825,18 @@ msgstr "%A, %-d de %b"
 
 #~ msgid "Sunday"
 #~ msgstr "Domingo"
+
+#~ msgid "Every fifth %s"
+#~ msgstr "Cada quinto %s"
+
+#~ msgid "Every first %s"
+#~ msgstr "Cada primer %s"
+
+#~ msgid "Every second %s"
+#~ msgstr "Cada segundo %s"
+
+#~ msgid "Every third %s"
+#~ msgstr "Cada tercer %s"
+
+#~ msgid "Every fourth %s"
+#~ msgstr "Cada cuarto %s"
