@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-17 11:41+0100\n"
-"PO-Revision-Date: 2015-01-19 23:16+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2015-02-03 18:52+0000\n"
+"Last-Translator: Anuar Muhammad <anuartechnology@gmail.com>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-01-20 06:36+0000\n"
-"X-Generator: Launchpad (build 17304)\n"
+"X-Launchpad-Export-Date: 2015-02-04 06:52+0000\n"
+"X-Generator: Launchpad (build 17331)\n"
 "Language: ms\n"
 
 #: ../src/AgendaView.vala:63
@@ -24,12 +24,12 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Peristiwa mendatang anda akan dipaparkan disini bila anda pilih tarikh "
-"dengan peristiwa."
+"Acara akan datang anda akan dipaparkan disini sejurus anda memilih tarikh "
+"yang ditandai"
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
-msgstr ""
+msgstr "Pada tarikh tersebut"
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
@@ -54,7 +54,7 @@ msgstr "%u lagi..."
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
-msgstr "Sembunyi Bilangan Minggu"
+msgstr "Sembunyikan Bilangan Minggu"
 
 #: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:71
 msgid "Show Week Numbers"
@@ -62,17 +62,17 @@ msgstr "Papar Bilangan Minggu"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
-msgstr ""
+msgstr "import acara daripada \"%s\" kedalam kalendar"
 
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Import acara dari fail %d kedalam kalendar"
+msgstr[1] "Import acara dari semua fail %d kedalam kalendar"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
-msgstr ""
+msgstr "Import"
 
 #: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
@@ -82,7 +82,7 @@ msgstr "Batal"
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
-msgstr "Buat Asal"
+msgstr "Kembali asal"
 
 #: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
@@ -650,6 +650,7 @@ msgstr "Eksport atau Kongsi Kalendar lalai"
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Anuar Muhammad https://launchpad.net/~anuartechnology\n"
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
 "  Myh Yazid https://launchpad.net/~myh-myh09\n"
 "  abuyop https://launchpad.net/~abuyop"
