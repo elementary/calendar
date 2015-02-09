@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-17 11:41+0100\n"
-"PO-Revision-Date: 2015-01-17 10:51+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
+"PO-Revision-Date: 2015-02-08 16:14+0000\n"
+"Last-Translator: macghivo <macghivo@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-01-18 04:45+0000\n"
-"X-Generator: Launchpad (build 17304)\n"
+"X-Launchpad-Export-Date: 2015-02-09 05:58+0000\n"
+"X-Generator: Launchpad (build 17331)\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -21,19 +21,19 @@ msgstr ""
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
-msgstr ""
+msgstr "Während dem Dag"
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
-msgstr ""
+msgstr "All Dag"
 
 #: ../src/AgendaView.vala:337 ../src/SourceDialog/SourceItem.vala:96
 msgid "Edit…"
-msgstr ""
+msgstr "Editéieren..."
 
 #: ../src/AgendaView.vala:338 ../src/SourceDialog/SourceItem.vala:82
 msgid "Remove"
-msgstr ""
+msgstr "Läschen"
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
 #: ../src/AgendaView.vala:376
@@ -64,17 +64,17 @@ msgstr[1] ""
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
-msgstr ""
+msgstr "Importéieren"
 
 #: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
 #: ../src/EventEdition/EventDialog.vala:163
 msgid "Cancel"
-msgstr ""
+msgstr "Ofbriechen"
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
-msgstr ""
+msgstr "Réckgängeg maachen"
 
 #: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
@@ -86,23 +86,23 @@ msgstr ""
 
 #: ../src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
-msgstr ""
+msgstr "Erstellen"
 
 #: ../src/SourceDialog/SourceDialog.vala:69
 msgid "Name:"
-msgstr ""
+msgstr "Numm:"
 
 #: ../src/SourceDialog/SourceDialog.vala:72
 msgid "Calendar Name"
-msgstr ""
+msgstr "Kalenner Numm"
 
 #: ../src/SourceDialog/SourceDialog.vala:95
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
 #: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
-msgstr ""
+msgstr "Faarf"
 
 #: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
@@ -110,12 +110,12 @@ msgstr ""
 
 #: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
-msgstr ""
+msgstr "Kalenner erstellen"
 
 #: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
-msgstr ""
+msgstr "Späicheren"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
@@ -123,7 +123,7 @@ msgstr ""
 
 #: ../src/Translations.vala:6 ../src/Application.vala:34
 msgid "Calendar"
-msgstr ""
+msgstr "Kalenner"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
@@ -135,24 +135,24 @@ msgstr ""
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "Iwwer Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "Iwwer den Kalenner"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
 msgid "Export Calendar..."
-msgstr ""
+msgstr "Kalenner exportéieren"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 msgid "calendar.ics"
-msgstr ""
+msgstr "kalenner.ics"
 
 #: ../src/EventEdition/LocationPanel.vala:44
 msgid "Location:"
-msgstr ""
+msgstr "Wou:"
 
 #: ../src/EventEdition/LocationPanel.vala:46
 msgid "John Smith OR Example St."
@@ -160,60 +160,60 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
-msgstr ""
+msgstr "Widderhuelen:"
 
 #: ../src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
-msgstr ""
+msgstr "Deglech"
 
 #: ../src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
-msgstr ""
+msgstr "All Woch"
 
 #: ../src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
-msgstr ""
+msgstr "All Mount"
 
 #: ../src/EventEdition/RepeatPanel.vala:61
 msgid "Yearly"
-msgstr ""
+msgstr "All Joer"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr ""
+msgstr "Ëmmer:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
-msgstr ""
+msgstr "Dag"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Days"
-msgstr ""
+msgstr "Deg"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
-msgstr ""
+msgstr "Woch"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 msgid "Weeks"
-msgstr ""
+msgstr "Wochen"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
-msgstr ""
+msgstr "Mount"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Months"
-msgstr ""
+msgstr "Méint"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
-msgstr ""
+msgstr "Joer"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Years"
-msgstr ""
+msgstr "Joeren"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -223,16 +223,16 @@ msgstr ""
 #: ../src/EventEdition/RepeatPanel.vala:170
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
-msgstr ""
+msgstr "Widderhuelen"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
 msgid "Repeats"
-msgstr ""
+msgstr "Widderhuelt"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
-msgstr ""
+msgstr "Ni"
 
 #: ../src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
@@ -248,15 +248,15 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:200
 msgid "Exceptions:"
-msgstr ""
+msgstr "Exceptiounen:"
 
 #: ../src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
-msgstr ""
+msgstr "Keng Exceptiounen:"
 
 #: ../src/EventEdition/RepeatPanel.vala:224
 msgid "Add Exception"
-msgstr ""
+msgstr "Exceptiounen bäifügen"
 
 #: ../src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
@@ -641,6 +641,8 @@ msgstr ""
 #: ../src/Application.vala:103
 msgid "translator-credits"
 msgstr ""
+"Launchpad Contributions:\n"
+"  macghivo https://launchpad.net/~macghivo"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
