@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-17 11:41+0100\n"
-"PO-Revision-Date: 2015-01-19 23:14+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2015-02-10 22:48+0000\n"
+"Last-Translator: iakovos athanasiadhs <liam21iakovos@gmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-01-20 06:36+0000\n"
-"X-Generator: Launchpad (build 17304)\n"
+"X-Launchpad-Export-Date: 2015-02-11 06:10+0000\n"
+"X-Generator: Launchpad (build 17336)\n"
 "Language: el\n"
 
 #: ../src/AgendaView.vala:63
@@ -29,7 +29,7 @@ msgstr ""
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
-msgstr ""
+msgstr "Κατά τη διάρκεια της ημέρας"
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
@@ -54,7 +54,7 @@ msgstr "%u περισσότερα…"
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Απόκρυψη Αριθμών Εβδομάδας"
 
 #: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:71
 msgid "Show Week Numbers"
@@ -72,7 +72,7 @@ msgstr[1] ""
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
-msgstr ""
+msgstr "Εισαγωγή"
 
 #: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
@@ -256,183 +256,183 @@ msgstr "Την ίδια ημέρα κάθε μήνα"
 
 #: ../src/EventEdition/RepeatPanel.vala:200
 msgid "Exceptions:"
-msgstr ""
+msgstr "Εξαιρέσεις:"
 
 #: ../src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
-msgstr ""
+msgstr "Καμία Εξαίρεση"
 
 #: ../src/EventEdition/RepeatPanel.vala:224
 msgid "Add Exception"
-msgstr ""
+msgstr "Προσθήκη Εξαίρεσης"
 
 #: ../src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
-msgstr ""
+msgstr "Κάθε τελευταία Κυριακή"
 
 #: ../src/EventEdition/RepeatPanel.vala:361
 msgid "Every last Monday"
-msgstr ""
+msgstr "Κάθε τελευταία Δευτέρα"
 
 #: ../src/EventEdition/RepeatPanel.vala:364
 msgid "Every last Tuesday"
-msgstr ""
+msgstr "Κάθε τελευταία Τρίτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:367
 msgid "Every last Wednesday"
-msgstr ""
+msgstr "Κάθε τελευταία Τετάρτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:370
 msgid "Every last Thursday"
-msgstr ""
+msgstr "Κάθε τελευταία Πέμπτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:373
 msgid "Every last Friday"
-msgstr ""
+msgstr "Κάθε τελευταία Παρασκευή"
 
 #: ../src/EventEdition/RepeatPanel.vala:376
 msgid "Every last Saturday"
-msgstr ""
+msgstr "Κάθε τελευταίο Σάββατο"
 
 #: ../src/EventEdition/RepeatPanel.vala:383
 msgid "Every first Sunday"
-msgstr ""
+msgstr "Κάθε τελευταία Κυριακή"
 
 #: ../src/EventEdition/RepeatPanel.vala:386
 msgid "Every first Monday"
-msgstr ""
+msgstr "Κάθε πρώτη Δευτέρα"
 
 #: ../src/EventEdition/RepeatPanel.vala:389
 msgid "Every first Tuesday"
-msgstr ""
+msgstr "Κάθε πρώτη Τρίτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:392
 msgid "Every first Wednesday"
-msgstr ""
+msgstr "Κάθε πρώτη Τετάρτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:395
 msgid "Every first Thursday"
-msgstr ""
+msgstr "Κάθε πρώτη Πέμπτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:398
 msgid "Every first Friday"
-msgstr ""
+msgstr "Κάθε πρώτη Παρασκευή"
 
 #: ../src/EventEdition/RepeatPanel.vala:401
 msgid "Every first Saturday"
-msgstr ""
+msgstr "Κάθε πρώτο Σάββατο"
 
 #: ../src/EventEdition/RepeatPanel.vala:408
 msgid "Every second Sunday"
-msgstr ""
+msgstr "Κάθε πρώτη Κυριακή"
 
 #: ../src/EventEdition/RepeatPanel.vala:411
 msgid "Every second Monday"
-msgstr ""
+msgstr "Κάθε δεύτερη Δευτέρα"
 
 #: ../src/EventEdition/RepeatPanel.vala:414
 msgid "Every second Tuesday"
-msgstr ""
+msgstr "Κάθε δεύτερη Τρίτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:417
 msgid "Every second Wednesday"
-msgstr ""
+msgstr "Κάθε δεύτερη Τετάρτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:420
 msgid "Every second Thursday"
-msgstr ""
+msgstr "Κάθε δεύτερη Πέμπτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:423
 msgid "Every second Friday"
-msgstr ""
+msgstr "Κάθε δεύτερη Παρασκευή"
 
 #: ../src/EventEdition/RepeatPanel.vala:426
 msgid "Every second Saturday"
-msgstr ""
+msgstr "Κάθε δεύτερο Σάββατο"
 
 #: ../src/EventEdition/RepeatPanel.vala:433
 msgid "Every third Sunday"
-msgstr ""
+msgstr "Κάθε τρίτη Κυριακή"
 
 #: ../src/EventEdition/RepeatPanel.vala:436
 msgid "Every third Monday"
-msgstr ""
+msgstr "Κάθε τρίτη Δευτέρα"
 
 #: ../src/EventEdition/RepeatPanel.vala:439
 msgid "Every third Tuesday"
-msgstr ""
+msgstr "Κάθε τρίτη Τρίτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:442
 msgid "Every third Wednesday"
-msgstr ""
+msgstr "Κάθε τρίτη Τετάρτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:445
 msgid "Every third Thursday"
-msgstr ""
+msgstr "Κάθε τρίτη Πέμπτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:448
 msgid "Every third Friday"
-msgstr ""
+msgstr "Κάθε τρίτη Παρασκευή"
 
 #: ../src/EventEdition/RepeatPanel.vala:451
 msgid "Every third Saturday"
-msgstr ""
+msgstr "Κάθε τρίτο Σάββατο"
 
 #: ../src/EventEdition/RepeatPanel.vala:458
 msgid "Every fourth Sunday"
-msgstr ""
+msgstr "Κάθε τέταρτη Κυριακή"
 
 #: ../src/EventEdition/RepeatPanel.vala:461
 msgid "Every fourth Monday"
-msgstr ""
+msgstr "Κάθε τέταρτη Δευτέρα"
 
 #: ../src/EventEdition/RepeatPanel.vala:464
 msgid "Every fourth Tuesday"
-msgstr ""
+msgstr "Κάθε τέταρτη Τρίτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:467
 msgid "Every fourth Wednesday"
-msgstr ""
+msgstr "Κάθε τέταρτη Τετάρτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:470
 msgid "Every fourth Thursday"
-msgstr ""
+msgstr "Κάθε τέταρτη Πέμπτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:473
 msgid "Every fourth Friday"
-msgstr ""
+msgstr "Κάθε τέταρτη Παρασκευή"
 
 #: ../src/EventEdition/RepeatPanel.vala:476
 msgid "Every fourth Saturday"
-msgstr ""
+msgstr "Κάθε τέταρτο Σάββατο"
 
 #: ../src/EventEdition/RepeatPanel.vala:483
 msgid "Every fifth Sunday"
-msgstr ""
+msgstr "Κάθε πέμπτη Κυριακή"
 
 #: ../src/EventEdition/RepeatPanel.vala:486
 msgid "Every fifth Monday"
-msgstr ""
+msgstr "Κάθε πέμπτη Δευτέρα"
 
 #: ../src/EventEdition/RepeatPanel.vala:489
 msgid "Every fifth Tuesday"
-msgstr ""
+msgstr "Κάθε πέμπτη Τρίτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:492
 msgid "Every fifth Wednesday"
-msgstr ""
+msgstr "Κάθε πέμπτη Τετάρτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:495
 msgid "Every fifth Thursday"
-msgstr ""
+msgstr "Κάθε πέμπτη Πέμπτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:498
 msgid "Every fifth Friday"
-msgstr ""
+msgstr "Κάθε πέμπτη Παρασκευή"
 
 #: ../src/EventEdition/RepeatPanel.vala:501
 msgid "Every fifth Saturday"
-msgstr ""
+msgstr "Κάθε πέμπτο Σάββατο"
 
 #: ../src/EventEdition/RepeatPanel.vala:511
 msgid "Mon"
@@ -468,7 +468,7 @@ msgstr "Υπενθυμίσεις:"
 
 #: ../src/EventEdition/ReminderPanel.vala:37
 msgid "No Reminders"
-msgstr ""
+msgstr "Καμία Υπενθύμιση"
 
 #: ../src/EventEdition/ReminderPanel.vala:71
 msgid "Add Reminder"
@@ -584,7 +584,7 @@ msgstr "Συμμετέχοντες:"
 
 #: ../src/EventEdition/GuestsPanel.vala:53
 msgid "No Participants"
-msgstr ""
+msgstr "Κανείς Συμμετέχων"
 
 #: ../src/EventEdition/GuestsPanel.vala:88
 msgid "Invite"
@@ -632,7 +632,7 @@ msgstr "Δημιουργία ενός νέου γεγονότος"
 
 #: ../src/MayaToolbar.vala:48
 msgid "Go to today's date"
-msgstr ""
+msgstr "Μετάβαση στη σημερινή ημερομηνία"
 
 #: ../src/MayaToolbar.vala:52
 msgid "Manage Calendars"
@@ -659,6 +659,7 @@ msgstr ""
 "  Theodoros Kentistos https://launchpad.net/~theokent\n"
 "  adem https://launchpad.net/~haliladem111\n"
 "  deuce https://launchpad.net/~azinas\n"
+"  gkffzs https://launchpad.net/~gkffzs\n"
 "  iakovos athanasiadhs https://launchpad.net/~liam21iakovos"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
