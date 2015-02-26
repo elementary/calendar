@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-17 11:41+0100\n"
-"PO-Revision-Date: 2015-01-19 23:08+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2015-02-25 13:24+0000\n"
+"Last-Translator: Tobias Bannert <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-01-20 06:36+0000\n"
-"X-Generator: Launchpad (build 17304)\n"
+"X-Launchpad-Export-Date: 2015-02-26 05:34+0000\n"
+"X-Generator: Launchpad (build 17361)\n"
 "Language: de\n"
 
 #: ../src/AgendaView.vala:63
@@ -678,7 +678,7 @@ msgstr "CalDAV"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr "URL:"
+msgstr "Adresse:"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:91
 msgid "Use a secure connection"
