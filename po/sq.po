@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-01-17 11:41+0100\n"
-"PO-Revision-Date: 2015-02-25 10:03+0000\n"
+"PO-Revision-Date: 2015-03-06 13:06+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-02-26 05:34+0000\n"
-"X-Generator: Launchpad (build 17361)\n"
+"X-Launchpad-Export-Date: 2015-03-07 05:26+0000\n"
+"X-Generator: Launchpad (build 17383)\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -141,11 +141,11 @@ msgstr "Shto një ngjarje"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr "Rreth Maya"
+msgstr "Përrreth Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr "Rreth Kalendar"
+msgstr "Përreth Kalendar"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
@@ -648,7 +648,7 @@ msgstr "Eksporto ose shpërndaj kalendarin e parazgjedhur"
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Gim https://launchpad.net/~g1m\n"
+"  Gim  https://launchpad.net/~g1m\n"
 "  Indrit Bashkimi https://launchpad.net/~indritbsh\n"
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b"
 
