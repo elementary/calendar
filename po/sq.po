@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-01-17 11:41+0100\n"
-"PO-Revision-Date: 2015-03-06 13:06+0000\n"
+"PO-Revision-Date: 2015-03-07 15:42+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-03-07 05:26+0000\n"
+"X-Launchpad-Export-Date: 2015-03-08 05:17+0000\n"
 "X-Generator: Launchpad (build 17383)\n"
 
 #: ../src/AgendaView.vala:63
@@ -35,7 +35,7 @@ msgstr "Tërë ditën"
 
 #: ../src/AgendaView.vala:337 ../src/SourceDialog/SourceItem.vala:96
 msgid "Edit…"
-msgstr "Ndrysho..."
+msgstr "Ndrysho…"
 
 #: ../src/AgendaView.vala:338 ../src/SourceDialog/SourceItem.vala:82
 msgid "Remove"
@@ -88,7 +88,7 @@ msgstr "Kalendari \"%s\" u hoq."
 
 #: ../src/SourceDialog/SourceSelector.vala:70
 msgid "Add New Calendar…"
-msgstr "Shto Kalendar të ri"
+msgstr "Shto Kalendar të ri…"
 
 #: ../src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
@@ -141,7 +141,7 @@ msgstr "Shto një ngjarje"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr "Përrreth Maya"
+msgstr "Përreth Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
@@ -186,7 +186,7 @@ msgstr "Vjetore"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr "Ç'do"
+msgstr "Ç'do:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
@@ -278,7 +278,7 @@ msgstr "Ç'do të martë të fundit"
 
 #: ../src/EventEdition/RepeatPanel.vala:367
 msgid "Every last Wednesday"
-msgstr "Ç'do të merkurë të fundit"
+msgstr "Ç'do të mërkurë të fundit"
 
 #: ../src/EventEdition/RepeatPanel.vala:370
 msgid "Every last Thursday"
@@ -334,7 +334,7 @@ msgstr "Ç'do të martë të dytë"
 
 #: ../src/EventEdition/RepeatPanel.vala:417
 msgid "Every second Wednesday"
-msgstr "Ç'do të merkurë të dytë"
+msgstr "Ç'do të mërkurë të dytë"
 
 #: ../src/EventEdition/RepeatPanel.vala:420
 msgid "Every second Thursday"
@@ -362,7 +362,7 @@ msgstr "Ç'do të martë të tretë"
 
 #: ../src/EventEdition/RepeatPanel.vala:442
 msgid "Every third Wednesday"
-msgstr "Ç'do të merkurë të tretë"
+msgstr "Ç'do të mërkurë të tretë"
 
 #: ../src/EventEdition/RepeatPanel.vala:445
 msgid "Every third Thursday"
@@ -390,7 +390,7 @@ msgstr "Ç'do të martë të katërt"
 
 #: ../src/EventEdition/RepeatPanel.vala:467
 msgid "Every fourth Wednesday"
-msgstr "Ç'do të merkurë të katërt"
+msgstr "Ç'do të mërkurë të katërt"
 
 #: ../src/EventEdition/RepeatPanel.vala:470
 msgid "Every fourth Thursday"
@@ -418,7 +418,7 @@ msgstr "Ç'do të martë të pestë"
 
 #: ../src/EventEdition/RepeatPanel.vala:492
 msgid "Every fifth Wednesday"
-msgstr "Ç'do të merkurë të pestë"
+msgstr "Ç'do të mërkurë të pestë"
 
 #: ../src/EventEdition/RepeatPanel.vala:495
 msgid "Every fifth Thursday"
@@ -554,7 +554,7 @@ msgstr "Informacione të përgjithshme"
 
 #: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
-msgstr "Vendi:"
+msgstr "Vendi"
 
 #: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
@@ -602,11 +602,11 @@ msgstr "Nga:"
 
 #: ../src/EventEdition/InfoPanel.vala:50
 msgid "All day:"
-msgstr "Gjithë ditën"
+msgstr "Tërë ditën:"
 
 #: ../src/EventEdition/InfoPanel.vala:55
 msgid "To:"
-msgstr "Deri më"
+msgstr "Deri më:"
 
 #: ../src/EventEdition/InfoPanel.vala:73
 msgid "Title:"
