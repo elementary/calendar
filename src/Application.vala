@@ -43,7 +43,7 @@ namespace Maya {
 
         if (Option.PRINT_VERSION) {
             stdout.printf("Maya %s\n", Build.VERSION);
-            stdout.printf("Copyright 2011-2014 Maya Developers.\n");
+            stdout.printf("Copyright 2011-2015 Maya Developers.\n");
             return 0;
         }
 
@@ -76,7 +76,7 @@ namespace Maya {
             program_name = _(Build.APP_NAME);
             exec_name = "maya-calendar";
 
-            app_years = "2011-2014";
+            app_years = "2011-2015";
             application_id = "net.launchpad.maya";
             app_icon = "office-calendar";
             app_launcher = "maya-calendar.desktop";
