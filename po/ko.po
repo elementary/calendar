@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-17 11:41+0100\n"
-"PO-Revision-Date: 2015-01-19 23:12+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2015-03-22 07:10+0000\n"
+"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-01-20 06:36+0000\n"
-"X-Generator: Launchpad (build 17304)\n"
+"X-Launchpad-Export-Date: 2015-03-23 05:17+0000\n"
+"X-Generator: Launchpad (build 17405)\n"
 "Language: ko\n"
 
 #: ../src/AgendaView.vala:63
@@ -27,11 +27,11 @@ msgstr "이벤트가 예정된 날짜를 선택하면 그 날짜에 일어날 �
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
-msgstr ""
+msgstr "하루 동안"
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
-msgstr ""
+msgstr "하루 종일"
 
 #: ../src/AgendaView.vala:337 ../src/SourceDialog/SourceItem.vala:96
 msgid "Edit…"
@@ -44,15 +44,15 @@ msgstr "제거"
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
 #: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
-msgstr ""
+msgstr "%s, %s - %s, %s"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
-msgstr ""
+msgstr "%u 더..."
 
 #: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "주 번호 숨기기"
 
 #: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:71
 msgid "Show Week Numbers"
@@ -60,17 +60,16 @@ msgstr "몇 번째 주인지 표시"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
-msgstr ""
+msgstr "아래 \"%s\" 이벤트를 다음 일정표로 불러오기:"
 
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "아래 %d개 파일을 다음 일정표로 불러오기:"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
-msgstr ""
+msgstr "불러오기"
 
 #: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
@@ -141,11 +140,11 @@ msgstr "이벤트 추가"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "마야 정보"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "일정표 정보"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
@@ -158,7 +157,7 @@ msgstr "달력.ics"
 
 #: ../src/EventEdition/LocationPanel.vala:44
 msgid "Location:"
-msgstr ""
+msgstr "장소:"
 
 #: ../src/EventEdition/LocationPanel.vala:46
 msgid "John Smith OR Example St."
@@ -166,83 +165,83 @@ msgstr "김철수 또는 종로"
 
 #: ../src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
-msgstr ""
+msgstr "반복:"
 
 #: ../src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
-msgstr ""
+msgstr "매일"
 
 #: ../src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
-msgstr ""
+msgstr "매주"
 
 #: ../src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
-msgstr ""
+msgstr "매월"
 
 #: ../src/EventEdition/RepeatPanel.vala:61
 msgid "Yearly"
-msgstr ""
+msgstr "연간"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr ""
+msgstr "매:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
-msgstr ""
+msgstr "일"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Days"
-msgstr ""
+msgstr "일"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
-msgstr ""
+msgstr "주"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 msgid "Weeks"
-msgstr ""
+msgstr "주"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
-msgstr ""
+msgstr "달"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Months"
-msgstr ""
+msgstr "달"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
-msgstr ""
+msgstr "년"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Years"
-msgstr ""
+msgstr "년"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr ""
+msgstr "종료 :"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
-msgstr ""
+msgstr "반복"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
 msgid "Repeats"
-msgstr ""
+msgstr "반복"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
-msgstr ""
+msgstr "사용 안 함"
 
 #: ../src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
-msgstr ""
+msgstr "까지"
 
 #: ../src/EventEdition/RepeatPanel.vala:143
 msgid "After"
@@ -652,7 +651,8 @@ msgstr ""
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
 "  Kyu-Seok Yang https://launchpad.net/~lklk9110-3\n"
 "  LeeHoseok https://launchpad.net/~neochain\n"
-"  MinSik CHO https://launchpad.net/~mscho527"
+"  MinSik CHO https://launchpad.net/~mscho527\n"
+"  박정규(Jung-Kyu Park) https://launchpad.net/~bagjunggyu"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
