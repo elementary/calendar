@@ -74,7 +74,7 @@ namespace Maya.View {
             pack_start (spinner);
             set_custom_title (title_grid);
             pack_end (button_calendar_sources);
-            pack_end (search_bar);
+            //pack_end (search_bar);
             pack_end (contractor);
 
             // Connect to signals
