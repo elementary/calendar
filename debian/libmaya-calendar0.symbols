@@ -21,27 +21,28 @@ libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_local_backend_new@Base 0.3
  maya_model_calendar_model_add_event@Base 0.3
  maya_model_calendar_model_add_source@Base 0.3
+ maya_model_calendar_model_calclient_is_readonly@Base 0.3.1
  maya_model_calendar_model_change_month@Base 0.3
  maya_model_calendar_model_change_year@Base 0.3
- maya_model_calendar_model_delete_calendar@Base 0.3
- maya_model_calendar_model_do_real_deletion@Base 0.3
+ maya_model_calendar_model_delete_trashed_calendars@Base 0.3.1
  maya_model_calendar_model_get_data_range@Base 0.3
  maya_model_calendar_model_get_default@Base 0.3
+ maya_model_calendar_model_get_drag_component@Base 0.3.1
  maya_model_calendar_model_get_month_range@Base 0.3
  maya_model_calendar_model_get_month_start@Base 0.3
  maya_model_calendar_model_get_num_weeks@Base 0.3
+ maya_model_calendar_model_get_registry@Base 0.3.1
  maya_model_calendar_model_get_type@Base 0.3
  maya_model_calendar_model_get_week_starts_on@Base 0.3
  maya_model_calendar_model_load_all_sources@Base 0.3
  maya_model_calendar_model_remove_event@Base 0.3
  maya_model_calendar_model_remove_source@Base 0.3
  maya_model_calendar_model_restore_calendar@Base 0.3
+ maya_model_calendar_model_set_drag_component@Base 0.3.1
  maya_model_calendar_model_set_month_start@Base 0.3
  maya_model_calendar_model_set_week_starts_on@Base 0.3
- maya_model_calendar_model_setup_sources_async@Base 0.3
- maya_model_calendar_model_setup_sources_finish@Base 0.3
+ maya_model_calendar_model_trash_calendar@Base 0.3.1
  maya_model_calendar_model_update_event@Base 0.3
- maya_param_spec_threads@Base 0.3
  maya_placement_widget_construct@Base 0.3
  maya_placement_widget_get_type@Base 0.3
  maya_placement_widget_new@Base 0.3
@@ -72,10 +73,6 @@ libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_settings_saved_state_set_window_width@Base 0.3
  maya_settings_weekday_get_type@Base 0.3
  maya_settings_window_state_get_type@Base 0.3
- maya_threads_add@Base 0.3
- maya_threads_get_type@Base 0.3
- maya_threads_ref@Base 0.3
- maya_threads_unref@Base 0.3
  maya_util_calcomponent_equal_func@Base 0.3
  maya_util_calcomponent_hash_func@Base 0.3
  maya_util_compare_events@Base 0.3
@@ -104,7 +101,6 @@ libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_date_time_to_ical@Base 0.3
  maya_util_datetime_equal_func@Base 0.3
  maya_util_datetime_hash_func@Base 0.3
- maya_util_ecal_to_date_time@Base 0.3
  maya_util_event_date_ranges@Base 0.3
  maya_util_find_treemodel_object@Base 0.3
  maya_util_generate_day_reccurence@Base 0.3
@@ -113,6 +109,8 @@ libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_generate_year_reccurence@Base 0.3
  maya_util_get_date_from_ical_day@Base 0.3
  maya_util_get_hexa_color@Base 0.3
+ maya_util_get_local_datetimes_from_icalcomponent@Base 0.3.1
+ maya_util_get_source_location@Base 0.3.1
  maya_util_get_start_of_month@Base 0.3
  maya_util_ical_to_date_time@Base 0.3
  maya_util_is_multiday_event@Base 0.3
@@ -127,11 +125,9 @@ libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_string_equal_func@Base 0.3
  maya_util_string_hash_func@Base 0.3
  maya_util_strip_time@Base 0.3
+ maya_util_timezone_from_ical@Base 0.3.1
  maya_util_value_get_css@Base 0.3
  maya_util_value_set_css@Base 0.3
  maya_util_value_take_css@Base 0.3
  maya_util_zip@Base 0.3
  maya_util_zip_date_ranges@Base 0.3
- maya_value_get_threads@Base 0.3
- maya_value_set_threads@Base 0.3
- maya_value_take_threads@Base 0.3
