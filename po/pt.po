@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-17 11:41+0100\n"
-"PO-Revision-Date: 2015-01-19 23:19+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2015-04-18 13:35+0000\n"
+"Last-Translator: dcruz <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-01-20 06:36+0000\n"
-"X-Generator: Launchpad (build 17304)\n"
+"X-Launchpad-Export-Date: 2015-04-19 05:18+0000\n"
+"X-Generator: Launchpad (build 17430)\n"
 "Language: pt\n"
 
 #: ../src/AgendaView.vala:63
@@ -268,171 +268,171 @@ msgstr "Adicionar Exceção"
 
 #: ../src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
-msgstr ""
+msgstr "Cada último Domingo"
 
 #: ../src/EventEdition/RepeatPanel.vala:361
 msgid "Every last Monday"
-msgstr ""
+msgstr "Cada última Segunda-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:364
 msgid "Every last Tuesday"
-msgstr ""
+msgstr "Cada última Terça-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:367
 msgid "Every last Wednesday"
-msgstr ""
+msgstr "Cada última Quarta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:370
 msgid "Every last Thursday"
-msgstr ""
+msgstr "Cada última Quinta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:373
 msgid "Every last Friday"
-msgstr ""
+msgstr "Cada última Sexta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:376
 msgid "Every last Saturday"
-msgstr ""
+msgstr "Cada último Sábado"
 
 #: ../src/EventEdition/RepeatPanel.vala:383
 msgid "Every first Sunday"
-msgstr ""
+msgstr "Cada primeiro Domingo"
 
 #: ../src/EventEdition/RepeatPanel.vala:386
 msgid "Every first Monday"
-msgstr ""
+msgstr "Cada primeira Segunda-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:389
 msgid "Every first Tuesday"
-msgstr ""
+msgstr "Cada primeira Terça-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:392
 msgid "Every first Wednesday"
-msgstr ""
+msgstr "Cada primeira Quarta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:395
 msgid "Every first Thursday"
-msgstr ""
+msgstr "Cada primeira Quinta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:398
 msgid "Every first Friday"
-msgstr ""
+msgstr "Cada primeira Sexta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:401
 msgid "Every first Saturday"
-msgstr ""
+msgstr "Cada primeiro Sábado"
 
 #: ../src/EventEdition/RepeatPanel.vala:408
 msgid "Every second Sunday"
-msgstr ""
+msgstr "Cada segundo Domingo"
 
 #: ../src/EventEdition/RepeatPanel.vala:411
 msgid "Every second Monday"
-msgstr ""
+msgstr "Cada segunda Segunda-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:414
 msgid "Every second Tuesday"
-msgstr ""
+msgstr "Cada segunda Terça-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:417
 msgid "Every second Wednesday"
-msgstr ""
+msgstr "Cada segunda Quarta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:420
 msgid "Every second Thursday"
-msgstr ""
+msgstr "Cada segunda Quinta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:423
 msgid "Every second Friday"
-msgstr ""
+msgstr "Cada segunda Sexta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:426
 msgid "Every second Saturday"
-msgstr ""
+msgstr "Cada segundo Sábado"
 
 #: ../src/EventEdition/RepeatPanel.vala:433
 msgid "Every third Sunday"
-msgstr ""
+msgstr "Cada terceiro Domingo"
 
 #: ../src/EventEdition/RepeatPanel.vala:436
 msgid "Every third Monday"
-msgstr ""
+msgstr "Cada terceira Segunda-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:439
 msgid "Every third Tuesday"
-msgstr ""
+msgstr "Cada terceira Terça-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:442
 msgid "Every third Wednesday"
-msgstr ""
+msgstr "Cada terceira Quarta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:445
 msgid "Every third Thursday"
-msgstr ""
+msgstr "Cada terceira Quinta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:448
 msgid "Every third Friday"
-msgstr ""
+msgstr "Cada terceira Sexta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:451
 msgid "Every third Saturday"
-msgstr ""
+msgstr "Cada terceiro Sábado"
 
 #: ../src/EventEdition/RepeatPanel.vala:458
 msgid "Every fourth Sunday"
-msgstr ""
+msgstr "Cada quarto Domingo"
 
 #: ../src/EventEdition/RepeatPanel.vala:461
 msgid "Every fourth Monday"
-msgstr ""
+msgstr "Cada quarta Segunda-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:464
 msgid "Every fourth Tuesday"
-msgstr ""
+msgstr "Cada quarta Terça-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:467
 msgid "Every fourth Wednesday"
-msgstr ""
+msgstr "Cada quarta Quarta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:470
 msgid "Every fourth Thursday"
-msgstr ""
+msgstr "Cada quarta Quinta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:473
 msgid "Every fourth Friday"
-msgstr ""
+msgstr "Cada quarta Sexta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:476
 msgid "Every fourth Saturday"
-msgstr ""
+msgstr "Cada quarto Sábado"
 
 #: ../src/EventEdition/RepeatPanel.vala:483
 msgid "Every fifth Sunday"
-msgstr ""
+msgstr "Cada quinto Domingo"
 
 #: ../src/EventEdition/RepeatPanel.vala:486
 msgid "Every fifth Monday"
-msgstr ""
+msgstr "Cada quinta Segunda-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:489
 msgid "Every fifth Tuesday"
-msgstr ""
+msgstr "Cada quinta Terça-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:492
 msgid "Every fifth Wednesday"
-msgstr ""
+msgstr "Cada quinta Quarta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:495
 msgid "Every fifth Thursday"
-msgstr ""
+msgstr "Cada quinta Quinta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:498
 msgid "Every fifth Friday"
-msgstr ""
+msgstr "Cada quinta Sexta-feira"
 
 #: ../src/EventEdition/RepeatPanel.vala:501
 msgid "Every fifth Saturday"
-msgstr ""
+msgstr "Cada quinto Sábado"
 
 #: ../src/EventEdition/RepeatPanel.vala:511
 msgid "Mon"
@@ -650,16 +650,21 @@ msgstr "Exportar ou partilhar o calendário pré-definido"
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Andre https://launchpad.net/~f-andre-92-\n"
 "  Bruno Casali https://launchpad.net/~brunoocasali\n"
 "  David Gomes https://launchpad.net/~davidgomes\n"
+"  Duarte Botelho https://launchpad.net/~brigadinhos\n"
+"  Ivo Gonçalves https://launchpad.net/~ivogonzalvez\n"
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
 "  José Carvalho https://launchpad.net/~jmmcarv\n"
 "  Karl Prieb https://launchpad.net/~prieb\n"
 "  Laurentino https://launchpad.net/~laurentinolopes\n"
+"  Luis Neves https://launchpad.net/~luisjneves\n"
 "  Paulo Truta https://launchpad.net/~pinheirotruta5\n"
 "  Pedro Monteiro https://launchpad.net/~pedro.monteiro\n"
 "  Sérgio Marques https://launchpad.net/~sergio+marques\n"
 "  Toupas https://launchpad.net/~dev-tiago\n"
+"  dcruz https://launchpad.net/~devel-david\n"
 "  igorazevedo https://launchpad.net/~igor-azevedo\n"
 "  yEdubart https://launchpad.net/~vps1992"
 
