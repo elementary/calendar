@@ -8,11 +8,16 @@ sudo apt-get build-dep maya
 DEPENDENCIES
 --------------------------------------------------------------------------------
 cmake (>= 2.8)
+libchamplain-0.12-dev
+libchamplain-gtk-0.12-dev
+libclutter-1.0-dev
 libecal1.2-dev (>= 3.8.0)
-libgee-dev
+libfolks-dev
+libgee-0.8-dev
+libgeocode-glib-dev
 libglib2.0-dev (>= 2.29.0)
-libgranite-dev
-libgtk-3-dev
+libgranite-dev (>= 0.3.0)
+libgtk-3-dev (>= 3.11.6)
 libical-dev
-libpeas-dev
-valac (>= 0.18)
+libnotify-dev
+valac (>= 0.26.0)
