@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-03-20 04:58+0000\n"
-"X-Generator: Launchpad (build 17405)\n"
+"X-Launchpad-Export-Date: 2015-05-15 05:19+0000\n"
+"X-Generator: Launchpad (build 17493)\n"
 "Language: \n"
 
 #: ../src/AgendaView.vala:63
@@ -161,7 +161,7 @@ msgstr "位置："
 
 #: ../src/EventEdition/LocationPanel.vala:46
 msgid "John Smith OR Example St."
-msgstr "地名 或 街道名称"
+msgstr "地点或街道名称"
 
 #: ../src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -654,7 +654,8 @@ msgstr ""
 "  Li Shiyi https://launchpad.net/~li3shiyi\n"
 "  Wang Dianjin https://launchpad.net/~tuhaihe\n"
 "  Yangyu Huang https://launchpad.net/~yangyu-huang\n"
-"  colindemian https://launchpad.net/~dengmengpc"
+"  colindemian https://launchpad.net/~dengmengpc\n"
+"  鸿盟-行道树 https://launchpad.net/~hongsuda"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"

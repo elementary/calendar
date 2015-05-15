@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-03-22 05:17+0000\n"
-"X-Generator: Launchpad (build 17405)\n"
+"X-Launchpad-Export-Date: 2015-05-15 05:17+0000\n"
+"X-Generator: Launchpad (build 17493)\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -707,3 +707,42 @@ msgstr "%e %b %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
+
+#~ msgid "Every first %s"
+#~ msgstr "Ç'do të %s të parë"
+
+#~ msgid "Every second %s"
+#~ msgstr "Ç'do të %s të dytë"
+
+#~ msgid "Saturday"
+#~ msgstr "E shtunë"
+
+#~ msgid "Wednesday"
+#~ msgstr "E mërkurë"
+
+#~ msgid "Tuesday"
+#~ msgstr "E martë"
+
+#~ msgid "Friday"
+#~ msgstr "E premte"
+
+#~ msgid "Thursday"
+#~ msgstr "E enjte"
+
+#~ msgid "Monday"
+#~ msgstr "E hënë"
+
+#~ msgid "Sunday"
+#~ msgstr "E djelë"
+
+#~ msgid "Every third %s"
+#~ msgstr "Ç'do të %s të tretë"
+
+#~ msgid "Every fifth %s"
+#~ msgstr "Ç'do %s të pestë"
+
+#~ msgid "Every last %s"
+#~ msgstr "Ç'do të %s të fundit"
+
+#~ msgid "Every fourth %s"
+#~ msgstr "Ç'do %s të katërt"
