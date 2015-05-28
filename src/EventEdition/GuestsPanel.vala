@@ -252,12 +252,12 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         var mail = attendee.get_attendee ().replace ("mailto:", "");
 
         name_label = new Gtk.Label ("");
-        name_label.xalign = 0;
+        ((Gtk.Misc) name_label).xalign = 0.0f;
         set_name_label (mail.split ("@", 2)[0]);
 
         mail_label = new Gtk.Label ("");
         mail_label.hexpand = true;
-        mail_label.xalign = 0;
+        ((Gtk.Misc) mail_label).xalign = 0.0f;
         set_mail_label (mail);
 
         var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);

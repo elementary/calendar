@@ -67,7 +67,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
 
         // Name
         var name_label = new Gtk.Label (_("Name:"));
-        name_label.xalign = 1;
+        ((Gtk.Misc) name_label).xalign = 1.0f;
         name_entry = new Gtk.Entry ();
         name_entry.placeholder_text = _("Calendar Name");
         name_entry.changed.connect (() => {check_can_validate ();});
@@ -93,7 +93,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         });
 
         var type_label = new Gtk.Label (_("Type:"));
-        type_label.xalign = 1;
+        ((Gtk.Misc) type_label).xalign = 1.0f;
 
         Gtk.TreeIter iter;
         var backends_manager = BackendsManager.get_default ();
@@ -116,7 +116,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         rgba.blue = 0.70;
         rgba.alpha = 1;
         var color_label = new Gtk.Label (_("Color:"));
-        color_label.xalign = 1;
+        ((Gtk.Misc) color_label).xalign = 1.0f;
         color_button = new Gtk.ColorButton.with_rgba (rgba);
         color_button.use_alpha = false;
 

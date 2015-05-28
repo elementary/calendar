@@ -39,7 +39,7 @@ namespace Maya.DefaultPlacementWidgets {
         var collection = new Gee.LinkedList<Maya.PlacementWidget> ();
         var user_label = new PlacementWidget ();
         user_label.widget = new Gtk.Label (_("User:"));
-        ((Gtk.Label) user_label.widget).xalign = 1;
+        ((Gtk.Misc) user_label.widget).xalign = 1.0f;
         user_label.row = row;
         user_label.column = 0;
         user_label.ref_name = "user_label";
@@ -61,7 +61,7 @@ namespace Maya.DefaultPlacementWidgets {
         var collection = new Gee.LinkedList<Maya.PlacementWidget> ();
         var user_label = new PlacementWidget ();
         user_label.widget = new Gtk.Label (_("Email:"));
-        ((Gtk.Label) user_label.widget).xalign = 1;
+        ((Gtk.Misc) user_label.widget).xalign = 1.0f;
         user_label.row = row;
         user_label.column = 0;
         user_label.ref_name = "email_label";

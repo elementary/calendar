@@ -49,7 +49,7 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
         calendar_name_label = new Gtk.Label (source.dup_display_name ());
-        calendar_name_label.xalign = 0;
+        ((Gtk.Misc) calendar_name_label).xalign = 0.0f;
         calendar_name_label.hexpand = true;
 
         label = source.dup_display_name ();
@@ -141,7 +141,7 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
 
         var message_label = new Gtk.Label (_("Calendar \"%s\" removed.").printf (source.display_name));
         message_label.hexpand = true;
-        message_label.xalign = 0;
+        ((Gtk.Misc) message_label).xalign = 0.0f;
         info_grid.attach (message_label, 0, 0, 1, 1);
         info_grid.attach (undo_button, 1, 0, 1, 1);
         info_grid.attach (close_button, 2, 0, 1, 1);
@@ -194,7 +194,7 @@ public class Maya.View.SourceItemHeader : Gtk.ListBoxRow {
         this.label = label;
         var header_label = new Gtk.Label (label);
         header_label.get_style_context ().add_class ("h4");
-        header_label.xalign = 0;
+        ((Gtk.Misc) header_label).xalign = 0.0f;
         header_label.hexpand = true;
         add (header_label);
     }

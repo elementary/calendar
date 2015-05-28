@@ -57,7 +57,7 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         var url_label = new PlacementWidget ();
         url_label.widget = new Gtk.Label (_("URL:"));
         ((Gtk.Label) url_label.widget).expand = true;
-        ((Gtk.Label) url_label.widget).xalign = 1;
+        ((Gtk.Misc) url_label.widget).xalign = 1.0f;
         url_label.row = 1;
         url_label.column = 0;
         url_label.ref_name = "url_label";

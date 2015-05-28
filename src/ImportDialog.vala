@@ -45,7 +45,7 @@ public class Maya.View.ImportDialog : Gtk.Dialog {
         }
 
         import_label.wrap = true;
-        import_label.xalign = 0;
+        ((Gtk.Misc) import_label).xalign = 0.0f;
 
         calchooser_button = new Widgets.CalendarButton ();
         var expander_grid = new Gtk.Grid ();

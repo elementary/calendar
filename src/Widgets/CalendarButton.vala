@@ -167,7 +167,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
 
             calendar_color_label = new Gtk.Label ("  ");
             calendar_name_label = new Gtk.Label ("");
-            calendar_name_label.xalign = 0;
+            ((Gtk.Misc) calendar_name_label).xalign = 0.0f;
             calendar_name_label.hexpand = true;
             calendar_name_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
 

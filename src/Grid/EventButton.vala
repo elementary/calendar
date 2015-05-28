@@ -83,7 +83,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
         internal_grid.attach (label, 1, 0, 1, 1);
         label.hexpand = true;
         label.wrap = false;
-        label.xalign = 0;
+        ((Gtk.Misc) label).xalign = 0.0f;
         label.show ();
 
         E.Source source = comp.get_data ("source");
