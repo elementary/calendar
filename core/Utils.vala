@@ -120,6 +120,7 @@ namespace Maya.Util {
 
         var start = ical_to_date_time (comp.get_dtstart ());
         var end = ical_to_date_time (comp.get_dtend ());
+        if (end == null) end = start;
 
         // All days events are stored in UTC time and should only being shown at one day.
         bool allday = is_the_all_day (start, end);
