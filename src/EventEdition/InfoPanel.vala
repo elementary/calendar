@@ -145,14 +145,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         }
 
         // First, clear the comments
-        int count = comp.count_properties (iCal.PropertyKind.COMMENT);
+        int count = comp.count_properties (iCal.PropertyKind.DESCRIPTION);
         for (int i = 0; i < count; i++) {
             unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.COMMENT);
             comp.remove_property (remove_prop);
         }
 
         // Add the comment
-        var property = new iCal.Property (iCal.PropertyKind.COMMENT);
+        var property = new iCal.Property (iCal.PropertyKind.DESCRIPTION);
         property.set_comment (comment_textview.get_buffer ().text);
         comp.add_property (property);
 
@@ -207,7 +207,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
                 }
             }
 
-            unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.COMMENT);
+            unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.DESCRIPTION);
             if (property != null) {
                 Gtk.TextBuffer buffer = new Gtk.TextBuffer (null);
                 buffer.text = property.get_comment ();
