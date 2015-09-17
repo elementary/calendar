@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-02-09 19:36+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
+"Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:38+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: ms\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -191,37 +191,33 @@ msgid "Every:"
 msgstr "Setiap"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "Hari"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Hari"
+msgid_plural "Days"
+msgstr[0] "Hari"
+msgstr[1] "Hari"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "Minggu"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Minggu"
+msgid_plural "Weeks"
+msgstr[0] "Minggu"
+msgstr[1] "Minggu"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "Bulan"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Bulan"
+msgid_plural "Months"
+msgstr[0] "Bulan"
+msgstr[1] "Bulan"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "Tahun"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Tahun"
+msgid_plural "Years"
+msgstr[0] "Tahun"
+msgstr[1] "Tahun"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -711,6 +707,18 @@ msgstr "%B %e, %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
+
+#~ msgid "Days"
+#~ msgstr "Hari"
+
+#~ msgid "Weeks"
+#~ msgstr "Minggu"
+
+#~ msgid "Months"
+#~ msgstr "Bulan"
+
+#~ msgid "Years"
+#~ msgstr "Tahun"
 
 #~ msgid "Contacts"
 #~ msgstr "Kenalan"

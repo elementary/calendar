@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-01-19 23:21+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Hebrew <he@li.org>\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:38+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: he\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -189,37 +189,33 @@ msgid "Every:"
 msgstr "כל:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "יום"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "ימים"
+msgid_plural "Days"
+msgstr[0] "יום"
+msgstr[1] "יום"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "שבוע"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "שבועות"
+msgid_plural "Weeks"
+msgstr[0] "שבוע"
+msgstr[1] "שבוע"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "חודש"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "חודשים"
+msgid_plural "Months"
+msgstr[0] "חודש"
+msgstr[1] "חודש"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "שנה"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "שנים"
+msgid_plural "Years"
+msgstr[0] "שנה"
+msgstr[1] "שנה"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -711,6 +707,18 @@ msgstr "%e ב%B,‏ %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, ה־%d ב%b"
+
+#~ msgid "Days"
+#~ msgstr "ימים"
+
+#~ msgid "Weeks"
+#~ msgstr "שבועות"
+
+#~ msgid "Months"
+#~ msgstr "חודשים"
+
+#~ msgid "Years"
+#~ msgstr "שנים"
 
 #~ msgid "at"
 #~ msgstr "ב־"

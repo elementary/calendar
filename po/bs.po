@@ -11,14 +11,14 @@ msgstr ""
 "PO-Revision-Date: 2015-01-19 23:28+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:38+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: bs\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -192,37 +192,37 @@ msgid "Every:"
 msgstr "Svakih:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "Dan"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Dana"
+msgid_plural "Days"
+msgstr[0] "Dan"
+msgstr[1] "Dan"
+msgstr[2] "Dan"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "Sedmica"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Sedmica"
+msgid_plural "Weeks"
+msgstr[0] "Sedmica"
+msgstr[1] "Sedmica"
+msgstr[2] "Sedmica"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "Mjesec"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Mjeseci"
+msgid_plural "Months"
+msgstr[0] "Mjesec"
+msgstr[1] "Mjesec"
+msgstr[2] "Mjesec"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "Godina"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Godine"
+msgid_plural "Years"
+msgstr[0] "Godina"
+msgstr[1] "Godina"
+msgstr[2] "Godina"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -711,6 +711,18 @@ msgstr "%B %e, %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
+
+#~ msgid "Days"
+#~ msgstr "Dana"
+
+#~ msgid "Weeks"
+#~ msgstr "Sedmica"
+
+#~ msgid "Months"
+#~ msgstr "Mjeseci"
+
+#~ msgid "Years"
+#~ msgstr "Godine"
 
 #~ msgid "Contacts"
 #~ msgstr "Kontakti"

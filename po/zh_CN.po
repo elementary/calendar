@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-05-15 10:59+0000\n"
 "Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:39+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: \n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -188,37 +188,29 @@ msgid "Every:"
 msgstr "每："
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "天"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "天"
+msgid_plural "Days"
+msgstr[0] "天"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "周"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "周"
+msgid_plural "Weeks"
+msgstr[0] "周"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "月"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "月"
+msgid_plural "Months"
+msgstr[0] "月"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "年"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "年"
+msgid_plural "Years"
+msgstr[0] "年"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -712,6 +704,18 @@ msgstr "%Y年 %B%e日"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%b%d日 周%A"
+
+#~ msgid "Days"
+#~ msgstr "天"
+
+#~ msgid "Weeks"
+#~ msgstr "周"
+
+#~ msgid "Months"
+#~ msgstr "月"
+
+#~ msgid "Years"
+#~ msgstr "年"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"

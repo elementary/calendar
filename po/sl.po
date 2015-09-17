@@ -11,21 +11,20 @@ msgstr ""
 "PO-Revision-Date: 2015-01-19 23:27+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
-"n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:39+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: sl\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr ""
-"Ko boste izbrali ustrezen datum, bodo tukaj prikazani bližnji dogodki."
+msgstr "Ko boste izbrali ustrezen datum, bodo tukaj prikazani bližnji dogodki."
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
@@ -193,37 +192,41 @@ msgid "Every:"
 msgstr "Vsak:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "dan"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "dni"
+msgid_plural "Days"
+msgstr[0] "dan"
+msgstr[1] "dan"
+msgstr[2] "dan"
+msgstr[3] "dan"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "teden"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "tedni"
+msgid_plural "Weeks"
+msgstr[0] "teden"
+msgstr[1] "teden"
+msgstr[2] "teden"
+msgstr[3] "teden"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "mesec"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "meseci"
+msgid_plural "Months"
+msgstr[0] "mesec"
+msgstr[1] "mesec"
+msgstr[2] "mesec"
+msgstr[3] "mesec"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "leto"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "leta"
+msgid_plural "Years"
+msgstr[0] "leto"
+msgstr[1] "leto"
+msgstr[2] "leto"
+msgstr[3] "leto"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -713,6 +716,18 @@ msgstr "%e. %B %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %k. %b"
+
+#~ msgid "Days"
+#~ msgstr "dni"
+
+#~ msgid "Weeks"
+#~ msgstr "tedni"
+
+#~ msgid "Months"
+#~ msgstr "meseci"
+
+#~ msgid "Years"
+#~ msgstr "leta"
 
 #~ msgid "at"
 #~ msgstr "ob"

@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-04-13 13:58+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:39+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: sv\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -190,37 +190,33 @@ msgid "Every:"
 msgstr "Varje:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "Dag"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Dagar"
+msgid_plural "Days"
+msgstr[0] "Dag"
+msgstr[1] "Dag"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "Vecka"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Veckor"
+msgid_plural "Weeks"
+msgstr[0] "Vecka"
+msgstr[1] "Vecka"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "Månad"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Månader"
+msgid_plural "Months"
+msgstr[0] "Månad"
+msgstr[1] "Månad"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "År"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "År"
+msgid_plural "Years"
+msgstr[0] "År"
+msgstr[1] "År"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -722,6 +718,18 @@ msgstr "%B %e, %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
+
+#~ msgid "Days"
+#~ msgstr "Dagar"
+
+#~ msgid "Weeks"
+#~ msgstr "Veckor"
+
+#~ msgid "Months"
+#~ msgstr "Månader"
+
+#~ msgid "Years"
+#~ msgstr "År"
 
 #~ msgid "Comments"
 #~ msgstr "Kommentarer"

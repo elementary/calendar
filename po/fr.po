@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-01-19 22:59+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:38+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: fr\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -67,10 +67,8 @@ msgstr "Importer les événements de \"%s\" dans le calendrier suivant :"
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] ""
-"Importer les événements de %s fichier dans le calendrier suivant :"
-msgstr[1] ""
-"Importer les événements de %s fichiers dans le calendrier suivant :"
+msgstr[0] "Importer les événements de %s fichier dans le calendrier suivant :"
+msgstr[1] "Importer les événements de %s fichiers dans le calendrier suivant :"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
@@ -193,37 +191,33 @@ msgid "Every:"
 msgstr "Fréquence :"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "jour"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "jours"
+msgid_plural "Days"
+msgstr[0] "jour"
+msgstr[1] "jour"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "semaine"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "semaines"
+msgid_plural "Weeks"
+msgstr[0] "semaine"
+msgstr[1] "semaine"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "mois"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "mois"
+msgid_plural "Months"
+msgstr[0] "mois"
+msgstr[1] "mois"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "année"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "années"
+msgid_plural "Years"
+msgstr[0] "année"
+msgstr[1] "année"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -715,6 +709,18 @@ msgstr "%e %B %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A %d %b"
+
+#~ msgid "Days"
+#~ msgstr "jours"
+
+#~ msgid "Weeks"
+#~ msgstr "semaines"
+
+#~ msgid "Months"
+#~ msgstr "mois"
+
+#~ msgid "Years"
+#~ msgstr "années"
 
 #~ msgid "at"
 #~ msgstr "à"

@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-08-20 09:09+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2015-08-21 05:22+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
-"Language: hu\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -191,37 +191,33 @@ msgid "Every:"
 msgstr "Minden:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "Nap"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Nap"
+msgid_plural "Days"
+msgstr[0] "Nap"
+msgstr[1] "Nap"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "Hét"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Hét"
+msgid_plural "Weeks"
+msgstr[0] "Hét"
+msgstr[1] "Hét"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "Hónap"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Hónap"
+msgid_plural "Months"
+msgstr[0] "Hónap"
+msgstr[1] "Hónap"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "Év"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Év"
+msgid_plural "Years"
+msgstr[0] "Év"
+msgstr[1] "Év"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -718,6 +714,18 @@ msgstr "%Y. %b. %e."
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
+
+#~ msgid "Days"
+#~ msgstr "Nap"
+
+#~ msgid "Weeks"
+#~ msgstr "Hét"
+
+#~ msgid "Months"
+#~ msgstr "Hónap"
+
+#~ msgid "Years"
+#~ msgstr "Év"
 
 #~ msgid "%l:%M %p"
 #~ msgstr "%k.%M"

@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-02-23 13:31+0000\n"
 "Last-Translator: Andi Chandler <Unknown>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:39+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: \n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -191,37 +191,33 @@ msgid "Every:"
 msgstr "Every:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "Day"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Days"
+msgid_plural "Days"
+msgstr[0] "Day"
+msgstr[1] "Day"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "Week"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Weeks"
+msgid_plural "Weeks"
+msgstr[0] "Week"
+msgstr[1] "Week"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "Month"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Months"
+msgid_plural "Months"
+msgstr[0] "Month"
+msgstr[1] "Month"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "Year"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Years"
+msgid_plural "Years"
+msgstr[0] "Year"
+msgstr[1] "Year"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -710,6 +706,18 @@ msgstr "%-d %B, %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %d %b"
+
+#~ msgid "Days"
+#~ msgstr "Days"
+
+#~ msgid "Weeks"
+#~ msgstr "Weeks"
+
+#~ msgid "Months"
+#~ msgstr "Months"
+
+#~ msgid "Years"
+#~ msgstr "Years"
 
 #~ msgid "at"
 #~ msgstr "at"

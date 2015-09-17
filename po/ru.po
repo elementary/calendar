@@ -11,14 +11,14 @@ msgstr ""
 "PO-Revision-Date: 2015-09-05 09:02+0000\n"
 "Last-Translator: Artem Anufrij <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2015-09-06 05:39+0000\n"
 "X-Generator: Launchpad (build 17706)\n"
-"Language: ru\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -194,36 +194,32 @@ msgstr "Каждый:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
-msgstr "День"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Дни"
+msgid_plural "Days"
+msgstr[0] "День"
+msgstr[1] "Дня"
+msgstr[2] "Дней"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
-msgstr "Неделя"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Недели"
+msgid_plural "Weeks"
+msgstr[0] "Неделя"
+msgstr[1] "Недели"
+msgstr[2] "Недель"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
-msgstr "Месяц"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Месяцы"
+msgid_plural "Months"
+msgstr[0] "Месяц"
+msgstr[1] "Месяца"
+msgstr[2] "Месяцев"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
-msgstr "Год"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Года"
+msgid_plural "Years"
+msgstr[0] "Год"
+msgstr[1] "Года"
+msgstr[2] "Лет"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"

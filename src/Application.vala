@@ -102,6 +102,8 @@ namespace Maya {
             };
             about_translators = _("translator-credits");
             about_license_type = Gtk.License.GPL_3_0;
+            Intl.setlocale (LocaleCategory.ALL, "");
+            Intl.textdomain (Build.GETTEXT_PACKAGE);
         }
 
         public static const OptionEntry[] app_options = {

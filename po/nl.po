@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-02-10 21:17+0000\n"
 "Last-Translator: Joost-fock <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:38+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: nl\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -68,8 +68,7 @@ msgstr "Importeer gebeurtenissen van \"%s\" in de volgende kalender:"
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
 msgstr[0] "Importeer gebeurtenissen van %d bestand in de volgende kalender:"
-msgstr[1] ""
-"Importeer gebeurtenissen van %d bestanden in de volgende kalender:"
+msgstr[1] "Importeer gebeurtenissen van %d bestanden in de volgende kalender:"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
@@ -192,37 +191,33 @@ msgid "Every:"
 msgstr "Elke:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "Dag"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Dagen"
+msgid_plural "Days"
+msgstr[0] "Dag"
+msgstr[1] "Dag"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "Week"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Weken"
+msgid_plural "Weeks"
+msgstr[0] "Week"
+msgstr[1] "Week"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "Maand"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Maanden"
+msgid_plural "Months"
+msgstr[0] "Maand"
+msgstr[1] "Maand"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "Jaar"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Jaren"
+msgid_plural "Years"
+msgstr[0] "Jaar"
+msgstr[1] "Jaar"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -721,6 +716,18 @@ msgstr "%B %e, %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %b, %d"
+
+#~ msgid "Days"
+#~ msgstr "Dagen"
+
+#~ msgid "Weeks"
+#~ msgstr "Weken"
+
+#~ msgid "Months"
+#~ msgstr "Maanden"
+
+#~ msgid "Years"
+#~ msgstr "Jaren"
 
 #~ msgid "%l:%M %p"
 #~ msgstr "%l:%M %p"

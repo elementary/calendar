@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-05-15 11:01+0000\n"
 "Last-Translator: iakovos athanasiadhs <liam21iakovos@gmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:38+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: el\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -191,37 +191,33 @@ msgid "Every:"
 msgstr "Κάθε:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "Ημέρα"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Ημέρες"
+msgid_plural "Days"
+msgstr[0] "Ημέρα"
+msgstr[1] "Ημέρα"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "Εβδομάδα"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Εβδομάδες"
+msgid_plural "Weeks"
+msgstr[0] "Εβδομάδα"
+msgstr[1] "Εβδομάδα"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "Μήνα"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Μήνες"
+msgid_plural "Months"
+msgstr[0] "Μήνα"
+msgstr[1] "Μήνα"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "Έτος"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Έτη"
+msgid_plural "Years"
+msgstr[0] "Έτος"
+msgstr[1] "Έτος"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -718,6 +714,18 @@ msgstr "%b %e %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
+
+#~ msgid "Days"
+#~ msgstr "Ημέρες"
+
+#~ msgid "Weeks"
+#~ msgstr "Εβδομάδες"
+
+#~ msgid "Months"
+#~ msgstr "Μήνες"
+
+#~ msgid "Years"
+#~ msgstr "Έτη"
 
 #~ msgid "Name or Email Address"
 #~ msgstr "Όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"

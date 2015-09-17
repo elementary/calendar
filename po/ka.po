@@ -6,6 +6,7 @@ msgstr ""
 "PO-Revision-Date: 2015-01-19 23:26+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -185,37 +186,29 @@ msgid "Every:"
 msgstr "ყველა:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "დღე"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "დღეები"
+msgid_plural "Days"
+msgstr[0] "დღე"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "კვირა"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr ""
+msgid_plural "Weeks"
+msgstr[0] "კვირა"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "თვე"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "თვეები"
+msgid_plural "Months"
+msgstr[0] "თვე"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "წელი"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "წლები"
+msgid_plural "Years"
+msgstr[0] "წელი"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -702,6 +695,15 @@ msgstr ""
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr ""
+
+#~ msgid "Days"
+#~ msgstr "დღეები"
+
+#~ msgid "Months"
+#~ msgstr "თვეები"
+
+#~ msgid "Years"
+#~ msgstr "წლები"
 
 #~ msgid "Every last %s"
 #~ msgstr "ყველა ბოლო %s"

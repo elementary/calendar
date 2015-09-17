@@ -6,6 +6,7 @@ msgstr ""
 "PO-Revision-Date: 2015-01-19 23:17+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -183,37 +184,33 @@ msgid "Every:"
 msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "Biejjie"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Biejjieh"
+msgid_plural "Days"
+msgstr[0] "Biejjie"
+msgstr[1] "Biejjie"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "Våhkoe"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Våhkoeh"
+msgid_plural "Weeks"
+msgstr[0] "Våhkoe"
+msgstr[1] "Våhkoe"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "Aske"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Askeh"
+msgid_plural "Months"
+msgstr[0] "Aske"
+msgstr[1] "Aske"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "Jaepie"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Jaepieh"
+msgid_plural "Years"
+msgstr[0] "Jaepie"
+msgstr[1] "Jaepie"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -700,6 +697,18 @@ msgstr ""
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %b%d"
+
+#~ msgid "Days"
+#~ msgstr "Biejjieh"
+
+#~ msgid "Weeks"
+#~ msgstr "Våhkoeh"
+
+#~ msgid "Months"
+#~ msgstr "Askeh"
+
+#~ msgid "Years"
+#~ msgstr "Jaepieh"
 
 #~ msgid "Wednesday"
 #~ msgstr "Gaske-våhkoe"

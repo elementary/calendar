@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-01-19 23:22+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Armenian <hy@li.org>\n"
+"Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:37+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: hy\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -191,37 +191,29 @@ msgid "Every:"
 msgstr "Յուրաքանչյուր"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "Օր"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Օրեր"
+msgid_plural "Days"
+msgstr[0] "Օր"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "Շաբաթ"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Շաբաթ"
+msgid_plural "Weeks"
+msgstr[0] "Շաբաթ"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "Ամիս"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Ամիսներ"
+msgid_plural "Months"
+msgstr[0] "Ամիս"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "Տարի"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Տարիներ"
+msgid_plural "Years"
+msgstr[0] "Տարի"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -710,6 +702,18 @@ msgstr "%B %e, %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
+
+#~ msgid "Days"
+#~ msgstr "Օրեր"
+
+#~ msgid "Weeks"
+#~ msgstr "Շաբաթ"
+
+#~ msgid "Months"
+#~ msgstr "Ամիսներ"
+
+#~ msgid "Years"
+#~ msgstr "Տարիներ"
 
 #~ msgid "%l:%M %p"
 #~ msgstr "%l:%M %p"

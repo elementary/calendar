@@ -6,6 +6,7 @@ msgstr ""
 "PO-Revision-Date: 2015-06-15 11:49+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -185,37 +186,33 @@ msgid "Every:"
 msgstr "На секои:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "Ден"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Денови"
+msgid_plural "Days"
+msgstr[0] "Ден"
+msgstr[1] "Ден"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "Недела"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Недели"
+msgid_plural "Weeks"
+msgstr[0] "Недела"
+msgstr[1] "Недела"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "Месец"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Месеци"
+msgid_plural "Months"
+msgstr[0] "Месец"
+msgstr[1] "Месец"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "Година"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Години"
+msgid_plural "Years"
+msgstr[0] "Година"
+msgstr[1] "Година"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -702,3 +699,15 @@ msgstr ""
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr ""
+
+#~ msgid "Days"
+#~ msgstr "Денови"
+
+#~ msgid "Weeks"
+#~ msgstr "Недели"
+
+#~ msgid "Months"
+#~ msgstr "Месеци"
+
+#~ msgid "Years"
+#~ msgstr "Години"

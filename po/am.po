@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-02-01 18:11+0000\n"
 "Last-Translator: samson <Unknown>\n"
 "Language-Team: Amharic <am@li.org>\n"
+"Language: am\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:37+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: am\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -190,36 +190,28 @@ msgstr "በየ:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
-msgstr "ቀን"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "ቀኖች"
+msgid_plural "Days"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
-msgstr "ሳምንት"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "ሳምንቶች"
+msgid_plural "Weeks"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
-msgstr "ወር"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "ወሮች"
+msgid_plural "Months"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
-msgstr "አመት"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "አመቶች"
+msgid_plural "Years"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"

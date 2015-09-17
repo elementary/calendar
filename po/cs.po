@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-07-25 14:39+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2015-07-26 05:20+0000\n"
 "X-Generator: Launchpad (build 17628)\n"
-"Language: cs\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -190,37 +190,37 @@ msgid "Every:"
 msgstr "Každý"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
+#, fuzzy
 msgid "Day"
-msgstr "Den"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Dnů"
+msgid_plural "Days"
+msgstr[0] "Den"
+msgstr[1] "Den"
+msgstr[2] "Den"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
+#, fuzzy
 msgid "Week"
-msgstr "Týden"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Týdnů"
+msgid_plural "Weeks"
+msgstr[0] "Týden"
+msgstr[1] "Týden"
+msgstr[2] "Týden"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
+#, fuzzy
 msgid "Month"
-msgstr "Měsíc"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Měsíců"
+msgid_plural "Months"
+msgstr[0] "Měsíc"
+msgstr[1] "Měsíc"
+msgstr[2] "Měsíc"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
+#, fuzzy
 msgid "Year"
-msgstr "Rok"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Roků"
+msgid_plural "Years"
+msgstr[0] "Rok"
+msgstr[1] "Rok"
+msgstr[2] "Rok"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -718,6 +718,18 @@ msgstr "%e. %B %Y"
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %d. %B"
+
+#~ msgid "Days"
+#~ msgstr "Dnů"
+
+#~ msgid "Weeks"
+#~ msgstr "Týdnů"
+
+#~ msgid "Months"
+#~ msgstr "Měsíců"
+
+#~ msgid "Years"
+#~ msgstr "Roků"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"

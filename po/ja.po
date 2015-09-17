@@ -11,13 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2015-01-19 23:11+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Launchpad-Export-Date: 2015-06-05 05:38+0000\n"
 "X-Generator: Launchpad (build 17540)\n"
-"Language: ja\n"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -190,36 +190,24 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
-msgstr ""
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr ""
+msgid_plural "Days"
+msgstr[0] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
-msgstr ""
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr ""
+msgid_plural "Weeks"
+msgstr[0] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
-msgstr ""
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr ""
+msgid_plural "Months"
+msgstr[0] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
-msgstr ""
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr ""
+msgid_plural "Years"
+msgstr[0] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"

@@ -189,36 +189,28 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
-msgstr ""
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr ""
+msgid_plural "Days"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
-msgstr ""
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr ""
+msgid_plural "Weeks"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
-msgstr ""
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr ""
+msgid_plural "Months"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
-msgstr ""
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr ""
+msgid_plural "Years"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
