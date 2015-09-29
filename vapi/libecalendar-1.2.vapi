@@ -24,7 +24,7 @@ namespace E {
 		public CalClient (E.Source source, E.CalClientSourceType source_type) throws GLib.Error;
 		public virtual async void connect (E.Source source, E.CalClientSourceType source_type, GLib.Cancellable? cancellable) throws GLib.Error;
 		[CCode (has_construct_function = false, cname = "e_cal_client_connect_sync")]
-		public CalClient.connect_sync (E.Source source, E.CalClientSourceType source_type, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public CalClient.connect_sync (E.Source source, E.CalClientSourceType source_type, int32 wait_for_connected_seconds, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public async bool add_timezone (iCal.TimeZone zone, GLib.Cancellable cancellable) throws GLib.Error;
 		public bool add_timezone_sync (iCal.TimeZone zone, GLib.Cancellable cancellable) throws GLib.Error;
 		public bool check_one_alarm_only ();
