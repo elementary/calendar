@@ -362,7 +362,7 @@ public class Maya.Model.CalendarModel : Object {
         try {
             var cancellable = new GLib.Cancellable ();
             connecting (source, cancellable);
-            var client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS, cancellable);
+            var client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS, 30, cancellable);
             source_client.insert (source.dup_uid (), client);
         } catch (Error e) {
             error_received (e.message);
