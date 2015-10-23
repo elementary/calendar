@@ -108,21 +108,21 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         every_entry.value_changed.connect (() => {
             switch (repeat_combobox.active) {
                 case 0:
-                    every_unit_label.label = ngettext (_("Day"), _("Days"), (ulong)every_entry.value);
+                    every_unit_label.label = ngettext ("Day", "Days", (ulong)every_entry.value);
                     break;
                 case 1:
-                    every_unit_label.label = ngettext (_("Week"), _("Weeks"), (ulong)every_entry.value);
+                    every_unit_label.label = ngettext ("Week", "Weeks", (ulong)every_entry.value);
                     break;
                 case 2:
-                    every_unit_label.label = ngettext (_("Month"), _("Months"), (ulong)every_entry.value);
+                    every_unit_label.label = ngettext ("Month", "Months", (ulong)every_entry.value);
                     break;
                 case 3:
-                    every_unit_label.label = ngettext (_("Year"), _("Years"), (ulong)every_entry.value);
+                    every_unit_label.label = ngettext ("Year", "Years", (ulong)every_entry.value);
                     break;
             }
         });
 
-        every_unit_label = new Gtk.Label (_("Week"));
+        every_unit_label = new Gtk.Label (ngettext ("Week", "Weeks", 1));
 
         var every_grid = new Gtk.Grid ();
         every_grid.row_spacing = 6;
@@ -134,7 +134,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         var ends_label = Maya.View.EventDialog.make_label (_("Ends:"));
 
-        var end_label = new Gtk.Label (ngettext (_("Repeat"), _("Repeats"), 1));
+        var end_label = new Gtk.Label (ngettext ("Repeat", "Repeats", 1));
         end_label.no_show_all = true;
 
         ends_combobox = new Gtk.ComboBoxText ();
@@ -167,7 +167,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         end_entry.no_show_all = true;
         end_entry.hexpand = true;
         end_entry.value_changed.connect (() => {
-            end_label.label = ngettext (_("Repeat"), _("Repeats"), (ulong)end_entry.value);
+            end_label.label = ngettext ("Repeat", "Repeats", (ulong)end_entry.value);
         });
 
         end_datepicker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
