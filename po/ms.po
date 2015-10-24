@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-17 11:41+0100\n"
+"POT-Creation-Date: 2015-10-23 21:37+0200\n"
 "PO-Revision-Date: 2015-02-09 19:36+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
@@ -15,70 +15,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-06-05 05:38+0000\n"
-"X-Generator: Launchpad (build 17540)\n"
+"X-Launchpad-Export-Date: 2015-10-24 05:22+0000\n"
+"X-Generator: Launchpad (build 17812)\n"
 "Language: ms\n"
 
-#: ../src/AgendaView.vala:63
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Acara akan datang anda akan dipaparkan disini sejurus anda memilih tarikh "
-"yang ditandai"
+#: ../src/SourceDialog/SourceSelector.vala:70
+msgid "Add New Calendar…"
+msgstr "Tambah Kalendar Baharu..."
 
-#: ../src/AgendaView.vala:154
-msgid "During the day"
-msgstr "Pada tarikh tersebut"
-
-#: ../src/AgendaView.vala:159
-msgid "All day"
-msgstr "Sepanjang Hari"
-
-#: ../src/AgendaView.vala:337 ../src/SourceDialog/SourceItem.vala:96
-msgid "Edit…"
-msgstr "Sunting..."
-
-#: ../src/AgendaView.vala:338 ../src/SourceDialog/SourceItem.vala:82
+#: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
 msgstr "Buang"
 
-#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:376
-msgid "%s, %s - %s, %s"
-msgstr "%s, %s - %s, %s"
-
-#: ../src/Grid/VAutoHider.vala:100
-msgid "%u more…"
-msgstr "%u lagi..."
-
-#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:69
-msgid "Hide Week Numbers"
-msgstr "Sembunyikan Bilangan Minggu"
-
-#: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:71
-msgid "Show Week Numbers"
-msgstr "Papar Bilangan Minggu"
-
-#: ../src/ImportDialog.vala:42
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "import acara daripada \"%s\" kedalam kalendar"
-
-#: ../src/ImportDialog.vala:44
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "Import acara dari fail %d kedalam kalendar"
-msgstr[1] "Import acara dari semua fail %d kedalam kalendar"
-
-#: ../src/ImportDialog.vala:53
-msgid "Import"
-msgstr "Import"
-
-#: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
-#: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:163
-msgid "Cancel"
-msgstr "Batal"
+#: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
+msgid "Edit…"
+msgstr "Sunting..."
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
@@ -88,9 +39,11 @@ msgstr "Kembali asal"
 msgid "Calendar \"%s\" removed."
 msgstr "Kalendar \"%s\" dibuang."
 
-#: ../src/SourceDialog/SourceSelector.vala:70
-msgid "Add New Calendar…"
-msgstr "Tambah Kalendar Baharu..."
+#: ../src/SourceDialog/SourceDialog.vala:58
+#: ../src/Widgets/ContractorButtonWithMenu.vala:81
+#: ../src/EventEdition/EventDialog.vala:163 ../src/ImportDialog.vala:55
+msgid "Cancel"
+msgstr "Batal"
 
 #: ../src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
@@ -125,29 +78,17 @@ msgstr "Cipta Kalendar"
 msgid "Save"
 msgstr "Simpan"
 
-#: ../src/Translations.vala:5
-msgid "View and schedule events"
-msgstr "Lihat dan jadualkan peristiwa"
+#: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
+msgid "Hide Week Numbers"
+msgstr "Sembunyikan Bilangan Minggu"
 
-#: ../src/Translations.vala:6 ../src/Application.vala:34
-msgid "Calendar"
-msgstr "Kalendar"
+#: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
+msgid "Show Week Numbers"
+msgstr "Papar Bilangan Minggu"
 
-#: ../src/Translations.vala:7
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Maya;Perancang;Tarikh;Hari;Peristiwa;"
-
-#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:64
-msgid "Add Event"
-msgstr "Tambah Peristiwa"
-
-#: ../src/Translations.vala:9
-msgid "About Maya"
-msgstr "Perihal Maya"
-
-#: ../src/Translations.vala:10
-msgid "About Calendar"
-msgstr "Perihal Kalendar"
+#: ../src/Grid/VAutoHider.vala:100
+msgid "%u more…"
+msgstr "%u lagi..."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
@@ -158,13 +99,109 @@ msgstr "Eksport Kalendar..."
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: ../src/EventEdition/LocationPanel.vala:44
-msgid "Location:"
-msgstr "Lokasi:"
+#: ../src/EventEdition/GuestsPanel.vala:48
+msgid "Participants:"
+msgstr "Peserta:"
 
-#: ../src/EventEdition/LocationPanel.vala:46
-msgid "John Smith OR Example St."
-msgstr "John Smith ATAU Contoh St."
+#: ../src/EventEdition/GuestsPanel.vala:53
+msgid "No Participants"
+msgstr "Tiada Peserta"
+
+#: ../src/EventEdition/GuestsPanel.vala:88
+msgid "Invite"
+msgstr "Jemput"
+
+#: ../src/EventEdition/GuestsPanel.vala:236
+msgid "Accepted"
+msgstr "Diterima"
+
+#: ../src/EventEdition/GuestsPanel.vala:239
+msgid "Declined"
+msgstr "Ditolak"
+
+#: ../src/EventEdition/ReminderPanel.vala:33
+msgid "Reminders:"
+msgstr "Peringatan"
+
+#: ../src/EventEdition/ReminderPanel.vala:37
+msgid "No Reminders"
+msgstr "Tiada Peringatan"
+
+#: ../src/EventEdition/ReminderPanel.vala:71
+msgid "Add Reminder"
+msgstr "Tambah Peringatan"
+
+#: ../src/EventEdition/ReminderPanel.vala:182
+msgid "0 minutes"
+msgstr "0 Minit"
+
+#: ../src/EventEdition/ReminderPanel.vala:183
+msgid "1 minutes"
+msgstr "1 Minit"
+
+#: ../src/EventEdition/ReminderPanel.vala:184
+msgid "5 minutes"
+msgstr "5 Minit"
+
+#: ../src/EventEdition/ReminderPanel.vala:185
+msgid "10 minutes"
+msgstr "10 Minit"
+
+#: ../src/EventEdition/ReminderPanel.vala:186
+msgid "15 minutes"
+msgstr "15 minit"
+
+#: ../src/EventEdition/ReminderPanel.vala:187
+msgid "20 minutes"
+msgstr "20 minit"
+
+#: ../src/EventEdition/ReminderPanel.vala:188
+msgid "25 minutes"
+msgstr "25 minit"
+
+#: ../src/EventEdition/ReminderPanel.vala:189
+msgid "30 minutes"
+msgstr "30 minit"
+
+#: ../src/EventEdition/ReminderPanel.vala:190
+msgid "45 minutes"
+msgstr "45 minit"
+
+#: ../src/EventEdition/ReminderPanel.vala:191
+msgid "1 hour"
+msgstr "1 Jam"
+
+#: ../src/EventEdition/ReminderPanel.vala:192
+msgid "2 hours"
+msgstr "2 Jam"
+
+#: ../src/EventEdition/ReminderPanel.vala:193
+msgid "3 hours"
+msgstr "3 Jam"
+
+#: ../src/EventEdition/ReminderPanel.vala:194
+msgid "12 hours"
+msgstr "12 Jam"
+
+#: ../src/EventEdition/ReminderPanel.vala:195
+msgid "24 hours"
+msgstr "24 Jam"
+
+#: ../src/EventEdition/ReminderPanel.vala:196
+msgid "2 days"
+msgstr "2 hari"
+
+#: ../src/EventEdition/ReminderPanel.vala:197
+msgid "1 week"
+msgstr "1 minggu"
+
+#: ../src/EventEdition/ReminderPanel.vala:206
+msgid "Notification"
+msgstr "Notifikasi"
+
+#: ../src/EventEdition/ReminderPanel.vala:207
+msgid "Email"
+msgstr "E-mel"
 
 #: ../src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -192,36 +229,28 @@ msgstr "Setiap"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
-msgstr "Hari"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "Hari"
+msgid_plural "Days"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
-msgstr "Minggu"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "Minggu"
+msgid_plural "Weeks"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
-msgstr "Bulan"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "Bulan"
+msgid_plural "Months"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
-msgstr "Tahun"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "Tahun"
+msgid_plural "Years"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -231,12 +260,9 @@ msgstr "Tamat"
 #: ../src/EventEdition/RepeatPanel.vala:170
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
-msgstr "Ulang"
-
-#: ../src/EventEdition/RepeatPanel.vala:137
-#: ../src/EventEdition/RepeatPanel.vala:170
-msgid "Repeats"
-msgstr "Ulang"
+msgid_plural "Repeats"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
@@ -462,89 +488,9 @@ msgstr "Sab"
 msgid "Sun"
 msgstr "Ahd"
 
-#: ../src/EventEdition/ReminderPanel.vala:33
-msgid "Reminders:"
-msgstr "Peringatan"
-
-#: ../src/EventEdition/ReminderPanel.vala:37
-msgid "No Reminders"
-msgstr "Tiada Peringatan"
-
-#: ../src/EventEdition/ReminderPanel.vala:71
-msgid "Add Reminder"
-msgstr "Tambah Peringatan"
-
-#: ../src/EventEdition/ReminderPanel.vala:182
-msgid "0 minutes"
-msgstr "0 Minit"
-
-#: ../src/EventEdition/ReminderPanel.vala:183
-msgid "1 minutes"
-msgstr "1 Minit"
-
-#: ../src/EventEdition/ReminderPanel.vala:184
-msgid "5 minutes"
-msgstr "5 Minit"
-
-#: ../src/EventEdition/ReminderPanel.vala:185
-msgid "10 minutes"
-msgstr "10 Minit"
-
-#: ../src/EventEdition/ReminderPanel.vala:186
-msgid "15 minutes"
-msgstr "15 minit"
-
-#: ../src/EventEdition/ReminderPanel.vala:187
-msgid "20 minutes"
-msgstr "20 minit"
-
-#: ../src/EventEdition/ReminderPanel.vala:188
-msgid "25 minutes"
-msgstr "25 minit"
-
-#: ../src/EventEdition/ReminderPanel.vala:189
-msgid "30 minutes"
-msgstr "30 minit"
-
-#: ../src/EventEdition/ReminderPanel.vala:190
-msgid "45 minutes"
-msgstr "45 minit"
-
-#: ../src/EventEdition/ReminderPanel.vala:191
-msgid "1 hour"
-msgstr "1 Jam"
-
-#: ../src/EventEdition/ReminderPanel.vala:192
-msgid "2 hours"
-msgstr "2 Jam"
-
-#: ../src/EventEdition/ReminderPanel.vala:193
-msgid "3 hours"
-msgstr "3 Jam"
-
-#: ../src/EventEdition/ReminderPanel.vala:194
-msgid "12 hours"
-msgstr "12 Jam"
-
-#: ../src/EventEdition/ReminderPanel.vala:195
-msgid "24 hours"
-msgstr "24 Jam"
-
-#: ../src/EventEdition/ReminderPanel.vala:196
-msgid "2 days"
-msgstr "2 hari"
-
-#: ../src/EventEdition/ReminderPanel.vala:197
-msgid "1 week"
-msgstr "1 minggu"
-
-#: ../src/EventEdition/ReminderPanel.vala:206
-msgid "Notification"
-msgstr "Notifikasi"
-
-#: ../src/EventEdition/ReminderPanel.vala:207
-msgid "Email"
-msgstr "E-mel"
+#: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
+msgid "Add Event"
+msgstr "Tambah Peristiwa"
 
 #: ../src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
@@ -578,25 +524,13 @@ msgstr "Cipta Peristiwa"
 msgid "Save Changes"
 msgstr "Simpan Perubahan"
 
-#: ../src/EventEdition/GuestsPanel.vala:48
-msgid "Participants:"
-msgstr "Peserta:"
+#: ../src/EventEdition/LocationPanel.vala:44
+msgid "Location:"
+msgstr "Lokasi:"
 
-#: ../src/EventEdition/GuestsPanel.vala:53
-msgid "No Participants"
-msgstr "Tiada Peserta"
-
-#: ../src/EventEdition/GuestsPanel.vala:88
-msgid "Invite"
-msgstr "Jemput"
-
-#: ../src/EventEdition/GuestsPanel.vala:236
-msgid "Accepted"
-msgstr "Diterima"
-
-#: ../src/EventEdition/GuestsPanel.vala:239
-msgid "Declined"
-msgstr "Ditolak"
+#: ../src/EventEdition/LocationPanel.vala:46
+msgid "John Smith OR Example St."
+msgstr "John Smith ATAU Contoh St."
 
 #: ../src/EventEdition/InfoPanel.vala:44
 msgid "From:"
@@ -626,6 +560,41 @@ msgstr "Kalendar:"
 msgid "Comments:"
 msgstr "Komen:"
 
+#: ../src/AgendaView.vala:63
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Acara akan datang anda akan dipaparkan disini sejurus anda memilih tarikh "
+"yang ditandai"
+
+#: ../src/AgendaView.vala:154
+msgid "During the day"
+msgstr "Pada tarikh tersebut"
+
+#: ../src/AgendaView.vala:159
+msgid "All day"
+msgstr "Sepanjang Hari"
+
+#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
+#: ../src/AgendaView.vala:376
+msgid "%s, %s - %s, %s"
+msgstr "%s, %s - %s, %s"
+
+#: ../src/ImportDialog.vala:42
+msgid "Import events from \"%s\" into the following calendar:"
+msgstr "import acara daripada \"%s\" kedalam kalendar"
+
+#: ../src/ImportDialog.vala:44
+msgid "Import events from %d file into the following calendar:"
+msgid_plural "Import events from %d files into the following calendar:"
+msgstr[0] "Import acara dari fail %d kedalam kalendar"
+msgstr[1] "Import acara dari semua fail %d kedalam kalendar"
+
+#: ../src/ImportDialog.vala:53
+msgid "Import"
+msgstr "Import"
+
 #: ../src/MayaToolbar.vala:45
 msgid "Create a new event"
 msgstr "Cipta peristiwa baru"
@@ -646,6 +615,10 @@ msgstr "Gelintar Peristiwa"
 msgid "Export or Share the default Calendar"
 msgstr "Eksport atau Kongsi Kalendar lalai"
 
+#: ../src/Application.vala:34 ../src/Translations.vala:6
+msgid "Calendar"
+msgstr "Kalendar"
+
 #: ../src/Application.vala:103
 msgid "translator-credits"
 msgstr ""
@@ -655,6 +628,30 @@ msgstr ""
 "  Myh Yazid https://launchpad.net/~myh-myh09\n"
 "  TMUkmkd https://launchpad.net/~tmukmkd\n"
 "  abuyop https://launchpad.net/~abuyop"
+
+#: ../src/Translations.vala:5
+msgid "View and schedule events"
+msgstr "Lihat dan jadualkan peristiwa"
+
+#: ../src/Translations.vala:7
+msgid "Maya;Planner;Dates;Days;Events;"
+msgstr "Maya;Perancang;Tarikh;Hari;Peristiwa;"
+
+#: ../src/Translations.vala:9
+msgid "About Maya"
+msgstr "Perihal Maya"
+
+#: ../src/Translations.vala:10
+msgid "About Calendar"
+msgstr "Perihal Kalendar"
+
+#: ../plugins/Google/GoogleBackend.vala:38
+msgid "Google"
+msgstr "Google"
+
+#: ../plugins/Google/GoogleBackend.vala:61
+msgid "user.name or user.name@gmail.com"
+msgstr "nama.penguna atau nama.pengguna@gmail.com"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
@@ -672,15 +669,7 @@ msgstr "Guna sambungan selamat"
 msgid "Server handles meeting invitations"
 msgstr "Pelayan mengendali jemputan mesyuarat"
 
-#: ../plugins/Google/GoogleBackend.vala:38
-msgid "Google"
-msgstr "Google"
-
-#: ../plugins/Google/GoogleBackend.vala:61
-msgid "user.name or user.name@gmail.com"
-msgstr "nama.penguna atau nama.pengguna@gmail.com"
-
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:669
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:670
 msgid "On this computer"
 msgstr "Pada komputer ini"
 
@@ -789,6 +778,21 @@ msgstr "%A, %b %d"
 
 #~ msgid "This event can't be edited"
 #~ msgstr "Peristiwa ini tidak boleh disunting"
+
+#~ msgid "Days"
+#~ msgstr "Hari"
+
+#~ msgid "Months"
+#~ msgstr "Bulan"
+
+#~ msgid "Weeks"
+#~ msgstr "Minggu"
+
+#~ msgid "Repeats"
+#~ msgstr "Ulang"
+
+#~ msgid "Years"
+#~ msgstr "Tahun"
 
 #~ msgid "Saturday"
 #~ msgstr "Sabtu"

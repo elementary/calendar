@@ -7,78 +7,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-17 11:41+0100\n"
-"PO-Revision-Date: 2015-10-21 10:12+0000\n"
-"Last-Translator: zEvilz <zevilz13@gmail.com>\n"
+"POT-Creation-Date: 2015-10-23 21:37+0200\n"
+"PO-Revision-Date: 2015-10-23 20:09+0000\n"
+"Last-Translator: Maxim Taranov <png2378@protonmail.ch>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-10-22 05:34+0000\n"
+"X-Launchpad-Export-Date: 2015-10-24 05:23+0000\n"
 "X-Generator: Launchpad (build 17812)\n"
 "Language: ru\n"
 
-#: ../src/AgendaView.vala:63
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr "При выборе даты с событиями они будут показаны здесь."
+#: ../src/SourceDialog/SourceSelector.vala:70
+msgid "Add New Calendar…"
+msgstr "Добавить новый календарь..."
 
-#: ../src/AgendaView.vala:154
-msgid "During the day"
-msgstr "В течение дня"
-
-#: ../src/AgendaView.vala:159
-msgid "All day"
-msgstr "Весь день"
-
-#: ../src/AgendaView.vala:337 ../src/SourceDialog/SourceItem.vala:96
-msgid "Edit…"
-msgstr "Изменить..."
-
-#: ../src/AgendaView.vala:338 ../src/SourceDialog/SourceItem.vala:82
+#: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
 msgstr "Удалить"
 
-#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:376
-msgid "%s, %s - %s, %s"
-msgstr "%s, %s - %s, %s"
-
-#: ../src/Grid/VAutoHider.vala:100
-msgid "%u more…"
-msgstr "%u больше..."
-
-#: ../src/Grid/WeekLabels.vala:55 ../src/Grid/Header.vala:69
-msgid "Hide Week Numbers"
-msgstr "Скрыть номера недель"
-
-#: ../src/Grid/WeekLabels.vala:57 ../src/Grid/Header.vala:71
-msgid "Show Week Numbers"
-msgstr "Показать номера недель"
-
-#: ../src/ImportDialog.vala:42
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "Импортировать события из «%s» в следующий календарь:"
-
-#: ../src/ImportDialog.vala:44
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "Импортировать события из файла %d в следующий календарь:"
-msgstr[1] "Импортировать события из файлов %d в следующий календарь:"
-msgstr[2] "Импортировать события из файлов %d в следующий календарь:"
-
-#: ../src/ImportDialog.vala:53
-msgid "Import"
-msgstr "Импортировать"
-
-#: ../src/ImportDialog.vala:55 ../src/SourceDialog/SourceDialog.vala:58
-#: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:163
-msgid "Cancel"
-msgstr "Отменить"
+#: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
+msgid "Edit…"
+msgstr "Изменить..."
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
@@ -86,11 +38,13 @@ msgstr "Возврат"
 
 #: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
-msgstr "Календарь \"%s\" удалён."
+msgstr "Календарь «%s» удалён."
 
-#: ../src/SourceDialog/SourceSelector.vala:70
-msgid "Add New Calendar…"
-msgstr "Добавить новый календарь..."
+#: ../src/SourceDialog/SourceDialog.vala:58
+#: ../src/Widgets/ContractorButtonWithMenu.vala:81
+#: ../src/EventEdition/EventDialog.vala:163 ../src/ImportDialog.vala:55
+msgid "Cancel"
+msgstr "Отменить"
 
 #: ../src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
@@ -125,29 +79,17 @@ msgstr "Создать календарь"
 msgid "Save"
 msgstr "Сохранить"
 
-#: ../src/Translations.vala:5
-msgid "View and schedule events"
-msgstr "Просмотр и создание событий"
+#: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
+msgid "Hide Week Numbers"
+msgstr "Скрыть номера недель"
 
-#: ../src/Translations.vala:6 ../src/Application.vala:34
-msgid "Calendar"
-msgstr "Календарь"
+#: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
+msgid "Show Week Numbers"
+msgstr "Показать номера недель"
 
-#: ../src/Translations.vala:7
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Maya;Планировщик;Даты;Дни;События;"
-
-#: ../src/Translations.vala:8 ../src/EventEdition/EventDialog.vala:64
-msgid "Add Event"
-msgstr "Добавить событие"
-
-#: ../src/Translations.vala:9
-msgid "About Maya"
-msgstr "О программе"
-
-#: ../src/Translations.vala:10
-msgid "About Calendar"
-msgstr "О программе"
+#: ../src/Grid/VAutoHider.vala:100
+msgid "%u more…"
+msgstr "%u больше..."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
@@ -158,13 +100,109 @@ msgstr "Экспортировать календарь..."
 msgid "calendar.ics"
 msgstr "календарь.ics"
 
-#: ../src/EventEdition/LocationPanel.vala:44
-msgid "Location:"
-msgstr "Расположение:"
+#: ../src/EventEdition/GuestsPanel.vala:48
+msgid "Participants:"
+msgstr "Участники:"
 
-#: ../src/EventEdition/LocationPanel.vala:46
-msgid "John Smith OR Example St."
-msgstr "Вася Пупкин или ул. Ленина"
+#: ../src/EventEdition/GuestsPanel.vala:53
+msgid "No Participants"
+msgstr "Нет участников"
+
+#: ../src/EventEdition/GuestsPanel.vala:88
+msgid "Invite"
+msgstr "Пригласить"
+
+#: ../src/EventEdition/GuestsPanel.vala:236
+msgid "Accepted"
+msgstr "Принято"
+
+#: ../src/EventEdition/GuestsPanel.vala:239
+msgid "Declined"
+msgstr "Отклонено"
+
+#: ../src/EventEdition/ReminderPanel.vala:33
+msgid "Reminders:"
+msgstr "Напоминания:"
+
+#: ../src/EventEdition/ReminderPanel.vala:37
+msgid "No Reminders"
+msgstr "Нет напоминаний"
+
+#: ../src/EventEdition/ReminderPanel.vala:71
+msgid "Add Reminder"
+msgstr "Добавить напоминание"
+
+#: ../src/EventEdition/ReminderPanel.vala:182
+msgid "0 minutes"
+msgstr "0 минут"
+
+#: ../src/EventEdition/ReminderPanel.vala:183
+msgid "1 minutes"
+msgstr "1 минута"
+
+#: ../src/EventEdition/ReminderPanel.vala:184
+msgid "5 minutes"
+msgstr "5 минут"
+
+#: ../src/EventEdition/ReminderPanel.vala:185
+msgid "10 minutes"
+msgstr "10 минут"
+
+#: ../src/EventEdition/ReminderPanel.vala:186
+msgid "15 minutes"
+msgstr "15 минут"
+
+#: ../src/EventEdition/ReminderPanel.vala:187
+msgid "20 minutes"
+msgstr "20 минут"
+
+#: ../src/EventEdition/ReminderPanel.vala:188
+msgid "25 minutes"
+msgstr "25 минут"
+
+#: ../src/EventEdition/ReminderPanel.vala:189
+msgid "30 minutes"
+msgstr "30 минут"
+
+#: ../src/EventEdition/ReminderPanel.vala:190
+msgid "45 minutes"
+msgstr "45 минут"
+
+#: ../src/EventEdition/ReminderPanel.vala:191
+msgid "1 hour"
+msgstr "1 час"
+
+#: ../src/EventEdition/ReminderPanel.vala:192
+msgid "2 hours"
+msgstr "2 часа"
+
+#: ../src/EventEdition/ReminderPanel.vala:193
+msgid "3 hours"
+msgstr "3 часа"
+
+#: ../src/EventEdition/ReminderPanel.vala:194
+msgid "12 hours"
+msgstr "12 часов"
+
+#: ../src/EventEdition/ReminderPanel.vala:195
+msgid "24 hours"
+msgstr "24 часа"
+
+#: ../src/EventEdition/ReminderPanel.vala:196
+msgid "2 days"
+msgstr "2 дня"
+
+#: ../src/EventEdition/ReminderPanel.vala:197
+msgid "1 week"
+msgstr "1 неделя"
+
+#: ../src/EventEdition/ReminderPanel.vala:206
+msgid "Notification"
+msgstr "Уведомление"
+
+#: ../src/EventEdition/ReminderPanel.vala:207
+msgid "Email"
+msgstr "E-mail"
 
 #: ../src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -172,71 +210,65 @@ msgstr "Повтор:"
 
 #: ../src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
-msgstr "Ежедневно"
+msgstr "По дням"
 
 #: ../src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
-msgstr "Еженедельно"
+msgstr "По неделям"
 
 #: ../src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
-msgstr "Ежемесячно"
+msgstr "По месяцам"
 
 #: ../src/EventEdition/RepeatPanel.vala:61
 msgid "Yearly"
-msgstr "Ежегодно"
+msgstr "По годам"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr "Каждый(ую):"
+msgstr "Периодичность:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
-msgstr "день"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Days"
-msgstr "день"
+msgid_plural "Days"
+msgstr[0] "День"
+msgstr[1] "Дня"
+msgstr[2] "Дней"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
-msgstr "неделю"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-msgid "Weeks"
-msgstr "неделю"
+msgid_plural "Weeks"
+msgstr[0] "Неделю"
+msgstr[1] "Недели"
+msgstr[2] "Недель"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
-msgstr "месяц"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Months"
-msgstr "месяц"
+msgid_plural "Months"
+msgstr[0] "Месяц"
+msgstr[1] "Месяца"
+msgstr[2] "Месяцев"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
-msgstr "год"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Years"
-msgstr "год"
+msgid_plural "Years"
+msgstr[0] "Год"
+msgstr[1] "Года"
+msgstr[2] "Лет"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr "Заканчивается:"
+msgstr "Окончание:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
-msgstr "повтор"
-
-#: ../src/EventEdition/RepeatPanel.vala:137
-#: ../src/EventEdition/RepeatPanel.vala:170
-msgid "Repeats"
-msgstr "повторов"
+msgid_plural "Repeats"
+msgstr[0] "Повтор"
+msgstr[1] "Повтора"
+msgstr[2] "Повторов"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
@@ -462,89 +494,9 @@ msgstr "Сб."
 msgid "Sun"
 msgstr "Вс."
 
-#: ../src/EventEdition/ReminderPanel.vala:33
-msgid "Reminders:"
-msgstr "Напоминания:"
-
-#: ../src/EventEdition/ReminderPanel.vala:37
-msgid "No Reminders"
-msgstr "Нет напоминаний"
-
-#: ../src/EventEdition/ReminderPanel.vala:71
-msgid "Add Reminder"
-msgstr "Добавить напоминание"
-
-#: ../src/EventEdition/ReminderPanel.vala:182
-msgid "0 minutes"
-msgstr "0 минут"
-
-#: ../src/EventEdition/ReminderPanel.vala:183
-msgid "1 minutes"
-msgstr "1 минута"
-
-#: ../src/EventEdition/ReminderPanel.vala:184
-msgid "5 minutes"
-msgstr "5 минут"
-
-#: ../src/EventEdition/ReminderPanel.vala:185
-msgid "10 minutes"
-msgstr "10 минут"
-
-#: ../src/EventEdition/ReminderPanel.vala:186
-msgid "15 minutes"
-msgstr "15 минут"
-
-#: ../src/EventEdition/ReminderPanel.vala:187
-msgid "20 minutes"
-msgstr "20 минут"
-
-#: ../src/EventEdition/ReminderPanel.vala:188
-msgid "25 minutes"
-msgstr "25 минут"
-
-#: ../src/EventEdition/ReminderPanel.vala:189
-msgid "30 minutes"
-msgstr "30 минут"
-
-#: ../src/EventEdition/ReminderPanel.vala:190
-msgid "45 minutes"
-msgstr "45 минут"
-
-#: ../src/EventEdition/ReminderPanel.vala:191
-msgid "1 hour"
-msgstr "1 час"
-
-#: ../src/EventEdition/ReminderPanel.vala:192
-msgid "2 hours"
-msgstr "2 часа"
-
-#: ../src/EventEdition/ReminderPanel.vala:193
-msgid "3 hours"
-msgstr "3 часа"
-
-#: ../src/EventEdition/ReminderPanel.vala:194
-msgid "12 hours"
-msgstr "12 часов"
-
-#: ../src/EventEdition/ReminderPanel.vala:195
-msgid "24 hours"
-msgstr "24 часа"
-
-#: ../src/EventEdition/ReminderPanel.vala:196
-msgid "2 days"
-msgstr "2 дня"
-
-#: ../src/EventEdition/ReminderPanel.vala:197
-msgid "1 week"
-msgstr "1 неделя"
-
-#: ../src/EventEdition/ReminderPanel.vala:206
-msgid "Notification"
-msgstr "Уведомление"
-
-#: ../src/EventEdition/ReminderPanel.vala:207
-msgid "Email"
-msgstr "Email"
+#: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
+msgid "Add Event"
+msgstr "Добавить событие"
 
 #: ../src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
@@ -578,25 +530,13 @@ msgstr "Создать событие"
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
-#: ../src/EventEdition/GuestsPanel.vala:48
-msgid "Participants:"
-msgstr "Участники:"
+#: ../src/EventEdition/LocationPanel.vala:44
+msgid "Location:"
+msgstr "Расположение:"
 
-#: ../src/EventEdition/GuestsPanel.vala:53
-msgid "No Participants"
-msgstr "Нет участников"
-
-#: ../src/EventEdition/GuestsPanel.vala:88
-msgid "Invite"
-msgstr "Пригласить"
-
-#: ../src/EventEdition/GuestsPanel.vala:236
-msgid "Accepted"
-msgstr "Принято"
-
-#: ../src/EventEdition/GuestsPanel.vala:239
-msgid "Declined"
-msgstr "Отклонено"
+#: ../src/EventEdition/LocationPanel.vala:46
+msgid "John Smith OR Example St."
+msgstr "Например ул. Пушкина"
 
 #: ../src/EventEdition/InfoPanel.vala:44
 msgid "From:"
@@ -626,6 +566,40 @@ msgstr "Календарь:"
 msgid "Comments:"
 msgstr "Комментарий:"
 
+#: ../src/AgendaView.vala:63
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr "При выборе даты с событиями они будут показаны здесь."
+
+#: ../src/AgendaView.vala:154
+msgid "During the day"
+msgstr "В течение дня"
+
+#: ../src/AgendaView.vala:159
+msgid "All day"
+msgstr "Весь день"
+
+#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
+#: ../src/AgendaView.vala:376
+msgid "%s, %s - %s, %s"
+msgstr "%s, %s - %s, %s"
+
+#: ../src/ImportDialog.vala:42
+msgid "Import events from \"%s\" into the following calendar:"
+msgstr "Импортировать события из «%s» в следующий календарь:"
+
+#: ../src/ImportDialog.vala:44
+msgid "Import events from %d file into the following calendar:"
+msgid_plural "Import events from %d files into the following calendar:"
+msgstr[0] "Импортировать события из файла %d в следующий календарь:"
+msgstr[1] "Импортировать события из файлов %d в следующий календарь:"
+msgstr[2] "Импортировать события из файлов %d в следующий календарь:"
+
+#: ../src/ImportDialog.vala:53
+msgid "Import"
+msgstr "Импортировать"
+
 #: ../src/MayaToolbar.vala:45
 msgid "Create a new event"
 msgstr "Создать новое событие"
@@ -646,6 +620,10 @@ msgstr "Поиск событий"
 msgid "Export or Share the default Calendar"
 msgstr "Экспортировать или поделиться календарём по умолчанию"
 
+#: ../src/Application.vala:34 ../src/Translations.vala:6
+msgid "Calendar"
+msgstr "Календарь"
+
 #: ../src/Application.vala:103
 msgid "translator-credits"
 msgstr ""
@@ -660,6 +638,7 @@ msgstr ""
 "  Eugene Marshal https://launchpad.net/~lowrider\n"
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
 "  Kirill Ivaha https://launchpad.net/~kirill-ivaha\n"
+"  Maxim Taranov https://launchpad.net/~png2378\n"
 "  Maxim Taranov https://launchpad.net/~png2378-old-deactivatedaccount\n"
 "  Michael Moukhin https://launchpad.net/~siomi\n"
 "  Mukusev Vladimir https://launchpad.net/~damon95\n"
@@ -671,6 +650,30 @@ msgstr ""
 "  Victor Markin https://launchpad.net/~marvic\n"
 "  hohhalf https://launchpad.net/~hohhalf\n"
 "  zEvilz https://launchpad.net/~zevilz13"
+
+#: ../src/Translations.vala:5
+msgid "View and schedule events"
+msgstr "Просмотр и создание событий"
+
+#: ../src/Translations.vala:7
+msgid "Maya;Planner;Dates;Days;Events;"
+msgstr "Maya;Планировщик;Даты;Дни;События;"
+
+#: ../src/Translations.vala:9
+msgid "About Maya"
+msgstr "О программе"
+
+#: ../src/Translations.vala:10
+msgid "About Calendar"
+msgstr "О программе"
+
+#: ../plugins/Google/GoogleBackend.vala:38
+msgid "Google"
+msgstr "Google"
+
+#: ../plugins/Google/GoogleBackend.vala:61
+msgid "user.name or user.name@gmail.com"
+msgstr "username или username@gmail.com"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
@@ -688,15 +691,7 @@ msgstr "Использовать защищённое соединение"
 msgid "Server handles meeting invitations"
 msgstr "Сервер обрабатывает приглашения на встречу"
 
-#: ../plugins/Google/GoogleBackend.vala:38
-msgid "Google"
-msgstr "Google"
-
-#: ../plugins/Google/GoogleBackend.vala:61
-msgid "user.name or user.name@gmail.com"
-msgstr "username или username@gmail.com"
-
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:669
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:670
 msgid "On this computer"
 msgstr "На этом компьютере"
 
@@ -844,3 +839,18 @@ msgstr "%A, %b %d"
 
 #~ msgid "Every fourth %s"
 #~ msgstr "Каждый четвертый %s"
+
+#~ msgid "Months"
+#~ msgstr "месяц"
+
+#~ msgid "Weeks"
+#~ msgstr "неделю"
+
+#~ msgid "Years"
+#~ msgstr "год"
+
+#~ msgid "Days"
+#~ msgstr "день"
+
+#~ msgid "Repeats"
+#~ msgstr "повторов"
