@@ -47,8 +47,7 @@ namespace Maya {
             return 0;
         }
 
-        Gtk.init (ref args);
-        Clutter.init (ref args);
+        GtkClutter.init (ref args);
         var app = new Application ();
 
         return app.run (args);

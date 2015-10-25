@@ -102,6 +102,7 @@ set (DEPS_PACKAGES
     champlain-gtk-0.12
     champlain-0.12
     clutter-1.0
+    clutter-gtk-1.0
     geocode-glib-1.0
     folks
 )
@@ -111,6 +112,7 @@ set (DEPS_PKG
     champlain-0.12
     clutter-1.0
     geocode-glib-1.0
+    clutter-gtk-1.0
     folks
 )
 
