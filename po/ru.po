@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-23 21:37+0200\n"
-"PO-Revision-Date: 2015-10-24 09:45+0000\n"
+"PO-Revision-Date: 2015-10-30 17:45+0000\n"
 "Last-Translator: Maxim Taranov <png2378@protonmail.ch>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-10-25 05:30+0000\n"
-"X-Generator: Launchpad (build 17812)\n"
+"X-Launchpad-Export-Date: 2015-10-31 05:17+0000\n"
+"X-Generator: Launchpad (build 17838)\n"
 "Language: ru\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:70
@@ -226,7 +226,7 @@ msgstr "По годам"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr "Периодичность:"
+msgstr "Каждые:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
@@ -284,7 +284,7 @@ msgstr "После"
 
 #: ../src/EventEdition/RepeatPanel.vala:189
 msgid "The same day every month"
-msgstr "Тот-же день каждого месяца"
+msgstr "Тот же день каждого месяца"
 
 #: ../src/EventEdition/RepeatPanel.vala:200
 msgid "Exceptions:"
@@ -292,7 +292,7 @@ msgstr "Исключения:"
 
 #: ../src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
-msgstr "Без Исключений"
+msgstr "Без исключений"
 
 #: ../src/EventEdition/RepeatPanel.vala:224
 msgid "Add Exception"
@@ -508,7 +508,7 @@ msgstr "Общая информация"
 
 #: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
-msgstr "Месторасположение"
+msgstr "Местоположение"
 
 #: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
@@ -532,7 +532,7 @@ msgstr "Сохранить изменения"
 
 #: ../src/EventEdition/LocationPanel.vala:44
 msgid "Location:"
-msgstr "Расположение:"
+msgstr "Местоположение:"
 
 #: ../src/EventEdition/LocationPanel.vala:46
 msgid "John Smith OR Example St."
@@ -564,7 +564,7 @@ msgstr "Календарь:"
 
 #: ../src/EventEdition/InfoPanel.vala:85
 msgid "Comments:"
-msgstr "Комментарий:"
+msgstr "Комментарии:"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -657,7 +657,7 @@ msgstr "Просмотр и создание событий"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Maya;Планировщик;Даты;Дни;События;"
+msgstr "Maya;Планировщик;Даты;Дни;События;Календарь"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
@@ -673,7 +673,7 @@ msgstr "Google"
 
 #: ../plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr "username или username@gmail.com"
+msgstr "user.name или user.name@gmail.com"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
@@ -701,15 +701,15 @@ msgstr "Пользователь:"
 
 #: ../core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr "имя.пользователя"
+msgstr "user.name"
 
 #: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr "Email:"
+msgstr "E-Mail:"
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr "вася@пупкин.ру"
+msgstr "john@doe.com"
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"

@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-23 21:37+0200\n"
-"PO-Revision-Date: 2015-01-19 23:27+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2015-10-30 22:37+0000\n"
+"Last-Translator: Jernej Virag <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0);\n"
-"X-Launchpad-Export-Date: 2015-10-24 05:23+0000\n"
-"X-Generator: Launchpad (build 17812)\n"
+"X-Launchpad-Export-Date: 2015-10-31 05:17+0000\n"
+"X-Generator: Launchpad (build 17838)\n"
 "Language: sl\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:70
@@ -231,27 +231,35 @@ msgstr "Vsak:"
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "dni"
+msgstr[1] "dan"
+msgstr[2] "dneva"
+msgstr[3] "dni"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "tednov"
+msgstr[1] "teden"
+msgstr[2] "tedna"
+msgstr[3] "tedne"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "mesecev"
+msgstr[1] "mesec"
+msgstr[2] "mesca"
+msgstr[3] "mesce"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "let"
+msgstr[1] "leto"
+msgstr[2] "leti"
+msgstr[3] "leta"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -262,8 +270,10 @@ msgstr "Konec:"
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ponavljanje"
+msgstr[1] "Ponavljanje"
+msgstr[2] "Ponavljanje"
+msgstr[3] "Ponavljanje"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
