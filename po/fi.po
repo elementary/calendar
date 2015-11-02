@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-23 21:37+0200\n"
-"PO-Revision-Date: 2015-03-02 09:04+0000\n"
-"Last-Translator: Jiri Grönroos <Unknown>\n"
+"PO-Revision-Date: 2015-11-01 20:19+0000\n"
+"Last-Translator: Jarppi <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-10-24 05:22+0000\n"
-"X-Generator: Launchpad (build 17812)\n"
+"X-Launchpad-Export-Date: 2015-11-02 05:19+0000\n"
+"X-Generator: Launchpad (build 17838)\n"
 "Language: fi\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:70
@@ -230,27 +230,27 @@ msgstr "Joka:"
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Päivä"
+msgstr[1] "Päivät"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Viikko"
+msgstr[1] "Viikot"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Kuukausi"
+msgstr[1] "Kuukaudet"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vuosi:"
+msgstr[1] "Vuodet"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -261,8 +261,8 @@ msgstr "Päättyy:"
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Toista"
+msgstr[1] "Toistaa"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
@@ -625,6 +625,7 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Erkka Juhaninmäki https://launchpad.net/~3rp3\n"
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
+"  Jarppi https://launchpad.net/~jarppi\n"
 "  Jiri Grönroos https://launchpad.net/~jiri-gronroos\n"
 "  Petri Hämäläinen https://launchpad.net/~petri-hamalainen\n"
 "  Teemu Kielinen https://launchpad.net/~teemu-kielinen"
