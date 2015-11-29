@@ -30,6 +30,11 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
     private bool map_selected = false;
     private GLib.Cancellable search_cancellable;
 
+    public string location {
+        get { return location_entry.get_text (); }
+        set { location_entry.set_text (value); }
+    }
+
     public LocationPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
 

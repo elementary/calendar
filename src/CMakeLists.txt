@@ -10,6 +10,11 @@ set(CLIENT_SOURCE
     EventEdition/LocationPanel.vala
     EventEdition/ReminderPanel.vala
     EventEdition/RepeatPanel.vala
+    EventParser/EventParser.vala
+    EventParser/EventParserHandler.vala
+    EventParser/ParsedEvent.vala
+    EventParser/Parsers/ParserDe.vala
+    EventParser/Parsers/ParserEn.vala
     Grid/CalendarView.vala
     Grid/GridDay.vala
     Grid/Grid.vala
