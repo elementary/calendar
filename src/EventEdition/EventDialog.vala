@@ -128,8 +128,9 @@ public class EventDialog : Gtk.Dialog {
 
             var handler = new Maya.Services.EventParserHandler ();
             var parser = handler.get_parser (handler.get_locale ());
-            if (parser.get_language () == handler.get_locale ()) {
+            if (handler.get_locale ().contains (parser.get_language ())) {
                 // If there is handler for the current locale then...
+                info_panel.set_nl_parsing_enabled (true);
                 info_panel.parse_event.connect ((ev_str) => {
                     var ev = parser.parse_source (ev_str);
                     info_panel.title = ev.title;

@@ -52,7 +52,7 @@ public class EventParserHandler : GLib.Object {
     }
 
     public unowned string? get_locale () {
-        return Environment.get_variable ("LANGUAGE").split (":")[0];
+        return Environment.get_variable ("LANGUAGE");
     }
 }
 

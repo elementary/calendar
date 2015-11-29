@@ -378,4 +378,9 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         // Different years, start should be smaller.
         return start_date.get_year () < end_date.get_year ();
     }
+    
+    public void set_nl_parsing_enabled (bool val) {
+        title_entry.secondary_icon_name = val ? "go-jump-symbolic" : null;
+        title_entry.secondary_icon_tooltip_text = val ? _("Press enter to parse event") : null;
+    }
 }
