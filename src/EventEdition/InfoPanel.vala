@@ -61,6 +61,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         set { allday_switch.set_active (value); }
     }
 
+    public bool nl_parsing_enabled = false;
+
     public signal void parse_event (string event_str);
     public signal void valid_event (bool is_valid);
 
@@ -108,6 +110,16 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         title_entry.changed.connect (on_title_entry_modified);
         title_entry.activate.connect (() => {
             parse_event (title_entry.get_text ());
+        });
+        title_entry.changed.connect (() => {
+            if (title_entry.get_text ().length > 0 && nl_parsing_enabled) {
+                title_entry.secondary_icon_name = "go-jump-symbolic";
+                title_entry.secondary_icon_tooltip_text = _("Press enter to parse event");
+            }
+            else {
+                title_entry.secondary_icon_name = null;
+                title_entry.secondary_icon_tooltip_text = null;
+            }
         });
 
         var calendar_label = Maya.View.EventDialog.make_label (_("Calendar:"));
@@ -377,10 +389,5 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         // Different years, start should be smaller.
         return start_date.get_year () < end_date.get_year ();
-    }
-    
-    public void set_nl_parsing_enabled (bool val) {
-        title_entry.secondary_icon_name = val ? "go-jump-symbolic" : null;
-        title_entry.secondary_icon_tooltip_text = val ? _("Press enter to parse event") : null;
     }
 }
