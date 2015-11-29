@@ -26,6 +26,11 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     private Gee.ArrayList<unowned iCal.Property> attendees;
     private Gtk.ListStore guest_store;
 
+    public string guests {
+        get { return guest_entry.get_text (); }
+        set { guest_entry.set_text (value); }
+    }
+
     private enum COLUMNS {
         ICON = 0,
         NAME,

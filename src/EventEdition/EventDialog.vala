@@ -126,6 +126,30 @@ public class EventDialog : Gtk.Dialog {
                 }
             });
 
+            var handler = new Maya.Services.EventParserHandler ();
+            var parser = handler.get_parser (handler.get_locale ());
+            if (handler.get_locale ().contains (parser.get_language ())) {
+                // If there is handler for the current locale then...
+                info_panel.nl_parsing_enabled = true;
+                bool event_parsed = false;
+                info_panel.parse_event.connect ((ev_str) => {
+                    if (!event_parsed) {
+                        var ev = parser.parse_source (ev_str);
+                        info_panel.title = ev.title;
+                        info_panel.from_date = ev.from;
+                        info_panel.to_date = ev.to;
+                        info_panel.from_time = ev.from;
+                        info_panel.to_time = ev.to;
+                        info_panel.all_day = ev.all_day;
+                        guests_panel.guests = ev.participants;
+                        location_panel.location = ev.location;
+                        event_parsed = true;
+                    }
+                    else
+                        save_dialog ();
+                });
+            }
+
             stack.add_named (info_panel, "infopanel");
             stack.add_named (location_panel, "locationpanel");
             stack.add_named (guests_panel, "guestspanel");

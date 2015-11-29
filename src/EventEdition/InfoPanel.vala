@@ -30,6 +30,40 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
     private EventDialog parent_dialog;
 
+
+    public string title { 
+        get { return title_entry.get_text (); }
+        set { title_entry.set_text (value); }
+    }
+
+    public DateTime from_date { 
+        get { return from_date_picker.date; }
+        set { from_date_picker.date = value; }
+    }
+
+    public DateTime to_date { 
+        get { return to_date_picker.date; }
+        set { to_date_picker.date = value; }
+    }
+
+    public DateTime from_time { 
+        get { return from_time_picker.time; }
+        set { from_time_picker.time = value; }
+    }
+
+    public DateTime to_time { 
+        get { return to_time_picker.time; }
+        set { to_time_picker.time = value; }
+    }
+
+    public bool all_day { 
+        get { return allday_switch.get_active (); }
+        set { allday_switch.set_active (value); }
+    }
+
+    public bool nl_parsing_enabled = false;
+
+    public signal void parse_event (string event_str);
     public signal void valid_event (bool is_valid);
 
     public InfoPanel (EventDialog parent_dialog) {
@@ -74,6 +108,21 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         title_entry = new Gtk.Entry ();
         title_entry.placeholder_text = _("Name of Event");
         title_entry.changed.connect (on_title_entry_modified);
+        title_entry.activate.connect (() => {
+            parse_event (title_entry.get_text ());
+            title_entry.secondary_icon_name = null;
+            title_entry.secondary_icon_tooltip_text = null;
+        });
+        title_entry.changed.connect (() => {
+            if (title_entry.get_text ().length > 0 && nl_parsing_enabled) {
+                title_entry.secondary_icon_name = "go-jump-symbolic";
+                title_entry.secondary_icon_tooltip_text = _("Press enter to parse event");
+            }
+            else {
+                title_entry.secondary_icon_name = null;
+                title_entry.secondary_icon_tooltip_text = null;
+            }
+        });
 
         var calendar_label = Maya.View.EventDialog.make_label (_("Calendar:"));
         calendar_button = new Maya.View.Widgets.CalendarButton ();
