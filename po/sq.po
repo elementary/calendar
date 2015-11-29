@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-10-23 21:37+0200\n"
-"PO-Revision-Date: 2015-11-07 17:33+0000\n"
+"PO-Revision-Date: 2015-11-28 16:07+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-08 05:32+0000\n"
-"X-Generator: Launchpad (build 17838)\n"
+"X-Launchpad-Export-Date: 2015-11-29 05:13+0000\n"
+"X-Generator: Launchpad (build 17850)\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:70
 msgid "Add New Calendar…"
@@ -70,7 +70,7 @@ msgstr "Shënoje si kalendar i parazgjedhur"
 
 #: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
-msgstr "Krijo Kalendar"
+msgstr "Krijo kalendarin"
 
 #: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
