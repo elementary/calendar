@@ -110,6 +110,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         title_entry.changed.connect (on_title_entry_modified);
         title_entry.activate.connect (() => {
             parse_event (title_entry.get_text ());
+            title_entry.secondary_icon_name = null;
+            title_entry.secondary_icon_tooltip_text = null;
         });
         title_entry.changed.connect (() => {
             if (title_entry.get_text ().length > 0 && nl_parsing_enabled) {
