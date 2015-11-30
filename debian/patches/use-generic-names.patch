@@ -1,6 +1,6 @@
 --- a/src/Application.vala
 +++ b/src/Application.vala
-@@ -68,7 +68,7 @@
+@@ -72,7 +72,7 @@
              build_version = Build.VERSION;
              build_version_info = Build.VERSION_INFO;
  
@@ -8,7 +8,7 @@
 +            program_name = _("Calendar");
              exec_name = "maya-calendar";
  
-             app_years = "2011-2014";
+             app_years = "2011-2015";
 --- a/data/maya-calendar.desktop
 +++ b/data/maya-calendar.desktop
 @@ -1,6 +1,6 @@
@@ -19,3 +19,10 @@
  GenericName=Calendar
  Comment=View and schedule events
  Exec=maya-calendar
+@@ -20,5 +20,5 @@
+ Exec=maya-calendar -a
+ 
+ [Desktop Action AboutDialog]
+-Name=About Maya
++Name=About Calendar
+ Exec=maya-calendar --about
