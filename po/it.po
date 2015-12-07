@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-23 21:37+0200\n"
-"PO-Revision-Date: 2015-11-29 11:18+0000\n"
+"PO-Revision-Date: 2015-12-06 08:54+0000\n"
 "Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-30 05:17+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-07 05:21+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
 "Language: it\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:70
 msgid "Add New Calendar…"
-msgstr "Aggiungi nuovo calendario ..."
+msgstr "Aggiungi un nuovo calendario..."
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
@@ -29,7 +29,7 @@ msgstr "Rimuovi"
 
 #: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
 msgid "Edit…"
-msgstr "Modifica ..."
+msgstr "Modifica..."
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
@@ -88,12 +88,12 @@ msgstr "Mostra i numeri delle settimane"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
-msgstr "% più ..."
+msgstr "% più..."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
 msgid "Export Calendar..."
-msgstr "Esporta calendario ..."
+msgstr "Esporta calendario..."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 msgid "calendar.ics"
