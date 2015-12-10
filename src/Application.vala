@@ -82,7 +82,7 @@ namespace Maya {
 
             main_url = "https://launchpad.net/maya";
             bug_url = "https://bugs.launchpad.net/maya";
-            help_url = "http://elementaryos.org/answers/+/maya/all/newest";
+            help_url = "https://answers.launchpad.net/maya";
             translate_url = "https://translations.launchpad.net/maya";
 
             about_authors = {
