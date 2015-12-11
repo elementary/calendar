@@ -55,6 +55,7 @@ add_custom_target (uninstall "${CMAKE_COMMAND}" -P
 file (GLOB _datafiles "${CMAKE_CURRENT_SOURCE_DIR}/data/style/*")
 install (FILES ${_datafiles} DESTINATION ${PKGDATADIR}/style)
 
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}.appdata.xml DESTINATION "${DATADIR}/appdata")
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}.desktop DESTINATION "${DATADIR}/applications")
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}-daemon.desktop DESTINATION "${DATADIR}/applications")
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/LocationMarker.svg DESTINATION "${PKGDATADIR}")
