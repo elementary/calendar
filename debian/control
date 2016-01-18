@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Sergey "Shnatsel" Davidoff <sergey@elementaryos.org>
 Build-Depends: cmake (>= 2.8),
                debhelper (>= 9),
+               intltool,
                libchamplain-0.12-dev,
                libchamplain-gtk-0.12-dev,
                libclutter-1.0-dev,
@@ -17,17 +18,15 @@ Build-Depends: cmake (>= 2.8),
                libical-dev,
                libnotify-dev,
                pkg-config,
-               quilt,
                valac (>= 0.26.0)
 Standards-Version: 3.9.5
 Homepage: https://launchpad.net/maya
 
 Package: maya-calendar
-Replaces: maya (<< 0.2.0~r394), maya-common (<< 0.3.0~r558+pkg50)
-Breaks: maya (<< 0.2.0~r394), maya-common (<< 0.3.0~r558+pkg50)
+Replaces: maya (<< 0.2.0~r394), maya-common
+Breaks: maya (<< 0.2.0~r394), maya-common
 Architecture: any
 Depends: libmaya-calendar0 (= ${binary:Version}),
-         maya-calendar-common (= ${source:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Recommends: maya-calendar-plugin-caldav, maya-calendar-plugin-google
@@ -38,21 +37,6 @@ Description: GTK+ calendar application
  It features an easy to use yet powerful user interface, provides a daemon
  to notify the user about upcoming events and supports synchronization with
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
-
-Package: maya-calendar-common
-Replaces: maya (<< 0.2.0~r394)
-Breaks: maya (<< 0.2.0~r394)
-Architecture: all
-Depends: ${misc:Depends}
-Description: GTK+ calendar application (architecture-independent files)
- Maya is a slim, lightweight, GTK+ calendar application written
- in Vala and designed for elementary OS.
- .
- It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with
- Google Calendar as well as CalDAV-supporting services such as OwnCloud.
- .
- This package contains architecture-independent files for Maya.
 
 Package: maya-calendar-daemon
 Architecture: any
