@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2015 Maya Developers (https://launchpad.net/maya)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,8 +15,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Authored by: Maxwell Barvian
- *              Corentin Noël <corentin@elementaryos.org>
+ * Authored by: Maxwell Barvian <maxwell@elementary.io>
+ *              Corentin Noël <corentin@elementary.io>
  */
 
 namespace Maya {
@@ -75,29 +75,29 @@ namespace Maya {
             program_name = _(Build.APP_NAME);
             exec_name = "maya-calendar";
 
-            app_years = "2011-2015";
+            app_years = "2011-2016";
             application_id = "net.launchpad.maya";
             app_icon = "office-calendar";
             app_launcher = "maya-calendar.desktop";
 
             main_url = "https://launchpad.net/maya";
             bug_url = "https://bugs.launchpad.net/maya";
-            help_url = "https://answers.launchpad.net/maya";
+            help_url = "https://elementary.io/help/maya";
             translate_url = "https://translations.launchpad.net/maya";
 
             about_authors = {
-                "Maxwell Barvian <maxwell@elementaryos.org>",
+                "Maxwell Barvian <maxwell@elementary.io>",
                 "Jaap Broekhuizen <jaapz.b@gmail.com>",
                 "Avi Romanoff <aviromanoff@gmail.com>",
                 "Allen Lowe <lallenlowe@gmail.com>",
                 "Niels Avonds <niels.avonds@gmail.com>",
-                "Corentin Noël <corentin@elementaryos.org>"
+                "Corentin Noël <corentin@elementary.io>"
             };
             about_documenters = {
-                "Maxwell Barvian <maxwell@elementaryos.org>"
+                "Maxwell Barvian <maxwell@elementary.io>"
             };
             about_artists = {
-                "Daniel Foré <bunny@go-docky.com>"
+                "Daniel Foré <daniel@elementary.io>"
             };
             about_translators = _("translator-credits");
             about_license_type = Gtk.License.GPL_3_0;
