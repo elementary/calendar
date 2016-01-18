@@ -1,24 +1,22 @@
 [Desktop Entry]
 Type=Application
-Name=Maya
-GenericName=Calendar
-Comment=View and schedule events
-Exec=maya-calendar
+_Name=@APP_NAME@
+_GenericName=Calendar
+_Comment=View and schedule events
+Exec=maya-calendar %U
 Icon=office-calendar
 Terminal=false
 Categories=GTK;Office;Calendar;
 StartupNotify=true
 MimeType=text/calendar;
-Keywords=Maya;Planner;Dates;Days;Events;
-X-AppInstall-Keywords=Maya;Planner;Dates;Days;Events;
+_Keywords=Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;
 Actions=AddEvent;AboutDialog;
-X-GNOME-Gettext-Domain=maya-calendar
 X-GNOME-UsesNotifications=true
 
 [Desktop Action AddEvent]
-Name=Add Event
+_Name=Add Event
 Exec=maya-calendar -a
 
 [Desktop Action AboutDialog]
-Name=About Maya
+_Name=About @APP_NAME@
 Exec=maya-calendar --about

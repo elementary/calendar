@@ -235,7 +235,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 public class Maya.Marker : Champlain.Marker {
     public Marker () {
         try {
-            Gdk.Pixbuf pixbuf = new Gdk.Pixbuf.from_file ("%s/LocationMarker.svg".printf (Build.PKGDATADIR));
+            weak Gtk.IconTheme icon_theme = Gtk.IconTheme.get_default ();
+            var pixbuf = icon_theme.load_icon ("location-marker", 32, Gtk.IconLookupFlags.GENERIC_FALLBACK);
             Clutter.Image image = new Clutter.Image ();
             image.set_data (pixbuf.get_pixels (),
                           pixbuf.has_alpha ? Cogl.PixelFormat.RGBA_8888 : Cogl.PixelFormat.RGB_888,

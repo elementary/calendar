@@ -11,7 +11,6 @@ include (GNUInstallDirs)
 set (DATADIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}")
 set (PKGDATADIR "${DATADIR}/${CMAKE_PROJECT_NAME}")
 set (GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
-set (APP_NAME "Maya")
 set (RELEASE_NAME "Sandy Cheeks")
 set (VERSION "0.3.1.1")
 set (VERSION_INFO "Release")
@@ -24,6 +23,12 @@ add_definitions ("-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\"")
 # Comment this out to enable C compiler warnings
 add_definitions (-w)
 
+option (BUILD_FOR_ELEMENTARY "Maya name will be replaced by Calendar" ON)
+set (APP_NAME "Maya")
+if (BUILD_FOR_ELEMENTARY)
+    set (APP_NAME "Calendar")
+endif ()
+
 #
 # Niceties
 #
@@ -31,7 +36,7 @@ set (ARCHIVE_NAME ${CMAKE_PROJECT_NAME}-${VERSION})
 add_custom_target (dist
     COMMAND bzr export --root=${ARCHIVE_NAME} ${CMAKE_BINARY_DIR}/${ARCHIVE_NAME}.tar.bz2
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    )
+)
 
 add_custom_target (distcheck
     COMMAND cd ${CMAKE_BINARY_DIR}
@@ -43,29 +48,12 @@ add_custom_target (distcheck
     && make -j8
     && make -j8 install
     && make check
-    )
-add_dependencies(distcheck dist)
+)
+
+add_dependencies (distcheck dist)
 
 add_custom_target (uninstall "${CMAKE_COMMAND}" -P
   "${CMAKE_SOURCE_DIR}/cmake/uninstall.cmake")
-
-#
-# Data
-#
-file (GLOB _datafiles "${CMAKE_CURRENT_SOURCE_DIR}/data/style/*")
-install (FILES ${_datafiles} DESTINATION ${PKGDATADIR}/style)
-
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}.appdata.xml DESTINATION "${DATADIR}/appdata")
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}.desktop DESTINATION "${DATADIR}/applications")
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}-daemon.desktop DESTINATION "${DATADIR}/applications")
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/LocationMarker.svg DESTINATION "${PKGDATADIR}")
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/calendar-go-today.svg DESTINATION "${DATADIR}/icons/hicolor/scalable/actions")
-
-#
-# i18n
-#
-
-add_subdirectory(po)
 
 #
 # Maya
@@ -137,6 +125,8 @@ include (ValaVersion)
 ensure_vala_version ("0.23.2" MINIMUM)
 include (ValaPrecompile)
 
+add_subdirectory (po)
+add_subdirectory (data)
 add_subdirectory (core)
 include_directories (${CMAKE_BINARY_DIR}/core)
 set (DEPS_LIBRARIES ${DEPS_LIBRARIES} ${CORE_LIBRARY_NAME})

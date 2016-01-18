@@ -605,14 +605,10 @@ namespace Maya.Util {
     public class Css {
         private static Gtk.CssProvider? _css_provider;
         // Retrieve global css provider
-        public static Gtk.CssProvider get_css_provider () {
+        public static unowned Gtk.CssProvider get_css_provider () {
             if (_css_provider == null) {
                 _css_provider = new Gtk.CssProvider ();
-                try {
-                    _css_provider.load_from_path (Build.PKGDATADIR + "/style/default.css");
-                } catch (Error e) {
-                    warning ("Could not add css provider. Some widgets will not look as intended. %s", e.message);
-                }
+                _css_provider.load_from_resource ("/org/pantheon/maya/default.css");
             }
 
             return _css_provider;

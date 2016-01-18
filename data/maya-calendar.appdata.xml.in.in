@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015 elementary, LLC <contact@elementary.io> -->
+<!-- Copyright 2015-2016 elementary, LLC <contact@elementary.io> -->
 <component type="desktop">
   <id>maya-calendar.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_group>elementary</project_group>
   <project_license>GPL-3.0+</project_license>
-  <name>Maya</name>
-  <summary>The official elementary calendar</summary>
+  <_name>@APP_NAME@</_name>
+  <_summary>View and schedule events</_summary>
   <description>
-    <p>
-      A slim, lightweight calendar app designed for elementary OS.
-    </p>
+    <_p>
+      A slim, lightweight calendar app that syncs and manages multiple calendars in one place, like Google Calendar, Outlook and CalDAV.
+    </_p>
   </description>
   <releases>
     <release version="0.3.1.1" timestamp="1432996164"/>
@@ -23,11 +23,12 @@
   <provides>
     <library>libmaya-calendar.so.0</library>
     <binary>maya-calendar</binary>
+    <binary>maya-calendar-daemon</binary>
   </provides>
   <developer_name>elementary LLC.</developer_name>
   <url type="homepage">http://elementary.io/</url>
   <url type="bugtracker">https://bugs.launchpad.net/maya</url>
   <url type="donation">https://elementary.io/get-involved#funding</url>
-  <url type="help">https://elementaryos.stackexchange.com/questions/tagged/maya</url>
+  <url type="help">https://elementary.io/help/maya</url>
   <update_contact>contact_at_elementary.io</update_contact>
 </component>

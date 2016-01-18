@@ -250,6 +250,8 @@ namespace Maya {
          * Creates the main window.
          */
         void create_window () {
+            weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
+            default_theme.add_resource_path ("/org/pantheon/maya");
             var saved_state = Settings.SavedState.get_default ();
             window = new Gtk.Window ();
             window.title = program_name;
