@@ -182,9 +182,8 @@ public class Maya.Model.CalendarModel : Object {
         }
 
         client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
-            bool status = false;
             try {
-                status = client.modify_object.end (results);
+                client.modify_object.end (results);
             } catch (Error e) {
                 warning (e.message);
             }
@@ -201,10 +200,9 @@ public class Maya.Model.CalendarModel : Object {
             client = source_client.get (source.dup_uid ());
         }
 
-        client.remove_object.begin (uid, rid, mod_type, null, (obj, results) =>  {
-            bool status = false;
+        client.remove_object.begin (uid, rid, mod_type, null, (obj, results) => {
             try {
-                status = client.remove_object.end (results);
+                client.remove_object.end (results);
             } catch (Error e) {
                 warning (e.message);
             }
@@ -343,14 +341,16 @@ public class Maya.Model.CalendarModel : Object {
 
         debug ("Getting client-view for source '%s'", source.dup_display_name ());
         client.get_view.begin (query, null, (obj, results) => {
-            var view = on_client_view_received (results, source, client);
-            view.objects_added.connect ((objects) => on_objects_added (source, client, objects));
-            view.objects_removed.connect ((objects) => on_objects_removed (source, client, objects));
-            view.objects_modified.connect ((objects) => on_objects_modified (source, client, objects));
+            E.CalClientView view;
+            debug (@"Received client-view for source '%s'", source.dup_display_name());
             try {
+                client.get_view.end (results, out view);
+                view.objects_added.connect ((objects) => on_objects_added (source, client, objects));
+                view.objects_removed.connect ((objects) => on_objects_removed (source, client, objects));
+                view.objects_modified.connect ((objects) => on_objects_modified (source, client, objects));
                 view.start ();
             } catch (Error e) {
-                critical (e.message);
+                critical ("Error from source '%s': %s", source.dup_display_name(), e.message);
             }
 
             source_view.set (source.dup_uid (), view);
@@ -391,31 +391,18 @@ public class Maya.Model.CalendarModel : Object {
         
     }
 
-    private E.CalClientView on_client_view_received (AsyncResult results, E.Source source, E.CalClient client) {
-        E.CalClientView view;
-        try {
-            debug (@"Received client-view for source '%s'", source.dup_display_name());
-            bool status = client.get_view.end (results, out view);
-            assert (status==true);
-        } catch (Error e) {
-            critical ("Error loading client-view from source '%s': %s", source.dup_display_name(), e.message);
-        }
-
-        return view;
-    }
-
     private void on_objects_added (E.Source source, E.CalClient client, SList<unowned iCal.Component> objects) {
         debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name());
         var events = source_events.get (source);
         var added_events = new Gee.ArrayList<E.CalComponent> ((Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
-        foreach (unowned iCal.Component comp in objects) {
+        objects.foreach ((comp) => {
             var event = new E.CalComponent ();
             event.set_icalcomponent (new iCal.Component.clone (comp));
             string uid = comp.get_uid ();
             debug_event (source, event);
             events.set (uid, event);
             added_events.add (event);
-        };
+        });
 
         events_added (source, added_events.read_only_view);
     }
@@ -423,13 +410,13 @@ public class Maya.Model.CalendarModel : Object {
     private void on_objects_modified (E.Source source, E.CalClient client, SList<unowned iCal.Component> objects) {
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
         var updated_events = new Gee.ArrayList<E.CalComponent> ((Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
-        foreach (unowned iCal.Component comp in objects) {
+        objects.foreach ((comp) => {
             string uid = comp.get_uid ();
             E.CalComponent event = source_events.get (source).get (uid);
             event.set_icalcomponent (new iCal.Component.clone (comp));
             updated_events.add (event);
             debug_event (source, event);
-        };
+        });
 
         events_updated (source, updated_events.read_only_view);
     }
@@ -438,12 +425,14 @@ public class Maya.Model.CalendarModel : Object {
         debug (@"Received $(cids.length()) removed event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
         var removed_events = new Gee.ArrayList<E.CalComponent> ((Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
-        foreach (unowned E.CalComponentId? cid in cids) {
-            assert (cid != null);
+        cids.foreach ((cid) => {
+            if (cid == null)
+                return;
+
             E.CalComponent event = events.get (cid.uid);
             removed_events.add (event);
             debug_event (source, event);
-        }
+        });
 
         events_removed (source, removed_events.read_only_view);
     }

@@ -51,6 +51,10 @@ namespace Maya.View {
             button_calendar_sources.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
             button_calendar_sources.tooltip_text = _("Manage Calendars");
 
+            source_selector = new View.SourceSelector ();
+            source_selector.set_relative_to (button_calendar_sources);
+            button_calendar_sources.bind_property ("active", source_selector, "visible", GLib.BindingFlags.BIDIRECTIONAL);
+
             month_switcher = new Widgets.DateSwitcher (10);
             year_switcher = new Widgets.DateSwitcher (-1);
             var calmodel = Model.CalendarModel.get_default ();
@@ -79,7 +83,6 @@ namespace Maya.View {
 
             // Connect to signals
             button_add.clicked.connect (() => add_calendar_clicked ());
-            button_calendar_sources.clicked.connect (on_tb_sources_clicked);
             button_today.clicked.connect (() => { on_menu_today_toggled (); });
             search_bar.search_changed.connect (() => on_search (search_bar.text));
             month_switcher.left_clicked.connect (() => {Model.CalendarModel.get_default ().change_month (-1);});
@@ -101,22 +104,6 @@ namespace Maya.View {
             month_switcher.height_request = allocation.height;
             year_switcher.height_request = allocation.height;
         }
-
-        void on_tb_sources_clicked (Gtk.Widget widget) {
-            if (source_selector == null) {
-                source_selector = new View.SourceSelector ();
-                source_selector.set_relative_to (widget);
-                source_selector.hide.connect (() => {
-                    button_calendar_sources.active = false;
-                    source_selector.visible = false;
-                });
-            }
-            if (source_selector.visible == false)
-                source_selector.show_all ();
-            else
-                source_selector.hide ();
-        }
-
     }
 
 }

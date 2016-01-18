@@ -91,7 +91,10 @@ namespace E {
 	public class CalClientView : GLib.Object {
 		[CCode (has_construct_function = false)]
 		protected CalClientView ();
+		[Deprecated (since = "3.10")]
+		public E.CalClient get_client ();
 		public bool is_running ();
+		public E.CalClient ref_client ();
 		public void set_fields_of_interest (GLib.SList<string>? fields_of_interest) throws GLib.Error;
 		public void set_flags (E.CalClientViewFlags flags) throws GLib.Error;
 		public void start () throws GLib.Error;

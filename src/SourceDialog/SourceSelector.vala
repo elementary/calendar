@@ -29,7 +29,6 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     private Gtk.ScrolledWindow scroll;
 
     public SourceSelector () {
-        modal = false;
         stack = new Gtk.Stack ();
 
         calendar_box = new Gtk.ListBox ();
@@ -82,7 +81,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         stack.margin_bottom = 5;
 
         this.add (stack);
-        main_grid.show_all ();
+        stack.show_all ();
     }
 
     private void header_update_func (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
