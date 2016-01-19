@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-23 21:37+0200\n"
+"POT-Creation-Date: 2016-01-19 00:31+0100\n"
 "PO-Revision-Date: 2015-10-30 17:45+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-12-31 05:21+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-01-19 05:18+0000\n"
+"X-Generator: Launchpad (build 17886)\n"
 "Language: ru\n"
 
-#: ../src/SourceDialog/SourceSelector.vala:70
+#: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
 msgstr "Добавить новый календарь..."
 
@@ -42,7 +42,7 @@ msgstr "Календарь «%s» удалён."
 
 #: ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:163 ../src/ImportDialog.vala:55
+#: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
 msgid "Cancel"
 msgstr "Отменить"
 
@@ -100,23 +100,23 @@ msgstr "Экспортировать календарь..."
 msgid "calendar.ics"
 msgstr "календарь.ics"
 
-#: ../src/EventEdition/GuestsPanel.vala:48
+#: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Участники:"
 
-#: ../src/EventEdition/GuestsPanel.vala:53
+#: ../src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
 msgstr "Нет участников"
 
-#: ../src/EventEdition/GuestsPanel.vala:88
+#: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
 msgstr "Пригласить"
 
-#: ../src/EventEdition/GuestsPanel.vala:236
+#: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
 msgstr "Принято"
 
-#: ../src/EventEdition/GuestsPanel.vala:239
+#: ../src/EventEdition/GuestsPanel.vala:244
 msgid "Declined"
 msgstr "Отклонено"
 
@@ -518,51 +518,55 @@ msgstr "Участники"
 msgid "Reminders"
 msgstr "Напоминания"
 
-#: ../src/EventEdition/EventDialog.vala:145
+#: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
 msgstr "Удалить событие"
 
-#: ../src/EventEdition/EventDialog.vala:157
+#: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
 msgstr "Создать событие"
 
-#: ../src/EventEdition/EventDialog.vala:160
+#: ../src/EventEdition/EventDialog.vala:184
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
-#: ../src/EventEdition/LocationPanel.vala:44
+#: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
 msgstr "Местоположение:"
 
-#: ../src/EventEdition/LocationPanel.vala:46
+#: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
 msgstr "Например ул. Пушкина"
 
-#: ../src/EventEdition/InfoPanel.vala:44
+#: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
 msgstr "Начиная с:"
 
-#: ../src/EventEdition/InfoPanel.vala:50
+#: ../src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
 msgstr "Весь день:"
 
-#: ../src/EventEdition/InfoPanel.vala:55
+#: ../src/EventEdition/InfoPanel.vala:89
 msgid "To:"
 msgstr "До:"
 
-#: ../src/EventEdition/InfoPanel.vala:73
+#: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
 msgstr "Название:"
 
-#: ../src/EventEdition/InfoPanel.vala:75
+#: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
 msgstr "Название события"
 
-#: ../src/EventEdition/InfoPanel.vala:78
+#: ../src/EventEdition/InfoPanel.vala:119
+msgid "Press enter to parse event"
+msgstr ""
+
+#: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
 msgstr "Календарь:"
 
-#: ../src/EventEdition/InfoPanel.vala:85
+#: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
 msgstr "Комментарии:"
 
@@ -612,11 +616,11 @@ msgstr "Перейти к сегодняшний дате"
 msgid "Manage Calendars"
 msgstr "Управление календарями"
 
-#: ../src/MayaToolbar.vala:60
+#: ../src/MayaToolbar.vala:64
 msgid "Search Events"
 msgstr "Поиск событий"
 
-#: ../src/MayaToolbar.vala:63
+#: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
 msgstr "Экспортировать или поделиться календарём по умолчанию"
 
@@ -624,7 +628,7 @@ msgstr "Экспортировать или поделиться календа�
 msgid "Calendar"
 msgstr "Календарь"
 
-#: ../src/Application.vala:103
+#: ../src/Application.vala:102
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -691,7 +695,7 @@ msgstr "Использовать защищённое соединение"
 msgid "Server handles meeting invitations"
 msgstr "Сервер обрабатывает приглашения на встречу"
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:670
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
 msgid "On this computer"
 msgstr "На этом компьютере"
 

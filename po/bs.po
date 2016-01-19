@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-23 21:37+0200\n"
+"POT-Creation-Date: 2016-01-19 00:31+0100\n"
 "PO-Revision-Date: 2015-01-19 23:28+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-12-31 05:20+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-01-19 05:16+0000\n"
+"X-Generator: Launchpad (build 17886)\n"
 "Language: bs\n"
 
-#: ../src/SourceDialog/SourceSelector.vala:70
+#: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
 msgstr "Dodaj novi kalendar..."
 
@@ -42,7 +42,7 @@ msgstr "Kalendar \"%s\" uklonjen."
 
 #: ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:163 ../src/ImportDialog.vala:55
+#: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
 msgid "Cancel"
 msgstr "Otkaži"
 
@@ -100,23 +100,23 @@ msgstr "Eksportuj kalendar..."
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: ../src/EventEdition/GuestsPanel.vala:48
+#: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Učesnici:"
 
-#: ../src/EventEdition/GuestsPanel.vala:53
+#: ../src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
 msgstr "Nema drugih učesnika"
 
-#: ../src/EventEdition/GuestsPanel.vala:88
+#: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
 msgstr "Pozovi"
 
-#: ../src/EventEdition/GuestsPanel.vala:236
+#: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
 msgstr "Prihvaćeno"
 
-#: ../src/EventEdition/GuestsPanel.vala:239
+#: ../src/EventEdition/GuestsPanel.vala:244
 msgid "Declined"
 msgstr "Odbijeno"
 
@@ -513,51 +513,55 @@ msgstr "Gosti"
 msgid "Reminders"
 msgstr "Podsjetnici"
 
-#: ../src/EventEdition/EventDialog.vala:145
+#: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
 msgstr "Obriši događaj"
 
-#: ../src/EventEdition/EventDialog.vala:157
+#: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
 msgstr "napraviti dogadjaj"
 
-#: ../src/EventEdition/EventDialog.vala:160
+#: ../src/EventEdition/EventDialog.vala:184
 msgid "Save Changes"
 msgstr "Sačuvaj promjene"
 
-#: ../src/EventEdition/LocationPanel.vala:44
+#: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
 msgstr "Lokacija:"
 
-#: ../src/EventEdition/LocationPanel.vala:46
+#: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
 msgstr "John Smith ili Primjer Skr."
 
-#: ../src/EventEdition/InfoPanel.vala:44
+#: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
 msgstr "Od:"
 
-#: ../src/EventEdition/InfoPanel.vala:50
+#: ../src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
 msgstr "Celodnevno:"
 
-#: ../src/EventEdition/InfoPanel.vala:55
+#: ../src/EventEdition/InfoPanel.vala:89
 msgid "To:"
 msgstr "Za:"
 
-#: ../src/EventEdition/InfoPanel.vala:73
+#: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
 msgstr "Naslov:"
 
-#: ../src/EventEdition/InfoPanel.vala:75
+#: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
 msgstr "Ime događaja"
 
-#: ../src/EventEdition/InfoPanel.vala:78
+#: ../src/EventEdition/InfoPanel.vala:119
+msgid "Press enter to parse event"
+msgstr ""
+
+#: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
 msgstr "Kalendar:"
 
-#: ../src/EventEdition/InfoPanel.vala:85
+#: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
 msgstr "Komentari:"
 
@@ -608,11 +612,11 @@ msgstr "Pređi na današnji datum"
 msgid "Manage Calendars"
 msgstr "Upravljaj kalendarima"
 
-#: ../src/MayaToolbar.vala:60
+#: ../src/MayaToolbar.vala:64
 msgid "Search Events"
 msgstr "Pretraži događaje"
 
-#: ../src/MayaToolbar.vala:63
+#: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
 msgstr "Eksportuj ili podijeli podrazumijevani kalendar"
 
@@ -620,7 +624,7 @@ msgstr "Eksportuj ili podijeli podrazumijevani kalendar"
 msgid "Calendar"
 msgstr "Kalendar"
 
-#: ../src/Application.vala:103
+#: ../src/Application.vala:102
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -669,7 +673,7 @@ msgstr "Korisiti sigurnu konekciju"
 msgid "Server handles meeting invitations"
 msgstr "Server obrađuje pozivnice za sastanak"
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:670
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
 msgid "On this computer"
 msgstr "Na ovom računaru"
 

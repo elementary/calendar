@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-23 21:37+0200\n"
+"POT-Creation-Date: 2016-01-19 00:31+0100\n"
 "PO-Revision-Date: 2015-10-07 02:30+0000\n"
 "Last-Translator: qezwan <Unknown>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-12-31 05:22+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-01-19 05:18+0000\n"
+"X-Generator: Launchpad (build 17886)\n"
 "Language: fa\n"
 
-#: ../src/SourceDialog/SourceSelector.vala:70
+#: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
 msgstr "زیاد کردنی ڕۆژمێری نوێ ...."
 
@@ -41,7 +41,7 @@ msgstr "ڕۆژمێری \"%S\" سڕاوەتەوە."
 
 #: ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:163 ../src/ImportDialog.vala:55
+#: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
 msgid "Cancel"
 msgstr "هەڵوەشاندنەوە"
 
@@ -99,23 +99,23 @@ msgstr "هەناردن لە ڕۆژمێر"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: ../src/EventEdition/GuestsPanel.vala:48
+#: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "بەسداریکەرەکان"
 
-#: ../src/EventEdition/GuestsPanel.vala:53
+#: ../src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
 msgstr "بێ بەشداریکەر"
 
-#: ../src/EventEdition/GuestsPanel.vala:88
+#: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
 msgstr "بانگهێشت"
 
-#: ../src/EventEdition/GuestsPanel.vala:236
+#: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
 msgstr "پەسەند کرا"
 
-#: ../src/EventEdition/GuestsPanel.vala:239
+#: ../src/EventEdition/GuestsPanel.vala:244
 msgid "Declined"
 msgstr "رەت کرا"
 
@@ -512,51 +512,55 @@ msgstr "میوانەکان"
 msgid "Reminders"
 msgstr "بیرخەرەوەکان"
 
-#: ../src/EventEdition/EventDialog.vala:145
+#: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
 msgstr "سڕینەوەی ڕووداو"
 
-#: ../src/EventEdition/EventDialog.vala:157
+#: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
 msgstr "دروستکردنی ڕووداو"
 
-#: ../src/EventEdition/EventDialog.vala:160
+#: ../src/EventEdition/EventDialog.vala:184
 msgid "Save Changes"
 msgstr "پاشکەوتی گۆڕانکاری"
 
-#: ../src/EventEdition/LocationPanel.vala:44
+#: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
 msgstr "شوێن:"
 
-#: ../src/EventEdition/LocationPanel.vala:46
+#: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
 msgstr "قەزوان یا ڕەستەی هاوتا"
 
-#: ../src/EventEdition/InfoPanel.vala:44
+#: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
 msgstr "لە:"
 
-#: ../src/EventEdition/InfoPanel.vala:50
+#: ../src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
 msgstr "هەموو ڕۆژ :"
 
-#: ../src/EventEdition/InfoPanel.vala:55
+#: ../src/EventEdition/InfoPanel.vala:89
 msgid "To:"
 msgstr "تا:"
 
-#: ../src/EventEdition/InfoPanel.vala:73
+#: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
 msgstr "بابەت:"
 
-#: ../src/EventEdition/InfoPanel.vala:75
+#: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
 msgstr "ناوی ڕوداو"
 
-#: ../src/EventEdition/InfoPanel.vala:78
+#: ../src/EventEdition/InfoPanel.vala:119
+msgid "Press enter to parse event"
+msgstr ""
+
+#: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
 msgstr "ڕۆژمێر:"
 
-#: ../src/EventEdition/InfoPanel.vala:85
+#: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
 msgstr "بۆچوون:"
 
@@ -606,11 +610,11 @@ msgstr "ڕۆیستن بۆ ڕیکەوتی ئەمڕۆ"
 msgid "Manage Calendars"
 msgstr "بەڕێوەبردنی ڕۆژمێرەکان"
 
-#: ../src/MayaToolbar.vala:60
+#: ../src/MayaToolbar.vala:64
 msgid "Search Events"
 msgstr "گەڕان لە ڕوداوەکان"
 
-#: ../src/MayaToolbar.vala:63
+#: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
 msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریمان"
 
@@ -618,7 +622,7 @@ msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریما�
 msgid "Calendar"
 msgstr "ڕۆژمێر"
 
-#: ../src/Application.vala:103
+#: ../src/Application.vala:102
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -665,7 +669,7 @@ msgstr "سوود وەرگرتن لە پەیوەندی پارێزراو"
 msgid "Server handles meeting invitations"
 msgstr "رێزبەندی بانگهێستەکانی بینەرانی سێرڤێر"
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:670
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
 msgid "On this computer"
 msgstr "لە سەر ئەم کۆمپیوترە"
 

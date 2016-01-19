@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-23 21:37+0200\n"
+"POT-Creation-Date: 2016-01-19 00:31+0100\n"
 "PO-Revision-Date: 2015-01-19 23:22+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Armenian <hy@li.org>\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-12-31 05:20+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-01-19 05:16+0000\n"
+"X-Generator: Launchpad (build 17886)\n"
 "Language: hy\n"
 
-#: ../src/SourceDialog/SourceSelector.vala:70
+#: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
 msgstr "Ավելացնել նոր օրացույց"
 
@@ -41,7 +41,7 @@ msgstr "Օրացույց  \"%s\" -ը ջնջված է"
 
 #: ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:163 ../src/ImportDialog.vala:55
+#: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
 msgid "Cancel"
 msgstr "Հրաժարվել"
 
@@ -99,23 +99,23 @@ msgstr "Արտահանել Օրացույց․․․"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: ../src/EventEdition/GuestsPanel.vala:48
+#: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Մասնակիցներ"
 
-#: ../src/EventEdition/GuestsPanel.vala:53
+#: ../src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
 msgstr "Մասնակիցներ չկան"
 
-#: ../src/EventEdition/GuestsPanel.vala:88
+#: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
 msgstr "Հրավիրել"
 
-#: ../src/EventEdition/GuestsPanel.vala:236
+#: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
 msgstr "Ընդունված է"
 
-#: ../src/EventEdition/GuestsPanel.vala:239
+#: ../src/EventEdition/GuestsPanel.vala:244
 msgid "Declined"
 msgstr "Մերժված է"
 
@@ -512,51 +512,55 @@ msgstr "Հյուրեր"
 msgid "Reminders"
 msgstr "Հիշեցուցիչներ"
 
-#: ../src/EventEdition/EventDialog.vala:145
+#: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
 msgstr "Ջնջել իրադարձությունը"
 
-#: ../src/EventEdition/EventDialog.vala:157
+#: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
 msgstr "Ստեղծել իրադարձություն"
 
-#: ../src/EventEdition/EventDialog.vala:160
+#: ../src/EventEdition/EventDialog.vala:184
 msgid "Save Changes"
 msgstr "Հիշել փոփոխությունները"
 
-#: ../src/EventEdition/LocationPanel.vala:44
+#: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
 msgstr "Տեղակայություն"
 
-#: ../src/EventEdition/LocationPanel.vala:46
+#: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
 msgstr "Մոնթե Մելքոնյան ԿԱՄ Նժդեհի փ."
 
-#: ../src/EventEdition/InfoPanel.vala:44
+#: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
 msgstr "–ից"
 
-#: ../src/EventEdition/InfoPanel.vala:50
+#: ../src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
 msgstr "Ողջ օրը"
 
-#: ../src/EventEdition/InfoPanel.vala:55
+#: ../src/EventEdition/InfoPanel.vala:89
 msgid "To:"
 msgstr "Ում՝"
 
-#: ../src/EventEdition/InfoPanel.vala:73
+#: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
 msgstr "Վերնագիր."
 
-#: ../src/EventEdition/InfoPanel.vala:75
+#: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
 msgstr "Իրադարձության անվանումը"
 
-#: ../src/EventEdition/InfoPanel.vala:78
+#: ../src/EventEdition/InfoPanel.vala:119
+msgid "Press enter to parse event"
+msgstr ""
+
+#: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
 msgstr "Օրացույց"
 
-#: ../src/EventEdition/InfoPanel.vala:85
+#: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
 msgstr "Մեկնաբանություններ"
 
@@ -607,11 +611,11 @@ msgstr ""
 msgid "Manage Calendars"
 msgstr "Կարգավորել օրացույցները"
 
-#: ../src/MayaToolbar.vala:60
+#: ../src/MayaToolbar.vala:64
 msgid "Search Events"
 msgstr "Փնտրել իրադարձություններ"
 
-#: ../src/MayaToolbar.vala:63
+#: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
 msgstr "Արտահանել կամ բաշխել հիմնական օրացույցը"
 
@@ -619,7 +623,7 @@ msgstr "Արտահանել կամ բաշխել հիմնական օրացույց
 msgid "Calendar"
 msgstr "Օրացույց"
 
-#: ../src/Application.vala:103
+#: ../src/Application.vala:102
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -668,7 +672,7 @@ msgstr "Օգտագործել անվտանգ կապ"
 msgid "Server handles meeting invitations"
 msgstr "Սերվերը գործածում է հանդիպումների հրավերքները"
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:670
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
 msgid "On this computer"
 msgstr "Այս համակարգիչում"
 

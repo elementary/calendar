@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-23 21:37+0200\n"
+"POT-Creation-Date: 2016-01-19 00:31+0100\n"
 "PO-Revision-Date: 2015-10-24 06:00+0000\n"
 "Last-Translator: ProsjektX <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-12-31 05:21+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-01-19 05:17+0000\n"
+"X-Generator: Launchpad (build 17886)\n"
 "Language: nb\n"
 
-#: ../src/SourceDialog/SourceSelector.vala:70
+#: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
 msgstr "Legg til ny kalender..."
 
@@ -41,7 +41,7 @@ msgstr "Kalender \"%s\" fjernet."
 
 #: ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:163 ../src/ImportDialog.vala:55
+#: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -99,23 +99,23 @@ msgstr "Eksporter kalender..."
 msgid "calendar.ics"
 msgstr "kalender.ics"
 
-#: ../src/EventEdition/GuestsPanel.vala:48
+#: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Deltakere:"
 
-#: ../src/EventEdition/GuestsPanel.vala:53
+#: ../src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
 msgstr "Ingen deltagere"
 
-#: ../src/EventEdition/GuestsPanel.vala:88
+#: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
 msgstr "Inviter"
 
-#: ../src/EventEdition/GuestsPanel.vala:236
+#: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
 msgstr "Godtatt"
 
-#: ../src/EventEdition/GuestsPanel.vala:239
+#: ../src/EventEdition/GuestsPanel.vala:244
 msgid "Declined"
 msgstr "Avslått"
 
@@ -512,51 +512,55 @@ msgstr "Gjester"
 msgid "Reminders"
 msgstr "Påminnelser"
 
-#: ../src/EventEdition/EventDialog.vala:145
+#: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
 msgstr "Slett hendelse"
 
-#: ../src/EventEdition/EventDialog.vala:157
+#: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
 msgstr "Opprett hendelse"
 
-#: ../src/EventEdition/EventDialog.vala:160
+#: ../src/EventEdition/EventDialog.vala:184
 msgid "Save Changes"
 msgstr "Lagre endringer"
 
-#: ../src/EventEdition/LocationPanel.vala:44
+#: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
 msgstr "Sted:"
 
-#: ../src/EventEdition/LocationPanel.vala:46
+#: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
 msgstr "Ola Nordmann ELLER Karl Eksempel Gate"
 
-#: ../src/EventEdition/InfoPanel.vala:44
+#: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
 msgstr "Fra:"
 
-#: ../src/EventEdition/InfoPanel.vala:50
+#: ../src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
 msgstr "Hele dagen:"
 
-#: ../src/EventEdition/InfoPanel.vala:55
+#: ../src/EventEdition/InfoPanel.vala:89
 msgid "To:"
 msgstr "Til:"
 
-#: ../src/EventEdition/InfoPanel.vala:73
+#: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
 msgstr "Tittel:"
 
-#: ../src/EventEdition/InfoPanel.vala:75
+#: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
 msgstr "Navn på hendelse"
 
-#: ../src/EventEdition/InfoPanel.vala:78
+#: ../src/EventEdition/InfoPanel.vala:119
+msgid "Press enter to parse event"
+msgstr ""
+
+#: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
 msgstr "Kalender:"
 
-#: ../src/EventEdition/InfoPanel.vala:85
+#: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
 msgstr "Kommentarer:"
 
@@ -607,11 +611,11 @@ msgstr "Gå til dagens dato"
 msgid "Manage Calendars"
 msgstr "Organiser kalendere"
 
-#: ../src/MayaToolbar.vala:60
+#: ../src/MayaToolbar.vala:64
 msgid "Search Events"
 msgstr "Søk hendelser"
 
-#: ../src/MayaToolbar.vala:63
+#: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
 msgstr "Eksporter eller del standard kalender"
 
@@ -619,7 +623,7 @@ msgstr "Eksporter eller del standard kalender"
 msgid "Calendar"
 msgstr "Kalender"
 
-#: ../src/Application.vala:103
+#: ../src/Application.vala:102
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -672,7 +676,7 @@ msgstr "Bruk sikker tilkobling"
 msgid "Server handles meeting invitations"
 msgstr "Tjener hånterer møteinvitasjoner"
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:670
+#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
 msgid "On this computer"
 msgstr "På denne maskinen"
 
