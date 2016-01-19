@@ -38,6 +38,19 @@ Description: GTK+ calendar application
  to notify the user about upcoming events and supports synchronization with
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
 
+Package: maya-calendar-common
+Architecture: all
+Depends: ${misc:Depends}
+Description: GTK+ calendar application (dummy transitional package)
+ Maya is a slim, lightweight, GTK+ calendar application written
+ in Vala and designed for elementary OS.
+ .
+ It features an easy to use yet powerful user interface, provides a daemon
+ to notify the user about upcoming events and supports synchronization with
+ Google Calendar as well as CalDAV-supporting services such as OwnCloud.
+ .
+ This package can be safely removed after upgrading to elementary OS 0.4 Loki.
+
 Package: maya-calendar-daemon
 Architecture: any
 Enhances: maya-calendar
