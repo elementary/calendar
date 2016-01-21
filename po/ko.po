@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2015-12-22 19:09+0000\n"
+"PO-Revision-Date: 2016-01-20 17:26+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-01-19 05:17+0000\n"
+"X-Launchpad-Export-Date: 2016-01-21 05:28+0000\n"
 "X-Generator: Launchpad (build 17886)\n"
 "Language: ko\n"
 
@@ -549,7 +549,7 @@ msgstr "이벤트 이름"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "이벤트를 분석하려면 엔터키를 누르세요"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
