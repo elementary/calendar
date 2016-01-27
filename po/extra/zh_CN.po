@@ -1,0 +1,44 @@
+# Chinese (Simplified) translation for maya
+# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
+# This file is distributed under the same license as the maya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: maya\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"PO-Revision-Date: 2016-01-26 12:59+0000\n"
+"Last-Translator: colindemian <dengmengpc@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-01-27 05:18+0000\n"
+"X-Generator: Launchpad (build 17902)\n"
+
+msgid "Calendar"
+msgstr "日历"
+
+msgid "View and schedule events"
+msgstr "查看并安排活动"
+
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr "日历;安排;约会;日期;活动;日历;ICS;CalDAV;Evolution"
+
+msgid "Add Event"
+msgstr "添加活动"
+
+msgid "About Calendar"
+msgstr "关于日历"
+
+msgid "Maya"
+msgstr "Maya"
+
+msgid "About Maya"
+msgstr "关于 Maya"
+
+msgid ""
+"A slim, lightweight calendar app that syncs and manages multiple calendars "
+"in one place, like Google Calendar, Outlook and CalDAV."
+msgstr "简约的轻量级日历应用，一站式同步和管理多个日历，包括 Google 日历 、Outlook 和 CalDAV。"
