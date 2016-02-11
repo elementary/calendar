@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2015-12-12 15:24+0000\n"
+"PO-Revision-Date: 2016-02-10 22:46+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:28+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-02-11 05:42+0000\n"
+"X-Generator: Launchpad (build 17923)\n"
 "Language: et\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -554,7 +554,7 @@ msgstr "Sündmuse nimi"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "Sündmuse analüüsimiseks vajuta enterit"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
