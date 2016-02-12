@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2015-10-31 23:52+0000\n"
+"PO-Revision-Date: 2016-02-11 18:09+0000\n"
 "Last-Translator: Leonardo Lemos <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:29+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-02-12 05:22+0000\n"
+"X-Generator: Launchpad (build 17923)\n"
 "Language: pt_BR\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -554,7 +554,7 @@ msgstr "Nome do evento"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "Pressione enter para analisar eventos"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
