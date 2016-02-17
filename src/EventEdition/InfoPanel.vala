@@ -31,32 +31,32 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     private EventDialog parent_dialog;
 
 
-    public string title { 
+    public string title {
         get { return title_entry.get_text (); }
         set { title_entry.set_text (value); }
     }
 
-    public DateTime from_date { 
+    public DateTime from_date {
         get { return from_date_picker.date; }
         set { from_date_picker.date = value; }
     }
 
-    public DateTime to_date { 
+    public DateTime to_date {
         get { return to_date_picker.date; }
         set { to_date_picker.date = value; }
     }
 
-    public DateTime from_time { 
+    public DateTime from_time {
         get { return from_time_picker.time; }
         set { from_time_picker.time = value; }
     }
 
-    public DateTime to_time { 
+    public DateTime to_time {
         get { return to_time_picker.time; }
         set { to_time_picker.time = value; }
     }
 
-    public bool all_day { 
+    public bool all_day {
         get { return allday_switch.get_active (); }
         set { allday_switch.set_active (value); }
     }
@@ -158,7 +158,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         attach (to_date_picker, 0, 5, 1, 1);
         attach (to_time_picker, 1, 5, 1, 1);
         attach (title_label, 0, 0, 1, 1);
-        attach (title_entry, 0, 1, 1, 1);
+        attach (title_entry, 0, 1, 2, 1);
         if (calendar_button.sources.length () > 1 && parent_dialog.can_edit) {
             attach (calendar_label, 1, 0, 4, 1);
             attach (calendar_button, 1, 1, 4, 1);
@@ -336,8 +336,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
                     if ((start_time.get_hour () == end_time.get_hour ()) && (start_time.get_minute () >= end_time.get_minute ()))
                         to_time_picker.time = from_time_picker.time.add_hours(1);
-                        
-                    if (start_time.get_hour () >= 23) 
+
+                    if (start_time.get_hour () >= 23)
                         to_date_picker.date = from_date_picker.date.add_days (1);
                 }
             }
