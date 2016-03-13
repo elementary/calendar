@@ -8,36 +8,36 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2015-01-19 23:03+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2016-03-12 11:54+0000\n"
+"Last-Translator: Shadrack  John <Unknown>\n"
 "Language-Team: Swahili <sw@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:29+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-03-13 05:29+0000\n"
+"X-Generator: Launchpad (build 17939)\n"
 "Language: sw\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "Ongeza Calenda"
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
-msgstr ""
+msgstr "Ondoa"
 
 #: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
 msgid "Edit…"
-msgstr ""
+msgstr "Harir"
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
-msgstr ""
+msgstr "Tendua"
 
 #: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "Calenda \"%\" imeonderea"
 
 #: ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../src/SourceDialog/SourceDialog.vala:69
 msgid "Name:"
-msgstr ""
+msgstr "Jina:"
 
 #: ../src/SourceDialog/SourceDialog.vala:72
 msgid "Calendar Name"
@@ -59,32 +59,32 @@ msgstr ""
 
 #: ../src/SourceDialog/SourceDialog.vala:95
 msgid "Type:"
-msgstr ""
+msgstr "Aina:"
 
 #: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
-msgstr ""
+msgstr "Rangi:"
 
 #: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "Fanya iyi kalenda chaguo msingi"
 
 #: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
-msgstr ""
+msgstr "Jenga Kalenda"
 
 #: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
-msgstr ""
+msgstr "Hifadhi"
 
 #: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Ficha Nambari ya Siku"
 
 #: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
 msgid "Show Week Numbers"
-msgstr "Onesha namba za wiki"
+msgstr "Onesha Nambari ya Siku"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
@@ -93,188 +93,185 @@ msgstr ""
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
 msgid "Export Calendar..."
-msgstr ""
+msgstr "Hamisha Kalenda"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 msgid "calendar.ics"
-msgstr ""
+msgstr "kalenda.ics"
 
 #: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr ""
+msgstr "Washiri"
 
 #: ../src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
-msgstr ""
+msgstr "Hakuna Washiriki"
 
 #: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
-msgstr ""
+msgstr "Karibisha"
 
 #: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
-msgstr ""
+msgstr "Pokea"
 
 #: ../src/EventEdition/GuestsPanel.vala:244
 msgid "Declined"
-msgstr ""
+msgstr "Kataa"
 
 #: ../src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
-msgstr ""
+msgstr "Ukumbusho"
 
 #: ../src/EventEdition/ReminderPanel.vala:37
 msgid "No Reminders"
-msgstr ""
+msgstr "Kakuna Ukumbusho"
 
 #: ../src/EventEdition/ReminderPanel.vala:71
 msgid "Add Reminder"
-msgstr ""
+msgstr "Ongeza Ukumbusho"
 
 #: ../src/EventEdition/ReminderPanel.vala:182
 msgid "0 minutes"
-msgstr ""
+msgstr "dakika 0"
 
 #: ../src/EventEdition/ReminderPanel.vala:183
 msgid "1 minutes"
-msgstr ""
+msgstr "dakika 1"
 
 #: ../src/EventEdition/ReminderPanel.vala:184
 msgid "5 minutes"
-msgstr ""
+msgstr "dakika 5"
 
 #: ../src/EventEdition/ReminderPanel.vala:185
 msgid "10 minutes"
-msgstr ""
+msgstr "dakika 10"
 
 #: ../src/EventEdition/ReminderPanel.vala:186
 msgid "15 minutes"
-msgstr ""
+msgstr "dakika 15"
 
 #: ../src/EventEdition/ReminderPanel.vala:187
 msgid "20 minutes"
-msgstr ""
+msgstr "dakika 20"
 
 #: ../src/EventEdition/ReminderPanel.vala:188
 msgid "25 minutes"
-msgstr ""
+msgstr "dakika 25"
 
 #: ../src/EventEdition/ReminderPanel.vala:189
 msgid "30 minutes"
-msgstr ""
+msgstr "dakika 30"
 
 #: ../src/EventEdition/ReminderPanel.vala:190
 msgid "45 minutes"
-msgstr ""
+msgstr "dakika 45"
 
 #: ../src/EventEdition/ReminderPanel.vala:191
 msgid "1 hour"
-msgstr ""
+msgstr "saa 1"
 
 #: ../src/EventEdition/ReminderPanel.vala:192
 msgid "2 hours"
-msgstr ""
+msgstr "masaa 2"
 
 #: ../src/EventEdition/ReminderPanel.vala:193
 msgid "3 hours"
-msgstr ""
+msgstr "masaa 3"
 
 #: ../src/EventEdition/ReminderPanel.vala:194
 msgid "12 hours"
-msgstr ""
+msgstr "masaa 12"
 
 #: ../src/EventEdition/ReminderPanel.vala:195
 msgid "24 hours"
-msgstr ""
+msgstr "masaa 24"
 
 #: ../src/EventEdition/ReminderPanel.vala:196
 msgid "2 days"
-msgstr ""
+msgstr "siku 2"
 
 #: ../src/EventEdition/ReminderPanel.vala:197
 msgid "1 week"
-msgstr ""
+msgstr "wiki 1"
 
 #: ../src/EventEdition/ReminderPanel.vala:206
 msgid "Notification"
-msgstr ""
+msgstr "Taarifa"
 
 #: ../src/EventEdition/ReminderPanel.vala:207
 msgid "Email"
-msgstr ""
+msgstr "Barua pepe"
 
 #: ../src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
-msgstr ""
+msgstr "Rudia"
 
 #: ../src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
-msgstr ""
+msgstr "Kila siku"
 
 #: ../src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
-msgstr ""
+msgstr "Kila wiki"
 
 #: ../src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
-msgstr ""
+msgstr "Kila mwezi"
 
 #: ../src/EventEdition/RepeatPanel.vala:61
 msgid "Yearly"
-msgstr ""
+msgstr "Kila mwaka"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr ""
+msgstr "Kila"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Siku"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Juma"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mwezi"
+msgstr[1] "Miezi"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mwaka"
+msgstr[1] "Miezi"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr ""
+msgstr "Mwisho"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Rudai"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
-msgstr ""
+msgstr "Katu"
 
 #: ../src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
-msgstr ""
+msgstr "Mpaka"
 
 #: ../src/EventEdition/RepeatPanel.vala:143
 msgid "After"
-msgstr ""
+msgstr "Badda"
 
 #: ../src/EventEdition/RepeatPanel.vala:189
 msgid "The same day every month"
@@ -522,7 +519,7 @@ msgstr "Tengeneza tukio"
 
 #: ../src/EventEdition/EventDialog.vala:184
 msgid "Save Changes"
-msgstr ""
+msgstr "hifadhi mabadiliko"
 
 #: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
@@ -612,30 +609,31 @@ msgstr ""
 
 #: ../src/MayaToolbar.vala:64
 msgid "Search Events"
-msgstr ""
+msgstr "Tafuta Matukio"
 
 #: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "Hamisha au Gawiza Kalenda ya msingi"
 
 #: ../src/Application.vala:34 ../src/Translations.vala:6
 msgid "Calendar"
-msgstr ""
+msgstr "Kalenda"
 
 #: ../src/Application.vala:102
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-"  Jkakolwa https://launchpad.net/~jkakolwa"
+"  Jkakolwa https://launchpad.net/~jkakolwa\n"
+"  Shadrack  John https://launchpad.net/~shaselloiel"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
-msgstr ""
+msgstr "%l:%M %p"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "Maya;Ratiba;Tarehe;Matukio;"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
@@ -671,7 +669,7 @@ msgstr ""
 
 #: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
 msgid "On this computer"
-msgstr ""
+msgstr "Kwenye kompyuta yingine"
 
 #: ../core/Backends/PlacementWidget.vala:41
 msgid "User:"
@@ -695,11 +693,11 @@ msgstr ""
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr ""
+msgstr "%B %e, %Y"
 
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
-msgstr ""
+msgstr "%A, %b %d"
 
 #~ msgid "Sync..."
 #~ msgstr "Sync..."
@@ -733,3 +731,48 @@ msgstr ""
 
 #~ msgid "%H:%M"
 #~ msgstr "%saa:%dakika"
+
+#~ msgid "%l:%M %p"
+#~ msgstr "%l:%M %p"
+
+#~ msgid "Webcal"
+#~ msgstr "Kalenda-Pepe"
+
+#~ msgid "_Add Event"
+#~ msgstr "_Ongeza Matukio"
+
+#~ msgid "Personal"
+#~ msgstr "Binafsi"
+
+#~ msgid "Contacts"
+#~ msgstr "washirika"
+
+#~ msgid "Title"
+#~ msgstr "Jina"
+
+#~ msgid "Your event has to be named and has to have a valid date"
+#~ msgstr "Matukiro yako anapashwa nakuwa na jina na  tarehe halali"
+
+#~ msgid "Participants"
+#~ msgstr "Washiriki"
+
+#~ msgid "Ends: \t"
+#~ msgstr "Inaishia: \t"
+
+#~ msgid "all day"
+#~ msgstr "siku nzima"
+
+#~ msgid "Starts: \t"
+#~ msgstr "Inaanzia: \t"
+
+#~ msgid "$more more ..."
+#~ msgstr "$zaidi zaidi ..."
+
+#~ msgid "This event can't be edited"
+#~ msgstr "Tukiro hili haliwezi kuhaririwa"
+
+#~ msgid "Add calendar"
+#~ msgstr "Ongeza Kalenda"
+
+#~ msgid "About"
+#~ msgstr "Kuhusu"
