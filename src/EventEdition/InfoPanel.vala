@@ -237,7 +237,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
 
             // Is this all day
-            bool allday = Util.is_the_all_day(from_date, to_date);
+            bool allday = Util.is_all_day(from_date, to_date);
 
             if (dt_end.year != 0) {
                 // If it's an all day event, subtract 1 from the end date

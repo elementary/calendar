@@ -123,7 +123,7 @@ namespace Maya.Util {
         if (end == null) end = start;
 
         // All days events are stored in UTC time and should only being shown at one day.
-        bool allday = is_the_all_day (start, end);
+        bool allday = is_all_day (start, end);
         if (allday) {
             end = end.add_days (-1);
             var interval = (new DateTime.now_local ()).get_utc_offset ();
@@ -131,8 +131,8 @@ namespace Maya.Util {
             end = end.add (-interval);
         }
 
-        start = strip_time (start.to_timezone (new TimeZone.local ()));
-        end = strip_time (end.to_timezone (new TimeZone.local ()));
+        start = strip_time (start);
+        end = strip_time (end);
         dateranges.add (new Util.DateRange (start, end));
 
         // Search for recursive events.
@@ -255,10 +255,14 @@ namespace Maya.Util {
                     }
                 } else {
                     int i = 1;
-                    int n = i*rrule.interval;
                     bool is_null_time = rrule.until.is_null_time () == 1;
-                    var start_ical_day = get_date_from_ical_day (start.add_months (n), rrule.by_day[k]);
-                    int week_of_month = (int)GLib.Math.ceil ((double)start.get_day_of_month () / 7);
+                    bool is_last = (rrule.by_day[k] < 0);
+                    var start_ical_day = start;
+                    var end_ical_day = end;
+                    var days = end.get_day_of_month () - start.get_day_of_month ();
+                    int start_week = (int)GLib.Math.ceil ((double)start.get_day_of_month () / 7);
+
+                    // Loop through each individual month from the start and test to see if our event is in the month or not
                     while (view_range.last.compare (start_ical_day) > 0) {
                         if (is_null_time == false) {
                             if (start_ical_day.get_year () > rrule.until.year)
@@ -267,24 +271,37 @@ namespace Maya.Util {
                                 break;
                             else if (start_ical_day.get_year () == rrule.until.year && start_ical_day.get_month () == rrule.until.month && start_ical_day.get_day_of_month () > rrule.until.day)
                                 break;
+                        }
+
+                        var start_ical_day_new = get_date_from_ical_day (start.add_months (i), rrule.by_day[k]);
+                        int month = start.add_months (i).get_month ();
+                        int week = start_week;
+                    
+                        // If event repeats on a last day of the month, take us back a week if we move into a new month
+                        if (is_last && start_ical_day_new.get_month () != month) {
+                            start_ical_day_new = start_ical_day_new.add_weeks (-1);
+                        }
                         
+                        else if (!is_last) {
+                            if (start_ical_day_new.get_day_of_month () <= 7 && start_ical_day_new.add_weeks (-1).get_month () == month) {
+                                week = 2;
+                            }
+                            else {
+                                week =  (int)GLib.Math.ceil ((double)start_ical_day_new.get_day_of_month () / 7);
+                            }
+                        }
+                       
+                        start_ical_day_new = start_ical_day_new.add_weeks (start_week - week);
+                        if (start_ical_day_new.get_month () != month) {
+                            start_ical_day = start.add_months (i);
+                        }
+                        else {
+                            start_ical_day = start_ical_day_new;
+                            end_ical_day = start_ical_day.add_days (days);
+                            dateranges.add (new Util.DateRange (start_ical_day, end_ical_day));
                         }
 
-                        // Set it at the right weekday
-                        int interval = start_ical_day.get_day_of_month () - start.get_day_of_month ();
-                        var start_daterange_date = start_ical_day;
-                        var end_daterange_date = end.add_months (n).add_days (interval);
-                        var new_week_of_month = (int)GLib.Math.ceil ((double)start_daterange_date.get_day_of_month () / 7);
-                        // Set it at the right week
-                        if (week_of_month != new_week_of_month) {
-                            start_daterange_date = start_daterange_date.add_weeks (week_of_month - new_week_of_month);
-                            end_daterange_date = end_daterange_date.add_weeks (week_of_month - new_week_of_month);
-                        }
-
-                        dateranges.add (new Util.DateRange (start_daterange_date, end_daterange_date));
                         i++;
-                        n = i*rrule.interval;
-                        start_ical_day = get_date_from_ical_day (start.add_months (n), rrule.by_day[k]);
                     }
                 }
             } else {
@@ -401,7 +418,7 @@ namespace Maya.Util {
         start= start.to_timezone (new TimeZone.utc ());
         end = end.to_timezone (new TimeZone.utc ());
 
-        bool allday = is_the_all_day (start, end);
+        bool allday = is_all_day (start, end);
         if (allday)
             end = end.add_days (-1);
 
@@ -414,7 +431,7 @@ namespace Maya.Util {
     /**
      * Say if an event lasts all day.
      */
-    public bool is_the_all_day (DateTime dtstart, DateTime dtend) {
+    public bool is_all_day (DateTime dtstart, DateTime dtend) {
         var UTC_start = dtstart.to_timezone (new TimeZone.utc ());
         var timespan = dtend.difference (dtstart);
         if (timespan % GLib.TimeSpan.DAY == 0 && UTC_start.get_hour() == 0) {
@@ -449,29 +466,8 @@ namespace Maya.Util {
                 day_to_add = 6 - date.get_day_of_week ();
                 break;
         }
-        if (date.add_days (day_to_add).get_month () < date.get_month ())
-            day_to_add = day_to_add + 7;
 
-        if (date.add_days (day_to_add).get_month () > date.get_month ())
-            day_to_add = day_to_add - 7;
-
-        switch (iCal.RecurrenceType.day_position (day)) {
-            case 1:
-                int n = (int)GLib.Math.trunc ((date.get_day_of_month () + day_to_add) / 7);
-                return date.add_days (day_to_add - n * 7);
-            case 2:
-                int n = (int)GLib.Math.trunc ((date.get_day_of_month () + day_to_add - 7) / 7);
-                return date.add_days (day_to_add - n * 7);
-            case 3:
-                int n = (int)GLib.Math.trunc ((date.get_day_of_month () + day_to_add - 14) / 7);
-                return date.add_days (day_to_add - n * 7);
-            case 4:
-                int n = (int)GLib.Math.trunc ((date.get_day_of_month () + day_to_add - 21) / 7);
-                return date.add_days (day_to_add - n * 7);
-            default:
-                int n = (int)GLib.Math.trunc ((date.get_day_of_month () + day_to_add - 28) / 7);
-                return date.add_days (day_to_add - n * 7);
-        }
+        return date.add_days (day_to_add);
     }
 
     public DateTime get_start_of_month (owned DateTime? date = null) {
