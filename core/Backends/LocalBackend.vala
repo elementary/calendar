@@ -21,6 +21,8 @@
  */
 
 public class Maya.LocalBackend : GLib.Object, Maya.Backend {
+    E.SourceRegistry registry;
+
     public string get_name () {
         return _("On this computer");
     }
@@ -41,11 +43,35 @@ public class Maya.LocalBackend : GLib.Object, Maya.Backend {
             E.SourceCalendar cal = (E.SourceCalendar)new_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             cal.color = color;
             cal.backend_name = "local";
-            var registry = Maya.Model.CalendarModel.get_default ().registry;
+            add_source.begin (new_source, set_default);
+        } catch (GLib.Error error) {
+            critical (error.message);
+        }
+    }
+
+    public async void add_source (E.Source new_source, bool set_default) {
+        try {
+            if (registry == null) {
+                registry = yield new E.SourceRegistry (null);
+            }
+
             registry.commit_source_sync (new_source);
             if (set_default) {
-                registry.default_calendar = new_source;
+                yield set_source_default (new_source);
             }
+        } catch (GLib.Error error) {
+            critical (error.message);
+        }
+    }
+
+    public async void set_source_default (E.Source source) {
+        try {
+            if (registry == null) {
+                registry = yield new E.SourceRegistry (null);
+            }
+
+            registry.default_calendar = source;
+            yield source.write (null);
         } catch (GLib.Error error) {
             critical (error.message);
         }
@@ -56,9 +82,7 @@ public class Maya.LocalBackend : GLib.Object, Maya.Backend {
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
         cal.color = color;
         if (set_default) {
-            Maya.Model.CalendarModel.get_default ().registry.default_calendar = source;
+            set_source_default.begin (source);
         }
-
-        source.write.begin (null);
     }
 }

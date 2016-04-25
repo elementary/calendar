@@ -55,17 +55,6 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
         src_map = new GLib.HashTable<string, SourceItem?>(str_hash, str_equal);
 
-        var registry = Maya.Model.CalendarModel.get_default ().registry;
-        var sources = registry.list_sources (E.SOURCE_EXTENSION_CALENDAR);
-        foreach (var src in sources) {
-            add_source_to_view (src);
-        }
-
-        registry.source_removed.connect (source_removed);
-        registry.source_disabled.connect (source_disabled);
-        registry.source_enabled.connect (add_source_to_view);
-        registry.source_added.connect (add_source_to_view);
-
         var add_calendar_button = new Gtk.Button.with_label (_("Add New Calendar…"));
         add_calendar_button.hexpand = true;
         add_calendar_button.margin_start = add_calendar_button.margin_end = 6;
@@ -81,7 +70,25 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         stack.margin_bottom = 5;
 
         this.add (stack);
+        populate.begin ();
         stack.show_all ();
+    }
+
+    public async void populate () {
+        try {
+            var registry = yield new E.SourceRegistry (null);
+            registry.source_removed.connect (source_removed);
+            registry.source_disabled.connect (source_disabled);
+            registry.source_enabled.connect (add_source_to_view);
+            registry.source_added.connect (add_source_to_view);
+
+            // Add sources
+            registry.list_sources (E.SOURCE_EXTENSION_CALENDAR).foreach ((source) => {
+                add_source_to_view (source);
+            });
+        } catch (GLib.Error error) {
+            critical (error.message);
+        }
     }
 
     private void header_update_func (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {

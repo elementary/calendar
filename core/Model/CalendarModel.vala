@@ -114,19 +114,23 @@ public class Maya.Model.CalendarModel : Object {
         calendar_trash = new GLib.Queue<E.Source> ();
 
         notify["month-start"].connect (on_parameter_changed);
+        open.begin ();
+    }
+
+    public async void open () {
         try {
-            registry = new E.SourceRegistry.sync (null);
+            registry = yield new E.SourceRegistry (null);
             registry.source_removed.connect (remove_source);
             registry.source_changed.connect (on_source_changed);
             registry.source_added.connect (add_source);
 
             // Add sources
-            foreach (var source in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
+            registry.list_sources (E.SOURCE_EXTENSION_CALENDAR).foreach ((source) => {
                 E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
                 if (cal.selected == true && source.enabled == true) {
                     add_source (source);
                 }
-            }
+            });
         } catch (GLib.Error error) {
             critical (error.message);
         }
@@ -362,7 +366,7 @@ public class Maya.Model.CalendarModel : Object {
         try {
             var cancellable = new GLib.Cancellable ();
             connecting (source, cancellable);
-            var client = new E.CalClient.connect_sync (source, E.CalClientSourceType.EVENTS, 30, cancellable);
+            var client = yield new E.CalClient.connect (source, E.CalClientSourceType.EVENTS, 30, cancellable);
             source_client.insert (source.dup_uid (), client);
         } catch (Error e) {
             error_received (e.message);
