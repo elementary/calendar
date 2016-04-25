@@ -113,9 +113,10 @@ public class Maya.View.AgendaView : Gtk.Grid {
                 return false;
 
             unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
-            var stripped_time = Util.strip_time (selected_date);
-            foreach (var dt_range in Util.event_date_ranges (comp, new Util.DateRange (stripped_time, stripped_time.add_days (1)))) {
-                if (dt_range.contains (selected_date))
+            var stripped_time = Util.strip_time (selected_date.to_timezone (new TimeZone.utc ()));
+            var range = new Util.DateRange (stripped_time, stripped_time.add_days (1));
+            foreach (var dt_range in Util.event_date_ranges (comp, range)) {
+                if (dt_range.contains (stripped_time))
                     return true;
             }
 
@@ -359,7 +360,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
 
             DateTime start_date, end_date;
             Util.get_local_datetimes_from_icalcomponent (ical_event, out start_date, out end_date);
-            if (Util.is_the_all_day (start_date, end_date) == true) {
+            if (Util.is_all_day (start_date, end_date) == true) {
                 is_allday = true;
                 hour_label.hide ();
                 hour_label.no_show_all = true;
