@@ -20,9 +20,8 @@ namespace E {
 	}
 	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_cal_client_get_type ()")]
 	public class CalClient : E.Client {
-		[CCode (has_construct_function = false)]
-		public CalClient (E.Source source, E.CalClientSourceType source_type) throws GLib.Error;
-		public virtual async void connect (E.Source source, E.CalClientSourceType source_type, GLib.Cancellable? cancellable) throws GLib.Error;
+		[CCode (has_construct_function = false, cname = "e_cal_client_connect")]
+		public async CalClient.connect (E.Source source, E.CalClientSourceType source_type, int32 wait_for_connected_seconds, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[CCode (has_construct_function = false, cname = "e_cal_client_connect_sync")]
 		public CalClient.connect_sync (E.Source source, E.CalClientSourceType source_type, int32 wait_for_connected_seconds, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public async bool add_timezone (iCal.TimeZone zone, GLib.Cancellable cancellable) throws GLib.Error;
