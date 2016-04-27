@@ -16,9 +16,13 @@ libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_gestures_utils_on_scroll_event@Base 0.3
  maya_gestures_utils_reset_timer@Base 0.3
  maya_gestures_utils_reset_timer_finish@Base 0.3
+ maya_local_backend_add_source@Base 0.3.1.1
+ maya_local_backend_add_source_finish@Base 0.3.1.1
  maya_local_backend_construct@Base 0.3
  maya_local_backend_get_type@Base 0.3
  maya_local_backend_new@Base 0.3
+ maya_local_backend_set_source_default@Base 0.3.1.1
+ maya_local_backend_set_source_default_finish@Base 0.3.1.1
  maya_model_calendar_model_add_event@Base 0.3
  maya_model_calendar_model_add_source@Base 0.3
  maya_model_calendar_model_calclient_is_readonly@Base 0.3.1
@@ -35,6 +39,8 @@ libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_model_calendar_model_get_type@Base 0.3
  maya_model_calendar_model_get_week_starts_on@Base 0.3
  maya_model_calendar_model_load_all_sources@Base 0.3
+ maya_model_calendar_model_open@Base 0.3.1.1
+ maya_model_calendar_model_open_finish@Base 0.3.1.1
  maya_model_calendar_model_remove_event@Base 0.3
  maya_model_calendar_model_remove_source@Base 0.3
  maya_model_calendar_model_restore_calendar@Base 0.3
@@ -113,8 +119,8 @@ libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_get_source_location@Base 0.3.1
  maya_util_get_start_of_month@Base 0.3
  maya_util_ical_to_date_time@Base 0.3
+ maya_util_is_all_day@Base 0.3.1.1
  maya_util_is_multiday_event@Base 0.3
- maya_util_is_the_all_day@Base 0.3
  maya_util_param_spec_css@Base 0.3
  maya_util_remap@Base 0.3
  maya_util_save_temp_selected_calendars@Base 0.3
