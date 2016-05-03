@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:28+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-05-03 05:24+0000\n"
+"X-Generator: Launchpad (build 17995)\n"
 "Language: ja\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -628,7 +628,7 @@ msgstr ""
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
 "  Joji Bronner https://launchpad.net/~jojiinchrist\n"
 "  Naoki Kephart https://launchpad.net/~naoki-kephart\n"
-"  Tsuji Kento https://launchpad.net/~tuziemon"
+"  Tsuji Kento https://launchpad.net/~tuziemon-deactivatedaccount"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
