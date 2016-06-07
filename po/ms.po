@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2015-02-09 19:36+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2016-06-07 04:49+0000\n"
+"Last-Translator: Timothy <timothy.wong@rocketmail.com>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-05-03 05:25+0000\n"
-"X-Generator: Launchpad (build 17995)\n"
+"X-Launchpad-Export-Date: 2016-06-07 05:25+0000\n"
+"X-Generator: Launchpad (build 18097)\n"
 "Language: ms\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -230,27 +230,23 @@ msgstr "Setiap"
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Haribulan"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Minggu"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Bulan"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tahun"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -261,8 +257,7 @@ msgstr "Tamat"
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ulang"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
@@ -631,6 +626,7 @@ msgstr ""
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
 "  Myh Yazid https://launchpad.net/~myh-myh09\n"
 "  TMUkmkd https://launchpad.net/~tmukmkd\n"
+"  Timothy https://launchpad.net/~timothy-wong\n"
 "  abuyop https://launchpad.net/~abuyop"
 
 #: ../src/Translations.vala:5
