@@ -18,172 +18,43 @@
  * Authored by: Maxwell Barvian
  */
 
-namespace Maya.View.Widgets {
+public class Maya.View.Widgets.DateSwitcher : Gtk.Grid {
+    public signal void left_clicked ();
+    public signal void right_clicked ();
 
-    public class DateSwitcher : Gtk.EventBox {
-
-        // Signals
-        public signal void left_clicked ();
-        public signal void right_clicked ();
-
-        // Constants
-        protected const int PADDING = 5;
-
-        private bool _is_pressed = false;
-        protected bool is_pressed {
-            get { return _is_pressed; }
-            set {
-                _is_pressed = value;
-                if (hovered == 0 || hovered == 2)
-                    container_grid.get_children ().nth_data (hovered).set_state_flags (value ? Gtk.StateFlags.SELECTED : Gtk.StateFlags.NORMAL, true);
-                queue_draw ();
-            }
+    private Gtk.Label label;
+    public string text {
+        get { return label.label; }
+        set {
+            string new_value = value.substring (value.index_of_nth_char (1));
+            new_value = value.get_char (0).totitle ().to_string () + new_value;
+            label.label = new_value;
         }
-
-        private int _hovered = -1;
-        protected int hovered {
-            get { return _hovered; }
-            set {
-                _hovered = value;
-                queue_draw ();
-            }
-        }
-
-        private Gtk.Grid container_grid;
-
-        public Gtk.Label label { get; protected set; }
-        public string text {
-            get { return label.label; }
-            set {
-                string new_value = value.substring (value.index_of_nth_char (1));
-                new_value = value.get_char (0).totitle ().to_string () + new_value;
-                label.label = new_value;
-            }
-        }
-
-        /**
-         * Creates a new DateSwitcher.
-         *
-         * @param chars_width
-         *          The width of the label. Automatic if -1 is given.
-         */
-        public DateSwitcher (int width_chars) {
-
-            // EventBox properties
-            events |= Gdk.EventMask.POINTER_MOTION_MASK
-                   |  Gdk.EventMask.BUTTON_PRESS_MASK
-                   |  Gdk.EventMask.BUTTON_RELEASE_MASK
-                   |  Gdk.EventMask.SCROLL_MASK
-                   |  Gdk.EventMask.LEAVE_NOTIFY_MASK;
-            set_visible_window (false);
-
-            // Initialize everything
-            container_grid = new Gtk.Grid();
-            container_grid.border_width = 0;
-            container_grid.set_row_homogeneous (true);
-            label = new Gtk.Label ("");
-            label.width_chars = width_chars;
-
-            // Add everything in appropriate order
-            container_grid.attach (Util.set_paddings (new Gtk.Arrow (Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),
-                    0, 0, 1, 1);
-            container_grid.attach (label, 1, 0, 1, 1);
-            container_grid.attach (Util.set_paddings (new Gtk.Arrow (Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE), 0, PADDING, 0, PADDING),
-                    2, 0, 1, 1);
-
-            add (container_grid);
-        }
-
-        protected override bool scroll_event (Gdk.EventScroll event) {
-
-            switch (event.direction) {
-                case Gdk.ScrollDirection.LEFT:
-                    left_clicked ();
-                    break;
-                case Gdk.ScrollDirection.RIGHT:
-                    right_clicked ();
-                    break;
-            }
-
-            return true;
-        }
-
-        protected override bool button_press_event (Gdk.EventButton event) {
-
-            is_pressed = (hovered == 0 || hovered == 2);
-
-            return true;
-        }
-
-        protected override bool button_release_event (Gdk.EventButton event) {
-
-            is_pressed = false;
-            if (hovered == 0)
-                right_clicked ();
-            else if (hovered == 2)
-                left_clicked ();
-
-            return true;
-        }
-
-        protected override bool motion_notify_event (Gdk.EventMotion event) {
-
-            Gtk.Allocation box_size, left_size, right_size;
-            container_grid.get_allocation (out box_size);
-            container_grid.get_children ().nth_data (0).get_allocation (out left_size);
-            container_grid.get_children ().nth_data (2).get_allocation (out right_size);
-
-            double x = event.x + box_size.x;
-
-            if (x > left_size.x && x < left_size.x + left_size.width)
-                hovered = 0;
-            else if (x > right_size.x && x < right_size.x + right_size.width)
-                hovered = 2;
-            else
-                hovered = -1;
-
-            return true;
-        }
-
-        protected override bool leave_notify_event (Gdk.EventCrossing event) {
-
-            is_pressed = false;
-            hovered = -1;
-
-            return true;
-        }
-
-        protected override bool draw (Cairo.Context cr) {
-
-            Gtk.Allocation box_size;
-            container_grid.get_allocation (out box_size);
-
-            style.draw_box (cr, Gtk.StateType.NORMAL, Gtk.ShadowType.ETCHED_OUT, this, "button", 0, 0, box_size.width, box_size.height);
-
-            if (hovered == 0 || hovered == 2) {
-
-                Gtk.Allocation arrow_size;
-                container_grid.get_children ().nth_data (hovered).get_allocation (out arrow_size);
-
-                cr.save ();
-
-                cr.rectangle (arrow_size.x - box_size.x, 0, arrow_size.width, arrow_size.height);
-                cr.clip ();
-
-                if (is_pressed)
-                    style.draw_box (cr, Gtk.StateType.SELECTED, Gtk.ShadowType.IN, this, "button", 0, 0, box_size.width, box_size.height);
-                else
-                    style.draw_box (cr, Gtk.StateType.PRELIGHT, Gtk.ShadowType.ETCHED_OUT, this, "button", 0, 0, box_size.width, box_size.height);
-
-                cr.restore ();
-            }
-
-            propagate_draw (container_grid, cr);
-
-            return true;
-        }
-
     }
 
+    public DateSwitcher (int width_chars) {
+        label.width_chars = width_chars;
+    }
+
+    construct {
+        orientation = Gtk.Orientation.HORIZONTAL;
+        get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        label = new Gtk.Label (null);
+        label.vexpand = true;
+        label.margin_start = label.margin_end = 3;
+        var start_button = new Gtk.Button.from_icon_name ("pan-start-symbolic", Gtk.IconSize.MENU);
+        start_button.get_style_context ().remove_class ("image-button");
+        start_button.image.margin = 3;
+        var end_button = new Gtk.Button.from_icon_name ("pan-end-symbolic", Gtk.IconSize.MENU);
+        end_button.get_style_context ().remove_class ("image-button");
+        end_button.image.margin = 3;
+        var center_button = new Gtk.Button ();
+        center_button.add (label);
+        add (start_button);
+        add (center_button);
+        add (end_button);
+        start_button.clicked.connect (() => left_clicked ());
+        end_button.clicked.connect (() => right_clicked ());
+    }
 }
 
