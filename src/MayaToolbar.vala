@@ -69,8 +69,8 @@ namespace Maya.View {
             var title_grid = new Gtk.Grid ();
             title_grid.column_spacing = 6;
             title_grid.add (button_today);
-            title_grid.add (year_switcher);
             title_grid.add (month_switcher);
+            title_grid.add (year_switcher);
 
             spinner = new Widgets.DynamicSpinner ();
 
