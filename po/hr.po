@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2015-02-09 21:24+0000\n"
-"Last-Translator: Ivan Vrljić <vrlja92@gmail.com>\n"
+"PO-Revision-Date: 2016-07-07 19:56+0000\n"
+"Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-06-26 05:28+0000\n"
-"X-Generator: Launchpad (build 18111)\n"
+"X-Launchpad-Export-Date: 2016-07-08 05:26+0000\n"
+"X-Generator: Launchpad (build 18115)\n"
 "Language: hr\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -44,11 +44,11 @@ msgstr "Kalendar \"%s\" uklonjen."
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
 #: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
 msgid "Cancel"
-msgstr "Poništi"
+msgstr "Odustani"
 
 #: ../src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
-msgstr "Napravi"
+msgstr "Stvori"
 
 #: ../src/SourceDialog/SourceDialog.vala:69
 msgid "Name:"
@@ -72,7 +72,7 @@ msgstr "Označi kao uobičajeni kalendar"
 
 #: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
-msgstr "Napravi kalendar"
+msgstr "Stvori kalendar"
 
 #: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
@@ -231,27 +231,31 @@ msgstr "Svaki:"
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dan"
+msgstr[1] "Dana"
+msgstr[2] "Dana"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tjedan"
+msgstr[1] "Tjedna"
+msgstr[2] "Tjedna"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mjesec"
+msgstr[1] "Mjeseca"
+msgstr[2] "Mjeseca"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Godine"
+msgstr[1] "Godine"
+msgstr[2] "Godina"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -262,12 +266,13 @@ msgstr "Završava:"
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ponavlja"
+msgstr[1] "Ponavlja"
+msgstr[2] "Ponavlja"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
-msgstr "Nikad"
+msgstr "Nikada"
 
 #: ../src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
@@ -295,7 +300,7 @@ msgstr "Dodaj iznimku"
 
 #: ../src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
-msgstr "Svake poslijednje nedjelje"
+msgstr "Svake posljednje nedjelje"
 
 #: ../src/EventEdition/RepeatPanel.vala:361
 msgid "Every last Monday"
@@ -307,7 +312,7 @@ msgstr "Svakog posljednjeg utorka"
 
 #: ../src/EventEdition/RepeatPanel.vala:367
 msgid "Every last Wednesday"
-msgstr "Svake poslijednje srijede"
+msgstr "Svake posljednje srijede"
 
 #: ../src/EventEdition/RepeatPanel.vala:370
 msgid "Every last Thursday"
@@ -319,7 +324,7 @@ msgstr "Svakog posljednjeg petka"
 
 #: ../src/EventEdition/RepeatPanel.vala:376
 msgid "Every last Saturday"
-msgstr "Svake poslijednje subote"
+msgstr "Svake posljednje subote"
 
 #: ../src/EventEdition/RepeatPanel.vala:383
 msgid "Every first Sunday"
@@ -515,11 +520,11 @@ msgstr "Podsjetnici"
 
 #: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
-msgstr "Ukloni događaj"
+msgstr "Obriši događaj"
 
 #: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
-msgstr "Napravi događaj"
+msgstr "Stvori događaj"
 
 #: ../src/EventEdition/EventDialog.vala:184
 msgid "Save Changes"
@@ -555,7 +560,7 @@ msgstr "Naziv događaja"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "Pritisni Enter za obradu događaja"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
@@ -575,7 +580,7 @@ msgstr ""
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
-msgstr "Tokom dana"
+msgstr "Tijekom dana"
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
@@ -593,9 +598,9 @@ msgstr "Uvezi događaje iz \"%s\" u sljedeći kalendar:"
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "Uvezi događaje iz %d datoteke u slijedeći kalendar:"
-msgstr[1] "Uvezi događaje iz %d datoteka u slijedeći kalendar:"
-msgstr[2] "Uvezi događaje iz %d datoteka u slijedeći kalendar:"
+msgstr[0] "Uvezi događaje iz %d datoteke u sljedeći kalendar:"
+msgstr[1] "Uvezi događaje iz %d datoteke u sljedeći kalendar:"
+msgstr[2] "Uvezi događaje iz %d datoteka u sljedeći kalendar:"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
@@ -603,7 +608,7 @@ msgstr "Uvezi"
 
 #: ../src/MayaToolbar.vala:45
 msgid "Create a new event"
-msgstr "Napravi novi događaj"
+msgstr "Stvori novi događaj"
 
 #: ../src/MayaToolbar.vala:48
 msgid "Go to today's date"
@@ -619,7 +624,7 @@ msgstr "Pretraži događaje"
 
 #: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
-msgstr "Izvezi ili dijeli uobičajeni kalendar"
+msgstr "Izvezi ili dijeli zadani kalendar"
 
 #: ../src/Application.vala:34 ../src/Translations.vala:6
 msgid "Calendar"
@@ -639,15 +644,15 @@ msgstr ""
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
-msgstr "Pregledaj i zakaži događaje"
+msgstr "Pregledajte i zakažite događaje"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Maya;Planer;Datumi;Dani;Događaji"
+msgstr "Maja;Planer;Datumi;Dani;Događaji;"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr "O Maya-i"
+msgstr "O Maji"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
@@ -675,7 +680,7 @@ msgstr "Koristi sigurno povezivanje"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
-msgstr "Rukovanje poslužitelja pozivnicama sastanka"
+msgstr "Poslužitelj rukuje pozivnicama sastanka"
 
 #: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
 msgid "On this computer"
@@ -699,7 +704,7 @@ msgstr "goran@gogo.com"
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr "Održavaj lokalnu kopiju"
+msgstr "Zadrži kopiju lokalno"
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
