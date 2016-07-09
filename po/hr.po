@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-07-07 19:56+0000\n"
+"PO-Revision-Date: 2016-07-08 17:55+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-07-08 05:26+0000\n"
+"X-Launchpad-Export-Date: 2016-07-09 05:50+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 "Language: hr\n"
 
@@ -540,7 +540,7 @@ msgstr "Goran Gogić ILI npr. Ulica"
 
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
-msgstr "Šalje:"
+msgstr "Od:"
 
 #: ../src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
@@ -548,7 +548,7 @@ msgstr "Cijeli dan:"
 
 #: ../src/EventEdition/InfoPanel.vala:89
 msgid "To:"
-msgstr "Za:"
+msgstr "Do:"
 
 #: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
@@ -708,11 +708,11 @@ msgstr "Zadrži kopiju lokalno"
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
+msgstr "%e %B, %Y"
 
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
-msgstr "%A, %b %d"
+msgstr "%A, %d %b"
 
 #~ msgid "_Add Event"
 #~ msgstr "_Dodaj događaj"
