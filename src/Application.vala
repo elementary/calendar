@@ -246,6 +246,21 @@ namespace Maya {
             dialog.present ();
         }
 
+        /** Returns true if the code parameter matches the keycode of the keyval parameter for
+        * any keyboard group or level (in order to allow for non-QWERTY keyboards) **/
+        protected bool match_keycode (int keyval, uint code) {
+            Gdk.KeymapKey [] keys;
+            Gdk.Keymap keymap = Gdk.Keymap.get_default ();
+            if (keymap.get_entries_for_keyval (keyval, out keys)) {
+                foreach (var key in keys) {
+                    if (code == key.keycode)
+                        return true;
+                    }
+                }
+
+            return false;
+        }
+
         /**
          * Creates the main window.
          */
@@ -264,17 +279,14 @@ namespace Maya {
             window.delete_event.connect (on_window_delete_event);
             window.destroy.connect (on_quit);
             window.key_press_event.connect ((e) => {
-                switch (e.keyval) {
-                    case Gdk.Key.@q:
-                    case Gdk.Key.@w:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            window.destroy ();
-                        }
-
-                        break;
+                uint keycode = e.hardware_keycode;
+                if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                    if (match_keycode (Gdk.Key.q, keycode) || match_keycode (Gdk.Key.w, keycode)) {
+                        window.destroy ();
                     }
-
-                    return false;
+                }
+                
+                return false;
             });
 
             toolbar = new View.MayaToolbar ();
