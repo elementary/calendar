@@ -1,4 +1,4 @@
-# Swedish translation for maya
+# Hungarian translation for maya
 # Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
 # This file is distributed under the same license as the maya package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-07-22 13:16+0000\n"
-"Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"PO-Revision-Date: 2016-07-22 15:40+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,29 +18,27 @@ msgstr ""
 "X-Generator: Launchpad (build 18147)\n"
 
 msgid "Calendar"
-msgstr "Kalender"
+msgstr ""
 
 msgid "View and schedule events"
-msgstr "Visa och schemalägg händelser"
+msgstr ""
 
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr "Maya;Planerare;Datum;Dagar;Event;Kalender;ics;caldav;evolution;"
+msgstr ""
 
 msgid "Add Event"
-msgstr "Skapa händelse"
+msgstr ""
 
 msgid "About Calendar"
-msgstr "Om Kalender"
+msgstr ""
 
 msgid "Maya"
-msgstr "Maya"
+msgstr ""
 
 msgid "About Maya"
-msgstr "Om Maya"
+msgstr ""
 
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
-"Ett smidigt och lätt kalenderprogram som synkar och hanterar flera kalendrar "
-"på en plats, såsom Google Calendar, Outlook och CalDAV."
