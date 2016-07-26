@@ -1,0 +1,46 @@
+# Bulgarian translation for maya
+# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
+# This file is distributed under the same license as the maya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: maya\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"PO-Revision-Date: 2016-07-25 15:46+0000\n"
+"Last-Translator: Admiral AnimE <aeternus.arcis@gmail.com>\n"
+"Language-Team: Bulgarian <bg@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-07-26 05:22+0000\n"
+"X-Generator: Launchpad (build 18153)\n"
+
+msgid "Calendar"
+msgstr "Календар"
+
+msgid "View and schedule events"
+msgstr "Преглеждане и насрочване на събития"
+
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr ""
+
+msgid "Add Event"
+msgstr "Добавяне на събитие"
+
+msgid "About Calendar"
+msgstr "Относно програмата"
+
+msgid "Maya"
+msgstr "Мая"
+
+msgid "About Maya"
+msgstr "Относно Мая"
+
+msgid ""
+"A slim, lightweight calendar app that syncs and manages multiple calendars "
+"in one place, like Google Calendar, Outlook and CalDAV."
+msgstr ""
+"Лека програма, която синхронизира и управлява множество календари на едно "
+"място - например Календар на Гугъл, Аутлук и CalDAV."
