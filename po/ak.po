@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2015-01-17 10:51+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
+"PO-Revision-Date: 2016-08-01 21:28+0000\n"
+"Last-Translator: laberba <karabutaworld@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-06-26 05:26+0000\n"
-"X-Generator: Launchpad (build 18111)\n"
+"X-Launchpad-Export-Date: 2016-08-02 05:26+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
@@ -19,37 +19,37 @@ msgstr ""
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
-msgstr ""
+msgstr "Yi"
 
 #: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
 msgid "Edit…"
-msgstr ""
+msgstr "Sesa…"
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
-msgstr ""
+msgstr "Sesa kɔ akyiri"
 
 #: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "Wayi Calender \"%s\"  afiri mu."
 
 #: ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
 #: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
 msgid "Cancel"
-msgstr ""
+msgstr "Gyae"
 
 #: ../src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
-msgstr ""
+msgstr "Yɛ"
 
 #: ../src/SourceDialog/SourceDialog.vala:69
 msgid "Name:"
-msgstr ""
+msgstr "Ɛdin:"
 
 #: ../src/SourceDialog/SourceDialog.vala:72
 msgid "Calendar Name"
-msgstr ""
+msgstr "Calendar No Din"
 
 #: ../src/SourceDialog/SourceDialog.vala:95
 msgid "Type:"
@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
-msgstr ""
+msgstr "Kɔla:"
 
 #: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
@@ -70,7 +70,7 @@ msgstr ""
 #: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
-msgstr ""
+msgstr "Kora"
 
 #: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
 msgid "Hide Week Numbers"
@@ -95,7 +95,7 @@ msgstr ""
 
 #: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr ""
+msgstr "Wɔn a wɔka ho:"
 
 #: ../src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
-msgstr ""
+msgstr "To nsa frɛ"
 
 #: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
@@ -207,15 +207,15 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
-msgstr ""
+msgstr "Nawɔtwe Nawɔtwe"
 
 #: ../src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
-msgstr ""
+msgstr "Bosome Bosome"
 
 #: ../src/EventEdition/RepeatPanel.vala:61
 msgid "Yearly"
-msgstr ""
+msgstr "Afe Afe"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
@@ -224,31 +224,31 @@ msgstr ""
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Da"
+msgstr[1] "Nna"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Nawɔtwe"
+msgstr[1] "Nawɔtwe Ahoroɔ"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Bosome"
+msgstr[1] "Abosome"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Afe"
+msgstr[1] "Afe Ahoroɔ"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr ""
+msgstr "Ɛwie:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
@@ -260,15 +260,15 @@ msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
-msgstr ""
+msgstr "Daabi Dá"
 
 #: ../src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
-msgstr ""
+msgstr "Ɛnkɔsi"
 
 #: ../src/EventEdition/RepeatPanel.vala:143
 msgid "After"
-msgstr ""
+msgstr "Akyiri"
 
 #: ../src/EventEdition/RepeatPanel.vala:189
 msgid "The same day every month"
@@ -456,31 +456,31 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:511
 msgid "Mon"
-msgstr ""
+msgstr "Dwo"
 
 #: ../src/EventEdition/RepeatPanel.vala:512
 msgid "Tue"
-msgstr ""
+msgstr "Ben"
 
 #: ../src/EventEdition/RepeatPanel.vala:513
 msgid "Wed"
-msgstr ""
+msgstr "Wuk"
 
 #: ../src/EventEdition/RepeatPanel.vala:514
 msgid "Thu"
-msgstr ""
+msgstr "Yaw"
 
 #: ../src/EventEdition/RepeatPanel.vala:515
 msgid "Fri"
-msgstr ""
+msgstr "Fia"
 
 #: ../src/EventEdition/RepeatPanel.vala:516
 msgid "Sat"
-msgstr ""
+msgstr "Mem"
 
 #: ../src/EventEdition/RepeatPanel.vala:517
 msgid "Sun"
-msgstr ""
+msgstr "Kwa"
 
 #: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
 msgid "Add Event"
@@ -613,11 +613,13 @@ msgstr ""
 
 #: ../src/Application.vala:34 ../src/Translations.vala:6
 msgid "Calendar"
-msgstr ""
+msgstr "Calendar"
 
 #: ../src/Application.vala:102
 msgid "translator-credits"
 msgstr ""
+"Launchpad Contributions:\n"
+"  laberba https://launchpad.net/~laberba"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
@@ -665,7 +667,7 @@ msgstr ""
 
 #: ../core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr ""
+msgstr "Ne Wura:"
 
 #: ../core/Backends/PlacementWidget.vala:50
 msgid "user.name"
@@ -677,7 +679,7 @@ msgstr ""
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr ""
+msgstr "john@doe.com"
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
@@ -685,7 +687,7 @@ msgstr ""
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr ""
+msgstr "%B %e, %Y"
 
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
