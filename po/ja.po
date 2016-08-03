@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-08-02 00:10+0000\n"
-"Last-Translator: Tsuji Kento <Unknown>\n"
+"PO-Revision-Date: 2016-08-02 15:48+0000\n"
+"Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-08-02 05:26+0000\n"
+"X-Launchpad-Export-Date: 2016-08-03 05:26+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: ja\n"
 
@@ -63,11 +63,11 @@ msgstr "種類:"
 
 #: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
-msgstr ""
+msgstr "色:"
 
 #: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "デフォルトのカレンダーにする"
 
 #: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
@@ -76,7 +76,7 @@ msgstr ""
 #: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
 msgid "Hide Week Numbers"
@@ -225,7 +225,7 @@ msgstr "毎年"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr ""
+msgstr "間隔："
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
@@ -241,18 +241,16 @@ msgstr[0] "週"
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ヶ月"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "年"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr ""
+msgstr "終了："
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
@@ -264,11 +262,11 @@ msgstr[1] ""
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
-msgstr ""
+msgstr "なし"
 
 #: ../src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
-msgstr ""
+msgstr "まで"
 
 #: ../src/EventEdition/RepeatPanel.vala:143
 msgid "After"
@@ -276,19 +274,19 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:189
 msgid "The same day every month"
-msgstr ""
+msgstr "毎月同じ日"
 
 #: ../src/EventEdition/RepeatPanel.vala:200
 msgid "Exceptions:"
-msgstr ""
+msgstr "例外:"
 
 #: ../src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
-msgstr ""
+msgstr "例外はありません"
 
 #: ../src/EventEdition/RepeatPanel.vala:224
 msgid "Add Exception"
-msgstr ""
+msgstr "例外を追加"
 
 #: ../src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
@@ -460,31 +458,31 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:511
 msgid "Mon"
-msgstr ""
+msgstr "月"
 
 #: ../src/EventEdition/RepeatPanel.vala:512
 msgid "Tue"
-msgstr ""
+msgstr "火"
 
 #: ../src/EventEdition/RepeatPanel.vala:513
 msgid "Wed"
-msgstr ""
+msgstr "水"
 
 #: ../src/EventEdition/RepeatPanel.vala:514
 msgid "Thu"
-msgstr ""
+msgstr "木"
 
 #: ../src/EventEdition/RepeatPanel.vala:515
 msgid "Fri"
-msgstr ""
+msgstr "金"
 
 #: ../src/EventEdition/RepeatPanel.vala:516
 msgid "Sat"
-msgstr ""
+msgstr "土"
 
 #: ../src/EventEdition/RepeatPanel.vala:517
 msgid "Sun"
-msgstr ""
+msgstr "日"
 
 #: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
 msgid "Add Event"
@@ -504,11 +502,11 @@ msgstr "場所"
 
 #: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
-msgstr ""
+msgstr "ゲスト"
 
 #: ../src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
-msgstr ""
+msgstr "リマインダー"
 
 #: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
@@ -520,11 +518,11 @@ msgstr "予定を作成"
 
 #: ../src/EventEdition/EventDialog.vala:184
 msgid "Save Changes"
-msgstr ""
+msgstr "変更を保存"
 
 #: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
-msgstr ""
+msgstr "場所："
 
 #: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
@@ -544,7 +542,7 @@ msgstr "終了時:"
 
 #: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
-msgstr ""
+msgstr "タイトル:"
 
 #: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
@@ -556,11 +554,11 @@ msgstr ""
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
-msgstr ""
+msgstr "カレンダー："
 
 #: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
-msgstr ""
+msgstr "コメント："
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -574,7 +572,7 @@ msgstr ""
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
-msgstr ""
+msgstr "終日"
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
 #: ../src/AgendaView.vala:376
@@ -601,7 +599,7 @@ msgstr "新しい予定を作成"
 
 #: ../src/MayaToolbar.vala:48
 msgid "Go to today's date"
-msgstr ""
+msgstr "今日の日付へ移動"
 
 #: ../src/MayaToolbar.vala:52
 msgid "Manage Calendars"
@@ -628,7 +626,8 @@ msgstr ""
 "  Joji Bronner https://launchpad.net/~jojiinchrist\n"
 "  Jun Takeda https://launchpad.net/~takeda-jun\n"
 "  Naoki Kephart https://launchpad.net/~naoki-kephart\n"
-"  Tsuji Kento https://launchpad.net/~tuziemon-deactivatedaccount"
+"  Tsuji Kento https://launchpad.net/~tuziemon-deactivatedaccount-"
+"deactivatedaccount"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
@@ -648,7 +647,7 @@ msgstr "カレンダーについて"
 
 #: ../plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: ../plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
@@ -656,15 +655,15 @@ msgstr ""
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr ""
+msgstr "URL："
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:91
 msgid "Use a secure connection"
-msgstr ""
+msgstr "セキュアな接続の利用"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
