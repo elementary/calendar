@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-08-03 21:27+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2016-08-04 15:48+0000\n"
+"Last-Translator: Jun Takeda <takeda.jun@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-08-04 05:30+0000\n"
+"X-Launchpad-Export-Date: 2016-08-05 05:29+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: ja\n"
 
@@ -71,7 +71,7 @@ msgstr "デフォルトのカレンダーにする"
 
 #: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
-msgstr ""
+msgstr "カレンダーを作成"
 
 #: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
@@ -257,8 +257,7 @@ msgstr "終了："
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "繰り返し"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
@@ -510,7 +509,7 @@ msgstr "リマインダー"
 
 #: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
-msgstr ""
+msgstr "予定を削除"
 
 #: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
@@ -530,7 +529,7 @@ msgstr "場所を入力"
 
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
-msgstr "開始時:"
+msgstr "開始日時："
 
 #: ../src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
@@ -538,7 +537,7 @@ msgstr "終日:"
 
 #: ../src/EventEdition/InfoPanel.vala:89
 msgid "To:"
-msgstr "終了時:"
+msgstr "終了日時："
 
 #: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
