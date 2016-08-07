@@ -1,4 +1,4 @@
-# Italian translation for maya
+# Chinese (Traditional) translation for maya
 # Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
 # This file is distributed under the same license as the maya package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-08-06 14:30+0000\n"
-"Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
-"Language-Team: Italian <it@li.org>\n"
+"PO-Revision-Date: 2016-08-06 15:48+0000\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,30 +18,28 @@ msgstr ""
 "X-Generator: Launchpad (build 18169)\n"
 
 msgid "Calendar"
-msgstr "Calendario"
+msgstr "行事曆"
 
 msgid "View and schedule events"
-msgstr "Visualizza e pianifica gli eventi"
+msgstr "查看和安排事件"
 
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr ""
-"Maya;Pianifica;Appuntamenti;Giorni;Eventi;Calendario;ics;caldav;evolution;"
+"Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;行事曆;排程;行程;"
 
 msgid "Add Event"
-msgstr "Aggiungi un evento"
+msgstr "加入事件"
 
 msgid "About Calendar"
-msgstr "Informazioni"
+msgstr "關於《行事曆》"
 
 msgid "Maya"
 msgstr "Maya"
 
 msgid "About Maya"
-msgstr "Informazioni"
+msgstr "關於 Maya"
 
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
-msgstr ""
-"Una app calendario leggera che sincronizza e gestisce più calendari "
-"contemporaneamente, come Google Calendar, Outlook e CalDAV."
+msgstr "輕巧的行事曆程式，讓您在同一處同步、管理多本行事曆，例如 Google 行事曆、Outlook 和 CalDAV 等。"
