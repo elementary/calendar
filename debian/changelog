@@ -1,3 +1,9 @@
+maya-calendar (0.4.0.1) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Sun, 14 Aug 2016 12:32:09 -0500
+
 maya-calendar (0.4) xenial; urgency=medium
 
   * New upstream release.
