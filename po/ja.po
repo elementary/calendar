@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-08-17 14:59+0000\n"
+"PO-Revision-Date: 2016-08-24 13:51+0000\n"
 "Last-Translator: Jun Takeda <takeda.jun@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-08-18 05:34+0000\n"
-"X-Generator: Launchpad (build 18169)\n"
+"X-Launchpad-Export-Date: 2016-08-25 05:29+0000\n"
+"X-Generator: Launchpad (build 18179)\n"
 "Language: ja\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -88,7 +88,7 @@ msgstr "週の通し番号を表示"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
-msgstr ""
+msgstr "あと %u …"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
@@ -113,7 +113,7 @@ msgstr "招待"
 
 #: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
-msgstr ""
+msgstr "受諾済"
 
 #: ../src/EventEdition/GuestsPanel.vala:244
 msgid "Declined"
@@ -549,7 +549,7 @@ msgstr "予定のタイトル"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "予定を解析するためにエンターを押してください"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
@@ -567,7 +567,7 @@ msgstr "予定が入っている日付を選択すると、ここに予定の内
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
-msgstr ""
+msgstr "日中"
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
@@ -580,13 +580,12 @@ msgstr "%s %s - %s %s"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
-msgstr ""
+msgstr "\"%s\" から以下のカレンダーに予定をインポートする:"
 
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d個のファイルから以下のカレンダーに予定をインポートする:"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
@@ -606,7 +605,7 @@ msgstr "カレンダーの管理"
 
 #: ../src/MayaToolbar.vala:64
 msgid "Search Events"
-msgstr "イベントの検索"
+msgstr "予定の検索"
 
 #: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
@@ -630,7 +629,7 @@ msgstr ""
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
-msgstr "イベントを見てスケジュールする"
+msgstr "予定の表示・編集をします"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
