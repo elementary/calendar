@@ -57,6 +57,7 @@ public class Maya.Model.CalendarModel : Object {
     HashTable<E.Source, Gee.TreeMap<string, E.CalComponent>> source_events;
 
     public GLib.Queue<E.Source> calendar_trash;
+    private E.CredentialsPrompter credentials_prompter;
 
     private static Maya.Model.CalendarModel? calendar_model = null;
 
@@ -120,6 +121,8 @@ public class Maya.Model.CalendarModel : Object {
     public async void open () {
         try {
             registry = yield new E.SourceRegistry (null);
+            credentials_prompter = new E.CredentialsPrompter (registry);
+            credentials_prompter.set_auto_prompt (true);
             registry.source_removed.connect (remove_source);
             registry.source_changed.connect (on_source_changed);
             registry.source_added.connect (add_source);
@@ -360,6 +363,7 @@ public class Maya.Model.CalendarModel : Object {
             source_view.set (source.dup_uid (), view);
         });
     }
+
 
     private async void add_source_async (E.Source source) {
         debug ("Adding source '%s'", source.dup_display_name ());

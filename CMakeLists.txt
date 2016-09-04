@@ -67,6 +67,7 @@ set (CORE_PACKAGES
     gtk+-3.0
     libecalendar-1.2
     libedataserver-1.2
+    libedataserverui-1.2
     libical
     libsoup-2.4
     gmodule-2.0
@@ -80,7 +81,9 @@ set (CORE_PKG
     gee-0.8
     gtk+-3.0>=3.11.6
     granite
+    libedataserver-1.2
     libecal-1.2>=3.8.0
+    libedataserverui-1.2
     libical
     gmodule-2.0
 )
