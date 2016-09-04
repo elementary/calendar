@@ -158,7 +158,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         attach (to_date_picker, 0, 5, 1, 1);
         attach (to_time_picker, 1, 5, 1, 1);
         attach (title_label, 0, 0, 1, 1);
-        attach (title_entry, 0, 1, 2, 1);
+        attach (title_entry, 0, 1, 1, 1);
         if (calendar_button.sources.length () > 1 && parent_dialog.can_edit) {
             attach (calendar_label, 1, 0, 4, 1);
             attach (calendar_button, 1, 1, 4, 1);
