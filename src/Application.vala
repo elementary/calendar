@@ -76,9 +76,9 @@ namespace Maya {
             exec_name = "maya-calendar";
 
             app_years = "2011-2016";
-            application_id = "net.launchpad.maya";
+            application_id = "org.pantheon.maya";
             app_icon = "office-calendar";
-            app_launcher = "maya-calendar.desktop";
+            app_launcher = "org.pantheon.maya.desktop";
 
             main_url = "https://launchpad.net/maya";
             bug_url = "https://bugs.launchpad.net/maya";
