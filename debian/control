@@ -32,6 +32,7 @@ Replaces: maya (<< 0.2.0~r394),
 Breaks: maya (<< 0.2.0~r394), maya-common
 Architecture: any
 Depends: libmaya-calendar0 (= ${binary:Version}),
+         maya-calendar-daemon,
          ${misc:Depends},
          ${shlibs:Depends}
 Recommends: maya-calendar-plugin-caldav, maya-calendar-plugin-google
