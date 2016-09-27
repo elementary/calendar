@@ -4,5 +4,5 @@ usr/share/applications/org.pantheon.maya.desktop
 usr/share/glib-2.0/schemas
 usr/share/icons/hicolor/scalable/actions/calendar-go-today.svg
 usr/share/locale
-usr/share/maya-calendar/style
 usr/share/maya-calendar/LocationMarker.svg
+usr/share/maya-calendar/style
