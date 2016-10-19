@@ -8,79 +8,79 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2015-01-19 23:21+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2016-10-18 20:21+0000\n"
+"Last-Translator: Niv Baehr <Unknown>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-06-26 05:27+0000\n"
-"X-Generator: Launchpad (build 18111)\n"
+"X-Launchpad-Export-Date: 2016-10-19 06:13+0000\n"
+"X-Generator: Launchpad (build 18232)\n"
 "Language: he\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "הוספת לוח שנה חדש…"
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
-msgstr "הסר"
+msgstr "הסרה"
 
 #: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
 msgid "Edit…"
-msgstr "ערוך..."
+msgstr "עריכה…"
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
-msgstr ""
+msgstr "ביטול"
 
 #: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "לוח השנה „%s” הוסר."
 
 #: ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
 #: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
 msgid "Cancel"
-msgstr "בטל"
+msgstr "ביטול"
 
 #: ../src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
-msgstr ""
+msgstr "יצירה"
 
 #: ../src/SourceDialog/SourceDialog.vala:69
 msgid "Name:"
-msgstr ""
+msgstr "שם:"
 
 #: ../src/SourceDialog/SourceDialog.vala:72
 msgid "Calendar Name"
-msgstr ""
+msgstr "שם לוח השנה"
 
 #: ../src/SourceDialog/SourceDialog.vala:95
 msgid "Type:"
-msgstr ""
+msgstr "סוג:"
 
 #: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
-msgstr ""
+msgstr "צבע:"
 
 #: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "סימון כלוח שנה ברירת המחדל"
 
 #: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
-msgstr ""
+msgstr "יצירת לוח שנה"
 
 #: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
-msgstr "שמור"
+msgstr "שמירה"
 
 #: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "הסתרת מספרי שבועות"
 
 #: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
 msgid "Show Week Numbers"
@@ -88,12 +88,12 @@ msgstr "הצגת מספרי שבועות"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
-msgstr ""
+msgstr "%u נוספים…"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
 msgid "Export Calendar..."
-msgstr "יצוא לוח שנה"
+msgstr "יצוא לוח שנה…"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 msgid "calendar.ics"
@@ -101,196 +101,196 @@ msgstr "קובץ calendar.ics"
 
 #: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr ""
+msgstr "משתתפים:"
 
 #: ../src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
-msgstr ""
+msgstr "אין משתתפים"
 
 #: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
-msgstr ""
+msgstr "הזמנה"
 
 #: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
-msgstr ""
+msgstr "התקבלה"
 
 #: ../src/EventEdition/GuestsPanel.vala:244
 msgid "Declined"
-msgstr ""
+msgstr "נדחתה"
 
 #: ../src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
-msgstr ""
+msgstr "תזכורות:"
 
 #: ../src/EventEdition/ReminderPanel.vala:37
 msgid "No Reminders"
-msgstr ""
+msgstr "אין תזכורות"
 
 #: ../src/EventEdition/ReminderPanel.vala:71
 msgid "Add Reminder"
-msgstr ""
+msgstr "הוספת תזכורת"
 
 #: ../src/EventEdition/ReminderPanel.vala:182
 msgid "0 minutes"
-msgstr ""
+msgstr "0 דקות"
 
 #: ../src/EventEdition/ReminderPanel.vala:183
 msgid "1 minutes"
-msgstr ""
+msgstr "דקה אחת"
 
 #: ../src/EventEdition/ReminderPanel.vala:184
 msgid "5 minutes"
-msgstr ""
+msgstr "5 דקות"
 
 #: ../src/EventEdition/ReminderPanel.vala:185
 msgid "10 minutes"
-msgstr ""
+msgstr "10 דקות"
 
 #: ../src/EventEdition/ReminderPanel.vala:186
 msgid "15 minutes"
-msgstr ""
+msgstr "15 דקות"
 
 #: ../src/EventEdition/ReminderPanel.vala:187
 msgid "20 minutes"
-msgstr ""
+msgstr "20 דקות"
 
 #: ../src/EventEdition/ReminderPanel.vala:188
 msgid "25 minutes"
-msgstr ""
+msgstr "25 דקות"
 
 #: ../src/EventEdition/ReminderPanel.vala:189
 msgid "30 minutes"
-msgstr ""
+msgstr "30 דקות"
 
 #: ../src/EventEdition/ReminderPanel.vala:190
 msgid "45 minutes"
-msgstr ""
+msgstr "45 דקות"
 
 #: ../src/EventEdition/ReminderPanel.vala:191
 msgid "1 hour"
-msgstr ""
+msgstr "שעה אחת"
 
 #: ../src/EventEdition/ReminderPanel.vala:192
 msgid "2 hours"
-msgstr ""
+msgstr "שעתיים"
 
 #: ../src/EventEdition/ReminderPanel.vala:193
 msgid "3 hours"
-msgstr ""
+msgstr "3 שעות"
 
 #: ../src/EventEdition/ReminderPanel.vala:194
 msgid "12 hours"
-msgstr ""
+msgstr "12 שעות"
 
 #: ../src/EventEdition/ReminderPanel.vala:195
 msgid "24 hours"
-msgstr ""
+msgstr "24 שעות"
 
 #: ../src/EventEdition/ReminderPanel.vala:196
 msgid "2 days"
-msgstr ""
+msgstr "יומיים"
 
 #: ../src/EventEdition/ReminderPanel.vala:197
 msgid "1 week"
-msgstr ""
+msgstr "שבוע אחד"
 
 #: ../src/EventEdition/ReminderPanel.vala:206
 msgid "Notification"
-msgstr ""
+msgstr "התראה"
 
 #: ../src/EventEdition/ReminderPanel.vala:207
 msgid "Email"
-msgstr ""
+msgstr "דואר אלקטרוני"
 
 #: ../src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
-msgstr ""
+msgstr "חזרה:"
 
 #: ../src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
-msgstr ""
+msgstr "מדי יום"
 
 #: ../src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
-msgstr ""
+msgstr "מדי שבוע"
 
 #: ../src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
-msgstr ""
+msgstr "מדי חודש"
 
 #: ../src/EventEdition/RepeatPanel.vala:61
 msgid "Yearly"
-msgstr ""
+msgstr "מדי שנה"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr "כל:"
+msgstr "מדי:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "יום"
+msgstr[1] "ימים"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "שבוע"
+msgstr[1] "שבועות"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "חודש"
+msgstr[1] "חודשים"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "שנה"
+msgstr[1] "שנים"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr "מסתיים ב-:"
+msgstr "מסתיים ב־:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "חזרה"
+msgstr[1] "חזרות"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
-msgstr ""
+msgstr "לעולם לא"
 
 #: ../src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
-msgstr "עד:"
+msgstr "עד"
 
 #: ../src/EventEdition/RepeatPanel.vala:143
 msgid "After"
-msgstr ""
+msgstr "לאחר"
 
 #: ../src/EventEdition/RepeatPanel.vala:189
 msgid "The same day every month"
-msgstr ""
+msgstr "מדי חודש באותו היום"
 
 #: ../src/EventEdition/RepeatPanel.vala:200
 msgid "Exceptions:"
-msgstr ""
+msgstr "חריגות:"
 
 #: ../src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
-msgstr ""
+msgstr "ללא חריגות"
 
 #: ../src/EventEdition/RepeatPanel.vala:224
 msgid "Add Exception"
-msgstr ""
+msgstr "הוספת חריגה"
 
 #: ../src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
@@ -462,31 +462,31 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:511
 msgid "Mon"
-msgstr ""
+msgstr "יום ב׳"
 
 #: ../src/EventEdition/RepeatPanel.vala:512
 msgid "Tue"
-msgstr ""
+msgstr "יום ג׳"
 
 #: ../src/EventEdition/RepeatPanel.vala:513
 msgid "Wed"
-msgstr ""
+msgstr "יום ד׳"
 
 #: ../src/EventEdition/RepeatPanel.vala:514
 msgid "Thu"
-msgstr ""
+msgstr "יום ה׳"
 
 #: ../src/EventEdition/RepeatPanel.vala:515
 msgid "Fri"
-msgstr ""
+msgstr "יום ו׳"
 
 #: ../src/EventEdition/RepeatPanel.vala:516
 msgid "Sat"
-msgstr ""
+msgstr "שבת"
 
 #: ../src/EventEdition/RepeatPanel.vala:517
 msgid "Sun"
-msgstr ""
+msgstr "יום א׳"
 
 #: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
 msgid "Add Event"
@@ -498,7 +498,7 @@ msgstr "עריכת אירוע"
 
 #: ../src/EventEdition/EventDialog.vala:94
 msgid "General Informations"
-msgstr ""
+msgstr "מידע כללי"
 
 #: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
@@ -506,15 +506,15 @@ msgstr "מקום"
 
 #: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
-msgstr ""
+msgstr "אורחים"
 
 #: ../src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
-msgstr ""
+msgstr "תזכורות"
 
 #: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
-msgstr ""
+msgstr "מחיקת אירוע"
 
 #: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
@@ -526,7 +526,7 @@ msgstr "שמירת השינויים"
 
 #: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
-msgstr ""
+msgstr "מיקום:"
 
 #: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
@@ -546,7 +546,7 @@ msgstr "עד:"
 
 #: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
-msgstr ""
+msgstr "כותרת:"
 
 #: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
@@ -554,21 +554,21 @@ msgstr "שם האירוע"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "יש להקיש Enter לניתוח האירוע"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
-msgstr ""
+msgstr "לוח שנה:"
 
 #: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
-msgstr ""
+msgstr "הערות:"
 
 #: ../src/AgendaView.vala:63
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr "האירועים הקרובים שלך יוצגו כאן בעת בחירת תאריך עם אירועים."
+msgstr "האירועים הקרובים יוצגו כאן בעת בחירת תאריך עם אירועים."
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
@@ -581,21 +581,21 @@ msgstr "כל היום"
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
 #: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
-msgstr ""
+msgstr "%s, %s - %s, %s"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
-msgstr ""
+msgstr "אירועים מלוח השנה „%s” מיובאים ללוח השנה הבא:"
 
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "אירועים מקובץ אחד מיובאים ללוח השנה הבא:"
+msgstr[1] "אירועים מ־%d קבצים מיובאים ללוח השנה הבא:"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
-msgstr ""
+msgstr "ייבוא"
 
 #: ../src/MayaToolbar.vala:45
 msgid "Create a new event"
@@ -603,11 +603,11 @@ msgstr "יצירת אירוע חדש"
 
 #: ../src/MayaToolbar.vala:48
 msgid "Go to today's date"
-msgstr ""
+msgstr "מעבר לתאריך של היום"
 
 #: ../src/MayaToolbar.vala:52
 msgid "Manage Calendars"
-msgstr ""
+msgstr "ניהול לוחות שנה"
 
 #: ../src/MayaToolbar.vala:64
 msgid "Search Events"
@@ -629,13 +629,14 @@ msgstr ""
 "  Dor https://launchpad.net/~dor-gallego\n"
 "  GenghisKhan https://launchpad.net/~genghiskhan\n"
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
+"  Niv Baehr https://launchpad.net/~rzil\n"
 "  Uri Damsker  אורי דמסקר https://launchpad.net/~ud1955\n"
 "  Yaron https://launchpad.net/~sh-yaron\n"
 "  דוביקס https://launchpad.net/~dovix2003-gmail"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
-msgstr "צפייה ותזמון של אירועים"
+msgstr "צפייה באירועים ותזמונם"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
@@ -643,31 +644,31 @@ msgstr "Maya;מתכנן;תאריכים;ימים;אירועים;"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr "אודות Maya"
+msgstr "על אודות Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "על אודות לוח שנה"
 
 #: ../plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: ../plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "user.name או user.name@gmail.com"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr ""
+msgstr "כתובת:"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:91
 msgid "Use a secure connection"
-msgstr ""
+msgstr "שימוש בחיבור מאובטח"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
@@ -679,23 +680,23 @@ msgstr "במחשב זה"
 
 #: ../core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr ""
+msgstr "משתמש:"
 
 #: ../core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr ""
+msgstr "user.name"
 
 #: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr ""
+msgstr "דוא״ל:"
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr ""
+msgstr "john@doe.com"
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "שמירת עותק מקומי"
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
@@ -703,7 +704,7 @@ msgstr "%e ב%B,‏ %Y"
 
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
-msgstr "%A, ה־%d ב%b"
+msgstr "%A, %d ב%b"
 
 #~ msgid "at"
 #~ msgstr "ב־"
