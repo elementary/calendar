@@ -37,7 +37,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
     VAutoHider event_box;
     GLib.HashTable<string, EventButton> event_buttons;
 
-    private static const int EVENT_MARGIN = 3;
+    private const int EVENT_MARGIN = 3;
 
     public GridDay (DateTime date) {
         this.date = date;

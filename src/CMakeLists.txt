@@ -41,7 +41,7 @@ OPTIONS
 )
 
 include (GResource)
-glib_compile_resources (GLIB_RESOURCES_MAYA SOURCE ../data/maya.gresource.xml)
+glib_compile_resources (GLIB_RESOURCES_MAYA ../data/maya.gresource.xml)
 
 set(EXEC_NAME ${CMAKE_PROJECT_NAME})
 
