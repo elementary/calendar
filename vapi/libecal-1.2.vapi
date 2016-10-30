@@ -3,7 +3,7 @@
 [CCode (cprefix = "E", gir_namespace = "ECalendar", gir_version = "1.2", lower_case_cprefix = "e_")]
 namespace E {
 	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_cal_get_type ()")]
-	[Deprecated (since = "3.2")]
+	[Version (deprecated = true, deprecated_since = "3.2")]
 	public class Cal : GLib.Object {
 		public virtual signal void backend_died ();
 		public virtual signal void backend_error (string message);
@@ -90,7 +90,7 @@ namespace E {
 	public class CalClientView : GLib.Object {
 		[CCode (has_construct_function = false)]
 		protected CalClientView ();
-		[Deprecated (since = "3.10")]
+		[Version (deprecated = true, deprecated_since = "3.10")]
 		public E.CalClient get_client ();
 		public bool is_running ();
 		public E.CalClient ref_client ();
@@ -208,7 +208,7 @@ namespace E {
 		public void set_due (E.CalComponentDateTime dt);
 		public void set_exdate_list (GLib.SList exdate_list);
 		public void set_exrule_list (GLib.SList<E.CalComponentRange> recur_list);
-		public void set_geo (iCal.GeoType* geo);
+		public void set_geo (owned iCal.GeoType geo);
 		public bool set_icalcomponent (owned iCal.Component icalcomp);
 		public void set_last_modified (iCal.TimeType t);
 		public void set_location (string location);
@@ -256,13 +256,13 @@ namespace E {
 		public E.CalChangeType type;
 	}
 	[CCode (cheader_filename = "libecal/libecal.h", type_id = "e_cal_view_get_type ()")]
-	[Deprecated (since = "3.2")]
+	[Version (deprecated = true, deprecated_since = "3.2")]
 	public class CalView : GLib.Object {
 		[CCode (has_construct_function = false)]
 		protected CalView ();
-		[Deprecated (since = "3.2")]
+		[Version (deprecated = true, deprecated_since = "3.2")]
 		public void start ();
-		[Deprecated (since = "3.2")]
+		[Version (deprecated = true, deprecated_since = "3.2")]
 		public void stop ();
 		[NoAccessorMethod]
 		public E.Cal client { owned get; construct; }

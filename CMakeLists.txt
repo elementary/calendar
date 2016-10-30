@@ -65,7 +65,7 @@ set (CORE_PACKAGES
     gio-2.0
     granite
     gtk+-3.0
-    libecalendar-1.2
+    libecal-1.2
     libedataserver-1.2
     libedataserverui-1.2
     libical
