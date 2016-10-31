@@ -23,11 +23,8 @@ namespace Maya.Util {
             return date1.compare(date2);
 
         // If they have the same date, sort them alphabetically
-        E.CalComponentText summary1;
-        E.CalComponentText summary2;
-
-        comp1.get_summary (out summary1);
-        comp2.get_summary (out summary2);
+        var summary1 = comp1.get_summary ();
+        var summary2 = comp2.get_summary ();
 
         if (summary1.value < summary2.value)
             return -1;

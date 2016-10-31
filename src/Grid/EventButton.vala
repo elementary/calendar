@@ -96,9 +96,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
     }
 
     public string get_summary () {
-        E.CalComponentText ct;
-        comp.get_summary (out ct);
-        return ct.value;
+        return comp.get_summary ().value;
     }
 
     public void set_color (string color) {
