@@ -85,6 +85,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         var reminder = new ReminderGrid (uid);
         var row = new Gtk.ListBoxRow ();
         reminder_list.add (reminder);
+        reminders.add (reminder);
         reminder.show_all ();
         reminder.removed.connect (() => {
             reminders.remove (reminder);
