@@ -1,25 +1,26 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-01-02 02:01+0000\n"
-"Last-Translator: ablimet <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-01-02 07:57+0000\n"
+"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2017-01-02 05:11+0000\n"
+"X-Launchpad-Export-Date: 2017-01-03 06:01+0000\n"
 "X-Generator: Launchpad (build 18298)\n"
+"Language: ug\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "يىڭى كالېندار قىتىش...."
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
-msgstr "يۆتكىۋېتىش"
+msgstr "ئۆچۈرۈش"
 
 #: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
 msgid "Edit…"
@@ -31,7 +32,7 @@ msgstr "بىكار قىلىش"
 
 #: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "كالېندار \"%s\" ئۆچۈرۈلگەن."
 
 #: ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
@@ -49,7 +50,7 @@ msgstr "ئىسمى:"
 
 #: ../src/SourceDialog/SourceDialog.vala:72
 msgid "Calendar Name"
-msgstr ""
+msgstr "كالېندار ئىسمى"
 
 #: ../src/SourceDialog/SourceDialog.vala:95
 msgid "Type:"
@@ -57,15 +58,15 @@ msgstr "تىپى:"
 
 #: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
-msgstr "رەڭ:"
+msgstr "رەڭگى:"
 
 #: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
-msgstr "كۆڭۈلدىكى يىلنامىگە تەڭشە"
+msgstr "سۈكۈتتىكى كالېندار قىلىپ تەڭشەش"
 
 #: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
-msgstr ""
+msgstr "كالېندار قۇرۇش"
 
 #: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
@@ -74,24 +75,24 @@ msgstr "ساقلاش"
 
 #: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "ھەپتە نومۇرىنى يوشۇرۇش"
 
 #: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
 msgid "Show Week Numbers"
-msgstr "ھەپتە نومۇرىنى كۆرسەت"
+msgstr "ھەپتە نومۇرىنى كۆرسىتىش"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
-msgstr ""
+msgstr "%u تىخىمۇ كۆپ...."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
 msgid "Export Calendar..."
-msgstr ""
+msgstr "كالېندارنى چىقىرىش...."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 msgid "calendar.ics"
-msgstr ""
+msgstr "calendar.ics"
 
 #: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -99,7 +100,7 @@ msgstr "قاتناشقۇچىلار:"
 
 #: ../src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
-msgstr ""
+msgstr "قاتناشقۇچىلار يوق"
 
 #: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
@@ -107,7 +108,7 @@ msgstr "تەكلىپ"
 
 #: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
-msgstr "قوشۇلغان"
+msgstr "قوبۇل قىلىنغان"
 
 #: ../src/EventEdition/GuestsPanel.vala:244
 msgid "Declined"
@@ -115,11 +116,11 @@ msgstr "رەت قىلىنغان"
 
 #: ../src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
-msgstr ""
+msgstr "ئەسكەرتىش:"
 
 #: ../src/EventEdition/ReminderPanel.vala:37
 msgid "No Reminders"
-msgstr ""
+msgstr "ئەسكەرتىش يوق"
 
 #: ../src/EventEdition/ReminderPanel.vala:71
 msgid "Add Reminder"
@@ -219,7 +220,7 @@ msgstr "يىللىق"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr ""
+msgstr "ھەربىرى:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
@@ -244,7 +245,7 @@ msgstr[0] "يىل"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr ""
+msgstr "ئاخىرى:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
@@ -267,15 +268,15 @@ msgstr "كېيىن"
 
 #: ../src/EventEdition/RepeatPanel.vala:189
 msgid "The same day every month"
-msgstr ""
+msgstr "ھەرئاينىڭ ئوخشاش كۈنى"
 
 #: ../src/EventEdition/RepeatPanel.vala:200
 msgid "Exceptions:"
-msgstr "مۇستەسنا:"
+msgstr "مۇستەسنا ئەھۋاللار:"
 
 #: ../src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
-msgstr ""
+msgstr "مۇستەسنا ئەھۋال يوق"
 
 #: ../src/EventEdition/RepeatPanel.vala:224
 msgid "Add Exception"
@@ -283,171 +284,171 @@ msgstr "مۇستەسنا ئەھۋال قىتىش"
 
 #: ../src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئاخىرقى يەكشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:361
 msgid "Every last Monday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئاخىرقى دۈشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:364
 msgid "Every last Tuesday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئاخىرقى سەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:367
 msgid "Every last Wednesday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئاخىرقى چارشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:370
 msgid "Every last Thursday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئاخىرقى پەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:373
 msgid "Every last Friday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئاخىرقى جۈمەسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:376
 msgid "Every last Saturday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئاخىرقى شەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:383
 msgid "Every first Sunday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۇنجى يەكشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:386
 msgid "Every first Monday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۇنجى دۈشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:389
 msgid "Every first Tuesday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۇنجى سەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:392
 msgid "Every first Wednesday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۇنجى چارشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:395
 msgid "Every first Thursday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۇنجى پەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:398
 msgid "Every first Friday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۇنجى جۈمەسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:401
 msgid "Every first Saturday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۇنجى شەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:408
 msgid "Every second Sunday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئىككىنجى يەكشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:411
 msgid "Every second Monday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئىككىنجى دۈشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:414
 msgid "Every second Tuesday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئىككىنجى سەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:417
 msgid "Every second Wednesday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئىككىنجى چارشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:420
 msgid "Every second Thursday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئىككىنجى پەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:423
 msgid "Every second Friday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئىككىنجى جۈمەسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:426
 msgid "Every second Saturday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئىككىنجى شەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:433
 msgid "Every third Sunday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئۈچىنجى يەكشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:436
 msgid "Every third Monday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئۈچىنجى دۈشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:439
 msgid "Every third Tuesday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئۈچىنجى سەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:442
 msgid "Every third Wednesday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئۈچىنجى چارشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:445
 msgid "Every third Thursday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئۈچىنجى پەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:448
 msgid "Every third Friday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئۈچىنجى جۈمەسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:451
 msgid "Every third Saturday"
-msgstr ""
+msgstr "ھەرئاينىڭ ئۈچىنجى شەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:458
 msgid "Every fourth Sunday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۆتىنجى يەكشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:461
 msgid "Every fourth Monday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۆتىنجى دۈشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:464
 msgid "Every fourth Tuesday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۆتىنجى سەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:467
 msgid "Every fourth Wednesday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۆتىنجى چارشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:470
 msgid "Every fourth Thursday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۆتىنجى پەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:473
 msgid "Every fourth Friday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۆتىنجى جۈمەسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:476
 msgid "Every fourth Saturday"
-msgstr ""
+msgstr "ھەرئاينىڭ تۆتىنجى شەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:483
 msgid "Every fifth Sunday"
-msgstr ""
+msgstr "ھەرئاينىڭ بەشىنجى يەكشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:486
 msgid "Every fifth Monday"
-msgstr ""
+msgstr "ھەرئاينىڭ بەشىنجى دۈشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:489
 msgid "Every fifth Tuesday"
-msgstr ""
+msgstr "ھەرئاينىڭ بەشىنجى سەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:492
 msgid "Every fifth Wednesday"
-msgstr ""
+msgstr "ھەرئاينىڭ بەشىنجى چارشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:495
 msgid "Every fifth Thursday"
-msgstr ""
+msgstr "ھەرئاينىڭ بەشىنجى پەيشەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:498
 msgid "Every fifth Friday"
-msgstr ""
+msgstr "ھەرئاينىڭ بەشىنجى جۈمەسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:501
 msgid "Every fifth Saturday"
-msgstr ""
+msgstr "ھەرئاينىڭ بەشىنجى شەنبىسى"
 
 #: ../src/EventEdition/RepeatPanel.vala:511
 msgid "Mon"
@@ -483,11 +484,11 @@ msgstr "پائالىيەت قىتىش"
 
 #: ../src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
-msgstr ""
+msgstr "پائالىيەت تەھرىرلەش"
 
 #: ../src/EventEdition/EventDialog.vala:94
 msgid "General Informations"
-msgstr ""
+msgstr "ئادەتتىكى ئۇچۇرلار"
 
 #: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
@@ -503,15 +504,15 @@ msgstr "ئەسكەرتىش"
 
 #: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
-msgstr ""
+msgstr "پائالىيەتنى ئۆچۈرۈش"
 
 #: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
-msgstr ""
+msgstr "پائالىيەت قۇرۇش"
 
 #: ../src/EventEdition/EventDialog.vala:184
 msgid "Save Changes"
-msgstr ""
+msgstr "ئۆزگەرتىشلەرنى ساقلاش"
 
 #: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
@@ -519,7 +520,7 @@ msgstr "ئورنى:"
 
 #: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
-msgstr ""
+msgstr "ئورۇن ياكى كوچا ئىسمى"
 
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
@@ -539,15 +540,15 @@ msgstr "تىمىسى:"
 
 #: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
-msgstr ""
+msgstr "پائالىيەت ئىسمى"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "enter كۇنۇپكىسىنى بىسىپ پائالىيەتنى تەھرىرلەڭ"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
-msgstr ""
+msgstr "كالېندار:"
 
 #: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
@@ -558,29 +559,30 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
+"پائالىيەت قىتىلغان چىسلانى تاللىغان ۋاقتىڭىزدا سىزنىڭ يىقىن كەلگۈسىدىكى "
+"پائالىيەتلىرىڭىز بۇيەردە كۆرۈنىدۇ."
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
-msgstr ""
+msgstr "كۈندۈزدە"
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
-msgstr ""
+msgstr "پۈتۈن كۈن"
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
 #: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
-msgstr ""
+msgstr "%s, %s - %s, %s"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
-msgstr ""
+msgstr "\"%s\" دىن تۆۋەندىكى كالېندارغا پائالىيەتلەرنى كىرگۈزۈڭ:"
 
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ھۆججەت %d دىكى پائالىيەتلەرنى تۆۋەندىكى كالېندارغا كىرگۈزۈڭ"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
@@ -588,23 +590,23 @@ msgstr "كىرگۈزۈش"
 
 #: ../src/MayaToolbar.vala:45
 msgid "Create a new event"
-msgstr ""
+msgstr "يىڭى پائالىيەت قۇرۇش"
 
 #: ../src/MayaToolbar.vala:48
 msgid "Go to today's date"
-msgstr ""
+msgstr "بۈگۈننى كۆرسىتىش"
 
 #: ../src/MayaToolbar.vala:52
 msgid "Manage Calendars"
-msgstr ""
+msgstr "كالېندارنى باشقۇرۇش"
 
 #: ../src/MayaToolbar.vala:64
 msgid "Search Events"
-msgstr ""
+msgstr "پائالىيەتلەرنى ئاختۇرۇش"
 
 #: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
-msgstr ""
+msgstr "سۈكۈتتىكى كالېندارنى چىقىرىش ياكى ھەمبەھىرلەش"
 
 #: ../src/Application.vala:34 ../src/Translations.vala:6
 msgid "Calendar"
@@ -614,6 +616,7 @@ msgstr "كالېندار"
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
 "  ablimet https://launchpad.net/~ablimet"
 
 #: ../src/Translations.vala:5
@@ -622,7 +625,7 @@ msgstr "پائالىيەتلەرنى كۆرۈش ۋە ئورۇنلاشتۇرۇش"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
+msgstr "مايا؛ پىلان؛ ئۇچرىشىش؛ چىسلا؛ پائالىيەت؛"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
@@ -638,35 +641,35 @@ msgstr "گۇگىل(Google)"
 
 #: ../plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "ئابونت ئىسمى ياكى ئابونت ئىسمى@gmail.com"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr ""
+msgstr "تور ئادىرىسى:"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:91
 msgid "Use a secure connection"
-msgstr ""
+msgstr "بىخەتەر ئۇلىنىشنى ئىشلىتىش"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
-msgstr "مۇلازىمېتىر يىغىن تەكلىپلىرىنى بىر تەرەپ قىلىدۇ"
+msgstr "مۇلازىمېتىر ئۇچرىشىش تەكلىپلىرىنى بىر تەرەپ قىلىدۇ"
 
 #: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
 msgid "On this computer"
-msgstr ""
+msgstr "بۇ كومپىيۇتىردا"
 
 #: ../core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr ""
+msgstr "ئابونت:"
 
 #: ../core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr ""
+msgstr "ئابونت ئىسمى"
 
 #: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
@@ -674,16 +677,16 @@ msgstr "ئېلخەت:"
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr ""
+msgstr "john@doe.com غا ئوخشاش"
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "كومپىيۇتىرىڭىزدا بىرنۇسخا ساقلىۋىلىڭ"
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr ""
+msgstr "%Y-%B-%e"
 
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
-msgstr ""
+msgstr "%b-%d  %A"
