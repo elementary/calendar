@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-11-07 07:51+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2017-01-06 00:36+0000\n"
+"Last-Translator: Félix Brezo <felixbrezo@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
+"X-Launchpad-Export-Date: 2017-01-06 06:00+0000\n"
+"X-Generator: Launchpad (build 18302)\n"
 "Language: es\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -80,7 +80,7 @@ msgstr "Guardar"
 
 #: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
 msgid "Hide Week Numbers"
-msgstr "Ocultar números de semana"
+msgstr "Ocultar número de semana"
 
 #: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
 msgid "Show Week Numbers"
@@ -230,27 +230,27 @@ msgstr "Cada:"
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Día"
+msgstr[1] "Días"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Semana"
+msgstr[1] "Semanas"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mes"
+msgstr[1] "Meses"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Año"
+msgstr[1] "Años"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -261,8 +261,8 @@ msgstr "Termina:"
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Repetición"
+msgstr[1] "Repeticiones"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
@@ -462,31 +462,31 @@ msgstr "Cada quinto sábado"
 
 #: ../src/EventEdition/RepeatPanel.vala:511
 msgid "Mon"
-msgstr "Lun"
+msgstr "lun."
 
 #: ../src/EventEdition/RepeatPanel.vala:512
 msgid "Tue"
-msgstr "Mar"
+msgstr "mar."
 
 #: ../src/EventEdition/RepeatPanel.vala:513
 msgid "Wed"
-msgstr "Mié"
+msgstr "mié."
 
 #: ../src/EventEdition/RepeatPanel.vala:514
 msgid "Thu"
-msgstr "Jue"
+msgstr "jue."
 
 #: ../src/EventEdition/RepeatPanel.vala:515
 msgid "Fri"
-msgstr "Vie"
+msgstr "vie."
 
 #: ../src/EventEdition/RepeatPanel.vala:516
 msgid "Sat"
-msgstr "Sáb"
+msgstr "sáb."
 
 #: ../src/EventEdition/RepeatPanel.vala:517
 msgid "Sun"
-msgstr "Dom"
+msgstr "dom."
 
 #: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
 msgid "Add Event"
@@ -530,7 +530,7 @@ msgstr "Ubicación:"
 
 #: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
-msgstr "Juan Pérez O Calle Ejemplar"
+msgstr "«Juan Pérez» o «Calle Ejemplo»"
 
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
@@ -554,7 +554,7 @@ msgstr "Nombre del evento"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "Presiona intro para parsear el evento"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
@@ -655,7 +655,7 @@ msgstr ""
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
-msgstr "Vea y programe eventos"
+msgstr "Ver y programar eventos"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
