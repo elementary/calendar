@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2015-05-15 11:01+0000\n"
-"Last-Translator: iakovos athanasiadhs <liam21iakovos@gmail.com>\n"
+"PO-Revision-Date: 2017-01-19 18:15+0000\n"
+"Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
+"X-Launchpad-Export-Date: 2017-01-21 06:12+0000\n"
+"X-Generator: Launchpad (build 18302)\n"
 "Language: el\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -230,27 +230,27 @@ msgstr "Κάθε:"
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ημέρα"
+msgstr[1] "Ημέρες"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Εβδομάδα"
+msgstr[1] "Εβδομάδες"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Μήνας"
+msgstr[1] "Μήνες"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Έτος"
+msgstr[1] "Έτη"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -261,8 +261,8 @@ msgstr "Λήγει:"
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Επανάληψη"
+msgstr[1] "Επαναλήψεις"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
@@ -554,7 +554,7 @@ msgstr "Όνομα γεγονότος"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "Πατήστε enter για να αναλύσετε το γεγονός"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
@@ -583,17 +583,17 @@ msgstr "Όλη μέρα"
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
 #: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
-msgstr ""
+msgstr "%s, %s - %s, %s"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
-msgstr ""
+msgstr "Εισαγωγή γεγονότων από \"%s\" στο παρακάτω ημερολόγιο:"
 
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Εισαγωγή γεγονότων από %d αρχείο στο παρακάτω ημερολόγιο:"
+msgstr[1] "Εισαγωγή γεγονότων από %d αρχεία στο παρακάτω ημερολόγιο:"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
@@ -627,6 +627,7 @@ msgstr "Ημερολόγιο"
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Christos Iatropoulos https://launchpad.net/~ci4\n"
 "  Filippos Kolyvas https://launchpad.net/~fkol-k4\n"
 "  George Fragos https://launchpad.net/~anvo\n"
 "  George Stefanakis https://launchpad.net/~george-stefanakis\n"
