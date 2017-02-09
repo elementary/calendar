@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-01-29 08:27+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2017-02-08 20:53+0000\n"
+"Last-Translator: Rokar <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2017-01-30 05:36+0000\n"
-"X-Generator: Launchpad (build 18315)\n"
+"X-Launchpad-Export-Date: 2017-02-09 05:37+0000\n"
+"X-Generator: Launchpad (build 18326)\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
@@ -53,11 +53,11 @@ msgstr ""
 
 #: ../src/SourceDialog/SourceDialog.vala:95
 msgid "Type:"
-msgstr ""
+msgstr "Teşe:"
 
 #: ../src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
-msgstr ""
+msgstr "Reng:"
 
 #: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
@@ -70,7 +70,7 @@ msgstr ""
 #: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Save"
-msgstr ""
+msgstr "Tomar Bike"
 
 #: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
 msgid "Hide Week Numbers"
@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
-msgstr ""
+msgstr "Vexwîne"
 
 #: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
@@ -135,67 +135,67 @@ msgstr ""
 
 #: ../src/EventEdition/ReminderPanel.vala:184
 msgid "5 minutes"
-msgstr ""
+msgstr "5 daqe"
 
 #: ../src/EventEdition/ReminderPanel.vala:185
 msgid "10 minutes"
-msgstr ""
+msgstr "10 daqe"
 
 #: ../src/EventEdition/ReminderPanel.vala:186
 msgid "15 minutes"
-msgstr ""
+msgstr "15 daqe"
 
 #: ../src/EventEdition/ReminderPanel.vala:187
 msgid "20 minutes"
-msgstr ""
+msgstr "20 deqe"
 
 #: ../src/EventEdition/ReminderPanel.vala:188
 msgid "25 minutes"
-msgstr ""
+msgstr "25 deqe"
 
 #: ../src/EventEdition/ReminderPanel.vala:189
 msgid "30 minutes"
-msgstr ""
+msgstr "30 deqe"
 
 #: ../src/EventEdition/ReminderPanel.vala:190
 msgid "45 minutes"
-msgstr ""
+msgstr "45 deqe"
 
 #: ../src/EventEdition/ReminderPanel.vala:191
 msgid "1 hour"
-msgstr ""
+msgstr "1 saet"
 
 #: ../src/EventEdition/ReminderPanel.vala:192
 msgid "2 hours"
-msgstr ""
+msgstr "2 saet"
 
 #: ../src/EventEdition/ReminderPanel.vala:193
 msgid "3 hours"
-msgstr ""
+msgstr "3 saet"
 
 #: ../src/EventEdition/ReminderPanel.vala:194
 msgid "12 hours"
-msgstr ""
+msgstr "12 saet"
 
 #: ../src/EventEdition/ReminderPanel.vala:195
 msgid "24 hours"
-msgstr ""
+msgstr "24 saet"
 
 #: ../src/EventEdition/ReminderPanel.vala:196
 msgid "2 days"
-msgstr ""
+msgstr "2 roj"
 
 #: ../src/EventEdition/ReminderPanel.vala:197
 msgid "1 week"
-msgstr ""
+msgstr "1 hefte"
 
 #: ../src/EventEdition/ReminderPanel.vala:206
 msgid "Notification"
-msgstr ""
+msgstr "Danezanî"
 
 #: ../src/EventEdition/ReminderPanel.vala:207
 msgid "Email"
-msgstr ""
+msgstr "Epeyam"
 
 #: ../src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -203,19 +203,19 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
-msgstr ""
+msgstr "Rojane"
 
 #: ../src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
-msgstr ""
+msgstr "Heftane"
 
 #: ../src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
-msgstr ""
+msgstr "Mehane"
 
 #: ../src/EventEdition/RepeatPanel.vala:61
 msgid "Yearly"
-msgstr ""
+msgstr "sale"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
@@ -224,27 +224,27 @@ msgstr ""
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Roj"
+msgstr[1] "Roj"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "hefte"
+msgstr[1] "hefte"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Meh"
+msgstr[1] "Mehe"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Sal"
+msgstr[1] "Sale"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -255,12 +255,12 @@ msgstr ""
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dubare"
+msgstr[1] "Dubare bike"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
-msgstr ""
+msgstr "Hîç"
 
 #: ../src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
@@ -268,7 +268,7 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:143
 msgid "After"
-msgstr ""
+msgstr "Piştî"
 
 #: ../src/EventEdition/RepeatPanel.vala:189
 msgid "The same day every month"
@@ -456,31 +456,31 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:511
 msgid "Mon"
-msgstr ""
+msgstr "Dş"
 
 #: ../src/EventEdition/RepeatPanel.vala:512
 msgid "Tue"
-msgstr ""
+msgstr "Sş"
 
 #: ../src/EventEdition/RepeatPanel.vala:513
 msgid "Wed"
-msgstr ""
+msgstr "Çş"
 
 #: ../src/EventEdition/RepeatPanel.vala:514
 msgid "Thu"
-msgstr ""
+msgstr "Pş"
 
 #: ../src/EventEdition/RepeatPanel.vala:515
 msgid "Fri"
-msgstr ""
+msgstr "În"
 
 #: ../src/EventEdition/RepeatPanel.vala:516
 msgid "Sat"
-msgstr ""
+msgstr "Şe"
 
 #: ../src/EventEdition/RepeatPanel.vala:517
 msgid "Sun"
-msgstr ""
+msgstr "Yş"
 
 #: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
 msgid "Add Event"
@@ -496,11 +496,11 @@ msgstr ""
 
 #: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
-msgstr ""
+msgstr "Cîh"
 
 #: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
-msgstr ""
+msgstr "Mêvan"
 
 #: ../src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
@@ -508,7 +508,7 @@ msgstr ""
 
 #: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
-msgstr ""
+msgstr "Çalakîyê Jê Bibe"
 
 #: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
@@ -516,11 +516,11 @@ msgstr ""
 
 #: ../src/EventEdition/EventDialog.vala:184
 msgid "Save Changes"
-msgstr ""
+msgstr "Guhertinan Tomar Bike"
 
 #: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
-msgstr ""
+msgstr "Cîh"
 
 #: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
@@ -528,7 +528,7 @@ msgstr ""
 
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
-msgstr ""
+msgstr "Ji:"
 
 #: ../src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
@@ -536,11 +536,11 @@ msgstr ""
 
 #: ../src/EventEdition/InfoPanel.vala:89
 msgid "To:"
-msgstr ""
+msgstr "Ji bo:"
 
 #: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
-msgstr ""
+msgstr "Sernav:"
 
 #: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
@@ -552,11 +552,11 @@ msgstr ""
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
-msgstr ""
+msgstr "salname:"
 
 #: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
-msgstr ""
+msgstr "Şîrove:"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -589,7 +589,7 @@ msgstr[1] ""
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
-msgstr ""
+msgstr "Têxe"
 
 #: ../src/MayaToolbar.vala:45
 msgid "Create a new event"
@@ -613,7 +613,7 @@ msgstr ""
 
 #: ../src/Application.vala:34 ../src/Translations.vala:6
 msgid "Calendar"
-msgstr ""
+msgstr "Salname"
 
 #: ../src/Application.vala:102
 msgid "translator-credits"
@@ -640,7 +640,7 @@ msgstr ""
 
 #: ../plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: ../plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
@@ -652,7 +652,7 @@ msgstr ""
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:91
 msgid "Use a secure connection"
@@ -668,7 +668,7 @@ msgstr ""
 
 #: ../core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr ""
+msgstr "Bikarhêner:"
 
 #: ../core/Backends/PlacementWidget.vala:50
 msgid "user.name"
@@ -676,7 +676,7 @@ msgstr ""
 
 #: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr ""
+msgstr "Epeyam:"
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
@@ -688,7 +688,7 @@ msgstr ""
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr ""
+msgstr "%B %e, %Y"
 
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
