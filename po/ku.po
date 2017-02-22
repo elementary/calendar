@@ -3,19 +3,19 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-02-10 19:32+0000\n"
-"Last-Translator: Rokar <Unknown>\n"
+"PO-Revision-Date: 2017-02-21 21:41+0000\n"
+"Last-Translator: Rokar ✌ <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2017-02-11 05:33+0000\n"
+"X-Launchpad-Export-Date: 2017-02-22 05:52+0000\n"
 "X-Generator: Launchpad (build 18326)\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "Salname nû zêde bike..."
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
@@ -23,7 +23,7 @@ msgstr "Rake"
 
 #: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
 msgid "Edit…"
-msgstr ""
+msgstr "Serastbike..."
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
@@ -31,7 +31,7 @@ msgstr "Vegerîne"
 
 #: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
-msgstr ""
+msgstr "Salname \"%s\" rakirin."
 
 #: ../src/SourceDialog/SourceDialog.vala:58
 #: ../src/Widgets/ContractorButtonWithMenu.vala:81
@@ -49,7 +49,7 @@ msgstr "Nav:"
 
 #: ../src/SourceDialog/SourceDialog.vala:72
 msgid "Calendar Name"
-msgstr ""
+msgstr "Nave Salname"
 
 #: ../src/SourceDialog/SourceDialog.vala:95
 msgid "Type:"
@@ -65,7 +65,7 @@ msgstr ""
 
 #: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
-msgstr ""
+msgstr "Saz kirina Salname"
 
 #: ../src/SourceDialog/SourceDialog.vala:162
 #: ../src/Widgets/ContractorButtonWithMenu.vala:82
@@ -82,24 +82,24 @@ msgstr ""
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
-msgstr ""
+msgstr "%u pitir…"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
 msgid "Export Calendar..."
-msgstr ""
+msgstr "Salname îxrac bike..."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 msgid "calendar.ics"
-msgstr ""
+msgstr "salname.ics"
 
 #: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr ""
+msgstr "Beşdar:"
 
 #: ../src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
-msgstr ""
+msgstr "Na beşdar"
 
 #: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
@@ -127,7 +127,7 @@ msgstr ""
 
 #: ../src/EventEdition/ReminderPanel.vala:182
 msgid "0 minutes"
-msgstr ""
+msgstr "0 deqe"
 
 #: ../src/EventEdition/ReminderPanel.vala:183
 msgid "1 minutes"
@@ -199,7 +199,7 @@ msgstr "Epeyam"
 
 #: ../src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
-msgstr ""
+msgstr "Dîsa kirin:"
 
 #: ../src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
@@ -219,7 +219,7 @@ msgstr "sale"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr ""
+msgstr "Herkes:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
@@ -248,7 +248,7 @@ msgstr[1] "Sale"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr ""
+msgstr "Xilas bûn:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
@@ -264,7 +264,7 @@ msgstr "Hîç"
 
 #: ../src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
-msgstr ""
+msgstr "Heta"
 
 #: ../src/EventEdition/RepeatPanel.vala:143
 msgid "After"
@@ -276,7 +276,7 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:200
 msgid "Exceptions:"
-msgstr ""
+msgstr "Awarte:"
 
 #: ../src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
@@ -284,7 +284,7 @@ msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:224
 msgid "Add Exception"
-msgstr ""
+msgstr "Awarte Zêde Bike"
 
 #: ../src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
@@ -484,11 +484,11 @@ msgstr "Yş"
 
 #: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
 msgid "Add Event"
-msgstr ""
+msgstr "Bûyer Zêde bike"
 
 #: ../src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
-msgstr ""
+msgstr "Bûyer Serast bike"
 
 #: ../src/EventEdition/EventDialog.vala:94
 msgid "General Informations"
@@ -512,7 +512,7 @@ msgstr "Çalakîyê Jê Bibe"
 
 #: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
-msgstr ""
+msgstr "Bûyer Saz bike"
 
 #: ../src/EventEdition/EventDialog.vala:184
 msgid "Save Changes"
@@ -532,7 +532,7 @@ msgstr "Ji:"
 
 #: ../src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
-msgstr ""
+msgstr "giştî Roj:"
 
 #: ../src/EventEdition/InfoPanel.vala:89
 msgid "To:"
@@ -544,7 +544,7 @@ msgstr "Sernav:"
 
 #: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
-msgstr ""
+msgstr "Nave Bûyer"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
@@ -570,12 +570,12 @@ msgstr ""
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
-msgstr ""
+msgstr "Giştî Roj"
 
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
 #: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
-msgstr ""
+msgstr "%s, %s - %s, %s"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
@@ -620,7 +620,7 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-"  Rokar https://launchpad.net/~rokarali"
+"  Rokar ✌ https://launchpad.net/~rokarali"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
@@ -632,7 +632,7 @@ msgstr ""
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr ""
+msgstr "Der bare Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
