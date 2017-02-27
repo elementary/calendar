@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2015-07-25 14:39+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2017-02-27 00:17+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
+"X-Launchpad-Export-Date: 2017-02-27 05:38+0000\n"
+"X-Generator: Launchpad (build 18328)\n"
 "Language: cs\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -230,27 +230,31 @@ msgstr "Každý"
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Den"
+msgstr[1] "Dny"
+msgstr[2] "Dnů"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Týden"
+msgstr[1] "Týdny"
+msgstr[2] "Týdnů"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Měsíc"
+msgstr[1] "Měsíce"
+msgstr[2] "Měsíců"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Rok"
+msgstr[1] "Roky"
+msgstr[2] "Let"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -261,8 +265,9 @@ msgstr "Končí:"
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Opakování"
+msgstr[1] "Opakování"
+msgstr[2] "Opakování"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
@@ -554,7 +559,7 @@ msgstr "Název události"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "Stiskněte enter pro vložení události"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
@@ -629,6 +634,7 @@ msgstr ""
 "  Hlobil Vaclav https://launchpad.net/~vaclav-hlobil\n"
 "  Honza Bittner https://launchpad.net/~the-z\n"
 "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
+"  Jan Marek https://launchpad.net/~janmarek28\n"
 "  Jiří Šebele https://launchpad.net/~sindriava+launchpad\n"
 "  Marek Doležel https://launchpad.net/~marekdolezel\n"
 "  Marek Suchánek https://launchpad.net/~suchm\n"
