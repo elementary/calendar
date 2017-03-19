@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2015-05-15 10:58+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
+"PO-Revision-Date: 2017-03-17 12:21+0000\n"
+"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
+"X-Launchpad-Export-Date: 2017-03-19 06:23+0000\n"
+"X-Generator: Launchpad (build 18332)\n"
 "Language: da\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
-msgstr "Tilføj ny kalender"
+msgstr "Tilføj ny kalender..."
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
@@ -67,7 +67,7 @@ msgstr "Farve:"
 
 #: ../src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
-msgstr "Markér som standard kalender"
+msgstr "Markér som standardkalender"
 
 #: ../src/SourceDialog/SourceDialog.vala:153
 msgid "Create Calendar"
@@ -80,7 +80,7 @@ msgstr "Gem"
 
 #: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
 msgid "Hide Week Numbers"
-msgstr "Gem uge numre"
+msgstr "Skjul ugenumre"
 
 #: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
 msgid "Show Week Numbers"
@@ -88,7 +88,7 @@ msgstr "Vis ugenumre"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
-msgstr ""
+msgstr "%u mere…"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
@@ -101,107 +101,107 @@ msgstr "kalender.ics"
 
 #: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr ""
+msgstr "Deltagere:"
 
 #: ../src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
-msgstr ""
+msgstr "Ingen deltagere"
 
 #: ../src/EventEdition/GuestsPanel.vala:93
 msgid "Invite"
-msgstr ""
+msgstr "Inviter"
 
 #: ../src/EventEdition/GuestsPanel.vala:241
 msgid "Accepted"
-msgstr ""
+msgstr "Godkendt"
 
 #: ../src/EventEdition/GuestsPanel.vala:244
 msgid "Declined"
-msgstr ""
+msgstr "Afvist"
 
 #: ../src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
-msgstr ""
+msgstr "Påmindelser:"
 
 #: ../src/EventEdition/ReminderPanel.vala:37
 msgid "No Reminders"
-msgstr ""
+msgstr "Ingen påmindelser"
 
 #: ../src/EventEdition/ReminderPanel.vala:71
 msgid "Add Reminder"
-msgstr ""
+msgstr "Tilføj påmindelse"
 
 #: ../src/EventEdition/ReminderPanel.vala:182
 msgid "0 minutes"
-msgstr ""
+msgstr "0 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:183
 msgid "1 minutes"
-msgstr ""
+msgstr "1 minut"
 
 #: ../src/EventEdition/ReminderPanel.vala:184
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:185
 msgid "10 minutes"
-msgstr ""
+msgstr "10 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:186
 msgid "15 minutes"
-msgstr ""
+msgstr "15 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:187
 msgid "20 minutes"
-msgstr ""
+msgstr "20 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:188
 msgid "25 minutes"
-msgstr ""
+msgstr "25 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:189
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:190
 msgid "45 minutes"
-msgstr ""
+msgstr "45 minutter"
 
 #: ../src/EventEdition/ReminderPanel.vala:191
 msgid "1 hour"
-msgstr ""
+msgstr "1 time"
 
 #: ../src/EventEdition/ReminderPanel.vala:192
 msgid "2 hours"
-msgstr ""
+msgstr "2 timer"
 
 #: ../src/EventEdition/ReminderPanel.vala:193
 msgid "3 hours"
-msgstr ""
+msgstr "3 timer"
 
 #: ../src/EventEdition/ReminderPanel.vala:194
 msgid "12 hours"
-msgstr ""
+msgstr "12 timer"
 
 #: ../src/EventEdition/ReminderPanel.vala:195
 msgid "24 hours"
-msgstr ""
+msgstr "24 timer"
 
 #: ../src/EventEdition/ReminderPanel.vala:196
 msgid "2 days"
-msgstr ""
+msgstr "2 dage"
 
 #: ../src/EventEdition/ReminderPanel.vala:197
 msgid "1 week"
-msgstr ""
+msgstr "1 uge"
 
 #: ../src/EventEdition/ReminderPanel.vala:206
 msgid "Notification"
-msgstr ""
+msgstr "Påmindelse"
 
 #: ../src/EventEdition/ReminderPanel.vala:207
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: ../src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -213,280 +213,280 @@ msgstr "Dagligt"
 
 #: ../src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
-msgstr ""
+msgstr "Ugentligt"
 
 #: ../src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
-msgstr ""
+msgstr "Månedligt"
 
 #: ../src/EventEdition/RepeatPanel.vala:61
 msgid "Yearly"
-msgstr ""
+msgstr "Årligt"
 
 #: ../src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr ""
+msgstr "Hver:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dag"
+msgstr[1] "Dage"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Uge"
+msgstr[1] "Uger"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Måned"
+msgstr[1] "Måneder"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "År"
+msgstr[1] "År"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr ""
+msgstr "Slutter:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Gentagelse"
+msgstr[1] "Gentagelser"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
-msgstr ""
+msgstr "Aldrig"
 
 #: ../src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
-msgstr ""
+msgstr "Indtil"
 
 #: ../src/EventEdition/RepeatPanel.vala:143
 msgid "After"
-msgstr ""
+msgstr "Efter"
 
 #: ../src/EventEdition/RepeatPanel.vala:189
 msgid "The same day every month"
-msgstr ""
+msgstr "Den samme dag hver måned"
 
 #: ../src/EventEdition/RepeatPanel.vala:200
 msgid "Exceptions:"
-msgstr ""
+msgstr "Undtagelser:"
 
 #: ../src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
-msgstr ""
+msgstr "Ingen undtagelser"
 
 #: ../src/EventEdition/RepeatPanel.vala:224
 msgid "Add Exception"
-msgstr ""
+msgstr "Tilføj undtagelse"
 
 #: ../src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
-msgstr ""
+msgstr "Hver sidste søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:361
 msgid "Every last Monday"
-msgstr ""
+msgstr "Hver sidste mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:364
 msgid "Every last Tuesday"
-msgstr ""
+msgstr "Hver sidste tirsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:367
 msgid "Every last Wednesday"
-msgstr ""
+msgstr "Hver sidste onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:370
 msgid "Every last Thursday"
-msgstr ""
+msgstr "Hver sidste torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:373
 msgid "Every last Friday"
-msgstr ""
+msgstr "Hver sidste fredag"
 
 #: ../src/EventEdition/RepeatPanel.vala:376
 msgid "Every last Saturday"
-msgstr ""
+msgstr "Hver sidste lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:383
 msgid "Every first Sunday"
-msgstr ""
+msgstr "Hver først søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:386
 msgid "Every first Monday"
-msgstr ""
+msgstr "Hver først mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:389
 msgid "Every first Tuesday"
-msgstr ""
+msgstr "Hver først tirsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:392
 msgid "Every first Wednesday"
-msgstr ""
+msgstr "Hver først onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:395
 msgid "Every first Thursday"
-msgstr ""
+msgstr "Hver først torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:398
 msgid "Every first Friday"
-msgstr ""
+msgstr "Hver først fredag"
 
 #: ../src/EventEdition/RepeatPanel.vala:401
 msgid "Every first Saturday"
-msgstr ""
+msgstr "Hver først lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:408
 msgid "Every second Sunday"
-msgstr ""
+msgstr "Hver anden søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:411
 msgid "Every second Monday"
-msgstr ""
+msgstr "Hver anden mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:414
 msgid "Every second Tuesday"
-msgstr ""
+msgstr "Hver anden tirsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:417
 msgid "Every second Wednesday"
-msgstr ""
+msgstr "Hver anden onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:420
 msgid "Every second Thursday"
-msgstr ""
+msgstr "Hver anden torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:423
 msgid "Every second Friday"
-msgstr ""
+msgstr "Hver anden fredag"
 
 #: ../src/EventEdition/RepeatPanel.vala:426
 msgid "Every second Saturday"
-msgstr ""
+msgstr "Hver anden lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:433
 msgid "Every third Sunday"
-msgstr ""
+msgstr "Hver tredje søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:436
 msgid "Every third Monday"
-msgstr ""
+msgstr "Hver tredje mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:439
 msgid "Every third Tuesday"
-msgstr ""
+msgstr "Hver tredje tirsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:442
 msgid "Every third Wednesday"
-msgstr ""
+msgstr "Hver tredje onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:445
 msgid "Every third Thursday"
-msgstr ""
+msgstr "Hver tredje torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:448
 msgid "Every third Friday"
-msgstr ""
+msgstr "Hver tredje fredag"
 
 #: ../src/EventEdition/RepeatPanel.vala:451
 msgid "Every third Saturday"
-msgstr ""
+msgstr "Hver tredje lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:458
 msgid "Every fourth Sunday"
-msgstr ""
+msgstr "Hver fjerde søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:461
 msgid "Every fourth Monday"
-msgstr ""
+msgstr "Hver fjerde mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:464
 msgid "Every fourth Tuesday"
-msgstr ""
+msgstr "Hver fjerde tirsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:467
 msgid "Every fourth Wednesday"
-msgstr ""
+msgstr "Hver fjerde onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:470
 msgid "Every fourth Thursday"
-msgstr ""
+msgstr "Hver fjerde torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:473
 msgid "Every fourth Friday"
-msgstr ""
+msgstr "Hver fjerde fridag"
 
 #: ../src/EventEdition/RepeatPanel.vala:476
 msgid "Every fourth Saturday"
-msgstr ""
+msgstr "Hver fjerde lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:483
 msgid "Every fifth Sunday"
-msgstr ""
+msgstr "Hver femte søndag"
 
 #: ../src/EventEdition/RepeatPanel.vala:486
 msgid "Every fifth Monday"
-msgstr ""
+msgstr "Hver femte mandag"
 
 #: ../src/EventEdition/RepeatPanel.vala:489
 msgid "Every fifth Tuesday"
-msgstr ""
+msgstr "Hver femte tirsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:492
 msgid "Every fifth Wednesday"
-msgstr ""
+msgstr "Hver femte onsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:495
 msgid "Every fifth Thursday"
-msgstr ""
+msgstr "Hver femte torsdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:498
 msgid "Every fifth Friday"
-msgstr ""
+msgstr "Hver femte fridag"
 
 #: ../src/EventEdition/RepeatPanel.vala:501
 msgid "Every fifth Saturday"
-msgstr ""
+msgstr "Hver femte lørdag"
 
 #: ../src/EventEdition/RepeatPanel.vala:511
 msgid "Mon"
-msgstr ""
+msgstr "Man"
 
 #: ../src/EventEdition/RepeatPanel.vala:512
 msgid "Tue"
-msgstr ""
+msgstr "Tir"
 
 #: ../src/EventEdition/RepeatPanel.vala:513
 msgid "Wed"
-msgstr ""
+msgstr "Ons"
 
 #: ../src/EventEdition/RepeatPanel.vala:514
 msgid "Thu"
-msgstr ""
+msgstr "Tor"
 
 #: ../src/EventEdition/RepeatPanel.vala:515
 msgid "Fri"
-msgstr ""
+msgstr "Fre"
 
 #: ../src/EventEdition/RepeatPanel.vala:516
 msgid "Sat"
-msgstr ""
+msgstr "Lør"
 
 #: ../src/EventEdition/RepeatPanel.vala:517
 msgid "Sun"
-msgstr ""
+msgstr "Søn"
 
 #: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
 msgid "Add Event"
@@ -498,7 +498,7 @@ msgstr "Redigér begivenhed"
 
 #: ../src/EventEdition/EventDialog.vala:94
 msgid "General Informations"
-msgstr ""
+msgstr "Generelle informationer"
 
 #: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
@@ -506,15 +506,15 @@ msgstr "Placering"
 
 #: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
-msgstr ""
+msgstr "Gæster"
 
 #: ../src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
-msgstr ""
+msgstr "Påmindelser"
 
 #: ../src/EventEdition/EventDialog.vala:169
 msgid "Delete Event"
-msgstr ""
+msgstr "Slet begivenhed"
 
 #: ../src/EventEdition/EventDialog.vala:181
 msgid "Create Event"
@@ -526,11 +526,11 @@ msgstr "Gem ændringer"
 
 #: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
-msgstr "Lokation:"
+msgstr "Sted:"
 
 #: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
-msgstr "John Smith ELLER Eksempel St."
+msgstr "Anne Marie ELLER Eksempelgade"
 
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
@@ -546,7 +546,7 @@ msgstr "Til:"
 
 #: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
-msgstr ""
+msgstr "Titel:"
 
 #: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
@@ -554,15 +554,15 @@ msgstr "Navn på begivenhed"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "Tryk på enter for at parse begivenhed"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
-msgstr ""
+msgstr "Kalender:"
 
 #: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
-msgstr ""
+msgstr "Kommentarer:"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -574,7 +574,7 @@ msgstr ""
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
-msgstr "Under dagen"
+msgstr "I løbet af dagen"
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
@@ -583,21 +583,21 @@ msgstr "Hele dagen"
 #. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
 #: ../src/AgendaView.vala:376
 msgid "%s, %s - %s, %s"
-msgstr ""
+msgstr "%s, %s - %s, %s"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
-msgstr ""
+msgstr "Importér begivenheder fra \"%s\" ind i den følgende kalender:"
 
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Importér begivenheder fra %d fil ind i den følgende kalender:"
+msgstr[1] "Importér begivenheder fra %d filer ind i den følgende kalender:"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
-msgstr ""
+msgstr "Importér"
 
 #: ../src/MayaToolbar.vala:45
 msgid "Create a new event"
@@ -605,7 +605,7 @@ msgstr "Opret en ny begivenhed"
 
 #: ../src/MayaToolbar.vala:48
 msgid "Go to today's date"
-msgstr ""
+msgstr "Gå til dags dato"
 
 #: ../src/MayaToolbar.vala:52
 msgid "Manage Calendars"
@@ -617,7 +617,7 @@ msgstr "Søg i Begivenheder"
 
 #: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
-msgstr "Eksporter eller Del standardkalenderen"
+msgstr "Eksportér eller del standardkalenderen"
 
 #: ../src/Application.vala:34 ../src/Translations.vala:6
 msgid "Calendar"
@@ -636,7 +636,8 @@ msgstr ""
 "  Niels Fyhring https://launchpad.net/~fyhring\n"
 "  Rune Jensen https://launchpad.net/~runeofdenmark-n\n"
 "  Simon https://launchpad.net/~sims73\n"
-"  Svend Christian Svendsen https://launchpad.net/~svendcsvendsen"
+"  Svend Christian Svendsen https://launchpad.net/~svendcsvendsen\n"
+"  scootergrisen https://launchpad.net/~scootergrisen"
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
@@ -676,7 +677,7 @@ msgstr "Brug en sikker forbindelse"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
-msgstr "Server håndterer møde invitationer"
+msgstr "Server håndterer mødeinvitationer"
 
 #: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
 msgid "On this computer"
@@ -700,7 +701,7 @@ msgstr "john@doe.com"
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Behold en lokal kopi"
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"

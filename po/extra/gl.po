@@ -1,16 +1,16 @@
-# Hindi translation for maya
-# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
+# Galician translation for maya
+# Copyright (c) 2017 Rosetta Contributors and Canonical Ltd 2017
 # This file is distributed under the same license as the maya package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-03-17 05:36+0000\n"
-"Last-Translator: Agastya Chandrakant <Unknown>\n"
-"Language-Team: Hindi <hi@li.org>\n"
+"PO-Revision-Date: 2017-03-16 12:28+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Launchpad (build 18332)\n"
 
 msgid "Calendar"
-msgstr "कैलेन्डर"
+msgstr ""
 
 msgid "View and schedule events"
 msgstr ""
@@ -27,13 +27,13 @@ msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr ""
 
 msgid "Add Event"
-msgstr "घटना जोडें"
+msgstr ""
 
 msgid "About Calendar"
 msgstr ""
 
 msgid "Maya"
-msgstr "माया"
+msgstr ""
 
 msgid "About Maya"
 msgstr ""
