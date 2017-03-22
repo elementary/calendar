@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-03-19 11:07+0000\n"
+"PO-Revision-Date: 2017-03-20 14:26+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2017-03-20 06:02+0000\n"
-"X-Generator: Launchpad (build 18332)\n"
+"X-Launchpad-Export-Date: 2017-03-22 06:26+0000\n"
+"X-Generator: Launchpad (build 18334)\n"
 "Language: da\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
-msgstr "Tilføj ny kalender..."
+msgstr "Tilføj ny kalender…"
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
@@ -29,7 +29,7 @@ msgstr "Fjern"
 
 #: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
 msgid "Edit…"
-msgstr "Redigér..."
+msgstr "Redigér…"
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
@@ -93,7 +93,7 @@ msgstr "%u mere…"
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
 msgid "Export Calendar..."
-msgstr "Eksporter Kalender..."
+msgstr "Eksporter kalender..."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 msgid "calendar.ics"
@@ -697,7 +697,7 @@ msgstr "E-mail:"
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr "john@doe.com"
+msgstr "john@eksempel.dk"
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
