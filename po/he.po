@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-04-20 13:49+0000\n"
+"PO-Revision-Date: 2017-04-20 13:50+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew "
 "<https://l10n.elementary.io/projects/calendar/calendar/he/>\n"
@@ -531,7 +531,7 @@ msgstr "מיקום:"
 
 #: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
-msgstr "שם או רחוב לדוגמא"
+msgstr "שם או רחוב לדוגמה"
 
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
