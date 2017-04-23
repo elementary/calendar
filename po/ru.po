@@ -8,21 +8,22 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-02-22 14:48+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"PO-Revision-Date: 2017-04-23 19:16+0000\n"
+"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"Language-Team: Russian "
+"<https://l10n.elementary.io/projects/calendar/calendar/ru/>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
-"Language: ru\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
-msgstr "Добавить новый календарь..."
+msgstr "Добавить новый календарь…"
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
@@ -30,7 +31,7 @@ msgstr "Удалить"
 
 #: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
 msgid "Edit…"
-msgstr "Изменить..."
+msgstr "Изменить…"
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
@@ -89,7 +90,7 @@ msgstr "Показать номера недель"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
-msgstr "%u больше..."
+msgstr "%u больше…"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
@@ -596,9 +597,9 @@ msgstr "Импортировать события из «%s» в следующ�
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "Импортировать события из файла %d в следующий календарь:"
-msgstr[1] "Импортировать события из файлов %d в следующий календарь:"
-msgstr[2] "Импортировать события из файлов %d в следующий календарь:"
+msgstr[0] "Импортировать события из %d файла в следующий календарь:"
+msgstr[1] "Импортировать события из %d файлов в следующий календарь:"
+msgstr[2] "Импортировать события из %d файлов в следующий календарь:"
 
 #: ../src/ImportDialog.vala:53
 msgid "Import"
