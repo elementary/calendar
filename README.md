@@ -10,6 +10,7 @@ You'll need the following dependencies:
 * libchamplain-gtk-0.12-dev
 * libclutter-1.0-dev
 * libecal1.2-dev
+* libedataserverui1.2-dev
 * libfolks-dev
 * libgee-0.8-dev
 * libgeocode-glib-dev
