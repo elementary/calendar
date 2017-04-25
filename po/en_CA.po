@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-05-11 15:03+0000\n"
-"Last-Translator: Giovanni Caligaris <giovannicaligaris@gmail.com>\n"
-"Language-Team: English (Canada) <en_CA@li.org>\n"
+"PO-Revision-Date: 2017-04-25 11:27+0000\n"
+"Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
+"Language-Team: English (Canada) "
+"<https://l10n.elementary.io/projects/calendar/calendar/en_CA/>\n"
+"Language: en_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
-"Language: \n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
@@ -648,31 +649,31 @@ msgstr "About Maya"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr ""
+msgstr "About Calendar"
 
 #: ../plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: ../plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "user.name or user.name@gmail.com"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:91
 msgid "Use a secure connection"
-msgstr ""
+msgstr "Use a secure connection"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
-msgstr ""
+msgstr "Server handles meeting invitations"
 
 #: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
 msgid "On this computer"
@@ -680,23 +681,23 @@ msgstr "On this computer"
 
 #: ../core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr ""
+msgstr "User:"
 
 #: ../core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr ""
+msgstr "user.name"
 
 #: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr ""
+msgstr "Email:"
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr ""
+msgstr "john@doe.com"
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Keep a copy locally"
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
