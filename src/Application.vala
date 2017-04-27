@@ -80,10 +80,10 @@ namespace Maya {
             app_icon = "office-calendar";
             app_launcher = "org.pantheon.maya.desktop";
 
-            main_url = "https://launchpad.net/maya";
-            bug_url = "https://bugs.launchpad.net/maya";
+            main_url = "https://github.com/elementary/calendar";
+            bug_url = "https://github.com/elementary/calendar/issues";
             help_url = "https://elementary.io/help/maya";
-            translate_url = "https://translations.launchpad.net/maya";
+            translate_url = "https://l10n.elementary.io/projects/calendar/";
 
             about_authors = {
                 "Maxwell Barvian <maxwell@elementary.io>",
