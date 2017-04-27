@@ -8,20 +8,21 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-11-07 07:49+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"PO-Revision-Date: 2017-04-27 18:37+0000\n"
+"Last-Translator: Bálint Máhonfai <mbalint314@gmail.com>\n"
+"Language-Team: Hungarian "
+"<https://l10n.elementary.io/projects/calendar/calendar/hu/>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
-"Language: hu\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
-msgstr "Új naptár hozzáadása..."
+msgstr "Új naptár hozzáadása…"
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
@@ -29,7 +30,7 @@ msgstr "Eltávolítás"
 
 #: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
 msgid "Edit…"
-msgstr "Szerkesztés..."
+msgstr "Szerkesztés…"
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
@@ -88,7 +89,7 @@ msgstr "Hetek számának megjelenítése"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
-msgstr "még %u ..."
+msgstr "még %u …"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
@@ -230,27 +231,27 @@ msgstr "Minden:"
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Nap"
+msgstr[1] "Napok"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hét"
+msgstr[1] "Hetek"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hónap"
+msgstr[1] "Hónapok"
 
 #: ../src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Év"
+msgstr[1] "Évek"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -261,8 +262,8 @@ msgstr "Befejeződik:"
 #: ../src/EventEdition/EventDialog.vala:106
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ismétlés"
+msgstr[1] "Ismétlések"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
