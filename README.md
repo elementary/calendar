@@ -6,6 +6,7 @@
 You'll need the following dependencies:
 
 * cmake
+* intltool
 * libchamplain-0.12-dev
 * libchamplain-gtk-0.12-dev
 * libclutter-1.0-dev
