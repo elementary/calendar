@@ -113,7 +113,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
                 return false;
 
             unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
-            var stripped_time = Util.strip_time (selected_date.to_timezone (new TimeZone.utc ()));
+			var stripped_time = new DateTime.utc(selected_date.get_year(), selected_date.get_month(), selected_date.get_day_of_month(), 0, 0, 0);
             var range = new Util.DateRange (stripped_time, stripped_time.add_days (1));
             foreach (var dt_range in Util.event_date_ranges (comp, range)) {
                 if (dt_range.contains (stripped_time))
