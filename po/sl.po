@@ -8,21 +8,22 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-07-24 19:37+0000\n"
-"Last-Translator: Daniel Vlašič <mulcek@gmail.com>\n"
-"Language-Team: Slovenian <sl@li.org>\n"
+"PO-Revision-Date: 2017-05-31 22:09+0000\n"
+"Last-Translator: Jernej Virag <jernej@virag.si>\n"
+"Language-Team: Slovenian "
+"<https://l10n.elementary.io/projects/calendar/calendar/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
-msgstr "Dodaj nov koledar..."
+msgstr "Dodaj nov koledar…"
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
@@ -89,7 +90,7 @@ msgstr "Pokaži številke tednov"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
-msgstr "Še %u..."
+msgstr "Še %u…"
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
@@ -231,9 +232,9 @@ msgstr "Vsak:"
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] "dni"
-msgstr[1] "dan"
-msgstr[2] "dneva"
+msgstr[0] "dan"
+msgstr[1] "dneva"
+msgstr[2] "dnevi"
 msgstr[3] "dni"
 
 #: ../src/EventEdition/RepeatPanel.vala:114
@@ -271,9 +272,9 @@ msgstr "Konec:"
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Ponavljanje"
-msgstr[1] "Ponavljanje"
-msgstr[2] "Ponavljanje"
-msgstr[3] "Ponavljanje"
+msgstr[1] "Ponavljanji"
+msgstr[2] "Ponavljanja"
+msgstr[3] "Ponavljanj"
 
 #: ../src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
@@ -601,8 +602,8 @@ msgstr "Uvozi dogodke iz \"%s\" v koledar:"
 #: ../src/ImportDialog.vala:44
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "Uvozi dogodke iz datotek v koledar:"
-msgstr[1] "Uvozi dogodke iz datoteke v koledar:"
+msgstr[0] "Uvozi dogodke iz %d datoteke v koledar:"
+msgstr[1] "Uvozi dogodke iz %d datotek v koledar:"
 msgstr[2] "Uvozi dogodke iz %d datotek v koledar:"
 msgstr[3] "Uvozi dogodke iz %d datotek v koledar:"
 
@@ -647,7 +648,7 @@ msgstr ""
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
-msgstr "Preglej in načrtuj dogodke"
+msgstr "Pregled in načrtovanje dogodkov"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
