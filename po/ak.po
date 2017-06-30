@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-06-12 15:57+0000\n"
+"PO-Revision-Date: 2017-06-26 12:57+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan "
 "<https://l10n.elementary.io/projects/calendar/calendar/ak/>\n"
@@ -81,7 +81,7 @@ msgstr "Hintaw Nnawotwe Nɔma Ahoroɔ No"
 
 #: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
 msgid "Show Week Numbers"
-msgstr "Da Nnawotwe Nɔma Ahoroɔ No Adi"
+msgstr "Da Nnawɔtwe Nɔma Ahoroɔ No Adi"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
@@ -134,7 +134,7 @@ msgstr "Sima 0"
 
 #: ../src/EventEdition/ReminderPanel.vala:183
 msgid "1 minutes"
-msgstr "Sima 2"
+msgstr "Sima 1"
 
 #: ../src/EventEdition/ReminderPanel.vala:184
 msgid "5 minutes"
@@ -170,11 +170,11 @@ msgstr "Donhwere 1"
 
 #: ../src/EventEdition/ReminderPanel.vala:192
 msgid "2 hours"
-msgstr "Nnonhwere 2"
+msgstr "Nnɔnhwere 2"
 
 #: ../src/EventEdition/ReminderPanel.vala:193
 msgid "3 hours"
-msgstr "Nnonhwere 3"
+msgstr "Nnɔnhwere 3"
 
 #: ../src/EventEdition/ReminderPanel.vala:194
 msgid "12 hours"
@@ -234,8 +234,8 @@ msgstr[1] "Nna"
 #: ../src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] "Nawɔtwe"
-msgstr[1] "Nawɔtwe Ahoroɔ"
+msgstr[0] "Nnawɔtwe"
+msgstr[1] "Nawɔtwe"
 
 #: ../src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
@@ -247,7 +247,7 @@ msgstr[1] "Abosome"
 msgid "Year"
 msgid_plural "Years"
 msgstr[0] "Afe"
-msgstr[1] "Afe Ahoroɔ"
+msgstr[1] "Mfie"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -283,7 +283,7 @@ msgstr "Exceptions:"
 
 #: ../src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
-msgstr "No Exceptions"
+msgstr "Nanso Biara Nni Hɔ (No Exceptions)"
 
 #: ../src/EventEdition/RepeatPanel.vala:224
 msgid "Add Exception"
@@ -303,7 +303,7 @@ msgstr "Benada a ɛtwa toɔ biara"
 
 #: ../src/EventEdition/RepeatPanel.vala:367
 msgid "Every last Wednesday"
-msgstr "Wukuda"
+msgstr "Wukuada a etwa toɔ biara"
 
 #: ../src/EventEdition/RepeatPanel.vala:370
 msgid "Every last Thursday"
@@ -311,7 +311,7 @@ msgstr "Yawoada a ɛtwa toɔ biara"
 
 #: ../src/EventEdition/RepeatPanel.vala:373
 msgid "Every last Friday"
-msgstr "Fida a ɛtwa toɔ biara"
+msgstr "Fiada a ɛtwa toɔ biara"
 
 #: ../src/EventEdition/RepeatPanel.vala:376
 msgid "Every last Saturday"
@@ -606,7 +606,7 @@ msgstr "Kɔ ennɛ da"
 
 #: ../src/MayaToolbar.vala:52
 msgid "Manage Calendars"
-msgstr "Hyɛhyɛ dwuma ahoroɔ no"
+msgstr "Hyɛhyɛ Kalɛnda Ahoroɔ No"
 
 #: ../src/MayaToolbar.vala:64
 msgid "Search Events"
@@ -628,7 +628,7 @@ msgstr ""
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
-msgstr "Hwɛ anaa yɛ wo mmerɛ ho nhyehyɛe"
+msgstr "Hwɛ anaa hyehyɛ wo nnwuma ahoroɔ"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
