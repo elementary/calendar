@@ -27,8 +27,9 @@
   </provides>
   <developer_name>elementary LLC.</developer_name>
   <url type="homepage">http://elementary.io/</url>
-  <url type="bugtracker">https://bugs.launchpad.net/maya</url>
+  <url type="bugtracker">https://github.com/elementary/calendar/issues</url>
   <url type="donation">https://elementary.io/get-involved#funding</url>
   <url type="help">https://elementary.io/help/maya</url>
+  <url type="translate">https://l10n.elementary.io/projects/calendar</url>
   <update_contact>contact_at_elementary.io</update_contact>
 </component>
