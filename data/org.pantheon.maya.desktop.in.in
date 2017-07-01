@@ -10,13 +10,9 @@ Categories=GTK;Office;Calendar;
 StartupNotify=true
 MimeType=text/calendar;
 _Keywords=Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;
-Actions=AddEvent;AboutDialog;
+Actions=AddEvent;
 X-GNOME-UsesNotifications=true
 
 [Desktop Action AddEvent]
 _Name=Add Event
 Exec=maya-calendar -a
-
-[Desktop Action AboutDialog]
-_Name=About @APP_NAME@
-Exec=maya-calendar --about
