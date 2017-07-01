@@ -80,27 +80,6 @@ namespace Maya {
             app_icon = "office-calendar";
             app_launcher = "org.pantheon.maya.desktop";
 
-            main_url = "https://github.com/elementary/calendar";
-            bug_url = "https://github.com/elementary/calendar/issues";
-            help_url = "https://elementary.io/help/maya";
-            translate_url = "https://l10n.elementary.io/projects/calendar/";
-
-            about_authors = {
-                "Maxwell Barvian <maxwell@elementary.io>",
-                "Jaap Broekhuizen <jaapz.b@gmail.com>",
-                "Avi Romanoff <aviromanoff@gmail.com>",
-                "Allen Lowe <lallenlowe@gmail.com>",
-                "Niels Avonds <niels.avonds@gmail.com>",
-                "Corentin Noël <corentin@elementary.io>"
-            };
-            about_documenters = {
-                "Maxwell Barvian <maxwell@elementary.io>"
-            };
-            about_artists = {
-                "Daniel Foré <daniel@elementary.io>"
-            };
-            about_translators = _("translator-credits");
-            about_license_type = Gtk.License.GPL_3_0;
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.textdomain (Build.GETTEXT_PACKAGE);
         }
