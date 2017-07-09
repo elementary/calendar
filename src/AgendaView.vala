@@ -24,11 +24,14 @@ public class Maya.View.AgendaView : Gtk.Grid {
     public signal void event_removed (E.CalComponent event);
     public signal void event_modified (E.CalComponent event);
 
-    private Gtk.ListBox events_list;
     private Gtk.Label day_label;
     private Gtk.Label weekday_label;
+    private Gtk.ListBox selected_date_events_list;
+    private Gtk.ComboBoxText upcoming_events_comboBox;
+    private Gtk.ListBox upcoming_events_list;
     private DateTime selected_date;
     private HashTable<string, AgendaEventRow> row_table;
+    private HashTable<string, AgendaEventRow> row_table2;
 
     public AgendaView () {
         orientation = Gtk.Orientation.VERTICAL;
@@ -41,6 +44,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
         weekday_label.get_style_context ().add_class ("h2");
         weekday_label.margin = 12;
         weekday_label.margin_bottom = 0;
+
         day_label = new Gtk.Label ("");
         day_label.set_alignment (0, 0.5f);
         day_label.use_markup = true;
@@ -48,17 +52,20 @@ public class Maya.View.AgendaView : Gtk.Grid {
         day_label.margin = 12;
         day_label.margin_top = 0;
         day_label.margin_bottom = 6;
+
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
-        var day_grid = new Gtk.Grid ();
-        day_grid.row_spacing = 6;
-        day_grid.orientation = Gtk.Orientation.VERTICAL;
-        day_grid.add (weekday_label);
-        day_grid.add (day_label);
-        day_grid.add (separator);
-        var style_provider = Util.Css.get_css_provider ();
-        day_grid.get_style_context ().add_provider (style_provider, 600);
-        day_grid.get_style_context ().add_class ("cell");
+
+        var selected_data_grid = new Gtk.Grid ();
+        selected_data_grid.row_spacing = 6;
+        selected_data_grid.orientation = Gtk.Orientation.VERTICAL;
+        selected_data_grid.add (weekday_label);
+        selected_data_grid.add (day_label);
+        selected_data_grid.add (separator);
+
+        var selected_data_style_provider = Util.Css.get_css_provider ();
+        selected_data_grid.get_style_context ().add_provider (selected_data_style_provider, 600);
+        selected_data_grid.get_style_context ().add_class ("cell");
 
         var placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
         placeholder_label.sensitive = false;
@@ -69,11 +76,11 @@ public class Maya.View.AgendaView : Gtk.Grid {
         placeholder_label.justify = Gtk.Justification.CENTER;
         placeholder_label.show_all ();
 
-        events_list = new Gtk.ListBox ();
-        events_list.selection_mode = Gtk.SelectionMode.SINGLE;
-        events_list.set_header_func (header_update_func);
-        events_list.set_placeholder (placeholder_label);
-        events_list.set_sort_func ((child1, child2) => {
+        selected_date_events_list = new Gtk.ListBox ();
+        selected_date_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
+        selected_date_events_list.set_header_func (header_update_func);
+        selected_date_events_list.set_placeholder (placeholder_label);
+        selected_date_events_list.set_sort_func ((child1, child2) => {
             var row1 = (AgendaEventRow)child1;
             var row2 = (AgendaEventRow)child2;
             if (row1.is_allday) {
@@ -107,31 +114,150 @@ public class Maya.View.AgendaView : Gtk.Grid {
             }
         });
 
-        events_list.set_filter_func ((row) => {
+        selected_date_events_list.set_filter_func ((row) => {
             var event_row = (AgendaEventRow) row;
             if (selected_date == null)
                 return false;
 
             unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
-            var stripped_time = new DateTime.utc (selected_date.get_year (), selected_date.get_month (), selected_date.get_day_of_month (), 0, 0, 0);
-            var range = new Util.DateRange (stripped_time, stripped_time.add_days (1));
-            foreach (var dt_range in Util.event_date_ranges (comp, range)) {
-                if (dt_range.contains (stripped_time))
-                    return true;
-            }
-
-            return false;
+            var startDay = new DateTime.local (selected_date.get_year (), selected_date.get_month (), selected_date.get_day_of_month (), 0, 0, 0);
+            var endDay = new DateTime.local (selected_date.get_year (), selected_date.get_month (), selected_date.get_day_of_month (), 23, 59, 59);
+            var range = new Util.DateRange (startDay, endDay);
+            return Util.is_event_in_range (comp, range);
         });
 
-        var scrolled = new Gtk.ScrolledWindow (null, null);
-        scrolled.expand = true;
-        scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        scrolled.add (events_list);
+        var selected_scrolled = new Gtk.ScrolledWindow (null, null);
+        selected_scrolled.expand = true;
+        selected_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        selected_scrolled.add (selected_date_events_list);
 
-        add (day_grid);
-        add (scrolled);
+        var upcoming_events_label = new Gtk.Label ("Upcomings Events");
+        upcoming_events_label.margin_left = 12;
+
+        upcoming_events_comboBox = new Gtk.ComboBoxText ();
+        upcoming_events_comboBox.margin_left = 12;
+        upcoming_events_comboBox.margin_right = 12;
+        upcoming_events_comboBox.append_text ("Today");
+		upcoming_events_comboBox.append_text ("Tomorrow");
+		upcoming_events_comboBox.append_text ("This week");
+		upcoming_events_comboBox.append_text ("Next week");
+		upcoming_events_comboBox.append_text ("This month");
+		upcoming_events_comboBox.append_text ("Next month");
+        upcoming_events_comboBox.append_text ("This year");
+		upcoming_events_comboBox.active = 0;
+
+        var upcoming_events_separatorTop = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+        upcoming_events_separatorTop.hexpand = true;
+
+        var upcoming_events_separatorBottom = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+        upcoming_events_separatorBottom.hexpand = true;
+
+        var upcoming_events_grid = new Gtk.Grid ();
+        upcoming_events_grid.row_spacing = 6;
+        upcoming_events_grid.orientation = Gtk.Orientation.VERTICAL;
+        upcoming_events_grid.attach (upcoming_events_separatorTop, 0, 0, 4, 1);
+        upcoming_events_grid.attach (upcoming_events_label, 0, 1, 1, 1);
+        upcoming_events_grid.attach (upcoming_events_comboBox, 1, 1, 3, 1);
+        upcoming_events_grid.attach (upcoming_events_separatorBottom, 0, 2, 4, 1);
+
+        var upcoming_events_style_provider = Util.Css.get_css_provider ();
+        upcoming_events_grid.get_style_context ().add_provider (upcoming_events_style_provider, 600);
+        upcoming_events_grid.get_style_context ().add_class ("cell");
+
+        var upcoming_placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
+        upcoming_placeholder_label.sensitive = false;
+        upcoming_placeholder_label.wrap = true;
+        upcoming_placeholder_label.wrap_mode = Pango.WrapMode.WORD;
+        upcoming_placeholder_label.margin_start = 12;
+        upcoming_placeholder_label.margin_end = 12;
+        upcoming_placeholder_label.justify = Gtk.Justification.CENTER;
+        upcoming_placeholder_label.show_all ();
+
+        upcoming_events_comboBox.changed.connect (() => {
+            upcoming_events_list.invalidate_filter ();
+        });
+
+        upcoming_events_list = new Gtk.ListBox ();
+        upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
+        upcoming_events_list.set_placeholder (upcoming_placeholder_label);
+        upcoming_events_list.set_sort_func ((child1, child2) => {
+            var row1 = (AgendaEventRow)child1;
+            var row2 = (AgendaEventRow)child2;
+            if (row1.is_allday) {
+                if (row2.is_allday) {
+                    return row1.summary.collate (row2.summary);
+                } else {
+                    return -1;
+                }
+            } else {
+                if (row2.is_allday) {
+                    return 1;
+                } else {
+                    unowned iCal.Component ical_event1 = row1.calevent.get_icalcomponent ();
+                    DateTime start_date1, end_date1;
+                    Util.get_local_datetimes_from_icalcomponent (ical_event1, out start_date1, out end_date1);
+                    unowned iCal.Component ical_event2 = row2.calevent.get_icalcomponent ();
+                    DateTime start_date2, end_date2;
+                    Util.get_local_datetimes_from_icalcomponent (ical_event2, out start_date2, out end_date2);
+                    var comp = start_date1.compare (start_date2);
+                    if (comp != 0) {
+                        return comp;
+                    } else {
+                        comp = end_date1.compare (end_date2);
+                        if (comp != 0) {
+                            return comp;
+                        }
+                    }
+
+                    return row1.summary.collate (row2.summary);
+                }
+            }
+        });
+
+        upcoming_events_list.set_filter_func ((row) => {
+            var event_row = (AgendaEventRow) row;
+            
+            DateTime now = new DateTime.now_utc ();
+            unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
+            var startDay = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
+            var endDay = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 23, 59, 59);
+            
+            int activeId = upcoming_events_comboBox.get_active ();
+            switch (activeId) {
+                case 0: break;
+                case 1: startDay = startDay.add_days (1);
+                        endDay = endDay.add_days (1);
+                        break;
+                case 2: endDay = endDay.add_days (7 - startDay.get_day_of_week ());
+                        break;
+                case 3: startDay = startDay.add_days (8 - startDay.get_day_of_week ());
+                        endDay = endDay.add_days (14 - endDay.get_day_of_week ());
+                        break;
+                case 4: endDay = Util.get_end_of_month();
+                        break;
+                case 5: startDay = Util.get_start_of_month (startDay.add_months (1));
+                        endDay = Util.get_end_of_month (startDay.add_months (1));
+                        break;
+                case 6: endDay = new DateTime.utc (now.get_year (), 12, 31, 23, 59, 59);
+                        break;
+                default: return false;
+            }
+            var range = new Util.DateRange (startDay, endDay);
+            return Util.is_event_in_range (comp, range);
+        });
+
+        var upcoming_scrolled = new Gtk.ScrolledWindow (null, null);
+        upcoming_scrolled.expand = true;
+        upcoming_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        upcoming_scrolled.add (upcoming_events_list);
+
+        attach (selected_data_grid, 0, 0, 1, 1);
+        attach (selected_scrolled, 0, 1, 1, 1);
+        attach (upcoming_events_grid, 0, 2, 1, 1);
+        attach (upcoming_scrolled, 0, 3, 1, 2);
 
         row_table = new HashTable<string, AgendaEventRow> (str_hash, str_equal);
+        row_table2 = new HashTable<string, AgendaEventRow> (str_hash, str_equal);
 
         // Listen to changes for events
         var calmodel = Model.CalendarModel.get_default ();
@@ -182,14 +308,24 @@ public class Maya.View.AgendaView : Gtk.Grid {
     void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
         foreach (var event in events) {
             unowned iCal.Component comp = event.get_icalcomponent ();
-            if (row_table.contains (comp.get_uid ()))
-                return;
-            var row = new AgendaEventRow (source, event);
-            row.modified.connect ((event) => (event_modified (event)));
-            row.removed.connect ((event) => (event_removed (event)));
-            row.show_all ();
-            row_table.set (comp.get_uid (), row);
-            events_list.add (row);
+
+            if (!row_table.contains (comp.get_uid ())) {
+                var row = new AgendaEventRow (source, event, false);
+                row.modified.connect ((event) => (event_modified (event)));
+                row.removed.connect ((event) => (event_removed (event)));
+                row.show_all ();
+                row_table.set (comp.get_uid (), row);
+                selected_date_events_list.add (row);
+            }
+
+            if (!row_table2.contains (comp.get_uid ())) {
+                var row2 = new AgendaEventRow (source, event, true);
+                row2.modified.connect ((event) => (event_modified (event)));
+                row2.removed.connect ((event) => (event_removed (event)));
+                row2.show_all ();
+                row_table2.set (comp.get_uid (), row2);
+                upcoming_events_list.add (row2);
+            }
         }
     }
 
@@ -199,8 +335,12 @@ public class Maya.View.AgendaView : Gtk.Grid {
     void on_events_updated (E.Source source, Gee.Collection<E.CalComponent> events) {
         foreach (var event in events) {
             unowned iCal.Component comp = event.get_icalcomponent ();
+
             var row = (AgendaEventRow)row_table.get (comp.get_uid ());
             row.update (event);
+
+            var row2 = (AgendaEventRow)row_table2.get (comp.get_uid ());
+            row2.update (event);
         }
     }
 
@@ -210,12 +350,23 @@ public class Maya.View.AgendaView : Gtk.Grid {
     void on_events_removed (E.Source source, Gee.Collection<E.CalComponent> events) {
         foreach (var event in events) {
             unowned iCal.Component comp = event.get_icalcomponent ();
+
             var row = (AgendaEventRow)row_table.get (comp.get_uid ());
             row_table.remove (comp.get_uid ());
             if (row is Gtk.Widget) {
                 row.revealer.set_reveal_child (false);
                 GLib.Timeout.add (row.revealer.transition_duration, () => {
                     row.destroy ();
+                    return GLib.Source.REMOVE;
+                });
+            }
+
+            var row2 = (AgendaEventRow)row_table2.get (comp.get_uid ());
+            row_table2.remove (comp.get_uid ());
+            if (row2 is Gtk.Widget) {
+                row2.revealer.set_reveal_child (false);
+                GLib.Timeout.add (row2.revealer.transition_duration, () => {
+                    row2.destroy ();
                     return GLib.Source.REMOVE;
                 });
             }
@@ -242,7 +393,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
         new_value = formated_weekday.get_char (0).totitle ().to_string () + new_value;
         weekday_label.label = new_value;
         day_label.label = date.format (Settings.DateFormat ());
-        events_list.invalidate_filter ();
+        selected_date_events_list.invalidate_filter ();
     }
 
     public class AgendaEventRow : Gtk.ListBoxRow {
@@ -253,19 +404,24 @@ public class Maya.View.AgendaView : Gtk.Grid {
         public string summary { public get; private set; }
         public E.CalComponent calevent { public get; private set; }
         public bool is_allday { public get; private set; default=false; }
+        public bool is_multiday { public get; private set; default=false; }
         public Gtk.Revealer revealer { public get; private set; }
 
         private Gtk.Image event_image;
         private Gtk.Label name_label;
-        private Gtk.Label hour_label;
+        private Gtk.Label datatime_label;
         private Gtk.Label location_label;
 
         private Gtk.Menu menu;
 
-        public AgendaEventRow (E.Source source, E.CalComponent calevent) {
+        private bool isUpcoming;
+
+        public AgendaEventRow (E.Source source, E.CalComponent calevent, bool isUpcoming) {
             this.calevent = calevent;
+            this.isUpcoming = isUpcoming;
             unowned iCal.Component ical_event = calevent.get_icalcomponent ();
             uid = ical_event.get_uid ();
+
             var main_grid = new Gtk.Grid ();
             main_grid.column_spacing = 6;
             main_grid.row_spacing = 6;
@@ -289,11 +445,11 @@ public class Maya.View.AgendaView : Gtk.Grid {
             name_label.set_alignment (0, 0.5f);
             name_label.hexpand = true;
 
-            hour_label = new Gtk.Label ("");
-            hour_label.set_alignment (0, 0.5f);
-            hour_label.sensitive = false;
-            hour_label.opacity = 0.8;
-            hour_label.ellipsize = Pango.EllipsizeMode.END;
+            datatime_label = new Gtk.Label ("");
+            datatime_label.set_alignment (0, 0.5f);
+            datatime_label.sensitive = false;
+            datatime_label.opacity = 0.8;
+            datatime_label.ellipsize = Pango.EllipsizeMode.END;
 
             location_label = new Gtk.Label ("");
             location_label.sensitive = false;
@@ -304,8 +460,9 @@ public class Maya.View.AgendaView : Gtk.Grid {
 
             main_grid.attach (event_image, 0, 0, 1, 1);
             main_grid.attach (name_label, 1, 0, 1, 1);
-            main_grid.attach (hour_label, 1, 1, 1, 1);
+            main_grid.attach (datatime_label, 1, 1, 1, 1);
             main_grid.attach (location_label, 1, 2, 1, 1);
+
             var event_box = new Gtk.EventBox ();
             event_box.add (main_grid);
             revealer = new Gtk.Revealer ();
@@ -360,25 +517,59 @@ public class Maya.View.AgendaView : Gtk.Grid {
 
             DateTime start_date, end_date;
             Util.get_local_datetimes_from_icalcomponent (ical_event, out start_date, out end_date);
-            if (Util.is_all_day (start_date, end_date) == true) {
+            
+            is_allday = Util.is_all_day (start_date, end_date);
+            is_multiday = Util.is_multiday_event (ical_event);
+
+            string start_date_string = start_date.format (Settings.DateFormat_Complete ());
+            string end_date_string = end_date.format (Settings.DateFormat_Complete ());
+            string start_time_string = start_date.format (Settings.TimeFormat ());
+            string end_time_string = end_date.format (Settings.TimeFormat ());
+
+            datatime_label.show ();
+            datatime_label.no_show_all = false;
+            if (is_multiday) {
+                if (is_allday) {
+                    datatime_label.label = _("%s - %s").printf (start_date_string, end_date_string);
+                } else {
+                    datatime_label.label = _("%s, %s - %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
+                }
+            } else {
+                if (!isUpcoming) {
+                    if (is_allday) {
+                        datatime_label.hide ();
+                        datatime_label.no_show_all = true;
+                    } else {
+                        datatime_label.label = _("%s - %s").printf (start_time_string, end_time_string);
+                    }
+                } else {
+                    if (is_allday) {
+                        datatime_label.label = _("%s").printf (start_date_string);
+                    } else {
+                        datatime_label.label = _("%s, %s - %s").printf (start_date_string, start_time_string, end_time_string);
+                    }
+                }
+            }
+
+            /*if (Util.is_all_day (start_date, end_date) == true) {
                 is_allday = true;
-                hour_label.hide ();
-                hour_label.no_show_all = true;
+                datatime_label.hide ();
+                datatime_label.no_show_all = true;
             } else {
                 is_allday = false;
-                hour_label.show ();
-                hour_label.no_show_all = false;
+                datatime_label.show ();
+                datatime_label.no_show_all = false;
                 string start_time_string = start_date.format (Settings.TimeFormat ());
                 string end_time_string = end_date.format (Settings.TimeFormat ());
                 if (Util.is_multiday_event (ical_event) == true) {
                     string start_date_string = start_date.format (Settings.DateFormat_Complete ());
                     string end_date_string = end_date.format (Settings.DateFormat_Complete ());
                     /// TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-                    hour_label.label = _("%s, %s - %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
+                    datatime_label.label = _("%s, %s - %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
                 } else {
-                    hour_label.label = "%s - %s".printf (start_time_string, end_time_string);
+                    datatime_label.label = "%s - %s".printf (start_time_string, end_time_string);
                 }
-            }
+            }*/
 
             string location = ical_event.get_location ();
             if (location != null && location != "") {
