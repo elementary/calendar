@@ -120,9 +120,17 @@ public class Maya.View.AgendaView : Gtk.Grid {
                 return false;
 
             unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
-            var startDay = new DateTime.local (selected_date.get_year (), selected_date.get_month (), selected_date.get_day_of_month (), 0, 0, 0);
-            var endDay = new DateTime.local (selected_date.get_year (), selected_date.get_month (), selected_date.get_day_of_month (), 23, 59, 59);
-            var range = new Util.DateRange (startDay, endDay);
+            DateTime start_date, end_date;
+            Util.get_local_datetimes_from_icalcomponent (comp, out start_date, out end_date);
+
+            var stripped_time = new DateTime.local (selected_date.get_year (), selected_date.get_month (), selected_date.get_day_of_month (), 0, 0, 0);
+            var range = new Util.DateRange (stripped_time, stripped_time.add_days (1));
+            /*foreach (var dt_range in Util.event_date_ranges (comp, range)) {
+                if (dt_range.contains (stripped_time))
+                    return true;
+            }
+
+            return false;*/
             return Util.is_event_in_range (comp, range);
         });
 
@@ -164,85 +172,73 @@ public class Maya.View.AgendaView : Gtk.Grid {
         upcoming_events_grid.get_style_context ().add_provider (upcoming_events_style_provider, 600);
         upcoming_events_grid.get_style_context ().add_class ("cell");
 
-        var upcoming_placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
-        upcoming_placeholder_label.sensitive = false;
-        upcoming_placeholder_label.wrap = true;
-        upcoming_placeholder_label.wrap_mode = Pango.WrapMode.WORD;
-        upcoming_placeholder_label.margin_start = 12;
-        upcoming_placeholder_label.margin_end = 12;
-        upcoming_placeholder_label.justify = Gtk.Justification.CENTER;
-        upcoming_placeholder_label.show_all ();
-
         upcoming_events_comboBox.changed.connect (() => {
             upcoming_events_list.invalidate_filter ();
         });
 
         upcoming_events_list = new Gtk.ListBox ();
         upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
-        upcoming_events_list.set_placeholder (upcoming_placeholder_label);
         upcoming_events_list.set_sort_func ((child1, child2) => {
             var row1 = (AgendaEventRow)child1;
             var row2 = (AgendaEventRow)child2;
-            if (row1.is_allday) {
-                if (row2.is_allday) {
-                    return row1.summary.collate (row2.summary);
-                } else {
-                    return -1;
-                }
-            } else {
-                if (row2.is_allday) {
-                    return 1;
-                } else {
-                    unowned iCal.Component ical_event1 = row1.calevent.get_icalcomponent ();
-                    DateTime start_date1, end_date1;
-                    Util.get_local_datetimes_from_icalcomponent (ical_event1, out start_date1, out end_date1);
-                    unowned iCal.Component ical_event2 = row2.calevent.get_icalcomponent ();
-                    DateTime start_date2, end_date2;
-                    Util.get_local_datetimes_from_icalcomponent (ical_event2, out start_date2, out end_date2);
-                    var comp = start_date1.compare (start_date2);
-                    if (comp != 0) {
-                        return comp;
-                    } else {
-                        comp = end_date1.compare (end_date2);
-                        if (comp != 0) {
-                            return comp;
-                        }
-                    }
 
-                    return row1.summary.collate (row2.summary);
+            unowned iCal.Component ical_event1 = row1.calevent.get_icalcomponent ();
+            DateTime start_date1, end_date1;
+            Util.get_local_datetimes_from_icalcomponent (ical_event1, out start_date1, out end_date1);
+            unowned iCal.Component ical_event2 = row2.calevent.get_icalcomponent ();
+            DateTime start_date2, end_date2;
+            Util.get_local_datetimes_from_icalcomponent (ical_event2, out start_date2, out end_date2);
+            var comp = start_date1.compare (start_date2);
+            if (comp != 0) {
+                return comp;
+            } else {
+                comp = end_date1.compare (end_date2);
+                if (comp != 0) {
+                    return comp;
                 }
             }
+
+            return row1.summary.collate (row2.summary);
         });
 
         upcoming_events_list.set_filter_func ((row) => {
             var event_row = (AgendaEventRow) row;
             
-            DateTime now = new DateTime.now_utc ();
+            DateTime now = new DateTime.now_local ();
             unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
-            var startDay = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
-            var endDay = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 23, 59, 59);
+            var stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
+            var stripped_time_end = stripped_time.add_days (1);
             
             int activeId = upcoming_events_comboBox.get_active ();
             switch (activeId) {
                 case 0: break;
-                case 1: startDay = startDay.add_days (1);
-                        endDay = endDay.add_days (1);
+                case 1: stripped_time = stripped_time.add_days (1);
+                        stripped_time_end = stripped_time_end.add_days (1);
                         break;
-                case 2: endDay = endDay.add_days (7 - startDay.get_day_of_week ());
+                case 2: stripped_time_end = stripped_time_end.add_days (7 - stripped_time.get_day_of_week ());
                         break;
-                case 3: startDay = startDay.add_days (8 - startDay.get_day_of_week ());
-                        endDay = endDay.add_days (14 - endDay.get_day_of_week ());
+                case 3: stripped_time = stripped_time.add_days (8 - stripped_time.get_day_of_week ());
+                        stripped_time_end = stripped_time.add_days (7);
                         break;
-                case 4: endDay = Util.get_end_of_month();
+                case 4: stripped_time_end = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
+                        stripped_time_end = stripped_time_end.add_months (1);
                         break;
-                case 5: startDay = Util.get_start_of_month (startDay.add_months (1));
-                        endDay = Util.get_end_of_month (startDay.add_months (1));
+                case 5: stripped_time = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
+                        stripped_time = stripped_time.add_months (1);
+                        stripped_time_end = stripped_time.add_months (1);
                         break;
-                case 6: endDay = new DateTime.utc (now.get_year (), 12, 31, 23, 59, 59);
+                case 6: stripped_time_end = new DateTime.local (now.get_year (), 1, 1, 0, 0, 0);
+                        stripped_time_end = stripped_time_end.add_years (1);
                         break;
                 default: return false;
             }
-            var range = new Util.DateRange (startDay, endDay);
+            var range = new Util.DateRange (stripped_time, stripped_time_end);
+            /*foreach (var dt_range in Util.event_date_ranges (comp, range)) {
+                if (dt_range.contains (stripped_time))
+                    return true;
+            }
+
+            return false;*/
             return Util.is_event_in_range (comp, range);
         });
 

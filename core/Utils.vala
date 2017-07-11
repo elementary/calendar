@@ -37,7 +37,7 @@ namespace Maya.Util {
 
 
     /**
-     * Converts two datetimes to one    . The first contains the date,
+     * Converts two datetimes to one TimeType. The first contains the date,
      * its time settings are ignored. The second one contains the time itself.
      * XXX: We need to convert to UTC because of some bugs with the Google backend…
      */
@@ -116,21 +116,29 @@ namespace Maya.Util {
         var start = ical_to_date_time (comp.get_dtstart ());
         var end = ical_to_date_time (comp.get_dtend ());
 
+        bool allday = is_all_day (start, end);
+        if (allday) {
+            end = end.add_days (-1);
+            var interval = (new DateTime.now_local ()).get_utc_offset ();
+            start = start.add (-interval);
+            end = end.add (-interval);  
+        }
+
         int c1 = start.compare (view_range.first);
         int c2 = start.compare (view_range.last);
         int c3 = end.compare (view_range.first);
         int c4 = end.compare (view_range.last);
 
-        if (c1 <= 0 && c3 >= 0) {
+        if (c1 <= 0 && c3 > 0) {
             return true;
         }
-        if (c2 <= 0 && c4 >= 0) {
+        if (c2 < 0 && c4 > 0) {
             return true;
         }
-        if (c1 >= 0 && c2 <= 0) {
+        if (c1 >= 0 && c2 < 0) {
             return true;
         }
-        if (c3 >= 0 && c4 <= 0) {
+        if (c3 > 0 && c4 < 0) {
             return true;
         }
 
@@ -437,8 +445,12 @@ namespace Maya.Util {
     public bool is_multiday_event (iCal.Component comp) {
         var start = ical_to_date_time (comp.get_dtstart ());
         var end = ical_to_date_time (comp.get_dtend ());
-        start= start.to_timezone (new TimeZone.local ());
-        end = end.to_timezone (new TimeZone.local ());
+//        start= start.to_timezone (new TimeZone.utc ());
+//        end = end.to_timezone (new TimeZone.utc ());
+
+        bool allday = is_all_day (start, end);
+        if (allday)
+            end = end.add_days (-1);
 
         if (start.get_year () != end.get_year () || start.get_day_of_year () != end.get_day_of_year ())
             return true;
@@ -450,8 +462,13 @@ namespace Maya.Util {
      * Say if an event lasts all day.
      */
     public bool is_all_day (DateTime dtstart, DateTime dtend) {
-        return ((dtstart.get_hour () == 0 && dtstart.get_minute () == 0 && dtstart.get_second () == 0) && 
-                (dtend.get_hour () == 23 && dtend.get_minute () == 59 && dtend.get_second () == 59));
+        var UTC_start = dtstart.to_timezone (new TimeZone.utc ());
+        var timespan = dtend.difference (dtstart);
+        if (timespan % GLib.TimeSpan.DAY == 0 && UTC_start.get_hour() == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public DateTime get_date_from_ical_day (DateTime date, short day) {
@@ -496,8 +513,7 @@ namespace Maya.Util {
         if (date == null)
             date = new DateTime.now_local ();
 
-        var date2 = ((new DateTime.local (date.get_year (), date.get_month (), 1, 23, 59, 59)).add_months (1)).add_days (-1);
-        return date2;
+        return (new DateTime.local (date.get_year (), date.get_month (), 1, 0, 0, 0)).add_months (1);
     }
 
     public DateTime strip_time (DateTime datetime) {

@@ -102,13 +102,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             on_date_modified (1);
             from_time_picker.sensitive = !allday_switch.get_active ();
             to_time_picker.sensitive = !allday_switch.get_active ();
-            if (!allday_switch.get_active ()) {
-                from_time = new DateTime.local (from_time.get_year (), from_time.get_month (), from_time.get_day_of_month (), 0, 0, 0);
-                to_time = new DateTime.local (to_time.get_year (), to_time.get_month (), to_time.get_day_of_month (), 23, 59, 0);
-            } else {
-                from_time = new DateTime.local (from_time.get_year (), from_time.get_month (), from_time.get_day_of_month (), 0, 0, 0);
-                to_time = new DateTime.local (to_time.get_year (), to_time.get_month (), to_time.get_day_of_month (), 23, 59, 59);
-            }
         });
 
         var title_label = Maya.View.EventDialog.make_label (_("Title:"));
@@ -186,19 +179,19 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         comp.set_summary (title_entry.text);
 
         // Save the time
-        /*if (allday_switch.get_active () == true) {
+        if (allday_switch.get_active () == true) {
             iCal.TimeType dt_start = Util.date_time_to_ical (from_date_picker.date, null);
             iCal.TimeType dt_end = Util.date_time_to_ical (to_date_picker.date.add_days (1), null);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
-        } else {*/
+        } else {
             iCal.TimeType dt_start = Util.date_time_to_ical (from_date_picker.date, from_time_picker.time);
             iCal.TimeType dt_end = Util.date_time_to_ical (to_date_picker.date, to_time_picker.time);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
-        //}
+        }
 
         // First, clear the comments
         int count = comp.count_properties (iCal.PropertyKind.DESCRIPTION);
@@ -248,8 +241,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
             if (dt_end.year != 0) {
                 // If it's an all day event, subtract 1 from the end date
-                //if (allday)
-                    //to_date = to_date.add_days (-1);
+                if (allday)
+                    to_date = to_date.add_days (-1);
                 to_date_picker.date = to_date;
                 to_time_picker.time = to_date;
             }
