@@ -68,12 +68,12 @@ public class Maya.View.AgendaView : Gtk.Grid {
         selected_data_grid.get_style_context ().add_class ("cell");
 
         var placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
-        placeholder_label.sensitive = false;
         placeholder_label.wrap = true;
         placeholder_label.wrap_mode = Pango.WrapMode.WORD;
         placeholder_label.margin_start = 12;
         placeholder_label.margin_end = 12;
         placeholder_label.justify = Gtk.Justification.CENTER;
+        placeholder_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         placeholder_label.show_all ();
 
         selected_date_events_list = new Gtk.ListBox ();
@@ -486,22 +486,20 @@ public class Maya.View.AgendaView : Gtk.Grid {
             event_image.margin_start = 6;
 
             name_label = new Gtk.Label ("");
-            name_label.set_line_wrap (true);
-            name_label.set_alignment (0, 0.5f);
             name_label.hexpand = true;
+            name_label.wrap = true;
+            name_label.xalign = 0;
 
             datatime_label = new Gtk.Label ("");
-            datatime_label.set_alignment (0, 0.5f);
-            datatime_label.sensitive = false;
-            datatime_label.opacity = 0.8;
             datatime_label.ellipsize = Pango.EllipsizeMode.END;
+            datatime_label.xalign = 0;
+            datatime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
             location_label = new Gtk.Label ("");
-            location_label.sensitive = false;
-            location_label.set_line_wrap (true);
-            location_label.set_alignment (0, 0.5f);
             location_label.no_show_all = true;
-            location_label.opacity = 0.8;
+            location_label.wrap = true;
+            location_label.xalign = 0;
+            location_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
             main_grid.attach (event_image, 0, 0, 1, 1);
             main_grid.attach (name_label, 1, 0, 1, 1);
@@ -510,6 +508,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
 
             var event_box = new Gtk.EventBox ();
             event_box.add (main_grid);
+
             revealer = new Gtk.Revealer ();
             revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN;
             revealer.add (event_box);
@@ -612,7 +611,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
                     /// TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
                     datatime_label.label = _("%s, %s - %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
                 } else {
-                    datatime_label.label = "%s - %s".printf (start_time_string, end_time_string);
+                    datatime_label.label = "%s – %s".printf (start_time_string, end_time_string);
                 }
             }*/
 
