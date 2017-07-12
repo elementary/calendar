@@ -445,8 +445,6 @@ namespace Maya.Util {
     public bool is_multiday_event (iCal.Component comp) {
         var start = ical_to_date_time (comp.get_dtstart ());
         var end = ical_to_date_time (comp.get_dtend ());
-//        start= start.to_timezone (new TimeZone.utc ());
-//        end = end.to_timezone (new TimeZone.utc ());
 
         bool allday = is_all_day (start, end);
         if (allday)
