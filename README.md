@@ -1,6 +1,8 @@
 # Calendar
 [![l10n](https://l10n.elementary.io/widgets/calendar/-/svg-badge.svg)](https://l10n.elementary.io/projects/calendar)
 
+![Screenshot](data/screenshot.png?raw=true)
+
 ## Building and Installation
 
 You'll need the following dependencies:
