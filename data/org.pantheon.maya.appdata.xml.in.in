@@ -32,4 +32,9 @@
   <url type="help">https://elementary.io/help/maya</url>
   <url type="translate">https://l10n.elementary.io/projects/calendar</url>
   <update_contact>contact_at_elementary.io</update_contact>
+  <screenshots>
+  <screenshot type="default">
+    <image>https://raw.githubusercontent.com/elementary/calendar/master/data/screenshot.png</image>
+  </screenshot>
+</screenshots>
 </component>
