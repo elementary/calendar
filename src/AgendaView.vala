@@ -27,7 +27,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
     private Gtk.Label day_label;
     private Gtk.Label weekday_label;
     private Gtk.ListBox selected_date_events_list;
-    private Gtk.ComboBoxText upcoming_events_comboBox;
     private Gtk.ListBox upcoming_events_list;
     private DateTime selected_date;
     private HashTable<string, AgendaEventRow> row_table;
@@ -81,8 +80,8 @@ public class Maya.View.AgendaView : Gtk.Grid {
         selected_date_events_list.set_header_func (header_update_func);
         selected_date_events_list.set_placeholder (placeholder_label);
         selected_date_events_list.set_sort_func ((child1, child2) => {
-            var row1 = (AgendaEventRow)child1;
-            var row2 = (AgendaEventRow)child2;
+            var row1 = (AgendaEventRow) child1;
+            var row2 = (AgendaEventRow) child2;
             if (row1.is_allday) {
                 if (row2.is_allday) {
                     return row1.summary.collate (row2.summary);
@@ -125,12 +124,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
 
             var stripped_time = new DateTime.local (selected_date.get_year (), selected_date.get_month (), selected_date.get_day_of_month (), 0, 0, 0);
             var range = new Util.DateRange (stripped_time, stripped_time.add_days (1));
-            /*foreach (var dt_range in Util.event_date_ranges (comp, range)) {
-                if (dt_range.contains (stripped_time))
-                    return true;
-            }
 
-            return false;*/
             return Util.is_event_in_range (comp, range);
         });
 
@@ -139,7 +133,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
         selected_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         selected_scrolled.add (selected_date_events_list);
 
-        var upcoming_events_label = new Gtk.Label ("Upcomings Events");
+        var upcoming_events_label = new Gtk.Label (_("Upcoming Events"));
 
         var upcoming_events_separatorTop = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         upcoming_events_separatorTop.hexpand = true;
@@ -162,8 +156,8 @@ public class Maya.View.AgendaView : Gtk.Grid {
         upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         upcoming_events_list.set_header_func (upcoming_header_update_func);
         upcoming_events_list.set_sort_func ((child1, child2) => {
-            var row1 = (AgendaEventRow)child1;
-            var row2 = (AgendaEventRow)child2;
+            var row1 = (AgendaEventRow) child1;
+            var row2 = (AgendaEventRow) child2;
 
             unowned iCal.Component ical_event1 = row1.calevent.get_icalcomponent ();
             DateTime start_date1, end_date1;
@@ -195,12 +189,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
             stripped_time_end = stripped_time_end.add_months (2);
 
             var range = new Util.DateRange (stripped_time, stripped_time_end);
-            /*foreach (var dt_range in Util.event_date_ranges (comp, range)) {
-                if (dt_range.contains (stripped_time))
-                    return true;
-            }
 
-            return false;*/
             return Util.is_event_in_range (comp, range);
         });
 
@@ -251,6 +240,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
     private static int get_event_type (AgendaEventRow row) {
         unowned iCal.Component comp = row.calevent.get_icalcomponent ();
         DateTime now = new DateTime.now_local ();
+
         var stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
         stripped_time = stripped_time.add_days (1);
         var stripped_time_end = stripped_time.add_days (1);
@@ -294,8 +284,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
     private void upcoming_header_update_func (Gtk.ListBoxRow lbrow, Gtk.ListBoxRow? lbbefore) {
         var row = (AgendaEventRow) lbrow;
         int rowType = get_event_type (row);
-
-        DateTime now = new DateTime.now_local ();
 
         if (lbbefore != null) {
             var before = (AgendaEventRow) lbbefore;
@@ -594,26 +582,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
                     }
                 }
             }
-
-            /*if (Util.is_all_day (start_date, end_date) == true) {
-                is_allday = true;
-                datatime_label.hide ();
-                datatime_label.no_show_all = true;
-            } else {
-                is_allday = false;
-                datatime_label.show ();
-                datatime_label.no_show_all = false;
-                string start_time_string = start_date.format (Settings.TimeFormat ());
-                string end_time_string = end_date.format (Settings.TimeFormat ());
-                if (Util.is_multiday_event (ical_event) == true) {
-                    string start_date_string = start_date.format (Settings.DateFormat_Complete ());
-                    string end_date_string = end_date.format (Settings.DateFormat_Complete ());
-                    /// TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-                    datatime_label.label = _("%s, %s - %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
-                } else {
-                    datatime_label.label = "%s – %s".printf (start_time_string, end_time_string);
-                }
-            }*/
 
             string location = ical_event.get_location ();
             if (location != null && location != "") {
