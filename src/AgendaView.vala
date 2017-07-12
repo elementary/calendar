@@ -140,19 +140,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
         selected_scrolled.add (selected_date_events_list);
 
         var upcoming_events_label = new Gtk.Label ("Upcomings Events");
-        upcoming_events_label.margin_left = 12;
-
-        upcoming_events_comboBox = new Gtk.ComboBoxText ();
-        upcoming_events_comboBox.margin_left = 12;
-        upcoming_events_comboBox.margin_right = 12;
-        upcoming_events_comboBox.append_text ("Today");
-		upcoming_events_comboBox.append_text ("Tomorrow");
-		upcoming_events_comboBox.append_text ("This week");
-		upcoming_events_comboBox.append_text ("Next week");
-		upcoming_events_comboBox.append_text ("This month");
-		upcoming_events_comboBox.append_text ("Next month");
-        upcoming_events_comboBox.append_text ("This year");
-		upcoming_events_comboBox.active = 0;
 
         var upcoming_events_separatorTop = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         upcoming_events_separatorTop.hexpand = true;
@@ -163,21 +150,17 @@ public class Maya.View.AgendaView : Gtk.Grid {
         var upcoming_events_grid = new Gtk.Grid ();
         upcoming_events_grid.row_spacing = 6;
         upcoming_events_grid.orientation = Gtk.Orientation.VERTICAL;
-        upcoming_events_grid.attach (upcoming_events_separatorTop, 0, 0, 4, 1);
+        upcoming_events_grid.attach (upcoming_events_separatorTop, 0, 0, 1, 1);
         upcoming_events_grid.attach (upcoming_events_label, 0, 1, 1, 1);
-        upcoming_events_grid.attach (upcoming_events_comboBox, 1, 1, 3, 1);
-        upcoming_events_grid.attach (upcoming_events_separatorBottom, 0, 2, 4, 1);
+        upcoming_events_grid.attach (upcoming_events_separatorBottom, 0, 2, 1, 1);
 
         var upcoming_events_style_provider = Util.Css.get_css_provider ();
         upcoming_events_grid.get_style_context ().add_provider (upcoming_events_style_provider, 600);
         upcoming_events_grid.get_style_context ().add_class ("cell");
 
-        upcoming_events_comboBox.changed.connect (() => {
-            upcoming_events_list.invalidate_filter ();
-        });
-
         upcoming_events_list = new Gtk.ListBox ();
         upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
+        upcoming_events_list.set_header_func (upcoming_header_update_func);
         upcoming_events_list.set_sort_func ((child1, child2) => {
             var row1 = (AgendaEventRow)child1;
             var row2 = (AgendaEventRow)child2;
@@ -207,31 +190,10 @@ public class Maya.View.AgendaView : Gtk.Grid {
             DateTime now = new DateTime.now_local ();
             unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
             var stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
-            var stripped_time_end = stripped_time.add_days (1);
-            
-            int activeId = upcoming_events_comboBox.get_active ();
-            switch (activeId) {
-                case 0: break;
-                case 1: stripped_time = stripped_time.add_days (1);
-                        stripped_time_end = stripped_time_end.add_days (1);
-                        break;
-                case 2: stripped_time_end = stripped_time_end.add_days (7 - stripped_time.get_day_of_week ());
-                        break;
-                case 3: stripped_time = stripped_time.add_days (8 - stripped_time.get_day_of_week ());
-                        stripped_time_end = stripped_time.add_days (7);
-                        break;
-                case 4: stripped_time_end = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
-                        stripped_time_end = stripped_time_end.add_months (1);
-                        break;
-                case 5: stripped_time = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
-                        stripped_time = stripped_time.add_months (1);
-                        stripped_time_end = stripped_time.add_months (1);
-                        break;
-                case 6: stripped_time_end = new DateTime.local (now.get_year (), 1, 1, 0, 0, 0);
-                        stripped_time_end = stripped_time_end.add_years (1);
-                        break;
-                default: return false;
-            }
+            stripped_time = stripped_time.add_days (1);
+            var stripped_time_end = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
+            stripped_time_end = stripped_time_end.add_months (2);
+
             var range = new Util.DateRange (stripped_time, stripped_time_end);
             /*foreach (var dt_range in Util.event_date_ranges (comp, range)) {
                 if (dt_range.contains (stripped_time))
@@ -284,7 +246,94 @@ public class Maya.View.AgendaView : Gtk.Grid {
             }
             return;
         }
-        
+    }
+
+    private static int get_event_type (AgendaEventRow row) {
+        unowned iCal.Component comp = row.calevent.get_icalcomponent ();
+        DateTime now = new DateTime.now_local ();
+        var stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
+        stripped_time = stripped_time.add_days (1);
+        var stripped_time_end = stripped_time.add_days (1);
+        var range = new Util.DateRange (stripped_time, stripped_time_end);
+        if (Util.is_event_in_range (comp, range)) {
+            return 1; // Tomorrow
+        }
+
+        stripped_time_end = stripped_time_end.add_days (7 - stripped_time.get_day_of_week ());
+        range = new Util.DateRange (stripped_time, stripped_time_end);
+        if (Util.is_event_in_range (comp, range)) {
+            return 2; // This Week
+        }
+
+        stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
+        stripped_time = stripped_time.add_days (8 - stripped_time.get_day_of_week ());
+        stripped_time_end = stripped_time.add_days (7);
+        range = new Util.DateRange (stripped_time, stripped_time_end);
+        if (Util.is_event_in_range (comp, range)) {
+            return 3; // Next Week
+        }
+
+        stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
+        stripped_time_end = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
+        stripped_time_end = stripped_time_end.add_months (1);
+        range = new Util.DateRange (stripped_time, stripped_time_end);
+        if (Util.is_event_in_range (comp, range)) {
+            return 4; // This Month
+        }
+
+        stripped_time = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
+        stripped_time = stripped_time.add_months (1);
+        stripped_time_end = stripped_time.add_months (1);
+        range = new Util.DateRange (stripped_time, stripped_time_end);
+        if (Util.is_event_in_range (comp, range)) {
+            return 5; // Next Month
+        }
+        return -1;
+    }
+
+    private void upcoming_header_update_func (Gtk.ListBoxRow lbrow, Gtk.ListBoxRow? lbbefore) {
+        var row = (AgendaEventRow) lbrow;
+        int rowType = get_event_type (row);
+
+        DateTime now = new DateTime.now_local ();
+
+        if (lbbefore != null) {
+            var before = (AgendaEventRow) lbbefore;
+            int beforeType = get_event_type (before);
+            
+            if (rowType == beforeType) {
+                row.set_header (null);
+                return;
+            }
+
+            switch (rowType) {
+                case 1: row.set_header (header_with_label (_("Tomorrow")));
+                        break;
+                case 2: row.set_header (header_with_label (_("This Week")));
+                        break;
+                case 3: row.set_header (header_with_label (_("Next Week")));
+                        break;
+                case 4: row.set_header (header_with_label (_("This Month")));
+                        break;
+                case 5: row.set_header (header_with_label (_("Next Month")));
+                        break;
+                default: break;
+            }
+        } else {
+            switch (rowType) {
+                case 1: row.set_header (header_with_label (_("Tomorrow")));
+                        break;
+                case 2: row.set_header (header_with_label (_("This Week")));
+                        break;
+                case 3: row.set_header (header_with_label (_("Next Week")));
+                        break;
+                case 4: row.set_header (header_with_label (_("This Month")));
+                        break;
+                case 5: row.set_header (header_with_label (_("Next Month")));
+                        break;
+                default: break;
+            }
+        }
     }
 
     private Gtk.Widget header_with_label (string text) {
