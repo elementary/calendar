@@ -119,10 +119,12 @@ public class Maya.View.AgendaView : Gtk.Grid {
                 return false;
 
             unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
+
             DateTime start_date, end_date;
             Util.get_local_datetimes_from_icalcomponent (comp, out start_date, out end_date);
 
-            var stripped_time = new DateTime.local (selected_date.get_year (), selected_date.get_month (), selected_date.get_day_of_month (), 0, 0, 0);
+            var stripped_time = Util.strip_time (selected_date);
+
             var range = new Util.DateRange (stripped_time, stripped_time.add_days (1));
 
             return Util.is_event_in_range (comp, range);

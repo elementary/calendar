@@ -515,7 +515,7 @@ namespace Maya.Util {
     }
 
     public DateTime strip_time (DateTime datetime) {
-        return datetime.add_full (0, 0, 0, -datetime.get_hour (), -datetime.get_minute (), -datetime.get_second ());
+        return new DateTime.utc (datetime.get_year (), datetime.get_month (), datetime.get_day_of_month (), 0, 0, 0);
     }
 
     /* Create a map interleaving DateRanges dr1 and dr2 */
