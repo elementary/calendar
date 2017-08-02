@@ -56,6 +56,16 @@ public class Maya.View.CalendarView : Gtk.Grid {
         model.events_updated.connect (on_events_updated);
         model.events_removed.connect (on_events_removed);
 
+        stack.notify["transition-running"].connect (() => {
+            if (stack.transition_running == false) {
+                stack.get_children ().foreach ((child) => {
+                    if (child != stack.visible_child) {
+                        child.destroy ();
+                    }
+                });
+            }
+        });
+
         Settings.SavedState.get_default ().changed["show-weeks"].connect (on_show_weeks_changed);
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         events |= Gdk.EventMask.KEY_PRESS_MASK;
@@ -170,7 +180,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         DateTime previous_first = null;
         if (grid.grid_range != null)
             previous_first = grid.grid_range.first;
-        var previous_big_grid = big_grid;
+
         big_grid = create_big_grid ();
         stack.add (big_grid);
 
@@ -193,10 +203,6 @@ public class Maya.View.CalendarView : Gtk.Grid {
         }
 
         stack.set_visible_child (big_grid);
-        Timeout.add (stack.transition_duration, () => {
-            previous_big_grid.destroy ();
-            return false;
-        });
     }
 
     /* Render new event on the grid */
