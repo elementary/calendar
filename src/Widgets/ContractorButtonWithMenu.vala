@@ -44,13 +44,18 @@ namespace Maya.View.Widgets {
         }
     }
 
-    public class ContractorButtonWithMenu : Granite.Widgets.ToolButtonWithMenu {
+    public class ContractorButtonWithMenu : Gtk.MenuButton {
 
         private Gtk.FileChooserDialog filechooser;
 
         public ContractorButtonWithMenu (string tooltiptext) {
+            Object (
+                image: new Gtk.Image.from_icon_name ("document-export", Gtk.IconSize.LARGE_TOOLBAR),
+                tooltip_text: tooltiptext
+            );
 
-            base (new Gtk.Image.from_icon_name ("document-export", Gtk.IconSize.MENU), tooltiptext, new Gtk.Menu());
+            var menu = new Gtk.Menu ();
+
             try {
                 var contracts = Granite.Services.ContractorProxy.get_contracts_by_mime ("text/calender");
 
@@ -67,7 +72,8 @@ namespace Maya.View.Widgets {
             Gtk.MenuItem item = new Gtk.MenuItem.with_label(_("Export Calendar..."));
             item.activate.connect (savecal);
             menu.append (item);
-
+            menu.show_all ();
+            popup = menu;
         }
 
         private void savecal () {
