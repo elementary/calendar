@@ -119,9 +119,6 @@ namespace Maya.Util {
         bool allday = is_all_day (start, end);
         if (allday) {
             end = end.add_days (-1);
-            var interval = (new DateTime.now_local ()).get_utc_offset ();
-            start = start.add (-interval);
-            end = end.add (-interval);  
         }
 
         int c1 = start.compare (view_range.first);
