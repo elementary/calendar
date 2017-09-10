@@ -709,7 +709,6 @@ namespace Maya.Util {
             builder.append (event.get_as_string ());
         }
         builder.append ("END:VCALENDAR");
-        string output = builder.str;   
 
         string file_path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
         try {
@@ -718,7 +717,7 @@ namespace Maya.Util {
                 file.delete ();
             }
             var dos = new DataOutputStream (file.create (FileCreateFlags.REPLACE_DESTINATION));
-            uint8[] data = output.data;
+            uint8[] data = builder.data;
             long written = 0;
             while (written < data.length) {
                 written += dos.write (data[written:data.length]);
