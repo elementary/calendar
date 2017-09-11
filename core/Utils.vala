@@ -713,15 +713,7 @@ namespace Maya.Util {
         string file_path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
         try {
             var file = File.new_for_path (file_path);
-            if (file.query_exists ()) {
-                file.delete ();
-            }
-            var dos = new DataOutputStream (file.create (FileCreateFlags.REPLACE_DESTINATION));
-            uint8[] data = builder.data;
-            long written = 0;
-            while (written < data.length) {
-                written += dos.write (data[written:data.length]);
-            }
+            file.replace_contents (builder.data, null, false, FileCreateFlags.REPLACE_DESTINATION, null);
         } catch (Error e) {
             warning ("%s\n", e.message);
         }
