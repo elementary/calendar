@@ -699,8 +699,24 @@ namespace Maya.Util {
      * ical Exportation
      */
 
-    public void save_temp_selected_calendars (){
-        //TODO:Create the code !
+    public void save_temp_selected_calendars () {
+        var calmodel = Model.CalendarModel.get_default ();
+        var events = calmodel.get_events ();
+        var builder = new StringBuilder ();
+        builder.append ("BEGIN:VCALENDAR\n");
+        builder.append ("VERSION:2.0\n");
+        foreach (E.CalComponent event in events) {
+            builder.append (event.get_as_string ());
+        }
+        builder.append ("END:VCALENDAR");
+
+        string file_path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
+        try {
+            var file = File.new_for_path (file_path);
+            file.replace_contents (builder.data, null, false, FileCreateFlags.REPLACE_DESTINATION, null);
+        } catch (Error e) {
+            warning ("%s\n", e.message);
+        }
     }
 
     public string get_hexa_color (Gdk.RGBA color) {
