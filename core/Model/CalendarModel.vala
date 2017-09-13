@@ -253,6 +253,17 @@ public class Maya.Model.CalendarModel : Object {
         events_removed (source, events);
         source_events.remove (source);
     }
+    
+    public Gee.Collection<E.CalComponent> get_events () {
+        Gee.ArrayList<E.CalComponent> events = new Gee.ArrayList<E.CalComponent> ();
+        registry.list_sources (E.SOURCE_EXTENSION_CALENDAR).foreach ((source) => {
+            E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+            if (cal.selected == true && source.enabled == true) {
+                events.add_all (source_events.get (source).values.read_only_view);
+            }
+        });
+        return events;
+    }
 
     //--- Helper Methods ---//
 
