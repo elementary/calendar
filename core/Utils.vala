@@ -155,8 +155,7 @@ namespace Maya.Util {
         if (end == null) end = start;
 
         // All days events are stored in UTC time and should only being shown at one day.
-        bool allday = is_all_day (start, end);
-        if (allday) {
+        if (is_all_day (start, end)) {
             end = end.add_days (-1);
         }
 
