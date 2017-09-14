@@ -18,7 +18,7 @@ public class Maya.Model.CalendarModel : Object {
      * data. The month_range is a subset of this range corresponding to the
      * calendar month that is being focused on. In summary:
      *
-     * data_range.first <= month_range.first < month_range.last <= data_range.last
+     * data_range.first_dt <= month_range.first_dt < month_range.last_dt <= data_range.last_dt
      *
      * There is no way to set the ranges publicly. They can only be modified by
      * changing one of the following properties: month_start, num_weeks, and
@@ -253,7 +253,7 @@ public class Maya.Model.CalendarModel : Object {
         events_removed (source, events);
         source_events.remove (source);
     }
-    
+
     public Gee.Collection<E.CalComponent> get_events () {
         Gee.ArrayList<E.CalComponent> events = new Gee.ArrayList<E.CalComponent> ();
         registry.list_sources (E.SOURCE_EXTENSION_CALENDAR).foreach ((source) => {
@@ -312,8 +312,8 @@ public class Maya.Model.CalendarModel : Object {
             (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
         source_events.set (source, events);
         // query client view
-        var iso_first = E.Util.isodate_from_time_t ((time_t) data_range.first.to_unix ());
-        var iso_last = E.Util.isodate_from_time_t ((time_t) data_range.last.add_days (1).to_unix ());
+        var iso_first = E.Util.isodate_from_time_t ((time_t) data_range.first_dt.to_unix ());
+        var iso_last = E.Util.isodate_from_time_t ((time_t) data_range.last_dt.add_days (1).to_unix ());
         var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
 
         E.CalClient client;
@@ -374,7 +374,7 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     private void on_source_changed (E.Source source) {
-        
+
     }
 
     private void on_objects_added (E.Source source, E.CalClient client, SList<unowned iCal.Component> objects) {
