@@ -121,8 +121,7 @@ namespace Maya.Util {
         var start = ical_to_date_time (comp.get_dtstart ());
         var end = ical_to_date_time (comp.get_dtend ());
 
-        bool allday = is_all_day (start, end);
-        if (allday) {
+        if (is_all_day (start, end)) {
             end = end.add_days (-1);
         }
 
