@@ -23,13 +23,13 @@ namespace Maya.Util {
 
         public DateIterator (DateRange range) {
             this.range = range;
-            this.current = range.first.add_days (-1);
+            this.current = range.first_dt.add_days (-1);
         }
 
         public bool @foreach (Gee.ForallFunc<DateTime> f) {
-            var element = range.first;
+            var element = range.first_dt;
 
-            while (element.compare (range.last) < 0) {
+            while (element.compare (range.last_dt) < 0) {
                 if (f (element) == false) {
                     return false;
                 }
@@ -48,11 +48,11 @@ namespace Maya.Util {
         }
 
         public bool has_next() {
-            return current.compare(range.last) < 0;
+            return current.compare(range.last_dt) < 0;
         }
 
         public bool first () {
-            current = range.first;
+            current = range.first_dt;
             return true;
         }
 
@@ -67,8 +67,8 @@ namespace Maya.Util {
 
     /* Represents date range from 'first' to 'last' inclusive */
     public class DateRange : Object, Gee.Traversable<DateTime>, Gee.Iterable<DateTime> {
-        public DateTime first { get; private set; }
-        public DateTime last { get; private set; }
+        public DateTime first_dt { get; private set; }
+        public DateTime last_dt { get; private set; }
         public bool @foreach (Gee.ForallFunc<DateTime> f) {
             foreach (var date in this) {
                 if (f (date) == false) {
@@ -80,20 +80,20 @@ namespace Maya.Util {
         }
 
         public int64 days {
-            get { return last.difference (first) / GLib.TimeSpan.DAY; }
+            get { return last_dt.difference (first_dt) / GLib.TimeSpan.DAY; }
         }
 
         public DateRange (DateTime first, DateTime last) {
-            this.first = first;
-            this.last = last;
+            this.first_dt = first;
+            this.last_dt = last;
         }
 
         public DateRange.copy (DateRange date_range) {
-            this (date_range.first, date_range.last);
+            this (date_range.first_dt, date_range.last_dt);
         }
 
         public bool equals (DateRange other) {
-            return (first==other.first && last==other.last);
+            return (this.first_dt==other.first_dt && this.last_dt==other.last_dt);
         }
 
         public Type element_type {
@@ -105,7 +105,7 @@ namespace Maya.Util {
         }
 
         public bool contains (DateTime time) {
-            return (first.compare (time) < 1) && (last.compare (time) > -1);
+            return (first_dt.compare (time) < 1) && (last_dt.compare (time) > -1);
         }
 
         public Gee.SortedSet<DateTime> to_set() {

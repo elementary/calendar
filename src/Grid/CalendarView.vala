@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -122,7 +122,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     void on_show_weeks_changed () {
         var model = Model.CalendarModel.get_default ();
-        weeks.update (model.data_range.first, model.num_weeks);
+        weeks.update (model.data_range.first_dt, model.num_weeks);
         if (Settings.SavedState.get_default ().show_weeks == true) {
             grid.draw_first_line_column (true);
             header.draw_left_border = true;
@@ -174,18 +174,18 @@ public class Maya.View.CalendarView : Gtk.Grid {
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_model () {
         var model = Model.CalendarModel.get_default ();
-        if (grid.grid_range != null && (model.data_range.equals (grid.grid_range) || grid.grid_range.first.compare (model.data_range.first) == 0))
+        if (grid.grid_range != null && (model.data_range.equals (grid.grid_range) || grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0))
             return; // nothing to do
 
         DateTime previous_first = null;
         if (grid.grid_range != null)
-            previous_first = grid.grid_range.first;
+            previous_first = grid.grid_range.first_dt;
 
         big_grid = create_big_grid ();
         stack.add (big_grid);
 
         header.update_columns (model.week_starts_on);
-        weeks.update (model.data_range.first, model.num_weeks);
+        weeks.update (model.data_range.first_dt, model.num_weeks);
         grid.set_range (model.data_range, model.month_start);
 
         // keep focus date on the same day of the month
@@ -195,7 +195,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         }
 
         if (previous_first != null) {
-            if (previous_first.compare (grid.grid_range.first) == -1) {
+            if (previous_first.compare (grid.grid_range.first_dt) == -1) {
                 stack.transition_type = Gtk.StackTransitionType.SLIDE_UP;
             } else {
                 stack.transition_type = Gtk.StackTransitionType.SLIDE_DOWN;

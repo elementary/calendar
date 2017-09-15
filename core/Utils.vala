@@ -124,10 +124,10 @@ namespace Maya.Util {
             end = end.add_days (-1);
         }
 
-        int c1 = start.compare (view_range.first);
-        int c2 = start.compare (view_range.last);
-        int c3 = end.compare (view_range.first);
-        int c4 = end.compare (view_range.last);
+        int c1 = start.compare (view_range.first_dt);
+        int c2 = start.compare (view_range.last_dt);
+        int c3 = end.compare (view_range.first_dt);
+        int c4 = end.compare (view_range.last_dt);
 
         if (c1 <= 0 && c3 > 0) {
             return true;
@@ -187,8 +187,8 @@ namespace Maya.Util {
             var exdate = property.get_exdate ();
             var date = ical_to_date_time (exdate);
             dateranges.@foreach ((daterange) => {
-                var first = daterange.first;
-                var last = daterange.last;
+                var first = daterange.first_dt;
+                var last = daterange.last_dt;
                 if (first.get_year () <= date.get_year () && last.get_year () >= date.get_year ()) {
                     if (first.get_day_of_year () <= date.get_day_of_year () && last.get_day_of_year () >= date.get_day_of_year ()) {
                         dateranges.remove (daterange);
@@ -222,7 +222,7 @@ namespace Maya.Util {
         } else {
             int i = 1;
             int n = i*rrule.interval;
-            while (view_range.last.compare (start.add_days (n)) > 0) {
+            while (view_range.last_dt.compare (start.add_days (n)) > 0) {
                 dateranges.add (new Util.DateRange (start.add_days (n), end.add_days (n)));
                 i++;
                 n = i*rrule.interval;
@@ -249,7 +249,7 @@ namespace Maya.Util {
             int n = i*rrule.interval;
             bool is_null_time = rrule.until.is_null_time () == 1;
             var temp_start = start.add_years (n);
-            while (view_range.last.compare (temp_start) > 0) {
+            while (view_range.last_dt.compare (temp_start) > 0) {
                 if (is_null_time == false) {
                     if (temp_start.get_year () > rrule.until.year)
                         break;
@@ -257,7 +257,7 @@ namespace Maya.Util {
                         break;
                     else if (temp_start.get_year () == rrule.until.year && temp_start.get_month () == rrule.until.month &&temp_start.get_day_of_month () > rrule.until.day)
                         break;
-                
+
                 }
                 dateranges.add (new Util.DateRange (temp_start, end.add_years (n)));
                 i++;
@@ -289,7 +289,7 @@ namespace Maya.Util {
                     int start_week = (int)GLib.Math.ceil ((double)start.get_day_of_month () / 7);
 
                     // Loop through each individual month from the start and test to see if our event is in the month or not
-                    while (view_range.last.compare (start_ical_day) > 0) {
+                    while (view_range.last_dt.compare (start_ical_day) > 0) {
                         if (is_null_time == false) {
                             if (start_ical_day.get_year () > rrule.until.year)
                                 break;
@@ -302,12 +302,12 @@ namespace Maya.Util {
                         var start_ical_day_new = get_date_from_ical_day (start.add_months (i), rrule.by_day[k]);
                         int month = start.add_months (i).get_month ();
                         int week = start_week;
-                    
+
                         // If event repeats on a last day of the month, take us back a week if we move into a new month
                         if (is_last && start_ical_day_new.get_month () != month) {
                             start_ical_day_new = start_ical_day_new.add_weeks (-1);
                         }
-                        
+
                         else if (!is_last) {
                             if (start_ical_day_new.get_day_of_month () <= 7 && start_ical_day_new.add_weeks (-1).get_month () == month) {
                                 week = 2;
@@ -316,7 +316,7 @@ namespace Maya.Util {
                                 week =  (int)GLib.Math.ceil ((double)start_ical_day_new.get_day_of_month () / 7);
                             }
                         }
-                       
+
                         start_ical_day_new = start_ical_day_new.add_weeks (start_week - week);
                         if (start_ical_day_new.get_month () != month) {
                             start_ical_day = start.add_months (i);
@@ -347,7 +347,7 @@ namespace Maya.Util {
                 int n = i*rrule.interval;
                 bool is_null_time = rrule.until.is_null_time () == 1;
                 var temp_start = start.add_months (n);
-                while (view_range.last.compare (temp_start) > 0) {
+                while (view_range.last_dt.compare (temp_start) > 0) {
                     if (is_null_time == false) {
                         if (temp_start.get_year () > rrule.until.year)
                             break;
@@ -355,7 +355,7 @@ namespace Maya.Util {
                             break;
                         else if (temp_start.get_year () == rrule.until.year && temp_start.get_month () == rrule.until.month && temp_start.get_day_of_month () > rrule.until.day)
                             break;
-                    
+
                     }
 
                     dateranges.add (new Util.DateRange (temp_start, end.add_months (n)));
@@ -417,7 +417,7 @@ namespace Maya.Util {
                 int n = i*rrule.interval*7;
                 bool is_null_time = rrule.until.is_null_time () == 1;
                 var temp_start = start.add_days (n);
-                while (view_range.last.compare (temp_start) > 0) {
+                while (view_range.last_dt.compare (temp_start) > 0) {
                     if (is_null_time == false) {
                         if (temp_start.get_year () > rrule.until.year)
                             break;
@@ -613,7 +613,7 @@ namespace Maya.Util {
 
             T ovalue = gvalue.get_object ();
 
-            if ((eqfunc == null && ovalue == object) 
+            if ((eqfunc == null && ovalue == object)
                     || (eqfunc != null && eqfunc (ovalue, object))) {
                 path = p;
                 return true;
