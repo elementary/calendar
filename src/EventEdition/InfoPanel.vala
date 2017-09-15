@@ -240,9 +240,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             bool allday = Util.is_all_day(from_date, to_date);
 
             if (dt_end.year != 0) {
-                // If it's an all day event, subtract 1 from the end date
-                if (allday)
-                    to_date = to_date.add_days (-1);
                 to_date_picker.date = to_date;
                 to_time_picker.time = to_date;
             }
