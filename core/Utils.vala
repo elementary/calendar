@@ -110,14 +110,17 @@ namespace Maya.Util {
 
         start_date = Util.ical_to_date_time (dt_start);
         end_date = Util.ical_to_date_time (dt_end);
+
+        if (is_all_day (start_date, end_date)) {
+            end_date = end_date.add_days (-1);
+        }
     }
 
     public bool is_event_in_range (iCal.Component comp, Util.DateRange view_range) {
         var start = ical_to_date_time (comp.get_dtstart ());
         var end = ical_to_date_time (comp.get_dtend ());
 
-        bool allday = is_all_day (start, end);
-        if (allday) {
+        if (is_all_day (start, end)) {
             end = end.add_days (-1);
         }
 
@@ -150,8 +153,7 @@ namespace Maya.Util {
         if (end == null) end = start;
 
         // All days events are stored in UTC time and should only being shown at one day.
-        bool allday = is_all_day (start, end);
-        if (allday) {
+        if (is_all_day (start, end)) {
             end = end.add_days (-1);
         }
 
@@ -440,8 +442,7 @@ namespace Maya.Util {
         var start = ical_to_date_time (comp.get_dtstart ());
         var end = ical_to_date_time (comp.get_dtend ());
 
-        bool allday = is_all_day (start, end);
-        if (allday)
+        if (is_all_day (start, end))
             end = end.add_days (-1);
 
         if (start.get_year () != end.get_year () || start.get_day_of_year () != end.get_day_of_year ())
