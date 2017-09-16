@@ -29,6 +29,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
      // Only set the geo property if map_selected is true, this is a smart behavior!
     private bool map_selected = false;
     private GLib.Cancellable search_cancellable;
+    private GLib.Cancellable find_cancellable;
 
     public string location {
         get { return location_entry.get_text (); }
@@ -91,6 +92,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         point.draggable = parent_dialog.can_edit;
         point.drag_finish.connect (() => {
             map_selected = true;
+            find_location (point.latitude, point.longitude);
         });
 
         if (parent_dialog.ecal != null) {
@@ -183,6 +185,46 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                 map_selected = true;
 
             location_entry.has_focus = true;
+        } catch (Error error) {
+            debug (error.message);
+        }
+    }
+
+    private async void find_location (double latitude, double longitude) {
+        if (find_cancellable != null)
+            find_cancellable.cancel ();
+        Geocode.Location location = new Geocode.Location (latitude, longitude);
+        var reverse = new Geocode.Reverse.for_location (location);
+        try {
+            var address = yield reverse.resolve_async (find_cancellable);
+            var builder = new StringBuilder ();
+            if (address.street != null) {
+                builder.append (address.street);
+                if (address.town != null) {
+                    builder.append (", ");
+                    builder.append (address.town);
+                }
+                if (address.county != null) {
+                    builder.append (", ");
+                    builder.append (address.county);
+                }
+                if (address.postal_code != null) {
+                    builder.append (", ");
+                    builder.append (address.postal_code);
+                }
+                if (address.country != null) {
+                    builder.append (", ");
+                    builder.append (address.country);
+                }
+            }
+            else {
+                builder.append (address.name);
+                if (address.country != null) {
+                    builder.append (", ");
+                    builder.append (address.country);
+                }
+            }
+            location_entry.text = builder.str;
         } catch (Error error) {
             debug (error.message);
         }
