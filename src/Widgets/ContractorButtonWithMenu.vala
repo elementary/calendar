@@ -18,7 +18,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
-namespace Maya.View.Widgets {
+namespace Calendar.View.Widgets {
 
     public class ContractorMenuItem : Gtk.MenuItem {
         private Granite.Services.Contract contract;

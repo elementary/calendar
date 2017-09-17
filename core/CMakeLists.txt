@@ -13,7 +13,7 @@ set (CORE_SOURCE
     Backends/LocalBackend.vala
     Backends/PlacementWidget.vala
     Model/CalendarModel.vala
-    Settings/MayaSettings.vala
+    Settings/CalendarSettings.vala
     Settings/SavedState.vala
     Settings/LanguagesFormat.vala
     DateRange.vala

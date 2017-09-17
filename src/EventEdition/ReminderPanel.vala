@@ -18,7 +18,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
+public class Calendar.View.EventEdition.ReminderPanel : Gtk.Grid {
     private EventDialog parent_dialog;
     private Gee.ArrayList<ReminderGrid> reminders;
     private Gee.ArrayList<string> reminders_to_remove;
@@ -30,7 +30,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         orientation = Gtk.Orientation.VERTICAL;
         sensitive = parent_dialog.can_edit;
 
-        var reminder_label = Maya.View.EventDialog.make_label (_("Reminders:"));
+        var reminder_label = Calendar.View.EventDialog.make_label (_("Reminders:"));
         reminder_label.margin_start = 12;
 
         var no_reminder_label = new Gtk.Label ("");
@@ -162,7 +162,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
     }
 }
 
-public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
+public class Calendar.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
     public signal void removed ();
     public bool change = false;
     public string uid;

@@ -18,7 +18,7 @@
  * Authored by: Mario Guerriero <marioguerriero33@gmail.com>
  */
 
-namespace Maya.Services {
+namespace Calendar.Services {
 
 public interface EventParser : GLib.Object {
     public abstract ParsedEvent parse_source (string source);

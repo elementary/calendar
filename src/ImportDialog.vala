@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.ImportDialog : Gtk.Dialog {
+public class Calendar.View.ImportDialog : Gtk.Dialog {
     File[] files;
     Widgets.CalendarButton calchooser_button;
     public ImportDialog (File[] files) {

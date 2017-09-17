@@ -20,7 +20,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.AgendaView : Gtk.Grid {
+public class Calendar.View.AgendaView : Gtk.Grid {
     public signal void event_removed (E.CalComponent event);
     public signal void event_modified (E.CalComponent event);
 

@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-namespace Maya.View {
+namespace Calendar.View {
 
 /**
  * Represents the header at the top of the calendar grid.

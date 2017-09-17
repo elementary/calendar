@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya.Settings {
+namespace Calendar.Settings {
     public enum WindowState {
         NORMAL = 0,
         MAXIMIZED = 1
@@ -39,7 +39,7 @@ namespace Maya.Settings {
         public string selected_day { get; set; }
 
         private SavedState () {
-            base ("org.pantheon.maya.savedstate");
+            base ("io.elementary.calendar.savedstate");
         }
 
         public DateTime get_page () {

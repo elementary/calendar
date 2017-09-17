@@ -22,7 +22,7 @@
  * This widget auto-updates his image when the contact changes his avatar.
  * It draws circle icons following the current trend.
  */
-public class Maya.ContactImage : Gtk.Stack {
+public class Calendar.ContactImage : Gtk.Stack {
     private Gtk.IconSize icon_size;
     private Gtk.Image current_image = null;
     private bool default_avatar = true;

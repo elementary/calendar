@@ -12,7 +12,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya.Model {
+namespace Calendar.Model {
 
 public class SourceManager: GLib.Object {
 
@@ -42,7 +42,7 @@ public class SourceManager: GLib.Object {
     E.SourceGroup? GROUP_REMOTE { get; set; }
     E.SourceGroup? GROUP_CONTACTS { get; set; }
 
-    Settings.MayaSettings settings;
+    Settings.CalendarSettings settings;
 
     public SourceManager () {
 

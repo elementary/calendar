@@ -18,7 +18,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
-namespace Maya.View {
+namespace Calendar.View {
 
 public enum EventType {
     ADD,
@@ -126,7 +126,7 @@ public class EventDialog : Gtk.Dialog {
                 }
             });
 
-            var handler = new Maya.Services.EventParserHandler ();
+            var handler = new Calendar.Services.EventParserHandler ();
             var parser = handler.get_parser (handler.get_locale ());
             if (handler.get_locale ().contains (parser.get_language ())) {
                 // If there is handler for the current locale then...

@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-namespace Maya.View {
+namespace Calendar.View {
 
 /**
  * Represent the week labels at the left side of the grid.

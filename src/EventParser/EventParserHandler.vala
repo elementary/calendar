@@ -18,7 +18,7 @@
  * Authored by: Mario Guerriero <marioguerriero33@gmail.com>
  */
 
-namespace Maya.Services {
+namespace Calendar.Services {
 
 public class EventParserHandler : GLib.Object {
 

@@ -17,7 +17,7 @@
 
 using Gtk;
 
-namespace Maya.Widgets {
+namespace Calendar.Widgets {
 
 	public class Utilities {
 	

@@ -19,11 +19,11 @@ using Gtk;
 using Gdk;
 using Cairo;
 
-namespace Maya.Widgets {
+namespace Calendar.Widgets {
 
 	public class Day : Gtk.EventBox {
 
-		private MayaWindow window;
+		private CalendarWindow window;
 		private Label label;
 		private VBox vbox;
 
@@ -31,7 +31,7 @@ namespace Maya.Widgets {
 
 		//public EventsList eventslist { get; private set; }
 
-		public Day (MayaWindow window) {
+		public Day (CalendarWindow window) {
 
 			this.window = window;
 
@@ -64,12 +64,12 @@ namespace Maya.Widgets {
 			notify["date"].connect (() => label.label = date.get_day_of_month ().to_string ());
 
 			/*// DEBUGGING:
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));*/
+			eventslist.add_event(new Calendar.Widgets.Event(window));
+			eventslist.add_event(new Calendar.Widgets.Event(window));
+			eventslist.add_event(new Calendar.Widgets.Event(window));
+			eventslist.add_event(new Calendar.Widgets.Event(window));
+			eventslist.add_event(new Calendar.Widgets.Event(window));
+			eventslist.add_event(new Calendar.Widgets.Event(window));*/
 		}
 
 		private bool on_date_change (EventFocus event) {

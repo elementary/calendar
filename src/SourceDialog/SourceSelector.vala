@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.SourceSelector : Gtk.Popover {
+public class Calendar.View.SourceSelector : Gtk.Popover {
     private GLib.HashTable<string, SourceItem?> src_map;
 
     private Gtk.Stack stack;

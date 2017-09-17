@@ -21,11 +21,11 @@ using Gdk;
 using Granite.Widgets;
 using Granite.Services;
 
-using Maya;
+using Calendar;
 
-namespace Maya.Widgets {
+namespace Calendar.Widgets {
 
-	public class MayaWindow : Gtk.Window {
+	public class CalendarWindow : Gtk.Window {
 		
 		public static CssProvider style_provider { get; private set; default = null; }
 		
@@ -41,7 +41,7 @@ namespace Maya.Widgets {
 		
 		public static Granite.Application app { get; private set; }
 		
-		public MayaWindow (Granite.Application app) {
+		public CalendarWindow (Granite.Application app) {
 			
 			this.app = app;
 			
@@ -94,9 +94,9 @@ namespace Maya.Widgets {
 			default_width = saved_state.window_width;
 			default_height = saved_state.window_height;
 			
-			if (saved_state.window_state == MayaWindowState.MAXIMIZED)
+			if (saved_state.window_state == CalendarWindowState.MAXIMIZED)
 				maximize ();
-			else if (saved_state.window_state == MayaWindowState.FULLSCREEN)
+			else if (saved_state.window_state == CalendarWindowState.FULLSCREEN)
 				fullscreen ();
 			
 			hpaned.position = saved_state.hpaned_position;
@@ -106,14 +106,14 @@ namespace Maya.Widgets {
 			
 			// Save window state
 			if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
-				saved_state.window_state = MayaWindowState.MAXIMIZED;
+				saved_state.window_state = CalendarWindowState.MAXIMIZED;
 			else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0)
-				saved_state.window_state = MayaWindowState.FULLSCREEN;
+				saved_state.window_state = CalendarWindowState.FULLSCREEN;
 			else
-				saved_state.window_state = MayaWindowState.NORMAL;
+				saved_state.window_state = CalendarWindowState.NORMAL;
 			
 			// Save window size
-			if (saved_state.window_state == MayaWindowState.NORMAL) {
+			if (saved_state.window_state == CalendarWindowState.NORMAL) {
 				int width, height;
 				get_size (out width, out height);
 				saved_state.window_width = width;

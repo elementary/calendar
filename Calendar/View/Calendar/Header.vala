@@ -18,16 +18,16 @@
 using Gtk;
 using Cairo;
 
-namespace Maya.Widgets {
+namespace Calendar.Widgets {
 
 	public class Header : Gtk.EventBox {
 	
-		private MayaWindow window;
+		private CalendarWindow window;
 	
 		private Table table;
 		private Label[] labels;
 	
-		public Header (MayaWindow window) {
+		public Header (CalendarWindow window) {
 			
 			this.window = window;
 			

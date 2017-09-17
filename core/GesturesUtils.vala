@@ -19,7 +19,7 @@
  */
 
 // TODO: deprecate this in favor of the build-in Gtk 3.14 functions.
-namespace Maya.GesturesUtils {
+namespace Calendar.GesturesUtils {
 
     static bool has_scrolled = false;
     const uint interval = 500;

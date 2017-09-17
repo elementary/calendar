@@ -18,7 +18,7 @@
  * Authored by: Maxwell Barvian
  */
 
-namespace Maya.View.Widgets {
+namespace Calendar.View.Widgets {
 
     public class DateTimePicker : Gtk.Grid {
 

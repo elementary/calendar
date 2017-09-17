@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
+public class Calendar.View.Widgets.CalendarButton : Gtk.ToggleButton {
     public GLib.List<E.Source> sources;
     private E.Source _current_source;
     public E.Source current_source {
@@ -182,7 +182,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
             E.SourceCalendar cal = (E.SourceCalendar)_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             calendar_name_label.label = _source.dup_display_name ();
             label = calendar_name_label.label;
-            location = Maya.Util.get_source_location (_source);
+            location = Calendar.Util.get_source_location (_source);
             var color = Gdk.RGBA ();
             color.parse (cal.dup_color());
             calendar_color_label.override_background_color (Gtk.StateFlags.NORMAL, color);

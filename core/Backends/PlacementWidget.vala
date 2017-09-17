@@ -21,7 +21,7 @@
  */
 
 // This is needed in order to have good placement for widgets
-public class Maya.PlacementWidget : GLib.Object {
+public class Calendar.PlacementWidget : GLib.Object {
 
     ~PlacementWidget () {
         widget.destroy ();
@@ -34,9 +34,9 @@ public class Maya.PlacementWidget : GLib.Object {
     public bool needed = false; // Only usefull for Gtk.Entry and his derivates
 }
 
-namespace Maya.DefaultPlacementWidgets {
-    public Gee.LinkedList<Maya.PlacementWidget> get_user (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
-        var collection = new Gee.LinkedList<Maya.PlacementWidget> ();
+namespace Calendar.DefaultPlacementWidgets {
+    public Gee.LinkedList<Calendar.PlacementWidget> get_user (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
+        var collection = new Gee.LinkedList<Calendar.PlacementWidget> ();
         var user_label = new PlacementWidget ();
         user_label.widget = new Gtk.Label (_("User:"));
         ((Gtk.Misc) user_label.widget).xalign = 1.0f;
@@ -57,8 +57,8 @@ namespace Maya.DefaultPlacementWidgets {
         return collection;
     }
 
-    public Gee.LinkedList<Maya.PlacementWidget> get_email (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
-        var collection = new Gee.LinkedList<Maya.PlacementWidget> ();
+    public Gee.LinkedList<Calendar.PlacementWidget> get_email (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
+        var collection = new Gee.LinkedList<Calendar.PlacementWidget> ();
         var user_label = new PlacementWidget ();
         user_label.widget = new Gtk.Label (_("Email:"));
         ((Gtk.Misc) user_label.widget).xalign = 1.0f;
@@ -79,7 +79,7 @@ namespace Maya.DefaultPlacementWidgets {
         return collection;
     }
 
-    public Maya.PlacementWidget get_keep_copy (int row, bool default_value = false) {
+    public Calendar.PlacementWidget get_keep_copy (int row, bool default_value = false) {
         var keep_check = new PlacementWidget ();
         keep_check.widget = new Gtk.CheckButton.with_label (_("Keep a copy locally"));
         ((Gtk.CheckButton)keep_check.widget).active = default_value;

@@ -22,7 +22,7 @@
 /**
  * Represents a single event on the grid.
  */
-public class Maya.View.EventButton : Gtk.Revealer {
+public class Calendar.View.EventButton : Gtk.Revealer {
     public signal void edition_request ();
     public E.CalComponent comp {get; private set;}
     private Gtk.EventBox event_box;
@@ -108,7 +108,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
     /**
      * Compares the given buttons according to date.
      */
-    public static GLib.CompareDataFunc<Maya.View.EventButton>? compare_buttons = (button1, button2) => {
+    public static GLib.CompareDataFunc<Calendar.View.EventButton>? compare_buttons = (button1, button2) => {
         var comp1 = button1.comp;
         var comp2 = button2.comp;
 

@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-namespace Maya.View {
+namespace Calendar.View {
     public class VAutoHider : Gtk.EventBox {
 
         Gtk.Label more_label;

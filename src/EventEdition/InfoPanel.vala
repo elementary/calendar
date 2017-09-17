@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
+public class Calendar.View.EventEdition.InfoPanel : Gtk.Grid {
     private Gtk.Entry title_entry;
     private Gtk.TextView comment_textview;
     private Granite.Widgets.DatePicker from_date_picker;
@@ -26,7 +26,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     private Gtk.Switch allday_switch;
     private Granite.Widgets.TimePicker from_time_picker;
     private Granite.Widgets.TimePicker to_time_picker;
-    private Maya.View.Widgets.CalendarButton calendar_button;
+    private Calendar.View.Widgets.CalendarButton calendar_button;
 
     private EventDialog parent_dialog;
 
@@ -75,7 +75,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         column_spacing = 12;
         sensitive = parent_dialog.can_edit;
 
-        var from_label = Maya.View.EventDialog.make_label (_("From:"));
+        var from_label = Calendar.View.EventDialog.make_label (_("From:"));
         from_date_picker = make_date_picker ();
         from_date_picker.notify["date"].connect ( () => {on_date_modified(0);} );
         from_time_picker = make_time_picker ();
@@ -86,7 +86,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         allday_switch = new Gtk.Switch ();
 
-        var to_label = Maya.View.EventDialog.make_label (_("To:"));
+        var to_label = Calendar.View.EventDialog.make_label (_("To:"));
 
         var allday_switch_grid = new Gtk.Grid ();
 
@@ -104,7 +104,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             to_time_picker.sensitive = !allday_switch.get_active ();
         });
 
-        var title_label = Maya.View.EventDialog.make_label (_("Title:"));
+        var title_label = Calendar.View.EventDialog.make_label (_("Title:"));
         title_entry = new Gtk.Entry ();
         title_entry.placeholder_text = _("Name of Event");
         title_entry.changed.connect (on_title_entry_modified);
@@ -124,14 +124,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
         });
 
-        var calendar_label = Maya.View.EventDialog.make_label (_("Calendar:"));
-        calendar_button = new Maya.View.Widgets.CalendarButton ();
+        var calendar_label = Calendar.View.EventDialog.make_label (_("Calendar:"));
+        calendar_button = new Calendar.View.Widgets.CalendarButton ();
         // Select the first calendar we can find, if none is default
         if (parent_dialog.source == null) {
             parent_dialog.source = calendar_button.current_source;
         }
 
-        var comment_label = Maya.View.EventDialog.make_label (_("Comments:"));
+        var comment_label = Calendar.View.EventDialog.make_label (_("Comments:"));
         comment_textview = new Gtk.TextView ();
         comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
         comment_textview.accepts_tab = false;
@@ -277,7 +277,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     }
 
     Granite.Widgets.DatePicker make_date_picker () {
-        var date_picker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
+        var date_picker = new Granite.Widgets.DatePicker.with_format (Calendar.Settings.DateFormat ());
         date_picker.width_request = 200;
         return date_picker;
     }

@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.SourceDialog : Gtk.Grid {
+public class Calendar.View.SourceDialog : Gtk.Grid {
     public EventType event_type { get; private set; default=EventType.EDIT;}
 
     private Gtk.Entry name_entry;

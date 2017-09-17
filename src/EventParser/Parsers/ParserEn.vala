@@ -19,7 +19,7 @@
  *              pantor
  */
 
-namespace Maya.Services {
+namespace Calendar.Services {
 
 public class ParserEn : GLib.Object, EventParser {
     

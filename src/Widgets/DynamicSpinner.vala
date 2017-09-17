@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.Widgets.DynamicSpinner : Gtk.Revealer {
+public class Calendar.View.Widgets.DynamicSpinner : Gtk.Revealer {
     private Gtk.Popover info_popover;
     private Gtk.Spinner spinner;
     private Gtk.ListBox list_box;

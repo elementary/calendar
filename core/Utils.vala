@@ -12,7 +12,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya.Util {
+namespace Calendar.Util {
 
     public int compare_events (E.CalComponent comp1, E.CalComponent comp2) {
 
@@ -635,7 +635,7 @@ namespace Maya.Util {
         public static unowned Gtk.CssProvider get_css_provider () {
             if (_css_provider == null) {
                 _css_provider = new Gtk.CssProvider ();
-                _css_provider.load_from_resource ("/org/pantheon/maya/default.css");
+                _css_provider.load_from_resource ("/io/elementary/calendar/default.css");
             }
 
             return _css_provider;
@@ -664,7 +664,7 @@ namespace Maya.Util {
      * E.Source Utils
      */
     public string get_source_location (E.Source source) {
-        var registry = Maya.Model.CalendarModel.get_default ().registry;
+        var registry = Calendar.Model.CalendarModel.get_default ().registry;
         string parent_uid = source.parent;
         E.Source parent_source = source;
         while (parent_source != null) {

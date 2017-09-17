@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya.Settings {
+namespace Calendar.Settings {
 
     public string DateFormat () {
         return _("%B %e, %Y");

@@ -20,8 +20,8 @@
  * Authored by: Corentin Noël <tintou@mailoo.org>
  */
 
-public class Maya.BackendsManager : GLib.Object {
-    private static Maya.BackendsManager? backends_manager = null;
+public class Calendar.BackendsManager : GLib.Object {
+    private static Calendar.BackendsManager? backends_manager = null;
     
     public static BackendsManager get_default () {
         if (backends_manager == null)
@@ -51,7 +51,7 @@ public class Maya.BackendsManager : GLib.Object {
 
     private void load (string path) {
         if (Module.supported () == false) {
-            error ("Maya plugins are not supported by this system!");
+            error ("Calendar plugins are not supported by this system!");
         }
 
         Module module = Module.open (path, ModuleFlags.BIND_LAZY);
@@ -68,7 +68,7 @@ public class Maya.BackendsManager : GLib.Object {
         }
 
         RegisterPluginFunction register_plugin = (RegisterPluginFunction) function;
-        Maya.Backend plug = register_plugin (module);
+        Calendar.Backend plug = register_plugin (module);
         if (plug == null) {
             critical ("Unknown plugin type for %s !", path);
             return;

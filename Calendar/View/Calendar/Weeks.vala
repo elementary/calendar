@@ -18,20 +18,20 @@
 using Gtk;
 using Cairo;
 
-using Maya.Services;
+using Calendar.Services;
 
-namespace Maya.Widgets {
+namespace Calendar.Widgets {
 
 	public class Weeks : Gtk.EventBox {
 
-		private MayaWindow window;
+		private CalendarWindow window;
 
 		private Table table;
 		private Label[] labels;
 
 		private DateHandler handler;
 
-		public Weeks (MayaWindow window, DateHandler handler) {
+		public Weeks (CalendarWindow window, DateHandler handler) {
 
 			this.window = window;
 			this.handler = handler;

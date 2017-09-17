@@ -22,7 +22,7 @@
 /**
  * Represents the entire calendar, including the headers, the week labels and the grid.
  */
-public class Maya.View.CalendarView : Gtk.Grid {
+public class Calendar.View.CalendarView : Gtk.Grid {
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */

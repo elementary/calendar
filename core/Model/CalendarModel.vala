@@ -12,7 +12,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-public class Maya.Model.CalendarModel : Object {
+public class Calendar.Model.CalendarModel : Object {
 
     /* The data_range is the range of dates for which this model is storing
      * data. The month_range is a subset of this range corresponding to the
@@ -59,7 +59,7 @@ public class Maya.Model.CalendarModel : Object {
     public GLib.Queue<E.Source> calendar_trash;
     private E.CredentialsPrompter credentials_prompter;
 
-    private static Maya.Model.CalendarModel? calendar_model = null;
+    private static Calendar.Model.CalendarModel? calendar_model = null;
 
     public static CalendarModel get_default () {
         if (calendar_model == null)
@@ -70,7 +70,7 @@ public class Maya.Model.CalendarModel : Object {
     private CalendarModel () {
         int week_start = Posix.nl_langinfo2 (Posix.NLTime.FIRST_WEEKDAY).data[0];
         if (week_start >= 1 && week_start <= 7) {
-            week_starts_on = (Maya.Settings.Weekday)week_start-1;
+            week_starts_on = (Calendar.Settings.Weekday)week_start-1;
         }
 
         this.month_start = Util.get_start_of_month (Settings.SavedState.get_default ().get_page ());

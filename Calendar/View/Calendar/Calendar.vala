@@ -17,13 +17,13 @@
 
 using Gtk;
 
-using Maya.Services;
+using Calendar.Services;
 
-namespace Maya.Widgets {
+namespace Calendar.Widgets {
 
 	public class Calendar : Gtk.Table {
 
-		private MayaWindow window;
+		private CalendarWindow window;
 
 		private DateHandler handler;
 
@@ -36,7 +36,7 @@ namespace Maya.Widgets {
 			}
 		}
 
-		public Calendar (MayaWindow window, DateHandler handler) {
+		public Calendar (CalendarWindow window, DateHandler handler) {
 
 			this.window = window;
 			this.handler = handler;

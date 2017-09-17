@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya.Settings {
+namespace Calendar.Settings {
     public enum Weekday {
         SUNDAY = 0,
         MONDAY,
@@ -26,19 +26,19 @@ namespace Maya.Settings {
         SATURDAY
     }
 
-    public class MayaSettings : Granite.Services.Settings {
-        private static Settings.MayaSettings? global_settings = null;
+    public class CalendarSettings : Granite.Services.Settings {
+        private static Settings.CalendarSettings? global_settings = null;
 
-        public static MayaSettings get_default () {
+        public static CalendarSettings get_default () {
             if (global_settings == null)
-                global_settings = new MayaSettings ();
+                global_settings = new CalendarSettings ();
             return global_settings;
         }
 
         public string[] plugins_disabled { get; set; }
 
-        private MayaSettings () {
-            base ("org.pantheon.maya.settings");
+        private CalendarSettings () {
+            base ("io.elementary.calendar.settings");
         }
 
     }

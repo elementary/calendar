@@ -12,7 +12,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Maya.Util {
+namespace Calendar.Util {
     /* Iterator of DateRange objects */
     public class DateIterator : Object, Gee.Traversable<DateTime>, Gee.Iterator<DateTime> {
         DateTime current;

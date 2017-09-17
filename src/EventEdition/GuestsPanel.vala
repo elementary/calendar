@@ -18,7 +18,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
+public class Calendar.View.EventEdition.GuestsPanel : Gtk.Grid {
     private EventDialog parent_dialog;
     private Gtk.Entry guest_entry;
     private Gtk.EntryCompletion guest_completion;
@@ -50,7 +50,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
         guest_store = new Gtk.ListStore(2, typeof (string), typeof (string));
 
-        var guest_label = Maya.View.EventDialog.make_label (_("Participants:"));
+        var guest_label = Calendar.View.EventDialog.make_label (_("Participants:"));
 
         load_contacts.begin ();
 
@@ -215,7 +215,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     }
 }
 
-public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
+public class Calendar.View.EventEdition.GuestGrid : Gtk.Grid {
     public signal void removed ();
     public iCal.Property attendee;
     private Folks.Individual individual;

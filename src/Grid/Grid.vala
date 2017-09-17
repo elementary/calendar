@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-namespace Maya.View {
+namespace Calendar.View {
 
 /**
  * Represents the entire date grid as a table.
@@ -62,7 +62,7 @@ public class Grid : Gtk.Grid {
         day.set_state_flags (Gtk.StateFlags.FOCUSED, false);
         selection_changed (selected_date);
         Settings.SavedState.get_default ().selected_day = selected_date.format ("%Y-%j");
-        var calmodel = Maya.Model.CalendarModel.get_default ();
+        var calmodel = Calendar.Model.CalendarModel.get_default ();
         var date_month = selected_date.get_month () - calmodel.month_start.get_month ();
         var date_year = selected_date.get_year () - calmodel.month_start.get_year ();
         if (date_month != 0 || date_year != 0) {

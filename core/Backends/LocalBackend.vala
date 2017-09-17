@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <tintou@mailoo.org>
  */
 
-public class Maya.LocalBackend : GLib.Object, Maya.Backend {
+public class Calendar.LocalBackend : GLib.Object, Calendar.Backend {
     E.SourceRegistry registry;
 
     public string get_name () {

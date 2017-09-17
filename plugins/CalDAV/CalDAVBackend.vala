@@ -20,16 +20,16 @@
  * Authored by: Corentin Noël <tintou@mailoo.org>
  */
 
-public Maya.Backend get_backend (Module module) {
+public Calendar.Backend get_backend (Module module) {
     debug ("Activating CalDAV Backend");
-    var b = new Maya.CalDavBackend ();
+    var b = new Calendar.CalDavBackend ();
     b.ref ();
     return b;
 }
 
-public static Maya.Backend backend;
+public static Calendar.Backend backend;
 
-public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
+public class Calendar.CalDavBackend : GLib.Object, Calendar.Backend {
 
     public CalDavBackend () {
         backend = this;
@@ -52,7 +52,7 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
             keep_copy = source_offline.stay_synchronized;
         }
 
-        collection.add (Maya.DefaultPlacementWidgets.get_keep_copy (0, keep_copy));
+        collection.add (Calendar.DefaultPlacementWidgets.get_keep_copy (0, keep_copy));
 
         var url_label = new PlacementWidget ();
         url_label.widget = new Gtk.Label (_("URL:"));
@@ -104,7 +104,7 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
             if (auth.user != null)
                 user = auth.user;
         }
-        collection.add_all (Maya.DefaultPlacementWidgets.get_user (4, true, user));
+        collection.add_all (Calendar.DefaultPlacementWidgets.get_user (4, true, user));
 
         string email = "";
         if (to_edit != null) {
@@ -113,7 +113,7 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
                 email = webdav.email_address;
         }
 
-        collection.add_all (Maya.DefaultPlacementWidgets.get_email (5, false, email));
+        collection.add_all (Calendar.DefaultPlacementWidgets.get_email (5, false, email));
 
         var server_checkbutton = new PlacementWidget ();
         server_checkbutton.widget = new Gtk.CheckButton.with_label (_("Server handles meeting invitations"));
@@ -160,7 +160,7 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
                 }
             }
 
-            var calmodel = Maya.Model.CalendarModel.get_default ();
+            var calmodel = Calendar.Model.CalendarModel.get_default ();
             var registry = calmodel.registry;
             var list = new List<E.Source> ();
             list.append (new_source);
