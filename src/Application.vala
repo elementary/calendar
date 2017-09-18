@@ -32,7 +32,7 @@ namespace Calendar {
     public static int main (string[] args) {
 
         var context = new OptionContext (_("Calendar"));
-        context.add_main_entries (Application.app_options, "maya");
+        context.add_main_entries (Application.app_options, "calendar");
         context.add_group (Gtk.get_option_group (true));
 
         try {
@@ -43,7 +43,7 @@ namespace Calendar {
 
         if (Option.PRINT_VERSION) {
             stdout.printf("Calendar %s\n", Build.VERSION);
-            stdout.printf("Copyright 2011-2015 Calendar Developers.\n");
+            stdout.printf("Copyright 2011-2017 Calendar Developers.\n");
             return 0;
         }
 
