@@ -132,6 +132,9 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         destroy.connect (() => {
             if (search_cancellable != null)
                 search_cancellable.cancel ();
+            if (find_cancellable != null) {
+                find_cancellable.cancel ();
+            }
         });
     }
 
@@ -191,8 +194,11 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
     }
 
     private async void find_location (double latitude, double longitude) {
-        if (find_cancellable != null)
+        if (find_cancellable != null) {
             find_cancellable.cancel ();
+        }
+        
+        find_cancellable = new GLib.Cancellable ();
         Geocode.Location location = new Geocode.Location (latitude, longitude);
         var reverse = new Geocode.Reverse.for_location (location);
         try {
@@ -216,8 +222,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                     builder.append (", ");
                     builder.append (address.country);
                 }
-            }
-            else {
+            } else {
                 builder.append (address.name);
                 if (address.country != null) {
                     builder.append (", ");
