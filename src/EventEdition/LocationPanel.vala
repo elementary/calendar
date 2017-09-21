@@ -201,6 +201,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         find_cancellable = new GLib.Cancellable ();
         Geocode.Location location = new Geocode.Location (latitude, longitude);
         var reverse = new Geocode.Reverse.for_location (location);
+        
         try {
             var address = yield reverse.resolve_async (find_cancellable);
             var builder = new StringBuilder ();
