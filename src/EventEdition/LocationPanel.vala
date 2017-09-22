@@ -207,34 +207,28 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             var builder = new StringBuilder ();
             if (address.street != null) {
                 builder.append (address.street);
-                if (address.town != null) {
-                    builder.append (", ");
-                    builder.append (address.town);
-                }
-                if (address.county != null) {
-                    builder.append (", ");
-                    builder.append (address.county);
-                }
-                if (address.postal_code != null) {
-                    builder.append (", ");
-                    builder.append (address.postal_code);
-                }
-                if (address.country != null) {
-                    builder.append (", ");
-                    builder.append (address.country);
-                }
+                add_address_line (builder, address.town);
+                add_address_line (builder, address.county);
+                add_address_line (builder, address.postal_code);
+                add_address_line (builder, address.country);
             } else {
                 builder.append (address.name);
-                if (address.country != null) {
-                    builder.append (", ");
-                    builder.append (address.country);
-                }
+                add_address_line (builder, address.country);
             }
+            
             location_entry.text = builder.str;
         } catch (Error error) {
             debug (error.message);
         }
     }
+    
+    private void add_address_line (StringBuilder sb, string? text) {
+        if (text != null) {
+             sb.append (", ");
+             sb.append (text);
+        }
+    }
+
     
     /**
      * Filter all contacts with address information and
