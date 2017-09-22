@@ -32,6 +32,7 @@ libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_model_calendar_model_get_data_range@Base 0.3
  maya_model_calendar_model_get_default@Base 0.3
  maya_model_calendar_model_get_drag_component@Base 0.3.1
+ maya_model_calendar_model_get_events@Base 0.4.0.2
  maya_model_calendar_model_get_month_range@Base 0.3
  maya_model_calendar_model_get_month_start@Base 0.3
  maya_model_calendar_model_get_num_weeks@Base 0.3
@@ -97,8 +98,8 @@ libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_date_range_contains@Base 0.3
  maya_util_date_range_equals@Base 0.3
  maya_util_date_range_get_days@Base 0.3
- maya_util_date_range_get_first@Base 0.3
- maya_util_date_range_get_last@Base 0.3
+ maya_util_date_range_get_first_dt@Base 0.4.0.2
+ maya_util_date_range_get_last_dt@Base 0.4.0.2
  maya_util_date_range_get_type@Base 0.3
  maya_util_date_range_new@Base 0.3
  maya_util_date_range_new_copy@Base 0.3
@@ -114,12 +115,14 @@ libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_generate_week_reccurence@Base 0.3
  maya_util_generate_year_reccurence@Base 0.3
  maya_util_get_date_from_ical_day@Base 0.3
+ maya_util_get_end_of_month@Base 0.4.0.2
  maya_util_get_hexa_color@Base 0.3
  maya_util_get_local_datetimes_from_icalcomponent@Base 0.3.1
  maya_util_get_source_location@Base 0.3.1
  maya_util_get_start_of_month@Base 0.3
  maya_util_ical_to_date_time@Base 0.3
  maya_util_is_all_day@Base 0.3.1.1
+ maya_util_is_event_in_range@Base 0.4.0.2
  maya_util_is_multiday_event@Base 0.3
  maya_util_param_spec_css@Base 0.3
  maya_util_remap@Base 0.3
