@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -65,8 +65,9 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             model.get_value (iter, 0, out val1);
             model.get_value (iter, 1, out val2);
 
-            if (val1.get_string ().casefold (-1).contains (key) || val2.get_string ().casefold (-1).contains (key)) 
+            if (val1.get_string ().casefold (-1).contains (key) || val2.get_string ().casefold (-1).contains (key)) {
                 return true;
+            }
 
             return false;
         });
@@ -96,10 +97,12 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         });
 
         if (parent_dialog.ecal != null) {
-            string location;
-            parent_dialog.ecal.get_location (out location);
-            if (location != null)
-                location_entry.text = location;
+            unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+            unowned string location = comp.get_location ();
+
+            if (location != null) {
+                location_entry.text = location.dup ();
+            }
 
             iCal.GeoType? geo;
             parent_dialog.ecal.get_geo (out geo);
@@ -229,7 +232,6 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         }
     }
 
-    
     /**
      * Filter all contacts with address information and
      * add them to the location store.
@@ -244,7 +246,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             }
         }
     }
-    
+
     /**
      * Load the backend and call add_contacts_store with all
      * contacts.
