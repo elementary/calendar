@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -29,6 +29,7 @@ public class Calendar.View.EventEdition.LocationPanel : Gtk.Grid {
      // Only set the geo property if map_selected is true, this is a smart behavior!
     private bool map_selected = false;
     private GLib.Cancellable search_cancellable;
+    private GLib.Cancellable find_cancellable;
 
     public string location {
         get { return location_entry.get_text (); }
@@ -64,8 +65,9 @@ public class Calendar.View.EventEdition.LocationPanel : Gtk.Grid {
             model.get_value (iter, 0, out val1);
             model.get_value (iter, 1, out val2);
 
-            if (val1.get_string ().casefold (-1).contains (key) || val2.get_string ().casefold (-1).contains (key)) 
+            if (val1.get_string ().casefold (-1).contains (key) || val2.get_string ().casefold (-1).contains (key)) {
                 return true;
+            }
 
             return false;
         });
@@ -91,13 +93,16 @@ public class Calendar.View.EventEdition.LocationPanel : Gtk.Grid {
         point.draggable = parent_dialog.can_edit;
         point.drag_finish.connect (() => {
             map_selected = true;
+            find_location (point.latitude, point.longitude);
         });
 
         if (parent_dialog.ecal != null) {
-            string location;
-            parent_dialog.ecal.get_location (out location);
-            if (location != null)
-                location_entry.text = location;
+            unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+            unowned string location = comp.get_location ();
+
+            if (location != null) {
+                location_entry.text = location.dup ();
+            }
 
             iCal.GeoType? geo;
             parent_dialog.ecal.get_geo (out geo);
@@ -130,6 +135,9 @@ public class Calendar.View.EventEdition.LocationPanel : Gtk.Grid {
         destroy.connect (() => {
             if (search_cancellable != null)
                 search_cancellable.cancel ();
+            if (find_cancellable != null) {
+                find_cancellable.cancel ();
+            }
         });
     }
 
@@ -187,7 +195,43 @@ public class Calendar.View.EventEdition.LocationPanel : Gtk.Grid {
             debug (error.message);
         }
     }
+
+    private async void find_location (double latitude, double longitude) {
+        if (find_cancellable != null) {
+            find_cancellable.cancel ();
+        }
+        
+        find_cancellable = new GLib.Cancellable ();
+        Geocode.Location location = new Geocode.Location (latitude, longitude);
+        var reverse = new Geocode.Reverse.for_location (location);
+        
+        try {
+            var address = yield reverse.resolve_async (find_cancellable);
+            var builder = new StringBuilder ();
+            if (address.street != null) {
+                builder.append (address.street);
+                add_address_line (builder, address.town);
+                add_address_line (builder, address.county);
+                add_address_line (builder, address.postal_code);
+                add_address_line (builder, address.country);
+            } else {
+                builder.append (address.name);
+                add_address_line (builder, address.country);
+            }
+            
+            location_entry.text = builder.str;
+        } catch (Error error) {
+            debug (error.message);
+        }
+    }
     
+    private void add_address_line (StringBuilder sb, string? text) {
+        if (text != null) {
+             sb.append (", ");
+             sb.append (text);
+        }
+    }
+
     /**
      * Filter all contacts with address information and
      * add them to the location store.
@@ -202,7 +246,7 @@ public class Calendar.View.EventEdition.LocationPanel : Gtk.Grid {
             }
         }
     }
-    
+
     /**
      * Load the backend and call add_contacts_store with all
      * contacts.
