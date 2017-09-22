@@ -29,6 +29,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
      // Only set the geo property if map_selected is true, this is a smart behavior!
     private bool map_selected = false;
     private GLib.Cancellable search_cancellable;
+    private GLib.Cancellable find_cancellable;
 
     public string location {
         get { return location_entry.get_text (); }
@@ -92,6 +93,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         point.draggable = parent_dialog.can_edit;
         point.drag_finish.connect (() => {
             map_selected = true;
+            find_location (point.latitude, point.longitude);
         });
 
         if (parent_dialog.ecal != null) {
@@ -133,6 +135,9 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         destroy.connect (() => {
             if (search_cancellable != null)
                 search_cancellable.cancel ();
+            if (find_cancellable != null) {
+                find_cancellable.cancel ();
+            }
         });
     }
 
@@ -188,6 +193,42 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             location_entry.has_focus = true;
         } catch (Error error) {
             debug (error.message);
+        }
+    }
+
+    private async void find_location (double latitude, double longitude) {
+        if (find_cancellable != null) {
+            find_cancellable.cancel ();
+        }
+        
+        find_cancellable = new GLib.Cancellable ();
+        Geocode.Location location = new Geocode.Location (latitude, longitude);
+        var reverse = new Geocode.Reverse.for_location (location);
+        
+        try {
+            var address = yield reverse.resolve_async (find_cancellable);
+            var builder = new StringBuilder ();
+            if (address.street != null) {
+                builder.append (address.street);
+                add_address_line (builder, address.town);
+                add_address_line (builder, address.county);
+                add_address_line (builder, address.postal_code);
+                add_address_line (builder, address.country);
+            } else {
+                builder.append (address.name);
+                add_address_line (builder, address.country);
+            }
+            
+            location_entry.text = builder.str;
+        } catch (Error error) {
+            debug (error.message);
+        }
+    }
+    
+    private void add_address_line (StringBuilder sb, string? text) {
+        if (text != null) {
+             sb.append (", ");
+             sb.append (text);
         }
     }
 
