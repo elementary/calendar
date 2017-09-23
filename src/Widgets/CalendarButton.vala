@@ -28,17 +28,16 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
 
         set {
             _current_source = value;
-            button_grid.source = value;
-            tooltip_text = "%s - %s".printf (button_grid.label, button_grid.location);
+            calendar_grid.source = value;
+            tooltip_text = "%s - %s".printf (calendar_grid.label, calendar_grid.location);
         }
     }
 
     private Gtk.Popover popover;
     private Gtk.ListBox list_box;
-    private CalendarGrid button_grid;
+    private CalendarGrid calendar_grid;
 
     public CalendarButton () {
-        set_alignment (0, 0.5f);
         sources = new GLib.List<E.Source> ();
         var calmodel = Model.CalendarModel.get_default ();
         var registry = calmodel.registry;
@@ -49,8 +48,18 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         }
 
         _current_source = registry.default_calendar;
-        button_grid = new CalendarGrid (current_source);
-        image = button_grid;
+
+        calendar_grid = new CalendarGrid (current_source);
+        calendar_grid.halign = Gtk.Align.START;
+        calendar_grid.hexpand = true;
+
+        var grid = new Gtk.Grid ();
+        grid.column_spacing = 6;
+        grid.add (calendar_grid);
+        grid.add (new Gtk.Image.from_icon_name ("pan-down-symbolic", Gtk.IconSize.MENU));
+
+        add (grid);
+
         current_source = registry.default_calendar;
         create_popover ();
 
@@ -68,21 +77,29 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
     }
 
     private void create_popover () {
-        popover = new Gtk.Popover (this);
-        var scrolled = new Gtk.ScrolledWindow (null, null);
-        scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = true;
+
+        var scrolled = new Gtk.ScrolledWindow (null, null);
+        scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        scrolled.add (list_box);
+        scrolled.margin_top = 6;
+        scrolled.margin_bottom = 6;
+
+        popover = new Gtk.Popover (this);
+        popover.width_request = 310;
+        popover.add (scrolled);
+
         list_box.add.connect ((widget) => {
             list_box.show_all ();
             int minimum_height;
             int natural_height;
+
             list_box.get_preferred_height (out minimum_height, out natural_height);
-            var real_size = natural_height;
-            if (real_size > 300) {
-                scrolled.set_size_request (-1, 300);
+            if (natural_height > 300) {
+                scrolled.height_request = 300;
             } else {
-                scrolled.set_size_request (-1, (int)real_size);
+                scrolled.height_request = (int) natural_height;
             }
         });
 
@@ -92,10 +109,11 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
             var child1 = (CalendarGrid)row1.get_child ();
             var child2 = (CalendarGrid)row2.get_child ();
             var comparison = child1.location.collate (child2.location);
-            if (comparison == 0)
+            if (comparison == 0) {
                 return child1.label.collate (child2.label);
-            else
+            } else {
                 return comparison;
+            }
         });
 
         list_box.row_activated.connect ((row) => {
@@ -105,20 +123,18 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         foreach (var source in sources) {
             add_source (source);
         }
-
-        scrolled.add (list_box);
-        scrolled.margin_top = 6;
-        scrolled.margin_bottom = 6;
-        popover.add (scrolled);
     }
 
     private void add_source (E.Source source) {
         var calgrid = new CalendarGrid (source);
         calgrid.margin = 6;
         calgrid.margin_start = 12;
+
         var row = new Gtk.ListBoxRow ();
         row.add (calgrid);
+
         list_box.add (row);
+
         if (source.dup_uid () == current_source.dup_uid ()) {
             list_box.select_row (row);
         }
@@ -135,9 +151,11 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         }
 
         var header = new SourceItemHeader (row_location);
-        header.margin_top = 6;
-        header.margin_start = 6;
+        header.margin = 6;
+        header.margin_bottom = 0;
+
         row.set_header (header);
+
         header.show_all ();
         if (before == null) {
             header.margin_top = 0;
@@ -161,18 +179,21 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
 
         private Gtk.Label calendar_name_label;
         private Gtk.Label calendar_color_label;
+
         public CalendarGrid (E.Source source) {
-            orientation = Gtk.Orientation.HORIZONTAL;
             column_spacing = 6;
 
-            calendar_color_label = new Gtk.Label ("  ");
+            calendar_color_label = new Gtk.Label ("");
+            calendar_color_label.width_request = 6;
+
             calendar_name_label = new Gtk.Label ("");
-            ((Gtk.Misc) calendar_name_label).xalign = 0.0f;
+            calendar_name_label.xalign = 0;
             calendar_name_label.hexpand = true;
             calendar_name_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
 
             add (calendar_color_label);
             add (calendar_name_label);
+
             show_all ();
             _source = source;
             apply_source ();
