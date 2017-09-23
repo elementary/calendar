@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,14 +18,14 @@
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
+public class Calendar.View.EventEdition.LocationPanel : Gtk.Grid {
     private EventDialog parent_dialog;
 
     private Gtk.SearchEntry location_entry;
     private Gtk.EntryCompletion location_completion;
     private Gtk.ListStore location_store;
     private GtkChamplain.Embed champlain_embed;
-    private Maya.Marker point;
+    private Calendar.Marker point;
      // Only set the geo property if map_selected is true, this is a smart behavior!
     private bool map_selected = false;
     private GLib.Cancellable search_cancellable;
@@ -47,7 +47,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 
         location_store = new Gtk.ListStore (2, typeof (string), typeof (string));
 
-        var location_label = Maya.View.EventDialog.make_label (_("Location:"));
+        var location_label = Calendar.View.EventDialog.make_label (_("Location:"));
         location_entry = new Gtk.SearchEntry ();
         location_entry.placeholder_text = _("John Smith OR Example St.");
         location_entry.hexpand = true;
@@ -89,7 +89,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         attach (frame, 0, 2, 1, 1);
 
         // Load the location
-        point = new Maya.Marker ();
+        point = new Calendar.Marker ();
         point.draggable = parent_dialog.can_edit;
         point.drag_finish.connect (() => {
             map_selected = true;
@@ -274,7 +274,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
     }
 }
 
-public class Maya.Marker : Champlain.Marker {
+public class Calendar.Marker : Champlain.Marker {
     public Marker () {
         try {
             weak Gtk.IconTheme icon_theme = Gtk.IconTheme.get_default ();

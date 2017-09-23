@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2013-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.SourceItem : Gtk.ListBoxRow {
+public class Calendar.View.SourceItem : Gtk.ListBoxRow {
     public signal void remove_request (E.Source source);
     public signal void edit_request (E.Source source);
 
@@ -53,7 +53,7 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         calendar_name_label.hexpand = true;
 
         label = source.dup_display_name ();
-        location = Maya.Util.get_source_location (source);
+        location = Calendar.Util.get_source_location (source);
 
         calendar_color_label = new Gtk.Label ("  ");
         var color = Gdk.RGBA ();
@@ -187,7 +187,7 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
     }
 }
 
-public class Maya.View.SourceItemHeader : Gtk.ListBoxRow {
+public class Calendar.View.SourceItemHeader : Gtk.ListBoxRow {
     public string label { public get; private set; }
     public uint children = 1;
     public SourceItemHeader (string label) {

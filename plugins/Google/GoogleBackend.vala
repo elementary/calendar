@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2013 Maya Developers (https://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -14,22 +14,22 @@
  *
  * You should have received a copy of the GNU Library General Public
  * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301 USA.
  *
  * Authored by: Corentin Noël <tintou@mailoo.org>
  */
 
-public Maya.Backend get_backend (Module module) {
+public Calendar.Backend get_backend (Module module) {
     debug ("Activating Google Backend");
-    var b = new Maya.GoogleBackend ();
+    var b = new Calendar.GoogleBackend ();
     b.ref ();
     return b;
 }
 
-public static Maya.Backend backend;
+public static Calendar.Backend backend;
 
-public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
+public class Calendar.GoogleBackend : GLib.Object, Calendar.Backend {
     public GoogleBackend () {
         backend = this;
     }
@@ -50,7 +50,7 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
             E.SourceOffline source_offline = (E.SourceOffline)to_edit.get_extension (E.SOURCE_EXTENSION_OFFLINE);
             keep_copy = source_offline.stay_synchronized;
         }
-        collection.add (Maya.DefaultPlacementWidgets.get_keep_copy (3, keep_copy));
+        collection.add (Calendar.DefaultPlacementWidgets.get_keep_copy (3, keep_copy));
 
         string user = "";
         if (to_edit != null) {
@@ -58,7 +58,7 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
             user = auth.user;
         }
         
-        collection.add_all (Maya.DefaultPlacementWidgets.get_user (4, true, user, _("user.name or user.name@gmail.com")));
+        collection.add_all (Calendar.DefaultPlacementWidgets.get_user (4, true, user, _("user.name or user.name@gmail.com")));
 
         return collection;
     }
@@ -96,7 +96,7 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                 }
             }
 
-            var calmodel = Maya.Model.CalendarModel.get_default ();
+            var calmodel = Calendar.Model.CalendarModel.get_default ();
             var registry = calmodel.registry;
             var list = new List<E.Source> ();
             list.append (new_source);

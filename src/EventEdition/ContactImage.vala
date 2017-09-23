@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2013-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -22,7 +22,7 @@
  * This widget auto-updates his image when the contact changes his avatar.
  * It draws circle icons following the current trend.
  */
-public class Maya.ContactImage : Gtk.Stack {
+public class Calendar.ContactImage : Gtk.Stack {
     private Gtk.IconSize icon_size;
     private Gtk.Image current_image = null;
     private bool default_avatar = true;

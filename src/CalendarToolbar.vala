@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,9 +19,9 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-namespace Maya.View {
+namespace Calendar.View {
 
-    public class MayaToolbar : Gtk.HeaderBar {
+    public class CalendarToolbar : Gtk.HeaderBar {
         
         // Signals
         public signal void on_search (string search);
@@ -38,7 +38,7 @@ namespace Maya.View {
         View.SourceSelector source_selector;
         Gtk.ToggleButton button_calendar_sources;
         
-        public MayaToolbar () {
+        public CalendarToolbar () {
             show_close_button = true;
 
             var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);

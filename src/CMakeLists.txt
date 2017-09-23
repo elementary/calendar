@@ -2,7 +2,7 @@ set(CLIENT_SOURCE
     AgendaView.vala
     Application.vala
     ImportDialog.vala
-    MayaToolbar.vala
+    CalendarToolbar.vala
     EventEdition/ContactImage.vala
     EventEdition/EventDialog.vala
     EventEdition/GuestsPanel.vala
@@ -41,13 +41,13 @@ OPTIONS
 )
 
 include (GResource)
-glib_compile_resources (GLIB_RESOURCES_MAYA ../data/maya.gresource.xml)
+glib_compile_resources (GLIB_RESOURCES_CALENDAR ../data/calendar.gresource.xml)
 
 set(EXEC_NAME ${CMAKE_PROJECT_NAME})
 
 add_definitions(${DEPS_CFLAGS} ${CORE_CFLAGS})
 link_directories(${DEPS_LIBRARY_DIRS} ${CORE_LIBRARY_DIRS})
-add_executable(${EXEC_NAME} ${CLIENT_VALA_C} ${GLIB_RESOURCES_MAYA})
+add_executable(${EXEC_NAME} ${CLIENT_VALA_C} ${GLIB_RESOURCES_CALENDAR})
 
 target_link_libraries(${EXEC_NAME} ${DEPS_LIBRARIES} ${CORE_LIBRARIES} -lm)
 

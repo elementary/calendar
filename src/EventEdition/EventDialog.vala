@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
-namespace Maya.View {
+namespace Calendar.View {
 
 public enum EventType {
     ADD,
@@ -126,7 +126,7 @@ public class EventDialog : Gtk.Dialog {
                 }
             });
 
-            var handler = new Maya.Services.EventParserHandler ();
+            var handler = new Calendar.Services.EventParserHandler ();
             var parser = handler.get_parser (handler.get_locale ());
             if (handler.get_locale ().contains (parser.get_language ())) {
                 // If there is handler for the current locale then...

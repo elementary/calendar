@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2013 Maya Developers (https://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -14,14 +14,14 @@
  *
  * You should have received a copy of the GNU Library General Public
  * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301 USA.
  *
  * Authored by: Corentin Noël <tintou@mailoo.org>
  */
 
 // This is needed in order to have good placement for widgets
-public class Maya.PlacementWidget : GLib.Object {
+public class Calendar.PlacementWidget : GLib.Object {
 
     ~PlacementWidget () {
         widget.destroy ();
@@ -34,9 +34,9 @@ public class Maya.PlacementWidget : GLib.Object {
     public bool needed = false; // Only usefull for Gtk.Entry and his derivates
 }
 
-namespace Maya.DefaultPlacementWidgets {
-    public Gee.LinkedList<Maya.PlacementWidget> get_user (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
-        var collection = new Gee.LinkedList<Maya.PlacementWidget> ();
+namespace Calendar.DefaultPlacementWidgets {
+    public Gee.LinkedList<Calendar.PlacementWidget> get_user (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
+        var collection = new Gee.LinkedList<Calendar.PlacementWidget> ();
         var user_label = new PlacementWidget ();
         user_label.widget = new Gtk.Label (_("User:"));
         ((Gtk.Misc) user_label.widget).xalign = 1.0f;
@@ -57,8 +57,8 @@ namespace Maya.DefaultPlacementWidgets {
         return collection;
     }
 
-    public Gee.LinkedList<Maya.PlacementWidget> get_email (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
-        var collection = new Gee.LinkedList<Maya.PlacementWidget> ();
+    public Gee.LinkedList<Calendar.PlacementWidget> get_email (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
+        var collection = new Gee.LinkedList<Calendar.PlacementWidget> ();
         var user_label = new PlacementWidget ();
         user_label.widget = new Gtk.Label (_("Email:"));
         ((Gtk.Misc) user_label.widget).xalign = 1.0f;
@@ -79,7 +79,7 @@ namespace Maya.DefaultPlacementWidgets {
         return collection;
     }
 
-    public Maya.PlacementWidget get_keep_copy (int row, bool default_value = false) {
+    public Calendar.PlacementWidget get_keep_copy (int row, bool default_value = false) {
         var keep_check = new PlacementWidget ();
         keep_check.widget = new Gtk.CheckButton.with_label (_("Keep a copy locally"));
         ((Gtk.CheckButton)keep_check.widget).active = default_value;

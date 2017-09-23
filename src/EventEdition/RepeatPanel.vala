@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
+public class Calendar.View.EventEdition.RepeatPanel : Gtk.Grid {
     private EventDialog parent_dialog;
     private Gtk.Switch repeat_switch;
     private Gtk.ComboBoxText repeat_combobox;
@@ -50,7 +50,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         column_spacing = 12;
         sensitive = parent_dialog.can_edit;
 
-        var reminder_label = Maya.View.EventDialog.make_label (_("Repeat:"));
+        var reminder_label = Calendar.View.EventDialog.make_label (_("Repeat:"));
 
         repeat_switch = new Gtk.Switch ();
 
@@ -101,7 +101,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         repeat_grid.add (repeat_switch_grid);
         repeat_grid.add (repeat_combobox);
 
-        var every_label = Maya.View.EventDialog.make_label (_("Every:"));
+        var every_label = Calendar.View.EventDialog.make_label (_("Every:"));
 
         every_entry = new Gtk.SpinButton.with_range (1, 99, 1);
         every_entry.hexpand = true;
@@ -132,7 +132,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         every_grid.add (every_entry);
         every_grid.add (every_unit_label);
 
-        var ends_label = Maya.View.EventDialog.make_label (_("Ends:"));
+        var ends_label = Calendar.View.EventDialog.make_label (_("Ends:"));
 
         var end_label = new Gtk.Label (ngettext ("Repeat", "Repeats", 1));
         end_label.no_show_all = true;
@@ -170,7 +170,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             end_label.label = ngettext ("Repeat", "Repeats", (ulong)end_entry.value);
         });
 
-        end_datepicker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
+        end_datepicker = new Granite.Widgets.DatePicker.with_format (Calendar.Settings.DateFormat ());
         end_datepicker.no_show_all = true;
 
         var ends_grid = new Gtk.Grid ();
@@ -197,7 +197,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         month_grid.add (same_radiobutton);
         month_grid.add (every_radiobutton);
 
-        var exceptions_label = Maya.View.EventDialog.make_label (_("Exceptions:"));
+        var exceptions_label = Calendar.View.EventDialog.make_label (_("Exceptions:"));
 
         var no_exceptions_label = new Gtk.Label ("");
         no_exceptions_label.set_markup (_("No Exceptions"));
@@ -517,7 +517,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
         week_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         week_box.get_style_context ().add_class ("raised");
-        switch (Maya.Model.CalendarModel.get_default ().week_starts_on) {
+        switch (Calendar.Model.CalendarModel.get_default ().week_starts_on) {
             case Settings.Weekday.TUESDAY:
                 week_box.add (thu_button);
                 week_box.add (fri_button);
@@ -690,7 +690,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     }
 }
 
-public class Maya.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
+public class Calendar.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
     private Granite.Widgets.DatePicker date;
     public ExceptionGrid (GLib.DateTime dt) {
         set_margin_top (6);

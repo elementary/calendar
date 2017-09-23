@@ -3,7 +3,7 @@ Type=Application
 _Name=@APP_NAME@
 _GenericName=Calendar
 _Comment=View and schedule events
-Exec=maya-calendar %U
+Exec=io.elementary.calendar %U
 Icon=office-calendar
 Terminal=false
 Categories=GTK;Office;Calendar;
@@ -15,4 +15,4 @@ X-GNOME-UsesNotifications=true
 
 [Desktop Action AddEvent]
 _Name=Add Event
-Exec=maya-calendar -a
+Exec=io.elementary.calendar -a

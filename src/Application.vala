@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (https://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementary.io>
  */
 
-namespace Maya {
+namespace Calendar {
 
     namespace Option {
 
@@ -32,7 +32,7 @@ namespace Maya {
     public static int main (string[] args) {
 
         var context = new OptionContext (_("Calendar"));
-        context.add_main_entries (Application.app_options, "maya");
+        context.add_main_entries (Application.app_options, "calendar");
         context.add_group (Gtk.get_option_group (true));
 
         try {
@@ -42,8 +42,8 @@ namespace Maya {
         }
 
         if (Option.PRINT_VERSION) {
-            stdout.printf("Maya %s\n", Build.VERSION);
-            stdout.printf("Copyright 2011-2015 Maya Developers.\n");
+            stdout.printf("Calendar %s\n", Build.VERSION);
+            stdout.printf("Copyright 2011-2017 Calendar Developers.\n");
             return 0;
         }
 
@@ -73,12 +73,12 @@ namespace Maya {
             build_version_info = Build.VERSION_INFO;
 
             program_name = _(Build.APP_NAME);
-            exec_name = "maya-calendar";
+            exec_name = "io.elementary.calendar";
 
-            app_years = "2011-2016";
-            application_id = "org.pantheon.maya";
+            app_years = "2011-2017";
+            application_id = "io.elementary.calendar";
             app_icon = "office-calendar";
-            app_launcher = "org.pantheon.maya.desktop";
+            app_launcher = "io.elementary.calendar.desktop";
 
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.textdomain (Build.GETTEXT_PACKAGE);
@@ -92,7 +92,7 @@ namespace Maya {
         };
 
         public Gtk.Window window;
-        View.MayaToolbar toolbar;
+        View.CalendarToolbar toolbar;
         View.CalendarView calview;
         View.AgendaView sidebar;
         Gtk.Paned hpaned;
@@ -147,7 +147,7 @@ namespace Maya {
                 first_start = true;
             }
 
-            var dialog = new Maya.View.ImportDialog (files);
+            var dialog = new Calendar.View.ImportDialog (files);
             dialog.transient_for = window;
             dialog.show_all ();
             if (first_start)
@@ -220,7 +220,7 @@ namespace Maya {
          * Called when the edit button is selected.
          */
         void on_modified (E.CalComponent comp) {
-            var dialog = new Maya.View.EventDialog (comp, null);
+            var dialog = new Calendar.View.EventDialog (comp, null);
             dialog.transient_for = window;
             dialog.present ();
         }
@@ -245,7 +245,7 @@ namespace Maya {
          */
         void create_window () {
             weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-            default_theme.add_resource_path ("/org/pantheon/maya");
+            default_theme.add_resource_path ("/io/elementary/calendar");
             var saved_state = Settings.SavedState.get_default ();
             window = new Gtk.Window ();
             window.title = program_name;
@@ -268,7 +268,7 @@ namespace Maya {
                 return false;
             });
 
-            toolbar = new View.MayaToolbar ();
+            toolbar = new View.CalendarToolbar ();
             toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.selected_date));
             toolbar.on_menu_today_toggled.connect (on_menu_today_toggled);
             toolbar.on_search.connect ((text) => on_search (text));
@@ -310,7 +310,7 @@ namespace Maya {
         }
 
         void on_tb_add_clicked (DateTime dt) {
-            var dialog = new Maya.View.EventDialog (null, dt);
+            var dialog = new Calendar.View.EventDialog (null, dt);
             dialog.transient_for = window;
             dialog.show_all ();
         }

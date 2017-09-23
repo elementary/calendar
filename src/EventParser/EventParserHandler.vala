@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 elementary LLC
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
  * Authored by: Mario Guerriero <marioguerriero33@gmail.com>
  */
 
-namespace Maya.Services {
+namespace Calendar.Services {
 
 public class EventParserHandler : GLib.Object {
 

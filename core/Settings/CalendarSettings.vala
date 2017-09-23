@@ -1,4 +1,3 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
  * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
@@ -15,14 +14,35 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Authored by: Mario Guerriero <marioguerriero33@gmail.com>
+ * Authored by: Maxwell Barvian
  */
+ 
+namespace Calendar.Settings {
+    public enum Weekday {
+        SUNDAY = 0,
+        MONDAY,
+        TUESDAY,
+        WEDNESDAY,
+        THURSDAY,
+        FRIDAY,
+        SATURDAY
+    }
 
-namespace Calendar.Services {
+    public class CalendarSettings : Granite.Services.Settings {
+        private static Settings.CalendarSettings? global_settings = null;
 
-public interface EventParser : GLib.Object {
-    public abstract ParsedEvent parse_source (string source);
-    public abstract string get_language ();
-}
+        public static CalendarSettings get_default () {
+            if (global_settings == null)
+                global_settings = new CalendarSettings ();
+            return global_settings;
+        }
+
+        public string[] plugins_disabled { get; set; }
+
+        private CalendarSettings () {
+            base ("io.elementary.calendar.settings");
+        }
+
+    }
 
 }

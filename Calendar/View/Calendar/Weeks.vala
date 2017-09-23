@@ -1,37 +1,39 @@
-//
-//  Copyright (C) 2011 Maxwell Barvian, Jaap Broekhuizen
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-//
+/*-
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authored by: Maxwell Barvian, Jaap Broekhuizen
+ */
 
 using Gtk;
 using Cairo;
 
-using Maya.Services;
+using Calendar.Services;
 
-namespace Maya.Widgets {
+namespace Calendar.Widgets {
 
 	public class Weeks : Gtk.EventBox {
 
-		private MayaWindow window;
+		private CalendarWindow window;
 
 		private Table table;
 		private Label[] labels;
 
 		private DateHandler handler;
 
-		public Weeks (MayaWindow window, DateHandler handler) {
+		public Weeks (CalendarWindow window, DateHandler handler) {
 
 			this.window = window;
 			this.handler = handler;

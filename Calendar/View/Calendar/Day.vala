@@ -1,29 +1,31 @@
-//
-//  Copyright (C) 2011 Maxwell Barvian
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-//
+/*-
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authored by: Maxwell Barvian
+ */
 
 using Gtk;
 using Gdk;
 using Cairo;
 
-namespace Maya.Widgets {
+namespace Calendar.Widgets {
 
 	public class Day : Gtk.EventBox {
 
-		private MayaWindow window;
+		private CalendarWindow window;
 		private Label label;
 		private VBox vbox;
 
@@ -31,7 +33,7 @@ namespace Maya.Widgets {
 
 		//public EventsList eventslist { get; private set; }
 
-		public Day (MayaWindow window) {
+		public Day (CalendarWindow window) {
 
 			this.window = window;
 
@@ -64,12 +66,12 @@ namespace Maya.Widgets {
 			notify["date"].connect (() => label.label = date.get_day_of_month ().to_string ());
 
 			/*// DEBUGGING:
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));
-			eventslist.add_event(new Maya.Widgets.Event(window));*/
+			eventslist.add_event(new Calendar.Widgets.Event(window));
+			eventslist.add_event(new Calendar.Widgets.Event(window));
+			eventslist.add_event(new Calendar.Widgets.Event(window));
+			eventslist.add_event(new Calendar.Widgets.Event(window));
+			eventslist.add_event(new Calendar.Widgets.Event(window));
+			eventslist.add_event(new Calendar.Widgets.Event(window));*/
 		}
 
 		private bool on_date_change (EventFocus event) {

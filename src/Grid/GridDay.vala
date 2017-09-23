@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
 /**
  * Represents a single day on the grid.
  */
-public class Maya.View.GridDay : Gtk.EventBox {
+public class Calendar.View.GridDay : Gtk.EventBox {
 
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.

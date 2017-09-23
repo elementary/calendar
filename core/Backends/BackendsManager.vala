@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2013 Maya Developers (https://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -14,14 +14,14 @@
  *
  * You should have received a copy of the GNU Library General Public
  * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301 USA.
  *
  * Authored by: Corentin Noël <tintou@mailoo.org>
  */
 
-public class Maya.BackendsManager : GLib.Object {
-    private static Maya.BackendsManager? backends_manager = null;
+public class Calendar.BackendsManager : GLib.Object {
+    private static Calendar.BackendsManager? backends_manager = null;
     
     public static BackendsManager get_default () {
         if (backends_manager == null)
@@ -51,7 +51,7 @@ public class Maya.BackendsManager : GLib.Object {
 
     private void load (string path) {
         if (Module.supported () == false) {
-            error ("Maya plugins are not supported by this system!");
+            error ("Calendar plugins are not supported by this system!");
         }
 
         Module module = Module.open (path, ModuleFlags.BIND_LAZY);
@@ -68,7 +68,7 @@ public class Maya.BackendsManager : GLib.Object {
         }
 
         RegisterPluginFunction register_plugin = (RegisterPluginFunction) function;
-        Maya.Backend plug = register_plugin (module);
+        Calendar.Backend plug = register_plugin (module);
         if (plug == null) {
             critical ("Unknown plugin type for %s !", path);
             return;

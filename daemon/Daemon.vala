@@ -1,21 +1,24 @@
-//
-//  Copyright (C) 2014 Corentin Noël
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-//
+/*-
+ * Copyright (c) 2011-2017 elementary LLC (https://elementary.io)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authored by: Corentin Noël <corentin@elementaryos.org>
+ */
 
-namespace MayaDaemon {
+
+namespace CalendarDaemon {
     const OptionEntry[] options =  {
         { "debug", 'd', 0, OptionArg.NONE, out has_debug,
         "Display debug statements on stdout", null},
@@ -77,11 +80,11 @@ namespace MayaDaemon {
 
     public void load_today_events () {
         event_uid = new Gee.HashMap<E.CalComponent, string> ();
-        var model = Maya.Model.CalendarModel.get_default ();
+        var model = Calendar.Model.CalendarModel.get_default ();
         model.events_added.connect (on_events_added);
         model.events_updated.connect (on_events_updated);
         model.events_removed.connect (on_events_removed);
-        model.month_start = Maya.Util.get_start_of_month (new DateTime.now_local ());
+        model.month_start = Calendar.Util.get_start_of_month (new DateTime.now_local ());
     }
 
     void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
@@ -129,7 +132,7 @@ namespace MayaDaemon {
                     e_alarm.get_trigger (out trigger);
                     if (trigger.type == E.CalComponentAlarmTriggerType.RELATIVE_START) {
                         iCal.DurationType duration = trigger.rel_duration;
-                        var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+                        var start_time = Calendar.Util.ical_to_date_time (comp.get_dtstart ());
                         var now = new DateTime.now_local ();
                         if (now.compare (start_time) > 0) {
                             continue;
@@ -183,7 +186,7 @@ namespace MayaDaemon {
         // Don't show notifications if the window is active
 
         if (!Notify.is_initted ()) {
-            if (!Notify.init ("net.launchpad.maya")) {
+            if (!Notify.init ("io.elementary.calendar")) {
                 warning ("Could not init libnotify");
                 return;
             }
@@ -191,7 +194,7 @@ namespace MayaDaemon {
 
         unowned iCal.Component comp = event.get_icalcomponent ();
         var primary_text = "%s".printf (comp.get_summary ());
-        var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+        var start_time = Calendar.Util.ical_to_date_time (comp.get_dtstart ());
         var now = new DateTime.now_local ();
         string secondary_text = "";
         var h24_settings = new Settings ("org.gnome.desktop.interface");
