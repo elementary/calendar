@@ -125,6 +125,10 @@ namespace Maya {
             window.default_width = saved_state.window_width;
             window.default_height = saved_state.window_height;
 
+            if (saved_state.window_state == Settings.WindowState.MAXIMIZED) {
+                window.maximize ();
+            }
+
             window.delete_event.connect (on_window_delete_event);
             window.destroy.connect (on_quit);
 
@@ -163,35 +167,9 @@ namespace Maya {
             hpaned.pack2 (sidebar, true, false);
             hpaned.position = saved_state.hpaned_position;
 
-            var infobar_label = new Gtk.Label (null);
-            infobar_label.show ();
-
-            var infobar = new Gtk.InfoBar ();
-            infobar.message_type = Gtk.MessageType.ERROR;
-            infobar.show_close_button = true;
-            infobar.get_content_area ().add (infobar_label);
-            infobar.no_show_all = true;
-            infobar.response.connect ((id) => infobar.hide ());
-
-            Model.CalendarModel.get_default ().error_received.connect ((message) => {
-                Idle.add (() => {
-                    infobar_label.label = message;
-                    infobar.show ();
-                    return false;
-                });
-            });
-
-            var gridcontainer = new Gtk.Grid ();
-            gridcontainer.orientation = Gtk.Orientation.VERTICAL;
-            gridcontainer.add (infobar);
-            gridcontainer.add (hpaned);
-
-            window.add (gridcontainer);
+            window.grid.add (hpaned);
 
             add_window (window);
-
-            if (saved_state.window_state == Settings.WindowState.MAXIMIZED)
-                window.maximize ();
         }
 
         /**
