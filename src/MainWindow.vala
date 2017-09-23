@@ -20,6 +20,8 @@
  */
 
 public class Maya.MainWindow : Gtk.ApplicationWindow {
+    public Gtk.Grid grid;
+
     public MainWindow (Gtk.Application application) {
         Object (
             application: application,
@@ -32,5 +34,30 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     construct {
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/org/pantheon/maya");
+
+        var infobar_label = new Gtk.Label (null);
+        infobar_label.show ();
+
+        var infobar = new Gtk.InfoBar ();
+        infobar.message_type = Gtk.MessageType.ERROR;
+        infobar.no_show_all = true;
+        infobar.show_close_button = true;
+        infobar.get_content_area ().add (infobar_label);
+
+        grid = new Gtk.Grid ();
+        grid.orientation = Gtk.Orientation.VERTICAL;
+        grid.add (infobar);
+
+        add (grid);
+
+        infobar.response.connect ((id) => infobar.hide ());
+
+        Model.CalendarModel.get_default ().error_received.connect ((message) => {
+            Idle.add (() => {
+                infobar_label.label = message;
+                infobar.show ();
+                return false;
+            });
+        });
     }
 }
