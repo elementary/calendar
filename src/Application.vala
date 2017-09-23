@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (https://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,48 +20,18 @@
  */
 
 namespace Maya {
-
     namespace Option {
-
         private static bool ADD_EVENT = false;
         private static string SHOW_DAY = null;
         private static bool PRINT_VERSION = false;
-
     }
 
-    public static int main (string[] args) {
-
-        var context = new OptionContext (_("Calendar"));
-        context.add_main_entries (Application.app_options, "maya");
-        context.add_group (Gtk.get_option_group (true));
-
-        try {
-            context.parse (ref args);
-        } catch (Error e) {
-            warning (e.message);
-        }
-
-        if (Option.PRINT_VERSION) {
-            stdout.printf("Maya %s\n", Build.VERSION);
-            stdout.printf("Copyright 2011-2015 Maya Developers.\n");
-            return 0;
-        }
-
-        GtkClutter.init (ref args);
-        var app = new Application ();
-
-        return app.run (args);
-
-    }
-
-    /**
-     * Main application class.
-     */
     public class Application : Granite.Application {
+        public MainWindow window;
+        private View.CalendarView calview;
+        private View.AgendaView sidebar;
+        private Gtk.Paned hpaned;
 
-        /**
-         * Initializes environment variables
-         */
         construct {
             flags |= ApplicationFlags.HANDLES_OPEN;
 
@@ -91,18 +61,6 @@ namespace Maya {
             { null }
         };
 
-        public Gtk.Window window;
-        View.MayaToolbar toolbar;
-        View.CalendarView calview;
-        View.AgendaView sidebar;
-        Gtk.Paned hpaned;
-        Gtk.Grid gridcontainer;
-        Gtk.InfoBar infobar;
-        Gtk.Label infobar_label;
-
-        /**
-         * Called when the application is activated.
-         */
         protected override void activate () {
             if (get_windows () != null) {
                 get_windows ().data.present (); // present window if app is already running
@@ -150,16 +108,42 @@ namespace Maya {
             var dialog = new Maya.View.ImportDialog (files);
             dialog.transient_for = window;
             dialog.show_all ();
-            if (first_start)
+
+            if (first_start) {
                 Gtk.main ();
+            }
         }
 
         /**
          * Initializes the graphical window and its components
          */
         void init_gui () {
-            create_window ();
             var saved_state = Settings.SavedState.get_default ();
+
+            window = new MainWindow (this);
+            window.title = program_name;
+            window.default_width = saved_state.window_width;
+            window.default_height = saved_state.window_height;
+
+            window.delete_event.connect (on_window_delete_event);
+            window.destroy.connect (on_quit);
+
+            window.key_press_event.connect ((e) => {
+                uint keycode = e.hardware_keycode;
+                if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                    if (match_keycode (Gdk.Key.q, keycode) || match_keycode (Gdk.Key.w, keycode)) {
+                        window.destroy ();
+                    }
+                }
+                
+                return false;
+            });
+
+            var toolbar = new View.MayaToolbar ();
+            toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.selected_date));
+            toolbar.on_menu_today_toggled.connect (on_menu_today_toggled);
+            toolbar.on_search.connect ((text) => on_search (text));
+            window.set_titlebar (toolbar);
 
             sidebar = new View.AgendaView ();
             // Don't automatically display all the widgets on the sidebar
@@ -175,22 +159,21 @@ namespace Maya {
             calview.edition_request.connect (on_modified);
             calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
-            gridcontainer = new Gtk.Grid ();
-            gridcontainer.orientation = Gtk.Orientation.VERTICAL;
-
             hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
             hpaned.pack1 (calview, true, false);
             hpaned.pack2 (sidebar, true, false);
             hpaned.position = saved_state.hpaned_position;
 
-            infobar_label = new Gtk.Label (null);
+            var infobar_label = new Gtk.Label (null);
             infobar_label.show ();
-            infobar = new Gtk.InfoBar ();
+
+            var infobar = new Gtk.InfoBar ();
             infobar.message_type = Gtk.MessageType.ERROR;
             infobar.show_close_button = true;
             infobar.get_content_area ().add (infobar_label);
             infobar.no_show_all = true;
             infobar.response.connect ((id) => infobar.hide ());
+
             Model.CalendarModel.get_default ().error_received.connect ((message) => {
                 Idle.add (() => {
                     infobar_label.label = message;
@@ -199,8 +182,11 @@ namespace Maya {
                 });
             });
 
+            var gridcontainer = new Gtk.Grid ();
+            gridcontainer.orientation = Gtk.Orientation.VERTICAL;
             gridcontainer.add (infobar);
             gridcontainer.add (hpaned);
+
             window.add (gridcontainer);
 
             add_window (window);
@@ -239,41 +225,6 @@ namespace Maya {
 
             return false;
         }
-
-        /**
-         * Creates the main window.
-         */
-        void create_window () {
-            weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-            default_theme.add_resource_path ("/org/pantheon/maya");
-            var saved_state = Settings.SavedState.get_default ();
-            window = new Gtk.Window ();
-            window.title = program_name;
-            window.icon_name = "office-calendar";
-            window.set_size_request (625, 400);
-            window.default_width = saved_state.window_width;
-            window.default_height = saved_state.window_height;
-            window.window_position = Gtk.WindowPosition.CENTER;
-
-            window.delete_event.connect (on_window_delete_event);
-            window.destroy.connect (on_quit);
-            window.key_press_event.connect ((e) => {
-                uint keycode = e.hardware_keycode;
-                if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                    if (match_keycode (Gdk.Key.q, keycode) || match_keycode (Gdk.Key.w, keycode)) {
-                        window.destroy ();
-                    }
-                }
-                
-                return false;
-            });
-
-            toolbar = new View.MayaToolbar ();
-            toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.selected_date));
-            toolbar.on_menu_today_toggled.connect (on_menu_today_toggled);
-            toolbar.on_search.connect ((text) => on_search (text));
-            window.set_titlebar (toolbar);
-        }
         
         void on_quit () {
             Model.CalendarModel.get_default ().delete_trashed_calendars ();
@@ -281,15 +232,15 @@ namespace Maya {
         }
 
         void update_saved_state () {
-
             debug("Updating saved state");
 
             // Save window state
             var saved_state = Settings.SavedState.get_default ();
-            if ((window.get_window ().get_state () & Settings.WindowState.MAXIMIZED) != 0)
+            if ((window.get_window ().get_state () & Settings.WindowState.MAXIMIZED) != 0) {
                 saved_state.window_state = Settings.WindowState.MAXIMIZED;
-            else
+            } else {
                 saved_state.window_state = Settings.WindowState.NORMAL;
+            }
 
             // Save window size
             if (saved_state.window_state == Settings.WindowState.NORMAL) {
@@ -325,7 +276,28 @@ namespace Maya {
         void on_menu_today_toggled () {
             calview.today ();
         }
-
     }
 
+    public static int main (string[] args) {
+        var context = new OptionContext (_("Calendar"));
+        context.add_main_entries (Application.app_options, "maya");
+        context.add_group (Gtk.get_option_group (true));
+
+        try {
+            context.parse (ref args);
+        } catch (Error e) {
+            warning (e.message);
+        }
+
+        if (Option.PRINT_VERSION) {
+            stdout.printf("Maya %s\n", Build.VERSION);
+            stdout.printf("Copyright 2011-2015 Maya Developers.\n");
+            return 0;
+        }
+
+        GtkClutter.init (ref args);
+        var app = new Application ();
+
+        return app.run (args);
+    }
 }
