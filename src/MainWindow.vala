@@ -26,7 +26,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         Object (
             application: application,
             height_request: 400,
-            icon_name: "office-calendar",
+            icon_name: "maya-calendar",
             width_request: 625
         );
     }

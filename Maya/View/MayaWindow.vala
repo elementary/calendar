@@ -65,7 +65,7 @@ namespace Maya.Widgets {
 			
 			// Window Properties
 			title = "Maya";
-			icon_name = "office-calendar";
+			icon_name = "maya-calendar";
 			set_size_request (700, 400);
 			
 			restore_saved_state ();

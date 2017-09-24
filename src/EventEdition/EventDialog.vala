@@ -90,7 +90,7 @@ public class EventDialog : Gtk.Dialog {
             repeat_panel = new EventEdition.RepeatPanel (this);
 
             mode_button = new Granite.Widgets.ModeButton ();
-            var info_icon = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.BUTTON);
+            var info_icon = new Gtk.Image.from_icon_name ("maya-calendar-symbolic", Gtk.IconSize.BUTTON);
             info_icon.tooltip_text = _("General Informations");
             mode_button.append (info_icon);
             var location_icon = new Gtk.Image.from_icon_name ("mark-location-symbolic", Gtk.IconSize.BUTTON);
