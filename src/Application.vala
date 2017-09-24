@@ -145,7 +145,6 @@ namespace Maya {
             var toolbar = new View.MayaToolbar ();
             toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.selected_date));
             toolbar.on_menu_today_toggled.connect (on_menu_today_toggled);
-            toolbar.on_search.connect ((text) => on_search (text));
             window.set_titlebar (toolbar);
 
             sidebar = new View.AgendaView ();
@@ -238,13 +237,6 @@ namespace Maya {
             var dialog = new Maya.View.EventDialog (null, dt);
             dialog.transient_for = window;
             dialog.show_all ();
-        }
-
-        /**
-         * Called when the search_bar is used.
-         */
-        void on_search (string text) {
-            sidebar.set_search_text (text);
         }
 
         void on_menu_today_toggled () {

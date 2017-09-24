@@ -29,7 +29,6 @@ namespace Maya.View {
         public signal void add_calendar_clicked ();
         
         // Toolbar items
-        public Gtk.SearchEntry search_bar;
         Widgets.DateSwitcher month_switcher;
         Widgets.DateSwitcher year_switcher;
         Widgets.DynamicSpinner spinner;
@@ -60,10 +59,6 @@ namespace Maya.View {
             var calmodel = Model.CalendarModel.get_default ();
             set_switcher_date (calmodel.month_start);
 
-            search_bar = new Gtk.SearchEntry ();
-            search_bar.placeholder_text = _("Search Events");
-            search_bar.sensitive = false;
-
             var contractor = new Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
 
             var title_grid = new Gtk.Grid ();
@@ -78,13 +73,11 @@ namespace Maya.View {
             pack_start (spinner);
             set_custom_title (title_grid);
             pack_end (button_calendar_sources);
-            //pack_end (search_bar);
             pack_end (contractor);
 
             // Connect to signals
             button_add.clicked.connect (() => add_calendar_clicked ());
             button_today.clicked.connect (() => { on_menu_today_toggled (); });
-            search_bar.search_changed.connect (() => on_search (search_bar.text));
             month_switcher.left_clicked.connect (() => {Model.CalendarModel.get_default ().change_month (-1);});
             month_switcher.right_clicked.connect (() => {Model.CalendarModel.get_default ().change_month (1);});
             year_switcher.left_clicked.connect (() => {Model.CalendarModel.get_default ().change_year (-1);});
