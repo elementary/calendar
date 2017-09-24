@@ -20,7 +20,7 @@
  */
 
 public class Maya.MainWindow : Gtk.ApplicationWindow {
-    public Gtk.Grid grid;
+    public Gtk.Paned hpaned;
 
     public MainWindow (Gtk.Application application) {
         Object (
@@ -44,9 +44,12 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         infobar.show_close_button = true;
         infobar.get_content_area ().add (infobar_label);
 
-        grid = new Gtk.Grid ();
+        hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
+
+        var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
         grid.add (infobar);
+        grid.add (hpaned);
 
         add (grid);
 
