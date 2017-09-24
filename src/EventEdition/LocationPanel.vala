@@ -93,7 +93,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         point.draggable = parent_dialog.can_edit;
         point.drag_finish.connect (() => {
             map_selected = true;
-            find_location (point.latitude, point.longitude);
+            find_location.begin (point.latitude, point.longitude);
         });
 
         if (parent_dialog.ecal != null) {
