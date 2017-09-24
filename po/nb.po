@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-03-12 16:15+0000\n"
-"Last-Translator: ProsjektX <Unknown>\n"
-"Language-Team: Norwegian Bokmal <nb@li.org>\n"
+"PO-Revision-Date: 2017-09-24 09:21+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål "
+"<https://weblate.elementary.io/projects/calendar/calendar/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
@@ -682,7 +683,7 @@ msgstr "På denne maskinen"
 
 #: ../core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr "Bruker"
+msgstr "Bruker:"
 
 #: ../core/Backends/PlacementWidget.vala:50
 msgid "user.name"
