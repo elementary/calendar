@@ -30,7 +30,6 @@ namespace Maya {
         public MainWindow window;
         private View.CalendarView calview;
         private View.AgendaView sidebar;
-        private Gtk.Paned hpaned;
 
         construct {
             flags |= ApplicationFlags.HANDLES_OPEN;
@@ -163,12 +162,9 @@ namespace Maya {
             calview.edition_request.connect (on_modified);
             calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
-            hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-            hpaned.pack1 (calview, true, false);
-            hpaned.pack2 (sidebar, true, false);
-            hpaned.position = saved_state.hpaned_position;
-
-            window.grid.add (hpaned);
+            window.hpaned.pack1 (calview, true, false);
+            window.hpaned.pack2 (sidebar, true, false);
+            window.hpaned.position = saved_state.hpaned_position;
 
             add_window (window);
         }
@@ -228,7 +224,7 @@ namespace Maya {
                 saved_state.window_height = height;
             }
 
-            saved_state.hpaned_position = hpaned.position;
+            saved_state.hpaned_position = window.hpaned.position;
         }
 
         //--- SIGNAL HANDLERS ---//
