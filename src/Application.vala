@@ -143,7 +143,7 @@ namespace Maya {
                 return false;
             });
 
-            var toolbar = new View.MayaToolbar ();
+            var toolbar = new View.HeaderBar ();
             toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.selected_date));
             toolbar.on_menu_today_toggled.connect (on_menu_today_toggled);
             toolbar.on_search.connect ((text) => on_search (text));
