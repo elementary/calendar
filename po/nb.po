@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-09-24 09:21+0000\n"
+"PO-Revision-Date: 2017-09-25 11:01+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://weblate.elementary.io/projects/calendar/calendar/nb/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
-msgstr "Legg til ny kalender..."
+msgstr "Legg til ny kalender…"
 
 #: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
 msgid "Remove"
@@ -30,7 +30,7 @@ msgstr "Slett"
 
 #: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
 msgid "Edit…"
-msgstr "Rediger..."
+msgstr "Rediger…"
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
@@ -122,7 +122,7 @@ msgstr "Avslått"
 
 #: ../src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
-msgstr "Påminnelser"
+msgstr "Påminnelser:"
 
 #: ../src/EventEdition/ReminderPanel.vala:37
 msgid "No Reminders"
