@@ -65,7 +65,7 @@ namespace Maya.Widgets {
 			
 			// Window Properties
 			title = "Maya";
-			icon_name = "maya-calendar";
+			icon_name = "io.elementary.calendar";
 			set_size_request (700, 400);
 			
 			restore_saved_state ();

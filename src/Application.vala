@@ -47,7 +47,7 @@ namespace Maya {
 
             app_years = "2011-2016";
             application_id = "org.pantheon.maya";
-            app_icon = "maya-calendar";
+            app_icon = "io.elementary.calendar";
             app_launcher = "org.pantheon.maya.desktop";
 
             Intl.setlocale (LocaleCategory.ALL, "");

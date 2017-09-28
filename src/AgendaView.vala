@@ -469,7 +469,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
             var rgba = Gdk.RGBA();
             rgba.parse (cal.dup_color ());
 
-            event_image = new Gtk.Image.from_icon_name ("maya-calendar-symbolic", Gtk.IconSize.MENU);
+            event_image = new Gtk.Image.from_icon_name ("io.elementary.calendar-symbolic", Gtk.IconSize.MENU);
             event_image.override_color (Gtk.StateFlags.NORMAL, rgba);
             event_image.margin_start = 6;
 

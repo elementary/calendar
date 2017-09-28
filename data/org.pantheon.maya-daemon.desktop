@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Maya Daemon
 Comment=View Event Reminders
-Icon=maya-calendar
+Icon=io.elementary.calendar
 Exec=maya-calendar-daemon
 Terminal=false
 Type=Application
