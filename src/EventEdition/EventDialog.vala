@@ -79,7 +79,6 @@ public class EventDialog : Gtk.Dialog {
             reminder_panel = new EventEdition.ReminderPanel (this);
             repeat_panel = new EventEdition.RepeatPanel (this);
 
-
             var handler = new Maya.Services.EventParserHandler ();
             var parser = handler.get_parser (handler.get_locale ());
             if (handler.get_locale ().contains (parser.get_language ())) {
