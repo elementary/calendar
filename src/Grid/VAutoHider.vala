@@ -38,10 +38,31 @@ namespace Maya.View {
         }
 
         public override void add (Gtk.Widget widget) {
+            List<weak Gtk.Widget> children = main_box.get_children ();
+            children.append (widget);
+        
+            children.sort ((a, b) => {
+                EventButton a2 = a as EventButton;
+                EventButton b2 = b as EventButton;
+                
+                if (a2 == null) {
+                    return 1;
+                } else if (b2 == null) {
+                    return 0;
+                } else {
+                    return Util.compare_events (a2.comp, b2.comp);
+                }
+            });
+            
+            int index = children.index (widget);
+            
             main_box.add (widget);
+            main_box.reorder_child (widget, index);
+            
             widget.destroy.connect (() => {
                 queue_resize ();
             });
+            
             queue_resize ();
         }
 
@@ -124,7 +145,7 @@ namespace Maya.View {
             revealer.transition_duration = reveal_duration;
             revealer.show ();
         }
-
+        
         public override void get_preferred_width (out int minimum_width, out int natural_width) {
             base.get_preferred_width (out minimum_width, out natural_width);
             more_label.get_preferred_width (out minimum_width, null);
