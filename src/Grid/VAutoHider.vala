@@ -55,7 +55,6 @@ namespace Maya.View {
             });
             
             int index = children.index (widget);
-            
             main_box.add (widget);
             main_box.reorder_child (widget, index);
             
@@ -145,7 +144,7 @@ namespace Maya.View {
             revealer.transition_duration = reveal_duration;
             revealer.show ();
         }
-        
+
         public override void get_preferred_width (out int minimum_width, out int natural_width) {
             base.get_preferred_width (out minimum_width, out natural_width);
             more_label.get_preferred_width (out minimum_width, null);
