@@ -66,7 +66,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
             }
         });
 
-        Settings.SavedState.get_default ().changed["show-weeks"].connect (on_show_weeks_changed);
+        Settings.WeekSettings.get_default ().changed["show-weeks"].connect (on_show_weeks_changed);
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         events |= Gdk.EventMask.KEY_PRESS_MASK;
         events |= Gdk.EventMask.SCROLL_MASK;
@@ -123,7 +123,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
     void on_show_weeks_changed () {
         var model = Model.CalendarModel.get_default ();
         weeks.update (model.data_range.first_dt, model.num_weeks);
-        if (Settings.SavedState.get_default ().show_weeks == true) {
+        if (Settings.WeekSettings.get_default ().show_weeks == true) {
             grid.draw_first_line_column (true);
             header.draw_left_border = true;
         }

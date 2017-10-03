@@ -65,14 +65,14 @@ public class Header : Gtk.EventBox {
                 var menu = new Gtk.Menu ();
                 menu.attach_to_widget (this, null);
                 var show_weeks_menuitem = new Gtk.MenuItem ();
-                if (Settings.SavedState.get_default ().show_weeks == true) {
+                if (Settings.WeekSettings.get_default ().show_weeks == true) {
                     show_weeks_menuitem.label = _("Hide Week Numbers");
                 } else {
                     show_weeks_menuitem.label = _("Show Week Numbers");
                 }
 
                 show_weeks_menuitem.activate.connect (() => {
-                    Settings.SavedState.get_default ().show_weeks = !Settings.SavedState.get_default ().show_weeks;
+                    Settings.WeekSettings.get_default ().show_weeks = !Settings.WeekSettings.get_default ().show_weeks;
                 });
                 menu.add (show_weeks_menuitem);
                 menu.show_all ();
