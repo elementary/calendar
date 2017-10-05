@@ -67,8 +67,8 @@ public class Maya.View.CalendarView : Gtk.Grid {
             }
         });
 
-        if (GLib.SettingsSchemaSource.get_default ().lookup (Util.show_weeks_schema, false) != null) {
-            show_weeks = new GLib.Settings (Util.show_weeks_schema);
+        if (GLib.SettingsSchemaSource.get_default ().lookup (Util.SHOW_WEEKS_SCHEMA, false) != null) {
+            show_weeks = new GLib.Settings (Util.SHOW_WEEKS_SCHEMA);
             show_weeks.changed["show-weeks"].connect (on_show_weeks_changed);
             show_weeks.get_value ("show-weeks");
         } else {

@@ -724,8 +724,8 @@ namespace Maya.Util {
     public const string SHOW_WEEKS_SCHEMA = "org.pantheon.desktop.wingpanel.indicators.datetime";
     
     public bool show_weeks () {
-        if (GLib.SettingsSchemaSource.get_default ().lookup (show_weeks_schema, false) != null) {
-            GLib.Settings weeks = new GLib.Settings (show_weeks_schema);
+        if (GLib.SettingsSchemaSource.get_default ().lookup (SHOW_WEEKS_SCHEMA, false) != null) {
+            GLib.Settings weeks = new GLib.Settings (SHOW_WEEKS_SCHEMA);
             return weeks.get_boolean ("show-weeks");
         } else {
             return Settings.SavedState.get_default ().show_weeks;
@@ -733,8 +733,8 @@ namespace Maya.Util {
     }
     
     public void toggle_show_weeks () {
-        if (GLib.SettingsSchemaSource.get_default ().lookup (show_weeks_schema, false)!= null) {
-            GLib.Settings weeks = new GLib.Settings (show_weeks_schema);
+        if (GLib.SettingsSchemaSource.get_default ().lookup (SHOW_WEEKS_SCHEMA, false)!= null) {
+            GLib.Settings weeks = new GLib.Settings (SHOW_WEEKS_SCHEMA);
             weeks.set_boolean ("show-weeks", !weeks.get_boolean ("show-weeks"));
         } else {
             Settings.SavedState.get_default ().show_weeks = !Settings.SavedState.get_default ().show_weeks;
