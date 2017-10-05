@@ -721,7 +721,7 @@ namespace Maya.Util {
         return "#%02X%02X%02X".printf ((uint)(color.red*255), (uint)(color.green*255), (uint)(color.blue*255));
     }
     
-    public const string show_weeks_schema = "org.pantheon.desktop.wingpanel.indicators.datetime";
+    public const string SHOW_WEEKS_SCHEMA = "org.pantheon.desktop.wingpanel.indicators.datetime";
     
     public bool show_weeks () {
         if (GLib.SettingsSchemaSource.get_default ().lookup (show_weeks_schema, false) != null) {
