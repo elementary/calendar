@@ -720,5 +720,29 @@ namespace Maya.Util {
     public string get_hexa_color (Gdk.RGBA color) {
         return "#%02X%02X%02X".printf ((uint)(color.red*255), (uint)(color.green*255), (uint)(color.blue*255));
     }
+    
+    /*
+     * Handles Week Settings
+     */
+    
+    public bool show_weeks () {
+        if (GLib.SettingsSchemaSource.get_default ().lookup ("org.pantheon.desktop.wingpanel.indicators.datetime", false) != null) {
+            GLib.Settings weeks = new GLib.Settings ("org.pantheon.desktop.wingpanel.indicators.datetime");
+            return weeks.get_boolean ("show-weeks");
+        }
+        else {
+            return Settings.SavedState.get_default ().show_weeks;
+        }
+    }
+    
+    public void toggle_show_weeks () {
+        if (GLib.SettingsSchemaSource.get_default ().lookup ("org.pantheon.desktop.wingpanel.indicators.datetime", false)!= null) {
+            GLib.Settings weeks = new GLib.Settings ("org.pantheon.desktop.wingpanel.indicators.datetime");
+            weeks.set_boolean ("show-weeks", !weeks.get_boolean ("show-weeks"));
+        }
+        else {
+            Settings.SavedState.get_default ().show_weeks = !Settings.SavedState.get_default ().show_weeks;
+        }
+    }
 
 }
