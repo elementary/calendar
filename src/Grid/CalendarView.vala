@@ -73,7 +73,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
             show_weeks.get_value ("show-weeks");
         }
         else {
-            Settings.SavedState.get_default ().changed["show_weeks"].connect (on_show_weeks_changed);
+            Settings.SavedState.get_default ().changed["show-weeks"].connect (on_show_weeks_changed);
         }
         
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
