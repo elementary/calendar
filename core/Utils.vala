@@ -721,26 +721,22 @@ namespace Maya.Util {
         return "#%02X%02X%02X".printf ((uint)(color.red*255), (uint)(color.green*255), (uint)(color.blue*255));
     }
     
-    /*
-     * Handles Week Settings
-     */
+    public const string show_weeks_schema = "org.pantheon.desktop.wingpanel.indicators.datetime";
     
     public bool show_weeks () {
-        if (GLib.SettingsSchemaSource.get_default ().lookup ("org.pantheon.desktop.wingpanel.indicators.datetime", false) != null) {
-            GLib.Settings weeks = new GLib.Settings ("org.pantheon.desktop.wingpanel.indicators.datetime");
+        if (GLib.SettingsSchemaSource.get_default ().lookup (show_weeks_schema, false) != null) {
+            GLib.Settings weeks = new GLib.Settings (show_weeks_schema);
             return weeks.get_boolean ("show-weeks");
-        }
-        else {
+        } else {
             return Settings.SavedState.get_default ().show_weeks;
         }
     }
     
     public void toggle_show_weeks () {
-        if (GLib.SettingsSchemaSource.get_default ().lookup ("org.pantheon.desktop.wingpanel.indicators.datetime", false)!= null) {
-            GLib.Settings weeks = new GLib.Settings ("org.pantheon.desktop.wingpanel.indicators.datetime");
+        if (GLib.SettingsSchemaSource.get_default ().lookup (show_weeks_schema, false)!= null) {
+            GLib.Settings weeks = new GLib.Settings (show_weeks_schema);
             weeks.set_boolean ("show-weeks", !weeks.get_boolean ("show-weeks"));
-        }
-        else {
+        } else {
             Settings.SavedState.get_default ().show_weeks = !Settings.SavedState.get_default ().show_weeks;
         }
     }
