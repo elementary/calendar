@@ -136,7 +136,7 @@ public class WeekLabels : Gtk.Revealer {
         cr.stroke ();
         return false;
     }
-    
+
 }
 
 }
