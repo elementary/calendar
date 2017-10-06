@@ -225,8 +225,25 @@ public class Grid : Gtk.Grid {
     }
 
     public void update_event (E.CalComponent event) {
+        Gee.Collection<Util.DateRange> event_ranges = Util.event_date_ranges (event.get_icalcomponent (), grid_range);
         foreach (var grid_day in data.values) {
-            grid_day.update_event (event);
+            bool contains = false;
+            foreach (Util.DateRange event_range in event_ranges) {
+                if (event_range.contains (grid_day.date)) {
+                    contains = true;
+                }
+            }
+            if (contains) {
+                if (!grid_day.update_event (event)) {
+                    EventButton button = new EventButton (event);
+                    add_button_for_day (grid_day.date, button);
+                    button.edition_request.connect (() => {
+                        edition_request (event);
+                    });
+                }
+            } else {
+                grid_day.remove_event (event);
+            }
         }
     }
 
