@@ -148,6 +148,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
     public bool update_event (E.CalComponent comp) {
         unowned iCal.Component calcomp = comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();
+
         lock (event_buttons) {
             var button = event_buttons.get (uid);
             if (button != null) {
@@ -156,6 +157,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
                 return false;
             }
         }
+
         return true;
     }
 
