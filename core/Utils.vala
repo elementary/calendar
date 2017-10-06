@@ -144,6 +144,17 @@ namespace Maya.Util {
 
         return false;
     }
+    
+    public bool is_day_in_range (DateTime day, Util.DateRange range) {
+        var date = day.get_day_of_year ();
+        
+        foreach (var dt in range) {
+            if (dt.get_day_of_year () == date && dt.get_year () == day.get_year ()) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public Gee.Collection<DateRange> event_date_ranges (iCal.Component comp, Util.DateRange view_range) {
         var dateranges = new Gee.LinkedList<DateRange> ();

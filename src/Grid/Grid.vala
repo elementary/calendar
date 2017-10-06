@@ -229,7 +229,7 @@ public class Grid : Gtk.Grid {
         foreach (var grid_day in data.values) {
             bool contains = false;
             foreach (Util.DateRange event_range in event_ranges) {
-                if (event_range.contains (grid_day.date)) {
+                if (Util.is_day_in_range (grid_day.date, event_range)) {
                     contains = true;
                 }
             }
