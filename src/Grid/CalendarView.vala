@@ -213,8 +213,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     /* Update the event on the grid */
     void update_event (E.Source source, E.CalComponent event) {
-        remove_event (source, event);
-        add_event (source, event);
+        grid.update_event (event);
     }
 
     /* Remove event from the grid */

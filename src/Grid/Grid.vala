@@ -224,6 +224,12 @@ public class Grid : Gtk.Grid {
         }
     }
 
+    public void update_event (E.CalComponent event) {
+        foreach (var grid_day in data.values) {
+            grid_day.update_event (event);
+        }
+    }
+
     /**
      * Removes all events from the grid.
      */

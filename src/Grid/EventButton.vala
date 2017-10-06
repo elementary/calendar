@@ -95,6 +95,11 @@ public class Maya.View.EventButton : Gtk.Revealer {
         set_color (cal.dup_color ());
     }
 
+    public void update (E.CalComponent event) {
+       this.comp = comp;
+       label.label = get_summary ();
+    }
+
     public string get_summary () {
         return comp.get_summary ().value;
     }
