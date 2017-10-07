@@ -159,9 +159,9 @@ public class Grid : Gtk.Grid {
         }
 
         if (new_date.get_month () == month_start.get_month ()) {
-            day.sensitive_container (true);
+            day.set_current_month (true);
         } else {
-            day.sensitive_container (false);
+            day.set_current_month (false);
         }
 
         day.update_date (new_date);
