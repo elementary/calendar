@@ -131,16 +131,15 @@ namespace Maya {
             window.delete_event.connect (on_window_delete_event);
             window.destroy.connect (on_quit);
 
-            window.key_press_event.connect ((e) => {
-                uint keycode = e.hardware_keycode;
-                if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                    if (match_keycode (Gdk.Key.q, keycode) || match_keycode (Gdk.Key.w, keycode)) {
-                        window.destroy ();
-                    }
+            var quit_action = new SimpleAction ("quit", null);
+            quit_action.activate.connect (() => {
+                if (window != null) {
+                    window.destroy ();
                 }
-                
-                return false;
             });
+
+            add_action (quit_action);
+            add_accelerator ("<Control>q", "app.quit", null);
 
             var toolbar = new View.MayaToolbar ();
             toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.selected_date));
