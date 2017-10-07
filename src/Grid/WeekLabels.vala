@@ -46,19 +46,20 @@ public class WeekLabels : Gtk.Revealer {
         // EventBox properties
         day_grid.get_style_context().add_provider (style_provider, 600);
         day_grid.get_style_context().add_class ("weeks");
+        
         button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
                 var menu = new Gtk.Menu ();
                 menu.attach_to_widget (this, null);
                 var show_weeks_menuitem = new Gtk.MenuItem ();
-                if (Settings.SavedState.get_default ().show_weeks == true) {
+                if (Util.show_weeks ()) {
                     show_weeks_menuitem.label = _("Hide Week Numbers");
                 } else {
                     show_weeks_menuitem.label = _("Show Week Numbers");
                 }
 
                 show_weeks_menuitem.activate.connect (() => {
-                    Settings.SavedState.get_default ().show_weeks = !Settings.SavedState.get_default ().show_weeks;
+                    Util.toggle_show_weeks ();
                 });
                 menu.add (show_weeks_menuitem);
                 menu.show_all ();
@@ -75,7 +76,7 @@ public class WeekLabels : Gtk.Revealer {
 
         update_nr_of_labels (nr_of_weeks);
 
-        if (Settings.SavedState.get_default ().show_weeks) {
+        if (Util.show_weeks ()) {
             transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;
             set_reveal_child (true);
 
