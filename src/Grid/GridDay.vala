@@ -173,8 +173,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
         });
     }
 
-    public void set_current_month (bool sens) {
-        if (sens) {
+    public void set_current_month (bool current) {
+        if (current) {
             get_style_context ().remove_class ("other_month");
         } else {
             get_style_context ().add_class ("other_month");
