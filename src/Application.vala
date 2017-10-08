@@ -30,7 +30,6 @@ namespace Maya {
         public MainWindow window;
         private View.CalendarView calview;
         private View.AgendaView sidebar;
-        private Gtk.Paned hpaned;
 
         construct {
             flags |= ApplicationFlags.HANDLES_OPEN;
@@ -132,21 +131,19 @@ namespace Maya {
             window.delete_event.connect (on_window_delete_event);
             window.destroy.connect (on_quit);
 
-            window.key_press_event.connect ((e) => {
-                uint keycode = e.hardware_keycode;
-                if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                    if (match_keycode (Gdk.Key.q, keycode) || match_keycode (Gdk.Key.w, keycode)) {
-                        window.destroy ();
-                    }
+            var quit_action = new SimpleAction ("quit", null);
+            quit_action.activate.connect (() => {
+                if (window != null) {
+                    window.destroy ();
                 }
-                
-                return false;
             });
+
+            add_action (quit_action);
+            add_accelerator ("<Control>q", "app.quit", null);
 
             var toolbar = new View.HeaderBar ();
             toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.selected_date));
             toolbar.on_menu_today_toggled.connect (on_menu_today_toggled);
-            toolbar.on_search.connect ((text) => on_search (text));
             window.set_titlebar (toolbar);
 
             sidebar = new View.AgendaView ();
@@ -163,12 +160,9 @@ namespace Maya {
             calview.edition_request.connect (on_modified);
             calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
-            hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-            hpaned.pack1 (calview, true, false);
-            hpaned.pack2 (sidebar, true, false);
-            hpaned.position = saved_state.hpaned_position;
-
-            window.grid.add (hpaned);
+            window.hpaned.pack1 (calview, true, false);
+            window.hpaned.pack2 (sidebar, true, false);
+            window.hpaned.position = saved_state.hpaned_position;
 
             add_window (window);
         }
@@ -228,7 +222,7 @@ namespace Maya {
                 saved_state.window_height = height;
             }
 
-            saved_state.hpaned_position = hpaned.position;
+            saved_state.hpaned_position = window.hpaned.position;
         }
 
         //--- SIGNAL HANDLERS ---//
@@ -242,13 +236,6 @@ namespace Maya {
             var dialog = new Maya.View.EventDialog (null, dt);
             dialog.transient_for = window;
             dialog.show_all ();
-        }
-
-        /**
-         * Called when the search_bar is used.
-         */
-        void on_search (string text) {
-            sidebar.set_search_text (text);
         }
 
         void on_menu_today_toggled () {

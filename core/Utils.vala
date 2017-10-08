@@ -144,6 +144,17 @@ namespace Maya.Util {
 
         return false;
     }
+    
+    public bool is_day_in_range (DateTime day, Util.DateRange range) {
+        var date = day.get_day_of_year ();
+        
+        foreach (var dt in range) {
+            if (dt.get_day_of_year () == date && dt.get_year () == day.get_year ()) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public Gee.Collection<DateRange> event_date_ranges (iCal.Component comp, Util.DateRange view_range) {
         var dateranges = new Gee.LinkedList<DateRange> ();
@@ -719,6 +730,26 @@ namespace Maya.Util {
 
     public string get_hexa_color (Gdk.RGBA color) {
         return "#%02X%02X%02X".printf ((uint)(color.red*255), (uint)(color.green*255), (uint)(color.blue*255));
+    }
+    
+    public const string SHOW_WEEKS_SCHEMA = "org.pantheon.desktop.wingpanel.indicators.datetime";
+    
+    public bool show_weeks () {
+        if (GLib.SettingsSchemaSource.get_default ().lookup (SHOW_WEEKS_SCHEMA, false) != null) {
+            GLib.Settings weeks = new GLib.Settings (SHOW_WEEKS_SCHEMA);
+            return weeks.get_boolean ("show-weeks");
+        } else {
+            return Settings.SavedState.get_default ().show_weeks;
+        }
+    }
+    
+    public void toggle_show_weeks () {
+        if (GLib.SettingsSchemaSource.get_default ().lookup (SHOW_WEEKS_SCHEMA, false)!= null) {
+            GLib.Settings weeks = new GLib.Settings (SHOW_WEEKS_SCHEMA);
+            weeks.set_boolean ("show-weeks", !weeks.get_boolean ("show-weeks"));
+        } else {
+            Settings.SavedState.get_default ().show_weeks = !Settings.SavedState.get_default ().show_weeks;
+        }
     }
 
 }

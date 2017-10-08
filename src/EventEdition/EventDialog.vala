@@ -39,12 +39,6 @@ public class EventDialog : Gtk.Dialog {
         private E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
         private EventType event_type { get; private set; }
 
-        /**
-         * The different widgets in the dialog.
-         */
-        private Gtk.Stack stack;
-        private Granite.Widgets.ModeButton mode_button;
-
         private EventEdition.GuestsPanel guests_panel;
         private EventEdition.InfoPanel info_panel;
         private EventEdition.LocationPanel location_panel;
@@ -79,52 +73,11 @@ public class EventDialog : Gtk.Dialog {
         //--- Public Methods ---//
 
         void build_dialog (bool add_event) {
-            var grid = new Gtk.Grid ();
-            grid.row_spacing = 6;
-            grid.column_spacing = 12;
-            stack = new Gtk.Stack ();
             guests_panel = new EventEdition.GuestsPanel (this);
             info_panel = new EventEdition.InfoPanel (this);
             location_panel = new EventEdition.LocationPanel (this);
             reminder_panel = new EventEdition.ReminderPanel (this);
             repeat_panel = new EventEdition.RepeatPanel (this);
-
-            mode_button = new Granite.Widgets.ModeButton ();
-            var info_icon = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.BUTTON);
-            info_icon.tooltip_text = _("General Informations");
-            mode_button.append (info_icon);
-            var location_icon = new Gtk.Image.from_icon_name ("mark-location-symbolic", Gtk.IconSize.BUTTON);
-            location_icon.tooltip_text = _("Location");
-            mode_button.append (location_icon);
-            var guests_icon = new Gtk.Image.from_icon_name ("system-users-symbolic", Gtk.IconSize.BUTTON);
-            guests_icon.tooltip_text = _("Guests");
-            mode_button.append (guests_icon);
-            var reminder_icon = new Gtk.Image.from_icon_name ("alarm-symbolic", Gtk.IconSize.BUTTON);
-            reminder_icon.tooltip_text = _("Reminders");
-            mode_button.append (reminder_icon);
-            var repeat_icon = new Gtk.Image.from_icon_name ("media-playlist-repeat-symbolic", Gtk.IconSize.BUTTON);
-            repeat_icon.tooltip_text = _("Repeat");
-            mode_button.append (repeat_icon);
-            mode_button.selected = 0;
-            mode_button.mode_changed.connect ((widget) => {
-                switch (mode_button.selected) {
-                    case 0:
-                        stack.set_visible_child_name ("infopanel");
-                        break;
-                    case 1:
-                        stack.set_visible_child_name ("locationpanel");
-                        break;
-                    case 2:
-                        stack.set_visible_child_name ("guestspanel");
-                        break;
-                    case 3:
-                        stack.set_visible_child_name ("reminderpanel");
-                        break;
-                    case 4:
-                        stack.set_visible_child_name ("repeatpanel");
-                        break;
-                }
-            });
 
             var handler = new Maya.Services.EventParserHandler ();
             var parser = handler.get_parser (handler.get_locale ());
@@ -150,11 +103,23 @@ public class EventDialog : Gtk.Dialog {
                 });
             }
 
-            stack.add_named (info_panel, "infopanel");
-            stack.add_named (location_panel, "locationpanel");
-            stack.add_named (guests_panel, "guestspanel");
-            stack.add_named (reminder_panel, "reminderpanel");
-            stack.add_named (repeat_panel, "repeatpanel");
+            var stack = new Gtk.Stack ();
+            stack.add_titled (info_panel, "infopanel", _("General Informations"));
+            stack.add_titled (location_panel, "locationpanel", _("Location"));
+            stack.add_titled (guests_panel, "guestspanel", _("Guests"));
+            stack.add_titled (reminder_panel, "reminderpanel", _("Reminders"));
+            stack.add_titled (repeat_panel, "repeatpanel", _("Repeat"));
+            stack.child_set_property (info_panel, "icon-name", "office-calendar-symbolic");
+            stack.child_set_property (location_panel, "icon-name", "mark-location-symbolic");
+            stack.child_set_property (guests_panel, "icon-name", "system-users-symbolic");
+            stack.child_set_property (reminder_panel, "icon-name", "alarm-symbolic");
+            stack.child_set_property (repeat_panel, "icon-name", "media-playlist-repeat-symbolic");
+
+            var stack_switcher = new Gtk.StackSwitcher ();
+            stack_switcher.homogeneous = true;
+            stack_switcher.margin = 12;
+            stack_switcher.margin_top = 0;
+            stack_switcher.stack = stack;
 
             var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
             buttonbox.margin_top = 6;
@@ -184,16 +149,16 @@ public class EventDialog : Gtk.Dialog {
                 create_button.label = _("Save Changes");
             }
 
-            Gtk.Button cancel_button = new Gtk.Button.with_label (_("Cancel"));
+            var cancel_button = new Gtk.Button.with_label (_("Cancel"));
             cancel_button.clicked.connect (() => {this.destroy ();});
 
             buttonbox.add (cancel_button);
             buttonbox.add (create_button);
 
-            var top_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            top_box.set_center_widget (mode_button);
-
-            grid.attach (top_box, 0, 0, 1, 1);
+            var grid = new Gtk.Grid ();
+            grid.row_spacing = 6;
+            grid.column_spacing = 12;
+            grid.attach (stack_switcher, 0, 0, 1, 1);
             grid.attach (stack, 0, 1, 1, 1);
             grid.attach (buttonbox, 0, 2, 1, 1);
 
