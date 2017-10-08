@@ -153,6 +153,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
             var button = event_buttons.get (uid);
             if (button != null) {
                 button.update (comp);
+                event_box.update (button);
             } else {
                 return false;
             }
