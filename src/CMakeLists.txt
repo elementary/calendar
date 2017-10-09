@@ -3,7 +3,6 @@ set(CLIENT_SOURCE
     Application.vala
     ImportDialog.vala
     MainWindow.vala
-    MayaToolbar.vala
     EventEdition/ContactImage.vala
     EventEdition/EventDialog.vala
     EventEdition/GuestsPanel.vala
@@ -31,6 +30,7 @@ set(CLIENT_SOURCE
     Widgets/DateSwitcher.vala
     Widgets/DateTimePicker.vala
     Widgets/DynamicSpinner.vala
+    Widgets/HeaderBar.vala
 )
 
 vala_precompile(CLIENT_VALA_C ${CMAKE_PROJECT_NAME}
