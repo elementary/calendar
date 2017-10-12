@@ -95,6 +95,11 @@ public class Maya.View.EventButton : Gtk.Revealer {
         set_color (cal.dup_color ());
     }
 
+    public void update (E.CalComponent event) {
+       this.comp = comp;
+       label.label = get_summary ();
+    }
+
     public string get_summary () {
         return comp.get_summary ().value;
     }
@@ -104,15 +109,4 @@ public class Maya.View.EventButton : Gtk.Revealer {
         rgba.parse (color);
         event_box.override_background_color (Gtk.StateFlags.NORMAL, rgba);
     }
-
-    /**
-     * Compares the given buttons according to date.
-     */
-    public static GLib.CompareDataFunc<Maya.View.EventButton>? compare_buttons = (button1, button2) => {
-        var comp1 = button1.comp;
-        var comp2 = button2.comp;
-
-        return Util.compare_events (comp1, comp2);
-    };
-
 }
