@@ -37,6 +37,16 @@ public class Maya.View.GridDay : Gtk.EventBox {
     VAutoHider event_box;
     GLib.HashTable<string, EventButton> event_buttons;
 
+    public bool in_current_month {
+        set {
+            if (value) {
+                get_style_context ().remove_class ("other_month");
+            } else {
+                get_style_context ().add_class ("other_month");
+            }
+        }
+    }
+
     private const int EVENT_MARGIN = 3;
 
     public GridDay (DateTime date) {
@@ -188,14 +198,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
             button.destroy ();
             return false;
         });
-    }
-
-    public void set_current_month (bool current) {
-        if (current) {
-            get_style_context ().remove_class ("other_month");
-        } else {
-            get_style_context ().add_class ("other_month");
-        }
     }
 
     public void update_date (DateTime date) {

@@ -158,11 +158,7 @@ public class Grid : Gtk.Grid {
             day.name = "today";
         }
 
-        if (new_date.get_month () == month_start.get_month ()) {
-            day.set_current_month (true);
-        } else {
-            day.set_current_month (false);
-        }
+        day.in_current_month = new_date.get_month () == month_start.get_month ();
 
         day.update_date (new_date);
         return day;
