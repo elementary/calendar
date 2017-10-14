@@ -27,6 +27,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
     public E.CalComponent comp {get; private set;}
     private Gtk.EventBox event_box;
     private Gtk.Grid internal_grid;
+    private Gtk.Menu menu;
     Gtk.Label label;
 
     public EventButton (E.CalComponent comp) {
@@ -49,14 +50,24 @@ public class Maya.View.EventButton : Gtk.Revealer {
         event_box.add (internal_grid);
         event_box.button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY) {
-                E.Source src = comp.get_data ("source");
-                if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
-                    edition_request ();
-                    return true;
+                edit_event ();
+            } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
+                if (menu == null) {
+                    menu = new Gtk.Menu ();
+                    menu.attach_to_widget (this, null);
+                    var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
+                    var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
+                    edit_item.activate.connect (() => { edit_event (); });
+                    remove_item.activate.connect (() => { remove_event (); });
+                    menu.append (edit_item);
+                    menu.append (remove_item);
                 }
+
+                menu.popup (null, null, null, event.button, event.time);
+                menu.show_all ();
             }
 
-            return false;
+            return true;
         });
 
         Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
@@ -108,5 +119,20 @@ public class Maya.View.EventButton : Gtk.Revealer {
         var rgba = Gdk.RGBA();
         rgba.parse (color);
         event_box.override_background_color (Gtk.StateFlags.NORMAL, rgba);
+    }
+
+    private void edit_event () {
+        E.Source src = comp.get_data ("source");
+        if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
+            edition_request ();
+        }
+    }
+
+    private void remove_event () {
+        E.Source src = comp.get_data ("source");
+        if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
+            var calmodel = Model.CalendarModel.get_default ();
+            calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, E.CalObjModType.ALL);
+        }
     }
 }
