@@ -53,10 +53,17 @@ public class Maya.View.EventButton : Gtk.Revealer {
                 edit_event ();
             } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
                 if (menu == null) {
+                    E.Source src = comp.get_data ("source");
+
                     menu = new Gtk.Menu ();
                     menu.attach_to_widget (this, null);
                     var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
                     var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
+                    if (src.writable != true && Model.CalendarModel.get_default ().calclient_is_readonly (src) != false) {
+                        edit_item.sensitive = false;
+                        remove_item.sensitive = false;
+                    }
+
                     edit_item.activate.connect (() => { edit_event (); });
                     remove_item.activate.connect (() => { remove_event (); });
                     menu.append (edit_item);
