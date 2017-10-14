@@ -114,16 +114,6 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                         reminder.set_choice (false);
                     }
                     continue;
-                case (E.CalComponentAlarmAction.EMAIL):
-                    E.CalComponentAlarmTrigger trigger;
-                    e_alarm.get_trigger (out trigger);
-                    if (trigger.type == E.CalComponentAlarmTriggerType.RELATIVE_START) {
-                        iCal.DurationType duration = trigger.rel_duration;
-                        var reminder = add_reminder (alarm_uid);
-                        reminder.set_duration (duration);
-                        reminder.set_choice (true);
-                    }
-                    continue;
                 default:
                     continue;
             }
@@ -138,7 +128,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         foreach (var reminder in reminders) {
             if (reminder.uid == "") {
                 var alarm = new E.CalComponentAlarm ();
-                alarm.set_action (reminder.get_action ());
+                alarm.set_action (E.CalComponentAlarmAction.DISPLAY);
                 E.CalComponentAlarmTrigger trigger;
                 alarm.get_trigger (out trigger);
                 trigger.rel_duration = reminder.get_duration ();
@@ -147,7 +137,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 parent_dialog.ecal.add_alarm (alarm);
             } else if (reminder.change == true) {
                 var alarm = parent_dialog.ecal.get_alarm (reminder.uid);
-                alarm.set_action (reminder.get_action ());
+                alarm.set_action (E.CalComponentAlarmAction.DISPLAY);
                 E.CalComponentAlarmTrigger trigger;
                 alarm.get_trigger (out trigger);
                 trigger.type = E.CalComponentAlarmTriggerType.RELATIVE_START;
@@ -205,7 +195,6 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
 
         choice = new Gtk.ComboBoxText ();
         choice.append_text (_("Notification"));
-        choice.append_text (_("Email"));
         choice.active = 0;
         choice.hexpand = true;
         choice.changed.connect (() => {
@@ -324,13 +313,5 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
                 break;
         }
         return duration;
-    }
-
-    public E.CalComponentAlarmAction get_action () {
-        if (choice.active == 1) {
-            return E.CalComponentAlarmAction.EMAIL;
-        } else {
-            return E.CalComponentAlarmAction.DISPLAY;
-        }
     }
 }
