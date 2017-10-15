@@ -111,17 +111,6 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                         iCal.DurationType duration = trigger.rel_duration;
                         var reminder = add_reminder (alarm_uid);
                         reminder.set_duration (duration);
-                        reminder.set_choice (false);
-                    }
-                    continue;
-                case (E.CalComponentAlarmAction.EMAIL):
-                    E.CalComponentAlarmTrigger trigger;
-                    e_alarm.get_trigger (out trigger);
-                    if (trigger.type == E.CalComponentAlarmTriggerType.RELATIVE_START) {
-                        iCal.DurationType duration = trigger.rel_duration;
-                        var reminder = add_reminder (alarm_uid);
-                        reminder.set_duration (duration);
-                        reminder.set_choice (true);
                     }
                     continue;
                 default:
@@ -138,7 +127,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         foreach (var reminder in reminders) {
             if (reminder.uid == "") {
                 var alarm = new E.CalComponentAlarm ();
-                alarm.set_action (reminder.get_action ());
+                alarm.set_action (E.CalComponentAlarmAction.DISPLAY);
                 E.CalComponentAlarmTrigger trigger;
                 alarm.get_trigger (out trigger);
                 trigger.rel_duration = reminder.get_duration ();
@@ -147,7 +136,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 parent_dialog.ecal.add_alarm (alarm);
             } else if (reminder.change == true) {
                 var alarm = parent_dialog.ecal.get_alarm (reminder.uid);
-                alarm.set_action (reminder.get_action ());
+                alarm.set_action (E.CalComponentAlarmAction.DISPLAY);
                 E.CalComponentAlarmTrigger trigger;
                 alarm.get_trigger (out trigger);
                 trigger.type = E.CalComponentAlarmTriggerType.RELATIVE_START;
@@ -169,7 +158,7 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
 
     private bool is_human_change = true;
 
-    Gtk.ComboBoxText choice;
+    Gtk.Label label;
     Gtk.ComboBoxText time;
 
     public ReminderGrid (string uid) {
@@ -203,16 +192,9 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
             }
         });
 
-        choice = new Gtk.ComboBoxText ();
-        choice.append_text (_("Notification"));
-        choice.append_text (_("Email"));
-        choice.active = 0;
-        choice.hexpand = true;
-        choice.changed.connect (() => {
-            if (is_human_change == true) {
-                change = true;
-            }
-        });
+        label = new Gtk.Label (_("Notification"));
+        label.hexpand = true;
+        label.halign = Gtk.Align.START;
 
         var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);
         remove_button.relief = Gtk.ReliefStyle.NONE;
@@ -222,16 +204,10 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
         grid.row_spacing = 6;
         grid.column_spacing = 12;
         grid.attach (time, 0, 0, 1, 1);
-        grid.attach (choice, 1, 0, 1, 1);
+        grid.attach (label, 1, 0, 1, 1);
         grid.attach (remove_button, 2, 0, 1, 1);
         
         add (grid);
-    }
-
-    public void set_choice (bool is_email = true) {
-        is_human_change = false;
-        choice.active = (int)is_email;
-        is_human_change = true;
     }
 
     public void set_duration (iCal.DurationType duration) {
@@ -324,13 +300,5 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
                 break;
         }
         return duration;
-    }
-
-    public E.CalComponentAlarmAction get_action () {
-        if (choice.active == 1) {
-            return E.CalComponentAlarmAction.EMAIL;
-        } else {
-            return E.CalComponentAlarmAction.DISPLAY;
-        }
     }
 }
