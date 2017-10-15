@@ -147,13 +147,6 @@ namespace MayaDaemon {
                         }
                     }
                     continue;
-                case (E.CalComponentAlarmAction.EMAIL):
-                    E.CalComponentAlarmTrigger trigger;
-                    e_alarm.get_trigger (out trigger);
-                    if (trigger.type == E.CalComponentAlarmTriggerType.RELATIVE_START) {
-                        // TODO: implement the e-mail send part later…
-                    }
-                    continue;
                 default:
                     continue;
             }
