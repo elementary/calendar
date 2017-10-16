@@ -74,7 +74,11 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         if (to_edit != null) {
             E.SourceWebdav webdav = (E.SourceWebdav)to_edit.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
             var uri = webdav.dup_soup_uri ();
-            ((Gtk.Entry)url_entry.widget).text = "%s://%s%s".printf (uri.get_scheme (), uri.get_host (), uri.get_path ());
+            if (uri.get_port () != 80) {
+                ((Gtk.Entry)url_entry.widget).text = "%s://%s:%u%s".printf (uri.get_scheme (), uri.get_host (), uri.get_port (), uri.get_path ());
+            } else {
+                ((Gtk.Entry)url_entry.widget).text = "%s://%s%s".printf (uri.get_scheme (), uri.get_host (), uri.get_path ());
+            }
         }
 
         /*var find_button = new PlacementWidget ();
