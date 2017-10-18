@@ -31,6 +31,7 @@ public class WeekLabels : Gtk.Revealer {
     private int nr_of_weeks;
 
     public WeekLabels () {
+        events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         vexpand = true;
 
         day_grid = new Gtk.Grid ();
