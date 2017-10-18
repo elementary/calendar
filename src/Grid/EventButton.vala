@@ -27,7 +27,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
     public E.CalComponent comp {get; private set;}
     private Gtk.EventBox event_box;
     private Gtk.Grid internal_grid;
-    private Gtk.Menu menu;
     Gtk.Label label;
 
     public EventButton (E.CalComponent comp) {
@@ -52,23 +51,22 @@ public class Maya.View.EventButton : Gtk.Revealer {
             if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY) {
                 edit_event ();
             } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-                if (menu == null) {
-                    E.Source src = comp.get_data ("source");
+                E.Source src = comp.get_data ("source");
+                Gtk.Menu menu = new Gtk.Menu ();
+                menu.attach_to_widget (this, null);
 
-                    menu = new Gtk.Menu ();
-                    menu.attach_to_widget (this, null);
-                    var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
-                    var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
-                    if (src.writable != true && Model.CalendarModel.get_default ().calclient_is_readonly (src) != false) {
-                        edit_item.sensitive = false;
-                        remove_item.sensitive = false;
-                    }
+                var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
+                var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
 
-                    edit_item.activate.connect (() => { edit_event (); });
-                    remove_item.activate.connect (() => { remove_event (); });
-                    menu.append (edit_item);
-                    menu.append (remove_item);
+                if (src.writable != true && Model.CalendarModel.get_default ().calclient_is_readonly (src) != false) {
+                    edit_item.sensitive = false;
+                    remove_item.sensitive = false;
                 }
+
+                edit_item.activate.connect (() => { edit_event (); });
+                remove_item.activate.connect (() => { remove_event (); });
+                menu.append (edit_item);
+                menu.append (remove_item);
 
                 menu.popup (null, null, null, event.button, event.time);
                 menu.show_all ();
@@ -129,17 +127,11 @@ public class Maya.View.EventButton : Gtk.Revealer {
     }
 
     private void edit_event () {
-        E.Source src = comp.get_data ("source");
-        if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
-            edition_request ();
-        }
+        edition_request ();
     }
 
     private void remove_event () {
-        E.Source src = comp.get_data ("source");
-        if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
-            var calmodel = Model.CalendarModel.get_default ();
-            calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, E.CalObjModType.ALL);
-        }
+        var calmodel = Model.CalendarModel.get_default ();
+        calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, E.CalObjModType.ALL);
     }
 }
