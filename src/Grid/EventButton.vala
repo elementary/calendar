@@ -49,7 +49,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
         event_box.add (internal_grid);
         event_box.button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY) {
-                edit_event ();
+                edition_request ();
             } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
                 E.Source src = comp.get_data ("source");
                 Gtk.Menu menu = new Gtk.Menu ();
@@ -63,7 +63,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
                     remove_item.sensitive = false;
                 }
 
-                edit_item.activate.connect (() => { edit_event (); });
+                edit_item.activate.connect (() => { edition_request (); });
                 remove_item.activate.connect (() => { remove_event (); });
                 menu.append (edit_item);
                 menu.append (remove_item);
@@ -124,10 +124,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
         var rgba = Gdk.RGBA();
         rgba.parse (color);
         event_box.override_background_color (Gtk.StateFlags.NORMAL, rgba);
-    }
-
-    private void edit_event () {
-        edition_request ();
     }
 
     private void remove_event () {
