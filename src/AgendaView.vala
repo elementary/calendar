@@ -445,8 +445,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
         private Gtk.Label datatime_label;
         private Gtk.Label location_label;
 
-        private Gtk.Menu menu;
-
         private bool isUpcoming;
 
         public AgendaEventRow (E.Source source, E.CalComponent calevent, bool isUpcoming) {
@@ -521,16 +519,21 @@ public class Maya.View.AgendaView : Gtk.Grid {
             if (event.type == Gdk.EventType.@2BUTTON_PRESS) {
                  modified (calevent);
             } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-                if (menu == null) {
-                    menu = new Gtk.Menu ();
-                    menu.attach_to_widget (this, null);
-                    var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
-                    var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
-                    edit_item.activate.connect (() => { modified (calevent); });
-                    remove_item.activate.connect (() => { removed (calevent); });
-                    menu.append (edit_item);
-                    menu.append (remove_item);
+                Gtk.Menu menu = new Gtk.Menu ();
+                menu.attach_to_widget (this, null);
+                var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
+                var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
+                edit_item.activate.connect (() => { modified (calevent); });
+                remove_item.activate.connect (() => { removed (calevent); });
+
+                E.Source src = calevent.get_data ("source");
+                if (src.writable != true && Model.CalendarModel.get_default ().calclient_is_readonly (src) != false) {
+                    edit_item.sensitive = false;
+                    remove_item.sensitive = false;
                 }
+
+                menu.append (edit_item);
+                menu.append (remove_item);
 
                 menu.popup (null, null, null, event.button, event.time);
                 menu.show_all ();
