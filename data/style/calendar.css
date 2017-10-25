@@ -18,7 +18,6 @@
 
 @define-color cell_color mix(@bg_color, rgb(255, 255, 255), 0.5);
 @define-color text_color #333;
-@define-color alt_text_color #AEADAE;
 
 /* Header Styles */
 
@@ -38,7 +37,6 @@
 
 .other_month {
     background-color: shade(@cell_color, 0.97);
-    color: @alt_text_color;
 }
 
 .cell:selected {
