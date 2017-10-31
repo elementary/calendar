@@ -123,11 +123,12 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
                 title_entry.secondary_icon_tooltip_text = null;
             }
         });
-        ulong sigid = 0;
-        sigid = title_entry.draw.connect (() => {
-            title_entry.grab_focus ();
-            title_entry.disconnect (sigid);
-            return false;
+
+        realize.connect (() => {
+            Idle.add (() => {
+                title_entry.grab_focus ();
+                return false;
+            });
         });
 
         var calendar_label = Maya.View.EventDialog.make_label (_("Calendar:"));
