@@ -35,8 +35,8 @@
     border-radius: 0;
 }
 
-.cell:insensitive {
-	background-color: shade(@cell_color, 0.97);
+.other_month {
+    background-color: shade(@cell_color, 0.97);
 }
 
 .cell:selected {
