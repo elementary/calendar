@@ -411,13 +411,13 @@ namespace Maya.Util {
                     break;
             }
 
-            if (start.add_days (day_to_add).get_month () < start.get_month ())
-                day_to_add = day_to_add + 7;
-
             start = start.add_days (day_to_add);
             end = end.add_days (day_to_add);
 
             if (rrule.count > 0) {
+                if (day_to_add > 0 && day_to_add + start_.get_day_of_week () < 7 ) {
+                    dateranges.add (new Util.DateRange (start, end));
+                }
                 for (int i = 1; i<=rrule.count; i++) {
                     int n = i*rrule.interval*7;
                     if (view_range.contains (start.add_days (n)) || view_range.contains (end.add_days (n)))
@@ -425,7 +425,11 @@ namespace Maya.Util {
                 }
             } else {
                 int i = 1;
-                int n = i*rrule.interval*7;
+                int n = rrule.interval;
+                if (day_to_add > 0 && day_to_add + start_.get_day_of_week () < 7) {
+                    dateranges.add (new Util.DateRange (start, end));
+                }
+                n *= 7;
                 bool is_null_time = rrule.until.is_null_time () == 1;
                 var temp_start = start.add_days (n);
                 while (view_range.last_dt.compare (temp_start) > 0) {
