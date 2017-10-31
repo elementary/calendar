@@ -158,11 +158,7 @@ public class Grid : Gtk.Grid {
             day.name = "today";
         }
 
-        if (new_date.get_month () == month_start.get_month ()) {
-            day.sensitive_container (true);
-        } else {
-            day.sensitive_container (false);
-        }
+        day.in_current_month = new_date.get_month () == month_start.get_month ();
 
         day.update_date (new_date);
         return day;
@@ -221,6 +217,33 @@ public class Grid : Gtk.Grid {
     public void remove_event (E.CalComponent event) {
         foreach(var grid_day in data.values) {
             grid_day.remove_event (event);
+        }
+    }
+
+    public void update_event (E.CalComponent event) {
+        Gee.Collection<Util.DateRange> event_ranges = Util.event_date_ranges (event.get_icalcomponent (), grid_range);
+
+        foreach (var grid_day in data.values) {
+            bool contains = false;
+
+            foreach (Util.DateRange event_range in event_ranges) {
+                if (Util.is_day_in_range (grid_day.date, event_range)) {
+                    contains = true;
+                }
+            }
+
+            if (contains) {
+                if (!grid_day.update_event (event)) {
+                    EventButton button = new EventButton (event);
+                    add_button_for_day (grid_day.date, button);
+
+                    button.edition_request.connect (() => {
+                        edition_request (event);
+                    });
+                }
+            } else {
+                grid_day.remove_event (event);
+            }
         }
     }
 

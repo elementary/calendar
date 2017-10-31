@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2017 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,44 +15,37 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Authored by: Maxwell Barvian
- *              Corentin Noël <corentin@elementaryos.org>
+ * Authored by: Maxwell Barvian <maxwell@elementary.io>
+ *              Corentin Noël <corentin@elementary.io>
  */
 
 namespace Maya.View {
-
-    public class MayaToolbar : Gtk.HeaderBar {
-        
-        // Signals
+    public class HeaderBar : Gtk.HeaderBar {
         public signal void on_search (string search);
         public signal void on_menu_today_toggled ();
         public signal void add_calendar_clicked ();
-        
-        // Toolbar items
-        Widgets.DateSwitcher month_switcher;
-        Widgets.DateSwitcher year_switcher;
-        Widgets.DynamicSpinner spinner;
-        
-        // Menu items
-        View.SourceSelector source_selector;
-        Gtk.ToggleButton button_calendar_sources;
-        
-        public MayaToolbar () {
-            show_close_button = true;
 
+        public Gtk.SearchEntry search_bar;
+        private Widgets.DateSwitcher month_switcher;
+        private Widgets.DateSwitcher year_switcher;
+        
+        public HeaderBar () {
+            Object (show_close_button: true);
+        }
+
+        construct {
             var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
             button_add.tooltip_text = _("Create a new event");
 
             var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR);
             button_today.tooltip_text = _("Go to today's date");
 
-            button_calendar_sources = new Gtk.ToggleButton ();
-            button_calendar_sources.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
-            button_calendar_sources.tooltip_text = _("Manage Calendars");
+            var source_popover = new View.SourceSelector ();
 
-            source_selector = new View.SourceSelector ();
-            source_selector.set_relative_to (button_calendar_sources);
-            button_calendar_sources.bind_property ("active", source_selector, "visible", GLib.BindingFlags.BIDIRECTIONAL);
+            var menu_button = new Gtk.MenuButton ();
+            menu_button.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
+            menu_button.popover = source_popover;
+            menu_button.tooltip_text = _("Manage Calendars");
 
             month_switcher = new Widgets.DateSwitcher (10);
             year_switcher = new Widgets.DateSwitcher (-1);
@@ -67,22 +60,20 @@ namespace Maya.View {
             title_grid.add (month_switcher);
             title_grid.add (year_switcher);
 
-            spinner = new Widgets.DynamicSpinner ();
+            var spinner = new Widgets.DynamicSpinner ();
 
             pack_start (button_add);
             pack_start (spinner);
             set_custom_title (title_grid);
-            pack_end (button_calendar_sources);
+            pack_end (menu_button);
             pack_end (contractor);
 
-            // Connect to signals
             button_add.clicked.connect (() => add_calendar_clicked ());
-            button_today.clicked.connect (() => { on_menu_today_toggled (); });
-            month_switcher.left_clicked.connect (() => {Model.CalendarModel.get_default ().change_month (-1);});
-            month_switcher.right_clicked.connect (() => {Model.CalendarModel.get_default ().change_month (1);});
-            year_switcher.left_clicked.connect (() => {Model.CalendarModel.get_default ().change_year (-1);});
-            year_switcher.right_clicked.connect (() => {Model.CalendarModel.get_default ().change_year (1);});
-            button_calendar_sources.size_allocate.connect (button_size_allocate);
+            button_today.clicked.connect (() => on_menu_today_toggled ());
+            month_switcher.left_clicked.connect (() => Model.CalendarModel.get_default ().change_month (-1));
+            month_switcher.right_clicked.connect (() => Model.CalendarModel.get_default ().change_month (1));
+            year_switcher.left_clicked.connect (() => Model.CalendarModel.get_default ().change_year (-1));
+            year_switcher.right_clicked.connect (() => Model.CalendarModel.get_default ().change_year (1));
             calmodel.parameters_changed.connect (() => {
                 set_switcher_date (calmodel.month_start);
             });
@@ -92,11 +83,5 @@ namespace Maya.View {
             month_switcher.text = date.format ("%B");
             year_switcher.text = date.format ("%Y");
         }
-        
-        void button_size_allocate (Gtk.Allocation allocation) {
-            month_switcher.height_request = allocation.height;
-            year_switcher.height_request = allocation.height;
-        }
     }
-
 }

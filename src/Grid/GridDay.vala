@@ -37,6 +37,18 @@ public class Maya.View.GridDay : Gtk.EventBox {
     VAutoHider event_box;
     GLib.HashTable<string, EventButton> event_buttons;
 
+    public bool in_current_month {
+        set {
+            if (value) {
+                get_style_context ().remove_class ("other_month");
+                get_style_context ().remove_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            } else {
+                get_style_context ().add_class ("other_month");
+                get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            }
+        }
+    }
+
     private const int EVENT_MARGIN = 3;
 
     public GridDay (DateTime date) {
@@ -145,6 +157,23 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
     }
 
+    public bool update_event (E.CalComponent comp) {
+        unowned iCal.Component calcomp = comp.get_icalcomponent ();
+        string uid = calcomp.get_uid ();
+
+        lock (event_buttons) {
+            var button = event_buttons.get (uid);
+            if (button != null) {
+                button.update (comp);
+                event_box.update (button);
+            } else {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public void remove_event (E.CalComponent comp) {
         unowned iCal.Component calcomp = comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();
@@ -171,10 +200,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
             button.destroy ();
             return false;
         });
-    }
-
-    public void sensitive_container (bool sens) {
-        container_grid.sensitive = sens;
     }
 
     public void update_date (DateTime date) {

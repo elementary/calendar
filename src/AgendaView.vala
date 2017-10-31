@@ -114,18 +114,24 @@ public class Maya.View.AgendaView : Gtk.Grid {
         });
 
         selected_date_events_list.set_filter_func ((row) => {
-            var event_row = (AgendaEventRow) row;
-            if (selected_date == null)
+            if (selected_date == null) {
                 return false;
+            }
 
+            var event_row = (AgendaEventRow) row;
             unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
-            DateTime start_date, end_date;
-            Util.get_local_datetimes_from_icalcomponent (comp, out start_date, out end_date);
 
             var stripped_time = new DateTime.local (selected_date.get_year (), selected_date.get_month (), selected_date.get_day_of_month (), 0, 0, 0);
             var range = new Util.DateRange (stripped_time, stripped_time.add_days (1));
+            Gee.Collection<Util.DateRange> event_ranges = Util.event_date_ranges (comp, range);
 
-            return Util.is_event_in_range (comp, range);
+            foreach (Util.DateRange event_range in event_ranges) {
+                if (Util.is_day_in_range (stripped_time, event_range)) {
+                    return true;
+                }
+            }
+
+            return false;
         });
 
         var selected_scrolled = new Gtk.ScrolledWindow (null, null);
@@ -445,8 +451,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
         private Gtk.Label datatime_label;
         private Gtk.Label location_label;
 
-        private Gtk.Menu menu;
-
         private bool isUpcoming;
 
         public AgendaEventRow (E.Source source, E.CalComponent calevent, bool isUpcoming) {
@@ -521,16 +525,21 @@ public class Maya.View.AgendaView : Gtk.Grid {
             if (event.type == Gdk.EventType.@2BUTTON_PRESS) {
                  modified (calevent);
             } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-                if (menu == null) {
-                    menu = new Gtk.Menu ();
-                    menu.attach_to_widget (this, null);
-                    var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
-                    var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
-                    edit_item.activate.connect (() => { modified (calevent); });
-                    remove_item.activate.connect (() => { removed (calevent); });
-                    menu.append (edit_item);
-                    menu.append (remove_item);
+                Gtk.Menu menu = new Gtk.Menu ();
+                menu.attach_to_widget (this, null);
+                var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
+                var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
+                edit_item.activate.connect (() => { modified (calevent); });
+                remove_item.activate.connect (() => { removed (calevent); });
+
+                E.Source src = calevent.get_data ("source");
+                if (src.writable != true && Model.CalendarModel.get_default ().calclient_is_readonly (src) != false) {
+                    edit_item.sensitive = false;
+                    remove_item.sensitive = false;
                 }
+
+                menu.append (edit_item);
+                menu.append (remove_item);
 
                 menu.popup (null, null, null, event.button, event.time);
                 menu.show_all ();
