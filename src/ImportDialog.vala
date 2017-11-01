@@ -79,7 +79,7 @@ public class Maya.View.ImportDialog : Gtk.Dialog {
                 for (unowned iCal.Component comp = ical.get_first_component (iCal.ComponentKind.VEVENT);
                      comp != null;
                      comp = ical.get_next_component (iCal.ComponentKind.VEVENT)) {
-                    var ecal = new E.CalComponent.from_string  (comp.as_ical_string ());
+                    var ecal = new E.CalComponent.from_string (comp.as_ical_string ());
                     calmodel.add_event (source, ecal);
                 }
             }
