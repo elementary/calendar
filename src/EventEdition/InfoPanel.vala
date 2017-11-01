@@ -246,7 +246,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
             // Load the allday_switch
             if (allday) {
-                allday_switch.set_active(true);
+                allday_switch.set_active (true);
                 from_time_picker.sensitive = false;
                 to_time_picker.sensitive = false;
             }
