@@ -124,6 +124,13 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
         });
 
+        realize.connect (() => {
+            Idle.add (() => {
+                title_entry.grab_focus ();
+                return false;
+            });
+        });
+
         var calendar_label = Maya.View.EventDialog.make_label (_("Calendar:"));
         calendar_button = new Maya.View.Widgets.CalendarButton ();
         // Select the first calendar we can find, if none is default
