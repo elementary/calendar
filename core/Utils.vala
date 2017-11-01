@@ -107,9 +107,17 @@ namespace Maya.Util {
     public void get_local_datetimes_from_icalcomponent (iCal.Component comp, out DateTime start_date, out DateTime end_date) {
         iCal.TimeType dt_start = comp.get_dtstart ();
         iCal.TimeType dt_end = comp.get_dtend ();
-
         start_date = Util.ical_to_date_time (dt_start);
-        end_date = Util.ical_to_date_time (dt_end);
+
+        if (dt_end.is_null_time () == 0) {
+            end_date = Util.ical_to_date_time (dt_end);
+        } else if (dt_start.is_it_date () == 0) {
+            end_date = start_date;
+        } else if (comp.get_duration ().is_null_duration () == 0){
+            end_date = Util.ical_to_date_time (dt_start.add (comp.get_duration ()));
+        } else {
+            end_date = start_date.add_days (1);
+        }
 
         if (is_all_day (start_date, end_date)) {
             end_date = end_date.add_days (-1);
@@ -117,12 +125,8 @@ namespace Maya.Util {
     }
 
     public bool is_event_in_range (iCal.Component comp, Util.DateRange view_range) {
-        var start = ical_to_date_time (comp.get_dtstart ());
-        var end = ical_to_date_time (comp.get_dtend ());
-
-        if (is_all_day (start, end)) {
-            end = end.add_days (-1);
-        }
+        DateTime start, end;
+        get_local_datetimes_from_icalcomponent (comp, out start, out end);
 
         int c1 = start.compare (view_range.first_dt);
         int c2 = start.compare (view_range.last_dt);
@@ -159,14 +163,8 @@ namespace Maya.Util {
     public Gee.Collection<DateRange> event_date_ranges (iCal.Component comp, Util.DateRange view_range) {
         var dateranges = new Gee.LinkedList<DateRange> ();
 
-        var start = ical_to_date_time (comp.get_dtstart ());
-        var end = ical_to_date_time (comp.get_dtend ());
-        if (end == null) end = start;
-
-        // All days events are stored in UTC time and should only being shown at one day.
-        if (is_all_day (start, end)) {
-            end = end.add_days (-1);
-        }
+        DateTime start, end;
+        get_local_datetimes_from_icalcomponent (comp, out start, out end);
 
         start = strip_time (start);
         end = strip_time (end);
@@ -454,11 +452,8 @@ namespace Maya.Util {
     }
 
     public bool is_multiday_event (iCal.Component comp) {
-        var start = ical_to_date_time (comp.get_dtstart ());
-        var end = ical_to_date_time (comp.get_dtend ());
-
-        if (is_all_day (start, end))
-            end = end.add_days (-1);
+        DateTime start, end;
+        get_local_datetimes_from_icalcomponent (comp, out start, out end);
 
         if (start.get_year () != end.get_year () || start.get_day_of_year () != end.get_day_of_year ())
             return true;

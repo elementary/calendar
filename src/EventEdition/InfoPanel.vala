@@ -227,37 +227,28 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
             // Load the title
             string summary = comp.get_summary ();
-            if (summary != null)
+            if (summary != null) {
                 title_entry.text = summary;
-
-            // Load the dates
-            iCal.TimeType dt_start = comp.get_dtstart ();
-            iCal.TimeType dt_end = comp.get_dtend ();
+            }
 
             DateTime from_date, to_date;
             Util.get_local_datetimes_from_icalcomponent (comp, out from_date, out to_date);
 
-            if (dt_start.year != 0) {
-                from_date_picker.date = from_date;
-                from_time_picker.time = from_date;
-                parent_dialog.date_time = from_date;
-            }
+            from_date_picker.date = from_date;
+            from_time_picker.time = from_date;
+            parent_dialog.date_time = from_date;
 
             // Is this all day
             bool allday = Util.is_all_day(from_date, to_date);
 
-            if (dt_end.year != 0) {
-                to_date_picker.date = to_date;
-                to_time_picker.time = to_date;
-            }
+            to_date_picker.date = to_date;
+            to_time_picker.time = to_date;
 
             // Load the allday_switch
-            if (dt_end.year != 0) {
-                if (allday) {
-                    allday_switch.set_active(true);
-                    from_time_picker.sensitive = false;
-                    to_time_picker.sensitive = false;
-                }
+            if (allday) {
+                allday_switch.set_active (true);
+                from_time_picker.sensitive = false;
+                to_time_picker.sensitive = false;
             }
 
             unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.DESCRIPTION);
