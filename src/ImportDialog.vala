@@ -74,11 +74,14 @@ public class Maya.View.ImportDialog : Gtk.Dialog {
         var source = calchooser_button.current_source;
         var calmodel = Model.CalendarModel.get_default ();
         foreach (var file in files) {
-            var ecal = new E.CalComponent ();
             var ical = E.Util.parse_ics_file (file.get_path ());
             if (ical.is_valid () == 1) {
-                ecal.set_icalcomponent ((owned) ical);
-                calmodel.add_event (source, ecal);
+                for (unowned iCal.Component comp = ical.get_first_component (iCal.ComponentKind.VEVENT);
+                     comp != null;
+                     comp = ical.get_next_component (iCal.ComponentKind.VEVENT)) {
+                    var ecal = new E.CalComponent.from_string  (comp.as_ical_string ());
+                    calmodel.add_event (source, ecal);
+                }
             }
         }
 
