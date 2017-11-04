@@ -24,6 +24,7 @@ namespace Maya {
         private static bool ADD_EVENT = false;
         private static string SHOW_DAY = null;
         private static bool PRINT_VERSION = false;
+        private static bool DEBUG = false;
     }
 
     public class Application : Granite.Application {
@@ -57,6 +58,7 @@ namespace Maya {
             { "add-event", 'a', 0, OptionArg.NONE, out Option.ADD_EVENT, "Show an add event dialog", null },
             { "show-day", 's', 0, OptionArg.STRING, out Option.SHOW_DAY, "Start focused to the given day", null },
             { "version", 'v', 0, OptionArg.NONE, out Option.PRINT_VERSION, "Print version info and exit", null },
+            { "debug", 'd', 0, OptionArg.NONE, out Option.DEBUG, "Print debug information", null },
             { null }
         };
 
