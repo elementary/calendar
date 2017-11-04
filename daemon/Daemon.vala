@@ -192,7 +192,7 @@ namespace MayaDaemon {
         var text = Granite.DateTime.get_default_time_format (format.contains ("12h"));
         if (start_time.get_year () == now.get_year ()) {
             if (start_time.get_day_of_year () == now.get_day_of_year ()) {
-                secondary_text = start_time.format (text);
+                secondary_text = Granite.DateTime.get_relative_datetime (start_time);
             } else {
                 secondary_text = start_time.format ("%s, %s".printf (Granite.DateTime.get_default_date_format (), text));
             }
