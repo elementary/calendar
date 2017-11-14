@@ -66,9 +66,9 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
                 Gtk.MenuItem remove_item;
                 if (comp.has_recurrences ()) {
-                    remove_item = new Gtk.MenuItem.with_label (_("Remove series"));
-                    Gtk.MenuItem exception_item = new Gtk.MenuItem.with_label (_("Remove occurrence"));
-                    exception_item.activate.connect (() => { add_exception (); });
+                    remove_item = new Gtk.MenuItem.with_label (_("Remove Series"));
+                    Gtk.MenuItem exception_item = new Gtk.MenuItem.with_label (_("Remove Occurrence"));
+                    exception_item.activate.connect (add_exception);
                     exception_item.sensitive = sensitive;
                     menu.append (exception_item);
                 } else {
@@ -76,7 +76,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
                 }
 
                 remove_item.sensitive = sensitive;
-                remove_item.activate.connect (() => { remove_event (); });
+                remove_item.activate.connect (remove_event);
                 menu.append (remove_item);
 
                 menu.popup (null, null, null, event.button, event.time);
