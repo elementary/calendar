@@ -66,7 +66,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
                 Gtk.MenuItem remove_item;
                 if (comp.has_recurrences ()) {
-                    remove_item = new Gtk.MenuItem.with_label (_("Remove Series"));
+                    remove_item = new Gtk.MenuItem.with_label (_("Remove Event"));
                     Gtk.MenuItem exception_item = new Gtk.MenuItem.with_label (_("Remove Occurrence"));
                     exception_item.activate.connect (add_exception);
                     exception_item.sensitive = sensitive;
