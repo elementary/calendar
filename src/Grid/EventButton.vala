@@ -105,10 +105,10 @@ public class Maya.View.EventButton : Gtk.Revealer {
         E.Source source = comp.get_data ("source");
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
         cal.notify["color"].connect (() => {
-            set_color (cal.dup_color ());
+            Util.style_calendar_color (this.event_box, cal.dup_color (), true);
         });
 
-        set_color (cal.dup_color ());
+        Util.style_calendar_color (this.event_box, cal.dup_color (), true);
     }
 
     public void update (E.CalComponent event) {
@@ -118,12 +118,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
     public string get_summary () {
         return comp.get_summary ().value;
-    }
-
-    public void set_color (string color) {
-        var rgba = Gdk.RGBA();
-        rgba.parse (color);
-        event_box.override_background_color (Gtk.StateFlags.NORMAL, rgba);
     }
 
     private void remove_event () {
