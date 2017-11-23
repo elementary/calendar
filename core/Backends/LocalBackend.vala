@@ -81,6 +81,7 @@ public class Maya.LocalBackend : GLib.Object, Maya.Backend {
         source.display_name = name;
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
         cal.color = color;
+        source.write.begin (null);
         if (set_default) {
             set_source_default.begin (source);
         }
