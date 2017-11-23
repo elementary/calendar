@@ -480,6 +480,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
             name_label = new Gtk.Label ("");
             name_label.hexpand = true;
             name_label.wrap = true;
+            name_label.wrap_mode = Pango.WrapMode.WORD_CHAR;
             name_label.xalign = 0;
 
             datatime_label = new Gtk.Label ("");
