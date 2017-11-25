@@ -56,9 +56,7 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         location = Maya.Util.get_source_location (source);
 
         calendar_color_label = new Gtk.Label ("  ");
-        var color = Gdk.RGBA ();
-        color.parse (cal.dup_color());
-        calendar_color_label.override_background_color (Gtk.StateFlags.NORMAL, color);
+        Util.style_calendar_color (calendar_color_label, cal.dup_color (), true);
 
         visible_checkbutton = new Gtk.CheckButton ();
         visible_checkbutton.active = cal.selected;
@@ -173,9 +171,7 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         calendar_name_label.label = source.dup_display_name ();
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
-        var color = Gdk.RGBA ();
-        color.parse (cal.dup_color());
-        calendar_color_label.override_background_color (Gtk.StateFlags.NORMAL, color);
+        Util.style_calendar_color (calendar_color_label, cal.dup_color (), true);
 
         visible_checkbutton.active = cal.selected;
     }

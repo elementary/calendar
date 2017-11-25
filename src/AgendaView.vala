@@ -465,17 +465,14 @@ public class Maya.View.AgendaView : Gtk.Grid {
             main_grid.margin = 6;
 
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-            cal.notify["color"].connect (() => {
-                var rgba = Gdk.RGBA();
-                rgba.parse (cal.dup_color ());
-                event_image.override_color (Gtk.StateFlags.NORMAL, rgba);
-            });
-            var rgba = Gdk.RGBA();
-            rgba.parse (cal.dup_color ());
 
             event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
-            event_image.override_color (Gtk.StateFlags.NORMAL, rgba);
             event_image.margin_start = 6;
+            Util.style_calendar_color (event_image, cal.dup_color ());
+
+            cal.notify["color"].connect (() => {
+                Util.style_calendar_color (event_image, cal.dup_color ());
+            });
 
             name_label = new Gtk.Label ("");
             name_label.hexpand = true;
