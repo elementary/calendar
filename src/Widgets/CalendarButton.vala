@@ -204,9 +204,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
             calendar_name_label.label = _source.dup_display_name ();
             label = calendar_name_label.label;
             location = Maya.Util.get_source_location (_source);
-            var color = Gdk.RGBA ();
-            color.parse (cal.dup_color());
-            calendar_color_label.override_background_color (Gtk.StateFlags.NORMAL, color);
+            Util.style_calendar_color (calendar_color_label, cal.dup_color (), true);
         }
     }
 }
