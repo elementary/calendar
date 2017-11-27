@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-24 23:56+0000\n"
+"POT-Creation-Date: 2017-11-27 14:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -663,11 +663,15 @@ msgid "%u more…"
 msgstr ""
 
 #: ../src/Application.vala:55
-msgid "Show an add event dialog"
+msgid "Create an event"
 msgstr ""
 
 #: ../src/Application.vala:56
-msgid "Start focused to the given day"
+msgid "Focus the given day"
+msgstr ""
+
+#: ../src/Application.vala:56
+msgid "date"
 msgstr ""
 
 #: ../src/Application.vala:57
