@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-27 14:04+0000\n"
+"POT-Creation-Date: 2017-11-28 12:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,21 +72,21 @@ msgstr ""
 msgid "Add New Calendar…"
 msgstr ""
 
-#: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:532
+#: ../src/SourceDialog/SourceItem.vala:80 ../src/AgendaView.vala:529
 #: ../src/Grid/EventButton.vala:59
 msgid "Remove"
 msgstr ""
 
-#: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:531
+#: ../src/SourceDialog/SourceItem.vala:94 ../src/AgendaView.vala:528
 #: ../src/Grid/EventButton.vala:58
 msgid "Edit…"
 msgstr ""
 
-#: ../src/SourceDialog/SourceItem.vala:127
+#: ../src/SourceDialog/SourceItem.vala:125
 msgid "Undo"
 msgstr ""
 
-#: ../src/SourceDialog/SourceItem.vala:142
+#: ../src/SourceDialog/SourceItem.vala:140
 msgid "Calendar \"%s\" removed."
 msgstr ""
 
@@ -617,19 +617,19 @@ msgstr ""
 msgid "Next Month"
 msgstr ""
 
-#: ../src/AgendaView.vala:575 ../src/AgendaView.vala:585
+#: ../src/AgendaView.vala:572 ../src/AgendaView.vala:582
 msgid "%s - %s"
 msgstr ""
 
-#: ../src/AgendaView.vala:577
+#: ../src/AgendaView.vala:574
 msgid "%s, %s - %s, %s"
 msgstr ""
 
-#: ../src/AgendaView.vala:589
+#: ../src/AgendaView.vala:586
 msgid "%s"
 msgstr ""
 
-#: ../src/AgendaView.vala:591
+#: ../src/AgendaView.vala:588
 msgid "%s, %s - %s"
 msgstr ""
 
@@ -674,11 +674,11 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: ../src/Application.vala:57
+#: ../src/Application.vala:57 ../daemon/Daemon.vala:23
 msgid "Print version info and exit"
 msgstr ""
 
-#: ../src/Application.vala:58
+#: ../src/Application.vala:58 ../daemon/Daemon.vala:21
 msgid "Print debug information"
 msgstr ""
 
