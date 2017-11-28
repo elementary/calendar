@@ -18,9 +18,9 @@
 namespace MayaDaemon {
     const OptionEntry[] options =  {
         { "debug", 'd', 0, OptionArg.NONE, out has_debug,
-        "Display debug statements on stdout", null},
+        N_("Print debug information"), null},
         { "version", 0, 0, OptionArg.NONE, out has_version,
-        "Display version number", null},
+        N_("Print version info and exit"), null},
         { null }
     };
     private static MainLoop mainloop;
