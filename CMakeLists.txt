@@ -80,7 +80,7 @@ set (CORE_PKG
     gio-2.0
     gee-0.8
     gtk+-3.0>=3.11.6
-    granite
+    granite>=0.5
     libedataserver-1.2
     libecal-1.2>=3.8.0
     libedataserverui-1.2
