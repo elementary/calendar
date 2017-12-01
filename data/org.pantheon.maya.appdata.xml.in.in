@@ -13,6 +13,13 @@
     </_p>
   </description>
   <releases>
+    <release version="0.4.1" date="2017-10-27" urgency="medium">
+            <description>
+                <_p>Fixes for calendar accuracy and integrity issues.</_p>
+                <_p>Fixes exporting, importing and printing calendars.</_p>
+                <_p>Various bug fixes and improvements.</_p>
+            </description>
+    </release>
     <release version="0.4.0.2" timestamp="1473189266"/>
     <release version="0.4.0.1" timestamp="1471195865"/>
     <release version="0.4" timestamp="1470925887"/>
