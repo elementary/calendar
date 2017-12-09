@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-08-31 15:07+0700\n"
-"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
+"PO-Revision-Date: 2017-12-10 00:11+0000\n"
+"Last-Translator: Liffindra Angga Zaaldian <liffindra.zaaldian@icloud.com>\n"
 "Language-Team: Indonesian "
 "<https://weblate.elementary.io/projects/calendar/calendar/id/>\n"
 "Language: id\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Weblate 2.17.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -197,7 +197,7 @@ msgstr "1 minggu"
 
 #: ../src/EventEdition/ReminderPanel.vala:206
 msgid "Notification"
-msgstr "Notifikasi"
+msgstr "Pemberitahuan"
 
 #: ../src/EventEdition/ReminderPanel.vala:207
 msgid "Email"
@@ -497,7 +497,7 @@ msgstr "Informasi Umum"
 
 #: ../src/EventEdition/EventDialog.vala:97
 msgid "Location"
-msgstr "Lokasi"
+msgstr "Tempat"
 
 #: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
@@ -521,7 +521,7 @@ msgstr "Simpan Perubahan"
 
 #: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
-msgstr "Lokasi:"
+msgstr "Tempat:"
 
 #: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
@@ -564,11 +564,12 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Acara kedepan mu akan tampil di sini saat kamu klik tanggal dengan acara."
+"Acara yang akan datang milik Anda akan ditampilkan di sini ketika Anda "
+"memilih tanggal dengan acara."
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
-msgstr "Siang hari"
+msgstr "Selama siang hari"
 
 #: ../src/AgendaView.vala:159
 msgid "All day"
@@ -673,7 +674,7 @@ msgstr "Gunakan sambungan aman"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:119
 msgid "Server handles meeting invitations"
-msgstr "Server menangani undangan pertemuan"
+msgstr "Server yang menangani undangan pertemuan"
 
 #: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
 msgid "On this computer"
