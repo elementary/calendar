@@ -12,7 +12,7 @@ set (DATADIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}")
 set (PKGDATADIR "${DATADIR}/${CMAKE_PROJECT_NAME}")
 set (GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
 set (RELEASE_NAME "Sandy Cheeks")
-set (VERSION "0.4.0.2")
+set (VERSION "0.4.1")
 set (VERSION_INFO "Release")
 set (PLUGIN_DIR ${CMAKE_INSTALL_FULL_LIBDIR}/${CMAKE_PROJECT_NAME}/plugins)
 set (CORE_LIBRARY_NAME lib${CMAKE_PROJECT_NAME})
@@ -80,7 +80,7 @@ set (CORE_PKG
     gio-2.0
     gee-0.8
     gtk+-3.0>=3.11.6
-    granite
+    granite>=0.5
     libedataserver-1.2
     libecal-1.2>=3.8.0
     libedataserverui-1.2
