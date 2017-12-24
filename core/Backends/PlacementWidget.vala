@@ -44,7 +44,7 @@ namespace Maya.DefaultPlacementWidgets {
         user_label.column = 0;
         user_label.ref_name = "user_label";
         collection.add (user_label);
-        
+
         var user_entry = new PlacementWidget ();
         user_entry.widget = new Gtk.Entry ();
         ((Gtk.Entry)user_entry.widget).placeholder_text = ph_text?? _("user.name");
@@ -66,7 +66,7 @@ namespace Maya.DefaultPlacementWidgets {
         user_label.column = 0;
         user_label.ref_name = "email_label";
         collection.add (user_label);
-        
+
         var user_entry = new PlacementWidget ();
         user_entry.widget = new Gtk.Entry ();
         ((Gtk.Entry)user_entry.widget).placeholder_text = ph_text?? _("john@doe.com");

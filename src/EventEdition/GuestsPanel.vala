@@ -83,8 +83,9 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
             model.get_value (iter, 0, out val1);
             model.get_value (iter, 1, out val2);
 
-            if (val1.get_string ().casefold (-1).contains (key) || val2.get_string ().casefold (-1).contains (key)) 
+            if (val1.get_string ().casefold (-1).contains (key) || val2.get_string ().casefold (-1).contains (key)) {
                 return true;
+            }
 
             return false;
         });
@@ -143,7 +144,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         // Save the guests
         // First, clear the guests
         int count = comp.count_properties (iCal.PropertyKind.ATTENDEE);
-        
+
         for (int i = 0; i < count; i++) {
             unowned iCal.Property remove_prop;
             if (i == 0) {
@@ -228,7 +229,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         row_spacing = 6;
         column_spacing = 12;
         individual = null;
-        
+
         set_margin_bottom (6);
         set_margin_end (6);
         set_margin_start (6);
@@ -247,7 +248,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                     status = "";
                     break;
             }
-        } 
+        }
 
         var status_label = new Gtk.Label ("");
         status_label.set_markup (status);
@@ -276,7 +277,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
 
         attach (icon_image, 0, 0, 1, 4);
         attach (name_label, 1, 1, 1, 1);
-        attach (mail_label, 1, 2, 1, 1); 
+        attach (mail_label, 1, 2, 1, 1);
         attach (status_label, 2, 1, 1, 2);
         attach (remove_grid, 3, 1, 1, 2);
     }
