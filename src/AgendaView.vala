@@ -186,7 +186,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
 
         upcoming_events_list.set_filter_func ((row) => {
             var event_row = (AgendaEventRow) row;
-            
+
             DateTime now = new DateTime.now_local ();
             unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
             var stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
@@ -294,7 +294,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
         if (lbbefore != null) {
             var before = (AgendaEventRow) lbbefore;
             int beforeType = get_event_type (before);
-            
+
             if (rowType == beforeType) {
                 row.set_header (null);
                 return;
@@ -556,7 +556,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
 
             DateTime start_date, end_date;
             Util.get_local_datetimes_from_icalcomponent (ical_event, out start_date, out end_date);
-            
+
             is_allday = Util.is_all_day (start_date, end_date);
             is_multiday = Util.is_multiday_event (ical_event);
 

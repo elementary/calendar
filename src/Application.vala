@@ -196,7 +196,7 @@ namespace Maya {
 
             return false;
         }
-        
+
         void on_quit () {
             Model.CalendarModel.get_default ().delete_trashed_calendars ();
             Gtk.main_quit ();

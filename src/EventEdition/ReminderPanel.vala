@@ -80,7 +80,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         add (inline_toolbar);
         load ();
     }
-    
+
     private ReminderGrid add_reminder (string uid) {
         var reminder = new ReminderGrid (uid);
         var row = new Gtk.ListBoxRow ();
@@ -206,7 +206,7 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
         grid.attach (time, 0, 0, 1, 1);
         grid.attach (label, 1, 0, 1, 1);
         grid.attach (remove_button, 2, 0, 1, 1);
-        
+
         add (grid);
     }
 
@@ -249,7 +249,7 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
         }
         is_human_change = true;
     }
-    
+
     public iCal.DurationType get_duration () {
         iCal.DurationType duration = iCal.DurationType.null_duration ();
         switch (time.active) {

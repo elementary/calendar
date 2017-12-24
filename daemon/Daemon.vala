@@ -152,7 +152,7 @@ namespace MayaDaemon {
             }
         }
     }
-    
+
     public async void add_timeout (E.Source source, E.CalComponent event, uint interval) {
         var uid = "%u-%u".printf (interval, GLib.Random.next_int ());
         event_uid.set (event, uid);
@@ -226,7 +226,7 @@ namespace MayaDaemon {
 
     void update_event (E.Source source, E.CalComponent event) {
         remove_event (source, event);
-        event.rescan (); 
+        event.rescan ();
         event.commit_sequence ();
         add_event (source, event);
     }
@@ -236,7 +236,7 @@ namespace MayaDaemon {
             event_uid.unset (event);
         }
     }
-    
+
     TimeSpan time_until_now (GLib.DateTime dt) {
         var now = new DateTime.now_local ();
         return dt.difference (now)/TimeSpan.SECOND;

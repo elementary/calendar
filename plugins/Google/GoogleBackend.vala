@@ -57,7 +57,7 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
             E.SourceAuthentication auth = (E.SourceAuthentication)to_edit.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
             user = auth.user;
         }
-        
+
         collection.add_all (Maya.DefaultPlacementWidgets.get_user (4, true, user, _("user.name or user.name@gmail.com")));
 
         return collection;
