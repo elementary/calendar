@@ -39,7 +39,7 @@ namespace Maya.GesturesUtils {
             Model.CalendarModel.get_default ().change_month ((int) choice);
             return true;
         }
-        
+
         if (has_scrolled == true) {
             return true;
         }

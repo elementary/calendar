@@ -713,7 +713,7 @@ public class Maya.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
 
         add (grid);
     }
-    
+
     public GLib.DateTime get_date () {
         return date.date;
     }

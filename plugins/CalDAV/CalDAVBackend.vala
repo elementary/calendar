@@ -88,7 +88,7 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         find_button.ref_name = "search_button";
         collection.add (find_button);
         ((Gtk.Button)find_button.widget).clicked.connect (() => {
-            
+
         };*/
 
         var secure_checkbutton = new PlacementWidget ();
@@ -178,7 +178,7 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
             critical (error.message);
         }
     }
-    
+
     public void modify_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets, E.Source source) {
         try {
             source.display_name = name;
