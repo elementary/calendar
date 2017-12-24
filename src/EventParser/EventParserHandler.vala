@@ -34,7 +34,7 @@ public class EventParserHandler : GLib.Object {
 
         // Grant at least the fallback parser
         register_handler (FALLBACK_LANG, new ParserEn ());
-        
+
         // Register other default parsers
         var parser = new ParserDe ();
         register_handler (parser.get_language (), parser); // de
@@ -44,7 +44,7 @@ public class EventParserHandler : GLib.Object {
     public void register_handler (string lang, EventParser parser) {
         handlers.set (lang, parser);
     }
-    
+
     public EventParser get_parser (string lang) {
         if (!handlers.has_key (lang))
             return handlers.get (FALLBACK_LANG);

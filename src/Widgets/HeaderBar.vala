@@ -28,7 +28,7 @@ namespace Maya.View {
         public Gtk.SearchEntry search_bar;
         private Widgets.DateSwitcher month_switcher;
         private Widgets.DateSwitcher year_switcher;
-        
+
         public HeaderBar () {
             Object (show_close_button: true);
         }

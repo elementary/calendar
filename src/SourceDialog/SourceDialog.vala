@@ -143,7 +143,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
 
         show_all ();
     }
-    
+
     public void set_source (E.Source? source = null) {
         this.source = source;
         if (source == null) {

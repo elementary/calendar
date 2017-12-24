@@ -22,26 +22,26 @@
 
 public class Maya.BackendsManager : GLib.Object {
     private static Maya.BackendsManager? backends_manager = null;
-    
+
     public static BackendsManager get_default () {
         if (backends_manager == null)
             backends_manager = new BackendsManager ();
         return backends_manager;
     }
-    
+
     [CCode (has_target = false)]
     private delegate Backend RegisterPluginFunction (Module module);
-    
+
     public Gee.ArrayList<unowned Backend> backends;
-    
+
     public signal void backend_added (Backend b);
     public signal void backend_removed (Backend b);
-    
+
     private LocalBackend local_backend;
-    
+
     private BackendsManager () {
         backends = new Gee.ArrayList<unowned Backend> ();
-        
+
         // Add default backend for local calendar
         local_backend = new LocalBackend ();
         add_backend (local_backend);
@@ -76,7 +76,7 @@ public class Maya.BackendsManager : GLib.Object {
         module.make_resident ();
         add_backend (plug);
     }
-    
+
     private void find_plugins (File base_folder) {
         FileInfo file_info = null;
         try {
