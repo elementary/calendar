@@ -1,4 +1,4 @@
-.TH maya-calendar 1 "Jun 5, 2014"
+.TH maya-calendar 1 "Dec 26, 2017"
 .SH NAME
 maya\-calendar \- GTK+ calendar application
 .PP
@@ -9,7 +9,7 @@ to notify the user about upcoming events and supports synchronization with
 Google Calendar as well as CalDAV-supporting services such as OwnCloud.
 .SH SYNOPSIS
 .B maya\-calendar
-[\fB\-\-add\-event\fR | \fB\-\-import-ical\fR \fIPATH\fR]
+[\fB\-\-add\-event\fR | \fB\-\-show\-day=\fR\fIDATE\fR]
 .SH OPTIONS
 .TP
 .BR \-h ", " \-\-help
@@ -21,10 +21,13 @@ Print version info and exit
 .BR \-a ", " \-\-add\-event
 Show the "Add Event" dialog
 .TP
-.BR \-i ", " \-\-import\-ical   \fIPATH\fR
-Import all events from the specified iCal file to Maya
+.BR \-s ", " \-\-show\-day\=   \fIDATE\fR
+Focus the given day
+.TP
+.BR \-d ", " \-\-debug
+Print debug information
 .SH BUGS
-iCal import is not yet implemented as of version 0.3
+Email notifications are not yet implemented as of version 0.4.1
 .SH AUTHOR
 Maya was written by Maxwell Barvian <maxwell@elementaryos.org>,
 Lucas Baudin <xapantu@gmail.com>,
