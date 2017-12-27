@@ -47,7 +47,7 @@ public class WeekLabels : Gtk.Revealer {
         // EventBox properties
         day_grid.get_style_context().add_provider (style_provider, 600);
         day_grid.get_style_context().add_class ("weeks");
-        
+
         button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
                 var menu = new Gtk.Menu ();
