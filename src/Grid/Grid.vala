@@ -191,7 +191,7 @@ public class Grid : Gtk.Grid {
      */
     void add_buttons_for_range (Util.DateRange dt_range, E.CalComponent event) {
         foreach (var date in dt_range) {
-            EventButton button = new EventButton (event);
+            EventButton button = new EventButton (event, date);
             add_button_for_day (date, button);
             button.edition_request.connect (() => {
                 edition_request (event);
@@ -234,7 +234,7 @@ public class Grid : Gtk.Grid {
 
             if (contains) {
                 if (!grid_day.update_event (event)) {
-                    EventButton button = new EventButton (event);
+                    EventButton button = new EventButton (event, grid_day.date);
                     add_button_for_day (grid_day.date, button);
 
                     button.edition_request.connect (() => {
