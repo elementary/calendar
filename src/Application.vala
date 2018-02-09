@@ -41,11 +41,11 @@ namespace Maya {
             build_version = Build.VERSION;
             build_version_info = Build.VERSION_INFO;
 
-            program_name = _(Build.APP_NAME);
-            exec_name = "maya-calendar";
+            program_name = _("Calendar");
+            exec_name = "io.elementary.calendar";
 
-            application_id = "org.pantheon.maya";
-            app_launcher = "org.pantheon.maya.desktop";
+            application_id = "io.elementary.calendar";
+            app_launcher = "io.elementary.calendar.desktop";
 
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.textdomain (Build.GETTEXT_PACKAGE);
