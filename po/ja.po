@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-09-30 12:49+0000\n"
-"Last-Translator: Jun Takeda <takeda.jun@gmail.com>\n"
+"PO-Revision-Date: 2018-01-23 00:05+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/calendar/calendar/ja/>\n"
 "Language: ja\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -522,7 +522,7 @@ msgstr "変更を保存"
 
 #: ../src/EventEdition/LocationPanel.vala:49
 msgid "Location:"
-msgstr "場所："
+msgstr "場所:"
 
 #: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
