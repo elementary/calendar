@@ -156,6 +156,10 @@ public class Maya.View.GridDay : Gtk.EventBox {
         if (button.get_parent () != null)
             button.unparent ();
 
+        button.focus_day.connect (() => {
+            grab_focus ();
+        });
+
         event_box.add (button);
         button.show_all ();
 
