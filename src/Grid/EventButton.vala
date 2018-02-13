@@ -24,7 +24,6 @@
  */
 public class Maya.View.EventButton : Gtk.Revealer {
     public signal void edition_request ();
-    public signal void focus_day ();
 
     public E.CalComponent comp {get; private set;}
     private GLib.DateTime date;
@@ -83,8 +82,8 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
                 menu.popup (null, null, null, event.button, event.time);
                 menu.show_all ();
-            } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY) {
-                focus_day ();
+            } else {
+                return false;
             }
 
             return true;
