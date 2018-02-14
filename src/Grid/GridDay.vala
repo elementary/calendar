@@ -147,14 +147,16 @@ public class Maya.View.GridDay : Gtk.EventBox {
         unowned iCal.Component calcomp = button.comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();
         lock (event_buttons) {
-            if (event_buttons.contains (uid))
+            if (event_buttons.contains (uid)) {
                 return;
+            }
 
             event_buttons.set (uid, button);
         }
 
-        if (button.get_parent () != null)
+        if (button.get_parent () != null) {
             button.unparent ();
+        }
 
         event_box.add (button);
         button.show_all ();

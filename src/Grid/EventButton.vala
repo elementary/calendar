@@ -24,6 +24,7 @@
  */
 public class Maya.View.EventButton : Gtk.Revealer {
     public signal void edition_request ();
+
     public E.CalComponent comp {get; private set;}
     private GLib.DateTime date;
     private Gtk.EventBox event_box;
@@ -81,6 +82,8 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
                 menu.popup (null, null, null, event.button, event.time);
                 menu.show_all ();
+            } else {
+                return false;
             }
 
             return true;
