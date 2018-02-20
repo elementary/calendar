@@ -290,7 +290,7 @@ public class ParserEn : GLib.Object, EventParser {
             }
         });
 
-        analyze_pattern (@"on (?<p1>\\d{0,1})(st|nd|rd|th)? (?<p2>$months_regex)( (?<p3>\\d{2,4}))?", (data) => {
+        analyze_pattern (@"on (?<p1>\\d{1,2})(st|nd|rd|th)? (?<p2>$months_regex)( (?<p3>\\d{2,4}))?", (data) => {
             int day = int.parse (data.p.index (0));
             int month = get_number_of_month (data.p.index (1));
 
