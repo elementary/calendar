@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2015-2016 elementary, LLC <contact@elementary.io> -->
 <component type="desktop">
-  <id>org.pantheon.maya.desktop</id>
+  <id>io.elementary.calendar.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_group>elementary</project_group>
   <project_license>GPL-3.0+</project_license>
-  <_name>@APP_NAME@</_name>
+  <_name>Calendar</_name>
   <_summary>View and schedule events</_summary>
   <description>
     <_p>
@@ -31,9 +31,9 @@
     <release version="0.2.0" timestamp="1313053217"/>
   </releases>
   <provides>
-    <library>libmaya-calendar.so.0</library>
-    <binary>maya-calendar</binary>
-    <binary>maya-calendar-daemon</binary>
+    <library>libio.elementary.calendar.so.0</library>
+    <binary>io.elementary.calendar</binary>
+    <binary>io.elementary.calendar-daemon</binary>
   </provides>
   <developer_name>elementary LLC.</developer_name>
   <url type="homepage">http://elementary.io/</url>

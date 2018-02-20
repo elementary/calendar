@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/pantheon/maya/">
+  <gresource prefix="/io/elementary/calendar/">
     <file alias="calendar-go-today.svg" compressed="true" preprocess="xml-stripblanks">calendar-go-today.svg</file>
     <file alias="location-marker.svg" compressed="true" preprocess="xml-stripblanks">LocationMarker.svg</file>
     <file alias="calendar.css" compressed="true">style/calendar.css</file>

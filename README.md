@@ -34,7 +34,7 @@ Run `cmake` to configure the build environment and then `make` to build
     cmake -DCMAKE_INSTALL_PREFIX=/usr ..
     make
     
-To install, use `make install` then execute with `maya-calendar`
+To install, use `make install` then execute with `io.elementary.calendar`
 
     sudo make install
-    maya-calendar
+    io.elementary.calendar

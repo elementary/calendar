@@ -6,8 +6,8 @@ add_translations_catalog (${GETTEXT_PACKAGE}
     ../core
     ../daemon
     DESKTOP_FILES
-        ${CMAKE_BINARY_DIR}/data/org.pantheon.maya.desktop.in
-        ${CMAKE_BINARY_DIR}/data/org.pantheon.maya-original.desktop.in
+        ${CMAKE_BINARY_DIR}/data/io.elementary.calendar.desktop.in
+        ${CMAKE_BINARY_DIR}/data/io.elementary.calendar-original.desktop.in
     APPDATA_FILES
-        ${CMAKE_BINARY_DIR}/data/org.pantheon.maya.appdata.xml.in
+        ${CMAKE_BINARY_DIR}/data/io.elementary.calendar.appdata.xml.in
 )
