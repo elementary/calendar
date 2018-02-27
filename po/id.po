@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2018-02-27 08:10+0000\n"
+"PO-Revision-Date: 2018-02-28 00:07+0000\n"
 "Last-Translator: vicky fatrian <vickyfatrian@gmail.com>\n"
 "Language-Team: Indonesian "
 "<https://weblate.elementary.io/projects/calendar/calendar/id/>\n"
@@ -33,7 +33,7 @@ msgstr "Sunting…"
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
-msgstr "Batal"
+msgstr "Kembalikan"
 
 #: ../src/SourceDialog/SourceItem.vala:142
 msgid "Calendar \"%s\" removed."
