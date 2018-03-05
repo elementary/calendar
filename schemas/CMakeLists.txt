@@ -1,2 +1,2 @@
 include (GSettings)
-add_schema ("io.elementary.calendar.gschema.xml")
+add_schema ("org.pantheon.maya.gschema.xml")

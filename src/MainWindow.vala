@@ -33,7 +33,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
     construct {
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-        default_theme.add_resource_path ("/io/elementary/calendar");
+        default_theme.add_resource_path ("/org/pantheon/maya");
 
         var infobar_label = new Gtk.Label (null);
         infobar_label.show ();
