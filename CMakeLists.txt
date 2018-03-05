@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 2.8)
 cmake_policy (VERSION 2.8)
-project (io.elementary.calendar C)
+project (maya-calendar C)
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)
 
@@ -9,6 +9,7 @@ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)
 #
 include (GNUInstallDirs)
 set (DATADIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}")
+set (PKGDATADIR "${DATADIR}/${CMAKE_PROJECT_NAME}")
 set (GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
 set (RELEASE_NAME "Sandy Cheeks")
 set (VERSION "0.4.1")
@@ -22,7 +23,11 @@ add_definitions ("-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\"")
 # Comment this out to enable C compiler warnings
 add_definitions (-w)
 
-set (APP_NAME "Calendar")
+option (BUILD_FOR_ELEMENTARY "Maya name will be replaced by Calendar" ON)
+set (APP_NAME "Maya")
+if (BUILD_FOR_ELEMENTARY)
+    set (APP_NAME "Calendar")
+endif ()
 
 #
 # Niceties

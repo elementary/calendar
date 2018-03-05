@@ -39,7 +39,7 @@ namespace Maya.Settings {
         public string selected_day { get; set; }
 
         private SavedState () {
-            base ("io.elementary.calendar.savedstate");
+            base ("org.pantheon.maya.savedstate");
         }
 
         public DateTime get_page () {
