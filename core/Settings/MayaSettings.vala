@@ -38,7 +38,7 @@ namespace Maya.Settings {
         public string[] plugins_disabled { get; set; }
 
         private MayaSettings () {
-            base ("org.pantheon.maya.settings");
+            base ("io.elementary.calendar.settings");
         }
 
     }
