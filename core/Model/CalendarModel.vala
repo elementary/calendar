@@ -68,7 +68,7 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     private CalendarModel () {
-        int week_start = Posix.nl_langinfo2 (Posix.NLTime.FIRST_WEEKDAY).data[0];
+        int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
         if (week_start >= 1 && week_start <= 7) {
             week_starts_on = (Maya.Settings.Weekday)week_start-1;
         }
