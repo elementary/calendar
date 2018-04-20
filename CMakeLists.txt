@@ -125,7 +125,7 @@ pkg_check_modules (DEPS REQUIRED ${DEPS_PKG})
 
 find_package (Vala REQUIRED)
 include (ValaVersion)
-ensure_vala_version ("0.23.2" MINIMUM)
+ensure_vala_version ("0.40.4" MINIMUM)
 include (ValaPrecompile)
 
 add_subdirectory (po)
