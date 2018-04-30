@@ -170,7 +170,7 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
 
         time = new Gtk.ComboBoxText ();
         time.append_text (_("0 minutes"));
-        time.append_text (_("1 minutes"));
+        time.append_text (_("1 minute"));
         time.append_text (_("5 minutes"));
         time.append_text (_("10 minutes"));
         time.append_text (_("15 minutes"));
