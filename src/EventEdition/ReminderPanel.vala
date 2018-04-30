@@ -52,7 +52,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         fake_grid_right.hexpand = true;
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
-        scrolled.add_with_viewport (reminder_list);
+        scrolled.add (reminder_list);
         scrolled.expand = true;
 
         var frame = new Gtk.Frame (null);
