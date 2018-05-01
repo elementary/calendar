@@ -138,7 +138,7 @@ namespace Maya {
             });
 
             add_action (quit_action);
-            add_accelerator ("<Control>q", "app.quit", null);
+            set_accels_for_action("app.quit", new string[] { "<Control>q" });
 
             var toolbar = new View.HeaderBar ();
             toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.selected_date));

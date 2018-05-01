@@ -79,7 +79,7 @@ set (CORE_PKG
     glib-2.0
     gio-2.0
     gee-0.8
-    gtk+-3.0>=3.11.6
+    gtk+-3.0>=3.22
     granite>=0.5
     libedataserver-1.2
     libecal-1.2>=3.8.0

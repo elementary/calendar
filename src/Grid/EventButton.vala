@@ -80,7 +80,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
                 remove_item.activate.connect (remove_event);
                 menu.append (remove_item);
 
-                menu.popup (null, null, null, event.button, event.time);
+                menu.popup_at_pointer (event);
                 menu.show_all ();
             } else {
                 return false;
