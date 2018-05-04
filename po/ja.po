@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2018-01-23 00:05+0000\n"
+"PO-Revision-Date: 2018-05-05 00:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/calendar/calendar/ja/>\n"
@@ -610,7 +610,7 @@ msgstr "予定の検索"
 
 #: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
-msgstr "デフォルトのカレンダーを共有または書き出す"
+msgstr "デフォルトのカレンダーをエクスポートまたは共有"
 
 #: ../src/Application.vala:34 ../src/Translations.vala:6
 msgid "Calendar"
