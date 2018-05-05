@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2018-05-05 00:10+0000\n"
+"PO-Revision-Date: 2018-05-06 00:09+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/calendar/calendar/ja/>\n"
@@ -85,7 +85,7 @@ msgstr "週番号を非表示にする"
 
 #: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
 msgid "Show Week Numbers"
-msgstr "週の通し番号を表示"
+msgstr "週番号を表示する"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
@@ -251,7 +251,7 @@ msgstr[0] "年"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr "終了："
+msgstr "終了:"
 
 #: ../src/EventEdition/RepeatPanel.vala:137
 #: ../src/EventEdition/RepeatPanel.vala:170
@@ -530,7 +530,7 @@ msgstr "場所を入力"
 
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
-msgstr "開始日時："
+msgstr "開始日時:"
 
 #: ../src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
@@ -538,7 +538,7 @@ msgstr "終日:"
 
 #: ../src/EventEdition/InfoPanel.vala:89
 msgid "To:"
-msgstr "終了日時："
+msgstr "終了日時:"
 
 #: ../src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
@@ -550,15 +550,15 @@ msgstr "予定のタイトル"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr "予定を解析するためにエンターを押してください"
+msgstr "予定を解析するには Enter キーを押してください"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
-msgstr "カレンダー："
+msgstr "カレンダー:"
 
 #: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
-msgstr "コメント："
+msgstr "コメント:"
 
 #: ../src/AgendaView.vala:63
 msgid ""
@@ -698,7 +698,7 @@ msgstr "%Y年%B%e日"
 
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
-msgstr "%B%e日 %A"
+msgstr "%b月%d日 %A"
 
 #~ msgid "%l:%M %p"
 #~ msgstr "%p %l:%M"
