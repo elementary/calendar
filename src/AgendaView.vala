@@ -539,7 +539,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
                 menu.append (edit_item);
                 menu.append (remove_item);
 
-                menu.popup (null, null, null, event.button, event.time);
+                menu.popup_at_pointer (event);
                 menu.show_all ();
             }
 

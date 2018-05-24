@@ -64,7 +64,7 @@ public class WeekLabels : Gtk.Revealer {
                 });
                 menu.add (show_weeks_menuitem);
                 menu.show_all ();
-                menu.popup (null, null, null, event.button, event.time);
+                menu.popup_at_pointer (event);
             }
 
             return false;
