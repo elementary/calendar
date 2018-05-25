@@ -4,14 +4,14 @@
         <value nick="Maximized" value="1" />
     </enum>
 
-    <schema path="/io/elementary/calendar/settings/" id="io.elementary.calendar.settings" gettext-domain="maya">
+    <schema path="/io/elementary/calendar/settings/" id="io.elementary.calendar.settings">
         <key name="plugins-disabled" type="as">
           <default>[]</default>
           <summary>List of disabled plugins</summary>
           <description>Plugin modules to not load during startup</description>
         </key>
     </schema>
-    <schema path="/io/elementary/calendar/saved-state/" id="io.elementary.calendar.savedstate" gettext-domain="maya">
+    <schema path="/io/elementary/calendar/saved-state/" id="io.elementary.calendar.savedstate">
         <key name="window-width" type="i">
             <default>850</default>
             <summary>The saved width of the window.</summary>
