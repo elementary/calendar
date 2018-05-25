@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2018-05-25 19:53+0000\n"
+"PO-Revision-Date: 2018-05-27 00:04+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan "
 "<https://weblate.elementary.io/projects/calendar/calendar/mo/>\n"
@@ -554,7 +554,7 @@ msgstr "Apăsați pe Enter pentru a analiza evenimentul"
 
 #: ../src/EventEdition/InfoPanel.vala:127
 msgid "Calendar:"
-msgstr "Calendar:"
+msgstr "Calendarul:"
 
 #: ../src/EventEdition/InfoPanel.vala:134
 msgid "Comments:"
