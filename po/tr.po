@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-02-01 01:55+0000\n"
-"Last-Translator: Sadık Poyraz <sadikpoyraz01@gmail.com>\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"PO-Revision-Date: 2018-05-25 20:08+0000\n"
+"Last-Translator: İbrahim Ethem Göl <ethem578@gmail.com>\n"
+"Language-Team: Turkish "
+"<https://weblate.elementary.io/projects/calendar/calendar/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
 msgid "Add New Calendar…"
@@ -29,7 +30,7 @@ msgstr "Sil"
 
 #: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
 msgid "Edit…"
-msgstr "Düzenle..."
+msgstr "Düzenle…"
 
 #: ../src/SourceDialog/SourceItem.vala:127
 msgid "Undo"
@@ -93,7 +94,7 @@ msgstr "%u daha..."
 #: ../src/Widgets/ContractorButtonWithMenu.vala:67
 #: ../src/Widgets/ContractorButtonWithMenu.vala:76
 msgid "Export Calendar..."
-msgstr "Takvimi Dışarı Aktar"
+msgstr "Takvimi Dışarı Aktar..."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 msgid "calendar.ics"
@@ -550,7 +551,7 @@ msgstr "Başlık:"
 
 #: ../src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
-msgstr "Etkinliğin Adı:"
+msgstr "Etkinlik Adı"
 
 #: ../src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
