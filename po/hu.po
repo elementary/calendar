@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2018-05-27 17:24+0000\n"
+"PO-Revision-Date: 2018-05-27 18:01+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/calendar/calendar/hu/>\n"
@@ -652,11 +652,11 @@ msgstr "Maya;Tervező;Dátumok;Napok;Események;"
 
 #: ../src/Translations.vala:9
 msgid "About Maya"
-msgstr "Maja névjegye"
+msgstr "A Maya névjegye"
 
 #: ../src/Translations.vala:10
 msgid "About Calendar"
-msgstr "Naptár névjegye"
+msgstr "A Naptár névjegye"
 
 #: ../plugins/Google/GoogleBackend.vala:38
 msgid "Google"
