@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2018-05-27 18:05+0000\n"
+"PO-Revision-Date: 2018-05-28 00:02+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/calendar/calendar/hu/>\n"
@@ -708,7 +708,7 @@ msgstr "Egy másolat megtartása helyileg"
 
 #: ../core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr "%Y. %b. %e."
+msgstr "%Y. %B. %e."
 
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
