@@ -42,7 +42,7 @@ namespace Maya {
             build_version_info = Build.VERSION_INFO;
 
             program_name = _(Build.APP_NAME);
-            exec_name = "maya-calendar";
+            exec_name = Build.EXEC_NAME;
 
             application_id = "org.pantheon.maya";
             app_launcher = "org.pantheon.maya.desktop";
