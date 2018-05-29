@@ -1,4 +1,4 @@
-libmaya-calendar.so.0 libmaya-calendar0 #MINVER#
+libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_backend_add_new_calendar@Base 0.3
  maya_backend_get_name@Base 0.3
  maya_backend_get_new_calendar_widget@Base 0.3
