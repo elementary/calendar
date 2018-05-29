@@ -3,7 +3,7 @@ set (CORE_LIB_SOVERSION 0)
 
 set (CONFIG_FILE ${CMAKE_CURRENT_BINARY_DIR}/config.vala)
 set (PC_FILE ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.pc)
-configure_file (${CMAKE_CURRENT_SOURCE_DIR}/config.vala.cmake ${CONFIG_FILE})
+configure_file (${CMAKE_CURRENT_SOURCE_DIR}/config.vala.in ${CONFIG_FILE})
 configure_file (${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_PROJECT_NAME}.pc.cmake ${PC_FILE} @ONLY)
 
 set (CORE_SOURCE
