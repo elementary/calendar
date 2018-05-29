@@ -31,7 +31,7 @@
     <release version="0.2.0" timestamp="1313053217"/>
   </releases>
   <provides>
-    <library>lib@EXEC_NAME@.so.0</library>
+    <library>@CORE_LIBRARY_NAME@.so.0</library>
     <binary>@EXEC_NAME@</binary>
     <binary>@EXEC_NAME@-daemon</binary>
   </provides>
