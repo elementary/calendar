@@ -33,7 +33,7 @@
   <provides>
     <library>@CORE_LIBRARY_NAME@.so.0</library>
     <binary>@EXEC_NAME@</binary>
-    <binary>@EXEC_NAME@-daemon</binary>
+    <binary>@DAEMON_EXEC_NAME@</binary>
   </provides>
   <developer_name>elementary LLC.</developer_name>
   <url type="homepage">http://elementary.io/</url>
