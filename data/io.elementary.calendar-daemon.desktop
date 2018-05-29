@@ -2,7 +2,7 @@
 Name=Maya Daemon
 Comment=View Event Reminders
 Icon=office-calendar
-Exec=maya-calendar-daemon
+Exec=io.elementary.calendar-daemon
 Terminal=false
 Type=Application
 Categories=System;
