@@ -2,8 +2,6 @@ cmake_minimum_required (VERSION 2.8)
 cmake_policy (VERSION 2.8)
 project (maya-calendar C)
 
-list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)
-
 #
 # Base bits
 #
