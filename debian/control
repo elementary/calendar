@@ -45,6 +45,7 @@ Description: GTK+ calendar application
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
 
 Package: maya-calendar-common
+Section: oldlibs
 Architecture: all
 Depends: ${misc:Depends}
 Description: GTK+ calendar application (dummy transitional package)
@@ -140,7 +141,7 @@ Description: GTK+ calendar application (CalDAV plugin)
 Package: maya-calendar-dbg
 Architecture: any
 Section: debug
-Priority: extra
+Priority: optional
 Depends: maya-calendar (= ${binary:Version}), ${misc:Depends}
 Description: GTK+ calendar application (debugging symbols)
  Maya is a slim, lightweight, GTK+ Calendar application written
