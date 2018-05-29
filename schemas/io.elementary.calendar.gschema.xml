@@ -3,7 +3,6 @@
         <value nick="Normal" value="0" />
         <value nick="Maximized" value="1" />
     </enum>
-
     <schema path="/io/elementary/calendar/settings/" id="io.elementary.calendar.settings">
         <key name="plugins-disabled" type="as">
           <default>[]</default>
