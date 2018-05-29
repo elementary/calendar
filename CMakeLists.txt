@@ -2,18 +2,13 @@ cmake_minimum_required (VERSION 2.8)
 cmake_policy (VERSION 2.8)
 project (maya-calendar C)
 
-list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)
-
 #
 # Base bits
 #
 include (GNUInstallDirs)
-set (DATADIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}")
-set (PKGDATADIR "${DATADIR}/${CMAKE_PROJECT_NAME}")
+set (EXEC_NAME ${CMAKE_PROJECT_NAME})
 set (GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
-set (RELEASE_NAME "Sandy Cheeks")
 set (VERSION "0.4.1")
-set (VERSION_INFO "Release")
 set (PLUGIN_DIR ${CMAKE_INSTALL_FULL_LIBDIR}/${CMAKE_PROJECT_NAME}/plugins)
 set (CORE_LIBRARY_NAME lib${CMAKE_PROJECT_NAME})
 

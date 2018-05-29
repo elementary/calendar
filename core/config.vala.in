@@ -1,0 +1,7 @@
+namespace Build {
+    public const string APP_NAME = "@APP_NAME@";
+    public const string EXEC_NAME = "@EXEC_NAME@";
+    public const string GETTEXT_PACKAGE = "@GETTEXT_PACKAGE@";
+    public const string PLUGIN_DIR = "@PLUGIN_DIR@";
+    public const string VERSION = "@VERSION@";
+}
