@@ -37,8 +37,8 @@ namespace Maya {
             program_name = _(Build.APP_NAME);
             exec_name = Build.EXEC_NAME;
 
-            application_id = "io.elementary.calendar";
-            app_launcher = "io.elementary.calendar.desktop";
+            application_id = Build.EXEC_NAME;
+            app_launcher = Build.EXEC_NAME + ".desktop";
 
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.textdomain (Build.GETTEXT_PACKAGE);
