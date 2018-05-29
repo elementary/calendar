@@ -34,13 +34,6 @@ namespace Maya {
         construct {
             flags |= ApplicationFlags.HANDLES_OPEN;
 
-            // App info
-            build_data_dir = Build.DATADIR;
-            build_pkg_data_dir = Build.PKGDATADIR;
-            build_release_name = Build.RELEASE_NAME;
-            build_version = Build.VERSION;
-            build_version_info = Build.VERSION_INFO;
-
             program_name = _(Build.APP_NAME);
             exec_name = Build.EXEC_NAME;
 
