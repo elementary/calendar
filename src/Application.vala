@@ -37,8 +37,8 @@ namespace Maya {
             program_name = _(Build.APP_NAME);
             exec_name = Build.EXEC_NAME;
 
-            application_id = "org.pantheon.maya";
-            app_launcher = "org.pantheon.maya.desktop";
+            application_id = Build.EXEC_NAME;
+            app_launcher = Build.EXEC_NAME + ".desktop";
 
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.textdomain (Build.GETTEXT_PACKAGE);
