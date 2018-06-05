@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-04-24 13:42+0000\n"
+"PO-Revision-Date: 2018-06-06 00:07+0000\n"
 "Last-Translator: Leonardo <leonardo@elementary.io>\n"
 "Language-Team: Portuguese (Brazil) "
-"<https://l10n.elementary.io/projects/calendar/calendar/pt_BR/>\n"
+"<https://weblate.elementary.io/projects/calendar/calendar/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -98,7 +98,7 @@ msgstr "Exportar calendário..."
 
 #: ../src/Widgets/ContractorButtonWithMenu.vala:79
 msgid "calendar.ics"
-msgstr "calendário.ics"
+msgstr "calendario.ics"
 
 #: ../src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
