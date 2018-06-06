@@ -1,7 +1,7 @@
 Source: maya-calendar
 Section: utils
 Priority: optional
-Maintainer: Sergey "Shnatsel" Davidoff <sergey@elementaryos.org>
+Maintainer: Cody Garver <cody@elementary.io>
 Build-Depends: cmake (>= 2.8),
                debhelper (>= 9),
                intltool,
@@ -22,7 +22,7 @@ Build-Depends: cmake (>= 2.8),
                pkg-config,
                valac (>= 0.26.0)
 Standards-Version: 3.9.5
-Homepage: https://launchpad.net/maya
+Homepage: https://github.com/elementary/calendar
 
 Package: maya-calendar
 Conflicts: maya-calendar-common (<< 0.4.0.1+r948)
