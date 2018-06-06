@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2018-05-07 00:02+0000\n"
+"PO-Revision-Date: 2018-06-07 00:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/calendar/calendar/ja/>\n"
@@ -682,7 +682,7 @@ msgstr "user.name"
 
 #: ../core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr "Eメール:"
+msgstr "メール:"
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
