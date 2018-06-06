@@ -13,6 +13,11 @@
     </_p>
   </description>
   <releases>
+    <release version="0.4.2" date="2018-06-06" urgency="medium">
+            <description>
+                <_p>Various bug fixes and improvements.</_p>
+            </description>
+    </release>
     <release version="0.4.1" date="2017-10-27" urgency="medium">
             <description>
                 <_p>Fixes for calendar accuracy and integrity issues.</_p>
