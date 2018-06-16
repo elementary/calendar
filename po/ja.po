@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2018-06-11 14:10+0000\n"
+"PO-Revision-Date: 2018-06-17 00:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/calendar/calendar/ja/>\n"
@@ -81,11 +81,11 @@ msgstr "保存"
 
 #: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
 msgid "Hide Week Numbers"
-msgstr "週番号を非表示にする"
+msgstr "週番号を表示しない"
 
 #: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
 msgid "Show Week Numbers"
-msgstr "週番号を表示する"
+msgstr "週番号を表示"
 
 #: ../src/Grid/VAutoHider.vala:100
 msgid "%u more…"
