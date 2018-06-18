@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2018-06-02 00:04+0000\n"
+"PO-Revision-Date: 2018-06-19 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/calendar/calendar/hu/>\n"
@@ -271,7 +271,7 @@ msgstr "Soha"
 
 #: ../src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
-msgstr "Eddig"
+msgstr "Ekkor"
 
 #: ../src/EventEdition/RepeatPanel.vala:143
 msgid "After"
@@ -507,7 +507,7 @@ msgstr "Hely"
 
 #: ../src/EventEdition/EventDialog.vala:100
 msgid "Guests"
-msgstr "Vendégek"
+msgstr "Résztvevők"
 
 #: ../src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
@@ -570,8 +570,7 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"A közelgő események itt jelennek meg, ha a kiválasztott dátumkor vannak "
-"események."
+"Ha a kiválasztott időpontban vannak közelgő események, azok itt jelennek meg."
 
 #: ../src/AgendaView.vala:154
 msgid "During the day"
