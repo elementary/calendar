@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2018-06-17 00:07+0000\n"
+"PO-Revision-Date: 2018-06-18 00:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/calendar/calendar/ja/>\n"
@@ -486,7 +486,7 @@ msgstr "日"
 
 #: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
 msgid "Add Event"
-msgstr "イベントを追加"
+msgstr "予定を追加"
 
 #: ../src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
@@ -606,7 +606,7 @@ msgstr "カレンダーの管理"
 
 #: ../src/MayaToolbar.vala:64
 msgid "Search Events"
-msgstr "予定の検索"
+msgstr "予定を検索"
 
 #: ../src/MayaToolbar.vala:67
 msgid "Export or Share the default Calendar"
@@ -630,7 +630,7 @@ msgstr ""
 
 #: ../src/Translations.vala:5
 msgid "View and schedule events"
-msgstr "イベントの表示と計画をします"
+msgstr "予定の表示と計画をします"
 
 #: ../src/Translations.vala:7
 msgid "Maya;Planner;Dates;Days;Events;"
