@@ -13,6 +13,12 @@
     </_p>
   </description>
   <releases>
+    <release version="0.4.2.1" date="2018-06-22" urgency="medium">
+            <description>
+                <_p>Update wingpanel-indicator-datetime settings path.</_p>
+                <_p>New translations.</_p>
+            </description>
+    </release>
     <release version="0.4.2" date="2018-06-06" urgency="medium">
             <description>
                 <_p>Various bug fixes and improvements.</_p>

@@ -8,7 +8,7 @@ project (io.elementary.calendar C)
 include (GNUInstallDirs)
 set (EXEC_NAME ${CMAKE_PROJECT_NAME})
 set (GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
-set (VERSION "0.4.2")
+set (VERSION "0.4.2.1")
 set (PLUGIN_DIR ${CMAKE_INSTALL_FULL_LIBDIR}/${CMAKE_PROJECT_NAME}/plugins)
 set (CORE_LIBRARY_NAME libelementary-calendar)
 
