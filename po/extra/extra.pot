@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-19 05:38-0600\n"
+"POT-Creation-Date: 2018-06-27 10:03-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,19 +29,22 @@ msgstr ""
 msgid "Add Event"
 msgstr ""
 
-msgid "Maya"
-msgstr ""
-
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
+msgstr ""
+
+msgid "Update wingpanel-indicator-datetime settings path."
+msgstr ""
+
+msgid "New translations."
+msgstr ""
+
+msgid "Various bug fixes and improvements."
 msgstr ""
 
 msgid "Fixes for calendar accuracy and integrity issues."
 msgstr ""
 
 msgid "Fixes exporting, importing and printing calendars."
-msgstr ""
-
-msgid "Various bug fixes and improvements."
 msgstr ""
