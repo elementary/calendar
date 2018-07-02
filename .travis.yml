@@ -17,6 +17,7 @@ addons:
     packages:
       - libstdc++-5-dev
       - libxml2-utils
+      - intltool
 
 cache:
   directories:
