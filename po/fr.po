@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-19 05:38-0600\n"
-"PO-Revision-Date: 2016-06-26 17:09+0000\n"
+"PO-Revision-Date: 2018-07-02 16:11+0200\n"
 "Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
 "Language-Team: French <fr@li.org>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #: ../core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
@@ -29,17 +29,15 @@ msgstr "%e %B %Y"
 
 #: ../src/AgendaView.vala:586
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../src/AgendaView.vala:572 ../src/AgendaView.vala:582
-#, fuzzy
 msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s - %s"
 
 #: ../src/AgendaView.vala:588
-#, fuzzy
 msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s - %s"
 
 #: ../src/AgendaView.vala:574
 msgid "%s, %s - %s, %s"
@@ -200,9 +198,8 @@ msgid "Create a new event"
 msgstr "Créer un nouvel évènement"
 
 #: ../src/Application.vala:55
-#, fuzzy
 msgid "Create an event"
-msgstr "Créer un nouvel évènement"
+msgstr "Créer un évènement"
 
 #: ../src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
@@ -430,7 +427,7 @@ msgstr "Exporter ou partager le calendrier par défaut"
 
 #: ../src/Application.vala:56
 msgid "Focus the given day"
-msgstr ""
+msgstr "Afficher le jour donné"
 
 #: ../src/EventEdition/RepeatPanel.vala:515
 msgid "Fri"
@@ -529,14 +526,12 @@ msgid "Never"
 msgstr "Jamais"
 
 #: ../src/AgendaView.vala:312 ../src/AgendaView.vala:326
-#, fuzzy
 msgid "Next Month"
-msgstr "Mois"
+msgstr "Mois suivant"
 
 #: ../src/AgendaView.vala:308 ../src/AgendaView.vala:322
-#, fuzzy
 msgid "Next Week"
-msgstr "Semaine"
+msgstr "Semaine suivante"
 
 #: ../src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
@@ -572,13 +567,12 @@ msgid "Press enter to parse event"
 msgstr "Appuyez sur Entrée pour analyser l'événement"
 
 #: ../src/Application.vala:58 ../daemon/Daemon.vala:21
-#, fuzzy
 msgid "Print debug information"
-msgstr "Informations générales"
+msgstr "Affichage des informations de débug"
 
 #: ../src/Application.vala:57 ../daemon/Daemon.vala:23
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Afficher les infos de version et quitter."
 
 #: ../src/EventEdition/EventDialog.vala:110
 msgid "Reminders"
@@ -594,13 +588,12 @@ msgid "Remove"
 msgstr "Supprimer"
 
 #: ../src/Grid/EventButton.vala:69
-#, fuzzy
 msgid "Remove Event"
 msgstr "Supprimer l'événement"
 
 #: ../src/Grid/EventButton.vala:70
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Supprimer l'occurence"
 
 #: ../src/EventEdition/EventDialog.vala:111
 #: ../src/EventEdition/RepeatPanel.vala:137
@@ -644,14 +637,12 @@ msgid "The same day every month"
 msgstr "Le même jour de chaque mois"
 
 #: ../src/AgendaView.vala:310 ../src/AgendaView.vala:324
-#, fuzzy
 msgid "This Month"
-msgstr "Mois"
+msgstr "Ce mois"
 
 #: ../src/AgendaView.vala:306 ../src/AgendaView.vala:320
-#, fuzzy
 msgid "This Week"
-msgstr "Semaine"
+msgstr "Cette semaine"
 
 #: ../src/EventEdition/RepeatPanel.vala:514
 msgid "Thu"
@@ -667,7 +658,7 @@ msgstr "Au :"
 
 #: ../src/AgendaView.vala:304 ../src/AgendaView.vala:318
 msgid "Tomorrow"
-msgstr ""
+msgstr "Demain"
 
 #: ../src/EventEdition/RepeatPanel.vala:512
 msgid "Tue"
@@ -691,7 +682,7 @@ msgstr "Après le"
 
 #: ../src/AgendaView.vala:142
 msgid "Upcoming Events"
-msgstr ""
+msgstr "Évènements à venir"
 
 #: ../plugins/CalDAV/CalDAVBackend.vala:95
 msgid "Use a secure connection"
@@ -744,7 +735,7 @@ msgstr "calendrier.ics"
 
 #: ../src/Application.vala:56
 msgid "date"
-msgstr ""
+msgstr "date"
 
 #: ../core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
