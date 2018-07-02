@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-05-03 14:13+0000\n"
+"PO-Revision-Date: 2018-07-03 00:05+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan "
-"<https://l10n.elementary.io/projects/calendar/calendar/ca/>\n"
+"Language-Team: Catalan <https://weblate.elementary.io/projects/calendar/"
+"calendar/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-19 05:51+0000\n"
 
 #: ../src/SourceDialog/SourceSelector.vala:69
@@ -531,7 +531,7 @@ msgstr "Ubicació:"
 
 #: ../src/EventEdition/LocationPanel.vala:51
 msgid "John Smith OR Example St."
-msgstr "John Smith o C/ Exemple"
+msgstr "Joan Ferrer o C/ Exemple"
 
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
