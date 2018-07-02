@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-01-19 05:38-0600\n"
 "PO-Revision-Date: 2017-05-09 22:15+0000\n"
 "Last-Translator: Martin Tomov <martin.tomov@boomer.digital>\n"
-"Language-Team: Bulgarian "
-"<https://l10n.elementary.io/projects/calendar/calendar/bg/>\n"
+"Language-Team: Bulgarian <https://l10n.elementary.io/projects/calendar/"
+"calendar/bg/>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,213 +20,194 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-04-12 06:27+0000\n"
 
-#: ../src/SourceDialog/SourceSelector.vala:69
-msgid "Add New Calendar…"
-msgstr "Добавяне на нов календар…"
+#: ../core/Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %d, %b"
 
-#: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
-msgid "Remove"
-msgstr "Премахване"
+#: ../core/Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e %B %Y"
 
-#: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
-msgid "Edit…"
-msgstr "Редактиране…"
+#: ../src/AgendaView.vala:586
+msgid "%s"
+msgstr ""
 
-#: ../src/SourceDialog/SourceItem.vala:127
-msgid "Undo"
-msgstr "Отмяна"
+#: ../src/AgendaView.vala:572 ../src/AgendaView.vala:582
+#, fuzzy
+msgid "%s - %s"
+msgstr "%s, %s - %s, %s"
 
-#: ../src/SourceDialog/SourceItem.vala:142
-msgid "Calendar \"%s\" removed."
-msgstr "Календарът \"%s\" е премахнат."
+#: ../src/AgendaView.vala:588
+#, fuzzy
+msgid "%s, %s - %s"
+msgstr "%s, %s - %s, %s"
 
-#: ../src/SourceDialog/SourceDialog.vala:58
-#: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
-msgid "Cancel"
-msgstr "Отказ"
+#: ../src/AgendaView.vala:574
+msgid "%s, %s - %s, %s"
+msgstr "%s, %s - %s, %s"
 
-#: ../src/SourceDialog/SourceDialog.vala:60
-msgid "Create"
-msgstr "Създаване"
-
-#: ../src/SourceDialog/SourceDialog.vala:69
-msgid "Name:"
-msgstr "Име:"
-
-#: ../src/SourceDialog/SourceDialog.vala:72
-msgid "Calendar Name"
-msgstr "Име на календар"
-
-#: ../src/SourceDialog/SourceDialog.vala:95
-msgid "Type:"
-msgstr "Вид:"
-
-#: ../src/SourceDialog/SourceDialog.vala:118
-msgid "Color:"
-msgstr "Цвят:"
-
-#: ../src/SourceDialog/SourceDialog.vala:123
-msgid "Mark as default calendar"
-msgstr "Бележи като календар за подразбиране"
-
-#: ../src/SourceDialog/SourceDialog.vala:153
-msgid "Create Calendar"
-msgstr "Създаване на календар"
-
-#: ../src/SourceDialog/SourceDialog.vala:162
-#: ../src/Widgets/ContractorButtonWithMenu.vala:82
-msgid "Save"
-msgstr "Запазване"
-
-#: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
-msgid "Hide Week Numbers"
-msgstr "Скриване на номерата на седмиците"
-
-#: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
-msgid "Show Week Numbers"
-msgstr "Показване на номерата на седмиците"
-
-#: ../src/Grid/VAutoHider.vala:100
+#: ../src/Grid/VAutoHider.vala:109
 msgid "%u more…"
 msgstr "%u още…"
 
-#: ../src/Widgets/ContractorButtonWithMenu.vala:67
-#: ../src/Widgets/ContractorButtonWithMenu.vala:76
-msgid "Export Calendar..."
-msgstr "Изнасяне на календара..."
+#: ../src/EventEdition/ReminderPanel.vala:172
+msgid "0 minutes"
+msgstr "0 минути"
 
-#: ../src/Widgets/ContractorButtonWithMenu.vala:79
-msgid "calendar.ics"
-msgstr "календар.ics"
+#: ../src/EventEdition/ReminderPanel.vala:181
+msgid "1 hour"
+msgstr "1 час"
 
-#: ../src/EventEdition/GuestsPanel.vala:53
-msgid "Participants:"
-msgstr "Участници:"
+#: ../src/EventEdition/ReminderPanel.vala:173
+msgid "1 minutes"
+msgstr "1 минута"
 
-#: ../src/EventEdition/GuestsPanel.vala:58
-msgid "No Participants"
-msgstr "Без присъстващи"
+#: ../src/EventEdition/ReminderPanel.vala:187
+msgid "1 week"
+msgstr "1 седмица"
 
-#: ../src/EventEdition/GuestsPanel.vala:93
-msgid "Invite"
-msgstr "Покани"
+#: ../src/EventEdition/ReminderPanel.vala:175
+msgid "10 minutes"
+msgstr "10 минути"
 
-#: ../src/EventEdition/GuestsPanel.vala:241
+#: ../src/EventEdition/ReminderPanel.vala:184
+msgid "12 hours"
+msgstr "12 часа"
+
+#: ../src/EventEdition/ReminderPanel.vala:176
+msgid "15 minutes"
+msgstr "15 минути"
+
+#: ../src/EventEdition/ReminderPanel.vala:186
+msgid "2 days"
+msgstr "2 дни"
+
+#: ../src/EventEdition/ReminderPanel.vala:182
+msgid "2 hours"
+msgstr "2 часа"
+
+#: ../src/EventEdition/ReminderPanel.vala:177
+msgid "20 minutes"
+msgstr "20 минути"
+
+#: ../src/EventEdition/ReminderPanel.vala:185
+msgid "24 hours"
+msgstr "24 часа"
+
+#: ../src/EventEdition/ReminderPanel.vala:178
+msgid "25 minutes"
+msgstr "25 минути"
+
+#: ../src/EventEdition/ReminderPanel.vala:183
+msgid "3 hours"
+msgstr "3 часа"
+
+#: ../src/EventEdition/ReminderPanel.vala:179
+msgid "30 minutes"
+msgstr "30 минути"
+
+#: ../src/EventEdition/ReminderPanel.vala:180
+msgid "45 minutes"
+msgstr "45 минути"
+
+#: ../src/EventEdition/ReminderPanel.vala:174
+msgid "5 minutes"
+msgstr "5 минути"
+
+#: ../src/EventEdition/GuestsPanel.vala:242
 msgid "Accepted"
 msgstr "Прието"
 
-#: ../src/EventEdition/GuestsPanel.vala:244
-msgid "Declined"
-msgstr "Отхвърлено"
+#: ../src/EventEdition/EventDialog.vala:58
+msgid "Add Event"
+msgstr "Добавяне на събитие"
 
-#: ../src/EventEdition/ReminderPanel.vala:33
-msgid "Reminders:"
-msgstr "Напомняния:"
+#: ../src/EventEdition/RepeatPanel.vala:224
+msgid "Add Exception"
+msgstr "Добави изключение"
 
-#: ../src/EventEdition/ReminderPanel.vala:37
-msgid "No Reminders"
-msgstr "Без напомяния"
+#: ../src/SourceDialog/SourceSelector.vala:58
+msgid "Add New Calendar…"
+msgstr "Добавяне на нов календар…"
 
 #: ../src/EventEdition/ReminderPanel.vala:71
 msgid "Add Reminder"
 msgstr "Добави Напомняне"
 
-#: ../src/EventEdition/ReminderPanel.vala:182
-msgid "0 minutes"
-msgstr "0 минути"
+#: ../src/EventEdition/RepeatPanel.vala:143
+msgid "After"
+msgstr "След"
 
-#: ../src/EventEdition/ReminderPanel.vala:183
-msgid "1 minutes"
-msgstr "1 минута"
+#: ../src/AgendaView.vala:239
+msgid "All day"
+msgstr "Целия ден"
 
-#: ../src/EventEdition/ReminderPanel.vala:184
-msgid "5 minutes"
-msgstr "5 минути"
+#: ../src/EventEdition/InfoPanel.vala:84
+msgid "All day:"
+msgstr "Цял ден:"
 
-#: ../src/EventEdition/ReminderPanel.vala:185
-msgid "10 minutes"
-msgstr "10 минути"
+#: ../plugins/CalDAV/CalDAVBackend.vala:39
+msgid "CalDAV"
+msgstr "КалДАВ"
 
-#: ../src/EventEdition/ReminderPanel.vala:186
-msgid "15 minutes"
-msgstr "15 минути"
+#: ../src/Application.vala:246
+msgid "Calendar"
+msgstr "Календар"
 
-#: ../src/EventEdition/ReminderPanel.vala:187
-msgid "20 minutes"
-msgstr "20 минути"
+#: ../src/SourceDialog/SourceItem.vala:140
+msgid "Calendar \"%s\" removed."
+msgstr "Календарът \"%s\" е премахнат."
 
-#: ../src/EventEdition/ReminderPanel.vala:188
-msgid "25 minutes"
-msgstr "25 минути"
+#: ../src/SourceDialog/SourceDialog.vala:72
+msgid "Calendar Name"
+msgstr "Име на календар"
 
-#: ../src/EventEdition/ReminderPanel.vala:189
-msgid "30 minutes"
-msgstr "30 минути"
+#: ../src/EventEdition/InfoPanel.vala:134
+msgid "Calendar:"
+msgstr "Календар:"
 
-#: ../src/EventEdition/ReminderPanel.vala:190
-msgid "45 minutes"
-msgstr "45 минути"
+#: ../src/ImportDialog.vala:55 ../src/EventEdition/EventDialog.vala:152
+#: ../src/SourceDialog/SourceDialog.vala:58
+#: ../src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "Отказ"
 
-#: ../src/EventEdition/ReminderPanel.vala:191
-msgid "1 hour"
-msgstr "1 час"
+#: ../src/SourceDialog/SourceDialog.vala:118
+msgid "Color:"
+msgstr "Цвят:"
 
-#: ../src/EventEdition/ReminderPanel.vala:192
-msgid "2 hours"
-msgstr "2 часа"
+#: ../src/EventEdition/InfoPanel.vala:141
+msgid "Comments:"
+msgstr "Забележки:"
 
-#: ../src/EventEdition/ReminderPanel.vala:193
-msgid "3 hours"
-msgstr "3 часа"
+#: ../src/Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "Контакти"
 
-#: ../src/EventEdition/ReminderPanel.vala:194
-msgid "12 hours"
-msgstr "12 часа"
+#: ../src/SourceDialog/SourceDialog.vala:60
+msgid "Create"
+msgstr "Създаване"
 
-#: ../src/EventEdition/ReminderPanel.vala:195
-msgid "24 hours"
-msgstr "24 часа"
+#: ../src/SourceDialog/SourceDialog.vala:153
+msgid "Create Calendar"
+msgstr "Създаване на календар"
 
-#: ../src/EventEdition/ReminderPanel.vala:196
-msgid "2 days"
-msgstr "2 дни"
+#: ../src/EventEdition/EventDialog.vala:146
+msgid "Create Event"
+msgstr "Създай събитие"
 
-#: ../src/EventEdition/ReminderPanel.vala:197
-msgid "1 week"
-msgstr "1 седмица"
+#: ../src/Widgets/HeaderBar.vala:38
+msgid "Create a new event"
+msgstr "Създаване на ново събитие"
 
-#: ../src/EventEdition/ReminderPanel.vala:206
-msgid "Notification"
-msgstr "Известие"
-
-#: ../src/EventEdition/ReminderPanel.vala:207
-msgid "Email"
-msgstr "Ел. поща"
-
-#: ../src/EventEdition/RepeatPanel.vala:53
-msgid "Repeat:"
-msgstr "Повторение:"
+#: ../src/Application.vala:55
+#, fuzzy
+msgid "Create an event"
+msgstr "Създаване на ново събитие"
 
 #: ../src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
 msgstr "Ежедневно"
-
-#: ../src/EventEdition/RepeatPanel.vala:59
-msgid "Weekly"
-msgstr "Ежеседмично"
-
-#: ../src/EventEdition/RepeatPanel.vala:60
-msgid "Monthly"
-msgstr "Ежемесечно"
-
-#: ../src/EventEdition/RepeatPanel.vala:61
-msgid "Yearly"
-msgstr "Ежегодно"
-
-#: ../src/EventEdition/RepeatPanel.vala:104
-msgid "Every:"
-msgstr "Всеки:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
@@ -234,212 +215,54 @@ msgid_plural "Days"
 msgstr[0] "Ден"
 msgstr[1] "Дни"
 
-#: ../src/EventEdition/RepeatPanel.vala:114
-#: ../src/EventEdition/RepeatPanel.vala:125
-msgid "Week"
-msgid_plural "Weeks"
-msgstr[0] "Седмица"
-msgstr[1] "Седмици"
+#: ../src/EventEdition/GuestsPanel.vala:245
+msgid "Declined"
+msgstr "Отхвърлено"
 
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Month"
-msgid_plural "Months"
-msgstr[0] "Месец"
-msgstr[1] "Месеци"
+#: ../src/EventEdition/EventDialog.vala:134
+msgid "Delete Event"
+msgstr "Изтрий събитието"
 
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Year"
-msgid_plural "Years"
-msgstr[0] "Година"
-msgstr[1] "Години"
+#: ../src/AgendaView.vala:234
+msgid "During the day"
+msgstr "През деня"
+
+#: ../src/EventEdition/EventDialog.vala:61
+msgid "Edit Event"
+msgstr "Редактиране на събитие"
+
+#: ../src/AgendaView.vala:528 ../src/SourceDialog/SourceItem.vala:94
+#: ../src/Grid/EventButton.vala:62
+msgid "Edit…"
+msgstr "Редактиране…"
+
+#: ../core/Backends/PlacementWidget.vala:63
+msgid "Email:"
+msgstr "Е-поща:"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
 msgstr "Свършва:"
 
-#: ../src/EventEdition/RepeatPanel.vala:137
-#: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:106
-msgid "Repeat"
-msgid_plural "Repeats"
-msgstr[0] "Повторение"
-msgstr[1] "Повторения"
+#: ../src/EventEdition/RepeatPanel.vala:498
+msgid "Every fifth Friday"
+msgstr "Всеки пети петък"
 
-#: ../src/EventEdition/RepeatPanel.vala:141
-msgid "Never"
-msgstr "Никога"
+#: ../src/EventEdition/RepeatPanel.vala:486
+msgid "Every fifth Monday"
+msgstr "Всеки пети понеделник"
 
-#: ../src/EventEdition/RepeatPanel.vala:142
-msgid "Until"
-msgstr "До"
-
-#: ../src/EventEdition/RepeatPanel.vala:143
-msgid "After"
-msgstr "След"
-
-#: ../src/EventEdition/RepeatPanel.vala:189
-msgid "The same day every month"
-msgstr "На същия ден, всеки месец"
-
-#: ../src/EventEdition/RepeatPanel.vala:200
-msgid "Exceptions:"
-msgstr "Изключения:"
-
-#: ../src/EventEdition/RepeatPanel.vala:203
-msgid "No Exceptions"
-msgstr "Без изключения"
-
-#: ../src/EventEdition/RepeatPanel.vala:224
-msgid "Add Exception"
-msgstr "Добави изключение"
-
-#: ../src/EventEdition/RepeatPanel.vala:358
-msgid "Every last Sunday"
-msgstr "Всяка последна неделя"
-
-#: ../src/EventEdition/RepeatPanel.vala:361
-msgid "Every last Monday"
-msgstr "Всеки последен понеделник"
-
-#: ../src/EventEdition/RepeatPanel.vala:364
-msgid "Every last Tuesday"
-msgstr "Всеки последен вторник"
-
-#: ../src/EventEdition/RepeatPanel.vala:367
-msgid "Every last Wednesday"
-msgstr "Всяка последна сряда"
-
-#: ../src/EventEdition/RepeatPanel.vala:370
-msgid "Every last Thursday"
-msgstr "Всеки последен четвъртък"
-
-#: ../src/EventEdition/RepeatPanel.vala:373
-msgid "Every last Friday"
-msgstr "Всеки последен петък"
-
-#: ../src/EventEdition/RepeatPanel.vala:376
-msgid "Every last Saturday"
-msgstr "Всяка последна събота"
-
-#: ../src/EventEdition/RepeatPanel.vala:383
-msgid "Every first Sunday"
-msgstr "Всяка последна неделя"
-
-#: ../src/EventEdition/RepeatPanel.vala:386
-msgid "Every first Monday"
-msgstr "Всеки последен понеделник"
-
-#: ../src/EventEdition/RepeatPanel.vala:389
-msgid "Every first Tuesday"
-msgstr "Всеки последен вторник"
-
-#: ../src/EventEdition/RepeatPanel.vala:392
-msgid "Every first Wednesday"
-msgstr "Всяка последна сряда"
-
-#: ../src/EventEdition/RepeatPanel.vala:395
-msgid "Every first Thursday"
-msgstr "Всеки първи четвъртък"
-
-#: ../src/EventEdition/RepeatPanel.vala:398
-msgid "Every first Friday"
-msgstr "Всеки първи петък"
-
-#: ../src/EventEdition/RepeatPanel.vala:401
-msgid "Every first Saturday"
-msgstr "Всяка първа събота"
-
-#: ../src/EventEdition/RepeatPanel.vala:408
-msgid "Every second Sunday"
-msgstr "Всяка втора неделя"
-
-#: ../src/EventEdition/RepeatPanel.vala:411
-msgid "Every second Monday"
-msgstr "Всеки втори понеделник"
-
-#: ../src/EventEdition/RepeatPanel.vala:414
-msgid "Every second Tuesday"
-msgstr "Всеки втори вторник"
-
-#: ../src/EventEdition/RepeatPanel.vala:417
-msgid "Every second Wednesday"
-msgstr "Всяка втора сряда"
-
-#: ../src/EventEdition/RepeatPanel.vala:420
-msgid "Every second Thursday"
-msgstr "Всеки втори четвъртък"
-
-#: ../src/EventEdition/RepeatPanel.vala:423
-msgid "Every second Friday"
-msgstr "Всеки втори петък"
-
-#: ../src/EventEdition/RepeatPanel.vala:426
-msgid "Every second Saturday"
-msgstr "Всяка втора събота"
-
-#: ../src/EventEdition/RepeatPanel.vala:433
-msgid "Every third Sunday"
-msgstr "Всяка трета неделя"
-
-#: ../src/EventEdition/RepeatPanel.vala:436
-msgid "Every third Monday"
-msgstr "Всеки трети понеделник"
-
-#: ../src/EventEdition/RepeatPanel.vala:439
-msgid "Every third Tuesday"
-msgstr "Всеки трети вторник"
-
-#: ../src/EventEdition/RepeatPanel.vala:442
-msgid "Every third Wednesday"
-msgstr "Всяка трета сряда"
-
-#: ../src/EventEdition/RepeatPanel.vala:445
-msgid "Every third Thursday"
-msgstr "Всеки трети четвъртък"
-
-#: ../src/EventEdition/RepeatPanel.vala:448
-msgid "Every third Friday"
-msgstr "Всеки трети петък"
-
-#: ../src/EventEdition/RepeatPanel.vala:451
-msgid "Every third Saturday"
-msgstr "Всяка трета събота"
-
-#: ../src/EventEdition/RepeatPanel.vala:458
-msgid "Every fourth Sunday"
-msgstr "Всяка четвърта неделя"
-
-#: ../src/EventEdition/RepeatPanel.vala:461
-msgid "Every fourth Monday"
-msgstr "Всеки четвърти понеделник"
-
-#: ../src/EventEdition/RepeatPanel.vala:464
-msgid "Every fourth Tuesday"
-msgstr "Всеки четвърти вторник"
-
-#: ../src/EventEdition/RepeatPanel.vala:467
-msgid "Every fourth Wednesday"
-msgstr "Всяка четвърта сряда"
-
-#: ../src/EventEdition/RepeatPanel.vala:470
-msgid "Every fourth Thursday"
-msgstr "Всеки четвърти четвъртък"
-
-#: ../src/EventEdition/RepeatPanel.vala:473
-msgid "Every fourth Friday"
-msgstr "Всеки четвърти петък"
-
-#: ../src/EventEdition/RepeatPanel.vala:476
-msgid "Every fourth Saturday"
-msgstr "Всяка четвърта събота"
+#: ../src/EventEdition/RepeatPanel.vala:501
+msgid "Every fifth Saturday"
+msgstr "Всяка пета неделя"
 
 #: ../src/EventEdition/RepeatPanel.vala:483
 msgid "Every fifth Sunday"
 msgstr "Всяка пета събота"
 
-#: ../src/EventEdition/RepeatPanel.vala:486
-msgid "Every fifth Monday"
-msgstr "Всеки пети понеделник"
+#: ../src/EventEdition/RepeatPanel.vala:495
+msgid "Every fifth Thursday"
+msgstr "Всеки пети четвъртък"
 
 #: ../src/EventEdition/RepeatPanel.vala:489
 msgid "Every fifth Tuesday"
@@ -449,141 +272,198 @@ msgstr "Всеки пети вторник"
 msgid "Every fifth Wednesday"
 msgstr "Всяка пета сряда"
 
-#: ../src/EventEdition/RepeatPanel.vala:495
-msgid "Every fifth Thursday"
-msgstr "Всеки пети четвъртък"
+#: ../src/EventEdition/RepeatPanel.vala:398
+msgid "Every first Friday"
+msgstr "Всеки първи петък"
 
-#: ../src/EventEdition/RepeatPanel.vala:498
-msgid "Every fifth Friday"
-msgstr "Всеки пети петък"
+#: ../src/EventEdition/RepeatPanel.vala:386
+msgid "Every first Monday"
+msgstr "Всеки последен понеделник"
 
-#: ../src/EventEdition/RepeatPanel.vala:501
-msgid "Every fifth Saturday"
-msgstr "Всяка пета неделя"
+#: ../src/EventEdition/RepeatPanel.vala:401
+msgid "Every first Saturday"
+msgstr "Всяка първа събота"
 
-#: ../src/EventEdition/RepeatPanel.vala:511
-msgid "Mon"
-msgstr "Пон"
+#: ../src/EventEdition/RepeatPanel.vala:383
+msgid "Every first Sunday"
+msgstr "Всяка последна неделя"
 
-#: ../src/EventEdition/RepeatPanel.vala:512
-msgid "Tue"
-msgstr "Вто"
+#: ../src/EventEdition/RepeatPanel.vala:395
+msgid "Every first Thursday"
+msgstr "Всеки първи четвъртък"
 
-#: ../src/EventEdition/RepeatPanel.vala:513
-msgid "Wed"
-msgstr "Сря"
+#: ../src/EventEdition/RepeatPanel.vala:389
+msgid "Every first Tuesday"
+msgstr "Всеки последен вторник"
 
-#: ../src/EventEdition/RepeatPanel.vala:514
-msgid "Thu"
-msgstr "Чет"
+#: ../src/EventEdition/RepeatPanel.vala:392
+msgid "Every first Wednesday"
+msgstr "Всяка последна сряда"
+
+#: ../src/EventEdition/RepeatPanel.vala:473
+msgid "Every fourth Friday"
+msgstr "Всеки четвърти петък"
+
+#: ../src/EventEdition/RepeatPanel.vala:461
+msgid "Every fourth Monday"
+msgstr "Всеки четвърти понеделник"
+
+#: ../src/EventEdition/RepeatPanel.vala:476
+msgid "Every fourth Saturday"
+msgstr "Всяка четвърта събота"
+
+#: ../src/EventEdition/RepeatPanel.vala:458
+msgid "Every fourth Sunday"
+msgstr "Всяка четвърта неделя"
+
+#: ../src/EventEdition/RepeatPanel.vala:470
+msgid "Every fourth Thursday"
+msgstr "Всеки четвърти четвъртък"
+
+#: ../src/EventEdition/RepeatPanel.vala:464
+msgid "Every fourth Tuesday"
+msgstr "Всеки четвърти вторник"
+
+#: ../src/EventEdition/RepeatPanel.vala:467
+msgid "Every fourth Wednesday"
+msgstr "Всяка четвърта сряда"
+
+#: ../src/EventEdition/RepeatPanel.vala:373
+msgid "Every last Friday"
+msgstr "Всеки последен петък"
+
+#: ../src/EventEdition/RepeatPanel.vala:361
+msgid "Every last Monday"
+msgstr "Всеки последен понеделник"
+
+#: ../src/EventEdition/RepeatPanel.vala:376
+msgid "Every last Saturday"
+msgstr "Всяка последна събота"
+
+#: ../src/EventEdition/RepeatPanel.vala:358
+msgid "Every last Sunday"
+msgstr "Всяка последна неделя"
+
+#: ../src/EventEdition/RepeatPanel.vala:370
+msgid "Every last Thursday"
+msgstr "Всеки последен четвъртък"
+
+#: ../src/EventEdition/RepeatPanel.vala:364
+msgid "Every last Tuesday"
+msgstr "Всеки последен вторник"
+
+#: ../src/EventEdition/RepeatPanel.vala:367
+msgid "Every last Wednesday"
+msgstr "Всяка последна сряда"
+
+#: ../src/EventEdition/RepeatPanel.vala:423
+msgid "Every second Friday"
+msgstr "Всеки втори петък"
+
+#: ../src/EventEdition/RepeatPanel.vala:411
+msgid "Every second Monday"
+msgstr "Всеки втори понеделник"
+
+#: ../src/EventEdition/RepeatPanel.vala:426
+msgid "Every second Saturday"
+msgstr "Всяка втора събота"
+
+#: ../src/EventEdition/RepeatPanel.vala:408
+msgid "Every second Sunday"
+msgstr "Всяка втора неделя"
+
+#: ../src/EventEdition/RepeatPanel.vala:420
+msgid "Every second Thursday"
+msgstr "Всеки втори четвъртък"
+
+#: ../src/EventEdition/RepeatPanel.vala:414
+msgid "Every second Tuesday"
+msgstr "Всеки втори вторник"
+
+#: ../src/EventEdition/RepeatPanel.vala:417
+msgid "Every second Wednesday"
+msgstr "Всяка втора сряда"
+
+#: ../src/EventEdition/RepeatPanel.vala:448
+msgid "Every third Friday"
+msgstr "Всеки трети петък"
+
+#: ../src/EventEdition/RepeatPanel.vala:436
+msgid "Every third Monday"
+msgstr "Всеки трети понеделник"
+
+#: ../src/EventEdition/RepeatPanel.vala:451
+msgid "Every third Saturday"
+msgstr "Всяка трета събота"
+
+#: ../src/EventEdition/RepeatPanel.vala:433
+msgid "Every third Sunday"
+msgstr "Всяка трета неделя"
+
+#: ../src/EventEdition/RepeatPanel.vala:445
+msgid "Every third Thursday"
+msgstr "Всеки трети четвъртък"
+
+#: ../src/EventEdition/RepeatPanel.vala:439
+msgid "Every third Tuesday"
+msgstr "Всеки трети вторник"
+
+#: ../src/EventEdition/RepeatPanel.vala:442
+msgid "Every third Wednesday"
+msgstr "Всяка трета сряда"
+
+#: ../src/EventEdition/RepeatPanel.vala:104
+msgid "Every:"
+msgstr "Всеки:"
+
+#: ../src/EventEdition/RepeatPanel.vala:200
+msgid "Exceptions:"
+msgstr "Изключения:"
+
+#: ../src/Widgets/ContractorButtonWithMenu.vala:72
+#: ../src/Widgets/ContractorButtonWithMenu.vala:82
+msgid "Export Calendar..."
+msgstr "Изнасяне на календара..."
+
+#: ../src/Widgets/HeaderBar.vala:55
+msgid "Export or Share the default Calendar"
+msgstr "Експортиране или Споделяне на Календара по подразбиране"
+
+#: ../src/Application.vala:56
+msgid "Focus the given day"
+msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:515
 msgid "Fri"
 msgstr "Пет"
 
-#: ../src/EventEdition/RepeatPanel.vala:516
-msgid "Sat"
-msgstr "Съб"
-
-#: ../src/EventEdition/RepeatPanel.vala:517
-msgid "Sun"
-msgstr "Нед"
-
-#: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
-msgid "Add Event"
-msgstr "Добавяне на събитие"
-
-#: ../src/EventEdition/EventDialog.vala:67
-msgid "Edit Event"
-msgstr "Редактиране на събитие"
-
-#: ../src/EventEdition/EventDialog.vala:94
-msgid "General Informations"
-msgstr "Общи Сведения"
-
-#: ../src/EventEdition/EventDialog.vala:97
-msgid "Location"
-msgstr "Местоположение"
-
-#: ../src/EventEdition/EventDialog.vala:100
-msgid "Guests"
-msgstr "Посетители"
-
-#: ../src/EventEdition/EventDialog.vala:103
-msgid "Reminders"
-msgstr "Напомняния"
-
-#: ../src/EventEdition/EventDialog.vala:169
-msgid "Delete Event"
-msgstr "Изтрий събитието"
-
-#: ../src/EventEdition/EventDialog.vala:181
-msgid "Create Event"
-msgstr "Създай събитие"
-
-#: ../src/EventEdition/EventDialog.vala:184
-msgid "Save Changes"
-msgstr "Запазване на промените"
-
-#: ../src/EventEdition/LocationPanel.vala:49
-msgid "Location:"
-msgstr "Местоположение:"
-
-#: ../src/EventEdition/LocationPanel.vala:51
-msgid "John Smith OR Example St."
-msgstr "John Smith или Example St."
-
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
 msgstr "От:"
 
-#: ../src/EventEdition/InfoPanel.vala:84
-msgid "All day:"
-msgstr "Цял ден:"
+#: ../src/EventEdition/EventDialog.vala:107
+msgid "General Informations"
+msgstr "Общи Сведения"
 
-#: ../src/EventEdition/InfoPanel.vala:89
-msgid "To:"
-msgstr "До:"
+#: ../src/Widgets/HeaderBar.vala:41
+msgid "Go to today's date"
+msgstr "На днешен ден"
 
-#: ../src/EventEdition/InfoPanel.vala:107
-msgid "Title:"
-msgstr "Заглавие:"
+#: ../plugins/Google/GoogleBackend.vala:38
+msgid "Google"
+msgstr "Гугъл"
 
-#: ../src/EventEdition/InfoPanel.vala:109
-msgid "Name of Event"
-msgstr "Име на събитието"
+#: ../src/EventEdition/EventDialog.vala:109
+msgid "Guests"
+msgstr "Посетители"
 
-#: ../src/EventEdition/InfoPanel.vala:119
-msgid "Press enter to parse event"
-msgstr "Натисни Еnter за да се изпълни задачата"
+#: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:57
+msgid "Hide Week Numbers"
+msgstr "Скриване на номерата на седмиците"
 
-#: ../src/EventEdition/InfoPanel.vala:127
-msgid "Calendar:"
-msgstr "Календар:"
-
-#: ../src/EventEdition/InfoPanel.vala:134
-msgid "Comments:"
-msgstr "Забележки:"
-
-#: ../src/AgendaView.vala:63
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Предстоящите събития ще се появят тук, след като изберете дата със събития."
-
-#: ../src/AgendaView.vala:154
-msgid "During the day"
-msgstr "През деня"
-
-#: ../src/AgendaView.vala:159
-msgid "All day"
-msgstr "Целия ден"
-
-#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:376
-msgid "%s, %s - %s, %s"
-msgstr "%s, %s - %s, %s"
+#: ../src/ImportDialog.vala:53
+msgid "Import"
+msgstr "Импортиране"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
@@ -595,238 +475,336 @@ msgid_plural "Import events from %d files into the following calendar:"
 msgstr[0] "Внасяне на събития от \"%s\" файл в следния календар:"
 msgstr[1] "Внасяне на събития от \"%s\" файла в следния календар:"
 
-#: ../src/ImportDialog.vala:53
-msgid "Import"
-msgstr "Импортиране"
+#: ../src/EventEdition/GuestsPanel.vala:94
+msgid "Invite"
+msgstr "Покани"
 
-#: ../src/MayaToolbar.vala:45
-msgid "Create a new event"
-msgstr "Създаване на ново събитие"
-
-#: ../src/MayaToolbar.vala:48
-msgid "Go to today's date"
-msgstr "На днешен ден"
-
-#: ../src/MayaToolbar.vala:52
-msgid "Manage Calendars"
-msgstr "Уреди Календарите"
-
-#: ../src/MayaToolbar.vala:64
-msgid "Search Events"
-msgstr "Търсене на събития"
-
-#: ../src/MayaToolbar.vala:67
-msgid "Export or Share the default Calendar"
-msgstr "Експортиране или Споделяне на Календара по подразбиране"
-
-#: ../src/Application.vala:34 ../src/Translations.vala:6
-msgid "Calendar"
-msgstr "Календар"
-
-#: ../src/Application.vala:102
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Borislav Asenov Krumov https://launchpad.net/~darkstyler\n"
-"  Dimitar Dimitrov https://launchpad.net/~dimitrov\n"
-"  ITPROJECTS https://launchpad.net/~itprojects\n"
-"  Ivan https://launchpad.net/~i-kazandjiev\n"
-"  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-"  KVG https://launchpad.net/~kvgkvg\n"
-"  Nikola Lardev https://launchpad.net/~nikolalardev\n"
-"  SvinqVmraka https://launchpad.net/~svinqvmraka\n"
-"  Tsano Ivanov Vushev https://launchpad.net/~tsanchu\n"
-"  Veselin Trakiyski https://launchpad.net/~wesako\n"
-"  Адмирал АнимЕ https://launchpad.net/~aeternus-arcis"
-
-#: ../src/Translations.vala:5
-msgid "View and schedule events"
-msgstr "Разгледай и насрочи събитие"
-
-#: ../src/Translations.vala:7
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Майя;Планер;Дати;Дни;Събития;"
-
-#: ../src/Translations.vala:9
-msgid "About Maya"
-msgstr "Относно Мая"
-
-#: ../src/Translations.vala:10
-msgid "About Calendar"
-msgstr "Относно Календар"
-
-#: ../plugins/Google/GoogleBackend.vala:38
-msgid "Google"
-msgstr "Гугъл"
-
-#: ../plugins/Google/GoogleBackend.vala:61
-msgid "user.name or user.name@gmail.com"
-msgstr "потребителско.име or потребителско.име@abv.bg"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:39
-msgid "CalDAV"
-msgstr "КалДАВ"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:58
-msgid "URL:"
-msgstr "УРЛ-Връзка:"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:91
-msgid "Use a secure connection"
-msgstr "Ползвай надеждно-осигурена  свръзка"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:119
-msgid "Server handles meeting invitations"
-msgstr "Сървъра обслужва поканите за среща"
-
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
-msgid "On this computer"
-msgstr "На този компютър"
-
-#: ../core/Backends/PlacementWidget.vala:41
-msgid "User:"
-msgstr "Потребител:"
-
-#: ../core/Backends/PlacementWidget.vala:50
-msgid "user.name"
-msgstr "потребителско.име"
-
-#: ../core/Backends/PlacementWidget.vala:63
-msgid "Email:"
-msgstr "Е-поща:"
-
-#: ../core/Backends/PlacementWidget.vala:72
-msgid "john@doe.com"
-msgstr "иван@петров.ком"
+#: ../src/EventEdition/LocationPanel.vala:52
+msgid "John Smith OR Example St."
+msgstr "John Smith или Example St."
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Дръж местна преписка"
 
-#: ../core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e %B %Y"
+#: ../src/EventEdition/EventDialog.vala:108
+msgid "Location"
+msgstr "Местоположение"
 
-#: ../core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %d, %b"
+#: ../src/EventEdition/LocationPanel.vala:50
+msgid "Location:"
+msgstr "Местоположение:"
 
-#~ msgid "at"
-#~ msgstr "в"
+#: ../src/Widgets/HeaderBar.vala:48
+msgid "Manage Calendars"
+msgstr "Уреди Календарите"
 
-#~ msgid "%l:%M %p"
-#~ msgstr "%l:%M %p"
+#: ../src/SourceDialog/SourceDialog.vala:123
+msgid "Mark as default calendar"
+msgstr "Бележи като календар за подразбиране"
+
+#: ../src/EventEdition/RepeatPanel.vala:511
+msgid "Mon"
+msgstr "Пон"
+
+#: ../src/EventEdition/RepeatPanel.vala:117
+msgid "Month"
+msgid_plural "Months"
+msgstr[0] "Месец"
+msgstr[1] "Месеци"
+
+#: ../src/EventEdition/RepeatPanel.vala:60
+msgid "Monthly"
+msgstr "Ежемесечно"
+
+#: ../src/EventEdition/InfoPanel.vala:109
+msgid "Name of Event"
+msgstr "Име на събитието"
+
+#: ../src/SourceDialog/SourceDialog.vala:69
+msgid "Name:"
+msgstr "Име:"
+
+#: ../src/EventEdition/RepeatPanel.vala:141
+msgid "Never"
+msgstr "Никога"
+
+#: ../src/AgendaView.vala:312 ../src/AgendaView.vala:326
+#, fuzzy
+msgid "Next Month"
+msgstr "Месец"
+
+#: ../src/AgendaView.vala:308 ../src/AgendaView.vala:322
+#, fuzzy
+msgid "Next Week"
+msgstr "Седмица"
+
+#: ../src/EventEdition/RepeatPanel.vala:203
+msgid "No Exceptions"
+msgstr "Без изключения"
+
+#: ../src/EventEdition/GuestsPanel.vala:58
+msgid "No Participants"
+msgstr "Без присъстващи"
+
+#: ../src/EventEdition/ReminderPanel.vala:37
+msgid "No Reminders"
+msgstr "Без напомяния"
+
+#: ../src/EventEdition/ReminderPanel.vala:195
+msgid "Notification"
+msgstr "Известие"
+
+#: ../src/Model/SourceManager.vala:67 ../core/Backends/LocalBackend.vala:27
+#: ../core/Utils.vala:703
+msgid "On this computer"
+msgstr "На този компютър"
+
+#: ../src/EventEdition/GuestsPanel.vala:53
+msgid "Participants:"
+msgstr "Участници:"
+
+#: ../src/Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "Лично"
+
+#: ../src/EventEdition/InfoPanel.vala:119
+msgid "Press enter to parse event"
+msgstr "Натисни Еnter за да се изпълни задачата"
+
+#: ../src/Application.vala:58 ../daemon/Daemon.vala:21
+#, fuzzy
+msgid "Print debug information"
+msgstr "Общи Сведения"
+
+#: ../src/Application.vala:57 ../daemon/Daemon.vala:23
+msgid "Print version info and exit"
+msgstr ""
+
+#: ../src/EventEdition/EventDialog.vala:110
+msgid "Reminders"
+msgstr "Напомняния"
+
+#: ../src/EventEdition/ReminderPanel.vala:33
+msgid "Reminders:"
+msgstr "Напомняния:"
+
+#: ../src/AgendaView.vala:529 ../src/SourceDialog/SourceItem.vala:80
+#: ../src/Grid/EventButton.vala:75
+msgid "Remove"
+msgstr "Премахване"
+
+#: ../src/Grid/EventButton.vala:69
+#, fuzzy
+msgid "Remove Event"
+msgstr "Изтрий събитието"
+
+#: ../src/Grid/EventButton.vala:70
+msgid "Remove Occurrence"
+msgstr ""
+
+#: ../src/EventEdition/EventDialog.vala:111
+#: ../src/EventEdition/RepeatPanel.vala:137
+#: ../src/EventEdition/RepeatPanel.vala:170
+msgid "Repeat"
+msgid_plural "Repeats"
+msgstr[0] "Повторение"
+msgstr[1] "Повторения"
+
+#: ../src/EventEdition/RepeatPanel.vala:53
+msgid "Repeat:"
+msgstr "Повторение:"
+
+#: ../src/EventEdition/RepeatPanel.vala:516
+msgid "Sat"
+msgstr "Съб"
+
+#: ../src/SourceDialog/SourceDialog.vala:162
+#: ../src/Widgets/ContractorButtonWithMenu.vala:88
+msgid "Save"
+msgstr "Запазване"
+
+#: ../src/EventEdition/EventDialog.vala:149
+msgid "Save Changes"
+msgstr "Запазване на промените"
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:123
+msgid "Server handles meeting invitations"
+msgstr "Сървъра обслужва поканите за среща"
+
+#: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:59
+msgid "Show Week Numbers"
+msgstr "Показване на номерата на седмиците"
+
+#: ../src/EventEdition/RepeatPanel.vala:517
+msgid "Sun"
+msgstr "Нед"
+
+#: ../src/EventEdition/RepeatPanel.vala:189
+msgid "The same day every month"
+msgstr "На същия ден, всеки месец"
+
+#: ../src/AgendaView.vala:310 ../src/AgendaView.vala:324
+#, fuzzy
+msgid "This Month"
+msgstr "Месец"
+
+#: ../src/AgendaView.vala:306 ../src/AgendaView.vala:320
+#, fuzzy
+msgid "This Week"
+msgstr "Седмица"
+
+#: ../src/EventEdition/RepeatPanel.vala:514
+msgid "Thu"
+msgstr "Чет"
+
+#: ../src/EventEdition/InfoPanel.vala:107
+msgid "Title:"
+msgstr "Заглавие:"
+
+#: ../src/EventEdition/InfoPanel.vala:89
+msgid "To:"
+msgstr "До:"
+
+#: ../src/AgendaView.vala:304 ../src/AgendaView.vala:318
+msgid "Tomorrow"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:512
+msgid "Tue"
+msgstr "Вто"
+
+#: ../src/SourceDialog/SourceDialog.vala:95
+msgid "Type:"
+msgstr "Вид:"
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:58
+msgid "URL:"
+msgstr "УРЛ-Връзка:"
+
+#: ../src/SourceDialog/SourceItem.vala:125
+msgid "Undo"
+msgstr "Отмяна"
+
+#: ../src/EventEdition/RepeatPanel.vala:142
+msgid "Until"
+msgstr "До"
+
+#: ../src/AgendaView.vala:142
+msgid "Upcoming Events"
+msgstr ""
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:95
+msgid "Use a secure connection"
+msgstr "Ползвай надеждно-осигурена  свръзка"
+
+#: ../core/Backends/PlacementWidget.vala:41
+msgid "User:"
+msgstr "Потребител:"
+
+#: ../src/Model/SourceManager.vala:68
+msgid "Webcal"
+msgstr "Уебкалендар"
+
+#: ../src/EventEdition/RepeatPanel.vala:513
+msgid "Wed"
+msgstr "Сря"
+
+#: ../src/EventEdition/RepeatPanel.vala:114
+#: ../src/EventEdition/RepeatPanel.vala:125
+msgid "Week"
+msgid_plural "Weeks"
+msgstr[0] "Седмица"
+msgstr[1] "Седмици"
+
+#: ../src/EventEdition/RepeatPanel.vala:59
+msgid "Weekly"
+msgstr "Ежеседмично"
+
+#: ../src/EventEdition/RepeatPanel.vala:120
+msgid "Year"
+msgid_plural "Years"
+msgstr[0] "Година"
+msgstr[1] "Години"
+
+#: ../src/EventEdition/RepeatPanel.vala:61
+msgid "Yearly"
+msgstr "Ежегодно"
+
+#: ../src/AgendaView.vala:69
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Предстоящите събития ще се появят тук, след като изберете дата със събития."
+
+#: ../src/Widgets/ContractorButtonWithMenu.vala:85
+msgid "calendar.ics"
+msgstr "календар.ics"
+
+#: ../src/Application.vala:56
+msgid "date"
+msgstr ""
+
+#: ../core/Backends/PlacementWidget.vala:72
+msgid "john@doe.com"
+msgstr "иван@петров.ком"
+
+#: ../core/Backends/PlacementWidget.vala:50
+msgid "user.name"
+msgstr "потребителско.име"
+
+#: ../plugins/Google/GoogleBackend.vala:61
+msgid "user.name or user.name@gmail.com"
+msgstr "потребителско.име or потребителско.име@abv.bg"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
 
-#~ msgid "Title"
-#~ msgstr "Заглавие"
-
-#~ msgid "Comments"
-#~ msgstr "Коментари"
-
-#~ msgid "Name or Email Address"
-#~ msgstr "Име или имейл адрес"
-
-#~ msgid "Sync..."
-#~ msgstr "Синхронизация..."
-
-#~ msgid "Today"
-#~ msgstr "Днес"
-
-#~ msgid "Import..."
-#~ msgstr "Импортиране..."
-
-#~ msgid "Edit the selected event"
-#~ msgstr "Редактиране на избраното събитие"
-
-#~ msgid "Delete the selected event"
-#~ msgstr "Изтриване на избраното събитие"
-
-#~ msgid "Fullscreen"
-#~ msgstr "На цял екран"
-
-#~ msgid "Select calendars to display"
-#~ msgstr "Избор на календари за показване"
-
-#~ msgid "Personal"
-#~ msgstr "Лично"
-
-#~ msgid "Contacts"
-#~ msgstr "Контакти"
-
-#~ msgid "Ends: \t"
-#~ msgstr "Свършва: \t"
-
-#~ msgid "all day"
-#~ msgstr "цял ден"
-
-#~ msgid "Starts: \t"
-#~ msgstr "Започва: \t"
-
-#~ msgid "Webcal"
-#~ msgstr "Уебкалендар"
-
-#~ msgid "Your event has to be named and has to have a valid date"
-#~ msgstr "Вашето събитие трябва да има име и валидна дата"
-
-#~ msgid "Participants"
-#~ msgstr "Участници"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Това събитие не може да бъде редактирано"
-
-#~ msgid "Add calendar"
-#~ msgstr "Добавяне на календар"
+#~ msgid "%l:%M %p"
+#~ msgstr "%l:%M %p"
 
 #~ msgid "About"
 #~ msgstr "Относно"
 
+#~ msgid "About Calendar"
+#~ msgstr "Относно Календар"
+
+#~ msgid "About Maya"
+#~ msgstr "Относно Мая"
+
+#~ msgid "Add calendar"
+#~ msgstr "Добавяне на календар"
+
+#~ msgid "Comments"
+#~ msgstr "Коментари"
+
 #~ msgid "Days"
 #~ msgstr "Дни"
 
-#~ msgid "Months"
-#~ msgstr "Месеци"
+#~ msgid "Delete the selected event"
+#~ msgstr "Изтриване на избраното събитие"
 
-#~ msgid "Weeks"
-#~ msgstr "Седмици"
+#~ msgid "Edit the selected event"
+#~ msgstr "Редактиране на избраното събитие"
 
-#~ msgid "Years"
-#~ msgstr "Години"
+#~ msgid "Email"
+#~ msgstr "Ел. поща"
 
-#~ msgid "Repeats"
-#~ msgstr "Повтарящо се"
+#~ msgid "Ends: \t"
+#~ msgstr "Свършва: \t"
 
-#~ msgid "Saturday"
-#~ msgstr "Събота"
-
-#~ msgid "Wednesday"
-#~ msgstr "Сряда"
-
-#~ msgid "Tuesday"
-#~ msgstr "Вторник"
-
-#~ msgid "Friday"
-#~ msgstr "Петък"
-
-#~ msgid "Thursday"
-#~ msgstr "Четвъртък"
-
-#~ msgid "Monday"
-#~ msgstr "Понеделник"
-
-#~ msgid "Sunday"
-#~ msgstr "Неделя"
+#~ msgid "Every fifth %s"
+#~ msgstr "Всеки/всяка пети/пета %s"
 
 #~ msgid "Every first %s"
 #~ msgstr "Всеки/всяка пръв/първа %s"
 
+#~ msgid "Every fourth %s"
+#~ msgstr "Всеки/всяка четвърти/четвърта %s"
+
 #~ msgid "Every last %s"
 #~ msgstr "Всеки/всяка последен/на %s"
-
-#~ msgid "Every fifth %s"
-#~ msgstr "Всеки/всяка пети/пета %s"
 
 #~ msgid "Every second %s"
 #~ msgstr "Всеки/всяка втори/втора %s"
@@ -834,5 +812,98 @@ msgstr "%A, %d, %b"
 #~ msgid "Every third %s"
 #~ msgstr "Всеки/всяка трети/трета %s"
 
-#~ msgid "Every fourth %s"
-#~ msgstr "Всеки/всяка четвърти/четвърта %s"
+#~ msgid "Friday"
+#~ msgstr "Петък"
+
+#~ msgid "Fullscreen"
+#~ msgstr "На цял екран"
+
+#~ msgid "Import..."
+#~ msgstr "Импортиране..."
+
+#~ msgid "Maya;Planner;Dates;Days;Events;"
+#~ msgstr "Майя;Планер;Дати;Дни;Събития;"
+
+#~ msgid "Monday"
+#~ msgstr "Понеделник"
+
+#~ msgid "Months"
+#~ msgstr "Месеци"
+
+#~ msgid "Name or Email Address"
+#~ msgstr "Име или имейл адрес"
+
+#~ msgid "Participants"
+#~ msgstr "Участници"
+
+#~ msgid "Repeats"
+#~ msgstr "Повтарящо се"
+
+#~ msgid "Saturday"
+#~ msgstr "Събота"
+
+#~ msgid "Search Events"
+#~ msgstr "Търсене на събития"
+
+#~ msgid "Select calendars to display"
+#~ msgstr "Избор на календари за показване"
+
+#~ msgid "Starts: \t"
+#~ msgstr "Започва: \t"
+
+#~ msgid "Sunday"
+#~ msgstr "Неделя"
+
+#~ msgid "Sync..."
+#~ msgstr "Синхронизация..."
+
+#~ msgid "This event can't be edited"
+#~ msgstr "Това събитие не може да бъде редактирано"
+
+#~ msgid "Thursday"
+#~ msgstr "Четвъртък"
+
+#~ msgid "Title"
+#~ msgstr "Заглавие"
+
+#~ msgid "Today"
+#~ msgstr "Днес"
+
+#~ msgid "Tuesday"
+#~ msgstr "Вторник"
+
+#~ msgid "View and schedule events"
+#~ msgstr "Разгледай и насрочи събитие"
+
+#~ msgid "Wednesday"
+#~ msgstr "Сряда"
+
+#~ msgid "Weeks"
+#~ msgstr "Седмици"
+
+#~ msgid "Years"
+#~ msgstr "Години"
+
+#~ msgid "Your event has to be named and has to have a valid date"
+#~ msgstr "Вашето събитие трябва да има име и валидна дата"
+
+#~ msgid "all day"
+#~ msgstr "цял ден"
+
+#~ msgid "at"
+#~ msgstr "в"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Borislav Asenov Krumov https://launchpad.net/~darkstyler\n"
+#~ "  Dimitar Dimitrov https://launchpad.net/~dimitrov\n"
+#~ "  ITPROJECTS https://launchpad.net/~itprojects\n"
+#~ "  Ivan https://launchpad.net/~i-kazandjiev\n"
+#~ "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
+#~ "  KVG https://launchpad.net/~kvgkvg\n"
+#~ "  Nikola Lardev https://launchpad.net/~nikolalardev\n"
+#~ "  SvinqVmraka https://launchpad.net/~svinqvmraka\n"
+#~ "  Tsano Ivanov Vushev https://launchpad.net/~tsanchu\n"
+#~ "  Veselin Trakiyski https://launchpad.net/~wesako\n"
+#~ "  Адмирал АнимЕ https://launchpad.net/~aeternus-arcis"
