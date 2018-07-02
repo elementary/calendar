@@ -16,8 +16,6 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - libstdc++-5-dev
-      - libxml2-utils
-      - intltool
 
 cache:
   directories:
