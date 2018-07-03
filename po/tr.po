@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-01-19 05:38-0600\n"
 "PO-Revision-Date: 2018-05-25 20:08+0000\n"
 "Last-Translator: İbrahim Ethem Göl <ethem578@gmail.com>\n"
-"Language-Team: Turkish "
-"<https://weblate.elementary.io/projects/calendar/calendar/tr/>\n"
+"Language-Team: Turkish <https://weblate.elementary.io/projects/calendar/"
+"calendar/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,213 +20,194 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: ../src/SourceDialog/SourceSelector.vala:69
-msgid "Add New Calendar…"
-msgstr "Yeni Takvim Ekle…"
+#: ../core/Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
-#: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
-msgid "Remove"
-msgstr "Sil"
+#: ../core/Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
 
-#: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
-msgid "Edit…"
-msgstr "Düzenle…"
+#: ../src/AgendaView.vala:586
+msgid "%s"
+msgstr ""
 
-#: ../src/SourceDialog/SourceItem.vala:127
-msgid "Undo"
-msgstr "Geri Al"
+#: ../src/AgendaView.vala:572 ../src/AgendaView.vala:582
+#, fuzzy
+msgid "%s - %s"
+msgstr "%s, %s - %s, %s"
 
-#: ../src/SourceDialog/SourceItem.vala:142
-msgid "Calendar \"%s\" removed."
-msgstr "\"%s\" isimli takvim kaldırıldı."
+#: ../src/AgendaView.vala:588
+#, fuzzy
+msgid "%s, %s - %s"
+msgstr "%s, %s - %s, %s"
 
-#: ../src/SourceDialog/SourceDialog.vala:58
-#: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
-msgid "Cancel"
-msgstr "Vazgeç"
+#: ../src/AgendaView.vala:574
+msgid "%s, %s - %s, %s"
+msgstr "%s, %s - %s, %s"
 
-#: ../src/SourceDialog/SourceDialog.vala:60
-msgid "Create"
-msgstr "Oluştur"
-
-#: ../src/SourceDialog/SourceDialog.vala:69
-msgid "Name:"
-msgstr "İsim:"
-
-#: ../src/SourceDialog/SourceDialog.vala:72
-msgid "Calendar Name"
-msgstr "Takvim Adı"
-
-#: ../src/SourceDialog/SourceDialog.vala:95
-msgid "Type:"
-msgstr "Türü:"
-
-#: ../src/SourceDialog/SourceDialog.vala:118
-msgid "Color:"
-msgstr "Renk:"
-
-#: ../src/SourceDialog/SourceDialog.vala:123
-msgid "Mark as default calendar"
-msgstr "Varsayılan takvim olarak işaretle"
-
-#: ../src/SourceDialog/SourceDialog.vala:153
-msgid "Create Calendar"
-msgstr "Takvim Oluştur"
-
-#: ../src/SourceDialog/SourceDialog.vala:162
-#: ../src/Widgets/ContractorButtonWithMenu.vala:82
-msgid "Save"
-msgstr "Kaydet"
-
-#: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
-msgid "Hide Week Numbers"
-msgstr "Hafta Numaralarını Gizle"
-
-#: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
-msgid "Show Week Numbers"
-msgstr "Hafta Numaralarını Göster"
-
-#: ../src/Grid/VAutoHider.vala:100
+#: ../src/Grid/VAutoHider.vala:109
 msgid "%u more…"
 msgstr "%u daha..."
 
-#: ../src/Widgets/ContractorButtonWithMenu.vala:67
-#: ../src/Widgets/ContractorButtonWithMenu.vala:76
-msgid "Export Calendar..."
-msgstr "Takvimi Dışarı Aktar..."
+#: ../src/EventEdition/ReminderPanel.vala:172
+msgid "0 minutes"
+msgstr "0 dakika"
 
-#: ../src/Widgets/ContractorButtonWithMenu.vala:79
-msgid "calendar.ics"
-msgstr "takvim.ics"
+#: ../src/EventEdition/ReminderPanel.vala:181
+msgid "1 hour"
+msgstr "1 saat"
 
-#: ../src/EventEdition/GuestsPanel.vala:53
-msgid "Participants:"
-msgstr "Katılımcılar:"
+#: ../src/EventEdition/ReminderPanel.vala:173
+msgid "1 minutes"
+msgstr "1 dakika"
 
-#: ../src/EventEdition/GuestsPanel.vala:58
-msgid "No Participants"
-msgstr "Katılmayanlar"
+#: ../src/EventEdition/ReminderPanel.vala:187
+msgid "1 week"
+msgstr "1 hafta"
 
-#: ../src/EventEdition/GuestsPanel.vala:93
-msgid "Invite"
-msgstr "Davet et"
+#: ../src/EventEdition/ReminderPanel.vala:175
+msgid "10 minutes"
+msgstr "10 dakika"
 
-#: ../src/EventEdition/GuestsPanel.vala:241
+#: ../src/EventEdition/ReminderPanel.vala:184
+msgid "12 hours"
+msgstr "12 saat"
+
+#: ../src/EventEdition/ReminderPanel.vala:176
+msgid "15 minutes"
+msgstr "15 dakika"
+
+#: ../src/EventEdition/ReminderPanel.vala:186
+msgid "2 days"
+msgstr "2 gün"
+
+#: ../src/EventEdition/ReminderPanel.vala:182
+msgid "2 hours"
+msgstr "2 saat"
+
+#: ../src/EventEdition/ReminderPanel.vala:177
+msgid "20 minutes"
+msgstr "20 dakika"
+
+#: ../src/EventEdition/ReminderPanel.vala:185
+msgid "24 hours"
+msgstr "24 saat"
+
+#: ../src/EventEdition/ReminderPanel.vala:178
+msgid "25 minutes"
+msgstr "25 dakika"
+
+#: ../src/EventEdition/ReminderPanel.vala:183
+msgid "3 hours"
+msgstr "3 saat"
+
+#: ../src/EventEdition/ReminderPanel.vala:179
+msgid "30 minutes"
+msgstr "30 dakika"
+
+#: ../src/EventEdition/ReminderPanel.vala:180
+msgid "45 minutes"
+msgstr "45 dakika"
+
+#: ../src/EventEdition/ReminderPanel.vala:174
+msgid "5 minutes"
+msgstr "5 dakika"
+
+#: ../src/EventEdition/GuestsPanel.vala:242
 msgid "Accepted"
 msgstr "Kabul edildi"
 
-#: ../src/EventEdition/GuestsPanel.vala:244
-msgid "Declined"
-msgstr "Reddedildi"
+#: ../src/EventEdition/EventDialog.vala:58
+msgid "Add Event"
+msgstr "Etkinlik Ekle"
 
-#: ../src/EventEdition/ReminderPanel.vala:33
-msgid "Reminders:"
-msgstr "Hatırlatmalar:"
+#: ../src/EventEdition/RepeatPanel.vala:224
+msgid "Add Exception"
+msgstr "İstisna Ekle"
 
-#: ../src/EventEdition/ReminderPanel.vala:37
-msgid "No Reminders"
-msgstr "Hatırlatma yok"
+#: ../src/SourceDialog/SourceSelector.vala:58
+msgid "Add New Calendar…"
+msgstr "Yeni Takvim Ekle…"
 
 #: ../src/EventEdition/ReminderPanel.vala:71
 msgid "Add Reminder"
 msgstr "Hatırlatma Ekle"
 
-#: ../src/EventEdition/ReminderPanel.vala:182
-msgid "0 minutes"
-msgstr "0 dakika"
+#: ../src/EventEdition/RepeatPanel.vala:143
+msgid "After"
+msgstr "Sonra"
 
-#: ../src/EventEdition/ReminderPanel.vala:183
-msgid "1 minutes"
-msgstr "1 dakika"
+#: ../src/AgendaView.vala:239
+msgid "All day"
+msgstr "Tüm gün"
 
-#: ../src/EventEdition/ReminderPanel.vala:184
-msgid "5 minutes"
-msgstr "5 dakika"
+#: ../src/EventEdition/InfoPanel.vala:84
+msgid "All day:"
+msgstr "Tüm gün:"
 
-#: ../src/EventEdition/ReminderPanel.vala:185
-msgid "10 minutes"
-msgstr "10 dakika"
+#: ../plugins/CalDAV/CalDAVBackend.vala:39
+msgid "CalDAV"
+msgstr "CalDAV"
 
-#: ../src/EventEdition/ReminderPanel.vala:186
-msgid "15 minutes"
-msgstr "15 dakika"
+#: ../src/Application.vala:246
+msgid "Calendar"
+msgstr "Takvim"
 
-#: ../src/EventEdition/ReminderPanel.vala:187
-msgid "20 minutes"
-msgstr "20 dakika"
+#: ../src/SourceDialog/SourceItem.vala:140
+msgid "Calendar \"%s\" removed."
+msgstr "\"%s\" isimli takvim kaldırıldı."
 
-#: ../src/EventEdition/ReminderPanel.vala:188
-msgid "25 minutes"
-msgstr "25 dakika"
+#: ../src/SourceDialog/SourceDialog.vala:72
+msgid "Calendar Name"
+msgstr "Takvim Adı"
 
-#: ../src/EventEdition/ReminderPanel.vala:189
-msgid "30 minutes"
-msgstr "30 dakika"
+#: ../src/EventEdition/InfoPanel.vala:134
+msgid "Calendar:"
+msgstr "Takvim:"
 
-#: ../src/EventEdition/ReminderPanel.vala:190
-msgid "45 minutes"
-msgstr "45 dakika"
+#: ../src/ImportDialog.vala:55 ../src/EventEdition/EventDialog.vala:152
+#: ../src/SourceDialog/SourceDialog.vala:58
+#: ../src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "Vazgeç"
 
-#: ../src/EventEdition/ReminderPanel.vala:191
-msgid "1 hour"
-msgstr "1 saat"
+#: ../src/SourceDialog/SourceDialog.vala:118
+msgid "Color:"
+msgstr "Renk:"
 
-#: ../src/EventEdition/ReminderPanel.vala:192
-msgid "2 hours"
-msgstr "2 saat"
+#: ../src/EventEdition/InfoPanel.vala:141
+msgid "Comments:"
+msgstr "Yorumlar:"
 
-#: ../src/EventEdition/ReminderPanel.vala:193
-msgid "3 hours"
-msgstr "3 saat"
+#: ../src/Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "Kişiler"
 
-#: ../src/EventEdition/ReminderPanel.vala:194
-msgid "12 hours"
-msgstr "12 saat"
+#: ../src/SourceDialog/SourceDialog.vala:60
+msgid "Create"
+msgstr "Oluştur"
 
-#: ../src/EventEdition/ReminderPanel.vala:195
-msgid "24 hours"
-msgstr "24 saat"
+#: ../src/SourceDialog/SourceDialog.vala:153
+msgid "Create Calendar"
+msgstr "Takvim Oluştur"
 
-#: ../src/EventEdition/ReminderPanel.vala:196
-msgid "2 days"
-msgstr "2 gün"
+#: ../src/EventEdition/EventDialog.vala:146
+msgid "Create Event"
+msgstr "Etkinlik Oluştur"
 
-#: ../src/EventEdition/ReminderPanel.vala:197
-msgid "1 week"
-msgstr "1 hafta"
+#: ../src/Widgets/HeaderBar.vala:38
+msgid "Create a new event"
+msgstr "Yeni bir etkinlik oluştur"
 
-#: ../src/EventEdition/ReminderPanel.vala:206
-msgid "Notification"
-msgstr "Bildirim"
-
-#: ../src/EventEdition/ReminderPanel.vala:207
-msgid "Email"
-msgstr "E-Posta"
-
-#: ../src/EventEdition/RepeatPanel.vala:53
-msgid "Repeat:"
-msgstr "Tekrarla:"
+#: ../src/Application.vala:55
+#, fuzzy
+msgid "Create an event"
+msgstr "Yeni bir etkinlik oluştur"
 
 #: ../src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
 msgstr "Günlük"
-
-#: ../src/EventEdition/RepeatPanel.vala:59
-msgid "Weekly"
-msgstr "Haftalık"
-
-#: ../src/EventEdition/RepeatPanel.vala:60
-msgid "Monthly"
-msgstr "Aylık"
-
-#: ../src/EventEdition/RepeatPanel.vala:61
-msgid "Yearly"
-msgstr "Yıllık"
-
-#: ../src/EventEdition/RepeatPanel.vala:104
-msgid "Every:"
-msgstr "Her:"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
@@ -234,212 +215,54 @@ msgid_plural "Days"
 msgstr[0] "Gün"
 msgstr[1] "Gün"
 
-#: ../src/EventEdition/RepeatPanel.vala:114
-#: ../src/EventEdition/RepeatPanel.vala:125
-msgid "Week"
-msgid_plural "Weeks"
-msgstr[0] "Hafta"
-msgstr[1] "Hafta"
+#: ../src/EventEdition/GuestsPanel.vala:245
+msgid "Declined"
+msgstr "Reddedildi"
 
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Month"
-msgid_plural "Months"
-msgstr[0] "Ay"
-msgstr[1] "Ay"
+#: ../src/EventEdition/EventDialog.vala:134
+msgid "Delete Event"
+msgstr "Etkinliği Sil"
 
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Year"
-msgid_plural "Years"
-msgstr[0] "Yıl"
-msgstr[1] "Yıl"
+#: ../src/AgendaView.vala:234
+msgid "During the day"
+msgstr "Gündüzleri"
+
+#: ../src/EventEdition/EventDialog.vala:61
+msgid "Edit Event"
+msgstr "Etkinliği Düzenle"
+
+#: ../src/AgendaView.vala:528 ../src/SourceDialog/SourceItem.vala:94
+#: ../src/Grid/EventButton.vala:62
+msgid "Edit…"
+msgstr "Düzenle…"
+
+#: ../core/Backends/PlacementWidget.vala:63
+msgid "Email:"
+msgstr "E-posta:"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
 msgstr "Bitiş:"
 
-#: ../src/EventEdition/RepeatPanel.vala:137
-#: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:106
-msgid "Repeat"
-msgid_plural "Repeats"
-msgstr[0] "Tekrar"
-msgstr[1] "Tekrar"
+#: ../src/EventEdition/RepeatPanel.vala:498
+msgid "Every fifth Friday"
+msgstr "Her ayın beşinci Cuma günü"
 
-#: ../src/EventEdition/RepeatPanel.vala:141
-msgid "Never"
-msgstr "Asla"
+#: ../src/EventEdition/RepeatPanel.vala:486
+msgid "Every fifth Monday"
+msgstr "Her ayın beşinci Pazartesi günü"
 
-#: ../src/EventEdition/RepeatPanel.vala:142
-msgid "Until"
-msgstr "Kadar"
-
-#: ../src/EventEdition/RepeatPanel.vala:143
-msgid "After"
-msgstr "Sonra"
-
-#: ../src/EventEdition/RepeatPanel.vala:189
-msgid "The same day every month"
-msgstr "Her ayın aynı günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:200
-msgid "Exceptions:"
-msgstr "İstisnalar:"
-
-#: ../src/EventEdition/RepeatPanel.vala:203
-msgid "No Exceptions"
-msgstr "İstisnasız"
-
-#: ../src/EventEdition/RepeatPanel.vala:224
-msgid "Add Exception"
-msgstr "İstisna Ekle"
-
-#: ../src/EventEdition/RepeatPanel.vala:358
-msgid "Every last Sunday"
-msgstr "Her ayın son Pazar günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:361
-msgid "Every last Monday"
-msgstr "Her ayın  son Pazartesi günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:364
-msgid "Every last Tuesday"
-msgstr "Her ayın son Salı günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:367
-msgid "Every last Wednesday"
-msgstr "Her ayın son Çarşamba günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:370
-msgid "Every last Thursday"
-msgstr "Her ayın son Perşembe günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:373
-msgid "Every last Friday"
-msgstr "Her ayın son Cuma günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:376
-msgid "Every last Saturday"
-msgstr "Her ayın son Cumartesi günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:383
-msgid "Every first Sunday"
-msgstr "Her ayın ilk Pazar günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:386
-msgid "Every first Monday"
-msgstr "Her ayın ilk Pazartesi günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:389
-msgid "Every first Tuesday"
-msgstr "Her ayın ilk Salı günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:392
-msgid "Every first Wednesday"
-msgstr "Her ayın ilk Çarşamba günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:395
-msgid "Every first Thursday"
-msgstr "Her ayın ilk Perşembe günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:398
-msgid "Every first Friday"
-msgstr "Her ayın ilk Cuma günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:401
-msgid "Every first Saturday"
-msgstr "Her ayın ilk Cumartesi günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:408
-msgid "Every second Sunday"
-msgstr "Her ayın ikinci Pazar günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:411
-msgid "Every second Monday"
-msgstr "Her ayın ikinci Pazartesi günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:414
-msgid "Every second Tuesday"
-msgstr "Her ayın ikinci Salı günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:417
-msgid "Every second Wednesday"
-msgstr "Her ayın ikinci Çarşamba günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:420
-msgid "Every second Thursday"
-msgstr "Her ayın ikinci Perşembe günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:423
-msgid "Every second Friday"
-msgstr "Her ayın ikinci Cuma günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:426
-msgid "Every second Saturday"
-msgstr "Her ayın ikinci Cumartesi günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:433
-msgid "Every third Sunday"
-msgstr "Her ayın üçüncü Pazar günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:436
-msgid "Every third Monday"
-msgstr "Her ayın üçüncü Pazartesi günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:439
-msgid "Every third Tuesday"
-msgstr "Her ayın üçüncü Salı günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:442
-msgid "Every third Wednesday"
-msgstr "Her ayın üçüncü Çarşamba günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:445
-msgid "Every third Thursday"
-msgstr "Her ayın üçüncü Perşembe günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:448
-msgid "Every third Friday"
-msgstr "Her ayın üçüncü Cuma günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:451
-msgid "Every third Saturday"
-msgstr "Her ayın üçüncü Cumartesi günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:458
-msgid "Every fourth Sunday"
-msgstr "Her ayın dördüncü Pazar günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:461
-msgid "Every fourth Monday"
-msgstr "Her ayın dördüncü Pazartesi günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:464
-msgid "Every fourth Tuesday"
-msgstr "Her ayın dördüncü Salı günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:467
-msgid "Every fourth Wednesday"
-msgstr "Her ayın dördüncü Çarşamba günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:470
-msgid "Every fourth Thursday"
-msgstr "Her ayın dördüncü Perşembe günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:473
-msgid "Every fourth Friday"
-msgstr "Her ayın dördüncü Cuma günü"
-
-#: ../src/EventEdition/RepeatPanel.vala:476
-msgid "Every fourth Saturday"
-msgstr "Her ayın dördüncü Cumartesi günü"
+#: ../src/EventEdition/RepeatPanel.vala:501
+msgid "Every fifth Saturday"
+msgstr "Her ayın beşinci Cumartesi günü"
 
 #: ../src/EventEdition/RepeatPanel.vala:483
 msgid "Every fifth Sunday"
 msgstr "Her ayın beşinci Pazar günü"
 
-#: ../src/EventEdition/RepeatPanel.vala:486
-msgid "Every fifth Monday"
-msgstr "Her ayın beşinci Pazartesi günü"
+#: ../src/EventEdition/RepeatPanel.vala:495
+msgid "Every fifth Thursday"
+msgstr "Her ayın beşinci Perşembe günü"
 
 #: ../src/EventEdition/RepeatPanel.vala:489
 msgid "Every fifth Tuesday"
@@ -449,142 +272,198 @@ msgstr "Her ayın beşinci Salı günü"
 msgid "Every fifth Wednesday"
 msgstr "Her ayın beşinci Çarşamba günü"
 
-#: ../src/EventEdition/RepeatPanel.vala:495
-msgid "Every fifth Thursday"
-msgstr "Her ayın beşinci Perşembe günü"
+#: ../src/EventEdition/RepeatPanel.vala:398
+msgid "Every first Friday"
+msgstr "Her ayın ilk Cuma günü"
 
-#: ../src/EventEdition/RepeatPanel.vala:498
-msgid "Every fifth Friday"
-msgstr "Her ayın beşinci Cuma günü"
+#: ../src/EventEdition/RepeatPanel.vala:386
+msgid "Every first Monday"
+msgstr "Her ayın ilk Pazartesi günü"
 
-#: ../src/EventEdition/RepeatPanel.vala:501
-msgid "Every fifth Saturday"
-msgstr "Her ayın beşinci Cumartesi günü"
+#: ../src/EventEdition/RepeatPanel.vala:401
+msgid "Every first Saturday"
+msgstr "Her ayın ilk Cumartesi günü"
 
-#: ../src/EventEdition/RepeatPanel.vala:511
-msgid "Mon"
-msgstr "Pzt"
+#: ../src/EventEdition/RepeatPanel.vala:383
+msgid "Every first Sunday"
+msgstr "Her ayın ilk Pazar günü"
 
-#: ../src/EventEdition/RepeatPanel.vala:512
-msgid "Tue"
-msgstr "Sal"
+#: ../src/EventEdition/RepeatPanel.vala:395
+msgid "Every first Thursday"
+msgstr "Her ayın ilk Perşembe günü"
 
-#: ../src/EventEdition/RepeatPanel.vala:513
-msgid "Wed"
-msgstr "Çar"
+#: ../src/EventEdition/RepeatPanel.vala:389
+msgid "Every first Tuesday"
+msgstr "Her ayın ilk Salı günü"
 
-#: ../src/EventEdition/RepeatPanel.vala:514
-msgid "Thu"
-msgstr "Prş"
+#: ../src/EventEdition/RepeatPanel.vala:392
+msgid "Every first Wednesday"
+msgstr "Her ayın ilk Çarşamba günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:473
+msgid "Every fourth Friday"
+msgstr "Her ayın dördüncü Cuma günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:461
+msgid "Every fourth Monday"
+msgstr "Her ayın dördüncü Pazartesi günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:476
+msgid "Every fourth Saturday"
+msgstr "Her ayın dördüncü Cumartesi günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:458
+msgid "Every fourth Sunday"
+msgstr "Her ayın dördüncü Pazar günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:470
+msgid "Every fourth Thursday"
+msgstr "Her ayın dördüncü Perşembe günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:464
+msgid "Every fourth Tuesday"
+msgstr "Her ayın dördüncü Salı günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:467
+msgid "Every fourth Wednesday"
+msgstr "Her ayın dördüncü Çarşamba günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:373
+msgid "Every last Friday"
+msgstr "Her ayın son Cuma günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:361
+msgid "Every last Monday"
+msgstr "Her ayın  son Pazartesi günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:376
+msgid "Every last Saturday"
+msgstr "Her ayın son Cumartesi günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:358
+msgid "Every last Sunday"
+msgstr "Her ayın son Pazar günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:370
+msgid "Every last Thursday"
+msgstr "Her ayın son Perşembe günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:364
+msgid "Every last Tuesday"
+msgstr "Her ayın son Salı günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:367
+msgid "Every last Wednesday"
+msgstr "Her ayın son Çarşamba günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:423
+msgid "Every second Friday"
+msgstr "Her ayın ikinci Cuma günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:411
+msgid "Every second Monday"
+msgstr "Her ayın ikinci Pazartesi günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:426
+msgid "Every second Saturday"
+msgstr "Her ayın ikinci Cumartesi günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:408
+msgid "Every second Sunday"
+msgstr "Her ayın ikinci Pazar günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:420
+msgid "Every second Thursday"
+msgstr "Her ayın ikinci Perşembe günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:414
+msgid "Every second Tuesday"
+msgstr "Her ayın ikinci Salı günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:417
+msgid "Every second Wednesday"
+msgstr "Her ayın ikinci Çarşamba günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:448
+msgid "Every third Friday"
+msgstr "Her ayın üçüncü Cuma günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:436
+msgid "Every third Monday"
+msgstr "Her ayın üçüncü Pazartesi günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:451
+msgid "Every third Saturday"
+msgstr "Her ayın üçüncü Cumartesi günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:433
+msgid "Every third Sunday"
+msgstr "Her ayın üçüncü Pazar günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:445
+msgid "Every third Thursday"
+msgstr "Her ayın üçüncü Perşembe günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:439
+msgid "Every third Tuesday"
+msgstr "Her ayın üçüncü Salı günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:442
+msgid "Every third Wednesday"
+msgstr "Her ayın üçüncü Çarşamba günü"
+
+#: ../src/EventEdition/RepeatPanel.vala:104
+msgid "Every:"
+msgstr "Her:"
+
+#: ../src/EventEdition/RepeatPanel.vala:200
+msgid "Exceptions:"
+msgstr "İstisnalar:"
+
+#: ../src/Widgets/ContractorButtonWithMenu.vala:72
+#: ../src/Widgets/ContractorButtonWithMenu.vala:82
+msgid "Export Calendar..."
+msgstr "Takvimi Dışarı Aktar..."
+
+#: ../src/Widgets/HeaderBar.vala:55
+msgid "Export or Share the default Calendar"
+msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
+
+#: ../src/Application.vala:56
+msgid "Focus the given day"
+msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:515
 msgid "Fri"
 msgstr "Cum"
 
-#: ../src/EventEdition/RepeatPanel.vala:516
-msgid "Sat"
-msgstr "Cmt"
-
-#: ../src/EventEdition/RepeatPanel.vala:517
-msgid "Sun"
-msgstr "Paz"
-
-#: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
-msgid "Add Event"
-msgstr "Etkinlik Ekle"
-
-#: ../src/EventEdition/EventDialog.vala:67
-msgid "Edit Event"
-msgstr "Etkinliği Düzenle"
-
-#: ../src/EventEdition/EventDialog.vala:94
-msgid "General Informations"
-msgstr "Genel Bilgiler"
-
-#: ../src/EventEdition/EventDialog.vala:97
-msgid "Location"
-msgstr "Konum"
-
-#: ../src/EventEdition/EventDialog.vala:100
-msgid "Guests"
-msgstr "Konuklar"
-
-#: ../src/EventEdition/EventDialog.vala:103
-msgid "Reminders"
-msgstr "Hatırlatmalar"
-
-#: ../src/EventEdition/EventDialog.vala:169
-msgid "Delete Event"
-msgstr "Etkinliği Sil"
-
-#: ../src/EventEdition/EventDialog.vala:181
-msgid "Create Event"
-msgstr "Etkinlik Oluştur"
-
-#: ../src/EventEdition/EventDialog.vala:184
-msgid "Save Changes"
-msgstr "Değişiklikleri Kaydet"
-
-#: ../src/EventEdition/LocationPanel.vala:49
-msgid "Location:"
-msgstr "Konum:"
-
-#: ../src/EventEdition/LocationPanel.vala:51
-msgid "John Smith OR Example St."
-msgstr "Hasan Hüseyin veya Örnek Sokak"
-
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
 msgstr "Başlangıç:"
 
-#: ../src/EventEdition/InfoPanel.vala:84
-msgid "All day:"
-msgstr "Tüm gün:"
+#: ../src/EventEdition/EventDialog.vala:107
+msgid "General Informations"
+msgstr "Genel Bilgiler"
 
-#: ../src/EventEdition/InfoPanel.vala:89
-msgid "To:"
-msgstr "Bitiş:"
+#: ../src/Widgets/HeaderBar.vala:41
+msgid "Go to today's date"
+msgstr "Bugünün tarihine git"
 
-#: ../src/EventEdition/InfoPanel.vala:107
-msgid "Title:"
-msgstr "Başlık:"
+#: ../plugins/Google/GoogleBackend.vala:38
+msgid "Google"
+msgstr "Google"
 
-#: ../src/EventEdition/InfoPanel.vala:109
-msgid "Name of Event"
-msgstr "Etkinlik Adı"
+#: ../src/EventEdition/EventDialog.vala:109
+msgid "Guests"
+msgstr "Konuklar"
 
-#: ../src/EventEdition/InfoPanel.vala:119
-msgid "Press enter to parse event"
-msgstr "Etkinliğe göz atmak için enter a bas"
+#: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:57
+msgid "Hide Week Numbers"
+msgstr "Hafta Numaralarını Gizle"
 
-#: ../src/EventEdition/InfoPanel.vala:127
-msgid "Calendar:"
-msgstr "Takvim:"
-
-#: ../src/EventEdition/InfoPanel.vala:134
-msgid "Comments:"
-msgstr "Yorumlar:"
-
-#: ../src/AgendaView.vala:63
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr ""
-"Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
-"gösterilecek."
-
-#: ../src/AgendaView.vala:154
-msgid "During the day"
-msgstr "Gündüzleri"
-
-#: ../src/AgendaView.vala:159
-msgid "All day"
-msgstr "Tüm gün"
-
-#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:376
-msgid "%s, %s - %s, %s"
-msgstr "%s, %s - %s, %s"
+#: ../src/ImportDialog.vala:53
+msgid "Import"
+msgstr "İçe Aktar"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
@@ -596,142 +475,325 @@ msgid_plural "Import events from %d files into the following calendar:"
 msgstr[0] "Etkinlikleri %d dosyasından aşağıdaki takvime aktar:"
 msgstr[1] "Etkinlikleri %d dosyalarından aşağıdaki takvime aktar:"
 
-#: ../src/ImportDialog.vala:53
-msgid "Import"
-msgstr "İçe Aktar"
+#: ../src/EventEdition/GuestsPanel.vala:94
+msgid "Invite"
+msgstr "Davet et"
 
-#: ../src/MayaToolbar.vala:45
-msgid "Create a new event"
-msgstr "Yeni bir etkinlik oluştur"
-
-#: ../src/MayaToolbar.vala:48
-msgid "Go to today's date"
-msgstr "Bugünün tarihine git"
-
-#: ../src/MayaToolbar.vala:52
-msgid "Manage Calendars"
-msgstr "Takvimleri Yönet"
-
-#: ../src/MayaToolbar.vala:64
-msgid "Search Events"
-msgstr "Etkinlikleri Ara"
-
-#: ../src/MayaToolbar.vala:67
-msgid "Export or Share the default Calendar"
-msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
-
-#: ../src/Application.vala:34 ../src/Translations.vala:6
-msgid "Calendar"
-msgstr "Takvim"
-
-#: ../src/Application.vala:102
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Ahmet Akif DERE https://launchpad.net/~dereakif\n"
-"  Fatih Dayioglu https://launchpad.net/~fthd\n"
-"  Ferhat TUNÇTAN https://launchpad.net/~ferhattnctn66\n"
-"  Hamza https://launchpad.net/~ckr-hamza\n"
-"  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-"  Logi https://launchpad.net/~logistus\n"
-"  Onur Simsek https://launchpad.net/~onur-simsek\n"
-"  Ramazan Buğdaycı https://launchpad.net/~rbugdayci\n"
-"  Sadık Poyraz https://launchpad.net/~sadikpoyraz01\n"
-"  Salih https://launchpad.net/~hernandomtoto\n"
-"  Tolga https://launchpad.net/~cctolga\n"
-"  Yiğit https://launchpad.net/~yigituslu\n"
-"  asdasdqwdq qwd qwq https://launchpad.net/~onlycodetr-deactivatedaccount-"
-"deactivatedaccount\n"
-"  hasan abalı https://launchpad.net/~hasanabali\n"
-"  mistrafantastic https://launchpad.net/~mistrafantastic\n"
-"  Çağatay Çöl https://launchpad.net/~cagataycol"
-
-#: ../src/Translations.vala:5
-msgid "View and schedule events"
-msgstr "Etkinlikleri Görüntüle ve Düzenle"
-
-#: ../src/Translations.vala:7
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Maya;Planlayıcı;Tarihler;Günler;Etkinlikler"
-
-#: ../src/Translations.vala:9
-msgid "About Maya"
-msgstr "Maya Hakkında"
-
-#: ../src/Translations.vala:10
-msgid "About Calendar"
-msgstr "Takvim Hakkında"
-
-#: ../plugins/Google/GoogleBackend.vala:38
-msgid "Google"
-msgstr "Google"
-
-#: ../plugins/Google/GoogleBackend.vala:61
-msgid "user.name or user.name@gmail.com"
-msgstr "kullanıcı.adı ya da kullanıcı.adı@gmail.com"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:39
-msgid "CalDAV"
-msgstr "CalDAV"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:58
-msgid "URL:"
-msgstr "Bağlantı:"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:91
-msgid "Use a secure connection"
-msgstr "Güvenli bağlantı kullan"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:119
-msgid "Server handles meeting invitations"
-msgstr "Toplantı davetiyelerini sunucuda topla"
-
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
-msgid "On this computer"
-msgstr "Bu bilgisayarda"
-
-#: ../core/Backends/PlacementWidget.vala:41
-msgid "User:"
-msgstr "Kullanıcı:"
-
-#: ../core/Backends/PlacementWidget.vala:50
-msgid "user.name"
-msgstr "kullanıcı.adı"
-
-#: ../core/Backends/PlacementWidget.vala:63
-msgid "Email:"
-msgstr "E-posta:"
-
-#: ../core/Backends/PlacementWidget.vala:72
-msgid "john@doe.com"
-msgstr "kullanici@domain.com"
+#: ../src/EventEdition/LocationPanel.vala:52
+msgid "John Smith OR Example St."
+msgstr "Hasan Hüseyin veya Örnek Sokak"
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Yerel bir kopyasını sakla"
 
-#: ../core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
+#: ../src/EventEdition/EventDialog.vala:108
+msgid "Location"
+msgstr "Konum"
 
-#: ../core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+#: ../src/EventEdition/LocationPanel.vala:50
+msgid "Location:"
+msgstr "Konum:"
 
-#~ msgid "Title"
-#~ msgstr "Başlık"
+#: ../src/Widgets/HeaderBar.vala:48
+msgid "Manage Calendars"
+msgstr "Takvimleri Yönet"
+
+#: ../src/SourceDialog/SourceDialog.vala:123
+msgid "Mark as default calendar"
+msgstr "Varsayılan takvim olarak işaretle"
+
+#: ../src/EventEdition/RepeatPanel.vala:511
+msgid "Mon"
+msgstr "Pzt"
+
+#: ../src/EventEdition/RepeatPanel.vala:117
+msgid "Month"
+msgid_plural "Months"
+msgstr[0] "Ay"
+msgstr[1] "Ay"
+
+#: ../src/EventEdition/RepeatPanel.vala:60
+msgid "Monthly"
+msgstr "Aylık"
+
+#: ../src/EventEdition/InfoPanel.vala:109
+msgid "Name of Event"
+msgstr "Etkinlik Adı"
+
+#: ../src/SourceDialog/SourceDialog.vala:69
+msgid "Name:"
+msgstr "İsim:"
+
+#: ../src/EventEdition/RepeatPanel.vala:141
+msgid "Never"
+msgstr "Asla"
+
+#: ../src/AgendaView.vala:312 ../src/AgendaView.vala:326
+#, fuzzy
+msgid "Next Month"
+msgstr "Ay"
+
+#: ../src/AgendaView.vala:308 ../src/AgendaView.vala:322
+#, fuzzy
+msgid "Next Week"
+msgstr "Hafta"
+
+#: ../src/EventEdition/RepeatPanel.vala:203
+msgid "No Exceptions"
+msgstr "İstisnasız"
+
+#: ../src/EventEdition/GuestsPanel.vala:58
+msgid "No Participants"
+msgstr "Katılmayanlar"
+
+#: ../src/EventEdition/ReminderPanel.vala:37
+msgid "No Reminders"
+msgstr "Hatırlatma yok"
+
+#: ../src/EventEdition/ReminderPanel.vala:195
+msgid "Notification"
+msgstr "Bildirim"
+
+#: ../src/Model/SourceManager.vala:67 ../core/Backends/LocalBackend.vala:27
+#: ../core/Utils.vala:703
+msgid "On this computer"
+msgstr "Bu bilgisayarda"
+
+#: ../src/EventEdition/GuestsPanel.vala:53
+msgid "Participants:"
+msgstr "Katılımcılar:"
+
+#: ../src/Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "Kişisel"
+
+#: ../src/EventEdition/InfoPanel.vala:119
+msgid "Press enter to parse event"
+msgstr "Etkinliğe göz atmak için enter a bas"
+
+#: ../src/Application.vala:58 ../daemon/Daemon.vala:21
+#, fuzzy
+msgid "Print debug information"
+msgstr "Genel Bilgiler"
+
+#: ../src/Application.vala:57 ../daemon/Daemon.vala:23
+msgid "Print version info and exit"
+msgstr ""
+
+#: ../src/EventEdition/EventDialog.vala:110
+msgid "Reminders"
+msgstr "Hatırlatmalar"
+
+#: ../src/EventEdition/ReminderPanel.vala:33
+msgid "Reminders:"
+msgstr "Hatırlatmalar:"
+
+#: ../src/AgendaView.vala:529 ../src/SourceDialog/SourceItem.vala:80
+#: ../src/Grid/EventButton.vala:75
+msgid "Remove"
+msgstr "Sil"
+
+#: ../src/Grid/EventButton.vala:69
+#, fuzzy
+msgid "Remove Event"
+msgstr "Etkinliği Sil"
+
+#: ../src/Grid/EventButton.vala:70
+msgid "Remove Occurrence"
+msgstr ""
+
+#: ../src/EventEdition/EventDialog.vala:111
+#: ../src/EventEdition/RepeatPanel.vala:137
+#: ../src/EventEdition/RepeatPanel.vala:170
+msgid "Repeat"
+msgid_plural "Repeats"
+msgstr[0] "Tekrar"
+msgstr[1] "Tekrar"
+
+#: ../src/EventEdition/RepeatPanel.vala:53
+msgid "Repeat:"
+msgstr "Tekrarla:"
+
+#: ../src/EventEdition/RepeatPanel.vala:516
+msgid "Sat"
+msgstr "Cmt"
+
+#: ../src/SourceDialog/SourceDialog.vala:162
+#: ../src/Widgets/ContractorButtonWithMenu.vala:88
+msgid "Save"
+msgstr "Kaydet"
+
+#: ../src/EventEdition/EventDialog.vala:149
+msgid "Save Changes"
+msgstr "Değişiklikleri Kaydet"
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:123
+msgid "Server handles meeting invitations"
+msgstr "Toplantı davetiyelerini sunucuda topla"
+
+#: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:59
+msgid "Show Week Numbers"
+msgstr "Hafta Numaralarını Göster"
+
+#: ../src/EventEdition/RepeatPanel.vala:517
+msgid "Sun"
+msgstr "Paz"
+
+#: ../src/EventEdition/RepeatPanel.vala:189
+msgid "The same day every month"
+msgstr "Her ayın aynı günü"
+
+#: ../src/AgendaView.vala:310 ../src/AgendaView.vala:324
+#, fuzzy
+msgid "This Month"
+msgstr "Ay"
+
+#: ../src/AgendaView.vala:306 ../src/AgendaView.vala:320
+#, fuzzy
+msgid "This Week"
+msgstr "Hafta"
+
+#: ../src/EventEdition/RepeatPanel.vala:514
+msgid "Thu"
+msgstr "Prş"
+
+#: ../src/EventEdition/InfoPanel.vala:107
+msgid "Title:"
+msgstr "Başlık:"
+
+#: ../src/EventEdition/InfoPanel.vala:89
+msgid "To:"
+msgstr "Bitiş:"
+
+#: ../src/AgendaView.vala:304 ../src/AgendaView.vala:318
+msgid "Tomorrow"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:512
+msgid "Tue"
+msgstr "Sal"
+
+#: ../src/SourceDialog/SourceDialog.vala:95
+msgid "Type:"
+msgstr "Türü:"
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:58
+msgid "URL:"
+msgstr "Bağlantı:"
+
+#: ../src/SourceDialog/SourceItem.vala:125
+msgid "Undo"
+msgstr "Geri Al"
+
+#: ../src/EventEdition/RepeatPanel.vala:142
+msgid "Until"
+msgstr "Kadar"
+
+#: ../src/AgendaView.vala:142
+msgid "Upcoming Events"
+msgstr ""
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:95
+msgid "Use a secure connection"
+msgstr "Güvenli bağlantı kullan"
+
+#: ../core/Backends/PlacementWidget.vala:41
+msgid "User:"
+msgstr "Kullanıcı:"
+
+#: ../src/Model/SourceManager.vala:68
+msgid "Webcal"
+msgstr "Webcal"
+
+#: ../src/EventEdition/RepeatPanel.vala:513
+msgid "Wed"
+msgstr "Çar"
+
+#: ../src/EventEdition/RepeatPanel.vala:114
+#: ../src/EventEdition/RepeatPanel.vala:125
+msgid "Week"
+msgid_plural "Weeks"
+msgstr[0] "Hafta"
+msgstr[1] "Hafta"
+
+#: ../src/EventEdition/RepeatPanel.vala:59
+msgid "Weekly"
+msgstr "Haftalık"
+
+#: ../src/EventEdition/RepeatPanel.vala:120
+msgid "Year"
+msgid_plural "Years"
+msgstr[0] "Yıl"
+msgstr[1] "Yıl"
+
+#: ../src/EventEdition/RepeatPanel.vala:61
+msgid "Yearly"
+msgstr "Yıllık"
+
+#: ../src/AgendaView.vala:69
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
+"gösterilecek."
+
+#: ../src/Widgets/ContractorButtonWithMenu.vala:85
+msgid "calendar.ics"
+msgstr "takvim.ics"
+
+#: ../src/Application.vala:56
+msgid "date"
+msgstr ""
+
+#: ../core/Backends/PlacementWidget.vala:72
+msgid "john@doe.com"
+msgstr "kullanici@domain.com"
+
+#: ../core/Backends/PlacementWidget.vala:50
+msgid "user.name"
+msgstr "kullanıcı.adı"
+
+#: ../plugins/Google/GoogleBackend.vala:61
+msgid "user.name or user.name@gmail.com"
+msgstr "kullanıcı.adı ya da kullanıcı.adı@gmail.com"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
+
+#~ msgid "%l:%M %p"
+#~ msgstr "%l:%M %p"
+
+#~ msgid "About"
+#~ msgstr "Hakkında"
+
+#~ msgid "About Calendar"
+#~ msgstr "Takvim Hakkında"
+
+#~ msgid "About Maya"
+#~ msgstr "Maya Hakkında"
+
+#~ msgid "Add calendar"
+#~ msgstr "Takvim ekle"
 
 #~ msgid "Comments"
 #~ msgstr "Yorumlar"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "İsim veya E-posta Adresi"
+#~ msgid "Days"
+#~ msgstr "Gün"
 
-#~ msgid "Sync..."
-#~ msgstr "Eşzamanla..."
+#~ msgid "Delete the selected event"
+#~ msgstr "Seçili etkinliği sil"
 
-#~ msgid "Today"
-#~ msgstr "Bugün"
+#~ msgid "Edit the selected event"
+#~ msgstr "Seçili etkinliği düzenle"
+
+#~ msgid "Email"
+#~ msgstr "E-Posta"
+
+#~ msgid "Ends: \t"
+#~ msgstr "Biter: \t"
 
 #~ msgid "Fullscreen"
 #~ msgstr "Tam ekran"
@@ -739,64 +801,44 @@ msgstr "%A, %b %d"
 #~ msgid "Import..."
 #~ msgstr "İçe Aktar..."
 
-#~ msgid "Select calendars to display"
-#~ msgstr "Görüntülenecek takvimleri seçin"
+#~ msgid "Maya;Planner;Dates;Days;Events;"
+#~ msgstr "Maya;Planlayıcı;Tarihler;Günler;Etkinlikler"
 
-#~ msgid "Edit the selected event"
-#~ msgstr "Seçili etkinliği düzenle"
+#~ msgid "Months"
+#~ msgstr "Ay"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Seçili etkinliği sil"
-
-#~ msgid "%l:%M %p"
-#~ msgstr "%l:%M %p"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
-
-#~ msgid "at"
-#~ msgstr "de/da"
-
-#~ msgid "Contacts"
-#~ msgstr "Kişiler"
-
-#~ msgid "_Add Event"
-#~ msgstr "Olay _Ekle"
-
-#~ msgid "About"
-#~ msgstr "Hakkında"
-
-#~ msgid "Personal"
-#~ msgstr "Kişisel"
-
-#~ msgid "all day"
-#~ msgstr "tüm gün"
+#~ msgid "Name or Email Address"
+#~ msgstr "İsim veya E-posta Adresi"
 
 #~ msgid "Participants"
 #~ msgstr "Katılımcılar"
 
-#~ msgid "Add calendar"
-#~ msgstr "Takvim ekle"
+#~ msgid "Repeats"
+#~ msgstr "Tekrar"
 
-#~ msgid "Webcal"
-#~ msgstr "Webcal"
+#~ msgid "Search Events"
+#~ msgstr "Etkinlikleri Ara"
 
-#~ msgid "Your event has to be named and has to have a valid date"
-#~ msgstr ""
-#~ "Etkinliğinizin isimlendirilmiş olması ve geçerli bir tarihte olması "
-#~ "gerekiyor"
-
-#~ msgid "Ends: \t"
-#~ msgstr "Biter: \t"
+#~ msgid "Select calendars to display"
+#~ msgstr "Görüntülenecek takvimleri seçin"
 
 #~ msgid "Starts: \t"
 #~ msgstr "Başlar: \t"
 
+#~ msgid "Sync..."
+#~ msgstr "Eşzamanla..."
+
 #~ msgid "This event can't be edited"
 #~ msgstr "Bu etkinlik değiştirilemez"
 
-#~ msgid "Months"
-#~ msgstr "Ay"
+#~ msgid "Title"
+#~ msgstr "Başlık"
+
+#~ msgid "Today"
+#~ msgstr "Bugün"
+
+#~ msgid "View and schedule events"
+#~ msgstr "Etkinlikleri Görüntüle ve Düzenle"
 
 #~ msgid "Weeks"
 #~ msgstr "Hafta"
@@ -804,8 +846,37 @@ msgstr "%A, %b %d"
 #~ msgid "Years"
 #~ msgstr "Yıl"
 
-#~ msgid "Days"
-#~ msgstr "Gün"
+#~ msgid "Your event has to be named and has to have a valid date"
+#~ msgstr ""
+#~ "Etkinliğinizin isimlendirilmiş olması ve geçerli bir tarihte olması "
+#~ "gerekiyor"
 
-#~ msgid "Repeats"
-#~ msgstr "Tekrar"
+#~ msgid "_Add Event"
+#~ msgstr "Olay _Ekle"
+
+#~ msgid "all day"
+#~ msgstr "tüm gün"
+
+#~ msgid "at"
+#~ msgstr "de/da"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Ahmet Akif DERE https://launchpad.net/~dereakif\n"
+#~ "  Fatih Dayioglu https://launchpad.net/~fthd\n"
+#~ "  Ferhat TUNÇTAN https://launchpad.net/~ferhattnctn66\n"
+#~ "  Hamza https://launchpad.net/~ckr-hamza\n"
+#~ "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
+#~ "  Logi https://launchpad.net/~logistus\n"
+#~ "  Onur Simsek https://launchpad.net/~onur-simsek\n"
+#~ "  Ramazan Buğdaycı https://launchpad.net/~rbugdayci\n"
+#~ "  Sadık Poyraz https://launchpad.net/~sadikpoyraz01\n"
+#~ "  Salih https://launchpad.net/~hernandomtoto\n"
+#~ "  Tolga https://launchpad.net/~cctolga\n"
+#~ "  Yiğit https://launchpad.net/~yigituslu\n"
+#~ "  asdasdqwdq qwd qwq https://launchpad.net/~onlycodetr-deactivatedaccount-"
+#~ "deactivatedaccount\n"
+#~ "  hasan abalı https://launchpad.net/~hasanabali\n"
+#~ "  mistrafantastic https://launchpad.net/~mistrafantastic\n"
+#~ "  Çağatay Çöl https://launchpad.net/~cagataycol"

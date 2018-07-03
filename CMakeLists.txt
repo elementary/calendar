@@ -18,6 +18,15 @@ add_definitions ("-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\"")
 # Comment this out to enable C compiler warnings
 add_definitions (-w)
 
+find_program(XMLLINT_EXECUTABLE xmllint)
+if( NOT XMLLINT_EXECUTABLE )
+  message( FATAL_ERROR "xmllint not found\n" )
+  return()
+else()
+   message("--   Found xmllint package\n" )
+endif()
+
+
 set (APP_NAME "Calendar")
 
 #
@@ -97,7 +106,7 @@ pkg_check_modules (DEPS REQUIRED ${DEPS_PKG})
 
 find_package (Vala REQUIRED)
 include (ValaVersion)
-ensure_vala_version ("0.40.4" MINIMUM)
+ensure_vala_version ("0.23.2" MINIMUM)
 include (ValaPrecompile)
 
 add_subdirectory (po)

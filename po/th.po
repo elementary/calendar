@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-01-19 05:38-0600\n"
 "PO-Revision-Date: 2018-05-04 00:03+0000\n"
 "Last-Translator: Park Evans <travellerpeira9@gmail.com>\n"
-"Language-Team: Thai "
-"<https://weblate.elementary.io/projects/calendar/calendar/th/>\n"
+"Language-Team: Thai <https://weblate.elementary.io/projects/calendar/"
+"calendar/th/>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,421 +20,248 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: ../src/SourceDialog/SourceSelector.vala:69
-msgid "Add New Calendar…"
-msgstr "เพิ่มปฏิทินใหม่…"
+#: ../core/Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
 
-#: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
-msgid "Remove"
-msgstr "ลบออก"
+#: ../core/Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
 
-#: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
-msgid "Edit…"
-msgstr "แก้ไข..."
+#: ../src/AgendaView.vala:586
+msgid "%s"
+msgstr ""
 
-#: ../src/SourceDialog/SourceItem.vala:127
-msgid "Undo"
-msgstr "ย้อนการกระทำ"
+#: ../src/AgendaView.vala:572 ../src/AgendaView.vala:582
+#, fuzzy
+msgid "%s - %s"
+msgstr "%s, %s ถึง %s, %s"
 
-#: ../src/SourceDialog/SourceItem.vala:142
-msgid "Calendar \"%s\" removed."
-msgstr "ปฏิทิน \"%s\" ถูกลบออกแล้ว"
+#: ../src/AgendaView.vala:588
+#, fuzzy
+msgid "%s, %s - %s"
+msgstr "%s, %s ถึง %s, %s"
 
-#: ../src/SourceDialog/SourceDialog.vala:58
-#: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
-msgid "Cancel"
-msgstr "ยกเลิก"
+#: ../src/AgendaView.vala:574
+msgid "%s, %s - %s, %s"
+msgstr "%s, %s ถึง %s, %s"
 
-#: ../src/SourceDialog/SourceDialog.vala:60
-msgid "Create"
-msgstr "สร้าง"
-
-#: ../src/SourceDialog/SourceDialog.vala:69
-msgid "Name:"
-msgstr "ชื่อ :"
-
-#: ../src/SourceDialog/SourceDialog.vala:72
-msgid "Calendar Name"
-msgstr "ชื่อปฏิทิน"
-
-#: ../src/SourceDialog/SourceDialog.vala:95
-msgid "Type:"
-msgstr "ประเภท:"
-
-#: ../src/SourceDialog/SourceDialog.vala:118
-msgid "Color:"
-msgstr "สี:"
-
-#: ../src/SourceDialog/SourceDialog.vala:123
-msgid "Mark as default calendar"
-msgstr "ทำเครื่องหมายเป็นปฏิทินปริยาย"
-
-#: ../src/SourceDialog/SourceDialog.vala:153
-msgid "Create Calendar"
-msgstr "สร้างปฏิทิน"
-
-#: ../src/SourceDialog/SourceDialog.vala:162
-#: ../src/Widgets/ContractorButtonWithMenu.vala:82
-msgid "Save"
-msgstr "บันทึก"
-
-#: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
-msgid "Hide Week Numbers"
-msgstr "ซ่อนเลขระบุสัปดาห์"
-
-#: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
-msgid "Show Week Numbers"
-msgstr "แสดงสัปดาห์ที่"
-
-#: ../src/Grid/VAutoHider.vala:100
+#: ../src/Grid/VAutoHider.vala:109
 msgid "%u more…"
 msgstr "เพิ่มเติมเกี่ยวกับ %u . . ."
 
-#: ../src/Widgets/ContractorButtonWithMenu.vala:67
-#: ../src/Widgets/ContractorButtonWithMenu.vala:76
-msgid "Export Calendar..."
-msgstr "บันทึกปฏิทินเป็น . . ."
+#: ../src/EventEdition/ReminderPanel.vala:172
+msgid "0 minutes"
+msgstr "0 นาที"
 
-#: ../src/Widgets/ContractorButtonWithMenu.vala:79
-msgid "calendar.ics"
-msgstr "calendar.ics"
+#: ../src/EventEdition/ReminderPanel.vala:181
+msgid "1 hour"
+msgstr "1 ชั่วโมง"
 
-#: ../src/EventEdition/GuestsPanel.vala:53
-msgid "Participants:"
-msgstr "ผุู้ที่เกี่ยวข้อง :"
+#: ../src/EventEdition/ReminderPanel.vala:173
+msgid "1 minutes"
+msgstr "1 นาที"
 
-#: ../src/EventEdition/GuestsPanel.vala:58
-msgid "No Participants"
-msgstr "ไม่มีผู้เข้าร่วม"
+#: ../src/EventEdition/ReminderPanel.vala:187
+msgid "1 week"
+msgstr "1 สัปดาห์"
 
-#: ../src/EventEdition/GuestsPanel.vala:93
-msgid "Invite"
-msgstr "เชิญ"
+#: ../src/EventEdition/ReminderPanel.vala:175
+msgid "10 minutes"
+msgstr "10 นาที"
 
-#: ../src/EventEdition/GuestsPanel.vala:241
+#: ../src/EventEdition/ReminderPanel.vala:184
+msgid "12 hours"
+msgstr "12 ชั่วโมง"
+
+#: ../src/EventEdition/ReminderPanel.vala:176
+msgid "15 minutes"
+msgstr "15 นาที"
+
+#: ../src/EventEdition/ReminderPanel.vala:186
+msgid "2 days"
+msgstr "2 วัน"
+
+#: ../src/EventEdition/ReminderPanel.vala:182
+msgid "2 hours"
+msgstr "2 ชั่วโมง"
+
+#: ../src/EventEdition/ReminderPanel.vala:177
+msgid "20 minutes"
+msgstr "20 นาที"
+
+#: ../src/EventEdition/ReminderPanel.vala:185
+msgid "24 hours"
+msgstr "24 ชั่วโมง"
+
+#: ../src/EventEdition/ReminderPanel.vala:178
+msgid "25 minutes"
+msgstr "25 นาที"
+
+#: ../src/EventEdition/ReminderPanel.vala:183
+msgid "3 hours"
+msgstr "3 ชั่วโมง"
+
+#: ../src/EventEdition/ReminderPanel.vala:179
+msgid "30 minutes"
+msgstr "30 นาที"
+
+#: ../src/EventEdition/ReminderPanel.vala:180
+msgid "45 minutes"
+msgstr "45 นาที"
+
+#: ../src/EventEdition/ReminderPanel.vala:174
+msgid "5 minutes"
+msgstr "5 นาที"
+
+#: ../src/EventEdition/GuestsPanel.vala:242
 msgid "Accepted"
 msgstr "ตอบรับแล้ว"
 
-#: ../src/EventEdition/GuestsPanel.vala:244
-msgid "Declined"
-msgstr "ปฏิเสธแล้ว"
+#: ../src/EventEdition/EventDialog.vala:58
+msgid "Add Event"
+msgstr "เพิ่มกิจกรรม"
 
-#: ../src/EventEdition/ReminderPanel.vala:33
-msgid "Reminders:"
-msgstr "เตือนความจำ"
+#: ../src/EventEdition/RepeatPanel.vala:224
+msgid "Add Exception"
+msgstr "เพิ่มข้อยกเว้น"
 
-#: ../src/EventEdition/ReminderPanel.vala:37
-msgid "No Reminders"
-msgstr "ไม่มีเตือนความจำ"
+#: ../src/SourceDialog/SourceSelector.vala:58
+msgid "Add New Calendar…"
+msgstr "เพิ่มปฏิทินใหม่…"
 
 #: ../src/EventEdition/ReminderPanel.vala:71
 msgid "Add Reminder"
 msgstr "เพิ่มการเตือนความจำ"
 
-#: ../src/EventEdition/ReminderPanel.vala:182
-msgid "0 minutes"
-msgstr "0 นาที"
+#: ../src/EventEdition/RepeatPanel.vala:143
+msgid "After"
+msgstr "หลังจาก"
 
-#: ../src/EventEdition/ReminderPanel.vala:183
-msgid "1 minutes"
-msgstr "1 นาที"
+#: ../src/AgendaView.vala:239
+msgid "All day"
+msgstr "ทั้งวัน"
 
-#: ../src/EventEdition/ReminderPanel.vala:184
-msgid "5 minutes"
-msgstr "5 นาที"
+#: ../src/EventEdition/InfoPanel.vala:84
+msgid "All day:"
+msgstr "ทั้งวัน:"
 
-#: ../src/EventEdition/ReminderPanel.vala:185
-msgid "10 minutes"
-msgstr "10 นาที"
+#: ../plugins/CalDAV/CalDAVBackend.vala:39
+msgid "CalDAV"
+msgstr ""
 
-#: ../src/EventEdition/ReminderPanel.vala:186
-msgid "15 minutes"
-msgstr "15 นาที"
+#: ../src/Application.vala:246
+msgid "Calendar"
+msgstr "ปฏิทิน"
 
-#: ../src/EventEdition/ReminderPanel.vala:187
-msgid "20 minutes"
-msgstr "20 นาที"
+#: ../src/SourceDialog/SourceItem.vala:140
+msgid "Calendar \"%s\" removed."
+msgstr "ปฏิทิน \"%s\" ถูกลบออกแล้ว"
 
-#: ../src/EventEdition/ReminderPanel.vala:188
-msgid "25 minutes"
-msgstr "25 นาที"
+#: ../src/SourceDialog/SourceDialog.vala:72
+msgid "Calendar Name"
+msgstr "ชื่อปฏิทิน"
 
-#: ../src/EventEdition/ReminderPanel.vala:189
-msgid "30 minutes"
-msgstr "30 นาที"
+#: ../src/EventEdition/InfoPanel.vala:134
+msgid "Calendar:"
+msgstr "ปฏิทิน:"
 
-#: ../src/EventEdition/ReminderPanel.vala:190
-msgid "45 minutes"
-msgstr "45 นาที"
+#: ../src/ImportDialog.vala:55 ../src/EventEdition/EventDialog.vala:152
+#: ../src/SourceDialog/SourceDialog.vala:58
+#: ../src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "ยกเลิก"
 
-#: ../src/EventEdition/ReminderPanel.vala:191
-msgid "1 hour"
-msgstr "1 ชั่วโมง"
+#: ../src/SourceDialog/SourceDialog.vala:118
+msgid "Color:"
+msgstr "สี:"
 
-#: ../src/EventEdition/ReminderPanel.vala:192
-msgid "2 hours"
-msgstr "2 ชั่วโมง"
+#: ../src/EventEdition/InfoPanel.vala:141
+msgid "Comments:"
+msgstr "หมายเหตุ:"
 
-#: ../src/EventEdition/ReminderPanel.vala:193
-msgid "3 hours"
-msgstr "3 ชั่วโมง"
+#: ../src/Model/SourceManager.vala:69
+msgid "Contacts"
+msgstr "รายชื่อ"
 
-#: ../src/EventEdition/ReminderPanel.vala:194
-msgid "12 hours"
-msgstr "12 ชั่วโมง"
+#: ../src/SourceDialog/SourceDialog.vala:60
+msgid "Create"
+msgstr "สร้าง"
 
-#: ../src/EventEdition/ReminderPanel.vala:195
-msgid "24 hours"
-msgstr "24 ชั่วโมง"
+#: ../src/SourceDialog/SourceDialog.vala:153
+msgid "Create Calendar"
+msgstr "สร้างปฏิทิน"
 
-#: ../src/EventEdition/ReminderPanel.vala:196
-msgid "2 days"
-msgstr "2 วัน"
+#: ../src/EventEdition/EventDialog.vala:146
+msgid "Create Event"
+msgstr "สร้างกิจกรรม"
 
-#: ../src/EventEdition/ReminderPanel.vala:197
-msgid "1 week"
-msgstr "1 สัปดาห์"
+#: ../src/Widgets/HeaderBar.vala:38
+msgid "Create a new event"
+msgstr "สร้างกิจกรรมใหม่"
 
-#: ../src/EventEdition/ReminderPanel.vala:206
-msgid "Notification"
-msgstr "การแจ้งเตือน"
-
-#: ../src/EventEdition/ReminderPanel.vala:207
-msgid "Email"
-msgstr "อีเมล"
-
-#: ../src/EventEdition/RepeatPanel.vala:53
-msgid "Repeat:"
-msgstr "เตือนซ้ำ :"
+#: ../src/Application.vala:55
+#, fuzzy
+msgid "Create an event"
+msgstr "สร้างกิจกรรมใหม่"
 
 #: ../src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
 msgstr "ทุกวัน"
-
-#: ../src/EventEdition/RepeatPanel.vala:59
-msgid "Weekly"
-msgstr "ทุกสัปดาห์"
-
-#: ../src/EventEdition/RepeatPanel.vala:60
-msgid "Monthly"
-msgstr "ทุกเดือน"
-
-#: ../src/EventEdition/RepeatPanel.vala:61
-msgid "Yearly"
-msgstr "ทุกปี"
-
-#: ../src/EventEdition/RepeatPanel.vala:104
-msgid "Every:"
-msgstr "ทุก ๆ :"
 
 #: ../src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
 msgstr[0] "วัน"
 
-#: ../src/EventEdition/RepeatPanel.vala:114
-#: ../src/EventEdition/RepeatPanel.vala:125
-msgid "Week"
-msgid_plural "Weeks"
-msgstr[0] "สัปดาห์"
+#: ../src/EventEdition/GuestsPanel.vala:245
+msgid "Declined"
+msgstr "ปฏิเสธแล้ว"
 
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Month"
-msgid_plural "Months"
-msgstr[0] "เดือน"
+#: ../src/EventEdition/EventDialog.vala:134
+msgid "Delete Event"
+msgstr "ลบกิจกรรม"
 
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Year"
-msgid_plural "Years"
-msgstr[0] "ปี"
+#: ../src/AgendaView.vala:234
+msgid "During the day"
+msgstr "ระหว่างวัน"
+
+#: ../src/EventEdition/EventDialog.vala:61
+msgid "Edit Event"
+msgstr "แก้ไขกิจกรรม"
+
+#: ../src/AgendaView.vala:528 ../src/SourceDialog/SourceItem.vala:94
+#: ../src/Grid/EventButton.vala:62
+msgid "Edit…"
+msgstr "แก้ไข..."
+
+#: ../core/Backends/PlacementWidget.vala:63
+msgid "Email:"
+msgstr "Email:"
 
 #: ../src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
 msgstr "สิ้นสุดเมื่อ :"
 
-#: ../src/EventEdition/RepeatPanel.vala:137
-#: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:106
-msgid "Repeat"
-msgid_plural "Repeats"
-msgstr[0] "การเตือนซ้า"
+#: ../src/EventEdition/RepeatPanel.vala:498
+msgid "Every fifth Friday"
+msgstr "ทุกสุัปดาห์ที่ห้าของวันศุกร์"
 
-#: ../src/EventEdition/RepeatPanel.vala:141
-msgid "Never"
-msgstr "ไม่ต้อง"
+#: ../src/EventEdition/RepeatPanel.vala:486
+msgid "Every fifth Monday"
+msgstr "ทุกสุัปดาห์ที่ห้าของวันจันทร์"
 
-#: ../src/EventEdition/RepeatPanel.vala:142
-msgid "Until"
-msgstr "จนกว่าจะถึง"
-
-#: ../src/EventEdition/RepeatPanel.vala:143
-msgid "After"
-msgstr "หลังจาก"
-
-#: ../src/EventEdition/RepeatPanel.vala:189
-msgid "The same day every month"
-msgstr "เตือนในวันที่ระบุของแต่ละเดือน"
-
-#: ../src/EventEdition/RepeatPanel.vala:200
-msgid "Exceptions:"
-msgstr "ยกเว้น :"
-
-#: ../src/EventEdition/RepeatPanel.vala:203
-msgid "No Exceptions"
-msgstr "ไม่มีข้อยกเว้น"
-
-#: ../src/EventEdition/RepeatPanel.vala:224
-msgid "Add Exception"
-msgstr "เพิ่มข้อยกเว้น"
-
-#: ../src/EventEdition/RepeatPanel.vala:358
-msgid "Every last Sunday"
-msgstr "ทุกสุัปดาห์สุดท้ายของวันอาทิตย์"
-
-#: ../src/EventEdition/RepeatPanel.vala:361
-msgid "Every last Monday"
-msgstr "ทุกสุัปดาห์สุดท้ายของวันจันทร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:364
-msgid "Every last Tuesday"
-msgstr "ทุกสุัปดาห์สุดท้ายของวันอังคาร"
-
-#: ../src/EventEdition/RepeatPanel.vala:367
-msgid "Every last Wednesday"
-msgstr "ทุกสุัปดาห์สุดท้ายของวันพุธ"
-
-#: ../src/EventEdition/RepeatPanel.vala:370
-msgid "Every last Thursday"
-msgstr "ทุกสุัปดาห์สุดท้ายของวันพฤหัสฯ"
-
-#: ../src/EventEdition/RepeatPanel.vala:373
-msgid "Every last Friday"
-msgstr "ทุกสุัปดาห์สุดท้ายของวันศุกร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:376
-msgid "Every last Saturday"
-msgstr "ทุกสุัปดาห์สุดท้ายของวันเสาร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:383
-msgid "Every first Sunday"
-msgstr "ทุกสุัปดาห์แรกของวันอาทิตย์"
-
-#: ../src/EventEdition/RepeatPanel.vala:386
-msgid "Every first Monday"
-msgstr "ทุกสุัปดาห์แรกของวันจันทร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:389
-msgid "Every first Tuesday"
-msgstr "ทุกสุัปดาห์แรกของวันอังคาร"
-
-#: ../src/EventEdition/RepeatPanel.vala:392
-msgid "Every first Wednesday"
-msgstr "ทุกสุัปดาห์แรกของวันพุธ"
-
-#: ../src/EventEdition/RepeatPanel.vala:395
-msgid "Every first Thursday"
-msgstr "ทุกสุัปดาห์แรกของวันพฤหัสฯ"
-
-#: ../src/EventEdition/RepeatPanel.vala:398
-msgid "Every first Friday"
-msgstr "ทุกสุัปดาห์แรกของวันศุกร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:401
-msgid "Every first Saturday"
-msgstr "ทุกสุัปดาห์แรกของวันเสาร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:408
-msgid "Every second Sunday"
-msgstr "ทุกสุัปดาห์ที่สองของวันอาทิตย์"
-
-#: ../src/EventEdition/RepeatPanel.vala:411
-msgid "Every second Monday"
-msgstr "ทุกสุัปดาห์ที่สองของวันจันทร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:414
-msgid "Every second Tuesday"
-msgstr "ทุกสุัปดาห์ที่สองของวันอังคาร"
-
-#: ../src/EventEdition/RepeatPanel.vala:417
-msgid "Every second Wednesday"
-msgstr "ทุกสุัปดาห์ที่สองของวันพุธ"
-
-#: ../src/EventEdition/RepeatPanel.vala:420
-msgid "Every second Thursday"
-msgstr "ทุกสุัปดาห์ที่สองของวันพฤหัสฯ"
-
-#: ../src/EventEdition/RepeatPanel.vala:423
-msgid "Every second Friday"
-msgstr "ทุกสุัปดาห์ที่สองของวันศุกร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:426
-msgid "Every second Saturday"
-msgstr "ทุกสุัปดาห์ที่สองของวันเสาร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:433
-msgid "Every third Sunday"
-msgstr "ทุกสุัปดาห์ที่สามของวันอาทิตย์"
-
-#: ../src/EventEdition/RepeatPanel.vala:436
-msgid "Every third Monday"
-msgstr "ทุกสุัปดาห์ที่สามของวันจันทร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:439
-msgid "Every third Tuesday"
-msgstr "ทุกสุัปดาห์ที่สามของวันอังคาร"
-
-#: ../src/EventEdition/RepeatPanel.vala:442
-msgid "Every third Wednesday"
-msgstr "ทุกสุัปดาห์ที่สามของวันพุธ"
-
-#: ../src/EventEdition/RepeatPanel.vala:445
-msgid "Every third Thursday"
-msgstr "ทุกสุัปดาห์ที่สามของวันพฤหัส"
-
-#: ../src/EventEdition/RepeatPanel.vala:448
-msgid "Every third Friday"
-msgstr "ทุกสุัปดาห์ที่สามของวันศุกร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:451
-msgid "Every third Saturday"
-msgstr "ทุกสุัปดาห์ที่สามของวันเสาร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:458
-msgid "Every fourth Sunday"
-msgstr "ทุกสุัปดาห์ที่สี่ของวันอาทิตน์ย์"
-
-#: ../src/EventEdition/RepeatPanel.vala:461
-msgid "Every fourth Monday"
-msgstr "ทุกสุัปดาห์ที่สี่ของวันจันทร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:464
-msgid "Every fourth Tuesday"
-msgstr "ทุกสุัปดาห์ที่สี่ของวันอังคาร"
-
-#: ../src/EventEdition/RepeatPanel.vala:467
-msgid "Every fourth Wednesday"
-msgstr "ทุกสุัปดาห์ที่สี่ของวันพุธ"
-
-#: ../src/EventEdition/RepeatPanel.vala:470
-msgid "Every fourth Thursday"
-msgstr "ทุกสุัปดาห์ที่สี่ของวันพฤหัสฯ"
-
-#: ../src/EventEdition/RepeatPanel.vala:473
-msgid "Every fourth Friday"
-msgstr "ทุกสุัปดาห์ที่สี่ของวันศุกร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:476
-msgid "Every fourth Saturday"
-msgstr "ทุกสุัปดาห์ที่สี่ของวันเสาร์"
+#: ../src/EventEdition/RepeatPanel.vala:501
+msgid "Every fifth Saturday"
+msgstr "ทุกสุัปดาห์ที่ห้าของวันเสาร์"
 
 #: ../src/EventEdition/RepeatPanel.vala:483
 msgid "Every fifth Sunday"
 msgstr "ทุกสุัปดาห์ที่ห้าของวันอาทิตย์"
 
-#: ../src/EventEdition/RepeatPanel.vala:486
-msgid "Every fifth Monday"
-msgstr "ทุกสุัปดาห์ที่ห้าของวันจันทร์"
+#: ../src/EventEdition/RepeatPanel.vala:495
+msgid "Every fifth Thursday"
+msgstr "ทุกสุัปดาห์ที่ห้าของวันพฤหัสฯ"
 
 #: ../src/EventEdition/RepeatPanel.vala:489
 msgid "Every fifth Tuesday"
@@ -444,140 +271,198 @@ msgstr "ทุกสุัปดาห์ที่ห้าของวันอ
 msgid "Every fifth Wednesday"
 msgstr "ทุกสุัปดาห์ที่ห้าของวันพุธ"
 
-#: ../src/EventEdition/RepeatPanel.vala:495
-msgid "Every fifth Thursday"
-msgstr "ทุกสุัปดาห์ที่ห้าของวันพฤหัสฯ"
+#: ../src/EventEdition/RepeatPanel.vala:398
+msgid "Every first Friday"
+msgstr "ทุกสุัปดาห์แรกของวันศุกร์"
 
-#: ../src/EventEdition/RepeatPanel.vala:498
-msgid "Every fifth Friday"
-msgstr "ทุกสุัปดาห์ที่ห้าของวันศุกร์"
+#: ../src/EventEdition/RepeatPanel.vala:386
+msgid "Every first Monday"
+msgstr "ทุกสุัปดาห์แรกของวันจันทร์"
 
-#: ../src/EventEdition/RepeatPanel.vala:501
-msgid "Every fifth Saturday"
-msgstr "ทุกสุัปดาห์ที่ห้าของวันเสาร์"
+#: ../src/EventEdition/RepeatPanel.vala:401
+msgid "Every first Saturday"
+msgstr "ทุกสุัปดาห์แรกของวันเสาร์"
 
-#: ../src/EventEdition/RepeatPanel.vala:511
-msgid "Mon"
-msgstr "จันทร์"
+#: ../src/EventEdition/RepeatPanel.vala:383
+msgid "Every first Sunday"
+msgstr "ทุกสุัปดาห์แรกของวันอาทิตย์"
 
-#: ../src/EventEdition/RepeatPanel.vala:512
-msgid "Tue"
-msgstr "อังคาร"
+#: ../src/EventEdition/RepeatPanel.vala:395
+msgid "Every first Thursday"
+msgstr "ทุกสุัปดาห์แรกของวันพฤหัสฯ"
 
-#: ../src/EventEdition/RepeatPanel.vala:513
-msgid "Wed"
-msgstr "พุธ"
+#: ../src/EventEdition/RepeatPanel.vala:389
+msgid "Every first Tuesday"
+msgstr "ทุกสุัปดาห์แรกของวันอังคาร"
 
-#: ../src/EventEdition/RepeatPanel.vala:514
-msgid "Thu"
-msgstr "พฤหัสฯ"
+#: ../src/EventEdition/RepeatPanel.vala:392
+msgid "Every first Wednesday"
+msgstr "ทุกสุัปดาห์แรกของวันพุธ"
+
+#: ../src/EventEdition/RepeatPanel.vala:473
+msgid "Every fourth Friday"
+msgstr "ทุกสุัปดาห์ที่สี่ของวันศุกร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:461
+msgid "Every fourth Monday"
+msgstr "ทุกสุัปดาห์ที่สี่ของวันจันทร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:476
+msgid "Every fourth Saturday"
+msgstr "ทุกสุัปดาห์ที่สี่ของวันเสาร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:458
+msgid "Every fourth Sunday"
+msgstr "ทุกสุัปดาห์ที่สี่ของวันอาทิตน์ย์"
+
+#: ../src/EventEdition/RepeatPanel.vala:470
+msgid "Every fourth Thursday"
+msgstr "ทุกสุัปดาห์ที่สี่ของวันพฤหัสฯ"
+
+#: ../src/EventEdition/RepeatPanel.vala:464
+msgid "Every fourth Tuesday"
+msgstr "ทุกสุัปดาห์ที่สี่ของวันอังคาร"
+
+#: ../src/EventEdition/RepeatPanel.vala:467
+msgid "Every fourth Wednesday"
+msgstr "ทุกสุัปดาห์ที่สี่ของวันพุธ"
+
+#: ../src/EventEdition/RepeatPanel.vala:373
+msgid "Every last Friday"
+msgstr "ทุกสุัปดาห์สุดท้ายของวันศุกร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:361
+msgid "Every last Monday"
+msgstr "ทุกสุัปดาห์สุดท้ายของวันจันทร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:376
+msgid "Every last Saturday"
+msgstr "ทุกสุัปดาห์สุดท้ายของวันเสาร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:358
+msgid "Every last Sunday"
+msgstr "ทุกสุัปดาห์สุดท้ายของวันอาทิตย์"
+
+#: ../src/EventEdition/RepeatPanel.vala:370
+msgid "Every last Thursday"
+msgstr "ทุกสุัปดาห์สุดท้ายของวันพฤหัสฯ"
+
+#: ../src/EventEdition/RepeatPanel.vala:364
+msgid "Every last Tuesday"
+msgstr "ทุกสุัปดาห์สุดท้ายของวันอังคาร"
+
+#: ../src/EventEdition/RepeatPanel.vala:367
+msgid "Every last Wednesday"
+msgstr "ทุกสุัปดาห์สุดท้ายของวันพุธ"
+
+#: ../src/EventEdition/RepeatPanel.vala:423
+msgid "Every second Friday"
+msgstr "ทุกสุัปดาห์ที่สองของวันศุกร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:411
+msgid "Every second Monday"
+msgstr "ทุกสุัปดาห์ที่สองของวันจันทร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:426
+msgid "Every second Saturday"
+msgstr "ทุกสุัปดาห์ที่สองของวันเสาร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:408
+msgid "Every second Sunday"
+msgstr "ทุกสุัปดาห์ที่สองของวันอาทิตย์"
+
+#: ../src/EventEdition/RepeatPanel.vala:420
+msgid "Every second Thursday"
+msgstr "ทุกสุัปดาห์ที่สองของวันพฤหัสฯ"
+
+#: ../src/EventEdition/RepeatPanel.vala:414
+msgid "Every second Tuesday"
+msgstr "ทุกสุัปดาห์ที่สองของวันอังคาร"
+
+#: ../src/EventEdition/RepeatPanel.vala:417
+msgid "Every second Wednesday"
+msgstr "ทุกสุัปดาห์ที่สองของวันพุธ"
+
+#: ../src/EventEdition/RepeatPanel.vala:448
+msgid "Every third Friday"
+msgstr "ทุกสุัปดาห์ที่สามของวันศุกร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:436
+msgid "Every third Monday"
+msgstr "ทุกสุัปดาห์ที่สามของวันจันทร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:451
+msgid "Every third Saturday"
+msgstr "ทุกสุัปดาห์ที่สามของวันเสาร์"
+
+#: ../src/EventEdition/RepeatPanel.vala:433
+msgid "Every third Sunday"
+msgstr "ทุกสุัปดาห์ที่สามของวันอาทิตย์"
+
+#: ../src/EventEdition/RepeatPanel.vala:445
+msgid "Every third Thursday"
+msgstr "ทุกสุัปดาห์ที่สามของวันพฤหัส"
+
+#: ../src/EventEdition/RepeatPanel.vala:439
+msgid "Every third Tuesday"
+msgstr "ทุกสุัปดาห์ที่สามของวันอังคาร"
+
+#: ../src/EventEdition/RepeatPanel.vala:442
+msgid "Every third Wednesday"
+msgstr "ทุกสุัปดาห์ที่สามของวันพุธ"
+
+#: ../src/EventEdition/RepeatPanel.vala:104
+msgid "Every:"
+msgstr "ทุก ๆ :"
+
+#: ../src/EventEdition/RepeatPanel.vala:200
+msgid "Exceptions:"
+msgstr "ยกเว้น :"
+
+#: ../src/Widgets/ContractorButtonWithMenu.vala:72
+#: ../src/Widgets/ContractorButtonWithMenu.vala:82
+msgid "Export Calendar..."
+msgstr "บันทึกปฏิทินเป็น . . ."
+
+#: ../src/Widgets/HeaderBar.vala:55
+msgid "Export or Share the default Calendar"
+msgstr "ส่งหรือแบ่งปันปฏิทินที่ตั้งไว้เป็นค่าเริ่มต้น"
+
+#: ../src/Application.vala:56
+msgid "Focus the given day"
+msgstr ""
 
 #: ../src/EventEdition/RepeatPanel.vala:515
 msgid "Fri"
 msgstr "ศุกร์"
 
-#: ../src/EventEdition/RepeatPanel.vala:516
-msgid "Sat"
-msgstr "เสาร์"
-
-#: ../src/EventEdition/RepeatPanel.vala:517
-msgid "Sun"
-msgstr "อาทิตย์"
-
-#: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
-msgid "Add Event"
-msgstr "เพิ่มกิจกรรม"
-
-#: ../src/EventEdition/EventDialog.vala:67
-msgid "Edit Event"
-msgstr "แก้ไขกิจกรรม"
-
-#: ../src/EventEdition/EventDialog.vala:94
-msgid "General Informations"
-msgstr "รายละเอียด"
-
-#: ../src/EventEdition/EventDialog.vala:97
-msgid "Location"
-msgstr "สถานที่"
-
-#: ../src/EventEdition/EventDialog.vala:100
-msgid "Guests"
-msgstr "ผู้ที่เข้าร่วม"
-
-#: ../src/EventEdition/EventDialog.vala:103
-msgid "Reminders"
-msgstr "การเตือน"
-
-#: ../src/EventEdition/EventDialog.vala:169
-msgid "Delete Event"
-msgstr "ลบกิจกรรม"
-
-#: ../src/EventEdition/EventDialog.vala:181
-msgid "Create Event"
-msgstr "สร้างกิจกรรม"
-
-#: ../src/EventEdition/EventDialog.vala:184
-msgid "Save Changes"
-msgstr "บันทึกการเปลี่ยนแปลง"
-
-#: ../src/EventEdition/LocationPanel.vala:49
-msgid "Location:"
-msgstr "สถานที่:"
-
-#: ../src/EventEdition/LocationPanel.vala:51
-msgid "John Smith OR Example St."
-msgstr ""
-
 #: ../src/EventEdition/InfoPanel.vala:78
 msgid "From:"
 msgstr "จาก:"
 
-#: ../src/EventEdition/InfoPanel.vala:84
-msgid "All day:"
-msgstr "ทั้งวัน:"
+#: ../src/EventEdition/EventDialog.vala:107
+msgid "General Informations"
+msgstr "รายละเอียด"
 
-#: ../src/EventEdition/InfoPanel.vala:89
-msgid "To:"
-msgstr "ถึง:"
+#: ../src/Widgets/HeaderBar.vala:41
+msgid "Go to today's date"
+msgstr "ไปยังวันที่ของวันนี้"
 
-#: ../src/EventEdition/InfoPanel.vala:107
-msgid "Title:"
-msgstr "ชื่อ:"
+#: ../plugins/Google/GoogleBackend.vala:38
+msgid "Google"
+msgstr "Google"
 
-#: ../src/EventEdition/InfoPanel.vala:109
-msgid "Name of Event"
-msgstr "ชื่อกิจกรรม"
+#: ../src/EventEdition/EventDialog.vala:109
+msgid "Guests"
+msgstr "ผู้ที่เข้าร่วม"
 
-#: ../src/EventEdition/InfoPanel.vala:119
-msgid "Press enter to parse event"
-msgstr "กด Enter เพื่อแจกแจงกิจกรรม"
+#: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:57
+msgid "Hide Week Numbers"
+msgstr "ซ่อนเลขระบุสัปดาห์"
 
-#: ../src/EventEdition/InfoPanel.vala:127
-msgid "Calendar:"
-msgstr "ปฏิทิน:"
-
-#: ../src/EventEdition/InfoPanel.vala:134
-msgid "Comments:"
-msgstr "หมายเหตุ:"
-
-#: ../src/AgendaView.vala:63
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
-msgstr "กิจกรรมที่ใกล้จะมาถึงของคุณจะถูกแสดงที่นี่หากคุณเลือกวันที่ที่มีกิจกรรมอยู่"
-
-#: ../src/AgendaView.vala:154
-msgid "During the day"
-msgstr "ระหว่างวัน"
-
-#: ../src/AgendaView.vala:159
-msgid "All day"
-msgstr "ทั้งวัน"
-
-#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:376
-msgid "%s, %s - %s, %s"
-msgstr "%s, %s ถึง %s, %s"
+#: ../src/ImportDialog.vala:53
+msgid "Import"
+msgstr "นำเข้า"
 
 #: ../src/ImportDialog.vala:42
 msgid "Import events from \"%s\" into the following calendar:"
@@ -588,182 +473,298 @@ msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
 msgstr[0] "นำเข้ารายการกิจกรรมจากไฟล์ %d เข้าสู่ปฏิทินที่ระบุ"
 
-#: ../src/ImportDialog.vala:53
-msgid "Import"
-msgstr "นำเข้า"
+#: ../src/EventEdition/GuestsPanel.vala:94
+msgid "Invite"
+msgstr "เชิญ"
 
-#: ../src/MayaToolbar.vala:45
-msgid "Create a new event"
-msgstr "สร้างกิจกรรมใหม่"
-
-#: ../src/MayaToolbar.vala:48
-msgid "Go to today's date"
-msgstr "ไปยังวันที่ของวันนี้"
-
-#: ../src/MayaToolbar.vala:52
-msgid "Manage Calendars"
-msgstr "จัดการปฏิทิน"
-
-#: ../src/MayaToolbar.vala:64
-msgid "Search Events"
-msgstr "ค้นหากิจกรรม"
-
-#: ../src/MayaToolbar.vala:67
-msgid "Export or Share the default Calendar"
-msgstr "ส่งหรือแบ่งปันปฏิทินที่ตั้งไว้เป็นค่าเริ่มต้น"
-
-#: ../src/Application.vala:34 ../src/Translations.vala:6
-msgid "Calendar"
-msgstr "ปฏิทิน"
-
-#: ../src/Application.vala:102
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Anawin Wongsadit https://launchpad.net/~weplay\n"
-"  Big50000 https://launchpad.net/~ictsanook\n"
-"  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-"  Jirayu Yingthawornsuk https://launchpad.net/~jirayu\n"
-"  Sitdhi https://launchpad.net/~gvdosk124\n"
-"  Tharawut Paripaiboon https://launchpad.net/~xcession"
-
-#: ../src/Translations.vala:5
-msgid "View and schedule events"
-msgstr "ดูและลงเวลาเหตุการณ์"
-
-#: ../src/Translations.vala:7
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr ""
-
-#: ../src/Translations.vala:9
-msgid "About Maya"
-msgstr "เกี่ยวกับซอฟต์แวร์ Maya"
-
-#: ../src/Translations.vala:10
-msgid "About Calendar"
-msgstr "เกี่ยวกับซอฟต์แวร์ปฏิทิน"
-
-#: ../plugins/Google/GoogleBackend.vala:38
-msgid "Google"
-msgstr "Google"
-
-#: ../plugins/Google/GoogleBackend.vala:61
-msgid "user.name or user.name@gmail.com"
-msgstr ""
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:39
-msgid "CalDAV"
-msgstr ""
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:58
-msgid "URL:"
-msgstr "ที่อยู่ URL:"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:91
-msgid "Use a secure connection"
-msgstr "ใช้การเชื่อมต่อนิรภัย"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:119
-msgid "Server handles meeting invitations"
-msgstr "ให้เซิร์ฟเวอร์จัดการการเชิญเข้ารุ่วมประชุม"
-
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
-msgid "On this computer"
-msgstr "บนคอมพิวเตอร์เครื่องนี้"
-
-#: ../core/Backends/PlacementWidget.vala:41
-msgid "User:"
-msgstr "ผู้ใช้:"
-
-#: ../core/Backends/PlacementWidget.vala:50
-msgid "user.name"
-msgstr ""
-
-#: ../core/Backends/PlacementWidget.vala:63
-msgid "Email:"
-msgstr "Email:"
-
-#: ../core/Backends/PlacementWidget.vala:72
-msgid "john@doe.com"
+#: ../src/EventEdition/LocationPanel.vala:52
+msgid "John Smith OR Example St."
 msgstr ""
 
 #: ../core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "เก็บสำเนาไว้ที่เครื่อง"
 
-#: ../core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
+#: ../src/EventEdition/EventDialog.vala:108
+msgid "Location"
+msgstr "สถานที่"
 
-#: ../core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+#: ../src/EventEdition/LocationPanel.vala:50
+msgid "Location:"
+msgstr "สถานที่:"
 
-#~ msgid "at"
-#~ msgstr "ที่"
+#: ../src/Widgets/HeaderBar.vala:48
+msgid "Manage Calendars"
+msgstr "จัดการปฏิทิน"
 
-#~ msgid "Name or Email Address"
-#~ msgstr "ชื่อหรืออีเมล"
+#: ../src/SourceDialog/SourceDialog.vala:123
+msgid "Mark as default calendar"
+msgstr "ทำเครื่องหมายเป็นปฏิทินปริยาย"
 
-#~ msgid "Sync..."
-#~ msgstr "ปรับข้อมูลให้ตรงกัน"
+#: ../src/EventEdition/RepeatPanel.vala:511
+msgid "Mon"
+msgstr "จันทร์"
 
-#~ msgid "Today"
-#~ msgstr "วันนี้"
+#: ../src/EventEdition/RepeatPanel.vala:117
+msgid "Month"
+msgid_plural "Months"
+msgstr[0] "เดือน"
 
-#~ msgid "Fullscreen"
-#~ msgstr "เต็มจอ"
+#: ../src/EventEdition/RepeatPanel.vala:60
+msgid "Monthly"
+msgstr "ทุกเดือน"
 
-#~ msgid "Import..."
-#~ msgstr "นำ...เข้่า"
+#: ../src/EventEdition/InfoPanel.vala:109
+msgid "Name of Event"
+msgstr "ชื่อกิจกรรม"
 
-#~ msgid "Edit the selected event"
-#~ msgstr "แก้ไขกิจกรรมที่เลือก"
+#: ../src/SourceDialog/SourceDialog.vala:69
+msgid "Name:"
+msgstr "ชื่อ :"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "ลบกิจกรรมที่เลือก"
+#: ../src/EventEdition/RepeatPanel.vala:141
+msgid "Never"
+msgstr "ไม่ต้อง"
 
-#~ msgid "Select calendars to display"
-#~ msgstr "เลือกปฏิทินที่จะแสดง"
+#: ../src/AgendaView.vala:312 ../src/AgendaView.vala:326
+#, fuzzy
+msgid "Next Month"
+msgstr "เดือน"
 
-#~ msgid "%l:%M %p"
-#~ msgstr "%l:%M %p"
+#: ../src/AgendaView.vala:308 ../src/AgendaView.vala:322
+#, fuzzy
+msgid "Next Week"
+msgstr "สัปดาห์"
+
+#: ../src/EventEdition/RepeatPanel.vala:203
+msgid "No Exceptions"
+msgstr "ไม่มีข้อยกเว้น"
+
+#: ../src/EventEdition/GuestsPanel.vala:58
+msgid "No Participants"
+msgstr "ไม่มีผู้เข้าร่วม"
+
+#: ../src/EventEdition/ReminderPanel.vala:37
+msgid "No Reminders"
+msgstr "ไม่มีเตือนความจำ"
+
+#: ../src/EventEdition/ReminderPanel.vala:195
+msgid "Notification"
+msgstr "การแจ้งเตือน"
+
+#: ../src/Model/SourceManager.vala:67 ../core/Backends/LocalBackend.vala:27
+#: ../core/Utils.vala:703
+msgid "On this computer"
+msgstr "บนคอมพิวเตอร์เครื่องนี้"
+
+#: ../src/EventEdition/GuestsPanel.vala:53
+msgid "Participants:"
+msgstr "ผุู้ที่เกี่ยวข้อง :"
+
+#: ../src/Model/SourceManager.vala:137
+msgid "Personal"
+msgstr "ส่วนตัว"
+
+#: ../src/EventEdition/InfoPanel.vala:119
+msgid "Press enter to parse event"
+msgstr "กด Enter เพื่อแจกแจงกิจกรรม"
+
+#: ../src/Application.vala:58 ../daemon/Daemon.vala:21
+#, fuzzy
+msgid "Print debug information"
+msgstr "รายละเอียด"
+
+#: ../src/Application.vala:57 ../daemon/Daemon.vala:23
+msgid "Print version info and exit"
+msgstr ""
+
+#: ../src/EventEdition/EventDialog.vala:110
+msgid "Reminders"
+msgstr "การเตือน"
+
+#: ../src/EventEdition/ReminderPanel.vala:33
+msgid "Reminders:"
+msgstr "เตือนความจำ"
+
+#: ../src/AgendaView.vala:529 ../src/SourceDialog/SourceItem.vala:80
+#: ../src/Grid/EventButton.vala:75
+msgid "Remove"
+msgstr "ลบออก"
+
+#: ../src/Grid/EventButton.vala:69
+#, fuzzy
+msgid "Remove Event"
+msgstr "ลบกิจกรรม"
+
+#: ../src/Grid/EventButton.vala:70
+msgid "Remove Occurrence"
+msgstr ""
+
+#: ../src/EventEdition/EventDialog.vala:111
+#: ../src/EventEdition/RepeatPanel.vala:137
+#: ../src/EventEdition/RepeatPanel.vala:170
+msgid "Repeat"
+msgid_plural "Repeats"
+msgstr[0] "การเตือนซ้า"
+
+#: ../src/EventEdition/RepeatPanel.vala:53
+msgid "Repeat:"
+msgstr "เตือนซ้ำ :"
+
+#: ../src/EventEdition/RepeatPanel.vala:516
+msgid "Sat"
+msgstr "เสาร์"
+
+#: ../src/SourceDialog/SourceDialog.vala:162
+#: ../src/Widgets/ContractorButtonWithMenu.vala:88
+msgid "Save"
+msgstr "บันทึก"
+
+#: ../src/EventEdition/EventDialog.vala:149
+msgid "Save Changes"
+msgstr "บันทึกการเปลี่ยนแปลง"
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:123
+msgid "Server handles meeting invitations"
+msgstr "ให้เซิร์ฟเวอร์จัดการการเชิญเข้ารุ่วมประชุม"
+
+#: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:59
+msgid "Show Week Numbers"
+msgstr "แสดงสัปดาห์ที่"
+
+#: ../src/EventEdition/RepeatPanel.vala:517
+msgid "Sun"
+msgstr "อาทิตย์"
+
+#: ../src/EventEdition/RepeatPanel.vala:189
+msgid "The same day every month"
+msgstr "เตือนในวันที่ระบุของแต่ละเดือน"
+
+#: ../src/AgendaView.vala:310 ../src/AgendaView.vala:324
+#, fuzzy
+msgid "This Month"
+msgstr "เดือน"
+
+#: ../src/AgendaView.vala:306 ../src/AgendaView.vala:320
+#, fuzzy
+msgid "This Week"
+msgstr "สัปดาห์"
+
+#: ../src/EventEdition/RepeatPanel.vala:514
+msgid "Thu"
+msgstr "พฤหัสฯ"
+
+#: ../src/EventEdition/InfoPanel.vala:107
+msgid "Title:"
+msgstr "ชื่อ:"
+
+#: ../src/EventEdition/InfoPanel.vala:89
+msgid "To:"
+msgstr "ถึง:"
+
+#: ../src/AgendaView.vala:304 ../src/AgendaView.vala:318
+msgid "Tomorrow"
+msgstr ""
+
+#: ../src/EventEdition/RepeatPanel.vala:512
+msgid "Tue"
+msgstr "อังคาร"
+
+#: ../src/SourceDialog/SourceDialog.vala:95
+msgid "Type:"
+msgstr "ประเภท:"
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:58
+msgid "URL:"
+msgstr "ที่อยู่ URL:"
+
+#: ../src/SourceDialog/SourceItem.vala:125
+msgid "Undo"
+msgstr "ย้อนการกระทำ"
+
+#: ../src/EventEdition/RepeatPanel.vala:142
+msgid "Until"
+msgstr "จนกว่าจะถึง"
+
+#: ../src/AgendaView.vala:142
+msgid "Upcoming Events"
+msgstr ""
+
+#: ../plugins/CalDAV/CalDAVBackend.vala:95
+msgid "Use a secure connection"
+msgstr "ใช้การเชื่อมต่อนิรภัย"
+
+#: ../core/Backends/PlacementWidget.vala:41
+msgid "User:"
+msgstr "ผู้ใช้:"
+
+#: ../src/Model/SourceManager.vala:68
+msgid "Webcal"
+msgstr "Webcal"
+
+#: ../src/EventEdition/RepeatPanel.vala:513
+msgid "Wed"
+msgstr "พุธ"
+
+#: ../src/EventEdition/RepeatPanel.vala:114
+#: ../src/EventEdition/RepeatPanel.vala:125
+msgid "Week"
+msgid_plural "Weeks"
+msgstr[0] "สัปดาห์"
+
+#: ../src/EventEdition/RepeatPanel.vala:59
+msgid "Weekly"
+msgstr "ทุกสัปดาห์"
+
+#: ../src/EventEdition/RepeatPanel.vala:120
+msgid "Year"
+msgid_plural "Years"
+msgstr[0] "ปี"
+
+#: ../src/EventEdition/RepeatPanel.vala:61
+msgid "Yearly"
+msgstr "ทุกปี"
+
+#: ../src/AgendaView.vala:69
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr "กิจกรรมที่ใกล้จะมาถึงของคุณจะถูกแสดงที่นี่หากคุณเลือกวันที่ที่มีกิจกรรมอยู่"
+
+#: ../src/Widgets/ContractorButtonWithMenu.vala:85
+msgid "calendar.ics"
+msgstr "calendar.ics"
+
+#: ../src/Application.vala:56
+msgid "date"
+msgstr ""
+
+#: ../core/Backends/PlacementWidget.vala:72
+msgid "john@doe.com"
+msgstr ""
+
+#: ../core/Backends/PlacementWidget.vala:50
+msgid "user.name"
+msgstr ""
+
+#: ../plugins/Google/GoogleBackend.vala:61
+msgid "user.name or user.name@gmail.com"
+msgstr ""
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
 
-#~ msgid "Contacts"
-#~ msgstr "รายชื่อ"
-
-#~ msgid "Webcal"
-#~ msgstr "Webcal"
-
-#~ msgid "Personal"
-#~ msgstr "ส่วนตัว"
-
-#~ msgid "all day"
-#~ msgstr "ทั้งวัน"
-
-#~ msgid "Title"
-#~ msgstr "เรื่อง"
-
-#~ msgid "_Add Event"
-#~ msgstr "เพิ่มเหตุการณ์"
-
-#~ msgid "Participants"
-#~ msgstr "ผู้เข้าร่วม"
-
-#~ msgid "Ends: \t"
-#~ msgstr "สิ้นสุด: \t"
-
-#~ msgid "Starts: \t"
-#~ msgstr "เริ่ม: \t"
+#~ msgid "%l:%M %p"
+#~ msgstr "%l:%M %p"
 
 #~ msgid "About"
 #~ msgstr "เกี่ยวกับ"
 
-#~ msgid "Your event has to be named and has to have a valid date"
-#~ msgstr "คุณจะต้องตั้งชื่อและลงเวลาให้เหตุการณ์นี้"
+#~ msgid "About Calendar"
+#~ msgstr "เกี่ยวกับซอฟต์แวร์ปฏิทิน"
+
+#~ msgid "About Maya"
+#~ msgstr "เกี่ยวกับซอฟต์แวร์ Maya"
 
 #~ msgid "Add calendar"
 #~ msgstr "เพิ่มปฏิทิน"
@@ -771,5 +772,72 @@ msgstr "%A, %b %d"
 #~ msgid "Comments"
 #~ msgstr "ความคิดเห็น"
 
+#~ msgid "Delete the selected event"
+#~ msgstr "ลบกิจกรรมที่เลือก"
+
+#~ msgid "Edit the selected event"
+#~ msgstr "แก้ไขกิจกรรมที่เลือก"
+
+#~ msgid "Email"
+#~ msgstr "อีเมล"
+
+#~ msgid "Ends: \t"
+#~ msgstr "สิ้นสุด: \t"
+
+#~ msgid "Fullscreen"
+#~ msgstr "เต็มจอ"
+
+#~ msgid "Import..."
+#~ msgstr "นำ...เข้่า"
+
+#~ msgid "Name or Email Address"
+#~ msgstr "ชื่อหรืออีเมล"
+
+#~ msgid "Participants"
+#~ msgstr "ผู้เข้าร่วม"
+
+#~ msgid "Search Events"
+#~ msgstr "ค้นหากิจกรรม"
+
+#~ msgid "Select calendars to display"
+#~ msgstr "เลือกปฏิทินที่จะแสดง"
+
+#~ msgid "Starts: \t"
+#~ msgstr "เริ่ม: \t"
+
+#~ msgid "Sync..."
+#~ msgstr "ปรับข้อมูลให้ตรงกัน"
+
 #~ msgid "This event can't be edited"
 #~ msgstr "เหตุการณ์นี้ไม่สามารถแก้ไขได้"
+
+#~ msgid "Title"
+#~ msgstr "เรื่อง"
+
+#~ msgid "Today"
+#~ msgstr "วันนี้"
+
+#~ msgid "View and schedule events"
+#~ msgstr "ดูและลงเวลาเหตุการณ์"
+
+#~ msgid "Your event has to be named and has to have a valid date"
+#~ msgstr "คุณจะต้องตั้งชื่อและลงเวลาให้เหตุการณ์นี้"
+
+#~ msgid "_Add Event"
+#~ msgstr "เพิ่มเหตุการณ์"
+
+#~ msgid "all day"
+#~ msgstr "ทั้งวัน"
+
+#~ msgid "at"
+#~ msgstr "ที่"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Anawin Wongsadit https://launchpad.net/~weplay\n"
+#~ "  Big50000 https://launchpad.net/~ictsanook\n"
+#~ "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
+#~ "  Jirayu Yingthawornsuk https://launchpad.net/~jirayu\n"
+#~ "  Sitdhi https://launchpad.net/~gvdosk124\n"
+#~ "  Tharawut Paripaiboon https://launchpad.net/~xcession"
