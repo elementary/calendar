@@ -1,18 +1,18 @@
 [Desktop Entry]
 Type=Application
-_Name=@APP_NAME@
-_GenericName=Calendar
-_Comment=View and schedule events
-Exec=@EXEC_NAME@ %U
+Name=Calendar
+GenericName=Calendar
+Comment=View and schedule events
+Exec=io.elementary.calendar %U
 Icon=office-calendar
 Terminal=false
 Categories=GTK;Office;Calendar;
 StartupNotify=true
 MimeType=text/calendar;
-_Keywords=Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;
+Keywords=Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;
 Actions=AddEvent;
 X-GNOME-UsesNotifications=true
 
 [Desktop Action AddEvent]
-_Name=Add Event
-Exec=@EXEC_NAME@ -a
+Name=Add Event
+Exec=io.elementary.calendar -a
