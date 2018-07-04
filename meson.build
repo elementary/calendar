@@ -11,6 +11,7 @@ pluginsdir = join_paths(get_option('prefix'), get_option('libdir'), meson.projec
 
 gnome = import('gnome')
 i18n = import('i18n')
+pkgconfig = import('pkgconfig')
 
 glib_dep = dependency('glib-2.0')
 gee_dep = dependency('gee-0.8')

@@ -34,16 +34,16 @@ core_deps = [
     libedataserverui_dep,
     libical_dep,
     libsoup_dep,
-    gmodule_dep,
-    m_dep
+    gmodule_dep
 ]
 
 core_lib = shared_library(
     'elementary-calendar',
     core_files,
     config_file,
-    dependencies: core_deps,
+    dependencies: [ core_deps, m_dep ],
     install: true,
+    install_dir: [true, join_paths(get_option('includedir'), 'elementary-calendar'), true],
     soversion: '0',
     version: '0.1'
 )
@@ -52,4 +52,19 @@ core_dep = declare_dependency(
     link_with: core_lib,
     dependencies: core_deps,
     include_directories: include_directories('.')
+)
+
+install_data(
+    meson.project_name() + '.deps',
+    install_dir: join_paths(get_option('datadir'), 'vala', 'vapi')
+)
+
+pkgconfig.generate(
+    filebase: meson.project_name(),
+    version: meson.project_version(),
+    name: 'elementary Calendar',
+    description: 'Extension endpoint to the Calendar application',
+    libraries: core_lib,
+    subdirs: 'elementary-calendar',
+    requires: core_deps
 )
