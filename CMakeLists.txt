@@ -32,7 +32,6 @@ add_custom_target (uninstall "${CMAKE_COMMAND}" -P
 #
 
 set (CORE_PACKAGES
-    gconf-2.0
     gee-0.8
     gio-2.0
     granite
