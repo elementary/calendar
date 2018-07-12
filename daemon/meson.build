@@ -1,0 +1,21 @@
+daemon_deps = [
+    core_dep,
+    gee_dep,
+    glib_dep,
+    libecal_dep,
+    libedataserver_dep,
+    libedataserverui_dep,
+    libical_dep,
+    m_dep
+]
+
+if libnotify_dep.found()
+    daemon_deps += libnotify_dep
+endif
+
+executable(
+    meson.project_name()+'-daemon',
+    'Daemon.vala',
+    dependencies: daemon_deps,
+    install: true
+)

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2015-2016 elementary, LLC <contact@elementary.io> -->
+<component type="desktop">
+  <id>io.elementary.calendar</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_group>elementary</project_group>
+  <project_license>GPL-3.0+</project_license>
+  <name>Calendar</name>
+  <summary>View and schedule events</summary>
+  <description>
+    <p>
+      A slim, lightweight calendar app that syncs and manages multiple calendars in one place, like Google Calendar, Outlook and CalDAV.
+    </p>
+  </description>
+  <releases>
+    <release version="0.4.2.1" date="2018-06-22" urgency="medium">
+      <description>
+          <p>Update wingpanel-indicator-datetime settings path.</p>
+          <p>New translations.</p>
+      </description>
+    </release>
+    <release version="0.4.2" date="2018-06-06" urgency="medium">
+      <description>
+          <p>Various bug fixes and improvements.</p>
+      </description>
+    </release>
+    <release version="0.4.1" date="2017-10-27" urgency="medium">
+      <description>
+          <p>Fixes for calendar accuracy and integrity issues.</p>
+          <p>Fixes exporting, importing and printing calendars.</p>
+          <p>Various bug fixes and improvements.</p>
+      </description>
+    </release>
+    <release version="0.4.0.2" timestamp="1473189266"/>
+    <release version="0.4.0.1" timestamp="1471195865"/>
+    <release version="0.4" timestamp="1470925887"/>
+    <release version="0.3.1.1" timestamp="1432996164"/>
+    <release version="0.3.1" timestamp="1428358074"/>
+    <release version="0.3" timestamp="1386579562"/>
+    <release version="0.2.2" timestamp="1376200121"/>
+    <release version="0.2.1" timestamp="1370820403"/>
+    <release version="0.2.0" timestamp="1313053217"/>
+  </releases>
+  <provides>
+    <library>libelementary-calendar.so.0</library>
+    <binary>io.elementary.calendar</binary>
+    <binary>io.elementary.calendar-daemon</binary>
+  </provides>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="sex-homosexuality">none</content_attribute>
+    <content_attribute id="sex-prostitution">none</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+  <developer_name>elementary LLC.</developer_name>
+  <url type="homepage">http://elementary.io/</url>
+  <url type="bugtracker">https://github.com/elementary/calendar/issues</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <url type="help">https://elementary.io/help/maya</url>
+  <url type="translate">https://l10n.elementary.io/projects/calendar</url>
+  <update_contact>contact_at_elementary.io</update_contact>
+  <screenshots>
+  <screenshot type="default">
+    <image>https://raw.githubusercontent.com/elementary/calendar/master/data/screenshot.png</image>
+  </screenshot>
+</screenshots>
+</component>
