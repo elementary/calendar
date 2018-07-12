@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2018-07-12 12:40+0000\n"
+"PO-Revision-Date: 2018-07-12 17:13+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/calendar/"
 "calendar/da/>\n"
@@ -194,11 +194,11 @@ msgstr "Annuller"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
-msgstr "Tilføj begivenhed"
+msgstr "Tilføj Event"
 
 #: src/EventEdition/EventDialog.vala:61
 msgid "Edit Event"
-msgstr "Redigér begivenhed"
+msgstr "Rediger Event"
 
 #: src/EventEdition/EventDialog.vala:107
 msgid "General Informations"
@@ -225,11 +225,11 @@ msgstr[1] "Gentagelser"
 
 #: src/EventEdition/EventDialog.vala:134
 msgid "Delete Event"
-msgstr "Slet begivenhed"
+msgstr "Slet Event"
 
 #: src/EventEdition/EventDialog.vala:146
 msgid "Create Event"
-msgstr "Opret begivenhed"
+msgstr "Opret Event"
 
 #: src/EventEdition/EventDialog.vala:149
 msgid "Save Changes"
@@ -273,11 +273,11 @@ msgstr "Titel:"
 
 #: src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
-msgstr "Navn på begivenhed"
+msgstr "Navn på Event"
 
 #: src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr "Tryk på enter for at parse begivenhed"
+msgstr "Tryk på enter for at parse event"
 
 #: src/EventEdition/InfoPanel.vala:134
 msgid "Calendar:"
@@ -730,7 +730,7 @@ msgstr "kalender.ics"
 
 #: src/Widgets/HeaderBar.vala:38
 msgid "Create a new event"
-msgstr "Opret en ny begivenhed"
+msgstr "Opret en ny event"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Go to today's date"
