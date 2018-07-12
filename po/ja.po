@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2018-07-12 10:10+0000\n"
+"PO-Revision-Date: 2018-07-12 12:34+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -42,7 +42,7 @@ msgstr "john@doe.com"
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr "ローカルにコピーを保管する"
+msgstr "ローカルにコピーを保管"
 
 #: core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
@@ -171,13 +171,13 @@ msgstr "カレンダー"
 #: src/ImportDialog.vala:42
 #, c-format
 msgid "Import events from \"%s\" into the following calendar:"
-msgstr "\"%s\" から以下のカレンダーに予定をインポートする:"
+msgstr "\"%s\" から以下のカレンダーに予定をインポート:"
 
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "%d個のファイルから以下のカレンダーに予定をインポートする:"
+msgstr[0] "%d 個のファイルから以下のカレンダーに予定をインポート:"
 
 #: src/ImportDialog.vala:53
 msgid "Import"
