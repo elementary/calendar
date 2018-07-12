@@ -1,5 +1,5 @@
 usr/include/elementary-calendar/elementary-calendar.h
 usr/lib/*/libelementary-calendar.so
-usr/lib/*/pkgconfig/io.elementary.calendar.pc
-usr/share/vala/vapi/io.elementary.calendar.deps
+usr/lib/*/pkgconfig/elementary-calendar.pc
+usr/share/vala/vapi/elementary-calendar.deps
 usr/share/vala/vapi/elementary-calendar.vapi
