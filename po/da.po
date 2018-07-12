@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2017-07-01 22:11+0000\n"
-"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
-"Language-Team: Danish <https://l10n.elementary.io/projects/calendar/calendar/"
-"da/>\n"
+"PO-Revision-Date: 2018-07-12 12:40+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
+"Language-Team: Danish <https://weblate.elementary.io/projects/calendar/"
+"calendar/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-22 06:26+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
@@ -53,13 +53,12 @@ msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
 #: daemon/Daemon.vala:21 src/Application.vala:51
-#, fuzzy
 msgid "Print debug information"
-msgstr "Generelle informationer"
+msgstr "Print debug information"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Print version info og afslut"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -95,7 +94,7 @@ msgstr ""
 
 #: src/AgendaView.vala:142
 msgid "Upcoming Events"
-msgstr ""
+msgstr "Kommende Events"
 
 #: src/AgendaView.vala:234
 msgid "During the day"
@@ -107,27 +106,23 @@ msgstr "Hele dagen"
 
 #: src/AgendaView.vala:304 src/AgendaView.vala:318
 msgid "Tomorrow"
-msgstr ""
+msgstr "Imorgen"
 
 #: src/AgendaView.vala:306 src/AgendaView.vala:320
-#, fuzzy
 msgid "This Week"
-msgstr "Uge"
+msgstr "Denne Uge"
 
 #: src/AgendaView.vala:308 src/AgendaView.vala:322
-#, fuzzy
 msgid "Next Week"
-msgstr "Uge"
+msgstr "Næste Uge"
 
 #: src/AgendaView.vala:310 src/AgendaView.vala:324
-#, fuzzy
 msgid "This Month"
-msgstr "Måned"
+msgstr "Denne Måned"
 
 #: src/AgendaView.vala:312 src/AgendaView.vala:326
-#, fuzzy
 msgid "Next Month"
-msgstr "Måned"
+msgstr "Næste Måned"
 
 #: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
@@ -140,9 +135,9 @@ msgid "Remove"
 msgstr "Fjern"
 
 #: src/AgendaView.vala:572 src/AgendaView.vala:582
-#, fuzzy, c-format
+#, c-format
 msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s - %s"
 
 #: src/AgendaView.vala:574
 #, c-format
@@ -152,25 +147,24 @@ msgstr "%s, %s - %s, %s"
 #: src/AgendaView.vala:586
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/AgendaView.vala:588
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s - %s"
 
 #: src/Application.vala:48
-#, fuzzy
 msgid "Create an event"
-msgstr "Opret en ny begivenhed"
+msgstr "Opret et event"
 
 #: src/Application.vala:49
 msgid "Focus the given day"
-msgstr ""
+msgstr "Fokuser på den givne dag"
 
 #: src/Application.vala:49
 msgid "date"
-msgstr ""
+msgstr "dato"
 
 #: src/Application.vala:224
 msgid "Calendar"
@@ -318,7 +312,6 @@ msgid "0 minutes"
 msgstr "0 minutter"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute"
 msgstr "1 minut"
 
@@ -659,13 +652,12 @@ msgid "Sun"
 msgstr "Søn"
 
 #: src/Grid/EventButton.vala:70
-#, fuzzy
 msgid "Remove Event"
-msgstr "Slet begivenhed"
+msgstr "Fjern Event"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Fjern Begivenhed"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
