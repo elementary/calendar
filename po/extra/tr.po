@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2016-02-01 01:58+0000\n"
 "Last-Translator: Sadık Poyraz <sadikpoyraz01@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -18,27 +18,18 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Takvim"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Etkinlikleri Görüntüle ve Planla"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr "Maya;Planlayıcı;Tarih;Gün;Etkinlikler;Takvim;ics;caldav;evrim;"
-
-msgid "Add Event"
-msgstr "Etkinlik Ekle"
-
-msgid "About Calendar"
-msgstr "Takvim Hakkında"
-
-msgid "Maya"
-msgstr "Maya"
-
-msgid "About Maya"
-msgstr "Maya Hakkında"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
@@ -46,3 +37,29 @@ msgstr ""
 "Google Takvim, Outlook ve CalDAV gibi birden fazla takvimi tek bir noktadan "
 "senkronize edip yönetebileceğiniz ince, hafif ve son derece kullanışlı bir "
 "takvim uygulaması."
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "Takvim"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr "Maya;Planlayıcı;Tarih;Gün;Etkinlikler;Takvim;ics;caldav;evrim;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "Etkinlik Ekle"
+
+#~ msgid "About Calendar"
+#~ msgstr "Takvim Hakkında"
+
+#~ msgid "Maya"
+#~ msgstr "Maya"
+
+#~ msgid "About Maya"
+#~ msgstr "Maya Hakkında"

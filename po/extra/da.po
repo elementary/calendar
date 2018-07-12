@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2017-03-15 08:03+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
@@ -18,31 +18,48 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-19 06:23+0000\n"
 "X-Generator: Launchpad (build 18332)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Kalender"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Vis og planlæg begivenheder"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-"Maya;Planlægning;Datoer;Dage;Begivenheder;Kalender;ics;caldav;evolution;"
-
-msgid "Add Event"
-msgstr "Tilføj begivenhed"
-
-msgid "About Calendar"
-msgstr "Om Kalender"
-
-msgid "Maya"
-msgstr "Maya"
-
-msgid "About Maya"
-msgstr "Om Maya"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
 "Et slankt, let og fleksibelt kalenderprogram, der synkroniserer og styrer "
 "flere kalendere på ér sted, ligesom Google Kalender, Outlook og CalDAV."
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "Kalender"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr ""
+"Maya;Planlægning;Datoer;Dage;Begivenheder;Kalender;ics;caldav;evolution;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "Tilføj begivenhed"
+
+#~ msgid "About Calendar"
+#~ msgstr "Om Kalender"
+
+#~ msgid "Maya"
+#~ msgstr "Maya"
+
+#~ msgid "About Maya"
+#~ msgstr "Om Maya"

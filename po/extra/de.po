@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2017-09-06 12:07+0000\n"
 "Last-Translator: Lloyd Carr <l.carr@gmx.de>\n"
-"Language-Team: German "
-"<https://weblate.elementary.io/projects/calendar/extra/de/>\n"
+"Language-Team: German <https://weblate.elementary.io/projects/calendar/extra/"
+"de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,28 +20,18 @@ msgstr ""
 "X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Kalender"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Termine ansehen und planen"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-"Maya;Terminplaner;Termine;Tage;Ereignisse;Kalender;ics;CalDAV;Evolution;"
-
-msgid "Add Event"
-msgstr "Termin hinzufügen"
-
-msgid "About Calendar"
-msgstr "Über Kalender"
-
-msgid "Maya"
-msgstr "Maya"
-
-msgid "About Maya"
-msgstr "Über Maya"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
@@ -49,3 +39,30 @@ msgstr ""
 "Eine schlanke Kalenderanwendung, mit der mehrere Kalender, wie Google "
 "Kalender, Outlook und CalDAV, zentral synchronisiert und verwaltet werden "
 "können."
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "Kalender"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr ""
+"Maya;Terminplaner;Termine;Tage;Ereignisse;Kalender;ics;CalDAV;Evolution;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "Termin hinzufügen"
+
+#~ msgid "About Calendar"
+#~ msgstr "Über Kalender"
+
+#~ msgid "Maya"
+#~ msgstr "Maya"
+
+#~ msgid "About Maya"
+#~ msgstr "Über Maya"

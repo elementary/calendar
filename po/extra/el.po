@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2017-01-22 15:34+0000\n"
 "Last-Translator: Belos <sagoldenking@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -18,28 +18,45 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-01-23 05:58+0000\n"
 "X-Generator: Launchpad (build 18302)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Ημερολόγιο"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr ""
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-
-msgid "Add Event"
-msgstr ""
-
-msgid "About Calendar"
-msgstr "Σχετικά με το Ημερολόγιο"
-
-msgid "Maya"
-msgstr "Maya"
-
-msgid "About Maya"
-msgstr "Σχετικά με το Maya"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "Ημερολόγιο"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr ""
+
+#~ msgid "About Calendar"
+#~ msgstr "Σχετικά με το Ημερολόγιο"
+
+#~ msgid "Maya"
+#~ msgstr "Maya"
+
+#~ msgid "About Maya"
+#~ msgstr "Σχετικά με το Maya"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2017-03-17 05:36+0000\n"
 "Last-Translator: Agastya Chandrakant <Unknown>\n"
 "Language-Team: Hindi <hi@li.org>\n"
@@ -18,28 +18,39 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-19 06:23+0000\n"
 "X-Generator: Launchpad (build 18332)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "कैलेन्डर"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr ""
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-
-msgid "Add Event"
-msgstr "घटना जोडें"
-
-msgid "About Calendar"
-msgstr ""
-
-msgid "Maya"
-msgstr "माया"
-
-msgid "About Maya"
-msgstr ""
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "कैलेन्डर"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "घटना जोडें"
+
+#~ msgid "Maya"
+#~ msgstr "माया"

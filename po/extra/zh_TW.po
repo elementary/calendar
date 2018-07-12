@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2016-08-06 15:48+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -18,32 +18,49 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "行事曆"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "查看和安排事件"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-"Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;行事曆;排程;行"
-"程;"
-
-msgid "Add Event"
-msgstr "加入事件"
-
-msgid "About Calendar"
-msgstr "關於《行事曆》"
-
-msgid "Maya"
-msgstr "Maya"
-
-msgid "About Maya"
-msgstr "關於 Maya"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
 "輕巧的行事曆程式，讓您在同一處同步、管理多本行事曆，例如 Google 行事曆、"
 "Outlook 和 CalDAV 等。"
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "行事曆"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr ""
+"Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;行事曆;排程;行"
+"程;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "加入事件"
+
+#~ msgid "About Calendar"
+#~ msgstr "關於《行事曆》"
+
+#~ msgid "Maya"
+#~ msgstr "Maya"
+
+#~ msgid "About Maya"
+#~ msgstr "關於 Maya"

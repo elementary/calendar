@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2016-10-18 15:17+0000\n"
 "Last-Translator: Niv Baehr <Unknown>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -18,30 +18,47 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "לוח שנה"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "צפייה באירועים ותזמונם"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr "תכנון;תאריכים;פגישות;ימים;אירועים;יומן;לוח;שנה;"
-
-msgid "Add Event"
-msgstr "הוספת אירוע"
-
-msgid "About Calendar"
-msgstr "על אודות לוח שנה"
-
-msgid "Maya"
-msgstr "Maya"
-
-msgid "About Maya"
-msgstr "על אודות Maya"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
 "יישום לוח שנה קל ורזה שמסנכרן ומנהל לוחות שנה מרובים במקום אחד, כמו Google "
 "Calendar, Outlook ו־CalDAV."
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "לוח שנה"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr "תכנון;תאריכים;פגישות;ימים;אירועים;יומן;לוח;שנה;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "הוספת אירוע"
+
+#~ msgid "About Calendar"
+#~ msgstr "על אודות לוח שנה"
+
+#~ msgid "Maya"
+#~ msgstr "Maya"
+
+#~ msgid "About Maya"
+#~ msgstr "על אודות Maya"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2016-09-29 12:05+0000\n"
 "Last-Translator: Адмирал АнимЕ <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -18,30 +18,47 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Календар"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Преглеждане и насрочване на събития"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr "Мая;планировчик;дати;дни;мероприятия;календар;"
-
-msgid "Add Event"
-msgstr "Добавяне на събитие"
-
-msgid "About Calendar"
-msgstr "Относно програмата"
-
-msgid "Maya"
-msgstr "Мая"
-
-msgid "About Maya"
-msgstr "Относно Мая"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
 "Лека програма, която синхронизира и управлява множество календари на едно "
 "място - например Календар на Гугъл, Аутлук и CalDAV."
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "Календар"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr "Мая;планировчик;дати;дни;мероприятия;календар;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "Добавяне на събитие"
+
+#~ msgid "About Calendar"
+#~ msgstr "Относно програмата"
+
+#~ msgid "Maya"
+#~ msgstr "Мая"
+
+#~ msgid "About Maya"
+#~ msgstr "Относно Мая"

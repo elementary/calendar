@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2018-06-22 00:09+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
-"Language-Team: Hungarian "
-"<https://weblate.elementary.io/projects/calendar/extra/hu/>\n"
+"Language-Team: Hungarian <https://weblate.elementary.io/projects/calendar/"
+"extra/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,29 +20,18 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Naptár"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Események megtekintése és ütemezése"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-"Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;Tervező;Dátumok;"
-"Napok;Események;Naptár;"
-
-msgid "Add Event"
-msgstr "Esemény hozzáadása"
-
-msgid "About Calendar"
-msgstr "A Naptár névjegye"
-
-msgid "Maya"
-msgstr "Maya"
-
-msgid "About Maya"
-msgstr "A Maya névjegye"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
@@ -50,3 +39,31 @@ msgstr ""
 "Egy karcsú és könnyű naptáralkalmazás, amellyel egyhelyről kezelhet és "
 "szinkronizálhat többféle naptárat is, például: Google Naptár, Outlook vagy "
 "CalDav."
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "Naptár"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr ""
+"Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;Tervező;Dátumok;"
+"Napok;Események;Naptár;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "Esemény hozzáadása"
+
+#~ msgid "About Calendar"
+#~ msgstr "A Naptár névjegye"
+
+#~ msgid "Maya"
+#~ msgstr "Maya"
+
+#~ msgid "About Maya"
+#~ msgstr "A Maya névjegye"

@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2018-06-18 00:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://weblate.elementary.io/projects/calendar/extra/ja/>\n"
+"Language-Team: Japanese <https://weblate.elementary.io/projects/calendar/"
+"extra/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,29 +20,47 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "カレンダー"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "予定の表示と計画をします"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr "Maya;Planner;日付;日;予定;カレンダー;ics;caldav;evolution;"
-
-msgid "Add Event"
-msgstr "予定を追加"
-
-msgid "About Calendar"
-msgstr "\"カレンダー\" について"
-
-msgid "Maya"
-msgstr "Maya"
-
-msgid "About Maya"
-msgstr "\"Maya\" について"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
-"Google カレンダー や Outlook、CalDav などの複数のカレンダーを一か所で同期し管理できる、スリムで軽量なカレンダーアプリです。"
+"Google カレンダー や Outlook、CalDav などの複数のカレンダーを一か所で同期し管"
+"理できる、スリムで軽量なカレンダーアプリです。"
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "カレンダー"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr "Maya;Planner;日付;日;予定;カレンダー;ics;caldav;evolution;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "予定を追加"
+
+#~ msgid "About Calendar"
+#~ msgstr "\"カレンダー\" について"
+
+#~ msgid "Maya"
+#~ msgstr "Maya"
+
+#~ msgid "About Maya"
+#~ msgstr "\"Maya\" について"

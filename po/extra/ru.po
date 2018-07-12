@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2016-01-19 00:03+0000\n"
 "Last-Translator: Yuly Nesterov <crow@rikka.io>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -18,32 +18,49 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Календарь"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Просмотр и создание событий"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-"Календарь;Даты;Дни;События;Maya;Planner;Dates;Days;Events;Calendar;ics;"
-"caldav;evolution;"
-
-msgid "Add Event"
-msgstr "Добавить событие"
-
-msgid "About Calendar"
-msgstr "О программе"
-
-msgid "Maya"
-msgstr "Майя"
-
-msgid "About Maya"
-msgstr "О программе"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
 "Легкий и изящный календарь, поддерживающий синхронизацию с Google Календарь, "
 "Outlook и CalDAV."
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "Календарь"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr ""
+"Календарь;Даты;Дни;События;Maya;Planner;Dates;Days;Events;Calendar;ics;"
+"caldav;evolution;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "Добавить событие"
+
+#~ msgid "About Calendar"
+#~ msgstr "О программе"
+
+#~ msgid "Maya"
+#~ msgstr "Майя"
+
+#~ msgid "About Maya"
+#~ msgstr "О программе"

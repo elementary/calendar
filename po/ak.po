@@ -3,11 +3,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-12 10:43+0100\n"
 "PO-Revision-Date: 2017-06-26 12:57+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
-"Language-Team: Akan "
-"<https://l10n.elementary.io/projects/calendar/calendar/ak/>\n"
+"Language-Team: Akan <https://l10n.elementary.io/projects/calendar/calendar/"
+"ak/>\n"
 "Language: ak\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,552 +16,72 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
 
-#: ../src/SourceDialog/SourceSelector.vala:69
-msgid "Add New Calendar…"
-msgstr "Calender Foforɔ"
-
-#: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
-msgid "Remove"
-msgstr "Yi"
-
-#: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
-msgid "Edit…"
-msgstr "Sesa…"
-
-#: ../src/SourceDialog/SourceItem.vala:127
-msgid "Undo"
-msgstr "Sesa kɔ akyiri"
-
-#: ../src/SourceDialog/SourceItem.vala:142
-msgid "Calendar \"%s\" removed."
-msgstr "Wayi Calender \"%s\"  afiri mu."
-
-#: ../src/SourceDialog/SourceDialog.vala:58
-#: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
-msgid "Cancel"
-msgstr "Gyae"
-
-#: ../src/SourceDialog/SourceDialog.vala:60
-msgid "Create"
-msgstr "Yɛ"
-
-#: ../src/SourceDialog/SourceDialog.vala:69
-msgid "Name:"
-msgstr "Ɛdin:"
-
-#: ../src/SourceDialog/SourceDialog.vala:72
-msgid "Calendar Name"
-msgstr "Calendar No Din"
-
-#: ../src/SourceDialog/SourceDialog.vala:95
-msgid "Type:"
-msgstr "Kalɛnda Ko:"
-
-#: ../src/SourceDialog/SourceDialog.vala:118
-msgid "Color:"
-msgstr "Kɔla:"
-
-#: ../src/SourceDialog/SourceDialog.vala:123
-msgid "Mark as default calendar"
-msgstr "Fa wei di dwuma"
-
-#: ../src/SourceDialog/SourceDialog.vala:153
-msgid "Create Calendar"
-msgstr "Yɛ Calender Foforɔ"
-
-#: ../src/SourceDialog/SourceDialog.vala:162
-#: ../src/Widgets/ContractorButtonWithMenu.vala:82
-msgid "Save"
-msgstr "Kora"
-
-#: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
-msgid "Hide Week Numbers"
-msgstr "Hintaw Nnawotwe Nɔma Ahoroɔ No"
-
-#: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
-msgid "Show Week Numbers"
-msgstr "Da Nnawɔtwe Nɔma Ahoroɔ No Adi"
-
-#: ../src/Grid/VAutoHider.vala:100
-msgid "%u more…"
-msgstr "%u hwɛ pii…"
-
-#: ../src/Widgets/ContractorButtonWithMenu.vala:67
-#: ../src/Widgets/ContractorButtonWithMenu.vala:76
-msgid "Export Calendar..."
-msgstr "Export Calendar..."
-
-#: ../src/Widgets/ContractorButtonWithMenu.vala:79
-msgid "calendar.ics"
-msgstr "calendar.ics"
-
-#: ../src/EventEdition/GuestsPanel.vala:53
-msgid "Participants:"
-msgstr "Wɔn a wɔka ho:"
-
-#: ../src/EventEdition/GuestsPanel.vala:58
-msgid "No Participants"
-msgstr "Obiara Nka Hhyehyɛe Yi Ho"
-
-#: ../src/EventEdition/GuestsPanel.vala:93
-msgid "Invite"
-msgstr "To nsa frɛ"
-
-#: ../src/EventEdition/GuestsPanel.vala:241
-msgid "Accepted"
-msgstr "Woagye Ato Mu"
-
-#: ../src/EventEdition/GuestsPanel.vala:244
-msgid "Declined"
-msgstr "Woate so"
-
-#: ../src/EventEdition/ReminderPanel.vala:33
-msgid "Reminders:"
-msgstr "Nkaebɔ Nhoroɔ:"
-
-#: ../src/EventEdition/ReminderPanel.vala:37
-msgid "No Reminders"
-msgstr "Nkaebɔ Biara Nni Hɔ"
-
-#: ../src/EventEdition/ReminderPanel.vala:71
-msgid "Add Reminder"
-msgstr "Nkaebɔ Foforɔ"
-
-#: ../src/EventEdition/ReminderPanel.vala:182
-msgid "0 minutes"
-msgstr "Sima 0"
-
-#: ../src/EventEdition/ReminderPanel.vala:183
-msgid "1 minutes"
-msgstr "Sima 1"
-
-#: ../src/EventEdition/ReminderPanel.vala:184
-msgid "5 minutes"
-msgstr "Sima 5"
-
-#: ../src/EventEdition/ReminderPanel.vala:185
-msgid "10 minutes"
-msgstr "Sima 10"
-
-#: ../src/EventEdition/ReminderPanel.vala:186
-msgid "15 minutes"
-msgstr "Sima 15"
-
-#: ../src/EventEdition/ReminderPanel.vala:187
-msgid "20 minutes"
-msgstr "Sima 20"
-
-#: ../src/EventEdition/ReminderPanel.vala:188
-msgid "25 minutes"
-msgstr "Sima 25"
-
-#: ../src/EventEdition/ReminderPanel.vala:189
-msgid "30 minutes"
-msgstr "Sima 30"
-
-#: ../src/EventEdition/ReminderPanel.vala:190
-msgid "45 minutes"
-msgstr "Sima 45"
-
-#: ../src/EventEdition/ReminderPanel.vala:191
-msgid "1 hour"
-msgstr "Donhwere 1"
-
-#: ../src/EventEdition/ReminderPanel.vala:192
-msgid "2 hours"
-msgstr "Nnɔnhwere 2"
-
-#: ../src/EventEdition/ReminderPanel.vala:193
-msgid "3 hours"
-msgstr "Nnɔnhwere 3"
-
-#: ../src/EventEdition/ReminderPanel.vala:194
-msgid "12 hours"
-msgstr "Nnonhwere 12"
-
-#: ../src/EventEdition/ReminderPanel.vala:195
-msgid "24 hours"
-msgstr "Nnonhwere 24"
-
-#: ../src/EventEdition/ReminderPanel.vala:196
-msgid "2 days"
-msgstr "Nna 2"
-
-#: ../src/EventEdition/ReminderPanel.vala:197
-msgid "1 week"
-msgstr "Nnawɔtwe 1"
-
-#: ../src/EventEdition/ReminderPanel.vala:206
-msgid "Notification"
-msgstr "Kɔkɔbɔ"
-
-#: ../src/EventEdition/ReminderPanel.vala:207
-msgid "Email"
-msgstr "Email"
-
-#: ../src/EventEdition/RepeatPanel.vala:53
-msgid "Repeat:"
-msgstr "San Yɛ Bio:"
-
-#: ../src/EventEdition/RepeatPanel.vala:58
-msgid "Daily"
-msgstr "Dabiara"
-
-#: ../src/EventEdition/RepeatPanel.vala:59
-msgid "Weekly"
-msgstr "Nawɔtwe Nawɔtwe"
-
-#: ../src/EventEdition/RepeatPanel.vala:60
-msgid "Monthly"
-msgstr "Bosome Bosome"
-
-#: ../src/EventEdition/RepeatPanel.vala:61
-msgid "Yearly"
-msgstr "Afe Afe"
-
-#: ../src/EventEdition/RepeatPanel.vala:104
-msgid "Every:"
-msgstr "Mere Biara:"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Day"
-msgid_plural "Days"
-msgstr[0] "Da"
-msgstr[1] "Nna"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-#: ../src/EventEdition/RepeatPanel.vala:125
-msgid "Week"
-msgid_plural "Weeks"
-msgstr[0] "Nnawɔtwe"
-msgstr[1] "Nawɔtwe"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Month"
-msgid_plural "Months"
-msgstr[0] "Bosome"
-msgstr[1] "Abosome"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Year"
-msgid_plural "Years"
-msgstr[0] "Afe"
-msgstr[1] "Mfie"
-
-#: ../src/EventEdition/RepeatPanel.vala:135
-msgid "Ends:"
-msgstr "Ɛwie:"
-
-#: ../src/EventEdition/RepeatPanel.vala:137
-#: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:106
-msgid "Repeat"
-msgid_plural "Repeats"
-msgstr[0] "Nea woasan ayɛ"
-msgstr[1] "Nea woasan ayɛ"
-
-#: ../src/EventEdition/RepeatPanel.vala:141
-msgid "Never"
-msgstr "Daabi Dá"
-
-#: ../src/EventEdition/RepeatPanel.vala:142
-msgid "Until"
-msgstr "Ɛnkɔsi"
-
-#: ../src/EventEdition/RepeatPanel.vala:143
-msgid "After"
-msgstr "Akyiri"
-
-#: ../src/EventEdition/RepeatPanel.vala:189
-msgid "The same day every month"
-msgstr "Saa da yi ara bosome biara."
-
-#: ../src/EventEdition/RepeatPanel.vala:200
-msgid "Exceptions:"
-msgstr "Exceptions:"
-
-#: ../src/EventEdition/RepeatPanel.vala:203
-msgid "No Exceptions"
-msgstr "Nanso Biara Nni Hɔ (No Exceptions)"
-
-#: ../src/EventEdition/RepeatPanel.vala:224
-msgid "Add Exception"
-msgstr "Fa Exception ka ho"
-
-#: ../src/EventEdition/RepeatPanel.vala:358
-msgid "Every last Sunday"
-msgstr "Kwasiada a ɛtwa toɔ biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:361
-msgid "Every last Monday"
-msgstr "Dwowda a ɛtwa toɔ biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:364
-msgid "Every last Tuesday"
-msgstr "Benada a ɛtwa toɔ biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:367
-msgid "Every last Wednesday"
-msgstr "Wukuada a etwa toɔ biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:370
-msgid "Every last Thursday"
-msgstr "Yawoada a ɛtwa toɔ biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:373
-msgid "Every last Friday"
-msgstr "Fiada a ɛtwa toɔ biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:376
-msgid "Every last Saturday"
-msgstr "Memenda a ɛtwa toɔ biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:383
-msgid "Every first Sunday"
-msgstr "Kwasiada a edi kan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:386
-msgid "Every first Monday"
-msgstr "Dwowda a edi kan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:389
-msgid "Every first Tuesday"
-msgstr "Benada a edi kan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:392
-msgid "Every first Wednesday"
-msgstr "Wukuda a edi kan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:395
-msgid "Every first Thursday"
-msgstr "Yawoada a edi kan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:398
-msgid "Every first Friday"
-msgstr "Fida a edi kan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:401
-msgid "Every first Saturday"
-msgstr "Memenda a edi kan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:408
-msgid "Every second Sunday"
-msgstr "Kwasiada a ɛtɔ so mmienu biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:411
-msgid "Every second Monday"
-msgstr "Dwowda a ɛtɔ so mmienu biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:414
-msgid "Every second Tuesday"
-msgstr "Benada a ɛtɔ so mmienu biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:417
-msgid "Every second Wednesday"
-msgstr "Wukuda a ɛtɔ so mmienu biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:420
-msgid "Every second Thursday"
-msgstr "Yawoada a ɛtɔ so mmienu biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:423
-msgid "Every second Friday"
-msgstr "Fida a ɛtɔ so mmienu biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:426
-msgid "Every second Saturday"
-msgstr "Memenda a ɛtɔ so mmienu biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:433
-msgid "Every third Sunday"
-msgstr "Kwasiada a ɛtɔ so mmiɛnsa biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:436
-msgid "Every third Monday"
-msgstr "Dwoada a ɛtɔ so mmiɛnsa biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:439
-msgid "Every third Tuesday"
-msgstr "Benada a ɛtɔ so mmiɛnsa biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:442
-msgid "Every third Wednesday"
-msgstr "Wukuada a ɛtɔ so mmiɛnsa biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:445
-msgid "Every third Thursday"
-msgstr "Yawoada a ɛtɔ so mmiɛnsa biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:448
-msgid "Every third Friday"
-msgstr "Fiada a ɛtɔ so mmiensa biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:451
-msgid "Every third Saturday"
-msgstr "Memenda a ɛtɔ so mmiensa biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:458
-msgid "Every fourth Sunday"
-msgstr "Kwasiada a ɛtɔ so nnan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:461
-msgid "Every fourth Monday"
-msgstr "Dwoada a ɛtɔ so nnan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:464
-msgid "Every fourth Tuesday"
-msgstr "Benada a ɛtɔ so nnan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:467
-msgid "Every fourth Wednesday"
-msgstr "Wukuada a ɛtɔ so nnan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:470
-msgid "Every fourth Thursday"
-msgstr "Yawoada a ɛtɔ so nnan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:473
-msgid "Every fourth Friday"
-msgstr "Fiada a ɛtɔ so nnan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:476
-msgid "Every fourth Saturday"
-msgstr "Memenda a ɛtɔ so nnan biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:483
-msgid "Every fifth Sunday"
-msgstr "Kwasiada a ɛtɔ so nnum biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:486
-msgid "Every fifth Monday"
-msgstr "Dwoada a ɛtɔ so nnum biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:489
-msgid "Every fifth Tuesday"
-msgstr "Benada a ɛtɔ so nnum biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:492
-msgid "Every fifth Wednesday"
-msgstr "Wukuada a ɛtɔ so nnum biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:495
-msgid "Every fifth Thursday"
-msgstr "Yawoada a ɛtɔ so nnum biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:498
-msgid "Every fifth Friday"
-msgstr "Fiada a ɛtɔ so nnum biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:501
-msgid "Every fifth Saturday"
-msgstr "Memenda a ɛtɔ so nnum biara"
-
-#: ../src/EventEdition/RepeatPanel.vala:511
-msgid "Mon"
-msgstr "Dwo"
-
-#: ../src/EventEdition/RepeatPanel.vala:512
-msgid "Tue"
-msgstr "Ben"
-
-#: ../src/EventEdition/RepeatPanel.vala:513
-msgid "Wed"
-msgstr "Wuk"
-
-#: ../src/EventEdition/RepeatPanel.vala:514
-msgid "Thu"
-msgstr "Yaw"
-
-#: ../src/EventEdition/RepeatPanel.vala:515
-msgid "Fri"
-msgstr "Fia"
-
-#: ../src/EventEdition/RepeatPanel.vala:516
-msgid "Sat"
-msgstr "Mem"
-
-#: ../src/EventEdition/RepeatPanel.vala:517
-msgid "Sun"
-msgstr "Kwa"
-
-#: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
-msgid "Add Event"
-msgstr "Dwuma Foforɔ"
-
-#: ../src/EventEdition/EventDialog.vala:67
-msgid "Edit Event"
-msgstr "Yɛ mu nsakrae"
-
-#: ../src/EventEdition/EventDialog.vala:94
-msgid "General Informations"
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+msgid "On this computer"
+msgstr "Wɔ kɔmputa yi so"
+
+#: core/Backends/PlacementWidget.vala:41
+msgid "User:"
+msgstr "Ne Wura:"
+
+#: core/Backends/PlacementWidget.vala:50
+msgid "user.name"
+msgstr "edin (user.name)"
+
+#: core/Backends/PlacementWidget.vala:63
+msgid "Email:"
+msgstr "Email:"
+
+#: core/Backends/PlacementWidget.vala:72
+msgid "john@doe.com"
+msgstr "john@doe.com"
+
+#: core/Backends/PlacementWidget.vala:84
+msgid "Keep a copy locally"
+msgstr "Kora bi wɔ wo kumputa no so"
+
+#: core/Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: core/Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %b %d"
+
+#: daemon/Daemon.vala:21 src/Application.vala:51
+#, fuzzy
+msgid "Print debug information"
 msgstr "Ɛho nsɛm"
 
-#: ../src/EventEdition/EventDialog.vala:97
-msgid "Location"
-msgstr "Beae"
+#: daemon/Daemon.vala:23 src/Application.vala:50
+msgid "Print version info and exit"
+msgstr ""
 
-#: ../src/EventEdition/EventDialog.vala:100
-msgid "Guests"
-msgstr "Ahɔhoɔ"
+#: plugins/Google/GoogleBackend.vala:38
+msgid "Google"
+msgstr "Google"
 
-#: ../src/EventEdition/EventDialog.vala:103
-msgid "Reminders"
-msgstr "Nkaebɔ Ahoroɔ"
+#: plugins/Google/GoogleBackend.vala:61
+msgid "user.name or user.name@gmail.com"
+msgstr "edin anaa edin@gmail.com"
 
-#: ../src/EventEdition/EventDialog.vala:169
-msgid "Delete Event"
-msgstr "Yi dwuma yi fi so"
+#: plugins/CalDAV/CalDAVBackend.vala:39
+msgid "CalDAV"
+msgstr "CalDAV"
 
-#: ../src/EventEdition/EventDialog.vala:181
-msgid "Create Event"
-msgstr "Yɛ Dwuma Foforɔ"
+#: plugins/CalDAV/CalDAVBackend.vala:58
+msgid "URL:"
+msgstr "URL:"
 
-#: ../src/EventEdition/EventDialog.vala:184
-msgid "Save Changes"
-msgstr "Kora nsakrae no so"
+#: plugins/CalDAV/CalDAVBackend.vala:95
+msgid "Use a secure connection"
+msgstr "Fa Connection a ɛyɛ secure di dwuma"
 
-#: ../src/EventEdition/LocationPanel.vala:49
-msgid "Location:"
-msgstr "Beae:"
+#: plugins/CalDAV/CalDAVBackend.vala:123
+msgid "Server handles meeting invitations"
+msgstr "Server no na ɛhwɛ to nsa frɛ afoforɔ"
 
-#: ../src/EventEdition/LocationPanel.vala:51
-msgid "John Smith OR Example St."
-msgstr "Sunyani Abesim anaa Kejetia St."
-
-#: ../src/EventEdition/InfoPanel.vala:78
-msgid "From:"
-msgstr "Fi:"
-
-#: ../src/EventEdition/InfoPanel.vala:84
-msgid "All day:"
-msgstr "Da mũ no nyinaa:"
-
-#: ../src/EventEdition/InfoPanel.vala:89
-msgid "To:"
-msgstr "De kɔsi:"
-
-#: ../src/EventEdition/InfoPanel.vala:107
-msgid "Title:"
-msgstr "Ɛdin a eda so:"
-
-#: ../src/EventEdition/InfoPanel.vala:109
-msgid "Name of Event"
-msgstr "Dwuma no din"
-
-#: ../src/EventEdition/InfoPanel.vala:119
-msgid "Press enter to parse event"
-msgstr "Mia Enter na ɛno ara nhyehyɛ"
-
-#: ../src/EventEdition/InfoPanel.vala:127
-msgid "Calendar:"
-msgstr "Kalɛnda:"
-
-#: ../src/EventEdition/InfoPanel.vala:134
-msgid "Comments:"
-msgstr "Asɛm a wowɔ ka fa ho:"
-
-#: ../src/AgendaView.vala:63
+#: src/AgendaView.vala:69
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -569,131 +89,684 @@ msgstr ""
 "Sɛ wopaw ɛda bi a woahyehyɛ dwuma bi a ɛreba ama no a, ɛho dwuma no bɛda adi "
 "wɔ ha."
 
-#: ../src/AgendaView.vala:154
+#: src/AgendaView.vala:142
+msgid "Upcoming Events"
+msgstr ""
+
+#: src/AgendaView.vala:234
 msgid "During the day"
 msgstr "Wɔ adekyeɛ mu"
 
-#: ../src/AgendaView.vala:159
+#: src/AgendaView.vala:239
 msgid "All day"
 msgstr "Da mũ no nyinaa"
 
-#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:376
+#: src/AgendaView.vala:304 src/AgendaView.vala:318
+msgid "Tomorrow"
+msgstr ""
+
+#: src/AgendaView.vala:306 src/AgendaView.vala:320
+#, fuzzy
+msgid "This Week"
+msgstr "Nnawɔtwe"
+
+#: src/AgendaView.vala:308 src/AgendaView.vala:322
+#, fuzzy
+msgid "Next Week"
+msgstr "Nnawɔtwe"
+
+#: src/AgendaView.vala:310 src/AgendaView.vala:324
+#, fuzzy
+msgid "This Month"
+msgstr "Bosome"
+
+#: src/AgendaView.vala:312 src/AgendaView.vala:326
+#, fuzzy
+msgid "Next Month"
+msgstr "Bosome"
+
+#: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
+#: src/SourceDialog/SourceItem.vala:94
+msgid "Edit…"
+msgstr "Sesa…"
+
+#: src/AgendaView.vala:529 src/Grid/EventButton.vala:76
+#: src/SourceDialog/SourceItem.vala:80
+msgid "Remove"
+msgstr "Yi"
+
+#: src/AgendaView.vala:572 src/AgendaView.vala:582
+#, fuzzy, c-format
+msgid "%s - %s"
+msgstr "%s, %s - %s, %s"
+
+#: src/AgendaView.vala:574
+#, c-format
 msgid "%s, %s - %s, %s"
 msgstr "%s, %s - %s, %s"
 
-#: ../src/ImportDialog.vala:42
+#: src/AgendaView.vala:586
+#, c-format
+msgid "%s"
+msgstr ""
+
+#: src/AgendaView.vala:588
+#, fuzzy, c-format
+msgid "%s, %s - %s"
+msgstr "%s, %s - %s, %s"
+
+#: src/Application.vala:48
+#, fuzzy
+msgid "Create an event"
+msgstr "Yɛ dwuma foforɔ ka ho"
+
+#: src/Application.vala:49
+msgid "Focus the given day"
+msgstr ""
+
+#: src/Application.vala:49
+msgid "date"
+msgstr ""
+
+#: src/Application.vala:224
+msgid "Calendar"
+msgstr "Kalɛnda"
+
+#: src/ImportDialog.vala:42
+#, c-format
 msgid "Import events from \"%s\" into the following calendar:"
 msgstr "Impɔɔte dwuma fi \"%s\" kɔ kalɛnda ahoroɔ yi mu:"
 
-#: ../src/ImportDialog.vala:44
+#: src/ImportDialog.vala:44
+#, c-format
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
 msgstr[0] "Impɔɔte dwuma fi file %d kɔ kalɛnda ahoroɔ yi mu:"
 msgstr[1] "Impɔɔte dwuma fi files %d kɔ kalɛnda ahoroɔ yi mu:"
 
-#: ../src/ImportDialog.vala:53
+#: src/ImportDialog.vala:53
 msgid "Import"
 msgstr "Impɔɔte"
 
-#: ../src/MayaToolbar.vala:45
+#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
+#: src/SourceDialog/SourceDialog.vala:58
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "Gyae"
+
+#: src/EventEdition/EventDialog.vala:58
+msgid "Add Event"
+msgstr "Dwuma Foforɔ"
+
+#: src/EventEdition/EventDialog.vala:61
+msgid "Edit Event"
+msgstr "Yɛ mu nsakrae"
+
+#: src/EventEdition/EventDialog.vala:107
+msgid "General Informations"
+msgstr "Ɛho nsɛm"
+
+#: src/EventEdition/EventDialog.vala:108
+msgid "Location"
+msgstr "Beae"
+
+#: src/EventEdition/EventDialog.vala:109
+msgid "Guests"
+msgstr "Ahɔhoɔ"
+
+#: src/EventEdition/EventDialog.vala:110
+msgid "Reminders"
+msgstr "Nkaebɔ Ahoroɔ"
+
+#: src/EventEdition/EventDialog.vala:111 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/RepeatPanel.vala:170
+msgid "Repeat"
+msgid_plural "Repeats"
+msgstr[0] "Nea woasan ayɛ"
+msgstr[1] "Nea woasan ayɛ"
+
+#: src/EventEdition/EventDialog.vala:134
+msgid "Delete Event"
+msgstr "Yi dwuma yi fi so"
+
+#: src/EventEdition/EventDialog.vala:146
+msgid "Create Event"
+msgstr "Yɛ Dwuma Foforɔ"
+
+#: src/EventEdition/EventDialog.vala:149
+msgid "Save Changes"
+msgstr "Kora nsakrae no so"
+
+#: src/EventEdition/GuestsPanel.vala:53
+msgid "Participants:"
+msgstr "Wɔn a wɔka ho:"
+
+#: src/EventEdition/GuestsPanel.vala:58
+msgid "No Participants"
+msgstr "Obiara Nka Hhyehyɛe Yi Ho"
+
+#: src/EventEdition/GuestsPanel.vala:94
+msgid "Invite"
+msgstr "To nsa frɛ"
+
+#: src/EventEdition/GuestsPanel.vala:242
+msgid "Accepted"
+msgstr "Woagye Ato Mu"
+
+#: src/EventEdition/GuestsPanel.vala:245
+msgid "Declined"
+msgstr "Woate so"
+
+#: src/EventEdition/InfoPanel.vala:78
+msgid "From:"
+msgstr "Fi:"
+
+#: src/EventEdition/InfoPanel.vala:84
+msgid "All day:"
+msgstr "Da mũ no nyinaa:"
+
+#: src/EventEdition/InfoPanel.vala:89
+msgid "To:"
+msgstr "De kɔsi:"
+
+#: src/EventEdition/InfoPanel.vala:107
+msgid "Title:"
+msgstr "Ɛdin a eda so:"
+
+#: src/EventEdition/InfoPanel.vala:109
+msgid "Name of Event"
+msgstr "Dwuma no din"
+
+#: src/EventEdition/InfoPanel.vala:119
+msgid "Press enter to parse event"
+msgstr "Mia Enter na ɛno ara nhyehyɛ"
+
+#: src/EventEdition/InfoPanel.vala:134
+msgid "Calendar:"
+msgstr "Kalɛnda:"
+
+#: src/EventEdition/InfoPanel.vala:141
+msgid "Comments:"
+msgstr "Asɛm a wowɔ ka fa ho:"
+
+#: src/EventEdition/LocationPanel.vala:50
+msgid "Location:"
+msgstr "Beae:"
+
+#: src/EventEdition/LocationPanel.vala:52
+msgid "John Smith OR Example St."
+msgstr "Sunyani Abesim anaa Kejetia St."
+
+#: src/EventEdition/ReminderPanel.vala:33
+msgid "Reminders:"
+msgstr "Nkaebɔ Nhoroɔ:"
+
+#: src/EventEdition/ReminderPanel.vala:37
+msgid "No Reminders"
+msgstr "Nkaebɔ Biara Nni Hɔ"
+
+#: src/EventEdition/ReminderPanel.vala:71
+msgid "Add Reminder"
+msgstr "Nkaebɔ Foforɔ"
+
+#: src/EventEdition/ReminderPanel.vala:172
+msgid "0 minutes"
+msgstr "Sima 0"
+
+#: src/EventEdition/ReminderPanel.vala:173
+#, fuzzy
+msgid "1 minute"
+msgstr "Sima 1"
+
+#: src/EventEdition/ReminderPanel.vala:174
+msgid "5 minutes"
+msgstr "Sima 5"
+
+#: src/EventEdition/ReminderPanel.vala:175
+msgid "10 minutes"
+msgstr "Sima 10"
+
+#: src/EventEdition/ReminderPanel.vala:176
+msgid "15 minutes"
+msgstr "Sima 15"
+
+#: src/EventEdition/ReminderPanel.vala:177
+msgid "20 minutes"
+msgstr "Sima 20"
+
+#: src/EventEdition/ReminderPanel.vala:178
+msgid "25 minutes"
+msgstr "Sima 25"
+
+#: src/EventEdition/ReminderPanel.vala:179
+msgid "30 minutes"
+msgstr "Sima 30"
+
+#: src/EventEdition/ReminderPanel.vala:180
+msgid "45 minutes"
+msgstr "Sima 45"
+
+#: src/EventEdition/ReminderPanel.vala:181
+msgid "1 hour"
+msgstr "Donhwere 1"
+
+#: src/EventEdition/ReminderPanel.vala:182
+msgid "2 hours"
+msgstr "Nnɔnhwere 2"
+
+#: src/EventEdition/ReminderPanel.vala:183
+msgid "3 hours"
+msgstr "Nnɔnhwere 3"
+
+#: src/EventEdition/ReminderPanel.vala:184
+msgid "12 hours"
+msgstr "Nnonhwere 12"
+
+#: src/EventEdition/ReminderPanel.vala:185
+msgid "24 hours"
+msgstr "Nnonhwere 24"
+
+#: src/EventEdition/ReminderPanel.vala:186
+msgid "2 days"
+msgstr "Nna 2"
+
+#: src/EventEdition/ReminderPanel.vala:187
+msgid "1 week"
+msgstr "Nnawɔtwe 1"
+
+#: src/EventEdition/ReminderPanel.vala:195
+msgid "Notification"
+msgstr "Kɔkɔbɔ"
+
+#: src/EventEdition/RepeatPanel.vala:53
+msgid "Repeat:"
+msgstr "San Yɛ Bio:"
+
+#: src/EventEdition/RepeatPanel.vala:58
+msgid "Daily"
+msgstr "Dabiara"
+
+#: src/EventEdition/RepeatPanel.vala:59
+msgid "Weekly"
+msgstr "Nawɔtwe Nawɔtwe"
+
+#: src/EventEdition/RepeatPanel.vala:60
+msgid "Monthly"
+msgstr "Bosome Bosome"
+
+#: src/EventEdition/RepeatPanel.vala:61
+msgid "Yearly"
+msgstr "Afe Afe"
+
+#: src/EventEdition/RepeatPanel.vala:104
+msgid "Every:"
+msgstr "Mere Biara:"
+
+#: src/EventEdition/RepeatPanel.vala:111
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "Da"
+msgstr[1] "Nna"
+
+#: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
+msgid "Week"
+msgid_plural "Weeks"
+msgstr[0] "Nnawɔtwe"
+msgstr[1] "Nawɔtwe"
+
+#: src/EventEdition/RepeatPanel.vala:117
+msgid "Month"
+msgid_plural "Months"
+msgstr[0] "Bosome"
+msgstr[1] "Abosome"
+
+#: src/EventEdition/RepeatPanel.vala:120
+msgid "Year"
+msgid_plural "Years"
+msgstr[0] "Afe"
+msgstr[1] "Mfie"
+
+#: src/EventEdition/RepeatPanel.vala:135
+msgid "Ends:"
+msgstr "Ɛwie:"
+
+#: src/EventEdition/RepeatPanel.vala:141
+msgid "Never"
+msgstr "Daabi Dá"
+
+#: src/EventEdition/RepeatPanel.vala:142
+msgid "Until"
+msgstr "Ɛnkɔsi"
+
+#: src/EventEdition/RepeatPanel.vala:143
+msgid "After"
+msgstr "Akyiri"
+
+#: src/EventEdition/RepeatPanel.vala:189
+msgid "The same day every month"
+msgstr "Saa da yi ara bosome biara."
+
+#: src/EventEdition/RepeatPanel.vala:200
+msgid "Exceptions:"
+msgstr "Exceptions:"
+
+#: src/EventEdition/RepeatPanel.vala:203
+msgid "No Exceptions"
+msgstr "Nanso Biara Nni Hɔ (No Exceptions)"
+
+#: src/EventEdition/RepeatPanel.vala:224
+msgid "Add Exception"
+msgstr "Fa Exception ka ho"
+
+#: src/EventEdition/RepeatPanel.vala:358
+msgid "Every last Sunday"
+msgstr "Kwasiada a ɛtwa toɔ biara"
+
+#: src/EventEdition/RepeatPanel.vala:361
+msgid "Every last Monday"
+msgstr "Dwowda a ɛtwa toɔ biara"
+
+#: src/EventEdition/RepeatPanel.vala:364
+msgid "Every last Tuesday"
+msgstr "Benada a ɛtwa toɔ biara"
+
+#: src/EventEdition/RepeatPanel.vala:367
+msgid "Every last Wednesday"
+msgstr "Wukuada a etwa toɔ biara"
+
+#: src/EventEdition/RepeatPanel.vala:370
+msgid "Every last Thursday"
+msgstr "Yawoada a ɛtwa toɔ biara"
+
+#: src/EventEdition/RepeatPanel.vala:373
+msgid "Every last Friday"
+msgstr "Fiada a ɛtwa toɔ biara"
+
+#: src/EventEdition/RepeatPanel.vala:376
+msgid "Every last Saturday"
+msgstr "Memenda a ɛtwa toɔ biara"
+
+#: src/EventEdition/RepeatPanel.vala:383
+msgid "Every first Sunday"
+msgstr "Kwasiada a edi kan biara"
+
+#: src/EventEdition/RepeatPanel.vala:386
+msgid "Every first Monday"
+msgstr "Dwowda a edi kan biara"
+
+#: src/EventEdition/RepeatPanel.vala:389
+msgid "Every first Tuesday"
+msgstr "Benada a edi kan biara"
+
+#: src/EventEdition/RepeatPanel.vala:392
+msgid "Every first Wednesday"
+msgstr "Wukuda a edi kan biara"
+
+#: src/EventEdition/RepeatPanel.vala:395
+msgid "Every first Thursday"
+msgstr "Yawoada a edi kan biara"
+
+#: src/EventEdition/RepeatPanel.vala:398
+msgid "Every first Friday"
+msgstr "Fida a edi kan biara"
+
+#: src/EventEdition/RepeatPanel.vala:401
+msgid "Every first Saturday"
+msgstr "Memenda a edi kan biara"
+
+#: src/EventEdition/RepeatPanel.vala:408
+msgid "Every second Sunday"
+msgstr "Kwasiada a ɛtɔ so mmienu biara"
+
+#: src/EventEdition/RepeatPanel.vala:411
+msgid "Every second Monday"
+msgstr "Dwowda a ɛtɔ so mmienu biara"
+
+#: src/EventEdition/RepeatPanel.vala:414
+msgid "Every second Tuesday"
+msgstr "Benada a ɛtɔ so mmienu biara"
+
+#: src/EventEdition/RepeatPanel.vala:417
+msgid "Every second Wednesday"
+msgstr "Wukuda a ɛtɔ so mmienu biara"
+
+#: src/EventEdition/RepeatPanel.vala:420
+msgid "Every second Thursday"
+msgstr "Yawoada a ɛtɔ so mmienu biara"
+
+#: src/EventEdition/RepeatPanel.vala:423
+msgid "Every second Friday"
+msgstr "Fida a ɛtɔ so mmienu biara"
+
+#: src/EventEdition/RepeatPanel.vala:426
+msgid "Every second Saturday"
+msgstr "Memenda a ɛtɔ so mmienu biara"
+
+#: src/EventEdition/RepeatPanel.vala:433
+msgid "Every third Sunday"
+msgstr "Kwasiada a ɛtɔ so mmiɛnsa biara"
+
+#: src/EventEdition/RepeatPanel.vala:436
+msgid "Every third Monday"
+msgstr "Dwoada a ɛtɔ so mmiɛnsa biara"
+
+#: src/EventEdition/RepeatPanel.vala:439
+msgid "Every third Tuesday"
+msgstr "Benada a ɛtɔ so mmiɛnsa biara"
+
+#: src/EventEdition/RepeatPanel.vala:442
+msgid "Every third Wednesday"
+msgstr "Wukuada a ɛtɔ so mmiɛnsa biara"
+
+#: src/EventEdition/RepeatPanel.vala:445
+msgid "Every third Thursday"
+msgstr "Yawoada a ɛtɔ so mmiɛnsa biara"
+
+#: src/EventEdition/RepeatPanel.vala:448
+msgid "Every third Friday"
+msgstr "Fiada a ɛtɔ so mmiensa biara"
+
+#: src/EventEdition/RepeatPanel.vala:451
+msgid "Every third Saturday"
+msgstr "Memenda a ɛtɔ so mmiensa biara"
+
+#: src/EventEdition/RepeatPanel.vala:458
+msgid "Every fourth Sunday"
+msgstr "Kwasiada a ɛtɔ so nnan biara"
+
+#: src/EventEdition/RepeatPanel.vala:461
+msgid "Every fourth Monday"
+msgstr "Dwoada a ɛtɔ so nnan biara"
+
+#: src/EventEdition/RepeatPanel.vala:464
+msgid "Every fourth Tuesday"
+msgstr "Benada a ɛtɔ so nnan biara"
+
+#: src/EventEdition/RepeatPanel.vala:467
+msgid "Every fourth Wednesday"
+msgstr "Wukuada a ɛtɔ so nnan biara"
+
+#: src/EventEdition/RepeatPanel.vala:470
+msgid "Every fourth Thursday"
+msgstr "Yawoada a ɛtɔ so nnan biara"
+
+#: src/EventEdition/RepeatPanel.vala:473
+msgid "Every fourth Friday"
+msgstr "Fiada a ɛtɔ so nnan biara"
+
+#: src/EventEdition/RepeatPanel.vala:476
+msgid "Every fourth Saturday"
+msgstr "Memenda a ɛtɔ so nnan biara"
+
+#: src/EventEdition/RepeatPanel.vala:483
+msgid "Every fifth Sunday"
+msgstr "Kwasiada a ɛtɔ so nnum biara"
+
+#: src/EventEdition/RepeatPanel.vala:486
+msgid "Every fifth Monday"
+msgstr "Dwoada a ɛtɔ so nnum biara"
+
+#: src/EventEdition/RepeatPanel.vala:489
+msgid "Every fifth Tuesday"
+msgstr "Benada a ɛtɔ so nnum biara"
+
+#: src/EventEdition/RepeatPanel.vala:492
+msgid "Every fifth Wednesday"
+msgstr "Wukuada a ɛtɔ so nnum biara"
+
+#: src/EventEdition/RepeatPanel.vala:495
+msgid "Every fifth Thursday"
+msgstr "Yawoada a ɛtɔ so nnum biara"
+
+#: src/EventEdition/RepeatPanel.vala:498
+msgid "Every fifth Friday"
+msgstr "Fiada a ɛtɔ so nnum biara"
+
+#: src/EventEdition/RepeatPanel.vala:501
+msgid "Every fifth Saturday"
+msgstr "Memenda a ɛtɔ so nnum biara"
+
+#: src/EventEdition/RepeatPanel.vala:511
+msgid "Mon"
+msgstr "Dwo"
+
+#: src/EventEdition/RepeatPanel.vala:512
+msgid "Tue"
+msgstr "Ben"
+
+#: src/EventEdition/RepeatPanel.vala:513
+msgid "Wed"
+msgstr "Wuk"
+
+#: src/EventEdition/RepeatPanel.vala:514
+msgid "Thu"
+msgstr "Yaw"
+
+#: src/EventEdition/RepeatPanel.vala:515
+msgid "Fri"
+msgstr "Fia"
+
+#: src/EventEdition/RepeatPanel.vala:516
+msgid "Sat"
+msgstr "Mem"
+
+#: src/EventEdition/RepeatPanel.vala:517
+msgid "Sun"
+msgstr "Kwa"
+
+#: src/Grid/EventButton.vala:70
+#, fuzzy
+msgid "Remove Event"
+msgstr "Yi dwuma yi fi so"
+
+#: src/Grid/EventButton.vala:71
+msgid "Remove Occurrence"
+msgstr ""
+
+#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
+msgid "Hide Week Numbers"
+msgstr "Hintaw Nnawotwe Nɔma Ahoroɔ No"
+
+#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:71
+msgid "Show Week Numbers"
+msgstr "Da Nnawɔtwe Nɔma Ahoroɔ No Adi"
+
+#: src/Grid/VAutoHider.vala:109
+#, c-format
+msgid "%u more…"
+msgstr "%u hwɛ pii…"
+
+#: src/SourceDialog/SourceDialog.vala:60
+msgid "Create"
+msgstr "Yɛ"
+
+#. Name
+#: src/SourceDialog/SourceDialog.vala:69
+msgid "Name:"
+msgstr "Ɛdin:"
+
+#: src/SourceDialog/SourceDialog.vala:72
+msgid "Calendar Name"
+msgstr "Calendar No Din"
+
+#: src/SourceDialog/SourceDialog.vala:95
+msgid "Type:"
+msgstr "Kalɛnda Ko:"
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Color:"
+msgstr "Kɔla:"
+
+#: src/SourceDialog/SourceDialog.vala:123
+msgid "Mark as default calendar"
+msgstr "Fa wei di dwuma"
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Create Calendar"
+msgstr "Yɛ Calender Foforɔ"
+
+#: src/SourceDialog/SourceDialog.vala:162
+#: src/Widgets/ContractorButtonWithMenu.vala:88
+msgid "Save"
+msgstr "Kora"
+
+#: src/SourceDialog/SourceItem.vala:125
+msgid "Undo"
+msgstr "Sesa kɔ akyiri"
+
+#: src/SourceDialog/SourceItem.vala:140
+#, c-format
+msgid "Calendar \"%s\" removed."
+msgstr "Wayi Calender \"%s\"  afiri mu."
+
+#: src/SourceDialog/SourceSelector.vala:52
+msgid "Add New Calendar…"
+msgstr "Calender Foforɔ"
+
+#: src/Widgets/ContractorButtonWithMenu.vala:72
+#: src/Widgets/ContractorButtonWithMenu.vala:82
+msgid "Export Calendar..."
+msgstr "Export Calendar..."
+
+#: src/Widgets/ContractorButtonWithMenu.vala:85
+msgid "calendar.ics"
+msgstr "calendar.ics"
+
+#: src/Widgets/HeaderBar.vala:38
 msgid "Create a new event"
 msgstr "Yɛ dwuma foforɔ ka ho"
 
-#: ../src/MayaToolbar.vala:48
+#: src/Widgets/HeaderBar.vala:41
 msgid "Go to today's date"
 msgstr "Kɔ ennɛ da"
 
-#: ../src/MayaToolbar.vala:52
+#: src/Widgets/HeaderBar.vala:48
 msgid "Manage Calendars"
 msgstr "Hyɛhyɛ Kalɛnda Ahoroɔ No"
 
-#: ../src/MayaToolbar.vala:64
-msgid "Search Events"
-msgstr "Hwehwɛ dwuma bi"
-
-#: ../src/MayaToolbar.vala:67
+#: src/Widgets/HeaderBar.vala:55
 msgid "Export or Share the default Calendar"
 msgstr "Ɛspɔɔte anaa wone afoforɔ nkyɛ kalɛnda a wode di dwuma no"
 
-#: ../src/Application.vala:34 ../src/Translations.vala:6
-msgid "Calendar"
-msgstr "Kalɛnda"
+#~ msgid "Email"
+#~ msgstr "Email"
 
-#: ../src/Application.vala:102
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  aberba https://launchpad.net/~aberba"
+#~ msgid "Search Events"
+#~ msgstr "Hwehwɛ dwuma bi"
 
-#: ../src/Translations.vala:5
-msgid "View and schedule events"
-msgstr "Hwɛ anaa hyehyɛ wo nnwuma ahoroɔ"
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  aberba https://launchpad.net/~aberba"
 
-#: ../src/Translations.vala:7
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Maya;Nea Ɔhyɛhyɛe;Ɛda;Dwuma;"
+#~ msgid "View and schedule events"
+#~ msgstr "Hwɛ anaa hyehyɛ wo nnwuma ahoroɔ"
 
-#: ../src/Translations.vala:9
-msgid "About Maya"
-msgstr "Maya Ho Nsɛm"
+#~ msgid "Maya;Planner;Dates;Days;Events;"
+#~ msgstr "Maya;Nea Ɔhyɛhyɛe;Ɛda;Dwuma;"
 
-#: ../src/Translations.vala:10
-msgid "About Calendar"
-msgstr "Kalɛnda Ho Nsɛm"
+#~ msgid "About Maya"
+#~ msgstr "Maya Ho Nsɛm"
 
-#: ../plugins/Google/GoogleBackend.vala:38
-msgid "Google"
-msgstr "Google"
-
-#: ../plugins/Google/GoogleBackend.vala:61
-msgid "user.name or user.name@gmail.com"
-msgstr "edin anaa edin@gmail.com"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:39
-msgid "CalDAV"
-msgstr "CalDAV"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:58
-msgid "URL:"
-msgstr "URL:"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:91
-msgid "Use a secure connection"
-msgstr "Fa Connection a ɛyɛ secure di dwuma"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:119
-msgid "Server handles meeting invitations"
-msgstr "Server no na ɛhwɛ to nsa frɛ afoforɔ"
-
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
-msgid "On this computer"
-msgstr "Wɔ kɔmputa yi so"
-
-#: ../core/Backends/PlacementWidget.vala:41
-msgid "User:"
-msgstr "Ne Wura:"
-
-#: ../core/Backends/PlacementWidget.vala:50
-msgid "user.name"
-msgstr "edin (user.name)"
-
-#: ../core/Backends/PlacementWidget.vala:63
-msgid "Email:"
-msgstr "Email:"
-
-#: ../core/Backends/PlacementWidget.vala:72
-msgid "john@doe.com"
-msgstr "john@doe.com"
-
-#: ../core/Backends/PlacementWidget.vala:84
-msgid "Keep a copy locally"
-msgstr "Kora bi wɔ wo kumputa no so"
-
-#: ../core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: ../core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
+#~ msgid "About Calendar"
+#~ msgstr "Kalɛnda Ho Nsɛm"
