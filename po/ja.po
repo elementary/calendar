@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2018-07-12 09:58+0000\n"
+"PO-Revision-Date: 2018-07-12 10:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -119,9 +119,8 @@ msgid "This Month"
 msgstr "今月"
 
 #: src/AgendaView.vala:312 src/AgendaView.vala:326
-#, fuzzy
 msgid "Next Month"
-msgstr "ヶ月"
+msgstr "来月"
 
 #: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
@@ -134,9 +133,9 @@ msgid "Remove"
 msgstr "削除"
 
 #: src/AgendaView.vala:572 src/AgendaView.vala:582
-#, fuzzy, c-format
+#, c-format
 msgid "%s - %s"
-msgstr "%s %s - %s %s"
+msgstr "%s - %s"
 
 #: src/AgendaView.vala:574
 #, c-format
@@ -146,25 +145,24 @@ msgstr "%s %s - %s %s"
 #: src/AgendaView.vala:586
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/AgendaView.vala:588
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s - %s"
-msgstr "%s %s - %s %s"
+msgstr "%s、%s - %s"
 
 #: src/Application.vala:48
-#, fuzzy
 msgid "Create an event"
-msgstr "新しい予定を作成"
+msgstr "予定を作成します"
 
 #: src/Application.vala:49
 msgid "Focus the given day"
-msgstr ""
+msgstr "指定の日に移動します"
 
 #: src/Application.vala:49
 msgid "date"
-msgstr ""
+msgstr "日付"
 
 #: src/Application.vala:224
 msgid "Calendar"
@@ -310,9 +308,8 @@ msgid "0 minutes"
 msgstr "0分"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute"
-msgstr "1分"
+msgstr "1 分"
 
 #: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes"
@@ -647,7 +644,6 @@ msgid "Sun"
 msgstr "日"
 
 #: src/Grid/EventButton.vala:70
-#, fuzzy
 msgid "Remove Event"
 msgstr "予定を削除"
 
