@@ -60,11 +60,11 @@ install_data(
 )
 
 pkgconfig.generate(
-    filebase: meson.project_name(),
+    core_lib,
+    filebase: 'elementary-calendar',
     version: meson.project_version(),
     name: 'elementary Calendar',
     description: 'Extension endpoint to the Calendar application',
-    libraries: core_lib,
     subdirs: 'elementary-calendar',
     requires: core_deps
 )
