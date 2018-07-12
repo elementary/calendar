@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2017-11-14 06:36+0000\n"
+"PO-Revision-Date: 2018-07-12 10:10+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/calendar/"
 "calendar/ko/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
@@ -53,13 +53,12 @@ msgid "%A, %b %d"
 msgstr "%b %d, %A"
 
 #: daemon/Daemon.vala:21 src/Application.vala:51
-#, fuzzy
 msgid "Print debug information"
-msgstr "일반 정보"
+msgstr "debug 정보 출력"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
-msgstr ""
+msgstr "버전 정보 출력 및 나가기"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -94,7 +93,7 @@ msgstr ""
 
 #: src/AgendaView.vala:142
 msgid "Upcoming Events"
-msgstr ""
+msgstr "다가올 이벤트"
 
 #: src/AgendaView.vala:234
 msgid "During the day"
@@ -106,27 +105,23 @@ msgstr "하루 종일"
 
 #: src/AgendaView.vala:304 src/AgendaView.vala:318
 msgid "Tomorrow"
-msgstr ""
+msgstr "내일"
 
 #: src/AgendaView.vala:306 src/AgendaView.vala:320
-#, fuzzy
 msgid "This Week"
-msgstr "주"
+msgstr "이번 주"
 
 #: src/AgendaView.vala:308 src/AgendaView.vala:322
-#, fuzzy
 msgid "Next Week"
-msgstr "주"
+msgstr "다음 주"
 
 #: src/AgendaView.vala:310 src/AgendaView.vala:324
-#, fuzzy
 msgid "This Month"
-msgstr "달"
+msgstr "이번 달"
 
 #: src/AgendaView.vala:312 src/AgendaView.vala:326
-#, fuzzy
 msgid "Next Month"
-msgstr "달"
+msgstr "다음 달"
 
 #: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
@@ -139,9 +134,9 @@ msgid "Remove"
 msgstr "제거"
 
 #: src/AgendaView.vala:572 src/AgendaView.vala:582
-#, fuzzy, c-format
+#, c-format
 msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s - %s"
 
 #: src/AgendaView.vala:574
 #, c-format
@@ -151,25 +146,24 @@ msgstr "%s, %s - %s, %s"
 #: src/AgendaView.vala:586
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/AgendaView.vala:588
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s - %s"
 
 #: src/Application.vala:48
-#, fuzzy
 msgid "Create an event"
-msgstr "새 이벤트 추가하기"
+msgstr "이벤트 만들기"
 
 #: src/Application.vala:49
 msgid "Focus the given day"
-msgstr ""
+msgstr "선정한 날에 초점 맞추기"
 
 #: src/Application.vala:49
 msgid "date"
-msgstr ""
+msgstr "날짜"
 
 #: src/Application.vala:224
 msgid "Calendar"
@@ -315,7 +309,6 @@ msgid "0 minutes"
 msgstr "0 분"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute"
 msgstr "1 분"
 
@@ -652,13 +645,12 @@ msgid "Sun"
 msgstr "일"
 
 #: src/Grid/EventButton.vala:70
-#, fuzzy
 msgid "Remove Event"
 msgstr "이벤트 삭제"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "추가 생성 삭제"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
