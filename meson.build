@@ -49,3 +49,5 @@ subdir('daemon')
 subdir('src')
 subdir('plugins')
 subdir('po')
+
+meson.add_install_script('meson/post_install.py')
