@@ -55,7 +55,7 @@ core_dep = declare_dependency(
 )
 
 install_data(
-    meson.project_name() + '.deps',
+    'elementary-calendar.deps',
     install_dir: join_paths(get_option('datadir'), 'vala', 'vapi')
 )
 
