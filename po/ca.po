@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2018-07-03 00:05+0000\n"
+"PO-Revision-Date: 2018-07-13 17:25+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/calendar/"
 "calendar/ca/>\n"
@@ -53,13 +53,12 @@ msgid "%A, %b %d"
 msgstr "%A, %-d de %b"
 
 #: daemon/Daemon.vala:21 src/Application.vala:51
-#, fuzzy
 msgid "Print debug information"
-msgstr "Informació general"
+msgstr "Imprimeix la informació de depuració"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Imprimeix la informació de la versió i surt"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -95,7 +94,7 @@ msgstr ""
 
 #: src/AgendaView.vala:142
 msgid "Upcoming Events"
-msgstr ""
+msgstr "Propers esdeveniments"
 
 #: src/AgendaView.vala:234
 msgid "During the day"
@@ -107,27 +106,23 @@ msgstr "Tot el dia"
 
 #: src/AgendaView.vala:304 src/AgendaView.vala:318
 msgid "Tomorrow"
-msgstr ""
+msgstr "Demà"
 
 #: src/AgendaView.vala:306 src/AgendaView.vala:320
-#, fuzzy
 msgid "This Week"
-msgstr "Setmana"
+msgstr "Aquesta setmana"
 
 #: src/AgendaView.vala:308 src/AgendaView.vala:322
-#, fuzzy
 msgid "Next Week"
-msgstr "Setmana"
+msgstr "La setmana que ve"
 
 #: src/AgendaView.vala:310 src/AgendaView.vala:324
-#, fuzzy
 msgid "This Month"
-msgstr "Mes"
+msgstr "Aquest mes"
 
 #: src/AgendaView.vala:312 src/AgendaView.vala:326
-#, fuzzy
 msgid "Next Month"
-msgstr "Mes"
+msgstr "El mes que ve"
 
 #: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
@@ -140,9 +135,9 @@ msgid "Remove"
 msgstr "Suprimeix"
 
 #: src/AgendaView.vala:572 src/AgendaView.vala:582
-#, fuzzy, c-format
+#, c-format
 msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s - %s"
 
 #: src/AgendaView.vala:574
 #, c-format
@@ -152,25 +147,24 @@ msgstr "%s, %s - %s, %s"
 #: src/AgendaView.vala:586
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/AgendaView.vala:588
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s - %s"
 
 #: src/Application.vala:48
-#, fuzzy
 msgid "Create an event"
-msgstr "Crea un esdeveniment nou"
+msgstr "Crea un esdeveniment"
 
 #: src/Application.vala:49
 msgid "Focus the given day"
-msgstr ""
+msgstr "Focalitza el dia"
 
 #: src/Application.vala:49
 msgid "date"
-msgstr ""
+msgstr "data"
 
 #: src/Application.vala:224
 msgid "Calendar"
@@ -318,7 +312,6 @@ msgid "0 minutes"
 msgstr "0 minuts"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute"
 msgstr "1 minut"
 
@@ -659,13 +652,12 @@ msgid "Sun"
 msgstr "Dg"
 
 #: src/Grid/EventButton.vala:70
-#, fuzzy
 msgid "Remove Event"
 msgstr "Suprimeix l'esdeveniment"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Suprimeix l'ocurrència"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
