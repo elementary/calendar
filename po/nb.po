@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2018-03-16 00:01+0000\n"
+"PO-Revision-Date: 2018-07-18 00:05+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "calendar/calendar/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
@@ -59,7 +59,7 @@ msgstr "Generell informasjon"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Skriv versjonsinfo og avslutt"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -95,7 +95,7 @@ msgstr ""
 
 #: src/AgendaView.vala:142
 msgid "Upcoming Events"
-msgstr ""
+msgstr "Kommende hendelser"
 
 #: src/AgendaView.vala:234
 msgid "During the day"
@@ -107,7 +107,7 @@ msgstr "Hele dagen"
 
 #: src/AgendaView.vala:304 src/AgendaView.vala:318
 msgid "Tomorrow"
-msgstr ""
+msgstr "I morgen"
 
 #: src/AgendaView.vala:306 src/AgendaView.vala:320
 #, fuzzy
@@ -152,7 +152,7 @@ msgstr "%s, %s - %s, %s"
 #: src/AgendaView.vala:586
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/AgendaView.vala:588
 #, fuzzy, c-format
@@ -166,11 +166,11 @@ msgstr "Lag en ny hendelse"
 
 #: src/Application.vala:49
 msgid "Focus the given day"
-msgstr ""
+msgstr "Fokuser gitt dag"
 
 #: src/Application.vala:49
 msgid "date"
-msgstr ""
+msgstr "dato"
 
 #: src/Application.vala:224
 msgid "Calendar"
@@ -664,8 +664,9 @@ msgid "Remove Event"
 msgstr "Slett hendelse"
 
 #: src/Grid/EventButton.vala:71
+#, fuzzy
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Fjern hendelse"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
