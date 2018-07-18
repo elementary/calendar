@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2018-05-12 00:10+0000\n"
-"Last-Translator: Pedro Ferreira <pmaf.ferreira@gmail.com>\n"
+"PO-Revision-Date: 2018-07-19 00:07+0000\n"
+"Last-Translator: Christophe Silva <Christophesilva80@gmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/calendar/"
 "calendar/pt/>\n"
 "Language: pt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
@@ -38,7 +38,7 @@ msgstr "Email:"
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr "john@doe.com"
+msgstr "utilizador@provedor.com"
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
@@ -46,20 +46,19 @@ msgstr "Manter uma cópia local"
 
 #: core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr "%e de %B de %Y"
+msgstr "%B %e, %Y"
 
 #: core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
-msgstr "%A, %d %b"
+msgstr "%A, %b %d"
 
 #: daemon/Daemon.vala:21 src/Application.vala:51
-#, fuzzy
 msgid "Print debug information"
-msgstr "Informações gerais"
+msgstr "Imprimir informações de depuração"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Imprimir informações da versão e sair"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -95,7 +94,7 @@ msgstr ""
 
 #: src/AgendaView.vala:142
 msgid "Upcoming Events"
-msgstr ""
+msgstr "próximos eventos"
 
 #: src/AgendaView.vala:234
 msgid "During the day"
@@ -107,27 +106,23 @@ msgstr "Dia completo"
 
 #: src/AgendaView.vala:304 src/AgendaView.vala:318
 msgid "Tomorrow"
-msgstr ""
+msgstr "Amanhã"
 
 #: src/AgendaView.vala:306 src/AgendaView.vala:320
-#, fuzzy
 msgid "This Week"
-msgstr "Semana"
+msgstr "Esta Semana"
 
 #: src/AgendaView.vala:308 src/AgendaView.vala:322
-#, fuzzy
 msgid "Next Week"
-msgstr "Semana"
+msgstr "Próxima Semana"
 
 #: src/AgendaView.vala:310 src/AgendaView.vala:324
-#, fuzzy
 msgid "This Month"
-msgstr "Mês"
+msgstr "Este Mês"
 
 #: src/AgendaView.vala:312 src/AgendaView.vala:326
-#, fuzzy
 msgid "Next Month"
-msgstr "Mês"
+msgstr "Próximo Mês"
 
 #: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
@@ -140,9 +135,9 @@ msgid "Remove"
 msgstr "Remover"
 
 #: src/AgendaView.vala:572 src/AgendaView.vala:582
-#, fuzzy, c-format
+#, c-format
 msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s - %s"
 
 #: src/AgendaView.vala:574
 #, c-format
@@ -152,12 +147,12 @@ msgstr "%s, %s - %s, %s"
 #: src/AgendaView.vala:586
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/AgendaView.vala:588
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s - %s"
 
 #: src/Application.vala:48
 #, fuzzy
@@ -166,11 +161,11 @@ msgstr "Criar um novo evento"
 
 #: src/Application.vala:49
 msgid "Focus the given day"
-msgstr ""
+msgstr "Concentre-se no dia indicado"
 
 #: src/Application.vala:49
 msgid "date"
-msgstr ""
+msgstr "data"
 
 #: src/Application.vala:224
 msgid "Calendar"
@@ -318,7 +313,6 @@ msgid "0 minutes"
 msgstr "0 minutos"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute"
 msgstr "1 minuto"
 
@@ -659,13 +653,12 @@ msgid "Sun"
 msgstr "dom"
 
 #: src/Grid/EventButton.vala:70
-#, fuzzy
 msgid "Remove Event"
 msgstr "Apagar Evento"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Remover Ocorrência"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
