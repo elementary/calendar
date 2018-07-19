@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2018-07-18 00:05+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2018-07-20 00:06+0000\n"
+"Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "calendar/calendar/nb/>\n"
 "Language: nb\n"
@@ -46,20 +46,19 @@ msgstr "Behold kopi lokalt"
 
 #: core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr "%e %B, %Y"
+msgstr "%B %e %Y"
 
 #: core/Settings/LanguagesFormat.vala:25
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
 #: daemon/Daemon.vala:21 src/Application.vala:51
-#, fuzzy
 msgid "Print debug information"
-msgstr "Generell informasjon"
+msgstr "Skriv ut feilsøkingsinformasjon"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
-msgstr "Skriv versjonsinfo og avslutt"
+msgstr "Skriv ut versjonsinfo og avslutt"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -83,14 +82,14 @@ msgstr "Bruk sikker tilkobling"
 
 #: plugins/CalDAV/CalDAVBackend.vala:123
 msgid "Server handles meeting invitations"
-msgstr "Tjener hånterer møteinvitasjoner"
+msgstr "Tjeneren håndterer møteinvitasjoner"
 
 #: src/AgendaView.vala:69
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Dine kommende hendelser vil bli vist her, når du velger en dato med "
+"Dine kommende hendelser vil bli vist her når du velger en dato som har "
 "hendelser."
 
 #: src/AgendaView.vala:142
@@ -110,24 +109,20 @@ msgid "Tomorrow"
 msgstr "I morgen"
 
 #: src/AgendaView.vala:306 src/AgendaView.vala:320
-#, fuzzy
 msgid "This Week"
-msgstr "Uke"
+msgstr "Denne uken"
 
 #: src/AgendaView.vala:308 src/AgendaView.vala:322
-#, fuzzy
 msgid "Next Week"
-msgstr "Uke"
+msgstr "Neste uke"
 
 #: src/AgendaView.vala:310 src/AgendaView.vala:324
-#, fuzzy
 msgid "This Month"
-msgstr "Måned"
+msgstr "Denne måneden"
 
 #: src/AgendaView.vala:312 src/AgendaView.vala:326
-#, fuzzy
 msgid "Next Month"
-msgstr "Måned"
+msgstr "Neste måned"
 
 #: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
@@ -137,12 +132,12 @@ msgstr "Rediger…"
 #: src/AgendaView.vala:529 src/Grid/EventButton.vala:76
 #: src/SourceDialog/SourceItem.vala:80
 msgid "Remove"
-msgstr "Slett"
+msgstr "Fjern"
 
 #: src/AgendaView.vala:572 src/AgendaView.vala:582
-#, fuzzy, c-format
+#, c-format
 msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s - %s"
 
 #: src/AgendaView.vala:574
 #, c-format
@@ -155,14 +150,13 @@ msgid "%s"
 msgstr "%s"
 
 #: src/AgendaView.vala:588
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s - %s"
 
 #: src/Application.vala:48
-#, fuzzy
 msgid "Create an event"
-msgstr "Lag en ny hendelse"
+msgstr "Opprett ny hendelse"
 
 #: src/Application.vala:49
 msgid "Focus the given day"
@@ -185,7 +179,7 @@ msgstr "Importer hendelser fra \"%s\" til denne kalenderen:"
 #, c-format
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "Importer hendelser fra %d fil til denne kalenderen:"
+msgstr[0] "Importer hendelse fra %d fil til denne kalenderen:"
 msgstr[1] "Importer hendelser fra %d filer til denne kalenderen:"
 
 #: src/ImportDialog.vala:53
@@ -200,7 +194,7 @@ msgstr "Avbryt"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
-msgstr "Legg til hendelse"
+msgstr "Opprett hendelse"
 
 #: src/EventEdition/EventDialog.vala:61
 msgid "Edit Event"
@@ -299,7 +293,7 @@ msgstr "Sted:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "Ola Nordmann ELLER Eksempelgate"
+msgstr "Ola Nordmann ELLER Eksempelgt."
 
 #: src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
@@ -315,10 +309,9 @@ msgstr "Legg til påminnelse"
 
 #: src/EventEdition/ReminderPanel.vala:172
 msgid "0 minutes"
-msgstr "Null minutter"
+msgstr "0 minutter"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute"
 msgstr "1 minutt"
 
@@ -464,87 +457,87 @@ msgstr "Legg til unntak"
 
 #: src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
-msgstr "Hver siste søndag"
+msgstr "Den siste søndagen"
 
 #: src/EventEdition/RepeatPanel.vala:361
 msgid "Every last Monday"
-msgstr "Hver siste mandag"
+msgstr "Den siste mandagen"
 
 #: src/EventEdition/RepeatPanel.vala:364
 msgid "Every last Tuesday"
-msgstr "Hver siste tirsdag"
+msgstr "Den siste tirsdagen"
 
 #: src/EventEdition/RepeatPanel.vala:367
 msgid "Every last Wednesday"
-msgstr "Hver siste onsdag"
+msgstr "Den siste onsdagen"
 
 #: src/EventEdition/RepeatPanel.vala:370
 msgid "Every last Thursday"
-msgstr "Hver siste torsdag"
+msgstr "Den siste torsdagen"
 
 #: src/EventEdition/RepeatPanel.vala:373
 msgid "Every last Friday"
-msgstr "Hver siste fredag"
+msgstr "Den siste fredagen"
 
 #: src/EventEdition/RepeatPanel.vala:376
 msgid "Every last Saturday"
-msgstr "Hver siste lørdag"
+msgstr "Den siste lørdagen"
 
 #: src/EventEdition/RepeatPanel.vala:383
 msgid "Every first Sunday"
-msgstr "Hver første søndag"
+msgstr "Den første søndagen"
 
 #: src/EventEdition/RepeatPanel.vala:386
 msgid "Every first Monday"
-msgstr "Hver første mandag"
+msgstr "Den første mandagen"
 
 #: src/EventEdition/RepeatPanel.vala:389
 msgid "Every first Tuesday"
-msgstr "Hver første tirsdag"
+msgstr "Den første tirsdagen"
 
 #: src/EventEdition/RepeatPanel.vala:392
 msgid "Every first Wednesday"
-msgstr "Hver første onsdag"
+msgstr "Den første onsdagen"
 
 #: src/EventEdition/RepeatPanel.vala:395
 msgid "Every first Thursday"
-msgstr "Hver første torsdag"
+msgstr "Den første torsdagen"
 
 #: src/EventEdition/RepeatPanel.vala:398
 msgid "Every first Friday"
-msgstr "Hver første fredag"
+msgstr "Den første fredagen"
 
 #: src/EventEdition/RepeatPanel.vala:401
 msgid "Every first Saturday"
-msgstr "Hver første lørdag"
+msgstr "Den første lørdagen"
 
 #: src/EventEdition/RepeatPanel.vala:408
 msgid "Every second Sunday"
-msgstr "Hver andre søndag"
+msgstr "Annenhver søndag"
 
 #: src/EventEdition/RepeatPanel.vala:411
 msgid "Every second Monday"
-msgstr "Hver andre mandag"
+msgstr "Annenhver mandag"
 
 #: src/EventEdition/RepeatPanel.vala:414
 msgid "Every second Tuesday"
-msgstr "Hver andre tirsdag"
+msgstr "Annenhver tirsdag"
 
 #: src/EventEdition/RepeatPanel.vala:417
 msgid "Every second Wednesday"
-msgstr "Hver andre onsdag"
+msgstr "Annenhver onsdag"
 
 #: src/EventEdition/RepeatPanel.vala:420
 msgid "Every second Thursday"
-msgstr "Hver andre torsdag"
+msgstr "Annenhver torsdag"
 
 #: src/EventEdition/RepeatPanel.vala:423
 msgid "Every second Friday"
-msgstr "Hver andre fredag"
+msgstr "Annenhver fredag"
 
 #: src/EventEdition/RepeatPanel.vala:426
 msgid "Every second Saturday"
-msgstr "Hver andre lørdag"
+msgstr "Annenhver lørdag"
 
 #: src/EventEdition/RepeatPanel.vala:433
 msgid "Every third Sunday"
@@ -584,7 +577,7 @@ msgstr "Hver fjerde mandag"
 
 #: src/EventEdition/RepeatPanel.vala:464
 msgid "Every fourth Tuesday"
-msgstr "Hver fjerde torsdag"
+msgstr "Hver fjerde tirsdag"
 
 #: src/EventEdition/RepeatPanel.vala:467
 msgid "Every fourth Wednesday"
@@ -659,7 +652,6 @@ msgid "Sun"
 msgstr "Søn"
 
 #: src/Grid/EventButton.vala:70
-#, fuzzy
 msgid "Remove Event"
 msgstr "Slett hendelse"
 
@@ -679,7 +671,7 @@ msgstr "Vis ukenummer"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "%u flere…"
+msgstr "%u mer…"
 
 #: src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
@@ -722,7 +714,7 @@ msgstr "Angre"
 #: src/SourceDialog/SourceItem.vala:140
 #, c-format
 msgid "Calendar \"%s\" removed."
-msgstr "Kalender \"%s\" fjernet."
+msgstr "Kalender \"%s\" er fjernet."
 
 #: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
@@ -739,7 +731,7 @@ msgstr "kalender.ics"
 
 #: src/Widgets/HeaderBar.vala:38
 msgid "Create a new event"
-msgstr "Lag en ny hendelse"
+msgstr "Opprett ny hendelse"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Go to today's date"
