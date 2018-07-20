@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2018-07-20 00:06+0000\n"
+"PO-Revision-Date: 2018-07-20 19:34+0000\n"
 "Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "calendar/calendar/nb/>\n"
@@ -656,7 +656,6 @@ msgid "Remove Event"
 msgstr "Slett hendelse"
 
 #: src/Grid/EventButton.vala:71
-#, fuzzy
 msgid "Remove Occurrence"
 msgstr "Fjern hendelse"
 
