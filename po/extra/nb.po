@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2018-07-20 19:36+0000\n"
+"PO-Revision-Date: 2018-07-21 00:06+0000\n"
 "Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "calendar/extra/nb/>\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:78
 msgid "elementary LLC."
-msgstr "elementary LLC. (selskap med begrenset ansvar)"
+msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "office-calendar"
