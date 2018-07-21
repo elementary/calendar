@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2018-07-21 10:48+0000\n"
+"PO-Revision-Date: 2018-07-22 00:03+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/calendar/"
 "calendar/cs/>\n"
@@ -38,7 +38,7 @@ msgstr "Email:"
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr "frantanovak@domena.cz"
+msgstr "novak@example.cz"
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
@@ -88,7 +88,7 @@ msgstr "Server spravuje pozvánky na schůzky"
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr "Až vyberete datum s plánovanými událostmi, zde se ukáží."
+msgstr "Zde se zobrazí nadcházející události, až vyberete datum s událostmi."
 
 #: src/AgendaView.vala:142
 msgid "Upcoming Events"
@@ -249,7 +249,7 @@ msgstr "Pozvat"
 
 #: src/EventEdition/GuestsPanel.vala:242
 msgid "Accepted"
-msgstr "Akceptováno"
+msgstr "Přijato"
 
 #: src/EventEdition/GuestsPanel.vala:245
 msgid "Declined"
@@ -293,7 +293,7 @@ msgstr "Místo:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "Karel Novák NEBO Severní ul."
+msgstr "Jan Novák NEBO Severní ul."
 
 #: src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
