@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-12 10:43+0100\n"
-"PO-Revision-Date: 2018-07-20 14:30+0000\n"
+"PO-Revision-Date: 2018-07-21 11:11+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/calendar/"
 "calendar/fi/>\n"
@@ -53,9 +53,8 @@ msgid "%A, %b %d"
 msgstr "%A, %d. %b"
 
 #: daemon/Daemon.vala:21 src/Application.vala:51
-#, fuzzy
 msgid "Print debug information"
-msgstr "Yleiset tiedot"
+msgstr "Tulosta vianjäljitystietoja"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
@@ -165,7 +164,7 @@ msgstr "Kohdista määrättyyn päivään"
 
 #: src/Application.vala:49
 msgid "date"
-msgstr ""
+msgstr "päivä"
 
 #: src/Application.vala:224
 msgid "Calendar"
