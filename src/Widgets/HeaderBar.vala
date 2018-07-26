@@ -80,7 +80,7 @@ namespace Maya.View {
         }
 
         public void set_switcher_date (DateTime date) {
-            month_switcher.text = date.format ("%B");
+            month_switcher.text = date.format ("%OB");
             year_switcher.text = date.format ("%Y");
         }
     }
