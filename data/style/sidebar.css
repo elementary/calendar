@@ -27,6 +27,6 @@
 	border-radius: 0;
 }
 
-.sidebarevent:focused {
+.sidebarevent:focus {
 	background-color: shade(@bg_color, 0.9);
 }
