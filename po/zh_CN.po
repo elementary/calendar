@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2017-07-04 08:31+0000\n"
+"PO-Revision-Date: 2018-08-13 00:02+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
-"calendar/calendar/zh_CN/>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
+"calendar/calendar/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
@@ -59,7 +59,7 @@ msgstr "一般信息"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
-msgstr ""
+msgstr "打印版本信息并退出"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -93,7 +93,7 @@ msgstr "当您选择一个含有任务的日期时，您最近的活动将会显
 
 #: src/AgendaView.vala:142
 msgid "Upcoming Events"
-msgstr ""
+msgstr "近期活动"
 
 #: src/AgendaView.vala:234
 msgid "During the day"
@@ -105,7 +105,7 @@ msgstr "全天"
 
 #: src/AgendaView.vala:304 src/AgendaView.vala:318
 msgid "Tomorrow"
-msgstr ""
+msgstr "明天"
 
 #: src/AgendaView.vala:306 src/AgendaView.vala:320
 #, fuzzy
@@ -150,7 +150,7 @@ msgstr "%s, %s - %s, %s"
 #: src/AgendaView.vala:586
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/AgendaView.vala:588
 #, fuzzy, c-format
@@ -163,12 +163,13 @@ msgid "Create an event"
 msgstr "创建新活动"
 
 #: src/Application.vala:49
+#, fuzzy
 msgid "Focus the given day"
-msgstr ""
+msgstr "转到特定日期"
 
 #: src/Application.vala:49
 msgid "date"
-msgstr ""
+msgstr "日期"
 
 #: src/Application.vala:224
 msgid "Calendar"
@@ -656,8 +657,9 @@ msgid "Remove Event"
 msgstr "删除事件"
 
 #: src/Grid/EventButton.vala:71
+#, fuzzy
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "删除修改"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
