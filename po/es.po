@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-03-18 00:07+0000\n"
-"Last-Translator: Alain M. <alain23@protonmail.com>\n"
+"PO-Revision-Date: 2018-08-16 15:00+0000\n"
+"Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/calendar/"
 "calendar/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-01-07 06:12+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
@@ -59,7 +59,7 @@ msgstr "Información general"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Imprimir información de la versión y salir"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -95,7 +95,7 @@ msgstr ""
 
 #: src/AgendaView.vala:142
 msgid "Upcoming Events"
-msgstr ""
+msgstr "Próximos Eventos"
 
 #: src/AgendaView.vala:234
 msgid "During the day"
@@ -107,7 +107,7 @@ msgstr "Todo el día"
 
 #: src/AgendaView.vala:304 src/AgendaView.vala:318
 msgid "Tomorrow"
-msgstr ""
+msgstr "Mañana"
 
 #: src/AgendaView.vala:306 src/AgendaView.vala:320
 #, fuzzy
@@ -152,7 +152,7 @@ msgstr "%s, %s-%s, %s"
 #: src/AgendaView.vala:586
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/AgendaView.vala:588
 #, fuzzy, c-format
@@ -166,11 +166,11 @@ msgstr "Crear un evento nuevo"
 
 #: src/Application.vala:49
 msgid "Focus the given day"
-msgstr ""
+msgstr "Enfoca el día seleccionado"
 
 #: src/Application.vala:49
 msgid "date"
-msgstr ""
+msgstr "fecha"
 
 #: src/Application.vala:224
 msgid "Calendar"
@@ -665,7 +665,7 @@ msgstr "Eliminar evento"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Eliminar ocurrencia"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
