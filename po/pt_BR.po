@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
 "PO-Revision-Date: 2018-08-28 22:49+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"Last-Translator: Enzo Gaban <enzogaban@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "calendar/calendar/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -656,7 +656,7 @@ msgstr "Remover Evento"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Remover Ocorrência"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
