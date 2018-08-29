@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:27+0100\n"
-"PO-Revision-Date: 2018-08-29 03:47+0000\n"
+"PO-Revision-Date: 2018-08-29 03:48+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "calendar/extra/pt_BR/>\n"
@@ -44,9 +44,8 @@ msgid "elementary LLC."
 msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
-#, fuzzy
 msgid "office-calendar"
-msgstr "Calendário"
+msgstr "office-calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
