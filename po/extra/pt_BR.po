@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:27+0100\n"
 "PO-Revision-Date: 2018-08-29 03:47+0000\n"
-"Last-Translator: Diogo Araujo de Miranda <diogo.miranda7@gmail.com>\n"
+"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "calendar/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:78
 msgid "elementary LLC."
-msgstr "elementary LTDA."
+msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 #, fuzzy
