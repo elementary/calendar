@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-05-25 20:08+0000\n"
+"PO-Revision-Date: 2018-08-30 15:17+0000\n"
 "Last-Translator: İbrahim Ethem Göl <ethem578@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
@@ -53,13 +53,12 @@ msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
 #: daemon/Daemon.vala:21 src/Application.vala:51
-#, fuzzy
 msgid "Print debug information"
-msgstr "Genel Bilgiler"
+msgstr "Hata ayıklama bilgisini yazdır"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Sürüm bilgisini yazdır ve çık"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -95,7 +94,7 @@ msgstr ""
 
 #: src/AgendaView.vala:142
 msgid "Upcoming Events"
-msgstr ""
+msgstr "Yaklaşan Etkinlikler"
 
 #: src/AgendaView.vala:234
 msgid "During the day"
@@ -107,27 +106,23 @@ msgstr "Tüm gün"
 
 #: src/AgendaView.vala:304 src/AgendaView.vala:318
 msgid "Tomorrow"
-msgstr ""
+msgstr "Yarın"
 
 #: src/AgendaView.vala:306 src/AgendaView.vala:320
-#, fuzzy
 msgid "This Week"
-msgstr "Hafta"
+msgstr "Bu Hafta"
 
 #: src/AgendaView.vala:308 src/AgendaView.vala:322
-#, fuzzy
 msgid "Next Week"
-msgstr "Hafta"
+msgstr "Gelecek Hafta"
 
 #: src/AgendaView.vala:310 src/AgendaView.vala:324
-#, fuzzy
 msgid "This Month"
-msgstr "Ay"
+msgstr "Bu Ay"
 
 #: src/AgendaView.vala:312 src/AgendaView.vala:326
-#, fuzzy
 msgid "Next Month"
-msgstr "Ay"
+msgstr "Gelecek Ay"
 
 #: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
@@ -140,9 +135,9 @@ msgid "Remove"
 msgstr "Sil"
 
 #: src/AgendaView.vala:572 src/AgendaView.vala:582
-#, fuzzy, c-format
+#, c-format
 msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s - %s"
 
 #: src/AgendaView.vala:574
 #, c-format
@@ -152,25 +147,24 @@ msgstr "%s, %s - %s, %s"
 #: src/AgendaView.vala:586
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/AgendaView.vala:588
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s - %s"
 
 #: src/Application.vala:48
-#, fuzzy
 msgid "Create an event"
-msgstr "Yeni bir etkinlik oluştur"
+msgstr "Etkinlik oluştur"
 
 #: src/Application.vala:49
 msgid "Focus the given day"
-msgstr ""
+msgstr "Verilen güne odaklan"
 
 #: src/Application.vala:49
 msgid "date"
-msgstr ""
+msgstr "tarih"
 
 #: src/Application.vala:224
 msgid "Calendar"
@@ -299,7 +293,7 @@ msgstr "Konum:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "Hasan Hüseyin veya Örnek Sokak"
+msgstr "Mustafa Kemal Atatürk veya Örnek Sokak"
 
 #: src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
@@ -318,7 +312,6 @@ msgid "0 minutes"
 msgstr "0 dakika"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute"
 msgstr "1 dakika"
 
@@ -659,13 +652,12 @@ msgid "Sun"
 msgstr "Paz"
 
 #: src/Grid/EventButton.vala:70
-#, fuzzy
 msgid "Remove Event"
-msgstr "Etkinliği Sil"
+msgstr "Etkinliği Kaldır"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Oluşumu Kaldır"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
 msgid "Hide Week Numbers"
@@ -678,7 +670,7 @@ msgstr "Hafta Numaralarını Göster"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "%u daha..."
+msgstr "%u daha…"
 
 #: src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
