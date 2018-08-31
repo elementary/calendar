@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-08-30 00:06+0000\n"
+"PO-Revision-Date: 2018-09-01 00:08+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "calendar/calendar/pt_BR/>\n"
@@ -396,7 +396,7 @@ msgstr "Anualmente"
 
 #: src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr "Todo:"
+msgstr "Frequência:"
 
 #: src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
