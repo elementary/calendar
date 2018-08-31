@@ -69,7 +69,7 @@ namespace Maya.View.Widgets {
             } catch (GLib.Error error) {
                 critical (error.message);
             }
-            Gtk.MenuItem item = new Gtk.MenuItem.with_label(_("Export Calendar..."));
+            Gtk.MenuItem item = new Gtk.MenuItem.with_label(_("Export Calendar…"));
             item.activate.connect (savecal);
             menu.append (item);
             menu.show_all ();
@@ -79,7 +79,7 @@ namespace Maya.View.Widgets {
         private void savecal () {
             /* creates a .ics file */
             Util.save_temp_selected_calendars ();
-            filechooser = new Gtk.FileChooserDialog (_("Export Calendar..."), null, Gtk.FileChooserAction.SAVE);
+            filechooser = new Gtk.FileChooserDialog (_("Export Calendar…"), null, Gtk.FileChooserAction.SAVE);
             var filter = new Gtk.FileFilter ();
             filter.add_mime_type("text/calendar");
             filechooser.set_current_name(_("calendar.ics"));
