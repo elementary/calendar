@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-09-05 19:16+0000\n"
+"PO-Revision-Date: 2018-09-06 00:08+0000\n"
 "Last-Translator: strozzascotte <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/calendar/"
 "calendar/it/>\n"
@@ -293,7 +293,7 @@ msgstr "Posizione:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "“Mario Rossi” o “Viale Esempio”"
+msgstr "Mario Rossi o Viale Esempio"
 
 #: src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
