@@ -18,5 +18,5 @@ executable(
     'Daemon.vala',
     dependencies: daemon_deps,
     install: true,
-    install_dir: libexecdir+'-daemon'
+    install_dir: join_paths(get_option('prefix'), get_option('libexecdir'))
 )
