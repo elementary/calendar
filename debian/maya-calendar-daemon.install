@@ -1,2 +1,2 @@
-usr/bin/io.elementary.calendar-daemon
-usr/share/applications/io.elementary.calendar-daemon.desktop
+etc/xdg/autostart/io.elementary.calendar-daemon.desktop
+usr/lib/*/io.elementary.calendar-daemon
