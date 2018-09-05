@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-07-18 00:05+0000\n"
+"PO-Revision-Date: 2018-08-27 00:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -309,7 +309,7 @@ msgstr "0分"
 
 #: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute"
-msgstr "1 分"
+msgstr "1分"
 
 #: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes"
