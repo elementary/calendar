@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+# Remove old daemon autostart symlink
+if [ "$1" = install ] || [ "$1" = upgrade ] ; then
+	DAEMON_SYMLINK="/etc/xdg/autostart/io.elementary.calendar-daemon.desktop"
+	test -h "$DAEMON_SYMLINK" && rm -f "$DAEMON_SYMLINK"
+fi
+
+#DEBHELPER#
+
+exit 0
