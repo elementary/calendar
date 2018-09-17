@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-09-17 14:38+0000\n"
+"PO-Revision-Date: 2018-09-19 00:08+0000\n"
 "Last-Translator: Nuno Alexandre MS ribeiro <nuno.anarresti@gmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/calendar/"
 "calendar/pt/>\n"
@@ -30,7 +30,7 @@ msgstr "Utilizador:"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr "nome de utilizador:"
+msgstr "nome.de.utilizador"
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
@@ -265,7 +265,7 @@ msgstr "Todo dia:"
 
 #: src/EventEdition/InfoPanel.vala:89
 msgid "To:"
-msgstr "Até"
+msgstr "Para:"
 
 #: src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
@@ -293,7 +293,7 @@ msgstr "Localização:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "João Simões ou na Rua X"
+msgstr "João Simões OU Rua X"
 
 #: src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
@@ -670,7 +670,7 @@ msgstr "Mostrar os números das semanas"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "Mais %u..."
+msgstr "Mais %u…"
 
 #: src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
@@ -717,7 +717,7 @@ msgstr "O calendário \"%s\" foi removido."
 
 #: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
-msgstr "Adicionar novo calendário..."
+msgstr "Adicionar novo calendário…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
