@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-07-20 19:34+0000\n"
-"Last-Translator: Nils K <slx@nilsk.net>\n"
+"PO-Revision-Date: 2018-09-20 00:04+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "calendar/calendar/nb/>\n"
 "Language: nb\n"
@@ -721,8 +721,9 @@ msgstr "Legg til ny kalender…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
+#, fuzzy
 msgid "Export Calendar..."
-msgstr "Eksporter kalender..."
+msgstr "Eksporter kalender…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
