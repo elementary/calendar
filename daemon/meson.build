@@ -17,5 +17,6 @@ executable(
     meson.project_name()+'-daemon',
     'Daemon.vala',
     dependencies: daemon_deps,
-    install: true
+    install: true,
+    install_dir: join_paths(get_option('prefix'), get_option('libexecdir'))
 )
