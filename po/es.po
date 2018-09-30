@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-09-30 20:33+0000\n"
+"PO-Revision-Date: 2018-09-30 20:34+0000\n"
 "Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/calendar/"
 "calendar/es/>\n"
@@ -109,9 +109,8 @@ msgid "Tomorrow"
 msgstr "Mañana"
 
 #: src/AgendaView.vala:306 src/AgendaView.vala:320
-#, fuzzy
 msgid "This Week"
-msgstr "Semana"
+msgstr "Esta semana"
 
 #: src/AgendaView.vala:308 src/AgendaView.vala:322
 #, fuzzy
