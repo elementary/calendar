@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-09-30 20:35+0000\n"
-"Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
+"PO-Revision-Date: 2018-09-30 20:37+0000\n"
+"Last-Translator: Pablo Solís La Beira <pabsol1977@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/calendar/"
 "calendar/es/>\n"
 "Language: es\n"
@@ -137,7 +137,7 @@ msgstr "Eliminar"
 #: src/AgendaView.vala:572 src/AgendaView.vala:582
 #, c-format
 msgid "%s - %s"
-msgstr " %s - %s"
+msgstr "%s - %s"
 
 #: src/AgendaView.vala:574
 #, c-format
@@ -150,14 +150,13 @@ msgid "%s"
 msgstr "%s"
 
 #: src/AgendaView.vala:588
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s - %s"
-msgstr "%s, %s-%s, %s"
+msgstr "%s, %s - %s"
 
 #: src/Application.vala:48
-#, fuzzy
 msgid "Create an event"
-msgstr "Crear un evento nuevo"
+msgstr "Nuevo evento"
 
 #: src/Application.vala:49
 msgid "Focus the given day"
@@ -313,7 +312,6 @@ msgid "0 minutes"
 msgstr "0 minutos"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute"
 msgstr "1 minuto"
 
@@ -654,7 +652,6 @@ msgid "Sun"
 msgstr "dom."
 
 #: src/Grid/EventButton.vala:70
-#, fuzzy
 msgid "Remove Event"
 msgstr "Eliminar evento"
 
