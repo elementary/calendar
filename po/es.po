@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
 "PO-Revision-Date: 2018-09-30 20:35+0000\n"
-"Last-Translator: Pablo Solís La Beira <pabsol1977@gmail.com>\n"
+"Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/calendar/"
 "calendar/es/>\n"
 "Language: es\n"
@@ -135,9 +135,9 @@ msgid "Remove"
 msgstr "Eliminar"
 
 #: src/AgendaView.vala:572 src/AgendaView.vala:582
-#, fuzzy, c-format
+#, c-format
 msgid "%s - %s"
-msgstr "%s, %s-%s, %s"
+msgstr " %s - %s"
 
 #: src/AgendaView.vala:574
 #, c-format
