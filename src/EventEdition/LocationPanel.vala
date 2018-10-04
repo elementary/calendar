@@ -128,7 +128,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             }
         }
 
-        view.zoom_level = 8;
+        view.zoom_level = 10;
+        view.goto_animation_duration = 500;
         view.center_on (point.latitude, point.longitude);
         marker_layer.add_marker (point);
 
