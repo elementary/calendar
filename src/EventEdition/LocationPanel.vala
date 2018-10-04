@@ -226,24 +226,24 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
     }
 
     private async void discover_location () {
+        if (search_cancellable != null)
+            search_cancellable.cancel ();
+        search_cancellable = new GLib.Cancellable ();
         try {
             var simple = yield new GClue.Simple ("io.elementary.calendar", GClue.AccuracyLevel.CITY, null);
 
-            simple.notify["location"].connect (() => {
-                on_location_updated (simple.location.latitude, simple.location.longitude);
+            point.latitude = simple.location.latitude;
+            point.longitude = simple.location.longitude;
+            Idle.add (() => {
+                if (search_cancellable.is_cancelled () == false)
+                    champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
+                return false;
             });
 
-            on_location_updated (simple.location.latitude, simple.location.longitude);
         } catch (Error e) {
             warning ("Failed to connect to GeoClue2 service: %s", e.message);
             return;
         }
-    }
-
-    private void on_location_updated (double latitude, double longitude) {
-        point.latitude = latitude;
-        point.longitude = longitude;
-        champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
     }
 
     private void add_address_line (StringBuilder sb, string? text) {
