@@ -29,6 +29,7 @@ clutter_dep = dependency('clutter-1.0')
 clutter_gtk_dep = dependency('clutter-gtk-1.0')
 folks_dep = dependency('folks')
 geocode_glib_dep = dependency('geocode-glib-1.0')
+gclue_dep = dependency('libgeoclue-2.0')
 
 m_dep = meson.get_compiler('c').find_library('m', required : false)
 libnotify_dep = dependency('libnotify', required: false)

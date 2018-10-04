@@ -122,8 +122,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                 if (location != null && location != "") {
                     compute_location.begin (location_entry.text);
                 } else {
-                    // A little hacky but seems to work as expected (search for the timezone position)
-                    compute_location.begin (E.Util.get_system_timezone_location ());
+                    // Use geoclue to find approximate location
+                    discover_location.begin ();
                 }
             }
         }
@@ -223,6 +223,27 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         } catch (Error error) {
             debug (error.message);
         }
+    }
+
+    private async void discover_location () {
+        try {
+            var simple = yield new GClue.Simple ("io.elementary.calendar", GClue.AccuracyLevel.CITY, null);
+
+            simple.notify["location"].connect (() => {
+                on_location_updated (simple.location.latitude, simple.location.longitude);
+            });
+
+            on_location_updated (simple.location.latitude, simple.location.longitude);
+        } catch (Error e) {
+            warning ("Failed to connect to GeoClue2 service: %s", e.message);
+            return;
+        }
+    }
+
+    private void on_location_updated (double latitude, double longitude) {
+        point.latitude = latitude;
+        point.longitude = longitude;
+        champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
     }
 
     private void add_address_line (StringBuilder sb, string? text) {
