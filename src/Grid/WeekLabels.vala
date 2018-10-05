@@ -118,29 +118,12 @@ public class WeekLabels : Gtk.Revealer {
             labels[c] = new Gtk.Label ("");
             labels[c].valign = Gtk.Align.START;
             labels[c].width_chars = 2;
-            labels[c].draw.connect (on_draw);
             labels[c].get_style_context().add_provider (style_provider, 600);
             labels[c].get_style_context().add_class ("weeklabel");
             day_grid.attach (labels[c], 0, c, 1, 1);
             labels[c].show ();
         }
     }
-
-    private bool on_draw (Gtk.Widget widget, Cairo.Context cr) {
-        Gtk.Allocation size;
-        widget.get_allocation (out size);
-
-        // Draw left and top black strokes
-        cr.move_to (0, 0); // start on upper left.
-        cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
-
-        cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
-        cr.set_line_width (1.0);
-        cr.set_antialias (Cairo.Antialias.NONE);
-        cr.stroke ();
-        return false;
-    }
-
 }
 
 }
