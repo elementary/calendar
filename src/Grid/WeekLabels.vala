@@ -113,11 +113,14 @@ public class WeekLabels : Gtk.Revealer {
 
         // Create new labels
         labels = new Gtk.Label[nr_of_weeks];
+        var style_provider = Util.Css.get_css_provider ();
         for (int c = 0; c < nr_of_weeks; c++) {
             labels[c] = new Gtk.Label ("");
             labels[c].valign = Gtk.Align.START;
             labels[c].width_chars = 2;
             labels[c].draw.connect (on_draw);
+            labels[c].get_style_context().add_provider (style_provider, 600);
+            labels[c].get_style_context().add_class ("weeklabel");
             day_grid.attach (labels[c], 0, c, 1, 1);
             labels[c].show ();
         }

@@ -55,3 +55,9 @@
 	.cell > #date {
 		font-size: 8px;
 	}
+
+/* Week Number Styles */
+.weeklabel {
+	padding: 3px;
+}
+
