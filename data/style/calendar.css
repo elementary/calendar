@@ -58,6 +58,7 @@
 
 /* Week Number Styles */
 .weeklabel {
+    border-top: solid 1px alpha(#000, 0.25);
 	padding: 3px;
 }
 
