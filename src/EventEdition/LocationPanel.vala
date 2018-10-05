@@ -243,6 +243,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 
         } catch (Error e) {
             warning ("Failed to connect to GeoClue2 service: %s", e.message);
+            // Fallback to timezone location
+            compute_location.begin (E.Util.get_system_timezone_location ());
             return;
         }
     }
