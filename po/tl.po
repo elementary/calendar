@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-10-07 02:43+0000\n"
+"PO-Revision-Date: 2018-10-08 00:04+0000\n"
 "Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Tagalog <https://weblate.elementary.io/projects/calendar/"
 "calendar/tl/>\n"
@@ -713,7 +713,7 @@ msgstr "Ang Kalendaryong \"%s\" ay natanggal"
 
 #: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
-msgstr "Magdagdag ng Bagong Kalendaryo"
+msgstr "Magdagdag ng Bagong Kalendaryo…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
