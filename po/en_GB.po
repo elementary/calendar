@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
 "PO-Revision-Date: 2018-10-08 20:01+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Last-Translator: PpItO <morinicolas@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
 "projects/calendar/calendar/en_GB/>\n"
 "Language: en_GB\n"
@@ -58,7 +58,7 @@ msgstr "Print debug information"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Print version info and exit"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -94,7 +94,7 @@ msgstr ""
 
 #: src/AgendaView.vala:142
 msgid "Upcoming Events"
-msgstr ""
+msgstr "Upcoming Events"
 
 #: src/AgendaView.vala:234
 msgid "During the day"
@@ -106,27 +106,23 @@ msgstr "All day"
 
 #: src/AgendaView.vala:304 src/AgendaView.vala:318
 msgid "Tomorrow"
-msgstr ""
+msgstr "Tomorrow"
 
 #: src/AgendaView.vala:306 src/AgendaView.vala:320
-#, fuzzy
 msgid "This Week"
-msgstr "Week"
+msgstr "This week"
 
 #: src/AgendaView.vala:308 src/AgendaView.vala:322
-#, fuzzy
 msgid "Next Week"
-msgstr "Week"
+msgstr "Next week"
 
 #: src/AgendaView.vala:310 src/AgendaView.vala:324
-#, fuzzy
 msgid "This Month"
-msgstr "Month"
+msgstr "This month"
 
 #: src/AgendaView.vala:312 src/AgendaView.vala:326
-#, fuzzy
 msgid "Next Month"
-msgstr "Month"
+msgstr "Next month"
 
 #: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
