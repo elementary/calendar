@@ -116,33 +116,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
         calmodel.update_event (src, comp, E.CalObjModType.ALL);
     }
 
-    public override bool draw (Cairo.Context cr) {
-        base.draw (cr);
-        Gtk.Allocation size;
-        get_allocation (out size);
-
-        // Draw left and top black strokes
-        if (draw_left_border == false) {
-            cr.move_to (0.5, 0.5);
-        } else {
-            cr.move_to (0.5, size.height); // start in bottom left. 0.5 accounts for cairo's default stroke offset of 1/2 pixels
-            cr.line_to (0.5, 0.5); // move to upper left corner
-        }
-
-        cr.line_to (size.width + 0.5, 0.5); // move to upper right corner
-
-        cr.set_source_rgba (0.0, 0.0, 0.0, 0.25);
-        cr.set_line_width (1.0);
-        cr.set_antialias (Cairo.Antialias.NONE);
-        cr.stroke ();
-
-        // Draw inner highlight stroke
-        cr.rectangle (1, 1, size.width - 1, size.height - 1);
-        cr.set_source_rgba (1.0, 1.0, 1.0, 0.2);
-        cr.stroke ();
-        return false;
-    }
-
     public void add_event_button (EventButton button) {
         unowned iCal.Component calcomp = button.comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();

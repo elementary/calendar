@@ -33,6 +33,8 @@
 .cell {
 	background-color: @cell_color;
     border-radius: 0;
+    border-top: solid 1px alpha(#000, 0.25);
+    border-left: solid 1px alpha(#000, 0.25);
 }
 
 .other_month {
