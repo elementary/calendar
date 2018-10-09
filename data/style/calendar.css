@@ -28,6 +28,11 @@
 			from(@cell_color), to(mix(@bg_color, rgb(255, 255, 255), 0.8)));
 }
 
+.daylabel {
+    padding: 3px;
+    border-left: solid 1px alpha(#000, 0.25);
+}
+
 /* Cell Styles */
 
 .cell {
