@@ -106,6 +106,8 @@ public class Grid : Gtk.Grid {
         int i=0;
         int col = 0, row = 0;
 
+        var style_provider = Util.Css.get_css_provider ();
+
         for (i=0; i<new_dates.size; i++) {
             var new_date = new_dates [i];
             GridDay day;
@@ -124,6 +126,11 @@ public class Grid : Gtk.Grid {
                     on_day_focus_in (day);
                     return false;
                 });
+
+                if (col == 0) {
+                    day.get_style_context().add_provider (style_provider, 600);
+                    day.get_style_context().add_class ("firstcol");
+                }
 
                 attach (day, col, row, 1, 1);
                 day.show_all ();

@@ -42,6 +42,10 @@
     border-left: solid 1px alpha(#000, 0.25);
 }
 
+.cell.firstcol {
+	border-left: none;
+}
+
 .other_month {
     background-color: shade(@cell_color, 0.97);
 }
@@ -64,6 +68,11 @@
 	}
 
 /* Week Number Styles */
+
+.weeks {
+	border-right: solid 1px alpha(#000, 0.25);
+}
+
 .weeklabel {
     border-top: solid 1px alpha(#000, 0.25);
 	padding: 3px;
