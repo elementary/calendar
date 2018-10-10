@@ -53,6 +53,9 @@ public class Header : Gtk.EventBox {
             labels[c].hexpand = true;
             labels[c].get_style_context().add_provider (style_provider, 600);
             labels[c].get_style_context().add_class ("daylabel");
+            if (c == 0) {
+                labels[c].get_style_context().add_class ("firstcol");
+            }
             var label_grid = new Gtk.Grid ();
             label_grid.add (labels[c]);
             header_grid.attach (label_grid, c, 0, 1, 1);

@@ -33,6 +33,10 @@
     border-left: solid 1px alpha(#000, 0.25);
 }
 
+.daylabel.firstcol {
+    border-left: none;
+}
+
 /* Cell Styles */
 
 .cell {
