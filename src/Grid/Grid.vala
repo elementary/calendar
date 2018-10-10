@@ -182,18 +182,6 @@ public class Grid : Gtk.Grid {
     }
 
     /**
-     * Notify when the week number revealer is revealed
-     */
-    public void draw_first_line_column (bool draw) {
-        var lines = get_children ().length () / 7;
-        for (int i = 0; i < lines; i++) {
-            var child = get_child_at (0, i);
-            ((GridDay)child).draw_left_border = draw;
-            child.queue_draw ();
-        }
-    }
-
-    /**
      * Adds an eventbutton to the grid for the given event at each day of the given range.
      */
     void add_buttons_for_range (Util.DateRange dt_range, E.CalComponent event) {

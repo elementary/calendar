@@ -87,15 +87,11 @@ public class Maya.View.CalendarView : Gtk.Grid {
         var style_provider = Util.Css.get_css_provider ();
 
         spacer = new Gtk.Label ("");
+        spacer.no_show_all = true;
         spacer.get_style_context().add_provider (style_provider, 600);
         spacer.get_style_context().add_class ("weeks");
 
         weeks = new WeekLabels ();
-        weeks.notify["child-revealed"].connect (() => {
-            grid.draw_first_line_column (weeks.child_revealed);
-            header.draw_left_border = weeks.child_revealed;
-            header.queue_draw ();
-        });
 
         header = new Header ();
         grid = new Grid ();
@@ -115,6 +111,13 @@ public class Maya.View.CalendarView : Gtk.Grid {
         new_big_grid.attach (weeks, 0, 1, 1, 1);
         new_big_grid.show_all ();
         new_big_grid.expand = true;
+
+        if (!Util.show_weeks ())  {
+            spacer.hide ();
+        } else {
+            spacer.show ();
+        }
+
         return new_big_grid;
     }
 
@@ -141,8 +144,6 @@ public class Maya.View.CalendarView : Gtk.Grid {
         weeks.update (model.data_range.first_dt, model.num_weeks);
         if (Util.show_weeks ()) {
             spacer.show ();
-            grid.draw_first_line_column (true);
-            header.draw_left_border = true;
         } else {
             spacer.hide ();
         }
