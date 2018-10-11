@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-03-20 00:11+0000\n"
-"Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
+"PO-Revision-Date: 2018-10-12 00:04+0000\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/calendar/"
 "calendar/hi/>\n"
 "Language: hi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-20 06:02+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
@@ -720,12 +720,12 @@ msgstr "कैलेंडर \"%s\" हटाया गया।"
 
 #: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
-msgstr "नया कैलेंडर जोड़े"
+msgstr "नया कैलेंडर जोड़े…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
 msgid "Export Calendar..."
-msgstr ""
+msgstr "एक्सपोर्ट कॅलेंडर..."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
