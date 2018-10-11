@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-10-11 13:36+0000\n"
+"PO-Revision-Date: 2018-10-12 00:04+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
@@ -716,7 +716,7 @@ msgstr "कॅलेंडर \"%s\" मिटविले."
 
 #: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
-msgstr "नवीन कॅलेंडर बनवा"
+msgstr "नवीन कॅलेंडर बनवा…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -725,7 +725,7 @@ msgstr "एक्सपोर्ट कॅलेंडर..."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
-msgstr "कॅलेंडर.ics"
+msgstr "calendar.ics"
 
 #: src/Widgets/HeaderBar.vala:38
 msgid "Create a new event"
