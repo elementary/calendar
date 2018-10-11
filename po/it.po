@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:26+0100\n"
-"PO-Revision-Date: 2018-09-06 00:08+0000\n"
-"Last-Translator: strozzascotte <marco.depaolini@gmail.com>\n"
+"PO-Revision-Date: 2018-10-12 00:04+0000\n"
+"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/calendar/"
 "calendar/it/>\n"
 "Language: it\n"
@@ -58,7 +58,7 @@ msgstr "Mostra le informazioni di debug"
 
 #: daemon/Daemon.vala:23 src/Application.vala:50
 msgid "Print version info and exit"
-msgstr "Mostra le informazione sulla versione ed esci"
+msgstr "Mostra le informazioni sulla versione ed esci"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
