@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:27+0100\n"
-"PO-Revision-Date: 2018-10-11 13:28+0000\n"
+"PO-Revision-Date: 2018-10-12 00:04+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/calendar/"
 "extra/mr/>\n"
@@ -44,7 +44,7 @@ msgstr "एलिमेंटरी LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "office-calendar"
-msgstr "कार्यालय - कॅलेंडर"
+msgstr "office-calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
