@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:27+0100\n"
-"PO-Revision-Date: 2018-10-03 00:10+0000\n"
+"PO-Revision-Date: 2018-10-11 13:28+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/calendar/"
 "extra/mr/>\n"
@@ -28,13 +28,15 @@ msgstr "कॅलेंडर"
 #: data/io.elementary.calendar.appdata.xml.in:9
 #: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "कार्यक्रम पहा आणि शेड्यूल करा"
 
 #: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
+"Google कॅलेंडर, Outlook आणि CalDAV सारख्या एकाच ठिकाणी एकाधिक कॅलेंडर समक्रमि"
+"त आणि व्यवस्थापित करणारे एक हलके कॅलेंडर अॅप."
 
 #: data/io.elementary.calendar.appdata.xml.in:78
 msgid "elementary LLC."
@@ -46,8 +48,8 @@ msgstr "कार्यालय - कॅलेंडर"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
+msgstr "माया; प्लॅनर; तारखा; दिवस; घटना; कॅलेंडर; ics; caldav; उत्क्रांती;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
-msgstr ""
+msgstr "नवीन घटना जोडा"
