@@ -28,11 +28,26 @@
 			from(@cell_color), to(mix(@bg_color, rgb(255, 255, 255), 0.8)));
 }
 
+.daylabel {
+    padding: 3px;
+    border-left: solid 1px alpha(#000, 0.25);
+}
+
+.daylabel:first-child {
+    border-left: none;
+}
+
 /* Cell Styles */
 
 .cell {
 	background-color: @cell_color;
     border-radius: 0;
+    border-top: solid 1px alpha(#000, 0.25);
+    border-left: solid 1px alpha(#000, 0.25);
+}
+
+.cell.firstcol {
+	border-left: none;
 }
 
 .other_month {
@@ -57,6 +72,11 @@
 	}
 
 /* Week Number Styles */
+
+.weeks {
+	border-right: solid 1px alpha(#000, 0.25);
+}
+
 .weeklabel {
     border-top: solid 1px alpha(#000, 0.25);
 	padding: 3px;

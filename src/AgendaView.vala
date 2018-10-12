@@ -62,10 +62,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
         selected_data_grid.add (day_label);
         selected_data_grid.add (separator);
 
-        var selected_data_style_provider = Util.Css.get_css_provider ();
-        selected_data_grid.get_style_context ().add_provider (selected_data_style_provider, 600);
-        selected_data_grid.get_style_context ().add_class ("cell");
-
         var placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
         placeholder_label.wrap = true;
         placeholder_label.wrap_mode = Pango.WrapMode.WORD;
@@ -153,10 +149,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
         upcoming_events_grid.attach (upcoming_events_separatorTop, 0, 0, 1, 1);
         upcoming_events_grid.attach (upcoming_events_label, 0, 1, 1, 1);
         upcoming_events_grid.attach (upcoming_events_separatorBottom, 0, 2, 1, 1);
-
-        var upcoming_events_style_provider = Util.Css.get_css_provider ();
-        upcoming_events_grid.get_style_context ().add_provider (upcoming_events_style_provider, 600);
-        upcoming_events_grid.get_style_context ().add_class ("cell");
 
         upcoming_events_list = new Gtk.ListBox ();
         upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
