@@ -26,7 +26,7 @@ namespace Maya {
         private static bool PRINT_VERSION = false;
     }
 
-    public class Application : Granite.Application {
+    public class Application : Gtk.Application {
         public MainWindow window;
         private View.CalendarView calview;
         private View.AgendaView sidebar;
@@ -34,11 +34,7 @@ namespace Maya {
         construct {
             flags |= ApplicationFlags.HANDLES_OPEN;
 
-            program_name = _(Build.APP_NAME);
-            exec_name = Build.EXEC_NAME;
-
             application_id = Build.EXEC_NAME;
-            app_launcher = Build.EXEC_NAME + ".desktop";
 
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.textdomain (Build.GETTEXT_PACKAGE);
@@ -48,7 +44,6 @@ namespace Maya {
             { "add-event", 'a', 0, OptionArg.NONE, out Option.ADD_EVENT, N_("Create an event"), null },
             { "show-day", 's', 0, OptionArg.STRING, out Option.SHOW_DAY, N_("Focus the given day"), N_("date") },
             { "version", 'v', 0, OptionArg.NONE, out Option.PRINT_VERSION, N_("Print version info and exit"), null },
-            { "debug", 'd', 0, OptionArg.NONE, out DEBUG, N_("Print debug information"), null },
             { null }
         };
 
@@ -112,7 +107,7 @@ namespace Maya {
             var saved_state = Settings.SavedState.get_default ();
 
             window = new MainWindow (this);
-            window.title = program_name;
+            window.title = _(Build.APP_NAME);
             window.default_width = saved_state.window_width;
             window.default_height = saved_state.window_height;
 
