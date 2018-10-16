@@ -13,6 +13,13 @@
     </p>
   </description>
   <releases>
+    <release version="4.2.3" date="2018-10-16" urgency="medium">
+      <description>
+          <p>Styling adjustments</p>
+          <p>Fix location panel initialization</p>
+          <p>New translations</p>
+      </description>
+    </release>
     <release version="0.4.2.1" date="2018-06-22" urgency="medium">
       <description>
           <p>Update wingpanel-indicator-datetime settings path.</p>
