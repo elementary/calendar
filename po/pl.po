@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
-"PO-Revision-Date: 2018-07-12 17:21+0000\n"
+"PO-Revision-Date: 2018-10-16 10:09+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/calendar/"
 "calendar/pl/>\n"
@@ -728,9 +728,8 @@ msgstr "Dodaj nowy kalendarz…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "Eksportuj kalendarz..."
+msgstr "Eksportuj kalendarz…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
