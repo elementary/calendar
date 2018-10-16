@@ -176,7 +176,7 @@ namespace MayaDaemon {
         // Don't show notifications if the window is active
 
         if (!Notify.is_initted ()) {
-            if (!Notify.init ("net.launchpad.maya")) {
+            if (!Notify.init ("io.elementary.calendar")) {
                 warning ("Could not init libnotify");
                 return;
             }
