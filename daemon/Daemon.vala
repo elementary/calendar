@@ -184,7 +184,7 @@ namespace MayaDaemon {
 
         unowned iCal.Component comp = event.get_icalcomponent ();
         var primary_text = "%s".printf (comp.get_summary ());
-        var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+        var start_time = Maya.Util.ical_to_date_time_with_tzid (comp.get_dtstart (), event.get_dtstart().tzid);
         var now = new DateTime.now_local ();
         string secondary_text = "";
         var h24_settings = new Settings ("org.gnome.desktop.interface");
