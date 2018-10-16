@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-26 20:26+0100\n"
+"POT-Creation-Date: 2018-10-16 17:02+0900\n"
 "PO-Revision-Date: 2016-08-06 10:03+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -51,12 +51,12 @@ msgstr "%Y年%b%e日"
 msgid "%A, %b %d"
 msgstr "%b%d日 (%A)"
 
-#: daemon/Daemon.vala:21 src/Application.vala:51
+#: daemon/Daemon.vala:21
 #, fuzzy
 msgid "Print debug information"
 msgstr "一般資訊"
 
-#: daemon/Daemon.vala:23 src/Application.vala:50
+#: daemon/Daemon.vala:23 src/Application.vala:46
 msgid "Print version info and exit"
 msgstr ""
 
@@ -84,92 +84,92 @@ msgstr "使用安全連線"
 msgid "Server handles meeting invitations"
 msgstr "伺服器處理會議邀請"
 
-#: src/AgendaView.vala:69
+#: src/AgendaView.vala:65
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "當您選取的日子有活動事件時，未來的事件會顯示在這裡。"
 
-#: src/AgendaView.vala:142
+#: src/AgendaView.vala:138
 msgid "Upcoming Events"
 msgstr ""
 
-#: src/AgendaView.vala:234
+#: src/AgendaView.vala:226
 msgid "During the day"
 msgstr "當日"
 
-#: src/AgendaView.vala:239
+#: src/AgendaView.vala:231
 msgid "All day"
 msgstr "整天"
 
-#: src/AgendaView.vala:304 src/AgendaView.vala:318
+#: src/AgendaView.vala:296 src/AgendaView.vala:310
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:306 src/AgendaView.vala:320
+#: src/AgendaView.vala:298 src/AgendaView.vala:312
 #, fuzzy
 msgid "This Week"
 msgstr "週"
 
-#: src/AgendaView.vala:308 src/AgendaView.vala:322
+#: src/AgendaView.vala:300 src/AgendaView.vala:314
 #, fuzzy
 msgid "Next Week"
 msgstr "週"
 
-#: src/AgendaView.vala:310 src/AgendaView.vala:324
+#: src/AgendaView.vala:302 src/AgendaView.vala:316
 #, fuzzy
 msgid "This Month"
 msgstr "月"
 
-#: src/AgendaView.vala:312 src/AgendaView.vala:326
+#: src/AgendaView.vala:304 src/AgendaView.vala:318
 #, fuzzy
 msgid "Next Month"
 msgstr "月"
 
-#: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
+#: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
 msgid "Edit…"
 msgstr "編輯…"
 
-#: src/AgendaView.vala:529 src/Grid/EventButton.vala:76
+#: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
 #: src/SourceDialog/SourceItem.vala:80
 msgid "Remove"
 msgstr "移除"
 
-#: src/AgendaView.vala:572 src/AgendaView.vala:582
+#: src/AgendaView.vala:564 src/AgendaView.vala:574
 #, fuzzy, c-format
 msgid "%s - %s"
 msgstr "%s %s - %s %s"
 
-#: src/AgendaView.vala:574
+#: src/AgendaView.vala:566
 #, c-format
 msgid "%s, %s - %s, %s"
 msgstr "%s %s - %s %s"
 
-#: src/AgendaView.vala:586
+#: src/AgendaView.vala:578
 #, c-format
 msgid "%s"
 msgstr ""
 
-#: src/AgendaView.vala:588
+#: src/AgendaView.vala:580
 #, fuzzy, c-format
 msgid "%s, %s - %s"
 msgstr "%s %s - %s %s"
 
-#: src/Application.vala:48
+#: src/Application.vala:44
 #, fuzzy
 msgid "Create an event"
 msgstr "建立新事件"
 
-#: src/Application.vala:49
+#: src/Application.vala:45
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:49
+#: src/Application.vala:45
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:224
+#: src/Application.vala:219
 msgid "Calendar"
 msgstr "行事曆"
 
@@ -658,11 +658,11 @@ msgstr "刪除事件"
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
+#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "隱藏週數"
 
-#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:71
+#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:67
 msgid "Show Week Numbers"
 msgstr "顯示週數"
 
@@ -720,7 +720,8 @@ msgstr "新增行事曆…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
-msgid "Export Calendar..."
+#, fuzzy
+msgid "Export Calendar…"
 msgstr "匯出行事曆..."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85

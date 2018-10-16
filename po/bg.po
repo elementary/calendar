@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-26 20:26+0100\n"
+"POT-Creation-Date: 2018-10-16 17:02+0900\n"
 "PO-Revision-Date: 2017-05-09 22:15+0000\n"
 "Last-Translator: Martin Tomov <martin.tomov@boomer.digital>\n"
 "Language-Team: Bulgarian <https://l10n.elementary.io/projects/calendar/"
@@ -52,12 +52,12 @@ msgstr "%e %B %Y"
 msgid "%A, %b %d"
 msgstr "%A, %d, %b"
 
-#: daemon/Daemon.vala:21 src/Application.vala:51
+#: daemon/Daemon.vala:21
 #, fuzzy
 msgid "Print debug information"
 msgstr "Общи Сведения"
 
-#: daemon/Daemon.vala:23 src/Application.vala:50
+#: daemon/Daemon.vala:23 src/Application.vala:46
 msgid "Print version info and exit"
 msgstr ""
 
@@ -85,93 +85,93 @@ msgstr "Ползвай надеждно-осигурена  свръзка"
 msgid "Server handles meeting invitations"
 msgstr "Сървъра обслужва поканите за среща"
 
-#: src/AgendaView.vala:69
+#: src/AgendaView.vala:65
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Предстоящите събития ще се появят тук, след като изберете дата със събития."
 
-#: src/AgendaView.vala:142
+#: src/AgendaView.vala:138
 msgid "Upcoming Events"
 msgstr ""
 
-#: src/AgendaView.vala:234
+#: src/AgendaView.vala:226
 msgid "During the day"
 msgstr "През деня"
 
-#: src/AgendaView.vala:239
+#: src/AgendaView.vala:231
 msgid "All day"
 msgstr "Целия ден"
 
-#: src/AgendaView.vala:304 src/AgendaView.vala:318
+#: src/AgendaView.vala:296 src/AgendaView.vala:310
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:306 src/AgendaView.vala:320
+#: src/AgendaView.vala:298 src/AgendaView.vala:312
 #, fuzzy
 msgid "This Week"
 msgstr "Седмица"
 
-#: src/AgendaView.vala:308 src/AgendaView.vala:322
+#: src/AgendaView.vala:300 src/AgendaView.vala:314
 #, fuzzy
 msgid "Next Week"
 msgstr "Седмица"
 
-#: src/AgendaView.vala:310 src/AgendaView.vala:324
+#: src/AgendaView.vala:302 src/AgendaView.vala:316
 #, fuzzy
 msgid "This Month"
 msgstr "Месец"
 
-#: src/AgendaView.vala:312 src/AgendaView.vala:326
+#: src/AgendaView.vala:304 src/AgendaView.vala:318
 #, fuzzy
 msgid "Next Month"
 msgstr "Месец"
 
-#: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
+#: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
 msgid "Edit…"
 msgstr "Редактиране…"
 
-#: src/AgendaView.vala:529 src/Grid/EventButton.vala:76
+#: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
 #: src/SourceDialog/SourceItem.vala:80
 msgid "Remove"
 msgstr "Премахване"
 
-#: src/AgendaView.vala:572 src/AgendaView.vala:582
+#: src/AgendaView.vala:564 src/AgendaView.vala:574
 #, fuzzy, c-format
 msgid "%s - %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/AgendaView.vala:574
+#: src/AgendaView.vala:566
 #, c-format
 msgid "%s, %s - %s, %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/AgendaView.vala:586
+#: src/AgendaView.vala:578
 #, c-format
 msgid "%s"
 msgstr ""
 
-#: src/AgendaView.vala:588
+#: src/AgendaView.vala:580
 #, fuzzy, c-format
 msgid "%s, %s - %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Application.vala:48
+#: src/Application.vala:44
 #, fuzzy
 msgid "Create an event"
 msgstr "Създаване на ново събитие"
 
-#: src/Application.vala:49
+#: src/Application.vala:45
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:49
+#: src/Application.vala:45
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:224
+#: src/Application.vala:219
 msgid "Calendar"
 msgstr "Календар"
 
@@ -666,11 +666,11 @@ msgstr "Изтрий събитието"
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
+#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Скриване на номерата на седмиците"
 
-#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:71
+#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:67
 msgid "Show Week Numbers"
 msgstr "Показване на номерата на седмиците"
 
@@ -728,7 +728,8 @@ msgstr "Добавяне на нов календар…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
-msgid "Export Calendar..."
+#, fuzzy
+msgid "Export Calendar…"
 msgstr "Изнасяне на календара..."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
