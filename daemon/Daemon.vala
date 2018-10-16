@@ -129,7 +129,7 @@ namespace MayaDaemon {
                     e_alarm.get_trigger (out trigger);
                     if (trigger.type == E.CalComponentAlarmTriggerType.RELATIVE_START) {
                         iCal.DurationType duration = trigger.rel_duration;
-                        var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+                        var start_time = Maya.Util.ical_to_date_time_with_tzid (comp.get_dtstart(), event.get_dtstart().tzid);
                         var now = new DateTime.now_local ();
                         if (now.compare (start_time) > 0) {
                             continue;

@@ -104,6 +104,11 @@ namespace Maya.Util {
             date.day, date.hour, date.minute, date.second);
     }
 
+    public DateTime ical_to_date_time_with_tzid (iCal.TimeType date, string tzid) {
+        return new DateTime (new TimeZone(tzid), date.year, date.month,
+            date.day, date.hour, date.minute, date.second);
+    }
+
     public void get_local_datetimes_from_icalcomponent (iCal.Component comp, out DateTime start_date, out DateTime end_date) {
         iCal.TimeType dt_start = comp.get_dtstart ();
         iCal.TimeType dt_end = comp.get_dtend ();
