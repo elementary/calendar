@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-26 20:26+0100\n"
+"POT-Creation-Date: 2018-10-16 17:02+0900\n"
 "PO-Revision-Date: 2018-02-28 00:07+0000\n"
 "Last-Translator: vicky fatrian <vickyfatrian@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
@@ -51,12 +51,12 @@ msgstr "%B %e, %Y"
 msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
-#: daemon/Daemon.vala:21 src/Application.vala:51
+#: daemon/Daemon.vala:21
 #, fuzzy
 msgid "Print debug information"
 msgstr "Informasi Umum"
 
-#: daemon/Daemon.vala:23 src/Application.vala:50
+#: daemon/Daemon.vala:23 src/Application.vala:46
 msgid "Print version info and exit"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr "Gunakan sambungan aman"
 msgid "Server handles meeting invitations"
 msgstr "Server yang menangani undangan pertemuan"
 
-#: src/AgendaView.vala:69
+#: src/AgendaView.vala:65
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -92,86 +92,86 @@ msgstr ""
 "Acara yang akan datang milik Anda akan ditampilkan di sini ketika Anda "
 "memilih tanggal dengan acara."
 
-#: src/AgendaView.vala:142
+#: src/AgendaView.vala:138
 msgid "Upcoming Events"
 msgstr ""
 
-#: src/AgendaView.vala:234
+#: src/AgendaView.vala:226
 msgid "During the day"
 msgstr "Selama siang hari"
 
-#: src/AgendaView.vala:239
+#: src/AgendaView.vala:231
 msgid "All day"
 msgstr "Sepanjang hari"
 
-#: src/AgendaView.vala:304 src/AgendaView.vala:318
+#: src/AgendaView.vala:296 src/AgendaView.vala:310
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:306 src/AgendaView.vala:320
+#: src/AgendaView.vala:298 src/AgendaView.vala:312
 #, fuzzy
 msgid "This Week"
 msgstr "Minggu"
 
-#: src/AgendaView.vala:308 src/AgendaView.vala:322
+#: src/AgendaView.vala:300 src/AgendaView.vala:314
 #, fuzzy
 msgid "Next Week"
 msgstr "Minggu"
 
-#: src/AgendaView.vala:310 src/AgendaView.vala:324
+#: src/AgendaView.vala:302 src/AgendaView.vala:316
 #, fuzzy
 msgid "This Month"
 msgstr "Bulan"
 
-#: src/AgendaView.vala:312 src/AgendaView.vala:326
+#: src/AgendaView.vala:304 src/AgendaView.vala:318
 #, fuzzy
 msgid "Next Month"
 msgstr "Bulan"
 
-#: src/AgendaView.vala:528 src/Grid/EventButton.vala:63
+#: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
 msgid "Edit…"
 msgstr "Sunting…"
 
-#: src/AgendaView.vala:529 src/Grid/EventButton.vala:76
+#: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
 #: src/SourceDialog/SourceItem.vala:80
 msgid "Remove"
 msgstr "Hapus"
 
-#: src/AgendaView.vala:572 src/AgendaView.vala:582
+#: src/AgendaView.vala:564 src/AgendaView.vala:574
 #, fuzzy, c-format
 msgid "%s - %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/AgendaView.vala:574
+#: src/AgendaView.vala:566
 #, c-format
 msgid "%s, %s - %s, %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/AgendaView.vala:586
+#: src/AgendaView.vala:578
 #, c-format
 msgid "%s"
 msgstr ""
 
-#: src/AgendaView.vala:588
+#: src/AgendaView.vala:580
 #, fuzzy, c-format
 msgid "%s, %s - %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Application.vala:48
+#: src/Application.vala:44
 #, fuzzy
 msgid "Create an event"
 msgstr "Buat acara baru"
 
-#: src/Application.vala:49
+#: src/Application.vala:45
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:49
+#: src/Application.vala:45
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:224
+#: src/Application.vala:219
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -660,11 +660,11 @@ msgstr "Hapus Acara"
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:69
+#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Sembunyikan Nomor Minggu"
 
-#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:71
+#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:67
 msgid "Show Week Numbers"
 msgstr "Tampilkan Nomor Minggu"
 
@@ -722,7 +722,8 @@ msgstr "Tambah Kalender Baru…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
-msgid "Export Calendar..."
+#, fuzzy
+msgid "Export Calendar…"
 msgstr "Ekspor Kalender..."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
