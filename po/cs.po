@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
-"PO-Revision-Date: 2018-07-22 00:03+0000\n"
+"PO-Revision-Date: 2018-10-18 07:03+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/calendar/"
 "calendar/cs/>\n"
@@ -725,7 +725,6 @@ msgstr "Přidat Nový kalendář…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
-#, fuzzy
 msgid "Export Calendar…"
 msgstr "Exportovat kalendář…"
 
