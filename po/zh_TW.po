@@ -2,13 +2,12 @@
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the maya package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
-"PO-Revision-Date: 2018-10-18 11:59+0000\n"
+"PO-Revision-Date: 2018-10-18 12:02+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
 "calendar/calendar/zh_Hant/>\n"
@@ -649,7 +648,7 @@ msgstr "移除事件"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr "移除出現"
+msgstr "移除這次"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
