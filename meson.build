@@ -38,7 +38,17 @@ else
     add_project_arguments('--vapidir', join_paths(meson.current_source_dir(), 'vapi'), language: 'vala')
 endif
 
-m_dep = meson.get_compiler('c').find_library('m', required : false)
+cc = meson.get_compiler('c')
+m_dep = cc.find_library('m', required : false)
+libnotify_dep = dependency('libnotify', required: false)
+
+if libnotify_dep.found()
+    add_project_arguments('--define=HAVE_LIBNOTIFY', language: 'vala')
+endif
+
+if cc.has_header_symbol('langinfo.h', '_NL_TIME_FIRST_WEEKDAY')
+    add_project_arguments('--define=HAVE_NL_TIME_FIRST_WEEKDAY', language: 'vala')
+endif
 
 gresource_calendar = gnome.compile_resources(
     'gresource_calendar',
