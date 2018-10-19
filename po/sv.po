@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
-"PO-Revision-Date: 2018-10-19 16:59+0000\n"
+"PO-Revision-Date: 2018-10-19 19:04+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/calendar/"
 "calendar/sv/>\n"
@@ -159,7 +159,7 @@ msgstr "Skapa en händelse"
 
 #: src/Application.vala:45
 msgid "Focus the given day"
-msgstr ""
+msgstr "Fokusera på vald dag"
 
 #: src/Application.vala:45
 msgid "date"
