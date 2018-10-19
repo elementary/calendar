@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
-"PO-Revision-Date: 2018-08-30 15:17+0000\n"
+"PO-Revision-Date: 2018-10-19 22:12+0000\n"
 "Last-Translator: İbrahim Ethem Göl <ethem578@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
@@ -721,9 +721,8 @@ msgstr "Yeni Takvim Ekle…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "Takvimi Dışarı Aktar..."
+msgstr "Takvimi Dışarı Aktar…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
