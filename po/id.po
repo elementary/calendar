@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
-"PO-Revision-Date: 2018-10-21 11:50+0000\n"
-"Last-Translator: baguskusumaloka@gmail.com <baguskusumaloka@gmail.com>\n"
+"PO-Revision-Date: 2018-10-21 11:51+0000\n"
+"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
 "calendar/id/>\n"
 "Language: id\n"
@@ -134,7 +134,7 @@ msgid "Remove"
 msgstr "Hapus"
 
 #: src/AgendaView.vala:564 src/AgendaView.vala:574
-#, fuzzy, c-format
+#, c-format
 msgid "%s - %s"
 msgstr "%s - %s"
 
@@ -163,7 +163,7 @@ msgstr "Fokus pada hari tersebut"
 
 #: src/Application.vala:45
 msgid "date"
-msgstr "Tanggal"
+msgstr "tanggal"
 
 #: src/Application.vala:219
 msgid "Calendar"
@@ -309,7 +309,6 @@ msgid "0 minutes"
 msgstr "0 menit"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute"
 msgstr "1 menit"
 
@@ -646,13 +645,12 @@ msgid "Sun"
 msgstr "Min"
 
 #: src/Grid/EventButton.vala:70
-#, fuzzy
 msgid "Remove Event"
-msgstr "Hapus Acara"
+msgstr "Hapus Kegiatan"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Hapus Kejadian"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
@@ -716,9 +714,8 @@ msgstr "Tambah Kalender Baru…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "Ekspor Kalender..."
+msgstr "Ekspor Kalender…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
