@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
 "PO-Revision-Date: 2018-10-21 11:50+0000\n"
-"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
+"Last-Translator: baguskusumaloka@gmail.com <baguskusumaloka@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
 "calendar/id/>\n"
 "Language: id\n"
@@ -105,27 +105,23 @@ msgstr "Sepanjang hari"
 
 #: src/AgendaView.vala:296 src/AgendaView.vala:310
 msgid "Tomorrow"
-msgstr ""
+msgstr "Besok"
 
 #: src/AgendaView.vala:298 src/AgendaView.vala:312
-#, fuzzy
 msgid "This Week"
-msgstr "Minggu"
+msgstr "Pekan Ini"
 
 #: src/AgendaView.vala:300 src/AgendaView.vala:314
-#, fuzzy
 msgid "Next Week"
-msgstr "Minggu"
+msgstr "Pekan Depan"
 
 #: src/AgendaView.vala:302 src/AgendaView.vala:316
-#, fuzzy
 msgid "This Month"
-msgstr "Bulan"
+msgstr "Bulan Ini"
 
 #: src/AgendaView.vala:304 src/AgendaView.vala:318
-#, fuzzy
 msgid "Next Month"
-msgstr "Bulan"
+msgstr "Bulan Depan"
 
 #: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
@@ -167,7 +163,7 @@ msgstr "Fokus pada hari tersebut"
 
 #: src/Application.vala:45
 msgid "date"
-msgstr ""
+msgstr "Tanggal"
 
 #: src/Application.vala:219
 msgid "Calendar"
