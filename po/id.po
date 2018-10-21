@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
 "PO-Revision-Date: 2018-10-21 11:47+0000\n"
-"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
+"Last-Translator: baguskusumaloka@gmail.com <baguskusumaloka@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
 "calendar/id/>\n"
 "Language: id\n"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: src/AgendaView.vala:138
 msgid "Upcoming Events"
-msgstr ""
+msgstr "Peristiwa Mendatang"
 
 #: src/AgendaView.vala:226
 msgid "During the day"
