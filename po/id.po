@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
-"PO-Revision-Date: 2018-02-28 00:07+0000\n"
-"Last-Translator: vicky fatrian <vickyfatrian@gmail.com>\n"
+"PO-Revision-Date: 2018-10-21 11:46+0000\n"
+"Last-Translator: baguskusumaloka@gmail.com <baguskusumaloka@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
 "calendar/id/>\n"
 "Language: id\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
@@ -52,9 +52,8 @@ msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
 #: daemon/Daemon.vala:21
-#, fuzzy
 msgid "Print debug information"
-msgstr "Informasi Umum"
+msgstr "Cetak informasi Debug"
 
 #: daemon/Daemon.vala:23 src/Application.vala:46
 msgid "Print version info and exit"
