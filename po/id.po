@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
-"PO-Revision-Date: 2018-10-21 11:47+0000\n"
-"Last-Translator: baguskusumaloka@gmail.com <baguskusumaloka@gmail.com>\n"
+"PO-Revision-Date: 2018-10-21 11:50+0000\n"
+"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
 "calendar/id/>\n"
 "Language: id\n"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: src/AgendaView.vala:138
 msgid "Upcoming Events"
-msgstr "Peristiwa Mendatang"
+msgstr "Kegiatan Mendatang"
 
 #: src/AgendaView.vala:226
 msgid "During the day"
@@ -140,7 +140,7 @@ msgstr "Hapus"
 #: src/AgendaView.vala:564 src/AgendaView.vala:574
 #, fuzzy, c-format
 msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s - %s"
 
 #: src/AgendaView.vala:566
 #, c-format
@@ -150,21 +150,20 @@ msgstr "%s, %s - %s, %s"
 #: src/AgendaView.vala:578
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/AgendaView.vala:580
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s - %s"
 
 #: src/Application.vala:44
-#, fuzzy
 msgid "Create an event"
-msgstr "Buat acara baru"
+msgstr "Buat sebuah kegiatan"
 
 #: src/Application.vala:45
 msgid "Focus the given day"
-msgstr ""
+msgstr "Fokus pada hari tersebut"
 
 #: src/Application.vala:45
 msgid "date"
