@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
 "PO-Revision-Date: 2018-10-21 11:46+0000\n"
-"Last-Translator: baguskusumaloka@gmail.com <baguskusumaloka@gmail.com>\n"
+"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
 "calendar/id/>\n"
 "Language: id\n"
@@ -53,7 +53,7 @@ msgstr "%A, %b %d"
 
 #: daemon/Daemon.vala:21
 msgid "Print debug information"
-msgstr "Cetak informasi Debug"
+msgstr "Cetak informasi debug"
 
 #: daemon/Daemon.vala:23 src/Application.vala:46
 msgid "Print version info and exit"
