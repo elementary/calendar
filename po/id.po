@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
-"PO-Revision-Date: 2018-02-28 00:07+0000\n"
-"Last-Translator: vicky fatrian <vickyfatrian@gmail.com>\n"
+"PO-Revision-Date: 2018-10-21 11:51+0000\n"
+"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
 "calendar/id/>\n"
 "Language: id\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
@@ -52,13 +52,12 @@ msgid "%A, %b %d"
 msgstr "%A, %b %d"
 
 #: daemon/Daemon.vala:21
-#, fuzzy
 msgid "Print debug information"
-msgstr "Informasi Umum"
+msgstr "Cetak informasi debug"
 
 #: daemon/Daemon.vala:23 src/Application.vala:46
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Cetak informasi versi dan keluar"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -94,7 +93,7 @@ msgstr ""
 
 #: src/AgendaView.vala:138
 msgid "Upcoming Events"
-msgstr ""
+msgstr "Kegiatan Mendatang"
 
 #: src/AgendaView.vala:226
 msgid "During the day"
@@ -106,27 +105,23 @@ msgstr "Sepanjang hari"
 
 #: src/AgendaView.vala:296 src/AgendaView.vala:310
 msgid "Tomorrow"
-msgstr ""
+msgstr "Besok"
 
 #: src/AgendaView.vala:298 src/AgendaView.vala:312
-#, fuzzy
 msgid "This Week"
-msgstr "Minggu"
+msgstr "Pekan Ini"
 
 #: src/AgendaView.vala:300 src/AgendaView.vala:314
-#, fuzzy
 msgid "Next Week"
-msgstr "Minggu"
+msgstr "Pekan Depan"
 
 #: src/AgendaView.vala:302 src/AgendaView.vala:316
-#, fuzzy
 msgid "This Month"
-msgstr "Bulan"
+msgstr "Bulan Ini"
 
 #: src/AgendaView.vala:304 src/AgendaView.vala:318
-#, fuzzy
 msgid "Next Month"
-msgstr "Bulan"
+msgstr "Bulan Depan"
 
 #: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
 #: src/SourceDialog/SourceItem.vala:94
@@ -139,9 +134,9 @@ msgid "Remove"
 msgstr "Hapus"
 
 #: src/AgendaView.vala:564 src/AgendaView.vala:574
-#, fuzzy, c-format
+#, c-format
 msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s - %s"
 
 #: src/AgendaView.vala:566
 #, c-format
@@ -151,25 +146,24 @@ msgstr "%s, %s - %s, %s"
 #: src/AgendaView.vala:578
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/AgendaView.vala:580
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s - %s"
 
 #: src/Application.vala:44
-#, fuzzy
 msgid "Create an event"
-msgstr "Buat acara baru"
+msgstr "Buat sebuah kegiatan"
 
 #: src/Application.vala:45
 msgid "Focus the given day"
-msgstr ""
+msgstr "Fokus pada hari tersebut"
 
 #: src/Application.vala:45
 msgid "date"
-msgstr ""
+msgstr "tanggal"
 
 #: src/Application.vala:219
 msgid "Calendar"
@@ -315,7 +309,6 @@ msgid "0 minutes"
 msgstr "0 menit"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute"
 msgstr "1 menit"
 
@@ -652,13 +645,12 @@ msgid "Sun"
 msgstr "Min"
 
 #: src/Grid/EventButton.vala:70
-#, fuzzy
 msgid "Remove Event"
-msgstr "Hapus Acara"
+msgstr "Hapus Kegiatan"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Hapus Kejadian"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
@@ -722,9 +714,8 @@ msgstr "Tambah Kalender Baru…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "Ekspor Kalender..."
+msgstr "Ekspor Kalender…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"

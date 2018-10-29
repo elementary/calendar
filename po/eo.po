@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-16 17:02+0900\n"
-"PO-Revision-Date: 2018-01-04 00:13+0000\n"
-"Last-Translator: Erin Heart <erin0heart@protonmail.ch>\n"
+"PO-Revision-Date: 2018-10-22 00:02+0000\n"
+"Last-Translator: Jesse ALTER <jesse@jessealter.com>\n"
 "Language-Team: Esperanto <https://weblate.elementary.io/projects/calendar/"
 "calendar/eo/>\n"
 "Language: eo\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
@@ -26,7 +26,7 @@ msgstr "En ĉi tiu komputilo"
 
 #: core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr ""
+msgstr "Uzanto:"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "user.name"
@@ -155,7 +155,6 @@ msgid "%s, %s - %s"
 msgstr ""
 
 #: src/Application.vala:44
-#, fuzzy
 msgid "Create an event"
 msgstr "Krei novan eventon"
 
@@ -313,9 +312,8 @@ msgid "0 minutes"
 msgstr "0 minutoj"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute"
-msgstr "1 minutoj"
+msgstr "1 minuto"
 
 #: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes"
@@ -654,9 +652,8 @@ msgid "Sun"
 msgstr ""
 
 #: src/Grid/EventButton.vala:70
-#, fuzzy
 msgid "Remove Event"
-msgstr "Krei eventon"
+msgstr "Forigi eventon"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
@@ -724,9 +721,8 @@ msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "Eksporti kalendaron..."
+msgstr "Eksporti kalendaron…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
