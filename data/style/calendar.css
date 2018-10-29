@@ -60,11 +60,11 @@
 }
 
 #today {
-	background-color: mix(@cell_color, @colorAccent, 0.15); /* today date has nice shade of blue */
+	background-color: mix(@cell_color, @colorAccent, 0.15);
 }
 
 #today:selected {
-	background-color: mix(@cell_color, @colorAccent, 0.35); /* today date has nice shade of blue */
+	background-color: mix(@cell_color, @colorAccent, 0.35);
 }
 
 	.cell > #date {
