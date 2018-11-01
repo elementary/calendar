@@ -28,8 +28,11 @@ namespace Maya {
 
     public class Application : Gtk.Application {
         public MainWindow window;
-        private View.CalendarView calview;
-        private View.AgendaView sidebar;
+        public static GLib.Settings saved_state;
+
+        static construct {
+            saved_state = new GLib.Settings ("io.elementary.calendar.savedstate");
+        }
 
         construct {
             flags |= ApplicationFlags.HANDLES_OPEN;
@@ -74,7 +77,7 @@ namespace Maya {
             window.show_all ();
 
             if (Option.ADD_EVENT) {
-                on_tb_add_clicked (calview.selected_date);
+                window.on_tb_add_clicked (window.calview.selected_date);
             }
 
             Gtk.main ();
@@ -115,7 +118,6 @@ namespace Maya {
                 window.maximize ();
             }
 
-            window.delete_event.connect (on_window_delete_event);
             window.destroy.connect (on_quit);
 
             var quit_action = new SimpleAction ("quit", null);
@@ -127,91 +129,11 @@ namespace Maya {
 
             add_action (quit_action);
             set_accels_for_action("app.quit", new string[] { "<Control>q" });
-
-            var toolbar = new View.HeaderBar ();
-            toolbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.selected_date));
-            toolbar.on_menu_today_toggled.connect (on_menu_today_toggled);
-            window.set_titlebar (toolbar);
-
-            sidebar = new View.AgendaView ();
-            // Don't automatically display all the widgets on the sidebar
-            sidebar.no_show_all = true;
-            sidebar.show ();
-            sidebar.event_removed.connect (on_remove);
-            sidebar.event_modified.connect (on_modified);
-            sidebar.set_size_request(160,0);
-
-            calview = new View.CalendarView ();
-            calview.vexpand = true;
-            calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
-            calview.edition_request.connect (on_modified);
-            calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
-
-            window.hpaned.pack1 (calview, true, false);
-            window.hpaned.pack2 (sidebar, true, false);
-            window.hpaned.position = saved_state.hpaned_position;
-
-            add_window (window);
-        }
-
-        /**
-         * Called when the remove button is selected.
-         */
-        void on_remove (E.CalComponent comp) {
-            Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, E.CalObjModType.THIS);
-        }
-
-        /**
-         * Called when the edit button is selected.
-         */
-        void on_modified (E.CalComponent comp) {
-            var dialog = new Maya.View.EventDialog (comp, null);
-            dialog.transient_for = window;
-            dialog.present ();
         }
 
         void on_quit () {
             Model.CalendarModel.get_default ().delete_trashed_calendars ();
             Gtk.main_quit ();
-        }
-
-        void update_saved_state () {
-            debug("Updating saved state");
-
-            // Save window state
-            var saved_state = Settings.SavedState.get_default ();
-            if ((window.get_window ().get_state () & Settings.WindowState.MAXIMIZED) != 0) {
-                saved_state.window_state = Settings.WindowState.MAXIMIZED;
-            } else {
-                saved_state.window_state = Settings.WindowState.NORMAL;
-            }
-
-            // Save window size
-            if (saved_state.window_state == Settings.WindowState.NORMAL) {
-                int width, height;
-                window.get_size (out width, out height);
-                saved_state.window_width = width;
-                saved_state.window_height = height;
-            }
-
-            saved_state.hpaned_position = window.hpaned.position;
-        }
-
-        //--- SIGNAL HANDLERS ---//
-
-        bool on_window_delete_event (Gdk.EventAny event) {
-            update_saved_state ();
-            return false;
-        }
-
-        void on_tb_add_clicked (DateTime dt) {
-            var dialog = new Maya.View.EventDialog (null, dt);
-            dialog.transient_for = window;
-            dialog.show_all ();
-        }
-
-        void on_menu_today_toggled () {
-            calview.today ();
         }
     }
 
