@@ -31,7 +31,6 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     public SourceSelector () {
         calendar_box = new Gtk.ListBox ();
         calendar_box.selection_mode = Gtk.SelectionMode.NONE;
-        calendar_box.margin_start = calendar_box.margin_end = 6;
         calendar_box.set_header_func (header_update_func);
         calendar_box.set_sort_func ((child1, child2) => {
             var comparison = ((SourceItem)child1).location.collate (((SourceItem)child2).location);
