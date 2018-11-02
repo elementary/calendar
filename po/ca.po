@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 17:02+0900\n"
+"POT-Creation-Date: 2018-11-02 10:47-0700\n"
 "PO-Revision-Date: 2018-10-16 13:35+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/calendar/"
@@ -56,7 +56,7 @@ msgstr "%A, %-d de %b"
 msgid "Print debug information"
 msgstr "Imprimeix la informació de depuració"
 
-#: daemon/Daemon.vala:23 src/Application.vala:46
+#: daemon/Daemon.vala:23 src/Application.vala:49
 msgid "Print version info and exit"
 msgstr "Imprimeix la informació de la versió i surt"
 
@@ -154,19 +154,19 @@ msgstr "%s"
 msgid "%s, %s - %s"
 msgstr "%s, %s - %s"
 
-#: src/Application.vala:44
+#: src/Application.vala:47
 msgid "Create an event"
 msgstr "Crea un esdeveniment"
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "Focus the given day"
 msgstr "Focalitza el dia"
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:219
+#: src/Application.vala:141
 msgid "Calendar"
 msgstr "Calendari"
 
