@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 17:02+0900\n"
+"POT-Creation-Date: 2018-11-02 10:47-0700\n"
 "PO-Revision-Date: 2018-08-20 00:06+0000\n"
 "Last-Translator: Shukrullo <shukrullo@umail.uz>\n"
 "Language-Team: Uzbek <https://weblate.elementary.io/projects/calendar/"
@@ -54,7 +54,7 @@ msgstr "%A, %b %d"
 msgid "Print debug information"
 msgstr "Tekshirish ma'lumotlarni chop etish"
 
-#: daemon/Daemon.vala:23 src/Application.vala:46
+#: daemon/Daemon.vala:23 src/Application.vala:49
 msgid "Print version info and exit"
 msgstr "Versiya haqida ma'lumotni chop etish va chiqish"
 
@@ -153,19 +153,19 @@ msgstr ""
 msgid "%s, %s - %s"
 msgstr ""
 
-#: src/Application.vala:44
+#: src/Application.vala:47
 msgid "Create an event"
 msgstr ""
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:219
+#: src/Application.vala:141
 msgid "Calendar"
 msgstr ""
 
