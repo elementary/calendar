@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 17:02+0900\n"
+"POT-Creation-Date: 2018-11-02 10:47-0700\n"
 "PO-Revision-Date: 2018-10-30 00:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/calendar/"
@@ -56,7 +56,7 @@ msgstr "%b月%d日 %A"
 msgid "Print debug information"
 msgstr "デバッグ情報を表示します"
 
-#: daemon/Daemon.vala:23 src/Application.vala:46
+#: daemon/Daemon.vala:23 src/Application.vala:49
 msgid "Print version info and exit"
 msgstr "バージョン情報を表示して終了します"
 
@@ -152,19 +152,19 @@ msgstr "%s"
 msgid "%s, %s - %s"
 msgstr "%s、%s - %s"
 
-#: src/Application.vala:44
+#: src/Application.vala:47
 msgid "Create an event"
 msgstr "予定を作成します"
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "Focus the given day"
 msgstr "指定の日に移動します"
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "date"
 msgstr "日付"
 
-#: src/Application.vala:219
+#: src/Application.vala:141
 msgid "Calendar"
 msgstr "カレンダー"
 
