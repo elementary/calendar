@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 17:02+0900\n"
-"PO-Revision-Date: 2018-10-24 11:37+0000\n"
-"Last-Translator: Yuki Okushi <huyuumi.dev@gmail.com>\n"
+"POT-Creation-Date: 2018-11-02 10:47-0700\n"
+"PO-Revision-Date: 2018-10-30 00:04+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
 "Language: ja\n"
@@ -56,7 +56,7 @@ msgstr "%b月%d日 %A"
 msgid "Print debug information"
 msgstr "デバッグ情報を表示します"
 
-#: daemon/Daemon.vala:23 src/Application.vala:46
+#: daemon/Daemon.vala:23 src/Application.vala:49
 msgid "Print version info and exit"
 msgstr "バージョン情報を表示して終了します"
 
@@ -78,7 +78,7 @@ msgstr "URL:"
 
 #: plugins/CalDAV/CalDAVBackend.vala:95
 msgid "Use a secure connection"
-msgstr "セキュアな接続の利用"
+msgstr "安全な接続を使用"
 
 #: plugins/CalDAV/CalDAVBackend.vala:123
 msgid "Server handles meeting invitations"
@@ -152,19 +152,19 @@ msgstr "%s"
 msgid "%s, %s - %s"
 msgstr "%s、%s - %s"
 
-#: src/Application.vala:44
+#: src/Application.vala:47
 msgid "Create an event"
 msgstr "予定を作成します"
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "Focus the given day"
 msgstr "指定の日に移動します"
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "date"
 msgstr "日付"
 
-#: src/Application.vala:219
+#: src/Application.vala:141
 msgid "Calendar"
 msgstr "カレンダー"
 
@@ -269,7 +269,7 @@ msgstr "タイトル:"
 
 #: src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
-msgstr "予定のタイトル"
+msgstr "予定の名前"
 
 #: src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
@@ -305,67 +305,67 @@ msgstr "リマインダーを追加"
 
 #: src/EventEdition/ReminderPanel.vala:172
 msgid "0 minutes"
-msgstr "0分"
+msgstr "0 分"
 
 #: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute"
-msgstr "1分"
+msgstr "1 分"
 
 #: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes"
-msgstr "5分"
+msgstr "5 分"
 
 #: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes"
-msgstr "10分"
+msgstr "10 分"
 
 #: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes"
-msgstr "15分"
+msgstr "15 分"
 
 #: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes"
-msgstr "20分"
+msgstr "20 分"
 
 #: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes"
-msgstr "25分"
+msgstr "25 分"
 
 #: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes"
-msgstr "30分"
+msgstr "30 分"
 
 #: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes"
-msgstr "45分"
+msgstr "45 分"
 
 #: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour"
-msgstr "1時間"
+msgstr "1 時間"
 
 #: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours"
-msgstr "2時間"
+msgstr "2 時間"
 
 #: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours"
-msgstr "3時間"
+msgstr "3 時間"
 
 #: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours"
-msgstr "12時間"
+msgstr "12 時間"
 
 #: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours"
-msgstr "24時間"
+msgstr "24 時間"
 
 #: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days"
-msgstr "2日"
+msgstr "2 日"
 
 #: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week"
-msgstr "1週間"
+msgstr "1 週間"
 
 #: src/EventEdition/ReminderPanel.vala:195
 msgid "Notification"
@@ -408,7 +408,7 @@ msgstr[0] "週"
 #: src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] "ヶ月"
+msgstr[0] "か月"
 
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
@@ -505,115 +505,115 @@ msgstr "毎月最初の土曜日"
 
 #: src/EventEdition/RepeatPanel.vala:408
 msgid "Every second Sunday"
-msgstr "毎月第2日曜日"
+msgstr "毎月第 2 日曜日"
 
 #: src/EventEdition/RepeatPanel.vala:411
 msgid "Every second Monday"
-msgstr "毎月第2月曜日"
+msgstr "毎月第 2 月曜日"
 
 #: src/EventEdition/RepeatPanel.vala:414
 msgid "Every second Tuesday"
-msgstr "毎月第2火曜日"
+msgstr "毎月第 2 火曜日"
 
 #: src/EventEdition/RepeatPanel.vala:417
 msgid "Every second Wednesday"
-msgstr "毎月第2水曜日"
+msgstr "毎月第 2 水曜日"
 
 #: src/EventEdition/RepeatPanel.vala:420
 msgid "Every second Thursday"
-msgstr "毎月第2木曜日"
+msgstr "毎月第 2 木曜日"
 
 #: src/EventEdition/RepeatPanel.vala:423
 msgid "Every second Friday"
-msgstr "毎月第2金曜日"
+msgstr "毎月第 2 金曜日"
 
 #: src/EventEdition/RepeatPanel.vala:426
 msgid "Every second Saturday"
-msgstr "毎月第2土曜日"
+msgstr "毎月第 2 土曜日"
 
 #: src/EventEdition/RepeatPanel.vala:433
 msgid "Every third Sunday"
-msgstr "毎月第3日曜日"
+msgstr "毎月第 3 日曜日"
 
 #: src/EventEdition/RepeatPanel.vala:436
 msgid "Every third Monday"
-msgstr "毎月第3月曜日"
+msgstr "毎月第 3 月曜日"
 
 #: src/EventEdition/RepeatPanel.vala:439
 msgid "Every third Tuesday"
-msgstr "毎月第3火曜日"
+msgstr "毎月第 3 火曜日"
 
 #: src/EventEdition/RepeatPanel.vala:442
 msgid "Every third Wednesday"
-msgstr "毎月第3水曜日"
+msgstr "毎月第 3 水曜日"
 
 #: src/EventEdition/RepeatPanel.vala:445
 msgid "Every third Thursday"
-msgstr "毎月第3木曜日"
+msgstr "毎月第 3 木曜日"
 
 #: src/EventEdition/RepeatPanel.vala:448
 msgid "Every third Friday"
-msgstr "毎月第3金曜日"
+msgstr "毎月第 3 金曜日"
 
 #: src/EventEdition/RepeatPanel.vala:451
 msgid "Every third Saturday"
-msgstr "毎月第3土曜日"
+msgstr "毎月第 3 土曜日"
 
 #: src/EventEdition/RepeatPanel.vala:458
 msgid "Every fourth Sunday"
-msgstr "毎月第4日曜日"
+msgstr "毎月第 4 日曜日"
 
 #: src/EventEdition/RepeatPanel.vala:461
 msgid "Every fourth Monday"
-msgstr "毎月第4月曜日"
+msgstr "毎月第 4 月曜日"
 
 #: src/EventEdition/RepeatPanel.vala:464
 msgid "Every fourth Tuesday"
-msgstr "毎月第4火曜日"
+msgstr "毎月第 4 火曜日"
 
 #: src/EventEdition/RepeatPanel.vala:467
 msgid "Every fourth Wednesday"
-msgstr "毎月第4水曜日"
+msgstr "毎月第 4 水曜日"
 
 #: src/EventEdition/RepeatPanel.vala:470
 msgid "Every fourth Thursday"
-msgstr "毎月第4木曜日"
+msgstr "毎月第 4 木曜日"
 
 #: src/EventEdition/RepeatPanel.vala:473
 msgid "Every fourth Friday"
-msgstr "毎月第4金曜日"
+msgstr "毎月第 4 金曜日"
 
 #: src/EventEdition/RepeatPanel.vala:476
 msgid "Every fourth Saturday"
-msgstr "毎月第4土曜日"
+msgstr "毎月第 4 土曜日"
 
 #: src/EventEdition/RepeatPanel.vala:483
 msgid "Every fifth Sunday"
-msgstr "毎月第5日曜日"
+msgstr "毎月第 5 日曜日"
 
 #: src/EventEdition/RepeatPanel.vala:486
 msgid "Every fifth Monday"
-msgstr "毎月第5月曜日"
+msgstr "毎月第 5 月曜日"
 
 #: src/EventEdition/RepeatPanel.vala:489
 msgid "Every fifth Tuesday"
-msgstr "毎月第5火曜日"
+msgstr "毎月第 5 火曜日"
 
 #: src/EventEdition/RepeatPanel.vala:492
 msgid "Every fifth Wednesday"
-msgstr "毎月第5水曜日"
+msgstr "毎月第 5 水曜日"
 
 #: src/EventEdition/RepeatPanel.vala:495
 msgid "Every fifth Thursday"
-msgstr "毎月第5木曜日"
+msgstr "毎月第 5 木曜日"
 
 #: src/EventEdition/RepeatPanel.vala:498
 msgid "Every fifth Friday"
-msgstr "毎月第5金曜日"
+msgstr "毎月第 5 金曜日"
 
 #: src/EventEdition/RepeatPanel.vala:501
 msgid "Every fifth Saturday"
-msgstr "毎月第5土曜日"
+msgstr "毎月第 5 土曜日"
 
 #: src/EventEdition/RepeatPanel.vala:511
 msgid "Mon"
@@ -666,7 +666,7 @@ msgstr "あと %u …"
 
 #: src/SourceDialog/SourceDialog.vala:60
 msgid "Create"
-msgstr "新規"
+msgstr "作成"
 
 #. Name
 #: src/SourceDialog/SourceDialog.vala:69
@@ -705,7 +705,7 @@ msgstr "元に戻す"
 #: src/SourceDialog/SourceItem.vala:140
 #, c-format
 msgid "Calendar \"%s\" removed."
-msgstr "カレンダー \"%s\" を削除しました。"
+msgstr "カレンダー \"%s\" が削除されました。"
 
 #: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
@@ -730,7 +730,7 @@ msgstr "今日の日付へ移動"
 
 #: src/Widgets/HeaderBar.vala:48
 msgid "Manage Calendars"
-msgstr "カレンダーの管理"
+msgstr "カレンダーを管理"
 
 #: src/Widgets/HeaderBar.vala:55
 msgid "Export or Share the default Calendar"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 17:02+0900\n"
+"POT-Creation-Date: 2018-11-02 10:47-0700\n"
 "PO-Revision-Date: 2017-01-03 09:18+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: \n"
@@ -51,7 +51,7 @@ msgstr "%b-%d  %A"
 msgid "Print debug information"
 msgstr "ئادەتتىكى ئۇچۇرلار"
 
-#: daemon/Daemon.vala:23 src/Application.vala:46
+#: daemon/Daemon.vala:23 src/Application.vala:49
 msgid "Print version info and exit"
 msgstr ""
 
@@ -153,20 +153,20 @@ msgstr ""
 msgid "%s, %s - %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Application.vala:44
+#: src/Application.vala:47
 #, fuzzy
 msgid "Create an event"
 msgstr "يىڭى پائالىيەت قۇرۇش"
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:219
+#: src/Application.vala:141
 msgid "Calendar"
 msgstr "كالېندار"
 

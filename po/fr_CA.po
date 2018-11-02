@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 17:02+0900\n"
+"POT-Creation-Date: 2018-11-02 10:47-0700\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -56,7 +56,7 @@ msgstr "%A %d %b"
 msgid "Print debug information"
 msgstr "Informations général"
 
-#: daemon/Daemon.vala:23 src/Application.vala:46
+#: daemon/Daemon.vala:23 src/Application.vala:49
 msgid "Print version info and exit"
 msgstr ""
 
@@ -158,20 +158,20 @@ msgstr ""
 msgid "%s, %s - %s"
 msgstr ""
 
-#: src/Application.vala:44
+#: src/Application.vala:47
 #, fuzzy
 msgid "Create an event"
 msgstr "Créer un nouvel évènement"
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:219
+#: src/Application.vala:141
 msgid "Calendar"
 msgstr "Calendrier"
 

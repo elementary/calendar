@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 17:02+0900\n"
+"POT-Creation-Date: 2018-11-02 10:47-0700\n"
 "PO-Revision-Date: 2018-08-13 00:02+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
@@ -57,7 +57,7 @@ msgstr "%b%d日 %A"
 msgid "Print debug information"
 msgstr "一般信息"
 
-#: daemon/Daemon.vala:23 src/Application.vala:46
+#: daemon/Daemon.vala:23 src/Application.vala:49
 msgid "Print version info and exit"
 msgstr "打印版本信息并退出"
 
@@ -157,21 +157,21 @@ msgstr "%s"
 msgid "%s, %s - %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Application.vala:44
+#: src/Application.vala:47
 #, fuzzy
 msgid "Create an event"
 msgstr "创建新活动"
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 #, fuzzy
 msgid "Focus the given day"
 msgstr "转到特定日期"
 
-#: src/Application.vala:45
+#: src/Application.vala:48
 msgid "date"
 msgstr "日期"
 
-#: src/Application.vala:219
+#: src/Application.vala:141
 msgid "Calendar"
 msgstr "日历"
 
