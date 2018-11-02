@@ -107,14 +107,21 @@ namespace Maya {
          * Initializes the graphical window and its components
          */
         void init_gui () {
-            var saved_state = Settings.SavedState.get_default ();
+            int window_x, window_y;
+            var rect = Gtk.Allocation ();
+
+            saved_state.get ("window-position", "(ii)", out window_x, out window_y);
+            saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
 
             window = new MainWindow (this);
             window.title = _(Build.APP_NAME);
-            window.default_width = saved_state.window_width;
-            window.default_height = saved_state.window_height;
+            window.set_allocation (rect);
 
-            if (saved_state.window_state == Settings.WindowState.MAXIMIZED) {
+            if (window_x != -1 ||  window_y != -1) {
+                window.move (window_x, window_y);
+            }
+
+            if (saved_state.get_boolean ("window-maximized")) {
                 window.maximize ();
             }
 

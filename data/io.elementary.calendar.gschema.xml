@@ -1,8 +1,4 @@
 <schemalist>
-    <enum id="io.elementary.calendar.savedstate.window-state">
-        <value nick="Normal" value="0" />
-        <value nick="Maximized" value="1" />
-    </enum>
     <schema path="/io/elementary/calendar/settings/" id="io.elementary.calendar.settings">
         <key name="plugins-disabled" type="as">
           <default>[]</default>
@@ -11,21 +7,21 @@
         </key>
     </schema>
     <schema path="/io/elementary/calendar/saved-state/" id="io.elementary.calendar.savedstate">
-        <key name="window-width" type="i">
-            <default>850</default>
-            <summary>The saved width of the window.</summary>
-            <description>The saved width of the window. Must be greater than 700, or it will not take effect.</description>
-        </key>
-        <key name="window-height" type="i">
-            <default>550</default>
-            <summary>The saved height of the window.</summary>
-            <description>The saved height of the window. Must be greater than 400, or it will not take effect.</description>
-        </key>
-        <key name="window-state" enum="io.elementary.calendar.savedstate.window-state">
-            <default>"Normal"</default>
-            <summary>The saved state of the window.</summary>
-            <description>The saved state of the window.</description>
-        </key>
+      <key name="window-maximized" type="b">
+        <default>false</default>
+        <summary>Whether the window was maximized on last run</summary>
+        <description>Whether the window was maximized on last run</description>
+      </key>
+      <key name="window-position" type="(ii)">
+        <default>(-1, -1)</default>
+        <summary>Window position</summary>
+        <description>Most recent window position (x, y)</description>
+      </key>
+      <key name="window-size" type="(ii)">
+        <default>(1024, 750)</default>
+        <summary>Most recent window size</summary>
+        <description>Most recent window size (width, height)</description>
+      </key>
         <key name="show-weeks" type="b">
             <default>true</default>
             <summary>Whether or not to show weeknumbers.</summary>
