@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:27+0100\n"
-"PO-Revision-Date: 2018-11-03 22:41+0000\n"
+"PO-Revision-Date: 2018-11-03 22:51+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/calendar/"
 "extra/bs/>\n"
@@ -29,25 +29,27 @@ msgstr "Kalendar"
 #: data/io.elementary.calendar.appdata.xml.in:9
 #: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Pregledajte i planirajte termine"
 
 #: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
+"Lagana kalendarska aplikacija za sinhronizaciju i vođenje više kalendara kao "
+"što su Google kalendar, Outlook i CalDAV, sve na jednom mjestu."
 
 #: data/io.elementary.calendar.appdata.xml.in:78
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "office-calendar"
-msgstr ""
+msgstr "office-calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
+msgstr "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
