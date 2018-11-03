@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-02 10:47-0700\n"
-"PO-Revision-Date: 2018-11-03 22:41+0000\n"
+"PO-Revision-Date: 2018-11-03 22:51+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/calendar/"
 "calendar/bs/>\n"
@@ -664,7 +664,7 @@ msgstr "Ukloni događaj"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr "Ukloni ponavljanje"
+msgstr "Ukloni ovo ponavljanje događaja"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
