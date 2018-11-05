@@ -61,7 +61,6 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_settings_maya_settings_get_type@Base 0.3
  maya_settings_maya_settings_set_plugins_disabled@Base 0.3
  maya_settings_saved_state_get_default@Base 0.3
- maya_settings_saved_state_get_hpaned_position@Base 0.3
  maya_settings_saved_state_get_month_page@Base 0.3
  maya_settings_saved_state_get_page@Base 0.3
  maya_settings_saved_state_get_selected@Base 0.3
@@ -71,7 +70,6 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_settings_saved_state_get_window_height@Base 0.3
  maya_settings_saved_state_get_window_state@Base 0.3
  maya_settings_saved_state_get_window_width@Base 0.3
- maya_settings_saved_state_set_hpaned_position@Base 0.3
  maya_settings_saved_state_set_month_page@Base 0.3
  maya_settings_saved_state_set_selected_day@Base 0.3
  maya_settings_saved_state_set_show_weeks@Base 0.3
