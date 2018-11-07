@@ -133,7 +133,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
                 Maya.Application.saved_state.set ("window-position", "(ii)", root_x, root_y);
             }
 
-            return false;
+            return GLib.Source.REMOVE;
         });
 
         return base.configure_event (event);
