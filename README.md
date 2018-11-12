@@ -16,7 +16,7 @@ You'll need the following dependencies:
 * libgee-0.8-dev
 * libgeocode-glib-dev
 * libglib2.0-dev
-* libgranite-dev
+* libgranite-dev >= 5.2.0
 * libgtk-3-dev
 * libical-dev
 * libnotify-dev

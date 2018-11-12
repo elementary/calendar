@@ -22,7 +22,17 @@
 public class Maya.MainWindow : Gtk.ApplicationWindow {
     public View.CalendarView calview;
 
+    public const string ACTION_PREFIX = "win.";
+    public const string ACTION_NEW_EVENT = "action_new_event";
+    public const string ACTION_SHOW_TODAY = "action_show_today";
+
+    private const ActionEntry[] action_entries = {
+        { ACTION_NEW_EVENT, action_new_event },
+        { ACTION_SHOW_TODAY, action_show_today }
+    };
+
     private uint configure_id;
+    private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
     public MainWindow (Gtk.Application application) {
         Object (
@@ -33,7 +43,18 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         );
     }
 
+    static construct {
+        action_accelerators[ACTION_NEW_EVENT] = "<Control>n";
+        action_accelerators[ACTION_SHOW_TODAY] = "<Control>t";
+    }
+
     construct {
+        add_action_entries (action_entries, this);
+
+        foreach (var action in action_accelerators.get_keys ()) {
+            ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
+        }
+
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/calendar");
 
@@ -72,9 +93,6 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         calview.edition_request.connect (on_modified);
         calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
-        headerbar.add_calendar_clicked.connect (() => on_tb_add_clicked (calview.selected_date));
-        headerbar.on_menu_today_toggled.connect (on_menu_today_toggled);
-
         infobar.response.connect ((id) => infobar.hide ());
 
         sidebar.event_removed.connect (on_remove);
@@ -97,7 +115,11 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         dialog.show_all ();
     }
 
-    private void on_menu_today_toggled () {
+    private void action_new_event () {
+        on_tb_add_clicked (calview.selected_date);
+    }
+
+    private void action_show_today () {
         calview.today ();
     }
 
