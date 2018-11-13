@@ -52,9 +52,6 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         label = source.dup_display_name ();
         location = Maya.Util.get_source_location (source);
 
-        calendar_color_label = new Gtk.Label ("  ");
-        Util.style_calendar_color (calendar_color_label, cal.dup_color (), true);
-
         visible_checkbutton = new Gtk.CheckButton ();
         visible_checkbutton.active = cal.selected;
         visible_checkbutton.toggled.connect (() => {
@@ -72,6 +69,8 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
                 critical (error.message);
             }
         });
+
+        style_calendar_color (cal.dup_color ());
 
         delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
         delete_button.tooltip_text = source.removable ? _("Remove") : _("Not Removable");
@@ -168,13 +167,26 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         source.changed.connect (source_has_changed);
     }
 
+    private void style_calendar_color (string color) {
+        var css_color = "@define-color colorAccent %s;".printf (color);
+
+        var style_provider = new Gtk.CssProvider ();
+
+        try {
+            style_provider.load_from_data (css_color, css_color.length);
+            visible_checkbutton.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        } catch (Error e) {
+            warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
+        }
+    }
+
     public void source_has_changed () {
         calendar_name_label.label = source.dup_display_name ();
         message_label.label = _("\"%s\" removed").printf (source.display_name);
 
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
-        Util.style_calendar_color (calendar_color_label, cal.dup_color (), true);
+        style_calendar_color (cal.dup_color ());
 
         visible_checkbutton.active = cal.selected;
     }
