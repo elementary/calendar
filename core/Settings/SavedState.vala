@@ -16,11 +16,6 @@
 //
 
 namespace Maya.Settings {
-    public enum WindowState {
-        NORMAL = 0,
-        MAXIMIZED = 1
-    }
-
     public class SavedState : Granite.Services.Settings {
         private static Settings.SavedState? saved_state = null;
 
@@ -30,9 +25,6 @@ namespace Maya.Settings {
             return saved_state;
         }
 
-        public int window_width { get; set; }
-        public int window_height { get; set; }
-        public WindowState window_state { get; set; }
         public bool show_weeks { get; set; }
         public string month_page { get; set; }
         public string selected_day { get; set; }
