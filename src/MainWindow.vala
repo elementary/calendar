@@ -141,20 +141,21 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         configure_id = Timeout.add (100, () => {
             configure_id = 0;
 
-            var saved_state = Settings.SavedState.get_default ();
-
             if (is_maximized) {
-                saved_state.window_state = Settings.WindowState.MAXIMIZED;
+                Maya.Application.saved_state.set_boolean ("window-maximized", true);
             } else {
-                saved_state.window_state = Settings.WindowState.NORMAL;
+                Maya.Application.saved_state.set_boolean ("window-maximized", false);
 
-                int width, height;
-                get_size (out width, out height);
-                saved_state.window_width = width;
-                saved_state.window_height = height;
+                Gdk.Rectangle rect;
+                get_allocation (out rect);
+                Maya.Application.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
+
+                int root_x, root_y;
+                get_position (out root_x, out root_y);
+                Maya.Application.saved_state.set ("window-position", "(ii)", root_x, root_y);
             }
 
-            return false;
+            return GLib.Source.REMOVE;
         });
 
         return base.configure_event (event);
