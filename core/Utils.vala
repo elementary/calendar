@@ -70,7 +70,7 @@ namespace Maya.Util {
     /**
      * Converts the given TimeType to a DateTime.
      */
-    public TimeZone timezone_from_ical (iCal.TimeType date) {
+    private TimeZone timezone_from_ical (iCal.TimeType date) {
         var interval = date.zone.get_utc_offset (date, date.is_daylight);
         var hours = (interval / 3600);
         string hour_string = "-";
@@ -474,7 +474,7 @@ namespace Maya.Util {
         }
     }
 
-    public DateTime get_date_from_ical_day (DateTime date, short day) {
+    private DateTime get_date_from_ical_day (DateTime date, short day) {
         int day_to_add = 0;
         switch (iCal.RecurrenceType.day_day_of_week (day)) {
             case iCal.RecurrenceTypeWeekday.SUNDAY:
@@ -511,128 +511,34 @@ namespace Maya.Util {
         return new DateTime.local (date.get_year (), date.get_month (), 1, 0, 0, 0);
     }
 
-    public DateTime get_end_of_month (owned DateTime? date = null) {
-
-        if (date == null)
-            date = new DateTime.now_local ();
-
-        return (new DateTime.local (date.get_year (), date.get_month (), 1, 0, 0, 0)).add_months (1);
-    }
-
     public DateTime strip_time (DateTime datetime) {
         return datetime.add_full (0, 0, 0, -datetime.get_hour (), -datetime.get_minute (), -datetime.get_second ());
-    }
-
-    /* Create a map interleaving DateRanges dr1 and dr2 */
-    public Gee.Map<DateTime, DateTime> zip_date_ranges (DateRange dr1, DateRange dr2)
-        requires (dr1.days == dr2.days) {
-
-        var map = new Gee.TreeMap<DateTime, DateTime>(
-            (GLib.CompareDataFunc<E.CalComponent>?) DateTime.compare,
-            (Gee.EqualDataFunc<GLib.DateTime>?) datetime_equal_func);
-
-        var i1 = dr1.iterator();
-        var i2 = dr2.iterator();
-
-        while (i1.next() && i2.next()) {
-            map.set (i1.get(), i2.get());
-        }
-
-        return map;
     }
 
     /*
      * Gee Utility Functions
      */
 
-    /* Interleaves the values of two collections into a Map */
-    public void zip<F, G> (Gee.Iterable<F> iterable1, Gee.Iterable<G> iterable2, Gee.Map<F, G> map) {
-
-        var i1 = iterable1.iterator();
-        var i2 = iterable2.iterator();
-
-        while (i1.next() && i2.next())
-            map.set (i1, i2);
-    }
-
-    /* Constructs a new set with keys equal to the values of keymap */
-    public void remap<K, V> (Gee.Map<K, K> keymap, Gee.Map<K, V> valmap, ref Gee.Map<K, V> remap) {
-
-        foreach (K key in valmap) {
-
-            var k = keymap [key];
-            var v = valmap [key];
-
-            remap.set (k, v);
-        }
-    }
-
-    /* Computes hash value for string */
-    public uint string_hash_func (string key) {
-        return key.hash ();
-    }
-
-    /* Computes hash value for DateTime */
-    public uint datetime_hash_func (DateTime key) {
-        return key.hash ();
-    }
-
-    /* Computes hash value for E.CalComponent */
-    public uint calcomponent_hash_func (E.CalComponent key) {
-        unowned iCal.Component comp = key.get_icalcomponent ();
-        string uid = comp.get_uid ();
-        return uid.hash ();
-    }
-
     /* Computes hash value for E.Source */
-    public uint source_hash_func (E.Source key) {
+    private uint source_hash_func (E.Source key) {
         return key.dup_uid (). hash ();
     }
 
-    /* Returns true if 'a' and 'b' are the same string */
-    public bool string_equal_func (string a, string b) {
-        return a == b;
-    }
-
     /* Returns true if 'a' and 'b' are the same GLib.DateTime */
-    public bool datetime_equal_func (DateTime a, DateTime b) {
+    private bool datetime_equal_func (DateTime a, DateTime b) {
         return a.equal (b);
     }
 
     /* Returns true if 'a' and 'b' are the same E.CalComponent */
-    public bool calcomponent_equal_func (E.CalComponent a, E.CalComponent b) {
+    private bool calcomponent_equal_func (E.CalComponent a, E.CalComponent b) {
         unowned iCal.Component comp_a = a.get_icalcomponent ();
         unowned iCal.Component comp_b = b.get_icalcomponent ();
         return comp_a.get_uid () == comp_b.get_uid ();
     }
 
     /* Returns true if 'a' and 'b' are the same E.Source */
-    public bool source_equal_func (E.Source a, E.Source b) {
+    private bool source_equal_func (E.Source a, E.Source b) {
         return a.dup_uid () == b.dup_uid ();
-    }
-
-    /*
-     * TreeModel Utility Functions
-     */
-
-    public Gtk.TreePath? find_treemodel_object<T> (Gtk.TreeModel model, int column, T object, EqualFunc<T>? eqfunc=null) {
-        Gtk.TreePath? path = null;
-        model.foreach ((m, p, iter) => {
-            Value gvalue;
-            model.get_value (iter, column, out gvalue);
-
-            T ovalue = gvalue.get_object ();
-
-            if ((eqfunc == null && ovalue == object)
-                    || (eqfunc != null && eqfunc (ovalue, object))) {
-                path = p;
-                return true;
-            }
-
-            return false;
-        });
-
-        return path;
     }
 
     /*
@@ -658,16 +564,6 @@ namespace Maya.Util {
         widget.margin_bottom = bottom;
         widget.margin_start = start;
         return widget;
-    }
-
-    public Gtk.Alignment set_paddings (Gtk.Widget widget, int top, int right, int bottom, int left) {
-        var alignment = new Gtk.Alignment (0.0f, 0.0f, 1.0f, 1.0f);
-        alignment.top_padding = top;
-        alignment.right_padding = right;
-        alignment.bottom_padding = bottom;
-        alignment.left_padding = left;
-        alignment.add (widget);
-        return alignment;
     }
 
     /*
