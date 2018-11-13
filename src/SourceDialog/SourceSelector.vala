@@ -31,7 +31,6 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     public SourceSelector () {
         calendar_box = new Gtk.ListBox ();
         calendar_box.selection_mode = Gtk.SelectionMode.NONE;
-        calendar_box.margin_start = calendar_box.margin_end = 6;
         calendar_box.set_header_func (header_update_func);
         calendar_box.set_sort_func ((child1, child2) => {
             var comparison = ((SourceItem)child1).location.collate (((SourceItem)child2).location);
@@ -49,9 +48,11 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
         src_map = new GLib.HashTable<string, SourceItem?>(str_hash, str_equal);
 
-        var add_calendar_button = new Gtk.Button.with_label (_("Add New Calendar…"));
-        add_calendar_button.xalign = 0;
-        add_calendar_button.clicked.connect (create_source);
+        var add_calendar_label = new Gtk.Label (_("Add New Calendar…"));
+        add_calendar_label.xalign = 0;
+
+        var add_calendar_button = new Gtk.Button ();
+        add_calendar_button.add (add_calendar_label);
         add_calendar_button.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
 
         main_grid = new Gtk.Grid ();
@@ -69,6 +70,8 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         this.add (stack);
         populate.begin ();
         stack.show_all ();
+
+        add_calendar_button.clicked.connect (create_source);
     }
 
     public async void populate () {
