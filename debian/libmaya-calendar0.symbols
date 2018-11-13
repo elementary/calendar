@@ -67,19 +67,11 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_settings_saved_state_get_selected_day@Base 0.3
  maya_settings_saved_state_get_show_weeks@Base 0.3
  maya_settings_saved_state_get_type@Base 0.3
- maya_settings_saved_state_get_window_height@Base 0.3
- maya_settings_saved_state_get_window_state@Base 0.3
- maya_settings_saved_state_get_window_width@Base 0.3
  maya_settings_saved_state_set_month_page@Base 0.3
  maya_settings_saved_state_set_selected_day@Base 0.3
  maya_settings_saved_state_set_show_weeks@Base 0.3
- maya_settings_saved_state_set_window_height@Base 0.3
- maya_settings_saved_state_set_window_state@Base 0.3
- maya_settings_saved_state_set_window_width@Base 0.3
  maya_settings_weekday_get_type@Base 0.3
- maya_settings_window_state_get_type@Base 0.3
  maya_util_calcomponent_equal_func@Base 0.3
- maya_util_calcomponent_hash_func@Base 0.3
  maya_util_compare_events@Base 0.3
  maya_util_css_construct@Base 0.3
  maya_util_css_get_css_provider@Base 0.3
@@ -105,15 +97,12 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_date_range_to_set@Base 0.3
  maya_util_date_time_to_ical@Base 0.3
  maya_util_datetime_equal_func@Base 0.3
- maya_util_datetime_hash_func@Base 0.3
  maya_util_event_date_ranges@Base 0.3
- maya_util_find_treemodel_object@Base 0.3
  maya_util_generate_day_reccurence@Base 0.3
  maya_util_generate_month_reccurence@Base 0.3
  maya_util_generate_week_reccurence@Base 0.3
  maya_util_generate_year_reccurence@Base 0.3
  maya_util_get_date_from_ical_day@Base 0.3
- maya_util_get_end_of_month@Base 0.4.0.2
  maya_util_get_hexa_color@Base 0.3
  maya_util_get_local_datetimes_from_icalcomponent@Base 0.3.1
  maya_util_get_source_location@Base 0.3.1
@@ -124,15 +113,11 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_is_event_in_range@Base 0.4.0.2
  maya_util_is_multiday_event@Base 0.3
  maya_util_param_spec_css@Base 0.3
- maya_util_remap@Base 0.3
  maya_util_save_temp_selected_calendars@Base 0.3
  maya_util_set_margins@Base 0.3
- maya_util_set_paddings@Base 0.3
  maya_util_show_weeks@Base 0.4.1
  maya_util_source_equal_func@Base 0.3
  maya_util_source_hash_func@Base 0.3
- maya_util_string_equal_func@Base 0.3
- maya_util_string_hash_func@Base 0.3
  maya_util_strip_time@Base 0.3
  maya_util_style_calendar_color@Base 0.4.1
  maya_util_timezone_from_ical@Base 0.3.1
@@ -140,5 +125,3 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_value_get_css@Base 0.3
  maya_util_value_set_css@Base 0.3
  maya_util_value_take_css@Base 0.3
- maya_util_zip@Base 0.3
- maya_util_zip_date_ranges@Base 0.3
