@@ -42,6 +42,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
     private Gtk.RadioButton color_button_purple;
     private Gtk.RadioButton color_button_brown;
     private Gtk.RadioButton color_button_slate;
+    private Gtk.RadioButton color_button_none;
 
     public signal void go_back ();
 
@@ -166,6 +167,8 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         color_button_slate_context.add_class ("slate");
         color_button_slate_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
+        color_button_none = new Gtk.RadioButton.from_widget (color_button_red);
+
         var check_button = new Gtk.CheckButton.with_label (_("Mark as default calendar"));
 
         check_button.toggled.connect (() => {
@@ -271,6 +274,10 @@ public class Maya.View.SourceDialog : Gtk.Grid {
                     break;
                 case "#667885":
                     color_button_slate.active = true;
+                    break;
+                default:
+                    color_button_none.active = true;
+                    hex_color = cal.dup_color ();
                     break;
             }
 
