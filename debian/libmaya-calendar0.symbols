@@ -103,7 +103,6 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_generate_week_reccurence@Base 0.3
  maya_util_generate_year_reccurence@Base 0.3
  maya_util_get_date_from_ical_day@Base 0.3
- maya_util_get_hexa_color@Base 0.3
  maya_util_get_local_datetimes_from_icalcomponent@Base 0.3.1
  maya_util_get_source_location@Base 0.3.1
  maya_util_get_start_of_month@Base 0.3
