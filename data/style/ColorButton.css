@@ -1,0 +1,42 @@
+.color-button radio,
+.color-button radio:checked {
+    border-color: alpha (#000, 0.3);
+    box-shadow:
+        inset 0 1px 0 0 alpha (@inset_dark_color, 0.7),
+        inset 0 0 0 1px alpha (@inset_dark_color, 0.3),
+        0 1px 0 0 alpha (@bg_highlight_color, 0.3);
+    padding: 3px;
+    -gtk-icon-shadow: none;
+}
+
+.color-button.red radio {
+    background: @STRAWBERRY_300;
+}
+
+.color-button.orange radio {
+    background: @ORANGE_300;
+}
+
+.color-button.yellow radio {
+    background: @BANANA_500;
+}
+
+.color-button.green radio {
+    background: @LIME_500;
+}
+
+.color-button.blue radio {
+    background: @BLUEBERRY_500;
+}
+
+.color-button.purple radio {
+    background: @GRAPE_500;
+}
+
+.color-button.brown radio {
+    background: @COCOA_300;
+}
+
+.color-button.slate radio {
+    background: @SLATE_300;
+}

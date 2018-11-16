@@ -623,10 +623,6 @@ namespace Maya.Util {
         }
     }
 
-    public string get_hexa_color (Gdk.RGBA color) {
-        return "#%02X%02X%02X".printf ((uint)(color.red*255), (uint)(color.green*255), (uint)(color.blue*255));
-    }
-
     public const string SHOW_WEEKS_SCHEMA = "io.elementary.desktop.wingpanel.datetime";
 
     public bool show_weeks () {
