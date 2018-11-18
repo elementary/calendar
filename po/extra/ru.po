@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:27+0100\n"
-"PO-Revision-Date: 2018-11-18 19:30+0000\n"
-"Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
+"PO-Revision-Date: 2018-11-18 19:32+0000\n"
+"Last-Translator: Влад Потурай <vpoturay404@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/calendar/"
 "extra/ru/>\n"
 "Language: ru\n"
@@ -50,9 +50,7 @@ msgstr "office-calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-"Календарь;Даты;Дни;События;Maya;Planner;Dates;Days;Events;Calendar;ics;"
-"caldav;evolution;"
+msgstr "Майя;Планировщик;Даты;Дни;События;Календарь;ics;caldav;Прогресс;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
