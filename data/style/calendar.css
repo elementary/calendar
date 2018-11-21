@@ -1,5 +1,6 @@
 /*
 *  Copyright (C) 2011-2012 Maxwell Barvian
+*                2018 elementary, Inc. (https://elementary.io)
 *
 *  This program is free software: you can redistribute it and/or modify
 *  it under the terms of the GNU General Public License as published by
@@ -15,17 +16,13 @@
 *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
-@define-color cell_color mix(@bg_color, rgb(255, 255, 255), 0.5);
-@define-color text_color #333;
-
-/* Header Styles */
-
-
 .header {
-	background-image: -gtk-gradient (linear,
-			left top, left bottom,
-			from(@cell_color), to(mix(@bg_color, rgb(255, 255, 255), 0.8)));
+    background-image:
+        linear-gradient(
+            to bottom,
+            @bg_color,
+            shade(@bg_color, 1.2)
+        );
 }
 
 .daylabel {
@@ -37,48 +34,44 @@
     border-left: none;
 }
 
-/* Cell Styles */
 
 .cell {
-	background-color: @cell_color;
+    background-color: @bg_color;
     border-radius: 0;
     border-top: solid 1px alpha(#000, 0.25);
     border-left: solid 1px alpha(#000, 0.25);
 }
 
 .cell.firstcol {
-	border-left: none;
+    border-left: none;
 }
 
 .other_month {
-    background-color: shade(@cell_color, 0.97);
+    background-color: shade(@bg_color, 0.96);
 }
 
 .cell:selected {
-	background-color: shade(@cell_color, 0.9);
-	color: @text_color;
+    background-color: shade(@bg_color, 0.86);
+    color: @fg_color;
 }
 
 #today {
-	background-color: mix(@cell_color, @selected_bg_color, 0.15); /* today date has nice shade of blue */
+    background-color: mix(@bg_color, @selected_bg_color, 0.25);
 }
 
 #today:selected {
-	background-color: mix(@cell_color, @selected_bg_color, 0.35); /* today date has nice shade of blue */
+    background-color: mix(@bg_color, @selected_bg_color, 0.5);
 }
 
-	.cell > #date {
-		font-size: 8px;
-	}
-
-/* Week Number Styles */
+.cell > #date {
+    font-size: 8px;
+}
 
 .weeks {
-	border-right: solid 1px alpha(#000, 0.25);
+    border-right: solid 1px alpha(#000, 0.25);
 }
 
 .weeklabel {
     border-top: solid 1px alpha(#000, 0.25);
-	padding: 3px;
+    padding: 3px;
 }
-
