@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-02 10:47-0700\n"
-"PO-Revision-Date: 2018-11-24 00:09+0000\n"
+"PO-Revision-Date: 2018-12-02 06:18+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -26,7 +26,7 @@ msgstr "このコンピューター"
 
 #: core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr "ユーザー："
+msgstr "ユーザー:"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "user.name"
@@ -34,7 +34,7 @@ msgstr "user.name"
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr "メール："
+msgstr "メール:"
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
@@ -74,7 +74,7 @@ msgstr "CalDAV"
 
 #: plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr "URL："
+msgstr "URL:"
 
 #: plugins/CalDAV/CalDAVBackend.vala:95
 msgid "Use a secure connection"
@@ -171,13 +171,13 @@ msgstr "カレンダー"
 #: src/ImportDialog.vala:42
 #, c-format
 msgid "Import events from \"%s\" into the following calendar:"
-msgstr "\"%s\" から以下のカレンダーに予定をインポート："
+msgstr "\"%s\" から以下のカレンダーに予定をインポート:"
 
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Import events from %d file into the following calendar:"
 msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "%d 個のファイルから以下のカレンダーに予定をインポート："
+msgstr[0] "%d 個のファイルから以下のカレンダーに予定をインポート:"
 
 #: src/ImportDialog.vala:53
 msgid "Import"
@@ -233,7 +233,7 @@ msgstr "変更を保存"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr "参加者："
+msgstr "参加者:"
 
 #: src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
@@ -253,19 +253,19 @@ msgstr "辞退"
 
 #: src/EventEdition/InfoPanel.vala:78
 msgid "From:"
-msgstr "開始："
+msgstr "開始:"
 
 #: src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
-msgstr "終日："
+msgstr "終日:"
 
 #: src/EventEdition/InfoPanel.vala:89
 msgid "To:"
-msgstr "終了："
+msgstr "終了:"
 
 #: src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
-msgstr "タイトル："
+msgstr "タイトル:"
 
 #: src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
@@ -277,15 +277,15 @@ msgstr "予定を解析するには Enter キーを押してください"
 
 #: src/EventEdition/InfoPanel.vala:134
 msgid "Calendar:"
-msgstr "カレンダー："
+msgstr "カレンダー:"
 
 #: src/EventEdition/InfoPanel.vala:141
 msgid "Comments:"
-msgstr "コメント："
+msgstr "コメント:"
 
 #: src/EventEdition/LocationPanel.vala:50
 msgid "Location:"
-msgstr "場所："
+msgstr "場所:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
@@ -293,7 +293,7 @@ msgstr "場所を入力"
 
 #: src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
-msgstr "リマインダー："
+msgstr "リマインダー:"
 
 #: src/EventEdition/ReminderPanel.vala:37
 msgid "No Reminders"
@@ -373,7 +373,7 @@ msgstr "通知"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
-msgstr "繰り返し："
+msgstr "繰り返し:"
 
 #: src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
@@ -393,7 +393,7 @@ msgstr "毎年"
 
 #: src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr "間隔："
+msgstr "間隔:"
 
 #: src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
@@ -417,7 +417,7 @@ msgstr[0] "年"
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr "終了："
+msgstr "終了:"
 
 #: src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
@@ -437,7 +437,7 @@ msgstr "毎月同じ日"
 
 #: src/EventEdition/RepeatPanel.vala:200
 msgid "Exceptions:"
-msgstr "例外："
+msgstr "例外:"
 
 #: src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
@@ -671,7 +671,7 @@ msgstr "作成"
 #. Name
 #: src/SourceDialog/SourceDialog.vala:69
 msgid "Name:"
-msgstr "名前："
+msgstr "名前:"
 
 #: src/SourceDialog/SourceDialog.vala:72
 msgid "Calendar Name"
@@ -679,11 +679,11 @@ msgstr "カレンダー名"
 
 #: src/SourceDialog/SourceDialog.vala:95
 msgid "Type:"
-msgstr "種類："
+msgstr "種類:"
 
 #: src/SourceDialog/SourceDialog.vala:118
 msgid "Color:"
-msgstr "色："
+msgstr "色:"
 
 #: src/SourceDialog/SourceDialog.vala:123
 msgid "Mark as default calendar"
