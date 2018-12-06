@@ -18,16 +18,19 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.ImportDialog : Gtk.Dialog {
-    File[] files;
-    Widgets.CalendarButton calchooser_button;
+public class Maya.View.ImportDialog : Granite.MessageDialog {
+    private File[] files;
+    private Widgets.CalendarButton calchooser_button;
+
     public ImportDialog (File[] files) {
-        // Dialog properties
-        window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
-        type_hint = Gdk.WindowTypeHint.DIALOG;
+        Object (
+            buttons: Gtk.ButtonsType.CANCEL,
+            image_icon: new ThemedIcon ("document-import"),
+            primary_text: _("Select A Calendar To Import Events Into")
+        );
 
         this.files = files;
-        Gtk.Label import_label;
+
         if (files.length == 1) {
             string name = "";
             var file = files[0];
@@ -39,35 +42,28 @@ public class Maya.View.ImportDialog : Gtk.Dialog {
                 critical (e.message);
             }
 
-            import_label = new Gtk.Label (_("Import events from \"%s\" into the following calendar:").printf (name));
+            secondary_text = _("Import events from \"%s\" into the following calendar:").printf (name);
         } else {
-            import_label = new Gtk.Label (ngettext ("Import events from %d file into the following calendar:", "Import events from %d files into the following calendar:", files.length));
+            secondary_text = ngettext (
+                "Import events from %d file into the following calendar:",
+                "Import events from %d files into the following calendar:",
+                files.length
+            );
         }
 
-        import_label.wrap = true;
-        ((Gtk.Misc) import_label).xalign = 0.0f;
-
         calchooser_button = new Widgets.CalendarButton ();
-        var expander_grid = new Gtk.Grid ();
-        expander_grid.expand = true;
-        var ok_button = new Gtk.Button.with_label (_("Import"));
-        ok_button.clicked.connect (() => import_files ());
-        var cancel_button = new Gtk.Button.with_label (_("Cancel"));
-        cancel_button.clicked.connect (() => destroy ());
-        var grid = new Gtk.Grid ();
-        grid.row_spacing = 6;
-        grid.margin_start = grid.margin_end = 12;
-        grid.column_spacing = 12;
-        grid.attach (import_label, 0, 0, 2, 1);
-        grid.attach (calchooser_button, 0, 1, 2, 1);
-        grid.attach (expander_grid, 0, 2, 2, 1);
-        var button_box = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
-        button_box.spacing = 6;
-        button_box.layout_style = Gtk.ButtonBoxStyle.END;
-        button_box.add (cancel_button);
-        button_box.add (ok_button);
-        grid.attach (button_box, 1, 3, 1, 1);
-        get_content_area ().add (grid);
+
+        custom_bin.add (calchooser_button);
+
+        var ok_button = (Gtk.Button) add_button (_("Import"), Gtk.ResponseType.APPLY);
+        ok_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+        response.connect ((response_id) => {
+            if (response_id == Gtk.ResponseType.APPLY) {
+                import_files ();
+            }
+            destroy ();
+        });
     }
 
     private void import_files () {
@@ -84,7 +80,5 @@ public class Maya.View.ImportDialog : Gtk.Dialog {
                 }
             }
         }
-
-        destroy ();
     }
 }
