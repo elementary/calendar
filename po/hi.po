@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-02 10:47-0700\n"
 "PO-Revision-Date: 2018-12-10 23:55+0000\n"
-"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Last-Translator: Varesh Mishra <vareshmishra@gmail.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/calendar/"
 "calendar/hi/>\n"
 "Language: hi\n"
@@ -34,7 +34,7 @@ msgstr "user.name"
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr ""
+msgstr "ईमेल:"
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
@@ -42,7 +42,7 @@ msgstr ""
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "स्थानीय रूप से एक प्रति रखें"
 
 #: core/Settings/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
@@ -54,15 +54,15 @@ msgstr ""
 
 #: daemon/Daemon.vala:21
 msgid "Print debug information"
-msgstr ""
+msgstr "डीबग जानकारी प्रिंट करें"
 
 #: daemon/Daemon.vala:23 src/Application.vala:49
 msgid "Print version info and exit"
-msgstr ""
+msgstr "संस्करण जानकारी प्रिंट करे  और बाहर निकलें"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr ""
+msgstr "गूगल"
 
 #: plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
