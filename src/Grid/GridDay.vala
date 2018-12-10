@@ -39,10 +39,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
     public bool in_current_month {
         set {
             if (value) {
-                get_style_context ().remove_class ("other_month");
                 get_style_context ().remove_class (Gtk.STYLE_CLASS_DIM_LABEL);
             } else {
-                get_style_context ().add_class ("other_month");
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             }
         }
