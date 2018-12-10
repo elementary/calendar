@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +25,7 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
         Object (
             buttons: Gtk.ButtonsType.CANCEL,
             image_icon: new ThemedIcon ("document-import"),
-            primary_text: _("Select A Calendar To Import Events Into")
+            primary_text: _("Select a Calendar to Import Into")
         );
 
         this.files = files;
@@ -42,11 +41,11 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
                 critical (e.message);
             }
 
-            secondary_text = _("Import events from \"%s\" into the following calendar:").printf (name);
+            secondary_text = _("Events from \"%s\" will be merged with this calendar:").printf (name);
         } else {
             secondary_text = ngettext (
-                "Import events from %d file into the following calendar:",
-                "Import events from %d files into the following calendar:",
+                "Events from %d file will be merged with this calendar:",
+                "Events from %d files will be merged with this calendar:",
                 files.length
             );
         }
