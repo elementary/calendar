@@ -29,13 +29,13 @@ public class Maya.View.GridDay : Gtk.EventBox {
      */
     public signal void on_event_add (DateTime date);
 
-    public DateTime date { get; private set; }
+    public DateTime date { get; construct set; }
+
     // We need to know if it is the first column in order to not draw it's left border
     public bool draw_left_border = true;
-    Gtk.Label label;
-    Gtk.Grid container_grid;
-    VAutoHider event_box;
-    GLib.HashTable<string, EventButton> event_buttons;
+    private Gtk.Grid container_grid;
+    private VAutoHider event_box;
+    private GLib.HashTable<string, EventButton> event_buttons;
 
     public bool in_current_month {
         set {
@@ -52,12 +52,15 @@ public class Maya.View.GridDay : Gtk.EventBox {
     private const int EVENT_MARGIN = 3;
 
     public GridDay (DateTime date) {
-        this.date = date;
+        Object (date: date);
+    }
+
+    construct {
         event_buttons = new GLib.HashTable<string, EventButton> (str_hash, str_equal);
 
-        container_grid = new Gtk.Grid ();
-        label = new Gtk.Label ("");
         event_box = new VAutoHider ();
+        event_box.margin =  EVENT_MARGIN;
+        event_box.margin_top = 0;
         event_box.expand = true;
 
         // EventBox Properties
@@ -65,21 +68,24 @@ public class Maya.View.GridDay : Gtk.EventBox {
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         events |= Gdk.EventMask.KEY_PRESS_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
+
         var style_provider = Util.Css.get_css_provider ();
         get_style_context ().add_provider (style_provider, 600);
         get_style_context ().add_class ("cell");
 
+        var label = new Gtk.Label ("");
         label.halign = Gtk.Align.END;
         label.get_style_context ().add_provider (style_provider, 600);
+        label.margin = EVENT_MARGIN;
+        label.margin_bottom = 0;
         label.name = "date";
 
-        Util.set_margins (label, EVENT_MARGIN, EVENT_MARGIN, 0, EVENT_MARGIN);
-        Util.set_margins (event_box, 0, EVENT_MARGIN, EVENT_MARGIN, EVENT_MARGIN);
+        container_grid = new Gtk.Grid ();
         container_grid.attach (label, 0, 0, 1, 1);
         container_grid.attach (event_box, 0, 1, 1, 1);
+        container_grid.show_all ();
 
         add (container_grid);
-        container_grid.show_all ();
 
         // Signals and handlers
         button_press_event.connect (on_button_press);
@@ -88,6 +94,10 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
         Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
         Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
+
+        this.notify["date"].connect (() => {
+            label.label = date.get_day_of_month ().to_string ();
+        });
     }
 
     public override bool drag_drop (Gdk.DragContext context, int x, int y, uint time_) {
@@ -179,11 +189,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
             button.destroy ();
             return false;
         });
-    }
-
-    public void update_date (DateTime date) {
-        this.date = date;
-        label.label = date.get_day_of_month ().to_string ();
     }
 
     public void set_selected (bool selected) {
