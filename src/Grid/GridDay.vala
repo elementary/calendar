@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
     // We need to know if it is the first column in order to not draw it's left border
     public bool draw_left_border = true;
-    private Gtk.Grid container_grid;
     private VAutoHider event_box;
     private GLib.HashTable<string, EventButton> event_buttons;
 
@@ -80,7 +79,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
         label.margin_bottom = 0;
         label.name = "date";
 
-        container_grid = new Gtk.Grid ();
+        var container_grid = new Gtk.Grid ();
         container_grid.attach (label, 0, 0, 1, 1);
         container_grid.attach (event_box, 0, 1, 1, 1);
         container_grid.show_all ();
