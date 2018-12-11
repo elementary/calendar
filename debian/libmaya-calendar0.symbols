@@ -113,7 +113,6 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_is_multiday_event@Base 0.3
  maya_util_param_spec_css@Base 0.3
  maya_util_save_temp_selected_calendars@Base 0.3
- maya_util_set_margins@Base 0.3
  maya_util_show_weeks@Base 0.4.1
  maya_util_source_equal_func@Base 0.3
  maya_util_source_hash_func@Base 0.3
