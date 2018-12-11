@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 16:43-0800\n"
-"PO-Revision-Date: 2018-10-16 19:48+0000\n"
+"PO-Revision-Date: 2018-12-11 21:18+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/calendar/"
 "calendar/lt/>\n"
@@ -173,20 +173,20 @@ msgstr "Kalendorius"
 
 #: src/ImportDialog.vala:28
 msgid "Select a Calendar to Import Into"
-msgstr ""
+msgstr "Pasirinkite į kurį kalendorių importuoti"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importuoti įvykius iš %d failo į šį kalendorių:"
+msgstr "Įvykiai iš \"%s\" bus sulieti su šiuo kalendoriumi:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Importuoti įvykius iš %d failo į šį kalendorių:"
-msgstr[1] "Importuoti įvykius iš %d failų į šį kalendorių:"
-msgstr[2] "Importuoti įvykius iš %d failų į šį kalendorių:"
+msgstr[0] "Įvykis iš failo %d bus sulieti su šiuo kalendoriumi:"
+msgstr[1] "Įvykiai iš failo %d bus sulieti su šiuo kalendoriumi:"
+msgstr[2] "Įvykiai iš failo %d bus sulieti su šiuo kalendoriumi:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -716,22 +716,21 @@ msgid "Save"
 msgstr "Įrašyti"
 
 #: src/SourceDialog/SourceItem.vala:76
-#, fuzzy
 msgid "Not Removable"
-msgstr "Šalinti"
+msgstr "Nepašalinamas"
 
 #: src/SourceDialog/SourceItem.vala:88
 msgid "Not Editable"
-msgstr ""
+msgstr "Netaisytinas"
 
 #: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Atšaukti"
 
 #: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Kalendorius \"%s\" pašalintas."
+msgstr "\"%s\" pašalintas"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
