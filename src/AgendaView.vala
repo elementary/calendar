@@ -223,12 +223,12 @@ public class Maya.View.AgendaView : Gtk.Grid {
             }
 
             if (row.is_allday != before.is_allday) {
-                row.set_header (header_with_label (_("During the day")));
+                row.set_header (new Granite.HeaderLabel (_("During the day")));
                 return;
             }
         } else {
             if (row.is_allday) {
-                var allday_header = header_with_label (_("All day"));
+                var allday_header = new Granite.HeaderLabel (_("All day"));
                 row.set_header (allday_header);
             }
             return;
@@ -293,44 +293,33 @@ public class Maya.View.AgendaView : Gtk.Grid {
             }
 
             switch (rowType) {
-                case 1: row.set_header (header_with_label (_("Tomorrow")));
+                case 1: row.set_header (new Granite.HeaderLabel (_("Tomorrow")));
                         break;
-                case 2: row.set_header (header_with_label (_("This Week")));
+                case 2: row.set_header (new Granite.HeaderLabel (_("This Week")));
                         break;
-                case 3: row.set_header (header_with_label (_("Next Week")));
+                case 3: row.set_header (new Granite.HeaderLabel (_("Next Week")));
                         break;
-                case 4: row.set_header (header_with_label (_("This Month")));
+                case 4: row.set_header (new Granite.HeaderLabel (_("This Month")));
                         break;
-                case 5: row.set_header (header_with_label (_("Next Month")));
+                case 5: row.set_header (new Granite.HeaderLabel (_("Next Month")));
                         break;
                 default: break;
             }
         } else {
             switch (rowType) {
-                case 1: row.set_header (header_with_label (_("Tomorrow")));
+                case 1: row.set_header (new Granite.HeaderLabel (_("Tomorrow")));
                         break;
-                case 2: row.set_header (header_with_label (_("This Week")));
+                case 2: row.set_header (new Granite.HeaderLabel (_("This Week")));
                         break;
-                case 3: row.set_header (header_with_label (_("Next Week")));
+                case 3: row.set_header (new Granite.HeaderLabel (_("Next Week")));
                         break;
-                case 4: row.set_header (header_with_label (_("This Month")));
+                case 4: row.set_header (new Granite.HeaderLabel (_("This Month")));
                         break;
-                case 5: row.set_header (header_with_label (_("Next Month")));
+                case 5: row.set_header (new Granite.HeaderLabel (_("Next Month")));
                         break;
                 default: break;
             }
         }
-    }
-
-    private Gtk.Widget header_with_label (string text) {
-        var label = new Gtk.Label (text);
-        label.get_style_context ().add_class ("h4");
-        label.hexpand = true;
-        label.margin_start = 6;
-        label.margin_top = 6;
-        label.use_markup = true;
-        label.set_alignment (0, 0.5f);
-        return label;
     }
 
     /**
