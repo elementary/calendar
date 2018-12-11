@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 10:47-0700\n"
+"POT-Creation-Date: 2018-12-10 16:43-0800\n"
 "PO-Revision-Date: 2015-10-07 02:30+0000\n"
 "Last-Translator: qezwan <Unknown>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
 msgid "On this computer"
 msgstr "لە سەر ئەم کۆمپیوترە"
 
@@ -126,12 +126,12 @@ msgid "Next Month"
 msgstr "مانگەکان"
 
 #: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:94
+#: src/SourceDialog/SourceItem.vala:88
 msgid "Edit…"
 msgstr "دەستکاری..."
 
 #: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:80
+#: src/SourceDialog/SourceItem.vala:76
 msgid "Remove"
 msgstr "سڕکیینەوە"
 
@@ -168,31 +168,30 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:141
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "ڕۆژمێر"
 
-#: src/ImportDialog.vala:42
-#, c-format
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "وارد نمودن رویداد ها از \"%s\" به تقویم پیش رو:"
+#: src/ImportDialog.vala:28
+#, fuzzy
+msgid "Select a Calendar to Import Into"
+msgstr "انتخاب تقویم برای نمایش"
 
 #: src/ImportDialog.vala:44
-#, c-format
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
+#, fuzzy, c-format
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "هێنانی ڕووداوەکان لە بوخچە %d بۆ ئەم ڕۆژمێرە:"
+
+#: src/ImportDialog.vala:47
+#, fuzzy, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "هێنانی ڕووداوەکان لە بوخچە %d بۆ ئەم ڕۆژمێرە:"
 msgstr[1] "هێنانی ڕووداوەکان لە بوخچە %d بۆ ئەم ڕۆژمێرە:"
 
-#: src/ImportDialog.vala:53
+#: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "هاوردە"
-
-#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
-#: src/SourceDialog/SourceDialog.vala:58
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Cancel"
-msgstr "هەڵوەشاندنەوە"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -236,6 +235,11 @@ msgstr "دروستکردنی ڕووداو"
 #: src/EventEdition/EventDialog.vala:149
 msgid "Save Changes"
 msgstr "پاشکەوتی گۆڕانکاری"
+
+#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "هەڵوەشاندنەوە"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -676,50 +680,58 @@ msgstr "نیشاندانی ژمارەی هەفتە"
 msgid "%u more…"
 msgstr "%u زۆرتر ..."
 
-#: src/SourceDialog/SourceDialog.vala:60
+#: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
 msgstr "دروستکردن"
 
-#. Name
-#: src/SourceDialog/SourceDialog.vala:69
+#: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
 msgstr "ناو:"
 
-#: src/SourceDialog/SourceDialog.vala:72
+#: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "ناوی ڕۆژمێر"
 
-#: src/SourceDialog/SourceDialog.vala:95
+#: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
 msgstr "جۆر :"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
 msgstr "ڕەنگ:"
 
-#: src/SourceDialog/SourceDialog.vala:123
+#: src/SourceDialog/SourceDialog.vala:172
 msgid "Mark as default calendar"
 msgstr "دیاری کردن بۆ ڕۆژمێری فەرمی"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:243
 msgid "Create Calendar"
 msgstr "دروستکردنی ڕۆژمێر"
 
-#: src/SourceDialog/SourceDialog.vala:162
+#: src/SourceDialog/SourceDialog.vala:246
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "پاشکەوت"
 
-#: src/SourceDialog/SourceItem.vala:125
+#: src/SourceDialog/SourceItem.vala:76
+#, fuzzy
+msgid "Not Removable"
+msgstr "سڕکیینەوە"
+
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Not Editable"
+msgstr ""
+
+#: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "گەڕانەوە"
 
-#: src/SourceDialog/SourceItem.vala:140
+#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
 #, fuzzy, c-format
-msgid "Calendar \"%s\" removed."
+msgid "\"%s\" removed"
 msgstr "ڕۆژمێری \"%S\" سڕاوەتەوە."
 
-#: src/SourceDialog/SourceSelector.vala:52
+#: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "زیاد کردنی ڕۆژمێری نوێ ...."
 
@@ -733,21 +745,24 @@ msgstr "هەناردن لە ڕۆژمێر"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Widgets/HeaderBar.vala:38
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "دروستکردنی روداوێک"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "ڕۆیستن بۆ ڕیکەوتی ئەمڕۆ"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "بەڕێوەبردنی ڕۆژمێرەکان"
 
-#: src/Widgets/HeaderBar.vala:55
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریمان"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "وارد نمودن رویداد ها از \"%s\" به تقویم پیش رو:"
 
 #~ msgid "Email"
 #~ msgstr "ئیمەیل"
@@ -814,9 +829,6 @@ msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریما�
 
 #~ msgid "Delete the selected event"
 #~ msgstr "حذف رویداد انتخاب شده"
-
-#~ msgid "Select calendars to display"
-#~ msgstr "انتخاب تقویم برای نمایش"
 
 #~ msgid "Today"
 #~ msgstr "امروز"

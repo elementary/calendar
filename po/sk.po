@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 10:47-0700\n"
+"POT-Creation-Date: 2018-12-10 16:43-0800\n"
 "PO-Revision-Date: 2016-01-10 13:45+0000\n"
 "Last-Translator: Ľubomír Hlavko <5lubo555@azet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
 msgid "On this computer"
 msgstr "Na tomto počítači"
 
@@ -128,12 +128,12 @@ msgid "Next Month"
 msgstr "Mesiacov"
 
 #: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:94
+#: src/SourceDialog/SourceItem.vala:88
 msgid "Edit…"
 msgstr "Upraviť..."
 
 #: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:80
+#: src/SourceDialog/SourceItem.vala:76
 msgid "Remove"
 msgstr "Odstrániť"
 
@@ -170,32 +170,31 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:141
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "Kalendár"
 
-#: src/ImportDialog.vala:42
-#, c-format
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "Importuj udalosti z \"%s\" do nasledujúceho kalendára:"
+#: src/ImportDialog.vala:28
+#, fuzzy
+msgid "Select a Calendar to Import Into"
+msgstr "Vyberte, ktoré kalendáre sa majú zobraziť"
 
 #: src/ImportDialog.vala:44
-#, c-format
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
+#, fuzzy, c-format
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "Importuj udalosti zo súboru %d do nasledujúceho kalendára:"
+
+#: src/ImportDialog.vala:47
+#, fuzzy, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Importuj udalosti zo súboru %d do nasledujúceho kalendára:"
 msgstr[1] "Importuj udalosti zo súborov %d do nasledujúceho kalendára:"
 msgstr[2] "Importuj udalosti zo súborov %d do nasledujúceho kalendára:"
 
-#: src/ImportDialog.vala:53
+#: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Importovať"
-
-#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
-#: src/SourceDialog/SourceDialog.vala:58
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Cancel"
-msgstr "Zrušiť"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -240,6 +239,11 @@ msgstr "Vytvoriť udalosť"
 #: src/EventEdition/EventDialog.vala:149
 msgid "Save Changes"
 msgstr "Uložiť zmeny"
+
+#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "Zrušiť"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -684,50 +688,58 @@ msgstr "Zobraziť čísla týždňov"
 msgid "%u more…"
 msgstr "%u viac..."
 
-#: src/SourceDialog/SourceDialog.vala:60
+#: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
 msgstr "Vytvoriť"
 
-#. Name
-#: src/SourceDialog/SourceDialog.vala:69
+#: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
 msgstr "Názov:"
 
-#: src/SourceDialog/SourceDialog.vala:72
+#: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "Názov kalendára"
 
-#: src/SourceDialog/SourceDialog.vala:95
+#: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
 msgstr "Typ:"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
 msgstr "Farba:"
 
-#: src/SourceDialog/SourceDialog.vala:123
+#: src/SourceDialog/SourceDialog.vala:172
 msgid "Mark as default calendar"
 msgstr "Označiť ako predvolený kalendár"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:243
 msgid "Create Calendar"
 msgstr "Vytvoriť kalendár"
 
-#: src/SourceDialog/SourceDialog.vala:162
+#: src/SourceDialog/SourceDialog.vala:246
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "Uložiť"
 
-#: src/SourceDialog/SourceItem.vala:125
+#: src/SourceDialog/SourceItem.vala:76
+#, fuzzy
+msgid "Not Removable"
+msgstr "Odstrániť"
+
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Not Editable"
+msgstr ""
+
+#: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Vrátiť späť"
 
-#: src/SourceDialog/SourceItem.vala:140
-#, c-format
-msgid "Calendar \"%s\" removed."
+#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
+#, fuzzy, c-format
+msgid "\"%s\" removed"
 msgstr "Kalendár \"%s\" odstránený."
 
-#: src/SourceDialog/SourceSelector.vala:52
+#: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "Pridať nový kalendár..."
 
@@ -741,21 +753,24 @@ msgstr "Exportovať kalendár..."
 msgid "calendar.ics"
 msgstr "kalendár.ics"
 
-#: src/Widgets/HeaderBar.vala:38
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "Vytvoriť novú udalosť"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "Ísť na dnešný dátum"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "Spravovať kalendáre"
 
-#: src/Widgets/HeaderBar.vala:55
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Exportovať alebo zdieľať základný kalendár"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "Importuj udalosti z \"%s\" do nasledujúceho kalendára:"
 
 #~ msgid "Email"
 #~ msgstr "Email"
@@ -798,9 +813,6 @@ msgstr "Exportovať alebo zdieľať základný kalendár"
 
 #~ msgid "Title"
 #~ msgstr "Názov"
-
-#~ msgid "Select calendars to display"
-#~ msgstr "Vyberte, ktoré kalendáre sa majú zobraziť"
 
 #~ msgid "Your event has to be named and has to have a valid date"
 #~ msgstr "Vaša udalosť musí byť pomenovaná a musí mať valídny dátum"

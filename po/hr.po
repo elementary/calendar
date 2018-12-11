@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 10:47-0700\n"
+"POT-Creation-Date: 2018-12-10 16:43-0800\n"
 "PO-Revision-Date: 2016-07-08 17:55+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
 msgid "On this computer"
 msgstr "Na ovom računalu"
 
@@ -130,12 +130,12 @@ msgid "Next Month"
 msgstr "Mjesec"
 
 #: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:94
+#: src/SourceDialog/SourceItem.vala:88
 msgid "Edit…"
 msgstr "Uredi..."
 
 #: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:80
+#: src/SourceDialog/SourceItem.vala:76
 msgid "Remove"
 msgstr "Ukloni"
 
@@ -172,32 +172,31 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:141
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "Kalendar"
 
-#: src/ImportDialog.vala:42
-#, c-format
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "Uvezi događaje iz \"%s\" u sljedeći kalendar:"
+#: src/ImportDialog.vala:28
+#, fuzzy
+msgid "Select a Calendar to Import Into"
+msgstr "Odaberite kalendare za prikaz"
 
 #: src/ImportDialog.vala:44
-#, c-format
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
+#, fuzzy, c-format
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "Uvezi događaje iz %d datoteke u sljedeći kalendar:"
+
+#: src/ImportDialog.vala:47
+#, fuzzy, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Uvezi događaje iz %d datoteke u sljedeći kalendar:"
 msgstr[1] "Uvezi događaje iz %d datoteke u sljedeći kalendar:"
 msgstr[2] "Uvezi događaje iz %d datoteka u sljedeći kalendar:"
 
-#: src/ImportDialog.vala:53
+#: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Uvezi"
-
-#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
-#: src/SourceDialog/SourceDialog.vala:58
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Cancel"
-msgstr "Odustani"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -242,6 +241,11 @@ msgstr "Stvori događaj"
 #: src/EventEdition/EventDialog.vala:149
 msgid "Save Changes"
 msgstr "Spremi promjene"
+
+#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "Odustani"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -686,50 +690,58 @@ msgstr "Prikaži brojeve tjedna"
 msgid "%u more…"
 msgstr "%u više…"
 
-#: src/SourceDialog/SourceDialog.vala:60
+#: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
 msgstr "Stvori"
 
-#. Name
-#: src/SourceDialog/SourceDialog.vala:69
+#: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
 msgstr "Naziv:"
 
-#: src/SourceDialog/SourceDialog.vala:72
+#: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "Naziv kalendara"
 
-#: src/SourceDialog/SourceDialog.vala:95
+#: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
 msgstr "Vrsta:"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
 msgstr "Boja:"
 
-#: src/SourceDialog/SourceDialog.vala:123
+#: src/SourceDialog/SourceDialog.vala:172
 msgid "Mark as default calendar"
 msgstr "Označi kao uobičajeni kalendar"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:243
 msgid "Create Calendar"
 msgstr "Stvori kalendar"
 
-#: src/SourceDialog/SourceDialog.vala:162
+#: src/SourceDialog/SourceDialog.vala:246
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "Spremi"
 
-#: src/SourceDialog/SourceItem.vala:125
+#: src/SourceDialog/SourceItem.vala:76
+#, fuzzy
+msgid "Not Removable"
+msgstr "Ukloni"
+
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Not Editable"
+msgstr ""
+
+#: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Poništi"
 
-#: src/SourceDialog/SourceItem.vala:140
-#, c-format
-msgid "Calendar \"%s\" removed."
+#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
+#, fuzzy, c-format
+msgid "\"%s\" removed"
 msgstr "Kalendar \"%s\" uklonjen."
 
-#: src/SourceDialog/SourceSelector.vala:52
+#: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "Dodaj novi kalendar..."
 
@@ -743,21 +755,24 @@ msgstr "Izvezi kalendar..."
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Widgets/HeaderBar.vala:38
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "Stvori novi događaj"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "Idi na današnji datum"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "Upravljanje kalendarima"
 
-#: src/Widgets/HeaderBar.vala:55
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Izvezi ili dijeli zadani kalendar"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "Uvezi događaje iz \"%s\" u sljedeći kalendar:"
 
 #~ msgid "Email"
 #~ msgstr "E-pošta"
@@ -829,9 +844,6 @@ msgstr "Izvezi ili dijeli zadani kalendar"
 
 #~ msgid "Title"
 #~ msgstr "Naslov"
-
-#~ msgid "Select calendars to display"
-#~ msgstr "Odaberite kalendare za prikaz"
 
 #~ msgid "Participants"
 #~ msgstr "Sudionici"

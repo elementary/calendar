@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 10:47-0700\n"
+"POT-Creation-Date: 2018-12-10 16:43-0800\n"
 "PO-Revision-Date: 2018-10-17 00:06+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
 msgid "On this computer"
 msgstr "På denne maskinen"
 
@@ -125,12 +125,12 @@ msgid "Next Month"
 msgstr "Neste måned"
 
 #: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:94
+#: src/SourceDialog/SourceItem.vala:88
 msgid "Edit…"
 msgstr "Rediger…"
 
 #: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:80
+#: src/SourceDialog/SourceItem.vala:76
 msgid "Remove"
 msgstr "Fjern"
 
@@ -166,31 +166,30 @@ msgstr "Fokuser gitt dag"
 msgid "date"
 msgstr "dato"
 
-#: src/Application.vala:141
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "Kalender"
 
-#: src/ImportDialog.vala:42
-#, c-format
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "Importer hendelser fra \"%s\" til denne kalenderen:"
+#: src/ImportDialog.vala:28
+#, fuzzy
+msgid "Select a Calendar to Import Into"
+msgstr "Velg en kalender som skal vises"
 
 #: src/ImportDialog.vala:44
-#, c-format
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
+#, fuzzy, c-format
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "Importer hendelse fra %d fil til denne kalenderen:"
+
+#: src/ImportDialog.vala:47
+#, fuzzy, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Importer hendelse fra %d fil til denne kalenderen:"
 msgstr[1] "Importer hendelser fra %d filer til denne kalenderen:"
 
-#: src/ImportDialog.vala:53
+#: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Importer"
-
-#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
-#: src/SourceDialog/SourceDialog.vala:58
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Cancel"
-msgstr "Avbryt"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -234,6 +233,11 @@ msgstr "Opprett hendelse"
 #: src/EventEdition/EventDialog.vala:149
 msgid "Save Changes"
 msgstr "Lagre endringer"
+
+#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "Avbryt"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -672,50 +676,58 @@ msgstr "Vis ukenummer"
 msgid "%u more…"
 msgstr "%u mer…"
 
-#: src/SourceDialog/SourceDialog.vala:60
+#: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
 msgstr "Opprett"
 
-#. Name
-#: src/SourceDialog/SourceDialog.vala:69
+#: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
 msgstr "Navn :"
 
-#: src/SourceDialog/SourceDialog.vala:72
+#: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "Kalendernavn"
 
-#: src/SourceDialog/SourceDialog.vala:95
+#: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
 msgstr "Skriv:"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
 msgstr "Farge:"
 
-#: src/SourceDialog/SourceDialog.vala:123
+#: src/SourceDialog/SourceDialog.vala:172
 msgid "Mark as default calendar"
 msgstr "Velg som hovedkalender"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:243
 msgid "Create Calendar"
 msgstr "Opprett kalender"
 
-#: src/SourceDialog/SourceDialog.vala:162
+#: src/SourceDialog/SourceDialog.vala:246
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "Lagre"
 
-#: src/SourceDialog/SourceItem.vala:125
+#: src/SourceDialog/SourceItem.vala:76
+#, fuzzy
+msgid "Not Removable"
+msgstr "Fjern"
+
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Not Editable"
+msgstr ""
+
+#: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Angre"
 
-#: src/SourceDialog/SourceItem.vala:140
-#, c-format
-msgid "Calendar \"%s\" removed."
+#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
+#, fuzzy, c-format
+msgid "\"%s\" removed"
 msgstr "Kalender \"%s\" er fjernet."
 
-#: src/SourceDialog/SourceSelector.vala:52
+#: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "Legg til ny kalender…"
 
@@ -728,21 +740,24 @@ msgstr "Eksporter kalender…"
 msgid "calendar.ics"
 msgstr "kalender.ics"
 
-#: src/Widgets/HeaderBar.vala:38
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "Opprett ny hendelse"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "Gå til dagens dato"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "Organiser kalendere"
 
-#: src/Widgets/HeaderBar.vala:55
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Eksporter eller del standard kalender"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "Importer hendelser fra \"%s\" til denne kalenderen:"
 
 #~ msgid "Email"
 #~ msgstr "E-post"
@@ -797,9 +812,6 @@ msgstr "Eksporter eller del standard kalender"
 
 #~ msgid "Fullscreen"
 #~ msgstr "Fullskjerm"
-
-#~ msgid "Select calendars to display"
-#~ msgstr "Velg en kalender som skal vises"
 
 #~ msgid "Edit the selected event"
 #~ msgstr "Rediger den valgte hendelsen"

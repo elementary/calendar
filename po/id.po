@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 10:47-0700\n"
+"POT-Creation-Date: 2018-12-10 16:43-0800\n"
 "PO-Revision-Date: 2018-10-21 11:51+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
 msgid "On this computer"
 msgstr "Di komputer ini"
 
@@ -124,12 +124,12 @@ msgid "Next Month"
 msgstr "Bulan Depan"
 
 #: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:94
+#: src/SourceDialog/SourceItem.vala:88
 msgid "Edit…"
 msgstr "Sunting…"
 
 #: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:80
+#: src/SourceDialog/SourceItem.vala:76
 msgid "Remove"
 msgstr "Hapus"
 
@@ -165,30 +165,29 @@ msgstr "Fokus pada hari tersebut"
 msgid "date"
 msgstr "tanggal"
 
-#: src/Application.vala:141
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "Kalender"
 
-#: src/ImportDialog.vala:42
-#, c-format
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "Impor acara dari \"%s\" ke dalam kalender berikut:"
+#: src/ImportDialog.vala:28
+#, fuzzy
+msgid "Select a Calendar to Import Into"
+msgstr "Pilih kalender untuk ditampilkan"
 
 #: src/ImportDialog.vala:44
-#, c-format
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
+#, fuzzy, c-format
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "Impor acara dari berkas %d ke dalam kalender berikut:"
+
+#: src/ImportDialog.vala:47
+#, fuzzy, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Impor acara dari berkas %d ke dalam kalender berikut:"
 
-#: src/ImportDialog.vala:53
+#: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Impor"
-
-#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
-#: src/SourceDialog/SourceDialog.vala:58
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Cancel"
-msgstr "Batal"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -231,6 +230,11 @@ msgstr "Buat Acara"
 #: src/EventEdition/EventDialog.vala:149
 msgid "Save Changes"
 msgstr "Simpan Perubahan"
+
+#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "Batal"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -665,50 +669,58 @@ msgstr "Tampilkan Nomor Minggu"
 msgid "%u more…"
 msgstr "%u lainnya…"
 
-#: src/SourceDialog/SourceDialog.vala:60
+#: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
 msgstr "Buat"
 
-#. Name
-#: src/SourceDialog/SourceDialog.vala:69
+#: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
 msgstr "Nama:"
 
-#: src/SourceDialog/SourceDialog.vala:72
+#: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "Nama Kalender"
 
-#: src/SourceDialog/SourceDialog.vala:95
+#: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
 msgstr "Jenis:"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
 msgstr "Warna:"
 
-#: src/SourceDialog/SourceDialog.vala:123
+#: src/SourceDialog/SourceDialog.vala:172
 msgid "Mark as default calendar"
 msgstr "Tandai sebagai kalender bawaan"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:243
 msgid "Create Calendar"
 msgstr "Buat Kalender"
 
-#: src/SourceDialog/SourceDialog.vala:162
+#: src/SourceDialog/SourceDialog.vala:246
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "Simpan"
 
-#: src/SourceDialog/SourceItem.vala:125
+#: src/SourceDialog/SourceItem.vala:76
+#, fuzzy
+msgid "Not Removable"
+msgstr "Hapus"
+
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Not Editable"
+msgstr ""
+
+#: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Kembalikan"
 
-#: src/SourceDialog/SourceItem.vala:140
-#, c-format
-msgid "Calendar \"%s\" removed."
+#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
+#, fuzzy, c-format
+msgid "\"%s\" removed"
 msgstr "Kalender \"%s\" telah dihapus."
 
-#: src/SourceDialog/SourceSelector.vala:52
+#: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "Tambah Kalender Baru…"
 
@@ -721,21 +733,24 @@ msgstr "Ekspor Kalender…"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Widgets/HeaderBar.vala:38
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "Buat acara baru"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "Pergi ke tanggal hari ini"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "Kelola Kalender"
 
-#: src/Widgets/HeaderBar.vala:55
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Ekspor atau Bagikan Kalender utama"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "Impor acara dari \"%s\" ke dalam kalender berikut:"
 
 #~ msgid "Email"
 #~ msgstr "Surel"
@@ -799,9 +814,6 @@ msgstr "Ekspor atau Bagikan Kalender utama"
 
 #~ msgid "at"
 #~ msgstr "pada"
-
-#~ msgid "Select calendars to display"
-#~ msgstr "Pilih kalender untuk ditampilkan"
 
 #~ msgid "Personal"
 #~ msgstr "Pribadi"
