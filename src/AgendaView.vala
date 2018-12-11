@@ -35,18 +35,15 @@ public class Maya.View.AgendaView : Gtk.Grid {
         weekday_label = new Gtk.Label ("");
         weekday_label.xalign = 0;
         weekday_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-        weekday_label.margin = 12;
-        weekday_label.margin_bottom = 0;
 
         day_label = new Gtk.Label ("");
         day_label.xalign = 0;
         day_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-        day_label.margin = 12;
-        day_label.margin_top = 0;
-        day_label.margin_bottom = 6;
 
         var selected_data_grid = new Gtk.Grid ();
-        selected_data_grid.row_spacing = 6;
+        selected_data_grid.margin = 6;
+        selected_data_grid.margin_start = selected_data_grid.margin_end = 12;
+        selected_data_grid.row_spacing = 3;
         selected_data_grid.orientation = Gtk.Orientation.VERTICAL;
         selected_data_grid.add (weekday_label);
         selected_data_grid.add (day_label);
@@ -61,6 +58,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
         placeholder_label.show_all ();
 
         selected_date_events_list = new Gtk.ListBox ();
+        selected_date_events_list.margin_start = selected_date_events_list.margin_end = 6;
         selected_date_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         selected_date_events_list.set_header_func (header_update_func);
         selected_date_events_list.set_placeholder (placeholder_label);
@@ -125,6 +123,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
         selected_scrolled.add (selected_date_events_list);
 
         upcoming_events_list = new Gtk.ListBox ();
+        upcoming_events_list.margin_start = upcoming_events_list.margin_end = 6;
         upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         upcoming_events_list.set_header_func (upcoming_header_update_func);
         upcoming_events_list.set_sort_func ((child1, child2) => {
@@ -171,8 +170,8 @@ public class Maya.View.AgendaView : Gtk.Grid {
         upcoming_scrolled.add (upcoming_events_list);
 
         orientation = Gtk.Orientation.VERTICAL;
+        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         add (selected_data_grid);
-        add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         add (selected_scrolled);
         add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         add (upcoming_scrolled);
