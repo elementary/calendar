@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 16:43-0800\n"
-"PO-Revision-Date: 2018-10-16 12:49+0000\n"
+"PO-Revision-Date: 2018-12-11 17:38+0000\n"
 "Last-Translator: Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/calendar/"
 "calendar/pt/>\n"
@@ -171,21 +171,20 @@ msgid "Calendar"
 msgstr "Calendário"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Selecione os calendários a mostrar"
+msgstr "Selecione o Calendário para o qual quer importar"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importar eventos de %d ficheiro para o seguinte calendário:"
+msgstr "Eventos de \"%s\" serão intercalados com o seguinte calendário:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Importar eventos de %d ficheiro para o seguinte calendário:"
-msgstr[1] "Importar eventos de %d ficheiros para o seguinte calendário:"
+msgstr[0] "Eventos de %d ficheiro serão intercalados com este calendário:"
+msgstr[1] "Eventos de %d ficheiros serão intercalados com este calendário:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -710,22 +709,21 @@ msgid "Save"
 msgstr "Guardar"
 
 #: src/SourceDialog/SourceItem.vala:76
-#, fuzzy
 msgid "Not Removable"
-msgstr "Remover"
+msgstr "Não removível"
 
 #: src/SourceDialog/SourceItem.vala:88
 msgid "Not Editable"
-msgstr ""
+msgstr "Não Editável"
 
 #: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Anular"
 
 #: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "O calendário \"%s\" foi removido."
+msgstr "\"%s\" removido"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
