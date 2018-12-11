@@ -135,21 +135,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
         selected_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         selected_scrolled.add (selected_date_events_list);
 
-        var upcoming_events_label = new Gtk.Label (_("Upcoming Events"));
-
-        var upcoming_events_separatorTop = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-        upcoming_events_separatorTop.hexpand = true;
-
-        var upcoming_events_separatorBottom = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-        upcoming_events_separatorBottom.hexpand = true;
-
-        var upcoming_events_grid = new Gtk.Grid ();
-        upcoming_events_grid.row_spacing = 6;
-        upcoming_events_grid.orientation = Gtk.Orientation.VERTICAL;
-        upcoming_events_grid.attach (upcoming_events_separatorTop, 0, 0, 1, 1);
-        upcoming_events_grid.attach (upcoming_events_label, 0, 1, 1, 1);
-        upcoming_events_grid.attach (upcoming_events_separatorBottom, 0, 2, 1, 1);
-
         upcoming_events_list = new Gtk.ListBox ();
         upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         upcoming_events_list.set_header_func (upcoming_header_update_func);
@@ -198,7 +183,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
 
         attach (selected_data_grid, 0, 0, 1, 1);
         attach (selected_scrolled, 0, 1, 1, 1);
-        attach (upcoming_events_grid, 0, 2, 1, 1);
+        attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 2);
         attach (upcoming_scrolled, 0, 3, 1, 2);
 
         row_table = new HashTable<string, AgendaEventRow> (str_hash, str_equal);
