@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -169,6 +169,18 @@ public class Maya.View.SourceDialog : Gtk.Grid {
 
         color_button_none = new Gtk.RadioButton.from_widget (color_button_red);
 
+        var color_grid = new Gtk.Grid ();
+        color_grid.column_spacing = 12;
+        color_grid.add (color_button_red);
+        color_grid.add (color_button_orange);
+        color_grid.add (color_button_yellow);
+        color_grid.add (color_button_green);
+        color_grid.add (color_button_blue);
+        color_grid.add (color_button_purple);
+        color_grid.add (color_button_brown);
+        color_grid.add (color_button_slate);
+
+
         var check_button = new Gtk.CheckButton.with_label (_("Mark as default calendar"));
 
         check_button.toggled.connect (() => {
@@ -211,19 +223,12 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         main_grid.row_spacing = 6;
         main_grid.column_spacing = 12;
         main_grid.attach (type_label, 0, 0);
-        main_grid.attach (type_combobox, 1, 0, 8, 1);
+        main_grid.attach (type_combobox, 1, 0);
         main_grid.attach (name_label, 0, 1);
-        main_grid.attach (name_entry, 1, 1, 8, 1);
+        main_grid.attach (name_entry, 1, 1);
         main_grid.attach (color_label, 0, 2);
-        main_grid.attach (color_button_red, 1, 2);
-        main_grid.attach (color_button_orange, 2, 2);
-        main_grid.attach (color_button_yellow, 3, 2);
-        main_grid.attach (color_button_green, 4, 2);
-        main_grid.attach (color_button_blue, 5, 2);
-        main_grid.attach (color_button_purple, 6, 2);
-        main_grid.attach (color_button_brown, 7, 2);
-        main_grid.attach (color_button_slate, 8, 2);
-        main_grid.attach (check_button, 1, 3, 8, 1);
+        main_grid.attach (color_grid, 1, 2);
+        main_grid.attach (check_button, 1, 3);
 
         margin = 12;
         margin_bottom = 8;
