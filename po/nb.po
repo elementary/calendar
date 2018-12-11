@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 16:43-0800\n"
-"PO-Revision-Date: 2018-10-17 00:06+0000\n"
+"PO-Revision-Date: 2018-12-11 06:33+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "calendar/calendar/nb/>\n"
@@ -171,21 +171,20 @@ msgid "Calendar"
 msgstr "Kalender"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Velg en kalender som skal vises"
+msgstr "Velg en kalender å importere til"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importer hendelse fra %d fil til denne kalenderen:"
+msgstr "Hendelser fra \"%s\" vil flettes med denne kalenderen:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Importer hendelse fra %d fil til denne kalenderen:"
-msgstr[1] "Importer hendelser fra %d filer til denne kalenderen:"
+msgstr[0] "Hendelse fra %d vil bli flettet med denne kalenderen:"
+msgstr[1] "Hendelser fra %d vil bli flettet med denne kalenderen:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -710,22 +709,22 @@ msgid "Save"
 msgstr "Lagre"
 
 #: src/SourceDialog/SourceItem.vala:76
-#, fuzzy
 msgid "Not Removable"
-msgstr "Fjern"
+msgstr "Kan ikke fjernes"
 
 #: src/SourceDialog/SourceItem.vala:88
+#, fuzzy
 msgid "Not Editable"
-msgstr ""
+msgstr "Ikke redigerbar"
 
 #: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Angre"
 
 #: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Kalender \"%s\" er fjernet."
+msgstr "\"%s\" fjernet"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
