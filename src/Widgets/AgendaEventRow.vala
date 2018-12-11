@@ -67,6 +67,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         datatime_label = new Gtk.Label ("");
         datatime_label.ellipsize = Pango.EllipsizeMode.END;
+        datatime_label.use_markup = true;
         datatime_label.xalign = 0;
         datatime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
@@ -149,14 +150,15 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         string end_date_string = end_date.format (Settings.DateFormat_Complete ());
         string start_time_string = start_date.format (Settings.TimeFormat ());
         string end_time_string = end_date.format (Settings.TimeFormat ());
+        string datetime_string = null;
 
         datatime_label.show ();
         datatime_label.no_show_all = false;
         if (is_multiday) {
             if (is_allday) {
-                datatime_label.label = _("%s - %s").printf (start_date_string, end_date_string);
+                datetime_string = _("%s - %s").printf (start_date_string, end_date_string);
             } else {
-                datatime_label.label = _("%s, %s - %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
+                datetime_string = _("%s, %s - %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
             }
         } else {
             if (!isUpcoming) {
@@ -164,16 +166,18 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                     datatime_label.hide ();
                     datatime_label.no_show_all = true;
                 } else {
-                    datatime_label.label = _("%s - %s").printf (start_time_string, end_time_string);
+                    datetime_string = _("%s - %s").printf (start_time_string, end_time_string);
                 }
             } else {
                 if (is_allday) {
-                    datatime_label.label = _("%s").printf (start_date_string);
+                    datetime_string = _("%s").printf (start_date_string);
                 } else {
-                    datatime_label.label = _("%s, %s - %s").printf (start_date_string, start_time_string, end_time_string);
+                    datetime_string = _("%s, %s - %s").printf (start_date_string, start_time_string, end_time_string);
                 }
             }
         }
+
+        datatime_label.label = "<small>%s</small>".printf (datetime_string);
 
         string location = ical_event.get_location ();
         if (location != null && location != "") {
