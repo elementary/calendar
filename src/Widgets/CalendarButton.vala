@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2014-2015 Maya Developers (http://launchpad.net/maya)
+/*
+ * Copyright (c) 2014-2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
+public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
     public GLib.List<E.Source> sources;
     private E.Source _current_source;
     public E.Source current_source {
@@ -33,11 +32,10 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         }
     }
 
-    private Gtk.Popover popover;
     private Gtk.ListBox list_box;
     private CalendarGrid calendar_grid;
 
-    public CalendarButton () {
+    construct {
         sources = new GLib.List<E.Source> ();
         var calmodel = Model.CalendarModel.get_default ();
         var registry = calmodel.registry;
@@ -61,22 +59,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         add (grid);
 
         current_source = registry.default_calendar;
-        create_popover ();
 
-        toggled.connect (() => {
-            if (active) {
-                popover.show_all ();
-            } else {
-                popover.hide ();
-            }
-        });
-
-        popover.hide.connect (() => {
-            active = false;
-        });
-    }
-
-    private void create_popover () {
         list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = true;
 
@@ -85,22 +68,16 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         scrolled.add (list_box);
         scrolled.margin_top = 6;
         scrolled.margin_bottom = 6;
+        scrolled.max_content_height = 300;
+        scrolled.propagate_natural_height = true;
+        scrolled.show_all ();
 
         popover = new Gtk.Popover (this);
         popover.width_request = 310;
         popover.add (scrolled);
 
-        list_box.add.connect ((widget) => {
+        list_box.add.connect (() => {
             list_box.show_all ();
-            int minimum_height;
-            int natural_height;
-
-            list_box.get_preferred_height (out minimum_height, out natural_height);
-            if (natural_height > 300) {
-                scrolled.height_request = 300;
-            } else {
-                scrolled.height_request = (int) natural_height;
-            }
         });
 
         list_box.set_header_func (header_update_func);
@@ -118,25 +95,22 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
 
         list_box.row_activated.connect ((row) => {
             current_source = ((CalendarGrid)row.get_child ()).source;
+            popover.popdown ();
         });
 
         foreach (var source in sources) {
-            add_source (source);
-        }
-    }
+            var calgrid = new CalendarGrid (source);
+            calgrid.margin = 6;
+            calgrid.margin_start = 12;
 
-    private void add_source (E.Source source) {
-        var calgrid = new CalendarGrid (source);
-        calgrid.margin = 6;
-        calgrid.margin_start = 12;
+            var row = new Gtk.ListBoxRow ();
+            row.add (calgrid);
 
-        var row = new Gtk.ListBoxRow ();
-        row.add (calgrid);
+            list_box.add (row);
 
-        list_box.add (row);
-
-        if (source.dup_uid () == current_source.dup_uid ()) {
-            list_box.select_row (row);
+            if (source.dup_uid () == current_source.dup_uid ()) {
+                list_box.select_row (row);
+            }
         }
     }
 
