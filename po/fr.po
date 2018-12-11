@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 16:43-0800\n"
-"PO-Revision-Date: 2018-12-11 06:59+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"PO-Revision-Date: 2018-12-11 20:47+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/calendar/"
 "calendar/fr/>\n"
 "Language: fr\n"
@@ -34,7 +34,7 @@ msgstr "nom.utilisateur"
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr "Email :"
+msgstr "E-mail :"
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
@@ -54,7 +54,7 @@ msgstr "%A %d %b"
 
 #: daemon/Daemon.vala:21
 msgid "Print debug information"
-msgstr "Afficher les informations de débuggage"
+msgstr "Afficher les informations de débogage"
 
 #: daemon/Daemon.vala:23 src/Application.vala:49
 msgid "Print version info and exit"
@@ -218,7 +218,7 @@ msgstr "Rappels"
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] "Répéter"
+msgstr[0] "Répétition"
 msgstr[1] "Répétitions"
 
 #: src/EventEdition/EventDialog.vala:134
@@ -236,7 +236,7 @@ msgstr "Sauvegarder les changements"
 #: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Cancel"
-msgstr "Fermer"
+msgstr "Annuler"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -312,7 +312,7 @@ msgstr "Ajouter un rappel"
 
 #: src/EventEdition/ReminderPanel.vala:172
 msgid "0 minutes"
-msgstr "0 minute"
+msgstr "0 minutes"
 
 #: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute"
@@ -660,7 +660,7 @@ msgstr "Supprimer l'événement"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr "Supprimer l'occurence"
+msgstr "Supprimer l'occurrence"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
