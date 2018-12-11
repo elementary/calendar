@@ -24,7 +24,6 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         get {
             return _current_source;
         }
-
         set {
             _current_source = value;
             calendar_grid.source = value;
@@ -32,7 +31,6 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         }
     }
 
-    private Gtk.ListBox list_box;
     private CalendarGrid calendar_grid;
 
     construct {
@@ -60,7 +58,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
 
         current_source = registry.default_calendar;
 
-        list_box = new Gtk.ListBox ();
+        var list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = true;
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
