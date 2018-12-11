@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 16:43-0800\n"
-"PO-Revision-Date: 2018-12-02 06:18+0000\n"
+"PO-Revision-Date: 2018-12-11 02:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -169,20 +169,19 @@ msgid "Calendar"
 msgstr "カレンダー"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "表示するカレンダーを選択"
+msgstr "インポート先のカレンダーを選択"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "%d 個のファイルから以下のカレンダーに予定をインポート:"
+msgstr "\"%s\" にある予定は、以下のカレンダーとマージされます:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "%d 個のファイルから以下のカレンダーに予定をインポート:"
+msgstr[0] "%d 個のファイルにある予定は、以下のカレンダーとマージされます:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -702,22 +701,21 @@ msgid "Save"
 msgstr "保存"
 
 #: src/SourceDialog/SourceItem.vala:76
-#, fuzzy
 msgid "Not Removable"
-msgstr "削除"
+msgstr "削除できません"
 
 #: src/SourceDialog/SourceItem.vala:88
 msgid "Not Editable"
-msgstr ""
+msgstr "編集できません"
 
 #: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "元に戻す"
 
 #: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "カレンダー \"%s\" が削除されました。"
+msgstr "\"%s\" は削除されました"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
