@@ -38,6 +38,7 @@ src/Grid/VAutoHider.vala
 src/SourceDialog/SourceDialog.vala
 src/SourceDialog/SourceItem.vala
 src/SourceDialog/SourceSelector.vala
+src/Widgets/AgendaEventRow.vala
 src/Widgets/CalendarButton.vala
 src/Widgets/ContractorButtonWithMenu.vala
 src/Widgets/DateSwitcher.vala
