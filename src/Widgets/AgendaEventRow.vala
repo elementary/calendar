@@ -19,6 +19,10 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
+const string EVENT_CSS = """
+    @define-color accent_color %s;
+""";
+
 public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     public signal void removed (E.CalComponent event);
     public signal void modified (E.CalComponent event);
@@ -34,6 +38,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     private Gtk.Label name_label;
     private Gtk.Label datatime_label;
     private Gtk.Label location_label;
+    private Gtk.StyleContext main_grid_context;
 
     private bool isUpcoming;
 
@@ -43,6 +48,9 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         unowned iCal.Component ical_event = calevent.get_icalcomponent ();
         uid = ical_event.get_uid ();
 
+        var css_provider = new Gtk.CssProvider ();
+        css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
+
         var main_grid = new Gtk.Grid ();
         main_grid.column_spacing = 6;
         main_grid.row_spacing = 6;
@@ -51,19 +59,17 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
         event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
-        event_image.margin_start = 6;
         event_image.valign = Gtk.Align.START;
-        Util.style_calendar_color (event_image, cal.dup_color ());
-
-        cal.notify["color"].connect (() => {
-            Util.style_calendar_color (event_image, cal.dup_color ());
-        });
 
         name_label = new Gtk.Label ("");
         name_label.hexpand = true;
         name_label.wrap = true;
         name_label.wrap_mode = Pango.WrapMode.WORD_CHAR;
         name_label.xalign = 0;
+
+        var name_label_context = name_label.get_style_context ();
+        name_label_context.add_class ("title");
+        name_label_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         datatime_label = new Gtk.Label ("");
         datatime_label.ellipsize = Pango.EllipsizeMode.END;
@@ -75,12 +81,15 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         location_label.no_show_all = true;
         location_label.wrap = true;
         location_label.xalign = 0;
-        location_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         main_grid.attach (event_image, 0, 0, 1, 1);
         main_grid.attach (name_label, 1, 0, 1, 1);
         main_grid.attach (datatime_label, 1, 1, 1, 1);
         main_grid.attach (location_label, 1, 2, 1, 1);
+
+        main_grid_context = main_grid.get_style_context ();
+        main_grid_context.add_class ("event");
+        main_grid_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var event_box = new Gtk.EventBox ();
         event_box.add (main_grid);
@@ -89,6 +98,12 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN;
         revealer.add (event_box);
         add (revealer);
+
+        reload_css (cal.dup_color ());
+
+        cal.notify["color"].connect (() => {
+            reload_css (cal.dup_color ());
+        });
 
         show.connect (() => {
             revealer.set_reveal_child (true);
@@ -186,6 +201,18 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         } else {
             location_label.hide ();
             location_label.no_show_all = true;
+        }
+    }
+
+    private void reload_css (string background_color) {
+        var provider = new Gtk.CssProvider ();
+        try {
+            var colored_css = EVENT_CSS.printf (background_color);
+            provider.load_from_data (colored_css, colored_css.length);
+
+            main_grid_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        } catch (GLib.Error e) {
+            critical (e.message);
         }
     }
 }
