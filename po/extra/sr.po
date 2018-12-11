@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
+"POT-Creation-Date: 2018-07-26 20:27+0100\n"
 "PO-Revision-Date: 2017-01-06 06:56+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <sr@li.org>\n"
@@ -18,30 +18,47 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-01-07 06:12+0000\n"
 "X-Generator: Launchpad (build 18302)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Календар"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Прегледајте и распоредите догађаје"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr "маја;планер;датуми;дани;догађаји;календар;"
-
-msgid "Add Event"
-msgstr "Додај догађај"
-
-msgid "About Calendar"
-msgstr "О календару"
-
-msgid "Maya"
-msgstr "Маја"
-
-msgid "About Maya"
-msgstr "О Маји"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
 "Мали, лаган календар који усклађује и управља са више календара на једном "
 "месту, као што је Гугл календар, Аутлук и КолДАВ."
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "Календар"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr "маја;планер;датуми;дани;догађаји;календар;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "Додај догађај"
+
+#~ msgid "About Calendar"
+#~ msgstr "О календару"
+
+#~ msgid "Maya"
+#~ msgstr "Маја"
+
+#~ msgid "About Maya"
+#~ msgstr "О Маји"

@@ -7,726 +7,803 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-09-06 12:02+0000\n"
-"Last-Translator: Lloyd Carr <l.carr@gmx.de>\n"
-"Language-Team: German "
-"<https://weblate.elementary.io/projects/calendar/calendar/de/>\n"
+"POT-Creation-Date: 2018-12-10 16:43-0800\n"
+"PO-Revision-Date: 2018-11-17 00:01+0000\n"
+"Last-Translator: Tucan Holmes <tucan.web.swiss@gmail.com>\n"
+"Language-Team: German <https://weblate.elementary.io/projects/calendar/"
+"calendar/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
 
-#: ../src/SourceDialog/SourceSelector.vala:69
-msgid "Add New Calendar…"
-msgstr "Kalender hinzufügen …"
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
+msgid "On this computer"
+msgstr "Auf diesem Computer"
 
-#: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
+#: core/Backends/PlacementWidget.vala:41
+msgid "User:"
+msgstr "Benutzer:"
+
+#: core/Backends/PlacementWidget.vala:50
+msgid "user.name"
+msgstr "Benutzer.Name"
+
+#: core/Backends/PlacementWidget.vala:63
+msgid "Email:"
+msgstr "E-Mail:"
+
+#: core/Backends/PlacementWidget.vala:72
+msgid "john@doe.com"
+msgstr "max@mustermann.de"
+
+#: core/Backends/PlacementWidget.vala:84
+msgid "Keep a copy locally"
+msgstr "Kopie lokal speichern"
+
+#: core/Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e. %B %Y"
+
+#: core/Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%A, %e. %b"
+
+#: daemon/Daemon.vala:21
+msgid "Print debug information"
+msgstr "Debug-Informationen drucken"
+
+#: daemon/Daemon.vala:23 src/Application.vala:49
+msgid "Print version info and exit"
+msgstr "Versionsinformationen drucken und beenden"
+
+#: plugins/Google/GoogleBackend.vala:38
+msgid "Google"
+msgstr "Google"
+
+#: plugins/Google/GoogleBackend.vala:61
+msgid "user.name or user.name@gmail.com"
+msgstr "Benutzer.Name oder Benutzer.Name@gmail.com"
+
+#: plugins/CalDAV/CalDAVBackend.vala:39
+msgid "CalDAV"
+msgstr "CalDAV"
+
+#: plugins/CalDAV/CalDAVBackend.vala:58
+msgid "URL:"
+msgstr "Adresse:"
+
+#: plugins/CalDAV/CalDAVBackend.vala:95
+msgid "Use a secure connection"
+msgstr "Sichere Verbindung verwenden"
+
+#: plugins/CalDAV/CalDAVBackend.vala:123
+msgid "Server handles meeting invitations"
+msgstr "Server unterstützt Einladungen zu Besprechungen"
+
+#: src/AgendaView.vala:65
+msgid ""
+"Your upcoming events will be displayed here when you select a date with "
+"events."
+msgstr ""
+"Ihre bevorstehenden Termine werden hier angezeigt, wenn Sie ein Datum mit "
+"Terminen auswählen."
+
+#: src/AgendaView.vala:138
+msgid "Upcoming Events"
+msgstr "Bevorstehende Termine"
+
+#: src/AgendaView.vala:226
+msgid "During the day"
+msgstr "Im Laufe des Tages"
+
+#: src/AgendaView.vala:231
+msgid "All day"
+msgstr "Ganztägig"
+
+#: src/AgendaView.vala:296 src/AgendaView.vala:310
+msgid "Tomorrow"
+msgstr "Morgen"
+
+#: src/AgendaView.vala:298 src/AgendaView.vala:312
+msgid "This Week"
+msgstr "Aktuelle Woche"
+
+#: src/AgendaView.vala:300 src/AgendaView.vala:314
+msgid "Next Week"
+msgstr "Kommende Woche"
+
+#: src/AgendaView.vala:302 src/AgendaView.vala:316
+msgid "This Month"
+msgstr "Aktueller Monat"
+
+#: src/AgendaView.vala:304 src/AgendaView.vala:318
+msgid "Next Month"
+msgstr "Kommender Monat"
+
+#: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Edit…"
+msgstr "Bearbeiten…"
+
+#: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
+#: src/SourceDialog/SourceItem.vala:76
 msgid "Remove"
 msgstr "Entfernen"
 
-#: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
-msgid "Edit…"
-msgstr "Bearbeiten …"
+#: src/AgendaView.vala:564 src/AgendaView.vala:574
+#, c-format
+msgid "%s - %s"
+msgstr "%s - %s"
 
-#: ../src/SourceDialog/SourceItem.vala:127
-msgid "Undo"
-msgstr "Rückgängig"
+#: src/AgendaView.vala:566
+#, c-format
+msgid "%s, %s - %s, %s"
+msgstr "%s, %s - %s, %s"
 
-#: ../src/SourceDialog/SourceItem.vala:142
-msgid "Calendar \"%s\" removed."
-msgstr "Kalender »%s« wurde entfernt."
+#: src/AgendaView.vala:578
+#, c-format
+msgid "%s"
+msgstr "%s"
 
-#: ../src/SourceDialog/SourceDialog.vala:58
-#: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
-msgid "Cancel"
-msgstr "Abbrechen"
+#: src/AgendaView.vala:580
+#, c-format
+msgid "%s, %s - %s"
+msgstr "%s, %s - %s"
 
-#: ../src/SourceDialog/SourceDialog.vala:60
-msgid "Create"
-msgstr "Erstellen"
+#: src/Application.vala:47
+msgid "Create an event"
+msgstr "Einen Termin erstellen"
 
-#: ../src/SourceDialog/SourceDialog.vala:69
-msgid "Name:"
-msgstr "Name:"
+#: src/Application.vala:48
+msgid "Focus the given day"
+msgstr "Fokussiere den angegebenen Tag"
 
-#: ../src/SourceDialog/SourceDialog.vala:72
-msgid "Calendar Name"
-msgstr "Kalendername"
+#: src/Application.vala:48
+msgid "date"
+msgstr "Datum"
 
-#: ../src/SourceDialog/SourceDialog.vala:95
-msgid "Type:"
-msgstr "Typ:"
+#: src/Application.vala:148
+msgid "Calendar"
+msgstr "Kalender"
 
-#: ../src/SourceDialog/SourceDialog.vala:118
-msgid "Color:"
-msgstr "Farbe:"
+#: src/ImportDialog.vala:28
+#, fuzzy
+msgid "Select a Calendar to Import Into"
+msgstr "Anzuzeigende Kalender auswählen"
 
-#: ../src/SourceDialog/SourceDialog.vala:123
-msgid "Mark as default calendar"
-msgstr "Als Vorgabekalender wählen"
+#: src/ImportDialog.vala:44
+#, fuzzy, c-format
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "Termine aus der Datei %d in den folgenden Kalender importieren:"
 
-#: ../src/SourceDialog/SourceDialog.vala:153
-msgid "Create Calendar"
-msgstr "Kalender erstellen"
+#: src/ImportDialog.vala:47
+#, fuzzy, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
+msgstr[0] "Termine aus der Datei %d in den folgenden Kalender importieren:"
+msgstr[1] "Termine aus den Dateien %d in den folgenden Kalender importieren:"
 
-#: ../src/SourceDialog/SourceDialog.vala:162
-#: ../src/Widgets/ContractorButtonWithMenu.vala:82
-msgid "Save"
-msgstr "Speichern"
+#: src/ImportDialog.vala:57
+msgid "Import"
+msgstr "Importieren"
 
-#: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
-msgid "Hide Week Numbers"
-msgstr "Wochennummern ausblenden"
+#: src/EventEdition/EventDialog.vala:58
+msgid "Add Event"
+msgstr "Termin hinzufügen"
 
-#: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
-msgid "Show Week Numbers"
-msgstr "Kalenderwochen anzeigen"
+#: src/EventEdition/EventDialog.vala:61
+msgid "Edit Event"
+msgstr "Termin bearbeiten"
 
-#: ../src/Grid/VAutoHider.vala:100
-msgid "%u more…"
-msgstr "%u weitere …"
+#: src/EventEdition/EventDialog.vala:107
+msgid "General Informations"
+msgstr "Allgemeine Informationen"
 
-#: ../src/Widgets/ContractorButtonWithMenu.vala:67
-#: ../src/Widgets/ContractorButtonWithMenu.vala:76
-msgid "Export Calendar..."
-msgstr "Kalender exportieren …"
+#: src/EventEdition/EventDialog.vala:108
+msgid "Location"
+msgstr "Ort"
 
-#: ../src/Widgets/ContractorButtonWithMenu.vala:79
-msgid "calendar.ics"
-msgstr "kalender.ics"
+#: src/EventEdition/EventDialog.vala:109
+msgid "Guests"
+msgstr "Gäste"
 
-#: ../src/EventEdition/GuestsPanel.vala:53
-msgid "Participants:"
-msgstr "Teilnehmer:"
+#: src/EventEdition/EventDialog.vala:110
+msgid "Reminders"
+msgstr "Erinnerungen"
 
-#: ../src/EventEdition/GuestsPanel.vala:58
-msgid "No Participants"
-msgstr "Keine Teilnehmer"
-
-#: ../src/EventEdition/GuestsPanel.vala:93
-msgid "Invite"
-msgstr "Einladen"
-
-#: ../src/EventEdition/GuestsPanel.vala:241
-msgid "Accepted"
-msgstr "Akzeptiert"
-
-#: ../src/EventEdition/GuestsPanel.vala:244
-msgid "Declined"
-msgstr "Abgesagt"
-
-#: ../src/EventEdition/ReminderPanel.vala:33
-msgid "Reminders:"
-msgstr "Erinnerungen:"
-
-#: ../src/EventEdition/ReminderPanel.vala:37
-msgid "No Reminders"
-msgstr "Keine Einträge"
-
-#: ../src/EventEdition/ReminderPanel.vala:71
-msgid "Add Reminder"
-msgstr "Erinnerung hinzufügen"
-
-#: ../src/EventEdition/ReminderPanel.vala:182
-msgid "0 minutes"
-msgstr "0 Minuten"
-
-#: ../src/EventEdition/ReminderPanel.vala:183
-msgid "1 minutes"
-msgstr "1 Minute"
-
-#: ../src/EventEdition/ReminderPanel.vala:184
-msgid "5 minutes"
-msgstr "5 Minuten"
-
-#: ../src/EventEdition/ReminderPanel.vala:185
-msgid "10 minutes"
-msgstr "10 Minuten"
-
-#: ../src/EventEdition/ReminderPanel.vala:186
-msgid "15 minutes"
-msgstr "15 Minuten"
-
-#: ../src/EventEdition/ReminderPanel.vala:187
-msgid "20 minutes"
-msgstr "20 Minuten"
-
-#: ../src/EventEdition/ReminderPanel.vala:188
-msgid "25 minutes"
-msgstr "25 Minuten"
-
-#: ../src/EventEdition/ReminderPanel.vala:189
-msgid "30 minutes"
-msgstr "30 Minuten"
-
-#: ../src/EventEdition/ReminderPanel.vala:190
-msgid "45 minutes"
-msgstr "45 Minuten"
-
-#: ../src/EventEdition/ReminderPanel.vala:191
-msgid "1 hour"
-msgstr "1 Stunde"
-
-#: ../src/EventEdition/ReminderPanel.vala:192
-msgid "2 hours"
-msgstr "2 Stunden"
-
-#: ../src/EventEdition/ReminderPanel.vala:193
-msgid "3 hours"
-msgstr "3 Stunden"
-
-#: ../src/EventEdition/ReminderPanel.vala:194
-msgid "12 hours"
-msgstr "12 Stunden"
-
-#: ../src/EventEdition/ReminderPanel.vala:195
-msgid "24 hours"
-msgstr "24 Stunden"
-
-#: ../src/EventEdition/ReminderPanel.vala:196
-msgid "2 days"
-msgstr "2 Tage"
-
-#: ../src/EventEdition/ReminderPanel.vala:197
-msgid "1 week"
-msgstr "1 Woche"
-
-#: ../src/EventEdition/ReminderPanel.vala:206
-msgid "Notification"
-msgstr "Benachrichtigung"
-
-#: ../src/EventEdition/ReminderPanel.vala:207
-msgid "Email"
-msgstr "E-Mail"
-
-#: ../src/EventEdition/RepeatPanel.vala:53
-msgid "Repeat:"
-msgstr "Wiederholen:"
-
-#: ../src/EventEdition/RepeatPanel.vala:58
-msgid "Daily"
-msgstr "Täglich"
-
-#: ../src/EventEdition/RepeatPanel.vala:59
-msgid "Weekly"
-msgstr "Wöchentlich"
-
-#: ../src/EventEdition/RepeatPanel.vala:60
-msgid "Monthly"
-msgstr "Monatlich"
-
-#: ../src/EventEdition/RepeatPanel.vala:61
-msgid "Yearly"
-msgstr "Jährlich"
-
-#: ../src/EventEdition/RepeatPanel.vala:104
-msgid "Every:"
-msgstr "Jede:"
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Day"
-msgid_plural "Days"
-msgstr[0] "Tag"
-msgstr[1] "Tage"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-#: ../src/EventEdition/RepeatPanel.vala:125
-msgid "Week"
-msgid_plural "Weeks"
-msgstr[0] "Woche"
-msgstr[1] "Wochen"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Month"
-msgid_plural "Months"
-msgstr[0] "Monat"
-msgstr[1] "Monate"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Year"
-msgid_plural "Years"
-msgstr[0] "Jahr"
-msgstr[1] "Jahre"
-
-#: ../src/EventEdition/RepeatPanel.vala:135
-msgid "Ends:"
-msgstr "Endet:"
-
-#: ../src/EventEdition/RepeatPanel.vala:137
-#: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:106
+#: src/EventEdition/EventDialog.vala:111 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Wiederholung"
 msgstr[1] "Wiederholungen"
 
-#: ../src/EventEdition/RepeatPanel.vala:141
-msgid "Never"
-msgstr "Niemals"
-
-#: ../src/EventEdition/RepeatPanel.vala:142
-msgid "Until"
-msgstr "Bis"
-
-#: ../src/EventEdition/RepeatPanel.vala:143
-msgid "After"
-msgstr "Nach"
-
-#: ../src/EventEdition/RepeatPanel.vala:189
-msgid "The same day every month"
-msgstr "Jeden Monat am gleichen Tag"
-
-#: ../src/EventEdition/RepeatPanel.vala:200
-msgid "Exceptions:"
-msgstr "Ausnahmen:"
-
-#: ../src/EventEdition/RepeatPanel.vala:203
-msgid "No Exceptions"
-msgstr "Keine Ausnahmen"
-
-#: ../src/EventEdition/RepeatPanel.vala:224
-msgid "Add Exception"
-msgstr "Ausnahme hinzufügen"
-
-#: ../src/EventEdition/RepeatPanel.vala:358
-msgid "Every last Sunday"
-msgstr "Jeden letzten Sonntag"
-
-#: ../src/EventEdition/RepeatPanel.vala:361
-msgid "Every last Monday"
-msgstr "Jeden letzten Montag"
-
-#: ../src/EventEdition/RepeatPanel.vala:364
-msgid "Every last Tuesday"
-msgstr "Jeden letzten Dienstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:367
-msgid "Every last Wednesday"
-msgstr "Jeden letzten Mittwoch"
-
-#: ../src/EventEdition/RepeatPanel.vala:370
-msgid "Every last Thursday"
-msgstr "Jeden letzten Donnerstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:373
-msgid "Every last Friday"
-msgstr "Jeden letzten Freitag"
-
-#: ../src/EventEdition/RepeatPanel.vala:376
-msgid "Every last Saturday"
-msgstr "Jeden letzten Samstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:383
-msgid "Every first Sunday"
-msgstr "Jeden ersten Sonntag"
-
-#: ../src/EventEdition/RepeatPanel.vala:386
-msgid "Every first Monday"
-msgstr "Jeden ersten Montag"
-
-#: ../src/EventEdition/RepeatPanel.vala:389
-msgid "Every first Tuesday"
-msgstr "Jeden ersten Dienstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:392
-msgid "Every first Wednesday"
-msgstr "Jeden ersten Mittwoch"
-
-#: ../src/EventEdition/RepeatPanel.vala:395
-msgid "Every first Thursday"
-msgstr "Jeden ersten Donnerstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:398
-msgid "Every first Friday"
-msgstr "Jeden ersten Freitag"
-
-#: ../src/EventEdition/RepeatPanel.vala:401
-msgid "Every first Saturday"
-msgstr "Jeden ersten Samstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:408
-msgid "Every second Sunday"
-msgstr "Jeden zweiten Sonntag"
-
-#: ../src/EventEdition/RepeatPanel.vala:411
-msgid "Every second Monday"
-msgstr "Jeden zweiten Montag"
-
-#: ../src/EventEdition/RepeatPanel.vala:414
-msgid "Every second Tuesday"
-msgstr "Jeden zweiten Dienstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:417
-msgid "Every second Wednesday"
-msgstr "Jeden zweiten Mittwoch"
-
-#: ../src/EventEdition/RepeatPanel.vala:420
-msgid "Every second Thursday"
-msgstr "Jeden zweiten Donnerstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:423
-msgid "Every second Friday"
-msgstr "Jeden zweiten Freitag"
-
-#: ../src/EventEdition/RepeatPanel.vala:426
-msgid "Every second Saturday"
-msgstr "Jeden zweiten Samstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:433
-msgid "Every third Sunday"
-msgstr "Jeden dritten Sonntag"
-
-#: ../src/EventEdition/RepeatPanel.vala:436
-msgid "Every third Monday"
-msgstr "Jeden dritten Montag"
-
-#: ../src/EventEdition/RepeatPanel.vala:439
-msgid "Every third Tuesday"
-msgstr "Jeden dritten Dienstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:442
-msgid "Every third Wednesday"
-msgstr "Jeden dritten Mittwoch"
-
-#: ../src/EventEdition/RepeatPanel.vala:445
-msgid "Every third Thursday"
-msgstr "Jeden dritten Donnerstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:448
-msgid "Every third Friday"
-msgstr "Jeden dritten Freitag"
-
-#: ../src/EventEdition/RepeatPanel.vala:451
-msgid "Every third Saturday"
-msgstr "Jeden dritten Samstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:458
-msgid "Every fourth Sunday"
-msgstr "Jeden vierten Sonntag"
-
-#: ../src/EventEdition/RepeatPanel.vala:461
-msgid "Every fourth Monday"
-msgstr "Jeden vierten Montag"
-
-#: ../src/EventEdition/RepeatPanel.vala:464
-msgid "Every fourth Tuesday"
-msgstr "Jeden vierten Dienstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:467
-msgid "Every fourth Wednesday"
-msgstr "Jeden vierten Mittwoch"
-
-#: ../src/EventEdition/RepeatPanel.vala:470
-msgid "Every fourth Thursday"
-msgstr "Jeden vierten Donnerstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:473
-msgid "Every fourth Friday"
-msgstr "Jeden vierten Freitag"
-
-#: ../src/EventEdition/RepeatPanel.vala:476
-msgid "Every fourth Saturday"
-msgstr "Jeden vierten Samstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:483
-msgid "Every fifth Sunday"
-msgstr "Jeden fünften Sonntag"
-
-#: ../src/EventEdition/RepeatPanel.vala:486
-msgid "Every fifth Monday"
-msgstr "Jeden fünften Montag"
-
-#: ../src/EventEdition/RepeatPanel.vala:489
-msgid "Every fifth Tuesday"
-msgstr "Jeden fünften Dienstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:492
-msgid "Every fifth Wednesday"
-msgstr "Jeden fünften Mittwoch"
-
-#: ../src/EventEdition/RepeatPanel.vala:495
-msgid "Every fifth Thursday"
-msgstr "Jeden fünften Donnerstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:498
-msgid "Every fifth Friday"
-msgstr "Jeden fünften Freitag"
-
-#: ../src/EventEdition/RepeatPanel.vala:501
-msgid "Every fifth Saturday"
-msgstr "Jeden fünften Samstag"
-
-#: ../src/EventEdition/RepeatPanel.vala:511
-msgid "Mon"
-msgstr "Mo"
-
-#: ../src/EventEdition/RepeatPanel.vala:512
-msgid "Tue"
-msgstr "Di"
-
-#: ../src/EventEdition/RepeatPanel.vala:513
-msgid "Wed"
-msgstr "Mi"
-
-#: ../src/EventEdition/RepeatPanel.vala:514
-msgid "Thu"
-msgstr "Do"
-
-#: ../src/EventEdition/RepeatPanel.vala:515
-msgid "Fri"
-msgstr "Fr"
-
-#: ../src/EventEdition/RepeatPanel.vala:516
-msgid "Sat"
-msgstr "Sa"
-
-#: ../src/EventEdition/RepeatPanel.vala:517
-msgid "Sun"
-msgstr "So"
-
-#: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
-msgid "Add Event"
-msgstr "Termin hinzufügen"
-
-#: ../src/EventEdition/EventDialog.vala:67
-msgid "Edit Event"
-msgstr "Termin bearbeiten"
-
-#: ../src/EventEdition/EventDialog.vala:94
-msgid "General Informations"
-msgstr "Allgemeine Informationen"
-
-#: ../src/EventEdition/EventDialog.vala:97
-msgid "Location"
-msgstr "Ort"
-
-#: ../src/EventEdition/EventDialog.vala:100
-msgid "Guests"
-msgstr "Gäste"
-
-#: ../src/EventEdition/EventDialog.vala:103
-msgid "Reminders"
-msgstr "Erinnerungen"
-
-#: ../src/EventEdition/EventDialog.vala:169
+#: src/EventEdition/EventDialog.vala:134
 msgid "Delete Event"
 msgstr "Termin löschen"
 
-#: ../src/EventEdition/EventDialog.vala:181
+#: src/EventEdition/EventDialog.vala:146
 msgid "Create Event"
 msgstr "Termin erstellen"
 
-#: ../src/EventEdition/EventDialog.vala:184
+#: src/EventEdition/EventDialog.vala:149
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
-#: ../src/EventEdition/LocationPanel.vala:49
-msgid "Location:"
-msgstr "Ort:"
+#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "Abbrechen"
 
-#: ../src/EventEdition/LocationPanel.vala:51
-msgid "John Smith OR Example St."
-msgstr "Max Mustermann ODER Beispielstraße"
+#: src/EventEdition/GuestsPanel.vala:53
+msgid "Participants:"
+msgstr "Teilnehmer:"
 
-#: ../src/EventEdition/InfoPanel.vala:78
+#: src/EventEdition/GuestsPanel.vala:58
+msgid "No Participants"
+msgstr "Keine Teilnehmer"
+
+#: src/EventEdition/GuestsPanel.vala:94
+msgid "Invite"
+msgstr "Einladen"
+
+#: src/EventEdition/GuestsPanel.vala:242
+msgid "Accepted"
+msgstr "Akzeptiert"
+
+#: src/EventEdition/GuestsPanel.vala:245
+msgid "Declined"
+msgstr "Abgesagt"
+
+#: src/EventEdition/InfoPanel.vala:78
 msgid "From:"
 msgstr "Von:"
 
-#: ../src/EventEdition/InfoPanel.vala:84
+#: src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
 msgstr "Ganztägig:"
 
-#: ../src/EventEdition/InfoPanel.vala:89
+#: src/EventEdition/InfoPanel.vala:89
 msgid "To:"
 msgstr "Bis:"
 
-#: ../src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
 msgstr "Titel:"
 
-#: ../src/EventEdition/InfoPanel.vala:109
+#: src/EventEdition/InfoPanel.vala:109
 msgid "Name of Event"
 msgstr "Terminbezeichnung"
 
-#: ../src/EventEdition/InfoPanel.vala:119
+#: src/EventEdition/InfoPanel.vala:119
 msgid "Press enter to parse event"
-msgstr "Drücken Sie die Eingabetaste, um das Ereignis zu analysieren"
+msgstr "Drücken Sie die Eingabetaste, um den Termin zu analysieren"
 
-#: ../src/EventEdition/InfoPanel.vala:127
+#: src/EventEdition/InfoPanel.vala:134
 msgid "Calendar:"
 msgstr "Kalender:"
 
-#: ../src/EventEdition/InfoPanel.vala:134
+#: src/EventEdition/InfoPanel.vala:141
 msgid "Comments:"
 msgstr "Kommentare:"
 
-#: ../src/AgendaView.vala:63
-msgid ""
-"Your upcoming events will be displayed here when you select a date with "
-"events."
+#: src/EventEdition/LocationPanel.vala:50
+msgid "Location:"
+msgstr "Ort:"
+
+#: src/EventEdition/LocationPanel.vala:52
+msgid "John Smith OR Example St."
+msgstr "Max Mustermann ODER Beispielstraße"
+
+#: src/EventEdition/ReminderPanel.vala:33
+msgid "Reminders:"
+msgstr "Erinnerungen:"
+
+#: src/EventEdition/ReminderPanel.vala:37
+msgid "No Reminders"
+msgstr "Keine Einträge"
+
+#: src/EventEdition/ReminderPanel.vala:71
+msgid "Add Reminder"
+msgstr "Erinnerung hinzufügen"
+
+#: src/EventEdition/ReminderPanel.vala:172
+msgid "0 minutes"
+msgstr "0 Minuten"
+
+#: src/EventEdition/ReminderPanel.vala:173
+msgid "1 minute"
+msgstr "1 Minute"
+
+#: src/EventEdition/ReminderPanel.vala:174
+msgid "5 minutes"
+msgstr "5 Minuten"
+
+#: src/EventEdition/ReminderPanel.vala:175
+msgid "10 minutes"
+msgstr "10 Minuten"
+
+#: src/EventEdition/ReminderPanel.vala:176
+msgid "15 minutes"
+msgstr "15 Minuten"
+
+#: src/EventEdition/ReminderPanel.vala:177
+msgid "20 minutes"
+msgstr "20 Minuten"
+
+#: src/EventEdition/ReminderPanel.vala:178
+msgid "25 minutes"
+msgstr "25 Minuten"
+
+#: src/EventEdition/ReminderPanel.vala:179
+msgid "30 minutes"
+msgstr "30 Minuten"
+
+#: src/EventEdition/ReminderPanel.vala:180
+msgid "45 minutes"
+msgstr "45 Minuten"
+
+#: src/EventEdition/ReminderPanel.vala:181
+msgid "1 hour"
+msgstr "1 Stunde"
+
+#: src/EventEdition/ReminderPanel.vala:182
+msgid "2 hours"
+msgstr "2 Stunden"
+
+#: src/EventEdition/ReminderPanel.vala:183
+msgid "3 hours"
+msgstr "3 Stunden"
+
+#: src/EventEdition/ReminderPanel.vala:184
+msgid "12 hours"
+msgstr "12 Stunden"
+
+#: src/EventEdition/ReminderPanel.vala:185
+msgid "24 hours"
+msgstr "24 Stunden"
+
+#: src/EventEdition/ReminderPanel.vala:186
+msgid "2 days"
+msgstr "2 Tage"
+
+#: src/EventEdition/ReminderPanel.vala:187
+msgid "1 week"
+msgstr "1 Woche"
+
+#: src/EventEdition/ReminderPanel.vala:195
+msgid "Notification"
+msgstr "Benachrichtigung"
+
+#: src/EventEdition/RepeatPanel.vala:53
+msgid "Repeat:"
+msgstr "Wiederholen:"
+
+#: src/EventEdition/RepeatPanel.vala:58
+msgid "Daily"
+msgstr "Täglich"
+
+#: src/EventEdition/RepeatPanel.vala:59
+msgid "Weekly"
+msgstr "Wöchentlich"
+
+#: src/EventEdition/RepeatPanel.vala:60
+msgid "Monthly"
+msgstr "Monatlich"
+
+#: src/EventEdition/RepeatPanel.vala:61
+msgid "Yearly"
+msgstr "Jährlich"
+
+#: src/EventEdition/RepeatPanel.vala:104
+msgid "Every:"
+msgstr "Jede:"
+
+#: src/EventEdition/RepeatPanel.vala:111
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "Tag"
+msgstr[1] "Tage"
+
+#: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
+msgid "Week"
+msgid_plural "Weeks"
+msgstr[0] "Woche"
+msgstr[1] "Wochen"
+
+#: src/EventEdition/RepeatPanel.vala:117
+msgid "Month"
+msgid_plural "Months"
+msgstr[0] "Monat"
+msgstr[1] "Monate"
+
+#: src/EventEdition/RepeatPanel.vala:120
+msgid "Year"
+msgid_plural "Years"
+msgstr[0] "Jahr"
+msgstr[1] "Jahre"
+
+#: src/EventEdition/RepeatPanel.vala:135
+msgid "Ends:"
+msgstr "Endet:"
+
+#: src/EventEdition/RepeatPanel.vala:141
+msgid "Never"
+msgstr "Niemals"
+
+#: src/EventEdition/RepeatPanel.vala:142
+msgid "Until"
+msgstr "Bis"
+
+#: src/EventEdition/RepeatPanel.vala:143
+msgid "After"
+msgstr "Nach"
+
+#: src/EventEdition/RepeatPanel.vala:189
+msgid "The same day every month"
+msgstr "Jeden Monat am gleichen Tag"
+
+#: src/EventEdition/RepeatPanel.vala:200
+msgid "Exceptions:"
+msgstr "Ausnahmen:"
+
+#: src/EventEdition/RepeatPanel.vala:203
+msgid "No Exceptions"
+msgstr "Keine Ausnahmen"
+
+#: src/EventEdition/RepeatPanel.vala:224
+msgid "Add Exception"
+msgstr "Ausnahme hinzufügen"
+
+#: src/EventEdition/RepeatPanel.vala:358
+msgid "Every last Sunday"
+msgstr "Jeden letzten Sonntag"
+
+#: src/EventEdition/RepeatPanel.vala:361
+msgid "Every last Monday"
+msgstr "Jeden letzten Montag"
+
+#: src/EventEdition/RepeatPanel.vala:364
+msgid "Every last Tuesday"
+msgstr "Jeden letzten Dienstag"
+
+#: src/EventEdition/RepeatPanel.vala:367
+msgid "Every last Wednesday"
+msgstr "Jeden letzten Mittwoch"
+
+#: src/EventEdition/RepeatPanel.vala:370
+msgid "Every last Thursday"
+msgstr "Jeden letzten Donnerstag"
+
+#: src/EventEdition/RepeatPanel.vala:373
+msgid "Every last Friday"
+msgstr "Jeden letzten Freitag"
+
+#: src/EventEdition/RepeatPanel.vala:376
+msgid "Every last Saturday"
+msgstr "Jeden letzten Samstag"
+
+#: src/EventEdition/RepeatPanel.vala:383
+msgid "Every first Sunday"
+msgstr "Jeden ersten Sonntag"
+
+#: src/EventEdition/RepeatPanel.vala:386
+msgid "Every first Monday"
+msgstr "Jeden ersten Montag"
+
+#: src/EventEdition/RepeatPanel.vala:389
+msgid "Every first Tuesday"
+msgstr "Jeden ersten Dienstag"
+
+#: src/EventEdition/RepeatPanel.vala:392
+msgid "Every first Wednesday"
+msgstr "Jeden ersten Mittwoch"
+
+#: src/EventEdition/RepeatPanel.vala:395
+msgid "Every first Thursday"
+msgstr "Jeden ersten Donnerstag"
+
+#: src/EventEdition/RepeatPanel.vala:398
+msgid "Every first Friday"
+msgstr "Jeden ersten Freitag"
+
+#: src/EventEdition/RepeatPanel.vala:401
+msgid "Every first Saturday"
+msgstr "Jeden ersten Samstag"
+
+#: src/EventEdition/RepeatPanel.vala:408
+msgid "Every second Sunday"
+msgstr "Jeden zweiten Sonntag"
+
+#: src/EventEdition/RepeatPanel.vala:411
+msgid "Every second Monday"
+msgstr "Jeden zweiten Montag"
+
+#: src/EventEdition/RepeatPanel.vala:414
+msgid "Every second Tuesday"
+msgstr "Jeden zweiten Dienstag"
+
+#: src/EventEdition/RepeatPanel.vala:417
+msgid "Every second Wednesday"
+msgstr "Jeden zweiten Mittwoch"
+
+#: src/EventEdition/RepeatPanel.vala:420
+msgid "Every second Thursday"
+msgstr "Jeden zweiten Donnerstag"
+
+#: src/EventEdition/RepeatPanel.vala:423
+msgid "Every second Friday"
+msgstr "Jeden zweiten Freitag"
+
+#: src/EventEdition/RepeatPanel.vala:426
+msgid "Every second Saturday"
+msgstr "Jeden zweiten Samstag"
+
+#: src/EventEdition/RepeatPanel.vala:433
+msgid "Every third Sunday"
+msgstr "Jeden dritten Sonntag"
+
+#: src/EventEdition/RepeatPanel.vala:436
+msgid "Every third Monday"
+msgstr "Jeden dritten Montag"
+
+#: src/EventEdition/RepeatPanel.vala:439
+msgid "Every third Tuesday"
+msgstr "Jeden dritten Dienstag"
+
+#: src/EventEdition/RepeatPanel.vala:442
+msgid "Every third Wednesday"
+msgstr "Jeden dritten Mittwoch"
+
+#: src/EventEdition/RepeatPanel.vala:445
+msgid "Every third Thursday"
+msgstr "Jeden dritten Donnerstag"
+
+#: src/EventEdition/RepeatPanel.vala:448
+msgid "Every third Friday"
+msgstr "Jeden dritten Freitag"
+
+#: src/EventEdition/RepeatPanel.vala:451
+msgid "Every third Saturday"
+msgstr "Jeden dritten Samstag"
+
+#: src/EventEdition/RepeatPanel.vala:458
+msgid "Every fourth Sunday"
+msgstr "Jeden vierten Sonntag"
+
+#: src/EventEdition/RepeatPanel.vala:461
+msgid "Every fourth Monday"
+msgstr "Jeden vierten Montag"
+
+#: src/EventEdition/RepeatPanel.vala:464
+msgid "Every fourth Tuesday"
+msgstr "Jeden vierten Dienstag"
+
+#: src/EventEdition/RepeatPanel.vala:467
+msgid "Every fourth Wednesday"
+msgstr "Jeden vierten Mittwoch"
+
+#: src/EventEdition/RepeatPanel.vala:470
+msgid "Every fourth Thursday"
+msgstr "Jeden vierten Donnerstag"
+
+#: src/EventEdition/RepeatPanel.vala:473
+msgid "Every fourth Friday"
+msgstr "Jeden vierten Freitag"
+
+#: src/EventEdition/RepeatPanel.vala:476
+msgid "Every fourth Saturday"
+msgstr "Jeden vierten Samstag"
+
+#: src/EventEdition/RepeatPanel.vala:483
+msgid "Every fifth Sunday"
+msgstr "Jeden fünften Sonntag"
+
+#: src/EventEdition/RepeatPanel.vala:486
+msgid "Every fifth Monday"
+msgstr "Jeden fünften Montag"
+
+#: src/EventEdition/RepeatPanel.vala:489
+msgid "Every fifth Tuesday"
+msgstr "Jeden fünften Dienstag"
+
+#: src/EventEdition/RepeatPanel.vala:492
+msgid "Every fifth Wednesday"
+msgstr "Jeden fünften Mittwoch"
+
+#: src/EventEdition/RepeatPanel.vala:495
+msgid "Every fifth Thursday"
+msgstr "Jeden fünften Donnerstag"
+
+#: src/EventEdition/RepeatPanel.vala:498
+msgid "Every fifth Friday"
+msgstr "Jeden fünften Freitag"
+
+#: src/EventEdition/RepeatPanel.vala:501
+msgid "Every fifth Saturday"
+msgstr "Jeden fünften Samstag"
+
+#: src/EventEdition/RepeatPanel.vala:511
+msgid "Mon"
+msgstr "Mo"
+
+#: src/EventEdition/RepeatPanel.vala:512
+msgid "Tue"
+msgstr "Di"
+
+#: src/EventEdition/RepeatPanel.vala:513
+msgid "Wed"
+msgstr "Mi"
+
+#: src/EventEdition/RepeatPanel.vala:514
+msgid "Thu"
+msgstr "Do"
+
+#: src/EventEdition/RepeatPanel.vala:515
+msgid "Fri"
+msgstr "Fr"
+
+#: src/EventEdition/RepeatPanel.vala:516
+msgid "Sat"
+msgstr "Sa"
+
+#: src/EventEdition/RepeatPanel.vala:517
+msgid "Sun"
+msgstr "So"
+
+#: src/Grid/EventButton.vala:70
+msgid "Remove Event"
+msgstr "Termin entfernen"
+
+#: src/Grid/EventButton.vala:71
+msgid "Remove Occurrence"
+msgstr "Ereignis an diesem Tag entfernen"
+
+#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
+msgid "Hide Week Numbers"
+msgstr "Wochennummern ausblenden"
+
+#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:67
+msgid "Show Week Numbers"
+msgstr "Kalenderwochen anzeigen"
+
+#: src/Grid/VAutoHider.vala:109
+#, c-format
+msgid "%u more…"
+msgstr "%u weitere…"
+
+#: src/SourceDialog/SourceDialog.vala:53
+msgid "Create"
+msgstr "Erstellen"
+
+#: src/SourceDialog/SourceDialog.vala:64
+msgid "Name:"
+msgstr "Name:"
+
+#: src/SourceDialog/SourceDialog.vala:68
+msgid "Calendar Name"
+msgstr "Kalendername"
+
+#: src/SourceDialog/SourceDialog.vala:91
+msgid "Type:"
+msgstr "Typ:"
+
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Color:"
+msgstr "Farbe:"
+
+#: src/SourceDialog/SourceDialog.vala:172
+msgid "Mark as default calendar"
+msgstr "Als Vorgabekalender wählen"
+
+#: src/SourceDialog/SourceDialog.vala:243
+msgid "Create Calendar"
+msgstr "Kalender erstellen"
+
+#: src/SourceDialog/SourceDialog.vala:246
+#: src/Widgets/ContractorButtonWithMenu.vala:88
+msgid "Save"
+msgstr "Speichern"
+
+#: src/SourceDialog/SourceItem.vala:76
+#, fuzzy
+msgid "Not Removable"
+msgstr "Entfernen"
+
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Not Editable"
 msgstr ""
-"Ihre anstehenden Termine werden hier angezeigt, sobald Sie ein Datum mit "
-"Terminen auswählen."
 
-#: ../src/AgendaView.vala:154
-msgid "During the day"
-msgstr "Im Laufe des Tages"
+#: src/SourceDialog/SourceItem.vala:112
+msgid "Undo"
+msgstr "Rückgängig"
 
-#: ../src/AgendaView.vala:159
-msgid "All day"
-msgstr "Ganztägig"
+#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
+#, fuzzy, c-format
+msgid "\"%s\" removed"
+msgstr "Kalender \"%s\" wurde entfernt."
 
-#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:376
-msgid "%s, %s - %s, %s"
-msgstr "%s, %s - %s, %s"
+#: src/SourceDialog/SourceSelector.vala:51
+msgid "Add New Calendar…"
+msgstr "Neuen Kalender hinzufügen…"
 
-#: ../src/ImportDialog.vala:42
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "Termine aus »%s« in den folgenden Kalender importieren:"
+#: src/Widgets/ContractorButtonWithMenu.vala:72
+#: src/Widgets/ContractorButtonWithMenu.vala:82
+msgid "Export Calendar…"
+msgstr "Kalender exportieren…"
 
-#: ../src/ImportDialog.vala:44
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "Termine aus der Datei %d in den folgenden Kalender importieren:"
-msgstr[1] "Termine aus den Dateien %d in den folgenden Kalender importieren:"
+#: src/Widgets/ContractorButtonWithMenu.vala:85
+msgid "calendar.ics"
+msgstr "Kalender.ics"
 
-#: ../src/ImportDialog.vala:53
-msgid "Import"
-msgstr "Importieren"
-
-#: ../src/MayaToolbar.vala:45
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "Neuen Termin erstellen"
 
-#: ../src/MayaToolbar.vala:48
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "Zum heutigen Datum wechseln"
 
-#: ../src/MayaToolbar.vala:52
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "Kalender verwalten"
 
-#: ../src/MayaToolbar.vala:64
-msgid "Search Events"
-msgstr "Termine suchen"
-
-#: ../src/MayaToolbar.vala:67
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Standardkalender exportieren oder teilen"
 
-#: ../src/Application.vala:34 ../src/Translations.vala:6
-msgid "Calendar"
-msgstr "Kalender"
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "Termine aus »%s« in den folgenden Kalender importieren:"
 
-#: ../src/Application.vala:102
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
-"  Dennis Baudys https://launchpad.net/~thecondordb\n"
-"  Eduard Gotwig https://launchpad.net/~gotwig\n"
-"  Eppi15 https://launchpad.net/~eppi15\n"
-"  Felix Häcker https://launchpad.net/~haecker-felix\n"
-"  Ghenrik https://launchpad.net/~ghenrik-deactivatedaccount\n"
-"  Gregor Santner https://launchpad.net/~gsantner\n"
-"  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-"  Leon https://launchpad.net/~leoboh241293\n"
-"  Leon Bohn https://launchpad.net/~leon-bohn\n"
-"  Malvitus https://launchpad.net/~malvitus\n"
-"  Marijo Mustac https://launchpad.net/~mustacmarijo\n"
-"  Mathias Dietrich https://launchpad.net/~theghost\n"
-"  Max https://launchpad.net/~mr-ravioli-deactivatedaccount-"
-"deactivatedaccount\n"
-"  Phillip Sz https://launchpad.net/~phillip-sz\n"
-"  SSX https://launchpad.net/~ssx1337ssy\n"
-"  Sebastian Schmidt https://launchpad.net/~sebhesch\n"
-"  Simeon https://launchpad.net/~simeon5\n"
-"  Thomas Pitlik https://launchpad.net/~thomaspitlik\n"
-"  Tobias Bannert https://launchpad.net/~toba\n"
-"  UweS https://launchpad.net/~uwes\n"
-"  quassy https://launchpad.net/~quassy\n"
-"  queckjap https://launchpad.net/~eribabu"
+#~ msgid "Email"
+#~ msgstr "E-Mail"
 
-#: ../src/Translations.vala:5
-msgid "View and schedule events"
-msgstr "Termine ansehen und planen"
+#~ msgid "Search Events"
+#~ msgstr "Termine suchen"
 
-#: ../src/Translations.vala:7
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Maya;Planer;Termine;Tage;Ereignise;"
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
+#~ "  Dennis Baudys https://launchpad.net/~thecondordb\n"
+#~ "  Eduard Gotwig https://launchpad.net/~gotwig\n"
+#~ "  Eppi15 https://launchpad.net/~eppi15\n"
+#~ "  Felix Häcker https://launchpad.net/~haecker-felix\n"
+#~ "  Ghenrik https://launchpad.net/~ghenrik-deactivatedaccount\n"
+#~ "  Gregor Santner https://launchpad.net/~gsantner\n"
+#~ "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
+#~ "  Leon https://launchpad.net/~leoboh241293\n"
+#~ "  Leon Bohn https://launchpad.net/~leon-bohn\n"
+#~ "  Malvitus https://launchpad.net/~malvitus\n"
+#~ "  Marijo Mustac https://launchpad.net/~mustacmarijo\n"
+#~ "  Mathias Dietrich https://launchpad.net/~theghost\n"
+#~ "  Max https://launchpad.net/~mr-ravioli-deactivatedaccount-"
+#~ "deactivatedaccount\n"
+#~ "  Phillip Sz https://launchpad.net/~phillip-sz\n"
+#~ "  SSX https://launchpad.net/~ssx1337ssy\n"
+#~ "  Sebastian Schmidt https://launchpad.net/~sebhesch\n"
+#~ "  Simeon https://launchpad.net/~simeon5\n"
+#~ "  Thomas Pitlik https://launchpad.net/~thomaspitlik\n"
+#~ "  Tobias Bannert https://launchpad.net/~toba\n"
+#~ "  UweS https://launchpad.net/~uwes\n"
+#~ "  quassy https://launchpad.net/~quassy\n"
+#~ "  queckjap https://launchpad.net/~eribabu"
 
-#: ../src/Translations.vala:9
-msgid "About Maya"
-msgstr "Über Maya"
+#~ msgid "View and schedule events"
+#~ msgstr "Termine ansehen und planen"
 
-#: ../src/Translations.vala:10
-msgid "About Calendar"
-msgstr "Über Kalender"
+#~ msgid "Maya;Planner;Dates;Days;Events;"
+#~ msgstr "Maya;Planer;Termine;Tage;Ereignise;"
 
-#: ../plugins/Google/GoogleBackend.vala:38
-msgid "Google"
-msgstr "Google"
+#~ msgid "About Maya"
+#~ msgstr "Über Maya"
 
-#: ../plugins/Google/GoogleBackend.vala:61
-msgid "user.name or user.name@gmail.com"
-msgstr "Benutzer.Name oder Benutzer.Name@gmail.com"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:39
-msgid "CalDAV"
-msgstr "CalDAV"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:58
-msgid "URL:"
-msgstr "Adresse:"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:91
-msgid "Use a secure connection"
-msgstr "Sichere Verbindung verwenden"
-
-#: ../plugins/CalDAV/CalDAVBackend.vala:119
-msgid "Server handles meeting invitations"
-msgstr "Server unterstützt Einladungen zu Besprechungen"
-
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
-msgid "On this computer"
-msgstr "Auf diesem Computer"
-
-#: ../core/Backends/PlacementWidget.vala:41
-msgid "User:"
-msgstr "Benutzer:"
-
-#: ../core/Backends/PlacementWidget.vala:50
-msgid "user.name"
-msgstr "Benutzer.Name"
-
-#: ../core/Backends/PlacementWidget.vala:63
-msgid "Email:"
-msgstr "E-Mail-Adresse:"
-
-#: ../core/Backends/PlacementWidget.vala:72
-msgid "john@doe.com"
-msgstr "max@mustermann.de"
-
-#: ../core/Backends/PlacementWidget.vala:84
-msgid "Keep a copy locally"
-msgstr "Kopie lokal speichern"
-
-#: ../core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e. %B %Y"
-
-#: ../core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %e. %b"
-
-#~ msgid "Select calendars to display"
-#~ msgstr "Anzuzeigende Kalender auswählen"
+#~ msgid "About Calendar"
+#~ msgstr "Über Kalender"
 
 #~ msgid "at"
 #~ msgstr "um"

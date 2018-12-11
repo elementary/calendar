@@ -7,41 +7,60 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-07-24 19:37+0000\n"
-"Last-Translator: Jernej Virag <Unknown>\n"
-"Language-Team: Slovenian <sl@li.org>\n"
+"POT-Creation-Date: 2018-07-26 20:27+0100\n"
+"PO-Revision-Date: 2018-08-22 00:08+0000\n"
+"Last-Translator: Jernej Virag <jernej@virag.si>\n"
+"Language-Team: Slovenian <https://weblate.elementary.io/projects/calendar/"
+"extra/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Koledar"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Pregled in načrtovanje dogodkov"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr "Maya;Rokovnik;Datumi;Dnevi;Dogodki;Koledar;ics;caldav;evolution;"
-
-msgid "Add Event"
-msgstr "Dodaj dogodek"
-
-msgid "About Calendar"
-msgstr "O Koledarju"
-
-msgid "Maya"
-msgstr "Maya"
-
-msgid "About Maya"
-msgstr "O Maya"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
 "Vitka, lahkotna koledarska aplikacija, ki se usklajuje in upravlja z več "
 "koledarji na enem mestu, kot so Google koledar, Outlook ali CalDAV."
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+msgid "office-calendar"
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr "Maya;Rokovnik;Datumi;Dnevi;Dogodki;Koledar;ics;caldav;evolution;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "Dodaj dogodek"
+
+#~ msgid "About Calendar"
+#~ msgstr "O Koledarju"
+
+#~ msgid "Maya"
+#~ msgstr "Maya"
+
+#~ msgid "About Maya"
+#~ msgstr "O Maya"

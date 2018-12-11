@@ -1,0 +1,46 @@
+<schemalist>
+    <schema path="/io/elementary/calendar/settings/" id="io.elementary.calendar.settings">
+        <key name="plugins-disabled" type="as">
+          <default>[]</default>
+          <summary>List of disabled plugins</summary>
+          <description>Plugin modules to not load during startup</description>
+        </key>
+    </schema>
+    <schema path="/io/elementary/calendar/saved-state/" id="io.elementary.calendar.savedstate">
+      <key name="window-maximized" type="b">
+        <default>false</default>
+        <summary>Whether the window was maximized on last run</summary>
+        <description>Whether the window was maximized on last run</description>
+      </key>
+      <key name="window-position" type="(ii)">
+        <default>(-1, -1)</default>
+        <summary>Window position</summary>
+        <description>Most recent window position (x, y)</description>
+      </key>
+      <key name="window-size" type="(ii)">
+        <default>(1024, 750)</default>
+        <summary>Most recent window size</summary>
+        <description>Most recent window size (width, height)</description>
+      </key>
+        <key name="show-weeks" type="b">
+            <default>true</default>
+            <summary>Whether or not to show weeknumbers.</summary>
+            <description>Whether or not to show weeknumbers.</description>
+        </key>
+        <key name="month-page" type="s">
+            <default>""</default>
+            <summary>The current year-month that is shown.</summary>
+            <description>The current year-month that is shown.</description>
+        </key>
+        <key name="selected-day" type="s">
+            <default>""</default>
+            <summary>The current selected day.</summary>
+            <description>The current selected day.</description>
+        </key>
+        <key name="hpaned-position" type="i">
+            <default>650</default>
+            <summary>The x coordinate of the hpaned dragger.</summary>
+            <description>The x coordinate of the hpaned dragger.</description>
+        </key>
+    </schema>
+</schemalist>

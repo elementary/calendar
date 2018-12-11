@@ -62,10 +62,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
         selected_data_grid.add (day_label);
         selected_data_grid.add (separator);
 
-        var selected_data_style_provider = Util.Css.get_css_provider ();
-        selected_data_grid.get_style_context ().add_provider (selected_data_style_provider, 600);
-        selected_data_grid.get_style_context ().add_class ("cell");
-
         var placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
         placeholder_label.wrap = true;
         placeholder_label.wrap_mode = Pango.WrapMode.WORD;
@@ -154,10 +150,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
         upcoming_events_grid.attach (upcoming_events_label, 0, 1, 1, 1);
         upcoming_events_grid.attach (upcoming_events_separatorBottom, 0, 2, 1, 1);
 
-        var upcoming_events_style_provider = Util.Css.get_css_provider ();
-        upcoming_events_grid.get_style_context ().add_provider (upcoming_events_style_provider, 600);
-        upcoming_events_grid.get_style_context ().add_class ("cell");
-
         upcoming_events_list = new Gtk.ListBox ();
         upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         upcoming_events_list.set_header_func (upcoming_header_update_func);
@@ -231,12 +223,12 @@ public class Maya.View.AgendaView : Gtk.Grid {
             }
 
             if (row.is_allday != before.is_allday) {
-                row.set_header (header_with_label (_("During the day")));
+                row.set_header (new Granite.HeaderLabel (_("During the day")));
                 return;
             }
         } else {
             if (row.is_allday) {
-                var allday_header = header_with_label (_("All day"));
+                var allday_header = new Granite.HeaderLabel (_("All day"));
                 row.set_header (allday_header);
             }
             return;
@@ -301,44 +293,33 @@ public class Maya.View.AgendaView : Gtk.Grid {
             }
 
             switch (rowType) {
-                case 1: row.set_header (header_with_label (_("Tomorrow")));
+                case 1: row.set_header (new Granite.HeaderLabel (_("Tomorrow")));
                         break;
-                case 2: row.set_header (header_with_label (_("This Week")));
+                case 2: row.set_header (new Granite.HeaderLabel (_("This Week")));
                         break;
-                case 3: row.set_header (header_with_label (_("Next Week")));
+                case 3: row.set_header (new Granite.HeaderLabel (_("Next Week")));
                         break;
-                case 4: row.set_header (header_with_label (_("This Month")));
+                case 4: row.set_header (new Granite.HeaderLabel (_("This Month")));
                         break;
-                case 5: row.set_header (header_with_label (_("Next Month")));
+                case 5: row.set_header (new Granite.HeaderLabel (_("Next Month")));
                         break;
                 default: break;
             }
         } else {
             switch (rowType) {
-                case 1: row.set_header (header_with_label (_("Tomorrow")));
+                case 1: row.set_header (new Granite.HeaderLabel (_("Tomorrow")));
                         break;
-                case 2: row.set_header (header_with_label (_("This Week")));
+                case 2: row.set_header (new Granite.HeaderLabel (_("This Week")));
                         break;
-                case 3: row.set_header (header_with_label (_("Next Week")));
+                case 3: row.set_header (new Granite.HeaderLabel (_("Next Week")));
                         break;
-                case 4: row.set_header (header_with_label (_("This Month")));
+                case 4: row.set_header (new Granite.HeaderLabel (_("This Month")));
                         break;
-                case 5: row.set_header (header_with_label (_("Next Month")));
+                case 5: row.set_header (new Granite.HeaderLabel (_("Next Month")));
                         break;
                 default: break;
             }
         }
-    }
-
-    private Gtk.Widget header_with_label (string text) {
-        var label = new Gtk.Label (text);
-        label.get_style_context ().add_class ("h4");
-        label.hexpand = true;
-        label.margin_start = 6;
-        label.margin_top = 6;
-        label.use_markup = true;
-        label.set_alignment (0, 0.5f);
-        return label;
     }
 
     /**
@@ -433,171 +414,5 @@ public class Maya.View.AgendaView : Gtk.Grid {
         weekday_label.label = new_value;
         day_label.label = date.format (Settings.DateFormat ());
         selected_date_events_list.invalidate_filter ();
-    }
-
-    public class AgendaEventRow : Gtk.ListBoxRow {
-        public signal void removed (E.CalComponent event);
-        public signal void modified (E.CalComponent event);
-
-        public string uid { public get; private set; }
-        public string summary { public get; private set; }
-        public E.CalComponent calevent { public get; private set; }
-        public bool is_allday { public get; private set; default=false; }
-        public bool is_multiday { public get; private set; default=false; }
-        public Gtk.Revealer revealer { public get; private set; }
-
-        private Gtk.Image event_image;
-        private Gtk.Label name_label;
-        private Gtk.Label datatime_label;
-        private Gtk.Label location_label;
-
-        private bool isUpcoming;
-
-        public AgendaEventRow (E.Source source, E.CalComponent calevent, bool isUpcoming) {
-            this.calevent = calevent;
-            this.isUpcoming = isUpcoming;
-            unowned iCal.Component ical_event = calevent.get_icalcomponent ();
-            uid = ical_event.get_uid ();
-
-            var main_grid = new Gtk.Grid ();
-            main_grid.column_spacing = 6;
-            main_grid.row_spacing = 6;
-            main_grid.margin = 6;
-
-            E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-
-            event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
-            event_image.margin_start = 6;
-            Util.style_calendar_color (event_image, cal.dup_color ());
-
-            cal.notify["color"].connect (() => {
-                Util.style_calendar_color (event_image, cal.dup_color ());
-            });
-
-            name_label = new Gtk.Label ("");
-            name_label.hexpand = true;
-            name_label.wrap = true;
-            name_label.wrap_mode = Pango.WrapMode.WORD_CHAR;
-            name_label.xalign = 0;
-
-            datatime_label = new Gtk.Label ("");
-            datatime_label.ellipsize = Pango.EllipsizeMode.END;
-            datatime_label.xalign = 0;
-            datatime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
-            location_label = new Gtk.Label ("");
-            location_label.no_show_all = true;
-            location_label.wrap = true;
-            location_label.xalign = 0;
-            location_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
-            main_grid.attach (event_image, 0, 0, 1, 1);
-            main_grid.attach (name_label, 1, 0, 1, 1);
-            main_grid.attach (datatime_label, 1, 1, 1, 1);
-            main_grid.attach (location_label, 1, 2, 1, 1);
-
-            var event_box = new Gtk.EventBox ();
-            event_box.add (main_grid);
-
-            revealer = new Gtk.Revealer ();
-            revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN;
-            revealer.add (event_box);
-            add (revealer);
-
-            show.connect (() => {
-                revealer.set_reveal_child (true);
-            });
-
-            hide.connect (() => {
-                revealer.set_reveal_child (false);
-            });
-
-            add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
-            button_press_event.connect (on_button_press);
-
-            // Fill in the information
-            update (calevent);
-        }
-
-        private bool on_button_press (Gdk.EventButton event) {
-            if (event.type == Gdk.EventType.@2BUTTON_PRESS) {
-                 modified (calevent);
-            } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-                Gtk.Menu menu = new Gtk.Menu ();
-                menu.attach_to_widget (this, null);
-                var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
-                var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
-                edit_item.activate.connect (() => { modified (calevent); });
-                remove_item.activate.connect (() => { removed (calevent); });
-
-                E.Source src = calevent.get_data ("source");
-                if (src.writable != true && Model.CalendarModel.get_default ().calclient_is_readonly (src) != false) {
-                    edit_item.sensitive = false;
-                    remove_item.sensitive = false;
-                }
-
-                menu.append (edit_item);
-                menu.append (remove_item);
-
-                menu.popup (null, null, null, event.button, event.time);
-                menu.show_all ();
-            }
-
-            return true;
-        }
-
-        /**
-         * Updates the event to match the given event.
-         */
-        public void update (E.CalComponent event) {
-            unowned iCal.Component ical_event = event.get_icalcomponent ();
-            summary = ical_event.get_summary ();
-            name_label.set_markup (Markup.escape_text (summary));
-
-            DateTime start_date, end_date;
-            Util.get_local_datetimes_from_icalcomponent (ical_event, out start_date, out end_date);
-
-            is_allday = Util.is_all_day (start_date, end_date);
-            is_multiday = Util.is_multiday_event (ical_event);
-
-            string start_date_string = start_date.format (Settings.DateFormat_Complete ());
-            string end_date_string = end_date.format (Settings.DateFormat_Complete ());
-            string start_time_string = start_date.format (Settings.TimeFormat ());
-            string end_time_string = end_date.format (Settings.TimeFormat ());
-
-            datatime_label.show ();
-            datatime_label.no_show_all = false;
-            if (is_multiday) {
-                if (is_allday) {
-                    datatime_label.label = _("%s - %s").printf (start_date_string, end_date_string);
-                } else {
-                    datatime_label.label = _("%s, %s - %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
-                }
-            } else {
-                if (!isUpcoming) {
-                    if (is_allday) {
-                        datatime_label.hide ();
-                        datatime_label.no_show_all = true;
-                    } else {
-                        datatime_label.label = _("%s - %s").printf (start_time_string, end_time_string);
-                    }
-                } else {
-                    if (is_allday) {
-                        datatime_label.label = _("%s").printf (start_date_string);
-                    } else {
-                        datatime_label.label = _("%s, %s - %s").printf (start_date_string, start_time_string, end_time_string);
-                    }
-                }
-            }
-
-            string location = ical_event.get_location ();
-            if (location != null && location != "") {
-                location_label.label = location;
-                location_label.show ();
-            } else {
-                location_label.hide ();
-                location_label.no_show_all = true;
-            }
-        }
     }
 }

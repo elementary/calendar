@@ -1,0 +1,65 @@
+
+calendar_files = files(
+    'AgendaView.vala',
+    'Application.vala',
+    'ImportDialog.vala',
+    'MainWindow.vala',
+    'EventEdition/ContactImage.vala',
+    'EventEdition/EventDialog.vala',
+    'EventEdition/GuestsPanel.vala',
+    'EventEdition/InfoPanel.vala',
+    'EventEdition/LocationPanel.vala',
+    'EventEdition/ReminderPanel.vala',
+    'EventEdition/RepeatPanel.vala',
+    'EventParser/EventParser.vala',
+    'EventParser/EventParserHandler.vala',
+    'EventParser/ParsedEvent.vala',
+    'EventParser/Parsers/ParserDe.vala',
+    'EventParser/Parsers/ParserEn.vala',
+    'Grid/CalendarView.vala',
+    'Grid/GridDay.vala',
+    'Grid/Grid.vala',
+    'Grid/EventButton.vala',
+    'Grid/WeekLabels.vala',
+    'Grid/Header.vala',
+    'Grid/VAutoHider.vala',
+    'SourceDialog/SourceDialog.vala',
+    'SourceDialog/SourceItem.vala',
+    'SourceDialog/SourceSelector.vala',
+    'Widgets/AgendaEventRow.vala',
+    'Widgets/CalendarButton.vala',
+    'Widgets/ContractorButtonWithMenu.vala',
+    'Widgets/DateSwitcher.vala',
+    'Widgets/DateTimePicker.vala',
+    'Widgets/DynamicSpinner.vala',
+    'Widgets/HeaderBar.vala'
+)
+
+calendar_deps = [
+    core_dep,
+    glib_dep,
+    granite_dep,
+    gtk_dep,
+    libecal_dep,
+    libedataserver_dep,
+    libedataserverui_dep,
+    libical_dep,
+    libsoup_dep,
+    gmodule_dep,
+    m_dep,
+    champlain_dep,
+    champlain_gtk_dep,
+    clutter_dep,
+    clutter_gtk_dep,
+    folks_dep,
+    geocode_glib_dep,
+    gclue_dep
+]
+
+executable(
+    meson.project_name(),
+    calendar_files,
+    gresource_calendar,
+    dependencies: calendar_deps,
+    install: true
+)

@@ -7,698 +7,776 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2017-09-30 12:49+0000\n"
-"Last-Translator: Jun Takeda <takeda.jun@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://weblate.elementary.io/projects/calendar/calendar/ja/>\n"
+"POT-Creation-Date: 2018-12-10 16:43-0800\n"
+"PO-Revision-Date: 2018-12-11 02:08+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"Language-Team: Japanese <https://weblate.elementary.io/projects/calendar/"
+"calendar/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
-#: ../src/SourceDialog/SourceSelector.vala:69
-msgid "Add New Calendar…"
-msgstr "新しいカレンダーを作成…"
-
-#: ../src/SourceDialog/SourceItem.vala:82 ../src/AgendaView.vala:338
-msgid "Remove"
-msgstr "削除"
-
-#: ../src/SourceDialog/SourceItem.vala:96 ../src/AgendaView.vala:337
-msgid "Edit…"
-msgstr "編集…"
-
-#: ../src/SourceDialog/SourceItem.vala:127
-msgid "Undo"
-msgstr "元に戻す"
-
-#: ../src/SourceDialog/SourceItem.vala:142
-msgid "Calendar \"%s\" removed."
-msgstr "カレンダー \"%s\" を削除しました。"
-
-#: ../src/SourceDialog/SourceDialog.vala:58
-#: ../src/Widgets/ContractorButtonWithMenu.vala:81
-#: ../src/EventEdition/EventDialog.vala:187 ../src/ImportDialog.vala:55
-msgid "Cancel"
-msgstr "キャンセル"
-
-#: ../src/SourceDialog/SourceDialog.vala:60
-msgid "Create"
-msgstr "新規"
-
-#: ../src/SourceDialog/SourceDialog.vala:69
-msgid "Name:"
-msgstr "名前:"
-
-#: ../src/SourceDialog/SourceDialog.vala:72
-msgid "Calendar Name"
-msgstr "カレンダー名"
-
-#: ../src/SourceDialog/SourceDialog.vala:95
-msgid "Type:"
-msgstr "種類:"
-
-#: ../src/SourceDialog/SourceDialog.vala:118
-msgid "Color:"
-msgstr "色:"
-
-#: ../src/SourceDialog/SourceDialog.vala:123
-msgid "Mark as default calendar"
-msgstr "デフォルトのカレンダーにする"
-
-#: ../src/SourceDialog/SourceDialog.vala:153
-msgid "Create Calendar"
-msgstr "カレンダーを作成"
-
-#: ../src/SourceDialog/SourceDialog.vala:162
-#: ../src/Widgets/ContractorButtonWithMenu.vala:82
-msgid "Save"
-msgstr "保存"
-
-#: ../src/Grid/Header.vala:69 ../src/Grid/WeekLabels.vala:55
-msgid "Hide Week Numbers"
-msgstr "週番号を非表示にする"
-
-#: ../src/Grid/Header.vala:71 ../src/Grid/WeekLabels.vala:57
-msgid "Show Week Numbers"
-msgstr "週の通し番号を表示"
-
-#: ../src/Grid/VAutoHider.vala:100
-msgid "%u more…"
-msgstr "あと %u …"
-
-#: ../src/Widgets/ContractorButtonWithMenu.vala:67
-#: ../src/Widgets/ContractorButtonWithMenu.vala:76
-msgid "Export Calendar..."
-msgstr "カレンダーをエクスポート..."
-
-#: ../src/Widgets/ContractorButtonWithMenu.vala:79
-msgid "calendar.ics"
-msgstr "カレンダー.ics"
-
-#: ../src/EventEdition/GuestsPanel.vala:53
-msgid "Participants:"
-msgstr "参加者:"
-
-#: ../src/EventEdition/GuestsPanel.vala:58
-msgid "No Participants"
-msgstr "参加者はいません"
-
-#: ../src/EventEdition/GuestsPanel.vala:93
-msgid "Invite"
-msgstr "招待"
-
-#: ../src/EventEdition/GuestsPanel.vala:241
-msgid "Accepted"
-msgstr "受諾済"
-
-#: ../src/EventEdition/GuestsPanel.vala:244
-msgid "Declined"
-msgstr "辞退"
-
-#: ../src/EventEdition/ReminderPanel.vala:33
-msgid "Reminders:"
-msgstr "リマインダー:"
-
-#: ../src/EventEdition/ReminderPanel.vala:37
-msgid "No Reminders"
-msgstr "リマインダーなし"
-
-#: ../src/EventEdition/ReminderPanel.vala:71
-msgid "Add Reminder"
-msgstr "リマインダーを追加"
-
-#: ../src/EventEdition/ReminderPanel.vala:182
-msgid "0 minutes"
-msgstr "0分"
-
-#: ../src/EventEdition/ReminderPanel.vala:183
-msgid "1 minutes"
-msgstr "１分"
-
-#: ../src/EventEdition/ReminderPanel.vala:184
-msgid "5 minutes"
-msgstr "5分"
-
-#: ../src/EventEdition/ReminderPanel.vala:185
-msgid "10 minutes"
-msgstr "10分"
-
-#: ../src/EventEdition/ReminderPanel.vala:186
-msgid "15 minutes"
-msgstr "15分"
-
-#: ../src/EventEdition/ReminderPanel.vala:187
-msgid "20 minutes"
-msgstr "20分"
-
-#: ../src/EventEdition/ReminderPanel.vala:188
-msgid "25 minutes"
-msgstr "25分"
-
-#: ../src/EventEdition/ReminderPanel.vala:189
-msgid "30 minutes"
-msgstr "30分"
-
-#: ../src/EventEdition/ReminderPanel.vala:190
-msgid "45 minutes"
-msgstr "45分"
-
-#: ../src/EventEdition/ReminderPanel.vala:191
-msgid "1 hour"
-msgstr "1時間"
-
-#: ../src/EventEdition/ReminderPanel.vala:192
-msgid "2 hours"
-msgstr "2時間"
-
-#: ../src/EventEdition/ReminderPanel.vala:193
-msgid "3 hours"
-msgstr "3時間"
-
-#: ../src/EventEdition/ReminderPanel.vala:194
-msgid "12 hours"
-msgstr "12時間"
-
-#: ../src/EventEdition/ReminderPanel.vala:195
-msgid "24 hours"
-msgstr "24時間"
-
-#: ../src/EventEdition/ReminderPanel.vala:196
-msgid "2 days"
-msgstr "2日"
-
-#: ../src/EventEdition/ReminderPanel.vala:197
-msgid "1 week"
-msgstr "1週間"
-
-#: ../src/EventEdition/ReminderPanel.vala:206
-msgid "Notification"
-msgstr "通知"
-
-#: ../src/EventEdition/ReminderPanel.vala:207
-msgid "Email"
-msgstr "メール"
-
-#: ../src/EventEdition/RepeatPanel.vala:53
-msgid "Repeat:"
-msgstr "繰り返し:"
-
-#: ../src/EventEdition/RepeatPanel.vala:58
-msgid "Daily"
-msgstr "毎日"
-
-#: ../src/EventEdition/RepeatPanel.vala:59
-msgid "Weekly"
-msgstr "毎週"
-
-#: ../src/EventEdition/RepeatPanel.vala:60
-msgid "Monthly"
-msgstr "毎月"
-
-#: ../src/EventEdition/RepeatPanel.vala:61
-msgid "Yearly"
-msgstr "毎年"
-
-#: ../src/EventEdition/RepeatPanel.vala:104
-msgid "Every:"
-msgstr "間隔："
-
-#: ../src/EventEdition/RepeatPanel.vala:111
-msgid "Day"
-msgid_plural "Days"
-msgstr[0] "日"
-
-#: ../src/EventEdition/RepeatPanel.vala:114
-#: ../src/EventEdition/RepeatPanel.vala:125
-msgid "Week"
-msgid_plural "Weeks"
-msgstr[0] "週"
-
-#: ../src/EventEdition/RepeatPanel.vala:117
-msgid "Month"
-msgid_plural "Months"
-msgstr[0] "ヶ月"
-
-#: ../src/EventEdition/RepeatPanel.vala:120
-msgid "Year"
-msgid_plural "Years"
-msgstr[0] "年"
-
-#: ../src/EventEdition/RepeatPanel.vala:135
-msgid "Ends:"
-msgstr "終了："
-
-#: ../src/EventEdition/RepeatPanel.vala:137
-#: ../src/EventEdition/RepeatPanel.vala:170
-#: ../src/EventEdition/EventDialog.vala:106
-msgid "Repeat"
-msgid_plural "Repeats"
-msgstr[0] "繰り返し"
-
-#: ../src/EventEdition/RepeatPanel.vala:141
-msgid "Never"
-msgstr "なし"
-
-#: ../src/EventEdition/RepeatPanel.vala:142
-msgid "Until"
-msgstr "まで"
-
-#: ../src/EventEdition/RepeatPanel.vala:143
-msgid "After"
-msgstr "後"
-
-#: ../src/EventEdition/RepeatPanel.vala:189
-msgid "The same day every month"
-msgstr "毎月同じ日"
-
-#: ../src/EventEdition/RepeatPanel.vala:200
-msgid "Exceptions:"
-msgstr "例外:"
-
-#: ../src/EventEdition/RepeatPanel.vala:203
-msgid "No Exceptions"
-msgstr "例外はありません"
-
-#: ../src/EventEdition/RepeatPanel.vala:224
-msgid "Add Exception"
-msgstr "例外を追加"
-
-#: ../src/EventEdition/RepeatPanel.vala:358
-msgid "Every last Sunday"
-msgstr "毎月最後の日曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:361
-msgid "Every last Monday"
-msgstr "毎月最後の月曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:364
-msgid "Every last Tuesday"
-msgstr "毎月最後の火曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:367
-msgid "Every last Wednesday"
-msgstr "毎月最後の水曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:370
-msgid "Every last Thursday"
-msgstr "毎月最後の木曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:373
-msgid "Every last Friday"
-msgstr "毎月最後の金曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:376
-msgid "Every last Saturday"
-msgstr "毎月最後の土曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:383
-msgid "Every first Sunday"
-msgstr "毎月最初の日曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:386
-msgid "Every first Monday"
-msgstr "毎月最初の月曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:389
-msgid "Every first Tuesday"
-msgstr "毎月最初の火曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:392
-msgid "Every first Wednesday"
-msgstr "毎月最初の水曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:395
-msgid "Every first Thursday"
-msgstr "毎月最初の木曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:398
-msgid "Every first Friday"
-msgstr "毎月最初の金曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:401
-msgid "Every first Saturday"
-msgstr "毎月最初の土曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:408
-msgid "Every second Sunday"
-msgstr "毎月第二日曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:411
-msgid "Every second Monday"
-msgstr "毎月第二月曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:414
-msgid "Every second Tuesday"
-msgstr "毎月第二火曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:417
-msgid "Every second Wednesday"
-msgstr "毎月第二水曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:420
-msgid "Every second Thursday"
-msgstr "毎月第二木曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:423
-msgid "Every second Friday"
-msgstr "毎月第二金曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:426
-msgid "Every second Saturday"
-msgstr "毎月第二土曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:433
-msgid "Every third Sunday"
-msgstr "毎月第二日曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:436
-msgid "Every third Monday"
-msgstr "毎月第三月曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:439
-msgid "Every third Tuesday"
-msgstr "毎月第三火曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:442
-msgid "Every third Wednesday"
-msgstr "毎月第三水曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:445
-msgid "Every third Thursday"
-msgstr "毎月第三木曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:448
-msgid "Every third Friday"
-msgstr "毎月第三金曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:451
-msgid "Every third Saturday"
-msgstr "毎月第三土曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:458
-msgid "Every fourth Sunday"
-msgstr "毎月第四日曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:461
-msgid "Every fourth Monday"
-msgstr "毎月第四月曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:464
-msgid "Every fourth Tuesday"
-msgstr "毎月第四火曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:467
-msgid "Every fourth Wednesday"
-msgstr "毎月第四水曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:470
-msgid "Every fourth Thursday"
-msgstr "毎月第四木曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:473
-msgid "Every fourth Friday"
-msgstr "毎月第四金曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:476
-msgid "Every fourth Saturday"
-msgstr "毎月第四土曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:483
-msgid "Every fifth Sunday"
-msgstr "毎月第五日曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:486
-msgid "Every fifth Monday"
-msgstr "毎月第五月曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:489
-msgid "Every fifth Tuesday"
-msgstr "毎月第五火曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:492
-msgid "Every fifth Wednesday"
-msgstr "毎月第五水曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:495
-msgid "Every fifth Thursday"
-msgstr "毎月第五木曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:498
-msgid "Every fifth Friday"
-msgstr "毎月第五金曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:501
-msgid "Every fifth Saturday"
-msgstr "毎月第五土曜日"
-
-#: ../src/EventEdition/RepeatPanel.vala:511
-msgid "Mon"
-msgstr "月"
-
-#: ../src/EventEdition/RepeatPanel.vala:512
-msgid "Tue"
-msgstr "火"
-
-#: ../src/EventEdition/RepeatPanel.vala:513
-msgid "Wed"
-msgstr "水"
-
-#: ../src/EventEdition/RepeatPanel.vala:514
-msgid "Thu"
-msgstr "木"
-
-#: ../src/EventEdition/RepeatPanel.vala:515
-msgid "Fri"
-msgstr "金"
-
-#: ../src/EventEdition/RepeatPanel.vala:516
-msgid "Sat"
-msgstr "土"
-
-#: ../src/EventEdition/RepeatPanel.vala:517
-msgid "Sun"
-msgstr "日"
-
-#: ../src/EventEdition/EventDialog.vala:64 ../src/Translations.vala:8
-msgid "Add Event"
-msgstr "イベントの追加"
-
-#: ../src/EventEdition/EventDialog.vala:67
-msgid "Edit Event"
-msgstr "予定を編集"
-
-#: ../src/EventEdition/EventDialog.vala:94
-msgid "General Informations"
-msgstr "一般的な情報"
-
-#: ../src/EventEdition/EventDialog.vala:97
-msgid "Location"
-msgstr "場所"
-
-#: ../src/EventEdition/EventDialog.vala:100
-msgid "Guests"
-msgstr "ゲスト"
-
-#: ../src/EventEdition/EventDialog.vala:103
-msgid "Reminders"
-msgstr "リマインダー"
-
-#: ../src/EventEdition/EventDialog.vala:169
-msgid "Delete Event"
-msgstr "予定を削除"
-
-#: ../src/EventEdition/EventDialog.vala:181
-msgid "Create Event"
-msgstr "予定を作成"
-
-#: ../src/EventEdition/EventDialog.vala:184
-msgid "Save Changes"
-msgstr "変更を保存"
-
-#: ../src/EventEdition/LocationPanel.vala:49
-msgid "Location:"
-msgstr "場所："
-
-#: ../src/EventEdition/LocationPanel.vala:51
-msgid "John Smith OR Example St."
-msgstr "場所を入力"
-
-#: ../src/EventEdition/InfoPanel.vala:78
-msgid "From:"
-msgstr "開始日時："
-
-#: ../src/EventEdition/InfoPanel.vala:84
-msgid "All day:"
-msgstr "終日:"
-
-#: ../src/EventEdition/InfoPanel.vala:89
-msgid "To:"
-msgstr "終了日時："
-
-#: ../src/EventEdition/InfoPanel.vala:107
-msgid "Title:"
-msgstr "タイトル:"
-
-#: ../src/EventEdition/InfoPanel.vala:109
-msgid "Name of Event"
-msgstr "予定のタイトル"
-
-#: ../src/EventEdition/InfoPanel.vala:119
-msgid "Press enter to parse event"
-msgstr "予定を解析するためにエンターを押してください"
-
-#: ../src/EventEdition/InfoPanel.vala:127
-msgid "Calendar:"
-msgstr "カレンダー："
-
-#: ../src/EventEdition/InfoPanel.vala:134
-msgid "Comments:"
-msgstr "コメント："
-
-#: ../src/AgendaView.vala:63
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
+msgid "On this computer"
+msgstr "このコンピューター"
+
+#: core/Backends/PlacementWidget.vala:41
+msgid "User:"
+msgstr "ユーザー:"
+
+#: core/Backends/PlacementWidget.vala:50
+msgid "user.name"
+msgstr "user.name"
+
+#: core/Backends/PlacementWidget.vala:63
+msgid "Email:"
+msgstr "メール:"
+
+#: core/Backends/PlacementWidget.vala:72
+msgid "john@doe.com"
+msgstr "john@doe.com"
+
+#: core/Backends/PlacementWidget.vala:84
+msgid "Keep a copy locally"
+msgstr "ローカルにコピーを保管"
+
+#: core/Settings/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%Y年%B%e日"
+
+#: core/Settings/LanguagesFormat.vala:25
+msgid "%A, %b %d"
+msgstr "%b月%d日 %A"
+
+#: daemon/Daemon.vala:21
+msgid "Print debug information"
+msgstr "デバッグ情報を表示します"
+
+#: daemon/Daemon.vala:23 src/Application.vala:49
+msgid "Print version info and exit"
+msgstr "バージョン情報を表示して終了します"
+
+#: plugins/Google/GoogleBackend.vala:38
+msgid "Google"
+msgstr "Google"
+
+#: plugins/Google/GoogleBackend.vala:61
+msgid "user.name or user.name@gmail.com"
+msgstr "user.name または user.name@gmail.com"
+
+#: plugins/CalDAV/CalDAVBackend.vala:39
+msgid "CalDAV"
+msgstr "CalDAV"
+
+#: plugins/CalDAV/CalDAVBackend.vala:58
+msgid "URL:"
+msgstr "URL:"
+
+#: plugins/CalDAV/CalDAVBackend.vala:95
+msgid "Use a secure connection"
+msgstr "安全な接続を使う"
+
+#: plugins/CalDAV/CalDAVBackend.vala:123
+msgid "Server handles meeting invitations"
+msgstr "サーバーが会議の招待を処理"
+
+#: src/AgendaView.vala:65
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "予定が入っている日付を選択すると、ここに予定の内容が表示されます。"
 
-#: ../src/AgendaView.vala:154
+#: src/AgendaView.vala:138
+msgid "Upcoming Events"
+msgstr "今後の予定"
+
+#: src/AgendaView.vala:226
 msgid "During the day"
 msgstr "日中"
 
-#: ../src/AgendaView.vala:159
+#: src/AgendaView.vala:231
 msgid "All day"
 msgstr "終日"
 
-#. / TRANSLATORS: for multiple days events, shows: (date), (time) - (date), (time)
-#: ../src/AgendaView.vala:376
+#: src/AgendaView.vala:296 src/AgendaView.vala:310
+msgid "Tomorrow"
+msgstr "明日"
+
+#: src/AgendaView.vala:298 src/AgendaView.vala:312
+msgid "This Week"
+msgstr "今週"
+
+#: src/AgendaView.vala:300 src/AgendaView.vala:314
+msgid "Next Week"
+msgstr "来週"
+
+#: src/AgendaView.vala:302 src/AgendaView.vala:316
+msgid "This Month"
+msgstr "今月"
+
+#: src/AgendaView.vala:304 src/AgendaView.vala:318
+msgid "Next Month"
+msgstr "来月"
+
+#: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Edit…"
+msgstr "編集…"
+
+#: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
+#: src/SourceDialog/SourceItem.vala:76
+msgid "Remove"
+msgstr "削除"
+
+#: src/AgendaView.vala:564 src/AgendaView.vala:574
+#, c-format
+msgid "%s - %s"
+msgstr "%s - %s"
+
+#: src/AgendaView.vala:566
+#, c-format
 msgid "%s, %s - %s, %s"
 msgstr "%s %s - %s %s"
 
-#: ../src/ImportDialog.vala:42
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "\"%s\" から以下のカレンダーに予定をインポートする:"
+#: src/AgendaView.vala:578
+#, c-format
+msgid "%s"
+msgstr "%s"
 
-#: ../src/ImportDialog.vala:44
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "%d個のファイルから以下のカレンダーに予定をインポートする:"
+#: src/AgendaView.vala:580
+#, c-format
+msgid "%s, %s - %s"
+msgstr "%s、%s - %s"
 
-#: ../src/ImportDialog.vala:53
-msgid "Import"
-msgstr "インポート"
+#: src/Application.vala:47
+msgid "Create an event"
+msgstr "予定を作成します"
 
-#: ../src/MayaToolbar.vala:45
-msgid "Create a new event"
-msgstr "新しい予定を作成"
+#: src/Application.vala:48
+msgid "Focus the given day"
+msgstr "指定の日に移動します"
 
-#: ../src/MayaToolbar.vala:48
-msgid "Go to today's date"
-msgstr "今日の日付へ移動"
+#: src/Application.vala:48
+msgid "date"
+msgstr "日付"
 
-#: ../src/MayaToolbar.vala:52
-msgid "Manage Calendars"
-msgstr "カレンダーの管理"
-
-#: ../src/MayaToolbar.vala:64
-msgid "Search Events"
-msgstr "予定の検索"
-
-#: ../src/MayaToolbar.vala:67
-msgid "Export or Share the default Calendar"
-msgstr "デフォルトのカレンダーを共有または書き出す"
-
-#: ../src/Application.vala:34 ../src/Translations.vala:6
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "カレンダー"
 
-#: ../src/Application.vala:102
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) https://launchpad.net/~balloon\n"
-"  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-"  Joji Bronner https://launchpad.net/~jojiinchrist\n"
-"  Jun Takeda https://launchpad.net/~takeda-jun\n"
-"  Naoki Kephart https://launchpad.net/~naoki-kephart\n"
-"  Tsuji Kento https://launchpad.net/~tuziemon-deactivatedaccount-"
-"deactivatedaccount"
+#: src/ImportDialog.vala:28
+msgid "Select a Calendar to Import Into"
+msgstr "インポート先のカレンダーを選択"
 
-#: ../src/Translations.vala:5
-msgid "View and schedule events"
-msgstr "イベントの表示・編集をします"
+#: src/ImportDialog.vala:44
+#, c-format
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "\"%s\" にある予定は、以下のカレンダーとマージされます:"
 
-#: ../src/Translations.vala:7
-msgid "Maya;Planner;Dates;Days;Events;"
-msgstr "Maya;Planner;Dates;Days;Events;"
+#: src/ImportDialog.vala:47
+#, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
+msgstr[0] "%d 個のファイルにある予定は、以下のカレンダーとマージされます:"
 
-#: ../src/Translations.vala:9
-msgid "About Maya"
-msgstr "Maya について"
+#: src/ImportDialog.vala:57
+msgid "Import"
+msgstr "インポート"
 
-#: ../src/Translations.vala:10
-msgid "About Calendar"
-msgstr "カレンダーについて"
+#: src/EventEdition/EventDialog.vala:58
+msgid "Add Event"
+msgstr "予定を追加"
 
-#: ../plugins/Google/GoogleBackend.vala:38
-msgid "Google"
-msgstr "Google"
+#: src/EventEdition/EventDialog.vala:61
+msgid "Edit Event"
+msgstr "予定を編集"
 
-#: ../plugins/Google/GoogleBackend.vala:61
-msgid "user.name or user.name@gmail.com"
-msgstr "user.name または user.name@gmail.com"
+#: src/EventEdition/EventDialog.vala:107
+msgid "General Informations"
+msgstr "一般的な情報"
 
-#: ../plugins/CalDAV/CalDAVBackend.vala:39
-msgid "CalDAV"
-msgstr "CalDAV"
+#: src/EventEdition/EventDialog.vala:108
+msgid "Location"
+msgstr "場所"
 
-#: ../plugins/CalDAV/CalDAVBackend.vala:58
-msgid "URL:"
-msgstr "URL:"
+#: src/EventEdition/EventDialog.vala:109
+msgid "Guests"
+msgstr "ゲスト"
 
-#: ../plugins/CalDAV/CalDAVBackend.vala:91
-msgid "Use a secure connection"
-msgstr "セキュアな接続の利用"
+#: src/EventEdition/EventDialog.vala:110
+msgid "Reminders"
+msgstr "リマインダー"
 
-#: ../plugins/CalDAV/CalDAVBackend.vala:119
-msgid "Server handles meeting invitations"
-msgstr "サーバーが会議の招待を処理"
+#: src/EventEdition/EventDialog.vala:111 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/RepeatPanel.vala:170
+msgid "Repeat"
+msgid_plural "Repeats"
+msgstr[0] "繰り返し"
 
-#: ../core/Backends/LocalBackend.vala:25 ../core/Utils.vala:666
-msgid "On this computer"
-msgstr "このコンピューター"
+#: src/EventEdition/EventDialog.vala:134
+msgid "Delete Event"
+msgstr "予定を削除"
 
-#: ../core/Backends/PlacementWidget.vala:41
-msgid "User:"
-msgstr "ユーザー:"
+#: src/EventEdition/EventDialog.vala:146
+msgid "Create Event"
+msgstr "予定を作成"
 
-#: ../core/Backends/PlacementWidget.vala:50
-msgid "user.name"
-msgstr "user.name"
+#: src/EventEdition/EventDialog.vala:149
+msgid "Save Changes"
+msgstr "変更を保存"
 
-#: ../core/Backends/PlacementWidget.vala:63
-msgid "Email:"
-msgstr "Eメール:"
+#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "キャンセル"
 
-#: ../core/Backends/PlacementWidget.vala:72
-msgid "john@doe.com"
-msgstr "john@doe.com"
+#: src/EventEdition/GuestsPanel.vala:53
+msgid "Participants:"
+msgstr "参加者:"
 
-#: ../core/Backends/PlacementWidget.vala:84
-msgid "Keep a copy locally"
-msgstr "ローカルにコピーを保管する"
+#: src/EventEdition/GuestsPanel.vala:58
+msgid "No Participants"
+msgstr "参加者はいません"
 
-#: ../core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%Y年%B%e日"
+#: src/EventEdition/GuestsPanel.vala:94
+msgid "Invite"
+msgstr "招待"
 
-#: ../core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%B%e日 %A"
+#: src/EventEdition/GuestsPanel.vala:242
+msgid "Accepted"
+msgstr "受諾済"
+
+#: src/EventEdition/GuestsPanel.vala:245
+msgid "Declined"
+msgstr "辞退"
+
+#: src/EventEdition/InfoPanel.vala:78
+msgid "From:"
+msgstr "開始:"
+
+#: src/EventEdition/InfoPanel.vala:84
+msgid "All day:"
+msgstr "終日:"
+
+#: src/EventEdition/InfoPanel.vala:89
+msgid "To:"
+msgstr "終了:"
+
+#: src/EventEdition/InfoPanel.vala:107
+msgid "Title:"
+msgstr "タイトル:"
+
+#: src/EventEdition/InfoPanel.vala:109
+msgid "Name of Event"
+msgstr "予定の名前"
+
+#: src/EventEdition/InfoPanel.vala:119
+msgid "Press enter to parse event"
+msgstr "予定を解析するには Enter キーを押してください"
+
+#: src/EventEdition/InfoPanel.vala:134
+msgid "Calendar:"
+msgstr "カレンダー:"
+
+#: src/EventEdition/InfoPanel.vala:141
+msgid "Comments:"
+msgstr "コメント:"
+
+#: src/EventEdition/LocationPanel.vala:50
+msgid "Location:"
+msgstr "場所:"
+
+#: src/EventEdition/LocationPanel.vala:52
+msgid "John Smith OR Example St."
+msgstr "場所を入力"
+
+#: src/EventEdition/ReminderPanel.vala:33
+msgid "Reminders:"
+msgstr "リマインダー:"
+
+#: src/EventEdition/ReminderPanel.vala:37
+msgid "No Reminders"
+msgstr "リマインダーがありません"
+
+#: src/EventEdition/ReminderPanel.vala:71
+msgid "Add Reminder"
+msgstr "リマインダーを追加"
+
+#: src/EventEdition/ReminderPanel.vala:172
+msgid "0 minutes"
+msgstr "0 分"
+
+#: src/EventEdition/ReminderPanel.vala:173
+msgid "1 minute"
+msgstr "1 分"
+
+#: src/EventEdition/ReminderPanel.vala:174
+msgid "5 minutes"
+msgstr "5 分"
+
+#: src/EventEdition/ReminderPanel.vala:175
+msgid "10 minutes"
+msgstr "10 分"
+
+#: src/EventEdition/ReminderPanel.vala:176
+msgid "15 minutes"
+msgstr "15 分"
+
+#: src/EventEdition/ReminderPanel.vala:177
+msgid "20 minutes"
+msgstr "20 分"
+
+#: src/EventEdition/ReminderPanel.vala:178
+msgid "25 minutes"
+msgstr "25 分"
+
+#: src/EventEdition/ReminderPanel.vala:179
+msgid "30 minutes"
+msgstr "30 分"
+
+#: src/EventEdition/ReminderPanel.vala:180
+msgid "45 minutes"
+msgstr "45 分"
+
+#: src/EventEdition/ReminderPanel.vala:181
+msgid "1 hour"
+msgstr "1 時間"
+
+#: src/EventEdition/ReminderPanel.vala:182
+msgid "2 hours"
+msgstr "2 時間"
+
+#: src/EventEdition/ReminderPanel.vala:183
+msgid "3 hours"
+msgstr "3 時間"
+
+#: src/EventEdition/ReminderPanel.vala:184
+msgid "12 hours"
+msgstr "12 時間"
+
+#: src/EventEdition/ReminderPanel.vala:185
+msgid "24 hours"
+msgstr "24 時間"
+
+#: src/EventEdition/ReminderPanel.vala:186
+msgid "2 days"
+msgstr "2 日"
+
+#: src/EventEdition/ReminderPanel.vala:187
+msgid "1 week"
+msgstr "1 週間"
+
+#: src/EventEdition/ReminderPanel.vala:195
+msgid "Notification"
+msgstr "通知"
+
+#: src/EventEdition/RepeatPanel.vala:53
+msgid "Repeat:"
+msgstr "繰り返し:"
+
+#: src/EventEdition/RepeatPanel.vala:58
+msgid "Daily"
+msgstr "毎日"
+
+#: src/EventEdition/RepeatPanel.vala:59
+msgid "Weekly"
+msgstr "毎週"
+
+#: src/EventEdition/RepeatPanel.vala:60
+msgid "Monthly"
+msgstr "毎月"
+
+#: src/EventEdition/RepeatPanel.vala:61
+msgid "Yearly"
+msgstr "毎年"
+
+#: src/EventEdition/RepeatPanel.vala:104
+msgid "Every:"
+msgstr "間隔:"
+
+#: src/EventEdition/RepeatPanel.vala:111
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "日"
+
+#: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
+msgid "Week"
+msgid_plural "Weeks"
+msgstr[0] "週"
+
+#: src/EventEdition/RepeatPanel.vala:117
+msgid "Month"
+msgid_plural "Months"
+msgstr[0] "か月"
+
+#: src/EventEdition/RepeatPanel.vala:120
+msgid "Year"
+msgid_plural "Years"
+msgstr[0] "年"
+
+#: src/EventEdition/RepeatPanel.vala:135
+msgid "Ends:"
+msgstr "終了:"
+
+#: src/EventEdition/RepeatPanel.vala:141
+msgid "Never"
+msgstr "なし"
+
+#: src/EventEdition/RepeatPanel.vala:142
+msgid "Until"
+msgstr "まで"
+
+#: src/EventEdition/RepeatPanel.vala:143
+msgid "After"
+msgstr "後"
+
+#: src/EventEdition/RepeatPanel.vala:189
+msgid "The same day every month"
+msgstr "毎月同じ日"
+
+#: src/EventEdition/RepeatPanel.vala:200
+msgid "Exceptions:"
+msgstr "例外:"
+
+#: src/EventEdition/RepeatPanel.vala:203
+msgid "No Exceptions"
+msgstr "例外はありません"
+
+#: src/EventEdition/RepeatPanel.vala:224
+msgid "Add Exception"
+msgstr "例外を追加"
+
+#: src/EventEdition/RepeatPanel.vala:358
+msgid "Every last Sunday"
+msgstr "毎月最後の日曜日"
+
+#: src/EventEdition/RepeatPanel.vala:361
+msgid "Every last Monday"
+msgstr "毎月最後の月曜日"
+
+#: src/EventEdition/RepeatPanel.vala:364
+msgid "Every last Tuesday"
+msgstr "毎月最後の火曜日"
+
+#: src/EventEdition/RepeatPanel.vala:367
+msgid "Every last Wednesday"
+msgstr "毎月最後の水曜日"
+
+#: src/EventEdition/RepeatPanel.vala:370
+msgid "Every last Thursday"
+msgstr "毎月最後の木曜日"
+
+#: src/EventEdition/RepeatPanel.vala:373
+msgid "Every last Friday"
+msgstr "毎月最後の金曜日"
+
+#: src/EventEdition/RepeatPanel.vala:376
+msgid "Every last Saturday"
+msgstr "毎月最後の土曜日"
+
+#: src/EventEdition/RepeatPanel.vala:383
+msgid "Every first Sunday"
+msgstr "毎月最初の日曜日"
+
+#: src/EventEdition/RepeatPanel.vala:386
+msgid "Every first Monday"
+msgstr "毎月最初の月曜日"
+
+#: src/EventEdition/RepeatPanel.vala:389
+msgid "Every first Tuesday"
+msgstr "毎月最初の火曜日"
+
+#: src/EventEdition/RepeatPanel.vala:392
+msgid "Every first Wednesday"
+msgstr "毎月最初の水曜日"
+
+#: src/EventEdition/RepeatPanel.vala:395
+msgid "Every first Thursday"
+msgstr "毎月最初の木曜日"
+
+#: src/EventEdition/RepeatPanel.vala:398
+msgid "Every first Friday"
+msgstr "毎月最初の金曜日"
+
+#: src/EventEdition/RepeatPanel.vala:401
+msgid "Every first Saturday"
+msgstr "毎月最初の土曜日"
+
+#: src/EventEdition/RepeatPanel.vala:408
+msgid "Every second Sunday"
+msgstr "毎月第 2 日曜日"
+
+#: src/EventEdition/RepeatPanel.vala:411
+msgid "Every second Monday"
+msgstr "毎月第 2 月曜日"
+
+#: src/EventEdition/RepeatPanel.vala:414
+msgid "Every second Tuesday"
+msgstr "毎月第 2 火曜日"
+
+#: src/EventEdition/RepeatPanel.vala:417
+msgid "Every second Wednesday"
+msgstr "毎月第 2 水曜日"
+
+#: src/EventEdition/RepeatPanel.vala:420
+msgid "Every second Thursday"
+msgstr "毎月第 2 木曜日"
+
+#: src/EventEdition/RepeatPanel.vala:423
+msgid "Every second Friday"
+msgstr "毎月第 2 金曜日"
+
+#: src/EventEdition/RepeatPanel.vala:426
+msgid "Every second Saturday"
+msgstr "毎月第 2 土曜日"
+
+#: src/EventEdition/RepeatPanel.vala:433
+msgid "Every third Sunday"
+msgstr "毎月第 3 日曜日"
+
+#: src/EventEdition/RepeatPanel.vala:436
+msgid "Every third Monday"
+msgstr "毎月第 3 月曜日"
+
+#: src/EventEdition/RepeatPanel.vala:439
+msgid "Every third Tuesday"
+msgstr "毎月第 3 火曜日"
+
+#: src/EventEdition/RepeatPanel.vala:442
+msgid "Every third Wednesday"
+msgstr "毎月第 3 水曜日"
+
+#: src/EventEdition/RepeatPanel.vala:445
+msgid "Every third Thursday"
+msgstr "毎月第 3 木曜日"
+
+#: src/EventEdition/RepeatPanel.vala:448
+msgid "Every third Friday"
+msgstr "毎月第 3 金曜日"
+
+#: src/EventEdition/RepeatPanel.vala:451
+msgid "Every third Saturday"
+msgstr "毎月第 3 土曜日"
+
+#: src/EventEdition/RepeatPanel.vala:458
+msgid "Every fourth Sunday"
+msgstr "毎月第 4 日曜日"
+
+#: src/EventEdition/RepeatPanel.vala:461
+msgid "Every fourth Monday"
+msgstr "毎月第 4 月曜日"
+
+#: src/EventEdition/RepeatPanel.vala:464
+msgid "Every fourth Tuesday"
+msgstr "毎月第 4 火曜日"
+
+#: src/EventEdition/RepeatPanel.vala:467
+msgid "Every fourth Wednesday"
+msgstr "毎月第 4 水曜日"
+
+#: src/EventEdition/RepeatPanel.vala:470
+msgid "Every fourth Thursday"
+msgstr "毎月第 4 木曜日"
+
+#: src/EventEdition/RepeatPanel.vala:473
+msgid "Every fourth Friday"
+msgstr "毎月第 4 金曜日"
+
+#: src/EventEdition/RepeatPanel.vala:476
+msgid "Every fourth Saturday"
+msgstr "毎月第 4 土曜日"
+
+#: src/EventEdition/RepeatPanel.vala:483
+msgid "Every fifth Sunday"
+msgstr "毎月第 5 日曜日"
+
+#: src/EventEdition/RepeatPanel.vala:486
+msgid "Every fifth Monday"
+msgstr "毎月第 5 月曜日"
+
+#: src/EventEdition/RepeatPanel.vala:489
+msgid "Every fifth Tuesday"
+msgstr "毎月第 5 火曜日"
+
+#: src/EventEdition/RepeatPanel.vala:492
+msgid "Every fifth Wednesday"
+msgstr "毎月第 5 水曜日"
+
+#: src/EventEdition/RepeatPanel.vala:495
+msgid "Every fifth Thursday"
+msgstr "毎月第 5 木曜日"
+
+#: src/EventEdition/RepeatPanel.vala:498
+msgid "Every fifth Friday"
+msgstr "毎月第 5 金曜日"
+
+#: src/EventEdition/RepeatPanel.vala:501
+msgid "Every fifth Saturday"
+msgstr "毎月第 5 土曜日"
+
+#: src/EventEdition/RepeatPanel.vala:511
+msgid "Mon"
+msgstr "月"
+
+#: src/EventEdition/RepeatPanel.vala:512
+msgid "Tue"
+msgstr "火"
+
+#: src/EventEdition/RepeatPanel.vala:513
+msgid "Wed"
+msgstr "水"
+
+#: src/EventEdition/RepeatPanel.vala:514
+msgid "Thu"
+msgstr "木"
+
+#: src/EventEdition/RepeatPanel.vala:515
+msgid "Fri"
+msgstr "金"
+
+#: src/EventEdition/RepeatPanel.vala:516
+msgid "Sat"
+msgstr "土"
+
+#: src/EventEdition/RepeatPanel.vala:517
+msgid "Sun"
+msgstr "日"
+
+#: src/Grid/EventButton.vala:70
+msgid "Remove Event"
+msgstr "予定を削除"
+
+#: src/Grid/EventButton.vala:71
+msgid "Remove Occurrence"
+msgstr "出来事を削除"
+
+#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
+msgid "Hide Week Numbers"
+msgstr "週番号を表示しない"
+
+#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:67
+msgid "Show Week Numbers"
+msgstr "週番号を表示"
+
+#: src/Grid/VAutoHider.vala:109
+#, c-format
+msgid "%u more…"
+msgstr "あと %u …"
+
+#: src/SourceDialog/SourceDialog.vala:53
+msgid "Create"
+msgstr "作成"
+
+#: src/SourceDialog/SourceDialog.vala:64
+msgid "Name:"
+msgstr "名前:"
+
+#: src/SourceDialog/SourceDialog.vala:68
+msgid "Calendar Name"
+msgstr "カレンダー名"
+
+#: src/SourceDialog/SourceDialog.vala:91
+msgid "Type:"
+msgstr "種類:"
+
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Color:"
+msgstr "色:"
+
+#: src/SourceDialog/SourceDialog.vala:172
+msgid "Mark as default calendar"
+msgstr "デフォルトのカレンダーにする"
+
+#: src/SourceDialog/SourceDialog.vala:243
+msgid "Create Calendar"
+msgstr "カレンダーを作成"
+
+#: src/SourceDialog/SourceDialog.vala:246
+#: src/Widgets/ContractorButtonWithMenu.vala:88
+msgid "Save"
+msgstr "保存"
+
+#: src/SourceDialog/SourceItem.vala:76
+msgid "Not Removable"
+msgstr "削除できません"
+
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Not Editable"
+msgstr "編集できません"
+
+#: src/SourceDialog/SourceItem.vala:112
+msgid "Undo"
+msgstr "元に戻す"
+
+#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
+#, c-format
+msgid "\"%s\" removed"
+msgstr "\"%s\" は削除されました"
+
+#: src/SourceDialog/SourceSelector.vala:51
+msgid "Add New Calendar…"
+msgstr "新しいカレンダーを作成…"
+
+#: src/Widgets/ContractorButtonWithMenu.vala:72
+#: src/Widgets/ContractorButtonWithMenu.vala:82
+msgid "Export Calendar…"
+msgstr "カレンダーをエクスポート…"
+
+#: src/Widgets/ContractorButtonWithMenu.vala:85
+msgid "calendar.ics"
+msgstr "カレンダー.ics"
+
+#: src/Widgets/HeaderBar.vala:41
+msgid "Create a new event"
+msgstr "新しい予定を作成"
+
+#: src/Widgets/HeaderBar.vala:48
+msgid "Go to today's date"
+msgstr "今日の日付へ移動"
+
+#: src/Widgets/HeaderBar.vala:56
+msgid "Manage Calendars"
+msgstr "カレンダーを管理"
+
+#: src/Widgets/HeaderBar.vala:63
+msgid "Export or Share the default Calendar"
+msgstr "デフォルトのカレンダーをエクスポートまたは共有"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "\"%s\" から以下のカレンダーに予定をインポート:"
+
+#~ msgid "Email"
+#~ msgstr "メール"
+
+#~ msgid "Search Events"
+#~ msgstr "予定を検索"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) https://launchpad.net/~balloon\n"
+#~ "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
+#~ "  Joji Bronner https://launchpad.net/~jojiinchrist\n"
+#~ "  Jun Takeda https://launchpad.net/~takeda-jun\n"
+#~ "  Naoki Kephart https://launchpad.net/~naoki-kephart\n"
+#~ "  Tsuji Kento https://launchpad.net/~tuziemon-deactivatedaccount-"
+#~ "deactivatedaccount"
+
+#~ msgid "View and schedule events"
+#~ msgstr "予定の表示と計画をします"
+
+#~ msgid "Maya;Planner;Dates;Days;Events;"
+#~ msgstr "Maya;Planner;Dates;Days;Events;"
+
+#~ msgid "About Maya"
+#~ msgstr "\"Maya\" について"
+
+#~ msgid "About Calendar"
+#~ msgstr "\"カレンダー\" について"
 
 #~ msgid "%l:%M %p"
 #~ msgstr "%p %l:%M"
@@ -723,9 +801,6 @@ msgstr "%B%e日 %A"
 
 #~ msgid "Import..."
 #~ msgstr "取り込む..."
-
-#~ msgid "Select calendars to display"
-#~ msgstr "表示するカレンダーを選択"
 
 #~ msgid "Sync..."
 #~ msgstr "同期..."

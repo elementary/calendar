@@ -2,44 +2,64 @@
 # Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
 # This file is distributed under the same license as the maya package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-04-13 01:49+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Indonesian <id@li.org>\n"
+"POT-Creation-Date: 2018-07-26 20:27+0100\n"
+"PO-Revision-Date: 2018-11-02 19:46+0000\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
+"extra/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
-msgstr ""
+msgstr "Kalender"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Lihat dan jadwalkan acara"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-
-msgid "Add Event"
-msgstr ""
-
-msgid "About Calendar"
-msgstr ""
-
-msgid "Maya"
-msgstr ""
-
-msgid "About Maya"
-msgstr ""
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
+"Aplikasi kalender yang ramping dan ringan yang menyelaraskan dan mengelola "
+"beberapa kalender di satu tempat, seperti Google Kalender, Outlook, dan "
+"CalDAV."
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr "elementary LLC."
+
+#: data/io.elementary.calendar.desktop.in:8
+msgid "office-calendar"
+msgstr "office-calendar"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr "Maya;Perencana;Tanggal;Hari;Acara;Kalender;ics;caldav;evolution;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "Tambah Acara"
+
+#~ msgid "About Calendar"
+#~ msgstr "Tentang Kalender"
+
+#~ msgid "Maya"
+#~ msgstr "Maya"
+
+#~ msgid "About Maya"
+#~ msgstr "Tentang Maya"

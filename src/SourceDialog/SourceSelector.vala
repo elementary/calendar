@@ -29,11 +29,8 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     private Gtk.ScrolledWindow scroll;
 
     public SourceSelector () {
-        stack = new Gtk.Stack ();
-
         calendar_box = new Gtk.ListBox ();
         calendar_box.selection_mode = Gtk.SelectionMode.NONE;
-        calendar_box.margin_start = calendar_box.margin_end = 6;
         calendar_box.set_header_func (header_update_func);
         calendar_box.set_sort_func ((child1, child2) => {
             var comparison = ((SourceItem)child1).location.collate (((SourceItem)child2).location);
@@ -49,29 +46,32 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         scroll.expand = true;
         scroll.add (calendar_box);
 
+        src_map = new GLib.HashTable<string, SourceItem?>(str_hash, str_equal);
+
+        var add_calendar_label = new Gtk.Label (_("Add New Calendar…"));
+        add_calendar_label.xalign = 0;
+
+        var add_calendar_button = new Gtk.Button ();
+        add_calendar_button.add (add_calendar_label);
+        add_calendar_button.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+
         main_grid = new Gtk.Grid ();
         main_grid.row_spacing = 6;
         main_grid.margin_top = 6;
+        main_grid.orientation = Gtk.Orientation.VERTICAL;
+        main_grid.add (scroll);
+        main_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        main_grid.add (add_calendar_button);
 
-        src_map = new GLib.HashTable<string, SourceItem?>(str_hash, str_equal);
-
-        var add_calendar_button = new Gtk.Button.with_label (_("Add New Calendar…"));
-        add_calendar_button.hexpand = true;
-        add_calendar_button.margin_start = add_calendar_button.margin_end = 6;
-        add_calendar_button.clicked.connect (create_source);
-
-        var add_calendar_grid = new Gtk.Grid ();
-        add_calendar_grid.attach (add_calendar_button, 0, 0, 1, 1);
-
-        main_grid.attach (scroll, 0, 0, 1, 1);
-        main_grid.attach (add_calendar_grid, 0, 2, 1, 1);
-
+        stack = new Gtk.Stack ();
         stack.add_named (main_grid, "main");
         stack.margin_bottom = 5;
 
         this.add (stack);
         populate.begin ();
         stack.show_all ();
+
+        add_calendar_button.clicked.connect (create_source);
     }
 
     public async void populate () {

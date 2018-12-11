@@ -36,27 +36,21 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
 
     private Gtk.Label calendar_name_label;
     private Gtk.Label calendar_color_label;
+    private Gtk.Label message_label;
     private Gtk.CheckButton visible_checkbutton;
 
     public SourceItem (E.Source source) {
         this.source = source;
-        margin_start = 6;
-
-        stack = new Gtk.Stack ();
-        stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
 
         // Source widget
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
         calendar_name_label = new Gtk.Label (source.dup_display_name ());
-        ((Gtk.Misc) calendar_name_label).xalign = 0.0f;
+        calendar_name_label.xalign = 0;
         calendar_name_label.hexpand = true;
 
         label = source.dup_display_name ();
         location = Maya.Util.get_source_location (source);
-
-        calendar_color_label = new Gtk.Label ("  ");
-        Util.style_calendar_color (calendar_color_label, cal.dup_color (), true);
 
         visible_checkbutton = new Gtk.CheckButton ();
         visible_checkbutton.active = cal.selected;
@@ -76,36 +70,35 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
             }
         });
 
+        style_calendar_color (cal.dup_color ());
+
         delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
-        delete_button.set_tooltip_text (_("Remove"));
-        delete_button.clicked.connect (() => {remove_request (source);});
+        delete_button.tooltip_text = source.removable ? _("Remove") : _("Not Removable");
         delete_button.relief = Gtk.ReliefStyle.NONE;
+        delete_button.sensitive = source.removable;
+        delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+
         delete_revealer = new Gtk.Revealer ();
         delete_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
         delete_revealer.add (delete_button);
         delete_revealer.show_all ();
         delete_revealer.set_reveal_child (false);
-        if (source.removable == false) {
-            delete_revealer.hide ();
-            delete_revealer.no_show_all = true;
-        }
 
         edit_button = new Gtk.Button.from_icon_name ("edit-symbolic", Gtk.IconSize.MENU);
-        edit_button.set_tooltip_text (_("Edit…"));
-        edit_button.clicked.connect (() => {edit_request (source);});
+        edit_button.tooltip_text = source.writable ? _("Edit…"): _("Not Editable");
         edit_button.relief = Gtk.ReliefStyle.NONE;
+        edit_button.sensitive = source.writable;
+
         edit_revealer = new Gtk.Revealer ();
         edit_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
         edit_revealer.add (edit_button);
         edit_revealer.show_all ();
         edit_revealer.set_reveal_child (false);
-        if (source.writable == false) {
-            edit_revealer.hide ();
-            edit_revealer.no_show_all = true;
-        }
 
         var calendar_grid = new Gtk.Grid ();
         calendar_grid.column_spacing = 6;
+        calendar_grid.margin_start = 8;
+        calendar_grid.margin_end = 6;
         calendar_grid.attach (visible_checkbutton, 0, 0, 1, 1);
         calendar_grid.attach (calendar_color_label, 1, 0, 1, 1);
         calendar_grid.attach (calendar_name_label, 2, 0, 1, 1);
@@ -114,39 +107,46 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
 
         var calendar_event_box = new Gtk.EventBox ();
         calendar_event_box.add (calendar_grid);
+        calendar_event_box.show ();
 
-        stack.add_named (calendar_event_box, "calendar");
+        var undo_button = new Gtk.Button.with_label (_("Undo"));
+        undo_button.margin_end = 6;
 
-        // Info bar
+        var close_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        close_button.relief = Gtk.ReliefStyle.NONE;
+
+        message_label = new Gtk.Label (_("\"%s\" removed").printf (source.display_name));
+        message_label.hexpand = true;
+        message_label.xalign = 0.0f;
+
         info_grid = new Gtk.Grid ();
         info_grid.column_spacing = 12;
         info_grid.row_spacing = 6;
-        info_grid.no_show_all = true;
-        var undo_button = new Gtk.Button.with_label (_("Undo"));
-        undo_button.clicked.connect (() => {
-            Model.CalendarModel.get_default ().restore_calendar ();
-            stack.set_visible_child_name ("calendar");
-            info_grid.no_show_all = true;
-            info_grid.hide ();
-        });
+        info_grid.add (close_button);
+        info_grid.add (message_label);
+        info_grid.add (undo_button);
 
-        var close_button = new Gtk.Button.from_icon_name ("window-close-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-        close_button.relief = Gtk.ReliefStyle.NONE;
+        stack = new Gtk.Stack ();
+        stack.transition_type = Gtk.StackTransitionType.OVER_RIGHT_LEFT;
+        stack.add_named (info_grid, "info");
+        stack.add_named (calendar_event_box, "calendar");
+        stack.visible_child_name = "calendar";
+
+        add (stack);
+
         close_button.clicked.connect (() => {
             hide ();
             destroy ();
         });
 
-        var message_label = new Gtk.Label (_("Calendar \"%s\" removed.").printf (source.display_name));
-        message_label.hexpand = true;
-        ((Gtk.Misc) message_label).xalign = 0.0f;
-        info_grid.attach (message_label, 0, 0, 1, 1);
-        info_grid.attach (undo_button, 1, 0, 1, 1);
-        info_grid.attach (close_button, 2, 0, 1, 1);
-        stack.add_named (info_grid, "info");
-        stack.set_visible_child_name ("calendar");
+        delete_button.clicked.connect (() => {remove_request (source);});
 
-        add (stack);
+        edit_button.clicked.connect (() => {edit_request (source);});
+
+        undo_button.clicked.connect (() => {
+            Model.CalendarModel.get_default ().restore_calendar ();
+            stack.set_visible_child_name ("calendar");
+        });
 
         calendar_event_box.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK);
         calendar_event_box.enter_notify_event.connect ((event) => {
@@ -167,18 +167,31 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         source.changed.connect (source_has_changed);
     }
 
+    private void style_calendar_color (string color) {
+        var css_color = "@define-color colorAccent %s;".printf (color);
+
+        var style_provider = new Gtk.CssProvider ();
+
+        try {
+            style_provider.load_from_data (css_color, css_color.length);
+            visible_checkbutton.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        } catch (Error e) {
+            warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
+        }
+    }
+
     public void source_has_changed () {
         calendar_name_label.label = source.dup_display_name ();
+        message_label.label = _("\"%s\" removed").printf (source.display_name);
+
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
-        Util.style_calendar_color (calendar_color_label, cal.dup_color (), true);
+        style_calendar_color (cal.dup_color ());
 
         visible_checkbutton.active = cal.selected;
     }
 
     public void show_calendar_removed () {
-        info_grid.no_show_all = false;
-        info_grid.show_all ();
         stack.set_visible_child_name ("info");
     }
 }
@@ -190,7 +203,7 @@ public class Maya.View.SourceItemHeader : Gtk.ListBoxRow {
         this.label = label;
         var header_label = new Gtk.Label (label);
         header_label.get_style_context ().add_class ("h4");
-        ((Gtk.Misc) header_label).xalign = 0.0f;
+        header_label.xalign = 0.0f;
         header_label.hexpand = true;
         add (header_label);
     }

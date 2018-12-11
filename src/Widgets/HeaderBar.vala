@@ -22,8 +22,6 @@
 namespace Maya.View {
     public class HeaderBar : Gtk.HeaderBar {
         public signal void on_search (string search);
-        public signal void on_menu_today_toggled ();
-        public signal void add_calendar_clicked ();
 
         public Gtk.SearchEntry search_bar;
         private Widgets.DateSwitcher month_switcher;
@@ -34,11 +32,21 @@ namespace Maya.View {
         }
 
         construct {
+            var application_instance = ((Gtk.Application) GLib.Application.get_default ());
+
             var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
-            button_add.tooltip_text = _("Create a new event");
+            button_add.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_NEW_EVENT;
+            button_add.tooltip_markup = Granite.markup_accel_tooltip (
+                application_instance.get_accels_for_action (button_add.action_name),
+                _("Create a new event")
+            );
 
             var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR);
-            button_today.tooltip_text = _("Go to today's date");
+            button_today.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_TODAY;
+            button_today.tooltip_markup = Granite.markup_accel_tooltip (
+                application_instance.get_accels_for_action (button_today.action_name),
+                _("Go to today's date")
+            );
 
             var source_popover = new View.SourceSelector ();
 
@@ -68,8 +76,6 @@ namespace Maya.View {
             pack_end (menu_button);
             pack_end (contractor);
 
-            button_add.clicked.connect (() => add_calendar_clicked ());
-            button_today.clicked.connect (() => on_menu_today_toggled ());
             month_switcher.left_clicked.connect (() => Model.CalendarModel.get_default ().change_month (-1));
             month_switcher.right_clicked.connect (() => Model.CalendarModel.get_default ().change_month (1));
             year_switcher.left_clicked.connect (() => Model.CalendarModel.get_default ().change_year (-1));
@@ -80,7 +86,7 @@ namespace Maya.View {
         }
 
         public void set_switcher_date (DateTime date) {
-            month_switcher.text = date.format ("%B");
+            month_switcher.text = date.format ("%OB");
             year_switcher.text = date.format ("%Y");
         }
     }

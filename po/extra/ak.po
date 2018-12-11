@@ -2,44 +2,65 @@
 # Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
 # This file is distributed under the same license as the maya package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
-#
+# Lawrence Aberba <karabutaworld@gmail.com>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 00:31+0100\n"
-"PO-Revision-Date: 2016-09-21 12:49+0000\n"
-"Last-Translator: aberba <karabutaworld@gmail.com>\n"
-"Language-Team: Akan <ak@li.org>\n"
+"POT-Creation-Date: 2018-07-26 20:27+0100\n"
+"PO-Revision-Date: 2017-06-26 12:57+0000\n"
+"Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
+"Language-Team: Akan <https://l10n.elementary.io/projects/calendar/extra/ak/"
+">\n"
 "Language: ak\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
+#: data/io.elementary.calendar.appdata.xml.in:8
+#: data/io.elementary.calendar.desktop.in:4
+#: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
-msgstr "Calendar"
+msgstr "Kalɛnda"
 
+#: data/io.elementary.calendar.appdata.xml.in:9
+#: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr "Hwɛ anaa yɛ wo mmerɛ ho nhyehyɛe"
+msgstr "Hwɛ anaa hyehyɛ wo nnwuma ahoroɔ"
 
-msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr "Maya;Nhyehyɛe;Dates;Nna;Events;Calendar;ics;caldav;evolution;"
-
-msgid "Add Event"
-msgstr ""
-
-msgid "About Calendar"
-msgstr "Calendar Ho Nsɛm"
-
-msgid "Maya"
-msgstr "Maya"
-
-msgid "About Maya"
-msgstr "Maya Ho Nsɛm"
-
+#: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
+"Kalɛnda dwumadie a etumi hyehyɛ kalɛnda ahoroɔ te sɛ Google Kalɛnda, Outlook "
+"ne CalDAV wɔ baabi faako."
+
+#: data/io.elementary.calendar.appdata.xml.in:78
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.calendar.desktop.in:8
+#, fuzzy
+msgid "office-calendar"
+msgstr "Kalɛnda"
+
+#: data/io.elementary.calendar.desktop.in:13
+msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
+msgstr "Maya;Nhyehyɛe;Dates;Nna;Dwumadie;Calendar;ics;caldav;evolution;"
+
+#: data/io.elementary.calendar.desktop.in:18
+msgid "Add Event"
+msgstr "Dwuma Foforɔ"
+
+#~ msgid "About Calendar"
+#~ msgstr "Kalɛnda Ho Nsɛm"
+
+#~ msgid "Maya"
+#~ msgstr "Maya"
+
+#~ msgid "About Maya"
+#~ msgstr "Maya Ho Nsɛm"

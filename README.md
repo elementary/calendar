@@ -7,8 +7,6 @@
 
 You'll need the following dependencies:
 
-* cmake
-* intltool
 * libchamplain-0.12-dev
 * libchamplain-gtk-0.12-dev
 * libclutter-1.0-dev
@@ -18,23 +16,20 @@ You'll need the following dependencies:
 * libgee-0.8-dev
 * libgeocode-glib-dev
 * libglib2.0-dev
-* libgranite-dev
+* libgranite-dev >= 5.2.0
 * libgtk-3-dev
 * libical-dev
 * libnotify-dev
+* meson
 * valac
 
-It's recommended to create a clean build environment
+Run `meson build` to configure the build environment. Change to the build directory and run `ninja` to build
 
-    mkdir build
-    cd build/
-    
-Run `cmake` to configure the build environment and then `make` to build
+    meson build --prefix=/usr
+    cd build
+    ninja
 
-    cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-    make
-    
-To install, use `make install` then execute with `maya-calendar`
+To install, use `ninja install`, then execute with `io.elementary.calendar`
 
-    sudo make install
-    maya-calendar
+    sudo ninja install
+    io.elementary.calendar
