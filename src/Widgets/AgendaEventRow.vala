@@ -45,7 +45,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         var main_grid = new Gtk.Grid ();
         main_grid.column_spacing = 6;
-        main_grid.row_spacing = 3;
+        main_grid.row_spacing = 6;
         main_grid.margin = 6;
 
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
