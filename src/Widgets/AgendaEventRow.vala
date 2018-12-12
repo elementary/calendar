@@ -176,9 +176,9 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         datatime_label.no_show_all = false;
         if (is_multiday) {
             if (is_allday) {
-                datetime_string = _("%s - %s").printf (start_date_string, end_date_string);
+                datetime_string = _("%s – %s").printf (start_date_string, end_date_string);
             } else {
-                datetime_string = _("%s, %s - %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
+                datetime_string = _("%s, %s – %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
             }
         } else {
             if (!is_upcoming) {
@@ -186,13 +186,13 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                     datatime_label.hide ();
                     datatime_label.no_show_all = true;
                 } else {
-                    datetime_string = _("%s - %s").printf (start_time_string, end_time_string);
+                    datetime_string = _("%s – %s").printf (start_time_string, end_time_string);
                 }
             } else {
                 if (is_allday) {
                     datetime_string = _("%s").printf (start_date_string);
                 } else {
-                    datetime_string = _("%s, %s - %s").printf (start_date_string, start_time_string, end_time_string);
+                    datetime_string = _("%s, %s – %s").printf (start_date_string, start_time_string, end_time_string);
                 }
             }
         }
