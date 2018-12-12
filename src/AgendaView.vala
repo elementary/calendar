@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+/*
+ * Copyright 2011-2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,35 +31,25 @@ public class Maya.View.AgendaView : Gtk.Grid {
     private HashTable<string, AgendaEventRow> row_table;
     private HashTable<string, AgendaEventRow> row_table2;
 
-    public AgendaView () {
-        orientation = Gtk.Orientation.VERTICAL;
-        column_spacing = 0;
-        row_spacing = 0;
-
+    construct {
         weekday_label = new Gtk.Label ("");
-        weekday_label.set_alignment (0, 0.5f);
-        weekday_label.use_markup = true;
-        weekday_label.get_style_context ().add_class ("h2");
+        weekday_label.xalign = 0;
+        weekday_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
         weekday_label.margin = 12;
         weekday_label.margin_bottom = 0;
 
         day_label = new Gtk.Label ("");
-        day_label.set_alignment (0, 0.5f);
-        day_label.use_markup = true;
-        day_label.get_style_context ().add_class ("h3");
+        day_label.xalign = 0;
+        day_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
         day_label.margin = 12;
         day_label.margin_top = 0;
         day_label.margin_bottom = 6;
-
-        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-        separator.hexpand = true;
 
         var selected_data_grid = new Gtk.Grid ();
         selected_data_grid.row_spacing = 6;
         selected_data_grid.orientation = Gtk.Orientation.VERTICAL;
         selected_data_grid.add (weekday_label);
         selected_data_grid.add (day_label);
-        selected_data_grid.add (separator);
 
         var placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
         placeholder_label.wrap = true;
@@ -181,10 +170,12 @@ public class Maya.View.AgendaView : Gtk.Grid {
         upcoming_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         upcoming_scrolled.add (upcoming_events_list);
 
-        attach (selected_data_grid, 0, 0, 1, 1);
-        attach (selected_scrolled, 0, 1, 1, 1);
-        attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 2);
-        attach (upcoming_scrolled, 0, 3, 1, 2);
+        orientation = Gtk.Orientation.VERTICAL;
+        add (selected_data_grid);
+        add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        add (selected_scrolled);
+        add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        add (upcoming_scrolled);
 
         row_table = new HashTable<string, AgendaEventRow> (str_hash, str_equal);
         row_table2 = new HashTable<string, AgendaEventRow> (str_hash, str_equal);
@@ -310,7 +301,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
     /**
      * Events have been added to the given source.
      */
-    void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
+    private void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
         foreach (var event in events) {
             unowned iCal.Component comp = event.get_icalcomponent ();
 
@@ -337,7 +328,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
     /**
      * Events for the given source have been updated.
      */
-    void on_events_updated (E.Source source, Gee.Collection<E.CalComponent> events) {
+    private void on_events_updated (E.Source source, Gee.Collection<E.CalComponent> events) {
         foreach (var event in events) {
             unowned iCal.Component comp = event.get_icalcomponent ();
 
@@ -352,7 +343,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
     /**
      * Events for the given source have been removed.
      */
-    void on_events_removed (E.Source source, Gee.Collection<E.CalComponent> events) {
+    private void on_events_removed (E.Source source, Gee.Collection<E.CalComponent> events) {
         foreach (var event in events) {
             unowned iCal.Component comp = event.get_icalcomponent ();
 
@@ -376,16 +367,6 @@ public class Maya.View.AgendaView : Gtk.Grid {
                 });
             }
         }
-    }
-
-    /**
-     * Called when the user searches for the given text.
-     */
-    public void set_search_text (string text) {
-        /*search_text = text;
-        foreach (var widget in source_widgets.get_values ()) {
-            widget.set_search_text (text);
-        }*/
     }
 
     /**
