@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 10:47-0700\n"
-"PO-Revision-Date: 2018-10-30 00:04+0000\n"
+"POT-Creation-Date: 2018-12-10 16:43-0800\n"
+"PO-Revision-Date: 2018-12-11 02:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
 msgid "On this computer"
 msgstr "このコンピューター"
 
@@ -78,7 +78,7 @@ msgstr "URL:"
 
 #: plugins/CalDAV/CalDAVBackend.vala:95
 msgid "Use a secure connection"
-msgstr "安全な接続を使用"
+msgstr "安全な接続を使う"
 
 #: plugins/CalDAV/CalDAVBackend.vala:123
 msgid "Server handles meeting invitations"
@@ -123,12 +123,12 @@ msgid "Next Month"
 msgstr "来月"
 
 #: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:94
+#: src/SourceDialog/SourceItem.vala:88
 msgid "Edit…"
 msgstr "編集…"
 
 #: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:80
+#: src/SourceDialog/SourceItem.vala:76
 msgid "Remove"
 msgstr "削除"
 
@@ -164,30 +164,28 @@ msgstr "指定の日に移動します"
 msgid "date"
 msgstr "日付"
 
-#: src/Application.vala:141
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "カレンダー"
 
-#: src/ImportDialog.vala:42
-#, c-format
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "\"%s\" から以下のカレンダーに予定をインポート:"
+#: src/ImportDialog.vala:28
+msgid "Select a Calendar to Import Into"
+msgstr "インポート先のカレンダーを選択"
 
 #: src/ImportDialog.vala:44
 #, c-format
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "%d 個のファイルから以下のカレンダーに予定をインポート:"
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "\"%s\" にある予定は、以下のカレンダーとマージされます:"
 
-#: src/ImportDialog.vala:53
+#: src/ImportDialog.vala:47
+#, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
+msgstr[0] "%d 個のファイルにある予定は、以下のカレンダーとマージされます:"
+
+#: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "インポート"
-
-#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
-#: src/SourceDialog/SourceDialog.vala:58
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Cancel"
-msgstr "キャンセル"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -231,6 +229,11 @@ msgstr "予定を作成"
 msgid "Save Changes"
 msgstr "変更を保存"
 
+#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "キャンセル"
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "参加者:"
@@ -253,7 +256,7 @@ msgstr "辞退"
 
 #: src/EventEdition/InfoPanel.vala:78
 msgid "From:"
-msgstr "開始日時:"
+msgstr "開始:"
 
 #: src/EventEdition/InfoPanel.vala:84
 msgid "All day:"
@@ -261,7 +264,7 @@ msgstr "終日:"
 
 #: src/EventEdition/InfoPanel.vala:89
 msgid "To:"
-msgstr "終了日時:"
+msgstr "終了:"
 
 #: src/EventEdition/InfoPanel.vala:107
 msgid "Title:"
@@ -664,50 +667,57 @@ msgstr "週番号を表示"
 msgid "%u more…"
 msgstr "あと %u …"
 
-#: src/SourceDialog/SourceDialog.vala:60
+#: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
 msgstr "作成"
 
-#. Name
-#: src/SourceDialog/SourceDialog.vala:69
+#: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
 msgstr "名前:"
 
-#: src/SourceDialog/SourceDialog.vala:72
+#: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "カレンダー名"
 
-#: src/SourceDialog/SourceDialog.vala:95
+#: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
 msgstr "種類:"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
 msgstr "色:"
 
-#: src/SourceDialog/SourceDialog.vala:123
+#: src/SourceDialog/SourceDialog.vala:172
 msgid "Mark as default calendar"
 msgstr "デフォルトのカレンダーにする"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:243
 msgid "Create Calendar"
 msgstr "カレンダーを作成"
 
-#: src/SourceDialog/SourceDialog.vala:162
+#: src/SourceDialog/SourceDialog.vala:246
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "保存"
 
-#: src/SourceDialog/SourceItem.vala:125
+#: src/SourceDialog/SourceItem.vala:76
+msgid "Not Removable"
+msgstr "削除できません"
+
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Not Editable"
+msgstr "編集できません"
+
+#: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "元に戻す"
 
-#: src/SourceDialog/SourceItem.vala:140
+#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
 #, c-format
-msgid "Calendar \"%s\" removed."
-msgstr "カレンダー \"%s\" が削除されました。"
+msgid "\"%s\" removed"
+msgstr "\"%s\" は削除されました"
 
-#: src/SourceDialog/SourceSelector.vala:52
+#: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "新しいカレンダーを作成…"
 
@@ -720,21 +730,24 @@ msgstr "カレンダーをエクスポート…"
 msgid "calendar.ics"
 msgstr "カレンダー.ics"
 
-#: src/Widgets/HeaderBar.vala:38
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "新しい予定を作成"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "今日の日付へ移動"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "カレンダーを管理"
 
-#: src/Widgets/HeaderBar.vala:55
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "デフォルトのカレンダーをエクスポートまたは共有"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "\"%s\" から以下のカレンダーに予定をインポート:"
 
 #~ msgid "Email"
 #~ msgstr "メール"
@@ -788,9 +801,6 @@ msgstr "デフォルトのカレンダーをエクスポートまたは共有"
 
 #~ msgid "Import..."
 #~ msgstr "取り込む..."
-
-#~ msgid "Select calendars to display"
-#~ msgstr "表示するカレンダーを選択"
 
 #~ msgid "Sync..."
 #~ msgstr "同期..."

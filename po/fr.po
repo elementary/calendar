@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 10:47-0700\n"
-"PO-Revision-Date: 2018-10-16 09:42+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"POT-Creation-Date: 2018-12-10 16:43-0800\n"
+"PO-Revision-Date: 2018-12-11 20:47+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/calendar/"
 "calendar/fr/>\n"
 "Language: fr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
 msgid "On this computer"
 msgstr "Sur cet ordinateur"
 
@@ -34,7 +34,7 @@ msgstr "nom.utilisateur"
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr "Email :"
+msgstr "E-mail :"
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
@@ -54,7 +54,7 @@ msgstr "%A %d %b"
 
 #: daemon/Daemon.vala:21
 msgid "Print debug information"
-msgstr "Afficher les informations de débuggage"
+msgstr "Afficher les informations de débogage"
 
 #: daemon/Daemon.vala:23 src/Application.vala:49
 msgid "Print version info and exit"
@@ -125,12 +125,12 @@ msgid "Next Month"
 msgstr "Le mois prochain"
 
 #: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:94
+#: src/SourceDialog/SourceItem.vala:88
 msgid "Edit…"
 msgstr "Modifier…"
 
 #: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:80
+#: src/SourceDialog/SourceItem.vala:76
 msgid "Remove"
 msgstr "Supprimer"
 
@@ -166,31 +166,29 @@ msgstr "Afficher le jour donné"
 msgid "date"
 msgstr "date"
 
-#: src/Application.vala:141
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "Calendrier"
 
-#: src/ImportDialog.vala:42
-#, c-format
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "Importer les événements de \"%s\" dans le calendrier suivant :"
+#: src/ImportDialog.vala:28
+msgid "Select a Calendar to Import Into"
+msgstr "Sélectionner un calendrier dans lequel effectuer l'importation"
 
 #: src/ImportDialog.vala:44
 #, c-format
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "Importer les événements de %d fichier dans le calendrier suivant :"
-msgstr[1] "Importer les événements de %d fichiers dans le calendrier suivant :"
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "Les événements de « %s » seront fusionnés dans ce calendrier :"
 
-#: src/ImportDialog.vala:53
+#: src/ImportDialog.vala:47
+#, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
+msgstr[0] "Les événements de %d fichier seront fusionnés dans ce calendrier :"
+msgstr[1] "Les événements de %d fichiers seront fusionnés dans ce calendrier :"
+
+#: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Importer"
-
-#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
-#: src/SourceDialog/SourceDialog.vala:58
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Cancel"
-msgstr "Fermer"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -220,7 +218,7 @@ msgstr "Rappels"
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] "Répéter"
+msgstr[0] "Répétition"
 msgstr[1] "Répétitions"
 
 #: src/EventEdition/EventDialog.vala:134
@@ -234,6 +232,11 @@ msgstr "Créer un événement"
 #: src/EventEdition/EventDialog.vala:149
 msgid "Save Changes"
 msgstr "Sauvegarder les changements"
+
+#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "Annuler"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -309,7 +312,7 @@ msgstr "Ajouter un rappel"
 
 #: src/EventEdition/ReminderPanel.vala:172
 msgid "0 minutes"
-msgstr "0 minute"
+msgstr "0 minutes"
 
 #: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute"
@@ -657,7 +660,7 @@ msgstr "Supprimer l'événement"
 
 #: src/Grid/EventButton.vala:71
 msgid "Remove Occurrence"
-msgstr "Supprimer l'occurence"
+msgstr "Supprimer l'occurrence"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
@@ -672,50 +675,57 @@ msgstr "Afficher les numéros de semaine"
 msgid "%u more…"
 msgstr "%u en plus…"
 
-#: src/SourceDialog/SourceDialog.vala:60
+#: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
 msgstr "Créer"
 
-#. Name
-#: src/SourceDialog/SourceDialog.vala:69
+#: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
 msgstr "Nom :"
 
-#: src/SourceDialog/SourceDialog.vala:72
+#: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "Nom du calendrier"
 
-#: src/SourceDialog/SourceDialog.vala:95
+#: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
 msgstr "Type :"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
 msgstr "Couleur :"
 
-#: src/SourceDialog/SourceDialog.vala:123
+#: src/SourceDialog/SourceDialog.vala:172
 msgid "Mark as default calendar"
 msgstr "Définir comme calendrier par défaut"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:243
 msgid "Create Calendar"
 msgstr "Créer un calendrier"
 
-#: src/SourceDialog/SourceDialog.vala:162
+#: src/SourceDialog/SourceDialog.vala:246
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "Enregistrer"
 
-#: src/SourceDialog/SourceItem.vala:125
+#: src/SourceDialog/SourceItem.vala:76
+msgid "Not Removable"
+msgstr "Non supprimable"
+
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Not Editable"
+msgstr "Non modifiable"
+
+#: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Annuler"
 
-#: src/SourceDialog/SourceItem.vala:140
+#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
 #, c-format
-msgid "Calendar \"%s\" removed."
-msgstr "Calendrier \"%s\" supprimé."
+msgid "\"%s\" removed"
+msgstr "« %s » supprimé"
 
-#: src/SourceDialog/SourceSelector.vala:52
+#: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "Ajouter un nouveau calendrier…"
 
@@ -728,21 +738,24 @@ msgstr "Exporter le calendrier…"
 msgid "calendar.ics"
 msgstr "calendrier.ics"
 
-#: src/Widgets/HeaderBar.vala:38
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "Créer un nouvel évènement"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "Aller à la date d'aujourd'hui"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "Gérer les calendriers"
 
-#: src/Widgets/HeaderBar.vala:55
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Exporter ou partager le calendrier par défaut"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "Importer les événements de \"%s\" dans le calendrier suivant :"
 
 #~ msgid "Email"
 #~ msgstr "E-mail"
@@ -805,9 +818,6 @@ msgstr "Exporter ou partager le calendrier par défaut"
 
 #~ msgid "Import..."
 #~ msgstr "Importer..."
-
-#~ msgid "Select calendars to display"
-#~ msgstr "Sélectionner les calendriers à afficher"
 
 #~ msgid "Edit the selected event"
 #~ msgstr "Modifier l'événement sélectionné"

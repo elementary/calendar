@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 10:47-0700\n"
-"PO-Revision-Date: 2018-10-16 10:42+0000\n"
+"POT-Creation-Date: 2018-12-10 16:43-0800\n"
+"PO-Revision-Date: 2018-12-11 12:07+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/calendar/"
 "calendar/he/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
 msgid "On this computer"
 msgstr "במחשב זה"
 
@@ -123,12 +123,12 @@ msgid "Next Month"
 msgstr "בחודש הבא"
 
 #: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:94
+#: src/SourceDialog/SourceItem.vala:88
 msgid "Edit…"
 msgstr "עריכה…"
 
 #: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:80
+#: src/SourceDialog/SourceItem.vala:76
 msgid "Remove"
 msgstr "הסרה"
 
@@ -164,31 +164,29 @@ msgstr "התמקדות על היום הנתון"
 msgid "date"
 msgstr "תאריך"
 
-#: src/Application.vala:141
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "לוח שנה"
 
-#: src/ImportDialog.vala:42
-#, c-format
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "אירועים מלוח השנה „%s” מיובאים ללוח השנה הבא:"
+#: src/ImportDialog.vala:28
+msgid "Select a Calendar to Import Into"
+msgstr "בחירת לוח שנה לייבוא אליו"
 
 #: src/ImportDialog.vala:44
 #, c-format
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
-msgstr[0] "אירועים מקובץ אחד מיובאים ללוח השנה הבא:"
-msgstr[1] "אירועים מ־%d קבצים מיובאים ללוח השנה הבא:"
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "אירועים מ־„%s” ימוזגו ללוח השנה הבא:"
 
-#: src/ImportDialog.vala:53
+#: src/ImportDialog.vala:47
+#, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
+msgstr[0] "אירועים מקובץ אחד ימוזגו עם לוח השנה הבא:"
+msgstr[1] "אירועים מ־%d קבצים ימוזגו עם לוח השנה הבא:"
+
+#: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "ייבוא"
-
-#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
-#: src/SourceDialog/SourceDialog.vala:58
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Cancel"
-msgstr "ביטול"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -232,6 +230,11 @@ msgstr "יצירת אירוע"
 #: src/EventEdition/EventDialog.vala:149
 msgid "Save Changes"
 msgstr "שמירת השינויים"
+
+#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "ביטול"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -670,50 +673,57 @@ msgstr "הצגת מספרי שבועות"
 msgid "%u more…"
 msgstr "%u נוספים…"
 
-#: src/SourceDialog/SourceDialog.vala:60
+#: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
 msgstr "יצירה"
 
-#. Name
-#: src/SourceDialog/SourceDialog.vala:69
+#: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
 msgstr "שם:"
 
-#: src/SourceDialog/SourceDialog.vala:72
+#: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "שם לוח השנה"
 
-#: src/SourceDialog/SourceDialog.vala:95
+#: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
 msgstr "סוג:"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
 msgstr "צבע:"
 
-#: src/SourceDialog/SourceDialog.vala:123
+#: src/SourceDialog/SourceDialog.vala:172
 msgid "Mark as default calendar"
 msgstr "סימון כלוח שנה בררת המחדל"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:243
 msgid "Create Calendar"
 msgstr "יצירת לוח שנה"
 
-#: src/SourceDialog/SourceDialog.vala:162
+#: src/SourceDialog/SourceDialog.vala:246
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "שמירה"
 
-#: src/SourceDialog/SourceItem.vala:125
+#: src/SourceDialog/SourceItem.vala:76
+msgid "Not Removable"
+msgstr "לא ניתן להסרה"
+
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Not Editable"
+msgstr "לא ניתן לעריכה"
+
+#: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "ביטול"
 
-#: src/SourceDialog/SourceItem.vala:140
+#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
 #, c-format
-msgid "Calendar \"%s\" removed."
-msgstr "לוח השנה „%s” הוסר."
+msgid "\"%s\" removed"
+msgstr "„%s” הוסר"
 
-#: src/SourceDialog/SourceSelector.vala:52
+#: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "הוספת לוח שנה חדש…"
 
@@ -726,21 +736,24 @@ msgstr "יצוא לוח שנה…"
 msgid "calendar.ics"
 msgstr "קובץ calendar.ics"
 
-#: src/Widgets/HeaderBar.vala:38
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "יצירת אירוע חדש"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "מעבר לתאריך של היום"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "ניהול לוחות שנה"
 
-#: src/Widgets/HeaderBar.vala:55
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "יצוא או שיתוף יומן בררת המחדל"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "אירועים מלוח השנה „%s” מיובאים ללוח השנה הבא:"
 
 #~ msgid "Email"
 #~ msgstr "דואר אלקטרוני"
@@ -843,9 +856,6 @@ msgstr "יצוא או שיתוף יומן בררת המחדל"
 
 #~ msgid "Add calendar"
 #~ msgstr "הוספת לוח שנה"
-
-#~ msgid "Select calendars to display"
-#~ msgstr "בחירת יומנים לתצוגה"
 
 #~ msgid "$more more ..."
 #~ msgstr "$עוד עוד ..."

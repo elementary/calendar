@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 10:47-0700\n"
+"POT-Creation-Date: 2018-12-10 16:43-0800\n"
 "PO-Revision-Date: 2017-01-21 09:04+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-01-22 05:35+0000\n"
 "X-Generator: Launchpad (build 18302)\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
 msgid "On this computer"
 msgstr "Σε αυτόν τον υπολογιστή"
 
@@ -129,12 +129,12 @@ msgid "Next Month"
 msgstr "Μήνας"
 
 #: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:94
+#: src/SourceDialog/SourceItem.vala:88
 msgid "Edit…"
 msgstr "Επεξεργασία..."
 
 #: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:80
+#: src/SourceDialog/SourceItem.vala:76
 msgid "Remove"
 msgstr "Αφαίρεση"
 
@@ -171,31 +171,30 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:141
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "Ημερολόγιο"
 
-#: src/ImportDialog.vala:42
-#, c-format
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "Εισαγωγή γεγονότων από \"%s\" στο παρακάτω ημερολόγιο:"
+#: src/ImportDialog.vala:28
+#, fuzzy
+msgid "Select a Calendar to Import Into"
+msgstr "Επιλέξτε τα προς εμφάνιση ημερολόγια"
 
 #: src/ImportDialog.vala:44
-#, c-format
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
+#, fuzzy, c-format
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "Εισαγωγή γεγονότων από %d αρχείο στο παρακάτω ημερολόγιο:"
+
+#: src/ImportDialog.vala:47
+#, fuzzy, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Εισαγωγή γεγονότων από %d αρχείο στο παρακάτω ημερολόγιο:"
 msgstr[1] "Εισαγωγή γεγονότων από %d αρχεία στο παρακάτω ημερολόγιο:"
 
-#: src/ImportDialog.vala:53
+#: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Εισαγωγή"
-
-#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
-#: src/SourceDialog/SourceDialog.vala:58
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Cancel"
-msgstr "Ακύρωση"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -239,6 +238,11 @@ msgstr "Δημιουργία γεγονότος"
 #: src/EventEdition/EventDialog.vala:149
 msgid "Save Changes"
 msgstr "Αποθήκευση αλλαγών"
+
+#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "Ακύρωση"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -679,50 +683,58 @@ msgstr "Εμφάνιση αύξοντα αριθμού εβδομάδος"
 msgid "%u more…"
 msgstr "%u περισσότερα…"
 
-#: src/SourceDialog/SourceDialog.vala:60
+#: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
 msgstr "Δημιουργία"
 
-#. Name
-#: src/SourceDialog/SourceDialog.vala:69
+#: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
 msgstr "Όνομα:"
 
-#: src/SourceDialog/SourceDialog.vala:72
+#: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "Όνομα Ημερολογίου"
 
-#: src/SourceDialog/SourceDialog.vala:95
+#: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
 msgstr "Τύπος:"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
 msgstr "Χρώμα:"
 
-#: src/SourceDialog/SourceDialog.vala:123
+#: src/SourceDialog/SourceDialog.vala:172
 msgid "Mark as default calendar"
 msgstr "Σήμανση ως προεπιλγμένο ημερολόγιο"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:243
 msgid "Create Calendar"
 msgstr "Δημιουργία Ημερολογίου"
 
-#: src/SourceDialog/SourceDialog.vala:162
+#: src/SourceDialog/SourceDialog.vala:246
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: src/SourceDialog/SourceItem.vala:125
+#: src/SourceDialog/SourceItem.vala:76
+#, fuzzy
+msgid "Not Removable"
+msgstr "Αφαίρεση"
+
+#: src/SourceDialog/SourceItem.vala:88
+msgid "Not Editable"
+msgstr ""
+
+#: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Αναίρεση"
 
-#: src/SourceDialog/SourceItem.vala:140
-#, c-format
-msgid "Calendar \"%s\" removed."
+#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
+#, fuzzy, c-format
+msgid "\"%s\" removed"
 msgstr "Το ημερολόγιο \"%s\" αφαιρέθηκε."
 
-#: src/SourceDialog/SourceSelector.vala:52
+#: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "Προσθήκη Νέου Ημερολογίου..."
 
@@ -736,21 +748,24 @@ msgstr "Εξαγωγή Ημερολογίου..."
 msgid "calendar.ics"
 msgstr "ημερολόγιο.ics"
 
-#: src/Widgets/HeaderBar.vala:38
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "Δημιουργία ενός νέου γεγονότος"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "Μετάβαση στη σημερινή ημερομηνία"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "Διαχείριση Ημερολογίων"
 
-#: src/Widgets/HeaderBar.vala:55
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Εξαγωγή ή Κοινή Χρήση του προεπιλεγμένου Ημερολογίου"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "Εισαγωγή γεγονότων από \"%s\" στο παρακάτω ημερολόγιο:"
 
 #~ msgid "Email"
 #~ msgstr "Email"
@@ -789,9 +804,6 @@ msgstr "Εξαγωγή ή Κοινή Χρήση του προεπιλεγμέν�
 
 #~ msgid "Name or Email Address"
 #~ msgstr "Όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
-
-#~ msgid "Select calendars to display"
-#~ msgstr "Επιλέξτε τα προς εμφάνιση ημερολόγια"
 
 #~ msgid "%l:%M %p"
 #~ msgstr "%l:%M %p"
