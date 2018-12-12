@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 16:43-0800\n"
-"PO-Revision-Date: 2018-10-16 10:09+0000\n"
+"PO-Revision-Date: 2018-12-12 07:51+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/calendar/"
 "calendar/pl/>\n"
@@ -172,22 +172,21 @@ msgid "Calendar"
 msgstr "Kalendarz"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Wybiera wyświetlane kalendarze"
+msgstr "Wybierz kalendarz do zaimportowania danych"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importuj wydarzenia z %d pliku do następującego kalendarza:"
+msgstr "Wydarzenia z \"%s\" zostaną połączone z tym kalendarzem:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Importuj wydarzenia z %d pliku do następującego kalendarza:"
-msgstr[1] "Importuj wydarzenia z %d plików do następującego kalendarza:"
-msgstr[2] "Importuj wydarzenia z %d plików do następującego kalendarza:"
+msgstr[0] "Wydarzenia z %d pliku zostaną połączone z tym kalendarzem:"
+msgstr[1] "Wydarzenia z %d plików zostaną połączone z tym kalendarzem:"
+msgstr[2] "Wydarzenia z %d plików zostaną połączone z tym kalendarzem:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -717,22 +716,21 @@ msgid "Save"
 msgstr "Zapisz"
 
 #: src/SourceDialog/SourceItem.vala:76
-#, fuzzy
 msgid "Not Removable"
-msgstr "Usuń"
+msgstr "Nieusuwalny"
 
 #: src/SourceDialog/SourceItem.vala:88
 msgid "Not Editable"
-msgstr ""
+msgstr "Nieedytowalny"
 
 #: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Cofnij"
 
 #: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Usunięto kalendarz \"%s\"."
+msgstr "Usunięto kalendarz \"%s\""
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"

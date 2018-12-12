@@ -34,7 +34,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
     construct {
         weekday_label = new Gtk.Label ("");
         weekday_label.xalign = 0;
-        weekday_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        weekday_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL
 
         day_label = new Gtk.Label ("");
         day_label.xalign = 0;
