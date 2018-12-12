@@ -28,7 +28,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
     public GLib.DateTime date { get; construct; }
 
     private Gtk.EventBox event_box;
-    private Gtk.Grid internal_grid;
     private Gtk.Label label;
 
     public EventButton (E.CalComponent comp, GLib.DateTime date) {
@@ -57,7 +56,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
         label.xalign = 0;
         label.show ();
 
-        internal_grid = new Gtk.Grid ();
+        var internal_grid = new Gtk.Grid ();
         internal_grid.column_spacing = 6;
         internal_grid.add (event_box);
         internal_grid.add (label);
