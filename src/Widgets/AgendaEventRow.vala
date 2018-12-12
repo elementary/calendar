@@ -27,38 +27,39 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     public signal void removed (E.CalComponent event);
     public signal void modified (E.CalComponent event);
 
+    public E.CalComponent calevent { get; construct; }
+    public E.Source source { get; construct; }
+    public bool is_upcoming { get; construct; }
+
     public string uid { public get; private set; }
     public string summary { public get; private set; }
-    public E.CalComponent calevent { public get; private set; }
-    public bool is_allday { public get; private set; default=false; }
-    public bool is_multiday { public get; private set; default=false; }
+    public bool is_allday { public get; private set; default = false; }
+    public bool is_multiday { public get; private set; default = false; }
     public Gtk.Revealer revealer { public get; private set; }
 
-    private Gtk.Image event_image;
     private Gtk.Label name_label;
     private Gtk.Label datatime_label;
     private Gtk.Label location_label;
     private Gtk.StyleContext main_grid_context;
 
-    private bool isUpcoming;
+    public AgendaEventRow (E.Source source, E.CalComponent calevent, bool is_upcoming) {
+        Object (
+            calevent: calevent,
+            is_upcoming: is_upcoming,
+            source: source
+        );
+    }
 
-    public AgendaEventRow (E.Source source, E.CalComponent calevent, bool isUpcoming) {
-        this.calevent = calevent;
-        this.isUpcoming = isUpcoming;
+    construct {
         unowned iCal.Component ical_event = calevent.get_icalcomponent ();
         uid = ical_event.get_uid ();
 
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
 
-        var main_grid = new Gtk.Grid ();
-        main_grid.column_spacing = 6;
-        main_grid.row_spacing = 6;
-        main_grid.margin = 6;
-
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
-        event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
+        var event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
         event_image.valign = Gtk.Align.START;
 
         name_label = new Gtk.Label ("");
@@ -82,6 +83,10 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         location_label.wrap = true;
         location_label.xalign = 0;
 
+        var main_grid = new Gtk.Grid ();
+        main_grid.column_spacing = 6;
+        main_grid.row_spacing = 6;
+        main_grid.margin = 6;
         main_grid.attach (event_image, 0, 0, 1, 1);
         main_grid.attach (name_label, 1, 0, 1, 1);
         main_grid.attach (datatime_label, 1, 1, 1, 1);
@@ -176,7 +181,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                 datetime_string = _("%s, %s – %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
             }
         } else {
-            if (!isUpcoming) {
+            if (!is_upcoming) {
                 if (is_allday) {
                     datatime_label.hide ();
                     datatime_label.no_show_all = true;
