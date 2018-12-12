@@ -27,7 +27,7 @@
 
 .daylabel {
     padding: 3px;
-    border-left: solid 1px alpha(#000, 0.25);
+    border-left: solid 1px @menu_separator;
 }
 
 .daylabel:first-child {
@@ -38,8 +38,8 @@
 .cell {
     background-color: @base_color;
     border-radius: 0;
-    border-top: solid 1px alpha(#000, 0.25);
-    border-left: solid 1px alpha(#000, 0.25);
+    border-top: solid 1px @menu_separator;
+    border-left: solid 1px @menu_separator;
 }
 
 .cell.firstcol {
@@ -47,20 +47,29 @@
 }
 
 .cell.dim-label {
-    background-color: shade(@bg_color, 0.96);
+    background-color: @bg_color;
 }
 
-.cell:selected {
+#date {
+    border-radius: 50%;
+    min-height: 24px;
+    min-width: 24px;
+}
+
+.cell:selected #date {
     background-color: shade(@bg_color, 0.86);
     color: @fg_color;
 }
 
-#today {
-    background-color: mix(@bg_color, @selected_bg_color, 0.25);
+#today #date {
+    background-color: alpha (@colorAccent, 0.15);
+    color: @colorAccent;
+    font-weight: 700;
 }
 
-#today:selected {
-    background-color: mix(@bg_color, @selected_bg_color, 0.5);
+#today:selected #date {
+    background-color: @colorAccent;
+    color: #fff;
 }
 
 .cell > #date {
@@ -68,17 +77,17 @@
 }
 
 .weeks {
-    border-right: solid 1px alpha(#000, 0.25);
+    border-right: solid 1px @menu_separator;
 }
 
 .weeklabel {
-    border-top: solid 1px alpha(#000, 0.25);
+    border-top: solid 1px @menu_separator;
     padding: 3px;
 }
 
 .cell:dir(rtl),
 .daylabel:dir(rtl) {
-    border-right: solid 1px alpha(#000, 0.25);
+    border-right: solid 1px @menu_separator;
     border-left: none;
 }
 
@@ -89,5 +98,5 @@
 }
 
 .weeks:dir(rtl) {
-    border-left: solid 1px alpha(#000, 0.25);
+    border-left: solid 1px @menu_separator;
 }

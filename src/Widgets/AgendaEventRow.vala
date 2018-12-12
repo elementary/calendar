@@ -87,6 +87,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         main_grid.column_spacing = 6;
         main_grid.row_spacing = 6;
         main_grid.margin = 6;
+        main_grid.margin_start = main_grid.margin_end = 12;
         main_grid.attach (event_image, 0, 0, 1, 1);
         main_grid.attach (name_label, 1, 0, 1, 1);
         main_grid.attach (datatime_label, 1, 1, 1, 1);

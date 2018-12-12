@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.AgendaView : Gtk.Grid {
+public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     public signal void event_removed (E.CalComponent event);
     public signal void event_modified (E.CalComponent event);
 
@@ -58,7 +58,7 @@ public class Maya.View.AgendaView : Gtk.Grid {
         placeholder_label.show_all ();
 
         selected_date_events_list = new Gtk.ListBox ();
-        selected_date_events_list.margin_start = selected_date_events_list.margin_end = 6;
+        selected_date_events_list.height_request = 128;
         selected_date_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         selected_date_events_list.set_header_func (header_update_func);
         selected_date_events_list.set_placeholder (placeholder_label);
@@ -117,13 +117,8 @@ public class Maya.View.AgendaView : Gtk.Grid {
             return false;
         });
 
-        var selected_scrolled = new Gtk.ScrolledWindow (null, null);
-        selected_scrolled.expand = true;
-        selected_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        selected_scrolled.add (selected_date_events_list);
-
         upcoming_events_list = new Gtk.ListBox ();
-        upcoming_events_list.margin_start = upcoming_events_list.margin_end = 6;
+        upcoming_events_list.margin_top = 24;
         upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         upcoming_events_list.set_header_func (upcoming_header_update_func);
         upcoming_events_list.set_sort_func ((child1, child2) => {
@@ -164,17 +159,15 @@ public class Maya.View.AgendaView : Gtk.Grid {
             return Util.is_event_in_range (comp, range);
         });
 
-        var upcoming_scrolled = new Gtk.ScrolledWindow (null, null);
-        upcoming_scrolled.expand = true;
-        upcoming_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        upcoming_scrolled.add (upcoming_events_list);
+        var grid = new Gtk.Grid ();
+        grid.orientation = Gtk.Orientation.VERTICAL;
+        grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        grid.add (selected_data_grid);
+        grid.add (selected_date_events_list);
+        grid.add (upcoming_events_list);
 
-        orientation = Gtk.Orientation.VERTICAL;
-        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        add (selected_data_grid);
-        add (selected_scrolled);
-        add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        add (upcoming_scrolled);
+        hscrollbar_policy = Gtk.PolicyType.NEVER;
+        add (grid);
 
         row_table = new HashTable<string, AgendaEventRow> (str_hash, str_equal);
         row_table2 = new HashTable<string, AgendaEventRow> (str_hash, str_equal);
@@ -198,12 +191,17 @@ public class Maya.View.AgendaView : Gtk.Grid {
             }
 
             if (row.is_allday != before.is_allday) {
-                row.set_header (new Granite.HeaderLabel (_("During the day")));
+                var header_label = new Granite.HeaderLabel (_("During the day"));
+                header_label.margin_start = header_label.margin_end = 6;
+
+                row.set_header (header_label);
                 return;
             }
         } else {
             if (row.is_allday) {
                 var allday_header = new Granite.HeaderLabel (_("All day"));
+                allday_header.margin_start = allday_header.margin_end = 6;
+
                 row.set_header (allday_header);
             }
             return;
@@ -266,35 +264,32 @@ public class Maya.View.AgendaView : Gtk.Grid {
                 row.set_header (null);
                 return;
             }
-
-            switch (rowType) {
-                case 1: row.set_header (new Granite.HeaderLabel (_("Tomorrow")));
-                        break;
-                case 2: row.set_header (new Granite.HeaderLabel (_("This Week")));
-                        break;
-                case 3: row.set_header (new Granite.HeaderLabel (_("Next Week")));
-                        break;
-                case 4: row.set_header (new Granite.HeaderLabel (_("This Month")));
-                        break;
-                case 5: row.set_header (new Granite.HeaderLabel (_("Next Month")));
-                        break;
-                default: break;
-            }
-        } else {
-            switch (rowType) {
-                case 1: row.set_header (new Granite.HeaderLabel (_("Tomorrow")));
-                        break;
-                case 2: row.set_header (new Granite.HeaderLabel (_("This Week")));
-                        break;
-                case 3: row.set_header (new Granite.HeaderLabel (_("Next Week")));
-                        break;
-                case 4: row.set_header (new Granite.HeaderLabel (_("This Month")));
-                        break;
-                case 5: row.set_header (new Granite.HeaderLabel (_("Next Month")));
-                        break;
-                default: break;
-            }
         }
+
+        var header_label = new Granite.HeaderLabel ("");
+        header_label.margin_start = header_label.margin_end = 6;
+
+        switch (rowType) {
+            case 1:
+                header_label.label = _("Tomorrow");
+                break;
+            case 2:
+                header_label.label = _("This Week");
+                break;
+            case 3:
+                header_label.label = _("Next Week");
+                break;
+            case 4:
+                header_label.label = _("This Month");
+                break;
+            case 5:
+                header_label.label =_("Next Month");
+                break;
+            default:
+                break;
+        }
+
+        row.set_header (header_label);
     }
 
     /**
