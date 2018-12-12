@@ -74,10 +74,6 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         popover.width_request = 310;
         popover.add (scrolled);
 
-        list_box.add.connect (() => {
-            list_box.show_all ();
-        });
-
         list_box.set_header_func (header_update_func);
 
         list_box.set_sort_func ((row1, row2) => {
@@ -103,6 +99,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
 
             var row = new Gtk.ListBoxRow ();
             row.add (calgrid);
+            row.show_all ();
 
             list_box.add (row);
 
