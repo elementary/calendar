@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+/*
+ * Copyright (c) 2011-2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,52 +24,74 @@
 public class Maya.View.EventButton : Gtk.Revealer {
     public signal void edition_request ();
 
-    public E.CalComponent comp {get; private set;}
-    private GLib.DateTime date;
+    public E.CalComponent comp { get; construct set; }
+    public GLib.DateTime date { get; construct; }
+
     private Gtk.EventBox event_box;
     private Gtk.Grid internal_grid;
-    Gtk.Label label;
+    private Gtk.Label label;
 
     public EventButton (E.CalComponent comp, GLib.DateTime date) {
-        this.comp = comp;
-        this.date = date;
+        Object (
+             comp: comp,
+             date: date
+         );
+    }
+
+    construct {
         transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-        internal_grid = new Gtk.Grid ();
-        internal_grid.column_spacing = 6;
-        event_box = new Gtk.EventBox ();
+
         var fake_label = new Gtk.Label (" ");
+
+        event_box = new Gtk.EventBox ();
         event_box.add (fake_label);
         event_box.set_size_request (4, 2);
 
         event_box.scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
-        internal_grid.attach (event_box, 0, 0, 1, 1);
+
         event_box.show ();
+
+        label = new Gtk.Label(get_summary ());
+        label.hexpand = true;
+        label.ellipsize = Pango.EllipsizeMode.END;
+        label.xalign = 0;
+        label.show ();
+
+        internal_grid = new Gtk.Grid ();
+        internal_grid.column_spacing = 6;
+        internal_grid.add (event_box);
+        internal_grid.add (label);
+
         var event_box = new Gtk.EventBox ();
         event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         event_box.events |= Gdk.EventMask.SCROLL_MASK;
         event_box.events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         event_box.add (internal_grid);
+
         event_box.button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY) {
                 edition_request ();
             } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
                 E.Source src = comp.get_data ("source");
-                Gtk.Menu menu = new Gtk.Menu ();
-                menu.attach_to_widget (this, null);
 
                 bool sensitive = src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false;
 
-                Gtk.MenuItem edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
+                var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
                 edit_item.activate.connect (() => { edition_request (); });
                 edit_item.sensitive = sensitive;
+
+                Gtk.Menu menu = new Gtk.Menu ();
+                menu.attach_to_widget (this, null);
                 menu.append (edit_item);
 
                 Gtk.MenuItem remove_item;
                 if (comp.has_recurrences ()) {
                     remove_item = new Gtk.MenuItem.with_label (_("Remove Event"));
-                    Gtk.MenuItem exception_item = new Gtk.MenuItem.with_label (_("Remove Occurrence"));
+
+                    var exception_item = new Gtk.MenuItem.with_label (_("Remove Occurrence"));
                     exception_item.activate.connect (add_exception);
                     exception_item.sensitive = sensitive;
+
                     menu.append (exception_item);
                 } else {
                     remove_item = new Gtk.MenuItem.with_label (_("Remove"));
@@ -78,6 +99,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
                 remove_item.sensitive = sensitive;
                 remove_item.activate.connect (remove_event);
+
                 menu.append (remove_item);
 
                 menu.popup_at_pointer (event);
@@ -108,16 +130,9 @@ public class Maya.View.EventButton : Gtk.Revealer {
         });
 
         add (event_box);
-        label = new Gtk.Label(get_summary ());
-        label.set_ellipsize(Pango.EllipsizeMode.END);
-        internal_grid.attach (label, 1, 0, 1, 1);
-        label.hexpand = true;
-        label.wrap = false;
-        ((Gtk.Misc) label).xalign = 0.0f;
-        label.show ();
 
         E.Source source = comp.get_data ("source");
-        E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+        var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
         cal.notify["color"].connect (() => {
             Util.style_calendar_color (this.event_box, cal.dup_color (), true);
         });
