@@ -1,0 +1,10 @@
+.event {
+    background: alpha(@accent_color, 0.15);
+    border-radius: 3px;
+    color: shade(@accent_color, 0.65);
+    padding: 6px;
+}
+
+.event .title {
+    font-weight: 600;
+}
