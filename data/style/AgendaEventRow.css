@@ -5,6 +5,11 @@
     padding: 6px;
 }
 
+.cell .event {
+    padding: 3px;
+    margin-bottom: 3px;
+}
+
 .event .title {
     font-weight: 600;
 }

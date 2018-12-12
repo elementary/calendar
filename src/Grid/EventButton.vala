@@ -18,9 +18,6 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-/**
- * Represents a single event on the grid.
- */
 public class Maya.View.EventButton : Gtk.Revealer {
     public signal void edition_request ();
 
@@ -28,6 +25,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
     public GLib.DateTime date { get; construct; }
 
     private Gtk.Label label;
+    private Gtk.StyleContext grid_style_context;
 
     public EventButton (E.CalComponent comp, GLib.DateTime date) {
         Object (
@@ -39,31 +37,40 @@ public class Maya.View.EventButton : Gtk.Revealer {
     construct {
         transition_type = Gtk.RevealerTransitionType.CROSSFADE;
 
-        var fake_label = new Gtk.Label (" ");
+        var event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
 
         var label_event_box = new Gtk.EventBox ();
-        label_event_box.add (fake_label);
-        label_event_box.set_size_request (4, 2);
-        label_event_box.show ();
+        label_event_box.add (event_image);
 
-        label_event_box.scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
-
-        label = new Gtk.Label(get_summary ());
+        label = new Gtk.Label (get_summary ());
         label.hexpand = true;
         label.ellipsize = Pango.EllipsizeMode.END;
         label.xalign = 0;
         label.show ();
+
+        var css_provider = new Gtk.CssProvider ();
+        css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
 
         var internal_grid = new Gtk.Grid ();
         internal_grid.column_spacing = 6;
         internal_grid.add (label_event_box);
         internal_grid.add (label);
 
+        grid_style_context = internal_grid.get_style_context ();
+        grid_style_context.add_class ("event");
+        grid_style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
         var event_box = new Gtk.EventBox ();
         event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         event_box.events |= Gdk.EventMask.SCROLL_MASK;
         event_box.events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         event_box.add (internal_grid);
+
+        add (event_box);
+
+        label_event_box.scroll_event.connect ((event) => {
+            return GesturesUtils.on_scroll_event (event);
+        });
 
         event_box.button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY) {
@@ -111,6 +118,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
         Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
         Gtk.TargetEntry dnd2 = {"text/uri-list", 0, 0};
         Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2}, Gdk.DragAction.MOVE);
+
         event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
             Model.CalendarModel.get_default ().drag_component = comp;
             unowned iCal.Component icalcomp = comp.get_icalcomponent ();
@@ -126,15 +134,15 @@ public class Maya.View.EventButton : Gtk.Revealer {
             }
         });
 
-        add (event_box);
-
         E.Source source = comp.get_data ("source");
-        var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-        cal.notify["color"].connect (() => {
-            Util.style_calendar_color (label_event_box, cal.dup_color (), true);
-        });
 
-        Util.style_calendar_color (label_event_box, cal.dup_color (), true);
+        var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+
+        reload_css (cal.dup_color ());
+
+        cal.notify["color"].connect (() => {
+            reload_css (cal.dup_color ());
+        });
     }
 
     public void update (E.CalComponent event) {
@@ -162,5 +170,17 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
         var calmodel = Model.CalendarModel.get_default ();
         calmodel.update_event (comp.get_data<E.Source> ("source"), comp, E.CalObjModType.ALL);
+    }
+
+    private void reload_css (string background_color) {
+        var provider = new Gtk.CssProvider ();
+        try {
+            var colored_css = EVENT_CSS.printf (background_color);
+            provider.load_from_data (colored_css, colored_css.length);
+
+            grid_style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        } catch (GLib.Error e) {
+            critical (e.message);
+        }
     }
 }
