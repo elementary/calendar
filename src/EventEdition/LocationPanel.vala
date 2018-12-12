@@ -47,7 +47,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 
         location_store = new Gtk.ListStore (2, typeof (string), typeof (string));
 
-        var location_label = Maya.View.EventDialog.make_label (_("Location:"));
+        var location_label = new Granite.HeaderLabel (_("Location:"));
         location_entry = new Gtk.SearchEntry ();
         location_entry.placeholder_text = _("John Smith OR Example St.");
         location_entry.hexpand = true;
