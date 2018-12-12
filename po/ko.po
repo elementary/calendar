@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 16:43-0800\n"
-"PO-Revision-Date: 2018-12-12 00:09+0000\n"
+"PO-Revision-Date: 2018-12-12 00:28+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/calendar/"
 "calendar/ko/>\n"
@@ -716,7 +716,7 @@ msgstr "실행 취소"
 #: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
 #, c-format
 msgid "\"%s\" removed"
-msgstr "\"%s\"를 삭제했습니다"
+msgstr "\"%s\" 지움"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
