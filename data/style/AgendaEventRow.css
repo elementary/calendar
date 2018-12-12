@@ -10,6 +10,11 @@
     margin-bottom: 3px;
 }
 
+.cell.dim-label .event {
+    background: alpha (@base_color, 0.7);
+    color: @text_color;
+}
+
 .event .title {
     font-weight: 600;
 }
