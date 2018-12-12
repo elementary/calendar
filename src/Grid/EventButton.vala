@@ -37,11 +37,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
     construct {
         transition_type = Gtk.RevealerTransitionType.CROSSFADE;
 
-        var event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
-
-        var label_event_box = new Gtk.EventBox ();
-        label_event_box.add (event_image);
-
         label = new Gtk.Label (get_summary ());
         label.hexpand = true;
         label.ellipsize = Pango.EllipsizeMode.END;
@@ -52,8 +47,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
         css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
 
         var internal_grid = new Gtk.Grid ();
-        internal_grid.column_spacing = 6;
-        internal_grid.add (label_event_box);
         internal_grid.add (label);
 
         grid_style_context = internal_grid.get_style_context ();
@@ -67,10 +60,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
         event_box.add (internal_grid);
 
         add (event_box);
-
-        label_event_box.scroll_event.connect ((event) => {
-            return GesturesUtils.on_scroll_event (event);
-        });
 
         event_box.button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY) {
