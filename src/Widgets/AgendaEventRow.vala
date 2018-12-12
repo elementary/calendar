@@ -37,6 +37,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     public bool is_multiday { public get; private set; default = false; }
     public Gtk.Revealer revealer { public get; private set; }
 
+    private Gtk.Image event_image;
     private Gtk.Label name_label;
     private Gtk.Label datatime_label;
     private Gtk.Label location_label;
@@ -59,7 +60,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
-        var event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
+        event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
+        event_image.pixel_size = 16;
         event_image.valign = Gtk.Align.START;
 
         name_label = new Gtk.Label ("");
@@ -159,6 +161,14 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         unowned iCal.Component ical_event = event.get_icalcomponent ();
         summary = ical_event.get_summary ();
         name_label.set_markup (Markup.escape_text (summary));
+
+        var event_name = name_label.label.down ();
+
+        if (_("birthday") in event_name || "birthday" in event_name) {
+            event_image.icon_name = "event-birthday-symbolic";
+        } else if (_("flight") in event_name || "flight" in event_name) {
+            event_image.icon_name = "airplane-mode-symbolic";
+        }
 
         DateTime start_date, end_date;
         Util.get_local_datetimes_from_icalcomponent (ical_event, out start_date, out end_date);
