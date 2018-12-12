@@ -27,7 +27,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
     public E.CalComponent comp { get; construct set; }
     public GLib.DateTime date { get; construct; }
 
-    private Gtk.EventBox event_box;
     private Gtk.Label label;
 
     public EventButton (E.CalComponent comp, GLib.DateTime date) {
@@ -42,13 +41,12 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
         var fake_label = new Gtk.Label (" ");
 
-        event_box = new Gtk.EventBox ();
-        event_box.add (fake_label);
-        event_box.set_size_request (4, 2);
+        var label_event_box = new Gtk.EventBox ();
+        label_event_box.add (fake_label);
+        label_event_box.set_size_request (4, 2);
+        label_event_box.show ();
 
-        event_box.scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
-
-        event_box.show ();
+        label_event_box.scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
 
         label = new Gtk.Label(get_summary ());
         label.hexpand = true;
@@ -58,7 +56,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
         var internal_grid = new Gtk.Grid ();
         internal_grid.column_spacing = 6;
-        internal_grid.add (event_box);
+        internal_grid.add (label_event_box);
         internal_grid.add (label);
 
         var event_box = new Gtk.EventBox ();
@@ -133,10 +131,10 @@ public class Maya.View.EventButton : Gtk.Revealer {
         E.Source source = comp.get_data ("source");
         var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
         cal.notify["color"].connect (() => {
-            Util.style_calendar_color (this.event_box, cal.dup_color (), true);
+            Util.style_calendar_color (label_event_box, cal.dup_color (), true);
         });
 
-        Util.style_calendar_color (this.event_box, cal.dup_color (), true);
+        Util.style_calendar_color (label_event_box, cal.dup_color (), true);
     }
 
     public void update (E.CalComponent event) {
