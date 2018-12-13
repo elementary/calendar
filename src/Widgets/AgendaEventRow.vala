@@ -66,6 +66,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         name_label = new Gtk.Label ("");
         name_label.hexpand = true;
+        name_label.selectable = true;
         name_label.wrap = true;
         name_label.wrap_mode = Pango.WrapMode.WORD_CHAR;
         name_label.xalign = 0;
@@ -76,12 +77,14 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         datatime_label = new Gtk.Label ("");
         datatime_label.ellipsize = Pango.EllipsizeMode.END;
+        datatime_label.selectable = true;
         datatime_label.use_markup = true;
         datatime_label.xalign = 0;
         datatime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         location_label = new Gtk.Label ("");
         location_label.no_show_all = true;
+        location_label.selectable = true;
         location_label.wrap = true;
         location_label.xalign = 0;
 
