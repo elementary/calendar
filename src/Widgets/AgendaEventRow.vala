@@ -165,10 +165,24 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         var event_name = name_label.label.down ();
 
-        if (_("birthday") in event_name || "birthday" in event_name) {
+        if (_("dinner") in event_name || _("reservation") in event_name || _("steakhouse") in event_name) {
+            event_image.icon_name = "event-food-symbolic";
+        } else if (_("birthday") in event_name) {
             event_image.icon_name = "event-birthday-symbolic";
-        } else if (_("flight") in event_name || "flight" in event_name) {
-            event_image.icon_name = "airplane-mode-symbolic";
+        } else if (_("flight") in event_name) {
+            event_image.icon_name = "event-flight-symbolic";
+        } else if (_("wedding") in event_name) {
+            event_image.icon_name = "event-wedding-symbolic";
+        } else if (_("tax") in event_name || _("jury") in event_name || _("court") in event_name) {
+            event_image.icon_name = "event-legal-symbolic";
+        } else if (_("appointment") in event_name) {
+            event_image.icon_name = "event-appointment-symbolic";
+        } else if (_("road trip") in event_name) {
+            event_image.icon_name = "event-driving-symbolic";
+        } else if (_("call") in event_name) {
+            event_image.icon_name = "event-call-symbolic";
+        } else if (_("movie") in event_name) {
+            event_image.icon_name = "event-movie-symbolic";
         }
 
         DateTime start_date, end_date;
