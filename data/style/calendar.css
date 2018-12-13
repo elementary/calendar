@@ -50,17 +50,26 @@
     background-color: @bg_color;
 }
 
-.cell:selected {
+#date {
+    border-radius: 50%;
+    min-height: 24px;
+    min-width: 24px;
+}
+
+.cell:selected #date {
     background-color: shade(@bg_color, 0.86);
     color: @fg_color;
 }
 
-#today {
-    background-color: mix(@bg_color, @selected_bg_color, 0.25);
+#today #date {
+    background-color: alpha (@colorAccent, 0.15);
+    color: @colorAccent;
+    font-weight: 700;
 }
 
-#today:selected {
-    background-color: mix(@bg_color, @selected_bg_color, 0.5);
+#today:selected #date {
+    background-color: @colorAccent;
+    color: #fff;
 }
 
 .cell > #date {
