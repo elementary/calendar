@@ -71,7 +71,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         margin_start = 12;
         margin_end = 12;
-        row_spacing = 6;
         column_spacing = 12;
         sensitive = parent_dialog.can_edit;
 
