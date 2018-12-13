@@ -50,7 +50,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         column_spacing = 12;
         sensitive = parent_dialog.can_edit;
 
-        var reminder_label = Maya.View.EventDialog.make_label (_("Repeat:"));
+        var reminder_label = new Granite.HeaderLabel (_("Repeat:"));
 
         repeat_switch = new Gtk.Switch ();
 
@@ -101,7 +101,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         repeat_grid.add (repeat_switch_grid);
         repeat_grid.add (repeat_combobox);
 
-        var every_label = Maya.View.EventDialog.make_label (_("Every:"));
+        var every_label = new Granite.HeaderLabel (_("Every:"));
 
         every_entry = new Gtk.SpinButton.with_range (1, 99, 1);
         every_entry.hexpand = true;
@@ -132,7 +132,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         every_grid.add (every_entry);
         every_grid.add (every_unit_label);
 
-        var ends_label = Maya.View.EventDialog.make_label (_("Ends:"));
+        var ends_label = new Granite.HeaderLabel (_("Ends:"));
 
         var end_label = new Gtk.Label (ngettext ("Repeat", "Repeats", 1));
         end_label.no_show_all = true;
@@ -197,7 +197,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         month_grid.add (same_radiobutton);
         month_grid.add (every_radiobutton);
 
-        var exceptions_label = Maya.View.EventDialog.make_label (_("Exceptions:"));
+        var exceptions_label = new Granite.HeaderLabel (_("Exceptions:"));
 
         var no_exceptions_label = new Gtk.Label ("");
         no_exceptions_label.set_markup (_("No Exceptions"));
