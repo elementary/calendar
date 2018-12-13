@@ -30,7 +30,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         orientation = Gtk.Orientation.VERTICAL;
         sensitive = parent_dialog.can_edit;
 
-        var reminder_label = Maya.View.EventDialog.make_label (_("Reminders:"));
+        var reminder_label = new Granite.HeaderLabel (_("Reminders:"));
         reminder_label.margin_start = 12;
 
         var no_reminder_label = new Gtk.Label ("");
