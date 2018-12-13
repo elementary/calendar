@@ -81,20 +81,22 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         datatime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         location_label = new Gtk.Label ("");
-        location_label.no_show_all = true;
+        location_label.margin_top = 6;
         location_label.selectable = true;
         location_label.wrap = true;
         location_label.xalign = 0;
 
+        var location_revealer = new Gtk.Revealer ();
+        location_revealer.add (location_label);
+
         var main_grid = new Gtk.Grid ();
         main_grid.column_spacing = 6;
-        main_grid.row_spacing = 6;
         main_grid.margin = 6;
         main_grid.margin_start = main_grid.margin_end = 12;
         main_grid.attach (event_image, 0, 0, 1, 1);
         main_grid.attach (name_label, 1, 0, 1, 1);
         main_grid.attach (datatime_label, 1, 1, 1, 1);
-        main_grid.attach (location_label, 1, 2, 1, 1);
+        main_grid.attach (location_revealer, 1, 2);
 
         main_grid_context = main_grid.get_style_context ();
         main_grid_context.add_class ("event");
@@ -112,6 +114,10 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         cal.notify["color"].connect (() => {
             reload_css (cal.dup_color ());
+        });
+
+        location_label.notify["label"].connect (() => {
+            location_revealer.reveal_child = location_label.label != null && location_label.label != "";
         });
 
         show.connect (() => {
@@ -202,15 +208,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         }
 
         datatime_label.label = "<small>%s</small>".printf (datetime_string);
-
-        string location = ical_event.get_location ();
-        if (location != null && location != "") {
-            location_label.label = location;
-            location_label.show ();
-        } else {
-            location_label.hide ();
-            location_label.no_show_all = true;
-        }
+        location_label.label = ical_event.get_location ();
     }
 
     private void reload_css (string background_color) {
