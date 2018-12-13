@@ -71,11 +71,10 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         margin_start = 12;
         margin_end = 12;
-        row_spacing = 6;
         column_spacing = 12;
         sensitive = parent_dialog.can_edit;
 
-        var from_label = Maya.View.EventDialog.make_label (_("From:"));
+        var from_label = new Granite.HeaderLabel (_("From:"));
         from_date_picker = make_date_picker ();
         from_date_picker.notify["date"].connect ( () => {on_date_modified(0);} );
         from_time_picker = make_time_picker ();
@@ -86,7 +85,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         allday_switch = new Gtk.Switch ();
 
-        var to_label = Maya.View.EventDialog.make_label (_("To:"));
+        var to_label = new Granite.HeaderLabel (_("To:"));
 
         var allday_switch_grid = new Gtk.Grid ();
 
@@ -104,7 +103,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             to_time_picker.sensitive = !allday_switch.get_active ();
         });
 
-        var title_label = Maya.View.EventDialog.make_label (_("Title:"));
+        var title_label = new Granite.HeaderLabel (_("Title:"));
         title_entry = new Gtk.Entry ();
         title_entry.placeholder_text = _("Name of Event");
         title_entry.changed.connect (on_title_entry_modified);
@@ -131,14 +130,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             });
         });
 
-        var calendar_label = Maya.View.EventDialog.make_label (_("Calendar:"));
+        var calendar_label = new Granite.HeaderLabel (_("Calendar:"));
         calendar_button = new Maya.View.Widgets.CalendarButton ();
         // Select the first calendar we can find, if none is default
         if (parent_dialog.source == null) {
             parent_dialog.source = calendar_button.current_source;
         }
 
-        var comment_label = Maya.View.EventDialog.make_label (_("Comments:"));
+        var comment_label = new Granite.HeaderLabel (_("Comments:"));
         comment_textview = new Gtk.TextView ();
         comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
         comment_textview.accepts_tab = false;
