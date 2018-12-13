@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 16:43-0800\n"
-"PO-Revision-Date: 2018-10-18 07:03+0000\n"
-"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
+"PO-Revision-Date: 2018-12-13 14:59+0000\n"
+"Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/calendar/"
 "calendar/cs/>\n"
 "Language: cs\n"
@@ -169,22 +169,21 @@ msgid "Calendar"
 msgstr "Kalendář"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Vyberte kalendáře, které zobrazit"
+msgstr "Vyberte kalendář do kterého chcete importovat"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importovat události ze souboru %d do následujícího kalendáře:"
+msgstr "Události z \"%s\" budou sloučeny s tímto kalendářem:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Importovat události ze souboru %d do následujícího kalendáře:"
-msgstr[1] "Importovat události ze souborů %d do následujícího kalendáře:"
-msgstr[2] "Importovat události ze souborů %d do následujícího kalendáře:"
+msgstr[0] "Události z %d souboru budou sloučeny s tímto kalendářem:"
+msgstr[1] "Události ze %d souborů budou sloučeny s tímto kalendářem:"
+msgstr[2] "Události z %d souborů budou sloučeny s tímto kalendářem:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -714,22 +713,21 @@ msgid "Save"
 msgstr "Uložit"
 
 #: src/SourceDialog/SourceItem.vala:76
-#, fuzzy
 msgid "Not Removable"
-msgstr "Odstranit"
+msgstr "Neodstranitelné"
 
 #: src/SourceDialog/SourceItem.vala:88
 msgid "Not Editable"
-msgstr ""
+msgstr "Needitovatelné"
 
 #: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Zpět"
 
 #: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Kalendář \"%s\" odstraněn."
+msgstr "\"%s\" odstraněno"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
