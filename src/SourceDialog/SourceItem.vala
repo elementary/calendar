@@ -195,16 +195,3 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         stack.set_visible_child_name ("info");
     }
 }
-
-public class Maya.View.SourceItemHeader : Gtk.ListBoxRow {
-    public string label { public get; private set; }
-    public uint children = 1;
-    public SourceItemHeader (string label) {
-        this.label = label;
-        var header_label = new Gtk.Label (label);
-        header_label.get_style_context ().add_class ("h4");
-        header_label.xalign = 0.0f;
-        header_label.hexpand = true;
-        add (header_label);
-    }
-}
