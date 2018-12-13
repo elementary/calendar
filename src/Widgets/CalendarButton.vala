@@ -119,7 +119,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
             }
         }
 
-        var header = new SourceItemHeader (row_location);
+        var header = new Granite.HeaderLabel (row_location);
         header.margin = 6;
         header.margin_bottom = 0;
 
