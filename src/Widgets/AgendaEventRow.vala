@@ -31,7 +31,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     public E.Source source { get; construct; }
     public bool is_upcoming { get; construct; }
 
-    public string uid { public get; private set; }
     public string summary { public get; private set; }
     public bool is_allday { public get; private set; default = false; }
     public bool is_multiday { public get; private set; default = false; }
@@ -51,13 +50,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     }
 
     construct {
-        unowned iCal.Component ical_event = calevent.get_icalcomponent ();
-        uid = ical_event.get_uid ();
-
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
-
-        E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
         var event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
         event_image.valign = Gtk.Align.START;
@@ -107,6 +101,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN;
         revealer.add (event_box);
         add (revealer);
+
+        var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
         reload_css (cal.dup_color ());
 
