@@ -165,7 +165,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         var event_name = name_label.label.down ();
 
-        if (_("dinner") in event_name || _("reservation") in event_name || _("steakhouse") in event_name) {
+        if (_("breakfast") in event_name || _("brunch") in event_name || _("lunch") in event_name || _("supper") in event_name || _("dinner") in event_name || _("reservation") in event_name || _("steakhouse") in event_name) {
             event_image.icon_name = "event-food-symbolic";
         } else if (_("birthday") in event_name) {
             event_image.icon_name = "event-birthday-symbolic";
