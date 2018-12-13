@@ -175,7 +175,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             event_image.icon_name = "event-wedding-symbolic";
         } else if (_("tax") in event_name || _("jury") in event_name || _("court") in event_name) {
             event_image.icon_name = "event-legal-symbolic";
-        } else if (_("appointment") in event_name) {
+        } else if (_("appointment") in event_name || _("meeting") in event_name) {
             event_image.icon_name = "event-appointment-symbolic";
         } else if (_("road trip") in event_name) {
             event_image.icon_name = "event-driving-symbolic";
