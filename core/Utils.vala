@@ -639,8 +639,7 @@ namespace Maya.Util {
         string style = """
             .cal_color {
                 %s: %s;
-                border-radius: 999px;
-                padding: 0 0.75em;
+                border-radius: 50%;
             }
         """;
 
