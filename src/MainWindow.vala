@@ -127,9 +127,15 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void on_modified (E.CalComponent comp) {
-        var dialog = new Maya.View.EventDialog (comp, null);
-        dialog.transient_for = this;
-        dialog.present ();
+        E.Source src = comp.get_data ("source");
+
+        if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
+            var dialog = new Maya.View.EventDialog (comp, null);
+            dialog.transient_for = this;
+            dialog.present ();
+        } else {
+            Gdk.beep ();
+        }
     }
 
     public override bool configure_event (Gdk.EventConfigure event) {
