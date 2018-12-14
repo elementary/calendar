@@ -636,7 +636,12 @@ namespace Maya.Util {
     }
 
     public void style_calendar_color (Gtk.Widget widget, string color, bool background = false) {
-        string style = ".cal_color { %s: %s }";
+        string style = """
+            .cal_color {
+                %s: %s;
+                border-radius: 50%;
+            }
+        """;
 
         var style_context = widget.get_style_context ();
         style_context.add_class ("cal_color");
