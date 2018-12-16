@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 16:43-0800\n"
-"PO-Revision-Date: 2018-12-16 00:01+0000\n"
+"PO-Revision-Date: 2018-12-16 19:08+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
@@ -174,16 +174,16 @@ msgid "Select a Calendar to Import Into"
 msgstr "आयात करण्यासाठी कॅलेंडर निवडा"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "खालील कॅलेंडरमध्ये \"%d\" फाईल मधून घटना इम्पोर्ट करा:"
+msgstr "\"%s\" वरील कार्यक्रम या कॅलेंडरमध्ये विलीन केले जातील:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "खालील कॅलेंडरमध्ये \"%d\" फाईल मधून घटना इम्पोर्ट करा:"
-msgstr[1] "खालील कॅलेंडरमध्ये \"%d\" फाईल्स मधून घटना इम्पोर्ट करा:"
+msgstr[0] "%d फाइलवरील इव्हेंट या कॅलेंडरमध्ये विलीन केले जातील:"
+msgstr[1] "%d फायलींवरील इव्हेंट या कॅलेंडरमध्ये विलीन केले जातील:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -708,22 +708,21 @@ msgid "Save"
 msgstr "सेव्ह करा"
 
 #: src/SourceDialog/SourceItem.vala:76
-#, fuzzy
 msgid "Not Removable"
-msgstr "कॅलेंडर मिटवा"
+msgstr "काढता येण्याजोगे नाही"
 
 #: src/SourceDialog/SourceItem.vala:88
 msgid "Not Editable"
-msgstr ""
+msgstr "संपादनयोग्य नाही"
 
 #: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "बदल काढा"
 
 #: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "कॅलेंडर \"%s\" मिटविले."
+msgstr "\"%s\" मिटविले"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
