@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 16:43-0800\n"
-"PO-Revision-Date: 2018-10-25 07:08+0000\n"
-"Last-Translator: Ciaran Ainsworth <ciaranainsworth@outlook.com>\n"
+"PO-Revision-Date: 2018-12-17 10:50+0000\n"
+"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
 "projects/calendar/calendar/en_GB/>\n"
 "Language: en_GB\n"
@@ -171,21 +171,20 @@ msgid "Calendar"
 msgstr "Calendar"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Select calendars to display"
+msgstr "Select a Calendar to Import Into"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Import events from %d file into the following calendar:"
+msgstr "Events from \"%s\" will be merged with this calendar:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Import events from %d file into the following calendar:"
-msgstr[1] "Import events from %d files into the following calendar:"
+msgstr[0] "Events from %d file will be merged with this calendar:"
+msgstr[1] "Events from %d files will be merged with this calendar:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -710,22 +709,21 @@ msgid "Save"
 msgstr "Save"
 
 #: src/SourceDialog/SourceItem.vala:76
-#, fuzzy
 msgid "Not Removable"
-msgstr "Remove"
+msgstr "Not Removable"
 
 #: src/SourceDialog/SourceItem.vala:88
 msgid "Not Editable"
-msgstr ""
+msgstr "Not Editable"
 
 #: src/SourceDialog/SourceItem.vala:112
 msgid "Undo"
 msgstr "Undo"
 
 #: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Calendar '%s' removed."
+msgstr "\"%s\" removed"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
