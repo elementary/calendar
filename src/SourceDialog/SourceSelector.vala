@@ -30,6 +30,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
     public SourceSelector () {
         calendar_box = new Gtk.ListBox ();
+        calendar_box.margin_bottom = 3;
         calendar_box.selection_mode = Gtk.SelectionMode.NONE;
         calendar_box.set_header_func (header_update_func);
         calendar_box.set_sort_func ((child1, child2) => {
@@ -48,20 +49,27 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
         src_map = new GLib.HashTable<string, SourceItem?>(str_hash, str_equal);
 
+        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+        separator.margin_bottom = 3;
+
         var add_calendar_label = new Gtk.Label (_("Add New Calendar…"));
+        add_calendar_label.margin_start = add_calendar_label.margin_end = 6;
         add_calendar_label.xalign = 0;
 
         var add_calendar_button = new Gtk.Button ();
         add_calendar_button.add (add_calendar_label);
         add_calendar_button.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
 
+        var accounts_button = new Gtk.ModelButton ();
+        accounts_button.text = _("Online Accounts Settings…");
+
         main_grid = new Gtk.Grid ();
-        main_grid.row_spacing = 6;
         main_grid.margin_top = 6;
         main_grid.orientation = Gtk.Orientation.VERTICAL;
         main_grid.add (scroll);
-        main_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        main_grid.add (separator);
         main_grid.add (add_calendar_button);
+        main_grid.add (accounts_button);
 
         stack = new Gtk.Stack ();
         stack.add_named (main_grid, "main");
@@ -72,6 +80,14 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         stack.show_all ();
 
         add_calendar_button.clicked.connect (create_source);
+
+        accounts_button.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
+            } catch (Error e) {
+                warning ("Failed to open account settings: %s", e.message);
+            }
+        });
     }
 
     public async void populate () {
