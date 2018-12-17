@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 16:43-0800\n"
-"PO-Revision-Date: 2018-10-26 07:42+0000\n"
+"POT-Creation-Date: 2018-12-17 12:10-0800\n"
+"PO-Revision-Date: 2018-12-16 19:08+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
 msgid "On this computer"
 msgstr "ह्या कॉम्प्युटरवर"
 
@@ -84,74 +84,40 @@ msgstr "सुरक्षित कनेक्शन वापरा"
 msgid "Server handles meeting invitations"
 msgstr "मीटिंगची आमंत्रणे सर्व्हरद्वारे सांभाळली जातात"
 
-#: src/AgendaView.vala:65
+#: src/AgendaView.vala:51
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "जेव्हा आपण घटना असलेले दिवस सिलेक्ट कराल तेव्हा येणाऱ्या सर्व घटना आपल्याला दिसतील."
 
-#: src/AgendaView.vala:138
-msgid "Upcoming Events"
-msgstr "पुढील घटना"
-
-#: src/AgendaView.vala:226
+#: src/AgendaView.vala:194
 msgid "During the day"
 msgstr "दिवसा"
 
-#: src/AgendaView.vala:231
+#: src/AgendaView.vala:202
 msgid "All day"
 msgstr "संपूर्ण दिवस"
 
-#: src/AgendaView.vala:296 src/AgendaView.vala:310
+#: src/AgendaView.vala:274
 msgid "Tomorrow"
 msgstr "उद्या"
 
-#: src/AgendaView.vala:298 src/AgendaView.vala:312
+#: src/AgendaView.vala:277
 msgid "This Week"
 msgstr "या आठवड्यात"
 
-#: src/AgendaView.vala:300 src/AgendaView.vala:314
+#: src/AgendaView.vala:280
 msgid "Next Week"
 msgstr "पुढील आठवड्यात"
 
-#: src/AgendaView.vala:302 src/AgendaView.vala:316
+#: src/AgendaView.vala:283
 msgid "This Month"
 msgstr "या महिन्यात"
 
-#: src/AgendaView.vala:304 src/AgendaView.vala:318
+#: src/AgendaView.vala:286
 msgid "Next Month"
 msgstr "पुढील महिना"
-
-#: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:88
-msgid "Edit…"
-msgstr "बदला…"
-
-#: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:76
-msgid "Remove"
-msgstr "कॅलेंडर मिटवा"
-
-#: src/AgendaView.vala:564 src/AgendaView.vala:574
-#, c-format
-msgid "%s - %s"
-msgstr "%s - %s"
-
-#: src/AgendaView.vala:566
-#, c-format
-msgid "%s, %s - %s, %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/AgendaView.vala:578
-#, c-format
-msgid "%s"
-msgstr "%s"
-
-#: src/AgendaView.vala:580
-#, c-format
-msgid "%s, %s - %s"
-msgstr "%s, %s - %s"
 
 #: src/Application.vala:47
 msgid "Create an event"
@@ -171,19 +137,19 @@ msgstr "कॅलेंडर"
 
 #: src/ImportDialog.vala:28
 msgid "Select a Calendar to Import Into"
-msgstr ""
+msgstr "आयात करण्यासाठी कॅलेंडर निवडा"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "खालील कॅलेंडरमध्ये \"%d\" फाईल मधून घटना इम्पोर्ट करा:"
+msgstr "\"%s\" वरील कार्यक्रम या कॅलेंडरमध्ये विलीन केले जातील:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "खालील कॅलेंडरमध्ये \"%d\" फाईल मधून घटना इम्पोर्ट करा:"
-msgstr[1] "खालील कॅलेंडरमध्ये \"%d\" फाईल्स मधून घटना इम्पोर्ट करा:"
+msgstr[0] "%d फाइलवरील इव्हेंट या कॅलेंडरमध्ये विलीन केले जातील:"
+msgstr[1] "%d फायलींवरील इव्हेंट या कॅलेंडरमध्ये विलीन केले जातील:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -197,42 +163,42 @@ msgstr "नवीन घटना जोडा"
 msgid "Edit Event"
 msgstr "घटनेत बदल करा"
 
-#: src/EventEdition/EventDialog.vala:107
+#: src/EventEdition/EventDialog.vala:100
 msgid "General Informations"
 msgstr "घटनेची साधारण माहिती"
 
-#: src/EventEdition/EventDialog.vala:108
+#: src/EventEdition/EventDialog.vala:101
 msgid "Location"
 msgstr "स्थळ"
 
-#: src/EventEdition/EventDialog.vala:109
+#: src/EventEdition/EventDialog.vala:102
 msgid "Guests"
 msgstr "पाहुणे"
 
-#: src/EventEdition/EventDialog.vala:110
+#: src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr "आठवणींच्या खुणा"
 
-#: src/EventEdition/EventDialog.vala:111 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "पुनरावृत्ती"
 msgstr[1] "अनेक पुनरावृत्ती"
 
-#: src/EventEdition/EventDialog.vala:134
+#: src/EventEdition/EventDialog.vala:127
 msgid "Delete Event"
 msgstr "आठवणीची खूण डिलीट करा"
 
-#: src/EventEdition/EventDialog.vala:146
+#: src/EventEdition/EventDialog.vala:140
 msgid "Create Event"
 msgstr "आठवणीची खूण बनवा"
 
-#: src/EventEdition/EventDialog.vala:149
+#: src/EventEdition/EventDialog.vala:143
 msgid "Save Changes"
 msgstr "बदल सेव्ह करा"
 
-#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Cancel"
 msgstr "रद्द करा"
@@ -257,35 +223,35 @@ msgstr "स्वीकारा"
 msgid "Declined"
 msgstr "अस्वीकार"
 
-#: src/EventEdition/InfoPanel.vala:78
+#: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
 msgstr "पासून:"
 
-#: src/EventEdition/InfoPanel.vala:84
+#: src/EventEdition/InfoPanel.vala:83
 msgid "All day:"
 msgstr "संपुर्ण दिवस:"
 
-#: src/EventEdition/InfoPanel.vala:89
+#: src/EventEdition/InfoPanel.vala:88
 msgid "To:"
 msgstr "प्रति:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:106
 msgid "Title:"
 msgstr "शीर्षक:"
 
-#: src/EventEdition/InfoPanel.vala:109
+#: src/EventEdition/InfoPanel.vala:108
 msgid "Name of Event"
 msgstr "घटनेचे नाव"
 
-#: src/EventEdition/InfoPanel.vala:119
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Press enter to parse event"
 msgstr "घटना बघण्यासाठी \"Enter\" बटन दाबा"
 
-#: src/EventEdition/InfoPanel.vala:134
+#: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
 msgstr "कॅलेंडर:"
 
-#: src/EventEdition/InfoPanel.vala:141
+#: src/EventEdition/InfoPanel.vala:140
 msgid "Comments:"
 msgstr "टिका-टिप्पणी:"
 
@@ -653,13 +619,23 @@ msgstr "शनि"
 msgid "Sun"
 msgstr "रवि"
 
-#: src/Grid/EventButton.vala:70
+#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
+#: src/Widgets/AgendaEventRow.vala:140
+msgid "Edit…"
+msgstr "बदला…"
+
+#: src/Grid/EventButton.vala:82
 msgid "Remove Event"
 msgstr "आठवणीची खूण डिलीट करा"
 
-#: src/Grid/EventButton.vala:71
+#: src/Grid/EventButton.vala:84
 msgid "Remove Occurrence"
 msgstr "घटना काढा"
+
+#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
+#: src/Widgets/AgendaEventRow.vala:141
+msgid "Remove"
+msgstr "कॅलेंडर मिटवा"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
@@ -694,40 +670,59 @@ msgstr "प्रकार:"
 msgid "Color:"
 msgstr "रंग:"
 
-#: src/SourceDialog/SourceDialog.vala:172
+#: src/SourceDialog/SourceDialog.vala:183
 msgid "Mark as default calendar"
 msgstr "मूळ कॅलेंडर म्हणून दाखवा"
 
-#: src/SourceDialog/SourceDialog.vala:243
+#: src/SourceDialog/SourceDialog.vala:247
 msgid "Create Calendar"
 msgstr "नवीन कॅलेंडर बनवा"
 
-#: src/SourceDialog/SourceDialog.vala:246
+#: src/SourceDialog/SourceDialog.vala:250
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "सेव्ह करा"
 
-#: src/SourceDialog/SourceItem.vala:76
-#, fuzzy
+#: src/SourceDialog/SourceItem.vala:75
 msgid "Not Removable"
-msgstr "कॅलेंडर मिटवा"
+msgstr "काढता येण्याजोगे नाही"
 
-#: src/SourceDialog/SourceItem.vala:88
+#: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "संपादनयोग्य नाही"
 
-#: src/SourceDialog/SourceItem.vala:112
+#: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "बदल काढा"
 
-#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
-#, fuzzy, c-format
+#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
+#, c-format
 msgid "\"%s\" removed"
-msgstr "कॅलेंडर \"%s\" मिटविले."
+msgstr "\"%s\" मिटविले"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "नवीन कॅलेंडर बनवा…"
+
+#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#, c-format
+msgid "%s – %s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:187
+#, fuzzy, c-format
+msgid "%s, %s – %s, %s"
+msgstr "%s, %s - %s, %s"
+
+#: src/Widgets/AgendaEventRow.vala:199
+#, c-format
+msgid "%s"
+msgstr "%s"
+
+#: src/Widgets/AgendaEventRow.vala:201
+#, fuzzy, c-format
+msgid "%s, %s – %s"
+msgstr "%s, %s - %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -753,6 +748,12 @@ msgstr "कॅलेंडर्स मॅनेज करा"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "डिफॉल्ट कॅलेंडर एक्स्पोर्ट अथवा शेअर करा"
+
+#~ msgid "Upcoming Events"
+#~ msgstr "पुढील घटना"
+
+#~ msgid "%s - %s"
+#~ msgstr "%s - %s"
 
 #~ msgid "Import events from \"%s\" into the following calendar:"
 #~ msgstr "खालील कॅलेंडरमध्ये \"%s\" घटना इम्पोर्ट करा:"

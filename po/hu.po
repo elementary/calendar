@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 16:43-0800\n"
+"POT-Creation-Date: 2018-12-17 12:10-0800\n"
 "PO-Revision-Date: 2018-06-21 00:09+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/calendar/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
 msgid "On this computer"
 msgstr "Ezen a számítógépen"
 
@@ -85,78 +85,44 @@ msgstr "Biztonságos kapcsolat használata"
 msgid "Server handles meeting invitations"
 msgstr "A szerver kezeli az értekezlet-meghívókat"
 
-#: src/AgendaView.vala:65
+#: src/AgendaView.vala:51
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Ha a kiválasztott időpontban vannak közelgő események, azok itt jelennek meg."
 
-#: src/AgendaView.vala:138
-msgid "Upcoming Events"
-msgstr ""
-
-#: src/AgendaView.vala:226
+#: src/AgendaView.vala:194
 msgid "During the day"
 msgstr "Napközben"
 
-#: src/AgendaView.vala:231
+#: src/AgendaView.vala:202
 msgid "All day"
 msgstr "Egész nap"
 
-#: src/AgendaView.vala:296 src/AgendaView.vala:310
+#: src/AgendaView.vala:274
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:298 src/AgendaView.vala:312
+#: src/AgendaView.vala:277
 #, fuzzy
 msgid "This Week"
 msgstr "Hetente"
 
-#: src/AgendaView.vala:300 src/AgendaView.vala:314
+#: src/AgendaView.vala:280
 #, fuzzy
 msgid "Next Week"
 msgstr "Hetente"
 
-#: src/AgendaView.vala:302 src/AgendaView.vala:316
+#: src/AgendaView.vala:283
 #, fuzzy
 msgid "This Month"
 msgstr "Havonta"
 
-#: src/AgendaView.vala:304 src/AgendaView.vala:318
+#: src/AgendaView.vala:286
 #, fuzzy
 msgid "Next Month"
 msgstr "Havonta"
-
-#: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:88
-msgid "Edit…"
-msgstr "Szerkesztés…"
-
-#: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:76
-msgid "Remove"
-msgstr "Eltávolítás"
-
-#: src/AgendaView.vala:564 src/AgendaView.vala:574
-#, fuzzy, c-format
-msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/AgendaView.vala:566
-#, c-format
-msgid "%s, %s - %s, %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/AgendaView.vala:578
-#, c-format
-msgid "%s"
-msgstr ""
-
-#: src/AgendaView.vala:580
-#, fuzzy, c-format
-msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
 
 #: src/Application.vala:47
 #, fuzzy
@@ -204,42 +170,42 @@ msgstr "Esemény hozzáadása"
 msgid "Edit Event"
 msgstr "Esemény szerkesztése"
 
-#: src/EventEdition/EventDialog.vala:107
+#: src/EventEdition/EventDialog.vala:100
 msgid "General Informations"
 msgstr "Általános információk"
 
-#: src/EventEdition/EventDialog.vala:108
+#: src/EventEdition/EventDialog.vala:101
 msgid "Location"
 msgstr "Hely"
 
-#: src/EventEdition/EventDialog.vala:109
+#: src/EventEdition/EventDialog.vala:102
 msgid "Guests"
 msgstr "Résztvevők"
 
-#: src/EventEdition/EventDialog.vala:110
+#: src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr "Emlékeztetők"
 
-#: src/EventEdition/EventDialog.vala:111 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Ismétlés"
 msgstr[1] "Ismétlés"
 
-#: src/EventEdition/EventDialog.vala:134
+#: src/EventEdition/EventDialog.vala:127
 msgid "Delete Event"
 msgstr "Esemény törlése"
 
-#: src/EventEdition/EventDialog.vala:146
+#: src/EventEdition/EventDialog.vala:140
 msgid "Create Event"
 msgstr "Esemény létrehozása"
 
-#: src/EventEdition/EventDialog.vala:149
+#: src/EventEdition/EventDialog.vala:143
 msgid "Save Changes"
 msgstr "A módosítások mentése"
 
-#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Cancel"
 msgstr "Mégsem"
@@ -264,35 +230,35 @@ msgstr "Elfogadva"
 msgid "Declined"
 msgstr "Elutasítva"
 
-#: src/EventEdition/InfoPanel.vala:78
+#: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
 msgstr "Ettől:"
 
-#: src/EventEdition/InfoPanel.vala:84
+#: src/EventEdition/InfoPanel.vala:83
 msgid "All day:"
 msgstr "Egész nap:"
 
-#: src/EventEdition/InfoPanel.vala:89
+#: src/EventEdition/InfoPanel.vala:88
 msgid "To:"
 msgstr "Eddig:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:106
 msgid "Title:"
 msgstr "Cím:"
 
-#: src/EventEdition/InfoPanel.vala:109
+#: src/EventEdition/InfoPanel.vala:108
 msgid "Name of Event"
 msgstr "Esemény címe"
 
-#: src/EventEdition/InfoPanel.vala:119
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Press enter to parse event"
 msgstr "Az esemény elemzéséhez nyomja meg az enter billentyűt"
 
-#: src/EventEdition/InfoPanel.vala:134
+#: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
 msgstr "Naptár:"
 
-#: src/EventEdition/InfoPanel.vala:141
+#: src/EventEdition/InfoPanel.vala:140
 msgid "Comments:"
 msgstr "Megjegyzések:"
 
@@ -661,14 +627,24 @@ msgstr "Szo"
 msgid "Sun"
 msgstr "V"
 
-#: src/Grid/EventButton.vala:70
+#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
+#: src/Widgets/AgendaEventRow.vala:140
+msgid "Edit…"
+msgstr "Szerkesztés…"
+
+#: src/Grid/EventButton.vala:82
 #, fuzzy
 msgid "Remove Event"
 msgstr "Esemény törlése"
 
-#: src/Grid/EventButton.vala:71
+#: src/Grid/EventButton.vala:84
 msgid "Remove Occurrence"
 msgstr ""
+
+#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
+#: src/Widgets/AgendaEventRow.vala:141
+msgid "Remove"
+msgstr "Eltávolítás"
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
@@ -703,33 +679,33 @@ msgstr "Típus:"
 msgid "Color:"
 msgstr "Szín:"
 
-#: src/SourceDialog/SourceDialog.vala:172
+#: src/SourceDialog/SourceDialog.vala:183
 msgid "Mark as default calendar"
 msgstr "Megjelölés alapértelmezett naptárként"
 
-#: src/SourceDialog/SourceDialog.vala:243
+#: src/SourceDialog/SourceDialog.vala:247
 msgid "Create Calendar"
 msgstr "Naptár létrehozása"
 
-#: src/SourceDialog/SourceDialog.vala:246
+#: src/SourceDialog/SourceDialog.vala:250
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "Mentés"
 
-#: src/SourceDialog/SourceItem.vala:76
+#: src/SourceDialog/SourceItem.vala:75
 #, fuzzy
 msgid "Not Removable"
 msgstr "Eltávolítás"
 
-#: src/SourceDialog/SourceItem.vala:88
+#: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
 msgstr ""
 
-#: src/SourceDialog/SourceItem.vala:112
+#: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "Visszavonás"
 
-#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
+#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" naptár eltávolítva."
@@ -737,6 +713,26 @@ msgstr "\"%s\" naptár eltávolítva."
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "Új naptár hozzáadása…"
+
+#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#, c-format
+msgid "%s – %s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:187
+#, fuzzy, c-format
+msgid "%s, %s – %s, %s"
+msgstr "%s, %s - %s, %s"
+
+#: src/Widgets/AgendaEventRow.vala:199
+#, c-format
+msgid "%s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:201
+#, fuzzy, c-format
+msgid "%s, %s – %s"
+msgstr "%s, %s - %s, %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -763,6 +759,10 @@ msgstr "Naptárak kezelése"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Alapértelmezett naptár exportálása vagy megosztása"
+
+#, fuzzy
+#~ msgid "%s - %s"
+#~ msgstr "%s, %s - %s, %s"
 
 #~ msgid "Import events from \"%s\" into the following calendar:"
 #~ msgstr "Események importálása \"%s\" helyről a következő naptárba:"
