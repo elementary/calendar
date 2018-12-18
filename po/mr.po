@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 12:10-0800\n"
-"PO-Revision-Date: 2018-12-16 19:08+0000\n"
+"PO-Revision-Date: 2018-12-18 10:44+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
@@ -707,10 +707,10 @@ msgstr "नवीन कॅलेंडर बनवा…"
 #: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
 #, c-format
 msgid "%s – %s"
-msgstr ""
+msgstr "%s – %s"
 
 #: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
@@ -720,7 +720,7 @@ msgid "%s"
 msgstr "%s"
 
 #: src/Widgets/AgendaEventRow.vala:201
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
 
