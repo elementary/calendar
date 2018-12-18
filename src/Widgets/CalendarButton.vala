@@ -25,7 +25,6 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         }
     """;
 
-
     public GLib.List<E.Source> sources;
     private E.Source _current_source;
     public E.Source current_source {
