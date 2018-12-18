@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 12:10-0800\n"
-"PO-Revision-Date: 2018-12-11 02:08+0000\n"
+"PO-Revision-Date: 2018-12-18 01:24+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -700,12 +700,12 @@ msgstr "新しいカレンダーを作成…"
 #: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
 #, c-format
 msgid "%s – %s"
-msgstr ""
+msgstr "%s – %s"
 
 #: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s %s - %s %s"
+msgstr "%s、%s – %s、%s"
 
 #: src/Widgets/AgendaEventRow.vala:199
 #, c-format
@@ -713,9 +713,9 @@ msgid "%s"
 msgstr "%s"
 
 #: src/Widgets/AgendaEventRow.vala:201
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s、%s - %s"
+msgstr "%s、%s – %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
