@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
-"PO-Revision-Date: 2018-12-11 17:38+0000\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
+"PO-Revision-Date: 2018-12-18 10:35+0000\n"
 "Last-Translator: Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/calendar/"
 "calendar/pt/>\n"
@@ -620,24 +620,6 @@ msgstr "sáb"
 msgid "Sun"
 msgstr "dom"
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr "Editar…"
-
-#: src/Grid/EventButton.vala:82
-msgid "Remove Event"
-msgstr "Apagar Evento"
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr "Remover Ocorrência"
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr "Remover"
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Esconder Número das Semanas"
@@ -684,9 +666,19 @@ msgstr "Criar calendário"
 msgid "Save"
 msgstr "Guardar"
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "Remover"
+
 #: src/SourceDialog/SourceItem.vala:75
 msgid "Not Removable"
 msgstr "Não removível"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "Editar…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -708,12 +700,12 @@ msgstr "Adicionar novo calendário…"
 #: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
 #, c-format
 msgid "%s – %s"
-msgstr ""
+msgstr "%s – %s"
 
 #: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #: src/Widgets/AgendaEventRow.vala:199
 #, c-format
@@ -721,9 +713,9 @@ msgid "%s"
 msgstr "%s"
 
 #: src/Widgets/AgendaEventRow.vala:201
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -733,6 +725,14 @@ msgstr "Exportar Calendário…"
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "calendário.ics"
+
+#: src/Widgets/EventMenu.vala:41
+msgid "Remove Event"
+msgstr "Apagar Evento"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr "Remover Ocorrência"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"

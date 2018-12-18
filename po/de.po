@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2018-11-17 00:01+0000\n"
 "Last-Translator: Tucan Holmes <tucan.web.swiss@gmail.com>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/calendar/"
@@ -621,24 +621,6 @@ msgstr "Sa"
 msgid "Sun"
 msgstr "So"
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr "Bearbeiten…"
-
-#: src/Grid/EventButton.vala:82
-msgid "Remove Event"
-msgstr "Termin entfernen"
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr "Ereignis an diesem Tag entfernen"
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr "Entfernen"
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Wochennummern ausblenden"
@@ -685,10 +667,20 @@ msgstr "Kalender erstellen"
 msgid "Save"
 msgstr "Speichern"
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "Entfernen"
+
 #: src/SourceDialog/SourceItem.vala:75
 #, fuzzy
 msgid "Not Removable"
 msgstr "Entfernen"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "Bearbeiten…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -735,6 +727,14 @@ msgstr "Kalender exportieren…"
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "Kalender.ics"
+
+#: src/Widgets/EventMenu.vala:41
+msgid "Remove Event"
+msgstr "Termin entfernen"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr "Ereignis an diesem Tag entfernen"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"

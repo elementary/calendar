@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2017-12-20 00:04+0000\n"
 "Last-Translator: Вагиф Кязым <vaqif134@gmail.com>\n"
 "Language-Team: Azerbaijani <https://weblate.elementary.io/projects/calendar/"
@@ -626,25 +626,6 @@ msgstr "Ş"
 msgid "Sun"
 msgstr "B"
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr "Redaktə et…"
-
-#: src/Grid/EventButton.vala:82
-#, fuzzy
-msgid "Remove Event"
-msgstr "Hadisəni sil"
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr ""
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr "Sil"
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Həftə nömrələrini gizlət"
@@ -691,10 +672,20 @@ msgstr "Təqvim yarat"
 msgid "Save"
 msgstr "Yadda saxla"
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "Sil"
+
 #: src/SourceDialog/SourceItem.vala:75
 #, fuzzy
 msgid "Not Removable"
 msgstr "Sil"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "Redaktə et…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -742,6 +733,15 @@ msgstr "Təqvimi ixrac et..."
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "təqvim.ics"
+
+#: src/Widgets/EventMenu.vala:41
+#, fuzzy
+msgid "Remove Event"
+msgstr "Hadisəni sil"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"

@@ -90,7 +90,6 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         set_titlebar (headerbar);
 
         calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
-        calview.edition_request.connect (on_modified);
         calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
         infobar.response.connect ((id) => infobar.hide ());
@@ -127,7 +126,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, E.CalObjModType.THIS);
     }
 
-    private void on_modified (E.CalComponent comp) {
+    public void on_modified (E.CalComponent comp) {
         E.Source src = comp.get_data ("source");
 
         if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {

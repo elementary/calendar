@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2018-12-13 14:59+0000\n"
 "Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/calendar/"
@@ -624,24 +624,6 @@ msgstr "So"
 msgid "Sun"
 msgstr "Ne"
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr "Upravit…"
-
-#: src/Grid/EventButton.vala:82
-msgid "Remove Event"
-msgstr "Smazat událost"
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr "Smazat tento výskyt"
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr "Odstranit"
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Skrýt čísla týdnů"
@@ -688,9 +670,19 @@ msgstr "Vytvořit kalendář"
 msgid "Save"
 msgstr "Uložit"
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "Odstranit"
+
 #: src/SourceDialog/SourceItem.vala:75
 msgid "Not Removable"
 msgstr "Neodstranitelné"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "Upravit…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -737,6 +729,14 @@ msgstr "Exportovat kalendář…"
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "kalendar.ics"
+
+#: src/Widgets/EventMenu.vala:41
+msgid "Remove Event"
+msgstr "Smazat událost"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr "Smazat tento výskyt"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
