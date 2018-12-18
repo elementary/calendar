@@ -27,7 +27,6 @@ public class Maya.View.CalendarView : Gtk.Grid {
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
     public signal void on_event_add (DateTime date);
-    public signal void edition_request (E.CalComponent comp);
     public signal void selection_changed (DateTime new_date);
 
     public DateTime? selected_date { get; private set; }
@@ -97,7 +96,6 @@ public class Maya.View.CalendarView : Gtk.Grid {
         grid = new Grid ();
         grid.focus_date (selected_date);
         grid.on_event_add.connect ((date) => on_event_add (date));
-        grid.edition_request.connect ((comp) => edition_request (comp));
         grid.selection_changed.connect ((date) => {
             selected_date = date;
             selection_changed (date);

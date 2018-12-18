@@ -22,7 +22,7 @@ namespace Maya.Settings {
     }
 
     public string DateFormat_Complete () {
-        return _("%A, %b %d");
+        return _("%a, %b %d");
     }
 
     public string TimeFormat () {
@@ -45,3 +45,4 @@ namespace Maya.Settings {
     }
 
 }
+

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
-"PO-Revision-Date: 2018-12-11 21:18+0000\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
+"PO-Revision-Date: 2018-12-17 20:56+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/calendar/"
 "calendar/lt/>\n"
@@ -627,24 +627,6 @@ msgstr "Šeš"
 msgid "Sun"
 msgstr "Sek"
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr "Taisyti…"
-
-#: src/Grid/EventButton.vala:82
-msgid "Remove Event"
-msgstr "Šalinti įvykį"
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr "Šalinti pasikartojimą"
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr "Šalinti"
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Slėpti savaičių numerius"
@@ -691,9 +673,19 @@ msgstr "Sukurti kalendorių"
 msgid "Save"
 msgstr "Įrašyti"
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "Šalinti"
+
 #: src/SourceDialog/SourceItem.vala:75
 msgid "Not Removable"
 msgstr "Nepašalinamas"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "Taisyti…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -715,12 +707,12 @@ msgstr "Pridėti naują kalendorių…"
 #: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
 #, c-format
 msgid "%s – %s"
-msgstr ""
+msgstr "%s – %s"
 
 #: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #: src/Widgets/AgendaEventRow.vala:199
 #, c-format
@@ -728,9 +720,9 @@ msgid "%s"
 msgstr "%s"
 
 #: src/Widgets/AgendaEventRow.vala:201
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -740,6 +732,14 @@ msgstr "Eksportuoti kalendorių…"
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "kalendorius.ics"
+
+#: src/Widgets/EventMenu.vala:41
+msgid "Remove Event"
+msgstr "Šalinti įvykį"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr "Šalinti pasikartojimą"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
