@@ -170,22 +170,25 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         datatime_label.no_show_all = false;
         if (is_multiday) {
             if (is_allday) {
-                datetime_string = _("%s–%s").printf (start_date_string, end_date_string);
+                // TRANSLATORS: A range from start date to end date i.e. "Fri, Dec 21–Sat, Dec 22"
+                datetime_string = C_("date-range", "%s–%s").printf (start_date_string, end_date_string);
             } else {
-                datetime_string = _("%s, %s–%s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
-            }
+                // TRANSLATORS: A range from start date and time to end date and time i.e. "Fri, Dec 21, 7:00 PM–Sat, Dec 22, 12:00 AM"
+                datetime_string = _("%s, %s–%s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);            }
         } else {
             if (!is_upcoming) {
                 if (is_allday) {
                     datatime_label.hide ();
                     datatime_label.no_show_all = true;
                 } else {
-                    datetime_string = _("%s–%s").printf (start_time_string, end_time_string);
+                    // TRANSLATORS: A range from start time to end time i.e. "7:00 PM–9:00 PM"
+                    datetime_string = C_("time-range", "%s–%s").printf (start_time_string, end_time_string);
                 }
             } else {
                 if (is_allday) {
-                    datetime_string = _("%s").printf (start_date_string);
+                    datetime_string = "%s".printf (start_date_string);
                 } else {
+                    // TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM–9:00 PM"
                     datetime_string = _("%s, %s–%s").printf (start_date_string, start_time_string, end_time_string);
                 }
             }
