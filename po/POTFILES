@@ -44,4 +44,5 @@ src/Widgets/ContractorButtonWithMenu.vala
 src/Widgets/DateSwitcher.vala
 src/Widgets/DateTimePicker.vala
 src/Widgets/DynamicSpinner.vala
+src/Widgets/EventMenu.vala
 src/Widgets/HeaderBar.vala
