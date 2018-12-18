@@ -18,6 +18,14 @@
  */
 
 public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
+    private static string STYLE = """
+        .cal-color {
+            background-color: %s;
+            border-radius: 50%;
+        }
+    """;
+
+
     public GLib.List<E.Source> sources;
     private E.Source _current_source;
     public E.Source current_source {
@@ -179,14 +187,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
             label = calendar_name_label.label;
             location = Maya.Util.get_source_location (_source);
 
-            string style = """
-                .cal-color {
-                    background-color: %s;
-                    border-radius: 50%;
-                }
-            """;
-
-            var css_color = style.printf (cal.dup_color ());
+            var css_color = STYLE.printf (cal.dup_color ());
             var style_provider = new Gtk.CssProvider ();
 
             try {
