@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2018-11-03 22:51+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/calendar/"
@@ -627,24 +627,6 @@ msgstr "Sub"
 msgid "Sun"
 msgstr "Ned"
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr "Uredi…"
-
-#: src/Grid/EventButton.vala:82
-msgid "Remove Event"
-msgstr "Ukloni događaj"
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr "Ukloni ovo ponavljanje događaja"
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr "Ukloni"
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Sakrij brojeve sedmica"
@@ -691,10 +673,20 @@ msgstr "Kreiraj kalendar"
 msgid "Save"
 msgstr "Sačuvaj"
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "Ukloni"
+
 #: src/SourceDialog/SourceItem.vala:75
 #, fuzzy
 msgid "Not Removable"
 msgstr "Ukloni"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "Uredi…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -741,6 +733,14 @@ msgstr "Izvezi kalendar…"
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#: src/Widgets/EventMenu.vala:41
+msgid "Remove Event"
+msgstr "Ukloni događaj"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr "Ukloni ovo ponavljanje događaja"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"

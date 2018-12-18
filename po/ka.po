@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2015-11-27 08:47+0000\n"
 "Last-Translator: Beqa Arabuli <arabulibeqa@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -614,25 +614,6 @@ msgstr "შაბ"
 msgid "Sun"
 msgstr "კვი"
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr "კორექტირება"
-
-#: src/Grid/EventButton.vala:82
-#, fuzzy
-msgid "Remove Event"
-msgstr "ივენთის წაშლა"
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr ""
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr "წაშლა"
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "დაფარე კვირის ციფრები"
@@ -679,10 +660,20 @@ msgstr "კალენდრის შექმნა"
 msgid "Save"
 msgstr "შენახვა"
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "წაშლა"
+
 #: src/SourceDialog/SourceItem.vala:75
 #, fuzzy
 msgid "Not Removable"
 msgstr "წაშლა"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "კორექტირება"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -730,6 +721,15 @@ msgstr "კალენდრის გამოტანა..."
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "კალენდარ.ics"
+
+#: src/Widgets/EventMenu.vala:41
+#, fuzzy
+msgid "Remove Event"
+msgstr "ივენთის წაშლა"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"

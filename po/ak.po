@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2017-06-26 12:57+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -623,25 +623,6 @@ msgstr "Mem"
 msgid "Sun"
 msgstr "Kwa"
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr "Sesa…"
-
-#: src/Grid/EventButton.vala:82
-#, fuzzy
-msgid "Remove Event"
-msgstr "Yi dwuma yi fi so"
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr ""
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr "Yi"
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Hintaw Nnawotwe Nɔma Ahoroɔ No"
@@ -688,10 +669,20 @@ msgstr "Yɛ Calender Foforɔ"
 msgid "Save"
 msgstr "Kora"
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "Yi"
+
 #: src/SourceDialog/SourceItem.vala:75
 #, fuzzy
 msgid "Not Removable"
 msgstr "Yi"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "Sesa…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -739,6 +730,15 @@ msgstr "Export Calendar..."
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#: src/Widgets/EventMenu.vala:41
+#, fuzzy
+msgid "Remove Event"
+msgstr "Yi dwuma yi fi so"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"

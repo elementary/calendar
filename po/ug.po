@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2017-01-03 09:18+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: \n"
@@ -615,25 +615,6 @@ msgstr "شەنبە"
 msgid "Sun"
 msgstr "يەكشەنبە"
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr "تەھرىرلەش...."
-
-#: src/Grid/EventButton.vala:82
-#, fuzzy
-msgid "Remove Event"
-msgstr "پائالىيەتنى ئۆچۈرۈش"
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr ""
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr "ئۆچۈرۈش"
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "ھەپتە نومۇرىنى يوشۇرۇش"
@@ -680,10 +661,20 @@ msgstr "كالېندار قۇرۇش"
 msgid "Save"
 msgstr "ساقلاش"
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "ئۆچۈرۈش"
+
 #: src/SourceDialog/SourceItem.vala:75
 #, fuzzy
 msgid "Not Removable"
 msgstr "ئۆچۈرۈش"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "تەھرىرلەش...."
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -731,6 +722,15 @@ msgstr "كالېندارنى چىقىرىش...."
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#: src/Widgets/EventMenu.vala:41
+#, fuzzy
+msgid "Remove Event"
+msgstr "پائالىيەتنى ئۆچۈرۈش"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
