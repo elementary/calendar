@@ -135,22 +135,10 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         if (event.type == Gdk.EventType.@2BUTTON_PRESS) {
              modified (calevent);
         } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-            Gtk.Menu menu = new Gtk.Menu ();
+            var start_date = Util.ical_to_date_time (calevent.get_icalcomponent ().get_dtstart ());
+
+            var menu = new Maya.EventMenu (calevent, start_date);
             menu.attach_to_widget (this, null);
-            var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
-            var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
-            edit_item.activate.connect (() => { modified (calevent); });
-            remove_item.activate.connect (() => { removed (calevent); });
-
-            E.Source src = calevent.get_data ("source");
-            if (src.writable != true && Model.CalendarModel.get_default ().calclient_is_readonly (src) != false) {
-                edit_item.sensitive = false;
-                remove_item.sensitive = false;
-            }
-
-            menu.append (edit_item);
-            menu.append (remove_item);
-
             menu.popup_at_pointer (event);
             menu.show_all ();
         }
@@ -182,8 +170,10 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         datatime_label.no_show_all = false;
         if (is_multiday) {
             if (is_allday) {
-                datetime_string = _("%s – %s").printf (start_date_string, end_date_string);
+                // TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+                datetime_string = C_("date-range", "%s – %s").printf (start_date_string, end_date_string);
             } else {
+                // TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
                 datetime_string = _("%s, %s – %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
             }
         } else {
@@ -192,12 +182,14 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                     datatime_label.hide ();
                     datatime_label.no_show_all = true;
                 } else {
-                    datetime_string = _("%s – %s").printf (start_time_string, end_time_string);
+                    // TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+                    datetime_string = C_("time-range", "%s – %s").printf (start_time_string, end_time_string);
                 }
             } else {
                 if (is_allday) {
-                    datetime_string = _("%s").printf (start_date_string);
+                    datetime_string = "%s".printf (start_date_string);
                 } else {
+                    // TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
                     datetime_string = _("%s, %s – %s").printf (start_date_string, start_time_string, end_time_string);
                 }
             }

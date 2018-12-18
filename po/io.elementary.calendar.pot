@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.calendar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -616,24 +616,6 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr ""
-
-#: src/Grid/EventButton.vala:82
-msgid "Remove Event"
-msgstr ""
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr ""
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr ""
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr ""
@@ -680,8 +662,18 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr ""
+
 #: src/SourceDialog/SourceItem.vala:75
 msgid "Not Removable"
+msgstr ""
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
 msgstr ""
 
 #: src/SourceDialog/SourceItem.vala:87
@@ -728,6 +720,14 @@ msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
+msgstr ""
+
+#: src/Widgets/EventMenu.vala:41
+msgid "Remove Event"
+msgstr ""
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
 msgstr ""
 
 #: src/Widgets/HeaderBar.vala:41
