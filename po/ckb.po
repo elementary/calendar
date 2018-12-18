@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2015-10-07 02:30+0000\n"
 "Last-Translator: qezwan <Unknown>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -624,25 +624,6 @@ msgstr "شەممە"
 msgid "Sun"
 msgstr "یەک شەممە"
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr "دەستکاری..."
-
-#: src/Grid/EventButton.vala:82
-#, fuzzy
-msgid "Remove Event"
-msgstr "سڕینەوەی ڕووداو"
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr ""
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr "سڕکیینەوە"
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "شاردنەوەی ژمارەی هەفتە"
@@ -689,10 +670,20 @@ msgstr "دروستکردنی ڕۆژمێر"
 msgid "Save"
 msgstr "پاشکەوت"
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "سڕکیینەوە"
+
 #: src/SourceDialog/SourceItem.vala:75
 #, fuzzy
 msgid "Not Removable"
 msgstr "سڕکیینەوە"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "دەستکاری..."
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -740,6 +731,15 @@ msgstr "هەناردن لە ڕۆژمێر"
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#: src/Widgets/EventMenu.vala:41
+#, fuzzy
+msgid "Remove Event"
+msgstr "سڕینەوەی ڕووداو"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
