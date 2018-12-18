@@ -135,22 +135,13 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         if (event.type == Gdk.EventType.@2BUTTON_PRESS) {
              modified (calevent);
         } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-            Gtk.Menu menu = new Gtk.Menu ();
+            unowned iCal.Component ical_event = calevent.get_icalcomponent ();
+
+            DateTime start_date, end_date;
+            Util.get_local_datetimes_from_icalcomponent (ical_event, out start_date, out end_date);
+
+            var menu = new Maya.EventMenu (calevent, start_date);
             menu.attach_to_widget (this, null);
-            var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
-            var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
-            edit_item.activate.connect (() => { modified (calevent); });
-            remove_item.activate.connect (() => { removed (calevent); });
-
-            E.Source src = calevent.get_data ("source");
-            if (src.writable != true && Model.CalendarModel.get_default ().calclient_is_readonly (src) != false) {
-                edit_item.sensitive = false;
-                remove_item.sensitive = false;
-            }
-
-            menu.append (edit_item);
-            menu.append (remove_item);
-
             menu.popup_at_pointer (event);
             menu.show_all ();
         }
