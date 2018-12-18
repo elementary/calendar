@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 12:10-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2018-12-18 10:44+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/calendar/"
@@ -619,24 +619,6 @@ msgstr "शनि"
 msgid "Sun"
 msgstr "रवि"
 
-#: src/Grid/EventButton.vala:72 src/SourceDialog/SourceItem.vala:87
-#: src/Widgets/AgendaEventRow.vala:140
-msgid "Edit…"
-msgstr "बदला…"
-
-#: src/Grid/EventButton.vala:82
-msgid "Remove Event"
-msgstr "आठवणीची खूण डिलीट करा"
-
-#: src/Grid/EventButton.vala:84
-msgid "Remove Occurrence"
-msgstr "घटना काढा"
-
-#: src/Grid/EventButton.vala:90 src/SourceDialog/SourceItem.vala:75
-#: src/Widgets/AgendaEventRow.vala:141
-msgid "Remove"
-msgstr "कॅलेंडर मिटवा"
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "आठवडा क्रमांक लपवा"
@@ -683,9 +665,19 @@ msgstr "नवीन कॅलेंडर बनवा"
 msgid "Save"
 msgstr "सेव्ह करा"
 
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "कॅलेंडर मिटवा"
+
 #: src/SourceDialog/SourceItem.vala:75
 msgid "Not Removable"
 msgstr "काढता येण्याजोगे नाही"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "बदला…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -732,6 +724,14 @@ msgstr "एक्सपोर्ट कॅलेंडर…"
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#: src/Widgets/EventMenu.vala:41
+msgid "Remove Event"
+msgstr "आठवणीची खूण डिलीट करा"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr "घटना काढा"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
