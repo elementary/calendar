@@ -174,7 +174,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                 datetime_string = C_("date-range", "%s–%s").printf (start_date_string, end_date_string);
             } else {
                 // TRANSLATORS: A range from start date and time to end date and time i.e. "Fri, Dec 21, 7:00 PM–Sat, Dec 22, 12:00 AM"
-                datetime_string = _("%s, %s–%s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);            }
+                datetime_string = _("%s, %s–%s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);            
+            }
         } else {
             if (!is_upcoming) {
                 if (is_allday) {
