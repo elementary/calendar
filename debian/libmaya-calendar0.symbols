@@ -117,7 +117,6 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_source_equal_func@Base 0.3
  maya_util_source_hash_func@Base 0.3
  maya_util_strip_time@Base 0.3
- maya_util_style_calendar_color@Base 0.4.1
  maya_util_timezone_from_ical@Base 0.3.1
  maya_util_toggle_show_weeks@Base 0.4.1
  maya_util_value_get_css@Base 0.3
