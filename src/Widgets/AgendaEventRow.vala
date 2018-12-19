@@ -206,17 +206,19 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         var location_string = ical_event.get_location ();
         string location_query;
 
-        if (location_string != null && "\n" in location_string) {
-            var words = location_string.split ("\n");
-            location_button.tooltip_text = words[1];
-            location_label.label = words[0];
-            location_query = words[1];
-        } else {
-            location_label.label = location_string;
-            location_query = location_string;
-        }
+        if (location_string != null) {
+            if ("\n" in location_string) {
+                var words = location_string.split ("\n");
+                location_button.tooltip_text = words[1];
+                location_label.label = words[0];
+                location_query = words[1];
+            } else {
+                location_label.label = location_string;
+                location_query = location_string;
+            }
 
-        location_button.uri = "https://www.openstreetmap.org/search?query=%s".printf (location_query);
+            location_button.uri = "https://openstreetmap.org/search?query=%s".printf (Uri.escape_string (location_query));
+        }
     }
 
     private void reload_css (string background_color) {
