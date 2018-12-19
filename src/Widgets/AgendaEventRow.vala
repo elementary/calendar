@@ -39,6 +39,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     private Gtk.Label name_label;
     private Gtk.Label datatime_label;
     private Gtk.Label location_label;
+    private Gtk.LinkButton location_button;
     private Gtk.StyleContext main_grid_context;
 
     public AgendaEventRow (E.Source source, E.CalComponent calevent, bool is_upcoming) {
@@ -75,13 +76,18 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         datatime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         location_label = new Gtk.Label ("");
-        location_label.margin_top = 6;
-        location_label.selectable = true;
         location_label.wrap = true;
         location_label.xalign = 0;
+        location_label.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        location_button = new Gtk.LinkButton ("");
+        location_button.halign = Gtk.Align.START;
+        location_button.margin_top = 6;
+        location_button.get_child ().destroy ();
+        location_button.add (location_label);
 
         var location_revealer = new Gtk.Revealer ();
-        location_revealer.add (location_label);
+        location_revealer.add (location_button);
 
         var main_grid = new Gtk.Grid ();
         main_grid.column_spacing = 6;
@@ -196,7 +202,21 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         }
 
         datatime_label.label = "<small>%s</small>".printf (datetime_string);
-        location_label.label = ical_event.get_location ();
+
+        var location_string = ical_event.get_location ();
+        string location_query;
+
+        if (location_string != null && "\n" in location_string) {
+            var words = location_string.split ("\n");
+            location_button.tooltip_text = words[1];
+            location_label.label = words[0];
+            location_query = words[1];
+        } else {
+            location_label.label = location_string;
+            location_query = location_string;
+        }
+
+        location_button.uri = "https://www.openstreetmap.org/search?query=%s".printf (location_query);
     }
 
     private void reload_css (string background_color) {
@@ -206,6 +226,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             provider.load_from_data (colored_css, colored_css.length);
 
             main_grid_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            location_label.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (GLib.Error e) {
             critical (e.message);
         }

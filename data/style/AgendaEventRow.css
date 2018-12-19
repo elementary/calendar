@@ -18,3 +18,7 @@
 .event .title {
     font-weight: 600;
 }
+
+.event .link label {
+    color: shade(@accent_color, 0.65);
+}
