@@ -21,7 +21,6 @@
 
 public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     public signal void event_removed (E.CalComponent event);
-    public signal void event_modified (E.CalComponent event);
 
     private Gtk.Label day_label;
     private Gtk.Label weekday_label;
@@ -58,6 +57,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         placeholder_label.show_all ();
 
         selected_date_events_list = new Gtk.ListBox ();
+        selected_date_events_list.activate_on_single_click = false;
         selected_date_events_list.height_request = 128;
         selected_date_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         selected_date_events_list.set_header_func (header_update_func);
@@ -118,6 +118,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         });
 
         upcoming_events_list = new Gtk.ListBox ();
+        upcoming_events_list.activate_on_single_click = false;
         upcoming_events_list.margin_top = 24;
         upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         upcoming_events_list.set_header_func (upcoming_header_update_func);
@@ -179,6 +180,16 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         calmodel.events_updated.connect (on_events_updated);
         set_selected_date (Settings.SavedState.get_default ().get_selected ());
         show_all ();
+
+        selected_date_events_list.row_activated.connect ((row) => {
+            var calevent = ((AgendaEventRow) row).calevent;
+            ((Maya.Application) GLib.Application.get_default ()).window.on_modified (calevent);
+        });
+
+        upcoming_events_list.row_activated.connect ((row) => {
+            var calevent = ((AgendaEventRow) row).calevent;
+            ((Maya.Application) GLib.Application.get_default ()).window.on_modified (calevent);
+        });
     }
 
     private void header_update_func (Gtk.ListBoxRow lbrow, Gtk.ListBoxRow? lbbefore) {
@@ -301,7 +312,6 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
             if (!row_table.contains (comp.get_uid ())) {
                 var row = new AgendaEventRow (source, event, false);
-                row.modified.connect ((event) => (event_modified (event)));
                 row.removed.connect ((event) => (event_removed (event)));
                 row.show_all ();
                 row_table.set (comp.get_uid (), row);
@@ -310,7 +320,6 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
             if (!row_table2.contains (comp.get_uid ())) {
                 var row2 = new AgendaEventRow (source, event, true);
-                row2.modified.connect ((event) => (event_modified (event)));
                 row2.removed.connect ((event) => (event_removed (event)));
                 row2.show_all ();
                 row_table2.set (comp.get_uid (), row2);
