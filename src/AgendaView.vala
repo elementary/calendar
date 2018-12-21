@@ -181,15 +181,13 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         set_selected_date (Settings.SavedState.get_default ().get_selected ());
         show_all ();
 
-        selected_date_events_list.row_activated.connect ((row) => {
-            var calevent = ((AgendaEventRow) row).calevent;
-            ((Maya.Application) GLib.Application.get_default ()).window.on_modified (calevent);
-        });
+        selected_date_events_list.row_activated.connect (activate_eventrow);
+        upcoming_events_list.row_activated.connect (activate_eventrow);
+    }
 
-        upcoming_events_list.row_activated.connect ((row) => {
-            var calevent = ((AgendaEventRow) row).calevent;
-            ((Maya.Application) GLib.Application.get_default ()).window.on_modified (calevent);
-        });
+    private void activate_eventrow (Gtk.ListBoxRow row) {
+        var calevent = ((AgendaEventRow) row).calevent;
+        ((Maya.Application) GLib.Application.get_default ()).window.on_modified (calevent);
     }
 
     private void header_update_func (Gtk.ListBoxRow lbrow, Gtk.ListBoxRow? lbbefore) {
