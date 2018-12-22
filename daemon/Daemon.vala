@@ -15,7 +15,10 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace MayaDaemon {
+namespace Maya {
+    private static bool has_debug;
+    private static bool has_version;
+
     const OptionEntry[] options =  {
         { "debug", 'd', 0, OptionArg.NONE, out has_debug,
         N_("Print debug information"), null},
@@ -23,56 +26,21 @@ namespace MayaDaemon {
         N_("Print version info and exit"), null},
         { null }
     };
-    private static MainLoop mainloop;
-    private static bool has_debug;
-    private static bool has_version;
+
+public class Daemon : GLib.Application {
     private Gee.HashMap<E.CalComponent, string> event_uid;
 
-    private static void on_exit (int signum) {
-        debug ("Exiting");
-        mainloop.quit ();
-    }
-
-    public static int main (string[] args) {
-
-        Process.signal(ProcessSignal.INT, on_exit);
-        Process.signal(ProcessSignal.TERM, on_exit);
-
-        OptionContext context = new OptionContext ("");
-        context.add_main_entries (options, null);
-
-        try {
-            context.parse (ref args);
-        } catch (OptionError e) {
-            error (e.message);
-        }
-
-        if (has_version) {
-            message ("%s (Daemon)", Build.APP_NAME);
-            message ("%s", Build.VERSION);
-            return 0;
-        }
-
-        Granite.Services.Logger.initialize (Build.APP_NAME);
-        Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.WARN;
-
-        if (has_debug) {
-            Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
-        }
-
-        // Creating a GLib main loop with a default context
-        mainloop = new MainLoop (null, false);
+    construct {
         load_today_events ();
-        //Restart the programm each day.
         Timeout.add_seconds (86400, () => {
             event_uid.clear ();
             load_today_events ();
             return true;
         });
+    }
 
-        // Start GLib mainloop
-        mainloop.run ();
-        return 0;
+    protected override void activate () {
+        Gtk.main ();
     }
 
     public void load_today_events () {
@@ -178,7 +146,7 @@ namespace MayaDaemon {
         var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
         var now = new DateTime.now_local ();
         string secondary_text = "";
-        var h24_settings = new Settings ("org.gnome.desktop.interface");
+        var h24_settings = new GLib.Settings ("org.gnome.desktop.interface");
         var format = h24_settings.get_string ("clock-format");
         var text = Granite.DateTime.get_default_time_format (format.contains ("12h"));
         if (start_time.get_year () == now.get_year ()) {
@@ -221,3 +189,35 @@ namespace MayaDaemon {
         return dt.difference (now)/TimeSpan.SECOND;
     }
 }
+
+public static int main (string[] args) {
+    OptionContext context = new OptionContext ("");
+    context.add_main_entries (options, null);
+
+    try {
+        context.parse (ref args);
+    } catch (OptionError e) {
+        error (e.message);
+    }
+
+    if (has_version) {
+        message ("%s (Daemon)", Build.APP_NAME);
+        message ("%s", Build.VERSION);
+        return 0;
+    }
+
+    Granite.Services.Logger.initialize (Build.APP_NAME);
+    Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.WARN;
+
+    if (has_debug) {
+        Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
+    }
+
+    var app = new Daemon ();
+
+    return app.run (args);
+}
+}
+
+
+
