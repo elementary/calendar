@@ -157,7 +157,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
     [CCode (instance_pos = -1)]
     private int upcoming_sort_function (Gtk.ListBoxRow child1, Gtk.ListBoxRow child2) {
-        return compare_rows ((AgendaEventRow) row1, (AgendaEventRow) row2);
+        return compare_rows ((AgendaEventRow) child1, (AgendaEventRow) child2);
     }
 
     [CCode (instance_pos = -1)]
