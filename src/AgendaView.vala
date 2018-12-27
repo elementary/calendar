@@ -157,10 +157,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
     [CCode (instance_pos = -1)]
     private int upcoming_sort_function (Gtk.ListBoxRow child1, Gtk.ListBoxRow child2) {
-        var row1 = (AgendaEventRow) child1;
-        var row2 = (AgendaEventRow) child2;
-
-        return compare_rows (row1, row2);
+        return compare_rows ((AgendaEventRow) row1, (AgendaEventRow) row2);
     }
 
     [CCode (instance_pos = -1)]
@@ -174,13 +171,11 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
             } else {
                 return -1;
             }
-        } else {
-            if (row2.is_allday) {
-                return 1;
-            } else {
-                return compare_rows (row1, row2);
-            }
+        } else if (row2.is_allday) {
+            return 1;
         }
+
+        return compare_rows (row1, row2);
     }
 
     private int compare_rows (AgendaEventRow row1, AgendaEventRow row2) {
