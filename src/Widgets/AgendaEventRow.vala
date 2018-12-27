@@ -54,8 +54,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
 
-        E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-
         event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
         event_image.pixel_size = 16;
         event_image.valign = Gtk.Align.START;
