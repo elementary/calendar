@@ -134,7 +134,6 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
     public class CalendarGrid : Gtk.Grid {
         public string label { public get; private set; }
         public string location { public get; private set; }
-
         private E.Source _source;
         public E.Source source {
             get {
@@ -168,7 +167,6 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
 
             add (calendar_color);
             add (calendar_name_label);
-            show_all ();
 
             bind_property ("label", calendar_name_label, "label");
         }
