@@ -19,28 +19,29 @@
  */
 
 public class Maya.View.Widgets.DynamicSpinner : Gtk.Revealer {
-    private Gtk.Popover info_popover;
-    private Gtk.Spinner spinner;
     private Gtk.ListBox list_box;
+
     HashTable<string, Gtk.Widget> children_matcher;
-    public DynamicSpinner () {
+
+    construct {
         transition_type = Gtk.RevealerTransitionType.CROSSFADE;
 
         children_matcher = new HashTable<string, Gtk.Widget> (str_hash, str_equal);
 
-        spinner = new Gtk.Spinner ();
-        var button = new Gtk.Button ();
-        button.image = spinner;
-        button.clicked.connect (() => {
-            info_popover.show_all ();
-        });
+        var spinner = new Gtk.Spinner ();
+        spinner.start ();
 
         list_box = new Gtk.ListBox ();
         list_box.selection_mode = Gtk.SelectionMode.NONE;
 
-        info_popover = new Gtk.Popover (button);
+        var info_popover = new Gtk.Popover (null);
         info_popover.position = Gtk.PositionType.BOTTOM;
         info_popover.add (list_box);
+
+        var button = new Gtk.MenuButton ();
+        button.image = spinner;
+        button.popover = info_popover;
+        button.valign = Gtk.Align.CENTER;
 
         var calmodel = Model.CalendarModel.get_default ();
         calmodel.connecting.connect ((source, cancellable) => add_source.begin (source, cancellable));
@@ -49,7 +50,6 @@ public class Maya.View.Widgets.DynamicSpinner : Gtk.Revealer {
         add (button);
 
         show_all ();
-        spinner.start ();
     }
 
     public async void add_source (E.Source source, Cancellable cancellable) {
@@ -57,8 +57,13 @@ public class Maya.View.Widgets.DynamicSpinner : Gtk.Revealer {
             set_reveal_child (true);
 
             var label = new Gtk.Label (source.get_display_name ());
-            var stop_button = new Gtk.Button.from_icon_name ("process-stop", Gtk.IconSize.BUTTON);
-            stop_button.clicked.connect (() => {cancellable.cancel ();});
+
+            var stop_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.BUTTON);
+            stop_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+            stop_button.clicked.connect (() => {
+                cancellable.cancel ();
+            });
 
             var grid = new Gtk.Grid ();
             grid.margin = 6;
@@ -70,7 +75,10 @@ public class Maya.View.Widgets.DynamicSpinner : Gtk.Revealer {
             lock (children_matcher) {
                 children_matcher.insert (source.dup_uid (), grid);
             }
+
             list_box.add (grid);
+            list_box.show_all ();
+
             return false;
         });
     }
