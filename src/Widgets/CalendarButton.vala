@@ -134,6 +134,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
     public class CalendarGrid : Gtk.Grid {
         public string label { public get; private set; }
         public string location { public get; private set; }
+
         private E.Source _source;
         public E.Source source {
             get {
@@ -146,10 +147,13 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
             }
         }
 
-        private Gtk.Label calendar_name_label;
         private Gtk.Grid calendar_color;
 
         public CalendarGrid (E.Source source) {
+            Object (source: source);
+        }
+
+        construct {
             column_spacing = 6;
 
             calendar_color = new Gtk.Grid ();
@@ -157,23 +161,21 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
             calendar_color.valign = Gtk.Align.CENTER;
             calendar_color.width_request = 12;
 
-            calendar_name_label = new Gtk.Label ("");
+            var calendar_name_label = new Gtk.Label ("");
             calendar_name_label.xalign = 0;
             calendar_name_label.hexpand = true;
             calendar_name_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
 
             add (calendar_color);
             add (calendar_name_label);
-
             show_all ();
-            _source = source;
-            apply_source ();
+
+            bind_property ("label", calendar_name_label, "label");
         }
 
         private void apply_source () {
             E.SourceCalendar cal = (E.SourceCalendar)_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-            calendar_name_label.label = _source.dup_display_name ();
-            label = calendar_name_label.label;
+            label = _source.dup_display_name ();
             location = Maya.Util.get_source_location (_source);
             Util.style_calendar_color (calendar_color, cal.dup_color (), true);
         }
