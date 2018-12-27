@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2018-10-16 19:31+0000\n"
+"PO-Revision-Date: 2018-12-25 00:06+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/calendar/"
 "calendar/fi/>\n"
@@ -137,14 +137,13 @@ msgid "Calendar"
 msgstr "Kalenteri"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Valitse näytettävät kalenterit"
+msgstr "Valitse kalenteri mihin tuodaan"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Tuo tapahtumat %d tiedostosta seuraavaan kalenteriin:"
+msgstr "Tapahtumat kohteesta \"%s\" yhdistetään tähän kalenteriin:"
 
 #: src/ImportDialog.vala:47
 #, fuzzy, c-format
@@ -673,9 +672,8 @@ msgid "Remove"
 msgstr "Poista"
 
 #: src/SourceDialog/SourceItem.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Poista"
+msgstr "Ei poistettava"
 
 #: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
 #: src/Widgets/EventMenu.vala:36
@@ -684,16 +682,16 @@ msgstr "Muokkaa…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Ei muokattava"
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "Kumoa"
 
 #: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Kalenteri \"%s\" poistettiin."
+msgstr "\"%s\" poistettiin"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
@@ -702,12 +700,12 @@ msgstr "Lisää uusi kalenteri…"
 #: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
 #, c-format
 msgid "%s – %s"
-msgstr ""
+msgstr "%s – %s"
 
 #: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #: src/Widgets/AgendaEventRow.vala:199
 #, c-format
@@ -715,9 +713,9 @@ msgid "%s"
 msgstr "%s"
 
 #: src/Widgets/AgendaEventRow.vala:201
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
