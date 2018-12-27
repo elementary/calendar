@@ -35,7 +35,6 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
     private Gtk.Revealer edit_revealer;
 
     private Gtk.Label calendar_name_label;
-    private Gtk.Label calendar_color_label;
     private Gtk.Label message_label;
     private Gtk.CheckButton visible_checkbutton;
 
@@ -100,7 +99,6 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         calendar_grid.margin_start = 8;
         calendar_grid.margin_end = 6;
         calendar_grid.attach (visible_checkbutton, 0, 0, 1, 1);
-        calendar_grid.attach (calendar_color_label, 1, 0, 1, 1);
         calendar_grid.attach (calendar_name_label, 2, 0, 1, 1);
         calendar_grid.attach (delete_revealer, 3, 0, 1, 1);
         calendar_grid.attach (edit_revealer, 4, 0, 1, 1);
@@ -193,18 +191,5 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
 
     public void show_calendar_removed () {
         stack.set_visible_child_name ("info");
-    }
-}
-
-public class Maya.View.SourceItemHeader : Gtk.ListBoxRow {
-    public string label { public get; private set; }
-    public uint children = 1;
-    public SourceItemHeader (string label) {
-        this.label = label;
-        var header_label = new Gtk.Label (label);
-        header_label.get_style_context ().add_class ("h4");
-        header_label.xalign = 0.0f;
-        header_label.hexpand = true;
-        add (header_label);
     }
 }

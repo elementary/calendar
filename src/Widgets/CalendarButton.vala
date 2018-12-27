@@ -119,7 +119,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
             }
         }
 
-        var header = new SourceItemHeader (row_location);
+        var header = new Granite.HeaderLabel (row_location);
         header.margin = 6;
         header.margin_bottom = 0;
 
@@ -147,20 +147,22 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         }
 
         private Gtk.Label calendar_name_label;
-        private Gtk.Label calendar_color_label;
+        private Gtk.Grid calendar_color;
 
         public CalendarGrid (E.Source source) {
             column_spacing = 6;
 
-            calendar_color_label = new Gtk.Label ("");
-            calendar_color_label.width_request = 6;
+            calendar_color = new Gtk.Grid ();
+            calendar_color.height_request = 12;
+            calendar_color.valign = Gtk.Align.CENTER;
+            calendar_color.width_request = 12;
 
             calendar_name_label = new Gtk.Label ("");
             calendar_name_label.xalign = 0;
             calendar_name_label.hexpand = true;
             calendar_name_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
 
-            add (calendar_color_label);
+            add (calendar_color);
             add (calendar_name_label);
 
             show_all ();
@@ -173,7 +175,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
             calendar_name_label.label = _source.dup_display_name ();
             label = calendar_name_label.label;
             location = Maya.Util.get_source_location (_source);
-            Util.style_calendar_color (calendar_color_label, cal.dup_color (), true);
+            Util.style_calendar_color (calendar_color, cal.dup_color (), true);
         }
     }
 }

@@ -166,13 +166,6 @@ public class EventDialog : Gtk.Dialog {
             stack.set_visible_child_name ("infopanel");
         }
 
-        public static Gtk.Label make_label (string text) {
-            var label = new Gtk.Label ("<span weight='bold'>%s</span>".printf (text));
-            label.use_markup = true;
-            label.set_alignment (0.0f, 0.5f);
-            return label;
-        }
-
         private void save_dialog () {
             info_panel.save ();
             location_panel.save ();

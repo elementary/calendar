@@ -101,7 +101,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
             }
         }
 
-        var header = new SourceItemHeader (row_location);
+        var header = new Granite.HeaderLabel (row_location);
         row.set_header (header);
         header.show_all ();
     }

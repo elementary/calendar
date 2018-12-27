@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 16:43-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
 msgid "On this computer"
 msgstr "Sur cet ordinateur"
 
@@ -84,7 +84,7 @@ msgstr "Utiliser une connexion sûr"
 msgid "Server handles meeting invitations"
 msgstr "Le serveur va manipuler les invitations de la réunion"
 
-#: src/AgendaView.vala:65
+#: src/AgendaView.vala:51
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -92,71 +92,37 @@ msgstr ""
 "Vos évènements à venir seront affichés ici lorsque vous sélectionnerez un "
 "jour comprenant des évènements."
 
-#: src/AgendaView.vala:138
-msgid "Upcoming Events"
-msgstr ""
-
-#: src/AgendaView.vala:226
+#: src/AgendaView.vala:194
 msgid "During the day"
 msgstr "Durant la jour"
 
-#: src/AgendaView.vala:231
+#: src/AgendaView.vala:202
 msgid "All day"
 msgstr "Toute la journée"
 
-#: src/AgendaView.vala:296 src/AgendaView.vala:310
+#: src/AgendaView.vala:274
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:298 src/AgendaView.vala:312
+#: src/AgendaView.vala:277
 #, fuzzy
 msgid "This Week"
 msgstr "Semaine"
 
-#: src/AgendaView.vala:300 src/AgendaView.vala:314
+#: src/AgendaView.vala:280
 #, fuzzy
 msgid "Next Week"
 msgstr "Semaine"
 
-#: src/AgendaView.vala:302 src/AgendaView.vala:316
+#: src/AgendaView.vala:283
 #, fuzzy
 msgid "This Month"
 msgstr "Mois"
 
-#: src/AgendaView.vala:304 src/AgendaView.vala:318
+#: src/AgendaView.vala:286
 #, fuzzy
 msgid "Next Month"
 msgstr "Mois"
-
-#: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:88
-msgid "Edit…"
-msgstr "Modifier…"
-
-#: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:76
-msgid "Remove"
-msgstr "Enlever"
-
-#: src/AgendaView.vala:564 src/AgendaView.vala:574
-#, c-format
-msgid "%s - %s"
-msgstr ""
-
-#: src/AgendaView.vala:566
-#, c-format
-msgid "%s, %s - %s, %s"
-msgstr ""
-
-#: src/AgendaView.vala:578
-#, c-format
-msgid "%s"
-msgstr ""
-
-#: src/AgendaView.vala:580
-#, c-format
-msgid "%s, %s - %s"
-msgstr ""
 
 #: src/Application.vala:47
 #, fuzzy
@@ -204,42 +170,42 @@ msgstr "Ajouter un évènement"
 msgid "Edit Event"
 msgstr "Modifier l'évènement"
 
-#: src/EventEdition/EventDialog.vala:107
+#: src/EventEdition/EventDialog.vala:100
 msgid "General Informations"
 msgstr "Informations général"
 
-#: src/EventEdition/EventDialog.vala:108
+#: src/EventEdition/EventDialog.vala:101
 msgid "Location"
 msgstr "Lieu"
 
-#: src/EventEdition/EventDialog.vala:109
+#: src/EventEdition/EventDialog.vala:102
 msgid "Guests"
 msgstr "Participants"
 
-#: src/EventEdition/EventDialog.vala:110
+#: src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr "Rappels"
 
-#: src/EventEdition/EventDialog.vala:111 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Répéter"
 msgstr[1] "Répéte"
 
-#: src/EventEdition/EventDialog.vala:134
+#: src/EventEdition/EventDialog.vala:127
 msgid "Delete Event"
 msgstr "Supprimer l'événement"
 
-#: src/EventEdition/EventDialog.vala:146
+#: src/EventEdition/EventDialog.vala:140
 msgid "Create Event"
 msgstr "Créer un évènement"
 
-#: src/EventEdition/EventDialog.vala:149
+#: src/EventEdition/EventDialog.vala:143
 msgid "Save Changes"
 msgstr "Enregistrer les modifications"
 
-#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Cancel"
 msgstr "Annuler"
@@ -264,35 +230,35 @@ msgstr "Accepté"
 msgid "Declined"
 msgstr "Rejeté"
 
-#: src/EventEdition/InfoPanel.vala:78
+#: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
 msgstr "De :"
 
-#: src/EventEdition/InfoPanel.vala:84
+#: src/EventEdition/InfoPanel.vala:83
 msgid "All day:"
 msgstr "Journée entière :"
 
-#: src/EventEdition/InfoPanel.vala:89
+#: src/EventEdition/InfoPanel.vala:88
 msgid "To:"
 msgstr "À :"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:106
 msgid "Title:"
 msgstr "Titre:"
 
-#: src/EventEdition/InfoPanel.vala:109
+#: src/EventEdition/InfoPanel.vala:108
 msgid "Name of Event"
 msgstr "Nom de l'évènement"
 
-#: src/EventEdition/InfoPanel.vala:119
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Press enter to parse event"
 msgstr "Touche entrée pour analyser l'évènement"
 
-#: src/EventEdition/InfoPanel.vala:134
+#: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
 msgstr "Calendrier:"
 
-#: src/EventEdition/InfoPanel.vala:141
+#: src/EventEdition/InfoPanel.vala:140
 msgid "Comments:"
 msgstr "Commentaires:"
 
@@ -661,15 +627,6 @@ msgstr "Sam"
 msgid "Sun"
 msgstr "Dim"
 
-#: src/Grid/EventButton.vala:70
-#, fuzzy
-msgid "Remove Event"
-msgstr "Supprimer l'événement"
-
-#: src/Grid/EventButton.vala:71
-msgid "Remove Occurrence"
-msgstr ""
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Cacher les numéros de semaine"
@@ -703,33 +660,43 @@ msgstr "Style:"
 msgid "Color:"
 msgstr "Couleur:"
 
-#: src/SourceDialog/SourceDialog.vala:172
+#: src/SourceDialog/SourceDialog.vala:183
 msgid "Mark as default calendar"
 msgstr "Marquer comme le calendrier défaut"
 
-#: src/SourceDialog/SourceDialog.vala:243
+#: src/SourceDialog/SourceDialog.vala:247
 msgid "Create Calendar"
 msgstr "Créer un calendrier"
 
-#: src/SourceDialog/SourceDialog.vala:246
+#: src/SourceDialog/SourceDialog.vala:250
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "Enregistrer"
 
-#: src/SourceDialog/SourceItem.vala:76
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "Enlever"
+
+#: src/SourceDialog/SourceItem.vala:75
 #, fuzzy
 msgid "Not Removable"
 msgstr "Enlever"
 
-#: src/SourceDialog/SourceItem.vala:88
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "Modifier…"
+
+#: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
 msgstr ""
 
-#: src/SourceDialog/SourceItem.vala:112
+#: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "Annuler"
 
-#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
+#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Le Calendrier \"%s\" a été enlever."
@@ -737,6 +704,26 @@ msgstr "Le Calendrier \"%s\" a été enlever."
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "Ajouter un Nouveau Calendrier..."
+
+#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#, c-format
+msgid "%s – %s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:187
+#, c-format
+msgid "%s, %s – %s, %s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:199
+#, c-format
+msgid "%s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:201
+#, c-format
+msgid "%s, %s – %s"
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -747,6 +734,15 @@ msgstr "Exporter le calendrier…"
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "calendrier.ics"
+
+#: src/Widgets/EventMenu.vala:41
+#, fuzzy
+msgid "Remove Event"
+msgstr "Supprimer l'événement"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"

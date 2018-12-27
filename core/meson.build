@@ -27,6 +27,7 @@ core_files = files(
 
 core_deps = [
     glib_dep,
+    gee_dep,
     granite_dep,
     gtk_dep,
     libecal_dep,
