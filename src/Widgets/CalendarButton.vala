@@ -31,6 +31,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         }
     }
 
+    private Gtk.SearchEntry search_entry;
     private CalendarGrid calendar_grid;
 
     construct {
@@ -58,22 +59,31 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
 
         current_source = registry.default_calendar;
 
+        search_entry = new Gtk.SearchEntry ();
+        search_entry.margin = 12;
+        search_entry.margin_bottom = 6;
+        search_entry.placeholder_text = _("Search Calendars");
+
         var list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = true;
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scrolled.add (list_box);
-        scrolled.margin_top = 6;
-        scrolled.margin_bottom = 6;
         scrolled.max_content_height = 300;
         scrolled.propagate_natural_height = true;
-        scrolled.show_all ();
+
+        var popover_grid = new Gtk.Grid ();
+        popover_grid.margin_bottom = 6;
+        popover_grid.attach (search_entry, 0, 0);
+        popover_grid.attach (scrolled, 0, 1);
+        popover_grid.show_all ();
 
         popover = new Gtk.Popover (this);
         popover.width_request = 310;
-        popover.add (scrolled);
+        popover.add (popover_grid);
 
+        list_box.set_filter_func (filter_function);
         list_box.set_header_func (header_update_func);
 
         list_box.set_sort_func ((row1, row2) => {
@@ -92,6 +102,10 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
             popover.popdown ();
         });
 
+        search_entry.search_changed.connect (() => {
+            list_box.invalidate_filter ();
+        });
+
         foreach (var source in sources) {
             var calgrid = new CalendarGrid (source);
             calgrid.margin = 6;
@@ -107,6 +121,17 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
                 list_box.select_row (row);
             }
         }
+    }
+
+    [CCode (instance_pos = -1)]
+    private bool filter_function (Gtk.ListBoxRow row) {
+        var search_term = search_entry.text.down ();
+
+        if (search_term in ((CalendarGrid)row.get_child ()).label.down ()) {
+            return true;
+        }
+
+        return false;
     }
 
     private void header_update_func (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
