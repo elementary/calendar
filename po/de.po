@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2018-12-28 12:40+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
+"Last-Translator: Tucan Holmes <tucan.web.swiss@gmail.com>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/calendar/"
 "calendar/de/>\n"
 "Language: de\n"
@@ -672,9 +672,8 @@ msgid "Remove"
 msgstr "Entfernen"
 
 #: src/SourceDialog/SourceItem.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Entfernen"
+msgstr "Nicht entfernbar"
 
 #: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
 #: src/Widgets/EventMenu.vala:36
@@ -683,16 +682,16 @@ msgstr "Bearbeiten…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Nicht editierbar"
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "Rückgängig"
 
 #: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Kalender \"%s\" wurde entfernt."
+msgstr "\"%s\" wurde entfernt."
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
