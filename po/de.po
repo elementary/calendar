@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2018-11-17 00:01+0000\n"
+"PO-Revision-Date: 2018-12-28 12:39+0000\n"
 "Last-Translator: Tucan Holmes <tucan.web.swiss@gmail.com>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/calendar/"
 "calendar/de/>\n"
@@ -137,21 +137,20 @@ msgid "Calendar"
 msgstr "Kalender"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Anzuzeigende Kalender auswählen"
+msgstr "Kalender zum Importieren auswählen"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Termine aus der Datei %d in den folgenden Kalender importieren:"
+msgstr "Termine aus \"%s\" werden in den folgenden Kalender importiert:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Termine aus der Datei %d in den folgenden Kalender importieren:"
-msgstr[1] "Termine aus den Dateien %d in den folgenden Kalender importieren:"
+msgstr[0] "Termine aus der Datei %d werden in diesen Kalender importiert:"
+msgstr[1] "Termine aus den Dateien %d in diesen Kalender importiert:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
