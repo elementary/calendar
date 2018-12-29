@@ -18,6 +18,13 @@
  */
 
 public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
+    private static string STYLE = """
+        .cal-color {
+            background-color: %s;
+            border-radius: 50%;
+        }
+    """;
+
     public GLib.List<E.Source> sources;
     private E.Source _current_source;
     public E.Source current_source {
@@ -147,6 +154,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         }
 
         private Gtk.Grid calendar_color;
+        private Gtk.StyleContext calendar_color_context;
 
         public CalendarGrid (E.Source source) {
             Object (source: source);
@@ -155,10 +163,13 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         construct {
             column_spacing = 6;
 
-            calendar_color = new Gtk.Grid ();
+            var calendar_color = new Gtk.Grid ();
             calendar_color.height_request = 12;
             calendar_color.valign = Gtk.Align.CENTER;
             calendar_color.width_request = 12;
+
+            calendar_color_context = calendar_color.get_style_context ();
+            calendar_color_context.add_class ("cal-color");
 
             var calendar_name_label = new Gtk.Label ("");
             calendar_name_label.xalign = 0;
@@ -175,7 +186,16 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
             E.SourceCalendar cal = (E.SourceCalendar)_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             label = _source.dup_display_name ();
             location = Maya.Util.get_source_location (_source);
-            Util.style_calendar_color (calendar_color, cal.dup_color (), true);
+
+            var css_color = STYLE.printf (cal.dup_color ());
+            var style_provider = new Gtk.CssProvider ();
+
+            try {
+                style_provider.load_from_data (css_color, css_color.length);
+                calendar_color_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            } catch (Error e) {
+                warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
+            }
         }
     }
 }
