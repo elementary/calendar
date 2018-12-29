@@ -634,26 +634,4 @@ namespace Maya.Util {
             Settings.SavedState.get_default ().show_weeks = !Settings.SavedState.get_default ().show_weeks;
         }
     }
-
-    public void style_calendar_color (Gtk.Widget widget, string color, bool background = false) {
-        string style = """
-            .cal_color {
-                %s: %s;
-                border-radius: 50%;
-            }
-        """;
-
-        var style_context = widget.get_style_context ();
-        style_context.add_class ("cal_color");
-        var css_color = style.printf(background ? "background-color" : "color", color);
-        var style_provider = new Gtk.CssProvider ();
-
-        try {
-            style_provider.load_from_data (css_color, css_color.length);
-            style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
-        }
-    }
-
 }
