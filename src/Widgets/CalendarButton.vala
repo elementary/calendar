@@ -153,7 +153,6 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
             }
         }
 
-        private Gtk.Grid calendar_color;
         private Gtk.StyleContext calendar_color_context;
 
         public CalendarGrid (E.Source source) {
