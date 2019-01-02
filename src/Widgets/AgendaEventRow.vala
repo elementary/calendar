@@ -25,7 +25,6 @@ const string EVENT_CSS = """
 
 public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     public signal void removed (E.CalComponent event);
-    public signal void modified (E.CalComponent event);
 
     public E.CalComponent calevent { get; construct; }
     public E.Source source { get; construct; }
@@ -40,6 +39,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     private Gtk.Label datatime_label;
     private Gtk.Label location_label;
     private Gtk.LinkButton location_button;
+    private Gtk.StyleContext event_image_context;
     private Gtk.StyleContext main_grid_context;
 
     public AgendaEventRow (E.Source source, E.CalComponent calevent, bool is_upcoming) {
@@ -57,8 +57,10 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         var event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
         event_image.valign = Gtk.Align.START;
 
+        event_image_context = event_image.get_style_context ();
+        event_image_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
         name_label = new Gtk.Label ("");
-        name_label.hexpand = true;
         name_label.selectable = true;
         name_label.wrap = true;
         name_label.wrap_mode = Pango.WrapMode.WORD_CHAR;
@@ -70,6 +72,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         datatime_label = new Gtk.Label ("");
         datatime_label.ellipsize = Pango.EllipsizeMode.END;
+        datatime_label.halign = Gtk.Align.START;
         datatime_label.selectable = true;
         datatime_label.use_markup = true;
         datatime_label.xalign = 0;
@@ -138,9 +141,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     }
 
     private bool on_button_press (Gdk.EventButton event) {
-        if (event.type == Gdk.EventType.@2BUTTON_PRESS) {
-             modified (calevent);
-        } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
+        if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
             var start_date = Util.ical_to_date_time (calevent.get_icalcomponent ().get_dtstart ());
 
             var menu = new Maya.EventMenu (calevent, start_date);
@@ -149,7 +150,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             menu.show_all ();
         }
 
-        return true;
+        return Gdk.EVENT_PROPAGATE;
     }
 
     /**
@@ -227,6 +228,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             var colored_css = EVENT_CSS.printf (background_color);
             provider.load_from_data (colored_css, colored_css.length);
 
+            event_image_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             main_grid_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             location_label.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (GLib.Error e) {
