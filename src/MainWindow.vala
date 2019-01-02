@@ -95,7 +95,6 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         infobar.response.connect ((id) => infobar.hide ());
 
         sidebar.event_removed.connect (on_remove);
-        sidebar.event_modified.connect (on_modified);
 
         Maya.Application.saved_state.bind ("hpaned-position", hpaned, "position", GLib.SettingsBindFlags.DEFAULT);
 
