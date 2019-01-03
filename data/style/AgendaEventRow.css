@@ -1,0 +1,31 @@
+.event {
+    background: alpha(@accent_color, 0.15);
+    border-radius: 3px;
+    color: shade(@accent_color, 0.65);
+    padding: 6px;
+}
+
+.cell .event {
+    padding: 3px 6px;
+    margin-bottom: 3px;
+}
+
+.cell.dim-label .event {
+    background: alpha (@base_color, 0.7);
+    color: @text_color;
+}
+
+.event .title {
+    font-weight: 600;
+}
+
+row:selected .event {
+    background: mix (#fff, @accent_color, 0.2);
+    box-shadow:
+       0 1px 2px alpha (#000, 0.2),
+       0 1px 3px alpha (@accent_color, 0.15);
+}
+
+row:selected .event image {
+    color: shade(@accent_color, 0.65);
+}

@@ -6,6 +6,7 @@ calendar_files = files(
     'MainWindow.vala',
     'EventEdition/ContactImage.vala',
     'EventEdition/EventDialog.vala',
+    'EventEdition/GuestGrid.vala',
     'EventEdition/GuestsPanel.vala',
     'EventEdition/InfoPanel.vala',
     'EventEdition/LocationPanel.vala',
@@ -26,11 +27,13 @@ calendar_files = files(
     'SourceDialog/SourceDialog.vala',
     'SourceDialog/SourceItem.vala',
     'SourceDialog/SourceSelector.vala',
+    'Widgets/AgendaEventRow.vala',
     'Widgets/CalendarButton.vala',
     'Widgets/ContractorButtonWithMenu.vala',
     'Widgets/DateSwitcher.vala',
     'Widgets/DateTimePicker.vala',
     'Widgets/DynamicSpinner.vala',
+    'Widgets/EventMenu.vala',
     'Widgets/HeaderBar.vala'
 )
 

@@ -34,7 +34,6 @@ public class Grid : Gtk.Grid {
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
     public signal void on_event_add (DateTime date);
-    public signal void edition_request (E.CalComponent comp);
 
     public signal void selection_changed (DateTime new_date);
     private GridDay selected_gridday;
@@ -167,7 +166,7 @@ public class Grid : Gtk.Grid {
 
         day.in_current_month = new_date.get_month () == month_start.get_month ();
 
-        day.update_date (new_date);
+        day.date = new_date;
         return day;
     }
 
@@ -188,9 +187,6 @@ public class Grid : Gtk.Grid {
         foreach (var date in dt_range) {
             EventButton button = new EventButton (event, date);
             add_button_for_day (date, button);
-            button.edition_request.connect (() => {
-                edition_request (event);
-            });
         }
     }
 
@@ -231,10 +227,6 @@ public class Grid : Gtk.Grid {
                 if (!grid_day.update_event (event)) {
                     EventButton button = new EventButton (event, grid_day.date);
                     add_button_for_day (grid_day.date, button);
-
-                    button.edition_request.connect (() => {
-                        edition_request (event);
-                    });
                 }
             } else {
                 grid_day.remove_event (event);

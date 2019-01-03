@@ -18,6 +18,7 @@ src/ImportDialog.vala
 src/MainWindow.vala
 src/EventEdition/ContactImage.vala
 src/EventEdition/EventDialog.vala
+src/EventEdition/GuestGrid.vala
 src/EventEdition/GuestsPanel.vala
 src/EventEdition/InfoPanel.vala
 src/EventEdition/LocationPanel.vala
@@ -38,9 +39,11 @@ src/Grid/VAutoHider.vala
 src/SourceDialog/SourceDialog.vala
 src/SourceDialog/SourceItem.vala
 src/SourceDialog/SourceSelector.vala
+src/Widgets/AgendaEventRow.vala
 src/Widgets/CalendarButton.vala
 src/Widgets/ContractorButtonWithMenu.vala
 src/Widgets/DateSwitcher.vala
 src/Widgets/DateTimePicker.vala
 src/Widgets/DynamicSpinner.vala
+src/Widgets/EventMenu.vala
 src/Widgets/HeaderBar.vala

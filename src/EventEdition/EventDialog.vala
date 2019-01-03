@@ -66,13 +66,6 @@ public class EventDialog : Gtk.Dialog {
             window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
             type_hint = Gdk.WindowTypeHint.DIALOG;
 
-            // Build dialog
-            build_dialog (date_time != null);
-        }
-
-        //--- Public Methods ---//
-
-        void build_dialog (bool add_event) {
             guests_panel = new EventEdition.GuestsPanel (this);
             info_panel = new EventEdition.InfoPanel (this);
             location_panel = new EventEdition.LocationPanel (this);
@@ -130,7 +123,7 @@ public class EventDialog : Gtk.Dialog {
             buttonbox.baseline_position = Gtk.BaselinePosition.CENTER;
             buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
 
-            if (add_event == false) {
+            if (date_time == null) {
                 var delete_button = new Gtk.Button.with_label (_("Delete Event"));
                 delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
                 delete_button.clicked.connect (remove_event);
@@ -142,7 +135,8 @@ public class EventDialog : Gtk.Dialog {
             Gtk.Button create_button = new Gtk.Button ();
             create_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             create_button.clicked.connect (save_dialog);
-            if (add_event == true) {
+
+            if (date_time != null) {
                 create_button.label = _("Create Event");
                 create_button.sensitive = false;
             } else {
@@ -170,13 +164,6 @@ public class EventDialog : Gtk.Dialog {
 
             show_all ();
             stack.set_visible_child_name ("infopanel");
-        }
-
-        public static Gtk.Label make_label (string text) {
-            var label = new Gtk.Label ("<span weight='bold'>%s</span>".printf (text));
-            label.use_markup = true;
-            label.set_alignment (0.0f, 0.5f);
-            return label;
         }
 
         private void save_dialog () {

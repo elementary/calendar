@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 10:47-0700\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2015-04-09 12:07+0000\n"
 "Last-Translator: awat <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
 msgid "On this computer"
 msgstr "بر روی این رایانه"
 
@@ -84,7 +84,7 @@ msgstr "استفاده از اتصال امن"
 msgid "Server handles meeting invitations"
 msgstr "دسته بندی دعوت نامه های مشاهده کنندگان سرور"
 
-#: src/AgendaView.vala:65
+#: src/AgendaView.vala:51
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -92,69 +92,35 @@ msgstr ""
 "در صورت انتخاب روز دارای رویداد، رویدادهای آن روز در این قسمت نمایش داده "
 "می‌شوند."
 
-#: src/AgendaView.vala:138
-msgid "Upcoming Events"
-msgstr ""
-
-#: src/AgendaView.vala:226
+#: src/AgendaView.vala:194
 msgid "During the day"
 msgstr "در طول روز"
 
-#: src/AgendaView.vala:231
+#: src/AgendaView.vala:202
 msgid "All day"
 msgstr "تمام روز"
 
-#: src/AgendaView.vala:296 src/AgendaView.vala:310
+#: src/AgendaView.vala:274
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:298 src/AgendaView.vala:312
+#: src/AgendaView.vala:277
 msgid "This Week"
 msgstr ""
 
-#: src/AgendaView.vala:300 src/AgendaView.vala:314
+#: src/AgendaView.vala:280
 msgid "Next Week"
 msgstr ""
 
-#: src/AgendaView.vala:302 src/AgendaView.vala:316
+#: src/AgendaView.vala:283
 #, fuzzy
 msgid "This Month"
 msgstr "ماه‌ها"
 
-#: src/AgendaView.vala:304 src/AgendaView.vala:318
+#: src/AgendaView.vala:286
 #, fuzzy
 msgid "Next Month"
 msgstr "ماه‌ها"
-
-#: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:94
-msgid "Edit…"
-msgstr "ویرایش..."
-
-#: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:80
-msgid "Remove"
-msgstr "زدودن"
-
-#: src/AgendaView.vala:564 src/AgendaView.vala:574
-#, fuzzy, c-format
-msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/AgendaView.vala:566
-#, c-format
-msgid "%s, %s - %s, %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/AgendaView.vala:578
-#, c-format
-msgid "%s"
-msgstr ""
-
-#: src/AgendaView.vala:580
-#, fuzzy, c-format
-msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
 
 #: src/Application.vala:47
 #, fuzzy
@@ -169,30 +135,29 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:141
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "تقویم"
 
-#: src/ImportDialog.vala:42
-#, c-format
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "وارد نمودن رویداد ها از \"%s\" به تقویم پیش رو:"
+#: src/ImportDialog.vala:28
+#, fuzzy
+msgid "Select a Calendar to Import Into"
+msgstr "انتخاب تقویم برای نمایش"
 
 #: src/ImportDialog.vala:44
-#, c-format
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
+#, fuzzy, c-format
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "وارد نمودن رویداد ها از پوشه %d به تقویم پیشرو"
+
+#: src/ImportDialog.vala:47
+#, fuzzy, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "وارد نمودن رویداد ها از پوشه %d به تقویم پیشرو"
 
-#: src/ImportDialog.vala:53
+#: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "وارد کردن"
-
-#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
-#: src/SourceDialog/SourceDialog.vala:58
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Cancel"
-msgstr "انصراف"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -202,40 +167,45 @@ msgstr "افزودن رویداد"
 msgid "Edit Event"
 msgstr "ویرایش رویداد"
 
-#: src/EventEdition/EventDialog.vala:107
+#: src/EventEdition/EventDialog.vala:100
 msgid "General Informations"
 msgstr "اطلاعات عمومی"
 
-#: src/EventEdition/EventDialog.vala:108
+#: src/EventEdition/EventDialog.vala:101
 msgid "Location"
 msgstr "مکان (نشانی)"
 
-#: src/EventEdition/EventDialog.vala:109
+#: src/EventEdition/EventDialog.vala:102
 msgid "Guests"
 msgstr "مهمان‌ها"
 
-#: src/EventEdition/EventDialog.vala:110
+#: src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr "یادآوری‌ها"
 
-#: src/EventEdition/EventDialog.vala:111 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/EventEdition/EventDialog.vala:134
+#: src/EventEdition/EventDialog.vala:127
 msgid "Delete Event"
 msgstr "حذف رویداد"
 
-#: src/EventEdition/EventDialog.vala:146
+#: src/EventEdition/EventDialog.vala:140
 msgid "Create Event"
 msgstr "ساخت رویداد"
 
-#: src/EventEdition/EventDialog.vala:149
+#: src/EventEdition/EventDialog.vala:143
 msgid "Save Changes"
 msgstr "ذخیره کردن تغییرات"
+
+#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "انصراف"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -257,35 +227,35 @@ msgstr "پذیرفته شده"
 msgid "Declined"
 msgstr "رد شده"
 
-#: src/EventEdition/InfoPanel.vala:78
+#: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
 msgstr "از:"
 
-#: src/EventEdition/InfoPanel.vala:84
+#: src/EventEdition/InfoPanel.vala:83
 msgid "All day:"
 msgstr "هر روز:"
 
-#: src/EventEdition/InfoPanel.vala:89
+#: src/EventEdition/InfoPanel.vala:88
 msgid "To:"
 msgstr "تا:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:106
 msgid "Title:"
 msgstr "عنوان:"
 
-#: src/EventEdition/InfoPanel.vala:109
+#: src/EventEdition/InfoPanel.vala:108
 msgid "Name of Event"
 msgstr "نام رویداد"
 
-#: src/EventEdition/InfoPanel.vala:119
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Press enter to parse event"
 msgstr ""
 
-#: src/EventEdition/InfoPanel.vala:134
+#: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
 msgstr "تقویم:"
 
-#: src/EventEdition/InfoPanel.vala:141
+#: src/EventEdition/InfoPanel.vala:140
 msgid "Comments:"
 msgstr "توضيحات:"
 
@@ -654,15 +624,6 @@ msgstr "شنبه"
 msgid "Sun"
 msgstr "یک‌شنبه"
 
-#: src/Grid/EventButton.vala:70
-#, fuzzy
-msgid "Remove Event"
-msgstr "حذف رویداد"
-
-#: src/Grid/EventButton.vala:71
-msgid "Remove Occurrence"
-msgstr ""
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "مخفی نمودن شماره  هفته"
@@ -676,52 +637,90 @@ msgstr "نمایش شماره هفته"
 msgid "%u more…"
 msgstr "%u بیشتر ..."
 
-#: src/SourceDialog/SourceDialog.vala:60
+#: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
 msgstr "ایجاد"
 
-#. Name
-#: src/SourceDialog/SourceDialog.vala:69
+#: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
 msgstr "نام:"
 
-#: src/SourceDialog/SourceDialog.vala:72
+#: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "نام تقویم"
 
-#: src/SourceDialog/SourceDialog.vala:95
+#: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
 msgstr "نوع :"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
 msgstr "رنگ:"
 
-#: src/SourceDialog/SourceDialog.vala:123
+#: src/SourceDialog/SourceDialog.vala:183
 msgid "Mark as default calendar"
 msgstr "انتخاب به عنوان تقویم اصلی"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:247
 msgid "Create Calendar"
 msgstr "ایجاد تقویم"
 
-#: src/SourceDialog/SourceDialog.vala:162
+#: src/SourceDialog/SourceDialog.vala:250
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "ذخیره"
 
-#: src/SourceDialog/SourceItem.vala:125
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "زدودن"
+
+#: src/SourceDialog/SourceItem.vala:75
+#, fuzzy
+msgid "Not Removable"
+msgstr "زدودن"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "ویرایش..."
+
+#: src/SourceDialog/SourceItem.vala:87
+msgid "Not Editable"
+msgstr ""
+
+#: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "بر‌گرداندن"
 
-#: src/SourceDialog/SourceItem.vala:140
+#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
 #, fuzzy, c-format
-msgid "Calendar \"%s\" removed."
+msgid "\"%s\" removed"
 msgstr "تقویم \"%S\"  پاک شده است"
 
-#: src/SourceDialog/SourceSelector.vala:52
+#: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "اضافه نمودن تقویم جدید ..."
+
+#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#, c-format
+msgid "%s – %s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:187
+#, fuzzy, c-format
+msgid "%s, %s – %s, %s"
+msgstr "%s, %s - %s, %s"
+
+#: src/Widgets/AgendaEventRow.vala:199
+#, c-format
+msgid "%s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:201
+#, fuzzy, c-format
+msgid "%s, %s – %s"
+msgstr "%s, %s - %s, %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -733,21 +732,37 @@ msgstr "خروجی گرفتن از تقویم"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Widgets/HeaderBar.vala:38
+#: src/Widgets/EventMenu.vala:41
+#, fuzzy
+msgid "Remove Event"
+msgstr "حذف رویداد"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr ""
+
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "ساخت یک رویداد"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "رفتن به تاریخ امروز"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "مدیریت تقویم ها"
 
-#: src/Widgets/HeaderBar.vala:55
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "خروجی گرفتن و یا اشتراک گذاری تقویم پیش‌فرض"
+
+#, fuzzy
+#~ msgid "%s - %s"
+#~ msgstr "%s, %s - %s, %s"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "وارد نمودن رویداد ها از \"%s\" به تقویم پیش رو:"
 
 #~ msgid "Email"
 #~ msgstr "رایانامه"
@@ -804,9 +819,6 @@ msgstr "خروجی گرفتن و یا اشتراک گذاری تقویم پیش�
 
 #~ msgid "Delete the selected event"
 #~ msgstr "حذف رویداد انتخاب شده"
-
-#~ msgid "Select calendars to display"
-#~ msgstr "انتخاب تقویم برای نمایش"
 
 #~ msgid "Today"
 #~ msgstr "امروز"

@@ -3,9 +3,9 @@
   <gresource prefix="/io/elementary/calendar/">
     <file alias="calendar-go-today.svg" compressed="true" preprocess="xml-stripblanks">calendar-go-today.svg</file>
     <file alias="location-marker.svg" compressed="true" preprocess="xml-stripblanks">LocationMarker.svg</file>
+    <file alias="AgendaEventRow.css" compressed="true">style/AgendaEventRow.css</file>
+    <file alias="Application.css" compressed="true">style/Application.css</file>
     <file alias="calendar.css" compressed="true">style/calendar.css</file>
     <file alias="ColorButton.css" compressed="true">style/ColorButton.css</file>
-    <file alias="default.css" compressed="true">style/default.css</file>
-    <file alias="sidebar.css" compressed="true">style/sidebar.css</file>
   </gresource>
 </gresources>

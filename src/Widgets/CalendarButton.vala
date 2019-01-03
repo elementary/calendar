@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2014-2015 Maya Developers (http://launchpad.net/maya)
+/*
+ * Copyright 2014-2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,14 +17,20 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
+public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
+    private static string STYLE = """
+        .cal-color {
+            background-color: %s;
+            border-radius: 50%;
+        }
+    """;
+
     public GLib.List<E.Source> sources;
     private E.Source _current_source;
     public E.Source current_source {
         get {
             return _current_source;
         }
-
         set {
             _current_source = value;
             calendar_grid.source = value;
@@ -33,11 +38,9 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         }
     }
 
-    private Gtk.Popover popover;
-    private Gtk.ListBox list_box;
     private CalendarGrid calendar_grid;
 
-    public CalendarButton () {
+    construct {
         sources = new GLib.List<E.Source> ();
         var calmodel = Model.CalendarModel.get_default ();
         var registry = calmodel.registry;
@@ -61,23 +64,8 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         add (grid);
 
         current_source = registry.default_calendar;
-        create_popover ();
 
-        toggled.connect (() => {
-            if (active) {
-                popover.show_all ();
-            } else {
-                popover.hide ();
-            }
-        });
-
-        popover.hide.connect (() => {
-            active = false;
-        });
-    }
-
-    private void create_popover () {
-        list_box = new Gtk.ListBox ();
+        var list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = true;
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
@@ -85,23 +73,13 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
         scrolled.add (list_box);
         scrolled.margin_top = 6;
         scrolled.margin_bottom = 6;
+        scrolled.max_content_height = 300;
+        scrolled.propagate_natural_height = true;
+        scrolled.show_all ();
 
         popover = new Gtk.Popover (this);
         popover.width_request = 310;
         popover.add (scrolled);
-
-        list_box.add.connect ((widget) => {
-            list_box.show_all ();
-            int minimum_height;
-            int natural_height;
-
-            list_box.get_preferred_height (out minimum_height, out natural_height);
-            if (natural_height > 300) {
-                scrolled.height_request = 300;
-            } else {
-                scrolled.height_request = (int) natural_height;
-            }
-        });
 
         list_box.set_header_func (header_update_func);
 
@@ -118,25 +96,23 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
 
         list_box.row_activated.connect ((row) => {
             current_source = ((CalendarGrid)row.get_child ()).source;
+            popover.popdown ();
         });
 
         foreach (var source in sources) {
-            add_source (source);
-        }
-    }
+            var calgrid = new CalendarGrid (source);
+            calgrid.margin = 6;
+            calgrid.margin_start = 12;
 
-    private void add_source (E.Source source) {
-        var calgrid = new CalendarGrid (source);
-        calgrid.margin = 6;
-        calgrid.margin_start = 12;
+            var row = new Gtk.ListBoxRow ();
+            row.add (calgrid);
+            row.show_all ();
 
-        var row = new Gtk.ListBoxRow ();
-        row.add (calgrid);
+            list_box.add (row);
 
-        list_box.add (row);
-
-        if (source.dup_uid () == current_source.dup_uid ()) {
-            list_box.select_row (row);
+            if (source.dup_uid () == current_source.dup_uid ()) {
+                list_box.select_row (row);
+            }
         }
     }
 
@@ -150,7 +126,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
             }
         }
 
-        var header = new SourceItemHeader (row_location);
+        var header = new Granite.HeaderLabel (row_location);
         header.margin = 6;
         header.margin_bottom = 0;
 
@@ -177,34 +153,48 @@ public class Maya.View.Widgets.CalendarButton : Gtk.ToggleButton {
             }
         }
 
-        private Gtk.Label calendar_name_label;
-        private Gtk.Label calendar_color_label;
+        private Gtk.StyleContext calendar_color_context;
 
         public CalendarGrid (E.Source source) {
+            Object (source: source);
+        }
+
+        construct {
             column_spacing = 6;
 
-            calendar_color_label = new Gtk.Label ("");
-            calendar_color_label.width_request = 6;
+            var calendar_color = new Gtk.Grid ();
+            calendar_color.height_request = 12;
+            calendar_color.valign = Gtk.Align.CENTER;
+            calendar_color.width_request = 12;
 
-            calendar_name_label = new Gtk.Label ("");
+            calendar_color_context = calendar_color.get_style_context ();
+            calendar_color_context.add_class ("cal-color");
+
+            var calendar_name_label = new Gtk.Label ("");
             calendar_name_label.xalign = 0;
             calendar_name_label.hexpand = true;
             calendar_name_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
 
-            add (calendar_color_label);
+            add (calendar_color);
             add (calendar_name_label);
 
-            show_all ();
-            _source = source;
-            apply_source ();
+            bind_property ("label", calendar_name_label, "label");
         }
 
         private void apply_source () {
             E.SourceCalendar cal = (E.SourceCalendar)_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-            calendar_name_label.label = _source.dup_display_name ();
-            label = calendar_name_label.label;
+            label = _source.dup_display_name ();
             location = Maya.Util.get_source_location (_source);
-            Util.style_calendar_color (calendar_color_label, cal.dup_color (), true);
+
+            var css_color = STYLE.printf (cal.dup_color ());
+            var style_provider = new Gtk.CssProvider ();
+
+            try {
+                style_provider.load_from_data (css_color, css_color.length);
+                calendar_color_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            } catch (Error e) {
+                warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
+            }
         }
     }
 }

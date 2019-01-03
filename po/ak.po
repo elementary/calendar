@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 10:47-0700\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2017-06-26 12:57+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:703
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
 msgid "On this computer"
 msgstr "Wɔ kɔmputa yi so"
 
@@ -81,7 +81,7 @@ msgstr "Fa Connection a ɛyɛ secure di dwuma"
 msgid "Server handles meeting invitations"
 msgstr "Server no na ɛhwɛ to nsa frɛ afoforɔ"
 
-#: src/AgendaView.vala:65
+#: src/AgendaView.vala:51
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -89,71 +89,37 @@ msgstr ""
 "Sɛ wopaw ɛda bi a woahyehyɛ dwuma bi a ɛreba ama no a, ɛho dwuma no bɛda adi "
 "wɔ ha."
 
-#: src/AgendaView.vala:138
-msgid "Upcoming Events"
-msgstr ""
-
-#: src/AgendaView.vala:226
+#: src/AgendaView.vala:194
 msgid "During the day"
 msgstr "Wɔ adekyeɛ mu"
 
-#: src/AgendaView.vala:231
+#: src/AgendaView.vala:202
 msgid "All day"
 msgstr "Da mũ no nyinaa"
 
-#: src/AgendaView.vala:296 src/AgendaView.vala:310
+#: src/AgendaView.vala:274
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:298 src/AgendaView.vala:312
+#: src/AgendaView.vala:277
 #, fuzzy
 msgid "This Week"
 msgstr "Nnawɔtwe"
 
-#: src/AgendaView.vala:300 src/AgendaView.vala:314
+#: src/AgendaView.vala:280
 #, fuzzy
 msgid "Next Week"
 msgstr "Nnawɔtwe"
 
-#: src/AgendaView.vala:302 src/AgendaView.vala:316
+#: src/AgendaView.vala:283
 #, fuzzy
 msgid "This Month"
 msgstr "Bosome"
 
-#: src/AgendaView.vala:304 src/AgendaView.vala:318
+#: src/AgendaView.vala:286
 #, fuzzy
 msgid "Next Month"
 msgstr "Bosome"
-
-#: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:94
-msgid "Edit…"
-msgstr "Sesa…"
-
-#: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:80
-msgid "Remove"
-msgstr "Yi"
-
-#: src/AgendaView.vala:564 src/AgendaView.vala:574
-#, fuzzy, c-format
-msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/AgendaView.vala:566
-#, c-format
-msgid "%s, %s - %s, %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/AgendaView.vala:578
-#, c-format
-msgid "%s"
-msgstr ""
-
-#: src/AgendaView.vala:580
-#, fuzzy, c-format
-msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
 
 #: src/Application.vala:47
 #, fuzzy
@@ -168,31 +134,29 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:141
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "Kalɛnda"
 
-#: src/ImportDialog.vala:42
-#, c-format
-msgid "Import events from \"%s\" into the following calendar:"
-msgstr "Impɔɔte dwuma fi \"%s\" kɔ kalɛnda ahoroɔ yi mu:"
+#: src/ImportDialog.vala:28
+msgid "Select a Calendar to Import Into"
+msgstr ""
 
 #: src/ImportDialog.vala:44
-#, c-format
-msgid "Import events from %d file into the following calendar:"
-msgid_plural "Import events from %d files into the following calendar:"
+#, fuzzy, c-format
+msgid "Events from \"%s\" will be merged with this calendar:"
+msgstr "Impɔɔte dwuma fi file %d kɔ kalɛnda ahoroɔ yi mu:"
+
+#: src/ImportDialog.vala:47
+#, fuzzy, c-format
+msgid "Events from %d file will be merged with this calendar:"
+msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Impɔɔte dwuma fi file %d kɔ kalɛnda ahoroɔ yi mu:"
 msgstr[1] "Impɔɔte dwuma fi files %d kɔ kalɛnda ahoroɔ yi mu:"
 
-#: src/ImportDialog.vala:53
+#: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Impɔɔte"
-
-#: src/ImportDialog.vala:55 src/EventEdition/EventDialog.vala:152
-#: src/SourceDialog/SourceDialog.vala:58
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Cancel"
-msgstr "Gyae"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -202,40 +166,45 @@ msgstr "Dwuma Foforɔ"
 msgid "Edit Event"
 msgstr "Yɛ mu nsakrae"
 
-#: src/EventEdition/EventDialog.vala:107
+#: src/EventEdition/EventDialog.vala:100
 msgid "General Informations"
 msgstr "Ɛho nsɛm"
 
-#: src/EventEdition/EventDialog.vala:108
+#: src/EventEdition/EventDialog.vala:101
 msgid "Location"
 msgstr "Beae"
 
-#: src/EventEdition/EventDialog.vala:109
+#: src/EventEdition/EventDialog.vala:102
 msgid "Guests"
 msgstr "Ahɔhoɔ"
 
-#: src/EventEdition/EventDialog.vala:110
+#: src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr "Nkaebɔ Ahoroɔ"
 
-#: src/EventEdition/EventDialog.vala:111 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Nea woasan ayɛ"
 msgstr[1] "Nea woasan ayɛ"
 
-#: src/EventEdition/EventDialog.vala:134
+#: src/EventEdition/EventDialog.vala:127
 msgid "Delete Event"
 msgstr "Yi dwuma yi fi so"
 
-#: src/EventEdition/EventDialog.vala:146
+#: src/EventEdition/EventDialog.vala:140
 msgid "Create Event"
 msgstr "Yɛ Dwuma Foforɔ"
 
-#: src/EventEdition/EventDialog.vala:149
+#: src/EventEdition/EventDialog.vala:143
 msgid "Save Changes"
 msgstr "Kora nsakrae no so"
+
+#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
+#: src/Widgets/ContractorButtonWithMenu.vala:87
+msgid "Cancel"
+msgstr "Gyae"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -257,35 +226,35 @@ msgstr "Woagye Ato Mu"
 msgid "Declined"
 msgstr "Woate so"
 
-#: src/EventEdition/InfoPanel.vala:78
+#: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
 msgstr "Fi:"
 
-#: src/EventEdition/InfoPanel.vala:84
+#: src/EventEdition/InfoPanel.vala:83
 msgid "All day:"
 msgstr "Da mũ no nyinaa:"
 
-#: src/EventEdition/InfoPanel.vala:89
+#: src/EventEdition/InfoPanel.vala:88
 msgid "To:"
 msgstr "De kɔsi:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:106
 msgid "Title:"
 msgstr "Ɛdin a eda so:"
 
-#: src/EventEdition/InfoPanel.vala:109
+#: src/EventEdition/InfoPanel.vala:108
 msgid "Name of Event"
 msgstr "Dwuma no din"
 
-#: src/EventEdition/InfoPanel.vala:119
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Press enter to parse event"
 msgstr "Mia Enter na ɛno ara nhyehyɛ"
 
-#: src/EventEdition/InfoPanel.vala:134
+#: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
 msgstr "Kalɛnda:"
 
-#: src/EventEdition/InfoPanel.vala:141
+#: src/EventEdition/InfoPanel.vala:140
 msgid "Comments:"
 msgstr "Asɛm a wowɔ ka fa ho:"
 
@@ -654,15 +623,6 @@ msgstr "Mem"
 msgid "Sun"
 msgstr "Kwa"
 
-#: src/Grid/EventButton.vala:70
-#, fuzzy
-msgid "Remove Event"
-msgstr "Yi dwuma yi fi so"
-
-#: src/Grid/EventButton.vala:71
-msgid "Remove Occurrence"
-msgstr ""
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Hintaw Nnawotwe Nɔma Ahoroɔ No"
@@ -676,52 +636,90 @@ msgstr "Da Nnawɔtwe Nɔma Ahoroɔ No Adi"
 msgid "%u more…"
 msgstr "%u hwɛ pii…"
 
-#: src/SourceDialog/SourceDialog.vala:60
+#: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
 msgstr "Yɛ"
 
-#. Name
-#: src/SourceDialog/SourceDialog.vala:69
+#: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
 msgstr "Ɛdin:"
 
-#: src/SourceDialog/SourceDialog.vala:72
+#: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
 msgstr "Calendar No Din"
 
-#: src/SourceDialog/SourceDialog.vala:95
+#: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
 msgstr "Kalɛnda Ko:"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
 msgstr "Kɔla:"
 
-#: src/SourceDialog/SourceDialog.vala:123
+#: src/SourceDialog/SourceDialog.vala:183
 msgid "Mark as default calendar"
 msgstr "Fa wei di dwuma"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:247
 msgid "Create Calendar"
 msgstr "Yɛ Calender Foforɔ"
 
-#: src/SourceDialog/SourceDialog.vala:162
+#: src/SourceDialog/SourceDialog.vala:250
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "Kora"
 
-#: src/SourceDialog/SourceItem.vala:125
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "Yi"
+
+#: src/SourceDialog/SourceItem.vala:75
+#, fuzzy
+msgid "Not Removable"
+msgstr "Yi"
+
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "Sesa…"
+
+#: src/SourceDialog/SourceItem.vala:87
+msgid "Not Editable"
+msgstr ""
+
+#: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "Sesa kɔ akyiri"
 
-#: src/SourceDialog/SourceItem.vala:140
-#, c-format
-msgid "Calendar \"%s\" removed."
+#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
+#, fuzzy, c-format
+msgid "\"%s\" removed"
 msgstr "Wayi Calender \"%s\"  afiri mu."
 
-#: src/SourceDialog/SourceSelector.vala:52
+#: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "Calender Foforɔ"
+
+#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#, c-format
+msgid "%s – %s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:187
+#, fuzzy, c-format
+msgid "%s, %s – %s, %s"
+msgstr "%s, %s - %s, %s"
+
+#: src/Widgets/AgendaEventRow.vala:199
+#, c-format
+msgid "%s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:201
+#, fuzzy, c-format
+msgid "%s, %s – %s"
+msgstr "%s, %s - %s, %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -733,21 +731,37 @@ msgstr "Export Calendar..."
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Widgets/HeaderBar.vala:38
+#: src/Widgets/EventMenu.vala:41
+#, fuzzy
+msgid "Remove Event"
+msgstr "Yi dwuma yi fi so"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr ""
+
+#: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
 msgstr "Yɛ dwuma foforɔ ka ho"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
 msgstr "Kɔ ennɛ da"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
 msgstr "Hyɛhyɛ Kalɛnda Ahoroɔ No"
 
-#: src/Widgets/HeaderBar.vala:55
+#: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Ɛspɔɔte anaa wone afoforɔ nkyɛ kalɛnda a wode di dwuma no"
+
+#, fuzzy
+#~ msgid "%s - %s"
+#~ msgstr "%s, %s - %s, %s"
+
+#~ msgid "Import events from \"%s\" into the following calendar:"
+#~ msgstr "Impɔɔte dwuma fi \"%s\" kɔ kalɛnda ahoroɔ yi mu:"
 
 #~ msgid "Email"
 #~ msgstr "Email"
