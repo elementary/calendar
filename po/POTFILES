@@ -16,7 +16,6 @@ src/AgendaView.vala
 src/Application.vala
 src/ImportDialog.vala
 src/MainWindow.vala
-src/EventEdition/ContactImage.vala
 src/EventEdition/EventDialog.vala
 src/EventEdition/GuestGrid.vala
 src/EventEdition/GuestsPanel.vala

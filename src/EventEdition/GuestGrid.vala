@@ -23,7 +23,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
     private Folks.Individual individual;
     private Gtk.Label name_label;
     private Gtk.Label mail_label;
-    private ContactImage icon_image;
+    private Granite.Widgets.Avatar avatar;
 
     public GuestGrid (iCal.Property attendee) {
         this.attendee = new iCal.Property.clone (attendee);
@@ -54,7 +54,8 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         var status_label = new Gtk.Label ("");
         status_label.set_markup (status);
         status_label.justify = Gtk.Justification.RIGHT;
-        icon_image = new ContactImage (Gtk.IconSize.DIALOG);
+
+        avatar = new Granite.Widgets.Avatar.with_default_icon (32);
 
         var mail = attendee.get_attendee ().replace ("mailto:", "");
 
@@ -76,7 +77,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
 
         get_contact_by_mail.begin (attendee.get_attendee ().replace ("mailto:", ""));
 
-        attach (icon_image, 0, 0, 1, 4);
+        attach (avatar, 0, 0, 1, 4);
         attach (name_label, 1, 1, 1, 1);
         attach (mail_label, 1, 2, 1, 1);
         attach (status_label, 2, 1, 1, 2);
@@ -94,7 +95,12 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                     if(address.value == mail_address) {
                         individual = map_iterator.get_value ();
                         if (individual != null) {
-                            icon_image.add_contact (individual);
+                            try {
+                                individual.avatar.load (32, null);
+                                avatar = new Granite.Widgets.Avatar.from_file (individual.avatar.to_string (), 32);
+                            } catch (Error e) {
+                                critical (e.message);
+                            }
                             if (individual.full_name != null && individual.full_name != "") {
                                 set_name_label (individual.full_name);
                                 set_mail_label (attendee.get_attendee ());
