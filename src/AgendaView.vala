@@ -21,7 +21,6 @@
 
 public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     public signal void event_removed (E.CalComponent event);
-    public signal void event_modified (E.CalComponent event);
 
     private Gtk.Label day_label;
     private Gtk.Label weekday_label;
@@ -58,43 +57,12 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         placeholder_label.show_all ();
 
         selected_date_events_list = new Gtk.ListBox ();
+        selected_date_events_list.activate_on_single_click = false;
         selected_date_events_list.height_request = 128;
         selected_date_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         selected_date_events_list.set_header_func (header_update_func);
         selected_date_events_list.set_placeholder (placeholder_label);
-        selected_date_events_list.set_sort_func ((child1, child2) => {
-            var row1 = (AgendaEventRow) child1;
-            var row2 = (AgendaEventRow) child2;
-            if (row1.is_allday) {
-                if (row2.is_allday) {
-                    return row1.summary.collate (row2.summary);
-                } else {
-                    return -1;
-                }
-            } else {
-                if (row2.is_allday) {
-                    return 1;
-                } else {
-                    unowned iCal.Component ical_event1 = row1.calevent.get_icalcomponent ();
-                    DateTime start_date1, end_date1;
-                    Util.get_local_datetimes_from_icalcomponent (ical_event1, out start_date1, out end_date1);
-                    unowned iCal.Component ical_event2 = row2.calevent.get_icalcomponent ();
-                    DateTime start_date2, end_date2;
-                    Util.get_local_datetimes_from_icalcomponent (ical_event2, out start_date2, out end_date2);
-                    var comp = start_date1.compare (start_date2);
-                    if (comp != 0) {
-                        return comp;
-                    } else {
-                        comp = end_date1.compare (end_date2);
-                        if (comp != 0) {
-                            return comp;
-                        }
-                    }
-
-                    return row1.summary.collate (row2.summary);
-                }
-            }
-        });
+        selected_date_events_list.set_sort_func (selected_sort_function);
 
         selected_date_events_list.set_filter_func ((row) => {
             if (selected_date == null) {
@@ -118,31 +86,11 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         });
 
         upcoming_events_list = new Gtk.ListBox ();
+        upcoming_events_list.activate_on_single_click = false;
         upcoming_events_list.margin_top = 24;
         upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         upcoming_events_list.set_header_func (upcoming_header_update_func);
-        upcoming_events_list.set_sort_func ((child1, child2) => {
-            var row1 = (AgendaEventRow) child1;
-            var row2 = (AgendaEventRow) child2;
-
-            unowned iCal.Component ical_event1 = row1.calevent.get_icalcomponent ();
-            DateTime start_date1, end_date1;
-            Util.get_local_datetimes_from_icalcomponent (ical_event1, out start_date1, out end_date1);
-            unowned iCal.Component ical_event2 = row2.calevent.get_icalcomponent ();
-            DateTime start_date2, end_date2;
-            Util.get_local_datetimes_from_icalcomponent (ical_event2, out start_date2, out end_date2);
-            var comp = start_date1.compare (start_date2);
-            if (comp != 0) {
-                return comp;
-            } else {
-                comp = end_date1.compare (end_date2);
-                if (comp != 0) {
-                    return comp;
-                }
-            }
-
-            return row1.summary.collate (row2.summary);
-        });
+        upcoming_events_list.set_sort_func (upcoming_sort_function);
 
         upcoming_events_list.set_filter_func ((row) => {
             var event_row = (AgendaEventRow) row;
@@ -179,6 +127,14 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         calmodel.events_updated.connect (on_events_updated);
         set_selected_date (Settings.SavedState.get_default ().get_selected ());
         show_all ();
+
+        selected_date_events_list.row_activated.connect (activate_eventrow);
+        upcoming_events_list.row_activated.connect (activate_eventrow);
+    }
+
+    private void activate_eventrow (Gtk.ListBoxRow row) {
+        var calevent = ((AgendaEventRow) row).calevent;
+        ((Maya.Application) GLib.Application.get_default ()).window.on_modified (calevent);
     }
 
     private void header_update_func (Gtk.ListBoxRow lbrow, Gtk.ListBoxRow? lbbefore) {
@@ -206,6 +162,51 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
             }
             return;
         }
+    }
+
+    [CCode (instance_pos = -1)]
+    private int upcoming_sort_function (Gtk.ListBoxRow child1, Gtk.ListBoxRow child2) {
+        return compare_rows ((AgendaEventRow) child1, (AgendaEventRow) child2);
+    }
+
+    [CCode (instance_pos = -1)]
+    private int selected_sort_function (Gtk.ListBoxRow child1, Gtk.ListBoxRow child2) {
+        var row1 = (AgendaEventRow) child1;
+        var row2 = (AgendaEventRow) child2;
+
+        if (row1.is_allday) {
+            if (row2.is_allday) {
+                return row1.summary.collate (row2.summary);
+            } else {
+                return -1;
+            }
+        } else if (row2.is_allday) {
+            return 1;
+        }
+
+        return compare_rows (row1, row2);
+    }
+
+    private int compare_rows (AgendaEventRow row1, AgendaEventRow row2) {
+        unowned iCal.Component ical_event1 = row1.calevent.get_icalcomponent ();
+        DateTime start_date1, end_date1;
+        Util.get_local_datetimes_from_icalcomponent (ical_event1, out start_date1, out end_date1);
+
+        unowned iCal.Component ical_event2 = row2.calevent.get_icalcomponent ();
+        DateTime start_date2, end_date2;
+        Util.get_local_datetimes_from_icalcomponent (ical_event2, out start_date2, out end_date2);
+
+        var comp = start_date1.compare (start_date2);
+        if (comp != 0) {
+            return comp;
+        } else {
+            comp = end_date1.compare (end_date2);
+            if (comp != 0) {
+                return comp;
+            }
+        }
+
+        return row1.summary.collate (row2.summary);
     }
 
     private static int get_event_type (AgendaEventRow row) {
@@ -301,7 +302,6 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
             if (!row_table.contains (comp.get_uid ())) {
                 var row = new AgendaEventRow (source, event, false);
-                row.modified.connect ((event) => (event_modified (event)));
                 row.removed.connect ((event) => (event_removed (event)));
                 row.show_all ();
                 row_table.set (comp.get_uid (), row);
@@ -310,7 +310,6 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
             if (!row_table2.contains (comp.get_uid ())) {
                 var row2 = new AgendaEventRow (source, event, true);
-                row2.modified.connect ((event) => (event_modified (event)));
                 row2.removed.connect ((event) => (event_removed (event)));
                 row2.show_all ();
                 row_table2.set (comp.get_uid (), row2);
