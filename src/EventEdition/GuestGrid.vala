@@ -27,61 +27,64 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
 
     public GuestGrid (iCal.Property attendee) {
         this.attendee = new iCal.Property.clone (attendee);
-        row_spacing = 6;
-        column_spacing = 12;
         individual = null;
 
-        set_margin_bottom (6);
-        set_margin_end (6);
-        set_margin_start (6);
+        var status_label = new Gtk.Label ("");
+        status_label.justify = Gtk.Justification.RIGHT;
 
-        string status = "";
+        var status_label_context = status_label.get_style_context ();
+        status_label_context.add_class (Granite.STYLE_CLASS_H4_LABEL);
+
         unowned iCal.Parameter parameter = attendee.get_first_parameter (iCal.ParameterKind.PARTSTAT);
         if (parameter != null) {
             switch (parameter.get_partstat ()) {
                 case iCal.ParameterPartStat.ACCEPTED:
-                    status = "<b><span color=\'green\'>%s</span></b>".printf (_("Accepted"));
+                    status_label.label = _("Accepted");
+                    status_label_context.add_class ("success");
                     break;
                 case iCal.ParameterPartStat.DECLINED:
-                    status = "<b><span color=\'red\'>%s</span></b>".printf (_("Declined"));
+                    status_label.label = _("Declined");
+                    status_label_context.add_class (Gtk.STYLE_CLASS_ERROR);
+                    break;
+                case iCal.ParameterPartStat.TENTATIVE:
+                    status_label.label = _("Maybe");
+                    status_label_context.add_class (Gtk.STYLE_CLASS_ERROR);
                     break;
                 default:
-                    status = "";
                     break;
             }
         }
-
-        var status_label = new Gtk.Label ("");
-        status_label.set_markup (status);
-        status_label.justify = Gtk.Justification.RIGHT;
 
         avatar = new Granite.Widgets.Avatar.with_default_icon (32);
 
         var mail = attendee.get_attendee ().replace ("mailto:", "");
 
-        name_label = new Gtk.Label ("");
-        ((Gtk.Misc) name_label).xalign = 0.0f;
-        set_name_label (mail.split ("@", 2)[0]);
+        name_label = new Gtk.Label (Markup.escape_text (mail.split ("@", 2)[0]));
+        name_label.xalign = 0;
 
-        mail_label = new Gtk.Label ("");
+        mail_label = new Gtk.Label (Markup.escape_text (mail));
         mail_label.hexpand = true;
-        ((Gtk.Misc) mail_label).xalign = 0.0f;
-        set_mail_label (mail);
+        mail_label.xalign = 0;
 
         var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);
         remove_button.relief = Gtk.ReliefStyle.NONE;
-        remove_button.clicked.connect (() => {removed (); hide (); destroy ();});
-        var remove_grid = new Gtk.Grid ();
-        remove_grid.add (remove_button);
-        remove_grid.valign = Gtk.Align.CENTER;
+        remove_button.valign = Gtk.Align.CENTER;
 
         get_contact_by_mail.begin (attendee.get_attendee ().replace ("mailto:", ""));
 
+        column_spacing = 12;
+        margin = 6;
         attach (avatar, 0, 0, 1, 4);
         attach (name_label, 1, 1, 1, 1);
         attach (mail_label, 1, 2, 1, 1);
         attach (status_label, 2, 1, 1, 2);
-        attach (remove_grid, 3, 1, 1, 2);
+        attach (remove_button, 3, 1, 1, 2);
+
+        remove_button.clicked.connect (() => {
+            removed ();
+            hide ();
+            destroy ();
+        });
     }
 
     private async void get_contact_by_mail (string mail_address) {
@@ -92,7 +95,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
 
             while (map_iterator.next ()) {
                 foreach (var address in map_iterator.get_value ().email_addresses) {
-                    if(address.value == mail_address) {
+                    if (address.value == mail_address) {
                         individual = map_iterator.get_value ();
                         if (individual != null) {
                             try {
@@ -102,8 +105,8 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                                 critical (e.message);
                             }
                             if (individual.full_name != null && individual.full_name != "") {
-                                set_name_label (individual.full_name);
-                                set_mail_label (attendee.get_attendee ());
+                                name_label.label = Markup.escape_text (individual.full_name);
+                                mail_label.label = Markup.escape_text (attendee.get_attendee ());
                             }
                         }
                     }
@@ -120,13 +123,5 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                 critical (e.message);
             }
         }
-    }
-
-    private void set_name_label (string name) {
-        name_label.set_markup ("<b><big>%s</big></b>".printf (Markup.escape_text (name)));
-    }
-
-    private void set_mail_label (string mail) {
-        mail_label.set_markup ("<b><span color=\'darkgrey\'>%s</span></b>".printf (Markup.escape_text (mail)));
     }
 }
