@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2019-01-03 18:36+0000\n"
+"PO-Revision-Date: 2019-01-03 19:13+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
 "calendar/calendar/nn/>\n"
@@ -157,7 +157,7 @@ msgstr "Importer"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
-msgstr "Lag ei ny hending"
+msgstr "Lag ei hending"
 
 #: src/EventEdition/EventDialog.vala:61
 msgid "Edit Event"
@@ -261,7 +261,7 @@ msgstr "Plassering:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "Ola Nordmann ELLER Karl Eksempel Gate"
+msgstr "Ola Nordmann ELLER Dømegata."
 
 #: src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders:"
