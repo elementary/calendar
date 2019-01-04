@@ -131,6 +131,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
 
         search_entry.search_changed.connect (() => {
             list_box.invalidate_filter ();
+            list_box.unselect_all ();
         });
 
         foreach (var source in sources) {
