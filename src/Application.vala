@@ -83,28 +83,20 @@ namespace Maya {
             if (Option.ADD_EVENT) {
                 window.on_tb_add_clicked (window.calview.selected_date);
             }
-
-            Gtk.main ();
         }
 
         public override void open (File[] files, string hint) {
-            bool first_start = false;
             if (get_windows () == null) {
                 var calmodel = Model.CalendarModel.get_default ();
                 calmodel.load_all_sources ();
 
                 init_gui ();
                 window.show_all ();
-                first_start = true;
             }
 
             var dialog = new Maya.View.ImportDialog (files);
             dialog.transient_for = window;
             dialog.show_all ();
-
-            if (first_start) {
-                Gtk.main ();
-            }
         }
 
         /**
@@ -142,9 +134,8 @@ namespace Maya {
             set_accels_for_action("app.quit", new string[] { "<Control>q" });
         }
 
-        void on_quit () {
+        private void on_quit () {
             Model.CalendarModel.get_default ().delete_trashed_calendars ();
-            Gtk.main_quit ();
         }
     }
 
