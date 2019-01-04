@@ -39,9 +39,6 @@ namespace Maya {
 
             application_id = Build.EXEC_NAME;
 
-            Intl.setlocale (LocaleCategory.ALL, "");
-            Intl.textdomain (Build.GETTEXT_PACKAGE);
-
             var provider = new Gtk.CssProvider ();
             provider.load_from_resource ("/io/elementary/calendar/Application.css");
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
