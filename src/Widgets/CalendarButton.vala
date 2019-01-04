@@ -115,7 +115,18 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         list_box.row_activated.connect ((row) => {
             current_source = ((CalendarGrid)row.get_child ()).source;
             popover.popdown ();
+        });
+
+        popover.unmap.connect (() => {
             search_entry.text = "";
+        });
+
+        search_entry.activate.connect (() => {
+            foreach (unowned Gtk.Widget child in list_box.get_children ()) {
+                if (child.get_child_visible ()) {
+                    ((Gtk.ListBoxRow) child).activate ();
+                }
+            }
         });
 
         search_entry.search_changed.connect (() => {
