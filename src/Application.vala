@@ -23,7 +23,6 @@ namespace Maya {
     namespace Option {
         private static bool ADD_EVENT = false;
         private static string SHOW_DAY = null;
-        private static bool PRINT_VERSION = false;
     }
 
     public class Application : Gtk.Application {
@@ -50,7 +49,6 @@ namespace Maya {
         public const OptionEntry[] app_options = {
             { "add-event", 'a', 0, OptionArg.NONE, out Option.ADD_EVENT, N_("Create an event"), null },
             { "show-day", 's', 0, OptionArg.STRING, out Option.SHOW_DAY, N_("Focus the given day"), N_("date") },
-            { "version", 'v', 0, OptionArg.NONE, out Option.PRINT_VERSION, N_("Print version info and exit"), null },
             { null }
         };
 
@@ -157,12 +155,6 @@ namespace Maya {
             context.parse (ref args);
         } catch (Error e) {
             warning (e.message);
-        }
-
-        if (Option.PRINT_VERSION) {
-            stdout.printf("Maya %s\n", Build.VERSION);
-            stdout.printf("Copyright 2011-2017 elementary LLC.\n");
-            return 0;
         }
 
         GtkClutter.init (ref args);
