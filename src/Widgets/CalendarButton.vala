@@ -71,8 +71,16 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         search_entry.margin_bottom = 6;
         search_entry.placeholder_text = _("Search Calendars");
 
+        var placeholder = new Granite.Widgets.AlertView (
+            _("No Results"),
+            _("Try changing search terms."),
+            ""
+        );
+        placeholder.show_all ();
+
         var list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = true;
+        list_box.set_placeholder (placeholder);
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -107,6 +115,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         list_box.row_activated.connect ((row) => {
             current_source = ((CalendarGrid)row.get_child ()).source;
             popover.popdown ();
+            search_entry.text = "";
         });
 
         search_entry.search_changed.connect (() => {
