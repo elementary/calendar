@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-26 20:27+0100\n"
-"PO-Revision-Date: 2019-01-03 19:13+0000\n"
+"PO-Revision-Date: 2019-01-03 21:49+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
 "calendar/extra/nn/>\n"
@@ -23,30 +23,32 @@ msgstr ""
 #: data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
-msgstr ""
+msgstr "Kalender"
 
 #: data/io.elementary.calendar.appdata.xml.in:9
 #: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Vis og planlegg hendingar"
 
 #: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
+"Ein slank og lett kalenderapplikasjon som synkroniserer og handsamar fleire "
+"kalenderar på éin stad, med t.d. Google Calendar, Outlook og CalDAV."
 
 #: data/io.elementary.calendar.appdata.xml.in:78
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "office-calendar"
-msgstr ""
+msgstr "office-calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
+msgstr "Maya;Planleggar;Datoar;Dagar;Hendingar;Kalender;ics;caldav;evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"

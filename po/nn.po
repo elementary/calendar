@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2019-01-03 19:13+0000\n"
+"PO-Revision-Date: 2019-01-03 21:49+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
 "calendar/calendar/nn/>\n"
@@ -630,7 +630,7 @@ msgstr "Vis vekenummer"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "%u meir..."
+msgstr "%u meir…"
 
 #: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
