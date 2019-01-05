@@ -1,7 +1,6 @@
 config_data = configuration_data()
 config_data.set('APP_NAME', 'Calendar')
 config_data.set('EXEC_NAME', meson.project_name())
-config_data.set('GETTEXT_PACKAGE', meson.project_name())
 config_data.set('PLUGIN_DIR', pluginsdir)
 
 config_file = configure_file(
