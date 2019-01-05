@@ -17,15 +17,13 @@
 
 namespace Maya {
     private static bool has_debug;
-    private static bool has_version;
 
     const OptionEntry[] options =  {
         { "debug", 'd', 0, OptionArg.NONE, out has_debug,
         N_("Print debug information"), null},
-        { "version", 0, 0, OptionArg.NONE, out has_version,
-        N_("Print version info and exit"), null},
         { null }
     };
+
 
 public class Daemon : GLib.Application {
     private Gee.HashMap<E.CalComponent, string> event_uid;
@@ -198,12 +196,6 @@ public static int main (string[] args) {
         context.parse (ref args);
     } catch (OptionError e) {
         error (e.message);
-    }
-
-    if (has_version) {
-        message ("%s (Daemon)", Build.APP_NAME);
-        message ("%s", Build.VERSION);
-        return 0;
     }
 
     Granite.Services.Logger.initialize (Build.APP_NAME);
