@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -23,7 +23,6 @@ namespace Maya {
     namespace Option {
         private static bool ADD_EVENT = false;
         private static string SHOW_DAY = null;
-        private static bool PRINT_VERSION = false;
     }
 
     public class Application : Gtk.Application {
@@ -39,14 +38,14 @@ namespace Maya {
 
             application_id = Build.EXEC_NAME;
 
-            Intl.setlocale (LocaleCategory.ALL, "");
-            Intl.textdomain (Build.GETTEXT_PACKAGE);
+            var provider = new Gtk.CssProvider ();
+            provider.load_from_resource ("/io/elementary/calendar/Application.css");
+            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
         public const OptionEntry[] app_options = {
             { "add-event", 'a', 0, OptionArg.NONE, out Option.ADD_EVENT, N_("Create an event"), null },
             { "show-day", 's', 0, OptionArg.STRING, out Option.SHOW_DAY, N_("Focus the given day"), N_("date") },
-            { "version", 'v', 0, OptionArg.NONE, out Option.PRINT_VERSION, N_("Print version info and exit"), null },
             { null }
         };
 
@@ -79,28 +78,20 @@ namespace Maya {
             if (Option.ADD_EVENT) {
                 window.on_tb_add_clicked (window.calview.selected_date);
             }
-
-            Gtk.main ();
         }
 
         public override void open (File[] files, string hint) {
-            bool first_start = false;
             if (get_windows () == null) {
                 var calmodel = Model.CalendarModel.get_default ();
                 calmodel.load_all_sources ();
 
                 init_gui ();
                 window.show_all ();
-                first_start = true;
             }
 
             var dialog = new Maya.View.ImportDialog (files);
             dialog.transient_for = window;
             dialog.show_all ();
-
-            if (first_start) {
-                Gtk.main ();
-            }
         }
 
         /**
@@ -138,9 +129,8 @@ namespace Maya {
             set_accels_for_action("app.quit", new string[] { "<Control>q" });
         }
 
-        void on_quit () {
+        private void on_quit () {
             Model.CalendarModel.get_default ().delete_trashed_calendars ();
-            Gtk.main_quit ();
         }
     }
 
@@ -153,12 +143,6 @@ namespace Maya {
             context.parse (ref args);
         } catch (Error e) {
             warning (e.message);
-        }
-
-        if (Option.PRINT_VERSION) {
-            stdout.printf("Maya %s\n", Build.VERSION);
-            stdout.printf("Copyright 2011-2017 elementary LLC.\n");
-            return 0;
         }
 
         GtkClutter.init (ref args);

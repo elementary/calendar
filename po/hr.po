@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 16:43-0800\n"
+"POT-Creation-Date: 2018-12-18 10:59-0800\n"
 "PO-Revision-Date: 2016-07-08 17:55+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:599
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
 msgid "On this computer"
 msgstr "Na ovom računalu"
 
@@ -85,7 +85,7 @@ msgstr "Koristi sigurno povezivanje"
 msgid "Server handles meeting invitations"
 msgstr "Poslužitelj rukuje pozivnicama sastanka"
 
-#: src/AgendaView.vala:65
+#: src/AgendaView.vala:51
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -93,71 +93,37 @@ msgstr ""
 "Vaši nadolazeći događaji će biti prikazani kada odaberete datum sa zakazanim "
 "događajima."
 
-#: src/AgendaView.vala:138
-msgid "Upcoming Events"
-msgstr ""
-
-#: src/AgendaView.vala:226
+#: src/AgendaView.vala:194
 msgid "During the day"
 msgstr "Tijekom dana"
 
-#: src/AgendaView.vala:231
+#: src/AgendaView.vala:202
 msgid "All day"
 msgstr "Cijeli dan"
 
-#: src/AgendaView.vala:296 src/AgendaView.vala:310
+#: src/AgendaView.vala:274
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:298 src/AgendaView.vala:312
+#: src/AgendaView.vala:277
 #, fuzzy
 msgid "This Week"
 msgstr "Tjedan"
 
-#: src/AgendaView.vala:300 src/AgendaView.vala:314
+#: src/AgendaView.vala:280
 #, fuzzy
 msgid "Next Week"
 msgstr "Tjedan"
 
-#: src/AgendaView.vala:302 src/AgendaView.vala:316
+#: src/AgendaView.vala:283
 #, fuzzy
 msgid "This Month"
 msgstr "Mjesec"
 
-#: src/AgendaView.vala:304 src/AgendaView.vala:318
+#: src/AgendaView.vala:286
 #, fuzzy
 msgid "Next Month"
 msgstr "Mjesec"
-
-#: src/AgendaView.vala:520 src/Grid/EventButton.vala:63
-#: src/SourceDialog/SourceItem.vala:88
-msgid "Edit…"
-msgstr "Uredi..."
-
-#: src/AgendaView.vala:521 src/Grid/EventButton.vala:76
-#: src/SourceDialog/SourceItem.vala:76
-msgid "Remove"
-msgstr "Ukloni"
-
-#: src/AgendaView.vala:564 src/AgendaView.vala:574
-#, fuzzy, c-format
-msgid "%s - %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/AgendaView.vala:566
-#, c-format
-msgid "%s, %s - %s, %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/AgendaView.vala:578
-#, c-format
-msgid "%s"
-msgstr ""
-
-#: src/AgendaView.vala:580
-#, fuzzy, c-format
-msgid "%s, %s - %s"
-msgstr "%s, %s - %s, %s"
 
 #: src/Application.vala:47
 #, fuzzy
@@ -206,23 +172,23 @@ msgstr "Dodaj događaj"
 msgid "Edit Event"
 msgstr "Uredi događaj"
 
-#: src/EventEdition/EventDialog.vala:107
+#: src/EventEdition/EventDialog.vala:100
 msgid "General Informations"
 msgstr "Opće informacije"
 
-#: src/EventEdition/EventDialog.vala:108
+#: src/EventEdition/EventDialog.vala:101
 msgid "Location"
 msgstr "Lokacija"
 
-#: src/EventEdition/EventDialog.vala:109
+#: src/EventEdition/EventDialog.vala:102
 msgid "Guests"
 msgstr "Gosti"
 
-#: src/EventEdition/EventDialog.vala:110
+#: src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
 msgstr "Podsjetnici"
 
-#: src/EventEdition/EventDialog.vala:111 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
@@ -230,19 +196,19 @@ msgstr[0] "Ponavlja"
 msgstr[1] "Ponavlja"
 msgstr[2] "Ponavlja"
 
-#: src/EventEdition/EventDialog.vala:134
+#: src/EventEdition/EventDialog.vala:127
 msgid "Delete Event"
 msgstr "Obriši događaj"
 
-#: src/EventEdition/EventDialog.vala:146
+#: src/EventEdition/EventDialog.vala:140
 msgid "Create Event"
 msgstr "Stvori događaj"
 
-#: src/EventEdition/EventDialog.vala:149
+#: src/EventEdition/EventDialog.vala:143
 msgid "Save Changes"
 msgstr "Spremi promjene"
 
-#: src/EventEdition/EventDialog.vala:152 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Cancel"
 msgstr "Odustani"
@@ -267,35 +233,35 @@ msgstr "Prihvaćen"
 msgid "Declined"
 msgstr "Odbijen"
 
-#: src/EventEdition/InfoPanel.vala:78
+#: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
 msgstr "Od:"
 
-#: src/EventEdition/InfoPanel.vala:84
+#: src/EventEdition/InfoPanel.vala:83
 msgid "All day:"
 msgstr "Cijeli dan:"
 
-#: src/EventEdition/InfoPanel.vala:89
+#: src/EventEdition/InfoPanel.vala:88
 msgid "To:"
 msgstr "Do:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:106
 msgid "Title:"
 msgstr "Naslov:"
 
-#: src/EventEdition/InfoPanel.vala:109
+#: src/EventEdition/InfoPanel.vala:108
 msgid "Name of Event"
 msgstr "Naziv događaja"
 
-#: src/EventEdition/InfoPanel.vala:119
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Press enter to parse event"
 msgstr "Pritisni Enter za obradu događaja"
 
-#: src/EventEdition/InfoPanel.vala:134
+#: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
 msgstr "Kalendar:"
 
-#: src/EventEdition/InfoPanel.vala:141
+#: src/EventEdition/InfoPanel.vala:140
 msgid "Comments:"
 msgstr "Komentari:"
 
@@ -668,15 +634,6 @@ msgstr "Sub"
 msgid "Sun"
 msgstr "Ned"
 
-#: src/Grid/EventButton.vala:70
-#, fuzzy
-msgid "Remove Event"
-msgstr "Obriši događaj"
-
-#: src/Grid/EventButton.vala:71
-msgid "Remove Occurrence"
-msgstr ""
-
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
 msgstr "Sakrij brojeve tjedna"
@@ -710,33 +667,43 @@ msgstr "Vrsta:"
 msgid "Color:"
 msgstr "Boja:"
 
-#: src/SourceDialog/SourceDialog.vala:172
+#: src/SourceDialog/SourceDialog.vala:183
 msgid "Mark as default calendar"
 msgstr "Označi kao uobičajeni kalendar"
 
-#: src/SourceDialog/SourceDialog.vala:243
+#: src/SourceDialog/SourceDialog.vala:247
 msgid "Create Calendar"
 msgstr "Stvori kalendar"
 
-#: src/SourceDialog/SourceDialog.vala:246
+#: src/SourceDialog/SourceDialog.vala:250
 #: src/Widgets/ContractorButtonWithMenu.vala:88
 msgid "Save"
 msgstr "Spremi"
 
-#: src/SourceDialog/SourceItem.vala:76
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
+#: src/Widgets/EventMenu.vala:49
+msgid "Remove"
+msgstr "Ukloni"
+
+#: src/SourceDialog/SourceItem.vala:75
 #, fuzzy
 msgid "Not Removable"
 msgstr "Ukloni"
 
-#: src/SourceDialog/SourceItem.vala:88
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
+#: src/Widgets/EventMenu.vala:36
+msgid "Edit…"
+msgstr "Uredi..."
+
+#: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
 msgstr ""
 
-#: src/SourceDialog/SourceItem.vala:112
+#: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "Poništi"
 
-#: src/SourceDialog/SourceItem.vala:118 src/SourceDialog/SourceItem.vala:185
+#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Kalendar \"%s\" uklonjen."
@@ -744,6 +711,26 @@ msgstr "Kalendar \"%s\" uklonjen."
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "Dodaj novi kalendar..."
+
+#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#, c-format
+msgid "%s – %s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:187
+#, fuzzy, c-format
+msgid "%s, %s – %s, %s"
+msgstr "%s, %s - %s, %s"
+
+#: src/Widgets/AgendaEventRow.vala:199
+#, c-format
+msgid "%s"
+msgstr ""
+
+#: src/Widgets/AgendaEventRow.vala:201
+#, fuzzy, c-format
+msgid "%s, %s – %s"
+msgstr "%s, %s - %s, %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -754,6 +741,15 @@ msgstr "Izvezi kalendar..."
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#: src/Widgets/EventMenu.vala:41
+#, fuzzy
+msgid "Remove Event"
+msgstr "Obriši događaj"
+
+#: src/Widgets/EventMenu.vala:43
+msgid "Remove Occurrence"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
@@ -770,6 +766,10 @@ msgstr "Upravljanje kalendarima"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Izvezi ili dijeli zadani kalendar"
+
+#, fuzzy
+#~ msgid "%s - %s"
+#~ msgstr "%s, %s - %s, %s"
 
 #~ msgid "Import events from \"%s\" into the following calendar:"
 #~ msgstr "Uvezi događaje iz \"%s\" u sljedeći kalendar:"

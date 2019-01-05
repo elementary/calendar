@@ -1,9 +1,7 @@
 config_data = configuration_data()
 config_data.set('APP_NAME', 'Calendar')
 config_data.set('EXEC_NAME', meson.project_name())
-config_data.set('GETTEXT_PACKAGE', meson.project_name())
 config_data.set('PLUGIN_DIR', pluginsdir)
-config_data.set('VERSION', meson.project_version())
 
 config_file = configure_file(
     configuration: config_data,
@@ -27,6 +25,7 @@ core_files = files(
 
 core_deps = [
     glib_dep,
+    gee_dep,
     granite_dep,
     gtk_dep,
     libecal_dep,

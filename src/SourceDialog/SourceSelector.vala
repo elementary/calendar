@@ -42,8 +42,8 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
         scroll = new Gtk.ScrolledWindow (null, null);
         scroll.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        scroll.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
-        scroll.expand = true;
+        scroll.max_content_height = 300;
+        scroll.propagate_natural_height = true;
         scroll.add (calendar_box);
 
         src_map = new GLib.HashTable<string, SourceItem?>(str_hash, str_equal);
@@ -101,7 +101,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
             }
         }
 
-        var header = new SourceItemHeader (row_location);
+        var header = new Granite.HeaderLabel (row_location);
         row.set_header (header);
         header.show_all ();
     }

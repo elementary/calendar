@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+/*
+ * Copyright 2011-2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,17 +25,20 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
 
     public ReminderPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
+
         expand = true;
+        margin_start = margin_end = 12;
         orientation = Gtk.Orientation.VERTICAL;
         sensitive = parent_dialog.can_edit;
 
-        var reminder_label = Maya.View.EventDialog.make_label (_("Reminders:"));
-        reminder_label.margin_start = 12;
+        var reminder_label = new Granite.HeaderLabel (_("Reminders:"));
 
-        var no_reminder_label = new Gtk.Label ("");
-        no_reminder_label.set_markup (_("No Reminders"));
-        no_reminder_label.sensitive = false;
+        var no_reminder_label = new Gtk.Label (_("No Reminders"));
         no_reminder_label.show ();
+
+        var no_reminder_label_context = no_reminder_label.get_style_context ();
+        no_reminder_label_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
+        no_reminder_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         reminders = new Gee.ArrayList<ReminderGrid> ();
         reminders_to_remove = new Gee.ArrayList<string> ();
@@ -46,52 +48,45 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         reminder_list.set_selection_mode (Gtk.SelectionMode.NONE);
         reminder_list.set_placeholder (no_reminder_label);
 
-        var fake_grid_left = new Gtk.Grid ();
-        fake_grid_left.hexpand = true;
-        var fake_grid_right = new Gtk.Grid ();
-        fake_grid_right.hexpand = true;
-
         var scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.add (reminder_list);
         scrolled.expand = true;
 
         var frame = new Gtk.Frame (null);
         frame.margin_top = 6;
-        frame.margin_start = 12;
-        frame.margin_end = 12;
         frame.add (scrolled);
-
-        var inline_toolbar = new Gtk.Toolbar ();
-        inline_toolbar.margin_start = 12;
-        inline_toolbar.margin_end = 12;
-        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-        inline_toolbar.icon_size = Gtk.IconSize.SMALL_TOOLBAR;
 
         var add_button = new Gtk.ToolButton (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON), null);
         add_button.tooltip_text = _("Add Reminder");
-        add_button.clicked.connect (() => {
-            add_reminder ("");
-        });
 
+        var inline_toolbar = new Gtk.Toolbar ();
+        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        inline_toolbar.icon_size = Gtk.IconSize.SMALL_TOOLBAR;
         inline_toolbar.add (add_button);
 
         add (reminder_label);
         add (frame);
         add (inline_toolbar);
         load ();
+
+        add_button.clicked.connect (() => {
+            add_reminder ("");
+        });
     }
 
     private ReminderGrid add_reminder (string uid) {
         var reminder = new ReminderGrid (uid);
-        var row = new Gtk.ListBoxRow ();
-        reminder_list.add (reminder);
-        reminders.add (reminder);
         reminder.show_all ();
+
+        reminder_list.add (reminder);
+
+        reminders.add (reminder);
+
         reminder.removed.connect (() => {
             reminders.remove (reminder);
             reminders_to_remove.add (reminder.uid);
         });
-        row.show_all ();
+
         return reminder;
     }
 
@@ -158,56 +153,53 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
 
     private bool is_human_change = true;
 
-    Gtk.Label label;
-    Gtk.ComboBoxText time;
+    private Gtk.ComboBoxText time;
 
     public ReminderGrid (string uid) {
         this.uid = uid;
 
-        set_margin_top (6);
-        set_margin_start (6);
-        set_margin_end (6);
-
         time = new Gtk.ComboBoxText ();
-        time.append_text (_("0 minutes"));
-        time.append_text (_("1 minute"));
-        time.append_text (_("5 minutes"));
-        time.append_text (_("10 minutes"));
-        time.append_text (_("15 minutes"));
-        time.append_text (_("20 minutes"));
-        time.append_text (_("25 minutes"));
-        time.append_text (_("30 minutes"));
-        time.append_text (_("45 minutes"));
-        time.append_text (_("1 hour"));
-        time.append_text (_("2 hours"));
-        time.append_text (_("3 hours"));
-        time.append_text (_("12 hours"));
-        time.append_text (_("24 hours"));
-        time.append_text (_("2 days"));
-        time.append_text (_("1 week"));
+        time.hexpand = true;
+        time.append_text (_("At time of event"));
+        time.append_text (_("1 minute before"));
+        time.append_text (_("5 minutes before"));
+        time.append_text (_("10 minutes before"));
+        time.append_text (_("15 minutes before"));
+        time.append_text (_("20 minutes before"));
+        time.append_text (_("25 minutes before"));
+        time.append_text (_("30 minutes before"));
+        time.append_text (_("45 minutes before"));
+        time.append_text (_("1 hour before"));
+        time.append_text (_("2 hours before"));
+        time.append_text (_("3 hours before"));
+        time.append_text (_("12 hours before"));
+        time.append_text (_("24 hours before"));
+        time.append_text (_("2 days before"));
+        time.append_text (_("1 week before"));
         time.active = 3;
+
         time.changed.connect (() => {
             if (is_human_change == true) {
                 change = true;
             }
         });
 
-        label = new Gtk.Label (_("Notification"));
-        label.hexpand = true;
-        label.halign = Gtk.Align.START;
-
         var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);
         remove_button.relief = Gtk.ReliefStyle.NONE;
-        remove_button.clicked.connect (() => {removed (); hide (); destroy ();});
+        remove_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         var grid = new Gtk.Grid ();
-        grid.row_spacing = 6;
-        grid.column_spacing = 12;
+        grid.margin = 6;
+        grid.column_spacing = 6;
         grid.attach (time, 0, 0, 1, 1);
-        grid.attach (label, 1, 0, 1, 1);
         grid.attach (remove_button, 2, 0, 1, 1);
 
         add (grid);
+
+        remove_button.clicked.connect (() => {
+            removed ();
+            destroy ();
+        });
     }
 
     public void set_duration (iCal.DurationType duration) {

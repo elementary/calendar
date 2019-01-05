@@ -25,13 +25,11 @@ const string EVENT_CSS = """
 
 public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     public signal void removed (E.CalComponent event);
-    public signal void modified (E.CalComponent event);
 
     public E.CalComponent calevent { get; construct; }
     public E.Source source { get; construct; }
     public bool is_upcoming { get; construct; }
 
-    public string uid { public get; private set; }
     public string summary { public get; private set; }
     public bool is_allday { public get; private set; default = false; }
     public bool is_multiday { public get; private set; default = false; }
@@ -40,6 +38,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     private Gtk.Label name_label;
     private Gtk.Label datatime_label;
     private Gtk.Label location_label;
+    private Gtk.StyleContext event_image_context;
     private Gtk.StyleContext main_grid_context;
 
     public AgendaEventRow (E.Source source, E.CalComponent calevent, bool is_upcoming) {
@@ -51,19 +50,17 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     }
 
     construct {
-        unowned iCal.Component ical_event = calevent.get_icalcomponent ();
-        uid = ical_event.get_uid ();
-
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
-
-        E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
         var event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
         event_image.valign = Gtk.Align.START;
 
+        event_image_context = event_image.get_style_context ();
+        event_image_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
         name_label = new Gtk.Label ("");
-        name_label.hexpand = true;
+        name_label.selectable = true;
         name_label.wrap = true;
         name_label.wrap_mode = Pango.WrapMode.WORD_CHAR;
         name_label.xalign = 0;
@@ -74,24 +71,29 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         datatime_label = new Gtk.Label ("");
         datatime_label.ellipsize = Pango.EllipsizeMode.END;
+        datatime_label.halign = Gtk.Align.START;
+        datatime_label.selectable = true;
         datatime_label.use_markup = true;
         datatime_label.xalign = 0;
         datatime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         location_label = new Gtk.Label ("");
-        location_label.no_show_all = true;
+        location_label.margin_top = 6;
+        location_label.selectable = true;
         location_label.wrap = true;
         location_label.xalign = 0;
 
+        var location_revealer = new Gtk.Revealer ();
+        location_revealer.add (location_label);
+
         var main_grid = new Gtk.Grid ();
         main_grid.column_spacing = 6;
-        main_grid.row_spacing = 6;
         main_grid.margin = 6;
         main_grid.margin_start = main_grid.margin_end = 12;
         main_grid.attach (event_image, 0, 0, 1, 1);
         main_grid.attach (name_label, 1, 0, 1, 1);
         main_grid.attach (datatime_label, 1, 1, 1, 1);
-        main_grid.attach (location_label, 1, 2, 1, 1);
+        main_grid.attach (location_revealer, 1, 2);
 
         main_grid_context = main_grid.get_style_context ();
         main_grid_context.add_class ("event");
@@ -105,10 +107,16 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         revealer.add (event_box);
         add (revealer);
 
+        var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+
         reload_css (cal.dup_color ());
 
         cal.notify["color"].connect (() => {
             reload_css (cal.dup_color ());
+        });
+
+        location_label.notify["label"].connect (() => {
+            location_revealer.reveal_child = location_label.label != null && location_label.label != "";
         });
 
         show.connect (() => {
@@ -127,30 +135,16 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     }
 
     private bool on_button_press (Gdk.EventButton event) {
-        if (event.type == Gdk.EventType.@2BUTTON_PRESS) {
-             modified (calevent);
-        } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-            Gtk.Menu menu = new Gtk.Menu ();
+        if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
+            var start_date = Util.ical_to_date_time (calevent.get_icalcomponent ().get_dtstart ());
+
+            var menu = new Maya.EventMenu (calevent, start_date);
             menu.attach_to_widget (this, null);
-            var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
-            var remove_item = new Gtk.MenuItem.with_label (_("Remove"));
-            edit_item.activate.connect (() => { modified (calevent); });
-            remove_item.activate.connect (() => { removed (calevent); });
-
-            E.Source src = calevent.get_data ("source");
-            if (src.writable != true && Model.CalendarModel.get_default ().calclient_is_readonly (src) != false) {
-                edit_item.sensitive = false;
-                remove_item.sensitive = false;
-            }
-
-            menu.append (edit_item);
-            menu.append (remove_item);
-
             menu.popup_at_pointer (event);
             menu.show_all ();
         }
 
-        return true;
+        return Gdk.EVENT_PROPAGATE;
     }
 
     /**
@@ -177,8 +171,10 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         datatime_label.no_show_all = false;
         if (is_multiday) {
             if (is_allday) {
-                datetime_string = _("%s – %s").printf (start_date_string, end_date_string);
+                // TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+                datetime_string = C_("date-range", "%s – %s").printf (start_date_string, end_date_string);
             } else {
+                // TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
                 datetime_string = _("%s, %s – %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
             }
         } else {
@@ -187,27 +183,21 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                     datatime_label.hide ();
                     datatime_label.no_show_all = true;
                 } else {
-                    datetime_string = _("%s – %s").printf (start_time_string, end_time_string);
+                    // TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+                    datetime_string = C_("time-range", "%s – %s").printf (start_time_string, end_time_string);
                 }
             } else {
                 if (is_allday) {
-                    datetime_string = _("%s").printf (start_date_string);
+                    datetime_string = "%s".printf (start_date_string);
                 } else {
+                    // TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
                     datetime_string = _("%s, %s – %s").printf (start_date_string, start_time_string, end_time_string);
                 }
             }
         }
 
         datatime_label.label = "<small>%s</small>".printf (datetime_string);
-
-        string location = ical_event.get_location ();
-        if (location != null && location != "") {
-            location_label.label = location;
-            location_label.show ();
-        } else {
-            location_label.hide ();
-            location_label.no_show_all = true;
-        }
+        location_label.label = ical_event.get_location ();
     }
 
     private void reload_css (string background_color) {
@@ -216,6 +206,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             var colored_css = EVENT_CSS.printf (background_color);
             provider.load_from_data (colored_css, colored_css.length);
 
+            event_image_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             main_grid_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (GLib.Error e) {
             critical (e.message);
