@@ -112,6 +112,13 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
             }
         });
 
+        list_box.move_cursor.connect ((mvmt, count) => {
+            var row = list_box.get_selected_row ().get_index ();
+            if (row == 0 && count == -1) {
+                search_entry.grab_focus ();
+            }
+        });
+
         list_box.row_activated.connect ((row) => {
             current_source = ((CalendarGrid)row.get_child ()).source;
             popover.popdown ();
