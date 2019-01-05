@@ -87,6 +87,8 @@ namespace Maya {
 
                 init_gui ();
                 window.show_all ();
+            } else {
+                get_windows ().data.present (); // present window if app is already running
             }
 
             var dialog = new Maya.View.ImportDialog (files);
