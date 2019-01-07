@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
+"POT-Creation-Date: 2019-01-07 11:24-0800\n"
 "PO-Revision-Date: 2015-06-15 11:49+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,17 +43,13 @@ msgid "%B %e, %Y"
 msgstr ""
 
 #: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
+msgid "%a, %b %d"
 msgstr ""
 
 #: daemon/Daemon.vala:21
 #, fuzzy
 msgid "Print debug information"
 msgstr "Општи информации"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -79,7 +75,7 @@ msgstr ""
 msgid "Server handles meeting invitations"
 msgstr ""
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -87,32 +83,32 @@ msgstr ""
 "Настаните кои следат ќе бидат прикажани овде кога ќе изберете дата со "
 "настани."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "Преку ден"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "Цел ден"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr ""
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr ""
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 #, fuzzy
 msgid "This Month"
 msgstr "Месеци"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 #, fuzzy
 msgid "Next Month"
 msgstr "Месеци"
@@ -130,7 +126,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:148
+#: src/Application.vala:138
 msgid "Calendar"
 msgstr "Календар"
 
@@ -202,6 +198,18 @@ msgstr "Зачувај ги промените"
 msgid "Cancel"
 msgstr "Откажи"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "Прифатено"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "Одбиено"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr ""
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Учесници:"
@@ -213,14 +221,6 @@ msgstr "Нема учесници"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "Покани"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "Прифатено"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "Одбиено"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -262,86 +262,97 @@ msgstr "Локација:"
 msgid "John Smith OR Example St."
 msgstr "Александар Стојановски ИЛИ Илинденска бр.2"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "Потсетници."
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "Без потсетници"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "Додај потсетник"
 
+#: src/EventEdition/ReminderPanel.vala:163
+#, fuzzy
+msgid "At time of event"
+msgstr "Име на настан"
+
+#: src/EventEdition/ReminderPanel.vala:164
+#, fuzzy
+msgid "1 minute before"
+msgstr "1 минута"
+
+#: src/EventEdition/ReminderPanel.vala:165
+#, fuzzy
+msgid "5 minutes before"
+msgstr "5 минути"
+
+#: src/EventEdition/ReminderPanel.vala:166
+#, fuzzy
+msgid "10 minutes before"
+msgstr "10 минути"
+
+#: src/EventEdition/ReminderPanel.vala:167
+#, fuzzy
+msgid "15 minutes before"
+msgstr "15 минути"
+
+#: src/EventEdition/ReminderPanel.vala:168
+#, fuzzy
+msgid "20 minutes before"
+msgstr "20 минути"
+
+#: src/EventEdition/ReminderPanel.vala:169
+#, fuzzy
+msgid "25 minutes before"
+msgstr "25 минути"
+
+#: src/EventEdition/ReminderPanel.vala:170
+#, fuzzy
+msgid "30 minutes before"
+msgstr "30 минути"
+
+#: src/EventEdition/ReminderPanel.vala:171
+#, fuzzy
+msgid "45 minutes before"
+msgstr "45 минути"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 минути"
+#, fuzzy
+msgid "1 hour before"
+msgstr "1 час"
 
 #: src/EventEdition/ReminderPanel.vala:173
 #, fuzzy
-msgid "1 minute"
-msgstr "1 минута"
-
-#: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "5 минути"
-
-#: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "10 минути"
-
-#: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "15 минути"
-
-#: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "20 минути"
-
-#: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "25 минути"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "30 минути"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "45 минути"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "1 час"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
+msgid "2 hours before"
 msgstr "2 часа"
 
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
+#: src/EventEdition/ReminderPanel.vala:174
+#, fuzzy
+msgid "3 hours before"
 msgstr "3 часа"
 
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
+#: src/EventEdition/ReminderPanel.vala:175
+#, fuzzy
+msgid "12 hours before"
 msgstr "12 часа"
 
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
+#: src/EventEdition/ReminderPanel.vala:176
+#, fuzzy
+msgid "24 hours before"
 msgstr "24 часа"
 
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
+#: src/EventEdition/ReminderPanel.vala:177
+#, fuzzy
+msgid "2 days before"
 msgstr "2 дена"
 
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
+#: src/EventEdition/ReminderPanel.vala:178
+#, fuzzy
+msgid "1 week before"
 msgstr "1 недела (седмица)"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "Известување"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -665,8 +676,7 @@ msgstr "Создади календар"
 msgid "Save"
 msgstr "Зачувај"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "Отстрани"
 
@@ -675,8 +685,7 @@ msgstr "Отстрани"
 msgid "Not Removable"
 msgstr "Отстрани"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "Измени..."
 
@@ -697,24 +706,43 @@ msgstr "Календарот \"%s\" беше отстранет."
 msgid "Add New Calendar…"
 msgstr "Додади нов календар..."
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
 #, c-format
+msgctxt "date-range"
 msgid "%s – %s"
 msgstr ""
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr ""
 
-#: src/Widgets/AgendaEventRow.vala:199
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
 #, c-format
-msgid "%s"
+msgctxt "time-range"
+msgid "%s – %s"
 msgstr ""
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, c-format
 msgid "%s, %s – %s"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:72
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Создади календар"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
 msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
@@ -751,6 +779,12 @@ msgstr ""
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr ""
+
+#~ msgid "0 minutes"
+#~ msgstr "0 минути"
+
+#~ msgid "Notification"
+#~ msgstr "Известување"
 
 #~ msgid "Email"
 #~ msgstr "Е-маил"

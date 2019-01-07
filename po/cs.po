@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
+"POT-Creation-Date: 2019-01-07 11:24-0800\n"
 "PO-Revision-Date: 2018-12-13 14:59+0000\n"
 "Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/calendar/"
@@ -49,16 +49,13 @@ msgid "%B %e, %Y"
 msgstr "%e. %B %Y"
 
 #: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
+#, fuzzy
+msgid "%a, %b %d"
 msgstr "%A, %d. %B"
 
 #: daemon/Daemon.vala:21
 msgid "Print debug information"
 msgstr "Informace pro debugování tisku"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr "Vytisknout informace o verzi a ukončit"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -84,37 +81,37 @@ msgstr "Používat zabezpečené připojení"
 msgid "Server handles meeting invitations"
 msgstr "Server spravuje pozvánky na schůzky"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Zde se zobrazí nadcházející události, až vyberete datum s událostmi."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "Během dne"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "Celý den"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr "Zítra"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr "Tento týden"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr "Příští týden"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 msgid "This Month"
 msgstr "Tento měsíc"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 msgid "Next Month"
 msgstr "Příští měsíc"
 
@@ -130,7 +127,7 @@ msgstr "Zaměřit na daný den"
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:148
+#: src/Application.vala:138
 msgid "Calendar"
 msgstr "Kalendář"
 
@@ -204,6 +201,18 @@ msgstr "Uložit změny"
 msgid "Cancel"
 msgstr "Zrušit"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "Přijato"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "Odmítnuto"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr ""
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Účastníci:"
@@ -215,14 +224,6 @@ msgstr "Žádní účastníci"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "Pozvat"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "Přijato"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "Odmítnuto"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -264,85 +265,97 @@ msgstr "Místo:"
 msgid "John Smith OR Example St."
 msgstr "Jan Novák NEBO Severní ul."
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "Upozornění:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "Žádná upozornění"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "Přídat upozornění"
 
-#: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 minut"
+#: src/EventEdition/ReminderPanel.vala:163
+#, fuzzy
+msgid "At time of event"
+msgstr "Název události"
 
-#: src/EventEdition/ReminderPanel.vala:173
-msgid "1 minute"
+#: src/EventEdition/ReminderPanel.vala:164
+#, fuzzy
+msgid "1 minute before"
 msgstr "1 minuta"
 
-#: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
+#: src/EventEdition/ReminderPanel.vala:165
+#, fuzzy
+msgid "5 minutes before"
 msgstr "5 minut"
 
-#: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
+#: src/EventEdition/ReminderPanel.vala:166
+#, fuzzy
+msgid "10 minutes before"
 msgstr "10 minut"
 
-#: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
+#: src/EventEdition/ReminderPanel.vala:167
+#, fuzzy
+msgid "15 minutes before"
 msgstr "15 minut"
 
-#: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
+#: src/EventEdition/ReminderPanel.vala:168
+#, fuzzy
+msgid "20 minutes before"
 msgstr "20 minut"
 
-#: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
+#: src/EventEdition/ReminderPanel.vala:169
+#, fuzzy
+msgid "25 minutes before"
 msgstr "25 minut"
 
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
+#: src/EventEdition/ReminderPanel.vala:170
+#, fuzzy
+msgid "30 minutes before"
 msgstr "30 minut"
 
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
+#: src/EventEdition/ReminderPanel.vala:171
+#, fuzzy
+msgid "45 minutes before"
 msgstr "45 minut"
 
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
+#: src/EventEdition/ReminderPanel.vala:172
+#, fuzzy
+msgid "1 hour before"
 msgstr "1 hodina"
 
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
+#: src/EventEdition/ReminderPanel.vala:173
+#, fuzzy
+msgid "2 hours before"
 msgstr "2 hodiny"
 
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
+#: src/EventEdition/ReminderPanel.vala:174
+#, fuzzy
+msgid "3 hours before"
 msgstr "3 hodiny"
 
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
+#: src/EventEdition/ReminderPanel.vala:175
+#, fuzzy
+msgid "12 hours before"
 msgstr "12  hodin"
 
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
+#: src/EventEdition/ReminderPanel.vala:176
+#, fuzzy
+msgid "24 hours before"
 msgstr "24 hodin"
 
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
+#: src/EventEdition/ReminderPanel.vala:177
+#, fuzzy
+msgid "2 days before"
 msgstr "2 dny"
 
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
+#: src/EventEdition/ReminderPanel.vala:178
+#, fuzzy
+msgid "1 week before"
 msgstr "1 týden"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "Oznámení"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -670,8 +683,7 @@ msgstr "Vytvořit kalendář"
 msgid "Save"
 msgstr "Uložit"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "Odstranit"
 
@@ -679,8 +691,7 @@ msgstr "Odstranit"
 msgid "Not Removable"
 msgstr "Neodstranitelné"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "Upravit…"
 
@@ -701,25 +712,44 @@ msgstr "\"%s\" odstraněno"
 msgid "Add New Calendar…"
 msgstr "Přidat Nový kalendář…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
-#, c-format
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
+#, fuzzy, c-format
+msgctxt "date-range"
 msgid "%s – %s"
-msgstr ""
+msgstr "%s, %s - %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, fuzzy, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
-#, c-format
-msgid "%s"
-msgstr "%s"
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
+#, fuzzy, c-format
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s, %s - %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
+
+#: src/Widgets/CalendarButton.vala:72
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Vytvořit kalendář"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -753,6 +783,18 @@ msgstr "Spravovat kalendáře"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Exportovat nebo sdílet výchozí kalendář"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Vytisknout informace o verzi a ukončit"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 minut"
+
+#~ msgid "Notification"
+#~ msgstr "Oznámení"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Upcoming Events"
 #~ msgstr "Nadcházející události"
