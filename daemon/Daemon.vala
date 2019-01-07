@@ -19,13 +19,10 @@ namespace MayaDaemon {
     const OptionEntry[] options =  {
         { "debug", 'd', 0, OptionArg.NONE, out has_debug,
         N_("Print debug information"), null},
-        { "version", 0, 0, OptionArg.NONE, out has_version,
-        N_("Print version info and exit"), null},
         { null }
     };
     private static MainLoop mainloop;
     private static bool has_debug;
-    private static bool has_version;
     private Gee.HashMap<E.CalComponent, string> event_uid;
 
     private static void on_exit (int signum) {
@@ -45,12 +42,6 @@ namespace MayaDaemon {
             context.parse (ref args);
         } catch (OptionError e) {
             error (e.message);
-        }
-
-        if (has_version) {
-            message ("%s (Daemon)", Build.APP_NAME);
-            message ("%s", Build.VERSION);
-            return 0;
         }
 
         Granite.Services.Logger.initialize (Build.APP_NAME);
