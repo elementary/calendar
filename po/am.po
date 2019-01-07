@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
+"POT-Creation-Date: 2019-01-07 11:24-0800\n"
 "PO-Revision-Date: 2015-02-01 18:11+0000\n"
 "Last-Translator: samson <Unknown>\n"
 "Language-Team: Amharic <am@li.org>\n"
@@ -48,17 +48,14 @@ msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
 #: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
+#, fuzzy
+msgid "%a, %b %d"
 msgstr "%A, %b %d"
 
 #: daemon/Daemon.vala:21
 #, fuzzy
 msgid "Print debug information"
 msgstr "ባጠቃላይ መረጃዎች"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -84,38 +81,38 @@ msgstr "ታማኝ ግንኙነቶች መጠቀሚያ"
 msgid "Server handles meeting invitations"
 msgstr "ሰርቨሩ የስብሰባ ግብዣዎችን ይይዛል"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "የእርስዎ ወደ ፊት የሚመጡ ሁኔታዎች የሚታዩት እዚህ ነው ቀን እና ሁኔታዎች ሲመርጡ"
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "በ ቀኑ ውስጥ"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "ሙሉ ቀን"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr ""
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr ""
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 #, fuzzy
 msgid "This Month"
 msgstr "ወሮች"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 #, fuzzy
 msgid "Next Month"
 msgstr "ወሮች"
@@ -133,7 +130,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:148
+#: src/Application.vala:138
 msgid "Calendar"
 msgstr "ቀን መቁጠሪያ"
 
@@ -206,6 +203,18 @@ msgstr "ለውጦቹን ማስቀመጫ"
 msgid "Cancel"
 msgstr "መሰረዣ"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "ተቀብያለሁ"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "አልቀበልም"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr ""
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "ተሳታፊዎች:"
@@ -217,14 +226,6 @@ msgstr "ተሳታፊ የለም"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "መጋበዣ"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "ተቀብያለሁ"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "አልቀበልም"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -266,86 +267,97 @@ msgstr "አካባቢ:"
 msgid "John Smith OR Example St."
 msgstr "ሙሉ ስም ወይንም ለምሳሌ አድራሻ"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "አስታዋሾች:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "አስታዋሽ የለም"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "አስታዋሽ መጨመሪያ"
 
+#: src/EventEdition/ReminderPanel.vala:163
+#, fuzzy
+msgid "At time of event"
+msgstr "የሁኔታዎች ስም"
+
+#: src/EventEdition/ReminderPanel.vala:164
+#, fuzzy
+msgid "1 minute before"
+msgstr "በ 1 ደቂቆች ውስጥ"
+
+#: src/EventEdition/ReminderPanel.vala:165
+#, fuzzy
+msgid "5 minutes before"
+msgstr "በ 5 ደቂቆች ውስጥ"
+
+#: src/EventEdition/ReminderPanel.vala:166
+#, fuzzy
+msgid "10 minutes before"
+msgstr "በ 10 ደቂቆች ውስጥ"
+
+#: src/EventEdition/ReminderPanel.vala:167
+#, fuzzy
+msgid "15 minutes before"
+msgstr "በ 15 ደቂቆች ውስጥ"
+
+#: src/EventEdition/ReminderPanel.vala:168
+#, fuzzy
+msgid "20 minutes before"
+msgstr "በ 20 ደቂቆች ውስጥ"
+
+#: src/EventEdition/ReminderPanel.vala:169
+#, fuzzy
+msgid "25 minutes before"
+msgstr "በ 25 ደቂቆች ውስጥ"
+
+#: src/EventEdition/ReminderPanel.vala:170
+#, fuzzy
+msgid "30 minutes before"
+msgstr "በ 30 ደቂቆች ውስጥ"
+
+#: src/EventEdition/ReminderPanel.vala:171
+#, fuzzy
+msgid "45 minutes before"
+msgstr "በ 45 ደቂቆች ውስጥ"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "በ 0 ደቂቆች ውስጥ"
+#, fuzzy
+msgid "1 hour before"
+msgstr "በ 1 ሰአት ውስጥ"
 
 #: src/EventEdition/ReminderPanel.vala:173
 #, fuzzy
-msgid "1 minute"
-msgstr "በ 1 ደቂቆች ውስጥ"
-
-#: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "በ 5 ደቂቆች ውስጥ"
-
-#: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "በ 10 ደቂቆች ውስጥ"
-
-#: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "በ 15 ደቂቆች ውስጥ"
-
-#: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "በ 20 ደቂቆች ውስጥ"
-
-#: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "በ 25 ደቂቆች ውስጥ"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "በ 30 ደቂቆች ውስጥ"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "በ 45 ደቂቆች ውስጥ"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "በ 1 ሰአት ውስጥ"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
+msgid "2 hours before"
 msgstr "በ 2 ሰአት ውስጥ"
 
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
+#: src/EventEdition/ReminderPanel.vala:174
+#, fuzzy
+msgid "3 hours before"
 msgstr "በ 3 ሰአት ውስጥ"
 
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
+#: src/EventEdition/ReminderPanel.vala:175
+#, fuzzy
+msgid "12 hours before"
 msgstr "በ 12 ሰአት ውስጥ"
 
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
+#: src/EventEdition/ReminderPanel.vala:176
+#, fuzzy
+msgid "24 hours before"
 msgstr "በ 24 ሰአት ውስጥ"
 
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
+#: src/EventEdition/ReminderPanel.vala:177
+#, fuzzy
+msgid "2 days before"
 msgstr "በ 2 ቀኖች ውስጥ"
 
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
+#: src/EventEdition/ReminderPanel.vala:178
+#, fuzzy
+msgid "1 week before"
 msgstr "በ 1 ሳምንት ውስጥ"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "ማስታወቂያ"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -669,8 +681,7 @@ msgstr "የ ቀን መቁጠሪያ መፍጠሪያ"
 msgid "Save"
 msgstr "ማስቀመጫ"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "ማስወገጃ"
 
@@ -679,8 +690,7 @@ msgstr "ማስወገጃ"
 msgid "Not Removable"
 msgstr "ማስወገጃ"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "ማረሚያ…"
 
@@ -701,25 +711,44 @@ msgstr "ቀን መቁጠሪያው \"%s\" ተወግዷል"
 msgid "Add New Calendar…"
 msgstr "አዲስ ቀን መቁጠሪያ መጨመሪያ…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
-#, c-format
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
+#, fuzzy, c-format
+msgctxt "date-range"
 msgid "%s – %s"
-msgstr ""
+msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, fuzzy, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
-#, c-format
-msgid "%s"
-msgstr ""
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
+#, fuzzy, c-format
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
+
+#: src/Widgets/CalendarButton.vala:72
+#, fuzzy
+msgid "Search Calendars"
+msgstr "የ ቀን መቁጠሪያ መፍጠሪያ"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -755,6 +784,12 @@ msgstr "ቀን መቁጠሪያ አስተዳዳሪ"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "ነባር ቀን መቁጠሪያውን መላኪያ ወይንም መካፈያ"
+
+#~ msgid "0 minutes"
+#~ msgstr "በ 0 ደቂቆች ውስጥ"
+
+#~ msgid "Notification"
+#~ msgstr "ማስታወቂያ"
 
 #, fuzzy
 #~ msgid "%s - %s"
