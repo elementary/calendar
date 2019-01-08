@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 11:24-0800\n"
-"PO-Revision-Date: 2018-12-18 10:20+0000\n"
+"PO-Revision-Date: 2019-01-08 11:17+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
 "projects/calendar/calendar/en_GB/>\n"
@@ -49,9 +49,8 @@ msgid "%B %e, %Y"
 msgstr "%-d %B, %Y"
 
 #: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
 msgid "%a, %b %d"
-msgstr "%A, %d %b"
+msgstr "%a, %b %d"
 
 #: daemon/Daemon.vala:21
 msgid "Print debug information"
@@ -211,7 +210,7 @@ msgstr "Declined"
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr ""
+msgstr "Maybe"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -278,84 +277,68 @@ msgid "Add Reminder"
 msgstr "Add Reminder"
 
 #: src/EventEdition/ReminderPanel.vala:163
-#, fuzzy
 msgid "At time of event"
-msgstr "Name of Event"
+msgstr "At time of event"
 
 #: src/EventEdition/ReminderPanel.vala:164
-#, fuzzy
 msgid "1 minute before"
-msgstr "1 minute"
+msgstr "1 minute before"
 
 #: src/EventEdition/ReminderPanel.vala:165
-#, fuzzy
 msgid "5 minutes before"
-msgstr "5 minutes"
+msgstr "5 minutes before"
 
 #: src/EventEdition/ReminderPanel.vala:166
-#, fuzzy
 msgid "10 minutes before"
-msgstr "10 minutes"
+msgstr "10 minutes before"
 
 #: src/EventEdition/ReminderPanel.vala:167
-#, fuzzy
 msgid "15 minutes before"
-msgstr "15 minutes"
+msgstr "15 minutes before"
 
 #: src/EventEdition/ReminderPanel.vala:168
-#, fuzzy
 msgid "20 minutes before"
-msgstr "20 minutes"
+msgstr "20 minutes before"
 
 #: src/EventEdition/ReminderPanel.vala:169
-#, fuzzy
 msgid "25 minutes before"
-msgstr "25 minutes"
+msgstr "25 minutes before"
 
 #: src/EventEdition/ReminderPanel.vala:170
-#, fuzzy
 msgid "30 minutes before"
-msgstr "30 minutes"
+msgstr "30 minutes before"
 
 #: src/EventEdition/ReminderPanel.vala:171
-#, fuzzy
 msgid "45 minutes before"
-msgstr "45 minutes"
+msgstr "45 minutes before"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "1 hour before"
-msgstr "1 hour"
+msgstr "1 hour before"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "2 hours before"
-msgstr "2 hours"
+msgstr "2 hours before"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "3 hours before"
-msgstr "3 hours"
+msgstr "3 hours before"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "12 hours before"
-msgstr "12 hours"
+msgstr "12 hours before"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "24 hours before"
-msgstr "24 hours"
+msgstr "24 hours before"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "2 days before"
-msgstr "2 days"
+msgstr "2 days before"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "1 week before"
-msgstr "1 week"
+msgstr "1 week before"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -710,7 +693,7 @@ msgstr "Add New Calendar…"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:175
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
@@ -723,7 +706,7 @@ msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
@@ -735,17 +718,16 @@ msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarButton.vala:72
-#, fuzzy
 msgid "Search Calendars"
-msgstr "Create Calendar"
+msgstr "Search Calendars"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr ""
+msgstr "No Results"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr ""
+msgstr "Try changing search terms."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
