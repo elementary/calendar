@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 11:24-0800\n"
-"PO-Revision-Date: 2018-12-18 10:35+0000\n"
-"Last-Translator: Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>\n"
+"PO-Revision-Date: 2019-01-08 16:56+0000\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/calendar/"
 "calendar/pt/>\n"
 "Language: pt\n"
@@ -49,9 +49,8 @@ msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
 #: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
 msgid "%a, %b %d"
-msgstr "%A, %b %d"
+msgstr "%a, %b %d"
 
 #: daemon/Daemon.vala:21
 msgid "Print debug information"
