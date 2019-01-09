@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 11:24-0800\n"
-"PO-Revision-Date: 2019-01-01 00:33+0000\n"
+"PO-Revision-Date: 2019-01-09 22:01+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/calendar/"
 "calendar/pl/>\n"
@@ -214,7 +214,7 @@ msgstr "Odrzucony"
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr ""
+msgstr "Być może"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -748,11 +748,11 @@ msgstr "Utwórz kalendarz"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr ""
+msgstr "Brak wyników"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr ""
+msgstr "Spróbuj zmienić wyszukiwane słowa."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
