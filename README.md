@@ -19,7 +19,6 @@ You'll need the following dependencies:
 * libgranite-dev >= 5.2.0
 * libgtk-3-dev
 * libical-dev
-* libnotify-dev
 * meson
 * valac
 
