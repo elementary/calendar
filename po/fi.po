@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 11:24-0800\n"
-"PO-Revision-Date: 2018-12-25 00:06+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"PO-Revision-Date: 2019-01-09 00:02+0000\n"
+"Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/calendar/"
 "calendar/fi/>\n"
 "Language: fi\n"
@@ -143,7 +143,7 @@ msgid "Events from \"%s\" will be merged with this calendar:"
 msgstr "Tapahtumat kohteesta \"%s\" yhdistetään tähän kalenteriin:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Tuo tapahtumat %d tiedostosta seuraavaan kalenteriin:"
@@ -278,84 +278,68 @@ msgid "Add Reminder"
 msgstr "Lisää muistutus"
 
 #: src/EventEdition/ReminderPanel.vala:163
-#, fuzzy
 msgid "At time of event"
-msgstr "Tapahtuman nimi"
+msgstr "Tapahtumahetkellä"
 
 #: src/EventEdition/ReminderPanel.vala:164
-#, fuzzy
 msgid "1 minute before"
-msgstr "1 minuutti"
+msgstr "1 minuutti ennen"
 
 #: src/EventEdition/ReminderPanel.vala:165
-#, fuzzy
 msgid "5 minutes before"
-msgstr "5 minuuttia"
+msgstr "5 minuuttia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:166
-#, fuzzy
 msgid "10 minutes before"
-msgstr "10 minuuttia"
+msgstr "10 minuuttia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:167
-#, fuzzy
 msgid "15 minutes before"
-msgstr "15 minuuttia"
+msgstr "15 minuuttia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:168
-#, fuzzy
 msgid "20 minutes before"
-msgstr "20 minuuttia"
+msgstr "20 minuuttia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:169
-#, fuzzy
 msgid "25 minutes before"
-msgstr "25 minuuttia"
+msgstr "25 minuuttia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:170
-#, fuzzy
 msgid "30 minutes before"
-msgstr "30 minuuttia"
+msgstr "30 minuuttia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:171
-#, fuzzy
 msgid "45 minutes before"
-msgstr "45 minuuttia"
+msgstr "45 minuuttia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "1 hour before"
-msgstr "1 tunti"
+msgstr "1 tunti ennen"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "2 hours before"
-msgstr "2 tuntia"
+msgstr "2 tuntia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "3 hours before"
-msgstr "3 tuntia"
+msgstr "3 tuntia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "12 hours before"
-msgstr "12 tuntia"
+msgstr "12 tuntia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "24 hours before"
-msgstr "24 tuntia"
+msgstr "24 tuntia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "2 days before"
-msgstr "2 päivää"
+msgstr "2 päivää ennen"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "1 week before"
-msgstr "1 viikko"
+msgstr "1 viikko ennen"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -710,7 +694,7 @@ msgstr "Lisää uusi kalenteri…"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:175
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
@@ -723,7 +707,7 @@ msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
@@ -735,9 +719,8 @@ msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarButton.vala:72
-#, fuzzy
 msgid "Search Calendars"
-msgstr "Luo kalenteri"
+msgstr "Hae kalentereista"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
