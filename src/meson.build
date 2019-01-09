@@ -3,6 +3,7 @@ calendar_files = files(
     'AgendaView.vala',
     'Application.vala',
     'ImportDialog.vala',
+    'LanguagesFormat.vala',
     'MainWindow.vala',
     'EventEdition/ContactImage.vala',
     'EventEdition/EventDialog.vala',

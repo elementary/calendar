@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-01-08 14:50+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/calendar/"
@@ -44,15 +44,7 @@ msgstr "joan@algu.com"
 msgid "Keep a copy locally"
 msgstr "Conseva'n una còpia localment"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e de %B de %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%a, %b %d"
-msgstr "%A, %-d de %b"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Imprimeix la informació de depuració"
 
@@ -128,7 +120,7 @@ msgstr "Focalitza el dia"
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Calendari"
 
@@ -151,6 +143,14 @@ msgstr[1] "Els esdeveniments de %d fitxers es fusionaran amb aquest calendari:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Importa"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e de %B de %Y"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%A, %-d de %b"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

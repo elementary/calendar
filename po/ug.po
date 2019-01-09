@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2017-01-03 09:18+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: \n"
@@ -38,16 +38,7 @@ msgstr "john@doe.com غا ئوخشاش"
 msgid "Keep a copy locally"
 msgstr "كومپىيۇتىرىڭىزدا بىرنۇسخا ساقلىۋىلىڭ"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%Y-%B-%e"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%b-%d  %A"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 #, fuzzy
 msgid "Print debug information"
 msgstr "ئادەتتىكى ئۇچۇرلار"
@@ -129,7 +120,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "كالېندار"
 
@@ -151,6 +142,15 @@ msgstr[0] "ھۆججەت %d دىكى پائالىيەتلەرنى تۆۋەندى�
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "كىرگۈزۈش"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%Y-%B-%e"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%b-%d  %A"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2018-08-20 00:06+0000\n"
 "Last-Translator: Shukrullo <shukrullo@umail.uz>\n"
 "Language-Team: Uzbek <https://weblate.elementary.io/projects/calendar/"
@@ -40,17 +40,7 @@ msgstr "shukrullo@turgunov.com"
 msgid "Keep a copy locally"
 msgstr "Mahalliy nusxasini saqlash"
 
-#: core/Settings/LanguagesFormat.vala:21
-#, fuzzy
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Tekshirish ma'lumotlarni chop etish"
 
@@ -127,7 +117,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr ""
 
@@ -149,6 +139,16 @@ msgstr[0] ""
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr ""
+
+#: src/LanguagesFormat.vala:21
+#, fuzzy
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

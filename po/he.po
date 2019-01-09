@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-01-09 22:01+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/calendar/"
@@ -44,15 +44,7 @@ msgstr "john@doe.com"
 msgid "Keep a copy locally"
 msgstr "שמירת עותק מקומי"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e ב%B,‏ %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%a, %b %d"
-msgstr "%a, %d ב%b"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "הצגת מידע ניפוי שגיאות"
 
@@ -126,7 +118,7 @@ msgstr "התמקדות על היום הנתון"
 msgid "date"
 msgstr "תאריך"
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "לוח שנה"
 
@@ -149,6 +141,14 @@ msgstr[1] "אירועים מ־%d קבצים ימוזגו עם לוח השנה ה
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "ייבוא"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e ב%B,‏ %Y"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%a, %d ב%b"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
