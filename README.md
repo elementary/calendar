@@ -15,6 +15,7 @@ You'll need the following dependencies:
 * libfolks-dev
 * libgee-0.8-dev
 * libgeocode-glib-dev
+* libgeoclue-2-dev
 * libglib2.0-dev
 * libgranite-dev >= 5.2.0
 * libgtk-3-dev
