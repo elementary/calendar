@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2018-12-25 00:06+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"PO-Revision-Date: 2019-01-09 00:02+0000\n"
+"Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/calendar/"
 "calendar/fi/>\n"
 "Language: fi\n"
@@ -49,16 +49,13 @@ msgid "%B %e, %Y"
 msgstr "%e. %Bta %Y"
 
 #: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
+#, fuzzy
+msgid "%a, %b %d"
 msgstr "%A, %d. %b"
 
 #: daemon/Daemon.vala:21
 msgid "Print debug information"
 msgstr "Tulosta vianjäljitystietoja"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr "Tulosta versiotiedot ja poistu"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -84,7 +81,7 @@ msgstr "Käytä salattua yhteyttä"
 msgid "Server handles meeting invitations"
 msgstr "Palvelin käsittelee kokouskutsut"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -92,31 +89,31 @@ msgstr ""
 "Tulevat tapahtumat näytetään tässä, kun valitset tapahtumia sisältävän "
 "päivämäärän."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "Päivän aikana"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "Koko päivä"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr "Huomenna"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr "Tällä viikolla"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr "Ensi viikolla"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 msgid "This Month"
 msgstr "Tässä kuussa"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 msgid "Next Month"
 msgstr "Ensi kuussa"
 
@@ -132,7 +129,7 @@ msgstr "Kohdista määrättyyn päivään"
 msgid "date"
 msgstr "päivä"
 
-#: src/Application.vala:148
+#: src/Application.vala:138
 msgid "Calendar"
 msgstr "Kalenteri"
 
@@ -146,7 +143,7 @@ msgid "Events from \"%s\" will be merged with this calendar:"
 msgstr "Tapahtumat kohteesta \"%s\" yhdistetään tähän kalenteriin:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Tuo tapahtumat %d tiedostosta seuraavaan kalenteriin:"
@@ -204,6 +201,18 @@ msgstr "Tallenna muutokset"
 msgid "Cancel"
 msgstr "Peru"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "Hyväksynyt"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "Hylännyt"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr ""
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Osanottajat:"
@@ -215,14 +224,6 @@ msgstr "Ei osanottajia"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "Kutsu"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "Hyväksynyt"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "Hylännyt"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -264,85 +265,81 @@ msgstr "Sijainti:"
 msgid "John Smith OR Example St."
 msgstr "Matti Meikäläinen TAI Esimerkkikatu"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "Muistutukset:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "Ei muistutuksia"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "Lisää muistutus"
 
+#: src/EventEdition/ReminderPanel.vala:163
+msgid "At time of event"
+msgstr "Tapahtumahetkellä"
+
+#: src/EventEdition/ReminderPanel.vala:164
+msgid "1 minute before"
+msgstr "1 minuutti ennen"
+
+#: src/EventEdition/ReminderPanel.vala:165
+msgid "5 minutes before"
+msgstr "5 minuuttia ennen"
+
+#: src/EventEdition/ReminderPanel.vala:166
+msgid "10 minutes before"
+msgstr "10 minuuttia ennen"
+
+#: src/EventEdition/ReminderPanel.vala:167
+msgid "15 minutes before"
+msgstr "15 minuuttia ennen"
+
+#: src/EventEdition/ReminderPanel.vala:168
+msgid "20 minutes before"
+msgstr "20 minuuttia ennen"
+
+#: src/EventEdition/ReminderPanel.vala:169
+msgid "25 minutes before"
+msgstr "25 minuuttia ennen"
+
+#: src/EventEdition/ReminderPanel.vala:170
+msgid "30 minutes before"
+msgstr "30 minuuttia ennen"
+
+#: src/EventEdition/ReminderPanel.vala:171
+msgid "45 minutes before"
+msgstr "45 minuuttia ennen"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 minuuttia"
+msgid "1 hour before"
+msgstr "1 tunti ennen"
 
 #: src/EventEdition/ReminderPanel.vala:173
-msgid "1 minute"
-msgstr "1 minuutti"
+msgid "2 hours before"
+msgstr "2 tuntia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "5 minuuttia"
+msgid "3 hours before"
+msgstr "3 tuntia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "10 minuuttia"
+msgid "12 hours before"
+msgstr "12 tuntia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "15 minuuttia"
+msgid "24 hours before"
+msgstr "24 tuntia ennen"
 
 #: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "20 minuuttia"
+msgid "2 days before"
+msgstr "2 päivää ennen"
 
 #: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "25 minuuttia"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "30 minuuttia"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "45 minuuttia"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "1 tunti"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
-msgstr "2 tuntia"
-
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
-msgstr "3 tuntia"
-
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
-msgstr "12 tuntia"
-
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
-msgstr "24 tuntia"
-
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
-msgstr "2 päivää"
-
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
-msgstr "1 viikko"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "Ilmoitus"
+msgid "1 week before"
+msgstr "1 viikko ennen"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -666,8 +663,7 @@ msgstr "Luo kalenteri"
 msgid "Save"
 msgstr "Tallenna"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "Poista"
 
@@ -675,8 +671,7 @@ msgstr "Poista"
 msgid "Not Removable"
 msgstr "Ei poistettava"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "Muokkaa…"
 
@@ -697,25 +692,43 @@ msgstr "\"%s\" poistettiin"
 msgid "Add New Calendar…"
 msgstr "Lisää uusi kalenteri…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
 #, c-format
+msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
 #, c-format
-msgid "%s"
-msgstr "%s"
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
+
+#: src/Widgets/CalendarButton.vala:72
+msgid "Search Calendars"
+msgstr "Hae kalentereista"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -749,6 +762,18 @@ msgstr "Hallitse kalentereita"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Vie tai jaa vakiokalenteri"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Tulosta versiotiedot ja poistu"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 minuuttia"
+
+#~ msgid "Notification"
+#~ msgstr "Ilmoitus"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Upcoming Events"
 #~ msgstr "Tulevat tapahtumat"

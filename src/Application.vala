@@ -87,6 +87,8 @@ namespace Maya {
 
                 init_gui ();
                 window.show_all ();
+            } else {
+                get_windows ().data.present (); // present window if app is already running
             }
 
             var dialog = new Maya.View.ImportDialog (files);
@@ -126,7 +128,7 @@ namespace Maya {
             });
 
             add_action (quit_action);
-            set_accels_for_action("app.quit", new string[] { "<Control>q" });
+            set_accels_for_action("app.quit", { "<Control>q" });
         }
 
         private void on_quit () {
