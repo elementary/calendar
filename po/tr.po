@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-01-01 18:41+0000\n"
 "Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/calendar/"
@@ -44,16 +44,7 @@ msgstr "kullanici@domain.com"
 msgid "Keep a copy locally"
 msgstr "Yerel bir kopyasını sakla"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Hata ayıklama bilgisini yazdır"
 
@@ -129,7 +120,7 @@ msgstr "Verilen güne odaklan"
 msgid "date"
 msgstr "tarih"
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Takvim"
 
@@ -152,6 +143,15 @@ msgstr[1] "%d dosyasındaki etkinlikler bu takvim ile birleştirilecek:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "İçe Aktar"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
-"PO-Revision-Date: 2018-12-19 11:04+0000\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
+"PO-Revision-Date: 2019-01-09 22:01+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/calendar/"
 "calendar/he/>\n"
@@ -44,16 +44,7 @@ msgstr "john@doe.com"
 msgid "Keep a copy locally"
 msgstr "שמירת עותק מקומי"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e ב%B,‏ %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %d ב%b"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "הצגת מידע ניפוי שגיאות"
 
@@ -127,7 +118,7 @@ msgstr "התמקדות על היום הנתון"
 msgid "date"
 msgstr "תאריך"
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "לוח שנה"
 
@@ -150,6 +141,14 @@ msgstr[1] "אירועים מ־%d קבצים ימוזגו עם לוח השנה ה
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "ייבוא"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e ב%B,‏ %Y"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%a, %d ב%b"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -209,7 +208,7 @@ msgstr "נדחתה"
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr ""
+msgstr "אולי"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -276,84 +275,68 @@ msgid "Add Reminder"
 msgstr "הוספת תזכורת"
 
 #: src/EventEdition/ReminderPanel.vala:163
-#, fuzzy
 msgid "At time of event"
-msgstr "שם האירוע"
+msgstr "בזמן האירוע"
 
 #: src/EventEdition/ReminderPanel.vala:164
-#, fuzzy
 msgid "1 minute before"
-msgstr "דקה אחת"
+msgstr "דקה לפני"
 
 #: src/EventEdition/ReminderPanel.vala:165
-#, fuzzy
 msgid "5 minutes before"
-msgstr "5 דקות"
+msgstr "5 דקות לפני"
 
 #: src/EventEdition/ReminderPanel.vala:166
-#, fuzzy
 msgid "10 minutes before"
-msgstr "10 דקות"
+msgstr "10 דקות לפני"
 
 #: src/EventEdition/ReminderPanel.vala:167
-#, fuzzy
 msgid "15 minutes before"
-msgstr "15 דקות"
+msgstr "רבע שעה לפני"
 
 #: src/EventEdition/ReminderPanel.vala:168
-#, fuzzy
 msgid "20 minutes before"
-msgstr "20 דקות"
+msgstr "20 דקות לפני"
 
 #: src/EventEdition/ReminderPanel.vala:169
-#, fuzzy
 msgid "25 minutes before"
-msgstr "25 דקות"
+msgstr "25 דקות לפני"
 
 #: src/EventEdition/ReminderPanel.vala:170
-#, fuzzy
 msgid "30 minutes before"
-msgstr "30 דקות"
+msgstr "חצי שעה לפני"
 
 #: src/EventEdition/ReminderPanel.vala:171
-#, fuzzy
 msgid "45 minutes before"
-msgstr "45 דקות"
+msgstr "45 דקות לפני"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "1 hour before"
-msgstr "שעה אחת"
+msgstr "שעה לפני"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "2 hours before"
-msgstr "שעתיים"
+msgstr "שעתיים לפני"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "3 hours before"
-msgstr "3 שעות"
+msgstr "3 שעות לפני"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "12 hours before"
-msgstr "12 שעות"
+msgstr "12 שעות לפני"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "24 hours before"
-msgstr "24 שעות"
+msgstr "24 שעות לפני"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "2 days before"
-msgstr "יומיים"
+msgstr "יומיים לפני"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "1 week before"
-msgstr "שבוע אחד"
+msgstr "שבוע לפני"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -708,7 +691,7 @@ msgstr "הוספת לוח שנה חדש…"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:175
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
@@ -721,7 +704,7 @@ msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
@@ -733,17 +716,16 @@ msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarButton.vala:72
-#, fuzzy
 msgid "Search Calendars"
-msgstr "יצירת לוח שנה"
+msgstr "חיפוש בלוחות השנה"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr ""
+msgstr "אין תוצאות"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr ""
+msgstr "מוטב לנסות להחליף את הביטויים בחיפוש."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82

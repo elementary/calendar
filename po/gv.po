@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2015-01-17 10:51+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,15 +38,7 @@ msgstr ""
 msgid "Keep a copy locally"
 msgstr ""
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr ""
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%a, %b %d"
-msgstr ""
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr ""
 
@@ -120,7 +112,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr ""
 
@@ -143,6 +135,14 @@ msgstr[2] ""
 
 #: src/ImportDialog.vala:57
 msgid "Import"
+msgstr ""
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr ""
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
 msgstr ""
 
 #: src/EventEdition/EventDialog.vala:58

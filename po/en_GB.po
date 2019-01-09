@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-01-08 11:17+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
@@ -44,15 +44,7 @@ msgstr "john@smith.com"
 msgid "Keep a copy locally"
 msgstr "Keep a local copy"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%-d %B, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%a, %b %d"
-msgstr "%a, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Print debug information"
 
@@ -128,7 +120,7 @@ msgstr "Focus the given day"
 msgid "date"
 msgstr "date"
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Calendar"
 
@@ -151,6 +143,14 @@ msgstr[1] "Events from %d files will be merged with this calendar:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Import"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%-d %B, %Y"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%a, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

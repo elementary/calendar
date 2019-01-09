@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-01-09 10:39+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/calendar/"
@@ -44,15 +44,7 @@ msgstr "john@doe.com"
 msgid "Keep a copy locally"
 msgstr "एक प्रत लोकली ठेवा"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%a, %b %d"
-msgstr "%a, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "घटनेची साधारण माहिती"
 
@@ -127,7 +119,7 @@ msgstr "दिलेला दिवस निर्देशित करा"
 msgid "date"
 msgstr "तारीख"
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "कॅलेंडर"
 
@@ -150,6 +142,14 @@ msgstr[1] "%d फायलींवरील इव्हेंट या कॅ
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "इम्पोर्ट"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%a, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

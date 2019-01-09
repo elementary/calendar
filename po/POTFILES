@@ -5,7 +5,6 @@ core/Backends/PlacementWidget.vala
 core/Model/CalendarModel.vala
 core/Settings/MayaSettings.vala
 core/Settings/SavedState.vala
-core/Settings/LanguagesFormat.vala
 core/DateRange.vala
 core/Utils.vala
 core/GesturesUtils.vala
@@ -15,6 +14,7 @@ plugins/CalDAV/CalDAVBackend.vala
 src/AgendaView.vala
 src/Application.vala
 src/ImportDialog.vala
+src/LanguagesFormat.vala
 src/MainWindow.vala
 src/EventEdition/EventDialog.vala
 src/EventEdition/GuestGrid.vala
