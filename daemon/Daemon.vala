@@ -15,55 +15,30 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace MayaDaemon {
+namespace Maya {
+    private static bool has_debug;
+
     const OptionEntry[] options =  {
         { "debug", 'd', 0, OptionArg.NONE, out has_debug,
         N_("Print debug information"), null},
         { null }
     };
-    private static MainLoop mainloop;
-    private static bool has_debug;
+
+
+public class Daemon : GLib.Application {
     private Gee.HashMap<E.CalComponent, string> event_uid;
 
-    private static void on_exit (int signum) {
-        debug ("Exiting");
-        mainloop.quit ();
-    }
-
-    public static int main (string[] args) {
-
-        Process.signal(ProcessSignal.INT, on_exit);
-        Process.signal(ProcessSignal.TERM, on_exit);
-
-        OptionContext context = new OptionContext ("");
-        context.add_main_entries (options, null);
-
-        try {
-            context.parse (ref args);
-        } catch (OptionError e) {
-            error (e.message);
-        }
-
-        Granite.Services.Logger.initialize (Build.APP_NAME);
-        Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.WARN;
-
-        if (has_debug) {
-            Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
-        }
-
-        // Creating a GLib main loop with a default context
-        mainloop = new MainLoop (null, false);
+    construct {
         load_today_events ();
-        //Restart the programm each day.
         Timeout.add_seconds (86400, () => {
             event_uid.clear ();
             load_today_events ();
             return true;
         });
+    }
 
-        // Start GLib mainloop
-        mainloop.run ();
-        return 0;
+    protected override void activate () {
+        Gtk.main ();
     }
 
     public void load_today_events () {
@@ -160,17 +135,8 @@ namespace MayaDaemon {
     }
 
     public void queue_event_notification (E.CalComponent event, string uid, bool missed = false) {
-        if (event_uid.values.contains (uid) == false)
+        if (event_uid.values.contains (uid) == false) {
             return;
-#if HAVE_LIBNOTIFY
-        Notify.Notification? notification = null;
-        // Don't show notifications if the window is active
-
-        if (!Notify.is_initted ()) {
-            if (!Notify.init ("net.launchpad.maya")) {
-                warning ("Could not init libnotify");
-                return;
-            }
         }
 
         unowned iCal.Component comp = event.get_icalcomponent ();
@@ -178,7 +144,7 @@ namespace MayaDaemon {
         var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
         var now = new DateTime.now_local ();
         string secondary_text = "";
-        var h24_settings = new Settings ("org.gnome.desktop.interface");
+        var h24_settings = new GLib.Settings ("org.gnome.desktop.interface");
         var format = h24_settings.get_string ("clock-format");
         var text = Granite.DateTime.get_default_time_format (format.contains ("12h"));
         if (start_time.get_year () == now.get_year ()) {
@@ -191,28 +157,16 @@ namespace MayaDaemon {
             secondary_text = start_time.format ("%s, %s".printf (Granite.DateTime.get_default_date_format (false, true, true), text));
         }
 
-        if (notification == null) {
-            notification = new Notify.Notification (primary_text, secondary_text, "");
-        } else {
-            notification.clear_hints ();
-            notification.clear_actions ();
-            notification.update (primary_text, secondary_text, "");
-        }
+        var notification = new GLib.Notification (primary_text);
+        notification.set_body (secondary_text);
 
         if (missed == false) {
-            notification.icon_name = "appointment-soon";
+            notification.set_icon (new ThemedIcon ("appointment-soon"));
         } else {
-            notification.icon_name = "appointment-missed";
+            notification.set_icon (new ThemedIcon ("appointment-missed"));
         }
 
-        notification.set_urgency (Notify.Urgency.NORMAL);
-
-        try {
-            notification.show ();
-        } catch (GLib.Error err) {
-            warning ("Could not show notification: %s", err.message);
-        }
-#endif
+        GLib.Application.get_default ().send_notification (uid, notification);
     }
 
     void update_event (E.Source source, E.CalComponent event) {
@@ -233,3 +187,29 @@ namespace MayaDaemon {
         return dt.difference (now)/TimeSpan.SECOND;
     }
 }
+
+public static int main (string[] args) {
+    OptionContext context = new OptionContext ("");
+    context.add_main_entries (options, null);
+
+    try {
+        context.parse (ref args);
+    } catch (OptionError e) {
+        error (e.message);
+    }
+
+    Granite.Services.Logger.initialize (Build.APP_NAME);
+    Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.WARN;
+
+    if (has_debug) {
+        Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
+    }
+
+    var app = new Daemon ();
+
+    return app.run (args);
+}
+}
+
+
+

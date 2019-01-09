@@ -32,11 +32,6 @@ geocode_glib_dep = dependency('geocode-glib-1.0')
 gclue_dep = dependency('libgeoclue-2.0')
 
 m_dep = meson.get_compiler('c').find_library('m', required : false)
-libnotify_dep = dependency('libnotify', required: false)
-
-if libnotify_dep.found()
-    add_project_arguments('--define=HAVE_LIBNOTIFY', language: 'vala')
-endif
 
 gresource_calendar = gnome.compile_resources(
     'gresource_calendar',
