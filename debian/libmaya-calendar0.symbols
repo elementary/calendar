@@ -53,9 +53,6 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_placement_widget_construct@Base 0.3
  maya_placement_widget_get_type@Base 0.3
  maya_placement_widget_new@Base 0.3
- maya_settings_DateFormat@Base 0.3
- maya_settings_DateFormat_Complete@Base 0.3
- maya_settings_TimeFormat@Base 0.3
  maya_settings_maya_settings_get_default@Base 0.3
  maya_settings_maya_settings_get_plugins_disabled@Base 0.3
  maya_settings_maya_settings_get_type@Base 0.3
