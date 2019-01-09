@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 11:24-0800\n"
-"PO-Revision-Date: 2018-12-18 10:44+0000\n"
+"PO-Revision-Date: 2019-01-09 10:39+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
@@ -49,9 +49,8 @@ msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
 #: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
 msgid "%a, %b %d"
-msgstr "%A, %b %d"
+msgstr "%a, %b %d"
 
 #: daemon/Daemon.vala:21
 msgid "Print debug information"
@@ -210,7 +209,7 @@ msgstr "अस्वीकार"
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr ""
+msgstr "कदाचित"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -277,84 +276,68 @@ msgid "Add Reminder"
 msgstr "नवीन आठवणीची खूण जोडा"
 
 #: src/EventEdition/ReminderPanel.vala:163
-#, fuzzy
 msgid "At time of event"
 msgstr "घटनेचे नाव"
 
 #: src/EventEdition/ReminderPanel.vala:164
-#, fuzzy
 msgid "1 minute before"
-msgstr "१ मिनिट"
+msgstr "1 मिनिटापूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:165
-#, fuzzy
 msgid "5 minutes before"
-msgstr "५ मिनिटे"
+msgstr "५  मिनिटांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:166
-#, fuzzy
 msgid "10 minutes before"
-msgstr "१० मिनिटे"
+msgstr "१० मिनिटांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:167
-#, fuzzy
 msgid "15 minutes before"
-msgstr "१५ मिनिटे"
+msgstr "१५ मिनिटांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:168
-#, fuzzy
 msgid "20 minutes before"
-msgstr "२० मिनिटे"
+msgstr "२० मिनिटांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:169
-#, fuzzy
 msgid "25 minutes before"
-msgstr "२५ मिनिटे"
+msgstr "२५ मिनिटांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:170
-#, fuzzy
 msgid "30 minutes before"
-msgstr "३० मिनिटे"
+msgstr "३० मिनिटांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:171
-#, fuzzy
 msgid "45 minutes before"
-msgstr "४५ मिनिटे"
+msgstr "४५ मिनिटांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "1 hour before"
-msgstr "१ तास"
+msgstr "१ तास पूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "2 hours before"
-msgstr "२ तास"
+msgstr "२ तासांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "3 hours before"
-msgstr "३ तास"
+msgstr "३ तासांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "12 hours before"
-msgstr "१२ तास"
+msgstr "१२ तासांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "24 hours before"
-msgstr "२४ तास"
+msgstr "२४ तासांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "2 days before"
-msgstr "२ दिवस"
+msgstr "२ दिवस आधी"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "1 week before"
-msgstr "१ आठवडा"
+msgstr "१ आठवडा आधी"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -709,7 +692,7 @@ msgstr "नवीन कॅलेंडर बनवा…"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:175
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
@@ -722,7 +705,7 @@ msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
@@ -734,17 +717,16 @@ msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
 
 #: src/Widgets/CalendarButton.vala:72
-#, fuzzy
 msgid "Search Calendars"
-msgstr "नवीन कॅलेंडर बनवा"
+msgstr "कॅलेंडर शोधा"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr ""
+msgstr "परिणाम नाहीत"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr ""
+msgstr "शोध संज्ञा बदलून प्रयत्न करा."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
