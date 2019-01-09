@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 11:24-0800\n"
-"PO-Revision-Date: 2019-01-03 21:49+0000\n"
+"PO-Revision-Date: 2019-01-09 00:02+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "calendar/calendar/nb/>\n"
@@ -211,7 +211,7 @@ msgstr "Avslått"
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr ""
+msgstr "Kanskje"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -742,11 +742,11 @@ msgstr "Opprett kalender"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr ""
+msgstr "Resultatløst"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr ""
+msgstr "Prøv å endre søket."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
