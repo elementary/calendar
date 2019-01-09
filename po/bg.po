@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2017-05-09 22:15+0000\n"
 "Last-Translator: Martin Tomov <martin.tomov@boomer.digital>\n"
 "Language-Team: Bulgarian <https://l10n.elementary.io/projects/calendar/"
@@ -44,16 +44,7 @@ msgstr "иван@петров.ком"
 msgid "Keep a copy locally"
 msgstr "Дръж местна преписка"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e %B %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %d, %b"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 #, fuzzy
 msgid "Print debug information"
 msgstr "Общи Сведения"
@@ -134,7 +125,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Календар"
 
@@ -158,6 +149,15 @@ msgstr[1] "Внасяне на събития от \"%s\" файла в след
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Импортиране"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e %B %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %d, %b"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

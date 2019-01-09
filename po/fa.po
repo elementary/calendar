@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2015-04-09 12:07+0000\n"
 "Last-Translator: awat <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -43,16 +43,7 @@ msgstr "john@doe.com"
 msgid "Keep a copy locally"
 msgstr "ذخیره سازی نسخه محلی"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 #, fuzzy
 msgid "Print debug information"
 msgstr "اطلاعات عمومی"
@@ -132,7 +123,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "تقویم"
 
@@ -155,6 +146,15 @@ msgstr[0] "وارد نمودن رویداد ها از پوشه %d به تقوی�
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "وارد کردن"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

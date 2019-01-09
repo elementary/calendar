@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-01-09 00:02+0000\n"
 "Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/calendar/"
@@ -44,16 +44,7 @@ msgstr "nimi@osoite.fi"
 msgid "Keep a copy locally"
 msgstr "Säilytä paikallinen kopio"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e. %Bta %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %d. %b"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Tulosta vianjäljitystietoja"
 
@@ -129,7 +120,7 @@ msgstr "Kohdista määrättyyn päivään"
 msgid "date"
 msgstr "päivä"
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Kalenteri"
 
@@ -152,6 +143,15 @@ msgstr[1] "Tuo tapahtumat %d tiedostosta seuraavaan kalenteriin:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Tuo"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e. %Bta %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %d. %b"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

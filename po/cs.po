@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2018-12-13 14:59+0000\n"
 "Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/calendar/"
@@ -44,16 +44,7 @@ msgstr "novak@example.cz"
 msgid "Keep a copy locally"
 msgstr "Uchovat lokální kopii"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e. %B %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %d. %B"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Informace pro debugování tisku"
 
@@ -127,7 +118,7 @@ msgstr "Zaměřit na daný den"
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Kalendář"
 
@@ -151,6 +142,15 @@ msgstr[2] "Události z %d souborů budou sloučeny s tímto kalendářem:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Import"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e. %B %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %d. %B"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

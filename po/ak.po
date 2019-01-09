@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2017-06-26 12:57+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -40,16 +40,7 @@ msgstr "john@doe.com"
 msgid "Keep a copy locally"
 msgstr "Kora bi wɔ wo kumputa no so"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 #, fuzzy
 msgid "Print debug information"
 msgstr "Ɛho nsɛm"
@@ -131,7 +122,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Kalɛnda"
 
@@ -154,6 +145,15 @@ msgstr[1] "Impɔɔte dwuma fi files %d kɔ kalɛnda ahoroɔ yi mu:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Impɔɔte"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

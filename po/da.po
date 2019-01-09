@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2018-10-16 09:44+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/calendar/"
@@ -44,16 +44,7 @@ msgstr "john@eksempel.dk"
 msgid "Keep a copy locally"
 msgstr "Behold en lokal kopi"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Print debug information"
 
@@ -129,7 +120,7 @@ msgstr "Fokuser på den givne dag"
 msgid "date"
 msgstr "dato"
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -153,6 +144,15 @@ msgstr[1] "Importér begivenheder fra %d filer ind i den følgende kalender:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Importér"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2015-11-27 08:47+0000\n"
 "Last-Translator: Beqa Arabuli <arabulibeqa@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,16 +38,7 @@ msgstr "john@doe.com"
 msgid "Keep a copy locally"
 msgstr "ასლის ლოკალურად შენახვა"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 #, fuzzy
 msgid "Print debug information"
 msgstr "ზოგადი ინფორმაცია"
@@ -128,7 +119,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "კალენდარი"
 
@@ -150,6 +141,15 @@ msgstr[0] "შემდეგ კალენდარში მოვლენ�
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "შემოტანა"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2018-10-18 12:02+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -43,16 +43,7 @@ msgstr "john@doe.com"
 msgid "Keep a copy locally"
 msgstr "保留一份在本機上"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%Y年%b%e日"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%b%d日 (%A)"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "列印除錯資訊"
 
@@ -126,7 +117,7 @@ msgstr "聚焦在給定的日期"
 msgid "date"
 msgstr "日期"
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "行事曆"
 
@@ -149,6 +140,15 @@ msgstr[0] "從 %d 份檔案匯入事件到下列行事曆中："
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "匯入"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%Y年%b%e日"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%b%d日 (%A)"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

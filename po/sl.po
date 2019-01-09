@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-07 11:24-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2018-07-28 11:56+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://weblate.elementary.io/projects/calendar/"
@@ -45,16 +45,7 @@ msgstr "janez@novak.com"
 msgid "Keep a copy locally"
 msgstr "Obdrži lokalno kopijo"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e. %B %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %k. %b"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Izpiši podatke za razhroščevanje"
 
@@ -128,7 +119,7 @@ msgstr "Fokusiraj izbrani dan"
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:138
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Koledar"
 
@@ -154,6 +145,15 @@ msgstr[3] "Uvozi dogodke iz %d datotek v koledar:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Uvozi"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e. %B %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %k. %b"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
