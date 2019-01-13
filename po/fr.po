@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-01-11 12:58+0000\n"
+"PO-Revision-Date: 2019-01-14 00:08+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/calendar/"
 "calendar/fr/>\n"
@@ -150,7 +150,7 @@ msgstr "%e %B %Y"
 
 #: src/LanguagesFormat.vala:25
 msgid "%a, %b %d"
-msgstr "%A %d %b"
+msgstr "%a %d %b"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -422,7 +422,7 @@ msgstr "Ajouter une exception"
 
 #: src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
-msgstr "Chaque dernier samedi"
+msgstr "Chaque dernier dimanche"
 
 #: src/EventEdition/RepeatPanel.vala:361
 msgid "Every last Monday"
@@ -450,7 +450,7 @@ msgstr "Chaque dernier samedi"
 
 #: src/EventEdition/RepeatPanel.vala:383
 msgid "Every first Sunday"
-msgstr "Chaque premier samedi"
+msgstr "Chaque premier dimanche"
 
 #: src/EventEdition/RepeatPanel.vala:386
 msgid "Every first Monday"
