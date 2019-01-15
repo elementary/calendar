@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-01-15 12:33+0000\n"
+"PO-Revision-Date: 2019-01-15 12:34+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "calendar/calendar/zh_Hans/>\n"
@@ -736,7 +736,7 @@ msgstr "删除事件"
 
 #: src/Widgets/EventMenu.vala:43
 msgid "Remove Occurrence"
-msgstr "删除事件"
+msgstr "删除触发"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
