@@ -134,7 +134,7 @@ namespace Maya {
             });
         }
 
-        public void queue_event_notification (E.CalComponent event, string uid, bool missed = false) {
+        public void queue_event_notification (E.CalComponent event, string uid) {
             if (event_uid.values.contains (uid) == false) {
                 return;
             }
@@ -159,12 +159,7 @@ namespace Maya {
 
             var notification = new GLib.Notification (primary_text);
             notification.set_body (secondary_text);
-
-            if (missed == false) {
-                notification.set_icon (new ThemedIcon ("appointment-soon"));
-            } else {
-                notification.set_icon (new ThemedIcon ("appointment-missed"));
-            }
+            notification.set_icon (new ThemedIcon ("office-calendar"));
 
             GLib.Application.get_default ().send_notification (uid, notification);
         }
