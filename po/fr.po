@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-01-14 00:08+0000\n"
+"PO-Revision-Date: 2019-01-15 00:05+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/calendar/"
 "calendar/fr/>\n"
@@ -346,19 +346,19 @@ msgstr "Répéter :"
 
 #: src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
-msgstr "Quotidiennement"
+msgstr "Tous les jours"
 
 #: src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
-msgstr "Hebdomadairement"
+msgstr "Toutes les semaines"
 
 #: src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
-msgstr "Mensuellement"
+msgstr "Tous les mois"
 
 #: src/EventEdition/RepeatPanel.vala:61
 msgid "Yearly"
-msgstr "Annuellement"
+msgstr "Tous les ans"
 
 #: src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
