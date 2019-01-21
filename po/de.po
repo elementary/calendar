@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2018-12-28 12:41+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/calendar/"
@@ -44,21 +44,9 @@ msgstr "max@mustermann.de"
 msgid "Keep a copy locally"
 msgstr "Kopie lokal speichern"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e. %B %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %e. %b"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Debug-Informationen drucken"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr "Versionsinformationen drucken und beenden"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -84,7 +72,7 @@ msgstr "Sichere Verbindung verwenden"
 msgid "Server handles meeting invitations"
 msgstr "Server unterstützt Einladungen zu Besprechungen"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -92,31 +80,31 @@ msgstr ""
 "Ihre bevorstehenden Termine werden hier angezeigt, wenn Sie ein Datum mit "
 "Terminen auswählen."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "Im Laufe des Tages"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "Ganztägig"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr "Morgen"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr "Aktuelle Woche"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr "Kommende Woche"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 msgid "This Month"
 msgstr "Aktueller Monat"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 msgid "Next Month"
 msgstr "Kommender Monat"
 
@@ -132,7 +120,7 @@ msgstr "Fokussiere den angegebenen Tag"
 msgid "date"
 msgstr "Datum"
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -155,6 +143,15 @@ msgstr[1] "Termine aus den Dateien %d werden in diesen Kalender importiert:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Importieren"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e. %B %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %e. %b"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -204,6 +201,18 @@ msgstr "Änderungen speichern"
 msgid "Cancel"
 msgstr "Abbrechen"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "Akzeptiert"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "Abgesagt"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr ""
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Teilnehmer:"
@@ -215,14 +224,6 @@ msgstr "Keine Teilnehmer"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "Einladen"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "Akzeptiert"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "Abgesagt"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -264,85 +265,97 @@ msgstr "Ort:"
 msgid "John Smith OR Example St."
 msgstr "Max Mustermann ODER Beispielstraße"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "Erinnerungen:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "Keine Einträge"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "Erinnerung hinzufügen"
 
-#: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 Minuten"
+#: src/EventEdition/ReminderPanel.vala:163
+#, fuzzy
+msgid "At time of event"
+msgstr "Terminbezeichnung"
 
-#: src/EventEdition/ReminderPanel.vala:173
-msgid "1 minute"
+#: src/EventEdition/ReminderPanel.vala:164
+#, fuzzy
+msgid "1 minute before"
 msgstr "1 Minute"
 
-#: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
+#: src/EventEdition/ReminderPanel.vala:165
+#, fuzzy
+msgid "5 minutes before"
 msgstr "5 Minuten"
 
-#: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
+#: src/EventEdition/ReminderPanel.vala:166
+#, fuzzy
+msgid "10 minutes before"
 msgstr "10 Minuten"
 
-#: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
+#: src/EventEdition/ReminderPanel.vala:167
+#, fuzzy
+msgid "15 minutes before"
 msgstr "15 Minuten"
 
-#: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
+#: src/EventEdition/ReminderPanel.vala:168
+#, fuzzy
+msgid "20 minutes before"
 msgstr "20 Minuten"
 
-#: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
+#: src/EventEdition/ReminderPanel.vala:169
+#, fuzzy
+msgid "25 minutes before"
 msgstr "25 Minuten"
 
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
+#: src/EventEdition/ReminderPanel.vala:170
+#, fuzzy
+msgid "30 minutes before"
 msgstr "30 Minuten"
 
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
+#: src/EventEdition/ReminderPanel.vala:171
+#, fuzzy
+msgid "45 minutes before"
 msgstr "45 Minuten"
 
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
+#: src/EventEdition/ReminderPanel.vala:172
+#, fuzzy
+msgid "1 hour before"
 msgstr "1 Stunde"
 
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
+#: src/EventEdition/ReminderPanel.vala:173
+#, fuzzy
+msgid "2 hours before"
 msgstr "2 Stunden"
 
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
+#: src/EventEdition/ReminderPanel.vala:174
+#, fuzzy
+msgid "3 hours before"
 msgstr "3 Stunden"
 
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
+#: src/EventEdition/ReminderPanel.vala:175
+#, fuzzy
+msgid "12 hours before"
 msgstr "12 Stunden"
 
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
+#: src/EventEdition/ReminderPanel.vala:176
+#, fuzzy
+msgid "24 hours before"
 msgstr "24 Stunden"
 
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
+#: src/EventEdition/ReminderPanel.vala:177
+#, fuzzy
+msgid "2 days before"
 msgstr "2 Tage"
 
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
+#: src/EventEdition/ReminderPanel.vala:178
+#, fuzzy
+msgid "1 week before"
 msgstr "1 Woche"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "Benachrichtigung"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -666,8 +679,7 @@ msgstr "Kalender erstellen"
 msgid "Save"
 msgstr "Speichern"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "Entfernen"
 
@@ -675,8 +687,7 @@ msgstr "Entfernen"
 msgid "Not Removable"
 msgstr "Nicht entfernbar"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "Bearbeiten…"
 
@@ -697,25 +708,44 @@ msgstr "\"%s\" wurde entfernt"
 msgid "Add New Calendar…"
 msgstr "Neuen Kalender hinzufügen…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
-#, c-format
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
+#, fuzzy, c-format
+msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
-#, c-format
-msgid "%s"
-msgstr "%s"
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
+#, fuzzy, c-format
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
+
+#: src/Widgets/CalendarButton.vala:72
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Kalender erstellen"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -749,6 +779,18 @@ msgstr "Kalender verwalten"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Standardkalender exportieren oder teilen"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Versionsinformationen drucken und beenden"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 Minuten"
+
+#~ msgid "Notification"
+#~ msgstr "Benachrichtigung"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Upcoming Events"
 #~ msgstr "Bevorstehende Termine"

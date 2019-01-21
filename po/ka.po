@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2015-11-27 08:47+0000\n"
 "Last-Translator: Beqa Arabuli <arabulibeqa@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,22 +38,10 @@ msgstr "john@doe.com"
 msgid "Keep a copy locally"
 msgstr "ასლის ლოკალურად შენახვა"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 #, fuzzy
 msgid "Print debug information"
 msgstr "ზოგადი ინფორმაცია"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -79,41 +67,41 @@ msgstr "გამოიყენე დაცული კავშირი"
 msgid "Server handles meeting invitations"
 msgstr "შეხვედრის მოსაწვევებს სერვერი მართავს"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "ივენთებიანი თარიღის მონიშვნისას, თქვენი მომავალი ივენთები აქ გამოჩნდება."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "დღის განმავლობაში"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "მთელი დღე"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 #, fuzzy
 msgid "This Week"
 msgstr "კვირა"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 #, fuzzy
 msgid "Next Week"
 msgstr "კვირა"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 #, fuzzy
 msgid "This Month"
 msgstr "თვე"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 #, fuzzy
 msgid "Next Month"
 msgstr "თვე"
@@ -131,7 +119,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "კალენდარი"
 
@@ -153,6 +141,15 @@ msgstr[0] "შემდეგ კალენდარში მოვლენ�
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "შემოტანა"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -201,6 +198,18 @@ msgstr "ცვლილებების შენახვა"
 msgid "Cancel"
 msgstr "გუქმება"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "მიღებულია"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "უარყოფილია"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr ""
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "მონაწილეები"
@@ -212,14 +221,6 @@ msgstr "არავინ მონაწილეობს"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "მოიწვიე"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "მიღებულია"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "უარყოფილია"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -261,86 +262,97 @@ msgstr "მდებარეობა:"
 msgid "John Smith OR Example St."
 msgstr "ჯონ სმიტი ან სხვა მაგალითი"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "შეგახსენებთ:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "არაფერია შესახსენებელი"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "შესახსენებლის დამატება"
 
+#: src/EventEdition/ReminderPanel.vala:163
+#, fuzzy
+msgid "At time of event"
+msgstr "ივენთის სახელი"
+
+#: src/EventEdition/ReminderPanel.vala:164
+#, fuzzy
+msgid "1 minute before"
+msgstr "1 წუთი"
+
+#: src/EventEdition/ReminderPanel.vala:165
+#, fuzzy
+msgid "5 minutes before"
+msgstr "5 წუთი"
+
+#: src/EventEdition/ReminderPanel.vala:166
+#, fuzzy
+msgid "10 minutes before"
+msgstr "10 წუთი"
+
+#: src/EventEdition/ReminderPanel.vala:167
+#, fuzzy
+msgid "15 minutes before"
+msgstr "15 წუთი"
+
+#: src/EventEdition/ReminderPanel.vala:168
+#, fuzzy
+msgid "20 minutes before"
+msgstr "20 წუთი"
+
+#: src/EventEdition/ReminderPanel.vala:169
+#, fuzzy
+msgid "25 minutes before"
+msgstr "25 წუთი"
+
+#: src/EventEdition/ReminderPanel.vala:170
+#, fuzzy
+msgid "30 minutes before"
+msgstr "30 წუთი"
+
+#: src/EventEdition/ReminderPanel.vala:171
+#, fuzzy
+msgid "45 minutes before"
+msgstr "45 წუთი"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 წუთი"
+#, fuzzy
+msgid "1 hour before"
+msgstr "1 საათი"
 
 #: src/EventEdition/ReminderPanel.vala:173
 #, fuzzy
-msgid "1 minute"
-msgstr "1 წუთი"
-
-#: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "5 წუთი"
-
-#: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "10 წუთი"
-
-#: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "15 წუთი"
-
-#: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "20 წუთი"
-
-#: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "25 წუთი"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "30 წუთი"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "45 წუთი"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "1 საათი"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
+msgid "2 hours before"
 msgstr "2 საათი"
 
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
+#: src/EventEdition/ReminderPanel.vala:174
+#, fuzzy
+msgid "3 hours before"
 msgstr "3 საათი"
 
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
+#: src/EventEdition/ReminderPanel.vala:175
+#, fuzzy
+msgid "12 hours before"
 msgstr "12 საათი"
 
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
+#: src/EventEdition/ReminderPanel.vala:176
+#, fuzzy
+msgid "24 hours before"
 msgstr "24 საათი"
 
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
+#: src/EventEdition/ReminderPanel.vala:177
+#, fuzzy
+msgid "2 days before"
 msgstr "2 დღე"
 
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
+#: src/EventEdition/ReminderPanel.vala:178
+#, fuzzy
+msgid "1 week before"
 msgstr "1 კვირა"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "შეტყობინება"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -660,8 +672,7 @@ msgstr "კალენდრის შექმნა"
 msgid "Save"
 msgstr "შენახვა"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "წაშლა"
 
@@ -670,8 +681,7 @@ msgstr "წაშლა"
 msgid "Not Removable"
 msgstr "წაშლა"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "კორექტირება"
 
@@ -692,25 +702,44 @@ msgstr "კალენდარი \"%s\" წაშლილია."
 msgid "Add New Calendar…"
 msgstr "ახალი კალენდრის დამატება..."
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
-#, c-format
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
+#, fuzzy, c-format
+msgctxt "date-range"
 msgid "%s – %s"
-msgstr ""
+msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, fuzzy, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
-#, c-format
-msgid "%s"
-msgstr ""
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
+#, fuzzy, c-format
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
+
+#: src/Widgets/CalendarButton.vala:72
+#, fuzzy
+msgid "Search Calendars"
+msgstr "კალენდრის შექმნა"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -746,6 +775,12 @@ msgstr "კალენდრების მართვა"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "ძირითადი კალენდრის გატანა ან გაზიარება"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 წუთი"
+
+#~ msgid "Notification"
+#~ msgstr "შეტყობინება"
 
 #, fuzzy
 #~ msgid "%s - %s"

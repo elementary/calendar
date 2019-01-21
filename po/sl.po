@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2018-07-28 11:56+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://weblate.elementary.io/projects/calendar/"
@@ -45,21 +45,9 @@ msgstr "janez@novak.com"
 msgid "Keep a copy locally"
 msgstr "Obdrži lokalno kopijo"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e. %B %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %k. %b"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Izpiši podatke za razhroščevanje"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr "Izpiši samo verzijo"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -85,37 +73,37 @@ msgstr "Uporabi varno povezavo"
 msgid "Server handles meeting invitations"
 msgstr "Vabila za sestanke obravnava strežnik"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Ko boste izbrali ustrezen datum, bodo tukaj prikazani bližnji dogodki."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "Podnevi"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "Ves dan"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr "Jutri"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr "Ta teden"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr "Naslednji teden"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 msgid "This Month"
 msgstr "Ta mesec"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 msgid "Next Month"
 msgstr "Naslednji mesec"
 
@@ -131,7 +119,7 @@ msgstr "Fokusiraj izbrani dan"
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Koledar"
 
@@ -157,6 +145,15 @@ msgstr[3] "Uvozi dogodke iz %d datotek v koledar:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Uvozi"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e. %B %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %k. %b"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -208,6 +205,18 @@ msgstr "Shrani spremembe"
 msgid "Cancel"
 msgstr "Prekliči"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "Sprejeto"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "Zavrnjeno"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr ""
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Sodelujoči:"
@@ -219,14 +228,6 @@ msgstr "Ni sodelujočih"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "Povabi"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "Sprejeto"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "Zavrnjeno"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -268,85 +269,97 @@ msgstr "Kraj:"
 msgid "John Smith OR Example St."
 msgstr "Janez Kranjski ALI Neka ul."
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "Opomniki:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "Ni opomnikov"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "Dodaj opomnik"
 
-#: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 minut"
+#: src/EventEdition/ReminderPanel.vala:163
+#, fuzzy
+msgid "At time of event"
+msgstr "Ime dogodka"
 
-#: src/EventEdition/ReminderPanel.vala:173
-msgid "1 minute"
+#: src/EventEdition/ReminderPanel.vala:164
+#, fuzzy
+msgid "1 minute before"
 msgstr "1 minuto"
 
-#: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
+#: src/EventEdition/ReminderPanel.vala:165
+#, fuzzy
+msgid "5 minutes before"
 msgstr "5 minut"
 
-#: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
+#: src/EventEdition/ReminderPanel.vala:166
+#, fuzzy
+msgid "10 minutes before"
 msgstr "10 minut"
 
-#: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
+#: src/EventEdition/ReminderPanel.vala:167
+#, fuzzy
+msgid "15 minutes before"
 msgstr "15 minut"
 
-#: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
+#: src/EventEdition/ReminderPanel.vala:168
+#, fuzzy
+msgid "20 minutes before"
 msgstr "20 minut"
 
-#: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
+#: src/EventEdition/ReminderPanel.vala:169
+#, fuzzy
+msgid "25 minutes before"
 msgstr "25 minut"
 
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
+#: src/EventEdition/ReminderPanel.vala:170
+#, fuzzy
+msgid "30 minutes before"
 msgstr "30 minut"
 
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
+#: src/EventEdition/ReminderPanel.vala:171
+#, fuzzy
+msgid "45 minutes before"
 msgstr "45 minut"
 
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
+#: src/EventEdition/ReminderPanel.vala:172
+#, fuzzy
+msgid "1 hour before"
 msgstr "1 ura"
 
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
+#: src/EventEdition/ReminderPanel.vala:173
+#, fuzzy
+msgid "2 hours before"
 msgstr "2 uri"
 
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
+#: src/EventEdition/ReminderPanel.vala:174
+#, fuzzy
+msgid "3 hours before"
 msgstr "3 ure"
 
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
+#: src/EventEdition/ReminderPanel.vala:175
+#, fuzzy
+msgid "12 hours before"
 msgstr "12 ur"
 
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
+#: src/EventEdition/ReminderPanel.vala:176
+#, fuzzy
+msgid "24 hours before"
 msgstr "24 ur"
 
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
+#: src/EventEdition/ReminderPanel.vala:177
+#, fuzzy
+msgid "2 days before"
 msgstr "2 dni"
 
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
+#: src/EventEdition/ReminderPanel.vala:178
+#, fuzzy
+msgid "1 week before"
 msgstr "1 teden"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "Obvestilo"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -678,8 +691,7 @@ msgstr "Ustvari koledar"
 msgid "Save"
 msgstr "Shrani"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "Odstrani"
 
@@ -688,8 +700,7 @@ msgstr "Odstrani"
 msgid "Not Removable"
 msgstr "Odstrani"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "Uredi …"
 
@@ -710,25 +721,44 @@ msgstr "Koledar \"%s\" odstranjen."
 msgid "Add New Calendar…"
 msgstr "Dodaj nov koledar…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
-#, c-format
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
+#, fuzzy, c-format
+msgctxt "date-range"
 msgid "%s – %s"
-msgstr ""
+msgstr "%s, %s - %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, fuzzy, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
-#, c-format
-msgid "%s"
-msgstr "%s"
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
+#, fuzzy, c-format
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s, %s - %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
+
+#: src/Widgets/CalendarButton.vala:72
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Ustvari koledar"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -763,6 +793,18 @@ msgstr "Upravljaj koledarje"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Izvozi ali souporabi privzeti koledar"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Izpiši samo verzijo"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 minut"
+
+#~ msgid "Notification"
+#~ msgstr "Obvestilo"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Upcoming Events"
 #~ msgstr "Prihajajoči dogodki"

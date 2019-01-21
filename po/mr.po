@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2018-12-18 10:44+0000\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
+"PO-Revision-Date: 2019-01-09 10:39+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
@@ -44,21 +44,9 @@ msgstr "john@doe.com"
 msgid "Keep a copy locally"
 msgstr "एक प्रत लोकली ठेवा"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "घटनेची साधारण माहिती"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr "आवृत्ती ची माहिती प्रिंट करा आणि बंद करा"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -84,38 +72,38 @@ msgstr "सुरक्षित कनेक्शन वापरा"
 msgid "Server handles meeting invitations"
 msgstr "मीटिंगची आमंत्रणे सर्व्हरद्वारे सांभाळली जातात"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "जेव्हा आपण घटना असलेले दिवस सिलेक्ट कराल तेव्हा येणाऱ्या सर्व घटना आपल्याला दिसतील."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "दिवसा"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "संपूर्ण दिवस"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr "उद्या"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr "या आठवड्यात"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr "पुढील आठवड्यात"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 msgid "This Month"
 msgstr "या महिन्यात"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 msgid "Next Month"
 msgstr "पुढील महिना"
 
@@ -131,7 +119,7 @@ msgstr "दिलेला दिवस निर्देशित करा"
 msgid "date"
 msgstr "तारीख"
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "कॅलेंडर"
 
@@ -154,6 +142,14 @@ msgstr[1] "%d फायलींवरील इव्हेंट या कॅ
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "इम्पोर्ट"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%a, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -203,6 +199,18 @@ msgstr "बदल सेव्ह करा"
 msgid "Cancel"
 msgstr "रद्द करा"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "स्वीकारा"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "अस्वीकार"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr "कदाचित"
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "भागीदार:"
@@ -214,14 +222,6 @@ msgstr "कुणीही नाही"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "आमंत्रित करा"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "स्वीकारा"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "अस्वीकार"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -263,85 +263,81 @@ msgstr "ठिकाण:"
 msgid "John Smith OR Example St."
 msgstr "John Smith किंवा Example St."
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "आठवणीची खूण:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "एकही आठवणीची खूण नाही"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "नवीन आठवणीची खूण जोडा"
 
+#: src/EventEdition/ReminderPanel.vala:163
+msgid "At time of event"
+msgstr "घटनेचे नाव"
+
+#: src/EventEdition/ReminderPanel.vala:164
+msgid "1 minute before"
+msgstr "1 मिनिटापूर्वी"
+
+#: src/EventEdition/ReminderPanel.vala:165
+msgid "5 minutes before"
+msgstr "५  मिनिटांपूर्वी"
+
+#: src/EventEdition/ReminderPanel.vala:166
+msgid "10 minutes before"
+msgstr "१० मिनिटांपूर्वी"
+
+#: src/EventEdition/ReminderPanel.vala:167
+msgid "15 minutes before"
+msgstr "१५ मिनिटांपूर्वी"
+
+#: src/EventEdition/ReminderPanel.vala:168
+msgid "20 minutes before"
+msgstr "२० मिनिटांपूर्वी"
+
+#: src/EventEdition/ReminderPanel.vala:169
+msgid "25 minutes before"
+msgstr "२५ मिनिटांपूर्वी"
+
+#: src/EventEdition/ReminderPanel.vala:170
+msgid "30 minutes before"
+msgstr "३० मिनिटांपूर्वी"
+
+#: src/EventEdition/ReminderPanel.vala:171
+msgid "45 minutes before"
+msgstr "४५ मिनिटांपूर्वी"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "० मिनिटे"
+msgid "1 hour before"
+msgstr "१ तास पूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:173
-msgid "1 minute"
-msgstr "१ मिनिट"
+msgid "2 hours before"
+msgstr "२ तासांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "५ मिनिटे"
+msgid "3 hours before"
+msgstr "३ तासांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "१० मिनिटे"
+msgid "12 hours before"
+msgstr "१२ तासांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "१५ मिनिटे"
+msgid "24 hours before"
+msgstr "२४ तासांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "२० मिनिटे"
+msgid "2 days before"
+msgstr "२ दिवस आधी"
 
 #: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "२५ मिनिटे"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "३० मिनिटे"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "४५ मिनिटे"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "१ तास"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
-msgstr "२ तास"
-
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
-msgstr "३ तास"
-
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
-msgstr "१२ तास"
-
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
-msgstr "२४ तास"
-
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
-msgstr "२ दिवस"
-
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
-msgstr "१ आठवडा"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "सूचना"
+msgid "1 week before"
+msgstr "१ आठवडा आधी"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -665,8 +661,7 @@ msgstr "नवीन कॅलेंडर बनवा"
 msgid "Save"
 msgstr "सेव्ह करा"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "कॅलेंडर मिटवा"
 
@@ -674,8 +669,7 @@ msgstr "कॅलेंडर मिटवा"
 msgid "Not Removable"
 msgstr "काढता येण्याजोगे नाही"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "बदला…"
 
@@ -696,25 +690,43 @@ msgstr "\"%s\" मिटविले"
 msgid "Add New Calendar…"
 msgstr "नवीन कॅलेंडर बनवा…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
 #, c-format
+msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
 #, c-format
-msgid "%s"
-msgstr "%s"
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
+
+#: src/Widgets/CalendarButton.vala:72
+msgid "Search Calendars"
+msgstr "कॅलेंडर शोधा"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr "परिणाम नाहीत"
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr "शोध संज्ञा बदलून प्रयत्न करा."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -748,6 +760,18 @@ msgstr "कॅलेंडर्स मॅनेज करा"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "डिफॉल्ट कॅलेंडर एक्स्पोर्ट अथवा शेअर करा"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "आवृत्ती ची माहिती प्रिंट करा आणि बंद करा"
+
+#~ msgid "0 minutes"
+#~ msgstr "० मिनिटे"
+
+#~ msgid "Notification"
+#~ msgstr "सूचना"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Upcoming Events"
 #~ msgstr "पुढील घटना"

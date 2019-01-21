@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2015-05-15 10:58+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -44,20 +44,8 @@ msgstr ""
 msgid "Keep a copy locally"
 msgstr ""
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e %B %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
-msgstr ""
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
 msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
@@ -84,7 +72,7 @@ msgstr ""
 msgid "Server handles meeting invitations"
 msgstr ""
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -92,31 +80,31 @@ msgstr ""
 "Evenimentele viitoare vor fi afişate aici când selectezi o dată cu "
 "evenimente."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr ""
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr ""
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr ""
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr ""
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 msgid "This Month"
 msgstr ""
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 msgid "Next Month"
 msgstr ""
 
@@ -133,7 +121,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Calendar"
 
@@ -158,6 +146,15 @@ msgstr[2] ""
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr ""
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e %B %Y"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%A, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -207,6 +204,18 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr ""
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr ""
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr ""
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr ""
@@ -217,14 +226,6 @@ msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
-msgstr ""
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr ""
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
 msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:77
@@ -267,84 +268,81 @@ msgstr ""
 msgid "John Smith OR Example St."
 msgstr "Ion Creanga SAU Exemplu Str."
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr ""
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr ""
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr ""
 
+#: src/EventEdition/ReminderPanel.vala:163
+#, fuzzy
+msgid "At time of event"
+msgstr "Numele evenimentului"
+
+#: src/EventEdition/ReminderPanel.vala:164
+msgid "1 minute before"
+msgstr ""
+
+#: src/EventEdition/ReminderPanel.vala:165
+msgid "5 minutes before"
+msgstr ""
+
+#: src/EventEdition/ReminderPanel.vala:166
+msgid "10 minutes before"
+msgstr ""
+
+#: src/EventEdition/ReminderPanel.vala:167
+msgid "15 minutes before"
+msgstr ""
+
+#: src/EventEdition/ReminderPanel.vala:168
+msgid "20 minutes before"
+msgstr ""
+
+#: src/EventEdition/ReminderPanel.vala:169
+msgid "25 minutes before"
+msgstr ""
+
+#: src/EventEdition/ReminderPanel.vala:170
+msgid "30 minutes before"
+msgstr ""
+
+#: src/EventEdition/ReminderPanel.vala:171
+msgid "45 minutes before"
+msgstr ""
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
+msgid "1 hour before"
 msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:173
-msgid "1 minute"
+msgid "2 hours before"
 msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
+msgid "3 hours before"
 msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
+msgid "12 hours before"
 msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
+msgid "24 hours before"
 msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
+msgid "2 days before"
 msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr ""
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr ""
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr ""
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr ""
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
-msgstr ""
-
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
-msgstr ""
-
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
-msgstr ""
-
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
-msgstr ""
-
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
-msgstr ""
-
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
-msgstr ""
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
+msgid "1 week before"
 msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:53
@@ -669,8 +667,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr ""
 
@@ -678,8 +675,7 @@ msgstr ""
 msgid "Not Removable"
 msgstr ""
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr ""
 
@@ -700,24 +696,43 @@ msgstr ""
 msgid "Add New Calendar…"
 msgstr ""
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
 #, c-format
+msgctxt "date-range"
 msgid "%s – %s"
 msgstr ""
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr ""
 
-#: src/Widgets/AgendaEventRow.vala:199
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
 #, c-format
-msgid "%s"
+msgctxt "time-range"
+msgid "%s – %s"
 msgstr ""
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, c-format
 msgid "%s, %s – %s"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:72
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Caută Evenimente"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
 msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
@@ -754,9 +769,6 @@ msgstr ""
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Transferă sau Distribuie calendarul implicit"
-
-#~ msgid "Search Events"
-#~ msgstr "Caută Evenimente"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
