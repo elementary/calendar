@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2018-10-16 13:52+0000\n"
-"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
+"PO-Revision-Date: 2019-01-27 00:00+0000\n"
+"Last-Translator: Roberto Picone <roberto.pic1999@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/calendar/"
 "calendar/it/>\n"
 "Language: it\n"
@@ -125,9 +125,8 @@ msgid "Calendar"
 msgstr "Calendario"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Seleziona i calendari da mostrare"
+msgstr "Seleziona un calendario da importare"
 
 #: src/ImportDialog.vala:44
 #, fuzzy, c-format
@@ -685,9 +684,8 @@ msgid "Remove"
 msgstr "Rimuovi"
 
 #: src/SourceDialog/SourceItem.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Rimuovi"
+msgstr "Non removibile"
 
 #: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
@@ -695,7 +693,7 @@ msgstr "Modifica…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Non modificabile"
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
