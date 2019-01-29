@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2019-01-01 18:41+0000\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
+"PO-Revision-Date: 2019-01-28 14:53+0000\n"
 "Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
@@ -44,21 +44,9 @@ msgstr "kullanici@domain.com"
 msgid "Keep a copy locally"
 msgstr "Yerel bir kopyasını sakla"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Hata ayıklama bilgisini yazdır"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr "Sürüm bilgisini yazdır ve çık"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -84,7 +72,7 @@ msgstr "Güvenli bağlantı kullan"
 msgid "Server handles meeting invitations"
 msgstr "Toplantı davetiyelerini sunucuda topla"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -92,31 +80,31 @@ msgstr ""
 "Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
 "gösterilecek."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "Gündüzleri"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "Tüm gün"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr "Yarın"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr "Bu Hafta"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr "Gelecek Hafta"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 msgid "This Month"
 msgstr "Bu Ay"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 msgid "Next Month"
 msgstr "Gelecek Ay"
 
@@ -132,7 +120,7 @@ msgstr "Verilen güne odaklan"
 msgid "date"
 msgstr "tarih"
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Takvim"
 
@@ -155,6 +143,14 @@ msgstr[1] "%d dosyasındaki etkinlikler bu takvim ile birleştirilecek:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "İçe Aktar"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%a, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -204,6 +200,18 @@ msgstr "Değişiklikleri Kaydet"
 msgid "Cancel"
 msgstr "Vazgeç"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "Kabul edildi"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "Reddedildi"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr "Belki"
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Katılımcılar:"
@@ -215,14 +223,6 @@ msgstr "Katılmayanlar"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "Davet et"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "Kabul edildi"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "Reddedildi"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -264,85 +264,81 @@ msgstr "Konum:"
 msgid "John Smith OR Example St."
 msgstr "Mustafa Kemal Atatürk veya Örnek Sokak"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "Hatırlatmalar:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "Hatırlatma yok"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "Hatırlatma Ekle"
 
+#: src/EventEdition/ReminderPanel.vala:163
+msgid "At time of event"
+msgstr "Etkinlik vaktinde"
+
+#: src/EventEdition/ReminderPanel.vala:164
+msgid "1 minute before"
+msgstr "1 dakika önce"
+
+#: src/EventEdition/ReminderPanel.vala:165
+msgid "5 minutes before"
+msgstr "5 dakika önce"
+
+#: src/EventEdition/ReminderPanel.vala:166
+msgid "10 minutes before"
+msgstr "10 dakika önce"
+
+#: src/EventEdition/ReminderPanel.vala:167
+msgid "15 minutes before"
+msgstr "15 dakika önce"
+
+#: src/EventEdition/ReminderPanel.vala:168
+msgid "20 minutes before"
+msgstr "20 dakika önce"
+
+#: src/EventEdition/ReminderPanel.vala:169
+msgid "25 minutes before"
+msgstr "25 dakika önce"
+
+#: src/EventEdition/ReminderPanel.vala:170
+msgid "30 minutes before"
+msgstr "30 dakika önce"
+
+#: src/EventEdition/ReminderPanel.vala:171
+msgid "45 minutes before"
+msgstr "45 dakika önce"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 dakika"
+msgid "1 hour before"
+msgstr "1 saat önce"
 
 #: src/EventEdition/ReminderPanel.vala:173
-msgid "1 minute"
-msgstr "1 dakika"
+msgid "2 hours before"
+msgstr "2 saat önce"
 
 #: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "5 dakika"
+msgid "3 hours before"
+msgstr "3 saat önce"
 
 #: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "10 dakika"
+msgid "12 hours before"
+msgstr "12 saat önce"
 
 #: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "15 dakika"
+msgid "24 hours before"
+msgstr "24 saat önce"
 
 #: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "20 dakika"
+msgid "2 days before"
+msgstr "2 gün önce"
 
 #: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "25 dakika"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "30 dakika"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "45 dakika"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "1 saat"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
-msgstr "2 saat"
-
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
-msgstr "3 saat"
-
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
-msgstr "12 saat"
-
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
-msgstr "24 saat"
-
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
-msgstr "2 gün"
-
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
-msgstr "1 hafta"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "Bildirim"
+msgid "1 week before"
+msgstr "1 hafta önce"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -666,8 +662,7 @@ msgstr "Takvim Oluştur"
 msgid "Save"
 msgstr "Kaydet"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "Sil"
 
@@ -675,8 +670,7 @@ msgstr "Sil"
 msgid "Not Removable"
 msgstr "Kaldırılamaz"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "Düzenle…"
 
@@ -697,25 +691,43 @@ msgstr "\"%s\" kaldırıldı"
 msgid "Add New Calendar…"
 msgstr "Yeni Takvim Ekle…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
 #, c-format
+msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
 #, c-format
-msgid "%s"
-msgstr "%s"
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
+
+#: src/Widgets/CalendarButton.vala:72
+msgid "Search Calendars"
+msgstr "Takvimler Ara"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr "Sonuç yok"
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr "Arama kelimelerini değiştirmeyi deneyin."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -749,6 +761,18 @@ msgstr "Takvimleri Yönet"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Sürüm bilgisini yazdır ve çık"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 dakika"
+
+#~ msgid "Notification"
+#~ msgstr "Bildirim"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Upcoming Events"
 #~ msgstr "Yaklaşan Etkinlikler"

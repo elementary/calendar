@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2018-10-16 09:44+0000\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
+"PO-Revision-Date: 2019-01-25 18:31+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/calendar/"
 "calendar/da/>\n"
@@ -44,21 +44,9 @@ msgstr "john@eksempel.dk"
 msgid "Keep a copy locally"
 msgstr "Behold en lokal kopi"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Print debug information"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr "Print version info og afslut"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -84,7 +72,7 @@ msgstr "Brug en sikker forbindelse"
 msgid "Server handles meeting invitations"
 msgstr "Server håndterer mødeinvitationer"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -92,31 +80,31 @@ msgstr ""
 "Dine kommende begivenheder vil blive vist her, når du vælger en dato med "
 "begivenheder."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "I løbet af dagen"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "Hele dagen"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr "Imorgen"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr "Denne Uge"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr "Næste Uge"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 msgid "This Month"
 msgstr "Denne Måned"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 msgid "Next Month"
 msgstr "Næste Måned"
 
@@ -132,30 +120,37 @@ msgstr "Fokuser på den givne dag"
 msgid "date"
 msgstr "dato"
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Kalender"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Vælg kalendere til visning"
+msgstr "Vælg Kalender at Importere Til"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importér begivenheder fra %d fil ind i den følgende kalender:"
+msgstr "Begivenheder fra \"%s\" vil blive slået sammen med denne kalender:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Importér begivenheder fra %d fil ind i den følgende kalender:"
-msgstr[1] "Importér begivenheder fra %d filer ind i den følgende kalender:"
+msgstr[0] "Begivenheder fra %d fil vil blive slået sammen med denne kalender:"
+msgstr[1] "Begivenheder fra %d filer vil blive slået sammen med denne kalender:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Importér"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%a, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -205,6 +200,18 @@ msgstr "Gem ændringer"
 msgid "Cancel"
 msgstr "Annuller"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "Godkendt"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "Afvist"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr "Måske"
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Deltagere:"
@@ -216,14 +223,6 @@ msgstr "Ingen deltagere"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "Inviter"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "Godkendt"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "Afvist"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -265,85 +264,81 @@ msgstr "Sted:"
 msgid "John Smith OR Example St."
 msgstr "Anne Marie ELLER Eksempelgade"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "Påmindelser:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "Ingen påmindelser"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "Tilføj påmindelse"
 
+#: src/EventEdition/ReminderPanel.vala:163
+msgid "At time of event"
+msgstr "På tidspunktet for begivenheden"
+
+#: src/EventEdition/ReminderPanel.vala:164
+msgid "1 minute before"
+msgstr "1 minut før"
+
+#: src/EventEdition/ReminderPanel.vala:165
+msgid "5 minutes before"
+msgstr "5 minutter før"
+
+#: src/EventEdition/ReminderPanel.vala:166
+msgid "10 minutes before"
+msgstr "10 minutter før"
+
+#: src/EventEdition/ReminderPanel.vala:167
+msgid "15 minutes before"
+msgstr "15 minutter før"
+
+#: src/EventEdition/ReminderPanel.vala:168
+msgid "20 minutes before"
+msgstr "20 minutter før"
+
+#: src/EventEdition/ReminderPanel.vala:169
+msgid "25 minutes before"
+msgstr "25 minutter før"
+
+#: src/EventEdition/ReminderPanel.vala:170
+msgid "30 minutes before"
+msgstr "30 minutter før"
+
+#: src/EventEdition/ReminderPanel.vala:171
+msgid "45 minutes before"
+msgstr "45 minutter før"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 minutter"
+msgid "1 hour before"
+msgstr "1 time før"
 
 #: src/EventEdition/ReminderPanel.vala:173
-msgid "1 minute"
-msgstr "1 minut"
+msgid "2 hours before"
+msgstr "2 timer før"
 
 #: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "5 minutter"
+msgid "3 hours before"
+msgstr "3 timer før"
 
 #: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "10 minutter"
+msgid "12 hours before"
+msgstr "12 timer før"
 
 #: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "15 minutter"
+msgid "24 hours before"
+msgstr "24 timer før"
 
 #: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "20 minutter"
+msgid "2 days before"
+msgstr "2 dage før"
 
 #: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "25 minutter"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "30 minutter"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "45 minutter"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "1 time"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
-msgstr "2 timer"
-
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
-msgstr "3 timer"
-
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
-msgstr "12 timer"
-
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
-msgstr "24 timer"
-
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
-msgstr "2 dage"
-
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
-msgstr "1 uge"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "Påmindelse"
+msgid "1 week before"
+msgstr "1 uge før"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -667,57 +662,72 @@ msgstr "Opret kalender"
 msgid "Save"
 msgstr "Gem"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "Fjern"
 
 #: src/SourceDialog/SourceItem.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Fjern"
+msgstr "Kan Ikke Fjernes"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "Redigér…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Kan Ikke Ændres"
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "Fortryd"
 
 #: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Kalender \"%s\" fjernet."
+msgstr "\"%s\" fjernet"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "Tilføj ny kalender…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
 #, c-format
+msgctxt "date-range"
 msgid "%s – %s"
-msgstr ""
+msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
-msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/Widgets/AgendaEventRow.vala:199
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, c-format
-msgid "%s"
-msgstr "%s"
+msgid "%s, %s – %s, %s"
+msgstr "%s, %s – %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
-#, fuzzy, c-format
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
+#, c-format
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s – %s"
+
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s, %s – %s"
+
+#: src/Widgets/CalendarButton.vala:72
+msgid "Search Calendars"
+msgstr "Søg Kalendere"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr "Ingen Resultater"
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr "Prøv at ændre søgeord."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -751,6 +761,18 @@ msgstr "Administrer kalendere"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Eksportér eller del standardkalenderen"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Print version info og afslut"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 minutter"
+
+#~ msgid "Notification"
+#~ msgstr "Påmindelse"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Upcoming Events"
 #~ msgstr "Kommende Events"

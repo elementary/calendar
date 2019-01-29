@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2018-08-13 00:02+0000\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
+"PO-Revision-Date: 2019-01-15 12:34+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "calendar/calendar/zh_Hans/>\n"
@@ -44,22 +44,9 @@ msgstr "如 john@doe.com"
 msgid "Keep a copy locally"
 msgstr "在本地创建一个备份"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%Y年%b%e日"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%b%d日 %A"
-
-#: daemon/Daemon.vala:21
-#, fuzzy
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
-msgstr "一般信息"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr "打印版本信息并退出"
+msgstr "打印调试信息"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -85,74 +72,67 @@ msgstr "使用安全连接"
 msgid "Server handles meeting invitations"
 msgstr "服务器处理会议邀请"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "当您选择一个含有任务的日期时，您最近的活动将会显示在这里。"
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "白天"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "全天"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr "明天"
 
-#: src/AgendaView.vala:277
-#, fuzzy
+#: src/AgendaView.vala:278
 msgid "This Week"
-msgstr "周"
+msgstr "本周"
 
-#: src/AgendaView.vala:280
-#, fuzzy
+#: src/AgendaView.vala:281
 msgid "Next Week"
-msgstr "周"
+msgstr "下周"
 
-#: src/AgendaView.vala:283
-#, fuzzy
+#: src/AgendaView.vala:284
 msgid "This Month"
-msgstr "个月"
+msgstr "本月"
 
-#: src/AgendaView.vala:286
-#, fuzzy
+#: src/AgendaView.vala:287
 msgid "Next Month"
-msgstr "个月"
+msgstr "下月"
 
 #: src/Application.vala:47
-#, fuzzy
 msgid "Create an event"
-msgstr "创建新活动"
+msgstr "创建新的活动"
 
 #: src/Application.vala:48
-#, fuzzy
 msgid "Focus the given day"
-msgstr "转到特定日期"
+msgstr "转到指定日期"
 
 #: src/Application.vala:48
 msgid "date"
 msgstr "日期"
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "日历"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "选择要显示的日历"
+msgstr "选择要导入到的日历"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "将 \"%s\" 文件中的事件导入到以下日历中："
+msgstr "\"%s\" 中的事件将被导入到以下日历中："
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "将 \"%s\" 文件中的事件导入到以下日历中："
@@ -160,6 +140,14 @@ msgstr[0] "将 \"%s\" 文件中的事件导入到以下日历中："
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "导入"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%Y年%b%e日"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%b%d日 %A"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -208,6 +196,18 @@ msgstr "保存更改"
 msgid "Cancel"
 msgstr "取消"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "已接受"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "已拒绝"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr "也许"
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "参与者："
@@ -219,14 +219,6 @@ msgstr "无参与者"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "邀请"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "已接受"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "已拒绝"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -268,86 +260,81 @@ msgstr "位置："
 msgid "John Smith OR Example St."
 msgstr "地点或街道名称"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "提醒："
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "无提醒"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "添加提醒"
 
+#: src/EventEdition/ReminderPanel.vala:163
+msgid "At time of event"
+msgstr "事件时间"
+
+#: src/EventEdition/ReminderPanel.vala:164
+msgid "1 minute before"
+msgstr "1 分钟前"
+
+#: src/EventEdition/ReminderPanel.vala:165
+msgid "5 minutes before"
+msgstr "5 分钟前"
+
+#: src/EventEdition/ReminderPanel.vala:166
+msgid "10 minutes before"
+msgstr "10 分钟前"
+
+#: src/EventEdition/ReminderPanel.vala:167
+msgid "15 minutes before"
+msgstr "15 分钟前"
+
+#: src/EventEdition/ReminderPanel.vala:168
+msgid "20 minutes before"
+msgstr "20 分钟前"
+
+#: src/EventEdition/ReminderPanel.vala:169
+msgid "25 minutes before"
+msgstr "25 分钟前"
+
+#: src/EventEdition/ReminderPanel.vala:170
+msgid "30 minutes before"
+msgstr "30 分钟前"
+
+#: src/EventEdition/ReminderPanel.vala:171
+msgid "45 minutes before"
+msgstr "45 分钟前"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 分钟"
+msgid "1 hour before"
+msgstr "1 小时前"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
-msgid "1 minute"
-msgstr "1 分钟"
+msgid "2 hours before"
+msgstr "2 小时前"
 
 #: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "5 分钟"
+msgid "3 hours before"
+msgstr "3 小时前"
 
 #: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "10 分钟"
+msgid "12 hours before"
+msgstr "12 小时前"
 
 #: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "15 分钟"
+msgid "24 hours before"
+msgstr "24 小时前"
 
 #: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "20 分钟"
+msgid "2 days before"
+msgstr "2 天前"
 
 #: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "25 分钟"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "30 分钟"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "45 分钟"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "1 小时"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
-msgstr "2 小时"
-
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
-msgstr "3 小时"
-
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
-msgstr "12 小时"
-
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
-msgstr "24 小时"
-
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
-msgstr "2 天"
-
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
-msgstr "1 周"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "通知"
+msgid "1 week before"
+msgstr "1 周前"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -667,77 +654,89 @@ msgstr "创建日历"
 msgid "Save"
 msgstr "保存"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "删除"
 
 #: src/SourceDialog/SourceItem.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "删除"
+msgstr "无法删除"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "编辑…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "不可编辑"
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "撤销"
 
 #: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "日历“%s”已删除。"
+msgstr "日历“%s”已删除"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
 msgstr "添加新日历…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
 #, c-format
+msgctxt "date-range"
 msgid "%s – %s"
-msgstr ""
+msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
-msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/Widgets/AgendaEventRow.vala:199
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, c-format
-msgid "%s"
-msgstr "%s"
+msgid "%s, %s – %s, %s"
+msgstr "%s, %s – %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
-#, fuzzy, c-format
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
+#, c-format
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s – %s"
+
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s"
+
+#: src/Widgets/CalendarButton.vala:72
+msgid "Search Calendars"
+msgstr "搜索日历"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr "无结果"
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr "尝试更改搜索内容。"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "导出日历..."
+msgstr "导出日历…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
 #: src/Widgets/EventMenu.vala:41
-#, fuzzy
 msgid "Remove Event"
 msgstr "删除事件"
 
 #: src/Widgets/EventMenu.vala:43
-#, fuzzy
 msgid "Remove Occurrence"
-msgstr "删除修改"
+msgstr "删除触发"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
@@ -754,6 +753,18 @@ msgstr "管理日历"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "导出或分享默认日历"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "打印版本信息并退出"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 分钟"
+
+#~ msgid "Notification"
+#~ msgstr "通知"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Upcoming Events"
 #~ msgstr "近期活动"

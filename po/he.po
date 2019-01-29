@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2018-12-19 11:04+0000\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
+"PO-Revision-Date: 2019-01-09 22:01+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/calendar/"
 "calendar/he/>\n"
@@ -44,21 +44,9 @@ msgstr "john@doe.com"
 msgid "Keep a copy locally"
 msgstr "שמירת עותק מקומי"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%e ב%B,‏ %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %d ב%b"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "הצגת מידע ניפוי שגיאות"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr "הדפסת פרטי הגרסה ואז לצאת"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -84,37 +72,37 @@ msgstr "שימוש בחיבור מאובטח"
 msgid "Server handles meeting invitations"
 msgstr "השרת מטפל בהזמנות לפגישות"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "האירועים הקרובים יוצגו כאן בעת בחירת תאריך עם אירועים."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "במהלך היום"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "כל היום"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr "מחר"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr "השבוע"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr "בשבוע הבא"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 msgid "This Month"
 msgstr "החודש"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 msgid "Next Month"
 msgstr "בחודש הבא"
 
@@ -130,7 +118,7 @@ msgstr "התמקדות על היום הנתון"
 msgid "date"
 msgstr "תאריך"
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "לוח שנה"
 
@@ -153,6 +141,14 @@ msgstr[1] "אירועים מ־%d קבצים ימוזגו עם לוח השנה ה
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "ייבוא"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%e ב%B,‏ %Y"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%a, %d ב%b"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -202,6 +198,18 @@ msgstr "שמירת השינויים"
 msgid "Cancel"
 msgstr "ביטול"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "התקבלה"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "נדחתה"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr "אולי"
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "משתתפים:"
@@ -213,14 +221,6 @@ msgstr "אין משתתפים"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "הזמנה"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "התקבלה"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "נדחתה"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -262,85 +262,81 @@ msgstr "מיקום:"
 msgid "John Smith OR Example St."
 msgstr "אליעזר זמנהוף או רחוב לדוגמה"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "תזכורות:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "אין תזכורות"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "הוספת תזכורת"
 
+#: src/EventEdition/ReminderPanel.vala:163
+msgid "At time of event"
+msgstr "בזמן האירוע"
+
+#: src/EventEdition/ReminderPanel.vala:164
+msgid "1 minute before"
+msgstr "דקה לפני"
+
+#: src/EventEdition/ReminderPanel.vala:165
+msgid "5 minutes before"
+msgstr "5 דקות לפני"
+
+#: src/EventEdition/ReminderPanel.vala:166
+msgid "10 minutes before"
+msgstr "10 דקות לפני"
+
+#: src/EventEdition/ReminderPanel.vala:167
+msgid "15 minutes before"
+msgstr "רבע שעה לפני"
+
+#: src/EventEdition/ReminderPanel.vala:168
+msgid "20 minutes before"
+msgstr "20 דקות לפני"
+
+#: src/EventEdition/ReminderPanel.vala:169
+msgid "25 minutes before"
+msgstr "25 דקות לפני"
+
+#: src/EventEdition/ReminderPanel.vala:170
+msgid "30 minutes before"
+msgstr "חצי שעה לפני"
+
+#: src/EventEdition/ReminderPanel.vala:171
+msgid "45 minutes before"
+msgstr "45 דקות לפני"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 דקות"
+msgid "1 hour before"
+msgstr "שעה לפני"
 
 #: src/EventEdition/ReminderPanel.vala:173
-msgid "1 minute"
-msgstr "דקה אחת"
+msgid "2 hours before"
+msgstr "שעתיים לפני"
 
 #: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "5 דקות"
+msgid "3 hours before"
+msgstr "3 שעות לפני"
 
 #: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "10 דקות"
+msgid "12 hours before"
+msgstr "12 שעות לפני"
 
 #: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "15 דקות"
+msgid "24 hours before"
+msgstr "24 שעות לפני"
 
 #: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "20 דקות"
+msgid "2 days before"
+msgstr "יומיים לפני"
 
 #: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "25 דקות"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "30 דקות"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "45 דקות"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "שעה אחת"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
-msgstr "שעתיים"
-
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
-msgstr "3 שעות"
-
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
-msgstr "12 שעות"
-
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
-msgstr "24 שעות"
-
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
-msgstr "יומיים"
-
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
-msgstr "שבוע אחד"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "התראה"
+msgid "1 week before"
+msgstr "שבוע לפני"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -664,8 +660,7 @@ msgstr "יצירת לוח שנה"
 msgid "Save"
 msgstr "שמירה"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "הסרה"
 
@@ -673,8 +668,7 @@ msgstr "הסרה"
 msgid "Not Removable"
 msgstr "לא ניתן להסרה"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "עריכה…"
 
@@ -695,25 +689,43 @@ msgstr "„%s” הוסר"
 msgid "Add New Calendar…"
 msgstr "הוספת לוח שנה חדש…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
 #, c-format
+msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
 #, c-format
-msgid "%s"
-msgstr "%s"
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
+
+#: src/Widgets/CalendarButton.vala:72
+msgid "Search Calendars"
+msgstr "חיפוש בלוחות השנה"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr "אין תוצאות"
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr "מוטב לנסות להחליף את הביטויים בחיפוש."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -747,6 +759,18 @@ msgstr "ניהול לוחות שנה"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "יצוא או שיתוף יומן בררת המחדל"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "הדפסת פרטי הגרסה ואז לצאת"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 דקות"
+
+#~ msgid "Notification"
+#~ msgstr "התראה"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Upcoming Events"
 #~ msgstr "אירועים קרבים"
