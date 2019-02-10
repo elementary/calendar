@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-02-10 22:10+0000\n"
+"PO-Revision-Date: 2019-02-11 00:08+0000\n"
 "Last-Translator: tylnesh <kohutek.michal@gmail.com>\n"
 "Language-Team: Slovak <https://weblate.elementary.io/projects/calendar/"
 "calendar/sk/>\n"
@@ -251,7 +251,7 @@ msgstr "Stlačne enter pre vloženie události"
 
 #: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
-msgstr "Kalendár"
+msgstr "Kalendár:"
 
 #: src/EventEdition/InfoPanel.vala:140
 msgid "Comments:"
@@ -632,7 +632,7 @@ msgstr "Zobraziť čísla týždňov"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "%u viac..."
+msgstr "%u viac…"
 
 #: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
@@ -677,7 +677,7 @@ msgstr "Neodstrániteľné"
 
 #: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
-msgstr "Upraviť..."
+msgstr "Upraviť…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
@@ -694,7 +694,7 @@ msgstr "Kalendár \"%s\" odstránený"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
-msgstr "Pridať nový kalendár..."
+msgstr "Pridať nový kalendár…"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:175
