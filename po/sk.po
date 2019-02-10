@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-02-10 22:09+0000\n"
+"PO-Revision-Date: 2019-02-10 22:10+0000\n"
 "Last-Translator: tylnesh <kohutek.michal@gmail.com>\n"
 "Language-Team: Slovak <https://weblate.elementary.io/projects/calendar/"
 "calendar/sk/>\n"
@@ -54,7 +54,7 @@ msgstr "Google"
 
 #: plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr "používateľ alebo používateľ@gmail.com"
+msgstr "používateľské.meno alebo používateľské.meno@gmail.com"
 
 #: plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
@@ -698,10 +698,10 @@ msgstr "Pridať nový kalendár..."
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:175
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:178
@@ -711,7 +711,7 @@ msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
