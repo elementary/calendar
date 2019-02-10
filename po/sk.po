@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2016-01-10 13:45+0000\n"
-"Last-Translator: Ľubomír Hlavko <5lubo555@azet.sk>\n"
-"Language-Team: Slovak <sk@li.org>\n"
+"PO-Revision-Date: 2019-02-10 22:09+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
+"Language-Team: Slovak <https://weblate.elementary.io/projects/calendar/"
+"calendar/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
 msgid "On this computer"
@@ -44,9 +45,8 @@ msgid "Keep a copy locally"
 msgstr "Ponechať kópiu"
 
 #: daemon/Daemon.vala:24
-#, fuzzy
 msgid "Print debug information"
-msgstr "Všeobecné informácie"
+msgstr "Vytlačiť debugovacie informácie"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -89,32 +89,27 @@ msgstr "Celý deň"
 
 #: src/AgendaView.vala:275
 msgid "Tomorrow"
-msgstr ""
+msgstr "Zajtra"
 
 #: src/AgendaView.vala:278
-#, fuzzy
 msgid "This Week"
-msgstr "Týždní"
+msgstr "Tento týždeň"
 
 #: src/AgendaView.vala:281
-#, fuzzy
 msgid "Next Week"
-msgstr "Týždní"
+msgstr "Budúci týždeň"
 
 #: src/AgendaView.vala:284
-#, fuzzy
 msgid "This Month"
-msgstr "Mesiacov"
+msgstr "Tento mesiac"
 
 #: src/AgendaView.vala:287
-#, fuzzy
 msgid "Next Month"
-msgstr "Mesiacov"
+msgstr "Budúci mesiac"
 
 #: src/Application.vala:47
-#, fuzzy
 msgid "Create an event"
-msgstr "Vytvoriť novú udalosť"
+msgstr "Vytvoriť udalosť"
 
 #: src/Application.vala:48
 msgid "Focus the given day"
@@ -776,7 +771,7 @@ msgstr "Odstrániť udalosť"
 
 #: src/Widgets/EventMenu.vala:43
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Odstrániť výskyt"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
