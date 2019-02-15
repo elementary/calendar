@@ -94,7 +94,7 @@ namespace Maya.View.Widgets {
             filechooser.filter = filter;
             filechooser.set_current_name (_("calendar.ics"));
 
-            if (filechooser.run () == Gtk.ResponseType.APPLY) {
+            if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
                 var destination = filechooser.get_filename ();
                 if (destination == null) {
                     destination = filechooser.get_current_folder();
