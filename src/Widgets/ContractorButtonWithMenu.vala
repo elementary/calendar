@@ -46,7 +46,7 @@ namespace Maya.View.Widgets {
 
     public class ContractorButtonWithMenu : Gtk.MenuButton {
 
-        private Gtk.FileChooserDialog filechooser;
+        private Gtk.FileChooserNative filechooser;
 
         public ContractorButtonWithMenu (string tooltiptext) {
             Object (
@@ -79,23 +79,22 @@ namespace Maya.View.Widgets {
         private void savecal () {
             /* creates a .ics file */
             Util.save_temp_selected_calendars ();
-            filechooser = new Gtk.FileChooserDialog (_("Export Calendar…"), null, Gtk.FileChooserAction.SAVE);
+
             var filter = new Gtk.FileFilter ();
-            filter.add_mime_type("text/calendar");
-            filechooser.set_current_name(_("calendar.ics"));
-            filechooser.set_filter (filter);
-            filechooser.add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
-            filechooser.add_button (_("Save"), Gtk.ResponseType.APPLY);
-            filechooser.response.connect (on_response);
-            filechooser.show_all ();
-            filechooser.run ();
+            filter.add_mime_type ("text/calendar");
 
+            filechooser = new Gtk.FileChooserNative (
+                _("Export Calendar…"),
+                null,
+                Gtk.FileChooserAction.SAVE,
+                _("Save"),
+                _("Cancel")
+            );
+            filechooser.do_overwrite_confirmation = true;
+            filechooser.filter = filter;
+            filechooser.set_current_name (_("calendar.ics"));
 
-        }
-
-        private void on_response (Gtk.Dialog source, int response_id) {
-            switch (response_id) {
-            case Gtk.ResponseType.APPLY:
+            if (filechooser.run () == Gtk.ResponseType.APPLY) {
                 var destination = filechooser.get_filename ();
                 if (destination == null) {
                     destination = filechooser.get_current_folder();
@@ -107,12 +106,9 @@ namespace Maya.View.Widgets {
                 } catch (SpawnError e) {
                     warning (e.message);
                 }
-                filechooser.destroy ();
-                break;
-            case Gtk.ResponseType.CLOSE:
-                filechooser.destroy ();
-                break;
             }
+
+            filechooser.destroy ();
         }
     }
 
