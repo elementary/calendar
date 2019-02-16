@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2018-10-16 13:52+0000\n"
-"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
+"PO-Revision-Date: 2019-01-27 00:00+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/calendar/"
 "calendar/it/>\n"
 "Language: it\n"
@@ -125,14 +125,13 @@ msgid "Calendar"
 msgstr "Calendario"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Seleziona i calendari da mostrare"
+msgstr "Seleziona un calendario da importare"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importa gli eventi dal file %d nel seguente calendario:"
+msgstr "Importa gli eventi da \"%d\" nel seguente calendario:"
 
 #: src/ImportDialog.vala:47
 #, fuzzy, c-format
@@ -212,7 +211,7 @@ msgstr "Rifiutato"
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr ""
+msgstr "Forse"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -279,84 +278,68 @@ msgid "Add Reminder"
 msgstr "Aggiungi promemoria"
 
 #: src/EventEdition/ReminderPanel.vala:163
-#, fuzzy
 msgid "At time of event"
-msgstr "Nome dell'evento"
+msgstr "All'ora dell'evento"
 
 #: src/EventEdition/ReminderPanel.vala:164
-#, fuzzy
 msgid "1 minute before"
-msgstr "1 minuto"
+msgstr "1 minuto prima"
 
 #: src/EventEdition/ReminderPanel.vala:165
-#, fuzzy
 msgid "5 minutes before"
-msgstr "5 minuti"
+msgstr "5 minuti prima"
 
 #: src/EventEdition/ReminderPanel.vala:166
-#, fuzzy
 msgid "10 minutes before"
-msgstr "10 minuti"
+msgstr "10 minuti prima"
 
 #: src/EventEdition/ReminderPanel.vala:167
-#, fuzzy
 msgid "15 minutes before"
-msgstr "15 minuti"
+msgstr "15 minuti prima"
 
 #: src/EventEdition/ReminderPanel.vala:168
-#, fuzzy
 msgid "20 minutes before"
-msgstr "20 minuti"
+msgstr "20 minuti prima"
 
 #: src/EventEdition/ReminderPanel.vala:169
-#, fuzzy
 msgid "25 minutes before"
-msgstr "25 minuti"
+msgstr "25 minuti prima"
 
 #: src/EventEdition/ReminderPanel.vala:170
-#, fuzzy
 msgid "30 minutes before"
-msgstr "30 minuti"
+msgstr "30 minuti prima"
 
 #: src/EventEdition/ReminderPanel.vala:171
-#, fuzzy
 msgid "45 minutes before"
-msgstr "45 minuti"
+msgstr "45 minuti prima"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "1 hour before"
-msgstr "1 ora"
+msgstr "1 ora prima"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "2 hours before"
-msgstr "2 ore"
+msgstr "2 ore prima"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "3 hours before"
-msgstr "3 ore"
+msgstr "3 ore prima"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "12 hours before"
-msgstr "12 ore"
+msgstr "12 ore prima"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "24 hours before"
-msgstr "24 ore"
+msgstr "24 ore prima"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "2 days before"
-msgstr "2 giorni"
+msgstr "2 giorni prima"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "1 week before"
-msgstr "1 settimana"
+msgstr "1 settimana prima"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -685,9 +668,8 @@ msgid "Remove"
 msgstr "Rimuovi"
 
 #: src/SourceDialog/SourceItem.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Rimuovi"
+msgstr "Non removibile"
 
 #: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
@@ -695,16 +677,16 @@ msgstr "Modifica…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Non modificabile"
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "Annulla l'ultima azione"
 
 #: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Calendario \"% s\" rimosso."
+msgstr "\"%s\" è stato rimosso"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
@@ -737,17 +719,16 @@ msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
 
 #: src/Widgets/CalendarButton.vala:72
-#, fuzzy
 msgid "Search Calendars"
-msgstr "Crea calendario"
+msgstr "Cerca calendari"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr ""
+msgstr "Nessun risultato"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr ""
+msgstr "Prova a cambiare i termini di ricerca."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
