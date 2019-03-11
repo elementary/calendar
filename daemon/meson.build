@@ -9,10 +9,6 @@ daemon_deps = [
     m_dep
 ]
 
-if libnotify_dep.found()
-    daemon_deps += libnotify_dep
-endif
-
 executable(
     meson.project_name()+'-daemon',
     'Daemon.vala',

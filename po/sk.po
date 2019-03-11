@@ -7,17 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2016-01-10 13:45+0000\n"
-"Last-Translator: Ľubomír Hlavko <5lubo555@azet.sk>\n"
-"Language-Team: Slovak <sk@li.org>\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
+"PO-Revision-Date: 2019-02-11 00:08+0000\n"
+"Last-Translator: tylnesh <kohutek.michal@gmail.com>\n"
+"Language-Team: Slovak <https://weblate.elementary.io/projects/calendar/"
+"calendar/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
 msgid "On this computer"
@@ -29,7 +30,7 @@ msgstr "Používateľ:"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr "meno používateľa"
+msgstr "používateľské.meno"
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
@@ -37,28 +38,15 @@ msgstr "Email:"
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr "john@doe.com"
+msgstr "jožko@mrkvička.sk"
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr "Ponechať kópiu"
+msgstr "Ponechať lokálnu kópiu"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
-#, fuzzy
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
-msgstr "Všeobecné informácie"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr ""
+msgstr "Vytlačiť debugovacie informácie"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -66,7 +54,7 @@ msgstr "Google"
 
 #: plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr "používateľ alebo používateľ@gmail.com"
+msgstr "používateľské.meno alebo používateľské.meno@gmail.com"
 
 #: plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
@@ -84,83 +72,85 @@ msgstr "Použiť bezpečné pripojenie"
 msgid "Server handles meeting invitations"
 msgstr "Server obsluhuje pozvánky na udalosti"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Vaše nadchádzajúce udalosti budú zobrazené tu, ak zvolíte dátum s udalosťami."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "Počas dňa"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "Celý deň"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
-msgstr ""
+msgstr "Zajtra"
 
-#: src/AgendaView.vala:277
-#, fuzzy
+#: src/AgendaView.vala:278
 msgid "This Week"
-msgstr "Týždní"
+msgstr "Tento týždeň"
 
-#: src/AgendaView.vala:280
-#, fuzzy
+#: src/AgendaView.vala:281
 msgid "Next Week"
-msgstr "Týždní"
+msgstr "Budúci týždeň"
 
-#: src/AgendaView.vala:283
-#, fuzzy
+#: src/AgendaView.vala:284
 msgid "This Month"
-msgstr "Mesiacov"
+msgstr "Tento mesiac"
 
-#: src/AgendaView.vala:286
-#, fuzzy
+#: src/AgendaView.vala:287
 msgid "Next Month"
-msgstr "Mesiacov"
+msgstr "Budúci mesiac"
 
 #: src/Application.vala:47
-#, fuzzy
 msgid "Create an event"
-msgstr "Vytvoriť novú udalosť"
+msgstr "Vytvoriť udalosť"
 
 #: src/Application.vala:48
 msgid "Focus the given day"
-msgstr ""
+msgstr "Sústrediť sa na daný deň"
 
 #: src/Application.vala:48
 msgid "date"
-msgstr ""
+msgstr "dátum"
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Kalendár"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Vyberte, ktoré kalendáre sa majú zobraziť"
+msgstr "Vyberte, do ktorého Kalendára chcete importovať"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importuj udalosti zo súboru %d do nasledujúceho kalendára:"
+msgstr "Udalosti zo súboru %d budú zlúčené s týmto kalendárom:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Importuj udalosti zo súboru %d do nasledujúceho kalendára:"
-msgstr[1] "Importuj udalosti zo súborov %d do nasledujúceho kalendára:"
-msgstr[2] "Importuj udalosti zo súborov %d do nasledujúceho kalendára:"
+msgstr[0] "Udalosti zo súboru %d budú zlúčené s týmto kalendárom:"
+msgstr[1] "Udalosti zo súborov %d budú zlúčené s týmto kalendárom:"
+msgstr[2] "Udalosti zo súborov %d budú zlúčené s týmto kalendárom:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Importovať"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%a, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -211,6 +201,18 @@ msgstr "Uložiť zmeny"
 msgid "Cancel"
 msgstr "Zrušiť"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "Akceptované"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "Zamietnuté"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr "Možno"
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Účastníci:"
@@ -222,14 +224,6 @@ msgstr "Žiadni spolupracovníci"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "Pozvať"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "Akceptované"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "Zamietnuté"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -253,11 +247,11 @@ msgstr "Meno udalosti"
 
 #: src/EventEdition/InfoPanel.vala:118
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "Stlačne enter pre vloženie události"
 
 #: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
-msgstr "Kalendár"
+msgstr "Kalendár:"
 
 #: src/EventEdition/InfoPanel.vala:140
 msgid "Comments:"
@@ -271,86 +265,81 @@ msgstr "Umiestnenie:"
 msgid "John Smith OR Example St."
 msgstr "John Smith alebo napr. St."
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "Pripomienky:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "Žiadne pripomienky"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "Pridať Pripomienku"
 
+#: src/EventEdition/ReminderPanel.vala:163
+msgid "At time of event"
+msgstr "Počas udalosti"
+
+#: src/EventEdition/ReminderPanel.vala:164
+msgid "1 minute before"
+msgstr "1 minútu vopred"
+
+#: src/EventEdition/ReminderPanel.vala:165
+msgid "5 minutes before"
+msgstr "5 minút vopred"
+
+#: src/EventEdition/ReminderPanel.vala:166
+msgid "10 minutes before"
+msgstr "10 minút vopred"
+
+#: src/EventEdition/ReminderPanel.vala:167
+msgid "15 minutes before"
+msgstr "15 minút vopred"
+
+#: src/EventEdition/ReminderPanel.vala:168
+msgid "20 minutes before"
+msgstr "20 minút vopred"
+
+#: src/EventEdition/ReminderPanel.vala:169
+msgid "25 minutes before"
+msgstr "25 minút vopred"
+
+#: src/EventEdition/ReminderPanel.vala:170
+msgid "30 minutes before"
+msgstr "30 minút vopred"
+
+#: src/EventEdition/ReminderPanel.vala:171
+msgid "45 minutes before"
+msgstr "45 minút vopred"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 minút"
+msgid "1 hour before"
+msgstr "1 hodinu vopred"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
-msgid "1 minute"
-msgstr "1 minúta"
+msgid "2 hours before"
+msgstr "2 hodiny vopred"
 
 #: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "5 minút"
+msgid "3 hours before"
+msgstr "3 hodiny vopred"
 
 #: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "10 minút"
+msgid "12 hours before"
+msgstr "12 hodín vopred"
 
 #: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "15 minút"
+msgid "24 hours before"
+msgstr "24 hodín vopred"
 
 #: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "20 minút"
+msgid "2 days before"
+msgstr "2 dni vopred"
 
 #: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "25 minút"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "30 minútach"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "45 minút"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "1 hodina"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
-msgstr "2 hodiny"
-
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
-msgstr "3 hodiny"
-
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
-msgstr "12 hodín"
-
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
-msgstr "24 hodín"
-
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
-msgstr "2 dni"
-
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
-msgstr "1 týždeň"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "Oznámenie"
+msgid "1 week before"
+msgstr "1 týždeň vopred"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -643,7 +632,7 @@ msgstr "Zobraziť čísla týždňov"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "%u viac..."
+msgstr "%u viac…"
 
 #: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
@@ -678,76 +667,89 @@ msgstr "Vytvoriť kalendár"
 msgid "Save"
 msgstr "Uložiť"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "Odstrániť"
 
 #: src/SourceDialog/SourceItem.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Odstrániť"
+msgstr "Neodstrániteľné"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
-msgstr "Upraviť..."
+msgstr "Upraviť…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Neupravovateľné"
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "Vrátiť späť"
 
 #: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Kalendár \"%s\" odstránený."
+msgstr "Kalendár \"%s\" odstránený"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
-msgstr "Pridať nový kalendár..."
+msgstr "Pridať nový kalendár…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
 #, c-format
+msgctxt "date-range"
 msgid "%s – %s"
-msgstr ""
+msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
-msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
-
-#: src/Widgets/AgendaEventRow.vala:199
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, c-format
-msgid "%s"
-msgstr ""
+msgid "%s, %s – %s, %s"
+msgstr "%s, %s – %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
-#, fuzzy, c-format
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
+#, c-format
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s – %s"
+
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
+#, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
 
+#: src/Widgets/CalendarButton.vala:72
+msgid "Search Calendars"
+msgstr "Vyhľadať kalendáre"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr "Žiadne výsledky"
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr "Pokúste sa zmeniť vyhľadávané výrazy."
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "Exportovať kalendár..."
+msgstr "Exportovať kalendár…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:85
 msgid "calendar.ics"
 msgstr "kalendár.ics"
 
 #: src/Widgets/EventMenu.vala:41
-#, fuzzy
 msgid "Remove Event"
 msgstr "Odstrániť udalosť"
 
 #: src/Widgets/EventMenu.vala:43
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Odstrániť výskyt"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
@@ -764,6 +766,12 @@ msgstr "Spravovať kalendáre"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Exportovať alebo zdieľať základný kalendár"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 minút"
+
+#~ msgid "Notification"
+#~ msgstr "Oznámenie"
 
 #, fuzzy
 #~ msgid "%s - %s"

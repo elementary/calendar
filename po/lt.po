@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
-"PO-Revision-Date: 2018-12-17 20:56+0000\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
+"PO-Revision-Date: 2019-01-08 13:02+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/calendar/"
 "calendar/lt/>\n"
@@ -46,21 +46,9 @@ msgstr "jonas@doe.com"
 msgid "Keep a copy locally"
 msgstr "Palikti kopiją vietoje"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%Y %B %e"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Išvesti derinimo informaciją"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr "Išvesti versijos informaciją ir išeiti"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -86,38 +74,38 @@ msgstr "Naudoti saugų ryšį"
 msgid "Server handles meeting invitations"
 msgstr "Serveris apdoroja susitikimų pakvietimus"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Jūsų artimiausi įvykiai bus rodomi čia, kai pasirinksite datą su įvykiais."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "Dienos metu"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "Visą dieną"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr "Rytoj"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr "Šią savaitę"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr "Kitą savaitę"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 msgid "This Month"
 msgstr "Šį mėnesį"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 msgid "Next Month"
 msgstr "Kitą mėnesį"
 
@@ -133,7 +121,7 @@ msgstr "Fokusuoti nurodytą dieną"
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Kalendorius"
 
@@ -157,6 +145,14 @@ msgstr[2] "Įvykiai iš failo %d bus sulieti su šiuo kalendoriumi:"
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "Importuoti"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%Y %B %e"
+
+#: src/LanguagesFormat.vala:25
+msgid "%a, %b %d"
+msgstr "%a, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -207,6 +203,18 @@ msgstr "Įrašyti pakeitimus"
 msgid "Cancel"
 msgstr "Atsisakyti"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "Priimta"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "Atmesta"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr "Galbūt"
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "Dalyviai:"
@@ -218,14 +226,6 @@ msgstr "Nėra dalyvių"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "Pakviesti"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "Priimta"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "Atmesta"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -267,85 +267,81 @@ msgstr "Vieta:"
 msgid "John Smith OR Example St."
 msgstr "Jonas Pilvinis ARBA Adresų gatvė"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "Priminimai:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "Nėra priminimų"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "Pridėti priminimą"
 
+#: src/EventEdition/ReminderPanel.vala:163
+msgid "At time of event"
+msgstr "Įvykio metu"
+
+#: src/EventEdition/ReminderPanel.vala:164
+msgid "1 minute before"
+msgstr "Prieš 1 minutę"
+
+#: src/EventEdition/ReminderPanel.vala:165
+msgid "5 minutes before"
+msgstr "Prieš 5 minutes"
+
+#: src/EventEdition/ReminderPanel.vala:166
+msgid "10 minutes before"
+msgstr "Prieš 10 minučių"
+
+#: src/EventEdition/ReminderPanel.vala:167
+msgid "15 minutes before"
+msgstr "Prieš 15 minučių"
+
+#: src/EventEdition/ReminderPanel.vala:168
+msgid "20 minutes before"
+msgstr "Prieš 20 minučių"
+
+#: src/EventEdition/ReminderPanel.vala:169
+msgid "25 minutes before"
+msgstr "Prieš 25 minutes"
+
+#: src/EventEdition/ReminderPanel.vala:170
+msgid "30 minutes before"
+msgstr "Prieš 30 minučių"
+
+#: src/EventEdition/ReminderPanel.vala:171
+msgid "45 minutes before"
+msgstr "Prieš 45 minutes"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 minučių"
+msgid "1 hour before"
+msgstr "Prieš 1 valandą"
 
 #: src/EventEdition/ReminderPanel.vala:173
-msgid "1 minute"
-msgstr "1 minutė"
+msgid "2 hours before"
+msgstr "Prieš 2 valandas"
 
 #: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "5 minutės"
+msgid "3 hours before"
+msgstr "Prieš 3 valandas"
 
 #: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "10 minučių"
+msgid "12 hours before"
+msgstr "Prieš 12 valandų"
 
 #: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "15 minučių"
+msgid "24 hours before"
+msgstr "Prieš 24 valandas"
 
 #: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "20 minučių"
+msgid "2 days before"
+msgstr "Prieš 2 dienas"
 
 #: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "25 minutės"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "30 minučių"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "45 minutės"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "1 valanda"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
-msgstr "2 valandos"
-
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
-msgstr "3 valandos"
-
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
-msgstr "12 valandų"
-
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
-msgstr "24 valandos"
-
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
-msgstr "2 dienos"
-
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
-msgstr "1 savaitė"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "Pranešimas"
+msgid "1 week before"
+msgstr "Prieš 1 savaitę"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -673,8 +669,7 @@ msgstr "Sukurti kalendorių"
 msgid "Save"
 msgstr "Įrašyti"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "Šalinti"
 
@@ -682,8 +677,7 @@ msgstr "Šalinti"
 msgid "Not Removable"
 msgstr "Nepašalinamas"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "Taisyti…"
 
@@ -704,25 +698,43 @@ msgstr "\"%s\" pašalintas"
 msgid "Add New Calendar…"
 msgstr "Pridėti naują kalendorių…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
 #, c-format
+msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
 #, c-format
-msgid "%s"
-msgstr "%s"
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s – %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
+
+#: src/Widgets/CalendarButton.vala:72
+msgid "Search Calendars"
+msgstr "Ieškoti kalendoriuose"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr "Jokių rezultatų"
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr "Pabandykite pakeisti paieškos žodžius."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -756,6 +768,18 @@ msgstr "Tvarkyti kalendorius"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Eksportuoti ar bendrinti numatytąjį kalendorių"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Išvesti versijos informaciją ir išeiti"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 minučių"
+
+#~ msgid "Notification"
+#~ msgstr "Pranešimas"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Upcoming Events"
 #~ msgstr "Artimiausi įvykiai"

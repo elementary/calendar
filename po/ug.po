@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
+"POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2017-01-03 09:18+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: \n"
@@ -38,22 +38,10 @@ msgstr "john@doe.com غا ئوخشاش"
 msgid "Keep a copy locally"
 msgstr "كومپىيۇتىرىڭىزدا بىرنۇسخا ساقلىۋىلىڭ"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%Y-%B-%e"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%b-%d  %A"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 #, fuzzy
 msgid "Print debug information"
 msgstr "ئادەتتىكى ئۇچۇرلار"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -79,7 +67,7 @@ msgstr "بىخەتەر ئۇلىنىشنى ئىشلىتىش"
 msgid "Server handles meeting invitations"
 msgstr "مۇلازىمېتىر ئۇچرىشىش تەكلىپلىرىنى بىر تەرەپ قىلىدۇ"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -87,34 +75,34 @@ msgstr ""
 "پائالىيەت قىتىلغان چىسلانى تاللىغان ۋاقتىڭىزدا سىزنىڭ يىقىن كەلگۈسىدىكى "
 "پائالىيەتلىرىڭىز بۇيەردە كۆرۈنىدۇ."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "كۈندۈزدە"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "پۈتۈن كۈن"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 #, fuzzy
 msgid "This Week"
 msgstr "ھەپتە"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 #, fuzzy
 msgid "Next Week"
 msgstr "ھەپتە"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 #, fuzzy
 msgid "This Month"
 msgstr "ئاي"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 #, fuzzy
 msgid "Next Month"
 msgstr "ئاي"
@@ -132,7 +120,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "كالېندار"
 
@@ -154,6 +142,15 @@ msgstr[0] "ھۆججەت %d دىكى پائالىيەتلەرنى تۆۋەندى�
 #: src/ImportDialog.vala:57
 msgid "Import"
 msgstr "كىرگۈزۈش"
+
+#: src/LanguagesFormat.vala:21
+msgid "%B %e, %Y"
+msgstr "%Y-%B-%e"
+
+#: src/LanguagesFormat.vala:25
+#, fuzzy
+msgid "%a, %b %d"
+msgstr "%b-%d  %A"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -202,6 +199,18 @@ msgstr "ئۆزگەرتىشلەرنى ساقلاش"
 msgid "Cancel"
 msgstr "ئەمەلدىن قالدۇرۇش"
 
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "قوبۇل قىلىنغان"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "رەت قىلىنغان"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr ""
+
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr "قاتناشقۇچىلار:"
@@ -213,14 +222,6 @@ msgstr "قاتناشقۇچىلار يوق"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "تەكلىپ"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "قوبۇل قىلىنغان"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "رەت قىلىنغان"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -262,86 +263,97 @@ msgstr "ئورنى:"
 msgid "John Smith OR Example St."
 msgstr "ئورۇن ياكى كوچا ئىسمى"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "ئەسكەرتىش:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "ئەسكەرتىش يوق"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "ئەسكەرتكۈچ قوشۇش"
 
+#: src/EventEdition/ReminderPanel.vala:163
+#, fuzzy
+msgid "At time of event"
+msgstr "پائالىيەت ئىسمى"
+
+#: src/EventEdition/ReminderPanel.vala:164
+#, fuzzy
+msgid "1 minute before"
+msgstr "1 مىنۇت"
+
+#: src/EventEdition/ReminderPanel.vala:165
+#, fuzzy
+msgid "5 minutes before"
+msgstr "5 مىنۇت"
+
+#: src/EventEdition/ReminderPanel.vala:166
+#, fuzzy
+msgid "10 minutes before"
+msgstr "10 مىنۇت"
+
+#: src/EventEdition/ReminderPanel.vala:167
+#, fuzzy
+msgid "15 minutes before"
+msgstr "15 مىنۇت"
+
+#: src/EventEdition/ReminderPanel.vala:168
+#, fuzzy
+msgid "20 minutes before"
+msgstr "20 مىنۇت"
+
+#: src/EventEdition/ReminderPanel.vala:169
+#, fuzzy
+msgid "25 minutes before"
+msgstr "25 مىنۇت"
+
+#: src/EventEdition/ReminderPanel.vala:170
+#, fuzzy
+msgid "30 minutes before"
+msgstr "30 مىنۇت"
+
+#: src/EventEdition/ReminderPanel.vala:171
+#, fuzzy
+msgid "45 minutes before"
+msgstr "45 مىنۇت"
+
 #: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 مىنۇت"
+#, fuzzy
+msgid "1 hour before"
+msgstr "1سائەت"
 
 #: src/EventEdition/ReminderPanel.vala:173
 #, fuzzy
-msgid "1 minute"
-msgstr "1 مىنۇت"
-
-#: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
-msgstr "5 مىنۇت"
-
-#: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
-msgstr "10 مىنۇت"
-
-#: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
-msgstr "15 مىنۇت"
-
-#: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
-msgstr "20 مىنۇت"
-
-#: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
-msgstr "25 مىنۇت"
-
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
-msgstr "30 مىنۇت"
-
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
-msgstr "45 مىنۇت"
-
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
-msgstr "1سائەت"
-
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
+msgid "2 hours before"
 msgstr "2سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
+#: src/EventEdition/ReminderPanel.vala:174
+#, fuzzy
+msgid "3 hours before"
 msgstr "3 سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
+#: src/EventEdition/ReminderPanel.vala:175
+#, fuzzy
+msgid "12 hours before"
 msgstr "12سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
+#: src/EventEdition/ReminderPanel.vala:176
+#, fuzzy
+msgid "24 hours before"
 msgstr "24سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
+#: src/EventEdition/ReminderPanel.vala:177
+#, fuzzy
+msgid "2 days before"
 msgstr "2 كۈن"
 
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
+#: src/EventEdition/ReminderPanel.vala:178
+#, fuzzy
+msgid "1 week before"
 msgstr "1 ھەپتە"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "ئۇقتۇرۇش"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -661,8 +673,7 @@ msgstr "كالېندار قۇرۇش"
 msgid "Save"
 msgstr "ساقلاش"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "ئۆچۈرۈش"
 
@@ -671,8 +682,7 @@ msgstr "ئۆچۈرۈش"
 msgid "Not Removable"
 msgstr "ئۆچۈرۈش"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "تەھرىرلەش...."
 
@@ -693,25 +703,44 @@ msgstr "كالېندار \"%s\" ئۆچۈرۈلگەن."
 msgid "Add New Calendar…"
 msgstr "يىڭى كالېندار قىتىش...."
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
-#, c-format
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:175
+#, fuzzy, c-format
+msgctxt "date-range"
 msgid "%s – %s"
-msgstr ""
+msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:178
 #, fuzzy, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
-#, c-format
-msgid "%s"
-msgstr ""
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:187
+#, fuzzy, c-format
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:194
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
+
+#: src/Widgets/CalendarButton.vala:72
+#, fuzzy
+msgid "Search Calendars"
+msgstr "كالېندار قۇرۇش"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
@@ -747,6 +776,12 @@ msgstr "كالېندارنى باشقۇرۇش"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "سۈكۈتتىكى كالېندارنى چىقىرىش ياكى ھەمبەھىرلەش"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 مىنۇت"
+
+#~ msgid "Notification"
+#~ msgstr "ئۇقتۇرۇش"
 
 #, fuzzy
 #~ msgid "%s - %s"
