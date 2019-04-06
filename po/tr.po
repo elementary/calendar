@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-01-28 14:53+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
-"Language-Team: Turkish <https://weblate.elementary.io/projects/calendar/"
+"PO-Revision-Date: 2019-03-31 21:51+0000\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.5.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
@@ -146,11 +146,11 @@ msgstr "İçe Aktar"
 
 #: src/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
+msgstr "%e %B %Y"
 
 #: src/LanguagesFormat.vala:25
 msgid "%a, %b %d"
-msgstr "%a, %b %d"
+msgstr "%d %B %A"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -246,7 +246,7 @@ msgstr "Etkinlik Adı"
 
 #: src/EventEdition/InfoPanel.vala:118
 msgid "Press enter to parse event"
-msgstr "Etkinliğe göz atmak için enter a bas"
+msgstr "Etkinliğe göz atmak için Enter tuşuna basın"
 
 #: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
@@ -270,7 +270,7 @@ msgstr "Hatırlatmalar:"
 
 #: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
-msgstr "Hatırlatma yok"
+msgstr "Hatırlatma Yok"
 
 #: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
@@ -719,11 +719,11 @@ msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarButton.vala:72
 msgid "Search Calendars"
-msgstr "Takvimler Ara"
+msgstr "Takvimlerde Ara"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr "Sonuç yok"
+msgstr "Sonuç Yok"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
