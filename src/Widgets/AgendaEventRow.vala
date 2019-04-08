@@ -42,6 +42,19 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     private Gtk.StyleContext event_image_context;
     private Gtk.StyleContext main_grid_context;
 
+    private enum Category {
+        NONE,
+        APPOINTMENT,
+        BIRTHDAY,
+        CALL,
+        DRIVING,
+        FLIGHT,
+        FOOD,
+        LEGAL,
+        MOVIE,
+        WEDDING
+    }
+
     public AgendaEventRow (E.Source source, E.CalComponent calevent, bool is_upcoming) {
         Object (
             calevent: calevent,
@@ -159,24 +172,139 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         var event_name = name_label.label.down ();
 
-        if (_("breakfast") in event_name || _("brunch") in event_name || _("lunch") in event_name || _("supper") in event_name || _("dinner") in event_name || _("reservation") in event_name || _("steakhouse") in event_name) {
-            event_image.icon_name = "event-food-symbolic";
-        } else if (_("birthday") in event_name) {
-            event_image.icon_name = "event-birthday-symbolic";
-        } else if (_("flight") in event_name) {
-            event_image.icon_name = "event-flight-symbolic";
-        } else if (_("wedding") in event_name) {
-            event_image.icon_name = "event-wedding-symbolic";
-        } else if (_("tax") in event_name || _("jury") in event_name || _("court") in event_name) {
-            event_image.icon_name = "event-legal-symbolic";
-        } else if (_("appointment") in event_name || _("meeting") in event_name) {
-            event_image.icon_name = "event-appointment-symbolic";
-        } else if (_("drive") in event_name || _("road trip") in event_name) {
-            event_image.icon_name = "event-driving-symbolic";
-        } else if (_("call") in event_name || _("phone") in event_name) {
-            event_image.icon_name = "event-call-symbolic";
-        } else if (_("movie") in event_name) {
-            event_image.icon_name = "event-movie-symbolic";
+        string[] appointment_keywords = {
+            _("appointment"),
+            _("meeting")
+        };
+
+        string[] birthday_keywords = {
+            _("birthday")
+        };
+
+        string[] call_keywords = {
+            _("call"),
+            _("phone")
+        };
+
+        string[] driving_keywords = {
+            _("drive"),
+            _("road trip")
+        };
+
+        string[] flight_keywords = {
+            _("flight")
+        };
+
+        string[] food_keywords = {
+            _("breakfast"), 
+            _("brunch"),
+            _("dinner"),
+            _("lunch"),
+            _("reservation"),
+            _("steakhouse"),
+            _("supper"),
+        };
+
+        string[] legal_keywords = {
+            _("court"),
+            _("jury"),
+            _("tax")
+        };
+
+        string[] movie_keywords = {
+            _("movie")
+        };
+
+        string[] wedding_keywords = {
+            _("wedding")
+        };
+
+        var appointment_hits = find_keywords (appointment_keywords, event_name);
+        var birthday_hits = find_keywords (birthday_keywords, event_name);
+        var call_hits = find_keywords (call_keywords, event_name);
+        var driving_hits = find_keywords (driving_keywords, event_name);
+        var flight_hits = find_keywords (flight_keywords, event_name);
+        var food_hits = find_keywords (food_keywords, event_name);
+        var legal_hits = find_keywords (legal_keywords, event_name);
+        var movie_hits = find_keywords (movie_keywords, event_name);
+        var wedding_hits = find_keywords (wedding_keywords, event_name);
+
+        var largest_category = Category.NONE;
+        int largest_value = 0;
+
+        if (birthday_hits > largest_value) {
+            largest_category = Category.BIRTHDAY;
+            largest_value = birthday_hits;
+        }
+
+        if (call_hits > largest_value) {
+            largest_category = Category.CALL;
+            largest_value = call_hits;
+        }
+
+        if (driving_hits > largest_value) {
+            largest_category = Category.DRIVING;
+            largest_value = driving_hits;
+        }
+
+        if (flight_hits > largest_value) {
+            largest_category = Category.FLIGHT;
+            largest_value = flight_hits;
+        }
+
+        if (food_hits > largest_value) {
+            largest_category = Category.FOOD;
+            largest_value = food_hits;
+        }
+
+        if (legal_hits > largest_value) {
+            largest_category = Category.LEGAL;
+            largest_value = legal_hits;
+        }
+
+        if (movie_hits > largest_value) {
+            largest_category = Category.MOVIE;
+            largest_value = movie_hits;
+        }
+
+        if (wedding_hits > largest_value) {
+            largest_category = Category.WEDDING;
+        }
+
+        /* "Appointment" is really generic, so only assign it if others have not been assigned */
+        if (appointment_hits > largest_value) {
+            largest_category = Category.APPOINTMENT;
+            largest_value = appointment_hits;
+        }
+
+        switch (largest_category) {
+            case Category.APPOINTMENT:
+                event_image.icon_name = "event-appointment-symbolic";
+                break;
+            case Category.BIRTHDAY:
+                event_image.icon_name = "event-birthday-symbolic";
+                break;
+            case Category.CALL:
+                event_image.icon_name = "event-call-symbolic";
+                break;
+            case Category.DRIVING:
+                event_image.icon_name = "event-driving-symbolic";
+                break;
+            case Category.FLIGHT:
+                event_image.icon_name = "event-flight-symbolic";
+                break;
+            case Category.FOOD:
+                event_image.icon_name = "event-food-symbolic";
+                break;
+            case Category.LEGAL:
+                event_image.icon_name = "event-legal-symbolic";
+                break;
+            case Category.MOVIE:
+                event_image.icon_name = "event-movie-symbolic";
+                break;
+            case Category.WEDDING:
+                event_image.icon_name = "event-wedding-symbolic";
+                break;
         }
 
         DateTime start_date, end_date;
@@ -222,6 +350,17 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         datatime_label.label = "<small>%s</small>".printf (datetime_string);
         location_label.label = ical_event.get_location ();
+    }
+
+    private int find_keywords (string[] keywords, string phrase) {
+        int hits = 0;
+        foreach (unowned string keyword in keywords) {
+            if (keyword in phrase) {
+                hits++;
+            }
+        }
+
+        return hits;
     }
 
     private void reload_css (string background_color) {
