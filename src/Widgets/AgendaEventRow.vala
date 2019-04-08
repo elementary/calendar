@@ -47,6 +47,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         APPOINTMENT,
         BIRTHDAY,
         CALL,
+        COCKTAILS,
         DRIVING,
         FLIGHT,
         FOOD,
@@ -184,6 +185,13 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             _("phone")
         };
 
+        string[] cocktails_keywords = {
+            _("bar"),
+            _("cocktails"),
+            _("drinks"),
+            _("happy hour"),
+        };
+
         string[] driving_keywords = {
             _("car"),
             _("drive"),
@@ -223,6 +231,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         var appointment_hits = find_keywords (appointment_keywords, event_name);
         var birthday_hits = find_keywords (birthday_keywords, event_name);
         var call_hits = find_keywords (call_keywords, event_name);
+        var cocktails_hits = find_keywords (cocktails_keywords, event_name);
         var driving_hits = find_keywords (driving_keywords, event_name);
         var flight_hits = find_keywords (flight_keywords, event_name);
         var food_hits = find_keywords (food_keywords, event_name);
@@ -241,6 +250,11 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         if (call_hits > largest_value) {
             largest_category = Category.CALL;
             largest_value = call_hits;
+        }
+
+        if (cocktails_hits > largest_value) {
+            largest_category = Category.COCKTAILS;
+            largest_value = cocktails_hits;
         }
 
         if (driving_hits > largest_value) {
@@ -287,6 +301,9 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                 break;
             case Category.CALL:
                 event_image.icon_name = "event-call-symbolic";
+                break;
+            case Category.COCKTAILS:
+                event_image.icon_name = "event-cocktails-symbolic";
                 break;
             case Category.DRIVING:
                 event_image.icon_name = "event-driving-symbolic";

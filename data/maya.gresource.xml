@@ -4,6 +4,7 @@
     <file alias="event-appointment-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-appointment-symbolic.svg</file>
     <file alias="event-birthday-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-birthday-symbolic.svg</file>
     <file alias="event-call-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-call-symbolic.svg</file>
+    <file alias="event-cocktails-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-cocktails-symbolic.svg</file>
     <file alias="event-driving-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-driving-symbolic.svg</file>
     <file alias="event-flight-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-flight-symbolic.svg</file>
     <file alias="event-food-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-food-symbolic.svg</file>
