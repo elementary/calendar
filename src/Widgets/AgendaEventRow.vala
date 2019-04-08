@@ -170,8 +170,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         summary = ical_event.get_summary ();
         name_label.set_markup (Markup.escape_text (summary));
 
-        var event_name = name_label.label.down ();
-
         string[] appointment_keywords = {
             _("appointment"),
             _("meeting")
@@ -187,7 +185,9 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         };
 
         string[] driving_keywords = {
+            _("car"),
             _("drive"),
+            _("rental"),
             _("road trip")
         };
 
@@ -219,6 +219,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             _("wedding")
         };
 
+        var event_name = name_label.label.down ();
         var appointment_hits = find_keywords (appointment_keywords, event_name);
         var birthday_hits = find_keywords (birthday_keywords, event_name);
         var call_hits = find_keywords (call_keywords, event_name);
