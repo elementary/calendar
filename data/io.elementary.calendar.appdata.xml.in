@@ -13,6 +13,18 @@
     </p>
   </description>
   <releases>
+    <release version="5.0" date="2019-02-28" urgency="medium">
+      <description>
+          <p>Present import window when opening ICS files</p>
+          <p>Add a search entry for calendars</p>
+          <p>Always use calendar icon in notifications</p>
+          <p>Agenda view can now be navigated by keyboard</p>
+          <p>Right-to-left improvements</p>
+          <p>Various UI overhauls including lime accent color</p>
+          <p>Overall code cleanup and rewrites</p>
+          <p>Updated translations</p>
+      </description>
+    </release>
     <release version="4.2.3" date="2018-10-16" urgency="medium">
       <description>
           <p>Styling adjustments</p>
