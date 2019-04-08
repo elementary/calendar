@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-01-01 18:41+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
-"Language-Team: Turkish <https://weblate.elementary.io/projects/calendar/"
+"PO-Revision-Date: 2019-03-31 21:51+0000\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.5.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
@@ -146,12 +146,11 @@ msgstr "İçe Aktar"
 
 #: src/LanguagesFormat.vala:21
 msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
+msgstr "%e %B %Y"
 
 #: src/LanguagesFormat.vala:25
-#, fuzzy
 msgid "%a, %b %d"
-msgstr "%A, %b %d"
+msgstr "%d %B %A"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -211,7 +210,7 @@ msgstr "Reddedildi"
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr ""
+msgstr "Belki"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -247,7 +246,7 @@ msgstr "Etkinlik Adı"
 
 #: src/EventEdition/InfoPanel.vala:118
 msgid "Press enter to parse event"
-msgstr "Etkinliğe göz atmak için enter a bas"
+msgstr "Etkinliğe göz atmak için Enter tuşuna basın"
 
 #: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
@@ -271,91 +270,75 @@ msgstr "Hatırlatmalar:"
 
 #: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
-msgstr "Hatırlatma yok"
+msgstr "Hatırlatma Yok"
 
 #: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "Hatırlatma Ekle"
 
 #: src/EventEdition/ReminderPanel.vala:163
-#, fuzzy
 msgid "At time of event"
-msgstr "Etkinlik Adı"
+msgstr "Etkinlik vaktinde"
 
 #: src/EventEdition/ReminderPanel.vala:164
-#, fuzzy
 msgid "1 minute before"
-msgstr "1 dakika"
+msgstr "1 dakika önce"
 
 #: src/EventEdition/ReminderPanel.vala:165
-#, fuzzy
 msgid "5 minutes before"
-msgstr "5 dakika"
+msgstr "5 dakika önce"
 
 #: src/EventEdition/ReminderPanel.vala:166
-#, fuzzy
 msgid "10 minutes before"
-msgstr "10 dakika"
+msgstr "10 dakika önce"
 
 #: src/EventEdition/ReminderPanel.vala:167
-#, fuzzy
 msgid "15 minutes before"
-msgstr "15 dakika"
+msgstr "15 dakika önce"
 
 #: src/EventEdition/ReminderPanel.vala:168
-#, fuzzy
 msgid "20 minutes before"
-msgstr "20 dakika"
+msgstr "20 dakika önce"
 
 #: src/EventEdition/ReminderPanel.vala:169
-#, fuzzy
 msgid "25 minutes before"
-msgstr "25 dakika"
+msgstr "25 dakika önce"
 
 #: src/EventEdition/ReminderPanel.vala:170
-#, fuzzy
 msgid "30 minutes before"
-msgstr "30 dakika"
+msgstr "30 dakika önce"
 
 #: src/EventEdition/ReminderPanel.vala:171
-#, fuzzy
 msgid "45 minutes before"
-msgstr "45 dakika"
+msgstr "45 dakika önce"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "1 hour before"
-msgstr "1 saat"
+msgstr "1 saat önce"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "2 hours before"
-msgstr "2 saat"
+msgstr "2 saat önce"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "3 hours before"
-msgstr "3 saat"
+msgstr "3 saat önce"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "12 hours before"
-msgstr "12 saat"
+msgstr "12 saat önce"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "24 hours before"
-msgstr "24 saat"
+msgstr "24 saat önce"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "2 days before"
-msgstr "2 gün"
+msgstr "2 gün önce"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "1 week before"
-msgstr "1 hafta"
+msgstr "1 hafta önce"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -710,7 +693,7 @@ msgstr "Yeni Takvim Ekle…"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:175
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
@@ -723,7 +706,7 @@ msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:187
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
@@ -735,17 +718,16 @@ msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarButton.vala:72
-#, fuzzy
 msgid "Search Calendars"
-msgstr "Takvim Oluştur"
+msgstr "Takvimlerde Ara"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr ""
+msgstr "Sonuç Yok"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr ""
+msgstr "Arama kelimelerini değiştirmeyi deneyin."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
