@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-04-10 06:53+0000\n"
-"Last-Translator: ‪Mooad Shaqour‬‏ <mooad.jo@gmail.com>\n"
+"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/calendar/calendar/"
 "ar/>\n"
 "Language: ar\n"
@@ -108,9 +108,8 @@ msgid "Next Month"
 msgstr ""
 
 #: src/Application.vala:47
-#, fuzzy
 msgid "Create an event"
-msgstr "إنشاء حدث جديد"
+msgstr "إنشاء حدث"
 
 #: src/Application.vala:48
 msgid "Focus the given day"
@@ -155,7 +154,7 @@ msgstr "%B %e, %Y"
 #: src/LanguagesFormat.vala:25
 #, fuzzy
 msgid "%a, %b %d"
-msgstr "%A, %b %d"
+msgstr "%a, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
