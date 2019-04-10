@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-04-10 12:29+0000\n"
+"PO-Revision-Date: 2019-04-10 12:39+0000\n"
 "Last-Translator: KSingh1980 <ksingh@sysmethod.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/calendar/calendar/"
 "hi/>\n"
@@ -197,7 +197,7 @@ msgstr "घटना बनाएँ"
 
 #: src/EventEdition/EventDialog.vala:143
 msgid "Save Changes"
-msgstr ""
+msgstr "परिवर्तनों को सुरक्षित करें"
 
 #: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -215,14 +215,18 @@ msgstr "अस्वीकृत"
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
 msgstr ""
+"\n"
+"शायद"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
 msgstr ""
+"\n"
+"प्रतिभागियों:"
 
 #: src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
-msgstr ""
+msgstr "कोई प्रतिभागी नहीं"
 
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
@@ -243,6 +247,8 @@ msgstr "प्रति:"
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Title:"
 msgstr ""
+"\n"
+"शीर्षक:"
 
 #: src/EventEdition/InfoPanel.vala:108
 msgid "Name of Event"
@@ -255,14 +261,18 @@ msgstr ""
 #: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
 msgstr ""
+"\n"
+"कैलेंडर:"
 
 #: src/EventEdition/InfoPanel.vala:140
 msgid "Comments:"
 msgstr ""
+"\n"
+"टिप्पणियाँ:"
 
 #: src/EventEdition/LocationPanel.vala:50
 msgid "Location:"
-msgstr ""
+msgstr "स्थान:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
@@ -278,7 +288,7 @@ msgstr "कोई अनुस्मारक नहीं हैं"
 
 #: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
-msgstr ""
+msgstr "अनुस्मारक जोड़ें"
 
 #: src/EventEdition/ReminderPanel.vala:163
 #, fuzzy
@@ -291,74 +301,60 @@ msgid "1 minute before"
 msgstr "१ मिनट"
 
 #: src/EventEdition/ReminderPanel.vala:165
-#, fuzzy
 msgid "5 minutes before"
-msgstr "५ मिनट"
+msgstr "५ मिनट पहले"
 
 #: src/EventEdition/ReminderPanel.vala:166
-#, fuzzy
 msgid "10 minutes before"
-msgstr "१० मिनट"
+msgstr "१० मिनट पहले"
 
 #: src/EventEdition/ReminderPanel.vala:167
-#, fuzzy
 msgid "15 minutes before"
-msgstr "१५ मिनट"
+msgstr "१५ मिनट पहले"
 
 #: src/EventEdition/ReminderPanel.vala:168
-#, fuzzy
 msgid "20 minutes before"
-msgstr "२० मिनट"
+msgstr "२० मिनट पहले"
 
 #: src/EventEdition/ReminderPanel.vala:169
-#, fuzzy
 msgid "25 minutes before"
-msgstr "२५ मिनट"
+msgstr "२५ मिनट पहले"
 
 #: src/EventEdition/ReminderPanel.vala:170
-#, fuzzy
 msgid "30 minutes before"
-msgstr "३० मिनट"
+msgstr "३० मिनट पहले"
 
 #: src/EventEdition/ReminderPanel.vala:171
-#, fuzzy
 msgid "45 minutes before"
-msgstr "४५ मिनट"
+msgstr "४५ मिनट पहले"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "1 hour before"
-msgstr "१ घंटा"
+msgstr "१ घंटा पहले"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "2 hours before"
-msgstr "२ घंटे"
+msgstr "२ घंटे पहले"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "3 hours before"
-msgstr "३ घंटे"
+msgstr "३ घंटे पहले"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "12 hours before"
-msgstr "१२ घंटे"
+msgstr "१२ घंटे पहले"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "24 hours before"
-msgstr "२४ घंटे"
+msgstr "२४ घंटे पहले"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "2 days before"
-msgstr "२ दिन"
+msgstr "२ दिन पहले"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "1 week before"
-msgstr "१ सप्ताह"
+msgstr "१ सप्ताह पहले"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -367,10 +363,14 @@ msgstr "दोहराएँ:"
 #: src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
 msgstr ""
+"\n"
+"रोज"
 
 #: src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
 msgstr ""
+"\n"
+"साप्ताहिक"
 
 #: src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
@@ -393,20 +393,22 @@ msgstr[1] "दिनों"
 #: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "सप्ताह"
+msgstr[1] "सप्ताह"
 
 #: src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "महीना"
+msgstr[1] "महीनाे"
 
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
 msgstr[0] ""
-msgstr[1] ""
+"\n"
+"साल"
+msgstr[1] "साल"
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
