@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-04-10 12:39+0000\n"
+"PO-Revision-Date: 2019-04-11 19:04+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/calendar/calendar/"
 "hi/>\n"
@@ -133,7 +133,7 @@ msgstr "कैलेंडर देखने के लिए चयन कर�
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "\"%s\" की घटनाओं को इस कैलेंडर में मिला दिया जाएगा"
+msgstr "\"%s\" की घटनाओं को इस कैलेंडर में मिला दिया जाएगा:"
 
 #: src/ImportDialog.vala:47
 #, c-format
@@ -212,15 +212,11 @@ msgstr "अस्वीकृत"
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr ""
-"\n"
-"शायद"
+msgstr "शायद"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr ""
-"\n"
-"प्रतिभागियों:"
+msgstr "प्रतिभागियों:"
 
 #: src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
@@ -244,9 +240,7 @@ msgstr "प्रति:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Title:"
-msgstr ""
-"\n"
-"शीर्षक:"
+msgstr "शीर्षक:"
 
 #: src/EventEdition/InfoPanel.vala:108
 msgid "Name of Event"
@@ -258,15 +252,11 @@ msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
-msgstr ""
-"\n"
-"कैलेंडर:"
+msgstr "कैलेंडर:"
 
 #: src/EventEdition/InfoPanel.vala:140
 msgid "Comments:"
-msgstr ""
-"\n"
-"टिप्पणियाँ:"
+msgstr "टिप्पणियाँ:"
 
 #: src/EventEdition/LocationPanel.vala:50
 msgid "Location:"
@@ -360,15 +350,11 @@ msgstr "दोहराएँ:"
 
 #: src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
-msgstr ""
-"\n"
-"रोज"
+msgstr "रोज"
 
 #: src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
-msgstr ""
-"\n"
-"साप्ताहिक"
+msgstr "साप्ताहिक"
 
 #: src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
@@ -403,9 +389,7 @@ msgstr[1] "महीनाे"
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-"\n"
-"साल"
+msgstr[0] "साल"
 msgstr[1] "साल"
 
 #: src/EventEdition/RepeatPanel.vala:135
@@ -663,7 +647,7 @@ msgstr "कैलेंडर का नाम"
 
 #: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
-msgstr "क़िस्मः"
+msgstr "क़िस्म:"
 
 #: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
