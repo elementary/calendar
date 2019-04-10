@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-04-10 12:39+0000\n"
-"Last-Translator: KSingh1980 <ksingh@sysmethod.com>\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/calendar/calendar/"
 "hi/>\n"
 "Language: hi\n"
@@ -172,9 +172,7 @@ msgstr "स्थान"
 
 #: src/EventEdition/EventDialog.vala:102
 msgid "Guests"
-msgstr ""
-"\n"
-"मेहमान"
+msgstr "मेहमान"
 
 #: src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
