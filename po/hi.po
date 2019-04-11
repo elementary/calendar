@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-04-11 19:04+0000\n"
-"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Last-Translator: KSingh1980 <ksingh@sysmethod.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/calendar/calendar/"
 "hi/>\n"
 "Language: hi\n"
@@ -394,135 +394,135 @@ msgstr[1] "साल"
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr ""
+msgstr "समाप्त :"
 
 #: src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
-msgstr ""
+msgstr "कभी नहीँ"
 
 #: src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
-msgstr ""
+msgstr "जब तक"
 
 #: src/EventEdition/RepeatPanel.vala:143
 msgid "After"
-msgstr ""
+msgstr "बाद"
 
 #: src/EventEdition/RepeatPanel.vala:189
 msgid "The same day every month"
-msgstr ""
+msgstr "हर महीने एक ही दिन"
 
 #: src/EventEdition/RepeatPanel.vala:200
 msgid "Exceptions:"
-msgstr ""
+msgstr "अपवाद:"
 
 #: src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
-msgstr ""
+msgstr "कोई अपवाद नहीं"
 
 #: src/EventEdition/RepeatPanel.vala:224
 msgid "Add Exception"
-msgstr ""
+msgstr "अपवाद जोड़ना"
 
 #: src/EventEdition/RepeatPanel.vala:358
 msgid "Every last Sunday"
-msgstr ""
+msgstr "हर आखिरी रविवार"
 
 #: src/EventEdition/RepeatPanel.vala:361
 msgid "Every last Monday"
-msgstr ""
+msgstr "हर आखिरी सोमवार"
 
 #: src/EventEdition/RepeatPanel.vala:364
 msgid "Every last Tuesday"
-msgstr ""
+msgstr "हर आखिरी मंगलवार"
 
 #: src/EventEdition/RepeatPanel.vala:367
 msgid "Every last Wednesday"
-msgstr ""
+msgstr "हर आखिरी बुधवार"
 
 #: src/EventEdition/RepeatPanel.vala:370
 msgid "Every last Thursday"
-msgstr ""
+msgstr "हर आखिरी गुरूवार"
 
 #: src/EventEdition/RepeatPanel.vala:373
 msgid "Every last Friday"
-msgstr ""
+msgstr "हर आखिरी शुक्रवार"
 
 #: src/EventEdition/RepeatPanel.vala:376
 msgid "Every last Saturday"
-msgstr ""
+msgstr "हर आखिरी शनिवार"
 
 #: src/EventEdition/RepeatPanel.vala:383
 msgid "Every first Sunday"
-msgstr ""
+msgstr "हर आखिरी रविवार"
 
 #: src/EventEdition/RepeatPanel.vala:386
 msgid "Every first Monday"
-msgstr ""
+msgstr "हर पहला सोमवार"
 
 #: src/EventEdition/RepeatPanel.vala:389
 msgid "Every first Tuesday"
-msgstr ""
+msgstr "हर पहला मंगलवार"
 
 #: src/EventEdition/RepeatPanel.vala:392
 msgid "Every first Wednesday"
-msgstr ""
+msgstr "हर पहला बुधवार"
 
 #: src/EventEdition/RepeatPanel.vala:395
 msgid "Every first Thursday"
-msgstr ""
+msgstr "हर पहला गुरूवार"
 
 #: src/EventEdition/RepeatPanel.vala:398
 msgid "Every first Friday"
-msgstr ""
+msgstr "हर पहला शुक्रवार"
 
 #: src/EventEdition/RepeatPanel.vala:401
 msgid "Every first Saturday"
-msgstr ""
+msgstr "हर पहला शनिवार"
 
 #: src/EventEdition/RepeatPanel.vala:408
 msgid "Every second Sunday"
-msgstr ""
+msgstr "हर दूसरे रविवार"
 
 #: src/EventEdition/RepeatPanel.vala:411
 msgid "Every second Monday"
-msgstr ""
+msgstr "हर दूसरे सोमवार"
 
 #: src/EventEdition/RepeatPanel.vala:414
 msgid "Every second Tuesday"
-msgstr ""
+msgstr "हर दूसरे मंगलवार"
 
 #: src/EventEdition/RepeatPanel.vala:417
 msgid "Every second Wednesday"
-msgstr ""
+msgstr "हर दूसरे बुधवार"
 
 #: src/EventEdition/RepeatPanel.vala:420
 msgid "Every second Thursday"
-msgstr ""
+msgstr "हर दूसरे गुरूवार"
 
 #: src/EventEdition/RepeatPanel.vala:423
 msgid "Every second Friday"
-msgstr ""
+msgstr "हर दूसरे शुक्रवार"
 
 #: src/EventEdition/RepeatPanel.vala:426
 msgid "Every second Saturday"
-msgstr ""
+msgstr "हर दूसरे शनिवार"
 
 #: src/EventEdition/RepeatPanel.vala:433
 msgid "Every third Sunday"
-msgstr ""
+msgstr "हर तीसरे रविवार"
 
 #: src/EventEdition/RepeatPanel.vala:436
 msgid "Every third Monday"
-msgstr ""
+msgstr "हर तीसरे सोमवार"
 
 #: src/EventEdition/RepeatPanel.vala:439
 msgid "Every third Tuesday"
-msgstr ""
+msgstr "हर तीसरे मंगलवार"
 
 #: src/EventEdition/RepeatPanel.vala:442
 msgid "Every third Wednesday"
-msgstr ""
+msgstr "हर तीसरे बुधवार"
 
 #: src/EventEdition/RepeatPanel.vala:445
 msgid "Every third Thursday"
