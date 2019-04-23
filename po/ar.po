@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-03-12 15:26+0000\n"
+"PO-Revision-Date: 2019-04-10 06:53+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/calendar/calendar/"
 "ar/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.4\n"
+"X-Generator: Weblate 3.5.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:13+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
@@ -85,19 +85,19 @@ msgstr ""
 
 #: src/AgendaView.vala:158
 msgid "All day"
-msgstr ""
+msgstr "كل الأيام"
 
 #: src/AgendaView.vala:275
 msgid "Tomorrow"
-msgstr ""
+msgstr "غدا"
 
 #: src/AgendaView.vala:278
 msgid "This Week"
-msgstr ""
+msgstr "هذا الأسبوع"
 
 #: src/AgendaView.vala:281
 msgid "Next Week"
-msgstr ""
+msgstr "الأسبوع القادم"
 
 #: src/AgendaView.vala:284
 msgid "This Month"
@@ -108,9 +108,8 @@ msgid "Next Month"
 msgstr ""
 
 #: src/Application.vala:47
-#, fuzzy
 msgid "Create an event"
-msgstr "إنشاء حدث جديد"
+msgstr "إنشاء حدث"
 
 #: src/Application.vala:48
 msgid "Focus the given day"
@@ -155,7 +154,7 @@ msgstr "%B %e, %Y"
 #: src/LanguagesFormat.vala:25
 #, fuzzy
 msgid "%a, %b %d"
-msgstr "%A, %b %d"
+msgstr "%a, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"

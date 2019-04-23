@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-01-09 10:39+0000\n"
+"PO-Revision-Date: 2019-04-11 19:04+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://weblate.elementary.io/projects/calendar/"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.5.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
@@ -161,7 +161,7 @@ msgstr "घटनेत बदल करा"
 
 #: src/EventEdition/EventDialog.vala:100
 msgid "General Informations"
-msgstr "घटनेची साधारण माहिती"
+msgstr "साधारण माहिती"
 
 #: src/EventEdition/EventDialog.vala:101
 msgid "Location"
@@ -184,11 +184,11 @@ msgstr[1] "अनेक पुनरावृत्ती"
 
 #: src/EventEdition/EventDialog.vala:127
 msgid "Delete Event"
-msgstr "आठवणीची खूण डिलीट करा"
+msgstr "कार्यक्रम डिलीट करा"
 
 #: src/EventEdition/EventDialog.vala:140
 msgid "Create Event"
-msgstr "आठवणीची खूण बनवा"
+msgstr "घटना  बनवा"
 
 #: src/EventEdition/EventDialog.vala:143
 msgid "Save Changes"
