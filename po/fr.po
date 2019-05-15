@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-01-15 00:05+0000\n"
+"PO-Revision-Date: 2019-05-12 14:32+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://weblate.elementary.io/projects/calendar/"
-"calendar/fr/>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/calendar/calendar/"
+"fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
@@ -262,7 +262,7 @@ msgstr "Emplacement :"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "Jean Dupont ou Rue de la Paix"
+msgstr "Jean Dupont ou Rue de la Paix."
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
