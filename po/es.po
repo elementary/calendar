@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-05-16 02:02+0000\n"
-"Last-Translator: Julio García <yllelder@gmail.com>\n"
+"Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
 "calendar/es/>\n"
 "Language: es\n"
@@ -102,7 +102,7 @@ msgstr "Próxima semana"
 
 #: src/AgendaView.vala:284
 msgid "This Month"
-msgstr "Este mes"
+msgstr "Este Mes"
 
 #: src/AgendaView.vala:287
 msgid "Next Month"
@@ -110,7 +110,7 @@ msgstr "Próximo mes"
 
 #: src/Application.vala:47
 msgid "Create an event"
-msgstr "Nuevo evento"
+msgstr "Crear un evento"
 
 #: src/Application.vala:48
 msgid "Focus the given day"
