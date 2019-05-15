@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-05-16 02:02+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Last-Translator: Julio García <yllelder@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
 "calendar/es/>\n"
 "Language: es\n"
@@ -129,9 +129,9 @@ msgid "Select a Calendar to Import Into"
 msgstr "Seleccionar los calendarios para importar"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importar eventos de %d archivo en el calendario siguiente:"
+msgstr "Los eventos de \"%s\" se combinarán con este calendario:"
 
 #: src/ImportDialog.vala:47
 #, c-format
@@ -151,9 +151,8 @@ msgid "%B %e, %Y"
 msgstr "%e de %B de %Y"
 
 #: src/LanguagesFormat.vala:25
-#, fuzzy
 msgid "%a, %b %d"
-msgstr "%A, %-d de %b"
+msgstr "%a, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -328,14 +327,12 @@ msgid "3 hours before"
 msgstr "3 horas antes"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "12 hours before"
-msgstr "12 horas"
+msgstr "12 horas antes"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "24 hours before"
-msgstr "24 horas"
+msgstr "24 horas antes"
 
 #: src/EventEdition/ReminderPanel.vala:177
 msgid "2 days before"
