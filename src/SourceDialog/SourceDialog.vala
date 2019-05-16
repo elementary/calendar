@@ -24,7 +24,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
 
     private Gtk.Entry name_entry;
     private bool set_as_default = false;
-    private string hex_color;
+    private string hex_color = "#da3d41";
     private Backend current_backend;
     private Gee.Collection<PlacementWidget> backend_widgets;
     private Gtk.Grid main_grid;
@@ -244,6 +244,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             event_type = EventType.ADD;
             name_entry.text = "";
             type_combobox.sensitive = true;
+            color_button_red.active = true;
             create_button.set_label (_("Create Calendar"));
         } else {
             event_type = EventType.EDIT;
