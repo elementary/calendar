@@ -61,14 +61,6 @@ namespace Maya.Settings {
         }
     }
 
-    public string DateFormat () {
-        return _("%B %e, %Y");
-    }
-
-    public string DateFormat_Complete () {
-        return _("%a, %b %d");
-    }
-
     public string TimeFormat () {
         return Granite.DateTime.get_default_time_format (TimeFormatHolder.get_instance ().is_12h);
     }
