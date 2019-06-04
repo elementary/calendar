@@ -17,14 +17,6 @@
 
 namespace Maya.Settings {
 
-    public string DateFormat () {
-        return _("%B %e, %Y");
-    }
-
-    public string DateFormat_Complete () {
-        return _("%a, %b %d");
-    }
-
     public string TimeFormat () {
         // If AM/PM doesn't exist, use 24h.
         if (Posix.nl_langinfo (Posix.NLItem.AM_STR) == null || Posix.nl_langinfo (Posix.NLItem.AM_STR) == "") {

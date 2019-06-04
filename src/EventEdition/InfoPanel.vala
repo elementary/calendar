@@ -274,7 +274,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     }
 
     Granite.Widgets.DatePicker make_date_picker () {
-        var date_picker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
+        var format = Granite.DateTime.get_default_date_format (false, true, true);
+        var date_picker = new Granite.Widgets.DatePicker.with_format (format);
         date_picker.width_request = 200;
         return date_picker;
     }
