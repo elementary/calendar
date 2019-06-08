@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-06-08 03:30+0000\n"
-"Last-Translator: anmo <therealanmo@gmail.com>\n"
+"Last-Translator: EVGENY DYATLEV <eedsever@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
 "Language: ru\n"
@@ -278,44 +278,36 @@ msgid "Add Reminder"
 msgstr "Добавить напоминание"
 
 #: src/EventEdition/ReminderPanel.vala:163
-#, fuzzy
 msgid "At time of event"
-msgstr "Название события"
+msgstr "Во время события"
 
 #: src/EventEdition/ReminderPanel.vala:164
-#, fuzzy
 msgid "1 minute before"
-msgstr "1 минута"
+msgstr "За 1 минуту до"
 
 #: src/EventEdition/ReminderPanel.vala:165
-#, fuzzy
 msgid "5 minutes before"
-msgstr "5 минут"
+msgstr "За 5 минуту до"
 
 #: src/EventEdition/ReminderPanel.vala:166
-#, fuzzy
 msgid "10 minutes before"
-msgstr "10 минут"
+msgstr "За 10 минут до"
 
 #: src/EventEdition/ReminderPanel.vala:167
-#, fuzzy
 msgid "15 minutes before"
-msgstr "15 минут"
+msgstr "За 15 минут до"
 
 #: src/EventEdition/ReminderPanel.vala:168
-#, fuzzy
 msgid "20 minutes before"
-msgstr "20 минут"
+msgstr "За 20 минут до"
 
 #: src/EventEdition/ReminderPanel.vala:169
-#, fuzzy
 msgid "25 minutes before"
-msgstr "25 минут"
+msgstr "За 25 минут до"
 
 #: src/EventEdition/ReminderPanel.vala:170
-#, fuzzy
 msgid "30 minutes before"
-msgstr "30 минут"
+msgstr "За 30 минут до"
 
 #: src/EventEdition/ReminderPanel.vala:171
 #, fuzzy
