@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-06-08 03:14+0000\n"
-"Last-Translator: MacOSO <auroragamesproject@gmail.com>\n"
+"Last-Translator: Khomyak-sibiryak <owalski@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
 "Language: ru\n"
@@ -109,13 +109,12 @@ msgid "Next Month"
 msgstr "Следующий месяц"
 
 #: src/Application.vala:47
-#, fuzzy
 msgid "Create an event"
-msgstr "Создать новое событие"
+msgstr "Создать событие"
 
 #: src/Application.vala:48
 msgid "Focus the given day"
-msgstr ""
+msgstr "Сфокусироваться на этом дне"
 
 #: src/Application.vala:48
 msgid "date"
@@ -126,9 +125,8 @@ msgid "Calendar"
 msgstr "Календарь"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Выберите календари для просмотра"
+msgstr "Выберите календарь для импорта"
 
 #: src/ImportDialog.vala:44
 #, fuzzy, c-format
