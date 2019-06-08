@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-06-08 03:14+0000\n"
-"Last-Translator: Khomyak-sibiryak <owalski@protonmail.com>\n"
+"Last-Translator: Romanov Artem <aromanov502@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
 "Language: ru\n"
@@ -213,7 +213,7 @@ msgstr "Отклонено"
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr ""
+msgstr "Может быть"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -700,7 +700,7 @@ msgstr "Изменить…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Не редактируемый"
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
@@ -748,11 +748,11 @@ msgstr "Создать календарь"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr ""
+msgstr "Нет результатов"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr ""
+msgstr "Попробуйте изменить условия поиска"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
