@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-06-08 03:15+0000\n"
+"PO-Revision-Date: 2019-06-08 03:30+0000\n"
 "Last-Translator: Khomyak-sibiryak <owalski@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
@@ -101,7 +101,7 @@ msgstr "Следующая неделя"
 
 #: src/AgendaView.vala:284
 msgid "This Month"
-msgstr "Этот месяц"
+msgstr "Месяц"
 
 #: src/AgendaView.vala:287
 msgid "Next Month"
@@ -128,17 +128,17 @@ msgid "Select a Calendar to Import Into"
 msgstr "Выберите календарь для импорта"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Импортировать события из %d файла в следующий календарь:"
+msgstr "События из \"%s\" будут объеденины с этим календарем:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Импортировать события из %d файла в следующий календарь:"
-msgstr[1] "Импортировать события из %d файлов в следующий календарь:"
-msgstr[2] "Импортировать события из %d файлов в следующий календарь:"
+msgstr[0] "Событие из файла %d будет объединено с этим календарем:"
+msgstr[1] "События из файла %d будут объединены с этим календарем:"
+msgstr[2] "События из файла %d будут объединены с этим календарем:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -149,9 +149,8 @@ msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
 #: src/LanguagesFormat.vala:25
-#, fuzzy
 msgid "%a, %b %d"
-msgstr "%A, %b %d"
+msgstr "%a, %b %d"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
@@ -751,7 +750,7 @@ msgstr "Нет результатов"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr "Попробуйте изменить условия поиска"
+msgstr "Попробуйте изменить условия поиска."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:82
