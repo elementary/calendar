@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
 "PO-Revision-Date: 2019-06-08 03:14+0000\n"
-"Last-Translator: Romanov Artem <aromanov502@gmail.com>\n"
+"Last-Translator: EVGENY DYATLEV <eedsever@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
 "Language: ru\n"
@@ -46,9 +46,8 @@ msgid "Keep a copy locally"
 msgstr "Сохранить локальную копию"
 
 #: daemon/Daemon.vala:24
-#, fuzzy
 msgid "Print debug information"
-msgstr "Общая информация"
+msgstr "Распечатать отладочную информацию"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
