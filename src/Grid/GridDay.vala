@@ -89,7 +89,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
         key_press_event.connect (on_key_press);
         scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
 
-        Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
+        const Gtk.TargetEntry dnd = {"text/x-io-elementary-calendar", 0, 0};
         Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
 
         this.notify["date"].connect (() => {
@@ -105,22 +105,36 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-        var calmodel = Model.CalendarModel.get_default ();
-        var comp = calmodel.drag_component;
-        unowned iCal.Component icalcomp = comp.get_icalcomponent ();
-        E.Source src = comp.get_data ("source");
-        var start = icalcomp.get_dtstart ();
-        var end = icalcomp.get_dtend ();
-        var gap = date.get_day_of_month () - start.day;
-        start.day += gap;
+        string? compid = (string)selection_data.get_data ();
+        if (compid != null) {
+            string uid;
+            string? rid = null;
+            if ("\n" in compid) {
+              var parts = compid.split ("\n", 2);
+              uid = parts[0];
+              rid = parts[1];
+            } else {
+              uid = compid;
+            }
 
-        if (end.is_null_time () == 0) {
-            end.day += gap;
-            icalcomp.set_dtend (end);
+            var calmodel = Model.CalendarModel.get_default ();
+            E.CalComponent? comp = calmodel.get_event (uid, rid);
+
+            unowned iCal.Component icalcomp = comp.get_icalcomponent ();
+            E.Source src = comp.get_data ("source");
+            var start = icalcomp.get_dtstart ();
+            var end = icalcomp.get_dtend ();
+            var gap = date.get_day_of_month () - start.day;
+            start.day += gap;
+
+            if (end.is_null_time () == 0) {
+                end.day += gap;
+                icalcomp.set_dtend (end);
+            }
+
+            icalcomp.set_dtstart (start);
+            calmodel.update_event (src, comp, E.CalObjModType.ALL);
         }
-
-        icalcomp.set_dtstart (start);
-        calmodel.update_event (src, comp, E.CalObjModType.ALL);
     }
 
     public void add_event_button (EventButton button) {

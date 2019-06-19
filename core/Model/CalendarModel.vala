@@ -37,9 +37,6 @@ public class Maya.Model.CalendarModel : Object {
     /* The start of week, ie. Monday=1 or Sunday=7 */
     public Settings.Weekday week_starts_on { get; set; default = Settings.Weekday.MONDAY; }
 
-    /* The event that is currently dragged */
-    public E.CalComponent drag_component {get; set;}
-
     /* Notifies when events are added, updated, or removed */
     public signal void events_added (E.Source source, Gee.Collection<E.CalComponent> events);
     public signal void events_updated (E.Source source, Gee.Collection<E.CalComponent> events);
@@ -263,6 +260,42 @@ public class Maya.Model.CalendarModel : Object {
             }
         });
         return events;
+    }
+
+    private static int search_rid (E.CalComponent a, string? rid) {
+        string? a_rid = a.get_recurid_as_string ();
+        if (a_rid == null && rid == null) {
+            return 0;
+        }
+
+        return GLib.strcmp (a_rid, rid);
+    }
+
+    public E.CalComponent? get_event (string uid, string? rid) {
+        List<weak E.CalClient> clients = source_client.get_values ();
+        foreach (unowned E.CalClient client in clients) {
+            GLib.SList<E.CalComponent> ecalcomps;
+            try {
+                client.get_objects_for_uid_sync (uid, out ecalcomps, null);
+                if (ecalcomps.length () > 0) {
+                    unowned GLib.SList<E.CalComponent> results = ecalcomps.search<string> (rid, search_rid);
+
+                    if (results.length () > 0) {
+                        unowned E.CalComponent comp = results.data;
+                        comp.set_data ("source", client.source);
+                        return comp;
+                    } else {
+                        unowned E.CalComponent comp = ecalcomps.data;
+                        comp.set_data ("source", client.source);
+                        return comp;
+                    }
+                }
+            } catch (Error e) {
+                debug (e.message);
+            }
+        }
+
+        return null;
     }
 
     //--- Helper Methods ---//

@@ -79,22 +79,35 @@ public class Maya.View.EventButton : Gtk.Revealer {
             return true;
         });
 
-        Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
-        Gtk.TargetEntry dnd2 = {"text/uri-list", 0, 0};
-        Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2}, Gdk.DragAction.MOVE);
+        const Gtk.TargetEntry dnd = {"text/x-io-elementary-calendar", 0, 0};
+        const Gtk.TargetEntry dnd2 = {"text/uri-list", 0, 1};
+        const Gtk.TargetEntry dnd3 = {"text/calendar", 0, 2};
+        Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2, dnd3}, Gdk.DragAction.MOVE);
 
         event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
-            Model.CalendarModel.get_default ().drag_component = comp;
-            unowned iCal.Component icalcomp = comp.get_icalcomponent ();
-            unowned string ical_str = icalcomp.as_ical_string ();
-            sel.set_text (ical_str, ical_str.length);
-            try {
-                var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
-                var file = File.new_for_path (path);
-                if (file.replace_contents (ical_str.data, null, false, FileCreateFlags.PRIVATE, null))
-                    sel.set_uris ({file.get_uri ()});
-            } catch (Error e) {
-                critical (e.message);
+            if (info == 0) {
+              var comp_id = comp.get_id ();
+              if (comp_id.rid != null) {
+                var data = "%s\n%s".printf (comp_id.uid, comp_id.rid);
+                sel.set (Gdk.Atom.intern_static_string ("text/x-io-elementary-calendar"), (int)sizeof(char), data.data);
+              } else {
+                sel.set (Gdk.Atom.intern_static_string ("text/x-io-elementary-calendar"), (int)sizeof(char), comp_id.uid.data);
+              }
+            } else if (info == 1) {
+              comp.commit_sequence ();
+              var ical_str = comp.get_as_string ();
+              try {
+                  var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), comp.get_summary ().value + ".ics");
+                  var file = File.new_for_path (path);
+                  if (file.replace_contents (ical_str.data, null, false, FileCreateFlags.PRIVATE, null))
+                      sel.set_uris ({file.get_uri ()});
+              } catch (Error e) {
+                  critical (e.message);
+              }
+            } else if (info == 2) {
+              comp.commit_sequence ();
+              var ical_str = comp.get_as_string ();
+              sel.set_text (ical_str, ical_str.length);
             }
         });
 
