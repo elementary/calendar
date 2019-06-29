@@ -1,931 +1,751 @@
-# Chinese (Traditional) translation for maya
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the maya package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-05-22 07:03+0000\n"
-"Last-Translator: P.-H. Lin <cypressyew@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
-"calendar/calendar/zh_Hant/>\n"
-"Language: zh_TW\n"
+"PO-Revision-Date: 2019-06-26 18:53+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: szl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
-"X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
 msgid "On this computer"
-msgstr "在此電腦上"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr "使用者："
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr "user.name"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr "電子郵件："
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr "john@doe.com"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr "保留一份在本機上"
+msgstr ""
 
 #: daemon/Daemon.vala:24
 msgid "Print debug information"
-msgstr "列印除錯資訊"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr "user.name 或 user.name@gmail.com"
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr "CalDAV"
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr "URL："
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:95
 msgid "Use a secure connection"
-msgstr "使用安全連線"
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:123
 msgid "Server handles meeting invitations"
-msgstr "伺服器處理會議邀請"
+msgstr ""
 
 #: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr "當您選取的日子有活動事件時，未來的事件會顯示在這裡。"
+msgstr ""
 
 #: src/AgendaView.vala:150
 msgid "During the day"
-msgstr "當日"
+msgstr ""
 
 #: src/AgendaView.vala:158
 msgid "All day"
-msgstr "整天"
+msgstr ""
 
 #: src/AgendaView.vala:275
 msgid "Tomorrow"
-msgstr "明日"
+msgstr ""
 
 #: src/AgendaView.vala:278
 msgid "This Week"
-msgstr "本週"
+msgstr ""
 
 #: src/AgendaView.vala:281
 msgid "Next Week"
-msgstr "下週"
+msgstr ""
 
 #: src/AgendaView.vala:284
 msgid "This Month"
-msgstr "這個月"
+msgstr ""
 
 #: src/AgendaView.vala:287
 msgid "Next Month"
-msgstr "下個月"
+msgstr ""
 
 #: src/Application.vala:47
 msgid "Create an event"
-msgstr "建立事件"
+msgstr ""
 
 #: src/Application.vala:48
 msgid "Focus the given day"
-msgstr "聚焦在給定的日期"
+msgstr ""
 
 #: src/Application.vala:48
 msgid "date"
-msgstr "日期"
+msgstr ""
 
 #: src/Application.vala:140
 msgid "Calendar"
-msgstr "行事曆"
+msgstr ""
 
 #: src/ImportDialog.vala:28
 msgid "Select a Calendar to Import Into"
-msgstr "選取要匯入至哪一個行事曆"
+msgstr ""
 
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "從 \"%d\" 中的事件將被匯入至下列行事曆中："
+msgstr ""
 
 #: src/ImportDialog.vala:47
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "從 %d 份檔案的事件將被匯入至下列行事曆中："
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: src/ImportDialog.vala:57
 msgid "Import"
-msgstr "匯入"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
-msgstr "加入事件"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:61
 msgid "Edit Event"
-msgstr "編輯事件"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:100
 msgid "General Informations"
-msgstr "一般資訊"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:101
 msgid "Location"
-msgstr "地點"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:102
 msgid "Guests"
-msgstr "客人"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:103
 msgid "Reminders"
-msgstr "提醒"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] "重複"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: src/EventEdition/EventDialog.vala:127
 msgid "Delete Event"
-msgstr "刪除事件"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:140
 msgid "Create Event"
-msgstr "建立事件"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:143
 msgid "Save Changes"
-msgstr "儲存變更"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: src/EventEdition/GuestGrid.vala:42
 msgid "Accepted"
-msgstr "已接受"
+msgstr ""
 
 #: src/EventEdition/GuestGrid.vala:46
 msgid "Declined"
-msgstr "已拒絕"
+msgstr ""
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr "也許"
+msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr "參加者："
+msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:58
 msgid "No Participants"
-msgstr "沒有參與者"
+msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
-msgstr "邀請"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
-msgstr "從："
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:83
 msgid "All day:"
-msgstr "整天："
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:88
 msgid "To:"
-msgstr "到："
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Title:"
-msgstr "標題："
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:108
 msgid "Name of Event"
-msgstr "事件名稱"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:118
 msgid "Press enter to parse event"
-msgstr "按下 Enter 來解析事件"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:133
 msgid "Calendar:"
-msgstr "行事曆："
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:140
 msgid "Comments:"
-msgstr "評註："
+msgstr ""
 
 #: src/EventEdition/LocationPanel.vala:50
 msgid "Location:"
-msgstr "位置："
+msgstr ""
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "王小明 或 某某街"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
-msgstr "提醒："
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
-msgstr "沒有提醒"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
-msgstr "加入提醒"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:163
-#, fuzzy
 msgid "At time of event"
-msgstr "事件名稱"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:164
 msgid "1 minute before"
-msgstr "1 分鐘前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:165
 msgid "5 minutes before"
-msgstr "5 分鐘前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:166
 msgid "10 minutes before"
-msgstr "10 分鐘前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:167
 msgid "15 minutes before"
-msgstr "15 分鐘前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:168
 msgid "20 minutes before"
-msgstr "20 分鐘前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:169
 msgid "25 minutes before"
-msgstr "25 分鐘前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:170
 msgid "30 minutes before"
-msgstr "30 分鐘前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:171
 msgid "45 minutes before"
-msgstr "45 分鐘前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:172
 msgid "1 hour before"
-msgstr "1 小時前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:173
 msgid "2 hours before"
-msgstr "2 小時前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:174
 msgid "3 hours before"
-msgstr "3 小時前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:175
 msgid "12 hours before"
-msgstr "12 小時前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:176
 msgid "24 hours before"
-msgstr "24 小時前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:177
 msgid "2 days before"
-msgstr "2 天前"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:178
 msgid "1 week before"
-msgstr "1 週前"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
-msgstr "重復"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:58
 msgid "Daily"
-msgstr "每日"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:59
 msgid "Weekly"
-msgstr "每週"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:60
 msgid "Monthly"
-msgstr "每月"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:61
 msgid "Yearly"
-msgstr "每年"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr "每："
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] "日"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] "週"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] "月"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] "年"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr "結束："
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:141
 msgid "Never"
-msgstr "永不"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:142
 msgid "Until"
-msgstr "直到"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:143
 msgid "After"
-msgstr "之後"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:190
 msgid "The same day every month"
-msgstr "每月的同一天"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:201
 msgid "Exceptions:"
-msgstr "例外："
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:204
 msgid "No Exceptions"
-msgstr "沒有例外"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:225
 msgid "Add Exception"
-msgstr "加入例外"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:359
 msgid "Every last Sunday"
-msgstr "每月最後一個週日"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:362
 msgid "Every last Monday"
-msgstr "每月最後一個週一"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:365
 msgid "Every last Tuesday"
-msgstr "每月最後一個週二"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:368
 msgid "Every last Wednesday"
-msgstr "每月最後一個週三"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:371
 msgid "Every last Thursday"
-msgstr "每月最後一個週四"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:374
 msgid "Every last Friday"
-msgstr "每月最後一個週五"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:377
 msgid "Every last Saturday"
-msgstr "每月最後一個週六"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:384
 msgid "Every first Sunday"
-msgstr "每月第一個週日"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:387
 msgid "Every first Monday"
-msgstr "每月第一個週一"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:390
 msgid "Every first Tuesday"
-msgstr "每月第一個週二"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:393
 msgid "Every first Wednesday"
-msgstr "每月第一個週三"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:396
 msgid "Every first Thursday"
-msgstr "每月第一個週四"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:399
 msgid "Every first Friday"
-msgstr "每月第一個週五"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:402
 msgid "Every first Saturday"
-msgstr "每月第一個週六"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:409
 msgid "Every second Sunday"
-msgstr "每月第二個週日"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:412
 msgid "Every second Monday"
-msgstr "每月第二個週一"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:415
 msgid "Every second Tuesday"
-msgstr "每月第二個週二"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:418
 msgid "Every second Wednesday"
-msgstr "每月第二個週三"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:421
 msgid "Every second Thursday"
-msgstr "每月第二個週四"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:424
 msgid "Every second Friday"
-msgstr "每月第二個週五"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:427
 msgid "Every second Saturday"
-msgstr "每月第二個週六"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:434
 msgid "Every third Sunday"
-msgstr "每月第三個週日"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:437
 msgid "Every third Monday"
-msgstr "每月第三個週一"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:440
 msgid "Every third Tuesday"
-msgstr "每月第三個週二"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:443
 msgid "Every third Wednesday"
-msgstr "每月第三個週三"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:446
 msgid "Every third Thursday"
-msgstr "每月第三個週四"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:449
 msgid "Every third Friday"
-msgstr "每月第三個週五"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:452
 msgid "Every third Saturday"
-msgstr "每月第三個週六"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:459
 msgid "Every fourth Sunday"
-msgstr "每月第四個週日"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:462
 msgid "Every fourth Monday"
-msgstr "每月第四個週一"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:465
 msgid "Every fourth Tuesday"
-msgstr "每月第四個週二"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:468
 msgid "Every fourth Wednesday"
-msgstr "每月第四個週三"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:471
 msgid "Every fourth Thursday"
-msgstr "每月第四個週四"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:474
 msgid "Every fourth Friday"
-msgstr "每月第四個週五"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:477
 msgid "Every fourth Saturday"
-msgstr "每月第四個週六"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:484
 msgid "Every fifth Sunday"
-msgstr "每月第五個週日"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:487
 msgid "Every fifth Monday"
-msgstr "每月第五個週一"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:490
 msgid "Every fifth Tuesday"
-msgstr "每月第五個週二"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:493
 msgid "Every fifth Wednesday"
-msgstr "每月第五個週三"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:496
 msgid "Every fifth Thursday"
-msgstr "每月第五個週四"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:499
 msgid "Every fifth Friday"
-msgstr "每月第五個週五"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:502
 msgid "Every fifth Saturday"
-msgstr "每月第五個週六"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:512
 msgid "Mon"
-msgstr "一"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:513
 msgid "Tue"
-msgstr "二"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:514
 msgid "Wed"
-msgstr "三"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:515
 msgid "Thu"
-msgstr "四"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:516
 msgid "Fri"
-msgstr "五"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:517
 msgid "Sat"
-msgstr "六"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:518
 msgid "Sun"
-msgstr "日"
+msgstr ""
 
 #: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
 msgid "Hide Week Numbers"
-msgstr "隱藏週數"
+msgstr ""
 
 #: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:67
 msgid "Show Week Numbers"
-msgstr "顯示週數"
+msgstr ""
 
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "還有 %u 個…"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:53
 msgid "Create"
-msgstr "建立"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:64
 msgid "Name:"
-msgstr "名稱："
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:68
 msgid "Calendar Name"
-msgstr "行事曆名稱"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:91
 msgid "Type:"
-msgstr "類型："
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:111
 msgid "Color:"
-msgstr "色彩："
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:183
 msgid "Mark as default calendar"
-msgstr "標記爲預設行事曆"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:248
 msgid "Create Calendar"
-msgstr "新建行事曆"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:251
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
-msgstr "儲存"
+msgstr ""
 
 #: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
-msgstr "移除"
+msgstr ""
 
 #: src/SourceDialog/SourceItem.vala:75
 msgid "Not Removable"
-msgstr "不可移除"
+msgstr ""
 
 #: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
-msgstr "編輯…"
+msgstr ""
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr "不可編輯"
+msgstr ""
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
-msgstr "回復"
+msgstr ""
 
 #: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
 #, c-format
 msgid "\"%s\" removed"
-msgstr "「%s」已移除"
+msgstr ""
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
-msgstr "新增行事曆…"
+msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:176
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s - %s"
+msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:179
 #, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr ""
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:188
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s - %s"
+msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:195
 #, c-format
 msgid "%s, %s – %s"
-msgstr "%s，%s - %s"
+msgstr ""
 
 #: src/Widgets/CalendarButton.vala:72
 msgid "Search Calendars"
-msgstr "搜尋行事曆"
+msgstr ""
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr "找不到搜尋結果"
+msgstr ""
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr "請嘗試變更搜尋內容。"
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
-msgstr "匯出行事曆…"
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
-msgstr "行事曆.ics"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:41
 msgid "Remove Event"
-msgstr "移除事件"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:43
 msgid "Remove Occurrence"
-msgstr "移除這次"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
-msgstr "建立新事件"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
-msgstr "前往今天的日期"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
-msgstr "管理行事曆"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
-msgstr "匯出或分享預設行事曆"
-
-#~ msgid "%B %e, %Y"
-#~ msgstr "%Y年%b%e日"
-
-#~ msgid "%a, %b %d"
-#~ msgstr "%b%d日 (%A)"
-
-#~ msgid "Print version info and exit"
-#~ msgstr "列印版本資訊並離開"
-
-#~ msgid "0 minutes"
-#~ msgstr "0 分鐘"
-
-#~ msgid "Notification"
-#~ msgstr "通知"
-
-#~ msgid "%s"
-#~ msgstr "%s"
-
-#~ msgid "Upcoming Events"
-#~ msgstr "接下來的事件"
-
-#~ msgid "%s - %s"
-#~ msgstr "%s - %s"
-
-#~ msgid "Import events from \"%s\" into the following calendar:"
-#~ msgstr "從「%s」匯入事件到下列行事曆中："
-
-#~ msgid "Email"
-#~ msgstr "電子郵件"
-
-#~ msgid "Search Events"
-#~ msgstr "搜尋事件"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Launchpad Contributions:\n"
-#~ "  Cheng-Chia Tseng https://launchpad.net/~zerng07\n"
-#~ "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-#~ "  Rockworld https://launchpad.net/~rockrock2222222\n"
-#~ "  The KK https://launchpad.net/~thumbd03803\n"
-#~ "  honki https://launchpad.net/~honkiaa\n"
-#~ "  leo  https://launchpad.net/~shing80333"
-
-#~ msgid "View and schedule events"
-#~ msgstr "查看和安排事件"
-
-#~ msgid "Maya;Planner;Dates;Days;Events;"
-#~ msgstr "Maya;Planner;Dates;Days;Events;規劃;日期;事件;排程;安排;約會;活動;"
-
-#~ msgid "About Maya"
-#~ msgstr "關於 Maya"
-
-#~ msgid "About Calendar"
-#~ msgstr "關於《行事曆》"
-
-#~ msgid "at"
-#~ msgstr "於"
-
-#~ msgid "%l:%M %p"
-#~ msgstr "%p %l:%M"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
-
-#~ msgid "Title"
-#~ msgstr "標題"
-
-#~ msgid "Comments"
-#~ msgstr "評註"
-
-#~ msgid "Name or Email Address"
-#~ msgstr "名稱或電子郵件位址"
-
-#~ msgid "Sync..."
-#~ msgstr "同步..."
-
-#~ msgid "Today"
-#~ msgstr "今日"
-
-#~ msgid "Fullscreen"
-#~ msgstr "全螢幕"
-
-#~ msgid "Import..."
-#~ msgstr "匯入..."
-
-#~ msgid "Edit the selected event"
-#~ msgstr "編輯所選事件"
-
-#~ msgid "Delete the selected event"
-#~ msgstr "刪除所選事件"
-
-#~ msgid "Contacts"
-#~ msgstr "聯絡人"
-
-#~ msgid "Webcal"
-#~ msgstr "網路行事曆"
-
-#~ msgid "About"
-#~ msgstr "關於"
-
-#~ msgid "all day"
-#~ msgstr "全天"
-
-#~ msgid "Starts: \t"
-#~ msgstr "開始︰ \t"
-
-#~ msgid "_Add Event"
-#~ msgstr "加入事件(_A)"
-
-#~ msgid "Your event has to be named and has to have a valid date"
-#~ msgstr "您的事件必須有名稱，且必須有個有效日期"
-
-#~ msgid "Add calendar"
-#~ msgstr "增加行事曆"
-
-#~ msgid "Participants"
-#~ msgstr "參與者"
-
-#~ msgid "Personal"
-#~ msgstr "個人"
-
-#~ msgid "Ends: \t"
-#~ msgstr "結束： \t"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "無法編輯此事件"
-
-#~ msgid "$more more ..."
-#~ msgstr "還有其他 $more 項 ..."
-
-#~ msgid "Days"
-#~ msgstr "天"
-
-#~ msgid "Weeks"
-#~ msgstr "週"
-
-#~ msgid "Months"
-#~ msgstr "月"
-
-#~ msgid "Years"
-#~ msgstr "年"
-
-#~ msgid "Repeats"
-#~ msgstr "重複次數"
-
-#~ msgid "Sunday"
-#~ msgstr "週日"
-
-#~ msgid "Monday"
-#~ msgstr "週一"
-
-#~ msgid "Tuesday"
-#~ msgstr "週二"
-
-#~ msgid "Wednesday"
-#~ msgstr "週三"
-
-#~ msgid "Thursday"
-#~ msgstr "週四"
-
-#~ msgid "Friday"
-#~ msgstr "週五"
-
-#~ msgid "Saturday"
-#~ msgstr "週六"
-
-#~ msgid "Every last %s"
-#~ msgstr "每最後一個 %s"
-
-#~ msgid "Every first %s"
-#~ msgstr "每第一個 %s"
-
-#~ msgid "Every second %s"
-#~ msgstr "每第二個 %s"
-
-#~ msgid "Every third %s"
-#~ msgstr "每第三個 %s"
-
-#~ msgid "Every fourth %s"
-#~ msgstr "每第四個 %s"
-
-#~ msgid "Every fifth %s"
-#~ msgstr "每第五個 %s"
+msgstr ""

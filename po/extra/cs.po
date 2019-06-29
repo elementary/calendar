@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-26 20:27+0100\n"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2018-07-16 08:59+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/calendar/extra/"
@@ -39,7 +39,72 @@ msgstr ""
 "Malá a jednoduchá aplikace, umožňující synchronizaci a správu více kalendářů "
 "z jednoho místa, jako například Google Kalendáře, Outlooku a CalDAVu."
 
-#: data/io.elementary.calendar.appdata.xml.in:78
+#: data/io.elementary.calendar.appdata.xml.in:18
+msgid "Present import window when opening ICS files"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:19
+msgid "Add a search entry for calendars"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:20
+msgid "Always use calendar icon in notifications"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:21
+msgid "Agenda view can now be navigated by keyboard"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:22
+msgid "Right-to-left improvements"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:23
+msgid "Various UI overhauls including lime accent color"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:24
+msgid "Overall code cleanup and rewrites"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:25
+msgid "Updated translations"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:30
+msgid "Styling adjustments"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:31
+msgid "Fix location panel initialization"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:32
+msgid "New translations"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:37
+msgid "Update wingpanel-indicator-datetime settings path."
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:38
+msgid "New translations."
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:43
+#: data/io.elementary.calendar.appdata.xml.in:50
+msgid "Various bug fixes and improvements."
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:48
+msgid "Fixes for calendar accuracy and integrity issues."
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:49
+msgid "Fixes exporting, importing and printing calendars."
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:97
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
