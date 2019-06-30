@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-18 10:59-0800\n"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2018-07-18 00:05+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/calendar/"
@@ -44,21 +44,9 @@ msgstr "john@doe.com"
 msgid "Keep a copy locally"
 msgstr "Houdt een lokale kopie"
 
-#: core/Settings/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: core/Settings/LanguagesFormat.vala:25
-msgid "%A, %b %d"
-msgstr "%A, %b, %d"
-
-#: daemon/Daemon.vala:21
+#: daemon/Daemon.vala:24
 msgid "Print debug information"
 msgstr "Toon debuginformatie"
-
-#: daemon/Daemon.vala:23 src/Application.vala:49
-msgid "Print version info and exit"
-msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -84,7 +72,7 @@ msgstr "Gebruik een veilige verbinding"
 msgid "Server handles meeting invitations"
 msgstr "Uitnodigingen voor bijeenkomsten worden door de server afgehandeld"
 
-#: src/AgendaView.vala:51
+#: src/AgendaView.vala:50
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -92,31 +80,31 @@ msgstr ""
 "Uw aanstaande gebeurtenissen zullen hier getoond worden wanneer u een datum "
 "met gebeurtenissen selecteert."
 
-#: src/AgendaView.vala:194
+#: src/AgendaView.vala:150
 msgid "During the day"
 msgstr "Tijdens de dag"
 
-#: src/AgendaView.vala:202
+#: src/AgendaView.vala:158
 msgid "All day"
 msgstr "Hele dag"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:275
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:278
 msgid "This Week"
 msgstr "Deze week"
 
-#: src/AgendaView.vala:280
+#: src/AgendaView.vala:281
 msgid "Next Week"
 msgstr "Volgende week"
 
-#: src/AgendaView.vala:283
+#: src/AgendaView.vala:284
 msgid "This Month"
 msgstr "Deze maand"
 
-#: src/AgendaView.vala:286
+#: src/AgendaView.vala:287
 msgid "Next Month"
 msgstr "Volgende maand"
 
@@ -132,7 +120,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:148
+#: src/Application.vala:140
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -201,9 +189,21 @@ msgid "Save Changes"
 msgstr "Wijzigingen opslaan"
 
 #: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
-#: src/Widgets/ContractorButtonWithMenu.vala:87
+#: src/Widgets/ContractorButtonWithMenu.vala:91
 msgid "Cancel"
 msgstr "Annuleren"
+
+#: src/EventEdition/GuestGrid.vala:42
+msgid "Accepted"
+msgstr "Geaccepteerd"
+
+#: src/EventEdition/GuestGrid.vala:46
+msgid "Declined"
+msgstr "Afgewezen"
+
+#: src/EventEdition/GuestGrid.vala:50
+msgid "Maybe"
+msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -216,14 +216,6 @@ msgstr "Geen deelnemers"
 #: src/EventEdition/GuestsPanel.vala:94
 msgid "Invite"
 msgstr "Nodig uit"
-
-#: src/EventEdition/GuestsPanel.vala:242
-msgid "Accepted"
-msgstr "Geaccepteerd"
-
-#: src/EventEdition/GuestsPanel.vala:245
-msgid "Declined"
-msgstr "Afgewezen"
 
 #: src/EventEdition/InfoPanel.vala:77
 msgid "From:"
@@ -265,85 +257,97 @@ msgstr "Locatie:"
 msgid "John Smith OR Example St."
 msgstr "Jan Smit OF Voorbeeldlaan"
 
-#: src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
 msgstr "Herinneringen:"
 
-#: src/EventEdition/ReminderPanel.vala:37
+#: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
 msgstr "Geen herinneringen"
 
-#: src/EventEdition/ReminderPanel.vala:71
+#: src/EventEdition/ReminderPanel.vala:60
 msgid "Add Reminder"
 msgstr "Voeg herinnering toe"
 
-#: src/EventEdition/ReminderPanel.vala:172
-msgid "0 minutes"
-msgstr "0 minuten"
+#: src/EventEdition/ReminderPanel.vala:163
+#, fuzzy
+msgid "At time of event"
+msgstr "Gebeurtenisnaam"
 
-#: src/EventEdition/ReminderPanel.vala:173
-msgid "1 minute"
+#: src/EventEdition/ReminderPanel.vala:164
+#, fuzzy
+msgid "1 minute before"
 msgstr "1 minuut"
 
-#: src/EventEdition/ReminderPanel.vala:174
-msgid "5 minutes"
+#: src/EventEdition/ReminderPanel.vala:165
+#, fuzzy
+msgid "5 minutes before"
 msgstr "5 minuten"
 
-#: src/EventEdition/ReminderPanel.vala:175
-msgid "10 minutes"
+#: src/EventEdition/ReminderPanel.vala:166
+#, fuzzy
+msgid "10 minutes before"
 msgstr "10 minuten"
 
-#: src/EventEdition/ReminderPanel.vala:176
-msgid "15 minutes"
+#: src/EventEdition/ReminderPanel.vala:167
+#, fuzzy
+msgid "15 minutes before"
 msgstr "15 minuten"
 
-#: src/EventEdition/ReminderPanel.vala:177
-msgid "20 minutes"
+#: src/EventEdition/ReminderPanel.vala:168
+#, fuzzy
+msgid "20 minutes before"
 msgstr "20 minuten"
 
-#: src/EventEdition/ReminderPanel.vala:178
-msgid "25 minutes"
+#: src/EventEdition/ReminderPanel.vala:169
+#, fuzzy
+msgid "25 minutes before"
 msgstr "25 minuten"
 
-#: src/EventEdition/ReminderPanel.vala:179
-msgid "30 minutes"
+#: src/EventEdition/ReminderPanel.vala:170
+#, fuzzy
+msgid "30 minutes before"
 msgstr "30 minuten"
 
-#: src/EventEdition/ReminderPanel.vala:180
-msgid "45 minutes"
+#: src/EventEdition/ReminderPanel.vala:171
+#, fuzzy
+msgid "45 minutes before"
 msgstr "45 minuten"
 
-#: src/EventEdition/ReminderPanel.vala:181
-msgid "1 hour"
+#: src/EventEdition/ReminderPanel.vala:172
+#, fuzzy
+msgid "1 hour before"
 msgstr "1 uur"
 
-#: src/EventEdition/ReminderPanel.vala:182
-msgid "2 hours"
+#: src/EventEdition/ReminderPanel.vala:173
+#, fuzzy
+msgid "2 hours before"
 msgstr "2 uur"
 
-#: src/EventEdition/ReminderPanel.vala:183
-msgid "3 hours"
+#: src/EventEdition/ReminderPanel.vala:174
+#, fuzzy
+msgid "3 hours before"
 msgstr "3 uur"
 
-#: src/EventEdition/ReminderPanel.vala:184
-msgid "12 hours"
+#: src/EventEdition/ReminderPanel.vala:175
+#, fuzzy
+msgid "12 hours before"
 msgstr "12 uur"
 
-#: src/EventEdition/ReminderPanel.vala:185
-msgid "24 hours"
+#: src/EventEdition/ReminderPanel.vala:176
+#, fuzzy
+msgid "24 hours before"
 msgstr "24 uur"
 
-#: src/EventEdition/ReminderPanel.vala:186
-msgid "2 days"
+#: src/EventEdition/ReminderPanel.vala:177
+#, fuzzy
+msgid "2 days before"
 msgstr "2 dagen"
 
-#: src/EventEdition/ReminderPanel.vala:187
-msgid "1 week"
+#: src/EventEdition/ReminderPanel.vala:178
+#, fuzzy
+msgid "1 week before"
 msgstr "1 week"
-
-#: src/EventEdition/ReminderPanel.vala:195
-msgid "Notification"
-msgstr "Notificatie"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -409,215 +413,215 @@ msgstr "Tot"
 msgid "After"
 msgstr "Na"
 
-#: src/EventEdition/RepeatPanel.vala:189
+#: src/EventEdition/RepeatPanel.vala:190
 msgid "The same day every month"
 msgstr "Dezelfde dag elke maand"
 
-#: src/EventEdition/RepeatPanel.vala:200
+#: src/EventEdition/RepeatPanel.vala:201
 msgid "Exceptions:"
 msgstr "Uitzonderingen:"
 
-#: src/EventEdition/RepeatPanel.vala:203
+#: src/EventEdition/RepeatPanel.vala:204
 msgid "No Exceptions"
 msgstr "Geen uitzonderingen"
 
-#: src/EventEdition/RepeatPanel.vala:224
+#: src/EventEdition/RepeatPanel.vala:225
 msgid "Add Exception"
 msgstr "Uitzondering toevoegen"
 
-#: src/EventEdition/RepeatPanel.vala:358
+#: src/EventEdition/RepeatPanel.vala:359
 msgid "Every last Sunday"
 msgstr "Elke laatste zondag"
 
-#: src/EventEdition/RepeatPanel.vala:361
+#: src/EventEdition/RepeatPanel.vala:362
 msgid "Every last Monday"
 msgstr "Elke laatste maandag"
 
-#: src/EventEdition/RepeatPanel.vala:364
+#: src/EventEdition/RepeatPanel.vala:365
 msgid "Every last Tuesday"
 msgstr "Elke laatste dinsdag"
 
-#: src/EventEdition/RepeatPanel.vala:367
+#: src/EventEdition/RepeatPanel.vala:368
 msgid "Every last Wednesday"
 msgstr "Elke laatste woensdag"
 
-#: src/EventEdition/RepeatPanel.vala:370
+#: src/EventEdition/RepeatPanel.vala:371
 msgid "Every last Thursday"
 msgstr "Elke laatste donderdag"
 
-#: src/EventEdition/RepeatPanel.vala:373
+#: src/EventEdition/RepeatPanel.vala:374
 msgid "Every last Friday"
 msgstr "Elke laatste vrijdag"
 
-#: src/EventEdition/RepeatPanel.vala:376
+#: src/EventEdition/RepeatPanel.vala:377
 msgid "Every last Saturday"
 msgstr "Elke laatste zaterdag"
 
-#: src/EventEdition/RepeatPanel.vala:383
+#: src/EventEdition/RepeatPanel.vala:384
 msgid "Every first Sunday"
 msgstr "Elke eerste zondag"
 
-#: src/EventEdition/RepeatPanel.vala:386
+#: src/EventEdition/RepeatPanel.vala:387
 msgid "Every first Monday"
 msgstr "Elke eerste maandag"
 
-#: src/EventEdition/RepeatPanel.vala:389
+#: src/EventEdition/RepeatPanel.vala:390
 msgid "Every first Tuesday"
 msgstr "Elke eerste dinsdag"
 
-#: src/EventEdition/RepeatPanel.vala:392
+#: src/EventEdition/RepeatPanel.vala:393
 msgid "Every first Wednesday"
 msgstr "Elke eerste woensdag"
 
-#: src/EventEdition/RepeatPanel.vala:395
+#: src/EventEdition/RepeatPanel.vala:396
 msgid "Every first Thursday"
 msgstr "Elke eerste donderdag"
 
-#: src/EventEdition/RepeatPanel.vala:398
+#: src/EventEdition/RepeatPanel.vala:399
 msgid "Every first Friday"
 msgstr "Elke eerste vrijdag"
 
-#: src/EventEdition/RepeatPanel.vala:401
+#: src/EventEdition/RepeatPanel.vala:402
 msgid "Every first Saturday"
 msgstr "Elke eerste zaterdag"
 
-#: src/EventEdition/RepeatPanel.vala:408
+#: src/EventEdition/RepeatPanel.vala:409
 msgid "Every second Sunday"
 msgstr "Elke tweede zondag"
 
-#: src/EventEdition/RepeatPanel.vala:411
+#: src/EventEdition/RepeatPanel.vala:412
 msgid "Every second Monday"
 msgstr "Elke tweede maandag"
 
-#: src/EventEdition/RepeatPanel.vala:414
+#: src/EventEdition/RepeatPanel.vala:415
 msgid "Every second Tuesday"
 msgstr "Elke tweede dinsdag"
 
-#: src/EventEdition/RepeatPanel.vala:417
+#: src/EventEdition/RepeatPanel.vala:418
 msgid "Every second Wednesday"
 msgstr "Elke tweede woensdag"
 
-#: src/EventEdition/RepeatPanel.vala:420
+#: src/EventEdition/RepeatPanel.vala:421
 msgid "Every second Thursday"
 msgstr "Elke tweede donderdag"
 
-#: src/EventEdition/RepeatPanel.vala:423
+#: src/EventEdition/RepeatPanel.vala:424
 msgid "Every second Friday"
 msgstr "Elke tweede vrijdag"
 
-#: src/EventEdition/RepeatPanel.vala:426
+#: src/EventEdition/RepeatPanel.vala:427
 msgid "Every second Saturday"
 msgstr "Elke tweede zaterdag"
 
-#: src/EventEdition/RepeatPanel.vala:433
+#: src/EventEdition/RepeatPanel.vala:434
 msgid "Every third Sunday"
 msgstr "Elke derde zondag"
 
-#: src/EventEdition/RepeatPanel.vala:436
+#: src/EventEdition/RepeatPanel.vala:437
 msgid "Every third Monday"
 msgstr "Elke derde maandag"
 
-#: src/EventEdition/RepeatPanel.vala:439
+#: src/EventEdition/RepeatPanel.vala:440
 msgid "Every third Tuesday"
 msgstr "Elke derde dinsdag"
 
-#: src/EventEdition/RepeatPanel.vala:442
+#: src/EventEdition/RepeatPanel.vala:443
 msgid "Every third Wednesday"
 msgstr "Elke derde woensdag"
 
-#: src/EventEdition/RepeatPanel.vala:445
+#: src/EventEdition/RepeatPanel.vala:446
 msgid "Every third Thursday"
 msgstr "Elke derde donderdag"
 
-#: src/EventEdition/RepeatPanel.vala:448
+#: src/EventEdition/RepeatPanel.vala:449
 msgid "Every third Friday"
 msgstr "Elke derde vrijdag"
 
-#: src/EventEdition/RepeatPanel.vala:451
+#: src/EventEdition/RepeatPanel.vala:452
 msgid "Every third Saturday"
 msgstr "Elke derde zaterdag"
 
-#: src/EventEdition/RepeatPanel.vala:458
+#: src/EventEdition/RepeatPanel.vala:459
 msgid "Every fourth Sunday"
 msgstr "Elke vierde zondag"
 
-#: src/EventEdition/RepeatPanel.vala:461
+#: src/EventEdition/RepeatPanel.vala:462
 msgid "Every fourth Monday"
 msgstr "Elke vierde maandag"
 
-#: src/EventEdition/RepeatPanel.vala:464
+#: src/EventEdition/RepeatPanel.vala:465
 msgid "Every fourth Tuesday"
 msgstr "Elke vierde dinsdag"
 
-#: src/EventEdition/RepeatPanel.vala:467
+#: src/EventEdition/RepeatPanel.vala:468
 msgid "Every fourth Wednesday"
 msgstr "Elke vierde woensdag"
 
-#: src/EventEdition/RepeatPanel.vala:470
+#: src/EventEdition/RepeatPanel.vala:471
 msgid "Every fourth Thursday"
 msgstr "Elke vierde donderdag"
 
-#: src/EventEdition/RepeatPanel.vala:473
+#: src/EventEdition/RepeatPanel.vala:474
 msgid "Every fourth Friday"
 msgstr "Elke vierde vrijdag"
 
-#: src/EventEdition/RepeatPanel.vala:476
+#: src/EventEdition/RepeatPanel.vala:477
 msgid "Every fourth Saturday"
 msgstr "Elke vierde zaterdag"
 
-#: src/EventEdition/RepeatPanel.vala:483
+#: src/EventEdition/RepeatPanel.vala:484
 msgid "Every fifth Sunday"
 msgstr "Elke vijfde zondag"
 
-#: src/EventEdition/RepeatPanel.vala:486
+#: src/EventEdition/RepeatPanel.vala:487
 msgid "Every fifth Monday"
 msgstr "Elke vijfde maandag"
 
-#: src/EventEdition/RepeatPanel.vala:489
+#: src/EventEdition/RepeatPanel.vala:490
 msgid "Every fifth Tuesday"
 msgstr "Elke vijfde dinsdag"
 
-#: src/EventEdition/RepeatPanel.vala:492
+#: src/EventEdition/RepeatPanel.vala:493
 msgid "Every fifth Wednesday"
 msgstr "Elke vijfde woensdag"
 
-#: src/EventEdition/RepeatPanel.vala:495
+#: src/EventEdition/RepeatPanel.vala:496
 msgid "Every fifth Thursday"
 msgstr "Elke vijfde donderdag"
 
-#: src/EventEdition/RepeatPanel.vala:498
+#: src/EventEdition/RepeatPanel.vala:499
 msgid "Every fifth Friday"
 msgstr "Elke vijfde vrijdag"
 
-#: src/EventEdition/RepeatPanel.vala:501
+#: src/EventEdition/RepeatPanel.vala:502
 msgid "Every fifth Saturday"
 msgstr "Elke vijfde zaterdag"
 
-#: src/EventEdition/RepeatPanel.vala:511
+#: src/EventEdition/RepeatPanel.vala:512
 msgid "Mon"
 msgstr "Ma"
 
-#: src/EventEdition/RepeatPanel.vala:512
+#: src/EventEdition/RepeatPanel.vala:513
 msgid "Tue"
 msgstr "Di"
 
-#: src/EventEdition/RepeatPanel.vala:513
+#: src/EventEdition/RepeatPanel.vala:514
 msgid "Wed"
 msgstr "Wo"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:515
 msgid "Thu"
 msgstr "Do"
 
-#: src/EventEdition/RepeatPanel.vala:515
+#: src/EventEdition/RepeatPanel.vala:516
 msgid "Fri"
 msgstr "Vr"
 
-#: src/EventEdition/RepeatPanel.vala:516
+#: src/EventEdition/RepeatPanel.vala:517
 msgid "Sat"
 msgstr "Za"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:518
 msgid "Sun"
 msgstr "Zo"
 
@@ -658,17 +662,16 @@ msgstr "Kleur:"
 msgid "Mark as default calendar"
 msgstr "Markeer als standaard agenda"
 
-#: src/SourceDialog/SourceDialog.vala:247
+#: src/SourceDialog/SourceDialog.vala:248
 msgid "Create Calendar"
 msgstr "Agenda aanmaken"
 
-#: src/SourceDialog/SourceDialog.vala:250
-#: src/Widgets/ContractorButtonWithMenu.vala:88
+#: src/SourceDialog/SourceDialog.vala:251
+#: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Opslaan"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/AgendaEventRow.vala:141
-#: src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
 msgid "Remove"
 msgstr "Verwijderen"
 
@@ -677,8 +680,7 @@ msgstr "Verwijderen"
 msgid "Not Removable"
 msgstr "Verwijderen"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/AgendaEventRow.vala:140
-#: src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
 msgstr "Bewerken…"
 
@@ -699,33 +701,52 @@ msgstr "Agenda \"%s\" verwijderd."
 msgid "Add New Calendar…"
 msgstr "Voeg nieuwe agenda toe…"
 
-#: src/Widgets/AgendaEventRow.vala:185 src/Widgets/AgendaEventRow.vala:195
-#, c-format
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:176
+#, fuzzy, c-format
+msgctxt "date-range"
 msgid "%s – %s"
-msgstr ""
+msgstr "%s, %s - %s"
 
-#: src/Widgets/AgendaEventRow.vala:187
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:179
 #, fuzzy, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/AgendaEventRow.vala:199
-#, c-format
-msgid "%s"
-msgstr ""
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:188
+#, fuzzy, c-format
+msgctxt "time-range"
+msgid "%s – %s"
+msgstr "%s, %s - %s"
 
-#: src/Widgets/AgendaEventRow.vala:201
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:195
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
 
+#: src/Widgets/CalendarButton.vala:72
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Agenda aanmaken"
+
+#: src/Widgets/CalendarButton.vala:75
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarButton.vala:76
+msgid "Try changing search terms."
+msgstr ""
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
-#: src/Widgets/ContractorButtonWithMenu.vala:82
+#: src/Widgets/ContractorButtonWithMenu.vala:87
 #, fuzzy
 msgid "Export Calendar…"
 msgstr "Exporteer agenda..."
 
-#: src/Widgets/ContractorButtonWithMenu.vala:85
+#: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
@@ -752,6 +773,19 @@ msgstr "Beheer agenda's"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Exporteer of Deel de standaardagenda"
+
+#~ msgid "%B %e, %Y"
+#~ msgstr "%B %e, %Y"
+
+#, fuzzy
+#~ msgid "%a, %b %d"
+#~ msgstr "%A, %b, %d"
+
+#~ msgid "0 minutes"
+#~ msgstr "0 minuten"
+
+#~ msgid "Notification"
+#~ msgstr "Notificatie"
 
 #~ msgid "%s - %s"
 #~ msgstr "%s - %s"

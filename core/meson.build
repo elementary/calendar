@@ -17,7 +17,6 @@ core_files = files(
     'Model/CalendarModel.vala',
     'Settings/MayaSettings.vala',
     'Settings/SavedState.vala',
-    'Settings/LanguagesFormat.vala',
     'DateRange.vala',
     'Utils.vala',
     'GesturesUtils.vala'

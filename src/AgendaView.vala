@@ -371,7 +371,8 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         string new_value = formated_weekday.substring (formated_weekday.index_of_nth_char (1));
         new_value = formated_weekday.get_char (0).totitle ().to_string () + new_value;
         weekday_label.label = new_value;
-        day_label.label = date.format (Settings.DateFormat ());
+        var format = Granite.DateTime.get_default_date_format (false, true, true);
+        day_label.label = date.format (format);
         selected_date_events_list.invalidate_filter ();
     }
 }
