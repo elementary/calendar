@@ -42,6 +42,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         var selected_data_grid = new Gtk.Grid ();
         selected_data_grid.margin = 6;
         selected_data_grid.margin_start = selected_data_grid.margin_end = 12;
+        selected_data_grid.hexpand = true;
         selected_data_grid.row_spacing = 3;
         selected_data_grid.orientation = Gtk.Orientation.VERTICAL;
         selected_data_grid.add (weekday_label);
@@ -59,6 +60,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         selected_date_events_list = new Gtk.ListBox ();
         selected_date_events_list.activate_on_single_click = false;
         selected_date_events_list.height_request = 128;
+        selected_date_events_list.hexpand = true;
         selected_date_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         selected_date_events_list.set_header_func (header_update_func);
         selected_date_events_list.set_placeholder (placeholder_label);
@@ -88,6 +90,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         upcoming_events_list = new Gtk.ListBox ();
         upcoming_events_list.activate_on_single_click = false;
         upcoming_events_list.margin_top = 24;
+        upcoming_events_list.hexpand = true;
         upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
         upcoming_events_list.set_header_func (upcoming_header_update_func);
         upcoming_events_list.set_sort_func (upcoming_sort_function);
