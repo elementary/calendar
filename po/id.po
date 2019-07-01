@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 15:10-0800\n"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2018-10-21 11:51+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
@@ -143,15 +143,6 @@ msgstr[0] "Impor acara dari berkas %d ke dalam kalender berikut:"
 msgid "Import"
 msgstr "Impor"
 
-#: src/LanguagesFormat.vala:21
-msgid "%B %e, %Y"
-msgstr "%B %e, %Y"
-
-#: src/LanguagesFormat.vala:25
-#, fuzzy
-msgid "%a, %b %d"
-msgstr "%A, %b %d"
-
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
 msgstr "Tambah Acara"
@@ -195,7 +186,7 @@ msgid "Save Changes"
 msgstr "Simpan Perubahan"
 
 #: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
-#: src/Widgets/ContractorButtonWithMenu.vala:87
+#: src/Widgets/ContractorButtonWithMenu.vala:91
 msgid "Cancel"
 msgstr "Batal"
 
@@ -415,215 +406,215 @@ msgstr "Hingga"
 msgid "After"
 msgstr "Setelah"
 
-#: src/EventEdition/RepeatPanel.vala:189
+#: src/EventEdition/RepeatPanel.vala:190
 msgid "The same day every month"
 msgstr "Hari yang sama setiap bulan"
 
-#: src/EventEdition/RepeatPanel.vala:200
+#: src/EventEdition/RepeatPanel.vala:201
 msgid "Exceptions:"
 msgstr "Pengecualian:"
 
-#: src/EventEdition/RepeatPanel.vala:203
+#: src/EventEdition/RepeatPanel.vala:204
 msgid "No Exceptions"
 msgstr "Tidak Ada Pengecualian"
 
-#: src/EventEdition/RepeatPanel.vala:224
+#: src/EventEdition/RepeatPanel.vala:225
 msgid "Add Exception"
 msgstr "Tambah Pengecualian"
 
-#: src/EventEdition/RepeatPanel.vala:358
+#: src/EventEdition/RepeatPanel.vala:359
 msgid "Every last Sunday"
 msgstr "Setiap Minggu terakhir"
 
-#: src/EventEdition/RepeatPanel.vala:361
+#: src/EventEdition/RepeatPanel.vala:362
 msgid "Every last Monday"
 msgstr "Setiap Senin terakhir"
 
-#: src/EventEdition/RepeatPanel.vala:364
+#: src/EventEdition/RepeatPanel.vala:365
 msgid "Every last Tuesday"
 msgstr "Setiap Selasa terakhir"
 
-#: src/EventEdition/RepeatPanel.vala:367
+#: src/EventEdition/RepeatPanel.vala:368
 msgid "Every last Wednesday"
 msgstr "Setiap Rabu terakhir"
 
-#: src/EventEdition/RepeatPanel.vala:370
+#: src/EventEdition/RepeatPanel.vala:371
 msgid "Every last Thursday"
 msgstr "Setiap Kamis terakhir"
 
-#: src/EventEdition/RepeatPanel.vala:373
+#: src/EventEdition/RepeatPanel.vala:374
 msgid "Every last Friday"
 msgstr "Setiap Jumat terakhir"
 
-#: src/EventEdition/RepeatPanel.vala:376
+#: src/EventEdition/RepeatPanel.vala:377
 msgid "Every last Saturday"
 msgstr "Setiap Sabtu terakhir"
 
-#: src/EventEdition/RepeatPanel.vala:383
+#: src/EventEdition/RepeatPanel.vala:384
 msgid "Every first Sunday"
 msgstr "Setiap Minggu pertama"
 
-#: src/EventEdition/RepeatPanel.vala:386
+#: src/EventEdition/RepeatPanel.vala:387
 msgid "Every first Monday"
 msgstr "Setiap Senin pertama"
 
-#: src/EventEdition/RepeatPanel.vala:389
+#: src/EventEdition/RepeatPanel.vala:390
 msgid "Every first Tuesday"
 msgstr "Setiap Selasa pertama"
 
-#: src/EventEdition/RepeatPanel.vala:392
+#: src/EventEdition/RepeatPanel.vala:393
 msgid "Every first Wednesday"
 msgstr "Setiap Rabu pertama"
 
-#: src/EventEdition/RepeatPanel.vala:395
+#: src/EventEdition/RepeatPanel.vala:396
 msgid "Every first Thursday"
 msgstr "Setiap Kamis pertama"
 
-#: src/EventEdition/RepeatPanel.vala:398
+#: src/EventEdition/RepeatPanel.vala:399
 msgid "Every first Friday"
 msgstr "Setiap Jumat pertama"
 
-#: src/EventEdition/RepeatPanel.vala:401
+#: src/EventEdition/RepeatPanel.vala:402
 msgid "Every first Saturday"
 msgstr "Setiap Sabtu pertama"
 
-#: src/EventEdition/RepeatPanel.vala:408
+#: src/EventEdition/RepeatPanel.vala:409
 msgid "Every second Sunday"
 msgstr "Setiap Minggu kedua"
 
-#: src/EventEdition/RepeatPanel.vala:411
+#: src/EventEdition/RepeatPanel.vala:412
 msgid "Every second Monday"
 msgstr "Setiap Senin kedua"
 
-#: src/EventEdition/RepeatPanel.vala:414
+#: src/EventEdition/RepeatPanel.vala:415
 msgid "Every second Tuesday"
 msgstr "Setiap Selasa kedua"
 
-#: src/EventEdition/RepeatPanel.vala:417
+#: src/EventEdition/RepeatPanel.vala:418
 msgid "Every second Wednesday"
 msgstr "Setiap Rabu kedua"
 
-#: src/EventEdition/RepeatPanel.vala:420
+#: src/EventEdition/RepeatPanel.vala:421
 msgid "Every second Thursday"
 msgstr "Setiap Kamis kedua"
 
-#: src/EventEdition/RepeatPanel.vala:423
+#: src/EventEdition/RepeatPanel.vala:424
 msgid "Every second Friday"
 msgstr "Setiap Jumat kedua"
 
-#: src/EventEdition/RepeatPanel.vala:426
+#: src/EventEdition/RepeatPanel.vala:427
 msgid "Every second Saturday"
 msgstr "Setiap Sabtu kedua"
 
-#: src/EventEdition/RepeatPanel.vala:433
+#: src/EventEdition/RepeatPanel.vala:434
 msgid "Every third Sunday"
 msgstr "Setiap Minggu ketiga"
 
-#: src/EventEdition/RepeatPanel.vala:436
+#: src/EventEdition/RepeatPanel.vala:437
 msgid "Every third Monday"
 msgstr "Setiap Senin ketiga"
 
-#: src/EventEdition/RepeatPanel.vala:439
+#: src/EventEdition/RepeatPanel.vala:440
 msgid "Every third Tuesday"
 msgstr "Setiap Selasa ketiga"
 
-#: src/EventEdition/RepeatPanel.vala:442
+#: src/EventEdition/RepeatPanel.vala:443
 msgid "Every third Wednesday"
 msgstr "Setiap Rabu ketiga"
 
-#: src/EventEdition/RepeatPanel.vala:445
+#: src/EventEdition/RepeatPanel.vala:446
 msgid "Every third Thursday"
 msgstr "Setiap Kamis ketiga"
 
-#: src/EventEdition/RepeatPanel.vala:448
+#: src/EventEdition/RepeatPanel.vala:449
 msgid "Every third Friday"
 msgstr "Setiap Jumat ketiga"
 
-#: src/EventEdition/RepeatPanel.vala:451
+#: src/EventEdition/RepeatPanel.vala:452
 msgid "Every third Saturday"
 msgstr "Setiap Sabtu ketiga"
 
-#: src/EventEdition/RepeatPanel.vala:458
+#: src/EventEdition/RepeatPanel.vala:459
 msgid "Every fourth Sunday"
 msgstr "Setiap Minggu keempat"
 
-#: src/EventEdition/RepeatPanel.vala:461
+#: src/EventEdition/RepeatPanel.vala:462
 msgid "Every fourth Monday"
 msgstr "Setiap Senin keempat"
 
-#: src/EventEdition/RepeatPanel.vala:464
+#: src/EventEdition/RepeatPanel.vala:465
 msgid "Every fourth Tuesday"
 msgstr "Setiap Selasa keempat"
 
-#: src/EventEdition/RepeatPanel.vala:467
+#: src/EventEdition/RepeatPanel.vala:468
 msgid "Every fourth Wednesday"
 msgstr "Setiap Rabu keempat"
 
-#: src/EventEdition/RepeatPanel.vala:470
+#: src/EventEdition/RepeatPanel.vala:471
 msgid "Every fourth Thursday"
 msgstr "Setiap Kamis keempat"
 
-#: src/EventEdition/RepeatPanel.vala:473
+#: src/EventEdition/RepeatPanel.vala:474
 msgid "Every fourth Friday"
 msgstr "Setiap Jumat keempat"
 
-#: src/EventEdition/RepeatPanel.vala:476
+#: src/EventEdition/RepeatPanel.vala:477
 msgid "Every fourth Saturday"
 msgstr "Setiap Sabtu keempat"
 
-#: src/EventEdition/RepeatPanel.vala:483
+#: src/EventEdition/RepeatPanel.vala:484
 msgid "Every fifth Sunday"
 msgstr "Setiap Minggu kelima"
 
-#: src/EventEdition/RepeatPanel.vala:486
+#: src/EventEdition/RepeatPanel.vala:487
 msgid "Every fifth Monday"
 msgstr "Setiap Senin kelima"
 
-#: src/EventEdition/RepeatPanel.vala:489
+#: src/EventEdition/RepeatPanel.vala:490
 msgid "Every fifth Tuesday"
 msgstr "Setiap Selasa kelima"
 
-#: src/EventEdition/RepeatPanel.vala:492
+#: src/EventEdition/RepeatPanel.vala:493
 msgid "Every fifth Wednesday"
 msgstr "Setiap Rabu kelima"
 
-#: src/EventEdition/RepeatPanel.vala:495
+#: src/EventEdition/RepeatPanel.vala:496
 msgid "Every fifth Thursday"
 msgstr "Setiap Kamis kelima"
 
-#: src/EventEdition/RepeatPanel.vala:498
+#: src/EventEdition/RepeatPanel.vala:499
 msgid "Every fifth Friday"
 msgstr "Setiap Jumat kelima"
 
-#: src/EventEdition/RepeatPanel.vala:501
+#: src/EventEdition/RepeatPanel.vala:502
 msgid "Every fifth Saturday"
 msgstr "Setiap Sabtu kelima"
 
-#: src/EventEdition/RepeatPanel.vala:511
+#: src/EventEdition/RepeatPanel.vala:512
 msgid "Mon"
 msgstr "Sen"
 
-#: src/EventEdition/RepeatPanel.vala:512
+#: src/EventEdition/RepeatPanel.vala:513
 msgid "Tue"
 msgstr "Sel"
 
-#: src/EventEdition/RepeatPanel.vala:513
+#: src/EventEdition/RepeatPanel.vala:514
 msgid "Wed"
 msgstr "Rab"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:515
 msgid "Thu"
 msgstr "Kam"
 
-#: src/EventEdition/RepeatPanel.vala:515
+#: src/EventEdition/RepeatPanel.vala:516
 msgid "Fri"
 msgstr "Jum"
 
-#: src/EventEdition/RepeatPanel.vala:516
+#: src/EventEdition/RepeatPanel.vala:517
 msgid "Sat"
 msgstr "Sab"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:518
 msgid "Sun"
 msgstr "Min"
 
@@ -664,12 +655,12 @@ msgstr "Warna:"
 msgid "Mark as default calendar"
 msgstr "Tandai sebagai kalender bawaan"
 
-#: src/SourceDialog/SourceDialog.vala:247
+#: src/SourceDialog/SourceDialog.vala:248
 msgid "Create Calendar"
 msgstr "Buat Kalender"
 
-#: src/SourceDialog/SourceDialog.vala:250
-#: src/Widgets/ContractorButtonWithMenu.vala:88
+#: src/SourceDialog/SourceDialog.vala:251
+#: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Simpan"
 
@@ -704,27 +695,27 @@ msgid "Add New Calendar…"
 msgstr "Tambah Kalender Baru…"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:175
+#: src/Widgets/AgendaEventRow.vala:176
 #, fuzzy, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s, %s - %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:178
+#: src/Widgets/AgendaEventRow.vala:179
 #, fuzzy, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:187
+#: src/Widgets/AgendaEventRow.vala:188
 #, fuzzy, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s, %s - %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:194
+#: src/Widgets/AgendaEventRow.vala:195
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
@@ -743,11 +734,11 @@ msgid "Try changing search terms."
 msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
-#: src/Widgets/ContractorButtonWithMenu.vala:82
+#: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
 msgstr "Ekspor Kalender…"
 
-#: src/Widgets/ContractorButtonWithMenu.vala:85
+#: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
@@ -774,6 +765,13 @@ msgstr "Kelola Kalender"
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
 msgstr "Ekspor atau Bagikan Kalender utama"
+
+#~ msgid "%B %e, %Y"
+#~ msgstr "%B %e, %Y"
+
+#, fuzzy
+#~ msgid "%a, %b %d"
+#~ msgstr "%A, %b %d"
 
 #~ msgid "Print version info and exit"
 #~ msgstr "Cetak informasi versi dan keluar"
