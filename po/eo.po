@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 15:10-0800\n"
-"PO-Revision-Date: 2019-06-24 21:26+0000\n"
+"PO-Revision-Date: 2019-07-02 22:27+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/calendar/"
 "calendar/eo/>\n"
@@ -198,7 +198,7 @@ msgstr "Registri Ŝanĝojn"
 #: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Cancel"
-msgstr "Nuligi"
+msgstr "Rezigni"
 
 #: src/EventEdition/GuestGrid.vala:42
 msgid "Accepted"
