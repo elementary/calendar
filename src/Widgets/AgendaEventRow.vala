@@ -331,11 +331,12 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         is_allday = Util.is_all_day (start_date, end_date);
         is_multiday = Util.is_multiday_event (ical_event);
 
-        string start_date_string = start_date.format (Settings.DateFormat_Complete ());
-        string end_date_string = end_date.format (Settings.DateFormat_Complete ());
+        var date_format = Granite.DateTime.get_default_date_format (true, true, false);
+        string start_date_string = start_date.format (date_format);
+        string end_date_string = end_date.format (date_format);
         string start_time_string = start_date.format (Settings.TimeFormat ());
         string end_time_string = end_date.format (Settings.TimeFormat ());
-        string datetime_string = null;
+        string? datetime_string = null;
 
         datatime_label.show ();
         datatime_label.no_show_all = false;

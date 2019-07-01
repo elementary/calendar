@@ -170,7 +170,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             end_label.label = ngettext ("Repeat", "Repeats", (ulong)end_entry.value);
         });
 
-        end_datepicker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
+        var format = Granite.DateTime.get_default_date_format (false, true, true);
+        end_datepicker = new Granite.Widgets.DatePicker.with_format (format);
         end_datepicker.no_show_all = true;
 
         var ends_grid = new Gtk.Grid ();
