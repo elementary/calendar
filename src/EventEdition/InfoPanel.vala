@@ -264,15 +264,30 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             parent_dialog.ecal.set_new_vtype (E.CalComponentVType.EVENT);
 
             var time = new DateTime.now_local ();
-            if (time.get_minute () != 0) {
-                time = time.add_minutes (- time.get_minute ());
+
+            /* Default event time to next whole hour*/
+            time = time.add_minutes (- time.get_minute ());
+            if (time.get_hour () < 23) {
                 time = time.add_hours (1);
+                from_time_picker.time = time;
+                from_date_picker.date = parent_dialog.date_time;
+            } else {
+                time = time.add_hours ( - time.get_hour ());
+                from_time_picker.time = time;
+                from_date_picker.date = parent_dialog.date_time.add_days (1);
             }
 
-            from_date_picker.date = parent_dialog.date_time;
-            from_time_picker.time = time;
-            to_date_picker.date = parent_dialog.date_time;
-            to_time_picker.time = time.add_hours (1);
+
+
+            /* Default event duration of one hour */
+            if (time.get_hour () < 23) {
+                to_time_picker.time = time.add_hours (1);
+                to_date_picker.date = parent_dialog.date_time;
+            } else {
+                time = time.add_hours ( - time.get_hour ());
+                to_time_picker.time = time;
+                to_date_picker.date = parent_dialog.date_time.add_days (1);
+            }
 
             // Load the source
             calendar_button.current_source = parent_dialog.source;
