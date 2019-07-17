@@ -173,8 +173,8 @@ public class Grid : Gtk.Grid {
     /**
      * Puts the given event on the grid.
      */
-    public void add_event (E.CalComponent event) {
-        unowned iCal.Component comp = event.get_icalcomponent ();
+    public void add_event (ECal.Component event) {
+        unowned ICal.Component comp = event.get_icalcomponent ();
         foreach (var dt_range in Util.event_date_ranges (comp, grid_range)) {
             add_buttons_for_range (dt_range, event);
         }
@@ -183,7 +183,7 @@ public class Grid : Gtk.Grid {
     /**
      * Adds an eventbutton to the grid for the given event at each day of the given range.
      */
-    void add_buttons_for_range (Util.DateRange dt_range, E.CalComponent event) {
+    void add_buttons_for_range (Util.DateRange dt_range, ECal.Component event) {
         foreach (var date in dt_range) {
             EventButton button = new EventButton (event, date);
             add_button_for_day (date, button);
@@ -205,13 +205,13 @@ public class Grid : Gtk.Grid {
     /**
      * Removes the given event from the grid.
      */
-    public void remove_event (E.CalComponent event) {
+    public void remove_event (ECal.Component event) {
         foreach(var grid_day in data.values) {
             grid_day.remove_event (event);
         }
     }
 
-    public void update_event (E.CalComponent event) {
+    public void update_event (ECal.Component event) {
         Gee.Collection<Util.DateRange> event_ranges = Util.event_date_ranges (event.get_icalcomponent (), grid_range);
 
         foreach (var grid_day in data.values) {

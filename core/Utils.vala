@@ -14,7 +14,7 @@
 
 namespace Maya.Util {
 
-    public int compare_events (E.CalComponent comp1, E.CalComponent comp2) {
+    public int compare_events (ECal.Component comp1, ECal.Component comp2) {
 
         var date1 = Util.ical_to_date_time (comp1.get_icalcomponent ().get_dtstart ());
         var date2 = Util.ical_to_date_time (comp2.get_icalcomponent ().get_dtstart ());
@@ -23,8 +23,10 @@ namespace Maya.Util {
             return date1.compare(date2);
 
         // If they have the same date, sort them alphabetically
-        var summary1 = comp1.get_summary ();
-        var summary2 = comp2.get_summary ();
+        ECal.ComponentText summary1;
+        ECal.ComponentText summary2;
+        comp1.get_summary (out summary1);
+        comp2.get_summary (out summary2);
 
         if (summary1.value < summary2.value)
             return -1;
@@ -41,12 +43,12 @@ namespace Maya.Util {
      * its time settings are ignored. The second one contains the time itself.
      * XXX: We need to convert to UTC because of some bugs with the Google backend…
      */
-    public iCal.TimeType date_time_to_ical (DateTime date, DateTime? time_local, string? timezone = E.Util.get_system_timezone_location ()) {
-        var result = iCal.TimeType.from_day_of_year (date.get_day_of_year (), date.get_year ());
+    public ICal.Time date_time_to_ical (DateTime date, DateTime? time_local, string? timezone = ECal.Util.get_system_timezone_location ()) {
+        var result = ICal.Time.from_day_of_year (date.get_day_of_year (), date.get_year ());
         if (time_local != null) {
-            unowned iCal.Array<unowned iCal.TimeZone> tzs = iCal.TimeZone.get_builtin_timezones ();
+            unowned ICal.Array<unowned ICal.Timezone> tzs = ICal.Timezone.get_builtin_timezones ();
             for (int i = 0; i<tzs.num_elements; i++) {
-                unowned iCal.TimeZone tz = tzs.element_at (i);
+                unowned ICal.Timezone tz = tzs.element_at (i);
                 if (tz.get_display_name () == timezone) {
                     result.zone = tz;
                     break;
@@ -70,8 +72,9 @@ namespace Maya.Util {
     /**
      * Converts the given TimeType to a DateTime.
      */
-    private TimeZone timezone_from_ical (iCal.TimeType date) {
-        var interval = date.zone.get_utc_offset (date, date.is_daylight);
+    private TimeZone timezone_from_ical (ICal.Time date) {
+        int is_daylight;
+        var interval = date.zone.get_utc_offset (date, out is_daylight);
         var hours = (interval / 3600);
         string hour_string = "-";
         if (hours >= 0) {
@@ -97,16 +100,16 @@ namespace Maya.Util {
 
     /**
      * Converts the given TimeType to a DateTime.
-     * XXX : Track next versions of evolution in order to convert iCal.Timezone to GLib.TimeZone with a dedicated function…
+     * XXX : Track next versions of evolution in order to convert ICal.Timezone to GLib.TimeZone with a dedicated function…
      */
-    public DateTime ical_to_date_time (iCal.TimeType date) {
+    public DateTime ical_to_date_time (ICal.Time date) {
         return new DateTime (timezone_from_ical (date), date.year, date.month,
             date.day, date.hour, date.minute, date.second);
     }
 
-    public void get_local_datetimes_from_icalcomponent (iCal.Component comp, out DateTime start_date, out DateTime end_date) {
-        iCal.TimeType dt_start = comp.get_dtstart ();
-        iCal.TimeType dt_end = comp.get_dtend ();
+    public void get_local_datetimes_from_icalcomponent (ICal.Component comp, out DateTime start_date, out DateTime end_date) {
+        ICal.Time dt_start = comp.get_dtstart ();
+        ICal.Time dt_end = comp.get_dtend ();
         start_date = Util.ical_to_date_time (dt_start);
 
         if (dt_end.is_null_time () == 0) {
@@ -124,7 +127,7 @@ namespace Maya.Util {
         }
     }
 
-    public bool is_event_in_range (iCal.Component comp, Util.DateRange view_range) {
+    public bool is_event_in_range (ICal.Component comp, Util.DateRange view_range) {
         DateTime start, end;
         get_local_datetimes_from_icalcomponent (comp, out start, out end);
 
@@ -160,7 +163,7 @@ namespace Maya.Util {
         return false;
     }
 
-    public Gee.Collection<DateRange> event_date_ranges (iCal.Component comp, Util.DateRange view_range) {
+    public Gee.Collection<DateRange> event_date_ranges (ICal.Component comp, Util.DateRange view_range) {
         var dateranges = new Gee.LinkedList<DateRange> ();
 
         DateTime start, end;
@@ -171,17 +174,17 @@ namespace Maya.Util {
         dateranges.add (new Util.DateRange (start, end));
 
         // Search for recursive events.
-        unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.RRULE);
+        unowned ICal.Property property = comp.get_first_property (ICal.PropertyKind.RRULE_PROPERTY);
         if (property != null) {
             var rrule = property.get_rrule ();
             switch (rrule.freq) {
-                case (iCal.RecurrenceTypeFrequency.WEEKLY):
+                case (ICal.RecurrenceFrequency.WEEKLY_RECURRENCE):
                     generate_week_reccurence (dateranges, view_range, rrule, start, end);
                     break;
-                case (iCal.RecurrenceTypeFrequency.MONTHLY):
+                case (ICal.RecurrenceFrequency.MONTHLY_RECURRENCE):
                     generate_month_reccurence (dateranges, view_range, rrule, start, end);
                     break;
-                case (iCal.RecurrenceTypeFrequency.YEARLY):
+                case (ICal.RecurrenceFrequency.YEARLY_RECURRENCE):
                     generate_year_reccurence (dateranges, view_range, rrule, start, end);
                     break;
                 default:
@@ -191,7 +194,7 @@ namespace Maya.Util {
         }
 
         // EXDATEs elements are exceptions dates that should not appear.
-        property = comp.get_first_property (iCal.PropertyKind.EXDATE);
+        property = comp.get_first_property (ICal.PropertyKind.EXDATE_PROPERTY);
         while (property != null) {
             var exdate = property.get_exdate ();
             var date = ical_to_date_time (exdate);
@@ -208,14 +211,14 @@ namespace Maya.Util {
                 return true;
             });
 
-            property = comp.get_next_property (iCal.PropertyKind.EXDATE);
+            property = comp.get_next_property (ICal.PropertyKind.EXDATE_PROPERTY);
         }
 
         return dateranges;
     }
 
     private void generate_day_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
-                                           iCal.RecurrenceType rrule, DateTime start, DateTime end) {
+                                           ICal.Recurrence rrule, DateTime start, DateTime end) {
         if (rrule.until.is_null_time () == 0) {
             for (int i = 1; i <= (int)(rrule.until.day/rrule.interval); i++) {
                 int n = i*rrule.interval;
@@ -240,7 +243,7 @@ namespace Maya.Util {
     }
 
     private void generate_year_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
-                                           iCal.RecurrenceType rrule, DateTime start, DateTime end) {
+                                           ICal.Recurrence rrule, DateTime start, DateTime end) {
         if (rrule.until.is_null_time () == 0) {
             /*for (int i = 0; i <= rrule.until.year; i++) {
                 int n = i*rrule.interval;
@@ -277,10 +280,10 @@ namespace Maya.Util {
     }
 
     private void generate_month_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
-                                           iCal.RecurrenceType rrule, DateTime start, DateTime end) {
+                                           ICal.Recurrence rrule, DateTime start, DateTime end) {
         // Computes month recurrences by day (for example: third friday of the month).
-        for (int k = 0; k <= iCal.Size.BY_DAY; k++) {
-            if (rrule.by_day[k] < iCal.Size.BY_DAY) {
+        for (int k = 0; k <= ICal.Size.BY_DAY; k++) {
+            if (rrule.by_day[k] < ICal.Size.BY_DAY) {
                 if (rrule.count > 0) {
                     for (int i = 1; i<=rrule.count; i++) {
                         int n = i*rrule.interval;
@@ -345,7 +348,7 @@ namespace Maya.Util {
         }
 
         // Computes month recurrences by month day (for example: 4th of the month).
-        if (rrule.by_month_day[0] < iCal.Size.BY_MONTHDAY) {
+        if (rrule.by_month_day[0] < ICal.Size.BY_MONTHDAY) {
             if (rrule.count > 0) {
                 for (int i = 1; i<=rrule.count; i++) {
                     int n = i*rrule.interval;
@@ -377,10 +380,10 @@ namespace Maya.Util {
     }
 
     private void generate_week_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
-                                           iCal.RecurrenceType rrule, DateTime start_, DateTime end_) {
+                                           ICal.Recurrence rrule, DateTime start_, DateTime end_) {
         DateTime start = start_;
         DateTime end = end_;
-        for (int k = 0; k <= iCal.Size.BY_DAY; k++) {
+        for (int k = 0; k <= ICal.Size.BY_DAY; k++) {
             if (rrule.by_day[k] > 7)
                 break;
 
@@ -451,7 +454,7 @@ namespace Maya.Util {
         }
     }
 
-    public bool is_multiday_event (iCal.Component comp) {
+    public bool is_multiday_event (ICal.Component comp) {
         DateTime start, end;
         get_local_datetimes_from_icalcomponent (comp, out start, out end);
 
@@ -476,23 +479,23 @@ namespace Maya.Util {
 
     private DateTime get_date_from_ical_day (DateTime date, short day) {
         int day_to_add = 0;
-        switch (iCal.RecurrenceType.day_day_of_week (day)) {
-            case iCal.RecurrenceTypeWeekday.SUNDAY:
+        switch (ICal.Recurrence.day_day_of_week (day)) {
+            case ICal.RecurrenceWeekday.SUNDAY_WEEKDAY:
                 day_to_add = 7 - date.get_day_of_week ();
                 break;
-            case iCal.RecurrenceTypeWeekday.MONDAY:
+            case ICal.RecurrenceWeekday.MONDAY_WEEKDAY:
                 day_to_add = 1 - date.get_day_of_week ();
                 break;
-            case iCal.RecurrenceTypeWeekday.TUESDAY:
+            case ICal.RecurrenceWeekday.TUESDAY_WEEKDAY:
                 day_to_add = 2 - date.get_day_of_week ();
                 break;
-            case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+            case ICal.RecurrenceWeekday.WEDNESDAY_WEEKDAY:
                 day_to_add = 3 - date.get_day_of_week ();
                 break;
-            case iCal.RecurrenceTypeWeekday.THURSDAY:
+            case ICal.RecurrenceWeekday.THURSDAY_WEEKDAY:
                 day_to_add = 4 - date.get_day_of_week ();
                 break;
-            case iCal.RecurrenceTypeWeekday.FRIDAY:
+            case ICal.RecurrenceWeekday.FRIDAY_WEEKDAY:
                 day_to_add = 5 - date.get_day_of_week ();
                 break;
             default:
@@ -529,10 +532,10 @@ namespace Maya.Util {
         return a.equal (b);
     }
 
-    /* Returns true if 'a' and 'b' are the same E.CalComponent */
-    private bool calcomponent_equal_func (E.CalComponent a, E.CalComponent b) {
-        unowned iCal.Component comp_a = a.get_icalcomponent ();
-        unowned iCal.Component comp_b = b.get_icalcomponent ();
+    /* Returns true if 'a' and 'b' are the same ECal.Component */
+    private bool calcomponent_equal_func (ECal.Component a, ECal.Component b) {
+        unowned ICal.Component comp_a = a.get_icalcomponent ();
+        unowned ICal.Component comp_b = b.get_icalcomponent ();
         return comp_a.get_uid () == comp_b.get_uid ();
     }
 
@@ -601,7 +604,7 @@ namespace Maya.Util {
         var builder = new StringBuilder ();
         builder.append ("BEGIN:VCALENDAR\n");
         builder.append ("VERSION:2.0\n");
-        foreach (E.CalComponent event in events) {
+        foreach (ECal.Component event in events) {
             builder.append (event.get_as_string ());
         }
         builder.append ("END:VCALENDAR");
