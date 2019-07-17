@@ -762,13 +762,6 @@ msgstr "Mastrumi Kalendarojn"
 msgid "Export or Share the default Calendar"
 msgstr "Eksporti aŭ Kunhavigi la aprioran Kalendaron"
 
-#~ msgid "%B %e, %Y"
-#~ msgstr "%B %e, %Y"
-
-#, fuzzy
-#~ msgid "%a, %b %d"
-#~ msgstr "%A, %b %d"
-
 #~ msgid "0 minutes"
 #~ msgstr "0 minutoj"
 
