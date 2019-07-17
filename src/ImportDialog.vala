@@ -69,12 +69,12 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
         var source = calchooser_button.current_source;
         var calmodel = Model.CalendarModel.get_default ();
         foreach (var file in files) {
-            var ical = E.Util.parse_ics_file (file.get_path ());
+            var ical = ECal.Util.parse_ics_file (file.get_path ());
             if (ical.is_valid () == 1) {
-                for (unowned iCal.Component comp = ical.get_first_component (iCal.ComponentKind.VEVENT);
+                for (unowned ICal.Component comp = ical.get_first_component (ICal.ComponentKind.VEVENT);
                      comp != null;
-                     comp = ical.get_next_component (iCal.ComponentKind.VEVENT)) {
-                    var ecal = new E.CalComponent.from_string (comp.as_ical_string ());
+                     comp = ical.get_next_component (ICal.ComponentKind.VEVENT)) {
+                    var ecal = new ECal.Component.from_string (comp.as_ical_string ());
                     calmodel.add_event (source, ecal);
                 }
             }

@@ -97,14 +97,14 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         });
 
         if (parent_dialog.ecal != null) {
-            unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+            unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
             unowned string location = comp.get_location ();
 
             if (location != null) {
                 location_entry.text = location.dup ();
             }
 
-            iCal.GeoType? geo;
+            ICal.GeoType? geo;
             parent_dialog.ecal.get_geo (out geo);
             bool need_relocation = true;
             if (geo != null) {
@@ -147,22 +147,22 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
      */
     public void save () {
         // Save the location
-        unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+        unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
         string location = location_entry.text;
 
         comp.set_location (location);
         if (map_selected == true) {
             // First, clear the geo
-            int count = comp.count_properties (iCal.PropertyKind.GEO);
+            int count = comp.count_properties (ICal.PropertyKind.GEO_PROPERTY);
 
             for (int i = 0; i < count; i++) {
-                unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.GEO);
+                unowned ICal.Property remove_prop = comp.get_first_property (ICal.PropertyKind.GEO_PROPERTY);
                 comp.remove_property (remove_prop);
             }
 
             // Add the comment
-            var property = new iCal.Property (iCal.PropertyKind.GEO);
-            iCal.GeoType geo = {0, 0};
+            var property = new ICal.Property (ICal.PropertyKind.GEO_PROPERTY);
+            ICal.GeoType geo = {0, 0};
             geo.latitude = (float)point.latitude;
             geo.longitude = (float)point.longitude;
             property.set_geo (geo);
@@ -244,7 +244,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         } catch (Error e) {
             warning ("Failed to connect to GeoClue2 service: %s", e.message);
             // Fallback to timezone location
-            compute_location.begin (E.Util.get_system_timezone_location ());
+            compute_location.begin (ECal.Util.get_system_timezone_location ());
             return;
         }
     }

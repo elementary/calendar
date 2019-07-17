@@ -19,13 +19,13 @@
  */
 
 public class Maya.View.EventButton : Gtk.Revealer {
-    public E.CalComponent comp { get; construct set; }
+    public ECal.Component comp { get; construct set; }
     public GLib.DateTime date { get; construct; }
 
     private Gtk.Label label;
     private Gtk.StyleContext grid_style_context;
 
-    public EventButton (E.CalComponent comp, GLib.DateTime date) {
+    public EventButton (ECal.Component comp, GLib.DateTime date) {
         Object (
              comp: comp,
              date: date
@@ -85,7 +85,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
         event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
             Model.CalendarModel.get_default ().drag_component = comp;
-            unowned iCal.Component icalcomp = comp.get_icalcomponent ();
+            unowned ICal.Component icalcomp = comp.get_icalcomponent ();
             unowned string ical_str = icalcomp.as_ical_string ();
             sel.set_text (ical_str, ical_str.length);
             try {
@@ -109,13 +109,15 @@ public class Maya.View.EventButton : Gtk.Revealer {
         });
     }
 
-    public void update (E.CalComponent event) {
+    public void update (ECal.Component event) {
        this.comp = comp;
        label.label = get_summary ();
     }
 
     public string get_summary () {
-        return comp.get_summary ().value;
+        ECal.ComponentText summary;
+        comp.get_summary (out summary);
+        return summary.value;
     }
 
     private void reload_css (string background_color) {

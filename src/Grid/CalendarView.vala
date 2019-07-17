@@ -147,7 +147,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         }
     }
 
-    void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
+    void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
         Idle.add ( () => {
             foreach (var event in events)
                 add_event (source, event);
@@ -156,7 +156,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         });
     }
 
-    void on_events_updated (E.Source source, Gee.Collection<E.CalComponent> events) {
+    void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
         Idle.add ( () => {
             foreach (var event in events)
                 update_event (source, event);
@@ -165,7 +165,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         });
     }
 
-    void on_events_removed (E.Source source, Gee.Collection<E.CalComponent> events) {
+    void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
         Idle.add ( () => {
             foreach (var event in events)
                 remove_event (source, event);
@@ -224,18 +224,18 @@ public class Maya.View.CalendarView : Gtk.Grid {
     }
 
     /* Render new event on the grid */
-    void add_event (E.Source source, E.CalComponent event) {
+    void add_event (E.Source source, ECal.Component event) {
         event.set_data("source", source);
         grid.add_event (event);
     }
 
     /* Update the event on the grid */
-    void update_event (E.Source source, E.CalComponent event) {
+    void update_event (E.Source source, ECal.Component event) {
         grid.update_event (event);
     }
 
     /* Remove event from the grid */
-    void remove_event (E.Source source, E.CalComponent event) {
+    void remove_event (E.Source source, ECal.Component event) {
         grid.remove_event (event);
     }
 
