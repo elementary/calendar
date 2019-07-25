@@ -22,6 +22,8 @@ public class Maya.View.EventButton : Gtk.Revealer {
     public ECal.Component comp { get; construct set; }
     public GLib.DateTime date { get; construct; }
 
+    private static Gtk.CssProvider css_provider;
+
     private Gtk.Label label;
     private Gtk.StyleContext grid_style_context;
 
@@ -32,6 +34,11 @@ public class Maya.View.EventButton : Gtk.Revealer {
          );
     }
 
+    static construct {
+        css_provider = new Gtk.CssProvider ();
+        css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
+    }
+
     construct {
         transition_type = Gtk.RevealerTransitionType.CROSSFADE;
 
@@ -40,9 +47,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
         label.ellipsize = Pango.EllipsizeMode.END;
         label.xalign = 0;
         label.show ();
-
-        var css_provider = new Gtk.CssProvider ();
-        css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
 
         var internal_grid = new Gtk.Grid ();
         internal_grid.add (label);
