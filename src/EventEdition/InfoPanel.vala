@@ -264,16 +264,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             parent_dialog.ecal.set_new_vtype (ECal.ComponentVType.EVENT);
 
             var time = new DateTime.now_local ();
-
-
-            int minutes = time.get_minute ();
-            bool now_before_2300 = (time.get_hour () < 23);
+            var minutes = time.get_minute ();
+            var now_before_2300 = (time.get_hour () < 23);
 
             /* Set convenient start time but do not change day */
             if (now_before_2300) {  /* Default start time to next whole hour*/
                 time = time.add_minutes (60 - minutes);
             } else if (minutes < 50) {  /* Default start time to next 10 minutes*/
-                    time = time.add_minutes ((minutes / 10) * 10 + 10 - minutes);
+                time = time.add_minutes ((minutes / 10) * 10 + 10 - minutes);
             } /* else use current time */
 
             from_time_picker.time = time;
