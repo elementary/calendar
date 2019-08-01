@@ -20,7 +20,7 @@
  */
 
 public class Maya.View.AgendaView : Gtk.ScrolledWindow {
-    public signal void event_removed (E.CalComponent event);
+    public signal void event_removed (ECal.Component event);
 
     private Gtk.Label day_label;
     private Gtk.Label weekday_label;
@@ -72,7 +72,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
             }
 
             var event_row = (AgendaEventRow) row;
-            unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
+            unowned ICal.Component comp = event_row.calevent.get_icalcomponent ();
 
             var stripped_time = new DateTime.local (selected_date.get_year (), selected_date.get_month (), selected_date.get_day_of_month (), 0, 0, 0);
             var range = new Util.DateRange (stripped_time, stripped_time.add_days (1));
@@ -99,7 +99,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
             var event_row = (AgendaEventRow) row;
 
             DateTime now = new DateTime.now_local ();
-            unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
+            unowned ICal.Component comp = event_row.calevent.get_icalcomponent ();
             var stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
             stripped_time = stripped_time.add_days (1);
             var stripped_time_end = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
@@ -191,11 +191,11 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     }
 
     private int compare_rows (AgendaEventRow row1, AgendaEventRow row2) {
-        unowned iCal.Component ical_event1 = row1.calevent.get_icalcomponent ();
+        unowned ICal.Component ical_event1 = row1.calevent.get_icalcomponent ();
         DateTime start_date1, end_date1;
         Util.get_local_datetimes_from_icalcomponent (ical_event1, out start_date1, out end_date1);
 
-        unowned iCal.Component ical_event2 = row2.calevent.get_icalcomponent ();
+        unowned ICal.Component ical_event2 = row2.calevent.get_icalcomponent ();
         DateTime start_date2, end_date2;
         Util.get_local_datetimes_from_icalcomponent (ical_event2, out start_date2, out end_date2);
 
@@ -213,7 +213,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     }
 
     private static int get_event_type (AgendaEventRow row) {
-        unowned iCal.Component comp = row.calevent.get_icalcomponent ();
+        unowned ICal.Component comp = row.calevent.get_icalcomponent ();
         DateTime now = new DateTime.now_local ();
 
         var stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
@@ -299,9 +299,9 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     /**
      * Events have been added to the given source.
      */
-    private void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
+    private void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
         foreach (var event in events) {
-            unowned iCal.Component comp = event.get_icalcomponent ();
+            unowned ICal.Component comp = event.get_icalcomponent ();
 
             if (!row_table.contains (comp.get_uid ())) {
                 var row = new AgendaEventRow (source, event, false);
@@ -324,9 +324,9 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     /**
      * Events for the given source have been updated.
      */
-    private void on_events_updated (E.Source source, Gee.Collection<E.CalComponent> events) {
+    private void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
         foreach (var event in events) {
-            unowned iCal.Component comp = event.get_icalcomponent ();
+            unowned ICal.Component comp = event.get_icalcomponent ();
 
             var row = (AgendaEventRow)row_table.get (comp.get_uid ());
             row.update (event);
@@ -339,9 +339,9 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     /**
      * Events for the given source have been removed.
      */
-    private void on_events_removed (E.Source source, Gee.Collection<E.CalComponent> events) {
+    private void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
         foreach (var event in events) {
-            unowned iCal.Component comp = event.get_icalcomponent ();
+            unowned ICal.Component comp = event.get_icalcomponent ();
 
             var row = (AgendaEventRow)row_table.get (comp.get_uid ());
             row_table.remove (comp.get_uid ());
