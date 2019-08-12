@@ -24,9 +24,9 @@ const string EVENT_CSS = """
 """;
 
 public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
-    public signal void removed (E.CalComponent event);
+    public signal void removed (ECal.Component event);
 
-    public E.CalComponent calevent { get; construct; }
+    public ECal.Component calevent { get; construct; }
     public E.Source source { get; construct; }
     public bool is_upcoming { get; construct; }
 
@@ -42,6 +42,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     private Gtk.StyleContext event_image_context;
     private Gtk.StyleContext main_grid_context;
 
+
     private enum Category {
         NONE,
         APPOINTMENT,
@@ -56,7 +57,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         WEDDING
     }
 
-    public AgendaEventRow (E.Source source, E.CalComponent calevent, bool is_upcoming) {
+    public AgendaEventRow (E.Source source, ECal.Component calevent, bool is_upcoming) {
         Object (
             calevent: calevent,
             is_upcoming: is_upcoming,
@@ -166,8 +167,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     /**
      * Updates the event to match the given event.
      */
-    public void update (E.CalComponent event) {
-        unowned iCal.Component ical_event = event.get_icalcomponent ();
+    public void update (ECal.Component event) {
+        unowned ICal.Component ical_event = event.get_icalcomponent ();
         summary = ical_event.get_summary ();
         name_label.set_markup (Markup.escape_text (summary));
 

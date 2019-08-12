@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2018-07-12 10:23+0000\n"
+"PO-Revision-Date: 2019-07-04 19:27+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian <https://weblate.elementary.io/projects/calendar/"
+"Language-Team: Lithuanian <https://l10n.elementary.io/projects/calendar/"
 "extra/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > "
 "19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? "
 "1 : 2);\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -44,68 +44,70 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Present import window when opening ICS files"
-msgstr ""
+msgstr "Importuojant ICS failus, pateikti importavimo langą"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Add a search entry for calendars"
-msgstr ""
+msgstr "Pridėti kalendorių paieškos įrašą"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Always use calendar icon in notifications"
-msgstr ""
+msgstr "Visada naudoti kalendorių pranešimuose"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Agenda view can now be navigated by keyboard"
-msgstr ""
+msgstr "Dabar, po darbotvarkę galima naršyti naudojant klaviatūrą"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 msgid "Right-to-left improvements"
-msgstr ""
+msgstr "Patobulinimai iš kairės į dešinę"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid "Various UI overhauls including lime accent color"
 msgstr ""
+"Įvairūs nuodugnūs naudotojo sąsajos patobulinimai, įskaitant citrininę "
+"akcentavimo spalvą"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Overall code cleanup and rewrites"
-msgstr ""
+msgstr "Bendras kodo išvalymas ir perrašymas"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Updated translations"
-msgstr ""
+msgstr "Atnaujinti vertimai"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 msgid "Styling adjustments"
-msgstr ""
+msgstr "Stilizavimo reguliavimai"
 
 #: data/io.elementary.calendar.appdata.xml.in:31
 msgid "Fix location panel initialization"
-msgstr ""
+msgstr "Pataisyti vietos skydelio inicijavimą"
 
 #: data/io.elementary.calendar.appdata.xml.in:32
 msgid "New translations"
-msgstr ""
+msgstr "Nauji vertimai"
 
 #: data/io.elementary.calendar.appdata.xml.in:37
 msgid "Update wingpanel-indicator-datetime settings path."
-msgstr ""
+msgstr "Atnaujinti wingpanel-indicator-datetime nustatymų kelią."
 
 #: data/io.elementary.calendar.appdata.xml.in:38
 msgid "New translations."
-msgstr ""
+msgstr "Nauji vertimai."
 
 #: data/io.elementary.calendar.appdata.xml.in:43
 #: data/io.elementary.calendar.appdata.xml.in:50
 msgid "Various bug fixes and improvements."
-msgstr ""
+msgstr "Įvairūs klaidų pataisymai ir patobulinimai."
 
 #: data/io.elementary.calendar.appdata.xml.in:48
 msgid "Fixes for calendar accuracy and integrity issues."
-msgstr ""
+msgstr "Kalendoriaus tikslumo ir vientisumo pataisymai."
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fixes exporting, importing and printing calendars."
-msgstr ""
+msgstr "Pataiso kalendorių eksportavimą, importavimą ir spausdinimą."
 
 #: data/io.elementary.calendar.appdata.xml.in:97
 msgid "elementary LLC."
