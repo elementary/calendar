@@ -46,16 +46,50 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     private enum Category {
         NONE,
         APPOINTMENT,
-        BIRTHDAY,
+        CELEBRATION,
         CALL,
-        COCKTAILS,
+        DRINKS,
         DRIVING,
         FLIGHT,
         FOOD,
         LEGAL,
         MOVIE,
-        WEDDING
+        WEDDING,
+        N_CATEGORIES
     }
+
+    private Gee.HashMap<Category, string> category_icon_map;
+    private Gee.HashMultiMap<Category, string> keyword_map; /* Would TreeMultiMap be better? */
+    ///Translators: Give list of appointment related keywords, separated by semicolons.
+    ///The number of words can differ from US English and need not be a direct translation.
+    private string builtin_appointment_keywords = _("appointment;meeting");
+    ///Translators: Give list of celebration (party) related keywords, separated by semicolons.
+    ///The number of words can differ from US English and need not be a direct translation.
+    private string builtin_celebration_keywords = _("birthday;anniversary;party");
+    ///Translators: Give list of voice call related keywords, separated by semicolons.
+    ///The number of words can differ from US English and need not be a direct translation.
+    private string builtin_call_keywords = _("call;phone;telephone;ring");
+    ///Translators: Give list of social drinking related keywords, separated by semicolons.
+    ///The number of words can differ from US English and need not be a direct translation.
+    private string builtin_drinking_keywords = _("bar;cocktails;drinks;happy hour");
+    ///Translators: Give list of car driving related keywords, separated by semicolons.
+    ///The number of words can differ from US English and need not be a direct translation.
+    private string builtin_driving_keywords = _("car;drive;driving;road trip;");
+    ///Translators: Give list of air travel related keywords, separated by semicolons.
+    ///The number of words can differ from US English and need not be a direct translation.
+    private string builtin_flight_keywords = _("flight;airport;");
+    ///Translators: Give list food consumption related keywords, separated by semicolons.
+    ///The number of words can differ from US English and need not be a direct translation.
+    private string builtin_food_keywords = _("breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue");
+    ///Translators: Give list food consumption related keywords, separated by semicolons.
+    ///The number of words can differ from US English and need not be a direct translation.
+    private string builtin_legal_keywords = _("court;jury;tax;attorney;lawyer;contract");
+    ///Translators: Give list food consumption related keywords, separated by semicolons.
+    ///The number of words can differ from US English and need not be a direct translation.
+    private string builtin_movie_keywords = _("movie");
+    ///Translators: Give list of appointment related keywords, separatedby semicolons.  Number of words can differ from US English.
+    private string builtin_wedding_keywords = _("wedding");
+
 
     public AgendaEventRow (E.Source source, ECal.Component calevent, bool is_upcoming) {
         Object (
@@ -66,6 +100,32 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     }
 
     construct {
+        keyword_map = new Gee.HashMultiMap<Category, string> ();
+
+        split_keywords (builtin_appointment_keywords, Category.APPOINTMENT);
+        split_keywords (builtin_celebration_keywords, Category.CELEBRATION);
+        split_keywords (builtin_call_keywords, Category.CALL);
+        split_keywords (builtin_drinking_keywords, Category.DRINKS);
+        split_keywords (builtin_driving_keywords, Category.DRIVING);
+        split_keywords (builtin_flight_keywords, Category.FLIGHT);
+        split_keywords (builtin_food_keywords, Category.FOOD);
+        split_keywords (builtin_legal_keywords, Category.LEGAL);
+        split_keywords (builtin_movie_keywords, Category.MOVIE);
+        split_keywords (builtin_wedding_keywords, Category.WEDDING);
+
+        category_icon_map = new Gee.HashMap<Category, string> ();
+
+        category_icon_map.@set (Category.APPOINTMENT, "event-appointment-symbolic");
+        category_icon_map.@set (Category.CELEBRATION, "event-birthday-symbolic");
+        category_icon_map.@set (Category.CALL, "event-call-symbolic");
+        category_icon_map.@set (Category.DRINKS, "event-cocktails-symbolic");
+        category_icon_map.@set (Category.DRIVING, "event-driving-symbolic");
+        category_icon_map.@set (Category.FLIGHT, "event-flight-symbolic");
+        category_icon_map.@set (Category.FOOD, "event-food-symbolic");
+        category_icon_map.@set (Category.LEGAL, "event-legal-symbolic");
+        category_icon_map.@set (Category.MOVIE, "event-movie-symbolic");
+        category_icon_map.@set (Category.WEDDING, "event-wedding-symbolic");
+
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
 
@@ -172,159 +232,16 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         summary = ical_event.get_summary ();
         name_label.set_markup (Markup.escape_text (summary));
 
-        string[] appointment_keywords = {
-            _("appointment"),
-            _("meeting")
-        };
-
-        string[] birthday_keywords = {
-            _("birthday")
-        };
-
-        string[] call_keywords = {
-            _("call"),
-            _("phone")
-        };
-
-        string[] cocktails_keywords = {
-            _("bar"),
-            _("cocktails"),
-            _("drinks"),
-            _("happy hour"),
-        };
-
-        string[] driving_keywords = {
-            _("car"),
-            _("drive"),
-            _("rental"),
-            _("road trip")
-        };
-
-        string[] flight_keywords = {
-            _("flight")
-        };
-
-        string[] food_keywords = {
-            _("breakfast"), 
-            _("brunch"),
-            _("dinner"),
-            _("lunch"),
-            _("reservation"),
-            _("steakhouse"),
-            _("supper"),
-        };
-
-        string[] legal_keywords = {
-            _("court"),
-            _("jury"),
-            _("tax")
-        };
-
-        string[] movie_keywords = {
-            _("movie")
-        };
-
-        string[] wedding_keywords = {
-            _("wedding")
-        };
-
         var event_name = name_label.label.down ();
-        var appointment_hits = find_keywords (appointment_keywords, event_name);
-        var birthday_hits = find_keywords (birthday_keywords, event_name);
-        var call_hits = find_keywords (call_keywords, event_name);
-        var cocktails_hits = find_keywords (cocktails_keywords, event_name);
-        var driving_hits = find_keywords (driving_keywords, event_name);
-        var flight_hits = find_keywords (flight_keywords, event_name);
-        var food_hits = find_keywords (food_keywords, event_name);
-        var legal_hits = find_keywords (legal_keywords, event_name);
-        var movie_hits = find_keywords (movie_keywords, event_name);
-        var wedding_hits = find_keywords (wedding_keywords, event_name);
 
-        var largest_category = Category.NONE;
-        int largest_value = 0;
+        var current_category = Category.NONE;
+        var current_hits = 0;
 
-        if (birthday_hits > largest_value) {
-            largest_category = Category.BIRTHDAY;
-            largest_value = birthday_hits;
+        for (uint u = Category.APPOINTMENT; u < Category.N_CATEGORIES; u++) {
+            find_keywords ((Category)u, event_name, ref current_category, ref current_hits);
         }
 
-        if (call_hits > largest_value) {
-            largest_category = Category.CALL;
-            largest_value = call_hits;
-        }
-
-        if (cocktails_hits > largest_value) {
-            largest_category = Category.COCKTAILS;
-            largest_value = cocktails_hits;
-        }
-
-        if (driving_hits > largest_value) {
-            largest_category = Category.DRIVING;
-            largest_value = driving_hits;
-        }
-
-        if (flight_hits > largest_value) {
-            largest_category = Category.FLIGHT;
-            largest_value = flight_hits;
-        }
-
-        if (food_hits > largest_value) {
-            largest_category = Category.FOOD;
-            largest_value = food_hits;
-        }
-
-        if (legal_hits > largest_value) {
-            largest_category = Category.LEGAL;
-            largest_value = legal_hits;
-        }
-
-        if (movie_hits > largest_value) {
-            largest_category = Category.MOVIE;
-            largest_value = movie_hits;
-        }
-
-        if (wedding_hits > largest_value) {
-            largest_category = Category.WEDDING;
-        }
-
-        /* "Appointment" is really generic, so only assign it if others have not been assigned */
-        if (appointment_hits > largest_value) {
-            largest_category = Category.APPOINTMENT;
-            largest_value = appointment_hits;
-        }
-
-        switch (largest_category) {
-            case Category.APPOINTMENT:
-                event_image.icon_name = "event-appointment-symbolic";
-                break;
-            case Category.BIRTHDAY:
-                event_image.icon_name = "event-birthday-symbolic";
-                break;
-            case Category.CALL:
-                event_image.icon_name = "event-call-symbolic";
-                break;
-            case Category.COCKTAILS:
-                event_image.icon_name = "event-cocktails-symbolic";
-                break;
-            case Category.DRIVING:
-                event_image.icon_name = "event-driving-symbolic";
-                break;
-            case Category.FLIGHT:
-                event_image.icon_name = "event-flight-symbolic";
-                break;
-            case Category.FOOD:
-                event_image.icon_name = "event-food-symbolic";
-                break;
-            case Category.LEGAL:
-                event_image.icon_name = "event-legal-symbolic";
-                break;
-            case Category.MOVIE:
-                event_image.icon_name = "event-movie-symbolic";
-                break;
-            case Category.WEDDING:
-                event_image.icon_name = "event-wedding-symbolic";
-                break;
-        }
+        event_image.icon_name = category_icon_map.@get (current_category);
 
         DateTime start_date, end_date;
         Util.get_local_datetimes_from_icalcomponent (ical_event, out start_date, out end_date);
@@ -372,15 +289,18 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         location_label.label = ical_event.get_location ();
     }
 
-    private int find_keywords (string[] keywords, string phrase) {
+    private void find_keywords (Category category, string phrase, ref Category current_category, ref int current_hits) {
         int hits = 0;
-        foreach (unowned string keyword in keywords) {
-            if (keyword in phrase) {
-                hits++;
+        foreach (string keyword in keyword_map.@get (category)) {
+            if (phrase.contains (keyword)) {
+                hits += keyword.length;
             }
         }
 
-        return hits;
+        if (hits > current_hits) {
+            current_hits = hits;
+            current_category = category;
+        }
     }
 
     private void reload_css (string background_color) {
@@ -393,6 +313,15 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             main_grid_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (GLib.Error e) {
             critical (e.message);
+        }
+    }
+
+    private void split_keywords (string word_string, Category category) {
+        var words = word_string.split (";", 20);
+        foreach (string? word in words) {
+            if (word != null && word != "") {
+                keyword_map.@set (category, word);
+            }
         }
     }
 }
