@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2018-07-10 11:19+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2019-08-27 22:22+0000\n"
+"Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
+"Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
+"calendar/extra/en_GB/>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.7.1\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
 #: data/io.elementary.calendar.desktop.in:4
@@ -38,68 +40,68 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Present import window when opening ICS files"
-msgstr ""
+msgstr "Present import window when opening ICS files"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Add a search entry for calendars"
-msgstr ""
+msgstr "Add a search entry for calendars"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Always use calendar icon in notifications"
-msgstr ""
+msgstr "Always use calendar icon in notifications"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Agenda view can now be navigated by keyboard"
-msgstr ""
+msgstr "Agenda view can now be navigated by keyboard"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 msgid "Right-to-left improvements"
-msgstr ""
+msgstr "Right-to-left improvements"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid "Various UI overhauls including lime accent color"
-msgstr ""
+msgstr "Various UI overhauls including lime accent colour"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Overall code cleanup and rewrites"
-msgstr ""
+msgstr "Overall code cleanup and rewrites"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Updated translations"
-msgstr ""
+msgstr "Updated translations"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 msgid "Styling adjustments"
-msgstr ""
+msgstr "Styling adjustments"
 
 #: data/io.elementary.calendar.appdata.xml.in:31
 msgid "Fix location panel initialization"
-msgstr ""
+msgstr "Fix location panel initialisation"
 
 #: data/io.elementary.calendar.appdata.xml.in:32
 msgid "New translations"
-msgstr ""
+msgstr "New translations"
 
 #: data/io.elementary.calendar.appdata.xml.in:37
 msgid "Update wingpanel-indicator-datetime settings path."
-msgstr ""
+msgstr "Update wingpanel-indicator-datetime settings path."
 
 #: data/io.elementary.calendar.appdata.xml.in:38
 msgid "New translations."
-msgstr ""
+msgstr "New translations."
 
 #: data/io.elementary.calendar.appdata.xml.in:43
 #: data/io.elementary.calendar.appdata.xml.in:50
 msgid "Various bug fixes and improvements."
-msgstr ""
+msgstr "Various bug fixes and improvements."
 
 #: data/io.elementary.calendar.appdata.xml.in:48
 msgid "Fixes for calendar accuracy and integrity issues."
-msgstr ""
+msgstr "Fixes for calendar accuracy and integrity issues."
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fixes exporting, importing and printing calendars."
-msgstr ""
+msgstr "Fixes exporting, importing and printing calendars."
 
 #: data/io.elementary.calendar.appdata.xml.in:97
 msgid "elementary LLC."
