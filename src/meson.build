@@ -5,7 +5,6 @@ calendar_files = files(
     'ImportDialog.vala',
     'LanguagesFormat.vala',
     'MainWindow.vala',
-    'EventEdition/ContactImage.vala',
     'EventEdition/EventDialog.vala',
     'EventEdition/GuestGrid.vala',
     'EventEdition/GuestsPanel.vala',

@@ -170,7 +170,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             end_label.label = ngettext ("Repeat", "Repeats", (ulong)end_entry.value);
         });
 
-        end_datepicker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
+        var format = Granite.DateTime.get_default_date_format (false, true, true);
+        end_datepicker = new Granite.Widgets.DatePicker.with_format (format);
         end_datepicker.no_show_all = true;
 
         var ends_grid = new Gtk.Grid ();
@@ -263,16 +264,16 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         if (parent_dialog.ecal == null)
             return;
 
-        unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+        unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
         // Load the guests
-        unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.RRULE);
+        unowned ICal.Property property = comp.get_first_property (ICal.PropertyKind.RRULE_PROPERTY);
         if (property != null) {
             repeat_switch.active = true;
             var rrule = property.get_rrule ();
             switch (rrule.freq) {
-                case (iCal.RecurrenceTypeFrequency.WEEKLY):
+                case (ICal.RecurrenceFrequency.WEEKLY_RECURRENCE):
                     repeat_combobox.active = 1;
-                    for (int i = 0; i <= iCal.Size.BY_DAY; i++) {
+                    for (int i = 0; i <= ICal.Size.BY_DAY; i++) {
                         if (rrule.by_day[i] > 7)
                             break;
                         switch (rrule.by_day[i]) {
@@ -300,19 +301,19 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                         }
                     }
                     break;
-                case (iCal.RecurrenceTypeFrequency.MONTHLY):
+                case (ICal.RecurrenceFrequency.MONTHLY_RECURRENCE):
                     repeat_combobox.active = 2;
-                    for (int i = 0; i <= iCal.Size.BY_DAY; i++) {
-                        if (rrule.by_day[i] < iCal.Size.BY_DAY) {
+                    for (int i = 0; i <= ICal.Size.BY_DAY; i++) {
+                        if (rrule.by_day[i] < ICal.Size.BY_DAY) {
                             set_every_day (rrule.by_day[i]);
                             every_radiobutton.active = true;
                         }
                     }
-                    if (rrule.by_month_day[0] < iCal.Size.BY_MONTHDAY) {
+                    if (rrule.by_month_day[0] < ICal.Size.BY_MONTHDAY) {
                         same_radiobutton.active = true;
                     }
                     break;
-                case (iCal.RecurrenceTypeFrequency.YEARLY):
+                case (ICal.RecurrenceFrequency.YEARLY_RECURRENCE):
                     repeat_combobox.active = 3;
                     break;
                 default:
@@ -334,13 +335,13 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             }
         }
 
-        property = comp.get_first_property (iCal.PropertyKind.EXDATE);
+        property = comp.get_first_property (ICal.PropertyKind.EXDATE_PROPERTY);
         while (property != null) {
             var exdate = property.get_exdate ();
             var exception_grid = new ExceptionGrid (Util.ical_to_date_time (exdate));
             exception_grid.show_all ();
             exceptions_list.add (exception_grid);
-            property = comp.get_next_property (iCal.PropertyKind.EXDATE);
+            property = comp.get_next_property (ICal.PropertyKind.EXDATE_PROPERTY);
         }
     }
 
@@ -349,27 +350,27 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
      * see https://bugs.launchpad.net/maya/+bug/1405605 for reference.
      */
     private void set_every_day (short day) {
-        var day_position = iCal.RecurrenceType.day_position (day);
-        var weekday = iCal.RecurrenceType.day_day_of_week (day);
+        var day_position = ICal.Recurrence.day_position (day);
+        var weekday = ICal.Recurrence.day_day_of_week (day);
         switch (day_position) {
             case -1:
                 switch (weekday) {
-                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                    case ICal.RecurrenceWeekday.SUNDAY_WEEKDAY:
                         every_radiobutton.label = _("Every last Sunday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                    case ICal.RecurrenceWeekday.MONDAY_WEEKDAY:
                         every_radiobutton.label = _("Every last Monday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                    case ICal.RecurrenceWeekday.TUESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every last Tuesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                    case ICal.RecurrenceWeekday.WEDNESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every last Wednesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                    case ICal.RecurrenceWeekday.THURSDAY_WEEKDAY:
                         every_radiobutton.label = _("Every last Thursday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                    case ICal.RecurrenceWeekday.FRIDAY_WEEKDAY:
                         every_radiobutton.label = _("Every last Friday");
                         break;
                     default:
@@ -379,22 +380,22 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 break;
             case 1:
                 switch (weekday) {
-                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                    case ICal.RecurrenceWeekday.SUNDAY_WEEKDAY:
                         every_radiobutton.label = _("Every first Sunday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                    case ICal.RecurrenceWeekday.MONDAY_WEEKDAY:
                         every_radiobutton.label = _("Every first Monday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                    case ICal.RecurrenceWeekday.TUESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every first Tuesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                    case ICal.RecurrenceWeekday.WEDNESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every first Wednesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                    case ICal.RecurrenceWeekday.THURSDAY_WEEKDAY:
                         every_radiobutton.label = _("Every first Thursday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                    case ICal.RecurrenceWeekday.FRIDAY_WEEKDAY:
                         every_radiobutton.label = _("Every first Friday");
                         break;
                     default:
@@ -404,22 +405,22 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 break;
             case 2:
                 switch (weekday) {
-                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                    case ICal.RecurrenceWeekday.SUNDAY_WEEKDAY:
                         every_radiobutton.label = _("Every second Sunday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                    case ICal.RecurrenceWeekday.MONDAY_WEEKDAY:
                         every_radiobutton.label = _("Every second Monday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                    case ICal.RecurrenceWeekday.TUESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every second Tuesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                    case ICal.RecurrenceWeekday.WEDNESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every second Wednesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                    case ICal.RecurrenceWeekday.THURSDAY_WEEKDAY:
                         every_radiobutton.label = _("Every second Thursday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                    case ICal.RecurrenceWeekday.FRIDAY_WEEKDAY:
                         every_radiobutton.label = _("Every second Friday");
                         break;
                     default:
@@ -429,22 +430,22 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 break;
             case 3:
                 switch (weekday) {
-                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                    case ICal.RecurrenceWeekday.SUNDAY_WEEKDAY:
                         every_radiobutton.label = _("Every third Sunday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                    case ICal.RecurrenceWeekday.MONDAY_WEEKDAY:
                         every_radiobutton.label = _("Every third Monday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                    case ICal.RecurrenceWeekday.TUESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every third Tuesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                    case ICal.RecurrenceWeekday.WEDNESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every third Wednesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                    case ICal.RecurrenceWeekday.THURSDAY_WEEKDAY:
                         every_radiobutton.label = _("Every third Thursday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                    case ICal.RecurrenceWeekday.FRIDAY_WEEKDAY:
                         every_radiobutton.label = _("Every third Friday");
                         break;
                     default:
@@ -454,22 +455,22 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 break;
             case 4:
                 switch (weekday) {
-                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                    case ICal.RecurrenceWeekday.SUNDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fourth Sunday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                    case ICal.RecurrenceWeekday.MONDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fourth Monday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                    case ICal.RecurrenceWeekday.TUESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fourth Tuesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                    case ICal.RecurrenceWeekday.WEDNESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fourth Wednesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                    case ICal.RecurrenceWeekday.THURSDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fourth Thursday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                    case ICal.RecurrenceWeekday.FRIDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fourth Friday");
                         break;
                     default:
@@ -479,22 +480,22 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 break;
             default:
                 switch (weekday) {
-                    case iCal.RecurrenceTypeWeekday.SUNDAY:
+                    case ICal.RecurrenceWeekday.SUNDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fifth Sunday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.MONDAY:
+                    case ICal.RecurrenceWeekday.MONDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fifth Monday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.TUESDAY:
+                    case ICal.RecurrenceWeekday.TUESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fifth Tuesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.WEDNESDAY:
+                    case ICal.RecurrenceWeekday.WEDNESDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fifth Wednesday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.THURSDAY:
+                    case ICal.RecurrenceWeekday.THURSDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fifth Thursday");
                         break;
-                    case iCal.RecurrenceTypeWeekday.FRIDAY:
+                    case ICal.RecurrenceWeekday.FRIDAY_WEEKDAY:
                         every_radiobutton.label = _("Every fifth Friday");
                         break;
                     default:
@@ -589,11 +590,11 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
      */
     public void save () {
         // First clear all rrules
-        unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
-        int count = comp.count_properties (iCal.PropertyKind.RRULE);
+        unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+        int count = comp.count_properties (ICal.PropertyKind.RRULE_PROPERTY);
 
         for (int i = 0; i < count; i++) {
-            unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.RRULE);
+            unowned ICal.Property remove_prop = comp.get_first_property (ICal.PropertyKind.RRULE_PROPERTY);
             comp.remove_property (remove_prop);
         }
 
@@ -601,12 +602,12 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             return;
 
         // Add the rrule
-        var property = new iCal.Property (iCal.PropertyKind.RRULE);
+        var property = new ICal.Property (ICal.PropertyKind.RRULE_PROPERTY);
 
-        iCal.RecurrenceType rrule = iCal.RecurrenceType.from_string ("");
+        ICal.Recurrence rrule = ICal.Recurrence.from_string ("");
         switch (repeat_combobox.active) {
             case 1:
-                rrule.freq = iCal.RecurrenceTypeFrequency.WEEKLY;
+                rrule.freq = ICal.RecurrenceFrequency.WEEKLY_RECURRENCE;
                 int index = 0;
                 if (sun_button.active == true) {
                     rrule.by_day[index] = 1;
@@ -644,7 +645,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 }
                 break;
             case 2:
-                rrule.freq = iCal.RecurrenceTypeFrequency.MONTHLY;
+                rrule.freq = ICal.RecurrenceFrequency.MONTHLY_RECURRENCE;
                 if (every_radiobutton.active == true) {
                     int day_of_week = parent_dialog.date_time.get_day_of_week ()+1;
                     if (day_of_week > 7)
@@ -655,16 +656,16 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 }
                 break;
             case 3:
-                rrule.freq = iCal.RecurrenceTypeFrequency.YEARLY;
+                rrule.freq = ICal.RecurrenceFrequency.YEARLY_RECURRENCE;
                 break;
             default:
-                rrule.freq = iCal.RecurrenceTypeFrequency.DAILY;
+                rrule.freq = ICal.RecurrenceFrequency.DAILY_RECURRENCE;
                 break;
         }
         if (ends_combobox.active == 2) {
             rrule.count = (int)end_entry.value;
         } else if (ends_combobox.active == 1) {
-            rrule.until = iCal.TimeType.from_day_of_year (end_datepicker.date.get_day_of_year (), end_datepicker.date.get_year ());
+            rrule.until = ICal.Time.from_day_of_year (end_datepicker.date.get_day_of_year (), end_datepicker.date.get_year ());
         }
 
         rrule.interval = (short)every_entry.value;
@@ -672,9 +673,9 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         comp.add_property (property);
 
         // Save exceptions
-        count = comp.count_properties (iCal.PropertyKind.EXDATE);
+        count = comp.count_properties (ICal.PropertyKind.EXDATE_PROPERTY);
         for (int i = 0; i < count; i++) {
-            unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.EXDATE);
+            unowned ICal.Property remove_prop = comp.get_first_property (ICal.PropertyKind.EXDATE_PROPERTY);
             comp.remove_property (remove_prop);
         }
 
@@ -683,7 +684,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 continue;
             var exgrid = (ExceptionGrid)child;
             var date = exgrid.get_date ();
-            var exdate = new iCal.Property (iCal.PropertyKind.EXDATE);
+            var exdate = new ICal.Property (ICal.PropertyKind.EXDATE_PROPERTY);
             exdate.set_exdate (Util.date_time_to_ical (date, null));
             comp.add_property (exdate);
         }

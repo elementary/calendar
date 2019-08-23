@@ -121,11 +121,11 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         calview.today ();
     }
 
-    private void on_remove (E.CalComponent comp) {
-        Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, E.CalObjModType.THIS);
+    private void on_remove (ECal.Component comp) {
+        Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
     }
 
-    public void on_modified (E.CalComponent comp) {
+    public void on_modified (ECal.Component comp) {
         E.Source src = comp.get_data ("source");
 
         if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {

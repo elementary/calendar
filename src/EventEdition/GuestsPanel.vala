@@ -23,7 +23,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     private Gtk.Entry guest_entry;
     private Gtk.EntryCompletion guest_completion;
     private Gtk.ListBox guest_list;
-    private Gee.ArrayList<unowned iCal.Property> attendees;
+    private Gee.ArrayList<unowned ICal.Property> attendees;
     private Gtk.ListStore guest_store;
 
     public string guests {
@@ -40,7 +40,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
     public GuestsPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
-        attendees = new Gee.ArrayList<unowned iCal.Property> ();
+        attendees = new Gee.ArrayList<unowned ICal.Property> ();
 
         margin_start = 12;
         margin_end = 12;
@@ -95,7 +95,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_entry.hexpand = true;
         guest_entry.set_completion (guest_completion);
         guest_entry.activate.connect (() => {
-            var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
+            var attendee = new ICal.Property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             attendee.set_attendee (guest_entry.text);
             add_guest ((owned)attendee);
             guest_entry.delete_text (0, -1);
@@ -106,16 +106,16 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         add (frame);
 
         if (parent_dialog.ecal != null) {
-            unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+            unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
             // Load the guests
-            int count = comp.count_properties (iCal.PropertyKind.ATTENDEE);
+            int count = comp.count_properties (ICal.PropertyKind.ATTENDEE_PROPERTY);
 
-            unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.ATTENDEE);
+            unowned ICal.Property property = comp.get_first_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             for (int i = 0; i < count; i++) {
                 if (property.get_attendee () != null)
                     add_guest (property);
 
-                property = comp.get_next_property (iCal.PropertyKind.ATTENDEE);
+                property = comp.get_next_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             }
         }
 
@@ -140,22 +140,22 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
      * Save the values in the dialog into the component.
      */
     public void save () {
-        unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+        unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
         // Save the guests
         // First, clear the guests
-        int count = comp.count_properties (iCal.PropertyKind.ATTENDEE);
+        int count = comp.count_properties (ICal.PropertyKind.ATTENDEE_PROPERTY);
 
         for (int i = 0; i < count; i++) {
-            unowned iCal.Property remove_prop;
+            unowned ICal.Property remove_prop;
             if (i == 0) {
-                remove_prop = comp.get_first_property (iCal.PropertyKind.ATTENDEE);
+                remove_prop = comp.get_first_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             } else {
-                remove_prop = comp.get_next_property (iCal.PropertyKind.ATTENDEE);
+                remove_prop = comp.get_next_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             }
 
-            unowned iCal.Property found_prop = remove_prop;
+            unowned ICal.Property found_prop = remove_prop;
             bool can_remove = true;
-            foreach (unowned iCal.Property attendee in attendees) {
+            foreach (unowned ICal.Property attendee in attendees) {
                 if (attendee.get_uid () == remove_prop.get_uid ()) {
                     can_remove = false;
                     found_prop = attendee;
@@ -170,13 +170,13 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         }
 
         // Add the new guests
-        foreach (unowned iCal.Property attendee in attendees) {
-            var clone = new iCal.Property.clone (attendee);
+        foreach (unowned ICal.Property attendee in attendees) {
+            var clone = new ICal.Property.clone (attendee);
             comp.add_property (clone);
         }
     }
 
-    private void add_guest (iCal.Property attendee) {
+    private void add_guest (ICal.Property attendee) {
         var row = new Gtk.ListBoxRow ();
         var guest_element = new GuestGrid (attendee);
         row.add (guest_element);
@@ -191,7 +191,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
     }
 
     private bool suggestion_selected (Gtk.TreeModel model, Gtk.TreeIter iter) {
-        var attendee = new iCal.Property (iCal.PropertyKind.ATTENDEE);
+        var attendee = new ICal.Property (ICal.PropertyKind.ATTENDEE_PROPERTY);
         Value selected_value;
 
         model.get_value (iter, 1, out selected_value);;

@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-26 20:27+0100\n"
-"PO-Revision-Date: 2018-10-21 11:46+0000\n"
-"Last-Translator: Jesse ALTER <jesse@jessealter.com>\n"
-"Language-Team: Esperanto <https://weblate.elementary.io/projects/calendar/"
-"extra/eo/>\n"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"PO-Revision-Date: 2019-07-10 19:46+0000\n"
+"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
+"Language-Team: Esperanto <https://l10n.elementary.io/projects/calendar/extra/"
+"eo/>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
 #: data/io.elementary.calendar.desktop.in:4
@@ -28,25 +28,93 @@ msgstr "Kalendaro"
 #: data/io.elementary.calendar.appdata.xml.in:9
 #: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Vidi kaj organizi eventojn"
 
 #: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
+"Jen malpeza, rapida kalendara aplikaĵo, kiu sinkronigas kaj mastrumas "
+"plurajn kalendarojn, en ununura loko, ekzemple el Google Calendar, Outlook "
+"kaj CalDAV."
 
-#: data/io.elementary.calendar.appdata.xml.in:78
+#: data/io.elementary.calendar.appdata.xml.in:18
+msgid "Present import window when opening ICS files"
+msgstr "Montri la importan fenestron ĉe malfermo de kalendara ICS-dosiero"
+
+#: data/io.elementary.calendar.appdata.xml.in:19
+msgid "Add a search entry for calendars"
+msgstr "Aldoni serĉan enigon por kalendaroj"
+
+#: data/io.elementary.calendar.appdata.xml.in:20
+msgid "Always use calendar icon in notifications"
+msgstr "Ĉiam aldoni kalendaran bildeton en la avertoj"
+
+#: data/io.elementary.calendar.appdata.xml.in:21
+msgid "Agenda view can now be navigated by keyboard"
+msgstr "Agolista vido nun navigebla de la klavaro"
+
+#: data/io.elementary.calendar.appdata.xml.in:22
+msgid "Right-to-left improvements"
+msgstr "Dedekstraj plibonigoj"
+
+#: data/io.elementary.calendar.appdata.xml.in:23
+msgid "Various UI overhauls including lime accent color"
+msgstr "Diversaj fasadaj revizioj, inkluzive de limekolora emfazigo"
+
+#: data/io.elementary.calendar.appdata.xml.in:24
+msgid "Overall code cleanup and rewrites"
+msgstr "Ĝeneralaj kodaj purigadoj kaj reskriboj"
+
+#: data/io.elementary.calendar.appdata.xml.in:25
+msgid "Updated translations"
+msgstr "Ĝisdatigitaj tradukoj"
+
+#: data/io.elementary.calendar.appdata.xml.in:30
+msgid "Styling adjustments"
+msgstr "Stilaj alĝustigoj"
+
+#: data/io.elementary.calendar.appdata.xml.in:31
+msgid "Fix location panel initialization"
+msgstr "Ripari la starton de la lokiga panelo"
+
+#: data/io.elementary.calendar.appdata.xml.in:32
+msgid "New translations"
+msgstr "Novaj tradukoj"
+
+#: data/io.elementary.calendar.appdata.xml.in:37
+msgid "Update wingpanel-indicator-datetime settings path."
+msgstr "Ĝisdatigi la dosierindikon de la agordoj wingpanel-indicator-datetime."
+
+#: data/io.elementary.calendar.appdata.xml.in:38
+msgid "New translations."
+msgstr "Novaj tradukoj."
+
+#: data/io.elementary.calendar.appdata.xml.in:43
+#: data/io.elementary.calendar.appdata.xml.in:50
+msgid "Various bug fixes and improvements."
+msgstr "Diversaj sencimigoj kaj plibonigoj."
+
+#: data/io.elementary.calendar.appdata.xml.in:48
+msgid "Fixes for calendar accuracy and integrity issues."
+msgstr "Riparoj de kalendaraj problemoj pri akurateco kaj integreco."
+
+#: data/io.elementary.calendar.appdata.xml.in:49
+msgid "Fixes exporting, importing and printing calendars."
+msgstr "Riparoj de eksporto, importo kaj presado de kalendaroj."
+
+#: data/io.elementary.calendar.appdata.xml.in:97
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "office-calendar"
-msgstr ""
+msgstr "office-calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
+msgstr "Maya;Organizilo;Datoj;Tagoj;Eventoj;Kalendaro;ics;caldav;evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-26 20:27+0100\n"
-"PO-Revision-Date: 2019-04-07 05:35+0000\n"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"PO-Revision-Date: 2019-07-17 01:30+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/calendar/extra/ko/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -39,13 +39,78 @@ msgstr ""
 "구글 캘린더, 아웃룩, CalDAV 등과 같은 여러 가지 일정 관리 도구들을 한 곳에서 "
 "동기화하고 관리할 수 있는 작고 가벼운 일정관리 앱."
 
-#: data/io.elementary.calendar.appdata.xml.in:78
+#: data/io.elementary.calendar.appdata.xml.in:18
+msgid "Present import window when opening ICS files"
+msgstr "ICS 파일을 열 때 현재 가져오기 창 표시"
+
+#: data/io.elementary.calendar.appdata.xml.in:19
+msgid "Add a search entry for calendars"
+msgstr "달력 검색 항목 추가"
+
+#: data/io.elementary.calendar.appdata.xml.in:20
+msgid "Always use calendar icon in notifications"
+msgstr "알림에 항상 달력 아이콘 사용"
+
+#: data/io.elementary.calendar.appdata.xml.in:21
+msgid "Agenda view can now be navigated by keyboard"
+msgstr "이제 키보드로 일정 보기를 탐색할 수 있습니다"
+
+#: data/io.elementary.calendar.appdata.xml.in:22
+msgid "Right-to-left improvements"
+msgstr "오른쪽에서 왼쪽으로 읽고/쓰기 개선"
+
+#: data/io.elementary.calendar.appdata.xml.in:23
+msgid "Various UI overhauls including lime accent color"
+msgstr "라임 강조 색을 포함한 전체 UI 개선"
+
+#: data/io.elementary.calendar.appdata.xml.in:24
+msgid "Overall code cleanup and rewrites"
+msgstr "전체 코드 정리 및 다시 쓰기"
+
+#: data/io.elementary.calendar.appdata.xml.in:25
+msgid "Updated translations"
+msgstr "번역 업데이트"
+
+#: data/io.elementary.calendar.appdata.xml.in:30
+msgid "Styling adjustments"
+msgstr "스타일 조정"
+
+#: data/io.elementary.calendar.appdata.xml.in:31
+msgid "Fix location panel initialization"
+msgstr "지역 패널 초기화 문제 해결"
+
+#: data/io.elementary.calendar.appdata.xml.in:32
+msgid "New translations"
+msgstr "새 번역"
+
+#: data/io.elementary.calendar.appdata.xml.in:37
+msgid "Update wingpanel-indicator-datetime settings path."
+msgstr "wingpanel-indicator-datetime 설정 경로를 업데이트."
+
+#: data/io.elementary.calendar.appdata.xml.in:38
+msgid "New translations."
+msgstr "새 번역."
+
+#: data/io.elementary.calendar.appdata.xml.in:43
+#: data/io.elementary.calendar.appdata.xml.in:50
+msgid "Various bug fixes and improvements."
+msgstr "여러 버그 수정 및 개선."
+
+#: data/io.elementary.calendar.appdata.xml.in:48
+msgid "Fixes for calendar accuracy and integrity issues."
+msgstr "달력의 정확성 및 무결성 문제 수정."
+
+#: data/io.elementary.calendar.appdata.xml.in:49
+msgid "Fixes exporting, importing and printing calendars."
+msgstr "달력 내보내기, 가져오기 및 인쇄 수정."
+
+#: data/io.elementary.calendar.appdata.xml.in:97
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "office-calendar"
-msgstr "사무용 달력"
+msgstr "office-calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"

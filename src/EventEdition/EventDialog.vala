@@ -28,7 +28,7 @@ public enum EventType {
 public class EventDialog : Gtk.Dialog {
         public E.Source? source { get; set; }
         public E.Source? original_source { get; private set; }
-        public E.CalComponent ecal { get; set; }
+        public ECal.Component ecal { get; set; }
         public DateTime date_time { get; set; }
 
         /**
@@ -36,7 +36,7 @@ public class EventDialog : Gtk.Dialog {
          */
         public bool can_edit = true;
 
-        private E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
+        private ECal.ObjModType mod_type { get; private set; default = ECal.ObjModType.ALL; }
         private EventType event_type { get; private set; }
 
         private EventEdition.GuestsPanel guests_panel;
@@ -45,7 +45,7 @@ public class EventDialog : Gtk.Dialog {
         private EventEdition.ReminderPanel reminder_panel;
         private EventEdition.RepeatPanel repeat_panel;
 
-        public EventDialog (E.CalComponent? ecal = null, DateTime? date_time = null) {
+        public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null) {
             this.deletable = false;
 
             if (ecal != null)

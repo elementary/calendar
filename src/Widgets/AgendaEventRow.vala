@@ -24,9 +24,9 @@ const string EVENT_CSS = """
 """;
 
 public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
-    public signal void removed (E.CalComponent event);
+    public signal void removed (ECal.Component event);
 
-    public E.CalComponent calevent { get; construct; }
+    public ECal.Component calevent { get; construct; }
     public E.Source source { get; construct; }
     public bool is_upcoming { get; construct; }
 
@@ -41,7 +41,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     private Gtk.StyleContext event_image_context;
     private Gtk.StyleContext main_grid_context;
 
-    public AgendaEventRow (E.Source source, E.CalComponent calevent, bool is_upcoming) {
+    public AgendaEventRow (E.Source source, ECal.Component calevent, bool is_upcoming) {
         Object (
             calevent: calevent,
             is_upcoming: is_upcoming,
@@ -150,8 +150,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     /**
      * Updates the event to match the given event.
      */
-    public void update (E.CalComponent event) {
-        unowned iCal.Component ical_event = event.get_icalcomponent ();
+    public void update (ECal.Component event) {
+        unowned ICal.Component ical_event = event.get_icalcomponent ();
         summary = ical_event.get_summary ();
         name_label.set_markup (Markup.escape_text (summary));
 
@@ -161,11 +161,12 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         is_allday = Util.is_all_day (start_date, end_date);
         is_multiday = Util.is_multiday_event (ical_event);
 
-        string start_date_string = start_date.format (Settings.DateFormat_Complete ());
-        string end_date_string = end_date.format (Settings.DateFormat_Complete ());
+        var date_format = Granite.DateTime.get_default_date_format (true, true, false);
+        string start_date_string = start_date.format (date_format);
+        string end_date_string = end_date.format (date_format);
         string start_time_string = start_date.format (Settings.TimeFormat ());
         string end_time_string = end_date.format (Settings.TimeFormat ());
-        string datetime_string = null;
+        string? datetime_string = null;
 
         datatime_label.show ();
         datatime_label.no_show_all = false;

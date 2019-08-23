@@ -179,35 +179,35 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
      * Save the values in the dialog into the component.
      */
     public void save () {
-        unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+        unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
 
         // Save the title
         comp.set_summary (title_entry.text);
 
         // Save the time
         if (allday_switch.get_active () == true) {
-            iCal.TimeType dt_start = Util.date_time_to_ical (from_date_picker.date, null);
-            iCal.TimeType dt_end = Util.date_time_to_ical (to_date_picker.date.add_days (1), null);
+            ICal.Time dt_start = Util.date_time_to_ical (from_date_picker.date, null);
+            ICal.Time dt_end = Util.date_time_to_ical (to_date_picker.date.add_days (1), null);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
         } else {
-            iCal.TimeType dt_start = Util.date_time_to_ical (from_date_picker.date, from_time_picker.time);
-            iCal.TimeType dt_end = Util.date_time_to_ical (to_date_picker.date, to_time_picker.time);
+            ICal.Time dt_start = Util.date_time_to_ical (from_date_picker.date, from_time_picker.time);
+            ICal.Time dt_end = Util.date_time_to_ical (to_date_picker.date, to_time_picker.time);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
         }
 
         // First, clear the comments
-        int count = comp.count_properties (iCal.PropertyKind.DESCRIPTION);
+        int count = comp.count_properties (ICal.PropertyKind.DESCRIPTION_PROPERTY);
         for (int i = 0; i < count; i++) {
-            unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.COMMENT);
+            unowned ICal.Property remove_prop = comp.get_first_property (ICal.PropertyKind.COMMENT_PROPERTY);
             comp.remove_property (remove_prop);
         }
 
         // Add the comment
-        var property = new iCal.Property (iCal.PropertyKind.DESCRIPTION);
+        var property = new ICal.Property (ICal.PropertyKind.DESCRIPTION_PROPERTY);
         property.set_comment (comment_textview.get_buffer ().text);
         comp.add_property (property);
 
@@ -222,7 +222,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
      */
     void load () {
         if (parent_dialog.ecal != null) {
-            unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+            unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
 
             // Load the title
             string summary = comp.get_summary ();
@@ -250,7 +250,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
                 to_time_picker.sensitive = false;
             }
 
-            unowned iCal.Property property = comp.get_first_property (iCal.PropertyKind.DESCRIPTION);
+            unowned ICal.Property property = comp.get_first_property (ICal.PropertyKind.DESCRIPTION_PROPERTY);
             if (property != null) {
                 Gtk.TextBuffer buffer = new Gtk.TextBuffer (null);
                 buffer.text = property.get_comment ();
@@ -260,8 +260,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             // Load the source
             calendar_button.current_source = parent_dialog.original_source;
         } else {
-            parent_dialog.ecal = new E.CalComponent ();
-            parent_dialog.ecal.set_new_vtype (E.CalComponentVType.EVENT);
+            parent_dialog.ecal = new ECal.Component ();
+            parent_dialog.ecal.set_new_vtype (ECal.ComponentVType.EVENT);
 
             from_date_picker.date = parent_dialog.date_time;
             from_time_picker.time = new DateTime.now_local ();
@@ -274,7 +274,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     }
 
     Granite.Widgets.DatePicker make_date_picker () {
-        var date_picker = new Granite.Widgets.DatePicker.with_format (Maya.Settings.DateFormat ());
+        var format = Granite.DateTime.get_default_date_format (false, true, true);
+        var date_picker = new Granite.Widgets.DatePicker.with_format (format);
         date_picker.width_request = 200;
         return date_picker;
     }
