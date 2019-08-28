@@ -241,7 +241,10 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             find_keywords ((Category)u, event_name, ref current_category, ref current_hits);
         }
 
-        event_image.icon_name = category_icon_map.@get (current_category);
+        var icon_name_from_keywords = category_icon_map.@get (current_category);
+        if (icon_name_from_keywords != null) {
+            event_image.icon_name = icon_name_from_keywords;
+        }
 
         DateTime start_date, end_date;
         Util.get_local_datetimes_from_icalcomponent (ical_event, out start_date, out end_date);
