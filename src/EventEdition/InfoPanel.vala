@@ -270,8 +270,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             /* Set convenient start time but do not change day */
             if (now_before_2300) {  /* Default start time to next whole hour*/
                 time = time.add_minutes (60 - minutes);
-            } else if (minutes < 50) {  /* Default start time to next 10 minutes*/
-                time = time.add_minutes ((minutes / 10) * 10 + 10 - minutes);
+            } else {  /* Default start time 23.00  (11 PM)*/
+                time = time.add_minutes (-minutes);
             } /* else use current time */
 
             from_time_picker.time = time;
@@ -281,8 +281,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             if (now_before_2300) {
                 to_time_picker.time = time.add_hours (1);
                 to_date_picker.date = parent_dialog.date_time;
-            } else {
-                time = time.add_hours ( - time.get_hour ());
+            } else { /* Default end time is 00.00 (12.00 AM) next morning*/
+                time = time.add_hours (1);
                 to_time_picker.time = time;
                 to_date_picker.date = parent_dialog.date_time.add_days (1);
             }
