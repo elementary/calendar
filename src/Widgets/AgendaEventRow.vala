@@ -112,9 +112,46 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                     return "";
             }
         }
+
+        public unowned string? get_icon_name () {
+            switch (this) {
+                case APPOINTMENT:
+                    return "event-appointment-symbolic";
+
+                case CELEBRATION:
+                    return "event-birthday-symbolic";
+
+                case CALL:
+                    return "event-call-symbolic";
+
+                case DRINKS:
+                    return "event-cocktails-symbolic";
+
+                case DRIVING:
+                    return "event-driving-symbolic";
+
+                case FLIGHT:
+                    return "event-flight-symbolic";
+
+                case FOOD:
+                    return "event-food-symbolic";
+
+                case LEGAL:
+                    return "event-legal-symbolic";
+
+                case MOVIE:
+                    return "event-movie-symbolic";
+
+                case WEDDING:
+                    return "event-wedding-symbolic";
+
+                default:
+                    return null;
+            }
+        }
     }
 
-    private Gee.HashMap<Category, string> category_icon_map;
+//    private Gee.HashMap<Category, string> category_icon_map;
     private Gee.HashMultiMap<Category, string> keyword_map; /* Would TreeMultiMap be better? */
 
 
@@ -131,19 +168,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         for (uint cat = Category.APPOINTMENT; cat < Category.N_CATEGORIES; cat++) {
             split_keywords ((Category)cat);
         }
-
-        category_icon_map = new Gee.HashMap<Category, string> ();
-
-        category_icon_map.@set (Category.APPOINTMENT, "event-appointment-symbolic");
-        category_icon_map.@set (Category.CELEBRATION, "event-birthday-symbolic");
-        category_icon_map.@set (Category.CALL, "event-call-symbolic");
-        category_icon_map.@set (Category.DRINKS, "event-cocktails-symbolic");
-        category_icon_map.@set (Category.DRIVING, "event-driving-symbolic");
-        category_icon_map.@set (Category.FLIGHT, "event-flight-symbolic");
-        category_icon_map.@set (Category.FOOD, "event-food-symbolic");
-        category_icon_map.@set (Category.LEGAL, "event-legal-symbolic");
-        category_icon_map.@set (Category.MOVIE, "event-movie-symbolic");
-        category_icon_map.@set (Category.WEDDING, "event-wedding-symbolic");
 
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
@@ -260,7 +284,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             find_keywords ((Category)u, event_name, ref current_category, ref current_hits);
         }
 
-        var icon_name_from_keywords = category_icon_map.@get (current_category);
+        var icon_name_from_keywords = current_category.get_icon_name ();
         if (icon_name_from_keywords != null) {
             event_image.icon_name = icon_name_from_keywords;
         }
