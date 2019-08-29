@@ -42,7 +42,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     private Gtk.StyleContext event_image_context;
     private Gtk.StyleContext main_grid_context;
 
-
     private enum Category {
         NONE,
         APPOINTMENT,
@@ -89,7 +88,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     private string builtin_movie_keywords = _("movie");
     ///Translators: Give list of appointment related keywords, separatedby semicolons.  Number of words can differ from US English.
     private string builtin_wedding_keywords = _("wedding");
-
 
     public AgendaEventRow (E.Source source, ECal.Component calevent, bool is_upcoming) {
         Object (
