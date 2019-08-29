@@ -59,34 +59,35 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
     private Gee.HashMap<Category, string> category_icon_map;
     private Gee.HashMultiMap<Category, string> keyword_map; /* Would TreeMultiMap be better? */
-    ///Translators: Give list of appointment related keywords, separated by semicolons.
+    ///Translators: Give a list of appointment related keywords, separated by semicolons.
     ///The number of words can differ from US English and need not be a direct translation.
     private string builtin_appointment_keywords = _("appointment;meeting");
-    ///Translators: Give list of celebration (party) related keywords, separated by semicolons.
+    ///Translators: Give a list of celebration (party) related keywords, separated by semicolons.
     ///The number of words can differ from US English and need not be a direct translation.
     private string builtin_celebration_keywords = _("birthday;anniversary;party");
-    ///Translators: Give list of voice call related keywords, separated by semicolons.
+    ///Translators: Give a list of voice call related keywords, separated by semicolons.
     ///The number of words can differ from US English and need not be a direct translation.
     private string builtin_call_keywords = _("call;phone;telephone;ring");
-    ///Translators: Give list of social drinking related keywords, separated by semicolons.
+    ///Translators: Give a list of social drinking related keywords, separated by semicolons.
     ///The number of words can differ from US English and need not be a direct translation.
     private string builtin_drinking_keywords = _("bar;cocktails;drinks;happy hour");
-    ///Translators: Give list of car driving related keywords, separated by semicolons.
+    ///Translators: Give a list of car driving related keywords, separated by semicolons.
     ///The number of words can differ from US English and need not be a direct translation.
     private string builtin_driving_keywords = _("car;drive;driving;road trip;");
-    ///Translators: Give list of air travel related keywords, separated by semicolons.
+    ///Translators: Give a list of air travel related keywords, separated by semicolons.
     ///The number of words can differ from US English and need not be a direct translation.
     private string builtin_flight_keywords = _("flight;airport;");
-    ///Translators: Give list food consumption related keywords, separated by semicolons.
+    ///Translators: Give a list of food consumption related keywords, separated by semicolons.
     ///The number of words can differ from US English and need not be a direct translation.
     private string builtin_food_keywords = _("breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue");
-    ///Translators: Give list food consumption related keywords, separated by semicolons.
+    ///Translators: Give a list of law related keywords, separated by semicolons.
     ///The number of words can differ from US English and need not be a direct translation.
     private string builtin_legal_keywords = _("court;jury;tax;attorney;lawyer;contract");
-    ///Translators: Give list food consumption related keywords, separated by semicolons.
+    ///Translators: Give a list of movie (film) related keywords, separated by semicolons.
     ///The number of words can differ from US English and need not be a direct translation.
     private string builtin_movie_keywords = _("movie");
-    ///Translators: Give list of appointment related keywords, separatedby semicolons.  Number of words can differ from US English.
+    ///Translators: Give a list of wedding related keywords, separated by semicolons.
+    ///The number of words can differ from US English and need not be a direct translation.
     private string builtin_wedding_keywords = _("wedding");
 
     public AgendaEventRow (E.Source source, ECal.Component calevent, bool is_upcoming) {
