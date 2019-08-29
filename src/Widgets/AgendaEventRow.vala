@@ -54,41 +54,69 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         LEGAL,
         MOVIE,
         WEDDING,
-        N_CATEGORIES
+        N_CATEGORIES;
+
+        public unowned string get_builtin_keywords () {
+            switch (this) {
+                case APPOINTMENT:
+                    ///Translators: Give a list of appointment related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("appointment;meeting");
+
+                case CELEBRATION:
+                    ///Translators: Give a list of celebration (party) related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("birthday;anniversary;party");
+
+                case CALL:
+                    ///Translators: Give a list of voice call related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("call;phone;telephone;ring");
+
+                case DRINKS:
+                    ///Translators: Give a list of social drinking related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("bar;cocktails;drinks;happy hour");
+
+                case DRIVING:
+                    ///Translators: Give a list of car driving related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("car;drive;driving;road trip;");
+
+                case FLIGHT:
+                    ///Translators: Give a list of air travel related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("flight;airport;");
+
+                case FOOD:
+                    ///Translators: Give a list of food consumption related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue");
+
+                case LEGAL:
+                    ///Translators: Give a list of law related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                   return _("court;jury;tax;attorney;lawyer;contract");
+
+                case MOVIE:
+                    ///Translators: Give a list of movie (film) related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("movie");
+
+                case WEDDING:
+                    ///Translators: Give a list of wedding related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("wedding");
+
+                default:
+                    return "";
+            }
+        }
     }
 
     private Gee.HashMap<Category, string> category_icon_map;
     private Gee.HashMultiMap<Category, string> keyword_map; /* Would TreeMultiMap be better? */
-    ///Translators: Give a list of appointment related keywords, separated by semicolons.
-    ///The number of words can differ from US English and need not be a direct translation.
-    private string builtin_appointment_keywords = _("appointment;meeting");
-    ///Translators: Give a list of celebration (party) related keywords, separated by semicolons.
-    ///The number of words can differ from US English and need not be a direct translation.
-    private string builtin_celebration_keywords = _("birthday;anniversary;party");
-    ///Translators: Give a list of voice call related keywords, separated by semicolons.
-    ///The number of words can differ from US English and need not be a direct translation.
-    private string builtin_call_keywords = _("call;phone;telephone;ring");
-    ///Translators: Give a list of social drinking related keywords, separated by semicolons.
-    ///The number of words can differ from US English and need not be a direct translation.
-    private string builtin_drinking_keywords = _("bar;cocktails;drinks;happy hour");
-    ///Translators: Give a list of car driving related keywords, separated by semicolons.
-    ///The number of words can differ from US English and need not be a direct translation.
-    private string builtin_driving_keywords = _("car;drive;driving;road trip;");
-    ///Translators: Give a list of air travel related keywords, separated by semicolons.
-    ///The number of words can differ from US English and need not be a direct translation.
-    private string builtin_flight_keywords = _("flight;airport;");
-    ///Translators: Give a list of food consumption related keywords, separated by semicolons.
-    ///The number of words can differ from US English and need not be a direct translation.
-    private string builtin_food_keywords = _("breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue");
-    ///Translators: Give a list of law related keywords, separated by semicolons.
-    ///The number of words can differ from US English and need not be a direct translation.
-    private string builtin_legal_keywords = _("court;jury;tax;attorney;lawyer;contract");
-    ///Translators: Give a list of movie (film) related keywords, separated by semicolons.
-    ///The number of words can differ from US English and need not be a direct translation.
-    private string builtin_movie_keywords = _("movie");
-    ///Translators: Give a list of wedding related keywords, separated by semicolons.
-    ///The number of words can differ from US English and need not be a direct translation.
-    private string builtin_wedding_keywords = _("wedding");
+
 
     public AgendaEventRow (E.Source source, ECal.Component calevent, bool is_upcoming) {
         Object (
@@ -100,17 +128,9 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
     construct {
         keyword_map = new Gee.HashMultiMap<Category, string> ();
-
-        split_keywords (builtin_appointment_keywords, Category.APPOINTMENT);
-        split_keywords (builtin_celebration_keywords, Category.CELEBRATION);
-        split_keywords (builtin_call_keywords, Category.CALL);
-        split_keywords (builtin_drinking_keywords, Category.DRINKS);
-        split_keywords (builtin_driving_keywords, Category.DRIVING);
-        split_keywords (builtin_flight_keywords, Category.FLIGHT);
-        split_keywords (builtin_food_keywords, Category.FOOD);
-        split_keywords (builtin_legal_keywords, Category.LEGAL);
-        split_keywords (builtin_movie_keywords, Category.MOVIE);
-        split_keywords (builtin_wedding_keywords, Category.WEDDING);
+        for (uint cat = Category.APPOINTMENT; cat < Category.N_CATEGORIES; cat++) {
+            split_keywords ((Category)cat);
+        }
 
         category_icon_map = new Gee.HashMap<Category, string> ();
 
@@ -318,8 +338,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         }
     }
 
-    private void split_keywords (string word_string, Category category) {
-        var words = word_string.split (";", 20);
+    private void split_keywords (Category category) {
+        var words = category.get_builtin_keywords ().split (";", 20);
         foreach (string? word in words) {
             if (word != null && word != "") {
                 keyword_map.@set (category, word);
