@@ -151,8 +151,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         }
     }
 
-//    private Gee.HashMap<Category, string> category_icon_map;
-    private Gee.HashMultiMap<Category, string> keyword_map; /* Would TreeMultiMap be better? */
+    private Gee.HashMultiMap<Category, string> keyword_map;
 
 
     public AgendaEventRow (E.Source source, ECal.Component calevent, bool is_upcoming) {
@@ -363,8 +362,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     }
 
     private void split_keywords (Category category) {
-        var words = category.get_builtin_keywords ().split (";", 20);
-        foreach (string? word in words) {
+        var words = category.get_builtin_keywords ().split (";");
+        foreach (unowned string? word in words) {
             if (word != null && word != "") {
                 keyword_map.@set (category, word);
             }
