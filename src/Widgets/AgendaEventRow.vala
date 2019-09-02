@@ -35,11 +35,124 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     public bool is_multiday { public get; private set; default = false; }
     public Gtk.Revealer revealer { public get; private set; }
 
+    private Gtk.Image event_image;
     private Gtk.Label name_label;
     private Gtk.Label datatime_label;
     private Gtk.Label location_label;
     private Gtk.StyleContext event_image_context;
     private Gtk.StyleContext main_grid_context;
+
+    private enum Category {
+        NONE,
+        APPOINTMENT,
+        CELEBRATION,
+        CALL,
+        DRINKS,
+        DRIVING,
+        FLIGHT,
+        FOOD,
+        LEGAL,
+        MOVIE,
+        WEDDING,
+        N_CATEGORIES;
+
+        public unowned string get_builtin_keywords () {
+            switch (this) {
+                case APPOINTMENT:
+                    ///Translators: Give a list of appointment related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("appointment;meeting");
+
+                case CELEBRATION:
+                    ///Translators: Give a list of celebration (party) related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("birthday;anniversary;party");
+
+                case CALL:
+                    ///Translators: Give a list of voice call related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("call;phone;telephone;ring");
+
+                case DRINKS:
+                    ///Translators: Give a list of social drinking related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("bar;cocktails;drinks;happy hour");
+
+                case DRIVING:
+                    ///Translators: Give a list of car driving related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("car;drive;driving;road trip;");
+
+                case FLIGHT:
+                    ///Translators: Give a list of air travel related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("flight;airport;");
+
+                case FOOD:
+                    ///Translators: Give a list of food consumption related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue");
+
+                case LEGAL:
+                    ///Translators: Give a list of law related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                   return _("court;jury;tax;attorney;lawyer;contract");
+
+                case MOVIE:
+                    ///Translators: Give a list of movie (film) related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("movie");
+
+                case WEDDING:
+                    ///Translators: Give a list of wedding related keywords, separated by semicolons.
+                    ///The number of words can differ from US English and need not be a direct translation.
+                    return _("wedding");
+
+                default:
+                    return "";
+            }
+        }
+
+        public unowned string? get_icon_name () {
+            switch (this) {
+                case APPOINTMENT:
+                    return "event-appointment-symbolic";
+
+                case CELEBRATION:
+                    return "event-birthday-symbolic";
+
+                case CALL:
+                    return "event-call-symbolic";
+
+                case DRINKS:
+                    return "event-cocktails-symbolic";
+
+                case DRIVING:
+                    return "event-driving-symbolic";
+
+                case FLIGHT:
+                    return "event-flight-symbolic";
+
+                case FOOD:
+                    return "event-food-symbolic";
+
+                case LEGAL:
+                    return "event-legal-symbolic";
+
+                case MOVIE:
+                    return "event-movie-symbolic";
+
+                case WEDDING:
+                    return "event-wedding-symbolic";
+
+                default:
+                    return null;
+            }
+        }
+    }
+
+    private Gee.HashMultiMap<Category, string> keyword_map;
+
 
     public AgendaEventRow (E.Source source, ECal.Component calevent, bool is_upcoming) {
         Object (
@@ -50,10 +163,16 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     }
 
     construct {
+        keyword_map = new Gee.HashMultiMap<Category, string> ();
+        for (uint cat = Category.APPOINTMENT; cat < Category.N_CATEGORIES; cat++) {
+            split_keywords ((Category)cat);
+        }
+
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
 
-        var event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
+        event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
+        event_image.pixel_size = 16;
         event_image.valign = Gtk.Align.START;
 
         event_image_context = event_image.get_style_context ();
@@ -155,6 +274,20 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         summary = ical_event.get_summary ();
         name_label.set_markup (Markup.escape_text (summary));
 
+        var event_name = name_label.label.down ();
+
+        var current_category = Category.NONE;
+        var current_hits = 0;
+
+        for (uint u = Category.APPOINTMENT; u < Category.N_CATEGORIES; u++) {
+            find_keywords ((Category)u, event_name, ref current_category, ref current_hits);
+        }
+
+        var icon_name_from_keywords = current_category.get_icon_name ();
+        if (icon_name_from_keywords != null) {
+            event_image.icon_name = icon_name_from_keywords;
+        }
+
         DateTime start_date, end_date;
         Util.get_local_datetimes_from_icalcomponent (ical_event, out start_date, out end_date);
 
@@ -201,6 +334,20 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         location_label.label = ical_event.get_location ();
     }
 
+    private void find_keywords (Category category, string phrase, ref Category current_category, ref int current_hits) {
+        int hits = 0;
+        foreach (string keyword in keyword_map.@get (category)) {
+            if (phrase.contains (keyword)) {
+                hits += keyword.length;
+            }
+        }
+
+        if (hits > current_hits) {
+            current_hits = hits;
+            current_category = category;
+        }
+    }
+
     private void reload_css (string background_color) {
         var provider = new Gtk.CssProvider ();
         try {
@@ -211,6 +358,15 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             main_grid_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (GLib.Error e) {
             critical (e.message);
+        }
+    }
+
+    private void split_keywords (Category category) {
+        var words = category.get_builtin_keywords ().split (";");
+        foreach (unowned string? word in words) {
+            if (word != null && word != "") {
+                keyword_map.@set (category, word);
+            }
         }
     }
 }
