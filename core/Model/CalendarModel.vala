@@ -308,7 +308,7 @@ public class Maya.Model.CalendarModel : Object {
     private void load_source (E.Source source) {
         // create empty source-event map
         var events = new Gee.TreeMap<string, ECal.Component> (
-            (GLib.CompareDataFunc<ECal.Component>?) GLib.strcmp,
+            (GLib.CompareDataFunc<string>?) GLib.strcmp,
             (Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         source_events.set (source, events);
         // query client view
