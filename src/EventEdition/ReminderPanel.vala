@@ -103,7 +103,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                     ECal.ComponentAlarmTrigger trigger;
                     e_alarm.get_trigger (out trigger);
                     if (trigger.type == ECal.ComponentAlarmTriggerType.RELATIVE_START) {
-                        ICal.DurationType duration = trigger.rel_duration;
+                        ICal.Duration duration = trigger.rel_duration;
                         var reminder = add_reminder (alarm_uid);
                         reminder.set_duration (duration);
                     }
@@ -202,7 +202,7 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
         });
     }
 
-    public void set_duration (ICal.DurationType duration) {
+    public void set_duration (ICal.Duration duration) {
         is_human_change = false;
         if (duration.weeks > 0) {
             time.active = 15;
@@ -242,8 +242,8 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
         is_human_change = true;
     }
 
-    public ICal.DurationType get_duration () {
-        ICal.DurationType duration = ICal.DurationType.null_duration ();
+    public ICal.Duration get_duration () {
+        ICal.Duration duration = ICal.Duration.null_duration ();
         switch (time.active) {
             case 1:
                 duration.minutes = 1;

@@ -99,7 +99,7 @@ namespace ICal {
 		[CCode (cname = "icalcomponent_get_due")]
 		public ICal.Time get_due ();
 		[CCode (cname = "icalcomponent_get_duration")]
-		public unowned ICal.DurationType get_duration ();
+		public unowned ICal.Duration get_duration ();
 		[CCode (cname = "icalcomponent_get_first_component")]
 		public unowned ICal.Component  get_first_component (ICal.ComponentKind kind);
 		[CCode (cname = "icalcomponent_get_first_property")]
@@ -163,7 +163,7 @@ namespace ICal {
 		[CCode (cname = "icalcomponent_set_due")]
 		public void set_due (ICal.Time v);
 		[CCode (cname = "icalcomponent_set_duration")]
-		public void set_duration (ICal.DurationType v);
+		public void set_duration (ICal.Duration v);
 		[CCode (cname = "icalcomponent_set_location")]
 		public void set_location (string v);
 		[CCode (cname = "icalcomponent_set_method")]
@@ -215,7 +215,7 @@ namespace ICal {
 	}
 	[SimpleType]
 	[CCode (cheader_filename = "libical/ical.h", cname = "struct icaldurationtype", has_type_id = false)]
-	public struct DurationType {
+	public struct Duration {
 		public uint days;
 		public uint hours;
 		public int is_neg;
@@ -229,17 +229,17 @@ namespace ICal {
 		[CCode (cname = "icaldurationtype_as_int")]
 		public int as_int ();
 		[CCode (cname = "icaldurationtype_bad_duration")]
-		public static unowned ICal.DurationType bad_duration ();
+		public static ICal.Duration bad_duration ();
 		[CCode (cname = "icaldurationtype_from_int")]
-		public static unowned ICal.DurationType from_int (int t);
+		public static ICal.Duration from_int (int t);
 		[CCode (cname = "icaldurationtype_from_string")]
-		public static unowned ICal.DurationType from_string (string p1);
+		public static ICal.Duration from_string (string p1);
 		[CCode (cname = "icaldurationtype_is_bad_duration")]
 		public int is_bad_duration ();
 		[CCode (cname = "icaldurationtype_is_null_duration")]
 		public int is_null_duration ();
 		[CCode (cname = "icaldurationtype_null_duration")]
-		public static unowned ICal.DurationType null_duration ();
+		public static ICal.Duration null_duration ();
 	}
 	[CCode (cheader_filename = "libical/ical.h", copy_function = "icalparameter_new_clone", free_function = "icalparameter_free", cname = "icalparameter")]
 	[Compact]
@@ -573,7 +573,7 @@ namespace ICal {
 		[CCode (cname = "icalproperty_new_due", has_construct_function = false)]
 		public Property.due (ICal.Time v);
 		[CCode (cname = "icalproperty_new_duration", has_construct_function = false)]
-		public Property.duration (ICal.DurationType v);
+		public Property.duration (ICal.Duration v);
 		[CCode (cname = "icalproperty_enum_belongs_to_property")]
 		public static int enum_belongs_to_property (ICal.PropertyKind kind, int e);
 		[CCode (cname = "icalproperty_enum_to_string")]
@@ -657,7 +657,7 @@ namespace ICal {
 		[CCode (cname = "icalproperty_get_due")]
 		public ICal.Time get_due ();
 		[CCode (cname = "icalproperty_get_duration")]
-		public unowned ICal.DurationType get_duration ();
+		public unowned ICal.Duration get_duration ();
 		[CCode (cname = "icalproperty_get_exdate")]
 		public ICal.Time get_exdate ();
 		[CCode (cname = "icalproperty_get_expand")]
@@ -969,7 +969,7 @@ namespace ICal {
 		[CCode (cname = "icalproperty_set_due")]
 		public void set_due (ICal.Time v);
 		[CCode (cname = "icalproperty_set_duration")]
-		public void set_duration (ICal.DurationType v);
+		public void set_duration (ICal.Duration v);
 		[CCode (cname = "icalproperty_set_exdate")]
 		public void set_exdate (ICal.Time v);
 		[CCode (cname = "icalproperty_set_expand")]
@@ -1213,7 +1213,7 @@ namespace ICal {
 		[CCode (cname = "icalproperty_vanew_due")]
 		public static unowned ICal.Property vanew_due (ICal.Time v);
 		[CCode (cname = "icalproperty_vanew_duration")]
-		public static unowned ICal.Property vanew_duration (ICal.DurationType v);
+		public static unowned ICal.Property vanew_duration (ICal.Duration v);
 		[CCode (cname = "icalproperty_vanew_exdate")]
 		public static unowned ICal.Property vanew_exdate (ICal.Time v);
 		[CCode (cname = "icalproperty_vanew_expand")]
@@ -1482,7 +1482,7 @@ namespace ICal {
 		[CCode (cname = "icalvalue_decode_ical_string")]
 		public static int decode_ical_string (global::string szText, global::string szDecText, int nMaxBufferLen);
 		[CCode (cname = "icalvalue_new_duration", has_construct_function = false)]
-		public Value.duration (ICal.DurationType v);
+		public Value.duration (ICal.Duration v);
 		[CCode (cname = "icalvalue_encode_ical_string")]
 		public static int encode_ical_string (global::string szText, global::string szEncText, int MaxBufferLen);
 		[CCode (cname = "icalvalue_new_float", has_construct_function = false)]
@@ -1514,7 +1514,7 @@ namespace ICal {
 		[CCode (cname = "icalvalue_get_datetimeperiod")]
 		public ICal.DateTimePeriodType get_datetimeperiod ();
 		[CCode (cname = "icalvalue_get_duration")]
-		public unowned ICal.DurationType get_duration ();
+		public unowned ICal.Duration get_duration ();
 		[CCode (cname = "icalvalue_get_float")]
 		public global::float get_float ();
 		[CCode (cname = "icalvalue_get_geo")]
@@ -1600,7 +1600,7 @@ namespace ICal {
 		[CCode (cname = "icalvalue_set_datetimeperiod")]
 		public void set_datetimeperiod (ICal.DateTimePeriodType v);
 		[CCode (cname = "icalvalue_set_duration")]
-		public void set_duration (ICal.DurationType v);
+		public void set_duration (ICal.Duration v);
 		[CCode (cname = "icalvalue_set_float")]
 		public void set_float (global::float v);
 		[CCode (cname = "icalvalue_set_geo")]
@@ -1817,7 +1817,7 @@ namespace ICal {
 	public struct PeriodType {
 		public ICal.Time start;
 		public ICal.Time end;
-		public weak ICal.DurationType duration;
+		public weak ICal.Duration duration;
 		[CCode (cname = "icalperiodtype_as_ical_string")]
 		public unowned string as_ical_string ();
 		[CCode (cname = "icalperiodtype_as_ical_string_r")]
@@ -1907,18 +1907,22 @@ namespace ICal {
 		public ICal.Time.from_string (string str);
 		[CCode (cname = "icaltime_from_string_with_zone", has_construct_function = false)]
 		public ICal.Time.from_string_with_zone (string str, ICal.Timezone zone);
-		[CCode (cname = "icaltime_from_timet", has_construct_function = false)]
-		public ICal.Time.from_timet (time_t v, int is_date);
 		[CCode (cname = "icaltime_from_timet_with_zone", has_construct_function = false)]
 		public ICal.Time.from_timet_with_zone (time_t tm, int is_date, ICal.Timezone? zone);
 		[CCode (cname = "icaltime_from_week_number", has_construct_function = false)]
 		public ICal.Time.from_week_number (int week_number, int year);
+		[CCode (cname = "icaltime_current_time_with_zone", has_construct_function = false)]
+		public ICal.Time.current_time_with_zone (ICal.Timezone zone);
+		[CCode (cname = "icaltime_null_date", has_construct_function = false)]
+		public ICal.Time.null_date ();
+		[CCode (cname = "icaltime_null_time", has_construct_function = false)]
+		public ICal.Time.null_time ();
 		[CCode (cname = "_vala_icaltime_clone")]
 		public ICal.Time clone () {
-			return ICal.Time.from_timet_with_zone ((time_t)this.as_timet_with_zone (this.zone), this.is_date, this.zone);
+			return ICal.Time.from_timet_with_zone (this.as_timet_with_zone (this.zone), this.is_date, this.zone);
 		}
 		[CCode (cname = "icaltime_add")]
-		public ICal.Time add (ICal.DurationType d);
+		public ICal.Time add (ICal.Duration d);
 		[CCode (cname = "icaltime_adjust")]
 		public static void adjust (out ICal.Time time_type, int days, int hours, int minutes, int seconds);
 		[CCode (cname = "icaltime_as_ical_string")]
@@ -1926,9 +1930,9 @@ namespace ICal {
 		[CCode (cname = "icaltime_as_ical_string_r")]
 		public unowned string as_ical_string_r ();
 		[CCode (cname = "icaltime_as_timet")]
-		public ulong as_timet ();
+		public time_t as_timet ();
 		[CCode (cname = "icaltime_as_timet_with_zone")]
-		public ulong as_timet_with_zone (ICal.Timezone zone);
+		public time_t as_timet_with_zone (ICal.Timezone zone);
 		[CCode (cname = "icaltime_compare")]
 		public int compare (ICal.Time b);
 		[CCode (cname = "icaltime_compare_date_only")]
@@ -1939,8 +1943,6 @@ namespace ICal {
 		public int compare_with_zone (ICal.Time b);
 		[CCode (cname = "icaltime_convert_to_zone")]
 		public ICal.Time convert_to_zone (ICal.Timezone zone);
-		[CCode (cname = "icaltime_current_time_with_zone")]
-		public ICal.Time current_time_with_zone (ICal.Timezone zone);
 		[CCode (cname = "icaltime_day_of_week")]
 		public int day_of_week ();
 		[CCode (cname = "icaltime_day_of_year")]
@@ -1967,10 +1969,6 @@ namespace ICal {
 		public int is_valid_time ();
 		[CCode (cname = "icaltime_normalize")]
 		public ICal.Time normalize ();
-		[CCode (cname = "icaltime_null_date")]
-		public ICal.Time null_date ();
-		[CCode (cname = "icaltime_null_time")]
-		public ICal.Time null_time ();
 		[CCode (cname = "icaltime_set_timezone")]
 		public ICal.Time set_timezone (ICal.Timezone zone);
 		[CCode (cname = "icaltime_start_doy_of_week")]
@@ -1978,7 +1976,7 @@ namespace ICal {
 		[CCode (cname = "icaltime_start_doy_week")]
 		public int start_doy_week (int fdow);
 		[CCode (cname = "icaltime_subtract")]
-		public unowned ICal.DurationType subtract (ICal.Time t2);
+		public unowned ICal.Duration subtract (ICal.Time t2);
 		[CCode (cname = "icaltime_week_number")]
 		public int week_number ();
 		[CCode (cname = "_vala_icaltime_get_date")]
@@ -2023,7 +2021,7 @@ namespace ICal {
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalperiodtype")]
 	public struct TriggerType {
 		public ICal.Time time;
-		public weak ICal.DurationType duration;
+		public weak ICal.Duration duration;
 		[CCode (cname = "icaltriggertype_from_int")]
 		public static ICal.TriggerType from_int (int reltime);
 		[CCode (cname = "icaltriggertype_from_string")]
