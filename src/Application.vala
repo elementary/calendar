@@ -76,7 +76,10 @@ namespace Maya {
             window.show_all ();
 
             if (Option.ADD_EVENT) {
-                window.on_tb_add_clicked (window.calview.selected_date);
+                Idle.add (() => {
+                    window.on_tb_add_clicked (window.calview.selected_date);
+                    return false;
+                });
             }
         }
 
