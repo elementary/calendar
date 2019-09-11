@@ -256,14 +256,14 @@ namespace ECal {
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct ComponentAlarmRepeat {
 		public int repetitions;
-		public ICal.DurationType duration;
+		public ICal.Duration duration;
 	}
 	[SimpleType]
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct ComponentAlarmTrigger {
 		public ECal.ComponentAlarmTriggerType type;
 		[CCode(cname = "u.rel_duration")]
-		public ICal.DurationType rel_duration;
+		public ICal.Duration rel_duration;
 		[CCode(cname = "u.abs_time")]
 		public ICal.Time abs_time;
 	}
@@ -314,7 +314,7 @@ namespace ECal {
 		[CCode (cheader_filename = "libecal/libecal.h")]
 		public ICal.Time start;
 		[CCode(cname = "u.duration")]
-		public ICal.DurationType duration;
+		public ICal.Duration duration;
 		[CCode(cname = "u.end")]
 		public ICal.Time end;
 	}
@@ -630,6 +630,8 @@ namespace ECal {
 		public static ICal.Time tm_to_icaltimetype (Posix.tm time, bool is_date);
 		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_get_system_timezone_location")]
 		public static string get_system_timezone_location ();
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_get_system_timezone")]
+		public static unowned ICal.Timezone get_system_timezone ();
 		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_priority_from_string")]
 		public static int priority_from_string (string string);
 		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_priority_to_string")]
