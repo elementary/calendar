@@ -1,3 +1,27 @@
+maya-calendar (5.0) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <codygarver@gmail.com>  Thu, 28 Feb 2019 18:38:48 -0600
+
+maya-calendar (4.2.3) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Tue, 16 Oct 2018 04:26:43 -0500
+
+maya-calendar (4.2.2) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Wed, 03 Oct 2018 03:17:05 -0500
+
+maya-calendar (0.4.3) UNRELEASED; urgency=medium
+
+  * Pre-release version bump.
+
+ -- Cody Garver <cody@elementary.io>  Thu, 06 Sep 2018 15:19:10 -0500
+
 maya-calendar (0.4.2.1) bionic; urgency=medium
 
   * New upstream release.
