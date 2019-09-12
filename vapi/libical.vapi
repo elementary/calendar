@@ -1414,7 +1414,7 @@ namespace ICal {
 		[CCode (cname = "icaltimezone_get_builtin_timezone_from_offset")]
 		public static unowned ICal.Timezone get_builtin_timezone_from_offset (int64 offset, string? tzname);
 		[CCode (cname = "icaltimezone_get_builtin_timezone_from_tzid")]
-		public static unowned ICal.Timezone get_builtin_timezone_from_tzid (string tzid);
+		public static unowned ICal.Timezone get_builtin_timezone_from_tzid (string? tzid);
 		[CCode (cname = "icaltimezone_get_builtin_timezones")]
 		public static unowned ICal.Array<unowned ICal.Timezone> get_builtin_timezones ();
 		[CCode (cname = "icaltimezone_get_component")]
@@ -1896,7 +1896,8 @@ namespace ICal {
 		public int minute;
 		public int second;
 		public int is_utc;
-		public int is_date;
+		[CCode (cname = "is_date")]
+		public int _is_date;
 		public int is_daylight;
 		public weak ICal.Timezone zone;
 		[CCode (cname = "icaltime_today", has_construct_function = false)]
@@ -1919,7 +1920,7 @@ namespace ICal {
 		public ICal.Time.null_time ();
 		[CCode (cname = "_vala_icaltime_clone")]
 		public ICal.Time clone () {
-			return ICal.Time.from_timet_with_zone (this.as_timet_with_zone (this.zone), this.is_date, this.zone);
+			return ICal.Time.from_timet_with_zone (this.as_timet_with_zone (this.zone), this._is_date, this.zone);
 		}
 		[CCode (cname = "icaltime_add")]
 		public ICal.Time add (ICal.Duration d);
@@ -1956,13 +1957,21 @@ namespace ICal {
 		[CCode (cname = "icaltime_get_tzid")]
 		public unowned string get_tzid ();
 		[CCode (cname = "icaltime_is_date")]
-		public int is_it_date ();
+		private int is_it_date ();
+		[CCode (cname = "_vala_icaltime_is_date")]
+		public bool is_date () {
+			return is_it_date () != 0;
+		}
 		[CCode (cname = "icaltime_is_floating")]
 		public int is_floating ();
 		[CCode (cname = "icaltime_is_leap_year")]
 		public int is_leap_year (int year);
 		[CCode (cname = "icaltime_is_null_time")]
-		public int is_null_time ();
+		private int is_it_null_time ();
+		[CCode (cname = "_vala_icaltime_is_null_time")]
+		public bool is_null_time () {
+			return is_it_null_time () != 0;
+		}
 		[CCode (cname = "icaltime_is_utc")]
 		public int is_it_utc ();
 		[CCode (cname = "icaltime_is_valid_time")]
@@ -1979,6 +1988,10 @@ namespace ICal {
 		public unowned ICal.Duration subtract (ICal.Time t2);
 		[CCode (cname = "icaltime_week_number")]
 		public int week_number ();
+		[CCode (cname = "_vala_icaltime_set_is_date")]
+		public void set_is_date (bool is_date) {
+			this._is_date = is_date ? 1 : 0;
+		}
 		[CCode (cname = "_vala_icaltime_get_date")]
 		public void get_date (out int year, out int month, out int day) {
 			year = this.year;

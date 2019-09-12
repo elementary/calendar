@@ -114,7 +114,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
         var gap = date.get_day_of_month () - start.day;
         start.day += gap;
 
-        if (end.is_null_time () == 0) {
+        if (!end.is_null_time ()) {
             end.day += gap;
             icalcomp.set_dtend (end);
         }

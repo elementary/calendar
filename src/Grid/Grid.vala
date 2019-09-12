@@ -174,28 +174,12 @@ public class Grid : Gtk.Grid {
      * Puts the given event on the grid.
      */
     public void add_event (ECal.Component event) {
-        unowned ICal.Component comp = event.get_icalcomponent ();
-        foreach (var dt_range in Util.event_date_ranges (comp, grid_range)) {
-            add_buttons_for_range (dt_range, event);
+        foreach (var grid_day in data.values) {
+            if (Util.calcomp_is_on_day (event, grid_day.date)) {
+                var button = new EventButton (event);
+                grid_day.add_event_button (button);
+            }
         }
-    }
-
-    /**
-     * Adds an eventbutton to the grid for the given event at each day of the given range.
-     */
-    void add_buttons_for_range (Util.DateRange dt_range, ECal.Component event) {
-        foreach (var date in dt_range) {
-            EventButton button = new EventButton (event, date);
-            add_button_for_day (date, button);
-        }
-    }
-
-    void add_button_for_day (DateTime date, EventButton button) {
-        var hash = day_hash (date);
-        if (data.has_key (hash) == false)
-            return;
-        GridDay grid_day = data.get (hash);
-        grid_day.add_event_button (button);
     }
 
     uint day_hash (DateTime date) {
@@ -212,22 +196,10 @@ public class Grid : Gtk.Grid {
     }
 
     public void update_event (ECal.Component event) {
-        Gee.Collection<Util.DateRange> event_ranges = Util.event_date_ranges (event.get_icalcomponent (), grid_range);
-
         foreach (var grid_day in data.values) {
-            bool contains = false;
-
-            foreach (Util.DateRange event_range in event_ranges) {
-                if (Util.is_day_in_range (grid_day.date, event_range)) {
-                    contains = true;
-                }
-            }
-
-            if (contains) {
-                if (!grid_day.update_event (event)) {
-                    EventButton button = new EventButton (event, grid_day.date);
-                    add_button_for_day (grid_day.date, button);
-                }
+            if (Util.calcomp_is_on_day (event, grid_day.date)) {
+                var button = new EventButton (event);
+                grid_day.add_event_button (button);
             } else {
                 grid_day.remove_event (event);
             }
@@ -238,7 +210,7 @@ public class Grid : Gtk.Grid {
      * Removes all events from the grid.
      */
     public void remove_all_events () {
-        foreach(var grid_day in data.values) {
+        foreach (var grid_day in data.values) {
             grid_day.clear_events ();
         }
     }

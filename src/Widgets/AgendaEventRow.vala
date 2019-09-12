@@ -255,9 +255,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
     private bool on_button_press (Gdk.EventButton event) {
         if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-            var start_date = Util.ical_to_date_time (calevent.get_icalcomponent ().get_dtstart ());
-
-            var menu = new Maya.EventMenu (calevent, start_date);
+            var menu = new Maya.EventMenu (calevent);
             menu.attach_to_widget (this, null);
             menu.popup_at_pointer (event);
             menu.show_all ();

@@ -20,12 +20,10 @@
 
 public class Maya.EventMenu : Gtk.Menu {
     public ECal.Component comp { get; construct set; }
-    public GLib.DateTime date { get; construct; }
 
-    public EventMenu (ECal.Component comp, GLib.DateTime date) {
+    public EventMenu (ECal.Component comp) {
         Object (
-             comp: comp,
-             date: date
+             comp: comp
          );
     }
 
@@ -68,12 +66,12 @@ public class Maya.EventMenu : Gtk.Menu {
     }
 
     private void add_exception () {
-        var ical = comp.get_icalcomponent ().clone ();
-
-        var exdate = new ICal.Property (ICal.PropertyKind.EXDATE_PROPERTY);
-        exdate.set_exdate (Util.date_time_to_ical (date, null));
-        ical.add_property (exdate);
-        comp.set_icalcomponent ((owned) ical);
+        ECal.ComponentDateTime dtstart;
+        comp.get_dtstart (out dtstart);
+        GLib.SList<ECal.ComponentDateTime?>? exdate_list;
+        comp.get_exdate_list (out exdate_list);
+        exdate_list.append (dtstart);
+        comp.set_exdate_list (exdate_list);
 
         var calmodel = Model.CalendarModel.get_default ();
         calmodel.update_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.ALL);

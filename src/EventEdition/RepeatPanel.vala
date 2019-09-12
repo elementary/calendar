@@ -323,7 +323,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             }
 
             every_entry.value = rrule.interval;
-            if (rrule.until.is_null_time () == 1) {
+            if (rrule.until.is_null_time ()) {
                 ends_combobox.active = 0;
             } else {
                 ends_combobox.active = 1;
