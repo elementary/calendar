@@ -31,27 +31,27 @@ namespace Maya.Util {
      * its time settings are ignored. The second one contains the time itself.
      * XXX: We need to convert to UTC because of some bugs with the Google backend…
      */
-    public ICal.Time date_time_to_ical (DateTime date, DateTime? time_local, string? timezone = ECal.Util.get_system_timezone_location ()) {
+    public ICal.Time date_time_to_ical (DateTime date, DateTime? time_local, string? timezone = null) {
         var result = ICal.Time.from_day_of_year (date.get_day_of_year (), date.get_year ());
         if (time_local != null) {
-            unowned ICal.Array<unowned ICal.Timezone> tzs = ICal.Timezone.get_builtin_timezones ();
-            for (int i = 0; i<tzs.num_elements; i++) {
-                unowned ICal.Timezone tz = tzs.element_at (i);
-                if (tz.get_display_name () == timezone) {
-                    result.zone = tz;
-                    break;
+            if (timezone != null) {
+                unowned ICal.Array<unowned ICal.Timezone> tzs = ICal.Timezone.get_builtin_timezones ();
+                for (int i = 0; i < tzs.size (); i++) {
+                    unowned ICal.Timezone tz = tzs.element_at (i);
+                    if (tz.get_display_name () == timezone) {
+                        result.zone = tz;
+                        break;
+                    }
                 }
+            } else {
+                result.zone = ECal.Util.get_system_timezone ();
             }
 
             result.set_is_date (false);
-            result.hour = time_local.get_hour ();
-            result.minute = time_local.get_minute ();
-            result.second = time_local.get_second ();
+            result.set_time (time_local.get_hour (), time_local.get_minute (), time_local.get_second ());
         } else {
             result.set_is_date (true);
-            result.hour = 0;
-            result.minute = 0;
-            result.second = 0;
+            result.set_time (0, 0, 0);
         }
 
         return result;
@@ -104,7 +104,7 @@ namespace Maya.Util {
             end_date = Util.ical_to_date_time (dt_end);
         } else if (dt_start.is_date ()) {
             end_date = start_date;
-        } else if (comp.get_duration ().is_null_duration () == 0) {
+        } else if (!comp.get_duration ().is_null_duration ()) {
             end_date = Util.ical_to_date_time (dt_start.add (comp.get_duration ()));
         } else {
             end_date = start_date.add_days (1);

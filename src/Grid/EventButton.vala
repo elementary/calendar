@@ -88,7 +88,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
         event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
             Model.CalendarModel.get_default ().drag_component = comp;
             unowned ICal.Component icalcomp = comp.get_icalcomponent ();
-            unowned string ical_str = icalcomp.as_ical_string ();
+            var ical_str = icalcomp.as_ical_string ();
             sel.set_text (ical_str, ical_str.length);
             try {
                 var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
