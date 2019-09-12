@@ -15,24 +15,12 @@
 namespace Maya.Util {
 
     public int compare_events (ECal.Component comp1, ECal.Component comp2) {
-
-        var date1 = Util.ical_to_date_time (comp1.get_icalcomponent ().get_dtstart ());
-        var date2 = Util.ical_to_date_time (comp2.get_icalcomponent ().get_dtstart ());
-
-        if (date1.compare (date2) != 0)
-            return date1.compare(date2);
+        var res = comp1.get_icalcomponent ().get_dtstart ().compare (comp2.get_icalcomponent ().get_dtstart ());
+        if (res != 0)
+            return res;
 
         // If they have the same date, sort them alphabetically
-        ECal.ComponentText summary1;
-        ECal.ComponentText summary2;
-        comp1.get_summary (out summary1);
-        comp2.get_summary (out summary2);
-
-        if (summary1.value < summary2.value)
-            return -1;
-        if (summary1.value > summary2.value)
-            return 1;
-        return 0;
+        return comp1.get_summary ().get_value ().collate (comp2.get_summary ().get_value ());
     }
 
     //--- Date and Time ---//
@@ -74,7 +62,7 @@ namespace Maya.Util {
      */
     private TimeZone timezone_from_ical (ICal.Time date) {
         int is_daylight;
-        var interval = date.zone.get_utc_offset (date, out is_daylight);
+        var interval = date.zone.get_utc_offset (null, out is_daylight);
         var hours = (interval / 3600);
         string hour_string = "-";
         if (hours >= 0) {

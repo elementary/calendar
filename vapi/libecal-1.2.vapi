@@ -115,7 +115,7 @@ namespace ECal {
 		public static void free_categories_list (GLib.SList<string> categ_list);
 		public static void free_datetime (ECal.ComponentDateTime dt);
 		public static void free_exdate_list (GLib.SList exdate_list);
-		public static void free_geo (ICal.GeoType geo);
+		public static void free_geo (ICal.Geo geo);
 		public static void free_icaltimetype (ICal.Time t);
 		public static void free_id (ECal.ComponentId id);
 		public static void free_percent (int percent);
@@ -143,10 +143,10 @@ namespace ECal {
 		public void get_dtstamp (out ICal.Time t);
 		public void get_dtstart (out ECal.ComponentDateTime dt);
 		public void get_due (out ECal.ComponentDateTime dt);
-		public void get_exdate_list (out GLib.SList<ECal.ComponentDateTime?>? exdate_list);
-		public void get_exrule_list (out GLib.SList<ECal.ComponentRange> recur_list);
+		public void get_exdate_list (out GLib.SList<ECal.ComponentDateTime> exdate_list);
+		public void get_exrule_list (out GLib.SList<ICal.Recurrence> recur_list);
 		public void get_exrule_property_list (out GLib.SList<ECal.ComponentRange> recur_list);
-		public void get_geo (out ICal.GeoType geo);
+		public void get_geo (out ICal.Geo geo);
 		public unowned ICal.Component get_icalcomponent ();
 		public ECal.ComponentId get_id ();
 		public void get_last_modified (out ICal.Time t);
@@ -163,7 +163,7 @@ namespace ECal {
 		public void get_rrule_property_list (out GLib.SList<ECal.ComponentRange> recur_list);
 		public void get_sequence (out int sequence);
 		public void get_status (out ICal.PropertyStatus status);
-		public void get_summary (out ECal.ComponentText summary);
+		public ECal.ComponentText get_summary ();
 		public void get_transparency (out ECal.ComponentTransparency transp);
 		public void get_uid (out string uid);
 		public void get_url (out string url);
@@ -197,9 +197,9 @@ namespace ECal {
 		public void set_dtstamp (ICal.Time t);
 		public void set_dtstart (ECal.ComponentDateTime dt);
 		public void set_due (ECal.ComponentDateTime dt);
-		public void set_exdate_list (GLib.SList<ECal.ComponentDateTime?>? exdate_list);
-		public void set_exrule_list (GLib.SList<ECal.ComponentRange> recur_list);
-		public void set_geo (ICal.GeoType* geo);
+		public void set_exdate_list (GLib.SList<ECal.ComponentDateTime>? exdate_list);
+		public void set_exrule_list (GLib.SList<ICal.Recurrence> recur_list);
+		public void set_geo (ICal.Geo* geo);
 		public bool set_icalcomponent (owned ICal.Component icalcomp);
 		public void set_last_modified (ICal.Time t);
 		public void set_location (string location);
@@ -261,7 +261,7 @@ namespace ECal {
 	[SimpleType]
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct ComponentAlarmTrigger {
-		public ECal.ComponentAlarmTriggerType type;
+		public ECal.ComponentAlarmTriggerKind type;
 		[CCode(cname = "u.rel_duration")]
 		public ICal.Duration rel_duration;
 		[CCode(cname = "u.abs_time")]
@@ -280,7 +280,7 @@ namespace ECal {
 		public weak string member;
 		public ICal.ParameterCutype cutype;
 		public ICal.ParameterRole role;
-		public ICal.ParameterPartStat status;
+		public ICal.ParameterPartstat status;
 		public bool rsvp;
 		public weak string delto;
 		public weak string delfrom;
@@ -306,7 +306,15 @@ namespace ECal {
 		[Version (since = "3.10")]
 		public uint hash ();
 		public weak string uid;
-		public weak string rid;
+		public weak string? rid;
+		[CCode (cname = "_vala_e_cal_component_id_get_uid")]
+		public unowned string get_uid () {
+			return this.uid;
+		}
+		[CCode (cname = "_vala_e_cal_component_id_get_rid")]
+		public unowned string? get_rid () {
+			return this.rid;
+		}
 	}
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct ComponentOrganizer {
@@ -334,6 +342,14 @@ namespace ECal {
 	public struct ComponentText {
 		public weak string value;
 		public weak string altrep;
+		[CCode (cname = "_vala_e_cal_component_text_get_altrep")]
+		public unowned string get_altrep () {
+			return this.altrep;
+		}
+		[CCode (cname = "_vala_e_cal_component_text_get_value")]
+		public unowned string get_value () {
+			return this.value;
+		}
 	}
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct ObjInstance {
@@ -390,8 +406,8 @@ namespace ECal {
 		NONE,
 		NOTIFY_INITIAL
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_COMPONENT_ALARM_TRIGGER_", has_type_id = false)]
-	public enum ComponentAlarmTriggerType {
+	[CCode (cheader_filename = "libecal/libecal.h", cname = "ECalComponentAlarmTriggerType", cprefix = "E_CAL_COMPONENT_ALARM_TRIGGER_", has_type_id = false)]
+	public enum ComponentAlarmTriggerKind {
 		NONE,
 		RELATIVE_START,
 		RELATIVE_END,

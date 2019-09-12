@@ -171,8 +171,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
         // Add the new guests
         foreach (unowned ICal.Property attendee in attendees) {
-            var clone = new ICal.Property.clone (attendee);
-            comp.add_property (clone);
+            comp.add_property (attendee.clone ());
         }
     }
 

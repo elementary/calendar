@@ -93,7 +93,7 @@ namespace Maya {
                     case (ECal.ComponentAlarmAction.DISPLAY):
                         ECal.ComponentAlarmTrigger trigger;
                         e_alarm.get_trigger (out trigger);
-                        if (trigger.type == ECal.ComponentAlarmTriggerType.RELATIVE_START) {
+                        if (trigger.type == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
                             ICal.Duration duration = trigger.rel_duration;
                             var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
                             var now = new DateTime.now_local ();

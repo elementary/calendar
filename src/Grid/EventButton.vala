@@ -40,7 +40,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
     construct {
         transition_type = Gtk.RevealerTransitionType.CROSSFADE;
 
-        label = new Gtk.Label (get_summary ());
+        label = new Gtk.Label (comp.get_summary ().get_value ());
         label.hexpand = true;
         label.ellipsize = Pango.EllipsizeMode.END;
         label.xalign = 0;
@@ -113,13 +113,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
     public void update (ECal.Component event) {
        this.comp = comp;
-       label.label = get_summary ();
-    }
-
-    public string get_summary () {
-        ECal.ComponentText summary;
-        comp.get_summary (out summary);
-        return summary.value;
+       label.label = comp.get_summary ().get_value ();
     }
 
     private void reload_css (string background_color) {
