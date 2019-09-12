@@ -70,7 +70,7 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
         var calmodel = Model.CalendarModel.get_default ();
         foreach (var file in files) {
             var ical = ECal.Util.parse_ics_file (file.get_path ());
-            if (ical.is_valid () == 1) {
+            if (ical.is_valid ()) {
                 for (unowned ICal.Component comp = ical.get_first_component (ICal.ComponentKind.VEVENT_COMPONENT);
                      comp != null;
                      comp = ical.get_next_component (ICal.ComponentKind.VEVENT_COMPONENT)) {

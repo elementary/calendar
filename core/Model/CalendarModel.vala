@@ -131,7 +131,7 @@ public class Maya.Model.CalendarModel : Object {
         debug (@"Adding event '$(comp.get_uid())'");
         ECal.Client client;
         lock (source_client) {
-            client = source_client.get (source.dup_uid ());
+            client = source_client.get (source.get_uid ());
         }
 
         if (client != null) {
@@ -152,7 +152,7 @@ public class Maya.Model.CalendarModel : Object {
 
         ECal.Client client;
         lock (source_client) {
-            client = source_client.get (source.dup_uid ());
+            client = source_client.get (source.get_uid ());
         }
 
         client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
@@ -171,7 +171,7 @@ public class Maya.Model.CalendarModel : Object {
         debug (@"Removing event '$uid'");
         ECal.Client client;
         lock (source_client) {
-            client = source_client.get (source.dup_uid ());
+            client = source_client.get (source.get_uid ());
         }
 
         client.remove_object.begin (uid, rid, mod_type, null, (obj, results) => {
@@ -349,7 +349,7 @@ public class Maya.Model.CalendarModel : Object {
             var cancellable = new GLib.Cancellable ();
             connecting (source, cancellable);
             var client = (ECal.Client) yield ECal.Client.connect (source, ECal.ClientSourceType.EVENTS, 30, cancellable);
-            source_client.insert (source.dup_uid (), client);
+            source_client.insert (source.get_uid (), client);
         } catch (Error e) {
             error_received (e.message);
         }
@@ -417,7 +417,7 @@ public class Maya.Model.CalendarModel : Object {
             if (cid == null)
                 return;
 
-            var comps = events.get (cid.uid);
+            var comps = events.get (cid.get_uid ());
             foreach (ECal.Component event in comps) {
                 removed_events.add (event);
                 debug_event (source, event);

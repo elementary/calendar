@@ -20,6 +20,10 @@ namespace ICal {
 		public void remove_element_at (int position);
 		[CCode (cname = "icalarray_sort")]
 		public void sort (GLib.Callback compare);
+		[CCode (cname = "_vala_icalarray_size")]
+		public int size () {
+			return (int) num_elements;
+		}
 	}
 	[CCode (cheader_filename = "libical/ical.h", ref_function = "icalattach_ref", ref_function_void = true, unref_function = "icalattach_unref", cname = "icalattach")]
 	[Compact]
@@ -135,7 +139,11 @@ namespace ICal {
 		[CCode (cname = "icalcomponent_get_uid")]
 		public unowned string get_uid ();
 		[CCode (cname = "icalcomponent_is_valid")]
-		public int is_valid ();
+		private int _is_valid ();
+		[CCode (cname = "_vala_icalcomponent_is_valid")]
+		public bool is_valid () {
+			return _is_valid () != 0;
+		}
 		[CCode (cname = "icalcomponent_isa")]
 		public ICal.ComponentKind isa ();
 		[CCode (cname = "icalcomponent_isa_component")]
@@ -237,9 +245,53 @@ namespace ICal {
 		[CCode (cname = "icaldurationtype_is_bad_duration")]
 		public int is_bad_duration ();
 		[CCode (cname = "icaldurationtype_is_null_duration")]
-		public int is_null_duration ();
+		private int _is_null_duration ();
+		[CCode (cname = "_vala_icaldurationtype_is_null_duration")]
+		public bool is_null_duration () {
+			return _is_null_duration () != 0;
+		}
 		[CCode (cname = "icaldurationtype_null_duration")]
 		public static ICal.Duration null_duration ();
+		[CCode (cname = "_vala_icaldurationtype_get_days")]
+		public uint get_days () {
+			return days;
+		}
+		[CCode (cname = "_vala_icaldurationtype_set_days")]
+		public void set_days (uint days) {
+			this.days = days;
+		}
+		[CCode (cname = "_vala_icaldurationtype_get_hours")]
+		public uint get_hours () {
+			return hours;
+		}
+		[CCode (cname = "_vala_icaldurationtype_set_hours")]
+		public void set_hours (uint hours) {
+			this.hours = hours;
+		}
+		[CCode (cname = "_vala_icaldurationtype_get_minutes")]
+		public uint get_minutes () {
+			return minutes;
+		}
+		[CCode (cname = "_vala_icaldurationtype_set_minutes")]
+		public void set_minutes (uint minutes) {
+			this.minutes = minutes;
+		}
+		[CCode (cname = "_vala_icaldurationtype_get_seconds")]
+		public uint get_seconds () {
+			return seconds;
+		}
+		[CCode (cname = "_vala_icaldurationtype_set_seconds")]
+		public void set_seconds (uint seconds) {
+			this.seconds = seconds;
+		}
+		[CCode (cname = "_vala_icaldurationtype_get_weeks")]
+		public uint get_weeks () {
+			return weeks;
+		}
+		[CCode (cname = "_vala_icaldurationtype_set_weeks")]
+		public void set_weeks (uint weeks) {
+			this.weeks = weeks;
+		}
 	}
 	[CCode (cheader_filename = "libical/ical.h", copy_function = "icalparameter_new_clone", free_function = "icalparameter_free", cname = "icalparameter")]
 	[Compact]
@@ -2007,6 +2059,14 @@ namespace ICal {
 			hour = this.hour;
 			minute = this.minute;
 			second = this.second;
+		}
+		[CCode (cname = "_vala_icaltime_get_day")]
+		public int get_day () {
+			return this.day;
+		}
+		[CCode (cname = "_vala_icaltime_set_day")]
+		public void set_day (int day) {
+			this.day = day;
 		}
 	}
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalperiodtype")]

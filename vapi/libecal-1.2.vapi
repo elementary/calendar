@@ -266,6 +266,25 @@ namespace ECal {
 		public ICal.Duration rel_duration;
 		[CCode(cname = "u.abs_time")]
 		public ICal.Time abs_time;
+		[CCode(cname = "_vala_e_cal_component_alarm_trigger_get_kind")]
+		public ECal.ComponentAlarmTriggerKind get_kind () {
+			return type;
+		}
+
+		[CCode(cname = "_vala_e_cal_component_alarm_trigger_set_kind")]
+		public void set_kind (ECal.ComponentAlarmTriggerKind kind) {
+			type = kind;
+		}
+
+		[CCode(cname = "_vala_e_cal_component_alarm_trigger_get_duration")]
+		public unowned ICal.Duration get_duration () {
+			return rel_duration;
+		}
+
+		[CCode(cname = "_vala_e_cal_component_alarm_trigger_set_duration")]
+		public void set_duration (ICal.Duration duration) {
+			rel_duration = duration;
+		}
 	}
 	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_alarms_free")]
 	public struct ComponentAlarms {
