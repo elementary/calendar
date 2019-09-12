@@ -108,13 +108,7 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_date_time_to_ical@Base 0.3
  maya_util_datetime_equal_func@Base 0.3
  maya_util_datetime_hash_func@Base 0.3
- maya_util_event_date_ranges@Base 0.3
  maya_util_find_treemodel_object@Base 0.3
- maya_util_generate_day_reccurence@Base 0.3
- maya_util_generate_month_reccurence@Base 0.3
- maya_util_generate_week_reccurence@Base 0.3
- maya_util_generate_year_reccurence@Base 0.3
- maya_util_get_date_from_ical_day@Base 0.3
  maya_util_get_end_of_month@Base 0.4.0.2
  maya_util_get_hexa_color@Base 0.3
  maya_util_get_local_datetimes_from_icalcomponent@Base 0.3.1
