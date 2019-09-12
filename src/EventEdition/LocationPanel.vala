@@ -104,18 +104,18 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                 location_entry.text = location.dup ();
             }
 
-            ICal.GeoType? geo;
+            ICal.Geo geo;
             parent_dialog.ecal.get_geo (out geo);
             bool need_relocation = true;
-            if (geo != null) {
-                if (geo.latitude >= Champlain.MIN_LATITUDE && geo.longitude >= Champlain.MIN_LONGITUDE &&
-                    geo.latitude <= Champlain.MAX_LATITUDE && geo.longitude <= Champlain.MAX_LONGITUDE) {
-                    need_relocation = false;
-                    point.latitude = geo.latitude;
-                    point.longitude = geo.longitude;
-                    if (geo.latitude == 0 && geo.longitude == 0)
-                        need_relocation = true;
-                }
+            var latitude = geo.lat;
+            var longitude = geo.lon;
+            if (latitude >= Champlain.MIN_LATITUDE && longitude >= Champlain.MIN_LONGITUDE &&
+                latitude <= Champlain.MAX_LATITUDE && longitude <= Champlain.MAX_LONGITUDE) {
+                need_relocation = false;
+                point.latitude = latitude;
+                point.longitude = longitude;
+                if (latitude == 0 && longitude == 0)
+                    need_relocation = true;
             }
 
             if (need_relocation == true) {
@@ -162,9 +162,10 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 
             // Add the comment
             var property = new ICal.Property (ICal.PropertyKind.GEO_PROPERTY);
-            ICal.GeoType geo = {0, 0};
-            geo.latitude = (float)point.latitude;
-            geo.longitude = (float)point.longitude;
+            var geo = ICal.Geo () {
+                lat = point.latitude,
+                lon = point.longitude
+            };
             property.set_geo (geo);
             comp.add_property (property);
         }
