@@ -55,12 +55,12 @@ namespace Maya.Util {
                 }
             }
 
-            result.is_date = 0;
+            result.set_is_date (false);
             result.hour = time_local.get_hour ();
             result.minute = time_local.get_minute ();
             result.second = time_local.get_second ();
         } else {
-            result.is_date = 1;
+            result.set_is_date (true);
             result.hour = 0;
             result.minute = 0;
             result.second = 0;
@@ -112,9 +112,9 @@ namespace Maya.Util {
         ICal.Time dt_end = comp.get_dtend ();
         start_date = Util.ical_to_date_time (dt_start);
 
-        if (dt_end.is_null_time () == 0) {
+        if (!dt_end.is_null_time ()) {
             end_date = Util.ical_to_date_time (dt_end);
-        } else if (dt_start.is_it_date () == 0) {
+        } else if (dt_start.is_date ()) {
             end_date = start_date;
         } else if (comp.get_duration ().is_null_duration () == 0) {
             end_date = Util.ical_to_date_time (dt_start.add (comp.get_duration ()));
@@ -163,297 +163,6 @@ namespace Maya.Util {
         return false;
     }
 
-    public Gee.Collection<DateRange> event_date_ranges (ICal.Component comp, Util.DateRange view_range) {
-        var dateranges = new Gee.LinkedList<DateRange> ();
-
-        DateTime start, end;
-        get_local_datetimes_from_icalcomponent (comp, out start, out end);
-
-        start = strip_time (start);
-        end = strip_time (end);
-        dateranges.add (new Util.DateRange (start, end));
-
-        // Search for recursive events.
-        unowned ICal.Property property = comp.get_first_property (ICal.PropertyKind.RRULE_PROPERTY);
-        if (property != null) {
-            var rrule = property.get_rrule ();
-            switch (rrule.freq) {
-                case (ICal.RecurrenceFrequency.WEEKLY_RECURRENCE):
-                    generate_week_reccurence (dateranges, view_range, rrule, start, end);
-                    break;
-                case (ICal.RecurrenceFrequency.MONTHLY_RECURRENCE):
-                    generate_month_reccurence (dateranges, view_range, rrule, start, end);
-                    break;
-                case (ICal.RecurrenceFrequency.YEARLY_RECURRENCE):
-                    generate_year_reccurence (dateranges, view_range, rrule, start, end);
-                    break;
-                default:
-                    generate_day_reccurence (dateranges, view_range, rrule, start, end);
-                    break;
-            }
-        }
-
-        // EXDATEs elements are exceptions dates that should not appear.
-        property = comp.get_first_property (ICal.PropertyKind.EXDATE_PROPERTY);
-        while (property != null) {
-            var exdate = property.get_exdate ();
-            var date = ical_to_date_time (exdate);
-            dateranges.@foreach ((daterange) => {
-                var first = daterange.first_dt;
-                var last = daterange.last_dt;
-                if (first.get_year () <= date.get_year () && last.get_year () >= date.get_year ()) {
-                    if (first.get_day_of_year () <= date.get_day_of_year () && last.get_day_of_year () >= date.get_day_of_year ()) {
-                        dateranges.remove (daterange);
-                        return false;
-                    }
-                }
-
-                return true;
-            });
-
-            property = comp.get_next_property (ICal.PropertyKind.EXDATE_PROPERTY);
-        }
-
-        return dateranges;
-    }
-
-    private void generate_day_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
-                                           ICal.Recurrence rrule, DateTime start, DateTime end) {
-        if (rrule.until.is_null_time () == 0) {
-            for (int i = 1; i <= (int)(rrule.until.day/rrule.interval); i++) {
-                int n = i*rrule.interval;
-                if (view_range.contains (start.add_days (n)) || view_range.contains (end.add_days (n)))
-                    dateranges.add (new Util.DateRange (start.add_days (n), end.add_days (n)));
-            }
-        } else if (rrule.count > 0) {
-            for (int i = 1; i<=rrule.count; i++) {
-                int n = i*rrule.interval;
-                if (view_range.contains (start.add_days (n)) || view_range.contains (end.add_days (n)))
-                    dateranges.add (new Util.DateRange (start.add_days (n), end.add_days (n)));
-            }
-        } else {
-            int i = 1;
-            int n = i*rrule.interval;
-            while (view_range.last_dt.compare (start.add_days (n)) > 0) {
-                dateranges.add (new Util.DateRange (start.add_days (n), end.add_days (n)));
-                i++;
-                n = i*rrule.interval;
-            }
-        }
-    }
-
-    private void generate_year_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
-                                           ICal.Recurrence rrule, DateTime start, DateTime end) {
-        if (rrule.until.is_null_time () == 0) {
-            /*for (int i = 0; i <= rrule.until.year; i++) {
-                int n = i*rrule.interval;
-                if (view_range.contains (start.add_years (n)) || view_range.contains (end.add_years (n)))
-                    dateranges.add (new Util.DateRange (start.add_years (n), end.add_years (n)));
-            }*/
-        } else if (rrule.count > 0) {
-            for (int i = 1; i<=rrule.count; i++) {
-                int n = i*rrule.interval;
-                if (view_range.contains (start.add_years (n)) || view_range.contains (end.add_years (n)))
-                    dateranges.add (new Util.DateRange (start.add_years (n), end.add_years (n)));
-            }
-        } else {
-            int i = 1;
-            int n = i*rrule.interval;
-            bool is_null_time = rrule.until.is_null_time () == 1;
-            var temp_start = start.add_years (n);
-            while (view_range.last_dt.compare (temp_start) > 0) {
-                if (is_null_time == false) {
-                    if (temp_start.get_year () > rrule.until.year)
-                        break;
-                    else if (temp_start.get_year () == rrule.until.year && temp_start.get_month () > rrule.until.month)
-                        break;
-                    else if (temp_start.get_year () == rrule.until.year && temp_start.get_month () == rrule.until.month &&temp_start.get_day_of_month () > rrule.until.day)
-                        break;
-
-                }
-                dateranges.add (new Util.DateRange (temp_start, end.add_years (n)));
-                i++;
-                n = i*rrule.interval;
-                temp_start = start.add_years (n);
-            }
-        }
-    }
-
-    private void generate_month_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
-                                           ICal.Recurrence rrule, DateTime start, DateTime end) {
-        // Computes month recurrences by day (for example: third friday of the month).
-        for (int k = 0; k <= ICal.Size.BY_DAY; k++) {
-            if (rrule.by_day[k] < ICal.Size.BY_DAY) {
-                if (rrule.count > 0) {
-                    for (int i = 1; i<=rrule.count; i++) {
-                        int n = i*rrule.interval;
-                        var start_ical_day = get_date_from_ical_day (start.add_months (n), rrule.by_day[k]);
-                        int interval = start_ical_day.get_day_of_month () - start.get_day_of_month ();
-                        dateranges.add (new Util.DateRange (start_ical_day, end.add_months (n).add_days (interval)));
-                    }
-                } else {
-                    int i = 1;
-                    bool is_null_time = rrule.until.is_null_time () == 1;
-                    bool is_last = (rrule.by_day[k] < 0);
-                    var start_ical_day = start;
-                    var end_ical_day = end;
-                    var days = end.get_day_of_month () - start.get_day_of_month ();
-                    int start_week = (int)GLib.Math.ceil ((double)start.get_day_of_month () / 7);
-
-                    // Loop through each individual month from the start and test to see if our event is in the month or not
-                    while (view_range.last_dt.compare (start_ical_day) > 0) {
-                        if (is_null_time == false) {
-                            if (start_ical_day.get_year () > rrule.until.year)
-                                break;
-                            else if (start_ical_day.get_year () == rrule.until.year && start_ical_day.get_month () > rrule.until.month)
-                                break;
-                            else if (start_ical_day.get_year () == rrule.until.year && start_ical_day.get_month () == rrule.until.month && start_ical_day.get_day_of_month () > rrule.until.day)
-                                break;
-                        }
-
-                        var start_ical_day_new = get_date_from_ical_day (start.add_months (i), rrule.by_day[k]);
-                        int month = start.add_months (i).get_month ();
-                        int week = start_week;
-
-                        // If event repeats on a last day of the month, take us back a week if we move into a new month
-                        if (is_last && start_ical_day_new.get_month () != month) {
-                            start_ical_day_new = start_ical_day_new.add_weeks (-1);
-                        }
-
-                        else if (!is_last) {
-                            if (start_ical_day_new.get_day_of_month () <= 7 && start_ical_day_new.add_weeks (-1).get_month () == month) {
-                                week = 2;
-                            }
-                            else {
-                                week =  (int)GLib.Math.ceil ((double)start_ical_day_new.get_day_of_month () / 7);
-                            }
-                        }
-
-                        start_ical_day_new = start_ical_day_new.add_weeks (start_week - week);
-                        if (start_ical_day_new.get_month () != month) {
-                            start_ical_day = start.add_months (i);
-                        }
-                        else {
-                            start_ical_day = start_ical_day_new;
-                            end_ical_day = start_ical_day.add_days (days);
-                            dateranges.add (new Util.DateRange (start_ical_day, end_ical_day));
-                        }
-
-                        i++;
-                    }
-                }
-            } else {
-                break;
-            }
-        }
-
-        // Computes month recurrences by month day (for example: 4th of the month).
-        if (rrule.by_month_day[0] < ICal.Size.BY_MONTHDAY) {
-            if (rrule.count > 0) {
-                for (int i = 1; i<=rrule.count; i++) {
-                    int n = i*rrule.interval;
-                    dateranges.add (new Util.DateRange (start.add_months (n), end.add_months (n)));
-                }
-            } else {
-                int i = 1;
-                int n = i*rrule.interval;
-                bool is_null_time = rrule.until.is_null_time () == 1;
-                var temp_start = start.add_months (n);
-                while (view_range.last_dt.compare (temp_start) > 0) {
-                    if (is_null_time == false) {
-                        if (temp_start.get_year () > rrule.until.year)
-                            break;
-                        else if (temp_start.get_year () == rrule.until.year && temp_start.get_month () > rrule.until.month)
-                            break;
-                        else if (temp_start.get_year () == rrule.until.year && temp_start.get_month () == rrule.until.month && temp_start.get_day_of_month () > rrule.until.day)
-                            break;
-
-                    }
-
-                    dateranges.add (new Util.DateRange (temp_start, end.add_months (n)));
-                    i++;
-                    n = i*rrule.interval;
-                    temp_start = start.add_months (n);
-                }
-            }
-        }
-    }
-
-    private void generate_week_reccurence (Gee.LinkedList<DateRange> dateranges, Util.DateRange view_range,
-                                           ICal.Recurrence rrule, DateTime start_, DateTime end_) {
-        DateTime start = start_;
-        DateTime end = end_;
-        for (int k = 0; k <= ICal.Size.BY_DAY; k++) {
-            if (rrule.by_day[k] > 7)
-                break;
-
-            int day_to_add = 0;
-            switch (rrule.by_day[k]) {
-                case 1:
-                    day_to_add = 7 - start.get_day_of_week ();
-                    break;
-                case 2:
-                    day_to_add = 1 - start.get_day_of_week ();
-                    break;
-                case 3:
-                    day_to_add = 2 - start.get_day_of_week ();
-                    break;
-                case 4:
-                    day_to_add = 3 - start.get_day_of_week ();
-                    break;
-                case 5:
-                    day_to_add = 4 - start.get_day_of_week ();
-                    break;
-                case 6:
-                    day_to_add = 5 - start.get_day_of_week ();
-                    break;
-                default:
-                    day_to_add = 6 - start.get_day_of_week ();
-                    break;
-            }
-
-            start = start.add_days (day_to_add);
-            end = end.add_days (day_to_add);
-
-            if (rrule.count > 0) {
-                if (day_to_add > 0 && day_to_add + start_.get_day_of_week () < 7 ) {
-                    dateranges.add (new Util.DateRange (start, end));
-                }
-                for (int i = 1; i<=rrule.count; i++) {
-                    int n = i*rrule.interval*7;
-                    if (view_range.contains (start.add_days (n)) || view_range.contains (end.add_days (n)))
-                        dateranges.add (new Util.DateRange (start.add_days (n), end.add_days (n)));
-                }
-            } else {
-                int i = 1;
-                int n = rrule.interval;
-                if (day_to_add > 0 && day_to_add + start_.get_day_of_week () < 7) {
-                    dateranges.add (new Util.DateRange (start, end));
-                }
-                n *= 7;
-                bool is_null_time = rrule.until.is_null_time () == 1;
-                var temp_start = start.add_days (n);
-                while (view_range.last_dt.compare (temp_start) > 0) {
-                    if (is_null_time == false) {
-                        if (temp_start.get_year () > rrule.until.year)
-                            break;
-                        else if (temp_start.get_year () == rrule.until.year) {
-                            if (temp_start.get_month () > rrule.until.month)
-                                break;
-                            else if (temp_start.get_month () == rrule.until.month && temp_start.get_day_of_month () > rrule.until.day)
-                                break;
-                        }
-                    }
-
-                    dateranges.add (new Util.DateRange (temp_start, end.add_days (n)));
-                    i++;
-                    n = i*rrule.interval*7;
-                    temp_start = start.add_days (n);
-                }
-            }
-        }
-    }
-
     public bool is_multiday_event (ICal.Component comp) {
         DateTime start, end;
         get_local_datetimes_from_icalcomponent (comp, out start, out end);
@@ -477,37 +186,7 @@ namespace Maya.Util {
         }
     }
 
-    private DateTime get_date_from_ical_day (DateTime date, short day) {
-        int day_to_add = 0;
-        switch (ICal.Recurrence.day_day_of_week (day)) {
-            case ICal.RecurrenceWeekday.SUNDAY_WEEKDAY:
-                day_to_add = 7 - date.get_day_of_week ();
-                break;
-            case ICal.RecurrenceWeekday.MONDAY_WEEKDAY:
-                day_to_add = 1 - date.get_day_of_week ();
-                break;
-            case ICal.RecurrenceWeekday.TUESDAY_WEEKDAY:
-                day_to_add = 2 - date.get_day_of_week ();
-                break;
-            case ICal.RecurrenceWeekday.WEDNESDAY_WEEKDAY:
-                day_to_add = 3 - date.get_day_of_week ();
-                break;
-            case ICal.RecurrenceWeekday.THURSDAY_WEEKDAY:
-                day_to_add = 4 - date.get_day_of_week ();
-                break;
-            case ICal.RecurrenceWeekday.FRIDAY_WEEKDAY:
-                day_to_add = 5 - date.get_day_of_week ();
-                break;
-            default:
-                day_to_add = 6 - date.get_day_of_week ();
-                break;
-        }
-
-        return date.add_days (day_to_add);
-    }
-
     public DateTime get_start_of_month (owned DateTime? date = null) {
-
         if (date == null)
             date = new DateTime.now_local ();
 
@@ -533,10 +212,68 @@ namespace Maya.Util {
     }
 
     /* Returns true if 'a' and 'b' are the same ECal.Component */
-    private bool calcomponent_equal_func (ECal.Component a, ECal.Component b) {
-        unowned ICal.Component comp_a = a.get_icalcomponent ();
-        unowned ICal.Component comp_b = b.get_icalcomponent ();
-        return comp_a.get_uid () == comp_b.get_uid ();
+    public bool calcomponent_equal_func (ECal.Component a, ECal.Component b) {
+        return a.get_id ().equal (b.get_id ());
+    }
+
+    public int calcomponent_compare_func (ECal.Component? a, ECal.Component? b) {
+        if (a == null && b != null) {
+            return 1;
+        } else if (b == null && a != null) {
+            return -1;
+        } else if (b == null && a == null) {
+            return 0;
+        }
+
+        var a_id = a.get_id ();
+        var b_id = b.get_id ();
+        int res = GLib.strcmp (a_id.uid, b_id.uid);
+        if (res == 0) {
+            return GLib.strcmp (a_id.rid, b_id.rid);
+        }
+
+        return res;
+    }
+
+    public bool calcomp_is_on_day (ECal.Component comp, GLib.DateTime day) {
+        ECal.ComponentDateTime start_dt;
+        ECal.ComponentDateTime end_dt;
+
+        comp.get_dtstart (out start_dt);
+        comp.get_dtend (out end_dt);
+
+        var stripped_time = new DateTime.local (day.get_year (), day.get_month (), day.get_day_of_month (), 0, 0, 0);
+
+        var selected_date_unix = stripped_time.to_unix ();
+        var selected_date_unix_next = stripped_time.add_days (1).to_unix ();
+        time_t start_unix;
+        time_t end_unix;
+
+        /* We want to be relative to the local timezone */
+        start_unix = (*start_dt.value).as_timet_with_zone (ECal.Util.get_system_timezone ());
+        end_unix = (*end_dt.value).as_timet_with_zone (ECal.Util.get_system_timezone ());
+
+        /* If the selected date is inside the event */
+        if (start_unix < selected_date_unix && selected_date_unix_next < end_unix) {
+            return true;
+        }
+
+        /* If the event start before the selected date but finished in the selected date */
+        if (start_unix < selected_date_unix && selected_date_unix < end_unix) {
+            return true;
+        }
+
+        /* If the event start after the selected date but finished after the selected date */
+        if (start_unix < selected_date_unix_next && selected_date_unix_next < end_unix) {
+            return true;
+        }
+
+        /* If the event is inside the selected date */
+        if (start_unix < selected_date_unix_next && selected_date_unix < end_unix) {
+            return true;
+        }
+
+        return false;
     }
 
     /* Returns true if 'a' and 'b' are the same E.Source */
