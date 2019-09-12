@@ -102,8 +102,8 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 case (ECal.ComponentAlarmAction.DISPLAY):
                     ECal.ComponentAlarmTrigger trigger;
                     e_alarm.get_trigger (out trigger);
-                    if (trigger.type == ECal.ComponentAlarmTriggerType.RELATIVE_START) {
-                        ICal.Duration duration = trigger.rel_duration;
+                    if (trigger.get_kind () == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
+                        ICal.Duration duration = trigger.get_duration ();
                         var reminder = add_reminder (alarm_uid);
                         reminder.set_duration (duration);
                     }
@@ -125,8 +125,8 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 alarm.set_action (ECal.ComponentAlarmAction.DISPLAY);
                 ECal.ComponentAlarmTrigger trigger;
                 alarm.get_trigger (out trigger);
-                trigger.rel_duration = reminder.get_duration ();
-                trigger.type = ECal.ComponentAlarmTriggerType.RELATIVE_START;
+                trigger.set_duration (reminder.get_duration ());
+                trigger.set_kind (ECal.ComponentAlarmTriggerKind.RELATIVE_START);
                 alarm.set_trigger (trigger);
                 parent_dialog.ecal.add_alarm (alarm);
             } else if (reminder.change == true) {
@@ -134,8 +134,8 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 alarm.set_action (ECal.ComponentAlarmAction.DISPLAY);
                 ECal.ComponentAlarmTrigger trigger;
                 alarm.get_trigger (out trigger);
-                trigger.type = ECal.ComponentAlarmTriggerType.RELATIVE_START;
-                trigger.rel_duration = reminder.get_duration ();
+                trigger.set_kind (ECal.ComponentAlarmTriggerKind.RELATIVE_START);
+                trigger.set_duration (reminder.get_duration ());
                 alarm.set_trigger (trigger);
             }
         }
@@ -204,37 +204,37 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
 
     public void set_duration (ICal.Duration duration) {
         is_human_change = false;
-        if (duration.weeks > 0) {
+        if (duration.get_weeks () > 0) {
             time.active = 15;
-        } else if (duration.days > 1) {
+        } else if (duration.get_days () > 1) {
             time.active = 14;
-        } else if (duration.days > 0) {
+        } else if (duration.get_days () > 0) {
             time.active = 13;
-        } else if (duration.hours > 15) {
+        } else if (duration.get_hours () > 15) {
             time.active = 13;
-        } else if (duration.hours > 5) {
+        } else if (duration.get_hours () > 5) {
             time.active = 12;
-        } else if (duration.hours > 2) {
+        } else if (duration.get_hours () > 2) {
             time.active = 11;
-        } else if (duration.hours > 1) {
+        } else if (duration.get_hours () > 1) {
             time.active = 10;
-        } else if (duration.hours > 0) {
+        } else if (duration.get_hours () > 0) {
             time.active = 9;
-        } else if (duration.minutes > 30) {
+        } else if (duration.get_minutes () > 30) {
             time.active = 8;
-        } else if (duration.minutes > 25) {
+        } else if (duration.get_minutes () > 25) {
             time.active = 7;
-        } else if (duration.minutes > 20) {
+        } else if (duration.get_minutes () > 20) {
             time.active = 6;
-        } else if (duration.minutes > 15) {
+        } else if (duration.get_minutes () > 15) {
             time.active = 5;
-        } else if (duration.minutes > 10) {
+        } else if (duration.get_minutes () > 10) {
             time.active = 4;
-        } else if (duration.minutes > 5) {
+        } else if (duration.get_minutes () > 5) {
             time.active = 3;
-        } else if (duration.minutes > 1) {
+        } else if (duration.get_minutes () > 1) {
             time.active = 2;
-        } else if (duration.minutes > 0) {
+        } else if (duration.get_minutes () > 0) {
             time.active = 1;
         } else {
             time.active = 0;
@@ -246,49 +246,49 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
         ICal.Duration duration = ICal.Duration.null_duration ();
         switch (time.active) {
             case 1:
-                duration.minutes = 1;
+                duration.set_minutes (1);
                 break;
             case 2:
-                duration.minutes = 5;
+                duration.set_minutes (5);
                 break;
             case 3:
-                duration.minutes = 10;
+                duration.set_minutes (10);
                 break;
             case 4:
-                duration.minutes = 15;
+                duration.set_minutes (15);
                 break;
             case 5:
-                duration.minutes = 20;
+                duration.set_minutes (20);
                 break;
             case 6:
-                duration.minutes = 25;
+                duration.set_minutes (25);
                 break;
             case 7:
-                duration.minutes = 30;
+                duration.set_minutes (30);
                 break;
             case 8:
-                duration.minutes = 45;
+                duration.set_minutes (45);
                 break;
             case 9:
-                duration.hours = 1;
+                duration.set_hours (1);
                 break;
             case 10:
-                duration.hours = 2;
+                duration.set_hours (2);
                 break;
             case 11:
-                duration.hours = 3;
+                duration.set_hours (3);
                 break;
             case 12:
-                duration.hours = 12;
+                duration.set_hours (12);
                 break;
             case 13:
-                duration.hours = 24;
+                duration.set_hours (24);
                 break;
             case 14:
-                duration.days = 2;
+                duration.set_days (2);
                 break;
             case 15:
-                duration.weeks = 1;
+                duration.set_weeks (1);
                 break;
         }
         return duration;

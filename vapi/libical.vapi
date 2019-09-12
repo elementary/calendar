@@ -20,6 +20,10 @@ namespace ICal {
 		public void remove_element_at (int position);
 		[CCode (cname = "icalarray_sort")]
 		public void sort (GLib.Callback compare);
+		[CCode (cname = "_vala_icalarray_size")]
+		public int size () {
+			return (int) num_elements;
+		}
 	}
 	[CCode (cheader_filename = "libical/ical.h", ref_function = "icalattach_ref", ref_function_void = true, unref_function = "icalattach_unref", cname = "icalattach")]
 	[Compact]
@@ -135,7 +139,11 @@ namespace ICal {
 		[CCode (cname = "icalcomponent_get_uid")]
 		public unowned string get_uid ();
 		[CCode (cname = "icalcomponent_is_valid")]
-		public int is_valid ();
+		private int _is_valid ();
+		[CCode (cname = "_vala_icalcomponent_is_valid")]
+		public bool is_valid () {
+			return _is_valid () != 0;
+		}
 		[CCode (cname = "icalcomponent_isa")]
 		public ICal.ComponentKind isa ();
 		[CCode (cname = "icalcomponent_isa_component")]
@@ -237,9 +245,53 @@ namespace ICal {
 		[CCode (cname = "icaldurationtype_is_bad_duration")]
 		public int is_bad_duration ();
 		[CCode (cname = "icaldurationtype_is_null_duration")]
-		public int is_null_duration ();
+		private int _is_null_duration ();
+		[CCode (cname = "_vala_icaldurationtype_is_null_duration")]
+		public bool is_null_duration () {
+			return _is_null_duration () != 0;
+		}
 		[CCode (cname = "icaldurationtype_null_duration")]
 		public static ICal.Duration null_duration ();
+		[CCode (cname = "_vala_icaldurationtype_get_days")]
+		public uint get_days () {
+			return days;
+		}
+		[CCode (cname = "_vala_icaldurationtype_set_days")]
+		public void set_days (uint days) {
+			this.days = days;
+		}
+		[CCode (cname = "_vala_icaldurationtype_get_hours")]
+		public uint get_hours () {
+			return hours;
+		}
+		[CCode (cname = "_vala_icaldurationtype_set_hours")]
+		public void set_hours (uint hours) {
+			this.hours = hours;
+		}
+		[CCode (cname = "_vala_icaldurationtype_get_minutes")]
+		public uint get_minutes () {
+			return minutes;
+		}
+		[CCode (cname = "_vala_icaldurationtype_set_minutes")]
+		public void set_minutes (uint minutes) {
+			this.minutes = minutes;
+		}
+		[CCode (cname = "_vala_icaldurationtype_get_seconds")]
+		public uint get_seconds () {
+			return seconds;
+		}
+		[CCode (cname = "_vala_icaldurationtype_set_seconds")]
+		public void set_seconds (uint seconds) {
+			this.seconds = seconds;
+		}
+		[CCode (cname = "_vala_icaldurationtype_get_weeks")]
+		public uint get_weeks () {
+			return weeks;
+		}
+		[CCode (cname = "_vala_icaldurationtype_set_weeks")]
+		public void set_weeks (uint weeks) {
+			this.weeks = weeks;
+		}
 	}
 	[CCode (cheader_filename = "libical/ical.h", copy_function = "icalparameter_new_clone", free_function = "icalparameter_free", cname = "icalparameter")]
 	[Compact]
@@ -256,8 +308,6 @@ namespace ICal {
 		public unowned string as_ical_string_r ();
 		[CCode (cname = "icalparameter_new_charset", has_construct_function = false)]
 		public Parameter.charset (string v);
-		[CCode (cname = "icalparameter_new_clone", has_construct_function = false)]
-		public Parameter.clone (ICal.Parameter p);
 		[CCode (cname = "icalparameter_new_cn", has_construct_function = false)]
 		public Parameter.cn (string v);
 		[CCode (cname = "icalparameter_new_cutype", has_construct_function = false)]
@@ -282,6 +332,8 @@ namespace ICal {
 		public Parameter.from_string (string value);
 		[CCode (cname = "icalparameter_new_from_value_string", has_construct_function = false)]
 		public Parameter.from_value_string (ICal.ParameterKind kind, string value);
+		[CCode (cname = "icalparameter_new_clone")]
+		public Parameter clone ();
 		[CCode (cname = "icalparameter_get_actionparam")]
 		public ICal.ParameterAction get_actionparam ();
 		[CCode (cname = "icalparameter_get_altrep")]
@@ -321,7 +373,7 @@ namespace ICal {
 		[CCode (cname = "icalparameter_get_options")]
 		public unowned string get_options ();
 		[CCode (cname = "icalparameter_get_partstat")]
-		public ICal.ParameterPartStat get_partstat ();
+		public ICal.ParameterPartstat get_partstat ();
 		[CCode (cname = "icalparameter_get_range")]
 		public ICal.ParameterRange get_range ();
 		[CCode (cname = "icalparameter_get_related")]
@@ -371,7 +423,7 @@ namespace ICal {
 		[CCode (cname = "icalparameter_new_options", has_construct_function = false)]
 		public Parameter.options (string v);
 		[CCode (cname = "icalparameter_new_partstat", has_construct_function = false)]
-		public Parameter.partstat (ICal.ParameterPartStat v);
+		public Parameter.partstat (ICal.ParameterPartstat v);
 		[CCode (cname = "icalparameter_new_range", has_construct_function = false)]
 		public Parameter.range (ICal.ParameterRange v);
 		[CCode (cname = "icalparameter_new_related", has_construct_function = false)]
@@ -423,7 +475,7 @@ namespace ICal {
 		[CCode (cname = "icalparameter_set_options")]
 		public void set_options (string v);
 		[CCode (cname = "icalparameter_set_partstat")]
-		public void set_partstat (ICal.ParameterPartStat v);
+		public void set_partstat (ICal.ParameterPartstat v);
 		[CCode (cname = "icalparameter_set_range")]
 		public void set_range (ICal.ParameterRange v);
 		[CCode (cname = "icalparameter_set_related")]
@@ -528,8 +580,6 @@ namespace ICal {
 		public Property.categories (string v);
 		[CCode (cname = "icalproperty_new_class", has_construct_function = false)]
 		public Property.@class (ICal.PropertyClass v);
-		[CCode (cname = "icalproperty_new_clone", has_construct_function = false)]
-		public Property.clone (ICal.Property prop);
 		[CCode (cname = "icalproperty_new_cmd", has_construct_function = false)]
 		public Property.cmd (ICal.PropertyCmd v);
 		[CCode (cname = "icalproperty_new_comment", has_construct_function = false)]
@@ -591,7 +641,9 @@ namespace ICal {
 		[CCode (cname = "icalproperty_new_from_string", has_construct_function = false)]
 		public Property.from_string (string str);
 		[CCode (cname = "icalproperty_new_geo", has_construct_function = false)]
-		public Property.geo (ICal.GeoType v);
+		public Property.geo (ICal.Geo v);
+		[CCode (cname = "icalproperty_new_clone")]
+		public Property clone ();
 		[CCode (cname = "icalproperty_get_action")]
 		public ICal.PropertyAction get_action ();
 		[CCode (cname = "icalproperty_get_allowconflict")]
@@ -669,7 +721,7 @@ namespace ICal {
 		[CCode (cname = "icalproperty_get_freebusy")]
 		public ICal.PeriodType get_freebusy ();
 		[CCode (cname = "icalproperty_get_geo")]
-		public ICal.GeoType get_geo ();
+		public ICal.Geo get_geo ();
 		[CCode (cname = "icalproperty_get_grant")]
 		public unowned string get_grant ();
 		[CCode (cname = "icalproperty_get_itipversion")]
@@ -979,7 +1031,7 @@ namespace ICal {
 		[CCode (cname = "icalproperty_set_freebusy")]
 		public void set_freebusy (ICal.PeriodType v);
 		[CCode (cname = "icalproperty_set_geo")]
-		public void set_geo (ICal.GeoType v);
+		public void set_geo (ICal.Geo v);
 		[CCode (cname = "icalproperty_set_grant")]
 		public void set_grant (string v);
 		[CCode (cname = "icalproperty_set_itipversion")]
@@ -1223,7 +1275,7 @@ namespace ICal {
 		[CCode (cname = "icalproperty_vanew_freebusy")]
 		public static unowned ICal.Property vanew_freebusy (ICal.PeriodType v);
 		[CCode (cname = "icalproperty_vanew_geo")]
-		public static unowned ICal.Property vanew_geo (ICal.GeoType v);
+		public static unowned ICal.Property vanew_geo (ICal.Geo v);
 		[CCode (cname = "icalproperty_vanew_grant")]
 		public static unowned ICal.Property vanew_grant (string v);
 		[CCode (cname = "icalproperty_vanew_itipversion")]
@@ -1414,7 +1466,7 @@ namespace ICal {
 		[CCode (cname = "icaltimezone_get_builtin_timezone_from_offset")]
 		public static unowned ICal.Timezone get_builtin_timezone_from_offset (int64 offset, string? tzname);
 		[CCode (cname = "icaltimezone_get_builtin_timezone_from_tzid")]
-		public static unowned ICal.Timezone get_builtin_timezone_from_tzid (string tzid);
+		public static unowned ICal.Timezone get_builtin_timezone_from_tzid (string? tzid);
 		[CCode (cname = "icaltimezone_get_builtin_timezones")]
 		public static unowned ICal.Array<unowned ICal.Timezone> get_builtin_timezones ();
 		[CCode (cname = "icaltimezone_get_component")]
@@ -1432,9 +1484,9 @@ namespace ICal {
 		[CCode (cname = "icaltimezone_get_tznames")]
 		public unowned string get_tznames ();
 		[CCode (cname = "icaltimezone_get_utc_offset")]
-		public int get_utc_offset (ICal.Time? tt, out int is_daylight);
+		public int get_utc_offset (out ICal.Time? tt, out int is_daylight);
 		[CCode (cname = "icaltimezone_get_utc_offset_of_utc_time")]
-		public int get_utc_offset_of_utc_time (ICal.Time tt, out int is_daylight);
+		public int get_utc_offset_of_utc_time (out ICal.Time tt, out int is_daylight);
 		[CCode (cname = "icaltimezone_get_utc_timezone")]
 		public static unowned ICal.Timezone get_utc_timezone ();
 		[CCode (cname = "icaltimezone_release_zone_tab")]
@@ -1467,8 +1519,6 @@ namespace ICal {
 		public Value.carlevel (ICal.PropertyCarlevel v);
 		[CCode (cname = "icalvalue_new_class", has_construct_function = false)]
 		public Value.@class (ICal.PropertyClass v);
-		[CCode (cname = "icalvalue_new_clone", has_construct_function = false)]
-		public Value.clone (ICal.Value value);
 		[CCode (cname = "icalvalue_new_cmd", has_construct_function = false)]
 		public Value.cmd (ICal.PropertyCmd v);
 		[CCode (cname = "icalvalue_compare")]
@@ -1490,7 +1540,9 @@ namespace ICal {
 		[CCode (cname = "icalvalue_new_from_string", has_construct_function = false)]
 		public Value.from_string (ICal.ValueKind kind, global::string str);
 		[CCode (cname = "icalvalue_new_geo", has_construct_function = false)]
-		public Value.geo (ICal.GeoType v);
+		public Value.geo (ICal.Geo v);
+		[CCode (cname = "icalvalue_new_clone")]
+		public Value clone ();
 		[CCode (cname = "icalvalue_get_action")]
 		public ICal.PropertyAction get_action ();
 		[CCode (cname = "icalvalue_get_attach")]
@@ -1518,7 +1570,7 @@ namespace ICal {
 		[CCode (cname = "icalvalue_get_float")]
 		public global::float get_float ();
 		[CCode (cname = "icalvalue_get_geo")]
-		public ICal.GeoType get_geo ();
+		public ICal.Geo get_geo ();
 		[CCode (cname = "icalvalue_get_integer")]
 		public int get_integer ();
 		[CCode (cname = "icalvalue_get_method")]
@@ -1604,7 +1656,7 @@ namespace ICal {
 		[CCode (cname = "icalvalue_set_float")]
 		public void set_float (global::float v);
 		[CCode (cname = "icalvalue_set_geo")]
-		public void set_geo (ICal.GeoType v);
+		public void set_geo (ICal.Geo v);
 		[CCode (cname = "icalvalue_set_integer")]
 		public void set_integer (int v);
 		[CCode (cname = "icalvalue_set_method")]
@@ -1806,11 +1858,9 @@ namespace ICal {
 	}
 	[SimpleType]
 	[CCode (cheader_filename = "libical/ical.h", cname = "struct icalgeotype", has_type_id = false)]
-	public struct GeoType {
-		[CCode (cname = "lat")]
-		public float latitude;
-		[CCode (cname = "lon")]
-		public float longitude;
+	public struct Geo {
+		public double lat;
+		public double lon;
 	}
 	[SimpleType]
 	[CCode (cheader_filename = "libical/ical.h", cname = "struct icalperiodtype", has_type_id = false)]
@@ -1896,7 +1946,8 @@ namespace ICal {
 		public int minute;
 		public int second;
 		public int is_utc;
-		public int is_date;
+		[CCode (cname = "is_date")]
+		public int _is_date;
 		public int is_daylight;
 		public weak ICal.Timezone zone;
 		[CCode (cname = "icaltime_today", has_construct_function = false)]
@@ -1919,7 +1970,7 @@ namespace ICal {
 		public ICal.Time.null_time ();
 		[CCode (cname = "_vala_icaltime_clone")]
 		public ICal.Time clone () {
-			return ICal.Time.from_timet_with_zone (this.as_timet_with_zone (this.zone), this.is_date, this.zone);
+			return ICal.Time.from_timet_with_zone (this.as_timet_with_zone (this.zone), this._is_date, this.zone);
 		}
 		[CCode (cname = "icaltime_add")]
 		public ICal.Time add (ICal.Duration d);
@@ -1956,13 +2007,21 @@ namespace ICal {
 		[CCode (cname = "icaltime_get_tzid")]
 		public unowned string get_tzid ();
 		[CCode (cname = "icaltime_is_date")]
-		public int is_it_date ();
+		private int is_it_date ();
+		[CCode (cname = "_vala_icaltime_is_date")]
+		public bool is_date () {
+			return is_it_date () != 0;
+		}
 		[CCode (cname = "icaltime_is_floating")]
 		public int is_floating ();
 		[CCode (cname = "icaltime_is_leap_year")]
 		public int is_leap_year (int year);
 		[CCode (cname = "icaltime_is_null_time")]
-		public int is_null_time ();
+		private int is_it_null_time ();
+		[CCode (cname = "_vala_icaltime_is_null_time")]
+		public bool is_null_time () {
+			return is_it_null_time () != 0;
+		}
 		[CCode (cname = "icaltime_is_utc")]
 		public int is_it_utc ();
 		[CCode (cname = "icaltime_is_valid_time")]
@@ -1979,6 +2038,10 @@ namespace ICal {
 		public unowned ICal.Duration subtract (ICal.Time t2);
 		[CCode (cname = "icaltime_week_number")]
 		public int week_number ();
+		[CCode (cname = "_vala_icaltime_set_is_date")]
+		public void set_is_date (bool is_date) {
+			this._is_date = is_date ? 1 : 0;
+		}
 		[CCode (cname = "_vala_icaltime_get_date")]
 		public void get_date (out int year, out int month, out int day) {
 			year = this.year;
@@ -1997,26 +2060,14 @@ namespace ICal {
 			minute = this.minute;
 			second = this.second;
 		}
-	}
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltimezonephase")]
-	public struct TimeZonePhase {
-		public weak string tzname;
-		public int is_stdandard;
-		public ICal.Time dtstart;
-		public int offsetto;
-		public int tzoffsetfrom;
-		public weak string comment;
-		public ICal.DateTimePeriodType rdate;
-		public weak string rrule;
-	}
-	[CCode (cheader_filename = "libical/ical.h", cname = "icaltimezonetype")]
-	public struct TimeZoneType {
-		public weak string tzid;
-		public ICal.Time last_mod;
-		public weak string tzurl;
-		public ICal.TimeZonePhase phases;
-		[CCode (cname = "icaltimezonetype_free")]
-		public void free ();
+		[CCode (cname = "_vala_icaltime_get_day")]
+		public int get_day () {
+			return this.day;
+		}
+		[CCode (cname = "_vala_icaltime_set_day")]
+		public void set_day (int day) {
+			this.day = day;
+		}
 	}
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalperiodtype")]
 	public struct TriggerType {
@@ -2064,58 +2115,37 @@ namespace ICal {
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
 	public enum ComponentKind {
-		[CCode (cname = "ICAL_NO_COMPONENT")]
-		NO,
-		[CCode (cname = "ICAL_ANY_COMPONENT")]
-		ANY,
-		[CCode (cname = "ICAL_XROOT_COMPONENT")]
-		XROOT,
-		[CCode (cname = "ICAL_XATTACH_COMPONENT")]
-		XATTACH,
-		[CCode (cname = "ICAL_VEVENT_COMPONENT")]
-		VEVENT,
-		[CCode (cname = "ICAL_VTODO_COMPONENT")]
-		VTODO,
-		[CCode (cname = "ICAL_VJOURNAL_COMPONENT")]
-		VJOURNAL,
-		[CCode (cname = "ICAL_VCALENDAR_COMPONENT")]
-		VCALENDAR,
-		[CCode (cname = "ICAL_VAGENDA_COMPONENT")]
-		VAGENDA,
-		[CCode (cname = "ICAL_VFREEBUSY_COMPONENT")]
-		VFREEBUSY,
-		[CCode (cname = "ICAL_VALARM_COMPONENT")]
-		VALARM,
-		[CCode (cname = "ICAL_XAUDIOALARM_COMPONENT")]
-		XAUDIOALARM,
-		[CCode (cname = "ICAL_XDISPLAYALARM_COMPONENT")]
-		XDISPLAYALARM,
-		[CCode (cname = "ICAL_XEMAILALARM_COMPONENT")]
-		XEMAILALARM,
-		[CCode (cname = "ICAL_XPROCEDUREALARM_COMPONENT")]
-		XPROCEDUREALARM,
-		[CCode (cname = "ICAL_VTIMEZONE_COMPONENT")]
-		VTIMEZONE,
-		[CCode (cname = "ICAL_XSTANDARD_COMPONENT")]
-		XSTANDARD,
-		[CCode (cname = "ICAL_XDAYLIGHT_COMPONENT")]
-		XDAYLIGHT,
-		[CCode (cname = "ICAL_X_COMPONENT")]
-		X,
-		[CCode (cname = "ICAL_VSCHEDULE_COMPONENT")]
-		VSCHEDULE,
-		[CCode (cname = "ICAL_VQUERY_COMPONENT")]
-		VQUERY,
-		[CCode (cname = "ICAL_VREPLY_COMPONENT")]
-		VREPLY,
-		[CCode (cname = "ICAL_VCAR_COMPONENT")]
-		VCAR,
-		[CCode (cname = "ICAL_VCOMMAND_COMPONENT")]
-		VCOMMAND,
-		[CCode (cname = "ICAL_XLICINVALID_COMPONENT")]
-		XLICINVALID,
-		[CCode (cname = "ICAL_XLICMIMEPART_COMPONENT")]
-		XLICMIMEPART
+		NO_COMPONENT,
+		ANY_COMPONENT,
+		XROOT_COMPONENT,
+		XATTACH_COMPONENT,
+		VEVENT_COMPONENT,
+		VTODO_COMPONENT,
+		VJOURNAL_COMPONENT,
+		VCALENDAR_COMPONENT,
+		VAGENDA_COMPONENT,
+		VFREEBUSY_COMPONENT,
+		VALARM_COMPONENT,
+		XAUDIOALARM_COMPONENT,
+		XDISPLAYALARM_COMPONENT,
+		XEMAILALARM_COMPONENT,
+		XPROCEDUREALARM_COMPONENT,
+		VTIMEZONE_COMPONENT,
+		XSTANDARD_COMPONENT,
+		XDAYLIGHT_COMPONENT,
+		X_COMPONENT,
+		VSCHEDULE_COMPONENT,
+		VQUERY_COMPONENT,
+		VREPLY_COMPONENT,
+		VCAR_COMPONENT,
+		VCOMMAND_COMPONENT,
+		XLICINVALID_COMPONENT,
+		XLICMIMEPART_COMPONENT,
+		VAVAILABILITY_COMPONENT,
+		XAVAILABLE_COMPONENT,
+		VPOLL_COMPONENT,
+		VVOTER_COMPONENT,
+		XVOTE_COMPONENT;
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
 	public enum Error {
@@ -2191,72 +2221,53 @@ namespace ICal {
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
 	public enum ParameterKind {
-		[CCode (cname = "ICAL_ANY_PARAMETER")]
-		ANY,
-		[CCode (cname = "ICAL_ACTIONPARAM_PARAMETER")]
-		ACTIONPARAM,
-		[CCode (cname = "ICAL_ALTREP_PARAMETER")]
-		ALTREP,
-		[CCode (cname = "ICAL_CHARSET_PARAMETER")]
-		CHARSET,
-		[CCode (cname = "ICAL_CN_PARAMETER")]
-		CN,
-		[CCode (cname = "ICAL_CUTYPE_PARAMETER")]
-		CUTYPE,
-		[CCode (cname = "ICAL_DELEGATEDFROM_PARAMETER")]
-		DELEGATEDFROM,
-		[CCode (cname = "ICAL_DELEGATEDTO_PARAMETER")]
-		DELEGATEDTO,
-		[CCode (cname = "ICAL_DIR_PARAMETER")]
-		DIR,
-		[CCode (cname = "ICAL_ENABLE_PARAMETER")]
-		ENABLE,
-		[CCode (cname = "ICAL_ENCODING_PARAMETER")]
-		ENCODING,
-		[CCode (cname = "ICAL_FBTYPE_PARAMETER")]
-		FBTYPE,
-		[CCode (cname = "ICAL_FMTTYPE_PARAMETER")]
-		FMTTYPE,
-		[CCode (cname = "ICAL_ID_PARAMETER")]
-		ID,
-		[CCode (cname = "ICAL_LANGUAGE_PARAMETER")]
-		LANGUAGE,
-		[CCode (cname = "ICAL_LATENCY_PARAMETER")]
-		LATENCY,
-		[CCode (cname = "ICAL_LOCAL_PARAMETER")]
-		LOCAL,
-		[CCode (cname = "ICAL_LOCALIZE_PARAMETER")]
-		LOCALIZE,
-		[CCode (cname = "ICAL_MEMBER_PARAMETER")]
-		MEMBER,
-		[CCode (cname = "ICAL_OPTIONS_PARAMETER")]
-		OPTIONS,
-		[CCode (cname = "ICAL_PARTSTAT_PARAMETER")]
-		PARTSTAT,
-		[CCode (cname = "ICAL_RANGE_PARAMETER")]
-		RANGE,
-		[CCode (cname = "ICAL_RELATED_PARAMETER")]
-		RELATED,
-		[CCode (cname = "ICAL_RELTYPE_PARAMETER")]
-		RELTYPE,
-		[CCode (cname = "ICAL_ROLE_PARAMETER")]
-		ROLE,
-		[CCode (cname = "ICAL_RSVP_PARAMETER")]
-		RSVP,
-		[CCode (cname = "ICAL_SENTBY_PARAMETER")]
-		SENTBY,
-		[CCode (cname = "ICAL_TZID_PARAMETER")]
-		TZID,
-		[CCode (cname = "ICAL_VALUE_PARAMETER")]
-		VALUE,
-		[CCode (cname = "ICAL_X_PARAMETER")]
-		X,
-		[CCode (cname = "ICAL_XLICCOMPARETYPE_PARAMETER")]
-		XLICCOMPARETYPE,
-		[CCode (cname = "ICAL_XLICERRORTYPE_PARAMETER")]
-		XLICERRORTYPE,
-		[CCode (cname = "ICAL_NO_PARAMETER")]
-		NO
+		ANY_PARAMETER,
+		ACTIONPARAM_PARAMETER,
+		ALTREP_PARAMETER,
+		CHARSET_PARAMETER,
+		CN_PARAMETER,
+		CUTYPE_PARAMETER,
+		DELEGATEDFROM_PARAMETER,
+		DELEGATEDTO_PARAMETER,
+		DIR_PARAMETER,
+		ENABLE_PARAMETER,
+		ENCODING_PARAMETER,
+		FBTYPE_PARAMETER,
+		FILENAME_PARAMETER,
+		FMTTYPE_PARAMETER,
+		IANA_PARAMETER,
+		ID_PARAMETER,
+		LANGUAGE_PARAMETER,
+		LATENCY_PARAMETER,
+		LOCAL_PARAMETER,
+		LOCALIZE_PARAMETER,
+		MANAGEDID_PARAMETER,
+		MEMBER_PARAMETER,
+		MODIFIED_PARAMETER,
+		OPTIONS_PARAMETER,
+		PARTSTAT_PARAMETER,
+		PUBLICCOMMENT_PARAMETER,
+		RANGE_PARAMETER,
+		REASON_PARAMETER,
+		RELATED_PARAMETER,
+		RELTYPE_PARAMETER,
+		REQUIRED_PARAMETER,
+		RESPONSE_PARAMETER,
+		ROLE_PARAMETER,
+		RSVP_PARAMETER,
+		SCHEDULEAGENT_PARAMETER,
+		SCHEDULEFORCESEND_PARAMETER,
+		SCHEDULESTATUS_PARAMETER,
+		SENTBY_PARAMETER,
+		SIZE_PARAMETER,
+		STAYINFORMED_PARAMETER,
+		SUBSTATE_PARAMETER,
+		TZID_PARAMETER,
+		VALUE_PARAMETER,
+		X_PARAMETER,
+		XLICCOMPARETYPE_PARAMETER,
+		XLICERRORTYPE_PARAMETER,
+		NO_PARAMETER;
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_LOCAL_", has_type_id = false)]
 	public enum ParameterLocal {
@@ -2266,7 +2277,7 @@ namespace ICal {
 		NONE
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_PARTSTAT_", has_type_id = false, cname = "icalproperty_status")]
-	public enum ParameterPartStat {
+	public enum ParameterPartstat {
 		X,
 		NEEDSACTION,
 		ACCEPTED,

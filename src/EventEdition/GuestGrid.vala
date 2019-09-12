@@ -26,7 +26,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
     private Granite.Widgets.Avatar avatar;
 
     public GuestGrid (ICal.Property attendee) {
-        this.attendee = new ICal.Property.clone (attendee);
+        this.attendee = attendee.clone ();
         individual = null;
 
         var status_label = new Gtk.Label ("");
@@ -35,18 +35,18 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         var status_label_context = status_label.get_style_context ();
         status_label_context.add_class (Granite.STYLE_CLASS_H4_LABEL);
 
-        unowned ICal.Parameter parameter = attendee.get_first_parameter (ICal.ParameterKind.PARTSTAT);
+        unowned ICal.Parameter parameter = attendee.get_first_parameter (ICal.ParameterKind.PARTSTAT_PARAMETER);
         if (parameter != null) {
             switch (parameter.get_partstat ()) {
-                case ICal.ParameterPartStat.ACCEPTED:
+                case ICal.ParameterPartstat.ACCEPTED:
                     status_label.label = _("Accepted");
                     status_label_context.add_class ("success");
                     break;
-                case ICal.ParameterPartStat.DECLINED:
+                case ICal.ParameterPartstat.DECLINED:
                     status_label.label = _("Declined");
                     status_label_context.add_class (Gtk.STYLE_CLASS_ERROR);
                     break;
-                case ICal.ParameterPartStat.TENTATIVE:
+                case ICal.ParameterPartstat.TENTATIVE:
                     status_label.label = _("Maybe");
                     status_label_context.add_class (Gtk.STYLE_CLASS_ERROR);
                     break;
