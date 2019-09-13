@@ -20,29 +20,31 @@
 
 public class Maya.View.EventButton : Gtk.Revealer {
     public ECal.Component comp { get; construct set; }
-    public GLib.DateTime date { get; construct; }
+
+    private static Gtk.CssProvider css_provider;
 
     private Gtk.Label label;
     private Gtk.StyleContext grid_style_context;
 
-    public EventButton (ECal.Component comp, GLib.DateTime date) {
+    public EventButton (ECal.Component comp) {
         Object (
-             comp: comp,
-             date: date
+             comp: comp
          );
+    }
+
+    static construct {
+        css_provider = new Gtk.CssProvider ();
+        css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
     }
 
     construct {
         transition_type = Gtk.RevealerTransitionType.CROSSFADE;
 
-        label = new Gtk.Label (get_summary ());
+        label = new Gtk.Label (comp.get_summary ().get_value ());
         label.hexpand = true;
         label.ellipsize = Pango.EllipsizeMode.END;
         label.xalign = 0;
         label.show ();
-
-        var css_provider = new Gtk.CssProvider ();
-        css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
 
         var internal_grid = new Gtk.Grid ();
         internal_grid.add (label);
@@ -67,7 +69,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
                 bool sensitive = src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false;
 
-                var menu = new Maya.EventMenu (comp, date);
+                var menu = new Maya.EventMenu (comp);
                 menu.attach_to_widget (this, null);
 
                 menu.popup_at_pointer (event);
@@ -86,7 +88,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
         event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
             Model.CalendarModel.get_default ().drag_component = comp;
             unowned ICal.Component icalcomp = comp.get_icalcomponent ();
-            unowned string ical_str = icalcomp.as_ical_string ();
+            var ical_str = icalcomp.as_ical_string ();
             sel.set_text (ical_str, ical_str.length);
             try {
                 var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
@@ -111,13 +113,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
     public void update (ECal.Component event) {
        this.comp = comp;
-       label.label = get_summary ();
-    }
-
-    public string get_summary () {
-        ECal.ComponentText summary;
-        comp.get_summary (out summary);
-        return summary.value;
+       label.label = comp.get_summary ().get_value ();
     }
 
     private void reload_css (string background_color) {

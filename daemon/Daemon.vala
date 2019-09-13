@@ -93,18 +93,18 @@ namespace Maya {
                     case (ECal.ComponentAlarmAction.DISPLAY):
                         ECal.ComponentAlarmTrigger trigger;
                         e_alarm.get_trigger (out trigger);
-                        if (trigger.type == ECal.ComponentAlarmTriggerType.RELATIVE_START) {
-                            ICal.DurationType duration = trigger.rel_duration;
+                        if (trigger.get_kind () == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
+                            ICal.Duration duration = trigger.get_duration ();
                             var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
                             var now = new DateTime.now_local ();
                             if (now.compare (start_time) > 0) {
                                 continue;
                             }
-                            start_time = start_time.add_weeks (-(int)duration.weeks);
-                            start_time = start_time.add_days (-(int)duration.days);
-                            start_time = start_time.add_hours (-(int)duration.hours);
-                            start_time = start_time.add_minutes (-(int)duration.minutes);
-                            start_time = start_time.add_seconds (-(int)duration.seconds);
+                            start_time = start_time.add_weeks (-(int)duration.get_weeks ());
+                            start_time = start_time.add_days (-(int)duration.get_days ());
+                            start_time = start_time.add_hours (-(int)duration.get_hours ());
+                            start_time = start_time.add_minutes (-(int)duration.get_minutes ());
+                            start_time = start_time.add_seconds (-(int)duration.get_seconds ());
                             if (start_time.get_year () == now.get_year () && start_time.get_day_of_year () == now.get_day_of_year ()) {
                                 var time = time_until_now (start_time);
                                 if (time >= 0) {
