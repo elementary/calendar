@@ -6,18 +6,18 @@ namespace ICal {
 	[Compact]
 	public class Array<G> {
 		public G data;
-		public uint element_size;
-		public uint increment_size;
-		public uint num_elements;
-		public uint space_allocated;
+		public size_t element_size;
+		public size_t increment_size;
+		public size_t num_elements;
+		public size_t space_allocated;
 		[CCode (cname = "icalarray_new", has_construct_function = false)]
-		public Array (int element_size, int increment_size);
+		public Array (size_t element_size, size_t increment_size);
 		[CCode (cname = "icalarray_append")]
 		public void append (G element);
 		[CCode (cname = "icalarray_element_at")]
-		public G element_at (int position);
+		public G element_at (size_t position);
 		[CCode (cname = "icalarray_remove_element_at")]
-		public void remove_element_at (int position);
+		public void remove_element_at (size_t position);
 		[CCode (cname = "icalarray_sort")]
 		public void sort (GLib.Callback compare);
 		[CCode (cname = "_vala_icalarray_size")]
@@ -1861,6 +1861,22 @@ namespace ICal {
 	public struct Geo {
 		public double lat;
 		public double lon;
+		[CCode (cname = "_vala_icalgeotype_get_lat")]
+		public double get_lat () {
+			return this.lat;
+		}
+		[CCode (cname = "_vala_icalgeotype_get_lon")]
+		public double get_lon () {
+			return this.lon;
+		}
+		[CCode (cname = "_vala_icalgeotype_set_lat")]
+		public void set_lat (double lat) {
+			this.lat = lat;
+		}
+		[CCode (cname = "_vala_icalgeotype_set_lon")]
+		public void set_lon (double lon) {
+			this.lon = lon;
+		}
 	}
 	[SimpleType]
 	[CCode (cheader_filename = "libical/ical.h", cname = "struct icalperiodtype", has_type_id = false)]
@@ -1921,7 +1937,75 @@ namespace ICal {
 		public static ICal.Recurrence from_string (string str);
 		[CCode (cname = "_vala_icalrecurrencetype_get_freq")]
 		public ICal.RecurrenceFrequency get_freq () {
-		    return this.freq;
+			return this.freq;
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_set_freq")]
+		public void set_freq (ICal.RecurrenceFrequency freq) {
+			this.freq = freq;
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_get_until")]
+		public unowned ICal.Time get_until () {
+			return this.until;
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_set_until")]
+		public void set_until (ICal.Time until) {
+			this.until = until;
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_get_count")]
+		public int get_count () {
+			return this.count;
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_set_count")]
+		public void set_count (int count) {
+			this.count = count;
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_get_interval")]
+		public short get_interval () {
+			return this.interval;
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_set_interval")]
+		public void set_interval (short interval) {
+			this.interval = interval;
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_get_by_day_array")]
+		public GLib.Array<short> get_by_day_array () {
+			var array = new GLib.Array<short> (false, false, sizeof (short));
+			array.append_vals (by_day, ICal.Size.BY_DAY);
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_set_by_day_array")]
+		public void set_by_day_array (GLib.Array<short> values) {
+			int ii = 0;
+			for (ii = 0; ii < values.length && ii < ICal.Size.BY_DAY; ii++) {
+				by_day[ii] = values.index (ii);
+			}
+
+			if (ii < ICal.Size.BY_DAY) {
+				by_day[ii] = ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX;
+			}
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_get_by_month")]
+		public short get_by_month (uint index) {
+			if (index > ICal.Size.BY_MONTH) {
+				return ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX;
+			}
+
+			return by_month[index];
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_get_by_month_array")]
+		public GLib.Array<short> get_by_month_array () {
+			var array = new GLib.Array<short> (false, false, sizeof (short));
+			array.append_vals (by_day, ICal.Size.BY_MONTH);
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_set_by_month_array")]
+		public void set_by_month_array (GLib.Array<short> values) {
+			int ii = 0;
+			for (ii = 0; ii < values.length && ii < ICal.Size.BY_MONTH; ii++) {
+				by_month[ii] = values.index (ii);
+			}
+
+			if (ii < ICal.Size.BY_MONTH) {
+				by_month[ii] = ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX;
+			}
 		}
 	}
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalreqstattype")]
@@ -2028,8 +2112,10 @@ namespace ICal {
 		public int is_valid_time ();
 		[CCode (cname = "icaltime_normalize")]
 		public ICal.Time normalize ();
-		[CCode (cname = "icaltime_set_timezone")]
-		public ICal.Time set_timezone (ICal.Timezone zone);
+		[CCode (cname = "_vala_icaltime_set_timezone")]
+		public void set_timezone (ICal.Timezone zone) {
+			this.zone = zone;
+		}
 		[CCode (cname = "icaltime_start_doy_of_week")]
 		public int start_doy_of_week ();
 		[CCode (cname = "icaltime_start_doy_week")]
@@ -2042,23 +2128,11 @@ namespace ICal {
 		public void set_is_date (bool is_date) {
 			this._is_date = is_date ? 1 : 0;
 		}
-		[CCode (cname = "_vala_icaltime_get_date")]
-		public void get_date (out int year, out int month, out int day) {
-			year = this.year;
-			month = this.month;
-			day = this.day;
-		}
 		[CCode (cname = "_vala_icaltime_set_time")]
 		public void set_time (int hour, int minute, int second) {
 			this.hour = hour;
 			this.minute = minute;
 			this.second = second;
-		}
-		[CCode (cname = "_vala_icaltime_get_time")]
-		public void get_time (out int hour, out int minute, out int second) {
-			hour = this.hour;
-			minute = this.minute;
-			second = this.second;
 		}
 		[CCode (cname = "_vala_icaltime_get_day")]
 		public int get_day () {
@@ -2631,6 +2705,11 @@ namespace ICal {
 		MISSEQUENCED,
 		UNKNOWN,
 		NONE
+	}
+	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", has_type_id = false)]
+	public enum RecurrenceArrayMaxValues {
+		[CCode (cname = "ICAL_RECURRENCE_ARRAY_MAX")]
+		RECURRENCE_ARRAY_MAX
 	}
 	[CCode (cheader_filename = "libical/ical.h", cprefix = "ICAL_", cname = "icalrecurrencetype_frequency")]
 	public enum RecurrenceFrequency {

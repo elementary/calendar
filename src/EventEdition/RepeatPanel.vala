@@ -270,7 +270,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         if (property != null) {
             repeat_switch.active = true;
             var rrule = property.get_rrule ();
-            switch (rrule.freq) {
+            switch (rrule.get_freq ()) {
                 case (ICal.RecurrenceFrequency.WEEKLY_RECURRENCE):
                     repeat_combobox.active = 1;
                     for (int i = 0; i <= ICal.Size.BY_DAY; i++) {
@@ -317,20 +317,21 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                     repeat_combobox.active = 3;
                     break;
                 default:
-                    warning ("%d", (int)rrule.freq);
+                    warning ("%d", (int)rrule.get_freq ());
                     repeat_combobox.active = 0;
                     break;
             }
 
-            every_entry.value = rrule.interval;
-            if (rrule.until.is_null_time ()) {
+            every_entry.value = rrule.get_interval ();
+            var until = rrule.get_until ();
+            if (until.is_null_time ()) {
                 ends_combobox.active = 0;
             } else {
                 ends_combobox.active = 1;
-                end_datepicker.date = Util.ical_to_date_time (rrule.until);
+                end_datepicker.date = Util.ical_to_date_time (until);
             }
-            if (rrule.count > 0) {
-                end_entry.value = rrule.count;
+            if (rrule.get_count () > 0) {
+                end_entry.value = rrule.get_count ();
                 ends_combobox.active = 2;
             }
         }
@@ -607,7 +608,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         ICal.Recurrence rrule = ICal.Recurrence.from_string ("");
         switch (repeat_combobox.active) {
             case 1:
-                rrule.freq = ICal.RecurrenceFrequency.WEEKLY_RECURRENCE;
+                rrule.set_freq (ICal.RecurrenceFrequency.WEEKLY_RECURRENCE);
                 int index = 0;
                 if (sun_button.active == true) {
                     rrule.by_day[index] = 1;
@@ -645,7 +646,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 }
                 break;
             case 2:
-                rrule.freq = ICal.RecurrenceFrequency.MONTHLY_RECURRENCE;
+                rrule.set_freq (ICal.RecurrenceFrequency.MONTHLY_RECURRENCE);
                 if (every_radiobutton.active == true) {
                     int day_of_week = parent_dialog.date_time.get_day_of_week ()+1;
                     if (day_of_week > 7)
@@ -656,19 +657,19 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 }
                 break;
             case 3:
-                rrule.freq = ICal.RecurrenceFrequency.YEARLY_RECURRENCE;
+                rrule.set_freq (ICal.RecurrenceFrequency.YEARLY_RECURRENCE);
                 break;
             default:
-                rrule.freq = ICal.RecurrenceFrequency.DAILY_RECURRENCE;
+                rrule.set_freq (ICal.RecurrenceFrequency.DAILY_RECURRENCE);
                 break;
         }
         if (ends_combobox.active == 2) {
-            rrule.count = (int)end_entry.value;
+            rrule.set_count ((int)end_entry.value);
         } else if (ends_combobox.active == 1) {
-            rrule.until = ICal.Time.from_day_of_year (end_datepicker.date.get_day_of_year (), end_datepicker.date.get_year ());
+            rrule.set_until (ICal.Time.from_day_of_year (end_datepicker.date.get_day_of_year (), end_datepicker.date.get_year ()));
         }
 
-        rrule.interval = (short)every_entry.value;
+        rrule.set_interval ((short)every_entry.value);
         property.set_rrule (rrule);
         comp.add_property (property);
 

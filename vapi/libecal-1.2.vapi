@@ -159,7 +159,7 @@ namespace ECal {
 		public void get_rdate_list (out GLib.SList<ECal.ComponentPeriod> period_list);
 		public void get_recurid (out ECal.ComponentRange recur_id);
 		public string get_recurid_as_string ();
-		public void get_rrule_list (out GLib.SList<ECal.ComponentRange> recur_list);
+		public void get_rrule_list (out GLib.SList<ICal.Recurrence> recur_list);
 		public void get_rrule_property_list (out GLib.SList<ECal.ComponentRange> recur_list);
 		public void get_sequence (out int sequence);
 		public void get_status (out ICal.PropertyStatus status);
@@ -210,7 +210,7 @@ namespace ECal {
 		public void set_priority (int priority);
 		public void set_rdate_list (GLib.SList<ECal.ComponentPeriod> period_list);
 		public void set_recurid (ECal.ComponentRange recur_id);
-		public void set_rrule_list (GLib.SList<ECal.ComponentRange> recur_list);
+		public void set_rrule_list (GLib.SList<ICal.Recurrence> recur_list);
 		public void set_sequence (int sequence);
 		public void set_status (ICal.PropertyStatus status);
 		public void set_summary (ECal.ComponentText summary);

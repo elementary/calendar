@@ -35,16 +35,9 @@ namespace Maya.Util {
         var result = ICal.Time.from_day_of_year (date.get_day_of_year (), date.get_year ());
         if (time_local != null) {
             if (timezone != null) {
-                unowned ICal.Array<unowned ICal.Timezone> tzs = ICal.Timezone.get_builtin_timezones ();
-                for (int i = 0; i < tzs.size (); i++) {
-                    unowned ICal.Timezone tz = tzs.element_at (i);
-                    if (tz.get_display_name () == timezone) {
-                        result.zone = tz;
-                        break;
-                    }
-                }
+                result.set_timezone (ICal.Timezone.get_builtin_timezone (timezone));
             } else {
-                result.zone = ECal.Util.get_system_timezone ();
+                result.set_timezone (ECal.Util.get_system_timezone ());
             }
 
             result.set_is_date (false);
@@ -62,26 +55,12 @@ namespace Maya.Util {
      */
     private TimeZone timezone_from_ical (ICal.Time date) {
         int is_daylight;
-        var interval = date.zone.get_utc_offset (null, out is_daylight);
+        var interval = date.get_timezone ().get_utc_offset (null, out is_daylight);
+        bool is_positive = interval >= 0;
+        interval = interval.abs ();
         var hours = (interval / 3600);
-        string hour_string = "-";
-        if (hours >= 0) {
-            hour_string = "+";
-        }
-
-        hours = hours.abs();
-        if (hours > 9) {
-            hour_string = "%s%d".printf (hour_string, hours);
-        } else {
-            hour_string = "%s0%d".printf (hour_string, hours);
-        }
-
-        var minutes = (interval.abs () % 3600)/60;
-        if (minutes > 9) {
-            hour_string = "%s:%d".printf (hour_string, minutes);
-        } else {
-            hour_string = "%s:0%d".printf (hour_string, minutes);
-        }
+        var minutes = (interval % 3600)/60;
+        var hour_string = "%s%02d:%02d".printf (is_positive ? "+" : "-", hours, minutes);
 
         return new TimeZone (hour_string);
     }
@@ -215,9 +194,9 @@ namespace Maya.Util {
 
         var a_id = a.get_id ();
         var b_id = b.get_id ();
-        int res = GLib.strcmp (a_id.uid, b_id.uid);
+        int res = GLib.strcmp (a_id.get_uid (), b_id.get_uid ());
         if (res == 0) {
-            return GLib.strcmp (a_id.rid, b_id.rid);
+            return GLib.strcmp (a_id.get_rid (), b_id.get_rid ());
         }
 
         return res;
@@ -266,7 +245,7 @@ namespace Maya.Util {
 
     /* Returns true if 'a' and 'b' are the same E.Source */
     private bool source_equal_func (E.Source a, E.Source b) {
-        return a.dup_uid () == b.dup_uid ();
+        return a.get_uid () == b.get_uid ();
     }
 
     /*
