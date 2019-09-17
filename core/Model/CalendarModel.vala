@@ -137,7 +137,11 @@ public class Maya.Model.CalendarModel : Object {
         if (client != null) {
             try {
                 string uid;
+#if E_CAL_2_0
+                yield client.create_object (comp, ECal.OperationFlags.NONE, null, out uid);
+#else
                 yield client.create_object (comp, null, out uid);
+#endif
             } catch (GLib.Error error) {
                 critical (error.message);
             }
@@ -155,7 +159,11 @@ public class Maya.Model.CalendarModel : Object {
             client = source_client.get (source.get_uid ());
         }
 
+#if E_CAL_2_0
+        client.modify_object.begin (comp, mod_type, ECal.OperationFlags.NONE, null, (obj, results) =>  {
+#else
         client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
+#endif
             try {
                 client.modify_object.end (results);
             } catch (Error e) {
@@ -174,7 +182,11 @@ public class Maya.Model.CalendarModel : Object {
             client = source_client.get (source.get_uid ());
         }
 
+#if E_CAL_2_0
+        client.remove_object.begin (uid, rid, mod_type, ECal.OperationFlags.NONE, null, (obj, results) => {
+#else
         client.remove_object.begin (uid, rid, mod_type, null, (obj, results) => {
+#endif
             try {
                 client.remove_object.end (results);
             } catch (Error e) {
@@ -377,13 +389,22 @@ public class Maya.Model.CalendarModel : Object {
 
     }
 
-    private void on_objects_added (E.Source source, ECal.Client client, SList<unowned ICal.Component> objects) {
+#if E_CAL_2_0
+    private void on_objects_added (E.Source source, ECal.Client client, SList<ICal.Component> objects) {
+#else
+    private void on_objects_added (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
+#endif
         debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name());
         var events = source_events.get (source);
         var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
+#if E_CAL_2_0
+            client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), null, (comp, start, end) => {
+                var event = new ECal.Component.from_icalcomponent (comp);
+#else
             client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), (event, start, end) => {
+#endif
                 debug_event (source, event);
                 events.set (uid, event);
                 added_events.add (event);
@@ -394,7 +415,11 @@ public class Maya.Model.CalendarModel : Object {
         events_added (source, added_events.read_only_view);
     }
 
-    private void on_objects_modified (E.Source source, ECal.Client client, SList<unowned ICal.Component> objects) {
+#if E_CAL_2_0
+    private void on_objects_modified (E.Source source, ECal.Client client, SList<ICal.Component> objects) {
+#else
+    private void on_objects_modified (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
+#endif
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
         var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         objects.foreach ((comp) => {
@@ -409,7 +434,11 @@ public class Maya.Model.CalendarModel : Object {
         events_updated (source, updated_events.read_only_view);
     }
 
-    private void on_objects_removed (E.Source source, ECal.Client client, SList<unowned ECal.ComponentId?> cids) {
+#if E_CAL_2_0
+    private void on_objects_removed (E.Source source, ECal.Client client, SList<ECal.ComponentId?> cids) {
+#else
+    private void on_objects_removed (E.Source source, ECal.Client client, SList<weak ECal.ComponentId?> cids) {
+#endif
         debug (@"Received $(cids.length()) removed event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
         var removed_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);

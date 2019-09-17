@@ -110,7 +110,12 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
             // Load the guests
             int count = comp.count_properties (ICal.PropertyKind.ATTENDEE_PROPERTY);
 
-            unowned ICal.Property property = comp.get_first_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
+#if E_CAL_2_0
+            ICal.Property property;
+#else
+            unowned ICal.Property property;
+#endif
+            property = comp.get_first_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             for (int i = 0; i < count; i++) {
                 if (property.get_attendee () != null)
                     add_guest (property);
@@ -146,14 +151,22 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         int count = comp.count_properties (ICal.PropertyKind.ATTENDEE_PROPERTY);
 
         for (int i = 0; i < count; i++) {
+#if E_CAL_2_0
+            ICal.Property remove_prop;
+#else
             unowned ICal.Property remove_prop;
+#endif
             if (i == 0) {
                 remove_prop = comp.get_first_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             } else {
                 remove_prop = comp.get_next_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             }
 
+#if E_CAL_2_0
+            ICal.Property found_prop = remove_prop;
+#else
             unowned ICal.Property found_prop = remove_prop;
+#endif
             bool can_remove = true;
             foreach (unowned ICal.Property attendee in attendees) {
                 if (attendee.get_uid () == remove_prop.get_uid ()) {

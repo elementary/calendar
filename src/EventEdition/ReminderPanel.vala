@@ -97,11 +97,19 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         foreach (var alarm_uid in parent_dialog.ecal.get_alarm_uids ()) {
             ECal.ComponentAlarm e_alarm = parent_dialog.ecal.get_alarm (alarm_uid);
             ECal.ComponentAlarmAction action;
+#if E_CAL_2_0
+            action = e_alarm.get_action ();
+#else
             e_alarm.get_action (out action);
+#endif
             switch (action) {
                 case (ECal.ComponentAlarmAction.DISPLAY):
                     ECal.ComponentAlarmTrigger trigger;
+#if E_CAL_2_0
+                    trigger = e_alarm.get_trigger ();
+#else
                     e_alarm.get_trigger (out trigger);
+#endif
                     if (trigger.get_kind () == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
                         ICal.Duration duration = trigger.get_duration ();
                         var reminder = add_reminder (alarm_uid);
@@ -124,7 +132,11 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 var alarm = new ECal.ComponentAlarm ();
                 alarm.set_action (ECal.ComponentAlarmAction.DISPLAY);
                 ECal.ComponentAlarmTrigger trigger;
+#if E_CAL_2_0
+                trigger = alarm.get_trigger ();
+#else
                 alarm.get_trigger (out trigger);
+#endif
                 trigger.set_duration (reminder.get_duration ());
                 trigger.set_kind (ECal.ComponentAlarmTriggerKind.RELATIVE_START);
                 alarm.set_trigger (trigger);
@@ -133,7 +145,11 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 var alarm = parent_dialog.ecal.get_alarm (reminder.uid);
                 alarm.set_action (ECal.ComponentAlarmAction.DISPLAY);
                 ECal.ComponentAlarmTrigger trigger;
+#if E_CAL_2_0
+                trigger = alarm.get_trigger ();
+#else
                 alarm.get_trigger (out trigger);
+#endif
                 trigger.set_kind (ECal.ComponentAlarmTriggerKind.RELATIVE_START);
                 trigger.set_duration (reminder.get_duration ());
                 alarm.set_trigger (trigger);
@@ -243,7 +259,11 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
     }
 
     public ICal.Duration get_duration () {
-        ICal.Duration duration = ICal.Duration.null_duration ();
+#if E_CAL_2_0
+        var duration = new ICal.Duration.null_duration ();
+#else
+        var duration = ICal.Duration.null_duration ();
+#endif
         switch (time.active) {
             case 1:
                 duration.set_minutes (1);
