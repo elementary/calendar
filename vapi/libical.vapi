@@ -1971,6 +1971,7 @@ namespace ICal {
 		public GLib.Array<short> get_by_day_array () {
 			var array = new GLib.Array<short> (false, false, sizeof (short));
 			array.append_vals (by_day, ICal.Size.BY_DAY);
+			return array;
 		}
 		[CCode (cname = "_vala_icalrecurrencetype_set_by_day_array")]
 		public void set_by_day_array (GLib.Array<short> values) {
@@ -1995,6 +1996,7 @@ namespace ICal {
 		public GLib.Array<short> get_by_month_array () {
 			var array = new GLib.Array<short> (false, false, sizeof (short));
 			array.append_vals (by_day, ICal.Size.BY_MONTH);
+			return array;
 		}
 		[CCode (cname = "_vala_icalrecurrencetype_set_by_month_array")]
 		public void set_by_month_array (GLib.Array<short> values) {
