@@ -32,12 +32,20 @@ namespace Maya.Util {
      * XXX: We need to convert to UTC because of some bugs with the Google backend…
      */
     public ICal.Time date_time_to_ical (DateTime date, DateTime? time_local, string? timezone = null) {
+#if E_CAL_2_0
+        var result = new ICal.Time.from_day_of_year (date.get_day_of_year (), date.get_year ());
+#else
         var result = ICal.Time.from_day_of_year (date.get_day_of_year (), date.get_year ());
+#endif
         if (time_local != null) {
             if (timezone != null) {
                 result.set_timezone (ICal.Timezone.get_builtin_timezone (timezone));
             } else {
+#if E_CAL_2_0
+                result.set_timezone (ECal.util_get_system_timezone ());
+#else
                 result.set_timezone (ECal.Util.get_system_timezone ());
+#endif
             }
 
             result.set_is_date (false);
@@ -70,8 +78,16 @@ namespace Maya.Util {
      * XXX : Track next versions of evolution in order to convert ICal.Timezone to GLib.TimeZone with a dedicated function…
      */
     public DateTime ical_to_date_time (ICal.Time date) {
+#if E_CAL_2_0
+        int year, month, day, hour, minute, second;
+        date.get_date (out year, out month, out day);
+        date.get_time (out hour, out minute, out second);
+        return new DateTime (timezone_from_ical (date), year, month,
+            day, hour, minute, second);
+#else
         return new DateTime (timezone_from_ical (date), date.year, date.month,
             date.day, date.hour, date.minute, date.second);
+#endif
     }
 
     public void get_local_datetimes_from_icalcomponent (ICal.Component comp, out DateTime start_date, out DateTime end_date) {
@@ -206,8 +222,13 @@ namespace Maya.Util {
         ECal.ComponentDateTime start_dt;
         ECal.ComponentDateTime end_dt;
 
+#if E_CAL_2_0
+        start_dt = comp.get_dtstart ();
+        end_dt = comp.get_dtend ();
+#else
         comp.get_dtstart (out start_dt);
         comp.get_dtend (out end_dt);
+#endif
 
         var stripped_time = new DateTime.local (day.get_year (), day.get_month (), day.get_day_of_month (), 0, 0, 0);
 
@@ -217,8 +238,13 @@ namespace Maya.Util {
         time_t end_unix;
 
         /* We want to be relative to the local timezone */
+#if E_CAL_2_0
+        start_unix = start_dt.get_value ().as_timet_with_zone (ECal.util_get_system_timezone ());
+        end_unix = end_dt.get_value ().as_timet_with_zone (ECal.util_get_system_timezone ());
+#else
         start_unix = (*start_dt.value).as_timet_with_zone (ECal.Util.get_system_timezone ());
         end_unix = (*end_dt.value).as_timet_with_zone (ECal.Util.get_system_timezone ());
+#endif
 
         /* If the selected date is inside the event */
         if (start_unix < selected_date_unix && selected_date_unix_next < end_unix) {
