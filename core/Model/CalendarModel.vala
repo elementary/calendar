@@ -136,12 +136,15 @@ public class Maya.Model.CalendarModel : Object {
 
         if (client != null) {
             try {
-                string uid;
+                string? uid;
 #if E_CAL_2_0
                 yield client.create_object (comp, ECal.OperationFlags.NONE, null, out uid);
 #else
                 yield client.create_object (comp, null, out uid);
 #endif
+                if (uid != null) {
+                    comp.set_uid (uid);
+                }
             } catch (GLib.Error error) {
                 critical (error.message);
             }

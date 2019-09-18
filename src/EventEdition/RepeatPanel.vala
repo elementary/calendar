@@ -639,7 +639,11 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 #endif
         switch (repeat_combobox.active) {
             case 1:
+#if E_CAL_2_0
                 rrule.set_freq (ICal.RecurrenceFrequency.WEEKLY_RECURRENCE);
+#else
+                rrule.freq = ICal.RecurrenceFrequency.WEEKLY_RECURRENCE;
+#endif
                 var array = new GLib.Array<short> (false, false, sizeof (short));
                 if (sun_button.active == true) {
                     short day = encode_day (ICal.RecurrenceWeekday.SUNDAY_WEEKDAY, 0);
@@ -676,10 +680,18 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                     array.append_val (day);
                 }
 
+#if E_CAL_2_0
                 rrule.set_by_day_array (array);
+#else
+                ICal.Recurrence.set_by_day_array (ref rrule, array);
+#endif
                 break;
             case 2:
+#if E_CAL_2_0
                 rrule.set_freq (ICal.RecurrenceFrequency.MONTHLY_RECURRENCE);
+#else
+                rrule.freq = ICal.RecurrenceFrequency.MONTHLY_RECURRENCE;
+#endif
                 if (every_radiobutton.active == true) {
                     var array = new GLib.Array<short>.sized (false, false, sizeof (short), 1);
                     ICal.RecurrenceWeekday weekday;
@@ -709,32 +721,56 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                     
                     short day = encode_day (weekday, (int) Math.ceil ((double)parent_dialog.date_time.get_day_of_month ()/(double)7));
                     array.append_val (day);
+#if E_CAL_2_0
                     rrule.set_by_day_array (array);
+#else
+                    ICal.Recurrence.set_by_day_array (ref rrule, array);
+#endif
                 } else {
                     var array = new GLib.Array<short>.sized (false, false, sizeof (short), 1);
                     var day_of_month = (short)parent_dialog.date_time.get_day_of_month ();
                     array.append_val (day_of_month);
+#if E_CAL_2_0
                     rrule.set_by_month_array (array);
+#else
+                    ICal.Recurrence.set_by_month_array (ref rrule, array);
+#endif
                 }
                 break;
             case 3:
+#if E_CAL_2_0
                 rrule.set_freq (ICal.RecurrenceFrequency.YEARLY_RECURRENCE);
+#else
+                rrule.freq = ICal.RecurrenceFrequency.YEARLY_RECURRENCE;
+#endif
                 break;
             default:
+#if E_CAL_2_0
                 rrule.set_freq (ICal.RecurrenceFrequency.DAILY_RECURRENCE);
+#else
+                rrule.freq = ICal.RecurrenceFrequency.DAILY_RECURRENCE;
+#endif
                 break;
         }
         if (ends_combobox.active == 2) {
+#if E_CAL_2_0
             rrule.set_count ((int)end_entry.value);
+#else
+            rrule.count = (int) end_entry.value;
+#endif
         } else if (ends_combobox.active == 1) {
 #if E_CAL_2_0
             rrule.set_until (new ICal.Time.from_day_of_year (end_datepicker.date.get_day_of_year (), end_datepicker.date.get_year ()));
 #else
-            rrule.set_until (ICal.Time.from_day_of_year (end_datepicker.date.get_day_of_year (), end_datepicker.date.get_year ()));
+            rrule.until = ICal.Time.from_day_of_year (end_datepicker.date.get_day_of_year (), end_datepicker.date.get_year ());
 #endif
         }
 
+#if E_CAL_2_0
         rrule.set_interval ((short)every_entry.value);
+#else
+        rrule.interval = (short)every_entry.value;
+#endif
         property.set_rrule (rrule);
         comp.add_property (property);
 

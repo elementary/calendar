@@ -266,49 +266,109 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
 #endif
         switch (time.active) {
             case 1:
+#if E_CAL_2_0
                 duration.set_minutes (1);
+#else
+                duration.minutes = 1;
+#endif
                 break;
             case 2:
+#if E_CAL_2_0
                 duration.set_minutes (5);
+#else
+                duration.minutes = 5;
+#endif
                 break;
             case 3:
+#if E_CAL_2_0
                 duration.set_minutes (10);
+#else
+                duration.minutes = 10;
+#endif
                 break;
             case 4:
+#if E_CAL_2_0
                 duration.set_minutes (15);
+#else
+                duration.minutes = 15;
+#endif
                 break;
             case 5:
+#if E_CAL_2_0
                 duration.set_minutes (20);
+#else
+                duration.minutes = 20;
+#endif
                 break;
             case 6:
+#if E_CAL_2_0
                 duration.set_minutes (25);
+#else
+                duration.minutes = 25;
+#endif
                 break;
             case 7:
+#if E_CAL_2_0
                 duration.set_minutes (30);
+#else
+                duration.minutes = 30;
+#endif
                 break;
             case 8:
+#if E_CAL_2_0
                 duration.set_minutes (45);
+#else
+                duration.minutes = 45;
+#endif
                 break;
             case 9:
+#if E_CAL_2_0
                 duration.set_hours (1);
+#else
+                duration.hours = 1;
+#endif
                 break;
             case 10:
+#if E_CAL_2_0
                 duration.set_hours (2);
+#else
+                duration.hours = 2;
+#endif
                 break;
             case 11:
+#if E_CAL_2_0
                 duration.set_hours (3);
+#else
+                duration.hours = 3;
+#endif
                 break;
             case 12:
+#if E_CAL_2_0
                 duration.set_hours (12);
+#else
+                duration.hours = 12;
+#endif
                 break;
             case 13:
+#if E_CAL_2_0
                 duration.set_hours (24);
+#else
+                duration.hours = 24;
+#endif
                 break;
             case 14:
+#if E_CAL_2_0
                 duration.set_days (2);
+#else
+                duration.days = 2;
+#endif
                 break;
             case 15:
+#if E_CAL_2_0
                 duration.set_weeks (1);
+#else
+                duration.weeks = 1;
+#endif
                 break;
         }
         return duration;
