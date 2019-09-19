@@ -8,17 +8,18 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2016-06-14 17:13+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
-"Language-Team: Ukrainian <uk@li.org>\n"
+"PO-Revision-Date: 2019-09-20 11:23+0000\n"
+"Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/"
+"calendar/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
 msgid "On this computer"
@@ -45,9 +46,8 @@ msgid "Keep a copy locally"
 msgstr "Зберегати копію локально"
 
 #: daemon/Daemon.vala:24
-#, fuzzy
 msgid "Print debug information"
-msgstr "Основні Дані"
+msgstr "Роздрукувати інформацію для налагодження"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -91,62 +91,56 @@ msgstr "Весь день"
 
 #: src/AgendaView.vala:275
 msgid "Tomorrow"
-msgstr ""
+msgstr "Завтра"
 
 #: src/AgendaView.vala:278
-#, fuzzy
 msgid "This Week"
-msgstr "Тиждень"
+msgstr "Цей тиждень"
 
 #: src/AgendaView.vala:281
-#, fuzzy
 msgid "Next Week"
-msgstr "Тиждень"
+msgstr "Наступний тиждень"
 
 #: src/AgendaView.vala:284
-#, fuzzy
 msgid "This Month"
-msgstr "Місяць"
+msgstr "Цей місяць"
 
 #: src/AgendaView.vala:287
-#, fuzzy
 msgid "Next Month"
-msgstr "Місяць"
+msgstr "Наступний місяць"
 
 #: src/Application.vala:47
-#, fuzzy
 msgid "Create an event"
-msgstr "Створити нову подію"
+msgstr "Додати подію"
 
 #: src/Application.vala:48
 msgid "Focus the given day"
-msgstr ""
+msgstr "Зосередитись у цей день"
 
 #: src/Application.vala:48
 msgid "date"
-msgstr ""
+msgstr "дата"
 
 #: src/Application.vala:140
 msgid "Calendar"
 msgstr "Календар"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Виберіть календарі для показу"
+msgstr "Оберіть календар для імпорту"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Імпортувати події з %d файлу в наступний календар:"
+msgstr "Події із \"%s\" будуть додані у цей календар:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Імпортувати події з %d файлу в наступний календар:"
-msgstr[1] "Імпортувати події з %d файлу в наступний календар:"
-msgstr[2] "Імпортувати події з %d файлів в наступний календар:"
+msgstr[0] "Події із %d файлу буде додано у цей календар:"
+msgstr[1] "Події із %d файлів будуть додані у цей календар:"
+msgstr[2] "Події із %d  файлів буде додано у цей календар:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -180,8 +174,9 @@ msgstr "Нагадування"
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] "Повторити"
+msgstr[0] "Повтор"
 msgstr[1] "Повтори"
+msgstr[2] "Повторів"
 
 #: src/EventEdition/EventDialog.vala:127
 msgid "Delete Event"
@@ -210,7 +205,7 @@ msgstr "Відхилено"
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr ""
+msgstr "Мабуть"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -262,7 +257,7 @@ msgstr "Розташування:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "`Джон Сміт' або `вул. Зразок'"
+msgstr "Василь Петрович чи вул. Хрещатик."
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
@@ -277,84 +272,68 @@ msgid "Add Reminder"
 msgstr "Створити Нагадування"
 
 #: src/EventEdition/ReminderPanel.vala:163
-#, fuzzy
 msgid "At time of event"
-msgstr "Назва Події"
+msgstr "Під час події"
 
 #: src/EventEdition/ReminderPanel.vala:164
-#, fuzzy
 msgid "1 minute before"
-msgstr "1 хвилину"
+msgstr "за хвилину до"
 
 #: src/EventEdition/ReminderPanel.vala:165
-#, fuzzy
 msgid "5 minutes before"
-msgstr "5 хвилин"
+msgstr "за 5 хвилин до"
 
 #: src/EventEdition/ReminderPanel.vala:166
-#, fuzzy
 msgid "10 minutes before"
-msgstr "10 хвилин"
+msgstr "за 10 хвилин до"
 
 #: src/EventEdition/ReminderPanel.vala:167
-#, fuzzy
 msgid "15 minutes before"
-msgstr "15 хвилин"
+msgstr "за 15 хвилин до"
 
 #: src/EventEdition/ReminderPanel.vala:168
-#, fuzzy
 msgid "20 minutes before"
-msgstr "20 хвилин"
+msgstr "за 20 хвилин до"
 
 #: src/EventEdition/ReminderPanel.vala:169
-#, fuzzy
 msgid "25 minutes before"
-msgstr "25 хвилин"
+msgstr "за 25 хвилин до"
 
 #: src/EventEdition/ReminderPanel.vala:170
-#, fuzzy
 msgid "30 minutes before"
-msgstr "30 хвилин"
+msgstr "за 30 хвилин до"
 
 #: src/EventEdition/ReminderPanel.vala:171
-#, fuzzy
 msgid "45 minutes before"
-msgstr "45 хвилин"
+msgstr "за 45 хвилин до"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "1 hour before"
-msgstr "1 година"
+msgstr "за годину до"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "2 hours before"
-msgstr "2 години"
+msgstr "за 2 години до"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "3 hours before"
-msgstr "3 години"
+msgstr "за 3 години до"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "12 hours before"
-msgstr "12 годин"
+msgstr "за 12 годин до"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "24 hours before"
-msgstr "24 години"
+msgstr "за 24 години до"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "2 days before"
-msgstr "2 дня"
+msgstr "за 2 дні до"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "1 week before"
-msgstr "1 тиждень"
+msgstr "за тиждень до"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -385,24 +364,28 @@ msgid "Day"
 msgid_plural "Days"
 msgstr[0] "День"
 msgstr[1] "Дні"
+msgstr[2] "Днів"
 
 #: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
 msgstr[0] "Тиждень"
 msgstr[1] "Тижні"
+msgstr[2] "Тижнів"
 
 #: src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
 msgstr[0] "Місяць"
 msgstr[1] "Місяці"
+msgstr[2] "Місяців"
 
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
 msgstr[0] "Рік"
 msgstr[1] "Роки"
+msgstr[2] "Років"
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -683,9 +666,8 @@ msgid "Remove"
 msgstr "Вилучити"
 
 #: src/SourceDialog/SourceItem.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Вилучити"
+msgstr "Нез'ємний"
 
 #: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
@@ -693,78 +675,75 @@ msgstr "Змінити…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Не редагується"
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "Повернути"
 
 #: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Календар \"%s\" вилучено."
+msgstr "\"%s\" вилучено"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
-msgstr "Створити Новий Календар..."
+msgstr "Створити новий календар…"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:176
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:179
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:188
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:195
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarButton.vala:72
-#, fuzzy
 msgid "Search Calendars"
-msgstr "Створити Календар"
+msgstr "Знайти календар"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr ""
+msgstr "Результати відсутні"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr ""
+msgstr "Спробуйте змінити умови пошуку."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "Експортувати Календар..."
+msgstr "Експортувати календар…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "календар.ics"
 
 #: src/Widgets/EventMenu.vala:41
-#, fuzzy
 msgid "Remove Event"
-msgstr "Вилучити Подію"
+msgstr "Вилучити подію"
 
 #: src/Widgets/EventMenu.vala:43
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Вилучити подію"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
@@ -772,15 +751,15 @@ msgstr "Створити нову подію"
 
 #: src/Widgets/HeaderBar.vala:48
 msgid "Go to today's date"
-msgstr "Перейти на сьогоднішній день"
+msgstr "Перейти до поточної дати"
 
 #: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
-msgstr "Керувати Календарями"
+msgstr "Управління календарями"
 
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
-msgstr "Експортувати або Поділитися типовим календарем"
+msgstr "Експортувати чи поділитись календарем за змовчуванням"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
