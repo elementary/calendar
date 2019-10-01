@@ -242,7 +242,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             parent_dialog.date_time = from_date;
 
             // Is this all day
-            bool allday = Util.is_all_day(from_date, to_date);
+            bool allday = Util.is_all_day (from_date, to_date);
 
             to_date_picker.date = to_date;
             to_time_picker.time = to_date;
@@ -336,7 +336,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
                 if (start_date.get_day_of_year () == end_date.get_day_of_year ()) {
 
                     if (start_time.get_hour () > end_time.get_hour ()) {
-                        to_time_picker.time = from_time_picker.time.add_hours(1);
+                        to_time_picker.time = from_time_picker.time.add_hours (1);
                     }
 
                     if ((start_time.get_hour () == end_time.get_hour ()) && (start_time.get_minute () >= end_time.get_minute ())) {
