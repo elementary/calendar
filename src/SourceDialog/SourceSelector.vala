@@ -46,7 +46,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         scroll.propagate_natural_height = true;
         scroll.add (calendar_box);
 
-        src_map = new GLib.HashTable<string, SourceItem?>(str_hash, str_equal);
+        src_map = new GLib.HashTable<string, SourceItem?> (str_hash, str_equal);
 
         var add_calendar_label = new Gtk.Label (_("Add New Calendar…"));
         add_calendar_label.xalign = 0;

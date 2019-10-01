@@ -56,7 +56,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
         event_buttons = new GLib.HashTable<string, EventButton> (str_hash, str_equal);
 
         event_box = new VAutoHider ();
-        event_box.margin =  EVENT_MARGIN;
+        event_box.margin = EVENT_MARGIN;
         event_box.margin_top = 0;
         event_box.expand = true;
 
@@ -213,7 +213,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     private bool on_key_press (Gdk.EventKey event) {
-        if (event.keyval == Gdk.keyval_from_name("Return") ) {
+        if (event.keyval == Gdk.keyval_from_name ("Return") ) {
             on_event_add (date);
             return true;
         }
