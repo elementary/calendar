@@ -274,7 +274,7 @@ public class ParserEn : GLib.Object, EventParser {
             }
         });
 
-        analyze_pattern (@"on ((?<p1>\\d{2,4})/)?(?<p2>\\d{1,2})/(?<p3>\\d{1,2})(st|nd|rd|th)?", (data) => {
+        analyze_pattern ("on ((?<p1>\\d{2,4})/)?(?<p2>\\d{1,2})/(?<p3>\\d{1,2})(st|nd|rd|th)?", (data) => {
             int day = int.parse (data.p.index (2));
             int month = int.parse (data.p.index (1));
 
@@ -341,7 +341,7 @@ public class ParserEn : GLib.Object, EventParser {
             event.if_elapsed_delay_to_next_month (this.simulated_dt);
         });
 
-        analyze_pattern (@"from (?<p1>\\d{1,2})/(?<p2>\\d{1,2}) - ((?<p3>\\d{1,2})/)?(?<p4>\\d{1,2})", (data) => {
+        analyze_pattern ("from (?<p1>\\d{1,2})/(?<p2>\\d{1,2}) - ((?<p3>\\d{1,2})/)?(?<p4>\\d{1,2})", (data) => {
             int day_1 = int.parse (data.p.index (1));
             int day_2 = int.parse (data.p.index (3));
             int month_1 = int.parse (data.p.index (0));
