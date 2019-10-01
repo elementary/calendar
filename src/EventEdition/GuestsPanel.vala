@@ -48,7 +48,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         set_sensitive (parent_dialog.can_edit);
         orientation = Gtk.Orientation.VERTICAL;
 
-        guest_store = new Gtk.ListStore(2, typeof (string), typeof (string));
+        guest_store = new Gtk.ListStore (2, typeof (string), typeof (string));
 
         var guest_label = new Granite.HeaderLabel (_("Participants:"));
 
@@ -206,7 +206,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         var attendee = new ICal.Property (ICal.PropertyKind.ATTENDEE_PROPERTY);
         Value selected_value;
 
-        model.get_value (iter, 1, out selected_value);;
+        model.get_value (iter, 1, out selected_value);
         attendee.set_attendee (selected_value.get_string ());
         add_guest ((owned)attendee);
         guest_entry.delete_text (0, -1);

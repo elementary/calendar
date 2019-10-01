@@ -1,4 +1,3 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
  * Copyright (c) 2011-2015 elementary LLC
  *
@@ -18,11 +17,7 @@
  * Authored by: Mario Guerriero <marioguerriero33@gmail.com>
  */
 
-namespace Maya.Services {
-
-public interface EventParser : GLib.Object {
+public interface Maya.Services.EventParser : GLib.Object {
     public abstract ParsedEvent parse_source (string source);
     public abstract string get_language ();
-}
-
 }
