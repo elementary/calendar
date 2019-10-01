@@ -84,7 +84,7 @@ namespace Maya.Util {
         bool is_positive = interval >= 0;
         interval = interval.abs ();
         var hours = (interval / 3600);
-        var minutes = (interval % 3600)/60;
+        var minutes = (interval % 3600) / 60;
         var hour_string = "%s%02d:%02d".printf (is_positive ? "+" : "-", hours, minutes);
 
         return new TimeZone (hour_string);
@@ -177,9 +177,9 @@ namespace Maya.Util {
      * Say if an event lasts all day.
      */
     public bool is_all_day (DateTime dtstart, DateTime dtend) {
-        var UTC_start = dtstart.to_timezone (new TimeZone.utc ());
+        var utc_start = dtstart.to_timezone (new TimeZone.utc ());
         var timespan = dtend.difference (dtstart);
-        if (timespan % GLib.TimeSpan.DAY == 0 && UTC_start.get_hour() == 0) {
+        if (timespan % GLib.TimeSpan.DAY == 0 && utc_start.get_hour () == 0) {
             return true;
         } else {
             return false;
@@ -377,7 +377,7 @@ namespace Maya.Util {
     }
 
     public void toggle_show_weeks () {
-        if (GLib.SettingsSchemaSource.get_default ().lookup (SHOW_WEEKS_SCHEMA, false)!= null) {
+        if (GLib.SettingsSchemaSource.get_default ().lookup (SHOW_WEEKS_SCHEMA, false) != null) {
             GLib.Settings weeks = new GLib.Settings (SHOW_WEEKS_SCHEMA);
             weeks.set_boolean ("show-weeks", !weeks.get_boolean ("show-weeks"));
         } else {

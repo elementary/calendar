@@ -40,7 +40,7 @@ namespace Maya.Settings {
                 return new DateTime.now_local ();
             var numbers = month_page.split ("-", 2);
             var dt = new DateTime.local (int.parse (numbers[0]), 1, 1, 0, 0, 0);
-            dt = dt.add_months (int.parse (numbers[1])-1);
+            dt = dt.add_months (int.parse (numbers[1]) - 1);
             return dt;
         }
 
@@ -51,7 +51,7 @@ namespace Maya.Settings {
                 return new DateTime.now_local ();
             var numbers = selected_day.split ("-", 2);
             var dt = new DateTime.local (int.parse (numbers[0]), 1, 1, 0, 0, 0);
-            dt = dt.add_days (int.parse (numbers[1])-1);
+            dt = dt.add_days (int.parse (numbers[1]) - 1);
             return dt;
         }
     }
