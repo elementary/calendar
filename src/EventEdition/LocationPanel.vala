@@ -330,7 +330,7 @@ public class Maya.Marker : Champlain.Marker {
                           pixbuf.rowstride);
             content = image;
             set_size (pixbuf.width, pixbuf.height);
-            translation_x = -pixbuf.width/2;
+            translation_x = -pixbuf.width / 2;
             translation_y = -pixbuf.height;
         } catch (Error e) {
             critical (e.message);

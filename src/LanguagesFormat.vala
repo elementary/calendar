@@ -16,8 +16,7 @@
 //
 
 namespace Maya.Settings {
-
-    public string TimeFormat () {
+    public string time_format () {
         // If AM/PM doesn't exist, use 24h.
         if (Posix.nl_langinfo (Posix.NLItem.AM_STR) == null || Posix.nl_langinfo (Posix.NLItem.AM_STR) == "") {
             return Granite.DateTime.get_default_time_format (false);
@@ -37,4 +36,3 @@ namespace Maya.Settings {
     }
 
 }
-

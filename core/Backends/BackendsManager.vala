@@ -91,7 +91,7 @@ public class Maya.BackendsManager : GLib.Object {
                 }
             }
         } catch (Error err) {
-            warning("Unable to scan plugs folder: %s\n", err.message);
+            warning ("Unable to scan plugs folder: %s\n", err.message);
         }
     }
 
