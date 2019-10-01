@@ -56,9 +56,9 @@ public class ParserDe : GLib.Object, EventParser {
     string months_regex;
     string weekdays_regex;
 
-    struct String_event { bool matched; string matched_string; int pos; int length; Array<string> p; }
+    struct StringEvent { bool matched; string matched_string; int pos; int length; Array<string> p; }
 
-    delegate void transcribe_analysis (String_event data);
+    delegate void transcribe_analysis (StringEvent data);
 
     public ParserDe (DateTime _simulated_dt = new DateTime.now_local ()) {
         this.simulated_dt = _simulated_dt;
@@ -100,17 +100,17 @@ public class ParserDe : GLib.Object, EventParser {
     }
 
     // finds regex "pattern" in string source
-    String_event complete_string (string pattern) {
+    StringEvent complete_string (string pattern) {
         Regex regex;
         MatchInfo match_info;
         try {
             regex = new Regex (pattern, RegexCompileFlags.CASELESS);
             var is_matched = regex.match (this.remaining_source, 0, out match_info);
             if (!is_matched) {
-                return String_event () { matched = false };
+                return StringEvent () { matched = false };
             }
         } catch {
-            return String_event () { matched = false };
+            return StringEvent () { matched = false };
         }
 
         var matched_string = match_info.fetch (0);
@@ -131,11 +131,11 @@ public class ParserDe : GLib.Object, EventParser {
             }
         }
 
-        return String_event () { matched = true, pos = pos, length = length, matched_string = matched_string, p = p };
+        return StringEvent () { matched = true, pos = pos, length = length, matched_string = matched_string, p = p };
     }
 
     void analyze_pattern (string pattern, transcribe_analysis del) {
-        String_event data = complete_string ("\\b" + pattern + "\\b");
+        StringEvent data = complete_string ("\\b" + pattern + "\\b");
         if (data.matched) {
             this.remaining_source = this.remaining_source.splice (data.pos, data.pos + data.length);
             del (data);
@@ -165,8 +165,8 @@ public class ParserDe : GLib.Object, EventParser {
         });
 
         analyze_pattern ("(ab )?morgen", (data) => {
-            event.from = event.from.add_days(1);
-            event.set_one_entire_day();
+            event.from = event.from.add_days (1);
+            event.set_one_entire_day ();
         });
 
         analyze_pattern ("(ab )?übermorgen", (data) => {
@@ -179,15 +179,15 @@ public class ParserDe : GLib.Object, EventParser {
         });
 
         analyze_pattern ("vor (?<p1>\\d+) tagen", (data) => {
-            int days = int.parse ( data.p.index(0) );
+            int days = int.parse ( data.p.index (0));
             event.from = event.from.add_days (-days);
             event.set_one_entire_day ();
         });
 
         analyze_pattern ("in (?<p1>\\d+) tagen", (data) => {
-            int days = int.parse (data.p.index(0));
+            int days = int.parse (data.p.index (0));
             event.from = event.from.add_days (days);
-            event.set_one_entire_day();
+            event.set_one_entire_day ();
         });
 
         analyze_pattern (@"diesen (?<p1>$weekdays_regex)", (data) => {
@@ -207,7 +207,7 @@ public class ParserDe : GLib.Object, EventParser {
         });
 
         analyze_pattern (@"übernächsten (?<p1>$weekdays_regex)", (data) => {
-            int weekday = get_number_of_weekday (data.p.index(0));
+            int weekday = get_number_of_weekday (data.p.index (0));
             int add_days = (weekday - this.simulated_dt.get_day_of_week () + 7 ) % 7;
             event.from = event.from.add_weeks (1);
             event.from = event.from.add_days (add_days);
@@ -217,7 +217,7 @@ public class ParserDe : GLib.Object, EventParser {
 
         analyze_pattern ("am (?<p1>\\d+).(?<p2>\\d+)(.(?<p3>\\d+))?", (data) => {
             int day = int.parse (data.p.index (0));
-            int month = int.parse (data.p.index(1));
+            int month = int.parse (data.p.index (1));
 
             event.from_set_day (day);
             event.set_one_entire_day ();
@@ -347,7 +347,7 @@ public class ParserDe : GLib.Object, EventParser {
             int hour = int.parse (data.p.index (0));
             event.from_set_hour (hour);
 
-            if (data.p.index(1) != null) {
+            if (data.p.index (1) != null) {
                 int minute_1 = int.parse (data.p.index (1));
                 event.from_set_minute (minute_1);
             }

@@ -241,13 +241,13 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
     private void upcoming_header_update_func (Gtk.ListBoxRow lbrow, Gtk.ListBoxRow? lbbefore) {
         var row = (AgendaEventRow) lbrow;
-        int rowType = get_event_type (row);
+        int row_type = get_event_type (row);
 
         if (lbbefore != null) {
             var before = (AgendaEventRow) lbbefore;
-            int beforeType = get_event_type (before);
+            int before_type = get_event_type (before);
 
-            if (rowType == beforeType) {
+            if (row_type == before_type) {
                 row.set_header (null);
                 return;
             }
@@ -256,7 +256,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         var header_label = new Granite.HeaderLabel ("");
         header_label.margin_start = header_label.margin_end = 6;
 
-        switch (rowType) {
+        switch (row_type) {
             case 1:
                 header_label.label = _("Tomorrow");
                 break;

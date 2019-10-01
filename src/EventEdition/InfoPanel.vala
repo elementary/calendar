@@ -30,7 +30,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
     private EventDialog parent_dialog;
 
-
     public string title {
         get { return title_entry.get_text (); }
         set { title_entry.set_text (value); }
@@ -76,9 +75,9 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         var from_label = new Granite.HeaderLabel (_("From:"));
         from_date_picker = make_date_picker ();
-        from_date_picker.notify["date"].connect ( () => {on_date_modified(0);} );
+        from_date_picker.notify["date"].connect (() => {on_date_modified (0);} );
         from_time_picker = make_time_picker ();
-        from_time_picker.time_changed.connect ( () => {on_time_modified(0);} );
+        from_time_picker.time_changed.connect (() => {on_time_modified (0);} );
 
         var allday_label = new Gtk.Label (_("All day:"));
         allday_label.set_alignment (1.0f, 0.5f);
@@ -90,9 +89,9 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         var allday_switch_grid = new Gtk.Grid ();
 
         to_date_picker = make_date_picker ();
-        to_date_picker.notify["date"].connect ( () => {on_date_modified(1);} );
+        to_date_picker.notify["date"].connect (() => {on_date_modified (1);} );
         to_time_picker = make_time_picker ();
-        to_time_picker.time_changed.connect ( () => {on_time_modified(1);} );
+        to_time_picker.time_changed.connect (() => {on_time_modified (1);} );
 
         allday_switch_grid.attach (allday_switch, 0, 0, 1, 1);
         allday_switch_grid.set_valign (Gtk.Align.CENTER);
@@ -243,7 +242,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             parent_dialog.date_time = from_date;
 
             // Is this all day
-            bool allday = Util.is_all_day(from_date, to_date);
+            bool allday = Util.is_all_day (from_date, to_date);
 
             to_date_picker.date = to_date;
             to_time_picker.time = to_date;
@@ -336,14 +335,17 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
                 if (start_date.get_day_of_year () == end_date.get_day_of_year ()) {
 
-                    if (start_time.get_hour () > end_time.get_hour ())
-                        to_time_picker.time = from_time_picker.time.add_hours(1);
+                    if (start_time.get_hour () > end_time.get_hour ()) {
+                        to_time_picker.time = from_time_picker.time.add_hours (1);
+                    }
 
-                    if ((start_time.get_hour () == end_time.get_hour ()) && (start_time.get_minute () >= end_time.get_minute ()))
-                        to_time_picker.time = from_time_picker.time.add_hours(1);
+                    if ((start_time.get_hour () == end_time.get_hour ()) && (start_time.get_minute () >= end_time.get_minute ())) {
+                        to_time_picker.time = from_time_picker.time.add_hours (1);
+                    }
 
-                    if (start_time.get_hour () >= 23)
+                    if (start_time.get_hour () >= 23) {
                         to_date_picker.date = from_date_picker.date.add_days (1);
+                    }
                 }
             }
             break;

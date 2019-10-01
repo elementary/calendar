@@ -57,4 +57,3 @@ public class Maya.View.Widgets.DateSwitcher : Gtk.Grid {
         end_button.clicked.connect (() => right_clicked ());
     }
 }
-

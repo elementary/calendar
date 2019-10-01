@@ -18,7 +18,7 @@
  */
 
 public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
-    private static string STYLE = """
+    private const string STYLE = """
         .cal-color {
             background-color: %s;
             border-radius: 50%;

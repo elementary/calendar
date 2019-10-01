@@ -87,8 +87,10 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
         spacer = new Gtk.Label ("");
         spacer.no_show_all = true;
-        spacer.get_style_context().add_provider (style_provider, 600);
-        spacer.get_style_context().add_class ("weeks");
+
+        unowned Gtk.StyleContext spacer_context = spacer.get_style_context ();
+        spacer_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        spacer_context.add_class ("weeks");
 
         weeks = new WeekLabels ();
 
@@ -110,7 +112,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         new_big_grid.show_all ();
         new_big_grid.expand = true;
 
-        if (!Util.show_weeks ())  {
+        if (!Util.show_weeks ()) {
             spacer.hide ();
         } else {
             spacer.show ();
@@ -208,7 +210,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
         // keep focus date on the same day of the month
         if (selected_date != null) {
-            var bumpdate = model.month_start.add_days (selected_date.get_day_of_month() - 1);
+            var bumpdate = model.month_start.add_days (selected_date.get_day_of_month () - 1);
             grid.focus_date (bumpdate);
         }
 
@@ -225,7 +227,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     /* Render new event on the grid */
     void add_event (E.Source source, ECal.Component event) {
-        event.set_data("source", source);
+        event.set_data ("source", source);
         grid.add_event (event);
     }
 
