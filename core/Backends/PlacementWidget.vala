@@ -47,7 +47,7 @@ namespace Maya.DefaultPlacementWidgets {
 
         var user_entry = new PlacementWidget ();
         user_entry.widget = new Gtk.Entry ();
-        ((Gtk.Entry)user_entry.widget).placeholder_text = ph_text?? _("user.name");
+        ((Gtk.Entry)user_entry.widget).placeholder_text = ph_text ?? _("user.name");
         user_entry.row = row;
         user_entry.column = 1;
         user_entry.ref_name = "user_entry";
@@ -69,7 +69,7 @@ namespace Maya.DefaultPlacementWidgets {
 
         var user_entry = new PlacementWidget ();
         user_entry.widget = new Gtk.Entry ();
-        ((Gtk.Entry)user_entry.widget).placeholder_text = ph_text?? _("john@doe.com");
+        ((Gtk.Entry)user_entry.widget).placeholder_text = ph_text ?? _("john@doe.com");
         user_entry.row = row;
         user_entry.column = 1;
         user_entry.ref_name = "email_entry";
