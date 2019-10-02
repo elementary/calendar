@@ -19,7 +19,7 @@
 namespace Maya {
     private static bool has_debug;
 
-    const OptionEntry[] options =  {
+    const OptionEntry[] OPTIONS = {
         { "debug", 'd', 0, OptionArg.NONE, out has_debug,
         N_("Print debug information"), null},
         { null }
@@ -84,7 +84,7 @@ namespace Maya {
 
         private void add_event (E.Source source, ECal.Component event) {
             unowned ICal.Component comp = event.get_icalcomponent ();
-            debug ("Event [%s, %s, %s]".printf (comp.get_summary(), source.dup_display_name(), comp.get_uid()));
+            debug ("Event [%s, %s, %s]".printf (comp.get_summary (), source.dup_display_name (), comp.get_uid ()));
             foreach (var alarm_uid in event.get_alarm_uids ()) {
                 ECal.ComponentAlarm e_alarm = event.get_alarm (alarm_uid);
                 ECal.ComponentAlarmAction action;
@@ -190,13 +190,13 @@ namespace Maya {
 
         private TimeSpan time_until_now (GLib.DateTime dt) {
             var now = new DateTime.now_local ();
-            return dt.difference (now)/TimeSpan.SECOND;
+            return dt.difference (now) / TimeSpan.SECOND;
         }
     }
 
     public static int main (string[] args) {
         OptionContext context = new OptionContext ("");
-        context.add_main_entries (options, null);
+        context.add_main_entries (OPTIONS, null);
 
         try {
             context.parse (ref args);
@@ -216,4 +216,3 @@ namespace Maya {
         return app.run (args);
     }
 }
-

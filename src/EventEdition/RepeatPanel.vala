@@ -71,10 +71,11 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                     month_grid.hide ();
                     break;
                 case 2:
-                    int day_of_week = parent_dialog.date_time.get_day_of_week ()+1;
-                    if (day_of_week > 7)
+                    int day_of_week = parent_dialog.date_time.get_day_of_week () + 1;
+                    if (day_of_week > 7) {
                         day_of_week = 1;
-                    set_every_day ((short)(day_of_week + Math.ceil ((double)parent_dialog.date_time.get_day_of_month ()/(double)7) * 8));
+                    }
+                    set_every_day ((short)(day_of_week + Math.ceil ((double)parent_dialog.date_time.get_day_of_month () / (double)7) * 8));
                     week_box.no_show_all = true;
                     week_box.hide ();
                     month_grid.no_show_all = false;
@@ -605,7 +606,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
      * Replace it by ICal.Recurrence.encode_day once libical-glib 3.1 is available
      */
     private short encode_day (ICal.RecurrenceWeekday weekday, int position) {
-        return (weekday + (8 * position.abs())) * ((position < 0) ? -1 : 1);
+        return (weekday + (8 * position.abs ())) * ((position < 0) ? -1 : 1);
     }
 
     /**
@@ -718,8 +719,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                             weekday = ICal.RecurrenceWeekday.MONDAY_WEEKDAY;
                             break;
                     }
-                    
-                    short day = encode_day (weekday, (int) Math.ceil ((double)parent_dialog.date_time.get_day_of_month ()/(double)7));
+
+                    short day = encode_day (weekday, (int) Math.ceil ((double)parent_dialog.date_time.get_day_of_month () / (double)7));
                     array.append_val (day);
 #if E_CAL_2_0
                     rrule.set_by_day_array (array);

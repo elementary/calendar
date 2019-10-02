@@ -31,7 +31,7 @@ public class Header : Gtk.EventBox {
     public Header () {
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
 
-        header_grid = new Gtk.Grid();
+        header_grid = new Gtk.Grid ();
         header_grid.insert_column (7);
         header_grid.insert_row (1);
         header_grid.set_column_homogeneous (true);
@@ -50,9 +50,12 @@ public class Header : Gtk.EventBox {
         for (int c = 0; c < 7; c++) {
             labels[c] = new Gtk.Label ("");
             labels[c].hexpand = true;
-            labels[c].get_style_context().add_provider (style_provider, 600);
-            labels[c].get_style_context().add_class ("daylabel");
-            header_grid.attach (labels[c], c, 0, 1, 1);
+
+            unowned Gtk.StyleContext label_context = labels[c].get_style_context ();
+            label_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            label_context.add_class ("daylabel");
+
+            header_grid.attach (labels[c], c, 0);
         }
 
         add (header_grid);
@@ -80,7 +83,7 @@ public class Header : Gtk.EventBox {
     }
 
     public void update_columns (int week_starts_on) {
-        var date = Util.strip_time(new DateTime.now_local ());
+        var date = Util.strip_time (new DateTime.now_local ());
         date = date.add_days (week_starts_on - date.get_day_of_week ());
         foreach (var label in labels) {
             label.label = date.format ("%a");

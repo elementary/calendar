@@ -21,8 +21,8 @@
 
 namespace Maya {
     namespace Option {
-        private static bool ADD_EVENT = false;
-        private static string SHOW_DAY = null;
+        private static bool add_event = false;
+        private static string show_day = null;
     }
 
     public class Application : Gtk.Application {
@@ -43,9 +43,9 @@ namespace Maya {
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
-        public const OptionEntry[] app_options = {
-            { "add-event", 'a', 0, OptionArg.NONE, out Option.ADD_EVENT, N_("Create an event"), null },
-            { "show-day", 's', 0, OptionArg.STRING, out Option.SHOW_DAY, N_("Focus the given day"), N_("date") },
+        public const OptionEntry[] APP_OPTIONS = {
+            { "add-event", 'a', 0, OptionArg.NONE, out Option.add_event, N_("Create an event"), null },
+            { "show-day", 's', 0, OptionArg.STRING, out Option.show_day, N_("Focus the given day"), N_("date") },
             { null }
         };
 
@@ -55,9 +55,9 @@ namespace Maya {
                 return;
             }
 
-            if (Option.SHOW_DAY != null) {
+            if (Option.show_day != null) {
                 var date = Date ();
-                date.set_parse (Option.SHOW_DAY);
+                date.set_parse (Option.show_day);
                 if (date.valid () == true) {
                     var datetime = Settings.SavedState.get_default ().get_selected ();
                     datetime = datetime.add_years ((int)date.get_year () - datetime.get_year ());
@@ -65,7 +65,7 @@ namespace Maya {
                     Settings.SavedState.get_default ().selected_day = datetime.format ("%Y-%j");
                     Settings.SavedState.get_default ().month_page = datetime.format ("%Y-%m");
                 } else {
-                    warning ("Invalid date '%s' - Ignoring", Option.SHOW_DAY);
+                    warning ("Invalid date '%s' - Ignoring", Option.show_day);
                 }
             }
 
@@ -75,7 +75,7 @@ namespace Maya {
             init_gui ();
             window.show_all ();
 
-            if (Option.ADD_EVENT) {
+            if (Option.add_event) {
                 Idle.add (() => {
                     window.on_tb_add_clicked (window.calview.selected_date);
                     return false;
@@ -113,7 +113,7 @@ namespace Maya {
             window.title = _(Build.APP_NAME);
             window.set_allocation (rect);
 
-            if (window_x != -1 ||  window_y != -1) {
+            if (window_x != -1 || window_y != -1) {
                 window.move (window_x, window_y);
             }
 
@@ -131,7 +131,7 @@ namespace Maya {
             });
 
             add_action (quit_action);
-            set_accels_for_action("app.quit", { "<Control>q" });
+            set_accels_for_action ("app.quit", { "<Control>q" });
         }
 
         private void on_quit () {
@@ -141,7 +141,7 @@ namespace Maya {
 
     public static int main (string[] args) {
         var context = new OptionContext (_("Calendar"));
-        context.add_main_entries (Application.app_options, "maya");
+        context.add_main_entries (Application.APP_OPTIONS, "maya");
         context.add_group (Gtk.get_option_group (true));
 
         try {

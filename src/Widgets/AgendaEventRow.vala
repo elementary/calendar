@@ -295,8 +295,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         var date_format = Granite.DateTime.get_default_date_format (true, true, false);
         string start_date_string = start_date.format (date_format);
         string end_date_string = end_date.format (date_format);
-        string start_time_string = start_date.format (Settings.TimeFormat ());
-        string end_time_string = end_date.format (Settings.TimeFormat ());
+        string start_time_string = start_date.format (Settings.time_format ());
+        string end_time_string = end_date.format (Settings.time_format ());
         string? datetime_string = null;
 
         datatime_label.show ();

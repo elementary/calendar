@@ -70,7 +70,7 @@ public class Maya.Model.CalendarModel : Object {
     private CalendarModel () {
         int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
         if (week_start >= 1 && week_start <= 7) {
-            week_starts_on = (Maya.Settings.Weekday)week_start-1;
+            week_starts_on = (Maya.Settings.Weekday)week_start - 1;
         }
 
         this.month_start = Util.get_start_of_month (Settings.SavedState.get_default ().get_page ());
@@ -127,7 +127,7 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     private async void add_event_async (E.Source source, ECal.Component event) {
-        unowned ICal.Component comp = event.get_icalcomponent();
+        unowned ICal.Component comp = event.get_icalcomponent ();
         debug (@"Adding event '$(comp.get_uid())'");
         ECal.Client client;
         lock (source_client) {
@@ -154,7 +154,7 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     public void update_event (E.Source source, ECal.Component event, ECal.ObjModType mod_type) {
-        unowned ICal.Component comp = event.get_icalcomponent();
+        unowned ICal.Component comp = event.get_icalcomponent ();
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
 
         ECal.Client client;
@@ -163,9 +163,9 @@ public class Maya.Model.CalendarModel : Object {
         }
 
 #if E_CAL_2_0
-        client.modify_object.begin (comp, mod_type, ECal.OperationFlags.NONE, null, (obj, results) =>  {
+        client.modify_object.begin (comp, mod_type, ECal.OperationFlags.NONE, null, (obj, results) => {
 #else
-        client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
+        client.modify_object.begin (comp, mod_type, null, (obj, results) => {
 #endif
             try {
                 client.modify_object.end (results);
@@ -176,9 +176,9 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     public void remove_event (E.Source source, ECal.Component event, ECal.ObjModType mod_type) {
-        unowned ICal.Component comp = event.get_icalcomponent();
+        unowned ICal.Component comp = event.get_icalcomponent ();
         string uid = comp.get_uid ();
-        string? rid = event.has_recurrences() ? null : event.get_recurid_as_string();
+        string? rid = event.has_recurrences () ? null : event.get_recurid_as_string ();
         debug (@"Removing event '$uid'");
         ECal.Client client;
         lock (source_client) {
@@ -246,11 +246,12 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     public void remove_source (E.Source source) {
-        debug ("Removing source '%s'", source.dup_display_name());
+        debug ("Removing source '%s'", source.dup_display_name ());
         // Already out of the model, so do nothing
         unowned string uid = source.get_uid ();
-        if (!source_view.contains (uid))
+        if (!source_view.contains (uid)) {
             return;
+        }
 
         var current_view = source_view.get (uid);
         try {
@@ -287,18 +288,19 @@ public class Maya.Model.CalendarModel : Object {
         var month_end = month_start.add_full (0, 1, -1);
         month_range = new Util.DateRange (month_start, month_end);
 
-        int dow = month_start.get_day_of_week();
+        int dow = month_start.get_day_of_week ();
         int wso = (int) week_starts_on;
         int offset = 0;
 
-        if (wso < dow)
+        if (wso < dow) {
             offset = dow - wso;
-        else if (wso > dow)
+        } else if (wso > dow) {
             offset = 7 + dow - wso;
+        }
 
         var data_range_first = month_start.add_days (-offset);
 
-        dow = month_end.get_day_of_week();
+        dow = month_end.get_day_of_week ();
         wso = (int) (week_starts_on + 6);
 
         // WSO must be between 1 and 7
@@ -312,12 +314,12 @@ public class Maya.Model.CalendarModel : Object {
         else if (wso > dow)
             offset = wso - dow;
 
-        var data_range_last = month_end.add_days(offset);
+        var data_range_last = month_end.add_days (offset);
 
         data_range = new Util.DateRange (data_range_first, data_range_last);
         num_weeks = data_range.to_list ().size / 7;
 
-        debug(@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
+        debug (@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
     }
 
     private void load_source (E.Source source) {
@@ -342,7 +344,7 @@ public class Maya.Model.CalendarModel : Object {
         debug ("Getting client-view for source '%s'", source.dup_display_name ());
         client.get_view.begin (query, null, (obj, results) => {
             ECal.ClientView view;
-            debug (@"Received client-view for source '%s'", source.dup_display_name());
+            debug ("Received client-view for source '%s'", source.dup_display_name ());
             try {
                 client.get_view.end (results, out view);
                 view.objects_added.connect ((objects) => on_objects_added (source, client, objects));
@@ -350,7 +352,7 @@ public class Maya.Model.CalendarModel : Object {
                 view.objects_modified.connect ((objects) => on_objects_modified (source, client, objects));
                 view.start ();
             } catch (Error e) {
-                critical ("Error from source '%s': %s", source.dup_display_name(), e.message);
+                critical ("Error from source '%s': %s", source.dup_display_name (), e.message);
             }
 
             source_view.set (source.dup_uid (), view);
@@ -397,7 +399,7 @@ public class Maya.Model.CalendarModel : Object {
 #else
     private void on_objects_added (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
 #endif
-        debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name());
+        debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
         var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         objects.foreach ((comp) => {

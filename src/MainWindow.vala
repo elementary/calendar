@@ -26,7 +26,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     public const string ACTION_NEW_EVENT = "action_new_event";
     public const string ACTION_SHOW_TODAY = "action_show_today";
 
-    private const ActionEntry[] action_entries = {
+    private const ActionEntry[] ACTION_ENTRIES = {
         { ACTION_NEW_EVENT, action_new_event },
         { ACTION_SHOW_TODAY, action_show_today }
     };
@@ -49,7 +49,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     construct {
-        add_action_entries (action_entries, this);
+        add_action_entries (ACTION_ENTRIES, this);
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());

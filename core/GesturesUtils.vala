@@ -22,7 +22,7 @@
 namespace Maya.GesturesUtils {
 
     static bool has_scrolled = false;
-    const uint interval = 500;
+    const uint INTERVAL = 500;
 
     public bool on_scroll_event (Gdk.EventScroll event) {
         double delta_x;
@@ -61,7 +61,7 @@ namespace Maya.GesturesUtils {
 
     public async void reset_timer () {
         has_scrolled = true;
-        Timeout.add (interval, () => {
+        Timeout.add (INTERVAL, () => {
             has_scrolled = false;
             return false;
         });

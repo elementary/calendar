@@ -44,9 +44,9 @@ public class WeekLabels : Gtk.Revealer {
 
         var style_provider = Util.Css.get_css_provider ();
 
-        // EventBox properties
-        day_grid.get_style_context().add_provider (style_provider, 600);
-        day_grid.get_style_context().add_class ("weeks");
+        unowned Gtk.StyleContext day_grid_context = day_grid.get_style_context ();
+        day_grid_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        day_grid_context.add_class ("weeks");
 
         button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
@@ -83,10 +83,10 @@ public class WeekLabels : Gtk.Revealer {
 
             var next = date;
             // Find the beginning of the week which is apparently always a monday
-            int days_to_add = (8 - next.get_day_of_week()) % 7;
-            next = next.add_days(days_to_add);
+            int days_to_add = (8 - next.get_day_of_week ()) % 7;
+            next = next.add_days (days_to_add);
             foreach (var label in labels) {
-                label.label = next.get_week_of_year ().to_string();
+                label.label = next.get_week_of_year ().to_string ();
                 next = next.add_weeks (1);
             }
         } else {
@@ -118,9 +118,12 @@ public class WeekLabels : Gtk.Revealer {
             labels[c] = new Gtk.Label ("");
             labels[c].valign = Gtk.Align.START;
             labels[c].width_chars = 2;
-            labels[c].get_style_context().add_provider (style_provider, 600);
-            labels[c].get_style_context().add_class ("weeklabel");
-            day_grid.attach (labels[c], 0, c, 1, 1);
+
+            unowned Gtk.StyleContext label_context = labels[c].get_style_context ();
+            label_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            label_context.add_class ("weeklabel");
+
+            day_grid.attach (labels[c], 0, c);
             labels[c].show ();
         }
     }

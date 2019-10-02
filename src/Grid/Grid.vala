@@ -88,12 +88,13 @@ public class Grid : Gtk.Grid {
         var today = new DateTime.now_local ();
 
         Gee.List<DateTime> old_dates;
-        if (grid_range == null)
+        if (grid_range == null) {
             old_dates = new Gee.ArrayList<DateTime> ();
-        else
-            old_dates = grid_range.to_list();
+        } else {
+            old_dates = grid_range.to_list ();
+        }
 
-        var new_dates = new_range.to_list();
+        var new_dates = new_range.to_list ();
 
         var data_new = new Gee.HashMap<uint, GridDay> ();
 
@@ -107,7 +108,7 @@ public class Grid : Gtk.Grid {
 
         var style_provider = Util.Css.get_css_provider ();
 
-        for (i=0; i<new_dates.size; i++) {
+        for (i = 0; i < new_dates.size; i++) {
             var new_date = new_dates [i];
             GridDay day;
             if (i < old_dates.size) {
@@ -127,16 +128,17 @@ public class Grid : Gtk.Grid {
                 });
 
                 if (col == 0) {
-                    day.get_style_context().add_provider (style_provider, 600);
-                    day.get_style_context().add_class ("firstcol");
+                    unowned Gtk.StyleContext day_context = day.get_style_context ();
+                    day_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                    day_context.add_class ("firstcol");
                 }
 
-                attach (day, col, row, 1, 1);
+                attach (day, col, row);
                 day.show_all ();
             }
 
-            col = (col+1) % 7;
-            row = (col==0) ? row+1 : row;
+            col = (col + 1) % 7;
+            row = (col == 0) ? row + 1 : row;
             data_new.set (day_hash (new_date), day);
         }
 
@@ -190,7 +192,7 @@ public class Grid : Gtk.Grid {
      * Removes the given event from the grid.
      */
     public void remove_event (ECal.Component event) {
-        foreach(var grid_day in data.values) {
+        foreach (var grid_day in data.values) {
             grid_day.remove_event (event);
         }
     }

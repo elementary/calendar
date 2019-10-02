@@ -47,8 +47,8 @@ namespace Maya.Util {
             return true;
         }
 
-        public bool has_next() {
-            return current.compare(range.last_dt) < 0;
+        public bool has_next () {
+            return current.compare (range.last_dt) < 0;
         }
 
         public bool first () {
@@ -60,8 +60,8 @@ namespace Maya.Util {
             return current;
         }
 
-        public void remove() {
-            assert_not_reached();
+        public void remove () {
+            assert_not_reached ();
         }
     }
 
@@ -93,11 +93,11 @@ namespace Maya.Util {
         }
 
         public bool equals (DateRange other) {
-            return (this.first_dt==other.first_dt && this.last_dt==other.last_dt);
+            return (this.first_dt == other.first_dt && this.last_dt == other.last_dt);
         }
 
         public Type element_type {
-            get { return typeof(DateTime); }
+            get { return typeof (DateTime); }
         }
 
         public Gee.Iterator<DateTime> iterator () {
@@ -108,7 +108,7 @@ namespace Maya.Util {
             return (first_dt.compare (time) < 1) && (last_dt.compare (time) > -1);
         }
 
-        public Gee.SortedSet<DateTime> to_set() {
+        public Gee.SortedSet<DateTime> to_set () {
 
             var @set = new Gee.TreeSet<DateTime> ((GLib.CompareDataFunc<GLib.DateTime>?) DateTime.compare);
 

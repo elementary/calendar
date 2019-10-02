@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2018-10-23 00:02+0000\n"
-"Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
-"Language-Team: Galician <https://weblate.elementary.io/projects/calendar/"
+"PO-Revision-Date: 2019-09-27 17:24+0000\n"
+"Last-Translator: Daniel R. <riesp@pm.me>\n"
+"Language-Team: Galician <https://l10n.elementary.io/projects/calendar/"
 "calendar/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
@@ -125,21 +125,20 @@ msgid "Calendar"
 msgstr "Calendario"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Seleccionar axendas para amosar"
+msgstr "Seleccionar os calendarios para importar"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importar eventos dende o ficheiro %d ao seguinte calendario:"
+msgstr "Os eventos de \"%s\" combinaranse con este calendario:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Importar eventos dende o ficheiro %d ao seguinte calendario:"
-msgstr[1] "Importar eventos dende os ficheiros %d ao seguinte calendario:"
+msgstr[0] "Os eventos do ficheiro %d serán importados no seguinte calendario:"
+msgstr[1] "Os eventos dos ficheiros %d serán importados no seguinte calendario:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -147,7 +146,7 @@ msgstr "Importar"
 
 #: src/EventEdition/EventDialog.vala:58
 msgid "Add Event"
-msgstr "Engadir actividade"
+msgstr "Engadir evento"
 
 #: src/EventEdition/EventDialog.vala:61
 msgid "Edit Event"
@@ -203,7 +202,7 @@ msgstr "Rexeitado"
 
 #: src/EventEdition/GuestGrid.vala:50
 msgid "Maybe"
-msgstr ""
+msgstr "Quizais"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -270,84 +269,68 @@ msgid "Add Reminder"
 msgstr "Engadir unha lembranza"
 
 #: src/EventEdition/ReminderPanel.vala:163
-#, fuzzy
 msgid "At time of event"
-msgstr "Nome da actividade"
+msgstr "Ao tempo do evento"
 
 #: src/EventEdition/ReminderPanel.vala:164
-#, fuzzy
 msgid "1 minute before"
-msgstr "1 minuto"
+msgstr "1 minuto antes"
 
 #: src/EventEdition/ReminderPanel.vala:165
-#, fuzzy
 msgid "5 minutes before"
-msgstr "5 minutos"
+msgstr "5 minutos antes"
 
 #: src/EventEdition/ReminderPanel.vala:166
-#, fuzzy
 msgid "10 minutes before"
-msgstr "10 minutos"
+msgstr "10 minutos antes"
 
 #: src/EventEdition/ReminderPanel.vala:167
-#, fuzzy
 msgid "15 minutes before"
-msgstr "15 minutos"
+msgstr "15 minutos antes"
 
 #: src/EventEdition/ReminderPanel.vala:168
-#, fuzzy
 msgid "20 minutes before"
-msgstr "20 minutos"
+msgstr "20 minutos antes"
 
 #: src/EventEdition/ReminderPanel.vala:169
-#, fuzzy
 msgid "25 minutes before"
-msgstr "25 minutos"
+msgstr "25 minutos antes"
 
 #: src/EventEdition/ReminderPanel.vala:170
-#, fuzzy
 msgid "30 minutes before"
-msgstr "30 minutos"
+msgstr "30 minutos antes"
 
 #: src/EventEdition/ReminderPanel.vala:171
-#, fuzzy
 msgid "45 minutes before"
-msgstr "45 minutos"
+msgstr "45 minutos antes"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "1 hour before"
-msgstr "1 hora"
+msgstr "1 hora antes"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "2 hours before"
-msgstr "2 horas"
+msgstr "2 horas antes"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "3 hours before"
-msgstr "3 horas"
+msgstr "3 horas antes"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "12 hours before"
-msgstr "12 horas"
+msgstr "12 horas antes"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "24 hours before"
-msgstr "24 horas"
+msgstr "24 horas antes"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "2 days before"
-msgstr "2 días"
+msgstr "2 días antes"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "1 week before"
-msgstr "1 semana"
+msgstr "1 semana antes"
 
 #: src/EventEdition/RepeatPanel.vala:53
 msgid "Repeat:"
@@ -676,9 +659,8 @@ msgid "Remove"
 msgstr "Retirar"
 
 #: src/SourceDialog/SourceItem.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Retirar"
+msgstr "Non eliminábel"
 
 #: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
 msgid "Edit…"
@@ -686,65 +668,63 @@ msgstr "Editar…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Non editábel"
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
 msgstr "Desfacer"
 
 #: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "O calendario «%s» foi retirado."
+msgstr "Eliminouse o calendario «%s»"
 
 #: src/SourceDialog/SourceSelector.vala:51
 msgid "Add New Calendar…"
-msgstr "Engadir un calendario novo..."
+msgstr "Engadir un calendario novo…"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:176
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:179
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:188
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:195
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarButton.vala:72
-#, fuzzy
 msgid "Search Calendars"
-msgstr "Crear un calendario"
+msgstr "Buscar calendarios"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr ""
+msgstr "Non hai resultados"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr ""
+msgstr "Intente cambiar os termos de procura."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "Exportar o calendario…"
+msgstr "Exportar calendario…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
@@ -756,7 +736,7 @@ msgstr "Eliminar o evento"
 
 #: src/Widgets/EventMenu.vala:43
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Eliminar ocorrencia"
 
 #: src/Widgets/HeaderBar.vala:41
 msgid "Create a new event"
