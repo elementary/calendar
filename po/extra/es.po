@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-10-06 14:23+0000\n"
+"PO-Revision-Date: 2019-10-10 14:23+0000\n"
 "Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/extra/"
 "es/>\n"
@@ -53,7 +53,7 @@ msgstr "Usar siempre el icono del calendario en las notificaciones"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Agenda view can now be navigated by keyboard"
-msgstr ""
+msgstr "La vista de la agenda se puede navegar con el teclado"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 msgid "Right-to-left improvements"
@@ -62,6 +62,7 @@ msgstr "Mejoras de derecha a izquierda"
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid "Various UI overhauls including lime accent color"
 msgstr ""
+"Varias revisiones de la interfaz de usuario, incluido el color de acento lima"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Overall code cleanup and rewrites"
