@@ -70,12 +70,6 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_settings_weekday_get_type@Base 0.3
  maya_util_calcomponent_equal_func@Base 0.3
  maya_util_compare_events@Base 0.3
- maya_util_css_construct@Base 0.3
- maya_util_css_get_css_provider@Base 0.3
- maya_util_css_get_type@Base 0.3
- maya_util_css_new@Base 0.3
- maya_util_css_ref@Base 0.3
- maya_util_css_unref@Base 0.3
  maya_util_date_iterator_construct@Base 0.3
  maya_util_date_iterator_first@Base 0.3
  maya_util_date_iterator_get_type@Base 0.3
