@@ -15,7 +15,9 @@
     <file alias="location-marker.svg" compressed="true" preprocess="xml-stripblanks">LocationMarker.svg</file>
     <file alias="AgendaEventRow.css" compressed="true">style/AgendaEventRow.css</file>
     <file alias="Application.css" compressed="true">style/Application.css</file>
-    <file alias="calendar.css" compressed="true">style/calendar.css</file>
     <file alias="ColorButton.css" compressed="true">style/ColorButton.css</file>
+    <file alias="Grid.css" compressed="true">style/Grid.css</file>
+    <file alias="Header.css" compressed="true">style/Header.css</file>
+    <file alias="WeekLabels.css" compressed="true">style/WeekLabels.css</file>
   </gresource>
 </gresources>

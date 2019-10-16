@@ -152,17 +152,6 @@ namespace Maya.Util {
         return false;
     }
 
-    public bool is_day_in_range (DateTime day, Util.DateRange range) {
-        var date = day.get_day_of_year ();
-
-        foreach (var dt in range) {
-            if (dt.get_day_of_year () == date && dt.get_year () == day.get_year ()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public bool is_multiday_event (ICal.Component comp) {
         DateTime start, end;
         get_local_datetimes_from_icalcomponent (comp, out start, out end);
@@ -212,7 +201,7 @@ namespace Maya.Util {
     }
 
     /* Returns true if 'a' and 'b' are the same ECal.Component */
-    public bool calcomponent_equal_func (ECal.Component a, ECal.Component b) {
+    private bool calcomponent_equal_func (ECal.Component a, ECal.Component b) {
         return a.get_id ().equal (b.get_id ());
     }
 
@@ -289,23 +278,6 @@ namespace Maya.Util {
     /* Returns true if 'a' and 'b' are the same E.Source */
     private bool source_equal_func (E.Source a, E.Source b) {
         return a.get_uid () == b.get_uid ();
-    }
-
-    /*
-     * Gtk Miscellaneous
-     */
-
-    public class Css {
-        private static Gtk.CssProvider? _css_provider;
-        // Retrieve global css provider
-        public static unowned Gtk.CssProvider get_css_provider () {
-            if (_css_provider == null) {
-                _css_provider = new Gtk.CssProvider ();
-                _css_provider.load_from_resource ("/io/elementary/calendar/calendar.css");
-            }
-
-            return _css_provider;
-        }
     }
 
     /*

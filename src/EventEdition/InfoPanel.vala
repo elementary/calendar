@@ -272,10 +272,27 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             parent_dialog.ecal = new ECal.Component ();
             parent_dialog.ecal.set_new_vtype (ECal.ComponentVType.EVENT);
 
+            var time = new DateTime.now_local ();
+            var minutes = time.get_minute ();
+            var now_before_2300 = (time.get_hour () < 23);
+
+            /* Set convenient start time but do not change day */
             from_date_picker.date = parent_dialog.date_time;
-            from_time_picker.time = new DateTime.now_local ();
-            to_date_picker.date = parent_dialog.date_time;
-            to_time_picker.time = new DateTime.now_local ().add_hours (1);
+            if (now_before_2300) {  /* Default start time to next whole hour*/
+                time = time.add_minutes (60 - minutes);
+            } else {  /* Default start time 23.00  (11 PM)*/
+                time = time.add_minutes (-minutes);
+            }
+
+            from_time_picker.time = time;
+
+            /* Default event duration of one hour, changing day if required */
+            to_time_picker.time = time.add_hours (1);
+            if (now_before_2300) {
+                to_date_picker.date = parent_dialog.date_time;
+            } else { /* Default end time is 00.00 (12.00 AM) next morning*/
+                to_date_picker.date = parent_dialog.date_time.add_days (1);
+            }
 
             // Load the source
             calendar_button.current_source = parent_dialog.source;

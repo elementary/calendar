@@ -536,7 +536,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         week_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         week_box.get_style_context ().add_class ("raised");
         switch (Maya.Model.CalendarModel.get_default ().week_starts_on) {
-            case Settings.Weekday.TUESDAY:
+            case GLib.DateWeekday.TUESDAY:
                 week_box.add (thu_button);
                 week_box.add (fri_button);
                 week_box.add (sat_button);
@@ -545,7 +545,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 week_box.add (tue_button);
                 week_box.add (wed_button);
                 break;
-            case Settings.Weekday.WEDNESDAY:
+            case GLib.DateWeekday.WEDNESDAY:
                 week_box.add (wed_button);
                 week_box.add (thu_button);
                 week_box.add (fri_button);
@@ -554,7 +554,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 week_box.add (mon_button);
                 week_box.add (tue_button);
                 break;
-            case Settings.Weekday.THURSDAY:
+            case GLib.DateWeekday.THURSDAY:
                 week_box.add (thu_button);
                 week_box.add (fri_button);
                 week_box.add (sat_button);
@@ -563,7 +563,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 week_box.add (tue_button);
                 week_box.add (wed_button);
                 break;
-            case Settings.Weekday.FRIDAY:
+            case GLib.DateWeekday.FRIDAY:
                 week_box.add (fri_button);
                 week_box.add (sat_button);
                 week_box.add (sun_button);
@@ -572,7 +572,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 week_box.add (wed_button);
                 week_box.add (thu_button);
                 break;
-            case Settings.Weekday.SATURDAY:
+            case GLib.DateWeekday.SATURDAY:
                 week_box.add (sat_button);
                 week_box.add (sun_button);
                 week_box.add (mon_button);
@@ -581,7 +581,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 week_box.add (thu_button);
                 week_box.add (fri_button);
                 break;
-            case Settings.Weekday.SUNDAY:
+            case GLib.DateWeekday.SUNDAY:
                 week_box.add (sun_button);
                 week_box.add (mon_button);
                 week_box.add (tue_button);

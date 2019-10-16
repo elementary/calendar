@@ -16,16 +16,6 @@
 //
 
 namespace Maya.Settings {
-    public enum Weekday {
-        SUNDAY = 0,
-        MONDAY,
-        TUESDAY,
-        WEDNESDAY,
-        THURSDAY,
-        FRIDAY,
-        SATURDAY
-    }
-
     public class MayaSettings : Granite.Services.Settings {
         private static Settings.MayaSettings? global_settings = null;
 

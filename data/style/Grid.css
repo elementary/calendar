@@ -1,6 +1,5 @@
 /*
-*  Copyright (C) 2011-2012 Maxwell Barvian
-*                2018 elementary, Inc. (https://elementary.io)
+*  Copyright 2018-2019 elementary, Inc. (https://elementary.io)
 *
 *  This program is free software: you can redistribute it and/or modify
 *  it under the terms of the GNU General Public License as published by
@@ -16,25 +15,6 @@
 *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-.header {
-    background-image:
-        linear-gradient(
-            to bottom,
-            @bg_color,
-            shade(@bg_color, 1.2)
-        );
-}
-
-.daylabel {
-    padding: 3px;
-    border-left: solid 1px @menu_separator;
-}
-
-.daylabel:first-child {
-    border-left: none;
-}
-
-
 .cell {
     background-color: @base_color;
     border-radius: 0;
@@ -42,7 +22,8 @@
     border-left: solid 1px @menu_separator;
 }
 
-.cell.firstcol {
+.cell:dir(rtl) {
+    border-right: solid 1px @menu_separator;
     border-left: none;
 }
 
@@ -50,15 +31,27 @@
     background-color: @bg_color;
 }
 
-#date {
-    border-radius: 50%;
-    min-height: 24px;
-    min-width: 24px;
+.cell.firstcol {
+    border-left: none;
+}
+
+.cell.firstcol:dir(rtl) {
+    border-right: none;
 }
 
 .cell:selected #date {
     background-color: shade(@bg_color, 0.86);
     color: @fg_color;
+}
+
+.cell > #date {
+    font-size: 8px;
+}
+
+#date {
+    border-radius: 50%;
+    min-height: 24px;
+    min-width: 24px;
 }
 
 #today #date {
@@ -70,33 +63,4 @@
 #today:selected #date {
     background-color: @colorAccent;
     color: #fff;
-}
-
-.cell > #date {
-    font-size: 8px;
-}
-
-.weeks {
-    border-right: solid 1px @menu_separator;
-}
-
-.weeklabel {
-    border-top: solid 1px @menu_separator;
-    padding: 3px;
-}
-
-.cell:dir(rtl),
-.daylabel:dir(rtl) {
-    border-right: solid 1px @menu_separator;
-    border-left: none;
-}
-
-.cell.firstcol:dir(rtl),
-.daylabel:first-child:dir(rtl),
-.weeks:dir(rtl) {
-    border-right: none;
-}
-
-.weeks:dir(rtl) {
-    border-left: solid 1px @menu_separator;
 }
