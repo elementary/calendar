@@ -39,7 +39,14 @@ public class Maya.View.CalendarView : Gtk.Grid {
     private Gtk.Label spacer { get; private set; }
     private GLib.Settings show_weeks;
 
-    public CalendarView () {
+    private static Gtk.CssProvider style_provider;
+
+    static construct {
+        style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("/io/elementary/calendar/WeekLabels.css");
+    }
+
+    construct {
         selected_date = Settings.SavedState.get_default ().get_selected ();
         big_grid = create_big_grid ();
 
@@ -83,8 +90,6 @@ public class Maya.View.CalendarView : Gtk.Grid {
     }
 
     public Gtk.Grid create_big_grid () {
-        var style_provider = Util.Css.get_css_provider ();
-
         spacer = new Gtk.Label ("");
         spacer.no_show_all = true;
 

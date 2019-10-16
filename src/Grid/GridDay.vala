@@ -48,8 +48,15 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
     private const int EVENT_MARGIN = 3;
 
+    private static Gtk.CssProvider style_provider;
+
     public GridDay (DateTime date) {
         Object (date: date);
+    }
+
+    static construct {
+        style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("/io/elementary/calendar/Grid.css");
     }
 
     construct {
@@ -66,13 +73,13 @@ public class Maya.View.GridDay : Gtk.EventBox {
         events |= Gdk.EventMask.KEY_PRESS_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
 
-        var style_provider = Util.Css.get_css_provider ();
-        get_style_context ().add_provider (style_provider, 600);
-        get_style_context ().add_class ("cell");
+        unowned Gtk.StyleContext style_context = get_style_context ();
+        style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        style_context.add_class ("cell");
 
         var label = new Gtk.Label ("");
         label.halign = Gtk.Align.END;
-        label.get_style_context ().add_provider (style_provider, 600);
+        label.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         label.margin = EVENT_MARGIN;
         label.margin_bottom = 0;
         label.name = "date";

@@ -28,7 +28,14 @@ public class Header : Gtk.EventBox {
     private Gtk.Grid header_grid;
     private Gtk.Label[] labels;
 
-    public Header () {
+    private static Gtk.CssProvider style_provider;
+
+    static construct {
+        style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("/io/elementary/calendar/Header.css");
+    }
+
+    construct {
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
 
         header_grid = new Gtk.Grid ();
@@ -38,8 +45,6 @@ public class Header : Gtk.EventBox {
         header_grid.set_row_homogeneous (true);
         header_grid.column_spacing = 0;
         header_grid.row_spacing = 0;
-
-        var style_provider = Util.Css.get_css_provider ();
 
         // EventBox properties
         set_visible_window (true); // needed for style

@@ -38,8 +38,14 @@ public class Grid : Gtk.Grid {
     public signal void selection_changed (DateTime new_date);
     private GridDay selected_gridday;
 
-    public Grid () {
+    private static Gtk.CssProvider style_provider;
 
+    static construct {
+        style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("/io/elementary/calendar/Grid.css");
+    }
+
+    construct {
         // Gtk.Grid properties
         insert_column (7);
         set_column_homogeneous (true);
@@ -105,8 +111,6 @@ public class Grid : Gtk.Grid {
 
         int i=0;
         int col = 0, row = 0;
-
-        var style_provider = Util.Css.get_css_provider ();
 
         for (i = 0; i < new_dates.size; i++) {
             var new_date = new_dates [i];
