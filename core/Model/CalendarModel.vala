@@ -35,7 +35,7 @@ public class Maya.Model.CalendarModel : Object {
     public int num_weeks { get; private set; default = 6; }
 
     /* The start of week, ie. Monday=1 or Sunday=7 */
-    public Settings.Weekday week_starts_on { get; set; default = Settings.Weekday.MONDAY; }
+    public GLib.DateWeekday week_starts_on { get; set; default = GLib.DateWeekday.MONDAY; }
 
     /* The event that is currently dragged */
     public ECal.Component drag_component {get; set;}
@@ -70,7 +70,7 @@ public class Maya.Model.CalendarModel : Object {
     private CalendarModel () {
         int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
         if (week_start >= 1 && week_start <= 7) {
-            week_starts_on = (Maya.Settings.Weekday)week_start - 1;
+            week_starts_on = (GLib.DateWeekday) (week_start - 1);
         }
 
         this.month_start = Util.get_start_of_month (Settings.SavedState.get_default ().get_page ());
