@@ -67,7 +67,6 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_settings_saved_state_set_month_page@Base 0.3
  maya_settings_saved_state_set_selected_day@Base 0.3
  maya_settings_saved_state_set_show_weeks@Base 0.3
- maya_settings_weekday_get_type@Base 0.3
  maya_util_calcomponent_equal_func@Base 0.3
  maya_util_compare_events@Base 0.3
  maya_util_css_construct@Base 0.3
