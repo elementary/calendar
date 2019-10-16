@@ -98,7 +98,6 @@ libelementary-calendar.so.0 libmaya-calendar0 #MINVER#
  maya_util_get_start_of_month@Base 0.3
  maya_util_ical_to_date_time@Base 0.3
  maya_util_is_all_day@Base 0.3.1.1
- maya_util_is_day_in_range@Base 0.4.1
  maya_util_is_event_in_range@Base 0.4.0.2
  maya_util_is_multiday_event@Base 0.3
  maya_util_param_spec_css@Base 0.3
