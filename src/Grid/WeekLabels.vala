@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2011-2019 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,18 +18,22 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-namespace Maya.View {
-
 /**
  * Represent the week labels at the left side of the grid.
  */
-public class WeekLabels : Gtk.Revealer {
-
+public class Maya.View.WeekLabels : Gtk.Revealer {
     private Gtk.Grid day_grid;
     private Gtk.Label[] labels;
     private int nr_of_weeks;
 
-    public WeekLabels () {
+    private static Gtk.CssProvider style_provider;
+
+    static construct {
+        style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("/io/elementary/calendar/WeekLabels.css");
+    }
+
+    construct {
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         vexpand = true;
 
@@ -41,8 +44,6 @@ public class WeekLabels : Gtk.Revealer {
         day_grid.set_row_homogeneous (true);
         day_grid.row_spacing = 0;
         day_grid.show ();
-
-        var style_provider = Util.Css.get_css_provider ();
 
         unowned Gtk.StyleContext day_grid_context = day_grid.get_style_context ();
         day_grid_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -113,7 +114,6 @@ public class WeekLabels : Gtk.Revealer {
 
         // Create new labels
         labels = new Gtk.Label[nr_of_weeks];
-        var style_provider = Util.Css.get_css_provider ();
         for (int c = 0; c < nr_of_weeks; c++) {
             labels[c] = new Gtk.Label ("");
             labels[c].valign = Gtk.Align.START;
@@ -127,6 +127,4 @@ public class WeekLabels : Gtk.Revealer {
             labels[c].show ();
         }
     }
-}
-
 }
