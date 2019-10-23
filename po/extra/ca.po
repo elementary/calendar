@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-21 16:30-0700\n"
-"PO-Revision-Date: 2019-07-07 11:28+0000\n"
+"PO-Revision-Date: 2019-10-25 16:23+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/calendar/extra/"
 "ca/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-11-18 05:58+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -41,20 +41,21 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Make agenda pane fill the whole space"
-msgstr ""
+msgstr "Fer que l'agenda ompli tot l'espai."
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Set the suggested time for new events to the next whole hour"
 msgstr ""
+"Establiment de l'hora suggerida per a esdeveniments nous a l'hora següent "
+"completa"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix issues with recurring events"
-msgstr ""
+msgstr "Correcció d'errors recurrents"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Millores de dreta a esquerra"
+msgstr "Millores de rendiment"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:34
