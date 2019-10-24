@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-21 16:30-0700\n"
-"PO-Revision-Date: 2019-10-10 14:23+0000\n"
+"PO-Revision-Date: 2019-10-25 16:23+0000\n"
 "Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/extra/"
 "es/>\n"
@@ -41,20 +41,21 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Make agenda pane fill the whole space"
-msgstr ""
+msgstr "Hacer que el panel de agenda llene todo el espacio"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Set the suggested time for new events to the next whole hour"
 msgstr ""
+"Establecer el tiempo sugerido para nuevos eventos para la próxima hora "
+"completa"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix issues with recurring events"
-msgstr ""
+msgstr "Corrección de problemas con eventos recurrentes"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Mejoras de derecha a izquierda"
+msgstr "Mejoras de rendimiento"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:34
