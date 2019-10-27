@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-21 16:30-0700\n"
-"PO-Revision-Date: 2019-07-10 19:46+0000\n"
+"PO-Revision-Date: 2019-10-28 20:23+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/calendar/extra/"
 "eo/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
 #: data/io.elementary.calendar.desktop.in:4
@@ -41,20 +41,19 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Make agenda pane fill the whole space"
-msgstr ""
+msgstr "Aperigi la agolistan panelon tutekrane"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Set the suggested time for new events to the next whole hour"
-msgstr ""
+msgstr "Agordi la sugestitan horon de novaj eventoj je la sekva plena horo"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix issues with recurring events"
-msgstr ""
+msgstr "Ripari problemojn de ripetiĝantaj eventoj"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Dedekstraj plibonigoj"
+msgstr "Rendimentaj plibonigoj"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:34
