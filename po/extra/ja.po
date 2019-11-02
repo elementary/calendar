@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-21 16:30-0700\n"
 "PO-Revision-Date: 2019-11-02 13:46+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"Last-Translator: imasaru <evanmr4@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
 "Language: ja\n"
@@ -127,7 +127,7 @@ msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "office-calendar"
-msgstr ""
+msgstr "office-calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
