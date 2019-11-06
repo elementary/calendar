@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-21 16:30-0700\n"
-"PO-Revision-Date: 2018-07-20 14:30+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://weblate.elementary.io/projects/calendar/"
-"extra/fi/>\n"
+"PO-Revision-Date: 2019-11-07 19:24+0000\n"
+"Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/calendar/extra/"
+"fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -42,52 +42,54 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Make agenda pane fill the whole space"
-msgstr ""
+msgstr "Päiväohjelmaruutu laitettu täyttämään koko tila"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Set the suggested time for new events to the next whole hour"
 msgstr ""
+"Uuden tapahtuman ehdotettu kellonaika asetettu seuraavaan täyteen tuntiin"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix issues with recurring events"
-msgstr ""
+msgstr "Toistuvien tapahtumien ongelmia korjattu"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Performance improvements"
-msgstr ""
+msgstr "Parannuksia suorituskykyyn"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Updated translations"
-msgstr ""
+msgstr "Käännöksiä päivitetty"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Present import window when opening ICS files"
-msgstr ""
+msgstr "Tuonti-ikkunan näyttö ICS-tiedostoja avatessa"
 
 #: data/io.elementary.calendar.appdata.xml.in:28
 msgid "Add a search entry for calendars"
-msgstr ""
+msgstr "Hakusanojen lisäys kalentereille"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
 msgid "Always use calendar icon in notifications"
-msgstr ""
+msgstr "Kalenterikuvaketta käytetään nyt aina ilmoituksissa"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 msgid "Agenda view can now be navigated by keyboard"
-msgstr ""
+msgstr "Päiväohjelmanäkymää voi nyt navigoida näppäimistön avulla"
 
 #: data/io.elementary.calendar.appdata.xml.in:31
 msgid "Right-to-left improvements"
-msgstr ""
+msgstr "Parannuksia oikealta vasemmalle kirjoitettujen kielten tukeen"
 
 #: data/io.elementary.calendar.appdata.xml.in:32
 msgid "Various UI overhauls including lime accent color"
 msgstr ""
+"Lukuisia käyttöliittymäuudistuksia mukaan lukien limenvihreä korostusväri"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Overall code cleanup and rewrites"
-msgstr ""
+msgstr "Kokonaisvaltaisia lähdekoodin siivouksia ja uudelleenkirjoituksia"
 
 #: data/io.elementary.calendar.appdata.xml.in:39
 msgid "Styling adjustments"
