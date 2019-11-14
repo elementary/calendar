@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-21 16:30-0700\n"
-"PO-Revision-Date: 2019-02-09 11:43+0000\n"
+"PO-Revision-Date: 2019-11-15 22:24+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
-"Language-Team: Polish <https://weblate.elementary.io/projects/calendar/"
-"calendar/pl/>\n"
+"Language-Team: Polish <https://l10n.elementary.io/projects/calendar/calendar/"
+"pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:313
@@ -694,61 +694,61 @@ msgstr "Dodaj nowy kalendarz…"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:64
 msgid "appointment;meeting"
-msgstr ""
+msgstr "wydarzenie;spotkanie;rocznica"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:69
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "urodziny;rocznica;impreza"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:74
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "dzwonienie;telefon;dzwonek;komórka"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:79
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "bar;koktajl;piwo;drinki;wino;happy hour"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:84
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "samochód;jazda;prowadzenie;podróż;przejażdżka;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:89
 msgid "flight;airport;"
-msgstr ""
+msgstr "lot;odlot;wylot;lotnisko;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:94
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr ""
+msgstr "śniadanie;obiad;lunch;kolacja;grill;stek;posiłek"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:99
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "sąd;sędzia;podatek;oskarżyciel;prokurator;adwokat;radca;umowa"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:104
 msgid "movie"
-msgstr ""
+msgstr "film;kino"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:109
 msgid "wedding"
-msgstr ""
+msgstr "ślub;wesele"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:307
