@@ -111,6 +111,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         calmodel.events_added.connect (on_events_added);
         calmodel.events_removed.connect (on_events_removed);
         calmodel.events_updated.connect (on_events_updated);
+        calmodel.parameters_changed.connect (on_params_changed);
         set_selected_date (Settings.SavedState.get_default ().get_selected ());
         show_all ();
 
@@ -348,6 +349,22 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
                     return GLib.Source.REMOVE;
                 });
             }
+        }
+    }
+
+    /**
+     * Calendar model parameters have been updated.
+     */
+    private void on_params_changed () {
+        GLib.List<weak Gtk.Widget> selected_date_events_children = selected_date_events_list.get_children ();
+        GLib.List<weak Gtk.Widget> upcoming_events_children = upcoming_events_list.get_children ();
+
+        foreach (var row in selected_date_events_children) {
+            row.destroy ();
+        }
+
+        foreach (var row in upcoming_events_children) {
+            row.destroy ();
         }
     }
 
