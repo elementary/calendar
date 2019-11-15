@@ -359,11 +359,11 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         GLib.List<weak Gtk.Widget> selected_date_events_children = selected_date_events_list.get_children ();
         GLib.List<weak Gtk.Widget> upcoming_events_children = upcoming_events_list.get_children ();
 
-        foreach (var row in selected_date_events_children) {
+        foreach (unowned Gtk.Widget row in selected_date_events_children) {
             row.destroy ();
         }
 
-        foreach (var row in upcoming_events_children) {
+        foreach (unowned Gtk.Widget row in upcoming_events_children) {
             row.destroy ();
         }
     }
