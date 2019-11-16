@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-21 16:30-0700\n"
 "PO-Revision-Date: 2019-11-16 19:53+0000\n"
-"Last-Translator: DokiDokiMagikku <jakubekbugajski@gmail.com>\n"
+"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/calendar/extra/pl/"
 ">\n"
 "Language: pl\n"
@@ -71,7 +71,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:29
 msgid "Always use calendar icon in notifications"
-msgstr "Zawsze używaj ikony kalendarza w powiadomieniach."
+msgstr "Zawsze używaj ikony kalendarza w powiadomieniach"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 msgid "Agenda view can now be navigated by keyboard"
