@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-21 16:30-0700\n"
-"PO-Revision-Date: 2019-11-16 19:53+0000\n"
-"Last-Translator: DokiDokiMagikku <jakubekbugajski@gmail.com>\n"
+"PO-Revision-Date: 2019-11-17 20:24+0000\n"
+"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/calendar/extra/pl/"
 ">\n"
 "Language: pl\n"
@@ -54,7 +54,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Performance improvements"
-msgstr ""
+msgstr "Poprawki wydajności"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:34
@@ -112,7 +112,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:52
 #: data/io.elementary.calendar.appdata.xml.in:59
 msgid "Various bug fixes and improvements."
-msgstr "Różne poprawki błędów i ulepszenia."
+msgstr "Poprawki różnych błędów i ulepszenia."
 
 #: data/io.elementary.calendar.appdata.xml.in:57
 msgid "Fixes for calendar accuracy and integrity issues."
