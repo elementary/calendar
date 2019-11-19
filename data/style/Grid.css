@@ -20,6 +20,7 @@
     border-radius: 0;
     border-top: solid 1px @menu_separator;
     border-left: solid 1px @menu_separator;
+    color: @fg_color;
 }
 
 .cell:dir(rtl) {
