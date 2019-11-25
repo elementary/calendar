@@ -109,11 +109,11 @@ namespace Maya {
                             if (now.compare (start_time) > 0) {
                                 continue;
                             }
-                            start_time = start_time.add_weeks (-(int)duration.get_weeks ());
-                            start_time = start_time.add_days (-(int)duration.get_days ());
-                            start_time = start_time.add_hours (-(int)duration.get_hours ());
-                            start_time = start_time.add_minutes (-(int)duration.get_minutes ());
-                            start_time = start_time.add_seconds (-(int)duration.get_seconds ());
+                            start_time = start_time.add_weeks (-(int)duration.get_weeks ()); //vala-lint=space-before-paren
+                            start_time = start_time.add_days (-(int)duration.get_days ()); //vala-lint=space-before-paren
+                            start_time = start_time.add_hours (-(int)duration.get_hours ()); //vala-lint=space-before-paren
+                            start_time = start_time.add_minutes (-(int)duration.get_minutes ()); //vala-lint=space-before-paren
+                            start_time = start_time.add_seconds (-(int)duration.get_seconds ()); //vala-lint=space-before-paren
                             if (start_time.get_year () == now.get_year () && start_time.get_day_of_year () == now.get_day_of_year ()) {
                                 var time = time_until_now (start_time);
                                 if (time >= 0) {
