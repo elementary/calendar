@@ -1,3 +1,48 @@
+maya-calendar (5.0.1) bionic; urgency=medium
+
+  * Release 5.0.1 (#451)
+  * Set color as fg_color for cell class (#458)
+  * Reset AgendaView items when parameters change (#456)
+  * Travis: downgrade node to 10
+  * Add Gettext Updates to Actions
+  * Add Release to Actions (#450)
+  * Update translation files
+  * AppData: Update release information (#448)
+  * Add specific CSS files per class (#443)
+  * Utils: Remove unused is_day_in_range (#442)
+  * Use GLib.DateWeekday (#441)
+  * Use the next whole hour for the default time (#209)
+  * Lint Daemon and Core (#436)
+  * Lint source files (#435)
+  * Delete CODE_OF_CONDUCT.md
+  * Delete FUNDING.yml
+  * SympleType are not pointer to type but real struct arguments
+  * Add compatibility with libecal-1.2 and libical-glib (#431)
+  * Fix libical.vapi
+  * More alignments with libical-glib and libecal-2.0
+  * Construct new event dialog at idle (#425)
+  * Improve the compatibility with libecal-2.0 and libical-glib (#430)
+  * Bring more compatibility with libecal-2.0 and libical-glib (#429)
+  * Use EDS to compute recursive events (#426)
+  * libical: rename ICal.DurationType into ICal.Duration
+  * libical: rename ICal.DurationType into ICal.Duration
+  * CalendarModel: Fix wrong cast
+  * Use keyword lists for event icons (#416)
+  * EventButton: Only load eventrow css once (#413)
+  * First step in the adaptation to latest EDS and libical (#408)
+  * Fix issue with eo.po
+  * Explicitly set hexpand to true for agenda components (#407)
+  * Add Silesian and update translation template
+  * Use Granite features for date format and don't provide yet another
+    abstraction (#402)
+  * Create FUNDING.yml
+  * GuestGrid: use Granite avatar (#363)
+  * Remove unused po files and update LINGUAS
+  * Set color_button_red active when creating a new calendar (#386)
+  * Initialize hex_color with default selected red color (#387)
+
+ -- Cody Garver <cody@elementary.io>  Mon, 25 Nov 2019 22:52:10 +0000
+
 maya-calendar (5.0) bionic; urgency=medium
 
   * New upstream release.
