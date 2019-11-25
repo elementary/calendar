@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-09-14 12:22+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"POT-Creation-Date: 2019-10-21 16:30-0700\n"
+"PO-Revision-Date: 2019-11-02 13:46+0000\n"
+"Last-Translator: imasaru <evanmr4@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
 "Language: ja\n"
@@ -40,77 +40,94 @@ msgstr ""
 "理できる、スリムで軽量なカレンダーアプリです。"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
-msgid "Present import window when opening ICS files"
-msgstr "ICS ファイルを開いた際にインポートウィンドウが表示されるのを防止"
+msgid "Make agenda pane fill the whole space"
+msgstr "予定ペインが領域全体を占めるように調整"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
-msgid "Add a search entry for calendars"
-msgstr "カレンダーに検索欄を追加"
+msgid "Set the suggested time for new events to the next whole hour"
+msgstr "予定の作成時に現在時刻からの1時間を予定の時間として提示するように変更"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
-msgid "Always use calendar icon in notifications"
-msgstr "通知内で常にカレンダーのアイコンを使うように修正"
+msgid "Fix issues with recurring events"
+msgstr "定期的に行われる予定に関する問題を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
-msgid "Agenda view can now be navigated by keyboard"
-msgstr "日程ビューをキーボードで操作できるように変更"
+msgid "Performance improvements"
+msgstr "パフォーマンスの向上"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
-msgid "Right-to-left improvements"
-msgstr "RTL 言語関連の改善"
-
-#: data/io.elementary.calendar.appdata.xml.in:23
-msgid "Various UI overhauls including lime accent color"
-msgstr "ライム色のアクセントカラーを含む、各種 UI の見直し"
-
-#: data/io.elementary.calendar.appdata.xml.in:24
-msgid "Overall code cleanup and rewrites"
-msgstr "全体的なコードのクリーンアップと書き直し"
-
-#: data/io.elementary.calendar.appdata.xml.in:25
+#: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Updated translations"
 msgstr "新しい翻訳"
 
+#: data/io.elementary.calendar.appdata.xml.in:27
+msgid "Present import window when opening ICS files"
+msgstr "ICS ファイルを開いた際にインポートウィンドウが表示されるのを防止"
+
+#: data/io.elementary.calendar.appdata.xml.in:28
+msgid "Add a search entry for calendars"
+msgstr "カレンダーに検索欄を追加"
+
+#: data/io.elementary.calendar.appdata.xml.in:29
+msgid "Always use calendar icon in notifications"
+msgstr "通知内で常にカレンダーのアイコンを使うように修正"
+
 #: data/io.elementary.calendar.appdata.xml.in:30
+msgid "Agenda view can now be navigated by keyboard"
+msgstr "日程ビューをキーボードで操作できるように変更"
+
+#: data/io.elementary.calendar.appdata.xml.in:31
+msgid "Right-to-left improvements"
+msgstr "RTL 言語関連の改善"
+
+#: data/io.elementary.calendar.appdata.xml.in:32
+msgid "Various UI overhauls including lime accent color"
+msgstr "ライム色のアクセントカラーを含む、各種 UI の見直し"
+
+#: data/io.elementary.calendar.appdata.xml.in:33
+msgid "Overall code cleanup and rewrites"
+msgstr "全体的なコードのクリーンアップと書き直し"
+
+#: data/io.elementary.calendar.appdata.xml.in:39
 msgid "Styling adjustments"
 msgstr "スタイルの調整"
 
-#: data/io.elementary.calendar.appdata.xml.in:31
+#: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Fix location panel initialization"
 msgstr "位置パネルの初期化に関する修正"
 
-#: data/io.elementary.calendar.appdata.xml.in:32
+#: data/io.elementary.calendar.appdata.xml.in:41
 msgid "New translations"
 msgstr "新しい翻訳"
 
-#: data/io.elementary.calendar.appdata.xml.in:37
+#: data/io.elementary.calendar.appdata.xml.in:46
 msgid "Update wingpanel-indicator-datetime settings path."
 msgstr "wingpanel-indicator-datetime の設定パスを更新しました。"
 
-#: data/io.elementary.calendar.appdata.xml.in:38
+#: data/io.elementary.calendar.appdata.xml.in:47
 msgid "New translations."
 msgstr "翻訳を更新しました。"
 
-#: data/io.elementary.calendar.appdata.xml.in:43
-#: data/io.elementary.calendar.appdata.xml.in:50
+#: data/io.elementary.calendar.appdata.xml.in:52
+#: data/io.elementary.calendar.appdata.xml.in:59
 msgid "Various bug fixes and improvements."
 msgstr "各種バグの修正と改善をしました。"
 
-#: data/io.elementary.calendar.appdata.xml.in:48
+#: data/io.elementary.calendar.appdata.xml.in:57
 msgid "Fixes for calendar accuracy and integrity issues."
 msgstr "カレンダーの正確さと整合性の問題に対する修正をしました。"
 
-#: data/io.elementary.calendar.appdata.xml.in:49
+#: data/io.elementary.calendar.appdata.xml.in:58
 msgid "Fixes exporting, importing and printing calendars."
 msgstr "カレンダーのエクスポート、インポート、印刷を修正しました。"
 
-#: data/io.elementary.calendar.appdata.xml.in:97
+#: data/io.elementary.calendar.appdata.xml.in:106
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "office-calendar"
-msgstr ""
+msgstr "office-calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"

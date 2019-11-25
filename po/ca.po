@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-05-16 02:02+0000\n"
+"POT-Creation-Date: 2019-10-21 16:30-0700\n"
+"PO-Revision-Date: 2019-10-25 16:23+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/calendar/"
 "calendar/ca/>\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-11-19 05:51+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:313
 msgid "On this computer"
 msgstr "En aquest ordinador"
 
@@ -72,7 +72,7 @@ msgstr "Utilitza una connexió segura"
 msgid "Server handles meeting invitations"
 msgstr "El servidor gestiona les invitacions a les reunions."
 
-#: src/AgendaView.vala:50
+#: src/AgendaView.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -80,31 +80,31 @@ msgstr ""
 "Els pròxims esdeveniments es mostraran aquí quan seleccioneu una data que "
 "tingui esdeveniments."
 
-#: src/AgendaView.vala:150
+#: src/AgendaView.vala:136
 msgid "During the day"
 msgstr "Durant el dia"
 
-#: src/AgendaView.vala:158
+#: src/AgendaView.vala:144
 msgid "All day"
 msgstr "Tot el dia"
 
-#: src/AgendaView.vala:275
+#: src/AgendaView.vala:261
 msgid "Tomorrow"
 msgstr "Demà"
 
-#: src/AgendaView.vala:278
+#: src/AgendaView.vala:264
 msgid "This Week"
 msgstr "Aquesta setmana"
 
-#: src/AgendaView.vala:281
+#: src/AgendaView.vala:267
 msgid "Next Week"
 msgstr "La setmana que ve"
 
-#: src/AgendaView.vala:284
+#: src/AgendaView.vala:270
 msgid "This Month"
 msgstr "Aquest mes"
 
-#: src/AgendaView.vala:287
+#: src/AgendaView.vala:273
 msgid "Next Month"
 msgstr "El mes que ve"
 
@@ -120,7 +120,7 @@ msgstr "Focalitza el dia"
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:140
+#: src/Application.vala:143
 msgid "Calendar"
 msgstr "Calendari"
 
@@ -168,8 +168,8 @@ msgstr "Participants"
 msgid "Reminders"
 msgstr "Recordatoris"
 
-#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
-#: src/EventEdition/RepeatPanel.vala:170
+#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:138
+#: src/EventEdition/RepeatPanel.vala:171
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Repetició"
@@ -192,15 +192,15 @@ msgstr "Desa els canvis"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: src/EventEdition/GuestGrid.vala:42
+#: src/EventEdition/GuestGrid.vala:47
 msgid "Accepted"
 msgstr "Acceptada"
 
-#: src/EventEdition/GuestGrid.vala:46
+#: src/EventEdition/GuestGrid.vala:51
 msgid "Declined"
 msgstr "Rebutjada"
 
-#: src/EventEdition/GuestGrid.vala:50
+#: src/EventEdition/GuestGrid.vala:55
 msgid "Maybe"
 msgstr "Potser"
 
@@ -216,35 +216,35 @@ msgstr "Sense participants"
 msgid "Invite"
 msgstr "Invitació"
 
-#: src/EventEdition/InfoPanel.vala:77
+#: src/EventEdition/InfoPanel.vala:76
 msgid "From:"
 msgstr "Des de:"
 
-#: src/EventEdition/InfoPanel.vala:83
+#: src/EventEdition/InfoPanel.vala:82
 msgid "All day:"
 msgstr "Tot el dia:"
 
-#: src/EventEdition/InfoPanel.vala:88
+#: src/EventEdition/InfoPanel.vala:87
 msgid "To:"
 msgstr "Fins a:"
 
-#: src/EventEdition/InfoPanel.vala:106
+#: src/EventEdition/InfoPanel.vala:105
 msgid "Title:"
 msgstr "Títol:"
 
-#: src/EventEdition/InfoPanel.vala:108
+#: src/EventEdition/InfoPanel.vala:107
 msgid "Name of Event"
 msgstr "Nom de l'esdeveniment"
 
-#: src/EventEdition/InfoPanel.vala:118
+#: src/EventEdition/InfoPanel.vala:117
 msgid "Press enter to parse event"
 msgstr "Premeu retorn per analitzar l'esdeveniment"
 
-#: src/EventEdition/InfoPanel.vala:133
+#: src/EventEdition/InfoPanel.vala:132
 msgid "Calendar:"
 msgstr "Calendari:"
 
-#: src/EventEdition/InfoPanel.vala:140
+#: src/EventEdition/InfoPanel.vala:139
 msgid "Comments:"
 msgstr "Comentaris:"
 
@@ -268,67 +268,67 @@ msgstr "Sense recordatoris"
 msgid "Add Reminder"
 msgstr "Afegeix un recordatori"
 
-#: src/EventEdition/ReminderPanel.vala:163
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "At time of event"
 msgstr "A l'hora de l'esdeveniment"
 
-#: src/EventEdition/ReminderPanel.vala:164
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "1 minute before"
 msgstr "1 minut abans"
 
-#: src/EventEdition/ReminderPanel.vala:165
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "5 minutes before"
 msgstr "5 minuts abans"
 
-#: src/EventEdition/ReminderPanel.vala:166
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "10 minutes before"
 msgstr "10 minuts abans"
 
-#: src/EventEdition/ReminderPanel.vala:167
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "15 minutes before"
 msgstr "15 minuts abans"
 
-#: src/EventEdition/ReminderPanel.vala:168
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "20 minutes before"
 msgstr "20 minuts abans"
 
-#: src/EventEdition/ReminderPanel.vala:169
+#: src/EventEdition/ReminderPanel.vala:185
 msgid "25 minutes before"
 msgstr "25 minuts abans"
 
-#: src/EventEdition/ReminderPanel.vala:170
+#: src/EventEdition/ReminderPanel.vala:186
 msgid "30 minutes before"
 msgstr "30 minuts abans"
 
-#: src/EventEdition/ReminderPanel.vala:171
+#: src/EventEdition/ReminderPanel.vala:187
 msgid "45 minutes before"
 msgstr "45 minuts abans"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:188
 msgid "1 hour before"
 msgstr "1 hora abans"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:189
 msgid "2 hours before"
 msgstr "2 hores abans"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:190
 msgid "3 hours before"
 msgstr "3 hores abans"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:191
 msgid "12 hours before"
 msgstr "12 hores abans"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "24 hours before"
 msgstr "24 hores abans"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:193
 msgid "2 days before"
 msgstr "2 dies abans"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:194
 msgid "1 week before"
 msgstr "1 setmana abans"
 
@@ -352,267 +352,267 @@ msgstr "Cada mes"
 msgid "Yearly"
 msgstr "Cada any"
 
-#: src/EventEdition/RepeatPanel.vala:104
+#: src/EventEdition/RepeatPanel.vala:105
 msgid "Every:"
 msgstr "Cada:"
 
-#: src/EventEdition/RepeatPanel.vala:111
+#: src/EventEdition/RepeatPanel.vala:112
 msgid "Day"
 msgid_plural "Days"
 msgstr[0] "Dia"
 msgstr[1] "Dies"
 
-#: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
+#: src/EventEdition/RepeatPanel.vala:115 src/EventEdition/RepeatPanel.vala:126
 msgid "Week"
 msgid_plural "Weeks"
 msgstr[0] "Setmana"
 msgstr[1] "Setmanes"
 
-#: src/EventEdition/RepeatPanel.vala:117
+#: src/EventEdition/RepeatPanel.vala:118
 msgid "Month"
 msgid_plural "Months"
 msgstr[0] "Mes"
 msgstr[1] "Mesos"
 
-#: src/EventEdition/RepeatPanel.vala:120
+#: src/EventEdition/RepeatPanel.vala:121
 msgid "Year"
 msgid_plural "Years"
 msgstr[0] "Any"
 msgstr[1] "Anys"
 
-#: src/EventEdition/RepeatPanel.vala:135
+#: src/EventEdition/RepeatPanel.vala:136
 msgid "Ends:"
 msgstr "Acaba:"
 
-#: src/EventEdition/RepeatPanel.vala:141
+#: src/EventEdition/RepeatPanel.vala:142
 msgid "Never"
 msgstr "Mai"
 
-#: src/EventEdition/RepeatPanel.vala:142
+#: src/EventEdition/RepeatPanel.vala:143
 msgid "Until"
 msgstr "Fins a"
 
-#: src/EventEdition/RepeatPanel.vala:143
+#: src/EventEdition/RepeatPanel.vala:144
 msgid "After"
 msgstr "Després de"
 
-#: src/EventEdition/RepeatPanel.vala:190
+#: src/EventEdition/RepeatPanel.vala:191
 msgid "The same day every month"
 msgstr "El mateix dia de cada mes"
 
-#: src/EventEdition/RepeatPanel.vala:201
+#: src/EventEdition/RepeatPanel.vala:202
 msgid "Exceptions:"
 msgstr "Excepcions:"
 
-#: src/EventEdition/RepeatPanel.vala:204
+#: src/EventEdition/RepeatPanel.vala:205
 msgid "No Exceptions"
 msgstr "Sense excepocions"
 
-#: src/EventEdition/RepeatPanel.vala:225
+#: src/EventEdition/RepeatPanel.vala:226
 msgid "Add Exception"
 msgstr "Afegeix una excepció"
 
-#: src/EventEdition/RepeatPanel.vala:359
+#: src/EventEdition/RepeatPanel.vala:376
 msgid "Every last Sunday"
 msgstr "Cada últim diumenge"
 
-#: src/EventEdition/RepeatPanel.vala:362
+#: src/EventEdition/RepeatPanel.vala:379
 msgid "Every last Monday"
 msgstr "Cada últim dilluns"
 
-#: src/EventEdition/RepeatPanel.vala:365
+#: src/EventEdition/RepeatPanel.vala:382
 msgid "Every last Tuesday"
 msgstr "Cada últim dimarts"
 
-#: src/EventEdition/RepeatPanel.vala:368
+#: src/EventEdition/RepeatPanel.vala:385
 msgid "Every last Wednesday"
 msgstr "Cada últim dimecres"
 
-#: src/EventEdition/RepeatPanel.vala:371
+#: src/EventEdition/RepeatPanel.vala:388
 msgid "Every last Thursday"
 msgstr "Cada últim dijous"
 
-#: src/EventEdition/RepeatPanel.vala:374
+#: src/EventEdition/RepeatPanel.vala:391
 msgid "Every last Friday"
 msgstr "Cada últim divendres"
 
-#: src/EventEdition/RepeatPanel.vala:377
+#: src/EventEdition/RepeatPanel.vala:394
 msgid "Every last Saturday"
 msgstr "Cada últim dissabte"
 
-#: src/EventEdition/RepeatPanel.vala:384
+#: src/EventEdition/RepeatPanel.vala:401
 msgid "Every first Sunday"
 msgstr "Cada primer diumenge"
 
-#: src/EventEdition/RepeatPanel.vala:387
+#: src/EventEdition/RepeatPanel.vala:404
 msgid "Every first Monday"
 msgstr "Cada primer dilluns"
 
-#: src/EventEdition/RepeatPanel.vala:390
+#: src/EventEdition/RepeatPanel.vala:407
 msgid "Every first Tuesday"
 msgstr "Cada primer dimarts"
 
-#: src/EventEdition/RepeatPanel.vala:393
+#: src/EventEdition/RepeatPanel.vala:410
 msgid "Every first Wednesday"
 msgstr "Cada primer dimecres"
 
-#: src/EventEdition/RepeatPanel.vala:396
+#: src/EventEdition/RepeatPanel.vala:413
 msgid "Every first Thursday"
 msgstr "Cada primer dijous"
 
-#: src/EventEdition/RepeatPanel.vala:399
+#: src/EventEdition/RepeatPanel.vala:416
 msgid "Every first Friday"
 msgstr "Cada primer divendres"
 
-#: src/EventEdition/RepeatPanel.vala:402
+#: src/EventEdition/RepeatPanel.vala:419
 msgid "Every first Saturday"
 msgstr "Cada primer dissabte"
 
-#: src/EventEdition/RepeatPanel.vala:409
+#: src/EventEdition/RepeatPanel.vala:426
 msgid "Every second Sunday"
 msgstr "Cada segon diumenge"
 
-#: src/EventEdition/RepeatPanel.vala:412
+#: src/EventEdition/RepeatPanel.vala:429
 msgid "Every second Monday"
 msgstr "Cada segon dilluns"
 
-#: src/EventEdition/RepeatPanel.vala:415
+#: src/EventEdition/RepeatPanel.vala:432
 msgid "Every second Tuesday"
 msgstr "Cada segon dimarts"
 
-#: src/EventEdition/RepeatPanel.vala:418
+#: src/EventEdition/RepeatPanel.vala:435
 msgid "Every second Wednesday"
 msgstr "Cada segon dimecres"
 
-#: src/EventEdition/RepeatPanel.vala:421
+#: src/EventEdition/RepeatPanel.vala:438
 msgid "Every second Thursday"
 msgstr "Cada segon dijous"
 
-#: src/EventEdition/RepeatPanel.vala:424
+#: src/EventEdition/RepeatPanel.vala:441
 msgid "Every second Friday"
 msgstr "Cada segon divendres"
 
-#: src/EventEdition/RepeatPanel.vala:427
+#: src/EventEdition/RepeatPanel.vala:444
 msgid "Every second Saturday"
 msgstr "Cada segon dissabte"
 
-#: src/EventEdition/RepeatPanel.vala:434
+#: src/EventEdition/RepeatPanel.vala:451
 msgid "Every third Sunday"
 msgstr "Cada tercer diumenge"
 
-#: src/EventEdition/RepeatPanel.vala:437
+#: src/EventEdition/RepeatPanel.vala:454
 msgid "Every third Monday"
 msgstr "Cada tercer dilluns"
 
-#: src/EventEdition/RepeatPanel.vala:440
+#: src/EventEdition/RepeatPanel.vala:457
 msgid "Every third Tuesday"
 msgstr "Cada tercer dimarts"
 
-#: src/EventEdition/RepeatPanel.vala:443
+#: src/EventEdition/RepeatPanel.vala:460
 msgid "Every third Wednesday"
 msgstr "Cada tercer dimecres"
 
-#: src/EventEdition/RepeatPanel.vala:446
+#: src/EventEdition/RepeatPanel.vala:463
 msgid "Every third Thursday"
 msgstr "Cada tercer dijous"
 
-#: src/EventEdition/RepeatPanel.vala:449
+#: src/EventEdition/RepeatPanel.vala:466
 msgid "Every third Friday"
 msgstr "Cada tercer divendres"
 
-#: src/EventEdition/RepeatPanel.vala:452
+#: src/EventEdition/RepeatPanel.vala:469
 msgid "Every third Saturday"
 msgstr "Cada tercer dissabte"
 
-#: src/EventEdition/RepeatPanel.vala:459
+#: src/EventEdition/RepeatPanel.vala:476
 msgid "Every fourth Sunday"
 msgstr "Cada quart diumenge"
 
-#: src/EventEdition/RepeatPanel.vala:462
+#: src/EventEdition/RepeatPanel.vala:479
 msgid "Every fourth Monday"
 msgstr "Cada quart dilluns"
 
-#: src/EventEdition/RepeatPanel.vala:465
+#: src/EventEdition/RepeatPanel.vala:482
 msgid "Every fourth Tuesday"
 msgstr "Cada quart dimarts"
 
-#: src/EventEdition/RepeatPanel.vala:468
+#: src/EventEdition/RepeatPanel.vala:485
 msgid "Every fourth Wednesday"
 msgstr "Cada quart dimecres"
 
-#: src/EventEdition/RepeatPanel.vala:471
+#: src/EventEdition/RepeatPanel.vala:488
 msgid "Every fourth Thursday"
 msgstr "Cada quart dijous"
 
-#: src/EventEdition/RepeatPanel.vala:474
+#: src/EventEdition/RepeatPanel.vala:491
 msgid "Every fourth Friday"
 msgstr "Cada quart divendres"
 
-#: src/EventEdition/RepeatPanel.vala:477
+#: src/EventEdition/RepeatPanel.vala:494
 msgid "Every fourth Saturday"
 msgstr "Cada quart dissabte"
 
-#: src/EventEdition/RepeatPanel.vala:484
+#: src/EventEdition/RepeatPanel.vala:501
 msgid "Every fifth Sunday"
 msgstr "Cada cinquè diumenge"
 
-#: src/EventEdition/RepeatPanel.vala:487
+#: src/EventEdition/RepeatPanel.vala:504
 msgid "Every fifth Monday"
 msgstr "Cada cinquè dilluns"
 
-#: src/EventEdition/RepeatPanel.vala:490
+#: src/EventEdition/RepeatPanel.vala:507
 msgid "Every fifth Tuesday"
 msgstr "Cada cinquè dimarts"
 
-#: src/EventEdition/RepeatPanel.vala:493
+#: src/EventEdition/RepeatPanel.vala:510
 msgid "Every fifth Wednesday"
 msgstr "Cada cinquè dimecres"
 
-#: src/EventEdition/RepeatPanel.vala:496
+#: src/EventEdition/RepeatPanel.vala:513
 msgid "Every fifth Thursday"
 msgstr "Cada cinquè dijous"
 
-#: src/EventEdition/RepeatPanel.vala:499
+#: src/EventEdition/RepeatPanel.vala:516
 msgid "Every fifth Friday"
 msgstr "Cada cinquè divendres"
 
-#: src/EventEdition/RepeatPanel.vala:502
+#: src/EventEdition/RepeatPanel.vala:519
 msgid "Every fifth Saturday"
 msgstr "Cada cinquè dissabte"
 
-#: src/EventEdition/RepeatPanel.vala:512
+#: src/EventEdition/RepeatPanel.vala:529
 msgid "Mon"
 msgstr "Dl"
 
-#: src/EventEdition/RepeatPanel.vala:513
+#: src/EventEdition/RepeatPanel.vala:530
 msgid "Tue"
 msgstr "Dt"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:531
 msgid "Wed"
 msgstr "Dc"
 
-#: src/EventEdition/RepeatPanel.vala:515
+#: src/EventEdition/RepeatPanel.vala:532
 msgid "Thu"
 msgstr "Dj"
 
-#: src/EventEdition/RepeatPanel.vala:516
+#: src/EventEdition/RepeatPanel.vala:533
 msgid "Fri"
 msgstr "Dv"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:534
 msgid "Sat"
 msgstr "Ds"
 
-#: src/EventEdition/RepeatPanel.vala:518
+#: src/EventEdition/RepeatPanel.vala:535
 msgid "Sun"
 msgstr "Dg"
 
-#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
+#: src/Grid/WeekLabels.vala:58 src/Grid/Header.vala:73
 msgid "Hide Week Numbers"
 msgstr "Amaga els números de la setmana"
 
-#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:67
+#: src/Grid/WeekLabels.vala:60 src/Grid/Header.vala:75
 msgid "Show Week Numbers"
 msgstr "Mostra els números de la setmana"
 
@@ -654,7 +654,7 @@ msgstr "Crea un calendari"
 msgid "Save"
 msgstr "Desa"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
 msgid "Remove"
 msgstr "Suprimeix"
 
@@ -662,7 +662,7 @@ msgstr "Suprimeix"
 msgid "Not Removable"
 msgstr "No suprimible"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
 msgid "Edit…"
 msgstr "Edita…"
 
@@ -683,28 +683,88 @@ msgstr "S'ha suprimit \"%s\"."
 msgid "Add New Calendar…"
 msgstr "Afegeix un calendari nou…"
 
+#. /Translators: Give a list of appointment related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:64
+msgid "appointment;meeting"
+msgstr "cita;reunió"
+
+#. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:69
+msgid "birthday;anniversary;party"
+msgstr "aniversari;festa,commemoració"
+
+#. /Translators: Give a list of voice call related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:74
+msgid "call;phone;telephone;ring"
+msgstr "trucada;telèfon;ring"
+
+#. /Translators: Give a list of social drinking related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:79
+msgid "bar;cocktails;drinks;happy hour"
+msgstr "bar;còctel;begudes;hora feliç"
+
+#. /Translators: Give a list of car driving related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:84
+msgid "car;drive;driving;road trip;"
+msgstr "cotxe;conduir;carretera;viatge;"
+
+#. /Translators: Give a list of air travel related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:89
+msgid "flight;airport;"
+msgstr "vol;aeroport;"
+
+#. /Translators: Give a list of food consumption related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:94
+msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
+msgstr "esmorzar;dinar;sopar;àpat;bistec;amburguesa;carn;barbacoa"
+
+#. /Translators: Give a list of law related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:99
+msgid "court;jury;tax;attorney;lawyer;contract"
+msgstr "cort;jurat;taxa;fiscal;advocat;contracte"
+
+#. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:104
+msgid "movie"
+msgstr "pel·lícula"
+
+#. /Translators: Give a list of wedding related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:109
+msgid "wedding"
+msgstr "casament"
+
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:176
+#: src/Widgets/AgendaEventRow.vala:307
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:179
+#: src/Widgets/AgendaEventRow.vala:310
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:188
+#: src/Widgets/AgendaEventRow.vala:319
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:195
+#: src/Widgets/AgendaEventRow.vala:326
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
@@ -730,11 +790,11 @@ msgstr "Exporta el calendari…"
 msgid "calendar.ics"
 msgstr "calendari.ics"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:39
 msgid "Remove Event"
 msgstr "Suprimeix l'esdeveniment"
 
-#: src/Widgets/EventMenu.vala:43
+#: src/Widgets/EventMenu.vala:41
 msgid "Remove Occurrence"
 msgstr "Suprimeix l'ocurrència"
 
