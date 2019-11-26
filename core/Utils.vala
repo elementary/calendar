@@ -225,32 +225,23 @@ namespace Maya.Util {
     }
 
     public bool calcomp_is_on_day (ECal.Component comp, GLib.DateTime day) {
-        ECal.ComponentDateTime start_dt;
-        ECal.ComponentDateTime end_dt;
-
 #if E_CAL_2_0
-        start_dt = comp.get_dtstart ();
-        end_dt = comp.get_dtend ();
+        unowned ICal.Timezone system_timezone = ECal.util_get_system_timezone ();
 #else
-        comp.get_dtstart (out start_dt);
-        comp.get_dtend (out end_dt);
+        unowned ICal.Timezone system_timezone = ECal.Util.get_system_timezone ();
 #endif
 
         var stripped_time = new DateTime.local (day.get_year (), day.get_month (), day.get_day_of_month (), 0, 0, 0);
 
         var selected_date_unix = stripped_time.to_unix ();
         var selected_date_unix_next = stripped_time.add_days (1).to_unix ();
-        time_t start_unix;
-        time_t end_unix;
 
         /* We want to be relative to the local timezone */
-#if E_CAL_2_0
-        start_unix = start_dt.get_value ().as_timet_with_zone (ECal.util_get_system_timezone ());
-        end_unix = end_dt.get_value ().as_timet_with_zone (ECal.util_get_system_timezone ());
-#else
-        start_unix = (*start_dt.value).as_timet_with_zone (ECal.Util.get_system_timezone ());
-        end_unix = (*end_dt.value).as_timet_with_zone (ECal.Util.get_system_timezone ());
-#endif
+        unowned ICal.Component? icomp = comp.get_icalcomponent ();
+        ICal.Time? start_time = icomp.get_dtstart ();
+        ICal.Time? end_time = icomp.get_dtend ();
+        time_t start_unix = start_time.as_timet_with_zone (system_timezone);
+        time_t end_unix = end_time.as_timet_with_zone (system_timezone);
 
         /* If the selected date is inside the event */
         if (start_unix < selected_date_unix && selected_date_unix_next < end_unix) {

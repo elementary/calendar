@@ -1991,7 +1991,7 @@ namespace ICal {
 		[CCode (cname = "is_date")]
 		public int _is_date;
 		public int is_daylight;
-		public weak ICal.Timezone zone;
+		public weak ICal.Timezone? zone;
 		[CCode (cname = "icaltime_today", has_construct_function = false)]
 		public ICal.Time.today ();
 		[CCode (cname = "icaltime_from_day_of_year", has_construct_function = false)]

@@ -13,6 +13,11 @@
     </p>
   </description>
   <releases>
+    <release version="5.0.2" date="2019-11-25" urgency="medium">
+      <description>
+        <p>Fix potential crash when loading events with no start or end time</p>
+      </description>
+    </release>
     <release version="5.0.1" date="2019-11-25" urgency="medium">
       <description>
         <p>Make agenda pane fill the whole space</p>
