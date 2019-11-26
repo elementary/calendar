@@ -1,3 +1,11 @@
+maya-calendar (5.0.2) bionic; urgency=medium
+
+  * Release 5.0.2 (#462)
+  * Utils: fix several crashes with event processing (#461)
+  * Add Lint to CI (#434)
+
+ -- Cody Garver <cody@elementary.io>  Tue, 26 Nov 2019 18:14:16 +0000
+
 maya-calendar (5.0.1) bionic; urgency=medium
 
   * Release 5.0.1 (#451)
