@@ -66,7 +66,7 @@ public class Maya.EventMenu : Gtk.Menu {
     }
 
     private void add_exception () {
-        ECal.ComponentDateTime dtstart;
+        ECal.ComponentDateTime? dtstart;
         GLib.SList<ECal.ComponentDateTime?>? exdate_list;
 #if E_CAL_2_0
         dtstart = comp.get_dtstart ();
@@ -76,7 +76,7 @@ public class Maya.EventMenu : Gtk.Menu {
 #else
         comp.get_dtstart (out dtstart);
         comp.get_exdate_list (out exdate_list);
-        exdate_list.append (dtstart);
+        exdate_list.append ((owned) dtstart);
         comp.set_exdate_list (exdate_list);
 #endif
 
