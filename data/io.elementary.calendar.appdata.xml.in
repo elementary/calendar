@@ -13,7 +13,7 @@
     </p>
   </description>
   <releases>
-    <release version="5.0.3" date="2019-11-27" urgency="medium">
+    <release version="5.0.3" date="2019-11-26" urgency="medium">
       <description>
         <p>Fix crash when editing an event with no location</p>
       </description>
