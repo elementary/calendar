@@ -104,22 +104,25 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                 location_entry.text = location.dup ();
             }
 
-            ICal.Geo geo;
+            ICal.Geo? geo;
 #if E_CAL_2_0
             geo = parent_dialog.ecal.get_geo ();
 #else
             parent_dialog.ecal.get_geo (out geo);
 #endif
+
             bool need_relocation = true;
-            var latitude = geo.get_lat ();
-            var longitude = geo.get_lon ();
-            if (latitude >= Champlain.MIN_LATITUDE && longitude >= Champlain.MIN_LONGITUDE &&
-                latitude <= Champlain.MAX_LATITUDE && longitude <= Champlain.MAX_LONGITUDE) {
-                need_relocation = false;
-                point.latitude = latitude;
-                point.longitude = longitude;
-                if (latitude == 0 && longitude == 0)
-                    need_relocation = true;
+            if (geo != null) {
+                var latitude = geo.get_lat ();
+                var longitude = geo.get_lon ();
+                if (latitude >= Champlain.MIN_LATITUDE && longitude >= Champlain.MIN_LONGITUDE &&
+                    latitude <= Champlain.MAX_LATITUDE && longitude <= Champlain.MAX_LONGITUDE) {
+                    need_relocation = false;
+                    point.latitude = latitude;
+                    point.longitude = longitude;
+                    if (latitude == 0 && longitude == 0)
+                        need_relocation = true;
+                }
             }
 
             if (need_relocation == true) {
