@@ -1,3 +1,10 @@
+maya-calendar (5.0.3) bionic; urgency=medium
+
+  * Release 5.0.3 (#466)
+  * LocationPanel: handle possible null geo (#465)
+
+ -- Cody Garver <cody@elementary.io>  Wed, 27 Nov 2019 19:40:37 +0000
+
 maya-calendar (5.0.2) bionic; urgency=medium
 
   * Release 5.0.2 (#462)
