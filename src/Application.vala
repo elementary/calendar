@@ -28,9 +28,14 @@ namespace Maya {
     public class Application : Gtk.Application {
         public MainWindow window;
         public static GLib.Settings saved_state;
+        public static GLib.Settings? wingpanel_settings = null;
 
         static construct {
             saved_state = new GLib.Settings ("io.elementary.calendar.savedstate");
+
+            if (GLib.SettingsSchemaSource.get_default ().lookup ("io.elementary.desktop.wingpanel.datetime", false) != null) {
+                wingpanel_settings = new GLib.Settings ("io.elementary.desktop.wingpanel.datetime");
+            }
         }
 
         construct {
