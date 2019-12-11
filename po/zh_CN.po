@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-21 16:30-0700\n"
 "PO-Revision-Date: 2019-12-11 01:26+0000\n"
-"Last-Translator: Creeper Lv <1376021184@qq.com>\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "calendar/calendar/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -709,7 +709,7 @@ msgstr "车;开车;开车中;长途旅行"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:89
 msgid "flight;airport;"
-msgstr "航班;机场"
+msgstr "航班;机场;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
