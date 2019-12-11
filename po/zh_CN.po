@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-21 16:30-0700\n"
-"PO-Revision-Date: 2019-12-11 01:25+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2019-12-11 01:26+0000\n"
+"Last-Translator: Creeper Lv <1376021184@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "calendar/calendar/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -691,7 +691,7 @@ msgstr "生日;纪念日;派对"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:74
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "电话;电话;电话;响铃"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -703,13 +703,13 @@ msgstr ""
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:84
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "车;开车;开车中;长途旅行"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:89
 msgid "flight;airport;"
-msgstr ""
+msgstr "航班;机场"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
