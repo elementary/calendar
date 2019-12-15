@@ -29,7 +29,8 @@ public class Maya.EventMenu : Gtk.Menu {
 
     construct {
         E.Source src = comp.get_data ("source");
-        bool sensitive = src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false;
+        bool can_modify_cal = Model.CalendarModel.get_default ().calclient_is_readonly (src) == false;
+        bool sensitive = src.writable && can_modify_cal;
 
         var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
         edit_item.sensitive = sensitive;
@@ -50,8 +51,15 @@ public class Maya.EventMenu : Gtk.Menu {
         remove_item.sensitive = sensitive;
         remove_item.activate.connect (remove_event);
 
+        var dup_item = new Gtk.MenuItem.with_label (_("Duplicate"));
+        dup_item.sensitive = can_modify_cal;
+
         append (remove_item);
+        append (dup_item);
         append (edit_item);
+
+        remove_item.activate.connect (remove_event);
+        dup_item.activate.connect (duplicate_event);
 
         edit_item.activate.connect (() => {
             ((Maya.Application) GLib.Application.get_default ()).window.on_modified (comp);
@@ -61,6 +69,20 @@ public class Maya.EventMenu : Gtk.Menu {
     private void remove_event () {
         var calmodel = Model.CalendarModel.get_default ();
         calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.ALL);
+    }
+
+    private void duplicate_event () {
+        // Generate a new unique ID for the new event
+        var now = new DateTime.now_local ();
+        var uid = "%ld-%u".printf ((long)now.to_unix (), GLib.Random.next_int ());
+
+        // Make a duplicate of the event with the new unique ID
+        var dup = comp;
+        dup.set_uid (uid);
+
+        // Store the duplicated event in the calendar
+        var calmodel = Model.CalendarModel.get_default ();
+        calmodel.add_event (comp.get_data<E.Source> ("source"), dup);
     }
 
     private void add_exception () {
