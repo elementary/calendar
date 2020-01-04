@@ -5,12 +5,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -134,11 +134,14 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 ECal.ComponentAlarmTrigger trigger;
 #if E_CAL_2_0
                 trigger = alarm.get_trigger ();
-#else
-                alarm.get_trigger (out trigger);
-#endif
                 trigger.set_duration (reminder.get_duration ());
                 trigger.set_kind (ECal.ComponentAlarmTriggerKind.RELATIVE_START);
+#else
+                alarm.get_trigger (out trigger);
+                trigger.rel_duration = reminder.get_duration ();
+                trigger.type = ECal.ComponentAlarmTriggerKind.RELATIVE_START;
+#endif
+
                 alarm.set_trigger (trigger);
                 parent_dialog.ecal.add_alarm (alarm);
             } else if (reminder.change == true) {
@@ -147,11 +150,13 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 ECal.ComponentAlarmTrigger trigger;
 #if E_CAL_2_0
                 trigger = alarm.get_trigger ();
-#else
-                alarm.get_trigger (out trigger);
-#endif
                 trigger.set_kind (ECal.ComponentAlarmTriggerKind.RELATIVE_START);
                 trigger.set_duration (reminder.get_duration ());
+#else
+                alarm.get_trigger (out trigger);
+                trigger.rel_duration = reminder.get_duration ();
+                trigger.type = ECal.ComponentAlarmTriggerKind.RELATIVE_START;
+#endif
                 alarm.set_trigger (trigger);
             }
         }
