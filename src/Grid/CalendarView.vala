@@ -37,13 +37,19 @@ public class Maya.View.CalendarView : Gtk.Grid {
     private Gtk.Stack stack { get; private set; }
     private Gtk.Grid big_grid { get; private set; }
     private Gtk.Label spacer { get; private set; }
-    private GLib.Settings show_weeks;
+    private static GLib.Settings show_weeks;
 
     private static Gtk.CssProvider style_provider;
 
     static construct {
         style_provider = new Gtk.CssProvider ();
         style_provider.load_from_resource ("/io/elementary/calendar/WeekLabels.css");
+
+        if (Application.wingpanel_settings != null) {
+            show_weeks = Application.wingpanel_settings;
+        } else {
+            show_weeks = Application.saved_state;
+        }
     }
 
     construct {
@@ -74,13 +80,8 @@ public class Maya.View.CalendarView : Gtk.Grid {
             }
         });
 
-        if (GLib.SettingsSchemaSource.get_default ().lookup (Util.SHOW_WEEKS_SCHEMA, false) != null) {
-            show_weeks = new GLib.Settings (Util.SHOW_WEEKS_SCHEMA);
-            show_weeks.changed["show-weeks"].connect (on_show_weeks_changed);
-            show_weeks.get_value ("show-weeks");
-        } else {
-            Settings.SavedState.get_default ().changed["show-weeks"].connect (on_show_weeks_changed);
-        }
+        show_weeks.changed["show-weeks"].connect (on_show_weeks_changed);
+        show_weeks.get_value ("show-weeks");
 
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         events |= Gdk.EventMask.KEY_PRESS_MASK;
@@ -117,11 +118,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         new_big_grid.show_all ();
         new_big_grid.expand = true;
 
-        if (!Util.show_weeks ()) {
-            spacer.hide ();
-        } else {
-            spacer.show ();
-        }
+        update_spacer_visible ();
 
         return new_big_grid;
     }
@@ -147,7 +144,11 @@ public class Maya.View.CalendarView : Gtk.Grid {
     void on_show_weeks_changed () {
         var model = Model.CalendarModel.get_default ();
         weeks.update (model.data_range.first_dt, model.num_weeks);
-        if (Util.show_weeks ()) {
+        update_spacer_visible ();
+    }
+
+    private void update_spacer_visible () {
+        if (show_weeks.get_boolean ("show-weeks")) {
             spacer.show ();
         } else {
             spacer.hide ();
