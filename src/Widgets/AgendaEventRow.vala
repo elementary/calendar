@@ -33,7 +33,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     public string summary { public get; private set; }
     public bool is_allday { public get; private set; default = false; }
     public bool is_multiday { public get; private set; default = false; }
-    public bool is_same_time { public get; private set; default = false; }
+
     public Gtk.Revealer revealer { public get; private set; }
 
     private Gtk.Image event_image;
@@ -292,7 +292,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         is_allday = Util.is_all_day (start_date, end_date);
         is_multiday = Util.is_multiday_event (ical_event);
-        is_same_time = Util.is_same_time (start_date, end_date);
+        var is_same_time = start_date.equals (end_date);
 
         var date_format = Granite.DateTime.get_default_date_format (true, true, false);
         string start_date_string = start_date.format (date_format);
@@ -318,8 +318,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                     datatime_label.no_show_all = true;
                 } else {
                     if (is_same_time) {
-                        // TRANSLATORS: A single time i.e. "7:00 PM"
-                        datetime_string = _("%s").printf (start_time_string);
+                        datetime_string = start_time_string;
                     } else {
                         // TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
                         datetime_string = C_("time-range", "%s – %s").printf (start_time_string, end_time_string);
@@ -330,8 +329,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                     datetime_string = "%s".printf (start_date_string);
                 } else {
                     if (is_same_time) {
-                        // TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21, 7"00 PM"
-                        datetime_string = _("%s, %s").printf (start_date_string, start_time_string);
+                        // TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
+                        datetime_string = _("%s at %s").printf (start_date_string, start_time_string);
                     } else {
                         // TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
                         datetime_string = _("%s, %s – %s").printf (start_date_string, start_time_string, end_time_string);
