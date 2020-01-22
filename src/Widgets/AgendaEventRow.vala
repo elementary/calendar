@@ -292,7 +292,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         is_allday = Util.is_all_day (start_date, end_date);
         is_multiday = Util.is_multiday_event (ical_event);
-        var is_same_time = start_date.equals (end_date);
+        var is_same_time = start_date.equal (end_date);
 
         var date_format = Granite.DateTime.get_default_date_format (true, true, false);
         string start_date_string = start_date.format (date_format);
