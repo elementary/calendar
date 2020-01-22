@@ -317,7 +317,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                     datatime_label.hide ();
                     datatime_label.no_show_all = true;
                 } else {
-                    if (is_same_time){
+                    if (is_same_time) {
                         // TRANSLATORS: A single time i.e. "7:00 PM"
                         datetime_string = _("%s").printf (start_time_string);
                     } else {
@@ -329,7 +329,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                 if (is_allday) {
                     datetime_string = "%s".printf (start_date_string);
                 } else {
-                    if (is_same_time){
+                    if (is_same_time) {
                         // TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21, 7"00 PM"
                         datetime_string = _("%s, %s").printf (start_date_string, start_time_string);
                     } else {
