@@ -176,7 +176,7 @@ namespace Maya.Util {
     }
 
     public bool is_same_time (DateTime dtstart, DateTime dtend) {
-        return dstart.equal(dtend);
+        return dtstart.equal(dtend);
     }
 
     public DateTime get_start_of_month (owned DateTime? date = null) {
