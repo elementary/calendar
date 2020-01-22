@@ -300,7 +300,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         string end_time_string = end_date.format (Settings.time_format ());
         string? datetime_string = null;
 
-        var is_same_time = start_date_string == end_date_string;
+        var is_same_time = start_time_string == end_time_string;
 
         datatime_label.show ();
         datatime_label.no_show_all = false;
