@@ -400,7 +400,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
                 if (start_time.get_hour () == end_time.get_hour ()) {
                     // Same hour, compare minutes
-                    return start_time.get_minute () < end_time.get_minute ();
+                    return start_time.get_minute () <= end_time.get_minute ();
                 }
 
                 // Different hour, start should be smaller
