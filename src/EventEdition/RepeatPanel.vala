@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -215,27 +214,41 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         exceptions_scrolled.add (exceptions_list);
         exceptions_scrolled.expand = true;
 
-        var exceptions_frame = new Gtk.Frame (null);
-        exceptions_frame.add (exceptions_scrolled);
+        var add_button = new Gtk.Button.with_label (_("Add Exception"));
+        add_button.always_show_image = true;
+        add_button.image = new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON);
+        add_button.margin = 3;
+        add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var inline_toolbar = new Gtk.Toolbar ();
+        var inline_toolbar = new Gtk.ActionBar ();
         inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-        inline_toolbar.icon_size = Gtk.IconSize.SMALL_TOOLBAR;
+        inline_toolbar.add (add_button);
 
-        var add_button = new Gtk.ToolButton (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON), null);
-        add_button.tooltip_text = _("Add Exception");
+        var exceptions_grid = new Gtk.Grid ();
+        exceptions_grid.sensitive = false;
+        exceptions_grid.attach (exceptions_scrolled, 0, 0);
+        exceptions_grid.attach (inline_toolbar, 0, 1);
+
+        var exceptions_frame = new Gtk.Frame (null);
+        exceptions_frame.add (exceptions_grid);
+
+        attach (reminder_label, 1, 0, 1, 1);
+        attach (repeat_grid, 1, 1, 1, 1);
+        attach (every_label, 1, 2, 1, 1);
+        attach (every_grid, 1, 3, 1, 1);
+        attach (week_box, 1, 4, 1, 1);
+        attach (month_grid, 1, 4, 1, 1);
+        attach (ends_label, 1, 5, 1, 1);
+        attach (ends_grid, 1, 6, 1, 1);
+        attach (exceptions_label, 1, 7, 1, 1);
+        attach (exceptions_frame, 1, 8);
+        load ();
+
         add_button.clicked.connect (() => {
             var exception_grid = new ExceptionGrid (new GLib.DateTime.now_local ());
             exception_grid.show_all ();
             exceptions_list.add (exception_grid);
         });
-
-        inline_toolbar.add (add_button);
-        var exceptions_grid = new Gtk.Grid ();
-        exceptions_grid.sensitive = false;
-        exceptions_grid.orientation = Gtk.Orientation.VERTICAL;
-        exceptions_grid.add (exceptions_frame);
-        exceptions_grid.add (inline_toolbar);
 
         repeat_switch.notify["active"].connect (() => {
             bool active = repeat_switch.active;
@@ -247,18 +260,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             exceptions_grid.sensitive = active;
         });
         repeat_switch.active = false;
-
-        attach (reminder_label, 1, 0, 1, 1);
-        attach (repeat_grid, 1, 1, 1, 1);
-        attach (every_label, 1, 2, 1, 1);
-        attach (every_grid, 1, 3, 1, 1);
-        attach (week_box, 1, 4, 1, 1);
-        attach (month_grid, 1, 4, 1, 1);
-        attach (ends_label, 1, 5, 1, 1);
-        attach (ends_grid, 1, 6, 1, 1);
-        attach (exceptions_label, 1, 7, 1, 1);
-        attach (exceptions_grid, 1, 8, 1, 1);
-        load ();
     }
 
     private void load_weekly_recurrence (ICal.Recurrence rrule) {
