@@ -232,15 +232,15 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         var exceptions_frame = new Gtk.Frame (null);
         exceptions_frame.add (exceptions_grid);
 
-        attach (reminder_label, 1, 0, 1, 1);
-        attach (repeat_grid, 1, 1, 1, 1);
-        attach (every_label, 1, 2, 1, 1);
-        attach (every_grid, 1, 3, 1, 1);
-        attach (week_box, 1, 4, 1, 1);
-        attach (month_grid, 1, 4, 1, 1);
-        attach (ends_label, 1, 5, 1, 1);
-        attach (ends_grid, 1, 6, 1, 1);
-        attach (exceptions_label, 1, 7, 1, 1);
+        attach (reminder_label, 1, 0);
+        attach (repeat_grid, 1, 1);
+        attach (every_label, 1, 2);
+        attach (every_grid, 1, 3);
+        attach (week_box, 1, 4);
+        attach (month_grid, 1, 4);
+        attach (ends_label, 1, 5);
+        attach (ends_grid, 1, 6);
+        attach (exceptions_label, 1, 7);
         attach (exceptions_frame, 1, 8);
         load ();
 
