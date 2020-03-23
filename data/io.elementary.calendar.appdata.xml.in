@@ -16,6 +16,7 @@
     <release version="5.0.4" date="2020-01-03" urgency="medium">
       <description>
         <p>Correctly save event reminders</p>
+        <p>Ellipsize event participant details if necessary</p>
       </description>
     </release>
     <release version="5.0.3" date="2019-11-27" urgency="medium">
