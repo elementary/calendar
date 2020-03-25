@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-24 15:51+0000\n"
-"PO-Revision-Date: 2019-10-27 19:23+0000\n"
+"PO-Revision-Date: 2020-03-26 16:50+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/extra/he/"
 ">\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -42,15 +42,15 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "שמירת תזכורות לאירועים בצורה נכונה"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid "Fix crash when editing an event with no location"
-msgstr ""
+msgstr "תיקון קריסה בעת עריכת אירוע ללא מיקום"
 
 #: data/io.elementary.calendar.appdata.xml.in:28
 msgid "Fix potential crash when loading events with no start or end time"
-msgstr ""
+msgstr "תיקון קריסה אפשרית במקרה של טעינת אירועים ללא מועד התחלה או סיום"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Make agenda pane fill the whole space"
