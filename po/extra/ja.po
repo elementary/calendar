@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-24 15:51+0000\n"
+"POT-Creation-Date: 2020-03-26 16:51+0000\n"
 "PO-Revision-Date: 2019-11-02 13:46+0000\n"
 "Last-Translator: imasaru <evanmr4@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
@@ -43,97 +43,101 @@ msgstr ""
 msgid "Correctly save event reminders"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:23
+#: data/io.elementary.calendar.appdata.xml.in:19
+msgid "Fix unwanted rescheduling when editing event title"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Fix crash when editing an event with no location"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:28
+#: data/io.elementary.calendar.appdata.xml.in:29
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:33
+#: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Make agenda pane fill the whole space"
 msgstr "予定ペインが領域全体を占めるように調整"
 
-#: data/io.elementary.calendar.appdata.xml.in:34
+#: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Set the suggested time for new events to the next whole hour"
 msgstr "予定の作成時に現在時刻からの1時間を予定の時間として提示するように変更"
 
-#: data/io.elementary.calendar.appdata.xml.in:35
+#: data/io.elementary.calendar.appdata.xml.in:36
 msgid "Fix issues with recurring events"
 msgstr "定期的に行われる予定に関する問題を修正"
 
-#: data/io.elementary.calendar.appdata.xml.in:36
+#: data/io.elementary.calendar.appdata.xml.in:37
 msgid "Performance improvements"
 msgstr "パフォーマンスの向上"
 
-#: data/io.elementary.calendar.appdata.xml.in:37
-#: data/io.elementary.calendar.appdata.xml.in:49
+#: data/io.elementary.calendar.appdata.xml.in:38
+#: data/io.elementary.calendar.appdata.xml.in:50
 msgid "Updated translations"
 msgstr "新しい翻訳"
 
-#: data/io.elementary.calendar.appdata.xml.in:42
+#: data/io.elementary.calendar.appdata.xml.in:43
 msgid "Present import window when opening ICS files"
 msgstr "ICS ファイルを開いた際にインポートウィンドウが表示されるのを防止"
 
-#: data/io.elementary.calendar.appdata.xml.in:43
+#: data/io.elementary.calendar.appdata.xml.in:44
 msgid "Add a search entry for calendars"
 msgstr "カレンダーに検索欄を追加"
 
-#: data/io.elementary.calendar.appdata.xml.in:44
+#: data/io.elementary.calendar.appdata.xml.in:45
 msgid "Always use calendar icon in notifications"
 msgstr "通知内で常にカレンダーのアイコンを使うように修正"
 
-#: data/io.elementary.calendar.appdata.xml.in:45
+#: data/io.elementary.calendar.appdata.xml.in:46
 msgid "Agenda view can now be navigated by keyboard"
 msgstr "日程ビューをキーボードで操作できるように変更"
 
-#: data/io.elementary.calendar.appdata.xml.in:46
+#: data/io.elementary.calendar.appdata.xml.in:47
 msgid "Right-to-left improvements"
 msgstr "RTL 言語関連の改善"
 
-#: data/io.elementary.calendar.appdata.xml.in:47
+#: data/io.elementary.calendar.appdata.xml.in:48
 msgid "Various UI overhauls including lime accent color"
 msgstr "ライム色のアクセントカラーを含む、各種 UI の見直し"
 
-#: data/io.elementary.calendar.appdata.xml.in:48
+#: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Overall code cleanup and rewrites"
 msgstr "全体的なコードのクリーンアップと書き直し"
 
-#: data/io.elementary.calendar.appdata.xml.in:54
+#: data/io.elementary.calendar.appdata.xml.in:55
 msgid "Styling adjustments"
 msgstr "スタイルの調整"
 
-#: data/io.elementary.calendar.appdata.xml.in:55
+#: data/io.elementary.calendar.appdata.xml.in:56
 msgid "Fix location panel initialization"
 msgstr "位置パネルの初期化に関する修正"
 
-#: data/io.elementary.calendar.appdata.xml.in:56
+#: data/io.elementary.calendar.appdata.xml.in:57
 msgid "New translations"
 msgstr "新しい翻訳"
 
-#: data/io.elementary.calendar.appdata.xml.in:61
+#: data/io.elementary.calendar.appdata.xml.in:62
 msgid "Update wingpanel-indicator-datetime settings path."
 msgstr "wingpanel-indicator-datetime の設定パスを更新しました。"
 
-#: data/io.elementary.calendar.appdata.xml.in:62
+#: data/io.elementary.calendar.appdata.xml.in:63
 msgid "New translations."
 msgstr "翻訳を更新しました。"
 
-#: data/io.elementary.calendar.appdata.xml.in:67
-#: data/io.elementary.calendar.appdata.xml.in:74
+#: data/io.elementary.calendar.appdata.xml.in:68
+#: data/io.elementary.calendar.appdata.xml.in:75
 msgid "Various bug fixes and improvements."
 msgstr "各種バグの修正と改善をしました。"
 
-#: data/io.elementary.calendar.appdata.xml.in:72
+#: data/io.elementary.calendar.appdata.xml.in:73
 msgid "Fixes for calendar accuracy and integrity issues."
 msgstr "カレンダーの正確さと整合性の問題に対する修正をしました。"
 
-#: data/io.elementary.calendar.appdata.xml.in:73
+#: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Fixes exporting, importing and printing calendars."
 msgstr "カレンダーのエクスポート、インポート、印刷を修正しました。"
 
-#: data/io.elementary.calendar.appdata.xml.in:121
+#: data/io.elementary.calendar.appdata.xml.in:122
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
