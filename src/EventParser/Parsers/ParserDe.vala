@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -155,21 +155,25 @@ public class ParserDe : GLib.Object, EventParser {
         // --- Date ---
 
         analyze_pattern ("vorgestern", (data) => {
+            event.date_parsed = true;
             event.from = event.from.add_days (-2);
             event.set_one_entire_day ();
         });
 
         analyze_pattern ("gestern", (data) => {
+            event.date_parsed = true;
             event.from = event.from.add_days (-1);
             event.set_one_entire_day ();
         });
 
         analyze_pattern ("(ab )?morgen", (data) => {
+            event.date_parsed = true;
             event.from = event.from.add_days (1);
             event.set_one_entire_day ();
         });
 
         analyze_pattern ("(ab )?übermorgen", (data) => {
+            event.date_parsed = true;
             event.from = event.from.add_days (2);
             event.set_one_entire_day ();
         });
@@ -180,12 +184,16 @@ public class ParserDe : GLib.Object, EventParser {
 
         analyze_pattern ("vor (?<p1>\\d+) tagen", (data) => {
             int days = int.parse ( data.p.index (0));
+
+            event.date_parsed = true;
             event.from = event.from.add_days (-days);
             event.set_one_entire_day ();
         });
 
         analyze_pattern ("in (?<p1>\\d+) tagen", (data) => {
             int days = int.parse (data.p.index (0));
+
+            event.date_parsed = true;
             event.from = event.from.add_days (days);
             event.set_one_entire_day ();
         });
@@ -193,25 +201,28 @@ public class ParserDe : GLib.Object, EventParser {
         analyze_pattern (@"diesen (?<p1>$weekdays_regex)", (data) => {
             int weekday = get_number_of_weekday (data.p.index (0));
             int add_days = (weekday - this.simulated_dt.get_day_of_week () + 7 ) % 7;
-            event.from = event.from.add_days (add_days);
 
+            event.date_parsed = true;
+            event.from = event.from.add_days (add_days);
             event.set_one_entire_day ();
         });
 
         analyze_pattern (@"nächsten (?<p1>$weekdays_regex)", (data) => {
             int weekday = get_number_of_weekday (data.p.index (0));
             int add_days = (weekday - this.simulated_dt.get_day_of_week () + 7 ) % 7;
-            event.from = event.from.add_days (add_days);
 
+            event.date_parsed = true;
+            event.from = event.from.add_days (add_days);
             event.set_one_entire_day ();
         });
 
         analyze_pattern (@"übernächsten (?<p1>$weekdays_regex)", (data) => {
             int weekday = get_number_of_weekday (data.p.index (0));
             int add_days = (weekday - this.simulated_dt.get_day_of_week () + 7 ) % 7;
+
+            event.date_parsed = true;
             event.from = event.from.add_weeks (1);
             event.from = event.from.add_days (add_days);
-
             event.set_one_entire_day ();
         });
 
@@ -219,6 +230,7 @@ public class ParserDe : GLib.Object, EventParser {
             int day = int.parse (data.p.index (0));
             int month = int.parse (data.p.index (1));
 
+            event.date_parsed = true;
             event.from_set_day (day);
             event.set_one_entire_day ();
 
@@ -239,6 +251,7 @@ public class ParserDe : GLib.Object, EventParser {
             int day_1 = int.parse (data.p.index (0));
             int day_2 = int.parse (data.p.index (1));
 
+            event.date_parsed = true;
             event.from_set_day (day_1);
             event.to_set_day (day_2);
             event.set_all_day ();
@@ -258,6 +271,7 @@ public class ParserDe : GLib.Object, EventParser {
             int day = int.parse (data.p.index (0));
             int month = get_number_of_month (data.p.index (1));
 
+            event.date_parsed = true;
             event.from_set_day (day);
             event.from_set_month (month);
             event.set_one_entire_day ();
@@ -266,6 +280,7 @@ public class ParserDe : GLib.Object, EventParser {
         });
 
         analyze_pattern ("heiligabend", (data) => {
+            event.date_parsed = true;
             event.from_set_month (12);
             event.from_set_day (24);
             event.set_one_entire_day ();
@@ -276,36 +291,42 @@ public class ParserDe : GLib.Object, EventParser {
         // --- Time ---
 
         analyze_pattern ("früh", (data) => {
+            event.time_parsed = true;
             event.from_set_hour (9);
             event.set_length_to_hours (1);
             event.all_day = false;
         });
 
         analyze_pattern ("vormittags", (data) => {
+            event.time_parsed = true;
             event.from_set_hour (11);
             event.set_length_to_hours (1);
             event.all_day = false;
         });
 
         analyze_pattern ("mittag(s?)", (data) => {
+            event.time_parsed = true;
             event.from_set_hour (12);
             event.set_length_to_hours (1);
             event.all_day = false;
         });
 
         analyze_pattern ("nachmittags", (data) => {
+            event.time_parsed = true;
             event.from_set_hour (15);
             event.set_length_to_hours (1);
             event.all_day = false;
         });
 
         analyze_pattern ("abends", (data) => {
+            event.time_parsed = true;
             event.from_set_hour (18);
             event.set_length_to_hours (1);
             event.all_day = false;
         });
 
         analyze_pattern ("spät", (data) => {
+            event.time_parsed = true;
             event.from_set_hour (19);
             event.set_length_to_hours (3);
             event.all_day = false;
@@ -313,6 +334,8 @@ public class ParserDe : GLib.Object, EventParser {
 
         analyze_pattern ("(um|ab) (?<p1>\\d+)(:(?<p2>\\d+))?( (uhr|h))?", (data) => {
             int hour = int.parse (data.p.index (0));
+
+            event.time_parsed = true;
             event.from_set_hour (hour);
 
             if (data.p.index (1) != null) {
@@ -328,6 +351,7 @@ public class ParserDe : GLib.Object, EventParser {
             int hour_1 = int.parse (data.p.index (0));
             int hour_2 = int.parse (data.p.index (1));
 
+            event.time_parsed = true;
             event.from_set_hour (hour_1);
             event.to_set_hour (hour_2);
 
@@ -345,6 +369,8 @@ public class ParserDe : GLib.Object, EventParser {
 
         analyze_pattern ("(?<p1>\\d+)(:(?<p2>\\d+))? (uhr|h)", (data) => {
             int hour = int.parse (data.p.index (0));
+
+            event.time_parsed = true;
             event.from_set_hour (hour);
 
             if (data.p.index (1) != null) {
@@ -358,21 +384,33 @@ public class ParserDe : GLib.Object, EventParser {
 
         analyze_pattern ("für (?<p1>\\d+)(\\s?min| Minuten)", (data) => {
             int minutes = int.parse (data.p.index (0));
+
+            event.date_parsed = true;
+            event.time_parsed = true;
+            event.all_day = false;
             event.set_length_to_minutes (minutes);
         });
 
         analyze_pattern ("für (?<p1>\\d+)(\\s?h| Stunden)", (data) => {
             int hours = int.parse (data.p.index (0));
+
+            event.date_parsed = true;
+            event.time_parsed = true;
+            event.all_day = false;
             event.set_length_to_hours (hours);
         });
 
         analyze_pattern ("für (?<p1>\\d+)(\\s?d| Tage)", (data) => {
             int days = int.parse (data.p.index (0));
+
+            event.date_parsed = true;
             event.set_length_to_days (days);
         });
 
         analyze_pattern ("für (?<p1>\\d+) Wochen", (data) => {
             int weeks = int.parse (data.p.index (0));
+
+            event.date_parsed = true;
             event.set_length_to_weeks (weeks);
         });
 

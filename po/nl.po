@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-24 15:51+0000\n"
-"PO-Revision-Date: 2019-12-25 16:41+0000\n"
+"PO-Revision-Date: 2020-03-26 16:50+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/calendar/"
 "nl/>\n"
@@ -768,7 +768,7 @@ msgstr "van %s tot %s"
 #: src/Widgets/AgendaEventRow.vala:334
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s om %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:337

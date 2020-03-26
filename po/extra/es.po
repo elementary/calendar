@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-24 15:51+0000\n"
-"PO-Revision-Date: 2019-10-25 16:23+0000\n"
+"PO-Revision-Date: 2020-03-26 16:50+0000\n"
 "Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/extra/"
 "es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-02-10 05:35+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -41,7 +41,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "Guardar recordatorios de evento correctamente"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid "Fix crash when editing an event with no location"
