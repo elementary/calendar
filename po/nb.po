@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-24 15:51+0000\n"
+"POT-Creation-Date: 2020-03-26 16:51+0000\n"
 "PO-Revision-Date: 2019-06-27 07:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -152,42 +152,42 @@ msgstr "Opprett hendelse"
 msgid "Edit Event"
 msgstr "Rediger hendelse"
 
-#: src/EventEdition/EventDialog.vala:100
+#: src/EventEdition/EventDialog.vala:114
 msgid "General Informations"
 msgstr "Generell informasjon"
 
-#: src/EventEdition/EventDialog.vala:101
+#: src/EventEdition/EventDialog.vala:115
 msgid "Location"
 msgstr "Sted"
 
-#: src/EventEdition/EventDialog.vala:102
+#: src/EventEdition/EventDialog.vala:116
 msgid "Guests"
 msgstr "Gjester"
 
-#: src/EventEdition/EventDialog.vala:103
+#: src/EventEdition/EventDialog.vala:117
 msgid "Reminders"
 msgstr "Påminnelser"
 
-#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/EventDialog.vala:118 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Gjentagelse"
 msgstr[1] "Gjentagelser"
 
-#: src/EventEdition/EventDialog.vala:127
+#: src/EventEdition/EventDialog.vala:141
 msgid "Delete Event"
 msgstr "Slett hendelse"
 
-#: src/EventEdition/EventDialog.vala:140
+#: src/EventEdition/EventDialog.vala:154
 msgid "Create Event"
 msgstr "Opprett hendelse"
 
-#: src/EventEdition/EventDialog.vala:143
+#: src/EventEdition/EventDialog.vala:157
 msgid "Save Changes"
 msgstr "Lagre endringer"
 
-#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:160 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 msgid "Cancel"
 msgstr "Avbryt"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-24 15:51+0000\n"
+"POT-Creation-Date: 2020-03-26 16:51+0000\n"
 "PO-Revision-Date: 2017-12-30 00:08+0000\n"
 "Last-Translator: Hải Hồ <hochihai1997@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.elementary.io/projects/calendar/"
@@ -158,41 +158,41 @@ msgstr "Thêm sự kiện"
 msgid "Edit Event"
 msgstr "Sửa sự kiện"
 
-#: src/EventEdition/EventDialog.vala:100
+#: src/EventEdition/EventDialog.vala:114
 msgid "General Informations"
 msgstr "Thông tin chung"
 
-#: src/EventEdition/EventDialog.vala:101
+#: src/EventEdition/EventDialog.vala:115
 msgid "Location"
 msgstr "Địa điểm"
 
-#: src/EventEdition/EventDialog.vala:102
+#: src/EventEdition/EventDialog.vala:116
 msgid "Guests"
 msgstr "Khách"
 
-#: src/EventEdition/EventDialog.vala:103
+#: src/EventEdition/EventDialog.vala:117
 msgid "Reminders"
 msgstr "Nhắc nhở"
 
-#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/EventDialog.vala:118 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Lặp lại"
 
-#: src/EventEdition/EventDialog.vala:127
+#: src/EventEdition/EventDialog.vala:141
 msgid "Delete Event"
 msgstr "Xóa sự kiện"
 
-#: src/EventEdition/EventDialog.vala:140
+#: src/EventEdition/EventDialog.vala:154
 msgid "Create Event"
 msgstr "Tạo sự kiện"
 
-#: src/EventEdition/EventDialog.vala:143
+#: src/EventEdition/EventDialog.vala:157
 msgid "Save Changes"
 msgstr "Lưu thay đổi"
 
-#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:160 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 msgid "Cancel"
 msgstr "Hủy bỏ"

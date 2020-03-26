@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-24 15:51+0000\n"
+"POT-Creation-Date: 2020-03-26 16:51+0000\n"
 "PO-Revision-Date: 2017-01-03 09:18+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: \n"
@@ -151,41 +151,41 @@ msgstr "پائالىيەت قىتىش"
 msgid "Edit Event"
 msgstr "پائالىيەت تەھرىرلەش"
 
-#: src/EventEdition/EventDialog.vala:100
+#: src/EventEdition/EventDialog.vala:114
 msgid "General Informations"
 msgstr "ئادەتتىكى ئۇچۇرلار"
 
-#: src/EventEdition/EventDialog.vala:101
+#: src/EventEdition/EventDialog.vala:115
 msgid "Location"
 msgstr "ئورنى"
 
-#: src/EventEdition/EventDialog.vala:102
+#: src/EventEdition/EventDialog.vala:116
 msgid "Guests"
 msgstr "مېھمانلار"
 
-#: src/EventEdition/EventDialog.vala:103
+#: src/EventEdition/EventDialog.vala:117
 msgid "Reminders"
 msgstr "ئەسكەرتىش"
 
-#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/EventDialog.vala:118 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "تەكرارلاش"
 
-#: src/EventEdition/EventDialog.vala:127
+#: src/EventEdition/EventDialog.vala:141
 msgid "Delete Event"
 msgstr "پائالىيەتنى ئۆچۈرۈش"
 
-#: src/EventEdition/EventDialog.vala:140
+#: src/EventEdition/EventDialog.vala:154
 msgid "Create Event"
 msgstr "پائالىيەت قۇرۇش"
 
-#: src/EventEdition/EventDialog.vala:143
+#: src/EventEdition/EventDialog.vala:157
 msgid "Save Changes"
 msgstr "ئۆزگەرتىشلەرنى ساقلاش"
 
-#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:160 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 msgid "Cancel"
 msgstr "ئەمەلدىن قالدۇرۇش"
