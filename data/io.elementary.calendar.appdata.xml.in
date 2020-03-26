@@ -16,6 +16,7 @@
     <release version="5.0.4" date="2020-03-23" urgency="medium">
       <description>
         <p>Correctly save event reminders</p>
+        <p>Ellipsize event participant details if necessary</p>
         <p>Fix unwanted rescheduling when editing event title</p>
       </description>
     </release>
