@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-24 15:51+0000\n"
+"POT-Creation-Date: 2020-03-26 16:51+0000\n"
 "PO-Revision-Date: 2019-12-22 21:41+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/calendar/extra/"
@@ -44,99 +44,103 @@ msgstr ""
 msgid "Correctly save event reminders"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:23
+#: data/io.elementary.calendar.appdata.xml.in:19
+msgid "Fix unwanted rescheduling when editing event title"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Fix crash when editing an event with no location"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:28
+#: data/io.elementary.calendar.appdata.xml.in:29
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:33
+#: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Make agenda pane fill the whole space"
 msgstr "Stranska vrstica z dnevnim redom zdaj zapolni ves prostor"
 
-#: data/io.elementary.calendar.appdata.xml.in:34
+#: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Set the suggested time for new events to the next whole hour"
 msgstr ""
 "Priporočen čas pri novem dogodku je sedaj nastavljen na naslednjo polno uro"
 
-#: data/io.elementary.calendar.appdata.xml.in:35
+#: data/io.elementary.calendar.appdata.xml.in:36
 msgid "Fix issues with recurring events"
 msgstr "Popravljene težave pri ponavljajočih dogodkih"
 
-#: data/io.elementary.calendar.appdata.xml.in:36
+#: data/io.elementary.calendar.appdata.xml.in:37
 msgid "Performance improvements"
 msgstr "Izboljšanje odzivnosti"
 
-#: data/io.elementary.calendar.appdata.xml.in:37
-#: data/io.elementary.calendar.appdata.xml.in:49
+#: data/io.elementary.calendar.appdata.xml.in:38
+#: data/io.elementary.calendar.appdata.xml.in:50
 msgid "Updated translations"
 msgstr "Posodobljeni prevodi"
 
-#: data/io.elementary.calendar.appdata.xml.in:42
+#: data/io.elementary.calendar.appdata.xml.in:43
 msgid "Present import window when opening ICS files"
 msgstr "Pri odpiranju ICS datotek se pokaže okno za uvoz"
 
-#: data/io.elementary.calendar.appdata.xml.in:43
+#: data/io.elementary.calendar.appdata.xml.in:44
 msgid "Add a search entry for calendars"
 msgstr "Dodaj iskalni vnos za koledarje"
 
-#: data/io.elementary.calendar.appdata.xml.in:44
+#: data/io.elementary.calendar.appdata.xml.in:45
 msgid "Always use calendar icon in notifications"
 msgstr "Vedno uporabi ikono koledarja pri obvestilih"
 
-#: data/io.elementary.calendar.appdata.xml.in:45
+#: data/io.elementary.calendar.appdata.xml.in:46
 msgid "Agenda view can now be navigated by keyboard"
 msgstr "Dnevni pregled se lahko navigira prek tipkovnice"
 
-#: data/io.elementary.calendar.appdata.xml.in:46
+#: data/io.elementary.calendar.appdata.xml.in:47
 msgid "Right-to-left improvements"
 msgstr "Izboljšave pri jezikih pisahin iz desne proti levi"
 
-#: data/io.elementary.calendar.appdata.xml.in:47
+#: data/io.elementary.calendar.appdata.xml.in:48
 msgid "Various UI overhauls including lime accent color"
 msgstr ""
 "Razni popravki uporabniškega vmesnika vključno s poudarkom na limetni barvi"
 
-#: data/io.elementary.calendar.appdata.xml.in:48
+#: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Overall code cleanup and rewrites"
 msgstr "Celostno čiščenje in predelava kode"
 
-#: data/io.elementary.calendar.appdata.xml.in:54
+#: data/io.elementary.calendar.appdata.xml.in:55
 msgid "Styling adjustments"
 msgstr "Uravnavanje stila"
 
-#: data/io.elementary.calendar.appdata.xml.in:55
+#: data/io.elementary.calendar.appdata.xml.in:56
 msgid "Fix location panel initialization"
 msgstr "Popravljena inicializacija lokacijske plošče"
 
-#: data/io.elementary.calendar.appdata.xml.in:56
+#: data/io.elementary.calendar.appdata.xml.in:57
 msgid "New translations"
 msgstr "Novi prevodi"
 
-#: data/io.elementary.calendar.appdata.xml.in:61
+#: data/io.elementary.calendar.appdata.xml.in:62
 msgid "Update wingpanel-indicator-datetime settings path."
 msgstr "Posodobljena pot nastavitve wingpanel-indicator-datetime."
 
-#: data/io.elementary.calendar.appdata.xml.in:62
+#: data/io.elementary.calendar.appdata.xml.in:63
 msgid "New translations."
 msgstr "Novi prevodi."
 
-#: data/io.elementary.calendar.appdata.xml.in:67
-#: data/io.elementary.calendar.appdata.xml.in:74
+#: data/io.elementary.calendar.appdata.xml.in:68
+#: data/io.elementary.calendar.appdata.xml.in:75
 msgid "Various bug fixes and improvements."
 msgstr "Razni popravki in izboljšave."
 
-#: data/io.elementary.calendar.appdata.xml.in:72
+#: data/io.elementary.calendar.appdata.xml.in:73
 msgid "Fixes for calendar accuracy and integrity issues."
 msgstr "Popravki pri natančnosti koledarjev in integritetnih težav."
 
-#: data/io.elementary.calendar.appdata.xml.in:73
+#: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Fixes exporting, importing and printing calendars."
 msgstr "Popravljeno izvažanje, uvažanje in tiskanje koledarjev."
 
-#: data/io.elementary.calendar.appdata.xml.in:121
+#: data/io.elementary.calendar.appdata.xml.in:122
 msgid "elementary LLC."
 msgstr "elementary LLC."
 

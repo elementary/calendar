@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-24 15:51+0000\n"
+"POT-Creation-Date: 2020-03-26 16:51+0000\n"
 "PO-Revision-Date: 2019-07-17 01:30+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/calendar/extra/ko/"
@@ -43,98 +43,102 @@ msgstr ""
 msgid "Correctly save event reminders"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:23
+#: data/io.elementary.calendar.appdata.xml.in:19
+msgid "Fix unwanted rescheduling when editing event title"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Fix crash when editing an event with no location"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:28
+#: data/io.elementary.calendar.appdata.xml.in:29
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:33
+#: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Make agenda pane fill the whole space"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:34
+#: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Set the suggested time for new events to the next whole hour"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:35
+#: data/io.elementary.calendar.appdata.xml.in:36
 msgid "Fix issues with recurring events"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:36
+#: data/io.elementary.calendar.appdata.xml.in:37
 #, fuzzy
 msgid "Performance improvements"
 msgstr "오른쪽에서 왼쪽으로 읽고/쓰기 개선"
 
-#: data/io.elementary.calendar.appdata.xml.in:37
-#: data/io.elementary.calendar.appdata.xml.in:49
+#: data/io.elementary.calendar.appdata.xml.in:38
+#: data/io.elementary.calendar.appdata.xml.in:50
 msgid "Updated translations"
 msgstr "번역 업데이트"
 
-#: data/io.elementary.calendar.appdata.xml.in:42
+#: data/io.elementary.calendar.appdata.xml.in:43
 msgid "Present import window when opening ICS files"
 msgstr "ICS 파일을 열 때 현재 가져오기 창 표시"
 
-#: data/io.elementary.calendar.appdata.xml.in:43
+#: data/io.elementary.calendar.appdata.xml.in:44
 msgid "Add a search entry for calendars"
 msgstr "달력 검색 항목 추가"
 
-#: data/io.elementary.calendar.appdata.xml.in:44
+#: data/io.elementary.calendar.appdata.xml.in:45
 msgid "Always use calendar icon in notifications"
 msgstr "알림에 항상 달력 아이콘 사용"
 
-#: data/io.elementary.calendar.appdata.xml.in:45
+#: data/io.elementary.calendar.appdata.xml.in:46
 msgid "Agenda view can now be navigated by keyboard"
 msgstr "이제 키보드로 일정 보기를 탐색할 수 있습니다"
 
-#: data/io.elementary.calendar.appdata.xml.in:46
+#: data/io.elementary.calendar.appdata.xml.in:47
 msgid "Right-to-left improvements"
 msgstr "오른쪽에서 왼쪽으로 읽고/쓰기 개선"
 
-#: data/io.elementary.calendar.appdata.xml.in:47
+#: data/io.elementary.calendar.appdata.xml.in:48
 msgid "Various UI overhauls including lime accent color"
 msgstr "라임 강조 색을 포함한 전체 UI 개선"
 
-#: data/io.elementary.calendar.appdata.xml.in:48
+#: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Overall code cleanup and rewrites"
 msgstr "전체 코드 정리 및 다시 쓰기"
 
-#: data/io.elementary.calendar.appdata.xml.in:54
+#: data/io.elementary.calendar.appdata.xml.in:55
 msgid "Styling adjustments"
 msgstr "스타일 조정"
 
-#: data/io.elementary.calendar.appdata.xml.in:55
+#: data/io.elementary.calendar.appdata.xml.in:56
 msgid "Fix location panel initialization"
 msgstr "지역 패널 초기화 문제 해결"
 
-#: data/io.elementary.calendar.appdata.xml.in:56
+#: data/io.elementary.calendar.appdata.xml.in:57
 msgid "New translations"
 msgstr "새 번역"
 
-#: data/io.elementary.calendar.appdata.xml.in:61
+#: data/io.elementary.calendar.appdata.xml.in:62
 msgid "Update wingpanel-indicator-datetime settings path."
 msgstr "wingpanel-indicator-datetime 설정 경로를 업데이트."
 
-#: data/io.elementary.calendar.appdata.xml.in:62
+#: data/io.elementary.calendar.appdata.xml.in:63
 msgid "New translations."
 msgstr "새 번역."
 
-#: data/io.elementary.calendar.appdata.xml.in:67
-#: data/io.elementary.calendar.appdata.xml.in:74
+#: data/io.elementary.calendar.appdata.xml.in:68
+#: data/io.elementary.calendar.appdata.xml.in:75
 msgid "Various bug fixes and improvements."
 msgstr "여러 버그 수정 및 개선."
 
-#: data/io.elementary.calendar.appdata.xml.in:72
+#: data/io.elementary.calendar.appdata.xml.in:73
 msgid "Fixes for calendar accuracy and integrity issues."
 msgstr "달력의 정확성 및 무결성 문제 수정."
 
-#: data/io.elementary.calendar.appdata.xml.in:73
+#: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Fixes exporting, importing and printing calendars."
 msgstr "달력 내보내기, 가져오기 및 인쇄 수정."
 
-#: data/io.elementary.calendar.appdata.xml.in:121
+#: data/io.elementary.calendar.appdata.xml.in:122
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
