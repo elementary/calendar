@@ -82,13 +82,27 @@ public class EventDialog : Gtk.Dialog {
                     if (!event_parsed) {
                         var ev = parser.parse_source (ev_str);
                         info_panel.title = ev.title;
-                        info_panel.from_date = ev.from;
-                        info_panel.to_date = ev.to;
-                        info_panel.from_time = ev.from;
-                        info_panel.to_time = ev.to;
-                        info_panel.all_day = ev.all_day;
-                        guests_panel.guests = ev.participants;
-                        location_panel.location = ev.location;
+
+                        if (ev.date_parsed) {
+                            info_panel.from_date = ev.from;
+                            info_panel.to_date = ev.to;
+                        }
+
+                        if (ev.time_parsed) {
+                            info_panel.from_time = ev.from;
+                            info_panel.to_time = ev.to;
+                        }
+
+                        if (ev.all_day != null) {
+                            info_panel.all_day = ev.all_day;
+                        }
+
+                        guests_panel.guests += ev.participants;
+
+                        if (ev.location.length > 0) {
+                            location_panel.location = ev.location;
+                        }
+
                         event_parsed = true;
                     }
                     else
