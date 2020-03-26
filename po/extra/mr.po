@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-24 15:51+0000\n"
-"PO-Revision-Date: 2019-10-27 19:23+0000\n"
+"PO-Revision-Date: 2020-03-26 16:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/extra/"
 "mr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
 #: data/io.elementary.calendar.desktop.in:4
@@ -40,15 +40,17 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "कार्यक्रम स्मरणपत्रे योग्यरितीने जतन करा"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid "Fix crash when editing an event with no location"
-msgstr ""
+msgstr "स्थान नसलेले कार्यक्रम संपादित करताना येणाऱ्या क्रॅशचे निराकरण करा"
 
 #: data/io.elementary.calendar.appdata.xml.in:28
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
+"प्रारंभ किंवा समाप्तीच्या वेळा नसलेले कार्यक्रम लोड करताना संभाव्य क्रॅशचे "
+"निराकरण करा"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Make agenda pane fill the whole space"
