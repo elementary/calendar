@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-26 17:47+0000\n"
-"PO-Revision-Date: 2019-11-02 13:46+0000\n"
-"Last-Translator: imasaru <evanmr4@gmail.com>\n"
+"PO-Revision-Date: 2020-03-28 18:09+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
 "Language: ja\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -41,23 +41,23 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "予定のリマインダーを正しく保存するように修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Ellipsize event participant details if necessary"
-msgstr ""
+msgstr "必要に応じて予定の参加者の詳細を省略するように修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix unwanted rescheduling when editing event title"
-msgstr ""
+msgstr "予定のタイトルを編集した際に、予定の日付が変更されてしまう問題を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Fix crash when editing an event with no location"
-msgstr ""
+msgstr "場所を指定せずに予定を変更した場合にアプリがクラッシュする問題を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 msgid "Fix potential crash when loading events with no start or end time"
-msgstr ""
+msgstr "開始時刻または終了時刻が指定されていない予定を読み込んだ際にアプリがクラッシュすることがある問題を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Make agenda pane fill the whole space"
