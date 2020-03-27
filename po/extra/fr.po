@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-26 17:47+0000\n"
-"PO-Revision-Date: 2020-03-26 16:50+0000\n"
+"PO-Revision-Date: 2020-03-28 18:09+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/calendar/extra/fr/"
 ">\n"
@@ -45,14 +45,13 @@ msgstr "Les rappels d'évènement sont désormais correctement sauvegardés"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Ellipsize event participant details if necessary"
-msgstr ""
+msgstr "Coupure des informations des participants à un évènement si nécessaire"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
-#, fuzzy
-#| msgid "Fix crash when editing an event with no location"
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr ""
-"Correction d'un plantage lors de la modification d'un évènement sans lieu"
+"Correction des planifications non voulues lors de l'a modification du titre "
+"d'un événement"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Fix crash when editing an event with no location"
