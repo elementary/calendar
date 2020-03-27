@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-26 17:47+0000\n"
-"PO-Revision-Date: 2019-11-03 23:24+0000\n"
+"PO-Revision-Date: 2020-03-28 18:09+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "extra/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -41,23 +41,23 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "Guardar corretamente os lembretes de eventos"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Ellipsize event participant details if necessary"
-msgstr ""
+msgstr "Abreviar detalhes dos participantes do evento se necessário"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix unwanted rescheduling when editing event title"
-msgstr ""
+msgstr "Corrige a reprogramação indesejada ao editar o título do evento"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Fix crash when editing an event with no location"
-msgstr ""
+msgstr "Corrige a falha ao editar um evento sem localização"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 msgid "Fix potential crash when loading events with no start or end time"
-msgstr ""
+msgstr "Corrige possíveis falhas ao carregar eventos sem hora de início ou fim"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Make agenda pane fill the whole space"
