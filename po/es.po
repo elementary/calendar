@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-26 16:51+0000\n"
-"PO-Revision-Date: 2019-10-25 16:23+0000\n"
-"Last-Translator: Daniel R. <riesp@pm.me>\n"
+"PO-Revision-Date: 2020-03-31 00:09+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
 "calendar/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-01-07 06:12+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:304
@@ -102,7 +102,7 @@ msgstr "Próxima semana"
 
 #: src/AgendaView.vala:271
 msgid "This Month"
-msgstr "Este Mes"
+msgstr "Este mes"
 
 #: src/AgendaView.vala:274
 msgid "Next Month"
@@ -131,16 +131,14 @@ msgstr "Seleccionar los calendarios para importar"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Los eventos de \"%s\" se combinarán con este calendario:"
+msgstr "Los eventos de «%s» se combinarán con este calendario:"
 
 #: src/ImportDialog.vala:47
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] ""
-"Los eventos de el archivo %d serán importados en el siguiente calendario:"
-msgstr[1] ""
-"Los eventos de los archivos %d serán importados en el  siguiente calendario:"
+msgstr[0] "Los eventos de %d archivo se combinarán con este calendario:"
+msgstr[1] "Los eventos de %d archivos se combinarán con este calendario:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -187,7 +185,7 @@ msgstr "Crear evento"
 
 #: src/EventEdition/EventDialog.vala:157
 msgid "Save Changes"
-msgstr "Guardar los cambios"
+msgstr "Guardar cambios"
 
 #: src/EventEdition/EventDialog.vala:160 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:91
@@ -204,7 +202,7 @@ msgstr "Rechazado"
 
 #: src/EventEdition/GuestGrid.vala:55
 msgid "Maybe"
-msgstr "Pronto"
+msgstr "Quizá"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -240,7 +238,7 @@ msgstr "Nombre del evento"
 
 #: src/EventEdition/InfoPanel.vala:117
 msgid "Press enter to parse event"
-msgstr "Presiona intro para parsear el evento"
+msgstr "Oprima Intro para analizar el evento"
 
 #: src/EventEdition/InfoPanel.vala:132
 msgid "Calendar:"
@@ -272,7 +270,7 @@ msgstr "Añadir recordatorio"
 
 #: src/EventEdition/ReminderPanel.vala:189
 msgid "At time of event"
-msgstr "Al tiempo del evento"
+msgstr "A la hora del evento"
 
 #: src/EventEdition/ReminderPanel.vala:190
 msgid "1 minute before"
@@ -361,20 +359,20 @@ msgstr "Cada:"
 #: src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] "Día"
-msgstr[1] "Días"
+msgstr[0] "día"
+msgstr[1] "días"
 
 #: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] "Semana"
-msgstr[1] "Semanas"
+msgstr[0] "semana"
+msgstr[1] "semanas"
 
 #: src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] "Mes"
-msgstr[1] "Meses"
+msgstr[0] "mes"
+msgstr[1] "meses"
 
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
@@ -752,32 +750,32 @@ msgstr "boda"
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s – %s"
+msgstr "%s - %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:313
 #, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s – %s, %s"
+msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:325
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s – %s"
+msgstr "%s - %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:334
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s a las %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:337
 #, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s – %s"
+msgstr "%s, %s - %s"
 
 #: src/Widgets/CalendarButton.vala:72
 msgid "Search Calendars"
@@ -789,7 +787,7 @@ msgstr "No hay resultados"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr "Intenta cambiar los términos de búsqueda."
+msgstr "Pruebe a cambiar los términos de búsqueda."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -818,7 +816,7 @@ msgstr "Ir a hoy"
 
 #: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
-msgstr "Administrar calendarios"
+msgstr "Gestionar calendarios"
 
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
