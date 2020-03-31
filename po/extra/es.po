@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-26 17:47+0000\n"
-"PO-Revision-Date: 2020-03-26 16:50+0000\n"
-"Last-Translator: Daniel R. <riesp@pm.me>\n"
+"PO-Revision-Date: 2020-04-01 07:09+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/extra/"
 "es/>\n"
 "Language: es\n"
@@ -36,28 +36,35 @@ msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
-"Una aplicación de calendario liviana que sincroniza y administra múltiples "
-"calendarios en un solo lugar, como Google Calendar, Outlook y CalDAV."
+"Una aplicación de calendario liviana que sincroniza y gestiona calendarios, "
+"tales como Google Calendar, Outlook y CalDAV, en un solo lugar."
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Correctly save event reminders"
-msgstr "Guardar recordatorios de evento correctamente"
+msgstr "Se guardan los recordatorios de evento correctamente"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Ellipsize event participant details if necessary"
 msgstr ""
+"De ser necesario se truncan con puntos suspensivos los detalles de "
+"participantes en los eventos"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr ""
+"Se solucionaron las reprogramaciones no deseadas al editar el título de un "
+"evento"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Fix crash when editing an event with no location"
 msgstr ""
+"Se corrigió un cierre inesperado al editar eventos carentes de ubicación"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
+"Se arregló un cierre brusco potencial al cargar eventos sin hora de inicio o "
+"de finalización"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Make agenda pane fill the whole space"
