@@ -301,7 +301,6 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     private void compute_ranges () {
-        var state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
         state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
 
         var month_end = month_start.add_full (0, 1, -1);
