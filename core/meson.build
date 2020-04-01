@@ -16,7 +16,6 @@ core_files = files(
     'Backends/PlacementWidget.vala',
     'Model/CalendarModel.vala',
     'Settings/MayaSettings.vala',
-    'Settings/SavedState.vala',
     'DateRange.vala',
     'Utils.vala',
     'GesturesUtils.vala'
