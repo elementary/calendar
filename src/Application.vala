@@ -67,8 +67,9 @@ namespace Maya {
                     var datetime = Settings.SavedState.get_default ().get_selected ();
                     datetime = datetime.add_years ((int)date.get_year () - datetime.get_year ());
                     datetime = datetime.add_days ((int)date.get_day_of_year () - datetime.get_day_of_year ());
-                    Settings.SavedState.get_default ().selected_day = datetime.format ("%Y-%j");
-                    Settings.SavedState.get_default ().month_page = datetime.format ("%Y-%m");
+
+                    saved_state.set_string ("selected-day", datetime.format ("%Y-%j"));
+                    saved_state.set_string ("month-page", datetime.format ("%Y-%m"));
                 } else {
                     warning ("Invalid date '%s' - Ignoring", Option.show_day);
                 }

@@ -1,5 +1,6 @@
 //
-//  Copyright (C) 2011-2012 Maxwell Barvian
+//  Copyright 2020 elementary, Inc. (https://elementary.io)
+//            2011-2012 Maxwell Barvian
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -16,27 +17,34 @@
 //
 
 namespace Maya.Settings {
-    public class SavedState : Granite.Services.Settings {
+    public class SavedState : Object {
         private static Settings.SavedState? saved_state = null;
+        private static GLib.Settings state_settings;
 
         public static SavedState get_default () {
-            if (saved_state == null)
+            if (saved_state == null) {
                 saved_state = new SavedState ();
+            }
+
             return saved_state;
         }
 
-        public string month_page { get; set; }
-        public string selected_day { get; set; }
+        public string month_page {
+            set {
+                state_settings.set_string ("month-page", value);
+            }
+        }
 
-        private SavedState () {
-            base ("io.elementary.calendar.savedstate");
+        static construct {
+            state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
         }
 
         public DateTime get_page () {
-            if (month_page == null)
+            var month_page = state_settings.get_string ("month-page");
+            if (month_page == null || month_page == "") {
                 return new DateTime.now_local ();
-            if (month_page == "")
-                return new DateTime.now_local ();
+            }
+
             var numbers = month_page.split ("-", 2);
             var dt = new DateTime.local (int.parse (numbers[0]), 1, 1, 0, 0, 0);
             dt = dt.add_months (int.parse (numbers[1]) - 1);
@@ -44,10 +52,11 @@ namespace Maya.Settings {
         }
 
         public DateTime get_selected () {
-            if (selected_day == null)
+            var selected_day = state_settings.get_string ("selected-day");
+            if (selected_day == null || selected_day == "") {
                 return new DateTime.now_local ();
-            if (selected_day == "")
-                return new DateTime.now_local ();
+            }
+
             var numbers = selected_day.split ("-", 2);
             var dt = new DateTime.local (int.parse (numbers[0]), 1, 1, 0, 0, 0);
             dt = dt.add_days (int.parse (numbers[1]) - 1);
