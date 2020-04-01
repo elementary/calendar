@@ -3,7 +3,6 @@ core/Backends/BackendsManager.vala
 core/Backends/LocalBackend.vala
 core/Backends/PlacementWidget.vala
 core/Model/CalendarModel.vala
-core/Settings/MayaSettings.vala
 core/DateRange.vala
 core/Utils.vala
 core/GesturesUtils.vala
