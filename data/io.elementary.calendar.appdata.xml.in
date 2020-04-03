@@ -13,7 +13,7 @@
     </p>
   </description>
   <releases>
-    <release version="5.0.4" date="2020-03-23" urgency="medium">
+    <release version="5.0.4" date="2020-04-03" urgency="medium">
       <description>
         <p>Correctly save event reminders</p>
         <p>Ellipsize event participant details if necessary</p>
