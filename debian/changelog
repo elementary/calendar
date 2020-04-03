@@ -1,3 +1,27 @@
+maya-calendar (5.0.4) bionic; urgency=medium
+
+  * release 5.0.4 (#501)
+  * Remove unused MayaSettings (#498)
+  * Update translation files
+  * Update translation template
+  * Ellipsize long guest names (#496)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Don't overwrite events unnecessarily when parsing (#482)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Add build to Actions (#490)
+  * Replace Gtk.Toolbar with Gtk.ActionBar (#489)
+  * Travis: Specify node 10.17.0
+  * Avoid repating event time if end equals start (#486)
+  * Use GLib.Settings for show-weeks (#473)
+  * Update io.elementary.calendar.appdata.xml.in
+  * Correctly set reminder type when saving (#481)
+
+ -- Cody Garver <cody@elementary.io>  Fri, 03 Apr 2020 20:10:32 +0000
+
 maya-calendar (5.0.3) bionic; urgency=medium
 
   * Release 5.0.3 (#466)
