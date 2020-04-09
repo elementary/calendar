@@ -51,7 +51,7 @@ public class Maya.EventMenu : Gtk.Menu {
         remove_item.sensitive = sensitive;
         remove_item.activate.connect (remove_event);
 
-        var dup_item = new Gtk.MenuItem.with_label (_("Duplicate"));
+        var dup_item = new Gtk.MenuItem.with_label (_("Duplicate…"));
         dup_item.sensitive = can_modify_cal;
 
         append (remove_item);
@@ -80,9 +80,8 @@ public class Maya.EventMenu : Gtk.Menu {
         var dup = comp;
         dup.set_uid (uid);
 
-        // Store the duplicated event in the calendar
-        var calmodel = Model.CalendarModel.get_default ();
-        calmodel.add_event (comp.get_data<E.Source> ("source"), dup);
+        // Open the new event in the editor
+        ((Maya.Application) GLib.Application.get_default ()).window.on_duplicate (dup);
     }
 
     private void add_exception () {
