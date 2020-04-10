@@ -53,8 +53,6 @@ public class Maya.EventMenu : Gtk.Menu {
         append (remove_item);
         append (edit_item);
 
-        remove_item.activate.connect (remove_event);
-
         edit_item.activate.connect (() => {
             ((Maya.Application) GLib.Application.get_default ()).window.on_modified (comp);
         });
