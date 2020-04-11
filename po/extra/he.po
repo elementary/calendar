@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-03 20:10+0000\n"
-"PO-Revision-Date: 2020-03-26 16:50+0000\n"
+"PO-Revision-Date: 2020-04-09 06:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/extra/he/"
 ">\n"
@@ -42,7 +42,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Minor Updates:"
-msgstr ""
+msgstr "עדכונים משניים:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Correctly save event reminders"
@@ -50,13 +50,11 @@ msgstr "שמירת תזכורות לאירועים בצורה נכונה"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Ellipsize event participant details if necessary"
-msgstr ""
+msgstr "השמטת פרטי המשתתפים בפגישות אם נדרש"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
-#, fuzzy
-#| msgid "Fix crash when editing an event with no location"
 msgid "Fix unwanted rescheduling when editing event title"
-msgstr "תיקון קריסה בעת עריכת אירוע ללא מיקום"
+msgstr "תיקון קביעת פגישות מחדש בעת עריכת כותרת אירוע"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 #: data/io.elementary.calendar.appdata.xml.in:43
