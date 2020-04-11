@@ -17,7 +17,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
+ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private EventDialog parent_dialog;
     private Gtk.Switch repeat_switch;
     private Gtk.ComboBoxText repeat_combobox;
@@ -733,9 +733,9 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                     var day_of_month = (short)parent_dialog.date_time.get_day_of_month ();
                     array.append_val (day_of_month);
 #if E_CAL_2_0
-                    rrule.set_by_month_array (array);
+                    rrule.set_by_month_day_array (array);
 #else
-                    ICal.Recurrence.set_by_month_array (ref rrule, array);
+                    ICal.Recurrence.set_by_month_day_array (ref rrule, array);
 #endif
                 }
                 break;
