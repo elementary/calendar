@@ -65,6 +65,6 @@ public class Maya.EventMenu : Gtk.Menu {
 
     private void add_exception () {
         var calmodel = Model.CalendarModel.get_default ();
-        calmodel.remove_event(comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
+        calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
     }
 }
