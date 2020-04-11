@@ -178,7 +178,14 @@ public class Maya.Model.CalendarModel : Object {
     public void remove_event (E.Source source, ECal.Component event, ECal.ObjModType mod_type) {
         unowned ICal.Component comp = event.get_icalcomponent ();
         string uid = comp.get_uid ();
-        string? rid = event.has_recurrences () ? null : event.get_recurid_as_string ();
+        string? rid = null;
+
+        if (event.has_recurrences()
+                && mod_type != ECal.ObjModType.ALL) {
+            rid = event.get_recurid_as_string();
+            debug (@"Removing recurrent event '$rid'");
+        }
+
         debug (@"Removing event '$uid'");
         ECal.Client client;
         lock (source_client) {
