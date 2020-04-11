@@ -1965,6 +1965,31 @@ namespace ICal {
 				self.by_month[ii] = ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX;
 			}
 		}
+		[CCode (cname = "_vala_icalrecurrencetype_get_by_month_day")]
+		public short get_by_month_day (uint index) {
+			if (index > ICal.Size.BY_MONTHDAY) {
+				return ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX;
+			}
+
+			return by_month_day[index];
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_get_by_month_day_array")]
+		public GLib.Array<short> get_by_month_day_array () {
+			var array = new GLib.Array<short> (false, false, sizeof (short));
+			array.append_vals (by_month_day, ICal.Size.BY_MONTHDAY);
+			return array;
+		}
+		[CCode (cname = "_vala_icalrecurrencetype_set_by_month_day_array")]
+		public static void set_by_month_day_array (ref ICal.Recurrence self, GLib.Array<short> values) {
+			int ii = 0;
+			for (ii = 0; ii < values.length && ii < ICal.Size.BY_MONTHDAY; ii++) {
+				self.by_month_day[ii] = values.index (ii);
+			}
+
+			if (ii < ICal.Size.BY_MONTHDAY) {
+				self.by_month_day[ii] = ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX;
+			}
+		}
 	}
 	[CCode (cheader_filename = "libical/ical.h", cname = "icalreqstattype")]
 	public struct RequestStatusType {
