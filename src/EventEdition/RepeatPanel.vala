@@ -303,7 +303,7 @@
             every_radiobutton.active = true;
         }
 
-        if (rrule.get_by_month (0) != ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX) {
+        if (rrule.get_by_month_day (0) != ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX) {
             same_radiobutton.active = true;
         }
     }
