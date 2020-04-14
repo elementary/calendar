@@ -305,6 +305,12 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         if (rrule.get_by_month_day (0) != ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX) {
             same_radiobutton.active = true;
+        } else {
+            var by_day = rrule.get_by_day (0);
+            if (by_day != ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX) {
+                set_every_day (by_day);
+                every_radiobutton.active = true;
+            }
         }
     }
 

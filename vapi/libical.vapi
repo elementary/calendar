@@ -1923,6 +1923,14 @@ namespace ICal {
 		public short get_interval () {
 			return this.interval;
 		}
+		[CCode (cname = "_vala_icalrecurrencetype_get_by_dat")]
+		public short get_by_day (uint index) {
+			if (index > ICal.Size.BY_DAY) {
+				return ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX;
+			}
+
+			return by_day[index];
+		}
 		[CCode (cname = "_vala_icalrecurrencetype_get_by_day_array")]
 		public GLib.Array<short> get_by_day_array () {
 			var array = new GLib.Array<short> (false, false, sizeof (short));
