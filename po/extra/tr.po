@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-03 20:10+0000\n"
-"PO-Revision-Date: 2020-04-12 13:10+0000\n"
+"PO-Revision-Date: 2020-04-15 23:10+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/extra/"
 "tr/>\n"
@@ -46,11 +46,11 @@ msgstr "Küçük düzeltmeler:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "Etkinlik hatırlatıcılarını doğru biçimde kaydet"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Ellipsize event participant details if necessary"
-msgstr ""
+msgstr "Gerekiyorsa etkinlik katılımcılarının bilgilerini kısaltarak göster "
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 msgid "Fix unwanted rescheduling when editing event title"
@@ -64,15 +64,17 @@ msgstr "Çeviriler güncellendi"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
 msgid "Fix crash when editing an event with no location"
-msgstr ""
+msgstr "Konumu olmayan bir etkinliği düzenlerken oluşan çökme düzeltildi"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
+"Başlangıç veya bitiş tarihi olmayan etkinlikleri yüklerken oluşabilecek "
+"olası çökme düzeltildi"
 
 #: data/io.elementary.calendar.appdata.xml.in:39
 msgid "Make agenda pane fill the whole space"
-msgstr ""
+msgstr "Ajandanın tüm boşluğu doldurmasını sağla"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Set the suggested time for new events to the next whole hour"
