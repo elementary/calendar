@@ -17,7 +17,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
- public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
+public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private EventDialog parent_dialog;
     private Gtk.Switch repeat_switch;
     private Gtk.ComboBoxText repeat_combobox;
