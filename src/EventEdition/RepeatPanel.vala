@@ -297,7 +297,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
     private void load_monthly_recurrence (ICal.Recurrence rrule) {
         repeat_combobox.active = 2;
-        if (rrule.get_by_month (0) != ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX) {
+        if (rrule.get_by_month_day (0) != ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX) {
             same_radiobutton.active = true;
         } else {
             var by_day = rrule.get_by_day (0);
@@ -733,9 +733,9 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                     var day_of_month = (short)parent_dialog.date_time.get_day_of_month ();
                     array.append_val (day_of_month);
 #if E_CAL_2_0
-                    rrule.set_by_month_array (array);
+                    rrule.set_by_month_day_array (array);
 #else
-                    ICal.Recurrence.set_by_month_array (ref rrule, array);
+                    ICal.Recurrence.set_by_month_day_array (ref rrule, array);
 #endif
                 }
                 break;
