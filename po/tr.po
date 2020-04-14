@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-26 16:51+0000\n"
-"PO-Revision-Date: 2020-03-28 18:09+0000\n"
+"PO-Revision-Date: 2020-04-15 23:10+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
@@ -166,7 +166,7 @@ msgstr "Konuklar"
 
 #: src/EventEdition/EventDialog.vala:117
 msgid "Reminders"
-msgstr "Hatırlatmalar"
+msgstr "Hatırlatıcılar"
 
 #: src/EventEdition/EventDialog.vala:118 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
@@ -258,15 +258,15 @@ msgstr "Mustafa Kemal Atatürk veya Örnek Sokak"
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
-msgstr "Hatırlatmalar:"
+msgstr "Hatırlatıcılar:"
 
 #: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
-msgstr "Hatırlatma Yok"
+msgstr "Hatırlatıcı Yok"
 
 #: src/EventEdition/ReminderPanel.vala:55
 msgid "Add Reminder"
-msgstr "Hatırlatma Ekle"
+msgstr "Hatırlatıcı Ekle"
 
 #: src/EventEdition/ReminderPanel.vala:189
 msgid "At time of event"
