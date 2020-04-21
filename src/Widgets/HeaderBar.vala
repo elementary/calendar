@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -39,6 +39,13 @@ namespace Maya.View {
             button_add.tooltip_markup = Granite.markup_accel_tooltip (
                 application_instance.get_accels_for_action (button_add.action_name),
                 _("Create a new event")
+            );
+
+            var button_week_view = new Gtk.Button.from_icon_name ("view-reader", Gtk.IconSize.LARGE_TOOLBAR);
+            button_week_view.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_WEEK;
+            button_week_view.tooltip_markup = Granite.markup_accel_tooltip (
+                application_instance.get_accels_for_action (button_week_view.action_name),
+                _("Show week view")
             );
 
             var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR);
@@ -72,6 +79,7 @@ namespace Maya.View {
 
             pack_start (button_add);
             pack_start (spinner);
+            pack_start (button_week_view);
             set_custom_title (title_grid);
             pack_end (menu_button);
             pack_end (contractor);
