@@ -23,10 +23,94 @@ namespace Maya.Week {
      * TODO: Documentation
      * - https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/views/gcal-week-grid.c
      */
-    public class Grid : Gtk.Box {
+    public class Grid : Gtk.Container {
 
         const double dashed[] = { 5.0, 6.0 };
 
+        private int today_column {
+            get {
+                DateTime today, week_start;
+                int days_diff;
+
+                // TODO
+
+                return 3;
+            }
+        }
+
+
+/*
+  GtkContainerClass *container_class = GTK_CONTAINER_CLASS (klass);
+  GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+  GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+  container_class->add = gcal_week_grid_add;
+  container_class->remove = gcal_week_grid_remove;
+  container_class->forall = gcal_week_grid_forall;
+
+  object_class->finalize = gcal_week_grid_finalize;
+  object_class->get_property = gcal_week_grid_get_property;
+  object_class->set_property = gcal_week_grid_set_property;
+
+  widget_class->draw = gcal_week_grid_draw;
+  widget_class->size_allocate = gcal_week_grid_size_allocate;
+  widget_class->realize = gcal_week_grid_realize;
+  widget_class->unrealize = gcal_week_grid_unrealize;
+  widget_class->map = gcal_week_grid_map;
+  widget_class->unmap = gcal_week_grid_unmap;
+  widget_class->get_preferred_height = gcal_week_grid_get_preferred_height;
+  widget_class->button_press_event = gcal_week_grid_button_press;
+  widget_class->motion_notify_event = gcal_week_grid_motion_notify_event;
+  widget_class->button_release_event = gcal_week_grid_button_release;
+  widget_class->drag_motion = gcal_week_grid_drag_motion;
+  widget_class->drag_leave = gcal_week_grid_drag_leave;
+  widget_class->drag_drop = gcal_week_grid_drag_drop;
+
+  signals[EVENT_ACTIVATED] = g_signal_new ("event-activated",
+                                           GCAL_TYPE_WEEK_GRID,
+                                           G_SIGNAL_RUN_FIRST,
+                                           0,  NULL, NULL, NULL,
+                                           G_TYPE_NONE,
+                                           1,
+                                           GCAL_TYPE_EVENT_WIDGET);
+
+  gtk_widget_class_set_css_name (widget_class, "weekgrid");
+  */
+
+        public override void size_allocate (Gtk.Allocation allocation) {
+            DateTime week_start = null;
+            //RangeTree overlaps;
+            bool ltr;
+            double minutes_height;
+            double column_width;
+            int i, x, y;
+
+            /* Allocate the widget */
+            set_allocation (allocation);
+
+            ltr = get_direction () != Gtk.TextDirection.RTL;
+
+            if (get_realized ()) {
+                // TODO
+            }
+
+            /* Preliminary calculations */
+            minutes_height = allocation.height / Util.MINUTES_PER_DAY;
+            column_width = allocation.width / 7.0;
+
+            /* Temporary range tree to hold positioned events' indexes */
+            //overlaps = gcal_range_tree_new ();
+
+            //week_start =
+
+            /*
+             * Iterate through weekdays; we don't have to worry about events that
+             * jump between days because they're already handled by GcalWeekHeader.
+             */
+             for (i = 0; i < 7; i++) {
+                 // ...
+             }
+        }
 
         public override bool draw (Cairo.Context context) {
             var style_context = get_style_context ();
