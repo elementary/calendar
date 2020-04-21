@@ -21,23 +21,11 @@ namespace Maya.View {
 
 /**
  * TODO: Documentation
+ * - https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/views/gcal-week-grid.c
  */
 public class WeekGrid : Gtk.Box {
 
     construct {
-        visible = true;
-        orientation = Gtk.Orientation.VERTICAL;
 
-        var header = new WeekHeader ();
-        header.event_activated.connect (() => { /* TODO */ });
-
-        var scrolled_window = new Gtk.ScrolledWindow ();
-        scrolled_window.expand = true;
-
-        var grid = new WeekGrid ();
-        scrolled_window.add (grid);
-
-        add (header);
-        add (scrolled_window);
     }
 }

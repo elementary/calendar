@@ -21,10 +21,29 @@ namespace Maya.View {
 
 /**
  * TODO: Documentation
+ * - https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/views/gcal-week-view.ui
  */
-public class WeekView : Gtk.Container {
+public class WeekView : Gtk.Box {
 
     construct {
+        visible = true;
+        orientation = Gtk.Orientation.VERTICAL;
+        get_style_context ().add_class ("week-view");
 
+        var header = new WeekHeader ();
+
+        var hours_bar = new Gtk.DrawingArea ();
+        hours_bar.height_request (2568);
+
+        var week_grid = new WeekGrid ();
+
+        var scrolled_window = new Gtk.ScrolledWindow ();
+        scrolled_window.expand = true;
+
+        scrolled_window.add (hours_bar);
+        scrolled_window.add (week_grid);
+
+        add (header);
+        add (scrolled_window);
     }
 }
