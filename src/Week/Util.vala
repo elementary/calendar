@@ -22,4 +22,7 @@ namespace Maya.Week.Util {
     public const int MINUTES_PER_DAY = 1440;
     public const int MAX_MINUTES = (7 * MINUTES_PER_DAY);
 
+    public double aligned (double x) {
+        return round (x) + 0.5;
+    }
 }
