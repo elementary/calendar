@@ -17,13 +17,13 @@
  * Authored by: Marco Betschart<elementary@marco.betschart.name>
  */
 
-namespace Maya.View {
+namespace Maya.Week {
 
 /**
  * TODO: Documentation
  * - https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/views/gcal-week-grid.c
  */
-public class WeekGrid : Gtk.Box {
+public class Grid : Gtk.Box {
 
     construct {
 
