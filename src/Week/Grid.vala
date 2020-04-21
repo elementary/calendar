@@ -25,7 +25,7 @@ namespace Maya.Week {
      */
     public class Grid : Gtk.Box {
 
-        static const double dashed[] = { 5.0, 6.0 };
+        const double dashed[] = { 5.0, 6.0 };
 
 
         public override bool draw (Cairo.Context context) {
@@ -41,13 +41,14 @@ namespace Maya.Week {
 
             context.set_source_rgba (color.red, color.green, color.blue, color.alpha);
 
-            double column_width = width / 7.0;
-            double minutes_height = height / Util.MINUTES_PER_DAY;
             double x;
             int i, width, height, today_column;
 
-            wdith = get_allocated_width ();
+            width = get_allocated_width ();
             height = get_allocated_height ();
+
+            double column_width = width / 7.0;
+            double minutes_height = height / Util.MINUTES_PER_DAY;
 
             context.set_line_width (0.65);
 
@@ -65,13 +66,13 @@ namespace Maya.Week {
                     x = width - column_width * i;
                 }
 
-                context.move_to (Utils.aligned (x) * i);
+                context.move_to (Util.aligned (x), 0);
                 context.line_to (0, height);
             }
 
             /* Horizontal lines */
             for (i = 1; i < 24; i++) {
-                context.move_to (0, Utils.aligned ((height / 24.0) * i));
+                context.move_to (0, Util.aligned ((height / 24.0) * i));
                 context.line_to (width, 0);
             }
 
@@ -81,7 +82,7 @@ namespace Maya.Week {
             context.set_dash (Grid.dashed, 2);
 
             for (i = 0; i < 24; i++) {
-                context.move_to (0, Utils.aligned((height / 24.0) * i + (height / 48.0)));
+                context.move_to (0, Util.aligned((height / 24.0) * i + (height / 48.0)));
                 context.line_to (width, 0);
             }
 
