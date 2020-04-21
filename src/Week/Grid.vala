@@ -250,10 +250,43 @@ namespace Maya.Week {
             context.set_line_width (0.65);
 
             /* First, draw the selection */
-            // TODO: if (self->selection_start != -1 && self->selection_end != -1)
+            if (selection_start != -1 && selection_end != -1) {
+                int selection_height, column, start, end;
+
+                start = selection_start;
+                end = selection_end;
+
+                /* Swap cells if needed */
+                if (start > end) {
+                    start = start + end;
+                    end = start -end;
+                    start = start - end;
+                }
+
+                column = start * 30 / Util.MINUTES_PER_DAY;
+                selection_height = (end - start + 1) * 30 * (int)minutes_height;
+
+                x = column * column_width;
+
+                style_context.save ();
+                style_context.set_state (state | Gtk.StateFlags.SELECTED);
+
+                style_context.render_background (context, Util.aligned (x), Math.round ((start * 30 % Util.MINUTES_PER_DAY) * minutes_height), column_width, selection_height);
+
+                style_context.restore ();
+            }
 
             /* Drag and Drop highlight */
-            // TODO: if (self->dnd_cell != -1)
+            if (dnd_cell != -1) {
+                double cell_height;
+                int column, row;
+
+                cell_height = minutes_height * 30;
+                column = dnd_cell / (Util.MINUTES_PER_DAY / 30);
+                row = dnd_cell - column * 48;
+
+                style_context.render_background (context, column * column_width, row * cell_height, column_width, cell_height);
+            }
 
             /* Vertical lines */
             for (i = 0; i < 7; i++) {
@@ -293,6 +326,16 @@ namespace Maya.Week {
             // TODO: if (today_column != -1)
 
             return false;
+        }
+
+        public override void add (Gtk.Widget widget) {
+            if (widget.get_parent () == null) {
+                widget.set_parent (this);
+            }
+        }
+
+        public override void remove (Gtk.Widget widget) {
+
         }
     }
 }
