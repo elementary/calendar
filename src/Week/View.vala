@@ -23,7 +23,7 @@ namespace Maya.Week {
      * TODO: Documentation
      * - https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/views/gcal-week-view.ui
      */
-    public class View : Gtk.Box {
+    public class View : Gtk.Grid {
 
         construct {
             visible = true;
@@ -37,11 +37,16 @@ namespace Maya.Week {
 
             var week_grid = new Grid ();
 
+            var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            box.add (hours_bar);
+            box.add (week_grid);
+
+            var viewport = new Gtk.Viewport (null, null);
+            viewport.add (box);
+
             var scrolled_window = new Gtk.ScrolledWindow (null, null);
             scrolled_window.expand = true;
-
-            scrolled_window.add (hours_bar);
-            scrolled_window.add (week_grid);
+            scrolled_window.add (viewport);
 
             add (header);
             add (scrolled_window);

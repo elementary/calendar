@@ -25,7 +25,8 @@ namespace Maya.Week {
      */
     public class Grid : Gtk.Container {
 
-        const double dashed[] = { 5.0, 6.0 };
+        private Gdk.Window event_window;
+        private const double dashed[] = { 5.0, 6.0 };
 
         private int today_column {
             get {
@@ -77,6 +78,37 @@ namespace Maya.Week {
   gtk_widget_class_set_css_name (widget_class, "weekgrid");
   */
 
+        public override void realize () {
+            var parent_window = get_parent_window ();
+
+            set_realized (true);
+            set_window (parent_window);
+
+            Gtk.Allocation allocation;
+            get_allocation (out allocation);
+
+            var attributes = new Gdk.WindowAttr();
+            attributes.window_type = Gdk.WindowType.CHILD;
+            attributes.wclass = Gdk.WindowWindowClass.INPUT_ONLY;
+            attributes.x = allocation.x;
+            attributes.y = allocation.y;
+            attributes.width = allocation.width;
+            attributes.height = allocation.height;
+            attributes.event_mask = get_events ();
+            attributes.event_mask |= (Gdk.EventMask.BUTTON_PRESS_MASK |
+                            Gdk.EventMask.BUTTON_RELEASE_MASK |
+                            Gdk.EventMask.BUTTON1_MOTION_MASK |
+                            Gdk.EventMask.POINTER_MOTION_HINT_MASK |
+                            Gdk.EventMask.POINTER_MOTION_MASK |
+                            Gdk.EventMask.ENTER_NOTIFY_MASK |
+                            Gdk.EventMask.LEAVE_NOTIFY_MASK |
+                            Gdk.EventMask.SCROLL_MASK |
+                            Gdk.EventMask.SMOOTH_SCROLL_MASK);
+            var attributes_mask = (Gdk.WindowAttributesType.X | Gdk.WindowAttributesType.Y);
+            event_window = new Gdk.Window (parent_window, attributes, attributes_mask);
+            register_window (event_window);
+        }
+
         public override void size_allocate (Gtk.Allocation allocation) {
             DateTime week_start = null;
             //RangeTree overlaps;
@@ -91,7 +123,7 @@ namespace Maya.Week {
             ltr = get_direction () != Gtk.TextDirection.RTL;
 
             if (get_realized ()) {
-                // TODO
+                event_window.move_resize (allocation.x, allocation.y, allocation.width, allocation.height);
             }
 
             /* Preliminary calculations */
@@ -110,6 +142,39 @@ namespace Maya.Week {
              for (i = 0; i < 7; i++) {
                  // ...
              }
+        }
+
+        public override void get_preferred_height (out int minimum_height, out int natural_height) {
+            int hours_12_height, hours_24_height, cell_height, height;
+
+            var style_context = get_style_context ();
+            var state = style_context.get_state ();
+
+            style_context.save ();
+            style_context.add_class ("hours");
+
+            Pango.FontDescription font_desc;
+            style_context.@get (state, "font", out font_desc, null);
+            var padding = style_context.get_padding (state);
+
+            var pango_context = get_pango_context ();
+            var pango_layout = new Pango.Layout (pango_context);
+            pango_layout.set_font_description (font_desc);
+
+            pango_layout.set_text (_("00 AM"), -1);
+            pango_layout.get_pixel_size (null, out hours_12_height);
+
+            pango_layout.set_text (_("00:00"), -1);
+            pango_layout.get_pixel_size (null, out hours_24_height);
+
+            cell_height = int.max (hours_12_height, hours_24_height) + padding.top + padding.bottom;
+            height = cell_height * 48;
+
+            style_context.restore ();
+
+            /* Report the height */
+            minimum_height = height;
+            natural_height = height;
         }
 
         public override bool draw (Cairo.Context context) {
