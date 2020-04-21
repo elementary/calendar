@@ -19,13 +19,15 @@
 
 namespace Maya.Week {
 
-/**
- * TODO: Documentation
- * - https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/views/gcal-week-grid.c
- */
-public class Grid : Gtk.Box {
+    /**
+     * TODO: Documentation
+     * - https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/views/gcal-week-grid.c
+     */
+    public class Grid : Gtk.Box {
 
-    construct {
+        construct {
 
+        }
     }
+
 }
