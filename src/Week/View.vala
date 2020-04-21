@@ -25,10 +25,20 @@ namespace Maya.Week {
      */
     public class View : Gtk.Grid {
 
+        internal static Gtk.CssProvider css_provider;
+
+        static construct {
+            css_provider = new Gtk.CssProvider ();
+            css_provider.load_from_resource ("/io/elementary/calendar/WeekView.css");
+        }
+
         construct {
             visible = true;
             orientation = Gtk.Orientation.VERTICAL;
-            get_style_context ().add_class ("week-view");
+
+            var style_context = get_style_context ();
+            style_context.add_class ("week-view");
+            style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var header = new Header ();
 

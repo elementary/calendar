@@ -26,6 +26,20 @@ namespace Maya.Week {
     public class Grid : Gtk.Container {
 
         private Gdk.Window event_window;
+
+        private DateTime active_date;
+        private Maya.Util.DateRange date_range;
+
+        /*
+         * These fields are "cells" rather than minutes. Each cell
+         * correspond to 30 minutes.
+         */
+        private int selection_start;
+        private int selection_end;
+        private int dnd_cell;
+
+
+
         private const double dashed[] = { 5.0, 6.0 };
 
         private int today_column {
@@ -77,6 +91,18 @@ namespace Maya.Week {
 
   gtk_widget_class_set_css_name (widget_class, "weekgrid");
   */
+        construct {
+            set_has_window (false);
+
+            selection_start = -1;
+            selection_end = -1;
+            dnd_cell = -1;
+
+            /* Setup the week view as a drag n' drop destination */
+            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, null, Gdk.DragAction.MOVE);
+
+            get_style_context ().add_provider (Maya.Week.View.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
 
         public override void realize () {
             var parent_window = get_parent_window ();
@@ -87,7 +113,7 @@ namespace Maya.Week {
             Gtk.Allocation allocation;
             get_allocation (out allocation);
 
-            var attributes = new Gdk.WindowAttr();
+            var attributes = Gdk.WindowAttr();
             attributes.window_type = Gdk.WindowType.CHILD;
             attributes.wclass = Gdk.WindowWindowClass.INPUT_ONLY;
             attributes.x = allocation.x;
@@ -107,6 +133,26 @@ namespace Maya.Week {
             var attributes_mask = (Gdk.WindowAttributesType.X | Gdk.WindowAttributesType.Y);
             event_window = new Gdk.Window (parent_window, attributes, attributes_mask);
             register_window (event_window);
+        }
+
+        public override void unrealize () {
+            if (event_window != null) {
+                unregister_window (event_window);
+                event_window.destroy ();
+                event_window = null;
+            }
+        }
+
+        public override void map () {
+            if (event_window != null) {
+                event_window.show ();
+            }
+        }
+
+        public override void unmap () {
+            if (event_window != null) {
+                event_window.hide ();
+            }
         }
 
         public override void size_allocate (Gtk.Allocation allocation) {
@@ -188,6 +234,8 @@ namespace Maya.Week {
             var color = style_context.get_color (state);
             var padding = style_context.get_padding (state);
 
+            debug (@">>>>>>>>>>>>>>>>>>>> lines.color: $(color)");
+
             context.set_source_rgba (color.red, color.green, color.blue, color.alpha);
 
             double x;
@@ -236,7 +284,7 @@ namespace Maya.Week {
             }
 
             context.stroke ();
-            context.restore ();
+            style_context.restore ();
 
             base.draw (context);
 
