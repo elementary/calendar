@@ -107,6 +107,9 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
         calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
+        week_view.on_event_add.connect ((date) => on_tb_add_clicked (date));
+        week_view.selection_changed.connect ((date) => sidebar.set_selected_date (date));
+
         infobar.response.connect ((id) => infobar.hide ());
 
         sidebar.event_removed.connect (on_remove);

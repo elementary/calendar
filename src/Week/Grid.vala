@@ -49,44 +49,6 @@ namespace Maya.Week {
             }
         }
 
-
-/*
-  GtkContainerClass *container_class = GTK_CONTAINER_CLASS (klass);
-  GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
-  GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-  container_class->add = gcal_week_grid_add;
-  container_class->remove = gcal_week_grid_remove;
-  container_class->forall = gcal_week_grid_forall;
-
-  object_class->finalize = gcal_week_grid_finalize;
-  object_class->get_property = gcal_week_grid_get_property;
-  object_class->set_property = gcal_week_grid_set_property;
-
-  widget_class->draw = gcal_week_grid_draw;
-  widget_class->size_allocate = gcal_week_grid_size_allocate;
-  widget_class->realize = gcal_week_grid_realize;
-  widget_class->unrealize = gcal_week_grid_unrealize;
-  widget_class->map = gcal_week_grid_map;
-  widget_class->unmap = gcal_week_grid_unmap;
-  widget_class->get_preferred_height = gcal_week_grid_get_preferred_height;
-  widget_class->button_press_event = gcal_week_grid_button_press;
-  widget_class->motion_notify_event = gcal_week_grid_motion_notify_event;
-  widget_class->button_release_event = gcal_week_grid_button_release;
-  widget_class->drag_motion = gcal_week_grid_drag_motion;
-  widget_class->drag_leave = gcal_week_grid_drag_leave;
-  widget_class->drag_drop = gcal_week_grid_drag_drop;
-
-  signals[EVENT_ACTIVATED] = g_signal_new ("event-activated",
-                                           GCAL_TYPE_WEEK_GRID,
-                                           G_SIGNAL_RUN_FIRST,
-                                           0,  NULL, NULL, NULL,
-                                           G_TYPE_NONE,
-                                           1,
-                                           GCAL_TYPE_EVENT_WIDGET);
-
-  gtk_widget_class_set_css_name (widget_class, "weekgrid");
-  */
         construct {
             set_has_window (false);
 
@@ -331,6 +293,18 @@ namespace Maya.Week {
             if (widget.get_parent () == null) {
                 widget.set_parent (this);
             }
+        }
+
+        /**
+         * Puts the given event on the grid.
+         */
+        public void add_event (ECal.Component event) {
+            /*foreach (var grid_day in data.values) {
+                if (Util.calcomp_is_on_day (event, grid_day.date)) {
+                    var button = new EventButton (event);
+                    grid_day.add_event_button (button);
+                }
+            } */
         }
 
         public override void remove (Gtk.Widget widget) {

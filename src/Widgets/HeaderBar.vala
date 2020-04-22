@@ -41,7 +41,7 @@ namespace Maya.View {
                 _("Create a new event")
             );
 
-            var button_week_view = new Gtk.Button.from_icon_name ("view-reader", Gtk.IconSize.LARGE_TOOLBAR);
+            var button_week_view = new Gtk.Button.from_icon_name ("office-calendar", Gtk.IconSize.LARGE_TOOLBAR);
             button_week_view.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_WEEK;
             button_week_view.tooltip_markup = Granite.markup_accel_tooltip (
                 application_instance.get_accels_for_action (button_week_view.action_name),
@@ -74,12 +74,12 @@ namespace Maya.View {
             title_grid.add (button_today);
             title_grid.add (month_switcher);
             title_grid.add (year_switcher);
+            title_grid.add (button_week_view);
 
             var spinner = new Widgets.DynamicSpinner ();
 
             pack_start (button_add);
             pack_start (spinner);
-            pack_start (button_week_view);
             set_custom_title (title_grid);
             pack_end (menu_button);
             pack_end (contractor);
