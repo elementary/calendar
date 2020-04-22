@@ -38,10 +38,6 @@ namespace Maya.Week {
         private int selection_end;
         private int dnd_cell;
 
-
-
-        private const double dashed[] = { 5.0, 6.0 };
-
         private int today_column {
             get {
                 DateTime today, week_start;
@@ -102,7 +98,6 @@ namespace Maya.Week {
             Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, null, Gdk.DragAction.MOVE);
 
             var style_context = get_style_context ();
-            style_context.add_class ("grid");
             style_context.add_provider (View.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
@@ -236,7 +231,6 @@ namespace Maya.Week {
 
             style_context.save ();
             style_context.add_class ("lines");
-            style_context.add_provider (View.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var color = style_context.get_color (state);
             var padding = style_context.get_padding (state);
@@ -314,7 +308,7 @@ namespace Maya.Week {
             context.stroke ();
 
             /* Dashed lines between the vertical lines */
-            context.set_dash (Grid.dashed, 2);
+            context.set_dash (Util.dashed, 2);
 
             for (i = 0; i < 24; i++) {
                 context.move_to (0, Util.aligned((height / 24.0) * i + (height / 48.0)));
