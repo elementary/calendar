@@ -17,6 +17,7 @@ core_files = files(
     'Model/CalendarModel.vala',
     'Settings/SavedState.vala',
     'DateRange.vala',
+    'DisplayMode.vala',
     'Utils.vala',
     'GesturesUtils.vala'
 )

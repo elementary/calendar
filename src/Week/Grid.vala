@@ -299,6 +299,9 @@ namespace Maya.Week {
          * Puts the given event on the grid.
          */
         public void add_event (ECal.Component event) {
+            critical ("add_event...");
+            
+            
             /*foreach (var grid_day in data.values) {
                 if (Util.calcomp_is_on_day (event, grid_day.date)) {
                     var button = new EventButton (event);

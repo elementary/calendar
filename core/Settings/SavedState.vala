@@ -16,6 +16,7 @@
 //
 
 namespace Maya.Settings {
+
     public class SavedState : Granite.Services.Settings {
         private static Settings.SavedState? saved_state = null;
 
@@ -25,21 +26,34 @@ namespace Maya.Settings {
             return saved_state;
         }
 
-        public string month_page { get; set; }
+        public string display_mode { get; set; }
+        public string display_page { get; set; }
         public string selected_day { get; set; }
 
         private SavedState () {
             base ("io.elementary.calendar.savedstate");
         }
 
+        public Maya.DisplayMode get_mode () {
+            switch (display_mode) {
+                case "week":
+                    return Maya.DisplayMode.WEEK;
+                default:
+                    return Maya.DisplayMode.MONTH;
+            }
+        }
+
         public DateTime get_page () {
-            if (month_page == null)
+            if (display_page == null)
                 return new DateTime.now_local ();
-            if (month_page == "")
+            if (display_page == "")
                 return new DateTime.now_local ();
-            var numbers = month_page.split ("-", 2);
+            var numbers = display_page.split ("-", 3);
             var dt = new DateTime.local (int.parse (numbers[0]), 1, 1, 0, 0, 0);
             dt = dt.add_months (int.parse (numbers[1]) - 1);
+            if (numbers.length > 2) {
+                dt = dt.add_days (int.parse (numbers[2]) - 1);
+            }
             return dt;
         }
 

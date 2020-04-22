@@ -17,14 +17,10 @@
  * Authored by: Marco Betschart<elementary@marco.betschart.name>
  */
 
-namespace Maya.Week.Util {
+namespace Maya {
 
-    internal const int MINUTES_PER_DAY = 1440;
-    internal const int MAX_MINUTES = (7 * MINUTES_PER_DAY);
-    internal const double dashed[] = { 5.0, 6.0 };
-    internal const int COLUMN_PADDING = 6;
-
-    internal double aligned (double x) {
-        return Math.round (x) + 0.5;
+    public enum DisplayMode {
+        MONTH,
+        WEEK
     }
 }

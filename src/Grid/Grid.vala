@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -68,8 +68,8 @@ public class Grid : Gtk.Grid {
         selection_changed (selected_date);
         Settings.SavedState.get_default ().selected_day = selected_date.format ("%Y-%j");
         var calmodel = Maya.Model.CalendarModel.get_default ();
-        var date_month = selected_date.get_month () - calmodel.month_start.get_month ();
-        var date_year = selected_date.get_year () - calmodel.month_start.get_year ();
+        var date_month = selected_date.get_month () - calmodel.display_start.get_month ();
+        var date_year = selected_date.get_year () - calmodel.display_start.get_year ();
         if (date_month != 0 || date_year != 0) {
             calmodel.change_month (date_month);
             calmodel.change_year (date_year);

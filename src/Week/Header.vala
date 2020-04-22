@@ -43,7 +43,7 @@ namespace Maya.Week {
 
         construct {
             active_date = new DateTime.now_local ();
-            first_weekday = Util.get_first_weekday ();
+            first_weekday = Maya.Util.get_first_weekday ();
 
             var style_context = get_style_context ();
             style_context.add_class ("week-header");
@@ -166,7 +166,7 @@ namespace Maya.Week {
             bold_font.set_weight (Pango.Weight.MEDIUM);
             pango_layout.set_font_description (bold_font);
 
-            week_start = Util.get_start_of_week (active_date);
+            week_start = Maya.Util.get_start_of_week (active_date);
             week_end = week_start.add_days (6);
 
             current_cell = active_date.get_day_of_week () - 1;
@@ -186,7 +186,7 @@ namespace Maya.Week {
             for (i = 0; i < 7; i++) {
                 var day = week_start.add_days (i);
                 var n_day = day.get_day_of_month ();
-                var days_in_month = Util.get_days_in_month (week_start);
+                var days_in_month = Maya.Util.get_days_in_month (week_start);
 
                 string weekday_abv, weekday;
                 int font_width, day_num_font_height, day_num_font_baseline;

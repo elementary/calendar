@@ -182,6 +182,103 @@ namespace Maya.Util {
         return new DateTime.local (date.get_year (), date.get_month (), 1, 0, 0, 0);
     }
 
+    /**
+     * TODO: This implementation needs some more work
+     */
+    public int get_days_in_month (DateTime datetime) {
+        DateMonth month;
+
+        switch (datetime.get_month ()) {
+            case 1:
+                month = DateMonth.JANUARY;
+                break;
+            case 2:
+                month = DateMonth.FEBRUARY;
+                break;
+            case 3:
+                month = DateMonth.MARCH;
+                break;
+            case 4:
+                month = DateMonth.APRIL;
+                break;
+            case 5:
+                month = DateMonth.MAY;
+                break;
+            case 6:
+                month = DateMonth.JUNE;
+                break;
+            case 7:
+                month = DateMonth.JULY;
+                break;
+            case 8:
+                month = DateMonth.AUGUST;
+                break;
+            case 9:
+                month = DateMonth.SEPTEMBER;
+                break;
+            case 10:
+                month = DateMonth.OCTOBER;
+                break;
+            case 11:
+                month = DateMonth.NOVEMBER;
+                break;
+            case 12:
+                month = DateMonth.DECEMBER;
+                break;
+            default:
+                month = DateMonth.BAD_MONTH;
+                break;
+        }
+
+        // TODO: Make DateYear dynamic: datetime.get_year ()
+        // how do I convert int into ushort ...?!
+        DateYear year = 2020;
+
+        return month.get_days_in_month (year);
+    }
+
+    /**
+     * The implementation might not work on every platform. See GNOME Calendar's
+     * implementation for a more comprehensive approach if needed:
+     * https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/utils/gcal-utils.c#L301
+     */
+    public int get_first_weekday () {
+        return Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
+    }
+
+    /**
+     * Retrieves the first day of the week @date is in, at 00:00
+     * of the local timezone.
+     *
+     * This date is inclusive.
+     */
+    public DateTime get_start_of_week (DateTime date) {
+        var first_weekday = get_first_weekday ();
+        var weekday = date.get_day_of_week () % 7;
+        var n_days_after_week_start = (weekday - first_weekday) % 7;
+
+        var start_of_week = date.add_days (-n_days_after_week_start);
+
+        return new DateTime.local (
+            start_of_week.get_year (),
+            start_of_week.get_month (),
+            start_of_week.get_day_of_month (),
+            0, 0, 0);
+    }
+
+
+    /**
+     * Retrieves the last day of the week @date is in, at 23:59:59
+     * of the local timezone.
+     *
+     * Because this date is exclusive, it actually is start of the
+     * next week.
+     */
+    public DateTime get_end_of_week (DateTime date) {
+        var week_start = get_start_of_week (date);
+        return week_start.add_weeks (1);
+    }
+
     public DateTime strip_time (DateTime datetime) {
         return datetime.add_full (0, 0, 0, -datetime.get_hour (), -datetime.get_minute (), -datetime.get_second ());
     }
