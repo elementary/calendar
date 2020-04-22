@@ -101,7 +101,9 @@ namespace Maya.Week {
             /* Setup the week view as a drag n' drop destination */
             Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, null, Gdk.DragAction.MOVE);
 
-            get_style_context ().add_provider (Maya.Week.View.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            var style_context = get_style_context ();
+            style_context.add_class ("grid");
+            style_context.add_provider (View.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
         public override void realize () {
@@ -141,18 +143,21 @@ namespace Maya.Week {
                 event_window.destroy ();
                 event_window = null;
             }
+            base.unrealize ();
         }
 
         public override void map () {
             if (event_window != null) {
                 event_window.show ();
             }
+            base.map ();
         }
 
         public override void unmap () {
             if (event_window != null) {
                 event_window.hide ();
             }
+            base.unmap ();
         }
 
         public override void size_allocate (Gtk.Allocation allocation) {
@@ -223,6 +228,7 @@ namespace Maya.Week {
             natural_height = height;
         }
 
+
         public override bool draw (Cairo.Context context) {
             var style_context = get_style_context ();
             var state = get_state_flags ();
@@ -230,11 +236,10 @@ namespace Maya.Week {
 
             style_context.save ();
             style_context.add_class ("lines");
+            style_context.add_provider (View.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var color = style_context.get_color (state);
             var padding = style_context.get_padding (state);
-
-            debug (@">>>>>>>>>>>>>>>>>>>> lines.color: $(color)");
 
             context.set_source_rgba (color.red, color.green, color.blue, color.alpha);
 
@@ -297,13 +302,13 @@ namespace Maya.Week {
                 }
 
                 context.move_to (Util.aligned (x), 0);
-                context.line_to (0, height);
+                context.rel_line_to (0, height);
             }
 
             /* Horizontal lines */
             for (i = 1; i < 24; i++) {
                 context.move_to (0, Util.aligned ((height / 24.0) * i));
-                context.line_to (width, 0);
+                context.rel_line_to (width, 0);
             }
 
             context.stroke ();
@@ -313,7 +318,7 @@ namespace Maya.Week {
 
             for (i = 0; i < 24; i++) {
                 context.move_to (0, Util.aligned((height / 24.0) * i + (height / 48.0)));
-                context.line_to (width, 0);
+                context.rel_line_to (width, 0);
             }
 
             context.stroke ();
@@ -335,7 +340,13 @@ namespace Maya.Week {
         }
 
         public override void remove (Gtk.Widget widget) {
-
+            if (widget.get_parent () != null) {
+                widget.unparent ();
+            }
         }
+
+        /*public override void forall (Gtk.Callback callback) {
+            // TODO
+        }*/
     }
 }
