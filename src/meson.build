@@ -28,6 +28,7 @@ calendar_files = files(
     'SourceDialog/SourceItem.vala',
     'SourceDialog/SourceSelector.vala',
     'Week/Grid.vala',
+    'Week/Sidebar.vala',
     'Week/Util.vala',
     'Week/View.vala',
     'Widgets/AgendaEventRow.vala',
