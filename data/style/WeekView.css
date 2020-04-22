@@ -28,7 +28,7 @@
 }
 
 .week-header .today {
-    color: @theme_selected_bg_color;
+    color: @colorAccent;
 }
 
 .week-view .lines {
