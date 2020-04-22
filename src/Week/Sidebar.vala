@@ -25,8 +25,19 @@ namespace Maya.Week {
      */
     public class Sidebar : Gtk.DrawingArea {
 
+        public Gtk.SizeGroup sidebar_sizegroup { get; construct; }
+
+        public Sidebar (Gtk.SizeGroup sidebar_sizegroup) {
+            Object (
+                sidebar_sizegroup: sidebar_sizegroup
+            );
+        }
+
         construct {
             height_request = 2568;
+
+            sidebar_sizegroup.add_widget (this);
+
             get_style_context ().add_provider (View.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 

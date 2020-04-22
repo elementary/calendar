@@ -26,7 +26,9 @@ namespace Maya.Week {
     public class View : Gtk.Box {
 
         internal static Gtk.CssProvider css_provider;
+
         private Sidebar hours_bar;
+        private Gtk.SizeGroup sidebar_sizegroup;
 
         static construct {
             css_provider = new Gtk.CssProvider ();
@@ -41,7 +43,9 @@ namespace Maya.Week {
             style_context.add_class ("week-view");
             style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            hours_bar = new Sidebar ();
+
+            sidebar_sizegroup = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+            hours_bar = new Sidebar (sidebar_sizegroup);
 
             var week_grid = new Grid ();
             week_grid.expand = true;
@@ -57,6 +61,9 @@ namespace Maya.Week {
             scrolled_window.expand = true;
             scrolled_window.add (viewport);
 
+            var header = new Header (sidebar_sizegroup);
+
+            add (header);
             add (scrolled_window);
 
             update_hours_sidebar_size ();
@@ -95,7 +102,7 @@ namespace Maya.Week {
             hours_bar.set_size_request (sidebar_width, 48 * cell_height);
 
             /* Sync with the week header sidebar */
-            //sidebar_sizegroup = gcal_week_header_get_sidebar_size_group (GCAL_WEEK_HEADER (self->header));
+            //gcal_week_header_get_sidebar_size_group (GCAL_WEEK_HEADER (self->header));
             //gtk_size_group_add_widget (sidebar_sizegroup, self->hours_bar);
         }
     }
