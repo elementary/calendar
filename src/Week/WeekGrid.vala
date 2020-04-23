@@ -17,13 +17,13 @@
  * Authored by: Marco Betschart<elementary@marco.betschart.name>
  */
 
-namespace Maya.Week {
+namespace Maya.View {
 
     /**
      * TODO: Documentation
      * - https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/views/gcal-week-grid.c
      */
-    public class Grid : Gtk.Container {
+    public class WeekGrid : Gtk.Container {
 
         private Gdk.Window event_window;
 
@@ -60,7 +60,7 @@ namespace Maya.Week {
             Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, null, Gdk.DragAction.MOVE);
 
             var style_context = get_style_context ();
-            style_context.add_provider (View.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            style_context.add_provider (WeekView.style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
         public override void realize () {
@@ -135,7 +135,7 @@ namespace Maya.Week {
             }
 
             /* Preliminary calculations */
-            minutes_height = allocation.height / Util.MINUTES_PER_DAY;
+            minutes_height = allocation.height / WeekUtil.MINUTES_PER_DAY;
             column_width = allocation.width / 7.0;
 
             /* Temporary range tree to hold positioned events' indexes */
@@ -206,7 +206,7 @@ namespace Maya.Week {
             height = get_allocated_height ();
 
             double column_width = width / 7.0;
-            double minutes_height = height / Util.MINUTES_PER_DAY;
+            double minutes_height = height / WeekUtil.MINUTES_PER_DAY;
 
             context.set_line_width (0.65);
 
@@ -224,7 +224,7 @@ namespace Maya.Week {
                     start = start - end;
                 }
 
-                column = start * 30 / Util.MINUTES_PER_DAY;
+                column = start * 30 / WeekUtil.MINUTES_PER_DAY;
                 selection_height = (end - start + 1) * 30 * (int)minutes_height;
 
                 x = column * column_width;
@@ -232,7 +232,7 @@ namespace Maya.Week {
                 style_context.save ();
                 style_context.set_state (state | Gtk.StateFlags.SELECTED);
 
-                style_context.render_background (context, Util.aligned (x), Math.round ((start * 30 % Util.MINUTES_PER_DAY) * minutes_height), column_width, selection_height);
+                style_context.render_background (context, WeekUtil.aligned (x), Math.round ((start * 30 % WeekUtil.MINUTES_PER_DAY) * minutes_height), column_width, selection_height);
 
                 style_context.restore ();
             }
@@ -243,7 +243,7 @@ namespace Maya.Week {
                 int column, row;
 
                 cell_height = minutes_height * 30;
-                column = dnd_cell / (Util.MINUTES_PER_DAY / 30);
+                column = dnd_cell / (WeekUtil.MINUTES_PER_DAY / 30);
                 row = dnd_cell - column * 48;
 
                 style_context.render_background (context, column * column_width, row * cell_height, column_width, cell_height);
@@ -257,23 +257,23 @@ namespace Maya.Week {
                     x = width - column_width * i;
                 }
 
-                context.move_to (Util.aligned (x), 0);
+                context.move_to (WeekUtil.aligned (x), 0);
                 context.rel_line_to (0, height);
             }
 
             /* Horizontal lines */
             for (i = 1; i < 24; i++) {
-                context.move_to (0, Util.aligned ((height / 24.0) * i));
+                context.move_to (0, WeekUtil.aligned ((height / 24.0) * i));
                 context.rel_line_to (width, 0);
             }
 
             context.stroke ();
 
             /* Dashed lines between the vertical lines */
-            context.set_dash (Util.dashed, 2);
+            context.set_dash (WeekUtil.dashed, 2);
 
             for (i = 0; i < 24; i++) {
-                context.move_to (0, Util.aligned((height / 24.0) * i + (height / 48.0)));
+                context.move_to (0, WeekUtil.aligned((height / 24.0) * i + (height / 48.0)));
                 context.rel_line_to (width, 0);
             }
 

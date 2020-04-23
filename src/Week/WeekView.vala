@@ -17,47 +17,38 @@
  * Authored by: Marco Betschart<elementary@marco.betschart.name>
  */
 
-namespace Maya.Week {
+namespace Maya.View {
 
     /**
      * TODO: Documentation
      * - https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/views/gcal-week-view.ui
      */
-    public class View : Gtk.Box {
+    public class WeekView : Gtk.Box {
 
-        /*
-         * Event emitted when the day is double clicked or the ENTER key is pressed.
-         */
-        public signal void on_event_add (DateTime date);
-        public signal void selection_changed (DateTime new_date);
+        internal static Gtk.CssProvider style_provider;
 
-        public DateTime? selected_date { get; private set; }
-
-        internal static Gtk.CssProvider css_provider;
-
-        private Sidebar sidebar;
+        private WeekSidebar sidebar;
         private Gtk.SizeGroup sidebar_sizegroup;
 
-        private Grid grid;
-        private Header header;
+        private WeekGrid grid;
+        private WeekHeader header;
 
         static construct {
-            css_provider = new Gtk.CssProvider ();
-            css_provider.load_from_resource ("/io/elementary/calendar/WeekView.css");
+            style_provider = new Gtk.CssProvider ();
+            style_provider.load_from_resource ("/io/elementary/calendar/WeekView.css");
         }
 
         construct {
-            selected_date = Settings.SavedState.get_default ().get_selected ();
             orientation = Gtk.Orientation.VERTICAL;
 
             var style_context = get_style_context ();
             style_context.add_class ("week-view");
-            style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             sidebar_sizegroup = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
-            sidebar = new Sidebar (sidebar_sizegroup);
+            sidebar = new WeekSidebar (sidebar_sizegroup);
 
-            grid = new Grid ();
+            grid = new WeekGrid ();
             grid.expand = true;
 
             var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
@@ -71,21 +62,12 @@ namespace Maya.Week {
             scrolled_window.expand = true;
             scrolled_window.add (viewport);
 
-            header = new Header (sidebar_sizegroup);
+            header = new WeekHeader (sidebar_sizegroup);
 
             add (header);
             add (scrolled_window);
 
             update_hours_sidebar_size ();
-
-            //sync_with_model ();
-
-            var model = Model.CalendarModel.get_default ();
-            model.parameters_changed.connect (on_model_parameters_changed);
-
-            model.events_added.connect (on_events_added);
-            model.events_updated.connect (on_events_updated);
-            model.events_removed.connect (on_events_removed);
         }
 
         private void update_hours_sidebar_size () {

@@ -21,7 +21,7 @@
 
 public class Maya.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Stack calview_stack;
-    private Week.View week_view;
+    private View.WeekView week_view;
     private Gtk.Paned hpaned;
 
     public View.CalendarView calview;
@@ -83,7 +83,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         calview = new View.CalendarView ();
         calview.vexpand = true;
 
-        week_view = new Week.View ();
+        week_view = new View.WeekView ();
 
         hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         hpaned.pack1 (calview, true, false);
@@ -106,9 +106,6 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
         calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
-
-        week_view.on_event_add.connect ((date) => on_tb_add_clicked (date));
-        week_view.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
         infobar.response.connect ((id) => infobar.hide ());
 

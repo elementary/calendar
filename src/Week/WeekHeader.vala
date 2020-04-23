@@ -17,13 +17,13 @@
  * Authored by: Marco Betschart<elementary@marco.betschart.name>
  */
 
-namespace Maya.Week {
+namespace Maya.View {
 
     /**
      * TODO: Documentation
      * - https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/views/gcal-week-header.ui
      */
-    public class Header : Gtk.Box {
+    public class WeekHeader : Gtk.Box {
 
         public Gtk.SizeGroup sidebar_sizegroup { get; construct; }
 
@@ -33,7 +33,7 @@ namespace Maya.Week {
         private Gtk.ScrolledWindow scrolled_window;
         private Gtk.Box expand_button_box;
 
-        public Header (Gtk.SizeGroup sidebar_sizegroup) {
+        public WeekHeader (Gtk.SizeGroup sidebar_sizegroup) {
             Object (
                 orientation: Gtk.Orientation.HORIZONTAL,
                 spacing: 0,
@@ -47,7 +47,7 @@ namespace Maya.Week {
 
             var style_context = get_style_context ();
             style_context.add_class ("week-header");
-            style_context.add_provider (View.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            style_context.add_provider (WeekView.style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             expand_button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             sidebar_sizegroup.add_widget (expand_button_box);
@@ -215,9 +215,9 @@ namespace Maya.Week {
                 day_num_font_baseline = pango_layout.get_baseline () / Pango.SCALE;
 
                 if (ltr) {
-                    x = padding.left + cell_width * i + Util.COLUMN_PADDING + start_x;
+                    x = padding.left + cell_width * i + WeekUtil.COLUMN_PADDING + start_x;
                 } else {
-                    x = alloc.width - (cell_width * i + font_width + Util.COLUMN_PADDING + start_x);
+                    x = alloc.width - (cell_width * i + font_width + WeekUtil.COLUMN_PADDING + start_x);
                 }
 
                 style_context.render_layout (context, x, day_abv_font_height + padding.bottom + start_y, pango_layout);
@@ -241,9 +241,9 @@ namespace Maya.Week {
                 pango_layout.get_pixel_size (out font_width, null);
 
                 if (ltr) {
-                    x = padding.left + cell_width * i + Util.COLUMN_PADDING + start_x;
+                    x = padding.left + cell_width * i + WeekUtil.COLUMN_PADDING + start_x;
                 } else {
-                    x = alloc.width - (cell_width * i + font_width + Util.COLUMN_PADDING + start_x);
+                    x = alloc.width - (cell_width * i + font_width + WeekUtil.COLUMN_PADDING + start_x);
                 }
 
                 style_context.render_layout (context, x, start_y, pango_layout);
@@ -256,7 +256,7 @@ namespace Maya.Week {
                 color = style_context.get_color (state);
                 context.set_source_rgba (color.red, color.green, color.blue, color.alpha);
                 context.set_line_width (0.25);
-                context.move_to (Util.aligned (ltr ? (cell_width * i + start_x) : (alloc.width - (cell_width * i + start_x))), day_abv_font_height + padding.bottom + start_y);
+                context.move_to (WeekUtil.aligned (ltr ? (cell_width * i + start_x) : (alloc.width - (cell_width * i + start_x))), day_abv_font_height + padding.bottom + start_y);
                 context.rel_line_to (0.0, get_allocated_height () - day_abv_font_height - start_y + padding.bottom);
                 context.stroke ();
 

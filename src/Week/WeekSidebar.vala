@@ -17,17 +17,17 @@
  * Authored by: Marco Betschart<elementary@marco.betschart.name>
  */
 
-namespace Maya.Week {
+namespace Maya.View {
 
     /**
      * TODO: Documentation
      * - https://gitlab.gnome.org/GNOME/gnome-calendar/-/blob/master/src/views/gcal-week-view.c
      */
-    public class Sidebar : Gtk.DrawingArea {
+    public class WeekSidebar : Gtk.DrawingArea {
 
         public Gtk.SizeGroup sidebar_sizegroup { get; construct; }
 
-        public Sidebar (Gtk.SizeGroup sidebar_sizegroup) {
+        public WeekSidebar (Gtk.SizeGroup sidebar_sizegroup) {
             Object (
                 sidebar_sizegroup: sidebar_sizegroup
             );
@@ -35,10 +35,8 @@ namespace Maya.Week {
 
         construct {
             height_request = 2568;
-
             sidebar_sizegroup.add_widget (this);
-
-            get_style_context ().add_provider (View.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            get_style_context ().add_provider (WeekView.style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
         public override bool draw (Cairo.Context context) {
@@ -115,7 +113,7 @@ namespace Maya.Week {
                 }
 
                 context.stroke ();
-                context.set_dash (Util.dashed, 2);
+                context.set_dash (WeekUtil.dashed, 2);
 
                 /* Draws the horizontal dashed lines */
                 for (i = 0; i < 24; i++) {

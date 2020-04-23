@@ -17,7 +17,7 @@
  * Authored by: Marco Betschart<elementary@marco.betschart.name>
  */
 
-namespace Maya.Week.Util {
+namespace Maya.View.WeekUtil {
 
     internal const int MINUTES_PER_DAY = 1440;
     internal const int MAX_MINUTES = (7 * MINUTES_PER_DAY);
