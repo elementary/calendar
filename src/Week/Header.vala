@@ -268,5 +268,39 @@ namespace Maya.Week {
 
             return false;
         }
+
+        /**
+         * Puts the given event on the header.
+         */
+        public void add_event (E.Source source, ECal.Component event) {
+            critical ("header.add_event...");
+
+            /*foreach (var grid_day in data.values) {
+                if (Util.calcomp_is_on_day (event, grid_day.date)) {
+                    var button = new EventButton (event);
+                    grid_day.add_event_button (button);
+                }
+            } */
+        }
+
+        /**
+         * Removes the given event from the header.
+         */
+        public void remove_event (E.Source source, ECal.Component event) {
+            critical ("header.remove_event...");
+            /*foreach (var grid_day in data.values) {
+                grid_day.remove_event (event);
+            }*/
+        }
+
+        /**
+         * Removes all events from the header.
+         */
+        public void remove_all_events () {
+            critical ("header.remove_all_events...");
+            /*foreach (var grid_day in data.values) {
+                grid_day.clear_events ();
+            }*/
+        }
     }
 }

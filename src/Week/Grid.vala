@@ -298,16 +298,35 @@ namespace Maya.Week {
         /**
          * Puts the given event on the grid.
          */
-        public void add_event (ECal.Component event) {
-            critical ("add_event...");
-            
-            
+        public void add_event (E.Source source, ECal.Component event) {
+            critical ("grid.add_event...");
+
             /*foreach (var grid_day in data.values) {
                 if (Util.calcomp_is_on_day (event, grid_day.date)) {
                     var button = new EventButton (event);
                     grid_day.add_event_button (button);
                 }
             } */
+        }
+
+        /**
+         * Removes the given event from the grid.
+         */
+        public void remove_event (E.Source source, ECal.Component event) {
+            critical ("grid.remove_event...");
+            /*foreach (var grid_day in data.values) {
+                grid_day.remove_event (event);
+            }*/
+        }
+
+        /**
+         * Removes all events from the grid.
+         */
+        public void remove_all_events () {
+            critical ("grid.remove_all_events...");
+            /*foreach (var grid_day in data.values) {
+                grid_day.clear_events ();
+            }*/
         }
 
         public override void remove (Gtk.Widget widget) {

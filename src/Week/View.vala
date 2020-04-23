@@ -37,7 +37,9 @@ namespace Maya.Week {
 
         private Sidebar sidebar;
         private Gtk.SizeGroup sidebar_sizegroup;
+
         private Grid grid;
+        private Header header;
 
         static construct {
             css_provider = new Gtk.CssProvider ();
@@ -69,14 +71,14 @@ namespace Maya.Week {
             scrolled_window.expand = true;
             scrolled_window.add (viewport);
 
-            var header = new Header (sidebar_sizegroup);
+            header = new Header (sidebar_sizegroup);
 
             add (header);
             add (scrolled_window);
 
             update_hours_sidebar_size ();
 
-            sync_with_model ();
+            //sync_with_model ();
 
             var model = Model.CalendarModel.get_default ();
             model.parameters_changed.connect (on_model_parameters_changed);
@@ -165,61 +167,33 @@ namespace Maya.Week {
 
         //--- Helper Methods ---//
 
-        /* Sets the calendar widgets to the date range of the model */
-        void sync_with_model () {
-            /*
-            var model = Model.CalendarModel.get_default ();
-            if (grid.grid_range != null && (model.data_range.equals (grid.grid_range) || grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0))
-                return; // nothing to do
+        /* Render new event in the view */
+        private void add_event (E.Source source, ECal.Component event) {
+            unowned ICal.Component comp = event.get_icalcomponent ();
 
-            DateTime previous_first = null;
-            if (grid.grid_range != null)
-                previous_first = grid.grid_range.first_dt;
-
-            big_grid = create_big_grid ();
-            stack.add (big_grid);
-
-            header.update_columns (model.week_starts_on);
-            weeks.update (model.data_range.first_dt, model.num_weeks);
-            grid.set_range (model.data_range, model.month_start);
-
-            // keep focus date on the same day of the month
-            if (selected_date != null) {
-                var bumpdate = model.month_start.add_days (selected_date.get_day_of_month () - 1);
-                grid.focus_date (bumpdate);
+            if (Maya.Util.is_multiday_event (comp) || Maya.Util.is_all_day_event (comp)) {
+                header.add_event (source, event);
+            } else {
+                grid.add_event (source, event);
             }
-
-            if (previous_first != null) {
-                if (previous_first.compare (grid.grid_range.first_dt) == -1) {
-                    stack.transition_type = Gtk.StackTransitionType.SLIDE_UP;
-                } else {
-                    stack.transition_type = Gtk.StackTransitionType.SLIDE_DOWN;
-                }
-            }
-
-            stack.set_visible_child (big_grid);  */
         }
 
-        /* Render new event on the grid */
-        void add_event (E.Source source, ECal.Component event) {
-            critical ("add_event");
-            //event.set_data ("source", source);
-            grid.add_event (event);
+        /* Update the event in the view */
+        private void update_event (E.Source source, ECal.Component event) {
+            remove_event (source, event);
+            add_event (source, event);
         }
 
-        /* Update the event on the grid */
-        void update_event (E.Source source, ECal.Component event) {
-           // grid.update_event (event);
+        /* Remove event from the view */
+        private void remove_event (E.Source source, ECal.Component event) {
+            header.remove_event (source, event);
+            grid.remove_event (source, event);
         }
 
-        /* Remove event from the grid */
-        void remove_event (E.Source source, ECal.Component event) {
-            //grid.remove_event (event);
-        }
-
-        /* Remove all events from the grid  */
-        void remove_all_events () {
-            //grid.remove_all_events ();
+        /* Remove all events from the view  */
+        private void remove_all_events () {
+            header.remove_all_events ();
+            grid.remove_all_events ();
         }
     }
 }

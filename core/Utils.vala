@@ -162,6 +162,12 @@ namespace Maya.Util {
         return false;
     }
 
+    public bool is_all_day_event (ICal.Component comp) {
+        DateTime start, end;
+        get_local_datetimes_from_icalcomponent (comp, out start, out end);
+        return is_all_day (start, end);
+    }
+
     /**
      * Say if an event lasts all day.
      */
