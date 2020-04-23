@@ -15,6 +15,27 @@
 *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/*
+.week-head {
+    background-color: green;
+}
+
+.week-body {
+    background-color: yellow;
+}
+
+.week-sidebar {
+    background-color: purple;
+}
+
+.weekday-head {
+    background-color: blue;
+}
+
+.weekday-body {
+    background-color: red;
+}*/
+
 .week-header .week-names {
     font-size: 10pt;
     font-weight: bold;
