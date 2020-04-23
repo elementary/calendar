@@ -55,12 +55,9 @@ namespace Maya.View {
             box.add (sidebar);
             box.add (grid);
 
-            var viewport = new Gtk.Viewport (null, null);
-            viewport.add (box);
-
             var scrolled_window = new Gtk.ScrolledWindow (null, null);
             scrolled_window.expand = true;
-            scrolled_window.add (viewport);
+            scrolled_window.add (box);
 
             header = new WeekHeader (sidebar_sizegroup);
 
@@ -101,81 +98,35 @@ namespace Maya.View {
 
             /* Update the size requests */
             sidebar.set_size_request (sidebar_width, 48 * cell_height);
-
-            /* Sync with the week header sidebar */
-            //gcal_week_header_get_sidebar_size_group (GCAL_WEEK_HEADER (self->header));
-            //gtk_size_group_add_widget (sidebar_sizegroup, self->hours_bar);
         }
 
-        void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
-            Idle.add ( () => {
-                foreach (var event in events)
-                    add_event (source, event);
+        // /* Render new event in the view */
+        // private void add_event (E.Source source, ECal.Component event) {
+        //     unowned ICal.Component comp = event.get_icalcomponent ();
 
-                return false;
-            });
-        }
+        //     if (Maya.Util.is_multiday_event (comp) || Maya.Util.is_all_day_event (comp)) {
+        //         header.add_event (source, event);
+        //     } else {
+        //         grid.add_event (source, event);
+        //     }
+        // }
 
-        void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
-            Idle.add ( () => {
-                foreach (var event in events)
-                    update_event (source, event);
+        // /* Update the event in the view */
+        // private void update_event (E.Source source, ECal.Component event) {
+        //     remove_event (source, event);
+        //     add_event (source, event);
+        // }
 
-                return false;
-            });
-        }
+        // /* Remove event from the view */
+        // private void remove_event (E.Source source, ECal.Component event) {
+        //     header.remove_event (source, event);
+        //     grid.remove_event (source, event);
+        // }
 
-        void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
-            Idle.add ( () => {
-                foreach (var event in events)
-                    remove_event (source, event);
-
-                return false;
-            });
-        }
-
-        /* Indicates the month has changed */
-        void on_model_parameters_changed () {
-            /*var model = Model.CalendarModel.get_default ();
-            if (grid.grid_range != null && model.data_range.equals (grid.grid_range))
-                return; // nothing to do
-
-            Idle.add ( () => {
-                remove_all_events ();
-                sync_with_model ();
-                return false;
-            });*/
-        }
-
-        //--- Helper Methods ---//
-
-        /* Render new event in the view */
-        private void add_event (E.Source source, ECal.Component event) {
-            unowned ICal.Component comp = event.get_icalcomponent ();
-
-            if (Maya.Util.is_multiday_event (comp) || Maya.Util.is_all_day_event (comp)) {
-                header.add_event (source, event);
-            } else {
-                grid.add_event (source, event);
-            }
-        }
-
-        /* Update the event in the view */
-        private void update_event (E.Source source, ECal.Component event) {
-            remove_event (source, event);
-            add_event (source, event);
-        }
-
-        /* Remove event from the view */
-        private void remove_event (E.Source source, ECal.Component event) {
-            header.remove_event (source, event);
-            grid.remove_event (source, event);
-        }
-
-        /* Remove all events from the view  */
-        private void remove_all_events () {
-            header.remove_all_events ();
-            grid.remove_all_events ();
-        }
+        // /* Remove all events from the view  */
+        // private void remove_all_events () {
+        //     header.remove_all_events ();
+        //     grid.remove_all_events ();
+        // }
     }
 }

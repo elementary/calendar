@@ -27,31 +27,27 @@ namespace Maya.View {
 
         public Gtk.SizeGroup sidebar_sizegroup { get; construct; }
 
-        private DateTime active_date;
-        private int first_weekday;
-
         private Gtk.ScrolledWindow scrolled_window;
-        private Gtk.Box expand_button_box;
+        private Gtk.Box top_edge_box;
+
+        private DateTime active_date;
 
         public WeekHeader (Gtk.SizeGroup sidebar_sizegroup) {
             Object (
-                orientation: Gtk.Orientation.HORIZONTAL,
-                spacing: 0,
                 sidebar_sizegroup: sidebar_sizegroup
             );
         }
 
         construct {
             active_date = new DateTime.now_local ();
-            first_weekday = Maya.Util.get_first_weekday ();
 
             var style_context = get_style_context ();
             style_context.add_class ("week-header");
             style_context.add_provider (WeekView.style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            expand_button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            sidebar_sizegroup.add_widget (expand_button_box);
-            add (expand_button_box);
+            top_edge_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            sidebar_sizegroup.add_widget (top_edge_box);
+            add (top_edge_box);
 
             var grid = new Gtk.Grid ();
             grid.column_homogeneous = true;
@@ -80,8 +76,6 @@ namespace Maya.View {
 
             add (event_box);
         }
-
-        // TODO: int get_today_column
 
         private int get_weekday_names_height () {
             Pango.FontDescription font_desc;
@@ -146,7 +140,7 @@ namespace Maya.View {
             var state = style_context.get_state ();
             var ltr = get_direction () != Gtk.TextDirection.RTL;
 
-            start_x = ltr ? expand_button_box.get_allocated_width () : 0;
+            start_x = ltr ? top_edge_box.get_allocated_width () : 0;
             start_y = 0;
 
             var padding = style_context.get_padding (state);
@@ -155,7 +149,7 @@ namespace Maya.View {
             get_allocation (out alloc);
 
             if (!ltr) {
-                alloc.width -= expand_button_box.get_allocated_width ();
+                alloc.width -= top_edge_box.get_allocated_width ();
             }
 
             color = style_context.get_color (state);
@@ -170,7 +164,7 @@ namespace Maya.View {
             week_end = week_start.add_days (6);
 
             current_cell = active_date.get_day_of_week () - 1;
-            current_cell = (7 + current_cell - first_weekday) % 7;
+            current_cell = (7 + current_cell - Util.get_first_weekday ()) % 7;
             today_column = 2; // TODO: get_today_column ();
 
             cell_width = (alloc.width - start_x) / 7.0;
@@ -269,38 +263,38 @@ namespace Maya.View {
             return false;
         }
 
-        /**
-         * Puts the given event on the header.
-         */
-        public void add_event (E.Source source, ECal.Component event) {
-            critical ("header.add_event...");
+        // /**
+        //  * Puts the given event on the header.
+        //  */
+        // public void add_event (E.Source source, ECal.Component event) {
+        //     critical ("header.add_event...");
 
-            /*foreach (var grid_day in data.values) {
-                if (Util.calcomp_is_on_day (event, grid_day.date)) {
-                    var button = new EventButton (event);
-                    grid_day.add_event_button (button);
-                }
-            } */
-        }
+        //     /*foreach (var grid_day in data.values) {
+        //         if (Util.calcomp_is_on_day (event, grid_day.date)) {
+        //             var button = new EventButton (event);
+        //             grid_day.add_event_button (button);
+        //         }
+        //     } */
+        // }
 
-        /**
-         * Removes the given event from the header.
-         */
-        public void remove_event (E.Source source, ECal.Component event) {
-            critical ("header.remove_event...");
-            /*foreach (var grid_day in data.values) {
-                grid_day.remove_event (event);
-            }*/
-        }
+        // /**
+        //  * Removes the given event from the header.
+        //  */
+        // public void remove_event (E.Source source, ECal.Component event) {
+        //     critical ("header.remove_event...");
+        //     /*foreach (var grid_day in data.values) {
+        //         grid_day.remove_event (event);
+        //     }*/
+        // }
 
-        /**
-         * Removes all events from the header.
-         */
-        public void remove_all_events () {
-            critical ("header.remove_all_events...");
-            /*foreach (var grid_day in data.values) {
-                grid_day.clear_events ();
-            }*/
-        }
+        // /**
+        //  * Removes all events from the header.
+        //  */
+        // public void remove_all_events () {
+        //     critical ("header.remove_all_events...");
+        //     /*foreach (var grid_day in data.values) {
+        //         grid_day.clear_events ();
+        //     }*/
+        // }
     }
 }
