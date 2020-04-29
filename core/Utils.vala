@@ -75,42 +75,38 @@ namespace Maya.Util {
         return result;
     }
 
-
     /**
      * Converts the given TimeType to a DateTime.
      */
     private TimeZone timezone_from_ical (ICal.Time date) {
-
-        int is_daylight;
-        var tzid = date.get_tzid ();
-        debug ("TZID: %s", tzid);
-
-        unowned ICal.Timezone timezone = date.get_timezone ();
-        int interval = date.get_timezone ().get_utc_offset (null, out is_daylight);
-
         if (date.get_timezone () != null) {
-            debug ("Date timezone not null");
+            debug ("ICal.Time.get_timezone not null");
         }
 
+        // Get timezone from ICal
+        var tzid = date.get_tzid ();
+        unowned ICal.Timezone timezone = date.get_timezone ();
         if (tzid != null) {
-            debug ("TZID not null: using Timezone.get_builtin*");
+            debug ("TZID not null: using ICal.Timezone.get_builtin...");
+            debug ("TZID: %s", tzid);
             if (tzid.has_prefix ("/freeassociation.sourceforge.net/")) {
                 debug ("libical prefix found: using get_builtin_timezone_from_tzid");
                 // TZID has prefix "/freeassociation.sourceforge.net/",
                 // indicating a libical TZID.
                 timezone = ICal.Timezone.get_builtin_timezone_from_tzid (tzid);
-                interval = timezone.get_utc_offset (date, out is_daylight);
             } else {
                 debug ("libical prefix not found: using get_builtin_timezone");
                 // TZID does not have libical prefix, indicating an Olson
                 // standard city name.
                 timezone = ICal.Timezone.get_builtin_timezone (tzid);
-                interval = timezone.get_utc_offset (null, out is_daylight);
             }
         } else {
-            debug ("No timezone info: default to UTC!");
+            debug ("No timezone info: default to UTC");
         }
 
+        // Get UTC offset and format for GLib.TimeZone constructor
+        int is_daylight;
+        int interval = timezone.get_utc_offset (date, out is_daylight);
         debug ("Timezone interval (seconds): %i", interval);
         bool is_positive = interval >= 0;
         interval = interval.abs ();
