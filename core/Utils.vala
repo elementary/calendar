@@ -111,7 +111,7 @@ namespace Maya.Util {
             debug ("No timezone info: default to UTC!");
         }
 
-        debug (@"Timezone interval (seconds): %i", interval);
+        debug ("Timezone interval (seconds): %i", interval);
         bool is_positive = interval >= 0;
         interval = interval.abs ();
         /************************************************************
@@ -121,7 +121,7 @@ namespace Maya.Util {
         var hour_string = "%s%02d:%02d".printf (is_positive ? "+" : "-", hours, minutes);
         /************************************************************
          * GNOME: INCLUDES SECONDS                                  */
-        debug (@"Timezone interval (hours): %s", hour_string);
+        debug ("Timezone interval (hours): %s", hour_string);
 
         return new TimeZone (hour_string);
     }
