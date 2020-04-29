@@ -84,8 +84,8 @@ namespace Maya.Util {
         }
 
         // Get timezone from ICal
+        unowned ICal.Timezone timezone;
         var tzid = date.get_tzid ();
-        unowned ICal.Timezone timezone = date.get_timezone ();
         if (tzid != null) {
             debug ("TZID not null: using ICal.Timezone.get_builtin...");
             debug ("TZID: %s", tzid);
@@ -100,8 +100,12 @@ namespace Maya.Util {
                 // standard city name.
                 timezone = ICal.Timezone.get_builtin_timezone (tzid);
             }
+        } else if (date.get_timezone () != null) {
+            debug ("ICal.Time.get_timezone is not null: using it for timezone");
+            timezone = date.get_timezone ();
         } else {
-            debug ("No timezone info: default to UTC");
+            debug ("No timezone info: defaulting timezone to UTC");
+            return new TimeZone.utc ();
         }
 
         // Get UTC offset and format for GLib.TimeZone constructor
