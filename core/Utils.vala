@@ -75,17 +75,56 @@ namespace Maya.Util {
         return result;
     }
 
+
+/**************************************************************************
+ * TIMEZONE_FROM_ICAL
+ **************************************************************************/
     /**
      * Converts the given TimeType to a DateTime.
      */
     private TimeZone timezone_from_ical (ICal.Time date) {
+
         int is_daylight;
-        var interval = date.get_timezone ().get_utc_offset (null, out is_daylight);
+        var tzid = date.get_tzid ();
+        debug ("TZID: %s", tzid);
+
+        unowned ICal.Timezone timezone = date.get_timezone ();
+        int interval = date.get_timezone ().get_utc_offset (null, out is_daylight);
+
+        if (date.get_timezone () != null) {
+            debug ("Date timezone not null");
+        }
+
+        if (tzid != null) {
+            debug ("TZID not null: using Timezone.get_builtin*");
+            if (tzid.has_prefix ("/freeassociation.sourceforge.net/")) {
+                debug ("libical prefix found: using get_builtin_timezone_from_tzid");
+                // TZID has prefix "/freeassociation.sourceforge.net/",
+                // indicating a libical TZID.
+                timezone = ICal.Timezone.get_builtin_timezone_from_tzid (tzid);
+                interval = timezone.get_utc_offset (date, out is_daylight);
+            } else {
+                debug ("libical prefix not found: using get_builtin_timezone");
+                // TZID does not have libical prefix, indicating an Olson
+                // standard city name.
+                timezone = ICal.Timezone.get_builtin_timezone (tzid);
+                interval = timezone.get_utc_offset (null, out is_daylight);
+            }
+        } else {
+            debug ("No timezone anywhere!");
+        }
+
+        debug (@"Timezone interval (seconds): %i", interval);
         bool is_positive = interval >= 0;
         interval = interval.abs ();
+        /************************************************************
+         * GNOME: CHECKS FOR MICROSECONDS BY DIVIDING               */
         var hours = (interval / 3600);
         var minutes = (interval % 3600) / 60;
         var hour_string = "%s%02d:%02d".printf (is_positive ? "+" : "-", hours, minutes);
+        /************************************************************
+         * GNOME: INCLUDES SECONDS                                  */
+        debug (@"Timezone interval (hours): %s", hour_string);
 
         return new TimeZone (hour_string);
     }
@@ -110,14 +149,14 @@ namespace Maya.Util {
     public void get_local_datetimes_from_icalcomponent (ICal.Component comp, out DateTime start_date, out DateTime end_date) {
         ICal.Time dt_start = comp.get_dtstart ();
         ICal.Time dt_end = comp.get_dtend ();
-        start_date = Util.ical_to_date_time (dt_start);
 
+        start_date = Util.ical_to_date_time (dt_start).to_local ();
         if (!dt_end.is_null_time ()) {
-            end_date = Util.ical_to_date_time (dt_end);
+            end_date = Util.ical_to_date_time (dt_end).to_local ();
         } else if (dt_start.is_date ()) {
             end_date = start_date;
         } else if (!comp.get_duration ().is_null_duration ()) {
-            end_date = Util.ical_to_date_time (dt_start.add (comp.get_duration ()));
+            end_date = Util.ical_to_date_time (dt_start.add (comp.get_duration ())).to_local ();
         } else {
             end_date = start_date.add_days (1);
         }
