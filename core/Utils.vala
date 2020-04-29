@@ -76,9 +76,6 @@ namespace Maya.Util {
     }
 
 
-/**************************************************************************
- * TIMEZONE_FROM_ICAL
- **************************************************************************/
     /**
      * Converts the given TimeType to a DateTime.
      */
@@ -111,7 +108,7 @@ namespace Maya.Util {
                 interval = timezone.get_utc_offset (null, out is_daylight);
             }
         } else {
-            debug ("No timezone anywhere!");
+            debug ("No timezone info: default to UTC!");
         }
 
         debug (@"Timezone interval (seconds): %i", interval);
