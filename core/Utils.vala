@@ -83,7 +83,13 @@ namespace Maya.Util {
             debug ("ICal.Time.get_timezone not null");
         }
 
-        // Get timezone from ICal
+        // Special case: return default UTC time zone for all-day events
+        if (date.is_date ()) {
+            debug ("Given date is 'DATE' type, not 'DATE_TIME': Defaulting timezone to UTC");
+            return new TimeZone.utc ();
+        }
+
+        // Otherwise, get timezone from ICal
         unowned ICal.Timezone timezone;
         var tzid = date.get_tzid ();
         if (tzid != null) {
