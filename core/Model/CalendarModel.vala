@@ -180,8 +180,7 @@ public class Maya.Model.CalendarModel : Object {
         string uid = comp.get_uid ();
         string? rid = null;
 
-        if (event.has_recurrences ()
-                && mod_type != ECal.ObjModType.ALL) {
+        if (event.has_recurrences () && mod_type != ECal.ObjModType.ALL) {
             rid = event.get_recurid_as_string ();
             debug (@"Removing recurrent event '$rid'");
         }
