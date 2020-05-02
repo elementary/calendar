@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-26 16:51+0000\n"
-"PO-Revision-Date: 2020-04-15 23:10+0000\n"
+"PO-Revision-Date: 2020-05-03 16:00+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
@@ -687,37 +687,40 @@ msgstr "Yeni Takvim Ekle…"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr "randevu;toplantı"
+msgstr "randevu;toplantı;appointment;meeting"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr "doğumgünü;doğum günü;yıldönümü;yıl dönümü;parti"
+msgstr ""
+"doğumgünü;doğum günü;yıldönümü;yıl dönümü;parti;birthday;anniversary;party"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr "ara;arama yap;çağrı;çağrı yap;telefon;çaldır"
+msgstr "ara;arama yap;çağrı;çağrı yap;telefon;çaldır;call;phone;telephone;ring"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr "bar;kokteyller;içecekler;içkiler;indirimli saat"
+msgstr ""
+"bar;kokteyller;içecekler;içkiler;indirimli saat;bar;cocktails;drinks;happy "
+"hour"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr "araba;sürmek;sürüş;yolculuk;"
+msgstr "araba;sürmek;sürüş;yolculuk; car;drive;driving;road trip;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr "uçuş;havalimanı;havaalanı;"
+msgstr "uçuş;havalimanı;havaalanı;flight;airport;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -725,24 +728,26 @@ msgstr "uçuş;havalimanı;havaalanı;"
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
 "kahvaltı;brunch;öğle yemeği;akşam yemeği;et lokantası;hamburger;yemek;barbekü"
+";breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr "mahkeme;jüri;vergi;avukat;sözleşme"
+msgstr ""
+"mahkeme;jüri;vergi;avukat;sözleşme;court;jury;tax;attorney;lawyer;contract"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie"
-msgstr "film;sinema"
+msgstr "film;sinema;movie"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr "düğün"
+msgstr "düğün;wedding"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:310
