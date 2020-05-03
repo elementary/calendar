@@ -60,11 +60,16 @@ public class Maya.Model.CalendarModel : Object {
     private E.CredentialsPrompter credentials_prompter;
 
     private static Maya.Model.CalendarModel? calendar_model = null;
+    private static GLib.Settings state_settings;
 
     public static CalendarModel get_default () {
         if (calendar_model == null)
             calendar_model = new CalendarModel ();
         return calendar_model;
+    }
+
+    static construct {
+        state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
     }
 
     private CalendarModel () {
@@ -73,7 +78,7 @@ public class Maya.Model.CalendarModel : Object {
             week_starts_on = (GLib.DateWeekday) (week_start - 1);
         }
 
-        this.month_start = Util.get_start_of_month (Settings.SavedState.get_default ().get_page ());
+        this.month_start = Util.get_start_of_month (get_page ());
         compute_ranges ();
 
         source_client = new HashTable<string, ECal.Client> (str_hash, str_equal);
@@ -289,8 +294,21 @@ public class Maya.Model.CalendarModel : Object {
 
     //--- Helper Methods ---//
 
+    private DateTime get_page () {
+        var month_page = state_settings.get_string ("month-page");
+        if (month_page == null || month_page == "") {
+            return new DateTime.now_local ();
+        }
+
+        var numbers = month_page.split ("-", 2);
+        var dt = new DateTime.local (int.parse (numbers[0]), 1, 1, 0, 0, 0);
+        dt = dt.add_months (int.parse (numbers[1]) - 1);
+        return dt;
+    }
+
     private void compute_ranges () {
-        Settings.SavedState.get_default ().month_page = month_start.format ("%Y-%m");
+        state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
+
         var month_end = month_start.add_full (0, 1, -1);
         month_range = new Util.DateRange (month_start, month_end);
 
