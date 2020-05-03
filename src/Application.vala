@@ -33,7 +33,7 @@ namespace Maya {
         static construct {
             saved_state = new GLib.Settings ("io.elementary.calendar.savedstate");
 
-            if (GLib.SettingsSchemaSource.get_default ().lookup ("io.elementary.desktop.wingpanel.datetime", false) != null) {
+            if (GLib.SettingsSchemaSource.get_default ().lookup ("io.elementary.desktop.wingpanel.datetime", true) != null) {
                 wingpanel_settings = new GLib.Settings ("io.elementary.desktop.wingpanel.datetime");
             }
         }

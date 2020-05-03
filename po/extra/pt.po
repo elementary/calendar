@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-03 20:10+0000\n"
-"PO-Revision-Date: 2020-03-28 18:09+0000\n"
+"PO-Revision-Date: 2020-04-09 06:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "extra/pt/>\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Minor Updates:"
-msgstr ""
+msgstr "Pequenas actualizações:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Correctly save event reminders"
