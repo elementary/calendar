@@ -1,0 +1,63 @@
+/*
+*  Copyright 2020 elementary, Inc. (https://elementary.io)
+*
+*  This program is free software: you can redistribute it and/or modify
+*  it under the terms of the GNU General Public License as published by
+*  the Free Software Foundation, either version 3 of the License, or
+*  (at your option) any later version.
+*
+*  This program is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*  GNU General Public License for more details.
+*
+*  You should have received a copy of the GNU General Public License
+*  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
+.week-head {
+    background-color: green;
+}
+
+.week-body {
+    background-color: yellow;
+}
+
+.week-sidebar {
+    background-color: purple;
+}
+
+.weekday-head {
+    background-color: blue;
+}
+
+.weekday-body {
+    background-color: red;
+}*/
+
+.week-header .week-names {
+    font-size: 10pt;
+    font-weight: bold;
+    color: alpha(@theme_fg_color, 0.55);
+}
+
+.week-header .week-dates {
+    font-size: 16pt;
+    font-weight: bold;
+    color: alpha(@theme_fg_color, 0.70);
+}
+
+.week-header .today {
+    color: @colorAccent;
+}
+
+.week-view .lines {
+    color: alpha(@theme_fg_color, 0.30);
+}
+
+.week-view .hours {
+    font-size: 10pt;
+    color: alpha(@theme_fg_color, 0.8);
+    padding: 8px 12px;
+}

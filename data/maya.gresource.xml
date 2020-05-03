@@ -19,5 +19,6 @@
     <file alias="Grid.css" compressed="true">style/Grid.css</file>
     <file alias="Header.css" compressed="true">style/Header.css</file>
     <file alias="WeekLabels.css" compressed="true">style/WeekLabels.css</file>
+    <file alias="WeekView.css" compressed="true">style/WeekView.css</file>
   </gresource>
 </gresources>

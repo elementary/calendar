@@ -15,21 +15,21 @@
 public class Maya.Model.CalendarModel : Object {
 
     /* The data_range is the range of dates for which this model is storing
-     * data. The month_range is a subset of this range corresponding to the
-     * calendar month that is being focused on. In summary:
+     * data. The display_range is a subset of this range corresponding to the
+     * calendar view that is being focused on (either month or week). In summary:
      *
-     * data_range.first_dt <= month_range.first_dt < month_range.last_dt <= data_range.last_dt
+     * data_range.first_dt <= display_range.first_dt < display_range.last_dt <= data_range.last_dt
      *
      * There is no way to set the ranges publicly. They can only be modified by
-     * changing one of the following properties: month_start, num_weeks, and
+     * changing one of the following properties: display_start, num_weeks, and
      * week_starts_on.
     */
     public Util.DateRange data_range { get; private set; }
-    public Util.DateRange month_range { get; private set; }
+    public Util.DateRange display_range { get; private set; }
     public E.SourceRegistry registry { get; private set; }
 
-    /* The first day of the month */
-    public DateTime month_start { get; set; }
+    /* The first day to be displayed */
+    public DateTime display_start { get; set; }
 
     /* The number of weeks to show in this model */
     public int num_weeks { get; private set; default = 6; }
@@ -49,7 +49,7 @@ public class Maya.Model.CalendarModel : Object {
     public signal void connected (E.Source source);
     public signal void error_received (string error);
 
-    /* The month_start, num_weeks, or week_starts_on have been changed */
+    /* The display_start, num_weeks, or week_starts_on have been changed */
     public signal void parameters_changed ();
 
     HashTable<string, ECal.Client> source_client;
@@ -68,12 +68,22 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     private CalendarModel () {
-        int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
+        int week_start = Util.get_first_weekday ();
         if (week_start >= 1 && week_start <= 7) {
             week_starts_on = (GLib.DateWeekday) (week_start - 1);
         }
 
-        this.month_start = Util.get_start_of_month (Settings.SavedState.get_default ().get_page ());
+        var display_page = Settings.SavedState.get_default ().get_page ();
+        switch (Settings.SavedState.get_default ().get_mode ()) {
+            case Maya.DisplayMode.WEEK:
+                this.display_start = Util.get_start_of_week (display_page);
+                this.num_weeks = 1;
+                break;
+
+            case Maya.DisplayMode.MONTH:
+                this.display_start = Util.get_start_of_month (display_page);
+                break;
+        }
         compute_ranges ();
 
         source_client = new HashTable<string, ECal.Client> (str_hash, str_equal);
@@ -81,7 +91,7 @@ public class Maya.Model.CalendarModel : Object {
         source_view = new HashTable<string, ECal.ClientView> (str_hash, str_equal);
         calendar_trash = new GLib.Queue<E.Source> ();
 
-        notify["month-start"].connect (on_parameter_changed);
+        notify["display-start"].connect (on_parameter_changed);
         open.begin ();
     }
 
@@ -227,12 +237,16 @@ public class Maya.Model.CalendarModel : Object {
         }
     }
 
+    public void change_week (int relative) {
+        display_start = display_start.add_weeks (relative);
+    }
+
     public void change_month (int relative) {
-        month_start = month_start.add_months (relative);
+        display_start = display_start.add_months (relative);
     }
 
     public void change_year (int relative) {
-        month_start = month_start.add_years (relative);
+        display_start = display_start.add_years (relative);
     }
 
     public void load_all_sources () {
@@ -290,11 +304,17 @@ public class Maya.Model.CalendarModel : Object {
     //--- Helper Methods ---//
 
     private void compute_ranges () {
-        Settings.SavedState.get_default ().month_page = month_start.format ("%Y-%m");
-        var month_end = month_start.add_full (0, 1, -1);
-        month_range = new Util.DateRange (month_start, month_end);
+        Settings.SavedState.get_default ().display_page = display_start.format ("%Y-%m-%d");
 
-        int dow = month_start.get_day_of_week ();
+        DateTime display_end;
+        if (num_weeks > 1) {
+            display_end = display_start.add_full (0, 1, -1);
+        } else {
+            display_end = display_start.add_full (0, 0, 6);
+        }
+        display_range = new Util.DateRange (display_start, display_end);
+
+        int dow = display_start.get_day_of_week ();
         int wso = (int) week_starts_on;
         int offset = 0;
 
@@ -304,9 +324,9 @@ public class Maya.Model.CalendarModel : Object {
             offset = 7 + dow - wso;
         }
 
-        var data_range_first = month_start.add_days (-offset);
+        var data_range_first = display_start.add_days (-offset);
 
-        dow = month_end.get_day_of_week ();
+        dow = display_end.get_day_of_week ();
         wso = (int) (week_starts_on + 6);
 
         // WSO must be between 1 and 7
@@ -320,12 +340,12 @@ public class Maya.Model.CalendarModel : Object {
         else if (wso > dow)
             offset = wso - dow;
 
-        var data_range_last = month_end.add_days (offset);
+        var data_range_last = display_end.add_days (offset);
 
         data_range = new Util.DateRange (data_range_first, data_range_last);
         num_weeks = data_range.to_list ().size / 7;
 
-        debug (@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
+        debug (@"Date ranges: ($data_range_first <= $display_start < $display_end <= $data_range_last)");
     }
 
     private void load_source (E.Source source) {

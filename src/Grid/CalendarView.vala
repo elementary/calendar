@@ -133,8 +133,8 @@ public class Maya.View.CalendarView : Gtk.Grid {
         var today = Util.strip_time (new DateTime.now_local ());
         var calmodel = Model.CalendarModel.get_default ();
         var start = Util.get_start_of_month (today);
-        if (!start.equal (calmodel.month_start))
-            calmodel.month_start = start;
+        if (!start.equal (calmodel.display_start))
+            calmodel.display_start = start;
         sync_with_model ();
         grid.focus_date (today);
     }
@@ -212,11 +212,11 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
         header.update_columns (model.week_starts_on);
         weeks.update (model.data_range.first_dt, model.num_weeks);
-        grid.set_range (model.data_range, model.month_start);
+        grid.set_range (model.data_range, model.display_start);
 
         // keep focus date on the same day of the month
         if (selected_date != null) {
-            var bumpdate = model.month_start.add_days (selected_date.get_day_of_month () - 1);
+            var bumpdate = model.display_start.add_days (selected_date.get_day_of_month () - 1);
             grid.focus_date (bumpdate);
         }
 

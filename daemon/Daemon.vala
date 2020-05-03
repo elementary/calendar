@@ -47,7 +47,7 @@ namespace Maya {
             model.events_added.connect (on_events_added);
             model.events_updated.connect (on_events_updated);
             model.events_removed.connect (on_events_removed);
-            model.month_start = Maya.Util.get_start_of_month (new DateTime.now_local ());
+            model.display_start = Maya.Util.get_start_of_month (new DateTime.now_local ());
         }
 
         private void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {

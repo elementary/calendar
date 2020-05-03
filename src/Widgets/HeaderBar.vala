@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -41,6 +41,13 @@ namespace Maya.View {
                 _("Create a new event")
             );
 
+            var button_week_view = new Gtk.Button.from_icon_name ("office-calendar", Gtk.IconSize.LARGE_TOOLBAR);
+            button_week_view.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_WEEK;
+            button_week_view.tooltip_markup = Granite.markup_accel_tooltip (
+                application_instance.get_accels_for_action (button_week_view.action_name),
+                _("Show week view")
+            );
+
             var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR);
             button_today.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_TODAY;
             button_today.tooltip_markup = Granite.markup_accel_tooltip (
@@ -58,7 +65,7 @@ namespace Maya.View {
             month_switcher = new Widgets.DateSwitcher (10);
             year_switcher = new Widgets.DateSwitcher (-1);
             var calmodel = Model.CalendarModel.get_default ();
-            set_switcher_date (calmodel.month_start);
+            set_switcher_date (calmodel.display_start);
 
             var contractor = new Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
 
@@ -67,6 +74,7 @@ namespace Maya.View {
             title_grid.add (button_today);
             title_grid.add (month_switcher);
             title_grid.add (year_switcher);
+            title_grid.add (button_week_view);
 
             var spinner = new Widgets.DynamicSpinner ();
 
@@ -81,7 +89,7 @@ namespace Maya.View {
             year_switcher.left_clicked.connect (() => Model.CalendarModel.get_default ().change_year (-1));
             year_switcher.right_clicked.connect (() => Model.CalendarModel.get_default ().change_year (1));
             calmodel.parameters_changed.connect (() => {
-                set_switcher_date (calmodel.month_start);
+                set_switcher_date (calmodel.display_start);
             });
         }
 

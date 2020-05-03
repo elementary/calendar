@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -20,15 +20,21 @@
  */
 
 public class Maya.MainWindow : Gtk.ApplicationWindow {
+    private Gtk.Stack calview_stack;
+    private View.WeekView week_view;
+    private Gtk.Paned hpaned;
+
     public View.CalendarView calview;
 
     public const string ACTION_PREFIX = "win.";
     public const string ACTION_NEW_EVENT = "action_new_event";
     public const string ACTION_SHOW_TODAY = "action_show_today";
+    public const string ACTION_SHOW_WEEK = "action_show_week";
 
     private const ActionEntry[] ACTION_ENTRIES = {
         { ACTION_NEW_EVENT, action_new_event },
-        { ACTION_SHOW_TODAY, action_show_today }
+        { ACTION_SHOW_TODAY, action_show_today },
+        { ACTION_SHOW_WEEK, action_show_week }
     };
 
     private uint configure_id;
@@ -77,14 +83,23 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         calview = new View.CalendarView ();
         calview.vexpand = true;
 
-        var hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
+        week_view = new View.WeekView ();
+
+        hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         hpaned.pack1 (calview, true, false);
         hpaned.pack2 (sidebar, true, false);
+
+        calview_stack = new Gtk.Stack ();
+        calview_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        calview_stack.expand = true;
+
+        calview_stack.add (hpaned);
+        calview_stack.add (week_view);
 
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
         grid.add (infobar);
-        grid.add (hpaned);
+        grid.add (calview_stack);
 
         add (grid);
         set_titlebar (headerbar);
@@ -119,6 +134,14 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
     private void action_show_today () {
         calview.today ();
+    }
+
+    private void action_show_week () {
+        if (calview_stack.visible_child == hpaned) {
+            calview_stack.visible_child = week_view;
+        } else {
+            calview_stack.visible_child = hpaned;
+        }
     }
 
     private void on_remove (ECal.Component comp) {
