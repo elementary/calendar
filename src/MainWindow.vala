@@ -140,7 +140,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     public void on_duplicate (ECal.Component comp) {
         E.Source src = comp.get_data ("source");
 
-        if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
+        if (src.writable && ! Model.CalendarModel.get_default ().calclient_is_readonly (src)) {
             // The event editor dialog (EventDialog) uses its date/time parameter to tell
             // if we're editing an existing event (parameter is null) or creating a new one
             // (parameter is not null). Since here we're creating a new event as a copy of
