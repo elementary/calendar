@@ -1,16 +1,16 @@
 /*
- * Copyright 2011-2018 elementary, Inc. (https://elementary.io)
+ * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -52,21 +52,26 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         scrolled.add (reminder_list);
         scrolled.expand = true;
 
+        var add_button = new Gtk.Button.with_label (_("Add Reminder"));
+        add_button.always_show_image = true;
+        add_button.image = new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON);
+        add_button.margin = 3;
+        add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        var inline_toolbar = new Gtk.ActionBar ();
+        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        inline_toolbar.add (add_button);
+
+        var grid = new Gtk.Grid ();
+        grid.attach (scrolled, 0, 0);
+        grid.attach (inline_toolbar, 0, 1);
+
         var frame = new Gtk.Frame (null);
         frame.margin_top = 6;
-        frame.add (scrolled);
-
-        var add_button = new Gtk.ToolButton (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON), null);
-        add_button.tooltip_text = _("Add Reminder");
-
-        var inline_toolbar = new Gtk.Toolbar ();
-        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-        inline_toolbar.icon_size = Gtk.IconSize.SMALL_TOOLBAR;
-        inline_toolbar.add (add_button);
+        frame.add (grid);
 
         add (reminder_label);
         add (frame);
-        add (inline_toolbar);
         load ();
 
         add_button.clicked.connect (() => {
@@ -134,11 +139,14 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 ECal.ComponentAlarmTrigger trigger;
 #if E_CAL_2_0
                 trigger = alarm.get_trigger ();
-#else
-                alarm.get_trigger (out trigger);
-#endif
                 trigger.set_duration (reminder.get_duration ());
                 trigger.set_kind (ECal.ComponentAlarmTriggerKind.RELATIVE_START);
+#else
+                alarm.get_trigger (out trigger);
+                trigger.rel_duration = reminder.get_duration ();
+                trigger.type = ECal.ComponentAlarmTriggerKind.RELATIVE_START;
+#endif
+
                 alarm.set_trigger (trigger);
                 parent_dialog.ecal.add_alarm (alarm);
             } else if (reminder.change == true) {
@@ -147,11 +155,13 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 ECal.ComponentAlarmTrigger trigger;
 #if E_CAL_2_0
                 trigger = alarm.get_trigger ();
-#else
-                alarm.get_trigger (out trigger);
-#endif
                 trigger.set_kind (ECal.ComponentAlarmTriggerKind.RELATIVE_START);
                 trigger.set_duration (reminder.get_duration ());
+#else
+                alarm.get_trigger (out trigger);
+                trigger.rel_duration = reminder.get_duration ();
+                trigger.type = ECal.ComponentAlarmTriggerKind.RELATIVE_START;
+#endif
                 alarm.set_trigger (trigger);
             }
         }

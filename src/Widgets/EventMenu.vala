@@ -53,8 +53,6 @@ public class Maya.EventMenu : Gtk.Menu {
         append (remove_item);
         append (edit_item);
 
-        remove_item.activate.connect (remove_event);
-
         edit_item.activate.connect (() => {
             ((Maya.Application) GLib.Application.get_default ()).window.on_modified (comp);
         });
@@ -66,21 +64,7 @@ public class Maya.EventMenu : Gtk.Menu {
     }
 
     private void add_exception () {
-        ECal.ComponentDateTime? dtstart;
-        GLib.SList<ECal.ComponentDateTime?>? exdate_list;
-#if E_CAL_2_0
-        dtstart = comp.get_dtstart ();
-        exdate_list = comp.get_exdates ();
-        exdate_list.append (dtstart);
-        comp.set_exdates (exdate_list);
-#else
-        comp.get_dtstart (out dtstart);
-        comp.get_exdate_list (out exdate_list);
-        exdate_list.append ((owned) dtstart);
-        comp.set_exdate_list (exdate_list);
-#endif
-
         var calmodel = Model.CalendarModel.get_default ();
-        calmodel.update_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.ALL);
+        calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
     }
 }

@@ -28,9 +28,14 @@ namespace Maya {
     public class Application : Gtk.Application {
         public MainWindow window;
         public static GLib.Settings saved_state;
+        public static GLib.Settings? wingpanel_settings = null;
 
         static construct {
             saved_state = new GLib.Settings ("io.elementary.calendar.savedstate");
+
+            if (GLib.SettingsSchemaSource.get_default ().lookup ("io.elementary.desktop.wingpanel.datetime", true) != null) {
+                wingpanel_settings = new GLib.Settings ("io.elementary.desktop.wingpanel.datetime");
+            }
         }
 
         construct {
@@ -59,11 +64,12 @@ namespace Maya {
                 var date = Date ();
                 date.set_parse (Option.show_day);
                 if (date.valid () == true) {
-                    var datetime = Settings.SavedState.get_default ().get_selected ();
+                    var datetime = get_selected_datetime ();
                     datetime = datetime.add_years ((int)date.get_year () - datetime.get_year ());
                     datetime = datetime.add_days ((int)date.get_day_of_year () - datetime.get_day_of_year ());
-                    Settings.SavedState.get_default ().selected_day = datetime.format ("%Y-%j");
-                    Settings.SavedState.get_default ().month_page = datetime.format ("%Y-%m");
+
+                    saved_state.set_string ("selected-day", datetime.format ("%Y-%j"));
+                    saved_state.set_string ("month-page", datetime.format ("%Y-%m"));
                 } else {
                     warning ("Invalid date '%s' - Ignoring", Option.show_day);
                 }
@@ -136,6 +142,18 @@ namespace Maya {
 
         private void on_quit () {
             Model.CalendarModel.get_default ().delete_trashed_calendars ();
+        }
+
+        public static DateTime get_selected_datetime () {
+            var selected_day = saved_state.get_string ("selected-day");
+            if (selected_day == null || selected_day == "") {
+                return new DateTime.now_local ();
+            }
+
+            var numbers = selected_day.split ("-", 2);
+            var dt = new DateTime.local (int.parse (numbers[0]), 1, 1, 0, 0, 0);
+            dt = dt.add_days (int.parse (numbers[1]) - 1);
+            return dt;
         }
     }
 

@@ -26,15 +26,23 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
     private Gtk.Label[] labels;
     private int nr_of_weeks;
 
+    private static GLib.Settings show_weeks;
     private static Gtk.CssProvider style_provider;
 
     static construct {
         style_provider = new Gtk.CssProvider ();
         style_provider.load_from_resource ("/io/elementary/calendar/WeekLabels.css");
+
+        if (Application.wingpanel_settings != null) {
+            show_weeks = Application.wingpanel_settings;
+        } else {
+            show_weeks = Application.saved_state;
+        }
     }
 
     construct {
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
+        transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;
         vexpand = true;
 
         day_grid = new Gtk.Grid ();
@@ -49,20 +57,23 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
         day_grid_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         day_grid_context.add_class ("weeks");
 
+        show_weeks.bind ("show-weeks", this, "reveal-child", GLib.SettingsBindFlags.DEFAULT);
+
         button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-                var menu = new Gtk.Menu ();
-                menu.attach_to_widget (this, null);
                 var show_weeks_menuitem = new Gtk.MenuItem ();
-                if (Util.show_weeks ()) {
+                if (show_weeks.get_boolean ("show-weeks")) {
                     show_weeks_menuitem.label = _("Hide Week Numbers");
                 } else {
                     show_weeks_menuitem.label = _("Show Week Numbers");
                 }
 
                 show_weeks_menuitem.activate.connect (() => {
-                    Util.toggle_show_weeks ();
+                    show_weeks.set_boolean ("show-weeks", !show_weeks.get_boolean ("show-weeks"));
                 });
+
+                var menu = new Gtk.Menu ();
+                menu.attach_to_widget (this, null);
                 menu.add (show_weeks_menuitem);
                 menu.show_all ();
                 menu.popup_at_pointer (event);
@@ -75,12 +86,26 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
     }
 
     public void update (DateTime date, int nr_of_weeks) {
+        if (show_weeks.get_boolean ("show-weeks")) {
+            if (labels != null) {
+                foreach (var label in labels) {
+                    label.destroy ();
+                }
+            }
 
-        update_nr_of_labels (nr_of_weeks);
+            labels = new Gtk.Label[nr_of_weeks];
+            for (int c = 0; c < nr_of_weeks; c++) {
+                labels[c] = new Gtk.Label ("");
+                labels[c].valign = Gtk.Align.START;
+                labels[c].width_chars = 2;
 
-        if (Util.show_weeks ()) {
-            transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;
-            set_reveal_child (true);
+                unowned Gtk.StyleContext label_context = labels[c].get_style_context ();
+                label_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                label_context.add_class ("weeklabel");
+
+                day_grid.attach (labels[c], 0, c);
+                labels[c].show ();
+            }
 
             var next = date;
             // Find the beginning of the week which is apparently always a monday
@@ -90,9 +115,6 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
                 label.label = next.get_week_of_year ().to_string ();
                 next = next.add_weeks (1);
             }
-        } else {
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            set_reveal_child (false);
         }
     }
 
@@ -103,28 +125,5 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
 
     public int get_nr_of_weeks () {
         return nr_of_weeks;
-    }
-
-    void update_nr_of_labels (int nr_of_weeks) {
-        // Destroy all the old ones
-
-        if (labels != null)
-            foreach (var label in labels)
-                label.destroy ();
-
-        // Create new labels
-        labels = new Gtk.Label[nr_of_weeks];
-        for (int c = 0; c < nr_of_weeks; c++) {
-            labels[c] = new Gtk.Label ("");
-            labels[c].valign = Gtk.Align.START;
-            labels[c].width_chars = 2;
-
-            unowned Gtk.StyleContext label_context = labels[c].get_style_context ();
-            label_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            label_context.add_class ("weeklabel");
-
-            day_grid.attach (labels[c], 0, c);
-            labels[c].show ();
-        }
     }
 }

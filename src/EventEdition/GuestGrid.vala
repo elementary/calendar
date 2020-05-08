@@ -65,9 +65,11 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         var mail = attendee.get_attendee ().replace ("mailto:", "");
 
         name_label = new Gtk.Label (Markup.escape_text (mail.split ("@", 2)[0]));
+        name_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
         name_label.xalign = 0;
 
         mail_label = new Gtk.Label (Markup.escape_text (mail));
+        mail_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
         mail_label.hexpand = true;
         mail_label.xalign = 0;
 

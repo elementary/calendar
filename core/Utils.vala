@@ -327,24 +327,4 @@ namespace Maya.Util {
             warning ("%s\n", e.message);
         }
     }
-
-    public const string SHOW_WEEKS_SCHEMA = "io.elementary.desktop.wingpanel.datetime";
-
-    public bool show_weeks () {
-        if (GLib.SettingsSchemaSource.get_default ().lookup (SHOW_WEEKS_SCHEMA, false) != null) {
-            GLib.Settings weeks = new GLib.Settings (SHOW_WEEKS_SCHEMA);
-            return weeks.get_boolean ("show-weeks");
-        } else {
-            return Settings.SavedState.get_default ().show_weeks;
-        }
-    }
-
-    public void toggle_show_weeks () {
-        if (GLib.SettingsSchemaSource.get_default ().lookup (SHOW_WEEKS_SCHEMA, false) != null) {
-            GLib.Settings weeks = new GLib.Settings (SHOW_WEEKS_SCHEMA);
-            weeks.set_boolean ("show-weeks", !weeks.get_boolean ("show-weeks"));
-        } else {
-            Settings.SavedState.get_default ().show_weeks = !Settings.SavedState.get_default ().show_weeks;
-        }
-    }
 }
