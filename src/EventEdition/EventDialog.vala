@@ -28,6 +28,7 @@ public enum EventType {
 public class EventDialog : Gtk.Dialog {
         public E.Source? source { get; set; }
         public E.Source? original_source { get; private set; }
+        private ECal.Component original_ecal;
         public ECal.Component ecal { get; set; }
         public DateTime date_time { get; set; }
 
@@ -36,7 +37,7 @@ public class EventDialog : Gtk.Dialog {
          */
         public bool can_edit = true;
 
-        private ECal.ObjModType mod_type { get; private set; default = ECal.ObjModType.ALL; }
+        private ECal.ObjModType mod_type { get; private set; default = ECal.ObjModType.THIS_AND_FUTURE; }
         private EventType event_type { get; private set; }
 
         private EventEdition.GuestsPanel guests_panel;
@@ -48,8 +49,12 @@ public class EventDialog : Gtk.Dialog {
         public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null) {
             this.deletable = false;
 
-            if (ecal != null)
+            if (ecal != null) {
                 original_source = ecal.get_data<E.Source> ("source");
+                original_ecal = ecal.clone ();
+
+            }
+
             this.date_time = date_time;
 
             this.ecal = ecal;
@@ -174,18 +179,23 @@ public class EventDialog : Gtk.Dialog {
             repeat_panel.save ();
 
             var calmodel = Model.CalendarModel.get_default ();
-            if (event_type == EventType.ADD)
+            if (event_type == EventType.ADD) {
                 calmodel.add_event (source, ecal);
-            else {
-                assert (original_source != null);
+            } else {
+                int orig_rules = original_ecal.
+                                 get_icalcomponent ().
+                                 count_properties (ICal.PropertyKind.RRULE_PROPERTY);
 
-                if (original_source.dup_uid () == source.dup_uid ()) {
-                    // Same uids, just modify
-                    calmodel.update_event (source, ecal, mod_type);
+                int rules = ecal.
+                            get_icalcomponent ().
+                            count_properties (ICal.PropertyKind.RRULE_PROPERTY);
+
+                // Just modifying events with repeat rules or with changed source does not work.
+                if (orig_rules > 0 || rules > 0 || original_source.dup_uid () != source.dup_uid ()) {
+                    calmodel.remove_and_replace (original_source, original_ecal, source, ecal);
                 } else {
-                    // Different calendar, remove and readd
-                    calmodel.remove_event (original_source, ecal, mod_type);
-                    calmodel.add_event (source, ecal);
+                    // Just modify
+                    calmodel.update_event (source, ecal, mod_type);
                 }
             }
 

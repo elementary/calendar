@@ -175,6 +175,36 @@ public class Maya.Model.CalendarModel : Object {
         });
     }
 
+    public void remove_and_replace (E.Source original_source, ECal.Component original_event,
+                                    E.Source source, ECal.Component event) {
+
+        unowned ICal.Component comp = event.get_icalcomponent ();
+        string uid = comp.get_uid ();
+        string? rid = event.has_recurrences () ? null : event.get_recurid_as_string ();
+        debug (@"Removing event '$uid'");
+        ECal.Client client;
+        lock (source_client) {
+            client = source_client.get (source.get_uid ());
+        }
+
+#if E_CAL_2_0
+        client.remove_object.begin (uid, rid, ECal.ObjModType.ALL, ECal.OperationFlags.NONE, null, (obj, results) => {
+#else
+        client.remove_object.begin (uid, rid, ECal.ObjModType.ALL, null, (obj, results) => {
+#endif
+            try {
+                client.remove_object.end (results);
+                Idle.add (() => {
+                    add_event (source, event);
+                    return Source.REMOVE;
+                });
+            } catch (Error e) {
+                warning (e.message);
+            }
+        });
+
+    }
+
     public void remove_event (E.Source source, ECal.Component event, ECal.ObjModType mod_type) {
         unowned ICal.Component comp = event.get_icalcomponent ();
         string uid = comp.get_uid ();
