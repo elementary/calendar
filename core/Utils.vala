@@ -93,7 +93,7 @@ namespace Maya.Util {
         unowned ICal.Timezone timezone;
         var tzid = date.get_tzid ();
         if (tzid != null) {
-            debug ("TZID not null: using ICal.Timezone.get_builtin...");
+            debug ("TZID not null: using ICal.Timezone.get_builtin…");
             debug ("TZID: %s", tzid);
             if (tzid.has_prefix ("/freeassociation.sourceforge.net/")) {
                 debug ("libical prefix found: using get_builtin_timezone_from_tzid");
