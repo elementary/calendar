@@ -117,7 +117,6 @@ namespace Maya.Util {
         // Get UTC offset and format for GLib.TimeZone constructor
         int is_daylight;
         int interval = timezone.get_utc_offset (date, out is_daylight);
-        debug ("Timezone interval (seconds): %i", interval);
         bool is_positive = interval >= 0;
         interval = interval.abs ();
         /************************************************************
@@ -153,9 +152,19 @@ namespace Maya.Util {
         ICal.Time dt_start = comp.get_dtstart ();
         ICal.Time dt_end = comp.get_dtend ();
 
-        start_date = Util.ical_to_date_time (dt_start).to_local ();
+        if (dt_start.is_date ()) {
+            // Don't convert timezone, leave it at midnight UTC
+            start_date = Util.ical_to_date_time (dt_start);
+        } else {
+            start_date = Util.ical_to_date_time (dt_start).to_local ();
+        }
+
         if (!dt_end.is_null_time ()) {
-            end_date = Util.ical_to_date_time (dt_end).to_local ();
+            if (dt_end.is_date ()) {
+                end_date = Util.ical_to_date_time (dt_end);
+            } else {
+                end_date = Util.ical_to_date_time (dt_end).to_local ();
+            }
         } else if (dt_start.is_date ()) {
             end_date = start_date;
         } else if (!comp.get_duration ().is_null_duration ()) {
