@@ -90,26 +90,37 @@ namespace Maya.Util {
         }
 
         // Otherwise, get timezone from ICal
-        unowned ICal.Timezone timezone;
+        unowned ICal.Timezone? timezone = null;
         var tzid = date.get_tzid ();
+        // First, try using the tzid property
         if (tzid != null) {
             debug ("TZID not null: using ICal.Timezone.get_builtin…");
             debug ("TZID: %s", tzid);
+            unowned ICal.Timezone? tzid_zone;
             if (tzid.has_prefix ("/freeassociation.sourceforge.net/")) {
                 debug ("libical prefix found: using get_builtin_timezone_from_tzid");
                 // TZID has prefix "/freeassociation.sourceforge.net/",
                 // indicating a libical TZID.
-                timezone = ICal.Timezone.get_builtin_timezone_from_tzid (tzid);
+                tzid_zone = ICal.Timezone.get_builtin_timezone_from_tzid (tzid);
             } else {
                 debug ("libical prefix not found: using get_builtin_timezone");
                 // TZID does not have libical prefix, indicating an Olson
                 // standard city name.
-                timezone = ICal.Timezone.get_builtin_timezone (tzid);
+                tzid_zone = ICal.Timezone.get_builtin_timezone (tzid);
             }
-        } else if (date.get_timezone () != null) {
+            if (tzid_zone != null) {
+                timezone = tzid_zone;
+            } else {
+                debug ("Error parsing tzid");
+            }
+        }
+        // If tzid fails, try date.get_timezone ()
+        if (timezone == null && date.get_timezone () != null) {
             debug ("ICal.Time.get_timezone is not null: using it for timezone");
             timezone = date.get_timezone ();
-        } else {
+        }
+        // If nothing else works (timezone is still null), default to UTC
+        if (timezone == null) {
             debug ("No timezone info: defaulting timezone to UTC");
             return new TimeZone.utc ();
         }
