@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-03 20:10+0000\n"
-"PO-Revision-Date: 2020-05-03 16:00+0000\n"
+"PO-Revision-Date: 2020-05-11 13:10+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/extra/"
 "tr/>\n"
@@ -55,6 +55,8 @@ msgstr "Gerekiyorsa etkinlik katılımcılarının bilgilerini kısaltarak göst
 #: data/io.elementary.calendar.appdata.xml.in:22
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr ""
+"Etkinlik başlığı değiştirilirken istenmeyen etkinlik planlanma hatası "
+"düzeltildi"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 #: data/io.elementary.calendar.appdata.xml.in:43
@@ -82,23 +84,23 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:41
 msgid "Fix issues with recurring events"
-msgstr ""
+msgstr "Yinelenen etkinliklerle ilgili sorunlar düzeltildi"
 
 #: data/io.elementary.calendar.appdata.xml.in:42
 msgid "Performance improvements"
-msgstr ""
+msgstr "Performans iyileştirmeleri"
 
 #: data/io.elementary.calendar.appdata.xml.in:48
 msgid "Present import window when opening ICS files"
-msgstr ""
+msgstr "ICS dosyalarını açarken içe aktarma penceresini göster"
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Add a search entry for calendars"
-msgstr ""
+msgstr "Takvim'de arama yapma özelliği eklendi"
 
 #: data/io.elementary.calendar.appdata.xml.in:50
 msgid "Always use calendar icon in notifications"
-msgstr ""
+msgstr "Bildirimlerde her zaman takvim uygulamasının simgesini kullan"
 
 #: data/io.elementary.calendar.appdata.xml.in:51
 msgid "Agenda view can now be navigated by keyboard"
@@ -111,14 +113,16 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:53
 msgid "Various UI overhauls including lime accent color"
 msgstr ""
+"Açık yeşil vurgulama renginin de içinde olduğu çeşitli kullanıcı arayüzü "
+"revizyonları yapıldı"
 
 #: data/io.elementary.calendar.appdata.xml.in:54
 msgid "Overall code cleanup and rewrites"
-msgstr ""
+msgstr "Genel kod temizleme ve yeniden yazımlar"
 
 #: data/io.elementary.calendar.appdata.xml.in:60
 msgid "Styling adjustments"
-msgstr ""
+msgstr "Stil ayarlamaları"
 
 #: data/io.elementary.calendar.appdata.xml.in:61
 msgid "Fix location panel initialization"
