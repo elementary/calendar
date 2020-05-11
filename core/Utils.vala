@@ -76,16 +76,12 @@ namespace Maya.Util {
     }
 
     /**
-     * Converts the given TimeType to a DateTime.
+     * Gets the timezone of the given TimeType as a GLib.TimeZone.
      */
     private TimeZone timezone_from_ical (ICal.Time date) {
-        if (date.get_timezone () != null) {
-            debug ("ICal.Time.get_timezone not null");
-        }
-
         // Special case: return default UTC time zone for all-day events
         if (date.is_date ()) {
-            debug ("Given date is 'DATE' type, not 'DATE_TIME': Defaulting timezone to UTC");
+            debug ("Given date is 'DATE' type, not 'DATE_TIME': Using timezone UTC");
             return new TimeZone.utc ();
         }
 
@@ -94,16 +90,12 @@ namespace Maya.Util {
         var tzid = date.get_tzid ();
         // First, try using the tzid property
         if (tzid != null) {
-            debug ("TZID not null: using ICal.Timezone.get_builtin…");
-            debug ("TZID: %s", tzid);
             unowned ICal.Timezone? tzid_zone;
             if (tzid.has_prefix ("/freeassociation.sourceforge.net/")) {
-                debug ("libical prefix found: using get_builtin_timezone_from_tzid");
                 // TZID has prefix "/freeassociation.sourceforge.net/",
                 // indicating a libical TZID.
                 tzid_zone = ICal.Timezone.get_builtin_timezone_from_tzid (tzid);
             } else {
-                debug ("libical prefix not found: using get_builtin_timezone");
                 // TZID does not have libical prefix, indicating an Olson
                 // standard city name.
                 tzid_zone = ICal.Timezone.get_builtin_timezone (tzid);
@@ -111,17 +103,16 @@ namespace Maya.Util {
             if (tzid_zone != null) {
                 timezone = tzid_zone;
             } else {
-                debug ("Error parsing tzid");
+                debug ("Error parsing timezone from TZID: trying fallback");
             }
         }
         // If tzid fails, try date.get_timezone ()
         if (timezone == null && date.get_timezone () != null) {
-            debug ("ICal.Time.get_timezone is not null: using it for timezone");
             timezone = date.get_timezone ();
         }
         // If nothing else works (timezone is still null), default to UTC
         if (timezone == null) {
-            debug ("No timezone info: defaulting timezone to UTC");
+            debug ("Date has no timezone info: defaulting to UTC");
             return new TimeZone.utc ();
         }
 
@@ -130,14 +121,9 @@ namespace Maya.Util {
         int interval = timezone.get_utc_offset (date, out is_daylight);
         bool is_positive = interval >= 0;
         interval = interval.abs ();
-        /************************************************************
-         * GNOME: CHECKS FOR MICROSECONDS BY DIVIDING               */
         var hours = (interval / 3600);
         var minutes = (interval % 3600) / 60;
         var hour_string = "%s%02d:%02d".printf (is_positive ? "+" : "-", hours, minutes);
-        /************************************************************
-         * GNOME: INCLUDES SECONDS                                  */
-        debug ("Timezone interval (hours): %s", hour_string);
 
         return new TimeZone (hour_string);
     }
@@ -164,7 +150,7 @@ namespace Maya.Util {
         ICal.Time dt_end = comp.get_dtend ();
 
         if (dt_start.is_date ()) {
-            // Don't convert timezone, leave it at midnight UTC
+            // Don't convert timezone for date with only day info, leave it at midnight UTC
             start_date = Util.ical_to_date_time (dt_start);
         } else {
             start_date = Util.ical_to_date_time (dt_start).to_local ();
@@ -172,6 +158,7 @@ namespace Maya.Util {
 
         if (!dt_end.is_null_time ()) {
             if (dt_end.is_date ()) {
+                // Don't convert timezone for date with only day info, leave it at midnight UTC
                 end_date = Util.ical_to_date_time (dt_end);
             } else {
                 end_date = Util.ical_to_date_time (dt_end).to_local ();
