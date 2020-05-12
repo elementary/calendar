@@ -166,8 +166,9 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
         Idle.add ( () => {
-            foreach (var event in events)
+            foreach (var event in events) {
                 update_event (source, event);
+            }
 
             return false;
         });
