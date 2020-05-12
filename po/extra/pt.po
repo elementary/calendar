@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-03 20:10+0000\n"
-"PO-Revision-Date: 2020-04-09 06:10+0000\n"
+"PO-Revision-Date: 2020-05-13 23:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "extra/pt/>\n"
@@ -36,12 +36,12 @@ msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
-"Um pequeno e leve aplicativo de calendário capaz de sincronizar vários "
+"Uma pequena e leve aplicação de calendário capaz de sincronizar vários "
 "calendários num só lugar, como o Google Calendar, Outlook e CalDAV."
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Minor Updates:"
-msgstr "Pequenas actualizações:"
+msgstr "Pequenas atualizações:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Correctly save event reminders"
@@ -71,7 +71,7 @@ msgstr "Corrige possíveis falhas ao carregar eventos sem hora de início ou fim
 
 #: data/io.elementary.calendar.appdata.xml.in:39
 msgid "Make agenda pane fill the whole space"
-msgstr "Faça com que o painel da agenda preencha todo o espaço"
+msgstr "Faz com que o painel da agenda preencha o espaço todo"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Set the suggested time for new events to the next whole hour"
@@ -79,7 +79,7 @@ msgstr "Defina a hora sugerida para novos eventos para a próxima hora toda"
 
 #: data/io.elementary.calendar.appdata.xml.in:41
 msgid "Fix issues with recurring events"
-msgstr "Corrigir problemas com eventos recorrentes"
+msgstr "Corrige problemas com eventos recorrentes"
 
 #: data/io.elementary.calendar.appdata.xml.in:42
 msgid "Performance improvements"
@@ -87,7 +87,7 @@ msgstr "Melhorias de desempenho"
 
 #: data/io.elementary.calendar.appdata.xml.in:48
 msgid "Present import window when opening ICS files"
-msgstr "Apresenta a Janela de importação ao abrir ficheiros ICS"
+msgstr "Apresentar janela de importação ao abrir ficheiros ICS"
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Add a search entry for calendars"
@@ -113,7 +113,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:54
 msgid "Overall code cleanup and rewrites"
-msgstr "Limpeza de código geral e reinscrição"
+msgstr "Limpeza e reformulação geral do código"
 
 #: data/io.elementary.calendar.appdata.xml.in:60
 msgid "Styling adjustments"
