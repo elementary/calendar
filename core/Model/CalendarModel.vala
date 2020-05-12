@@ -453,11 +453,21 @@ public class Maya.Model.CalendarModel : Object {
         var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
-            var events = source_events.get (source).get (uid);
-            updated_events.add_all (events);
-            foreach (var event in events) {
+            var events_for_source = source_events.get (source);
+            var events_for_uid = events_for_source.get (uid);
+            events_for_source.remove_all (uid);
+
+#if E_CAL_2_0
+            client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), null, (comp, start, end) => {
+                var event = new ECal.Component.from_icalcomponent (comp);
+#else
+            client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), (event, start, end) => {
+#endif
                 debug_event (source, event);
-            }
+                events_for_source.set (uid, event);
+                updated_events.add (event);
+                return true;
+            });
         });
 
         events_updated (source, updated_events.read_only_view);

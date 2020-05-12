@@ -37,6 +37,15 @@ public class Maya.View.EventButton : Gtk.Revealer {
         css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
     }
 
+    public static string get_id_from_comp (ECal.Component comp) {
+        /* We need an id that is unique for each instance of a recurring event */
+        unowned ICal.Component ical = comp.get_icalcomponent ();
+        return (comp.get_id ().hash ()).to_string () +
+                    ical.get_dtstart ().as_ical_string () +
+                    ical.get_dtend ().as_ical_string ();
+
+    }
+
     construct {
         transition_type = Gtk.RevealerTransitionType.CROSSFADE;
 
@@ -111,9 +120,13 @@ public class Maya.View.EventButton : Gtk.Revealer {
         });
     }
 
-    public void update (ECal.Component event) {
-       this.comp = event;
-       label.label = comp.get_summary ().get_value ();
+    public void update (ECal.Component modified) {
+        var mod_id = EventButton.get_id_from_comp (modified);
+        var button_id = EventButton.get_id_from_comp (comp);
+        if (button_id == mod_id) {
+            this.comp = modified;
+            label.label = comp.get_summary ().get_value ();
+        }
     }
 
     private void reload_css (string background_color) {

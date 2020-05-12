@@ -141,13 +141,11 @@ public class Maya.View.GridDay : Gtk.EventBox {
     public void add_event_button (EventButton button) {
         unowned ICal.Component calcomp = button.comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();
+        string bid = EventButton.get_id_from_comp (button.comp);
         lock (event_buttons) {
-            if (event_buttons.contains (uid)) {
-                (event_buttons.@get (uid)).update (button.comp);
-                return;
+            if (!event_buttons.contains (bid)) {
+                event_buttons.set (bid, button);
             }
-
-            event_buttons.set (uid, button);
         }
 
         if (button.get_parent () != null) {
@@ -162,27 +160,29 @@ public class Maya.View.GridDay : Gtk.EventBox {
     public bool update_event (ECal.Component comp) {
         unowned ICal.Component calcomp = comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();
+        string bid = EventButton.get_id_from_comp (comp);
 
         lock (event_buttons) {
-            var button = event_buttons.get (uid);
+            var button = event_buttons.get (bid);
             if (button != null) {
+                /* Got exact matching instance */
                 button.update (comp);
                 event_box.update (button);
-            } else {
-                return false;
+                return true;
             }
         }
 
-        return true;
+        return false;
     }
 
     public void remove_event (ECal.Component comp) {
         unowned ICal.Component calcomp = comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();
+        string bid = EventButton.get_id_from_comp (comp);
         lock (event_buttons) {
-            var button = event_buttons.get (uid);
+            var button = event_buttons.get (bid);
             if (button != null) {
-                event_buttons.remove (uid);
+                event_buttons.remove (bid);
                 destroy_button (button);
             }
         }

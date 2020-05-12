@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -206,8 +206,10 @@ public class Grid : Gtk.Grid {
     public void update_event (ECal.Component event) {
         foreach (var grid_day in data.values) {
             if (Util.calcomp_is_on_day (event, grid_day.date)) {
-                var button = new EventButton (event);
-                grid_day.add_event_button (button);
+                if (!grid_day.update_event (event)) {
+                    var button = new EventButton (event);
+                    grid_day.add_event_button (button);
+                }
             } else {
                 grid_day.remove_event (event);
             }
