@@ -619,15 +619,19 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
         int count = comp.count_properties (ICal.PropertyKind.RRULE_PROPERTY);
 
-        for (int i = 0; i < count; i++) {
 #if E_CAL_2_0
             ICal.Property remove_prop;
 #else
             unowned ICal.Property remove_prop;
 #endif
+
+        for (int i = 0; i < count; i++) {
             remove_prop = comp.get_first_property (ICal.PropertyKind.RRULE_PROPERTY);
             comp.remove_property (remove_prop);
         }
+
+        remove_prop = comp.get_first_property (ICal.PropertyKind.RECURRENCEID_PROPERTY);
+        comp.remove_property (remove_prop);
 
         if (repeat_switch.active == false)
             return;
@@ -647,7 +651,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 #else
                 rrule.freq = ICal.RecurrenceFrequency.WEEKLY_RECURRENCE;
 #endif
-//                var array = new GLib.Array<short> (false, false, sizeof (short));
                 var array = new GLib.Array<short> (false, false, sizeof (short));
                 if (sun_button.active == true) {
                     short day = encode_day (ICal.RecurrenceWeekday.SUNDAY_WEEKDAY, 0);
@@ -781,11 +784,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         // Save exceptions
         count = comp.count_properties (ICal.PropertyKind.EXDATE_PROPERTY);
         for (int i = 0; i < count; i++) {
-#if E_CAL_2_0
-            ICal.Property remove_prop;
-#else
-            unowned ICal.Property remove_prop;
-#endif
             remove_prop = comp.get_first_property (ICal.PropertyKind.EXDATE_PROPERTY);
             comp.remove_property (remove_prop);
         }
