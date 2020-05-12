@@ -327,4 +327,15 @@ namespace Maya.Util {
             warning ("%s\n", e.message);
         }
     }
+
+    public ECal.Component? copy_ecal_component (ECal.Component? original) {
+        if (original == null) {
+            return null;
+        }
+
+        ECal.Component copy = original.clone ();
+        E.Source source = original.get_data<E.Source> ("source");
+        copy.set_data<E.Source> ("source", source);
+        return copy;
+    }
 }
