@@ -13,6 +13,19 @@
     </p>
   </description>
   <releases>
+    <release version="5.0.5" date="2020-05-13" urgency="medium">
+      <description>
+      <p>Improvements:</p>
+      <ul>
+        <li>Allow addition and removal of recurrence to existing event</li>
+        <li>Allow editing of recurring events</li>
+      </ul>
+      <p>Minor Updates:</p>
+      <ul>
+        <li>Updated translations</li>
+      </ul>
+      </description>
+    </release>
     <release version="5.0.4" date="2020-04-03" urgency="medium">
       <description>
       <p>Minor Updates:</p>
