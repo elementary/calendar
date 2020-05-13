@@ -425,6 +425,7 @@ public class Maya.Model.CalendarModel : Object {
         warning (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
         var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
+
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
 #if E_CAL_2_0
@@ -479,18 +480,6 @@ public class Maya.Model.CalendarModel : Object {
                     added_events.add (event);
                     return true;
                 });
-
-                if (added_events.size == 1) {
-                    var ical_comp = comp.clone ();
-                    if (!Util.validate_ical_with_one_instance (ref ical_comp)) {
-                        /* Ensure an event with no recurrences has no recurrence id or rule so that buttons update
-                         * properly */
-                        var event = new ECal.Component.from_icalcomponent (ical_comp.clone ());
-                        event.set_data <E.Source> ("source", source);
-                        update_event (source, event, ECal.ObjModType.ALL);
-                        return;
-                    }
-                }
             } else {
                 debug_event (source, events_for_uid.to_array ()[0], "MODIFIED - UPDATED");
                 updated_events.add (events_for_uid.to_array ()[0]);

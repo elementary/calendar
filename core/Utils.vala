@@ -338,28 +338,4 @@ namespace Maya.Util {
         copy.set_data<E.Source> ("source", source);
         return copy;
     }
-
-    public bool validate_ical_with_one_instance (ref ICal.Component singleton) {
-        int count = singleton.count_properties (ICal.PropertyKind.RRULE_PROPERTY);
-#if E_CAL_2_0
-        ICal.Property remove_prop;
-#else
-        unowned ICal.Property remove_prop;
-#endif
-        if (count > 0) {
-            for (int i = 0; i < count; i++) {
-                remove_prop = singleton.get_first_property (ICal.PropertyKind.RRULE_PROPERTY);
-                singleton.remove_property (remove_prop);
-            }
-        }
-
-        int count2 = singleton.count_properties (ICal.PropertyKind.RECURRENCEID_PROPERTY);
-
-        if (count2 > 0) {
-            remove_prop = singleton.get_first_property (ICal.PropertyKind.RECURRENCEID_PROPERTY);
-            singleton.remove_property (remove_prop);
-        }
-
-        return (count + count2 == 0);
-    }
 }
