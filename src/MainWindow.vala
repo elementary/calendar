@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -130,6 +130,20 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
             var dialog = new Maya.View.EventDialog (comp, null);
+            dialog.transient_for = this;
+            dialog.present ();
+        } else {
+            Gdk.beep ();
+        }
+    }
+
+    public void on_duplicated (ECal.Component comp) {
+        E.Source src = comp.get_data ("source");
+
+        if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
+            var dup_comp = Util.copy_ecal_component (comp);
+            dup_comp.set_uid (Util.mangle_uid (comp.get_id ().get_uid ()));
+            var dialog = new Maya.View.EventDialog (dup_comp, null);
             dialog.transient_for = this;
             dialog.present ();
         } else {

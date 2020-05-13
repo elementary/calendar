@@ -174,7 +174,8 @@ public class Maya.Model.CalendarModel : Object {
             try {
                 client.modify_object.end (results);
             } catch (Error e) {
-                warning (e.message);
+                warning (e.message + " - try to add instead");
+                add_event (source, event);
             }
         });
     }
