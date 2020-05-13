@@ -404,7 +404,7 @@ public class Maya.Model.CalendarModel : Object {
 
     private void debug_event (E.Source source, ECal.Component event, string message = "") {
         unowned ICal.Component comp = event.get_icalcomponent ();
-        warning (@"$(message) Event ['$(comp.get_summary())', $(source.dup_display_name()), UID $(comp.get_uid()), START $(comp.get_dtstart().as_ical_string ()), RID %s )]", event.get_id ().get_rid ());
+        debug (@"$(message) Event ['$(comp.get_summary())', $(source.dup_display_name()), UID $(comp.get_uid()), START $(comp.get_dtstart().as_ical_string ()), RID %s )]", event.get_id ().get_rid ());
     }
 
     //--- Signal Handlers ---//
@@ -423,7 +423,7 @@ public class Maya.Model.CalendarModel : Object {
 #else
     private void on_objects_added (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
 #endif
-        warning (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name ());
+        debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
         var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
 
@@ -451,7 +451,7 @@ public class Maya.Model.CalendarModel : Object {
 #else
     private void on_objects_modified (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
 #endif
-        warning (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
+        debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
         var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         var removed_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
