@@ -197,8 +197,7 @@ public class EventDialog : Gtk.Dialog {
             } else {
                 assert (original_source != null);
 
-                if (original_source.dup_uid () == source.dup_uid () &&
-                    original_ecal.get_id ().equal (ecal.get_id ())) {
+                if (original_source.dup_uid () == source.dup_uid ()) {
                         // Same ids and source, just modify
                         calmodel.update_event (source, ecal, mod_type);
                 } else {
