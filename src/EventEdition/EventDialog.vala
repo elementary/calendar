@@ -198,10 +198,10 @@ public class EventDialog : Gtk.Dialog {
                 assert (original_source != null);
 
                 if (original_source.dup_uid () == source.dup_uid ()) {
-                        // Same ids and source, just modify
-                        calmodel.update_event (source, ecal, mod_type);
+                    // Same source, just modify
+                    calmodel.update_event (source, ecal, mod_type);
                 } else {
-                    // Different calendar or recurrence id changed, remove and re-add
+                    // Different calendar remove and re-add
                     calmodel.remove_event (original_source, original_ecal, mod_type);
                     calmodel.add_event (source, ecal);
                 }
