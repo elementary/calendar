@@ -236,7 +236,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
     void add_event (E.Source source, ECal.Component event) {
         /* The "source" data is added to events byt the CalendarModel. The grid must only show events that have
            been added to the model first */
-        assert (event.get_data<E.Source>("source") != null);
+        assert (event.get_data<E.Source> ("source") != null);
         grid.add_event (event);
     }
 

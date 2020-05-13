@@ -50,7 +50,7 @@ public class EventDialog : Gtk.Dialog {
             this.deletable = false;
 
             if (ecal != null) {
-                original_source = ecal.get_data<E.Source>("source");
+                original_source = ecal.get_data<E.Source> ("source");
             }
 
             this.ecal = ecal;

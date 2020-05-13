@@ -174,10 +174,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
         string uid = comp.get_id ().get_uid ();
 
         lock (event_buttons) {
-            var button = event_buttons.get (uid);
-            if (button != null) {
-                event_buttons.remove (uid);
-            }
+            event_buttons.remove (uid);
         }
     }
 

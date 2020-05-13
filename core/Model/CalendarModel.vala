@@ -161,7 +161,6 @@ public class Maya.Model.CalendarModel : Object {
     public void update_event (E.Source source, ECal.Component event, ECal.ObjModType mod_type) {
         unowned ICal.Component comp = event.get_icalcomponent ();
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
-
         ECal.Client client;
         lock (source_client) {
             client = source_client.get (source.get_uid ());
@@ -404,7 +403,7 @@ public class Maya.Model.CalendarModel : Object {
 
     private void debug_event (E.Source source, ECal.Component event, string message = "") {
         unowned ICal.Component comp = event.get_icalcomponent ();
-        debug (@"$(message) Event ['$(comp.get_summary())', $(source.dup_display_name()), $(comp.get_uid()), $(comp.get_dtstart().as_ical_string ())]");
+        warning (@"$(message) Event ['$(comp.get_summary())', $(source.dup_display_name()), UID $(comp.get_uid()), START $(comp.get_dtstart().as_ical_string ()), RID %s )]", event.get_id ().get_rid ());
     }
 
     //--- Signal Handlers ---//
@@ -423,7 +422,7 @@ public class Maya.Model.CalendarModel : Object {
 #else
     private void on_objects_added (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
 #endif
-        debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name ());
+        warning (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
         var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         objects.foreach ((comp) => {
@@ -435,7 +434,7 @@ public class Maya.Model.CalendarModel : Object {
             client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), (event, start, end) => {
 #endif
                 debug_event (source, event, "ADDED");
-                event.set_data<E.Source>("source", source);
+                event.set_data<E.Source> ("source", source);
                 events.set (uid, event);
                 added_events.add (event);
                 return true;
@@ -450,7 +449,7 @@ public class Maya.Model.CalendarModel : Object {
 #else
     private void on_objects_modified (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
 #endif
-        debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
+        warning (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
         var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         var removed_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
@@ -458,7 +457,10 @@ public class Maya.Model.CalendarModel : Object {
             unowned string uid = comp.get_uid ();
             var events_for_source = source_events.get (source);
             var events_for_uid = events_for_source.get (uid);
-            if (events_for_uid.size > 1) {
+            if (events_for_uid.size > 1 ||
+                events_for_uid.to_array ()[0].get_icalcomponent ().get_recurrenceid ().as_ical_string () != null ||
+                                                              comp.get_recurrenceid ().as_ical_string () != null) {
+
                 events_for_source.remove_all (uid);
                 foreach (ECal.Component event in events_for_uid) {
                     debug_event (source, event, "MODIFIED - ORIGINAL");
@@ -471,12 +473,24 @@ public class Maya.Model.CalendarModel : Object {
 #else
                 client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), (event, start, end) => {
 #endif
-                    event.set_data<E.Source>("source", source);
+                    event.set_data<E.Source> ("source", source);
                     debug_event (source, event, "MODIFIED - GENERATED");
                     events_for_source.set (uid, event);
                     added_events.add (event);
                     return true;
                 });
+
+                if (added_events.size == 1) {
+                    var ical_comp = comp.clone ();
+                    if (!Util.validate_ical_with_one_instance (ref ical_comp)) {
+                        /* Ensure an event with no recurrences has no recurrence id or rule so that buttons update
+                         * properly */
+                        var event = new ECal.Component.from_icalcomponent (ical_comp.clone ());
+                        event.set_data <E.Source> ("source", source);
+                        update_event (source, event, ECal.ObjModType.ALL);
+                        return;
+                    }
+                }
             } else {
                 debug_event (source, events_for_uid.to_array ()[0], "MODIFIED - UPDATED");
                 updated_events.add (events_for_uid.to_array ()[0]);
