@@ -13,6 +13,36 @@
     </p>
   </description>
   <releases>
+    <release version="5.0.4" date="2020-04-03" urgency="medium">
+      <description>
+      <p>Minor Updates:</p>
+      <ul>
+        <li>Correctly save event reminders</li>
+        <li>Ellipsize event participant details if necessary</li>
+        <li>Fix unwanted rescheduling when editing event title</li>
+        <li>Updated translations</li>
+      </ul>
+      </description>
+    </release>
+    <release version="5.0.3" date="2019-11-27" urgency="medium">
+      <description>
+        <p>Fix crash when editing an event with no location</p>
+      </description>
+    </release>
+    <release version="5.0.2" date="2019-11-26" urgency="medium">
+      <description>
+        <p>Fix potential crash when loading events with no start or end time</p>
+      </description>
+    </release>
+    <release version="5.0.1" date="2019-11-25" urgency="medium">
+      <description>
+        <p>Make agenda pane fill the whole space</p>
+        <p>Set the suggested time for new events to the next whole hour</p>
+        <p>Fix issues with recurring events</p>
+        <p>Performance improvements</p>
+        <p>Updated translations</p>
+      </description>
+    </release>
     <release version="5.0" date="2019-02-28" urgency="medium">
       <description>
           <p>Present import window when opening ICS files</p>

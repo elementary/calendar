@@ -20,15 +20,13 @@
  */
 
 public class Maya.View.AgendaView : Gtk.ScrolledWindow {
-    public signal void event_removed (E.CalComponent event);
+    public signal void event_removed (ECal.Component event);
 
     private Gtk.Label day_label;
     private Gtk.Label weekday_label;
     private Gtk.ListBox selected_date_events_list;
     private Gtk.ListBox upcoming_events_list;
     private DateTime selected_date;
-    private HashTable<string, AgendaEventRow> row_table;
-    private HashTable<string, AgendaEventRow> row_table2;
 
     construct {
         weekday_label = new Gtk.Label ("");
@@ -71,20 +69,8 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
                 return false;
             }
 
-            var event_row = (AgendaEventRow) row;
-            unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
-
-            var stripped_time = new DateTime.local (selected_date.get_year (), selected_date.get_month (), selected_date.get_day_of_month (), 0, 0, 0);
-            var range = new Util.DateRange (stripped_time, stripped_time.add_days (1));
-            Gee.Collection<Util.DateRange> event_ranges = Util.event_date_ranges (comp, range);
-
-            foreach (Util.DateRange event_range in event_ranges) {
-                if (Util.is_day_in_range (stripped_time, event_range)) {
-                    return true;
-                }
-            }
-
-            return false;
+            unowned AgendaEventRow event_row = (AgendaEventRow) row;
+            return Util.calcomp_is_on_day (event_row.calevent, selected_date);
         });
 
         upcoming_events_list = new Gtk.ListBox ();
@@ -99,7 +85,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
             var event_row = (AgendaEventRow) row;
 
             DateTime now = new DateTime.now_local ();
-            unowned iCal.Component comp = event_row.calevent.get_icalcomponent ();
+            unowned ICal.Component comp = event_row.calevent.get_icalcomponent ();
             var stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
             stripped_time = stripped_time.add_days (1);
             var stripped_time_end = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
@@ -120,15 +106,13 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         hscrollbar_policy = Gtk.PolicyType.NEVER;
         add (grid);
 
-        row_table = new HashTable<string, AgendaEventRow> (str_hash, str_equal);
-        row_table2 = new HashTable<string, AgendaEventRow> (str_hash, str_equal);
-
         // Listen to changes for events
         var calmodel = Model.CalendarModel.get_default ();
         calmodel.events_added.connect (on_events_added);
         calmodel.events_removed.connect (on_events_removed);
         calmodel.events_updated.connect (on_events_updated);
-        set_selected_date (Settings.SavedState.get_default ().get_selected ());
+        calmodel.parameters_changed.connect (on_model_parameters_changed);
+        set_selected_date (Maya.Application.get_selected_datetime ());
         show_all ();
 
         selected_date_events_list.row_activated.connect (activate_eventrow);
@@ -191,11 +175,11 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     }
 
     private int compare_rows (AgendaEventRow row1, AgendaEventRow row2) {
-        unowned iCal.Component ical_event1 = row1.calevent.get_icalcomponent ();
+        unowned ICal.Component ical_event1 = row1.calevent.get_icalcomponent ();
         DateTime start_date1, end_date1;
         Util.get_local_datetimes_from_icalcomponent (ical_event1, out start_date1, out end_date1);
 
-        unowned iCal.Component ical_event2 = row2.calevent.get_icalcomponent ();
+        unowned ICal.Component ical_event2 = row2.calevent.get_icalcomponent ();
         DateTime start_date2, end_date2;
         Util.get_local_datetimes_from_icalcomponent (ical_event2, out start_date2, out end_date2);
 
@@ -213,7 +197,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     }
 
     private static int get_event_type (AgendaEventRow row) {
-        unowned iCal.Component comp = row.calevent.get_icalcomponent ();
+        unowned ICal.Component comp = row.calevent.get_icalcomponent ();
         DateTime now = new DateTime.now_local ();
 
         var stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
@@ -258,13 +242,13 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
     private void upcoming_header_update_func (Gtk.ListBoxRow lbrow, Gtk.ListBoxRow? lbbefore) {
         var row = (AgendaEventRow) lbrow;
-        int rowType = get_event_type (row);
+        int row_type = get_event_type (row);
 
         if (lbbefore != null) {
             var before = (AgendaEventRow) lbbefore;
-            int beforeType = get_event_type (before);
+            int before_type = get_event_type (before);
 
-            if (rowType == beforeType) {
+            if (row_type == before_type) {
                 row.set_header (null);
                 return;
             }
@@ -273,7 +257,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         var header_label = new Granite.HeaderLabel ("");
         header_label.margin_start = header_label.margin_end = 6;
 
-        switch (rowType) {
+        switch (row_type) {
             case 1:
                 header_label.label = _("Tomorrow");
                 break;
@@ -299,53 +283,56 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     /**
      * Events have been added to the given source.
      */
-    private void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
+    private void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
         foreach (var event in events) {
-            unowned iCal.Component comp = event.get_icalcomponent ();
+            var row = new AgendaEventRow (source, event, false);
+            row.removed.connect ((event) => (event_removed (event)));
+            row.show_all ();
+            selected_date_events_list.add (row);
 
-            if (!row_table.contains (comp.get_uid ())) {
-                var row = new AgendaEventRow (source, event, false);
-                row.removed.connect ((event) => (event_removed (event)));
-                row.show_all ();
-                row_table.set (comp.get_uid (), row);
-                selected_date_events_list.add (row);
-            }
-
-            if (!row_table2.contains (comp.get_uid ())) {
-                var row2 = new AgendaEventRow (source, event, true);
-                row2.removed.connect ((event) => (event_removed (event)));
-                row2.show_all ();
-                row_table2.set (comp.get_uid (), row2);
-                upcoming_events_list.add (row2);
-            }
+            var row2 = new AgendaEventRow (source, event, true);
+            row2.removed.connect ((event) => (event_removed (event)));
+            row2.show_all ();
+            upcoming_events_list.add (row2);
         }
+    }
+
+    private static int search_calcomp (Gtk.Widget widget, ECal.Component comp) {
+        unowned AgendaEventRow row = widget as AgendaEventRow;
+        return Util.calcomponent_compare_func (row.calevent, comp);
     }
 
     /**
      * Events for the given source have been updated.
      */
-    private void on_events_updated (E.Source source, Gee.Collection<E.CalComponent> events) {
+    private void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
+        GLib.List<weak Gtk.Widget> selected_date_events_children = selected_date_events_list.get_children ();
+        GLib.List<weak Gtk.Widget> upcoming_events_children = upcoming_events_list.get_children ();
+
         foreach (var event in events) {
-            unowned iCal.Component comp = event.get_icalcomponent ();
+            unowned List<weak Gtk.Widget> found = selected_date_events_children.search<ECal.Component> (event, search_calcomp);
+            if (found != null) {
+                ((AgendaEventRow) found.data).update (event);
+            }
 
-            var row = (AgendaEventRow)row_table.get (comp.get_uid ());
-            row.update (event);
-
-            var row2 = (AgendaEventRow)row_table2.get (comp.get_uid ());
-            row2.update (event);
+            unowned List<weak Gtk.Widget> found2 = upcoming_events_children.search<ECal.Component> (event, search_calcomp);
+            if (found2 != null) {
+                ((AgendaEventRow) found2.data).update (event);
+            }
         }
     }
 
     /**
      * Events for the given source have been removed.
      */
-    private void on_events_removed (E.Source source, Gee.Collection<E.CalComponent> events) {
-        foreach (var event in events) {
-            unowned iCal.Component comp = event.get_icalcomponent ();
+    private void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
+        GLib.List<weak Gtk.Widget> selected_date_events_children = selected_date_events_list.get_children ();
+        GLib.List<weak Gtk.Widget> upcoming_events_children = upcoming_events_list.get_children ();
 
-            var row = (AgendaEventRow)row_table.get (comp.get_uid ());
-            row_table.remove (comp.get_uid ());
-            if (row is Gtk.Widget) {
+        foreach (var event in events) {
+            unowned List<weak Gtk.Widget> found = selected_date_events_children.search<ECal.Component> (event, search_calcomp);
+            if (found != null) {
+                var row = ((AgendaEventRow) found.data);
                 row.revealer.set_reveal_child (false);
                 GLib.Timeout.add (row.revealer.transition_duration, () => {
                     row.destroy ();
@@ -353,15 +340,31 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
                 });
             }
 
-            var row2 = (AgendaEventRow)row_table2.get (comp.get_uid ());
-            row_table2.remove (comp.get_uid ());
-            if (row2 is Gtk.Widget) {
-                row2.revealer.set_reveal_child (false);
-                GLib.Timeout.add (row2.revealer.transition_duration, () => {
-                    row2.destroy ();
+            unowned List<weak Gtk.Widget> found2 = upcoming_events_children.search<ECal.Component> (event, search_calcomp);
+            if (found2 != null) {
+                var row = ((AgendaEventRow) found2.data);
+                row.revealer.set_reveal_child (false);
+                GLib.Timeout.add (row.revealer.transition_duration, () => {
+                    row.destroy ();
                     return GLib.Source.REMOVE;
                 });
             }
+        }
+    }
+
+    /**
+     * Calendar model parameters have been updated.
+     */
+    private void on_model_parameters_changed () {
+        GLib.List<weak Gtk.Widget> selected_date_events_children = selected_date_events_list.get_children ();
+        GLib.List<weak Gtk.Widget> upcoming_events_children = upcoming_events_list.get_children ();
+
+        foreach (unowned Gtk.Widget row in selected_date_events_children) {
+            row.destroy ();
+        }
+
+        foreach (unowned Gtk.Widget row in upcoming_events_children) {
+            row.destroy ();
         }
     }
 

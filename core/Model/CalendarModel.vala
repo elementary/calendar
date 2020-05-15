@@ -35,12 +35,12 @@ public class Maya.Model.CalendarModel : Object {
     public int num_weeks { get; private set; default = 6; }
 
     /* The start of week, ie. Monday=1 or Sunday=7 */
-    public Settings.Weekday week_starts_on { get; set; default = Settings.Weekday.MONDAY; }
+    public GLib.DateWeekday week_starts_on { get; set; default = GLib.DateWeekday.MONDAY; }
 
     /* Notifies when events are added, updated, or removed */
-    public signal void events_added (E.Source source, Gee.Collection<E.CalComponent> events);
-    public signal void events_updated (E.Source source, Gee.Collection<E.CalComponent> events);
-    public signal void events_removed (E.Source source, Gee.Collection<E.CalComponent> events);
+    public signal void events_added (E.Source source, Gee.Collection<ECal.Component> events);
+    public signal void events_updated (E.Source source, Gee.Collection<ECal.Component> events);
+    public signal void events_removed (E.Source source, Gee.Collection<ECal.Component> events);
 
     public signal void connecting (E.Source source, Cancellable cancellable);
     public signal void connected (E.Source source);
@@ -49,14 +49,15 @@ public class Maya.Model.CalendarModel : Object {
     /* The month_start, num_weeks, or week_starts_on have been changed */
     public signal void parameters_changed ();
 
-    HashTable<string, E.CalClient> source_client;
-    HashTable<string, E.CalClientView> source_view;
-    HashTable<E.Source, Gee.TreeMap<string, E.CalComponent>> source_events;
+    HashTable<string, ECal.Client> source_client;
+    HashTable<string, ECal.ClientView> source_view;
+    HashTable<E.Source, Gee.TreeMultiMap<string, ECal.Component>> source_events;
 
     public GLib.Queue<E.Source> calendar_trash;
     private E.CredentialsPrompter credentials_prompter;
 
     private static Maya.Model.CalendarModel? calendar_model = null;
+    private static GLib.Settings state_settings;
 
     public static CalendarModel get_default () {
         if (calendar_model == null)
@@ -64,18 +65,22 @@ public class Maya.Model.CalendarModel : Object {
         return calendar_model;
     }
 
+    static construct {
+        state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
+    }
+
     private CalendarModel () {
         int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
         if (week_start >= 1 && week_start <= 7) {
-            week_starts_on = (Maya.Settings.Weekday)week_start-1;
+            week_starts_on = (GLib.DateWeekday) (week_start - 1);
         }
 
-        this.month_start = Util.get_start_of_month (Settings.SavedState.get_default ().get_page ());
+        this.month_start = Util.get_start_of_month (get_page ());
         compute_ranges ();
 
-        source_client = new HashTable<string, E.CalClient> (str_hash, str_equal);
-        source_events = new HashTable<E.Source, Gee.TreeMap<string, E.CalComponent>> (Util.source_hash_func, Util.source_equal_func);
-        source_view = new HashTable<string, E.CalClientView> (str_hash, str_equal);
+        source_client = new HashTable<string, ECal.Client> (str_hash, str_equal);
+        source_events = new HashTable<E.Source, Gee.TreeMultiMap<string, ECal.Component>> (Util.source_hash_func, Util.source_equal_func);
+        source_view = new HashTable<string, ECal.ClientView> (str_hash, str_equal);
         calendar_trash = new GLib.Queue<E.Source> ();
 
         notify["month-start"].connect (on_parameter_changed);
@@ -105,12 +110,12 @@ public class Maya.Model.CalendarModel : Object {
 
     //--- Public Methods ---//
 
-    public void add_event (E.Source source, E.CalComponent event) {
+    public void add_event (E.Source source, ECal.Component event) {
         add_event_async.begin (source, event);
     }
 
     public bool calclient_is_readonly (E.Source source) {
-        E.CalClient client;
+        ECal.Client client;
         lock (source_client) {
             client = source_client.get (source.dup_uid ());
         }
@@ -123,18 +128,25 @@ public class Maya.Model.CalendarModel : Object {
         return true;
     }
 
-    private async void add_event_async (E.Source source, E.CalComponent event) {
-        unowned iCal.Component comp = event.get_icalcomponent();
+    private async void add_event_async (E.Source source, ECal.Component event) {
+        unowned ICal.Component comp = event.get_icalcomponent ();
         debug (@"Adding event '$(comp.get_uid())'");
-        E.CalClient client;
+        ECal.Client client;
         lock (source_client) {
-            client = source_client.get (source.dup_uid ());
+            client = source_client.get (source.get_uid ());
         }
 
         if (client != null) {
             try {
-                string uid;
+                string? uid;
+#if E_CAL_2_0
+                yield client.create_object (comp, ECal.OperationFlags.NONE, null, out uid);
+#else
                 yield client.create_object (comp, null, out uid);
+#endif
+                if (uid != null) {
+                    comp.set_uid (uid);
+                }
             } catch (GLib.Error error) {
                 critical (error.message);
             }
@@ -143,16 +155,20 @@ public class Maya.Model.CalendarModel : Object {
         }
     }
 
-    public void update_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {
-        unowned iCal.Component comp = event.get_icalcomponent();
+    public void update_event (E.Source source, ECal.Component event, ECal.ObjModType mod_type) {
+        unowned ICal.Component comp = event.get_icalcomponent ();
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
 
-        E.CalClient client;
+        ECal.Client client;
         lock (source_client) {
-            client = source_client.get (source.dup_uid ());
+            client = source_client.get (source.get_uid ());
         }
 
-        client.modify_object.begin (comp, mod_type, null, (obj, results) =>  {
+#if E_CAL_2_0
+        client.modify_object.begin (comp, mod_type, ECal.OperationFlags.NONE, null, (obj, results) => {
+#else
+        client.modify_object.begin (comp, mod_type, null, (obj, results) => {
+#endif
             try {
                 client.modify_object.end (results);
             } catch (Error e) {
@@ -161,17 +177,27 @@ public class Maya.Model.CalendarModel : Object {
         });
     }
 
-    public void remove_event (E.Source source, E.CalComponent event, E.CalObjModType mod_type) {
-        unowned iCal.Component comp = event.get_icalcomponent();
+    public void remove_event (E.Source source, ECal.Component event, ECal.ObjModType mod_type) {
+        unowned ICal.Component comp = event.get_icalcomponent ();
         string uid = comp.get_uid ();
-        string? rid = event.has_recurrences() ? null : event.get_recurid_as_string();
-        debug (@"Removing event '$uid'");
-        E.CalClient client;
-        lock (source_client) {
-            client = source_client.get (source.dup_uid ());
+        string? rid = null;
+
+        if (event.has_recurrences () && mod_type != ECal.ObjModType.ALL) {
+            rid = event.get_recurid_as_string ();
+            debug (@"Removing recurrent event '$rid'");
         }
 
+        debug (@"Removing event '$uid'");
+        ECal.Client client;
+        lock (source_client) {
+            client = source_client.get (source.get_uid ());
+        }
+
+#if E_CAL_2_0
+        client.remove_object.begin (uid, rid, mod_type, ECal.OperationFlags.NONE, null, (obj, results) => {
+#else
         client.remove_object.begin (uid, rid, mod_type, null, (obj, results) => {
+#endif
             try {
                 client.remove_object.end (results);
             } catch (Error e) {
@@ -228,11 +254,12 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     public void remove_source (E.Source source) {
-        debug ("Removing source '%s'", source.dup_display_name());
+        debug ("Removing source '%s'", source.dup_display_name ());
         // Already out of the model, so do nothing
-        var uid = source.dup_uid ();
-        if (!source_view.contains (uid))
+        unowned string uid = source.get_uid ();
+        if (!source_view.contains (uid)) {
             return;
+        }
 
         var current_view = source_view.get (uid);
         try {
@@ -246,17 +273,17 @@ public class Maya.Model.CalendarModel : Object {
             source_client.remove (uid);
         }
 
-        var events = source_events.get (source).values.read_only_view;
+        var events = source_events.get (source).get_values ().read_only_view;
         events_removed (source, events);
         source_events.remove (source);
     }
 
-    public Gee.Collection<E.CalComponent> get_events () {
-        Gee.ArrayList<E.CalComponent> events = new Gee.ArrayList<E.CalComponent> ();
+    public Gee.Collection<ECal.Component> get_events () {
+        Gee.ArrayList<ECal.Component> events = new Gee.ArrayList<ECal.Component> ();
         registry.list_sources (E.SOURCE_EXTENSION_CALENDAR).foreach ((source) => {
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             if (cal.selected == true && source.enabled == true) {
-                events.add_all (source_events.get (source).values.read_only_view);
+                events.add_all (source_events.get (source).get_values ().read_only_view);
             }
         });
         return events;
@@ -300,23 +327,37 @@ public class Maya.Model.CalendarModel : Object {
 
     //--- Helper Methods ---//
 
+    private DateTime get_page () {
+        var month_page = state_settings.get_string ("month-page");
+        if (month_page == null || month_page == "") {
+            return new DateTime.now_local ();
+        }
+
+        var numbers = month_page.split ("-", 2);
+        var dt = new DateTime.local (int.parse (numbers[0]), 1, 1, 0, 0, 0);
+        dt = dt.add_months (int.parse (numbers[1]) - 1);
+        return dt;
+    }
+
     private void compute_ranges () {
-        Settings.SavedState.get_default ().month_page = month_start.format ("%Y-%m");
+        state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
+
         var month_end = month_start.add_full (0, 1, -1);
         month_range = new Util.DateRange (month_start, month_end);
 
-        int dow = month_start.get_day_of_week();
+        int dow = month_start.get_day_of_week ();
         int wso = (int) week_starts_on;
         int offset = 0;
 
-        if (wso < dow)
+        if (wso < dow) {
             offset = dow - wso;
-        else if (wso > dow)
+        } else if (wso > dow) {
             offset = 7 + dow - wso;
+        }
 
         var data_range_first = month_start.add_days (-offset);
 
-        dow = month_end.get_day_of_week();
+        dow = month_end.get_day_of_week ();
         wso = (int) (week_starts_on + 6);
 
         // WSO must be between 1 and 7
@@ -330,26 +371,26 @@ public class Maya.Model.CalendarModel : Object {
         else if (wso > dow)
             offset = wso - dow;
 
-        var data_range_last = month_end.add_days(offset);
+        var data_range_last = month_end.add_days (offset);
 
         data_range = new Util.DateRange (data_range_first, data_range_last);
         num_weeks = data_range.to_list ().size / 7;
 
-        debug(@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
+        debug (@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
     }
 
     private void load_source (E.Source source) {
         // create empty source-event map
-        var events = new Gee.TreeMap<string, E.CalComponent> (
-            (GLib.CompareDataFunc<E.CalComponent>?) GLib.strcmp,
-            (Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
+        var events = new Gee.TreeMultiMap<string, ECal.Component> (
+            (GLib.CompareDataFunc<string>?) GLib.strcmp,
+            (GLib.CompareDataFunc<ECal.Component>?) Util.calcomponent_compare_func);
         source_events.set (source, events);
         // query client view
-        var iso_first = E.Util.isodate_from_time_t ((time_t) data_range.first_dt.to_unix ());
-        var iso_last = E.Util.isodate_from_time_t ((time_t) data_range.last_dt.add_days (1).to_unix ());
+        var iso_first = ECal.isodate_from_time_t ((time_t) data_range.first_dt.to_unix ());
+        var iso_last = ECal.isodate_from_time_t ((time_t) data_range.last_dt.add_days (1).to_unix ());
         var query = @"(occur-in-time-range? (make-time \"$iso_first\") (make-time \"$iso_last\"))";
 
-        E.CalClient client;
+        ECal.Client client;
         lock (source_client) {
             client = source_client.get (source.dup_uid ());
         }
@@ -359,8 +400,8 @@ public class Maya.Model.CalendarModel : Object {
 
         debug ("Getting client-view for source '%s'", source.dup_display_name ());
         client.get_view.begin (query, null, (obj, results) => {
-            E.CalClientView view;
-            debug (@"Received client-view for source '%s'", source.dup_display_name());
+            ECal.ClientView view;
+            debug ("Received client-view for source '%s'", source.dup_display_name ());
             try {
                 client.get_view.end (results, out view);
                 view.objects_added.connect ((objects) => on_objects_added (source, client, objects));
@@ -368,7 +409,7 @@ public class Maya.Model.CalendarModel : Object {
                 view.objects_modified.connect ((objects) => on_objects_modified (source, client, objects));
                 view.start ();
             } catch (Error e) {
-                critical ("Error from source '%s': %s", source.dup_display_name(), e.message);
+                critical ("Error from source '%s': %s", source.dup_display_name (), e.message);
             }
 
             source_view.set (source.dup_uid (), view);
@@ -381,8 +422,8 @@ public class Maya.Model.CalendarModel : Object {
         try {
             var cancellable = new GLib.Cancellable ();
             connecting (source, cancellable);
-            var client = yield new E.CalClient.connect (source, E.CalClientSourceType.EVENTS, 30, cancellable);
-            source_client.insert (source.dup_uid (), client);
+            var client = (ECal.Client) yield ECal.Client.connect (source, ECal.ClientSourceType.EVENTS, 30, cancellable);
+            source_client.insert (source.get_uid (), client);
         } catch (Error e) {
             error_received (e.message);
         }
@@ -394,8 +435,8 @@ public class Maya.Model.CalendarModel : Object {
         });
     }
 
-    private void debug_event (E.Source source, E.CalComponent event) {
-        unowned iCal.Component comp = event.get_icalcomponent ();
+    private void debug_event (E.Source source, ECal.Component event) {
+        unowned ICal.Component comp = event.get_icalcomponent ();
         debug (@"Event ['$(comp.get_summary())', $(source.dup_display_name()), $(comp.get_uid()))]");
     }
 
@@ -410,47 +451,68 @@ public class Maya.Model.CalendarModel : Object {
 
     }
 
-    private void on_objects_added (E.Source source, E.CalClient client, SList<unowned iCal.Component> objects) {
-        debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name());
+#if E_CAL_2_0
+    private void on_objects_added (E.Source source, ECal.Client client, SList<ICal.Component> objects) {
+#else
+    private void on_objects_added (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
+#endif
+        debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
-        var added_events = new Gee.ArrayList<E.CalComponent> ((Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
+        var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         objects.foreach ((comp) => {
-            var event = new E.CalComponent ();
-            event.set_icalcomponent (new iCal.Component.clone (comp));
-            string uid = comp.get_uid ();
-            debug_event (source, event);
-            events.set (uid, event);
-            added_events.add (event);
+            unowned string uid = comp.get_uid ();
+#if E_CAL_2_0
+            client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), null, (comp, start, end) => {
+                var event = new ECal.Component.from_icalcomponent (comp);
+#else
+            client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), (event, start, end) => {
+#endif
+                debug_event (source, event);
+                events.set (uid, event);
+                added_events.add (event);
+                return true;
+            });
         });
 
         events_added (source, added_events.read_only_view);
     }
 
-    private void on_objects_modified (E.Source source, E.CalClient client, SList<unowned iCal.Component> objects) {
+#if E_CAL_2_0
+    private void on_objects_modified (E.Source source, ECal.Client client, SList<ICal.Component> objects) {
+#else
+    private void on_objects_modified (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
+#endif
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
-        var updated_events = new Gee.ArrayList<E.CalComponent> ((Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
+        var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         objects.foreach ((comp) => {
-            string uid = comp.get_uid ();
-            E.CalComponent event = source_events.get (source).get (uid);
-            event.set_icalcomponent (new iCal.Component.clone (comp));
-            updated_events.add (event);
-            debug_event (source, event);
+            unowned string uid = comp.get_uid ();
+            var events = source_events.get (source).get (uid);
+            updated_events.add_all (events);
+            foreach (var event in events) {
+                debug_event (source, event);
+            }
         });
 
         events_updated (source, updated_events.read_only_view);
     }
 
-    private void on_objects_removed (E.Source source, E.CalClient client, SList<unowned E.CalComponentId?> cids) {
+#if E_CAL_2_0
+    private void on_objects_removed (E.Source source, ECal.Client client, SList<ECal.ComponentId?> cids) {
+#else
+    private void on_objects_removed (E.Source source, ECal.Client client, SList<weak ECal.ComponentId?> cids) {
+#endif
         debug (@"Received $(cids.length()) removed event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
-        var removed_events = new Gee.ArrayList<E.CalComponent> ((Gee.EqualDataFunc<E.CalComponent>?) Util.calcomponent_equal_func);
+        var removed_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
         cids.foreach ((cid) => {
             if (cid == null)
                 return;
 
-            E.CalComponent event = events.get (cid.uid);
-            removed_events.add (event);
-            debug_event (source, event);
+            var comps = events.get (cid.get_uid ());
+            foreach (ECal.Component event in comps) {
+                removed_events.add (event);
+                debug_event (source, event);
+            }
         });
 
         events_removed (source, removed_events.read_only_view);

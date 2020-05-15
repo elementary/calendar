@@ -97,23 +97,30 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         });
 
         if (parent_dialog.ecal != null) {
-            unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+            unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
             unowned string location = comp.get_location ();
 
             if (location != null) {
                 location_entry.text = location.dup ();
             }
 
-            iCal.GeoType? geo;
+            ICal.Geo? geo;
+#if E_CAL_2_0
+            geo = parent_dialog.ecal.get_geo ();
+#else
             parent_dialog.ecal.get_geo (out geo);
+#endif
+
             bool need_relocation = true;
             if (geo != null) {
-                if (geo.latitude >= Champlain.MIN_LATITUDE && geo.longitude >= Champlain.MIN_LONGITUDE &&
-                    geo.latitude <= Champlain.MAX_LATITUDE && geo.longitude <= Champlain.MAX_LONGITUDE) {
+                var latitude = geo.get_lat ();
+                var longitude = geo.get_lon ();
+                if (latitude >= Champlain.MIN_LATITUDE && longitude >= Champlain.MIN_LONGITUDE &&
+                    latitude <= Champlain.MAX_LATITUDE && longitude <= Champlain.MAX_LONGITUDE) {
                     need_relocation = false;
-                    point.latitude = geo.latitude;
-                    point.longitude = geo.longitude;
-                    if (geo.latitude == 0 && geo.longitude == 0)
+                    point.latitude = latitude;
+                    point.longitude = longitude;
+                    if (latitude == 0 && longitude == 0)
                         need_relocation = true;
                 }
             }
@@ -147,24 +154,34 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
      */
     public void save () {
         // Save the location
-        unowned iCal.Component comp = parent_dialog.ecal.get_icalcomponent ();
+        unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
         string location = location_entry.text;
 
         comp.set_location (location);
         if (map_selected == true) {
             // First, clear the geo
-            int count = comp.count_properties (iCal.PropertyKind.GEO);
+            int count = comp.count_properties (ICal.PropertyKind.GEO_PROPERTY);
 
             for (int i = 0; i < count; i++) {
-                unowned iCal.Property remove_prop = comp.get_first_property (iCal.PropertyKind.GEO);
+#if E_CAL_2_0
+                ICal.Property remove_prop;
+#else
+                unowned ICal.Property remove_prop;
+#endif
+                remove_prop = comp.get_first_property (ICal.PropertyKind.GEO_PROPERTY);
                 comp.remove_property (remove_prop);
             }
 
             // Add the comment
-            var property = new iCal.Property (iCal.PropertyKind.GEO);
-            iCal.GeoType geo = {0, 0};
-            geo.latitude = (float)point.latitude;
-            geo.longitude = (float)point.longitude;
+            var property = new ICal.Property (ICal.PropertyKind.GEO_PROPERTY);
+#if E_CAL_2_0
+            var geo = new ICal.Geo (point.latitude, point.longitude);
+#else
+            var geo = ICal.Geo () {
+                lat = point.latitude,
+                lon = point.longitude
+            };
+#endif
             property.set_geo (geo);
             comp.add_property (property);
         }
@@ -244,7 +261,12 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         } catch (Error e) {
             warning ("Failed to connect to GeoClue2 service: %s", e.message);
             // Fallback to timezone location
-            compute_location.begin (E.Util.get_system_timezone_location ());
+
+#if E_CAL_2_0
+            compute_location.begin (ECal.util_get_system_timezone_location ());
+#else
+            compute_location.begin (ECal.Util.get_system_timezone_location ());
+#endif
             return;
         }
     }
@@ -311,7 +333,7 @@ public class Maya.Marker : Champlain.Marker {
                           pixbuf.rowstride);
             content = image;
             set_size (pixbuf.width, pixbuf.height);
-            translation_x = -pixbuf.width/2;
+            translation_x = -pixbuf.width / 2;
             translation_y = -pixbuf.height;
         } catch (Error e) {
             critical (e.message);

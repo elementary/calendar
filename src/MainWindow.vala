@@ -26,7 +26,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     public const string ACTION_NEW_EVENT = "action_new_event";
     public const string ACTION_SHOW_TODAY = "action_show_today";
 
-    private const ActionEntry[] action_entries = {
+    private const ActionEntry[] ACTION_ENTRIES = {
         { ACTION_NEW_EVENT, action_new_event },
         { ACTION_SHOW_TODAY, action_show_today }
     };
@@ -49,7 +49,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     construct {
-        add_action_entries (action_entries, this);
+        add_action_entries (ACTION_ENTRIES, this);
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
@@ -121,11 +121,11 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         calview.today ();
     }
 
-    private void on_remove (E.CalComponent comp) {
-        Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, E.CalObjModType.THIS);
+    private void on_remove (ECal.Component comp) {
+        Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
     }
 
-    public void on_modified (E.CalComponent comp) {
+    public void on_modified (ECal.Component comp) {
         E.Source src = comp.get_data ("source");
 
         if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {

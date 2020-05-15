@@ -38,8 +38,14 @@ public class Grid : Gtk.Grid {
     public signal void selection_changed (DateTime new_date);
     private GridDay selected_gridday;
 
-    public Grid () {
+    private static Gtk.CssProvider style_provider;
 
+    static construct {
+        style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("/io/elementary/calendar/Grid.css");
+    }
+
+    construct {
         // Gtk.Grid properties
         insert_column (7);
         set_column_homogeneous (true);
@@ -60,7 +66,9 @@ public class Grid : Gtk.Grid {
         day.set_selected (true);
         day.set_state_flags (Gtk.StateFlags.FOCUSED, false);
         selection_changed (selected_date);
-        Settings.SavedState.get_default ().selected_day = selected_date.format ("%Y-%j");
+
+        Maya.Application.saved_state.set_string ("selected-day", selected_date.format ("%Y-%j"));
+
         var calmodel = Maya.Model.CalendarModel.get_default ();
         var date_month = selected_date.get_month () - calmodel.month_start.get_month ();
         var date_year = selected_date.get_year () - calmodel.month_start.get_year ();
@@ -88,12 +96,13 @@ public class Grid : Gtk.Grid {
         var today = new DateTime.now_local ();
 
         Gee.List<DateTime> old_dates;
-        if (grid_range == null)
+        if (grid_range == null) {
             old_dates = new Gee.ArrayList<DateTime> ();
-        else
-            old_dates = grid_range.to_list();
+        } else {
+            old_dates = grid_range.to_list ();
+        }
 
-        var new_dates = new_range.to_list();
+        var new_dates = new_range.to_list ();
 
         var data_new = new Gee.HashMap<uint, GridDay> ();
 
@@ -105,9 +114,7 @@ public class Grid : Gtk.Grid {
         int i=0;
         int col = 0, row = 0;
 
-        var style_provider = Util.Css.get_css_provider ();
-
-        for (i=0; i<new_dates.size; i++) {
+        for (i = 0; i < new_dates.size; i++) {
             var new_date = new_dates [i];
             GridDay day;
             if (i < old_dates.size) {
@@ -127,16 +134,17 @@ public class Grid : Gtk.Grid {
                 });
 
                 if (col == 0) {
-                    day.get_style_context().add_provider (style_provider, 600);
-                    day.get_style_context().add_class ("firstcol");
+                    unowned Gtk.StyleContext day_context = day.get_style_context ();
+                    day_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                    day_context.add_class ("firstcol");
                 }
 
-                attach (day, col, row, 1, 1);
+                attach (day, col, row);
                 day.show_all ();
             }
 
-            col = (col+1) % 7;
-            row = (col==0) ? row+1 : row;
+            col = (col + 1) % 7;
+            row = (col == 0) ? row + 1 : row;
             data_new.set (day_hash (new_date), day);
         }
 
@@ -173,29 +181,13 @@ public class Grid : Gtk.Grid {
     /**
      * Puts the given event on the grid.
      */
-    public void add_event (E.CalComponent event) {
-        unowned iCal.Component comp = event.get_icalcomponent ();
-        foreach (var dt_range in Util.event_date_ranges (comp, grid_range)) {
-            add_buttons_for_range (dt_range, event);
+    public void add_event (ECal.Component event) {
+        foreach (var grid_day in data.values) {
+            if (Util.calcomp_is_on_day (event, grid_day.date)) {
+                var button = new EventButton (event);
+                grid_day.add_event_button (button);
+            }
         }
-    }
-
-    /**
-     * Adds an eventbutton to the grid for the given event at each day of the given range.
-     */
-    void add_buttons_for_range (Util.DateRange dt_range, E.CalComponent event) {
-        foreach (var date in dt_range) {
-            EventButton button = new EventButton (event, date);
-            add_button_for_day (date, button);
-        }
-    }
-
-    void add_button_for_day (DateTime date, EventButton button) {
-        var hash = day_hash (date);
-        if (data.has_key (hash) == false)
-            return;
-        GridDay grid_day = data.get (hash);
-        grid_day.add_event_button (button);
     }
 
     uint day_hash (DateTime date) {
@@ -205,29 +197,17 @@ public class Grid : Gtk.Grid {
     /**
      * Removes the given event from the grid.
      */
-    public void remove_event (E.CalComponent event) {
-        foreach(var grid_day in data.values) {
+    public void remove_event (ECal.Component event) {
+        foreach (var grid_day in data.values) {
             grid_day.remove_event (event);
         }
     }
 
-    public void update_event (E.CalComponent event) {
-        Gee.Collection<Util.DateRange> event_ranges = Util.event_date_ranges (event.get_icalcomponent (), grid_range);
-
+    public void update_event (ECal.Component event) {
         foreach (var grid_day in data.values) {
-            bool contains = false;
-
-            foreach (Util.DateRange event_range in event_ranges) {
-                if (Util.is_day_in_range (grid_day.date, event_range)) {
-                    contains = true;
-                }
-            }
-
-            if (contains) {
-                if (!grid_day.update_event (event)) {
-                    EventButton button = new EventButton (event, grid_day.date);
-                    add_button_for_day (grid_day.date, button);
-                }
+            if (Util.calcomp_is_on_day (event, grid_day.date)) {
+                var button = new EventButton (event);
+                grid_day.add_event_button (button);
             } else {
                 grid_day.remove_event (event);
             }
@@ -238,7 +218,7 @@ public class Grid : Gtk.Grid {
      * Removes all events from the grid.
      */
     public void remove_all_events () {
-        foreach(var grid_day in data.values) {
+        foreach (var grid_day in data.values) {
             grid_day.clear_events ();
         }
     }

@@ -19,14 +19,14 @@
 
 public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
     public signal void removed ();
-    public iCal.Property attendee;
+    public ICal.Property attendee;
     private Folks.Individual individual;
     private Gtk.Label name_label;
     private Gtk.Label mail_label;
     private Granite.Widgets.Avatar avatar;
 
-    public GuestGrid (iCal.Property attendee) {
-        this.attendee = new iCal.Property.clone (attendee);
+    public GuestGrid (ICal.Property attendee) {
+        this.attendee = attendee.clone ();
         individual = null;
 
         var status_label = new Gtk.Label ("");
@@ -35,18 +35,23 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         var status_label_context = status_label.get_style_context ();
         status_label_context.add_class (Granite.STYLE_CLASS_H4_LABEL);
 
-        unowned iCal.Parameter parameter = attendee.get_first_parameter (iCal.ParameterKind.PARTSTAT);
+#if E_CAL_2_0
+        ICal.Parameter parameter;
+#else
+        unowned ICal.Parameter parameter;
+#endif
+        parameter = attendee.get_first_parameter (ICal.ParameterKind.PARTSTAT_PARAMETER);
         if (parameter != null) {
             switch (parameter.get_partstat ()) {
-                case iCal.ParameterPartStat.ACCEPTED:
+                case ICal.ParameterPartstat.ACCEPTED:
                     status_label.label = _("Accepted");
                     status_label_context.add_class ("success");
                     break;
-                case iCal.ParameterPartStat.DECLINED:
+                case ICal.ParameterPartstat.DECLINED:
                     status_label.label = _("Declined");
                     status_label_context.add_class (Gtk.STYLE_CLASS_ERROR);
                     break;
-                case iCal.ParameterPartStat.TENTATIVE:
+                case ICal.ParameterPartstat.TENTATIVE:
                     status_label.label = _("Maybe");
                     status_label_context.add_class (Gtk.STYLE_CLASS_ERROR);
                     break;
@@ -60,9 +65,11 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         var mail = attendee.get_attendee ().replace ("mailto:", "");
 
         name_label = new Gtk.Label (Markup.escape_text (mail.split ("@", 2)[0]));
+        name_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
         name_label.xalign = 0;
 
         mail_label = new Gtk.Label (Markup.escape_text (mail));
+        mail_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
         mail_label.hexpand = true;
         mail_label.xalign = 0;
 

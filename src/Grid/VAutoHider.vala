@@ -103,7 +103,7 @@ namespace Maya.View {
                 }
             }
 
-            int more = children_length  - shown_children;
+            int more = children_length - shown_children;
             if (shown_children != children_length && more > 0) {
                 more_label.show ();
                 more_label.set_label (_("%u more…").printf ((uint)more));

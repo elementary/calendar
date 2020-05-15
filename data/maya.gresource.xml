@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/elementary/calendar/">
+    <file alias="event-appointment-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-appointment-symbolic.svg</file>
+    <file alias="event-birthday-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-birthday-symbolic.svg</file>
+    <file alias="event-call-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-call-symbolic.svg</file>
+    <file alias="event-cocktails-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-cocktails-symbolic.svg</file>
+    <file alias="event-driving-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-driving-symbolic.svg</file>
+    <file alias="event-flight-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-flight-symbolic.svg</file>
+    <file alias="event-food-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-food-symbolic.svg</file>
+    <file alias="event-legal-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-legal-symbolic.svg</file>
+    <file alias="event-movie-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-movie-symbolic.svg</file>
+    <file alias="event-wedding-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-wedding-symbolic.svg</file>
     <file alias="calendar-go-today.svg" compressed="true" preprocess="xml-stripblanks">calendar-go-today.svg</file>
     <file alias="location-marker.svg" compressed="true" preprocess="xml-stripblanks">LocationMarker.svg</file>
     <file alias="AgendaEventRow.css" compressed="true">style/AgendaEventRow.css</file>
     <file alias="Application.css" compressed="true">style/Application.css</file>
-    <file alias="calendar.css" compressed="true">style/calendar.css</file>
     <file alias="ColorButton.css" compressed="true">style/ColorButton.css</file>
+    <file alias="Grid.css" compressed="true">style/Grid.css</file>
+    <file alias="Header.css" compressed="true">style/Header.css</file>
+    <file alias="WeekLabels.css" compressed="true">style/WeekLabels.css</file>
   </gresource>
 </gresources>

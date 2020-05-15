@@ -34,7 +34,7 @@ namespace Maya.View.Widgets {
             Util.save_temp_selected_calendars ();
 
             string file_path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
-            File cal_file = File.new_for_path(file_path);
+            File cal_file = File.new_for_path (file_path);
 
             try {
                 contract.execute_with_file (cal_file);
@@ -69,7 +69,7 @@ namespace Maya.View.Widgets {
             } catch (GLib.Error error) {
                 critical (error.message);
             }
-            Gtk.MenuItem item = new Gtk.MenuItem.with_label(_("Export Calendar…"));
+            Gtk.MenuItem item = new Gtk.MenuItem.with_label (_("Export Calendar…"));
             item.activate.connect (savecal);
             menu.append (item);
             menu.show_all ();
@@ -97,8 +97,8 @@ namespace Maya.View.Widgets {
             if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
                 var destination = filechooser.get_filename ();
                 if (destination == null) {
-                    destination = filechooser.get_current_folder();
-                } else if (!destination.has_suffix(".ics")) {
+                    destination = filechooser.get_current_folder ();
+                } else if (!destination.has_suffix (".ics")) {
                     destination += ".ics";
                 }
                 try {

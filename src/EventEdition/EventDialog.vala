@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -28,7 +28,7 @@ public enum EventType {
 public class EventDialog : Gtk.Dialog {
         public E.Source? source { get; set; }
         public E.Source? original_source { get; private set; }
-        public E.CalComponent ecal { get; set; }
+        public ECal.Component ecal { get; set; }
         public DateTime date_time { get; set; }
 
         /**
@@ -36,7 +36,7 @@ public class EventDialog : Gtk.Dialog {
          */
         public bool can_edit = true;
 
-        private E.CalObjModType mod_type { get; private set; default = E.CalObjModType.ALL; }
+        private ECal.ObjModType mod_type { get; private set; default = ECal.ObjModType.ALL; }
         private EventType event_type { get; private set; }
 
         private EventEdition.GuestsPanel guests_panel;
@@ -45,7 +45,7 @@ public class EventDialog : Gtk.Dialog {
         private EventEdition.ReminderPanel reminder_panel;
         private EventEdition.RepeatPanel repeat_panel;
 
-        public EventDialog (E.CalComponent? ecal = null, DateTime? date_time = null) {
+        public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null) {
             this.deletable = false;
 
             if (ecal != null)
@@ -82,13 +82,27 @@ public class EventDialog : Gtk.Dialog {
                     if (!event_parsed) {
                         var ev = parser.parse_source (ev_str);
                         info_panel.title = ev.title;
-                        info_panel.from_date = ev.from;
-                        info_panel.to_date = ev.to;
-                        info_panel.from_time = ev.from;
-                        info_panel.to_time = ev.to;
-                        info_panel.all_day = ev.all_day;
-                        guests_panel.guests = ev.participants;
-                        location_panel.location = ev.location;
+
+                        if (ev.date_parsed) {
+                            info_panel.from_date = ev.from;
+                            info_panel.to_date = ev.to;
+                        }
+
+                        if (ev.time_parsed) {
+                            info_panel.from_time = ev.from;
+                            info_panel.to_time = ev.to;
+                        }
+
+                        if (ev.all_day != null) {
+                            info_panel.all_day = ev.all_day;
+                        }
+
+                        guests_panel.guests += ev.participants;
+
+                        if (ev.location.length > 0) {
+                            location_panel.location = ev.location;
+                        }
+
                         event_parsed = true;
                     }
                     else

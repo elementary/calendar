@@ -19,13 +19,11 @@
  */
 
 public class Maya.EventMenu : Gtk.Menu {
-    public E.CalComponent comp { get; construct set; }
-    public GLib.DateTime date { get; construct; }
+    public ECal.Component comp { get; construct set; }
 
-    public EventMenu (E.CalComponent comp, GLib.DateTime date) {
+    public EventMenu (ECal.Component comp) {
         Object (
-             comp: comp,
-             date: date
+             comp: comp
          );
     }
 
@@ -55,8 +53,6 @@ public class Maya.EventMenu : Gtk.Menu {
         append (remove_item);
         append (edit_item);
 
-        remove_item.activate.connect (remove_event);
-
         edit_item.activate.connect (() => {
             ((Maya.Application) GLib.Application.get_default ()).window.on_modified (comp);
         });
@@ -64,19 +60,11 @@ public class Maya.EventMenu : Gtk.Menu {
 
     private void remove_event () {
         var calmodel = Model.CalendarModel.get_default ();
-        calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, E.CalObjModType.ALL);
+        calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.ALL);
     }
 
     private void add_exception () {
-        unowned iCal.Component comp_ical = comp.get_icalcomponent ();
-        iCal.Component ical = new iCal.Component.clone (comp_ical);
-
-        var exdate = new iCal.Property (iCal.PropertyKind.EXDATE);
-        exdate.set_exdate (Util.date_time_to_ical (date, null));
-        ical.add_property (exdate);
-        comp.set_icalcomponent ((owned) ical);
-
         var calmodel = Model.CalendarModel.get_default ();
-        calmodel.update_event (comp.get_data<E.Source> ("source"), comp, E.CalObjModType.ALL);
+        calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
     }
 }

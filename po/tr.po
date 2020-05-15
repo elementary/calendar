@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-06-05 18:20+0000\n"
+"POT-Creation-Date: 2020-03-26 16:51+0000\n"
+"PO-Revision-Date: 2020-05-03 16:00+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:304
 msgid "On this computer"
 msgstr "Bu bilgisayarda"
 
@@ -72,7 +72,7 @@ msgstr "Güvenli bağlantı kullan"
 msgid "Server handles meeting invitations"
 msgstr "Toplantı davetiyelerini sunucuda topla"
 
-#: src/AgendaView.vala:50
+#: src/AgendaView.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -80,47 +80,47 @@ msgstr ""
 "Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
 "gösterilecek."
 
-#: src/AgendaView.vala:150
+#: src/AgendaView.vala:137
 msgid "During the day"
 msgstr "Gündüzleri"
 
-#: src/AgendaView.vala:158
+#: src/AgendaView.vala:145
 msgid "All day"
 msgstr "Tüm gün"
 
-#: src/AgendaView.vala:275
+#: src/AgendaView.vala:262
 msgid "Tomorrow"
 msgstr "Yarın"
 
-#: src/AgendaView.vala:278
+#: src/AgendaView.vala:265
 msgid "This Week"
 msgstr "Bu Hafta"
 
-#: src/AgendaView.vala:281
+#: src/AgendaView.vala:268
 msgid "Next Week"
 msgstr "Gelecek Hafta"
 
-#: src/AgendaView.vala:284
+#: src/AgendaView.vala:271
 msgid "This Month"
 msgstr "Bu Ay"
 
-#: src/AgendaView.vala:287
+#: src/AgendaView.vala:274
 msgid "Next Month"
 msgstr "Gelecek Ay"
 
-#: src/Application.vala:47
+#: src/Application.vala:52
 msgid "Create an event"
 msgstr "Etkinlik oluştur"
 
-#: src/Application.vala:48
+#: src/Application.vala:53
 msgid "Focus the given day"
 msgstr "Verilen güne odaklan"
 
-#: src/Application.vala:48
+#: src/Application.vala:53
 msgid "date"
 msgstr "tarih"
 
-#: src/Application.vala:140
+#: src/Application.vala:148
 msgid "Calendar"
 msgstr "Takvim"
 
@@ -152,55 +152,55 @@ msgstr "Etkinlik Ekle"
 msgid "Edit Event"
 msgstr "Etkinliği Düzenle"
 
-#: src/EventEdition/EventDialog.vala:100
+#: src/EventEdition/EventDialog.vala:114
 msgid "General Informations"
 msgstr "Genel Bilgiler"
 
-#: src/EventEdition/EventDialog.vala:101
+#: src/EventEdition/EventDialog.vala:115
 msgid "Location"
 msgstr "Konum"
 
-#: src/EventEdition/EventDialog.vala:102
+#: src/EventEdition/EventDialog.vala:116
 msgid "Guests"
 msgstr "Konuklar"
 
-#: src/EventEdition/EventDialog.vala:103
+#: src/EventEdition/EventDialog.vala:117
 msgid "Reminders"
-msgstr "Hatırlatmalar"
+msgstr "Hatırlatıcılar"
 
-#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
+#: src/EventEdition/EventDialog.vala:118 src/EventEdition/RepeatPanel.vala:137
 #: src/EventEdition/RepeatPanel.vala:170
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Tekrar"
 msgstr[1] "Tekrar"
 
-#: src/EventEdition/EventDialog.vala:127
+#: src/EventEdition/EventDialog.vala:141
 msgid "Delete Event"
 msgstr "Etkinliği Sil"
 
-#: src/EventEdition/EventDialog.vala:140
+#: src/EventEdition/EventDialog.vala:154
 msgid "Create Event"
 msgstr "Etkinlik Oluştur"
 
-#: src/EventEdition/EventDialog.vala:143
+#: src/EventEdition/EventDialog.vala:157
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
 
-#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:160 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 msgid "Cancel"
 msgstr "Vazgeç"
 
-#: src/EventEdition/GuestGrid.vala:42
+#: src/EventEdition/GuestGrid.vala:47
 msgid "Accepted"
 msgstr "Kabul edildi"
 
-#: src/EventEdition/GuestGrid.vala:46
+#: src/EventEdition/GuestGrid.vala:51
 msgid "Declined"
 msgstr "Reddedildi"
 
-#: src/EventEdition/GuestGrid.vala:50
+#: src/EventEdition/GuestGrid.vala:55
 msgid "Maybe"
 msgstr "Belki"
 
@@ -216,35 +216,35 @@ msgstr "Katılmayanlar"
 msgid "Invite"
 msgstr "Davet et"
 
-#: src/EventEdition/InfoPanel.vala:77
+#: src/EventEdition/InfoPanel.vala:76
 msgid "From:"
 msgstr "Başlangıç:"
 
-#: src/EventEdition/InfoPanel.vala:83
+#: src/EventEdition/InfoPanel.vala:82
 msgid "All day:"
 msgstr "Tüm gün:"
 
-#: src/EventEdition/InfoPanel.vala:88
+#: src/EventEdition/InfoPanel.vala:87
 msgid "To:"
 msgstr "Bitiş:"
 
-#: src/EventEdition/InfoPanel.vala:106
+#: src/EventEdition/InfoPanel.vala:105
 msgid "Title:"
 msgstr "Başlık:"
 
-#: src/EventEdition/InfoPanel.vala:108
+#: src/EventEdition/InfoPanel.vala:107
 msgid "Name of Event"
 msgstr "Etkinlik Adı"
 
-#: src/EventEdition/InfoPanel.vala:118
+#: src/EventEdition/InfoPanel.vala:117
 msgid "Press enter to parse event"
 msgstr "Etkinliğe göz atmak için Enter tuşuna basın"
 
-#: src/EventEdition/InfoPanel.vala:133
+#: src/EventEdition/InfoPanel.vala:132
 msgid "Calendar:"
 msgstr "Takvim:"
 
-#: src/EventEdition/InfoPanel.vala:140
+#: src/EventEdition/InfoPanel.vala:139
 msgid "Comments:"
 msgstr "Yorumlar:"
 
@@ -258,97 +258,97 @@ msgstr "Mustafa Kemal Atatürk veya Örnek Sokak"
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
-msgstr "Hatırlatmalar:"
+msgstr "Hatırlatıcılar:"
 
 #: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
-msgstr "Hatırlatma Yok"
+msgstr "Hatırlatıcı Yok"
 
-#: src/EventEdition/ReminderPanel.vala:60
+#: src/EventEdition/ReminderPanel.vala:55
 msgid "Add Reminder"
-msgstr "Hatırlatma Ekle"
+msgstr "Hatırlatıcı Ekle"
 
-#: src/EventEdition/ReminderPanel.vala:163
+#: src/EventEdition/ReminderPanel.vala:189
 msgid "At time of event"
 msgstr "Etkinlik vaktinde"
 
-#: src/EventEdition/ReminderPanel.vala:164
+#: src/EventEdition/ReminderPanel.vala:190
 msgid "1 minute before"
 msgstr "1 dakika önce"
 
-#: src/EventEdition/ReminderPanel.vala:165
+#: src/EventEdition/ReminderPanel.vala:191
 msgid "5 minutes before"
 msgstr "5 dakika önce"
 
-#: src/EventEdition/ReminderPanel.vala:166
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "10 minutes before"
 msgstr "10 dakika önce"
 
-#: src/EventEdition/ReminderPanel.vala:167
+#: src/EventEdition/ReminderPanel.vala:193
 msgid "15 minutes before"
 msgstr "15 dakika önce"
 
-#: src/EventEdition/ReminderPanel.vala:168
+#: src/EventEdition/ReminderPanel.vala:194
 msgid "20 minutes before"
 msgstr "20 dakika önce"
 
-#: src/EventEdition/ReminderPanel.vala:169
+#: src/EventEdition/ReminderPanel.vala:195
 msgid "25 minutes before"
 msgstr "25 dakika önce"
 
-#: src/EventEdition/ReminderPanel.vala:170
+#: src/EventEdition/ReminderPanel.vala:196
 msgid "30 minutes before"
 msgstr "30 dakika önce"
 
-#: src/EventEdition/ReminderPanel.vala:171
+#: src/EventEdition/ReminderPanel.vala:197
 msgid "45 minutes before"
 msgstr "45 dakika önce"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:198
 msgid "1 hour before"
 msgstr "1 saat önce"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:199
 msgid "2 hours before"
 msgstr "2 saat önce"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:200
 msgid "3 hours before"
 msgstr "3 saat önce"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:201
 msgid "12 hours before"
 msgstr "12 saat önce"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:202
 msgid "24 hours before"
 msgstr "24 saat önce"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:203
 msgid "2 days before"
 msgstr "2 gün önce"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:204
 msgid "1 week before"
 msgstr "1 hafta önce"
 
-#: src/EventEdition/RepeatPanel.vala:53
+#: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
 msgstr "Tekrarla:"
 
-#: src/EventEdition/RepeatPanel.vala:58
+#: src/EventEdition/RepeatPanel.vala:57
 msgid "Daily"
 msgstr "Günlük"
 
-#: src/EventEdition/RepeatPanel.vala:59
+#: src/EventEdition/RepeatPanel.vala:58
 msgid "Weekly"
 msgstr "Haftalık"
 
-#: src/EventEdition/RepeatPanel.vala:60
+#: src/EventEdition/RepeatPanel.vala:59
 msgid "Monthly"
 msgstr "Aylık"
 
-#: src/EventEdition/RepeatPanel.vala:61
+#: src/EventEdition/RepeatPanel.vala:60
 msgid "Yearly"
 msgstr "Yıllık"
 
@@ -408,211 +408,211 @@ msgstr "İstisnalar:"
 msgid "No Exceptions"
 msgstr "İstisnasız"
 
-#: src/EventEdition/RepeatPanel.vala:225
+#: src/EventEdition/RepeatPanel.vala:217
 msgid "Add Exception"
 msgstr "İstisna Ekle"
 
-#: src/EventEdition/RepeatPanel.vala:359
+#: src/EventEdition/RepeatPanel.vala:377
 msgid "Every last Sunday"
 msgstr "Her ayın son Pazar günü"
 
-#: src/EventEdition/RepeatPanel.vala:362
+#: src/EventEdition/RepeatPanel.vala:380
 msgid "Every last Monday"
-msgstr "Her ayın  son Pazartesi günü"
+msgstr "Her ayın son Pazartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:365
+#: src/EventEdition/RepeatPanel.vala:383
 msgid "Every last Tuesday"
 msgstr "Her ayın son Salı günü"
 
-#: src/EventEdition/RepeatPanel.vala:368
+#: src/EventEdition/RepeatPanel.vala:386
 msgid "Every last Wednesday"
 msgstr "Her ayın son Çarşamba günü"
 
-#: src/EventEdition/RepeatPanel.vala:371
+#: src/EventEdition/RepeatPanel.vala:389
 msgid "Every last Thursday"
 msgstr "Her ayın son Perşembe günü"
 
-#: src/EventEdition/RepeatPanel.vala:374
+#: src/EventEdition/RepeatPanel.vala:392
 msgid "Every last Friday"
 msgstr "Her ayın son Cuma günü"
 
-#: src/EventEdition/RepeatPanel.vala:377
+#: src/EventEdition/RepeatPanel.vala:395
 msgid "Every last Saturday"
 msgstr "Her ayın son Cumartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:384
+#: src/EventEdition/RepeatPanel.vala:402
 msgid "Every first Sunday"
 msgstr "Her ayın ilk Pazar günü"
 
-#: src/EventEdition/RepeatPanel.vala:387
+#: src/EventEdition/RepeatPanel.vala:405
 msgid "Every first Monday"
 msgstr "Her ayın ilk Pazartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:390
+#: src/EventEdition/RepeatPanel.vala:408
 msgid "Every first Tuesday"
 msgstr "Her ayın ilk Salı günü"
 
-#: src/EventEdition/RepeatPanel.vala:393
+#: src/EventEdition/RepeatPanel.vala:411
 msgid "Every first Wednesday"
 msgstr "Her ayın ilk Çarşamba günü"
 
-#: src/EventEdition/RepeatPanel.vala:396
+#: src/EventEdition/RepeatPanel.vala:414
 msgid "Every first Thursday"
 msgstr "Her ayın ilk Perşembe günü"
 
-#: src/EventEdition/RepeatPanel.vala:399
+#: src/EventEdition/RepeatPanel.vala:417
 msgid "Every first Friday"
 msgstr "Her ayın ilk Cuma günü"
 
-#: src/EventEdition/RepeatPanel.vala:402
+#: src/EventEdition/RepeatPanel.vala:420
 msgid "Every first Saturday"
 msgstr "Her ayın ilk Cumartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:409
+#: src/EventEdition/RepeatPanel.vala:427
 msgid "Every second Sunday"
 msgstr "Her ayın ikinci Pazar günü"
 
-#: src/EventEdition/RepeatPanel.vala:412
+#: src/EventEdition/RepeatPanel.vala:430
 msgid "Every second Monday"
 msgstr "Her ayın ikinci Pazartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:415
+#: src/EventEdition/RepeatPanel.vala:433
 msgid "Every second Tuesday"
 msgstr "Her ayın ikinci Salı günü"
 
-#: src/EventEdition/RepeatPanel.vala:418
+#: src/EventEdition/RepeatPanel.vala:436
 msgid "Every second Wednesday"
 msgstr "Her ayın ikinci Çarşamba günü"
 
-#: src/EventEdition/RepeatPanel.vala:421
+#: src/EventEdition/RepeatPanel.vala:439
 msgid "Every second Thursday"
 msgstr "Her ayın ikinci Perşembe günü"
 
-#: src/EventEdition/RepeatPanel.vala:424
+#: src/EventEdition/RepeatPanel.vala:442
 msgid "Every second Friday"
 msgstr "Her ayın ikinci Cuma günü"
 
-#: src/EventEdition/RepeatPanel.vala:427
+#: src/EventEdition/RepeatPanel.vala:445
 msgid "Every second Saturday"
 msgstr "Her ayın ikinci Cumartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:434
+#: src/EventEdition/RepeatPanel.vala:452
 msgid "Every third Sunday"
 msgstr "Her ayın üçüncü Pazar günü"
 
-#: src/EventEdition/RepeatPanel.vala:437
+#: src/EventEdition/RepeatPanel.vala:455
 msgid "Every third Monday"
 msgstr "Her ayın üçüncü Pazartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:440
+#: src/EventEdition/RepeatPanel.vala:458
 msgid "Every third Tuesday"
 msgstr "Her ayın üçüncü Salı günü"
 
-#: src/EventEdition/RepeatPanel.vala:443
+#: src/EventEdition/RepeatPanel.vala:461
 msgid "Every third Wednesday"
 msgstr "Her ayın üçüncü Çarşamba günü"
 
-#: src/EventEdition/RepeatPanel.vala:446
+#: src/EventEdition/RepeatPanel.vala:464
 msgid "Every third Thursday"
 msgstr "Her ayın üçüncü Perşembe günü"
 
-#: src/EventEdition/RepeatPanel.vala:449
+#: src/EventEdition/RepeatPanel.vala:467
 msgid "Every third Friday"
 msgstr "Her ayın üçüncü Cuma günü"
 
-#: src/EventEdition/RepeatPanel.vala:452
+#: src/EventEdition/RepeatPanel.vala:470
 msgid "Every third Saturday"
 msgstr "Her ayın üçüncü Cumartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:459
+#: src/EventEdition/RepeatPanel.vala:477
 msgid "Every fourth Sunday"
 msgstr "Her ayın dördüncü Pazar günü"
 
-#: src/EventEdition/RepeatPanel.vala:462
+#: src/EventEdition/RepeatPanel.vala:480
 msgid "Every fourth Monday"
 msgstr "Her ayın dördüncü Pazartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:465
+#: src/EventEdition/RepeatPanel.vala:483
 msgid "Every fourth Tuesday"
 msgstr "Her ayın dördüncü Salı günü"
 
-#: src/EventEdition/RepeatPanel.vala:468
+#: src/EventEdition/RepeatPanel.vala:486
 msgid "Every fourth Wednesday"
 msgstr "Her ayın dördüncü Çarşamba günü"
 
-#: src/EventEdition/RepeatPanel.vala:471
+#: src/EventEdition/RepeatPanel.vala:489
 msgid "Every fourth Thursday"
 msgstr "Her ayın dördüncü Perşembe günü"
 
-#: src/EventEdition/RepeatPanel.vala:474
+#: src/EventEdition/RepeatPanel.vala:492
 msgid "Every fourth Friday"
 msgstr "Her ayın dördüncü Cuma günü"
 
-#: src/EventEdition/RepeatPanel.vala:477
+#: src/EventEdition/RepeatPanel.vala:495
 msgid "Every fourth Saturday"
 msgstr "Her ayın dördüncü Cumartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:484
+#: src/EventEdition/RepeatPanel.vala:502
 msgid "Every fifth Sunday"
 msgstr "Her ayın beşinci Pazar günü"
 
-#: src/EventEdition/RepeatPanel.vala:487
+#: src/EventEdition/RepeatPanel.vala:505
 msgid "Every fifth Monday"
 msgstr "Her ayın beşinci Pazartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:490
+#: src/EventEdition/RepeatPanel.vala:508
 msgid "Every fifth Tuesday"
 msgstr "Her ayın beşinci Salı günü"
 
-#: src/EventEdition/RepeatPanel.vala:493
+#: src/EventEdition/RepeatPanel.vala:511
 msgid "Every fifth Wednesday"
 msgstr "Her ayın beşinci Çarşamba günü"
 
-#: src/EventEdition/RepeatPanel.vala:496
+#: src/EventEdition/RepeatPanel.vala:514
 msgid "Every fifth Thursday"
 msgstr "Her ayın beşinci Perşembe günü"
 
-#: src/EventEdition/RepeatPanel.vala:499
+#: src/EventEdition/RepeatPanel.vala:517
 msgid "Every fifth Friday"
 msgstr "Her ayın beşinci Cuma günü"
 
-#: src/EventEdition/RepeatPanel.vala:502
+#: src/EventEdition/RepeatPanel.vala:520
 msgid "Every fifth Saturday"
 msgstr "Her ayın beşinci Cumartesi günü"
 
-#: src/EventEdition/RepeatPanel.vala:512
+#: src/EventEdition/RepeatPanel.vala:530
 msgid "Mon"
 msgstr "Pzt"
 
-#: src/EventEdition/RepeatPanel.vala:513
+#: src/EventEdition/RepeatPanel.vala:531
 msgid "Tue"
 msgstr "Sal"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:532
 msgid "Wed"
 msgstr "Çar"
 
-#: src/EventEdition/RepeatPanel.vala:515
+#: src/EventEdition/RepeatPanel.vala:533
 msgid "Thu"
 msgstr "Prş"
 
-#: src/EventEdition/RepeatPanel.vala:516
+#: src/EventEdition/RepeatPanel.vala:534
 msgid "Fri"
 msgstr "Cum"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:535
 msgid "Sat"
 msgstr "Cmt"
 
-#: src/EventEdition/RepeatPanel.vala:518
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Sun"
 msgstr "Paz"
 
-#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
 msgid "Hide Week Numbers"
 msgstr "Hafta Numaralarını Gizle"
 
-#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:67
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
 msgid "Show Week Numbers"
 msgstr "Hafta Numaralarını Göster"
 
@@ -654,7 +654,7 @@ msgstr "Takvim Oluştur"
 msgid "Save"
 msgstr "Kaydet"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
 msgid "Remove"
 msgstr "Sil"
 
@@ -662,7 +662,7 @@ msgstr "Sil"
 msgid "Not Removable"
 msgstr "Kaldırılamaz"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
 msgid "Edit…"
 msgstr "Düzenle…"
 
@@ -683,28 +683,100 @@ msgstr "\"%s\" kaldırıldı"
 msgid "Add New Calendar…"
 msgstr "Yeni Takvim Ekle…"
 
+#. /Translators: Give a list of appointment related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:65
+msgid "appointment;meeting"
+msgstr "randevu;toplantı;appointment;meeting"
+
+#. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:70
+msgid "birthday;anniversary;party"
+msgstr ""
+"doğumgünü;doğum günü;yıldönümü;yıl dönümü;parti;birthday;anniversary;party"
+
+#. /Translators: Give a list of voice call related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:75
+msgid "call;phone;telephone;ring"
+msgstr "ara;arama yap;çağrı;çağrı yap;telefon;çaldır;call;phone;telephone;ring"
+
+#. /Translators: Give a list of social drinking related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:80
+msgid "bar;cocktails;drinks;happy hour"
+msgstr ""
+"bar;kokteyller;içecekler;içkiler;indirimli saat;bar;cocktails;drinks;happy "
+"hour"
+
+#. /Translators: Give a list of car driving related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:85
+msgid "car;drive;driving;road trip;"
+msgstr "araba;sürmek;sürüş;yolculuk; car;drive;driving;road trip;"
+
+#. /Translators: Give a list of air travel related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:90
+msgid "flight;airport;"
+msgstr "uçuş;havalimanı;havaalanı;flight;airport;"
+
+#. /Translators: Give a list of food consumption related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:95
+msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
+msgstr ""
+"kahvaltı;brunch;öğle yemeği;akşam yemeği;et lokantası;hamburger;yemek;barbekü"
+";breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
+
+#. /Translators: Give a list of law related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:100
+msgid "court;jury;tax;attorney;lawyer;contract"
+msgstr ""
+"mahkeme;jüri;vergi;avukat;sözleşme;court;jury;tax;attorney;lawyer;contract"
+
+#. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:105
+msgid "movie"
+msgstr "film;sinema;movie"
+
+#. /Translators: Give a list of wedding related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:110
+msgid "wedding"
+msgstr "düğün;wedding"
+
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:176
+#: src/Widgets/AgendaEventRow.vala:310
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:179
+#: src/Widgets/AgendaEventRow.vala:313
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:188
+#: src/Widgets/AgendaEventRow.vala:325
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
+#. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
+#: src/Widgets/AgendaEventRow.vala:334
+#, c-format
+msgid "%s at %s"
+msgstr "%s saat %s"
+
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:195
+#: src/Widgets/AgendaEventRow.vala:337
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
@@ -730,11 +802,11 @@ msgstr "Takvimi Dışarı Aktar…"
 msgid "calendar.ics"
 msgstr "takvim.ics"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:39
 msgid "Remove Event"
 msgstr "Etkinliği Kaldır"
 
-#: src/Widgets/EventMenu.vala:43
+#: src/Widgets/EventMenu.vala:41
 msgid "Remove Occurrence"
 msgstr "Oluşumu Kaldır"
 

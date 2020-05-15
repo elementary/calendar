@@ -37,10 +37,23 @@ public class Maya.View.CalendarView : Gtk.Grid {
     private Gtk.Stack stack { get; private set; }
     private Gtk.Grid big_grid { get; private set; }
     private Gtk.Label spacer { get; private set; }
-    private GLib.Settings show_weeks;
+    private static GLib.Settings show_weeks;
 
-    public CalendarView () {
-        selected_date = Settings.SavedState.get_default ().get_selected ();
+    private static Gtk.CssProvider style_provider;
+
+    static construct {
+        style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("/io/elementary/calendar/WeekLabels.css");
+
+        if (Application.wingpanel_settings != null) {
+            show_weeks = Application.wingpanel_settings;
+        } else {
+            show_weeks = Application.saved_state;
+        }
+    }
+
+    construct {
+        selected_date = Maya.Application.get_selected_datetime ();
         big_grid = create_big_grid ();
 
         stack = new Gtk.Stack ();
@@ -67,13 +80,8 @@ public class Maya.View.CalendarView : Gtk.Grid {
             }
         });
 
-        if (GLib.SettingsSchemaSource.get_default ().lookup (Util.SHOW_WEEKS_SCHEMA, false) != null) {
-            show_weeks = new GLib.Settings (Util.SHOW_WEEKS_SCHEMA);
-            show_weeks.changed["show-weeks"].connect (on_show_weeks_changed);
-            show_weeks.get_value ("show-weeks");
-        } else {
-            Settings.SavedState.get_default ().changed["show-weeks"].connect (on_show_weeks_changed);
-        }
+        show_weeks.changed["show-weeks"].connect (on_show_weeks_changed);
+        show_weeks.get_value ("show-weeks");
 
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         events |= Gdk.EventMask.KEY_PRESS_MASK;
@@ -83,12 +91,12 @@ public class Maya.View.CalendarView : Gtk.Grid {
     }
 
     public Gtk.Grid create_big_grid () {
-        var style_provider = Util.Css.get_css_provider ();
-
         spacer = new Gtk.Label ("");
         spacer.no_show_all = true;
-        spacer.get_style_context().add_provider (style_provider, 600);
-        spacer.get_style_context().add_class ("weeks");
+
+        unowned Gtk.StyleContext spacer_context = spacer.get_style_context ();
+        spacer_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        spacer_context.add_class ("weeks");
 
         weeks = new WeekLabels ();
 
@@ -110,11 +118,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         new_big_grid.show_all ();
         new_big_grid.expand = true;
 
-        if (!Util.show_weeks ())  {
-            spacer.hide ();
-        } else {
-            spacer.show ();
-        }
+        update_spacer_visible ();
 
         return new_big_grid;
     }
@@ -140,14 +144,18 @@ public class Maya.View.CalendarView : Gtk.Grid {
     void on_show_weeks_changed () {
         var model = Model.CalendarModel.get_default ();
         weeks.update (model.data_range.first_dt, model.num_weeks);
-        if (Util.show_weeks ()) {
+        update_spacer_visible ();
+    }
+
+    private void update_spacer_visible () {
+        if (show_weeks.get_boolean ("show-weeks")) {
             spacer.show ();
         } else {
             spacer.hide ();
         }
     }
 
-    void on_events_added (E.Source source, Gee.Collection<E.CalComponent> events) {
+    void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
         Idle.add ( () => {
             foreach (var event in events)
                 add_event (source, event);
@@ -156,7 +164,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         });
     }
 
-    void on_events_updated (E.Source source, Gee.Collection<E.CalComponent> events) {
+    void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
         Idle.add ( () => {
             foreach (var event in events)
                 update_event (source, event);
@@ -165,7 +173,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         });
     }
 
-    void on_events_removed (E.Source source, Gee.Collection<E.CalComponent> events) {
+    void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
         Idle.add ( () => {
             foreach (var event in events)
                 remove_event (source, event);
@@ -208,7 +216,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
         // keep focus date on the same day of the month
         if (selected_date != null) {
-            var bumpdate = model.month_start.add_days (selected_date.get_day_of_month() - 1);
+            var bumpdate = model.month_start.add_days (selected_date.get_day_of_month () - 1);
             grid.focus_date (bumpdate);
         }
 
@@ -224,18 +232,18 @@ public class Maya.View.CalendarView : Gtk.Grid {
     }
 
     /* Render new event on the grid */
-    void add_event (E.Source source, E.CalComponent event) {
-        event.set_data("source", source);
+    void add_event (E.Source source, ECal.Component event) {
+        event.set_data ("source", source);
         grid.add_event (event);
     }
 
     /* Update the event on the grid */
-    void update_event (E.Source source, E.CalComponent event) {
+    void update_event (E.Source source, ECal.Component event) {
         grid.update_event (event);
     }
 
     /* Remove event from the grid */
-    void remove_event (E.Source source, E.CalComponent event) {
+    void remove_event (E.Source source, ECal.Component event) {
         grid.remove_event (event);
     }
 

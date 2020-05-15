@@ -48,15 +48,22 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
     private const int EVENT_MARGIN = 3;
 
+    private static Gtk.CssProvider style_provider;
+
     public GridDay (DateTime date) {
         Object (date: date);
+    }
+
+    static construct {
+        style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("/io/elementary/calendar/Grid.css");
     }
 
     construct {
         event_buttons = new GLib.HashTable<string, EventButton> (str_hash, str_equal);
 
         event_box = new VAutoHider ();
-        event_box.margin =  EVENT_MARGIN;
+        event_box.margin = EVENT_MARGIN;
         event_box.margin_top = 0;
         event_box.expand = true;
 
@@ -66,13 +73,13 @@ public class Maya.View.GridDay : Gtk.EventBox {
         events |= Gdk.EventMask.KEY_PRESS_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
 
-        var style_provider = Util.Css.get_css_provider ();
-        get_style_context ().add_provider (style_provider, 600);
-        get_style_context ().add_class ("cell");
+        unowned Gtk.StyleContext style_context = get_style_context ();
+        style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        style_context.add_class ("cell");
 
         var label = new Gtk.Label ("");
         label.halign = Gtk.Align.END;
-        label.get_style_context ().add_provider (style_provider, 600);
+        label.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         label.margin = EVENT_MARGIN;
         label.margin_bottom = 0;
         label.name = "date";
@@ -138,7 +145,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     public void add_event_button (EventButton button) {
-        unowned iCal.Component calcomp = button.comp.get_icalcomponent ();
+        unowned ICal.Component calcomp = button.comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();
         lock (event_buttons) {
             if (event_buttons.contains (uid)) {
@@ -157,8 +164,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
     }
 
-    public bool update_event (E.CalComponent comp) {
-        unowned iCal.Component calcomp = comp.get_icalcomponent ();
+    public bool update_event (ECal.Component comp) {
+        unowned ICal.Component calcomp = comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();
 
         lock (event_buttons) {
@@ -174,8 +181,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
         return true;
     }
 
-    public void remove_event (E.CalComponent comp) {
-        unowned iCal.Component calcomp = comp.get_icalcomponent ();
+    public void remove_event (ECal.Component comp) {
+        unowned ICal.Component calcomp = comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();
         lock (event_buttons) {
             var button = event_buttons.get (uid);
@@ -219,7 +226,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     private bool on_key_press (Gdk.EventKey event) {
-        if (event.keyval == Gdk.keyval_from_name("Return") ) {
+        if (event.keyval == Gdk.keyval_from_name ("Return") ) {
             on_event_add (date);
             return true;
         }

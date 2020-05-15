@@ -47,4 +47,3 @@ namespace Maya.View.Widgets {
     }
 
 }
-
