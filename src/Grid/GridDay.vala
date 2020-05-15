@@ -96,8 +96,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
         key_press_event.connect (on_key_press);
         scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
 
-        const Gtk.TargetEntry dnd = {"text/x-io-elementary-calendar", 0, 0};
-        Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
+        const Gtk.TargetEntry DND = {"text/x-io-elementary-calendar", 0, 0};
+        Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {DND}, Gdk.DragAction.MOVE);
 
         this.notify["date"].connect (() => {
             label.label = date.get_day_of_month ().to_string ();

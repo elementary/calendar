@@ -5,12 +5,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -81,19 +81,21 @@ public class Maya.View.EventButton : Gtk.Revealer {
             return true;
         });
 
-        const Gtk.TargetEntry dnd = {"text/x-io-elementary-calendar", 0, 0};
-        const Gtk.TargetEntry dnd2 = {"text/uri-list", 0, 1};
-        const Gtk.TargetEntry dnd3 = {"text/calendar", 0, 2};
-        Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2, dnd3}, Gdk.DragAction.MOVE);
+        const Gtk.TargetEntry DND = {"text/x-io-elementary-calendar", 0, 0};
+        const Gtk.TargetEntry DND2 = {"text/uri-list", 0, 1};
+        const Gtk.TargetEntry DND3 = {"text/calendar", 0, 2};
+        Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {DND, DND2, DND3}, Gdk.DragAction.MOVE);
 
         event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
             if (info == 0) {
               var comp_id = comp.get_id ();
               if (comp_id.rid != null) {
                 var data = "%s\n%s".printf (comp_id.uid, comp_id.rid);
-                sel.set (Gdk.Atom.intern_static_string ("text/x-io-elementary-calendar"), (int)sizeof(char), data.data);
+                sel.set (Gdk.Atom.intern_static_string ("text/x-io-elementary-calendar"),
+                         (int)sizeof (char), data.data);
               } else {
-                sel.set (Gdk.Atom.intern_static_string ("text/x-io-elementary-calendar"), (int)sizeof(char), comp_id.uid.data);
+                sel.set (Gdk.Atom.intern_static_string ("text/x-io-elementary-calendar"),
+                         (int)sizeof (char), comp_id.uid.data);
               }
             } else if (info == 1) {
               comp.commit_sequence ();
