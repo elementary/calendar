@@ -289,7 +289,7 @@ public class Maya.Model.CalendarModel : Object {
         return events;
     }
 
-    private static int search_rid (E.CalComponent a, string? rid) {
+    private static int search_rid (ECal.Component a, string? rid) {
         string? a_rid = a.get_recurid_as_string ();
         if (a_rid == null && rid == null) {
             return 0;
@@ -298,21 +298,21 @@ public class Maya.Model.CalendarModel : Object {
         return GLib.strcmp (a_rid, rid);
     }
 
-    public E.CalComponent? get_event (string uid, string? rid) {
-        List<weak E.CalClient> clients = source_client.get_values ();
-        foreach (unowned E.CalClient client in clients) {
-            GLib.SList<E.CalComponent> ecalcomps;
+    public ECal.Component? get_event (string uid, string? rid) {
+        List<weak ECal.Client> clients = source_client.get_values ();
+        foreach (unowned ECal.Client client in clients) {
+            GLib.SList<ECal.Component> ecalcomps;
             try {
                 client.get_objects_for_uid_sync (uid, out ecalcomps, null);
                 if (ecalcomps.length () > 0) {
-                    unowned GLib.SList<E.CalComponent> results = ecalcomps.search<string> (rid, search_rid);
+                    unowned GLib.SList<ECal.Component> results = ecalcomps.search<string> (rid, search_rid);
 
                     if (results.length () > 0) {
-                        unowned E.CalComponent comp = results.data;
+                        unowned ECal.Component comp = results.data;
                         comp.set_data ("source", client.source);
                         return comp;
                     } else {
-                        unowned E.CalComponent comp = ecalcomps.data;
+                        unowned ECal.Component comp = ecalcomps.data;
                         comp.set_data ("source", client.source);
                         return comp;
                     }

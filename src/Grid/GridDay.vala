@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -125,22 +125,22 @@ public class Maya.View.GridDay : Gtk.EventBox {
             }
 
             var calmodel = Model.CalendarModel.get_default ();
-            E.CalComponent? comp = calmodel.get_event (uid, rid);
+            ECal.Component? comp = calmodel.get_event (uid, rid);
 
-            unowned iCal.Component icalcomp = comp.get_icalcomponent ();
+            unowned ICal.Component icalcomp = comp.get_icalcomponent ();
             E.Source src = comp.get_data ("source");
             var start = icalcomp.get_dtstart ();
             var end = icalcomp.get_dtend ();
             var gap = date.get_day_of_month () - start.day;
             start.day += gap;
 
-            if (end.is_null_time () == 0) {
+            if (!end.is_null_time ()) {
                 end.day += gap;
                 icalcomp.set_dtend (end);
             }
 
             icalcomp.set_dtstart (start);
-            calmodel.update_event (src, comp, E.CalObjModType.ALL);
+            calmodel.update_event (src, comp, ECal.ObjModType.ALL);
         }
     }
 
