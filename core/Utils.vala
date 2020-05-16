@@ -78,11 +78,11 @@ namespace Maya.Util {
     /**
      * Gets the timezone of the given TimeType as a GLib.TimeZone.
      */
-    private TimeZone timezone_from_ical (ICal.Time date) {
+    private GLib.TimeZone timezone_from_ical (ICal.Time date) {
         // Special case: return default UTC time zone for all-day events
         if (date.is_date ()) {
             debug ("Given date is 'DATE' type, not 'DATE_TIME': Using timezone UTC");
-            return new TimeZone.utc ();
+            return new GLib.TimeZone.utc ();
         }
 
         // Otherwise, get timezone from ICal
@@ -113,7 +113,7 @@ namespace Maya.Util {
         // If nothing else works (timezone is still null), default to UTC
         if (timezone == null) {
             debug ("Date has no timezone info: defaulting to UTC");
-            return new TimeZone.utc ();
+            return new GLib.TimeZone.utc ();
         }
 
         // Get UTC offset and format for GLib.TimeZone constructor
@@ -125,7 +125,7 @@ namespace Maya.Util {
         var minutes = (interval % 3600) / 60;
         var hour_string = "%s%02d:%02d".printf (is_positive ? "+" : "-", hours, minutes);
 
-        return new TimeZone (hour_string);
+        return new GLib.TimeZone (hour_string);
     }
 
     /**
