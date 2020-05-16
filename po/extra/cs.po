@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-03 20:10+0000\n"
-"PO-Revision-Date: 2020-05-07 22:10+0000\n"
+"PO-Revision-Date: 2020-05-11 13:10+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/extra/cs/>"
 "\n"
@@ -41,19 +41,19 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Minor Updates:"
-msgstr ""
+msgstr "Drobné aktualizace:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "Správně uložit připomínky událostí"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Ellipsize event participant details if necessary"
-msgstr ""
+msgstr "V případě nutnosti nahradí podrobnosti o účastnících výpustky"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 msgid "Fix unwanted rescheduling when editing event title"
-msgstr ""
+msgstr "Oprava nechtěného přeplánování při upravování názvu události"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 #: data/io.elementary.calendar.appdata.xml.in:43
@@ -63,15 +63,17 @@ msgstr "Aktualizovány překlady"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
 msgid "Fix crash when editing an event with no location"
-msgstr ""
+msgstr "Oprava pádu při upravování události s nezadaným umístěním"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
+"Oprava potenciálního pádu při načítání událostí s nezadaným časem začátku či "
+"konce"
 
 #: data/io.elementary.calendar.appdata.xml.in:39
 msgid "Make agenda pane fill the whole space"
-msgstr ""
+msgstr "Podokno s agendou vyplní celý prostor"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Set the suggested time for new events to the next whole hour"
@@ -129,7 +131,7 @@ msgstr "Nové překlady"
 
 #: data/io.elementary.calendar.appdata.xml.in:67
 msgid "Update wingpanel-indicator-datetime settings path."
-msgstr ""
+msgstr "Aktualizace popisu umístění nastavení wingpanel-indicator-datetime."
 
 #: data/io.elementary.calendar.appdata.xml.in:68
 msgid "New translations."
