@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -48,12 +48,9 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
         src_map = new GLib.HashTable<string, SourceItem?> (str_hash, str_equal);
 
-        var add_calendar_label = new Gtk.Label (_("Add New Calendar…"));
-        add_calendar_label.xalign = 0;
-
         var add_calendar_button = new Gtk.Button ();
-        add_calendar_button.add (add_calendar_label);
-        add_calendar_button.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+        add_calendar_button.label = _("Add New Calendar…");
+        add_calendar_button.halign = Gtk.Align.CENTER;
 
         main_grid = new Gtk.Grid ();
         main_grid.row_spacing = 6;
