@@ -48,12 +48,8 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
         src_map = new GLib.HashTable<string, SourceItem?> (str_hash, str_equal);
 
-        var add_calendar_label = new Gtk.Label (_("Add New Calendar…"));
-        add_calendar_label.xalign = 0;
-
-        var add_calendar_button = new Gtk.Button ();
-        add_calendar_button.add (add_calendar_label);
-        add_calendar_button.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+        var add_calendar_button = new Gtk.ModelButton ();
+        add_calendar_button.text = _("Add New Calendar…");
 
         main_grid = new Gtk.Grid ();
         main_grid.row_spacing = 6;
