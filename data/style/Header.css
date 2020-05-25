@@ -26,7 +26,7 @@
 
 .daylabel {
     padding: 3px;
-    border-left: solid 1px alpha (black, 0.15);
+    border-left: solid 1px @menu_separator;
 }
 
 .daylabel:first-child {
@@ -34,7 +34,7 @@
 }
 
 .daylabel:dir(rtl) {
-    border-right: solid 1px alpha (black, 0.15);
+    border-right: solid 1px @menu_separator;
     border-left: none;
 }
 

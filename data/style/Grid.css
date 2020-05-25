@@ -18,13 +18,13 @@
 .cell {
     background-color: @base_color;
     border-radius: 0;
-    border-top: solid 1px alpha (black, 0.15);
-    border-left: solid 1px alpha (black, 0.15);
+    border-top: solid 1px @menu_separator;
+    border-left: solid 1px @menu_separator;
     color: @fg_color;
 }
 
 .cell:dir(rtl) {
-    border-right: solid 1px alpha (black, 0.15);
+    border-right: solid 1px @menu_separator;
     border-left: none;
 }
 
