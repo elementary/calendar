@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-26 16:51+0000\n"
-"PO-Revision-Date: 2019-01-25 18:31+0000\n"
-"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
-"Language-Team: Danish <https://weblate.elementary.io/projects/calendar/"
-"calendar/da/>\n"
+"PO-Revision-Date: 2020-05-27 18:11+0000\n"
+"Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
+"Language-Team: Danish <https://l10n.elementary.io/projects/calendar/calendar/"
+"da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-22 06:26+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:304
@@ -46,7 +46,7 @@ msgstr "Behold en lokal kopi"
 
 #: daemon/Daemon.vala:24
 msgid "Print debug information"
-msgstr "Print debug information"
+msgstr "Vis fejlfindingsoplysninger"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -255,7 +255,7 @@ msgstr "Sted:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "Anne Marie ELLER Eksempelgade"
+msgstr "John Smith ELLER Eksempelgade"
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
@@ -688,61 +688,61 @@ msgstr "Tilføj ny kalender…"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr ""
+msgstr "aftale;møde;træf"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "fødselsdag;mærkedag;fest"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "ring;telefon;kald"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "bar;drinks;happy hour;cockstails;fest;diskotek"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "bil;køre;kørsel;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr ""
+msgstr "fly;lufthavn;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr ""
+msgstr "morgenmad;brunch;;middagsmad;aftensmad;burger;frokost"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "retten;jury;advokat;kontrakt"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie"
-msgstr ""
+msgstr "film;biograf;tv"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr ""
+msgstr "giftemål"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:310
@@ -768,7 +768,7 @@ msgstr "%s – %s"
 #: src/Widgets/AgendaEventRow.vala:334
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s kl. %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:337
