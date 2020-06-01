@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-26 16:51+0000\n"
-"PO-Revision-Date: 2020-05-07 22:10+0000\n"
+"PO-Revision-Date: 2020-05-11 13:10+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/calendar/"
 "cs/>\n"
@@ -691,7 +691,7 @@ msgstr "Přidat Nový kalendář…"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr "schůzka;setkání;porada;sraz;"
+msgstr "schůzka;setkání;porada;sraz"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -699,19 +699,19 @@ msgstr "schůzka;setkání;porada;sraz;"
 msgid "birthday;anniversary;party"
 msgstr ""
 "narozeniny;narozeninová oslava;párty;výročí;oslava;výroční oslava;oslava "
-"výročí;"
+"výročí"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr "volat;telefon;hovor;zvonit;telefonovat;prozvánět;"
+msgstr "volat;telefon;hovor;zvonit;telefonovat;prozvánět"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr "bar;koktejly;hospoda;putyka;happy hour;"
+msgstr "bar;koktejly;hospoda;putyka;happy hour"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -731,13 +731,13 @@ msgstr "let;letiště;"
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
 "snídaně;pozdní "
-"snídaně;večeře;oběd;dezert;svačina;steakhouse;jídlo;grilovačka;grilování;"
+"snídaně;večeře;oběd;dezert;svačina;steakhouse;jídlo;grilovačka;grilování"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr "soud;soudce;daň;advokát;právník;smlouva;kontrakt;"
+msgstr "soud;soudce;daň;advokát;právník;smlouva;kontrakt"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -775,7 +775,7 @@ msgstr "%s – %s"
 #: src/Widgets/AgendaEventRow.vala:334
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s v %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:337
