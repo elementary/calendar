@@ -67,7 +67,10 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         populate.begin ();
         stack.show_all ();
 
-        add_calendar_button.clicked.connect (create_source);
+        add_calendar_button.button_release_event.connect (() => {
+            create_source ();
+            return Gdk.EVENT_STOP;
+        });
     }
 
     public async void populate () {
