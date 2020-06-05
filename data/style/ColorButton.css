@@ -9,7 +9,7 @@
     -gtk-icon-shadow: none;
 }
 
-.color-button.red radio {
+.color-button.strawberry radio {
     background: @STRAWBERRY_300;
 }
 
@@ -17,11 +17,11 @@
     background: @ORANGE_300;
 }
 
-.color-button.yellow radio {
+.color-button.banana radio {
     background: @BANANA_500;
 }
 
-.color-button.green radio {
+.color-button.lime radio {
     background: @LIME_500;
 }
 
@@ -29,11 +29,11 @@
     background: @MINT_500;
 }
 
-.color-button.blue radio {
+.color-button.blueberry radio {
     background: @BLUEBERRY_500;
 }
 
-.color-button.purple radio {
+.color-button.grape radio {
     background: @GRAPE_500;
 }
 
@@ -41,7 +41,7 @@
     background: @BUBBLEGUM_500;
 }
 
-.color-button.brown radio {
+.color-button.cocoa radio {
     background: @COCOA_300;
 }
 
