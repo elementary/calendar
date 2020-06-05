@@ -111,89 +111,89 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         var color_label = new Gtk.Label (_("Color:"));
         color_label.xalign = 1;
 
-        color_button_red = new Gtk.RadioButton (null);
+        color_button_strawberry = new Gtk.RadioButton (null);
 
-        var color_button_red_context = color_button_red.get_style_context ();
-        color_button_red_context.add_class ("color-button");
-        color_button_red_context.add_class ("red");
-        color_button_red_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        var color_button_strawberry_context = color_button_strawberry.get_style_context ();
+        color_button_strawberry_context.add_class ("color-button");
+        color_button_strawberry_context.add_class ("strawberry");
+        color_button_strawberry_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        color_button_orange = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_orange = new Gtk.RadioButton.from_widget (color_button_strawberry);
 
         var color_button_orange_context = color_button_orange.get_style_context ();
         color_button_orange_context.add_class ("color-button");
         color_button_orange_context.add_class ("orange");
         color_button_orange_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        color_button_yellow = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_banana = new Gtk.RadioButton.from_widget (color_button_strawberry);
 
-        var color_button_yellow_context = color_button_yellow.get_style_context ();
-        color_button_yellow_context.add_class ("color-button");
-        color_button_yellow_context.add_class ("yellow");
-        color_button_yellow_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        var color_button_banana_context = color_button_banana.get_style_context ();
+        color_button_banana_context.add_class ("color-button");
+        color_button_banana_context.add_class ("banana");
+        color_button_banana_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        color_button_green = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_lime = new Gtk.RadioButton.from_widget (color_button_strawberry);
 
-        var color_button_green_context = color_button_green.get_style_context ();
-        color_button_green_context.add_class ("color-button");
-        color_button_green_context.add_class ("green");
-        color_button_green_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        var color_button_lime_context = color_button_lime.get_style_context ();
+        color_button_lime_context.add_class ("color-button");
+        color_button_lime_context.add_class ("lime");
+        color_button_lime_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         
-        color_button_mint = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_mint = new Gtk.RadioButton.from_widget (color_button_strawberry);
 
         var color_button_mint_context = color_button_mint.get_style_context ();
         color_button_mint_context.add_class ("color-button");
         color_button_mint_context.add_class ("mint");
         color_button_mint_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        color_button_blue = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_blueberry = new Gtk.RadioButton.from_widget (color_button_strawberry);
 
-        var color_button_blue_context = color_button_blue.get_style_context ();
-        color_button_blue_context.add_class ("color-button");
-        color_button_blue_context.add_class ("blue");
-        color_button_blue_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        var color_button_blueberry_context = color_button_blueberry.get_style_context ();
+        color_button_blueberry_context.add_class ("color-button");
+        color_button_blueberry_context.add_class ("blueberry");
+        color_button_blueberry_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        color_button_purple = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_grape = new Gtk.RadioButton.from_widget (color_button_strawberry);
 
-        var color_button_purple_context = color_button_purple.get_style_context ();
-        color_button_purple_context.add_class ("color-button");
-        color_button_purple_context.add_class ("purple");
-        color_button_purple_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        var color_button_grape_context = color_button_grape.get_style_context ();
+        color_button_grape_context.add_class ("color-button");
+        color_button_grape_context.add_class ("grape");
+        color_button_grape_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        color_button_bubblegum = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_bubblegum = new Gtk.RadioButton.from_widget (color_button_strawberry);
 
         var color_button_bubblegum_context = color_button_bubblegum.get_style_context ();
         color_button_bubblegum_context.add_class ("color-button");
         color_button_bubblegum_context.add_class ("bubblegum");
         color_button_bubblegum_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        color_button_brown = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_cocoa = new Gtk.RadioButton.from_widget (color_button_strawberry);
 
-        var color_button_brown_context = color_button_brown.get_style_context ();
-        color_button_brown_context.add_class ("color-button");
-        color_button_brown_context.add_class ("brown");
-        color_button_brown_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        var color_button_cocoa_context = color_button_cocoa.get_style_context ();
+        color_button_cocoa_context.add_class ("color-button");
+        color_button_cocoa_context.add_class ("cocoa");
+        color_button_cocoa_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        color_button_slate = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_slate = new Gtk.RadioButton.from_widget (color_button_strawberry);
 
         var color_button_slate_context = color_button_slate.get_style_context ();
         color_button_slate_context.add_class ("color-button");
         color_button_slate_context.add_class ("slate");
         color_button_slate_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        color_button_none = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_none = new Gtk.RadioButton.from_widget (color_button_strawberry);
 
         var color_grid = new Gtk.Grid ();
         color_grid.column_spacing = 12;
-        color_grid.add (color_button_red);
+        color_grid.add (color_button_strawberry);
         color_grid.add (color_button_orange);
-        color_grid.add (color_button_yellow);
-        color_grid.add (color_button_green);
+        color_grid.add (color_button_banana);
+        color_grid.add (color_button_lime);
         color_grid.add (color_button_mint);
-        color_grid.add (color_button_blue);
-        color_grid.add (color_button_purple);
+        color_grid.add (color_button_blueberry);
+        color_grid.add (color_button_grape);
         color_grid.add (color_button_bubblegum);
-        color_grid.add (color_button_brown);
+        color_grid.add (color_button_cocoa);
         color_grid.add (color_button_slate);
 
         var check_button = new Gtk.CheckButton.with_label (_("Mark as default calendar"));
@@ -202,7 +202,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             set_as_default = !set_as_default;
         });
 
-        color_button_red.toggled.connect (() => {
+        color_button_strawberry.toggled.connect (() => {
             hex_color = "#da3d41";
         });
 
@@ -210,11 +210,11 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             hex_color = "#f37329";
         });
 
-        color_button_yellow.toggled.connect (() => {
+        color_button_banana.toggled.connect (() => {
             hex_color = "#e6a92a";
         });
 
-        color_button_green.toggled.connect (() => {
+        color_button_lime.toggled.connect (() => {
             hex_color = "#81c837";
         });
 
@@ -222,11 +222,11 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             hex_color = "#28bca3";
         });
 
-        color_button_blue.toggled.connect (() => {
+        color_button_blueberry.toggled.connect (() => {
             hex_color = "#3689e6";
         });
 
-        color_button_purple.toggled.connect (() => {
+        color_button_grape.toggled.connect (() => {
             hex_color = "#a56de2";
         });
 
@@ -234,7 +234,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             hex_color = "#de3e80";
         });
 
-        color_button_brown.toggled.connect (() => {
+        color_button_cocoa.toggled.connect (() => {
             hex_color = "#8a715e";
         });
 
@@ -281,31 +281,31 @@ public class Maya.View.SourceDialog : Gtk.Grid {
 
             switch (cal.dup_color ()) {
                 case "#da3d41":
-                    color_button_red.active = true;
+                    color_button_strawberry.active = true;
                     break;
                 case "#f37329":
                     color_button_orange.active = true;
                     break;
                 case "#e6a92a":
-                    color_button_yellow.active = true;
+                    color_button_banana.active = true;
                     break;
                 case "#81c837":
-                    color_button_green.active = true;
+                    color_button_lime.active = true;
                     break;
                 case "#28bca3":
                     color_button_mint.active = true;
                     break;
                 case "#3689e6":
-                    color_button_blue.active = true;
+                    color_button_blueberry.active = true;
                     break;
                 case "#a56de2":
-                    color_button_purple.active = true;
+                    color_button_grape.active = true;
                     break;
                 case "#de3e80":
                     color_button_bubblegum.active = true;
                     break;
                 case "#8a715e":
-                    color_button_brown.active = true;
+                    color_button_cocoa.active = true;
                     break;
                 case "#667885":
                     color_button_slate.active = true;
