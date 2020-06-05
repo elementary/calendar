@@ -205,7 +205,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         });
 
         color_button_strawberry.toggled.connect (() => {
-            hex_color = "#da3d41";
+            hex_color = "#ed5353";
         });
 
         color_button_orange.toggled.connect (() => {
@@ -213,11 +213,11 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         });
 
         color_button_banana.toggled.connect (() => {
-            hex_color = "#e6a92a";
+            hex_color = "#f9c440";
         });
 
         color_button_lime.toggled.connect (() => {
-            hex_color = "#81c837";
+            hex_color = "#68b723";
         });
 
         color_button_mint.toggled.connect (() => {
@@ -282,16 +282,16 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
             switch (cal.dup_color ()) {
-                case "#da3d41":
+                case "#ed5353":
                     color_button_strawberry.active = true;
                     break;
                 case "#f37329":
                     color_button_orange.active = true;
                     break;
-                case "#e6a92a":
+                case "#f9c440":
                     color_button_banana.active = true;
                     break;
-                case "#81c837":
+                case "#68b723":
                     color_button_lime.active = true;
                     break;
                 case "#28bca3":
