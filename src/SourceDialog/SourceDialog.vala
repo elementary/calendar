@@ -270,7 +270,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             event_type = EventType.ADD;
             name_entry.text = "";
             type_combobox.sensitive = true;
-            color_button_red.active = true;
+            color_button_strawberry.active = true;
             create_button.set_label (_("Create Calendar"));
         } else {
             event_type = EventType.EDIT;
