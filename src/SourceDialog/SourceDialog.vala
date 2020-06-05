@@ -138,7 +138,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         color_button_lime_context.add_class ("color-button");
         color_button_lime_context.add_class ("lime");
         color_button_lime_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        
+
         color_button_mint = new Gtk.RadioButton.from_widget (color_button_strawberry);
 
         var color_button_mint_context = color_button_mint.get_style_context ();
