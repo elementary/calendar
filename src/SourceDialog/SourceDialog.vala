@@ -34,13 +34,15 @@ public class Maya.View.SourceDialog : Gtk.Grid {
     private Gtk.ListStore list_store;
     private E.Source source = null;
 
-    private Gtk.RadioButton color_button_red;
+    private Gtk.RadioButton color_button_strawberry;
     private Gtk.RadioButton color_button_orange;
-    private Gtk.RadioButton color_button_yellow;
-    private Gtk.RadioButton color_button_green;
-    private Gtk.RadioButton color_button_blue;
-    private Gtk.RadioButton color_button_purple;
-    private Gtk.RadioButton color_button_brown;
+    private Gtk.RadioButton color_button_banana;
+    private Gtk.RadioButton color_button_lime;
+    private Gtk.RadioButton color_button_mint;
+    private Gtk.RadioButton color_button_blueberry;
+    private Gtk.RadioButton color_button_grape;
+    private Gtk.RadioButton color_button_bubblegum;
+    private Gtk.RadioButton color_button_cocoa;
     private Gtk.RadioButton color_button_slate;
     private Gtk.RadioButton color_button_none;
 
