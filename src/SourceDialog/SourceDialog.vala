@@ -209,7 +209,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         });
 
         color_button_orange.toggled.connect (() => {
-            hex_color = "#f37329";
+            hex_color = "#ffa154";
         });
 
         color_button_banana.toggled.connect (() => {
@@ -285,7 +285,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
                 case "#ed5353":
                     color_button_strawberry.active = true;
                     break;
-                case "#f37329":
+                case "#ffa154":
                     color_button_orange.active = true;
                     break;
                 case "#f9c440":
