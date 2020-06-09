@@ -90,23 +90,29 @@ namespace Maya.Util {
         var tzid = date.get_tzid ();
         // First, try using the tzid property
         if (tzid != null) {
+            /* Standard city names are usable directly by GLib, so we can bypass
+             * the ICal scaffolding completely and just return a new 
+             * GLib.TimeZone here. This method also preserves all the timezone 
+             * information, like going in/out of daylight savings, which parsing
+             * from UTC offset does not.
+             * Note, this can't recover from failure, since GLib.TimeZone 
+             * constructor doesn't communicate failure information. This block 
+             * will always return a GLib.TimeZone, which will be UTC if parsing 
+             * fails for some reason.
+             */
             unowned ICal.Timezone? tzid_zone;
-            if (tzid.has_prefix ("/freeassociation.sourceforge.net/")) {
+            var prefix = "/freeassociation.sourceforge.net/";
+            if (tzid.has_prefix (prefix)) {
                 // TZID has prefix "/freeassociation.sourceforge.net/",
                 // indicating a libical TZID.
-                tzid_zone = ICal.Timezone.get_builtin_timezone_from_tzid (tzid);
+                return new GLib.TimeZone (tzid.offset (prefix.length));
             } else {
                 // TZID does not have libical prefix, indicating an Olson
                 // standard city name.
-                tzid_zone = ICal.Timezone.get_builtin_timezone (tzid);
-            }
-            if (tzid_zone != null) {
-                timezone = tzid_zone;
-            } else {
-                debug ("Error parsing timezone from TZID: trying fallback");
+                return new GLib.TimeZone (tzid);
             }
         }
-        // If tzid fails, try date.get_timezone ()
+        // If tzid fails, try ICal.Time.get_timezone ()
         if (timezone == null && date.get_timezone () != null) {
             timezone = date.get_timezone ();
         }
