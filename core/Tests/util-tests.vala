@@ -144,4 +144,3 @@ int main (string[] args) {
     add_timezone_tests ();
     return Test.run ();
 }
-
