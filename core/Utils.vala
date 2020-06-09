@@ -91,16 +91,15 @@ namespace Maya.Util {
         // First, try using the tzid property
         if (tzid != null) {
             /* Standard city names are usable directly by GLib, so we can bypass
-             * the ICal scaffolding completely and just return a new 
-             * GLib.TimeZone here. This method also preserves all the timezone 
+             * the ICal scaffolding completely and just return a new
+             * GLib.TimeZone here. This method also preserves all the timezone
              * information, like going in/out of daylight savings, which parsing
              * from UTC offset does not.
-             * Note, this can't recover from failure, since GLib.TimeZone 
-             * constructor doesn't communicate failure information. This block 
-             * will always return a GLib.TimeZone, which will be UTC if parsing 
+             * Note, this can't recover from failure, since GLib.TimeZone
+             * constructor doesn't communicate failure information. This block
+             * will always return a GLib.TimeZone, which will be UTC if parsing
              * fails for some reason.
              */
-            unowned ICal.Timezone? tzid_zone;
             var prefix = "/freeassociation.sourceforge.net/";
             if (tzid.has_prefix (prefix)) {
                 // TZID has prefix "/freeassociation.sourceforge.net/",
