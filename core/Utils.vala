@@ -78,7 +78,7 @@ namespace Maya.Util {
     /**
      * Gets the timezone of the given TimeType as a GLib.TimeZone.
      */
-    private GLib.TimeZone timezone_from_ical (ICal.Time date) {
+    public GLib.TimeZone timezone_from_ical (ICal.Time date) {
         // Special case: return default UTC time zone for all-day events
         if (date.is_date ()) {
             debug ("Given date is 'DATE' type, not 'DATE_TIME': Using timezone UTC");
