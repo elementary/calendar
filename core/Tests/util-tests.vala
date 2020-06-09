@@ -1,9 +1,8 @@
 void test_no_timezone () {
     var test_date = new GLib.DateTime.utc (2019, 11, 21, 4, 20, 0);
     var iso_string = test_date.format ("%FT%T");
-    print("\n");
     debug ("\t" + iso_string + "\n"); // 2019-11-21T04:20:00
-    var test_ical = ICal.Time.from_string (iso_string);
+    var test_ical = new ICal.Time.from_string (iso_string);
     debug ("\t" + test_ical.as_ical_string () + "\n"); // 20191121T042000
     // Should have null timezone
     assert (test_ical.get_timezone () == null);
@@ -18,9 +17,8 @@ void test_no_timezone () {
 void test_utc () {
     var test_date = new GLib.DateTime.utc (2019, 11, 21, 4, 20, 0);
     var iso_string = test_date.format ("%FT%TZ");
-    print("\n");
     debug ("\t" + iso_string + "\n"); // 2019-11-21T04:20:00Z
-    var test_ical = ICal.Time.from_string (iso_string);
+    var test_ical = new ICal.Time.from_string (iso_string);
     debug ("\t" + test_ical.as_ical_string () + "\n"); // 20191121T042000Z
 
     // Should not have null timezone
@@ -37,7 +35,7 @@ void test_utc () {
 void test_hour_offset () {
     var test_date = new GLib.DateTime.utc (2019, 11, 21, 9, 20, 0);
     var iso_string = test_date.format ("%FT%TZ");
-    var test_ical = ICal.Time.from_string (iso_string);
+    var test_ical = new ICal.Time.from_string (iso_string);
     assert (!test_ical.is_null_time ());
     var gtz = new GLib.TimeZone ("America/New_York");
     assert (gtz != null);
@@ -59,12 +57,12 @@ void test_half_hour_offset () {
     var test_date = new GLib.DateTime.utc (2019, 11, 20, 18, 50, 0);
     var iso_string = test_date.format ("%FT%TZ");
     debug ("\n\tUTC time: " + iso_string + "\n");
-    var test_ical = ICal.Time.from_string (iso_string);
+    var test_ical = new ICal.Time.from_string (iso_string);
     assert (!test_ical.is_null_time ());
     var gtz = new GLib.TimeZone ("Australia/Darwin");
     assert (gtz != null);
     var interval = gtz.find_interval (GLib.TimeType.STANDARD, test_date.to_unix ());
-    debug ("\tTimezone offset for ACST: " + (gtz.get_offset (interval)/60.0/60).to_string () + "\n");
+    debug ("\tTimezone offset for ACST: " + (gtz.get_offset (interval) / 60.0 / 60).to_string () + "\n");
 
     var converted_gtime = test_date.to_timezone (gtz);
     debug ("\tTime in ACST: " + converted_gtime.format ("%FT%T%z") + "\n");
@@ -85,12 +83,12 @@ void test_45_minute_offset () {
     var test_date = new GLib.DateTime.utc (2019, 11, 20, 22, 35, 0);
     var iso_string = test_date.format ("%FT%TZ");
     debug ("\n\tUTC time: " + iso_string + "\n");
-    var test_ical = ICal.Time.from_string (iso_string);
+    var test_ical = new ICal.Time.from_string (iso_string);
     assert (!test_ical.is_null_time ());
     var gtz = new GLib.TimeZone ("Asia/Kathmandu"); // UTC offset: +05:45
     assert (gtz != null);
     var interval = gtz.find_interval (GLib.TimeType.STANDARD, test_date.to_unix ());
-    debug ("\tTimezone offset for Nepal Time: " + (gtz.get_offset (interval)/60.0/60).to_string () + "\n");
+    debug ("\tTimezone offset for Nepal Time: " + (gtz.get_offset (interval) / 60.0 / 60).to_string () + "\n");
 
     var converted_gtime = test_date.to_timezone (gtz);
     debug ("\tTime in Nepal Time: " + converted_gtime.format ("%FT%T%z") + "\n");
@@ -112,10 +110,9 @@ void test_45_minute_offset () {
 void test_all_day () {
     var str = "BEGIN:VEVENT\n" +
               "SUMMARY:Stub event\n" +
-              "UID:example@uid\n"     +
-              /* "DTSTAMP:19970114T170000Z\n" \ */
+              "UID:example@uid\n" +
               "DTSTART;TZID=America/Chicago:20191121\n" +
-              "DTEND;TZID=America/Chicago:20191122\n"   +
+              "DTEND;TZID=America/Chicago:20191122\n" +
               "END:VEVENT\n";
     var event = new ICal.Component.from_string (str);
     var dtstart = event.get_dtstart ();
