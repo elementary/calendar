@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -40,6 +40,8 @@ public class Grid : Gtk.Grid {
 
     private static Gtk.CssProvider style_provider;
 
+    private GridDay today_widget = null;
+
     static construct {
         style_provider = new Gtk.CssProvider ();
         style_provider.load_from_resource ("/io/elementary/calendar/Grid.css");
@@ -56,6 +58,44 @@ public class Grid : Gtk.Grid {
         data = new Gee.HashMap<uint, GridDay> ();
         events |= Gdk.EventMask.SCROLL_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
+
+        var time_manager = TimeManager.get_default ();
+        time_manager.on_update_today.connect (callback_update_today);
+    }
+
+    // Get new "Today", if it exists on the grid.
+    // If it's current, do nothing and exit.
+    // Otherwise, set it to Today.
+    //
+    // Get previous "Today", if it exists.
+    // If it does, change it. (If I got here, I know previous is out of date)
+    void callback_update_today () {
+        debug ("Grid: updating today");
+        var old_today_widget = today_widget;
+
+        var today = Util.strip_time (new DateTime.now_local ());
+        var today_hash = day_hash (today);
+        if (data.has_key (today_hash)) { // Today cell is on the grid
+            var new_today_widget = data.get (today_hash);
+
+            if (new_today_widget.name == "today") {
+                debug ("Today cell already up to date. Nothing to do.");
+                return;
+            } else {
+                new_today_widget.name = "today";
+                today_widget = new_today_widget;
+            }
+        } else {
+            debug ("Today out of range of calendar grid.");
+            today_widget = null;
+            return;
+        }
+
+        if (old_today_widget != null) {
+            old_today_widget.name = "MayaViewGridDay";
+        } else {
+            debug ("No previous today widget to update. Nothing to do.");
+        }
     }
 
     void on_day_focus_in (GridDay day) {
@@ -170,6 +210,7 @@ public class Grid : Gtk.Grid {
     GridDay update_day (GridDay day, DateTime new_date, DateTime today, DateTime month_start) {
         if (new_date.get_day_of_year () == today.get_day_of_year () && new_date.get_year () == today.get_year ()) {
             day.name = "today";
+            today_widget = day;
         }
 
         day.in_current_month = new_date.get_month () == month_start.get_month ();
