@@ -33,7 +33,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     private WeekLabels weeks { get; private set; }
     private Header header { get; private set; }
-    private Grid grid { get; private set; }
+    private Grid days_grid { get; private set; }
     private Gtk.Stack stack { get; private set; }
     private Gtk.Grid big_grid { get; private set; }
     private Gtk.Label spacer { get; private set; }
@@ -99,10 +99,10 @@ public class Maya.View.CalendarView : Gtk.Grid {
         weeks = new WeekLabels ();
 
         header = new Header ();
-        grid = new Grid ();
-        grid.focus_date (selected_date);
-        grid.on_event_add.connect ((date) => on_event_add (date));
-        grid.selection_changed.connect ((date) => {
+        days_grid = new Grid ();
+        days_grid.focus_date (selected_date);
+        days_grid.on_event_add.connect ((date) => on_event_add (date));
+        days_grid.selection_changed.connect ((date) => {
             selected_date = date;
             selection_changed (date);
         });
@@ -111,7 +111,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         var new_big_grid = new Gtk.Grid ();
         new_big_grid.attach (spacer, 0, 0, 1, 1);
         new_big_grid.attach (header, 1, 0, 1, 1);
-        new_big_grid.attach (grid, 1, 1, 1, 1);
+        new_big_grid.attach (days_grid, 1, 1, 1, 1);
         new_big_grid.attach (weeks, 0, 1, 1, 1);
         new_big_grid.show_all ();
         new_big_grid.expand = true;
@@ -134,7 +134,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         if (!start.equal (calmodel.month_start))
             calmodel.month_start = start;
         sync_with_model ();
-        grid.focus_date (today);
+        days_grid.focus_date (today);
     }
 
     //--- Signal Handlers ---//
@@ -183,7 +183,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
     /* Indicates the month has changed */
     void on_model_parameters_changed () {
         var model = Model.CalendarModel.get_default ();
-        if (grid.grid_range != null && model.data_range.equals (grid.grid_range))
+        if (days_grid.grid_range != null && model.data_range.equals (days_grid.grid_range))
             return; // nothing to do
 
         Idle.add ( () => {
@@ -198,28 +198,28 @@ public class Maya.View.CalendarView : Gtk.Grid {
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_model () {
         var model = Model.CalendarModel.get_default ();
-        if (grid.grid_range != null && (model.data_range.equals (grid.grid_range) || grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0))
+        if (days_grid.grid_range != null && (model.data_range.equals (days_grid.grid_range) || days_grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0))
             return; // nothing to do
 
         DateTime previous_first = null;
-        if (grid.grid_range != null)
-            previous_first = grid.grid_range.first_dt;
+        if (days_grid.grid_range != null)
+            previous_first = days_grid.grid_range.first_dt;
 
         big_grid = create_big_grid ();
         stack.add (big_grid);
 
         header.update_columns (model.week_starts_on);
         weeks.update (model.data_range.first_dt, model.num_weeks);
-        grid.set_range (model.data_range, model.month_start);
+        days_grid.set_range (model.data_range, model.month_start);
 
         // keep focus date on the same day of the month
         if (selected_date != null) {
             var bumpdate = model.month_start.add_days (selected_date.get_day_of_month () - 1);
-            grid.focus_date (bumpdate);
+            days_grid.focus_date (bumpdate);
         }
 
         if (previous_first != null) {
-            if (previous_first.compare (grid.grid_range.first_dt) == -1) {
+            if (previous_first.compare (days_grid.grid_range.first_dt) == -1) {
                 stack.transition_type = Gtk.StackTransitionType.SLIDE_UP;
             } else {
                 stack.transition_type = Gtk.StackTransitionType.SLIDE_DOWN;
@@ -232,21 +232,21 @@ public class Maya.View.CalendarView : Gtk.Grid {
     /* Render new event on the grid */
     void add_event (E.Source source, ECal.Component event) {
         event.set_data ("source", source);
-        grid.add_event (event);
+        days_grid.add_event (event);
     }
 
     /* Update the event on the grid */
     void update_event (E.Source source, ECal.Component event) {
-        grid.update_event (event);
+        days_grid.update_event (event);
     }
 
     /* Remove event from the grid */
     void remove_event (E.Source source, ECal.Component event) {
-        grid.remove_event (event);
+        days_grid.remove_event (event);
     }
 
     /* Remove all events from the grid */
     void remove_all_events () {
-        grid.remove_all_events ();
+        days_grid.remove_all_events ();
     }
 }
