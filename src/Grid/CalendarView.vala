@@ -54,14 +54,12 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     construct {
         selected_date = Maya.Application.get_selected_datetime ();
-        big_grid = create_big_grid ();
 
         stack = new Gtk.Stack ();
-        stack.add (big_grid);
-        stack.show_all ();
         stack.expand = true;
 
-        sync_with_model ();
+        sync_with_model (); // Populate stack with a grid
+        stack.show_all ();
 
         var model = Model.CalendarModel.get_default ();
         model.parameters_changed.connect (on_model_parameters_changed);
