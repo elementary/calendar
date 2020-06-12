@@ -70,7 +70,6 @@ public class Grid : Gtk.Grid {
     // Get previous "Today", if it exists.
     // If it does, change it. (If I got here, I know previous is out of date)
     void callback_update_today () {
-        debug ("Grid: updating today");
         var old_today_widget = today_widget;
 
         var today = Util.strip_time (new DateTime.now_local ());
@@ -87,6 +86,9 @@ public class Grid : Gtk.Grid {
             }
         } else {
             debug ("Today out of range of calendar grid.");
+            if (today_widget != null) {
+                today_widget.name = "MayaViewGridDay";
+            }
             today_widget = null;
             return;
         }
