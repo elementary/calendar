@@ -1,4 +1,4 @@
-public class Maya.TimeManager : Object{
+public class Maya.TimeManager : Object {
     private static TimeManager instance = null;
     private uint timeout_id = 0;
 
