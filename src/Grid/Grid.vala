@@ -63,15 +63,12 @@ public class Grid : Gtk.Grid {
         time_manager.on_update_today.connect (callback_update_today);
     }
 
-    // Get new "Today", if it exists on the grid.
-    // If it's current, do nothing and exit.
-    // Otherwise, set it to Today.
-    //
-    // Get previous "Today", if it exists.
-    // If it does, change it. (If I got here, I know previous is out of date)
+    /** Update the names of the current and previous "Today" cells, if necessary.
+     */
     void callback_update_today () {
         var old_today_widget = today_widget;
 
+        // Add label to the new widget, if it exists and is not up to date
         var today = Util.strip_time (new DateTime.now_local ());
         var today_hash = day_hash (today);
         if (data.has_key (today_hash)) { // Today cell is on the grid
@@ -93,6 +90,7 @@ public class Grid : Gtk.Grid {
             return;
         }
 
+        // Remove label from old widget, if necessary.
         if (old_today_widget != null) {
             old_today_widget.name = "MayaViewGridDay";
         } else {
