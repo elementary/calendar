@@ -73,11 +73,7 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     private CalendarModel () {
-        int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
-        if (week_start >= 1 && week_start <= 7) {
-            week_starts_on = (GLib.DateWeekday) (week_start - 1);
-        }
-
+        this.week_starts_on = get_week_start ();
         this.month_start = Util.get_start_of_month (get_page ());
         compute_ranges ();
 
@@ -293,6 +289,38 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     //--- Helper Methods ---//
+
+    /** Set the week_starts_on property: the first day of the week.
+     *
+     * Locale handling is based on information from
+     * https://sourceware.org/glibc/wiki/Locales
+     */
+    private GLib.DateWeekday get_week_start () {
+        // Set the "baseline" for start of week: Sunday or Monday?
+        uint week_day1 = (uint) Posix.NLTime.WEEK_1STDAY.to_string ();
+        debug (@"WEEK_1STDAY: $(week_day1)");
+        var week_1stday = 0; // Default to 0 if unrecognized data
+        if (week_day1 == 19971130) { // Sunday
+            week_1stday = 0;
+        } else if (week_day1 == 19971201) { // Monday
+            week_1stday = 1;
+        } else {
+            warning (@"Unknown value of _NL_TIME_WEEK_1STDAY: @(week_day1)");
+        }
+        debug (@"$week_1stday");
+
+        // Get the start of week
+        int week_start_posix = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
+        /* If week_1stday is Monday, data is correct for GLib: Monday=1 through Sunday=7.
+         * If week_1stday is Sunday, Sunday=1 through Saturday=7. All days must be
+         * subtracted by 1, then Sunday has to be handled separately if necessary. */
+        var week_start = (week_1stday + week_start_posix - 1);
+        if (week_start == 0) { // Sunday special case
+            week_start = 7;
+        }
+
+        return (GLib.DateWeekday) week_start;
+    }
 
     private DateTime get_page () {
         var month_page = state_settings.get_string ("month-page");
