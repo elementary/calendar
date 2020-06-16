@@ -298,16 +298,14 @@ public class Maya.Model.CalendarModel : Object {
     private GLib.DateWeekday get_week_start () {
         // Set the "baseline" for start of week: Sunday or Monday?
         uint week_day1 = (uint) Posix.NLTime.WEEK_1STDAY.to_string ();
-        debug (@"WEEK_1STDAY: $(week_day1)");
         var week_1stday = 0; // Default to 0 if unrecognized data
         if (week_day1 == 19971130) { // Sunday
             week_1stday = 0;
         } else if (week_day1 == 19971201) { // Monday
             week_1stday = 1;
         } else {
-            warning ("Unknown value of _NL_TIME_WEEK_1STDAY: %s", week_day1);
+            warning ("Unknown value of _NL_TIME_WEEK_1STDAY: %u", week_day1);
         }
-        debug (@"$week_1stday");
 
         // Get the start of week
         int week_start_posix = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
