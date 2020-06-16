@@ -25,12 +25,21 @@
     background: @LIME_500;
 }
 
+
+.color-button.mint radio {
+    background: @MINT_500;
+}
+
 .color-button.blue radio {
     background: @BLUEBERRY_500;
 }
 
 .color-button.purple radio {
     background: @GRAPE_500;
+}
+
+.color-button.bubblegum radio {
+    background: @BUBBLEGUM_500;
 }
 
 .color-button.brown radio {
