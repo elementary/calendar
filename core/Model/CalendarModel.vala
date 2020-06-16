@@ -305,7 +305,7 @@ public class Maya.Model.CalendarModel : Object {
         } else if (week_day1 == 19971201) { // Monday
             week_1stday = 1;
         } else {
-            warning (@"Unknown value of _NL_TIME_WEEK_1STDAY: @(week_day1)");
+            warning ("Unknown value of _NL_TIME_WEEK_1STDAY: %s", week_day1);
         }
         debug (@"$week_1stday");
 
