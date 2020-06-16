@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-03 20:10+0000\n"
-"PO-Revision-Date: 2020-04-06 07:06+0000\n"
+"PO-Revision-Date: 2020-06-07 13:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -53,7 +53,7 @@ msgstr "必要に応じて予定の参加者の詳細を省略するように修
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 msgid "Fix unwanted rescheduling when editing event title"
-msgstr "予定のタイトルを編集した際に、予定の日付が変更されてしまう問題を修正"
+msgstr "予定のタイトルを編集した際に、予定の日付が変更されてしまう不具合を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 #: data/io.elementary.calendar.appdata.xml.in:43
@@ -63,13 +63,11 @@ msgstr "新しい翻訳"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
 msgid "Fix crash when editing an event with no location"
-msgstr "場所を指定せずに予定を変更した場合にアプリがクラッシュする問題を修正"
+msgstr "場所を指定せずに予定を変更した場合にアプリがクラッシュする不具合を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Fix potential crash when loading events with no start or end time"
-msgstr ""
-"開始時刻または終了時刻が指定されていない予定を読み込んだ際にアプリがクラッ"
-"シュすることがある問題を修正"
+msgstr "開始時刻または終了時刻が指定されていない予定を読み込んだ際に、アプリがクラッシュすることがある不具合を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:39
 msgid "Make agenda pane fill the whole space"
@@ -81,7 +79,7 @@ msgstr "予定の作成時に現在時刻からの1時間を予定の時間と�
 
 #: data/io.elementary.calendar.appdata.xml.in:41
 msgid "Fix issues with recurring events"
-msgstr "定期的に行われる予定に関する問題を修正"
+msgstr "定期的に行われる予定に関する不具合を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:42
 msgid "Performance improvements"
@@ -142,7 +140,7 @@ msgstr "各種バグの修正と改善をしました。"
 
 #: data/io.elementary.calendar.appdata.xml.in:78
 msgid "Fixes for calendar accuracy and integrity issues."
-msgstr "カレンダーの正確さと整合性の問題に対する修正をしました。"
+msgstr "カレンダーの正確さと整合性の不具合に対する修正をしました。"
 
 #: data/io.elementary.calendar.appdata.xml.in:79
 msgid "Fixes exporting, importing and printing calendars."

@@ -13,7 +13,7 @@
     </p>
   </description>
   <releases>
-    <release version="5.0.5" date="2020-05-13" urgency="medium">
+    <release version="5.1.0" date="2020-07-01" urgency="medium">
       <description>
       <p>Improvements:</p>
       <ul>
@@ -22,6 +22,15 @@
       </ul>
       <p>Minor Updates:</p>
       <ul>
+        <li>Updated translations</li>
+      </ul>
+      </description>
+    </release>
+    <release version="5.0.5" date="2020-06-01" urgency="medium">
+      <description>
+      <p>Minor Updates:</p>
+      <ul>
+        <li>Fix several issues with adding and removing monthly recurring events</li>
         <li>Updated translations</li>
       </ul>
       </description>
