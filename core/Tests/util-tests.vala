@@ -130,6 +130,30 @@ void test_all_day () {
     assert (g_dtend.format ("%FT%T%z") == "2019-11-21T00:00:00+0000");
 }
 
+// Test that the is_event_in_range function works with all day events, which are
+// in UTC instead of local time
+void test_daterange_all_day () {
+    var str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=America/Chicago:20191121\n" +
+              "DTEND;TZID=America/Chicago:20191122\n" +
+              "END:VEVENT\n";
+    var event = new ICal.Component.from_string (str);
+    var chicago_timezone = new TimeZone ("America/Chicago");
+
+    // A range that shouldn't include the event, but just barely (within
+    // timezone offset)
+    var start_time = new DateTime (chicago_timezone, 2019, 11, 20, 0, 0, 0);
+    var end_time = new DateTime (chicago_timezone, 2019, 11, 20, 23, 59, 59);
+    var range = new Maya.Util.DateRange (start_time, end_time);
+    assert (!Maya.Util.is_event_in_range (event, range));
+    // A range the should include the event
+    end_time = new DateTime (chicago_timezone, 2019, 11, 21, 0, 0, 1);
+    range = new Maya.Util.DateRange (start_time, end_time);
+    assert (Maya.Util.is_event_in_range (event, range));
+}
+
 void add_timezone_tests () {
     Test.add_func ("/Utils/TimeZone/no_timezone", test_no_timezone);
     Test.add_func ("/Utils/TimeZone/all_day", test_all_day);
@@ -137,6 +161,8 @@ void add_timezone_tests () {
     Test.add_func ("/Utils/TimeZone/hour_offset", test_hour_offset);
     Test.add_func ("/Utils/TimeZone/half_hour_offset", test_half_hour_offset);
     Test.add_func ("/Utils/TimeZone/45_minute_offset", test_45_minute_offset);
+
+    Test.add_func ("/Utils/DateRange/all_day", test_daterange_all_day);
 }
 
 int main (string[] args) {

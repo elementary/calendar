@@ -181,9 +181,23 @@ namespace Maya.Util {
         }
     }
 
+    /** Returns whether the given event overlaps with the time range.
+     *
+     * This is true if the event either starts or ends within the range, even
+     * if the entire event doesn't happen within the range.
+     */
     public bool is_event_in_range (ICal.Component comp, Util.DateRange view_range) {
         DateTime start, end;
         get_local_datetimes_from_icalcomponent (comp, out start, out end);
+
+        // If the event is all day, it has no timezone info. Convert times to
+        // midnight local to match the range.
+        if (comp.get_dtstart ().is_date () && comp.get_dtend ().is_date ()) {
+            debug ("All day offset");
+            debug (@"$(view_range.first_dt.get_utc_offset ())");
+            start = start.add (-view_range.first_dt.get_utc_offset ());
+            end = end.add (-view_range.last_dt.get_utc_offset ());
+        }
 
         int c1 = start.compare (view_range.first_dt);
         int c2 = start.compare (view_range.last_dt);
