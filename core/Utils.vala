@@ -193,8 +193,6 @@ namespace Maya.Util {
         // If the event is all day, it has no timezone info. Convert times to
         // midnight local to match the range.
         if (comp.get_dtstart ().is_date () && comp.get_dtend ().is_date ()) {
-            debug ("All day offset");
-            debug (@"$(view_range.first_dt.get_utc_offset ())");
             start = start.add (-view_range.first_dt.get_utc_offset ());
             end = end.add (-view_range.last_dt.get_utc_offset ());
         }
