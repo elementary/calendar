@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-26 16:51+0000\n"
+"POT-Creation-Date: 2020-06-17 17:29+0000\n"
 "PO-Revision-Date: 2017-01-03 09:18+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: \n"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:148
+#: src/Application.vala:161
 msgid "Calendar"
 msgstr "كالېندار"
 
@@ -422,199 +422,199 @@ msgstr "مۇستەسنا ئەھۋال يوق"
 msgid "Add Exception"
 msgstr "مۇستەسنا ئەھۋال قىتىش"
 
-#: src/EventEdition/RepeatPanel.vala:377
+#: src/EventEdition/RepeatPanel.vala:378
 msgid "Every last Sunday"
 msgstr "ھەرئاينىڭ ئاخىرقى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:380
+#: src/EventEdition/RepeatPanel.vala:381
 msgid "Every last Monday"
 msgstr "ھەرئاينىڭ ئاخىرقى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:383
+#: src/EventEdition/RepeatPanel.vala:384
 msgid "Every last Tuesday"
 msgstr "ھەرئاينىڭ ئاخىرقى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:386
+#: src/EventEdition/RepeatPanel.vala:387
 msgid "Every last Wednesday"
 msgstr "ھەرئاينىڭ ئاخىرقى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:389
+#: src/EventEdition/RepeatPanel.vala:390
 msgid "Every last Thursday"
 msgstr "ھەرئاينىڭ ئاخىرقى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:392
+#: src/EventEdition/RepeatPanel.vala:393
 msgid "Every last Friday"
 msgstr "ھەرئاينىڭ ئاخىرقى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:395
+#: src/EventEdition/RepeatPanel.vala:396
 msgid "Every last Saturday"
 msgstr "ھەرئاينىڭ ئاخىرقى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:402
+#: src/EventEdition/RepeatPanel.vala:403
 msgid "Every first Sunday"
 msgstr "ھەرئاينىڭ تۇنجى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:405
+#: src/EventEdition/RepeatPanel.vala:406
 msgid "Every first Monday"
 msgstr "ھەرئاينىڭ تۇنجى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:408
+#: src/EventEdition/RepeatPanel.vala:409
 msgid "Every first Tuesday"
 msgstr "ھەرئاينىڭ تۇنجى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:411
+#: src/EventEdition/RepeatPanel.vala:412
 msgid "Every first Wednesday"
 msgstr "ھەرئاينىڭ تۇنجى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:414
+#: src/EventEdition/RepeatPanel.vala:415
 msgid "Every first Thursday"
 msgstr "ھەرئاينىڭ تۇنجى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:417
+#: src/EventEdition/RepeatPanel.vala:418
 msgid "Every first Friday"
 msgstr "ھەرئاينىڭ تۇنجى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:420
+#: src/EventEdition/RepeatPanel.vala:421
 msgid "Every first Saturday"
 msgstr "ھەرئاينىڭ تۇنجى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:427
+#: src/EventEdition/RepeatPanel.vala:428
 msgid "Every second Sunday"
 msgstr "ھەرئاينىڭ ئىككىنجى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:430
+#: src/EventEdition/RepeatPanel.vala:431
 msgid "Every second Monday"
 msgstr "ھەرئاينىڭ ئىككىنجى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:433
+#: src/EventEdition/RepeatPanel.vala:434
 msgid "Every second Tuesday"
 msgstr "ھەرئاينىڭ ئىككىنجى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:436
+#: src/EventEdition/RepeatPanel.vala:437
 msgid "Every second Wednesday"
 msgstr "ھەرئاينىڭ ئىككىنجى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:439
+#: src/EventEdition/RepeatPanel.vala:440
 msgid "Every second Thursday"
 msgstr "ھەرئاينىڭ ئىككىنجى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:442
+#: src/EventEdition/RepeatPanel.vala:443
 msgid "Every second Friday"
 msgstr "ھەرئاينىڭ ئىككىنجى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:445
+#: src/EventEdition/RepeatPanel.vala:446
 msgid "Every second Saturday"
 msgstr "ھەرئاينىڭ ئىككىنجى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:452
+#: src/EventEdition/RepeatPanel.vala:453
 msgid "Every third Sunday"
 msgstr "ھەرئاينىڭ ئۈچىنجى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:455
+#: src/EventEdition/RepeatPanel.vala:456
 msgid "Every third Monday"
 msgstr "ھەرئاينىڭ ئۈچىنجى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:458
+#: src/EventEdition/RepeatPanel.vala:459
 msgid "Every third Tuesday"
 msgstr "ھەرئاينىڭ ئۈچىنجى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:461
+#: src/EventEdition/RepeatPanel.vala:462
 msgid "Every third Wednesday"
 msgstr "ھەرئاينىڭ ئۈچىنجى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:464
+#: src/EventEdition/RepeatPanel.vala:465
 msgid "Every third Thursday"
 msgstr "ھەرئاينىڭ ئۈچىنجى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:467
+#: src/EventEdition/RepeatPanel.vala:468
 msgid "Every third Friday"
 msgstr "ھەرئاينىڭ ئۈچىنجى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:470
+#: src/EventEdition/RepeatPanel.vala:471
 msgid "Every third Saturday"
 msgstr "ھەرئاينىڭ ئۈچىنجى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:477
+#: src/EventEdition/RepeatPanel.vala:478
 msgid "Every fourth Sunday"
 msgstr "ھەرئاينىڭ تۆتىنجى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:480
+#: src/EventEdition/RepeatPanel.vala:481
 msgid "Every fourth Monday"
 msgstr "ھەرئاينىڭ تۆتىنجى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:483
+#: src/EventEdition/RepeatPanel.vala:484
 msgid "Every fourth Tuesday"
 msgstr "ھەرئاينىڭ تۆتىنجى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:486
+#: src/EventEdition/RepeatPanel.vala:487
 msgid "Every fourth Wednesday"
 msgstr "ھەرئاينىڭ تۆتىنجى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:489
+#: src/EventEdition/RepeatPanel.vala:490
 msgid "Every fourth Thursday"
 msgstr "ھەرئاينىڭ تۆتىنجى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:492
+#: src/EventEdition/RepeatPanel.vala:493
 msgid "Every fourth Friday"
 msgstr "ھەرئاينىڭ تۆتىنجى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:495
+#: src/EventEdition/RepeatPanel.vala:496
 msgid "Every fourth Saturday"
 msgstr "ھەرئاينىڭ تۆتىنجى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:502
+#: src/EventEdition/RepeatPanel.vala:503
 msgid "Every fifth Sunday"
 msgstr "ھەرئاينىڭ بەشىنجى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:505
+#: src/EventEdition/RepeatPanel.vala:506
 msgid "Every fifth Monday"
 msgstr "ھەرئاينىڭ بەشىنجى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:508
+#: src/EventEdition/RepeatPanel.vala:509
 msgid "Every fifth Tuesday"
 msgstr "ھەرئاينىڭ بەشىنجى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:511
+#: src/EventEdition/RepeatPanel.vala:512
 msgid "Every fifth Wednesday"
 msgstr "ھەرئاينىڭ بەشىنجى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:515
 msgid "Every fifth Thursday"
 msgstr "ھەرئاينىڭ بەشىنجى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:518
 msgid "Every fifth Friday"
 msgstr "ھەرئاينىڭ بەشىنجى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:520
+#: src/EventEdition/RepeatPanel.vala:521
 msgid "Every fifth Saturday"
 msgstr "ھەرئاينىڭ بەشىنجى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:530
+#: src/EventEdition/RepeatPanel.vala:531
 msgid "Mon"
 msgstr "دۈشەنبە"
 
-#: src/EventEdition/RepeatPanel.vala:531
+#: src/EventEdition/RepeatPanel.vala:532
 msgid "Tue"
 msgstr "سەيشەنبە"
 
-#: src/EventEdition/RepeatPanel.vala:532
+#: src/EventEdition/RepeatPanel.vala:533
 msgid "Wed"
 msgstr "چارشەنبە"
 
-#: src/EventEdition/RepeatPanel.vala:533
+#: src/EventEdition/RepeatPanel.vala:534
 msgid "Thu"
 msgstr "پەيشەنبە"
 
-#: src/EventEdition/RepeatPanel.vala:534
+#: src/EventEdition/RepeatPanel.vala:535
 msgid "Fri"
 msgstr "جۈمە"
 
-#: src/EventEdition/RepeatPanel.vala:535
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Sat"
 msgstr "شەنبە"
 
-#: src/EventEdition/RepeatPanel.vala:536
+#: src/EventEdition/RepeatPanel.vala:537
 msgid "Sun"
 msgstr "يەكشەنبە"
 
@@ -690,7 +690,7 @@ msgstr "بىكار قىلىش"
 msgid "\"%s\" removed"
 msgstr "كالېندار \"%s\" ئۆچۈرۈلگەن."
 
-#: src/SourceDialog/SourceSelector.vala:51
+#: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
 msgstr "يىڭى كالېندار قىتىش...."
 
