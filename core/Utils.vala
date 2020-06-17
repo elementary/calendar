@@ -175,11 +175,32 @@ namespace Maya.Util {
         }
     }
 
+    /** Get the start of the month that contains the given date
+     * If no date is given, uses now in the local timezone.
+     */
     public DateTime get_start_of_month (owned DateTime? date = null) {
         if (date == null)
             date = new DateTime.now_local ();
 
         return new DateTime.local (date.get_year (), date.get_month (), 1, 0, 0, 0);
+    }
+
+    /** Gets the start of the week that contains the given date
+     */
+    public DateTime get_start_of_week (DateTime date) {
+        var stripped_date = Util.strip_time (date);
+        var calmodel = Model.CalendarModel.get_default ();
+        var glib_weekday = stripped_date.get_day_of_week ();
+        // The number of days from the start of this week
+        int calendar_weekday = glib_weekday - (calmodel.week_starts_on);
+        if (calendar_weekday < 0) {
+            // Week start is larger than current weekday, so that made the
+            // number of days from next week. Add 7 to get this week.
+            calendar_weekday = calendar_weekday + 7;
+        }
+        var week_start = stripped_date.add_days (-calendar_weekday);
+        debug (@"Week start: $(week_start)");
+        return week_start;
     }
 
     public DateTime strip_time (DateTime datetime) {
