@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -96,8 +96,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
         key_press_event.connect (on_key_press);
         scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
 
-        Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
-        Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
+        const Gtk.TargetEntry DND = {"text/x-io-elementary-calendar", 0, 0};
+        Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {DND}, Gdk.DragAction.MOVE);
 
         this.notify["date"].connect (() => {
             label.label = date.get_day_of_month ().to_string ();
@@ -112,30 +112,36 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-        var calmodel = Model.CalendarModel.get_default ();
-        var comp = calmodel.drag_component;
-        unowned ICal.Component icalcomp = comp.get_icalcomponent ();
-        E.Source src = comp.get_data ("source");
-        var start = icalcomp.get_dtstart ();
-        var end = icalcomp.get_dtend ();
-        var gap = date.get_day_of_month () - start.get_day ();
-#if E_CAL_2_0
-        start.set_day (start.get_day () + gap);
-#else
-        start.day += gap;
-#endif
+        string? compid = (string)selection_data.get_data ();
+        if (compid != null) {
+            string uid;
+            string? rid = null;
+            if ("\n" in compid) {
+              var parts = compid.split ("\n", 2);
+              uid = parts[0];
+              rid = parts[1];
+            } else {
+              uid = compid;
+            }
 
-        if (!end.is_null_time ()) {
-#if E_CAL_2_0
-            end.set_day (end.get_day () + gap);
-#else
-            end.day += gap;
-#endif
-            icalcomp.set_dtend (end);
+            var calmodel = Model.CalendarModel.get_default ();
+            ECal.Component? comp = calmodel.get_event (uid, rid);
+
+            unowned ICal.Component icalcomp = comp.get_icalcomponent ();
+            E.Source src = comp.get_data ("source");
+            var start = icalcomp.get_dtstart ();
+            var end = icalcomp.get_dtend ();
+            var gap = date.get_day_of_month () - start.day;
+            start.day += gap;
+
+            if (!end.is_null_time ()) {
+                end.day += gap;
+                icalcomp.set_dtend (end);
+            }
+
+            icalcomp.set_dtstart (start);
+            calmodel.update_event (src, comp, ECal.ObjModType.ALL);
         }
-
-        icalcomp.set_dtstart (start);
-        calmodel.update_event (src, comp, ECal.ObjModType.ALL);
     }
 
     public void add_event_button (EventButton button) {
