@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-26 16:51+0000\n"
+"POT-Creation-Date: 2020-06-17 17:29+0000\n"
 "PO-Revision-Date: 2019-12-30 14:16+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -118,7 +118,7 @@ msgstr "转到指定日期"
 msgid "date"
 msgstr "日期"
 
-#: src/Application.vala:148
+#: src/Application.vala:161
 msgid "Calendar"
 msgstr "日历"
 
@@ -404,199 +404,199 @@ msgstr "无例外"
 msgid "Add Exception"
 msgstr "添加例外"
 
-#: src/EventEdition/RepeatPanel.vala:377
+#: src/EventEdition/RepeatPanel.vala:378
 msgid "Every last Sunday"
 msgstr "每月最后一个周日"
 
-#: src/EventEdition/RepeatPanel.vala:380
+#: src/EventEdition/RepeatPanel.vala:381
 msgid "Every last Monday"
 msgstr "每月最后一个周一"
 
-#: src/EventEdition/RepeatPanel.vala:383
+#: src/EventEdition/RepeatPanel.vala:384
 msgid "Every last Tuesday"
 msgstr "每月最后一个周二"
 
-#: src/EventEdition/RepeatPanel.vala:386
+#: src/EventEdition/RepeatPanel.vala:387
 msgid "Every last Wednesday"
 msgstr "每月最后一个周三"
 
-#: src/EventEdition/RepeatPanel.vala:389
+#: src/EventEdition/RepeatPanel.vala:390
 msgid "Every last Thursday"
 msgstr "每月最后一个周四"
 
-#: src/EventEdition/RepeatPanel.vala:392
+#: src/EventEdition/RepeatPanel.vala:393
 msgid "Every last Friday"
 msgstr "每月最后一个周五"
 
-#: src/EventEdition/RepeatPanel.vala:395
+#: src/EventEdition/RepeatPanel.vala:396
 msgid "Every last Saturday"
 msgstr "每月最后一个周六"
 
-#: src/EventEdition/RepeatPanel.vala:402
+#: src/EventEdition/RepeatPanel.vala:403
 msgid "Every first Sunday"
 msgstr "每月第一个周日"
 
-#: src/EventEdition/RepeatPanel.vala:405
+#: src/EventEdition/RepeatPanel.vala:406
 msgid "Every first Monday"
 msgstr "每月第一个周一"
 
-#: src/EventEdition/RepeatPanel.vala:408
+#: src/EventEdition/RepeatPanel.vala:409
 msgid "Every first Tuesday"
 msgstr "每月第一个周二"
 
-#: src/EventEdition/RepeatPanel.vala:411
+#: src/EventEdition/RepeatPanel.vala:412
 msgid "Every first Wednesday"
 msgstr "每月第一个周三"
 
-#: src/EventEdition/RepeatPanel.vala:414
+#: src/EventEdition/RepeatPanel.vala:415
 msgid "Every first Thursday"
 msgstr "每月第一个周四"
 
-#: src/EventEdition/RepeatPanel.vala:417
+#: src/EventEdition/RepeatPanel.vala:418
 msgid "Every first Friday"
 msgstr "每月第一个周五"
 
-#: src/EventEdition/RepeatPanel.vala:420
+#: src/EventEdition/RepeatPanel.vala:421
 msgid "Every first Saturday"
 msgstr "每月第一个周六"
 
-#: src/EventEdition/RepeatPanel.vala:427
+#: src/EventEdition/RepeatPanel.vala:428
 msgid "Every second Sunday"
 msgstr "每月第二个周日"
 
-#: src/EventEdition/RepeatPanel.vala:430
+#: src/EventEdition/RepeatPanel.vala:431
 msgid "Every second Monday"
 msgstr "每月第二个周一"
 
-#: src/EventEdition/RepeatPanel.vala:433
+#: src/EventEdition/RepeatPanel.vala:434
 msgid "Every second Tuesday"
 msgstr "每月第二个周二"
 
-#: src/EventEdition/RepeatPanel.vala:436
+#: src/EventEdition/RepeatPanel.vala:437
 msgid "Every second Wednesday"
 msgstr "每月第二个周三"
 
-#: src/EventEdition/RepeatPanel.vala:439
+#: src/EventEdition/RepeatPanel.vala:440
 msgid "Every second Thursday"
 msgstr "每月第二个周四"
 
-#: src/EventEdition/RepeatPanel.vala:442
+#: src/EventEdition/RepeatPanel.vala:443
 msgid "Every second Friday"
 msgstr "每月第二个周五"
 
-#: src/EventEdition/RepeatPanel.vala:445
+#: src/EventEdition/RepeatPanel.vala:446
 msgid "Every second Saturday"
 msgstr "每月第二个周六"
 
-#: src/EventEdition/RepeatPanel.vala:452
+#: src/EventEdition/RepeatPanel.vala:453
 msgid "Every third Sunday"
 msgstr "每月第三个周日"
 
-#: src/EventEdition/RepeatPanel.vala:455
+#: src/EventEdition/RepeatPanel.vala:456
 msgid "Every third Monday"
 msgstr "每月第三个周一"
 
-#: src/EventEdition/RepeatPanel.vala:458
+#: src/EventEdition/RepeatPanel.vala:459
 msgid "Every third Tuesday"
 msgstr "每月第三个周二"
 
-#: src/EventEdition/RepeatPanel.vala:461
+#: src/EventEdition/RepeatPanel.vala:462
 msgid "Every third Wednesday"
 msgstr "每月第三个周三"
 
-#: src/EventEdition/RepeatPanel.vala:464
+#: src/EventEdition/RepeatPanel.vala:465
 msgid "Every third Thursday"
 msgstr "每月第三个周四"
 
-#: src/EventEdition/RepeatPanel.vala:467
+#: src/EventEdition/RepeatPanel.vala:468
 msgid "Every third Friday"
 msgstr "每月第三个周五"
 
-#: src/EventEdition/RepeatPanel.vala:470
+#: src/EventEdition/RepeatPanel.vala:471
 msgid "Every third Saturday"
 msgstr "每月第三个周六"
 
-#: src/EventEdition/RepeatPanel.vala:477
+#: src/EventEdition/RepeatPanel.vala:478
 msgid "Every fourth Sunday"
 msgstr "每月第四个周日"
 
-#: src/EventEdition/RepeatPanel.vala:480
+#: src/EventEdition/RepeatPanel.vala:481
 msgid "Every fourth Monday"
 msgstr "每月第四个周一"
 
-#: src/EventEdition/RepeatPanel.vala:483
+#: src/EventEdition/RepeatPanel.vala:484
 msgid "Every fourth Tuesday"
 msgstr "每月第四个周二"
 
-#: src/EventEdition/RepeatPanel.vala:486
+#: src/EventEdition/RepeatPanel.vala:487
 msgid "Every fourth Wednesday"
 msgstr "每月第四个周三"
 
-#: src/EventEdition/RepeatPanel.vala:489
+#: src/EventEdition/RepeatPanel.vala:490
 msgid "Every fourth Thursday"
 msgstr "每月第四个周四"
 
-#: src/EventEdition/RepeatPanel.vala:492
+#: src/EventEdition/RepeatPanel.vala:493
 msgid "Every fourth Friday"
 msgstr "每月第四个周五"
 
-#: src/EventEdition/RepeatPanel.vala:495
+#: src/EventEdition/RepeatPanel.vala:496
 msgid "Every fourth Saturday"
 msgstr "每月第四个周六"
 
-#: src/EventEdition/RepeatPanel.vala:502
+#: src/EventEdition/RepeatPanel.vala:503
 msgid "Every fifth Sunday"
 msgstr "每月第五个周日"
 
-#: src/EventEdition/RepeatPanel.vala:505
+#: src/EventEdition/RepeatPanel.vala:506
 msgid "Every fifth Monday"
 msgstr "每月第五个周一"
 
-#: src/EventEdition/RepeatPanel.vala:508
+#: src/EventEdition/RepeatPanel.vala:509
 msgid "Every fifth Tuesday"
 msgstr "每月第五个周二"
 
-#: src/EventEdition/RepeatPanel.vala:511
+#: src/EventEdition/RepeatPanel.vala:512
 msgid "Every fifth Wednesday"
 msgstr "每月第五个周三"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:515
 msgid "Every fifth Thursday"
 msgstr "每月第五个周四"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:518
 msgid "Every fifth Friday"
 msgstr "每月第五个周五"
 
-#: src/EventEdition/RepeatPanel.vala:520
+#: src/EventEdition/RepeatPanel.vala:521
 msgid "Every fifth Saturday"
 msgstr "每月第五个周六"
 
-#: src/EventEdition/RepeatPanel.vala:530
+#: src/EventEdition/RepeatPanel.vala:531
 msgid "Mon"
 msgstr "周一"
 
-#: src/EventEdition/RepeatPanel.vala:531
+#: src/EventEdition/RepeatPanel.vala:532
 msgid "Tue"
 msgstr "周二"
 
-#: src/EventEdition/RepeatPanel.vala:532
+#: src/EventEdition/RepeatPanel.vala:533
 msgid "Wed"
 msgstr "周三"
 
-#: src/EventEdition/RepeatPanel.vala:533
+#: src/EventEdition/RepeatPanel.vala:534
 msgid "Thu"
 msgstr "周四"
 
-#: src/EventEdition/RepeatPanel.vala:534
+#: src/EventEdition/RepeatPanel.vala:535
 msgid "Fri"
 msgstr "周五"
 
-#: src/EventEdition/RepeatPanel.vala:535
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Sat"
 msgstr "周六"
 
-#: src/EventEdition/RepeatPanel.vala:536
+#: src/EventEdition/RepeatPanel.vala:537
 msgid "Sun"
 msgstr "周日"
 
@@ -671,7 +671,7 @@ msgstr "撤销"
 msgid "\"%s\" removed"
 msgstr "日历“%s”已删除"
 
-#: src/SourceDialog/SourceSelector.vala:51
+#: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
 msgstr "添加新日历…"
 
