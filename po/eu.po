@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-26 16:51+0000\n"
+"POT-Creation-Date: 2020-06-17 17:29+0000\n"
 "PO-Revision-Date: 2015-11-23 20:50+0000\n"
 "Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
@@ -124,7 +124,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:148
+#: src/Application.vala:161
 msgid "Calendar"
 msgstr "Egutegia"
 
@@ -433,199 +433,199 @@ msgstr "Salbuespenik gabe"
 msgid "Add Exception"
 msgstr "Gehitu salbuespena"
 
-#: src/EventEdition/RepeatPanel.vala:377
+#: src/EventEdition/RepeatPanel.vala:378
 msgid "Every last Sunday"
 msgstr "Azken igandero"
 
-#: src/EventEdition/RepeatPanel.vala:380
+#: src/EventEdition/RepeatPanel.vala:381
 msgid "Every last Monday"
 msgstr "Azken astelehenero"
 
-#: src/EventEdition/RepeatPanel.vala:383
+#: src/EventEdition/RepeatPanel.vala:384
 msgid "Every last Tuesday"
 msgstr "Azken asteartero"
 
-#: src/EventEdition/RepeatPanel.vala:386
+#: src/EventEdition/RepeatPanel.vala:387
 msgid "Every last Wednesday"
 msgstr "Azken asteazkenero"
 
-#: src/EventEdition/RepeatPanel.vala:389
+#: src/EventEdition/RepeatPanel.vala:390
 msgid "Every last Thursday"
 msgstr "Azken ostegunero"
 
-#: src/EventEdition/RepeatPanel.vala:392
+#: src/EventEdition/RepeatPanel.vala:393
 msgid "Every last Friday"
 msgstr "Azken ostiralero"
 
-#: src/EventEdition/RepeatPanel.vala:395
+#: src/EventEdition/RepeatPanel.vala:396
 msgid "Every last Saturday"
 msgstr "Azken larunbatero"
 
-#: src/EventEdition/RepeatPanel.vala:402
+#: src/EventEdition/RepeatPanel.vala:403
 msgid "Every first Sunday"
 msgstr "Lehenengo igandero"
 
-#: src/EventEdition/RepeatPanel.vala:405
+#: src/EventEdition/RepeatPanel.vala:406
 msgid "Every first Monday"
 msgstr "Lehenengo astelehenero"
 
-#: src/EventEdition/RepeatPanel.vala:408
+#: src/EventEdition/RepeatPanel.vala:409
 msgid "Every first Tuesday"
 msgstr "Lehenengo asteartero"
 
-#: src/EventEdition/RepeatPanel.vala:411
+#: src/EventEdition/RepeatPanel.vala:412
 msgid "Every first Wednesday"
 msgstr "Lehen asteazkenero"
 
-#: src/EventEdition/RepeatPanel.vala:414
+#: src/EventEdition/RepeatPanel.vala:415
 msgid "Every first Thursday"
 msgstr "Lehen ostegunero"
 
-#: src/EventEdition/RepeatPanel.vala:417
+#: src/EventEdition/RepeatPanel.vala:418
 msgid "Every first Friday"
 msgstr "Lehen ostiralero"
 
-#: src/EventEdition/RepeatPanel.vala:420
+#: src/EventEdition/RepeatPanel.vala:421
 msgid "Every first Saturday"
 msgstr "Lehen larunbatero"
 
-#: src/EventEdition/RepeatPanel.vala:427
+#: src/EventEdition/RepeatPanel.vala:428
 msgid "Every second Sunday"
 msgstr "Bigarren igandero"
 
-#: src/EventEdition/RepeatPanel.vala:430
+#: src/EventEdition/RepeatPanel.vala:431
 msgid "Every second Monday"
 msgstr "Bigarren astelehenero"
 
-#: src/EventEdition/RepeatPanel.vala:433
+#: src/EventEdition/RepeatPanel.vala:434
 msgid "Every second Tuesday"
 msgstr "Bigarren asteartero"
 
-#: src/EventEdition/RepeatPanel.vala:436
+#: src/EventEdition/RepeatPanel.vala:437
 msgid "Every second Wednesday"
 msgstr "Bigarren asteazkenero"
 
-#: src/EventEdition/RepeatPanel.vala:439
+#: src/EventEdition/RepeatPanel.vala:440
 msgid "Every second Thursday"
 msgstr "Bigarren ostegunero"
 
-#: src/EventEdition/RepeatPanel.vala:442
+#: src/EventEdition/RepeatPanel.vala:443
 msgid "Every second Friday"
 msgstr "Bigarren ostiralero"
 
-#: src/EventEdition/RepeatPanel.vala:445
+#: src/EventEdition/RepeatPanel.vala:446
 msgid "Every second Saturday"
 msgstr "Bigarren larunbatero"
 
-#: src/EventEdition/RepeatPanel.vala:452
+#: src/EventEdition/RepeatPanel.vala:453
 msgid "Every third Sunday"
 msgstr "Bigarren igandero"
 
-#: src/EventEdition/RepeatPanel.vala:455
+#: src/EventEdition/RepeatPanel.vala:456
 msgid "Every third Monday"
 msgstr "Hirugarren astelehenero"
 
-#: src/EventEdition/RepeatPanel.vala:458
+#: src/EventEdition/RepeatPanel.vala:459
 msgid "Every third Tuesday"
 msgstr "Hirugarren asteartero"
 
-#: src/EventEdition/RepeatPanel.vala:461
+#: src/EventEdition/RepeatPanel.vala:462
 msgid "Every third Wednesday"
 msgstr "Hirugarren asteazkenero"
 
-#: src/EventEdition/RepeatPanel.vala:464
+#: src/EventEdition/RepeatPanel.vala:465
 msgid "Every third Thursday"
 msgstr "Hirugarren ostegunero"
 
-#: src/EventEdition/RepeatPanel.vala:467
+#: src/EventEdition/RepeatPanel.vala:468
 msgid "Every third Friday"
 msgstr "Hirugarren ostiralero"
 
-#: src/EventEdition/RepeatPanel.vala:470
+#: src/EventEdition/RepeatPanel.vala:471
 msgid "Every third Saturday"
 msgstr "Hirugarren larunbatero"
 
-#: src/EventEdition/RepeatPanel.vala:477
+#: src/EventEdition/RepeatPanel.vala:478
 msgid "Every fourth Sunday"
 msgstr "Hirugarren igandero"
 
-#: src/EventEdition/RepeatPanel.vala:480
+#: src/EventEdition/RepeatPanel.vala:481
 msgid "Every fourth Monday"
 msgstr "Laugarren astelehenero"
 
-#: src/EventEdition/RepeatPanel.vala:483
+#: src/EventEdition/RepeatPanel.vala:484
 msgid "Every fourth Tuesday"
 msgstr "Laugarren asteartero"
 
-#: src/EventEdition/RepeatPanel.vala:486
+#: src/EventEdition/RepeatPanel.vala:487
 msgid "Every fourth Wednesday"
 msgstr "Laugarren asteazkenero"
 
-#: src/EventEdition/RepeatPanel.vala:489
+#: src/EventEdition/RepeatPanel.vala:490
 msgid "Every fourth Thursday"
 msgstr "Laugarren ostegunero"
 
-#: src/EventEdition/RepeatPanel.vala:492
+#: src/EventEdition/RepeatPanel.vala:493
 msgid "Every fourth Friday"
 msgstr "Laugarren ostiralero"
 
-#: src/EventEdition/RepeatPanel.vala:495
+#: src/EventEdition/RepeatPanel.vala:496
 msgid "Every fourth Saturday"
 msgstr "Laugarren larunbatero"
 
-#: src/EventEdition/RepeatPanel.vala:502
+#: src/EventEdition/RepeatPanel.vala:503
 msgid "Every fifth Sunday"
 msgstr "Bosgarren igandero"
 
-#: src/EventEdition/RepeatPanel.vala:505
+#: src/EventEdition/RepeatPanel.vala:506
 msgid "Every fifth Monday"
 msgstr "Bosgarren astelehenero"
 
-#: src/EventEdition/RepeatPanel.vala:508
+#: src/EventEdition/RepeatPanel.vala:509
 msgid "Every fifth Tuesday"
 msgstr "Bosgarren asteartero"
 
-#: src/EventEdition/RepeatPanel.vala:511
+#: src/EventEdition/RepeatPanel.vala:512
 msgid "Every fifth Wednesday"
 msgstr "Bosgarren asteazkenero"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:515
 msgid "Every fifth Thursday"
 msgstr "Bosgarren ostegunero"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:518
 msgid "Every fifth Friday"
 msgstr "Bosgarren ostiralero"
 
-#: src/EventEdition/RepeatPanel.vala:520
+#: src/EventEdition/RepeatPanel.vala:521
 msgid "Every fifth Saturday"
 msgstr "Bosgarren larunbatero"
 
-#: src/EventEdition/RepeatPanel.vala:530
+#: src/EventEdition/RepeatPanel.vala:531
 msgid "Mon"
 msgstr "al."
 
-#: src/EventEdition/RepeatPanel.vala:531
+#: src/EventEdition/RepeatPanel.vala:532
 msgid "Tue"
 msgstr "ar."
 
-#: src/EventEdition/RepeatPanel.vala:532
+#: src/EventEdition/RepeatPanel.vala:533
 msgid "Wed"
 msgstr "az."
 
-#: src/EventEdition/RepeatPanel.vala:533
+#: src/EventEdition/RepeatPanel.vala:534
 msgid "Thu"
 msgstr "og."
 
-#: src/EventEdition/RepeatPanel.vala:534
+#: src/EventEdition/RepeatPanel.vala:535
 msgid "Fri"
 msgstr "ol."
 
-#: src/EventEdition/RepeatPanel.vala:535
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Sat"
 msgstr "lr."
 
-#: src/EventEdition/RepeatPanel.vala:536
+#: src/EventEdition/RepeatPanel.vala:537
 msgid "Sun"
 msgstr "ig."
 
@@ -701,7 +701,7 @@ msgstr "Desegin"
 msgid "\"%s\" removed"
 msgstr "\"%s\" egutegia ezabatuta."
 
-#: src/SourceDialog/SourceSelector.vala:51
+#: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
 msgstr "Gehitu egutegi berria..."
 
