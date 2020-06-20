@@ -306,13 +306,17 @@ public class Maya.Model.CalendarModel : Object {
         } else {
             warning ("Unknown value of _NL_TIME_WEEK_1STDAY: %u", week_day1);
         }
+        /* The offset between GLib and local POSIX numbering.
+         * If week_1stday is Monday, data is correct for GLib: Monday=1 through Sunday=7,
+         * so offset is 0.
+         * If week_1stday is Sunday, Sunday=1 through Saturday=7. All days must be
+         * subtracted by 1, then Sunday has to be handled separately to wrap to 7. */
+        var glib_offset = week_1stday - 1;
 
         // Get the start of week
         int week_start_posix = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
-        /* If week_1stday is Monday, data is correct for GLib: Monday=1 through Sunday=7.
-         * If week_1stday is Sunday, Sunday=1 through Saturday=7. All days must be
-         * subtracted by 1, then Sunday has to be handled separately if necessary. */
-        var week_start = (week_1stday + week_start_posix - 1);
+
+        var week_start = week_start_posix + glib_offset;
         if (week_start == 0) { // Sunday special case
             week_start = 7;
         }
