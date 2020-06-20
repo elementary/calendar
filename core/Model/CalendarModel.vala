@@ -297,6 +297,11 @@ public class Maya.Model.CalendarModel : Object {
      */
     private GLib.DateWeekday get_week_start () {
         // Set the "baseline" for start of week: Sunday or Monday?
+        // HACK Dealing with NLTime is hacky and potentially prone to breaking.
+        // This to_string call produces a string pointer whose address is the
+        // number we want, so we convert the pointer address to a uint to get
+        // the data. Since the pointer address is actually data, using it as a
+        // pointer will segfault.
         uint week_day1 = (uint) Posix.NLTime.WEEK_1STDAY.to_string ();
         var week_1stday = 0; // Default to 0 if unrecognized data
         if (week_day1 == 19971130) { // Sunday
@@ -314,6 +319,8 @@ public class Maya.Model.CalendarModel : Object {
         var glib_offset = week_1stday - 1;
 
         // Get the start of week
+        // HACK This line produces a string of 3 bytes. It takes the raw value
+        // of the first one and uses that as the value of week_start.
         int week_start_posix = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
 
         var week_start = week_start_posix + glib_offset;
