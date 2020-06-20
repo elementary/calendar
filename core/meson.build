@@ -64,3 +64,5 @@ pkgconfig.generate(
     subdirs: 'elementary-calendar',
     requires: core_deps
 )
+
+subdir('Tests')

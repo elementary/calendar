@@ -76,18 +76,61 @@ namespace Maya.Util {
     }
 
     /**
-     * Converts the given TimeType to a DateTime.
+     * Gets the timezone of the given TimeType as a GLib.TimeZone.
      */
-    private TimeZone timezone_from_ical (ICal.Time date) {
+    public GLib.TimeZone timezone_from_ical (ICal.Time date) {
+        // Special case: return default UTC time zone for all-day events
+        if (date.is_date ()) {
+            debug ("Given date is 'DATE' type, not 'DATE_TIME': Using timezone UTC");
+            return new GLib.TimeZone.utc ();
+        }
+
+        // Otherwise, get timezone from ICal
+        unowned ICal.Timezone? timezone = null;
+        var tzid = date.get_tzid ();
+        // First, try using the tzid property
+        if (tzid != null) {
+            /* Standard city names are usable directly by GLib, so we can bypass
+             * the ICal scaffolding completely and just return a new
+             * GLib.TimeZone here. This method also preserves all the timezone
+             * information, like going in/out of daylight savings, which parsing
+             * from UTC offset does not.
+             * Note, this can't recover from failure, since GLib.TimeZone
+             * constructor doesn't communicate failure information. This block
+             * will always return a GLib.TimeZone, which will be UTC if parsing
+             * fails for some reason.
+             */
+            var prefix = "/freeassociation.sourceforge.net/";
+            if (tzid.has_prefix (prefix)) {
+                // TZID has prefix "/freeassociation.sourceforge.net/",
+                // indicating a libical TZID.
+                return new GLib.TimeZone (tzid.offset (prefix.length));
+            } else {
+                // TZID does not have libical prefix, indicating an Olson
+                // standard city name.
+                return new GLib.TimeZone (tzid);
+            }
+        }
+        // If tzid fails, try ICal.Time.get_timezone ()
+        if (timezone == null && date.get_timezone () != null) {
+            timezone = date.get_timezone ();
+        }
+        // If nothing else works (timezone is still null), default to UTC
+        if (timezone == null) {
+            debug ("Date has no timezone info: defaulting to UTC");
+            return new GLib.TimeZone.utc ();
+        }
+
+        // Get UTC offset and format for GLib.TimeZone constructor
         int is_daylight;
-        var interval = date.get_timezone ().get_utc_offset (null, out is_daylight);
+        int interval = timezone.get_utc_offset (date, out is_daylight);
         bool is_positive = interval >= 0;
         interval = interval.abs ();
         var hours = (interval / 3600);
         var minutes = (interval % 3600) / 60;
         var hour_string = "%s%02d:%02d".printf (is_positive ? "+" : "-", hours, minutes);
 
-        return new TimeZone (hour_string);
+        return new GLib.TimeZone (hour_string);
     }
 
     /**
@@ -110,14 +153,25 @@ namespace Maya.Util {
     public void get_local_datetimes_from_icalcomponent (ICal.Component comp, out DateTime start_date, out DateTime end_date) {
         ICal.Time dt_start = comp.get_dtstart ();
         ICal.Time dt_end = comp.get_dtend ();
-        start_date = Util.ical_to_date_time (dt_start);
+
+        if (dt_start.is_date ()) {
+            // Don't convert timezone for date with only day info, leave it at midnight UTC
+            start_date = Util.ical_to_date_time (dt_start);
+        } else {
+            start_date = Util.ical_to_date_time (dt_start).to_local ();
+        }
 
         if (!dt_end.is_null_time ()) {
-            end_date = Util.ical_to_date_time (dt_end);
+            if (dt_end.is_date ()) {
+                // Don't convert timezone for date with only day info, leave it at midnight UTC
+                end_date = Util.ical_to_date_time (dt_end);
+            } else {
+                end_date = Util.ical_to_date_time (dt_end).to_local ();
+            }
         } else if (dt_start.is_date ()) {
             end_date = start_date;
         } else if (!comp.get_duration ().is_null_duration ()) {
-            end_date = Util.ical_to_date_time (dt_start.add (comp.get_duration ()));
+            end_date = Util.ical_to_date_time (dt_start.add (comp.get_duration ())).to_local ();
         } else {
             end_date = start_date.add_days (1);
         }
@@ -127,9 +181,21 @@ namespace Maya.Util {
         }
     }
 
+    /** Returns whether the given event overlaps with the time range.
+     *
+     * This is true if the event either starts or ends within the range, even
+     * if the entire event doesn't happen within the range.
+     */
     public bool is_event_in_range (ICal.Component comp, Util.DateRange view_range) {
         DateTime start, end;
         get_local_datetimes_from_icalcomponent (comp, out start, out end);
+
+        // If the event is all day, it has no timezone info. Convert times to
+        // midnight local to match the range.
+        if (comp.get_dtstart ().is_date () && comp.get_dtend ().is_date ()) {
+            start = start.add (-view_range.first_dt.get_utc_offset ());
+            end = end.add (-view_range.last_dt.get_utc_offset ());
+        }
 
         int c1 = start.compare (view_range.first_dt);
         int c2 = start.compare (view_range.last_dt);
