@@ -35,7 +35,6 @@ public class Maya.View.CalendarView : Gtk.Grid {
     private Header header { get; private set; }
     private Grid days_grid { get; private set; }
     private Gtk.Stack stack { get; private set; }
-    private Gtk.Grid big_grid { get; private set; }
     private Gtk.Label spacer { get; private set; }
     private static GLib.Settings show_weeks;
 
@@ -86,39 +85,6 @@ public class Maya.View.CalendarView : Gtk.Grid {
         events |= Gdk.EventMask.SCROLL_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         add (stack);
-    }
-
-    public Gtk.Grid create_big_grid () {
-        spacer = new Gtk.Label ("");
-        spacer.no_show_all = true;
-
-        unowned Gtk.StyleContext spacer_context = spacer.get_style_context ();
-        spacer_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        spacer_context.add_class ("weeks");
-
-        weeks = new WeekLabels ();
-
-        header = new Header ();
-        days_grid = new Grid ();
-        days_grid.focus_date (selected_date);
-        days_grid.on_event_add.connect ((date) => on_event_add (date));
-        days_grid.selection_changed.connect ((date) => {
-            selected_date = date;
-            selection_changed (date);
-        });
-
-        // Grid properties
-        var new_big_grid = new Gtk.Grid ();
-        new_big_grid.attach (spacer, 0, 0, 1, 1);
-        new_big_grid.attach (header, 1, 0, 1, 1);
-        new_big_grid.attach (days_grid, 1, 1, 1, 1);
-        new_big_grid.attach (weeks, 0, 1, 1, 1);
-        new_big_grid.show_all ();
-        new_big_grid.expand = true;
-
-        update_spacer_visible ();
-
-        return new_big_grid;
     }
 
     public override bool scroll_event (Gdk.EventScroll event) {
@@ -194,6 +160,38 @@ public class Maya.View.CalendarView : Gtk.Grid {
     }
 
     //--- Helper Methods ---//
+    Gtk.Grid create_big_grid () {
+        spacer = new Gtk.Label ("");
+        spacer.no_show_all = true;
+
+        unowned Gtk.StyleContext spacer_context = spacer.get_style_context ();
+        spacer_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        spacer_context.add_class ("weeks");
+
+        weeks = new WeekLabels ();
+
+        header = new Header ();
+        days_grid = new Grid ();
+        days_grid.focus_date (selected_date);
+        days_grid.on_event_add.connect ((date) => on_event_add (date));
+        days_grid.selection_changed.connect ((date) => {
+            selected_date = date;
+            selection_changed (date);
+        });
+
+        // Grid properties
+        var new_big_grid = new Gtk.Grid ();
+        new_big_grid.attach (spacer, 0, 0, 1, 1);
+        new_big_grid.attach (header, 1, 0, 1, 1);
+        new_big_grid.attach (days_grid, 1, 1, 1, 1);
+        new_big_grid.attach (weeks, 0, 1, 1, 1);
+        new_big_grid.show_all ();
+        new_big_grid.expand = true;
+
+        update_spacer_visible ();
+
+        return new_big_grid;
+    }
 
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_model () {
@@ -205,7 +203,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         if (days_grid.grid_range != null)
             previous_first = days_grid.grid_range.first_dt;
 
-        big_grid = create_big_grid ();
+        var big_grid = create_big_grid ();
         stack.add (big_grid);
 
         header.update_columns (model.week_starts_on);
