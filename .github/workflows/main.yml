@@ -15,7 +15,7 @@ jobs:
     - name: Install Dependencies
       run: |
         apt update
-        apt install -y libchamplain-0.12-dev libchamplain-gtk-0.12-dev libclutter-1.0-dev libecal2.0-dev libedataserverui1.2-dev libfolks-dev libgee-0.8-dev libgeocode-glib-dev libgeoclue-2-dev libglib2.0-dev libgranite-dev libgtk-3-dev libical-dev meson valac
+        apt install -y libchamplain-0.12-dev libchamplain-gtk-0.12-dev libclutter-1.0-dev libecal2.0-dev libedataserverui1.2-dev libfolks-dev libgee-0.8-dev libgeocode-glib-dev libgeoclue-2-dev libglib2.0-dev libgranite-dev libgtk-3-dev libical-dev meson valac language-pack-ar language-pack-en
     - name: Build
       env:
         DESTDIR: out

@@ -72,7 +72,7 @@ public class Maya.Model.CalendarModel : Object {
         state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
     }
 
-    private CalendarModel () {
+    protected CalendarModel () {
         this.week_starts_on = get_week_start ();
         this.month_start = Util.get_start_of_month (get_page ());
         compute_ranges ();
