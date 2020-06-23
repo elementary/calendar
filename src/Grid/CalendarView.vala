@@ -196,12 +196,13 @@ public class Maya.View.CalendarView : Gtk.Grid {
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_model () {
         var model = Model.CalendarModel.get_default ();
-        if (days_grid.grid_range != null && (model.data_range.equals (days_grid.grid_range) || days_grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0))
-            return; // nothing to do
-
         DateTime previous_first = null;
-        if (days_grid.grid_range != null)
-            previous_first = days_grid.grid_range.first_dt;
+        if (days_grid != null) {
+            if (days_grid.grid_range != null && (model.data_range.equals (days_grid.grid_range) || days_grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0))
+                return; // nothing to do
+            if (days_grid.grid_range != null)
+                previous_first = days_grid.grid_range.first_dt;
+        }
 
         var big_grid = create_big_grid ();
         stack.add (big_grid);
