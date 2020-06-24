@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-17 17:29+0000\n"
-"PO-Revision-Date: 2020-06-07 13:11+0000\n"
+"PO-Revision-Date: 2020-06-20 09:29+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -45,10 +45,8 @@ msgid "Minor Updates:"
 msgstr "軽微なアップデート:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr "定期的に行われる予定に関する不具合を修正"
+msgstr "毎月行われる予定の追加と削除に関する複数の不具合を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 #: data/io.elementary.calendar.appdata.xml.in:32
