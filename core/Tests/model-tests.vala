@@ -9,6 +9,9 @@ class TestModel : Maya.Model.CalendarModel {
  * hacky. Include a test to make sure that it still works the same, especially
  * since it depends very specifically on implementations of nl_langinfo and Vala
  * string handling, so could be prone to Vala changes.
+ *
+ * This test ensures that the values from nl_langinfo stay the same, and should
+ * error out if Vala issues show up.
  */
 void test_posix_nl_langinfo () {
     // Test en_GB (English, Great Britain), where the week starts on Monday
@@ -51,6 +54,8 @@ void test_posix_nl_langinfo () {
     }
 }
 
+/** Test the get_week_start function in CalendarModel
+ */
 void test_week_start () {
     // Test en_GB (English, Great Britain), where the week starts on Monday
     // and week_1stday is 19971130 (Sunday)
