@@ -189,7 +189,7 @@ namespace ECal {
 		public void set_categories_list (GLib.SList<string> categ_list);
 		public void set_classification (ECal.ComponentClassification classif);
 		public void set_comment_list (GLib.SList<ECal.ComponentText> text_list);
-		public void set_completed (ICal.Time t);
+		public void set_completed (ref ICal.Time t);
 		public void set_contact_list (GLib.SList<ECal.ComponentText> text_list);
 		public void set_created (ICal.Time t);
 		public void set_description_list (GLib.SList<ECal.ComponentText> text_list);
@@ -206,7 +206,8 @@ namespace ECal {
 		public void set_new_vtype (ECal.ComponentVType type);
 		public void set_organizer (ECal.ComponentOrganizer organizer);
 		public void set_percent (int percent);
-		public void set_percent_as_int (int percent);
+		[CCode (cname = "e_cal_component_set_percent_as_int")]
+		public void set_percent_complete (int percent);
 		public void set_priority (int priority);
 		public void set_rdate_list (GLib.SList<ECal.ComponentPeriod> period_list);
 		public void set_recurid (ECal.ComponentRange recur_id);

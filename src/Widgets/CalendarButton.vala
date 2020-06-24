@@ -237,7 +237,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         private void apply_source () {
             E.SourceCalendar cal = (E.SourceCalendar)_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             label = _source.dup_display_name ();
-            location = Maya.Util.get_source_location (_source);
+            location = Calendar.Store.get_event_store ().get_source_location (_source);
 
             var css_color = STYLE.printf (cal.dup_color ());
             var style_provider = new Gtk.CssProvider ();

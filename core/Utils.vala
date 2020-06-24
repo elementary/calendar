@@ -127,7 +127,7 @@ namespace Maya.Util {
         }
     }
 
-    public bool is_event_in_range (ICal.Component comp, Util.DateRange view_range) {
+    /*public bool is_event_in_range (ICal.Component comp, Util.DateRange view_range) {
         DateTime start, end;
         get_local_datetimes_from_icalcomponent (comp, out start, out end);
 
@@ -150,7 +150,7 @@ namespace Maya.Util {
         }
 
         return false;
-    }
+    }*/
 
     public bool is_multiday_event (ICal.Component comp) {
         DateTime start, end;
@@ -274,7 +274,7 @@ namespace Maya.Util {
     /*
      * E.Source Utils
      */
-    public string get_source_location (E.Source source) {
+    /*public string get_source_location (E.Source source) {
         var registry = Maya.Model.CalendarModel.get_default ().registry;
         string parent_uid = source.parent;
         E.Source parent_source = source;
@@ -302,15 +302,15 @@ namespace Maya.Util {
         }
 
         return _("On this computer");
-    }
+    }*/
 
     /*
      * ical Exportation
      */
 
     public void save_temp_selected_calendars () {
-        var calmodel = Model.CalendarModel.get_default ();
-        var events = calmodel.get_events ();
+        var calmodel = Calendar.Store.get_event_store ();
+        var events = calmodel.list_components ();
         var builder = new StringBuilder ();
         builder.append ("BEGIN:VCALENDAR\n");
         builder.append ("VERSION:2.0\n");

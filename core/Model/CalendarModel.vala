@@ -270,7 +270,7 @@ public class Maya.Model.CalendarModel : Object {
         source_events.remove (source);
     }
 
-    public Gee.Collection<ECal.Component> get_events () {
+    /*public Gee.Collection<ECal.Component> get_events () {
         Gee.ArrayList<ECal.Component> events = new Gee.ArrayList<ECal.Component> ();
         registry.list_sources (E.SOURCE_EXTENSION_CALENDAR).foreach ((source) => {
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
@@ -279,7 +279,7 @@ public class Maya.Model.CalendarModel : Object {
             }
         });
         return events;
-    }
+    }*/
 
     //--- Helper Methods ---//
 
