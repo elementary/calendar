@@ -5,12 +5,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * 
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -200,44 +200,43 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         unowned ICal.Component comp = row.calevent.get_icalcomponent ();
         DateTime now = new DateTime.now_local ();
 
-        var interval_start = Util.strip_time (now).add_days (1);
-
-        var interval_end = interval_start.add_days (1);
-        // If an event starts at midnight (like an all-day event), it should
-        // count as part of that day, not the day before
-        interval_end = interval_end.add_seconds (-1);
-        var range = new Util.DateRange (interval_start, interval_end);
+        var stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
+        stripped_time = stripped_time.add_days (1);
+        var stripped_time_end = stripped_time.add_days (1);
+        var range = new Util.DateRange (stripped_time, stripped_time_end);
         if (Util.is_event_in_range (comp, range)) {
             return 1; // Tomorrow
         }
 
-        var next_week_start = Util.get_start_of_week (now).add_weeks (1);
-        interval_end = next_week_start.add_seconds (-1);
-        range = new Util.DateRange (interval_start, interval_end);
-        // debug (@"Week range end: $(stripped_time_end.format ("%FT%T%z"))");
+        stripped_time_end = stripped_time_end.add_days (7 - stripped_time.get_day_of_week ());
+        range = new Util.DateRange (stripped_time, stripped_time_end);
         if (Util.is_event_in_range (comp, range)) {
             return 2; // This Week
         }
 
-        interval_end = interval_end.add_weeks (1);
-        range = new Util.DateRange (interval_start, interval_end);
+        stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
+        stripped_time = stripped_time.add_days (8 - stripped_time.get_day_of_week ());
+        stripped_time_end = stripped_time.add_days (7);
+        range = new Util.DateRange (stripped_time, stripped_time_end);
         if (Util.is_event_in_range (comp, range)) {
             return 3; // Next Week
         }
 
-        var next_month_start = Util.get_start_of_month (now).add_months (1);
-        interval_end = next_month_start.add_seconds (-1);
-        range = new Util.DateRange (interval_start, interval_end);
+        stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
+        stripped_time_end = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
+        stripped_time_end = stripped_time_end.add_months (1);
+        range = new Util.DateRange (stripped_time, stripped_time_end);
         if (Util.is_event_in_range (comp, range)) {
             return 4; // This Month
         }
 
-        interval_end = next_month_start.add_months (1).add_seconds (-1);
-        range = new Util.DateRange (interval_start, interval_end);
+        stripped_time = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
+        stripped_time = stripped_time.add_months (1);
+        stripped_time_end = stripped_time.add_months (1);
+        range = new Util.DateRange (stripped_time, stripped_time_end);
         if (Util.is_event_in_range (comp, range)) {
             return 5; // Next Month
         }
-
         return -1;
     }
 
