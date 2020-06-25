@@ -53,7 +53,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
     }
 
     construct {
-        selected_date = Settings.SavedState.get_default ().get_selected ();
+        selected_date = Maya.Application.get_selected_datetime ();
         big_grid = create_big_grid ();
 
         stack = new Gtk.Stack ();

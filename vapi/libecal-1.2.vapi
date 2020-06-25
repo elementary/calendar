@@ -141,7 +141,7 @@ namespace ECal {
 		public void get_description_list (out GLib.SList<ECal.ComponentText> text_list);
 		public void get_dtend (out ECal.ComponentDateTime? dt);
 		public void get_dtstamp (out ICal.Time? t);
-		public void get_dtstart (out ECal.ComponentDateTime? dt);
+		public void get_dtstart (out ECal.ComponentDateTime dt);
 		public void get_due (out ECal.ComponentDateTime? dt);
 		public void get_exdate_list (out GLib.SList<ECal.ComponentDateTime> exdate_list);
 		public void get_exrule_list (out GLib.SList<ICal.Recurrence> recur_list);
@@ -308,7 +308,7 @@ namespace ECal {
 		public weak string cn;
 		public weak string language;
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_free_datetime")]
+	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_free_datetime", has_copy_function = false, has_destroy_function = false)]
 	public struct ComponentDateTime {
 		public ICal.Time? value;
 		public weak string tzid;

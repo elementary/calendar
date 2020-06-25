@@ -242,7 +242,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         attach (ends_grid, 1, 6);
         attach (exceptions_label, 1, 7);
         attach (exceptions_frame, 1, 8);
-        load ();
 
         add_button.clicked.connect (() => {
             var exception_grid = new ExceptionGrid (new GLib.DateTime.now_local ());
@@ -260,6 +259,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             exceptions_grid.sensitive = active;
         });
         repeat_switch.active = false;
+
+        load ();
     }
 
     private void load_weekly_recurrence (ICal.Recurrence rrule) {

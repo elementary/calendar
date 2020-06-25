@@ -99,18 +99,61 @@ namespace Calendar.Util {
     //--- ICal.Time Helpers ---//
 
     /**
-     * Converts the given ICal.Time to a DateTime.
+     * Gets the timezone of the given TimeType as a GLib.TimeZone.
      */
-    public TimeZone icaltime_get_timezone (ICal.Time date) {
+    public GLib.TimeZone icaltime_get_timezone (ICal.Time date) {
+        // Special case: return default UTC time zone for all-day events
+        if (date.is_date ()) {
+            debug ("Given date is 'DATE' type, not 'DATE_TIME': Using timezone UTC");
+            return new GLib.TimeZone.utc ();
+        }
+
+        // Otherwise, get timezone from ICal
+        unowned ICal.Timezone? timezone = null;
+        var tzid = date.get_tzid ();
+        // First, try using the tzid property
+        if (tzid != null) {
+            /* Standard city names are usable directly by GLib, so we can bypass
+             * the ICal scaffolding completely and just return a new
+             * GLib.TimeZone here. This method also preserves all the timezone
+             * information, like going in/out of daylight savings, which parsing
+             * from UTC offset does not.
+             * Note, this can't recover from failure, since GLib.TimeZone
+             * constructor doesn't communicate failure information. This block
+             * will always return a GLib.TimeZone, which will be UTC if parsing
+             * fails for some reason.
+             */
+            var prefix = "/freeassociation.sourceforge.net/";
+            if (tzid.has_prefix (prefix)) {
+                // TZID has prefix "/freeassociation.sourceforge.net/",
+                // indicating a libical TZID.
+                return new GLib.TimeZone (tzid.offset (prefix.length));
+            } else {
+                // TZID does not have libical prefix, indicating an Olson
+                // standard city name.
+                return new GLib.TimeZone (tzid);
+            }
+        }
+        // If tzid fails, try ICal.Time.get_timezone ()
+        if (timezone == null && date.get_timezone () != null) {
+            timezone = date.get_timezone ();
+        }
+        // If nothing else works (timezone is still null), default to UTC
+        if (timezone == null) {
+            debug ("Date has no timezone info: defaulting to UTC");
+            return new GLib.TimeZone.utc ();
+        }
+
+        // Get UTC offset and format for GLib.TimeZone constructor
         int is_daylight;
-        var interval = date.get_timezone ().get_utc_offset (null, out is_daylight);
+        int interval = timezone.get_utc_offset (date, out is_daylight);
         bool is_positive = interval >= 0;
         interval = interval.abs ();
         var hours = (interval / 3600);
         var minutes = (interval % 3600) / 60;
         var hour_string = "%s%02d:%02d".printf (is_positive ? "+" : "-", hours, minutes);
 
-        return new TimeZone (hour_string);
+        return new GLib.TimeZone (hour_string);
     }
 
     /**
@@ -224,14 +267,25 @@ namespace Calendar.Util {
     public void icalcomponent_get_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         ICal.Time dt_start = component.get_dtstart ();
         ICal.Time dt_end = component.get_dtend ();
-        start_date = Calendar.Util.icaltime_to_datetime (dt_start);
+
+        if (dt_start.is_date ()) {
+            // Don't convert timezone for date with only day info, leave it at midnight UTC
+            start_date = Calendar.Util.icaltime_to_datetime (dt_start);
+        } else {
+            start_date = Calendar.Util.icaltime_to_datetime (dt_start).to_local ();
+        }
 
         if (!dt_end.is_null_time ()) {
-            end_date = Calendar.Util.icaltime_to_datetime (dt_end);
+            if (dt_end.is_date ()) {
+                // Don't convert timezone for date with only day info, leave it at midnight UTC
+                end_date = Calendar.Util.icaltime_to_datetime (dt_end);
+            } else {
+                end_date = Calendar.Util.icaltime_to_datetime (dt_end).to_local ();
+            }
         } else if (dt_start.is_date ()) {
             end_date = start_date;
         } else if (!component.get_duration ().is_null_duration ()) {
-            end_date = Calendar.Util.icaltime_to_datetime (dt_start.add (component.get_duration ()));
+            end_date = Calendar.Util.icaltime_to_datetime (dt_start.add (component.get_duration ())).to_local ();
         } else {
             end_date = start_date.add_days (1);
         }
@@ -241,9 +295,22 @@ namespace Calendar.Util {
         }
     }
 
+
+    /** Returns whether the given icalcomponent overlaps with the time range.
+     *
+     * This is true if the icalcomponent either starts or ends within the range, even
+     * if the entire icalcomponent doesn't happen within the range.
+     */
     public bool icalcomponent_is_in_range (ICal.Component component, Calendar.Util.DateRange range) {
         GLib.DateTime start, end;
         icalcomponent_get_local_datetimes (component, out start, out end);
+
+        // If the event is all day, it has no timezone info. Convert times to
+        // midnight local to match the range.
+        if (component.get_dtstart ().is_date () && component.get_dtend ().is_date ()) {
+            start = start.add (-range.first_dt.get_utc_offset ());
+            end = end.add (-range.last_dt.get_utc_offset ());
+        }
 
         int c1 = start.compare (range.first_dt);
         int c2 = start.compare (range.last_dt);
@@ -266,9 +333,9 @@ namespace Calendar.Util {
         return false;
     }
 
-    public bool icalcomponent_is_multiday (ICal.Component comp) {
+    public bool icalcomponent_is_multiday (ICal.Component component) {
         GLib.DateTime start, end;
-        icalcomponent_get_local_datetimes (comp, out start, out end);
+        icalcomponent_get_local_datetimes (component, out start, out end);
 
         if (start.get_year () != end.get_year () || start.get_day_of_year () != end.get_day_of_year ())
             return true;

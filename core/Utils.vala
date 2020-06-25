@@ -23,7 +23,6 @@ namespace Maya.Util {
         return comp1.get_summary ().get_value ().collate (comp2.get_summary ().get_value ());
     }
 
-
     /*
      * ical Exportation
      */

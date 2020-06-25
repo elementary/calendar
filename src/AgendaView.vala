@@ -112,7 +112,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         store.components_removed.connect (on_components_removed);
         store.components_modified.connect (on_components_updated);
         store.parameters_changed.connect (on_store_parameters_changed);
-        set_selected_date (Settings.SavedState.get_default ().get_selected ());
+        set_selected_date (Maya.Application.get_selected_datetime ());
         show_all ();
 
         selected_date_events_list.row_activated.connect (activate_eventrow);

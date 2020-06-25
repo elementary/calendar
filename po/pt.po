@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-26 16:51+0000\n"
-"PO-Revision-Date: 2020-03-28 18:09+0000\n"
+"POT-Creation-Date: 2020-06-17 17:29+0000\n"
+"PO-Revision-Date: 2020-05-13 23:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "calendar/pt/>\n"
@@ -86,7 +86,7 @@ msgstr "Durante o dia"
 
 #: src/AgendaView.vala:145
 msgid "All day"
-msgstr "Dia completo"
+msgstr "Dia todo"
 
 #: src/AgendaView.vala:262
 msgid "Tomorrow"
@@ -120,7 +120,7 @@ msgstr "Concentre-se no dia indicado"
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:148
+#: src/Application.vala:161
 msgid "Calendar"
 msgstr "Calendário"
 
@@ -254,7 +254,7 @@ msgstr "Localização:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "João Simões OU Rua X"
+msgstr "Hugo Carvalho OU Rua X"
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
@@ -412,209 +412,209 @@ msgstr "Sem Exceções"
 msgid "Add Exception"
 msgstr "Adicionar Exceção"
 
-#: src/EventEdition/RepeatPanel.vala:377
+#: src/EventEdition/RepeatPanel.vala:378
 msgid "Every last Sunday"
 msgstr "Cada último Domingo"
 
-#: src/EventEdition/RepeatPanel.vala:380
+#: src/EventEdition/RepeatPanel.vala:381
 msgid "Every last Monday"
-msgstr "Cada última Segunda-feira"
+msgstr "Cada última Segunda"
 
-#: src/EventEdition/RepeatPanel.vala:383
+#: src/EventEdition/RepeatPanel.vala:384
 msgid "Every last Tuesday"
-msgstr "Cada última Terça-feira"
+msgstr "Cada última Terça"
 
-#: src/EventEdition/RepeatPanel.vala:386
+#: src/EventEdition/RepeatPanel.vala:387
 msgid "Every last Wednesday"
-msgstr "Cada última Quarta-feira"
+msgstr "Cada última Quarta"
 
-#: src/EventEdition/RepeatPanel.vala:389
+#: src/EventEdition/RepeatPanel.vala:390
 msgid "Every last Thursday"
-msgstr "Cada última Quinta-feira"
+msgstr "Cada última Quinta"
 
-#: src/EventEdition/RepeatPanel.vala:392
+#: src/EventEdition/RepeatPanel.vala:393
 msgid "Every last Friday"
-msgstr "Cada última Sexta-feira"
+msgstr "Cada última Sexta"
 
-#: src/EventEdition/RepeatPanel.vala:395
+#: src/EventEdition/RepeatPanel.vala:396
 msgid "Every last Saturday"
 msgstr "Cada último Sábado"
 
-#: src/EventEdition/RepeatPanel.vala:402
+#: src/EventEdition/RepeatPanel.vala:403
 msgid "Every first Sunday"
 msgstr "Cada primeiro Domingo"
 
-#: src/EventEdition/RepeatPanel.vala:405
+#: src/EventEdition/RepeatPanel.vala:406
 msgid "Every first Monday"
-msgstr "Cada primeira Segunda-feira"
+msgstr "Cada primeira Segunda"
 
-#: src/EventEdition/RepeatPanel.vala:408
+#: src/EventEdition/RepeatPanel.vala:409
 msgid "Every first Tuesday"
-msgstr "Cada primeira Terça-feira"
+msgstr "Cada primeira Terça"
 
-#: src/EventEdition/RepeatPanel.vala:411
+#: src/EventEdition/RepeatPanel.vala:412
 msgid "Every first Wednesday"
-msgstr "Cada primeira Quarta-feira"
+msgstr "Cada primeira Quarta"
 
-#: src/EventEdition/RepeatPanel.vala:414
+#: src/EventEdition/RepeatPanel.vala:415
 msgid "Every first Thursday"
-msgstr "Cada primeira Quinta-feira"
+msgstr "Cada primeira Quinta"
 
-#: src/EventEdition/RepeatPanel.vala:417
+#: src/EventEdition/RepeatPanel.vala:418
 msgid "Every first Friday"
-msgstr "Cada primeira Sexta-feira"
+msgstr "Cada primeira Sexta"
 
-#: src/EventEdition/RepeatPanel.vala:420
+#: src/EventEdition/RepeatPanel.vala:421
 msgid "Every first Saturday"
 msgstr "Cada primeiro Sábado"
 
-#: src/EventEdition/RepeatPanel.vala:427
+#: src/EventEdition/RepeatPanel.vala:428
 msgid "Every second Sunday"
 msgstr "Cada segundo Domingo"
 
-#: src/EventEdition/RepeatPanel.vala:430
+#: src/EventEdition/RepeatPanel.vala:431
 msgid "Every second Monday"
-msgstr "Cada segunda Segunda-feira"
+msgstr "Cada segunda Segunda"
 
-#: src/EventEdition/RepeatPanel.vala:433
+#: src/EventEdition/RepeatPanel.vala:434
 msgid "Every second Tuesday"
-msgstr "Cada segunda Terça-feira"
+msgstr "Cada segunda Terça"
 
-#: src/EventEdition/RepeatPanel.vala:436
+#: src/EventEdition/RepeatPanel.vala:437
 msgid "Every second Wednesday"
-msgstr "Cada segunda Quarta-feira"
+msgstr "Cada segunda Quarta"
 
-#: src/EventEdition/RepeatPanel.vala:439
+#: src/EventEdition/RepeatPanel.vala:440
 msgid "Every second Thursday"
-msgstr "Cada segunda Quinta-feira"
+msgstr "Cada segunda Quinta"
 
-#: src/EventEdition/RepeatPanel.vala:442
+#: src/EventEdition/RepeatPanel.vala:443
 msgid "Every second Friday"
-msgstr "Cada segunda Sexta-feira"
+msgstr "Cada segunda Sexta"
 
-#: src/EventEdition/RepeatPanel.vala:445
+#: src/EventEdition/RepeatPanel.vala:446
 msgid "Every second Saturday"
 msgstr "Cada segundo Sábado"
 
-#: src/EventEdition/RepeatPanel.vala:452
+#: src/EventEdition/RepeatPanel.vala:453
 msgid "Every third Sunday"
 msgstr "Cada terceiro Domingo"
 
-#: src/EventEdition/RepeatPanel.vala:455
+#: src/EventEdition/RepeatPanel.vala:456
 msgid "Every third Monday"
-msgstr "Cada terceira Segunda-feira"
+msgstr "Cada terceira Segunda"
 
-#: src/EventEdition/RepeatPanel.vala:458
+#: src/EventEdition/RepeatPanel.vala:459
 msgid "Every third Tuesday"
-msgstr "Cada terceira Terça-feira"
+msgstr "Cada terceira Terça"
 
-#: src/EventEdition/RepeatPanel.vala:461
+#: src/EventEdition/RepeatPanel.vala:462
 msgid "Every third Wednesday"
-msgstr "Cada terceira Quarta-feira"
+msgstr "Cada terceira Quarta"
 
-#: src/EventEdition/RepeatPanel.vala:464
+#: src/EventEdition/RepeatPanel.vala:465
 msgid "Every third Thursday"
-msgstr "Cada terceira Quinta-feira"
+msgstr "Cada terceira Quinta"
 
-#: src/EventEdition/RepeatPanel.vala:467
+#: src/EventEdition/RepeatPanel.vala:468
 msgid "Every third Friday"
-msgstr "Cada terceira Sexta-feira"
+msgstr "Cada terceira Sexta"
 
-#: src/EventEdition/RepeatPanel.vala:470
+#: src/EventEdition/RepeatPanel.vala:471
 msgid "Every third Saturday"
 msgstr "Cada terceiro Sábado"
 
-#: src/EventEdition/RepeatPanel.vala:477
+#: src/EventEdition/RepeatPanel.vala:478
 msgid "Every fourth Sunday"
 msgstr "Cada quarto Domingo"
 
-#: src/EventEdition/RepeatPanel.vala:480
+#: src/EventEdition/RepeatPanel.vala:481
 msgid "Every fourth Monday"
-msgstr "Cada quarta Segunda-feira"
+msgstr "Cada quarta Segunda"
 
-#: src/EventEdition/RepeatPanel.vala:483
+#: src/EventEdition/RepeatPanel.vala:484
 msgid "Every fourth Tuesday"
-msgstr "Cada quarta Terça-feira"
+msgstr "Cada quarta Terça"
 
-#: src/EventEdition/RepeatPanel.vala:486
+#: src/EventEdition/RepeatPanel.vala:487
 msgid "Every fourth Wednesday"
-msgstr "Cada quarta Quarta-feira"
+msgstr "Cada quarta Quarta"
 
-#: src/EventEdition/RepeatPanel.vala:489
+#: src/EventEdition/RepeatPanel.vala:490
 msgid "Every fourth Thursday"
-msgstr "Cada quarta Quinta-feira"
+msgstr "Cada quarta Quinta"
 
-#: src/EventEdition/RepeatPanel.vala:492
+#: src/EventEdition/RepeatPanel.vala:493
 msgid "Every fourth Friday"
-msgstr "Cada quarta Sexta-feira"
+msgstr "Cada quarta Sexta"
 
-#: src/EventEdition/RepeatPanel.vala:495
+#: src/EventEdition/RepeatPanel.vala:496
 msgid "Every fourth Saturday"
 msgstr "Cada quarto Sábado"
 
-#: src/EventEdition/RepeatPanel.vala:502
+#: src/EventEdition/RepeatPanel.vala:503
 msgid "Every fifth Sunday"
 msgstr "Cada quinto Domingo"
 
-#: src/EventEdition/RepeatPanel.vala:505
+#: src/EventEdition/RepeatPanel.vala:506
 msgid "Every fifth Monday"
-msgstr "Cada quinta Segunda-feira"
+msgstr "Cada quinta Segunda"
 
-#: src/EventEdition/RepeatPanel.vala:508
+#: src/EventEdition/RepeatPanel.vala:509
 msgid "Every fifth Tuesday"
-msgstr "Cada quinta Terça-feira"
+msgstr "Cada quinta Terça"
 
-#: src/EventEdition/RepeatPanel.vala:511
+#: src/EventEdition/RepeatPanel.vala:512
 msgid "Every fifth Wednesday"
-msgstr "Cada quinta Quarta-feira"
+msgstr "Cada quinta Quarta"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:515
 msgid "Every fifth Thursday"
-msgstr "Cada quinta Quinta-feira"
+msgstr "Cada quinta Quinta"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:518
 msgid "Every fifth Friday"
-msgstr "Cada quinta Sexta-feira"
+msgstr "Cada quinta Sexta"
 
-#: src/EventEdition/RepeatPanel.vala:520
+#: src/EventEdition/RepeatPanel.vala:521
 msgid "Every fifth Saturday"
 msgstr "Cada quinto Sábado"
 
-#: src/EventEdition/RepeatPanel.vala:530
-msgid "Mon"
-msgstr "seg"
-
 #: src/EventEdition/RepeatPanel.vala:531
-msgid "Tue"
-msgstr "ter"
+msgid "Mon"
+msgstr "Seg"
 
 #: src/EventEdition/RepeatPanel.vala:532
-msgid "Wed"
-msgstr "qua"
+msgid "Tue"
+msgstr "Ter"
 
 #: src/EventEdition/RepeatPanel.vala:533
-msgid "Thu"
-msgstr "qui"
+msgid "Wed"
+msgstr "Qua"
 
 #: src/EventEdition/RepeatPanel.vala:534
-msgid "Fri"
-msgstr "sex"
+msgid "Thu"
+msgstr "Qui"
 
 #: src/EventEdition/RepeatPanel.vala:535
-msgid "Sat"
-msgstr "sáb"
+msgid "Fri"
+msgstr "Sex"
 
 #: src/EventEdition/RepeatPanel.vala:536
+msgid "Sat"
+msgstr "Sáb"
+
+#: src/EventEdition/RepeatPanel.vala:537
 msgid "Sun"
-msgstr "dom"
+msgstr "Dom"
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
 msgid "Hide Week Numbers"
-msgstr "Esconder Número das Semanas"
+msgstr "Ocultar número das semanas"
 
 #: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
 msgid "Show Week Numbers"
-msgstr "Mostrar os números das semanas"
+msgstr "Mostrar números das semanas"
 
 #: src/Grid/VAutoHider.vala:109
 #, c-format
@@ -643,11 +643,11 @@ msgstr "Cor:"
 
 #: src/SourceDialog/SourceDialog.vala:183
 msgid "Mark as default calendar"
-msgstr "Marcar como pré-definido"
+msgstr "Marcar como predefinido"
 
 #: src/SourceDialog/SourceDialog.vala:248
 msgid "Create Calendar"
-msgstr "Criar calendário"
+msgstr "Criar Calendário"
 
 #: src/SourceDialog/SourceDialog.vala:251
 #: src/Widgets/ContractorButtonWithMenu.vala:90
@@ -668,7 +668,7 @@ msgstr "Editar…"
 
 #: src/SourceDialog/SourceItem.vala:87
 msgid "Not Editable"
-msgstr "Não Editável"
+msgstr "Não editável"
 
 #: src/SourceDialog/SourceItem.vala:110
 msgid "Undo"
@@ -679,7 +679,7 @@ msgstr "Anular"
 msgid "\"%s\" removed"
 msgstr "\"%s\" removido"
 
-#: src/SourceDialog/SourceSelector.vala:51
+#: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
 msgstr "Adicionar novo calendário…"
 
@@ -693,13 +693,13 @@ msgstr "marcação;reunião"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr "aniversário;aniversário;festa"
+msgstr "nascimento;aniversário;festa"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr "chamada;telefone;telefone;toque"
+msgstr "chamada;telefone;telemóvel;toque"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -711,7 +711,7 @@ msgstr "bar;cocktails;bebidas;hora feliz"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr "carro;condução;condução;viagem de carro;"
+msgstr "carro;conduzir;condução;viagem de carro;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -800,7 +800,7 @@ msgstr "calendário.ics"
 
 #: src/Widgets/EventMenu.vala:39
 msgid "Remove Event"
-msgstr "Apagar Evento"
+msgstr "Remover Evento"
 
 #: src/Widgets/EventMenu.vala:41
 msgid "Remove Occurrence"
@@ -816,11 +816,11 @@ msgstr "Ir para hoje"
 
 #: src/Widgets/HeaderBar.vala:56
 msgid "Manage Calendars"
-msgstr "Gerir calendários"
+msgstr "Gerir Calendários"
 
 #: src/Widgets/HeaderBar.vala:63
 msgid "Export or Share the default Calendar"
-msgstr "Exportar ou partilhar o calendário pré-definido"
+msgstr "Exportar ou partilhar o calendário predefinido"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"

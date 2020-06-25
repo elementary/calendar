@@ -219,7 +219,7 @@ public class Calendar.Store : Object {
     }
 
     public bool source_is_readonly (E.Source source) {
-        ECal.Client client;
+        ECal.Client? client;
         lock (source_client) {
             client = source_client.get (source.get_uid ());
         }
@@ -307,30 +307,36 @@ public class Calendar.Store : Object {
      * See `e-cal-backend-sexp.c` of evolution-data-server for available S-expressions:
      * https://gitlab.gnome.org/GNOME/evolution-data-server/-/blob/master/src/calendar/libedata-cal/e-cal-backend-sexp.c
      **/
-    public ECal.ClientView view_add (E.Source source, string sexp) throws Error {
-        ECal.Client client;
+    public ECal.ClientView? view_add (E.Source source, string sexp) throws Error {
+        ECal.Client? client;
         lock (source_client) {
             client = source_client.get (source.get_uid ());
         }
-        debug ("Adding view for source '%s'", source.dup_display_name ());
 
-        ECal.ClientView view;
-        client.get_view_sync (sexp, out view, null);
+        if (client == null) {
+            critical ("No client was found for source '%s'", source.dup_display_name ());
+        } else {
+            debug ("Adding view for source '%s'", source.dup_display_name ());
 
-        view.objects_added.connect ((objects) => view_icalcomponents_added (view, objects));
-        view.objects_modified.connect ((objects) => view_icalcomponents_modified (view, objects));
-        view.objects_removed.connect ((objects) => view_ecalcomponentids_removed (view, objects));
-        view.start ();
+            ECal.ClientView view;
+            client.get_view_sync (sexp, out view, null);
 
-        source_view_added (source, view);
-        lock (components_add_transaction) {
-            components_add_transaction.set (
-                view,
-                new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func)  // vala-lint=line-length
-            );
+            view.objects_added.connect ((objects) => view_icalcomponents_added (view, objects));
+            view.objects_modified.connect ((objects) => view_icalcomponents_modified (view, objects));
+            view.objects_removed.connect ((objects) => view_ecalcomponentids_removed (view, objects));
+            view.start ();
+
+            source_view_added (source, view);
+            lock (components_add_transaction) {
+                components_add_transaction.set (
+                    view,
+                    new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func)  // vala-lint=line-length
+                );
+            }
+
+            return view;
         }
-
-        return view;
+        return null;
     }
 
     public void view_remove (ECal.ClientView view) throws Error {
@@ -777,103 +783,111 @@ public class Calendar.Store : Object {
         unowned ICal.Component comp = component.get_icalcomponent ();
         debug (@"Adding component '$(comp.get_uid())'");
 
-        ECal.Client client;
+        ECal.Client? client;
         lock (source_client) {
             client = source_client.get (source.get_uid ());
         }
 
-        string? uid;
+        if (client == null) {
+            critical ("No client was found for source '%s'", source.dup_display_name ());
+        } else {
+            string? uid;
 #if E_CAL_2_0
-        yield client.create_object (comp, ECal.OperationFlags.NONE, null, out uid);
+            yield client.create_object (comp, ECal.OperationFlags.NONE, null, out uid);
 #else
-        yield client.create_object (comp, null, out uid);
+            yield client.create_object (comp, null, out uid);
 #endif
+        }
     }
 
     private async void source_component_modify (E.Source source, ECal.Component component, ECal.ObjModType mod_type) throws Error {
         unowned ICal.Component ical_component = component.get_icalcomponent ();
         debug (@"Updating component '$(ical_component.get_uid())' [mod_type=$(mod_type)]");
 
-        ECal.Client client;
+        ECal.Client? client;
         lock (source_client) {
             client = source_client.get (source.get_uid ());
         }
 
+        if (client == null) {
+            critical ("No client was found for source '%s'", source.dup_display_name ());
+        } else {
 #if E_CAL_2_0
-        yield client.modify_object (ical_component, mod_type, ECal.OperationFlags.NONE, null);
+            yield client.modify_object (ical_component, mod_type, ECal.OperationFlags.NONE, null);
 #else
-        yield client.modify_object (ical_component, mod_type, null);
+            yield client.modify_object (ical_component, mod_type, null);
 #endif
 
-        // schedule next occurence if component was completed
-        if (
-            ical_component.get_status () == ICal.PropertyStatus.COMPLETED &&
-            mod_type == ECal.ObjModType.THIS_AND_PRIOR &&
-            component.has_recurrences ()
-        ) {
+            // schedule next occurence if component was completed
+            if (
+                ical_component.get_status () == ICal.PropertyStatus.COMPLETED &&
+                mod_type == ECal.ObjModType.THIS_AND_PRIOR &&
+                component.has_recurrences ()
+            ) {
 #if E_CAL_2_0
-            var duration = new ICal.Duration.null_duration ();
-            duration.set_weeks (520); // roughly 10 years
-            var today = new ICal.Time.today ();
+                var duration = new ICal.Duration.null_duration ();
+                duration.set_weeks (520); // roughly 10 years
+                var today = new ICal.Time.today ();
 #else
-            var duration = ICal.Duration.null_duration ();
-            duration.weeks = 520; // roughly 10 years
-            var today = ICal.Time.today ();
+                var duration = ICal.Duration.null_duration ();
+                duration.weeks = 520; // roughly 10 years
+                var today = ICal.Time.today ();
 #endif
-            var start = ical_component.get_dtstart ();
-            if (today.compare (start) > 0) {
-                start = today;
+                var start = ical_component.get_dtstart ();
+                if (today.compare (start) > 0) {
+                    start = today;
+                }
+                var end = start.add (duration);
+
+#if E_CAL_2_0
+                ECal.RecurInstanceCb recur_instance_callback = (instance_comp, instance_start_timet, instance_end_timet, cancellable) => {
+#else
+                ECal.RecurInstanceFn recur_instance_callback = (instance, instance_start_timet, instance_end_timet) => {
+#endif
+
+#if E_CAL_2_0
+                    var instance = new ECal.Component ();
+                    instance.set_icalcomponent (instance_comp);
+#else
+                    unowned ICal.Component instance_comp = instance.get_icalcomponent ();
+#endif
+                    if (!instance_comp.get_due ().is_null_time ()) {
+                        instance_comp.set_due (instance_comp.get_dtstart ());
+                    }
+
+                    instance_comp.set_status (ICal.PropertyStatus.NONE);
+                    instance.set_percent_complete (0);
+#if E_CAL_2_0
+                    instance.set_completed (new ICal.Time.null_time ());
+#else
+                    var null_time = ICal.Time.null_time ();
+                    instance.set_completed (ref null_time);
+#endif
+                    if (instance.has_alarms ()) {
+                        instance.get_alarm_uids ().@foreach ((alarm_uid) => {
+                            ECal.ComponentAlarmTrigger trigger;
+#if E_CAL_2_0
+                            trigger = new ECal.ComponentAlarmTrigger.relative (ECal.ComponentAlarmTriggerKind.RELATIVE_START, new ICal.Duration.null_duration ());
+#else
+                            trigger = ECal.ComponentAlarmTrigger () {
+                                type = ECal.ComponentAlarmTriggerKind.RELATIVE_START,
+                                rel_duration = ICal.Duration.null_duration ()
+                            };
+#endif
+                            instance.get_alarm (alarm_uid).set_trigger (trigger);
+                        });
+                    }
+
+                    source_component_modify.begin (source, instance, ECal.ObjModType.THIS_AND_FUTURE);
+                    return GLib.Source.REMOVE; // only generate one next occurence
+                };
+
+#if E_CAL_2_0
+                client.generate_instances_for_object_sync (ical_component, start.as_timet (), end.as_timet (), null, recur_instance_callback);
+#else
+                client.generate_instances_for_object_sync (ical_component, start.as_timet (), end.as_timet (), recur_instance_callback);
+#endif
             }
-            var end = start.add (duration);
-
-#if E_CAL_2_0
-            ECal.RecurInstanceCb recur_instance_callback = (instance_comp, instance_start_timet, instance_end_timet, cancellable) => {
-#else
-            ECal.RecurInstanceFn recur_instance_callback = (instance, instance_start_timet, instance_end_timet) => {
-#endif
-
-#if E_CAL_2_0
-                var instance = new ECal.Component ();
-                instance.set_icalcomponent (instance_comp);
-#else
-                unowned ICal.Component instance_comp = instance.get_icalcomponent ();
-#endif
-                if (!instance_comp.get_due ().is_null_time ()) {
-                    instance_comp.set_due (instance_comp.get_dtstart ());
-                }
-
-                instance_comp.set_status (ICal.PropertyStatus.NONE);
-                instance.set_percent_complete (0);
-#if E_CAL_2_0
-                instance.set_completed (new ICal.Time.null_time ());
-#else
-                var null_time = ICal.Time.null_time ();
-                instance.set_completed (ref null_time);
-#endif
-                if (instance.has_alarms ()) {
-                    instance.get_alarm_uids ().@foreach ((alarm_uid) => {
-                        ECal.ComponentAlarmTrigger trigger;
-#if E_CAL_2_0
-                        trigger = new ECal.ComponentAlarmTrigger.relative (ECal.ComponentAlarmTriggerKind.RELATIVE_START, new ICal.Duration.null_duration ());
-#else
-                        trigger = ECal.ComponentAlarmTrigger () {
-                            type = ECal.ComponentAlarmTriggerKind.RELATIVE_START,
-                            rel_duration = ICal.Duration.null_duration ()
-                        };
-#endif
-                        instance.get_alarm (alarm_uid).set_trigger (trigger);
-                    });
-                }
-
-                source_component_modify.begin (source, instance, ECal.ObjModType.THIS_AND_FUTURE);
-                return GLib.Source.REMOVE; // only generate one next occurence
-            };
-
-#if E_CAL_2_0
-            client.generate_instances_for_object_sync (ical_component, start.as_timet (), end.as_timet (), null, recur_instance_callback);
-#else
-            client.generate_instances_for_object_sync (ical_component, start.as_timet (), end.as_timet (), recur_instance_callback);
-#endif
         }
     }
 
@@ -888,16 +902,21 @@ public class Calendar.Store : Object {
         }
 
         debug (@"Removing component '$uid'");
-        ECal.Client client;
+        ECal.Client? client;
         lock (source_client) {
             client = source_client.get (source.get_uid ());
         }
 
+        if (client == null) {
+            critical ("No client was found for source '%s'", source.dup_display_name ());
+        } else {
+
 #if E_CAL_2_0
-        yield client.remove_object (uid, rid, mod_type, ECal.OperationFlags.NONE, null);
+            yield client.remove_object (uid, rid, mod_type, ECal.OperationFlags.NONE, null);
 #else
-        yield client.remove_object (uid, rid, mod_type, null);
+            yield client.remove_object (uid, rid, mod_type, null);
 #endif
+        }
     }
 
 #if E_CAL_2_0

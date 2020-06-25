@@ -13,6 +13,20 @@
     </p>
   </description>
   <releases>
+    <release version="5.0.6" date="2020-06-01" urgency="medium">
+      <description>
+        <p>Fix issues with time zones not being recognized</p>
+      </description>
+    </release>
+    <release version="5.0.5" date="2020-06-01" urgency="medium">
+      <description>
+      <p>Minor Updates:</p>
+      <ul>
+        <li>Fix several issues with adding and removing monthly recurring events</li>
+        <li>Updated translations</li>
+      </ul>
+      </description>
+    </release>
     <release version="5.0.4" date="2020-04-03" urgency="medium">
       <description>
       <p>Minor Updates:</p>
