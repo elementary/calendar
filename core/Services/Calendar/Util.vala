@@ -37,7 +37,7 @@ namespace Calendar.Util {
      * Converts two datetimes to one TimeType. The first contains the date,
      * its time settings are ignored. The second one contains the time itself.
      */
-    public ICal.Time datetimes_to_icaltime (DateTime date, DateTime? time_local, string? timezone = null) {
+    public ICal.Time datetimes_to_icaltime (GLib.DateTime date, GLib.DateTime? time_local, string? timezone = null) {
 #if E_CAL_2_0
         var result = new ICal.Time.from_day_of_year (date.get_day_of_year (), date.get_year ());
 #else
