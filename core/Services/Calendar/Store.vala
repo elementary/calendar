@@ -138,7 +138,7 @@ public class Calendar.Store : Object {
 
     public void source_remove (E.Source source) {
         source_removed (source);
-        source.remove.begin (null, (obj,res) => {
+        source.remove.begin (null, (obj, res) => {
             Idle.add (() => {
                 try {
                     source.remove.end (res);
