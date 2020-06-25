@@ -114,7 +114,7 @@ public class Maya.Model.CalendarModel : Object {
     }
 
     public bool calclient_is_readonly (E.Source source) {
-        ECal.Client client;
+        ECal.Client? client;
         lock (source_client) {
             client = source_client.get (source.dup_uid ());
         }
@@ -130,7 +130,7 @@ public class Maya.Model.CalendarModel : Object {
     private async void add_event_async (E.Source source, ECal.Component event) {
         unowned ICal.Component comp = event.get_icalcomponent ();
         debug (@"Adding event '$(comp.get_uid())'");
-        ECal.Client client;
+        ECal.Client? client;
         lock (source_client) {
             client = source_client.get (source.get_uid ());
         }
@@ -158,7 +158,7 @@ public class Maya.Model.CalendarModel : Object {
         unowned ICal.Component comp = event.get_icalcomponent ();
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
 
-        ECal.Client client;
+        ECal.Client? client;
         lock (source_client) {
             client = source_client.get (source.get_uid ());
         }
