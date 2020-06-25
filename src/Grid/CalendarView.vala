@@ -57,7 +57,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         stack = new Gtk.Stack ();
         stack.expand = true;
 
-        sync_with_model (); // Populate stack with a calendar grid
+        sync_with_model (); // Populate stack with a grid
         stack.show_all ();
 
         var model = Model.CalendarModel.get_default ();
@@ -196,26 +196,17 @@ public class Maya.View.CalendarView : Gtk.Grid {
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_model () {
         var model = Model.CalendarModel.get_default ();
-
-        // Handle existing grid, if one exists
+        DateTime previous_first = null;
         if (days_grid != null) {
-            assert (days_grid.grid_range != null);
-            if (model.data_range.equals (days_grid.grid_range) || days_grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0)
+            if (days_grid.grid_range != null && (model.data_range.equals (days_grid.grid_range) || days_grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0))
                 return; // nothing to do
-
-            // Transition in the proper direction
-            var previous_first = days_grid.grid_range.first_dt;
-            if (previous_first.compare (days_grid.grid_range.first_dt) == -1) {
-                stack.transition_type = Gtk.StackTransitionType.SLIDE_UP;
-            } else {
-                stack.transition_type = Gtk.StackTransitionType.SLIDE_DOWN;
-            }
+            if (days_grid.grid_range != null)
+                previous_first = days_grid.grid_range.first_dt;
         }
 
-        // Create a new grid to hold the data
-        // Also constructs header, weeks, and days_grid
         var big_grid = create_big_grid ();
         stack.add (big_grid);
+
         header.update_columns (model.week_starts_on);
         weeks.update (model.data_range.first_dt, model.num_weeks);
         days_grid.set_range (model.data_range, model.month_start);
@@ -224,6 +215,14 @@ public class Maya.View.CalendarView : Gtk.Grid {
         if (selected_date != null) {
             var bumpdate = model.month_start.add_days (selected_date.get_day_of_month () - 1);
             days_grid.focus_date (bumpdate);
+        }
+
+        if (previous_first != null) {
+            if (previous_first.compare (days_grid.grid_range.first_dt) == -1) {
+                stack.transition_type = Gtk.StackTransitionType.SLIDE_UP;
+            } else {
+                stack.transition_type = Gtk.StackTransitionType.SLIDE_DOWN;
+            }
         }
 
         stack.set_visible_child (big_grid);
