@@ -74,8 +74,8 @@ namespace Maya {
                 }
             }
 
-            var calmodel = Model.CalendarModel.get_default ();
-            calmodel.load_all_sources ();
+            var store = Calendar.Store.get_event_store ();
+            store.sources_load ();
 
             init_gui ();
             window.show_all ();
@@ -90,8 +90,8 @@ namespace Maya {
 
         public override void open (File[] files, string hint) {
             if (get_windows () == null) {
-                var calmodel = Model.CalendarModel.get_default ();
-                calmodel.load_all_sources ();
+                var store = Calendar.Store.get_event_store ();
+                store.sources_load ();
 
                 init_gui ();
                 window.show_all ();
@@ -140,7 +140,7 @@ namespace Maya {
         }
 
         private void on_quit () {
-            Model.CalendarModel.get_default ().delete_trashed_calendars ();
+            Calendar.Store.get_event_store ().source_trash_empty ();
         }
     }
 

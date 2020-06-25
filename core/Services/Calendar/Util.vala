@@ -34,6 +34,55 @@ namespace Calendar.Util {
     }
 
     /**
+     * Converts two datetimes to one TimeType. The first contains the date,
+     * its time settings are ignored. The second one contains the time itself.
+     */
+    public ICal.Time datetimes_to_icaltime (DateTime date, DateTime? time_local, string? timezone = null) {
+#if E_CAL_2_0
+        var result = new ICal.Time.from_day_of_year (date.get_day_of_year (), date.get_year ());
+#else
+        var result = ICal.Time.from_day_of_year (date.get_day_of_year (), date.get_year ());
+#endif
+        if (time_local != null) {
+            if (timezone != null) {
+#if E_CAL_2_0
+                result.set_timezone (ICal.Timezone.get_builtin_timezone (timezone));
+#else
+                result.zone = ICal.Timezone.get_builtin_timezone (timezone);
+#endif
+            } else {
+#if E_CAL_2_0
+                result.set_timezone (ECal.util_get_system_timezone ());
+#else
+                result.zone = ECal.Util.get_system_timezone ();
+#endif
+            }
+
+#if E_CAL_2_0
+            result.set_is_date (false);
+            result.set_time (time_local.get_hour (), time_local.get_minute (), time_local.get_second ());
+#else
+            result._is_date = 0;
+            result.hour = time_local.get_hour ();
+            result.minute = time_local.get_minute ();
+            result.second = time_local.get_second ();
+#endif
+        } else {
+#if E_CAL_2_0
+            result.set_is_date (true);
+            result.set_time (0, 0, 0);
+#else
+            result._is_date = 1;
+            result.hour = 0;
+            result.minute = 0;
+            result.second = 0;
+#endif
+        }
+
+        return result;
+    }
+
+    /**
      * Say if an event lasts all day.
      */
     public bool datetime_is_all_day (GLib.DateTime dtstart, GLib.DateTime dtend) {
@@ -79,6 +128,13 @@ namespace Calendar.Util {
         return new GLib.DateTime (icaltime_get_timezone (date), date.year, date.month,
             date.day, date.hour, date.minute, date.second);
 #endif
+    }
+
+    //--- E.Source Helpers ---//
+
+    /* Returns true if 'a' and 'b' are the same E.Source */
+    public bool source_equal_func (E.Source a, E.Source b) {
+        return a.get_uid () == b.get_uid ();
     }
 
     //--- ECal.Component Helpers ---//
@@ -165,7 +221,7 @@ namespace Calendar.Util {
 
     //--- ICal.Component Helpers ---//
 
-    public void icalcomponent_to_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
+    public void icalcomponent_get_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         ICal.Time dt_start = component.get_dtstart ();
         ICal.Time dt_end = component.get_dtend ();
         start_date = Calendar.Util.icaltime_to_datetime (dt_start);
@@ -186,8 +242,8 @@ namespace Calendar.Util {
     }
 
     public bool icalcomponent_is_in_range (ICal.Component component, Calendar.Util.DateRange range) {
-        DateTime start, end;
-        icalcomponent_to_local_datetimes (component, out start, out end);
+        GLib.DateTime start, end;
+        icalcomponent_get_local_datetimes (component, out start, out end);
 
         int c1 = start.compare (range.first_dt);
         int c2 = start.compare (range.last_dt);
@@ -206,6 +262,16 @@ namespace Calendar.Util {
         if (c3 > 0 && c4 < 0) {
             return true;
         }
+
+        return false;
+    }
+
+    public bool icalcomponent_is_multiday (ICal.Component comp) {
+        GLib.DateTime start, end;
+        icalcomponent_get_local_datetimes (comp, out start, out end);
+
+        if (start.get_year () != end.get_year () || start.get_day_of_year () != end.get_day_of_year ())
+            return true;
 
         return false;
     }

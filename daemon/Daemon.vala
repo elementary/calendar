@@ -26,13 +26,13 @@ namespace Maya {
     };
 
     public class Daemon : GLib.Application {
-        private Gee.HashMap<ECal.Component, string> event_uid;
+        private Gee.HashMap<ECal.Component, string> component_uid;
 
         construct {
-            load_today_events ();
+            load_today_components ();
             Timeout.add_seconds (86400, () => {
-                event_uid.clear ();
-                load_today_events ();
+                component_uid.clear ();
+                load_today_components ();
                 return true;
             });
         }
@@ -41,52 +41,40 @@ namespace Maya {
             Gtk.main ();
         }
 
-        private void load_today_events () {
-            event_uid = new Gee.HashMap<ECal.Component, string> ();
-            var model = Maya.Model.CalendarModel.get_default ();
-            model.events_added.connect (on_events_added);
-            model.events_updated.connect (on_events_updated);
-            model.events_removed.connect (on_events_removed);
-            model.month_start = Maya.Util.get_start_of_month (new DateTime.now_local ());
+        private void load_today_components () {
+            component_uid = new Gee.HashMap<ECal.Component, string> ();
+            var store = Calendar.Store.get_event_store ();
+            store.components_added.connect (on_components_added);
+            store.components_modified.connect (on_components_modified);
+            store.components_removed.connect (on_components_removed);
+            store.month_start = Calendar.Util.datetime_get_start_of_month (new DateTime.now_local ());
         }
 
-        private void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
+        private void on_components_added (Gee.Collection<ECal.Component> components, E.Source source, Gee.Collection<ECal.ClientView> views) {
             var extension = (E.SourceAlarms)source.get_extension (E.SOURCE_EXTENSION_ALARMS);
             if (extension.get_include_me () == false) {
                 return;
             }
 
-            Idle.add ( () => {
-                foreach (var event in events)
-                    add_event (source, event);
-
-                return false;
-            });
+            foreach (var component in components)
+                add_component (source, component);
         }
 
-        private void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
-            Idle.add ( () => {
-                foreach (var event in events)
-                    update_event (source, event);
-
-                return false;
-            });
+        private void on_components_modified (Gee.Collection<ECal.Component> components, E.Source source, Gee.Collection<ECal.ClientView> views) {
+            foreach (var component in components)
+                update_component (source, component);
         }
 
-        private void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
-            Idle.add ( () => {
-                foreach (var event in events)
-                    remove_event (source, event);
-
-                return false;
-            });
+        private void on_components_removed (Gee.Collection<ECal.Component> components, E.Source source, Gee.Collection<ECal.ClientView> views) {
+            foreach (var component in components)
+                remove_component (source, component);
         }
 
-        private void add_event (E.Source source, ECal.Component event) {
-            unowned ICal.Component comp = event.get_icalcomponent ();
-            debug ("Event [%s, %s, %s]".printf (comp.get_summary (), source.dup_display_name (), comp.get_uid ()));
-            foreach (var alarm_uid in event.get_alarm_uids ()) {
-                ECal.ComponentAlarm e_alarm = event.get_alarm (alarm_uid);
+        private void add_component (E.Source source, ECal.Component component) {
+            unowned ICal.Component comp = component.get_icalcomponent ();
+            debug ("component [%s, %s, %s]".printf (comp.get_summary (), source.dup_display_name (), comp.get_uid ()));
+            foreach (var alarm_uid in component.get_alarm_uids ()) {
+                ECal.ComponentAlarm e_alarm = component.get_alarm (alarm_uid);
                 ECal.ComponentAlarmAction action;
 
 #if E_CAL_2_0
@@ -104,7 +92,7 @@ namespace Maya {
 #endif
                         if (trigger.get_kind () == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
                             ICal.Duration duration = trigger.get_duration ();
-                            var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+                            var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
                             var now = new DateTime.now_local ();
                             if (now.compare (start_time) > 0) {
                                 continue;
@@ -117,7 +105,7 @@ namespace Maya {
                             if (start_time.get_year () == now.get_year () && start_time.get_day_of_year () == now.get_day_of_year ()) {
                                 var time = time_until_now (start_time);
                                 if (time >= 0) {
-                                    add_timeout.begin (source, event, (uint)time);
+                                    add_timeout.begin (source, component, (uint)time);
                                 }
                             }
                         }
@@ -128,9 +116,9 @@ namespace Maya {
             }
         }
 
-        public async void add_timeout (E.Source source, ECal.Component event, uint interval) {
+        public async void add_timeout (E.Source source, ECal.Component component, uint interval) {
             var uid = "%u-%u".printf (interval, GLib.Random.next_int ());
-            event_uid.set (event, uid);
+            component_uid.set (component, uid);
             debug ("adding timeout uid:%s", uid);
             Timeout.add_seconds (interval, () => {
                 var extension = (E.SourceAlarms)source.get_extension (E.SOURCE_EXTENSION_ALARMS);
@@ -138,19 +126,19 @@ namespace Maya {
                     extension.set_last_notified (new DateTime.now_local ().to_string ());
                 }
 
-                queue_event_notification (event, uid);
+                queue_component_notification (component, uid);
                 return false;
             });
         }
 
-        public void queue_event_notification (ECal.Component event, string uid) {
-            if (event_uid.values.contains (uid) == false) {
+        public void queue_component_notification (ECal.Component component, string uid) {
+            if (component_uid.values.contains (uid) == false) {
                 return;
             }
 
-            unowned ICal.Component comp = event.get_icalcomponent ();
+            unowned ICal.Component comp = component.get_icalcomponent ();
             var primary_text = "%s".printf (comp.get_summary ());
-            var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+            var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
             var now = new DateTime.now_local ();
             string secondary_text = "";
             var h24_settings = new GLib.Settings ("org.gnome.desktop.interface");
@@ -173,18 +161,18 @@ namespace Maya {
             GLib.Application.get_default ().send_notification (uid, notification);
         }
 
-        private void update_event (E.Source source, ECal.Component event) {
-            remove_event (source, event);
+        private void update_component (E.Source source, ECal.Component component) {
+            remove_component (source, component);
 #if !E_CAL_2_0
-            event.rescan ();
+            component.rescan ();
 #endif
-            event.commit_sequence ();
-            add_event (source, event);
+            component.commit_sequence ();
+            add_component (source, component);
         }
 
-        private void remove_event (E.Source source, ECal.Component event) {
-            if (event_uid.has_key (event)) {
-                event_uid.unset (event);
+        private void remove_component (E.Source source, ECal.Component component) {
+            if (component_uid.has_key (component)) {
+                component_uid.unset (component);
             }
         }
 

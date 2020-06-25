@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -43,9 +43,9 @@ public class Maya.View.Widgets.DynamicSpinner : Gtk.Revealer {
         button.popover = info_popover;
         button.valign = Gtk.Align.CENTER;
 
-        var calmodel = Model.CalendarModel.get_default ();
-        calmodel.connecting.connect ((source, cancellable) => add_source.begin (source, cancellable));
-        calmodel.connected.connect ((source) => remove_source.begin (source));
+        var store = Calendar.Store.get_event_store ();
+        store.source_connecting.connect ((source, cancellable) => add_source.begin (source, cancellable));
+        store.source_added.connect ((source) => remove_source.begin (source));
 
         add (button);
 

@@ -96,10 +96,10 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                 }
             }
 
-            var calmodel = Calendar.Store.get_event_store ();
-            calmodel.add_source (new_source);
+            var store = Calendar.Store.get_event_store ();
+            store.source_add (new_source);
             if (set_default) {
-                calmodel.set_default_source (new_source);
+                store.source_set_default (new_source);
             }
 
         } catch (GLib.Error error) {

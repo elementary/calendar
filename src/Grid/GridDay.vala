@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -112,8 +112,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-        var calmodel = Model.CalendarModel.get_default ();
-        var comp = calmodel.drag_component;
+        var store = Calendar.Store.get_event_store ();
+        var comp = store.component_dragged;
         unowned ICal.Component icalcomp = comp.get_icalcomponent ();
         E.Source src = comp.get_data ("source");
         var start = icalcomp.get_dtstart ();
@@ -135,7 +135,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
         }
 
         icalcomp.set_dtstart (start);
-        calmodel.update_event (src, comp, ECal.ObjModType.ALL);
+        store.component_modify (src, comp, ECal.ObjModType.ALL);
     }
 
     public void add_event_button (EventButton button) {
@@ -158,7 +158,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
     }
 
-    public bool update_event (ECal.Component comp) {
+    public bool update_component (ECal.Component comp) {
         unowned ICal.Component calcomp = comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();
 
@@ -175,7 +175,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
         return true;
     }
 
-    public void remove_event (ECal.Component comp) {
+    public void remove_component (ECal.Component comp) {
         unowned ICal.Component calcomp = comp.get_icalcomponent ();
         string uid = calcomp.get_uid ();
         lock (event_buttons) {
@@ -187,7 +187,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
         }
     }
 
-    public void clear_events () {
+    public void clear_components () {
         foreach (weak EventButton button in event_buttons.get_values ()) {
             destroy_button (button);
         }

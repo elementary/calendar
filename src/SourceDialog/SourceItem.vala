@@ -49,16 +49,16 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         calendar_name_label.hexpand = true;
 
         label = source.dup_display_name ();
-        location = Maya.Util.get_source_location (source);
+        location = Calendar.Store.get_event_store ().source_get_location (source);
 
         visible_checkbutton = new Gtk.CheckButton ();
         visible_checkbutton.active = cal.selected;
         visible_checkbutton.toggled.connect (() => {
-            var calmodel = Model.CalendarModel.get_default ();
+            var store = Calendar.Store.get_event_store ();
             if (visible_checkbutton.active == true) {
-                calmodel.add_source (source);
+                store.source_add (source);
             } else {
-                calmodel.remove_source (source);
+                store.source_remove (source);
             }
 
             cal.set_selected (visible_checkbutton.active);
@@ -142,7 +142,7 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         edit_button.clicked.connect (() => {edit_request (source);});
 
         undo_button.clicked.connect (() => {
-            Model.CalendarModel.get_default ().restore_calendar ();
+            Calendar.Store.get_event_store ().source_trash_undo ();
             stack.set_visible_child_name ("calendar");
         });
 

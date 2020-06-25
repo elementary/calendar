@@ -67,12 +67,12 @@ public class Grid : Gtk.Grid {
         day.set_state_flags (Gtk.StateFlags.FOCUSED, false);
         selection_changed (selected_date);
         Settings.SavedState.get_default ().selected_day = selected_date.format ("%Y-%j");
-        var calmodel = Maya.Model.CalendarModel.get_default ();
-        var date_month = selected_date.get_month () - calmodel.month_start.get_month ();
-        var date_year = selected_date.get_year () - calmodel.month_start.get_year ();
+        var store = Calendar.Store.get_event_store ();
+        var date_month = selected_date.get_month () - store.month_start.get_month ();
+        var date_year = selected_date.get_year () - store.month_start.get_year ();
         if (date_month != 0 || date_year != 0) {
-            calmodel.change_month (date_month);
-            calmodel.change_year (date_year);
+            store.change_month (date_month);
+            store.change_year (date_year);
         }
     }
 
@@ -177,11 +177,11 @@ public class Grid : Gtk.Grid {
     }
 
     /**
-     * Puts the given event on the grid.
+     * Puts the given component on the grid.
      */
-    public void add_event (ECal.Component event) {
+    public void add_component (ECal.Component event) {
         foreach (var grid_day in data.values) {
-            if (Util.calcomp_is_on_day (event, grid_day.date)) {
+            if (Calendar.Util.ecalcomponent_is_on_day (event, grid_day.date)) {
                 var button = new EventButton (event);
                 grid_day.add_event_button (button);
             }
@@ -193,31 +193,31 @@ public class Grid : Gtk.Grid {
     }
 
     /**
-     * Removes the given event from the grid.
+     * Removes the given component from the grid.
      */
-    public void remove_event (ECal.Component event) {
+    public void remove_component (ECal.Component component) {
         foreach (var grid_day in data.values) {
-            grid_day.remove_event (event);
+            grid_day.remove_component (component);
         }
     }
 
-    public void update_event (ECal.Component event) {
+    public void update_component (ECal.Component component) {
         foreach (var grid_day in data.values) {
-            if (Util.calcomp_is_on_day (event, grid_day.date)) {
-                var button = new EventButton (event);
+            if (Calendar.Util.ecalcomponent_is_on_day (component, grid_day.date)) {
+                var button = new EventButton (component);
                 grid_day.add_event_button (button);
             } else {
-                grid_day.remove_event (event);
+                grid_day.remove_component (component);
             }
         }
     }
 
     /**
-     * Removes all events from the grid.
+     * Removes all components from the grid.
      */
-    public void remove_all_events () {
+    public void remove_all_components () {
         foreach (var grid_day in data.values) {
-            grid_day.clear_events ();
+            grid_day.clear_components ();
         }
     }
 }

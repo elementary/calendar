@@ -94,13 +94,13 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         infobar.response.connect ((id) => infobar.hide ());
 
-        sidebar.event_removed.connect (on_remove);
+        sidebar.component_removed.connect (on_remove);
 
         Maya.Application.saved_state.bind ("hpaned-position", hpaned, "position", GLib.SettingsBindFlags.DEFAULT);
 
-        Model.CalendarModel.get_default ().error_received.connect ((message) => {
+        Calendar.Store.get_event_store ().error_received.connect ((error) => {
             Idle.add (() => {
-                infobar_label.label = message;
+                infobar_label.label = error.message;
                 infobar.show ();
                 return false;
             });
@@ -122,13 +122,13 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_remove (ECal.Component comp) {
-        Calendar.Store.get_event_store ().remove_component (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
+        Calendar.Store.get_event_store ().component_remove (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
     }
 
     public void on_modified (ECal.Component comp) {
         E.Source src = comp.get_data ("source");
 
-        if (src.writable == true && Calendar.Store.get_event_store ().is_source_readonly (src) == false) {
+        if (src.writable == true && Calendar.Store.get_event_store ().source_is_readonly (src) == false) {
             var dialog = new Maya.View.EventDialog (comp, null);
             dialog.transient_for = this;
             dialog.present ();

@@ -29,7 +29,7 @@ public class Maya.EventMenu : Gtk.Menu {
 
     construct {
         E.Source src = comp.get_data ("source");
-        bool sensitive = src.writable == true && Calendar.Store.get_event_store ().is_source_readonly (src) == false;
+        bool sensitive = src.writable == true && Calendar.Store.get_event_store ().source_is_readonly (src) == false;
 
         var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
         edit_item.sensitive = sensitive;
@@ -61,8 +61,8 @@ public class Maya.EventMenu : Gtk.Menu {
     }
 
     private void remove_event () {
-        var calmodel = Calendar.Store.get_event_store ();
-        calmodel.remove_component (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.ALL);
+        var store = Calendar.Store.get_event_store ();
+        store.component_remove (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.ALL);
     }
 
     private void add_exception () {
@@ -80,7 +80,7 @@ public class Maya.EventMenu : Gtk.Menu {
         comp.set_exdate_list (exdate_list);
 #endif
 
-        var calmodel = Calendar.Store.get_event_store ();
-        calmodel.modify_component (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.ALL);
+        var store = Calendar.Store.get_event_store ();
+        store.component_modify (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.ALL);
     }
 }
