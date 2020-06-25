@@ -5,38 +5,40 @@ interface LoginManager : Object {
     public signal void prepare_for_sleep (bool start);
 }
 
+/** Manages signals to keep temporal state up to date */
 public class Maya.TimeManager : Object {
     private static TimeManager instance = null;
     private uint timeout_id = 0;
-    private LoginManager? manager = null;
+    private LoginManager? login_manager = null;
 
     public signal void on_update_today ();
 
     public TimeManager () {
         try {
-            // Setup manager to listen for sleep signal.
+            // Setup login_manager to listen for sleep signal.
             // When computer wakes up (!sleeping), update time.
-            manager = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-            manager.prepare_for_sleep.connect ((sleeping) => {
+            login_manager = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
+            login_manager.prepare_for_sleep.connect ((sleeping) => {
                 if (!sleeping) {
-                    callback_update_today ();
+                    update_today ();
                 }
             });
         } catch (Error e) {
             warning (e.message);
         }
 
-        setup_today_callback ();
+        setup_today_timeout ();
     }
 
-    private bool callback_update_today () {
+    /** Send the on_update_today signal and setup the next timeout */
+    private void update_today () {
         debug ("Updating today");
         on_update_today ();
-        setup_today_callback ();
-        return false;
+        setup_today_timeout ();
     }
 
-    private void setup_today_callback () {
+    /** Set a new timeout for the end of the day */
+    private void setup_today_timeout () {
         debug ("Setting new callback to update today");
         if (timeout_id > 0) {
             GLib.Source.remove (timeout_id);
@@ -50,7 +52,10 @@ public class Maya.TimeManager : Object {
         var tomorrow = Util.strip_time (now.add_days (1));
         var interval = (tomorrow.difference (now) + 1) / 1000000;
         assert (interval >= 0);
-        timeout_id = GLib.Timeout.add_seconds ((uint) interval, callback_update_today);
+        timeout_id = GLib.Timeout.add_seconds ((uint) interval, () => {
+            update_today ();
+            return GLib.Source.REMOVE;
+        });
     }
 
     public static TimeManager get_default () {
