@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -28,7 +28,7 @@ public class Grid : Gtk.Grid {
 
     Gee.HashMap<uint, GridDay> data;
 
-    public Util.DateRange grid_range { get; private set; }
+    public Calendar.Util.DateRange grid_range { get; private set; }
 
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
@@ -69,7 +69,7 @@ public class Grid : Gtk.Grid {
 
         Maya.Application.saved_state.set_string ("selected-day", selected_date.format ("%Y-%j"));
 
-        var calmodel = Maya.Model.CalendarModel.get_default ();
+        var calmodel = Calendar.Store.get_default ();
         var date_month = selected_date.get_month () - calmodel.month_start.get_month ();
         var date_year = selected_date.get_year () - calmodel.month_start.get_year ();
         if (date_month != 0 || date_year != 0) {
@@ -92,7 +92,7 @@ public class Grid : Gtk.Grid {
      * Sets the given range to be displayed in the grid. Note that the number of days
      * must remain the same.
      */
-    public void set_range (Util.DateRange new_range, DateTime month_start) {
+    public void set_range (Calendar.Util.DateRange new_range, DateTime month_start) {
         var today = new DateTime.now_local ();
 
         Gee.List<DateTime> old_dates;
@@ -183,7 +183,7 @@ public class Grid : Gtk.Grid {
      */
     public void add_event (ECal.Component event) {
         foreach (var grid_day in data.values) {
-            if (Util.calcomp_is_on_day (event, grid_day.date)) {
+            if (Calendar.Util.ecalcomponent_is_on_day (event, grid_day.date)) {
                 var button = new EventButton (event);
                 grid_day.add_event_button (button);
             }
@@ -205,7 +205,7 @@ public class Grid : Gtk.Grid {
 
     public void update_event (ECal.Component event) {
         foreach (var grid_day in data.values) {
-            if (Util.calcomp_is_on_day (event, grid_day.date)) {
+            if (Calendar.Util.ecalcomponent_is_on_day (event, grid_day.date)) {
                 var button = new EventButton (event);
                 grid_day.add_event_button (button);
             } else {
