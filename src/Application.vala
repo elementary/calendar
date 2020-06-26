@@ -75,7 +75,7 @@ namespace Maya {
                 }
             }
 
-            var calmodel = Model.CalendarModel.get_default ();
+            var calmodel = Calendar.Store.get_default ();
             calmodel.load_all_sources ();
 
             init_gui ();
@@ -91,7 +91,7 @@ namespace Maya {
 
         public override void open (File[] files, string hint) {
             if (get_windows () == null) {
-                var calmodel = Model.CalendarModel.get_default ();
+                var calmodel = Calendar.Store.get_default ();
                 calmodel.load_all_sources ();
 
                 init_gui ();
@@ -141,7 +141,7 @@ namespace Maya {
         }
 
         private void on_quit () {
-            Model.CalendarModel.get_default ().delete_trashed_calendars ();
+            Calendar.Store.get_default ().delete_trashed_calendars ();
         }
 
         public static DateTime get_selected_datetime () {
