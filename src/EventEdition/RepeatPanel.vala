@@ -5,12 +5,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -346,7 +346,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 ends_combobox.active = 0;
             } else {
                 ends_combobox.active = 1;
-                end_datepicker.date = Util.ical_to_date_time (until);
+                end_datepicker.date = Calendar.Util.icaltime_to_datetime (until);
             }
             if (rrule.get_count () > 0) {
                 end_entry.value = rrule.get_count ();
@@ -357,7 +357,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         property = comp.get_first_property (ICal.PropertyKind.EXDATE_PROPERTY);
         while (property != null) {
             var exdate = property.get_exdate ();
-            var exception_grid = new ExceptionGrid (Util.ical_to_date_time (exdate));
+            var exception_grid = new ExceptionGrid (Calendar.Util.icaltime_to_datetime (exdate));
             exception_grid.show_all ();
             exceptions_list.add (exception_grid);
             property = comp.get_next_property (ICal.PropertyKind.EXDATE_PROPERTY);
