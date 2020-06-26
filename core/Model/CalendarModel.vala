@@ -24,8 +24,8 @@ public class Maya.Model.CalendarModel : Object {
      * changing one of the following properties: month_start, num_weeks, and
      * week_starts_on.
     */
-    public Util.DateRange data_range { get; private set; }
-    public Util.DateRange month_range { get; private set; }
+    public Calendar.Util.DateRange data_range { get; private set; }
+    public Calendar.Util.DateRange month_range { get; private set; }
     public E.SourceRegistry registry { get; private set; }
 
     /* The first day of the month */
@@ -310,7 +310,7 @@ public class Maya.Model.CalendarModel : Object {
         state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
 
         var month_end = month_start.add_full (0, 1, -1);
-        month_range = new Util.DateRange (month_start, month_end);
+        month_range = new Calendar.Util.DateRange (month_start, month_end);
 
         int dow = month_start.get_day_of_week ();
         int wso = (int) week_starts_on;
@@ -340,7 +340,7 @@ public class Maya.Model.CalendarModel : Object {
 
         var data_range_last = month_end.add_days (offset);
 
-        data_range = new Util.DateRange (data_range_first, data_range_last);
+        data_range = new Calendar.Util.DateRange (data_range_first, data_range_last);
         num_weeks = data_range.to_list ().size / 7;
 
         debug (@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");

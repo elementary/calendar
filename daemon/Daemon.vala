@@ -104,7 +104,7 @@ namespace Maya {
 #endif
                         if (trigger.get_kind () == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
                             ICal.Duration duration = trigger.get_duration ();
-                            var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+                            var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
                             var now = new DateTime.now_local ();
                             if (now.compare (start_time) > 0) {
                                 continue;
@@ -150,7 +150,7 @@ namespace Maya {
 
             unowned ICal.Component comp = event.get_icalcomponent ();
             var primary_text = "%s".printf (comp.get_summary ());
-            var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+            var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
             var now = new DateTime.now_local ();
             string secondary_text = "";
             var h24_settings = new GLib.Settings ("org.gnome.desktop.interface");

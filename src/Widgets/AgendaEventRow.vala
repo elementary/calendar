@@ -288,9 +288,9 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         }
 
         DateTime start_date, end_date;
-        Util.get_local_datetimes_from_icalcomponent (ical_event, out start_date, out end_date);
+        Calendar.Util.icalcomponent_get_local_datetimes (ical_event, out start_date, out end_date);
 
-        is_allday = Util.is_all_day (start_date, end_date);
+        is_allday = Calendar.Util.datetime_is_all_day (start_date, end_date);
         is_multiday = Util.is_multiday_event (ical_event);
 
         var date_format = Granite.DateTime.get_default_date_format (true, true, false);
