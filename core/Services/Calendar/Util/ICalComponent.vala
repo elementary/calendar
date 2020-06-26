@@ -88,4 +88,14 @@ namespace Calendar.Util {
 
         return false;
     }
+
+    public bool icalcomponent_is_multiday (ICal.Component component) {
+        GLib.DateTime start, end;
+        icalcomponent_get_local_datetimes (component, out start, out end);
+
+        if (start.get_year () != end.get_year () || start.get_day_of_year () != end.get_day_of_year ())
+            return true;
+
+        return false;
+    }
 }
