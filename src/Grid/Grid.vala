@@ -69,7 +69,7 @@ public class Grid : Gtk.Grid {
         var old_today_widget = today_widget;
 
         // Add label to the new widget, if it exists and is not up to date
-        var today = Util.strip_time (new DateTime.now_local ());
+        var today = Calendar.Util.datetime_strip_time (new DateTime.now_local ());
         var today_hash = day_hash (today);
         if (data.has_key (today_hash)) { // Today cell is on the grid
             var new_today_widget = data.get (today_hash);

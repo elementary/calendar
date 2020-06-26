@@ -49,7 +49,7 @@ public class Maya.TimeManager : Object {
         // Creates a timer for the time until end of day, and adds an extra
         // second to be sure it's called after midnight.
         var now = new DateTime.now_local ();
-        var tomorrow = Util.strip_time (now.add_days (1));
+        var tomorrow = Calendar.Util.datetime_strip_time (now.add_days (1));
         var interval = (tomorrow.difference (now) + 1) / 1000000;
         assert (interval >= 0);
         timeout_id = GLib.Timeout.add_seconds ((uint) interval, () => {
