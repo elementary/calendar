@@ -28,7 +28,7 @@ public class Grid : Gtk.Grid {
 
     Gee.HashMap<uint, GridDay> data;
 
-    public Util.DateRange grid_range { get; private set; }
+    public Calendar.Util.DateRange grid_range { get; private set; }
 
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
@@ -132,7 +132,7 @@ public class Grid : Gtk.Grid {
      * Sets the given range to be displayed in the grid. Note that the number of days
      * must remain the same.
      */
-    public void set_range (Util.DateRange new_range, DateTime month_start) {
+    public void set_range (Calendar.Util.DateRange new_range, DateTime month_start) {
         var today = new DateTime.now_local ();
 
         Gee.List<DateTime> old_dates;

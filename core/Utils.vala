@@ -75,170 +75,14 @@ namespace Maya.Util {
         return result;
     }
 
-    /**
-     * Gets the timezone of the given TimeType as a GLib.TimeZone.
-     */
-    public GLib.TimeZone timezone_from_ical (ICal.Time date) {
-        // Special case: return default UTC time zone for all-day events
-        if (date.is_date ()) {
-            debug ("Given date is 'DATE' type, not 'DATE_TIME': Using timezone UTC");
-            return new GLib.TimeZone.utc ();
-        }
-
-        // Otherwise, get timezone from ICal
-        unowned ICal.Timezone? timezone = null;
-        var tzid = date.get_tzid ();
-        // First, try using the tzid property
-        if (tzid != null) {
-            /* Standard city names are usable directly by GLib, so we can bypass
-             * the ICal scaffolding completely and just return a new
-             * GLib.TimeZone here. This method also preserves all the timezone
-             * information, like going in/out of daylight savings, which parsing
-             * from UTC offset does not.
-             * Note, this can't recover from failure, since GLib.TimeZone
-             * constructor doesn't communicate failure information. This block
-             * will always return a GLib.TimeZone, which will be UTC if parsing
-             * fails for some reason.
-             */
-            var prefix = "/freeassociation.sourceforge.net/";
-            if (tzid.has_prefix (prefix)) {
-                // TZID has prefix "/freeassociation.sourceforge.net/",
-                // indicating a libical TZID.
-                return new GLib.TimeZone (tzid.offset (prefix.length));
-            } else {
-                // TZID does not have libical prefix, indicating an Olson
-                // standard city name.
-                return new GLib.TimeZone (tzid);
-            }
-        }
-        // If tzid fails, try ICal.Time.get_timezone ()
-        if (timezone == null && date.get_timezone () != null) {
-            timezone = date.get_timezone ();
-        }
-        // If nothing else works (timezone is still null), default to UTC
-        if (timezone == null) {
-            debug ("Date has no timezone info: defaulting to UTC");
-            return new GLib.TimeZone.utc ();
-        }
-
-        // Get UTC offset and format for GLib.TimeZone constructor
-        int is_daylight;
-        int interval = timezone.get_utc_offset (date, out is_daylight);
-        bool is_positive = interval >= 0;
-        interval = interval.abs ();
-        var hours = (interval / 3600);
-        var minutes = (interval % 3600) / 60;
-        var hour_string = "%s%02d:%02d".printf (is_positive ? "+" : "-", hours, minutes);
-
-        return new GLib.TimeZone (hour_string);
-    }
-
-    /**
-     * Converts the given TimeType to a DateTime.
-     * XXX : Track next versions of evolution in order to convert ICal.Timezone to GLib.TimeZone with a dedicated function…
-     */
-    public DateTime ical_to_date_time (ICal.Time date) {
-#if E_CAL_2_0
-        int year, month, day, hour, minute, second;
-        date.get_date (out year, out month, out day);
-        date.get_time (out hour, out minute, out second);
-        return new DateTime (timezone_from_ical (date), year, month,
-            day, hour, minute, second);
-#else
-        return new DateTime (timezone_from_ical (date), date.year, date.month,
-            date.day, date.hour, date.minute, date.second);
-#endif
-    }
-
-    public void get_local_datetimes_from_icalcomponent (ICal.Component comp, out DateTime start_date, out DateTime end_date) {
-        ICal.Time dt_start = comp.get_dtstart ();
-        ICal.Time dt_end = comp.get_dtend ();
-
-        if (dt_start.is_date ()) {
-            // Don't convert timezone for date with only day info, leave it at midnight UTC
-            start_date = Util.ical_to_date_time (dt_start);
-        } else {
-            start_date = Util.ical_to_date_time (dt_start).to_local ();
-        }
-
-        if (!dt_end.is_null_time ()) {
-            if (dt_end.is_date ()) {
-                // Don't convert timezone for date with only day info, leave it at midnight UTC
-                end_date = Util.ical_to_date_time (dt_end);
-            } else {
-                end_date = Util.ical_to_date_time (dt_end).to_local ();
-            }
-        } else if (dt_start.is_date ()) {
-            end_date = start_date;
-        } else if (!comp.get_duration ().is_null_duration ()) {
-            end_date = Util.ical_to_date_time (dt_start.add (comp.get_duration ())).to_local ();
-        } else {
-            end_date = start_date.add_days (1);
-        }
-
-        if (is_all_day (start_date, end_date)) {
-            end_date = end_date.add_days (-1);
-        }
-    }
-
-    /** Returns whether the given event overlaps with the time range.
-     *
-     * This is true if the event either starts or ends within the range, even
-     * if the entire event doesn't happen within the range.
-     */
-    public bool is_event_in_range (ICal.Component comp, Util.DateRange view_range) {
-        DateTime start, end;
-        get_local_datetimes_from_icalcomponent (comp, out start, out end);
-
-        // If the event is all day, it has no timezone info. Convert times to
-        // midnight local to match the range.
-        if (comp.get_dtstart ().is_date () && comp.get_dtend ().is_date ()) {
-            start = start.add (-view_range.first_dt.get_utc_offset ());
-            end = end.add (-view_range.last_dt.get_utc_offset ());
-        }
-
-        int c1 = start.compare (view_range.first_dt);
-        int c2 = start.compare (view_range.last_dt);
-        int c3 = end.compare (view_range.first_dt);
-        int c4 = end.compare (view_range.last_dt);
-
-        if (c1 <= 0 && c3 > 0) {
-            return true;
-        }
-        if (c2 < 0 && c4 > 0) {
-            return true;
-        }
-        if (c1 >= 0 && c2 < 0) {
-            return true;
-        }
-        if (c3 > 0 && c4 < 0) {
-            return true;
-        }
-
-        return false;
-    }
-
     public bool is_multiday_event (ICal.Component comp) {
         DateTime start, end;
-        get_local_datetimes_from_icalcomponent (comp, out start, out end);
+        Calendar.Util.icalcomponent_get_local_datetimes (comp, out start, out end);
 
         if (start.get_year () != end.get_year () || start.get_day_of_year () != end.get_day_of_year ())
             return true;
 
         return false;
-    }
-
-    /**
-     * Say if an event lasts all day.
-     */
-    public bool is_all_day (DateTime dtstart, DateTime dtend) {
-        var utc_start = dtstart.to_timezone (new TimeZone.utc ());
-        var timespan = dtend.difference (dtstart);
-        if (timespan % GLib.TimeSpan.DAY == 0 && utc_start.get_hour () == 0) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     public DateTime get_start_of_month (owned DateTime? date = null) {
@@ -259,11 +103,6 @@ namespace Maya.Util {
     /* Computes hash value for E.Source */
     private uint source_hash_func (E.Source key) {
         return key.dup_uid (). hash ();
-    }
-
-    /* Returns true if 'a' and 'b' are the same GLib.DateTime */
-    private bool datetime_equal_func (DateTime a, DateTime b) {
-        return a.equal (b);
     }
 
     /* Returns true if 'a' and 'b' are the same ECal.Component */

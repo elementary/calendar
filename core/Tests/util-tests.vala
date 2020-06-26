@@ -7,7 +7,7 @@ void test_no_timezone () {
     // Should have null timezone
     assert (test_ical.get_timezone () == null);
 
-    var util_timezone = Maya.Util.timezone_from_ical (test_ical);
+    var util_timezone = Calendar.Util.icaltime_get_timezone (test_ical);
     var abbreviation = util_timezone.get_abbreviation (0);
     debug ("\t" + abbreviation + "\n");
     assert (abbreviation == "UTC");
@@ -24,7 +24,7 @@ void test_utc () {
     // Should not have null timezone
     assert (test_ical.get_timezone () != null);
 
-    GLib.TimeZone? util_timezone = Maya.Util.timezone_from_ical (test_ical);
+    GLib.TimeZone? util_timezone = Calendar.Util.icaltime_get_timezone (test_ical);
     assert (util_timezone != null);
     var abbreviation = util_timezone.get_abbreviation (0);
     debug ("\t" + abbreviation + "\n");
@@ -44,7 +44,7 @@ void test_hour_offset () {
     unowned ICal.Timezone ical_tz = ICal.Timezone.get_builtin_timezone ("America/New_York");
     debug (ical_tz.get_display_name ());
     test_ical = test_ical.convert_to_zone (ical_tz);
-    GLib.TimeZone? util_timezone = Maya.Util.timezone_from_ical (test_ical);
+    GLib.TimeZone? util_timezone = Calendar.Util.icaltime_get_timezone (test_ical);
     assert (util_timezone != null);
     var test_interval = util_timezone.find_interval (GLib.TimeType.STANDARD, test_date.to_unix ());
     // assert (test_interval == interval);
@@ -70,7 +70,7 @@ void test_half_hour_offset () {
 
     unowned ICal.Timezone ical_tz = ICal.Timezone.get_builtin_timezone ("Australia/Darwin");
     test_ical = test_ical.convert_to_zone (ical_tz);
-    GLib.TimeZone? util_timezone = Maya.Util.timezone_from_ical (test_ical);
+    GLib.TimeZone? util_timezone = Calendar.Util.icaltime_get_timezone (test_ical);
     assert (util_timezone != null);
     var test_interval = util_timezone.find_interval (GLib.TimeType.STANDARD, test_date.to_unix ());
     assert (test_interval == interval);
@@ -96,7 +96,7 @@ void test_45_minute_offset () {
 
     unowned ICal.Timezone ical_tz = ICal.Timezone.get_builtin_timezone ("Asia/Kathmandu");
     test_ical = test_ical.convert_to_zone (ical_tz);
-    GLib.TimeZone? util_timezone = Maya.Util.timezone_from_ical (test_ical);
+    GLib.TimeZone? util_timezone = Calendar.Util.icaltime_get_timezone (test_ical);
     assert (util_timezone != null);
     var test_interval = util_timezone.find_interval (GLib.TimeType.STANDARD, test_date.to_unix ());
     assert (test_interval == interval);
@@ -119,13 +119,13 @@ void test_all_day () {
     assert (dtstart.is_date ());
     debug ("\t" + dtstart.as_ical_string () + "\n"); // 20191121
 
-    var util_timezone = Maya.Util.timezone_from_ical (dtstart);
+    var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
     var abbreviation = util_timezone.get_abbreviation (0);
     debug ("\t" + abbreviation + "\n");
     assert (abbreviation == "UTC");
 
     DateTime g_dtstart,g_dtend;
-    Maya.Util.get_local_datetimes_from_icalcomponent (event, out g_dtstart, out g_dtend);
+    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-21T00:00:00+0000");
     assert (g_dtend.format ("%FT%T%z") == "2019-11-21T00:00:00+0000");
 }
@@ -146,12 +146,12 @@ void test_daterange_all_day () {
     // timezone offset)
     var start_time = new DateTime (chicago_timezone, 2019, 11, 20, 0, 0, 0);
     var end_time = new DateTime (chicago_timezone, 2019, 11, 20, 23, 59, 59);
-    var range = new Maya.Util.DateRange (start_time, end_time);
-    assert (!Maya.Util.is_event_in_range (event, range));
+    var range = new Calendar.Util.DateRange (start_time, end_time);
+    assert (!Calendar.Util.icalcomponent_is_in_range (event, range));
     // A range the should include the event
     end_time = new DateTime (chicago_timezone, 2019, 11, 21, 0, 0, 1);
-    range = new Maya.Util.DateRange (start_time, end_time);
-    assert (Maya.Util.is_event_in_range (event, range));
+    range = new Calendar.Util.DateRange (start_time, end_time);
+    assert (Calendar.Util.icalcomponent_is_in_range (event, range));
 }
 
 void add_timezone_tests () {
