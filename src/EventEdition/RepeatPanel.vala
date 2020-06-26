@@ -537,7 +537,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
         week_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         week_box.get_style_context ().add_class ("raised");
-        switch (Maya.Model.CalendarModel.get_default ().week_starts_on) {
+        switch (Calendar.Store.get_default ().week_starts_on) {
             case GLib.DateWeekday.TUESDAY:
                 week_box.add (thu_button);
                 week_box.add (fri_button);
