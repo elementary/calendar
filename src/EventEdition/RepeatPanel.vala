@@ -795,7 +795,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             var exgrid = (ExceptionGrid)child;
             var date = exgrid.get_date ();
             var exdate = new ICal.Property (ICal.PropertyKind.EXDATE_PROPERTY);
-            exdate.set_exdate (Util.date_time_to_ical (date, null));
+            exdate.set_exdate (Calendar.Util.datetimes_to_icaltime (date, null));
             comp.add_property (exdate);
         }
     }

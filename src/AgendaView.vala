@@ -70,7 +70,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
             }
 
             unowned AgendaEventRow event_row = (AgendaEventRow) row;
-            return Util.calcomp_is_on_day (event_row.calevent, selected_date);
+            return Calendar.Util.ecalcomponent_is_on_day (event_row.calevent, selected_date);
         });
 
         upcoming_events_list = new Gtk.ListBox ();
@@ -302,7 +302,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
     private static int search_calcomp (Gtk.Widget widget, ECal.Component comp) {
         unowned AgendaEventRow row = widget as AgendaEventRow;
-        return Util.calcomponent_compare_func (row.calevent, comp);
+        return Calendar.Util.ecalcomponent_compare_func (row.calevent, comp);
     }
 
     /**

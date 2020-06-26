@@ -224,7 +224,7 @@ public class Grid : Gtk.Grid {
      */
     public void add_event (ECal.Component event) {
         foreach (var grid_day in data.values) {
-            if (Util.calcomp_is_on_day (event, grid_day.date)) {
+            if (Calendar.Util.ecalcomponent_is_on_day (event, grid_day.date)) {
                 var button = new EventButton (event);
                 grid_day.add_event_button (button);
             }
@@ -246,7 +246,7 @@ public class Grid : Gtk.Grid {
 
     public void update_event (ECal.Component event) {
         foreach (var grid_day in data.values) {
-            if (Util.calcomp_is_on_day (event, grid_day.date)) {
+            if (Calendar.Util.ecalcomponent_is_on_day (event, grid_day.date)) {
                 var button = new EventButton (event);
                 grid_day.add_event_button (button);
             } else {

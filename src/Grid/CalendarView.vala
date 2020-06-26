@@ -130,9 +130,9 @@ public class Maya.View.CalendarView : Gtk.Grid {
     //--- Public Methods ---//
 
     public void today () {
-        var today = Util.strip_time (new DateTime.now_local ());
+        var today = Calendar.Util.datetime_strip_time (new DateTime.now_local ());
         var calmodel = Model.CalendarModel.get_default ();
-        var start = Util.get_start_of_month (today);
+        var start = Calendar.Util.datetime_get_start_of_month (today);
         if (!start.equal (calmodel.month_start))
             calmodel.month_start = start;
         sync_with_model ();
