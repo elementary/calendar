@@ -55,8 +55,11 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         load_contacts.begin ();
 
         var no_guests_label = new Gtk.Label (_("No Participants"));
-        no_guests_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         no_guests_label.show ();
+
+        unowned Gtk.StyleContext no_guests_context = no_guests_label.get_style_context ();
+        no_guests_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_guests_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         guest_list = new Gtk.ListBox ();
         guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
