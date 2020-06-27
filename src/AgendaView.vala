@@ -107,7 +107,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         add (grid);
 
         // Listen to changes for events
-        var calmodel = Model.CalendarModel.get_default ();
+        var calmodel = Calendar.Store.get_default ();
         calmodel.events_added.connect (on_events_added);
         calmodel.events_removed.connect (on_events_removed);
         calmodel.events_updated.connect (on_events_updated);

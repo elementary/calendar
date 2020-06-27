@@ -200,10 +200,12 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         var exceptions_label = new Granite.HeaderLabel (_("Exceptions:"));
 
-        var no_exceptions_label = new Gtk.Label ("");
-        no_exceptions_label.set_markup (_("No Exceptions"));
-        no_exceptions_label.sensitive = false;
+        var no_exceptions_label = new Gtk.Label (_("No Exceptions"));
         no_exceptions_label.show ();
+
+        unowned Gtk.StyleContext no_exceptions_context = no_exceptions_label.get_style_context ();
+        no_exceptions_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_exceptions_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         exceptions_list = new Gtk.ListBox ();
         exceptions_list.expand = true;
@@ -537,7 +539,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
         week_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         week_box.get_style_context ().add_class ("raised");
-        switch (Maya.Model.CalendarModel.get_default ().week_starts_on) {
+        switch (Calendar.Store.get_default ().week_starts_on) {
             case GLib.DateWeekday.TUESDAY:
                 week_box.add (thu_button);
                 week_box.add (fri_button);
