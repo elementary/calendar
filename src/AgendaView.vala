@@ -107,11 +107,14 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         add (grid);
 
         // Listen to changes for events
-        var calmodel = Model.CalendarModel.get_default ();
+        var calmodel = Calendar.Store.get_default ();
         calmodel.events_added.connect (on_events_added);
         calmodel.events_removed.connect (on_events_removed);
         calmodel.events_updated.connect (on_events_updated);
         calmodel.parameters_changed.connect (on_model_parameters_changed);
+        var time_manager = TimeManager.get_default ();
+        time_manager.on_update_today.connect (on_today_changed);
+
         set_selected_date (Maya.Application.get_selected_datetime ());
         show_all ();
 
@@ -366,6 +369,11 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         foreach (unowned Gtk.Widget row in upcoming_events_children) {
             row.destroy ();
         }
+    }
+
+    private void on_today_changed () {
+        upcoming_events_list.invalidate_filter ();
+        upcoming_events_list.invalidate_headers ();
     }
 
     /**

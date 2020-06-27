@@ -14,7 +14,7 @@ core_files = files(
     'Backends/BackendsManager.vala',
     'Backends/LocalBackend.vala',
     'Backends/PlacementWidget.vala',
-    'Model/CalendarModel.vala',
+    'Services/Calendar/Store.vala',
     'Services/Calendar/Util/DateIterator.vala',
     'Services/Calendar/Util/DateRange.vala',
     'Services/Calendar/Util/DateTime.vala',
