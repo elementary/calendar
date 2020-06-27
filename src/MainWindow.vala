@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -98,7 +98,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         Maya.Application.saved_state.bind ("hpaned-position", hpaned, "position", GLib.SettingsBindFlags.DEFAULT);
 
-        Model.CalendarModel.get_default ().error_received.connect ((message) => {
+        Calendar.Store.get_default ().error_received.connect ((message) => {
             Idle.add (() => {
                 infobar_label.label = message;
                 infobar.show ();
@@ -122,13 +122,13 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_remove (ECal.Component comp) {
-        Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
+        Calendar.Store.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
     }
 
     public void on_modified (ECal.Component comp) {
         E.Source src = comp.get_data ("source");
 
-        if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
+        if (src.writable == true && Calendar.Store.get_default ().calclient_is_readonly (src) == false) {
             var dialog = new Maya.View.EventDialog (comp, null);
             dialog.transient_for = this;
             dialog.present ();

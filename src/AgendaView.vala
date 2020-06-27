@@ -70,7 +70,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
             }
 
             unowned AgendaEventRow event_row = (AgendaEventRow) row;
-            return Util.calcomp_is_on_day (event_row.calevent, selected_date);
+            return Calendar.Util.ecalcomponent_is_on_day (event_row.calevent, selected_date);
         });
 
         upcoming_events_list = new Gtk.ListBox ();
@@ -107,7 +107,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         add (grid);
 
         // Listen to changes for events
-        var calmodel = Model.CalendarModel.get_default ();
+        var calmodel = Calendar.Store.get_default ();
         calmodel.events_added.connect (on_events_added);
         calmodel.events_removed.connect (on_events_removed);
         calmodel.events_updated.connect (on_events_updated);
@@ -299,7 +299,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
     private static int search_calcomp (Gtk.Widget widget, ECal.Component comp) {
         unowned AgendaEventRow row = widget as AgendaEventRow;
-        return Util.calcomponent_compare_func (row.calevent, comp);
+        return Calendar.Util.ecalcomponent_compare_func (row.calevent, comp);
     }
 
     /**
