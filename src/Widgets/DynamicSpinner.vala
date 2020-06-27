@@ -43,9 +43,9 @@ public class Maya.View.Widgets.DynamicSpinner : Gtk.Revealer {
         button.popover = info_popover;
         button.valign = Gtk.Align.CENTER;
 
-        var calmodel = Calendar.Store.get_default ();
-        calmodel.connecting.connect ((source, cancellable) => add_source.begin (source, cancellable));
-        calmodel.connected.connect ((source) => remove_source.begin (source));
+        var event_store = Calendar.Store.get_event_store ();
+        event_store.source_connecting.connect ((source, cancellable) => add_source.begin (source, cancellable));
+        event_store.source_added.connect ((source) => remove_source.begin (source));
 
         add (button);
 

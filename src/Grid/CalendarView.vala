@@ -61,14 +61,14 @@ public class Maya.View.CalendarView : Gtk.Grid {
         stack.show_all ();
         stack.expand = true;
 
-        sync_with_model ();
+        sync_with_event_store ();
 
-        var model = Calendar.Store.get_default ();
-        model.parameters_changed.connect (on_model_parameters_changed);
+        var event_store = Calendar.Store.get_event_store ();
+        event_store.parameters_changed.connect (on_event_store_parameters_changed);
 
-        model.events_added.connect (on_events_added);
-        model.events_updated.connect (on_events_updated);
-        model.events_removed.connect (on_events_removed);
+        event_store.components_added.connect (on_events_added);
+        event_store.components_modified.connect (on_events_updated);
+        event_store.components_removed.connect (on_events_removed);
 
         stack.notify["transition-running"].connect (() => {
             if (stack.transition_running == false) {
@@ -131,19 +131,19 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     public void today () {
         var today = Calendar.Util.datetime_strip_time (new DateTime.now_local ());
-        var calmodel = Calendar.Store.get_default ();
+        var event_store = Calendar.Store.get_event_store ();
         var start = Calendar.Util.datetime_get_start_of_month (today);
-        if (!start.equal (calmodel.month_start))
-            calmodel.month_start = start;
-        sync_with_model ();
+        if (!start.equal (event_store.month_start))
+            event_store.month_start = start;
+        sync_with_event_store ();
         grid.focus_date (today);
     }
 
     //--- Signal Handlers ---//
 
     void on_show_weeks_changed () {
-        var model = Calendar.Store.get_default ();
-        weeks.update (model.data_range.first_dt, model.num_weeks);
+        var event_store = Calendar.Store.get_event_store ();
+        weeks.update (event_store.data_range.first_dt, event_store.num_weeks);
         update_spacer_visible ();
     }
 
@@ -155,42 +155,30 @@ public class Maya.View.CalendarView : Gtk.Grid {
         }
     }
 
-    void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
-        Idle.add ( () => {
-            foreach (var event in events)
-                add_event (source, event);
-
-            return false;
-        });
+    void on_events_added (Gee.Collection<ECal.Component> events, E.Source source, Gee.Collection<ECal.ClientView> views) {
+        foreach (var event in events)
+            add_event (source, event);
     }
 
-    void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
-        Idle.add ( () => {
-            foreach (var event in events)
-                update_event (source, event);
-
-            return false;
-        });
+    void on_events_updated (Gee.Collection<ECal.Component> events, E.Source source, Gee.Collection<ECal.ClientView> views) {
+        foreach (var event in events)
+            update_event (source, event);
     }
 
-    void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
-        Idle.add ( () => {
-            foreach (var event in events)
-                remove_event (source, event);
-
-            return false;
-        });
+    void on_events_removed (Gee.Collection<ECal.Component> events, E.Source source, Gee.Collection<ECal.ClientView> views) {
+        foreach (var event in events)
+            remove_event (source, event);
     }
 
     /* Indicates the month has changed */
-    void on_model_parameters_changed () {
-        var model = Calendar.Store.get_default ();
-        if (grid.grid_range != null && model.data_range.equals (grid.grid_range))
+    void on_event_store_parameters_changed () {
+        var event_store = Calendar.Store.get_event_store ();
+        if (grid.grid_range != null && event_store.data_range.equals (grid.grid_range))
             return; // nothing to do
 
         Idle.add ( () => {
             remove_all_events ();
-            sync_with_model ();
+            sync_with_event_store ();
             return false;
         });
     }
@@ -198,9 +186,9 @@ public class Maya.View.CalendarView : Gtk.Grid {
     //--- Helper Methods ---//
 
     /* Sets the calendar widgets to the date range of the model */
-    void sync_with_model () {
-        var model = Calendar.Store.get_default ();
-        if (grid.grid_range != null && (model.data_range.equals (grid.grid_range) || grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0))
+    void sync_with_event_store () {
+        var event_store = Calendar.Store.get_event_store ();
+        if (grid.grid_range != null && (event_store.data_range.equals (grid.grid_range) || grid.grid_range.first_dt.compare (event_store.data_range.first_dt) == 0))
             return; // nothing to do
 
         DateTime previous_first = null;
@@ -210,13 +198,13 @@ public class Maya.View.CalendarView : Gtk.Grid {
         big_grid = create_big_grid ();
         stack.add (big_grid);
 
-        header.update_columns (model.week_starts_on);
-        weeks.update (model.data_range.first_dt, model.num_weeks);
-        grid.set_range (model.data_range, model.month_start);
+        header.update_columns (event_store.week_starts_on);
+        weeks.update (event_store.data_range.first_dt, event_store.num_weeks);
+        grid.set_range (event_store.data_range, event_store.month_start);
 
         // keep focus date on the same day of the month
         if (selected_date != null) {
-            var bumpdate = model.month_start.add_days (selected_date.get_day_of_month () - 1);
+            var bumpdate = event_store.month_start.add_days (selected_date.get_day_of_month () - 1);
             grid.focus_date (bumpdate);
         }
 

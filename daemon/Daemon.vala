@@ -43,43 +43,31 @@ namespace Maya {
 
         private void load_today_events () {
             event_uid = new Gee.HashMap<ECal.Component, string> ();
-            var model = Calendar.Store.get_default ();
-            model.events_added.connect (on_events_added);
-            model.events_updated.connect (on_events_updated);
-            model.events_removed.connect (on_events_removed);
-            model.month_start = Calendar.Util.datetime_get_start_of_month (new DateTime.now_local ());
+            var event_store = Calendar.Store.get_event_store ();
+            event_store.components_added.connect (on_events_added);
+            event_store.components_modified.connect (on_events_updated);
+            event_store.components_removed.connect (on_events_removed);
+            event_store.month_start = Calendar.Util.datetime_get_start_of_month (new DateTime.now_local ());
         }
 
-        private void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
+        private void on_events_added (Gee.Collection<ECal.Component> events, E.Source source, Gee.Collection<ECal.ClientView> views) {
             var extension = (E.SourceAlarms)source.get_extension (E.SOURCE_EXTENSION_ALARMS);
             if (extension.get_include_me () == false) {
                 return;
             }
 
-            Idle.add ( () => {
-                foreach (var event in events)
-                    add_event (source, event);
-
-                return false;
-            });
+            foreach (var event in events)
+                add_event (source, event);
         }
 
-        private void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
-            Idle.add ( () => {
-                foreach (var event in events)
-                    update_event (source, event);
-
-                return false;
-            });
+        private void on_events_updated (Gee.Collection<ECal.Component> events, E.Source source, Gee.Collection<ECal.ClientView> views) {
+            foreach (var event in events)
+                update_event (source, event);
         }
 
-        private void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
-            Idle.add ( () => {
-                foreach (var event in events)
-                    remove_event (source, event);
-
-                return false;
-            });
+        private void on_events_removed (Gee.Collection<ECal.Component> events, E.Source source, Gee.Collection<ECal.ClientView> views) {
+            foreach (var event in events)
+                remove_event (source, event);
         }
 
         private void add_event (E.Source source, ECal.Component event) {

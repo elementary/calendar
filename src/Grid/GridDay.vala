@@ -112,8 +112,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-        var calmodel = Calendar.Store.get_default ();
-        var comp = calmodel.drag_component;
+        var event_store = Calendar.Store.get_event_store ();
+        var comp = event_store.component_dragged;
         unowned ICal.Component icalcomp = comp.get_icalcomponent ();
         E.Source src = comp.get_data ("source");
         var start = icalcomp.get_dtstart ();
@@ -135,7 +135,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
         }
 
         icalcomp.set_dtstart (start);
-        calmodel.update_event (src, comp, ECal.ObjModType.ALL);
+        event_store.component_modify (src, comp, ECal.ObjModType.ALL);
     }
 
     public void add_event_button (EventButton button) {

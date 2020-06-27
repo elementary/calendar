@@ -75,8 +75,8 @@ namespace Maya {
                 }
             }
 
-            var calmodel = Calendar.Store.get_default ();
-            calmodel.load_all_sources ();
+            var event_store = Calendar.Store.get_event_store ();
+            event_store.sources_load ();
 
             init_gui ();
             window.show_all ();
@@ -91,8 +91,8 @@ namespace Maya {
 
         public override void open (File[] files, string hint) {
             if (get_windows () == null) {
-                var calmodel = Calendar.Store.get_default ();
-                calmodel.load_all_sources ();
+                var event_store = Calendar.Store.get_event_store ();
+                event_store.sources_load ();
 
                 init_gui ();
                 window.show_all ();
@@ -141,7 +141,7 @@ namespace Maya {
         }
 
         private void on_quit () {
-            Calendar.Store.get_default ().delete_trashed_calendars ();
+            Calendar.Store.get_event_store ().source_trash_empty ();
         }
 
         public static DateTime get_selected_datetime () {

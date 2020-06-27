@@ -187,19 +187,19 @@ public class EventDialog : Gtk.Dialog {
             reminder_panel.save ();
             repeat_panel.save ();
 
-            var calmodel = Calendar.Store.get_default ();
+            var event_store = Calendar.Store.get_event_store ();
             if (event_type == EventType.ADD)
-                calmodel.add_event (source, ecal);
+                event_store.component_add (source, ecal);
             else {
                 assert (original_source != null);
 
                 if (original_source.dup_uid () == source.dup_uid ()) {
                     // Same uids, just modify
-                    calmodel.update_event (source, ecal, mod_type);
+                    event_store.component_modify (source, ecal, mod_type);
                 } else {
                     // Different calendar, remove and readd
-                    calmodel.remove_event (original_source, ecal, mod_type);
-                    calmodel.add_event (source, ecal);
+                    event_store.component_remove (original_source, ecal, mod_type);
+                    event_store.component_add (source, ecal);
                 }
             }
 
@@ -207,8 +207,8 @@ public class EventDialog : Gtk.Dialog {
         }
 
         private void remove_event () {
-            var calmodel = Calendar.Store.get_default ();
-            calmodel.remove_event (original_source, ecal, mod_type);
+            var event_store = Calendar.Store.get_event_store ();
+            event_store.component_remove (original_source, ecal, mod_type);
             this.destroy ();
         }
     }

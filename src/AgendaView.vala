@@ -107,11 +107,11 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         add (grid);
 
         // Listen to changes for events
-        var calmodel = Calendar.Store.get_default ();
-        calmodel.events_added.connect (on_events_added);
-        calmodel.events_removed.connect (on_events_removed);
-        calmodel.events_updated.connect (on_events_updated);
-        calmodel.parameters_changed.connect (on_model_parameters_changed);
+        var event_store = Calendar.Store.get_event_store ();
+        event_store.components_added.connect (on_events_added);
+        event_store.components_removed.connect (on_events_removed);
+        event_store.components_modified.connect (on_events_updated);
+        event_store.parameters_changed.connect (on_event_store_parameters_changed);
         set_selected_date (Maya.Application.get_selected_datetime ());
         show_all ();
 
@@ -283,7 +283,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     /**
      * Events have been added to the given source.
      */
-    private void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
+    private void on_events_added (Gee.Collection<ECal.Component> events, E.Source source, Gee.Collection<ECal.ClientView> views) {
         foreach (var event in events) {
             var row = new AgendaEventRow (source, event, false);
             row.removed.connect ((event) => (event_removed (event)));
@@ -305,7 +305,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     /**
      * Events for the given source have been updated.
      */
-    private void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
+    private void on_events_updated (Gee.Collection<ECal.Component> events, E.Source source, Gee.Collection<ECal.ClientView> views) {
         GLib.List<weak Gtk.Widget> selected_date_events_children = selected_date_events_list.get_children ();
         GLib.List<weak Gtk.Widget> upcoming_events_children = upcoming_events_list.get_children ();
 
@@ -325,7 +325,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     /**
      * Events for the given source have been removed.
      */
-    private void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
+    private void on_events_removed (Gee.Collection<ECal.Component> events, E.Source source, Gee.Collection<ECal.ClientView> views) {
         GLib.List<weak Gtk.Widget> selected_date_events_children = selected_date_events_list.get_children ();
         GLib.List<weak Gtk.Widget> upcoming_events_children = upcoming_events_list.get_children ();
 
@@ -355,7 +355,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     /**
      * Calendar model parameters have been updated.
      */
-    private void on_model_parameters_changed () {
+    private void on_event_store_parameters_changed () {
         GLib.List<weak Gtk.Widget> selected_date_events_children = selected_date_events_list.get_children ();
         GLib.List<weak Gtk.Widget> upcoming_events_children = upcoming_events_list.get_children ();
 

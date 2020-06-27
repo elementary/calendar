@@ -69,12 +69,12 @@ public class Grid : Gtk.Grid {
 
         Maya.Application.saved_state.set_string ("selected-day", selected_date.format ("%Y-%j"));
 
-        var calmodel = Calendar.Store.get_default ();
-        var date_month = selected_date.get_month () - calmodel.month_start.get_month ();
-        var date_year = selected_date.get_year () - calmodel.month_start.get_year ();
+        var event_store = Calendar.Store.get_event_store ();
+        var date_month = selected_date.get_month () - event_store.month_start.get_month ();
+        var date_year = selected_date.get_year () - event_store.month_start.get_year ();
         if (date_month != 0 || date_year != 0) {
-            calmodel.change_month (date_month);
-            calmodel.change_year (date_year);
+            event_store.change_month (date_month);
+            event_store.change_year (date_year);
         }
     }
 

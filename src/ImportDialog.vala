@@ -67,7 +67,7 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
 
     private void import_files () {
         var source = calchooser_button.current_source;
-        var calmodel = Calendar.Store.get_default ();
+        var event_store = Calendar.Store.get_event_store ();
         foreach (var file in files) {
 #if E_CAL_2_0
             var ical = ECal.util_parse_ics_file (file.get_path ());
@@ -83,7 +83,7 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
                      comp != null;
                      comp = ical.get_next_component (ICal.ComponentKind.VEVENT_COMPONENT)) {
                     var ecal = new ECal.Component.from_string (comp.as_ical_string ());
-                    calmodel.add_event (source, ecal);
+                    event_store.component_add (source, ecal);
                 }
             }
         }
