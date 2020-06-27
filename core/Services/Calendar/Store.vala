@@ -34,8 +34,10 @@ public class Calendar.Store : Object {
     private E.SourceRegistry registry { get; private set; }
     private HashTable<string, ECal.Client> source_client;
     private HashTable<string, Gee.ArrayList<ECal.ClientView>> source_views;
+
     private HashTable<ECal.ClientView, Gee.Collection<ECal.Component>> components_add_transaction;
     private Gee.Collection<E.Source> sources_add_transaction;
+    private Gee.Collection<E.Source> sources_connect_transaction;
 
     internal HashTable<string, Gee.TreeMultiMap<string, ECal.Component>> source_components;
 
@@ -79,6 +81,7 @@ public class Calendar.Store : Object {
         source_components = new HashTable<string, Gee.TreeMultiMap<string, ECal.Component>> (str_hash, str_equal);
         components_add_transaction = new HashTable<ECal.ClientView, Gee.Collection<ECal.Component>> (direct_hash, direct_equal);
         sources_add_transaction = new Gee.ArrayList<E.Source> (Calendar.Util.esource_equal_func);
+        sources_connect_transaction = new Gee.ArrayList<E.Source> (Calendar.Util.esource_equal_func);
 
         int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
         if (week_start >= 1 && week_start <= 7) {
@@ -113,6 +116,8 @@ public class Calendar.Store : Object {
     //--- Public Source API ---//
 
     public void source_add (E.Source source) {
+        debug ("Adding source '%s'", source.dup_display_name ());
+
         sources_add_transaction.add (source);
         source_added (source);
 
@@ -136,7 +141,13 @@ public class Calendar.Store : Object {
         });
     }
 
+    public void source_connect (E.Source source) {
+        source_connect_async.begin (source);
+    }
+
     public void source_remove (E.Source source) {
+        debug ("Removing source '%s'", source.dup_display_name ());
+
         source_removed (source);
         source.remove.begin (null, (obj, res) => {
             Idle.add (() => {
@@ -150,6 +161,10 @@ public class Calendar.Store : Object {
                 return Source.REMOVE;
             });
         });
+    }
+
+    public void source_disconnect (E.Source source) {
+        source_disconnect_async.begin (source);
     }
 
     public E.Source source_get_with_uid (string uid) {
@@ -686,31 +701,36 @@ public class Calendar.Store : Object {
 
     private void registry_source_added (E.Source source) {
         if (source_is_active (source)) {
-            source_connect.begin (source);
+            source_connect (source);
         }
     }
 
     private void registry_source_changed (E.Source source) {
+        debug ("Source changed '%s'", source.dup_display_name ());
+
         var source_is_active = source_is_active (source);
         var source_is_connected = source_is_connected (source);
 
         if (source_is_active && !source_is_connected) {
-            source_connect.begin (source);
+            source_connect (source);
         } else if (source_is_connected && !source_is_active) {
-            source_disconnect.begin (source);
+            source_disconnect (source);
         }
         source_changed (source);
     }
 
     private void registry_source_removed (E.Source source) {
-        source_disconnect.begin (source);
+        source_disconnect (source);
     }
 
-    private async void source_connect (E.Source source) {
+    private async void source_connect_async (E.Source source) {
         unowned string source_uid = source.get_uid ();
 
-        if (source_client.contains (source_uid)) {
+        if (sources_connect_transaction.contains (source) || source_client.contains (source_uid)) {
             return;
+        }
+        lock (sources_connect_transaction) {
+            sources_connect_transaction.add (source);
         }
         debug ("Connecting source '%s'", source.dup_display_name ());
 
@@ -724,6 +744,8 @@ public class Calendar.Store : Object {
                 source_client.insert (source_uid, client);
             }
 
+
+
             // create empty source-component map
             var components = new Gee.TreeMultiMap<string, ECal.Component> (
                 (GLib.CompareDataFunc<string>?) GLib.strcmp,
@@ -731,6 +753,9 @@ public class Calendar.Store : Object {
             source_components.set (source_uid, components);
 
             Idle.add (() => {
+                lock (sources_connect_transaction) {
+                    sources_connect_transaction.remove (source);
+                }
                 source_added (source);
                 source_load (source);
 
@@ -738,27 +763,35 @@ public class Calendar.Store : Object {
             });
 
         } catch (Error e) {
+            lock (sources_connect_transaction) {
+                sources_connect_transaction.remove (source);
+            }
             error_received (e);
             warning (e.message);
         }
     }
 
-    private async void source_disconnect (E.Source source) {
+    private async void source_disconnect_async (E.Source source) {
         unowned string source_uid = source.get_uid ();
 
         if (!source_client.contains (source_uid)) {
             return;
         }
         debug ("Disconnecting source '%s'", source.dup_display_name ());
+        var views_removed = source_get_views (source);
 
-        var views = source_get_views (source);
-        foreach (var view in views) {
+        var views_connected = source_get_views (source);
+        var views_connected_iterator = views_connected.iterator ();
+        while (views_connected_iterator.next ()) {
+            var view = views_connected_iterator.get ();
             try {
                 view_remove (view);
             } catch (Error e) {
                 error_received (e);
                 warning (e.message);
             }
+            views_connected = source_get_views (source);
+            views_connected_iterator = views_connected.iterator ();
         }
 
         lock (source_views) {
@@ -768,10 +801,9 @@ public class Calendar.Store : Object {
         lock (source_client) {
             source_client.remove (source_uid);
         }
-        source_removed (source);
 
         var components = source_components.get (source_uid).get_values ().read_only_view;
-        components_removed (components, source, views);
+        components_removed (components, source, views_removed.read_only_view);
         source_components.remove (source_uid);
 
         source_removed (source);

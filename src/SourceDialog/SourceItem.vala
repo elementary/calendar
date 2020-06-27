@@ -54,13 +54,6 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         visible_checkbutton = new Gtk.CheckButton ();
         visible_checkbutton.active = cal.selected;
         visible_checkbutton.toggled.connect (() => {
-            var event_store = Calendar.Store.get_event_store ();
-            if (visible_checkbutton.active == true) {
-                event_store.source_add (source);
-            } else {
-                event_store.source_remove (source);
-            }
-
             cal.set_selected (visible_checkbutton.active);
             try {
                 source.write_sync ();
