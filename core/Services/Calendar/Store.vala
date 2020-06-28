@@ -41,7 +41,7 @@ public class Calendar.Store : Object {
 
     internal HashTable<string, Gee.TreeMultiMap<string, ECal.Component>> source_components;
 
-    private GLib.Queue<E.Source> sources_trashed;
+    private GLib.Queue<E.Source> sources_trash;
     private E.CredentialsPrompter credentials_prompter;
 
     private static GLib.Settings state_settings;
@@ -253,25 +253,25 @@ public class Calendar.Store : Object {
     }
 
     public void source_trash (E.Source source) {
-        sources_trashed.push_tail (source);
+        sources_trash.push_tail (source);
         registry_source_removed (source);
         source.set_enabled (false);
     }
 
     public void source_trash_undo () {
-        if (sources_trashed.is_empty ())
+        if (sources_trash.is_empty ())
             return;
 
-        var source = sources_trashed.pop_tail ();
+        var source = sources_trash.pop_tail ();
         source.set_enabled (true);
         registry_source_added (source);
     }
 
     public void source_trash_empty () {
-        E.Source source = sources_trashed.pop_tail ();
+        E.Source source = sources_trash.pop_tail ();
         while (source != null) {
             source.remove.begin (null);
-            source = sources_trashed.pop_tail ();
+            source = sources_trash.pop_tail ();
         }
     }
 
@@ -521,7 +521,7 @@ public class Calendar.Store : Object {
         return components;
     }
 
-    //--- Privat ECal.Component Helpers ---//
+    //--- Private ECal.Component Helpers ---//
 
     private void component_debug (E.Source source, ECal.Component component) {
         unowned ICal.Component comp = component.get_icalcomponent ();
@@ -829,6 +829,9 @@ public class Calendar.Store : Object {
 #else
             yield client.create_object (comp, null, out uid);
 #endif
+            if (uid != null) {
+                comp.set_uid (uid);
+            }
         }
     }
 
