@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-17 17:29+0000\n"
+"POT-Creation-Date: 2020-06-26 22:00+0000\n"
 "PO-Revision-Date: 2019-12-20 01:11+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/extra/"
@@ -42,125 +42,129 @@ msgstr ""
 "CalDAV, в одному місці."
 
 #: data/io.elementary.calendar.appdata.xml.in:18
-#: data/io.elementary.calendar.appdata.xml.in:27
+msgid "Fix issues with time zones not being recognized"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:23
+#: data/io.elementary.calendar.appdata.xml.in:32
 msgid "Minor Updates:"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:20
+#: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Fix several issues with adding and removing monthly recurring events"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:21
-#: data/io.elementary.calendar.appdata.xml.in:32
-#: data/io.elementary.calendar.appdata.xml.in:52
-#: data/io.elementary.calendar.appdata.xml.in:64
+#: data/io.elementary.calendar.appdata.xml.in:26
+#: data/io.elementary.calendar.appdata.xml.in:37
+#: data/io.elementary.calendar.appdata.xml.in:57
+#: data/io.elementary.calendar.appdata.xml.in:69
 msgid "Updated translations"
 msgstr "Оновлено переклади"
 
-#: data/io.elementary.calendar.appdata.xml.in:29
+#: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Correctly save event reminders"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:30
+#: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Ellipsize event participant details if necessary"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:31
+#: data/io.elementary.calendar.appdata.xml.in:36
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:38
+#: data/io.elementary.calendar.appdata.xml.in:43
 msgid "Fix crash when editing an event with no location"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:43
+#: data/io.elementary.calendar.appdata.xml.in:48
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:48
+#: data/io.elementary.calendar.appdata.xml.in:53
 msgid "Make agenda pane fill the whole space"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:49
+#: data/io.elementary.calendar.appdata.xml.in:54
 msgid "Set the suggested time for new events to the next whole hour"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:50
+#: data/io.elementary.calendar.appdata.xml.in:55
 msgid "Fix issues with recurring events"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:51
+#: data/io.elementary.calendar.appdata.xml.in:56
 #, fuzzy
 msgid "Performance improvements"
 msgstr "Покращення для режиму «Справа на ліво»"
 
-#: data/io.elementary.calendar.appdata.xml.in:57
+#: data/io.elementary.calendar.appdata.xml.in:62
 msgid "Present import window when opening ICS files"
 msgstr "Покажіть вікно для імпорту при відкриванні ICS файлів"
 
-#: data/io.elementary.calendar.appdata.xml.in:58
+#: data/io.elementary.calendar.appdata.xml.in:63
 msgid "Add a search entry for calendars"
 msgstr "Додайте пошукову точку входу для календарів"
 
-#: data/io.elementary.calendar.appdata.xml.in:59
+#: data/io.elementary.calendar.appdata.xml.in:64
 msgid "Always use calendar icon in notifications"
 msgstr "Завжди використовуйте піктограму «Календар» у сповіщеннях"
 
-#: data/io.elementary.calendar.appdata.xml.in:60
+#: data/io.elementary.calendar.appdata.xml.in:65
 msgid "Agenda view can now be navigated by keyboard"
 msgstr ""
 "Режим перегляду «Порядок денний» тепер може керуватись за допомогою "
 "клавіатури"
 
-#: data/io.elementary.calendar.appdata.xml.in:61
+#: data/io.elementary.calendar.appdata.xml.in:66
 msgid "Right-to-left improvements"
 msgstr "Покращення для режиму «Справа на ліво»"
 
-#: data/io.elementary.calendar.appdata.xml.in:62
+#: data/io.elementary.calendar.appdata.xml.in:67
 msgid "Various UI overhauls including lime accent color"
 msgstr ""
 "Різноманітні перебудови інтерфейсу користувача включно із кольоровим "
 "акцентом «лайм»"
 
-#: data/io.elementary.calendar.appdata.xml.in:63
+#: data/io.elementary.calendar.appdata.xml.in:68
 msgid "Overall code cleanup and rewrites"
 msgstr "Суцільне переписування та очистка коду"
 
-#: data/io.elementary.calendar.appdata.xml.in:69
+#: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Styling adjustments"
 msgstr "Налаштування стилів"
 
-#: data/io.elementary.calendar.appdata.xml.in:70
+#: data/io.elementary.calendar.appdata.xml.in:75
 msgid "Fix location panel initialization"
 msgstr "Виправити ініціалізацію панелі місцезнаходження"
 
-#: data/io.elementary.calendar.appdata.xml.in:71
+#: data/io.elementary.calendar.appdata.xml.in:76
 msgid "New translations"
 msgstr "Нові переклади"
 
-#: data/io.elementary.calendar.appdata.xml.in:76
+#: data/io.elementary.calendar.appdata.xml.in:81
 msgid "Update wingpanel-indicator-datetime settings path."
 msgstr "Оновити шлях до налаштувань wingpanel-indicator-datetime."
 
-#: data/io.elementary.calendar.appdata.xml.in:77
+#: data/io.elementary.calendar.appdata.xml.in:82
 msgid "New translations."
 msgstr "Нові переклади."
 
-#: data/io.elementary.calendar.appdata.xml.in:82
-#: data/io.elementary.calendar.appdata.xml.in:89
+#: data/io.elementary.calendar.appdata.xml.in:87
+#: data/io.elementary.calendar.appdata.xml.in:94
 msgid "Various bug fixes and improvements."
 msgstr "Виправлення різноманітних помилок та покращення."
 
-#: data/io.elementary.calendar.appdata.xml.in:87
+#: data/io.elementary.calendar.appdata.xml.in:92
 msgid "Fixes for calendar accuracy and integrity issues."
 msgstr "Виправлення проблем із точністю та інтеграцією календаря."
 
-#: data/io.elementary.calendar.appdata.xml.in:88
+#: data/io.elementary.calendar.appdata.xml.in:93
 msgid "Fixes exporting, importing and printing calendars."
 msgstr ""
 "Виправлення помилок при імпортуванні, експортуванні та друку календарів."
 
-#: data/io.elementary.calendar.appdata.xml.in:136
+#: data/io.elementary.calendar.appdata.xml.in:141
 msgid "elementary LLC."
 msgstr "elementary LLC."
 

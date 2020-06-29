@@ -12,7 +12,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-public class Maya.Model.CalendarModel : Object {
+public class Calendar.Store : Object {
 
     /* The data_range is the range of dates for which this model is storing
      * data. The month_range is a subset of this range corresponding to the
@@ -24,8 +24,8 @@ public class Maya.Model.CalendarModel : Object {
      * changing one of the following properties: month_start, num_weeks, and
      * week_starts_on.
     */
-    public Util.DateRange data_range { get; private set; }
-    public Util.DateRange month_range { get; private set; }
+    public Calendar.Util.DateRange data_range { get; private set; }
+    public Calendar.Util.DateRange month_range { get; private set; }
     public E.SourceRegistry registry { get; private set; }
 
     /* The first day of the month */
@@ -59,26 +59,26 @@ public class Maya.Model.CalendarModel : Object {
     public GLib.Queue<E.Source> calendar_trash;
     private E.CredentialsPrompter credentials_prompter;
 
-    private static Maya.Model.CalendarModel? calendar_model = null;
+    private static Calendar.Store? store = null;
     private static GLib.Settings state_settings;
 
-    public static CalendarModel get_default () {
-        if (calendar_model == null)
-            calendar_model = new CalendarModel ();
-        return calendar_model;
+    public static Calendar.Store get_default () {
+        if (store == null)
+            store = new Calendar.Store ();
+        return store;
     }
 
     static construct {
         state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
     }
 
-    protected CalendarModel () {
+    protected Store () {
         this.week_starts_on = get_week_start ();
-        this.month_start = Util.get_start_of_month (get_page ());
+        this.month_start = Calendar.Util.datetime_get_start_of_month (get_page ());
         compute_ranges ();
 
         source_client = new HashTable<string, ECal.Client> (str_hash, str_equal);
-        source_events = new HashTable<E.Source, Gee.TreeMultiMap<string, ECal.Component>> (Util.source_hash_func, Util.source_equal_func);
+        source_events = new HashTable<E.Source, Gee.TreeMultiMap<string, ECal.Component>> (Maya.Util.source_hash_func, Calendar.Util.esource_equal_func);
         source_view = new HashTable<string, ECal.ClientView> (str_hash, str_equal);
         calendar_trash = new GLib.Queue<E.Source> ();
 
@@ -347,7 +347,7 @@ public class Maya.Model.CalendarModel : Object {
         state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
 
         var month_end = month_start.add_full (0, 1, -1);
-        month_range = new Util.DateRange (month_start, month_end);
+        month_range = new Calendar.Util.DateRange (month_start, month_end);
 
         int dow = month_start.get_day_of_week ();
         int wso = (int) week_starts_on;
@@ -377,7 +377,7 @@ public class Maya.Model.CalendarModel : Object {
 
         var data_range_last = month_end.add_days (offset);
 
-        data_range = new Util.DateRange (data_range_first, data_range_last);
+        data_range = new Calendar.Util.DateRange (data_range_first, data_range_last);
         num_weeks = data_range.to_list ().size / 7;
 
         debug (@"Date ranges: ($data_range_first <= $month_start < $month_end <= $data_range_last)");
@@ -387,7 +387,7 @@ public class Maya.Model.CalendarModel : Object {
         // create empty source-event map
         var events = new Gee.TreeMultiMap<string, ECal.Component> (
             (GLib.CompareDataFunc<string>?) GLib.strcmp,
-            (GLib.CompareDataFunc<ECal.Component>?) Util.calcomponent_compare_func);
+            (GLib.CompareDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_compare_func);
         source_events.set (source, events);
         // query client view
         var iso_first = ECal.isodate_from_time_t ((time_t) data_range.first_dt.to_unix ());
@@ -462,7 +462,7 @@ public class Maya.Model.CalendarModel : Object {
 #endif
         debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
-        var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
+        var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
 #if E_CAL_2_0
@@ -487,7 +487,7 @@ public class Maya.Model.CalendarModel : Object {
     private void on_objects_modified (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
 #endif
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
-        var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
+        var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
             var events = source_events.get (source).get (uid);
@@ -507,7 +507,7 @@ public class Maya.Model.CalendarModel : Object {
 #endif
         debug (@"Received $(cids.length()) removed event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
-        var removed_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.calcomponent_equal_func);
+        var removed_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
         cids.foreach ((cid) => {
             if (cid == null)
                 return;

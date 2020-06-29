@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -54,10 +54,12 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
         load_contacts.begin ();
 
-        var no_guests_label = new Gtk.Label ("");
-        no_guests_label.set_markup (_("No Participants"));
-        no_guests_label.sensitive = false;
+        var no_guests_label = new Gtk.Label (_("No Participants"));
         no_guests_label.show ();
+
+        unowned Gtk.StyleContext no_guests_context = no_guests_label.get_style_context ();
+        no_guests_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_guests_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         guest_list = new Gtk.ListBox ();
         guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
