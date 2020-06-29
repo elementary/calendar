@@ -27,7 +27,22 @@ public class Calendar.Store : Object {
     public Calendar.Util.DateRange data_range { get; private set; }
     public Calendar.Util.DateRange month_range { get; private set; }
 
-    public signal void error_received (GLib.Error e);
+    /* The first day of the month */
+    public GLib.DateTime month_start { get; set; }
+
+    /* The number of weeks to show */
+    public int num_weeks { get; private set; default = 6; }
+
+    /* The start of week, ie. Monday=1 or Sunday=7 */
+    public GLib.DateWeekday week_starts_on { get; set; default = GLib.DateWeekday.MONDAY; }
+
+    /* The component that is currently dragged */
+    public ECal.Component component_dragged { get; set; }
+
+    /* Notifies when components are added, modified, or removed */
+    public signal void components_added (Gee.Collection<ECal.Component> components, E.Source source, Gee.Collection<ECal.ClientView> views);
+    public signal void components_modified (Gee.Collection<ECal.Component> components, E.Source source, Gee.Collection<ECal.ClientView> views);
+    public signal void components_removed (Gee.Collection<ECal.Component> components, E.Source source, Gee.Collection<ECal.ClientView> views);
 
     /* Notifies when sources are added, changed, or removed */
     public signal void source_connecting (E.Source source, GLib.Cancellable cancellable);
@@ -35,10 +50,10 @@ public class Calendar.Store : Object {
     public signal void source_changed (E.Source source);
     public signal void source_removed (E.Source source);
 
-    /* Notifies when components are added, modified, or removed */
-    public signal void components_added (Gee.Collection<ECal.Component> components, E.Source source, Gee.Collection<ECal.ClientView> views);
-    public signal void components_modified (Gee.Collection<ECal.Component> components, E.Source source, Gee.Collection<ECal.ClientView> views);
-    public signal void components_removed (Gee.Collection<ECal.Component> components, E.Source source, Gee.Collection<ECal.ClientView> views);
+    public signal void error_received (GLib.Error e);
+
+    /* The month_start, num_weeks, or week_starts_on have been changed */
+    public signal void parameters_changed ();
 
     public ECal.ClientSourceType source_type { get; construct; }
     private E.SourceRegistry registry { get; private set; }
@@ -76,12 +91,6 @@ public class Calendar.Store : Object {
             task_store = new Calendar.Store (ECal.ClientSourceType.TASKS);
         return task_store;
     }
-
-    /* The start of week, ie. Monday=1 or Sunday=7 */
-    public GLib.DateWeekday week_starts_on { get; set; default = GLib.DateWeekday.MONDAY; }
-
-    /* The component that is currently dragged */
-    public ECal.Component component_dragged { get; set; }
 
     construct {
         open.begin ();
@@ -618,15 +627,6 @@ public class Calendar.Store : Object {
     }
 
     //--- Helpers to manage scheduled components in a given time range --//
-
-    /* The month_start, num_weeks, or week_starts_on have been changed */
-    public signal void parameters_changed ();
-
-    /* The first day of the month */
-    public GLib.DateTime month_start { get; set; }
-
-    /* The number of weeks to show */
-    public int num_weeks { get; private set; default = 6; }
 
     public void change_month (int relative) {
         month_start = month_start.add_months (relative);
