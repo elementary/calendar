@@ -1,5 +1,6 @@
 
 calendar_files = files(
+    'TimeManager.vala',
     'AgendaView.vala',
     'Application.vala',
     'ImportDialog.vala',

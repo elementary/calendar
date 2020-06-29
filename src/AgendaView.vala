@@ -112,6 +112,9 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         event_store.components_removed.connect (on_events_removed);
         event_store.components_modified.connect (on_events_updated);
         event_store.parameters_changed.connect (on_event_store_parameters_changed);
+        var time_manager = TimeManager.get_default ();
+        time_manager.on_update_today.connect (on_today_changed);
+
         set_selected_date (Maya.Application.get_selected_datetime ());
         show_all ();
 
@@ -366,6 +369,11 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         foreach (unowned Gtk.Widget row in upcoming_events_children) {
             row.destroy ();
         }
+    }
+
+    private void on_today_changed () {
+        upcoming_events_list.invalidate_filter ();
+        upcoming_events_list.invalidate_headers ();
     }
 
     /**

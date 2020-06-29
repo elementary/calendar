@@ -33,9 +33,8 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     private WeekLabels weeks { get; private set; }
     private Header header { get; private set; }
-    private Grid grid { get; private set; }
+    private Grid days_grid { get; private set; }
     private Gtk.Stack stack { get; private set; }
-    private Gtk.Grid big_grid { get; private set; }
     private Gtk.Label spacer { get; private set; }
     private static GLib.Settings show_weeks;
 
@@ -54,14 +53,12 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     construct {
         selected_date = Maya.Application.get_selected_datetime ();
-        big_grid = create_big_grid ();
 
         stack = new Gtk.Stack ();
-        stack.add (big_grid);
-        stack.show_all ();
         stack.expand = true;
 
-        sync_with_event_store ();
+        sync_with_event_store (); // Populate stack with a grid
+        stack.show_all ();
 
         var event_store = Calendar.Store.get_event_store ();
         event_store.parameters_changed.connect (on_event_store_parameters_changed);
@@ -90,39 +87,6 @@ public class Maya.View.CalendarView : Gtk.Grid {
         add (stack);
     }
 
-    public Gtk.Grid create_big_grid () {
-        spacer = new Gtk.Label ("");
-        spacer.no_show_all = true;
-
-        unowned Gtk.StyleContext spacer_context = spacer.get_style_context ();
-        spacer_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        spacer_context.add_class ("weeks");
-
-        weeks = new WeekLabels ();
-
-        header = new Header ();
-        grid = new Grid ();
-        grid.focus_date (selected_date);
-        grid.on_event_add.connect ((date) => on_event_add (date));
-        grid.selection_changed.connect ((date) => {
-            selected_date = date;
-            selection_changed (date);
-        });
-
-        // Grid properties
-        var new_big_grid = new Gtk.Grid ();
-        new_big_grid.attach (spacer, 0, 0, 1, 1);
-        new_big_grid.attach (header, 1, 0, 1, 1);
-        new_big_grid.attach (grid, 1, 1, 1, 1);
-        new_big_grid.attach (weeks, 0, 1, 1, 1);
-        new_big_grid.show_all ();
-        new_big_grid.expand = true;
-
-        update_spacer_visible ();
-
-        return new_big_grid;
-    }
-
     public override bool scroll_event (Gdk.EventScroll event) {
         return GesturesUtils.on_scroll_event (event);
     }
@@ -136,7 +100,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         if (!start.equal (event_store.month_start))
             event_store.month_start = start;
         sync_with_event_store ();
-        grid.focus_date (today);
+        days_grid.focus_date (today);
     }
 
     //--- Signal Handlers ---//
@@ -173,7 +137,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
     /* Indicates the month has changed */
     void on_event_store_parameters_changed () {
         var event_store = Calendar.Store.get_event_store ();
-        if (grid.grid_range != null && event_store.data_range.equals (grid.grid_range))
+        if (days_grid.grid_range != null && event_store.data_range.equals (days_grid.grid_range))
             return; // nothing to do
 
         Idle.add ( () => {
@@ -184,32 +148,65 @@ public class Maya.View.CalendarView : Gtk.Grid {
     }
 
     //--- Helper Methods ---//
+    Gtk.Grid create_big_grid () {
+        spacer = new Gtk.Label ("");
+        spacer.no_show_all = true;
+
+        unowned Gtk.StyleContext spacer_context = spacer.get_style_context ();
+        spacer_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        spacer_context.add_class ("weeks");
+
+        weeks = new WeekLabels ();
+
+        header = new Header ();
+        days_grid = new Grid ();
+        days_grid.focus_date (selected_date);
+        days_grid.on_event_add.connect ((date) => on_event_add (date));
+        days_grid.selection_changed.connect ((date) => {
+            selected_date = date;
+            selection_changed (date);
+        });
+
+        // Grid properties
+        var new_big_grid = new Gtk.Grid ();
+        new_big_grid.attach (spacer, 0, 0, 1, 1);
+        new_big_grid.attach (header, 1, 0, 1, 1);
+        new_big_grid.attach (days_grid, 1, 1, 1, 1);
+        new_big_grid.attach (weeks, 0, 1, 1, 1);
+        new_big_grid.show_all ();
+        new_big_grid.expand = true;
+
+        update_spacer_visible ();
+
+        return new_big_grid;
+    }
 
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_event_store () {
         var event_store = Calendar.Store.get_event_store ();
-        if (grid.grid_range != null && (event_store.data_range.equals (grid.grid_range) || grid.grid_range.first_dt.compare (event_store.data_range.first_dt) == 0))
-            return; // nothing to do
-
         DateTime previous_first = null;
-        if (grid.grid_range != null)
-            previous_first = grid.grid_range.first_dt;
+        if (days_grid != null) {
+            if (days_grid.grid_range != null && (event_store.data_range.equals (days_grid.grid_range) || days_grid.grid_range.first_dt.compare (event_store.data_range.first_dt) == 0))
+                return; // nothing to do
+            if (days_grid.grid_range != null)
+                previous_first = days_grid.grid_range.first_dt;
+        }
 
-        big_grid = create_big_grid ();
+        var big_grid = create_big_grid ();
         stack.add (big_grid);
 
         header.update_columns (event_store.week_starts_on);
         weeks.update (event_store.data_range.first_dt, event_store.num_weeks);
-        grid.set_range (event_store.data_range, event_store.month_start);
+        days_grid.set_range (event_store.data_range, event_store.month_start);
 
         // keep focus date on the same day of the month
         if (selected_date != null) {
             var bumpdate = event_store.month_start.add_days (selected_date.get_day_of_month () - 1);
-            grid.focus_date (bumpdate);
+            days_grid.focus_date (bumpdate);
         }
 
         if (previous_first != null) {
-            if (previous_first.compare (grid.grid_range.first_dt) == -1) {
+            if (previous_first.compare (days_grid.grid_range.first_dt) == -1) {
                 stack.transition_type = Gtk.StackTransitionType.SLIDE_UP;
             } else {
                 stack.transition_type = Gtk.StackTransitionType.SLIDE_DOWN;
@@ -222,22 +219,22 @@ public class Maya.View.CalendarView : Gtk.Grid {
     /* Render new event on the grid */
     void add_event (E.Source source, ECal.Component event) {
         event.set_data ("source", source);
-        grid.add_event (event);
+        days_grid.add_event (event);
     }
 
     /* Update the event on the grid */
     void update_event (E.Source source, ECal.Component event) {
         event.set_data ("source", source);
-        grid.update_event (event);
+        days_grid.update_event (event);
     }
 
     /* Remove event from the grid */
     void remove_event (E.Source source, ECal.Component event) {
-        grid.remove_event (event);
+        days_grid.remove_event (event);
     }
 
     /* Remove all events from the grid */
     void remove_all_events () {
-        grid.remove_all_events ();
+        days_grid.remove_all_events ();
     }
 }
