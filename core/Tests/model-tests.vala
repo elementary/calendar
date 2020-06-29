@@ -1,6 +1,6 @@
 // Create a testing subclass so we can access protected members and create
 // multiple instances
-class TestModel : Maya.Model.CalendarModel {
+class TestModel : Calendar.Store {
 }
 
 /**  Test interacting with nl_langinfo in Vala
