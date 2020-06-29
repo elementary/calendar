@@ -26,6 +26,7 @@ public class Calendar.Store : Object {
     */
     public Calendar.Util.DateRange data_range { get; private set; }
     public Calendar.Util.DateRange month_range { get; private set; }
+    private E.SourceRegistry registry { get; private set; }
 
     /* The first day of the month */
     public GLib.DateTime month_start { get; set; }
@@ -56,7 +57,6 @@ public class Calendar.Store : Object {
     public signal void parameters_changed ();
 
     public ECal.ClientSourceType source_type { get; construct; }
-    private E.SourceRegistry registry { get; private set; }
     private HashTable<string, ECal.Client> source_client;
     private HashTable<string, Gee.ArrayList<ECal.ClientView>> source_views;
 
