@@ -112,8 +112,8 @@ public class Maya.View.EventButton : Gtk.Revealer {
     }
 
     public void update (ECal.Component event) {
-       this.comp = comp;
-       label.label = comp.get_summary ().get_value ();
+       this.comp = event;
+       label.label = event.get_summary ().get_value ();
     }
 
     private void reload_css (string background_color) {

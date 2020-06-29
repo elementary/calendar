@@ -26,7 +26,7 @@ const string EVENT_CSS = """
 public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     public signal void removed (ECal.Component event);
 
-    public ECal.Component calevent { get; construct; }
+    public ECal.Component calevent { get; construct set; }
     public E.Source source { get; construct; }
     public bool is_upcoming { get; construct; }
 
@@ -269,6 +269,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
      * Updates the event to match the given event.
      */
     public void update (ECal.Component event) {
+        calevent = event;
+
         unowned ICal.Component ical_event = event.get_icalcomponent ();
         summary = ical_event.get_summary ();
         name_label.set_markup (Markup.escape_text (summary));
