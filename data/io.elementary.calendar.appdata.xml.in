@@ -13,6 +13,15 @@
     </p>
   </description>
   <releases>
+    <release version="5.0.7" date="2020-06-30" urgency="medium">
+      <description>
+      <p>Minor Updates:</p>
+        <ul>
+          <li>Don't resize the sidebar when resizing the window</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.0.6" date="2020-06-30" urgency="medium">
       <description>
       <p>Minor Updates:</p>
