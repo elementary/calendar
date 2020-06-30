@@ -24,7 +24,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
 
     private Gtk.Entry name_entry;
     private bool set_as_default = false;
-    private string hex_color = "#da3d41";
+    private string hex_color = "#ed5353";
     private Backend current_backend;
     private Gee.Collection<PlacementWidget> backend_widgets;
     private Gtk.Grid main_grid;
@@ -187,19 +187,19 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         });
 
         color_button_red.toggled.connect (() => {
-            hex_color = "#da3d41";
+            hex_color = "#ed5353";
         });
 
         color_button_orange.toggled.connect (() => {
-            hex_color = "#f37329";
+            hex_color = "#ffa154";
         });
 
         color_button_yellow.toggled.connect (() => {
-            hex_color = "#e6a92a";
+            hex_color = "#f9c440";
         });
 
         color_button_green.toggled.connect (() => {
-            hex_color = "#81c837";
+            hex_color = "#68b723";
         });
 
         color_button_blue.toggled.connect (() => {
@@ -256,16 +256,16 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
             switch (cal.dup_color ()) {
-                case "#da3d41":
+                case "#ed5353":
                     color_button_red.active = true;
                     break;
-                case "#f37329":
+                case "#ffa154":
                     color_button_orange.active = true;
                     break;
-                case "#e6a92a":
+                case "#f9c440":
                     color_button_yellow.active = true;
                     break;
-                case "#81c837":
+                case "#68b723":
                     color_button_green.active = true;
                     break;
                 case "#3689e6":
