@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 22:00+0000\n"
+"POT-Creation-Date: 2020-06-30 18:57+0000\n"
 "PO-Revision-Date: 2015-11-23 20:50+0000\n"
 "Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
@@ -79,34 +79,34 @@ msgid ""
 msgstr ""
 "Zure hurrengo gertaerak hemen erakutsiko dira data bat hautatzen duzunean."
 
-#: src/AgendaView.vala:137
+#: src/AgendaView.vala:140
 msgid "During the day"
 msgstr "Egunean zehar"
 
-#: src/AgendaView.vala:145
+#: src/AgendaView.vala:148
 msgid "All day"
 msgstr "Egun osoan"
 
-#: src/AgendaView.vala:262
+#: src/AgendaView.vala:265
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:268
 #, fuzzy
 msgid "This Week"
 msgstr "aste"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:271
 #, fuzzy
 msgid "Next Week"
 msgstr "aste"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:274
 #, fuzzy
 msgid "This Month"
 msgstr "hilabete"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:277
 #, fuzzy
 msgid "Next Month"
 msgstr "hilabete"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 22:00+0000\n"
+"POT-Creation-Date: 2020-06-30 18:57+0000\n"
 "PO-Revision-Date: 2015-01-19 23:29+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Belarusian <be@li.org>\n"
@@ -79,31 +79,31 @@ msgid ""
 "events."
 msgstr ""
 
-#: src/AgendaView.vala:137
+#: src/AgendaView.vala:140
 msgid "During the day"
 msgstr ""
 
-#: src/AgendaView.vala:145
+#: src/AgendaView.vala:148
 msgid "All day"
 msgstr ""
 
-#: src/AgendaView.vala:262
+#: src/AgendaView.vala:265
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:268
 msgid "This Week"
 msgstr ""
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:271
 msgid "Next Week"
 msgstr ""
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:274
 msgid "This Month"
 msgstr ""
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:277
 msgid "Next Month"
 msgstr ""
 

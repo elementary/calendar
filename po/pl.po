@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 22:00+0000\n"
+"POT-Creation-Date: 2020-06-30 18:57+0000\n"
 "PO-Revision-Date: 2019-11-15 22:24+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -81,31 +81,31 @@ msgstr ""
 "Nadchodzące wydarzenia będą wyświetlone w tym miejscu, po zaznaczeniu ich "
 "daty."
 
-#: src/AgendaView.vala:137
+#: src/AgendaView.vala:140
 msgid "During the day"
 msgstr "W ciągu dnia"
 
-#: src/AgendaView.vala:145
+#: src/AgendaView.vala:148
 msgid "All day"
 msgstr "Cały dzień"
 
-#: src/AgendaView.vala:262
+#: src/AgendaView.vala:265
 msgid "Tomorrow"
 msgstr "Jutro"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:268
 msgid "This Week"
 msgstr "Ten tydzień"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:271
 msgid "Next Week"
 msgstr "Następny tydzień"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:274
 msgid "This Month"
 msgstr "Ten miesiąc"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:277
 msgid "Next Month"
 msgstr "Następny miesiąc"
 
