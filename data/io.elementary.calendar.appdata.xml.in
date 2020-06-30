@@ -15,15 +15,20 @@
   <releases>
     <release version="5.1.0" date="2020-07-01" urgency="medium">
       <description>
-      <p>Improvements:</p>
-      <ul>
-        <li>Allow addition and removal of recurrence to existing event</li>
-        <li>Allow editing of recurring events</li>
-      </ul>
-      <p>Minor Updates:</p>
-      <ul>
-        <li>Updated translations</li>
-      </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Allow addition and removal of recurrence to existing event</li>
+          <li>Allow editing of recurring events</li>
+        </ul>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.0.6" date="2020-06-01" urgency="medium">
+      <description>
+        <p>Fix issues with time zones not being recognized</p>
       </description>
     </release>
     <release version="5.0.5" date="2020-06-01" urgency="medium">

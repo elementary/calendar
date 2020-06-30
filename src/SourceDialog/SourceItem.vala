@@ -54,7 +54,7 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         visible_checkbutton = new Gtk.CheckButton ();
         visible_checkbutton.active = cal.selected;
         visible_checkbutton.toggled.connect (() => {
-            var calmodel = Model.CalendarModel.get_default ();
+            var calmodel = Calendar.Store.get_default ();
             if (visible_checkbutton.active == true) {
                 calmodel.add_source (source);
             } else {
@@ -142,7 +142,7 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
         edit_button.clicked.connect (() => {edit_request (source);});
 
         undo_button.clicked.connect (() => {
-            Model.CalendarModel.get_default ().restore_calendar ();
+            Calendar.Store.get_default ().restore_calendar ();
             stack.set_visible_child_name ("calendar");
         });
 

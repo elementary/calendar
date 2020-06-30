@@ -67,7 +67,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
             } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
                 E.Source src = comp.get_data ("source");
 
-                bool sensitive = src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false;
+                bool sensitive = src.writable == true && Calendar.Store.get_default ().calclient_is_readonly (src) == false;
 
                 var menu = new Maya.EventMenu (comp);
                 menu.attach_to_widget (this, null);
@@ -86,7 +86,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
         Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2}, Gdk.DragAction.MOVE);
 
         event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
-            Model.CalendarModel.get_default ().drag_component = comp;
+            Calendar.Store.get_default ().drag_component = comp;
             unowned ICal.Component icalcomp = comp.get_icalcomponent ();
             var ical_str = icalcomp.as_ical_string ();
             sel.set_text (ical_str, ical_str.length);

@@ -191,7 +191,7 @@ public class EventDialog : Gtk.Dialog {
             reminder_panel.save ();
             repeat_panel.save ();
 
-            var calmodel = Model.CalendarModel.get_default ();
+            var calmodel = Calendar.Store.get_default ();
             if (event_type == EventType.ADD) {
                 calmodel.add_event (source, ecal);
             } else {
@@ -211,7 +211,7 @@ public class EventDialog : Gtk.Dialog {
         }
 
         private void remove_event () {
-            var calmodel = Model.CalendarModel.get_default ();
+            var calmodel = Calendar.Store.get_default ();
             calmodel.remove_event (original_source, ecal, mod_type);
             this.destroy ();
         }
