@@ -11,4 +11,4 @@ override_dh_missing:
 	dh_missing --fail-missing --list-missing
 
 override_dh_strip:
-	dh_strip --dbg-package=maya-calendar-dbg
+	dh_strip --dbgsym-migration='maya-calendar-dbg (<< 5.0.5)'
