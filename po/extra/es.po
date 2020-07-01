@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-30 18:57+0000\n"
-"PO-Revision-Date: 2020-04-06 07:06+0000\n"
+"PO-Revision-Date: 2020-07-01 07:43+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/extra/"
 "es/>\n"
@@ -47,7 +47,7 @@ msgstr "Actualizaciones menores:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix issues with time zones not being recognized"
-msgstr ""
+msgstr "Solucionados problemas de reconocimiento de husos horarios"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 #: data/io.elementary.calendar.appdata.xml.in:30
@@ -58,10 +58,10 @@ msgid "Updated translations"
 msgstr "Traducciones actualizadas"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr "Corrección de problemas con eventos recurrentes"
+msgstr ""
+"Se corrigieron varios problemas al añadir y quitar eventos con repetición "
+"mensual"
 
 #: data/io.elementary.calendar.appdata.xml.in:38
 msgid "Correctly save event reminders"
