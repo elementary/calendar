@@ -451,13 +451,10 @@ public class Calendar.Store : Object {
     private void on_objects_modified (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
 #endif
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
-//<<<<<<< HEAD:core/Model/CalendarModel.vala
         var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.ecalcomponent_equal_func);
         var removed_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.ecalcomponent_equal_func);
         var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.ecalcomponent_equal_func);
-//=======
-//        var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
-//>>>>>>> master:core/Services/Calendar/Store.vala
+
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
             var events_for_source = source_events.get (source);
