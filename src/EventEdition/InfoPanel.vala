@@ -185,14 +185,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         // Save the time
         if (allday_switch.get_active () == true) {
-            ICal.Time dt_start = Util.date_time_to_ical (from_date_picker.date, null);
-            ICal.Time dt_end = Util.date_time_to_ical (to_date_picker.date.add_days (1), null);
+            ICal.Time dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, null);
+            ICal.Time dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date.add_days (1), null);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
         } else {
-            ICal.Time dt_start = Util.date_time_to_ical (from_date_picker.date, from_time_picker.time);
-            ICal.Time dt_end = Util.date_time_to_ical (to_date_picker.date, to_time_picker.time);
+            ICal.Time dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, from_time_picker.time);
+            ICal.Time dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date, to_time_picker.time);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
@@ -235,14 +235,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
 
             DateTime from_date, to_date;
-            Util.get_local_datetimes_from_icalcomponent (comp, out from_date, out to_date);
+            Calendar.Util.icalcomponent_get_local_datetimes (comp, out from_date, out to_date);
 
             from_date_picker.date = from_date;
             from_time_picker.time = from_date;
             parent_dialog.date_time = from_date;
 
             // Is this all day
-            bool allday = Util.is_all_day (from_date, to_date);
+            bool allday = Calendar.Util.datetime_is_all_day (from_date, to_date);
 
             to_date_picker.date = to_date;
             to_time_picker.time = to_date;

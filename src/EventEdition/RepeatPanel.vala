@@ -200,10 +200,12 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         var exceptions_label = new Granite.HeaderLabel (_("Exceptions:"));
 
-        var no_exceptions_label = new Gtk.Label ("");
-        no_exceptions_label.set_markup (_("No Exceptions"));
-        no_exceptions_label.sensitive = false;
+        var no_exceptions_label = new Gtk.Label (_("No Exceptions"));
         no_exceptions_label.show ();
+
+        unowned Gtk.StyleContext no_exceptions_context = no_exceptions_label.get_style_context ();
+        no_exceptions_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_exceptions_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         exceptions_list = new Gtk.ListBox ();
         exceptions_list.expand = true;
@@ -346,7 +348,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 ends_combobox.active = 0;
             } else {
                 ends_combobox.active = 1;
-                end_datepicker.date = Util.ical_to_date_time (until);
+                end_datepicker.date = Calendar.Util.icaltime_to_datetime (until);
             }
             if (rrule.get_count () > 0) {
                 end_entry.value = rrule.get_count ();
@@ -357,7 +359,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         property = comp.get_first_property (ICal.PropertyKind.EXDATE_PROPERTY);
         while (property != null) {
             var exdate = property.get_exdate ();
-            var exception_grid = new ExceptionGrid (Util.ical_to_date_time (exdate));
+            var exception_grid = new ExceptionGrid (Calendar.Util.icaltime_to_datetime (exdate));
             exception_grid.show_all ();
             exceptions_list.add (exception_grid);
             property = comp.get_next_property (ICal.PropertyKind.EXDATE_PROPERTY);
@@ -537,7 +539,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
         week_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         week_box.get_style_context ().add_class ("raised");
-        switch (Maya.Model.CalendarModel.get_default ().week_starts_on) {
+        switch (Calendar.Store.get_default ().week_starts_on) {
             case GLib.DateWeekday.TUESDAY:
                 week_box.add (thu_button);
                 week_box.add (fri_button);
@@ -794,7 +796,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             var exgrid = (ExceptionGrid)child;
             var date = exgrid.get_date ();
             var exdate = new ICal.Property (ICal.PropertyKind.EXDATE_PROPERTY);
-            exdate.set_exdate (Util.date_time_to_ical (date, null));
+            exdate.set_exdate (Calendar.Util.datetimes_to_icaltime (date, null));
             comp.add_property (exdate);
         }
     }
