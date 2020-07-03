@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 22:00+0000\n"
+"POT-Creation-Date: 2020-06-30 18:57+0000\n"
 "PO-Revision-Date: 2019-02-11 00:08+0000\n"
 "Last-Translator: tylnesh <kohutek.michal@gmail.com>\n"
 "Language-Team: Slovak <https://weblate.elementary.io/projects/calendar/"
@@ -79,31 +79,31 @@ msgid ""
 msgstr ""
 "Vaše nadchádzajúce udalosti budú zobrazené tu, ak zvolíte dátum s udalosťami."
 
-#: src/AgendaView.vala:137
+#: src/AgendaView.vala:140
 msgid "During the day"
 msgstr "Počas dňa"
 
-#: src/AgendaView.vala:145
+#: src/AgendaView.vala:148
 msgid "All day"
 msgstr "Celý deň"
 
-#: src/AgendaView.vala:262
+#: src/AgendaView.vala:265
 msgid "Tomorrow"
 msgstr "Zajtra"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:268
 msgid "This Week"
 msgstr "Tento týždeň"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:271
 msgid "Next Week"
 msgstr "Budúci týždeň"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:274
 msgid "This Month"
 msgstr "Tento mesiac"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:277
 msgid "Next Month"
 msgstr "Budúci mesiac"
 

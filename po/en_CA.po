@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 22:00+0000\n"
+"POT-Creation-Date: 2020-06-30 18:57+0000\n"
 "PO-Revision-Date: 2017-04-25 11:27+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://l10n.elementary.io/projects/"
@@ -81,34 +81,34 @@ msgstr ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 
-#: src/AgendaView.vala:137
+#: src/AgendaView.vala:140
 msgid "During the day"
 msgstr "During the day"
 
-#: src/AgendaView.vala:145
+#: src/AgendaView.vala:148
 msgid "All day"
 msgstr "All day"
 
-#: src/AgendaView.vala:262
+#: src/AgendaView.vala:265
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:268
 #, fuzzy
 msgid "This Week"
 msgstr "Week"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:271
 #, fuzzy
 msgid "Next Week"
 msgstr "Week"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:274
 #, fuzzy
 msgid "This Month"
 msgstr "Month"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:277
 #, fuzzy
 msgid "Next Month"
 msgstr "Month"

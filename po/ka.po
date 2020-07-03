@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 22:00+0000\n"
+"POT-Creation-Date: 2020-06-30 18:57+0000\n"
 "PO-Revision-Date: 2015-11-27 08:47+0000\n"
 "Last-Translator: Beqa Arabuli <arabulibeqa@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,34 +74,34 @@ msgid ""
 msgstr ""
 "ივენთებიანი თარიღის მონიშვნისას, თქვენი მომავალი ივენთები აქ გამოჩნდება."
 
-#: src/AgendaView.vala:137
+#: src/AgendaView.vala:140
 msgid "During the day"
 msgstr "დღის განმავლობაში"
 
-#: src/AgendaView.vala:145
+#: src/AgendaView.vala:148
 msgid "All day"
 msgstr "მთელი დღე"
 
-#: src/AgendaView.vala:262
+#: src/AgendaView.vala:265
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:268
 #, fuzzy
 msgid "This Week"
 msgstr "კვირა"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:271
 #, fuzzy
 msgid "Next Week"
 msgstr "კვირა"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:274
 #, fuzzy
 msgid "This Month"
 msgstr "თვე"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:277
 #, fuzzy
 msgid "Next Month"
 msgstr "თვე"

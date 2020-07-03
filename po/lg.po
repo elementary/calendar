@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 22:00+0000\n"
+"POT-Creation-Date: 2020-06-30 18:57+0000\n"
 "PO-Revision-Date: 2018-01-21 00:04+0000\n"
 "Last-Translator: Laurence Bahiirwa <laurence@mediauganda.com>\n"
 "Language-Team: Ganda <https://weblate.elementary.io/projects/calendar/"
@@ -74,34 +74,34 @@ msgid ""
 "events."
 msgstr "Emikolo egiddako gyakutekebwa wano nga olonze enaku z'emikolo."
 
-#: src/AgendaView.vala:137
+#: src/AgendaView.vala:140
 msgid "During the day"
 msgstr "Ebiseera byemisana"
 
-#: src/AgendaView.vala:145
+#: src/AgendaView.vala:148
 msgid "All day"
 msgstr "Olunaku lwona"
 
-#: src/AgendaView.vala:262
+#: src/AgendaView.vala:265
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:268
 #, fuzzy
 msgid "This Week"
 msgstr "Sabiti"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:271
 #, fuzzy
 msgid "Next Week"
 msgstr "Sabiti"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:274
 #, fuzzy
 msgid "This Month"
 msgstr "Mwezi"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:277
 #, fuzzy
 msgid "Next Month"
 msgstr "Mwezi"
