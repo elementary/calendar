@@ -334,7 +334,7 @@ public class Calendar.Store : Object {
     }
 
     private DateTime get_page () {
-        var month_page = "";
+        string? month_page = null;
         if (state_settings != null) {
             month_page = state_settings.get_string ("month-page");
         }
