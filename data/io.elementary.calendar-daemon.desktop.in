@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Maya Daemon
+Name=Calendar Daemon
 Comment=View Event Reminders
 Icon=office-calendar
 Exec=@EXEC_PATH@
