@@ -60,7 +60,7 @@ public class Calendar.Store : Object {
     private E.CredentialsPrompter credentials_prompter;
 
     private static Calendar.Store? store = null;
-    private static GLib.Settings state_settings;
+    private static GLib.Settings? state_settings = null;
 
     public static Calendar.Store get_default () {
         if (store == null)
@@ -69,7 +69,9 @@ public class Calendar.Store : Object {
     }
 
     static construct {
-        state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
+        if (SettingsSchemaSource.get_default ().lookup ("io.elementary.calendar.savedstate", true) != null) {
+            state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
+        }
     }
 
     protected Store () {
@@ -332,7 +334,11 @@ public class Calendar.Store : Object {
     }
 
     private DateTime get_page () {
-        var month_page = state_settings.get_string ("month-page");
+        string? month_page = null;
+        if (state_settings != null) {
+            month_page = state_settings.get_string ("month-page");
+        }
+
         if (month_page == null || month_page == "") {
             return new DateTime.now_local ();
         }
@@ -344,7 +350,9 @@ public class Calendar.Store : Object {
     }
 
     private void compute_ranges () {
-        state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
+        if (state_settings != null) {
+            state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
+        }
 
         var month_end = month_start.add_full (0, 1, -1);
         month_range = new Calendar.Util.DateRange (month_start, month_end);
