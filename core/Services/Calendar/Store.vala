@@ -73,7 +73,11 @@ public class Calendar.Store : Object {
     }
 
     private Store () {
+#if HAVE_NL_TIME_FIRST_WEEKDAY
         int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
+#else
+        int week_start = 1;
+#endif
         if (week_start >= 1 && week_start <= 7) {
             week_starts_on = (GLib.DateWeekday) (week_start - 1);
         }
