@@ -42,7 +42,7 @@ m_dep = meson.get_compiler('c').find_library('m', required : false)
 
 gresource_calendar = gnome.compile_resources(
     'gresource_calendar',
-    'data/io.elementary.calendar.gresource.xml',
+    join_paths('data', meson.project_name() + '.gresource.xml'),
     source_dir: 'data'
 )
 
