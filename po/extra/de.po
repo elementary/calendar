@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-30 18:57+0000\n"
-"PO-Revision-Date: 2019-12-26 07:16+0000\n"
+"PO-Revision-Date: 2020-07-10 12:12+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/calendar/extra/de/"
 ">\n"
@@ -44,11 +44,11 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:27
 #: data/io.elementary.calendar.appdata.xml.in:36
 msgid "Minor Updates:"
-msgstr ""
+msgstr "Weitere Aktualisierungen:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix issues with time zones not being recognized"
-msgstr ""
+msgstr "Behebt Probleme mit nicht anerkannten Zeitzonen"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 #: data/io.elementary.calendar.appdata.xml.in:30
@@ -59,30 +59,35 @@ msgid "Updated translations"
 msgstr "Aktualisierte Übersetzungen"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr "Probleme mit wiederkehrenden Ereignissen behoben"
+msgstr ""
+"Behebt mehrere Probleme beim Hinzufügen und Entfernen monatlich "
+"wiederkehrender Ereignisse"
 
 #: data/io.elementary.calendar.appdata.xml.in:38
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "Korrektes Speichern von Ereigniserinnerungen"
 
 #: data/io.elementary.calendar.appdata.xml.in:39
 msgid "Ellipsize event participant details if necessary"
 msgstr ""
+"Bei Bedarf Auslassungspunkte zu den Details eines Veranstaltungsteilnehmers "
+"hinzufügen"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr ""
+"Korrigiert die unerwünschte Verschiebung beim Bearbeiten von Ereignistiteln"
 
 #: data/io.elementary.calendar.appdata.xml.in:47
 msgid "Fix crash when editing an event with no location"
-msgstr ""
+msgstr "Absturz beim Bearbeiten eines Ereignisses ohne Ortsangabe behoben"
 
 #: data/io.elementary.calendar.appdata.xml.in:52
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
+"Behebt einen potenziellen Absturz beim Laden von Ereignissen ohne Start- "
+"oder Endzeit"
 
 #: data/io.elementary.calendar.appdata.xml.in:57
 msgid "Make agenda pane fill the whole space"
