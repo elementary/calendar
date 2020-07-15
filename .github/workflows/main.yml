@@ -22,8 +22,7 @@ jobs:
       run: |
         meson build
         ninja -C build
-        ninja -C build install
-        ninja -C build test
+        ninja -C build install test
 
   lint:
 
