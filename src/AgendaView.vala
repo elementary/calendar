@@ -5,12 +5,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -70,7 +70,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
             }
 
             unowned AgendaEventRow event_row = (AgendaEventRow) row;
-            return Util.calcomp_is_on_day (event_row.calevent, selected_date);
+            return Calendar.Util.ecalcomponent_is_on_day (event_row.calevent, selected_date);
         });
 
         upcoming_events_list = new Gtk.ListBox ();
@@ -91,9 +91,9 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
             var stripped_time_end = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
             stripped_time_end = stripped_time_end.add_months (2);
 
-            var range = new Util.DateRange (stripped_time, stripped_time_end);
+            var range = new Calendar.Util.DateRange (stripped_time, stripped_time_end);
 
-            return Util.is_event_in_range (comp, range);
+            return Calendar.Util.icalcomponent_is_in_range (comp, range);
         });
 
         var grid = new Gtk.Grid ();
@@ -107,11 +107,14 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         add (grid);
 
         // Listen to changes for events
-        var calmodel = Model.CalendarModel.get_default ();
+        var calmodel = Calendar.Store.get_default ();
         calmodel.events_added.connect (on_events_added);
         calmodel.events_removed.connect (on_events_removed);
         calmodel.events_updated.connect (on_events_updated);
         calmodel.parameters_changed.connect (on_model_parameters_changed);
+        var time_manager = TimeManager.get_default ();
+        time_manager.on_update_today.connect (on_today_changed);
+
         set_selected_date (Maya.Application.get_selected_datetime ());
         show_all ();
 
@@ -177,11 +180,11 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     private int compare_rows (AgendaEventRow row1, AgendaEventRow row2) {
         unowned ICal.Component ical_event1 = row1.calevent.get_icalcomponent ();
         DateTime start_date1, end_date1;
-        Util.get_local_datetimes_from_icalcomponent (ical_event1, out start_date1, out end_date1);
+        Calendar.Util.icalcomponent_get_local_datetimes (ical_event1, out start_date1, out end_date1);
 
         unowned ICal.Component ical_event2 = row2.calevent.get_icalcomponent ();
         DateTime start_date2, end_date2;
-        Util.get_local_datetimes_from_icalcomponent (ical_event2, out start_date2, out end_date2);
+        Calendar.Util.icalcomponent_get_local_datetimes (ical_event2, out start_date2, out end_date2);
 
         var comp = start_date1.compare (start_date2);
         if (comp != 0) {
@@ -203,38 +206,38 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         var stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
         stripped_time = stripped_time.add_days (1);
         var stripped_time_end = stripped_time.add_days (1);
-        var range = new Util.DateRange (stripped_time, stripped_time_end);
-        if (Util.is_event_in_range (comp, range)) {
+        var range = new Calendar.Util.DateRange (stripped_time, stripped_time_end);
+        if (Calendar.Util.icalcomponent_is_in_range (comp, range)) {
             return 1; // Tomorrow
         }
 
         stripped_time_end = stripped_time_end.add_days (7 - stripped_time.get_day_of_week ());
-        range = new Util.DateRange (stripped_time, stripped_time_end);
-        if (Util.is_event_in_range (comp, range)) {
+        range = new Calendar.Util.DateRange (stripped_time, stripped_time_end);
+        if (Calendar.Util.icalcomponent_is_in_range (comp, range)) {
             return 2; // This Week
         }
 
         stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
         stripped_time = stripped_time.add_days (8 - stripped_time.get_day_of_week ());
         stripped_time_end = stripped_time.add_days (7);
-        range = new Util.DateRange (stripped_time, stripped_time_end);
-        if (Util.is_event_in_range (comp, range)) {
+        range = new Calendar.Util.DateRange (stripped_time, stripped_time_end);
+        if (Calendar.Util.icalcomponent_is_in_range (comp, range)) {
             return 3; // Next Week
         }
 
         stripped_time = new DateTime.local (now.get_year (), now.get_month (), now.get_day_of_month (), 0, 0, 0);
         stripped_time_end = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
         stripped_time_end = stripped_time_end.add_months (1);
-        range = new Util.DateRange (stripped_time, stripped_time_end);
-        if (Util.is_event_in_range (comp, range)) {
+        range = new Calendar.Util.DateRange (stripped_time, stripped_time_end);
+        if (Calendar.Util.icalcomponent_is_in_range (comp, range)) {
             return 4; // This Month
         }
 
         stripped_time = new DateTime.local (now.get_year (), now.get_month (), 1, 0, 0, 0);
         stripped_time = stripped_time.add_months (1);
         stripped_time_end = stripped_time.add_months (1);
-        range = new Util.DateRange (stripped_time, stripped_time_end);
-        if (Util.is_event_in_range (comp, range)) {
+        range = new Calendar.Util.DateRange (stripped_time, stripped_time_end);
+        if (Calendar.Util.icalcomponent_is_in_range (comp, range)) {
             return 5; // Next Month
         }
         return -1;
@@ -299,7 +302,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
     private static int search_calcomp (Gtk.Widget widget, ECal.Component comp) {
         unowned AgendaEventRow row = widget as AgendaEventRow;
-        return Util.calcomponent_compare_func (row.calevent, comp);
+        return Calendar.Util.ecalcomponent_compare_func (row.calevent, comp);
     }
 
     /**
@@ -366,6 +369,11 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         foreach (unowned Gtk.Widget row in upcoming_events_children) {
             row.destroy ();
         }
+    }
+
+    private void on_today_changed () {
+        upcoming_events_list.invalidate_filter ();
+        upcoming_events_list.invalidate_headers ();
     }
 
     /**

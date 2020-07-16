@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-26 16:51+0000\n"
+"POT-Creation-Date: 2020-06-30 18:57+0000\n"
 "PO-Revision-Date: 2018-11-03 22:51+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/calendar/"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:304
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
 msgid "On this computer"
 msgstr "Na ovom računaru"
 
@@ -81,31 +81,31 @@ msgstr ""
 "Vaši nadolazeći događaji bit će prikazani ovdje kada odaberete datum s "
 "događajima."
 
-#: src/AgendaView.vala:137
+#: src/AgendaView.vala:140
 msgid "During the day"
 msgstr "Tokom dana"
 
-#: src/AgendaView.vala:145
+#: src/AgendaView.vala:148
 msgid "All day"
 msgstr "Čitav dan"
 
-#: src/AgendaView.vala:262
+#: src/AgendaView.vala:265
 msgid "Tomorrow"
 msgstr "Sutra"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:268
 msgid "This Week"
 msgstr "Tekuća sedmica"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:271
 msgid "Next Week"
 msgstr "Naredna sedmica"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:274
 msgid "This Month"
 msgstr "Tekući mjesec"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:277
 msgid "Next Month"
 msgstr "Sljedeći mjesec"
 
@@ -121,7 +121,7 @@ msgstr "Fokusiraj zadani dan"
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:148
+#: src/Application.vala:161
 msgid "Calendar"
 msgstr "Kalendar"
 
@@ -211,11 +211,11 @@ msgstr ""
 msgid "Participants:"
 msgstr "Učesnici:"
 
-#: src/EventEdition/GuestsPanel.vala:58
+#: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
 msgstr "Nema drugih učesnika"
 
-#: src/EventEdition/GuestsPanel.vala:94
+#: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
 msgstr "Pozovi"
 
@@ -427,207 +427,207 @@ msgstr "Isti dan svakog mjeseca"
 msgid "Exceptions:"
 msgstr "Izuzeci:"
 
-#: src/EventEdition/RepeatPanel.vala:204
+#: src/EventEdition/RepeatPanel.vala:203
 msgid "No Exceptions"
 msgstr "Bez izuzetaka"
 
-#: src/EventEdition/RepeatPanel.vala:217
+#: src/EventEdition/RepeatPanel.vala:219
 msgid "Add Exception"
 msgstr "Dodaj izuzetak"
 
-#: src/EventEdition/RepeatPanel.vala:377
+#: src/EventEdition/RepeatPanel.vala:380
 msgid "Every last Sunday"
 msgstr "Svake posljednje nedjelje u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:380
+#: src/EventEdition/RepeatPanel.vala:383
 msgid "Every last Monday"
 msgstr "Svakog posljednjeg ponedjeljka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:383
+#: src/EventEdition/RepeatPanel.vala:386
 msgid "Every last Tuesday"
 msgstr "Svakog posljednjeg utorka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:386
+#: src/EventEdition/RepeatPanel.vala:389
 msgid "Every last Wednesday"
 msgstr "Svake posljednje srijede u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:389
+#: src/EventEdition/RepeatPanel.vala:392
 msgid "Every last Thursday"
 msgstr "Svakog posljednjeg četvrtka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:392
+#: src/EventEdition/RepeatPanel.vala:395
 msgid "Every last Friday"
 msgstr "Svakog posljednjeg petka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:395
+#: src/EventEdition/RepeatPanel.vala:398
 msgid "Every last Saturday"
 msgstr "Svake posljednje subote u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:402
+#: src/EventEdition/RepeatPanel.vala:405
 msgid "Every first Sunday"
 msgstr "Svake prve nedjelje u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:405
+#: src/EventEdition/RepeatPanel.vala:408
 msgid "Every first Monday"
 msgstr "Svakog prvog ponedjeljka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:408
+#: src/EventEdition/RepeatPanel.vala:411
 msgid "Every first Tuesday"
 msgstr "Svakog prvog utorka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:411
+#: src/EventEdition/RepeatPanel.vala:414
 msgid "Every first Wednesday"
 msgstr "Svake prve srijede u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:414
+#: src/EventEdition/RepeatPanel.vala:417
 msgid "Every first Thursday"
 msgstr "Svakog prvog četvrtka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:417
+#: src/EventEdition/RepeatPanel.vala:420
 msgid "Every first Friday"
 msgstr "Svakog prvog petka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:420
+#: src/EventEdition/RepeatPanel.vala:423
 msgid "Every first Saturday"
 msgstr "Svake prve subote u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:427
+#: src/EventEdition/RepeatPanel.vala:430
 msgid "Every second Sunday"
 msgstr "Svake druge nedjelje u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:430
+#: src/EventEdition/RepeatPanel.vala:433
 msgid "Every second Monday"
 msgstr "Svakog drugog ponedjeljka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:433
+#: src/EventEdition/RepeatPanel.vala:436
 msgid "Every second Tuesday"
 msgstr "Svakog drugog utorka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:436
+#: src/EventEdition/RepeatPanel.vala:439
 msgid "Every second Wednesday"
 msgstr "Svake druge srijede u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:439
+#: src/EventEdition/RepeatPanel.vala:442
 msgid "Every second Thursday"
 msgstr "Svakog drugog četvrtka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:442
+#: src/EventEdition/RepeatPanel.vala:445
 msgid "Every second Friday"
 msgstr "Svakog drugog petka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:445
+#: src/EventEdition/RepeatPanel.vala:448
 msgid "Every second Saturday"
 msgstr "Svake druge subote u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:452
+#: src/EventEdition/RepeatPanel.vala:455
 msgid "Every third Sunday"
 msgstr "Svake treće nedjelje u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:455
+#: src/EventEdition/RepeatPanel.vala:458
 msgid "Every third Monday"
 msgstr "Svakog trećeg ponedjeljka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:458
+#: src/EventEdition/RepeatPanel.vala:461
 msgid "Every third Tuesday"
 msgstr "Svakog trećeg utorka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:461
+#: src/EventEdition/RepeatPanel.vala:464
 msgid "Every third Wednesday"
 msgstr "Svake treće srijede u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:464
+#: src/EventEdition/RepeatPanel.vala:467
 msgid "Every third Thursday"
 msgstr "Svakog trećeg četvrtka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:467
+#: src/EventEdition/RepeatPanel.vala:470
 msgid "Every third Friday"
 msgstr "Svakog trećeg petka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:470
+#: src/EventEdition/RepeatPanel.vala:473
 msgid "Every third Saturday"
 msgstr "Svake treće subote u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:477
+#: src/EventEdition/RepeatPanel.vala:480
 msgid "Every fourth Sunday"
 msgstr "Svake četvrte nedjelje u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:480
+#: src/EventEdition/RepeatPanel.vala:483
 msgid "Every fourth Monday"
 msgstr "Svakog četvrtog ponedjeljka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:483
+#: src/EventEdition/RepeatPanel.vala:486
 msgid "Every fourth Tuesday"
 msgstr "Svakog četvrtog utorka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:486
+#: src/EventEdition/RepeatPanel.vala:489
 msgid "Every fourth Wednesday"
 msgstr "Svake četvrte srijede u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:489
+#: src/EventEdition/RepeatPanel.vala:492
 msgid "Every fourth Thursday"
 msgstr "Svakog četvrtog četvrtka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:492
+#: src/EventEdition/RepeatPanel.vala:495
 msgid "Every fourth Friday"
 msgstr "Svakog četvrtog petka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:495
+#: src/EventEdition/RepeatPanel.vala:498
 msgid "Every fourth Saturday"
 msgstr "Svake četvrte subote u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:502
+#: src/EventEdition/RepeatPanel.vala:505
 msgid "Every fifth Sunday"
 msgstr "Svake pete nedjelje u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:505
+#: src/EventEdition/RepeatPanel.vala:508
 msgid "Every fifth Monday"
 msgstr "Svakog petog ponedjeljka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:508
+#: src/EventEdition/RepeatPanel.vala:511
 msgid "Every fifth Tuesday"
 msgstr "Svakog petog utorka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:511
+#: src/EventEdition/RepeatPanel.vala:514
 msgid "Every fifth Wednesday"
 msgstr "Svake pete srijede u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:517
 msgid "Every fifth Thursday"
 msgstr "Svakog petog četvrtka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:520
 msgid "Every fifth Friday"
 msgstr "Svakog petog petka u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:520
+#: src/EventEdition/RepeatPanel.vala:523
 msgid "Every fifth Saturday"
 msgstr "Svake pete subote u mjesecu"
 
-#: src/EventEdition/RepeatPanel.vala:530
+#: src/EventEdition/RepeatPanel.vala:533
 msgid "Mon"
 msgstr "Pon"
 
-#: src/EventEdition/RepeatPanel.vala:531
+#: src/EventEdition/RepeatPanel.vala:534
 msgid "Tue"
 msgstr "Uto"
 
-#: src/EventEdition/RepeatPanel.vala:532
+#: src/EventEdition/RepeatPanel.vala:535
 msgid "Wed"
 msgstr "Sri"
 
-#: src/EventEdition/RepeatPanel.vala:533
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Thu"
 msgstr "Čet"
 
-#: src/EventEdition/RepeatPanel.vala:534
+#: src/EventEdition/RepeatPanel.vala:537
 msgid "Fri"
 msgstr "Pet"
 
-#: src/EventEdition/RepeatPanel.vala:535
+#: src/EventEdition/RepeatPanel.vala:538
 msgid "Sat"
 msgstr "Sub"
 
-#: src/EventEdition/RepeatPanel.vala:536
+#: src/EventEdition/RepeatPanel.vala:539
 msgid "Sun"
 msgstr "Ned"
 
@@ -703,7 +703,7 @@ msgstr "Nazad"
 msgid "\"%s\" removed"
 msgstr "Kalendar \"%s\" uklonjen."
 
-#: src/SourceDialog/SourceSelector.vala:51
+#: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
 msgstr "Dodaj novi kalendar…"
 
