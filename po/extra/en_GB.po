@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-30 18:57+0000\n"
-"PO-Revision-Date: 2020-04-06 07:06+0000\n"
+"PO-Revision-Date: 2020-07-16 10:12+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "calendar/extra/en_GB/>\n"
@@ -46,7 +46,7 @@ msgstr "Minor Updates:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix issues with time zones not being recognized"
-msgstr ""
+msgstr "Fix issues with time zones not being recognised"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 #: data/io.elementary.calendar.appdata.xml.in:30
@@ -57,10 +57,8 @@ msgid "Updated translations"
 msgstr "Updated translations"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr "Fix issues with recurring events"
+msgstr "Fix several issues with adding and removing monthly recurring events"
 
 #: data/io.elementary.calendar.appdata.xml.in:38
 msgid "Correctly save event reminders"
