@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-30 18:57+0000\n"
-"PO-Revision-Date: 2020-07-01 07:43+0000\n"
+"PO-Revision-Date: 2020-07-25 16:12+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/extra/"
 "es/>\n"
@@ -147,7 +147,7 @@ msgstr "Corregir la inicialización del panel de ubicación"
 
 #: data/io.elementary.calendar.appdata.xml.in:80
 msgid "New translations"
-msgstr "Nuevas traducciones"
+msgstr "Traducciones nuevas"
 
 #: data/io.elementary.calendar.appdata.xml.in:85
 msgid "Update wingpanel-indicator-datetime settings path."
@@ -181,7 +181,7 @@ msgstr "office-calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr "Maya;Planificador;Fechas;Dias;Eventos;Calendario;ics;caldav;evolution;"
+msgstr "Maya;Planificador;Fechas;Días;Eventos;Calendario;ics;caldav;evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
