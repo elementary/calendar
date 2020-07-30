@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-30 18:57+0000\n"
-"PO-Revision-Date: 2020-04-09 06:10+0000\n"
+"PO-Revision-Date: 2020-07-30 23:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/extra/he/"
 ">\n"
@@ -48,7 +48,7 @@ msgstr "עדכונים משניים:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix issues with time zones not being recognized"
-msgstr ""
+msgstr "תיקון תקלות עם איתור אזורי זמן"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 #: data/io.elementary.calendar.appdata.xml.in:30
@@ -59,10 +59,8 @@ msgid "Updated translations"
 msgstr "עדכוני תרגומים"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr "תיקון תקלות באירועים מחזוריים"
+msgstr "תיקון מגוון תקלות עם הוספה והסרה של אירועים חודשיים מחזוריים"
 
 #: data/io.elementary.calendar.appdata.xml.in:38
 msgid "Correctly save event reminders"
