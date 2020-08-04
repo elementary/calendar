@@ -17,8 +17,7 @@
       <description>
       <p>Improvements:</p>
       <ul>
-        <li>Allow addition and removal of recurrence to existing event</li>
-        <li>Allow editing of recurring events</li>
+        <li>Allow modification of recurring events</li>
       </ul>
       <p>Minor Updates:</p>
       <ul>
