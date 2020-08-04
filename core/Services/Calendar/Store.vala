@@ -424,7 +424,7 @@ public class Calendar.Store : Object {
 #endif
         debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
-        var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.ecalcomponent_equal_func);
+        var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
 
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
@@ -451,9 +451,9 @@ public class Calendar.Store : Object {
     private void on_objects_modified (E.Source source, ECal.Client client, SList<weak ICal.Component> objects) {
 #endif
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
-        var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.ecalcomponent_equal_func);
-        var removed_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.ecalcomponent_equal_func);
-        var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Util.ecalcomponent_equal_func);
+        var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
+        var removed_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
+        var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
 
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
