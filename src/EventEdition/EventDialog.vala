@@ -28,7 +28,8 @@ public enum EventType {
 public class EventDialog : Gtk.Dialog {
         public E.Source? source { get; set; }
         public E.Source? original_source { get; private set; }
-        public ECal.Component ecal { get; set; }
+        public ECal.Component ecal { get; set; } // Set by InfoPanel if null
+        public ECal.Component original_ecal { get; private set; }
         public DateTime date_time { get; set; }
 
         /**
@@ -48,11 +49,14 @@ public class EventDialog : Gtk.Dialog {
         public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null) {
             this.deletable = false;
 
-            if (ecal != null)
+            if (ecal != null) {
                 original_source = ecal.get_data<E.Source> ("source");
-            this.date_time = date_time;
+            }
 
             this.ecal = ecal;
+            this.date_time = date_time;
+
+            original_ecal = Util.copy_ecal_component (ecal);
 
             if (date_time != null) {
                 title = _("Add Event");
@@ -188,17 +192,17 @@ public class EventDialog : Gtk.Dialog {
             repeat_panel.save ();
 
             var calmodel = Calendar.Store.get_default ();
-            if (event_type == EventType.ADD)
+            if (event_type == EventType.ADD) {
                 calmodel.add_event (source, ecal);
-            else {
+            } else {
                 assert (original_source != null);
 
                 if (original_source.dup_uid () == source.dup_uid ()) {
-                    // Same uids, just modify
+                    // Same source, just modify
                     calmodel.update_event (source, ecal, mod_type);
                 } else {
-                    // Different calendar, remove and readd
-                    calmodel.remove_event (original_source, ecal, mod_type);
+                    // Different calendar remove and re-add
+                    calmodel.remove_event (original_source, original_ecal, mod_type);
                     calmodel.add_event (source, ecal);
                 }
             }

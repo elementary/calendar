@@ -159,7 +159,6 @@ public class Calendar.Store : Object {
     public void update_event (E.Source source, ECal.Component event, ECal.ObjModType mod_type) {
         unowned ICal.Component comp = event.get_icalcomponent ();
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
-
         ECal.Client? client;
         lock (source_client) {
             client = source_client.get (source.get_uid ());
@@ -447,9 +446,9 @@ public class Calendar.Store : Object {
         });
     }
 
-    private void debug_event (E.Source source, ECal.Component event) {
+    private void debug_event (E.Source source, ECal.Component event, string message = "") {
         unowned ICal.Component comp = event.get_icalcomponent ();
-        debug (@"Event ['$(comp.get_summary())', $(source.dup_display_name()), $(comp.get_uid()))]");
+        debug (@"$(message) Event ['$(comp.get_summary())', $(source.dup_display_name()), UID $(comp.get_uid()), START $(comp.get_dtstart().as_ical_string ()), RID %s )]", event.get_id ().get_rid ());
     }
 
     //--- Signal Handlers ---//
@@ -471,6 +470,7 @@ public class Calendar.Store : Object {
         debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
         var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
+
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
 #if E_CAL_2_0
@@ -479,7 +479,8 @@ public class Calendar.Store : Object {
 #else
             client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), (event, start, end) => {
 #endif
-                debug_event (source, event);
+                debug_event (source, event, "ADDED");
+                event.set_data<E.Source> ("source", source);
                 events.set (uid, event);
                 added_events.add (event);
                 return true;
@@ -496,15 +497,44 @@ public class Calendar.Store : Object {
 #endif
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
         var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
+        var removed_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
+        var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
+
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
-            var events = source_events.get (source).get (uid);
-            updated_events.add_all (events);
-            foreach (var event in events) {
-                debug_event (source, event);
+            var events_for_source = source_events.get (source);
+            var events_for_uid = events_for_source.get (uid);
+            if (events_for_uid.size > 1 ||
+                events_for_uid.to_array ()[0].get_icalcomponent ().get_recurrenceid ().as_ical_string () != null ||
+                comp.get_recurrenceid ().as_ical_string () != null) {
+
+                /* Either original or new event is recurring: rebuild our set of recurrences with new data */
+                events_for_source.remove_all (uid);
+                foreach (ECal.Component event in events_for_uid) {
+                    debug_event (source, event, "MODIFIED - ORIGINAL");
+                    removed_events.add (event);
+                }
+
+#if E_CAL_2_0
+                client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), null, (comp, start, end) => {
+                    var event = new ECal.Component.from_icalcomponent (comp);
+#else
+                client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), (event, start, end) => {
+#endif
+                    event.set_data<E.Source> ("source", source);
+                    debug_event (source, event, "MODIFIED - GENERATED");
+                    events_for_source.set (uid, event);
+                    added_events.add (event);
+                    return true;
+                });
+            } else {
+                debug_event (source, events_for_uid.to_array ()[0], "MODIFIED - UPDATED");
+                updated_events.add (events_for_uid.to_array ()[0]);
             }
         });
 
+        events_removed (source, removed_events.read_only_view);
+        events_added (source, added_events.read_only_view);
         events_updated (source, updated_events.read_only_view);
     }
 
@@ -521,6 +551,7 @@ public class Calendar.Store : Object {
                 return;
 
             var comps = events.get (cid.get_uid ());
+            events.remove_all (cid.get_uid ());
             foreach (ECal.Component event in comps) {
                 removed_events.add (event);
                 debug_event (source, event);
