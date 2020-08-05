@@ -60,7 +60,7 @@ public class Calendar.Store : Object {
     private E.CredentialsPrompter credentials_prompter;
 
     private static Calendar.Store? store = null;
-    private static GLib.Settings state_settings;
+    private static GLib.Settings? state_settings = null;
 
     public static Calendar.Store get_default () {
         if (store == null)
@@ -69,15 +69,13 @@ public class Calendar.Store : Object {
     }
 
     static construct {
-        state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
+        if (SettingsSchemaSource.get_default ().lookup ("io.elementary.calendar.savedstate", true) != null) {
+            state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
+        }
     }
 
-    private Store () {
-        int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
-        if (week_start >= 1 && week_start <= 7) {
-            week_starts_on = (GLib.DateWeekday) (week_start - 1);
-        }
-
+    protected Store () {
+        this.week_starts_on = get_week_start ();
         this.month_start = Calendar.Util.datetime_get_start_of_month (get_page ());
         compute_ranges ();
 
@@ -293,8 +291,53 @@ public class Calendar.Store : Object {
 
     //--- Helper Methods ---//
 
+    /** Set the week_starts_on property: the first day of the week.
+     *
+     * Locale handling is based on information from
+     * https://sourceware.org/glibc/wiki/Locales
+     */
+    private GLib.DateWeekday get_week_start () {
+        // Set the "baseline" for start of week: Sunday or Monday?
+        // HACK Dealing with NLTime is hacky and potentially prone to breaking.
+        // This to_string call produces a string pointer whose address is the
+        // number we want, so we convert the pointer address to a uint to get
+        // the data. Since the pointer address is actually data, using it as a
+        // pointer will segfault.
+        uint week_day1 = (uint) Posix.NLTime.WEEK_1STDAY.to_string ();
+        var week_1stday = 0; // Default to 0 if unrecognized data
+        if (week_day1 == 19971130) { // Sunday
+            week_1stday = 0;
+        } else if (week_day1 == 19971201) { // Monday
+            week_1stday = 1;
+        } else {
+            warning ("Unknown value of _NL_TIME_WEEK_1STDAY: %u", week_day1);
+        }
+        /* The offset between GLib and local POSIX numbering.
+         * If week_1stday is Monday, data is correct for GLib: Monday=1 through Sunday=7,
+         * so offset is 0.
+         * If week_1stday is Sunday, Sunday=1 through Saturday=7. All days must be
+         * subtracted by 1, then Sunday has to be handled separately to wrap to 7. */
+        var glib_offset = week_1stday - 1;
+
+        // Get the start of week
+        // HACK This line produces a string of 3 bytes. It takes the raw value
+        // of the first one and uses that as the value of week_start.
+        int week_start_posix = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
+
+        var week_start = week_start_posix + glib_offset;
+        if (week_start == 0) { // Sunday special case
+            week_start = 7;
+        }
+
+        return (GLib.DateWeekday) week_start;
+    }
+
     private DateTime get_page () {
-        var month_page = state_settings.get_string ("month-page");
+        string? month_page = null;
+        if (state_settings != null) {
+            month_page = state_settings.get_string ("month-page");
+        }
+
         if (month_page == null || month_page == "") {
             return new DateTime.now_local ();
         }
@@ -306,7 +349,9 @@ public class Calendar.Store : Object {
     }
 
     private void compute_ranges () {
-        state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
+        if (state_settings != null) {
+            state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
+        }
 
         var month_end = month_start.add_full (0, 1, -1);
         month_range = new Calendar.Util.DateRange (month_start, month_end);
