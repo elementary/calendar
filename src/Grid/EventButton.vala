@@ -111,9 +111,13 @@ public class Maya.View.EventButton : Gtk.Revealer {
         });
     }
 
-    public void update (ECal.Component event) {
-       this.comp = event;
-       label.label = event.get_summary ().get_value ();
+    public string get_uid () {
+        return comp.get_id ().get_uid ();
+    }
+
+    public void update (ECal.Component modified) {
+        this.comp = modified;
+        label.label = comp.get_summary ().get_value ();
     }
 
     private void reload_css (string background_color) {
@@ -126,5 +130,13 @@ public class Maya.View.EventButton : Gtk.Revealer {
         } catch (GLib.Error e) {
             critical (e.message);
         }
+    }
+
+    public void destroy_button () {
+        set_reveal_child (false);
+        Timeout.add (transition_duration, () => {
+            destroy ();
+            return false;
+        });
     }
 }

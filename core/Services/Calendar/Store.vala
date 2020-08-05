@@ -69,19 +69,14 @@ public class Calendar.Store : Object {
     private GLib.Queue<E.Source> sources_trash;
     private E.CredentialsPrompter credentials_prompter;
 
-    private static GLib.Settings state_settings;
-
-    private Store (ECal.ClientSourceType source_type) {
-        Object (source_type: source_type);
-    }
-
+    private static GLib.Settings? state_settings = null;
     private static Calendar.Store? event_store = null;
     private static Calendar.Store? task_store = null;
 
     public static Calendar.Store get_event_store () {
         if (event_store == null)
             event_store = new Calendar.Store (ECal.ClientSourceType.EVENTS);
-        if (state_settings == null)
+        if (state_settings == null && SettingsSchemaSource.get_default ().lookup ("io.elementary.calendar.savedstate", true) != null)
             state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
         return event_store;
     }
@@ -92,24 +87,24 @@ public class Calendar.Store : Object {
         return task_store;
     }
 
-    construct {
-        open.begin ();
+    protected Store (ECal.ClientSourceType source_type) {
+        Object (source_type: source_type);
 
+        this.week_starts_on = get_week_start ();
+        this.month_start = Calendar.Util.datetime_get_start_of_month (get_page ());
+        compute_ranges ();
+
+        notify["month-start"].connect (on_parameter_changed);
+        open.begin ();
+    }
+
+    construct {
         source_client = new HashTable<string, ECal.Client> (str_hash, str_equal);
         source_views = new HashTable<string, Gee.ArrayList<ECal.ClientView>> (str_hash, str_equal);
         source_components = new HashTable<string, Gee.TreeMultiMap<string, ECal.Component>> (str_hash, str_equal);
         components_add_transaction = new HashTable<ECal.ClientView, Gee.Collection<ECal.Component>> (direct_hash, direct_equal);
         sources_add_transaction = new Gee.ArrayList<E.Source> (Calendar.Util.esource_equal_func);
         sources_connect_transaction = new Gee.ArrayList<E.Source> (Calendar.Util.esource_equal_func);
-
-        int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
-        if (week_start >= 1 && week_start <= 7) {
-            week_starts_on = (GLib.DateWeekday) (week_start - 1);
-        }
-
-        month_start = Calendar.Util.datetime_get_start_of_month (get_page ());
-        compute_ranges ();
-        notify["month-start"].connect (on_parameter_changed);
     }
 
     private async void open () {
@@ -642,8 +637,53 @@ public class Calendar.Store : Object {
         sources_load ();
     }
 
-    private GLib.DateTime get_page () {
-        var month_page = state_settings.get_string ("month-page");
+    /** Set the week_starts_on property: the first day of the week.
+     *
+     * Locale handling is based on information from
+     * https://sourceware.org/glibc/wiki/Locales
+     */
+    private GLib.DateWeekday get_week_start () {
+        // Set the "baseline" for start of week: Sunday or Monday?
+        // HACK Dealing with NLTime is hacky and potentially prone to breaking.
+        // This to_string call produces a string pointer whose address is the
+        // number we want, so we convert the pointer address to a uint to get
+        // the data. Since the pointer address is actually data, using it as a
+        // pointer will segfault.
+        uint week_day1 = (uint) Posix.NLTime.WEEK_1STDAY.to_string ();
+        var week_1stday = 0; // Default to 0 if unrecognized data
+        if (week_day1 == 19971130) { // Sunday
+            week_1stday = 0;
+        } else if (week_day1 == 19971201) { // Monday
+            week_1stday = 1;
+        } else {
+            warning ("Unknown value of _NL_TIME_WEEK_1STDAY: %u", week_day1);
+        }
+        /* The offset between GLib and local POSIX numbering.
+         * If week_1stday is Monday, data is correct for GLib: Monday=1 through Sunday=7,
+         * so offset is 0.
+         * If week_1stday is Sunday, Sunday=1 through Saturday=7. All days must be
+         * subtracted by 1, then Sunday has to be handled separately to wrap to 7. */
+        var glib_offset = week_1stday - 1;
+
+        // Get the start of week
+        // HACK This line produces a string of 3 bytes. It takes the raw value
+        // of the first one and uses that as the value of week_start.
+        int week_start_posix = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
+
+        var week_start = week_start_posix + glib_offset;
+        if (week_start == 0) { // Sunday special case
+            week_start = 7;
+        }
+
+        return (GLib.DateWeekday) week_start;
+    }
+
+    private DateTime get_page () {
+        string? month_page = null;
+        if (state_settings != null) {
+            month_page = state_settings.get_string ("month-page");
+        }
+
         if (month_page == null || month_page == "") {
             return new GLib.DateTime.now_local ();
         }
@@ -655,7 +695,9 @@ public class Calendar.Store : Object {
     }
 
     private void compute_ranges () {
-        state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
+        if (state_settings != null) {
+            state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
+        }
 
         var month_end = month_start.add_full (0, 1, -1);
         month_range = new Calendar.Util.DateRange (month_start, month_end);
@@ -835,6 +877,7 @@ public class Calendar.Store : Object {
     private async void source_component_modify (E.Source source, ECal.Component component, ECal.ObjModType mod_type) throws Error {
         unowned ICal.Component ical_component = component.get_icalcomponent ();
         debug (@"Updating component '$(ical_component.get_uid())' [mod_type=$(mod_type)]");
+
 
         ECal.Client? client;
         lock (source_client) {
@@ -1086,7 +1129,6 @@ public class Calendar.Store : Object {
             if (cid == null) {
                 return;
             }
-
             var comps = source_comps.get (cid.get_uid ());
             foreach (ECal.Component comp in comps) {
                 removed_components.add (comp);

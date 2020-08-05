@@ -28,7 +28,8 @@ public enum EventType {
 public class EventDialog : Gtk.Dialog {
         public E.Source? source { get; set; }
         public E.Source? original_source { get; private set; }
-        public ECal.Component ecal { get; set; }
+        public ECal.Component ecal { get; set; } // Set by InfoPanel if null
+        public ECal.Component original_ecal { get; private set; }
         public DateTime date_time { get; set; }
 
         /**
@@ -48,11 +49,14 @@ public class EventDialog : Gtk.Dialog {
         public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null) {
             this.deletable = false;
 
-            if (ecal != null)
+            if (ecal != null) {
                 original_source = ecal.get_data<E.Source> ("source");
-            this.date_time = date_time;
+            }
 
             this.ecal = ecal;
+            this.date_time = date_time;
+
+            original_ecal = Util.copy_ecal_component (ecal);
 
             if (date_time != null) {
                 title = _("Add Event");

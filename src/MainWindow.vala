@@ -79,7 +79,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         var hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         hpaned.pack1 (calview, true, false);
-        hpaned.pack2 (sidebar, true, false);
+        hpaned.pack2 (sidebar, false, false);
 
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
