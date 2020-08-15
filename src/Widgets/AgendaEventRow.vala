@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 elementary, Inc. (https://elementary.io)
+ * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -288,7 +288,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         }
 
         DateTime start_date, end_date;
-        Calendar.Util.icalcomponent_get_local_datetimes (ical_event, out start_date, out end_date);
+        Calendar.Util.icalcomponent_get_local_datetimes_for_display (ical_event, out start_date, out end_date);
 
         is_allday = Calendar.Util.datetime_is_all_day (start_date, end_date);
         is_multiday = Calendar.Util.icalcomponent_is_multiday (ical_event);
