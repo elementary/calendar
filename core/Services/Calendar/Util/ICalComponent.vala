@@ -59,11 +59,15 @@ namespace Calendar.Util {
      * given component.
      *
      * It differs in its handling of all-day events. According to
-     * iCalendar, their end time is exclusive, representing the day after the
+     * RFC 5545, their end time is exclusive, representing the day after the
      * last day the event occurs. To handle this, we must "fake" an earlier
      * date to replicate the expected experience of an inclusive end date.
      * It substracts a single day from the end time of all-day events. It leaves
      * other events unchanged.
+     *
+     * This should be used for user-facing display only. It breaks from spec to
+     * make the display of all-day events more intuitive, and doesn't reflect
+     * the actual times the events occur.
      */
     public void icalcomponent_get_local_datetimes_for_display (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         icalcomponent_get_local_datetimes (component, out start_date, out end_date);
