@@ -48,6 +48,7 @@ public class EventDialog : Gtk.Dialog {
 
         public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null) {
             this.deletable = false;
+            this.modal = true;
 
             if (ecal != null) {
                 original_source = ecal.get_data<E.Source> ("source");
