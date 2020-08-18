@@ -120,7 +120,7 @@ public class EventDialog : Gtk.Dialog {
             stack.add_titled (guests_panel, "guestspanel", _("Guests"));
             stack.add_titled (reminder_panel, "reminderpanel", _("Reminders"));
             ///Translators: The name of the repeat panel tab
-            stack.add_titled (repeat_panel, "repeatpanel", _C("Section Header", "Repeat"));
+            stack.add_titled (repeat_panel, "repeatpanel", C_("Section Header", "Repeat")); //vala-lint=space-before-paren
             stack.child_set_property (info_panel, "icon-name", "office-calendar-symbolic");
             stack.child_set_property (location_panel, "icon-name", "mark-location-symbolic");
             stack.child_set_property (guests_panel, "icon-name", "system-users-symbolic");
