@@ -16,7 +16,7 @@ util_tests = executable(
   'util-tests.vala',
   dependencies: tests_deps
 )
-test('Utils Tests', util_tests, suite: 'core')
+test('Utils Tests', util_tests, suite: 'core', is_parallel: false)
 
 model_tests = executable(
   tests_name + '-model',
