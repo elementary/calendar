@@ -46,9 +46,10 @@ public class EventDialog : Gtk.Dialog {
         private EventEdition.ReminderPanel reminder_panel;
         private EventEdition.RepeatPanel repeat_panel;
 
-        public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null) {
+        public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null, Gtk.Window parent) {
             this.deletable = false;
             this.modal = true;
+            this.transient_for = parent;
 
             if (ecal != null) {
                 original_source = ecal.get_data<E.Source> ("source");
