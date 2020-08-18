@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-30 18:57+0000\n"
+"POT-Creation-Date: 2020-08-18 20:11+0000\n"
 "PO-Revision-Date: 2018-05-27 17:24+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/calendar/"
@@ -108,20 +108,20 @@ msgstr "Lună"
 msgid "Next Month"
 msgstr "Lună"
 
-#: src/Application.vala:52
+#: src/Application.vala:54
 #, fuzzy
 msgid "Create an event"
 msgstr "Creează un eveniment nou"
 
-#: src/Application.vala:53
+#: src/Application.vala:55
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:53
+#: src/Application.vala:55
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:161
+#: src/Application.vala:163
 msgid "Calendar"
 msgstr "Calendaru"
 
@@ -145,50 +145,52 @@ msgstr[1] "Importați evenimente din% d fișiere în calendarul următor:"
 msgid "Import"
 msgstr "Importar"
 
-#: src/EventEdition/EventDialog.vala:58
+#: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
 msgstr "Adăugați eveniment"
 
-#: src/EventEdition/EventDialog.vala:61
+#: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
 msgstr "Editează eveniment"
 
-#: src/EventEdition/EventDialog.vala:114
+#: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
 msgstr "Informații generale"
 
-#: src/EventEdition/EventDialog.vala:115
+#: src/EventEdition/EventDialog.vala:121
 msgid "Location"
 msgstr "Localizare"
 
-#: src/EventEdition/EventDialog.vala:116
+#: src/EventEdition/EventDialog.vala:122
 msgid "Guests"
 msgstr "Vizitatori"
 
-#: src/EventEdition/EventDialog.vala:117
+#: src/EventEdition/EventDialog.vala:123
 msgid "Reminders"
 msgstr "Mementouri"
 
-#: src/EventEdition/EventDialog.vala:118 src/EventEdition/RepeatPanel.vala:137
-#: src/EventEdition/RepeatPanel.vala:170
+#. /Translators: The name of the repeat panel tab
+#: src/EventEdition/EventDialog.vala:125
+#, fuzzy
+#| msgid "Repeat"
+#| msgid_plural "Repeats"
+msgctxt "Section Header"
 msgid "Repeat"
-msgid_plural "Repeats"
-msgstr[0] "Repetă"
-msgstr[1] "Repetare"
+msgstr "Repetă"
 
-#: src/EventEdition/EventDialog.vala:141
+#: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
 msgstr "Șterge evenimentul"
 
-#: src/EventEdition/EventDialog.vala:154
+#: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
 msgstr "Creează eveniment"
 
-#: src/EventEdition/EventDialog.vala:157
+#: src/EventEdition/EventDialog.vala:164
 msgid "Save Changes"
 msgstr "Salvează modificările"
 
-#: src/EventEdition/EventDialog.vala:160 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 msgid "Cancel"
 msgstr "Anulare"
@@ -401,227 +403,236 @@ msgstr[1] "Ani"
 msgid "Ends:"
 msgstr "Se termină:"
 
-#: src/EventEdition/RepeatPanel.vala:141
+#. /Translators: Give a word to describe an event ending after a certain number of repeats.
+#. /This will be displayed in the format like: "Ends After 2 Repeats",
+#. /where this string always represents the last word in the phrase.
+#: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
+msgid "Repeat"
+msgid_plural "Repeats"
+msgstr[0] "Repetă"
+msgstr[1] "Repetare"
+
+#: src/EventEdition/RepeatPanel.vala:144
 msgid "Never"
 msgstr "Nici odată"
 
-#: src/EventEdition/RepeatPanel.vala:142
+#: src/EventEdition/RepeatPanel.vala:145
 msgid "Until"
 msgstr "Până când"
 
-#: src/EventEdition/RepeatPanel.vala:143
+#: src/EventEdition/RepeatPanel.vala:146
 msgid "After"
 msgstr "După"
 
-#: src/EventEdition/RepeatPanel.vala:190
+#: src/EventEdition/RepeatPanel.vala:193
 msgid "The same day every month"
 msgstr "În aceeași zi în fiecare lună"
 
-#: src/EventEdition/RepeatPanel.vala:201
+#: src/EventEdition/RepeatPanel.vala:204
 msgid "Exceptions:"
 msgstr "Excepţii:"
 
-#: src/EventEdition/RepeatPanel.vala:203
+#: src/EventEdition/RepeatPanel.vala:206
 msgid "No Exceptions"
 msgstr "Fără excepții"
 
-#: src/EventEdition/RepeatPanel.vala:219
+#: src/EventEdition/RepeatPanel.vala:222
 msgid "Add Exception"
 msgstr "Adăugați o excepție"
 
-#: src/EventEdition/RepeatPanel.vala:380
+#: src/EventEdition/RepeatPanel.vala:383
 msgid "Every last Sunday"
 msgstr "În ultima duminică"
 
-#: src/EventEdition/RepeatPanel.vala:383
+#: src/EventEdition/RepeatPanel.vala:386
 msgid "Every last Monday"
 msgstr "În ultima luni"
 
-#: src/EventEdition/RepeatPanel.vala:386
+#: src/EventEdition/RepeatPanel.vala:389
 msgid "Every last Tuesday"
 msgstr "În ultima zi de marți"
 
-#: src/EventEdition/RepeatPanel.vala:389
+#: src/EventEdition/RepeatPanel.vala:392
 msgid "Every last Wednesday"
 msgstr "În ultima zi de miercuri"
 
-#: src/EventEdition/RepeatPanel.vala:392
+#: src/EventEdition/RepeatPanel.vala:395
 msgid "Every last Thursday"
 msgstr "În ultima zi de joi"
 
-#: src/EventEdition/RepeatPanel.vala:395
+#: src/EventEdition/RepeatPanel.vala:398
 msgid "Every last Friday"
 msgstr "În ultima zi de vineri"
 
-#: src/EventEdition/RepeatPanel.vala:398
+#: src/EventEdition/RepeatPanel.vala:401
 msgid "Every last Saturday"
 msgstr "În ultima zi de sâmbătă"
 
-#: src/EventEdition/RepeatPanel.vala:405
+#: src/EventEdition/RepeatPanel.vala:408
 msgid "Every first Sunday"
 msgstr "În prima duminică"
 
-#: src/EventEdition/RepeatPanel.vala:408
+#: src/EventEdition/RepeatPanel.vala:411
 msgid "Every first Monday"
 msgstr "În prima zi de luni"
 
-#: src/EventEdition/RepeatPanel.vala:411
+#: src/EventEdition/RepeatPanel.vala:414
 msgid "Every first Tuesday"
 msgstr "În prima zi de marți"
 
-#: src/EventEdition/RepeatPanel.vala:414
+#: src/EventEdition/RepeatPanel.vala:417
 msgid "Every first Wednesday"
 msgstr "În prima zi de miercuri"
 
-#: src/EventEdition/RepeatPanel.vala:417
+#: src/EventEdition/RepeatPanel.vala:420
 msgid "Every first Thursday"
 msgstr "În prima zi de joi"
 
-#: src/EventEdition/RepeatPanel.vala:420
+#: src/EventEdition/RepeatPanel.vala:423
 msgid "Every first Friday"
 msgstr "În prima zi de vineri"
 
-#: src/EventEdition/RepeatPanel.vala:423
+#: src/EventEdition/RepeatPanel.vala:426
 msgid "Every first Saturday"
 msgstr "În prima zi de sâmbătă"
 
-#: src/EventEdition/RepeatPanel.vala:430
+#: src/EventEdition/RepeatPanel.vala:433
 msgid "Every second Sunday"
 msgstr "În fiecare a doua duminică"
 
-#: src/EventEdition/RepeatPanel.vala:433
+#: src/EventEdition/RepeatPanel.vala:436
 msgid "Every second Monday"
 msgstr "În fiecare a doua luni"
 
-#: src/EventEdition/RepeatPanel.vala:436
+#: src/EventEdition/RepeatPanel.vala:439
 msgid "Every second Tuesday"
 msgstr "În fiecare a doua marți"
 
-#: src/EventEdition/RepeatPanel.vala:439
+#: src/EventEdition/RepeatPanel.vala:442
 msgid "Every second Wednesday"
 msgstr "În fiecare a doua miercuri"
 
-#: src/EventEdition/RepeatPanel.vala:442
+#: src/EventEdition/RepeatPanel.vala:445
 msgid "Every second Thursday"
 msgstr "În fiecare a doua joi"
 
-#: src/EventEdition/RepeatPanel.vala:445
+#: src/EventEdition/RepeatPanel.vala:448
 msgid "Every second Friday"
 msgstr "În fiecare a doua vineri"
 
-#: src/EventEdition/RepeatPanel.vala:448
+#: src/EventEdition/RepeatPanel.vala:451
 msgid "Every second Saturday"
 msgstr "În fiecare a doua sâmbătă"
 
-#: src/EventEdition/RepeatPanel.vala:455
+#: src/EventEdition/RepeatPanel.vala:458
 msgid "Every third Sunday"
 msgstr "În fiecare a treia duminică"
 
-#: src/EventEdition/RepeatPanel.vala:458
+#: src/EventEdition/RepeatPanel.vala:461
 msgid "Every third Monday"
 msgstr "În fiecare a treia luni"
 
-#: src/EventEdition/RepeatPanel.vala:461
+#: src/EventEdition/RepeatPanel.vala:464
 msgid "Every third Tuesday"
 msgstr "În fiecare a treia marți"
 
-#: src/EventEdition/RepeatPanel.vala:464
+#: src/EventEdition/RepeatPanel.vala:467
 msgid "Every third Wednesday"
 msgstr "În fiecare a treia miercuri"
 
-#: src/EventEdition/RepeatPanel.vala:467
+#: src/EventEdition/RepeatPanel.vala:470
 msgid "Every third Thursday"
 msgstr "În fiecare a treia joi"
 
-#: src/EventEdition/RepeatPanel.vala:470
+#: src/EventEdition/RepeatPanel.vala:473
 msgid "Every third Friday"
 msgstr "În fiecare a treia vineri"
 
-#: src/EventEdition/RepeatPanel.vala:473
+#: src/EventEdition/RepeatPanel.vala:476
 msgid "Every third Saturday"
 msgstr "În fiecare a treia sâmbătă"
 
-#: src/EventEdition/RepeatPanel.vala:480
+#: src/EventEdition/RepeatPanel.vala:483
 msgid "Every fourth Sunday"
 msgstr "În fiecare a patra duminică"
 
-#: src/EventEdition/RepeatPanel.vala:483
+#: src/EventEdition/RepeatPanel.vala:486
 msgid "Every fourth Monday"
 msgstr "În fiecare a patra luni"
 
-#: src/EventEdition/RepeatPanel.vala:486
+#: src/EventEdition/RepeatPanel.vala:489
 msgid "Every fourth Tuesday"
 msgstr "În fiecare a patra marți"
 
-#: src/EventEdition/RepeatPanel.vala:489
+#: src/EventEdition/RepeatPanel.vala:492
 msgid "Every fourth Wednesday"
 msgstr "În fiecare a patra miercuri"
 
-#: src/EventEdition/RepeatPanel.vala:492
+#: src/EventEdition/RepeatPanel.vala:495
 msgid "Every fourth Thursday"
 msgstr "În fiecare a patra joi"
 
-#: src/EventEdition/RepeatPanel.vala:495
+#: src/EventEdition/RepeatPanel.vala:498
 msgid "Every fourth Friday"
 msgstr "În fiecare a patra vineri"
 
-#: src/EventEdition/RepeatPanel.vala:498
+#: src/EventEdition/RepeatPanel.vala:501
 msgid "Every fourth Saturday"
 msgstr "În fiecare a patra sâmbătă"
 
-#: src/EventEdition/RepeatPanel.vala:505
+#: src/EventEdition/RepeatPanel.vala:508
 msgid "Every fifth Sunday"
 msgstr "În a cincea duminică"
 
-#: src/EventEdition/RepeatPanel.vala:508
+#: src/EventEdition/RepeatPanel.vala:511
 msgid "Every fifth Monday"
 msgstr "În a cincea luni"
 
-#: src/EventEdition/RepeatPanel.vala:511
+#: src/EventEdition/RepeatPanel.vala:514
 msgid "Every fifth Tuesday"
 msgstr "În a cincea marți"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:517
 msgid "Every fifth Wednesday"
 msgstr "În a cincea mircuri"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:520
 msgid "Every fifth Thursday"
 msgstr "În a cincea joi"
 
-#: src/EventEdition/RepeatPanel.vala:520
+#: src/EventEdition/RepeatPanel.vala:523
 msgid "Every fifth Friday"
 msgstr "În a cincea vineri"
 
-#: src/EventEdition/RepeatPanel.vala:523
+#: src/EventEdition/RepeatPanel.vala:526
 msgid "Every fifth Saturday"
 msgstr "În a cincea sâmbătă"
 
-#: src/EventEdition/RepeatPanel.vala:533
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Mon"
 msgstr "Lun"
 
-#: src/EventEdition/RepeatPanel.vala:534
+#: src/EventEdition/RepeatPanel.vala:537
 msgid "Tue"
 msgstr "Mar"
 
-#: src/EventEdition/RepeatPanel.vala:535
+#: src/EventEdition/RepeatPanel.vala:538
 msgid "Wed"
 msgstr "Mie"
 
-#: src/EventEdition/RepeatPanel.vala:536
+#: src/EventEdition/RepeatPanel.vala:539
 msgid "Thu"
 msgstr "Joi"
 
-#: src/EventEdition/RepeatPanel.vala:537
+#: src/EventEdition/RepeatPanel.vala:540
 msgid "Fri"
 msgstr "Vin"
 
-#: src/EventEdition/RepeatPanel.vala:538
+#: src/EventEdition/RepeatPanel.vala:541
 msgid "Sat"
 msgstr "Sâm"
 
-#: src/EventEdition/RepeatPanel.vala:539
+#: src/EventEdition/RepeatPanel.vala:542
 msgid "Sun"
 msgstr "Dum"
 

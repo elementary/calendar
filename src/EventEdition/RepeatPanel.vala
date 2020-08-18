@@ -134,6 +134,9 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         var ends_label = new Granite.HeaderLabel (_("Ends:"));
 
+        ///Translators: Give a word to describe an event ending after a certain number of repeats.
+        ///This will be displayed in the format like: "Ends After 2 Repeats",
+        ///where this string always represents the last word in the phrase.
         var end_label = new Gtk.Label (ngettext ("Repeat", "Repeats", 1));
         end_label.no_show_all = true;
 
