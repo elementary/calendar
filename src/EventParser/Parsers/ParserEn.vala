@@ -477,27 +477,6 @@ public class ParserEn : GLib.Object, EventParser {
             event.all_day = false;
         });
 
-        analyze_pattern ("(?<p1>\\d{1,2})?(?<p2>(am|pm|p))?(to |-| - )(?<p3>\\d{1,2})?(?<p4>(am|pm|p))?", (data) => {
-            int hour_1 = int.parse (data.p.index (0));
-            int hour_2 = int.parse (data.p.index (2));
-
-            string half_1 = "";
-            if (data.p.index (1) != null) {
-                half_1 = data.p.index (1);
-            }
-
-            string half_2 = "";
-            if (data.p.index (3) != null) {
-                half_2 = data.p.index (3);
-            }
-
-            event.time_parsed = true;
-            event.from_set_hour (hour_1, half_1);
-            event.to_set_hour (hour_2, half_2);
-
-            event.all_day = false;
-        });
-
         analyze_pattern ("(at |@ ?)(?<p1>\\d{1,2})(:(?<p2>\\d{1,2}))?(?<p3>(am|pm|p))?", (data) => {
             int hour = int.parse (data.p.index (0));
 
@@ -538,7 +517,7 @@ public class ParserEn : GLib.Object, EventParser {
             event.all_day = false;
         });
 
-        analyze_pattern ("from (?<p1>\\d{1,2})(:(?<p3>\\d{1,2}))?(?<p5>(am|pm|p)?) to (?<p2>\\d{1,2})(:(?<p4>\\d{1,2}))?(?<p6>(am|pm|p)?)", (data) => {
+        analyze_pattern ("(from )?(?<p1>\\d{1,2})(:(?<p3>\\d{1,2}))?(?<p5>(am|pm|p)?)( to |-| - )(?<p2>\\d{1,2})(:(?<p4>\\d{1,2}))?(?<p6>(am|pm|p)?)", (data) => {
             int hour_1 = int.parse (data.p.index (0));
             int hour_2 = int.parse (data.p.index (1));
 
