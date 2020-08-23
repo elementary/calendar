@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-18 20:11+0000\n"
-"PO-Revision-Date: 2020-07-30 23:10+0000\n"
+"PO-Revision-Date: 2020-08-25 13:13+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/extra/he/"
 ">\n"
@@ -42,13 +42,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Improvements:"
-msgstr ""
+msgstr "שיפורים:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Allow modification of recurring events"
-msgstr "תיקון תקלות באירועים מחזוריים"
+msgstr "אפשר לערוך אירועים מחזוריים"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:31
@@ -59,7 +57,7 @@ msgstr "עדכונים משניים:"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
+msgstr "שינוי גודל החלון לא גורר את שינוי גודל סרגל הצד"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 #: data/io.elementary.calendar.appdata.xml.in:34
