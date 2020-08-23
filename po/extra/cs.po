@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-18 20:11+0000\n"
-"PO-Revision-Date: 2020-06-30 15:12+0000\n"
+"PO-Revision-Date: 2020-08-25 13:13+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/calendar/extra/cs/"
-">\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/calendar/extra/cs/>"
+"\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,13 +41,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Improvements:"
-msgstr ""
+msgstr "Vylepšení:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Allow modification of recurring events"
-msgstr "Opravit problémy s opakujícími se událostmi"
+msgstr "Umožnit upravování opakujících se událostí"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:31
@@ -58,7 +56,7 @@ msgstr "Drobné aktualizace:"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
+msgstr "Neměnění velikost postranního panelu při změně velikosti okna"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 #: data/io.elementary.calendar.appdata.xml.in:34
