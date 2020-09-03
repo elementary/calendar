@@ -108,8 +108,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void on_tb_add_clicked (DateTime dt) {
-        var dialog = new Maya.View.EventDialog (null, dt);
-        dialog.transient_for = this;
+        var dialog = new Maya.View.EventDialog (null, dt, this);
         dialog.show_all ();
     }
 
@@ -129,8 +128,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         E.Source src = comp.get_data ("source");
 
         if (src.writable == true && Calendar.Store.get_default ().calclient_is_readonly (src) == false) {
-            var dialog = new Maya.View.EventDialog (comp, null);
-            dialog.transient_for = this;
+            var dialog = new Maya.View.EventDialog (comp, null, this);
             dialog.present ();
         } else {
             Gdk.beep ();

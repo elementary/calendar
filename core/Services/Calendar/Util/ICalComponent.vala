@@ -61,13 +61,6 @@ namespace Calendar.Util {
         GLib.DateTime start, end;
         icalcomponent_get_local_datetimes (component, out start, out end);
 
-        // If the event is all day, it has no timezone info. Convert times to
-        // midnight local to match the range.
-        if (component.get_dtstart ().is_date () && component.get_dtend ().is_date ()) {
-            start = start.add (-range.first_dt.get_utc_offset ());
-            end = end.add (-range.last_dt.get_utc_offset ());
-        }
-
         int c1 = start.compare (range.first_dt);
         int c2 = start.compare (range.last_dt);
         int c3 = end.compare (range.first_dt);

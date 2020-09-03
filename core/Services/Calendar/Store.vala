@@ -60,7 +60,7 @@ public class Calendar.Store : Object {
     private E.CredentialsPrompter credentials_prompter;
 
     private static Calendar.Store? store = null;
-    private static GLib.Settings state_settings;
+    private static GLib.Settings? state_settings = null;
 
     public static Calendar.Store get_default () {
         if (store == null)
@@ -69,15 +69,13 @@ public class Calendar.Store : Object {
     }
 
     static construct {
-        state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
+        if (SettingsSchemaSource.get_default ().lookup ("io.elementary.calendar.savedstate", true) != null) {
+            state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
+        }
     }
 
-    private Store () {
-        int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
-        if (week_start >= 1 && week_start <= 7) {
-            week_starts_on = (GLib.DateWeekday) (week_start - 1);
-        }
-
+    protected Store () {
+        this.week_starts_on = get_week_start ();
         this.month_start = Calendar.Util.datetime_get_start_of_month (get_page ());
         compute_ranges ();
 
@@ -161,7 +159,6 @@ public class Calendar.Store : Object {
     public void update_event (E.Source source, ECal.Component event, ECal.ObjModType mod_type) {
         unowned ICal.Component comp = event.get_icalcomponent ();
         debug (@"Updating event '$(comp.get_uid())' [mod_type=$(mod_type)]");
-
         ECal.Client? client;
         lock (source_client) {
             client = source_client.get (source.get_uid ());
@@ -294,8 +291,53 @@ public class Calendar.Store : Object {
 
     //--- Helper Methods ---//
 
+    /** Set the week_starts_on property: the first day of the week.
+     *
+     * Locale handling is based on information from
+     * https://sourceware.org/glibc/wiki/Locales
+     */
+    private GLib.DateWeekday get_week_start () {
+        // Set the "baseline" for start of week: Sunday or Monday?
+        // HACK Dealing with NLTime is hacky and potentially prone to breaking.
+        // This to_string call produces a string pointer whose address is the
+        // number we want, so we convert the pointer address to a uint to get
+        // the data. Since the pointer address is actually data, using it as a
+        // pointer will segfault.
+        uint week_day1 = (uint) Posix.NLTime.WEEK_1STDAY.to_string ();
+        var week_1stday = 0; // Default to 0 if unrecognized data
+        if (week_day1 == 19971130) { // Sunday
+            week_1stday = 0;
+        } else if (week_day1 == 19971201) { // Monday
+            week_1stday = 1;
+        } else {
+            warning ("Unknown value of _NL_TIME_WEEK_1STDAY: %u", week_day1);
+        }
+        /* The offset between GLib and local POSIX numbering.
+         * If week_1stday is Monday, data is correct for GLib: Monday=1 through Sunday=7,
+         * so offset is 0.
+         * If week_1stday is Sunday, Sunday=1 through Saturday=7. All days must be
+         * subtracted by 1, then Sunday has to be handled separately to wrap to 7. */
+        var glib_offset = week_1stday - 1;
+
+        // Get the start of week
+        // HACK This line produces a string of 3 bytes. It takes the raw value
+        // of the first one and uses that as the value of week_start.
+        int week_start_posix = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
+
+        var week_start = week_start_posix + glib_offset;
+        if (week_start == 0) { // Sunday special case
+            week_start = 7;
+        }
+
+        return (GLib.DateWeekday) week_start;
+    }
+
     private DateTime get_page () {
-        var month_page = state_settings.get_string ("month-page");
+        string? month_page = null;
+        if (state_settings != null) {
+            month_page = state_settings.get_string ("month-page");
+        }
+
         if (month_page == null || month_page == "") {
             return new DateTime.now_local ();
         }
@@ -307,7 +349,9 @@ public class Calendar.Store : Object {
     }
 
     private void compute_ranges () {
-        state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
+        if (state_settings != null) {
+            state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
+        }
 
         var month_end = month_start.add_full (0, 1, -1);
         month_range = new Calendar.Util.DateRange (month_start, month_end);
@@ -402,9 +446,9 @@ public class Calendar.Store : Object {
         });
     }
 
-    private void debug_event (E.Source source, ECal.Component event) {
+    private void debug_event (E.Source source, ECal.Component event, string message = "") {
         unowned ICal.Component comp = event.get_icalcomponent ();
-        debug (@"Event ['$(comp.get_summary())', $(source.dup_display_name()), $(comp.get_uid()))]");
+        debug (@"$(message) Event ['$(comp.get_summary())', $(source.dup_display_name()), UID $(comp.get_uid()), START $(comp.get_dtstart().as_ical_string ()), RID %s )]", event.get_id ().get_rid ());
     }
 
     //--- Signal Handlers ---//
@@ -426,6 +470,7 @@ public class Calendar.Store : Object {
         debug (@"Received $(objects.length()) added event(s) for source '%s'", source.dup_display_name ());
         var events = source_events.get (source);
         var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
+
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
 #if E_CAL_2_0
@@ -434,7 +479,8 @@ public class Calendar.Store : Object {
 #else
             client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), (event, start, end) => {
 #endif
-                debug_event (source, event);
+                debug_event (source, event, "ADDED");
+                event.set_data<E.Source> ("source", source);
                 events.set (uid, event);
                 added_events.add (event);
                 return true;
@@ -451,15 +497,44 @@ public class Calendar.Store : Object {
 #endif
         debug (@"Received $(objects.length()) modified event(s) for source '%s'", source.dup_display_name ());
         var updated_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
+        var removed_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
+        var added_events = new Gee.ArrayList<ECal.Component> ((Gee.EqualDataFunc<ECal.Component>?) Calendar.Util.ecalcomponent_equal_func);
+
         objects.foreach ((comp) => {
             unowned string uid = comp.get_uid ();
-            var events = source_events.get (source).get (uid);
-            updated_events.add_all (events);
-            foreach (var event in events) {
-                debug_event (source, event);
+            var events_for_source = source_events.get (source);
+            var events_for_uid = events_for_source.get (uid);
+            if (events_for_uid.size > 1 ||
+                events_for_uid.to_array ()[0].get_icalcomponent ().get_recurrenceid ().as_ical_string () != null ||
+                comp.get_recurrenceid ().as_ical_string () != null) {
+
+                /* Either original or new event is recurring: rebuild our set of recurrences with new data */
+                events_for_source.remove_all (uid);
+                foreach (ECal.Component event in events_for_uid) {
+                    debug_event (source, event, "MODIFIED - ORIGINAL");
+                    removed_events.add (event);
+                }
+
+#if E_CAL_2_0
+                client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), null, (comp, start, end) => {
+                    var event = new ECal.Component.from_icalcomponent (comp);
+#else
+                client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), (event, start, end) => {
+#endif
+                    event.set_data<E.Source> ("source", source);
+                    debug_event (source, event, "MODIFIED - GENERATED");
+                    events_for_source.set (uid, event);
+                    added_events.add (event);
+                    return true;
+                });
+            } else {
+                debug_event (source, events_for_uid.to_array ()[0], "MODIFIED - UPDATED");
+                updated_events.add (events_for_uid.to_array ()[0]);
             }
         });
 
+        events_removed (source, removed_events.read_only_view);
+        events_added (source, added_events.read_only_view);
         events_updated (source, updated_events.read_only_view);
     }
 
@@ -476,6 +551,7 @@ public class Calendar.Store : Object {
                 return;
 
             var comps = events.get (cid.get_uid ());
+            events.remove_all (cid.get_uid ());
             foreach (ECal.Component event in comps) {
                 removed_events.add (event);
                 debug_event (source, event);
