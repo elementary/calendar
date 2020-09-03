@@ -28,7 +28,8 @@ public enum EventType {
 public class EventDialog : Gtk.Dialog {
         public E.Source? source { get; set; }
         public E.Source? original_source { get; private set; }
-        public ECal.Component ecal { get; set; }
+        public ECal.Component ecal { get; set; } // Set by InfoPanel if null
+        public ECal.Component original_ecal { get; private set; }
         public DateTime date_time { get; set; }
 
         /**
@@ -45,14 +46,19 @@ public class EventDialog : Gtk.Dialog {
         private EventEdition.ReminderPanel reminder_panel;
         private EventEdition.RepeatPanel repeat_panel;
 
-        public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null) {
+        public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null, Gtk.Window parent) {
             this.deletable = false;
+            this.modal = true;
+            this.transient_for = parent;
 
-            if (ecal != null)
+            if (ecal != null) {
                 original_source = ecal.get_data<E.Source> ("source");
-            this.date_time = date_time;
+            }
 
             this.ecal = ecal;
+            this.date_time = date_time;
+
+            original_ecal = Util.copy_ecal_component (ecal);
 
             if (date_time != null) {
                 title = _("Add Event");
@@ -115,7 +121,8 @@ public class EventDialog : Gtk.Dialog {
             stack.add_titled (location_panel, "locationpanel", _("Location"));
             stack.add_titled (guests_panel, "guestspanel", _("Guests"));
             stack.add_titled (reminder_panel, "reminderpanel", _("Reminders"));
-            stack.add_titled (repeat_panel, "repeatpanel", _("Repeat"));
+            ///Translators: The name of the repeat panel tab
+            stack.add_titled (repeat_panel, "repeatpanel", C_("Section Header", "Repeat")); //vala-lint=space-before-paren
             stack.child_set_property (info_panel, "icon-name", "office-calendar-symbolic");
             stack.child_set_property (location_panel, "icon-name", "mark-location-symbolic");
             stack.child_set_property (guests_panel, "icon-name", "system-users-symbolic");
@@ -188,17 +195,17 @@ public class EventDialog : Gtk.Dialog {
             repeat_panel.save ();
 
             var calmodel = Calendar.Store.get_default ();
-            if (event_type == EventType.ADD)
+            if (event_type == EventType.ADD) {
                 calmodel.add_event (source, ecal);
-            else {
+            } else {
                 assert (original_source != null);
 
                 if (original_source.dup_uid () == source.dup_uid ()) {
-                    // Same uids, just modify
+                    // Same source, just modify
                     calmodel.update_event (source, ecal, mod_type);
                 } else {
-                    // Different calendar, remove and readd
-                    calmodel.remove_event (original_source, ecal, mod_type);
+                    // Different calendar remove and re-add
+                    calmodel.remove_event (original_source, original_ecal, mod_type);
                     calmodel.add_event (source, ecal);
                 }
             }

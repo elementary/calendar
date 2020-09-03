@@ -134,6 +134,9 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         var ends_label = new Granite.HeaderLabel (_("Ends:"));
 
+        ///Translators: Give a word to describe an event ending after a certain number of repeats.
+        ///This will be displayed in the format like: "Ends After 2 Repeats",
+        ///where this string always represents the last word in the phrase.
         var end_label = new Gtk.Label (ngettext ("Repeat", "Repeats", 1));
         end_label.no_show_all = true;
 
@@ -621,15 +624,19 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
         int count = comp.count_properties (ICal.PropertyKind.RRULE_PROPERTY);
 
-        for (int i = 0; i < count; i++) {
 #if E_CAL_2_0
             ICal.Property remove_prop;
 #else
             unowned ICal.Property remove_prop;
 #endif
+
+        for (int i = 0; i < count; i++) {
             remove_prop = comp.get_first_property (ICal.PropertyKind.RRULE_PROPERTY);
             comp.remove_property (remove_prop);
         }
+
+        remove_prop = comp.get_first_property (ICal.PropertyKind.RECURRENCEID_PROPERTY);
+        comp.remove_property (remove_prop);
 
         if (repeat_switch.active == false)
             return;
@@ -782,11 +789,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         // Save exceptions
         count = comp.count_properties (ICal.PropertyKind.EXDATE_PROPERTY);
         for (int i = 0; i < count; i++) {
-#if E_CAL_2_0
-            ICal.Property remove_prop;
-#else
-            unowned ICal.Property remove_prop;
-#endif
             remove_prop = comp.get_first_property (ICal.PropertyKind.EXDATE_PROPERTY);
             comp.remove_property (remove_prop);
         }
