@@ -33,44 +33,11 @@ namespace Maya.Util {
     }
 
     /*
-     * E.Source Utils
-     */
-    public string get_source_location (E.Source source) {
-        var registry = Calendar.Store.get_default ().registry;
-        string parent_uid = source.parent;
-        E.Source parent_source = source;
-        while (parent_source != null) {
-            parent_uid = parent_source.parent;
-
-            if (parent_source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
-                var collection = (E.SourceAuthentication)parent_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
-                if (collection.user != null) {
-                    return collection.user;
-                }
-            }
-
-            if (parent_source.has_extension (E.SOURCE_EXTENSION_COLLECTION)) {
-                var collection = (E.SourceCollection)parent_source.get_extension (E.SOURCE_EXTENSION_COLLECTION);
-                if (collection.identity != null) {
-                    return collection.identity;
-                }
-            }
-
-            if (parent_uid == null)
-                break;
-
-            parent_source = registry.ref_source (parent_uid);
-        }
-
-        return _("On this computer");
-    }
-
-    /*
      * ical Exportation
      */
 
     public void save_temp_selected_calendars () {
-        var calmodel = Calendar.Store.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
         var events = calmodel.get_events ();
         var builder = new StringBuilder ();
         builder.append ("BEGIN:VCALENDAR\n");

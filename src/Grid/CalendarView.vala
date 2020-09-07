@@ -60,7 +60,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         sync_with_model (); // Populate stack with a grid
         stack.show_all ();
 
-        var model = Calendar.Store.get_default ();
+        var model = Calendar.EventStore.get_default ();
         model.parameters_changed.connect (on_model_parameters_changed);
 
         model.events_added.connect (on_events_added);
@@ -95,7 +95,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     public void today () {
         var today = Calendar.Util.datetime_strip_time (new DateTime.now_local ());
-        var calmodel = Calendar.Store.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
         var start = Calendar.Util.datetime_get_start_of_month (today);
         if (!start.equal (calmodel.month_start))
             calmodel.month_start = start;
@@ -106,7 +106,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
     //--- Signal Handlers ---//
 
     void on_show_weeks_changed () {
-        var model = Calendar.Store.get_default ();
+        var model = Calendar.EventStore.get_default ();
         weeks.update (model.data_range.first_dt, model.num_weeks);
         update_spacer_visible ();
     }
@@ -149,7 +149,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     /* Indicates the month has changed */
     void on_model_parameters_changed () {
-        var model = Calendar.Store.get_default ();
+        var model = Calendar.EventStore.get_default ();
         if (days_grid.grid_range != null && model.data_range.equals (days_grid.grid_range))
             return; // nothing to do
 
@@ -196,7 +196,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_model () {
-        var model = Calendar.Store.get_default ();
+        var model = Calendar.EventStore.get_default ();
         DateTime previous_first = null;
         if (days_grid != null) {
             if (days_grid.grid_range != null && (model.data_range.equals (days_grid.grid_range) || days_grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0))

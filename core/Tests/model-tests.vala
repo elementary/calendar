@@ -1,6 +1,6 @@
 // Create a testing subclass so we can access protected members and create
 // multiple instances
-class TestModel : Calendar.Store {
+class TestModel : Calendar.EventStore {
 }
 
 /**  Test interacting with nl_langinfo in Vala

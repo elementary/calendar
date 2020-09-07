@@ -43,7 +43,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
 
     construct {
         sources = new GLib.List<E.Source> ();
-        var calmodel = Calendar.Store.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
         var registry = calmodel.registry;
         foreach (var src in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
             if (src.writable == true && src.enabled == true && calmodel.calclient_is_readonly (src) == false) {
@@ -237,7 +237,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         private void apply_source () {
             E.SourceCalendar cal = (E.SourceCalendar)_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             label = _source.dup_display_name ();
-            location = Maya.Util.get_source_location (_source);
+            location = Calendar.EventStore.get_default ().get_source_location (_source);
 
             var css_color = STYLE.printf (cal.dup_color ());
             var style_provider = new Gtk.CssProvider ();

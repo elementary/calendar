@@ -12,7 +12,9 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-public class Calendar.Store : Object {
+public abstract class Calendar.Store : Object {
+
+    public string? source_extension_name { get; construct; }
 
     /* The data_range is the range of dates for which this model is storing
      * data. The month_range is a subset of this range corresponding to the
@@ -59,22 +61,12 @@ public class Calendar.Store : Object {
     public GLib.Queue<E.Source> calendar_trash;
     private E.CredentialsPrompter credentials_prompter;
 
-    private static Calendar.Store? store = null;
-    private static GLib.Settings? state_settings = null;
+    protected static Calendar.Store? store = null;
+    protected static GLib.Settings? state_settings = null;
 
-    public static Calendar.Store get_default () {
-        if (store == null)
-            store = new Calendar.Store ();
-        return store;
-    }
+    protected Store (string source_extension_name) {
+        Object (source_extension_name: source_extension_name);
 
-    static construct {
-        if (SettingsSchemaSource.get_default ().lookup ("io.elementary.calendar.savedstate", true) != null) {
-            state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
-        }
-    }
-
-    protected Store () {
         this.week_starts_on = get_week_start ();
         this.month_start = Calendar.Util.datetime_get_start_of_month (get_page ());
         compute_ranges ();
@@ -98,9 +90,8 @@ public class Calendar.Store : Object {
             registry.source_added.connect (add_source);
 
             // Add sources
-            registry.list_sources (E.SOURCE_EXTENSION_CALENDAR).foreach ((source) => {
-                E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-                if (cal.selected == true && source.enabled == true) {
+            registry.list_sources (source_extension_name).foreach ((source) => {
+                if (is_source_active (source)) {
                     add_source (source);
                 }
             });
@@ -110,6 +101,8 @@ public class Calendar.Store : Object {
     }
 
     //--- Public Methods ---//
+
+    public abstract bool is_source_active (E.Source source);
 
     public void add_event (E.Source source, ECal.Component event) {
         add_event_async.begin (source, event);
@@ -241,8 +234,8 @@ public class Calendar.Store : Object {
         lock (source_client) {
             foreach (var id in source_client.get_keys ()) {
                 var source = registry.ref_source (id);
-                E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-                if (cal.selected == true && source.enabled == true) {
+
+                if (is_source_active (source)) {
                     load_source (source);
                 }
             }
@@ -280,9 +273,8 @@ public class Calendar.Store : Object {
 
     public Gee.Collection<ECal.Component> get_events () {
         Gee.ArrayList<ECal.Component> events = new Gee.ArrayList<ECal.Component> ();
-        registry.list_sources (E.SOURCE_EXTENSION_CALENDAR).foreach ((source) => {
-            E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-            if (cal.selected == true && source.enabled == true) {
+        registry.list_sources (source_extension_name).foreach ((source) => {
+            if (is_source_active (source)) {
                 events.add_all (source_events.get (source).get_values ().read_only_view);
             }
         });
@@ -290,6 +282,38 @@ public class Calendar.Store : Object {
     }
 
     //--- Helper Methods ---//
+
+    /*
+     * E.Source Utils
+     */
+    public string get_source_location (E.Source source) {
+        string parent_uid = source.parent;
+        E.Source parent_source = source;
+        while (parent_source != null) {
+            parent_uid = parent_source.parent;
+
+            if (parent_source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
+                var collection = (E.SourceAuthentication)parent_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+                if (collection.user != null) {
+                    return collection.user;
+                }
+            }
+
+            if (parent_source.has_extension (E.SOURCE_EXTENSION_COLLECTION)) {
+                var collection = (E.SourceCollection)parent_source.get_extension (E.SOURCE_EXTENSION_COLLECTION);
+                if (collection.identity != null) {
+                    return collection.identity;
+                }
+            }
+
+            if (parent_uid == null)
+                break;
+
+            parent_source = registry.ref_source (parent_uid);
+        }
+
+        return _("On this computer");
+    }
 
     /** Set the week_starts_on property: the first day of the week.
      *
