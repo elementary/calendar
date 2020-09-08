@@ -66,7 +66,9 @@ public abstract class Calendar.Store : Object {
 
     protected Store (string source_extension_name) {
         Object (source_extension_name: source_extension_name);
+    }
 
+    construct {
         this.week_starts_on = get_week_start ();
         this.month_start = Calendar.Util.datetime_get_start_of_month (get_page ());
         compute_ranges ();
