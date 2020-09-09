@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-08 22:13+0000\n"
-"PO-Revision-Date: 2020-08-21 10:13+0000\n"
+"PO-Revision-Date: 2020-09-10 16:14+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/calendar/extra/fr/"
 ">\n"
@@ -49,11 +49,13 @@ msgstr "Nous avons autorisé la modification  des évènements réguliers"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "Amélioration de la gestion du premier jour de la semaine"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 msgid "Fix timezone errors with all-day events"
 msgstr ""
+"Correction des erreurs de fuseau horaire avec les évènements qui durent "
+"toute la journée"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:33
