@@ -18,7 +18,7 @@
  */
 
 public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
-    private static string STYLE = """
+    private const string STYLE = """
         .cal-color {
             background-color: %s;
             border-radius: 50%;
@@ -43,7 +43,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
 
     construct {
         sources = new GLib.List<E.Source> ();
-        var calmodel = Model.CalendarModel.get_default ();
+        var calmodel = Calendar.Store.get_default ();
         var registry = calmodel.registry;
         foreach (var src in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
             if (src.writable == true && src.enabled == true && calmodel.calclient_is_readonly (src) == false) {

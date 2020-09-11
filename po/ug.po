@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"POT-Creation-Date: 2020-08-18 20:11+0000\n"
 "PO-Revision-Date: 2017-01-03 09:18+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-01-04 05:43+0000\n"
 "X-Generator: Launchpad (build 18298)\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
 msgid "On this computer"
 msgstr "بۇ كومپىيۇتىردا"
 
@@ -67,7 +67,7 @@ msgstr "بىخەتەر ئۇلىنىشنى ئىشلىتىش"
 msgid "Server handles meeting invitations"
 msgstr "مۇلازىمېتىر ئۇچرىشىش تەكلىپلىرىنى بىر تەرەپ قىلىدۇ"
 
-#: src/AgendaView.vala:50
+#: src/AgendaView.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -75,52 +75,52 @@ msgstr ""
 "پائالىيەت قىتىلغان چىسلانى تاللىغان ۋاقتىڭىزدا سىزنىڭ يىقىن كەلگۈسىدىكى "
 "پائالىيەتلىرىڭىز بۇيەردە كۆرۈنىدۇ."
 
-#: src/AgendaView.vala:150
+#: src/AgendaView.vala:140
 msgid "During the day"
 msgstr "كۈندۈزدە"
 
-#: src/AgendaView.vala:158
+#: src/AgendaView.vala:148
 msgid "All day"
 msgstr "پۈتۈن كۈن"
 
-#: src/AgendaView.vala:275
+#: src/AgendaView.vala:265
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:278
+#: src/AgendaView.vala:268
 #, fuzzy
 msgid "This Week"
 msgstr "ھەپتە"
 
-#: src/AgendaView.vala:281
+#: src/AgendaView.vala:271
 #, fuzzy
 msgid "Next Week"
 msgstr "ھەپتە"
 
-#: src/AgendaView.vala:284
+#: src/AgendaView.vala:274
 #, fuzzy
 msgid "This Month"
 msgstr "ئاي"
 
-#: src/AgendaView.vala:287
+#: src/AgendaView.vala:277
 #, fuzzy
 msgid "Next Month"
 msgstr "ئاي"
 
-#: src/Application.vala:47
+#: src/Application.vala:54
 #, fuzzy
 msgid "Create an event"
 msgstr "يىڭى پائالىيەت قۇرۇش"
 
-#: src/Application.vala:48
+#: src/Application.vala:55
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:48
+#: src/Application.vala:55
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:140
+#: src/Application.vala:163
 msgid "Calendar"
 msgstr "كالېندار"
 
@@ -143,62 +143,65 @@ msgstr[0] "ھۆججەت %d دىكى پائالىيەتلەرنى تۆۋەندى�
 msgid "Import"
 msgstr "كىرگۈزۈش"
 
-#: src/EventEdition/EventDialog.vala:58
+#: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
 msgstr "پائالىيەت قىتىش"
 
-#: src/EventEdition/EventDialog.vala:61
+#: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
 msgstr "پائالىيەت تەھرىرلەش"
 
-#: src/EventEdition/EventDialog.vala:100
+#: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
 msgstr "ئادەتتىكى ئۇچۇرلار"
 
-#: src/EventEdition/EventDialog.vala:101
+#: src/EventEdition/EventDialog.vala:121
 msgid "Location"
 msgstr "ئورنى"
 
-#: src/EventEdition/EventDialog.vala:102
+#: src/EventEdition/EventDialog.vala:122
 msgid "Guests"
 msgstr "مېھمانلار"
 
-#: src/EventEdition/EventDialog.vala:103
+#: src/EventEdition/EventDialog.vala:123
 msgid "Reminders"
 msgstr "ئەسكەرتىش"
 
-#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
-#: src/EventEdition/RepeatPanel.vala:170
+#. /Translators: The name of the repeat panel tab
+#: src/EventEdition/EventDialog.vala:125
+#, fuzzy
+#| msgid "Repeat"
+#| msgid_plural "Repeats"
+msgctxt "Section Header"
 msgid "Repeat"
-msgid_plural "Repeats"
-msgstr[0] "تەكرارلاش"
+msgstr "تەكرارلاش"
 
-#: src/EventEdition/EventDialog.vala:127
+#: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
 msgstr "پائالىيەتنى ئۆچۈرۈش"
 
-#: src/EventEdition/EventDialog.vala:140
+#: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
 msgstr "پائالىيەت قۇرۇش"
 
-#: src/EventEdition/EventDialog.vala:143
+#: src/EventEdition/EventDialog.vala:164
 msgid "Save Changes"
 msgstr "ئۆزگەرتىشلەرنى ساقلاش"
 
-#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 msgid "Cancel"
 msgstr "ئەمەلدىن قالدۇرۇش"
 
-#: src/EventEdition/GuestGrid.vala:42
+#: src/EventEdition/GuestGrid.vala:47
 msgid "Accepted"
 msgstr "قوبۇل قىلىنغان"
 
-#: src/EventEdition/GuestGrid.vala:46
+#: src/EventEdition/GuestGrid.vala:51
 msgid "Declined"
 msgstr "رەت قىلىنغان"
 
-#: src/EventEdition/GuestGrid.vala:50
+#: src/EventEdition/GuestGrid.vala:55
 msgid "Maybe"
 msgstr ""
 
@@ -206,43 +209,43 @@ msgstr ""
 msgid "Participants:"
 msgstr "قاتناشقۇچىلار:"
 
-#: src/EventEdition/GuestsPanel.vala:58
+#: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
 msgstr "قاتناشقۇچىلار يوق"
 
-#: src/EventEdition/GuestsPanel.vala:94
+#: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
 msgstr "تەكلىپ"
 
-#: src/EventEdition/InfoPanel.vala:77
+#: src/EventEdition/InfoPanel.vala:76
 msgid "From:"
 msgstr "باشلىنىش چىسلاسى:"
 
-#: src/EventEdition/InfoPanel.vala:83
+#: src/EventEdition/InfoPanel.vala:82
 msgid "All day:"
 msgstr "پۈتۈن كۈن:"
 
-#: src/EventEdition/InfoPanel.vala:88
+#: src/EventEdition/InfoPanel.vala:87
 msgid "To:"
 msgstr "ئاخىرلىشىش چىسلاسى:"
 
-#: src/EventEdition/InfoPanel.vala:106
+#: src/EventEdition/InfoPanel.vala:105
 msgid "Title:"
 msgstr "تىمىسى:"
 
-#: src/EventEdition/InfoPanel.vala:108
+#: src/EventEdition/InfoPanel.vala:107
 msgid "Name of Event"
 msgstr "پائالىيەت ئىسمى"
 
-#: src/EventEdition/InfoPanel.vala:118
+#: src/EventEdition/InfoPanel.vala:117
 msgid "Press enter to parse event"
 msgstr "enter كۇنۇپكىسىنى بىسىپ پائالىيەتنى تەھرىرلەڭ"
 
-#: src/EventEdition/InfoPanel.vala:133
+#: src/EventEdition/InfoPanel.vala:132
 msgid "Calendar:"
 msgstr "كالېندار:"
 
-#: src/EventEdition/InfoPanel.vala:140
+#: src/EventEdition/InfoPanel.vala:139
 msgid "Comments:"
 msgstr "ئىزاھات:"
 
@@ -262,107 +265,107 @@ msgstr "ئەسكەرتىش:"
 msgid "No Reminders"
 msgstr "ئەسكەرتىش يوق"
 
-#: src/EventEdition/ReminderPanel.vala:60
+#: src/EventEdition/ReminderPanel.vala:55
 msgid "Add Reminder"
 msgstr "ئەسكەرتكۈچ قوشۇش"
 
-#: src/EventEdition/ReminderPanel.vala:163
+#: src/EventEdition/ReminderPanel.vala:189
 #, fuzzy
 msgid "At time of event"
 msgstr "پائالىيەت ئىسمى"
 
-#: src/EventEdition/ReminderPanel.vala:164
+#: src/EventEdition/ReminderPanel.vala:190
 #, fuzzy
 msgid "1 minute before"
 msgstr "1 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:165
+#: src/EventEdition/ReminderPanel.vala:191
 #, fuzzy
 msgid "5 minutes before"
 msgstr "5 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:166
+#: src/EventEdition/ReminderPanel.vala:192
 #, fuzzy
 msgid "10 minutes before"
 msgstr "10 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:167
+#: src/EventEdition/ReminderPanel.vala:193
 #, fuzzy
 msgid "15 minutes before"
 msgstr "15 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:168
+#: src/EventEdition/ReminderPanel.vala:194
 #, fuzzy
 msgid "20 minutes before"
 msgstr "20 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:169
+#: src/EventEdition/ReminderPanel.vala:195
 #, fuzzy
 msgid "25 minutes before"
 msgstr "25 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:170
+#: src/EventEdition/ReminderPanel.vala:196
 #, fuzzy
 msgid "30 minutes before"
 msgstr "30 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:171
+#: src/EventEdition/ReminderPanel.vala:197
 #, fuzzy
 msgid "45 minutes before"
 msgstr "45 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:198
 #, fuzzy
 msgid "1 hour before"
 msgstr "1سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:199
 #, fuzzy
 msgid "2 hours before"
 msgstr "2سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:200
 #, fuzzy
 msgid "3 hours before"
 msgstr "3 سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:201
 #, fuzzy
 msgid "12 hours before"
 msgstr "12سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:202
 #, fuzzy
 msgid "24 hours before"
 msgstr "24سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:203
 #, fuzzy
 msgid "2 days before"
 msgstr "2 كۈن"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:204
 #, fuzzy
 msgid "1 week before"
 msgstr "1 ھەپتە"
 
-#: src/EventEdition/RepeatPanel.vala:53
+#: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
 msgstr "قايتىلاش :"
 
-#: src/EventEdition/RepeatPanel.vala:58
+#: src/EventEdition/RepeatPanel.vala:57
 msgid "Daily"
 msgstr "كۈندىلىك"
 
-#: src/EventEdition/RepeatPanel.vala:59
+#: src/EventEdition/RepeatPanel.vala:58
 msgid "Weekly"
 msgstr "ھەپتىلىك"
 
-#: src/EventEdition/RepeatPanel.vala:60
+#: src/EventEdition/RepeatPanel.vala:59
 msgid "Monthly"
 msgstr "ئايلىق"
 
-#: src/EventEdition/RepeatPanel.vala:61
+#: src/EventEdition/RepeatPanel.vala:60
 msgid "Yearly"
 msgstr "يىللىق"
 
@@ -394,235 +397,243 @@ msgstr[0] "يىل"
 msgid "Ends:"
 msgstr "ئاخىرى:"
 
-#: src/EventEdition/RepeatPanel.vala:141
+#. /Translators: Give a word to describe an event ending after a certain number of repeats.
+#. /This will be displayed in the format like: "Ends After 2 Repeats",
+#. /where this string always represents the last word in the phrase.
+#: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
+msgid "Repeat"
+msgid_plural "Repeats"
+msgstr[0] "تەكرارلاش"
+
+#: src/EventEdition/RepeatPanel.vala:144
 msgid "Never"
 msgstr "ئەسلا"
 
-#: src/EventEdition/RepeatPanel.vala:142
+#: src/EventEdition/RepeatPanel.vala:145
 msgid "Until"
 msgstr "غىچە"
 
-#: src/EventEdition/RepeatPanel.vala:143
+#: src/EventEdition/RepeatPanel.vala:146
 msgid "After"
 msgstr "كېيىن"
 
-#: src/EventEdition/RepeatPanel.vala:190
+#: src/EventEdition/RepeatPanel.vala:193
 msgid "The same day every month"
 msgstr "ھەرئاينىڭ ئوخشاش كۈنى"
 
-#: src/EventEdition/RepeatPanel.vala:201
+#: src/EventEdition/RepeatPanel.vala:204
 msgid "Exceptions:"
 msgstr "مۇستەسنا ئەھۋاللار:"
 
-#: src/EventEdition/RepeatPanel.vala:204
+#: src/EventEdition/RepeatPanel.vala:206
 msgid "No Exceptions"
 msgstr "مۇستەسنا ئەھۋال يوق"
 
-#: src/EventEdition/RepeatPanel.vala:225
+#: src/EventEdition/RepeatPanel.vala:222
 msgid "Add Exception"
 msgstr "مۇستەسنا ئەھۋال قىتىش"
 
-#: src/EventEdition/RepeatPanel.vala:359
+#: src/EventEdition/RepeatPanel.vala:383
 msgid "Every last Sunday"
 msgstr "ھەرئاينىڭ ئاخىرقى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:362
+#: src/EventEdition/RepeatPanel.vala:386
 msgid "Every last Monday"
 msgstr "ھەرئاينىڭ ئاخىرقى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:365
+#: src/EventEdition/RepeatPanel.vala:389
 msgid "Every last Tuesday"
 msgstr "ھەرئاينىڭ ئاخىرقى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:368
+#: src/EventEdition/RepeatPanel.vala:392
 msgid "Every last Wednesday"
 msgstr "ھەرئاينىڭ ئاخىرقى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:371
+#: src/EventEdition/RepeatPanel.vala:395
 msgid "Every last Thursday"
 msgstr "ھەرئاينىڭ ئاخىرقى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:374
+#: src/EventEdition/RepeatPanel.vala:398
 msgid "Every last Friday"
 msgstr "ھەرئاينىڭ ئاخىرقى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:377
+#: src/EventEdition/RepeatPanel.vala:401
 msgid "Every last Saturday"
 msgstr "ھەرئاينىڭ ئاخىرقى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:384
+#: src/EventEdition/RepeatPanel.vala:408
 msgid "Every first Sunday"
 msgstr "ھەرئاينىڭ تۇنجى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:387
+#: src/EventEdition/RepeatPanel.vala:411
 msgid "Every first Monday"
 msgstr "ھەرئاينىڭ تۇنجى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:390
+#: src/EventEdition/RepeatPanel.vala:414
 msgid "Every first Tuesday"
 msgstr "ھەرئاينىڭ تۇنجى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:393
+#: src/EventEdition/RepeatPanel.vala:417
 msgid "Every first Wednesday"
 msgstr "ھەرئاينىڭ تۇنجى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:396
+#: src/EventEdition/RepeatPanel.vala:420
 msgid "Every first Thursday"
 msgstr "ھەرئاينىڭ تۇنجى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:399
+#: src/EventEdition/RepeatPanel.vala:423
 msgid "Every first Friday"
 msgstr "ھەرئاينىڭ تۇنجى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:402
+#: src/EventEdition/RepeatPanel.vala:426
 msgid "Every first Saturday"
 msgstr "ھەرئاينىڭ تۇنجى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:409
+#: src/EventEdition/RepeatPanel.vala:433
 msgid "Every second Sunday"
 msgstr "ھەرئاينىڭ ئىككىنجى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:412
+#: src/EventEdition/RepeatPanel.vala:436
 msgid "Every second Monday"
 msgstr "ھەرئاينىڭ ئىككىنجى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:415
+#: src/EventEdition/RepeatPanel.vala:439
 msgid "Every second Tuesday"
 msgstr "ھەرئاينىڭ ئىككىنجى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:418
+#: src/EventEdition/RepeatPanel.vala:442
 msgid "Every second Wednesday"
 msgstr "ھەرئاينىڭ ئىككىنجى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:421
+#: src/EventEdition/RepeatPanel.vala:445
 msgid "Every second Thursday"
 msgstr "ھەرئاينىڭ ئىككىنجى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:424
+#: src/EventEdition/RepeatPanel.vala:448
 msgid "Every second Friday"
 msgstr "ھەرئاينىڭ ئىككىنجى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:427
+#: src/EventEdition/RepeatPanel.vala:451
 msgid "Every second Saturday"
 msgstr "ھەرئاينىڭ ئىككىنجى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:434
+#: src/EventEdition/RepeatPanel.vala:458
 msgid "Every third Sunday"
 msgstr "ھەرئاينىڭ ئۈچىنجى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:437
+#: src/EventEdition/RepeatPanel.vala:461
 msgid "Every third Monday"
 msgstr "ھەرئاينىڭ ئۈچىنجى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:440
+#: src/EventEdition/RepeatPanel.vala:464
 msgid "Every third Tuesday"
 msgstr "ھەرئاينىڭ ئۈچىنجى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:443
+#: src/EventEdition/RepeatPanel.vala:467
 msgid "Every third Wednesday"
 msgstr "ھەرئاينىڭ ئۈچىنجى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:446
+#: src/EventEdition/RepeatPanel.vala:470
 msgid "Every third Thursday"
 msgstr "ھەرئاينىڭ ئۈچىنجى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:449
+#: src/EventEdition/RepeatPanel.vala:473
 msgid "Every third Friday"
 msgstr "ھەرئاينىڭ ئۈچىنجى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:452
+#: src/EventEdition/RepeatPanel.vala:476
 msgid "Every third Saturday"
 msgstr "ھەرئاينىڭ ئۈچىنجى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:459
+#: src/EventEdition/RepeatPanel.vala:483
 msgid "Every fourth Sunday"
 msgstr "ھەرئاينىڭ تۆتىنجى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:462
+#: src/EventEdition/RepeatPanel.vala:486
 msgid "Every fourth Monday"
 msgstr "ھەرئاينىڭ تۆتىنجى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:465
+#: src/EventEdition/RepeatPanel.vala:489
 msgid "Every fourth Tuesday"
 msgstr "ھەرئاينىڭ تۆتىنجى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:468
+#: src/EventEdition/RepeatPanel.vala:492
 msgid "Every fourth Wednesday"
 msgstr "ھەرئاينىڭ تۆتىنجى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:471
+#: src/EventEdition/RepeatPanel.vala:495
 msgid "Every fourth Thursday"
 msgstr "ھەرئاينىڭ تۆتىنجى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:474
+#: src/EventEdition/RepeatPanel.vala:498
 msgid "Every fourth Friday"
 msgstr "ھەرئاينىڭ تۆتىنجى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:477
+#: src/EventEdition/RepeatPanel.vala:501
 msgid "Every fourth Saturday"
 msgstr "ھەرئاينىڭ تۆتىنجى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:484
+#: src/EventEdition/RepeatPanel.vala:508
 msgid "Every fifth Sunday"
 msgstr "ھەرئاينىڭ بەشىنجى يەكشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:487
+#: src/EventEdition/RepeatPanel.vala:511
 msgid "Every fifth Monday"
 msgstr "ھەرئاينىڭ بەشىنجى دۈشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:490
+#: src/EventEdition/RepeatPanel.vala:514
 msgid "Every fifth Tuesday"
 msgstr "ھەرئاينىڭ بەشىنجى سەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:493
+#: src/EventEdition/RepeatPanel.vala:517
 msgid "Every fifth Wednesday"
 msgstr "ھەرئاينىڭ بەشىنجى چارشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:496
+#: src/EventEdition/RepeatPanel.vala:520
 msgid "Every fifth Thursday"
 msgstr "ھەرئاينىڭ بەشىنجى پەيشەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:499
+#: src/EventEdition/RepeatPanel.vala:523
 msgid "Every fifth Friday"
 msgstr "ھەرئاينىڭ بەشىنجى جۈمەسى"
 
-#: src/EventEdition/RepeatPanel.vala:502
+#: src/EventEdition/RepeatPanel.vala:526
 msgid "Every fifth Saturday"
 msgstr "ھەرئاينىڭ بەشىنجى شەنبىسى"
 
-#: src/EventEdition/RepeatPanel.vala:512
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Mon"
 msgstr "دۈشەنبە"
 
-#: src/EventEdition/RepeatPanel.vala:513
+#: src/EventEdition/RepeatPanel.vala:537
 msgid "Tue"
 msgstr "سەيشەنبە"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:538
 msgid "Wed"
 msgstr "چارشەنبە"
 
-#: src/EventEdition/RepeatPanel.vala:515
+#: src/EventEdition/RepeatPanel.vala:539
 msgid "Thu"
 msgstr "پەيشەنبە"
 
-#: src/EventEdition/RepeatPanel.vala:516
+#: src/EventEdition/RepeatPanel.vala:540
 msgid "Fri"
 msgstr "جۈمە"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:541
 msgid "Sat"
 msgstr "شەنبە"
 
-#: src/EventEdition/RepeatPanel.vala:518
+#: src/EventEdition/RepeatPanel.vala:542
 msgid "Sun"
 msgstr "يەكشەنبە"
 
-#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
 msgid "Hide Week Numbers"
 msgstr "ھەپتە نومۇرىنى يوشۇرۇش"
 
-#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:67
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
 msgid "Show Week Numbers"
 msgstr "ھەپتە نومۇرىنى كۆرسىتىش"
 
@@ -664,7 +675,7 @@ msgstr "كالېندار قۇرۇش"
 msgid "Save"
 msgstr "ساقلاش"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
 msgid "Remove"
 msgstr "ئۆچۈرۈش"
 
@@ -673,7 +684,7 @@ msgstr "ئۆچۈرۈش"
 msgid "Not Removable"
 msgstr "ئۆچۈرۈش"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
 msgid "Edit…"
 msgstr "تەھرىرلەش...."
 
@@ -690,32 +701,98 @@ msgstr "بىكار قىلىش"
 msgid "\"%s\" removed"
 msgstr "كالېندار \"%s\" ئۆچۈرۈلگەن."
 
-#: src/SourceDialog/SourceSelector.vala:51
+#: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
 msgstr "يىڭى كالېندار قىتىش...."
 
+#. /Translators: Give a list of appointment related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:65
+msgid "appointment;meeting"
+msgstr ""
+
+#. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:70
+msgid "birthday;anniversary;party"
+msgstr ""
+
+#. /Translators: Give a list of voice call related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:75
+msgid "call;phone;telephone;ring"
+msgstr ""
+
+#. /Translators: Give a list of social drinking related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:80
+msgid "bar;cocktails;drinks;happy hour"
+msgstr ""
+
+#. /Translators: Give a list of car driving related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:85
+msgid "car;drive;driving;road trip;"
+msgstr ""
+
+#. /Translators: Give a list of air travel related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:90
+msgid "flight;airport;"
+msgstr ""
+
+#. /Translators: Give a list of food consumption related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:95
+msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
+msgstr ""
+
+#. /Translators: Give a list of law related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:100
+msgid "court;jury;tax;attorney;lawyer;contract"
+msgstr ""
+
+#. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:105
+msgid "movie"
+msgstr ""
+
+#. /Translators: Give a list of wedding related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:110
+msgid "wedding"
+msgstr ""
+
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:176
+#: src/Widgets/AgendaEventRow.vala:310
 #, fuzzy, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:179
+#: src/Widgets/AgendaEventRow.vala:313
 #, fuzzy, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:188
+#: src/Widgets/AgendaEventRow.vala:325
 #, fuzzy, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s, %s - %s, %s"
 
+#. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
+#: src/Widgets/AgendaEventRow.vala:334
+#, c-format
+msgid "%s at %s"
+msgstr ""
+
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:195
+#: src/Widgets/AgendaEventRow.vala:337
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
@@ -743,12 +820,12 @@ msgstr "كالېندارنى چىقىرىش...."
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:39
 #, fuzzy
 msgid "Remove Event"
 msgstr "پائالىيەتنى ئۆچۈرۈش"
 
-#: src/Widgets/EventMenu.vala:43
+#: src/Widgets/EventMenu.vala:41
 msgid "Remove Occurrence"
 msgstr ""
 

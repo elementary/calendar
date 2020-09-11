@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-04-11 19:04+0000\n"
+"POT-Creation-Date: 2020-08-18 20:11+0000\n"
+"PO-Revision-Date: 2020-03-26 16:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:591
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
 msgid "On this computer"
 msgstr "ह्या कॉम्प्युटरवर"
 
@@ -72,54 +72,54 @@ msgstr "सुरक्षित कनेक्शन वापरा"
 msgid "Server handles meeting invitations"
 msgstr "मीटिंगची आमंत्रणे सर्व्हरद्वारे सांभाळली जातात"
 
-#: src/AgendaView.vala:50
+#: src/AgendaView.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "जेव्हा आपण घटना असलेले दिवस सिलेक्ट कराल तेव्हा येणाऱ्या सर्व घटना आपल्याला दिसतील."
 
-#: src/AgendaView.vala:150
+#: src/AgendaView.vala:140
 msgid "During the day"
 msgstr "दिवसा"
 
-#: src/AgendaView.vala:158
+#: src/AgendaView.vala:148
 msgid "All day"
 msgstr "संपूर्ण दिवस"
 
-#: src/AgendaView.vala:275
+#: src/AgendaView.vala:265
 msgid "Tomorrow"
 msgstr "उद्या"
 
-#: src/AgendaView.vala:278
+#: src/AgendaView.vala:268
 msgid "This Week"
 msgstr "या आठवड्यात"
 
-#: src/AgendaView.vala:281
+#: src/AgendaView.vala:271
 msgid "Next Week"
 msgstr "पुढील आठवड्यात"
 
-#: src/AgendaView.vala:284
+#: src/AgendaView.vala:274
 msgid "This Month"
 msgstr "या महिन्यात"
 
-#: src/AgendaView.vala:287
+#: src/AgendaView.vala:277
 msgid "Next Month"
 msgstr "पुढील महिना"
 
-#: src/Application.vala:47
+#: src/Application.vala:54
 msgid "Create an event"
 msgstr "नवीन घटना बनवा"
 
-#: src/Application.vala:48
+#: src/Application.vala:55
 msgid "Focus the given day"
 msgstr "दिलेला दिवस निर्देशित करा"
 
-#: src/Application.vala:48
+#: src/Application.vala:55
 msgid "date"
 msgstr "तारीख"
 
-#: src/Application.vala:140
+#: src/Application.vala:163
 msgid "Calendar"
 msgstr "कॅलेंडर"
 
@@ -143,63 +143,65 @@ msgstr[1] "%d फायलींवरील इव्हेंट या कॅ
 msgid "Import"
 msgstr "इम्पोर्ट"
 
-#: src/EventEdition/EventDialog.vala:58
+#: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
 msgstr "नवीन घटना जोडा"
 
-#: src/EventEdition/EventDialog.vala:61
+#: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
 msgstr "घटनेत बदल करा"
 
-#: src/EventEdition/EventDialog.vala:100
+#: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
 msgstr "साधारण माहिती"
 
-#: src/EventEdition/EventDialog.vala:101
+#: src/EventEdition/EventDialog.vala:121
 msgid "Location"
 msgstr "स्थळ"
 
-#: src/EventEdition/EventDialog.vala:102
+#: src/EventEdition/EventDialog.vala:122
 msgid "Guests"
 msgstr "पाहुणे"
 
-#: src/EventEdition/EventDialog.vala:103
+#: src/EventEdition/EventDialog.vala:123
 msgid "Reminders"
 msgstr "आठवणींच्या खुणा"
 
-#: src/EventEdition/EventDialog.vala:104 src/EventEdition/RepeatPanel.vala:137
-#: src/EventEdition/RepeatPanel.vala:170
+#. /Translators: The name of the repeat panel tab
+#: src/EventEdition/EventDialog.vala:125
+#, fuzzy
+#| msgid "Repeat"
+#| msgid_plural "Repeats"
+msgctxt "Section Header"
 msgid "Repeat"
-msgid_plural "Repeats"
-msgstr[0] "पुनरावृत्ती"
-msgstr[1] "अनेक पुनरावृत्ती"
+msgstr "पुनरावृत्ती"
 
-#: src/EventEdition/EventDialog.vala:127
+#: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
 msgstr "कार्यक्रम डिलीट करा"
 
-#: src/EventEdition/EventDialog.vala:140
+#: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
 msgstr "घटना  बनवा"
 
-#: src/EventEdition/EventDialog.vala:143
+#: src/EventEdition/EventDialog.vala:164
 msgid "Save Changes"
 msgstr "बदल सेव्ह करा"
 
-#: src/EventEdition/EventDialog.vala:146 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 msgid "Cancel"
 msgstr "रद्द करा"
 
-#: src/EventEdition/GuestGrid.vala:42
+#: src/EventEdition/GuestGrid.vala:47
 msgid "Accepted"
 msgstr "स्वीकारा"
 
-#: src/EventEdition/GuestGrid.vala:46
+#: src/EventEdition/GuestGrid.vala:51
 msgid "Declined"
 msgstr "अस्वीकार"
 
-#: src/EventEdition/GuestGrid.vala:50
+#: src/EventEdition/GuestGrid.vala:55
 msgid "Maybe"
 msgstr "कदाचित"
 
@@ -207,43 +209,43 @@ msgstr "कदाचित"
 msgid "Participants:"
 msgstr "भागीदार:"
 
-#: src/EventEdition/GuestsPanel.vala:58
+#: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
 msgstr "कुणीही नाही"
 
-#: src/EventEdition/GuestsPanel.vala:94
+#: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
 msgstr "आमंत्रित करा"
 
-#: src/EventEdition/InfoPanel.vala:77
+#: src/EventEdition/InfoPanel.vala:76
 msgid "From:"
 msgstr "पासून:"
 
-#: src/EventEdition/InfoPanel.vala:83
+#: src/EventEdition/InfoPanel.vala:82
 msgid "All day:"
 msgstr "संपुर्ण दिवस:"
 
-#: src/EventEdition/InfoPanel.vala:88
+#: src/EventEdition/InfoPanel.vala:87
 msgid "To:"
 msgstr "प्रति:"
 
-#: src/EventEdition/InfoPanel.vala:106
+#: src/EventEdition/InfoPanel.vala:105
 msgid "Title:"
 msgstr "शीर्षक:"
 
-#: src/EventEdition/InfoPanel.vala:108
+#: src/EventEdition/InfoPanel.vala:107
 msgid "Name of Event"
 msgstr "घटनेचे नाव"
 
-#: src/EventEdition/InfoPanel.vala:118
+#: src/EventEdition/InfoPanel.vala:117
 msgid "Press enter to parse event"
 msgstr "घटना बघण्यासाठी \"Enter\" बटन दाबा"
 
-#: src/EventEdition/InfoPanel.vala:133
+#: src/EventEdition/InfoPanel.vala:132
 msgid "Calendar:"
 msgstr "कॅलेंडर:"
 
-#: src/EventEdition/InfoPanel.vala:140
+#: src/EventEdition/InfoPanel.vala:139
 msgid "Comments:"
 msgstr "टिका-टिप्पणी:"
 
@@ -263,91 +265,91 @@ msgstr "आठवणीची खूण:"
 msgid "No Reminders"
 msgstr "एकही आठवणीची खूण नाही"
 
-#: src/EventEdition/ReminderPanel.vala:60
+#: src/EventEdition/ReminderPanel.vala:55
 msgid "Add Reminder"
 msgstr "नवीन आठवणीची खूण जोडा"
 
-#: src/EventEdition/ReminderPanel.vala:163
+#: src/EventEdition/ReminderPanel.vala:189
 msgid "At time of event"
 msgstr "घटनेचे नाव"
 
-#: src/EventEdition/ReminderPanel.vala:164
+#: src/EventEdition/ReminderPanel.vala:190
 msgid "1 minute before"
 msgstr "1 मिनिटापूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:165
+#: src/EventEdition/ReminderPanel.vala:191
 msgid "5 minutes before"
 msgstr "५  मिनिटांपूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:166
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "10 minutes before"
 msgstr "१० मिनिटांपूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:167
+#: src/EventEdition/ReminderPanel.vala:193
 msgid "15 minutes before"
 msgstr "१५ मिनिटांपूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:168
+#: src/EventEdition/ReminderPanel.vala:194
 msgid "20 minutes before"
 msgstr "२० मिनिटांपूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:169
+#: src/EventEdition/ReminderPanel.vala:195
 msgid "25 minutes before"
 msgstr "२५ मिनिटांपूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:170
+#: src/EventEdition/ReminderPanel.vala:196
 msgid "30 minutes before"
 msgstr "३० मिनिटांपूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:171
+#: src/EventEdition/ReminderPanel.vala:197
 msgid "45 minutes before"
 msgstr "४५ मिनिटांपूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:198
 msgid "1 hour before"
 msgstr "१ तास पूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:199
 msgid "2 hours before"
 msgstr "२ तासांपूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:200
 msgid "3 hours before"
 msgstr "३ तासांपूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:201
 msgid "12 hours before"
 msgstr "१२ तासांपूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:202
 msgid "24 hours before"
 msgstr "२४ तासांपूर्वी"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:203
 msgid "2 days before"
 msgstr "२ दिवस आधी"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:204
 msgid "1 week before"
 msgstr "१ आठवडा आधी"
 
-#: src/EventEdition/RepeatPanel.vala:53
+#: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
 msgstr "पुनरावृत्ती करा:"
 
-#: src/EventEdition/RepeatPanel.vala:58
+#: src/EventEdition/RepeatPanel.vala:57
 msgid "Daily"
 msgstr "दररोज"
 
-#: src/EventEdition/RepeatPanel.vala:59
+#: src/EventEdition/RepeatPanel.vala:58
 msgid "Weekly"
 msgstr "दर आठवडा"
 
-#: src/EventEdition/RepeatPanel.vala:60
+#: src/EventEdition/RepeatPanel.vala:59
 msgid "Monthly"
 msgstr "मासिक"
 
-#: src/EventEdition/RepeatPanel.vala:61
+#: src/EventEdition/RepeatPanel.vala:60
 msgid "Yearly"
 msgstr "वार्षिक"
 
@@ -383,235 +385,244 @@ msgstr[1] "वर्षें"
 msgid "Ends:"
 msgstr "समाप्ति:"
 
-#: src/EventEdition/RepeatPanel.vala:141
+#. /Translators: Give a word to describe an event ending after a certain number of repeats.
+#. /This will be displayed in the format like: "Ends After 2 Repeats",
+#. /where this string always represents the last word in the phrase.
+#: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
+msgid "Repeat"
+msgid_plural "Repeats"
+msgstr[0] "पुनरावृत्ती"
+msgstr[1] "अनेक पुनरावृत्ती"
+
+#: src/EventEdition/RepeatPanel.vala:144
 msgid "Never"
 msgstr "कधीही नाही"
 
-#: src/EventEdition/RepeatPanel.vala:142
+#: src/EventEdition/RepeatPanel.vala:145
 msgid "Until"
 msgstr "जोंवर"
 
-#: src/EventEdition/RepeatPanel.vala:143
+#: src/EventEdition/RepeatPanel.vala:146
 msgid "After"
 msgstr "नंतर"
 
-#: src/EventEdition/RepeatPanel.vala:190
+#: src/EventEdition/RepeatPanel.vala:193
 msgid "The same day every month"
 msgstr "प्रत्येक महिन्यातील या दिवशी"
 
-#: src/EventEdition/RepeatPanel.vala:201
+#: src/EventEdition/RepeatPanel.vala:204
 msgid "Exceptions:"
 msgstr "अपवाद:"
 
-#: src/EventEdition/RepeatPanel.vala:204
+#: src/EventEdition/RepeatPanel.vala:206
 msgid "No Exceptions"
 msgstr "अपवाद नाही"
 
-#: src/EventEdition/RepeatPanel.vala:225
+#: src/EventEdition/RepeatPanel.vala:222
 msgid "Add Exception"
 msgstr "नवीन अपवाद बनवा"
 
-#: src/EventEdition/RepeatPanel.vala:359
+#: src/EventEdition/RepeatPanel.vala:383
 msgid "Every last Sunday"
 msgstr "प्रत्येक शेवटचा रविवार"
 
-#: src/EventEdition/RepeatPanel.vala:362
+#: src/EventEdition/RepeatPanel.vala:386
 msgid "Every last Monday"
 msgstr "प्रत्येक महिन्यातील शेवटचा सोमवार"
 
-#: src/EventEdition/RepeatPanel.vala:365
+#: src/EventEdition/RepeatPanel.vala:389
 msgid "Every last Tuesday"
 msgstr "प्रत्येक महिन्यातील शेवटचा मंगळवार"
 
-#: src/EventEdition/RepeatPanel.vala:368
+#: src/EventEdition/RepeatPanel.vala:392
 msgid "Every last Wednesday"
 msgstr "प्रत्येक महिन्यातील शेवटचा बुधवार"
 
-#: src/EventEdition/RepeatPanel.vala:371
+#: src/EventEdition/RepeatPanel.vala:395
 msgid "Every last Thursday"
 msgstr "प्रत्येक महिन्यातील शेवटचा गुरुवार"
 
-#: src/EventEdition/RepeatPanel.vala:374
+#: src/EventEdition/RepeatPanel.vala:398
 msgid "Every last Friday"
 msgstr "प्रत्येक महिन्यातील शेवटचा शुक्रवार"
 
-#: src/EventEdition/RepeatPanel.vala:377
+#: src/EventEdition/RepeatPanel.vala:401
 msgid "Every last Saturday"
 msgstr "प्रत्येक महिन्यातील शेवटचा शनिवार"
 
-#: src/EventEdition/RepeatPanel.vala:384
+#: src/EventEdition/RepeatPanel.vala:408
 msgid "Every first Sunday"
 msgstr "प्रत्येक महिन्यातील पहिला रविवार"
 
-#: src/EventEdition/RepeatPanel.vala:387
+#: src/EventEdition/RepeatPanel.vala:411
 msgid "Every first Monday"
 msgstr "प्रत्येक महिन्यातील पहिला सोमवार"
 
-#: src/EventEdition/RepeatPanel.vala:390
+#: src/EventEdition/RepeatPanel.vala:414
 msgid "Every first Tuesday"
 msgstr "प्रत्येक महिन्यातील पहिला मंगळवार"
 
-#: src/EventEdition/RepeatPanel.vala:393
+#: src/EventEdition/RepeatPanel.vala:417
 msgid "Every first Wednesday"
 msgstr "प्रत्येक महिन्यातील पहिला बुधवार"
 
-#: src/EventEdition/RepeatPanel.vala:396
+#: src/EventEdition/RepeatPanel.vala:420
 msgid "Every first Thursday"
 msgstr "प्रत्येक महिन्यातील पहिला गुरुवार"
 
-#: src/EventEdition/RepeatPanel.vala:399
+#: src/EventEdition/RepeatPanel.vala:423
 msgid "Every first Friday"
 msgstr "प्रत्येक महिन्यातील पहिला शुक्रवार"
 
-#: src/EventEdition/RepeatPanel.vala:402
+#: src/EventEdition/RepeatPanel.vala:426
 msgid "Every first Saturday"
 msgstr "प्रत्येक महिन्यातील पहिला शनिवार"
 
-#: src/EventEdition/RepeatPanel.vala:409
+#: src/EventEdition/RepeatPanel.vala:433
 msgid "Every second Sunday"
 msgstr "प्रत्येक महिन्यातील दूसरा रविवार"
 
-#: src/EventEdition/RepeatPanel.vala:412
+#: src/EventEdition/RepeatPanel.vala:436
 msgid "Every second Monday"
 msgstr "प्रत्येक महिन्यातील दूसरा सोमवार"
 
-#: src/EventEdition/RepeatPanel.vala:415
+#: src/EventEdition/RepeatPanel.vala:439
 msgid "Every second Tuesday"
 msgstr "प्रत्येक महिन्यातील दूसरा मंगळवार"
 
-#: src/EventEdition/RepeatPanel.vala:418
+#: src/EventEdition/RepeatPanel.vala:442
 msgid "Every second Wednesday"
 msgstr "प्रत्येक महिन्यातील दूसरा बुधवार"
 
-#: src/EventEdition/RepeatPanel.vala:421
+#: src/EventEdition/RepeatPanel.vala:445
 msgid "Every second Thursday"
 msgstr "प्रत्येक महिन्यातील दूसरा गुरुवार"
 
-#: src/EventEdition/RepeatPanel.vala:424
+#: src/EventEdition/RepeatPanel.vala:448
 msgid "Every second Friday"
 msgstr "प्रत्येक महिन्यातील दूसरा शुक्रवार"
 
-#: src/EventEdition/RepeatPanel.vala:427
+#: src/EventEdition/RepeatPanel.vala:451
 msgid "Every second Saturday"
 msgstr "प्रत्येक महिन्यातील दूसरा शनिवार"
 
-#: src/EventEdition/RepeatPanel.vala:434
+#: src/EventEdition/RepeatPanel.vala:458
 msgid "Every third Sunday"
 msgstr "प्रत्येक महिन्यातील तिसरा रविवार"
 
-#: src/EventEdition/RepeatPanel.vala:437
+#: src/EventEdition/RepeatPanel.vala:461
 msgid "Every third Monday"
 msgstr "प्रत्येक महिन्यातील तिसरा सोमवार"
 
-#: src/EventEdition/RepeatPanel.vala:440
+#: src/EventEdition/RepeatPanel.vala:464
 msgid "Every third Tuesday"
 msgstr "प्रत्येक महिन्यातील तिसरा मंगळवार"
 
-#: src/EventEdition/RepeatPanel.vala:443
+#: src/EventEdition/RepeatPanel.vala:467
 msgid "Every third Wednesday"
 msgstr "प्रत्येक महिन्यातील तिसरा बुधवार"
 
-#: src/EventEdition/RepeatPanel.vala:446
+#: src/EventEdition/RepeatPanel.vala:470
 msgid "Every third Thursday"
 msgstr "प्रत्येक महिन्यातील तिसरा गुरुवार"
 
-#: src/EventEdition/RepeatPanel.vala:449
+#: src/EventEdition/RepeatPanel.vala:473
 msgid "Every third Friday"
 msgstr "प्रत्येक महिन्यातील तिसरा शुक्रवार"
 
-#: src/EventEdition/RepeatPanel.vala:452
+#: src/EventEdition/RepeatPanel.vala:476
 msgid "Every third Saturday"
 msgstr "प्रत्येक महिन्यातील तिसरा शनिवार"
 
-#: src/EventEdition/RepeatPanel.vala:459
+#: src/EventEdition/RepeatPanel.vala:483
 msgid "Every fourth Sunday"
 msgstr "प्रत्येक महिन्यातील चौथा रविवार"
 
-#: src/EventEdition/RepeatPanel.vala:462
+#: src/EventEdition/RepeatPanel.vala:486
 msgid "Every fourth Monday"
 msgstr "प्रत्येक महिन्यातील चौथा सोमवार"
 
-#: src/EventEdition/RepeatPanel.vala:465
+#: src/EventEdition/RepeatPanel.vala:489
 msgid "Every fourth Tuesday"
 msgstr "प्रत्येक महिन्यातील चौथा मंगळवार"
 
-#: src/EventEdition/RepeatPanel.vala:468
+#: src/EventEdition/RepeatPanel.vala:492
 msgid "Every fourth Wednesday"
 msgstr "प्रत्येक महिन्यातील चौथा बुधवार"
 
-#: src/EventEdition/RepeatPanel.vala:471
+#: src/EventEdition/RepeatPanel.vala:495
 msgid "Every fourth Thursday"
 msgstr "प्रत्येक महिन्यातील चौथा गुरुवार"
 
-#: src/EventEdition/RepeatPanel.vala:474
+#: src/EventEdition/RepeatPanel.vala:498
 msgid "Every fourth Friday"
 msgstr "प्रत्येक महिन्यातील चौथा शुक्रवार"
 
-#: src/EventEdition/RepeatPanel.vala:477
+#: src/EventEdition/RepeatPanel.vala:501
 msgid "Every fourth Saturday"
 msgstr "प्रत्येक महिन्यातील चौथा शनिवार"
 
-#: src/EventEdition/RepeatPanel.vala:484
+#: src/EventEdition/RepeatPanel.vala:508
 msgid "Every fifth Sunday"
 msgstr "प्रत्येक महिन्यातील पाचवा रविवार"
 
-#: src/EventEdition/RepeatPanel.vala:487
+#: src/EventEdition/RepeatPanel.vala:511
 msgid "Every fifth Monday"
 msgstr "प्रत्येक महिन्यातील पाचवा सोमवार"
 
-#: src/EventEdition/RepeatPanel.vala:490
+#: src/EventEdition/RepeatPanel.vala:514
 msgid "Every fifth Tuesday"
 msgstr "प्रत्येक महिन्यातील पाचवा मंगळवार"
 
-#: src/EventEdition/RepeatPanel.vala:493
+#: src/EventEdition/RepeatPanel.vala:517
 msgid "Every fifth Wednesday"
 msgstr "प्रत्येक महिन्यातील पाचवा बुधवार"
 
-#: src/EventEdition/RepeatPanel.vala:496
+#: src/EventEdition/RepeatPanel.vala:520
 msgid "Every fifth Thursday"
 msgstr "प्रत्येक महिन्यातील पाचवा गुरुवार"
 
-#: src/EventEdition/RepeatPanel.vala:499
+#: src/EventEdition/RepeatPanel.vala:523
 msgid "Every fifth Friday"
 msgstr "प्रत्येक महिन्यातील पाचवा शुक्रवार"
 
-#: src/EventEdition/RepeatPanel.vala:502
+#: src/EventEdition/RepeatPanel.vala:526
 msgid "Every fifth Saturday"
 msgstr "प्रत्येक महिन्यातील पाचवा शनिवार"
 
-#: src/EventEdition/RepeatPanel.vala:512
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Mon"
 msgstr "सोम"
 
-#: src/EventEdition/RepeatPanel.vala:513
+#: src/EventEdition/RepeatPanel.vala:537
 msgid "Tue"
 msgstr "मंगळ"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:538
 msgid "Wed"
 msgstr "बुध"
 
-#: src/EventEdition/RepeatPanel.vala:515
+#: src/EventEdition/RepeatPanel.vala:539
 msgid "Thu"
 msgstr "गुरु"
 
-#: src/EventEdition/RepeatPanel.vala:516
+#: src/EventEdition/RepeatPanel.vala:540
 msgid "Fri"
 msgstr "शुक्र"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:541
 msgid "Sat"
 msgstr "शनि"
 
-#: src/EventEdition/RepeatPanel.vala:518
+#: src/EventEdition/RepeatPanel.vala:542
 msgid "Sun"
 msgstr "रवि"
 
-#: src/Grid/WeekLabels.vala:57 src/Grid/Header.vala:65
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
 msgid "Hide Week Numbers"
 msgstr "आठवडा क्रमांक लपवा"
 
-#: src/Grid/WeekLabels.vala:59 src/Grid/Header.vala:67
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
 msgid "Show Week Numbers"
 msgstr "आठवडा क्रमांक दाखवा"
 
@@ -653,7 +664,7 @@ msgstr "नवीन कॅलेंडर बनवा"
 msgid "Save"
 msgstr "सेव्ह करा"
 
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:49
+#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
 msgid "Remove"
 msgstr "कॅलेंडर मिटवा"
 
@@ -661,7 +672,7 @@ msgstr "कॅलेंडर मिटवा"
 msgid "Not Removable"
 msgstr "काढता येण्याजोगे नाही"
 
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:36
+#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
 msgid "Edit…"
 msgstr "बदला…"
 
@@ -678,32 +689,98 @@ msgstr "बदल काढा"
 msgid "\"%s\" removed"
 msgstr "\"%s\" मिटविले"
 
-#: src/SourceDialog/SourceSelector.vala:51
+#: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
 msgstr "नवीन कॅलेंडर बनवा…"
 
+#. /Translators: Give a list of appointment related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:65
+msgid "appointment;meeting"
+msgstr "भेट; बैठक"
+
+#. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:70
+msgid "birthday;anniversary;party"
+msgstr "वाढदिवस; वर्धापन दिन; पार्टी"
+
+#. /Translators: Give a list of voice call related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:75
+msgid "call;phone;telephone;ring"
+msgstr "कॉल; फोन; टेलिफोन; रिंग"
+
+#. /Translators: Give a list of social drinking related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:80
+msgid "bar;cocktails;drinks;happy hour"
+msgstr "बार; कॉकटेल; पेय; हॅपी अवर"
+
+#. /Translators: Give a list of car driving related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:85
+msgid "car;drive;driving;road trip;"
+msgstr "कार; ड्राईव्ह; ड्रायव्हिंग; रोड ट्रिप;"
+
+#. /Translators: Give a list of air travel related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:90
+msgid "flight;airport;"
+msgstr "उड्डाण; विमानतळ;"
+
+#. /Translators: Give a list of food consumption related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:95
+msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
+msgstr "न्याहारी; ब्रंच; डिनर; लंच; रात्रीचे जेवण, स्टीकहाउस; बर्गर; जेवण; बार्बेक्यू"
+
+#. /Translators: Give a list of law related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:100
+msgid "court;jury;tax;attorney;lawyer;contract"
+msgstr "न्यायालय; जूरी; कर; मुखत्यार; वकील; करार"
+
+#. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:105
+msgid "movie"
+msgstr "चित्रपट"
+
+#. /Translators: Give a list of wedding related keywords, separated by semicolons.
+#. /The number of words can differ from US English and need not be a direct translation.
+#: src/Widgets/AgendaEventRow.vala:110
+msgid "wedding"
+msgstr "लग्न"
+
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:176
+#: src/Widgets/AgendaEventRow.vala:310
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:179
+#: src/Widgets/AgendaEventRow.vala:313
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:188
+#: src/Widgets/AgendaEventRow.vala:325
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
+#. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
+#: src/Widgets/AgendaEventRow.vala:334
+#, c-format
+msgid "%s at %s"
+msgstr "%s चे %s"
+
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:195
+#: src/Widgets/AgendaEventRow.vala:337
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
@@ -729,11 +806,11 @@ msgstr "एक्सपोर्ट कॅलेंडर…"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:39
 msgid "Remove Event"
 msgstr "आठवणीची खूण डिलीट करा"
 
-#: src/Widgets/EventMenu.vala:43
+#: src/Widgets/EventMenu.vala:41
 msgid "Remove Occurrence"
 msgstr "घटना काढा"
 

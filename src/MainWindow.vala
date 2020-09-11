@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -26,7 +26,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     public const string ACTION_NEW_EVENT = "action_new_event";
     public const string ACTION_SHOW_TODAY = "action_show_today";
 
-    private const ActionEntry[] action_entries = {
+    private const ActionEntry[] ACTION_ENTRIES = {
         { ACTION_NEW_EVENT, action_new_event },
         { ACTION_SHOW_TODAY, action_show_today }
     };
@@ -49,7 +49,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     construct {
-        add_action_entries (action_entries, this);
+        add_action_entries (ACTION_ENTRIES, this);
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
@@ -79,7 +79,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         var hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         hpaned.pack1 (calview, true, false);
-        hpaned.pack2 (sidebar, true, false);
+        hpaned.pack2 (sidebar, false, false);
 
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
@@ -98,7 +98,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         Maya.Application.saved_state.bind ("hpaned-position", hpaned, "position", GLib.SettingsBindFlags.DEFAULT);
 
-        Model.CalendarModel.get_default ().error_received.connect ((message) => {
+        Calendar.Store.get_default ().error_received.connect ((message) => {
             Idle.add (() => {
                 infobar_label.label = message;
                 infobar.show ();
@@ -108,8 +108,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void on_tb_add_clicked (DateTime dt) {
-        var dialog = new Maya.View.EventDialog (null, dt);
-        dialog.transient_for = this;
+        var dialog = new Maya.View.EventDialog (null, dt, this);
         dialog.show_all ();
     }
 
@@ -122,15 +121,14 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_remove (ECal.Component comp) {
-        Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
+        Calendar.Store.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
     }
 
     public void on_modified (ECal.Component comp) {
         E.Source src = comp.get_data ("source");
 
-        if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
-            var dialog = new Maya.View.EventDialog (comp, null);
-            dialog.transient_for = this;
+        if (src.writable == true && Calendar.Store.get_default ().calclient_is_readonly (src) == false) {
+            var dialog = new Maya.View.EventDialog (comp, null, this);
             dialog.present ();
         } else {
             Gdk.beep ();

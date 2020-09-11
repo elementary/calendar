@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -48,15 +48,24 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
     private const int EVENT_MARGIN = 3;
 
+    private static Gtk.CssProvider style_provider;
+
     public GridDay (DateTime date) {
         Object (date: date);
     }
 
+    static construct {
+        style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("/io/elementary/calendar/Grid.css");
+    }
+
     construct {
-        event_buttons = new GLib.HashTable<string, EventButton> (str_hash, str_equal);
+        event_buttons = new GLib.HashTable<string, EventButton>.full (str_hash, str_equal, null, (value_data) => {
+            ((EventButton)value_data).destroy_button ();
+        });
 
         event_box = new VAutoHider ();
-        event_box.margin =  EVENT_MARGIN;
+        event_box.margin = EVENT_MARGIN;
         event_box.margin_top = 0;
         event_box.expand = true;
 
@@ -66,13 +75,13 @@ public class Maya.View.GridDay : Gtk.EventBox {
         events |= Gdk.EventMask.KEY_PRESS_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
 
-        var style_provider = Util.Css.get_css_provider ();
-        get_style_context ().add_provider (style_provider, 600);
-        get_style_context ().add_class ("cell");
+        unowned Gtk.StyleContext style_context = get_style_context ();
+        style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        style_context.add_class ("cell");
 
         var label = new Gtk.Label ("");
         label.halign = Gtk.Align.END;
-        label.get_style_context ().add_provider (style_provider, 600);
+        label.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         label.margin = EVENT_MARGIN;
         label.margin_bottom = 0;
         label.name = "date";
@@ -105,17 +114,25 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-        var calmodel = Model.CalendarModel.get_default ();
+        var calmodel = Calendar.Store.get_default ();
         var comp = calmodel.drag_component;
         unowned ICal.Component icalcomp = comp.get_icalcomponent ();
         E.Source src = comp.get_data ("source");
         var start = icalcomp.get_dtstart ();
         var end = icalcomp.get_dtend ();
-        var gap = date.get_day_of_month () - start.day;
+        var gap = date.get_day_of_month () - start.get_day ();
+#if E_CAL_2_0
+        start.set_day (start.get_day () + gap);
+#else
         start.day += gap;
+#endif
 
-        if (end.is_null_time () == 0) {
+        if (!end.is_null_time ()) {
+#if E_CAL_2_0
+            end.set_day (end.get_day () + gap);
+#else
             end.day += gap;
+#endif
             icalcomp.set_dtend (end);
         }
 
@@ -124,13 +141,9 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     public void add_event_button (EventButton button) {
-        unowned ICal.Component calcomp = button.comp.get_icalcomponent ();
-        string uid = calcomp.get_uid ();
+        string uid = button.get_uid ();
         lock (event_buttons) {
-            if (event_buttons.contains (uid)) {
-                return;
-            }
-
+            event_buttons.remove (uid);
             event_buttons.set (uid, button);
         }
 
@@ -143,49 +156,30 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
     }
 
-    public bool update_event (ECal.Component comp) {
-        unowned ICal.Component calcomp = comp.get_icalcomponent ();
-        string uid = calcomp.get_uid ();
-
+    public bool update_event (ECal.Component modified_event) {
+        string uid = modified_event.get_id ().get_uid ();
         lock (event_buttons) {
-            var button = event_buttons.get (uid);
-            if (button != null) {
-                button.update (comp);
-                event_box.update (button);
-            } else {
-                return false;
+            var uidbutton = event_buttons.get (uid);
+            if (uidbutton != null) {
+                uidbutton.update (modified_event);
+                event_box.update (uidbutton);
+                return true;
             }
         }
 
-        return true;
+        return false;
     }
 
     public void remove_event (ECal.Component comp) {
-        unowned ICal.Component calcomp = comp.get_icalcomponent ();
-        string uid = calcomp.get_uid ();
+        string uid = comp.get_id ().get_uid ();
+
         lock (event_buttons) {
-            var button = event_buttons.get (uid);
-            if (button != null) {
-                event_buttons.remove (uid);
-                destroy_button (button);
-            }
+            event_buttons.remove (uid);
         }
     }
 
     public void clear_events () {
-        foreach (weak EventButton button in event_buttons.get_values ()) {
-            destroy_button (button);
-        }
-
         event_buttons.remove_all ();
-    }
-
-    private void destroy_button (EventButton button) {
-        button.set_reveal_child (false);
-        Timeout.add (button.transition_duration, () => {
-            button.destroy ();
-            return false;
-        });
     }
 
     public void set_selected (bool selected) {
@@ -205,7 +199,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     private bool on_key_press (Gdk.EventKey event) {
-        if (event.keyval == Gdk.keyval_from_name("Return") ) {
+        if (event.keyval == Gdk.keyval_from_name ("Return") ) {
             on_event_add (date);
             return true;
         }

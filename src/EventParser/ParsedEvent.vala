@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -28,15 +28,19 @@ public class ParsedEvent : GLib.Object {
     public string participants;
     public DateTime from;
     public DateTime to;
-    public bool all_day;
+    public bool? all_day;
+    public bool date_parsed;
+    public bool time_parsed;
 
-    public ParsedEvent (string _title = "", DateTime? _from = null, DateTime? _to = null, string _location = "", bool _all_day = false, string _participants = "") {
+    public ParsedEvent (string _title = "", DateTime? _from = null, DateTime? _to = null, string _location = "", bool? _all_day = null, string _participants = "", bool _date_parsed = false, bool _time_parsed = false) {
         this.title = _title;
         this.location = _location;
         this.participants = _participants;
         this.from = _from;
         this.to = _to;
         this.all_day = _all_day;
+        this.date_parsed = _date_parsed;
+        this.time_parsed = _time_parsed;
     }
 
     public void set_length_to_minutes (int minutes) {

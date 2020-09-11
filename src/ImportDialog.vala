@@ -5,12 +5,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -67,13 +67,21 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
 
     private void import_files () {
         var source = calchooser_button.current_source;
-        var calmodel = Model.CalendarModel.get_default ();
+        var calmodel = Calendar.Store.get_default ();
         foreach (var file in files) {
+#if E_CAL_2_0
+            var ical = ECal.util_parse_ics_file (file.get_path ());
+#else
             var ical = ECal.Util.parse_ics_file (file.get_path ());
-            if (ical.is_valid () == 1) {
-                for (unowned ICal.Component comp = ical.get_first_component (ICal.ComponentKind.VEVENT);
+#endif
+            if (ical.is_valid ()) {
+#if E_CAL_2_0
+                for (ICal.Component comp = ical.get_first_component (ICal.ComponentKind.VEVENT_COMPONENT);
+#else
+                for (unowned ICal.Component comp = ical.get_first_component (ICal.ComponentKind.VEVENT_COMPONENT);
+#endif
                      comp != null;
-                     comp = ical.get_next_component (ICal.ComponentKind.VEVENT)) {
+                     comp = ical.get_next_component (ICal.ComponentKind.VEVENT_COMPONENT)) {
                     var ecal = new ECal.Component.from_string (comp.as_ical_string ());
                     calmodel.add_event (source, ecal);
                 }

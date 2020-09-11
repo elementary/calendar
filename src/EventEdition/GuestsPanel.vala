@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -48,16 +48,18 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         set_sensitive (parent_dialog.can_edit);
         orientation = Gtk.Orientation.VERTICAL;
 
-        guest_store = new Gtk.ListStore(2, typeof (string), typeof (string));
+        guest_store = new Gtk.ListStore (2, typeof (string), typeof (string));
 
         var guest_label = new Granite.HeaderLabel (_("Participants:"));
 
         load_contacts.begin ();
 
-        var no_guests_label = new Gtk.Label ("");
-        no_guests_label.set_markup (_("No Participants"));
-        no_guests_label.sensitive = false;
+        var no_guests_label = new Gtk.Label (_("No Participants"));
         no_guests_label.show ();
+
+        unowned Gtk.StyleContext no_guests_context = no_guests_label.get_style_context ();
+        no_guests_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_guests_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         guest_list = new Gtk.ListBox ();
         guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
@@ -110,7 +112,12 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
             // Load the guests
             int count = comp.count_properties (ICal.PropertyKind.ATTENDEE_PROPERTY);
 
-            unowned ICal.Property property = comp.get_first_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
+#if E_CAL_2_0
+            ICal.Property property;
+#else
+            unowned ICal.Property property;
+#endif
+            property = comp.get_first_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             for (int i = 0; i < count; i++) {
                 if (property.get_attendee () != null)
                     add_guest (property);
@@ -146,14 +153,22 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         int count = comp.count_properties (ICal.PropertyKind.ATTENDEE_PROPERTY);
 
         for (int i = 0; i < count; i++) {
+#if E_CAL_2_0
+            ICal.Property remove_prop;
+#else
             unowned ICal.Property remove_prop;
+#endif
             if (i == 0) {
                 remove_prop = comp.get_first_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             } else {
                 remove_prop = comp.get_next_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             }
 
+#if E_CAL_2_0
+            ICal.Property found_prop = remove_prop;
+#else
             unowned ICal.Property found_prop = remove_prop;
+#endif
             bool can_remove = true;
             foreach (unowned ICal.Property attendee in attendees) {
                 if (attendee.get_uid () == remove_prop.get_uid ()) {
@@ -171,8 +186,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
         // Add the new guests
         foreach (unowned ICal.Property attendee in attendees) {
-            var clone = new ICal.Property.clone (attendee);
-            comp.add_property (clone);
+            comp.add_property (attendee.clone ());
         }
     }
 
@@ -194,7 +208,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         var attendee = new ICal.Property (ICal.PropertyKind.ATTENDEE_PROPERTY);
         Value selected_value;
 
-        model.get_value (iter, 1, out selected_value);;
+        model.get_value (iter, 1, out selected_value);
         attendee.set_attendee (selected_value.get_string ());
         add_guest ((owned)attendee);
         guest_entry.delete_text (0, -1);

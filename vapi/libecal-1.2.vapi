@@ -37,9 +37,9 @@ namespace ECal {
 		[CCode (has_construct_function = false)]
 		public Client.from_uri (string uri, ECal.ClientSourceType source_type) throws GLib.Error;
 		public void generate_instances (ulong start, ulong end, GLib.Cancellable? cancellable, ECal.RecurInstanceFn cb, void* cb_data, owned GLib.DestroyNotify? destroy_cb_data);
-		public void generate_instances_for_object (ICal.Component icalcomp, ulong start, ulong end, GLib.Cancellable? cancellable, ECal.RecurInstanceFn cb, void* cb_data, owned GLib.DestroyNotify? destroy_cb_data);
-		public void generate_instances_for_object_sync (ICal.Component icalcomp, ulong start, ulong end, ECal.RecurInstanceFn cb, void* cb_data);
-		public void generate_instances_sync (ulong start, ulong end, ECal.RecurInstanceFn cb, void* cb_data);
+		public void generate_instances_for_object (ICal.Component icalcomp, time_t start, time_t end, GLib.Cancellable? cancellable, [CCode (delegate_target_pos = 5.33333, destroy_notify_pos = 5.66667)] ECal.RecurInstanceFn cb);
+		public void generate_instances_for_object_sync (ICal.Component icalcomp, time_t start, time_t end, [CCode (delegate_target_pos = 4.33333)] ECal.RecurInstanceFn cb);
+		public void generate_instances_sync (ulong start, ulong end, [CCode (delegate_target_pos = 3.33333)] ECal.RecurInstanceFn cb);
 		public async bool get_attachment_uris (string uid, string rid, GLib.Cancellable? cancellable, out GLib.SList attachment_uris) throws GLib.Error;
 		public bool get_attachment_uris_sync (string uid, string rid, GLib.SList attachment_uris, GLib.Cancellable? cancellable) throws GLib.Error;
 		public unowned string get_component_as_string (ICal.Component icalcomp);
@@ -115,7 +115,7 @@ namespace ECal {
 		public static void free_categories_list (GLib.SList<string> categ_list);
 		public static void free_datetime (ECal.ComponentDateTime dt);
 		public static void free_exdate_list (GLib.SList exdate_list);
-		public static void free_geo (ICal.GeoType geo);
+		public static void free_geo (ICal.Geo geo);
 		public static void free_icaltimetype (ICal.Time t);
 		public static void free_id (ECal.ComponentId id);
 		public static void free_percent (int percent);
@@ -131,42 +131,42 @@ namespace ECal {
 		public string get_as_string ();
 		public void get_attachment_list (out GLib.SList<string> attachment_list);
 		public void get_attendee_list (out GLib.SList<ECal.ComponentAttendee?> attendee_list);
-		public void get_categories (out string categories);
+		public void get_categories (out string? categories);
 		public void get_categories_list (out GLib.SList<string> categ_list);
-		public void get_classification (out ECal.ComponentClassification classif);
+		public void get_classification (out ECal.ComponentClassification? classif);
 		public void get_comment_list (out GLib.SList<ECal.ComponentText> text_list);
-		public void get_completed (out ICal.Time t);
+		public void get_completed (out ICal.Time? t);
 		public void get_contact_list (out GLib.SList<ECal.ComponentText> text_list);
-		public void get_created (out ICal.Time t);
+		public void get_created (out ICal.Time? t);
 		public void get_description_list (out GLib.SList<ECal.ComponentText> text_list);
-		public void get_dtend (out ECal.ComponentDateTime dt);
-		public void get_dtstamp (out ICal.Time t);
+		public void get_dtend (out ECal.ComponentDateTime? dt);
+		public void get_dtstamp (out ICal.Time? t);
 		public void get_dtstart (out ECal.ComponentDateTime dt);
-		public void get_due (out ECal.ComponentDateTime dt);
+		public void get_due (out ECal.ComponentDateTime? dt);
 		public void get_exdate_list (out GLib.SList<ECal.ComponentDateTime> exdate_list);
-		public void get_exrule_list (out GLib.SList<ECal.ComponentRange> recur_list);
+		public void get_exrule_list (out GLib.SList<ICal.Recurrence> recur_list);
 		public void get_exrule_property_list (out GLib.SList<ECal.ComponentRange> recur_list);
-		public void get_geo (out ICal.GeoType geo);
+		public void get_geo (out ICal.Geo? geo);
 		public unowned ICal.Component get_icalcomponent ();
 		public ECal.ComponentId get_id ();
-		public void get_last_modified (out ICal.Time t);
-		public void get_location (out string location);
+		public void get_last_modified (out ICal.Time? t);
+		public void get_location (out string? location);
 		public int get_num_attachments ();
-		public void get_organizer (out ECal.ComponentOrganizer organizer);
-		public void get_percent (out int percent);
+		public void get_organizer (out ECal.ComponentOrganizer? organizer);
+		public void get_percent (out int? percent);
 		public int get_percent_as_int ();
-		public void get_priority (out int priority);
+		public void get_priority (out int? priority);
 		public void get_rdate_list (out GLib.SList<ECal.ComponentPeriod> period_list);
-		public void get_recurid (out ECal.ComponentRange recur_id);
+		public void get_recurid (out ECal.ComponentRange? recur_id);
 		public string get_recurid_as_string ();
-		public void get_rrule_list (out GLib.SList<ECal.ComponentRange> recur_list);
+		public void get_rrule_list (out GLib.SList<ICal.Recurrence> recur_list);
 		public void get_rrule_property_list (out GLib.SList<ECal.ComponentRange> recur_list);
-		public void get_sequence (out int sequence);
-		public void get_status (out ICal.PropertyStatus status);
-		public void get_summary (out ECal.ComponentText summary);
-		public void get_transparency (out ECal.ComponentTransparency transp);
+		public void get_sequence (out int? sequence);
+		public void get_status (out ICal.PropertyStatus? status);
+		public ECal.ComponentText get_summary ();
+		public void get_transparency (out ECal.ComponentTransparency? transp);
 		public void get_uid (out string uid);
-		public void get_url (out string url);
+		public void get_url (out string? url);
 		public ECal.ComponentVType get_vtype ();
 		public bool has_alarms ();
 		public bool has_attachments ();
@@ -189,7 +189,7 @@ namespace ECal {
 		public void set_categories_list (GLib.SList<string> categ_list);
 		public void set_classification (ECal.ComponentClassification classif);
 		public void set_comment_list (GLib.SList<ECal.ComponentText> text_list);
-		public void set_completed (ICal.Time t);
+		public void set_completed (ref ICal.Time t);
 		public void set_contact_list (GLib.SList<ECal.ComponentText> text_list);
 		public void set_created (ICal.Time t);
 		public void set_description_list (GLib.SList<ECal.ComponentText> text_list);
@@ -197,20 +197,21 @@ namespace ECal {
 		public void set_dtstamp (ICal.Time t);
 		public void set_dtstart (ECal.ComponentDateTime dt);
 		public void set_due (ECal.ComponentDateTime dt);
-		public void set_exdate_list (GLib.SList exdate_list);
-		public void set_exrule_list (GLib.SList<ECal.ComponentRange> recur_list);
-		public void set_geo (ICal.GeoType* geo);
+		public void set_exdate_list (GLib.SList<ECal.ComponentDateTime>? exdate_list);
+		public void set_exrule_list (GLib.SList<ICal.Recurrence> recur_list);
+		public void set_geo (ICal.Geo* geo);
 		public bool set_icalcomponent (owned ICal.Component icalcomp);
 		public void set_last_modified (ICal.Time t);
 		public void set_location (string location);
 		public void set_new_vtype (ECal.ComponentVType type);
 		public void set_organizer (ECal.ComponentOrganizer organizer);
 		public void set_percent (int percent);
-		public void set_percent_as_int (int percent);
+		[CCode (cname = "e_cal_component_set_percent_as_int")]
+		public void set_percent_complete (int percent);
 		public void set_priority (int priority);
 		public void set_rdate_list (GLib.SList<ECal.ComponentPeriod> period_list);
 		public void set_recurid (ECal.ComponentRange recur_id);
-		public void set_rrule_list (GLib.SList<ECal.ComponentRange> recur_list);
+		public void set_rrule_list (GLib.SList<ICal.Recurrence> recur_list);
 		public void set_sequence (int sequence);
 		public void set_status (ICal.PropertyStatus status);
 		public void set_summary (ECal.ComponentText summary);
@@ -256,16 +257,35 @@ namespace ECal {
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct ComponentAlarmRepeat {
 		public int repetitions;
-		public ICal.DurationType duration;
+		public ICal.Duration duration;
 	}
 	[SimpleType]
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct ComponentAlarmTrigger {
-		public ECal.ComponentAlarmTriggerType type;
+		public ECal.ComponentAlarmTriggerKind type;
 		[CCode(cname = "u.rel_duration")]
-		public ICal.DurationType rel_duration;
+		public ICal.Duration rel_duration;
 		[CCode(cname = "u.abs_time")]
 		public ICal.Time abs_time;
+		[CCode(cname = "_vala_e_cal_component_alarm_trigger_get_kind")]
+		public ECal.ComponentAlarmTriggerKind get_kind () {
+			return type;
+		}
+
+		[CCode(cname = "_vala_e_cal_component_alarm_trigger_set_kind")]
+		public void set_kind (ECal.ComponentAlarmTriggerKind kind) {
+			type = kind;
+		}
+
+		[CCode(cname = "_vala_e_cal_component_alarm_trigger_get_duration")]
+		public unowned ICal.Duration get_duration () {
+			return rel_duration;
+		}
+
+		[CCode(cname = "_vala_e_cal_component_alarm_trigger_set_duration")]
+		public void set_duration (ICal.Duration duration) {
+			rel_duration = duration;
+		}
 	}
 	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_alarms_free")]
 	public struct ComponentAlarms {
@@ -280,7 +300,7 @@ namespace ECal {
 		public weak string member;
 		public ICal.ParameterCutype cutype;
 		public ICal.ParameterRole role;
-		public ICal.ParameterPartStat status;
+		public ICal.ParameterPartstat status;
 		public bool rsvp;
 		public weak string delto;
 		public weak string delfrom;
@@ -288,17 +308,36 @@ namespace ECal {
 		public weak string cn;
 		public weak string language;
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_free_datetime")]
+	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_free_datetime", has_copy_function = false, has_destroy_function = false)]
 	public struct ComponentDateTime {
-		public ICal.Time* value;
+		public ICal.Time? value;
 		public weak string tzid;
+		[CCode (cname = "_vala_e_cal_component_get_value")]
+		public unowned ICal.Time? get_value () {
+			return value;
+		}
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", free_function = "e_cal_component_free_id", copy_function = "e_cal_component_id_copy")]
-	public struct ComponentId {
+	[CCode (cheader_filename = "libecal/libecal.h", copy_function = "g_boxed_copy", free_function = "g_boxed_free", type_id = "e_cal_component_id_get_type ()")]
+	[Compact]
+	public class ComponentId {
+		[CCode (has_construct_function = false)]
+		[Version (since = "3.10")]
+		public ComponentId (string uid, string? rid);
+		[Version (since = "3.10")]
+		public ECal.ComponentId copy ();
+		[Version (since = "3.10")]
+		public bool equal (ECal.ComponentId id2);
+		[Version (since = "3.10")]
+		public uint hash ();
 		public weak string uid;
-		public weak string rid;
+		public weak string? rid;
+		[CCode (cname = "_vala_e_cal_component_id_get_uid")]
 		public unowned string get_uid () {
 			return this.uid;
+		}
+		[CCode (cname = "_vala_e_cal_component_id_get_rid")]
+		public unowned string? get_rid () {
+			return this.rid;
 		}
 	}
 	[CCode (cheader_filename = "libecal/libecal.h")]
@@ -314,7 +353,7 @@ namespace ECal {
 		[CCode (cheader_filename = "libecal/libecal.h")]
 		public ICal.Time start;
 		[CCode(cname = "u.duration")]
-		public ICal.DurationType duration;
+		public ICal.Duration duration;
 		[CCode(cname = "u.end")]
 		public ICal.Time end;
 	}
@@ -327,6 +366,14 @@ namespace ECal {
 	public struct ComponentText {
 		public weak string value;
 		public weak string altrep;
+		[CCode (cname = "_vala_e_cal_component_text_get_altrep")]
+		public unowned string get_altrep () {
+			return this.altrep;
+		}
+		[CCode (cname = "_vala_e_cal_component_text_get_value")]
+		public unowned string get_value () {
+			return this.value;
+		}
 	}
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public struct ObjInstance {
@@ -383,8 +430,8 @@ namespace ECal {
 		NONE,
 		NOTIFY_INITIAL
 	}
-	[CCode (cheader_filename = "libecal/libecal.h", cprefix = "E_CAL_COMPONENT_ALARM_TRIGGER_", has_type_id = false)]
-	public enum ComponentAlarmTriggerType {
+	[CCode (cheader_filename = "libecal/libecal.h", cname = "ECalComponentAlarmTriggerType", cprefix = "E_CAL_COMPONENT_ALARM_TRIGGER_", has_type_id = false)]
+	public enum ComponentAlarmTriggerKind {
 		NONE,
 		RELATIVE_START,
 		RELATIVE_END,
@@ -572,8 +619,12 @@ namespace ECal {
 		Remote,
 		AnyMode
 	}
+	[CCode (cheader_filename = "libecal/libecal.h", instance_pos = 3.9)]
+	public delegate bool RecurInstanceCb (ICal.Component icomp, ICal.Time instance_start, ICal.Time instance_end, GLib.Cancellable? cancellable = null) throws GLib.Error;
+	[CCode (cheader_filename = "libecal/libecal.h", instance_pos = 1.9)]
+	public delegate unowned ICal.Timezone? RecurResolveTimezoneCb (string tzid, GLib.Cancellable? cancellable = null) throws GLib.Error;
 	[CCode (cheader_filename = "libecal/libecal.h")]
-	public delegate bool RecurInstanceFn (ECal.Component comp, ulong instance_start, ulong instance_end);
+	public delegate bool RecurInstanceFn (ECal.Component comp, time_t instance_start, time_t instance_end);
 	[CCode (cheader_filename = "libecal/libecal.h")]
 	public delegate ICal.Timezone RecurResolveTimezoneFn (string tzid);
 	[CCode (cheader_filename = "libecal/libecal.h")]
@@ -583,6 +634,8 @@ namespace ECal {
 	public static string cal_system_timezone_get_location ();
 	[CCode (cheader_filename = "libecal/libecal.h", cname = "isodate_from_time_t")]
 	public static unowned string isodate_from_time_t (time_t t);
+	[CCode (cheader_filename = "libecal/libecal.h")]
+	public static bool recur_generate_instances_sync (ICal.Component icalcomp, ICal.Time interval_start, ICal.Time interval_end, [CCode (delegate_target_pos = 4.5)] ECal.RecurInstanceCb? callback, [CCode (delegate_target_pos = 5.5)] ECal.RecurResolveTimezoneCb? get_tz_callback, ICal.Timezone default_timezone, GLib.Cancellable? cancellable = null) throws GLib.Error;
 	namespace Util {
 		[CCode (cheader_filename = "libecal/libecal.h", cname = "icaltimetype_to_tm")]
 		public static Posix.tm icaltimetype_to_tm (ICal.Time itt);
@@ -630,6 +683,8 @@ namespace ECal {
 		public static ICal.Time tm_to_icaltimetype (Posix.tm time, bool is_date);
 		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_get_system_timezone_location")]
 		public static string get_system_timezone_location ();
+		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_get_system_timezone")]
+		public static unowned ICal.Timezone get_system_timezone ();
 		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_priority_from_string")]
 		public static int priority_from_string (string string);
 		[CCode (cheader_filename = "libecal/libecal.h", cname = "e_cal_util_priority_to_string")]

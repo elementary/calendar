@@ -5,12 +5,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -20,29 +20,31 @@
 
 public class Maya.View.EventButton : Gtk.Revealer {
     public ECal.Component comp { get; construct set; }
-    public GLib.DateTime date { get; construct; }
+
+    private static Gtk.CssProvider css_provider;
 
     private Gtk.Label label;
     private Gtk.StyleContext grid_style_context;
 
-    public EventButton (ECal.Component comp, GLib.DateTime date) {
+    public EventButton (ECal.Component comp) {
         Object (
-             comp: comp,
-             date: date
+             comp: comp
          );
+    }
+
+    static construct {
+        css_provider = new Gtk.CssProvider ();
+        css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
     }
 
     construct {
         transition_type = Gtk.RevealerTransitionType.CROSSFADE;
 
-        label = new Gtk.Label (get_summary ());
+        label = new Gtk.Label (comp.get_summary ().get_value ());
         label.hexpand = true;
         label.ellipsize = Pango.EllipsizeMode.END;
         label.xalign = 0;
         label.show ();
-
-        var css_provider = new Gtk.CssProvider ();
-        css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
 
         var internal_grid = new Gtk.Grid ();
         internal_grid.add (label);
@@ -65,9 +67,9 @@ public class Maya.View.EventButton : Gtk.Revealer {
             } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
                 E.Source src = comp.get_data ("source");
 
-                bool sensitive = src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false;
+                bool sensitive = src.writable == true && Calendar.Store.get_default ().calclient_is_readonly (src) == false;
 
-                var menu = new Maya.EventMenu (comp, date);
+                var menu = new Maya.EventMenu (comp);
                 menu.attach_to_widget (this, null);
 
                 menu.popup_at_pointer (event);
@@ -84,9 +86,9 @@ public class Maya.View.EventButton : Gtk.Revealer {
         Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2}, Gdk.DragAction.MOVE);
 
         event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
-            Model.CalendarModel.get_default ().drag_component = comp;
+            Calendar.Store.get_default ().drag_component = comp;
             unowned ICal.Component icalcomp = comp.get_icalcomponent ();
-            unowned string ical_str = icalcomp.as_ical_string ();
+            var ical_str = icalcomp.as_ical_string ();
             sel.set_text (ical_str, ical_str.length);
             try {
                 var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
@@ -109,15 +111,13 @@ public class Maya.View.EventButton : Gtk.Revealer {
         });
     }
 
-    public void update (ECal.Component event) {
-       this.comp = comp;
-       label.label = get_summary ();
+    public string get_uid () {
+        return comp.get_id ().get_uid ();
     }
 
-    public string get_summary () {
-        ECal.ComponentText summary;
-        comp.get_summary (out summary);
-        return summary.value;
+    public void update (ECal.Component modified) {
+        this.comp = modified;
+        label.label = comp.get_summary ().get_value ();
     }
 
     private void reload_css (string background_color) {
@@ -130,5 +130,13 @@ public class Maya.View.EventButton : Gtk.Revealer {
         } catch (GLib.Error e) {
             critical (e.message);
         }
+    }
+
+    public void destroy_button () {
+        set_reveal_child (false);
+        Timeout.add (transition_duration, () => {
+            destroy ();
+            return false;
+        });
     }
 }

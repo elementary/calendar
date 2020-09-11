@@ -19,7 +19,7 @@
 namespace Maya {
     private static bool has_debug;
 
-    const OptionEntry[] options =  {
+    const OptionEntry[] OPTIONS = {
         { "debug", 'd', 0, OptionArg.NONE, out has_debug,
         N_("Print debug information"), null},
         { null }
@@ -43,11 +43,11 @@ namespace Maya {
 
         private void load_today_events () {
             event_uid = new Gee.HashMap<ECal.Component, string> ();
-            var model = Maya.Model.CalendarModel.get_default ();
+            var model = Calendar.Store.get_default ();
             model.events_added.connect (on_events_added);
             model.events_updated.connect (on_events_updated);
             model.events_removed.connect (on_events_removed);
-            model.month_start = Maya.Util.get_start_of_month (new DateTime.now_local ());
+            model.month_start = Calendar.Util.datetime_get_start_of_month (new DateTime.now_local ());
         }
 
         private void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
@@ -84,27 +84,36 @@ namespace Maya {
 
         private void add_event (E.Source source, ECal.Component event) {
             unowned ICal.Component comp = event.get_icalcomponent ();
-            debug ("Event [%s, %s, %s]".printf (comp.get_summary(), source.dup_display_name(), comp.get_uid()));
+            debug ("Event [%s, %s, %s]".printf (comp.get_summary (), source.dup_display_name (), comp.get_uid ()));
             foreach (var alarm_uid in event.get_alarm_uids ()) {
                 ECal.ComponentAlarm e_alarm = event.get_alarm (alarm_uid);
                 ECal.ComponentAlarmAction action;
+
+#if E_CAL_2_0
+                action = e_alarm.get_action ();
+#else
                 e_alarm.get_action (out action);
+#endif
                 switch (action) {
                     case (ECal.ComponentAlarmAction.DISPLAY):
                         ECal.ComponentAlarmTrigger trigger;
+#if E_CAL_2_0
+                        trigger = e_alarm.get_trigger ();
+#else
                         e_alarm.get_trigger (out trigger);
-                        if (trigger.type == ECal.ComponentAlarmTriggerType.RELATIVE_START) {
-                            ICal.DurationType duration = trigger.rel_duration;
-                            var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+#endif
+                        if (trigger.get_kind () == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
+                            ICal.Duration duration = trigger.get_duration ();
+                            var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
                             var now = new DateTime.now_local ();
                             if (now.compare (start_time) > 0) {
                                 continue;
                             }
-                            start_time = start_time.add_weeks (-(int)duration.weeks);
-                            start_time = start_time.add_days (-(int)duration.days);
-                            start_time = start_time.add_hours (-(int)duration.hours);
-                            start_time = start_time.add_minutes (-(int)duration.minutes);
-                            start_time = start_time.add_seconds (-(int)duration.seconds);
+                            start_time = start_time.add_weeks (-(int)duration.get_weeks ()); //vala-lint=space-before-paren
+                            start_time = start_time.add_days (-(int)duration.get_days ()); //vala-lint=space-before-paren
+                            start_time = start_time.add_hours (-(int)duration.get_hours ()); //vala-lint=space-before-paren
+                            start_time = start_time.add_minutes (-(int)duration.get_minutes ()); //vala-lint=space-before-paren
+                            start_time = start_time.add_seconds (-(int)duration.get_seconds ()); //vala-lint=space-before-paren
                             if (start_time.get_year () == now.get_year () && start_time.get_day_of_year () == now.get_day_of_year ()) {
                                 var time = time_until_now (start_time);
                                 if (time >= 0) {
@@ -141,7 +150,7 @@ namespace Maya {
 
             unowned ICal.Component comp = event.get_icalcomponent ();
             var primary_text = "%s".printf (comp.get_summary ());
-            var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+            var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
             var now = new DateTime.now_local ();
             string secondary_text = "";
             var h24_settings = new GLib.Settings ("org.gnome.desktop.interface");
@@ -166,7 +175,9 @@ namespace Maya {
 
         private void update_event (E.Source source, ECal.Component event) {
             remove_event (source, event);
+#if !E_CAL_2_0
             event.rescan ();
+#endif
             event.commit_sequence ();
             add_event (source, event);
         }
@@ -179,13 +190,13 @@ namespace Maya {
 
         private TimeSpan time_until_now (GLib.DateTime dt) {
             var now = new DateTime.now_local ();
-            return dt.difference (now)/TimeSpan.SECOND;
+            return dt.difference (now) / TimeSpan.SECOND;
         }
     }
 
     public static int main (string[] args) {
         OptionContext context = new OptionContext ("");
-        context.add_main_entries (options, null);
+        context.add_main_entries (OPTIONS, null);
 
         try {
             context.parse (ref args);
@@ -205,4 +216,3 @@ namespace Maya {
         return app.run (args);
     }
 }
-

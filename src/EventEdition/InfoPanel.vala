@@ -30,7 +30,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
     private EventDialog parent_dialog;
 
-
     public string title {
         get { return title_entry.get_text (); }
         set { title_entry.set_text (value); }
@@ -76,9 +75,9 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         var from_label = new Granite.HeaderLabel (_("From:"));
         from_date_picker = make_date_picker ();
-        from_date_picker.notify["date"].connect ( () => {on_date_modified(0);} );
+        from_date_picker.notify["date"].connect (() => {on_date_modified (0);} );
         from_time_picker = make_time_picker ();
-        from_time_picker.time_changed.connect ( () => {on_time_modified(0);} );
+        from_time_picker.time_changed.connect (() => {on_time_modified (0);} );
 
         var allday_label = new Gtk.Label (_("All day:"));
         allday_label.set_alignment (1.0f, 0.5f);
@@ -90,9 +89,9 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         var allday_switch_grid = new Gtk.Grid ();
 
         to_date_picker = make_date_picker ();
-        to_date_picker.notify["date"].connect ( () => {on_date_modified(1);} );
+        to_date_picker.notify["date"].connect (() => {on_date_modified (1);} );
         to_time_picker = make_time_picker ();
-        to_time_picker.time_changed.connect ( () => {on_time_modified(1);} );
+        to_time_picker.time_changed.connect (() => {on_time_modified (1);} );
 
         allday_switch_grid.attach (allday_switch, 0, 0, 1, 1);
         allday_switch_grid.set_valign (Gtk.Align.CENTER);
@@ -186,14 +185,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         // Save the time
         if (allday_switch.get_active () == true) {
-            ICal.Time dt_start = Util.date_time_to_ical (from_date_picker.date, null);
-            ICal.Time dt_end = Util.date_time_to_ical (to_date_picker.date.add_days (1), null);
+            ICal.Time dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, null);
+            ICal.Time dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date.add_days (1), null);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
         } else {
-            ICal.Time dt_start = Util.date_time_to_ical (from_date_picker.date, from_time_picker.time);
-            ICal.Time dt_end = Util.date_time_to_ical (to_date_picker.date, to_time_picker.time);
+            ICal.Time dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, from_time_picker.time);
+            ICal.Time dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date, to_time_picker.time);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
@@ -202,7 +201,12 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         // First, clear the comments
         int count = comp.count_properties (ICal.PropertyKind.DESCRIPTION_PROPERTY);
         for (int i = 0; i < count; i++) {
-            unowned ICal.Property remove_prop = comp.get_first_property (ICal.PropertyKind.COMMENT_PROPERTY);
+#if E_CAL_2_0
+            ICal.Property remove_prop;
+#else
+            unowned ICal.Property remove_prop;
+#endif
+            remove_prop = comp.get_first_property (ICal.PropertyKind.COMMENT_PROPERTY);
             comp.remove_property (remove_prop);
         }
 
@@ -231,14 +235,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
 
             DateTime from_date, to_date;
-            Util.get_local_datetimes_from_icalcomponent (comp, out from_date, out to_date);
+            Calendar.Util.icalcomponent_get_local_datetimes (comp, out from_date, out to_date);
 
             from_date_picker.date = from_date;
             from_time_picker.time = from_date;
             parent_dialog.date_time = from_date;
 
             // Is this all day
-            bool allday = Util.is_all_day(from_date, to_date);
+            bool allday = Calendar.Util.datetime_is_all_day (from_date, to_date);
 
             to_date_picker.date = to_date;
             to_time_picker.time = to_date;
@@ -250,7 +254,12 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
                 to_time_picker.sensitive = false;
             }
 
-            unowned ICal.Property property = comp.get_first_property (ICal.PropertyKind.DESCRIPTION_PROPERTY);
+#if E_CAL_2_0
+            ICal.Property property;
+#else
+            unowned ICal.Property property;
+#endif
+            property = comp.get_first_property (ICal.PropertyKind.DESCRIPTION_PROPERTY);
             if (property != null) {
                 Gtk.TextBuffer buffer = new Gtk.TextBuffer (null);
                 buffer.text = property.get_comment ();
@@ -263,10 +272,27 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             parent_dialog.ecal = new ECal.Component ();
             parent_dialog.ecal.set_new_vtype (ECal.ComponentVType.EVENT);
 
+            var time = new DateTime.now_local ();
+            var minutes = time.get_minute ();
+            var now_before_2300 = (time.get_hour () < 23);
+
+            /* Set convenient start time but do not change day */
             from_date_picker.date = parent_dialog.date_time;
-            from_time_picker.time = new DateTime.now_local ();
-            to_date_picker.date = parent_dialog.date_time;
-            to_time_picker.time = new DateTime.now_local ().add_hours (1);
+            if (now_before_2300) {  /* Default start time to next whole hour*/
+                time = time.add_minutes (60 - minutes);
+            } else {  /* Default start time 23.00  (11 PM)*/
+                time = time.add_minutes (-minutes);
+            }
+
+            from_time_picker.time = time;
+
+            /* Default event duration of one hour, changing day if required */
+            to_time_picker.time = time.add_hours (1);
+            if (now_before_2300) {
+                to_date_picker.date = parent_dialog.date_time;
+            } else { /* Default end time is 00.00 (12.00 AM) next morning*/
+                to_date_picker.date = parent_dialog.date_time.add_days (1);
+            }
 
             // Load the source
             calendar_button.current_source = parent_dialog.source;
@@ -326,14 +352,17 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
                 if (start_date.get_day_of_year () == end_date.get_day_of_year ()) {
 
-                    if (start_time.get_hour () > end_time.get_hour ())
-                        to_time_picker.time = from_time_picker.time.add_hours(1);
+                    if (start_time.get_hour () > end_time.get_hour ()) {
+                        to_time_picker.time = from_time_picker.time.add_hours (1);
+                    }
 
-                    if ((start_time.get_hour () == end_time.get_hour ()) && (start_time.get_minute () >= end_time.get_minute ()))
-                        to_time_picker.time = from_time_picker.time.add_hours(1);
+                    if ((start_time.get_hour () == end_time.get_hour ()) && (start_time.get_minute () >= end_time.get_minute ())) {
+                        to_time_picker.time = from_time_picker.time.add_hours (1);
+                    }
 
-                    if (start_time.get_hour () >= 23)
+                    if (start_time.get_hour () >= 23) {
                         to_date_picker.date = from_date_picker.date.add_days (1);
+                    }
                 }
             }
             break;
@@ -371,7 +400,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
                 if (start_time.get_hour () == end_time.get_hour ()) {
                     // Same hour, compare minutes
-                    return start_time.get_minute () < end_time.get_minute ();
+                    return start_time.get_minute () <= end_time.get_minute ();
                 }
 
                 // Different hour, start should be smaller
