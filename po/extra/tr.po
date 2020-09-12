@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-08 22:13+0000\n"
-"PO-Revision-Date: 2020-07-16 10:12+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
+"PO-Revision-Date: 2020-09-12 23:14+0000\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/extra/"
 "tr/>\n"
 "Language: tr\n"
@@ -42,21 +42,19 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Improvements:"
-msgstr ""
+msgstr "İyileştirmeler:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Allow modification of recurring events"
-msgstr "Yinelenen etkinliklerle ilgili sorunlar düzeltildi"
+msgstr "Yinelenen etkinliklerin değiştirilmesine izin ver"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "Hafta başlangıç gününün işlenmesi iyileştirildi"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 msgid "Fix timezone errors with all-day events"
-msgstr ""
+msgstr "Tüm gün süren etkinliklerdeki saat dilimi hataları düzeltildi"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:33
@@ -68,6 +66,7 @@ msgstr "Küçük düzeltmeler:"
 #: data/io.elementary.calendar.appdata.xml.in:26
 msgid "Don't resize the sidebar when resizing the window"
 msgstr ""
+"Pencereyi yeniden boyutlandırmak kenar çubuğunu yeniden boyutlandırmayacak"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 #: data/io.elementary.calendar.appdata.xml.in:36
