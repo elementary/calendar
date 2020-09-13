@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-08 22:13+0000\n"
-"PO-Revision-Date: 2020-09-12 23:14+0000\n"
+"PO-Revision-Date: 2020-09-14 13:14+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/extra/"
 "uk/>\n"
@@ -30,7 +30,7 @@ msgstr "Календар"
 #: data/io.elementary.calendar.appdata.xml.in:9
 #: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr "Перегляд та створення розкладу подій"
+msgstr "Переглядайте та створюйте розклад подій"
 
 #: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
