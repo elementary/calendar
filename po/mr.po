@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-18 20:11+0000\n"
-"PO-Revision-Date: 2020-03-26 16:50+0000\n"
+"PO-Revision-Date: 2020-09-15 19:14+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
@@ -169,9 +169,6 @@ msgstr "आठवणींच्या खुणा"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
-#| msgid "Repeat"
-#| msgid_plural "Repeats"
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "पुनरावृत्ती"
