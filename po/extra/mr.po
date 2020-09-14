@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-08 22:13+0000\n"
-"PO-Revision-Date: 2020-04-06 07:06+0000\n"
+"PO-Revision-Date: 2020-09-15 19:14+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/extra/"
 "mr/>\n"
@@ -40,21 +40,19 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Improvements:"
-msgstr ""
+msgstr "सुधारणा:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Allow modification of recurring events"
-msgstr "आवर्ती इव्हेंटसह समस्या सोडवा"
+msgstr "आवर्ती इव्हेंटच्या सुधारणेस परवानगी द्या"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "आठवड्याच्या प्रारंभ दिवसाची हाताळणी सुधारित करा"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 msgid "Fix timezone errors with all-day events"
-msgstr ""
+msgstr "दिवसभर असलेल्या कार्यक्रमांसह टाइमझोन त्रुटीचे निराकरण करा"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:33
@@ -65,7 +63,7 @@ msgstr "किरकोळ अद्यतने:"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
 msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
+msgstr "विंडोचे आकार बदलताना साइडबारचे आकार बदलू नका"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 #: data/io.elementary.calendar.appdata.xml.in:36
@@ -78,13 +76,12 @@ msgstr "अद्ययावत अनुवाद"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Fix issues with time zones not being recognized"
-msgstr ""
+msgstr "टाइम झोन ओळखले जात नसल्याच्या समस्यांचे निराकरण करा"
 
 #: data/io.elementary.calendar.appdata.xml.in:44
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr "आवर्ती इव्हेंटसह समस्या सोडवा"
+msgstr ""
+"मासिक आवर्ती इव्हेंट जोडणे आणि काढून टाकणे यासह अनेक समस्यांचे निराकरण करा"
 
 #: data/io.elementary.calendar.appdata.xml.in:53
 msgid "Correctly save event reminders"
