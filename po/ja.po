@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-18 20:11+0000\n"
-"PO-Revision-Date: 2020-03-28 18:09+0000\n"
+"PO-Revision-Date: 2020-09-05 23:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -167,9 +167,6 @@ msgstr "リマインダー"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
-#| msgid "Repeat"
-#| msgid_plural "Repeats"
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "繰り返し"
@@ -393,11 +390,11 @@ msgstr "なし"
 
 #: src/EventEdition/RepeatPanel.vala:145
 msgid "Until"
-msgstr "まで"
+msgstr "次の日付まで"
 
 #: src/EventEdition/RepeatPanel.vala:146
 msgid "After"
-msgstr "後"
+msgstr "次の回数繰り返した後"
 
 #: src/EventEdition/RepeatPanel.vala:193
 msgid "The same day every month"

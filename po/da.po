@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-18 20:11+0000\n"
-"PO-Revision-Date: 2020-05-27 18:11+0000\n"
-"Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
+"PO-Revision-Date: 2020-08-25 13:13+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/calendar/calendar/"
 "da/>\n"
 "Language: da\n"
@@ -171,12 +171,9 @@ msgstr "Påmindelser"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
-#| msgid "Repeat"
-#| msgid_plural "Repeats"
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr "Gentagelse"
+msgstr "Gentag"
 
 #: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
