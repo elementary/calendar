@@ -36,7 +36,7 @@ namespace Maya.GesturesUtils {
 
         // It's mouse scroll !
         if (choice == 1 || choice == -1) {
-            Calendar.Store.get_default ().change_month ((int) choice);
+            Calendar.EventStore.get_default ().change_month ((int) choice);
             return true;
         }
 
@@ -46,13 +46,13 @@ namespace Maya.GesturesUtils {
 
         if (choice > 0.3) {
             reset_timer.begin ();
-            Calendar.Store.get_default ().change_month (1);
+            Calendar.EventStore.get_default ().change_month (1);
             return true;
         }
 
         if (choice < -0.3) {
             reset_timer.begin ();
-            Calendar.Store.get_default ().change_month (-1);
+            Calendar.EventStore.get_default ().change_month (-1);
             return true;
         }
 
