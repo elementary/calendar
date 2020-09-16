@@ -18,9 +18,9 @@ util_tests = executable(
 )
 test('Utils Tests', util_tests, suite: 'core', is_parallel: false)
 
-model_tests = executable(
-  tests_name + '-model',
-  'model-tests.vala',
+eventstore_tests = executable(
+  tests_name + '-eventstore',
+  'eventstore-tests.vala',
   dependencies: tests_deps
 )
-test('Model Tests', model_tests, suite: 'core', is_parallel: false)
+test('EventStore Tests', eventstore_tests, suite: 'core', is_parallel: false)
