@@ -18,9 +18,15 @@ util_tests = executable(
 )
 test('Utils Tests', util_tests, suite: 'core', is_parallel: false)
 
-eventstore_tests = executable(
-  tests_name + '-eventstore',
-  'eventstore-tests.vala',
-  dependencies: tests_deps
-)
-test('EventStore Tests', eventstore_tests, suite: 'core', is_parallel: false)
+# We need these three locales to run the tests
+locales = run_command('locale', '-a').stdout().split('\n')
+if locales.contains ('en_GB.utf8') and locales.contains ('en_US.utf8') and locales.contains ('ar_AE.utf8')
+    eventstore_tests = executable(
+      tests_name + '-eventstore',
+      'eventstore-tests.vala',
+      dependencies: tests_deps
+    )
+    test('EventStore Tests', eventstore_tests, suite: 'core', is_parallel: false)
+else
+message('EventStore Tests have been disabled, a locale is missing in the system.')
+endif
