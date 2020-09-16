@@ -13,12 +13,14 @@
     </p>
   </description>
   <releases>
-    <release version="5.1.0" date="2020-06-30" urgency="medium">
+    <release version="5.1.0" date="2020-09-02" urgency="medium">
       <description>
       <p>Improvements:</p>
       <ul>
         <li>Allow modification of recurring events</li>
-      </ul>
+        <li>Improve handling of week start day</li>
+        <li>Fix timezone errors with all-day events</li>
+        </ul>
       <p>Minor Updates:</p>
       <ul>
         <li>Don't resize the sidebar when resizing the window</li>
