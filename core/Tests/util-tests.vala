@@ -312,6 +312,8 @@ int main (string[] args) {
     Test.init (ref args);
     add_timezone_tests ();
     add_datetime_tests ();
+    add_icalcomponent_tests ();
+    add_daterange_tests ();
     var result = Test.run ();
 
     Environment.unset_variable ("TZ");
