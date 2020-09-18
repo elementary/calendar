@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-18 20:11+0000\n"
-"PO-Revision-Date: 2020-09-12 23:14+0000\n"
+"PO-Revision-Date: 2020-09-19 20:14+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/"
 "calendar/uk/>\n"
@@ -47,7 +47,7 @@ msgstr "Зберігати копію локально"
 
 #: daemon/Daemon.vala:24
 msgid "Print debug information"
-msgstr "Надрукувати інформацію для зневадження"
+msgstr "Надрукувати відомості для зневадження"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -154,7 +154,7 @@ msgstr "Змінити подію"
 
 #: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
-msgstr "Основні Дані"
+msgstr "Основні відомості"
 
 #: src/EventEdition/EventDialog.vala:121
 msgid "Location"
