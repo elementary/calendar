@@ -36,7 +36,7 @@ namespace Maya.Util {
      * E.Source Utils
      */
     public string get_source_location (E.Source source) {
-        var registry = Calendar.Store.get_default ().registry;
+        var registry = Calendar.EventStore.get_default ().registry;
         string parent_uid = source.parent;
         E.Source parent_source = source;
         while (parent_source != null) {
@@ -70,7 +70,7 @@ namespace Maya.Util {
      */
 
     public void save_temp_selected_calendars () {
-        var calmodel = Calendar.Store.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
         var events = calmodel.get_events ();
         var builder = new StringBuilder ();
         builder.append ("BEGIN:VCALENDAR\n");

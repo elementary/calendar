@@ -43,7 +43,7 @@ namespace Maya {
 
         private void load_today_events () {
             event_uid = new Gee.HashMap<ECal.Component, string> ();
-            var model = Calendar.Store.get_default ();
+            var model = Calendar.EventStore.get_default ();
             model.events_added.connect (on_events_added);
             model.events_updated.connect (on_events_updated);
             model.events_removed.connect (on_events_removed);

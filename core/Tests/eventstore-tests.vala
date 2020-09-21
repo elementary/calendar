@@ -1,6 +1,6 @@
 // Create a testing subclass so we can access protected members and create
 // multiple instances
-class TestModel : Calendar.Store {
+class TestStore : Calendar.EventStore {
 }
 
 /**  Test interacting with nl_langinfo in Vala
@@ -54,7 +54,7 @@ void test_posix_nl_langinfo () {
     }
 }
 
-/** Test the get_week_start function in CalendarModel
+/** Test the get_week_start function in Calendar.EventStore
  */
 void test_week_start () {
     // Test en_GB (English, Great Britain), where the week starts on Monday
@@ -63,8 +63,8 @@ void test_week_start () {
     var setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
     assert_nonnull (setstr);
     assert (setstr == localestr);
-    var model = new TestModel ();
-    var week_start = model.week_starts_on;
+    var store = new TestStore ();
+    var week_start = store.week_starts_on;
     assert (week_start == DateWeekday.MONDAY);
 
     // Test en_US (English, United States), where the week starts on Sunday
@@ -73,8 +73,8 @@ void test_week_start () {
     setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
     assert_nonnull (setstr);
     assert (setstr == localestr);
-    model = new TestModel ();
-    week_start = model.week_starts_on;
+    store = new TestStore ();
+    week_start = store.week_starts_on;
     assert (week_start == DateWeekday.SUNDAY);
 
     // Test ar_AE (Arabic, UAE), where the week starts on "Saturday"
@@ -83,14 +83,14 @@ void test_week_start () {
     setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
     assert_nonnull (setstr);
     assert (setstr == localestr);
-    model = new TestModel ();
-    week_start = model.week_starts_on;
+    store = new TestStore ();
+    week_start = store.week_starts_on;
     assert (week_start == DateWeekday.SATURDAY);
 }
 
 void add_locale_tests () {
-    Test.add_func ("/Model/Locale/nl_langinfo", test_posix_nl_langinfo);
-    Test.add_func ("/Model/Locale/week_start", test_week_start);
+    Test.add_func ("/EventStore/Locale/nl_langinfo", test_posix_nl_langinfo);
+    Test.add_func ("/EventStore/Locale/week_start", test_week_start);
 }
 
 int main (string[] args) {

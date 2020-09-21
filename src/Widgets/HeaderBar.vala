@@ -57,7 +57,7 @@ namespace Maya.View {
 
             month_switcher = new Widgets.DateSwitcher (10);
             year_switcher = new Widgets.DateSwitcher (-1);
-            var calmodel = Calendar.Store.get_default ();
+            var calmodel = Calendar.EventStore.get_default ();
             set_switcher_date (calmodel.month_start);
 
             var contractor = new Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
@@ -76,10 +76,10 @@ namespace Maya.View {
             pack_end (menu_button);
             pack_end (contractor);
 
-            month_switcher.left_clicked.connect (() => Calendar.Store.get_default ().change_month (-1));
-            month_switcher.right_clicked.connect (() => Calendar.Store.get_default ().change_month (1));
-            year_switcher.left_clicked.connect (() => Calendar.Store.get_default ().change_year (-1));
-            year_switcher.right_clicked.connect (() => Calendar.Store.get_default ().change_year (1));
+            month_switcher.left_clicked.connect (() => Calendar.EventStore.get_default ().change_month (-1));
+            month_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_month (1));
+            year_switcher.left_clicked.connect (() => Calendar.EventStore.get_default ().change_year (-1));
+            year_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_year (1));
             calmodel.parameters_changed.connect (() => {
                 set_switcher_date (calmodel.month_start);
             });

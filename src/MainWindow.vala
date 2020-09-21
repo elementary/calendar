@@ -98,7 +98,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         Maya.Application.saved_state.bind ("hpaned-position", hpaned, "position", GLib.SettingsBindFlags.DEFAULT);
 
-        Calendar.Store.get_default ().error_received.connect ((message) => {
+        Calendar.EventStore.get_default ().error_received.connect ((message) => {
             Idle.add (() => {
                 infobar_label.label = message;
                 infobar.show ();
@@ -121,13 +121,13 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_remove (ECal.Component comp) {
-        Calendar.Store.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
+        Calendar.EventStore.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
     }
 
     public void on_modified (ECal.Component comp) {
         E.Source src = comp.get_data ("source");
 
-        if (src.writable == true && Calendar.Store.get_default ().calclient_is_readonly (src) == false) {
+        if (src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false) {
             var dialog = new Maya.View.EventDialog (comp, null, this);
             dialog.present ();
         } else {
