@@ -479,10 +479,12 @@ public class Calendar.EventStore : Object {
 #else
             client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), (event, start, end) => {
 #endif
-                debug_event (source, event, "ADDED");
-                event.set_data<E.Source> ("source", source);
-                events.set (uid, event);
-                added_events.add (event);
+                if (!added_events.contains (event)) {
+                    debug_event (source, event, "ADDED");
+                    event.set_data<E.Source> ("source", source);
+                    events.set (uid, event);
+                    added_events.add (event);
+                }
                 return true;
             });
         });
