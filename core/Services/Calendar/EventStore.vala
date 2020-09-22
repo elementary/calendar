@@ -485,6 +485,7 @@ public class Calendar.EventStore : Object {
                     events.set (uid, event);
                     added_events.add (event);
                 }
+
                 return true;
             });
         });
