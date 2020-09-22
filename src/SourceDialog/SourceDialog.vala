@@ -47,7 +47,6 @@ public class Maya.View.SourceDialog : Gtk.Grid {
     public signal void go_back ();
 
     construct {
-        debug ("SourceDialog constructor");
         widgets_checked = new Gee.HashMap<string, bool> (null, null);
 
         var cancel_button = new Gtk.Button.with_label (_("Cancel"));
