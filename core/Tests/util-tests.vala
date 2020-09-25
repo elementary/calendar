@@ -316,7 +316,11 @@ int main (string[] args) {
     add_daterange_tests ();
     var result = Test.run ();
 
-    Environment.unset_variable ("TZ");
+    if (original_tz != null) {
+        Environment.set_variable ("TZ", original_tz, true);
+    } else {
+        Environment.unset_variable ("TZ");
+    }
     print ("Resetting $TZ environment variable after testing\n");
     return result;
 }

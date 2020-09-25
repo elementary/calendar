@@ -12,7 +12,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-public class Calendar.Store : Object {
+public class Calendar.EventStore : Object {
 
     /* The data_range is the range of dates for which this model is storing
      * data. The month_range is a subset of this range corresponding to the
@@ -59,12 +59,12 @@ public class Calendar.Store : Object {
     public GLib.Queue<E.Source> calendar_trash;
     private E.CredentialsPrompter credentials_prompter;
 
-    private static Calendar.Store? store = null;
+    private static Calendar.EventStore? store = null;
     private static GLib.Settings? state_settings = null;
 
-    public static Calendar.Store get_default () {
+    public static Calendar.EventStore get_default () {
         if (store == null)
-            store = new Calendar.Store ();
+            store = new Calendar.EventStore ();
         return store;
     }
 
@@ -74,7 +74,7 @@ public class Calendar.Store : Object {
         }
     }
 
-    protected Store () {
+    protected EventStore () {
         this.week_starts_on = get_week_start ();
         this.month_start = Calendar.Util.datetime_get_start_of_month (get_page ());
         compute_ranges ();
@@ -479,10 +479,13 @@ public class Calendar.Store : Object {
 #else
             client.generate_instances_for_object_sync (comp, (time_t) data_range.first_dt.to_unix (), (time_t) data_range.last_dt.to_unix (), (event, start, end) => {
 #endif
-                debug_event (source, event, "ADDED");
-                event.set_data<E.Source> ("source", source);
-                events.set (uid, event);
-                added_events.add (event);
+                if (!added_events.contains (event)) {
+                    debug_event (source, event, "ADDED");
+                    event.set_data<E.Source> ("source", source);
+                    events.set (uid, event);
+                    added_events.add (event);
+                }
+
                 return true;
             });
         });
