@@ -255,7 +255,6 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             try {
                 var registry = new E.SourceRegistry.sync (null);
                 var source_is_default = source.equal (registry.default_calendar);
-                debug (@"source_is_default: $source_is_default");
                 // Prevent source from being "unset" as default, which is undefined
                 is_default_check.sensitive = !source_is_default;
                 is_default_check.active = source_is_default;
