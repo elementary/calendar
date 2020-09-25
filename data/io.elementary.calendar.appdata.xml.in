@@ -18,6 +18,7 @@
       <p>Minor Updates:</p>
       <ul>
         <li>Fix an issue where new events could appear twice in Calendar</li>
+        <li>"Mark as default calendar" box is now correctly checked when editing a calendar</li>
       </ul>
       </description>
     </release>
