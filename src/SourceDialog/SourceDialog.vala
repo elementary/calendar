@@ -242,6 +242,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             type_combobox.sensitive = true;
             color_button_red.active = true;
             create_button.set_label (_("Create Calendar"));
+            is_default_check.sensitive = true;
             is_default_check.active = false;
         } else {
             event_type = EventType.EDIT;
@@ -250,9 +251,19 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             type_combobox.sensitive = false;
             type_combobox.set_active (0);
             list_store.foreach (tree_foreach);
-            is_default_check.active = false;
-            var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
+            try {
+                var registry = new E.SourceRegistry.sync (null);
+                var source_is_default = source.equal (registry.default_calendar);
+                debug (@"source_is_default: $source_is_default");
+                // Prevent source from being "unset" as default, which is undefined
+                is_default_check.sensitive = !source_is_default;
+                is_default_check.active = source_is_default;
+            } catch (GLib.Error error) {
+                critical (error.message);
+            }
+
+            var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             switch (cal.dup_color ()) {
                 case "#da3d41":
                     color_button_red.active = true;
