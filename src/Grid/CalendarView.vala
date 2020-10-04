@@ -60,7 +60,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         sync_with_model (); // Populate stack with a grid
         stack.show_all ();
 
-        var model = Calendar.Store.get_default ();
+        var model = Calendar.EventStore.get_default ();
         model.parameters_changed.connect (on_model_parameters_changed);
 
         model.events_added.connect (on_events_added);
@@ -95,7 +95,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     public void today () {
         var today = Calendar.Util.datetime_strip_time (new DateTime.now_local ());
-        var calmodel = Calendar.Store.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
         var start = Calendar.Util.datetime_get_start_of_month (today);
         if (!start.equal (calmodel.month_start))
             calmodel.month_start = start;
@@ -106,7 +106,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
     //--- Signal Handlers ---//
 
     void on_show_weeks_changed () {
-        var model = Calendar.Store.get_default ();
+        var model = Calendar.EventStore.get_default ();
         weeks.update (model.data_range.first_dt, model.num_weeks);
         update_spacer_visible ();
     }
@@ -130,8 +130,9 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
         Idle.add ( () => {
-            foreach (var event in events)
+            foreach (var event in events) {
                 update_event (source, event);
+            }
 
             return false;
         });
@@ -148,7 +149,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     /* Indicates the month has changed */
     void on_model_parameters_changed () {
-        var model = Calendar.Store.get_default ();
+        var model = Calendar.EventStore.get_default ();
         if (days_grid.grid_range != null && model.data_range.equals (days_grid.grid_range))
             return; // nothing to do
 
@@ -195,7 +196,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     /* Sets the calendar widgets to the date range of the model */
     void sync_with_model () {
-        var model = Calendar.Store.get_default ();
+        var model = Calendar.EventStore.get_default ();
         DateTime previous_first = null;
         if (days_grid != null) {
             if (days_grid.grid_range != null && (model.data_range.equals (days_grid.grid_range) || days_grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0))
@@ -230,7 +231,9 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
     /* Render new event on the grid */
     void add_event (E.Source source, ECal.Component event) {
-        event.set_data ("source", source);
+        /* The "source" data is added to events by the Calendar.EventStore. The grid must only show events that have
+           been added to the model first */
+        assert (event.get_data<E.Source> ("source") != null);
         days_grid.add_event (event);
     }
 

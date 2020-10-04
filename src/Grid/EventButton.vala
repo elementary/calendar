@@ -67,7 +67,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
             } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
                 E.Source src = comp.get_data ("source");
 
-                bool sensitive = src.writable == true && Calendar.Store.get_default ().calclient_is_readonly (src) == false;
+                bool sensitive = src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false;
 
                 var menu = new Maya.EventMenu (comp);
                 menu.attach_to_widget (this, null);
@@ -86,7 +86,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
         Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2}, Gdk.DragAction.MOVE);
 
         event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
-            Calendar.Store.get_default ().drag_component = comp;
+            Calendar.EventStore.get_default ().drag_component = comp;
             unowned ICal.Component icalcomp = comp.get_icalcomponent ();
             var ical_str = icalcomp.as_ical_string ();
             sel.set_text (ical_str, ical_str.length);
@@ -111,9 +111,13 @@ public class Maya.View.EventButton : Gtk.Revealer {
         });
     }
 
-    public void update (ECal.Component event) {
-       this.comp = comp;
-       label.label = comp.get_summary ().get_value ();
+    public string get_uid () {
+        return comp.get_id ().get_uid ();
+    }
+
+    public void update (ECal.Component modified) {
+        this.comp = modified;
+        label.label = comp.get_summary ().get_value ();
     }
 
     private void reload_css (string background_color) {
@@ -126,5 +130,13 @@ public class Maya.View.EventButton : Gtk.Revealer {
         } catch (GLib.Error e) {
             critical (e.message);
         }
+    }
+
+    public void destroy_button () {
+        set_reveal_child (false);
+        Timeout.add (transition_duration, () => {
+            destroy ();
+            return false;
+        });
     }
 }

@@ -109,7 +109,7 @@ public class Grid : Gtk.Grid {
 
         Maya.Application.saved_state.set_string ("selected-day", selected_date.format ("%Y-%j"));
 
-        var calmodel = Calendar.Store.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
         var date_month = selected_date.get_month () - calmodel.month_start.get_month ();
         var date_year = selected_date.get_year () - calmodel.month_start.get_year ();
         if (date_month != 0 || date_year != 0) {
@@ -247,8 +247,10 @@ public class Grid : Gtk.Grid {
     public void update_event (ECal.Component event) {
         foreach (var grid_day in data.values) {
             if (Calendar.Util.ecalcomponent_is_on_day (event, grid_day.date)) {
-                var button = new EventButton (event);
-                grid_day.add_event_button (button);
+                if (!grid_day.update_event (event)) {
+                    var button = new EventButton (event);
+                    grid_day.add_event_button (button);
+                }
             } else {
                 grid_day.remove_event (event);
             }
@@ -264,5 +266,4 @@ public class Grid : Gtk.Grid {
         }
     }
 }
-
 }

@@ -60,7 +60,9 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     construct {
-        event_buttons = new GLib.HashTable<string, EventButton> (str_hash, str_equal);
+        event_buttons = new GLib.HashTable<string, EventButton>.full (str_hash, str_equal, null, (value_data) => {
+            ((EventButton)value_data).destroy_button ();
+        });
 
         event_box = new VAutoHider ();
         event_box.margin = EVENT_MARGIN;
@@ -112,7 +114,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-        var calmodel = Calendar.Store.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
         var comp = calmodel.drag_component;
         unowned ICal.Component icalcomp = comp.get_icalcomponent ();
         E.Source src = comp.get_data ("source");
@@ -139,13 +141,9 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     public void add_event_button (EventButton button) {
-        unowned ICal.Component calcomp = button.comp.get_icalcomponent ();
-        string uid = calcomp.get_uid ();
+        string uid = button.get_uid ();
         lock (event_buttons) {
-            if (event_buttons.contains (uid)) {
-                return;
-            }
-
+            event_buttons.remove (uid);
             event_buttons.set (uid, button);
         }
 
@@ -158,49 +156,30 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
     }
 
-    public bool update_event (ECal.Component comp) {
-        unowned ICal.Component calcomp = comp.get_icalcomponent ();
-        string uid = calcomp.get_uid ();
-
+    public bool update_event (ECal.Component modified_event) {
+        string uid = modified_event.get_id ().get_uid ();
         lock (event_buttons) {
-            var button = event_buttons.get (uid);
-            if (button != null) {
-                button.update (comp);
-                event_box.update (button);
-            } else {
-                return false;
+            var uidbutton = event_buttons.get (uid);
+            if (uidbutton != null) {
+                uidbutton.update (modified_event);
+                event_box.update (uidbutton);
+                return true;
             }
         }
 
-        return true;
+        return false;
     }
 
     public void remove_event (ECal.Component comp) {
-        unowned ICal.Component calcomp = comp.get_icalcomponent ();
-        string uid = calcomp.get_uid ();
+        string uid = comp.get_id ().get_uid ();
+
         lock (event_buttons) {
-            var button = event_buttons.get (uid);
-            if (button != null) {
-                event_buttons.remove (uid);
-                destroy_button (button);
-            }
+            event_buttons.remove (uid);
         }
     }
 
     public void clear_events () {
-        foreach (weak EventButton button in event_buttons.get_values ()) {
-            destroy_button (button);
-        }
-
         event_buttons.remove_all ();
-    }
-
-    private void destroy_button (EventButton button) {
-        button.set_reveal_child (false);
-        Timeout.add (button.transition_duration, () => {
-            button.destroy ();
-            return false;
-        });
     }
 
     public void set_selected (bool selected) {
