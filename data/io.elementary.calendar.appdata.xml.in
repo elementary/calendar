@@ -13,6 +13,15 @@
     </p>
   </description>
   <releases>
+    <release version="5.1.1" date="2020-09-02" urgency="medium">
+      <description>
+      <p>Minor Updates:</p>
+      <ul>
+        <li>Fix an issue where new events could appear twice in Calendar</li>
+        <li>"Mark as default calendar" box is now correctly checked when editing a calendar</li>
+      </ul>
+      </description>
+    </release>
     <release version="5.1.0" date="2020-09-02" urgency="medium">
       <description>
       <p>Improvements:</p>

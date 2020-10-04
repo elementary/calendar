@@ -23,7 +23,6 @@ public class Maya.View.SourceDialog : Gtk.Grid {
     public EventType event_type { get; private set; default=EventType.EDIT;}
 
     private Gtk.Entry name_entry;
-    private bool set_as_default = false;
     private string hex_color = "#da3d41";
     private Backend current_backend;
     private Gee.Collection<PlacementWidget> backend_widgets;
@@ -32,6 +31,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
     private Gtk.Button create_button;
     private Gtk.ComboBox type_combobox;
     private Gtk.ListStore list_store;
+    private Gtk.CheckButton is_default_check;
     private E.Source source = null;
 
     private Gtk.RadioButton color_button_strawberry;
@@ -180,11 +180,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         color_grid.add (color_button_cocoa);
         color_grid.add (color_button_slate);
 
-        var check_button = new Gtk.CheckButton.with_label (_("Mark as default calendar"));
-
-        check_button.toggled.connect (() => {
-            set_as_default = !set_as_default;
-        });
+        is_default_check = new Gtk.CheckButton.with_label (_("Mark as default calendar"));
 
         color_button_strawberry.toggled.connect (() => {
             hex_color = "#da3d41";
@@ -227,7 +223,7 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         main_grid.attach (name_entry, 1, 1);
         main_grid.attach (color_label, 0, 2);
         main_grid.attach (color_grid, 1, 2);
-        main_grid.attach (check_button, 1, 3);
+        main_grid.attach (is_default_check, 1, 3);
 
         margin = 12;
         margin_bottom = 8;
@@ -246,6 +242,8 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             type_combobox.sensitive = true;
             color_button_strawberry.active = true;
             create_button.set_label (_("Create Calendar"));
+            is_default_check.sensitive = true;
+            is_default_check.active = false;
         } else {
             event_type = EventType.EDIT;
             create_button.set_label (_("Save"));
@@ -253,8 +251,18 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             type_combobox.sensitive = false;
             type_combobox.set_active (0);
             list_store.foreach (tree_foreach);
-            var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
+            try {
+                var registry = new E.SourceRegistry.sync (null);
+                var source_is_default = source.equal (registry.default_calendar);
+                // Prevent source from being "unset" as default, which is undefined
+                is_default_check.sensitive = !source_is_default;
+                is_default_check.active = source_is_default;
+            } catch (GLib.Error error) {
+                critical (error.message);
+            }
+
+            var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             switch (cal.dup_color ()) {
                 case "#da3d41":
                     color_button_strawberry.active = true;
@@ -349,10 +357,10 @@ public class Maya.View.SourceDialog : Gtk.Grid {
 
     public void save () {
         if (event_type == EventType.ADD) {
-            current_backend.add_new_calendar (name_entry.text, hex_color, set_as_default, backend_widgets);
+            current_backend.add_new_calendar (name_entry.text, hex_color, is_default_check.active, backend_widgets);
             go_back ();
         } else {
-            current_backend.modify_calendar (name_entry.text, hex_color, set_as_default, backend_widgets, source);
+            current_backend.modify_calendar (name_entry.text, hex_color, is_default_check.active, backend_widgets, source);
             go_back ();
         }
     }
