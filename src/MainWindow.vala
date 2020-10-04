@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementary.io>
  */
 
-public class Maya.MainWindow : Gtk.ApplicationWindow {
+public class Maya.MainWindow : Hdy.ApplicationWindow {
     public View.CalendarView calview;
 
     public const string ACTION_PREFIX = "win.";
@@ -49,6 +49,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     construct {
+        Hdy.init ();
         add_action_entries (ACTION_ENTRIES, this);
 
         foreach (var action in action_accelerators.get_keys ()) {
@@ -83,11 +84,11 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
+        grid.add (headerbar);
         grid.add (infobar);
         grid.add (hpaned);
 
         add (grid);
-        set_titlebar (headerbar);
 
         calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
         calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));

@@ -20,7 +20,7 @@
  */
 
 namespace Maya.View {
-    public class HeaderBar : Gtk.HeaderBar {
+    public class HeaderBar : Hdy.HeaderBar {
         public signal void on_search (string search);
 
         public Gtk.SearchEntry search_bar;
@@ -28,7 +28,8 @@ namespace Maya.View {
         private Widgets.DateSwitcher year_switcher;
 
         public HeaderBar () {
-            Object (show_close_button: true);
+            Object (show_close_button: true,
+                    vexpand: false);
         }
 
         construct {

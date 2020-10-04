@@ -43,6 +43,7 @@ calendar_deps = [
     glib_dep,
     granite_dep,
     gtk_dep,
+    handy_dep,
     libecal_dep,
     libedataserver_dep,
     libedataserverui_dep,
