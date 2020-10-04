@@ -5,7 +5,7 @@ project('io.elementary.calendar',
 
 add_project_arguments([
     '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
-    '-DHANDY_USE_UNSTABLE_API',
+    '-DHANDY_USE_UNSTABLE_API'
     ],
     language: 'c'
 )
