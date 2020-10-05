@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-08 22:13+0000\n"
-"PO-Revision-Date: 2019-04-07 05:35+0000\n"
-"Last-Translator: maohhgg <maohhgg@gmail.com>\n"
+"PO-Revision-Date: 2020-10-02 09:14+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "calendar/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -41,11 +41,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Improvements:"
-msgstr ""
+msgstr "改进："
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Allow modification of recurring events"
-msgstr ""
+msgstr "允许编辑循环事件"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Improve handling of week start day"
@@ -73,7 +73,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:76
 #: data/io.elementary.calendar.appdata.xml.in:88
 msgid "Updated translations"
-msgstr ""
+msgstr "更新翻译"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Fix issues with time zones not being recognized"
@@ -97,7 +97,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:62
 msgid "Fix crash when editing an event with no location"
-msgstr ""
+msgstr "修复在编辑无位置事件时的崩溃"
 
 #: data/io.elementary.calendar.appdata.xml.in:67
 msgid "Fix potential crash when loading events with no start or end time"
@@ -170,15 +170,15 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:106
 #: data/io.elementary.calendar.appdata.xml.in:113
 msgid "Various bug fixes and improvements."
-msgstr ""
+msgstr "诸多 Bug 修复和改进。"
 
 #: data/io.elementary.calendar.appdata.xml.in:111
 msgid "Fixes for calendar accuracy and integrity issues."
-msgstr ""
+msgstr "修正了日历的准确性和完整性问题。"
 
 #: data/io.elementary.calendar.appdata.xml.in:112
 msgid "Fixes exporting, importing and printing calendars."
-msgstr ""
+msgstr "修正了导出、导入和打印日历的问题。"
 
 #: data/io.elementary.calendar.appdata.xml.in:160
 msgid "elementary LLC."
