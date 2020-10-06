@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 20:11+0000\n"
+"POT-Creation-Date: 2020-10-06 21:10+0000\n"
 "PO-Revision-Date: 2019-10-28 20:23+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/calendar/"
@@ -656,11 +656,11 @@ msgstr "Koloro:"
 msgid "Mark as default calendar"
 msgstr "Difini kiel aprioran kalendaron"
 
-#: src/SourceDialog/SourceDialog.vala:248
+#: src/SourceDialog/SourceDialog.vala:244
 msgid "Create Calendar"
 msgstr "Krei Kalendaron"
 
-#: src/SourceDialog/SourceDialog.vala:251
+#: src/SourceDialog/SourceDialog.vala:249
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Konservi"
