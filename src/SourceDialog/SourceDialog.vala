@@ -38,8 +38,10 @@ public class Maya.View.SourceDialog : Gtk.Grid {
     private Gtk.RadioButton color_button_orange;
     private Gtk.RadioButton color_button_yellow;
     private Gtk.RadioButton color_button_green;
+    private Gtk.RadioButton color_button_mint;
     private Gtk.RadioButton color_button_blue;
     private Gtk.RadioButton color_button_purple;
+    private Gtk.RadioButton color_button_pink;
     private Gtk.RadioButton color_button_brown;
     private Gtk.RadioButton color_button_slate;
     private Gtk.RadioButton color_button_none;
@@ -139,6 +141,12 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         color_button_green_context.add_class ("green");
         color_button_green_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
+        color_button_mint = new Gtk.RadioButton.from_widget (color_button_red);
+
+        var color_button_mint_context = color_button_mint.get_style_context ();
+        color_button_mint_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_mint_context.add_class ("mint");
+
         color_button_blue = new Gtk.RadioButton.from_widget (color_button_red);
 
         var color_button_blue_context = color_button_blue.get_style_context ();
@@ -152,6 +160,12 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         color_button_purple_context.add_class ("color-button");
         color_button_purple_context.add_class ("purple");
         color_button_purple_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        color_button_pink = new Gtk.RadioButton.from_widget (color_button_red);
+
+        var color_button_pink_context = color_button_pink.get_style_context ();
+        color_button_pink_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_pink_context.add_class ("pink");
 
         color_button_brown = new Gtk.RadioButton.from_widget (color_button_red);
 
@@ -175,8 +189,10 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         color_grid.add (color_button_orange);
         color_grid.add (color_button_yellow);
         color_grid.add (color_button_green);
+        color_grid.add (color_button_mint);
         color_grid.add (color_button_blue);
         color_grid.add (color_button_purple);
+        color_grid.add (color_button_pink);
         color_grid.add (color_button_brown);
         color_grid.add (color_button_slate);
 
@@ -198,12 +214,20 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             hex_color = "#81c837";
         });
 
+        color_button_mint.toggled.connect (() => {
+            hex_color = "#0e9a83";
+        });
+
         color_button_blue.toggled.connect (() => {
             hex_color = "#3689e6";
         });
 
         color_button_purple.toggled.connect (() => {
             hex_color = "#a56de2";
+        });
+
+        color_button_pink.toggled.connect (() => {
+            hex_color = "#de3e80";
         });
 
         color_button_brown.toggled.connect (() => {
@@ -276,11 +300,17 @@ public class Maya.View.SourceDialog : Gtk.Grid {
                 case "#81c837":
                     color_button_green.active = true;
                     break;
+                case "#0e9a83":
+                    color_button_mint.active = true;
+                    break;
                 case "#3689e6":
                     color_button_blue.active = true;
                     break;
                 case "#a56de2":
                     color_button_purple.active = true;
+                    break;
+                case "#de3e80":
+                    color_button_pink.active = true;
                     break;
                 case "#8a715e":
                     color_button_brown.active = true;
