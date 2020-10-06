@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 20:11+0000\n"
+"POT-Creation-Date: 2020-10-06 21:10+0000\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -677,11 +677,11 @@ msgstr "Couleur:"
 msgid "Mark as default calendar"
 msgstr "Marquer comme le calendrier défaut"
 
-#: src/SourceDialog/SourceDialog.vala:248
+#: src/SourceDialog/SourceDialog.vala:244
 msgid "Create Calendar"
 msgstr "Créer un calendrier"
 
-#: src/SourceDialog/SourceDialog.vala:251
+#: src/SourceDialog/SourceDialog.vala:249
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Enregistrer"
