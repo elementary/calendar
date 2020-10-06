@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 20:11+0000\n"
+"POT-Creation-Date: 2020-10-06 21:10+0000\n"
 "PO-Revision-Date: 2017-12-20 00:04+0000\n"
 "Last-Translator: Вагиф Кязым <vaqif134@gmail.com>\n"
 "Language-Team: Azerbaijani <https://weblate.elementary.io/projects/calendar/"
@@ -677,11 +677,11 @@ msgstr "Rəng:"
 msgid "Mark as default calendar"
 msgstr "Əzəli təqvim olaraq təyin et"
 
-#: src/SourceDialog/SourceDialog.vala:248
+#: src/SourceDialog/SourceDialog.vala:244
 msgid "Create Calendar"
 msgstr "Təqvim yarat"
 
-#: src/SourceDialog/SourceDialog.vala:251
+#: src/SourceDialog/SourceDialog.vala:249
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Yadda saxla"
