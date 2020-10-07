@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-09-12 23:14+0000\n"
-"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"PO-Revision-Date: 2020-10-08 16:14+0000\n"
+"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/extra/"
 "tr/>\n"
 "Language: tr\n"
@@ -51,12 +51,16 @@ msgstr "Küçük düzeltmeler:"
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr ""
+"Yeni etkinliklerin Takvim'de iki kere görünmesine sebep olabilecek bir hata "
+"düzeltildi"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
+"\"Varsayılan takvim olarak işaretle\" kutusu artık bir takvimi düzenlerken "
+"doğru şekilde işaretleniyor"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Improvements:"
