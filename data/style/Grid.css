@@ -56,12 +56,12 @@
 }
 
 #today #date {
-    background-color: alpha (@colorAccent, 0.15);
-    color: @colorAccent;
+    background-color: alpha (@accent_color, 0.15);
+    color: @accent_color;
     font-weight: 700;
 }
 
 #today:selected #date {
-    background-color: @colorAccent;
+    background-color: @accent_color;
     color: #fff;
 }
