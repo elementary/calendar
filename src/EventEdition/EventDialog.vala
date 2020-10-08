@@ -46,8 +46,10 @@ public class EventDialog : Gtk.Dialog {
         private EventEdition.ReminderPanel reminder_panel;
         private EventEdition.RepeatPanel repeat_panel;
 
-        public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null) {
+        public EventDialog (ECal.Component? ecal = null, DateTime? date_time = null, Gtk.Window parent) {
             this.deletable = false;
+            this.modal = true;
+            this.transient_for = parent;
 
             if (ecal != null) {
                 original_source = ecal.get_data<E.Source> ("source");
@@ -119,7 +121,8 @@ public class EventDialog : Gtk.Dialog {
             stack.add_titled (location_panel, "locationpanel", _("Location"));
             stack.add_titled (guests_panel, "guestspanel", _("Guests"));
             stack.add_titled (reminder_panel, "reminderpanel", _("Reminders"));
-            stack.add_titled (repeat_panel, "repeatpanel", _("Repeat"));
+            ///Translators: The name of the repeat panel tab
+            stack.add_titled (repeat_panel, "repeatpanel", C_("Section Header", "Repeat")); //vala-lint=space-before-paren
             stack.child_set_property (info_panel, "icon-name", "office-calendar-symbolic");
             stack.child_set_property (location_panel, "icon-name", "mark-location-symbolic");
             stack.child_set_property (guests_panel, "icon-name", "system-users-symbolic");
@@ -191,7 +194,7 @@ public class EventDialog : Gtk.Dialog {
             reminder_panel.save ();
             repeat_panel.save ();
 
-            var calmodel = Model.CalendarModel.get_default ();
+            var calmodel = Calendar.EventStore.get_default ();
             if (event_type == EventType.ADD) {
                 calmodel.add_event (source, ecal);
             } else {
@@ -211,7 +214,7 @@ public class EventDialog : Gtk.Dialog {
         }
 
         private void remove_event () {
-            var calmodel = Model.CalendarModel.get_default ();
+            var calmodel = Calendar.EventStore.get_default ();
             calmodel.remove_event (original_source, ecal, mod_type);
             this.destroy ();
         }

@@ -43,11 +43,11 @@ namespace Maya {
 
         private void load_today_events () {
             event_uid = new Gee.HashMap<ECal.Component, string> ();
-            var model = Maya.Model.CalendarModel.get_default ();
+            var model = Calendar.EventStore.get_default ();
             model.events_added.connect (on_events_added);
             model.events_updated.connect (on_events_updated);
             model.events_removed.connect (on_events_removed);
-            model.month_start = Maya.Util.get_start_of_month (new DateTime.now_local ());
+            model.month_start = Calendar.Util.datetime_get_start_of_month (new DateTime.now_local ());
         }
 
         private void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
@@ -104,7 +104,7 @@ namespace Maya {
 #endif
                         if (trigger.get_kind () == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
                             ICal.Duration duration = trigger.get_duration ();
-                            var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+                            var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
                             var now = new DateTime.now_local ();
                             if (now.compare (start_time) > 0) {
                                 continue;
@@ -150,7 +150,7 @@ namespace Maya {
 
             unowned ICal.Component comp = event.get_icalcomponent ();
             var primary_text = "%s".printf (comp.get_summary ());
-            var start_time = Maya.Util.ical_to_date_time (comp.get_dtstart ());
+            var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
             var now = new DateTime.now_local ();
             string secondary_text = "";
             var h24_settings = new GLib.Settings ("org.gnome.desktop.interface");

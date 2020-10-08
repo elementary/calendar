@@ -1,6 +1,6 @@
 project('io.elementary.calendar',
     'c', 'vala',
-    version: '5.0.4'
+    version: '5.1.0'
 )
 
 add_project_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
@@ -42,7 +42,7 @@ m_dep = meson.get_compiler('c').find_library('m', required : false)
 
 gresource_calendar = gnome.compile_resources(
     'gresource_calendar',
-    'data/maya.gresource.xml',
+    join_paths('data', meson.project_name() + '.gresource.xml'),
     source_dir: 'data'
 )
 

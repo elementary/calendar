@@ -96,7 +96,7 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                 }
             }
 
-            var calmodel = Maya.Model.CalendarModel.get_default ();
+            var calmodel = Calendar.EventStore.get_default ();
             var registry = calmodel.registry;
             var list = new List<E.Source> ();
             list.append (new_source);

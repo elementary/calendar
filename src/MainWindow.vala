@@ -79,7 +79,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         var hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         hpaned.pack1 (calview, true, false);
-        hpaned.pack2 (sidebar, true, false);
+        hpaned.pack2 (sidebar, false, false);
 
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
@@ -98,7 +98,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         Maya.Application.saved_state.bind ("hpaned-position", hpaned, "position", GLib.SettingsBindFlags.DEFAULT);
 
-        Model.CalendarModel.get_default ().error_received.connect ((message) => {
+        Calendar.EventStore.get_default ().error_received.connect ((message) => {
             Idle.add (() => {
                 infobar_label.label = message;
                 infobar.show ();
@@ -108,8 +108,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void on_tb_add_clicked (DateTime dt) {
-        var dialog = new Maya.View.EventDialog (null, dt);
-        dialog.transient_for = this;
+        var dialog = new Maya.View.EventDialog (null, dt, this);
         dialog.show_all ();
     }
 
@@ -122,15 +121,14 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_remove (ECal.Component comp) {
-        Model.CalendarModel.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
+        Calendar.EventStore.get_default ().remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
     }
 
     public void on_modified (ECal.Component comp) {
         E.Source src = comp.get_data ("source");
 
-        if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
-            var dialog = new Maya.View.EventDialog (comp, null);
-            dialog.transient_for = this;
+        if (src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false) {
+            var dialog = new Maya.View.EventDialog (comp, null, this);
             dialog.present ();
         } else {
             Gdk.beep ();
@@ -140,10 +138,10 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     public void on_duplicated (ECal.Component comp) {
         E.Source src = comp.get_data ("source");
 
-        if (src.writable == true && Model.CalendarModel.get_default ().calclient_is_readonly (src) == false) {
+        if (src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false) {
             var dup_comp = Util.copy_ecal_component (comp);
             dup_comp.set_uid (Util.mangle_uid (comp.get_id ().get_uid ()));
-            var dialog = new Maya.View.EventDialog (dup_comp, null);
+            var dialog = new Maya.View.EventDialog (dup_comp, null, this);
             dialog.transient_for = this;
             dialog.present ();
         } else {

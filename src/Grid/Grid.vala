@@ -28,7 +28,7 @@ public class Grid : Gtk.Grid {
 
     Gee.HashMap<uint, GridDay> data;
 
-    public Util.DateRange grid_range { get; private set; }
+    public Calendar.Util.DateRange grid_range { get; private set; }
 
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
@@ -39,6 +39,8 @@ public class Grid : Gtk.Grid {
     private GridDay selected_gridday;
 
     private static Gtk.CssProvider style_provider;
+
+    private GridDay today_widget = null;
 
     static construct {
         style_provider = new Gtk.CssProvider ();
@@ -56,6 +58,44 @@ public class Grid : Gtk.Grid {
         data = new Gee.HashMap<uint, GridDay> ();
         events |= Gdk.EventMask.SCROLL_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
+
+        var time_manager = TimeManager.get_default ();
+        time_manager.on_update_today.connect (callback_update_today);
+    }
+
+    /** Update the names of the current and previous "Today" cells, if necessary.
+     */
+    void callback_update_today () {
+        var old_today_widget = today_widget;
+
+        // Add label to the new widget, if it exists and is not up to date
+        var today = Calendar.Util.datetime_strip_time (new DateTime.now_local ());
+        var today_hash = day_hash (today);
+        if (data.has_key (today_hash)) { // Today cell is on the grid
+            var new_today_widget = data.get (today_hash);
+
+            if (new_today_widget.name == "today") {
+                debug ("Today cell already up to date. Nothing to do.");
+                return;
+            } else {
+                new_today_widget.name = "today";
+                today_widget = new_today_widget;
+            }
+        } else {
+            debug ("Today out of range of calendar grid.");
+            if (today_widget != null) {
+                today_widget.name = "MayaViewGridDay";
+            }
+            today_widget = null;
+            return;
+        }
+
+        // Remove label from old widget, if necessary.
+        if (old_today_widget != null) {
+            old_today_widget.name = "MayaViewGridDay";
+        } else {
+            debug ("No previous today widget to update. Nothing to do.");
+        }
     }
 
     void on_day_focus_in (GridDay day) {
@@ -69,7 +109,7 @@ public class Grid : Gtk.Grid {
 
         Maya.Application.saved_state.set_string ("selected-day", selected_date.format ("%Y-%j"));
 
-        var calmodel = Maya.Model.CalendarModel.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
         var date_month = selected_date.get_month () - calmodel.month_start.get_month ();
         var date_year = selected_date.get_year () - calmodel.month_start.get_year ();
         if (date_month != 0 || date_year != 0) {
@@ -92,7 +132,7 @@ public class Grid : Gtk.Grid {
      * Sets the given range to be displayed in the grid. Note that the number of days
      * must remain the same.
      */
-    public void set_range (Util.DateRange new_range, DateTime month_start) {
+    public void set_range (Calendar.Util.DateRange new_range, DateTime month_start) {
         var today = new DateTime.now_local ();
 
         Gee.List<DateTime> old_dates;
@@ -170,6 +210,7 @@ public class Grid : Gtk.Grid {
     GridDay update_day (GridDay day, DateTime new_date, DateTime today, DateTime month_start) {
         if (new_date.get_day_of_year () == today.get_day_of_year () && new_date.get_year () == today.get_year ()) {
             day.name = "today";
+            today_widget = day;
         }
 
         day.in_current_month = new_date.get_month () == month_start.get_month ();
@@ -183,7 +224,7 @@ public class Grid : Gtk.Grid {
      */
     public void add_event (ECal.Component event) {
         foreach (var grid_day in data.values) {
-            if (Util.calcomp_is_on_day (event, grid_day.date)) {
+            if (Calendar.Util.ecalcomponent_is_on_day (event, grid_day.date)) {
                 var button = new EventButton (event);
                 grid_day.add_event_button (button);
             }
@@ -205,7 +246,7 @@ public class Grid : Gtk.Grid {
 
     public void update_event (ECal.Component event) {
         foreach (var grid_day in data.values) {
-            if (Util.calcomp_is_on_day (event, grid_day.date)) {
+            if (Calendar.Util.ecalcomponent_is_on_day (event, grid_day.date)) {
                 if (!grid_day.update_event (event)) {
                     var button = new EventButton (event);
                     grid_day.add_event_button (button);

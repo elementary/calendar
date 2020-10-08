@@ -27,11 +27,13 @@ namespace Maya {
 
     public class Application : Gtk.Application {
         public MainWindow window;
-        public static GLib.Settings saved_state;
+        public static GLib.Settings? saved_state = null;
         public static GLib.Settings? wingpanel_settings = null;
 
         static construct {
-            saved_state = new GLib.Settings ("io.elementary.calendar.savedstate");
+            if (SettingsSchemaSource.get_default ().lookup ("io.elementary.calendar.savedstate", true) != null) {
+                saved_state = new GLib.Settings ("io.elementary.calendar.savedstate");
+            }
 
             if (GLib.SettingsSchemaSource.get_default ().lookup ("io.elementary.desktop.wingpanel.datetime", true) != null) {
                 wingpanel_settings = new GLib.Settings ("io.elementary.desktop.wingpanel.datetime");
@@ -75,7 +77,7 @@ namespace Maya {
                 }
             }
 
-            var calmodel = Model.CalendarModel.get_default ();
+            var calmodel = Calendar.EventStore.get_default ();
             calmodel.load_all_sources ();
 
             init_gui ();
@@ -91,7 +93,7 @@ namespace Maya {
 
         public override void open (File[] files, string hint) {
             if (get_windows () == null) {
-                var calmodel = Model.CalendarModel.get_default ();
+                var calmodel = Calendar.EventStore.get_default ();
                 calmodel.load_all_sources ();
 
                 init_gui ();
@@ -141,7 +143,7 @@ namespace Maya {
         }
 
         private void on_quit () {
-            Model.CalendarModel.get_default ().delete_trashed_calendars ();
+            Calendar.EventStore.get_default ().delete_trashed_calendars ();
         }
 
         public static DateTime get_selected_datetime () {

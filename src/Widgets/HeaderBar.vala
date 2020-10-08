@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -57,7 +57,7 @@ namespace Maya.View {
 
             month_switcher = new Widgets.DateSwitcher (10);
             year_switcher = new Widgets.DateSwitcher (-1);
-            var calmodel = Model.CalendarModel.get_default ();
+            var calmodel = Calendar.EventStore.get_default ();
             set_switcher_date (calmodel.month_start);
 
             var contractor = new Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
@@ -76,10 +76,10 @@ namespace Maya.View {
             pack_end (menu_button);
             pack_end (contractor);
 
-            month_switcher.left_clicked.connect (() => Model.CalendarModel.get_default ().change_month (-1));
-            month_switcher.right_clicked.connect (() => Model.CalendarModel.get_default ().change_month (1));
-            year_switcher.left_clicked.connect (() => Model.CalendarModel.get_default ().change_year (-1));
-            year_switcher.right_clicked.connect (() => Model.CalendarModel.get_default ().change_year (1));
+            month_switcher.left_clicked.connect (() => Calendar.EventStore.get_default ().change_month (-1));
+            month_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_month (1));
+            year_switcher.left_clicked.connect (() => Calendar.EventStore.get_default ().change_year (-1));
+            year_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_year (1));
             calmodel.parameters_changed.connect (() => {
                 set_switcher_date (calmodel.month_start);
             });

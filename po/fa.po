@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-26 16:51+0000\n"
+"POT-Creation-Date: 2020-10-06 21:10+0000\n"
 "PO-Revision-Date: 2015-04-09 12:07+0000\n"
 "Last-Translator: awat <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:304
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
 msgid "On this computer"
 msgstr "بر روی این رایانه"
 
@@ -80,50 +80,50 @@ msgstr ""
 "در صورت انتخاب روز دارای رویداد، رویدادهای آن روز در این قسمت نمایش داده "
 "می‌شوند."
 
-#: src/AgendaView.vala:137
+#: src/AgendaView.vala:140
 msgid "During the day"
 msgstr "در طول روز"
 
-#: src/AgendaView.vala:145
+#: src/AgendaView.vala:148
 msgid "All day"
 msgstr "تمام روز"
 
-#: src/AgendaView.vala:262
+#: src/AgendaView.vala:265
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:268
 msgid "This Week"
 msgstr ""
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:271
 msgid "Next Week"
 msgstr ""
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:274
 #, fuzzy
 msgid "This Month"
 msgstr "ماه‌ها"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:277
 #, fuzzy
 msgid "Next Month"
 msgstr "ماه‌ها"
 
-#: src/Application.vala:52
+#: src/Application.vala:54
 #, fuzzy
 msgid "Create an event"
 msgstr "ساخت یک رویداد"
 
-#: src/Application.vala:53
+#: src/Application.vala:55
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:53
+#: src/Application.vala:55
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:148
+#: src/Application.vala:163
 msgid "Calendar"
 msgstr "تقویم"
 
@@ -147,50 +147,51 @@ msgstr[0] "وارد نمودن رویداد ها از پوشه %d به تقوی�
 msgid "Import"
 msgstr "وارد کردن"
 
-#: src/EventEdition/EventDialog.vala:58
+#: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
 msgstr "افزودن رویداد"
 
-#: src/EventEdition/EventDialog.vala:61
+#: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
 msgstr "ویرایش رویداد"
 
-#: src/EventEdition/EventDialog.vala:114
+#: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
 msgstr "اطلاعات عمومی"
 
-#: src/EventEdition/EventDialog.vala:115
+#: src/EventEdition/EventDialog.vala:121
 msgid "Location"
 msgstr "مکان (نشانی)"
 
-#: src/EventEdition/EventDialog.vala:116
+#: src/EventEdition/EventDialog.vala:122
 msgid "Guests"
 msgstr "مهمان‌ها"
 
-#: src/EventEdition/EventDialog.vala:117
+#: src/EventEdition/EventDialog.vala:123
 msgid "Reminders"
 msgstr "یادآوری‌ها"
 
-#: src/EventEdition/EventDialog.vala:118 src/EventEdition/RepeatPanel.vala:137
-#: src/EventEdition/RepeatPanel.vala:170
+#. /Translators: The name of the repeat panel tab
+#: src/EventEdition/EventDialog.vala:125
+#, fuzzy
+#| msgid "Repeat:"
+msgctxt "Section Header"
 msgid "Repeat"
-msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr ":تکرار"
 
-#: src/EventEdition/EventDialog.vala:141
+#: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
 msgstr "حذف رویداد"
 
-#: src/EventEdition/EventDialog.vala:154
+#: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
 msgstr "ساخت رویداد"
 
-#: src/EventEdition/EventDialog.vala:157
+#: src/EventEdition/EventDialog.vala:164
 msgid "Save Changes"
 msgstr "ذخیره کردن تغییرات"
 
-#: src/EventEdition/EventDialog.vala:160 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 msgid "Cancel"
 msgstr "انصراف"
@@ -211,11 +212,11 @@ msgstr ""
 msgid "Participants:"
 msgstr "شرکت کنندگان:"
 
-#: src/EventEdition/GuestsPanel.vala:58
+#: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
 msgstr "بدون شرکت کننده"
 
-#: src/EventEdition/GuestsPanel.vala:94
+#: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
 msgstr "دعوت"
 
@@ -403,227 +404,236 @@ msgstr[1] ""
 msgid "Ends:"
 msgstr "پایان یافته با :"
 
-#: src/EventEdition/RepeatPanel.vala:141
+#. /Translators: Give a word to describe an event ending after a certain number of repeats.
+#. /This will be displayed in the format like: "Ends After 2 Repeats",
+#. /where this string always represents the last word in the phrase.
+#: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
+msgid "Repeat"
+msgid_plural "Repeats"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/EventEdition/RepeatPanel.vala:144
 msgid "Never"
 msgstr "هرگز"
 
-#: src/EventEdition/RepeatPanel.vala:142
+#: src/EventEdition/RepeatPanel.vala:145
 msgid "Until"
 msgstr "تا"
 
-#: src/EventEdition/RepeatPanel.vala:143
+#: src/EventEdition/RepeatPanel.vala:146
 msgid "After"
 msgstr "بعد از"
 
-#: src/EventEdition/RepeatPanel.vala:190
+#: src/EventEdition/RepeatPanel.vala:193
 msgid "The same day every month"
 msgstr "روز مشابه در هر ماه"
 
-#: src/EventEdition/RepeatPanel.vala:201
+#: src/EventEdition/RepeatPanel.vala:204
 msgid "Exceptions:"
 msgstr "استثناها:"
 
-#: src/EventEdition/RepeatPanel.vala:204
+#: src/EventEdition/RepeatPanel.vala:206
 msgid "No Exceptions"
 msgstr "بدون استثنا"
 
-#: src/EventEdition/RepeatPanel.vala:217
+#: src/EventEdition/RepeatPanel.vala:222
 msgid "Add Exception"
 msgstr "اضافه نمودن استثنا"
 
-#: src/EventEdition/RepeatPanel.vala:377
+#: src/EventEdition/RepeatPanel.vala:383
 msgid "Every last Sunday"
 msgstr "هر آخرین یکشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:380
+#: src/EventEdition/RepeatPanel.vala:386
 msgid "Every last Monday"
 msgstr "هر آخرین دوشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:383
+#: src/EventEdition/RepeatPanel.vala:389
 msgid "Every last Tuesday"
 msgstr "هر آخرین سه شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:386
+#: src/EventEdition/RepeatPanel.vala:392
 msgid "Every last Wednesday"
 msgstr "هر آخرین چهارشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:389
+#: src/EventEdition/RepeatPanel.vala:395
 msgid "Every last Thursday"
 msgstr "هر آخرین پنج شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:392
+#: src/EventEdition/RepeatPanel.vala:398
 msgid "Every last Friday"
 msgstr "هر آخرین جمعه"
 
-#: src/EventEdition/RepeatPanel.vala:395
+#: src/EventEdition/RepeatPanel.vala:401
 msgid "Every last Saturday"
 msgstr "هر آخرین شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:402
+#: src/EventEdition/RepeatPanel.vala:408
 msgid "Every first Sunday"
 msgstr "هر اولین یکشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:405
+#: src/EventEdition/RepeatPanel.vala:411
 msgid "Every first Monday"
 msgstr "هر اولین دوشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:408
+#: src/EventEdition/RepeatPanel.vala:414
 msgid "Every first Tuesday"
 msgstr "هر اولین سه شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:411
+#: src/EventEdition/RepeatPanel.vala:417
 msgid "Every first Wednesday"
 msgstr "هر اولین چهارشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:414
+#: src/EventEdition/RepeatPanel.vala:420
 msgid "Every first Thursday"
 msgstr "هر اولین پنج شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:417
+#: src/EventEdition/RepeatPanel.vala:423
 msgid "Every first Friday"
 msgstr "هر اولین جمعه"
 
-#: src/EventEdition/RepeatPanel.vala:420
+#: src/EventEdition/RepeatPanel.vala:426
 msgid "Every first Saturday"
 msgstr "هر اولین شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:427
+#: src/EventEdition/RepeatPanel.vala:433
 msgid "Every second Sunday"
 msgstr "هر دومین یکشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:430
+#: src/EventEdition/RepeatPanel.vala:436
 msgid "Every second Monday"
 msgstr "هر دومین دوشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:433
+#: src/EventEdition/RepeatPanel.vala:439
 msgid "Every second Tuesday"
 msgstr "هر دومین سه شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:436
+#: src/EventEdition/RepeatPanel.vala:442
 msgid "Every second Wednesday"
 msgstr "هر دومین چهار‌شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:439
+#: src/EventEdition/RepeatPanel.vala:445
 msgid "Every second Thursday"
 msgstr "هر دومین پنج‌شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:442
+#: src/EventEdition/RepeatPanel.vala:448
 msgid "Every second Friday"
 msgstr "هر دومین جمعه"
 
-#: src/EventEdition/RepeatPanel.vala:445
+#: src/EventEdition/RepeatPanel.vala:451
 msgid "Every second Saturday"
 msgstr "هر دومین شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:452
+#: src/EventEdition/RepeatPanel.vala:458
 msgid "Every third Sunday"
 msgstr "هر سومین یکشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:455
+#: src/EventEdition/RepeatPanel.vala:461
 msgid "Every third Monday"
 msgstr "هر سومین دوشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:458
+#: src/EventEdition/RepeatPanel.vala:464
 msgid "Every third Tuesday"
 msgstr "هر سومین سه‌شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:461
+#: src/EventEdition/RepeatPanel.vala:467
 msgid "Every third Wednesday"
 msgstr "هر سومین چهارشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:464
+#: src/EventEdition/RepeatPanel.vala:470
 msgid "Every third Thursday"
 msgstr "هر سومین پنج‌شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:467
+#: src/EventEdition/RepeatPanel.vala:473
 msgid "Every third Friday"
 msgstr "هر سومین جمعه"
 
-#: src/EventEdition/RepeatPanel.vala:470
+#: src/EventEdition/RepeatPanel.vala:476
 msgid "Every third Saturday"
 msgstr "هر سومین شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:477
+#: src/EventEdition/RepeatPanel.vala:483
 msgid "Every fourth Sunday"
 msgstr "هر چهارمین یکشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:480
+#: src/EventEdition/RepeatPanel.vala:486
 msgid "Every fourth Monday"
 msgstr "هر چهارمین دو‌شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:483
+#: src/EventEdition/RepeatPanel.vala:489
 msgid "Every fourth Tuesday"
 msgstr "هر چهارمین سه‌شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:486
+#: src/EventEdition/RepeatPanel.vala:492
 msgid "Every fourth Wednesday"
 msgstr "هر چهارمین چهارشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:489
+#: src/EventEdition/RepeatPanel.vala:495
 msgid "Every fourth Thursday"
 msgstr "هر چهارمین پنج‌شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:492
+#: src/EventEdition/RepeatPanel.vala:498
 msgid "Every fourth Friday"
 msgstr "هر چهارمین جمعه"
 
-#: src/EventEdition/RepeatPanel.vala:495
+#: src/EventEdition/RepeatPanel.vala:501
 msgid "Every fourth Saturday"
 msgstr "هر چهارمین شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:502
+#: src/EventEdition/RepeatPanel.vala:508
 msgid "Every fifth Sunday"
 msgstr "هر پنجمین یکشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:505
+#: src/EventEdition/RepeatPanel.vala:511
 msgid "Every fifth Monday"
 msgstr "هر پنجمین دو‌شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:508
+#: src/EventEdition/RepeatPanel.vala:514
 msgid "Every fifth Tuesday"
 msgstr "هر پنجمین سه‌شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:511
+#: src/EventEdition/RepeatPanel.vala:517
 msgid "Every fifth Wednesday"
 msgstr "هر پنجمین چهارشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:520
 msgid "Every fifth Thursday"
 msgstr "هر پنجمین پنج‌شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:523
 msgid "Every fifth Friday"
 msgstr "هر پنجمین جمعه"
 
-#: src/EventEdition/RepeatPanel.vala:520
+#: src/EventEdition/RepeatPanel.vala:526
 msgid "Every fifth Saturday"
 msgstr "هر پنجمین شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:530
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Mon"
 msgstr "دوشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:531
+#: src/EventEdition/RepeatPanel.vala:537
 msgid "Tue"
 msgstr "سه‌شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:532
+#: src/EventEdition/RepeatPanel.vala:538
 msgid "Wed"
 msgstr "چهارشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:533
+#: src/EventEdition/RepeatPanel.vala:539
 msgid "Thu"
 msgstr "پنجشنبه"
 
-#: src/EventEdition/RepeatPanel.vala:534
+#: src/EventEdition/RepeatPanel.vala:540
 msgid "Fri"
 msgstr "جمعه"
 
-#: src/EventEdition/RepeatPanel.vala:535
+#: src/EventEdition/RepeatPanel.vala:541
 msgid "Sat"
 msgstr "شنبه"
 
-#: src/EventEdition/RepeatPanel.vala:536
+#: src/EventEdition/RepeatPanel.vala:542
 msgid "Sun"
 msgstr "یک‌شنبه"
 
@@ -664,11 +674,11 @@ msgstr "رنگ:"
 msgid "Mark as default calendar"
 msgstr "انتخاب به عنوان تقویم اصلی"
 
-#: src/SourceDialog/SourceDialog.vala:248
+#: src/SourceDialog/SourceDialog.vala:244
 msgid "Create Calendar"
 msgstr "ایجاد تقویم"
 
-#: src/SourceDialog/SourceDialog.vala:251
+#: src/SourceDialog/SourceDialog.vala:249
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "ذخیره"
@@ -699,7 +709,7 @@ msgstr "بر‌گرداندن"
 msgid "\"%s\" removed"
 msgstr "تقویم \"%S\"  پاک شده است"
 
-#: src/SourceDialog/SourceSelector.vala:51
+#: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"
 msgstr "اضافه نمودن تقویم جدید ..."
 

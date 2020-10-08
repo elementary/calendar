@@ -36,9 +36,9 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         var no_reminder_label = new Gtk.Label (_("No Reminders"));
         no_reminder_label.show ();
 
-        var no_reminder_label_context = no_reminder_label.get_style_context ();
-        no_reminder_label_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
-        no_reminder_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        unowned Gtk.StyleContext no_reminder_context = no_reminder_label.get_style_context ();
+        no_reminder_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_reminder_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         reminders = new Gee.ArrayList<ReminderGrid> ();
         reminders_to_remove = new Gee.ArrayList<string> ();

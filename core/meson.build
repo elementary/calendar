@@ -14,8 +14,14 @@ core_files = files(
     'Backends/BackendsManager.vala',
     'Backends/LocalBackend.vala',
     'Backends/PlacementWidget.vala',
-    'Model/CalendarModel.vala',
-    'DateRange.vala',
+    'Services/Calendar/EventStore.vala',
+    'Services/Calendar/Util/DateIterator.vala',
+    'Services/Calendar/Util/DateRange.vala',
+    'Services/Calendar/Util/DateTime.vala',
+    'Services/Calendar/Util/ECalComponent.vala',
+    'Services/Calendar/Util/ESource.vala',
+    'Services/Calendar/Util/ICalComponent.vala',
+    'Services/Calendar/Util/ICalTime.vala',
     'Utils.vala',
     'GesturesUtils.vala'
 )
@@ -64,3 +70,5 @@ pkgconfig.generate(
     subdirs: 'elementary-calendar',
     requires: core_deps
 )
+
+subdir('Tests')
