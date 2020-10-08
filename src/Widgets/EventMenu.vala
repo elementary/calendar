@@ -64,6 +64,8 @@ public class Maya.EventMenu : Gtk.Menu {
         duplicate_item.activate.connect (() => {
             ((Maya.Application) GLib.Application.get_default ()).window.on_duplicated (comp);
         });
+
+        show_all ();
     }
 
     private void remove_event () {
