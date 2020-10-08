@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-09-05 23:13+0000\n"
+"PO-Revision-Date: 2020-10-08 16:14+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -643,7 +643,7 @@ msgstr "色:"
 
 #: src/SourceDialog/SourceDialog.vala:183
 msgid "Mark as default calendar"
-msgstr "デフォルトのカレンダーにする"
+msgstr "デフォルトのカレンダーに設定"
 
 #: src/SourceDialog/SourceDialog.vala:244
 msgid "Create Calendar"

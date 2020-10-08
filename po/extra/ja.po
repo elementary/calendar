@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-09-09 11:00+0000\n"
+"PO-Revision-Date: 2020-10-08 16:14+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -49,13 +49,13 @@ msgstr "軽微なアップデート:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr ""
+msgstr "カレンダーに新しい予定が重複して表示される可能性のある不具合を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
-msgstr ""
+msgstr "カレンダーの編集時に、\"デフォルトのカレンダーに設定\" チェックボックスが正しくチェックされるように修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Improvements:"
