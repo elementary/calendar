@@ -1,7 +1,7 @@
 Source: maya-calendar
 Section: utils
 Priority: optional
-Maintainer: Cody Garver <cody@elementary.io>
+Maintainer: elementary, Inc. <builds@elementary.io>
 Build-Depends: debhelper (>= 10.5.1),
                libchamplain-0.12-dev,
                libchamplain-gtk-0.12-dev,
@@ -136,18 +136,3 @@ Description: GTK+ calendar application (CalDAV plugin)
  Google Calendar as well as CalDAV-supporting services such as OwnCloud.
  .
  This package provides integration with CalDAV-supporting services.
-
-Package: maya-calendar-dbg
-Architecture: any
-Section: debug
-Priority: optional
-Depends: maya-calendar (= ${binary:Version}), ${misc:Depends}
-Description: GTK+ calendar application (debugging symbols)
- Maya is a slim, lightweight, GTK+ Calendar application written
- in Vala and designed for elementary OS.
- .
- It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with
- Google Calendar as well as CalDAV-supporting services such as OwnCloud.
- .
- This package contains debugging symbols for Maya.
