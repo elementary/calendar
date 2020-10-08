@@ -1,3 +1,9 @@
+maya-calendar (5.1.1) bionic; urgency=medium
+
+  * Release 5.1.1 (#609)
+
+ -- elementary, Inc. <builds@elementary.io>  Thu, 08 Oct 2020 20:28:04 +0000
+
 maya-calendar (5.1.0) bionic; urgency=medium
 
   * Release 5.1.0 (#586)
