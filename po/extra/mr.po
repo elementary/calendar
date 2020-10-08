@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-09-15 19:14+0000\n"
+"PO-Revision-Date: 2020-10-08 16:14+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/extra/"
 "mr/>\n"
@@ -48,13 +48,15 @@ msgstr "किरकोळ अद्यतने:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr ""
+msgstr "कॅलेंडरमध्ये दोनदा नवीन कार्यक्रम दिसू शकतील अशा समस्येचे निराकरण करा"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
+"\"डीफॉल्ट कॅलेंडर म्हणून चिन्हांकित करा\" बॉक्स आता कॅलेंडर संपादित करताना "
+"योग्यरित्या तपासला जातो"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Improvements:"
