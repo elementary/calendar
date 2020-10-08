@@ -18,7 +18,7 @@
  */
 
 public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
-    private const int ICON_SIZE = 48;
+    private const int ICON_SIZE = 32;
 
     public signal void removed ();
     public ICal.Property attendee;
