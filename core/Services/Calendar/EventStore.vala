@@ -511,6 +511,9 @@ public class Calendar.EventStore : Object {
             if (events_for_uid.size > 1 ||
                 events_for_uid.to_array ()[0].get_icalcomponent ().get_recurrenceid ().as_ical_string () != null ||
                 comp.get_recurrenceid ().as_ical_string () != null) {
+
+                /* Either original or new event is recurring: rebuild our set of recurrences with new data */
+
                 events_for_source.remove_all (uid);
                 foreach (ECal.Component event in events_for_uid) {
                     debug_event (source, event, "MODIFIED - ORIGINAL");

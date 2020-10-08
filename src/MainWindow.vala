@@ -143,6 +143,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
             dup_comp.set_uid (Util.mangle_uid (comp.get_id ().get_uid ()));
             var dialog = new Maya.View.EventDialog (dup_comp, null, this);
             dialog.transient_for = this;
+
             dialog.present ();
         } else {
             Gdk.beep ();
