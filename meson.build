@@ -1,6 +1,6 @@
 project('io.elementary.calendar',
     'c', 'vala',
-    version: '5.1.0'
+    version: '5.1.1'
 )
 
 add_project_arguments([
