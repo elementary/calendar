@@ -3,7 +3,12 @@ project('io.elementary.calendar',
     version: '5.1.0'
 )
 
-add_project_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
+add_project_arguments([
+    '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
+    '-DHANDY_USE_UNSTABLE_API'
+    ],
+    language: 'c'
+)
 
 libexecdir = join_paths(get_option('prefix'), get_option('libexecdir'), meson.project_name())
 pluginsdir = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name(), 'plugins')
@@ -16,6 +21,7 @@ glib_dep = dependency('glib-2.0')
 gee_dep = dependency('gee-0.8')
 granite_dep = dependency('granite', version: '>=5.2.0')
 gtk_dep = dependency('gtk+-3.0', version: '>=3.22')
+handy_dep = dependency('libhandy-1', version: '>=0.90.0')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>=3.8.0')
 libedataserverui_dep = dependency('libedataserverui-1.2', version: '>=3.8.0')
 libsoup_dep = dependency('libsoup-2.4')

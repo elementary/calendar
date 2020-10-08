@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 elementary, Inc. (https://elementary.io)
+ * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,12 +18,14 @@
  */
 
 public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
+    private const int ICON_SIZE = 48;
+
     public signal void removed ();
     public ICal.Property attendee;
     private Folks.Individual individual;
     private Gtk.Label name_label;
     private Gtk.Label mail_label;
-    private Granite.Widgets.Avatar avatar;
+    private Hdy.Avatar avatar;
 
     public GuestGrid (ICal.Property attendee) {
         this.attendee = attendee.clone ();
@@ -60,8 +62,6 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
             }
         }
 
-        avatar = new Granite.Widgets.Avatar.with_default_icon (32);
-
         var mail = attendee.get_attendee ().replace ("mailto:", "");
 
         name_label = new Gtk.Label (Markup.escape_text (mail.split ("@", 2)[0]));
@@ -78,6 +78,8 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         remove_button.valign = Gtk.Align.CENTER;
 
         get_contact_by_mail.begin (attendee.get_attendee ().replace ("mailto:", ""));
+
+        avatar = new Hdy.Avatar (ICON_SIZE, name_label.label, true);
 
         column_spacing = 12;
         margin = 6;
@@ -106,8 +108,17 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                         individual = map_iterator.get_value ();
                         if (individual != null) {
                             try {
-                                individual.avatar.load (32, null);
-                                avatar = new Granite.Widgets.Avatar.from_file (individual.avatar.to_string (), 32);
+                                individual.avatar.load (ICON_SIZE, null);
+                                avatar = new Hdy.Avatar (ICON_SIZE, individual.avatar.to_string (), true);
+                                avatar.set_image_load_func (() => {
+                                    try {
+                                        var pixbuf = new Gdk.Pixbuf.from_file (individual.avatar.to_string ());
+                                        return pixbuf.scale_simple (ICON_SIZE, ICON_SIZE, Gdk.InterpType.BILINEAR);
+                                    } catch (Error e) {
+                                        debug (e.message);
+                                        return null;
+                                    }
+                                });
                             } catch (Error e) {
                                 critical (e.message);
                             }
