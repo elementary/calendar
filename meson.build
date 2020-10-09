@@ -3,12 +3,7 @@ project('io.elementary.calendar',
     version: '5.1.1'
 )
 
-add_project_arguments([
-    '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
-    '-DHANDY_USE_UNSTABLE_API'
-    ],
-    language: 'c'
-)
+add_project_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
 
 libexecdir = join_paths(get_option('prefix'), get_option('libexecdir'), meson.project_name())
 pluginsdir = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name(), 'plugins')
