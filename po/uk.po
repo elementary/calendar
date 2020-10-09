@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-09-19 20:14+0000\n"
+"PO-Revision-Date: 2020-10-09 00:59+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/"
 "calendar/uk/>\n"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
@@ -63,7 +63,7 @@ msgstr "CalDAV"
 
 #: plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr "URL:"
+msgstr "URL-адреса:"
 
 #: plugins/CalDAV/CalDAVBackend.vala:95
 msgid "Use a secure connection"
@@ -130,7 +130,7 @@ msgstr "Виберіть календар для імпорту"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Події з \"%s\" буде об'єднано з цим календарем:"
+msgstr "Події з «%s» буде об'єднано з цим календарем:"
 
 #: src/ImportDialog.vala:47
 #, c-format
@@ -385,7 +385,7 @@ msgstr[2] "Років"
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr "Завершити:"
+msgstr "Завершується:"
 
 #. /Translators: Give a word to describe an event ending after a certain number of repeats.
 #. /This will be displayed in the format like: "Ends After 2 Repeats",
@@ -690,7 +690,7 @@ msgstr "Повернути"
 #: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
 #, c-format
 msgid "\"%s\" removed"
-msgstr "\"%s\" вилучено"
+msgstr "«%s» вилучено"
 
 #: src/SourceDialog/SourceSelector.vala:52
 msgid "Add New Calendar…"

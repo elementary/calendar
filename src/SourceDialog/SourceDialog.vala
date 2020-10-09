@@ -172,8 +172,9 @@ public class Maya.View.SourceDialog : Gtk.Grid {
 
         color_button_none = new Gtk.RadioButton.from_widget (color_button_red);
 
-        var color_grid = new Gtk.Grid ();
-        color_grid.column_spacing = 12;
+        var color_grid = new Gtk.Grid () {
+            column_spacing = 3
+        };
         color_grid.add (color_button_red);
         color_grid.add (color_button_orange);
         color_grid.add (color_button_yellow);
