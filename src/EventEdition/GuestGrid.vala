@@ -108,8 +108,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                         individual = map_iterator.get_value ();
                         if (individual != null) {
                             try {
-                                individual.avatar.load (ICON_SIZE, null);
-                                avatar = new Hdy.Avatar (ICON_SIZE, individual.avatar.to_string (), true);
+                                avatar = new Hdy.Avatar (ICON_SIZE, individual.display_name, true);
                                 avatar.set_image_load_func ((size) => {
                                     try {
                                         return new Gdk.Pixbuf.from_stream_at_scale (individual.avatar.load (size, null), size, size, true);
