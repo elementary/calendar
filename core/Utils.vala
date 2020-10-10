@@ -99,4 +99,10 @@ namespace Maya.Util {
         copy.set_data<E.Source> ("source", source);
         return copy;
     }
+
+    public string mangle_uid (string original_uid) {
+        /* For now just reverse the uid */
+        var result = original_uid.dup ();
+        return result.reverse ();
+    }
 }
