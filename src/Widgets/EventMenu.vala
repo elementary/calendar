@@ -34,6 +34,9 @@ public class Maya.EventMenu : Gtk.Menu {
         var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
         edit_item.sensitive = sensitive;
 
+        var duplicate_item = new Gtk.MenuItem.with_label (_("Duplicate…"));
+        duplicate_item.sensitive = sensitive;
+
         Gtk.MenuItem remove_item;
         if (comp.has_recurrences ()) {
             remove_item = new Gtk.MenuItem.with_label (_("Remove Event"));
@@ -52,9 +55,14 @@ public class Maya.EventMenu : Gtk.Menu {
 
         append (remove_item);
         append (edit_item);
+        append (duplicate_item);
 
         edit_item.activate.connect (() => {
             ((Maya.Application) GLib.Application.get_default ()).window.on_modified (comp);
+        });
+
+        duplicate_item.activate.connect (() => {
+            ((Maya.Application) GLib.Application.get_default ()).window.on_duplicated (comp);
         });
 
         show_all ();
