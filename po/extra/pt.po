@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-09-25 18:30+0000\n"
+"PO-Revision-Date: 2020-10-08 16:14+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "extra/pt/>\n"
@@ -50,12 +50,16 @@ msgstr "Pequenas atualizações:"
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr ""
+"Corrige um problema em que novos eventos podiam aparecer duas vezes no "
+"Calendário"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
+"A caixa \"Marcar como calendário predefinido\" agora é marcada corretamente "
+"ao editar um calendário"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Improvements:"

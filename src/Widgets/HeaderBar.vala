@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2011-2020 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
  */
 
 namespace Maya.View {
-    public class HeaderBar : Gtk.HeaderBar {
+    public class HeaderBar : Hdy.HeaderBar {
         public signal void on_search (string search);
 
         public Gtk.SearchEntry search_bar;
@@ -28,7 +28,8 @@ namespace Maya.View {
         private Widgets.DateSwitcher year_switcher;
 
         public HeaderBar () {
-            Object (show_close_button: true);
+            Object (show_close_button: true,
+                    vexpand: false);
         }
 
         construct {
