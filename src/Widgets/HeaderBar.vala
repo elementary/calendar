@@ -28,8 +28,7 @@ namespace Maya.View {
         private Widgets.DateSwitcher year_switcher;
 
         public HeaderBar () {
-            Object (show_close_button: true,
-                    vexpand: false);
+            Object (show_close_button: true);
         }
 
         construct {
@@ -56,8 +55,13 @@ namespace Maya.View {
             menu_button.popover = source_popover;
             menu_button.tooltip_text = _("Manage Calendars");
 
-            month_switcher = new Widgets.DateSwitcher (10);
-            year_switcher = new Widgets.DateSwitcher (-1);
+            month_switcher = new Widgets.DateSwitcher (10) {
+                valign = Gtk.Align.CENTER
+            };
+            year_switcher = new Widgets.DateSwitcher (-1) {
+                valign = Gtk.Align.CENTER
+            };
+
             var calmodel = Calendar.EventStore.get_default ();
             set_switcher_date (calmodel.month_start);
 
