@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 elementary, Inc. (https://elementary.io)
+ * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,12 +18,14 @@
  */
 
 public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
+    private const int ICON_SIZE = 32;
+
     public signal void removed ();
     public ICal.Property attendee;
     private Folks.Individual individual;
     private Gtk.Label name_label;
     private Gtk.Label mail_label;
-    private Granite.Widgets.Avatar avatar;
+    private Hdy.Avatar avatar;
 
     public GuestGrid (ICal.Property attendee) {
         this.attendee = attendee.clone ();
@@ -60,8 +62,6 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
             }
         }
 
-        avatar = new Granite.Widgets.Avatar.with_default_icon (32);
-
         var mail = attendee.get_attendee ().replace ("mailto:", "");
 
         name_label = new Gtk.Label (Markup.escape_text (mail.split ("@", 2)[0]));
@@ -78,6 +78,8 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         remove_button.valign = Gtk.Align.CENTER;
 
         get_contact_by_mail.begin (attendee.get_attendee ().replace ("mailto:", ""));
+
+        avatar = new Hdy.Avatar (ICON_SIZE, name_label.label, true);
 
         column_spacing = 12;
         margin = 6;
@@ -105,12 +107,16 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                     if (address.value == mail_address) {
                         individual = map_iterator.get_value ();
                         if (individual != null) {
-                            try {
-                                individual.avatar.load (32, null);
-                                avatar = new Granite.Widgets.Avatar.from_file (individual.avatar.to_string (), 32);
-                            } catch (Error e) {
-                                critical (e.message);
-                            }
+                            avatar.text = individual.display_name;
+                            avatar.set_image_load_func ((size) => {
+                                try {
+                                    return new Gdk.Pixbuf.from_stream_at_scale (individual.avatar.load (size, null), size, size, true);
+                                } catch (Error e) {
+                                    debug (e.message);
+                                    return null;
+                                }
+                            });
+
                             if (individual.full_name != null && individual.full_name != "") {
                                 name_label.label = Markup.escape_text (individual.full_name);
                                 mail_label.label = Markup.escape_text (attendee.get_attendee ());

@@ -136,6 +136,21 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         }
     }
 
+    public void on_duplicated (ECal.Component comp) {
+        E.Source src = comp.get_data ("source");
+
+        if (src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false) {
+            var dup_comp = Util.copy_ecal_component (comp);
+            dup_comp.set_uid (Util.mangle_uid (comp.get_id ().get_uid ()));
+            var dialog = new Maya.View.EventDialog (dup_comp, null, this);
+            dialog.transient_for = this;
+
+            dialog.present ();
+        } else {
+            Gdk.beep ();
+        }
+    }
+
     public override bool configure_event (Gdk.EventConfigure event) {
         if (configure_id != 0) {
             GLib.Source.remove (configure_id);

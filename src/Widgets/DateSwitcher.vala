@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+/*
+ * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,6 +21,8 @@ public class Maya.View.Widgets.DateSwitcher : Gtk.Grid {
     public signal void left_clicked ();
     public signal void right_clicked ();
 
+    public int width_chars { get; construct; }
+
     private Gtk.Label label;
     public string text {
         get { return label.label; }
@@ -33,26 +34,26 @@ public class Maya.View.Widgets.DateSwitcher : Gtk.Grid {
     }
 
     public DateSwitcher (int width_chars) {
-        label.width_chars = width_chars;
+        Object (width_chars: width_chars);
     }
 
     construct {
-        orientation = Gtk.Orientation.HORIZONTAL;
-        get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        label = new Gtk.Label (null);
-        label.vexpand = true;
-        label.margin_start = label.margin_end = 3;
         var start_button = new Gtk.Button.from_icon_name ("pan-start-symbolic", Gtk.IconSize.MENU);
-        start_button.get_style_context ().remove_class ("image-button");
-        start_button.image.margin = 3;
+
         var end_button = new Gtk.Button.from_icon_name ("pan-end-symbolic", Gtk.IconSize.MENU);
-        end_button.get_style_context ().remove_class ("image-button");
-        end_button.image.margin = 3;
+
+        label = new Gtk.Label (null) {
+            width_chars = width_chars
+        };
+
         var center_button = new Gtk.Button ();
         center_button.add (label);
+
+        get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         add (start_button);
         add (center_button);
         add (end_button);
+
         start_button.clicked.connect (() => left_clicked ());
         end_button.clicked.connect (() => right_clicked ());
     }
