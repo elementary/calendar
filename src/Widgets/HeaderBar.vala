@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2011-2020 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
  */
 
 namespace Maya.View {
-    public class HeaderBar : Gtk.HeaderBar {
+    public class HeaderBar : Hdy.HeaderBar {
         public signal void on_search (string search);
 
         public Gtk.SearchEntry search_bar;
@@ -55,8 +55,13 @@ namespace Maya.View {
             menu_button.popover = source_popover;
             menu_button.tooltip_text = _("Manage Calendars");
 
-            month_switcher = new Widgets.DateSwitcher (10);
-            year_switcher = new Widgets.DateSwitcher (-1);
+            month_switcher = new Widgets.DateSwitcher (10) {
+                valign = Gtk.Align.CENTER
+            };
+            year_switcher = new Widgets.DateSwitcher (-1) {
+                valign = Gtk.Align.CENTER
+            };
+
             var calmodel = Calendar.EventStore.get_default ();
             set_switcher_date (calmodel.month_start);
 

@@ -13,12 +13,17 @@
     </p>
   </description>
   <releases>
-    <release version="5.1.1" date="2020-09-02" urgency="medium">
+    <release version="5.1.1" date="2020-10-08" urgency="medium">
       <description>
+      <p>New Features:</p>
+      <ul>
+        <li>Add "Duplicate..." option to event context menu</li>
+      </ul>
       <p>Minor Updates:</p>
       <ul>
         <li>Fix an issue where new events could appear twice in Calendar</li>
         <li>"Mark as default calendar" box is now correctly checked when editing a calendar</li>
+        <li>Updated translations</li>
       </ul>
       </description>
     </release>

@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2018 elementary, Inc. (https://elementary.io)
+ * Copyright (c) 2011-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementary.io>
  */
 
-public class Maya.MainWindow : Gtk.ApplicationWindow {
+public class Maya.MainWindow : Hdy.ApplicationWindow {
     public View.CalendarView calview;
 
     public const string ACTION_PREFIX = "win.";
@@ -49,6 +49,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     construct {
+        Hdy.init ();
         add_action_entries (ACTION_ENTRIES, this);
 
         foreach (var action in action_accelerators.get_keys ()) {
@@ -83,11 +84,11 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
+        grid.add (headerbar);
         grid.add (infobar);
         grid.add (hpaned);
 
         add (grid);
-        set_titlebar (headerbar);
 
         calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
         calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
@@ -129,6 +130,21 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         if (src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false) {
             var dialog = new Maya.View.EventDialog (comp, null, this);
+            dialog.present ();
+        } else {
+            Gdk.beep ();
+        }
+    }
+
+    public void on_duplicated (ECal.Component comp) {
+        E.Source src = comp.get_data ("source");
+
+        if (src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false) {
+            var dup_comp = Util.copy_ecal_component (comp);
+            dup_comp.set_uid (Util.mangle_uid (comp.get_id ().get_uid ()));
+            var dialog = new Maya.View.EventDialog (dup_comp, null, this);
+            dialog.transient_for = this;
+
             dialog.present ();
         } else {
             Gdk.beep ();
