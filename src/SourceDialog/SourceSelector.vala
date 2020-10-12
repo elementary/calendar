@@ -77,8 +77,6 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         });
 
         import_calendar_button.button_release_event.connect (() => {
-            GLib.File[] files = null;
-
             var ics_filter = new Gtk.FileFilter ();
             ics_filter.add_mime_type ("application/ics");
 
@@ -98,8 +96,10 @@ public class Maya.View.SourceSelector : Gtk.Popover {
             this.hide ();
 
             file_chooser.response.connect ((response_id) => {
+                GLib.File[] files = null;
+
                 if (response_id == Gtk.ResponseType.ACCEPT) {
-                    foreach (GLib.File selected_file in file_chooser.get_files ()) {
+                    foreach (unowned GLib.File selected_file in file_chooser.get_files ()) {
                         files += selected_file;
                     }
                 }
