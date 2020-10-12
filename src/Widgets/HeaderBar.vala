@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2020 elementary LLC. (https://elementary.io)
+ * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,80 +18,78 @@
  *              Corentin Noël <corentin@elementary.io>
  */
 
-namespace Maya.View {
-    public class HeaderBar : Hdy.HeaderBar {
-        public signal void on_search (string search);
+public class Calendar.Widgets.HeaderBar : Hdy.HeaderBar {
+    public signal void on_search (string search);
 
-        public Gtk.SearchEntry search_bar;
-        private Widgets.DateSwitcher month_switcher;
-        private Widgets.DateSwitcher year_switcher;
+    public Gtk.SearchEntry search_bar;
+    private Calendar.Widgets.DateSwitcher month_switcher;
+    private Calendar.Widgets.DateSwitcher year_switcher;
 
-        public HeaderBar () {
-            Object (show_close_button: true);
-        }
+    public HeaderBar () {
+        Object (show_close_button: true);
+    }
 
-        construct {
-            var application_instance = ((Gtk.Application) GLib.Application.get_default ());
+    construct {
+        var application_instance = ((Gtk.Application) GLib.Application.get_default ());
 
-            var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
-            button_add.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_NEW_EVENT;
-            button_add.tooltip_markup = Granite.markup_accel_tooltip (
-                application_instance.get_accels_for_action (button_add.action_name),
-                _("Create a new event")
-            );
+        var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
+        button_add.action_name = Maya.MainWindow.ACTION_PREFIX + Maya.MainWindow.ACTION_NEW_EVENT;
+        button_add.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (button_add.action_name),
+            _("Create a new event")
+        );
 
-            var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR);
-            button_today.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_SHOW_TODAY;
-            button_today.tooltip_markup = Granite.markup_accel_tooltip (
-                application_instance.get_accels_for_action (button_today.action_name),
-                _("Go to today's date")
-            );
+        var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR);
+        button_today.action_name = Maya.MainWindow.ACTION_PREFIX + Maya.MainWindow.ACTION_SHOW_TODAY;
+        button_today.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (button_today.action_name),
+            _("Go to today's date")
+        );
 
-            var source_popover = new Calendar.Widgets.SourcePopover ();
+        var source_popover = new Calendar.Widgets.SourcePopover ();
 
-            var menu_button = new Gtk.MenuButton ();
-            menu_button.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
-            menu_button.popover = source_popover;
-            menu_button.tooltip_text = _("Manage Calendars");
+        var menu_button = new Gtk.MenuButton ();
+        menu_button.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
+        menu_button.popover = source_popover;
+        menu_button.tooltip_text = _("Manage Calendars");
 
-            month_switcher = new Widgets.DateSwitcher (10) {
-                valign = Gtk.Align.CENTER
-            };
-            year_switcher = new Widgets.DateSwitcher (-1) {
-                valign = Gtk.Align.CENTER
-            };
+        month_switcher = new Calendar.Widgets.DateSwitcher (10) {
+            valign = Gtk.Align.CENTER
+        };
+        year_switcher = new Calendar.Widgets.DateSwitcher (-1) {
+            valign = Gtk.Align.CENTER
+        };
 
-            var calmodel = Calendar.EventStore.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
+        set_switcher_date (calmodel.month_start);
+
+        var contractor = new Maya.View.Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
+
+        var title_grid = new Gtk.Grid ();
+        title_grid.column_spacing = 6;
+        title_grid.add (button_today);
+        title_grid.add (month_switcher);
+        title_grid.add (year_switcher);
+
+        var spinner = new Maya.View.Widgets.DynamicSpinner ();
+
+        pack_start (button_add);
+        pack_start (spinner);
+        set_custom_title (title_grid);
+        pack_end (menu_button);
+        pack_end (contractor);
+
+        month_switcher.left_clicked.connect (() => Calendar.EventStore.get_default ().change_month (-1));
+        month_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_month (1));
+        year_switcher.left_clicked.connect (() => Calendar.EventStore.get_default ().change_year (-1));
+        year_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_year (1));
+        calmodel.parameters_changed.connect (() => {
             set_switcher_date (calmodel.month_start);
+        });
+    }
 
-            var contractor = new Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
-
-            var title_grid = new Gtk.Grid ();
-            title_grid.column_spacing = 6;
-            title_grid.add (button_today);
-            title_grid.add (month_switcher);
-            title_grid.add (year_switcher);
-
-            var spinner = new Widgets.DynamicSpinner ();
-
-            pack_start (button_add);
-            pack_start (spinner);
-            set_custom_title (title_grid);
-            pack_end (menu_button);
-            pack_end (contractor);
-
-            month_switcher.left_clicked.connect (() => Calendar.EventStore.get_default ().change_month (-1));
-            month_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_month (1));
-            year_switcher.left_clicked.connect (() => Calendar.EventStore.get_default ().change_year (-1));
-            year_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_year (1));
-            calmodel.parameters_changed.connect (() => {
-                set_switcher_date (calmodel.month_start);
-            });
-        }
-
-        public void set_switcher_date (DateTime date) {
-            month_switcher.text = date.format ("%OB");
-            year_switcher.text = date.format ("%Y");
-        }
+    public void set_switcher_date (DateTime date) {
+        month_switcher.text = date.format ("%OB");
+        year_switcher.text = date.format ("%Y");
     }
 }
