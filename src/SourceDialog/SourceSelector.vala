@@ -51,6 +51,9 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         var add_calendar_button = new Gtk.ModelButton ();
         add_calendar_button.text = _("Add New Calendar…");
 
+        var import_calendar_button = new Gtk.ModelButton ();
+        import_calendar_button.text = _("Import From ICS File…");
+
         main_grid = new Gtk.Grid ();
         main_grid.row_spacing = 6;
         main_grid.margin_top = 6;
@@ -58,6 +61,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         main_grid.add (scroll);
         main_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         main_grid.add (add_calendar_button);
+        main_grid.add (import_calendar_button);
 
         stack = new Gtk.Stack ();
         stack.add_named (main_grid, "main");
@@ -69,6 +73,35 @@ public class Maya.View.SourceSelector : Gtk.Popover {
 
         add_calendar_button.button_release_event.connect (() => {
             create_source ();
+            return Gdk.EVENT_STOP;
+        });
+
+        import_calendar_button.button_release_event.connect (() => {
+            GLib.File[] files = null;
+
+            var file_chooser = new Gtk.FileChooserNative (
+                    _("Select ICS File to Import"),
+                    null,
+                    Gtk.FileChooserAction.OPEN,
+                    _("Open"),
+                    _("Cancel")
+            );
+            file_chooser.set_local_only (true);
+            file_chooser.set_select_multiple (true);
+
+            if (file_chooser.run () == Gtk.ResponseType.ACCEPT) {
+                foreach (GLib.File selected_file in file_chooser.get_files ()) {
+                    files += selected_file;
+                }
+            }
+
+            this.hide ();
+
+            if (files != null) {
+                var dialog = new Maya.View.ImportDialog (files);
+                dialog.show_all ();
+            }
+
             return Gdk.EVENT_STOP;
         });
     }
