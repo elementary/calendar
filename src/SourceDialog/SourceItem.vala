@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.SourceItem : Gtk.ListBoxRow {
+public class Calendar.SourceItem : Gtk.ListBoxRow {
     public signal void remove_request (E.Source source);
     public signal void edit_request (E.Source source);
 

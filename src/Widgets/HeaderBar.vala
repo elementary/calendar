@@ -48,7 +48,7 @@ namespace Maya.View {
                 _("Go to today's date")
             );
 
-            var source_popover = new View.SourceSelector ();
+            var source_popover = new Calendar.Widgets.SourcePopover();
 
             var menu_button = new Gtk.MenuButton ();
             menu_button.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);

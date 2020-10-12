@@ -41,7 +41,6 @@ src/Grid/Header.vala
 src/Grid/VAutoHider.vala
 src/SourceDialog/SourceDialog.vala
 src/SourceDialog/SourceItem.vala
-src/SourceDialog/SourceSelector.vala
 src/Widgets/AgendaEventRow.vala
 src/Widgets/CalendarButton.vala
 src/Widgets/ContractorButtonWithMenu.vala
@@ -50,3 +49,4 @@ src/Widgets/DateTimePicker.vala
 src/Widgets/DynamicSpinner.vala
 src/Widgets/EventMenu.vala
 src/Widgets/HeaderBar.vala
+src/Widgets/SourcePopover.vala
