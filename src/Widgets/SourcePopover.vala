@@ -18,7 +18,7 @@
  */
 
 public class Calendar.Widgets.SourcePopover : Gtk.Popover {
-    private GLib.HashTable<string, SourceItem?> src_map;
+    private GLib.HashTable<string, SourceRow?> src_map;
 
     private Gtk.Stack stack;
     private Maya.View.SourceDialog src_dialog = null;
@@ -33,9 +33,9 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         };
         calendar_box.set_header_func (header_update_func);
         calendar_box.set_sort_func ((child1, child2) => {
-            var comparison = ((SourceItem)child1).location.collate (((SourceItem)child2).location);
+            var comparison = ((SourceRow)child1).location.collate (((SourceRow)child2).location);
             if (comparison == 0) {
-                return ((SourceItem)child1).label.collate (((SourceItem)child2).label);
+                return ((SourceRow)child1).label.collate (((SourceRow)child2).label);
            } else {
                 return comparison;
            }
@@ -48,7 +48,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         };
         scroll.add (calendar_box);
 
-        src_map = new GLib.HashTable<string, SourceItem?> (str_hash, str_equal);
+        src_map = new GLib.HashTable<string, SourceRow?> (str_hash, str_equal);
 
         var add_calendar_button = new Gtk.ModelButton () {
             text = _("Add New Calendar…")
@@ -96,9 +96,9 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
     }
 
     private void header_update_func (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
-        var row_location = ((SourceItem)row).location;
+        var row_location = ((SourceRow)row).location;
         if (before != null) {
-            var before_row_location = ((SourceItem)before).location;
+            var before_row_location = ((SourceRow)before).location;
             if (before_row_location == row_location) {
                 row.set_header (null);
                 return;
@@ -140,7 +140,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         if (source.dup_uid () in src_map)
             return;
 
-        var source_item = new SourceItem (source);
+        var source_item = new SourceRow (source);
         source_item.edit_request.connect (edit_source);
         source_item.remove_request.connect (remove_source);
 
