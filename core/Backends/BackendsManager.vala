@@ -54,7 +54,7 @@ public class Maya.BackendsManager : GLib.Object {
             error ("Maya plugins are not supported by this system!");
         }
 
-        Module module = Module.open (path, ModuleFlags.BIND_LAZY);
+        Module module = Module.open (path, ModuleFlags.LAZY);
         if (module == null) {
             critical (Module.error ());
             return;
