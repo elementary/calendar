@@ -59,7 +59,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/calendar");
 
-        var headerbar = new View.HeaderBar ();
+        var headerbar = new Calendar.Widgets.HeaderBar ();
 
         var infobar_label = new Gtk.Label (null);
         infobar_label.show ();
