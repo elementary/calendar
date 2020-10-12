@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 20:11+0000\n"
-"PO-Revision-Date: 2019-07-01 18:46+0000\n"
+"POT-Creation-Date: 2020-10-06 21:10+0000\n"
+"PO-Revision-Date: 2020-10-12 21:23+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/calendar/"
 "calendar/it/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-03 05:42+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
@@ -131,14 +131,14 @@ msgstr "Seleziona un calendario da importare"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importa gli eventi da \"%d\" nel seguente calendario:"
+msgstr "Gli eventi di \"%s\" verranno uniti a questo calendario:"
 
 #: src/ImportDialog.vala:47
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Importa gli eventi dal file %d nel seguente calendario:"
-msgstr[1] "Importa gli eventi dai file %d nel seguente calendario:"
+msgstr[0] "Gli eventi da %d file verranno uniti a questo calendario:"
+msgstr[1] "Gli eventi da %d file verranno uniti a questo calendario:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
@@ -170,9 +170,6 @@ msgstr "Promemoria"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
-#| msgid "Repeat"
-#| msgid_plural "Repeats"
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Ripetizione"
@@ -656,11 +653,11 @@ msgstr "Colore:"
 msgid "Mark as default calendar"
 msgstr "Contrassegna come calendario predefinito"
 
-#: src/SourceDialog/SourceDialog.vala:248
+#: src/SourceDialog/SourceDialog.vala:244
 msgid "Create Calendar"
 msgstr "Crea calendario"
 
-#: src/SourceDialog/SourceDialog.vala:251
+#: src/SourceDialog/SourceDialog.vala:249
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Salva"
@@ -698,93 +695,93 @@ msgstr "Aggiungi un nuovo calendario…"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr ""
+msgstr "appuntamento;riunione"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "compleanno;anniversario;festa"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "chiama;cellulare;telefono;squillo"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "bar;cocktails;bevande;happy hour"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "macchina;guida;guidare;viaggio in macchina;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr ""
+msgstr "volo;aeroporto;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr ""
+msgstr "colazione;brunch;cena;pranzo;hamburger;pasto;barbecue"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "tribunale;giuria;tasse;fisco;fiscale;avvocato;contratto"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie"
-msgstr ""
+msgstr "film;cinema"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr ""
+msgstr "matrimonio"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:310
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s"
+msgstr "Dal %s al %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:313
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "Dal %s alle %s al %s alle %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:325
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s"
+msgstr "Dalle %s alle %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:334
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "Il %s alle %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:337
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s"
+msgstr "Dal %s alle %s al %s"
 
 #: src/Widgets/CalendarButton.vala:72
 msgid "Search Calendars"

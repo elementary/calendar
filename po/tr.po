@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 20:11+0000\n"
-"PO-Revision-Date: 2020-05-03 16:00+0000\n"
-"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"POT-Creation-Date: 2020-10-06 21:10+0000\n"
+"PO-Revision-Date: 2020-10-08 16:14+0000\n"
+"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
 "Language: tr\n"
@@ -170,12 +170,9 @@ msgstr "Hatırlatıcılar"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
-#| msgid "Repeat"
-#| msgid_plural "Repeats"
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr "Tekrar"
+msgstr "Tekrar Et"
 
 #: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
@@ -656,11 +653,11 @@ msgstr "Renk:"
 msgid "Mark as default calendar"
 msgstr "Varsayılan takvim olarak işaretle"
 
-#: src/SourceDialog/SourceDialog.vala:248
+#: src/SourceDialog/SourceDialog.vala:244
 msgid "Create Calendar"
 msgstr "Takvim Oluştur"
 
-#: src/SourceDialog/SourceDialog.vala:251
+#: src/SourceDialog/SourceDialog.vala:249
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Kaydet"

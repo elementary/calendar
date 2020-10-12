@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 20:11+0000\n"
+"POT-Creation-Date: 2020-10-06 21:10+0000\n"
 "PO-Revision-Date: 2019-01-08 13:02+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/calendar/"
@@ -663,11 +663,11 @@ msgstr "Spalva:"
 msgid "Mark as default calendar"
 msgstr "Pažymėti numatytuoju kalendoriumi"
 
-#: src/SourceDialog/SourceDialog.vala:248
+#: src/SourceDialog/SourceDialog.vala:244
 msgid "Create Calendar"
 msgstr "Sukurti kalendorių"
 
-#: src/SourceDialog/SourceDialog.vala:251
+#: src/SourceDialog/SourceDialog.vala:249
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Įrašyti"

@@ -164,7 +164,7 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
                 }
             }
 
-            var calmodel = Calendar.Store.get_default ();
+            var calmodel = Calendar.EventStore.get_default ();
             var registry = calmodel.registry;
             var list = new List<E.Source> ();
             list.append (new_source);

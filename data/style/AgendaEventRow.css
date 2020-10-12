@@ -1,7 +1,7 @@
 .event {
-    background: alpha(@accent_color, 0.15);
+    background: @selected_bg_color;
     border-radius: 3px;
-    color: shade(@accent_color, 0.65);
+    color: @selected_fg_color;
     padding: 6px;
 }
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 20:11+0000\n"
-"PO-Revision-Date: 2020-08-21 10:13+0000\n"
+"POT-Creation-Date: 2020-10-06 21:10+0000\n"
+"PO-Revision-Date: 2020-10-11 07:27+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "calendar/pt/>\n"
@@ -146,7 +146,7 @@ msgstr "Importar"
 
 #: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
-msgstr "Adicionar Evento"
+msgstr "Adicionar evento"
 
 #: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
@@ -653,11 +653,11 @@ msgstr "Cor:"
 msgid "Mark as default calendar"
 msgstr "Marcar como predefinido"
 
-#: src/SourceDialog/SourceDialog.vala:248
+#: src/SourceDialog/SourceDialog.vala:244
 msgid "Create Calendar"
 msgstr "Criar Calendário"
 
-#: src/SourceDialog/SourceDialog.vala:251
+#: src/SourceDialog/SourceDialog.vala:249
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Guardar"

@@ -43,7 +43,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
 
     construct {
         sources = new GLib.List<E.Source> ();
-        var calmodel = Calendar.Store.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
         var registry = calmodel.registry;
         foreach (var src in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
             if (src.writable == true && src.enabled == true && calmodel.calclient_is_readonly (src) == false) {
