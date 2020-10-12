@@ -79,6 +79,9 @@ public class Maya.View.SourceSelector : Gtk.Popover {
         import_calendar_button.button_release_event.connect (() => {
             GLib.File[] files = null;
 
+            var ics_filter = new Gtk.FileFilter ();
+            ics_filter.add_mime_type ("application/ics");
+
             var file_chooser = new Gtk.FileChooserNative (
                     _("Select ICS File to Import"),
                     null,
@@ -86,21 +89,26 @@ public class Maya.View.SourceSelector : Gtk.Popover {
                     _("Open"),
                     _("Cancel")
             );
+
             file_chooser.set_local_only (true);
             file_chooser.set_select_multiple (true);
+            file_chooser.set_filter (ics_filter);
 
-            if (file_chooser.run () == Gtk.ResponseType.ACCEPT) {
-                foreach (GLib.File selected_file in file_chooser.get_files ()) {
-                    files += selected_file;
-                }
-            }
-
+            file_chooser.show ();
             this.hide ();
 
-            if (files != null) {
-                var dialog = new Maya.View.ImportDialog (files);
-                dialog.show_all ();
-            }
+            file_chooser.response.connect ((response_id) => {
+                if (response_id == Gtk.ResponseType.ACCEPT) {
+                    foreach (GLib.File selected_file in file_chooser.get_files ()) {
+                        files += selected_file;
+                    }
+                }
+
+                if (files != null) {
+                    var dialog = new Maya.View.ImportDialog (files);
+                    dialog.show_all ();
+                }
+            });
 
             return Gdk.EVENT_STOP;
         });
