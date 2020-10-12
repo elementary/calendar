@@ -165,7 +165,7 @@ public class Maya.View.SourceSelector : Gtk.Popover {
     }
 
     private void remove_source (E.Source source) {
-        Calendar.Store.get_default ().trash_calendar (source);
+        Calendar.EventStore.get_default ().trash_calendar (source);
         var source_item = src_map.get (source.dup_uid ());
         source_item.show_calendar_removed ();
     }

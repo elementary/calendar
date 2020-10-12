@@ -29,10 +29,13 @@ public class Maya.EventMenu : Gtk.Menu {
 
     construct {
         E.Source src = comp.get_data ("source");
-        bool sensitive = src.writable == true && Calendar.Store.get_default ().calclient_is_readonly (src) == false;
+        bool sensitive = src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false;
 
         var edit_item = new Gtk.MenuItem.with_label (_("Edit…"));
         edit_item.sensitive = sensitive;
+
+        var duplicate_item = new Gtk.MenuItem.with_label (_("Duplicate…"));
+        duplicate_item.sensitive = sensitive;
 
         Gtk.MenuItem remove_item;
         if (comp.has_recurrences ()) {
@@ -52,19 +55,26 @@ public class Maya.EventMenu : Gtk.Menu {
 
         append (remove_item);
         append (edit_item);
+        append (duplicate_item);
 
         edit_item.activate.connect (() => {
             ((Maya.Application) GLib.Application.get_default ()).window.on_modified (comp);
         });
+
+        duplicate_item.activate.connect (() => {
+            ((Maya.Application) GLib.Application.get_default ()).window.on_duplicated (comp);
+        });
+
+        show_all ();
     }
 
     private void remove_event () {
-        var calmodel = Calendar.Store.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
         calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.ALL);
     }
 
     private void add_exception () {
-        var calmodel = Calendar.Store.get_default ();
+        var calmodel = Calendar.EventStore.get_default ();
         calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
     }
 }

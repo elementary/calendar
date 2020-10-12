@@ -20,6 +20,7 @@ You'll need the following dependencies:
 * libgranite-dev >= 5.2.0
 * libgtk-3-dev
 * libical-dev
+* libhandy-1-dev >= 0.90.0
 * meson
 * valac
 
