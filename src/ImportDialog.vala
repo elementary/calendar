@@ -41,12 +41,12 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
                 critical (e.message);
             }
 
-            secondary_text = _(("Events from \"%s\" will be merged with this calendar:").printf (name));
+            secondary_text = _("Events from \"%s\" will be merged with this calendar:").printf (name);
         } else {
             secondary_text = ngettext (
                 "Events from %d file will be merged with this calendar:",
                 "Events from %d files will be merged with this calendar:",
-                files.length
+                (ulong) files.length
             ).printf (files.length);
         }
 
