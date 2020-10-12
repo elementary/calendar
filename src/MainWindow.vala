@@ -59,7 +59,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/calendar");
 
-        var headerbar = new View.HeaderBar ();
+        var headerbar = new Calendar.Widgets.HeaderBar ();
 
         var infobar_label = new Gtk.Label (null);
         infobar_label.show ();
@@ -130,6 +130,21 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
 
         if (src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false) {
             var dialog = new Maya.View.EventDialog (comp, null, this);
+            dialog.present ();
+        } else {
+            Gdk.beep ();
+        }
+    }
+
+    public void on_duplicated (ECal.Component comp) {
+        E.Source src = comp.get_data ("source");
+
+        if (src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false) {
+            var dup_comp = Util.copy_ecal_component (comp);
+            dup_comp.set_uid (Util.mangle_uid (comp.get_id ().get_uid ()));
+            var dialog = new Maya.View.EventDialog (dup_comp, null, this);
+            dialog.transient_for = this;
+
             dialog.present ();
         } else {
             Gdk.beep ();

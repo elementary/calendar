@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-10-08 16:14+0000\n"
+"PO-Revision-Date: 2020-10-11 07:27+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "extra/pt/>\n"
@@ -213,7 +213,7 @@ msgstr "Maia;Planear;Datas;Eventos;Calendário;ics;caldav;evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
-msgstr "Adicionar Evento"
+msgstr "Adicionar evento"
 
 #~ msgid "About Calendar"
 #~ msgstr "Sobre Calendário"
