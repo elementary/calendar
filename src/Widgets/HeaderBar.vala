@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementary.io>
  */
 
-public class Calendar.HeaderBar : Hdy.HeaderBar {
+public class Calendar.Widgets.HeaderBar : Hdy.HeaderBar {
     public signal void on_search (string search);
 
     public Gtk.SearchEntry search_bar;
