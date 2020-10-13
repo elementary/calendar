@@ -60,8 +60,8 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
 
         main_grid = new Gtk.Grid () {
             margin_top = 6,
-            margin_bottom = 6,
-            orientation = Gtk.Orientation.VERTICAL
+            orientation = Gtk.Orientation.VERTICAL,
+            row_spacing = 6
         };
 
         main_grid.add (scroll);
