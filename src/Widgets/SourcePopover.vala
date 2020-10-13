@@ -50,21 +50,30 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
 
         src_map = new GLib.HashTable<string, SourceRow?> (str_hash, str_equal);
 
+        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+
         var add_calendar_button = new Gtk.ModelButton () {
             text = _("Add New Calendar…")
         };
 
-        main_grid = new Gtk.Grid () {
-            margin_top = 6,
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 6
+        var import_calendar_button = new Gtk.ModelButton () {
+            text = _("Import iCalendar File…")
         };
+
+        main_grid = new Gtk.Grid () {
+            orientation = Gtk.Orientation.VERTICAL
+        };
+
         main_grid.add (scroll);
-        main_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        main_grid.add (separator);
         main_grid.add (add_calendar_button);
+        main_grid.add (import_calendar_button);
 
         stack = new Gtk.Stack () {
-            margin_bottom = 5
+            margin_bottom = 3
         };
         stack.add_named (main_grid, "main");
 
@@ -74,6 +83,43 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
 
         add_calendar_button.button_release_event.connect (() => {
             create_source ();
+            return Gdk.EVENT_STOP;
+        });
+
+        import_calendar_button.button_release_event.connect (() => {
+            var ics_filter = new Gtk.FileFilter ();
+            ics_filter.add_mime_type ("application/ics");
+
+            var file_chooser = new Gtk.FileChooserNative (
+                    _("Select ICS File to Import"),
+                    null,
+                    Gtk.FileChooserAction.OPEN,
+                    _("Open"),
+                    _("Cancel")
+            );
+
+            file_chooser.set_local_only (true);
+            file_chooser.set_select_multiple (true);
+            file_chooser.set_filter (ics_filter);
+
+            file_chooser.show ();
+            this.hide ();
+
+            file_chooser.response.connect ((response_id) => {
+                GLib.File[] files = null;
+
+                if (response_id == Gtk.ResponseType.ACCEPT) {
+                    foreach (unowned GLib.File selected_file in file_chooser.get_files ()) {
+                        files += selected_file;
+                    }
+                }
+
+                if (files != null) {
+                    var dialog = new Maya.View.ImportDialog (files);
+                    dialog.show_all ();
+                }
+            });
+
             return Gdk.EVENT_STOP;
         });
     }
