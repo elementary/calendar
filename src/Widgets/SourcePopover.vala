@@ -50,6 +50,11 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
 
         src_map = new GLib.HashTable<string, SourceRow?> (str_hash, str_equal);
 
+        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+
         var add_calendar_button = new Gtk.ModelButton () {
             text = _("Add New Calendar…")
         };
@@ -59,18 +64,16 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         };
 
         main_grid = new Gtk.Grid () {
-            margin_top = 6,
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 6
+            orientation = Gtk.Orientation.VERTICAL
         };
 
         main_grid.add (scroll);
-        main_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        main_grid.add (separator);
         main_grid.add (add_calendar_button);
         main_grid.add (import_calendar_button);
 
         stack = new Gtk.Stack () {
-            margin_bottom = 5
+            margin_bottom = 3
         };
         stack.add_named (main_grid, "main");
 
