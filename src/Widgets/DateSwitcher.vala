@@ -17,7 +17,7 @@
  * Authored by: Maxwell Barvian
  */
 
-public class Maya.View.Widgets.DateSwitcher : Gtk.Grid {
+public class Calendar.Widgets.DateSwitcher : Gtk.Grid {
     public signal void left_clicked ();
     public signal void right_clicked ();
 
