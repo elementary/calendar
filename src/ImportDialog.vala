@@ -46,8 +46,8 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
             secondary_text = ngettext (
                 "Events from %d file will be merged with this calendar:",
                 "Events from %d files will be merged with this calendar:",
-                files.length
-            );
+                (ulong) files.length
+            ).printf (files.length);
         }
 
         calchooser_button = new Widgets.CalendarButton ();

@@ -26,8 +26,6 @@ calendar_files = files(
     'Grid/Header.vala',
     'Grid/VAutoHider.vala',
     'SourceDialog/SourceDialog.vala',
-    'SourceDialog/SourceItem.vala',
-    'SourceDialog/SourceSelector.vala',
     'Widgets/AgendaEventRow.vala',
     'Widgets/CalendarButton.vala',
     'Widgets/ContractorButtonWithMenu.vala',
@@ -35,7 +33,9 @@ calendar_files = files(
     'Widgets/DateTimePicker.vala',
     'Widgets/DynamicSpinner.vala',
     'Widgets/EventMenu.vala',
-    'Widgets/HeaderBar.vala'
+    'Widgets/HeaderBar.vala',
+    'Widgets/SourcePopover.vala',
+    'Widgets/SourceRow.vala'
 )
 
 calendar_deps = [
