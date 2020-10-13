@@ -166,7 +166,13 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
     }
 
     private void style_calendar_color (string color) {
-        var css_color = "@define-color colorAccent %s;".printf (color);
+        Gdk.RGBA check_color = { 0.0, 0.0, 0.0, 1.0 };
+        check_color.parse (color);
+
+        var css_color = "@define-color colorAccent %s; check { color: %s }".printf (
+            color,
+            Granite.contrasting_foreground_color (check_color).to_string ()
+        );
 
         var style_provider = new Gtk.CssProvider ();
 
