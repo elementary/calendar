@@ -1,7 +1,7 @@
 .event {
-    background: alpha(@accent_color, 0.15);
+    background: @selected_bg_color;
     border-radius: 3px;
-    color: shade(@accent_color, 0.65);
+    color: @selected_fg_color;
     padding: 6px;
 }
 
@@ -20,12 +20,10 @@
 }
 
 row:selected .event {
-    background: mix (#fff, @accent_color, 0.2);
+    background: @base_color;
+    background-image: linear-gradient(to right, @selected_bg_color, @selected_bg_color);
     box-shadow:
        0 1px 2px alpha (#000, 0.2),
-       0 1px 3px alpha (@accent_color, 0.15);
-}
-
-row:selected .event image {
-    color: shade(@accent_color, 0.65);
+       0 1px 3px alpha (@selected_bg_color, 0.15);
+   color: @selected_fg_color;
 }
