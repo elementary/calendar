@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.SourceItem : Gtk.ListBoxRow {
+public class Calendar.SourceRow : Gtk.ListBoxRow {
     public signal void remove_request (E.Source source);
     public signal void edit_request (E.Source source);
 
@@ -38,7 +38,7 @@ public class Maya.View.SourceItem : Gtk.ListBoxRow {
     private Gtk.Label message_label;
     private Gtk.CheckButton visible_checkbutton;
 
-    public SourceItem (E.Source source) {
+    public SourceRow (E.Source source) {
         this.source = source;
 
         // Source widget
