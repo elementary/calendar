@@ -34,14 +34,14 @@ public class Maya.View.SourceDialog : Gtk.Grid {
     private Gtk.CheckButton is_default_check;
     private E.Source source = null;
 
-    private Gtk.RadioButton color_button_red;
-    private Gtk.RadioButton color_button_orange;
-    private Gtk.RadioButton color_button_yellow;
-    private Gtk.RadioButton color_button_green;
-    private Gtk.RadioButton color_button_mint;
     private Gtk.RadioButton color_button_blue;
-    private Gtk.RadioButton color_button_purple;
+    private Gtk.RadioButton color_button_mint;
+    private Gtk.RadioButton color_button_green;
+    private Gtk.RadioButton color_button_yellow;
+    private Gtk.RadioButton color_button_orange;
+    private Gtk.RadioButton color_button_red;
     private Gtk.RadioButton color_button_pink;
+    private Gtk.RadioButton color_button_purple;
     private Gtk.RadioButton color_button_brown;
     private Gtk.RadioButton color_button_slate;
     private Gtk.RadioButton color_button_none;
@@ -110,79 +110,80 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         var color_label = new Gtk.Label (_("Color:"));
         color_label.xalign = 1;
 
-        color_button_red = new Gtk.RadioButton (null);
-
-        var color_button_red_context = color_button_red.get_style_context ();
-        color_button_red_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_red_context.add_class ("red");
-
-        color_button_orange = new Gtk.RadioButton.from_widget (color_button_red);
-
-        var color_button_orange_context = color_button_orange.get_style_context ();
-        color_button_orange_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_orange_context.add_class ("orange");
-
-        color_button_yellow = new Gtk.RadioButton.from_widget (color_button_red);
-
-        var color_button_yellow_context = color_button_yellow.get_style_context ();
-        color_button_yellow_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_yellow_context.add_class ("yellow");
-
-        color_button_green = new Gtk.RadioButton.from_widget (color_button_red);
-
-        var color_button_green_context = color_button_green.get_style_context ();
-        color_button_green_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_green_context.add_class ("green");
-
-        color_button_mint = new Gtk.RadioButton.from_widget (color_button_red);
-
-        var color_button_mint_context = color_button_mint.get_style_context ();
-        color_button_mint_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_mint_context.add_class ("mint");
-
-        color_button_blue = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_blue = new Gtk.RadioButton (null);
 
         var color_button_blue_context = color_button_blue.get_style_context ();
         color_button_blue_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_blue_context.add_class ("blue");
 
-        color_button_purple = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_mint = new Gtk.RadioButton.from_widget (color_button_blue);
 
-        var color_button_purple_context = color_button_purple.get_style_context ();
-        color_button_purple_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_purple_context.add_class ("purple");
+        var color_button_mint_context = color_button_mint.get_style_context ();
+        color_button_mint_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_mint_context.add_class ("mint");
 
-        color_button_pink = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_green = new Gtk.RadioButton.from_widget (color_button_blue);
+
+        var color_button_green_context = color_button_green.get_style_context ();
+        color_button_green_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_green_context.add_class ("green");
+
+        color_button_yellow = new Gtk.RadioButton.from_widget (color_button_blue);
+
+        var color_button_yellow_context = color_button_yellow.get_style_context ();
+        color_button_yellow_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_yellow_context.add_class ("yellow");
+
+        color_button_orange = new Gtk.RadioButton.from_widget (color_button_blue);
+
+        var color_button_orange_context = color_button_orange.get_style_context ();
+        color_button_orange_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_orange_context.add_class ("orange");
+
+        color_button_red = new Gtk.RadioButton.from_widget (color_button_blue);
+
+        var color_button_red_context = color_button_red.get_style_context ();
+        color_button_red_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_red_context.add_class ("red");
+
+        color_button_pink = new Gtk.RadioButton.from_widget (color_button_blue);
 
         var color_button_pink_context = color_button_pink.get_style_context ();
         color_button_pink_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_pink_context.add_class ("pink");
 
-        color_button_brown = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_purple = new Gtk.RadioButton.from_widget (color_button_blue);
+
+        var color_button_purple_context = color_button_purple.get_style_context ();
+        color_button_purple_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_purple_context.add_class ("purple");
+
+        color_button_brown = new Gtk.RadioButton.from_widget (color_button_blue);
 
         var color_button_brown_context = color_button_brown.get_style_context ();
         color_button_brown_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_brown_context.add_class ("brown");
 
-        color_button_slate = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_slate = new Gtk.RadioButton.from_widget (color_button_blue);
 
         var color_button_slate_context = color_button_slate.get_style_context ();
         color_button_slate_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_slate_context.add_class ("slate");
 
-        color_button_none = new Gtk.RadioButton.from_widget (color_button_red);
+        color_button_none = new Gtk.RadioButton.from_widget (color_button_blue);
 
         var color_grid = new Gtk.Grid () {
             column_spacing = 3
         };
-        color_grid.add (color_button_red);
-        color_grid.add (color_button_orange);
-        color_grid.add (color_button_yellow);
-        color_grid.add (color_button_green);
-        color_grid.add (color_button_mint);
+
         color_grid.add (color_button_blue);
-        color_grid.add (color_button_purple);
+        color_grid.add (color_button_mint);
+        color_grid.add (color_button_green);
+        color_grid.add (color_button_yellow);
+        color_grid.add (color_button_orange);
+        color_grid.add (color_button_red);
         color_grid.add (color_button_pink);
+        color_grid.add (color_button_purple);
         color_grid.add (color_button_brown);
         color_grid.add (color_button_slate);
 
