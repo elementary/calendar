@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-10-20 19:15+0000\n"
+"PO-Revision-Date: 2020-10-23 16:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/calendar/"
 "calendar/it/>\n"
@@ -146,7 +146,7 @@ msgstr "Importa"
 
 #: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
-msgstr "Aggiungi un evento"
+msgstr "Aggiungi evento"
 
 #: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
@@ -618,7 +618,7 @@ msgstr "Dom"
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
 msgid "Hide Week Numbers"
-msgstr "Nascondi i numeri della settimana"
+msgstr "Nascondi i numeri delle settimane"
 
 #: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
 msgid "Show Week Numbers"
@@ -806,7 +806,7 @@ msgstr "calendario.ics"
 
 #: src/Widgets/EventMenu.vala:39
 msgid "Remove Event"
-msgstr "Cancella evento"
+msgstr "Evento remoto"
 
 #: src/Widgets/EventMenu.vala:41
 msgid "Remove Occurrence"
