@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-10-12 21:23+0000\n"
+"PO-Revision-Date: 2020-10-23 16:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/calendar/"
 "calendar/it/>\n"
@@ -146,7 +146,7 @@ msgstr "Importa"
 
 #: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
-msgstr "Aggiungi un evento"
+msgstr "Aggiungi evento"
 
 #: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
@@ -618,7 +618,7 @@ msgstr "Dom"
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
 msgid "Hide Week Numbers"
-msgstr "Nascondi i numeri della settimana"
+msgstr "Nascondi i numeri delle settimane"
 
 #: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
 msgid "Show Week Numbers"
@@ -756,13 +756,13 @@ msgstr "matrimonio"
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "Dal %s al %s"
+msgstr "Da %s a %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:313
 #, c-format
 msgid "%s, %s – %s, %s"
-msgstr "Dal %s alle %s al %s alle %s"
+msgstr "Da %s alle %s a %s alle %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:325
@@ -781,7 +781,7 @@ msgstr "Il %s alle %s"
 #: src/Widgets/AgendaEventRow.vala:337
 #, c-format
 msgid "%s, %s – %s"
-msgstr "Dal %s alle %s al %s"
+msgstr "%s dalle %s alle %s"
 
 #: src/Widgets/CalendarButton.vala:72
 msgid "Search Calendars"
@@ -806,7 +806,7 @@ msgstr "calendario.ics"
 
 #: src/Widgets/EventMenu.vala:39
 msgid "Remove Event"
-msgstr "Cancella evento"
+msgstr "Evento remoto"
 
 #: src/Widgets/EventMenu.vala:41
 msgid "Remove Occurrence"

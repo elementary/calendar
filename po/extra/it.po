@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-10-12 21:23+0000\n"
+"PO-Revision-Date: 2020-10-23 16:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/calendar/extra/"
 "it/>\n"
@@ -89,7 +89,7 @@ msgstr "Non ridimensiona la barra laterale quando si ridimensiona la finestra"
 #: data/io.elementary.calendar.appdata.xml.in:85
 #: data/io.elementary.calendar.appdata.xml.in:97
 msgid "Updated translations"
-msgstr "Aggiornamento delle traduzioni"
+msgstr "Traduzioni aggiornate"
 
 #: data/io.elementary.calendar.appdata.xml.in:44
 msgid "Fix issues with time zones not being recognized"
@@ -107,7 +107,7 @@ msgstr "Salva correttamente i promemoria degli eventi"
 
 #: data/io.elementary.calendar.appdata.xml.in:63
 msgid "Ellipsize event participant details if necessary"
-msgstr "Se necessario, abbrevia i dettagli dei partecipanti all'evento"
+msgstr "Se necessario abbrevia i dettagli dei partecipanti all'evento"
 
 #: data/io.elementary.calendar.appdata.xml.in:64
 msgid "Fix unwanted rescheduling when editing event title"
@@ -118,14 +118,14 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:71
 msgid "Fix crash when editing an event with no location"
 msgstr ""
-"Corretto l'arresto inaspettato durante la modifica di eventi mancanti "
-"dell'ubicazione"
+"Corretto l'arresto anomalo durante la modifica di eventi privi di "
+"un'ubicazione"
 
 #: data/io.elementary.calendar.appdata.xml.in:76
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
-"Corretto il potenziale arresto inaspettato durante il caricamento degli "
-"eventi senza orario di inizio o fine"
+"Corretto il potenziale arresto anomalo durante il caricamento degli eventi "
+"senza orario di inizio o fine"
 
 #: data/io.elementary.calendar.appdata.xml.in:81
 msgid "Make agenda pane fill the whole space"
@@ -222,7 +222,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
-msgstr "Aggiungi un evento"
+msgstr "Aggiungi evento"
 
 #~ msgid "About Calendar"
 #~ msgstr "Informazioni"
