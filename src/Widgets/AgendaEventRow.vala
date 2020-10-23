@@ -197,7 +197,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         datatime_label.xalign = 0;
         datatime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-
         location_label = new Gtk.Label ("") {
             margin_top = 6,
             selectable = false,
@@ -205,7 +204,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             wrap_mode = Pango.WrapMode.WORD_CHAR,
             xalign = 0
         };
-        
+
         var location_revealer = new Gtk.Revealer ();
         location_revealer.add (location_label);
 
