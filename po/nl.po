@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 21:10+0000\n"
+"POT-Creation-Date: 2020-10-25 11:45+0100\n"
 "PO-Revision-Date: 2020-08-03 18:13+0000\n"
 "Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -120,7 +120,7 @@ msgstr "Focus op deze dag"
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:163
+#: src/Application.vala:172
 msgid "Calendar"
 msgstr "Agenda"
 
@@ -171,8 +171,6 @@ msgstr "Herinneringen"
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
 #, fuzzy
-#| msgid "Repeat"
-#| msgid_plural "Repeats"
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Herhalen"
@@ -189,20 +187,21 @@ msgstr "Maak gebeurtenis"
 msgid "Save Changes"
 msgstr "Wijzigingen opslaan"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: src/EventEdition/GuestGrid.vala:47
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
 msgstr "Geaccepteerd"
 
-#: src/EventEdition/GuestGrid.vala:51
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
 msgstr "Afgewezen"
 
-#: src/EventEdition/GuestGrid.vala:55
+#: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
 msgstr "Misschien"
 
@@ -632,67 +631,38 @@ msgstr "Weeknummers tonen"
 msgid "%u more…"
 msgstr "%u meer…"
 
-#: src/SourceDialog/SourceDialog.vala:53
+#: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
 msgstr "Aanmaken"
 
-#: src/SourceDialog/SourceDialog.vala:64
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
 msgstr "Naam:"
 
-#: src/SourceDialog/SourceDialog.vala:68
+#: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
 msgstr "Agendanaam"
 
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
 msgstr "Type:"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
 msgstr "Kleur:"
 
-#: src/SourceDialog/SourceDialog.vala:183
+#: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
 msgstr "Markeer als standaard agenda"
 
-#: src/SourceDialog/SourceDialog.vala:244
+#: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
 msgstr "Agenda aanmaken"
 
-#: src/SourceDialog/SourceDialog.vala:249
+#: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Opslaan"
-
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
-msgid "Remove"
-msgstr "Verwijderen"
-
-#: src/SourceDialog/SourceItem.vala:75
-msgid "Not Removable"
-msgstr "Niet te verwijderen"
-
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
-msgid "Edit…"
-msgstr "Bewerken…"
-
-#: src/SourceDialog/SourceItem.vala:87
-msgid "Not Editable"
-msgstr "Niet aan te passen"
-
-#: src/SourceDialog/SourceItem.vala:110
-msgid "Undo"
-msgstr "Ongedaan maken"
-
-#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, c-format
-msgid "\"%s\" removed"
-msgstr "\"%s\" is verwijderd"
-
-#: src/SourceDialog/SourceSelector.vala:52
-msgid "Add New Calendar…"
-msgstr "Voeg nieuwe agenda toe…"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -746,7 +716,8 @@ msgstr "rechtbank;rechter;belasting;advocaat;jurist;contract"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-msgid "movie"
+#, fuzzy
+msgid "movie;film"
 msgstr "film;bioscoop"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
@@ -808,29 +779,76 @@ msgstr "Exporteer agenda…"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Widgets/EventMenu.vala:39
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+msgid "Edit…"
+msgstr "Bewerken…"
+
+#: src/Widgets/EventMenu.vala:37
+msgid "Duplicate…"
+msgstr ""
+
+#: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
 msgstr "Verwijder evenement"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
 msgstr "Verwijder exemplaar"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
 msgstr "Maak een nieuwe gebeurtenis aan"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Ga naar vandaag"
 
-#: src/Widgets/HeaderBar.vala:56
+#: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
 msgstr "Beheer agenda's"
 
-#: src/Widgets/HeaderBar.vala:63
+#: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
 msgstr "Exporteer of Deel de standaardagenda"
+
+#: src/Widgets/SourcePopover.vala:59
+msgid "Add New Calendar…"
+msgstr "Voeg nieuwe agenda toe…"
+
+#: src/Widgets/SourcePopover.vala:63
+#, fuzzy
+msgid "Import iCalendar File…"
+msgstr "Exporteer agenda…"
+
+#: src/Widgets/SourcePopover.vala:94
+#, fuzzy
+msgid "Select ICS File to Import"
+msgstr "Selecteer een agenda om naar te importeren"
+
+#: src/Widgets/SourcePopover.vala:97
+msgid "Open"
+msgstr ""
+
+#: src/Widgets/SourceRow.vala:75
+msgid "Not Removable"
+msgstr "Niet te verwijderen"
+
+#: src/Widgets/SourceRow.vala:87
+msgid "Not Editable"
+msgstr "Niet aan te passen"
+
+#: src/Widgets/SourceRow.vala:110
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#, c-format
+msgid "\"%s\" removed"
+msgstr "\"%s\" is verwijderd"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"

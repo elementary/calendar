@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 21:10+0000\n"
+"POT-Creation-Date: 2020-10-25 11:45+0100\n"
 "PO-Revision-Date: 2020-08-25 13:13+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -118,7 +118,7 @@ msgstr "Zaměřit na daný den"
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:163
+#: src/Application.vala:172
 msgid "Calendar"
 msgstr "Kalendář"
 
@@ -185,20 +185,21 @@ msgstr "Vytvořit událost"
 msgid "Save Changes"
 msgstr "Uložit změny"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: src/EventEdition/GuestGrid.vala:47
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
 msgstr "Přijato"
 
-#: src/EventEdition/GuestGrid.vala:51
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
 msgstr "Odmítnuto"
 
-#: src/EventEdition/GuestGrid.vala:55
+#: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
 msgstr "Možná"
 
@@ -633,67 +634,38 @@ msgstr "Zobrazovat čísla týdnů"
 msgid "%u more…"
 msgstr "%u více…"
 
-#: src/SourceDialog/SourceDialog.vala:53
+#: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
 msgstr "Vytvořit"
 
-#: src/SourceDialog/SourceDialog.vala:64
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
 msgstr "Název:"
 
-#: src/SourceDialog/SourceDialog.vala:68
+#: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
 msgstr "Název kalendáře"
 
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
 msgstr "Typ:"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
 msgstr "Barva:"
 
-#: src/SourceDialog/SourceDialog.vala:183
+#: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
 msgstr "Označit jako výchozí kalendář"
 
-#: src/SourceDialog/SourceDialog.vala:244
+#: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
 msgstr "Vytvořit kalendář"
 
-#: src/SourceDialog/SourceDialog.vala:249
+#: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Uložit"
-
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
-msgid "Remove"
-msgstr "Odstranit"
-
-#: src/SourceDialog/SourceItem.vala:75
-msgid "Not Removable"
-msgstr "Neodstranitelné"
-
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
-msgid "Edit…"
-msgstr "Upravit…"
-
-#: src/SourceDialog/SourceItem.vala:87
-msgid "Not Editable"
-msgstr "Needitovatelné"
-
-#: src/SourceDialog/SourceItem.vala:110
-msgid "Undo"
-msgstr "Zpět"
-
-#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, c-format
-msgid "\"%s\" removed"
-msgstr "\"%s\" odstraněno"
-
-#: src/SourceDialog/SourceSelector.vala:52
-msgid "Add New Calendar…"
-msgstr "Přidat Nový kalendář…"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -750,7 +722,8 @@ msgstr "soud;soudce;daň;advokát;právník;smlouva;kontrakt"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-msgid "movie"
+#, fuzzy
+msgid "movie;film"
 msgstr "film"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
@@ -812,29 +785,76 @@ msgstr "Exportovat kalendář…"
 msgid "calendar.ics"
 msgstr "kalendar.ics"
 
-#: src/Widgets/EventMenu.vala:39
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+msgid "Edit…"
+msgstr "Upravit…"
+
+#: src/Widgets/EventMenu.vala:37
+msgid "Duplicate…"
+msgstr ""
+
+#: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
 msgstr "Smazat událost"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
 msgstr "Smazat tento výskyt"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+msgid "Remove"
+msgstr "Odstranit"
+
+#: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
 msgstr "Vytvořit novou událost"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Vybrat dnešek"
 
-#: src/Widgets/HeaderBar.vala:56
+#: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
 msgstr "Spravovat kalendáře"
 
-#: src/Widgets/HeaderBar.vala:63
+#: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
 msgstr "Exportovat nebo sdílet výchozí kalendář"
+
+#: src/Widgets/SourcePopover.vala:59
+msgid "Add New Calendar…"
+msgstr "Přidat Nový kalendář…"
+
+#: src/Widgets/SourcePopover.vala:63
+#, fuzzy
+msgid "Import iCalendar File…"
+msgstr "Exportovat kalendář…"
+
+#: src/Widgets/SourcePopover.vala:94
+#, fuzzy
+msgid "Select ICS File to Import"
+msgstr "Vyberte kalendář do kterého chcete importovat"
+
+#: src/Widgets/SourcePopover.vala:97
+msgid "Open"
+msgstr ""
+
+#: src/Widgets/SourceRow.vala:75
+msgid "Not Removable"
+msgstr "Neodstranitelné"
+
+#: src/Widgets/SourceRow.vala:87
+msgid "Not Editable"
+msgstr "Needitovatelné"
+
+#: src/Widgets/SourceRow.vala:110
+msgid "Undo"
+msgstr "Zpět"
+
+#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#, c-format
+msgid "\"%s\" removed"
+msgstr "\"%s\" odstraněno"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e. %B %Y"

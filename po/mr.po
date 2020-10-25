@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 21:10+0000\n"
+"POT-Creation-Date: 2020-10-25 11:45+0100\n"
 "PO-Revision-Date: 2020-09-15 19:14+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
@@ -119,7 +119,7 @@ msgstr "दिलेला दिवस निर्देशित करा"
 msgid "date"
 msgstr "तारीख"
 
-#: src/Application.vala:163
+#: src/Application.vala:172
 msgid "Calendar"
 msgstr "कॅलेंडर"
 
@@ -185,20 +185,21 @@ msgstr "घटना  बनवा"
 msgid "Save Changes"
 msgstr "बदल सेव्ह करा"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "रद्द करा"
 
-#: src/EventEdition/GuestGrid.vala:47
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
 msgstr "स्वीकारा"
 
-#: src/EventEdition/GuestGrid.vala:51
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
 msgstr "अस्वीकार"
 
-#: src/EventEdition/GuestGrid.vala:55
+#: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
 msgstr "कदाचित"
 
@@ -628,67 +629,38 @@ msgstr "आठवडा क्रमांक दाखवा"
 msgid "%u more…"
 msgstr "%u अधिक पर्याय…"
 
-#: src/SourceDialog/SourceDialog.vala:53
+#: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
 msgstr "नवीन बनवा"
 
-#: src/SourceDialog/SourceDialog.vala:64
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
 msgstr "नाव :"
 
-#: src/SourceDialog/SourceDialog.vala:68
+#: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
 msgstr "कॅलेंडरचे नाव"
 
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
 msgstr "प्रकार:"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
 msgstr "रंग:"
 
-#: src/SourceDialog/SourceDialog.vala:183
+#: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
 msgstr "मूळ कॅलेंडर म्हणून दाखवा"
 
-#: src/SourceDialog/SourceDialog.vala:244
+#: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
 msgstr "नवीन कॅलेंडर बनवा"
 
-#: src/SourceDialog/SourceDialog.vala:249
+#: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "सेव्ह करा"
-
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
-msgid "Remove"
-msgstr "कॅलेंडर मिटवा"
-
-#: src/SourceDialog/SourceItem.vala:75
-msgid "Not Removable"
-msgstr "काढता येण्याजोगे नाही"
-
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
-msgid "Edit…"
-msgstr "बदला…"
-
-#: src/SourceDialog/SourceItem.vala:87
-msgid "Not Editable"
-msgstr "संपादनयोग्य नाही"
-
-#: src/SourceDialog/SourceItem.vala:110
-msgid "Undo"
-msgstr "बदल काढा"
-
-#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, c-format
-msgid "\"%s\" removed"
-msgstr "\"%s\" मिटविले"
-
-#: src/SourceDialog/SourceSelector.vala:52
-msgid "Add New Calendar…"
-msgstr "नवीन कॅलेंडर बनवा…"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -741,7 +713,8 @@ msgstr "न्यायालय; जूरी; कर; मुखत्यार
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-msgid "movie"
+#, fuzzy
+msgid "movie;film"
 msgstr "चित्रपट"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
@@ -803,29 +776,76 @@ msgstr "एक्सपोर्ट कॅलेंडर…"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Widgets/EventMenu.vala:39
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+msgid "Edit…"
+msgstr "बदला…"
+
+#: src/Widgets/EventMenu.vala:37
+msgid "Duplicate…"
+msgstr ""
+
+#: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
 msgstr "आठवणीची खूण डिलीट करा"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
 msgstr "घटना काढा"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+msgid "Remove"
+msgstr "कॅलेंडर मिटवा"
+
+#: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
 msgstr "नवीन घटना बनवा"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "आजची तारीख बघा"
 
-#: src/Widgets/HeaderBar.vala:56
+#: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
 msgstr "कॅलेंडर्स मॅनेज करा"
 
-#: src/Widgets/HeaderBar.vala:63
+#: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
 msgstr "डिफॉल्ट कॅलेंडर एक्स्पोर्ट अथवा शेअर करा"
+
+#: src/Widgets/SourcePopover.vala:59
+msgid "Add New Calendar…"
+msgstr "नवीन कॅलेंडर बनवा…"
+
+#: src/Widgets/SourcePopover.vala:63
+#, fuzzy
+msgid "Import iCalendar File…"
+msgstr "एक्सपोर्ट कॅलेंडर…"
+
+#: src/Widgets/SourcePopover.vala:94
+#, fuzzy
+msgid "Select ICS File to Import"
+msgstr "आयात करण्यासाठी कॅलेंडर निवडा"
+
+#: src/Widgets/SourcePopover.vala:97
+msgid "Open"
+msgstr ""
+
+#: src/Widgets/SourceRow.vala:75
+msgid "Not Removable"
+msgstr "काढता येण्याजोगे नाही"
+
+#: src/Widgets/SourceRow.vala:87
+msgid "Not Editable"
+msgstr "संपादनयोग्य नाही"
+
+#: src/Widgets/SourceRow.vala:110
+msgid "Undo"
+msgstr "बदल काढा"
+
+#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#, c-format
+msgid "\"%s\" removed"
+msgstr "\"%s\" मिटविले"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
