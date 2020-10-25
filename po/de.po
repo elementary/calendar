@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-25 11:45+0100\n"
-"PO-Revision-Date: 2020-07-10 12:12+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
+"PO-Revision-Date: 2020-10-27 07:15+0000\n"
+"Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/calendar/calendar/"
 "de/>\n"
 "Language: de\n"
@@ -170,7 +170,6 @@ msgstr "Erinnerungen"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Wiederholung"
@@ -717,9 +716,8 @@ msgstr "Gericht;Jury;Steuer;Anwalt;Jurist;Vertrag"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-#, fuzzy
 msgid "movie;film"
-msgstr "Film"
+msgstr "movie;film;video;kino"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -786,7 +784,7 @@ msgstr "Bearbeiten…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Duplizieren …"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -821,18 +819,16 @@ msgid "Add New Calendar…"
 msgstr "Neuen Kalender hinzufügen…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Kalender exportieren…"
+msgstr "iCalender-Datei importieren …"
 
 #: src/Widgets/SourcePopover.vala:94
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Kalender zum Importieren auswählen"
+msgstr "ICS-Datei zum Importieren auswählen"
 
 #: src/Widgets/SourcePopover.vala:97
 msgid "Open"
-msgstr ""
+msgstr "Öffnen"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
