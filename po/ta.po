@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 21:10+0000\n"
+"POT-Creation-Date: 2020-10-25 11:45+0100\n"
 "PO-Revision-Date: 2015-01-19 23:02+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Tamil <ta@li.org>\n"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:163
+#: src/Application.vala:172
 msgid "Calendar"
 msgstr "நாட்காட்டி"
 
@@ -186,20 +186,21 @@ msgstr "நிகழ்வை உருவாக்கு"
 msgid "Save Changes"
 msgstr "மாற்றங்களைச் சேமி"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "இரத்துசெய்"
 
-#: src/EventEdition/GuestGrid.vala:47
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
 msgstr ""
 
-#: src/EventEdition/GuestGrid.vala:51
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
 msgstr ""
 
-#: src/EventEdition/GuestGrid.vala:55
+#: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
 msgstr ""
 
@@ -630,68 +631,38 @@ msgstr "வார எண்களை காட்டு"
 msgid "%u more…"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:53
+#: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
 msgstr "உருவாக்கு"
 
-#: src/SourceDialog/SourceDialog.vala:64
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
 msgstr "பெயர்:"
 
-#: src/SourceDialog/SourceDialog.vala:68
+#: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
 msgstr "நாட்காட்டி பெயர்"
 
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
 msgstr "வகை:"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
 msgstr "நிறம்:"
 
-#: src/SourceDialog/SourceDialog.vala:183
+#: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
 msgstr "முன்னிருப்பு நாட்காட்டியாக குறி"
 
-#: src/SourceDialog/SourceDialog.vala:244
+#: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
 msgstr "நாள்காட்டியை உருவாக்கவும்"
 
-#: src/SourceDialog/SourceDialog.vala:249
+#: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "சேமி"
-
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
-msgid "Remove"
-msgstr "அகற்று"
-
-#: src/SourceDialog/SourceItem.vala:75
-#, fuzzy
-msgid "Not Removable"
-msgstr "அகற்று"
-
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
-msgid "Edit…"
-msgstr "திருத்து..."
-
-#: src/SourceDialog/SourceItem.vala:87
-msgid "Not Editable"
-msgstr ""
-
-#: src/SourceDialog/SourceItem.vala:110
-msgid "Undo"
-msgstr "தவிர்"
-
-#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, fuzzy, c-format
-msgid "\"%s\" removed"
-msgstr "நாட்காட்டி \"%s\" நீக்கப்பட்டது."
-
-#: src/SourceDialog/SourceSelector.vala:52
-msgid "Add New Calendar…"
-msgstr "புதிய அட்டவணை சேர்..."
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -744,7 +715,7 @@ msgstr ""
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-msgid "movie"
+msgid "movie;film"
 msgstr ""
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
@@ -808,30 +779,77 @@ msgstr "நாட்காட்டியை ஏற்றுமதி செய�
 msgid "calendar.ics"
 msgstr "நாள்காட்டி.ics"
 
-#: src/Widgets/EventMenu.vala:39
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+msgid "Edit…"
+msgstr "திருத்து..."
+
+#: src/Widgets/EventMenu.vala:37
+msgid "Duplicate…"
+msgstr ""
+
+#: src/Widgets/EventMenu.vala:42
 #, fuzzy
 msgid "Remove Event"
 msgstr "நிகழ்வை உருவாக்கு"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+msgid "Remove"
+msgstr "அகற்று"
+
+#: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
 msgstr "ஒரு புதிய நிகழ்வை உருவாக்கவும்"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr ""
 
-#: src/Widgets/HeaderBar.vala:56
+#: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
 msgstr "காலெண்டர்களை நிர்வகி"
 
-#: src/Widgets/HeaderBar.vala:63
+#: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
 msgstr "முன்னிருப்பு நாள்காட்டியை ஏற்றுமதி செய் அல்லது பகிர்"
+
+#: src/Widgets/SourcePopover.vala:59
+msgid "Add New Calendar…"
+msgstr "புதிய அட்டவணை சேர்..."
+
+#: src/Widgets/SourcePopover.vala:63
+#, fuzzy
+msgid "Import iCalendar File…"
+msgstr "நாட்காட்டியை ஏற்றுமதி செய்..."
+
+#: src/Widgets/SourcePopover.vala:94
+msgid "Select ICS File to Import"
+msgstr ""
+
+#: src/Widgets/SourcePopover.vala:97
+msgid "Open"
+msgstr ""
+
+#: src/Widgets/SourceRow.vala:75
+#, fuzzy
+msgid "Not Removable"
+msgstr "அகற்று"
+
+#: src/Widgets/SourceRow.vala:87
+msgid "Not Editable"
+msgstr ""
+
+#: src/Widgets/SourceRow.vala:110
+msgid "Undo"
+msgstr "தவிர்"
+
+#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#, fuzzy, c-format
+msgid "\"%s\" removed"
+msgstr "நாட்காட்டி \"%s\" நீக்கப்பட்டது."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
