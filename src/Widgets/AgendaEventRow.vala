@@ -102,7 +102,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                 case MOVIE:
                     ///Translators: Give a list of movie (film) related keywords, separated by semicolons.
                     ///The number of words can differ from US English and need not be a direct translation.
-                    return _("movie");
+                    return _("movie;film");
 
                 case WEDDING:
                     ///Translators: Give a list of wedding related keywords, separated by semicolons.
