@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-06-29 08:12+0000\n"
+"PO-Revision-Date: 2020-10-27 07:15+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/extra/nl/"
-">\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/extra/nl/>"
+"\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,34 +51,40 @@ msgstr "Kleine updates:"
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr ""
+"Een probleem opgelost waarbij nieuwe afspraken twee keer op de kalender "
+"verschenen"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
+"“Markeren als huidige kalender” staat nu correct aangehinkt bij het wijzigen "
+"van een kalender"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Improvements:"
-msgstr ""
+msgstr "Verbeteringen:"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Allow modification of recurring events"
-msgstr "Problemen opgelost met terugkerende afspraken"
+msgstr "Sta het wijzigen van terugkerende afspraken toe"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "Verbeter het verwerken van de dag waarmee de week start"
 
 #: data/io.elementary.calendar.appdata.xml.in:31
 msgid "Fix timezone errors with all-day events"
 msgstr ""
+"Een probleem opgelost met tijdzone fouten bij gebeurtenissen die een hele "
+"dag duren"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Don't resize the sidebar when resizing the window"
 msgstr ""
+"Het formaat van het zijpaneel wordt niet gewijzigd bij het wijzigen van de "
+"venstergrootte"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 #: data/io.elementary.calendar.appdata.xml.in:45
