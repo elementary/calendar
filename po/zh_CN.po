@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-25 11:45+0100\n"
-"PO-Revision-Date: 2019-12-30 14:16+0000\n"
+"PO-Revision-Date: 2020-10-30 00:15+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "calendar/calendar/zh_Hans/>\n"
@@ -167,7 +167,6 @@ msgstr "提醒"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "重复"
@@ -707,7 +706,6 @@ msgstr "法庭;陪审;税务;委托人;律师;合同"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-#, fuzzy
 msgid "movie;film"
 msgstr "电影"
 
@@ -741,7 +739,7 @@ msgstr "%s – %s"
 #: src/Widgets/AgendaEventRow.vala:334
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:337
@@ -776,7 +774,7 @@ msgstr "编辑…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "复制…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -811,18 +809,16 @@ msgid "Add New Calendar…"
 msgstr "添加新日历…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "导出日历…"
+msgstr "导入 iCalendar 文件…"
 
 #: src/Widgets/SourcePopover.vala:94
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "选择要导入到的日历"
+msgstr "选择要导入的 ICS 文件"
 
 #: src/Widgets/SourcePopover.vala:97
 msgid "Open"
-msgstr ""
+msgstr "打开"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
