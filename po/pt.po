@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-25 11:45+0100\n"
-"PO-Revision-Date: 2020-10-11 07:27+0000\n"
+"PO-Revision-Date: 2020-10-30 00:15+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "calendar/pt/>\n"
@@ -716,9 +716,8 @@ msgstr "tribunal;júri;imposto;procurador;advogado;contrato"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-#, fuzzy
 msgid "movie;film"
-msgstr "filme"
+msgstr "vídeo;filme"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -785,7 +784,7 @@ msgstr "Editar…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Duplicar…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -820,18 +819,16 @@ msgid "Add New Calendar…"
 msgstr "Adicionar novo calendário…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Exportar Calendário…"
+msgstr "Importar ficheiro iCalendar…"
 
 #: src/Widgets/SourcePopover.vala:94
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Selecione o Calendário para o qual quer importar"
+msgstr "Selecionar ficheiro ICS a importar"
 
 #: src/Widgets/SourcePopover.vala:97
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
