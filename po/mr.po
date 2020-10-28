@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-25 11:45+0100\n"
-"PO-Revision-Date: 2020-09-15 19:14+0000\n"
+"PO-Revision-Date: 2020-10-30 00:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
@@ -713,7 +713,6 @@ msgstr "न्यायालय; जूरी; कर; मुखत्यार
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-#, fuzzy
 msgid "movie;film"
 msgstr "चित्रपट"
 
@@ -782,7 +781,7 @@ msgstr "बदला…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "नक्कल…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -817,18 +816,16 @@ msgid "Add New Calendar…"
 msgstr "नवीन कॅलेंडर बनवा…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "एक्सपोर्ट कॅलेंडर…"
+msgstr "आयकॅलेंडर फाईल आयात करा…"
 
 #: src/Widgets/SourcePopover.vala:94
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "आयात करण्यासाठी कॅलेंडर निवडा"
+msgstr "आयात करण्यासाठी ICS फाईल निवडा"
 
 #: src/Widgets/SourcePopover.vala:97
 msgid "Open"
-msgstr ""
+msgstr "उघडा"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
