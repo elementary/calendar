@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-10-08 16:14+0000\n"
+"POT-Creation-Date: 2020-10-25 11:45+0100\n"
+"PO-Revision-Date: 2020-10-27 07:15+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -118,7 +118,7 @@ msgstr "指定の日に移動します"
 msgid "date"
 msgstr "日付"
 
-#: src/Application.vala:163
+#: src/Application.vala:172
 msgid "Calendar"
 msgstr "カレンダー"
 
@@ -183,20 +183,21 @@ msgstr "予定を作成"
 msgid "Save Changes"
 msgstr "変更を保存"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: src/EventEdition/GuestGrid.vala:47
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
 msgstr "受諾済"
 
-#: src/EventEdition/GuestGrid.vala:51
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
 msgstr "辞退"
 
-#: src/EventEdition/GuestGrid.vala:55
+#: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
 msgstr "不確実"
 
@@ -621,67 +622,38 @@ msgstr "週番号を表示"
 msgid "%u more…"
 msgstr "あと %u …"
 
-#: src/SourceDialog/SourceDialog.vala:53
+#: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
 msgstr "作成"
 
-#: src/SourceDialog/SourceDialog.vala:64
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
 msgstr "名前:"
 
-#: src/SourceDialog/SourceDialog.vala:68
+#: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
 msgstr "カレンダー名"
 
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
 msgstr "種類:"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
 msgstr "色:"
 
-#: src/SourceDialog/SourceDialog.vala:183
+#: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
 msgstr "デフォルトのカレンダーに設定"
 
-#: src/SourceDialog/SourceDialog.vala:244
+#: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
 msgstr "カレンダーを作成"
 
-#: src/SourceDialog/SourceDialog.vala:249
+#: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "保存"
-
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
-msgid "Remove"
-msgstr "削除"
-
-#: src/SourceDialog/SourceItem.vala:75
-msgid "Not Removable"
-msgstr "削除できません"
-
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
-msgid "Edit…"
-msgstr "編集…"
-
-#: src/SourceDialog/SourceItem.vala:87
-msgid "Not Editable"
-msgstr "編集できません"
-
-#: src/SourceDialog/SourceItem.vala:110
-msgid "Undo"
-msgstr "元に戻す"
-
-#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, c-format
-msgid "\"%s\" removed"
-msgstr "\"%s\" は削除されました"
-
-#: src/SourceDialog/SourceSelector.vala:52
-msgid "Add New Calendar…"
-msgstr "新しいカレンダーを作成…"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -738,7 +710,7 @@ msgstr ""
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-msgid "movie"
+msgid "movie;film"
 msgstr "映画;ムービー"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
@@ -800,29 +772,74 @@ msgstr "カレンダーをエクスポート…"
 msgid "calendar.ics"
 msgstr "カレンダー.ics"
 
-#: src/Widgets/EventMenu.vala:39
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+msgid "Edit…"
+msgstr "編集…"
+
+#: src/Widgets/EventMenu.vala:37
+msgid "Duplicate…"
+msgstr "複製…"
+
+#: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
 msgstr "予定を削除"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
 msgstr "出来事を削除"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+msgid "Remove"
+msgstr "削除"
+
+#: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
 msgstr "新しい予定を作成"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "今日の日付へ移動"
 
-#: src/Widgets/HeaderBar.vala:56
+#: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
 msgstr "カレンダーを管理"
 
-#: src/Widgets/HeaderBar.vala:63
+#: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
 msgstr "デフォルトのカレンダーをエクスポートまたは共有"
+
+#: src/Widgets/SourcePopover.vala:59
+msgid "Add New Calendar…"
+msgstr "新しいカレンダーを作成…"
+
+#: src/Widgets/SourcePopover.vala:63
+msgid "Import iCalendar File…"
+msgstr "iCalendar ファイルをインポート…"
+
+#: src/Widgets/SourcePopover.vala:94
+msgid "Select ICS File to Import"
+msgstr "インポートする ICS ファイルを選択"
+
+#: src/Widgets/SourcePopover.vala:97
+msgid "Open"
+msgstr "開く"
+
+#: src/Widgets/SourceRow.vala:75
+msgid "Not Removable"
+msgstr "削除できません"
+
+#: src/Widgets/SourceRow.vala:87
+msgid "Not Editable"
+msgstr "編集できません"
+
+#: src/Widgets/SourceRow.vala:110
+msgid "Undo"
+msgstr "元に戻す"
+
+#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#, c-format
+msgid "\"%s\" removed"
+msgstr "\"%s\" は削除されました"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%Y年%B%e日"
