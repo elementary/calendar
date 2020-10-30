@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-07-10 12:12+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
+"POT-Creation-Date: 2020-10-25 11:45+0100\n"
+"PO-Revision-Date: 2020-10-27 07:15+0000\n"
+"Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/calendar/calendar/"
 "de/>\n"
 "Language: de\n"
@@ -120,7 +120,7 @@ msgstr "Fokussiere den angegebenen Tag"
 msgid "date"
 msgstr "Datum"
 
-#: src/Application.vala:163
+#: src/Application.vala:172
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -170,9 +170,6 @@ msgstr "Erinnerungen"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
-#| msgid "Repeat"
-#| msgid_plural "Repeats"
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Wiederholung"
@@ -189,20 +186,21 @@ msgstr "Termin erstellen"
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/EventEdition/GuestGrid.vala:47
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
 msgstr "Akzeptiert"
 
-#: src/EventEdition/GuestGrid.vala:51
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
 msgstr "Abgesagt"
 
-#: src/EventEdition/GuestGrid.vala:55
+#: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
 msgstr "Vielleicht"
 
@@ -632,67 +630,38 @@ msgstr "Kalenderwochen anzeigen"
 msgid "%u more…"
 msgstr "%u weitere…"
 
-#: src/SourceDialog/SourceDialog.vala:53
+#: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
 msgstr "Erstellen"
 
-#: src/SourceDialog/SourceDialog.vala:64
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
 msgstr "Name:"
 
-#: src/SourceDialog/SourceDialog.vala:68
+#: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
 msgstr "Kalendername"
 
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
 msgstr "Typ:"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
 msgstr "Farbe:"
 
-#: src/SourceDialog/SourceDialog.vala:183
+#: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
 msgstr "Als Standardkalender wählen"
 
-#: src/SourceDialog/SourceDialog.vala:244
+#: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
 msgstr "Kalender erstellen"
 
-#: src/SourceDialog/SourceDialog.vala:249
+#: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Speichern"
-
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
-msgid "Remove"
-msgstr "Entfernen"
-
-#: src/SourceDialog/SourceItem.vala:75
-msgid "Not Removable"
-msgstr "Nicht entfernbar"
-
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
-msgid "Edit…"
-msgstr "Bearbeiten…"
-
-#: src/SourceDialog/SourceItem.vala:87
-msgid "Not Editable"
-msgstr "Nicht bearbeitbar"
-
-#: src/SourceDialog/SourceItem.vala:110
-msgid "Undo"
-msgstr "Rückgängig"
-
-#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, c-format
-msgid "\"%s\" removed"
-msgstr "\"%s\" wurde entfernt"
-
-#: src/SourceDialog/SourceSelector.vala:52
-msgid "Add New Calendar…"
-msgstr "Neuen Kalender hinzufügen…"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -747,8 +716,8 @@ msgstr "Gericht;Jury;Steuer;Anwalt;Jurist;Vertrag"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-msgid "movie"
-msgstr "Film"
+msgid "movie;film"
+msgstr "movie;film;video;kino"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -809,29 +778,74 @@ msgstr "Kalender exportieren…"
 msgid "calendar.ics"
 msgstr "Kalender.ics"
 
-#: src/Widgets/EventMenu.vala:39
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+msgid "Edit…"
+msgstr "Bearbeiten…"
+
+#: src/Widgets/EventMenu.vala:37
+msgid "Duplicate…"
+msgstr "Duplizieren …"
+
+#: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
 msgstr "Termin entfernen"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
 msgstr "Ereignis an diesem Tag entfernen"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+msgid "Remove"
+msgstr "Entfernen"
+
+#: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
 msgstr "Neuen Termin erstellen"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Zum heutigen Datum wechseln"
 
-#: src/Widgets/HeaderBar.vala:56
+#: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
 msgstr "Kalender verwalten"
 
-#: src/Widgets/HeaderBar.vala:63
+#: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
 msgstr "Standardkalender exportieren oder teilen"
+
+#: src/Widgets/SourcePopover.vala:59
+msgid "Add New Calendar…"
+msgstr "Neuen Kalender hinzufügen…"
+
+#: src/Widgets/SourcePopover.vala:63
+msgid "Import iCalendar File…"
+msgstr "iCalender-Datei importieren …"
+
+#: src/Widgets/SourcePopover.vala:94
+msgid "Select ICS File to Import"
+msgstr "ICS-Datei zum Importieren auswählen"
+
+#: src/Widgets/SourcePopover.vala:97
+msgid "Open"
+msgstr "Öffnen"
+
+#: src/Widgets/SourceRow.vala:75
+msgid "Not Removable"
+msgstr "Nicht entfernbar"
+
+#: src/Widgets/SourceRow.vala:87
+msgid "Not Editable"
+msgstr "Nicht bearbeitbar"
+
+#: src/Widgets/SourceRow.vala:110
+msgid "Undo"
+msgstr "Rückgängig"
+
+#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#, c-format
+msgid "\"%s\" removed"
+msgstr "\"%s\" wurde entfernt"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e. %B %Y"

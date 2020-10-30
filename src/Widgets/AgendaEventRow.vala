@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 elementary, Inc. (https://elementary.io)
+ * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -102,7 +102,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                 case MOVIE:
                     ///Translators: Give a list of movie (film) related keywords, separated by semicolons.
                     ///The number of words can differ from US English and need not be a direct translation.
-                    return _("movie");
+                    return _("movie;film");
 
                 case WEDDING:
                     ///Translators: Give a list of wedding related keywords, separated by semicolons.
@@ -197,11 +197,13 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         datatime_label.xalign = 0;
         datatime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        location_label = new Gtk.Label ("");
-        location_label.margin_top = 6;
-        location_label.selectable = false;
-        location_label.wrap = true;
-        location_label.xalign = 0;
+        location_label = new Gtk.Label ("") {
+            margin_top = 6,
+            selectable = false,
+            wrap = true,
+            wrap_mode = Pango.WrapMode.WORD_CHAR,
+            xalign = 0
+        };
 
         var location_revealer = new Gtk.Revealer ();
         location_revealer.add (location_label);

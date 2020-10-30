@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 21:10+0000\n"
+"POT-Creation-Date: 2020-10-25 11:45+0100\n"
 "PO-Revision-Date: 2019-01-08 13:02+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/calendar/"
@@ -121,7 +121,7 @@ msgstr "Fokusuoti nurodytą dieną"
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:163
+#: src/Application.vala:172
 msgid "Calendar"
 msgstr "Kalendorius"
 
@@ -173,8 +173,6 @@ msgstr "Priminimai"
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
 #, fuzzy
-#| msgid "Repeat"
-#| msgid_plural "Repeats"
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "pasikartojimo"
@@ -191,20 +189,21 @@ msgstr "Sukurti įvykį"
 msgid "Save Changes"
 msgstr "Įrašyti pakeitimus"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "Atsisakyti"
 
-#: src/EventEdition/GuestGrid.vala:47
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
 msgstr "Priimta"
 
-#: src/EventEdition/GuestGrid.vala:51
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
 msgstr "Atmesta"
 
-#: src/EventEdition/GuestGrid.vala:55
+#: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
 msgstr "Galbūt"
 
@@ -639,67 +638,38 @@ msgstr "Rodyti savaičių numerius"
 msgid "%u more…"
 msgstr "Dar %u…"
 
-#: src/SourceDialog/SourceDialog.vala:53
+#: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
 msgstr "Sukurti"
 
-#: src/SourceDialog/SourceDialog.vala:64
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
 msgstr "Pavadinimas:"
 
-#: src/SourceDialog/SourceDialog.vala:68
+#: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
 msgstr "Kalendorius pavadinimas"
 
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
 msgstr "Tipas:"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
 msgstr "Spalva:"
 
-#: src/SourceDialog/SourceDialog.vala:183
+#: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
 msgstr "Pažymėti numatytuoju kalendoriumi"
 
-#: src/SourceDialog/SourceDialog.vala:244
+#: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
 msgstr "Sukurti kalendorių"
 
-#: src/SourceDialog/SourceDialog.vala:249
+#: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Įrašyti"
-
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
-msgid "Remove"
-msgstr "Šalinti"
-
-#: src/SourceDialog/SourceItem.vala:75
-msgid "Not Removable"
-msgstr "Nepašalinamas"
-
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
-msgid "Edit…"
-msgstr "Taisyti…"
-
-#: src/SourceDialog/SourceItem.vala:87
-msgid "Not Editable"
-msgstr "Netaisytinas"
-
-#: src/SourceDialog/SourceItem.vala:110
-msgid "Undo"
-msgstr "Atšaukti"
-
-#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, c-format
-msgid "\"%s\" removed"
-msgstr "\"%s\" pašalintas"
-
-#: src/SourceDialog/SourceSelector.vala:52
-msgid "Add New Calendar…"
-msgstr "Pridėti naują kalendorių…"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -752,7 +722,7 @@ msgstr ""
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-msgid "movie"
+msgid "movie;film"
 msgstr ""
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
@@ -814,29 +784,76 @@ msgstr "Eksportuoti kalendorių…"
 msgid "calendar.ics"
 msgstr "kalendorius.ics"
 
-#: src/Widgets/EventMenu.vala:39
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+msgid "Edit…"
+msgstr "Taisyti…"
+
+#: src/Widgets/EventMenu.vala:37
+msgid "Duplicate…"
+msgstr ""
+
+#: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
 msgstr "Šalinti įvykį"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
 msgstr "Šalinti pasikartojimą"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+msgid "Remove"
+msgstr "Šalinti"
+
+#: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
 msgstr "Sukurti naują įvykį"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Pereiti į šiandieną"
 
-#: src/Widgets/HeaderBar.vala:56
+#: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
 msgstr "Tvarkyti kalendorius"
 
-#: src/Widgets/HeaderBar.vala:63
+#: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
 msgstr "Eksportuoti ar bendrinti numatytąjį kalendorių"
+
+#: src/Widgets/SourcePopover.vala:59
+msgid "Add New Calendar…"
+msgstr "Pridėti naują kalendorių…"
+
+#: src/Widgets/SourcePopover.vala:63
+#, fuzzy
+msgid "Import iCalendar File…"
+msgstr "Eksportuoti kalendorių…"
+
+#: src/Widgets/SourcePopover.vala:94
+#, fuzzy
+msgid "Select ICS File to Import"
+msgstr "Pasirinkite į kurį kalendorių importuoti"
+
+#: src/Widgets/SourcePopover.vala:97
+msgid "Open"
+msgstr ""
+
+#: src/Widgets/SourceRow.vala:75
+msgid "Not Removable"
+msgstr "Nepašalinamas"
+
+#: src/Widgets/SourceRow.vala:87
+msgid "Not Editable"
+msgstr "Netaisytinas"
+
+#: src/Widgets/SourceRow.vala:110
+msgid "Undo"
+msgstr "Atšaukti"
+
+#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#, c-format
+msgid "\"%s\" removed"
+msgstr "\"%s\" pašalintas"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%Y %B %e"

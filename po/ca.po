@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-08-21 10:13+0000\n"
+"POT-Creation-Date: 2020-10-25 11:45+0100\n"
+"PO-Revision-Date: 2020-10-27 17:03+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/calendar/"
 "calendar/ca/>\n"
@@ -120,7 +120,7 @@ msgstr "Focalitza el dia"
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:163
+#: src/Application.vala:172
 msgid "Calendar"
 msgstr "Calendari"
 
@@ -186,20 +186,21 @@ msgstr "Crea un esdeveniment"
 msgid "Save Changes"
 msgstr "Desa els canvis"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: src/EventEdition/GuestGrid.vala:47
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
 msgstr "Acceptada"
 
-#: src/EventEdition/GuestGrid.vala:51
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
 msgstr "Rebutjada"
 
-#: src/EventEdition/GuestGrid.vala:55
+#: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
 msgstr "Potser"
 
@@ -629,67 +630,38 @@ msgstr "Mostra els números de la setmana"
 msgid "%u more…"
 msgstr "%u més…"
 
-#: src/SourceDialog/SourceDialog.vala:53
+#: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
 msgstr "Crea"
 
-#: src/SourceDialog/SourceDialog.vala:64
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
 msgstr "Nom:"
 
-#: src/SourceDialog/SourceDialog.vala:68
+#: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
 msgstr "Nom del calendari"
 
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
 msgstr "Tipus:"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
 msgstr "Color:"
 
-#: src/SourceDialog/SourceDialog.vala:183
+#: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
 msgstr "Utilitza com a calendari predeterminat"
 
-#: src/SourceDialog/SourceDialog.vala:244
+#: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
 msgstr "Crea un calendari"
 
-#: src/SourceDialog/SourceDialog.vala:249
+#: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Desa"
-
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
-msgid "Remove"
-msgstr "Suprimeix"
-
-#: src/SourceDialog/SourceItem.vala:75
-msgid "Not Removable"
-msgstr "No suprimible"
-
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
-msgid "Edit…"
-msgstr "Edita…"
-
-#: src/SourceDialog/SourceItem.vala:87
-msgid "Not Editable"
-msgstr "No editable"
-
-#: src/SourceDialog/SourceItem.vala:110
-msgid "Undo"
-msgstr "Desfés"
-
-#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, c-format
-msgid "\"%s\" removed"
-msgstr "S'ha suprimit \"%s\"."
-
-#: src/SourceDialog/SourceSelector.vala:52
-msgid "Add New Calendar…"
-msgstr "Afegeix un calendari nou…"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -742,8 +714,8 @@ msgstr "cort;jurat;taxa;fiscal;advocat;contracte"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-msgid "movie"
-msgstr "pel·lícula"
+msgid "movie;film"
+msgstr "pel·lícula;film"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -804,29 +776,74 @@ msgstr "Exporta el calendari…"
 msgid "calendar.ics"
 msgstr "calendari.ics"
 
-#: src/Widgets/EventMenu.vala:39
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+msgid "Edit…"
+msgstr "Edita…"
+
+#: src/Widgets/EventMenu.vala:37
+msgid "Duplicate…"
+msgstr "Duplica…"
+
+#: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
 msgstr "Suprimeix l'esdeveniment"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
 msgstr "Suprimeix l'ocurrència"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+msgid "Remove"
+msgstr "Suprimeix"
+
+#: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
 msgstr "Crea un esdeveniment nou"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Mostra el dia d'avui"
 
-#: src/Widgets/HeaderBar.vala:56
+#: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
 msgstr "Administra els calendaris"
 
-#: src/Widgets/HeaderBar.vala:63
+#: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
 msgstr "Exporta o comparteix el calendari predeterminat"
+
+#: src/Widgets/SourcePopover.vala:59
+msgid "Add New Calendar…"
+msgstr "Afegeix un calendari nou…"
+
+#: src/Widgets/SourcePopover.vala:63
+msgid "Import iCalendar File…"
+msgstr "Importa un fitxer de calendari…"
+
+#: src/Widgets/SourcePopover.vala:94
+msgid "Select ICS File to Import"
+msgstr "Seleccioneu un fitxer ICS per importar-lo."
+
+#: src/Widgets/SourcePopover.vala:97
+msgid "Open"
+msgstr "Obre"
+
+#: src/Widgets/SourceRow.vala:75
+msgid "Not Removable"
+msgstr "No suprimible"
+
+#: src/Widgets/SourceRow.vala:87
+msgid "Not Editable"
+msgstr "No editable"
+
+#: src/Widgets/SourceRow.vala:110
+msgid "Undo"
+msgstr "Desfés"
+
+#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#, c-format
+msgid "\"%s\" removed"
+msgstr "S'ha suprimit \"%s\"."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e %B de %Y"
