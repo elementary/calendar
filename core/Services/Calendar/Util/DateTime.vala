@@ -57,10 +57,12 @@ namespace Calendar.Util {
                 result.zone = ICal.Timezone.get_builtin_timezone (timezone);
 #endif
             } else {
+                var event_store = Calendar.EventStore.get_default ();
+                unowned ICal.Timezone system_timezone = event_store.system_timezone;
 #if E_CAL_2_0
-                result.set_timezone (ECal.util_get_system_timezone ());
+                result.set_timezone (event_store.system_timezone);
 #else
-                result.zone = ECal.Util.get_system_timezone ();
+                result.zone = event_store.system_timezone;
 #endif
             }
 
