@@ -12,6 +12,11 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+[DBus (name = "org.freedesktop.timedate1")]
+interface SettingsManager : Object {
+    public abstract string timezone {owned get;}
+}
+
 public class Calendar.EventStore : Object {
 
     /* The data_range is the range of dates for which this model is storing
@@ -36,6 +41,9 @@ public class Calendar.EventStore : Object {
 
     /* The start of week, ie. Monday=1 or Sunday=7 */
     public GLib.DateWeekday week_starts_on { get; set; default = GLib.DateWeekday.MONDAY; }
+    
+    /* The system time zone as an ICal.Timezone */
+    public unowned ICal.Timezone system_timezone {get; private set;}
 
     /* The event that is currently dragged */
     public ECal.Component drag_component {get; set;}
@@ -78,6 +86,30 @@ public class Calendar.EventStore : Object {
         this.week_starts_on = get_week_start ();
         this.month_start = Calendar.Util.datetime_get_start_of_month (get_page ());
         compute_ranges ();
+        
+#if E_CAL_2_0
+        this.system_timezone = ECal.util_get_system_timezone ();
+#else
+        this.system_timezone = ECal.Util.get_system_timezone ();
+#endif
+        // Listen for system timezone changes
+        try {
+            SettingsManager settings_manager = Bus.get_proxy_sync (BusType.SYSTEM, 
+                "org.freedesktop.timedate1", "/org/freedesktop/timedate1");
+            ((DBusProxy)settings_manager).g_properties_changed.connect ((changed, invalid) => {
+                var timezone = changed.lookup_value ("Timezone", GLib.VariantType.STRING);
+                if (timezone != null) {
+#if E_CAL_2_0
+                    this.system_timezone = ECal.util_get_system_timezone ();
+#else
+                    this.system_timezone = ECal.Util.get_system_timezone ();
+#endif
+                }
+            });
+        } catch (Error e) {
+            warning (e.message);
+        }
+
 
         source_client = new HashTable<string, ECal.Client> (str_hash, str_equal);
         source_events = new HashTable<E.Source, Gee.TreeMultiMap<string, ECal.Component>> (Maya.Util.source_hash_func, Calendar.Util.esource_equal_func);

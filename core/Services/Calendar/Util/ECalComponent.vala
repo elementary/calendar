@@ -46,11 +46,9 @@ namespace Calendar.Util {
     }
 
     public bool ecalcomponent_is_on_day (ECal.Component component, GLib.DateTime day) {
-#if E_CAL_2_0
-        unowned ICal.Timezone system_timezone = ECal.util_get_system_timezone ();
-#else
-        unowned ICal.Timezone system_timezone = ECal.Util.get_system_timezone ();
-#endif
+        var event_store = Calendar.EventStore.get_default ();
+        unowned ICal.Timezone system_timezone = event_store.system_timezone;
+
         var stripped_time = new GLib.DateTime.local (day.get_year (), day.get_month (), day.get_day_of_month (), 0, 0, 0);
 
         var selected_date_unix = stripped_time.to_unix ();
