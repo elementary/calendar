@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-25 11:45+0100\n"
-"PO-Revision-Date: 2020-08-25 13:13+0000\n"
+"PO-Revision-Date: 2020-11-03 00:15+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
 "calendar/es/>\n"
@@ -114,7 +114,7 @@ msgstr "Crear un evento"
 
 #: src/Application.vala:55
 msgid "Focus the given day"
-msgstr "Enfoca el día seleccionado"
+msgstr "Enfocar el día indicado"
 
 #: src/Application.vala:55
 msgid "date"
@@ -716,9 +716,8 @@ msgstr "tribunal;jurado;impuestos;abogado;contrato"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-#, fuzzy
 msgid "movie;film"
-msgstr "película"
+msgstr "película;filme"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -785,7 +784,7 @@ msgstr "Editar…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Duplicar…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -820,18 +819,16 @@ msgid "Add New Calendar…"
 msgstr "Añadir calendario nuevo…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Exportar calendario…"
+msgstr "Importar archivo iCalendar…"
 
 #: src/Widgets/SourcePopover.vala:94
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Seleccionar los calendarios para importar"
+msgstr "Seleccione el archivo ICS que se importará"
 
 #: src/Widgets/SourcePopover.vala:97
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
@@ -848,7 +845,7 @@ msgstr "Deshacer"
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
 #, c-format
 msgid "\"%s\" removed"
-msgstr "Se ha eliminado el calendario «%s»"
+msgstr "Se ha quitado «%s»"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e de %B de %Y"
