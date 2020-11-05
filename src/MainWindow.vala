@@ -38,7 +38,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         Object (
             application: application,
             height_request: 400,
-            icon_name: "office-calendar",
+            icon_name: "io.elementary.calendar",
             width_request: 625
         );
     }
