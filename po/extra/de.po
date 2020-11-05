@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-07-10 12:12+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
+"PO-Revision-Date: 2020-10-27 07:15+0000\n"
+"Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/calendar/extra/de/"
 ">\n"
 "Language: de\n"
@@ -51,34 +51,38 @@ msgstr "Weitere Aktualisierungen:"
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr ""
+"Fehler behoben, der dazu geführt hatte, dass Termine im Kalender doppelt "
+"erschienen"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
+"»Als Standardkalender wählen« ist jetzt richtig ausgewählt, wenn ein "
+"Kalender bearbeitet wird"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
+#, fuzzy
 msgid "Improvements:"
-msgstr ""
+msgstr "Verbesserungen:"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Allow modification of recurring events"
-msgstr "Probleme mit wiederkehrenden Ereignissen behoben"
+msgstr "Änderungen bei wiederkehrenden Ereignissen möglich"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "Festlegung des ersten Tags der Woche vereinfacht"
 
 #: data/io.elementary.calendar.appdata.xml.in:31
 msgid "Fix timezone errors with all-day events"
-msgstr ""
+msgstr "Fehler im Zusammenhang mit ganztägigen Terminen und Zeitzonen behoben"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Don't resize the sidebar when resizing the window"
 msgstr ""
+"Die Breite der Seitenleiste bleibt beim Änderung der Fenstergröße unverändert"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 #: data/io.elementary.calendar.appdata.xml.in:45

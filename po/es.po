@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-08-25 13:13+0000\n"
+"POT-Creation-Date: 2020-10-25 11:45+0100\n"
+"PO-Revision-Date: 2020-11-03 00:15+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
 "calendar/es/>\n"
@@ -114,13 +114,13 @@ msgstr "Crear un evento"
 
 #: src/Application.vala:55
 msgid "Focus the given day"
-msgstr "Enfoca el día seleccionado"
+msgstr "Enfocar el día indicado"
 
 #: src/Application.vala:55
 msgid "date"
 msgstr "fecha"
 
-#: src/Application.vala:163
+#: src/Application.vala:172
 msgid "Calendar"
 msgstr "Calendario"
 
@@ -186,20 +186,21 @@ msgstr "Crear evento"
 msgid "Save Changes"
 msgstr "Guardar cambios"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/EventEdition/GuestGrid.vala:47
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
 msgstr "Aceptado"
 
-#: src/EventEdition/GuestGrid.vala:51
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
 msgstr "Rechazado"
 
-#: src/EventEdition/GuestGrid.vala:55
+#: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
 msgstr "Quizá"
 
@@ -629,67 +630,38 @@ msgstr "Mostrar número de semana"
 msgid "%u more…"
 msgstr "%u más…"
 
-#: src/SourceDialog/SourceDialog.vala:53
+#: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
 msgstr "Crear"
 
-#: src/SourceDialog/SourceDialog.vala:64
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
 msgstr "Nombre:"
 
-#: src/SourceDialog/SourceDialog.vala:68
+#: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
 msgstr "Nombre del calendario"
 
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
 msgstr "Tipo:"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
 msgstr "Color:"
 
-#: src/SourceDialog/SourceDialog.vala:183
+#: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
 msgstr "Marcar como calendario predeterminado"
 
-#: src/SourceDialog/SourceDialog.vala:244
+#: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
 msgstr "Crear un calendario"
 
-#: src/SourceDialog/SourceDialog.vala:249
+#: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Guardar"
-
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
-msgid "Remove"
-msgstr "Eliminar"
-
-#: src/SourceDialog/SourceItem.vala:75
-msgid "Not Removable"
-msgstr "No Eliminable"
-
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
-msgid "Edit…"
-msgstr "Editar…"
-
-#: src/SourceDialog/SourceItem.vala:87
-msgid "Not Editable"
-msgstr "No editable"
-
-#: src/SourceDialog/SourceItem.vala:110
-msgid "Undo"
-msgstr "Deshacer"
-
-#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, c-format
-msgid "\"%s\" removed"
-msgstr "Se ha eliminado el calendario «%s»"
-
-#: src/SourceDialog/SourceSelector.vala:52
-msgid "Add New Calendar…"
-msgstr "Añadir calendario nuevo…"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -744,8 +716,8 @@ msgstr "tribunal;jurado;impuestos;abogado;contrato"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-msgid "movie"
-msgstr "película"
+msgid "movie;film"
+msgstr "película;filme"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -806,29 +778,74 @@ msgstr "Exportar calendario…"
 msgid "calendar.ics"
 msgstr "calendario.ics"
 
-#: src/Widgets/EventMenu.vala:39
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+msgid "Edit…"
+msgstr "Editar…"
+
+#: src/Widgets/EventMenu.vala:37
+msgid "Duplicate…"
+msgstr "Duplicar…"
+
+#: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
 msgstr "Eliminar evento"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
 msgstr "Eliminar ocurrencia"
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+msgid "Remove"
+msgstr "Eliminar"
+
+#: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
 msgstr "Crear un evento nuevo"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Ir a hoy"
 
-#: src/Widgets/HeaderBar.vala:56
+#: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
 msgstr "Gestionar calendarios"
 
-#: src/Widgets/HeaderBar.vala:63
+#: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
 msgstr "Exportar o compartir el calendario predeterminado"
+
+#: src/Widgets/SourcePopover.vala:59
+msgid "Add New Calendar…"
+msgstr "Añadir calendario nuevo…"
+
+#: src/Widgets/SourcePopover.vala:63
+msgid "Import iCalendar File…"
+msgstr "Importar archivo iCalendar…"
+
+#: src/Widgets/SourcePopover.vala:94
+msgid "Select ICS File to Import"
+msgstr "Seleccione el archivo ICS que se importará"
+
+#: src/Widgets/SourcePopover.vala:97
+msgid "Open"
+msgstr "Abrir"
+
+#: src/Widgets/SourceRow.vala:75
+msgid "Not Removable"
+msgstr "No Eliminable"
+
+#: src/Widgets/SourceRow.vala:87
+msgid "Not Editable"
+msgstr "No editable"
+
+#: src/Widgets/SourceRow.vala:110
+msgid "Undo"
+msgstr "Deshacer"
+
+#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#, c-format
+msgid "\"%s\" removed"
+msgstr "Se ha quitado «%s»"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e de %B de %Y"

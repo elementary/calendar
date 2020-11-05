@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 21:10+0000\n"
+"POT-Creation-Date: 2020-10-25 11:45+0100\n"
 "PO-Revision-Date: 2018-06-10 00:10+0000\n"
 "Last-Translator: Gamunu Balagalla <gamunu.balagalla@gmail.com>\n"
 "Language-Team: Sinhala <https://weblate.elementary.io/projects/calendar/"
@@ -119,7 +119,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:163
+#: src/Application.vala:172
 msgid "Calendar"
 msgstr "දින දර්ශනය"
 
@@ -170,8 +170,6 @@ msgstr "සිහිගැන්වීම්"
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
 #, fuzzy
-#| msgid "Repeat"
-#| msgid_plural "Repeats"
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "නැවත"
@@ -188,20 +186,21 @@ msgstr "සිදුවීම්ක් සාදන්න"
 msgid "Save Changes"
 msgstr "වෙනස්කම් සුරකින්න"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:52
+#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "අවලංගු කරන්න"
 
-#: src/EventEdition/GuestGrid.vala:47
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
 msgstr "පිළිගත්තා"
 
-#: src/EventEdition/GuestGrid.vala:51
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
 msgstr "ප්‍රතික්ෂේප කරා"
 
-#: src/EventEdition/GuestGrid.vala:55
+#: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
 msgstr ""
 
@@ -647,68 +646,38 @@ msgstr "සතියේ අංක පෙන්වන්න"
 msgid "%u more…"
 msgstr "%u තව…"
 
-#: src/SourceDialog/SourceDialog.vala:53
+#: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
 msgstr "නිර්මාණය කරන්න"
 
-#: src/SourceDialog/SourceDialog.vala:64
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
 msgstr "නම:"
 
-#: src/SourceDialog/SourceDialog.vala:68
+#: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
 msgstr "දිනදර්ශනයේ නම"
 
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
 msgstr "වර්ගය:"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
 msgstr "වර්ණය:"
 
-#: src/SourceDialog/SourceDialog.vala:183
+#: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
 msgstr "පෙරනිමි දිනදර්ශනය ලෙස සලකුණු කරන්න"
 
-#: src/SourceDialog/SourceDialog.vala:244
+#: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
 msgstr "දිනදර්ශනය සාදන්න"
 
-#: src/SourceDialog/SourceDialog.vala:249
+#: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "සුරකින්න"
-
-#: src/SourceDialog/SourceItem.vala:75 src/Widgets/EventMenu.vala:47
-msgid "Remove"
-msgstr "ඉවත් කරන්න"
-
-#: src/SourceDialog/SourceItem.vala:75
-#, fuzzy
-msgid "Not Removable"
-msgstr "ඉවත් කරන්න"
-
-#: src/SourceDialog/SourceItem.vala:87 src/Widgets/EventMenu.vala:34
-msgid "Edit…"
-msgstr "සංස්කරණය කරන්න…"
-
-#: src/SourceDialog/SourceItem.vala:87
-msgid "Not Editable"
-msgstr ""
-
-#: src/SourceDialog/SourceItem.vala:110
-msgid "Undo"
-msgstr "අස් කරන්න"
-
-#: src/SourceDialog/SourceItem.vala:116 src/SourceDialog/SourceItem.vala:183
-#, fuzzy, c-format
-msgid "\"%s\" removed"
-msgstr "දිනදර්ශනය \"% s\" ඉවත් කර ඇත."
-
-#: src/SourceDialog/SourceSelector.vala:52
-msgid "Add New Calendar…"
-msgstr "නව දින දර්ශනයක් එකතු කරන්න…"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -761,7 +730,7 @@ msgstr ""
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-msgid "movie"
+msgid "movie;film"
 msgstr ""
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
@@ -825,30 +794,77 @@ msgstr "දින දර්ශනය නිර්යාත කරන්න..."
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Widgets/EventMenu.vala:39
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+msgid "Edit…"
+msgstr "සංස්කරණය කරන්න…"
+
+#: src/Widgets/EventMenu.vala:37
+msgid "Duplicate…"
+msgstr ""
+
+#: src/Widgets/EventMenu.vala:42
 #, fuzzy
 msgid "Remove Event"
 msgstr "සිදුවීම මකන්න"
 
-#: src/Widgets/EventMenu.vala:41
+#: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/HeaderBar.vala:41
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+msgid "Remove"
+msgstr "ඉවත් කරන්න"
+
+#: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
 msgstr "නව සිද්ධියක් සාදන්න"
 
-#: src/Widgets/HeaderBar.vala:48
+#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "අද දිනට යන්න"
 
-#: src/Widgets/HeaderBar.vala:56
+#: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
 msgstr "කැලැන්ඩර කළමනාකරණය කරන්න"
 
-#: src/Widgets/HeaderBar.vala:63
+#: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
 msgstr "පෙරනිමි දින දර්ශනය නිර්යාත කරන්න හෝ බෙදාගන්න"
+
+#: src/Widgets/SourcePopover.vala:59
+msgid "Add New Calendar…"
+msgstr "නව දින දර්ශනයක් එකතු කරන්න…"
+
+#: src/Widgets/SourcePopover.vala:63
+#, fuzzy
+msgid "Import iCalendar File…"
+msgstr "දින දර්ශනය නිර්යාත කරන්න..."
+
+#: src/Widgets/SourcePopover.vala:94
+msgid "Select ICS File to Import"
+msgstr ""
+
+#: src/Widgets/SourcePopover.vala:97
+msgid "Open"
+msgstr ""
+
+#: src/Widgets/SourceRow.vala:75
+#, fuzzy
+msgid "Not Removable"
+msgstr "ඉවත් කරන්න"
+
+#: src/Widgets/SourceRow.vala:87
+msgid "Not Editable"
+msgstr ""
+
+#: src/Widgets/SourceRow.vala:110
+msgid "Undo"
+msgstr "අස් කරන්න"
+
+#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#, fuzzy, c-format
+msgid "\"%s\" removed"
+msgstr "දිනදර්ශනය \"% s\" ඉවත් කර ඇත."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
