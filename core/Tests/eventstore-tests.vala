@@ -94,10 +94,9 @@ void test_ranges () {
     var setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
     assert_nonnull (setstr);
     assert (setstr == localestr);
-    
+
     var store = new TestStore ();
     store.month_start = new GLib.DateTime.local (2020,11,1,0,0,0);
-    debug (@"$(store.month_range.first_dt) to $(store.month_range.last_dt)");
     var month_start = new GLib.DateTime.local (2020,11,1,12,13,45);
     var month_end = new GLib.DateTime.local (2020,11,30,12,13,45);
     // Test in range
@@ -109,7 +108,6 @@ void test_ranges () {
     assert (month_start.compare (store.month_range.first_dt) < 0);
     assert (month_end.compare (store.month_range.last_dt) > 0);
 
-    debug (@"data: $(store.data_range.first_dt) to $(store.data_range.last_dt)");
     var data_start = new GLib.DateTime.local (2020,10,26,12,13,45);
     var data_end = new GLib.DateTime.local (2020,12,6,12,13,45);
     assert (data_start.compare (store.data_range.first_dt) >= 0);
@@ -136,4 +134,3 @@ int main (string[] args) {
     add_range_tests ();
     return Test.run ();
 }
-

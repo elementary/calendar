@@ -129,13 +129,10 @@ void test_daterange_to_list () {
     var end_time = new DateTime.local (2019, 11, 22, 23, 59, 59);
     var range = new Calendar.Util.DateRange (start_time, end_time);
     var list = range.to_list ();
-    debug (@"$(list.get (0))");
-    debug (@"$(list.get (list.size-1))");
     var days_contained = 3;
     assert (list.size == days_contained);
-    debug (@"$(start_time.compare (list.get (0)))");
     assert (start_time.compare (list.get (0)) == 0);
-    assert (end_time.compare (list.get (list.size-1).add_days (1)) < 0);
+    assert (end_time.compare (list.get (list.size - 1).add_days (1)) < 0);
 }
 
 // Test that the is_event_in_range function works with all day events, which are
