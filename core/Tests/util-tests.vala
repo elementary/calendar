@@ -116,6 +116,25 @@ void test_all_day () {
     assert (g_dtend.format ("%FT%T%z") == "2019-11-21T00:00:00-0600");
 }
 
+/*
+ *
+ * Tests for DateRange
+ *
+ */
+
+/** Basic test of DateRange.to_list: does it return only dates within the range?
+ */
+void test_daterange_to_list () {
+    var start_time = new DateTime.local (2019, 11, 20, 0, 0, 0);
+    var end_time = new DateTime.local (2019, 11, 22, 23, 59, 59);
+    var range = new Calendar.Util.DateRange (start_time, end_time);
+    var list = range.to_list ();
+    var days_contained = 3;
+    assert (list.size == days_contained);
+    assert (start_time.compare (list.get (0)) == 0);
+    assert (end_time.compare (list.get (list.size - 1).add_days (1)) < 0);
+}
+
 // Test that the is_event_in_range function works with all day events, which are
 // in UTC instead of local time
 void test_daterange_all_day () {
@@ -190,7 +209,10 @@ void add_timezone_tests () {
     Test.add_func ("/Utils/TimeZone/hour_offset", test_hour_offset);
     Test.add_func ("/Utils/TimeZone/half_hour_offset", test_half_hour_offset);
     Test.add_func ("/Utils/TimeZone/45_minute_offset", test_45_minute_offset);
+}
 
+void add_daterange_tests () {
+    Test.add_func ("/Utils/DateRange/to_list", test_daterange_to_list);
     Test.add_func ("/Utils/DateRange/all_day", test_daterange_all_day);
 }
 
@@ -208,6 +230,7 @@ int main (string[] args) {
 
     Test.init (ref args);
     add_timezone_tests ();
+    add_daterange_tests ();
     add_datetime_tests ();
     var result = Test.run ();
 
