@@ -68,8 +68,11 @@ public class Calendar.Util.DateIterator : Object, Gee.Traversable<GLib.DateTime>
         return true;
     }
 
+    /** Returns true if the next day after current would fall inside of range, 
+     *  false otherwise.
+     */
     public bool has_next () {
-        return current.compare (range.last_dt) < 0;
+        return current.add_days (1).compare (range.last_dt) < 0;
     }
 
     public new GLib.DateTime get () {
