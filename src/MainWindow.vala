@@ -21,6 +21,8 @@
 
 public class Maya.MainWindow : Hdy.ApplicationWindow {
     public View.CalendarView calview;
+    private View.AgendaView sidebar;
+    private GLib.NetworkMonitor network_monitor;
 
     public const string ACTION_PREFIX = "win.";
     public const string ACTION_NEW_EVENT = "action_new_event";
@@ -33,6 +35,12 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
 
     private uint configure_id;
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
+
+    private Calendar.Widgets.HeaderBar headerbar;
+    private Gtk.Label error_label;
+    private Gtk.Label info_label;
+    private Gtk.InfoBar error_bar;
+    private Gtk.InfoBar info_bar;
 
     public MainWindow (Gtk.Application application) {
         Object (
@@ -59,18 +67,34 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/calendar");
 
-        var headerbar = new Calendar.Widgets.HeaderBar ();
+        headerbar = new Calendar.Widgets.HeaderBar ();
 
-        var error_label = new Gtk.Label (null);
+        error_label = new Gtk.Label (null);
         error_label.show ();
 
-        var errorbar = new Gtk.InfoBar ();
-        errorbar.message_type = Gtk.MessageType.ERROR;
-        errorbar.no_show_all = true;
-        errorbar.show_close_button = true;
-        errorbar.get_content_area ().add (error_label);
+        error_bar = new Gtk.InfoBar () {
+            message_type = Gtk.MessageType.ERROR,
+            revealed = false,
+            show_close_button = true
+        };
+        error_bar.get_content_area ().add (error_label);
 
-        var sidebar = new View.AgendaView ();
+        string title = _("Network Not Available.");
+        string details = _("While offline, a local copy of previously added calendars will be displayed.");
+
+        info_label = new Gtk.Label ("<b>%s</b> %s".printf (title, details));
+        info_label.use_markup = true;
+        info_label.wrap = true;
+
+        info_bar = new Gtk.InfoBar () {
+            message_type = Gtk.MessageType.WARNING,
+            revealed = false,
+            show_close_button = false
+        };
+        info_bar.get_content_area ().add (info_label);
+        info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
+
+        sidebar = new View.AgendaView ();
         sidebar.no_show_all = true;
         sidebar.width_request = 160;
         sidebar.show ();
@@ -85,15 +109,40 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
         grid.add (headerbar);
-        grid.add (errorbar);
+        grid.add (error_bar);
+        grid.add (info_bar);
         grid.add (hpaned);
 
         add (grid);
 
+        network_monitor = GLib.NetworkMonitor.get_default ();
+        network_monitor.network_changed.connect (() => {
+            bool available = network_monitor.get_network_available ();
+
+            if (available && network_monitor.get_connectivity () == GLib.NetworkConnectivity.FULL) {
+                info_bar.set_revealed (false);
+            } else {
+                info_bar.set_revealed (true);
+            }
+        });
+
         calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
         calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
-        errorbar.response.connect ((id) => errorbar.hide ());
+        error_bar.response.connect ((id) => error_bar.set_revealed (false));
+        info_bar.response.connect ((response_id) => {
+            switch (response_id) {
+                case Gtk.ResponseType.ACCEPT:
+                    try {
+                        AppInfo.launch_default_for_uri ("settings://network", null);
+                    } catch (GLib.Error e) {
+                        critical (e.message);
+                    }
+                    break;
+                default:
+                    assert_not_reached ();
+            }
+        });
 
         sidebar.event_removed.connect (on_remove);
 
@@ -102,7 +151,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         Calendar.EventStore.get_default ().error_received.connect ((message) => {
             Idle.add (() => {
                 error_label.label = message;
-                errorbar.show ();
+                error_bar.set_revealed (true);
                 return false;
             });
         });
