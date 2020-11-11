@@ -61,14 +61,14 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
 
         var headerbar = new Calendar.Widgets.HeaderBar ();
 
-        var infobar_label = new Gtk.Label (null);
-        infobar_label.show ();
+        var error_label = new Gtk.Label (null);
+        error_label.show ();
 
-        var infobar = new Gtk.InfoBar ();
-        infobar.message_type = Gtk.MessageType.ERROR;
-        infobar.no_show_all = true;
-        infobar.show_close_button = true;
-        infobar.get_content_area ().add (infobar_label);
+        var errorbar = new Gtk.InfoBar ();
+        errorbar.message_type = Gtk.MessageType.ERROR;
+        errorbar.no_show_all = true;
+        errorbar.show_close_button = true;
+        errorbar.get_content_area ().add (error_label);
 
         var sidebar = new View.AgendaView ();
         sidebar.no_show_all = true;
@@ -85,7 +85,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
         grid.add (headerbar);
-        grid.add (infobar);
+        grid.add (errorbar);
         grid.add (hpaned);
 
         add (grid);
@@ -93,7 +93,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
         calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
 
-        infobar.response.connect ((id) => infobar.hide ());
+        errorbar.response.connect ((id) => errorbar.hide ());
 
         sidebar.event_removed.connect (on_remove);
 
@@ -101,8 +101,8 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
 
         Calendar.EventStore.get_default ().error_received.connect ((message) => {
             Idle.add (() => {
-                infobar_label.label = message;
-                infobar.show ();
+                error_label.label = message;
+                errorbar.show ();
                 return false;
             });
         });
