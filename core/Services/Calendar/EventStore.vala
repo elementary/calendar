@@ -441,7 +441,7 @@ public class Calendar.EventStore : Object {
         try {
             var cancellable = new GLib.Cancellable ();
             connecting (source, cancellable);
-            var client = (ECal.Client) yield ECal.Client.connect (source, ECal.ClientSourceType.EVENTS, 30, cancellable);
+            var client = (ECal.Client) yield ECal.Client.connect (source, ECal.ClientSourceType.EVENTS, -1, cancellable);
             source_client.insert (source.get_uid (), client);
         } catch (Error e) {
             error_received (e.message);
