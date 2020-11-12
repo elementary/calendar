@@ -22,7 +22,6 @@
 public class Maya.MainWindow : Hdy.ApplicationWindow {
     public View.CalendarView calview;
     private View.AgendaView sidebar;
-    private GLib.NetworkMonitor network_monitor;
 
     public const string ACTION_PREFIX = "win.";
     public const string ACTION_NEW_EVENT = "action_new_event";
@@ -37,10 +36,9 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
     private Calendar.Widgets.HeaderBar headerbar;
+    private Calendar.Widgets.ConnectivityInfoBar info_bar;
     private Gtk.Label error_label;
-    private Gtk.Label info_label;
     private Gtk.InfoBar error_bar;
-    private Gtk.InfoBar info_bar;
 
     public MainWindow (Gtk.Application application) {
         Object (
@@ -79,20 +77,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         };
         error_bar.get_content_area ().add (error_label);
 
-        unowned string title = _("Network Not Available.");
-        unowned string details = _("Connect to the Internet to see additional details and new events from online calendars.");
-
-        info_label = new Gtk.Label ("<b>%s</b> %s".printf (title, details));
-        info_label.use_markup = true;
-        info_label.wrap = true;
-
-        info_bar = new Gtk.InfoBar () {
-            message_type = Gtk.MessageType.WARNING,
-            revealed = false,
-            show_close_button = false
-        };
-        info_bar.get_content_area ().add (info_label);
-        info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
+        info_bar = new Calendar.Widgets.ConnectivityInfoBar ();
 
         sidebar = new View.AgendaView ();
         sidebar.no_show_all = true;
@@ -115,35 +100,9 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
 
         add (grid);
 
-        network_monitor = GLib.NetworkMonitor.get_default ();
-        network_monitor.network_changed.connect (() => {
-            bool available = network_monitor.get_network_available ();
-
-            if (available && network_monitor.get_connectivity () == GLib.NetworkConnectivity.FULL) {
-                info_bar.set_revealed (false);
-            } else {
-                info_bar.set_revealed (true);
-            }
-        });
-
         calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
         calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
-
         error_bar.response.connect ((id) => error_bar.set_revealed (false));
-        info_bar.response.connect ((response_id) => {
-            switch (response_id) {
-                case Gtk.ResponseType.ACCEPT:
-                    try {
-                        AppInfo.launch_default_for_uri ("settings://network", null);
-                    } catch (GLib.Error e) {
-                        critical (e.message);
-                    }
-                    break;
-                default:
-                    assert_not_reached ();
-            }
-        });
-
         sidebar.event_removed.connect (on_remove);
 
         Maya.Application.saved_state.bind ("hpaned-position", hpaned, "position", GLib.SettingsBindFlags.DEFAULT);
