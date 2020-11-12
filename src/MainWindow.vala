@@ -80,7 +80,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         error_bar.get_content_area ().add (error_label);
 
         unowned string title = _("Network Not Available.");
-        string details = _("Connect to the Internet to see additional details and new events from online calendars.");
+        unowned string details = _("Connect to the Internet to see additional details and new events from online calendars.");
 
         info_label = new Gtk.Label ("<b>%s</b> %s".printf (title, details));
         info_label.use_markup = true;
