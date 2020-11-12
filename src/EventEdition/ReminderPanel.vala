@@ -138,9 +138,10 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 alarm.set_action (ECal.ComponentAlarmAction.DISPLAY);
                 ECal.ComponentAlarmTrigger trigger;
 #if E_CAL_2_0
-                trigger = alarm.get_trigger ();
-                trigger.set_duration (reminder.get_duration ());
-                trigger.set_kind (ECal.ComponentAlarmTriggerKind.RELATIVE_START);
+                trigger = new ECal.ComponentAlarmTrigger.relative (
+                    ECal.ComponentAlarmTriggerKind.RELATIVE_START,
+                    reminder.get_duration ()
+                );
 #else
                 alarm.get_trigger (out trigger);
                 trigger.rel_duration = reminder.get_duration ();
@@ -150,7 +151,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 alarm.set_trigger (trigger);
                 parent_dialog.ecal.add_alarm (alarm);
             } else if (reminder.change == true) {
-                var alarm = parent_dialog.ecal.get_alarm (reminder.uid);
+                var alarm = parent_dialog.ecal.get_alarm (reminder.uid).copy ();
                 alarm.set_action (ECal.ComponentAlarmAction.DISPLAY);
                 ECal.ComponentAlarmTrigger trigger;
 #if E_CAL_2_0
@@ -163,6 +164,8 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 trigger.type = ECal.ComponentAlarmTriggerKind.RELATIVE_START;
 #endif
                 alarm.set_trigger (trigger);
+                parent_dialog.ecal.remove_alarm (reminder.uid);
+                parent_dialog.ecal.add_alarm (alarm);
             }
         }
 
