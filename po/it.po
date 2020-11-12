@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2020-10-27 07:15+0000\n"
+"PO-Revision-Date: 2020-11-12 23:17+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/calendar/"
 "calendar/it/>\n"
@@ -786,7 +786,7 @@ msgstr "Duplica…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
-msgstr "Evento remoto"
+msgstr "Rimuovi evento"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
