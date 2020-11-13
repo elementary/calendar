@@ -18,9 +18,6 @@
  */
 
 public class Calendar.Widgets.ConnectivityInfoBar : Gtk.InfoBar {
-    private GLib.NetworkMonitor network_monitor;
-    private Gtk.Label info_label;
-
     public ConnectivityInfoBar () {
         Object (
             message_type: Gtk.MessageType.WARNING,
@@ -33,14 +30,15 @@ public class Calendar.Widgets.ConnectivityInfoBar : Gtk.InfoBar {
         unowned string title = _("Network Not Available.");
         unowned string details = _("Connect to the Internet to see additional details and new events from online calendars.");
 
-        info_label = new Gtk.Label ("<b>%s</b> %s".printf (title, details));
-        info_label.use_markup = true;
-        info_label.wrap = true;
+        var info_label = new Gtk.Label ("<b>%s</b> %s".printf (title, details)) {
+            use_markup = true,
+            wrap = true
+        };
 
         get_content_area ().add (info_label);
         add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
-        network_monitor = GLib.NetworkMonitor.get_default ();
+        var network_monitor = GLib.NetworkMonitor.get_default ();
         network_monitor.network_changed.connect (() => {
             bool available = network_monitor.get_network_available ();
 
@@ -52,16 +50,10 @@ public class Calendar.Widgets.ConnectivityInfoBar : Gtk.InfoBar {
         });
 
         response.connect ((response_id) => {
-            switch (response_id) {
-                case Gtk.ResponseType.ACCEPT:
-                    try {
-                        AppInfo.launch_default_for_uri ("settings://network", null);
-                    } catch (GLib.Error e) {
-                        critical (e.message);
-                    }
-                    break;
-                default:
-                    assert_not_reached ();
+            try {
+                AppInfo.launch_default_for_uri ("settings://network", null);
+            } catch (GLib.Error e) {
+                critical (e.message);
             }
         });
     }

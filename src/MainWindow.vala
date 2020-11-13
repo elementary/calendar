@@ -21,7 +21,6 @@
 
 public class Maya.MainWindow : Hdy.ApplicationWindow {
     public View.CalendarView calview;
-    private View.AgendaView sidebar;
 
     public const string ACTION_PREFIX = "win.";
     public const string ACTION_NEW_EVENT = "action_new_event";
@@ -34,11 +33,6 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
 
     private uint configure_id;
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
-
-    private Calendar.Widgets.HeaderBar headerbar;
-    private Calendar.Widgets.ConnectivityInfoBar info_bar;
-    private Gtk.Label error_label;
-    private Gtk.InfoBar error_bar;
 
     public MainWindow (Gtk.Application application) {
         Object (
@@ -65,27 +59,29 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/calendar");
 
-        headerbar = new Calendar.Widgets.HeaderBar ();
+        var headerbar = new Calendar.Widgets.HeaderBar ();
 
-        error_label = new Gtk.Label (null);
+        var error_label = new Gtk.Label (null);
         error_label.show ();
 
-        error_bar = new Gtk.InfoBar () {
+        var error_bar = new Gtk.InfoBar () {
             message_type = Gtk.MessageType.ERROR,
             revealed = false,
             show_close_button = true
         };
         error_bar.get_content_area ().add (error_label);
 
-        info_bar = new Calendar.Widgets.ConnectivityInfoBar ();
+        var info_bar = new Calendar.Widgets.ConnectivityInfoBar ();
 
-        sidebar = new View.AgendaView ();
-        sidebar.no_show_all = true;
-        sidebar.width_request = 160;
+        var sidebar = new View.AgendaView () {
+            no_show_all = true,
+            width_request = 160
+        };
         sidebar.show ();
 
-        calview = new View.CalendarView ();
-        calview.vexpand = true;
+        var calview = new View.CalendarView () {
+            vexpand = true
+        };
 
         var hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         hpaned.pack1 (calview, true, false);
