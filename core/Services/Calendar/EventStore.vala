@@ -61,6 +61,7 @@ public class Calendar.EventStore : Object {
 
     private static Calendar.EventStore? store = null;
     private static GLib.Settings? state_settings = null;
+    private static GLib.Settings? locale_settings = null;
 
     public static Calendar.EventStore get_default () {
         if (store == null)
@@ -72,6 +73,7 @@ public class Calendar.EventStore : Object {
         if (SettingsSchemaSource.get_default ().lookup ("io.elementary.calendar.savedstate", true) != null) {
             state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
         }
+        locale_settings = new Settings ("io.elementary.switchboard.locale");
     }
 
     protected EventStore () {
@@ -86,6 +88,12 @@ public class Calendar.EventStore : Object {
 
         notify["month-start"].connect (on_parameter_changed);
         open.begin ();
+
+        locale_settings.changed.connect (() => {
+            change_month (1);
+            this.week_starts_on = get_week_start ();
+            change_month (-1);
+        });
     }
 
     public async void open () {
@@ -328,6 +336,17 @@ public class Calendar.EventStore : Object {
         var week_start = week_start_posix + glib_offset;
         if (week_start == 0) { // Sunday special case
             week_start = 7;
+        }
+
+        // Accessing the locale settings
+        int week_start_user_pref = locale_settings.get_int ("first-day") + 1;
+        if (week_start >= 1 && week_start <= 7) {
+            if (week_start_user_pref == week_start_posix) {
+                week_start = week_start_posix + glib_offset;
+            } else {
+                print ("User Preference for week start: %i\nSystem Preference for week start: %i\n", week_start_user_pref, week_start);
+                week_start = week_start_user_pref + glib_offset;
+            }
         }
 
         return (GLib.DateWeekday) week_start;
