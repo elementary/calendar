@@ -35,7 +35,8 @@ calendar_files = files(
     'Widgets/EventMenu.vala',
     'Widgets/HeaderBar.vala',
     'Widgets/SourcePopover.vala',
-    'Widgets/SourceRow.vala'
+    'Widgets/SourceRow.vala',
+    'Widgets/ConnectivityInfoBar.vala'
 )
 
 calendar_deps = [

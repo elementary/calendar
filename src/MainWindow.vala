@@ -61,22 +61,27 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
 
         var headerbar = new Calendar.Widgets.HeaderBar ();
 
-        var infobar_label = new Gtk.Label (null);
-        infobar_label.show ();
+        var error_label = new Gtk.Label (null);
+        error_label.show ();
 
-        var infobar = new Gtk.InfoBar ();
-        infobar.message_type = Gtk.MessageType.ERROR;
-        infobar.no_show_all = true;
-        infobar.show_close_button = true;
-        infobar.get_content_area ().add (infobar_label);
+        var error_bar = new Gtk.InfoBar () {
+            message_type = Gtk.MessageType.ERROR,
+            revealed = false,
+            show_close_button = true
+        };
+        error_bar.get_content_area ().add (error_label);
 
-        var sidebar = new View.AgendaView ();
-        sidebar.no_show_all = true;
-        sidebar.width_request = 160;
+        var info_bar = new Calendar.Widgets.ConnectivityInfoBar ();
+
+        var sidebar = new View.AgendaView () {
+            no_show_all = true,
+            width_request = 160
+        };
         sidebar.show ();
 
-        calview = new View.CalendarView ();
-        calview.vexpand = true;
+        var calview = new View.CalendarView () {
+            vexpand = true
+        };
 
         var hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         hpaned.pack1 (calview, true, false);
@@ -85,24 +90,23 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
         grid.add (headerbar);
-        grid.add (infobar);
+        grid.add (error_bar);
+        grid.add (info_bar);
         grid.add (hpaned);
 
         add (grid);
 
         calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
         calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
-
-        infobar.response.connect ((id) => infobar.hide ());
-
+        error_bar.response.connect ((id) => error_bar.set_revealed (false));
         sidebar.event_removed.connect (on_remove);
 
         Maya.Application.saved_state.bind ("hpaned-position", hpaned, "position", GLib.SettingsBindFlags.DEFAULT);
 
         Calendar.EventStore.get_default ().error_received.connect ((message) => {
             Idle.add (() => {
-                infobar_label.label = message;
-                infobar.show ();
+                error_label.label = message;
+                error_bar.set_revealed (true);
                 return false;
             });
         });
