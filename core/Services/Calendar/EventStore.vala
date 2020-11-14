@@ -74,7 +74,8 @@ public class Calendar.EventStore : Object {
             state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
         }
         if (SettingsSchemaSource.get_default ().lookup ("io.elementary.switchboard.locale", true) != null) {
-            locale_settings = new GLib.Settings ("io.elementary.switchboard.locale");
+            // Since it's external, gotta use its path too.
+            locale_settings = new GLib.Settings.with_path ("io.elementary.switchboard.locale", "/io/elementary/switchboard/locale/");
         }
     }
 
