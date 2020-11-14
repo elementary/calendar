@@ -73,7 +73,9 @@ public class Calendar.EventStore : Object {
         if (SettingsSchemaSource.get_default ().lookup ("io.elementary.calendar.savedstate", true) != null) {
             state_settings = new GLib.Settings ("io.elementary.calendar.savedstate");
         }
-        locale_settings = new Settings ("io.elementary.switchboard.locale");
+        if (SettingsSchemaSource.get_default ().lookup ("io.elementary.switchboard.locale", true) != null) {
+            locale_settings = new Settings ("io.elementary.switchboard.locale");
+        }
     }
 
     protected EventStore () {
