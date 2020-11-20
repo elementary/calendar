@@ -79,7 +79,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         };
         sidebar.show ();
 
-        var calview = new View.CalendarView () {
+        calview = new View.CalendarView () {
             vexpand = true
         };
 
