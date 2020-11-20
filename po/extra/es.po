@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2020-10-08 16:14+0000\n"
+"PO-Revision-Date: 2020-11-21 04:15+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/extra/"
 "es/>\n"
@@ -41,11 +41,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "New Features:"
-msgstr ""
+msgstr "Funcionalidades nuevas:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
+msgstr "Se añadió la opción «Duplicar» al menú contextual de los eventos"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:38
@@ -156,7 +156,7 @@ msgstr "Mejoras de rendimiento"
 
 #: data/io.elementary.calendar.appdata.xml.in:95
 msgid "Present import window when opening ICS files"
-msgstr "Presentar la ventana de importación al abrir archivos ICS"
+msgstr "Se presenta la ventana de importación al abrir archivos ICS"
 
 #: data/io.elementary.calendar.appdata.xml.in:96
 msgid "Add a search entry for calendars"
@@ -164,7 +164,7 @@ msgstr "Se añadió un cuadro de búsqueda de calendarios"
 
 #: data/io.elementary.calendar.appdata.xml.in:97
 msgid "Always use calendar icon in notifications"
-msgstr "Usar siempre el icono del calendario en las notificaciones"
+msgstr "Se utiliza siempre el icono del calendario en las notificaciones"
 
 #: data/io.elementary.calendar.appdata.xml.in:98
 msgid "Agenda view can now be navigated by keyboard"
@@ -189,7 +189,7 @@ msgstr "Ajustes de estilo"
 
 #: data/io.elementary.calendar.appdata.xml.in:108
 msgid "Fix location panel initialization"
-msgstr "Corregir la inicialización del panel de ubicación"
+msgstr "Arreglo de la inicialización del panel de ubicación"
 
 #: data/io.elementary.calendar.appdata.xml.in:109
 msgid "New translations"
@@ -223,7 +223,7 @@ msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "io.elementary.calendar"
-msgstr ""
+msgstr "io.elementary.calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
