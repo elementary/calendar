@@ -168,7 +168,7 @@ namespace Maya {
 
             var notification = new GLib.Notification (primary_text);
             notification.set_body (secondary_text);
-            notification.set_icon (new ThemedIcon ("office-calendar"));
+            notification.set_icon (new ThemedIcon ("io.elementary.calendar"));
 
             GLib.Application.get_default ().send_notification (uid, notification);
         }

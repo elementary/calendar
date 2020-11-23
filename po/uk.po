@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-25 11:45+0100\n"
-"PO-Revision-Date: 2020-10-27 07:15+0000\n"
+"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"PO-Revision-Date: 2020-11-10 15:15+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/"
 "calendar/uk/>\n"
@@ -729,33 +729,33 @@ msgid "wedding"
 msgstr "весілля;заміжжя;одруження"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:310
+#: src/Widgets/AgendaEventRow.vala:312
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:313
+#: src/Widgets/AgendaEventRow.vala:315
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:325
+#: src/Widgets/AgendaEventRow.vala:327
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:334
+#: src/Widgets/AgendaEventRow.vala:336
 #, c-format
 msgid "%s at %s"
 msgstr "%s о %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:337
+#: src/Widgets/AgendaEventRow.vala:339
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
@@ -787,7 +787,7 @@ msgstr "Змінити…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr "Дублікат…"
+msgstr "Дублювати…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 21:10+0000\n"
-"PO-Revision-Date: 2020-10-08 16:14+0000\n"
+"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"PO-Revision-Date: 2020-11-16 16:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/extra/"
 "mr/>\n"
@@ -39,168 +39,177 @@ msgstr ""
 "व्यवस्थापित करणारे एक हलके कॅलेंडर अॅप."
 
 #: data/io.elementary.calendar.appdata.xml.in:18
-#: data/io.elementary.calendar.appdata.xml.in:33
-#: data/io.elementary.calendar.appdata.xml.in:42
-#: data/io.elementary.calendar.appdata.xml.in:51
-#: data/io.elementary.calendar.appdata.xml.in:60
+msgid "New Features:"
+msgstr "नवीन वैशिष्ट्ये:"
+
+#: data/io.elementary.calendar.appdata.xml.in:20
+msgid "Add \"Duplicate...\" option to event context menu"
+msgstr "इव्हेंट संदर्भ मेनूमध्ये \"डुप्लिकेट ...\" पर्याय जोडा"
+
+#: data/io.elementary.calendar.appdata.xml.in:22
+#: data/io.elementary.calendar.appdata.xml.in:38
+#: data/io.elementary.calendar.appdata.xml.in:47
+#: data/io.elementary.calendar.appdata.xml.in:56
+#: data/io.elementary.calendar.appdata.xml.in:65
 msgid "Minor Updates:"
 msgstr "किरकोळ अद्यतने:"
 
-#: data/io.elementary.calendar.appdata.xml.in:20
+#: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr "कॅलेंडरमध्ये दोनदा नवीन कार्यक्रम दिसू शकतील अशा समस्येचे निराकरण करा"
 
-#: data/io.elementary.calendar.appdata.xml.in:21
+#: data/io.elementary.calendar.appdata.xml.in:25
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
-"\"डीफॉल्ट कॅलेंडर म्हणून चिन्हांकित करा\" बॉक्स आता कॅलेंडर संपादित करताना "
-"योग्यरित्या तपासला जातो"
+"\"डीफॉल्ट कॅलेंडर म्हणून चिन्हांकित करा\" बॉक्स आता कॅलेंडर संपादित करताना योग्यरित्या "
+"तपासला जातो"
 
-#: data/io.elementary.calendar.appdata.xml.in:27
-msgid "Improvements:"
-msgstr "सुधारणा:"
-
-#: data/io.elementary.calendar.appdata.xml.in:29
-msgid "Allow modification of recurring events"
-msgstr "आवर्ती इव्हेंटच्या सुधारणेस परवानगी द्या"
-
-#: data/io.elementary.calendar.appdata.xml.in:30
-msgid "Improve handling of week start day"
-msgstr "आठवड्याच्या प्रारंभ दिवसाची हाताळणी सुधारित करा"
-
-#: data/io.elementary.calendar.appdata.xml.in:31
-msgid "Fix timezone errors with all-day events"
-msgstr "दिवसभर असलेल्या कार्यक्रमांसह टाइमझोन त्रुटीचे निराकरण करा"
-
-#: data/io.elementary.calendar.appdata.xml.in:35
-msgid "Don't resize the sidebar when resizing the window"
-msgstr "विंडोचे आकार बदलताना साइडबारचे आकार बदलू नका"
-
-#: data/io.elementary.calendar.appdata.xml.in:36
-#: data/io.elementary.calendar.appdata.xml.in:45
-#: data/io.elementary.calendar.appdata.xml.in:54
-#: data/io.elementary.calendar.appdata.xml.in:65
-#: data/io.elementary.calendar.appdata.xml.in:85
-#: data/io.elementary.calendar.appdata.xml.in:97
+#: data/io.elementary.calendar.appdata.xml.in:26
+#: data/io.elementary.calendar.appdata.xml.in:41
+#: data/io.elementary.calendar.appdata.xml.in:50
+#: data/io.elementary.calendar.appdata.xml.in:59
+#: data/io.elementary.calendar.appdata.xml.in:70
+#: data/io.elementary.calendar.appdata.xml.in:90
+#: data/io.elementary.calendar.appdata.xml.in:102
 msgid "Updated translations"
 msgstr "अद्ययावत अनुवाद"
 
-#: data/io.elementary.calendar.appdata.xml.in:44
+#: data/io.elementary.calendar.appdata.xml.in:32
+msgid "Improvements:"
+msgstr "सुधारणा:"
+
+#: data/io.elementary.calendar.appdata.xml.in:34
+msgid "Allow modification of recurring events"
+msgstr "आवर्ती इव्हेंटच्या सुधारणेस परवानगी द्या"
+
+#: data/io.elementary.calendar.appdata.xml.in:35
+msgid "Improve handling of week start day"
+msgstr "आठवड्याच्या प्रारंभ दिवसाची हाताळणी सुधारित करा"
+
+#: data/io.elementary.calendar.appdata.xml.in:36
+msgid "Fix timezone errors with all-day events"
+msgstr "दिवसभर असलेल्या कार्यक्रमांसह टाइमझोन त्रुटीचे निराकरण करा"
+
+#: data/io.elementary.calendar.appdata.xml.in:40
+msgid "Don't resize the sidebar when resizing the window"
+msgstr "विंडोचे आकार बदलताना साइडबारचे आकार बदलू नका"
+
+#: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fix issues with time zones not being recognized"
 msgstr "टाइम झोन ओळखले जात नसल्याच्या समस्यांचे निराकरण करा"
 
-#: data/io.elementary.calendar.appdata.xml.in:53
+#: data/io.elementary.calendar.appdata.xml.in:58
 msgid "Fix several issues with adding and removing monthly recurring events"
 msgstr "मासिक आवर्ती इव्हेंट जोडणे आणि काढून टाकणे यासह अनेक समस्यांचे निराकरण करा"
 
-#: data/io.elementary.calendar.appdata.xml.in:62
+#: data/io.elementary.calendar.appdata.xml.in:67
 msgid "Correctly save event reminders"
 msgstr "कार्यक्रम स्मरणपत्रे योग्यरितीने जतन करा"
 
-#: data/io.elementary.calendar.appdata.xml.in:63
+#: data/io.elementary.calendar.appdata.xml.in:68
 msgid "Ellipsize event participant details if necessary"
 msgstr "आवश्यक असल्यास इव्हेंटच्या सहभागाचे तपशीलास लंबवर्तुळाकारात प्रस्तुत करा"
 
-#: data/io.elementary.calendar.appdata.xml.in:64
+#: data/io.elementary.calendar.appdata.xml.in:69
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr ""
 "कार्यक्रमाचे शीर्षक संपादित करताना अवांछित नवीन वेळापत्रक संबंधित समस्यांचे निराकरण करा"
 
-#: data/io.elementary.calendar.appdata.xml.in:71
+#: data/io.elementary.calendar.appdata.xml.in:76
 msgid "Fix crash when editing an event with no location"
 msgstr "स्थान नसलेले कार्यक्रम संपादित करताना येणाऱ्या क्रॅशचे निराकरण करा"
 
-#: data/io.elementary.calendar.appdata.xml.in:76
+#: data/io.elementary.calendar.appdata.xml.in:81
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
 "प्रारंभ किंवा समाप्तीच्या वेळा नसलेले कार्यक्रम लोड करताना संभाव्य क्रॅशचे निराकरण करा"
 
-#: data/io.elementary.calendar.appdata.xml.in:81
+#: data/io.elementary.calendar.appdata.xml.in:86
 msgid "Make agenda pane fill the whole space"
 msgstr "अजेंडा उपखंडाने संपूर्ण जागा भरा"
 
-#: data/io.elementary.calendar.appdata.xml.in:82
+#: data/io.elementary.calendar.appdata.xml.in:87
 msgid "Set the suggested time for new events to the next whole hour"
 msgstr "पुढच्या संपूर्ण तासात नवीन कार्यक्रमांसाठी सूचित वेळ सेट करा"
 
-#: data/io.elementary.calendar.appdata.xml.in:83
+#: data/io.elementary.calendar.appdata.xml.in:88
 msgid "Fix issues with recurring events"
 msgstr "आवर्ती इव्हेंटसह समस्या सोडवा"
 
-#: data/io.elementary.calendar.appdata.xml.in:84
+#: data/io.elementary.calendar.appdata.xml.in:89
 msgid "Performance improvements"
 msgstr "कामगिरी सुधारणा"
 
-#: data/io.elementary.calendar.appdata.xml.in:90
+#: data/io.elementary.calendar.appdata.xml.in:95
 msgid "Present import window when opening ICS files"
 msgstr "ICS  फायली उघडतांना इम्पोर्ट विंडो दाखवा"
 
-#: data/io.elementary.calendar.appdata.xml.in:91
+#: data/io.elementary.calendar.appdata.xml.in:96
 msgid "Add a search entry for calendars"
 msgstr "कॅलेंडरसाठी एक शोध एंट्री जोडा"
 
-#: data/io.elementary.calendar.appdata.xml.in:92
+#: data/io.elementary.calendar.appdata.xml.in:97
 msgid "Always use calendar icon in notifications"
 msgstr "सूचनांमध्ये नेहमी कॅलेंडर चिन्ह वापरा"
 
-#: data/io.elementary.calendar.appdata.xml.in:93
+#: data/io.elementary.calendar.appdata.xml.in:98
 msgid "Agenda view can now be navigated by keyboard"
 msgstr "अजेंडा दृश्य आता कीबोर्डद्वारे नेव्हिगेट केले जाऊ शकते"
 
-#: data/io.elementary.calendar.appdata.xml.in:94
+#: data/io.elementary.calendar.appdata.xml.in:99
 msgid "Right-to-left improvements"
 msgstr "उजवीकडून डावीकडे सुधारणा"
 
-#: data/io.elementary.calendar.appdata.xml.in:95
+#: data/io.elementary.calendar.appdata.xml.in:100
 msgid "Various UI overhauls including lime accent color"
 msgstr "लाईम ऍक्सेंट रंगासह विविध UI overhauls"
 
-#: data/io.elementary.calendar.appdata.xml.in:96
+#: data/io.elementary.calendar.appdata.xml.in:101
 msgid "Overall code cleanup and rewrites"
 msgstr "एकूणच कोड सफाई आणि पुनर्लेखन"
 
-#: data/io.elementary.calendar.appdata.xml.in:102
+#: data/io.elementary.calendar.appdata.xml.in:107
 msgid "Styling adjustments"
 msgstr "शैली समायोजन"
 
-#: data/io.elementary.calendar.appdata.xml.in:103
+#: data/io.elementary.calendar.appdata.xml.in:108
 msgid "Fix location panel initialization"
 msgstr "स्थान पॅनेल सुरूवातीस निश्चित करा"
 
-#: data/io.elementary.calendar.appdata.xml.in:104
+#: data/io.elementary.calendar.appdata.xml.in:109
 msgid "New translations"
 msgstr "नवीन भाषांतरे"
 
-#: data/io.elementary.calendar.appdata.xml.in:109
+#: data/io.elementary.calendar.appdata.xml.in:114
 msgid "Update wingpanel-indicator-datetime settings path."
 msgstr "विंगपनेल-इंडिकेटर-डेटटाइम सेटिंग्ज पथ अद्यतनित करा."
 
-#: data/io.elementary.calendar.appdata.xml.in:110
+#: data/io.elementary.calendar.appdata.xml.in:115
 msgid "New translations."
 msgstr "नवीन भाषांतरे."
 
-#: data/io.elementary.calendar.appdata.xml.in:115
-#: data/io.elementary.calendar.appdata.xml.in:122
+#: data/io.elementary.calendar.appdata.xml.in:120
+#: data/io.elementary.calendar.appdata.xml.in:127
 msgid "Various bug fixes and improvements."
 msgstr "विविध दोष निराकरणे आणि सुधारणा."
 
-#: data/io.elementary.calendar.appdata.xml.in:120
+#: data/io.elementary.calendar.appdata.xml.in:125
 msgid "Fixes for calendar accuracy and integrity issues."
 msgstr "कॅलेंडर शुद्धता आणि अखंडता समस्यांसाठी निराकरणे."
 
-#: data/io.elementary.calendar.appdata.xml.in:121
+#: data/io.elementary.calendar.appdata.xml.in:126
 msgid "Fixes exporting, importing and printing calendars."
 msgstr "कॅलेंडर निर्यात, आयात आणि मुद्रित करणे निश्चित करते."
 
-#: data/io.elementary.calendar.appdata.xml.in:169
+#: data/io.elementary.calendar.appdata.xml.in:174
 msgid "elementary LLC."
 msgstr "एलिमेंटरी LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
-msgid "office-calendar"
-msgstr "office-calendar"
+msgid "io.elementary.calendar"
+msgstr "io.elementary.calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
@@ -209,3 +218,6 @@ msgstr "माया; प्लॅनर; तारखा; दिवस; घट�
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "नवीन घटना जोडा"
+
+#~ msgid "office-calendar"
+#~ msgstr "office-calendar"

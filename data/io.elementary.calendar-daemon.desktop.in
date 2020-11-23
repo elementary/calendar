@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Calendar Daemon
 Comment=View Event Reminders
-Icon=office-calendar
+Icon=io.elementary.calendar
 Exec=@EXEC_PATH@
 Terminal=false
 Type=Application

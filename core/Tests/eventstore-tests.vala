@@ -88,13 +88,49 @@ void test_week_start () {
     assert (week_start == DateWeekday.SATURDAY);
 }
 
+void test_ranges () {
+    // EventStore.data_range depends on week start, so set en_GB (Monday)
+    var localestr = "en_GB.utf8";
+    var setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
+    assert_nonnull (setstr);
+    assert (setstr == localestr);
+
+    var store = new TestStore ();
+    store.month_start = new GLib.DateTime.local (2020,11,1,0,0,0);
+    var month_start = new GLib.DateTime.local (2020,11,1,12,13,45);
+    var month_end = new GLib.DateTime.local (2020,11,30,12,13,45);
+    // Test in range
+    assert (month_start.compare (store.month_range.first_dt) >= 0);
+    assert (month_end.compare (store.month_range.last_dt) <= 0);
+    // Test out of range
+    month_start = month_start.add_days (-1);
+    month_end = month_end.add_days (1);
+    assert (month_start.compare (store.month_range.first_dt) < 0);
+    assert (month_end.compare (store.month_range.last_dt) > 0);
+
+    var data_start = new GLib.DateTime.local (2020,10,26,12,13,45);
+    var data_end = new GLib.DateTime.local (2020,12,6,12,13,45);
+    assert (data_start.compare (store.data_range.first_dt) >= 0);
+    assert (data_end.compare (store.data_range.last_dt) <= 0);
+    // Test out of range
+    data_start = data_start.add_days (-1);
+    data_end = new GLib.DateTime.local (2020,12,7,0,0,1);
+    assert (data_start.compare (store.data_range.first_dt) < 0);
+    assert (data_end.compare (store.data_range.last_dt) > 0);
+}
+
 void add_locale_tests () {
     Test.add_func ("/EventStore/Locale/nl_langinfo", test_posix_nl_langinfo);
     Test.add_func ("/EventStore/Locale/week_start", test_week_start);
 }
 
+void add_range_tests () {
+    Test.add_func ("/EventStore/Range/ranges", test_ranges);
+}
+
 int main (string[] args) {
     Test.init (ref args);
     add_locale_tests ();
+    add_range_tests ();
     return Test.run ();
 }

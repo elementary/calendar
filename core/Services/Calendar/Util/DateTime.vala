@@ -90,6 +90,10 @@ namespace Calendar.Util {
         return result;
     }
 
+    /** Gets the start of the month that contains the given date
+     *
+     * Returns midnight (00:00) on that date.
+     */
     public GLib.DateTime datetime_get_start_of_month (owned GLib.DateTime? date = null) {
         if (date == null) {
             date = new GLib.DateTime.now_local ();
