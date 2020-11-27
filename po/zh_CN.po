@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-25 11:45+0100\n"
-"PO-Revision-Date: 2020-10-30 00:15+0000\n"
+"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"PO-Revision-Date: 2020-11-21 04:15+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "calendar/calendar/zh_Hans/>\n"
@@ -267,71 +267,71 @@ msgstr "添加提醒"
 
 #: src/EventEdition/ReminderPanel.vala:189
 msgid "At time of event"
-msgstr "事件时间"
+msgstr "事件开始时"
 
 #: src/EventEdition/ReminderPanel.vala:190
 msgid "1 minute before"
-msgstr "1 分钟前"
+msgstr "提前 1 分钟"
 
 #: src/EventEdition/ReminderPanel.vala:191
 msgid "5 minutes before"
-msgstr "5 分钟前"
+msgstr "提前 5 分钟"
 
 #: src/EventEdition/ReminderPanel.vala:192
 msgid "10 minutes before"
-msgstr "10 分钟前"
+msgstr "提前 10 分钟"
 
 #: src/EventEdition/ReminderPanel.vala:193
 msgid "15 minutes before"
-msgstr "15 分钟前"
+msgstr "提前 15 分钟"
 
 #: src/EventEdition/ReminderPanel.vala:194
 msgid "20 minutes before"
-msgstr "20 分钟前"
+msgstr "提前 20 分钟"
 
 #: src/EventEdition/ReminderPanel.vala:195
 msgid "25 minutes before"
-msgstr "25 分钟前"
+msgstr "提前 25 分钟"
 
 #: src/EventEdition/ReminderPanel.vala:196
 msgid "30 minutes before"
-msgstr "30 分钟前"
+msgstr "提前 30 分钟"
 
 #: src/EventEdition/ReminderPanel.vala:197
 msgid "45 minutes before"
-msgstr "45 分钟前"
+msgstr "提前 45 分钟"
 
 #: src/EventEdition/ReminderPanel.vala:198
 msgid "1 hour before"
-msgstr "1 小时前"
+msgstr "提前 1 小时"
 
 #: src/EventEdition/ReminderPanel.vala:199
 msgid "2 hours before"
-msgstr "2 小时前"
+msgstr "提前 2 小时"
 
 #: src/EventEdition/ReminderPanel.vala:200
 msgid "3 hours before"
-msgstr "3 小时前"
+msgstr "提前 3 小时"
 
 #: src/EventEdition/ReminderPanel.vala:201
 msgid "12 hours before"
-msgstr "12 小时前"
+msgstr "提前 12 小时"
 
 #: src/EventEdition/ReminderPanel.vala:202
 msgid "24 hours before"
-msgstr "24 小时前"
+msgstr "提前 24 小时"
 
 #: src/EventEdition/ReminderPanel.vala:203
 msgid "2 days before"
-msgstr "2 天前"
+msgstr "提前 2 天"
 
 #: src/EventEdition/ReminderPanel.vala:204
 msgid "1 week before"
-msgstr "1 周前"
+msgstr "提前 1 周"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
-msgstr "重复提醒："
+msgstr "事件重复："
 
 #: src/EventEdition/RepeatPanel.vala:57
 msgid "Daily"
@@ -383,7 +383,7 @@ msgstr "结束："
 #: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] "重复"
+msgstr[0] "次"
 
 #: src/EventEdition/RepeatPanel.vala:144
 msgid "Never"
@@ -395,7 +395,7 @@ msgstr "到此日期为止"
 
 #: src/EventEdition/RepeatPanel.vala:146
 msgid "After"
-msgstr "在此日期之后"
+msgstr "重复次数达到"
 
 #: src/EventEdition/RepeatPanel.vala:193
 msgid "The same day every month"
@@ -716,33 +716,33 @@ msgid "wedding"
 msgstr "婚礼"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:310
+#: src/Widgets/AgendaEventRow.vala:312
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:313
+#: src/Widgets/AgendaEventRow.vala:315
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:325
+#: src/Widgets/AgendaEventRow.vala:327
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:334
+#: src/Widgets/AgendaEventRow.vala:336
 #, c-format
 msgid "%s at %s"
 msgstr "%s %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:337
+#: src/Widgets/AgendaEventRow.vala:339
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"

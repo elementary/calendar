@@ -194,6 +194,19 @@ void test_datetimes_not_all_day_converted () {
  *
  */
 
+/** Basic test of DateRange.to_list: does it return only dates within the range?
+ */
+void test_daterange_to_list () {
+    var start_time = new DateTime.local (2019, 11, 20, 0, 0, 0);
+    var end_time = new DateTime.local (2019, 11, 22, 23, 59, 59);
+    var range = new Calendar.Util.DateRange (start_time, end_time);
+    var list = range.to_list ();
+    var days_contained = 3;
+    assert (list.size == days_contained);
+    assert (start_time.compare (list.get (0)) == 0);
+    assert (end_time.compare (list.get (list.size - 1).add_days (1)) < 0);
+}
+
 // Test that the is_event_in_range function works with all day events,
 // which have no built-in time component from libical
 void test_daterange_all_day () {
@@ -293,6 +306,7 @@ void add_icalcomponent_tests () {
 }
 
 void add_daterange_tests () {
+    Test.add_func ("/Utils/DateRange/to_list", test_daterange_to_list);
     Test.add_func ("/Utils/DateRange/all_day", test_daterange_all_day);
     Test.add_func ("/Utils/DateRange/not_all_day", test_daterange_not_all_day);
 }

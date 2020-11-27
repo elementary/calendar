@@ -349,18 +349,27 @@ public class Calendar.EventStore : Object {
         return dt;
     }
 
+    /** Set the values of month_range and data_range.
+     *
+     * month_range contains the entire month starting with month_start.
+     *
+     * data_range fills in the rest of the visible calendar block, including the
+     *  week before the month starts and the week after it ends.
+     */
     private void compute_ranges () {
         if (state_settings != null) {
             state_settings.set_string ("month-page", month_start.format ("%Y-%m"));
         }
 
-        var month_end = month_start.add_full (0, 1, -1);
+        var month_end = month_start.add_full (0, 1, 0);
         month_range = new Calendar.Util.DateRange (month_start, month_end);
 
         int dow = month_start.get_day_of_week ();
         int wso = (int) week_starts_on;
         int offset = 0;
 
+        // offset corresponds number of days from the start of the week to 
+        // month_start, as seen on a displayed calendar.
         if (wso < dow) {
             offset = dow - wso;
         } else if (wso > dow) {
@@ -370,18 +379,16 @@ public class Calendar.EventStore : Object {
         var data_range_first = month_start.add_days (-offset);
 
         dow = month_end.get_day_of_week ();
-        wso = (int) (week_starts_on + 6);
-
-        // WSO must be between 1 and 7
-        if (wso > 7)
-            wso = wso - 7;
 
         offset = 0;
-
-        if (wso < dow)
-            offset = 7 + wso - dow;
-        else if (wso > dow)
-            offset = wso - dow;
+        if (wso < dow) {
+            offset = dow - wso;
+        } else if (wso > dow) {
+            offset = 7 + dow - wso;
+        }
+        // The number of days to the end of the week is the same as going to the
+        // start of the week and adding 7.
+        offset = -offset + 7;
 
         var data_range_last = month_end.add_days (offset);
 
@@ -434,7 +441,7 @@ public class Calendar.EventStore : Object {
         try {
             var cancellable = new GLib.Cancellable ();
             connecting (source, cancellable);
-            var client = (ECal.Client) yield ECal.Client.connect (source, ECal.ClientSourceType.EVENTS, 30, cancellable);
+            var client = (ECal.Client) yield ECal.Client.connect (source, ECal.ClientSourceType.EVENTS, -1, cancellable);
             source_client.insert (source.get_uid (), client);
         } catch (Error e) {
             error_received (e.message);
