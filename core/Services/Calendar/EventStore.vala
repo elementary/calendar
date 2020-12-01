@@ -92,11 +92,14 @@ public class Calendar.EventStore : Object {
         notify["month-start"].connect (on_parameter_changed);
         open.begin ();
 
-        locale_settings.changed.connect (() => {
-            change_month (1);
-            this.week_starts_on = get_week_start ();
-            change_month (-1);
-        });
+        // Have to lookup every time it's used since it's external
+        if (SettingsSchemaSource.get_default ().lookup ("io.elementary.switchboard.locale", true) != null) {
+            locale_settings.changed.connect (() => {
+                change_month (1);
+                this.week_starts_on = get_week_start ();
+                change_month (-1);
+            });
+        }
     }
 
     public async void open () {
@@ -342,7 +345,9 @@ public class Calendar.EventStore : Object {
         }
 
         // Accessing the locale settings
-        int week_start_user_pref = locale_settings.get_int ("first-day") + 1;
+        if (SettingsSchemaSource.get_default ().lookup ("io.elementary.switchboard.locale", true) != null) {
+            int week_start_user_pref = locale_settings.get_int ("first-day") + 1;
+        }
         if (week_start >= 1 && week_start <= 7) {
             if (week_start_user_pref == week_start_posix) {
                 week_start = week_start_posix + glib_offset;
