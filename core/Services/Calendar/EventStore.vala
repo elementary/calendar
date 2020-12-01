@@ -92,8 +92,7 @@ public class Calendar.EventStore : Object {
         notify["month-start"].connect (on_parameter_changed);
         open.begin ();
 
-        // Have to lookup every time it's used since it's external
-        if (SettingsSchemaSource.get_default ().lookup ("io.elementary.switchboard.locale", true) != null) {
+        if (locale_settings != null) {
             locale_settings.changed.connect (() => {
                 change_month (1);
                 this.week_starts_on = get_week_start ();
@@ -345,7 +344,7 @@ public class Calendar.EventStore : Object {
         }
 
         // Accessing the locale settings
-        if (SettingsSchemaSource.get_default ().lookup ("io.elementary.switchboard.locale", true) != null) {
+        if (locale_settings != null) {
             int week_start_user_pref = locale_settings.get_int ("first-day") + 1;
 
             if (week_start >= 1 && week_start <= 7) {
