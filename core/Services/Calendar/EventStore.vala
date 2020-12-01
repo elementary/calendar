@@ -347,7 +347,7 @@ public class Calendar.EventStore : Object {
         // Accessing the locale settings
         if (SettingsSchemaSource.get_default ().lookup ("io.elementary.switchboard.locale", true) != null) {
             int week_start_user_pref = locale_settings.get_int ("first-day") + 1;
-        
+
             if (week_start >= 1 && week_start <= 7) {
                 if (week_start_user_pref == week_start_posix) {
                     week_start = week_start_posix + glib_offset;
