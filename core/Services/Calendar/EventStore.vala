@@ -43,7 +43,7 @@ public class Calendar.EventStore : Object {
     public GLib.DateWeekday week_starts_on { get; set; default = GLib.DateWeekday.MONDAY; }
 
     /* The system time zone as an ICal.Timezone */
-    public unowned ICal.Timezone system_timezone {get; private set;}
+    public ICal.Timezone system_timezone {get; private set;}
 
     /* The event that is currently dragged */
     public ECal.Component drag_component {get; set;}

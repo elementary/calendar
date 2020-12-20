@@ -58,7 +58,6 @@ namespace Calendar.Util {
 #endif
             } else {
                 var event_store = Calendar.EventStore.get_default ();
-                unowned ICal.Timezone system_timezone = event_store.system_timezone;
 #if E_CAL_2_0
                 result.set_timezone (event_store.system_timezone);
 #else
