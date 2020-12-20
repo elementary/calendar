@@ -21,6 +21,9 @@ namespace Calendar.Util {
 
     //--- ICal.Component Helpers ---//
 
+    /** Gets a pair of {@link GLib.DateTime} objects representing the start and
+     *  end of the given component.
+     */
     public void icalcomponent_get_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         ICal.Time dt_start = component.get_dtstart ();
         ICal.Time dt_end = component.get_dtend ();
@@ -46,8 +49,30 @@ namespace Calendar.Util {
         } else {
             end_date = start_date.add_days (1);
         }
+    }
 
-        if (Calendar.Util.datetime_is_all_day (start_date, end_date)) {
+    /** Wraps {@link icalcomponent_get_local_datetimes()}, including date
+     *  adjustments for all-day events.
+     *
+     * Like {@link icalcomponent_get_local_datetimes()}, this gets a pair of
+     * {@link GLib.DateTime} objects representing the start and end of the
+     * given component.
+     *
+     * It differs in its handling of all-day events. According to
+     * RFC 5545, their end time is exclusive, representing the day after the
+     * last day the event occurs. To handle this, we must "fake" an earlier
+     * date to replicate the expected experience of an inclusive end date.
+     * It substracts a single day from the end time of all-day events. It leaves
+     * other events unchanged.
+     *
+     * This should be used for user-facing display only. It breaks from spec to
+     * make the display of all-day events more intuitive, and doesn't reflect
+     * the actual times the events occur.
+     */
+    public void icalcomponent_get_local_datetimes_for_display (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
+        icalcomponent_get_local_datetimes (component, out start_date, out end_date);
+
+        if (datetime_is_all_day (start_date, end_date)) {
             end_date = end_date.add_days (-1);
         }
     }
@@ -84,7 +109,7 @@ namespace Calendar.Util {
 
     public bool icalcomponent_is_multiday (ICal.Component component) {
         GLib.DateTime start, end;
-        icalcomponent_get_local_datetimes (component, out start, out end);
+        icalcomponent_get_local_datetimes_for_display (component, out start, out end);
 
         if (start.get_year () != end.get_year () || start.get_day_of_year () != end.get_day_of_year ())
             return true;

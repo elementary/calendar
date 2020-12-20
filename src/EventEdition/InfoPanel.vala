@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2013-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright (c) 2013-2020 elementary, Inc. (http://launchpad.net/maya)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -235,7 +235,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
 
             DateTime from_date, to_date;
-            Calendar.Util.icalcomponent_get_local_datetimes (comp, out from_date, out to_date);
+            Calendar.Util.icalcomponent_get_local_datetimes_for_display (comp, out from_date, out to_date);
 
             from_date_picker.date = from_date;
             from_time_picker.time = from_date;
