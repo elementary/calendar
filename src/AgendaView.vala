@@ -112,7 +112,7 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
         calmodel.events_removed.connect (on_events_removed);
         calmodel.events_updated.connect (on_events_updated);
         calmodel.parameters_changed.connect (on_model_parameters_changed);
-        var time_manager = TimeManager.get_default ();
+        unowned var time_manager = Calendar.TimeManager.get_default ();
         time_manager.on_update_today.connect (on_today_changed);
 
         set_selected_date (Maya.Application.get_selected_datetime ());

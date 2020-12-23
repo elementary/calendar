@@ -3,6 +3,7 @@ core/Backends/BackendsManager.vala
 core/Backends/LocalBackend.vala
 core/Backends/PlacementWidget.vala
 core/Services/Calendar/EventStore.vala
+core/Services/Calendar/TimeManager.vala
 core/Services/Calendar/Util/DateIterator.vala
 core/Services/Calendar/Util/DateRange.vala
 core/Services/Calendar/Util/DateTime.vala
