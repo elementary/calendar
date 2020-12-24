@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2018-07-15 00:09+0000\n"
-"Last-Translator: Milan Radojević <mikister2012@gmail.com>\n"
-"Language-Team: Serbian <https://weblate.elementary.io/projects/calendar/"
+"PO-Revision-Date: 2020-12-22 13:16+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <https://l10n.elementary.io/projects/calendar/"
 "calendar/sr/>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
@@ -30,11 +30,11 @@ msgstr "Корисник:"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr ""
+msgstr "корисничко.име"
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr ""
+msgstr "Е-пошта:"
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
@@ -42,109 +42,107 @@ msgstr "john@doe.com"
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Умножак чувајте код вас"
 
 #: daemon/Daemon.vala:24
 msgid "Print debug information"
-msgstr ""
+msgstr "Исписује податке прочишћавања"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr ""
+msgstr "Гугл"
 
 #: plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "корисничко.име или korisničko.ime@gmail.com"
 
 #: plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr ""
+msgstr "КалДАВ"
 
 #: plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr ""
+msgstr "Адреса:"
 
 #: plugins/CalDAV/CalDAVBackend.vala:95
 msgid "Use a secure connection"
-msgstr ""
+msgstr "Користи безбедну везу"
 
 #: plugins/CalDAV/CalDAVBackend.vala:123
 msgid "Server handles meeting invitations"
-msgstr ""
+msgstr "Сервер ради са позивима на састанак"
 
 #: src/AgendaView.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Ваши надолазећи догађаји ће бити приказани овде када будете изабрали датум "
-"са догађајем."
+"Овде ће бити приказани ваши надолазећи догађаји када изаберете датум са "
+"догађајем."
 
 #: src/AgendaView.vala:140
 msgid "During the day"
-msgstr ""
+msgstr "У току дана"
 
 #: src/AgendaView.vala:148
 msgid "All day"
-msgstr ""
+msgstr "читавог дана"
 
 #: src/AgendaView.vala:265
 msgid "Tomorrow"
-msgstr ""
+msgstr "Сутра"
 
 #: src/AgendaView.vala:268
 msgid "This Week"
-msgstr ""
+msgstr "Ове седмице"
 
 #: src/AgendaView.vala:271
 msgid "Next Week"
-msgstr ""
+msgstr "Следеће седмице"
 
 #: src/AgendaView.vala:274
 msgid "This Month"
-msgstr ""
+msgstr "Овог месеца"
 
 #: src/AgendaView.vala:277
 msgid "Next Month"
-msgstr ""
+msgstr "Следећег месеца"
 
 #: src/Application.vala:54
-#, fuzzy
 msgid "Create an event"
-msgstr "Направи нови догађај"
+msgstr "Направите догађај"
 
 #: src/Application.vala:55
 msgid "Focus the given day"
-msgstr ""
+msgstr "Фокусирај дати дан"
 
 #: src/Application.vala:55
 msgid "date"
-msgstr ""
+msgstr "датум"
 
 #: src/Application.vala:172
 msgid "Calendar"
 msgstr "Календар"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Изабери календаре за приказивање"
+msgstr "Изаберите календаре у који ћете увести"
 
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr ""
+msgstr "Догађаји из „%s“ биће спојени са овим календаром:"
 
 #: src/ImportDialog.vala:47
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Догађаји из %d датотеке биће спојени са овим календаром:"
+msgstr[1] "Догађаји из %d датотеке биће спојени са овим календаром:"
 
 #: src/ImportDialog.vala:57
 msgid "Import"
-msgstr ""
+msgstr "Увези"
 
 #: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
@@ -156,7 +154,7 @@ msgstr "Измени догађај"
 
 #: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
-msgstr ""
+msgstr "Опште информације"
 
 #: src/EventEdition/EventDialog.vala:121
 msgid "Location"
@@ -164,25 +162,25 @@ msgstr "Локација"
 
 #: src/EventEdition/EventDialog.vala:122
 msgid "Guests"
-msgstr ""
+msgstr "Гости"
 
 #: src/EventEdition/EventDialog.vala:123
 msgid "Reminders"
-msgstr ""
+msgstr "Подсетници"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr ""
+msgstr "Понављање"
 
 #: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
-msgstr ""
+msgstr "Обриши догађај"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
-msgstr "Креирај догађај"
+msgstr "Направи догађај"
 
 #: src/EventEdition/EventDialog.vala:164
 msgid "Save Changes"
@@ -192,31 +190,31 @@ msgstr "Сачувај измене"
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 #: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
-msgstr ""
+msgstr "Откажи"
 
 #: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
-msgstr ""
+msgstr "Прихваћени"
 
 #: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
-msgstr ""
+msgstr "Одбијени"
 
 #: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
-msgstr ""
+msgstr "Можда"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr ""
+msgstr "Учесници:"
 
 #: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
-msgstr ""
+msgstr "Без учесника"
 
 #: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
-msgstr ""
+msgstr "Позови"
 
 #: src/EventEdition/InfoPanel.vala:76
 msgid "From:"
@@ -228,164 +226,163 @@ msgstr "Целодневно:"
 
 #: src/EventEdition/InfoPanel.vala:87
 msgid "To:"
-msgstr "За:"
+msgstr "До:"
 
 #: src/EventEdition/InfoPanel.vala:105
 msgid "Title:"
-msgstr ""
+msgstr "Наслов:"
 
 #: src/EventEdition/InfoPanel.vala:107
 msgid "Name of Event"
-msgstr "Име Догађаја"
+msgstr "Назив догађаја"
 
 #: src/EventEdition/InfoPanel.vala:117
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "Притисните „унеси“ да обрадите догађај"
 
 #: src/EventEdition/InfoPanel.vala:132
 msgid "Calendar:"
-msgstr ""
+msgstr "Календар:"
 
 #: src/EventEdition/InfoPanel.vala:139
 msgid "Comments:"
-msgstr ""
+msgstr "Напомене:"
 
 #: src/EventEdition/LocationPanel.vala:50
 msgid "Location:"
-msgstr ""
+msgstr "Место:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "Петар Петровић ИЛИ Улица Примера"
+msgstr "Петар Петровић ИЛИ Ул. примера"
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
-msgstr ""
+msgstr "Подсетници:"
 
 #: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
-msgstr ""
+msgstr "Нема подсетника"
 
 #: src/EventEdition/ReminderPanel.vala:55
 msgid "Add Reminder"
-msgstr ""
+msgstr "Додај подсетник"
 
 #: src/EventEdition/ReminderPanel.vala:189
-#, fuzzy
 msgid "At time of event"
-msgstr "Име Догађаја"
+msgstr "У време догађаја"
 
 #: src/EventEdition/ReminderPanel.vala:190
 msgid "1 minute before"
-msgstr ""
+msgstr "пре 1 минута"
 
 #: src/EventEdition/ReminderPanel.vala:191
 msgid "5 minutes before"
-msgstr ""
+msgstr "пре 5 минута"
 
 #: src/EventEdition/ReminderPanel.vala:192
 msgid "10 minutes before"
-msgstr ""
+msgstr "пре 10 минута"
 
 #: src/EventEdition/ReminderPanel.vala:193
 msgid "15 minutes before"
-msgstr ""
+msgstr "пре 15 минута"
 
 #: src/EventEdition/ReminderPanel.vala:194
 msgid "20 minutes before"
-msgstr ""
+msgstr "пре 20 минута"
 
 #: src/EventEdition/ReminderPanel.vala:195
 msgid "25 minutes before"
-msgstr ""
+msgstr "пре 25 минута"
 
 #: src/EventEdition/ReminderPanel.vala:196
 msgid "30 minutes before"
-msgstr ""
+msgstr "пре 30 минута"
 
 #: src/EventEdition/ReminderPanel.vala:197
 msgid "45 minutes before"
-msgstr ""
+msgstr "пре 45 минута"
 
 #: src/EventEdition/ReminderPanel.vala:198
 msgid "1 hour before"
-msgstr ""
+msgstr "пре 1 сата"
 
 #: src/EventEdition/ReminderPanel.vala:199
 msgid "2 hours before"
-msgstr ""
+msgstr "пре 2 сата"
 
 #: src/EventEdition/ReminderPanel.vala:200
 msgid "3 hours before"
-msgstr ""
+msgstr "пре 3 сата"
 
 #: src/EventEdition/ReminderPanel.vala:201
 msgid "12 hours before"
-msgstr ""
+msgstr "пре 12 сати"
 
 #: src/EventEdition/ReminderPanel.vala:202
 msgid "24 hours before"
-msgstr ""
+msgstr "пре 24 сата"
 
 #: src/EventEdition/ReminderPanel.vala:203
 msgid "2 days before"
-msgstr ""
+msgstr "пре 2 дана"
 
 #: src/EventEdition/ReminderPanel.vala:204
 msgid "1 week before"
-msgstr ""
+msgstr "пре 1 седмице"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
-msgstr ""
+msgstr "Понавља се:"
 
 #: src/EventEdition/RepeatPanel.vala:57
 msgid "Daily"
-msgstr ""
+msgstr "Дневно"
 
 #: src/EventEdition/RepeatPanel.vala:58
 msgid "Weekly"
-msgstr ""
+msgstr "Седмично"
 
 #: src/EventEdition/RepeatPanel.vala:59
 msgid "Monthly"
-msgstr ""
+msgstr "Месечно"
 
 #: src/EventEdition/RepeatPanel.vala:60
 msgid "Yearly"
-msgstr ""
+msgstr "Годишње"
 
 #: src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr ""
+msgstr "Сваког/е:"
 
 #: src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "дана"
+msgstr[1] "дана"
 
 #: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "седмице"
+msgstr[1] "седмице"
 
 #: src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "месеца"
+msgstr[1] "месеца"
 
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "године"
+msgstr[1] "године"
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr ""
+msgstr "Завршава се:"
 
 #. /Translators: Give a word to describe an event ending after a certain number of repeats.
 #. /This will be displayed in the format like: "Ends After 2 Repeats",
@@ -393,389 +390,387 @@ msgstr ""
 #: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "понављања"
+msgstr[1] "понављања"
 
 #: src/EventEdition/RepeatPanel.vala:144
 msgid "Never"
-msgstr ""
+msgstr "Никад"
 
 #: src/EventEdition/RepeatPanel.vala:145
 msgid "Until"
-msgstr ""
+msgstr "Све до"
 
 #: src/EventEdition/RepeatPanel.vala:146
 msgid "After"
-msgstr ""
+msgstr "После"
 
 #: src/EventEdition/RepeatPanel.vala:193
 msgid "The same day every month"
-msgstr ""
+msgstr "Истог дана сваког месеца"
 
 #: src/EventEdition/RepeatPanel.vala:204
 msgid "Exceptions:"
-msgstr ""
+msgstr "Изузеци:"
 
 #: src/EventEdition/RepeatPanel.vala:206
 msgid "No Exceptions"
-msgstr ""
+msgstr "Нема изузетака"
 
 #: src/EventEdition/RepeatPanel.vala:222
 msgid "Add Exception"
-msgstr ""
+msgstr "Додај изузетак"
 
 #: src/EventEdition/RepeatPanel.vala:383
 msgid "Every last Sunday"
-msgstr ""
+msgstr "Сваке последње недеље"
 
 #: src/EventEdition/RepeatPanel.vala:386
 msgid "Every last Monday"
-msgstr ""
+msgstr "Сваког последњег понедељка"
 
 #: src/EventEdition/RepeatPanel.vala:389
 msgid "Every last Tuesday"
-msgstr ""
+msgstr "Сваког последњег уторка"
 
 #: src/EventEdition/RepeatPanel.vala:392
 msgid "Every last Wednesday"
-msgstr ""
+msgstr "Сваке последње среде"
 
 #: src/EventEdition/RepeatPanel.vala:395
 msgid "Every last Thursday"
-msgstr ""
+msgstr "Сваког последњег четвртка"
 
 #: src/EventEdition/RepeatPanel.vala:398
 msgid "Every last Friday"
-msgstr ""
+msgstr "Сваког последњег петка"
 
 #: src/EventEdition/RepeatPanel.vala:401
 msgid "Every last Saturday"
-msgstr ""
+msgstr "Сваке последње суботе"
 
 #: src/EventEdition/RepeatPanel.vala:408
 msgid "Every first Sunday"
-msgstr ""
+msgstr "Сваке прве недеље"
 
 #: src/EventEdition/RepeatPanel.vala:411
 msgid "Every first Monday"
-msgstr ""
+msgstr "Сваког првог понедељка"
 
 #: src/EventEdition/RepeatPanel.vala:414
 msgid "Every first Tuesday"
-msgstr ""
+msgstr "Сваког првог уторка"
 
 #: src/EventEdition/RepeatPanel.vala:417
 msgid "Every first Wednesday"
-msgstr ""
+msgstr "Сваке прве среде"
 
 #: src/EventEdition/RepeatPanel.vala:420
 msgid "Every first Thursday"
-msgstr ""
+msgstr "Сваког првог четвртка"
 
 #: src/EventEdition/RepeatPanel.vala:423
 msgid "Every first Friday"
-msgstr ""
+msgstr "Сваког првог петка"
 
 #: src/EventEdition/RepeatPanel.vala:426
 msgid "Every first Saturday"
-msgstr ""
+msgstr "Сваке прве суботе"
 
 #: src/EventEdition/RepeatPanel.vala:433
 msgid "Every second Sunday"
-msgstr ""
+msgstr "Сваке друге недеље"
 
 #: src/EventEdition/RepeatPanel.vala:436
 msgid "Every second Monday"
-msgstr ""
+msgstr "Сваког другог понедељка"
 
 #: src/EventEdition/RepeatPanel.vala:439
 msgid "Every second Tuesday"
-msgstr ""
+msgstr "Сваког другог уторка"
 
 #: src/EventEdition/RepeatPanel.vala:442
 msgid "Every second Wednesday"
-msgstr ""
+msgstr "Сваке друге среде"
 
 #: src/EventEdition/RepeatPanel.vala:445
 msgid "Every second Thursday"
-msgstr ""
+msgstr "Сваког другог четвртка"
 
 #: src/EventEdition/RepeatPanel.vala:448
 msgid "Every second Friday"
-msgstr ""
+msgstr "Сваког другог петка"
 
 #: src/EventEdition/RepeatPanel.vala:451
 msgid "Every second Saturday"
-msgstr ""
+msgstr "Сваке друге суботе"
 
 #: src/EventEdition/RepeatPanel.vala:458
 msgid "Every third Sunday"
-msgstr ""
+msgstr "Сваке треће недеље"
 
 #: src/EventEdition/RepeatPanel.vala:461
 msgid "Every third Monday"
-msgstr ""
+msgstr "Сваког трећег понедељка"
 
 #: src/EventEdition/RepeatPanel.vala:464
 msgid "Every third Tuesday"
-msgstr ""
+msgstr "Сваког трећег уторка"
 
 #: src/EventEdition/RepeatPanel.vala:467
 msgid "Every third Wednesday"
-msgstr ""
+msgstr "Сваке треће среде"
 
 #: src/EventEdition/RepeatPanel.vala:470
 msgid "Every third Thursday"
-msgstr ""
+msgstr "Сваког трећег четвртка"
 
 #: src/EventEdition/RepeatPanel.vala:473
 msgid "Every third Friday"
-msgstr ""
+msgstr "Сваког трећег петка"
 
 #: src/EventEdition/RepeatPanel.vala:476
 msgid "Every third Saturday"
-msgstr ""
+msgstr "Сваке треће суботе"
 
 #: src/EventEdition/RepeatPanel.vala:483
 msgid "Every fourth Sunday"
-msgstr ""
+msgstr "Сваке четврте недеље"
 
 #: src/EventEdition/RepeatPanel.vala:486
 msgid "Every fourth Monday"
-msgstr ""
+msgstr "Сваког четвртог понедељка"
 
 #: src/EventEdition/RepeatPanel.vala:489
 msgid "Every fourth Tuesday"
-msgstr ""
+msgstr "Сваког четвртог уторка"
 
 #: src/EventEdition/RepeatPanel.vala:492
 msgid "Every fourth Wednesday"
-msgstr ""
+msgstr "Сваке четврте среде"
 
 #: src/EventEdition/RepeatPanel.vala:495
 msgid "Every fourth Thursday"
-msgstr ""
+msgstr "Сваког четвртог четвртка"
 
 #: src/EventEdition/RepeatPanel.vala:498
 msgid "Every fourth Friday"
-msgstr ""
+msgstr "Сваког четвртог петка"
 
 #: src/EventEdition/RepeatPanel.vala:501
 msgid "Every fourth Saturday"
-msgstr ""
+msgstr "Сваке четврте суботе"
 
 #: src/EventEdition/RepeatPanel.vala:508
 msgid "Every fifth Sunday"
-msgstr ""
+msgstr "Сваке пете недеље"
 
 #: src/EventEdition/RepeatPanel.vala:511
 msgid "Every fifth Monday"
-msgstr ""
+msgstr "Сваког петог понедељка"
 
 #: src/EventEdition/RepeatPanel.vala:514
 msgid "Every fifth Tuesday"
-msgstr ""
+msgstr "Сваког петог уторка"
 
 #: src/EventEdition/RepeatPanel.vala:517
 msgid "Every fifth Wednesday"
-msgstr ""
+msgstr "Сваке пете среде"
 
 #: src/EventEdition/RepeatPanel.vala:520
 msgid "Every fifth Thursday"
-msgstr ""
+msgstr "Сваког петог четвртка"
 
 #: src/EventEdition/RepeatPanel.vala:523
 msgid "Every fifth Friday"
-msgstr ""
+msgstr "Сваког петог петка"
 
 #: src/EventEdition/RepeatPanel.vala:526
 msgid "Every fifth Saturday"
-msgstr ""
+msgstr "Сваке пете суботе"
 
 #: src/EventEdition/RepeatPanel.vala:536
 msgid "Mon"
-msgstr ""
+msgstr "Пон"
 
 #: src/EventEdition/RepeatPanel.vala:537
 msgid "Tue"
-msgstr ""
+msgstr "Уто"
 
 #: src/EventEdition/RepeatPanel.vala:538
 msgid "Wed"
-msgstr ""
+msgstr "Сре"
 
 #: src/EventEdition/RepeatPanel.vala:539
 msgid "Thu"
-msgstr ""
+msgstr "Чет"
 
 #: src/EventEdition/RepeatPanel.vala:540
 msgid "Fri"
-msgstr ""
+msgstr "Пет"
 
 #: src/EventEdition/RepeatPanel.vala:541
 msgid "Sat"
-msgstr ""
+msgstr "Суб"
 
 #: src/EventEdition/RepeatPanel.vala:542
 msgid "Sun"
-msgstr ""
+msgstr "Нед"
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
 msgid "Hide Week Numbers"
-msgstr ""
+msgstr "Сакриј бројеве седмица"
 
 #: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
 msgid "Show Week Numbers"
-msgstr "Прикажи бројеве недеља"
+msgstr "Прикажи бројеве седмица"
 
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr ""
+msgstr "још %u…"
 
 #: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
-msgstr ""
+msgstr "Направи"
 
 #: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
-msgstr ""
+msgstr "Назив:"
 
 #: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
-msgstr ""
+msgstr "Назив календара"
 
 #: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
-msgstr ""
+msgstr "Врста:"
 
 #: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
-msgstr ""
+msgstr "Боја:"
 
 #: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
-msgstr ""
+msgstr "Означи као основни календар"
 
 #: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
-msgstr ""
+msgstr "Направи календар"
 
 #: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
-msgstr ""
+msgstr "Сачувај"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr ""
+msgstr "састанак;виђење"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "рођендан;годишњица;журка"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "позив;телефон;звоно"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "бар;коктели;пића;кафана"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "ауто;вожња;путовање;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr ""
+msgstr "лет;аеродром;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr ""
+msgstr "доручак;ужина;вечера;ручак;гозба;мезе;роштиљ;печење"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "суд;порота;порез;адвокат;уговор"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie;film"
-msgstr ""
+msgstr "филм"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr ""
+msgstr "венчање"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:312
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr ""
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:315
 #, c-format
 msgid "%s, %s – %s, %s"
-msgstr ""
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:327
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr ""
+msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:336
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s у %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:339
 #, c-format
 msgid "%s, %s – %s"
-msgstr ""
+msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarButton.vala:72
-#, fuzzy
 msgid "Search Calendars"
-msgstr "Претражи догађаје"
+msgstr "Тражи календаре"
 
 #: src/Widgets/CalendarButton.vala:75
 msgid "No Results"
-msgstr ""
+msgstr "Нема резултата"
 
 #: src/Widgets/CalendarButton.vala:76
 msgid "Try changing search terms."
-msgstr ""
+msgstr "Покушајте да измените услове претраге."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "Извези Календар...."
+msgstr "Извези календар…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
@@ -783,24 +778,23 @@ msgstr "calendar.ics"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
-msgstr ""
+msgstr "Уреди…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Удвостручи…"
 
 #: src/Widgets/EventMenu.vala:42
-#, fuzzy
 msgid "Remove Event"
-msgstr "Креирај догађај"
+msgstr "Уклони догађај"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Уклони појављивање"
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
-msgstr ""
+msgstr "Уклони"
 
 #: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
@@ -808,50 +802,48 @@ msgstr "Направи нови догађај"
 
 #: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
-msgstr ""
+msgstr "Иди на данашњи датум"
 
 #: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
-msgstr ""
+msgstr "Управљај календарима"
 
 #: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
-msgstr "Извези или Подели подразумевани Календар"
+msgstr "Извези или дели подразумевани календар"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
-msgstr ""
+msgstr "Додај нови календар…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Извези Календар...."
+msgstr "Увези датотеку иКалендара…"
 
 #: src/Widgets/SourcePopover.vala:94
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Изабери календаре за приказивање"
+msgstr "Изаберите „ICS“ датотеку за увоз"
 
 #: src/Widgets/SourcePopover.vala:97
 msgid "Open"
-msgstr ""
+msgstr "Отвори"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
-msgstr ""
+msgstr "Не може се уклонити"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Не може се уредити"
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
-msgstr ""
+msgstr "Опозови"
 
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
 #, c-format
 msgid "\"%s\" removed"
-msgstr ""
+msgstr "„%s“ је уклоњено"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
