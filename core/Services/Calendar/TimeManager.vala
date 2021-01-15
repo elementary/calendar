@@ -8,8 +8,6 @@ private interface FDO.LoginManager : Object {
 [DBus (name = "org.freedesktop.timedate1")]
 private interface FDO.TimeDate1 : Object {
     public abstract string timezone {owned get;}
-    [DBus (name = "TimeUSec")]
-    public abstract uint64 time_usec {get;}
 }
 
 /** Manages signals to keep temporal state up to date */
@@ -19,7 +17,7 @@ public class Calendar.TimeManager : Object {
     /* The system time zone as an ICal.Timezone */
     public ICal.Timezone system_timezone {get; private set;}
 
-    private static TimeManager instance = null;
+    private static TimeManager? instance = null;
 
     private uint timeout_id = 0;
     private FDO.LoginManager? login_manager = null;
@@ -39,7 +37,7 @@ public class Calendar.TimeManager : Object {
 
             // Watch the DBus time settings server: if it's present, time
             // settings are probably being changed and we should callback faster
-            //  to keep up to date
+            // to keep up to date
             Bus.watch_name (BusType.SYSTEM, "org.freedesktop.timedate1", BusNameWatcherFlags.NONE, on_settings_watch, on_settings_unwatch);
         } catch (Error e) {
             warning (e.message);
