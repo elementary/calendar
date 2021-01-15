@@ -46,8 +46,7 @@ namespace Calendar.Util {
     }
 
     public bool ecalcomponent_is_on_day (ECal.Component component, GLib.DateTime day) {
-        var event_store = Calendar.EventStore.get_default ();
-
+        unowned var time_manager = Calendar.TimeManager.get_default ();
         var stripped_time = new GLib.DateTime.local (day.get_year (), day.get_month (), day.get_day_of_month (), 0, 0, 0);
 
         var selected_date_unix = stripped_time.to_unix ();
@@ -72,8 +71,9 @@ namespace Calendar.Util {
                 return false;
         }
 
-        time_t start_unix = start_time.as_timet_with_zone (event_store.system_timezone);
-        time_t end_unix = end_time.as_timet_with_zone (event_store.system_timezone);
+        ICal.Timezone system_timezone = time_manager.system_timezone;
+        time_t start_unix = start_time.as_timet_with_zone (system_timezone);
+        time_t end_unix = end_time.as_timet_with_zone (system_timezone);
 
         /* If the selected date is inside the event */
         if (start_unix < selected_date_unix && selected_date_unix_next < end_unix) {
