@@ -46,9 +46,9 @@ public class Calendar.TimeManager : Object {
         }
 
 #if E_CAL_2_0
-        this.system_timezone = ECal.util_get_system_timezone ();
+        this.system_timezone = ECal.util_get_system_timezone ().copy ();
 #else
-        this.system_timezone = ECal.Util.get_system_timezone ();
+        this.system_timezone = ECal.Util.get_system_timezone ().copy ();
 #endif
         setup_today_timeout ();
     }
@@ -78,9 +78,9 @@ public class Calendar.TimeManager : Object {
         var timezone = changed_properties.lookup_value ("Timezone", GLib.VariantType.STRING);
         if (timezone != null) {
 #if E_CAL_2_0
-            this.system_timezone = ECal.util_get_system_timezone ();
+            this.system_timezone = ECal.util_get_system_timezone ().copy ();
 #else
-            this.system_timezone = ECal.Util.get_system_timezone ();
+            this.system_timezone = ECal.Util.get_system_timezone ().copy ();
 #endif
         }
 
