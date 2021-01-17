@@ -19,7 +19,7 @@
 
 public class Maya.View.ImportDialog : Granite.MessageDialog {
     private File[] files;
-    private Widgets.CalendarButton calchooser_button;
+    private Widgets.CalendarPicker calchooser;
 
     public ImportDialog (File[] files) {
         Object (
@@ -50,9 +50,9 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
             ).printf (files.length);
         }
 
-        calchooser_button = new Widgets.CalendarButton ();
+        calchooser = new Widgets.CalendarPicker ();
 
-        custom_bin.add (calchooser_button);
+        custom_bin.add (calchooser);
 
         var ok_button = (Gtk.Button) add_button (_("Import"), Gtk.ResponseType.APPLY);
         ok_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
@@ -66,7 +66,7 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
     }
 
     private void import_files () {
-        var source = calchooser_button.current_source;
+        var source = calchooser.current_source;
         var calmodel = Calendar.EventStore.get_default ();
         foreach (var file in files) {
 #if E_CAL_2_0
