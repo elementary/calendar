@@ -17,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.Widgets.CalendarPicker : Gtk.Grid {
+public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
     private const string STYLE = """
         .cal-color {
             background-color: %s;

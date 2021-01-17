@@ -19,7 +19,7 @@
 
 public class Maya.View.ImportDialog : Granite.MessageDialog {
     private File[] files;
-    private Widgets.CalendarPicker calchooser;
+    private Widgets.CalendarChooser calchooser;
 
     public ImportDialog (File[] files) {
         Object (
@@ -50,7 +50,7 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
             ).printf (files.length);
         }
 
-        calchooser = new Widgets.CalendarPicker ();
+        calchooser = new Widgets.CalendarChooser ();
 
         custom_bin.add (calchooser);
 
