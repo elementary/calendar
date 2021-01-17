@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2020-12-19 10:16+0000\n"
+"PO-Revision-Date: 2020-12-22 13:16+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/calendar/"
 "calendar/sr/>\n"
@@ -703,7 +703,7 @@ msgstr "лет;аеродром;"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr "доручак;ужина;вечера;ручак;гозба;мезе;роштиљ;печење;"
+msgstr "доручак;ужина;вечера;ручак;гозба;мезе;роштиљ;печење"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.

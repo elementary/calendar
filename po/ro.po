@@ -8,17 +8,18 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2015-05-15 10:58+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
-"Language-Team: Romanian <ro@li.org>\n"
+"PO-Revision-Date: 2020-12-29 08:16+0000\n"
+"Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
+"Language-Team: Romanian <https://l10n.elementary.io/projects/calendar/"
+"calendar/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 "
-"== 0) && (n != 0))) ? 2: 1));\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
 msgid "On this computer"
@@ -26,23 +27,23 @@ msgstr "Pe acest calculator"
 
 #: core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr ""
+msgstr "Utilizator:"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr ""
+msgstr "nume.utilizator"
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr ""
+msgstr "E-mail:"
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr ""
+msgstr "andrei@popescu.com"
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr ""
+msgstr "Păstrează o copie local"
 
 #: daemon/Daemon.vala:24
 msgid "Print debug information"
@@ -229,7 +230,7 @@ msgstr "Toată ziua:"
 
 #: src/EventEdition/InfoPanel.vala:87
 msgid "To:"
-msgstr "Către"
+msgstr "Către:"
 
 #: src/EventEdition/InfoPanel.vala:105
 msgid "Title:"
