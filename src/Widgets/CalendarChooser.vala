@@ -71,14 +71,7 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
         list_box.activate_on_single_click = true;
         list_box.set_placeholder (placeholder);
 
-        var list_bg_css = "list { background: transparent; }";
-        try {
-            var css_provider = new Gtk.CssProvider ();
-            css_provider.load_from_data (list_bg_css);
-            list_box.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, list_bg_css);
-        }
+        list_box.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
