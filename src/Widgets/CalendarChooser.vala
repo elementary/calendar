@@ -110,7 +110,7 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
         });
 
         list_box.selected_rows_changed.connect (() => {
-            foreach (var row in list_box.get_children ()) {
+            foreach (unowned var row in list_box.get_children ()) {
                 var grid = ((Gtk.ListBoxRow) row).get_child ();
                 ((CalendarGrid) grid).selected = false;
             }
