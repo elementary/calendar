@@ -33,13 +33,10 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
         }
         set {
             _current_source = value;
-            calendar_grid.source = value;
-            tooltip_text = "%s - %s".printf (calendar_grid.label, calendar_grid.location);
         }
     }
 
     private Gtk.SearchEntry search_entry;
-    private CalendarGrid calendar_grid;
 
     construct {
         sources = new GLib.List<E.Source> ();
