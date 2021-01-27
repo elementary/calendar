@@ -18,12 +18,12 @@
  */
 
 public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
-    private const string STYLE = """
-        .cal-color {
-            background-color: %s;
-            border-radius: 50%;
-        }
-    """;
+
+    /** A searchable list of calendars for the user to choose from.
+    *
+    * The current selection is exposed as a E.Source through the current_source property.
+    * The selection defaults to the current default calendar.
+    */
 
     public GLib.List<E.Source> sources;
     private E.Source _current_source;
@@ -85,8 +85,8 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
         list_box.set_header_func (header_update_func);
 
         list_box.set_sort_func ((row1, row2) => {
-            var child1 = (CalendarGrid)row1.get_child ();
-            var child2 = (CalendarGrid)row2.get_child ();
+            var child1 = (CalendarRow)row1.get_child ();
+            var child2 = (CalendarRow)row2.get_child ();
             var comparison = child1.location.collate (child2.location);
             if (comparison == 0) {
                 return child1.label.collate (child2.label);
@@ -103,16 +103,16 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
         });
 
         list_box.row_activated.connect ((row) => {
-            current_source = ((CalendarGrid)row.get_child ()).source;
+            current_source = ((CalendarRow) (row.get_child ())).source;
         });
 
         list_box.selected_rows_changed.connect (() => {
             foreach (unowned Gtk.Widget row in list_box.get_children ()) {
-                var grid = ((Gtk.ListBoxRow) row).get_child ();
-                ((CalendarGrid) grid).selected = false;
+                var calrow = ((Gtk.ListBoxRow) row).get_child ();
+                ((CalendarRow) calrow).selected = false;
             }
-            var grid = ((Gtk.ListBoxRow) list_box.get_selected_row ()).get_child ();
-            ((CalendarGrid) grid).selected = true;
+            var calrow = ((Gtk.ListBoxRow) list_box.get_selected_row ()).get_child ();
+            ((CalendarRow) calrow).selected = true;
         });
 
 
@@ -130,12 +130,12 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
         });
 
         foreach (var source in sources) {
-            var calgrid = new CalendarGrid (source);
-            calgrid.margin = 6;
-            calgrid.margin_start = 12;
+            var calrow = new CalendarRow (source);
+            calrow.margin = 6;
+            calrow.margin_start = 12;
 
             var row = new Gtk.ListBoxRow ();
-            row.add (calgrid);
+            row.add (calrow);
             row.show_all ();
 
             var row_css = """
@@ -164,7 +164,7 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
     private bool filter_function (Gtk.ListBoxRow row) {
         var search_term = search_entry.text.down ();
 
-        if (search_term in ((CalendarGrid)row.get_child ()).label.down ()) {
+        if (search_term in ((CalendarRow)row.get_child ()).label.down ()) {
             return true;
         }
 
@@ -172,9 +172,9 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
     }
 
     private void header_update_func (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
-        var row_location = ((CalendarGrid)row.get_child ()).location;
+        var row_location = ((CalendarRow)row.get_child ()).location;
         if (before != null) {
-            var before_row_location = ((CalendarGrid)before.get_child ()).location;
+            var before_row_location = ((CalendarRow)before.get_child ()).location;
             if (before_row_location == row_location) {
                 row.set_header (null);
                 return;
@@ -192,74 +192,79 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
             header.margin_top = 0;
         }
     }
+}
 
-    public class CalendarGrid : Gtk.Grid {
-        public string label { public get; private set; }
-        public string location { public get; private set; }
-        public bool selected { public get; public set; }
-        private E.Source _source;
-        public E.Source source {
-            get {
-                return _source;
-            }
+public class CalendarRow : Gtk.Grid {
 
-            set {
-                _source = value;
-                apply_source ();
-            }
+    private const string CALENDAR_COLOR_STYLE = """
+        .cal-color {
+            background-color: %s;
+            border-radius: 50%;
+        }
+    """;
+
+    public string label { public get; private set; }
+    public string location { public get; private set; }
+    public bool selected { public get; public set; }
+    private E.Source _source;
+    public E.Source source {
+        get {
+            return _source;
         }
 
-        private Gtk.StyleContext calendar_color_context;
-
-        public CalendarGrid (E.Source source) {
-            Object (source: source);
+        set {
+            _source = value;
+            apply_source ();
         }
+    }
 
-        construct {
-            column_spacing = 6;
+    private Gtk.StyleContext calendar_color_context;
 
-            var calendar_color = new Gtk.Grid ();
-            calendar_color.height_request = 12;
-            calendar_color.valign = Gtk.Align.CENTER;
-            calendar_color.width_request = 12;
+    public CalendarRow (E.Source source) {
+        Object (source: source);
+    }
 
-            calendar_color_context = calendar_color.get_style_context ();
-            calendar_color_context.add_class ("cal-color");
+    construct {
+        column_spacing = 6;
 
-            var calendar_name_label = new Gtk.Label ("");
-            calendar_name_label.xalign = 0;
-            calendar_name_label.hexpand = true;
-            calendar_name_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
+        var calendar_color = new Gtk.Grid ();
+        calendar_color.height_request = 12;
+        calendar_color.valign = Gtk.Align.CENTER;
+        calendar_color.width_request = 12;
 
-            var selection_icon = new Gtk.Image.from_icon_name ("object-select-symbolic", Gtk.IconSize.MENU);
-            selection_icon.no_show_all = true;
-            selection_icon.visible = false;
+        calendar_color_context = calendar_color.get_style_context ();
+        calendar_color_context.add_class ("cal-color");
 
-            add (calendar_color);
-            add (calendar_name_label);
-            add (selection_icon);
+        var calendar_name_label = new Gtk.Label ("");
+        calendar_name_label.xalign = 0;
+        calendar_name_label.hexpand = true;
+        calendar_name_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
 
-            bind_property ("label", calendar_name_label, "label");
-            // notify["selected"].connect (() => {
-            //     selection_icon.visible = selected;
-            // });
-            bind_property ("selected", selection_icon, "visible");
-        }
+        var selection_icon = new Gtk.Image.from_icon_name ("object-select-symbolic", Gtk.IconSize.MENU);
+        selection_icon.no_show_all = true;
+        selection_icon.visible = false;
 
-        private void apply_source () {
-            E.SourceCalendar cal = (E.SourceCalendar)_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
-            label = _source.dup_display_name ();
-            location = Maya.Util.get_source_location (_source);
+        add (calendar_color);
+        add (calendar_name_label);
+        add (selection_icon);
 
-            var css_color = STYLE.printf (cal.dup_color ());
-            var style_provider = new Gtk.CssProvider ();
+        bind_property ("label", calendar_name_label, "label");
+        bind_property ("selected", selection_icon, "visible");
+    }
 
-            try {
-                style_provider.load_from_data (css_color, css_color.length);
-                calendar_color_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            } catch (Error e) {
-                warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
-            }
+    private void apply_source () {
+        E.SourceCalendar cal = (E.SourceCalendar)_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
+        label = _source.dup_display_name ();
+        location = Maya.Util.get_source_location (_source);
+
+        var css_color = CALENDAR_COLOR_STYLE.printf (cal.dup_color ());
+        var style_provider = new Gtk.CssProvider ();
+
+        try {
+            style_provider.load_from_data (css_color, css_color.length);
+            calendar_color_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        } catch (Error e) {
+            warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
         }
     }
 }
