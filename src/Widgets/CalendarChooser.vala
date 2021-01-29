@@ -101,6 +101,7 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
                 var calrow = ((Gtk.ListBoxRow) row).get_child ();
                 ((CalendarRow) calrow).selected = false;
             }
+            // TODO list_box.get_selected_row () returns null when first used
             var calrow = ((Gtk.ListBoxRow) list_box.get_selected_row ()).get_child ();
             ((CalendarRow) calrow).selected = true;
         });
@@ -183,6 +184,10 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
         if (before == null) {
             header.margin_top = 0;
         }
+    }
+    
+    public void clear_search_entry () {
+        search_entry.text = "";
     }
 }
 

@@ -58,9 +58,8 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
             tooltip_text = "%s - %s".printf (current_calendar_grid.label, current_calendar_grid.location);
         });
 
-        // TODO Clear search text when popover closed
-        // popover.unmap.connect (() => {
-        //     search_entry.text = "";
-        // });
+        popover.unmap.connect (() => {
+            calchooser.clear_search_entry ();
+        });
     }
 }
