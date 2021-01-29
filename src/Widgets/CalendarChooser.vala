@@ -26,15 +26,7 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
     */
 
     public GLib.List<E.Source> sources;
-    private E.Source _current_source;
-    public E.Source current_source {
-        get {
-            return _current_source;
-        }
-        set {
-            _current_source = value;
-        }
-    }
+    public E.Source current_source { get; set; }
 
     private Gtk.SearchEntry search_entry;
 
@@ -47,8 +39,6 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
                 sources.append (src);
             }
         }
-
-        _current_source = registry.default_calendar;
 
         current_source = registry.default_calendar;
 
@@ -158,6 +148,8 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
                 list_box.select_row (row);
             }
         }
+
+        // TODO Selection doesn't reflect active calendar set by CalendarButton
     }
 
     [CCode (instance_pos = -1)]
