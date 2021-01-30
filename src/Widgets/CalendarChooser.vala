@@ -122,6 +122,7 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
         search_entry.search_changed.connect (() => {
             list_box.invalidate_filter ();
             list_box.unselect_all ();
+            // TODO Should active calendar be re-selected?
         });
 
         // Populate list_box
