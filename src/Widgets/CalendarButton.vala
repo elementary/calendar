@@ -56,12 +56,11 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         calchooser.notify["current-source"].connect ((s, p) => {
             current_calendar_grid.source = calchooser.current_source;
             tooltip_text = "%s - %s".printf (current_calendar_grid.label, current_calendar_grid.location);
+            popover.popdown ();
         });
 
         popover.unmap.connect (() => {
             calchooser.clear_search_entry ();
         });
-
-        // TODO popdown when selection changed
     }
 }
