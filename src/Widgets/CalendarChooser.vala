@@ -190,7 +190,7 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
             header.margin_top = 0;
         }
     }
-    
+
     public void clear_search_entry () {
         search_entry.text = "";
     }
