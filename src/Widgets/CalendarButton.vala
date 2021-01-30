@@ -61,5 +61,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
         popover.unmap.connect (() => {
             calchooser.clear_search_entry ();
         });
+
+        // TODO popdown when selection changed
     }
 }

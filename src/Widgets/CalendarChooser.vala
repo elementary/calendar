@@ -31,6 +31,7 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
     private Gtk.SearchEntry search_entry;
 
     construct {
+        // Set up sources list
         sources = new GLib.List<E.Source> ();
         var calmodel = Calendar.EventStore.get_default ();
         var registry = calmodel.registry;
@@ -39,6 +40,8 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
                 sources.append (src);
             }
         }
+
+        // GUI setup
 
         current_source = registry.default_calendar;
 
@@ -74,6 +77,8 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
         list_box.set_filter_func (filter_function);
         list_box.set_header_func (header_update_func);
 
+        // Signal handlers
+
         list_box.set_sort_func ((row1, row2) => {
             var child1 = (CalendarRow)row1.get_child ();
             var child2 = (CalendarRow)row2.get_child ();
@@ -94,18 +99,17 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
 
         list_box.row_activated.connect ((row) => {
             current_source = ((CalendarRow) (row.get_child ())).source;
-        });
 
-        list_box.selected_rows_changed.connect (() => {
-            foreach (unowned Gtk.Widget row in list_box.get_children ()) {
-                var calrow = ((Gtk.ListBoxRow) row).get_child ();
+            // Clear selected property
+            foreach (unowned Gtk.Widget deselect_row in list_box.get_children ()) {
+                var calrow = ((Gtk.ListBoxRow) deselect_row).get_child ();
                 ((CalendarRow) calrow).selected = false;
             }
-            // TODO list_box.get_selected_row () returns null when first used
-            var calrow = ((Gtk.ListBoxRow) list_box.get_selected_row ()).get_child ();
+
+            // Select new row
+            var calrow = row.get_child ();
             ((CalendarRow) calrow).selected = true;
         });
-
 
         search_entry.activate.connect (() => {
             foreach (unowned Gtk.Widget child in list_box.get_children ()) {
@@ -120,6 +124,7 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
             list_box.unselect_all ();
         });
 
+        // Populate list_box
         foreach (var source in sources) {
             var calrow = new CalendarRow (source);
             calrow.margin = 6;
@@ -147,10 +152,9 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
 
             if (source.dup_uid () == current_source.dup_uid ()) {
                 list_box.select_row (row);
+                calrow.selected = true;
             }
         }
-
-        // TODO Selection doesn't reflect active calendar set by CalendarButton
     }
 
     [CCode (instance_pos = -1)]
