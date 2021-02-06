@@ -59,7 +59,7 @@ public class Grid : Gtk.Grid {
         events |= Gdk.EventMask.SCROLL_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
 
-        var time_manager = TimeManager.get_default ();
+        unowned var time_manager = Calendar.TimeManager.get_default ();
         time_manager.on_update_today.connect (callback_update_today);
     }
 
