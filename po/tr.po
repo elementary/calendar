@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2021-02-04 22:32+0000\n"
+"PO-Revision-Date: 2021-02-07 16:06+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
@@ -210,7 +210,7 @@ msgstr "Katılımcılar:"
 
 #: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
-msgstr "Katılmayanlar"
+msgstr "Katılımcı Yok"
 
 #: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
@@ -411,15 +411,15 @@ msgstr "Her ayın aynı günü"
 
 #: src/EventEdition/RepeatPanel.vala:204
 msgid "Exceptions:"
-msgstr "İstisnalar:"
+msgstr "Özel Durumlar:"
 
 #: src/EventEdition/RepeatPanel.vala:206
 msgid "No Exceptions"
-msgstr "İstisnasız"
+msgstr "Özel Durum Yok"
 
 #: src/EventEdition/RepeatPanel.vala:222
 msgid "Add Exception"
-msgstr "İstisna Ekle"
+msgstr "Özel Durum Ekle"
 
 #: src/EventEdition/RepeatPanel.vala:383
 msgid "Every last Sunday"
