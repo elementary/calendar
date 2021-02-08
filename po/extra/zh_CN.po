@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2021-02-01 03:30+0000\n"
+"PO-Revision-Date: 2021-02-08 15:50+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "calendar/extra/zh_Hans/>\n"
@@ -45,7 +45,7 @@ msgstr "新功能："
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
+msgstr "将“复制...”添加到事件内容菜单"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:38
@@ -53,17 +53,17 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:56
 #: data/io.elementary.calendar.appdata.xml.in:65
 msgid "Minor Updates:"
-msgstr ""
+msgstr "次要更新："
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr ""
+msgstr "解决了新事件可能在日历中出现两次的问题"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
-msgstr ""
+msgstr "编辑日历时“标记为默认日历”选框将被正确勾选"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
 #: data/io.elementary.calendar.appdata.xml.in:41
@@ -85,23 +85,23 @@ msgstr "允许编辑循环事件"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "改进了对新一周开始日期的处理"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 msgid "Fix timezone errors with all-day events"
-msgstr ""
+msgstr "解决了持续全天的事件跟所在时区有关的错误"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
+msgstr "重设窗口的大小时不再重置侧边栏的大小"
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fix issues with time zones not being recognized"
-msgstr ""
+msgstr "解决了无法识别所在时区的问题"
 
 #: data/io.elementary.calendar.appdata.xml.in:58
 msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr ""
+msgstr "解决了添加或者删除每月重复事项的相关问题"
 
 #: data/io.elementary.calendar.appdata.xml.in:67
 msgid "Correctly save event reminders"
