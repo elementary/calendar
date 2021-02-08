@@ -25,7 +25,7 @@ public enum EventType {
     EDIT
 }
 
-public class EventDialog : Gtk.Dialog {
+public class EventDialog : Granite.Dialog {
         public E.Source? source { get; set; }
         public E.Source? original_source { get; private set; }
         public ECal.Component ecal { get; set; } // Set by InfoPanel if null
