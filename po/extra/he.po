@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
 "PO-Revision-Date: 2021-01-24 13:28+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/extra/he/"
@@ -64,7 +64,8 @@ msgstr "תיקון תקלה שבעקבותיה אירועים חדשים עשו�
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
-msgstr "תיבת הסימון „לסמן כלוח השנה כבררת המחדל” מסומנת כראוי בעת עריכת לוח שנה"
+msgstr ""
+"תיבת הסימון „לסמן כלוח השנה כבררת המחדל” מסומנת כראוי בעת עריכת לוח שנה"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
 #: data/io.elementary.calendar.appdata.xml.in:41
