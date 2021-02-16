@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2021-02-08 15:50+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2021-02-15 12:23+0000\n"
+"Last-Translator: Rock Chin <1010553892@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "calendar/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -105,7 +105,7 @@ msgstr "解决了添加或者删除每月重复事项的相关问题"
 
 #: data/io.elementary.calendar.appdata.xml.in:67
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "正确地保存事件提醒"
 
 #: data/io.elementary.calendar.appdata.xml.in:68
 msgid "Ellipsize event participant details if necessary"
@@ -137,7 +137,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:89
 msgid "Performance improvements"
-msgstr ""
+msgstr "性能改进"
 
 #: data/io.elementary.calendar.appdata.xml.in:95
 msgid "Present import window when opening ICS files"
@@ -145,11 +145,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:96
 msgid "Add a search entry for calendars"
-msgstr ""
+msgstr "为日历添加一个搜索入口"
 
 #: data/io.elementary.calendar.appdata.xml.in:97
 msgid "Always use calendar icon in notifications"
-msgstr ""
+msgstr "在通知中心总是使用日历图标"
 
 #: data/io.elementary.calendar.appdata.xml.in:98
 msgid "Agenda view can now be navigated by keyboard"
