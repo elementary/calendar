@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
 "PO-Revision-Date: 2018-11-03 22:51+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/calendar/"
@@ -142,7 +142,7 @@ msgstr[0] "Uvezi događaje iz %d datoteke u sljedeći kalendar:"
 msgstr[1] "Uvezi događaje iz %d datoteke u sljedeći kalendar:"
 msgstr[2] "Uvezi događaje iz %d datoteka u sljedeći kalendar:"
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "Uvezi"
 
@@ -271,82 +271,82 @@ msgstr "Nema podsjetnika"
 msgid "Add Reminder"
 msgstr "Dodaj podsjetnik"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 #, fuzzy
 msgid "At time of event"
 msgstr "Ime događaja"
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 #, fuzzy
 msgid "1 minute before"
 msgstr "1 minuta"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 #, fuzzy
 msgid "5 minutes before"
 msgstr "5 minuta"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 #, fuzzy
 msgid "10 minutes before"
 msgstr "10 minuta"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 #, fuzzy
 msgid "15 minutes before"
 msgstr "15 minuta"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 #, fuzzy
 msgid "20 minutes before"
 msgstr "20 minuta"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 #, fuzzy
 msgid "25 minutes before"
 msgstr "25 minuta"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 #, fuzzy
 msgid "30 minutes before"
 msgstr "30 minuta"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 #, fuzzy
 msgid "45 minutes before"
 msgstr "45 minuta"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 #, fuzzy
 msgid "1 hour before"
 msgstr "1 sat"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 #, fuzzy
 msgid "2 hours before"
 msgstr "2 sata"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 #, fuzzy
 msgid "3 hours before"
 msgstr "3 sata"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 #, fuzzy
 msgid "12 hours before"
 msgstr "12 sati"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 #, fuzzy
 msgid "24 hours before"
 msgstr "24 sata"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 #, fuzzy
 msgid "2 days before"
 msgstr "2 dana"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 #, fuzzy
 msgid "1 week before"
 msgstr "1 sedmica"
@@ -779,19 +779,6 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
 
-#: src/Widgets/CalendarButton.vala:72
-#, fuzzy
-msgid "Search Calendars"
-msgstr "Kreiraj kalendar"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr ""
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr ""
-
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -871,6 +858,10 @@ msgstr "Nazad"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Kalendar \"%s\" uklonjen."
+
+#, fuzzy
+#~ msgid "Search Calendars"
+#~ msgstr "Kreiraj kalendar"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"

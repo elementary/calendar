@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
 "PO-Revision-Date: 2019-06-09 04:20+0000\n"
 "Last-Translator: Khomyak-sibiryak <owalski@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
@@ -140,7 +140,7 @@ msgstr[0] "Событие из файла %d будет объединено с 
 msgstr[1] "События из файла %d будут объединены с этим календарем:"
 msgstr[2] "События из файла %d будут объединены с этим календарем:"
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "Импортировать"
 
@@ -269,67 +269,67 @@ msgstr "Нет напоминаний"
 msgid "Add Reminder"
 msgstr "Добавить напоминание"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "At time of event"
 msgstr "Во время события"
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 msgid "1 minute before"
 msgstr "За 1 минуту"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 msgid "5 minutes before"
 msgstr "За 5 минут"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 msgid "10 minutes before"
 msgstr "За 10 минут"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 msgid "15 minutes before"
 msgstr "За 15 минут"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 msgid "20 minutes before"
 msgstr "За 20 минут"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 msgid "25 minutes before"
 msgstr "За 25 минут"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 msgid "30 minutes before"
 msgstr "За 30 минут"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 msgid "45 minutes before"
 msgstr "За 45 минут"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 msgid "1 hour before"
 msgstr "За 1 час"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 msgid "2 hours before"
 msgstr "За 2 часа"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 msgid "3 hours before"
 msgstr "За 3 часа"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 msgid "12 hours before"
 msgstr "За 12 часов"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 msgid "24 hours before"
 msgstr "За 24 часа"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 msgid "2 days before"
 msgstr "За 2 дня"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 msgid "1 week before"
 msgstr "За 1 неделю"
 
@@ -761,19 +761,6 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/CalendarButton.vala:72
-#, fuzzy
-msgid "Search Calendars"
-msgstr "Создать календарь"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr "Нет результатов"
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr "Попробуйте изменить условия поиска."
-
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -854,6 +841,16 @@ msgstr "Возврат"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Календарь «%s» удалён."
+
+#, fuzzy
+#~ msgid "Search Calendars"
+#~ msgstr "Создать календарь"
+
+#~ msgid "No Results"
+#~ msgstr "Нет результатов"
+
+#~ msgid "Try changing search terms."
+#~ msgstr "Попробуйте изменить условия поиска."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
