@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2020-10-02 09:14+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2021-02-15 12:23+0000\n"
+"Last-Translator: Rock Chin <1010553892@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "calendar/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -41,11 +41,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "New Features:"
-msgstr ""
+msgstr "新功能："
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
+msgstr "将“复制...”添加到事件内容菜单"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:38
@@ -53,17 +53,17 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:56
 #: data/io.elementary.calendar.appdata.xml.in:65
 msgid "Minor Updates:"
-msgstr ""
+msgstr "次要更新："
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr ""
+msgstr "解决了新事件可能在日历中出现两次的问题"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
-msgstr ""
+msgstr "编辑日历时“标记为默认日历”选框将被正确勾选"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
 #: data/io.elementary.calendar.appdata.xml.in:41
@@ -85,27 +85,27 @@ msgstr "允许编辑循环事件"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "改进了对新一周开始日期的处理"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 msgid "Fix timezone errors with all-day events"
-msgstr ""
+msgstr "解决了持续全天的事件跟所在时区有关的错误"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
+msgstr "重设窗口的大小时不再重置侧边栏的大小"
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fix issues with time zones not being recognized"
-msgstr ""
+msgstr "解决了无法识别所在时区的问题"
 
 #: data/io.elementary.calendar.appdata.xml.in:58
 msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr ""
+msgstr "解决了添加或者删除每月重复事项的相关问题"
 
 #: data/io.elementary.calendar.appdata.xml.in:67
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "正确地保存事件提醒"
 
 #: data/io.elementary.calendar.appdata.xml.in:68
 msgid "Ellipsize event participant details if necessary"
@@ -137,7 +137,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:89
 msgid "Performance improvements"
-msgstr ""
+msgstr "性能改进"
 
 #: data/io.elementary.calendar.appdata.xml.in:95
 msgid "Present import window when opening ICS files"
@@ -145,11 +145,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:96
 msgid "Add a search entry for calendars"
-msgstr ""
+msgstr "为日历添加一个搜索入口"
 
 #: data/io.elementary.calendar.appdata.xml.in:97
 msgid "Always use calendar icon in notifications"
-msgstr ""
+msgstr "在通知中心总是使用日历图标"
 
 #: data/io.elementary.calendar.appdata.xml.in:98
 msgid "Agenda view can now be navigated by keyboard"

@@ -1,6 +1,5 @@
 
 calendar_files = files(
-    'TimeManager.vala',
     'AgendaView.vala',
     'Application.vala',
     'ImportDialog.vala',
@@ -29,6 +28,7 @@ calendar_files = files(
     'Widgets/AgendaEventRow.vala',
     'Widgets/CalendarButton.vala',
     'Widgets/CalendarChooser.vala',
+    'Widgets/CalendarRow.vala',
     'Widgets/ContractorButtonWithMenu.vala',
     'Widgets/DateSwitcher.vala',
     'Widgets/DateTimePicker.vala',
