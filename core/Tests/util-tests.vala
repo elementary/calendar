@@ -91,23 +91,6 @@ void test_45_minute_offset () {
     test_sample_offsets ("Asia/Kathmandu", "+0545");
 }
 
-/** Test that we properly identify all-day events */
-void test_is_all_day_true () {
-    var str = "BEGIN:VEVENT\n" +
-              "SUMMARY:Stub event\n" +
-              "UID:example@uid\n" +
-              "DTSTART;TZID=America/Chicago:20191121\n" +
-              "DTEND;TZID=America/Chicago:20191122\n" +
-              "END:VEVENT\n";
-    var event = new ICal.Component.from_string (str);
-    assert (event.get_dtstart ().is_date ());
-    assert (event.get_dtend ().is_date ());
-
-    GLib.DateTime dtstart, dtend;
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out dtstart, out dtend);
-    assert (Calendar.Util.datetime_is_all_day (dtstart, dtend));
-}
-
 /*
  *
  * Tests for icalcomponent functions
@@ -291,12 +274,50 @@ void test_is_all_day_false () {
     assert (Calendar.Util.datetime_is_all_day (dtstart, dtend));
 }
 
+/** Test that we properly identify all-day events */
+void test_is_all_day_true () {
+    var str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=America/Chicago:20191121\n" +
+              "DTEND;TZID=America/Chicago:20191122\n" +
+              "END:VEVENT\n";
+    var event = new ICal.Component.from_string (str);
+    assert (event.get_dtstart ().is_date ());
+    assert (event.get_dtend ().is_date ());
+
+    GLib.DateTime dtstart, dtend;
+    Calendar.Util.icalcomponent_get_local_datetimes (event, out dtstart, out dtend);
+    assert (Calendar.Util.datetime_is_all_day (dtstart, dtend));
+}
+
+void test_datetimes_to_icaltime () {
+    // Test floating timezone
+    
+    // Test implicit timezone
+    
+    // Test explicit timezone
+    
+    // Test that date and time are independent
+}
+
+
 void add_timezone_tests () {
     Test.add_func ("/Utils/TimeZone/floating", test_floating);
     Test.add_func ("/Utils/TimeZone/utc", test_utc);
     Test.add_func ("/Utils/TimeZone/hour_offset", test_hour_offset);
     Test.add_func ("/Utils/TimeZone/half_hour_offset", test_half_hour_offset);
     Test.add_func ("/Utils/TimeZone/45_minute_offset", test_45_minute_offset);
+    Test.add_func ("/Utils/TimeZone/set_timezone", () => {
+        var test_date = new GLib.DateTime.utc (2019, 11, 21, 9, 20, 0);
+        var iso_string = test_date.format ("%FT%T");
+        var ical = new ICal.Time.from_day_of_year (15, 2021);
+        unowned ICal.Timezone ical_tz = ICal.Timezone.get_builtin_timezone ("America/New_York");
+        assert (ical_tz != null);
+        assert (ical.get_timezone () == null);
+        ical.set_timezone (ical_tz);
+        assert (ical.get_timezone () != null);
+    });
 }
 
 void add_icalcomponent_tests () {
