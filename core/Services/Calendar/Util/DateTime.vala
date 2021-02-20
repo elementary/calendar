@@ -40,8 +40,14 @@ namespace Calendar.Util {
     }
 
     /**
-     * Converts two datetimes to one TimeType. The first contains the date,
-     * its time settings are ignored. The second one contains the time itself.
+     * Converts two DateTimes representing a date and a time to one TimeType.
+     *
+     * The first contains the date; its time settings are ignored. The second
+     * one contains the time itself; its date settings are ignored. If the time
+     * is `null`, the resulting TimeType is of `DATE` type; if it is given, the
+     * TimeType is of `DATE-TIME` type.
+     *
+     * This also accepts an optional `timezone` argument. If this is `null`, the resulting TimeType will be in the local timezone.
      */
     public ICal.Time datetimes_to_icaltime (GLib.DateTime date, GLib.DateTime? time_local, string? timezone = null) {
 #if E_CAL_2_0
