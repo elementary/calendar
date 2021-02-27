@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2019-06-27 07:09+0000\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
+"PO-Revision-Date: 2021-01-21 18:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "calendar/calendar/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
@@ -140,7 +140,7 @@ msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Hendelse fra %d vil bli flettet med denne kalenderen:"
 msgstr[1] "Hendelser fra %d vil bli flettet med denne kalenderen:"
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "Importer"
 
@@ -269,68 +269,68 @@ msgstr "Ingen påminnelser"
 msgid "Add Reminder"
 msgstr "Legg til påminnelse"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "At time of event"
 msgstr "Ved hendelse"
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 #, fuzzy
 msgid "1 minute before"
 msgstr "1 minutt"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 msgid "5 minutes before"
 msgstr "5 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 msgid "10 minutes before"
 msgstr "10 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 msgid "15 minutes before"
 msgstr "15 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 msgid "20 minutes before"
 msgstr "20 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 msgid "25 minutes before"
 msgstr "25 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 msgid "30 minutes before"
 msgstr "30 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 msgid "45 minutes before"
 msgstr "45 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 msgid "1 hour before"
 msgstr "1 time før"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 msgid "2 hours before"
 msgstr "2 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 msgid "3 hours before"
 msgstr "3 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 msgid "12 hours before"
 msgstr "12 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 msgid "24 hours before"
 msgstr "24 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 msgid "2 days before"
 msgstr "2 dager før"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 msgid "1 week before"
 msgstr "1 uke før"
 
@@ -669,61 +669,62 @@ msgstr "Lagre"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr ""
+msgstr "avtale;møte"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "geburtsdag;jubileum;fest"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "samtale;telefon;ringing;ring"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "bar;cocktail;drinker;happy hour"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "bil;kjøring;kjør;road trip;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr ""
+msgstr "fly;lufthavn;flyplass"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
+"frokost;brunsj;middag;lunsj;aftensmat;restaurant;burger;måltid;grilling"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "rett;jurie;advokat;jurist;kontakt"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie;film"
-msgstr ""
+msgstr "spillefilm;film;matine"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr ""
+msgstr "bryllup"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:312
@@ -749,26 +750,13 @@ msgstr "%s – %s"
 #: src/Widgets/AgendaEventRow.vala:336
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s klokken %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:339
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
-
-#: src/Widgets/CalendarButton.vala:72
-#, fuzzy
-msgid "Search Calendars"
-msgstr "Søk i kalendere"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr "Resultatløst"
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr "Prøv å endre søket."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -785,7 +773,7 @@ msgstr "Rediger…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Dupliser …"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -831,7 +819,7 @@ msgstr "Velg en kalender å importere til"
 
 #: src/Widgets/SourcePopover.vala:97
 msgid "Open"
-msgstr ""
+msgstr "Åpne"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
@@ -850,6 +838,16 @@ msgstr "Angre"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" fjernet"
+
+#, fuzzy
+#~ msgid "Search Calendars"
+#~ msgstr "Søk i kalendere"
+
+#~ msgid "No Results"
+#~ msgstr "Resultatløst"
+
+#~ msgid "Try changing search terms."
+#~ msgstr "Prøv å endre søket."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e %Y"

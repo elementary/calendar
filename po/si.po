@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
 "PO-Revision-Date: 2018-06-10 00:10+0000\n"
 "Last-Translator: Gamunu Balagalla <gamunu.balagalla@gmail.com>\n"
 "Language-Team: Sinhala <https://weblate.elementary.io/projects/calendar/"
@@ -139,7 +139,7 @@ msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "පහත දැක්වෙන දින දර්ශනයට %d ගොනුවෙන් සිදුවීම ආයාත කරන්න:"
 msgstr[1] "පහත දැක්වෙන දින දර්ශනයට %d ගොනුවෙන් සිදුවීම් ආයාත කරන්න:"
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "ආයාත"
 
@@ -268,82 +268,82 @@ msgstr "සිහිගැන්වීම් නැත"
 msgid "Add Reminder"
 msgstr "සිහිගැන්වීම එක් කරන්න"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 #, fuzzy
 msgid "At time of event"
 msgstr "සිදුවීම් නම"
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 #, fuzzy
 msgid "1 minute before"
 msgstr "විනාඩි 1 යි"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 #, fuzzy
 msgid "5 minutes before"
 msgstr "විනාඩි 5 යි"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 #, fuzzy
 msgid "10 minutes before"
 msgstr "විනාඩි 10 යි"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 #, fuzzy
 msgid "15 minutes before"
 msgstr "විනාඩි 15 යි"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 #, fuzzy
 msgid "20 minutes before"
 msgstr "විනාඩි 20 යි"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 #, fuzzy
 msgid "25 minutes before"
 msgstr "විනාඩි 25 යි"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 #, fuzzy
 msgid "30 minutes before"
 msgstr "විනාඩි 30 යි"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 #, fuzzy
 msgid "45 minutes before"
 msgstr "විනාඩි 45 යි"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 #, fuzzy
 msgid "1 hour before"
 msgstr "පැය 1 යි"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 #, fuzzy
 msgid "2 hours before"
 msgstr "පැය 2 යි"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 #, fuzzy
 msgid "3 hours before"
 msgstr "පැය 3 යි"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 #, fuzzy
 msgid "12 hours before"
 msgstr "පැය 12 යි"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 #, fuzzy
 msgid "24 hours before"
 msgstr "පැය 24 යි"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 #, fuzzy
 msgid "2 days before"
 msgstr "දින 2 ක්"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 #, fuzzy
 msgid "1 week before"
 msgstr "සති 1 ක්"
@@ -771,19 +771,6 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/CalendarButton.vala:72
-#, fuzzy
-msgid "Search Calendars"
-msgstr "දිනදර්ශනය සාදන්න"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr ""
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr ""
-
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 #, fuzzy
@@ -865,6 +852,10 @@ msgstr "අස් කරන්න"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "දිනදර්ශනය \"% s\" ඉවත් කර ඇත."
+
+#, fuzzy
+#~ msgid "Search Calendars"
+#~ msgstr "දිනදර්ශනය සාදන්න"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"

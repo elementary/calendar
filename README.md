@@ -17,7 +17,7 @@ You'll need the following dependencies:
 * libgeocode-glib-dev
 * libgeoclue-2-dev
 * libglib2.0-dev
-* libgranite-dev >= 5.2.0
+* libgranite-dev >= 6.0.0
 * libgtk-3-dev
 * libical-dev
 * libhandy-1-dev >= 0.90.0
