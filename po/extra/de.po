@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 21:02+0000\n"
-"PO-Revision-Date: 2020-10-27 07:15+0000\n"
+"PO-Revision-Date: 2021-02-28 13:28+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/calendar/extra/de/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -42,11 +42,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "New Features:"
-msgstr ""
+msgstr "Neue Funktionen:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
+msgstr "Die Option \"Duplizieren... \" wurde dem Termin Kontextmenü hinzugefügt"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:38
