@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
+ * Copyright 2011-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -293,12 +293,43 @@ void test_is_all_day_true () {
 
 void test_datetimes_to_icaltime () {
     // Test floating timezone
-    
+    var date = new DateTime.utc (2019, 11, 21, 9, 20, 0);
+    var time = new DateTime.utc (2019, 11, 21, 9, 20, 0);
+    var test_icaltime = Calendar.Util.datetimes_to_icaltime (date, time, null);
+    assert (test_icaltime.as_ical_string () == "20191121T092000");
+    assert (test_icaltime.get_tzid () == null);
+
+    // Check that system_timezone is what we want
+    var system_tz = Calendar.TimeManager.get_default ().system_timezone;
+    debug (@"System timezone: $(system_tz.get_tzid ())");
+    // assert (system_tz.get_tzid () == "America/Chicago");
     // Test implicit timezone
-    
+    date = new DateTime.utc (2019, 11, 21, 9, 20, 0);
+    time = new DateTime.utc (2019, 11, 21, 9, 20, 0);
+    test_icaltime = Calendar.Util.datetimes_to_icaltime (date, time);
+    assert (test_icaltime.as_ical_string () == "20191121T092000");
+    assert (test_icaltime.get_tzid () != null);
+    assert (test_icaltime.get_tzid () == system_tz.get_tzid ());
+
     // Test explicit timezone
-    
+    date = new DateTime.utc (2019, 11, 21, 9, 20, 0);
+    time = new DateTime.utc (2019, 11, 21, 9, 20, 0);
+    var tz = ICal.Timezone.get_builtin_timezone ("Asia/Tokyo");
+    debug (tz.get_tzid ());
+    test_icaltime = Calendar.Util.datetimes_to_icaltime (date, time, tz);
+    assert (test_icaltime.as_ical_string () == "20191121T092000");
+    assert (test_icaltime.get_tzid () != null);
+    assert (test_icaltime.get_tzid () == "Asia/Tokyo" || test_icaltime.get_tzid () == "/freeassociation.sourceforge.net/Asia/Tokyo");
+
     // Test that date and time are independent
+    date = new DateTime.utc (2019, 11, 21, 0, 0, 0);
+    time = new DateTime.utc (2397, 4, 13, 9, 20, 0);
+    tz = ICal.Timezone.get_builtin_timezone ("Asia/Tokyo");
+    debug (tz.get_tzid ());
+    test_icaltime = Calendar.Util.datetimes_to_icaltime (date, time, tz);
+    assert (test_icaltime.as_ical_string () == "20191121T092000");
+    assert (test_icaltime.get_tzid () != null);
+    assert (test_icaltime.get_tzid () == "Asia/Tokyo" || test_icaltime.get_tzid () == "/freeassociation.sourceforge.net/Asia/Tokyo");
 }
 
 
@@ -308,16 +339,6 @@ void add_timezone_tests () {
     Test.add_func ("/Utils/TimeZone/hour_offset", test_hour_offset);
     Test.add_func ("/Utils/TimeZone/half_hour_offset", test_half_hour_offset);
     Test.add_func ("/Utils/TimeZone/45_minute_offset", test_45_minute_offset);
-    Test.add_func ("/Utils/TimeZone/set_timezone", () => {
-        var test_date = new GLib.DateTime.utc (2019, 11, 21, 9, 20, 0);
-        var iso_string = test_date.format ("%FT%T");
-        var ical = new ICal.Time.from_day_of_year (15, 2021);
-        unowned ICal.Timezone ical_tz = ICal.Timezone.get_builtin_timezone ("America/New_York");
-        assert (ical_tz != null);
-        assert (ical.get_timezone () == null);
-        ical.set_timezone (ical_tz);
-        assert (ical.get_timezone () != null);
-    });
 }
 
 void add_icalcomponent_tests () {
@@ -335,6 +356,7 @@ void add_daterange_tests () {
 void add_datetime_tests () {
     Test.add_func ("/Utils/DateTime/is_all_day_false", test_is_all_day_false);
     Test.add_func ("/Utils/DateTime/is_all_day_true", test_is_all_day_true);
+    Test.add_func ("/Utils/DateTime/datetimes_to_icaltime", test_datetimes_to_icaltime);
 }
 
 int main (string[] args) {
@@ -346,9 +368,9 @@ int main (string[] args) {
 
     Test.init (ref args);
     add_timezone_tests ();
-    add_datetime_tests ();
     add_icalcomponent_tests ();
     add_daterange_tests ();
+    add_datetime_tests ();
     var result = Test.run ();
 
     if (original_tz != null) {
