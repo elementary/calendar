@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 21:02+0000\n"
 "PO-Revision-Date: 2021-03-02 19:19+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Last-Translator: aragossa <ilya.ploskovitov@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
 "Language: ru\n"
@@ -823,9 +823,8 @@ msgid "Open"
 msgstr "Открыть"
 
 #: src/Widgets/SourceRow.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Удалить"
+msgstr "Не удаляемый"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
