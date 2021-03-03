@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 21:02+0000\n"
-"PO-Revision-Date: 2021-03-02 21:54+0000\n"
+"PO-Revision-Date: 2021-03-03 13:07+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
@@ -673,7 +673,7 @@ msgstr "Сохранить"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr "встреча;собрание;собрание;митинг"
+msgstr "встреча;собрание;митинг"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
