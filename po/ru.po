@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 21:02+0000\n"
-"PO-Revision-Date: 2021-03-03 13:07+0000\n"
+"PO-Revision-Date: 2021-03-03 16:53+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
@@ -772,7 +772,7 @@ msgstr "календарь.ics"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
-msgstr "Изменить…"
+msgstr "Редактировать…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
