@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 21:02+0000\n"
-"PO-Revision-Date: 2021-03-02 21:54+0000\n"
+"PO-Revision-Date: 2021-03-03 13:07+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/extra/"
 "ru/>\n"
@@ -42,11 +42,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "New Features:"
-msgstr "Новые функции:"
+msgstr "Новые возможности:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
+msgstr "В контекстное меню добавлен параметр «Дублировать...»"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:38
@@ -54,11 +54,12 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:56
 #: data/io.elementary.calendar.appdata.xml.in:65
 msgid "Minor Updates:"
-msgstr ""
+msgstr "Незначительные обновления:"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr ""
+"Исправлена проблема, когда новые события могли дважды появляться в Календаре"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid ""
