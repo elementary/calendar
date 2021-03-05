@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 21:02+0000\n"
-"PO-Revision-Date: 2021-03-03 13:07+0000\n"
+"PO-Revision-Date: 2021-03-05 18:12+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/extra/"
 "ru/>\n"
@@ -66,6 +66,8 @@ msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
+"Пометка «Сделать календарём по умолчанию» теперь правильно устанавливается "
+"при внесении изменений в календарь"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
 #: data/io.elementary.calendar.appdata.xml.in:41
@@ -75,31 +77,31 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:90
 #: data/io.elementary.calendar.appdata.xml.in:102
 msgid "Updated translations"
-msgstr ""
+msgstr "Обновлены переводы"
 
 #: data/io.elementary.calendar.appdata.xml.in:32
 msgid "Improvements:"
-msgstr ""
+msgstr "Улучшения:"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Allow modification of recurring events"
-msgstr ""
+msgstr "Разрешено изменять повторяющиеся события"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "Улучшена обработка первого дня недели"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 msgid "Fix timezone errors with all-day events"
-msgstr ""
+msgstr "Исправлены ошибки часовых поясов для событий на целый день"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
+msgstr "Неизменный размер боковой панели, после изменения размера окна"
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fix issues with time zones not being recognized"
-msgstr ""
+msgstr "Исправление проблемы не распознавания часовых поясов"
 
 #: data/io.elementary.calendar.appdata.xml.in:58
 msgid "Fix several issues with adding and removing monthly recurring events"
