@@ -191,8 +191,26 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
         } else {
-            ICal.Time dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, from_time_picker.time);
-            ICal.Time dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date, to_time_picker.time);
+            var dt_start_local = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, from_time_picker.time);
+            var dt_end_local = Calendar.Util.datetimes_to_icaltime (to_date_picker.date, to_time_picker.time);
+
+            // Convert times from displayed local time to the component's
+            // original timezone.
+            var tz_start = comp.get_dtstart ().get_timezone ();
+            var tz_end = comp.get_dtend ().get_timezone ();
+            var dt_start = dt_start_local.convert_to_zone (tz_start);
+            var dt_end = dt_end_local.convert_to_zone (tz_end);
+            // If converting to floating timezones, then use the displayed time.
+            // The time is modified by libical when converting to floating, so
+            // work around that by using set_timezone instead of converting.
+            if (tz_start == null) {
+                dt_start = dt_start_local;
+                dt_start.set_timezone (tz_start);
+            }
+            if (tz_end == null) {
+                dt_end = dt_end_local;
+                dt_end.set_timezone (tz_end);
+            }
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
