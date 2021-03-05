@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 21:02+0000\n"
-"PO-Revision-Date: 2019-06-09 04:20+0000\n"
-"Last-Translator: Khomyak-sibiryak <owalski@protonmail.com>\n"
+"PO-Revision-Date: 2021-03-03 16:53+0000\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
@@ -31,11 +31,11 @@ msgstr "Пользователь:"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr "user.name"
+msgstr "имя.пользователя"
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr "E-Mail:"
+msgstr "Эл. почта:"
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
@@ -63,7 +63,7 @@ msgstr "CalDAV"
 
 #: plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr "URL:"
+msgstr "URL-адрес:"
 
 #: plugins/CalDAV/CalDAVBackend.vala:95
 msgid "Use a secure connection"
@@ -77,7 +77,8 @@ msgstr "Сервер обрабатывает приглашения на вст
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr "При выборе даты с событиями они будут показаны здесь."
+msgstr ""
+"Ваши грядущие события появятся здесь когда вы выберете дату с событиями."
 
 #: src/AgendaView.vala:140
 msgid "During the day"
@@ -170,10 +171,9 @@ msgstr "Напоминания"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr "Повтор"
+msgstr "Повторить"
 
 #: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
@@ -673,93 +673,93 @@ msgstr "Сохранить"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr ""
+msgstr "встреча;собрание;митинг"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "день рождения;годовщина;юбилей;вечеринка"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "позвонить;звонить;телефон;звонок"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "бар;коктейль;напитки;выпивка;вечеринка"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "автомобиль;ехать;вождение;путешествие;водить;машина;авто;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr ""
+msgstr "полет;аэропорт;самолет;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr ""
+msgstr "завтрак;обед;ужин;блюдо;пикник;шашлык;пельмени;блины"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "суд;судья;прокурор;адвокат;юрист;договор"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie;film"
-msgstr ""
+msgstr "кино;фильм"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr ""
+msgstr "свадьба;замужество;женитьба"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:312
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:315
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:327
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:336
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s в %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:339
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -772,11 +772,11 @@ msgstr "календарь.ics"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
-msgstr "Изменить…"
+msgstr "Редактировать…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Дублировать…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -811,23 +811,20 @@ msgid "Add New Calendar…"
 msgstr "Добавить новый календарь…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Экспортировать календарь…"
+msgstr "Импортировать файл iCalendar…"
 
 #: src/Widgets/SourcePopover.vala:94
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Выберите календарь для импорта"
+msgstr "Выберите ICS файл для импорта"
 
 #: src/Widgets/SourcePopover.vala:97
 msgid "Open"
-msgstr ""
+msgstr "Открыть"
 
 #: src/Widgets/SourceRow.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Удалить"
+msgstr "Несъемный"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
@@ -838,9 +835,9 @@ msgid "Undo"
 msgstr "Возврат"
 
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Календарь «%s» удалён."
+msgstr "\"%s\" удалено"
 
 #, fuzzy
 #~ msgid "Search Calendars"
