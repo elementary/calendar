@@ -364,6 +364,9 @@ int main (string[] args) {
     var original_tz = Environment.get_variable ("TZ");
     Environment.set_variable ("TZ", "America/Chicago", true);
     print ("Setting $TZ environment variable: " + Environment.get_variable ("TZ") + "\n");
+    ICal.Timezone tz = ICal.Timezone.get_builtin_timezone ("America/Chicago");
+    Calendar.TimeManager.setup_test (tz);
+    print ("Setting up TimeManager with system timezone America/Chicago");
     print ("Starting utils tests:\n");
 
     Test.init (ref args);
