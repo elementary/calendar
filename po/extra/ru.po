@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 21:02+0000\n"
-"PO-Revision-Date: 2021-03-05 18:12+0000\n"
+"PO-Revision-Date: 2021-03-08 09:05+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/extra/"
 "ru/>\n"
@@ -106,14 +106,16 @@ msgstr "Исправление проблемы не распознавания 
 #: data/io.elementary.calendar.appdata.xml.in:58
 msgid "Fix several issues with adding and removing monthly recurring events"
 msgstr ""
+"Исправлено несколько проблем с добавлением и удалением ежемесячных "
+"повторяющихся событий"
 
 #: data/io.elementary.calendar.appdata.xml.in:67
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "Правильное сохранение напоминаний о событиях"
 
 #: data/io.elementary.calendar.appdata.xml.in:68
 msgid "Ellipsize event participant details if necessary"
-msgstr ""
+msgstr "При необходимости, сверните данные об участнике события"
 
 #: data/io.elementary.calendar.appdata.xml.in:69
 msgid "Fix unwanted rescheduling when editing event title"
