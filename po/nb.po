@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
 "PO-Revision-Date: 2021-01-21 18:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -140,7 +140,7 @@ msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Hendelse fra %d vil bli flettet med denne kalenderen:"
 msgstr[1] "Hendelser fra %d vil bli flettet med denne kalenderen:"
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "Importer"
 
@@ -269,68 +269,68 @@ msgstr "Ingen påminnelser"
 msgid "Add Reminder"
 msgstr "Legg til påminnelse"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "At time of event"
 msgstr "Ved hendelse"
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 #, fuzzy
 msgid "1 minute before"
 msgstr "1 minutt"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 msgid "5 minutes before"
 msgstr "5 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 msgid "10 minutes before"
 msgstr "10 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 msgid "15 minutes before"
 msgstr "15 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 msgid "20 minutes before"
 msgstr "20 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 msgid "25 minutes before"
 msgstr "25 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 msgid "30 minutes before"
 msgstr "30 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 msgid "45 minutes before"
 msgstr "45 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 msgid "1 hour before"
 msgstr "1 time før"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 msgid "2 hours before"
 msgstr "2 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 msgid "3 hours before"
 msgstr "3 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 msgid "12 hours before"
 msgstr "12 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 msgid "24 hours before"
 msgstr "24 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 msgid "2 days before"
 msgstr "2 dager før"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 msgid "1 week before"
 msgstr "1 uke før"
 
@@ -705,7 +705,8 @@ msgstr "fly;lufthavn;flyplass"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr "frokost;brunsj;middag;lunsj;aftensmat;restaurant;burger;måltid;grilling"
+msgstr ""
+"frokost;brunsj;middag;lunsj;aftensmat;restaurant;burger;måltid;grilling"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -756,19 +757,6 @@ msgstr "%s klokken %s"
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
-
-#: src/Widgets/CalendarButton.vala:72
-#, fuzzy
-msgid "Search Calendars"
-msgstr "Søk i kalendere"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr "Resultatløst"
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr "Prøv å endre søket."
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -850,6 +838,16 @@ msgstr "Angre"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" fjernet"
+
+#, fuzzy
+#~ msgid "Search Calendars"
+#~ msgstr "Søk i kalendere"
+
+#~ msgid "No Results"
+#~ msgstr "Resultatløst"
+
+#~ msgid "Try changing search terms."
+#~ msgstr "Prøv å endre søket."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e %Y"
