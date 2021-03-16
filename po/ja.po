@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 21:02+0000\n"
-"PO-Revision-Date: 2021-02-18 10:00+0000\n"
+"PO-Revision-Date: 2021-03-16 07:00+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -135,7 +135,7 @@ msgstr "\"%s\" にある予定は、以下のカレンダーと統合されま�
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "%d 個のファイルにある予定は、以下のカレンダーと統合されます:"
+msgstr[0] "%d個のファイルにある予定は、以下のカレンダーと統合されます:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
