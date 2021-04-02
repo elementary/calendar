@@ -175,7 +175,7 @@
   <url type="homepage">https://elementary.io/</url>
   <url type="bugtracker">https://github.com/elementary/calendar/issues</url>
   <url type="donation">https://elementary.io/get-involved#funding</url>
-  <url type="help">https://github.com/elementary/calendar/discussions/categories/q-a/url>
+  <url type="help">https://github.com/elementary/calendar/discussions/categories/q-a</url>
   <url type="translate">https://l10n.elementary.io/projects/calendar</url>
   <update_contact>contact_at_elementary.io</update_contact>
   <screenshots>
