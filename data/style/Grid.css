@@ -56,9 +56,14 @@
 }
 
 #today #date {
-    background-color: alpha (@accent_color, 0.15);
-    color: @accent_color;
+    background: @selected_bg_color;
+    color: @selected_fg_color;
     font-weight: 700;
+}
+
+#today #date:backdrop {
+    background-color: @theme_unfocused_selected_bg_color;
+    color: @theme_unfocused_selected_fg_color;
 }
 
 #today:selected #date {

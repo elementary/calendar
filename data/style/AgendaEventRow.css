@@ -5,6 +5,11 @@
     padding: 6px;
 }
 
+.event:backdrop {
+    background-color: @theme_unfocused_selected_bg_color;
+    color: @theme_unfocused_selected_fg_color;
+}
+
 .cell .event {
     padding: 3px 6px;
     margin-bottom: 3px;
