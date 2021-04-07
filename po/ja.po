@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 21:02+0000\n"
-"PO-Revision-Date: 2021-02-18 10:00+0000\n"
+"PO-Revision-Date: 2021-03-27 07:44+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -135,7 +135,7 @@ msgstr "\"%s\" にある予定は、以下のカレンダーと統合されま�
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "%d 個のファイルにある予定は、以下のカレンダーと統合されます:"
+msgstr[0] "%d個のファイルにある予定は、以下のカレンダーと統合されます:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -271,63 +271,63 @@ msgstr "予定の時刻"
 
 #: src/EventEdition/ReminderPanel.vala:193
 msgid "1 minute before"
-msgstr "1 分前"
+msgstr "1分前"
 
 #: src/EventEdition/ReminderPanel.vala:194
 msgid "5 minutes before"
-msgstr "5 分前"
+msgstr "5分前"
 
 #: src/EventEdition/ReminderPanel.vala:195
 msgid "10 minutes before"
-msgstr "10 分前"
+msgstr "10分前"
 
 #: src/EventEdition/ReminderPanel.vala:196
 msgid "15 minutes before"
-msgstr "15 分前"
+msgstr "15分前"
 
 #: src/EventEdition/ReminderPanel.vala:197
 msgid "20 minutes before"
-msgstr "20 分前"
+msgstr "20分前"
 
 #: src/EventEdition/ReminderPanel.vala:198
 msgid "25 minutes before"
-msgstr "25 分前"
+msgstr "25分前"
 
 #: src/EventEdition/ReminderPanel.vala:199
 msgid "30 minutes before"
-msgstr "30 分前"
+msgstr "30分前"
 
 #: src/EventEdition/ReminderPanel.vala:200
 msgid "45 minutes before"
-msgstr "45 分前"
+msgstr "45分前"
 
 #: src/EventEdition/ReminderPanel.vala:201
 msgid "1 hour before"
-msgstr "1 時間前"
+msgstr "1時間前"
 
 #: src/EventEdition/ReminderPanel.vala:202
 msgid "2 hours before"
-msgstr "2 時間前"
+msgstr "2時間前"
 
 #: src/EventEdition/ReminderPanel.vala:203
 msgid "3 hours before"
-msgstr "3 時間前"
+msgstr "3時間前"
 
 #: src/EventEdition/ReminderPanel.vala:204
 msgid "12 hours before"
-msgstr "12 時間前"
+msgstr "12時間前"
 
 #: src/EventEdition/ReminderPanel.vala:205
 msgid "24 hours before"
-msgstr "24 時間前"
+msgstr "24時間前"
 
 #: src/EventEdition/ReminderPanel.vala:206
 msgid "2 days before"
-msgstr "2 日前"
+msgstr "2日前"
 
 #: src/EventEdition/ReminderPanel.vala:207
 msgid "1 week before"
-msgstr "1 週間前"
+msgstr "1週間前"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
@@ -620,7 +620,7 @@ msgstr "週番号を表示"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "あと %u …"
+msgstr "ほか%u件…"
 
 #: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
