@@ -301,15 +301,15 @@ void test_datetimes_to_icaltime () {
 
     // Check that system_timezone is what we want
     var system_tz = Calendar.TimeManager.get_default ().system_timezone;
-    debug (@"System timezone: $(system_tz.get_tzid ())");
-    // assert (system_tz.get_tzid () == "America/Chicago");
+    var system_tzid = system_tz.get_tzid ();
+    assert (system_tzid == "America/Chicago" | system_tzid == "/freeassociation.sourceforge.net/America/Chicago");
     // Test implicit timezone
     date = new DateTime.utc (2019, 11, 21, 9, 20, 0);
     time = new DateTime.utc (2019, 11, 21, 9, 20, 0);
     test_icaltime = Calendar.Util.datetimes_to_icaltime (date, time);
     assert (test_icaltime.as_ical_string () == "20191121T092000");
     assert (test_icaltime.get_tzid () != null);
-    assert (test_icaltime.get_tzid () == system_tz.get_tzid ());
+    assert (test_icaltime.get_tzid () == system_tzid );
 
     // Test explicit timezone
     date = new DateTime.utc (2019, 11, 21, 9, 20, 0);
