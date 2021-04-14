@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
 "PO-Revision-Date: 2019-01-08 18:28+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/calendar/"
@@ -138,7 +138,7 @@ msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "이벤트 \"%d\"개 일정이 이 달력에 합쳐집니다:"
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "불러오기"
 
@@ -267,67 +267,67 @@ msgstr "알림 없음"
 msgid "Add Reminder"
 msgstr "알림 추가"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "At time of event"
 msgstr "이벤트 시각"
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 msgid "1 minute before"
 msgstr "1 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 msgid "5 minutes before"
 msgstr "5 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 msgid "10 minutes before"
 msgstr "10 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 msgid "15 minutes before"
 msgstr "15 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 msgid "20 minutes before"
 msgstr "20 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 msgid "25 minutes before"
 msgstr "25 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 msgid "30 minutes before"
 msgstr "30 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 msgid "45 minutes before"
 msgstr "45 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 msgid "1 hour before"
 msgstr "1 시간 전"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 msgid "2 hours before"
 msgstr "2 시간 전"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 msgid "3 hours before"
 msgstr "3 시간 전"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 msgid "12 hours before"
 msgstr "12 시간 전"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 msgid "24 hours before"
 msgstr "24 시간 전"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 msgid "2 days before"
 msgstr "2 일 전"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 msgid "1 week before"
 msgstr "1 주 전"
 
@@ -749,18 +749,6 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
-#: src/Widgets/CalendarButton.vala:72
-msgid "Search Calendars"
-msgstr "달력 검색"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr "결과 없음"
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr "검색어를 바꿔보세요."
-
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -840,6 +828,15 @@ msgstr "실행 취소"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" 지움"
+
+#~ msgid "Search Calendars"
+#~ msgstr "달력 검색"
+
+#~ msgid "No Results"
+#~ msgstr "결과 없음"
+
+#~ msgid "Try changing search terms."
+#~ msgstr "검색어를 바꿔보세요."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%Y년 %B %e일"

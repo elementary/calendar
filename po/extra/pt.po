@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2020-11-12 02:15+0000\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
+"PO-Revision-Date: 2021-02-06 21:32+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "extra/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -106,7 +106,7 @@ msgstr "Corrige problemas com fusos horários não reconhecidos"
 #: data/io.elementary.calendar.appdata.xml.in:58
 msgid "Fix several issues with adding and removing monthly recurring events"
 msgstr ""
-"Corrige vários problemas com com a adição e remoção de eventos recorrentes "
+"Corrige vários problemas com a adição e remoção de eventos recorrentes "
 "mensais"
 
 #: data/io.elementary.calendar.appdata.xml.in:67

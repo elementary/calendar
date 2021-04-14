@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
 "PO-Revision-Date: 2015-04-09 12:07+0000\n"
 "Last-Translator: awat <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -143,7 +143,7 @@ msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "وارد نمودن رویداد ها از پوشه %d به تقویم پیشرو"
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "وارد کردن"
 
@@ -272,82 +272,82 @@ msgstr "بدون یادآوری"
 msgid "Add Reminder"
 msgstr "افزودن یادآوری"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 #, fuzzy
 msgid "At time of event"
 msgstr "نام رویداد"
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 #, fuzzy
 msgid "1 minute before"
 msgstr "۱ دقیقه"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 #, fuzzy
 msgid "5 minutes before"
 msgstr "۵ دقیقه"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 #, fuzzy
 msgid "10 minutes before"
 msgstr "۱۰ دقیقه"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 #, fuzzy
 msgid "15 minutes before"
 msgstr "۱۵ دقیقه"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 #, fuzzy
 msgid "20 minutes before"
 msgstr "۲۰ دقیقه"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 #, fuzzy
 msgid "25 minutes before"
 msgstr "۲۵ دقیقه"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 #, fuzzy
 msgid "30 minutes before"
 msgstr "۳۰ دقیقه"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 #, fuzzy
 msgid "45 minutes before"
 msgstr "۴۵ دقیقه"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 #, fuzzy
 msgid "1 hour before"
 msgstr "۱ ساعت"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 #, fuzzy
 msgid "2 hours before"
 msgstr "۲ ساعت"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 #, fuzzy
 msgid "3 hours before"
 msgstr "۳ ساعت"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 #, fuzzy
 msgid "12 hours before"
 msgstr "۱۲ ساعت"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 #, fuzzy
 msgid "24 hours before"
 msgstr "۲۴ ساعت"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 #, fuzzy
 msgid "2 days before"
 msgstr "۲ روز"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 #, fuzzy
 msgid "1 week before"
 msgstr "۱ هفته"
@@ -775,19 +775,6 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/CalendarButton.vala:72
-#, fuzzy
-msgid "Search Calendars"
-msgstr "ایجاد تقویم"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr ""
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr ""
-
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 #, fuzzy
@@ -870,6 +857,10 @@ msgstr "بر‌گرداندن"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "تقویم \"%S\"  پاک شده است"
+
+#, fuzzy
+#~ msgid "Search Calendars"
+#~ msgstr "ایجاد تقویم"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"

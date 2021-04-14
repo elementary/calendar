@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2020-07-16 10:12+0000\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
+"PO-Revision-Date: 2021-02-14 14:35+0000\n"
+"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "calendar/extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
 #: data/io.elementary.calendar.desktop.in:4
@@ -40,11 +40,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "New Features:"
-msgstr ""
+msgstr "New Features:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
+msgstr "Add \"Duplicate...\" option to event context menu"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:38
@@ -56,13 +56,15 @@ msgstr "Minor Updates:"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr ""
+msgstr "Fix an issue where new events could appear twice in Calendar"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
+"\"Mark as default calendar\" box is now correctly checked when editing a "
+"calendar"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
 #: data/io.elementary.calendar.appdata.xml.in:41
@@ -76,25 +78,23 @@ msgstr "Updated translations"
 
 #: data/io.elementary.calendar.appdata.xml.in:32
 msgid "Improvements:"
-msgstr ""
+msgstr "Improvements:"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Allow modification of recurring events"
-msgstr "Fix issues with recurring events"
+msgstr "Allow modification of recurring events"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "Improve handling of week start day"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 msgid "Fix timezone errors with all-day events"
-msgstr ""
+msgstr "Fix timezone errors with all-day events"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
+msgstr "Don't resize the sidebar when resizing the window"
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fix issues with time zones not being recognized"
@@ -207,7 +207,7 @@ msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "io.elementary.calendar"
-msgstr ""
+msgstr "io.elementary.calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"

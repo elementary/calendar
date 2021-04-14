@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2020-10-27 07:15+0000\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
+"PO-Revision-Date: 2021-03-27 07:44+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
@@ -129,15 +129,15 @@ msgstr "インポート先のカレンダーを選択"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "\"%s\" にある予定は、以下のカレンダーとマージされます:"
+msgstr "\"%s\" にある予定は、以下のカレンダーと統合されます:"
 
 #: src/ImportDialog.vala:47
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "%d 個のファイルにある予定は、以下のカレンダーとマージされます:"
+msgstr[0] "%d個のファイルにある予定は、以下のカレンダーと統合されます:"
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "インポート"
 
@@ -265,69 +265,69 @@ msgstr "リマインダーがありません"
 msgid "Add Reminder"
 msgstr "リマインダーを追加"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "At time of event"
 msgstr "予定の時刻"
 
-#: src/EventEdition/ReminderPanel.vala:190
-msgid "1 minute before"
-msgstr "1 分前"
-
-#: src/EventEdition/ReminderPanel.vala:191
-msgid "5 minutes before"
-msgstr "5 分前"
-
-#: src/EventEdition/ReminderPanel.vala:192
-msgid "10 minutes before"
-msgstr "10 分前"
-
 #: src/EventEdition/ReminderPanel.vala:193
-msgid "15 minutes before"
-msgstr "15 分前"
+msgid "1 minute before"
+msgstr "1分前"
 
 #: src/EventEdition/ReminderPanel.vala:194
-msgid "20 minutes before"
-msgstr "20 分前"
+msgid "5 minutes before"
+msgstr "5分前"
 
 #: src/EventEdition/ReminderPanel.vala:195
-msgid "25 minutes before"
-msgstr "25 分前"
+msgid "10 minutes before"
+msgstr "10分前"
 
 #: src/EventEdition/ReminderPanel.vala:196
-msgid "30 minutes before"
-msgstr "30 分前"
+msgid "15 minutes before"
+msgstr "15分前"
 
 #: src/EventEdition/ReminderPanel.vala:197
-msgid "45 minutes before"
-msgstr "45 分前"
+msgid "20 minutes before"
+msgstr "20分前"
 
 #: src/EventEdition/ReminderPanel.vala:198
-msgid "1 hour before"
-msgstr "1 時間前"
+msgid "25 minutes before"
+msgstr "25分前"
 
 #: src/EventEdition/ReminderPanel.vala:199
-msgid "2 hours before"
-msgstr "2 時間前"
+msgid "30 minutes before"
+msgstr "30分前"
 
 #: src/EventEdition/ReminderPanel.vala:200
-msgid "3 hours before"
-msgstr "3 時間前"
+msgid "45 minutes before"
+msgstr "45分前"
 
 #: src/EventEdition/ReminderPanel.vala:201
-msgid "12 hours before"
-msgstr "12 時間前"
+msgid "1 hour before"
+msgstr "1時間前"
 
 #: src/EventEdition/ReminderPanel.vala:202
-msgid "24 hours before"
-msgstr "24 時間前"
+msgid "2 hours before"
+msgstr "2時間前"
 
 #: src/EventEdition/ReminderPanel.vala:203
-msgid "2 days before"
-msgstr "2 日前"
+msgid "3 hours before"
+msgstr "3時間前"
 
 #: src/EventEdition/ReminderPanel.vala:204
+msgid "12 hours before"
+msgstr "12時間前"
+
+#: src/EventEdition/ReminderPanel.vala:205
+msgid "24 hours before"
+msgstr "24時間前"
+
+#: src/EventEdition/ReminderPanel.vala:206
+msgid "2 days before"
+msgstr "2日前"
+
+#: src/EventEdition/ReminderPanel.vala:207
 msgid "1 week before"
-msgstr "1 週間前"
+msgstr "1週間前"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
@@ -620,7 +620,7 @@ msgstr "週番号を表示"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "あと %u …"
+msgstr "ほか%u件…"
 
 #: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
@@ -751,18 +751,6 @@ msgstr "%s %s"
 msgid "%s, %s – %s"
 msgstr "%s %s – %s"
 
-#: src/Widgets/CalendarButton.vala:72
-msgid "Search Calendars"
-msgstr "カレンダーを検索"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr "検索結果はありません"
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr "検索用語を変更してみてください。"
-
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -840,6 +828,15 @@ msgstr "元に戻す"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" は削除されました"
+
+#~ msgid "Search Calendars"
+#~ msgstr "カレンダーを検索"
+
+#~ msgid "No Results"
+#~ msgstr "検索結果はありません"
+
+#~ msgid "Try changing search terms."
+#~ msgstr "検索用語を変更してみてください。"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%Y年%B%e日"

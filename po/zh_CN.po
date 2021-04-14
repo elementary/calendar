@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"POT-Creation-Date: 2021-02-16 21:02+0000\n"
 "PO-Revision-Date: 2021-02-03 07:09+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -137,7 +137,7 @@ msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "%d 文件中的事件将与此日历合并："
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "导入"
 
@@ -265,67 +265,67 @@ msgstr "无提醒"
 msgid "Add Reminder"
 msgstr "添加提醒"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "At time of event"
 msgstr "事件开始时"
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 msgid "1 minute before"
 msgstr "提前 1 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 msgid "5 minutes before"
 msgstr "提前 5 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 msgid "10 minutes before"
 msgstr "提前 10 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 msgid "15 minutes before"
 msgstr "提前 15 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 msgid "20 minutes before"
 msgstr "提前 20 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 msgid "25 minutes before"
 msgstr "提前 25 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 msgid "30 minutes before"
 msgstr "提前 30 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 msgid "45 minutes before"
 msgstr "提前 45 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 msgid "1 hour before"
 msgstr "提前 1 小时"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 msgid "2 hours before"
 msgstr "提前 2 小时"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 msgid "3 hours before"
 msgstr "提前 3 小时"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 msgid "12 hours before"
 msgstr "提前 12 小时"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 msgid "24 hours before"
 msgstr "提前 24 小时"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 msgid "2 days before"
 msgstr "提前 2 天"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 msgid "1 week before"
 msgstr "提前 1 周"
 
@@ -747,18 +747,6 @@ msgstr "%s %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
-#: src/Widgets/CalendarButton.vala:72
-msgid "Search Calendars"
-msgstr "搜索日历"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr "无结果"
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr "尝试更改搜索内容。"
-
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -836,6 +824,15 @@ msgstr "撤销"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "日历“%s”已删除"
+
+#~ msgid "Search Calendars"
+#~ msgstr "搜索日历"
+
+#~ msgid "No Results"
+#~ msgstr "无结果"
+
+#~ msgid "Try changing search terms."
+#~ msgstr "尝试更改搜索内容。"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%Y年%b%e日"
