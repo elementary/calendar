@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 21:02+0000\n"
+"POT-Creation-Date: 2021-04-15 00:20+0000\n"
 "PO-Revision-Date: 2021-03-21 17:54+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -705,8 +705,8 @@ msgstr "Flug;Flughafen;airport"
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
-"Frühstück;Brunch;Mittagessen;Kaffeetrinken;Abendessen;Steakhouse;Burger;Essen"
-";Grillen;dinner;lunch"
+"Frühstück;Brunch;Mittagessen;Kaffeetrinken;Abendessen;Steakhouse;Burger;"
+"Essen;Grillen;dinner;lunch"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
