@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 21:02+0000\n"
+"POT-Creation-Date: 2021-04-15 00:20+0000\n"
 "PO-Revision-Date: 2019-07-17 01:30+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/calendar/extra/ko/"
@@ -202,7 +202,9 @@ msgid "Fixes exporting, importing and printing calendars."
 msgstr "달력 내보내기, 가져오기 및 인쇄 수정."
 
 #: data/io.elementary.calendar.appdata.xml.in:174
-msgid "elementary LLC."
+#, fuzzy
+#| msgid "elementary LLC."
+msgid "elementary, Inc."
 msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
