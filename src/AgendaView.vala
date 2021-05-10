@@ -180,11 +180,11 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     private int compare_rows (AgendaEventRow row1, AgendaEventRow row2) {
         unowned ICal.Component ical_event1 = row1.calevent.get_icalcomponent ();
         DateTime start_date1, end_date1;
-        Calendar.Util.icalcomponent_get_local_datetimes (ical_event1, out start_date1, out end_date1);
+        Calendar.Util.icalcomponent_get_local_datetimes_new (ical_event1, out start_date1, out end_date1);
 
         unowned ICal.Component ical_event2 = row2.calevent.get_icalcomponent ();
         DateTime start_date2, end_date2;
-        Calendar.Util.icalcomponent_get_local_datetimes (ical_event2, out start_date2, out end_date2);
+        Calendar.Util.icalcomponent_get_local_datetimes_new (ical_event2, out start_date2, out end_date2);
 
         var comp = start_date1.compare (start_date2);
         if (comp != 0) {

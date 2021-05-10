@@ -88,7 +88,7 @@ namespace Calendar.Util {
      * Converts the given ICal.Time to a DateTime.
      * XXX : Track next versions of evolution in order to convert ICal.Timezone to GLib.TimeZone with a dedicated function…
      */
-    public GLib.DateTime icaltime_to_datetime (ICal.Time date) {
+    public GLib.DateTime icaltime_to_datetime1 (ICal.Time date) {
 #if E_CAL_2_0
         int year, month, day, hour, minute, second;
         date.get_date (out year, out month, out day);
@@ -99,5 +99,31 @@ namespace Calendar.Util {
         return new GLib.DateTime (icaltime_get_timezone (date), date.year, date.month,
             date.day, date.hour, date.minute, date.second);
 #endif
+    }
+
+    /**
+     * Converts the given ICal.Time to a DateTime, represented in the system
+     * timezone.
+     *
+     * All timezone information is lost.
+     */
+    public GLib.DateTime icaltime_to_local_datetime (ICal.Time date) {
+        assert (!date.is_null_time ());
+        var converted = icaltime_convert_to_local (date);
+#if E_CAL_2_0
+        int year, month, day, hour, minute, second;
+        converted.get_date (out year, out month, out day);
+        converted.get_time (out hour, out minute, out second);
+        return new GLib.DateTime.local (year, month,
+            day, hour, minute, second);
+#else
+        return new GLib.DateTime.local (date.year, date.month,
+            date.day, date.hour, date.minute, date.second);
+#endif
+    }
+
+    public ICal.Time icaltime_convert_to_local (ICal.Time time) {
+        var system_tz = Calendar.TimeManager.get_default ().system_timezone;
+        return time.convert_to_zone (system_tz);
     }
 }
