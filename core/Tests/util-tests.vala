@@ -96,22 +96,6 @@ void test_45_minute_offset () {
     test_sample_offsets ("Asia/Kathmandu", "+0545");
 }
 
-/** Test that we properly identify all-day events */
-void test_is_all_day_true () {
-    var str = "BEGIN:VEVENT\n" +
-              "SUMMARY:Stub event\n" +
-              "UID:example@uid\n" +
-              "DTSTART;TZID=America/Chicago:20191121\n" +
-              "DTEND;TZID=America/Chicago:20191122\n" +
-              "END:VEVENT\n";
-    var event = new ICal.Component.from_string (str);
-    assert (event.get_dtstart ().is_date ());
-    assert (event.get_dtend ().is_date ());
-
-    GLib.DateTime dtstart, dtend;
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out dtstart, out dtend);
-    assert (Calendar.Util.datetime_is_all_day (dtstart, dtend));
-}
 
 /*
  *
@@ -454,47 +438,6 @@ void test_is_all_day_true () {
     assert (Calendar.Util.datetime_is_all_day (dtstart, dtend));
 }
 
-void test_datetimes_to_icaltime () {
-    // Test floating timezone
-    var date = new DateTime.utc (2019, 11, 21, 9, 20, 0);
-    var time = new DateTime.utc (2019, 11, 21, 9, 20, 0);
-    var test_icaltime = Calendar.Util.datetimes_to_icaltime (date, time, null);
-    assert (test_icaltime.as_ical_string () == "20191121T092000");
-    assert (test_icaltime.get_tzid () == null);
-
-    // Check that system_timezone is what we want
-    var system_tz = Calendar.TimeManager.get_default ().system_timezone;
-    var system_tzid = system_tz.get_tzid ();
-    assert (system_tzid == "America/Chicago" | system_tzid == "/freeassociation.sourceforge.net/America/Chicago");
-    // Test implicit timezone
-    date = new DateTime.utc (2019, 11, 21, 9, 20, 0);
-    time = new DateTime.utc (2019, 11, 21, 9, 20, 0);
-    test_icaltime = Calendar.Util.datetimes_to_icaltime (date, time);
-    assert (test_icaltime.as_ical_string () == "20191121T092000");
-    assert (test_icaltime.get_tzid () != null);
-    assert (test_icaltime.get_tzid () == system_tzid );
-
-    // Test explicit timezone
-    date = new DateTime.utc (2019, 11, 21, 9, 20, 0);
-    time = new DateTime.utc (2019, 11, 21, 9, 20, 0);
-    var tz = ICal.Timezone.get_builtin_timezone ("Asia/Tokyo");
-    debug (tz.get_tzid ());
-    test_icaltime = Calendar.Util.datetimes_to_icaltime (date, time, tz);
-    assert (test_icaltime.as_ical_string () == "20191121T092000");
-    assert (test_icaltime.get_tzid () != null);
-    assert (test_icaltime.get_tzid () == "Asia/Tokyo" || test_icaltime.get_tzid () == "/freeassociation.sourceforge.net/Asia/Tokyo");
-
-    // Test that date and time are independent
-    date = new DateTime.utc (2019, 11, 21, 0, 0, 0);
-    time = new DateTime.utc (2397, 4, 13, 9, 20, 0);
-    tz = ICal.Timezone.get_builtin_timezone ("Asia/Tokyo");
-    debug (tz.get_tzid ());
-    test_icaltime = Calendar.Util.datetimes_to_icaltime (date, time, tz);
-    assert (test_icaltime.as_ical_string () == "20191121T092000");
-    assert (test_icaltime.get_tzid () != null);
-    assert (test_icaltime.get_tzid () == "Asia/Tokyo" || test_icaltime.get_tzid () == "/freeassociation.sourceforge.net/Asia/Tokyo");
-}
-
 void add_timezone_tests () {
     Test.add_func ("/Utils/TimeZone/floating", test_floating);
     Test.add_func ("/Utils/TimeZone/utc", test_utc);
@@ -526,26 +469,11 @@ void add_datetime_tests () {
     Test.add_func ("/Utils/DateTime/is_all_day_true", test_is_all_day_true);
 }
 
-void check_setup () {
-    // TimeManager is properly set up
-    var tzid = "/freeassociation.sourceforge.net/America/Chicago";
-    assert (Calendar.TimeManager.get_default ().system_timezone.get_tzid () == tzid);
-
-    // GLib sees the right system timezone
-    var time = new DateTime.local (2019, 11, 20, 0, 0, 0);
-    var glib_system_tz = new TimeZone.local ();
-    assert (get_glib_tzid (glib_system_tz, time) == "CST");
-}
-
 int main (string[] args) {
     print ("\n");
     var original_tz = Environment.get_variable ("TZ");
     Environment.set_variable ("TZ", "America/Chicago", true);
     print ("Setting $TZ environment variable: " + Environment.get_variable ("TZ") + "\n");
-    ICal.Timezone tz = ICal.Timezone.get_builtin_timezone ("America/Chicago");
-    Calendar.TimeManager.setup_test (tz);
-    print ("Setting up TimeManager with system timezone America/Chicago\n");
-    check_setup ();
     print ("Starting utils tests:\n");
 
     Test.init (ref args);

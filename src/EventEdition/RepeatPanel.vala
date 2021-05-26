@@ -351,7 +351,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 ends_combobox.active = 0;
             } else {
                 ends_combobox.active = 1;
-                end_datepicker.date = Calendar.Util.icaltime_to_datetime (until);
+                end_datepicker.date = Calendar.Util.icaltime_to_datetime1 (until);
             }
             if (rrule.get_count () > 0) {
                 end_entry.value = rrule.get_count ();
@@ -362,7 +362,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         property = comp.get_first_property (ICal.PropertyKind.EXDATE_PROPERTY);
         while (property != null) {
             var exdate = property.get_exdate ();
-            var exception_grid = new ExceptionGrid (Calendar.Util.icaltime_to_datetime (exdate));
+            var exception_grid = new ExceptionGrid (Calendar.Util.icaltime_to_datetime1 (exdate));
             exception_grid.show_all ();
             exceptions_list.add (exception_grid);
             property = comp.get_next_property (ICal.PropertyKind.EXDATE_PROPERTY);
