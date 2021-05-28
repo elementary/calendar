@@ -17,6 +17,11 @@
  * Boston, MA 02110-1301 USA.
  */
 
+string get_glib_tzid (TimeZone tz, DateTime time) {
+    var interval = tz.find_interval (GLib.TimeType.STANDARD, time.to_unix ());
+    return tz.get_abbreviation (interval);
+}
+
 /*
  *
  * Tests for timezone functions
@@ -38,7 +43,9 @@ void test_timezone_expected (DateTime time, ICal.Time ical,
 
     var util_timezone = Calendar.Util.icaltime_get_timezone (ical);
     var interval = util_timezone.find_interval (GLib.TimeType.STANDARD, time.to_unix ());
-    var abbreviation = util_timezone.get_abbreviation (interval);
+    var abbreviation = get_glib_tzid (util_timezone, time);
+    var abbreviation_old = util_timezone.get_abbreviation (interval);
+    assert (abbreviation == abbreviation_old);
     debug (@"Resulting GLib.TimeZone: $abbreviation");
     assert (abbreviation == asserted_abbreviation);
     assert (util_timezone.get_offset (interval) == asserted_zone.get_offset (interval));
@@ -93,6 +100,91 @@ void test_45_minute_offset () {
 
 /*
  *
+ * Tests for icaltime functions
+ *
+ */
+
+void test_icaltime_convert_to_local () {
+    // Test converting between some timezones
+    var str = "20191121T092000";
+    var tz = ICal.Timezone.get_builtin_timezone ("Asia/Kathmandu");
+    assert (tz != null);
+    var icaltime = new ICal.Time.from_string (str);
+    icaltime.set_timezone (tz);
+    // Converted to America/Chicago should be 20191120T213500
+    var converted = Calendar.Util.icaltime_convert_to_local (icaltime);
+    debug (converted.as_ical_string ());
+    assert (converted.as_ical_string () == "20191120T213500");
+
+    // Test a floating time: should stay the same when converted
+    icaltime = new ICal.Time.from_string (str);
+    assert (icaltime.get_timezone () == null); // Double check that it's floating
+    converted = Calendar.Util.icaltime_convert_to_local (icaltime);
+    debug (converted.as_ical_string ());
+    assert (converted.as_ical_string () == str);
+    assert (converted.get_timezone () != null);
+
+    // Test an all-day event
+    str = "20191121";
+    icaltime = new ICal.Time.from_string (str);
+    assert (icaltime.is_date ());
+    assert (icaltime.get_timezone () == null); // DATE types should be floating
+    converted = Calendar.Util.icaltime_convert_to_local (icaltime);
+    debug (converted.as_ical_string ());
+    assert (converted.as_ical_string () == str);
+    assert (converted.is_date ());
+    assert (converted.get_timezone () == null);
+}
+
+void test_icaltime_to_local_datetime () {
+    // Test converting between some timezones
+    var str = "20191121T092000";
+    var tz = ICal.Timezone.get_builtin_timezone ("Asia/Kathmandu");
+    assert (tz != null);
+    var icaltime = new ICal.Time.from_string (str);
+    icaltime.set_timezone (tz);
+    // Converted to America/Chicago should be 20191120T213500
+    var converted_ical = Calendar.Util.icaltime_convert_to_local (icaltime);
+    var converted_glib = Calendar.Util.icaltime_to_local_datetime (icaltime);
+    debug ("ICalTime converted to local: %s", converted_ical.as_ical_string ());
+    debug ("icaltime_to_local_datetime: %s", converted_glib.format ("%FT%T"));
+    assert (converted_ical.as_ical_string () == "20191120T213500");
+    assert (converted_glib.format ("%FT%T") == "2019-11-20T21:35:00");
+    debug (@"glib timezone: $(get_glib_tzid (converted_glib.get_timezone (), converted_glib))");
+    debug (converted_glib.to_local ().format ("%FT%T"));
+    assert (converted_glib.to_local ().format ("%FT%T") == "2019-11-20T21:35:00");
+
+    // Test a floating time: should stay the same when converted
+    icaltime = new ICal.Time.from_string (str);
+    assert (icaltime.get_timezone () == null); // Double check that it's floating
+    converted_ical = Calendar.Util.icaltime_convert_to_local (icaltime);
+    converted_glib = Calendar.Util.icaltime_to_local_datetime (icaltime);
+    debug ("Floating ICalTime converted to local: %s", converted_ical.as_ical_string ());
+    debug ("Floating icaltime_to_local_datetime: %s", converted_glib.format ("%FT%T"));
+    assert (converted_ical.as_ical_string () == str);
+    assert (converted_ical.get_timezone () != null);
+    assert (converted_glib.format ("%FT%T") == "2019-11-21T09:20:00");
+    assert (converted_glib.to_local ().format ("%FT%T") == "2019-11-21T09:20:00");
+
+    // Test an all-day event
+    str = "20191121";
+    icaltime = new ICal.Time.from_string (str);
+    assert (icaltime.is_date ());
+    assert (icaltime.get_timezone () == null); // DATE types should be floating
+    converted_ical = Calendar.Util.icaltime_convert_to_local (icaltime);
+    converted_glib = Calendar.Util.icaltime_to_local_datetime (icaltime);
+    debug ("DATE type ICalTime converted to local: %s", converted_ical.as_ical_string ());
+    debug ("DATE type icaltime_to_local_datetime: %s", converted_glib.format ("%FT%T"));
+    assert (converted_ical.as_ical_string () == str);
+    assert (converted_ical.is_date ());
+    assert (converted_ical.get_timezone () == null);
+    assert (converted_glib.format ("%FT%T") == "2019-11-21T00:00:00");
+    // assert (converted_glib.get_timezone () == null)
+    assert (converted_glib.to_local ().format ("%FT%T") == "2019-11-21T00:00:00");
+}
+
+/*
+ *
  * Tests for icalcomponent functions
  *
  */
@@ -110,14 +202,15 @@ void test_datetimes_all_day () {
     var dtstart = event.get_dtstart ();
     assert (dtstart.is_date ());
 
-    var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
-    var abbreviation = util_timezone.get_abbreviation (0);
-    debug (@"Resulting timezone: $abbreviation");
-    // assert (abbreviation == "CST");
-
     DateTime g_dtstart,g_dtend;
     Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
-    debug (@"Start: $g_dtstart; End: $g_dtend");
+
+    // Check the timezone
+    var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
+    var abbreviation = get_glib_tzid (util_timezone, g_dtstart);
+    debug (@"Resulting timezone: $abbreviation");
+    assert (abbreviation == "CST");
+
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-21T00:00:00-0600");
     assert (g_dtend.format ("%FT%T%z") == "2019-11-22T00:00:00-0600");
 }
@@ -136,13 +229,15 @@ void test_datetimes_not_all_day_local () {
     var dtstart = event.get_dtstart ();
     assert (!dtstart.is_date ());
 
-    var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
-    var abbreviation = util_timezone.get_abbreviation (0);
-    debug (@"Resulting timezone: $abbreviation");
-    // assert (abbreviation == "UTC");
-
     DateTime g_dtstart,g_dtend;
     Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+
+    // Check the timezone
+    var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
+    var abbreviation = get_glib_tzid (util_timezone, g_dtstart);
+    debug (@"Resulting timezone: $abbreviation");
+    assert (abbreviation == "CST");
+
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-21T04:20:00-0600");
     assert (g_dtend.format ("%FT%T%z") == "2019-11-22T04:20:00-0600");
 }
@@ -160,15 +255,71 @@ void test_datetimes_not_all_day_converted () {
     var dtstart = event.get_dtstart ();
     assert (!dtstart.is_date ());
 
-    var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
-    var abbreviation = util_timezone.get_abbreviation (0);
-    debug (@"Resulting timezone: $abbreviation");
-
     DateTime g_dtstart,g_dtend;
     Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
-    debug (g_dtstart.format ("%FT%T%z"));
+
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-20T16:35:00-0600");
     assert (g_dtend.format ("%FT%T%z") == "2019-11-21T16:35:00-0600");
+}
+
+void test_local_datetimes () {
+    // DATE-type times: should start and end at midnight
+    var str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=Asia/Kathmandu:20191121\n" +
+              "DTEND;TZID=Asia/Kathmandu:20191122\n" +
+              "END:VEVENT\n";
+    var event = new ICal.Component.from_string (str);
+    var dtstart = event.get_dtstart ();
+    assert (dtstart.is_date ());
+    DateTime g_dtstart,g_dtend;
+    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+    debug (@"Start: $g_dtstart; End: $g_dtend");
+    assert (Calendar.Util.datetime_is_all_day (g_dtstart, g_dtend));
+    assert (g_dtstart.format ("%FT%T%z") == "2019-11-21T00:00:00-0600");
+    assert (g_dtend.format ("%FT%T%z") == "2019-11-22T00:00:00-0600");
+
+    // DATE-TIME-type times: should be converted to local timezone
+    str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=Asia/Kathmandu:20191121T092000\n" +
+              "DTEND;TZID=Asia/Kathmandu:20191122T183500\n" +
+              "END:VEVENT\n";
+    event = new ICal.Component.from_string (str);
+    dtstart = event.get_dtstart ();
+    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+    debug (@"Start: $g_dtstart; End: $g_dtend");
+    assert (g_dtstart.format ("%FT%T%z") == "2019-11-20T21:35:00-0600");
+    assert (g_dtend.format ("%FT%T%z") == "2019-11-22T06:50:00-0600");
+
+    // No DTEND field for DATE-type DTSTART: implicitly 1 day long
+    str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=Asia/Kathmandu:20191121\n" +
+              "END:VEVENT\n";
+    event = new ICal.Component.from_string (str);
+    dtstart = event.get_dtstart ();
+    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+    debug (@"Start: $g_dtstart; End: $g_dtend");
+    assert (Calendar.Util.datetime_is_all_day (g_dtstart, g_dtend));
+    assert (g_dtstart.format ("%FT%T%z") == "2019-11-21T00:00:00-0600");
+    assert (g_dtend.format ("%FT%T%z") == "2019-11-22T00:00:00-0600");
+
+    // No DTEND field for non-DATE-type DTSTART: ends at same time as start
+    str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=Asia/Kathmandu:20191121T092000\n" +
+              "END:VEVENT\n";
+    event = new ICal.Component.from_string (str);
+    dtstart = event.get_dtstart ();
+    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+    debug (@"Start: $g_dtstart; End: $(g_dtend.format ("%FT%T%z"))");
+    assert (g_dtstart.format ("%FT%T%z") == "2019-11-20T21:35:00-0600");
+    assert (g_dtend.format ("%FT%T%z") == "2019-11-20T21:35:00-0600");
 }
 
 /*
@@ -341,6 +492,12 @@ void add_timezone_tests () {
     Test.add_func ("/Utils/TimeZone/45_minute_offset", test_45_minute_offset);
 }
 
+void add_icaltime_tests () {
+    Test.add_func ("/Utils/ICalTime/convert_to_local", test_icaltime_convert_to_local);
+    Test.add_func ("/Utils/ICalTime/icaltime_as_local_datetime", test_icaltime_to_local_datetime);
+    Test.add_func ("/Utils/ICalTime/get_local_datetimes", test_local_datetimes);
+}
+
 void add_icalcomponent_tests () {
     Test.add_func ("/Utils/ICalComponent/all_day", test_datetimes_all_day);
     Test.add_func ("/Utils/ICalComponent/not_all_day_local", test_datetimes_not_all_day_local);
@@ -371,6 +528,7 @@ int main (string[] args) {
 
     Test.init (ref args);
     add_timezone_tests ();
+    add_icaltime_tests ();
     add_icalcomponent_tests ();
     add_daterange_tests ();
     add_datetime_tests ();
