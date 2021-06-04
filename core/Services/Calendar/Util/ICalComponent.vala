@@ -24,7 +24,7 @@ namespace Calendar.Util {
     /** Gets a pair of {@link GLib.DateTime} objects representing the start and
      *  end of the given component.
      */
-    public void icalcomponent_get_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
+    public void icalcomponent_get_local_datetimes_old (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         ICal.Time dt_start = component.get_dtstart ();
         ICal.Time dt_end = component.get_dtend ();
 
@@ -51,6 +51,26 @@ namespace Calendar.Util {
         }
     }
 
+    // TODO check for missing dtend and/or duration
+    public void icalcomponent_get_local_datetimes_new (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
+        ICal.Time dt_start = component.get_dtstart ();
+        ICal.Time dt_end = component.get_dtend ();
+
+        if (dt_end.is_null_time ()) {
+            // Null time should never be returned if there's a duration
+            assert (!(component.get_duration ().is_null_duration ()));
+
+            dt_end = dt_start.clone ();
+            if (dt_start.is_date ()) { // Implicitly ends 1 day after start
+                dt_end.adjust (1, 0, 0, 0);
+            }
+            // Otherwise implicitly ends at start date and time: do nothing
+        }
+
+        start_date = Calendar.Util.icaltime_to_local_datetime (dt_start);
+        end_date = Calendar.Util.icaltime_to_local_datetime (dt_end);
+    }
+
     /** Wraps {@link icalcomponent_get_local_datetimes()}, including date
      *  adjustments for all-day events.
      *
@@ -69,8 +89,9 @@ namespace Calendar.Util {
      * make the display of all-day events more intuitive, and doesn't reflect
      * the actual times the events occur.
      */
-    public void icalcomponent_get_local_datetimes_for_display (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
-        icalcomponent_get_local_datetimes (component, out start_date, out end_date);
+    // TODO finish checking this one
+    public void icalcomponent_get_local_datetimes_for_display_new (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
+        icalcomponent_get_local_datetimes_new (component, out start_date, out end_date);
 
         if (datetime_is_all_day (start_date, end_date)) {
             end_date = end_date.add_days (-1);
@@ -84,7 +105,7 @@ namespace Calendar.Util {
      */
     public bool icalcomponent_is_in_range (ICal.Component component, Calendar.Util.DateRange range) {
         GLib.DateTime start, end;
-        icalcomponent_get_local_datetimes (component, out start, out end);
+        icalcomponent_get_local_datetimes_new (component, out start, out end);
 
         int c1 = start.compare (range.first_dt);
         int c2 = start.compare (range.last_dt);
@@ -109,7 +130,7 @@ namespace Calendar.Util {
 
     public bool icalcomponent_is_multiday (ICal.Component component) {
         GLib.DateTime start, end;
-        icalcomponent_get_local_datetimes_for_display (component, out start, out end);
+        icalcomponent_get_local_datetimes_for_display_new (component, out start, out end);
 
         if (start.get_year () != end.get_year () || start.get_day_of_year () != end.get_day_of_year ())
             return true;

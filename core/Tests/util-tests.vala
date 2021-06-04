@@ -203,7 +203,7 @@ void test_datetimes_all_day () {
     assert (dtstart.is_date ());
 
     DateTime g_dtstart,g_dtend;
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
 
     // Check the timezone
     var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
@@ -230,7 +230,7 @@ void test_datetimes_not_all_day_local () {
     assert (!dtstart.is_date ());
 
     DateTime g_dtstart,g_dtend;
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
 
     // Check the timezone
     var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
@@ -256,7 +256,7 @@ void test_datetimes_not_all_day_converted () {
     assert (!dtstart.is_date ());
 
     DateTime g_dtstart,g_dtend;
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
 
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-20T16:35:00-0600");
     assert (g_dtend.format ("%FT%T%z") == "2019-11-21T16:35:00-0600");
@@ -274,7 +274,7 @@ void test_local_datetimes () {
     var dtstart = event.get_dtstart ();
     assert (dtstart.is_date ());
     DateTime g_dtstart,g_dtend;
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
     debug (@"Start: $g_dtstart; End: $g_dtend");
     assert (Calendar.Util.datetime_is_all_day (g_dtstart, g_dtend));
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-21T00:00:00-0600");
@@ -289,7 +289,7 @@ void test_local_datetimes () {
               "END:VEVENT\n";
     event = new ICal.Component.from_string (str);
     dtstart = event.get_dtstart ();
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
     debug (@"Start: $g_dtstart; End: $g_dtend");
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-20T21:35:00-0600");
     assert (g_dtend.format ("%FT%T%z") == "2019-11-22T06:50:00-0600");
@@ -302,7 +302,7 @@ void test_local_datetimes () {
               "END:VEVENT\n";
     event = new ICal.Component.from_string (str);
     dtstart = event.get_dtstart ();
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
     debug (@"Start: $g_dtstart; End: $g_dtend");
     assert (Calendar.Util.datetime_is_all_day (g_dtstart, g_dtend));
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-21T00:00:00-0600");
@@ -316,7 +316,7 @@ void test_local_datetimes () {
               "END:VEVENT\n";
     event = new ICal.Component.from_string (str);
     dtstart = event.get_dtstart ();
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
     debug (@"Start: $g_dtstart; End: $(g_dtend.format ("%FT%T%z"))");
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-20T21:35:00-0600");
     assert (g_dtend.format ("%FT%T%z") == "2019-11-20T21:35:00-0600");
@@ -353,7 +353,7 @@ void test_daterange_all_day () {
     var event = new ICal.Component.from_string (str);
 
     GLib.DateTime event_start, event_end;
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out event_start, out event_end);
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out event_start, out event_end);
     debug (@"Event: start $event_start; end $event_end");
 
     // A range that shouldn't include the event, but just barely (within
@@ -421,7 +421,7 @@ void test_is_all_day_false () {
     assert (event.get_dtend ().is_date ());
 
     GLib.DateTime dtstart, dtend;
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out dtstart, out dtend);
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out dtstart, out dtend);
     assert (Calendar.Util.datetime_is_all_day (dtstart, dtend));
 }
 
@@ -438,7 +438,7 @@ void test_is_all_day_true () {
     assert (event.get_dtend ().is_date ());
 
     GLib.DateTime dtstart, dtend;
-    Calendar.Util.icalcomponent_get_local_datetimes (event, out dtstart, out dtend);
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out dtstart, out dtend);
     assert (Calendar.Util.datetime_is_all_day (dtstart, dtend));
 }
 
