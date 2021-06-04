@@ -516,6 +516,25 @@ void add_datetime_tests () {
     Test.add_func ("/Utils/DateTime/datetimes_to_icaltime", test_datetimes_to_icaltime);
 }
 
+void check_setup () {
+    // TimeManager is properly set up
+    var tzid = "/freeassociation.sourceforge.net/America/Chicago";
+    var tm_correct = Calendar.TimeManager.get_default ().system_timezone.get_tzid () == tzid;
+    assert (tm_correct);
+
+    // GLib sees the right system timezone
+    var time = new DateTime.local (2019, 11, 20, 0, 0, 0);
+    var glib_system_tz = new TimeZone.local ();
+    var env_correct = get_glib_tzid (glib_system_tz, time) == "CST";
+    assert (env_correct);
+
+    if (!(tm_correct && env_correct)) {
+        critical ("Unable to setup consistent environment for testing");
+    } else {
+        print ("Testing environment set up.\n");
+    }
+}
+
 int main (string[] args) {
     print ("\n");
     var original_tz = Environment.get_variable ("TZ");
@@ -523,7 +542,8 @@ int main (string[] args) {
     print ("Setting $TZ environment variable: " + Environment.get_variable ("TZ") + "\n");
     ICal.Timezone tz = ICal.Timezone.get_builtin_timezone ("America/Chicago");
     Calendar.TimeManager.setup_test (tz);
-    print ("Setting up TimeManager with system timezone America/Chicago");
+    print ("Setting up TimeManager with system timezone America/Chicago\n");
+    check_setup ();
     print ("Starting utils tests:\n");
 
     Test.init (ref args);
