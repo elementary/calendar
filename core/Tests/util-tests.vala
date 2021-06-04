@@ -322,6 +322,63 @@ void test_local_datetimes () {
     assert (g_dtend.format ("%FT%T%z") == "2019-11-20T21:35:00-0600");
 }
 
+void test_component_is_multiday () {
+    // Single day all-day event
+    var str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=Asia/Kathmandu:20191121\n" +
+              "DTEND;TZID=Asia/Kathmandu:20191122\n" +
+              "END:VEVENT\n";
+    var event = new ICal.Component.from_string (str);
+    assert (!Calendar.Util.icalcomponent_is_multiday (event));
+
+    // 2-day all-day event
+    str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=Asia/Kathmandu:20191121\n" +
+              "DTEND;TZID=Asia/Kathmandu:20191123\n" +
+              "END:VEVENT\n";
+    event = new ICal.Component.from_string (str);
+    assert (Calendar.Util.icalcomponent_is_multiday (event));
+
+    // Event that starts & ends on same day (when converted to local)
+    str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=Asia/Kathmandu:20191121T212000\n" +
+              "DTEND;TZID=Asia/Kathmandu:20191122T012000\n" +
+              "END:VEVENT\n";
+    event = new ICal.Component.from_string (str);
+        DateTime g_dtstart,g_dtend;
+        Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
+        debug (@"Start: $g_dtstart; End: $(g_dtend.format ("%FT%T%z"))");
+    assert (!Calendar.Util.icalcomponent_is_multiday (event));
+
+    // Event that starts & ends on different days (when converted to local)
+    str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=Asia/Kathmandu:20191121T092000\n" +
+              "DTEND;TZID=Asia/Kathmandu:20191121T213500\n" +
+              "END:VEVENT\n";
+    event = new ICal.Component.from_string (str);
+        Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
+        debug (@"Start: $g_dtstart; End: $(g_dtend.format ("%FT%T%z"))");
+    assert (Calendar.Util.icalcomponent_is_multiday (event));
+
+    // Event longer than 1 day
+    str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=Asia/Kathmandu:20191121T212000\n" +
+              "DTEND;TZID=Asia/Kathmandu:20191123T012000\n" +
+              "END:VEVENT\n";
+    event = new ICal.Component.from_string (str);
+    assert (Calendar.Util.icalcomponent_is_multiday (event));
+}
+
 /*
  *
  * Tests for DateRange class
@@ -502,6 +559,7 @@ void add_icalcomponent_tests () {
     Test.add_func ("/Utils/ICalComponent/all_day", test_datetimes_all_day);
     Test.add_func ("/Utils/ICalComponent/not_all_day_local", test_datetimes_not_all_day_local);
     Test.add_func ("/Utils/ICalComponent/not_all_day_converted", test_datetimes_not_all_day_converted);
+    Test.add_func ("/Utils/ICalComponent/is_multiday", test_component_is_multiday);
 }
 
 void add_daterange_tests () {
