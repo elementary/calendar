@@ -134,6 +134,51 @@ void test_icaltime_convert_to_local () {
     assert (converted.as_ical_string () == str);
     assert (converted.is_date ());
     assert (converted.get_timezone () == null);
+
+    // Test a non-builtin timezone
+    str = "BEGIN:VCALENDAR\n" +
+        "PRODID:-//Ximian//NONSGML Evolution Calendar//EN\n" +
+        "VERSION:2.0\n" +
+        "BEGIN:VTIMEZONE\n" +
+        "TZID:W. Europe Standard Time\n" +
+        "BEGIN:STANDARD\n" +
+        "DTSTART:16010101T030000\n" +
+        "TZOFFSETFROM:+0200\n" +
+        "TZOFFSETTO:+0100\n" +
+        "RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10\n" +
+        "END:STANDARD\n" +
+        "BEGIN:DAYLIGHT\n" +
+        "DTSTART:16010101T020000\n" +
+        "TZOFFSETFROM:+0100\n" +
+        "TZOFFSETTO:+0200\n" +
+        "RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=3\n" +
+        "END:DAYLIGHT\n" +
+        "END:VTIMEZONE\n" +
+        "BEGIN:VEVENT\n" +
+        "UID:\n" +
+         "040000008200E00074C5B7101A82E008000000008BBEC9D33B04D701000000000000000010\n" +
+         "0000005E73E9B74F8505479E59E7CCDF58E41E\n" +
+        "SUMMARY:Ocupado\n" +
+        "DTSTART;TZID=W. Europe Standard Time:20210223T110000\n" +
+        "DTEND;TZID=W. Europe Standard Time:20210223T123000\n" +
+        "DTSTAMP:20210226T123100Z\n" +
+        "END:VEVENT\n" +
+        "END:VCALENDAR\n";
+    debug (str);
+#if E_CAL_2_0
+    var ical = ECal.util_parse_ics_string (str);
+#else
+    var ical = ECal.Util.parse_ics_string (str);
+#endif
+    assert (ical != null);
+    assert (ical.is_valid ());
+    var icalcomp = ical.get_first_component (ICal.ComponentKind.VEVENT_COMPONENT);
+    assert (icalcomp.is_valid ());
+    icaltime = icalcomp.get_dtstart ();
+    assert (icaltime.get_timezone () != null);
+    converted = Calendar.Util.icaltime_convert_to_local (icaltime);
+    debug (@"Original: $(icaltime.as_ical_string ()), converted: $(converted.as_ical_string ())");
+    assert (converted.as_ical_string () == "20210223T040000");
 }
 
 void test_icaltime_to_local_datetime () {
