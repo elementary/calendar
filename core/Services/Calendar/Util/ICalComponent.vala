@@ -51,14 +51,24 @@ namespace Calendar.Util {
         }
     }
 
-    // TODO check for missing dtend and/or duration
+    /** Gets a pair of {@link GLib.DateTime} objects representing the start and
+     *  end of the given component, converted to the local timezone.
+     *
+     * The conversion behavior differs based on the type of {@link ICal.Time}.
+     * DATE type times (which contain no time information) are represented as
+     * midnight on the given date in the local timezone
+     * (see {@link Calendar.Util.datetime_is_all_day}).
+     * DATE-TIME type times are converted to the local timezone if they have
+     * a time zone, and are represented at the given time in the local timezone
+     * if they are floating.
+     */
     public void icalcomponent_get_local_datetimes_new (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         ICal.Time dt_start = component.get_dtstart ();
         ICal.Time dt_end = component.get_dtend ();
 
         if (dt_end.is_null_time ()) {
             // Null time should never be returned if there's a duration
-            assert (!(component.get_duration ().is_null_duration ()));
+            assert (component.get_duration ().is_null_duration ());
 
             dt_end = dt_start.clone ();
             if (dt_start.is_date ()) { // Implicitly ends 1 day after start

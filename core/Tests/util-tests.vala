@@ -327,11 +327,11 @@ void test_local_datetimes () {
 
     // DATE-TIME-type times: should be converted to local timezone
     str = "BEGIN:VEVENT\n" +
-              "SUMMARY:Stub event\n" +
-              "UID:example@uid\n" +
-              "DTSTART;TZID=Asia/Kathmandu:20191121T092000\n" +
-              "DTEND;TZID=Asia/Kathmandu:20191122T183500\n" +
-              "END:VEVENT\n";
+          "SUMMARY:Stub event\n" +
+          "UID:example@uid\n" +
+          "DTSTART;TZID=Asia/Kathmandu:20191121T092000\n" +
+          "DTEND;TZID=Asia/Kathmandu:20191122T183500\n" +
+          "END:VEVENT\n";
     event = new ICal.Component.from_string (str);
     dtstart = event.get_dtstart ();
     Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
@@ -339,12 +339,12 @@ void test_local_datetimes () {
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-20T21:35:00-0600");
     assert (g_dtend.format ("%FT%T%z") == "2019-11-22T06:50:00-0600");
 
-    // No DTEND field for DATE-type DTSTART: implicitly 1 day long
+    // No DTEND or DURATION field for DATE-type DTSTART: implicitly 1 day long
     str = "BEGIN:VEVENT\n" +
-              "SUMMARY:Stub event\n" +
-              "UID:example@uid\n" +
-              "DTSTART;TZID=Asia/Kathmandu:20191121\n" +
-              "END:VEVENT\n";
+          "SUMMARY:Stub event\n" +
+          "UID:example@uid\n" +
+          "DTSTART;TZID=Asia/Kathmandu:20191121\n" +
+          "END:VEVENT\n";
     event = new ICal.Component.from_string (str);
     dtstart = event.get_dtstart ();
     Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
@@ -353,18 +353,50 @@ void test_local_datetimes () {
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-21T00:00:00-0600");
     assert (g_dtend.format ("%FT%T%z") == "2019-11-22T00:00:00-0600");
 
-    // No DTEND field for non-DATE-type DTSTART: ends at same time as start
+    // No DTEND or DURATION field for DATE-TIME-type DTSTART: ends at same time as start
     str = "BEGIN:VEVENT\n" +
-              "SUMMARY:Stub event\n" +
-              "UID:example@uid\n" +
-              "DTSTART;TZID=Asia/Kathmandu:20191121T092000\n" +
-              "END:VEVENT\n";
+          "SUMMARY:Stub event\n" +
+          "UID:example@uid\n" +
+          "DTSTART;TZID=Asia/Kathmandu:20191121T092000\n" +
+          "END:VEVENT\n";
     event = new ICal.Component.from_string (str);
     dtstart = event.get_dtstart ();
     Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
     debug (@"Start: $g_dtstart; End: $(g_dtend.format ("%FT%T%z"))");
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-20T21:35:00-0600");
     assert (g_dtend.format ("%FT%T%z") == "2019-11-20T21:35:00-0600");
+
+    // No DTEND field but given DURATION, for DATE-TIME type
+    str = "BEGIN:VEVENT\n" +
+          "SUMMARY:Stub event\n" +
+          "UID:example@uid\n" +
+          "DTSTART;TZID=Asia/Kathmandu:20191121T092000\n" +
+          "DURATION:P1DT9H15M\n" +
+          "END:VEVENT\n";
+    event = new ICal.Component.from_string (str);
+    assert (event != null);
+    dtstart = event.get_dtstart ();
+    assert (event.get_dtend != null);
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
+    debug (@"Start: $g_dtstart; End: $g_dtend");
+    assert (g_dtstart.format ("%FT%T%z") == "2019-11-20T21:35:00-0600");
+    assert (g_dtend.format ("%FT%T%z") == "2019-11-22T06:50:00-0600");
+
+    // No DTEND field but given DURATION, for DATE type
+    str = "BEGIN:VEVENT\n" +
+              "SUMMARY:Stub event\n" +
+              "UID:example@uid\n" +
+              "DTSTART;TZID=Asia/Kathmandu:20191121\n" +
+              "DURATION:P1D\n" +
+              "END:VEVENT\n";
+    event = new ICal.Component.from_string (str);
+    dtstart = event.get_dtstart ();
+    assert (dtstart.is_date ());
+    Calendar.Util.icalcomponent_get_local_datetimes_new (event, out g_dtstart, out g_dtend);
+    debug (@"Start: $g_dtstart; End: $g_dtend");
+    assert (Calendar.Util.datetime_is_all_day (g_dtstart, g_dtend));
+    assert (g_dtstart.format ("%FT%T%z") == "2019-11-21T00:00:00-0600");
+    assert (g_dtend.format ("%FT%T%z") == "2019-11-22T00:00:00-0600");
 }
 
 void test_component_is_multiday () {
