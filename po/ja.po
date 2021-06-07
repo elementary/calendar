@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-07 21:23+0000\n"
-"PO-Revision-Date: 2021-03-27 07:44+0000\n"
+"PO-Revision-Date: 2021-06-07 23:32+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -806,7 +806,7 @@ msgstr "iCalendar ファイルをインポート…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "オンラインアカウントの設定…"
 
 #: src/Widgets/SourcePopover.vala:99
 msgid "Select ICS File to Import"
