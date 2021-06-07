@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 00:20+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
 "PO-Revision-Date: 2020-11-03 00:15+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
@@ -188,7 +188,7 @@ msgstr "Guardar cambios"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -810,11 +810,15 @@ msgstr "Añadir calendario nuevo…"
 msgid "Import iCalendar File…"
 msgstr "Importar archivo iCalendar…"
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:67
+msgid "Online Accounts Settings…"
+msgstr ""
+
+#: src/Widgets/SourcePopover.vala:99
 msgid "Select ICS File to Import"
 msgstr "Seleccione el archivo ICS que se importará"
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:102
 msgid "Open"
 msgstr "Abrir"
 
