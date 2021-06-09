@@ -344,7 +344,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             }
         }
 
-        datetime_label.label = "%s".printf (datetime_string);
+        datetime_label.label = datetime_string;
         location_label.label = ical_event.get_location ();
     }
 
