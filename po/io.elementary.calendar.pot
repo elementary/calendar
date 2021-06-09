@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.calendar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 00:20+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -184,7 +184,7 @@ msgstr ""
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
 msgstr ""
 
@@ -804,11 +804,15 @@ msgstr ""
 msgid "Import iCalendar File…"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:67
+msgid "Online Accounts Settings…"
+msgstr ""
+
+#: src/Widgets/SourcePopover.vala:99
 msgid "Select ICS File to Import"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:102
 msgid "Open"
 msgstr ""
 
