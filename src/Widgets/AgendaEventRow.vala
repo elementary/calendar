@@ -196,6 +196,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         datatime_label.use_markup = true;
         datatime_label.xalign = 0;
         datatime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        datatime_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         location_label = new Gtk.Label ("") {
             margin_top = 6,
@@ -342,7 +343,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             }
         }
 
-        datatime_label.label = "<small>%s</small>".printf (datetime_string);
+        datatime_label.label = "%s".printf (datetime_string);
         location_label.label = ical_event.get_location ();
     }
 
