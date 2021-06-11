@@ -290,7 +290,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         }
 
         DateTime start_date, end_date;
-        Calendar.Util.icalcomponent_get_local_datetimes_for_display_new (ical_event, out start_date, out end_date);
+        Calendar.Util.icalcomponent_get_local_datetimes_for_display (ical_event, out start_date, out end_date);
 
         is_allday = Calendar.Util.datetime_is_all_day (start_date, end_date);
         is_multiday = Calendar.Util.icalcomponent_is_multiday (ical_event);
