@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
+ * Copyright 2011-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
     private Gtk.Image event_image;
     private Gtk.Label name_label;
-    private Gtk.Label datatime_label;
+    private Gtk.Label datetime_label;
     private Gtk.Label location_label;
     private Gtk.StyleContext event_image_context;
     private Gtk.StyleContext main_grid_context;
@@ -189,13 +189,15 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         name_label_context.add_class ("title");
         name_label_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        datatime_label = new Gtk.Label ("");
-        datatime_label.ellipsize = Pango.EllipsizeMode.END;
-        datatime_label.halign = Gtk.Align.START;
-        datatime_label.selectable = false;
-        datatime_label.use_markup = true;
-        datatime_label.xalign = 0;
-        datatime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        datetime_label = new Gtk.Label ("") {
+            ellipsize = Pango.EllipsizeMode.END,
+            halign = Gtk.Align.START,
+            selectable = false,
+            use_markup = true,
+            xalign = 0
+        };
+        datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        datetime_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         location_label = new Gtk.Label ("") {
             margin_top = 6,
@@ -214,7 +216,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         main_grid.margin_start = main_grid.margin_end = 12;
         main_grid.attach (event_image, 0, 0, 1, 1);
         main_grid.attach (name_label, 1, 0, 1, 1);
-        main_grid.attach (datatime_label, 1, 1, 1, 1);
+        main_grid.attach (datetime_label, 1, 1, 1, 1);
         main_grid.attach (location_revealer, 1, 2);
 
         main_grid_context = main_grid.get_style_context ();
@@ -304,8 +306,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         var is_same_time = start_time_string == end_time_string;
 
-        datatime_label.show ();
-        datatime_label.no_show_all = false;
+        datetime_label.show ();
+        datetime_label.no_show_all = false;
         if (is_multiday) {
             if (is_allday) {
                 // TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
@@ -317,8 +319,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         } else {
             if (!is_upcoming) {
                 if (is_allday) {
-                    datatime_label.hide ();
-                    datatime_label.no_show_all = true;
+                    datetime_label.hide ();
+                    datetime_label.no_show_all = true;
                 } else {
                     if (is_same_time) {
                         datetime_string = start_time_string;
@@ -342,7 +344,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             }
         }
 
-        datatime_label.label = "<small>%s</small>".printf (datetime_string);
+        datetime_label.label = datetime_string;
         location_label.label = ical_event.get_location ();
     }
 

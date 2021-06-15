@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
 "PO-Revision-Date: 2020-12-25 10:16+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/calendar/"
@@ -137,7 +137,7 @@ msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] ""
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr ""
 
@@ -186,7 +186,7 @@ msgstr ""
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
 msgstr "取消"
 
@@ -266,81 +266,81 @@ msgstr "没有提醒"
 msgid "Add Reminder"
 msgstr "添加提醒"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "At time of event"
 msgstr ""
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 #, fuzzy
 msgid "1 minute before"
 msgstr "1 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 #, fuzzy
 msgid "5 minutes before"
 msgstr "5 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 #, fuzzy
 msgid "10 minutes before"
 msgstr "10 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 #, fuzzy
 msgid "15 minutes before"
 msgstr "一刻钟"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 #, fuzzy
 msgid "20 minutes before"
 msgstr "20 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 #, fuzzy
 msgid "25 minutes before"
 msgstr "25 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 #, fuzzy
 msgid "30 minutes before"
 msgstr "半小时"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 #, fuzzy
 msgid "45 minutes before"
 msgstr "45 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 #, fuzzy
 msgid "1 hour before"
 msgstr "1 小时"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 #, fuzzy
 msgid "2 hours before"
 msgstr "2 小时"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 #, fuzzy
 msgid "3 hours before"
 msgstr "3 小时"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 #, fuzzy
 msgid "12 hours before"
 msgstr "12 小时"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 #, fuzzy
 msgid "24 hours before"
 msgstr "24 小时"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 #, fuzzy
 msgid "2 days before"
 msgstr "2 天"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 #, fuzzy
 msgid "1 week before"
 msgstr "1 周"
@@ -763,19 +763,6 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr ""
 
-#: src/Widgets/CalendarButton.vala:72
-#, fuzzy
-msgid "Search Calendars"
-msgstr "创建日历"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr ""
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr ""
-
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 #, fuzzy
@@ -832,11 +819,15 @@ msgstr "添加新日历…"
 msgid "Import iCalendar File…"
 msgstr "导出日历..."
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:67
+msgid "Online Accounts Settings…"
+msgstr ""
+
+#: src/Widgets/SourcePopover.vala:99
 msgid "Select ICS File to Import"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:102
 msgid "Open"
 msgstr ""
 
@@ -858,6 +849,10 @@ msgstr "撤销"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "日历\"%s\"已经被移除。"
+
+#, fuzzy
+#~ msgid "Search Calendars"
+#~ msgstr "创建日历"
 
 #~ msgid "0 minutes"
 #~ msgstr "0 分钟"

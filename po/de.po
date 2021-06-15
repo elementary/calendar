@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2020-10-27 07:15+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
+"PO-Revision-Date: 2021-06-08 10:24+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/calendar/calendar/"
 "de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
@@ -54,7 +54,7 @@ msgstr "Google"
 
 #: plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr "Benutzer.Name oder Benutzer.Name@gmail.com"
+msgstr "benutzer.name oder benutzer.name@gmail.com"
 
 #: plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
@@ -77,8 +77,8 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Ihre bevorstehenden Termine werden hier angezeigt, wenn Sie ein Datum mit "
-"Terminen auswählen."
+"Die bevorstehenden Termine werden hier angezeigt, sobald ein Tag mit "
+"Terminen ausgewählt ist."
 
 #: src/AgendaView.vala:140
 msgid "During the day"
@@ -110,11 +110,11 @@ msgstr "Kommender Monat"
 
 #: src/Application.vala:54
 msgid "Create an event"
-msgstr "Einen Termin erstellen"
+msgstr "Termin erstellen"
 
 #: src/Application.vala:55
 msgid "Focus the given day"
-msgstr "Fokussiere den angegebenen Tag"
+msgstr "Gewählten Tag betrachten"
 
 #: src/Application.vala:55
 msgid "date"
@@ -131,7 +131,7 @@ msgstr "Kalender zum Importieren auswählen"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Termine aus \"%s\" werden in den folgenden Kalender importiert:"
+msgstr "Termine aus »%s« werden in den folgenden Kalender importiert:"
 
 #: src/ImportDialog.vala:47
 #, c-format
@@ -140,7 +140,7 @@ msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Termine aus der Datei %d werden in diesen Kalender importiert:"
 msgstr[1] "Termine aus den Dateien %d werden in diesen Kalender importiert:"
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "Importieren"
 
@@ -188,7 +188,7 @@ msgstr "Änderungen speichern"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -238,7 +238,7 @@ msgstr "Terminbezeichnung"
 
 #: src/EventEdition/InfoPanel.vala:117
 msgid "Press enter to parse event"
-msgstr "Drücken Sie die Eingabetaste, um den Termin zu analysieren"
+msgstr "Eingabetaste drücken, um den Termin zu analysieren"
 
 #: src/EventEdition/InfoPanel.vala:132
 msgid "Calendar:"
@@ -246,7 +246,7 @@ msgstr "Kalender:"
 
 #: src/EventEdition/InfoPanel.vala:139
 msgid "Comments:"
-msgstr "Kommentare:"
+msgstr "Notizen:"
 
 #: src/EventEdition/LocationPanel.vala:50
 msgid "Location:"
@@ -262,73 +262,73 @@ msgstr "Erinnerungen:"
 
 #: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
-msgstr "Keine Einträge"
+msgstr "Keine Erinnerungen"
 
 #: src/EventEdition/ReminderPanel.vala:55
 msgid "Add Reminder"
 msgstr "Erinnerung hinzufügen"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "At time of event"
 msgstr "Zum Zeitpunkt des Ereignisses"
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 msgid "1 minute before"
 msgstr "1 Minute vorher"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 msgid "5 minutes before"
 msgstr "5 Minuten vorher"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 msgid "10 minutes before"
 msgstr "10 Minuten vorher"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 msgid "15 minutes before"
 msgstr "15 Minuten vorher"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 msgid "20 minutes before"
 msgstr "20 Minuten vorher"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 msgid "25 minutes before"
 msgstr "25 Minuten vorher"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 msgid "30 minutes before"
 msgstr "30 Minuten vorher"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 msgid "45 minutes before"
 msgstr "45 Minuten vorher"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 msgid "1 hour before"
 msgstr "1 Stunde vorher"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 msgid "2 hours before"
 msgstr "2 Stunden vorher"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 msgid "3 hours before"
 msgstr "3 Stunden vorher"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 msgid "12 hours before"
 msgstr "12 Stunden vorher"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 msgid "24 hours before"
 msgstr "24 Stunden vorher"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 msgid "2 days before"
 msgstr "2 Tage vorher"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 msgid "1 week before"
 msgstr "1 Woche vorher"
 
@@ -619,7 +619,7 @@ msgstr "So"
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
 msgid "Hide Week Numbers"
-msgstr "Wochennummern ausblenden"
+msgstr "Kalenderwochen ausblenden"
 
 #: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
 msgid "Show Week Numbers"
@@ -628,7 +628,7 @@ msgstr "Kalenderwochen anzeigen"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "%u weitere…"
+msgstr "%u weitere …"
 
 #: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
@@ -652,7 +652,7 @@ msgstr "Farbe:"
 
 #: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
-msgstr "Als Standardkalender wählen"
+msgstr "Als Standardkalender festlegen"
 
 #: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
@@ -667,13 +667,13 @@ msgstr "Speichern"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr "Termin;Besprechung;Veranstaltung;Treffen"
+msgstr "Termin;Besprechung;Veranstaltung;Treffen;meeting"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr "Geburtstag;Jubiläum;Party;Feier"
+msgstr "Geburtstag;Jubiläum;Party;Feier;fest"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -691,13 +691,13 @@ msgstr "Bar;Cocktails;Getränke;Happy Hour"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr "Auto;Fahrt;Unterwegs;Reise;"
+msgstr "Auto;Fahrt;Unterwegs;Reise"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr "Flug;Flughafen;"
+msgstr "Flug;Flughafen;airport"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -705,7 +705,7 @@ msgstr "Flug;Flughafen;"
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
 "Frühstück;Brunch;Mittagessen;Kaffeetrinken;Abendessen;Steakhouse;Burger;"
-"Essen;Grillen"
+"Essen;Grillen;dinner;lunch"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -757,22 +757,10 @@ msgstr "%s um %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
-#: src/Widgets/CalendarButton.vala:72
-msgid "Search Calendars"
-msgstr "Kalender suchen"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr "Keine Ergebnisse"
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr "Verwenden Sie andere Suchbegriffe."
-
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
-msgstr "Kalender exportieren…"
+msgstr "Kalender exportieren …"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
@@ -780,7 +768,7 @@ msgstr "Kalender.ics"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
-msgstr "Bearbeiten…"
+msgstr "Bearbeiten …"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
@@ -816,27 +804,31 @@ msgstr "Standardkalender exportieren oder teilen"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
-msgstr "Neuen Kalender hinzufügen…"
+msgstr "Kalender hinzufügen …"
 
 #: src/Widgets/SourcePopover.vala:63
 msgid "Import iCalendar File…"
 msgstr "iCalender-Datei importieren …"
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:67
+msgid "Online Accounts Settings…"
+msgstr "Online-Kontoeinstellungen …"
+
+#: src/Widgets/SourcePopover.vala:99
 msgid "Select ICS File to Import"
 msgstr "ICS-Datei zum Importieren auswählen"
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:102
 msgid "Open"
 msgstr "Öffnen"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
-msgstr "Nicht entfernbar"
+msgstr "Nicht zu entfernen"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
-msgstr "Nicht bearbeitbar"
+msgstr "Nicht zu bearbeiten"
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
@@ -845,7 +837,16 @@ msgstr "Rückgängig"
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
 #, c-format
 msgid "\"%s\" removed"
-msgstr "\"%s\" wurde entfernt"
+msgstr "»%s« wurde entfernt"
+
+#~ msgid "Search Calendars"
+#~ msgstr "Kalender suchen"
+
+#~ msgid "No Results"
+#~ msgstr "Keine Ergebnisse"
+
+#~ msgid "Try changing search terms."
+#~ msgstr "Verwenden Sie andere Suchbegriffe."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e. %B %Y"

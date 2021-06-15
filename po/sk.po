@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
 "PO-Revision-Date: 2019-02-11 00:08+0000\n"
 "Last-Translator: tylnesh <kohutek.michal@gmail.com>\n"
 "Language-Team: Slovak <https://weblate.elementary.io/projects/calendar/"
@@ -140,7 +140,7 @@ msgstr[0] "Udalosti zo súboru %d budú zlúčené s týmto kalendárom:"
 msgstr[1] "Udalosti zo súborov %d budú zlúčené s týmto kalendárom:"
 msgstr[2] "Udalosti zo súborov %d budú zlúčené s týmto kalendárom:"
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "Importovať"
 
@@ -189,7 +189,7 @@ msgstr "Uložiť zmeny"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
 msgstr "Zrušiť"
 
@@ -269,67 +269,67 @@ msgstr "Žiadne pripomienky"
 msgid "Add Reminder"
 msgstr "Pridať Pripomienku"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 msgid "At time of event"
 msgstr "Počas udalosti"
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 msgid "1 minute before"
 msgstr "1 minútu vopred"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 msgid "5 minutes before"
 msgstr "5 minút vopred"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 msgid "10 minutes before"
 msgstr "10 minút vopred"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 msgid "15 minutes before"
 msgstr "15 minút vopred"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 msgid "20 minutes before"
 msgstr "20 minút vopred"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 msgid "25 minutes before"
 msgstr "25 minút vopred"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 msgid "30 minutes before"
 msgstr "30 minút vopred"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 msgid "45 minutes before"
 msgstr "45 minút vopred"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 msgid "1 hour before"
 msgstr "1 hodinu vopred"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 msgid "2 hours before"
 msgstr "2 hodiny vopred"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 msgid "3 hours before"
 msgstr "3 hodiny vopred"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 msgid "12 hours before"
 msgstr "12 hodín vopred"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 msgid "24 hours before"
 msgstr "24 hodín vopred"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 msgid "2 days before"
 msgstr "2 dni vopred"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 msgid "1 week before"
 msgstr "1 týždeň vopred"
 
@@ -761,18 +761,6 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/CalendarButton.vala:72
-msgid "Search Calendars"
-msgstr "Vyhľadať kalendáre"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr "Žiadne výsledky"
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr "Pokúste sa zmeniť vyhľadávané výrazy."
-
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -827,12 +815,16 @@ msgstr "Pridať nový kalendár…"
 msgid "Import iCalendar File…"
 msgstr "Exportovať kalendár…"
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:67
+msgid "Online Accounts Settings…"
+msgstr ""
+
+#: src/Widgets/SourcePopover.vala:99
 #, fuzzy
 msgid "Select ICS File to Import"
 msgstr "Vyberte, do ktorého Kalendára chcete importovať"
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:102
 msgid "Open"
 msgstr ""
 
@@ -852,6 +844,15 @@ msgstr "Vrátiť späť"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "Kalendár \"%s\" odstránený"
+
+#~ msgid "Search Calendars"
+#~ msgstr "Vyhľadať kalendáre"
+
+#~ msgid "No Results"
+#~ msgstr "Žiadne výsledky"
+
+#~ msgid "Try changing search terms."
+#~ msgstr "Pokúste sa zmeniť vyhľadávané výrazy."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"

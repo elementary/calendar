@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
 "PO-Revision-Date: 2017-05-09 22:15+0000\n"
 "Last-Translator: Martin Tomov <martin.tomov@boomer.digital>\n"
 "Language-Team: Bulgarian <https://l10n.elementary.io/projects/calendar/"
@@ -146,7 +146,7 @@ msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "Внасяне на събития от \"%s\" файл в следния календар:"
 msgstr[1] "Внасяне на събития от \"%s\" файла в следния календар:"
 
-#: src/ImportDialog.vala:57
+#: src/ImportDialog.vala:61
 msgid "Import"
 msgstr "Импортиране"
 
@@ -195,7 +195,7 @@ msgstr "Запазване на промените"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
 msgstr "Отказ"
 
@@ -275,82 +275,82 @@ msgstr "Без напомяния"
 msgid "Add Reminder"
 msgstr "Добави Напомняне"
 
-#: src/EventEdition/ReminderPanel.vala:189
+#: src/EventEdition/ReminderPanel.vala:192
 #, fuzzy
 msgid "At time of event"
 msgstr "Име на събитието"
 
-#: src/EventEdition/ReminderPanel.vala:190
+#: src/EventEdition/ReminderPanel.vala:193
 #, fuzzy
 msgid "1 minute before"
 msgstr "1 минута"
 
-#: src/EventEdition/ReminderPanel.vala:191
+#: src/EventEdition/ReminderPanel.vala:194
 #, fuzzy
 msgid "5 minutes before"
 msgstr "5 минути"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:195
 #, fuzzy
 msgid "10 minutes before"
 msgstr "10 минути"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:196
 #, fuzzy
 msgid "15 minutes before"
 msgstr "15 минути"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:197
 #, fuzzy
 msgid "20 minutes before"
 msgstr "20 минути"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:198
 #, fuzzy
 msgid "25 minutes before"
 msgstr "25 минути"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:199
 #, fuzzy
 msgid "30 minutes before"
 msgstr "30 минути"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:200
 #, fuzzy
 msgid "45 minutes before"
 msgstr "45 минути"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:201
 #, fuzzy
 msgid "1 hour before"
 msgstr "1 час"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:202
 #, fuzzy
 msgid "2 hours before"
 msgstr "2 часа"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:203
 #, fuzzy
 msgid "3 hours before"
 msgstr "3 часа"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:204
 #, fuzzy
 msgid "12 hours before"
 msgstr "12 часа"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:205
 #, fuzzy
 msgid "24 hours before"
 msgstr "24 часа"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:206
 #, fuzzy
 msgid "2 days before"
 msgstr "2 дни"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:207
 #, fuzzy
 msgid "1 week before"
 msgstr "1 седмица"
@@ -778,19 +778,6 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
 
-#: src/Widgets/CalendarButton.vala:72
-#, fuzzy
-msgid "Search Calendars"
-msgstr "Създаване на календар"
-
-#: src/Widgets/CalendarButton.vala:75
-msgid "No Results"
-msgstr ""
-
-#: src/Widgets/CalendarButton.vala:76
-msgid "Try changing search terms."
-msgstr ""
-
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 #, fuzzy
@@ -847,12 +834,16 @@ msgstr "Добавяне на нов календар…"
 msgid "Import iCalendar File…"
 msgstr "Изнасяне на календара..."
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:67
+msgid "Online Accounts Settings…"
+msgstr ""
+
+#: src/Widgets/SourcePopover.vala:99
 #, fuzzy
 msgid "Select ICS File to Import"
 msgstr "Избор на календари за показване"
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:102
 msgid "Open"
 msgstr ""
 
@@ -873,6 +864,10 @@ msgstr "Отмяна"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Календарът \"%s\" е премахнат."
+
+#, fuzzy
+#~ msgid "Search Calendars"
+#~ msgstr "Създаване на календар"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e %B %Y"

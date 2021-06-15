@@ -63,6 +63,10 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             text = _("Import iCalendar File…")
         };
 
+        var accounts_button = new Gtk.ModelButton () {
+            text = _("Online Accounts Settings…")
+        };
+
         main_grid = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL
         };
@@ -71,6 +75,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         main_grid.add (separator);
         main_grid.add (add_calendar_button);
         main_grid.add (import_calendar_button);
+        main_grid.add (accounts_button);
 
         stack = new Gtk.Stack () {
             margin_bottom = 3
@@ -121,6 +126,14 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             });
 
             return Gdk.EVENT_STOP;
+        });
+
+        accounts_button.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
+            } catch (Error e) {
+                warning ("Failed to open account settings: %s", e.message);
+            }
         });
     }
 

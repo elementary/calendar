@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 09:02+0000\n"
-"PO-Revision-Date: 2020-10-27 07:15+0000\n"
-"Last-Translator: Uwe S <saabisto@gmx.de>\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
+"PO-Revision-Date: 2021-03-04 14:05+0000\n"
+"Last-Translator: jantheodor <jan.theodor@mailbox.org>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/calendar/extra/de/"
 ">\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -42,11 +42,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "New Features:"
-msgstr ""
+msgstr "Neue Funktionen:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
+msgstr "Im Termin-Kontextmenü gibt es jetzt die Option »Duplizieren …«"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:38
@@ -81,7 +81,6 @@ msgid "Updated translations"
 msgstr "Aktualisierte Übersetzungen"
 
 #: data/io.elementary.calendar.appdata.xml.in:32
-#, fuzzy
 msgid "Improvements:"
 msgstr "Verbesserungen:"
 
@@ -104,13 +103,13 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fix issues with time zones not being recognized"
-msgstr "Behebt Probleme mit nicht anerkannten Zeitzonen"
+msgstr "Probleme mit nicht anerkannten Zeitzonen behoben"
 
 #: data/io.elementary.calendar.appdata.xml.in:58
 msgid "Fix several issues with adding and removing monthly recurring events"
 msgstr ""
-"Behebt mehrere Probleme beim Hinzufügen und Entfernen monatlich "
-"wiederkehrender Ereignisse"
+"Mehrere Probleme beim Hinzufügen und Entfernen monatlich wiederkehrender "
+"Ereignisse behoben"
 
 #: data/io.elementary.calendar.appdata.xml.in:67
 msgid "Correctly save event reminders"
@@ -119,13 +118,13 @@ msgstr "Korrektes Speichern von Ereigniserinnerungen"
 #: data/io.elementary.calendar.appdata.xml.in:68
 msgid "Ellipsize event participant details if necessary"
 msgstr ""
-"Bei Bedarf Auslassungspunkte zu den Details eines Veranstaltungsteilnehmers "
-"hinzufügen"
+"Bei Bedarf werden Auslassungspunkte zu den Details eines "
+"Veranstaltungsteilnehmers hinzugefügt"
 
 #: data/io.elementary.calendar.appdata.xml.in:69
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr ""
-"Korrigiert die unerwünschte Verschiebung beim Bearbeiten von Ereignistiteln"
+"Unerwünschte Verschiebung beim Bearbeiten von Ereignistiteln korrigiert"
 
 #: data/io.elementary.calendar.appdata.xml.in:76
 msgid "Fix crash when editing an event with no location"
@@ -218,12 +217,14 @@ msgstr ""
 "Behebt Fehler für das Exportieren, Importieren und Drucken von Kalendern."
 
 #: data/io.elementary.calendar.appdata.xml.in:174
-msgid "elementary LLC."
+#, fuzzy
+#| msgid "elementary LLC."
+msgid "elementary, Inc."
 msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "io.elementary.calendar"
-msgstr ""
+msgstr "io.elementary.calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
