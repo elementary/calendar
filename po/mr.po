@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-07 21:23+0000\n"
-"PO-Revision-Date: 2020-10-30 00:15+0000\n"
+"PO-Revision-Date: 2021-06-19 20:00+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
@@ -179,7 +179,7 @@ msgstr "कार्यक्रम डिलीट करा"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
-msgstr "घटना  बनवा"
+msgstr "घटना बनवा"
 
 #: src/EventEdition/EventDialog.vala:164
 msgid "Save Changes"
@@ -277,7 +277,7 @@ msgstr "1 मिनिटापूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:194
 msgid "5 minutes before"
-msgstr "५  मिनिटांपूर्वी"
+msgstr "५ मिनिटांपूर्वी"
 
 #: src/EventEdition/ReminderPanel.vala:195
 msgid "10 minutes before"
@@ -809,7 +809,7 @@ msgstr "आयकॅलेंडर फाईल आयात करा…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "ऑनलाइन खाती सेटिंग्ज …"
 
 #: src/Widgets/SourcePopover.vala:99
 msgid "Select ICS File to Import"
