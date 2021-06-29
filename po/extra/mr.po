@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 21:02+0000\n"
-"PO-Revision-Date: 2020-11-16 16:15+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
+"PO-Revision-Date: 2021-06-19 20:00+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/extra/"
 "mr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
 #: data/io.elementary.calendar.desktop.in:4
@@ -144,7 +144,7 @@ msgstr "कामगिरी सुधारणा"
 
 #: data/io.elementary.calendar.appdata.xml.in:95
 msgid "Present import window when opening ICS files"
-msgstr "ICS  फायली उघडतांना इम्पोर्ट विंडो दाखवा"
+msgstr "ICS फायली उघडतांना इम्पोर्ट विंडो दाखवा"
 
 #: data/io.elementary.calendar.appdata.xml.in:96
 msgid "Add a search entry for calendars"
@@ -204,8 +204,8 @@ msgid "Fixes exporting, importing and printing calendars."
 msgstr "कॅलेंडर निर्यात, आयात आणि मुद्रित करणे निश्चित करते."
 
 #: data/io.elementary.calendar.appdata.xml.in:174
-msgid "elementary LLC."
-msgstr "एलिमेंटरी LLC."
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "io.elementary.calendar"

@@ -147,6 +147,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                 find_cancellable.cancel ();
             }
         });
+
+        location_entry.grab_focus ();
     }
 
     /**

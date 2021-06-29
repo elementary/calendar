@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 21:02+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
 "PO-Revision-Date: 2017-01-01 08:00+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -199,7 +199,7 @@ msgid "Fixes exporting, importing and printing calendars."
 msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:174
-msgid "elementary LLC."
+msgid "elementary, Inc."
 msgstr ""
 
 #: data/io.elementary.calendar.desktop.in:8

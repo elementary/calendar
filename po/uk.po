@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 21:02+0000\n"
-"PO-Revision-Date: 2021-02-02 19:58+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
+"PO-Revision-Date: 2021-06-07 23:32+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/"
 "calendar/uk/>\n"
@@ -47,7 +47,7 @@ msgstr "Зберігати копію локально"
 
 #: daemon/Daemon.vala:24
 msgid "Print debug information"
-msgstr "Надрукувати відомості для зневадження"
+msgstr "Показати відомості зневадження"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -188,7 +188,7 @@ msgstr "Зберегти зміни"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
 msgstr "Скасувати"
 
@@ -813,17 +813,21 @@ msgstr "Створити новий календар…"
 msgid "Import iCalendar File…"
 msgstr "Імпортувати файл iCalendar…"
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:67
+msgid "Online Accounts Settings…"
+msgstr "Налаштування мережних облікових записів…"
+
+#: src/Widgets/SourcePopover.vala:99
 msgid "Select ICS File to Import"
 msgstr "Виберіть файл ICS для імпорту"
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:102
 msgid "Open"
 msgstr "Відкрити"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
-msgstr "Нез'ємний"
+msgstr "Незнімний"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
