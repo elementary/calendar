@@ -64,7 +64,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         };
 
         var accounts_button = new Gtk.ModelButton () {
-            text = _("Online Accounts Settings…")
+            text = _("Settings for Online Accounts…")
         };
 
         main_grid = new Gtk.Grid () {
