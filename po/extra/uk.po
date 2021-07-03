@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-07 21:23+0000\n"
-"PO-Revision-Date: 2021-04-15 02:22+0000\n"
+"PO-Revision-Date: 2021-07-04 01:39+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/extra/"
 "uk/>\n"
@@ -194,7 +194,7 @@ msgstr "Нові переклади"
 
 #: data/io.elementary.calendar.appdata.xml.in:114
 msgid "Update wingpanel-indicator-datetime settings path."
-msgstr "Оновлено шлях до параметрів wingpanel-indicator-datetime."
+msgstr "Оновлено шлях до налаштувань wingpanel-indicator-datetime."
 
 #: data/io.elementary.calendar.appdata.xml.in:115
 msgid "New translations."
