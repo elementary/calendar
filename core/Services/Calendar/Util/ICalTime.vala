@@ -23,7 +23,9 @@ namespace Calendar.Util {
 
     /**
      * Gets the timezone of the given TimeType as a GLib.TimeZone.
+     *
      * For floating times, returns the local timezone.
+     * Dates (with no time component) are considered floating.
      */
     public GLib.TimeZone icaltime_get_timezone (ICal.Time date) {
         // Special case: dates are floating, so return local time zone
