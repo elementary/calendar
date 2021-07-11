@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-07 21:23+0000\n"
 "PO-Revision-Date: 2021-07-11 21:20+0000\n"
-"Last-Translator: Mário Victor Ribeiro Silva <mariovictorrs@gmail.com>\n"
+"Last-Translator: lucaspifonseca <lucaspifonseca@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "calendar/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -158,11 +158,11 @@ msgstr "Adicionar uma entrada de pesquisa para calendários"
 
 #: data/io.elementary.calendar.appdata.xml.in:97
 msgid "Always use calendar icon in notifications"
-msgstr "Sempre use o ícone de calendário nas notificações"
+msgstr "Sempre usar o ícone do calendário nas notificações"
 
 #: data/io.elementary.calendar.appdata.xml.in:98
 msgid "Agenda view can now be navigated by keyboard"
-msgstr "A visualização da agenda agora pode ser navegada pelo teclado"
+msgstr "Visão da agenda pode ser navegada pelo teclado agora"
 
 #: data/io.elementary.calendar.appdata.xml.in:99
 msgid "Right-to-left improvements"
