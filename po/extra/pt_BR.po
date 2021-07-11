@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-07 21:23+0000\n"
 "PO-Revision-Date: 2021-07-11 21:20+0000\n"
-"Last-Translator: Alexandre Rezende de Sá <alexandresa@ufs.br>\n"
+"Last-Translator: Daniel Vinciguerra <daniel.vinciguerra@bivee.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "calendar/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -84,10 +84,8 @@ msgid "Improvements:"
 msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:34
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Allow modification of recurring events"
-msgstr "Corrigir problemas com eventos recorrentes"
+msgstr "Permitir alteração de eventos recorrentes"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Improve handling of week start day"
@@ -100,6 +98,7 @@ msgstr "Corrija erros de fuso horário com eventos de dia inteiro"
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Don't resize the sidebar when resizing the window"
 msgstr ""
+"Não redimensione a barra lateral enquanto estiver redimensionando a janela"
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fix issues with time zones not being recognized"
