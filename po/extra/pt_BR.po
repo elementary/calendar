@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-07 21:23+0000\n"
 "PO-Revision-Date: 2021-07-11 21:20+0000\n"
-"Last-Translator: lucaspifonseca <lucaspifonseca@gmail.com>\n"
+"Last-Translator: Augusto Peres <augusto.peres1@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "calendar/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -66,6 +66,8 @@ msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
+"A caixa \"Marcar como calendário padrão\" agora é marcada corretamente ao "
+"editar um calendário"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
 #: data/io.elementary.calendar.appdata.xml.in:41
@@ -89,11 +91,11 @@ msgstr "Corrigir problemas com eventos recorrentes"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "Melhorar o manuseio do dia de início da semana"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 msgid "Fix timezone errors with all-day events"
-msgstr ""
+msgstr "Corrija erros de fuso horário com eventos de dia inteiro"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Don't resize the sidebar when resizing the window"
@@ -104,10 +106,9 @@ msgid "Fix issues with time zones not being recognized"
 msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:58
-#, fuzzy
-#| msgid "Fix issues with recurring events"
 msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr "Corrigir problemas com eventos recorrentes"
+msgstr ""
+"Corrigir vários problemas ao adicionar e remover eventos mensais recorrentes"
 
 #: data/io.elementary.calendar.appdata.xml.in:67
 msgid "Correctly save event reminders"
