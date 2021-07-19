@@ -28,26 +28,16 @@ namespace Calendar.Util {
         ICal.Time dt_start = component.get_dtstart ();
         ICal.Time dt_end = component.get_dtend ();
 
-        if (dt_start.is_date ()) {
-            // Don't convert timezone for date with only day info, leave it at midnight UTC
-            start_date = Calendar.Util.icaltime_to_datetime (dt_start);
-        } else {
-            start_date = Calendar.Util.icaltime_to_datetime (dt_start).to_local ();
-        }
+        start_date = Calendar.Util.icaltime_to_datetime (dt_start).to_local ();
 
         if (!dt_end.is_null_time ()) {
-            if (dt_end.is_date ()) {
-                // Don't convert timezone for date with only day info, leave it at midnight UTC
-                end_date = Calendar.Util.icaltime_to_datetime (dt_end);
-            } else {
-                end_date = Calendar.Util.icaltime_to_datetime (dt_end).to_local ();
-            }
-        } else if (dt_start.is_date ()) {
-            end_date = start_date;
+            end_date = Calendar.Util.icaltime_to_datetime (dt_end).to_local ();
         } else if (!component.get_duration ().is_null_duration ()) {
             end_date = Calendar.Util.icaltime_to_datetime (dt_start.add (component.get_duration ())).to_local ();
+        } else if (dt_start.is_date ()) {
+            end_date = start_date.add_days (1); // Implicitly 1 day long
         } else {
-            end_date = start_date.add_days (1);
+            end_date = start_date; // Implicitly 0 duration
         }
     }
 
