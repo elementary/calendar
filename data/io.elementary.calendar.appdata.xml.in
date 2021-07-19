@@ -13,6 +13,30 @@
     </p>
   </description>
   <releases>
+    <release version="6.0.0" date="2021-07-19" urgency="medium">
+      <description>
+      <p>New Features:</p>
+      <ul>
+        <li>Import ICS files from the gear menu</li>
+        <li>Support the dark style</li>
+      </ul>
+      <p>Fixes:</p>
+      <ul>
+        <li>Properly show events on the last day of the month</li>
+        <li>Fix end times for all-day events</li>
+      </ul>
+      <p>Minor Updates:</p>
+      <ul>
+        <li>Improved offline support</li>
+        <li>New colorful avatar fallbacks</li>
+        <li>Include "film" as an event icon keyword</li>
+        <li>Add Mint and Bubblegum to calendar color chooser</li>
+        <li>Link to Online Accounts settings in the gear menu</li>
+        <li>Performance improvements</li>
+        <li>Updated translations</li>
+      </ul>
+      </description>
+    </release>
     <release version="5.1.1" date="2020-10-08" urgency="medium">
       <description>
       <p>New Features:</p>
