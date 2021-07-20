@@ -24,6 +24,7 @@
       <ul>
         <li>Properly show events on the last day of the month</li>
         <li>Fix end times for all-day events</li>
+        <li>Notify for all alarms on an event</li>
       </ul>
       <p>Minor Updates:</p>
       <ul>
