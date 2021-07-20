@@ -32,6 +32,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
     };
 
     private uint configure_id;
+    private bool exported;
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
     public MainWindow (Gtk.Application application) {
@@ -181,5 +182,34 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         });
 
         return base.configure_event (event);
+    }
+
+    public async string export () {
+        var window = get_window ();
+
+        if (window is Gdk.X11.Window) {
+            var xid = ((Gdk.X11.Window) window).get_xid ();
+            return "x11:%x".printf ((uint) xid);
+        } else if (window is Gdk.Wayland.Window) {
+            var handle = "wayland:";
+            ((Gdk.Wayland.Window) window).export_handle ((w, h) => {
+                handle += h;
+                export.callback ();
+            });
+            yield;
+
+            exported = handle != "wayland:";
+            return exported ? handle : "";
+        } else {
+            warning ("Unknown windowing system, not exporting window");
+            return "";
+        }
+    }
+
+    public void unexport () {
+        if (exported) {
+            ((Gdk.Wayland.Window) get_window ()).unexport_handle ();
+            exported = false;
+        }
     }
 }

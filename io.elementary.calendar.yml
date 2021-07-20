@@ -1,6 +1,6 @@
 app-id: io.elementary.calendar
 runtime: io.elementary.Platform
-runtime-version: 'daily'
+runtime-version: daily
 sdk: io.elementary.Sdk
 command: io.elementary.calendar
 finish-args:
@@ -17,10 +17,8 @@ finish-args:
   - '--talk-name=org.gnome.evolution.dataserver.AddressBook10'
   - '--talk-name=org.gnome.evolution.dataserver.Calendar8'
   - '--talk-name=org.gnome.evolution.dataserver.Sources5'
-  - '--talk-name=org.gnome.evolution.dataserver.Subprocess.Backend.*'
 
   - '--talk-name=org.elementary.Contractor'
-  - '--talk-name=org.freedesktop.Notifications'
   - '--system-talk-name=org.freedesktop.GeoClue2'
   - '--system-talk-name=org.freedesktop.login1'
 
@@ -41,7 +39,9 @@ modules:
     config-opts:
       - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
       - '-DCMAKE_INSTALL_LIBDIR=/app/lib'
-      - '-DBUILD_SHARED_LIBS=ON'
+      - '-DWITH_CXX_BINDINGS=false'
+      - '-DLIBICAL_BUILD_TESTING=false'
+      - '-DSHARED_ONLY=true'
       - '-DICAL_GLIB=true'
       - '-DICAL_GLIB_VAPI=true'
       - '-DGOBJECT_INTROSPECTION=true'
@@ -49,7 +49,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/libical/libical.git
-        tag: v3.0.8
+        tag: v3.0.9
 
   - name: evolution-data-server
     buildsystem: cmake-ninja
@@ -74,7 +74,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/evolution-data-server.git
-        tag: '3.38.1'
+        tag: '3.40.2'
     modules:
       - name: intltool
         cleanup:
@@ -91,7 +91,7 @@ modules:
         sources:
           - type: git
             url: https://gitlab.gnome.org/GNOME/libgdata.git
-            tag: '0.17.13'
+            tag: '0.18.0'
 
   - name: champlain
     buildsystem: meson
@@ -111,7 +111,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/folks.git
-        tag: '0.14'
+        tag: '0.15.2'
 
   - name: geocode-glib
     buildsystem: meson

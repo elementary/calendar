@@ -90,6 +90,10 @@ namespace Maya {
                 });
             }
 
+            if (FileUtils.test ("/.flatpak-info", FileTest.EXISTS)) {
+                ask_for_background ();
+            }
+
             var granite_settings = Granite.Settings.get_default ();
             var gtk_settings = Gtk.Settings.get_default ();
 
@@ -153,6 +157,23 @@ namespace Maya {
 
         private void on_quit () {
             Calendar.EventStore.get_default ().delete_trashed_calendars ();
+        }
+
+        private void ask_for_background () {
+            var portal = Portal.Background.get ();
+            string[] cmd = { "/app/libexec/io.elementary.calendar-daemon" };
+
+            window.export.begin ((obj, res) => {
+                var options = new HashTable<string, Variant> (str_hash, str_equal);
+                options["handle_token"] = Portal.generate_token ();
+                options["reason"] = _("Calendar wants to initialize with the session");
+                options["commandline"] = cmd;
+                options["dbus-activatable"] = false;
+                options["autostart"] = true;
+
+                // TODO: handle response
+                portal.request_background (window.export.end (res), options);
+            });
         }
 
         public static DateTime get_selected_datetime () {

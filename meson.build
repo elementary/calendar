@@ -16,6 +16,7 @@ glib_dep = dependency('glib-2.0')
 gee_dep = dependency('gee-0.8')
 granite_dep = dependency('granite', version: '>=6.0.0')
 gtk_dep = dependency('gtk+-3.0', version: '>=3.22')
+gdk_dep = [ dependency('gdk-x11-3.0'), dependency('gdk-wayland-3.0') ]
 handy_dep = dependency('libhandy-1', version: '>=0.90.0')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>=3.8.0')
 libedataserverui_dep = dependency('libedataserverui-1.2', version: '>=3.8.0')
@@ -29,6 +30,9 @@ folks_dep = dependency('folks')
 geocode_glib_dep = dependency('geocode-glib-1.0')
 gclue_dep = dependency('libgeoclue-2.0')
 libecal_dep = dependency('libecal-2.0', required: false)
+
+add_project_arguments('--vapidir', meson.current_source_dir() / 'vapi' / 'gdk', language: 'vala')
+
 if libecal_dep.found()
     libical_dep = dependency('libical-glib')
     add_project_arguments('--define=E_CAL_2_0', language: 'vala')
