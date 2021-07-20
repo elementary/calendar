@@ -1,26 +1,37 @@
+---
+
 name: Release
 
 on:
   pull_request:
     branches: master
     types: closed
-jobs:
-  release:
-     runs-on: ubuntu-latest
-     if: github.event.pull_request.merged == true && true == contains(join(github.event.pull_request.labels.*.name), 'Release')
-     steps:
-     - uses: actions/checkout@v2
-     - uses: elementary/actions/release@master
-       env:
-         GIT_USER_TOKEN: "${{ secrets.GIT_USER_TOKEN }}"
-         GIT_USER_NAME: "elementaryBot"
-         GIT_USER_EMAIL: "builds@elementary.io"
-       with:
-         release_branch: 'odin'
 
-  publish:
-    name: Publish Flatpak
+jobs:
+  create_release:
+     name: Create Release
+     runs-on: ubuntu-latest
+
+     if: github.event.pull_request.merged == true && true == contains(join(github.event.pull_request.labels.*.name), 'Release')
+
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v2
+       
+       - name: Release
+         uses: elementary/actions/release@master
+         env:
+           GIT_USER_TOKEN: "${{ secrets.GIT_USER_TOKEN }}"
+           GIT_USER_NAME: "elementaryBot"
+           GIT_USER_EMAIL: "builds@elementary.io"
+         with:
+           release_branch: 'odin'
+
+  deploy_flatpak:
+    name: Deploy Flatpak
     runs-on: ubuntu-latest
+    
+    if: github.event.pull_request.merged == true && true == contains(join(github.event.pull_request.labels.*.name), 'Release')
 
     container:
       image: ghcr.io/elementary/flatpak-platform/runtime:6
@@ -40,3 +51,10 @@ jobs:
           repository-url: https://flatpak.elementary.io/repo.flatpakrepo
           cache-key: "flatpak-builder-${{ github.sha }}"
           branch: stable
+      
+      - name: Deploy
+        uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v3
+        with:
+          repository: appcenter
+          flat-manager-url: https://flatpak-api.elementary.io
+          token: ${{ secrets.FLAT_MANAGER_TOKEN }}
