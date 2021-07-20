@@ -61,7 +61,8 @@ calendar_deps = [
     clutter_gtk_dep,
     folks_dep,
     geocode_glib_dep,
-    gclue_dep
+    gclue_dep,
+    libportal_dep
 ]
 
 executable(

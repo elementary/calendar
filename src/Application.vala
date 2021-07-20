@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2018 elementary, Inc. (https://elementary.io)
+ * Copyright (c) 2011-2023 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,6 +27,8 @@ namespace Maya {
         private static bool run_in_background = false;
         private static bool add_event = false;
         private static string show_day = null;
+
+        private Xdp.Portal? portal = null;
 
         private const OptionEntry[] APP_OPTIONS = {
             { "add-event", 'a', 0, OptionArg.NONE, out add_event, N_("Create an event"), null },
@@ -101,6 +103,8 @@ namespace Maya {
                 });
             }
 
+            ask_for_background ();
+
             var granite_settings = Granite.Settings.get_default ();
             var gtk_settings = Gtk.Settings.get_default ();
 
@@ -164,6 +168,24 @@ namespace Maya {
 
         private void on_quit () {
             Calendar.EventStore.get_default ().delete_trashed_calendars ();
+        }
+
+        private void ask_for_background () {
+            const string[] DAEMON_COMMAND = { "io.elementary.calendar", "--background" };
+            if (portal == null) {
+                portal = new Xdp.Portal ();
+            }
+
+            string reason = _("Calendar wants to initialize with the session");
+            var command = new GenericArray<unowned string> (2);
+            foreach (unowned var arg in DAEMON_COMMAND) {
+                command.add (arg);
+            }
+
+            var window = Xdp.parent_new_gtk (active_window);
+
+            //TODO: handle response
+            portal.request_background.begin (window, reason, command, AUTOSTART, null);
         }
 
         public static DateTime get_selected_datetime () {
