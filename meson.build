@@ -1,6 +1,6 @@
 project('io.elementary.calendar',
     'c', 'vala',
-    version: '5.1.1'
+    version: '6.0.0'
 )
 
 add_project_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
