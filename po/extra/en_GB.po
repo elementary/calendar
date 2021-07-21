@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-04-23 12:40+0000\n"
+"PO-Revision-Date: 2021-07-21 07:54+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "calendar/extra/en_GB/>\n"
@@ -45,29 +45,27 @@ msgstr "New Features:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Import ICS files from the gear menu"
-msgstr ""
+msgstr "Import ICS files from the gear menu"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Support the dark style"
-msgstr ""
+msgstr "Support the dark style"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid "Fixes:"
-msgstr ""
+msgstr "Fixes:"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Properly show events on the last day of the month"
-msgstr ""
+msgstr "Properly show events on the last day of the month"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
-#, fuzzy
-#| msgid "Fix timezone errors with all-day events"
 msgid "Fix end times for all-day events"
-msgstr "Fix timezone errors with all-day events"
+msgstr "Fix end times for all-day events"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Notify for all alarms on an event"
-msgstr ""
+msgstr "Notify for all alarms on an event"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
 #: data/io.elementary.calendar.appdata.xml.in:47
@@ -80,23 +78,23 @@ msgstr "Minor Updates:"
 
 #: data/io.elementary.calendar.appdata.xml.in:31
 msgid "Improved offline support"
-msgstr ""
+msgstr "Improved offline support"
 
 #: data/io.elementary.calendar.appdata.xml.in:32
 msgid "New colorful avatar fallbacks"
-msgstr ""
+msgstr "New colourful avatar fallbacks"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Include \"film\" as an event icon keyword"
-msgstr ""
+msgstr "Include \"film\" as an event icon keyword"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
+msgstr "Add Mint and Bubblegum to calendar colour chooser"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
+msgstr "Link to Online Accounts settings in the gear menu"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 #: data/io.elementary.calendar.appdata.xml.in:114
