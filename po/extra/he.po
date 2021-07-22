@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-07-21 07:54+0000\n"
+"PO-Revision-Date: 2021-07-22 10:08+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/extra/he/"
 ">\n"
@@ -88,15 +88,15 @@ msgstr "תמונה ייצוגית צבעונית חדשה כנסיגה"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Include \"film\" as an event icon keyword"
-msgstr ""
+msgstr "„film” (סרט) נוספה כמילת מפתח לסמל של אירוע"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
+msgstr "הוספת נענע ומסטיק לבוחר הצבעים של לוח השנה"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
+msgstr "נוסף קישור להגדרות החשבונות המקוונים בתפריט גלגל השיניים"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 #: data/io.elementary.calendar.appdata.xml.in:114
