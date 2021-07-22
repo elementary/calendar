@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-07-22 10:08+0000\n"
+"PO-Revision-Date: 2021-07-22 16:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -54,21 +54,19 @@ msgstr "ダークスタイルに対応"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid "Fixes:"
-msgstr ""
+msgstr "修正点:"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Properly show events on the last day of the month"
-msgstr ""
+msgstr "月の最終日の予定が適切に表示されるように修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
-#, fuzzy
-#| msgid "Fix timezone errors with all-day events"
 msgid "Fix end times for all-day events"
-msgstr "終日の予定におけるタイムゾーンのエラーを修正"
+msgstr "終日の予定の終了時刻を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Notify for all alarms on an event"
-msgstr ""
+msgstr "予定に設定されているすべてのアラームを通知"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
 #: data/io.elementary.calendar.appdata.xml.in:47
@@ -81,23 +79,23 @@ msgstr "軽微なアップデート:"
 
 #: data/io.elementary.calendar.appdata.xml.in:31
 msgid "Improved offline support"
-msgstr ""
+msgstr "オフラインサポートを改善"
 
 #: data/io.elementary.calendar.appdata.xml.in:32
 msgid "New colorful avatar fallbacks"
-msgstr ""
+msgstr "アバター画像未設定時に背景を色付きで表示するように変更"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Include \"film\" as an event icon keyword"
-msgstr ""
+msgstr "予定のアイコンのキーワードに \"映画\" という単語を追加"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
+msgstr "カレンダーのカラーピッカーにミントとピンクを追加"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
+msgstr "設定メニューにオンラインアカウントの設定へのリンクを追加"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 #: data/io.elementary.calendar.appdata.xml.in:114
