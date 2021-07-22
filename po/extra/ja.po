@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-04-15 09:42+0000\n"
+"PO-Revision-Date: 2021-07-22 10:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -46,11 +46,11 @@ msgstr "新機能:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Import ICS files from the gear menu"
-msgstr ""
+msgstr "設定メニューから ICS ファイルをインポートする機能を追加"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Support the dark style"
-msgstr ""
+msgstr "ダークスタイルに対応"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid "Fixes:"
