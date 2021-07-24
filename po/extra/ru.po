@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-04-15 02:22+0000\n"
+"PO-Revision-Date: 2021-07-24 19:37+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/extra/"
 "ru/>\n"
@@ -47,25 +47,23 @@ msgstr "Новые возможности:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Import ICS files from the gear menu"
-msgstr ""
+msgstr "Импорт файлов ICS из меню в виде шестерёнки"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Support the dark style"
-msgstr ""
+msgstr "Поддержка темного стиля"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid "Fixes:"
-msgstr ""
+msgstr "Исправления:"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Properly show events on the last day of the month"
-msgstr ""
+msgstr "Правильное отображение событий в последний день месяца"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
-#, fuzzy
-#| msgid "Fix timezone errors with all-day events"
 msgid "Fix end times for all-day events"
-msgstr "Исправлены ошибки часовых поясов для событий на целый день"
+msgstr "Исправлено время окончания событий в течение всего дня"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Notify for all alarms on an event"
@@ -82,11 +80,11 @@ msgstr "Незначительные обновления:"
 
 #: data/io.elementary.calendar.appdata.xml.in:31
 msgid "Improved offline support"
-msgstr ""
+msgstr "Улучшена работа в автономном режиме"
 
 #: data/io.elementary.calendar.appdata.xml.in:32
 msgid "New colorful avatar fallbacks"
-msgstr ""
+msgstr "Новые красочные резервные аватары"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Include \"film\" as an event icon keyword"
