@@ -20,7 +20,6 @@ core_files = files(
     'Services/Calendar/Util/DateRange.vala',
     'Services/Calendar/Util/DateTime.vala',
     'Services/Calendar/Util/ECalComponent.vala',
-    'Services/Calendar/Util/ESource.vala',
     'Services/Calendar/Util/ICalComponent.vala',
     'Services/Calendar/Util/ICalTime.vala',
     'Utils.vala',

@@ -24,15 +24,6 @@ namespace Maya.Util {
     }
 
     /*
-     * Gee Utility Functions
-     */
-
-    /* Computes hash value for E.Source */
-    private uint source_hash_func (E.Source key) {
-        return key.dup_uid (). hash ();
-    }
-
-    /*
      * E.Source Utils
      */
     public string get_source_location (E.Source source) {
