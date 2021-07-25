@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-07-24 19:37+0000\n"
+"PO-Revision-Date: 2021-07-25 13:20+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/extra/"
 "ru/>\n"
@@ -67,7 +67,7 @@ msgstr "Исправлено время окончания событий в т�
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Notify for all alarms on an event"
-msgstr ""
+msgstr "Оповещение обо всех напоминаниях по событию"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
 #: data/io.elementary.calendar.appdata.xml.in:47
@@ -88,15 +88,15 @@ msgstr "Новые красочные резервные аватары"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Include \"film\" as an event icon keyword"
-msgstr ""
+msgstr "Добавлен «фильм» в качестве ключевого слова для иконки события"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
+msgstr "Добавлены мятный и бубльгумовый цвета в палитку цветов календаря"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
+msgstr "Ссылка на настройки онлайн аккаунтов в меню «шестеренки»"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 #: data/io.elementary.calendar.appdata.xml.in:114
