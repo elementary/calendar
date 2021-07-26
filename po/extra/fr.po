@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-04-15 11:04+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"PO-Revision-Date: 2021-07-26 09:30+0000\n"
+"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/calendar/extra/fr/"
 ">\n"
 "Language: fr\n"
@@ -29,7 +29,7 @@ msgstr "Calendrier"
 #: data/io.elementary.calendar.appdata.xml.in:9
 #: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr "Organiser et planifier des événements"
+msgstr "Organiser et planifier des évènements"
 
 #: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
@@ -46,27 +46,23 @@ msgstr "Nouvelles fonctionnalités :"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Import ICS files from the gear menu"
-msgstr ""
+msgstr "Importer les fichiers ICS depuis le menu"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Support the dark style"
-msgstr ""
+msgstr "Support du thème sombre"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid "Fixes:"
-msgstr ""
+msgstr "Corrections :"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Properly show events on the last day of the month"
-msgstr ""
+msgstr "Affiche correctement les évènements sur le dernier jour du mois"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
-#, fuzzy
-#| msgid "Fix timezone errors with all-day events"
 msgid "Fix end times for all-day events"
-msgstr ""
-"Correction des erreurs de fuseau horaire avec les évènements qui durent "
-"toute la journée"
+msgstr "Correction de l'heure de fin pour les évènements sur toute la journée"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Notify for all alarms on an event"
@@ -182,7 +178,7 @@ msgstr "Coupure des informations des participants à un évènement si nécessai
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr ""
 "Correction des planifications non voulues lors de l'a modification du titre "
-"d'un événement"
+"d'un évènement"
 
 #: data/io.elementary.calendar.appdata.xml.in:101
 msgid "Fix crash when editing an event with no location"
@@ -284,11 +280,11 @@ msgstr "io.elementary.calendar"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr "Maya;Planning;Dates;Jours;Événements;Calendrier;ics;caldav;évolution;"
+msgstr "Maya;Planning;Dates;Jours;Évènements;Calendrier;ics;caldav;évolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
-msgstr "Ajouter un événement"
+msgstr "Ajouter un évènement"
 
 #~ msgid "office-calendar"
 #~ msgstr "office-calendar"
