@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-06-08 10:24+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"PO-Revision-Date: 2021-07-26 09:30+0000\n"
+"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/calendar/calendar/"
 "fr/>\n"
 "Language: fr\n"
@@ -77,8 +77,8 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Vos événements à venir seront affichés ici lorsque vous sélectionnerez un "
-"jour comprenant des événements."
+"Vos évènements à venir seront affichés ici lorsque vous sélectionnerez un "
+"jour comprenant des évènements."
 
 #: src/AgendaView.vala:140
 msgid "During the day"
@@ -110,7 +110,7 @@ msgstr "Le mois prochain"
 
 #: src/Application.vala:54
 msgid "Create an event"
-msgstr "Créer un événement"
+msgstr "Créer un évènement"
 
 #: src/Application.vala:55
 msgid "Focus the given day"
@@ -131,14 +131,14 @@ msgstr "Sélectionner un calendrier dans lequel effectuer l'importation"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Les événements de « %s » seront fusionnés dans ce calendrier :"
+msgstr "Les évènements de « %s » seront fusionnés dans ce calendrier :"
 
 #: src/ImportDialog.vala:47
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Les événements de %d fichier seront fusionnés dans ce calendrier :"
-msgstr[1] "Les événements de %d fichiers seront fusionnés dans ce calendrier :"
+msgstr[0] "Les évènements de %d fichier seront fusionnés dans ce calendrier :"
+msgstr[1] "Les évènements de %d fichiers seront fusionnés dans ce calendrier :"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -146,11 +146,11 @@ msgstr "Importer"
 
 #: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
-msgstr "Ajouter un événement"
+msgstr "Ajouter un évènement"
 
 #: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
-msgstr "Modifier l'événement"
+msgstr "Modifier l'évènement"
 
 #: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
@@ -176,11 +176,11 @@ msgstr "Répétition"
 
 #: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
-msgstr "Supprimer l'événement"
+msgstr "Supprimer l'évènement"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
-msgstr "Créer un événement"
+msgstr "Créer un évènement"
 
 #: src/EventEdition/EventDialog.vala:164
 msgid "Save Changes"
@@ -234,11 +234,11 @@ msgstr "Titre :"
 
 #: src/EventEdition/InfoPanel.vala:107
 msgid "Name of Event"
-msgstr "Nom de l'événement"
+msgstr "Nom de l'évènement"
 
 #: src/EventEdition/InfoPanel.vala:117
 msgid "Press enter to parse event"
-msgstr "Appuyez sur Entrée pour analyser l'événement"
+msgstr "Appuyez sur Entrée pour analyser l'évènement"
 
 #: src/EventEdition/InfoPanel.vala:132
 msgid "Calendar:"
@@ -270,7 +270,7 @@ msgstr "Ajouter un rappel"
 
 #: src/EventEdition/ReminderPanel.vala:192
 msgid "At time of event"
-msgstr "Au moment de l'événement"
+msgstr "Au moment de l'évènement"
 
 #: src/EventEdition/ReminderPanel.vala:193
 msgid "1 minute before"
@@ -774,7 +774,7 @@ msgstr "Dupliquer…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
-msgstr "Supprimer l'événement"
+msgstr "Supprimer l'évènement"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
