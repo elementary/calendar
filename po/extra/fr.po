@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-07-26 09:30+0000\n"
-"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
+"PO-Revision-Date: 2021-07-30 20:44+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/calendar/extra/fr/"
 ">\n"
 "Language: fr\n"
@@ -66,7 +66,7 @@ msgstr "Correction de l'heure de fin pour les évènements sur toute la journée
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Notify for all alarms on an event"
-msgstr ""
+msgstr "Notifications pour toutes les alarmes d'un événement"
 
 #: data/io.elementary.calendar.appdata.xml.in:29
 #: data/io.elementary.calendar.appdata.xml.in:47
@@ -79,23 +79,23 @@ msgstr "Mises à jour mineures :"
 
 #: data/io.elementary.calendar.appdata.xml.in:31
 msgid "Improved offline support"
-msgstr ""
+msgstr "Amélioration de la prise en charge du mode hors-ligne"
 
 #: data/io.elementary.calendar.appdata.xml.in:32
 msgid "New colorful avatar fallbacks"
-msgstr ""
+msgstr "Nouveaux avatars par défaut colorés"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Include \"film\" as an event icon keyword"
-msgstr ""
+msgstr "Inclusion de « film » comme mot clé d'icône d'événement"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
+msgstr "Ajout de Menthe et Chewing-gum au sélecteur de couleur du calendrier"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
+msgstr "Lien avec les paramètres de compte en ligne dans le menu des paramètres"
 
 #: data/io.elementary.calendar.appdata.xml.in:36
 #: data/io.elementary.calendar.appdata.xml.in:114
