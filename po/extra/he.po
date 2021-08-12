@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 00:20+0000\n"
-"PO-Revision-Date: 2021-04-15 09:42+0000\n"
+"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"PO-Revision-Date: 2021-07-22 10:08+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/extra/he/"
 ">\n"
@@ -41,168 +41,216 @@ msgstr ""
 "Calendar, Outlook ו־CalDAV."
 
 #: data/io.elementary.calendar.appdata.xml.in:18
+#: data/io.elementary.calendar.appdata.xml.in:43
 msgid "New Features:"
 msgstr "תכונות חדשות:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
-msgid "Add \"Duplicate...\" option to event context menu"
-msgstr "להוסיף את האפשרות „שכפול…” לתפריט ההקשר של האירוע"
+msgid "Import ICS files from the gear menu"
+msgstr "ייבוא של ICS מתפריט גלגל השיניים"
 
-#: data/io.elementary.calendar.appdata.xml.in:22
-#: data/io.elementary.calendar.appdata.xml.in:38
+#: data/io.elementary.calendar.appdata.xml.in:21
+msgid "Support the dark style"
+msgstr "תמיכה בסגנון כהה"
+
+#: data/io.elementary.calendar.appdata.xml.in:23
+msgid "Fixes:"
+msgstr "תיקונים:"
+
+#: data/io.elementary.calendar.appdata.xml.in:25
+msgid "Properly show events on the last day of the month"
+msgstr "האירועים של היום האחרון בחודש מופיעים כראוי"
+
+#: data/io.elementary.calendar.appdata.xml.in:26
+msgid "Fix end times for all-day events"
+msgstr "תוקנו זמני הסיום לאירועים כלל יומיים"
+
+#: data/io.elementary.calendar.appdata.xml.in:27
+msgid "Notify for all alarms on an event"
+msgstr "יוצגו הודעות על כל ההתראות של אירוע כלשהו"
+
+#: data/io.elementary.calendar.appdata.xml.in:29
 #: data/io.elementary.calendar.appdata.xml.in:47
-#: data/io.elementary.calendar.appdata.xml.in:56
-#: data/io.elementary.calendar.appdata.xml.in:65
+#: data/io.elementary.calendar.appdata.xml.in:63
+#: data/io.elementary.calendar.appdata.xml.in:72
+#: data/io.elementary.calendar.appdata.xml.in:81
+#: data/io.elementary.calendar.appdata.xml.in:90
 msgid "Minor Updates:"
 msgstr "עדכונים משניים:"
 
-#: data/io.elementary.calendar.appdata.xml.in:24
+#: data/io.elementary.calendar.appdata.xml.in:31
+msgid "Improved offline support"
+msgstr "התמיכה במצב לא־מקוון השתפרה"
+
+#: data/io.elementary.calendar.appdata.xml.in:32
+msgid "New colorful avatar fallbacks"
+msgstr "תמונה ייצוגית צבעונית חדשה כנסיגה"
+
+#: data/io.elementary.calendar.appdata.xml.in:33
+msgid "Include \"film\" as an event icon keyword"
+msgstr "„film” (סרט) נוספה כמילת מפתח לסמל של אירוע"
+
+#: data/io.elementary.calendar.appdata.xml.in:34
+msgid "Add Mint and Bubblegum to calendar color chooser"
+msgstr "הוספת נענע ומסטיק לבוחר הצבעים של לוח השנה"
+
+#: data/io.elementary.calendar.appdata.xml.in:35
+msgid "Link to Online Accounts settings in the gear menu"
+msgstr "נוסף קישור להגדרות החשבונות המקוונים בתפריט גלגל השיניים"
+
+#: data/io.elementary.calendar.appdata.xml.in:36
+#: data/io.elementary.calendar.appdata.xml.in:114
+msgid "Performance improvements"
+msgstr "שיפורי ביצועים"
+
+#: data/io.elementary.calendar.appdata.xml.in:37
+#: data/io.elementary.calendar.appdata.xml.in:51
+#: data/io.elementary.calendar.appdata.xml.in:66
+#: data/io.elementary.calendar.appdata.xml.in:75
+#: data/io.elementary.calendar.appdata.xml.in:84
+#: data/io.elementary.calendar.appdata.xml.in:95
+#: data/io.elementary.calendar.appdata.xml.in:115
+#: data/io.elementary.calendar.appdata.xml.in:127
+msgid "Updated translations"
+msgstr "עדכוני תרגומים"
+
+#: data/io.elementary.calendar.appdata.xml.in:45
+msgid "Add \"Duplicate...\" option to event context menu"
+msgstr "להוסיף את האפשרות „שכפול…” לתפריט ההקשר של האירוע"
+
+#: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr "תיקון תקלה שבעקבותיה אירועים חדשים עשויים להופיע פעמיים בלוח השנה"
 
-#: data/io.elementary.calendar.appdata.xml.in:25
+#: data/io.elementary.calendar.appdata.xml.in:50
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
 "תיבת הסימון „לסמן כלוח השנה כבררת המחדל” מסומנת כראוי בעת עריכת לוח שנה"
 
-#: data/io.elementary.calendar.appdata.xml.in:26
-#: data/io.elementary.calendar.appdata.xml.in:41
-#: data/io.elementary.calendar.appdata.xml.in:50
-#: data/io.elementary.calendar.appdata.xml.in:59
-#: data/io.elementary.calendar.appdata.xml.in:70
-#: data/io.elementary.calendar.appdata.xml.in:90
-#: data/io.elementary.calendar.appdata.xml.in:102
-msgid "Updated translations"
-msgstr "עדכוני תרגומים"
-
-#: data/io.elementary.calendar.appdata.xml.in:32
+#: data/io.elementary.calendar.appdata.xml.in:57
 msgid "Improvements:"
 msgstr "שיפורים:"
 
-#: data/io.elementary.calendar.appdata.xml.in:34
+#: data/io.elementary.calendar.appdata.xml.in:59
 msgid "Allow modification of recurring events"
 msgstr "אפשר לערוך אירועים מחזוריים"
 
-#: data/io.elementary.calendar.appdata.xml.in:35
+#: data/io.elementary.calendar.appdata.xml.in:60
 msgid "Improve handling of week start day"
 msgstr "שופר הטיפול ביום תחילת השבוע"
 
-#: data/io.elementary.calendar.appdata.xml.in:36
+#: data/io.elementary.calendar.appdata.xml.in:61
 msgid "Fix timezone errors with all-day events"
 msgstr "תוקנו שגיאות אזורי זמן לאירועים של יום שלם"
 
-#: data/io.elementary.calendar.appdata.xml.in:40
+#: data/io.elementary.calendar.appdata.xml.in:65
 msgid "Don't resize the sidebar when resizing the window"
 msgstr "שינוי גודל החלון לא גורר את שינוי גודל סרגל הצד"
 
-#: data/io.elementary.calendar.appdata.xml.in:49
+#: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Fix issues with time zones not being recognized"
 msgstr "תיקון תקלות עם איתור אזורי זמן"
 
-#: data/io.elementary.calendar.appdata.xml.in:58
+#: data/io.elementary.calendar.appdata.xml.in:83
 msgid "Fix several issues with adding and removing monthly recurring events"
 msgstr "תיקון מגוון תקלות עם הוספה והסרה של אירועים חודשיים מחזוריים"
 
-#: data/io.elementary.calendar.appdata.xml.in:67
+#: data/io.elementary.calendar.appdata.xml.in:92
 msgid "Correctly save event reminders"
 msgstr "שמירת תזכורות לאירועים בצורה נכונה"
 
-#: data/io.elementary.calendar.appdata.xml.in:68
+#: data/io.elementary.calendar.appdata.xml.in:93
 msgid "Ellipsize event participant details if necessary"
 msgstr "השמטת פרטי המשתתפים בפגישות אם נדרש"
 
-#: data/io.elementary.calendar.appdata.xml.in:69
+#: data/io.elementary.calendar.appdata.xml.in:94
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr "תיקון קביעת פגישות מחדש בעת עריכת כותרת אירוע"
 
-#: data/io.elementary.calendar.appdata.xml.in:76
+#: data/io.elementary.calendar.appdata.xml.in:101
 msgid "Fix crash when editing an event with no location"
 msgstr "תיקון קריסה בעת עריכת אירוע ללא מיקום"
 
-#: data/io.elementary.calendar.appdata.xml.in:81
+#: data/io.elementary.calendar.appdata.xml.in:106
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr "תיקון קריסה אפשרית במקרה של טעינת אירועים ללא מועד התחלה או סיום"
 
-#: data/io.elementary.calendar.appdata.xml.in:86
+#: data/io.elementary.calendar.appdata.xml.in:111
 msgid "Make agenda pane fill the whole space"
 msgstr "להרחיב את חלונית סדר היום כך שתמלא את כל החלל"
 
-#: data/io.elementary.calendar.appdata.xml.in:87
+#: data/io.elementary.calendar.appdata.xml.in:112
 msgid "Set the suggested time for new events to the next whole hour"
 msgstr "הגדרת הזמן המוצע לאירועים חדשים לשעה העגולה הבאה"
 
-#: data/io.elementary.calendar.appdata.xml.in:88
+#: data/io.elementary.calendar.appdata.xml.in:113
 msgid "Fix issues with recurring events"
 msgstr "תיקון תקלות באירועים מחזוריים"
 
-#: data/io.elementary.calendar.appdata.xml.in:89
-msgid "Performance improvements"
-msgstr "שיפורי ביצועים"
-
-#: data/io.elementary.calendar.appdata.xml.in:95
+#: data/io.elementary.calendar.appdata.xml.in:120
 msgid "Present import window when opening ICS files"
 msgstr "‬להציג חלון ייבוא בעת פתיחת קובצי ICS"
 
-#: data/io.elementary.calendar.appdata.xml.in:96
+#: data/io.elementary.calendar.appdata.xml.in:121
 msgid "Add a search entry for calendars"
 msgstr "הוספת רשומת חיפוש ליומנים"
 
-#: data/io.elementary.calendar.appdata.xml.in:97
+#: data/io.elementary.calendar.appdata.xml.in:122
 msgid "Always use calendar icon in notifications"
 msgstr "תמיד להשתמש בסמל לוח השנה בהתראות"
 
-#: data/io.elementary.calendar.appdata.xml.in:98
+#: data/io.elementary.calendar.appdata.xml.in:123
 msgid "Agenda view can now be navigated by keyboard"
 msgstr "מעתה ניתן לנווט בסדר היום עם המקלדת"
 
-#: data/io.elementary.calendar.appdata.xml.in:99
+#: data/io.elementary.calendar.appdata.xml.in:124
 msgid "Right-to-left improvements"
 msgstr "שיפורים בתמיכה מימין לשמאל"
 
-#: data/io.elementary.calendar.appdata.xml.in:100
+#: data/io.elementary.calendar.appdata.xml.in:125
 msgid "Various UI overhauls including lime accent color"
 msgstr "שיפורים במנשק המשתמש כולל צבע ליים מלווה"
 
-#: data/io.elementary.calendar.appdata.xml.in:101
+#: data/io.elementary.calendar.appdata.xml.in:126
 msgid "Overall code cleanup and rewrites"
 msgstr "תיקוני ושכתובי קוד"
 
-#: data/io.elementary.calendar.appdata.xml.in:107
+#: data/io.elementary.calendar.appdata.xml.in:132
 msgid "Styling adjustments"
 msgstr "שיפורי עיצוב"
 
-#: data/io.elementary.calendar.appdata.xml.in:108
+#: data/io.elementary.calendar.appdata.xml.in:133
 msgid "Fix location panel initialization"
 msgstr "תיקון הפעלת חלונית המיקום"
 
-#: data/io.elementary.calendar.appdata.xml.in:109
+#: data/io.elementary.calendar.appdata.xml.in:134
 msgid "New translations"
 msgstr "תרגומים חדשים"
 
-#: data/io.elementary.calendar.appdata.xml.in:114
+#: data/io.elementary.calendar.appdata.xml.in:139
 msgid "Update wingpanel-indicator-datetime settings path."
 msgstr "עדכון נתיב הגדרות wingpanel-indicator-datetime."
 
-#: data/io.elementary.calendar.appdata.xml.in:115
+#: data/io.elementary.calendar.appdata.xml.in:140
 msgid "New translations."
 msgstr "תרגומים חדשים."
 
-#: data/io.elementary.calendar.appdata.xml.in:120
-#: data/io.elementary.calendar.appdata.xml.in:127
+#: data/io.elementary.calendar.appdata.xml.in:145
+#: data/io.elementary.calendar.appdata.xml.in:152
 msgid "Various bug fixes and improvements."
 msgstr "מגוון תיקוני תקלות ושיפורים."
 
-#: data/io.elementary.calendar.appdata.xml.in:125
+#: data/io.elementary.calendar.appdata.xml.in:150
 msgid "Fixes for calendar accuracy and integrity issues."
 msgstr "תיקונים לדיוק בלוח השנה ובעיות אמינות."
 
-#: data/io.elementary.calendar.appdata.xml.in:126
+#: data/io.elementary.calendar.appdata.xml.in:151
 msgid "Fixes exporting, importing and printing calendars."
 msgstr "תיקוני ייצוא, ייבוא והדפסה של יומנים."
 
-#: data/io.elementary.calendar.appdata.xml.in:174
+#: data/io.elementary.calendar.appdata.xml.in:199
 msgid "elementary, Inc."
 msgstr "elementary בע״מ."
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 00:20+0000\n"
-"PO-Revision-Date: 2021-04-15 02:22+0000\n"
+"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"PO-Revision-Date: 2021-07-25 13:20+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/extra/"
 "ru/>\n"
@@ -41,27 +41,89 @@ msgstr ""
 "Outlook и CalDAV."
 
 #: data/io.elementary.calendar.appdata.xml.in:18
+#: data/io.elementary.calendar.appdata.xml.in:43
 msgid "New Features:"
 msgstr "Новые возможности:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
-msgid "Add \"Duplicate...\" option to event context menu"
-msgstr "В контекстное меню добавлен параметр «Дублировать...»"
+msgid "Import ICS files from the gear menu"
+msgstr "Импорт файлов ICS из меню в виде шестерёнки"
 
-#: data/io.elementary.calendar.appdata.xml.in:22
-#: data/io.elementary.calendar.appdata.xml.in:38
+#: data/io.elementary.calendar.appdata.xml.in:21
+msgid "Support the dark style"
+msgstr "Поддержка темного стиля"
+
+#: data/io.elementary.calendar.appdata.xml.in:23
+msgid "Fixes:"
+msgstr "Исправления:"
+
+#: data/io.elementary.calendar.appdata.xml.in:25
+msgid "Properly show events on the last day of the month"
+msgstr "Правильное отображение событий в последний день месяца"
+
+#: data/io.elementary.calendar.appdata.xml.in:26
+msgid "Fix end times for all-day events"
+msgstr "Исправлено время окончания событий в течение всего дня"
+
+#: data/io.elementary.calendar.appdata.xml.in:27
+msgid "Notify for all alarms on an event"
+msgstr "Оповещение обо всех напоминаниях по событию"
+
+#: data/io.elementary.calendar.appdata.xml.in:29
 #: data/io.elementary.calendar.appdata.xml.in:47
-#: data/io.elementary.calendar.appdata.xml.in:56
-#: data/io.elementary.calendar.appdata.xml.in:65
+#: data/io.elementary.calendar.appdata.xml.in:63
+#: data/io.elementary.calendar.appdata.xml.in:72
+#: data/io.elementary.calendar.appdata.xml.in:81
+#: data/io.elementary.calendar.appdata.xml.in:90
 msgid "Minor Updates:"
 msgstr "Незначительные обновления:"
 
-#: data/io.elementary.calendar.appdata.xml.in:24
+#: data/io.elementary.calendar.appdata.xml.in:31
+msgid "Improved offline support"
+msgstr "Улучшена работа в автономном режиме"
+
+#: data/io.elementary.calendar.appdata.xml.in:32
+msgid "New colorful avatar fallbacks"
+msgstr "Новые красочные резервные аватары"
+
+#: data/io.elementary.calendar.appdata.xml.in:33
+msgid "Include \"film\" as an event icon keyword"
+msgstr "Добавлен «фильм» в качестве ключевого слова для иконки события"
+
+#: data/io.elementary.calendar.appdata.xml.in:34
+msgid "Add Mint and Bubblegum to calendar color chooser"
+msgstr "Добавлены мятный и бубльгумовый цвета в палитку цветов календаря"
+
+#: data/io.elementary.calendar.appdata.xml.in:35
+msgid "Link to Online Accounts settings in the gear menu"
+msgstr "Ссылка на настройки онлайн аккаунтов в меню «шестеренки»"
+
+#: data/io.elementary.calendar.appdata.xml.in:36
+#: data/io.elementary.calendar.appdata.xml.in:114
+msgid "Performance improvements"
+msgstr "Улучшения производительности"
+
+#: data/io.elementary.calendar.appdata.xml.in:37
+#: data/io.elementary.calendar.appdata.xml.in:51
+#: data/io.elementary.calendar.appdata.xml.in:66
+#: data/io.elementary.calendar.appdata.xml.in:75
+#: data/io.elementary.calendar.appdata.xml.in:84
+#: data/io.elementary.calendar.appdata.xml.in:95
+#: data/io.elementary.calendar.appdata.xml.in:115
+#: data/io.elementary.calendar.appdata.xml.in:127
+msgid "Updated translations"
+msgstr "Обновлены переводы"
+
+#: data/io.elementary.calendar.appdata.xml.in:45
+msgid "Add \"Duplicate...\" option to event context menu"
+msgstr "В контекстное меню добавлен параметр «Дублировать...»"
+
+#: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr ""
 "Исправлена проблема, когда новые события могли дважды появляться в Календаре"
 
-#: data/io.elementary.calendar.appdata.xml.in:25
+#: data/io.elementary.calendar.appdata.xml.in:50
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
@@ -69,151 +131,137 @@ msgstr ""
 "Пометка «Сделать календарём по умолчанию» теперь правильно устанавливается "
 "при внесении изменений в календарь"
 
-#: data/io.elementary.calendar.appdata.xml.in:26
-#: data/io.elementary.calendar.appdata.xml.in:41
-#: data/io.elementary.calendar.appdata.xml.in:50
-#: data/io.elementary.calendar.appdata.xml.in:59
-#: data/io.elementary.calendar.appdata.xml.in:70
-#: data/io.elementary.calendar.appdata.xml.in:90
-#: data/io.elementary.calendar.appdata.xml.in:102
-msgid "Updated translations"
-msgstr "Обновлены переводы"
-
-#: data/io.elementary.calendar.appdata.xml.in:32
+#: data/io.elementary.calendar.appdata.xml.in:57
 msgid "Improvements:"
 msgstr "Улучшения:"
 
-#: data/io.elementary.calendar.appdata.xml.in:34
+#: data/io.elementary.calendar.appdata.xml.in:59
 msgid "Allow modification of recurring events"
 msgstr "Разрешено изменять повторяющиеся события"
 
-#: data/io.elementary.calendar.appdata.xml.in:35
+#: data/io.elementary.calendar.appdata.xml.in:60
 msgid "Improve handling of week start day"
 msgstr "Улучшена обработка первого дня недели"
 
-#: data/io.elementary.calendar.appdata.xml.in:36
+#: data/io.elementary.calendar.appdata.xml.in:61
 msgid "Fix timezone errors with all-day events"
 msgstr "Исправлены ошибки часовых поясов для событий на целый день"
 
-#: data/io.elementary.calendar.appdata.xml.in:40
+#: data/io.elementary.calendar.appdata.xml.in:65
 msgid "Don't resize the sidebar when resizing the window"
 msgstr "Неизменный размер боковой панели, после изменения размера окна"
 
-#: data/io.elementary.calendar.appdata.xml.in:49
+#: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Fix issues with time zones not being recognized"
 msgstr "Исправление проблемы не распознавания часовых поясов"
 
-#: data/io.elementary.calendar.appdata.xml.in:58
+#: data/io.elementary.calendar.appdata.xml.in:83
 msgid "Fix several issues with adding and removing monthly recurring events"
 msgstr ""
 "Исправлено несколько проблем с добавлением и удалением ежемесячных "
 "повторяющихся событий"
 
-#: data/io.elementary.calendar.appdata.xml.in:67
+#: data/io.elementary.calendar.appdata.xml.in:92
 msgid "Correctly save event reminders"
 msgstr "Правильное сохранение напоминаний о событиях"
 
-#: data/io.elementary.calendar.appdata.xml.in:68
+#: data/io.elementary.calendar.appdata.xml.in:93
 msgid "Ellipsize event participant details if necessary"
 msgstr "При необходимости, сверните данные об участнике события"
 
-#: data/io.elementary.calendar.appdata.xml.in:69
+#: data/io.elementary.calendar.appdata.xml.in:94
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr ""
 "Исправлено нежелательное перепланирование при редактировании названия события"
 
-#: data/io.elementary.calendar.appdata.xml.in:76
+#: data/io.elementary.calendar.appdata.xml.in:101
 msgid "Fix crash when editing an event with no location"
 msgstr "Исправлен сбой при редактировании события без местоположения"
 
-#: data/io.elementary.calendar.appdata.xml.in:81
+#: data/io.elementary.calendar.appdata.xml.in:106
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
 "Исправлена возможная ошибка при загрузке событий без времени начала или "
 "окончания"
 
-#: data/io.elementary.calendar.appdata.xml.in:86
+#: data/io.elementary.calendar.appdata.xml.in:111
 msgid "Make agenda pane fill the whole space"
 msgstr "Панель повестки дня заполняет все пространство"
 
-#: data/io.elementary.calendar.appdata.xml.in:87
+#: data/io.elementary.calendar.appdata.xml.in:112
 msgid "Set the suggested time for new events to the next whole hour"
 msgstr "Установите предлагаемое время для новых событий на следующий целый час"
 
-#: data/io.elementary.calendar.appdata.xml.in:88
+#: data/io.elementary.calendar.appdata.xml.in:113
 msgid "Fix issues with recurring events"
 msgstr "Исправлены проблемы с повторяющимися событиями"
 
-#: data/io.elementary.calendar.appdata.xml.in:89
-msgid "Performance improvements"
-msgstr "Улучшения производительности"
-
-#: data/io.elementary.calendar.appdata.xml.in:95
+#: data/io.elementary.calendar.appdata.xml.in:120
 msgid "Present import window when opening ICS files"
 msgstr "Отображение окна импорта при открытии ICS файлов"
 
-#: data/io.elementary.calendar.appdata.xml.in:96
+#: data/io.elementary.calendar.appdata.xml.in:121
 msgid "Add a search entry for calendars"
 msgstr "Добавлено поле поиска для календарей"
 
-#: data/io.elementary.calendar.appdata.xml.in:97
+#: data/io.elementary.calendar.appdata.xml.in:122
 msgid "Always use calendar icon in notifications"
 msgstr "Всегда показывать значок календаря в уведомлениях"
 
-#: data/io.elementary.calendar.appdata.xml.in:98
+#: data/io.elementary.calendar.appdata.xml.in:123
 msgid "Agenda view can now be navigated by keyboard"
 msgstr ""
 "Режим просмотра «Повестка дня» теперь может использоватся при помощи "
 "клавиатуры"
 
-#: data/io.elementary.calendar.appdata.xml.in:99
+#: data/io.elementary.calendar.appdata.xml.in:124
 msgid "Right-to-left improvements"
 msgstr "Улучшения для режима «Справа-налево»"
 
-#: data/io.elementary.calendar.appdata.xml.in:100
+#: data/io.elementary.calendar.appdata.xml.in:125
 msgid "Various UI overhauls including lime accent color"
 msgstr ""
 "Различные изменения пользовательского интерфейса, включая лаймовый цветовой "
 "акцент"
 
-#: data/io.elementary.calendar.appdata.xml.in:101
+#: data/io.elementary.calendar.appdata.xml.in:126
 msgid "Overall code cleanup and rewrites"
 msgstr "Полное переписывание и очистка кода"
 
-#: data/io.elementary.calendar.appdata.xml.in:107
+#: data/io.elementary.calendar.appdata.xml.in:132
 msgid "Styling adjustments"
 msgstr "Согласование стиля"
 
-#: data/io.elementary.calendar.appdata.xml.in:108
+#: data/io.elementary.calendar.appdata.xml.in:133
 msgid "Fix location panel initialization"
 msgstr "Исправлено инициализацию панели местоположения"
 
-#: data/io.elementary.calendar.appdata.xml.in:109
+#: data/io.elementary.calendar.appdata.xml.in:134
 msgid "New translations"
 msgstr "Новые переводы"
 
-#: data/io.elementary.calendar.appdata.xml.in:114
+#: data/io.elementary.calendar.appdata.xml.in:139
 msgid "Update wingpanel-indicator-datetime settings path."
 msgstr "Обновлен путь к параметрам wingpanel-indicator-datetime."
 
-#: data/io.elementary.calendar.appdata.xml.in:115
+#: data/io.elementary.calendar.appdata.xml.in:140
 msgid "New translations."
 msgstr "Новые переводы."
 
-#: data/io.elementary.calendar.appdata.xml.in:120
-#: data/io.elementary.calendar.appdata.xml.in:127
+#: data/io.elementary.calendar.appdata.xml.in:145
+#: data/io.elementary.calendar.appdata.xml.in:152
 msgid "Various bug fixes and improvements."
 msgstr "Различные исправления и улучшения."
 
-#: data/io.elementary.calendar.appdata.xml.in:125
+#: data/io.elementary.calendar.appdata.xml.in:150
 msgid "Fixes for calendar accuracy and integrity issues."
 msgstr "Исправления проблем точности и целостности календаря."
 
-#: data/io.elementary.calendar.appdata.xml.in:126
+#: data/io.elementary.calendar.appdata.xml.in:151
 msgid "Fixes exporting, importing and printing calendars."
 msgstr "Исправления экспорта, импорта и печати календарей."
 
-#: data/io.elementary.calendar.appdata.xml.in:174
+#: data/io.elementary.calendar.appdata.xml.in:199
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 

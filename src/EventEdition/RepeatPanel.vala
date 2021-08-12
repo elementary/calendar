@@ -266,6 +266,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         repeat_switch.active = false;
 
         load ();
+
+        repeat_switch.grab_focus ();
     }
 
     private void load_weekly_recurrence (ICal.Recurrence rrule) {

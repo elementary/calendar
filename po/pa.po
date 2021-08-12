@@ -1,27 +1,25 @@
-# Latvian translation for maya
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
-# This file is distributed under the same license as the maya package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.elementary.calendar package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: maya\n"
+"Project-Id-Version: io.elementary.calendar\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2015-10-24 09:47+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
-"Language-Team: Latvian <lv@li.org>\n"
-"Language: lv\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
 msgid "On this computer"
-msgstr "Šajā datorā"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:41
 msgid "User:"
@@ -76,8 +74,6 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Jūsu gaidāmie notikumi tiks attēloti šeit, kad būsiet izvēlējies datumu ar "
-"notikumiem."
 
 #: src/AgendaView.vala:140
 msgid "During the day"
@@ -108,9 +104,8 @@ msgid "Next Month"
 msgstr ""
 
 #: src/Application.vala:54
-#, fuzzy
 msgid "Create an event"
-msgstr "Izveidot jaunu notikumu"
+msgstr ""
 
 #: src/Application.vala:55
 msgid "Focus the given day"
@@ -122,12 +117,11 @@ msgstr ""
 
 #: src/Application.vala:172
 msgid "Calendar"
-msgstr "Kalendārs"
+msgstr ""
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Izvelties kalendārus, ko rādīt"
+msgstr ""
 
 #: src/ImportDialog.vala:44
 #, c-format
@@ -140,7 +134,6 @@ msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -148,11 +141,11 @@ msgstr ""
 
 #: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
-msgstr "Pievienot  notikumu"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
-msgstr "Rediģēt notikumu"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
@@ -160,7 +153,7 @@ msgstr ""
 
 #: src/EventEdition/EventDialog.vala:121
 msgid "Location"
-msgstr "Vieta"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:122
 msgid "Guests"
@@ -182,11 +175,11 @@ msgstr ""
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
-msgstr "Izveidot notikumu"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:164
 msgid "Save Changes"
-msgstr "Saglabāt izmaiņas"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
@@ -220,15 +213,15 @@ msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:76
 msgid "From:"
-msgstr "No:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:82
 msgid "All day:"
-msgstr "Visu dienu:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:87
 msgid "To:"
-msgstr "Līdz:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:105
 msgid "Title:"
@@ -236,7 +229,7 @@ msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:107
 msgid "Name of Event"
-msgstr "Notikuma nosaukums"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:117
 msgid "Press enter to parse event"
@@ -256,7 +249,7 @@ msgstr ""
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "Jānis Bērziņš VAI Brīvības iela"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
@@ -271,9 +264,8 @@ msgid "Add Reminder"
 msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:192
-#, fuzzy
 msgid "At time of event"
-msgstr "Notikuma nosaukums"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:193
 msgid "1 minute before"
@@ -626,7 +618,7 @@ msgstr ""
 
 #: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
 msgid "Show Week Numbers"
-msgstr "Rādīt nedēļu numurus"
+msgstr ""
 
 #: src/Grid/VAutoHider.vala:109
 #, c-format
@@ -760,13 +752,12 @@ msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "Eksportēt kalendāru"
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
-msgstr "kalendārs.ics"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -777,9 +768,8 @@ msgid "Duplicate…"
 msgstr ""
 
 #: src/Widgets/EventMenu.vala:42
-#, fuzzy
 msgid "Remove Event"
-msgstr "Izveidot notikumu"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
@@ -791,7 +781,7 @@ msgstr ""
 
 #: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
-msgstr "Izveidot jaunu notikumu"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
@@ -803,25 +793,23 @@ msgstr ""
 
 #: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
-msgstr "Eksportēt un dalīties ar noklusējuma kalendāru"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
 msgstr ""
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Eksportēt kalendāru"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
 msgstr ""
 
 #: src/Widgets/SourcePopover.vala:99
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Izvelties kalendārus, ko rādīt"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
@@ -843,102 +831,3 @@ msgstr ""
 #, c-format
 msgid "\"%s\" removed"
 msgstr ""
-
-#, fuzzy
-#~ msgid "Search Calendars"
-#~ msgstr "Meklēt notikumus"
-
-#~ msgid "%B %e, %Y"
-#~ msgstr "%B %e, %Y"
-
-#, fuzzy
-#~ msgid "%a, %b %d"
-#~ msgstr "%A, %b %d"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Launchpad Contributions:\n"
-#~ "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-#~ "  Kārlis Lukstiņš https://launchpad.net/~karlis-lukstins\n"
-#~ "  Matiss Treinis https://launchpad.net/~mrtreinis"
-
-#~ msgid "View and schedule events"
-#~ msgstr "Skatīt un plānot notikumus"
-
-#~ msgid "Maya;Planner;Dates;Days;Events;"
-#~ msgstr "Maya;Plānotājs;Datumi;Dienas;Notikumi;"
-
-#~ msgid "%l:%M %p"
-#~ msgstr "%l:%M %p"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H.%M"
-
-#~ msgid "Contacts"
-#~ msgstr "Kontakti"
-
-#~ msgid "Webcal"
-#~ msgstr "Webcal"
-
-#~ msgid "Personal"
-#~ msgstr "Personiskie"
-
-#~ msgid "at"
-#~ msgstr ","
-
-#~ msgid "_Add Event"
-#~ msgstr "_Pievienot notikumu"
-
-#~ msgid "Ends: \t"
-#~ msgstr "Beidzas: \t"
-
-#~ msgid "all day"
-#~ msgstr "visu dienu"
-
-#~ msgid "Starts: \t"
-#~ msgstr "Sākas: \t"
-
-#~ msgid "$more more ..."
-#~ msgstr "$more vairāk ..."
-
-#~ msgid "Title"
-#~ msgstr "Nosaukums"
-
-#~ msgid "Participants"
-#~ msgstr "Dalībnieki"
-
-#~ msgid "Comments"
-#~ msgstr "Piezīmes"
-
-#~ msgid "Name or Email Address"
-#~ msgstr "Vārds vai Epasta adrese"
-
-#~ msgid "Your event has to be named and has to have a valid date"
-#~ msgstr "Notikumam jābūt ar nosaukumu un derīgu datumu"
-
-#~ msgid "Edit the selected event"
-#~ msgstr "Rediģēt izvēlēto notikumu"
-
-#~ msgid "Delete the selected event"
-#~ msgstr "Dzēst izvēlēto notikumu"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Šis notikums nevar tikt labots"
-
-#~ msgid "Today"
-#~ msgstr "Šodien"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Pilnekrāna"
-
-#~ msgid "Import..."
-#~ msgstr "Importēt..."
-
-#~ msgid "Add calendar"
-#~ msgstr "Pievienot kalendāru"
-
-#~ msgid "Sync..."
-#~ msgstr "Sinhronizēt"
-
-#~ msgid "About"
-#~ msgstr "Par"

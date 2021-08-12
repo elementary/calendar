@@ -26,12 +26,12 @@ namespace Maya {
     };
 
     public class Daemon : GLib.Application {
-        private Gee.HashMap<ECal.Component, string> event_uid;
+        private Gee.HashMultiMap<ECal.Component, string> event_uids;
 
         construct {
             load_today_events ();
             Timeout.add_seconds (86400, () => {
-                event_uid.clear ();
+                event_uids.clear ();
                 load_today_events ();
                 return true;
             });
@@ -42,7 +42,7 @@ namespace Maya {
         }
 
         private void load_today_events () {
-            event_uid = new Gee.HashMap<ECal.Component, string> ();
+            event_uids = new Gee.HashMultiMap<ECal.Component, string> ();
             var model = Calendar.EventStore.get_default ();
             model.events_added.connect (on_events_added);
             model.events_updated.connect (on_events_updated);
@@ -130,7 +130,7 @@ namespace Maya {
 
         public async void add_timeout (E.Source source, ECal.Component event, uint interval) {
             var uid = "%u-%u".printf (interval, GLib.Random.next_int ());
-            event_uid.set (event, uid);
+            event_uids.set (event, uid);
             debug ("adding timeout uid:%s", uid);
             Timeout.add_seconds (interval, () => {
                 var extension = (E.SourceAlarms)source.get_extension (E.SOURCE_EXTENSION_ALARMS);
@@ -144,7 +144,7 @@ namespace Maya {
         }
 
         public void queue_event_notification (ECal.Component event, string uid) {
-            if (event_uid.values.contains (uid) == false) {
+            if (!(uid in event_uids[event])) {
                 return;
             }
 
@@ -168,7 +168,6 @@ namespace Maya {
 
             var notification = new GLib.Notification (primary_text);
             notification.set_body (secondary_text);
-            notification.set_icon (new ThemedIcon ("io.elementary.calendar"));
 
             GLib.Application.get_default ().send_notification (uid, notification);
         }
@@ -183,8 +182,8 @@ namespace Maya {
         }
 
         private void remove_event (E.Source source, ECal.Component event) {
-            if (event_uid.has_key (event)) {
-                event_uid.unset (event);
+            if (event in event_uids) {
+                event_uids.remove_all (event);
             }
         }
 
