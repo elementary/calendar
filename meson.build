@@ -5,6 +5,15 @@ project('io.elementary.calendar',
 
 add_project_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
 
+conf_data = configuration_data()
+conf_data.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
+conf_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+conf_file = configure_file(
+    input: 'src/Config.vala.in',
+    output: '@BASENAME@',
+    configuration: conf_data
+)
+
 libexecdir = join_paths(get_option('prefix'), get_option('libexecdir'), meson.project_name())
 pluginsdir = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name(), 'plugins')
 
