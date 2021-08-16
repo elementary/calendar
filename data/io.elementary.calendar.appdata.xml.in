@@ -204,8 +204,12 @@
   <url type="translate">https://l10n.elementary.io/projects/calendar</url>
   <update_contact>contact_at_elementary.io</update_contact>
   <screenshots>
-  <screenshot type="default">
-    <image>https://raw.githubusercontent.com/elementary/calendar/master/data/screenshot.png</image>
-  </screenshot>
-</screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/elementary/calendar/master/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <custom>
+    <value key="x-appcenter-color-primary">#fff</value>
+    <value key="x-appcenter-color-primary-text">#206b00</value>
+  </custom>
 </component>
