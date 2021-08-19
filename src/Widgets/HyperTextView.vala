@@ -55,9 +55,11 @@
                 critical ("RegexError while constructing URI regex: %s", e.message);
             }
 
-            buffer.notify["cursor-position"].connect (on_buffer_cursor_position_changed);
-            buffer.paste_done.connect (on_paste_done);
-            buffer.changed.connect_after (on_after_buffer_changed);
+            buffer_connect (buffer);
+            notify["buffer"].connect (() => {
+                buffer_connect (buffer);
+                buffer.changed ();
+            });
 
             button_release_event.connect (on_button_release_event);
             motion_notify_event.connect (on_motion_notify_event);
@@ -86,6 +88,12 @@
                 key_press_event.connect (on_key_press_event);
                 key_release_event.connect (on_key_release_event);
             }
+        }
+
+        private void buffer_connect (Gtk.TextBuffer buffer) {
+            buffer.notify["cursor-position"].connect (on_buffer_cursor_position_changed);
+            buffer.paste_done.connect (on_paste_done);
+            buffer.changed.connect_after (on_after_buffer_changed);
         }
 
         private void on_buffer_cursor_position_changed () {
