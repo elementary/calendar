@@ -217,6 +217,7 @@
         }
 
         private bool on_key_press_event (Gdk.EventKey event) {
+            warning ("on_key_press_event");
             if (event.keyval == Gdk.Key.Control_L || event.keyval == Gdk.Key.Control_R) {
                 var window = get_window (Gtk.TextWindowType.TEXT);
                 if (window != null) {
@@ -237,6 +238,7 @@
         }
 
         private bool on_key_release_event (Gdk.EventKey event) {
+            warning ("on_key_release_event");
             if (event.keyval == Gdk.Key.Control_L || event.keyval == Gdk.Key.Control_R) {
                 var window = get_window (Gtk.TextWindowType.TEXT);
                 if (is_control_key_pressed && window != null) {
