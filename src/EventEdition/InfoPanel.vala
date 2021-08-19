@@ -20,7 +20,7 @@
 
 public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     private Gtk.Entry title_entry;
-    private Gtk.TextView comment_textview;
+    private Calendar.Widgets.HyperTextView comment_textview;
     private Granite.Widgets.DatePicker from_date_picker;
     private Granite.Widgets.DatePicker to_date_picker;
     private Gtk.Switch allday_switch;
@@ -137,7 +137,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         }
 
         var comment_label = new Granite.HeaderLabel (_("Comments:"));
-        comment_textview = new Gtk.TextView ();
+        comment_textview = new Calendar.Widgets.HyperTextView ();
         comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
         comment_textview.accepts_tab = false;
         comment_textview.set_border_window_size (Gtk.TextWindowType.LEFT, 2);
