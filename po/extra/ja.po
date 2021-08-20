@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-07-22 16:07+0000\n"
+"PO-Revision-Date: 2021-08-09 11:01+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -87,7 +87,7 @@ msgstr "アバター画像未設定時に背景を色付きで表示するよう
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Include \"film\" as an event icon keyword"
-msgstr "予定のアイコンのキーワードに \"映画\" という単語を追加"
+msgstr "予定のアイコンのキーワードに\"映画\"という単語を追加"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Add Mint and Bubblegum to calendar color chooser"
@@ -115,7 +115,7 @@ msgstr "新しい翻訳"
 
 #: data/io.elementary.calendar.appdata.xml.in:45
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr "予定のコンテキストメニューに \"複製…\" オプションを追加"
+msgstr "予定のコンテキストメニューに\"複製…\"オプションを追加"
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Fix an issue where new events could appear twice in Calendar"
@@ -125,9 +125,7 @@ msgstr "カレンダーに新しい予定が重複して表示される可能性
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
-msgstr ""
-"カレンダーの編集時に、\"デフォルトのカレンダーに設定\" チェックボックスが正し"
-"くチェックされるように修正"
+msgstr "カレンダーの編集時に、\"デフォルトのカレンダーに設定\"チェックボックスが正しくチェックされるように修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:57
 msgid "Improvements:"
