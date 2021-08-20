@@ -22,30 +22,34 @@ namespace Calendar.Util {
     //--- ICal.Component Helpers ---//
 
     /** Gets a pair of {@link GLib.DateTime} objects representing the start and
-     *  end of the given component.
+     *  end of the given component, represented in the system time zone.
      */
     public void icalcomponent_get_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
+        icalcomponent_get_datetimes (component, out start_date, out end_date);
+
+        if (!Calendar.Util.datetime_is_all_day (start_date, end_date)) {
+        // Don't convert timezone for date with only day info, which is considered floating
+            start_date = start_date.to_local ();
+            end_date = end_date.to_local ();
+        }
+    }
+
+    /** Gets a pair of {@link GLib.DateTime} objects representing the start and
+     *  end of the given component, represented in the time zone of @component.
+     */
+    public void icalcomponent_get_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         ICal.Time dt_start = component.get_dtstart ();
         ICal.Time dt_end = component.get_dtend ();
+        start_date = Calendar.Util.icaltime_to_datetime (dt_start);
 
-        if (dt_start.is_date ()) {
-            // Don't convert timezone for date with only day info, leave it at midnight UTC
-            start_date = Calendar.Util.icaltime_to_datetime (dt_start);
-        } else {
-            start_date = Calendar.Util.icaltime_to_datetime (dt_start).to_local ();
-        }
-
+        // Get end date, which can be specified in multiple ways
         if (!dt_end.is_null_time ()) {
-            if (dt_end.is_date ()) {
-                // Don't convert timezone for date with only day info, leave it at midnight UTC
-                end_date = Calendar.Util.icaltime_to_datetime (dt_end);
-            } else {
-                end_date = Calendar.Util.icaltime_to_datetime (dt_end).to_local ();
-            }
+            end_date = Calendar.Util.icaltime_to_datetime (dt_end);
         } else if (dt_start.is_date ()) {
             end_date = start_date;
         } else if (!component.get_duration ().is_null_duration ()) {
-            end_date = Calendar.Util.icaltime_to_datetime (dt_start.add (component.get_duration ())).to_local ();
+            dt_end = dt_start.add (component.get_duration ());
+            end_date = Calendar.Util.icaltime_to_datetime (dt_end);
         } else {
             end_date = start_date.add_days (1);
         }
@@ -71,6 +75,14 @@ namespace Calendar.Util {
      */
     public void icalcomponent_get_local_datetimes_for_display (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         icalcomponent_get_local_datetimes (component, out start_date, out end_date);
+
+        if (datetime_is_all_day (start_date, end_date)) {
+            end_date = end_date.add_days (-1);
+        }
+    }
+
+    public void icalcomponent_get_datetimes_for_display (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
+        icalcomponent_get_datetimes (component, out start_date, out end_date);
 
         if (datetime_is_all_day (start_date, end_date)) {
             end_date = end_date.add_days (-1);
