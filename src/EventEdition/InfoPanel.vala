@@ -197,32 +197,15 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         // Save the time
         if (allday_switch.get_active () == true) {
-            ICal.Time dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, null);
-            ICal.Time dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date.add_days (1), null);
+            var dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, null);
+            var dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date.add_days (1), null);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
         } else {
-            var dt_start_local = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, from_time_picker.time);
-            var dt_end_local = Calendar.Util.datetimes_to_icaltime (to_date_picker.date, to_time_picker.time);
-
-            // Convert times from displayed local time to the component's
-            // original timezone.
-            var tz_start = comp.get_dtstart ().get_timezone ();
-            var tz_end = comp.get_dtend ().get_timezone ();
-            var dt_start = dt_start_local.convert_to_zone (tz_start);
-            var dt_end = dt_end_local.convert_to_zone (tz_end);
-            // If converting to floating timezones, then use the displayed time.
-            // The time is modified by libical when converting to floating, so
-            // work around that by using set_timezone instead of converting.
-            if (tz_start == null) {
-                dt_start = dt_start_local;
-                dt_start.set_timezone (tz_start);
-            }
-            if (tz_end == null) {
-                dt_end = dt_end_local;
-                dt_end.set_timezone (tz_end);
-            }
+            var tz = comp.get_dtstart ().get_timezone ();
+            var dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, from_time_picker.time, tz);
+            var dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date, to_time_picker.time, tz);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
@@ -265,6 +248,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
 
             DateTime from_date, to_date;
+            // TODO Fix local
+            // TODO account for different start/end time zones
             Calendar.Util.icalcomponent_get_local_datetimes_for_display (comp, out from_date, out to_date);
 
             from_date_picker.date = from_date;
@@ -283,6 +268,12 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
                 from_time_picker.sensitive = false;
                 to_time_picker.sensitive = false;
             }
+
+            // Load the time zone
+            var from_timezone = from_date.get_timezone ();
+            // var interval = from_timezone.find_interval (GLib.TimeType.STANDARD, from_date.to_unix ());
+            var from_timezone_name = from_timezone.get_identifier ();
+            timezone_label.label = from_timezone_name;
 
 #if E_CAL_2_0
             ICal.Property property;
