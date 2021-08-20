@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 00:20+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
 "PO-Revision-Date: 2019-10-28 20:23+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/calendar/"
@@ -189,7 +189,7 @@ msgstr "Registri Ŝanĝojn"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
 msgstr "Rezigni"
 
@@ -811,12 +811,16 @@ msgstr "Aldoni Novan Kalendaron…"
 msgid "Import iCalendar File…"
 msgstr "Eksporti Kalendaron…"
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:67
+msgid "Online Accounts Settings…"
+msgstr ""
+
+#: src/Widgets/SourcePopover.vala:99
 #, fuzzy
 msgid "Select ICS File to Import"
 msgstr "Elekti kalendaron en kiu importi"
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:102
 msgid "Open"
 msgstr ""
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 00:20+0000\n"
-"PO-Revision-Date: 2021-04-15 02:22+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
+"PO-Revision-Date: 2021-07-06 22:59+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/extra/"
 "uk/>\n"
@@ -47,7 +47,7 @@ msgstr "Нові функції:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr "До контекстного меню додано параметр «Дублювати...»"
+msgstr "До контекстного меню додано опцію «Дублювати...»"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:38
@@ -67,7 +67,7 @@ msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
-"Поле «Позначити як типовий календар» тепер правильно позначається під час "
+"Поле «Позначити типовим календарем» тепер правильно позначається під час "
 "внесення змін до календаря"
 
 #: data/io.elementary.calendar.appdata.xml.in:26
@@ -194,7 +194,7 @@ msgstr "Нові переклади"
 
 #: data/io.elementary.calendar.appdata.xml.in:114
 msgid "Update wingpanel-indicator-datetime settings path."
-msgstr "Оновлено шлях до параметрів wingpanel-indicator-datetime."
+msgstr "Оновлено шлях до налаштувань wingpanel-indicator-datetime."
 
 #: data/io.elementary.calendar.appdata.xml.in:115
 msgid "New translations."

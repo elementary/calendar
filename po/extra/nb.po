@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 00:20+0000\n"
-"PO-Revision-Date: 2021-05-06 02:27+0000\n"
+"POT-Creation-Date: 2021-06-07 21:23+0000\n"
+"PO-Revision-Date: 2021-07-02 04:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "calendar/extra/nb/>\n"
@@ -53,7 +53,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:56
 #: data/io.elementary.calendar.appdata.xml.in:65
 msgid "Minor Updates:"
-msgstr ""
+msgstr "Småoppdateringer:"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Fix an issue where new events could appear twice in Calendar"
@@ -73,7 +73,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:90
 #: data/io.elementary.calendar.appdata.xml.in:102
 msgid "Updated translations"
-msgstr ""
+msgstr "Nye oversettelser"
 
 #: data/io.elementary.calendar.appdata.xml.in:32
 msgid "Improvements:"
