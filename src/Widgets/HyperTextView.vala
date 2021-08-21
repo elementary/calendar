@@ -66,24 +66,20 @@
             focus_out_event.connect (on_focus_out_event);
 
             /**
-             * Binding key_press/key_release signals to toplevel window
-             * if possible enables us to detect when the Control key
-             * is pressed even when HyperTextView is not focused.
-             */
+             * Binding key_press/key_release signals to all toplevel
+             * windows possible enables us to detect when the Control
+             * key is pressed even when HyperTextView is not focused.
+            */
+            var toplevel_windows = Gtk.Window.list_toplevels ();
 
-            Gtk.Window? toplevel_window = null;
-            foreach (unowned var window in Gtk.Window.list_toplevels ()) {
-                if (window.get_parent_window () == null) {
-                    toplevel_window = window;
-                    break;
+            if (toplevel_windows.length () != 0) {
+                foreach (unowned var toplevel_window in Gtk.Window.list_toplevels ()) {
+                    toplevel_window.key_press_event.connect (on_key_press_event);
+                    toplevel_window.key_release_event.connect (on_key_release_event);
                 }
-            }
 
-            if (toplevel_window != null) {
-                toplevel_window.key_press_event.connect (on_key_press_event);
-                toplevel_window.key_release_event.connect (on_key_release_event);
             } else {
-                warning ("Could not bind key-press events to top-level window, Control + Click may not always behave correctly.");
+                warning ("Could not bind key-press events to any top-level window, Control + Click may not always behave correctly.");
                 // bind to this as a fallback
                 key_press_event.connect (on_key_press_event);
                 key_release_event.connect (on_key_release_event);
@@ -217,7 +213,6 @@
         }
 
         private bool on_key_press_event (Gdk.EventKey event) {
-            warning ("on_key_press_event");
             if (event.keyval == Gdk.Key.Control_L || event.keyval == Gdk.Key.Control_R) {
                 var window = get_window (Gtk.TextWindowType.TEXT);
                 if (window != null) {
@@ -238,7 +233,6 @@
         }
 
         private bool on_key_release_event (Gdk.EventKey event) {
-            warning ("on_key_release_event");
             if (event.keyval == Gdk.Key.Control_L || event.keyval == Gdk.Key.Control_R) {
                 var window = get_window (Gtk.TextWindowType.TEXT);
                 if (is_control_key_pressed && window != null) {
