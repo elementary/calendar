@@ -73,7 +73,7 @@
             var toplevel_windows = Gtk.Window.list_toplevels ();
 
             if (toplevel_windows.length () != 0) {
-                foreach (unowned var toplevel_window in Gtk.Window.list_toplevels ()) {
+                foreach (unowned var toplevel_window in toplevel_windows) {
                     toplevel_window.key_press_event.connect (on_key_press_event);
                     toplevel_window.key_release_event.connect (on_key_release_event);
                 }
