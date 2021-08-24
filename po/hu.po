@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
 "PO-Revision-Date: 2021-08-24 10:40+0000\n"
-"Last-Translator: Hendrich Attila <hendricha@gmail.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/calendar/"
 "calendar/hu/>\n"
 "Language: hu\n"
@@ -130,14 +130,15 @@ msgstr "Válassza ki a naptárt, ahova importálni szeretne"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Események %s forrásból be lesznek olvasztva az alábbi naptárba:"
+msgstr ""
+"Az események a(z) \"%s\" forrásból be lesznek olvasztva az alábbi naptárba:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Események importálása %d fájlból a következő naptárba:"
-msgstr[1] "Események importálása %d fájlból a következő naptárba:"
+msgstr[0] "Az események %d forrásból be lesznek olvasztva az alábbi naptárba:"
+msgstr[1] "Az események %d forrásból be lesznek olvasztva az alábbi naptárba:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
