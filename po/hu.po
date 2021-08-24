@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
 "PO-Revision-Date: 2021-08-24 10:39+0000\n"
-"Last-Translator: Hendrich Attila <hendricha@gmail.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/calendar/"
 "calendar/hu/>\n"
 "Language: hu\n"
@@ -125,7 +125,7 @@ msgstr "Naptár"
 
 #: src/ImportDialog.vala:28
 msgid "Select a Calendar to Import Into"
-msgstr "Válassza ki a Naptárt ahova importál"
+msgstr "Válassza ki a naptárt, ahova importálni szeretne"
 
 #: src/ImportDialog.vala:44
 #, c-format
