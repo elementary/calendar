@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"POT-Creation-Date: 2021-08-26 21:13+0000\n"
 "PO-Revision-Date: 2021-06-08 17:30+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/calendar/"
@@ -108,19 +108,19 @@ msgstr "Aquest mes"
 msgid "Next Month"
 msgstr "El mes que ve"
 
-#: src/Application.vala:54
+#: src/Application.vala:59
 msgid "Create an event"
 msgstr "Crea un esdeveniment"
 
-#: src/Application.vala:55
+#: src/Application.vala:60
 msgid "Focus the given day"
 msgstr "Focalitza el dia"
 
-#: src/Application.vala:55
+#: src/Application.vala:60
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:172
+#: src/Application.vala:177
 msgid "Calendar"
 msgstr "Calendari"
 

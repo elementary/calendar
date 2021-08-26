@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"POT-Creation-Date: 2021-08-26 21:13+0000\n"
 "PO-Revision-Date: 2019-01-08 13:02+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/calendar/"
@@ -109,19 +109,19 @@ msgstr "Šį mėnesį"
 msgid "Next Month"
 msgstr "Kitą mėnesį"
 
-#: src/Application.vala:54
+#: src/Application.vala:59
 msgid "Create an event"
 msgstr "Sukurti įvykį"
 
-#: src/Application.vala:55
+#: src/Application.vala:60
 msgid "Focus the given day"
 msgstr "Fokusuoti nurodytą dieną"
 
-#: src/Application.vala:55
+#: src/Application.vala:60
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:172
+#: src/Application.vala:177
 msgid "Calendar"
 msgstr "Kalendorius"
 
