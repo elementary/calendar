@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2018-06-21 00:09+0000\n"
-"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
-"Language-Team: Hungarian <https://weblate.elementary.io/projects/calendar/"
+"PO-Revision-Date: 2021-08-24 18:15+0000\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/calendar/"
 "calendar/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -45,9 +45,8 @@ msgid "Keep a copy locally"
 msgstr "Egy másolat megtartása helyileg"
 
 #: daemon/Daemon.vala:24
-#, fuzzy
 msgid "Print debug information"
-msgstr "Általános információk"
+msgstr "Hibakeresési információk kiírása"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -90,61 +89,56 @@ msgstr "Egész nap"
 
 #: src/AgendaView.vala:265
 msgid "Tomorrow"
-msgstr ""
+msgstr "Holnap"
 
 #: src/AgendaView.vala:268
-#, fuzzy
 msgid "This Week"
-msgstr "Hetente"
+msgstr "Ezen a héten"
 
 #: src/AgendaView.vala:271
-#, fuzzy
 msgid "Next Week"
-msgstr "Hetente"
+msgstr "Jövő héten"
 
 #: src/AgendaView.vala:274
-#, fuzzy
 msgid "This Month"
-msgstr "Havonta"
+msgstr "Ebben a hónapban"
 
 #: src/AgendaView.vala:277
-#, fuzzy
 msgid "Next Month"
-msgstr "Havonta"
+msgstr "Jövő hónapban"
 
 #: src/Application.vala:54
-#, fuzzy
 msgid "Create an event"
 msgstr "Új esemény létrehozása"
 
 #: src/Application.vala:55
 msgid "Focus the given day"
-msgstr ""
+msgstr "Megadott napra ugrás"
 
 #: src/Application.vala:55
 msgid "date"
-msgstr ""
+msgstr "dátum"
 
 #: src/Application.vala:172
 msgid "Calendar"
 msgstr "Naptár"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Megjelenítendő naptárak kiválasztása"
+msgstr "Válassza ki a naptárt, ahova importálni szeretne"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Események importálása %d fájlból a következő naptárba:"
+msgstr ""
+"Az események a(z) \"%s\" forrásból be lesznek olvasztva az alábbi naptárba:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Események importálása %d fájlból a következő naptárba:"
-msgstr[1] "Események importálása %d fájlból a következő naptárba:"
+msgstr[0] "Az események %d fájlból be lesznek olvasztva az alábbi naptárba:"
+msgstr[1] "Az események %d fájlból be lesznek olvasztva az alábbi naptárba:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -176,10 +170,9 @@ msgstr "Emlékeztetők"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr "Ismétlés"
+msgstr "Ismétlődés"
 
 #: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
@@ -197,7 +190,7 @@ msgstr "A módosítások mentése"
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 #: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
-msgstr "Mégsem"
+msgstr "Mégse"
 
 #: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
@@ -209,7 +202,7 @@ msgstr "Elutasítva"
 
 #: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
-msgstr ""
+msgstr "Talán"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -276,84 +269,68 @@ msgid "Add Reminder"
 msgstr "Emlékeztető hozzáadása"
 
 #: src/EventEdition/ReminderPanel.vala:192
-#, fuzzy
 msgid "At time of event"
-msgstr "Esemény címe"
+msgstr "Az esemény idejében"
 
 #: src/EventEdition/ReminderPanel.vala:193
-#, fuzzy
 msgid "1 minute before"
-msgstr "1 perc"
+msgstr "1 perccel előtte"
 
 #: src/EventEdition/ReminderPanel.vala:194
-#, fuzzy
 msgid "5 minutes before"
-msgstr "5 perc"
+msgstr "5 perccel előtte"
 
 #: src/EventEdition/ReminderPanel.vala:195
-#, fuzzy
 msgid "10 minutes before"
-msgstr "10 perc"
+msgstr "10 perccel előtte"
 
 #: src/EventEdition/ReminderPanel.vala:196
-#, fuzzy
 msgid "15 minutes before"
-msgstr "15 perc"
+msgstr "15 perccel előtte"
 
 #: src/EventEdition/ReminderPanel.vala:197
-#, fuzzy
 msgid "20 minutes before"
-msgstr "20 perc"
+msgstr "20 perccel előtte"
 
 #: src/EventEdition/ReminderPanel.vala:198
-#, fuzzy
 msgid "25 minutes before"
-msgstr "25 perc"
+msgstr "25 perccel előtte"
 
 #: src/EventEdition/ReminderPanel.vala:199
-#, fuzzy
 msgid "30 minutes before"
-msgstr "30 perc"
+msgstr "30 perccel előtte"
 
 #: src/EventEdition/ReminderPanel.vala:200
-#, fuzzy
 msgid "45 minutes before"
-msgstr "45 perc"
+msgstr "45 perccel előtte"
 
 #: src/EventEdition/ReminderPanel.vala:201
-#, fuzzy
 msgid "1 hour before"
-msgstr "1 óra"
+msgstr "1 órával előtte"
 
 #: src/EventEdition/ReminderPanel.vala:202
-#, fuzzy
 msgid "2 hours before"
-msgstr "2 óra"
+msgstr "2 órával előtte"
 
 #: src/EventEdition/ReminderPanel.vala:203
-#, fuzzy
 msgid "3 hours before"
-msgstr "3 óra"
+msgstr "3 órával előtte"
 
 #: src/EventEdition/ReminderPanel.vala:204
-#, fuzzy
 msgid "12 hours before"
-msgstr "12 óra"
+msgstr "12 órával előtte"
 
 #: src/EventEdition/ReminderPanel.vala:205
-#, fuzzy
 msgid "24 hours before"
-msgstr "24 óra"
+msgstr "24 órával előtte"
 
 #: src/EventEdition/ReminderPanel.vala:206
-#, fuzzy
 msgid "2 days before"
-msgstr "2 nap"
+msgstr "2 nappal előtte"
 
 #: src/EventEdition/ReminderPanel.vala:207
-#, fuzzy
 msgid "1 week before"
-msgstr "1 hét"
+msgstr "1 héttel előtte"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
@@ -382,26 +359,26 @@ msgstr "Minden:"
 #: src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] "Naponta"
-msgstr[1] "Naponta"
+msgstr[0] "Nap"
+msgstr[1] "Nap"
 
 #: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] "Hetente"
-msgstr[1] "Hetente"
+msgstr[0] "Hét"
+msgstr[1] "Hét"
 
 #: src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] "Havonta"
-msgstr[1] "Havonta"
+msgstr[0] "Hónap"
+msgstr[1] "Hónap"
 
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] "Évente"
-msgstr[1] "Évente"
+msgstr[0] "Év"
+msgstr[1] "Év"
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -651,7 +628,7 @@ msgstr "Hetek számának megjelenítése"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "még %u …"
+msgstr "%u további…"
 
 #: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
@@ -690,103 +667,103 @@ msgstr "Mentés"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr ""
+msgstr "időpont;találkozó;meeting;megbeszélés;gyűlés"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "születésnap;évforduló;parti;szülinap;buli"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "hívás;mobil;telefon;csengés;okostelefon"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "bár;koktélok;italok;boldog óra;sörözés;kofolázás"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "autó;vezetni;vezet;kirándulás;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr ""
+msgstr "repülő;reptér;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
+"reggeli;tízórai,ebéd;uzsonna;vacsora;steak-ház;hamburger,étel;barbecue;bbq"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "bíróság;esküdtszék;adó;ügyész;ügyvéd;szerződés"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie;film"
-msgstr ""
+msgstr "mozi;film;sorozat;epizód"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr ""
+msgstr "esküvő"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:317
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:329
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s %s-kor"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:341
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
-#, fuzzy
 msgid "Export Calendar…"
 msgstr "Naptár exportálása…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
-msgstr "Naptár.ics"
+msgstr "naptar.ics"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -794,16 +771,15 @@ msgstr "Szerkesztés…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Megkettőzés…"
 
 #: src/Widgets/EventMenu.vala:42
-#, fuzzy
 msgid "Remove Event"
 msgstr "Esemény törlése"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "Előfordulás eltávolítása"
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
@@ -830,40 +806,37 @@ msgid "Add New Calendar…"
 msgstr "Új naptár hozzáadása…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Naptár exportálása…"
+msgstr "iCalendar-fájl importálása…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "Online fiókok beállításai…"
 
 #: src/Widgets/SourcePopover.vala:99
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Megjelenítendő naptárak kiválasztása"
+msgstr "Válassza ki az importálandó ICS-fájlt"
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
-msgstr ""
+msgstr "Megnyitás"
 
 #: src/Widgets/SourceRow.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Eltávolítás"
+msgstr "Nem távolítható el"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Nem szerkeszthető"
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
 msgstr "Visszavonás"
 
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "\"%s\" naptár eltávolítva."
+msgstr "\"%s\" eltávolítva"
 
 #, fuzzy
 #~ msgid "Search Calendars"
