@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-07-22 16:07+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"PO-Revision-Date: 2021-08-26 15:19+0000\n"
+"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
 "Language: ru\n"
@@ -131,7 +131,7 @@ msgstr "Выберите календарь для импорта"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "События из \"%s\" будут объеденины с этим календарем:"
+msgstr "События из «%s» будут объеденины с этим календарем:"
 
 #: src/ImportDialog.vala:47
 #, c-format
@@ -841,7 +841,7 @@ msgstr "Возврат"
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
 #, c-format
 msgid "\"%s\" removed"
-msgstr "\"%s\" удалено"
+msgstr "«%s» удалён"
 
 #, fuzzy
 #~ msgid "Search Calendars"
