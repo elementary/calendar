@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 21:13+0000\n"
-"PO-Revision-Date: 2021-07-30 20:44+0000\n"
+"PO-Revision-Date: 2021-08-27 08:31+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/calendar/extra/fr/"
 ">\n"
@@ -46,13 +46,11 @@ msgstr "Corrections :"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix broken calendar color with some online providers"
-msgstr ""
+msgstr "Correction de la couleur des calendriers pour certains fournisseurs"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
-#, fuzzy
-#| msgid "Fix end times for all-day events"
 msgid "Fix an issue with some all-day events"
-msgstr "Correction de l'heure de fin pour les évènements sur toute la journée"
+msgstr "Correction d'un problème avec certains événements à la journée"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 #: data/io.elementary.calendar.appdata.xml.in:42
