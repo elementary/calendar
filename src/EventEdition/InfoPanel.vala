@@ -247,8 +247,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
 
             DateTime from_date, to_date;
-            // TODO account for different start/end time zones
             Calendar.Util.icalcomponent_get_datetimes_for_display (comp, out from_date, out to_date);
+
+            // If end time zone is different from start, convert to same as start.
+            // This is permanent once the event is saved, but the actual time is
+            // unaffected (only its display).
+            if (to_date.get_utc_offset () != from_date.get_utc_offset ()) {
+                to_date = to_date.to_timezone (from_date.get_timezone ());
+            }
 
             from_date_picker.date = from_date;
             from_time_picker.time = from_date;
