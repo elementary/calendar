@@ -101,11 +101,10 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         to_time_picker = make_time_picker ();
         to_time_picker.time_changed.connect (() => {on_time_modified (1);} );
 
-        var timezone_label = new Granite.HeaderLabel (_("Time zone:"));
+        var timezone_header = new Granite.HeaderLabel (_("Time zone:"));
         timezone_label = new Gtk.Label (null) {
             halign = Gtk.Align.START
         };
-
 
         var title_label = new Granite.HeaderLabel (_("Title:"));
         title_entry = new Gtk.Entry ();
@@ -177,7 +176,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         attach (to_date_picker, 0, 5, 1, 1);
         attach (to_time_picker, 1, 5, 1, 1);
         // Row: timezone
-        attach (timezone_label, 0, 6, 1, 1);
+        attach (timezone_header, 0, 6, 1, 1);
         attach (timezone_label, 0, 7, 1, 1);
         // Row: comment
         attach (comment_label, 0, 8, 4, 1);
