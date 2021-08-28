@@ -27,7 +27,12 @@ namespace Calendar.Util {
     public void icalcomponent_get_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         icalcomponent_get_datetimes (component, out start_date, out end_date);
 
-        start_date = Calendar.Util.icaltime_to_datetime (dt_start).to_local ();
+        if (!Calendar.Util.datetime_is_all_day (start_date, end_date)) {
+        // Don't convert timezone for date with only day info, which is considered floating
+            start_date = start_date.to_local ();
+            end_date = end_date.to_local ();
+        }
+    }
 
     /** Gets a pair of {@link GLib.DateTime} objects representing the start and
      *  end of the given component, represented in the time zone of @component.
@@ -38,12 +43,11 @@ namespace Calendar.Util {
         start_date = Calendar.Util.icaltime_to_datetime (dt_start);
 
         // Get end date, which can be specified in multiple ways
-        // TODO should this really convert to local?
         if (!dt_end.is_null_time ()) {
-            end_date = Calendar.Util.icaltime_to_datetime (dt_end).to_local ();
+            end_date = Calendar.Util.icaltime_to_datetime (dt_end);
         } else if (!component.get_duration ().is_null_duration ()) {
             dt_end = dt_start.add (component.get_duration ());
-            end_date = Calendar.Util.icaltime_to_datetime (dt_end).to_local ();
+            end_date = Calendar.Util.icaltime_to_datetime (dt_end);
         } else if (dt_start.is_date ()) {
             end_date = start_date.add_days (1); // Implicitly 1 day long
         } else {
