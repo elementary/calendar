@@ -214,9 +214,26 @@ public class EventDialog : Granite.Dialog {
         }
 
         private void remove_event () {
-            var calmodel = Calendar.EventStore.get_default ();
-            calmodel.remove_event (original_source, ecal, mod_type);
-            this.destroy ();
+            // TODO account for recurrences (or lack thereof)
+            var delete_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                _("Delete event?"),
+                _("This event and all its occurrences will be permanently deleted."),
+                "dialog-warning",
+                Gtk.ButtonsType.CANCEL
+            ) {
+                transient_for = this
+            };
+
+            unowned Gtk.Widget trash_button = delete_dialog.add_button (_("Delete Event"), Gtk.ResponseType.YES);
+            trash_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            Gtk.ResponseType response = (Gtk.ResponseType) delete_dialog.run ();
+            delete_dialog.destroy ();
+
+            if (response == Gtk.ResponseType.YES) {
+                var calmodel = Calendar.EventStore.get_default ();
+                calmodel.remove_event (original_source, ecal, mod_type);
+                this.destroy ();
+            }
         }
     }
 }
