@@ -247,9 +247,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
 
             DateTime from_date, to_date;
-            // TODO Fix local
             // TODO account for different start/end time zones
-            Calendar.Util.icalcomponent_get_local_datetimes_for_display (comp, out from_date, out to_date);
+            Calendar.Util.icalcomponent_get_datetimes_for_display (comp, out from_date, out to_date);
 
             from_date_picker.date = from_date;
             from_time_picker.time = from_date;
