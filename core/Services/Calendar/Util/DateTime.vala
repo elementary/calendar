@@ -28,6 +28,9 @@ namespace Calendar.Util {
 
     /**
      * Say if an event lasts all day.
+     *
+     * An all-day event is represented as both starting and ending at midnight
+     * local time, so its duration is exactly a multiple of 24 hours.
      */
     public bool datetime_is_all_day (GLib.DateTime dtstart, GLib.DateTime dtend) {
         var timespan = dtend.difference (dtstart);

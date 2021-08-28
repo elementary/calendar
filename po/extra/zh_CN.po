@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-07 21:23+0000\n"
+"POT-Creation-Date: 2021-08-26 21:13+0000\n"
 "PO-Revision-Date: 2021-02-15 12:23+0000\n"
 "Last-Translator: Rock Chin <1010553892@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -40,167 +40,230 @@ msgstr ""
 "和 CalDAV。"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
-msgid "New Features:"
-msgstr "新功能："
+#: data/io.elementary.calendar.appdata.xml.in:36
+msgid "Fixes:"
+msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:20
-msgid "Add \"Duplicate...\" option to event context menu"
-msgstr "将“复制...”添加到事件内容菜单"
+msgid "Fix broken calendar color with some online providers"
+msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:22
-#: data/io.elementary.calendar.appdata.xml.in:38
-#: data/io.elementary.calendar.appdata.xml.in:47
-#: data/io.elementary.calendar.appdata.xml.in:56
-#: data/io.elementary.calendar.appdata.xml.in:65
+#: data/io.elementary.calendar.appdata.xml.in:21
+#, fuzzy
+#| msgid "Fix timezone errors with all-day events"
+msgid "Fix an issue with some all-day events"
+msgstr "解决了持续全天的事件跟所在时区有关的错误"
+
+#: data/io.elementary.calendar.appdata.xml.in:23
+#: data/io.elementary.calendar.appdata.xml.in:42
+#: data/io.elementary.calendar.appdata.xml.in:60
+#: data/io.elementary.calendar.appdata.xml.in:76
+#: data/io.elementary.calendar.appdata.xml.in:85
+#: data/io.elementary.calendar.appdata.xml.in:94
+#: data/io.elementary.calendar.appdata.xml.in:103
 msgid "Minor Updates:"
 msgstr "次要更新："
 
-#: data/io.elementary.calendar.appdata.xml.in:24
+#: data/io.elementary.calendar.appdata.xml.in:25
+#: data/io.elementary.calendar.appdata.xml.in:50
+#: data/io.elementary.calendar.appdata.xml.in:64
+#: data/io.elementary.calendar.appdata.xml.in:79
+#: data/io.elementary.calendar.appdata.xml.in:88
+#: data/io.elementary.calendar.appdata.xml.in:97
+#: data/io.elementary.calendar.appdata.xml.in:108
+#: data/io.elementary.calendar.appdata.xml.in:128
+#: data/io.elementary.calendar.appdata.xml.in:140
+msgid "Updated translations"
+msgstr "更新翻译"
+
+#: data/io.elementary.calendar.appdata.xml.in:31
+#: data/io.elementary.calendar.appdata.xml.in:56
+msgid "New Features:"
+msgstr "新功能："
+
+#: data/io.elementary.calendar.appdata.xml.in:33
+msgid "Import ICS files from the gear menu"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:34
+msgid "Support the dark style"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:38
+msgid "Properly show events on the last day of the month"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:39
+#, fuzzy
+#| msgid "Fix timezone errors with all-day events"
+msgid "Fix end times for all-day events"
+msgstr "解决了持续全天的事件跟所在时区有关的错误"
+
+#: data/io.elementary.calendar.appdata.xml.in:40
+msgid "Notify for all alarms on an event"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:44
+msgid "Improved offline support"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:45
+msgid "New colorful avatar fallbacks"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:46
+msgid "Include \"film\" as an event icon keyword"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:47
+msgid "Add Mint and Bubblegum to calendar color chooser"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:48
+msgid "Link to Online Accounts settings in the gear menu"
+msgstr ""
+
+#: data/io.elementary.calendar.appdata.xml.in:49
+#: data/io.elementary.calendar.appdata.xml.in:127
+msgid "Performance improvements"
+msgstr "性能改进"
+
+#: data/io.elementary.calendar.appdata.xml.in:58
+msgid "Add \"Duplicate...\" option to event context menu"
+msgstr "将“复制...”添加到事件内容菜单"
+
+#: data/io.elementary.calendar.appdata.xml.in:62
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr "解决了新事件可能在日历中出现两次的问题"
 
-#: data/io.elementary.calendar.appdata.xml.in:25
+#: data/io.elementary.calendar.appdata.xml.in:63
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr "编辑日历时“标记为默认日历”选框将被正确勾选"
 
-#: data/io.elementary.calendar.appdata.xml.in:26
-#: data/io.elementary.calendar.appdata.xml.in:41
-#: data/io.elementary.calendar.appdata.xml.in:50
-#: data/io.elementary.calendar.appdata.xml.in:59
 #: data/io.elementary.calendar.appdata.xml.in:70
-#: data/io.elementary.calendar.appdata.xml.in:90
-#: data/io.elementary.calendar.appdata.xml.in:102
-msgid "Updated translations"
-msgstr "更新翻译"
-
-#: data/io.elementary.calendar.appdata.xml.in:32
 msgid "Improvements:"
 msgstr "改进："
 
-#: data/io.elementary.calendar.appdata.xml.in:34
+#: data/io.elementary.calendar.appdata.xml.in:72
 msgid "Allow modification of recurring events"
 msgstr "允许编辑循环事件"
 
-#: data/io.elementary.calendar.appdata.xml.in:35
+#: data/io.elementary.calendar.appdata.xml.in:73
 msgid "Improve handling of week start day"
 msgstr "改进了对新一周开始日期的处理"
 
-#: data/io.elementary.calendar.appdata.xml.in:36
+#: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Fix timezone errors with all-day events"
 msgstr "解决了持续全天的事件跟所在时区有关的错误"
 
-#: data/io.elementary.calendar.appdata.xml.in:40
+#: data/io.elementary.calendar.appdata.xml.in:78
 msgid "Don't resize the sidebar when resizing the window"
 msgstr "重设窗口的大小时不再重置侧边栏的大小"
 
-#: data/io.elementary.calendar.appdata.xml.in:49
+#: data/io.elementary.calendar.appdata.xml.in:87
 msgid "Fix issues with time zones not being recognized"
 msgstr "解决了无法识别所在时区的问题"
 
-#: data/io.elementary.calendar.appdata.xml.in:58
+#: data/io.elementary.calendar.appdata.xml.in:96
 msgid "Fix several issues with adding and removing monthly recurring events"
 msgstr "解决了添加或者删除每月重复事项的相关问题"
 
-#: data/io.elementary.calendar.appdata.xml.in:67
+#: data/io.elementary.calendar.appdata.xml.in:105
 msgid "Correctly save event reminders"
 msgstr "正确地保存事件提醒"
 
-#: data/io.elementary.calendar.appdata.xml.in:68
+#: data/io.elementary.calendar.appdata.xml.in:106
 msgid "Ellipsize event participant details if necessary"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:69
+#: data/io.elementary.calendar.appdata.xml.in:107
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:76
+#: data/io.elementary.calendar.appdata.xml.in:114
 msgid "Fix crash when editing an event with no location"
 msgstr "修复在编辑无位置事件时的崩溃"
 
-#: data/io.elementary.calendar.appdata.xml.in:81
+#: data/io.elementary.calendar.appdata.xml.in:119
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:86
+#: data/io.elementary.calendar.appdata.xml.in:124
 msgid "Make agenda pane fill the whole space"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:87
+#: data/io.elementary.calendar.appdata.xml.in:125
 msgid "Set the suggested time for new events to the next whole hour"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:88
+#: data/io.elementary.calendar.appdata.xml.in:126
 msgid "Fix issues with recurring events"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:89
-msgid "Performance improvements"
-msgstr "性能改进"
-
-#: data/io.elementary.calendar.appdata.xml.in:95
+#: data/io.elementary.calendar.appdata.xml.in:133
 msgid "Present import window when opening ICS files"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:96
+#: data/io.elementary.calendar.appdata.xml.in:134
 msgid "Add a search entry for calendars"
 msgstr "为日历添加一个搜索入口"
 
-#: data/io.elementary.calendar.appdata.xml.in:97
+#: data/io.elementary.calendar.appdata.xml.in:135
 msgid "Always use calendar icon in notifications"
 msgstr "在通知中心总是使用日历图标"
 
-#: data/io.elementary.calendar.appdata.xml.in:98
+#: data/io.elementary.calendar.appdata.xml.in:136
 msgid "Agenda view can now be navigated by keyboard"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:99
+#: data/io.elementary.calendar.appdata.xml.in:137
 msgid "Right-to-left improvements"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:100
+#: data/io.elementary.calendar.appdata.xml.in:138
 msgid "Various UI overhauls including lime accent color"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:101
+#: data/io.elementary.calendar.appdata.xml.in:139
 msgid "Overall code cleanup and rewrites"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:107
+#: data/io.elementary.calendar.appdata.xml.in:145
 msgid "Styling adjustments"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:108
+#: data/io.elementary.calendar.appdata.xml.in:146
 msgid "Fix location panel initialization"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:109
+#: data/io.elementary.calendar.appdata.xml.in:147
 msgid "New translations"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:114
+#: data/io.elementary.calendar.appdata.xml.in:152
 msgid "Update wingpanel-indicator-datetime settings path."
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:115
+#: data/io.elementary.calendar.appdata.xml.in:153
 msgid "New translations."
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:120
-#: data/io.elementary.calendar.appdata.xml.in:127
+#: data/io.elementary.calendar.appdata.xml.in:158
+#: data/io.elementary.calendar.appdata.xml.in:165
 msgid "Various bug fixes and improvements."
 msgstr "诸多 Bug 修复和改进。"
 
-#: data/io.elementary.calendar.appdata.xml.in:125
+#: data/io.elementary.calendar.appdata.xml.in:163
 msgid "Fixes for calendar accuracy and integrity issues."
 msgstr "修正了日历的准确性和完整性问题。"
 
-#: data/io.elementary.calendar.appdata.xml.in:126
+#: data/io.elementary.calendar.appdata.xml.in:164
 msgid "Fixes exporting, importing and printing calendars."
 msgstr "修正了导出、导入和打印日历的问题。"
 
-#: data/io.elementary.calendar.appdata.xml.in:174
+#: data/io.elementary.calendar.appdata.xml.in:212
 #, fuzzy
 #| msgid "elementary LLC."
 msgid "elementary, Inc."

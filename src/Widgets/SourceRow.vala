@@ -166,7 +166,7 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
     }
 
     private void style_calendar_color (string color) {
-        var css_color = "@define-color accent_color %s;".printf (color);
+        var css_color = "@define-color accent_color %s;".printf (color.slice (0, 7));
 
         var style_provider = new Gtk.CssProvider ();
 
