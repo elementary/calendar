@@ -90,6 +90,7 @@ namespace Calendar.Util {
 #endif
 
             // Set timezone for the time to be relative to
+            // (doesn't affect DATE-type times)
 #if E_CAL_2_0
             result.set_timezone (timezone);
 #else
@@ -100,7 +101,6 @@ namespace Calendar.Util {
 #if E_CAL_2_0
             result.set_time (time_local.get_hour (), time_local.get_minute (), time_local.get_second ());
 #else
-            result._is_date = 0;
             result.hour = time_local.get_hour ();
             result.minute = time_local.get_minute ();
             result.second = time_local.get_second ();
