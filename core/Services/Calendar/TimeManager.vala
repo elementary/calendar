@@ -116,7 +116,7 @@ public class Calendar.TimeManager : Object {
     }
 
     // Sets up a new TimeManager for testing, which uses settable values.
-    // This overwrites the default instance, so once this is called it can be
+    // This overwrites the default instance, so once this is called
     // get_default can be used as usual to return the test object.
     public static unowned TimeManager setup_test (ICal.Timezone system_timezone) {
         if (instance != null) {
