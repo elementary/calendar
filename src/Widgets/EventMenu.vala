@@ -69,12 +69,32 @@ public class Maya.EventMenu : Gtk.Menu {
     }
 
     private void remove_event () {
-        var calmodel = Calendar.EventStore.get_default ();
-        calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.ALL);
+        var application = (Gtk.Application) GLib.Application.get_default ();
+        var source = comp.get_data<E.Source> ("source");
+        var delete_dialog = new Calendar.DeleteEventDialog (source, comp, ECal.ObjModType.ALL) {
+            transient_for = application.active_window
+        };
+        delete_dialog.run ();
     }
 
     private void add_exception () {
-        var calmodel = Calendar.EventStore.get_default ();
-        calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
+        var application = (Gtk.Application) GLib.Application.get_default ();
+        var delete_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+            "Delete this occurrence of “%s”?",
+            "This occurrence will be permanently deleted, but all other occurrences will remain unchanged.",
+            "dialog-warning",
+            Gtk.ButtonsType.CANCEL) {
+            transient_for = application.active_window
+        };
+
+        unowned Gtk.Widget delete_button = delete_dialog.add_button ("Delete Occurrence", Gtk.ResponseType.YES);
+        delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        Gtk.ResponseType response = (Gtk.ResponseType) delete_dialog.run ();
+        delete_dialog.destroy ();
+
+        if (response == Gtk.ResponseType.YES) {
+            var calmodel = Calendar.EventStore.get_default ();
+            calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
+        }
     }
 }
