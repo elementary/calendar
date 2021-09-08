@@ -30,7 +30,7 @@ public class Calendar.TodayEventMonitor : GLib.Object {
 
     private void load_today_events () {
         event_uids = new Gee.HashMultiMap<ECal.Component, string> ();
-        var model = Calendar.EventStore.get_default ();
+        var model = new Calendar.EventStore ();
         model.events_added.connect (on_events_added);
         model.events_updated.connect (on_events_updated);
         model.events_removed.connect (on_events_removed);
