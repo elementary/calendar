@@ -25,7 +25,7 @@ namespace Maya {
         { null }
     };
 
-    public class Daemon : GLib.Application {
+    public class TodayEventMonitor : GLib.Object {
         private Gee.HashMultiMap<ECal.Component, string> event_uids;
 
         construct {
