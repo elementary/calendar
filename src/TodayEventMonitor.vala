@@ -28,10 +28,6 @@ public class Calendar.TodayEventMonitor : GLib.Object {
         });
     }
 
-    protected override void activate () {
-        Gtk.main ();
-    }
-
     private void load_today_events () {
         event_uids = new Gee.HashMultiMap<ECal.Component, string> ();
         var model = Calendar.EventStore.get_default ();
