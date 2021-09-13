@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 21:13+0000\n"
-"PO-Revision-Date: 2019-02-11 00:08+0000\n"
-"Last-Translator: tylnesh <kohutek.michal@gmail.com>\n"
-"Language-Team: Slovak <https://weblate.elementary.io/projects/calendar/"
-"calendar/sk/>\n"
+"PO-Revision-Date: 2021-09-08 19:07+0000\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/calendar/"
+"sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -46,7 +46,7 @@ msgstr "Ponechať lokálnu kópiu"
 
 #: daemon/Daemon.vala:24
 msgid "Print debug information"
-msgstr "Vytlačiť debugovacie informácie"
+msgstr "Zobraziť ladiace informácie"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -70,14 +70,14 @@ msgstr "Použiť bezpečné pripojenie"
 
 #: plugins/CalDAV/CalDAVBackend.vala:123
 msgid "Server handles meeting invitations"
-msgstr "Server obsluhuje pozvánky na udalosti"
+msgstr "Server spravuje pozvánky na udalosti"
 
 #: src/AgendaView.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Vaše nadchádzajúce udalosti budú zobrazené tu, ak zvolíte dátum s udalosťami."
+"Vaše nadchádzajúce udalosti sa zobrazia tu, keď vyberiete dátum s udalosťami."
 
 #: src/AgendaView.vala:140
 msgid "During the day"
