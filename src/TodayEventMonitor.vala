@@ -81,36 +81,35 @@ public class Calendar.TodayEventMonitor : GLib.Object {
 #else
             e_alarm.get_action (out action);
 #endif
-            switch (action) {
-                case (ECal.ComponentAlarmAction.DISPLAY):
-                    ECal.ComponentAlarmTrigger trigger;
+            if (action == ECal.ComponentAlarmAction.DISPLAY) {
+                ECal.ComponentAlarmTrigger trigger;
 #if E_CAL_2_0
-                    trigger = e_alarm.get_trigger ();
+                trigger = e_alarm.get_trigger ();
 #else
-                    e_alarm.get_trigger (out trigger);
+                e_alarm.get_trigger (out trigger);
 #endif
-                    if (trigger.get_kind () == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
-                        ICal.Duration duration = trigger.get_duration ();
-                        var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
-                        var now = new DateTime.now_local ();
-                        if (now.compare (start_time) > 0) {
-                            continue;
-                        }
-                        start_time = start_time.add_weeks (-(int)duration.get_weeks ()); //vala-lint=space-before-paren
-                        start_time = start_time.add_days (-(int)duration.get_days ()); //vala-lint=space-before-paren
-                        start_time = start_time.add_hours (-(int)duration.get_hours ()); //vala-lint=space-before-paren
-                        start_time = start_time.add_minutes (-(int)duration.get_minutes ()); //vala-lint=space-before-paren
-                        start_time = start_time.add_seconds (-(int)duration.get_seconds ()); //vala-lint=space-before-paren
-                        if (start_time.get_year () == now.get_year () && start_time.get_day_of_year () == now.get_day_of_year ()) {
-                            var time = time_until_now (start_time);
-                            if (time >= 0) {
-                                add_timeout.begin (source, event, (uint)time);
-                            }
+                if (trigger.get_kind () == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
+                    ICal.Duration duration = trigger.get_duration ();
+                    var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
+                    var now = new DateTime.now_local ();
+                    if (now.compare (start_time) > 0) {
+                        continue;
+                    }
+                    start_time = start_time.add_weeks (-(int)duration.get_weeks ()); //vala-lint=space-before-paren
+                    start_time = start_time.add_days (-(int)duration.get_days ()); //vala-lint=space-before-paren
+                    start_time = start_time.add_hours (-(int)duration.get_hours ()); //vala-lint=space-before-paren
+                    start_time = start_time.add_minutes (-(int)duration.get_minutes ()); //vala-lint=space-before-paren
+                    start_time = start_time.add_seconds (-(int)duration.get_seconds ()); //vala-lint=space-before-paren
+                    if (start_time.get_year () == now.get_year () && start_time.get_day_of_year () == now.get_day_of_year ()) {
+                        var time = time_until_now (start_time);
+                        if (time >= 0) {
+                            add_timeout.begin (source, event, (uint)time);
                         }
                     }
-                    continue;
-                default:
-                    continue;
+                }
+
+            } else {
+                warning ("Event [%s, %s, %s]: Unhandled alarm action: %s", comp.get_summary (), source.dup_display_name (), comp.get_uid (), action.to_string ());
             }
         }
     }
@@ -125,12 +124,12 @@ public class Calendar.TodayEventMonitor : GLib.Object {
                 extension.set_last_notified (new DateTime.now_local ().to_string ());
             }
 
-            queue_event_notification (event, uid);
+            send_event_notification (event, uid);
             return false;
         });
     }
 
-    public void queue_event_notification (ECal.Component event, string uid) {
+    public void send_event_notification (ECal.Component event, string uid) {
         if (!(uid in event_uids[event])) {
             return;
         }
