@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-26 21:13+0000\n"
+"POT-Creation-Date: 2021-09-13 15:02+0000\n"
 "PO-Revision-Date: 2017-12-30 00:08+0000\n"
 "Last-Translator: Hải Hồ <hochihai1997@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.elementary.io/projects/calendar/"
@@ -43,11 +43,6 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Giữ một bản sao cục bộ"
-
-#: daemon/Daemon.vala:24
-#, fuzzy
-msgid "Print debug information"
-msgstr "Thông tin chung"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -113,20 +108,20 @@ msgstr "Tháng"
 msgid "Next Month"
 msgstr "Tháng"
 
-#: src/Application.vala:59
+#: src/Application.vala:60
 #, fuzzy
 msgid "Create an event"
 msgstr "Tạo sự kiện mới"
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:177
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Lịch"
 
@@ -859,6 +854,10 @@ msgstr "Hoàn tác"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Đã xóa lịch \"%s\"."
+
+#, fuzzy
+#~ msgid "Print debug information"
+#~ msgstr "Thông tin chung"
 
 #, fuzzy
 #~ msgid "Search Calendars"

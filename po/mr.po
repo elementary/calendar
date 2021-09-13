@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-26 21:13+0000\n"
+"POT-Creation-Date: 2021-09-13 15:02+0000\n"
 "PO-Revision-Date: 2021-06-19 20:00+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
@@ -43,10 +43,6 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "एक प्रत लोकली ठेवा"
-
-#: daemon/Daemon.vala:24
-msgid "Print debug information"
-msgstr "घटनेची साधारण माहिती"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -107,19 +103,19 @@ msgstr "या महिन्यात"
 msgid "Next Month"
 msgstr "पुढील महिना"
 
-#: src/Application.vala:59
+#: src/Application.vala:60
 msgid "Create an event"
 msgstr "नवीन घटना बनवा"
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr "दिलेला दिवस निर्देशित करा"
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "date"
 msgstr "तारीख"
 
-#: src/Application.vala:177
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "कॅलेंडर"
 
@@ -835,6 +831,9 @@ msgstr "बदल काढा"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" मिटविले"
+
+#~ msgid "Print debug information"
+#~ msgstr "घटनेची साधारण माहिती"
 
 #~ msgid "Search Calendars"
 #~ msgstr "कॅलेंडर शोधा"

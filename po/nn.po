@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-26 21:13+0000\n"
+"POT-Creation-Date: 2021-09-13 15:02+0000\n"
 "PO-Revision-Date: 2020-07-17 12:12+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -43,10 +43,6 @@ msgstr "kari@nordmann.no"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Behald ein lokal kopi"
-
-#: daemon/Daemon.vala:24
-msgid "Print debug information"
-msgstr "Skriv ut feilsøkingsinformasjon"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -107,19 +103,19 @@ msgstr "Denne månaden"
 msgid "Next Month"
 msgstr "Neste månad"
 
-#: src/Application.vala:59
+#: src/Application.vala:60
 msgid "Create an event"
 msgstr "Lag ei ny hending"
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr "Fokuser på gjeven dag"
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "date"
 msgstr "dato"
 
-#: src/Application.vala:177
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -839,6 +835,9 @@ msgstr "Angre"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "«%s» fjerna"
+
+#~ msgid "Print debug information"
+#~ msgstr "Skriv ut feilsøkingsinformasjon"
 
 #~ msgid "Search Calendars"
 #~ msgstr "Søk i kalenderar"

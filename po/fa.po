@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-26 21:13+0000\n"
+"POT-Creation-Date: 2021-09-13 15:02+0000\n"
 "PO-Revision-Date: 2015-04-09 12:07+0000\n"
 "Last-Translator: awat <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
@@ -42,11 +42,6 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "ذخیره سازی نسخه محلی"
-
-#: daemon/Daemon.vala:24
-#, fuzzy
-msgid "Print debug information"
-msgstr "اطلاعات عمومی"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -110,20 +105,20 @@ msgstr "ماه‌ها"
 msgid "Next Month"
 msgstr "ماه‌ها"
 
-#: src/Application.vala:59
+#: src/Application.vala:60
 #, fuzzy
 msgid "Create an event"
 msgstr "ساخت یک رویداد"
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:177
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "تقویم"
 
@@ -861,6 +856,10 @@ msgstr "بر‌گرداندن"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "تقویم \"%S\"  پاک شده است"
+
+#, fuzzy
+#~ msgid "Print debug information"
+#~ msgstr "اطلاعات عمومی"
 
 #, fuzzy
 #~ msgid "Search Calendars"
