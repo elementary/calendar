@@ -1,18 +1,12 @@
 class Calendar.DeleteEventDialog : Granite.MessageDialog {
-    private unowned E.Source? source;
-    private unowned ECal.Component ecal_event;
-    private unowned ECal.ObjModType mod_type_prop;
+    public E.Source? source { get; construct; }
+    public ECal.Component ecal_event { get; construct; }
+    public ECal.ObjModType mod_type_prop { get; construct; }
 
-    public DeleteEventDialog (E.Source? _original_source, ECal.Component _ecal, ECal.ObjModType _mod_type) {
-        this.source = _original_source;
-        this.ecal_event = _ecal;
-        // source = ecal.get_data<E.Source> ("source");
-        this.mod_type_prop = _mod_type;
-        // debug (ecal.get_summary ().get_value ());
-
+    public DeleteEventDialog (E.Source? source, ECal.Component ecal_event, ECal.ObjModType mod_type_prop) {
         string title, description;
-        var summary = _ecal.get_summary ();
-        if (_ecal.has_recurrences ()) {
+        var summary = ecal_event.get_summary ();
+        if (ecal_event.has_recurrences ()) {
             if (mod_type_prop == ECal.ObjModType.THIS) {
                 if (summary == null) {
                     title = _("Delete this occurrence of event?");
@@ -36,9 +30,16 @@ class Calendar.DeleteEventDialog : Granite.MessageDialog {
             }
             description = _("This event will be permanently deleted.");
         }
-        base.with_image_from_icon_name (title, description, "dialog-warning", Gtk.ButtonsType.CANCEL);
 
-        // trash_button.clicked.connect (confirm_delete);
+        Object (
+            source: source,
+            ecal_event: ecal_event,
+            mod_type_prop: mod_type_prop,
+            primary_text: title,
+            secondary_text: description,
+            image_icon: new ThemedIcon ("dialog-warning"),
+            buttons: Gtk.ButtonsType.CANCEL
+        );
     }
 
     construct {
