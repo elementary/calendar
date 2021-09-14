@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-26 21:13+0000\n"
+"POT-Creation-Date: 2021-09-13 15:02+0000\n"
 "PO-Revision-Date: 2018-01-21 00:04+0000\n"
 "Last-Translator: Laurence Bahiirwa <laurence@mediauganda.com>\n"
 "Language-Team: Ganda <https://weblate.elementary.io/projects/calendar/"
@@ -38,11 +38,6 @@ msgstr "yowana@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Tereka kopi ku komputa yo"
-
-#: daemon/Daemon.vala:24
-#, fuzzy
-msgid "Print debug information"
-msgstr "Eby'okumanya"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -106,20 +101,20 @@ msgstr "Mwezi"
 msgid "Next Month"
 msgstr "Mwezi"
 
-#: src/Application.vala:59
+#: src/Application.vala:60
 #, fuzzy
 msgid "Create an event"
 msgstr "Kola omukolo omupya"
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:177
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Kalenda"
 
@@ -856,6 +851,10 @@ msgstr "Daayo emabegga"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Kalenda \"%s\" egidwamu."
+
+#, fuzzy
+#~ msgid "Print debug information"
+#~ msgstr "Eby'okumanya"
 
 #, fuzzy
 #~ msgid "Search Calendars"

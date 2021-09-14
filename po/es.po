@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-26 21:13+0000\n"
+"POT-Creation-Date: 2021-09-13 15:02+0000\n"
 "PO-Revision-Date: 2021-06-08 08:48+0000\n"
 "Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
@@ -43,10 +43,6 @@ msgstr "juan@perez.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Mantener una copia local"
-
-#: daemon/Daemon.vala:24
-msgid "Print debug information"
-msgstr "Imprimir información de depuración"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -108,19 +104,19 @@ msgstr "Este mes"
 msgid "Next Month"
 msgstr "Próximo mes"
 
-#: src/Application.vala:59
+#: src/Application.vala:60
 msgid "Create an event"
 msgstr "Crear un evento"
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr "Enfocar el día indicado"
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "date"
 msgstr "fecha"
 
-#: src/Application.vala:177
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Calendario"
 
@@ -838,6 +834,9 @@ msgstr "Deshacer"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "Se ha quitado «%s»"
+
+#~ msgid "Print debug information"
+#~ msgstr "Imprimir información de depuración"
 
 #~ msgid "Search Calendars"
 #~ msgstr "Buscar calendarios"

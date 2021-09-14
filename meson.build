@@ -58,7 +58,6 @@ gresource_calendar = gnome.compile_resources(
 
 subdir('data')
 subdir('core')
-subdir('daemon')
 subdir('src')
 subdir('plugins')
 subdir('po')
