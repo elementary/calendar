@@ -218,7 +218,10 @@ public class EventDialog : Granite.Dialog {
             var delete_dialog = new Calendar.DeleteEventDialog (original_source, ecal, mod_type) {
                 transient_for = this
             };
-            delete_dialog.run ();
+            var response = delete_dialog.run_dialog ();
+            if (response == Gtk.ResponseType.YES) {
+                this.destroy ();
+            }
         }
     }
 }
