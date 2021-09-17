@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-13 15:02+0000\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2021-08-26 15:19+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
@@ -213,35 +213,39 @@ msgstr "Нет участников"
 msgid "Invite"
 msgstr "Пригласить"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "Начиная с:"
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "Весь день:"
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "До:"
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr ""
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "Название:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "Название события"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr "Нажмите Ввод для разбора события"
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "Календарь:"
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "Комментарии:"
 
