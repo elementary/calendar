@@ -62,6 +62,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         set { allday_switch.set_active (value); }
     }
 
+    public ICal.Timezone timezone { get; private set; }
+
     public bool nl_parsing_enabled = false;
 
     public signal void parse_event (string event_str);
@@ -202,9 +204,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
         } else {
-            var tz = comp.get_dtstart ().get_timezone ();
-            var dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, from_time_picker.time, tz);
-            var dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date, to_time_picker.time, tz);
+            var dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, from_time_picker.time, timezone);
+            var dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date, to_time_picker.time, timezone);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
@@ -249,6 +250,9 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             DateTime from_date, to_date;
             Calendar.Util.icalcomponent_get_datetimes_for_display (comp, out from_date, out to_date);
 
+            // Load the timezone
+            timezone = comp.get_dtstart ().get_timezone ();
+
             // If end time zone is different from start, convert to same as start.
             // This is permanent once the event is saved, but the actual time is
             // unaffected (only its display).
@@ -272,12 +276,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
                 from_time_picker.sensitive = false;
                 to_time_picker.sensitive = false;
             }
-
-            // Load the time zone
-            var from_timezone = from_date.get_timezone ();
-            // var interval = from_timezone.find_interval (GLib.TimeType.STANDARD, from_date.to_unix ());
-            var from_timezone_name = from_timezone.get_identifier ();
-            timezone_label.label = from_timezone_name;
 
 #if E_CAL_2_0
             ICal.Property property;
@@ -319,9 +317,15 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
                 to_date_picker.date = parent_dialog.date_time.add_days (1);
             }
 
+            // Use local time zone
+            timezone = Calendar.TimeManager.get_default ().system_timezone;
+
             // Load the source
             calendar_button.current_source = parent_dialog.source;
         }
+
+        // Populate timezone label with the timezone that was decided
+        timezone_label.label = timezone.get_display_name ();
     }
 
     Granite.Widgets.DatePicker make_date_picker () {
