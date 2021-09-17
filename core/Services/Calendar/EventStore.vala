@@ -74,13 +74,13 @@ public class Calendar.EventStore : Object {
         }
     }
 
-    protected EventStore () {
+    public EventStore () {
         this.week_starts_on = get_week_start ();
         this.month_start = Calendar.Util.datetime_get_start_of_month (get_page ());
         compute_ranges ();
 
         source_client = new HashTable<string, ECal.Client> (str_hash, str_equal);
-        source_events = new HashTable<E.Source, Gee.TreeMultiMap<string, ECal.Component>> (Maya.Util.source_hash_func, Calendar.Util.esource_equal_func);
+        source_events = new HashTable<E.Source, Gee.TreeMultiMap<string, ECal.Component>> (E.Source.hash, E.Source.equal);
         source_view = new HashTable<string, ECal.ClientView> (str_hash, str_equal);
         calendar_trash = new GLib.Queue<E.Source> ();
 
@@ -368,7 +368,7 @@ public class Calendar.EventStore : Object {
         int wso = (int) week_starts_on;
         int offset = 0;
 
-        // offset corresponds number of days from the start of the week to 
+        // offset corresponds number of days from the start of the week to
         // month_start, as seen on a displayed calendar.
         if (wso < dow) {
             offset = dow - wso;

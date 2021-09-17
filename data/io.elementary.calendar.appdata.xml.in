@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015-2016 elementary, Inc. <contact@elementary.io> -->
+<!-- Copyright 2015-2021 elementary, Inc. <contact@elementary.io> -->
 <component type="desktop">
   <id>io.elementary.calendar</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -13,6 +13,44 @@
     </p>
   </description>
   <releases>
+    <release version="6.0.1" date="2021-08-24" urgency="medium">
+      <description>
+      <p>Fixes:</p>
+      <ul>
+        <li>Fix broken calendar color with some online providers</li>
+        <li>Fix an issue with some all-day events</li>
+      </ul>
+      <p>Minor Updates:</p>
+      <ul>
+        <li>Updated translations</li>
+      </ul>
+      </description>
+    </release>
+    <release version="6.0.0" date="2021-07-19" urgency="medium">
+      <description>
+      <p>New Features:</p>
+      <ul>
+        <li>Import ICS files from the gear menu</li>
+        <li>Support the dark style</li>
+      </ul>
+      <p>Fixes:</p>
+      <ul>
+        <li>Properly show events on the last day of the month</li>
+        <li>Fix end times for all-day events</li>
+        <li>Notify for all alarms on an event</li>
+      </ul>
+      <p>Minor Updates:</p>
+      <ul>
+        <li>Improved offline support</li>
+        <li>New colorful avatar fallbacks</li>
+        <li>Include "film" as an event icon keyword</li>
+        <li>Add Mint and Bubblegum to calendar color chooser</li>
+        <li>Link to Online Accounts settings in the gear menu</li>
+        <li>Performance improvements</li>
+        <li>Updated translations</li>
+      </ul>
+      </description>
+    </release>
     <release version="5.1.1" date="2020-10-08" urgency="medium">
       <description>
       <p>New Features:</p>
@@ -179,8 +217,12 @@
   <url type="translate">https://l10n.elementary.io/projects/calendar</url>
   <update_contact>contact_at_elementary.io</update_contact>
   <screenshots>
-  <screenshot type="default">
-    <image>https://raw.githubusercontent.com/elementary/calendar/master/data/screenshot.png</image>
-  </screenshot>
-</screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/elementary/calendar/master/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <custom>
+    <value key="x-appcenter-color-primary">#fff</value>
+    <value key="x-appcenter-color-primary-text">#206b00</value>
+  </custom>
 </component>

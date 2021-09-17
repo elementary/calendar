@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-15 00:20+0000\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2017-12-30 00:08+0000\n"
 "Last-Translator: Hải Hồ <hochihai1997@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.elementary.io/projects/calendar/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:65
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
 msgid "On this computer"
 msgstr "Trên máy tính này"
 
@@ -43,11 +43,6 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Giữ một bản sao cục bộ"
-
-#: daemon/Daemon.vala:24
-#, fuzzy
-msgid "Print debug information"
-msgstr "Thông tin chung"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -113,20 +108,20 @@ msgstr "Tháng"
 msgid "Next Month"
 msgstr "Tháng"
 
-#: src/Application.vala:54
+#: src/Application.vala:60
 #, fuzzy
 msgid "Create an event"
 msgstr "Tạo sự kiện mới"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:172
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Lịch"
 
@@ -195,7 +190,7 @@ msgstr "Lưu thay đổi"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
 msgstr "Hủy bỏ"
 
@@ -223,35 +218,39 @@ msgstr "Không có người tham gia"
 msgid "Invite"
 msgstr "Mời"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "Từ:"
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "Cả ngày:"
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "Đến:"
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr ""
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "Tiêu đề:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "Tên của sự kiện"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr "Nhấn Enter để phân tích cú pháp sự kiện"
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "Lịch:"
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "Bình luận:"
 
@@ -439,199 +438,199 @@ msgstr "Không có ngoại lệ"
 msgid "Add Exception"
 msgstr "Thêm ngoại lệ"
 
-#: src/EventEdition/RepeatPanel.vala:383
+#: src/EventEdition/RepeatPanel.vala:385
 msgid "Every last Sunday"
 msgstr "Mọi Chủ Nhật cuối cùng"
 
-#: src/EventEdition/RepeatPanel.vala:386
+#: src/EventEdition/RepeatPanel.vala:388
 msgid "Every last Monday"
 msgstr "Mọi Thứ hai cuối cùng"
 
-#: src/EventEdition/RepeatPanel.vala:389
+#: src/EventEdition/RepeatPanel.vala:391
 msgid "Every last Tuesday"
 msgstr "Mọi Thứ ba cuối cùng"
 
-#: src/EventEdition/RepeatPanel.vala:392
+#: src/EventEdition/RepeatPanel.vala:394
 msgid "Every last Wednesday"
 msgstr "Mọi Thứ tư cuối cùng"
 
-#: src/EventEdition/RepeatPanel.vala:395
+#: src/EventEdition/RepeatPanel.vala:397
 msgid "Every last Thursday"
 msgstr "Mọi Thứ năm cuối cùng"
 
-#: src/EventEdition/RepeatPanel.vala:398
+#: src/EventEdition/RepeatPanel.vala:400
 msgid "Every last Friday"
 msgstr "Mọi Thứ sáu cuối cùng"
 
-#: src/EventEdition/RepeatPanel.vala:401
+#: src/EventEdition/RepeatPanel.vala:403
 msgid "Every last Saturday"
 msgstr "Mọi Thứ bảy cuối cùng"
 
-#: src/EventEdition/RepeatPanel.vala:408
+#: src/EventEdition/RepeatPanel.vala:410
 msgid "Every first Sunday"
 msgstr "Mỗi Chủ nhật đầu tiên"
 
-#: src/EventEdition/RepeatPanel.vala:411
+#: src/EventEdition/RepeatPanel.vala:413
 msgid "Every first Monday"
 msgstr "Mỗi Thứ hai đầu tiên"
 
-#: src/EventEdition/RepeatPanel.vala:414
+#: src/EventEdition/RepeatPanel.vala:416
 msgid "Every first Tuesday"
 msgstr "Mỗi Thứ ba đầu tiên"
 
-#: src/EventEdition/RepeatPanel.vala:417
+#: src/EventEdition/RepeatPanel.vala:419
 msgid "Every first Wednesday"
 msgstr "Mỗi Thứ tư đầu tiên"
 
-#: src/EventEdition/RepeatPanel.vala:420
+#: src/EventEdition/RepeatPanel.vala:422
 msgid "Every first Thursday"
 msgstr "Mỗi Thứ năm đầu tiên"
 
-#: src/EventEdition/RepeatPanel.vala:423
+#: src/EventEdition/RepeatPanel.vala:425
 msgid "Every first Friday"
 msgstr "Mỗi Thứ sáu đầu tiên"
 
-#: src/EventEdition/RepeatPanel.vala:426
+#: src/EventEdition/RepeatPanel.vala:428
 msgid "Every first Saturday"
 msgstr "Mỗi Thứ bảy đầu tiên"
 
-#: src/EventEdition/RepeatPanel.vala:433
+#: src/EventEdition/RepeatPanel.vala:435
 msgid "Every second Sunday"
 msgstr "Mọi Chủ nhật lần thứ hai"
 
-#: src/EventEdition/RepeatPanel.vala:436
+#: src/EventEdition/RepeatPanel.vala:438
 msgid "Every second Monday"
 msgstr "Mọi Thứ hai lần thứ hai"
 
-#: src/EventEdition/RepeatPanel.vala:439
+#: src/EventEdition/RepeatPanel.vala:441
 msgid "Every second Tuesday"
 msgstr "Mọi Thứ ba lần thứ hai"
 
-#: src/EventEdition/RepeatPanel.vala:442
+#: src/EventEdition/RepeatPanel.vala:444
 msgid "Every second Wednesday"
 msgstr "Mọi Thứ tư lần thứ hai"
 
-#: src/EventEdition/RepeatPanel.vala:445
+#: src/EventEdition/RepeatPanel.vala:447
 msgid "Every second Thursday"
 msgstr "Mọi Thứ năm lần thứ hai"
 
-#: src/EventEdition/RepeatPanel.vala:448
+#: src/EventEdition/RepeatPanel.vala:450
 msgid "Every second Friday"
 msgstr "Mọi Thứ sáu lần thứ hai"
 
-#: src/EventEdition/RepeatPanel.vala:451
+#: src/EventEdition/RepeatPanel.vala:453
 msgid "Every second Saturday"
 msgstr "Mọi Thứ bảy lần thứ hai"
 
-#: src/EventEdition/RepeatPanel.vala:458
+#: src/EventEdition/RepeatPanel.vala:460
 msgid "Every third Sunday"
 msgstr "Mọi Chủ nhật lần thứ ba"
 
-#: src/EventEdition/RepeatPanel.vala:461
+#: src/EventEdition/RepeatPanel.vala:463
 msgid "Every third Monday"
 msgstr "Mọi Thứ hai lần thứ ba"
 
-#: src/EventEdition/RepeatPanel.vala:464
+#: src/EventEdition/RepeatPanel.vala:466
 msgid "Every third Tuesday"
 msgstr "Mọi Thứ ba lần thứ ba"
 
-#: src/EventEdition/RepeatPanel.vala:467
+#: src/EventEdition/RepeatPanel.vala:469
 msgid "Every third Wednesday"
 msgstr "Mọi Thứ tư lần thứ ba"
 
-#: src/EventEdition/RepeatPanel.vala:470
+#: src/EventEdition/RepeatPanel.vala:472
 msgid "Every third Thursday"
 msgstr "Mọi Thứ năm lần thứ ba"
 
-#: src/EventEdition/RepeatPanel.vala:473
+#: src/EventEdition/RepeatPanel.vala:475
 msgid "Every third Friday"
 msgstr "Mọi Thứ sáu lần thứ ba"
 
-#: src/EventEdition/RepeatPanel.vala:476
+#: src/EventEdition/RepeatPanel.vala:478
 msgid "Every third Saturday"
 msgstr "Mọi Thứ bảy lần thứ ba"
 
-#: src/EventEdition/RepeatPanel.vala:483
+#: src/EventEdition/RepeatPanel.vala:485
 msgid "Every fourth Sunday"
 msgstr "Mọi Chủ nhật lần thứ tư"
 
-#: src/EventEdition/RepeatPanel.vala:486
+#: src/EventEdition/RepeatPanel.vala:488
 msgid "Every fourth Monday"
 msgstr "Mọi Thứ hai lần thứ tư"
 
-#: src/EventEdition/RepeatPanel.vala:489
+#: src/EventEdition/RepeatPanel.vala:491
 msgid "Every fourth Tuesday"
 msgstr "Mọi Thứ ba lần thứ tư"
 
-#: src/EventEdition/RepeatPanel.vala:492
+#: src/EventEdition/RepeatPanel.vala:494
 msgid "Every fourth Wednesday"
 msgstr "Mọi Thứ tư lần thứ tư"
 
-#: src/EventEdition/RepeatPanel.vala:495
+#: src/EventEdition/RepeatPanel.vala:497
 msgid "Every fourth Thursday"
 msgstr "Mọi Thứ năm lần thứ tư"
 
-#: src/EventEdition/RepeatPanel.vala:498
+#: src/EventEdition/RepeatPanel.vala:500
 msgid "Every fourth Friday"
 msgstr "Mọi Thứ sáu lần thứ tư"
 
-#: src/EventEdition/RepeatPanel.vala:501
+#: src/EventEdition/RepeatPanel.vala:503
 msgid "Every fourth Saturday"
 msgstr "Mọi Thứ bảy lần thứ tư"
 
-#: src/EventEdition/RepeatPanel.vala:508
+#: src/EventEdition/RepeatPanel.vala:510
 msgid "Every fifth Sunday"
 msgstr "Mọi Chủ nhật lần thứ năm"
 
-#: src/EventEdition/RepeatPanel.vala:511
+#: src/EventEdition/RepeatPanel.vala:513
 msgid "Every fifth Monday"
 msgstr "Mọi Thứ hai lần thứ năm"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:516
 msgid "Every fifth Tuesday"
 msgstr "Mọi Thứ ba lần thứ năm"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:519
 msgid "Every fifth Wednesday"
 msgstr "Mọi Thứ tư lần thứ năm"
 
-#: src/EventEdition/RepeatPanel.vala:520
+#: src/EventEdition/RepeatPanel.vala:522
 msgid "Every fifth Thursday"
 msgstr "Mọi Thứ năm lần thứ năm"
 
-#: src/EventEdition/RepeatPanel.vala:523
+#: src/EventEdition/RepeatPanel.vala:525
 msgid "Every fifth Friday"
 msgstr "Mọi Thứ sáu lần thứ năm"
 
-#: src/EventEdition/RepeatPanel.vala:526
+#: src/EventEdition/RepeatPanel.vala:528
 msgid "Every fifth Saturday"
 msgstr "Mọi Thứ bảy lần thứ năm"
 
-#: src/EventEdition/RepeatPanel.vala:536
+#: src/EventEdition/RepeatPanel.vala:538
 msgid "Mon"
 msgstr "Hai"
 
-#: src/EventEdition/RepeatPanel.vala:537
+#: src/EventEdition/RepeatPanel.vala:539
 msgid "Tue"
 msgstr "Ba"
 
-#: src/EventEdition/RepeatPanel.vala:538
+#: src/EventEdition/RepeatPanel.vala:540
 msgid "Wed"
 msgstr "Tư"
 
-#: src/EventEdition/RepeatPanel.vala:539
+#: src/EventEdition/RepeatPanel.vala:541
 msgid "Thu"
 msgstr "Năm"
 
-#: src/EventEdition/RepeatPanel.vala:540
+#: src/EventEdition/RepeatPanel.vala:542
 msgid "Fri"
 msgstr "Sáu"
 
-#: src/EventEdition/RepeatPanel.vala:541
+#: src/EventEdition/RepeatPanel.vala:543
 msgid "Sat"
 msgstr "Bảy"
 
-#: src/EventEdition/RepeatPanel.vala:542
+#: src/EventEdition/RepeatPanel.vala:544
 msgid "Sun"
 msgstr "CN"
 
@@ -742,33 +741,33 @@ msgid "wedding"
 msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:312
+#: src/Widgets/AgendaEventRow.vala:314
 #, fuzzy, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:315
+#: src/Widgets/AgendaEventRow.vala:317
 #, fuzzy, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:327
+#: src/Widgets/AgendaEventRow.vala:329
 #, fuzzy, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:336
+#: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:339
+#: src/Widgets/AgendaEventRow.vala:341
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
@@ -829,12 +828,16 @@ msgstr "Thêm Lịch Mới…"
 msgid "Import iCalendar File…"
 msgstr "Xuất lịch..."
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:67
+msgid "Online Accounts Settings…"
+msgstr ""
+
+#: src/Widgets/SourcePopover.vala:99
 #, fuzzy
 msgid "Select ICS File to Import"
 msgstr "Chọn các lịch được hiển thị"
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:102
 msgid "Open"
 msgstr ""
 
@@ -855,6 +858,10 @@ msgstr "Hoàn tác"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Đã xóa lịch \"%s\"."
+
+#, fuzzy
+#~ msgid "Print debug information"
+#~ msgstr "Thông tin chung"
 
 #, fuzzy
 #~ msgid "Search Calendars"

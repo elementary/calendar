@@ -26,6 +26,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     private Gtk.Switch allday_switch;
     private Granite.Widgets.TimePicker from_time_picker;
     private Granite.Widgets.TimePicker to_time_picker;
+    private Gtk.Label timezone_label;
     private Maya.View.Widgets.CalendarButton calendar_button;
 
     private EventDialog parent_dialog;
@@ -45,6 +46,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         set { to_date_picker.date = value; }
     }
 
+    // TODO Also use all_day
     public DateTime from_time {
         get { return from_time_picker.time; }
         set { from_time_picker.time = value; }
@@ -59,6 +61,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         get { return allday_switch.get_active (); }
         set { allday_switch.set_active (value); }
     }
+
+    public ICal.Timezone timezone { get; private set; }
 
     public bool nl_parsing_enabled = false;
 
@@ -83,24 +87,26 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         allday_label.set_alignment (1.0f, 0.5f);
 
         allday_switch = new Gtk.Switch ();
-
-        var to_label = new Granite.HeaderLabel (_("To:"));
-
-        var allday_switch_grid = new Gtk.Grid ();
-
-        to_date_picker = make_date_picker ();
-        to_date_picker.notify["date"].connect (() => {on_date_modified (1);} );
-        to_time_picker = make_time_picker ();
-        to_time_picker.time_changed.connect (() => {on_time_modified (1);} );
-
+        var allday_switch_grid = new Gtk.Grid () {
+            valign = Gtk.Align.CENTER
+        };
         allday_switch_grid.attach (allday_switch, 0, 0, 1, 1);
-        allday_switch_grid.set_valign (Gtk.Align.CENTER);
-
         allday_switch.notify["active"].connect (() => {
             on_date_modified (1);
             from_time_picker.sensitive = !allday_switch.get_active ();
             to_time_picker.sensitive = !allday_switch.get_active ();
         });
+
+        var to_label = new Granite.HeaderLabel (_("To:"));
+        to_date_picker = make_date_picker ();
+        to_date_picker.notify["date"].connect (() => {on_date_modified (1);} );
+        to_time_picker = make_time_picker ();
+        to_time_picker.time_changed.connect (() => {on_time_modified (1);} );
+
+        var timezone_header = new Granite.HeaderLabel (_("Time zone:"));
+        timezone_label = new Gtk.Label (null) {
+            halign = Gtk.Align.START
+        };
 
         var title_label = new Granite.HeaderLabel (_("Title:"));
         title_entry = new Gtk.Entry ();
@@ -154,22 +160,29 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         var frame = new Gtk.Frame (null);
         frame.add (scrolled);
 
-        attach (from_label, 0, 2, 4, 1);
-        attach (from_date_picker, 0, 3, 1, 1);
-        attach (from_time_picker, 1, 3, 1, 1);
-        attach (allday_label, 2, 3, 1, 1);
-        attach (allday_switch_grid, 3, 3, 1, 1);
-        attach (to_label, 0, 4, 2, 1);
-        attach (to_date_picker, 0, 5, 1, 1);
-        attach (to_time_picker, 1, 5, 1, 1);
+        // Row: title & calendar
         attach (title_label, 0, 0, 1, 1);
         attach (title_entry, 0, 1, 1, 1);
         if (calendar_button.sources.length () > 1 && parent_dialog.can_edit) {
             attach (calendar_label, 1, 0, 4, 1);
             attach (calendar_button, 1, 1, 4, 1);
         }
-        attach (comment_label, 0, 10, 4, 1);
-        attach (frame, 0, 11, 5, 1);
+        // Row: start date/time
+        attach (from_label, 0, 2, 4, 1);
+        attach (from_date_picker, 0, 3, 1, 1);
+        attach (from_time_picker, 1, 3, 1, 1);
+        attach (allday_label, 2, 3, 1, 1);
+        attach (allday_switch_grid, 3, 3, 1, 1);
+        // Row: end date/time
+        attach (to_label, 0, 4, 2, 1);
+        attach (to_date_picker, 0, 5, 1, 1);
+        attach (to_time_picker, 1, 5, 1, 1);
+        // Row: timezone
+        attach (timezone_header, 0, 6, 1, 1);
+        attach (timezone_label, 0, 7, 1, 1);
+        // Row: comment
+        attach (comment_label, 0, 8, 4, 1);
+        attach (frame, 0, 9, 5, 1);
 
         load ();
     }
@@ -185,32 +198,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         // Save the time
         if (allday_switch.get_active () == true) {
-            ICal.Time dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, null);
-            ICal.Time dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date.add_days (1), null);
+            var dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, null);
+            var dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date.add_days (1), null);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
         } else {
-            var dt_start_local = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, from_time_picker.time);
-            var dt_end_local = Calendar.Util.datetimes_to_icaltime (to_date_picker.date, to_time_picker.time);
-
-            // Convert times from displayed local time to the component's
-            // original timezone.
-            var tz_start = comp.get_dtstart ().get_timezone ();
-            var tz_end = comp.get_dtend ().get_timezone ();
-            var dt_start = dt_start_local.convert_to_zone (tz_start);
-            var dt_end = dt_end_local.convert_to_zone (tz_end);
-            // If converting to floating timezones, then use the displayed time.
-            // The time is modified by libical when converting to floating, so
-            // work around that by using set_timezone instead of converting.
-            if (tz_start == null) {
-                dt_start = dt_start_local;
-                dt_start.set_timezone (tz_start);
-            }
-            if (tz_end == null) {
-                dt_end = dt_end_local;
-                dt_end.set_timezone (tz_end);
-            }
+            var dt_start = Calendar.Util.datetimes_to_icaltime (from_date_picker.date, from_time_picker.time, timezone);
+            var dt_end = Calendar.Util.datetimes_to_icaltime (to_date_picker.date, to_time_picker.time, timezone);
 
             comp.set_dtstart (dt_start);
             comp.set_dtend (dt_end);
@@ -253,7 +248,17 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
 
             DateTime from_date, to_date;
-            Calendar.Util.icalcomponent_get_local_datetimes_for_display (comp, out from_date, out to_date);
+            Calendar.Util.icalcomponent_get_datetimes_for_display (comp, out from_date, out to_date);
+
+            // Load the timezone
+            timezone = comp.get_dtstart ().get_timezone ();
+
+            // If end time zone is different from start, convert to same as start.
+            // This is permanent once the event is saved, but the actual time is
+            // unaffected (only its display).
+            if (to_date.get_utc_offset () != from_date.get_utc_offset ()) {
+                to_date = to_date.to_timezone (from_date.get_timezone ());
+            }
 
             from_date_picker.date = from_date;
             from_time_picker.time = from_date;
@@ -312,9 +317,15 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
                 to_date_picker.date = parent_dialog.date_time.add_days (1);
             }
 
+            // Use local time zone
+            timezone = Calendar.TimeManager.get_default ().system_timezone;
+
             // Load the source
             calendar_button.current_source = parent_dialog.source;
         }
+
+        // Populate timezone label with the timezone that was decided
+        timezone_label.label = timezone.get_display_name ();
     }
 
     Granite.Widgets.DatePicker make_date_picker () {

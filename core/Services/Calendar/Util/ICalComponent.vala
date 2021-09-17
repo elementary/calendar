@@ -22,7 +22,7 @@ namespace Calendar.Util {
     //--- ICal.Component Helpers ---//
 
     /** Gets a pair of {@link GLib.DateTime} objects representing the start and
-     *  end of the given component, converted to the local timezone.
+     *  end of the given component, represented in the system time zone.
      *
      * The conversion behavior differs based on the type of {@link ICal.Time}.
      * DATE type times (which contain no time information) are represented as
@@ -32,23 +32,47 @@ namespace Calendar.Util {
      * a time zone, and are represented at the given time in the local timezone
      * if they are floating.
      */
-    public void icalcomponent_get_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
+        public void icalcomponent_get_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         ICal.Time dt_start = component.get_dtstart ();
         ICal.Time dt_end = component.get_dtend ();
 
-        if (dt_end.is_null_time ()) {
-            // Null time should never be returned if there's a duration
-            assert (component.get_duration ().is_null_duration ());
-
-            dt_end = dt_start.clone ();
-            if (dt_start.is_date ()) { // Implicitly ends 1 day after start
-                dt_end.adjust (1, 0, 0, 0);
-            }
-            // Otherwise implicitly ends at start date and time: do nothing
+        // Get end date, which can be specified in multiple ways
+        if (!dt_end.is_null_time ()) {
+            end_date = Calendar.Util.icaltime_to_datetime (dt_end);
+        } else if (!component.get_duration ().is_null_duration ()) {
+            dt_end = dt_start.add (component.get_duration ());
+        } else if (dt_start.is_date ()) {
+            dt_end = dt_start.add_days (1); // Implicitly 1 day long
+        } else {
+            dt_end = dt_start; // Implicitly 0 duration
         }
 
         start_date = Calendar.Util.icaltime_to_local_datetime (dt_start);
         end_date = Calendar.Util.icaltime_to_local_datetime (dt_end);
+    }
+
+
+    /** Gets a pair of {@link GLib.DateTime} objects representing the start and
+     *  end of the given component, represented in the time zone of @component.
+     */
+    public void icalcomponent_get_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
+        ICal.Time dt_start = component.get_dtstart ();
+        ICal.Time dt_end = component.get_dtend ();
+
+        // Get end date, which can be specified in multiple ways
+        if (!dt_end.is_null_time ()) {
+            end_date = Calendar.Util.icaltime_to_datetime (dt_end);
+        } else if (!component.get_duration ().is_null_duration ()) {
+            dt_end = dt_start.add (component.get_duration ());
+            end_date = Calendar.Util.icaltime_to_datetime (dt_end);
+        } else if (dt_start.is_date ()) {
+            end_date = start_date.add_days (1); // Implicitly 1 day long
+        } else {
+            end_date = start_date; // Implicitly 0 duration
+        }
+
+        start_date = Calendar.Util.icaltime_to_datetime (dt_start);
+        end_date = Calendar.Util.icaltime_to_datetime (dt_end);
     }
 
     /** Wraps {@link icalcomponent_get_local_datetimes()}, including date
@@ -72,6 +96,14 @@ namespace Calendar.Util {
     // TODO finish checking this one
     public void icalcomponent_get_local_datetimes_for_display (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         icalcomponent_get_local_datetimes (component, out start_date, out end_date);
+
+        if (datetime_is_all_day (start_date, end_date)) {
+            end_date = end_date.add_days (-1);
+        }
+    }
+
+    public void icalcomponent_get_datetimes_for_display (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
+        icalcomponent_get_datetimes (component, out start_date, out end_date);
 
         if (datetime_is_all_day (start_date, end_date)) {
             end_date = end_date.add_days (-1);

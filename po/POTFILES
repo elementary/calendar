@@ -8,12 +8,10 @@ core/Services/Calendar/Util/DateIterator.vala
 core/Services/Calendar/Util/DateRange.vala
 core/Services/Calendar/Util/DateTime.vala
 core/Services/Calendar/Util/ECalComponent.vala
-core/Services/Calendar/Util/ESource.vala
 core/Services/Calendar/Util/ICalComponent.vala
 core/Services/Calendar/Util/ICalTime.vala
 core/Utils.vala
 core/GesturesUtils.vala
-daemon/Daemon.vala
 plugins/Google/GoogleBackend.vala
 plugins/CalDAV/CalDAVBackend.vala
 src/AgendaView.vala
@@ -41,6 +39,7 @@ src/Grid/WeekLabels.vala
 src/Grid/Header.vala
 src/Grid/VAutoHider.vala
 src/SourceDialog/SourceDialog.vala
+src/TodayEventMonitor.vala
 src/Widgets/AgendaEventRow.vala
 src/Widgets/CalendarButton.vala
 src/Widgets/ContractorButtonWithMenu.vala
