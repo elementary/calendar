@@ -21,6 +21,31 @@ namespace Calendar.Util {
 
     //--- ICal.Component Helpers ---//
 
+    /** Gets the start and end times of @component as {@link ICal.Time} objects.
+     * 
+     * This accounts for implicit end times by calculating its value from a
+     * duration, if necessary.
+     */
+    public void icalcomponent_get_icaltimes (ICal.Component component, out ICal.Time dt_start, out ICal.Time dt_end) {
+        dt_start = component.get_dtstart ();
+        dt_end = component.get_dtend ();
+
+        // If dt_end is implicit, calculate from dt_start
+        if (dt_end.is_null_time ()) {
+            if (!component.get_duration ().is_null_duration ()) {
+                // Given duration
+                dt_end = dt_start.add (component.get_duration ());
+            } else if (dt_start.is_date ()) {
+                // Implicit duration for DATE-type: 1 day
+                dt_end = dt_start.clone ();
+                dt_end.adjust (1, 0, 0, 0);
+            } else {
+                // Implicit duration for DATE-TIME-type: 0
+                dt_end = dt_start;
+            }
+        }
+    }
+
     /** Gets a pair of {@link GLib.DateTime} objects representing the start and
      *  end of the given component, represented in the system time zone.
      *
@@ -31,21 +56,13 @@ namespace Calendar.Util {
      * DATE-TIME type times are converted to the local timezone if they have
      * a time zone, and are represented at the given time in the local timezone
      * if they are floating.
+     *
+     * @see icalcomponent_get_datetimes
      */
-        public void icalcomponent_get_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
-        ICal.Time dt_start = component.get_dtstart ();
-        ICal.Time dt_end = component.get_dtend ();
-
-        // Get end date, which can be specified in multiple ways
-        if (!dt_end.is_null_time ()) {
-            end_date = Calendar.Util.icaltime_to_datetime (dt_end);
-        } else if (!component.get_duration ().is_null_duration ()) {
-            dt_end = dt_start.add (component.get_duration ());
-        } else if (dt_start.is_date ()) {
-            dt_end = dt_start.add_days (1); // Implicitly 1 day long
-        } else {
-            dt_end = dt_start; // Implicitly 0 duration
-        }
+    public void icalcomponent_get_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
+        ICal.Time dt_start;
+        ICal.Time dt_end;
+        icalcomponent_get_icaltimes (component, out dt_start, out dt_end);
 
         start_date = Calendar.Util.icaltime_to_local_datetime (dt_start);
         end_date = Calendar.Util.icaltime_to_local_datetime (dt_end);
@@ -54,22 +71,13 @@ namespace Calendar.Util {
 
     /** Gets a pair of {@link GLib.DateTime} objects representing the start and
      *  end of the given component, represented in the time zone of @component.
+     *
+     * @see icalcomponent_get_local_datetimes
      */
     public void icalcomponent_get_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
-        ICal.Time dt_start = component.get_dtstart ();
-        ICal.Time dt_end = component.get_dtend ();
-
-        // Get end date, which can be specified in multiple ways
-        if (!dt_end.is_null_time ()) {
-            end_date = Calendar.Util.icaltime_to_datetime (dt_end);
-        } else if (!component.get_duration ().is_null_duration ()) {
-            dt_end = dt_start.add (component.get_duration ());
-            end_date = Calendar.Util.icaltime_to_datetime (dt_end);
-        } else if (dt_start.is_date ()) {
-            end_date = start_date.add_days (1); // Implicitly 1 day long
-        } else {
-            end_date = start_date; // Implicitly 0 duration
-        }
+        ICal.Time dt_start;
+        ICal.Time dt_end;
+        icalcomponent_get_icaltimes (component, out dt_start, out dt_end);
 
         start_date = Calendar.Util.icaltime_to_datetime (dt_start);
         end_date = Calendar.Util.icaltime_to_datetime (dt_end);
@@ -92,8 +100,10 @@ namespace Calendar.Util {
      * This should be used for user-facing display only. It breaks from spec to
      * make the display of all-day events more intuitive, and doesn't reflect
      * the actual times the events occur.
+     *
+     * This converts the resulting times to the local timezone. If you want to keep
+     * the result in @component's timezone, use {@link icalcmponent_get_datetimes_for_display}.
      */
-    // TODO finish checking this one
     public void icalcomponent_get_local_datetimes_for_display (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         icalcomponent_get_local_datetimes (component, out start_date, out end_date);
 
@@ -102,6 +112,27 @@ namespace Calendar.Util {
         }
     }
 
+    /** Wraps {@link icalcomponent_get_datetimes()}, including date
+     *  adjustments for all-day events.
+     *
+     * Like {@link icalcomponent_get_datetimes()}, this gets a pair of
+     * {@link GLib.DateTime} objects representing the start and end of the
+     * given component.
+     *
+     * It differs in its handling of all-day events. According to
+     * RFC 5545, their end time is exclusive, representing the day after the
+     * last day the event occurs. To handle this, we must "fake" an earlier
+     * date to replicate the expected experience of an inclusive end date.
+     * It substracts a single day from the end time of all-day events. It leaves
+     * other events unchanged.
+     *
+     * This should be used for user-facing display only. It breaks from spec to
+     * make the display of all-day events more intuitive, and doesn't reflect
+     * the actual times the events occur.
+     *
+     * This keeps the resulting times in @component's timezone. If you want to convert
+     * the result to local time, use {@link icalcmponent_get_local_datetimes_for_display}.
+     */
     public void icalcomponent_get_datetimes_for_display (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
         icalcomponent_get_datetimes (component, out start_date, out end_date);
 
