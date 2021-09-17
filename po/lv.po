@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-26 21:13+0000\n"
+"POT-Creation-Date: 2021-09-13 15:02+0000\n"
 "PO-Revision-Date: 2015-10-24 09:47+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
@@ -41,10 +41,6 @@ msgstr ""
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr ""
-
-#: daemon/Daemon.vala:24
-msgid "Print debug information"
 msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
@@ -107,20 +103,20 @@ msgstr ""
 msgid "Next Month"
 msgstr ""
 
-#: src/Application.vala:59
+#: src/Application.vala:60
 #, fuzzy
 msgid "Create an event"
 msgstr "Izveidot jaunu notikumu"
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:177
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Kalendārs"
 

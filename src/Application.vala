@@ -29,6 +29,7 @@ namespace Maya {
         public MainWindow window;
         public static GLib.Settings? saved_state = null;
         public static GLib.Settings? wingpanel_settings = null;
+        public static bool run_in_background = false;
 
         static construct {
             if (SettingsSchemaSource.get_default ().lookup ("io.elementary.calendar.savedstate", true) != null) {
@@ -58,10 +59,18 @@ namespace Maya {
         public const OptionEntry[] APP_OPTIONS = {
             { "add-event", 'a', 0, OptionArg.NONE, out Option.add_event, N_("Create an event"), null },
             { "show-day", 's', 0, OptionArg.STRING, out Option.show_day, N_("Focus the given day"), N_("date") },
+            { "background", 'b', 0, OptionArg.NONE, out run_in_background, "Run the Application in background", null},
             { null }
         };
 
         protected override void activate () {
+            if (run_in_background) {
+                run_in_background = false;
+                new Calendar.TodayEventMonitor ();
+                hold ();
+                return;
+            }
+
             if (get_windows () != null) {
                 get_windows ().data.present (); // present window if app is already running
                 return;

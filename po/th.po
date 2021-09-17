@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-26 21:13+0000\n"
+"POT-Creation-Date: 2021-09-13 15:02+0000\n"
 "PO-Revision-Date: 2018-05-04 00:03+0000\n"
 "Last-Translator: Park Evans <travellerpeira9@gmail.com>\n"
 "Language-Team: Thai <https://weblate.elementary.io/projects/calendar/"
@@ -43,11 +43,6 @@ msgstr ""
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "เก็บสำเนาไว้ที่เครื่อง"
-
-#: daemon/Daemon.vala:24
-#, fuzzy
-msgid "Print debug information"
-msgstr "รายละเอียด"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -111,20 +106,20 @@ msgstr "เดือน"
 msgid "Next Month"
 msgstr "เดือน"
 
-#: src/Application.vala:59
+#: src/Application.vala:60
 #, fuzzy
 msgid "Create an event"
 msgstr "สร้างกิจกรรมใหม่"
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:60
+#: src/Application.vala:61
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:177
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "ปฏิทิน"
 
@@ -857,6 +852,10 @@ msgstr "ย้อนการกระทำ"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "ปฏิทิน \"%s\" ถูกลบออกแล้ว"
+
+#, fuzzy
+#~ msgid "Print debug information"
+#~ msgstr "รายละเอียด"
 
 #, fuzzy
 #~ msgid "Search Calendars"
