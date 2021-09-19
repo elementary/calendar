@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2021-09-19 15:42+0000\n"
-"Last-Translator: Igor Stefanko <istefanko@outlook.com>\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/calendar/"
 "sk/>\n"
 "Language: sk\n"
@@ -42,7 +42,7 @@ msgstr "jožko@mrkvička.sk"
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr "Ponechať lokálnu kópiu"
+msgstr "Uschovať lokálnu kópiu"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -109,7 +109,7 @@ msgstr "Vytvoriť udalosť"
 
 #: src/Application.vala:61
 msgid "Focus the given day"
-msgstr "Sústrediť sa na daný deň"
+msgstr "Zamerať na daný deň"
 
 #: src/Application.vala:61
 msgid "date"
@@ -121,20 +121,20 @@ msgstr "Kalendár"
 
 #: src/ImportDialog.vala:28
 msgid "Select a Calendar to Import Into"
-msgstr "Vyberte, do ktorého Kalendára chcete importovať"
+msgstr "Vyberte kalendár, do ktorého chcete importovať"
 
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Udalosti zo súboru %d budú zlúčené s týmto kalendárom:"
+msgstr "Udalosti z „%s“ budú zlúčené s týmto kalendárom:"
 
 #: src/ImportDialog.vala:47
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Udalosti zo súboru %d budú zlúčené s týmto kalendárom:"
-msgstr[1] "Udalosti zo súborov %d budú zlúčené s týmto kalendárom:"
-msgstr[2] "Udalosti zo súborov %d budú zlúčené s týmto kalendárom:"
+msgstr[0] "Udalosti z %d súborov budú zlúčené s týmto kalendárom:"
+msgstr[1] "Udalosti z %d súboru budú zlúčené s týmto kalendárom:"
+msgstr[2] "Udalosti z %d súborov budú zlúčené s týmto kalendárom:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -190,11 +190,11 @@ msgstr "Zrušiť"
 
 #: src/EventEdition/GuestGrid.vala:49
 msgid "Accepted"
-msgstr "Akceptované"
+msgstr "Prijaté"
 
 #: src/EventEdition/GuestGrid.vala:53
 msgid "Declined"
-msgstr "Zamietnuté"
+msgstr "Odmietnuté"
 
 #: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
@@ -206,7 +206,7 @@ msgstr "Účastníci:"
 
 #: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
-msgstr "Žiadni spolupracovníci"
+msgstr "Žiadni účastníci"
 
 #: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
@@ -226,7 +226,7 @@ msgstr "Do:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "Časové pásmo:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
@@ -234,11 +234,11 @@ msgstr "Názov:"
 
 #: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
-msgstr "Meno udalosti"
+msgstr "Názov udalosti"
 
 #: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
-msgstr "Stlačne enter pre vloženie události"
+msgstr "Stlačte Enter pre rozbor udalosti"
 
 #: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
@@ -250,11 +250,11 @@ msgstr "Komentáre:"
 
 #: src/EventEdition/LocationPanel.vala:50
 msgid "Location:"
-msgstr "Umiestnenie:"
+msgstr "Miesto:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "John Smith alebo napr. St."
+msgstr "Jožko Mrkvička ALEBO Nová ul."
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
@@ -266,7 +266,7 @@ msgstr "Žiadne pripomienky"
 
 #: src/EventEdition/ReminderPanel.vala:55
 msgid "Add Reminder"
-msgstr "Pridať Pripomienku"
+msgstr "Pridať pripomienku"
 
 #: src/EventEdition/ReminderPanel.vala:192
 msgid "At time of event"
@@ -334,7 +334,7 @@ msgstr "1 týždeň vopred"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
-msgstr "Opakovanie:"
+msgstr "Opakovať:"
 
 #: src/EventEdition/RepeatPanel.vala:57
 msgid "Daily"
@@ -366,7 +366,7 @@ msgstr[2] "Dni"
 #: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] "Týždní"
+msgstr[0] "Týždňov"
 msgstr[1] "Týždeň"
 msgstr[2] "Týždne"
 
@@ -408,11 +408,11 @@ msgstr "Do"
 
 #: src/EventEdition/RepeatPanel.vala:146
 msgid "After"
-msgstr "Potom"
+msgstr "Po"
 
 #: src/EventEdition/RepeatPanel.vala:193
 msgid "The same day every month"
-msgstr "rovnaký deň v každom mesiaci"
+msgstr "Rovnaký deň každý mesiac"
 
 #: src/EventEdition/RepeatPanel.vala:204
 msgid "Exceptions:"
@@ -672,55 +672,57 @@ msgstr "Uložiť"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr ""
+msgstr "schôdza;schôdzka;stretnutie;porada"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "narodeniny;narodeninová oslava;párty;výročie;oslava;oslava výročia"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "volať;telefón;hovor;zvoniť;telefonovať;prezvoniť"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "bar;koktejly;nápoje;krčma;šťastná hodinka;happy hour"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "auto;riadiť;jazda;cestovať;ísť na výlet;výlet;cesta autom;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr ""
+msgstr "let;letisko;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
+"raňajky;neskoré raňajky;desiata;večera;obed;olovrant;dezert;steakhouse;jedlo;"
+"hamburger;grilovačka;grilovanie"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "súd;sudca;daň;advokát;právnik;zmluva;kontrakt"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie;film"
-msgstr ""
+msgstr "film;kino;seriál"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -758,7 +760,7 @@ msgstr "%s o %s"
 #: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -767,7 +769,7 @@ msgstr "Exportovať kalendár…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
-msgstr "kalendár.ics"
+msgstr "kalendar.ics"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
