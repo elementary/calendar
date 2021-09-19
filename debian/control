@@ -25,11 +25,9 @@ Standards-Version: 4.1.1
 Homepage: https://github.com/elementary/calendar
 
 Package: maya-calendar
-Conflicts: maya-calendar-common (<< 0.4.0.1+r948)
-Replaces: maya (<< 0.2.0~r394),
-          maya-calendar-common (<< 0.4.0.1+r948),
-          maya-common
-Breaks: maya (<< 0.2.0~r394), maya-common
+Breaks: maya-calendar-daemon (<<6.0.1+r2145+pkg137)
+Replaces: maya-calendar-daemon (<<6.0.1+r2145+pkg137)
+Provides: maya-calendar-daemon
 Architecture: any
 Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar-daemon,
@@ -60,19 +58,9 @@ Description: GTK+ calendar application (dummy transitional package)
 
 Package: maya-calendar-daemon
 Architecture: any
-Enhances: maya-calendar
-Depends: libmaya-calendar0 (= ${binary:Version}),
-         ${misc:Depends},
-         ${shlibs:Depends}
-Description: GTK+ calendar application (event notification daemon)
- Maya is a slim, lightweight, GTK+ calendar application written
- in Vala and designed for elementary OS.
- .
- It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with
- Google Calendar as well as CalDAV-supporting services such as OwnCloud.
- .
- This package provides the daemon to notify the user about upcoming events.
+Depends: maya-calendar (>=6.0.1+r2145+pkg137)
+Description: Transitional dummy package for maya-calendar
+ This is a transitional dummy package. It can safely be removed.
 
 Package: libmaya-calendar0
 Architecture: any
