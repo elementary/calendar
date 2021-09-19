@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-17 10:20+0000\n"
-"PO-Revision-Date: 2021-09-19 15:52+0000\n"
-"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"PO-Revision-Date: 2021-09-19 15:53+0000\n"
+"Last-Translator: Igor Stefanko <istefanko@outlook.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/extra/sk/"
 ">\n"
 "Language: sk\n"
@@ -132,24 +132,27 @@ msgstr "Pridanie voľby \"Duplikovať...\" do kontextového menu udalosti"
 #: data/io.elementary.calendar.appdata.xml.in:62
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr ""
+"Vyriešenie problému, keď sa nové udalosti mohli v Kalendári vyskytnúť dvakrát"
 
 #: data/io.elementary.calendar.appdata.xml.in:63
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
+"Pri úprave kalendára je teraz správne zaškrnuté políčko „Označiť ako "
+"predvolený kalendár“"
 
 #: data/io.elementary.calendar.appdata.xml.in:70
 msgid "Improvements:"
-msgstr ""
+msgstr "Vylepšenia:"
 
 #: data/io.elementary.calendar.appdata.xml.in:72
 msgid "Allow modification of recurring events"
-msgstr ""
+msgstr "Povolenie úprav opakujúcich sa udalostí"
 
 #: data/io.elementary.calendar.appdata.xml.in:73
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "Zlepšenie práce s dňom začiatku týždňa"
 
 #: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Fix timezone errors with all-day events"
