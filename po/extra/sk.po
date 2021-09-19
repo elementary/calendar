@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-17 10:20+0000\n"
-"PO-Revision-Date: 2021-09-19 15:57+0000\n"
+"PO-Revision-Date: 2021-09-19 21:39+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/extra/sk/"
 ">\n"
@@ -216,39 +216,41 @@ msgstr "Pridanie vyhľadávania udalostí v kalendári"
 
 #: data/io.elementary.calendar.appdata.xml.in:135
 msgid "Always use calendar icon in notifications"
-msgstr "Stále zobrazenie ikony v notifikačnej oblasti"
+msgstr "Vždy používať ikonu kalendára v oznámeniach"
 
 #: data/io.elementary.calendar.appdata.xml.in:136
 msgid "Agenda view can now be navigated by keyboard"
-msgstr ""
+msgstr "Zobrazenie agendy sa dá po novom ovládať klávesnicou"
 
 #: data/io.elementary.calendar.appdata.xml.in:137
 msgid "Right-to-left improvements"
-msgstr ""
+msgstr "Vylepšenia textu písaného smerom sprava doľava"
 
 #: data/io.elementary.calendar.appdata.xml.in:138
 msgid "Various UI overhauls including lime accent color"
 msgstr ""
+"Rôzne zlepšenia používateľského rozhrania, vrátane zmeny farebného odtieňa "
+"na limetkovú"
 
 #: data/io.elementary.calendar.appdata.xml.in:139
 msgid "Overall code cleanup and rewrites"
-msgstr ""
+msgstr "Celkové prečistenie a prepísanie častí kódu"
 
 #: data/io.elementary.calendar.appdata.xml.in:145
 msgid "Styling adjustments"
-msgstr ""
+msgstr "Doladenie štýlov"
 
 #: data/io.elementary.calendar.appdata.xml.in:146
 msgid "Fix location panel initialization"
-msgstr ""
+msgstr "Opravená inicializácia panelu polohy"
 
 #: data/io.elementary.calendar.appdata.xml.in:147
 msgid "New translations"
-msgstr ""
+msgstr "Nové preklady"
 
 #: data/io.elementary.calendar.appdata.xml.in:152
 msgid "Update wingpanel-indicator-datetime settings path."
-msgstr ""
+msgstr "Aktualizácia súborovej cesty nastavenia wingpanel-indicator-datetime."
 
 #: data/io.elementary.calendar.appdata.xml.in:153
 msgid "New translations."
@@ -268,10 +270,8 @@ msgid "Fixes exporting, importing and printing calendars."
 msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:212
-#, fuzzy
-#| msgid "elementary LLC."
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "io.elementary.calendar"
