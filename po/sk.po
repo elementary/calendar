@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-17 10:20+0000\n"
-"PO-Revision-Date: 2021-09-08 19:07+0000\n"
-"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"PO-Revision-Date: 2021-09-19 15:42+0000\n"
+"Last-Translator: Igor Stefanko <istefanko@outlook.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/calendar/"
 "sk/>\n"
 "Language: sk\n"
@@ -166,10 +166,9 @@ msgstr "Pripomienky"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr "Opakovaní"
+msgstr "Opakovanie"
 
 #: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
@@ -727,7 +726,7 @@ msgstr ""
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr ""
+msgstr "svadba"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
@@ -753,7 +752,7 @@ msgstr "%s – %s"
 #: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s o %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:341
@@ -776,7 +775,7 @@ msgstr "Upraviť…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Duplikovať…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
