@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-17 10:20+0000\n"
-"PO-Revision-Date: 2021-09-19 15:56+0000\n"
-"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"PO-Revision-Date: 2021-09-19 15:57+0000\n"
+"Last-Translator: Igor Stefanko <istefanko@outlook.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/extra/sk/"
 ">\n"
 "Language: sk\n"
@@ -196,27 +196,27 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:124
 msgid "Make agenda pane fill the whole space"
-msgstr ""
+msgstr "Úprava panelu agendy pre vyplnenie priestoru"
 
 #: data/io.elementary.calendar.appdata.xml.in:125
 msgid "Set the suggested time for new events to the next whole hour"
-msgstr ""
+msgstr "Nastavenie navrhovaného času pre nové udalosti na ďalšiu celú hodinu"
 
 #: data/io.elementary.calendar.appdata.xml.in:126
 msgid "Fix issues with recurring events"
-msgstr ""
+msgstr "Opravenie problémov s opakujúcimi sa udalosťami"
 
 #: data/io.elementary.calendar.appdata.xml.in:133
 msgid "Present import window when opening ICS files"
-msgstr ""
+msgstr "Pri otváraní ICS súborov sa zobrazí okno importu"
 
 #: data/io.elementary.calendar.appdata.xml.in:134
 msgid "Add a search entry for calendars"
-msgstr ""
+msgstr "Pridanie vyhľadávania udalostí v kalendári"
 
 #: data/io.elementary.calendar.appdata.xml.in:135
 msgid "Always use calendar icon in notifications"
-msgstr ""
+msgstr "Stále zobrazenie ikony v notifikačnej oblasti"
 
 #: data/io.elementary.calendar.appdata.xml.in:136
 msgid "Agenda view can now be navigated by keyboard"
