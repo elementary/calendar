@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-17 10:20+0000\n"
-"PO-Revision-Date: 2021-09-19 15:51+0000\n"
-"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"PO-Revision-Date: 2021-09-19 15:52+0000\n"
+"Last-Translator: Igor Stefanko <istefanko@outlook.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/extra/sk/"
 ">\n"
 "Language: sk\n"
@@ -127,7 +127,7 @@ msgstr "Zlepšenia výkonu"
 
 #: data/io.elementary.calendar.appdata.xml.in:58
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
+msgstr "Pridanie voľby \"Duplikovať...\" do kontextového menu udalosti"
 
 #: data/io.elementary.calendar.appdata.xml.in:62
 msgid "Fix an issue where new events could appear twice in Calendar"
