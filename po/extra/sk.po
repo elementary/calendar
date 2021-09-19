@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2021-09-19 15:51+0000\n"
-"Last-Translator: Igor Stefanko <istefanko@outlook.com>\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/extra/sk/"
 ">\n"
 "Language: sk\n"
@@ -29,28 +29,29 @@ msgstr "Kalendár"
 #: data/io.elementary.calendar.appdata.xml.in:9
 #: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr "Zobraziť a plánovať udalosti"
+msgstr "Prezerajte a plánujte udalosti"
 
 #: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
-"Jednoduchá aplikácia pre synchronizáciu a správu viacerých kalendárov na "
-"jednom mieste, ako napríklad Google Calendar, Outlook a CalDAV."
+"Malá a jednoduchá aplikácia, ktorá umožňuje synchronizáciu a správu "
+"viacerých kalendárov na jednom mieste, ako napríklad Google Kalendár, "
+"Outlook a CalDAV."
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 #: data/io.elementary.calendar.appdata.xml.in:36
 msgid "Fixes:"
-msgstr ""
+msgstr "Opravy:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix broken calendar color with some online providers"
-msgstr ""
+msgstr "Opravená chybná farba kalendára pri niektorých online poskytovateľoch"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 msgid "Fix an issue with some all-day events"
-msgstr ""
+msgstr "Opravená chyba s niektorými celodennými udalosťami"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 #: data/io.elementary.calendar.appdata.xml.in:42
@@ -81,43 +82,43 @@ msgstr "Nové funkcie:"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Import ICS files from the gear menu"
-msgstr ""
+msgstr "Importujte ICS súbory z menu ozubeného kolieska"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Support the dark style"
-msgstr ""
+msgstr "Podpora tmavého štýlu"
 
 #: data/io.elementary.calendar.appdata.xml.in:38
 msgid "Properly show events on the last day of the month"
-msgstr ""
+msgstr "Správne zobrazovať udalosti na poslednom dni v mesiaci"
 
 #: data/io.elementary.calendar.appdata.xml.in:39
 msgid "Fix end times for all-day events"
-msgstr ""
+msgstr "Opravené časy ukončenia celodenných udalostí"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Notify for all alarms on an event"
-msgstr ""
+msgstr "Oznamovať všetky upozornenia na udalosť"
 
 #: data/io.elementary.calendar.appdata.xml.in:44
 msgid "Improved offline support"
-msgstr ""
+msgstr "Vylepšená offline podpora"
 
 #: data/io.elementary.calendar.appdata.xml.in:45
 msgid "New colorful avatar fallbacks"
-msgstr ""
+msgstr "Nový farebný obrázok ikonky používateľa"
 
 #: data/io.elementary.calendar.appdata.xml.in:46
 msgid "Include \"film\" as an event icon keyword"
-msgstr ""
+msgstr "Pridané kľúčové slovo „film“ ako ikonku udalosti"
 
 #: data/io.elementary.calendar.appdata.xml.in:47
 msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
+msgstr "Pridané farebné odtiene Mäta a Žuvačka do výberu farby kalendára"
 
 #: data/io.elementary.calendar.appdata.xml.in:48
 msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
+msgstr "Odkaz na Nastavenia online účtov v menu ozubeného kolieska"
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 #: data/io.elementary.calendar.appdata.xml.in:127
