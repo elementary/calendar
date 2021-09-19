@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-17 10:20+0000\n"
-"PO-Revision-Date: 2021-09-19 15:53+0000\n"
-"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"PO-Revision-Date: 2021-09-19 15:55+0000\n"
+"Last-Translator: Igor Stefanko <istefanko@outlook.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/extra/sk/"
 ">\n"
 "Language: sk\n"
@@ -164,15 +164,17 @@ msgstr "Nemenná veľkosť bočného panela pri zmene veľkosti okna"
 
 #: data/io.elementary.calendar.appdata.xml.in:87
 msgid "Fix issues with time zones not being recognized"
-msgstr ""
+msgstr "Opravenie problému s nerozpoznávaním časových pásiem"
 
 #: data/io.elementary.calendar.appdata.xml.in:96
 msgid "Fix several issues with adding and removing monthly recurring events"
 msgstr ""
+"Vyriešenie niekoľkých problémov s pridávaním a odstraňovaním mesačných "
+"opakujúcich sa udalostí"
 
 #: data/io.elementary.calendar.appdata.xml.in:105
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "Správne ukladanie pripomenutia udalostí"
 
 #: data/io.elementary.calendar.appdata.xml.in:106
 msgid "Ellipsize event participant details if necessary"
@@ -180,7 +182,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:107
 msgid "Fix unwanted rescheduling when editing event title"
-msgstr ""
+msgstr "Opravená nechcená zmena plánu pri úprave názvu udalosti"
 
 #: data/io.elementary.calendar.appdata.xml.in:114
 msgid "Fix crash when editing an event with no location"
