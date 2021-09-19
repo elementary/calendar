@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2021-09-19 15:53+0000\n"
-"Last-Translator: Igor Stefanko <istefanko@outlook.com>\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/extra/sk/"
 ">\n"
 "Language: sk\n"
@@ -152,7 +152,7 @@ msgstr "Povolenie úprav opakujúcich sa udalostí"
 
 #: data/io.elementary.calendar.appdata.xml.in:73
 msgid "Improve handling of week start day"
-msgstr "Zlepšenie práce s dňom začiatku týždňa"
+msgstr "Zlepšenie zaobchádzania s dňom začiatku týždňa"
 
 #: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Fix timezone errors with all-day events"
