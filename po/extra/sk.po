@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2021-09-19 15:53+0000\n"
-"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"Last-Translator: Igor Stefanko <istefanko@outlook.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/extra/sk/"
 ">\n"
 "Language: sk\n"
@@ -160,7 +160,7 @@ msgstr "Opravenie chyby v časových pásmach s celodennými udalosťami"
 
 #: data/io.elementary.calendar.appdata.xml.in:78
 msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
+msgstr "Nemenná veľkosť bočného panela pri zmene veľkosti okna"
 
 #: data/io.elementary.calendar.appdata.xml.in:87
 msgid "Fix issues with time zones not being recognized"
