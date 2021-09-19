@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2020-11-12 23:17+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/calendar/"
@@ -43,10 +43,6 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Mantieni una copia locale"
-
-#: daemon/Daemon.vala:24
-msgid "Print debug information"
-msgstr "Mostra le informazioni di debug"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -108,19 +104,19 @@ msgstr "Questo mese"
 msgid "Next Month"
 msgstr "Prossimo mese"
 
-#: src/Application.vala:54
+#: src/Application.vala:60
 msgid "Create an event"
 msgstr "Crea un nuovo evento"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr "Seleziona il giorno indicato"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:172
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Calendario"
 
@@ -216,35 +212,39 @@ msgstr "Nessun partecipante"
 msgid "Invite"
 msgstr "Invita"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "Da:"
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "Intera giornata:"
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "A:"
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr ""
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "Titolo:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "Nome dell'evento"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr "Premere Invio per analizzare l'evento"
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "Calendario:"
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "Commenti:"
 
@@ -836,6 +836,9 @@ msgstr "Annulla l'ultima azione"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" è stato rimosso"
+
+#~ msgid "Print debug information"
+#~ msgstr "Mostra le informazioni di debug"
 
 #~ msgid "Search Calendars"
 #~ msgstr "Cerca calendari"

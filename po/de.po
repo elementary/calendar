@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-06-08 10:24+0000\n"
-"Last-Translator: Uwe S <saabisto@gmx.de>\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
+"PO-Revision-Date: 2021-09-17 22:44+0000\n"
+"Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/calendar/calendar/"
 "de/>\n"
 "Language: de\n"
@@ -43,10 +43,6 @@ msgstr "max@mustermann.de"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Kopie lokal speichern"
-
-#: daemon/Daemon.vala:24
-msgid "Print debug information"
-msgstr "Debug-Informationen drucken"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -108,19 +104,19 @@ msgstr "Aktueller Monat"
 msgid "Next Month"
 msgstr "Kommender Monat"
 
-#: src/Application.vala:54
+#: src/Application.vala:60
 msgid "Create an event"
 msgstr "Termin erstellen"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr "Gewählten Tag betrachten"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "date"
 msgstr "Datum"
 
-#: src/Application.vala:172
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -216,35 +212,39 @@ msgstr "Keine Teilnehmer"
 msgid "Invite"
 msgstr "Einladen"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "Von:"
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "Ganztägig:"
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "Bis:"
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr "Zeitzone:"
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "Titel:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "Terminbezeichnung"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr "Eingabetaste drücken, um den Termin zu analysieren"
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "Kalender:"
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "Notizen:"
 
@@ -838,6 +838,9 @@ msgstr "Rückgängig"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "»%s« wurde entfernt"
+
+#~ msgid "Print debug information"
+#~ msgstr "Debug-Informationen drucken"
 
 #~ msgid "Search Calendars"
 #~ msgstr "Kalender suchen"

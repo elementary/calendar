@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2020-08-16 06:13+0000\n"
 "Last-Translator: P.-H. Lin <cypressyew@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -42,10 +42,6 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "保留一份在本機上"
-
-#: daemon/Daemon.vala:24
-msgid "Print debug information"
-msgstr "列印除錯資訊"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -105,19 +101,19 @@ msgstr "這個月"
 msgid "Next Month"
 msgstr "下個月"
 
-#: src/Application.vala:54
+#: src/Application.vala:60
 msgid "Create an event"
 msgstr "建立事件"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr "聚焦在給定的日期"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "date"
 msgstr "日期"
 
-#: src/Application.vala:172
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "行事曆"
 
@@ -213,35 +209,39 @@ msgstr "沒有參與者"
 msgid "Invite"
 msgstr "邀請"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "從："
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "整天："
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "到："
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr ""
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "標題："
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "事件名稱"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr "按下 Enter 來解析事件"
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "行事曆："
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "評註："
 
@@ -833,6 +833,9 @@ msgstr "回復"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "「%s」已移除"
+
+#~ msgid "Print debug information"
+#~ msgstr "列印除錯資訊"
 
 #~ msgid "Search Calendars"
 #~ msgstr "搜尋行事曆"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2020-06-12 23:11+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/calendar/"
@@ -37,10 +37,6 @@ msgstr "jon@nowok.pl"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Trzim lokalno kopijo"
-
-#: daemon/Daemon.vala:24
-msgid "Print debug information"
-msgstr "Pokoż informacyje debugowanio"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -102,19 +98,19 @@ msgstr "Tyn miesiōnc"
 msgid "Next Month"
 msgstr "Nastympny miesiōnc"
 
-#: src/Application.vala:54
+#: src/Application.vala:60
 msgid "Create an event"
 msgstr "Stwōrz zdarzynie"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr "Pokoż dany dziyń"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:172
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Kalyndorz"
 
@@ -212,35 +208,39 @@ msgstr "Brak ôsōb, co bierōm udzioł"
 msgid "Invite"
 msgstr "Zaproszynie"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "Ôd:"
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "Cołki dziyń:"
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "Do:"
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr ""
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "Tytuł:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "Miano zdarzynio"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr "Naciś enter, coby przeanalizować zdarzynie"
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "Kalyndorz:"
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "Kōmyntorz:"
 
@@ -840,6 +840,9 @@ msgstr "Cofnij"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" skasowany"
+
+#~ msgid "Print debug information"
+#~ msgstr "Pokoż informacyje debugowanio"
 
 #~ msgid "Search Calendars"
 #~ msgstr "Przeszukej kalyndorze"

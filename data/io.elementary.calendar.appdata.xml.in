@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015-2016 elementary, Inc. <contact@elementary.io> -->
+<!-- Copyright 2015-2021 elementary, Inc. <contact@elementary.io> -->
 <component type="desktop">
   <id>io.elementary.calendar</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -13,6 +13,19 @@
     </p>
   </description>
   <releases>
+    <release version="6.0.1" date="2021-08-24" urgency="medium">
+      <description>
+      <p>Fixes:</p>
+      <ul>
+        <li>Fix broken calendar color with some online providers</li>
+        <li>Fix an issue with some all-day events</li>
+      </ul>
+      <p>Minor Updates:</p>
+      <ul>
+        <li>Updated translations</li>
+      </ul>
+      </description>
+    </release>
     <release version="6.0.0" date="2021-07-19" urgency="medium">
       <description>
       <p>New Features:</p>

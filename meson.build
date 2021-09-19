@@ -1,6 +1,6 @@
 project('io.elementary.calendar',
     'c', 'vala',
-    version: '6.0.0'
+    version: '6.0.1'
 )
 
 add_project_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
@@ -58,7 +58,6 @@ gresource_calendar = gnome.compile_resources(
 
 subdir('data')
 subdir('core')
-subdir('daemon')
 subdir('src')
 subdir('plugins')
 subdir('po')

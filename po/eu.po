@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2015-11-23 20:50+0000\n"
 "Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
@@ -42,11 +42,6 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Mantendu kopia lokala"
-
-#: daemon/Daemon.vala:24
-#, fuzzy
-msgid "Print debug information"
-msgstr "Informazio orokorrak"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -111,20 +106,20 @@ msgstr "hilabete"
 msgid "Next Month"
 msgstr "hilabete"
 
-#: src/Application.vala:54
+#: src/Application.vala:60
 #, fuzzy
 msgid "Create an event"
 msgstr "Sortu gertaera berri bat"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:172
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Egutegia"
 
@@ -222,35 +217,39 @@ msgstr "Partehartzailerik ez"
 msgid "Invite"
 msgstr "Gonbidatu"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "Noiztik:"
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "Egun osoa:"
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "Noiz arte:"
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr ""
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "Izenburua:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "Gertaeraren izena"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr ""
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "Egutegia:"
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "Iruzkinak:"
 
@@ -863,6 +862,10 @@ msgstr "Desegin"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" egutegia ezabatuta."
+
+#, fuzzy
+#~ msgid "Print debug information"
+#~ msgstr "Informazio orokorrak"
 
 #, fuzzy
 #~ msgid "Search Calendars"

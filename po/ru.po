@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
-"PO-Revision-Date: 2021-07-22 16:07+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
+"PO-Revision-Date: 2021-09-18 16:05+0000\n"
+"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
 "Language: ru\n"
@@ -44,10 +44,6 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Сохранить локальную копию"
-
-#: daemon/Daemon.vala:24
-msgid "Print debug information"
-msgstr "Распечатать отладочную информацию"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -108,19 +104,19 @@ msgstr "Месяц"
 msgid "Next Month"
 msgstr "Следующий месяц"
 
-#: src/Application.vala:54
+#: src/Application.vala:60
 msgid "Create an event"
 msgstr "Создать событие"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr "Сфокусироваться на этом дне"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "date"
 msgstr "дата"
 
-#: src/Application.vala:172
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Календарь"
 
@@ -131,7 +127,7 @@ msgstr "Выберите календарь для импорта"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "События из \"%s\" будут объеденины с этим календарем:"
+msgstr "События из «%s» будут объеденины с этим календарем:"
 
 #: src/ImportDialog.vala:47
 #, c-format
@@ -217,35 +213,39 @@ msgstr "Нет участников"
 msgid "Invite"
 msgstr "Пригласить"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "Начиная с:"
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "Весь день:"
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "До:"
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr "Часовой пояс:"
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "Название:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "Название события"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr "Нажмите Ввод для разбора события"
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "Календарь:"
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "Комментарии:"
 
@@ -841,7 +841,10 @@ msgstr "Возврат"
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
 #, c-format
 msgid "\"%s\" removed"
-msgstr "\"%s\" удалено"
+msgstr "«%s» удалён"
+
+#~ msgid "Print debug information"
+#~ msgstr "Распечатать отладочную информацию"
 
 #, fuzzy
 #~ msgid "Search Calendars"

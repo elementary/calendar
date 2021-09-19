@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2019-01-08 18:28+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/calendar/"
@@ -43,10 +43,6 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "컴퓨터에 사본 보관"
-
-#: daemon/Daemon.vala:24
-msgid "Print debug information"
-msgstr "debug 정보 출력"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -107,19 +103,19 @@ msgstr "이번 달"
 msgid "Next Month"
 msgstr "다음 달"
 
-#: src/Application.vala:54
+#: src/Application.vala:60
 msgid "Create an event"
 msgstr "이벤트 만들기"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr "선정한 날에 초점 맞추기"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "date"
 msgstr "날짜"
 
-#: src/Application.vala:172
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "달력"
 
@@ -215,35 +211,39 @@ msgstr "참가자 없음"
 msgid "Invite"
 msgstr "초대"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "이때부터:"
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "하루 종일:"
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "이때까지:"
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr ""
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "제목:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "이벤트 이름"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr "이벤트를 분석하려면 엔터키를 누르세요"
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "일정표:"
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "설명:"
 
@@ -832,6 +832,9 @@ msgstr "실행 취소"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" 지움"
+
+#~ msgid "Print debug information"
+#~ msgstr "debug 정보 출력"
 
 #~ msgid "Search Calendars"
 #~ msgstr "달력 검색"

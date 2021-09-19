@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2016-02-10 22:46+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -42,11 +42,6 @@ msgstr "juhan@julm.ee"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Kohaliku koopia tegemine"
-
-#: daemon/Daemon.vala:24
-#, fuzzy
-msgid "Print debug information"
-msgstr "Üldinfo"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -110,20 +105,20 @@ msgstr "Kuu"
 msgid "Next Month"
 msgstr "Kuu"
 
-#: src/Application.vala:54
+#: src/Application.vala:60
 #, fuzzy
 msgid "Create an event"
 msgstr "Uue sündmuse loomine"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:172
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -221,35 +216,39 @@ msgstr "Osalejad puuduvad"
 msgid "Invite"
 msgstr "Kutsu…"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "Algus:"
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "Terve päev:"
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "Lõpp:"
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr ""
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "Nimi:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "Sündmuse nimi"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr "Sündmuse analüüsimiseks vajuta enterit"
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "Kalender:"
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "Märkmed:"
 
@@ -862,6 +861,10 @@ msgstr "Võta tagasi"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Kalender \"%s\" eemaldati."
+
+#, fuzzy
+#~ msgid "Print debug information"
+#~ msgstr "Üldinfo"
 
 #, fuzzy
 #~ msgid "Search Calendars"

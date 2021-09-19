@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2019-12-22 21:41+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/calendar/"
@@ -44,10 +44,6 @@ msgstr "janez@novak.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Obdrži kopijo lokalno"
-
-#: daemon/Daemon.vala:24
-msgid "Print debug information"
-msgstr "Izpiši podatke za razhroščevanje"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -107,19 +103,19 @@ msgstr "Ta mesec"
 msgid "Next Month"
 msgstr "Naslednji mesec"
 
-#: src/Application.vala:54
+#: src/Application.vala:60
 msgid "Create an event"
 msgstr "Ustvari dogodek"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr "Fokusiraj izbrani dan"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:172
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "Koledar"
 
@@ -218,35 +214,39 @@ msgstr "Ni sodelujočih"
 msgid "Invite"
 msgstr "Povabi"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "Od:"
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "Celodnevno:"
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "Do:"
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr ""
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "Naslov:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "Ime dogodka"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr "Pritisni enter za razčlembo dogodka"
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "Koledar:"
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "Komentarji:"
 
@@ -851,6 +851,9 @@ msgstr "Razveljavi"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "koledar \"%s\" odstranjen"
+
+#~ msgid "Print debug information"
+#~ msgstr "Izpiši podatke za razhroščevanje"
 
 #~ msgid "Search Calendars"
 #~ msgstr "Preišči koledarje"

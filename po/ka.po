@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 02:57+0000\n"
+"POT-Creation-Date: 2021-09-17 10:20+0000\n"
 "PO-Revision-Date: 2015-11-27 08:47+0000\n"
 "Last-Translator: Beqa Arabuli <arabulibeqa@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,11 +37,6 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "ასლის ლოკალურად შენახვა"
-
-#: daemon/Daemon.vala:24
-#, fuzzy
-msgid "Print debug information"
-msgstr "ზოგადი ინფორმაცია"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -106,20 +101,20 @@ msgstr "თვე"
 msgid "Next Month"
 msgstr "თვე"
 
-#: src/Application.vala:54
+#: src/Application.vala:60
 #, fuzzy
 msgid "Create an event"
 msgstr "ახალი ივენთის შექმნა"
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:55
+#: src/Application.vala:61
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:172
+#: src/Application.vala:186
 msgid "Calendar"
 msgstr "კალენდარი"
 
@@ -215,35 +210,39 @@ msgstr "არავინ მონაწილეობს"
 msgid "Invite"
 msgstr "მოიწვიე"
 
-#: src/EventEdition/InfoPanel.vala:76
+#: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
 msgstr "საწყისი თარიღი:"
 
-#: src/EventEdition/InfoPanel.vala:82
+#: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
 msgstr "მთელი დღე"
 
-#: src/EventEdition/InfoPanel.vala:87
+#: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
 msgstr "საბოლოო თარიღი:"
 
-#: src/EventEdition/InfoPanel.vala:105
+#: src/EventEdition/InfoPanel.vala:106
+msgid "Time zone:"
+msgstr ""
+
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
 msgstr "სათაური:"
 
-#: src/EventEdition/InfoPanel.vala:107
+#: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
 msgstr "ივენთის სახელი"
 
-#: src/EventEdition/InfoPanel.vala:117
+#: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
 msgstr ""
 
-#: src/EventEdition/InfoPanel.vala:132
+#: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
 msgstr "კალენდარი:"
 
-#: src/EventEdition/InfoPanel.vala:139
+#: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
 msgstr "კომენტარები:"
 
@@ -850,6 +849,10 @@ msgstr "გაუქმება"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "კალენდარი \"%s\" წაშლილია."
+
+#, fuzzy
+#~ msgid "Print debug information"
+#~ msgstr "ზოგადი ინფორმაცია"
 
 #, fuzzy
 #~ msgid "Search Calendars"
