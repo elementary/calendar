@@ -33,12 +33,12 @@ public class Calendar.Widgets.HyperTextView : Gtk.TextView {
     private bool is_control_key_pressed = false;
 
     construct {
-        var http_charset = "[a-zA-Z0-9_\\/\\-\\+\\.:@\\?&%=#]";
-        var email_charset = "[a-zA-Z0-9_\\-\\.]";
-        var email_tld_charset = "[a-zA-Z0-9_\\-]";
+        var http_charset = "[\\w\\/\\-\\+\\.:@\\?&%=#]";
+        var email_charset = "[\\w\\-\\.]";
+        var email_tld_charset = "[\\w\\-]";
 
-        var http_match_str = "https?:\\/\\/" + http_charset + "{1,}";
-        var email_match_str = "(mailto:)?" + email_charset + "{1,}@" + email_charset + "{1,}\\." + email_tld_charset + "{1,}";
+        var http_match_str = @"https?:\\/\\/$(http_charset)+\\.$(http_charset)+";
+        var email_match_str = @"(mailto:)?$(email_charset)+@$(email_charset)+\\.$(email_tld_charset)+";
 
         var uri_regex_str = "(?:(" +
                 http_match_str +
@@ -296,11 +296,11 @@ public class Calendar.Widgets.HyperTextView : Gtk.TextView {
 
     private string? get_uri_at_location (int location_x, int location_y) {
         string? uri = null;
-        var window = get_window (Gtk.TextWindowType.TEXT);
+        var window = get_window (Gtk.TextWindowType.WIDGET);
 
         if (window != null) {
             int x, y;
-            window_to_buffer_coords (Gtk.TextWindowType.WIDGET, location_x, location_y, out x, out y);
+            window_to_buffer_coords (Gtk.TextWindowType.TEXT, location_x, location_y, out x, out y);
 
             Gtk.TextIter text_iter;
             if (get_iter_at_location (out text_iter, x, y)) {
