@@ -21,6 +21,7 @@
 public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     private Gtk.Entry title_entry;
     private Gtk.TextView comment_textview;
+    private Gtk.TextTag? comment_link_tag;
     private Granite.Widgets.DatePicker from_date_picker;
     private Granite.Widgets.DatePicker to_date_picker;
     private Gtk.Switch allday_switch;
@@ -150,6 +151,26 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         comment_textview.set_border_window_size (Gtk.TextWindowType.RIGHT, 2);
         comment_textview.set_border_window_size (Gtk.TextWindowType.TOP, 2);
         comment_textview.set_border_window_size (Gtk.TextWindowType.BOTTOM, 2);
+
+        // Change cursor to hand when pointing a link when CTRL is pressed
+        comment_textview.motion_notify_event.connect ((event) => {
+            if (comment_link_tag != null) {
+                Gtk.TextIter pointed_at;
+                int buffer_x, buffer_y;
+                comment_textview.window_to_buffer_coords (Gtk.TextWindowType.WIDGET, (int) event.x, (int) event.y, out buffer_x, out buffer_y);
+                comment_textview.get_iter_at_location (out pointed_at, buffer_x, buffer_y);
+
+                var control = event.state & Gdk.ModifierType.CONTROL_MASK;
+                if (pointed_at.has_tag (comment_link_tag) && control != 0) {
+                    var hand = new Gdk.Cursor.from_name (comment_textview.get_display (), "hand");
+                    event.window.set_cursor (hand);
+                } else {
+                    var hand = new Gdk.Cursor.from_name (comment_textview.get_display (), "text");
+                    event.window.set_cursor (hand);
+                }
+            }
+            return false;
+        });
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -287,6 +308,31 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
                 Gtk.TextBuffer buffer = new Gtk.TextBuffer (null);
                 buffer.text = property.get_comment ();
                 comment_textview.set_buffer (buffer);
+
+                // Identify links in the description and apply a tag to style them
+                var link_regex = new GLib.Regex ("https?://[\\w.-]*(\\/[\\w-\\d]*)*");
+                comment_link_tag = buffer.create_tag ("link");
+                comment_link_tag.event.connect (on_link_clicked);
+                comment_link_tag.set_property ("foreground", "#0000FF");
+                comment_link_tag.underline = Pango.Underline.SINGLE;
+                GLib.MatchInfo mi;
+
+                Gtk.TextIter search_iter;
+                buffer.get_start_iter (out search_iter);
+                if (link_regex.match (buffer.text, 0, out mi)) {
+                    do {
+                        int start, end;
+                        mi.fetch_pos (0, out start, out end);
+                        var link_text = buffer.text.substring (start, end - start);
+
+                        Gtk.TextIter starti, endi;
+                        search_iter.forward_search (link_text, Gtk.TextSearchFlags.TEXT_ONLY, out starti, out endi, null);
+
+                        buffer.apply_tag (comment_link_tag, starti, endi);
+                        search_iter.forward_chars (link_text.length);
+                    } while (mi.next ());
+                }
+
             }
 
             // Load the source
@@ -326,6 +372,27 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         // Populate timezone label with the timezone that was decided
         timezone_label.label = timezone.get_display_name ();
+    }
+
+    bool on_link_clicked (Gtk.TextTag tag, GLib.Object unused, Gdk.Event event, Gtk.TextIter iter) {
+        Gdk.ModifierType state;
+        event.get_state (out state);
+        var control = (state & Gdk.ModifierType.CONTROL_MASK) != 0;
+        if (event.type == Gdk.EventType.BUTTON_RELEASE &&
+            control) {
+            var button_event = (Gdk.EventButton) event;
+            if (button_event.button == Gdk.BUTTON_PRIMARY) {
+                var start = iter.copy ();
+                start.backward_to_tag_toggle (tag);
+                iter.forward_to_tag_toggle (tag);
+
+                var link_dst = comment_textview.buffer.get_text (start, iter, false);
+                Gtk.show_uri_on_window (null, link_dst, Gdk.CURRENT_TIME);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     Granite.Widgets.DatePicker make_date_picker () {
