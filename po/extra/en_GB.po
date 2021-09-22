@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-22 16:57+0000\n"
-"PO-Revision-Date: 2021-07-21 07:54+0000\n"
+"PO-Revision-Date: 2021-09-22 22:21+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "calendar/extra/en_GB/>\n"
@@ -46,19 +46,15 @@ msgstr "Fixes:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix notification icons in the notification indicator"
-msgstr ""
+msgstr "Fix notification icons in the notification indicator"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
-#, fuzzy
-#| msgid "Fix an issue where new events could appear twice in Calendar"
 msgid "Fix an issue where event timezones were overwritten"
-msgstr "Fix an issue where new events could appear twice in Calendar"
+msgstr "Fix an issue where event timezones were overwritten"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
-#, fuzzy
-#| msgid "Always use calendar icon in notifications"
 msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "Always use calendar icon in notifications"
+msgstr "Ensure Calendar is launched when notifications are clicked"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:37
@@ -86,13 +82,11 @@ msgstr "Updated translations"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Fix broken calendar color with some online providers"
-msgstr ""
+msgstr "Fix broken calendar colour with some online providers"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
-#, fuzzy
-#| msgid "Fix end times for all-day events"
 msgid "Fix an issue with some all-day events"
-msgstr "Fix end times for all-day events"
+msgstr "Fix an issue with some all-day events"
 
 #: data/io.elementary.calendar.appdata.xml.in:45
 #: data/io.elementary.calendar.appdata.xml.in:70
