@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-22 16:57+0000\n"
-"PO-Revision-Date: 2021-08-28 13:11+0000\n"
+"PO-Revision-Date: 2021-09-22 22:21+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/extra/he/"
 ">\n"
@@ -48,19 +48,15 @@ msgstr "תיקונים:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix notification icons in the notification indicator"
-msgstr ""
+msgstr "תוקנו סמלי התראות במחוון ההתראות"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
-#, fuzzy
-#| msgid "Fix an issue where new events could appear twice in Calendar"
 msgid "Fix an issue where event timezones were overwritten"
-msgstr "תיקון תקלה שבעקבותיה אירועים חדשים עשויים להופיע פעמיים בלוח השנה"
+msgstr "תוקנה תקלה שאזורי הזמן של האירועים נדרסו"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
-#, fuzzy
-#| msgid "Always use calendar icon in notifications"
 msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "תמיד להשתמש בסמל לוח השנה בהתראות"
+msgstr "מתבצע וידוא שלוח השנה פעיל כשלוחצים על התראות"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:37
