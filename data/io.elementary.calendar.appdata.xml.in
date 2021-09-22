@@ -13,6 +13,20 @@
     </p>
   </description>
   <releases>
+    <release version="6.0.2" date="2021-09-21" urgency="medium">
+      <description>
+      <p>Fixes:</p>
+      <ul>
+        <li>Fix notification icons in the notification indicator</li>
+        <li>Fix an issue where event timezones were overwritten</li>
+        <li>Ensure Calendar is launched when notifications are clicked</li>
+      </ul>
+      <p>Minor Updates:</p>
+      <ul>
+        <li>Updated translations</li>
+      </ul>
+      </description>
+    </release>
     <release version="6.0.1" date="2021-08-24" urgency="medium">
       <description>
       <p>Fixes:</p>
