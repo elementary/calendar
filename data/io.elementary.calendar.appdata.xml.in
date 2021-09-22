@@ -8,95 +8,93 @@
   <name>Calendar</name>
   <summary>View and schedule events</summary>
   <description>
-    <p>
-      A slim, lightweight calendar app that syncs and manages multiple calendars in one place, like Google Calendar, Outlook and CalDAV.
-    </p>
+    <p>A slim, lightweight calendar app that syncs and manages multiple calendars in one place, like Google Calendar, Outlook and CalDAV.</p>
   </description>
   <releases>
-    <release version="6.0.2" date="2021-09-21" urgency="medium">
+    <release version="6.0.2" date="2021-09-22" urgency="medium">
       <description>
-      <p>Fixes:</p>
-      <ul>
-        <li>Fix notification icons in the notification indicator</li>
-        <li>Fix an issue where event timezones were overwritten</li>
-        <li>Ensure Calendar is launched when notifications are clicked</li>
-      </ul>
-      <p>Minor Updates:</p>
-      <ul>
-        <li>Updated translations</li>
-      </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Fix notification icons in the notification indicator</li>
+          <li>Fix an issue where event timezones were overwritten</li>
+          <li>Ensure Calendar is launched when notifications are clicked</li>
+        </ul>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
       </description>
     </release>
     <release version="6.0.1" date="2021-08-24" urgency="medium">
       <description>
-      <p>Fixes:</p>
-      <ul>
-        <li>Fix broken calendar color with some online providers</li>
-        <li>Fix an issue with some all-day events</li>
-      </ul>
-      <p>Minor Updates:</p>
-      <ul>
-        <li>Updated translations</li>
-      </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Fix broken calendar color with some online providers</li>
+          <li>Fix an issue with some all-day events</li>
+        </ul>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
       </description>
     </release>
     <release version="6.0.0" date="2021-07-19" urgency="medium">
       <description>
-      <p>New Features:</p>
-      <ul>
-        <li>Import ICS files from the gear menu</li>
-        <li>Support the dark style</li>
-      </ul>
-      <p>Fixes:</p>
-      <ul>
-        <li>Properly show events on the last day of the month</li>
-        <li>Fix end times for all-day events</li>
-        <li>Notify for all alarms on an event</li>
-      </ul>
-      <p>Minor Updates:</p>
-      <ul>
-        <li>Improved offline support</li>
-        <li>New colorful avatar fallbacks</li>
-        <li>Include "film" as an event icon keyword</li>
-        <li>Add Mint and Bubblegum to calendar color chooser</li>
-        <li>Link to Online Accounts settings in the gear menu</li>
-        <li>Performance improvements</li>
-        <li>Updated translations</li>
-      </ul>
+        <p>New Features:</p>
+        <ul>
+          <li>Import ICS files from the gear menu</li>
+          <li>Support the dark style</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Properly show events on the last day of the month</li>
+          <li>Fix end times for all-day events</li>
+          <li>Notify for all alarms on an event</li>
+        </ul>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Improved offline support</li>
+          <li>New colorful avatar fallbacks</li>
+          <li>Include "film" as an event icon keyword</li>
+          <li>Add Mint and Bubblegum to calendar color chooser</li>
+          <li>Link to Online Accounts settings in the gear menu</li>
+          <li>Performance improvements</li>
+          <li>Updated translations</li>
+        </ul>
       </description>
     </release>
     <release version="5.1.1" date="2020-10-08" urgency="medium">
       <description>
-      <p>New Features:</p>
-      <ul>
-        <li>Add "Duplicate..." option to event context menu</li>
-      </ul>
-      <p>Minor Updates:</p>
-      <ul>
-        <li>Fix an issue where new events could appear twice in Calendar</li>
-        <li>"Mark as default calendar" box is now correctly checked when editing a calendar</li>
-        <li>Updated translations</li>
-      </ul>
+        <p>New Features:</p>
+        <ul>
+          <li>Add "Duplicate..." option to event context menu</li>
+        </ul>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Fix an issue where new events could appear twice in Calendar</li>
+          <li>"Mark as default calendar" box is now correctly checked when editing a calendar</li>
+          <li>Updated translations</li>
+        </ul>
       </description>
     </release>
     <release version="5.1.0" date="2020-09-02" urgency="medium">
       <description>
-      <p>Improvements:</p>
-      <ul>
-        <li>Allow modification of recurring events</li>
-        <li>Improve handling of week start day</li>
-        <li>Fix timezone errors with all-day events</li>
+        <p>Improvements:</p>
+        <ul>
+          <li>Allow modification of recurring events</li>
+          <li>Improve handling of week start day</li>
+          <li>Fix timezone errors with all-day events</li>
+          </ul>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Don't resize the sidebar when resizing the window</li>
+          <li>Updated translations</li>
         </ul>
-      <p>Minor Updates:</p>
-      <ul>
-        <li>Don't resize the sidebar when resizing the window</li>
-        <li>Updated translations</li>
-      </ul>
       </description>
     </release>
     <release version="5.0.6" date="2020-06-30" urgency="medium">
       <description>
-      <p>Minor Updates:</p>
+        <p>Minor Updates:</p>
         <ul>
           <li>Fix issues with time zones not being recognized</li>
           <li>Updated translations</li>
@@ -105,22 +103,22 @@
     </release>
     <release version="5.0.5" date="2020-06-01" urgency="medium">
       <description>
-      <p>Minor Updates:</p>
-      <ul>
-        <li>Fix several issues with adding and removing monthly recurring events</li>
-        <li>Updated translations</li>
-      </ul>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Fix several issues with adding and removing monthly recurring events</li>
+          <li>Updated translations</li>
+        </ul>
       </description>
     </release>
     <release version="5.0.4" date="2020-04-03" urgency="medium">
       <description>
-      <p>Minor Updates:</p>
-      <ul>
-        <li>Correctly save event reminders</li>
-        <li>Ellipsize event participant details if necessary</li>
-        <li>Fix unwanted rescheduling when editing event title</li>
-        <li>Updated translations</li>
-      </ul>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Correctly save event reminders</li>
+          <li>Ellipsize event participant details if necessary</li>
+          <li>Fix unwanted rescheduling when editing event title</li>
+          <li>Updated translations</li>
+        </ul>
       </description>
     </release>
     <release version="5.0.3" date="2019-11-27" urgency="medium">
@@ -144,39 +142,39 @@
     </release>
     <release version="5.0" date="2019-02-28" urgency="medium">
       <description>
-          <p>Present import window when opening ICS files</p>
-          <p>Add a search entry for calendars</p>
-          <p>Always use calendar icon in notifications</p>
-          <p>Agenda view can now be navigated by keyboard</p>
-          <p>Right-to-left improvements</p>
-          <p>Various UI overhauls including lime accent color</p>
-          <p>Overall code cleanup and rewrites</p>
-          <p>Updated translations</p>
+        <p>Present import window when opening ICS files</p>
+        <p>Add a search entry for calendars</p>
+        <p>Always use calendar icon in notifications</p>
+        <p>Agenda view can now be navigated by keyboard</p>
+        <p>Right-to-left improvements</p>
+        <p>Various UI overhauls including lime accent color</p>
+        <p>Overall code cleanup and rewrites</p>
+        <p>Updated translations</p>
       </description>
     </release>
     <release version="4.2.3" date="2018-10-16" urgency="medium">
       <description>
-          <p>Styling adjustments</p>
-          <p>Fix location panel initialization</p>
-          <p>New translations</p>
+        <p>Styling adjustments</p>
+        <p>Fix location panel initialization</p>
+        <p>New translations</p>
       </description>
     </release>
     <release version="0.4.2.1" date="2018-06-22" urgency="medium">
       <description>
-          <p>Update wingpanel-indicator-datetime settings path.</p>
-          <p>New translations.</p>
+        <p>Update wingpanel-indicator-datetime settings path.</p>
+        <p>New translations.</p>
       </description>
     </release>
     <release version="0.4.2" date="2018-06-06" urgency="medium">
       <description>
-          <p>Various bug fixes and improvements.</p>
+        <p>Various bug fixes and improvements.</p>
       </description>
     </release>
     <release version="0.4.1" date="2017-10-27" urgency="medium">
       <description>
-          <p>Fixes for calendar accuracy and integrity issues.</p>
-          <p>Fixes exporting, importing and printing calendars.</p>
-          <p>Various bug fixes and improvements.</p>
+        <p>Fixes for calendar accuracy and integrity issues.</p>
+        <p>Fixes exporting, importing and printing calendars.</p>
+        <p>Various bug fixes and improvements.</p>
       </description>
     </release>
     <release version="0.4.0.2" timestamp="1473189266"/>
