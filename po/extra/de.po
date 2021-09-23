@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-22 16:57+0000\n"
-"PO-Revision-Date: 2021-08-30 09:26+0000\n"
+"PO-Revision-Date: 2021-09-23 12:50+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/calendar/extra/de/"
 ">\n"
@@ -49,20 +49,18 @@ msgstr "Fehlerbehebungen:"
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix notification icons in the notification indicator"
 msgstr ""
+"Fehler im Zusammenhang mit Icons in der Benachrichtigungsanzeige behoben"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
-#, fuzzy
-#| msgid "Fix an issue where new events could appear twice in Calendar"
 msgid "Fix an issue where event timezones were overwritten"
 msgstr ""
-"Fehler behoben, der dazu geführt hatte, dass Termine im Kalender doppelt "
-"erschienen"
+"Fehler behoben, der dazu führte, dass Termin-Zeitzonen überschrieben wurden"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
-#, fuzzy
-#| msgid "Always use calendar icon in notifications"
 msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "Kalender Symbol immer in den Benachrichtungen benutzen"
+msgstr ""
+"Stellt sicher, dass der Kalender gestartet wird, wenn auf Benachrichtigungen "
+"geklickt wird"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:37
