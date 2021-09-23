@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-22 16:57+0000\n"
-"PO-Revision-Date: 2021-08-27 08:31+0000\n"
+"PO-Revision-Date: 2021-09-23 12:50+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -47,19 +47,15 @@ msgstr "修正点:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix notification icons in the notification indicator"
-msgstr ""
+msgstr "通知インジケーターの通知アイコンが正しく表示されない不具合を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
-#, fuzzy
-#| msgid "Fix an issue where new events could appear twice in Calendar"
 msgid "Fix an issue where event timezones were overwritten"
-msgstr "カレンダーに新しい予定が重複して表示される可能性のある不具合を修正"
+msgstr "予定のタイムゾーンが上書きされる不具合を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
-#, fuzzy
-#| msgid "Always use calendar icon in notifications"
 msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "通知内で常にカレンダーのアイコンを使うように修正"
+msgstr "通知をクリックすると“カレンダー”アプリが起動するように修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:37
