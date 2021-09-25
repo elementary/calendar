@@ -254,7 +254,7 @@ void test_get_datetimes_all_day () {
     Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
     assert (g_dtstart.format ("%FT%T%z") == "2019-11-21T00:00:00-0600");
     assert (g_dtend.format ("%FT%T%z") == "2019-11-22T00:00:00-0600");
-    
+
     // Check the timezone
     // Floating timezones (implicit in DATE-type) should get the local timezone
     // when converted to GLib.
