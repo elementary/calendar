@@ -57,6 +57,12 @@ namespace Calendar.Util {
      * a time zone, and are represented at the given time in the local timezone
      * if they are floating.
      *
+     * Note that unlike {@link icalcomponent_get_datetimes}, the
+     * {@link GLib.TimeZone} contained in @start_date and @end_date is
+     * guaranteed to be correct, since there is a well-defined local timezone
+     * between both libical and GLib. For
+     * more details, see {@link Calendar.Util.icaltime_to_local_datetime}.
+     *
      * @see icalcomponent_get_datetimes
      */
     public void icalcomponent_get_local_datetimes (ICal.Component component, out GLib.DateTime start_date, out GLib.DateTime end_date) {
@@ -71,6 +77,14 @@ namespace Calendar.Util {
 
     /** Gets a pair of {@link GLib.DateTime} objects representing the start and
      *  end of the given component, represented in the time zone of @component.
+     *
+     * **Note:** the {@link GLib.TimeZone} data of @start_date and @end_date
+     * is not guaranteed to be correct. You should never assume that the time
+     * zone data contained in the resulting objects is correct. The intention
+     * is that all time zone calculations should be done in libical directly,
+     * where time zone data should be correct. This is because it's not
+     * always possible to map a libical timezone to a GLib timezone. For
+     * more details, see {@link Calendar.Util.icaltime_to_datetime}.
      *
      * @see icalcomponent_get_local_datetimes
      */
