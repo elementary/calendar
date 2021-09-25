@@ -74,7 +74,6 @@ namespace Calendar.Util {
         end_date = Calendar.Util.icaltime_to_local_datetime (dt_end);
     }
 
-
     /** Gets a pair of {@link GLib.DateTime} objects representing the start and
      *  end of the given component, represented in the time zone of @component.
      *
