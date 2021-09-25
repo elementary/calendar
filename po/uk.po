@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-17 10:20+0000\n"
-"PO-Revision-Date: 2021-07-06 22:59+0000\n"
+"POT-Creation-Date: 2021-09-22 16:57+0000\n"
+"PO-Revision-Date: 2021-09-17 22:44+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/"
 "calendar/uk/>\n"
@@ -226,7 +226,7 @@ msgstr "До:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "Часовий пояс:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"

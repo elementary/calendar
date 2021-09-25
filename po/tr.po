@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-17 10:20+0000\n"
-"PO-Revision-Date: 2021-06-08 17:30+0000\n"
+"POT-Creation-Date: 2021-09-22 16:57+0000\n"
+"PO-Revision-Date: 2021-09-18 16:05+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
@@ -226,7 +226,7 @@ msgstr "Bitiş:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "Saat dilimi:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"

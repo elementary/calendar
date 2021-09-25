@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-17 10:20+0000\n"
-"PO-Revision-Date: 2021-06-13 11:14+0000\n"
+"POT-Creation-Date: 2021-09-22 16:57+0000\n"
+"PO-Revision-Date: 2021-09-18 17:09+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/calendar/"
 "calendar/fi/>\n"
@@ -226,7 +226,7 @@ msgstr "Päättyy:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "Aikavyöhyke:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
