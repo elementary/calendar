@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-22 16:57+0000\n"
-"PO-Revision-Date: 2021-07-24 19:37+0000\n"
+"PO-Revision-Date: 2021-09-29 16:17+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "extra/pt/>\n"
@@ -47,21 +47,17 @@ msgstr "Correções:"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Fix notification icons in the notification indicator"
-msgstr ""
+msgstr "Correção dos ícones de notificação no indicador de notificação"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
-#, fuzzy
-#| msgid "Fix an issue where new events could appear twice in Calendar"
 msgid "Fix an issue where event timezones were overwritten"
 msgstr ""
-"Corrige um problema em que novos eventos podiam aparecer duas vezes no "
-"Calendário"
+"Corrige um problema em que os fusos horários dos eventos foram sobregravados"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
-#, fuzzy
-#| msgid "Always use calendar icon in notifications"
 msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "Usa sempre o ícone de calendário nas notificações"
+msgstr ""
+"Assegurar que o Calendário é iniciado quando as notificações são clicadas"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:37
@@ -89,13 +85,11 @@ msgstr "Traduções atualizadas"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Fix broken calendar color with some online providers"
-msgstr ""
+msgstr "Corrige a cor do calendário com alguns fornecedores online"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
-#, fuzzy
-#| msgid "Fix end times for all-day events"
 msgid "Fix an issue with some all-day events"
-msgstr "Corrige horários finais para eventos de todo o dia"
+msgstr "Corrige um problema com alguns eventos do dia inteiro"
 
 #: data/io.elementary.calendar.appdata.xml.in:45
 #: data/io.elementary.calendar.appdata.xml.in:70
