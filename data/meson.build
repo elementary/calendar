@@ -15,7 +15,7 @@ endforeach
 
 install_data(
     input: 'daemon.desktop',
-    rename: meson.project_name()+'-daemon' + '.desktop',
+    rename: meson.project_name() + '-daemon.desktop',
     install_dir: join_paths(get_option('sysconfdir'), 'xdg', 'autostart')
 )
 
