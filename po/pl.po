@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-22 23:10+0000\n"
 "PO-Revision-Date: 2021-10-23 15:12+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/calendar/calendar/"
 "pl/>\n"
 "Language: pl\n"
@@ -168,10 +168,9 @@ msgstr "Przypomnienia"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr "Powtórzenie"
+msgstr "Powtarzanie"
 
 #: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
@@ -755,7 +754,7 @@ msgstr "%s – %s"
 #: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s o %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:341
@@ -778,7 +777,7 @@ msgstr "Edycja…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Zduplikuj…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -813,22 +812,20 @@ msgid "Add New Calendar…"
 msgstr "Dodaj nowy kalendarz…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Eksportuj kalendarz…"
+msgstr "Importuj plik iCalendar…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "Ustawienia konta online…"
 
 #: src/Widgets/SourcePopover.vala:99
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Wybierz kalendarz do zaimportowania danych"
+msgstr "Wybierz plik ICS do zaimportowania"
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
-msgstr ""
+msgstr "Otwórz"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
