@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-22 23:10+0000\n"
-"PO-Revision-Date: 2021-10-23 21:02+0000\n"
+"PO-Revision-Date: 2021-10-23 23:22+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/calendar/extra/pl/"
 ">\n"
@@ -138,7 +138,7 @@ msgstr "Poprawiono wsparcie offline"
 
 #: data/io.elementary.calendar.appdata.xml.in:71
 msgid "New colorful avatar fallbacks"
-msgstr "Nowy kolorowy avatar typu fallback"
+msgstr "Nowy kolorowy awatar zastępczy"
 
 #: data/io.elementary.calendar.appdata.xml.in:72
 msgid "Include \"film\" as an event icon keyword"
@@ -146,11 +146,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:73
 msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
+msgstr "Dodaj kolor miętowy i gumowy do możliwych kolorów kalendarza"
 
 #: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
+msgstr "Dodaj link do ustawień kont online w menu zębatkowym"
 
 #: data/io.elementary.calendar.appdata.xml.in:75
 #: data/io.elementary.calendar.appdata.xml.in:153
@@ -159,53 +159,59 @@ msgstr "Poprawki wydajności"
 
 #: data/io.elementary.calendar.appdata.xml.in:84
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
+msgstr "Dodano opcje \"Duplikuj...\" do menu kontekstowego wydarzenia"
 
 #: data/io.elementary.calendar.appdata.xml.in:88
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr ""
+"Naprawiono problem, w wyniku którego nowe wydarzenia mogły pojawiać się "
+"dwukrotnie w Kalendarzu"
 
 #: data/io.elementary.calendar.appdata.xml.in:89
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
+"Pole \"Oznacz jako domyślny kalendarz\" jest teraz poprawnie zaznaczone przy "
+"edycji kalendarza"
 
 #: data/io.elementary.calendar.appdata.xml.in:96
 msgid "Improvements:"
-msgstr ""
+msgstr "Ulepszenia:"
 
 #: data/io.elementary.calendar.appdata.xml.in:98
 msgid "Allow modification of recurring events"
-msgstr ""
+msgstr "Dozwolono modyfikacje wydarzeń cyklicznych"
 
 #: data/io.elementary.calendar.appdata.xml.in:99
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "Poprawiono obsługę dnia rozpoczęcia tygodnia"
 
 #: data/io.elementary.calendar.appdata.xml.in:100
 msgid "Fix timezone errors with all-day events"
-msgstr ""
+msgstr "Naprawiono problem ze strefami czasowymi wydarzeń całodniowych"
 
 #: data/io.elementary.calendar.appdata.xml.in:104
 msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
+msgstr "Rozmiar panelu bocznego nie zmienia się już przy zmianie rozmiaru okna"
 
 #: data/io.elementary.calendar.appdata.xml.in:113
 msgid "Fix issues with time zones not being recognized"
-msgstr ""
+msgstr "Naprawiono problemy z nierozpoznawanymi strefami czasowymi"
 
 #: data/io.elementary.calendar.appdata.xml.in:122
 msgid "Fix several issues with adding and removing monthly recurring events"
 msgstr ""
+"Naprawiono kilka problemów z dodawaniem i usuwaniem cyklicznych miesięcznych "
+"wydarzeń"
 
 #: data/io.elementary.calendar.appdata.xml.in:131
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "Poprawiono zapisywanie przypomnień wydarzeń"
 
 #: data/io.elementary.calendar.appdata.xml.in:132
 msgid "Ellipsize event participant details if necessary"
-msgstr ""
+msgstr "Skróć szczegóły o uczestnikach wydarzenia gdy jest to potrzebne"
 
 #: data/io.elementary.calendar.appdata.xml.in:133
 msgid "Fix unwanted rescheduling when editing event title"
