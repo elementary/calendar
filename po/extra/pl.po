@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-22 23:10+0000\n"
 "PO-Revision-Date: 2021-10-23 21:00+0000\n"
-"Last-Translator: Oleg <oleg.szew@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/calendar/extra/pl/"
 ">\n"
 "Language: pl\n"
@@ -49,15 +49,15 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Ensure Calendar runs in the background on startup"
-msgstr ""
+msgstr "Upewniono się, że Kalendarz uruchamia się w tle przy starcie"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Fix memory leak when getting timezone information"
-msgstr ""
+msgstr "Naprawiono wyciek pamięci przy pobieraniu informacji o strefie czasowej"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Reliably read Windows-style timezones"
-msgstr ""
+msgstr "Poprawiono odczytywanie stref czasowych zapisanych w stylu Windowsa"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:36
@@ -69,7 +69,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:120
 #: data/io.elementary.calendar.appdata.xml.in:129
 msgid "Minor Updates:"
-msgstr ""
+msgstr "Drobne aktualizacje:"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:38
