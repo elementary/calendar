@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-22 23:10+0000\n"
 "PO-Revision-Date: 2021-10-23 21:02+0000\n"
-"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/calendar/extra/pl/"
 ">\n"
 "Language: pl\n"
@@ -97,7 +97,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Ensure Calendar is launched when notifications are clicked"
 msgstr ""
-"Upewnij się, że kalendarz jest uruchomiony przy kliknięciu na notyfikacje"
+"Upewnij się, że kalendarz jest uruchomiony przy kliknięciu na powiadomienie"
 
 #: data/io.elementary.calendar.appdata.xml.in:46
 msgid "Fix broken calendar color with some online providers"
@@ -110,7 +110,7 @@ msgstr "Naprawiono problem z niektórymi wydarzeniami całodniowymi"
 #: data/io.elementary.calendar.appdata.xml.in:57
 #: data/io.elementary.calendar.appdata.xml.in:82
 msgid "New Features:"
-msgstr ""
+msgstr "Nowe funkcje:"
 
 #: data/io.elementary.calendar.appdata.xml.in:59
 msgid "Import ICS files from the gear menu"
@@ -118,7 +118,7 @@ msgstr "Importuj pliki ICS z menu koła zębatkowego"
 
 #: data/io.elementary.calendar.appdata.xml.in:60
 msgid "Support the dark style"
-msgstr ""
+msgstr "Dodano wsparcie trybu ciemnego"
 
 #: data/io.elementary.calendar.appdata.xml.in:64
 msgid "Properly show events on the last day of the month"
