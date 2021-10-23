@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-22 23:10+0000\n"
-"PO-Revision-Date: 2021-09-22 22:21+0000\n"
+"PO-Revision-Date: 2021-10-23 13:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/extra/"
 "uk/>\n"
@@ -50,15 +50,15 @@ msgstr "Виправлення:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Ensure Calendar runs in the background on startup"
-msgstr ""
+msgstr "Виправлено роботу календаря у фоновому режимі при запуску"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Fix memory leak when getting timezone information"
-msgstr ""
+msgstr "Виправлено витік пам’яті під час отримання даних про часовий пояс"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Reliably read Windows-style timezones"
-msgstr ""
+msgstr "Читання часових поясів Windows-стилю"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:36
