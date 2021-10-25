@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-22 23:10+0000\n"
-"PO-Revision-Date: 2021-09-23 12:50+0000\n"
+"PO-Revision-Date: 2021-10-25 11:29+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/calendar/extra/"
 "ca/>\n"
@@ -48,15 +48,16 @@ msgstr "Correccions:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Ensure Calendar runs in the background on startup"
-msgstr ""
+msgstr "S'assegura que el Calendari s’executi en segon pla a l’inici."
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid "Fix memory leak when getting timezone information"
 msgstr ""
+"Correcció de la pèrdua de memòria en obtenir informació sobre la zona horària"
 
 #: data/io.elementary.calendar.appdata.xml.in:20
 msgid "Reliably read Windows-style timezones"
-msgstr ""
+msgstr "Lectura fiable les zones horàries a l’estil de Windows"
 
 #: data/io.elementary.calendar.appdata.xml.in:22
 #: data/io.elementary.calendar.appdata.xml.in:36
