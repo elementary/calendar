@@ -2,7 +2,7 @@
 Name=Calendar Daemon
 Comment=View Event Reminders
 Icon=io.elementary.calendar
-Exec=@EXEC_PATH@ --background
+Exec=io.elementary.calendar --background
 Terminal=false
 Type=Application
 Categories=System;
