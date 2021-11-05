@@ -108,7 +108,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                         individual = map_iterator.get_value ();
                         if (individual != null) {
                             avatar.text = individual.display_name;
-                            
+
                             if (individual.avatar != null) {
                                 avatar.set_loadable_icon (individual.avatar);
                             }
