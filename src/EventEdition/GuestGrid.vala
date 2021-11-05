@@ -108,14 +108,10 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                         individual = map_iterator.get_value ();
                         if (individual != null) {
                             avatar.text = individual.display_name;
-                            avatar.set_image_load_func ((size) => {
-                                try {
-                                    return new Gdk.Pixbuf.from_stream_at_scale (individual.avatar.load (size, null), size, size, true);
-                                } catch (Error e) {
-                                    debug (e.message);
-                                    return null;
-                                }
-                            });
+
+                            if (individual.avatar != null) {
+                                avatar.set_loadable_icon (individual.avatar);
+                            }
 
                             if (individual.full_name != null && individual.full_name != "") {
                                 name_label.label = Markup.escape_text (individual.full_name);
