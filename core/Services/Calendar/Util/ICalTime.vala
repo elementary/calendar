@@ -35,6 +35,8 @@ namespace Calendar.Util {
 
         var tzid = date.get_tzid ();
         if (tzid == null) {
+            // In libical, null tzid means floating time
+            assert (date.get_timezone () == null);
             return new GLib.TimeZone.local ();
         }
 
@@ -62,21 +64,24 @@ namespace Calendar.Util {
                 return new GLib.TimeZone (tzid);
             }
         }
-
-        //FIXME See https://github.com/libical/libical/pull/513
         // If tzid fails, try ICal.Time.get_timezone ()
-        ICal.Timezone* timezone = date.get_timezone ();
+        unowned ICal.Timezone? timezone = null;
+        if (timezone == null && date.get_timezone () != null) {
+            timezone = date.get_timezone ();
+        }
+        // If timezone is still null), it's floating: set to local time
+        if (timezone == null) {
+            return new GLib.TimeZone.local ();
+        }
 
         // Get UTC offset and format for GLib.TimeZone constructor
         int is_daylight;
-        int interval = timezone->get_utc_offset (date, out is_daylight);
+        int interval = timezone.get_utc_offset (date, out is_daylight);
         bool is_positive = interval >= 0;
         interval = interval.abs ();
         var hours = (interval / 3600);
         var minutes = (interval % 3600) / 60;
         var hour_string = "%s%02d:%02d".printf (is_positive ? "+" : "-", hours, minutes);
-
-        delete timezone;
 
         return new GLib.TimeZone (hour_string);
     }
