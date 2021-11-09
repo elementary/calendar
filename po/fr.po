@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-22 16:57+0000\n"
-"PO-Revision-Date: 2021-08-12 17:04+0000\n"
+"POT-Creation-Date: 2021-10-22 23:10+0000\n"
+"PO-Revision-Date: 2021-10-21 18:12+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/calendar/calendar/"
 "fr/>\n"
@@ -226,7 +226,7 @@ msgstr "Au :"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "Fuseau horaire :"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"

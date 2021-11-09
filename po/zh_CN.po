@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-22 16:57+0000\n"
-"PO-Revision-Date: 2021-06-20 07:36+0000\n"
-"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
+"POT-Creation-Date: 2021-10-22 23:10+0000\n"
+"PO-Revision-Date: 2021-11-01 02:42+0000\n"
+"Last-Translator: jheng <jheng@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "calendar/calendar/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -223,7 +223,7 @@ msgstr "结束日期："
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "时区："
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
