@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2021-10-25 11:29+0000\n"
+"PO-Revision-Date: 2021-12-03 15:36+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/calendar/extra/pl/"
 ">\n"
@@ -41,15 +41,15 @@ msgstr ""
 "kalendarzami w jednym miejscu, jak Google Calendar, Outlook i CalDAV."
 
 #: data/io.elementary.calendar.appdata.xml.in:16
-#, fuzzy
-#| msgid "New Features:"
 msgid "Features:"
-msgstr "Nowe funkcje:"
+msgstr "Funkcje:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
+"Podążaj za adresami email oraz linkami sieciowymi w opisie wydarzenia przy "
+"użyciu Control + Kliknięcie"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:38
