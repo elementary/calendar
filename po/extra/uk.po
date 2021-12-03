@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2021-12-03 15:39+0000\n"
+"PO-Revision-Date: 2021-12-03 17:53+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/extra/"
 "uk/>\n"
@@ -49,6 +49,8 @@ msgstr "Функції:"
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
+"Перехід за посиланнями електронної пошти та вебпосиланнями в описі події за "
+"допомогою Control + Клацання"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:38
