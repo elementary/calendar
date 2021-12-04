@@ -1,6 +1,6 @@
 project('io.elementary.calendar',
     'c', 'vala',
-    version: '6.0.2'
+    version: '6.0.3'
 )
 
 add_project_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
@@ -23,7 +23,7 @@ pkgconfig = import('pkgconfig')
 
 glib_dep = dependency('glib-2.0')
 gee_dep = dependency('gee-0.8')
-granite_dep = dependency('granite', version: '>=6.0.0')
+granite_dep = dependency('granite', version: '>=6.2.0')
 gtk_dep = dependency('gtk+-3.0', version: '>=3.22')
 handy_dep = dependency('libhandy-1', version: '>=0.90.0')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>=3.8.0')
