@@ -87,9 +87,10 @@ namespace Calendar.Util {
     }
 
     /**
-     * Converts the given ICal.Time to a DateTime.
+     * Converts the given ICal.Time to a GLib.DateTime.
      *
-     * XXX : Track next versions of evolution in order to convert ICal.Timezone to GLib.TimeZone with a dedicated function…
+     * XXX : Track next versions of evolution in order to convert ICal.Timezone
+     * to GLib.TimeZone with a dedicated function…
      *
      * **Note:** All timezone information in the original @date is lost.
      * While this function attempts to convert the timezone data contained in
@@ -101,7 +102,7 @@ namespace Calendar.Util {
      * For example, a timezone like `Western European Standard Time` is not
      * easily representable in GLib. The resulting {@link GLib.TimeZone} is
      * likely to be the system's local timezone, which is (probably) incorrect.
-     * However, if the event occurrs at 8:15 AM on January 1, 2020, the time
+     * However, if the event occurs at 8:15 AM on January 1, 2020, the time
      * contained in the returned DateTime will be 8:15 AM on January 1, 2020
      * in the local timezone. The wall clock time is correct, but the time
      * zone is not.
@@ -120,8 +121,8 @@ namespace Calendar.Util {
     }
 
     /**
-     * Converts the given ICal.Time to a DateTime, represented in the system
-     * timezone.
+     * Converts the given ICal.Time to a GLib.DateTime, represented in the
+     * system timezone.
      *
      * All timezone information in the original @date is lost. However, the
      * {@link GLib.TimeZone} contained in the resulting DateTime is correct,
@@ -143,6 +144,8 @@ namespace Calendar.Util {
 #endif
     }
 
+    /** Converts the given ICal.Time to the local (or system) timezone
+     */
     public ICal.Time icaltime_convert_to_local (ICal.Time time) {
         var system_tz = Calendar.TimeManager.get_default ().system_timezone;
         return time.convert_to_zone (system_tz);
