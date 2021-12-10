@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2021-10-25 22:15+0000\n"
+"PO-Revision-Date: 2021-12-08 21:19+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "calendar/extra/en_GB/>\n"
@@ -39,15 +39,14 @@ msgstr ""
 "in one place, like Google Calendar, Outlook and CalDAV."
 
 #: data/io.elementary.calendar.appdata.xml.in:16
-#, fuzzy
-#| msgid "New Features:"
 msgid "Features:"
-msgstr "New Features:"
+msgstr "Features:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
+"Follow email and web links in the event description with Control + Click"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:38
