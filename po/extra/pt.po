@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2021-11-17 14:29+0000\n"
+"PO-Revision-Date: 2021-12-13 10:56+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "extra/pt/>\n"
@@ -40,10 +40,8 @@ msgstr ""
 "calendários num só lugar, como o Google Calendar, Outlook e CalDAV."
 
 #: data/io.elementary.calendar.appdata.xml.in:16
-#, fuzzy
-#| msgid "New Features:"
 msgid "Features:"
-msgstr "Novas funcionalidades:"
+msgstr "Funcionalidades:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid ""
