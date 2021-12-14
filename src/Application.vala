@@ -196,6 +196,8 @@ namespace Maya {
         GtkClutter.init (ref args);
         var app = new Application ();
 
-        return app.run (args);
+        int res = app.run (args);
+        ICal.Object.free_global_objects ();
+        return res;
     }
 }

@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-22 16:57+0000\n"
-"PO-Revision-Date: 2020-08-16 06:13+0000\n"
-"Last-Translator: P.-H. Lin <cypressyew@gmail.com>\n"
+"POT-Creation-Date: 2021-12-02 21:46+0000\n"
+"PO-Revision-Date: 2021-10-05 12:02+0000\n"
+"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "calendar/calendar/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -223,7 +223,7 @@ msgstr "到："
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "時區："
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
@@ -765,7 +765,7 @@ msgstr "編輯…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "複製…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -800,22 +800,20 @@ msgid "Add New Calendar…"
 msgstr "新增行事曆…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "匯出行事曆…"
+msgstr "匯入 iCalendar 檔案…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "線上帳號設定…"
 
 #: src/Widgets/SourcePopover.vala:99
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "選取要匯入至哪一個行事曆"
+msgstr "選擇要匯入的 ICS 檔案"
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
-msgstr ""
+msgstr "打開"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
