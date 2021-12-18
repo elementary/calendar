@@ -36,19 +36,12 @@ public class Maya.View.CalendarView : Gtk.Grid {
     private Grid days_grid { get; private set; }
     private Gtk.Stack stack { get; private set; }
     private Gtk.Label spacer { get; private set; }
-    private static GLib.Settings show_weeks;
 
     private static Gtk.CssProvider style_provider;
 
     static construct {
         style_provider = new Gtk.CssProvider ();
         style_provider.load_from_resource ("/io/elementary/calendar/WeekLabels.css");
-
-        if (Application.wingpanel_settings != null) {
-            show_weeks = Application.wingpanel_settings;
-        } else {
-            show_weeks = Application.saved_state;
-        }
     }
 
     construct {
@@ -77,8 +70,8 @@ public class Maya.View.CalendarView : Gtk.Grid {
             }
         });
 
-        show_weeks.changed["show-weeks"].connect (on_show_weeks_changed);
-        show_weeks.get_value ("show-weeks");
+        new Calendar.Settings ().notify["show-weeks"].connect (on_show_weeks_changed);
+        on_show_weeks_changed ();
 
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         events |= Gdk.EventMask.KEY_PRESS_MASK;
@@ -112,7 +105,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
     }
 
     private void update_spacer_visible () {
-        if (show_weeks.get_boolean ("show-weeks")) {
+        if (new Calendar.Settings ().show_weeks) {
             spacer.show ();
         } else {
             spacer.hide ();
