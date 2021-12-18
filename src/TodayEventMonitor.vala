@@ -139,9 +139,7 @@ public class Calendar.TodayEventMonitor : GLib.Object {
         var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
         var now = new DateTime.now_local ();
         string secondary_text = "";
-        var h24_settings = new GLib.Settings ("org.gnome.desktop.interface");
-        var format = h24_settings.get_string ("clock-format");
-        var text = Granite.DateTime.get_default_time_format (format.contains ("12h"));
+        var text = Calendar.Settings.time_format ();
         if (start_time.get_year () == now.get_year ()) {
             if (start_time.get_day_of_year () == now.get_day_of_year ()) {
                 secondary_text = Granite.DateTime.get_relative_datetime (start_time);
