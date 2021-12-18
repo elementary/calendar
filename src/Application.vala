@@ -81,11 +81,10 @@ namespace Maya {
                 date.set_parse (Option.show_day);
                 if (date.valid () == true) {
                     var datetime = get_selected_datetime ();
-                    datetime = datetime.add_years ((int)date.get_year () - datetime.get_year ());
-                    datetime = datetime.add_days ((int)date.get_day_of_year () - datetime.get_day_of_year ());
+                    datetime = datetime.add_years ((int) date.get_year () - datetime.get_year ());
+                    datetime = datetime.add_days ((int) date.get_day_of_year () - datetime.get_day_of_year ());
 
-                    saved_state.set_string ("selected-day", datetime.format ("%Y-%j"));
-                    saved_state.set_string ("month-page", datetime.format ("%Y-%m"));
+                    new Calendar.Settings ().date = datetime;
                 } else {
                     warning ("Invalid date '%s' - Ignoring", Option.show_day);
                 }
@@ -134,21 +133,21 @@ namespace Maya {
          * Initializes the graphical window and its components
          */
         void init_gui () {
-            int window_x, window_y;
-            var rect = Gtk.Allocation ();
-
-            saved_state.get ("window-position", "(ii)", out window_x, out window_y);
-            saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
+            var state = new Calendar.Settings ().window;
+            var rect = Gtk.Allocation () {
+                width = state.width,
+                height = state.height
+            };
 
             window = new MainWindow (this);
             window.title = _(Build.APP_NAME);
             window.set_allocation (rect);
 
-            if (window_x != -1 || window_y != -1) {
-                window.move (window_x, window_y);
+            if (state.x != -1 && state.y != -1) {
+                window.move (state.x, state.y);
             }
 
-            if (saved_state.get_boolean ("window-maximized")) {
+            if (state.maximized) {
                 window.maximize ();
             }
 
@@ -170,15 +169,13 @@ namespace Maya {
         }
 
         public static DateTime get_selected_datetime () {
-            var selected_day = saved_state.get_string ("selected-day");
-            if (selected_day == null || selected_day == "") {
+            var selected_date = new Calendar.Settings ().date;
+
+            if (selected_date == null) {
                 return new DateTime.now_local ();
             }
 
-            var numbers = selected_day.split ("-", 2);
-            var dt = new DateTime.local (int.parse (numbers[0]), 1, 1, 0, 0, 0);
-            dt = dt.add_days (int.parse (numbers[1]) - 1);
-            return dt;
+            return selected_date;
         }
     }
 
