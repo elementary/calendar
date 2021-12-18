@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2020 elementary, Inc. (https://elementary.io)
+ * Copyright (c) 2011-2023 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -181,5 +181,18 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         });
 
         return base.configure_event (event);
+    }
+
+    public override bool delete_event (Gdk.EventAny event) {
+        ((Application) application).ask_for_background.begin ((obj, res) => {
+            unowned var app = (Application) obj;
+            if (app.ask_for_background.end (res)) {
+                hide ();
+            } else {
+                destroy ();
+            }
+        });
+
+        return Gdk.EVENT_STOP;
     }
 }

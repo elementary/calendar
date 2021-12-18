@@ -63,10 +63,17 @@ namespace Maya {
         }
 
         protected override void activate () {
+            new Calendar.TodayEventMonitor ();
             if (run_in_background) {
                 run_in_background = false;
-                new Calendar.TodayEventMonitor ();
                 hold ();
+
+                ask_for_background.begin ((obj, res) => {
+                    if (!ask_for_background.end (res)) {
+                        release ();
+                    }
+                });
+
                 return;
             }
 
@@ -102,8 +109,6 @@ namespace Maya {
                     return false;
                 });
             }
-
-            ask_for_background ();
 
             var granite_settings = Granite.Settings.get_default ();
             var gtk_settings = Gtk.Settings.get_default ();
@@ -170,13 +175,13 @@ namespace Maya {
             Calendar.EventStore.get_default ().delete_trashed_calendars ();
         }
 
-        private void ask_for_background () {
+        public async bool ask_for_background () {
             const string[] DAEMON_COMMAND = { "io.elementary.calendar", "--background" };
             if (portal == null) {
                 portal = new Xdp.Portal ();
             }
 
-            string reason = _("Calendar wants to initialize with the session");
+            string reason = _("Calendar wants to run on background and initialize with the session for events notifications");
             var command = new GenericArray<unowned string> (2);
             foreach (unowned var arg in DAEMON_COMMAND) {
                 command.add (arg);
@@ -184,8 +189,12 @@ namespace Maya {
 
             var window = Xdp.parent_new_gtk (active_window);
 
-            //TODO: handle response
-            portal.request_background.begin (window, reason, command, AUTOSTART, null);
+            try {
+                return yield portal.request_background (window, reason, command, AUTOSTART, null);
+            } catch (Error e) {
+                warning ("Error during portal request: %s", e.message);
+                return e is IOError.FAILED;
+            }
         }
 
         public static DateTime get_selected_datetime () {
