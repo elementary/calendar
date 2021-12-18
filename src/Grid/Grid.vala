@@ -107,7 +107,7 @@ public class Grid : Gtk.Grid {
         day.set_state_flags (Gtk.StateFlags.FOCUSED, false);
         selection_changed (selected_date);
 
-        Maya.Application.saved_state.set_string ("selected-day", selected_date.format ("%Y-%j"));
+        new Calendar.Settings ().date = selected_date;
 
         var calmodel = Calendar.EventStore.get_default ();
         var date_month = selected_date.get_month () - calmodel.month_start.get_month ();
