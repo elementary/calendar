@@ -101,7 +101,10 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         error_bar.response.connect ((id) => error_bar.set_revealed (false));
         sidebar.event_removed.connect (on_remove);
 
-        Maya.Application.saved_state.bind ("hpaned-position", hpaned, "position", GLib.SettingsBindFlags.DEFAULT);
+        new Calendar.Settings ().window.bind_property (
+            "hpaned", hpaned, "position",
+            BindingFlags.BIDIRECTIONAL | BindingFlags.SYNC_CREATE
+        );
 
         Calendar.EventStore.get_default ().error_received.connect ((message) => {
             Idle.add (() => {
@@ -157,27 +160,28 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
 
     public override bool configure_event (Gdk.EventConfigure event) {
         if (configure_id != 0) {
-            GLib.Source.remove (configure_id);
+            Source.remove (configure_id);
         }
 
         configure_id = Timeout.add (100, () => {
+            var window = new Calendar.Settings ().window;
             configure_id = 0;
 
-            if (is_maximized) {
-                Maya.Application.saved_state.set_boolean ("window-maximized", true);
-            } else {
-                Maya.Application.saved_state.set_boolean ("window-maximized", false);
-
+            window.maximized = is_maximized;
+            if (!is_maximized) {
                 Gdk.Rectangle rect;
-                get_allocation (out rect);
-                Maya.Application.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
-
                 int root_x, root_y;
+
                 get_position (out root_x, out root_y);
-                Maya.Application.saved_state.set ("window-position", "(ii)", root_x, root_y);
+                get_allocation (out rect);
+
+                window.width = rect.width;
+                window.height = rect.height;
+                window.x = root_x;
+                window.y = root_y;
             }
 
-            return GLib.Source.REMOVE;
+            return Source.REMOVE;
         });
 
         return base.configure_event (event);
