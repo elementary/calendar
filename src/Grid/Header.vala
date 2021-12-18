@@ -28,18 +28,11 @@ public class Header : Gtk.EventBox {
     private Gtk.Grid header_grid;
     private Gtk.Label[] labels;
 
-    private static GLib.Settings show_weeks;
     private static Gtk.CssProvider style_provider;
 
     static construct {
         style_provider = new Gtk.CssProvider ();
         style_provider.load_from_resource ("/io/elementary/calendar/Header.css");
-
-        if (Application.wingpanel_settings != null) {
-            show_weeks = Application.wingpanel_settings;
-        } else {
-            show_weeks = Application.saved_state;
-        }
     }
 
     construct {
@@ -74,15 +67,16 @@ public class Header : Gtk.EventBox {
 
         button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
+                var settings = new Calendar.Settings ();
                 var show_weeks_menuitem = new Gtk.MenuItem ();
-                if (show_weeks.get_boolean ("show-weeks")) {
+                if (settings.show_weeks) {
                     show_weeks_menuitem.label = _("Hide Week Numbers");
                 } else {
                     show_weeks_menuitem.label = _("Show Week Numbers");
                 }
 
                 show_weeks_menuitem.activate.connect (() => {
-                    show_weeks.set_boolean ("show-weeks", !show_weeks.get_boolean ("show-weeks"));
+                    settings.show_weeks = !settings.show_weeks;
                 });
 
                 var menu = new Gtk.Menu ();
