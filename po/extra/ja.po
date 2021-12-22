@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2021-12-03 11:58+0000\n"
+"PO-Revision-Date: 2021-12-14 12:24+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -224,7 +224,7 @@ msgstr "予定のタイトルを編集した際に、予定の日付が変更さ
 
 #: data/io.elementary.calendar.appdata.xml.in:148
 msgid "Fix crash when editing an event with no location"
-msgstr "場所を指定せずに予定を変更した場合にアプリがクラッシュする不具合を修正"
+msgstr "場所指定がない予定を編集した場合にアプリがクラッシュする不具合を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:153
 msgid "Fix potential crash when loading events with no start or end time"
