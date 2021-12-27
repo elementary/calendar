@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2021-09-19 04:39+0000\n"
+"PO-Revision-Date: 2021-12-27 16:53+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -251,7 +251,7 @@ msgstr "場所:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "場所を入力"
+msgstr "人や場所の名前"
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
@@ -774,7 +774,7 @@ msgstr "予定を削除"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr "出来事を削除"
+msgstr "この予定のみを削除"
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
