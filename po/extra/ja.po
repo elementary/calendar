@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2021-12-14 12:24+0000\n"
+"PO-Revision-Date: 2021-12-27 16:53+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -36,8 +36,7 @@ msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
-"Google カレンダー や Outlook、CalDav などの複数のカレンダーを一か所で同期し管"
-"理できる、スリムで軽量なカレンダーアプリです。"
+"スリムで軽量なカレンダーアプリです。Google カレンダー や Outlook、CalDav などの複数のカレンダーを同期して一か所で管理できます。"
 
 #: data/io.elementary.calendar.appdata.xml.in:16
 msgid "Features:"
@@ -158,7 +157,7 @@ msgstr "カレンダーのカラーピッカーにミントとピンクを追加
 
 #: data/io.elementary.calendar.appdata.xml.in:82
 msgid "Link to Online Accounts settings in the gear menu"
-msgstr "設定メニューにオンラインアカウントの設定へのリンクを追加"
+msgstr "設定メニューに“オンラインアカウントの設定”へのリンクを追加"
 
 #: data/io.elementary.calendar.appdata.xml.in:83
 #: data/io.elementary.calendar.appdata.xml.in:161
@@ -171,7 +170,7 @@ msgstr "予定のコンテキストメニューに\"複製…\"オプション�
 
 #: data/io.elementary.calendar.appdata.xml.in:96
 msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr "カレンダーに新しい予定が重複して表示される可能性のある不具合を修正"
+msgstr "“カレンダー”に新しい予定が重複して表示される可能性のある不具合を修正"
 
 #: data/io.elementary.calendar.appdata.xml.in:97
 msgid ""
