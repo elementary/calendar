@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 21:46+0000\n"
 "PO-Revision-Date: 2022-01-09 22:20+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/extra/cs/>"
 "\n"
 "Language: cs\n"
@@ -191,7 +191,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:108
 msgid "Fix timezone errors with all-day events"
-msgstr ""
+msgstr "Opraveny chyby v časových pásmech při celodenních událostech"
 
 #: data/io.elementary.calendar.appdata.xml.in:112
 msgid "Don't resize the sidebar when resizing the window"
