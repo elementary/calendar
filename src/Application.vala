@@ -181,7 +181,7 @@ namespace Maya {
                 portal = new Xdp.Portal ();
             }
 
-            string reason = _("Calendar wants to run on background and initialize with the session for events notifications");
+            string reason = _("Calendar wants to run in the background and initialize with the session for events notifications");
             var command = new GenericArray<unowned string> (2);
             foreach (unowned var arg in DAEMON_COMMAND) {
                 command.add (arg);
