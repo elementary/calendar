@@ -69,12 +69,20 @@ public class Maya.EventMenu : Gtk.Menu {
     }
 
     private void remove_event () {
-        var calmodel = Calendar.EventStore.get_default ();
-        calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.ALL);
+        var application = (Gtk.Application) GLib.Application.get_default ();
+        var source = comp.get_data<E.Source> ("source");
+        var delete_dialog = new Calendar.DeleteEventDialog (source, comp, ECal.ObjModType.ALL) {
+            transient_for = application.active_window
+        };
+        delete_dialog.run_dialog ();
     }
 
     private void add_exception () {
-        var calmodel = Calendar.EventStore.get_default ();
-        calmodel.remove_event (comp.get_data<E.Source> ("source"), comp, ECal.ObjModType.THIS);
+        var application = (Gtk.Application) GLib.Application.get_default ();
+        var source = comp.get_data<E.Source> ("source");
+        var delete_dialog = new Calendar.DeleteEventDialog (source, comp, ECal.ObjModType.THIS) {
+            transient_for = application.active_window
+        };
+        delete_dialog.run_dialog ();
     }
 }
