@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2020-10-27 07:15+0000\n"
-"Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/extra/nl/"
-">\n"
+"PO-Revision-Date: 2022-01-13 21:16+0000\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/extra/nl/>"
+"\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
@@ -42,12 +42,12 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:16
 msgid "Features:"
-msgstr ""
+msgstr "Functies:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid ""
 "Follow email and web links in the event description with Control + Click"
-msgstr ""
+msgstr "Volg mail en weblinks in de gebeurtenisbeschrijving met Control + Klik"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 #: data/io.elementary.calendar.appdata.xml.in:38
@@ -58,15 +58,15 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:26
 msgid "Ensure Calendar runs in the background on startup"
-msgstr ""
+msgstr "Verzeker dat Agenda op de achtergrond draait bij het opstarten"
 
 #: data/io.elementary.calendar.appdata.xml.in:27
 msgid "Fix memory leak when getting timezone information"
-msgstr ""
+msgstr "Verhelpt een geheugenlek bij het ophalen van de tijdzone informatie"
 
 #: data/io.elementary.calendar.appdata.xml.in:28
 msgid "Reliably read Windows-style timezones"
-msgstr ""
+msgstr "Lees Windows-stijl tijdzone informatie op een betrouwbare manier uit"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 #: data/io.elementary.calendar.appdata.xml.in:44
@@ -96,54 +96,45 @@ msgstr "Bijgewerkte vertalingen"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid "Fix notification icons in the notification indicator"
-msgstr ""
+msgstr "Los problemen op met notificatie iconen in de notificatie indicator"
 
 #: data/io.elementary.calendar.appdata.xml.in:41
-#, fuzzy
-#| msgid "Fix an issue where new events could appear twice in Calendar"
 msgid "Fix an issue where event timezones were overwritten"
 msgstr ""
-"Een probleem opgelost waarbij nieuwe afspraken twee keer op de kalender "
-"verschenen"
+"Een probleem opgelost waarbij de tijdzones van gebeurtenissen werden "
+"overschreven"
 
 #: data/io.elementary.calendar.appdata.xml.in:42
-#, fuzzy
-#| msgid "Always use calendar icon in notifications"
 msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "Gebruik altijd het Agenda icoon bij notificaties"
+msgstr "Verzeker dat Calendar start wanneer er op een notificatie wordt geklikt"
 
 #: data/io.elementary.calendar.appdata.xml.in:54
 msgid "Fix broken calendar color with some online providers"
 msgstr ""
+"Probleem opgelost met kapotte kalenderkleuren bij sommige online aanbieders"
 
 #: data/io.elementary.calendar.appdata.xml.in:55
-#, fuzzy
-#| msgid "Fix timezone errors with all-day events"
 msgid "Fix an issue with some all-day events"
-msgstr ""
-"Een probleem opgelost met tijdzone fouten bij gebeurtenissen die een hele "
-"dag duren"
+msgstr "Een probleem opgelost met sommige dag-lange gebeurtenissen"
 
 #: data/io.elementary.calendar.appdata.xml.in:65
 #: data/io.elementary.calendar.appdata.xml.in:90
 msgid "New Features:"
-msgstr ""
+msgstr "Nieuwe Functionaliteit:"
 
 #: data/io.elementary.calendar.appdata.xml.in:67
 msgid "Import ICS files from the gear menu"
-msgstr ""
+msgstr "Importeer ICS-bestanden vanuit het tandwielmenu"
 
 #: data/io.elementary.calendar.appdata.xml.in:68
 msgid "Support the dark style"
-msgstr ""
+msgstr "Ondersteun het donkere thema"
 
 #: data/io.elementary.calendar.appdata.xml.in:72
 msgid "Properly show events on the last day of the month"
-msgstr ""
+msgstr "Geef gebeurtenissen op de laatste dag van de maand correct weer"
 
 #: data/io.elementary.calendar.appdata.xml.in:73
-#, fuzzy
-#| msgid "Fix timezone errors with all-day events"
 msgid "Fix end times for all-day events"
 msgstr ""
 "Een probleem opgelost met tijdzone fouten bij gebeurtenissen die een hele "
@@ -151,27 +142,27 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Notify for all alarms on an event"
-msgstr ""
+msgstr "Geef melding met alle alarmen op een gebeurtenis"
 
 #: data/io.elementary.calendar.appdata.xml.in:78
 msgid "Improved offline support"
-msgstr ""
+msgstr "Verbeterde offline ondersteuning"
 
 #: data/io.elementary.calendar.appdata.xml.in:79
 msgid "New colorful avatar fallbacks"
-msgstr ""
+msgstr "Nieuwe kleurrijke avatar-fallbacks"
 
 #: data/io.elementary.calendar.appdata.xml.in:80
 msgid "Include \"film\" as an event icon keyword"
-msgstr ""
+msgstr "Voeg \"film\" toe als een icoon trefwoord voor gebeurtenissen"
 
 #: data/io.elementary.calendar.appdata.xml.in:81
 msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
+msgstr "Voeg Mint en Bubblegum toe aan kalender kleurselectie"
 
 #: data/io.elementary.calendar.appdata.xml.in:82
 msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
+msgstr "Link naar Online Account instellingen in het tandwielmenu"
 
 #: data/io.elementary.calendar.appdata.xml.in:83
 #: data/io.elementary.calendar.appdata.xml.in:161
@@ -180,7 +171,7 @@ msgstr "Prestatieverbeteringen"
 
 #: data/io.elementary.calendar.appdata.xml.in:92
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
+msgstr "Voeg \"Dupliceren...\" optie toe aan contextmenu van gebeurtenissen"
 
 #: data/io.elementary.calendar.appdata.xml.in:96
 msgid "Fix an issue where new events could appear twice in Calendar"
