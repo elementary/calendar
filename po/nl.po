@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 21:46+0000\n"
 "PO-Revision-Date: 2022-01-13 19:11+0000\n"
-"Last-Translator: Jonathan Moerman <jonathanmoerman@gmail.com>\n"
+"Last-Translator: Mathias Vervaeke <mathias.vervaeke@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/calendar/"
 "nl/>\n"
 "Language: nl\n"
@@ -127,7 +127,7 @@ msgstr "Selecteer een agenda om naar te importeren"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Evenementen uit \"%s\" zullen worden toegevoegd aan deze agenda:"
+msgstr "Gebeurtenissen uit \"%s\" zullen worden samengevoegd aan deze agenda:"
 
 #: src/ImportDialog.vala:47
 #, c-format
