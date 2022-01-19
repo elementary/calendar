@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2020-08-25 13:13+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"PO-Revision-Date: 2022-01-09 22:20+0000\n"
+"Last-Translator: Antonin Hablak <tondulin5@outlook.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/calendar/"
 "cs/>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:56+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -225,7 +225,7 @@ msgstr "Do:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "Časová zóna:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
@@ -722,7 +722,6 @@ msgstr "soud;soudce;daň;advokát;právník;smlouva;kontrakt"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-#, fuzzy
 msgid "movie;film"
 msgstr "film"
 
@@ -779,7 +778,7 @@ msgstr "Upravit…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Zduplikovat…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -814,22 +813,20 @@ msgid "Add New Calendar…"
 msgstr "Přidat Nový kalendář…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Exportovat kalendář…"
+msgstr "Importovat iCalendar soubor…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "Nastavení online účtů…"
 
 #: src/Widgets/SourcePopover.vala:99
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Vyberte kalendář do kterého chcete importovat"
+msgstr "Vyberte ICS soubor k importu"
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
-msgstr ""
+msgstr "Otevřít"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"

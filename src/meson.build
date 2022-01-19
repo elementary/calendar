@@ -33,6 +33,7 @@ calendar_files = files(
     'Widgets/ContractorButtonWithMenu.vala',
     'Widgets/DateSwitcher.vala',
     'Widgets/DateTimePicker.vala',
+    'Widgets/DeleteDialog.vala',
     'Widgets/DynamicSpinner.vala',
     'Widgets/EventMenu.vala',
     'Widgets/HeaderBar.vala',
