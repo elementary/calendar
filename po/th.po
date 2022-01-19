@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
+"POT-Creation-Date: 2022-01-19 20:22+0000\n"
 "PO-Revision-Date: 2018-05-04 00:03+0000\n"
 "Last-Translator: Park Evans <travellerpeira9@gmail.com>\n"
 "Language-Team: Thai <https://weblate.elementary.io/projects/calendar/"
@@ -106,20 +106,20 @@ msgstr "เดือน"
 msgid "Next Month"
 msgstr "เดือน"
 
-#: src/Application.vala:60
+#: src/Application.vala:32
 #, fuzzy
 msgid "Create an event"
 msgstr "สร้างกิจกรรมใหม่"
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:186
+#: src/Application.vala:182
 msgid "Calendar"
 msgstr "ปฏิทิน"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
+"POT-Creation-Date: 2022-01-19 20:22+0000\n"
 "PO-Revision-Date: 2021-03-20 21:52+0000\n"
 "Last-Translator: Shukrullo <shukrullo@umail.uz>\n"
 "Language-Team: Uzbek <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -99,19 +99,19 @@ msgstr "Oyda"
 msgid "Next Month"
 msgstr "Kelasi oyda"
 
-#: src/Application.vala:60
+#: src/Application.vala:32
 msgid "Create an event"
 msgstr "Tadbir yaratish"
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "Focus the given day"
 msgstr "Ushbu kunga e'tibor qaratish"
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "date"
 msgstr "sana"
 
-#: src/Application.vala:186
+#: src/Application.vala:182
 msgid "Calendar"
 msgstr "Taqvim"
 

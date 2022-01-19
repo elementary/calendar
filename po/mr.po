@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
+"POT-Creation-Date: 2022-01-19 20:22+0000\n"
 "PO-Revision-Date: 2021-06-19 20:00+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
@@ -103,19 +103,19 @@ msgstr "या महिन्यात"
 msgid "Next Month"
 msgstr "पुढील महिना"
 
-#: src/Application.vala:60
+#: src/Application.vala:32
 msgid "Create an event"
 msgstr "नवीन घटना बनवा"
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "Focus the given day"
 msgstr "दिलेला दिवस निर्देशित करा"
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "date"
 msgstr "तारीख"
 
-#: src/Application.vala:186
+#: src/Application.vala:182
 msgid "Calendar"
 msgstr "कॅलेंडर"
 

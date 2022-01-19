@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
+"POT-Creation-Date: 2022-01-19 20:22+0000\n"
 "PO-Revision-Date: 2018-02-10 17:49+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
 "Language-Team: Kurdish <https://weblate.elementary.io/projects/calendar/"
@@ -101,20 +101,20 @@ msgstr "Meh"
 msgid "Next Month"
 msgstr "Meh"
 
-#: src/Application.vala:60
+#: src/Application.vala:32
 #, fuzzy
 msgid "Create an event"
 msgstr "Bûyer Saz bike"
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:186
+#: src/Application.vala:182
 msgid "Calendar"
 msgstr "Salname"
 
