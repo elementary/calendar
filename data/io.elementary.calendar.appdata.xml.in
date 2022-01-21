@@ -15,6 +15,7 @@
       <description>
         <p>Features:</p>
         <ul>
+          <li>Ask for confirmation before deleting events</li>
           <li>Follow email and web links in the event description with Control + Click</li>
         </ul>
         <p>Fixes:</p>

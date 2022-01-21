@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
+"POT-Creation-Date: 2022-01-19 20:22+0000\n"
 "PO-Revision-Date: 2022-01-09 22:20+0000\n"
 "Last-Translator: Antonin Hablak <tondulin5@outlook.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -102,19 +102,19 @@ msgstr "Tento měsíc"
 msgid "Next Month"
 msgstr "Příští měsíc"
 
-#: src/Application.vala:60
+#: src/Application.vala:32
 msgid "Create an event"
 msgstr "Vytvořit událost"
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "Focus the given day"
 msgstr "Zaměřit na daný den"
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:186
+#: src/Application.vala:182
 msgid "Calendar"
 msgstr "Kalendář"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
+"POT-Creation-Date: 2022-01-19 20:22+0000\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -107,20 +107,20 @@ msgstr "Mois"
 msgid "Next Month"
 msgstr "Mois"
 
-#: src/Application.vala:60
+#: src/Application.vala:32
 #, fuzzy
 msgid "Create an event"
 msgstr "Créer un nouvel évènement"
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:61
+#: src/Application.vala:33
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:186
+#: src/Application.vala:182
 msgid "Calendar"
 msgstr "Calendrier"
 
