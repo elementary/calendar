@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-19 20:22+0000\n"
-"PO-Revision-Date: 2021-12-10 15:12+0000\n"
+"PO-Revision-Date: 2022-01-21 12:14+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/extra/"
 "ru/>\n"
@@ -45,10 +45,8 @@ msgid "Features:"
 msgstr "Функции:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
-#, fuzzy
-#| msgid "Allow modification of recurring events"
 msgid "Ask for confirmation before deleting events"
-msgstr "Разрешено изменять повторяющиеся события"
+msgstr "Запрос подтверждения перед удалением событий"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid ""
