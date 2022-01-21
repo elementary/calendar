@@ -11,12 +11,18 @@
     <p>A slim, lightweight calendar app that syncs and manages multiple calendars in one place, like Google Calendar, Outlook and CalDAV.</p>
   </description>
   <releases>
-    <release version="6.1.0" date="2021-12-02" urgency="medium">
+    <release version="6.1.0" date="2022-01-21" urgency="medium">
       <description>
         <p>Features:</p>
         <ul>
           <li>Ask for confirmation before deleting events</li>
           <li>Follow email and web links in the event description with Control + Click</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Disabled checkbox "Mark as default calendar" in calendar settings, if the calendar is read-only</li>
+          <li>Removed no longer needed sandbox permission for accounts service</li>
+          <li>Fixed potential memory leak</li>
         </ul>
       </description>
     </release>
