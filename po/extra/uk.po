@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2022-01-20 00:19+0000\n"
+"PO-Revision-Date: 2022-01-21 21:27+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/extra/"
 "uk/>\n"
@@ -69,14 +69,17 @@ msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"Прапорець «Позначити типовим календарем» вимкнено у налаштуваннях календаря, "
+"якщо календар лише для читання"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
+"Вилучено більше не потрібний дозвіл пісочниці для служби облікових записів"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "Усунено можливий витік пам'яті"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Ensure Calendar runs in the background on startup"
