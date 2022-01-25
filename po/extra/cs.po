@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2022-01-21 17:40+0000\n"
+"PO-Revision-Date: 2022-01-25 21:04+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/calendar/extra/cs/"
-">\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/calendar/extra/cs/>"
+"\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,14 +67,19 @@ msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"Pokud je daný kalendář pouze pro čtení, znepřístupněna v nastaveních pro něj "
+"zaškrtávací kolonka „Označit jako výchozí kalendář“"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
+"Odebráno už nepotřebné oprávnění pro přístup ke službě účtů z ohraničeného "
+"prostředí (sandbox)"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Fixed potential memory leak"
 msgstr ""
+"Opraveno možné nevracení už nepoužívané paměti zpět systému (memory leak)"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Ensure Calendar runs in the background on startup"
