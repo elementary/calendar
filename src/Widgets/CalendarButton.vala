@@ -45,6 +45,7 @@ public class Maya.View.Widgets.CalendarButton : Gtk.MenuButton {
 
         var button_grid = new Gtk.Grid ();
         button_grid.column_spacing = 6;
+        button_grid.valign = Gtk.Align.CENTER;
         button_grid.add (current_calendar_grid);
         button_grid.add (new Gtk.Image.from_icon_name ("pan-down-symbolic", Gtk.IconSize.MENU));
         add (button_grid);
