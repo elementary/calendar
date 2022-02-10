@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2021-07-11 21:00+0000\n"
-"Last-Translator: Vinicius Canuto <caanutto@gmail.com>\n"
+"PO-Revision-Date: 2022-02-03 03:33+0000\n"
+"Last-Translator: Vitor Satyro Vitturi <vitorsv1@al.insper.edu.br>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "calendar/calendar/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -225,7 +225,7 @@ msgstr "Para:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "Fuso horário:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
