@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2021-11-30 18:12+0000\n"
+"PO-Revision-Date: 2022-03-01 00:11+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/extra/sk/"
 ">\n"
@@ -41,21 +41,19 @@ msgstr ""
 "Outlook a CalDAV."
 
 #: data/io.elementary.calendar.appdata.xml.in:16
-#, fuzzy
-#| msgid "New Features:"
 msgid "Features:"
-msgstr "Nové funkcie:"
+msgstr "Funkcie:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
-#, fuzzy
-#| msgid "Allow modification of recurring events"
 msgid "Ask for confirmation before deleting events"
-msgstr "Povolenie úprav opakujúcich sa udalostí"
+msgstr "Požadovať potvrdenie pred odstránením udalostí"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
+"E-mailové a webové odkazy v popise udalostí je možné nasledovať stlačením "
+"klávesy Ctrl a kliknutím myšou"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 #: data/io.elementary.calendar.appdata.xml.in:31
@@ -70,14 +68,18 @@ msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"Pokiaľ je kalendár určený iba na čítanie, začiarkovacie políčko „Označiť ako "
+"predvolený kalendár“ sa zneprístupní"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
+"Odstránené už nepotrebné oprávnenie na prístup k službe účtov z "
+"kontajnerizovaného prostredia"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "Opravený potenciálny únik pamäte"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Ensure Calendar runs in the background on startup"
