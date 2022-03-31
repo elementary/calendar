@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
 "PO-Revision-Date: 2022-03-31 20:08+0000\n"
-"Last-Translator: qezwan <qezwan@gmail.com>\n"
+"Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/calendar/"
 "ckb/>\n"
 "Language: ckb\n"
@@ -166,10 +166,9 @@ msgstr "بیرخەرەوەکان"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr ":دووپاتکردنەوە"
+msgstr "دووبارە کردنەوە"
 
 #: src/EventEdition/EventDialog.vala:148
 msgid "Delete Event"
@@ -805,43 +804,40 @@ msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریما�
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
-msgstr "زیاد کردنی ڕۆژمێری نوێ …"
+msgstr "زیاد کردنی ڕۆژژمێری نوێ …"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "هەناردن لە ڕۆژمێر"
+msgstr "هێنانی پەڕگەی ئای کالێندەر…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "ڕێکخستنەکانی هەژمارە سەرهێڵییەکان…"
 
 #: src/Widgets/SourcePopover.vala:99
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "انتخاب تقویم برای نمایش"
+msgstr "دیاریکردنی پەڕگەی ICS بۆ هەناردن"
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
-msgstr ""
+msgstr "کردنەوە"
 
 #: src/Widgets/SourceRow.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "سڕکیینەوە"
+msgstr "نا سڕدرێتەوە"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "دەستکاری ناکرێت"
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
 msgstr "گەڕانەوە"
 
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "ڕۆژمێری \"%S\" سڕاوەتەوە."
+msgstr "ڕۆژژمێری \"%s\" سڕاوەتەوە"
 
 #, fuzzy
 #~ msgid "Print debug information"
