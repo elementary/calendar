@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
 "PO-Revision-Date: 2022-03-31 20:02+0000\n"
-"Last-Translator: Cleiton Floss <cleitonfloss@tutanota.de>\n"
+"Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/calendar/"
 "ckb/>\n"
 "Language: ckb\n"
@@ -42,7 +42,7 @@ msgstr "john@doe.com"
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr "پاسکەوتی وسانی خۆماڵی"
+msgstr "پاشەکەوتی وەشانی ناوخۆیی"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -54,7 +54,7 @@ msgstr "user.name or user.name@gmail.com"
 
 #: plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr "CalDAV"
+msgstr "کال-داڤ"
 
 #: plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
@@ -62,22 +62,23 @@ msgstr "ناونیشان ماڵپەڕ :"
 
 #: plugins/CalDAV/CalDAVBackend.vala:95
 msgid "Use a secure connection"
-msgstr "سوود وەرگرتن لە پەیوەندی پارێزراو"
+msgstr "بەکارهێنانی پەیوەندییەکای پارێزراو"
 
 #: plugins/CalDAV/CalDAVBackend.vala:123
 msgid "Server handles meeting invitations"
-msgstr "رێزبەندی بانگهێستەکانی بینەرانی سێرڤێر"
+msgstr "رێزبەندی بانگهێشتەکانی بینەرانی ڕاژە"
 
 #: src/AgendaView.vala:49
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"لە کاتی هەلبژاردنی ڕۆژی هەبونی ڕووداو، ڕوداوەکانی ئەو ڕۆژە لێرە نیشان دەدرێت."
+"لە کاتی هەڵبژاردنی ڕۆژی هەبوونی ڕووداو، ڕووداوەکانی ئەو ڕۆژە لێرە نیشان "
+"دەدرێن."
 
 #: src/AgendaView.vala:140
 msgid "During the day"
-msgstr "لە مەودای ڕۆژ"
+msgstr "لە مەودای ڕۆژەکەدا"
 
 #: src/AgendaView.vala:148
 msgid "All day"
@@ -85,59 +86,55 @@ msgstr "هەموو ڕۆژ"
 
 #: src/AgendaView.vala:265
 msgid "Tomorrow"
-msgstr ""
+msgstr "سبەی"
 
 #: src/AgendaView.vala:268
 msgid "This Week"
-msgstr ""
+msgstr "ئەم هەفتەیە"
 
 #: src/AgendaView.vala:271
 msgid "Next Week"
-msgstr ""
+msgstr "هەفتەی داهاتوو"
 
 #: src/AgendaView.vala:274
-#, fuzzy
 msgid "This Month"
-msgstr "مانگەکان"
+msgstr "ئەم مانگە"
 
 #: src/AgendaView.vala:277
-#, fuzzy
 msgid "Next Month"
-msgstr "مانگەکان"
+msgstr "مانگی داهاتوو"
 
 #: src/Application.vala:32
-#, fuzzy
 msgid "Create an event"
-msgstr "دروستکردنی روداوێک"
+msgstr "دروستکردنی بۆنەیەک"
 
 #: src/Application.vala:33
 msgid "Focus the given day"
-msgstr ""
+msgstr "سەرنج خستنە سەر ڕۆژی پێدراو"
 
 #: src/Application.vala:33
 msgid "date"
-msgstr ""
+msgstr "بەرواو"
 
 #: src/Application.vala:182
 msgid "Calendar"
-msgstr "ڕۆژمێر"
+msgstr "ڕۆژژمێر"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "انتخاب تقویم برای نمایش"
+msgstr "ڕۆژ مێرێک دیاری بکە بۆ ئەوەی بیخەیتە ناوی"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "هێنانی ڕووداوەکان لە بوخچە %d بۆ ئەم ڕۆژمێرە:"
+msgstr "ڕووداو و بۆنەکان لە \"%s\" دەلکێندرێن بەم ڕۆژمێرەوە:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "هێنانی ڕووداوەکان لە بوخچە %d بۆ ئەم ڕۆژمێرە:"
-msgstr[1] "هێنانی ڕووداوەکان لە بوخچە %d بۆ ئەم ڕۆژمێرە:"
+msgstr[0] "ڕووداو و بۆنەکان لە پەڕگەی %d دەلکێندرێن بەم ڕۆژمێرەوە:"
+msgstr[1] "ڕووداو و بۆنەکان لە پەڕگەکانی %d یدا، دەلکێندرێن بەم ڕۆژمێرەوە:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -202,15 +199,15 @@ msgstr "رەت کرا"
 
 #: src/EventEdition/GuestGrid.vala:57
 msgid "Maybe"
-msgstr ""
+msgstr "لەوانەیە"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr "بەسداریکەرەکان"
+msgstr "بەشداریکەرەکان:"
 
 #: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
-msgstr "بێ بەشداریکەر"
+msgstr "هیچ بەشداریکەرێک نییە"
 
 #: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
@@ -230,7 +227,7 @@ msgstr "تا:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "ناوچەی کات:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
@@ -242,7 +239,7 @@ msgstr "ناوی ڕوداو"
 
 #: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "دەست بنێ بە ئینتەردا بۆ شیکردنەوەی ڕووداو"
 
 #: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
@@ -258,7 +255,7 @@ msgstr "شوێن:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "قەزوان یا ڕەستەی هاوتا"
+msgstr "جۆن سمیس یان نموونەی هاوشێوە."
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
@@ -273,88 +270,72 @@ msgid "Add Reminder"
 msgstr "زیادکردنی بیرخەر"
 
 #: src/EventEdition/ReminderPanel.vala:192
-#, fuzzy
 msgid "At time of event"
-msgstr "ناوی ڕوداو"
+msgstr "لە کاتی ڕووداو"
 
 #: src/EventEdition/ReminderPanel.vala:193
-#, fuzzy
 msgid "1 minute before"
-msgstr "۱ خولەک"
+msgstr "۱ خولەک پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:194
-#, fuzzy
 msgid "5 minutes before"
-msgstr "۵ خولەک"
+msgstr "۵ خولەک پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:195
-#, fuzzy
 msgid "10 minutes before"
-msgstr "۱۰ خولەک"
+msgstr "۱۰ خولەک پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:196
-#, fuzzy
 msgid "15 minutes before"
-msgstr "۱۵ خولەک"
+msgstr "۱۵ خولەک پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:197
-#, fuzzy
 msgid "20 minutes before"
-msgstr "۲۰ خولەک"
+msgstr "۲۰ خولەک پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:198
-#, fuzzy
 msgid "25 minutes before"
-msgstr "۲۵ خولەک"
+msgstr "۲۵ خولەک پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:199
-#, fuzzy
 msgid "30 minutes before"
-msgstr "۳۰ خولەک"
+msgstr "۳۰ خولەک پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:200
-#, fuzzy
 msgid "45 minutes before"
-msgstr "۴۵ خولەک"
+msgstr "٤٥ خولەک پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:201
-#, fuzzy
 msgid "1 hour before"
-msgstr "۱ کاتژمێر"
+msgstr "۱ کاتژمێر پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:202
-#, fuzzy
 msgid "2 hours before"
-msgstr "۲ کاتژمێڕ"
+msgstr "۲ کاتژمێر پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:203
-#, fuzzy
 msgid "3 hours before"
-msgstr "۳ کاتژمێر"
+msgstr "۳ کاتژمێر پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:204
-#, fuzzy
 msgid "12 hours before"
-msgstr "۱۲ کاتژمێر"
+msgstr "۱۲ کاتژمێر پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:205
-#, fuzzy
 msgid "24 hours before"
-msgstr "۲۴ کاتژمێر"
+msgstr "۲٤ کاتژمێر پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:206
-#, fuzzy
 msgid "2 days before"
-msgstr "۲ ڕۆژ"
+msgstr "۲ ڕۆژ پێشتر"
 
 #: src/EventEdition/ReminderPanel.vala:207
-#, fuzzy
 msgid "1 week before"
-msgstr "۱ هەفتە"
+msgstr "۱ هەفتە پێشتر"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
-msgstr ":دووپاتکردنەوە"
+msgstr "دووبارەکردنەوە:"
 
 #: src/EventEdition/RepeatPanel.vala:57
 msgid "Daily"
@@ -379,30 +360,30 @@ msgstr "هەر:"
 #: src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ڕۆژ"
+msgstr[1] "ڕۆژان"
 
 #: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "هەفتە"
+msgstr[1] "هەفتان"
 
 #: src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "مانگ"
+msgstr[1] "مانگان"
 
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ساڵ"
+msgstr[1] "ساڵان"
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr "کۆتایی :"
+msgstr "کۆتاییەکان:"
 
 #. /Translators: Give a word to describe an event ending after a certain number of repeats.
 #. /This will be displayed in the format like: "Ends After 2 Repeats",
@@ -410,8 +391,8 @@ msgstr "کۆتایی :"
 #: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "دووبارە بوونەوە"
+msgstr[1] "دووبارە بوونەوەکان"
 
 #: src/EventEdition/RepeatPanel.vala:144
 msgid "Never"
@@ -427,11 +408,11 @@ msgstr "دوای ئەو"
 
 #: src/EventEdition/RepeatPanel.vala:193
 msgid "The same day every month"
-msgstr "ڕۆژی هاوتا لە مانگ"
+msgstr "هەمان ڕۆژ لە هەر مانگێک"
 
 #: src/EventEdition/RepeatPanel.vala:204
 msgid "Exceptions:"
-msgstr "جیاکاریەکان:"
+msgstr "جیاکارییەکان:"
 
 #: src/EventEdition/RepeatPanel.vala:206
 msgid "No Exceptions"
@@ -443,187 +424,187 @@ msgstr "زیادکردنی جیاکاری"
 
 #: src/EventEdition/RepeatPanel.vala:385
 msgid "Every last Sunday"
-msgstr "هەر دوایین یەکشەممە"
+msgstr "هەموو دوایین یەک شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:388
 msgid "Every last Monday"
-msgstr "هەر دوایین دوشەممە"
+msgstr "هەموو دوایین دوو شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:391
 msgid "Every last Tuesday"
-msgstr "هەر دوایین سێ شەممە"
+msgstr "هەموو دوایین سێ شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:394
 msgid "Every last Wednesday"
-msgstr "هەر دوایین چوارشەممە"
+msgstr "هەموو دوایین چوار شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:397
 msgid "Every last Thursday"
-msgstr "هەر دوایین پێنج شەممە"
+msgstr "هەموو دوایین پێنج شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:400
 msgid "Every last Friday"
-msgstr "هەر دوایین هەینی"
+msgstr "هەموو دوایین هەینییەک"
 
 #: src/EventEdition/RepeatPanel.vala:403
 msgid "Every last Saturday"
-msgstr "هەر دوایین شەممە"
+msgstr "هەموو دوایین شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:410
 msgid "Every first Sunday"
-msgstr "هەر یەکەم یەکشەممە"
+msgstr "هەموو یەکەم یەک شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:413
 msgid "Every first Monday"
-msgstr "هەر یەکەم دووشەممە"
+msgstr "هەموو یەکەم دوو شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:416
 msgid "Every first Tuesday"
-msgstr "هەر یەکەم سێ شەممە"
+msgstr "هەموو یەکەم سێ شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:419
 msgid "Every first Wednesday"
-msgstr "هەر یەکەم چوارشەممە"
+msgstr "هەموو یەکەم چوار شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:422
 msgid "Every first Thursday"
-msgstr "هەر یەکەم پێنج شەممە"
+msgstr "هەموو یەکەم پێنج شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:425
 msgid "Every first Friday"
-msgstr "هەر یەکەم هەینی"
+msgstr "هەموو یەکەم هەینییەک"
 
 #: src/EventEdition/RepeatPanel.vala:428
 msgid "Every first Saturday"
-msgstr "هەر یەکەم شەممە"
+msgstr "هەموو یەکەم شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:435
 msgid "Every second Sunday"
-msgstr "هەر دوهەم یەکشەممە"
+msgstr "هەموو دووەم یەکشەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:438
 msgid "Every second Monday"
-msgstr "هەر دوهەم دوشەممە"
+msgstr "هەموو دووەم دوشەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:441
 msgid "Every second Tuesday"
-msgstr "هەر دووهەم سێ شەممە"
+msgstr "هەموو دووەم سێ شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:444
 msgid "Every second Wednesday"
-msgstr "هەر دوهەم چوارسەممە"
+msgstr "هەموو دووەم چوار شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:447
 msgid "Every second Thursday"
-msgstr "هەر دووهەم پێنج شەممە"
+msgstr "هەموو دووەم پێنج شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:450
 msgid "Every second Friday"
-msgstr "هەر دووهەم هەینی"
+msgstr "هەموو دووەم هەینییەک"
 
 #: src/EventEdition/RepeatPanel.vala:453
 msgid "Every second Saturday"
-msgstr "هەر دووهەم شەممە"
+msgstr "هەموو دووەم شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:460
 msgid "Every third Sunday"
-msgstr "هەر سێهەم یەکشەممە"
+msgstr "هەموو سێیەم یەکشەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:463
 msgid "Every third Monday"
-msgstr "هەر سێهەم دووشەممە"
+msgstr "هەموو سێیەم دووشەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:466
 msgid "Every third Tuesday"
-msgstr "هەر سێهەم سی شەممە"
+msgstr "هەموو سێیەم سێ شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:469
 msgid "Every third Wednesday"
-msgstr "هەر سێهەم چوارشەممە"
+msgstr "هەموو سێیەم چوارشەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:472
 msgid "Every third Thursday"
-msgstr "هەر سێهەم پێنج شەممە"
+msgstr "هەموو سێیەم پێنج شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:475
 msgid "Every third Friday"
-msgstr "هەر سێهەم هینی"
+msgstr "هەموو سێیەم هەینییەک"
 
 #: src/EventEdition/RepeatPanel.vala:478
 msgid "Every third Saturday"
-msgstr "هەر سێهەم شەممە"
+msgstr "هەموو سێیەم شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:485
 msgid "Every fourth Sunday"
-msgstr "هەر چوارەم یەکشەممە"
+msgstr "هەموو چوارەم یەک شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:488
 msgid "Every fourth Monday"
-msgstr "هەر چوارەم دوشەممە"
+msgstr "هەموو چوارەم دوو شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:491
 msgid "Every fourth Tuesday"
-msgstr "هەر چوارەم سێ شەممە"
+msgstr "هەموو چوارەم سێ شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:494
 msgid "Every fourth Wednesday"
-msgstr "هەر چوارەم چوارسەممە"
+msgstr "هەموو چوارەم چوارشەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:497
 msgid "Every fourth Thursday"
-msgstr "هەر چوارەم پێنج سەممە"
+msgstr "هەموو چوارەم پێنج شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:500
 msgid "Every fourth Friday"
-msgstr "هەر چوارەمین هەینی"
+msgstr "هەموو چوارەمین هەینییەک"
 
 #: src/EventEdition/RepeatPanel.vala:503
 msgid "Every fourth Saturday"
-msgstr "هەر چوارەم شەممە"
+msgstr "هەموو چوارەمین شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:510
 msgid "Every fifth Sunday"
-msgstr "هەر پینجەمین یەکشەممە"
+msgstr "هەموو پێنجەمین یەکشەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:513
 msgid "Every fifth Monday"
-msgstr "هەر پێنجەمین دوشەممە"
+msgstr "هەموو پێنجەمین دوو شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:516
 msgid "Every fifth Tuesday"
-msgstr "هەر پێنجەمین سێ شەممە"
+msgstr "هەموو پێنجەمین سێ شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:519
 msgid "Every fifth Wednesday"
-msgstr "هەر پێنجەمین چوارشەممە"
+msgstr "هەموو پێنجەمین چوار شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:522
 msgid "Every fifth Thursday"
-msgstr "هەر پێنجەمین پێنجشەممە"
+msgstr "هەموو پێنجەمین پێنج شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:525
 msgid "Every fifth Friday"
-msgstr "هەر پێنجەمین هەینی"
+msgstr "هەموو پێنجەمین هەینییەک"
 
 #: src/EventEdition/RepeatPanel.vala:528
 msgid "Every fifth Saturday"
-msgstr "هەر پێنجەمین شەممە"
+msgstr "هەموو پێنجەمین شەممەیەک"
 
 #: src/EventEdition/RepeatPanel.vala:538
 msgid "Mon"
-msgstr "دوشەممە"
+msgstr "دوو شەم"
 
 #: src/EventEdition/RepeatPanel.vala:539
 msgid "Tue"
-msgstr "سێ شەممە"
+msgstr "سێ شەم"
 
 #: src/EventEdition/RepeatPanel.vala:540
 msgid "Wed"
-msgstr "چوارشەممە"
+msgstr "چوار شەم"
 
 #: src/EventEdition/RepeatPanel.vala:541
 msgid "Thu"
-msgstr "پێنج شەممە"
+msgstr "پێنج شەم"
 
 #: src/EventEdition/RepeatPanel.vala:542
 msgid "Fri"
@@ -635,7 +616,7 @@ msgstr "شەممە"
 
 #: src/EventEdition/RepeatPanel.vala:544
 msgid "Sun"
-msgstr "یەک شەممە"
+msgstr "یەک شەم"
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
 msgid "Hide Week Numbers"
@@ -660,7 +641,7 @@ msgstr "ناو:"
 
 #: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
-msgstr "ناوی ڕۆژمێر"
+msgstr "ناوی ڕۆژژمێر"
 
 #: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
@@ -672,7 +653,7 @@ msgstr "ڕەنگ:"
 
 #: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
-msgstr "دیاری کردن بۆ ڕۆژمێری فەرمی"
+msgstr "دیاری کردن بۆ ڕۆژژمێری فەرمی"
 
 #: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
@@ -681,105 +662,106 @@ msgstr "دروستکردنی ڕۆژمێر"
 #: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
-msgstr "پاشکەوت"
+msgstr "پاشەکەوت"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr ""
+msgstr "چاوپێکەوتن؛کۆبوونەوە"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "ڕۆژی لەدایک بوون؛ساڵیاد؛ئاهەنگ"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "پەیوەندی کردن؛تەلەفۆن؛زەنگ"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "باڕ؛یانە؛کۆکتێلەکان؛خواردنەوەکان؛ساتی دڵخۆشی"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "ئۆتۆمبێل؛باژۆ؛لێخوڕینی ئۆتۆمبێل؛گەشتی ڕێگە;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr ""
+msgstr "فڕین؛فڕۆکەخانە;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
+"نانی بەیانی؛نانی بەیانی و نیوەڕۆ پێکەوە؛نانی نیوەڕۆ؛نانی ئێوارە،خواردنگەی "
+"تایبەت بە گۆشت؛بێرگەر؛لەفە؛ژەم؛برژاو"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "دادگا؛دەستەی سوێندخۆران؛باج؛پارێزەر؛محامی؛پارێزەر؛ڕێکەوتنامە"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie;film"
-msgstr ""
+msgstr "فیلم"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr ""
+msgstr "ئاهەنگی بووک گواستنەوە"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s - %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:317
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:329
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s کاتژمێر %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:341
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "هەناردن لە ڕۆژمێر"
+msgstr "هەناردەکردنی ڕۆژژمێر…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
@@ -791,20 +773,19 @@ msgstr "دەستکاری…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "لەبەرگرتنەوە…"
 
 #: src/Widgets/EventMenu.vala:42
-#, fuzzy
 msgid "Remove Event"
 msgstr "سڕینەوەی ڕووداو"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "ڕەشکردنەوەی ئامادەبوون"
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
-msgstr "سڕکیینەوە"
+msgstr "سڕینەوە"
 
 #: src/Widgets/HeaderBar.vala:39
 msgid "Create a new event"
@@ -812,11 +793,11 @@ msgstr "دروستکردنی روداوێک"
 
 #: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
-msgstr "ڕۆیستن بۆ ڕیکەوتی ئەمڕۆ"
+msgstr "ڕۆیشتن بۆ بەرواری ئەمڕۆ"
 
 #: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
-msgstr "بەڕێوەبردنی ڕۆژمێرەکان"
+msgstr "بەڕێوەبردنی ڕۆژژمێرەکان"
 
 #: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
