@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2022-03-31 20:08+0000\n"
+"PO-Revision-Date: 2022-03-31 21:16+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/calendar/"
 "ckb/>\n"
@@ -792,7 +792,7 @@ msgstr "دروستکردنی روداوێک"
 
 #: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
-msgstr "ڕۆیشتن بۆ ڕیکەوتی ئەمڕۆ"
+msgstr "ڕۆیشتن بۆ بەرواری ئەمڕۆ"
 
 #: src/Widgets/HeaderBar.vala:54
 msgid "Manage Calendars"
