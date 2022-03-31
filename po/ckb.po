@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
 "PO-Revision-Date: 2022-03-31 20:02+0000\n"
-"Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
+"Last-Translator: Shadear Bakr <shadearbakr11@gmail.com>\n"
 "Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/calendar/"
 "ckb/>\n"
 "Language: ckb\n"
@@ -58,7 +58,7 @@ msgstr "کال-داڤ"
 
 #: plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr "ناونیشان ماڵپەڕ :"
+msgstr "ناونیشانی ماڵپەڕ :"
 
 #: plugins/CalDAV/CalDAVBackend.vala:95
 msgid "Use a secure connection"
