@@ -8,19 +8,22 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2018-07-10 11:19+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-03-31 21:16+0000\n"
+"Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
+"Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/extra/"
+"ckb/>\n"
 "Language: ckb\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
 #: data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
-msgstr ""
+msgstr "ڕۆژژمێر"
 
 #: data/io.elementary.calendar.appdata.xml.in:9
 #: data/io.elementary.calendar.desktop.in:6
@@ -325,4 +328,4 @@ msgstr ""
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
-msgstr ""
+msgstr "زیادکردنی ڕووداو"
