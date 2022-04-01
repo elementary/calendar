@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2022-04-01 18:42+0000\n"
+"PO-Revision-Date: 2022-04-01 20:03+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
 "calendar/extra/ckb/>\n"
@@ -87,7 +87,7 @@ msgstr "چارەسەرکردنی دزەکردنی بیرگە کاتێک زانی
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Reliably read Windows-style timezones"
-msgstr ""
+msgstr "خوێندنەوەی ناوچەکاتەکانی ستایلی ویندۆز بەباشی"
 
 #: data/io.elementary.calendar.appdata.xml.in:37
 #: data/io.elementary.calendar.appdata.xml.in:51
@@ -152,23 +152,23 @@ msgstr "پاڵپشتیکردنی ستایلی تاریک"
 
 #: data/io.elementary.calendar.appdata.xml.in:79
 msgid "Properly show events on the last day of the month"
-msgstr ""
+msgstr "پشاندانی ڕووداوەکان لە کۆتا ڕۆژی مانگدا بە شێوەیەکی گونجاو"
 
 #: data/io.elementary.calendar.appdata.xml.in:80
 msgid "Fix end times for all-day events"
-msgstr ""
+msgstr "چارەسەرکردنی کۆتا کاتەکان بۆ ڕووداوەکانی هەموو ڕۆژ"
 
 #: data/io.elementary.calendar.appdata.xml.in:81
 msgid "Notify for all alarms on an event"
-msgstr ""
+msgstr "ئاگادارکردنەوە بۆ هەموو زەنگەکان لە هەر ڕووداوێک"
 
 #: data/io.elementary.calendar.appdata.xml.in:85
 msgid "Improved offline support"
-msgstr ""
+msgstr "زیاتر پاڵپشتی دەرهێڵ کراوە"
 
 #: data/io.elementary.calendar.appdata.xml.in:86
 msgid "New colorful avatar fallbacks"
-msgstr ""
+msgstr "ئەڤەتاری ڕەنگاوڕەنگی نوێ"
 
 #: data/io.elementary.calendar.appdata.xml.in:87
 msgid "Include \"film\" as an event icon keyword"
