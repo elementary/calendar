@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2022-03-31 21:16+0000\n"
+"PO-Revision-Date: 2022-04-01 18:42+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
-"Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/extra/"
-"ckb/>\n"
+"Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
+"calendar/extra/ckb/>\n"
 "Language: ckb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,26 +28,28 @@ msgstr "ڕۆژژمێر"
 #: data/io.elementary.calendar.appdata.xml.in:9
 #: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "بینینی و بەرنامەکردنی ڕووداوەکان"
 
 #: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
+"ڕۆژژمێریکی سووکەڵە و ناسک کە سەرجەم ڕۆژژمێرەکانی ترت وەکو گوگڵ و ئاوتلوک و "
+"کاڵداڤ لەگەڵ خۆی هاوکات دەکات."
 
 #: data/io.elementary.calendar.appdata.xml.in:16
 msgid "Features:"
-msgstr ""
+msgstr "تایبەتمەندییەکان:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 msgid "Ask for confirmation before deleting events"
-msgstr ""
+msgstr "داواکردنی دڵنیایی کردنەوە پێش سڕینەوەی ڕووداوەکان"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid ""
 "Follow email and web links in the event description with Control + Click"
-msgstr ""
+msgstr "کردنەوەی ئیمێڵ و بەستەرەکان لە فرۆزەی ڕووداودا بە کۆنتڕۆل و کرتە"
 
 #: data/io.elementary.calendar.appdata.xml.in:21
 #: data/io.elementary.calendar.appdata.xml.in:31
@@ -55,29 +57,33 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:59
 #: data/io.elementary.calendar.appdata.xml.in:77
 msgid "Fixes:"
-msgstr ""
+msgstr "چاککراوەکان:"
 
 #: data/io.elementary.calendar.appdata.xml.in:23
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"ناچالاک کردنی دیاریخانەی \"دیاریکردن وەکو ڕۆژژمێری سەرەکی\" لە ڕێکخستنەکانی "
+"ڕۆژژمێر ئەگەر هاتوو ڕۆژژمێرەکە تەنها بخوێندرێتەوە"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
+"سڕینەوەی ئەو مۆڵەتانەی ساندبۆکس کە چیتر بۆ خزمەتگوزاری هەژمارەکان پێویست نین"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "چارەسەرکردنی دزەکردنی بیرگە"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Ensure Calendar runs in the background on startup"
 msgstr ""
+"دڵناییکردنەوە لەوەی کە ساڵنامە لە باکگراوندا کار دەکات لە کاتی دەست پێ کردن"
 
 #: data/io.elementary.calendar.appdata.xml.in:34
 msgid "Fix memory leak when getting timezone information"
-msgstr ""
+msgstr "چارەسەرکردنی دزەکردنی بیرگە کاتێک زانیاری ناوچەی کات وەردەگیرێت"
 
 #: data/io.elementary.calendar.appdata.xml.in:35
 msgid "Reliably read Windows-style timezones"
@@ -93,7 +99,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:135
 #: data/io.elementary.calendar.appdata.xml.in:144
 msgid "Minor Updates:"
-msgstr ""
+msgstr "نوێکارییە بچووکەکان:"
 
 #: data/io.elementary.calendar.appdata.xml.in:39
 #: data/io.elementary.calendar.appdata.xml.in:53
@@ -107,40 +113,42 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:169
 #: data/io.elementary.calendar.appdata.xml.in:181
 msgid "Updated translations"
-msgstr ""
+msgstr "وەرگێڕانەکان نوێکراونەوە"
 
 #: data/io.elementary.calendar.appdata.xml.in:47
 msgid "Fix notification icons in the notification indicator"
-msgstr ""
+msgstr "چارەسەرکردنی ئایکۆنەکانی ئاگادارکەرەوە لە نیشاندەری ئاگادارکەرەوەدا"
 
 #: data/io.elementary.calendar.appdata.xml.in:48
 msgid "Fix an issue where event timezones were overwritten"
-msgstr ""
+msgstr "چارەسەر کردنی کێشەیەک کاتێک ناوچەکاتەکانی ڕووداوێک دەستکاری دەکران"
 
 #: data/io.elementary.calendar.appdata.xml.in:49
 msgid "Ensure Calendar is launched when notifications are clicked"
 msgstr ""
+"دڵنیاییکردنەوە لەوەی کە ڕۆژژمێر بکرێتەوە کاتێک ئاگادارکەرەوەکان کرتەیان "
+"لەسەر دەکرێت"
 
 #: data/io.elementary.calendar.appdata.xml.in:61
 msgid "Fix broken calendar color with some online providers"
-msgstr ""
+msgstr "چاککردنەوەی ڕەنگی شکاوی ساڵنامە لەگەڵ هەندێک لە دابینکەرانی سەرهێڵ"
 
 #: data/io.elementary.calendar.appdata.xml.in:62
 msgid "Fix an issue with some all-day events"
-msgstr ""
+msgstr "چارەسەرکردنی کێشەیەک لەگەڵ ڕووداوەکانی \"هەموو ڕۆژ\"دا"
 
 #: data/io.elementary.calendar.appdata.xml.in:72
 #: data/io.elementary.calendar.appdata.xml.in:97
 msgid "New Features:"
-msgstr ""
+msgstr "نەوتایبەتمەندییەکان:"
 
 #: data/io.elementary.calendar.appdata.xml.in:74
 msgid "Import ICS files from the gear menu"
-msgstr ""
+msgstr "هاوردەکردنی پەڕگەکانی ICS لە لیستی گێڕەکە"
 
 #: data/io.elementary.calendar.appdata.xml.in:75
 msgid "Support the dark style"
-msgstr ""
+msgstr "پاڵپشتیکردنی ستایلی تاریک"
 
 #: data/io.elementary.calendar.appdata.xml.in:79
 msgid "Properly show events on the last day of the month"
