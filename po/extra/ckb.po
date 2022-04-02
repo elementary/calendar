@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2022-04-01 20:03+0000\n"
+"PO-Revision-Date: 2022-04-02 12:17+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
 "calendar/extra/ckb/>\n"
@@ -172,159 +172,168 @@ msgstr "ئەڤەتاری ڕەنگاوڕەنگی نوێ"
 
 #: data/io.elementary.calendar.appdata.xml.in:87
 msgid "Include \"film\" as an event icon keyword"
-msgstr ""
+msgstr "تێخزاندنی \"فیلم\" وەکو کلیلەوشەی ئایکۆنی ڕووداوێک"
 
 #: data/io.elementary.calendar.appdata.xml.in:88
 msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
+msgstr "زیادکردنی مینت و بەبڵگەم بۆ دیاریکەری ڕەنگی ڕۆژمێر"
 
 #: data/io.elementary.calendar.appdata.xml.in:89
 msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
+msgstr "پەیوەستکردن بە ڕێکخستنەکانی هەژمارە سەرهێڵییەکان لە لیستی گێڕەکەدا"
 
 #: data/io.elementary.calendar.appdata.xml.in:90
 #: data/io.elementary.calendar.appdata.xml.in:168
 msgid "Performance improvements"
-msgstr ""
+msgstr "گەشە بە کارکردنی نەرمەکاڵا دراوە"
 
 #: data/io.elementary.calendar.appdata.xml.in:99
 msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
+msgstr "زیادکردنی بژاردەی \"بەدووکردن...\" بۆ لیستی دەقی ڕووداو"
 
 #: data/io.elementary.calendar.appdata.xml.in:103
 msgid "Fix an issue where new events could appear twice in Calendar"
 msgstr ""
+"چارەسەکردنی کێشەیەک کاتێک دەکرا دوو جار ڕووداوی نوێ لە ڕۆژمێردا دەرکەوتبان"
 
 #: data/io.elementary.calendar.appdata.xml.in:104
 msgid ""
 "\"Mark as default calendar\" box is now correctly checked when editing a "
 "calendar"
 msgstr ""
+"ئێستا خانەی \"دیاریکردنی وەکو ڕۆژژمێری سەرەکی\" بە شێوەیەکی دروست "
+"پڕکراوەتەوە لە کاتی گۆڕانکاری ڕۆژژمێرێکدا"
 
 #: data/io.elementary.calendar.appdata.xml.in:111
 msgid "Improvements:"
-msgstr ""
+msgstr "باشترکراوەکان:"
 
 #: data/io.elementary.calendar.appdata.xml.in:113
 msgid "Allow modification of recurring events"
-msgstr ""
+msgstr "ڕێگەدان بە گۆڕانکاری لە ڕووداوە چەند بارە بووەوەکان"
 
 #: data/io.elementary.calendar.appdata.xml.in:114
 msgid "Improve handling of week start day"
-msgstr ""
+msgstr "گەشەدان بە بەڕێوەبردنی ڕۆژی دەستپێکی هەفتە"
 
 #: data/io.elementary.calendar.appdata.xml.in:115
 msgid "Fix timezone errors with all-day events"
-msgstr ""
+msgstr "چارەسەکردنی کێشەکانی ناوچەکات لە ڕووداوەکانی هەموو ڕۆژدا"
 
 #: data/io.elementary.calendar.appdata.xml.in:119
 msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
+msgstr "نەگۆڕانی قەبارەی سایدباڕ لەکاتی گۆڕینی قەبارەی پەنەجەرەکە"
 
 #: data/io.elementary.calendar.appdata.xml.in:128
 msgid "Fix issues with time zones not being recognized"
-msgstr ""
+msgstr "چارەسەرکردنی کێشەکانی ناوچە کاتەکان کە نە دەناسرانەوە"
 
 #: data/io.elementary.calendar.appdata.xml.in:137
 msgid "Fix several issues with adding and removing monthly recurring events"
 msgstr ""
+"چارەسەرکردنی چەند کێشەیەک لە کاتی زیاد و کەمکردنی ڕووداوە چەند بارە "
+"بووەوەکانی مانگانە"
 
 #: data/io.elementary.calendar.appdata.xml.in:146
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "پاشەکەوتکردنی بیرخەرەوەکان بە شێوەیەکی دروست"
 
 #: data/io.elementary.calendar.appdata.xml.in:147
 msgid "Ellipsize event participant details if necessary"
 msgstr ""
+"ئەگەر پێویست بێت، وردەکاریەکانی بەشداربووی رووداوی بە شێوە هێلکەیی بکرێن"
 
 #: data/io.elementary.calendar.appdata.xml.in:148
 msgid "Fix unwanted rescheduling when editing event title"
 msgstr ""
+"چاککردنی بەرنامەکراوە نەویستراوەکان لە کاتی دەستکاریکردنی ناونیشانی ڕووداو"
 
 #: data/io.elementary.calendar.appdata.xml.in:155
 msgid "Fix crash when editing an event with no location"
-msgstr ""
+msgstr "چاککردنەوەی تێکشکان لەکاتی دەستکاری ڕووداوێک بەبێ شوێن"
 
 #: data/io.elementary.calendar.appdata.xml.in:160
 msgid "Fix potential crash when loading events with no start or end time"
 msgstr ""
+"چاککردنەوەی تێکشکانی شاراوە لەکاتی ئامادەکردنی رووداوەکان بەبێ کاتی "
+"دەستپێکردن یان کۆتایی"
 
 #: data/io.elementary.calendar.appdata.xml.in:165
 msgid "Make agenda pane fill the whole space"
-msgstr ""
+msgstr "پڕکردنەوەی هەموو بۆشاییەکە بە کارنامە"
 
 #: data/io.elementary.calendar.appdata.xml.in:166
 msgid "Set the suggested time for new events to the next whole hour"
-msgstr ""
+msgstr "دانانی کاتی پێشنیارکراو بۆ ڕوداوە نوێکان بۆ تەواوی کاتژمێری داهاتوو"
 
 #: data/io.elementary.calendar.appdata.xml.in:167
 msgid "Fix issues with recurring events"
-msgstr ""
+msgstr "چارەسەرکردنی کێشەکان لەکاتی هەبوونی ڕووداوی چەند بارە بووەوە"
 
 #: data/io.elementary.calendar.appdata.xml.in:174
 msgid "Present import window when opening ICS files"
-msgstr ""
+msgstr "پشاندانی پەنجەرەی هاوردە لە کاتی کردنەوەی پەڕگەکانی ICS"
 
 #: data/io.elementary.calendar.appdata.xml.in:175
 msgid "Add a search entry for calendars"
-msgstr ""
+msgstr "زیادکردنی تۆماری گەڕان بۆ ڕۆژژمێرەکان"
 
 #: data/io.elementary.calendar.appdata.xml.in:176
 msgid "Always use calendar icon in notifications"
-msgstr ""
+msgstr "هەمیشە بەکارهێنانی ئایکۆنی ڕۆژژمێر لە ئاگادارکردنەوەکان"
 
 #: data/io.elementary.calendar.appdata.xml.in:177
 msgid "Agenda view can now be navigated by keyboard"
-msgstr ""
+msgstr "ئێستا دەتوانیت بە تەختەکلیل بەناو دیمەنی کارنامەدا هاتووچۆ بکەیت"
 
 #: data/io.elementary.calendar.appdata.xml.in:178
 msgid "Right-to-left improvements"
-msgstr ""
+msgstr "ئاڕاستەی ڕاست بۆ چەپ باشرکراوە"
 
 #: data/io.elementary.calendar.appdata.xml.in:179
 msgid "Various UI overhauls including lime accent color"
-msgstr ""
+msgstr "چاککردنەوەی کێشەی جۆراوجۆری UI، لەوانە ڕەنگی شێوەی قسڵ"
 
 #: data/io.elementary.calendar.appdata.xml.in:180
 msgid "Overall code cleanup and rewrites"
-msgstr ""
+msgstr "پاککردنەوە و نووسینەوەی کۆدەکان بەگشتی"
 
 #: data/io.elementary.calendar.appdata.xml.in:186
 msgid "Styling adjustments"
-msgstr ""
+msgstr "ڕێکخستنەکانی ستایل"
 
 #: data/io.elementary.calendar.appdata.xml.in:187
 msgid "Fix location panel initialization"
-msgstr ""
+msgstr "چاککردنەوەی شوێنی سەرەتایی پانێڵ"
 
 #: data/io.elementary.calendar.appdata.xml.in:188
 msgid "New translations"
-msgstr ""
+msgstr "وەرگێڕانی تازە"
 
 #: data/io.elementary.calendar.appdata.xml.in:193
 msgid "Update wingpanel-indicator-datetime settings path."
-msgstr ""
+msgstr "نوێکردنەوەی ڕێچکەی wingpanel-indicator-datetime."
 
 #: data/io.elementary.calendar.appdata.xml.in:194
 msgid "New translations."
-msgstr ""
+msgstr "وەرگێڕانی تازە."
 
 #: data/io.elementary.calendar.appdata.xml.in:199
 #: data/io.elementary.calendar.appdata.xml.in:206
 msgid "Various bug fixes and improvements."
-msgstr ""
+msgstr "کۆمەڵێک وردە چارەسەر کراون و باشترکراوە."
 
 #: data/io.elementary.calendar.appdata.xml.in:204
 msgid "Fixes for calendar accuracy and integrity issues."
-msgstr ""
+msgstr "چارەسەرکردنی کێشەکانی دروستی ڕۆژژمێر و تەواوکاری."
 
 #: data/io.elementary.calendar.appdata.xml.in:205
 msgid "Fixes exporting, importing and printing calendars."
-msgstr ""
+msgstr "چاککردنی هەناردەکردن، هاوردەکردن و چاپکردنی ڕۆژژمێرەکان."
 
 #: data/io.elementary.calendar.appdata.xml.in:224
 msgid "elementary, Inc."
-msgstr ""
+msgstr "کۆمپانیای ئێلەمێنتەری هاوپشک."
 
 #: data/io.elementary.calendar.desktop.in:8
 msgid "io.elementary.calendar"
@@ -333,6 +342,7 @@ msgstr ""
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr ""
+"مایا؛ پلاندانەر;بەروارەکان;ڕۆژەکان; ڕووداوەکان؛ ڕۆژژمێر؛ics;caldav؛پەرەسەندن;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
