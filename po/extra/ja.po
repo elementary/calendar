@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2022-01-22 08:27+0000\n"
+"PO-Revision-Date: 2022-04-09 01:34+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -98,7 +98,7 @@ msgstr "Windows で扱われているタイムゾーンを認識できるよう�
 #: data/io.elementary.calendar.appdata.xml.in:135
 #: data/io.elementary.calendar.appdata.xml.in:144
 msgid "Minor Updates:"
-msgstr "軽微なアップデート:"
+msgstr "そのほかのアップデート:"
 
 #: data/io.elementary.calendar.appdata.xml.in:39
 #: data/io.elementary.calendar.appdata.xml.in:53
