@@ -1,9 +1,18 @@
 project('io.elementary.calendar',
     'c', 'vala',
-    version: '5.1.1'
+    version: '6.1.0'
 )
 
 add_project_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
+
+conf_data = configuration_data()
+conf_data.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
+conf_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+conf_file = configure_file(
+    input: 'src/Config.vala.in',
+    output: '@BASENAME@',
+    configuration: conf_data
+)
 
 libexecdir = join_paths(get_option('prefix'), get_option('libexecdir'), meson.project_name())
 pluginsdir = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name(), 'plugins')
@@ -14,7 +23,7 @@ pkgconfig = import('pkgconfig')
 
 glib_dep = dependency('glib-2.0')
 gee_dep = dependency('gee-0.8')
-granite_dep = dependency('granite', version: '>=6.0.0')
+granite_dep = dependency('granite', version: '>=6.2.0')
 gtk_dep = dependency('gtk+-3.0', version: '>=3.22')
 handy_dep = dependency('libhandy-1', version: '>=0.90.0')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>=3.8.0')
@@ -49,7 +58,6 @@ gresource_calendar = gnome.compile_resources(
 
 subdir('data')
 subdir('core')
-subdir('daemon')
 subdir('src')
 subdir('plugins')
 subdir('po')

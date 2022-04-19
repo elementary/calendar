@@ -5,6 +5,7 @@ calendar_files = files(
     'ImportDialog.vala',
     'LanguagesFormat.vala',
     'MainWindow.vala',
+    'TodayEventMonitor.vala',
     'EventEdition/EventDialog.vala',
     'EventEdition/GuestGrid.vala',
     'EventEdition/GuestsPanel.vala',
@@ -32,6 +33,7 @@ calendar_files = files(
     'Widgets/ContractorButtonWithMenu.vala',
     'Widgets/DateSwitcher.vala',
     'Widgets/DateTimePicker.vala',
+    'Widgets/DeleteDialog.vala',
     'Widgets/DynamicSpinner.vala',
     'Widgets/EventMenu.vala',
     'Widgets/HeaderBar.vala',
@@ -65,6 +67,7 @@ calendar_deps = [
 executable(
     meson.project_name(),
     calendar_files,
+    conf_file,
     gresource_calendar,
     dependencies: calendar_deps,
     install: true

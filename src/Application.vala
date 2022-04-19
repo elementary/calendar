@@ -20,15 +20,20 @@
  */
 
 namespace Maya {
-    namespace Option {
-        private static bool add_event = false;
-        private static string show_day = null;
-    }
-
     public class Application : Gtk.Application {
         public MainWindow window;
         public static GLib.Settings? saved_state = null;
         public static GLib.Settings? wingpanel_settings = null;
+        private static bool run_in_background = false;
+        private static bool add_event = false;
+        private static string show_day = null;
+
+        private const OptionEntry[] APP_OPTIONS = {
+            { "add-event", 'a', 0, OptionArg.NONE, out add_event, N_("Create an event"), null },
+            { "show-day", 's', 0, OptionArg.STRING, out show_day, N_("Focus the given day"), N_("date") },
+            { "background", 'b', 0, OptionArg.NONE, out run_in_background, "Run the Application in background", null},
+            { null }
+        };
 
         static construct {
             if (SettingsSchemaSource.get_default ().lookup ("io.elementary.calendar.savedstate", true) != null) {
@@ -45,26 +50,32 @@ namespace Maya {
 
             application_id = Build.EXEC_NAME;
 
+            GLib.Intl.setlocale (LocaleCategory.ALL, "");
+            GLib.Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+            GLib.Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+            GLib.Intl.textdomain (GETTEXT_PACKAGE);
+
             var provider = new Gtk.CssProvider ();
             provider.load_from_resource ("/io/elementary/calendar/Application.css");
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
-        public const OptionEntry[] APP_OPTIONS = {
-            { "add-event", 'a', 0, OptionArg.NONE, out Option.add_event, N_("Create an event"), null },
-            { "show-day", 's', 0, OptionArg.STRING, out Option.show_day, N_("Focus the given day"), N_("date") },
-            { null }
-        };
-
         protected override void activate () {
+            if (run_in_background) {
+                run_in_background = false;
+                new Calendar.TodayEventMonitor ();
+                hold ();
+                return;
+            }
+
             if (get_windows () != null) {
                 get_windows ().data.present (); // present window if app is already running
                 return;
             }
 
-            if (Option.show_day != null) {
+            if (show_day != null) {
                 var date = Date ();
-                date.set_parse (Option.show_day);
+                date.set_parse (show_day);
                 if (date.valid () == true) {
                     var datetime = get_selected_datetime ();
                     datetime = datetime.add_years ((int)date.get_year () - datetime.get_year ());
@@ -73,7 +84,7 @@ namespace Maya {
                     saved_state.set_string ("selected-day", datetime.format ("%Y-%j"));
                     saved_state.set_string ("month-page", datetime.format ("%Y-%m"));
                 } else {
-                    warning ("Invalid date '%s' - Ignoring", Option.show_day);
+                    warning ("Invalid date '%s' - Ignoring", show_day);
                 }
             }
 
@@ -83,7 +94,7 @@ namespace Maya {
             init_gui ();
             window.show_all ();
 
-            if (Option.add_event) {
+            if (add_event) {
                 Idle.add (() => {
                     window.on_tb_add_clicked (window.calview.selected_date);
                     return false;
@@ -166,22 +177,24 @@ namespace Maya {
             dt = dt.add_days (int.parse (numbers[1]) - 1);
             return dt;
         }
-    }
 
-    public static int main (string[] args) {
-        var context = new OptionContext (_("Calendar"));
-        context.add_main_entries (Application.APP_OPTIONS, "maya");
-        context.add_group (Gtk.get_option_group (true));
+        public static int main (string[] args) {
+            var context = new OptionContext (_("Calendar"));
+            context.add_main_entries (Application.APP_OPTIONS, "maya");
+            context.add_group (Gtk.get_option_group (true));
 
-        try {
-            context.parse (ref args);
-        } catch (Error e) {
-            warning (e.message);
+            try {
+                context.parse (ref args);
+            } catch (Error e) {
+                warning (e.message);
+            }
+
+            GtkClutter.init (ref args);
+            var app = new Application ();
+
+            int res = app.run (args);
+            ICal.Object.free_global_objects ();
+            return res;
         }
-
-        GtkClutter.init (ref args);
-        var app = new Application ();
-
-        return app.run (args);
     }
 }
