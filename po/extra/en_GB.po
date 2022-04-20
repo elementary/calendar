@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2021-12-08 21:19+0000\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
+"PO-Revision-Date: 2022-04-20 08:59+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "calendar/extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -43,10 +43,8 @@ msgid "Features:"
 msgstr "Features:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
-#, fuzzy
-#| msgid "Allow modification of recurring events"
 msgid "Ask for confirmation before deleting events"
-msgstr "Allow modification of recurring events"
+msgstr "Ask for confirmation before deleting events"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 msgid ""
@@ -67,14 +65,16 @@ msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
+"calendar is read-only"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Removed no longer needed sandbox permission for accounts service"
-msgstr ""
+msgstr "Removed no longer needed sandbox permission for accounts service"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "Fixed potential memory leak"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Ensure Calendar runs in the background on startup"
