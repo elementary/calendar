@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-21 17:40+0000\n"
-"PO-Revision-Date: 2022-02-02 18:12+0000\n"
+"PO-Revision-Date: 2022-05-01 07:31+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "extra/pt/>\n"
@@ -66,14 +66,16 @@ msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"Desativa a caixa de seleção \"Marcar como calendário predefinido\" nas "
+"definições do calendário, se o calendário for de apenas-leitura"
 
 #: data/io.elementary.calendar.appdata.xml.in:24
 msgid "Removed no longer needed sandbox permission for accounts service"
-msgstr ""
+msgstr "Removido já não precisava de permissão para o serviço de contas sandbox"
 
 #: data/io.elementary.calendar.appdata.xml.in:25
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "Corrigida possível fuga de memória"
 
 #: data/io.elementary.calendar.appdata.xml.in:33
 msgid "Ensure Calendar runs in the background on startup"
