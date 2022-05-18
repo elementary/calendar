@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-18 04:45+0000\n"
-"PO-Revision-Date: 2022-01-23 17:42+0000\n"
+"PO-Revision-Date: 2022-05-18 11:40+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/calendar/extra/"
 "ca/>\n"
@@ -53,10 +53,8 @@ msgid "Minor Updates:"
 msgstr "Actualitzacions menors:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
-#, fuzzy
-#| msgid "Updated translations"
 msgid "Updated app icon"
-msgstr "Traduccions actualitzades"
+msgstr "Icona de l'aplicació actualitzada"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 #: data/io.elementary.calendar.appdata.xml.in:48
