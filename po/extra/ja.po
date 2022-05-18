@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-18 04:45+0000\n"
-"PO-Revision-Date: 2022-04-09 01:34+0000\n"
+"PO-Revision-Date: 2022-05-18 14:27+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -53,10 +53,8 @@ msgid "Minor Updates:"
 msgstr "そのほかのアップデート:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
-#, fuzzy
-#| msgid "Updated translations"
 msgid "Updated app icon"
-msgstr "新しい翻訳"
+msgstr "アプリのアイコンを更新"
 
 #: data/io.elementary.calendar.appdata.xml.in:19
 #: data/io.elementary.calendar.appdata.xml.in:48
