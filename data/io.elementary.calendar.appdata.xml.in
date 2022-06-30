@@ -11,6 +11,15 @@
     <p>A slim, lightweight calendar app that syncs and manages multiple calendars in one place, like Google Calendar, Outlook and CalDAV.</p>
   </description>
   <releases>
+    <release version="6.1.1" date="2022-05-16" urgency="medium">
+      <description>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Updated app icon</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.1.0" date="2022-01-21" urgency="medium">
       <description>
         <p>Features:</p>
