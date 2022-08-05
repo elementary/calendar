@@ -167,11 +167,7 @@ void test_icaltime_convert_to_local () {
         "END:VEVENT\n" +
         "END:VCALENDAR\n";
     debug (str);
-#if E_CAL_2_0
     var ical = ECal.util_parse_ics_string (str);
-#else
-    var ical = ECal.Util.parse_ics_string (str);
-#endif
     assert_true (ical != null);
     assert_true (ical.is_valid ());
     var icalcomp = ical.get_first_component (ICal.ComponentKind.VEVENT_COMPONENT);
