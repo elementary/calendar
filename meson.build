@@ -37,16 +37,9 @@ clutter_gtk_dep = dependency('clutter-gtk-1.0')
 folks_dep = dependency('folks')
 geocode_glib_dep = dependency('geocode-glib-1.0')
 gclue_dep = dependency('libgeoclue-2.0')
-libecal_dep = dependency('libecal-2.0', required: false)
-if libecal_dep.found()
-    libical_dep = dependency('libical-glib')
-    add_project_arguments('--define=E_CAL_2_0', language: 'vala')
-    add_project_arguments('-DLIBICAL_GLIB_UNSTABLE_API=1', language: 'c')
-else
-    libecal_dep = dependency('libecal-1.2', version: '>=3.8.0')
-    libical_dep = dependency('libical')
-    add_project_arguments('--vapidir', join_paths(meson.current_source_dir(), 'vapi'), language: 'vala')
-endif
+libecal_dep = dependency('libecal-2.0')
+libical_dep = dependency('libical-glib')
+add_project_arguments('-DLIBICAL_GLIB_UNSTABLE_API=1', language: 'c')
 
 m_dep = meson.get_compiler('c').find_library('m', required : false)
 

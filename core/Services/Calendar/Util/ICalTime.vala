@@ -84,16 +84,11 @@ namespace Calendar.Util {
      * zone is not.
      */
     public GLib.DateTime icaltime_to_datetime (ICal.Time date) {
-#if E_CAL_2_0
         int year, month, day, hour, minute, second;
         date.get_date (out year, out month, out day);
         date.get_time (out hour, out minute, out second);
         return new GLib.DateTime (icaltime_get_timezone (date), year, month,
             day, hour, minute, second);
-#else
-        return new GLib.DateTime (icaltime_get_timezone (date), date.year, date.month,
-            date.day, date.hour, date.minute, date.second);
-#endif
     }
 
     /**
@@ -108,16 +103,11 @@ namespace Calendar.Util {
     public GLib.DateTime icaltime_to_local_datetime (ICal.Time date) {
         assert (!date.is_null_time ());
         var converted = icaltime_convert_to_local (date);
-#if E_CAL_2_0
         int year, month, day, hour, minute, second;
         converted.get_date (out year, out month, out day);
         converted.get_time (out hour, out minute, out second);
         return new GLib.DateTime.local (year, month,
             day, hour, minute, second);
-#else
-        return new GLib.DateTime.local (date.year, date.month,
-            date.day, date.hour, date.minute, date.second);
-#endif
     }
 
     /** Converts the given ICal.Time to the local (or system) timezone

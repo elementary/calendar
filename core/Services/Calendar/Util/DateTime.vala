@@ -59,11 +59,7 @@ namespace Calendar.Util {
     public ICal.Time datetimes_to_icaltime (GLib.DateTime date, GLib.DateTime? time_local,
         ICal.Timezone? timezone = Calendar.TimeManager.get_default ().system_timezone) {
 
-#if E_CAL_2_0
         var result = new ICal.Time.from_day_of_year (date.get_day_of_year (), date.get_year ());
-#else
-        var result = ICal.Time.from_day_of_year (date.get_day_of_year (), date.get_year ());
-#endif
 
         // Check if it's a date. If so, set is_date to true and fix the time to be sure.
         // If it's not a date, first thing set is_date to false.
@@ -71,40 +67,19 @@ namespace Calendar.Util {
         // Then, set the time.
         if (time_local == null) {
             // Date type: ensure that everything corresponds to a date
-#if E_CAL_2_0
             result.set_is_date (true);
             result.set_time (0, 0, 0);
-#else
-            result._is_date = 1;
-            result.hour = 0;
-            result.minute = 0;
-            result.second = 0;
-#endif
         } else {
             // Includes time
             // Set is_date first (otherwise timezone won't change)
-#if E_CAL_2_0
             result.set_is_date (false);
-#else
-            result._is_date = 0;
-#endif
 
             // Set timezone for the time to be relative to
             // (doesn't affect DATE-type times)
-#if E_CAL_2_0
             result.set_timezone (timezone);
-#else
-            result.zone = timezone;
-#endif
 
             // Set the time with the updated time zone
-#if E_CAL_2_0
             result.set_time (time_local.get_hour (), time_local.get_minute (), time_local.get_second ());
-#else
-            result.hour = time_local.get_hour ();
-            result.minute = time_local.get_minute ();
-            result.second = time_local.get_second ();
-#endif
         }
 
         return result;
