@@ -73,7 +73,11 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         collection.add (url_entry);
         if (to_edit != null) {
             E.SourceWebdav webdav = (E.SourceWebdav)to_edit.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
+#if HAS_EDS_3_46
+            var uri = webdav.dup_uri ();
+#else
             var uri = webdav.dup_soup_uri ();
+#endif
             if (uri.get_port () != 80) {
                 ((Gtk.Entry)url_entry.widget).text = "%s://%s:%u%s".printf (uri.get_scheme (), uri.get_host (), uri.get_port (), uri.get_path ());
             } else {
@@ -147,7 +151,11 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
                     case "url_entry":
+#if HAS_EDS_3_46
+                        webdav.uri = GLib.Uri.parse (((Gtk.Entry)widget.widget).text, GLib.UriFlags.NONE);
+#else
                         webdav.soup_uri = new Soup.URI (((Gtk.Entry)widget.widget).text);
+#endif
                         break;
                     case "user_entry":
                         auth.user = ((Gtk.Entry)widget.widget).text;
@@ -190,7 +198,11 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
                     case "url_entry":
+#if HAS_EDS_3_46
+                        webdav.uri = GLib.Uri.parse (((Gtk.Entry)widget.widget).text, GLib.UriFlags.NONE);
+#else
                         webdav.soup_uri = new Soup.URI (((Gtk.Entry)widget.widget).text);
+#endif
                         break;
                     case "user_entry":
                         auth.user = ((Gtk.Entry)widget.widget).text;
