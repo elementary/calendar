@@ -273,7 +273,11 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private void load_weekly_recurrence (ICal.Recurrence rrule) {
         repeat_combobox.active = 1;
         var by_day = rrule.get_by_day_array ();
-        for (uint i = 0; i < by_day.length; i++) {
+        for (
+            uint i = 0;
+            i < by_day.length && (by_day.index (i) != ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX);
+            i++
+        ) {
             switch (ICal.Recurrence.day_day_of_week (by_day.index (i))) {
                 case ICal.RecurrenceWeekday.SUNDAY_WEEKDAY:
                     sun_button.active = true;
