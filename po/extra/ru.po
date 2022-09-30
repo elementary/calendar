@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-18 04:45+0000\n"
-"PO-Revision-Date: 2022-08-01 19:06+0000\n"
+"PO-Revision-Date: 2022-09-30 22:11+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/extra/"
 "ru/>\n"
@@ -37,8 +37,8 @@ msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
-"Легкий и изящный календарь, поддерживающий синхронизацию с Google Календарь, "
-"Outlook и CalDAV."
+"Лёгкий и изящный календарь, поддерживающий синхронизацию с Google "
+"Календарём, Outlook и CalDAV."
 
 #: data/io.elementary.calendar.appdata.xml.in:16
 #: data/io.elementary.calendar.appdata.xml.in:46
@@ -113,7 +113,7 @@ msgstr "Исправлена потенциальная утечка памят�
 
 #: data/io.elementary.calendar.appdata.xml.in:42
 msgid "Ensure Calendar runs in the background on startup"
-msgstr "Исправление работы календаря в фоновом режиме"
+msgstr "Исправлена работа календаря в фоновом режиме"
 
 #: data/io.elementary.calendar.appdata.xml.in:43
 msgid "Fix memory leak when getting timezone information"
@@ -156,7 +156,7 @@ msgstr "Импорт файлов ICS из меню в виде шестерён
 
 #: data/io.elementary.calendar.appdata.xml.in:84
 msgid "Support the dark style"
-msgstr "Поддержка темного стиля"
+msgstr "Поддержка тёмного стиля"
 
 #: data/io.elementary.calendar.appdata.xml.in:88
 msgid "Properly show events on the last day of the month"
@@ -184,11 +184,11 @@ msgstr "Добавлен «фильм» в качестве ключевого �
 
 #: data/io.elementary.calendar.appdata.xml.in:97
 msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr "Добавлены мятный и бубльгумовый цвета в палитку цветов календаря"
+msgstr "Добавлены мятный и бубльгумовый цвета в палитру цветов календаря"
 
 #: data/io.elementary.calendar.appdata.xml.in:98
 msgid "Link to Online Accounts settings in the gear menu"
-msgstr "Ссылка на настройки онлайн аккаунтов в меню «шестеренки»"
+msgstr "Ссылка на настройки онлайн аккаунтов в меню шестерёнки"
 
 #: data/io.elementary.calendar.appdata.xml.in:99
 #: data/io.elementary.calendar.appdata.xml.in:177
@@ -292,7 +292,7 @@ msgstr "Всегда показывать значок календаря в у�
 #: data/io.elementary.calendar.appdata.xml.in:186
 msgid "Agenda view can now be navigated by keyboard"
 msgstr ""
-"Режим просмотра «Повестка дня» теперь может использоватся при помощи "
+"Режим просмотра «Повестка дня» теперь может использоваться при помощи "
 "клавиатуры"
 
 #: data/io.elementary.calendar.appdata.xml.in:187
@@ -315,7 +315,7 @@ msgstr "Согласование стиля"
 
 #: data/io.elementary.calendar.appdata.xml.in:196
 msgid "Fix location panel initialization"
-msgstr "Исправлено инициализацию панели местоположения"
+msgstr "Исправлена инициализация панели местоположения"
 
 #: data/io.elementary.calendar.appdata.xml.in:197
 msgid "New translations"
@@ -323,7 +323,7 @@ msgstr "Новые переводы"
 
 #: data/io.elementary.calendar.appdata.xml.in:202
 msgid "Update wingpanel-indicator-datetime settings path."
-msgstr "Обновлен путь к параметрам wingpanel-indicator-datetime."
+msgstr "Обновлён путь к параметрам wingpanel-indicator-datetime."
 
 #: data/io.elementary.calendar.appdata.xml.in:203
 msgid "New translations."
