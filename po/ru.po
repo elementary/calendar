@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-18 04:45+0000\n"
-"PO-Revision-Date: 2022-09-30 22:11+0000\n"
+"PO-Revision-Date: 2022-10-09 09:36+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
@@ -673,61 +673,67 @@ msgstr "Сохранить"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr "встреча;собрание;митинг"
+msgstr "appointment;meeting;встреча;собрание;митинг"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr "день рождения;годовщина;юбилей;вечеринка"
+msgstr "birthday;anniversary;party;день рождения;годовщина;юбилей;вечеринка"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr "позвонить;звонить;телефон;звонок"
+msgstr "call;phone;telephone;ring;позвонить;звонить;телефон;звонок"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr "бар;коктейль;напитки;выпивка;вечеринка"
+msgstr "bar;cocktails;drinks;happy hour;бар;коктейль;напитки;выпивка;вечеринка"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr "автомобиль;ехать;вождение;путешествие;водить;машина;авто;"
+msgstr ""
+"car;drive;driving;road "
+"trip;автомобиль;ехать;вождение;путешествие;водить;машина;авто;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr "полет;аэропорт;самолет;"
+msgstr "flight;airport;полёт;полет;аэропорт;самолёт;самолет;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr "завтрак;обед;ужин;блюдо;пикник;шашлык;пельмени;блины"
+msgstr ""
+"breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue;завтрак;"
+"обед;ужин;блюдо;пикник;шашлык;пельмени;блины"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr "суд;судья;прокурор;адвокат;юрист;договор"
+msgstr ""
+"court;jury;tax;attorney;lawyer;contract;суд;судья;прокурор;адвокат;юрист;дого"
+"вор"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie;film"
-msgstr "кино;фильм"
+msgstr "movie;film;кино;фильм"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr "свадьба;замужество;женитьба"
+msgstr "wedding;свадьба;замужество;женитьба"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
