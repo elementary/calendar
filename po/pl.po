@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 04:45+0000\n"
+"POT-Creation-Date: 2022-11-15 18:11+0000\n"
 "PO-Revision-Date: 2021-10-23 15:12+0000\n"
 "Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -190,15 +190,15 @@ msgstr "Zapisz zmiany"
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
 msgstr "Zaakceptowano"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
 msgstr "Odrzucony"
 
-#: src/EventEdition/GuestGrid.vala:57
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
 msgstr "Być może"
 
@@ -270,67 +270,67 @@ msgstr "Brak przypomnień"
 msgid "Add Reminder"
 msgstr "Dodaj przypomnienie"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "At time of event"
 msgstr "O czasie wydarzenia"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
 msgstr "1 minuta przed"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes before"
 msgstr "5 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
 msgstr "10 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
 msgstr "15 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes before"
 msgstr "20 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes before"
 msgstr "25 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes before"
 msgstr "30 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes before"
 msgstr "45 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour before"
 msgstr "1 godzina przed"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours before"
 msgstr "2 godziny przed"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours before"
 msgstr "3 godziny przed"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours before"
 msgstr "12 godzin przed"
 
-#: src/EventEdition/ReminderPanel.vala:205
+#: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours before"
 msgstr "24 godziny przed"
 
-#: src/EventEdition/ReminderPanel.vala:206
+#: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days before"
 msgstr "2 dni przed"
 
-#: src/EventEdition/ReminderPanel.vala:207
+#: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week before"
 msgstr "1 tydzień przed"
 
