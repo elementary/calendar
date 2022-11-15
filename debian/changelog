@@ -1,3 +1,9 @@
+maya-calendar (6.1.2) bionic; urgency=medium
+
+  * Release 6.1.2 (#768)
+
+ -- elementary, Inc. <builds@elementary.io>  Tue, 15 Nov 2022 19:32:11 +0000
+
 maya-calendar (6.1.1) bionic; urgency=medium
 
   * Release 6.1.1 (#752)
