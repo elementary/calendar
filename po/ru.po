@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 04:45+0000\n"
+"POT-Creation-Date: 2022-11-15 18:11+0000\n"
 "PO-Revision-Date: 2022-10-09 09:36+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
@@ -189,15 +189,15 @@ msgstr "Сохранить изменения"
 msgid "Cancel"
 msgstr "Отменить"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
 msgstr "Принято"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
 msgstr "Отклонено"
 
-#: src/EventEdition/GuestGrid.vala:57
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
 msgstr "Может быть"
 
@@ -269,67 +269,67 @@ msgstr "Нет напоминаний"
 msgid "Add Reminder"
 msgstr "Добавить напоминание"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "At time of event"
 msgstr "Во время события"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
 msgstr "За 1 минуту"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes before"
 msgstr "За 5 минут"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
 msgstr "За 10 минут"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
 msgstr "За 15 минут"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes before"
 msgstr "За 20 минут"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes before"
 msgstr "За 25 минут"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes before"
 msgstr "За 30 минут"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes before"
 msgstr "За 45 минут"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour before"
 msgstr "За 1 час"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours before"
 msgstr "За 2 часа"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours before"
 msgstr "За 3 часа"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours before"
 msgstr "За 12 часов"
 
-#: src/EventEdition/ReminderPanel.vala:205
+#: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours before"
 msgstr "За 24 часа"
 
-#: src/EventEdition/ReminderPanel.vala:206
+#: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days before"
 msgstr "За 2 дня"
 
-#: src/EventEdition/ReminderPanel.vala:207
+#: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week before"
 msgstr "За 1 неделю"
 
@@ -698,8 +698,8 @@ msgstr "bar;cocktails;drinks;happy hour;бар;коктейль;напитки;�
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
 msgstr ""
-"car;drive;driving;road "
-"trip;автомобиль;ехать;вождение;путешествие;водить;машина;авто;"
+"car;drive;driving;road trip;автомобиль;ехать;вождение;путешествие;водить;"
+"машина;авто;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -720,8 +720,8 @@ msgstr ""
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
 msgstr ""
-"court;jury;tax;attorney;lawyer;contract;суд;судья;прокурор;адвокат;юрист;дого"
-"вор"
+"court;jury;tax;attorney;lawyer;contract;суд;судья;прокурор;адвокат;юрист;"
+"договор"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
