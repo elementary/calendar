@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 04:45+0000\n"
+"POT-Creation-Date: 2022-11-15 18:11+0000\n"
 "PO-Revision-Date: 2015-01-19 23:17+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -182,15 +182,15 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
 msgstr ""
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
 msgstr ""
 
-#: src/EventEdition/GuestGrid.vala:57
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
 msgstr ""
 
@@ -262,81 +262,81 @@ msgstr ""
 msgid "Add Reminder"
 msgstr ""
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "At time of event"
 msgstr ""
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:173
 #, fuzzy
 msgid "1 minute before"
 msgstr "1 minute"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:174
 #, fuzzy
 msgid "5 minutes before"
 msgstr "5 minuteh"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:175
 #, fuzzy
 msgid "10 minutes before"
 msgstr "10 minuteh"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:176
 #, fuzzy
 msgid "15 minutes before"
 msgstr "15 minuteh"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:177
 #, fuzzy
 msgid "20 minutes before"
 msgstr "20 minuteh"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:178
 #, fuzzy
 msgid "25 minutes before"
 msgstr "25 minuteh"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:179
 #, fuzzy
 msgid "30 minutes before"
 msgstr "30 minuteh"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:180
 #, fuzzy
 msgid "45 minutes before"
 msgstr "45 minuteh"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:181
 #, fuzzy
 msgid "1 hour before"
 msgstr "1 tæjmoe"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:182
 #, fuzzy
 msgid "2 hours before"
 msgstr "2 tæjmoeh"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:183
 #, fuzzy
 msgid "3 hours before"
 msgstr "3 tæjmoeh"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:184
 #, fuzzy
 msgid "12 hours before"
 msgstr "12 tæjmoeh"
 
-#: src/EventEdition/ReminderPanel.vala:205
+#: src/EventEdition/ReminderPanel.vala:185
 #, fuzzy
 msgid "24 hours before"
 msgstr "24 tæjmoeh"
 
-#: src/EventEdition/ReminderPanel.vala:206
+#: src/EventEdition/ReminderPanel.vala:186
 #, fuzzy
 msgid "2 days before"
 msgstr "2 biejjieh"
 
-#: src/EventEdition/ReminderPanel.vala:207
+#: src/EventEdition/ReminderPanel.vala:187
 #, fuzzy
 msgid "1 week before"
 msgstr "1 våhkoe"

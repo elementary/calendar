@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 04:45+0000\n"
+"POT-Creation-Date: 2022-11-15 18:11+0000\n"
 "PO-Revision-Date: 2017-06-26 12:57+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -190,15 +190,15 @@ msgstr "Kora nsakrae no so"
 msgid "Cancel"
 msgstr "Gyae"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
 msgstr "Woagye Ato Mu"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
 msgstr "Woate so"
 
-#: src/EventEdition/GuestGrid.vala:57
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
 msgstr ""
 
@@ -270,82 +270,82 @@ msgstr "Nkaebɔ Biara Nni Hɔ"
 msgid "Add Reminder"
 msgstr "Nkaebɔ Foforɔ"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:172
 #, fuzzy
 msgid "At time of event"
 msgstr "Dwuma no din"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:173
 #, fuzzy
 msgid "1 minute before"
 msgstr "Sima 1"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:174
 #, fuzzy
 msgid "5 minutes before"
 msgstr "Sima 5"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:175
 #, fuzzy
 msgid "10 minutes before"
 msgstr "Sima 10"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:176
 #, fuzzy
 msgid "15 minutes before"
 msgstr "Sima 15"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:177
 #, fuzzy
 msgid "20 minutes before"
 msgstr "Sima 20"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:178
 #, fuzzy
 msgid "25 minutes before"
 msgstr "Sima 25"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:179
 #, fuzzy
 msgid "30 minutes before"
 msgstr "Sima 30"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:180
 #, fuzzy
 msgid "45 minutes before"
 msgstr "Sima 45"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:181
 #, fuzzy
 msgid "1 hour before"
 msgstr "Donhwere 1"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:182
 #, fuzzy
 msgid "2 hours before"
 msgstr "Nnɔnhwere 2"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:183
 #, fuzzy
 msgid "3 hours before"
 msgstr "Nnɔnhwere 3"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:184
 #, fuzzy
 msgid "12 hours before"
 msgstr "Nnonhwere 12"
 
-#: src/EventEdition/ReminderPanel.vala:205
+#: src/EventEdition/ReminderPanel.vala:185
 #, fuzzy
 msgid "24 hours before"
 msgstr "Nnonhwere 24"
 
-#: src/EventEdition/ReminderPanel.vala:206
+#: src/EventEdition/ReminderPanel.vala:186
 #, fuzzy
 msgid "2 days before"
 msgstr "Nna 2"
 
-#: src/EventEdition/ReminderPanel.vala:207
+#: src/EventEdition/ReminderPanel.vala:187
 #, fuzzy
 msgid "1 week before"
 msgstr "Nnawɔtwe 1"
