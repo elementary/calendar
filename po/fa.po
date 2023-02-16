@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-15 18:11+0000\n"
-"PO-Revision-Date: 2015-04-09 12:07+0000\n"
-"Last-Translator: awat <ali.aliyan1@gmail.com>\n"
-"Language-Team: Persian <fa@li.org>\n"
+"PO-Revision-Date: 2023-02-17 10:25+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: Persian <https://l10n.elementary.io/projects/calendar/"
+"calendar/fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
 msgid "On this computer"
@@ -128,9 +129,9 @@ msgid "Select a Calendar to Import Into"
 msgstr "انتخاب تقویم برای نمایش"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "وارد نمودن رویداد ها از پوشه %d به تقویم پیشرو"
+msgstr "وارد نمودن رویداد ها از پوشه %s به تقویم پیشرو"
 
 #: src/ImportDialog.vala:47
 #, fuzzy, c-format
