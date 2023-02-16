@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-15 18:11+0000\n"
-"PO-Revision-Date: 2018-05-27 17:24+0000\n"
-"Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
-"Language-Team: Moldovan <https://weblate.elementary.io/projects/calendar/"
+"PO-Revision-Date: 2023-02-17 10:25+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: Moldovan <https://l10n.elementary.io/projects/calendar/"
 "calendar/mo/>\n"
 "Language: mo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -125,16 +125,16 @@ msgid "Select a Calendar to Import Into"
 msgstr ""
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Importați evenimente din fișierul% d în calendarul următor:"
+msgstr "Importați evenimente din fișierul “%s” în calendarul următor:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Importați evenimente din fișierul% d în calendarul următor:"
-msgstr[1] "Importați evenimente din% d fișiere în calendarul următor:"
+msgstr[0] "Importați evenimente din fișierul %d în calendarul următor:"
+msgstr[1] "Importați evenimente din %d fișiere în calendarul următor:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -742,29 +742,23 @@ msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr ""
-"/ TRANSLATORI: pentru evenimente multiple, arată: (data), (ora) - (data), "
-"(ora)"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:317
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr ""
-"/ TRANSLATORI: pentru evenimente multiple, arată: (data), (ora) - (data), "
-"(ora)"
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:329
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr ""
-"/ TRANSLATORI: pentru evenimente multiple, arată: (data), (ora) - (data), "
-"(ora)"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:338
@@ -774,11 +768,9 @@ msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:341
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr ""
-"/ TRANSLATORI: pentru evenimente multiple, arată: (data), (ora) - (data), "
-"(ora)"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
