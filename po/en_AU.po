@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-15 18:11+0000\n"
-"PO-Revision-Date: 2016-11-07 07:51+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
-"Language-Team: English (Australia) <en_AU@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2023-02-17 10:25+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: English (Australia) <https://l10n.elementary.io/projects/"
+"calendar/calendar/en_AU/>\n"
+"Language: en_AU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
 msgid "On this computer"
@@ -126,9 +127,9 @@ msgid "Select a Calendar to Import Into"
 msgstr "Select calendars to display"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Import events from %d file into the following calendar:"
+msgstr "Events from \"%s\" will be merged with this calendar:"
 
 #: src/ImportDialog.vala:47
 #, fuzzy, c-format
@@ -727,10 +728,10 @@ msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:317
@@ -740,10 +741,10 @@ msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:329
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:338
@@ -753,9 +754,9 @@ msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:341
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
