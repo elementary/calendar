@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-15 18:11+0000\n"
-"PO-Revision-Date: 2021-09-17 22:44+0000\n"
-"Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
+"PO-Revision-Date: 2023-03-01 02:25+0000\n"
+"Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/calendar/calendar/"
 "de/>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -824,11 +824,11 @@ msgstr "Öffnen"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
-msgstr "Nicht zu entfernen"
+msgstr "Entfernen nicht möglich"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
-msgstr "Nicht zu bearbeiten"
+msgstr "Bearbeitung nicht möglich"
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
