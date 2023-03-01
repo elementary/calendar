@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-15 18:11+0000\n"
+"POT-Creation-Date: 2023-03-01 02:27+0000\n"
 "PO-Revision-Date: 2019-05-22 07:03+0000\n"
 "Last-Translator: P.-H. Lin <cypressyew@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -329,10 +329,6 @@ msgstr ""
 #, fuzzy
 msgid "elementary, Inc."
 msgstr "elementary LLC."
-
-#: data/io.elementary.calendar.desktop.in:8
-msgid "io.elementary.calendar"
-msgstr ""
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"

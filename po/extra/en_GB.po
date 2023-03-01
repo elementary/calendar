@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-15 18:11+0000\n"
+"POT-Creation-Date: 2023-03-01 02:27+0000\n"
 "PO-Revision-Date: 2023-02-17 10:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -333,10 +333,6 @@ msgstr "Fixes exporting, importing and printing calendars."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/io.elementary.calendar.desktop.in:8
-msgid "io.elementary.calendar"
-msgstr "io.elementary.calendar"
-
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
@@ -344,6 +340,9 @@ msgstr "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Add Event"
+
+#~ msgid "io.elementary.calendar"
+#~ msgstr "io.elementary.calendar"
 
 #~ msgid "office-calendar"
 #~ msgstr "office-calendar"

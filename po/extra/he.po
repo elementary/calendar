@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-15 18:11+0000\n"
+"POT-Creation-Date: 2023-03-01 02:27+0000\n"
 "PO-Revision-Date: 2022-05-18 20:51+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/extra/he/"
@@ -333,10 +333,6 @@ msgstr "תיקוני ייצוא, ייבוא והדפסה של יומנים."
 msgid "elementary, Inc."
 msgstr "elementary בע״מ."
 
-#: data/io.elementary.calendar.desktop.in:8
-msgid "io.elementary.calendar"
-msgstr "io.elementary.calendar"
-
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr "תכנון;תאריכים;פגישות;ימים;אירועים;יומן;לוח;שנה;"
@@ -344,6 +340,9 @@ msgstr "תכנון;תאריכים;פגישות;ימים;אירועים;יומן;
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "הוספת אירוע"
+
+#~ msgid "io.elementary.calendar"
+#~ msgstr "io.elementary.calendar"
 
 #~ msgid "office-calendar"
 #~ msgstr "office-calendar"

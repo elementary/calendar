@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-15 18:11+0000\n"
+"POT-Creation-Date: 2023-03-01 02:27+0000\n"
 "PO-Revision-Date: 2020-05-13 23:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/calendar/extra/ar/"
@@ -343,10 +343,6 @@ msgstr "إصلاحات تصدير واستيراد وطباعة التقاويم
 #| msgid "elementary LLC."
 msgid "elementary, Inc."
 msgstr "إيليمينتاري ذ م م."
-
-#: data/io.elementary.calendar.desktop.in:8
-msgid "io.elementary.calendar"
-msgstr ""
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"

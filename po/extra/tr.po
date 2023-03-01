@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-15 18:11+0000\n"
+"POT-Creation-Date: 2023-03-01 02:27+0000\n"
 "PO-Revision-Date: 2022-08-03 16:43+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/extra/"
@@ -343,10 +343,6 @@ msgstr "Takvimleri dışa aktarma, içe aktarma ve yazdırmayı düzeltir."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/io.elementary.calendar.desktop.in:8
-msgid "io.elementary.calendar"
-msgstr "io.elementary.calendar"
-
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr ""
@@ -356,6 +352,9 @@ msgstr ""
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Etkinlik Ekle"
+
+#~ msgid "io.elementary.calendar"
+#~ msgstr "io.elementary.calendar"
 
 #~ msgid "office-calendar"
 #~ msgstr "office-calendar"
