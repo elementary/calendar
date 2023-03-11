@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
 "PO-Revision-Date: 2023-03-11 11:48+0000\n"
-"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"Last-Translator: Niko <nikolozisia@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ka/>\n"
 "Language: ka\n"
@@ -127,7 +127,7 @@ msgstr "შემდეგ კალენდარში მოვლენე�
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "ამ კალენდარში მოვლენების შემოტანა \"%d\" ფაილიდან:"
+msgstr[0] "შემდეგ კალენდარში მოვლენების შემოტანა \"%s\" ფაილიდან:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
