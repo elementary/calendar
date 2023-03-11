@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2023-03-11 11:53+0000\n"
+"PO-Revision-Date: 2023-03-12 12:25+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ka/>\n"
@@ -275,7 +275,7 @@ msgstr "5 წუთით ადრე"
 
 #: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
-msgstr "10 წუთის წინ"
+msgstr "10 წუთით ადრე"
 
 #: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
@@ -667,7 +667,7 @@ msgstr "დაბადების დღე; იუბილე; წვეუ�
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr "ზარი; ტელეფონი; ტელეფონი; ზარი"
+msgstr "ზარი; ტელეფონი"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -679,7 +679,7 @@ msgstr "ბარი; კოქტეილები; სასმელებ�
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr "მანქანა; მართვა; მართვა; გზის მოგზაურობა;"
+msgstr "მანქანა; მართვა;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -697,8 +697,7 @@ msgstr "საუზმე;სადილი;ვახშამი;სტეი
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
-"სასამართლო; ნაფიც მსაჯულთა; საგადასახადო; ადვოკატი; ადვოკატი; ხელშეკრულება"
+msgstr "სასამართლო; ნაფიც მსაჯულთა; საგადასახადო;ადვოკატი;ხელშეკრულება"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
