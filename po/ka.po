@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2023-03-11 11:49+0000\n"
-"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"PO-Revision-Date: 2023-03-11 11:50+0000\n"
+"Last-Translator: Niko <nikolozisia@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ka/>\n"
 "Language: ka\n"
@@ -383,7 +383,7 @@ msgstr[0] "გამეორება"
 
 #: src/EventEdition/RepeatPanel.vala:144
 msgid "Never"
-msgstr "しない"
+msgstr "არასდროს"
 
 #: src/EventEdition/RepeatPanel.vala:145
 msgid "Until"
@@ -523,7 +523,7 @@ msgstr "ყოველი მესამე შაბათი"
 
 #: src/EventEdition/RepeatPanel.vala:485
 msgid "Every fourth Sunday"
-msgstr "ყოველი მესამე კვირა"
+msgstr "ყოველ მეოთხე კვირას"
 
 #: src/EventEdition/RepeatPanel.vala:488
 msgid "Every fourth Monday"
@@ -655,43 +655,44 @@ msgstr "შენახვა"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr "შეხვედრა"
+msgstr "დანიშვნა; შეხვედრა"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr "დაბადების დღე;წვეულება"
+msgstr "დაბადების დღე; იუბილე; წვეულება"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr "ზარი;ტელეფონი;დარეკვა"
+msgstr "ზარი; ტელეფონი; ტელეფონი; ზარი"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr "ბარი;კოქტეილი;დასალევი"
+msgstr "ბარი; კოქტეილები; სასმელები; ბედნიერი საათი"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr "მანქანა;ტარება;"
+msgstr "მანქანა; მართვა; მართვა; გზის მოგზაურობა;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr "ფრენა;აეროპორტი;"
+msgstr "ფრენა; აეროპორტი;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr "საუზმე;სადილი;ვახშამი;სტეიკი;ბურგერი;საჭმელი"
+msgstr ""
+"საუზმე; ბრინჯი; სადილი; ლანჩი; ვახშამი; სტეიკჰაუსი; ბურგერი; კვება; მწვადი"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
