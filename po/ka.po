@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
 "PO-Revision-Date: 2023-03-11 11:51+0000\n"
-"Last-Translator: Niko <nikolozisia@gmail.com>\n"
+"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ka/>\n"
 "Language: ka\n"
@@ -717,7 +717,7 @@ msgstr "ქორწილი"
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s - %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:317
