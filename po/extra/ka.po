@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2018-07-10 11:19+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-03-12 12:25+0000\n"
+"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/extra/"
+"ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: data/io.elementary.calendar.appdata.xml.in:8
 #: data/io.elementary.calendar.desktop.in:4
@@ -61,7 +64,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:190
 #: data/io.elementary.calendar.appdata.xml.in:202
 msgid "Updated translations"
-msgstr ""
+msgstr "განახლებული თარგმანები"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 msgid "Updated app icon"
@@ -321,7 +324,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:245
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
