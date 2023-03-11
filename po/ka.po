@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2023-03-11 11:50+0000\n"
-"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"PO-Revision-Date: 2023-03-11 11:51+0000\n"
+"Last-Translator: Niko <nikolozisia@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ka/>\n"
 "Language: ka\n"
@@ -698,7 +698,8 @@ msgstr ""
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr "სასამართლო;ადვოკატი;გადასაადები;იურისტი;კონტრაქტი"
+msgstr ""
+"სასამართლო; ნაფიც მსაჯულთა; საგადასახადო; ადვოკატი; ადვოკატი; ხელშეკრულება"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -710,14 +711,14 @@ msgstr "ფილმი;კინო"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr "ქორწინება"
+msgstr "ქორწილი"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s – %s"
+msgstr "%s - %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:317
