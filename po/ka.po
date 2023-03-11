@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2023-03-11 11:52+0000\n"
-"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"PO-Revision-Date: 2023-03-11 11:53+0000\n"
+"Last-Translator: Niko <nikolozisia@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ka/>\n"
 "Language: ka\n"
@@ -275,7 +275,7 @@ msgstr "5 წუთი"
 
 #: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
-msgstr "10 წუთით ადრე"
+msgstr "10 წუთი"
 
 #: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
