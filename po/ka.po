@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
 "PO-Revision-Date: 2023-03-11 11:48+0000\n"
-"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"Last-Translator: Niko <nikolozisia@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ka/>\n"
 "Language: ka\n"
@@ -179,7 +179,7 @@ msgstr "ცვლილებების შენახვა"
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 #: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
-msgstr "გუქმება"
+msgstr "გაუქმება"
 
 #: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
@@ -191,7 +191,7 @@ msgstr "უარყოფილია"
 
 #: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
-msgstr "შეიძლება"
+msgstr "ალბათ"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -231,7 +231,7 @@ msgstr "ივენთის სახელი"
 
 #: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
-msgstr "მოვლენის დასამუშავებლად დააჭირეთ Enter-ს"
+msgstr "დააჭირეთ ღილაკს \"Enter\" ღონისძიების გასაანალიზებლად"
 
 #: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
