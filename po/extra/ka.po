@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2023-03-12 12:25+0000\n"
+"PO-Revision-Date: 2023-03-16 13:25+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/extra/"
 "ka/>\n"
@@ -23,12 +23,12 @@ msgstr ""
 #: data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
-msgstr ""
+msgstr "კალენდარი"
 
 #: data/io.elementary.calendar.appdata.xml.in:9
 #: data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "ნახეთ და დაგეგმეთ მოვლენები"
 
 #: data/io.elementary.calendar.appdata.xml.in:11
 msgid ""
@@ -48,7 +48,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:156
 #: data/io.elementary.calendar.appdata.xml.in:165
 msgid "Minor Updates:"
-msgstr ""
+msgstr "უმნიშვნელო განახლებები:"
 
 #: data/io.elementary.calendar.appdata.xml.in:18
 #: data/io.elementary.calendar.appdata.xml.in:31
@@ -68,15 +68,15 @@ msgstr "განახლებული თარგმანები"
 
 #: data/io.elementary.calendar.appdata.xml.in:30
 msgid "Updated app icon"
-msgstr ""
+msgstr "აპის ხატულის განახლება"
 
 #: data/io.elementary.calendar.appdata.xml.in:37
 msgid "Features:"
-msgstr ""
+msgstr "თვისებები:"
 
 #: data/io.elementary.calendar.appdata.xml.in:39
 msgid "Ask for confirmation before deleting events"
-msgstr ""
+msgstr "დადასტურების კითხვა მოვლენების წაშლამდე"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid ""
@@ -89,7 +89,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:80
 #: data/io.elementary.calendar.appdata.xml.in:98
 msgid "Fixes:"
-msgstr ""
+msgstr "შეცდომების გასწორებები:"
 
 #: data/io.elementary.calendar.appdata.xml.in:44
 msgid ""
@@ -103,7 +103,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:46
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "მეხსიერების პოტენციური გაჟონვის გასწორება"
 
 #: data/io.elementary.calendar.appdata.xml.in:54
 msgid "Ensure Calendar runs in the background on startup"
@@ -140,7 +140,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:93
 #: data/io.elementary.calendar.appdata.xml.in:118
 msgid "New Features:"
-msgstr ""
+msgstr "ახალი ფუნქციები:"
 
 #: data/io.elementary.calendar.appdata.xml.in:95
 msgid "Import ICS files from the gear menu"
@@ -148,7 +148,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:96
 msgid "Support the dark style"
-msgstr ""
+msgstr "ბნელი სტილის მხარდაჭერა"
 
 #: data/io.elementary.calendar.appdata.xml.in:100
 msgid "Properly show events on the last day of the month"
@@ -164,11 +164,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:106
 msgid "Improved offline support"
-msgstr ""
+msgstr "ინტერნეტის გარეშე მუშაობის გაუმჯობესება"
 
 #: data/io.elementary.calendar.appdata.xml.in:107
 msgid "New colorful avatar fallbacks"
-msgstr ""
+msgstr "ახალი ფერადი ავატარები"
 
 #: data/io.elementary.calendar.appdata.xml.in:108
 msgid "Include \"film\" as an event icon keyword"
@@ -185,7 +185,7 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:111
 #: data/io.elementary.calendar.appdata.xml.in:189
 msgid "Performance improvements"
-msgstr ""
+msgstr "წარმადობის გაუმჯობესებები"
 
 #: data/io.elementary.calendar.appdata.xml.in:120
 msgid "Add \"Duplicate...\" option to event context menu"
@@ -203,11 +203,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:132
 msgid "Improvements:"
-msgstr ""
+msgstr "გაუმჯობესებები:"
 
 #: data/io.elementary.calendar.appdata.xml.in:134
 msgid "Allow modification of recurring events"
-msgstr ""
+msgstr "განმეორებადი მოვლენების შეცვლის დაშვება"
 
 #: data/io.elementary.calendar.appdata.xml.in:135
 msgid "Improve handling of week start day"
@@ -216,6 +216,8 @@ msgstr ""
 #: data/io.elementary.calendar.appdata.xml.in:136
 msgid "Fix timezone errors with all-day events"
 msgstr ""
+"დროის სარტყელის შეცდომების გასწორება მთელი დღის განმავლობაში მოხდენადი "
+"მოვლენებისთვის"
 
 #: data/io.elementary.calendar.appdata.xml.in:140
 msgid "Don't resize the sidebar when resizing the window"
@@ -231,7 +233,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:167
 msgid "Correctly save event reminders"
-msgstr ""
+msgstr "მოვლენის შეხსენებების სწორი შენახვა"
 
 #: data/io.elementary.calendar.appdata.xml.in:168
 msgid "Ellipsize event participant details if necessary"
@@ -251,7 +253,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:186
 msgid "Make agenda pane fill the whole space"
-msgstr ""
+msgstr "განრიგის პანელით მთელი ადგილის შევსება"
 
 #: data/io.elementary.calendar.appdata.xml.in:187
 msgid "Set the suggested time for new events to the next whole hour"
@@ -259,7 +261,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:188
 msgid "Fix issues with recurring events"
-msgstr ""
+msgstr "განმეორებით მოვლენებთან დაკავშირებული პრობლემების გადაჭრა"
 
 #: data/io.elementary.calendar.appdata.xml.in:195
 msgid "Present import window when opening ICS files"
@@ -267,11 +269,11 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:196
 msgid "Add a search entry for calendars"
-msgstr ""
+msgstr "კალენდარისთვის ძებნის ჩანაწერის დამატება"
 
 #: data/io.elementary.calendar.appdata.xml.in:197
 msgid "Always use calendar icon in notifications"
-msgstr ""
+msgstr "გაფრთხილებებში კალენდარის ხატულის ყოველთვის გამოყენება"
 
 #: data/io.elementary.calendar.appdata.xml.in:198
 msgid "Agenda view can now be navigated by keyboard"
@@ -279,7 +281,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:199
 msgid "Right-to-left improvements"
-msgstr ""
+msgstr "მარჯვნიდან-მარცხნივ კრეფის გაუმჯობესება"
 
 #: data/io.elementary.calendar.appdata.xml.in:200
 msgid "Various UI overhauls including lime accent color"
@@ -287,19 +289,19 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:201
 msgid "Overall code cleanup and rewrites"
-msgstr ""
+msgstr "კოდის ზოგადი გაწმენდა და გადაწერა"
 
 #: data/io.elementary.calendar.appdata.xml.in:207
 msgid "Styling adjustments"
-msgstr ""
+msgstr "სტილის კორექტირება"
 
 #: data/io.elementary.calendar.appdata.xml.in:208
 msgid "Fix location panel initialization"
-msgstr ""
+msgstr "მდებარეობის პანელის ინიციალიზაციის გასწორება"
 
 #: data/io.elementary.calendar.appdata.xml.in:209
 msgid "New translations"
-msgstr ""
+msgstr "ახალი თარგმანები"
 
 #: data/io.elementary.calendar.appdata.xml.in:214
 msgid "Update wingpanel-indicator-datetime settings path."
@@ -307,12 +309,12 @@ msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:215
 msgid "New translations."
-msgstr ""
+msgstr "ახალი თარგმანები."
 
 #: data/io.elementary.calendar.appdata.xml.in:220
 #: data/io.elementary.calendar.appdata.xml.in:227
 msgid "Various bug fixes and improvements."
-msgstr ""
+msgstr "გასწორდა სხვადასხვა შეცდომები."
 
 #: data/io.elementary.calendar.appdata.xml.in:225
 msgid "Fixes for calendar accuracy and integrity issues."
@@ -332,4 +334,4 @@ msgstr ""
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
-msgstr ""
+msgstr "მოვლენის დამატება"
