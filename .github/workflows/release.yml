@@ -53,7 +53,7 @@ jobs:
           branch: stable
 
       - name: Deploy
-        uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v3
+        uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v5
         with:
           repository: appcenter
           flat-manager-url: https://flatpak-api.elementary.io
