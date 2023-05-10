@@ -11,6 +11,18 @@
     <p>A slim, lightweight calendar app that syncs and manages multiple calendars in one place, like Google Calendar, Outlook and CalDAV.</p>
   </description>
   <releases>
+    <release version="6.1.2" date="2022-11-15" urgency="medium">
+      <description>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/calendar/issues/759">Editing event automatically enables Saturday repeat</issue>
+      </issues>
+    </release>
+
     <release version="6.1.1" date="2022-05-16" urgency="medium">
       <description>
         <p>Minor Updates:</p>
