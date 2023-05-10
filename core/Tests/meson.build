@@ -1,7 +1,7 @@
 tests_name = meson.project_name() + '-tests'
 
 config = configuration_data()
-config.set('source_dir', meson.source_root())
+config.set('source_dir', meson.project_source_root())
 
 core = declare_dependency(
     link_with: core_lib,
