@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2023-05-16 20:05+0000\n"
-"Last-Translator: Muhammad Dholifun Nafsi <muhammad_dholifun@protonmail.com>\n"
+"PO-Revision-Date: 2023-05-17 20:06+0000\n"
+"Last-Translator: thariqfarsha <mthariqfarsha@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/calendar/"
 "extra/id/>\n"
 "Language: id\n"
@@ -136,11 +136,11 @@ msgstr "Pastikan Kalender dibuka ketika notifikasi diklik"
 
 #: data/io.elementary.calendar.appdata.xml.in:82
 msgid "Fix broken calendar color with some online providers"
-msgstr "Perbaiki warna kalender yang rusak dengan beberapa penyedia online"
+msgstr "Perbaiki warna yang rusak pada kalender pada beberapa penyedia daring"
 
 #: data/io.elementary.calendar.appdata.xml.in:83
 msgid "Fix an issue with some all-day events"
-msgstr "Perbaiki masalah dengan beberapa acara sepanjang hari"
+msgstr "Perbaiki masalah pada beberapa acara yang berlangsung seharian"
 
 #: data/io.elementary.calendar.appdata.xml.in:93
 #: data/io.elementary.calendar.appdata.xml.in:118
