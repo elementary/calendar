@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2023-05-16 20:03+0000\n"
+"PO-Revision-Date: 2023-05-16 20:05+0000\n"
 "Last-Translator: thariqfarsha <mthariqfarsha@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/calendar/"
 "extra/id/>\n"
@@ -99,16 +99,16 @@ msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
-"Kotak centang \"Tandai sebagai kalender default\" dinonaktifkan di setelan "
-"kalender, jika kalender hanya dapat dibaca"
+"Matikan checkbox \"Tandai sebagai kalender default\" di pengaturan kalender, "
+"jika kalender bersifat read-only"
 
 #: data/io.elementary.calendar.appdata.xml.in:45
 msgid "Removed no longer needed sandbox permission for accounts service"
-msgstr "Dihapus tidak lagi diperlukan izin kotak pasir untuk layanan akun"
+msgstr "Hapus izin sandbox yang tidak lagi dibutuhkan untuk layanan akun"
 
 #: data/io.elementary.calendar.appdata.xml.in:46
 msgid "Fixed potential memory leak"
-msgstr "Memperbaiki potensi kebocoran memori"
+msgstr "Perbaiki potensi kebocoran memori"
 
 #: data/io.elementary.calendar.appdata.xml.in:54
 msgid "Ensure Calendar runs in the background on startup"
@@ -120,7 +120,7 @@ msgstr "Perbaiki kebocoran memori saat mendapatkan informasi zona waktu"
 
 #: data/io.elementary.calendar.appdata.xml.in:56
 msgid "Reliably read Windows-style timezones"
-msgstr "Andal membaca zona waktu bergaya Windows"
+msgstr "Baca dengan akurat zona waktu bergaya Windows"
 
 #: data/io.elementary.calendar.appdata.xml.in:68
 msgid "Fix notification icons in the notification indicator"
@@ -132,7 +132,7 @@ msgstr "Perbaiki masalah di mana zona waktu acara ditimpa"
 
 #: data/io.elementary.calendar.appdata.xml.in:70
 msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "Pastikan Kalender diluncurkan saat notifikasi diklik"
+msgstr "Pastikan Kalender dibuka ketika notifikasi diklik"
 
 #: data/io.elementary.calendar.appdata.xml.in:82
 msgid "Fix broken calendar color with some online providers"
