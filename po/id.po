@@ -8,7 +8,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
 "PO-Revision-Date: 2023-05-16 19:41+0000\n"
-"Last-Translator: Muhammad Dholifun Nafsi <muhammad_dholifun@protonmail.com>\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/calendar/"
 "calendar/id/>\n"
 "Language: id\n"
@@ -126,7 +127,7 @@ msgstr "Pilih Kalender untuk Diimpor"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Acara dari \"%s\" akan digabung ke kalender ini:"
+msgstr "Acara dari \"%s\" akan digabung dengan kalender ini:"
 
 #: src/ImportDialog.vala:47
 #, c-format
