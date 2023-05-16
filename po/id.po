@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2023-05-16 19:41+0000\n"
+"PO-Revision-Date: 2023-05-16 19:48+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/calendar/"
@@ -678,7 +678,7 @@ msgstr "Simpan"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr "janti temu;pertemuan"
+msgstr "janji temu;pertemuan"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -690,49 +690,51 @@ msgstr ""
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "panggilan;telepon;telepon;dering"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "bar;koktail;minuman;happy hour"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "mobil;mengemudi;berkendara;perjalanan;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr ""
+msgstr "penerbangan;bandara;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
+"sarapan;brunch;makan malam;makan siang;makan malam;rumah "
+"steak;burger;makanan;barbekiu"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "pengadilan;juri;pajak;pengacara;kontrak"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie;film"
-msgstr ""
+msgstr "film"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr ""
+msgstr "pernikahan"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
@@ -758,7 +760,7 @@ msgstr "%s, %s - %s"
 #: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s pukul %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:341
@@ -781,7 +783,7 @@ msgstr "Sunting…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Duplikat…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -822,7 +824,7 @@ msgstr "Ekspor Kalender…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "Pengaturan Akun Daring…"
 
 #: src/Widgets/SourcePopover.vala:99
 #, fuzzy
@@ -831,7 +833,7 @@ msgstr "Pilih kalender untuk ditampilkan"
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
-msgstr ""
+msgstr "Buka"
 
 #: src/Widgets/SourceRow.vala:75
 #, fuzzy
