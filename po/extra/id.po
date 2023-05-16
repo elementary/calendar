@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
 "PO-Revision-Date: 2023-05-16 20:03+0000\n"
-"Last-Translator: Muhammad Dholifun Nafsi <muhammad_dholifun@protonmail.com>\n"
+"Last-Translator: thariqfarsha <mthariqfarsha@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/calendar/"
 "extra/id/>\n"
 "Language: id\n"
@@ -79,7 +79,7 @@ msgstr "Fitur:"
 
 #: data/io.elementary.calendar.appdata.xml.in:39
 msgid "Ask for confirmation before deleting events"
-msgstr "Minta konfirmasi sebelum menghapus acara"
+msgstr "Konfirmasi sebelum menghapus acara"
 
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid ""
