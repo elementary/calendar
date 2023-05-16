@@ -8,7 +8,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-01 02:27+0000\n"
 "PO-Revision-Date: 2023-05-17 20:06+0000\n"
-"Last-Translator: thariqfarsha <mthariqfarsha@gmail.com>\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/calendar/"
 "extra/id/>\n"
 "Language: id\n"
@@ -328,10 +329,8 @@ msgid "Fixes exporting, importing and printing calendars."
 msgstr ""
 
 #: data/io.elementary.calendar.appdata.xml.in:245
-#, fuzzy
-#| msgid "elementary LLC."
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
