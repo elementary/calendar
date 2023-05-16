@@ -84,7 +84,7 @@ msgstr "Konfirmasi sebelum menghapus acara"
 #: data/io.elementary.calendar.appdata.xml.in:40
 msgid ""
 "Follow email and web links in the event description with Control + Click"
-msgstr "Ikuti email dan tautan web dalam deskripsi acara dengan Kontrol + Klik"
+msgstr "Buka email dan tautan web di deskripsi acara dengan Control + Klik"
 
 #: data/io.elementary.calendar.appdata.xml.in:42
 #: data/io.elementary.calendar.appdata.xml.in:52
