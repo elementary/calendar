@@ -61,7 +61,7 @@ calendar_deps = [
     gclue_dep
 ]
 
-if get_option('packagekit_backend')
+if get_option('use_libchamplain')
     calendar_files += files('EventEdition/LocationPanel.vala')
 
     calendar_deps += [

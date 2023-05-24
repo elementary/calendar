@@ -38,7 +38,7 @@ else
     libsoup_dep = dependency('libsoup-2.4')
 endif
 gmodule_dep = dependency('gmodule-2.0')
-if get_option('packagekit_backend')
+if get_option('use_libchamplain')
     champlain_dep = dependency('champlain-0.12')
     champlain_gtk_dep = dependency('champlain-gtk-0.12')
     add_project_arguments('--define', 'USE_LIBCHAMPLAIN', language: 'vala')
