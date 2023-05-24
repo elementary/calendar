@@ -42,7 +42,7 @@ public class EventDialog : Granite.Dialog {
 
         private EventEdition.GuestsPanel guests_panel;
         private EventEdition.InfoPanel info_panel;
-#ifdef USE_LIBCHAMPLAIN
+#if USE_LIBCHAMPLAIN
         private EventEdition.LocationPanel location_panel;
 #endif        
         private EventEdition.ReminderPanel reminder_panel;
@@ -76,7 +76,7 @@ public class EventDialog : Granite.Dialog {
 
             guests_panel = new EventEdition.GuestsPanel (this);
             info_panel = new EventEdition.InfoPanel (this);
-#ifdef USE_LIBCHAMPLAIN
+#if USE_LIBCHAMPLAIN
             location_panel = new EventEdition.LocationPanel (this);
 #endif
             reminder_panel = new EventEdition.ReminderPanel (this);
@@ -109,7 +109,7 @@ public class EventDialog : Granite.Dialog {
 
                         guests_panel.guests += ev.participants;
 
-#ifdef USE_LIBCHAMPLAIN
+#if USE_LIBCHAMPLAIN
                         if (ev.location.length > 0) {
                             location_panel.location = ev.location;
                         }
@@ -124,7 +124,7 @@ public class EventDialog : Granite.Dialog {
 
             var stack = new Gtk.Stack ();
             stack.add_titled (info_panel, "infopanel", _("General Informations"));
-#ifdef USE_LIBCHAMPLAIN
+#if USE_LIBCHAMPLAIN
             stack.add_titled (location_panel, "locationpanel", _("Location"));
 #endif
             stack.add_titled (guests_panel, "guestspanel", _("Guests"));
@@ -132,7 +132,7 @@ public class EventDialog : Granite.Dialog {
             ///Translators: The name of the repeat panel tab
             stack.add_titled (repeat_panel, "repeatpanel", C_("Section Header", "Repeat")); //vala-lint=space-before-paren
             stack.child_set_property (info_panel, "icon-name", "office-calendar-symbolic");
-#ifdef USE_LIBCHAMPLAIN
+#if USE_LIBCHAMPLAIN
             stack.child_set_property (location_panel, "icon-name", "mark-location-symbolic");
 #endif
             stack.child_set_property (guests_panel, "icon-name", "system-users-symbolic");
@@ -199,7 +199,7 @@ public class EventDialog : Granite.Dialog {
 
         private void save_dialog () {
             info_panel.save ();
-#ifdef USE_LIBCHAMPLAIN
+#if USE_LIBCHAMPLAIN
             location_panel.save ();
 #endif
             guests_panel.save ();
