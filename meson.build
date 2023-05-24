@@ -38,8 +38,11 @@ else
     libsoup_dep = dependency('libsoup-2.4')
 endif
 gmodule_dep = dependency('gmodule-2.0')
-champlain_dep = dependency('champlain-0.12')
-champlain_gtk_dep = dependency('champlain-gtk-0.12')
+if get_option('packagekit_backend')
+    champlain_dep = dependency('champlain-0.12')
+    champlain_gtk_dep = dependency('champlain-gtk-0.12')
+    add_project_arguments('--define', 'USE_LIBCHAMPLAIN', language: 'vala')
+endif
 clutter_dep = dependency('clutter-1.0')
 clutter_gtk_dep = dependency('clutter-gtk-1.0')
 folks_dep = dependency('folks')

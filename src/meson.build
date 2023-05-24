@@ -10,7 +10,6 @@ calendar_files = files(
     'EventEdition/GuestGrid.vala',
     'EventEdition/GuestsPanel.vala',
     'EventEdition/InfoPanel.vala',
-    'EventEdition/LocationPanel.vala',
     'EventEdition/ReminderPanel.vala',
     'EventEdition/RepeatPanel.vala',
     'EventParser/EventParser.vala',
@@ -55,14 +54,21 @@ calendar_deps = [
     libsoup_dep,
     gmodule_dep,
     m_dep,
-    champlain_dep,
-    champlain_gtk_dep,
     clutter_dep,
     clutter_gtk_dep,
     folks_dep,
     geocode_glib_dep,
     gclue_dep
 ]
+
+if get_option('packagekit_backend')
+    calendar_files += files('EventEdition/LocationPanel.vala')
+
+    calendar_deps += [
+        champlain_dep,
+        champlain_gtk_dep,
+    ]
+endif
 
 executable(
     meson.project_name(),

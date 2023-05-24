@@ -1,0 +1,1 @@
+option('use_libchamplain', type : 'boolean', value : true, description : 'Use libchamplain')
