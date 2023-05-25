@@ -44,7 +44,7 @@ public class EventDialog : Granite.Dialog {
         private EventEdition.InfoPanel info_panel;
 #if USE_LIBCHAMPLAIN
         private EventEdition.LocationPanel location_panel;
-#endif        
+#endif
         private EventEdition.ReminderPanel reminder_panel;
         private EventEdition.RepeatPanel repeat_panel;
 
