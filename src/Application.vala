@@ -181,7 +181,10 @@ namespace Maya {
                 portal = new Xdp.Portal ();
             }
 
-            string reason = _("Calendar wants to run in the background and initialize with the session for events notifications");
+            string reason = _(
+                "Calendar will automatically start when this device turns on " +
+                "and run when its window is closed so that it can send event notifications."
+            );
             var command = new GenericArray<unowned string> (2);
             foreach (unowned var arg in DAEMON_COMMAND) {
                 command.add (arg);
