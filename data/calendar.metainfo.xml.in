@@ -61,7 +61,8 @@
         </ul>
       </description>
       <issues>
-        <issue url="https://github.com/elementary/calendar/issues/778">Use the background portal </issue>
+        <issue url="https://github.com/elementary/calendar/issues/778">Use the background portal</issue>
+      </issues>
     </release>
 
     <release version="6.1.2" date="2022-11-15" urgency="medium">
