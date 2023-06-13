@@ -161,10 +161,11 @@ modules:
     config-opts:
       - '-Denable-installed-tests=false'
       - '-Denable-gtk-doc=false'
+      - '-Dsoup2=false'
     sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/geocode-glib.git
-        tag: '3.26.2'
+      - type: archive
+        url: https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz
+        sha256: 2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa
 
   - name: libportal
     buildsystem: meson
