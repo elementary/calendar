@@ -1,4 +1,3 @@
-etc/xdg/autostart/io.elementary.calendar-daemon.desktop
 usr/bin/io.elementary.calendar
 usr/share/applications/io.elementary.calendar.desktop
 usr/share/glib-2.0/schemas
