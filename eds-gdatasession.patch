@@ -1,0 +1,91 @@
+From 4742f6325edf37d9e8e84f87e2fdc07039d78f1d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Corentin=20No=C3=ABl?= <corentin.noel@collabora.com>
+Date: Mon, 12 Dec 2022 16:57:20 +0100
+Subject: [PATCH] M!109 - EGDataSession: Make it available to the GObject
+ introspection
+
+This allows to use EGDataSession with any GObject introspected language.
+
+Closes: https://gitlab.gnome.org/GNOME/evolution-data-server/-/merge_requests/109
+---
+ src/libedataserver/CMakeLists.txt    |  2 +-
+ src/libedataserver/e-gdata-session.h |  4 ----
+ src/vala/CMakeLists.txt              |  1 +
+ src/vala/EDataServer-1.2.metadata    | 11 +++--------
+ 4 files changed, 5 insertions(+), 13 deletions(-)
+
+diff --git a/src/libedataserver/CMakeLists.txt b/src/libedataserver/CMakeLists.txt
+index 2dfc1bde4..5ccb29b56 100644
+--- a/src/libedataserver/CMakeLists.txt
++++ b/src/libedataserver/CMakeLists.txt
+@@ -295,7 +295,7 @@ install(FILES ${HEADERS}
+ 
+ set(gir_sources ${SOURCES} ${HEADERS})
+ set(gir_identifies_prefixes E)
+-set(gir_includes GObject-2.0 Gio-2.0 Soup-3.0 libxml2-2.0)
++set(gir_includes GObject-2.0 Gio-2.0 Soup-3.0 libxml2-2.0 Json-1.0)
+ set(gir_cflags
+ 	-DLIBEDATASERVER_COMPILATION
+ )
+diff --git a/src/libedataserver/e-gdata-session.h b/src/libedataserver/e-gdata-session.h
+index d58dde42b..c87f8f596 100644
+--- a/src/libedataserver/e-gdata-session.h
++++ b/src/libedataserver/e-gdata-session.h
+@@ -11,8 +11,6 @@
+ #ifndef E_GDATA_SESSION_H
+ #define E_GDATA_SESSION_H
+ 
+-#ifndef __GI_SCANNER__
+-
+ #include <json-glib/json-glib.h>
+ #include <libedataserver/e-gdata-query.h>
+ #include <libedataserver/e-soup-session.h>
+@@ -222,8 +220,6 @@ gboolean	e_gdata_session_tasks_update_sync	(EGDataSession *self,
+ 							 GCancellable *cancellable,
+ 							 GError **error);
+ 
+-#endif /* __GI_SCANNER__ */
+-
+ G_END_DECLS
+ 
+ #endif /* E_GDATA_SESSION_H */
+diff --git a/src/vala/CMakeLists.txt b/src/vala/CMakeLists.txt
+index 2f88c3925..8cc698ac3 100644
+--- a/src/vala/CMakeLists.txt
++++ b/src/vala/CMakeLists.txt
+@@ -107,6 +107,7 @@ set(vala_deps
+ 	gio-2.0
+ 	libsoup-3.0
+ 	libxml-2.0
++	json-glib-1.0
+ 	posix
+ )
+ 
+diff --git a/src/vala/EDataServer-1.2.metadata b/src/vala/EDataServer-1.2.metadata
+index 255437be6..1c28ae8fc 100644
+--- a/src/vala/EDataServer-1.2.metadata
++++ b/src/vala/EDataServer-1.2.metadata
+@@ -6,14 +6,7 @@ xml_get_child_by_name skip=false type="Xml.Node*?"
+ xml_get_child_by_name.parent type="Xml.Node*"
+ xml_get_child_by_name.child_name type="string"
+ 
+-xmlhash_add parent="E.XmlHash"
+-xmlhash_compare parent="E.XmlHash"
+-xmlhash_destroy parent="E.XmlHash"
+-xmlhash_foreach_key_remove parent="E.XmlHash"
+-xmlhash_foreach_key parent="E.XmlHash"
+-xmlhash_new parent="E.XmlHash"
+-xmlhash_remove parent="E.XmlHash"
+-xmlhash_write parent="E.XmlHash"
++xmlhash_* name="xmlhash_(.+)" parent="E.XmlHash"
+ 
+ time_parse_date.result type="Posix.tm"
+ time_parse_date_and_time.result type="Posix.tm"
+@@ -32,3 +25,5 @@ webdav_discover_sources_finish parent="E.Source" symbol_type="method" instance_i
+ webdav_discover_sources_full parent="E.Source" symbol_type="method" instance_idx=0 finish_name="e_webdav_discover_sources_finish"
+ webdav_discover_sources_full_sync parent="E.Source" symbol_type="method" instance_idx=0
+ webdav_discover_sources_sync parent="E.Source" symbol_type="method" instance_idx=0
++
++gdata_* name="gdata_(.+)" parent="E.GData"
+-- 
+GitLab
