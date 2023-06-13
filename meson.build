@@ -1,6 +1,6 @@
 project('io.elementary.calendar',
     'c', 'vala',
-    version: '6.1.3',
+    version: '7.0.0',
     meson_version: '>=0.56.0'
 )
 
