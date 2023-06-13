@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:28+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
 "PO-Revision-Date: 2022-05-19 14:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
@@ -41,43 +41,39 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:67
-#: data/calendar.metainfo.xml.in:78 data/calendar.metainfo.xml.in:90
+#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:82
 msgid "Minor Updates:"
 msgstr "Pequenas atualizações:"
 
-#: data/calendar.metainfo.xml.in:60
-msgid "Ask the user's permission to run in background if required"
-msgstr ""
-
-#: data/calendar.metainfo.xml.in:69 data/calendar.metainfo.xml.in:80
-#: data/calendar.metainfo.xml.in:93
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:85
 msgid "Updated translations"
 msgstr "Traduções atualizadas"
 
-#: data/calendar.metainfo.xml.in:92
+#: data/calendar.metainfo.xml.in:84
 msgid "Updated app icon"
 msgstr "Ícone da aplicação atualizado"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:92
 msgid "Features:"
 msgstr "Funcionalidades:"
 
-#: data/calendar.metainfo.xml.in:102
+#: data/calendar.metainfo.xml.in:94
 msgid "Ask for confirmation before deleting events"
 msgstr "Pedir confirmação antes de eliminar os eventos"
 
-#: data/calendar.metainfo.xml.in:103
+#: data/calendar.metainfo.xml.in:95
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Segue o e-mail e as ligações web na descrição do evento com Control + Clique"
 
-#: data/calendar.metainfo.xml.in:105
+#: data/calendar.metainfo.xml.in:97
 msgid "Fixes:"
 msgstr "Correções:"
 
-#: data/calendar.metainfo.xml.in:107
+#: data/calendar.metainfo.xml.in:99
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -85,12 +81,12 @@ msgstr ""
 "Desativa a caixa de seleção \"Marcar como calendário predefinido\" nas "
 "definições do calendário, se o calendário for de apenas-leitura"
 
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:100
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 "Removido já não precisava de permissão para o serviço de contas sandbox"
 
-#: data/calendar.metainfo.xml.in:109
+#: data/calendar.metainfo.xml.in:101
 msgid "Fixed potential memory leak"
 msgstr "Corrigida possível fuga de memória"
 
