@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 00:42+0000\n"
+"POT-Creation-Date: 2023-06-13 01:28+0000\n"
 "PO-Revision-Date: 2022-08-08 11:17+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/calendar/extra/ko/"
@@ -20,18 +20,16 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: data/io.elementary.calendar.appdata.xml.in:8
-#: data/io.elementary.calendar.desktop.in:4
+#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "달력"
 
-#: data/io.elementary.calendar.appdata.xml.in:9
-#: data/io.elementary.calendar.desktop.in:6
+#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "이벤트를 확인하고 편집합니다"
 
-#: data/io.elementary.calendar.appdata.xml.in:11
+#: data/calendar.metainfo.xml.in:13
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
@@ -39,309 +37,62 @@ msgstr ""
 "구글 캘린더, 아웃룩, CalDAV 등과 같은 여러 가지 일정 관리 도구들을 한 곳에서 "
 "동기화하고 관리할 수 있는 작고 가벼운 일정관리 앱."
 
-#: data/io.elementary.calendar.appdata.xml.in:16
-#: data/io.elementary.calendar.appdata.xml.in:25
-#: data/io.elementary.calendar.appdata.xml.in:36
-#: data/io.elementary.calendar.appdata.xml.in:48
-#: data/io.elementary.calendar.appdata.xml.in:78
-#: data/io.elementary.calendar.appdata.xml.in:92
-#: data/io.elementary.calendar.appdata.xml.in:105
-#: data/io.elementary.calendar.appdata.xml.in:124
-#: data/io.elementary.calendar.appdata.xml.in:142
-#: data/io.elementary.calendar.appdata.xml.in:158
-#: data/io.elementary.calendar.appdata.xml.in:167
-#: data/io.elementary.calendar.appdata.xml.in:176
-#: data/io.elementary.calendar.appdata.xml.in:185
+#: data/calendar.metainfo.xml.in:51
+#, fuzzy
+#| msgid "elementary LLC."
+msgid "elementary, Inc."
+msgstr "elementary LLC."
+
+#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:67
+#: data/calendar.metainfo.xml.in:78 data/calendar.metainfo.xml.in:90
 msgid "Minor Updates:"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:18
+#: data/calendar.metainfo.xml.in:60
 msgid "Ask the user's permission to run in background if required"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:27
-#: data/io.elementary.calendar.appdata.xml.in:38
-#: data/io.elementary.calendar.appdata.xml.in:51
-#: data/io.elementary.calendar.appdata.xml.in:80
-#: data/io.elementary.calendar.appdata.xml.in:94
-#: data/io.elementary.calendar.appdata.xml.in:107
-#: data/io.elementary.calendar.appdata.xml.in:132
-#: data/io.elementary.calendar.appdata.xml.in:146
-#: data/io.elementary.calendar.appdata.xml.in:161
-#: data/io.elementary.calendar.appdata.xml.in:170
-#: data/io.elementary.calendar.appdata.xml.in:179
-#: data/io.elementary.calendar.appdata.xml.in:190
-#: data/io.elementary.calendar.appdata.xml.in:210
-#: data/io.elementary.calendar.appdata.xml.in:222
+#: data/calendar.metainfo.xml.in:69 data/calendar.metainfo.xml.in:80
+#: data/calendar.metainfo.xml.in:93
 msgid "Updated translations"
 msgstr "최신 번역"
 
-#: data/io.elementary.calendar.appdata.xml.in:50
+#: data/calendar.metainfo.xml.in:92
 #, fuzzy
 #| msgid "Updated translations"
 msgid "Updated app icon"
 msgstr "번역 업데이트"
 
-#: data/io.elementary.calendar.appdata.xml.in:57
+#: data/calendar.metainfo.xml.in:100
 msgid "Features:"
 msgstr "기능:"
 
-#: data/io.elementary.calendar.appdata.xml.in:59
+#: data/calendar.metainfo.xml.in:102
 msgid "Ask for confirmation before deleting events"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:60
+#: data/calendar.metainfo.xml.in:103
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:62
-#: data/io.elementary.calendar.appdata.xml.in:72
-#: data/io.elementary.calendar.appdata.xml.in:86
-#: data/io.elementary.calendar.appdata.xml.in:100
-#: data/io.elementary.calendar.appdata.xml.in:118
+#: data/calendar.metainfo.xml.in:105
 msgid "Fixes:"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:64
+#: data/calendar.metainfo.xml.in:107
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:65
+#: data/calendar.metainfo.xml.in:108
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:66
+#: data/calendar.metainfo.xml.in:109
 msgid "Fixed potential memory leak"
 msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:74
-msgid "Ensure Calendar runs in the background on startup"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:75
-msgid "Fix memory leak when getting timezone information"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:76
-msgid "Reliably read Windows-style timezones"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:88
-msgid "Fix notification icons in the notification indicator"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:89
-msgid "Fix an issue where event timezones were overwritten"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:90
-#, fuzzy
-#| msgid "Always use calendar icon in notifications"
-msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "알림에 항상 달력 아이콘 사용"
-
-#: data/io.elementary.calendar.appdata.xml.in:102
-msgid "Fix broken calendar color with some online providers"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:103
-msgid "Fix an issue with some all-day events"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:113
-#: data/io.elementary.calendar.appdata.xml.in:138
-msgid "New Features:"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:115
-msgid "Import ICS files from the gear menu"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:116
-msgid "Support the dark style"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:120
-msgid "Properly show events on the last day of the month"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:121
-msgid "Fix end times for all-day events"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:122
-msgid "Notify for all alarms on an event"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:126
-msgid "Improved offline support"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:127
-msgid "New colorful avatar fallbacks"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:128
-msgid "Include \"film\" as an event icon keyword"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:129
-msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:130
-msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:131
-#: data/io.elementary.calendar.appdata.xml.in:209
-#, fuzzy
-msgid "Performance improvements"
-msgstr "오른쪽에서 왼쪽으로 읽고/쓰기 개선"
-
-#: data/io.elementary.calendar.appdata.xml.in:140
-msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:144
-msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:145
-msgid ""
-"\"Mark as default calendar\" box is now correctly checked when editing a "
-"calendar"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:152
-msgid "Improvements:"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:154
-msgid "Allow modification of recurring events"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:155
-msgid "Improve handling of week start day"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:156
-msgid "Fix timezone errors with all-day events"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:160
-msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:169
-msgid "Fix issues with time zones not being recognized"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:178
-msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:187
-msgid "Correctly save event reminders"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:188
-msgid "Ellipsize event participant details if necessary"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:189
-msgid "Fix unwanted rescheduling when editing event title"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:196
-msgid "Fix crash when editing an event with no location"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:201
-msgid "Fix potential crash when loading events with no start or end time"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:206
-msgid "Make agenda pane fill the whole space"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:207
-msgid "Set the suggested time for new events to the next whole hour"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:208
-msgid "Fix issues with recurring events"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:215
-msgid "Present import window when opening ICS files"
-msgstr "ICS 파일을 열 때 현재 가져오기 창 표시"
-
-#: data/io.elementary.calendar.appdata.xml.in:216
-msgid "Add a search entry for calendars"
-msgstr "달력 검색 항목 추가"
-
-#: data/io.elementary.calendar.appdata.xml.in:217
-msgid "Always use calendar icon in notifications"
-msgstr "알림에 항상 달력 아이콘 사용"
-
-#: data/io.elementary.calendar.appdata.xml.in:218
-msgid "Agenda view can now be navigated by keyboard"
-msgstr "이제 키보드로 일정 보기를 탐색할 수 있습니다"
-
-#: data/io.elementary.calendar.appdata.xml.in:219
-msgid "Right-to-left improvements"
-msgstr "오른쪽에서 왼쪽으로 읽고/쓰기 개선"
-
-#: data/io.elementary.calendar.appdata.xml.in:220
-msgid "Various UI overhauls including lime accent color"
-msgstr "라임 강조 색을 포함한 전체 UI 개선"
-
-#: data/io.elementary.calendar.appdata.xml.in:221
-msgid "Overall code cleanup and rewrites"
-msgstr "전체 코드 정리 및 다시 쓰기"
-
-#: data/io.elementary.calendar.appdata.xml.in:227
-msgid "Styling adjustments"
-msgstr "스타일 조정"
-
-#: data/io.elementary.calendar.appdata.xml.in:228
-msgid "Fix location panel initialization"
-msgstr "지역 패널 초기화 문제 해결"
-
-#: data/io.elementary.calendar.appdata.xml.in:229
-msgid "New translations"
-msgstr "새 번역"
-
-#: data/io.elementary.calendar.appdata.xml.in:234
-msgid "Update wingpanel-indicator-datetime settings path."
-msgstr "wingpanel-indicator-datetime 설정 경로를 업데이트."
-
-#: data/io.elementary.calendar.appdata.xml.in:235
-msgid "New translations."
-msgstr "새 번역."
-
-#: data/io.elementary.calendar.appdata.xml.in:240
-#: data/io.elementary.calendar.appdata.xml.in:247
-msgid "Various bug fixes and improvements."
-msgstr "여러 버그 수정 및 개선."
-
-#: data/io.elementary.calendar.appdata.xml.in:245
-msgid "Fixes for calendar accuracy and integrity issues."
-msgstr "달력의 정확성 및 무결성 문제 수정."
-
-#: data/io.elementary.calendar.appdata.xml.in:246
-msgid "Fixes exporting, importing and printing calendars."
-msgstr "달력 내보내기, 가져오기 및 인쇄 수정."
-
-#: data/io.elementary.calendar.appdata.xml.in:265
-#, fuzzy
-#| msgid "elementary LLC."
-msgid "elementary, Inc."
-msgstr "elementary LLC."
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
@@ -350,6 +101,60 @@ msgstr "마야,일정표;날짜;요일;이벤트;캘린더;ics;caldav;에볼루�
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "이벤트 추가"
+
+#, fuzzy
+#~| msgid "Always use calendar icon in notifications"
+#~ msgid "Ensure Calendar is launched when notifications are clicked"
+#~ msgstr "알림에 항상 달력 아이콘 사용"
+
+#, fuzzy
+#~ msgid "Performance improvements"
+#~ msgstr "오른쪽에서 왼쪽으로 읽고/쓰기 개선"
+
+#~ msgid "Present import window when opening ICS files"
+#~ msgstr "ICS 파일을 열 때 현재 가져오기 창 표시"
+
+#~ msgid "Add a search entry for calendars"
+#~ msgstr "달력 검색 항목 추가"
+
+#~ msgid "Always use calendar icon in notifications"
+#~ msgstr "알림에 항상 달력 아이콘 사용"
+
+#~ msgid "Agenda view can now be navigated by keyboard"
+#~ msgstr "이제 키보드로 일정 보기를 탐색할 수 있습니다"
+
+#~ msgid "Right-to-left improvements"
+#~ msgstr "오른쪽에서 왼쪽으로 읽고/쓰기 개선"
+
+#~ msgid "Various UI overhauls including lime accent color"
+#~ msgstr "라임 강조 색을 포함한 전체 UI 개선"
+
+#~ msgid "Overall code cleanup and rewrites"
+#~ msgstr "전체 코드 정리 및 다시 쓰기"
+
+#~ msgid "Styling adjustments"
+#~ msgstr "스타일 조정"
+
+#~ msgid "Fix location panel initialization"
+#~ msgstr "지역 패널 초기화 문제 해결"
+
+#~ msgid "New translations"
+#~ msgstr "새 번역"
+
+#~ msgid "Update wingpanel-indicator-datetime settings path."
+#~ msgstr "wingpanel-indicator-datetime 설정 경로를 업데이트."
+
+#~ msgid "New translations."
+#~ msgstr "새 번역."
+
+#~ msgid "Various bug fixes and improvements."
+#~ msgstr "여러 버그 수정 및 개선."
+
+#~ msgid "Fixes for calendar accuracy and integrity issues."
+#~ msgstr "달력의 정확성 및 무결성 문제 수정."
+
+#~ msgid "Fixes exporting, importing and printing calendars."
+#~ msgstr "달력 내보내기, 가져오기 및 인쇄 수정."
 
 #~ msgid "office-calendar"
 #~ msgstr "office-calendar"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 00:42+0000\n"
+"POT-Creation-Date: 2023-06-13 01:28+0000\n"
 "PO-Revision-Date: 2023-02-17 10:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -19,18 +19,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.14.2\n"
 
-#: data/io.elementary.calendar.appdata.xml.in:8
-#: data/io.elementary.calendar.desktop.in:4
+#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Calendar"
 
-#: data/io.elementary.calendar.appdata.xml.in:9
-#: data/io.elementary.calendar.desktop.in:6
+#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "View and schedule events"
 
-#: data/io.elementary.calendar.appdata.xml.in:11
+#: data/calendar.metainfo.xml.in:13
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
@@ -38,70 +36,47 @@ msgstr ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 
-#: data/io.elementary.calendar.appdata.xml.in:16
-#: data/io.elementary.calendar.appdata.xml.in:25
-#: data/io.elementary.calendar.appdata.xml.in:36
-#: data/io.elementary.calendar.appdata.xml.in:48
-#: data/io.elementary.calendar.appdata.xml.in:78
-#: data/io.elementary.calendar.appdata.xml.in:92
-#: data/io.elementary.calendar.appdata.xml.in:105
-#: data/io.elementary.calendar.appdata.xml.in:124
-#: data/io.elementary.calendar.appdata.xml.in:142
-#: data/io.elementary.calendar.appdata.xml.in:158
-#: data/io.elementary.calendar.appdata.xml.in:167
-#: data/io.elementary.calendar.appdata.xml.in:176
-#: data/io.elementary.calendar.appdata.xml.in:185
+#: data/calendar.metainfo.xml.in:51
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:67
+#: data/calendar.metainfo.xml.in:78 data/calendar.metainfo.xml.in:90
 msgid "Minor Updates:"
 msgstr "Minor Updates:"
 
-#: data/io.elementary.calendar.appdata.xml.in:18
+#: data/calendar.metainfo.xml.in:60
 msgid "Ask the user's permission to run in background if required"
 msgstr ""
 
-#: data/io.elementary.calendar.appdata.xml.in:27
-#: data/io.elementary.calendar.appdata.xml.in:38
-#: data/io.elementary.calendar.appdata.xml.in:51
-#: data/io.elementary.calendar.appdata.xml.in:80
-#: data/io.elementary.calendar.appdata.xml.in:94
-#: data/io.elementary.calendar.appdata.xml.in:107
-#: data/io.elementary.calendar.appdata.xml.in:132
-#: data/io.elementary.calendar.appdata.xml.in:146
-#: data/io.elementary.calendar.appdata.xml.in:161
-#: data/io.elementary.calendar.appdata.xml.in:170
-#: data/io.elementary.calendar.appdata.xml.in:179
-#: data/io.elementary.calendar.appdata.xml.in:190
-#: data/io.elementary.calendar.appdata.xml.in:210
-#: data/io.elementary.calendar.appdata.xml.in:222
+#: data/calendar.metainfo.xml.in:69 data/calendar.metainfo.xml.in:80
+#: data/calendar.metainfo.xml.in:93
 msgid "Updated translations"
 msgstr "Updated translations"
 
-#: data/io.elementary.calendar.appdata.xml.in:50
+#: data/calendar.metainfo.xml.in:92
 msgid "Updated app icon"
 msgstr "Updated app icon"
 
-#: data/io.elementary.calendar.appdata.xml.in:57
+#: data/calendar.metainfo.xml.in:100
 msgid "Features:"
 msgstr "Features:"
 
-#: data/io.elementary.calendar.appdata.xml.in:59
+#: data/calendar.metainfo.xml.in:102
 msgid "Ask for confirmation before deleting events"
 msgstr "Ask for confirmation before deleting events"
 
-#: data/io.elementary.calendar.appdata.xml.in:60
+#: data/calendar.metainfo.xml.in:103
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Follow email and web links in the event description with Control + Click"
 
-#: data/io.elementary.calendar.appdata.xml.in:62
-#: data/io.elementary.calendar.appdata.xml.in:72
-#: data/io.elementary.calendar.appdata.xml.in:86
-#: data/io.elementary.calendar.appdata.xml.in:100
-#: data/io.elementary.calendar.appdata.xml.in:118
+#: data/calendar.metainfo.xml.in:105
 msgid "Fixes:"
 msgstr "Fixes:"
 
-#: data/io.elementary.calendar.appdata.xml.in:64
+#: data/calendar.metainfo.xml.in:107
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -109,236 +84,13 @@ msgstr ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 
-#: data/io.elementary.calendar.appdata.xml.in:65
+#: data/calendar.metainfo.xml.in:108
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr "Removed no longer needed sandbox permission for accounts service"
 
-#: data/io.elementary.calendar.appdata.xml.in:66
+#: data/calendar.metainfo.xml.in:109
 msgid "Fixed potential memory leak"
 msgstr "Fixed potential memory leak"
-
-#: data/io.elementary.calendar.appdata.xml.in:74
-msgid "Ensure Calendar runs in the background on startup"
-msgstr "Ensure Calendar runs in the background on startup"
-
-#: data/io.elementary.calendar.appdata.xml.in:75
-msgid "Fix memory leak when getting timezone information"
-msgstr "Fix memory leak when getting timezone information"
-
-#: data/io.elementary.calendar.appdata.xml.in:76
-msgid "Reliably read Windows-style timezones"
-msgstr "Reliably read Windows-style timezones"
-
-#: data/io.elementary.calendar.appdata.xml.in:88
-msgid "Fix notification icons in the notification indicator"
-msgstr "Fix notification icons in the notification indicator"
-
-#: data/io.elementary.calendar.appdata.xml.in:89
-msgid "Fix an issue where event timezones were overwritten"
-msgstr "Fix an issue where event timezones were overwritten"
-
-#: data/io.elementary.calendar.appdata.xml.in:90
-msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "Ensure Calendar is launched when notifications are clicked"
-
-#: data/io.elementary.calendar.appdata.xml.in:102
-msgid "Fix broken calendar color with some online providers"
-msgstr "Fix broken calendar colour with some online providers"
-
-#: data/io.elementary.calendar.appdata.xml.in:103
-msgid "Fix an issue with some all-day events"
-msgstr "Fix an issue with some all-day events"
-
-#: data/io.elementary.calendar.appdata.xml.in:113
-#: data/io.elementary.calendar.appdata.xml.in:138
-msgid "New Features:"
-msgstr "New Features:"
-
-#: data/io.elementary.calendar.appdata.xml.in:115
-msgid "Import ICS files from the gear menu"
-msgstr "Import ICS files from the gear menu"
-
-#: data/io.elementary.calendar.appdata.xml.in:116
-msgid "Support the dark style"
-msgstr "Support the dark style"
-
-#: data/io.elementary.calendar.appdata.xml.in:120
-msgid "Properly show events on the last day of the month"
-msgstr "Properly show events on the last day of the month"
-
-#: data/io.elementary.calendar.appdata.xml.in:121
-msgid "Fix end times for all-day events"
-msgstr "Fix end times for all-day events"
-
-#: data/io.elementary.calendar.appdata.xml.in:122
-msgid "Notify for all alarms on an event"
-msgstr "Notify for all alarms on an event"
-
-#: data/io.elementary.calendar.appdata.xml.in:126
-msgid "Improved offline support"
-msgstr "Improved offline support"
-
-#: data/io.elementary.calendar.appdata.xml.in:127
-msgid "New colorful avatar fallbacks"
-msgstr "New colourful avatar fallbacks"
-
-#: data/io.elementary.calendar.appdata.xml.in:128
-msgid "Include \"film\" as an event icon keyword"
-msgstr "Include \"film\" as an event icon keyword"
-
-#: data/io.elementary.calendar.appdata.xml.in:129
-msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr "Add Mint and Bubblegum to calendar colour chooser"
-
-#: data/io.elementary.calendar.appdata.xml.in:130
-msgid "Link to Online Accounts settings in the gear menu"
-msgstr "Link to Online Accounts settings in the gear menu"
-
-#: data/io.elementary.calendar.appdata.xml.in:131
-#: data/io.elementary.calendar.appdata.xml.in:209
-msgid "Performance improvements"
-msgstr "Performance improvements"
-
-#: data/io.elementary.calendar.appdata.xml.in:140
-msgid "Add \"Duplicate...\" option to event context menu"
-msgstr "Add \"Duplicate...\" option to event context menu"
-
-#: data/io.elementary.calendar.appdata.xml.in:144
-msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr "Fix an issue where new events could appear twice in Calendar"
-
-#: data/io.elementary.calendar.appdata.xml.in:145
-msgid ""
-"\"Mark as default calendar\" box is now correctly checked when editing a "
-"calendar"
-msgstr ""
-"\"Mark as default calendar\" box is now correctly checked when editing a "
-"calendar"
-
-#: data/io.elementary.calendar.appdata.xml.in:152
-msgid "Improvements:"
-msgstr "Improvements:"
-
-#: data/io.elementary.calendar.appdata.xml.in:154
-msgid "Allow modification of recurring events"
-msgstr "Allow modification of recurring events"
-
-#: data/io.elementary.calendar.appdata.xml.in:155
-msgid "Improve handling of week start day"
-msgstr "Improve handling of week start day"
-
-#: data/io.elementary.calendar.appdata.xml.in:156
-msgid "Fix timezone errors with all-day events"
-msgstr "Fix timezone errors with all-day events"
-
-#: data/io.elementary.calendar.appdata.xml.in:160
-msgid "Don't resize the sidebar when resizing the window"
-msgstr "Don't resize the sidebar when resizing the window"
-
-#: data/io.elementary.calendar.appdata.xml.in:169
-msgid "Fix issues with time zones not being recognized"
-msgstr "Fix issues with time zones not being recognised"
-
-#: data/io.elementary.calendar.appdata.xml.in:178
-msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr "Fix several issues with adding and removing monthly recurring events"
-
-#: data/io.elementary.calendar.appdata.xml.in:187
-msgid "Correctly save event reminders"
-msgstr "Correctly save event reminders"
-
-#: data/io.elementary.calendar.appdata.xml.in:188
-msgid "Ellipsize event participant details if necessary"
-msgstr "Ellipsise event participant details if necessary"
-
-#: data/io.elementary.calendar.appdata.xml.in:189
-msgid "Fix unwanted rescheduling when editing event title"
-msgstr "Fix unwanted rescheduling when editing event title"
-
-#: data/io.elementary.calendar.appdata.xml.in:196
-msgid "Fix crash when editing an event with no location"
-msgstr "Fix crash when editing an event with no location"
-
-#: data/io.elementary.calendar.appdata.xml.in:201
-msgid "Fix potential crash when loading events with no start or end time"
-msgstr "Fix potential crash when loading events with no start or end time"
-
-#: data/io.elementary.calendar.appdata.xml.in:206
-msgid "Make agenda pane fill the whole space"
-msgstr "Make agenda pane fill the whole space"
-
-#: data/io.elementary.calendar.appdata.xml.in:207
-msgid "Set the suggested time for new events to the next whole hour"
-msgstr "Set the suggested time for new events to the next whole hour"
-
-#: data/io.elementary.calendar.appdata.xml.in:208
-msgid "Fix issues with recurring events"
-msgstr "Fix issues with recurring events"
-
-#: data/io.elementary.calendar.appdata.xml.in:215
-msgid "Present import window when opening ICS files"
-msgstr "Present import window when opening ICS files"
-
-#: data/io.elementary.calendar.appdata.xml.in:216
-msgid "Add a search entry for calendars"
-msgstr "Add a search entry for calendars"
-
-#: data/io.elementary.calendar.appdata.xml.in:217
-msgid "Always use calendar icon in notifications"
-msgstr "Always use calendar icon in notifications"
-
-#: data/io.elementary.calendar.appdata.xml.in:218
-msgid "Agenda view can now be navigated by keyboard"
-msgstr "Agenda view can now be navigated by keyboard"
-
-#: data/io.elementary.calendar.appdata.xml.in:219
-msgid "Right-to-left improvements"
-msgstr "Right-to-left improvements"
-
-#: data/io.elementary.calendar.appdata.xml.in:220
-msgid "Various UI overhauls including lime accent color"
-msgstr "Various UI overhauls including lime accent colour"
-
-#: data/io.elementary.calendar.appdata.xml.in:221
-msgid "Overall code cleanup and rewrites"
-msgstr "Overall code cleanup and rewrites"
-
-#: data/io.elementary.calendar.appdata.xml.in:227
-msgid "Styling adjustments"
-msgstr "Styling adjustments"
-
-#: data/io.elementary.calendar.appdata.xml.in:228
-msgid "Fix location panel initialization"
-msgstr "Fix location panel initialisation"
-
-#: data/io.elementary.calendar.appdata.xml.in:229
-msgid "New translations"
-msgstr "New translations"
-
-#: data/io.elementary.calendar.appdata.xml.in:234
-msgid "Update wingpanel-indicator-datetime settings path."
-msgstr "Update wingpanel-indicator-datetime settings path."
-
-#: data/io.elementary.calendar.appdata.xml.in:235
-msgid "New translations."
-msgstr "New translations."
-
-#: data/io.elementary.calendar.appdata.xml.in:240
-#: data/io.elementary.calendar.appdata.xml.in:247
-msgid "Various bug fixes and improvements."
-msgstr "Various bug fixes and improvements."
-
-#: data/io.elementary.calendar.appdata.xml.in:245
-msgid "Fixes for calendar accuracy and integrity issues."
-msgstr "Fixes for calendar accuracy and integrity issues."
-
-#: data/io.elementary.calendar.appdata.xml.in:246
-msgid "Fixes exporting, importing and printing calendars."
-msgstr "Fixes exporting, importing and printing calendars."
-
-#: data/io.elementary.calendar.appdata.xml.in:265
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
@@ -347,6 +99,170 @@ msgstr "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Add Event"
+
+#~ msgid "Ensure Calendar runs in the background on startup"
+#~ msgstr "Ensure Calendar runs in the background on startup"
+
+#~ msgid "Fix memory leak when getting timezone information"
+#~ msgstr "Fix memory leak when getting timezone information"
+
+#~ msgid "Reliably read Windows-style timezones"
+#~ msgstr "Reliably read Windows-style timezones"
+
+#~ msgid "Fix notification icons in the notification indicator"
+#~ msgstr "Fix notification icons in the notification indicator"
+
+#~ msgid "Fix an issue where event timezones were overwritten"
+#~ msgstr "Fix an issue where event timezones were overwritten"
+
+#~ msgid "Ensure Calendar is launched when notifications are clicked"
+#~ msgstr "Ensure Calendar is launched when notifications are clicked"
+
+#~ msgid "Fix broken calendar color with some online providers"
+#~ msgstr "Fix broken calendar colour with some online providers"
+
+#~ msgid "Fix an issue with some all-day events"
+#~ msgstr "Fix an issue with some all-day events"
+
+#~ msgid "New Features:"
+#~ msgstr "New Features:"
+
+#~ msgid "Import ICS files from the gear menu"
+#~ msgstr "Import ICS files from the gear menu"
+
+#~ msgid "Support the dark style"
+#~ msgstr "Support the dark style"
+
+#~ msgid "Properly show events on the last day of the month"
+#~ msgstr "Properly show events on the last day of the month"
+
+#~ msgid "Fix end times for all-day events"
+#~ msgstr "Fix end times for all-day events"
+
+#~ msgid "Notify for all alarms on an event"
+#~ msgstr "Notify for all alarms on an event"
+
+#~ msgid "Improved offline support"
+#~ msgstr "Improved offline support"
+
+#~ msgid "New colorful avatar fallbacks"
+#~ msgstr "New colourful avatar fallbacks"
+
+#~ msgid "Include \"film\" as an event icon keyword"
+#~ msgstr "Include \"film\" as an event icon keyword"
+
+#~ msgid "Add Mint and Bubblegum to calendar color chooser"
+#~ msgstr "Add Mint and Bubblegum to calendar colour chooser"
+
+#~ msgid "Link to Online Accounts settings in the gear menu"
+#~ msgstr "Link to Online Accounts settings in the gear menu"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Performance improvements"
+
+#~ msgid "Add \"Duplicate...\" option to event context menu"
+#~ msgstr "Add \"Duplicate...\" option to event context menu"
+
+#~ msgid "Fix an issue where new events could appear twice in Calendar"
+#~ msgstr "Fix an issue where new events could appear twice in Calendar"
+
+#~ msgid ""
+#~ "\"Mark as default calendar\" box is now correctly checked when editing a "
+#~ "calendar"
+#~ msgstr ""
+#~ "\"Mark as default calendar\" box is now correctly checked when editing a "
+#~ "calendar"
+
+#~ msgid "Improvements:"
+#~ msgstr "Improvements:"
+
+#~ msgid "Allow modification of recurring events"
+#~ msgstr "Allow modification of recurring events"
+
+#~ msgid "Improve handling of week start day"
+#~ msgstr "Improve handling of week start day"
+
+#~ msgid "Fix timezone errors with all-day events"
+#~ msgstr "Fix timezone errors with all-day events"
+
+#~ msgid "Don't resize the sidebar when resizing the window"
+#~ msgstr "Don't resize the sidebar when resizing the window"
+
+#~ msgid "Fix issues with time zones not being recognized"
+#~ msgstr "Fix issues with time zones not being recognised"
+
+#~ msgid "Fix several issues with adding and removing monthly recurring events"
+#~ msgstr ""
+#~ "Fix several issues with adding and removing monthly recurring events"
+
+#~ msgid "Correctly save event reminders"
+#~ msgstr "Correctly save event reminders"
+
+#~ msgid "Ellipsize event participant details if necessary"
+#~ msgstr "Ellipsise event participant details if necessary"
+
+#~ msgid "Fix unwanted rescheduling when editing event title"
+#~ msgstr "Fix unwanted rescheduling when editing event title"
+
+#~ msgid "Fix crash when editing an event with no location"
+#~ msgstr "Fix crash when editing an event with no location"
+
+#~ msgid "Fix potential crash when loading events with no start or end time"
+#~ msgstr "Fix potential crash when loading events with no start or end time"
+
+#~ msgid "Make agenda pane fill the whole space"
+#~ msgstr "Make agenda pane fill the whole space"
+
+#~ msgid "Set the suggested time for new events to the next whole hour"
+#~ msgstr "Set the suggested time for new events to the next whole hour"
+
+#~ msgid "Fix issues with recurring events"
+#~ msgstr "Fix issues with recurring events"
+
+#~ msgid "Present import window when opening ICS files"
+#~ msgstr "Present import window when opening ICS files"
+
+#~ msgid "Add a search entry for calendars"
+#~ msgstr "Add a search entry for calendars"
+
+#~ msgid "Always use calendar icon in notifications"
+#~ msgstr "Always use calendar icon in notifications"
+
+#~ msgid "Agenda view can now be navigated by keyboard"
+#~ msgstr "Agenda view can now be navigated by keyboard"
+
+#~ msgid "Right-to-left improvements"
+#~ msgstr "Right-to-left improvements"
+
+#~ msgid "Various UI overhauls including lime accent color"
+#~ msgstr "Various UI overhauls including lime accent colour"
+
+#~ msgid "Overall code cleanup and rewrites"
+#~ msgstr "Overall code cleanup and rewrites"
+
+#~ msgid "Styling adjustments"
+#~ msgstr "Styling adjustments"
+
+#~ msgid "Fix location panel initialization"
+#~ msgstr "Fix location panel initialisation"
+
+#~ msgid "New translations"
+#~ msgstr "New translations"
+
+#~ msgid "Update wingpanel-indicator-datetime settings path."
+#~ msgstr "Update wingpanel-indicator-datetime settings path."
+
+#~ msgid "New translations."
+#~ msgstr "New translations."
+
+#~ msgid "Various bug fixes and improvements."
+#~ msgstr "Various bug fixes and improvements."
+
+#~ msgid "Fixes for calendar accuracy and integrity issues."
+#~ msgstr "Fixes for calendar accuracy and integrity issues."
+
+#~ msgid "Fixes exporting, importing and printing calendars."
+#~ msgstr "Fixes exporting, importing and printing calendars."
 
 #~ msgid "io.elementary.calendar"
 #~ msgstr "io.elementary.calendar"
