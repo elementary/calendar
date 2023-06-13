@@ -64,17 +64,21 @@ modules:
       - '-DENABLE_GOA=OFF'
       - '-DENABLE_GOOGLE=ON'
       - '-DENABLE_VALA_BINDINGS=ON'
+      - '-DENABLE_INTROSPECTION=ON'
+      - '-DENABLE_GOA=OFF'
+      - '-DENABLE_CANBERRA=OFF'
+      - '-DWITH_LIBDB=OFF'
       - '-DENABLE_WEATHER=OFF'
       - '-DWITH_OPENLDAP=OFF'
-      - '-DWITH_LIBDB=OFF'
-      - '-DENABLE_INTROSPECTION=ON'
       - '-DENABLE_INSTALLED_TESTS=OFF'
       - '-DENABLE_GTK_DOC=OFF'
       - '-DENABLE_EXAMPLES=OFF'
     sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/evolution-data-server.git
-        tag: '3.40.2'
+      - type: archive
+        url: https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.4.tar.xz
+        sha256: a59b254145c59facd7c7b5382db78dc5f0ed1f6a6e9b8fe7d5e75959f93c0cc8
+      - type: patch
+        path: 'eds-gdatasession.patch'
     modules:
       - name: intltool
         cleanup:
@@ -83,15 +87,6 @@ modules:
           - type: archive
             url: https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
             md5: 12e517cac2b57a0121cda351570f1e63
-      - name: libgdata
-        buildsystem: meson
-        config-opts:
-          - '-Dalways_build_tests=false'
-          - '-Dgoa=disabled'
-        sources:
-          - type: git
-            url: https://gitlab.gnome.org/GNOME/libgdata.git
-            tag: '0.18.0'
 
   - name: clutter-gtk
     cleanup:
