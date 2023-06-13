@@ -52,6 +52,8 @@ folks_dep = dependency('folks')
 gclue_dep = dependency('libgeoclue-2.0')
 libecal_dep = dependency('libecal-2.0')
 libical_dep = dependency('libical-glib')
+libportal_dep = [ dependency('libportal'), dependency('libportal-gtk3') ]
+
 add_project_arguments('-DLIBICAL_GLIB_UNSTABLE_API=1', language: 'c')
 
 m_dep = meson.get_compiler('c').find_library('m', required : false)
