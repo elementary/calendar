@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
 "PO-Revision-Date: 2020-08-25 13:13+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -60,11 +60,11 @@ msgstr "CalDAV"
 msgid "URL:"
 msgstr "URL:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:95
+#: plugins/CalDAV/CalDAVBackend.vala:99
 msgid "Use a secure connection"
 msgstr "Brug en sikker forbindelse"
 
-#: plugins/CalDAV/CalDAVBackend.vala:123
+#: plugins/CalDAV/CalDAVBackend.vala:127
 msgid "Server handles meeting invitations"
 msgstr "Server håndterer mødeinvitationer"
 
@@ -104,19 +104,25 @@ msgstr "Denne Måned"
 msgid "Next Month"
 msgstr "Næste Måned"
 
-#: src/Application.vala:60
+#: src/Application.vala:34
 msgid "Create an event"
 msgstr "Opret et event"
 
-#: src/Application.vala:61
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr "Fokuser på den givne dag"
 
-#: src/Application.vala:61
+#: src/Application.vala:35
 msgid "date"
 msgstr "dato"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr ""
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -189,15 +195,15 @@ msgstr "Gem ændringer"
 msgid "Cancel"
 msgstr "Annuller"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
 msgstr "Godkendt"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
 msgstr "Afvist"
 
-#: src/EventEdition/GuestGrid.vala:57
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
 msgstr "Måske"
 
@@ -269,67 +275,67 @@ msgstr "Ingen påmindelser"
 msgid "Add Reminder"
 msgstr "Tilføj påmindelse"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "At time of event"
 msgstr "På tidspunktet for begivenheden"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
 msgstr "1 minut før"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes before"
 msgstr "5 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
 msgstr "10 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
 msgstr "15 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes before"
 msgstr "20 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes before"
 msgstr "25 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes before"
 msgstr "30 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes before"
 msgstr "45 minutter før"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour before"
 msgstr "1 time før"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours before"
 msgstr "2 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours before"
 msgstr "3 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours before"
 msgstr "12 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:205
+#: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours before"
 msgstr "24 timer før"
 
-#: src/EventEdition/ReminderPanel.vala:206
+#: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days before"
 msgstr "2 dage før"
 
-#: src/EventEdition/ReminderPanel.vala:207
+#: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week before"
 msgstr "1 uge før"
 

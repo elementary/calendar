@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2020-08-25 13:13+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"PO-Revision-Date: 2022-01-09 22:20+0000\n"
+"Last-Translator: Antonin Hablak <tondulin5@outlook.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/calendar/"
 "cs/>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:56+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -60,11 +60,11 @@ msgstr "CalDAV"
 msgid "URL:"
 msgstr "URL:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:95
+#: plugins/CalDAV/CalDAVBackend.vala:99
 msgid "Use a secure connection"
 msgstr "Používat zabezpečené připojení"
 
-#: plugins/CalDAV/CalDAVBackend.vala:123
+#: plugins/CalDAV/CalDAVBackend.vala:127
 msgid "Server handles meeting invitations"
 msgstr "Server spravuje pozvánky na schůzky"
 
@@ -102,19 +102,25 @@ msgstr "Tento měsíc"
 msgid "Next Month"
 msgstr "Příští měsíc"
 
-#: src/Application.vala:60
+#: src/Application.vala:34
 msgid "Create an event"
 msgstr "Vytvořit událost"
 
-#: src/Application.vala:61
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr "Zaměřit na daný den"
 
-#: src/Application.vala:61
+#: src/Application.vala:35
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr ""
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "Kalendář"
 
@@ -187,15 +193,15 @@ msgstr "Uložit změny"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
 msgstr "Přijato"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
 msgstr "Odmítnuto"
 
-#: src/EventEdition/GuestGrid.vala:57
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
 msgstr "Možná"
 
@@ -225,7 +231,7 @@ msgstr "Do:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "Časová zóna:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
@@ -267,67 +273,67 @@ msgstr "Žádná upozornění"
 msgid "Add Reminder"
 msgstr "Přídat upozornění"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "At time of event"
 msgstr "V průběhu události"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
 msgstr "1 minutu předem"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes before"
 msgstr "5 minut předem"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
 msgstr "10 minut předem"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
 msgstr "15 minut předem"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes before"
 msgstr "20 minut předem"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes before"
 msgstr "25 minut předem"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes before"
 msgstr "30 minut předem"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes before"
 msgstr "45 minut předem"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour before"
 msgstr "1 hodinu předem"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours before"
 msgstr "2 hodiny předem"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours before"
 msgstr "3 hodiny předem"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours before"
 msgstr "12 hodin předem"
 
-#: src/EventEdition/ReminderPanel.vala:205
+#: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours before"
 msgstr "24 hodin předem"
 
-#: src/EventEdition/ReminderPanel.vala:206
+#: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days before"
 msgstr "2 dny předem"
 
-#: src/EventEdition/ReminderPanel.vala:207
+#: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week before"
 msgstr "1 týden předem"
 
@@ -722,7 +728,6 @@ msgstr "soud;soudce;daň;advokát;právník;smlouva;kontrakt"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-#, fuzzy
 msgid "movie;film"
 msgstr "film"
 
@@ -779,7 +784,7 @@ msgstr "Upravit…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Zduplikovat…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -814,22 +819,20 @@ msgid "Add New Calendar…"
 msgstr "Přidat Nový kalendář…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Exportovat kalendář…"
+msgstr "Importovat iCalendar soubor…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "Nastavení online účtů…"
 
 #: src/Widgets/SourcePopover.vala:99
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Vyberte kalendář do kterého chcete importovat"
+msgstr "Vyberte ICS soubor k importu"
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
-msgstr ""
+msgstr "Otevřít"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"

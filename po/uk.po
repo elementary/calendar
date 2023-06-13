@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2021-09-17 22:44+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"PO-Revision-Date: 2023-05-02 22:06+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/"
 "calendar/uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -61,11 +61,11 @@ msgstr "CalDAV"
 msgid "URL:"
 msgstr "URL-адреса:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:95
+#: plugins/CalDAV/CalDAVBackend.vala:99
 msgid "Use a secure connection"
 msgstr "Використовувати захищене з’єднання"
 
-#: plugins/CalDAV/CalDAVBackend.vala:123
+#: plugins/CalDAV/CalDAVBackend.vala:127
 msgid "Server handles meeting invitations"
 msgstr "Сервер підтримує запрошення на зустрічі"
 
@@ -103,19 +103,25 @@ msgstr "Цього місяця"
 msgid "Next Month"
 msgstr "Наступного місяця"
 
-#: src/Application.vala:60
+#: src/Application.vala:34
 msgid "Create an event"
 msgstr "Створити подію"
 
-#: src/Application.vala:61
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr "Зосередитись на цьому дні"
 
-#: src/Application.vala:61
+#: src/Application.vala:35
 msgid "date"
 msgstr "дата"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr ""
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "Календар"
 
@@ -188,15 +194,15 @@ msgstr "Зберегти зміни"
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
 msgstr "Прийнято"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
 msgstr "Відхилено"
 
-#: src/EventEdition/GuestGrid.vala:57
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
 msgstr "Можливо"
 
@@ -268,67 +274,67 @@ msgstr "Немає нагадувань"
 msgid "Add Reminder"
 msgstr "Створити нагадування"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "At time of event"
 msgstr "Під час події"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
 msgstr "за хвилину до"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes before"
 msgstr "за 5 хвилин до"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
 msgstr "за 10 хвилин до"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
 msgstr "за 15 хвилин до"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes before"
 msgstr "за 20 хвилин до"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes before"
 msgstr "за 25 хвилин до"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes before"
 msgstr "за 30 хвилин до"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes before"
 msgstr "за 45 хвилин до"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour before"
 msgstr "за годину до"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours before"
 msgstr "за 2 години до"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours before"
 msgstr "за 3 години до"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours before"
 msgstr "за 12 годин до"
 
-#: src/EventEdition/ReminderPanel.vala:205
+#: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours before"
 msgstr "за 24 години до"
 
-#: src/EventEdition/ReminderPanel.vala:206
+#: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days before"
 msgstr "за 2 дні до"
 
-#: src/EventEdition/ReminderPanel.vala:207
+#: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week before"
 msgstr "за тиждень до"
 
@@ -815,7 +821,7 @@ msgstr "Імпортувати файл iCalendar…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr "Налаштування мережних облікових записів…"
+msgstr "Налаштування онлайнових облікових записів…"
 
 #: src/Widgets/SourcePopover.vala:99
 msgid "Select ICS File to Import"

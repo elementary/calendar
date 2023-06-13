@@ -16,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+[SingleInstance]
 public class Calendar.TodayEventMonitor : GLib.Object {
     private Gee.HashMultiMap<ECal.Component, string> event_uids;
 
@@ -76,18 +77,10 @@ public class Calendar.TodayEventMonitor : GLib.Object {
             ECal.ComponentAlarm e_alarm = event.get_alarm (alarm_uid);
             ECal.ComponentAlarmAction action;
 
-#if E_CAL_2_0
             action = e_alarm.get_action ();
-#else
-            e_alarm.get_action (out action);
-#endif
             if (action == ECal.ComponentAlarmAction.DISPLAY) {
                 ECal.ComponentAlarmTrigger trigger;
-#if E_CAL_2_0
                 trigger = e_alarm.get_trigger ();
-#else
-                e_alarm.get_trigger (out trigger);
-#endif
                 if (trigger.get_kind () == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
                     ICal.Duration duration = trigger.get_duration ();
                     var start_time = Calendar.Util.icaltime_to_datetime (comp.get_dtstart ());
@@ -160,9 +153,6 @@ public class Calendar.TodayEventMonitor : GLib.Object {
 
     private void update_event (E.Source source, ECal.Component event) {
         remove_event (source, event);
-#if !E_CAL_2_0
-        event.rescan ();
-#endif
         event.commit_sequence ();
         add_event (source, event);
     }

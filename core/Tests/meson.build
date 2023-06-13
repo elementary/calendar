@@ -1,7 +1,7 @@
 tests_name = meson.project_name() + '-tests'
 
 config = configuration_data()
-config.set('source_dir', meson.source_root())
+config.set('source_dir', meson.project_source_root())
 
 core = declare_dependency(
     link_with: core_lib,
@@ -19,7 +19,7 @@ util_tests = executable(
 test('Utils Tests', util_tests, suite: 'core', is_parallel: false)
 
 # We need these three locales to run the tests
-locales = run_command('locale', '-a').stdout().split('\n')
+locales = run_command('locale', '-a', check: true).stdout().split('\n')
 if locales.contains ('en_GB.utf8') and locales.contains ('en_US.utf8') and locales.contains ('ar_AE.utf8')
     eventstore_tests = executable(
       tests_name + '-eventstore',

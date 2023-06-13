@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
 "PO-Revision-Date: 2020-05-16 02:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -61,11 +61,11 @@ msgstr "بروتوكول CalDAV"
 msgid "URL:"
 msgstr "رابط:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:95
+#: plugins/CalDAV/CalDAVBackend.vala:99
 msgid "Use a secure connection"
 msgstr "استخدم الاتصال الآمن"
 
-#: plugins/CalDAV/CalDAVBackend.vala:123
+#: plugins/CalDAV/CalDAVBackend.vala:127
 msgid "Server handles meeting invitations"
 msgstr "الخادم يتعامل مع دعوات الاجتماع"
 
@@ -104,19 +104,25 @@ msgstr "هذا الشهر"
 msgid "Next Month"
 msgstr "الشهر القادم"
 
-#: src/Application.vala:60
+#: src/Application.vala:34
 msgid "Create an event"
 msgstr "إنشاء حدث"
 
-#: src/Application.vala:61
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr "ركز على اليوم المعطى"
 
-#: src/Application.vala:61
+#: src/Application.vala:35
 msgid "date"
 msgstr "تاريخ"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr ""
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "التقويم"
 
@@ -193,15 +199,15 @@ msgstr "حفظ التغييرات"
 msgid "Cancel"
 msgstr "الغاء"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
 msgstr "موافق"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
 msgstr "رفض"
 
-#: src/EventEdition/GuestGrid.vala:57
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
 msgstr "ربما"
 
@@ -273,67 +279,67 @@ msgstr "لا تذكيرات موجودة"
 msgid "Add Reminder"
 msgstr "اضافة تذكير"
 
-#: src/EventEdition/ReminderPanel.vala:192
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "At time of event"
 msgstr "في وقت الحدث"
 
-#: src/EventEdition/ReminderPanel.vala:193
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
 msgstr "قبل دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:194
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes before"
 msgstr "قبل 5 دقائق"
 
-#: src/EventEdition/ReminderPanel.vala:195
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
 msgstr "قبل 10 دقائق"
 
-#: src/EventEdition/ReminderPanel.vala:196
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
 msgstr "قبل 15 دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:197
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes before"
 msgstr "قبل 20 دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:198
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes before"
 msgstr "قبل 25 دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:199
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes before"
 msgstr "قبل 30 دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:200
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes before"
 msgstr "قبل 45 دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:201
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour before"
 msgstr "قبل ساعة"
 
-#: src/EventEdition/ReminderPanel.vala:202
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours before"
 msgstr "قبل ساعتين"
 
-#: src/EventEdition/ReminderPanel.vala:203
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours before"
 msgstr "قبل 3 ساعات"
 
-#: src/EventEdition/ReminderPanel.vala:204
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours before"
 msgstr "قبل 12 ساعة"
 
-#: src/EventEdition/ReminderPanel.vala:205
+#: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours before"
 msgstr "قبل 24 ساعة"
 
-#: src/EventEdition/ReminderPanel.vala:206
+#: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days before"
 msgstr "قبل يومين"
 
-#: src/EventEdition/ReminderPanel.vala:207
+#: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week before"
 msgstr "قبل أسبوع"
 

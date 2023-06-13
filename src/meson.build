@@ -33,6 +33,7 @@ calendar_files = files(
     'Widgets/ContractorButtonWithMenu.vala',
     'Widgets/DateSwitcher.vala',
     'Widgets/DateTimePicker.vala',
+    'Widgets/DeleteDialog.vala',
     'Widgets/DynamicSpinner.vala',
     'Widgets/EventMenu.vala',
     'Widgets/HeaderBar.vala',
@@ -60,7 +61,8 @@ calendar_deps = [
     clutter_gtk_dep,
     folks_dep,
     geocode_glib_dep,
-    gclue_dep
+    gclue_dep,
+    libportal_dep
 ]
 
 executable(

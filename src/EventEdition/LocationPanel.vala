@@ -105,11 +105,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             }
 
             ICal.Geo? geo;
-#if E_CAL_2_0
             geo = parent_dialog.ecal.get_geo ();
-#else
-            parent_dialog.ecal.get_geo (out geo);
-#endif
 
             bool need_relocation = true;
             if (geo != null) {
@@ -165,25 +161,14 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             int count = comp.count_properties (ICal.PropertyKind.GEO_PROPERTY);
 
             for (int i = 0; i < count; i++) {
-#if E_CAL_2_0
                 ICal.Property remove_prop;
-#else
-                unowned ICal.Property remove_prop;
-#endif
                 remove_prop = comp.get_first_property (ICal.PropertyKind.GEO_PROPERTY);
                 comp.remove_property (remove_prop);
             }
 
             // Add the comment
             var property = new ICal.Property (ICal.PropertyKind.GEO_PROPERTY);
-#if E_CAL_2_0
             var geo = new ICal.Geo (point.latitude, point.longitude);
-#else
-            var geo = ICal.Geo () {
-                lat = point.latitude,
-                lon = point.longitude
-            };
-#endif
             property.set_geo (geo);
             comp.add_property (property);
         }
@@ -264,11 +249,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             warning ("Failed to connect to GeoClue2 service: %s", e.message);
             // Fallback to timezone location
 
-#if E_CAL_2_0
             compute_location.begin (ECal.util_get_system_timezone_location ());
-#else
-            compute_location.begin (ECal.Util.get_system_timezone_location ());
-#endif
             return;
         }
     }

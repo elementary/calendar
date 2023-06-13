@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2021-12-14 12:24+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"PO-Revision-Date: 2022-05-18 14:27+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -20,298 +20,75 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: data/io.elementary.calendar.appdata.xml.in:8
-#: data/io.elementary.calendar.desktop.in:4
+#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "カレンダー"
 
-#: data/io.elementary.calendar.appdata.xml.in:9
-#: data/io.elementary.calendar.desktop.in:6
+#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "予定の表示と計画をします"
 
-#: data/io.elementary.calendar.appdata.xml.in:11
+#: data/calendar.metainfo.xml.in:13
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
-"Google カレンダー や Outlook、CalDav などの複数のカレンダーを一か所で同期し管"
-"理できる、スリムで軽量なカレンダーアプリです。"
+"スリムで軽量なカレンダーアプリです。Google カレンダー や Outlook、CalDav など"
+"の複数のカレンダーを同期して一か所で管理できます。"
 
-#: data/io.elementary.calendar.appdata.xml.in:16
-msgid "Features:"
-msgstr "機能:"
-
-#: data/io.elementary.calendar.appdata.xml.in:18
-msgid ""
-"Follow email and web links in the event description with Control + Click"
-msgstr "Ctrl + クリックで予定の説明欄内のメールアドレスや Web リンクを開ける機能を追加"
-
-#: data/io.elementary.calendar.appdata.xml.in:24
-#: data/io.elementary.calendar.appdata.xml.in:38
-#: data/io.elementary.calendar.appdata.xml.in:52
-#: data/io.elementary.calendar.appdata.xml.in:70
-msgid "Fixes:"
-msgstr "修正点:"
-
-#: data/io.elementary.calendar.appdata.xml.in:26
-msgid "Ensure Calendar runs in the background on startup"
-msgstr "システムの起動時に“カレンダー”がバックグラウンドで起動するように修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:27
-msgid "Fix memory leak when getting timezone information"
-msgstr "タイムゾーン情報取得時のメモリーリークを修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:28
-msgid "Reliably read Windows-style timezones"
-msgstr "Windows で扱われているタイムゾーンを認識できるように修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:30
-#: data/io.elementary.calendar.appdata.xml.in:44
-#: data/io.elementary.calendar.appdata.xml.in:57
-#: data/io.elementary.calendar.appdata.xml.in:76
-#: data/io.elementary.calendar.appdata.xml.in:94
-#: data/io.elementary.calendar.appdata.xml.in:110
-#: data/io.elementary.calendar.appdata.xml.in:119
-#: data/io.elementary.calendar.appdata.xml.in:128
-#: data/io.elementary.calendar.appdata.xml.in:137
-msgid "Minor Updates:"
-msgstr "軽微なアップデート:"
-
-#: data/io.elementary.calendar.appdata.xml.in:32
-#: data/io.elementary.calendar.appdata.xml.in:46
-#: data/io.elementary.calendar.appdata.xml.in:59
-#: data/io.elementary.calendar.appdata.xml.in:84
-#: data/io.elementary.calendar.appdata.xml.in:98
-#: data/io.elementary.calendar.appdata.xml.in:113
-#: data/io.elementary.calendar.appdata.xml.in:122
-#: data/io.elementary.calendar.appdata.xml.in:131
-#: data/io.elementary.calendar.appdata.xml.in:142
-#: data/io.elementary.calendar.appdata.xml.in:162
-#: data/io.elementary.calendar.appdata.xml.in:174
-msgid "Updated translations"
-msgstr "新しい翻訳"
-
-#: data/io.elementary.calendar.appdata.xml.in:40
-msgid "Fix notification icons in the notification indicator"
-msgstr "通知インジケーターの通知アイコンが正しく表示されない不具合を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:41
-msgid "Fix an issue where event timezones were overwritten"
-msgstr "予定のタイムゾーンが上書きされる不具合を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:42
-msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "通知をクリックすると“カレンダー”アプリが起動するように修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:54
-msgid "Fix broken calendar color with some online providers"
-msgstr ""
-"オンラインサービスによってはカレンダーの色が正しく表示されなかった不具合を修"
-"正"
-
-#: data/io.elementary.calendar.appdata.xml.in:55
-msgid "Fix an issue with some all-day events"
-msgstr "終日の予定に関する不具合を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:65
-#: data/io.elementary.calendar.appdata.xml.in:90
-msgid "New Features:"
-msgstr "新機能:"
-
-#: data/io.elementary.calendar.appdata.xml.in:67
-msgid "Import ICS files from the gear menu"
-msgstr "設定メニューから ICS ファイルをインポートする機能を追加"
-
-#: data/io.elementary.calendar.appdata.xml.in:68
-msgid "Support the dark style"
-msgstr "ダークスタイルに対応"
-
-#: data/io.elementary.calendar.appdata.xml.in:72
-msgid "Properly show events on the last day of the month"
-msgstr "月の最終日の予定が適切に表示されるように修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:73
-msgid "Fix end times for all-day events"
-msgstr "終日の予定の終了時刻を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:74
-msgid "Notify for all alarms on an event"
-msgstr "予定に設定されているすべてのアラームを通知"
-
-#: data/io.elementary.calendar.appdata.xml.in:78
-msgid "Improved offline support"
-msgstr "オフラインサポートを改善"
-
-#: data/io.elementary.calendar.appdata.xml.in:79
-msgid "New colorful avatar fallbacks"
-msgstr "アバター画像未設定時に背景を色付きで表示するように変更"
-
-#: data/io.elementary.calendar.appdata.xml.in:80
-msgid "Include \"film\" as an event icon keyword"
-msgstr "予定のアイコンのキーワードに\"映画\"という単語を追加"
-
-#: data/io.elementary.calendar.appdata.xml.in:81
-msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr "カレンダーのカラーピッカーにミントとピンクを追加"
-
-#: data/io.elementary.calendar.appdata.xml.in:82
-msgid "Link to Online Accounts settings in the gear menu"
-msgstr "設定メニューにオンラインアカウントの設定へのリンクを追加"
-
-#: data/io.elementary.calendar.appdata.xml.in:83
-#: data/io.elementary.calendar.appdata.xml.in:161
-msgid "Performance improvements"
-msgstr "パフォーマンスの向上"
-
-#: data/io.elementary.calendar.appdata.xml.in:92
-msgid "Add \"Duplicate...\" option to event context menu"
-msgstr "予定のコンテキストメニューに\"複製…\"オプションを追加"
-
-#: data/io.elementary.calendar.appdata.xml.in:96
-msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr "カレンダーに新しい予定が重複して表示される可能性のある不具合を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:97
-msgid ""
-"\"Mark as default calendar\" box is now correctly checked when editing a "
-"calendar"
-msgstr ""
-"カレンダーの編集時に、\"デフォルトのカレンダーに設定\"チェックボックスが正し"
-"くチェックされるように修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:104
-msgid "Improvements:"
-msgstr "改善点:"
-
-#: data/io.elementary.calendar.appdata.xml.in:106
-msgid "Allow modification of recurring events"
-msgstr "定期的に行われる予定の変更ができるように変更"
-
-#: data/io.elementary.calendar.appdata.xml.in:107
-msgid "Improve handling of week start day"
-msgstr "週の始めの日の処理に関する改善"
-
-#: data/io.elementary.calendar.appdata.xml.in:108
-msgid "Fix timezone errors with all-day events"
-msgstr "終日の予定におけるタイムゾーンのエラーを修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:112
-msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
-"ウィンドウのサイズ変更時に、サイドバーのサイズが変化してしまう不具合を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:121
-msgid "Fix issues with time zones not being recognized"
-msgstr "タイムゾーンが認識されない問題を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:130
-msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr "毎月行われる予定の追加と削除に関する複数の不具合を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:139
-msgid "Correctly save event reminders"
-msgstr "予定のリマインダーを正しく保存するように修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:140
-msgid "Ellipsize event participant details if necessary"
-msgstr "必要に応じて予定の参加者の詳細を省略するように修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:141
-msgid "Fix unwanted rescheduling when editing event title"
-msgstr "予定のタイトルを編集した際に、予定の日付が変更されてしまう不具合を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:148
-msgid "Fix crash when editing an event with no location"
-msgstr "場所指定がない予定を編集した場合にアプリがクラッシュする不具合を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:153
-msgid "Fix potential crash when loading events with no start or end time"
-msgstr ""
-"開始時刻または終了時刻が指定されていない予定を読み込んだ際に、アプリがクラッ"
-"シュすることがある不具合を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:158
-msgid "Make agenda pane fill the whole space"
-msgstr "予定ペインが領域全体を占めるように調整"
-
-#: data/io.elementary.calendar.appdata.xml.in:159
-msgid "Set the suggested time for new events to the next whole hour"
-msgstr "予定の作成時に現在時刻からの1時間を予定の時間として提示するように変更"
-
-#: data/io.elementary.calendar.appdata.xml.in:160
-msgid "Fix issues with recurring events"
-msgstr "定期的に行われる予定に関する不具合を修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:167
-msgid "Present import window when opening ICS files"
-msgstr "ICS ファイルを開いた際にインポートウィンドウが表示されるのを防止"
-
-#: data/io.elementary.calendar.appdata.xml.in:168
-msgid "Add a search entry for calendars"
-msgstr "カレンダーに検索欄を追加"
-
-#: data/io.elementary.calendar.appdata.xml.in:169
-msgid "Always use calendar icon in notifications"
-msgstr "通知内で常にカレンダーのアイコンを使うように修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:170
-msgid "Agenda view can now be navigated by keyboard"
-msgstr "日程ビューをキーボードで操作できるように変更"
-
-#: data/io.elementary.calendar.appdata.xml.in:171
-msgid "Right-to-left improvements"
-msgstr "RTL 言語関連の改善"
-
-#: data/io.elementary.calendar.appdata.xml.in:172
-msgid "Various UI overhauls including lime accent color"
-msgstr "ライム色のアクセントカラーを含む、各種 UI の見直し"
-
-#: data/io.elementary.calendar.appdata.xml.in:173
-msgid "Overall code cleanup and rewrites"
-msgstr "全体的なコードのクリーンアップと書き直し"
-
-#: data/io.elementary.calendar.appdata.xml.in:179
-msgid "Styling adjustments"
-msgstr "スタイルの調整"
-
-#: data/io.elementary.calendar.appdata.xml.in:180
-msgid "Fix location panel initialization"
-msgstr "位置パネルの初期化に関する修正"
-
-#: data/io.elementary.calendar.appdata.xml.in:181
-msgid "New translations"
-msgstr "新しい翻訳"
-
-#: data/io.elementary.calendar.appdata.xml.in:186
-msgid "Update wingpanel-indicator-datetime settings path."
-msgstr "wingpanel-indicator-datetime の設定パスを更新しました。"
-
-#: data/io.elementary.calendar.appdata.xml.in:187
-msgid "New translations."
-msgstr "翻訳を更新しました。"
-
-#: data/io.elementary.calendar.appdata.xml.in:192
-#: data/io.elementary.calendar.appdata.xml.in:199
-msgid "Various bug fixes and improvements."
-msgstr "各種バグの修正と改善をしました。"
-
-#: data/io.elementary.calendar.appdata.xml.in:197
-msgid "Fixes for calendar accuracy and integrity issues."
-msgstr "カレンダーの正確さと整合性の不具合に対する修正をしました。"
-
-#: data/io.elementary.calendar.appdata.xml.in:198
-msgid "Fixes exporting, importing and printing calendars."
-msgstr "カレンダーのエクスポート、インポート、印刷を修正しました。"
-
-#: data/io.elementary.calendar.appdata.xml.in:217
+#: data/calendar.metainfo.xml.in:51
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/io.elementary.calendar.desktop.in:8
-msgid "io.elementary.calendar"
-msgstr "io.elementary.calendar"
+#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:82
+msgid "Minor Updates:"
+msgstr "そのほかのアップデート:"
+
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:85
+msgid "Updated translations"
+msgstr "新しい翻訳"
+
+#: data/calendar.metainfo.xml.in:84
+msgid "Updated app icon"
+msgstr "アプリのアイコンを更新"
+
+#: data/calendar.metainfo.xml.in:92
+msgid "Features:"
+msgstr "機能:"
+
+#: data/calendar.metainfo.xml.in:94
+msgid "Ask for confirmation before deleting events"
+msgstr "予定を削除する前に確認画面を表示するように変更"
+
+#: data/calendar.metainfo.xml.in:95
+msgid ""
+"Follow email and web links in the event description with Control + Click"
+msgstr ""
+"Ctrl + クリックで予定の説明欄内のメールアドレスや Web リンクを開ける機能を追"
+"加"
+
+#: data/calendar.metainfo.xml.in:97
+msgid "Fixes:"
+msgstr "修正点:"
+
+#: data/calendar.metainfo.xml.in:99
+msgid ""
+"Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
+"calendar is read-only"
+msgstr ""
+"カレンダーが読み取り専用の場合、カレンダーの設定にある“デフォルトのカレンダー"
+"に設定”チェックボックスを無効にするように修正"
+
+#: data/calendar.metainfo.xml.in:100
+msgid "Removed no longer needed sandbox permission for accounts service"
+msgstr "AccountsService へのアクセス権限が不要になったので削除"
+
+#: data/calendar.metainfo.xml.in:101
+msgid "Fixed potential memory leak"
+msgstr "メモリーリーク発生の可能性があった不具合を修正"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
@@ -322,6 +99,182 @@ msgstr ""
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "予定を追加"
+
+#~ msgid "Ensure Calendar runs in the background on startup"
+#~ msgstr ""
+#~ "システムの起動時に“カレンダー”がバックグラウンドで起動するように修正"
+
+#~ msgid "Fix memory leak when getting timezone information"
+#~ msgstr "タイムゾーン情報取得時のメモリーリークを修正"
+
+#~ msgid "Reliably read Windows-style timezones"
+#~ msgstr "Windows で扱われているタイムゾーンを認識できるように修正"
+
+#~ msgid "Fix notification icons in the notification indicator"
+#~ msgstr "通知インジケーターの通知アイコンが正しく表示されない不具合を修正"
+
+#~ msgid "Fix an issue where event timezones were overwritten"
+#~ msgstr "予定のタイムゾーンが上書きされる不具合を修正"
+
+#~ msgid "Ensure Calendar is launched when notifications are clicked"
+#~ msgstr "通知をクリックすると“カレンダー”アプリが起動するように修正"
+
+#~ msgid "Fix broken calendar color with some online providers"
+#~ msgstr ""
+#~ "オンラインサービスによってはカレンダーの色が正しく表示されなかった不具合を"
+#~ "修正"
+
+#~ msgid "Fix an issue with some all-day events"
+#~ msgstr "終日の予定に関する不具合を修正"
+
+#~ msgid "New Features:"
+#~ msgstr "新機能:"
+
+#~ msgid "Import ICS files from the gear menu"
+#~ msgstr "設定メニューから ICS ファイルをインポートする機能を追加"
+
+#~ msgid "Support the dark style"
+#~ msgstr "ダークスタイルに対応"
+
+#~ msgid "Properly show events on the last day of the month"
+#~ msgstr "月の最終日の予定が適切に表示されるように修正"
+
+#~ msgid "Fix end times for all-day events"
+#~ msgstr "終日の予定の終了時刻を修正"
+
+#~ msgid "Notify for all alarms on an event"
+#~ msgstr "予定に設定されているすべてのアラームを通知"
+
+#~ msgid "Improved offline support"
+#~ msgstr "オフラインへの対応を改善"
+
+#~ msgid "New colorful avatar fallbacks"
+#~ msgstr "アバター画像未設定時に背景を色付きで表示するように変更"
+
+#~ msgid "Include \"film\" as an event icon keyword"
+#~ msgstr "予定のアイコンのキーワードに\"映画\"という単語を追加"
+
+#~ msgid "Add Mint and Bubblegum to calendar color chooser"
+#~ msgstr "カレンダーのカラーピッカーにミントとピンクを追加"
+
+#~ msgid "Link to Online Accounts settings in the gear menu"
+#~ msgstr "設定メニューに“オンラインアカウントの設定”へのリンクを追加"
+
+#~ msgid "Performance improvements"
+#~ msgstr "パフォーマンスの向上"
+
+#~ msgid "Add \"Duplicate...\" option to event context menu"
+#~ msgstr "予定のコンテキストメニューに\"複製…\"オプションを追加"
+
+#~ msgid "Fix an issue where new events could appear twice in Calendar"
+#~ msgstr ""
+#~ "“カレンダー”に新しい予定が重複して表示される可能性のある不具合を修正"
+
+#~ msgid ""
+#~ "\"Mark as default calendar\" box is now correctly checked when editing a "
+#~ "calendar"
+#~ msgstr ""
+#~ "カレンダーの編集時に、\"デフォルトのカレンダーに設定\"チェックボックスが正"
+#~ "しくチェックされるように修正"
+
+#~ msgid "Improvements:"
+#~ msgstr "改善点:"
+
+#~ msgid "Allow modification of recurring events"
+#~ msgstr "定期的に行われる予定の変更ができるように変更"
+
+#~ msgid "Improve handling of week start day"
+#~ msgstr "週の始めの日の処理に関する改善"
+
+#~ msgid "Fix timezone errors with all-day events"
+#~ msgstr "終日の予定におけるタイムゾーンのエラーを修正"
+
+#~ msgid "Don't resize the sidebar when resizing the window"
+#~ msgstr ""
+#~ "ウィンドウのサイズ変更時に、サイドバーのサイズが変化してしまう不具合を修正"
+
+#~ msgid "Fix issues with time zones not being recognized"
+#~ msgstr "タイムゾーンが認識されない問題を修正"
+
+#~ msgid "Fix several issues with adding and removing monthly recurring events"
+#~ msgstr "毎月行われる予定の追加と削除に関する複数の不具合を修正"
+
+#~ msgid "Correctly save event reminders"
+#~ msgstr "予定のリマインダーを正しく保存するように修正"
+
+#~ msgid "Ellipsize event participant details if necessary"
+#~ msgstr "必要に応じて予定の参加者の詳細を省略するように修正"
+
+#~ msgid "Fix unwanted rescheduling when editing event title"
+#~ msgstr ""
+#~ "予定のタイトルを編集した際に、予定の日付が変更されてしまう不具合を修正"
+
+#~ msgid "Fix crash when editing an event with no location"
+#~ msgstr ""
+#~ "場所指定がない予定を編集した場合にアプリがクラッシュする不具合を修正"
+
+#~ msgid "Fix potential crash when loading events with no start or end time"
+#~ msgstr ""
+#~ "開始時刻または終了時刻が指定されていない予定を読み込んだ際に、アプリがク"
+#~ "ラッシュすることがある不具合を修正"
+
+#~ msgid "Make agenda pane fill the whole space"
+#~ msgstr "予定ペインが領域全体を占めるように調整"
+
+#~ msgid "Set the suggested time for new events to the next whole hour"
+#~ msgstr ""
+#~ "予定の作成時に現在時刻からの1時間を予定の時間として提示するように変更"
+
+#~ msgid "Fix issues with recurring events"
+#~ msgstr "定期的に行われる予定に関する不具合を修正"
+
+#~ msgid "Present import window when opening ICS files"
+#~ msgstr "ICS ファイルを開いた際にインポートウィンドウが表示されるのを防止"
+
+#~ msgid "Add a search entry for calendars"
+#~ msgstr "カレンダーに検索欄を追加"
+
+#~ msgid "Always use calendar icon in notifications"
+#~ msgstr "通知内で常にカレンダーのアイコンを使うように修正"
+
+#~ msgid "Agenda view can now be navigated by keyboard"
+#~ msgstr "日程ビューをキーボードで操作できるように変更"
+
+#~ msgid "Right-to-left improvements"
+#~ msgstr "RTL 言語関連の改善"
+
+#~ msgid "Various UI overhauls including lime accent color"
+#~ msgstr "ライム色のアクセントカラーを含む、各種 UI の見直し"
+
+#~ msgid "Overall code cleanup and rewrites"
+#~ msgstr "全体的なコードのクリーンアップと書き直し"
+
+#~ msgid "Styling adjustments"
+#~ msgstr "スタイルの調整"
+
+#~ msgid "Fix location panel initialization"
+#~ msgstr "位置パネルの初期化に関する修正"
+
+#~ msgid "New translations"
+#~ msgstr "新しい翻訳"
+
+#~ msgid "Update wingpanel-indicator-datetime settings path."
+#~ msgstr "wingpanel-indicator-datetime の設定パスを更新しました。"
+
+#~ msgid "New translations."
+#~ msgstr "翻訳を更新しました。"
+
+#~ msgid "Various bug fixes and improvements."
+#~ msgstr "各種バグの修正と改善をしました。"
+
+#~ msgid "Fixes for calendar accuracy and integrity issues."
+#~ msgstr "カレンダーの正確さと整合性の不具合に対する修正をしました。"
+
+#~ msgid "Fixes exporting, importing and printing calendars."
+#~ msgstr "カレンダーのエクスポート、インポート、印刷を修正しました。"
+
+#~ msgid "io.elementary.calendar"
+#~ msgstr "io.elementary.calendar"
 
 #~ msgid "office-calendar"
 #~ msgstr "office-calendar"

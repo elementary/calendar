@@ -6,17 +6,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2018-10-21 11:51+0000\n"
-"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
-"Language-Team: Indonesian <https://weblate.elementary.io/projects/calendar/"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"PO-Revision-Date: 2023-05-16 20:03+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
+"Language-Team: Indonesian <https://l10n.elementary.io/projects/calendar/"
 "calendar/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -59,11 +60,11 @@ msgstr "CalDAV"
 msgid "URL:"
 msgstr "URL:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:95
+#: plugins/CalDAV/CalDAVBackend.vala:99
 msgid "Use a secure connection"
 msgstr "Gunakan sambungan aman"
 
-#: plugins/CalDAV/CalDAVBackend.vala:123
+#: plugins/CalDAV/CalDAVBackend.vala:127
 msgid "Server handles meeting invitations"
 msgstr "Server yang menangani undangan pertemuan"
 
@@ -72,8 +73,8 @@ msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Acara yang akan datang milik Anda akan ditampilkan di sini ketika Anda "
-"memilih tanggal dengan acara."
+"Acara Anda yang akan datang akan ditampilkan di sini ketika Anda memilih "
+"tanggal dengan acara."
 
 #: src/AgendaView.vala:140
 msgid "During the day"
@@ -103,37 +104,42 @@ msgstr "Bulan Ini"
 msgid "Next Month"
 msgstr "Bulan Depan"
 
-#: src/Application.vala:60
+#: src/Application.vala:34
 msgid "Create an event"
 msgstr "Buat sebuah kegiatan"
 
-#: src/Application.vala:61
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr "Fokus pada hari tersebut"
 
-#: src/Application.vala:61
+#: src/Application.vala:35
 msgid "date"
 msgstr "tanggal"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr ""
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "Kalender"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Pilih kalender untuk ditampilkan"
+msgstr "Pilih Kalender untuk Diimpor"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Impor acara dari berkas %d ke dalam kalender berikut:"
+msgstr "Acara dari \"%s\" akan digabung dengan kalender ini:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Impor acara dari berkas %d ke dalam kalender berikut:"
+msgstr[0] "Acara dari berkas %d akan digabung dengan kalender ini:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -165,7 +171,6 @@ msgstr "Pengingat"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Ulangi"
@@ -188,17 +193,17 @@ msgstr "Simpan Perubahan"
 msgid "Cancel"
 msgstr "Batal"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
 msgstr "Diterima"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
 msgstr "Ditolak"
 
-#: src/EventEdition/GuestGrid.vala:57
+#: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
-msgstr ""
+msgstr "Mungkin"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -226,7 +231,7 @@ msgstr "Hingga:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "Zona waktu:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
@@ -254,7 +259,7 @@ msgstr "Tempat:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "John Smith ATAU Contoh St."
+msgstr "John Smith ATAU Jl. Contoh"
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
@@ -268,85 +273,69 @@ msgstr "Tidak Ada Pengingat"
 msgid "Add Reminder"
 msgstr "Tambah Pengingat"
 
-#: src/EventEdition/ReminderPanel.vala:192
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "At time of event"
-msgstr "Nama Acara"
+msgstr "Pada saat acara"
 
-#: src/EventEdition/ReminderPanel.vala:193
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
-msgstr "1 menit"
+msgstr "1 menit sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:194
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes before"
-msgstr "5 menit"
+msgstr "5 menit sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:195
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
-msgstr "10 menit"
+msgstr "10 menit sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:196
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
-msgstr "15 menit"
+msgstr "15 menit sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:197
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes before"
-msgstr "20 menit"
+msgstr "20 menit sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:198
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes before"
-msgstr "25 menit"
+msgstr "25 menit sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:199
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes before"
-msgstr "30 menit"
+msgstr "30 menit sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:200
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes before"
-msgstr "45 menit"
+msgstr "45 menit sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:201
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour before"
-msgstr "1 jam"
+msgstr "1 jam sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:202
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours before"
-msgstr "2 jam"
+msgstr "2 jam sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:203
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours before"
-msgstr "3 jam"
+msgstr "3 jam sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:204
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours before"
-msgstr "12 jam"
+msgstr "12 jam sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:205
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours before"
-msgstr "24 jam"
+msgstr "24 jam sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:206
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days before"
-msgstr "2 hari"
+msgstr "2 hari sebelumnya"
 
-#: src/EventEdition/ReminderPanel.vala:207
-#, fuzzy
+#: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week before"
-msgstr "1 minggu"
+msgstr "1 minggu sebelumnya"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
@@ -678,93 +667,95 @@ msgstr "Simpan"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr ""
+msgstr "janji temu;pertemuan"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "ulang tahun;perayaan;pesta"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "panggilan;telepon;dering"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "bar;koktail;minuman;happy hour"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "mobil;mengemudi;berkendara;perjalanan;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr ""
+msgstr "penerbangan;bandara;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
+"sarapan;brunch;makan malam;makan siang;makan malam;rumah steak;burger;"
+"makanan;barbekiu"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "pengadilan;juri;pajak;pengacara;kontrak"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie;film"
-msgstr ""
+msgstr "film"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr ""
+msgstr "pernikahan"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:317
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:329
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s pukul %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:341
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -781,7 +772,7 @@ msgstr "Sunting…"
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "Duplikat…"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
@@ -809,47 +800,44 @@ msgstr "Kelola Kalender"
 
 #: src/Widgets/HeaderBar.vala:66
 msgid "Export or Share the default Calendar"
-msgstr "Ekspor atau Bagikan Kalender utama"
+msgstr "Ekspor atau Bagikan Kalender bawaan"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
 msgstr "Tambah Kalender Baru…"
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Ekspor Kalender…"
+msgstr "Impor Berkas iCalendar…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "Pengaturan Akun Daring…"
 
 #: src/Widgets/SourcePopover.vala:99
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Pilih kalender untuk ditampilkan"
+msgstr "Pilih Berkas ICS untuk Diimpor"
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
-msgstr ""
+msgstr "Buka"
 
 #: src/Widgets/SourceRow.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "Hapus"
+msgstr "Tidak Dapat Dihapus"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "Tidak Dapat Disunting"
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
 msgstr "Kembalikan"
 
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Kalender \"%s\" telah dihapus."
+msgstr "\"%s\" telah dihapus"
 
 #~ msgid "Print debug information"
 #~ msgstr "Cetak informasi debug"

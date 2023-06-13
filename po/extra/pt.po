@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:46+0000\n"
-"PO-Revision-Date: 2021-12-21 17:09+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"PO-Revision-Date: 2022-05-19 14:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/calendar/"
 "extra/pt/>\n"
@@ -20,18 +20,16 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: data/io.elementary.calendar.appdata.xml.in:8
-#: data/io.elementary.calendar.desktop.in:4
+#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Calendário"
 
-#: data/io.elementary.calendar.appdata.xml.in:9
-#: data/io.elementary.calendar.desktop.in:6
+#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Ver e programar eventos"
 
-#: data/io.elementary.calendar.appdata.xml.in:11
+#: data/calendar.metainfo.xml.in:13
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
@@ -39,284 +37,58 @@ msgstr ""
 "Uma pequena e leve aplicação de calendário capaz de sincronizar vários "
 "calendários num só lugar, como o Google Calendar, Outlook e CalDAV."
 
-#: data/io.elementary.calendar.appdata.xml.in:16
+#: data/calendar.metainfo.xml.in:51
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:82
+msgid "Minor Updates:"
+msgstr "Pequenas atualizações:"
+
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:85
+msgid "Updated translations"
+msgstr "Traduções atualizadas"
+
+#: data/calendar.metainfo.xml.in:84
+msgid "Updated app icon"
+msgstr "Ícone da aplicação atualizado"
+
+#: data/calendar.metainfo.xml.in:92
 msgid "Features:"
 msgstr "Funcionalidades:"
 
-#: data/io.elementary.calendar.appdata.xml.in:18
+#: data/calendar.metainfo.xml.in:94
+msgid "Ask for confirmation before deleting events"
+msgstr "Pedir confirmação antes de eliminar os eventos"
+
+#: data/calendar.metainfo.xml.in:95
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Segue o e-mail e as ligações web na descrição do evento com Control + Clique"
 
-#: data/io.elementary.calendar.appdata.xml.in:24
-#: data/io.elementary.calendar.appdata.xml.in:38
-#: data/io.elementary.calendar.appdata.xml.in:52
-#: data/io.elementary.calendar.appdata.xml.in:70
+#: data/calendar.metainfo.xml.in:97
 msgid "Fixes:"
 msgstr "Correções:"
 
-#: data/io.elementary.calendar.appdata.xml.in:26
-msgid "Ensure Calendar runs in the background on startup"
-msgstr "Assegurar que o Calendário é executado em segundo plano no arranque"
-
-#: data/io.elementary.calendar.appdata.xml.in:27
-msgid "Fix memory leak when getting timezone information"
-msgstr "Corrigir fugas de memória ao obter informação de fuso horário"
-
-#: data/io.elementary.calendar.appdata.xml.in:28
-msgid "Reliably read Windows-style timezones"
-msgstr "Leitura fiável de fusos horários ao estilo do Windows"
-
-#: data/io.elementary.calendar.appdata.xml.in:30
-#: data/io.elementary.calendar.appdata.xml.in:44
-#: data/io.elementary.calendar.appdata.xml.in:57
-#: data/io.elementary.calendar.appdata.xml.in:76
-#: data/io.elementary.calendar.appdata.xml.in:94
-#: data/io.elementary.calendar.appdata.xml.in:110
-#: data/io.elementary.calendar.appdata.xml.in:119
-#: data/io.elementary.calendar.appdata.xml.in:128
-#: data/io.elementary.calendar.appdata.xml.in:137
-msgid "Minor Updates:"
-msgstr "Pequenas atualizações:"
-
-#: data/io.elementary.calendar.appdata.xml.in:32
-#: data/io.elementary.calendar.appdata.xml.in:46
-#: data/io.elementary.calendar.appdata.xml.in:59
-#: data/io.elementary.calendar.appdata.xml.in:84
-#: data/io.elementary.calendar.appdata.xml.in:98
-#: data/io.elementary.calendar.appdata.xml.in:113
-#: data/io.elementary.calendar.appdata.xml.in:122
-#: data/io.elementary.calendar.appdata.xml.in:131
-#: data/io.elementary.calendar.appdata.xml.in:142
-#: data/io.elementary.calendar.appdata.xml.in:162
-#: data/io.elementary.calendar.appdata.xml.in:174
-msgid "Updated translations"
-msgstr "Traduções atualizadas"
-
-#: data/io.elementary.calendar.appdata.xml.in:40
-msgid "Fix notification icons in the notification indicator"
-msgstr "Correção dos ícones de notificação no indicador de notificação"
-
-#: data/io.elementary.calendar.appdata.xml.in:41
-msgid "Fix an issue where event timezones were overwritten"
-msgstr ""
-"Corrige um problema em que os fusos horários dos eventos foram sobregravados"
-
-#: data/io.elementary.calendar.appdata.xml.in:42
-msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr ""
-"Assegurar que o Calendário é iniciado quando as notificações são clicadas"
-
-#: data/io.elementary.calendar.appdata.xml.in:54
-msgid "Fix broken calendar color with some online providers"
-msgstr "Corrige a cor do calendário com alguns fornecedores online"
-
-#: data/io.elementary.calendar.appdata.xml.in:55
-msgid "Fix an issue with some all-day events"
-msgstr "Corrige um problema com alguns eventos do dia inteiro"
-
-#: data/io.elementary.calendar.appdata.xml.in:65
-#: data/io.elementary.calendar.appdata.xml.in:90
-msgid "New Features:"
-msgstr "Novas funcionalidades:"
-
-#: data/io.elementary.calendar.appdata.xml.in:67
-msgid "Import ICS files from the gear menu"
-msgstr "Importar ficheiros ICS a partir do menu da roda dentada"
-
-#: data/io.elementary.calendar.appdata.xml.in:68
-msgid "Support the dark style"
-msgstr "Suporta o estilo escuro"
-
-#: data/io.elementary.calendar.appdata.xml.in:72
-msgid "Properly show events on the last day of the month"
-msgstr "Mostrar adequadamente os eventos no último dia do mês"
-
-#: data/io.elementary.calendar.appdata.xml.in:73
-msgid "Fix end times for all-day events"
-msgstr "Corrige horários finais para eventos de todo o dia"
-
-#: data/io.elementary.calendar.appdata.xml.in:74
-msgid "Notify for all alarms on an event"
-msgstr "Notificar para todos os alarmes sobre um evento"
-
-#: data/io.elementary.calendar.appdata.xml.in:78
-msgid "Improved offline support"
-msgstr "Melhoria do suporte offline"
-
-#: data/io.elementary.calendar.appdata.xml.in:79
-msgid "New colorful avatar fallbacks"
-msgstr "Novos avatares coloridos substitutos"
-
-#: data/io.elementary.calendar.appdata.xml.in:80
-msgid "Include \"film\" as an event icon keyword"
-msgstr "Incluir \"filme\" como uma palavra-chave do ícone de evento"
-
-#: data/io.elementary.calendar.appdata.xml.in:81
-msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
-"Adicionar o Menta e a Pastilha elástica ao calendário de escolha de cores"
-
-#: data/io.elementary.calendar.appdata.xml.in:82
-msgid "Link to Online Accounts settings in the gear menu"
-msgstr "Ligação para definições de contas online no menu de da roda dentada"
-
-#: data/io.elementary.calendar.appdata.xml.in:83
-#: data/io.elementary.calendar.appdata.xml.in:161
-msgid "Performance improvements"
-msgstr "Melhorias de desempenho"
-
-#: data/io.elementary.calendar.appdata.xml.in:92
-msgid "Add \"Duplicate...\" option to event context menu"
-msgstr "Adicionar a opção \"Duplicar...\" ao menu de contexto do evento"
-
-#: data/io.elementary.calendar.appdata.xml.in:96
-msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr ""
-"Corrige um problema em que novos eventos podiam aparecer duas vezes no "
-"Calendário"
-
-#: data/io.elementary.calendar.appdata.xml.in:97
+#: data/calendar.metainfo.xml.in:99
 msgid ""
-"\"Mark as default calendar\" box is now correctly checked when editing a "
-"calendar"
+"Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
+"calendar is read-only"
 msgstr ""
-"A caixa \"Marcar como calendário predefinido\" agora é marcada corretamente "
-"ao editar um calendário"
+"Desativa a caixa de seleção \"Marcar como calendário predefinido\" nas "
+"definições do calendário, se o calendário for de apenas-leitura"
 
-#: data/io.elementary.calendar.appdata.xml.in:104
-msgid "Improvements:"
-msgstr "Melhorias:"
-
-#: data/io.elementary.calendar.appdata.xml.in:106
-msgid "Allow modification of recurring events"
-msgstr "Permitir a modificação de eventos recorrentes"
-
-#: data/io.elementary.calendar.appdata.xml.in:107
-msgid "Improve handling of week start day"
-msgstr "Melhora o tratamento do dia de início da semana"
-
-#: data/io.elementary.calendar.appdata.xml.in:108
-msgid "Fix timezone errors with all-day events"
-msgstr "Corrige erros de fuso horário com eventos de dia inteiro"
-
-#: data/io.elementary.calendar.appdata.xml.in:112
-msgid "Don't resize the sidebar when resizing the window"
-msgstr "Não redimensiona a barra lateral ao redimensionar a janela"
-
-#: data/io.elementary.calendar.appdata.xml.in:121
-msgid "Fix issues with time zones not being recognized"
-msgstr "Corrige problemas com fusos horários não reconhecidos"
-
-#: data/io.elementary.calendar.appdata.xml.in:130
-msgid "Fix several issues with adding and removing monthly recurring events"
+#: data/calendar.metainfo.xml.in:100
+msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
-"Corrige vários problemas com a adição e remoção de eventos recorrentes "
-"mensais"
+"Removido já não precisava de permissão para o serviço de contas sandbox"
 
-#: data/io.elementary.calendar.appdata.xml.in:139
-msgid "Correctly save event reminders"
-msgstr "Guardar corretamente os lembretes de eventos"
-
-#: data/io.elementary.calendar.appdata.xml.in:140
-msgid "Ellipsize event participant details if necessary"
-msgstr "Abreviar detalhes dos participantes do evento se necessário"
-
-#: data/io.elementary.calendar.appdata.xml.in:141
-msgid "Fix unwanted rescheduling when editing event title"
-msgstr "Corrige a reprogramação indesejada ao editar o título do evento"
-
-#: data/io.elementary.calendar.appdata.xml.in:148
-msgid "Fix crash when editing an event with no location"
-msgstr "Corrige a falha ao editar um evento sem localização"
-
-#: data/io.elementary.calendar.appdata.xml.in:153
-msgid "Fix potential crash when loading events with no start or end time"
-msgstr "Corrige possíveis falhas ao carregar eventos sem hora de início ou fim"
-
-#: data/io.elementary.calendar.appdata.xml.in:158
-msgid "Make agenda pane fill the whole space"
-msgstr "Faz com que o painel da agenda preencha o espaço todo"
-
-#: data/io.elementary.calendar.appdata.xml.in:159
-msgid "Set the suggested time for new events to the next whole hour"
-msgstr "Defina a hora sugerida para novos eventos para a próxima hora toda"
-
-#: data/io.elementary.calendar.appdata.xml.in:160
-msgid "Fix issues with recurring events"
-msgstr "Corrige problemas com eventos recorrentes"
-
-#: data/io.elementary.calendar.appdata.xml.in:167
-msgid "Present import window when opening ICS files"
-msgstr "Apresentar janela de importação ao abrir ficheiros ICS"
-
-#: data/io.elementary.calendar.appdata.xml.in:168
-msgid "Add a search entry for calendars"
-msgstr "Adiciona uma entrada de pesquisa para calendários"
-
-#: data/io.elementary.calendar.appdata.xml.in:169
-msgid "Always use calendar icon in notifications"
-msgstr "Usa sempre o ícone de calendário nas notificações"
-
-#: data/io.elementary.calendar.appdata.xml.in:170
-msgid "Agenda view can now be navigated by keyboard"
-msgstr "A visualização da agenda agora pode ser navegada pelo teclado"
-
-#: data/io.elementary.calendar.appdata.xml.in:171
-msgid "Right-to-left improvements"
-msgstr "Melhorias da direita para a esquerda"
-
-#: data/io.elementary.calendar.appdata.xml.in:172
-msgid "Various UI overhauls including lime accent color"
-msgstr ""
-"Várias revisões de interface do utilizador, incluindo a cor do acento "
-"calcário"
-
-#: data/io.elementary.calendar.appdata.xml.in:173
-msgid "Overall code cleanup and rewrites"
-msgstr "Limpeza e reformulação geral do código"
-
-#: data/io.elementary.calendar.appdata.xml.in:179
-msgid "Styling adjustments"
-msgstr "Ajustes de estilo"
-
-#: data/io.elementary.calendar.appdata.xml.in:180
-msgid "Fix location panel initialization"
-msgstr "Corrigir arranque do painel de localização"
-
-#: data/io.elementary.calendar.appdata.xml.in:181
-msgid "New translations"
-msgstr "Novas traduções"
-
-#: data/io.elementary.calendar.appdata.xml.in:186
-msgid "Update wingpanel-indicator-datetime settings path."
-msgstr "Atualiza o caminho das definições de wingpanel-indicator-datetime."
-
-#: data/io.elementary.calendar.appdata.xml.in:187
-msgid "New translations."
-msgstr "Novas traduções."
-
-#: data/io.elementary.calendar.appdata.xml.in:192
-#: data/io.elementary.calendar.appdata.xml.in:199
-msgid "Various bug fixes and improvements."
-msgstr "Várias correções de problemas e melhorias."
-
-#: data/io.elementary.calendar.appdata.xml.in:197
-msgid "Fixes for calendar accuracy and integrity issues."
-msgstr "Correções para precisão do calendário e problemas de integridade."
-
-#: data/io.elementary.calendar.appdata.xml.in:198
-msgid "Fixes exporting, importing and printing calendars."
-msgstr "Corrige a exportação, importação e impressão de calendários."
-
-#: data/io.elementary.calendar.appdata.xml.in:217
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
-
-#: data/io.elementary.calendar.desktop.in:8
-msgid "io.elementary.calendar"
-msgstr "io.elementary.calendar"
+#: data/calendar.metainfo.xml.in:101
+msgid "Fixed potential memory leak"
+msgstr "Corrigida possível fuga de memória"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
@@ -325,6 +97,183 @@ msgstr "Maia;Planear;Datas;Eventos;Calendário;ics;caldav;evolution;"
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Adicionar evento"
+
+#~ msgid "Ensure Calendar runs in the background on startup"
+#~ msgstr "Assegurar que o Calendário é executado em segundo plano no arranque"
+
+#~ msgid "Fix memory leak when getting timezone information"
+#~ msgstr "Corrigir fugas de memória ao obter informação de fuso horário"
+
+#~ msgid "Reliably read Windows-style timezones"
+#~ msgstr "Leitura fiável de fusos horários ao estilo do Windows"
+
+#~ msgid "Fix notification icons in the notification indicator"
+#~ msgstr "Correção dos ícones de notificação no indicador de notificação"
+
+#~ msgid "Fix an issue where event timezones were overwritten"
+#~ msgstr ""
+#~ "Corrige um problema em que os fusos horários dos eventos foram "
+#~ "sobregravados"
+
+#~ msgid "Ensure Calendar is launched when notifications are clicked"
+#~ msgstr ""
+#~ "Assegurar que o Calendário é iniciado quando as notificações são clicadas"
+
+#~ msgid "Fix broken calendar color with some online providers"
+#~ msgstr "Corrige a cor do calendário com alguns fornecedores online"
+
+#~ msgid "Fix an issue with some all-day events"
+#~ msgstr "Corrige um problema com alguns eventos do dia inteiro"
+
+#~ msgid "New Features:"
+#~ msgstr "Novas funcionalidades:"
+
+#~ msgid "Import ICS files from the gear menu"
+#~ msgstr "Importar ficheiros ICS a partir do menu da roda dentada"
+
+#~ msgid "Support the dark style"
+#~ msgstr "Suporta o estilo escuro"
+
+#~ msgid "Properly show events on the last day of the month"
+#~ msgstr "Mostrar adequadamente os eventos no último dia do mês"
+
+#~ msgid "Fix end times for all-day events"
+#~ msgstr "Corrige horários finais para eventos de todo o dia"
+
+#~ msgid "Notify for all alarms on an event"
+#~ msgstr "Notificar para todos os alarmes sobre um evento"
+
+#~ msgid "Improved offline support"
+#~ msgstr "Melhoria do suporte offline"
+
+#~ msgid "New colorful avatar fallbacks"
+#~ msgstr "Novos avatares coloridos substitutos"
+
+#~ msgid "Include \"film\" as an event icon keyword"
+#~ msgstr "Incluir \"filme\" como uma palavra-chave do ícone de evento"
+
+#~ msgid "Add Mint and Bubblegum to calendar color chooser"
+#~ msgstr ""
+#~ "Adicionar o Menta e a Pastilha elástica ao calendário de escolha de cores"
+
+#~ msgid "Link to Online Accounts settings in the gear menu"
+#~ msgstr "Ligação para definições de contas online no menu de da roda dentada"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Melhorias de desempenho"
+
+#~ msgid "Add \"Duplicate...\" option to event context menu"
+#~ msgstr "Adicionar a opção \"Duplicar...\" ao menu de contexto do evento"
+
+#~ msgid "Fix an issue where new events could appear twice in Calendar"
+#~ msgstr ""
+#~ "Corrige um problema em que novos eventos podiam aparecer duas vezes no "
+#~ "Calendário"
+
+#~ msgid ""
+#~ "\"Mark as default calendar\" box is now correctly checked when editing a "
+#~ "calendar"
+#~ msgstr ""
+#~ "A caixa \"Marcar como calendário predefinido\" agora é marcada "
+#~ "corretamente ao editar um calendário"
+
+#~ msgid "Improvements:"
+#~ msgstr "Melhorias:"
+
+#~ msgid "Allow modification of recurring events"
+#~ msgstr "Permitir a modificação de eventos recorrentes"
+
+#~ msgid "Improve handling of week start day"
+#~ msgstr "Melhora o tratamento do dia de início da semana"
+
+#~ msgid "Fix timezone errors with all-day events"
+#~ msgstr "Corrige erros de fuso horário com eventos de dia inteiro"
+
+#~ msgid "Don't resize the sidebar when resizing the window"
+#~ msgstr "Não redimensiona a barra lateral ao redimensionar a janela"
+
+#~ msgid "Fix issues with time zones not being recognized"
+#~ msgstr "Corrige problemas com fusos horários não reconhecidos"
+
+#~ msgid "Fix several issues with adding and removing monthly recurring events"
+#~ msgstr ""
+#~ "Corrige vários problemas com a adição e remoção de eventos recorrentes "
+#~ "mensais"
+
+#~ msgid "Correctly save event reminders"
+#~ msgstr "Guardar corretamente os lembretes de eventos"
+
+#~ msgid "Ellipsize event participant details if necessary"
+#~ msgstr "Abreviar detalhes dos participantes do evento se necessário"
+
+#~ msgid "Fix unwanted rescheduling when editing event title"
+#~ msgstr "Corrige a reprogramação indesejada ao editar o título do evento"
+
+#~ msgid "Fix crash when editing an event with no location"
+#~ msgstr "Corrige a falha ao editar um evento sem localização"
+
+#~ msgid "Fix potential crash when loading events with no start or end time"
+#~ msgstr ""
+#~ "Corrige possíveis falhas ao carregar eventos sem hora de início ou fim"
+
+#~ msgid "Make agenda pane fill the whole space"
+#~ msgstr "Faz com que o painel da agenda preencha o espaço todo"
+
+#~ msgid "Set the suggested time for new events to the next whole hour"
+#~ msgstr "Defina a hora sugerida para novos eventos para a próxima hora toda"
+
+#~ msgid "Fix issues with recurring events"
+#~ msgstr "Corrige problemas com eventos recorrentes"
+
+#~ msgid "Present import window when opening ICS files"
+#~ msgstr "Apresentar janela de importação ao abrir ficheiros ICS"
+
+#~ msgid "Add a search entry for calendars"
+#~ msgstr "Adiciona uma entrada de pesquisa para calendários"
+
+#~ msgid "Always use calendar icon in notifications"
+#~ msgstr "Usa sempre o ícone de calendário nas notificações"
+
+#~ msgid "Agenda view can now be navigated by keyboard"
+#~ msgstr "A visualização da agenda agora pode ser navegada pelo teclado"
+
+#~ msgid "Right-to-left improvements"
+#~ msgstr "Melhorias da direita para a esquerda"
+
+#~ msgid "Various UI overhauls including lime accent color"
+#~ msgstr ""
+#~ "Várias revisões de interface do utilizador, incluindo a cor do acento "
+#~ "calcário"
+
+#~ msgid "Overall code cleanup and rewrites"
+#~ msgstr "Limpeza e reformulação geral do código"
+
+#~ msgid "Styling adjustments"
+#~ msgstr "Ajustes de estilo"
+
+#~ msgid "Fix location panel initialization"
+#~ msgstr "Corrigir arranque do painel de localização"
+
+#~ msgid "New translations"
+#~ msgstr "Novas traduções"
+
+#~ msgid "Update wingpanel-indicator-datetime settings path."
+#~ msgstr "Atualiza o caminho das definições de wingpanel-indicator-datetime."
+
+#~ msgid "New translations."
+#~ msgstr "Novas traduções."
+
+#~ msgid "Various bug fixes and improvements."
+#~ msgstr "Várias correções de problemas e melhorias."
+
+#~ msgid "Fixes for calendar accuracy and integrity issues."
+#~ msgstr "Correções para precisão do calendário e problemas de integridade."
+
+#~ msgid "Fixes exporting, importing and printing calendars."
+#~ msgstr "Corrige a exportação, importação e impressão de calendários."
+
+#~ msgid "io.elementary.calendar"
+#~ msgstr "io.elementary.calendar"
 
 #~ msgid "office-calendar"
 #~ msgstr "office-calendar"

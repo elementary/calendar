@@ -18,8 +18,8 @@ void test_posix_nl_langinfo () {
     // and week_1stday is 19971130 (Sunday)
     var localestr = "en_GB.utf8";
     var setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
-    assert (setstr != null);
-    assert (setstr == localestr);
+    assert_true (setstr != null);
+    assert_true (setstr == localestr);
     uint week_day1 = (uint) Posix.NLTime.WEEK_1STDAY.to_string ();
     int first_weekday = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
     if (week_day1 != 19971130 || first_weekday != 2) {
@@ -31,8 +31,8 @@ void test_posix_nl_langinfo () {
     //  and week_1stday is 19971130 (Sunday)
     localestr = "en_US.utf8";
     setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
-    assert (setstr != null);
-    assert (setstr == localestr);
+    assert_true (setstr != null);
+    assert_true (setstr == localestr);
     week_day1 = (uint) Posix.NLTime.WEEK_1STDAY.to_string ();
     first_weekday = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
     if (week_day1 != 19971130 || first_weekday != 1) {
@@ -44,8 +44,8 @@ void test_posix_nl_langinfo () {
     //  and week_1stday is 19971130 (Sunday)
     localestr = "ar_AE.utf8";
     setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
-    assert (setstr != null);
-    assert (setstr == localestr);
+    assert_true (setstr != null);
+    assert_true (setstr == localestr);
     week_day1 = (uint) Posix.NLTime.WEEK_1STDAY.to_string ();
     first_weekday = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
     if (week_day1 != 19971130 || first_weekday != 7) {
@@ -62,30 +62,30 @@ void test_week_start () {
     var localestr = "en_GB.utf8";
     var setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
     assert_nonnull (setstr);
-    assert (setstr == localestr);
+    assert_true (setstr == localestr);
     var store = new TestStore ();
     var week_start = store.week_starts_on;
-    assert (week_start == DateWeekday.MONDAY);
+    assert_true (week_start == DateWeekday.MONDAY);
 
     // Test en_US (English, United States), where the week starts on Sunday
     //  and week_1stday is 19971130 (Sunday)
     localestr = "en_US.utf8";
     setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
     assert_nonnull (setstr);
-    assert (setstr == localestr);
+    assert_true (setstr == localestr);
     store = new TestStore ();
     week_start = store.week_starts_on;
-    assert (week_start == DateWeekday.SUNDAY);
+    assert_true (week_start == DateWeekday.SUNDAY);
 
     // Test ar_AE (Arabic, UAE), where the week starts on "Saturday"
     //  and week_1stday is 19971130 (Sunday)
     localestr = "ar_AE.utf8";
     setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
     assert_nonnull (setstr);
-    assert (setstr == localestr);
+    assert_true (setstr == localestr);
     store = new TestStore ();
     week_start = store.week_starts_on;
-    assert (week_start == DateWeekday.SATURDAY);
+    assert_true (week_start == DateWeekday.SATURDAY);
 }
 
 void test_ranges () {
@@ -93,30 +93,30 @@ void test_ranges () {
     var localestr = "en_GB.utf8";
     var setstr = Intl.setlocale (LocaleCategory.TIME, localestr);
     assert_nonnull (setstr);
-    assert (setstr == localestr);
+    assert_true (setstr == localestr);
 
     var store = new TestStore ();
     store.month_start = new GLib.DateTime.local (2020,11,1,0,0,0);
     var month_start = new GLib.DateTime.local (2020,11,1,12,13,45);
     var month_end = new GLib.DateTime.local (2020,11,30,12,13,45);
     // Test in range
-    assert (month_start.compare (store.month_range.first_dt) >= 0);
-    assert (month_end.compare (store.month_range.last_dt) <= 0);
+    assert_true (month_start.compare (store.month_range.first_dt) >= 0);
+    assert_true (month_end.compare (store.month_range.last_dt) <= 0);
     // Test out of range
     month_start = month_start.add_days (-1);
     month_end = month_end.add_days (1);
-    assert (month_start.compare (store.month_range.first_dt) < 0);
-    assert (month_end.compare (store.month_range.last_dt) > 0);
+    assert_true (month_start.compare (store.month_range.first_dt) < 0);
+    assert_true (month_end.compare (store.month_range.last_dt) > 0);
 
     var data_start = new GLib.DateTime.local (2020,10,26,12,13,45);
     var data_end = new GLib.DateTime.local (2020,12,6,12,13,45);
-    assert (data_start.compare (store.data_range.first_dt) >= 0);
-    assert (data_end.compare (store.data_range.last_dt) <= 0);
+    assert_true (data_start.compare (store.data_range.first_dt) >= 0);
+    assert_true (data_end.compare (store.data_range.last_dt) <= 0);
     // Test out of range
     data_start = data_start.add_days (-1);
     data_end = new GLib.DateTime.local (2020,12,7,0,0,1);
-    assert (data_start.compare (store.data_range.first_dt) < 0);
-    assert (data_end.compare (store.data_range.last_dt) > 0);
+    assert_true (data_start.compare (store.data_range.first_dt) < 0);
+    assert_true (data_end.compare (store.data_range.last_dt) > 0);
 }
 
 void add_locale_tests () {

@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
+ * Copyright 2011-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -214,9 +214,14 @@ public class EventDialog : Granite.Dialog {
         }
 
         private void remove_event () {
-            var calmodel = Calendar.EventStore.get_default ();
-            calmodel.remove_event (original_source, ecal, mod_type);
-            this.destroy ();
+            assert (original_source != null);
+            var delete_dialog = new Calendar.DeleteEventDialog (original_source, ecal, mod_type) {
+                transient_for = this
+            };
+            var response = delete_dialog.run_dialog ();
+            if (response == Gtk.ResponseType.YES) {
+                this.destroy ();
+            }
         }
     }
 }

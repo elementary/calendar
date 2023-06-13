@@ -1,6 +1,6 @@
 app-id: io.elementary.calendar
 runtime: io.elementary.Platform
-runtime-version: '6'
+runtime-version: '7.1'
 sdk: io.elementary.Sdk
 command: io.elementary.calendar
 finish-args:
@@ -43,10 +43,13 @@ modules:
       - '-DICAL_GLIB_VAPI=true'
       - '-DGOBJECT_INTROSPECTION=true'
       - '-DICAL_BUILD_DOCS=false'
+      - '-DWITH_CXX_BINDINGS=false'
+      - '-DSHARED_ONLY=true'
+      - '-DLIBICAL_BUILD_TESTING=false'
     sources:
       - type: git
         url: https://github.com/libical/libical.git
-        tag: v3.0.8
+        tag: v3.0.9
 
   - name: evolution-data-server
     buildsystem: cmake-ninja
@@ -61,17 +64,21 @@ modules:
       - '-DENABLE_GOA=OFF'
       - '-DENABLE_GOOGLE=ON'
       - '-DENABLE_VALA_BINDINGS=ON'
+      - '-DENABLE_INTROSPECTION=ON'
+      - '-DENABLE_GOA=OFF'
+      - '-DENABLE_CANBERRA=OFF'
+      - '-DWITH_LIBDB=OFF'
       - '-DENABLE_WEATHER=OFF'
       - '-DWITH_OPENLDAP=OFF'
-      - '-DWITH_LIBDB=OFF'
-      - '-DENABLE_INTROSPECTION=ON'
       - '-DENABLE_INSTALLED_TESTS=OFF'
       - '-DENABLE_GTK_DOC=OFF'
       - '-DENABLE_EXAMPLES=OFF'
     sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/evolution-data-server.git
-        tag: '3.40.2'
+      - type: archive
+        url: https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.4.tar.xz
+        sha256: a59b254145c59facd7c7b5382db78dc5f0ed1f6a6e9b8fe7d5e75959f93c0cc8
+      - type: patch
+        path: 'eds-gdatasession.patch'
     modules:
       - name: intltool
         cleanup:
@@ -80,22 +87,56 @@ modules:
           - type: archive
             url: https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
             md5: 12e517cac2b57a0121cda351570f1e63
-      - name: libgdata
-        buildsystem: meson
+
+  - name: clutter-gtk
+    cleanup:
+      - "/share/gtk-doc"
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/clutter-gtk/1.8/clutter-gtk-1.8.4.tar.xz
+        sha256: 521493ec038973c77edcb8bc5eac23eed41645117894aaee7300b2487cb42b06
+    modules:
+      - name: cogl
         config-opts:
-          - '-Dalways_build_tests=false'
-          - '-Dgoa=disabled'
+          - "--disable-cogl-gst"
+          - "--disable-gtk-doc"
+          - "--enable-xlib-egl-platform"
+          - "--enable-wayland-egl-platform"
+        cleanup:
+          - "/share/gtk-doc"
+          - "/share/cogl/examples-data"
         sources:
-          - type: git
-            url: https://gitlab.gnome.org/GNOME/libgdata.git
-            tag: '0.18.0'
+          - type: archive
+            url: https://download.gnome.org/sources/cogl/1.22/cogl-1.22.8.tar.xz
+            sha256: a805b2b019184710ff53d0496f9f0ce6dcca420c141a0f4f6fcc02131581d759
+      - name: clutter
+        config-opts:
+          - "--disable-gtk-doc"
+          - "--enable-egl-backend"
+          - "--enable-wayland-backend"
+          - "--enable-deprecated=no"
+        cleanup:
+          - "/share/gtk-doc"
+        sources:
+          - type: archive
+            url: https://download.gnome.org/sources/clutter/1.26/clutter-1.26.4.tar.xz
+            sha256: 8b48fac159843f556d0a6be3dbfc6b083fc6d9c58a20a49a6b4919ab4263c4e6
+      - name: clutter-gst
+        config-opts:
+          - "--disable-gtk-doc"
+        cleanup:
+          - "/share/gtk-doc"
+        sources:
+          - type: archive
+            url: https://download.gnome.org/sources/clutter-gst/3.0/clutter-gst-3.0.27.tar.xz
+            sha256: fe69bd6c659d24ab30da3f091eb91cd1970026d431179b0724f13791e8ad9f9d
 
   - name: champlain
     buildsystem: meson
     sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/libchamplain.git
-        tag: LIBCHAMPLAIN_0_12_20
+      - type: archive
+        url: https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.21.tar.xz
+        sha256: a915cd172a0c52944c5579fcb4683f8a878c571bf5e928254b5dafefc727e5a7
 
   - name: folks
     buildsystem: meson
@@ -108,17 +149,29 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/folks.git
-        tag: '0.14'
+        tag: '0.15.5'
 
   - name: geocode-glib
     buildsystem: meson
     config-opts:
       - '-Denable-installed-tests=false'
       - '-Denable-gtk-doc=false'
+      - '-Dsoup2=false'
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz
+        sha256: 2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa
+
+  - name: libportal
+    buildsystem: meson
+    config-opts:
+      - "-Dbackends=['gtk3']"
+      - '-Ddocs=false'
+      - '-Dtests=false'
     sources:
       - type: git
-        url: https://gitlab.gnome.org/GNOME/geocode-glib.git
-        tag: '3.26.2'
+        url: https://github.com/flatpak/libportal.git
+        tag: '0.6'
 
   - name: calendar
     buildsystem: meson
