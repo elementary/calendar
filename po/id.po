@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 02:27+0000\n"
+"POT-Creation-Date: 2023-06-13 00:42+0000\n"
 "PO-Revision-Date: 2023-05-16 20:03+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -104,19 +104,25 @@ msgstr "Bulan Ini"
 msgid "Next Month"
 msgstr "Bulan Depan"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 msgid "Create an event"
 msgstr "Buat sebuah kegiatan"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr "Fokus pada hari tersebut"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "date"
 msgstr "tanggal"
 
-#: src/Application.vala:182
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr ""
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -698,8 +704,8 @@ msgstr "penerbangan;bandara;"
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
-"sarapan;brunch;makan malam;makan siang;makan malam;rumah "
-"steak;burger;makanan;barbekiu"
+"sarapan;brunch;makan malam;makan siang;makan malam;rumah steak;burger;"
+"makanan;barbekiu"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.

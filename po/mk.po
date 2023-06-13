@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 02:27+0000\n"
+"POT-Creation-Date: 2023-06-13 00:42+0000\n"
 "PO-Revision-Date: 2015-06-15 11:49+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,20 +100,26 @@ msgstr "Месеци"
 msgid "Next Month"
 msgstr "Месеци"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 #, fuzzy
 msgid "Create an event"
 msgstr "Креирај нов настан"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:182
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr ""
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "Календар"
 
