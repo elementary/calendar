@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2015-2023 elementary, Inc. <contact@elementary.io> -->
+<component type="desktop-application">
+  <id>io.elementary.calendar</id>
+  <launchable type="desktop-id">io.elementary.calendar.desktop</launchable>
+  <translation type="gettext">io.elementary.calendar</translation>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+
+  <name>Calendar</name>
+  <summary>View and schedule events</summary>
+  <description>
+    <p>A slim, lightweight calendar app that syncs and manages multiple calendars in one place, like Google Calendar, Outlook and CalDAV.</p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/elementary/calendar/master/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <branding>
+    <color type="primary">#68b723</color>
+  </branding>
+  <custom>
+    <value key="x-appcenter-color-primary">#68b723</value>
+  </custom>
+
+  <content_rating type="oars-1.1" />
+
+  <provides>
+    <library>libelementary-calendar.so.0</library>
+    <binary>io.elementary.calendar</binary>
+  </provides>
+
+  <recommends>
+    <display_length compare="ge">627</display_length>
+  </recommends>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+
+  <url type="bugtracker">https://github.com/elementary/calendar/issues</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <url type="help">https://github.com/elementary/calendar/discussions/categories/q-a</url>
+  <url type="homepage">https://elementary.io/</url>
+  <url type="translate">https://l10n.elementary.io/projects/calendar</url>
+
+  <developer_name>elementary, Inc.</developer_name>
+  <project_group>elementary</project_group>
+  <update_contact>contact_at_elementary.io</update_contact>
+
+  <releases>
+    <release version="7.0.0" date="2023-05-23" urgency="medium">
+      <description>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/calendar/issues/778">Use the background portal </issue>
+    </release>
+
+    <release version="6.1.2" date="2022-11-15" urgency="medium">
+      <description>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/calendar/issues/759">Editing event automatically enables Saturday repeat</issue>
+      </issues>
+    </release>
+
+    <release version="6.1.1" date="2022-05-16" urgency="medium">
+      <description>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>Updated app icon</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="6.1.0" date="2022-01-21" urgency="medium">
+      <description>
+        <p>Features:</p>
+        <ul>
+          <li>Ask for confirmation before deleting events</li>
+          <li>Follow email and web links in the event description with Control + Click</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Disabled checkbox "Mark as default calendar" in calendar settings, if the calendar is read-only</li>
+          <li>Removed no longer needed sandbox permission for accounts service</li>
+          <li>Fixed potential memory leak</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="6.0.3" date="2021-10-26" urgency="medium" />
+    <release version="6.0.2" date="2021-09-22" urgency="medium" />
+    <release version="6.0.1" date="2021-08-24" urgency="medium" />
+    <release version="6.0.0" date="2021-07-19" urgency="medium" />
+    <release version="5.1.1" date="2020-10-08" urgency="medium" />
+    <release version="5.1.0" date="2020-09-02" urgency="medium" />
+    <release version="5.0.6" date="2020-06-30" urgency="medium" />
+    <release version="5.0.5" date="2020-06-01" urgency="medium" />
+    <release version="5.0.4" date="2020-04-03" urgency="medium" />
+    <release version="5.0.3" date="2019-11-27" urgency="medium" />
+    <release version="5.0.2" date="2019-11-26" urgency="medium" />
+    <release version="5.0.1" date="2019-11-25" urgency="medium" />
+    <release version="5.0.0" date="2019-02-28" urgency="medium" />
+    <release version="4.2.3" date="2018-10-16" urgency="medium" />
+    <release version="0.4.2.1" date="2018-06-22" urgency="medium" />
+    <release version="0.4.2" date="2018-06-06" urgency="medium" />
+    <release version="0.4.1" date="2017-10-27" urgency="medium" />
+    <release version="0.4.0.2" timestamp="1473189266"/>
+    <release version="0.4.0.1" timestamp="1471195865"/>
+    <release version="0.4.0" timestamp="1470925887"/>
+    <release version="0.3.1.1" timestamp="1432996164"/>
+    <release version="0.3.1" timestamp="1428358074"/>
+    <release version="0.3.0" timestamp="1386579562"/>
+    <release version="0.2.2" timestamp="1376200121"/>
+    <release version="0.2.1" timestamp="1370820403"/>
+    <release version="0.2.0" timestamp="1313053217"/>
+  </releases>
+</component>
