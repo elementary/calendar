@@ -43,10 +43,13 @@ modules:
       - '-DICAL_GLIB_VAPI=true'
       - '-DGOBJECT_INTROSPECTION=true'
       - '-DICAL_BUILD_DOCS=false'
+      - '-DWITH_CXX_BINDINGS=false'
+      - '-DSHARED_ONLY=true'
+      - '-DLIBICAL_BUILD_TESTING=false'
     sources:
       - type: git
         url: https://github.com/libical/libical.git
-        tag: v3.0.8
+        tag: v3.0.9
 
   - name: evolution-data-server
     buildsystem: cmake-ninja
