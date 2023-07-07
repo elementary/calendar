@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2021-09-17 22:44+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"PO-Revision-Date: 2023-06-15 00:07+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/calendar/"
 "he/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -102,19 +102,27 @@ msgstr "החודש"
 msgid "Next Month"
 msgstr "בחודש הבא"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 msgid "Create an event"
 msgstr "יצירת אירוע"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr "התמקדות על היום הנתון"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "date"
 msgstr "תאריך"
 
-#: src/Application.vala:182
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr ""
+"יישום לוח השנה יופעל אוטומטית עם הדלקת המכשיר הזה וימשיך לרוץ כאשר החלון שלו "
+"סגור כדי שיוכל לשלוח התראות על אירועים."
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "לוח שנה"
 

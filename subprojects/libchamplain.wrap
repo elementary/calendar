@@ -1,0 +1,8 @@
+[wrap-git]
+directory = libchamplain
+url = https://gitlab.gnome.org/GNOME/libchamplain.git
+revision = 941560af497148588783db991e8135f52a82574d
+depth = 1
+
+[provide]
+dependency_names = champlain-0.12, champlain-gtk-0.12

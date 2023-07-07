@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 02:27+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
 "PO-Revision-Date: 2021-09-21 18:32+0000\n"
 "Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
@@ -104,19 +104,25 @@ msgstr "Este mes"
 msgid "Next Month"
 msgstr "Próximo mes"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 msgid "Create an event"
 msgstr "Crear un evento"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr "Enfocar el día indicado"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "date"
 msgstr "fecha"
 
-#: src/Application.vala:182
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr ""
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "Calendario"
 

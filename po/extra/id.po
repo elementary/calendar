@@ -6,9 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2023-04-19 13:59+0000\n"
-"Last-Translator: Gusti Ahmad Fanshuri Alfarisy <gusti.alfarisy@gmail.com>\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"PO-Revision-Date: 2023-05-27 18:07+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/calendar/"
 "extra/id/>\n"
 "Language: id\n"
@@ -16,21 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: data/io.elementary.calendar.appdata.xml.in:8
-#: data/io.elementary.calendar.desktop.in:4
+#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Kalender"
 
-#: data/io.elementary.calendar.appdata.xml.in:9
-#: data/io.elementary.calendar.desktop.in:6
+#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Lihat dan jadwalkan acara"
 
-#: data/io.elementary.calendar.appdata.xml.in:11
+#: data/calendar.metainfo.xml.in:13
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
@@ -39,299 +38,56 @@ msgstr ""
 "beberapa kalender di satu tempat, seperti Google Kalender, Outlook, dan "
 "CalDAV."
 
-#: data/io.elementary.calendar.appdata.xml.in:16
-#: data/io.elementary.calendar.appdata.xml.in:28
-#: data/io.elementary.calendar.appdata.xml.in:58
-#: data/io.elementary.calendar.appdata.xml.in:72
-#: data/io.elementary.calendar.appdata.xml.in:85
-#: data/io.elementary.calendar.appdata.xml.in:104
-#: data/io.elementary.calendar.appdata.xml.in:122
-#: data/io.elementary.calendar.appdata.xml.in:138
-#: data/io.elementary.calendar.appdata.xml.in:147
-#: data/io.elementary.calendar.appdata.xml.in:156
-#: data/io.elementary.calendar.appdata.xml.in:165
-msgid "Minor Updates:"
-msgstr "Pembaruan kecil:"
+#: data/calendar.metainfo.xml.in:51
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
-#: data/io.elementary.calendar.appdata.xml.in:18
-#: data/io.elementary.calendar.appdata.xml.in:31
-#: data/io.elementary.calendar.appdata.xml.in:60
-#: data/io.elementary.calendar.appdata.xml.in:74
-#: data/io.elementary.calendar.appdata.xml.in:87
-#: data/io.elementary.calendar.appdata.xml.in:112
-#: data/io.elementary.calendar.appdata.xml.in:126
-#: data/io.elementary.calendar.appdata.xml.in:141
-#: data/io.elementary.calendar.appdata.xml.in:150
-#: data/io.elementary.calendar.appdata.xml.in:159
-#: data/io.elementary.calendar.appdata.xml.in:170
-#: data/io.elementary.calendar.appdata.xml.in:190
-#: data/io.elementary.calendar.appdata.xml.in:202
+#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:82
+msgid "Minor Updates:"
+msgstr "Pembaruan Kecil:"
+
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:85
 msgid "Updated translations"
 msgstr "Terjemahan yang diperbarui"
 
-#: data/io.elementary.calendar.appdata.xml.in:30
+#: data/calendar.metainfo.xml.in:84
 msgid "Updated app icon"
 msgstr "Ikon aplikasi yang diperbarui"
 
-#: data/io.elementary.calendar.appdata.xml.in:37
+#: data/calendar.metainfo.xml.in:92
 msgid "Features:"
 msgstr "Fitur:"
 
-#: data/io.elementary.calendar.appdata.xml.in:39
+#: data/calendar.metainfo.xml.in:94
 msgid "Ask for confirmation before deleting events"
-msgstr "Minta konfirmasi sebelum menghapus acara"
+msgstr "Konfirmasi sebelum menghapus acara"
 
-#: data/io.elementary.calendar.appdata.xml.in:40
+#: data/calendar.metainfo.xml.in:95
 msgid ""
 "Follow email and web links in the event description with Control + Click"
-msgstr "Ikuti email dan tautan web di deskripsi acara dengan Control + Click"
+msgstr "Buka surel dan tautan web dalam deskripsi acara dengan Kontrol + Klik"
 
-#: data/io.elementary.calendar.appdata.xml.in:42
-#: data/io.elementary.calendar.appdata.xml.in:52
-#: data/io.elementary.calendar.appdata.xml.in:66
-#: data/io.elementary.calendar.appdata.xml.in:80
-#: data/io.elementary.calendar.appdata.xml.in:98
+#: data/calendar.metainfo.xml.in:97
 msgid "Fixes:"
 msgstr "Perbaikan:"
 
-#: data/io.elementary.calendar.appdata.xml.in:44
+#: data/calendar.metainfo.xml.in:99
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
-"Kotak centang \"Tandai sebagai kalender default\" dinonaktifkan di setelan "
-"kalender, jika kalender hanya dapat dibaca"
+"Matikan checkbox \"Tandai sebagai kalender default\" di pengaturan kalender, "
+"jika kalender bersifat read-only"
 
-#: data/io.elementary.calendar.appdata.xml.in:45
+#: data/calendar.metainfo.xml.in:100
 msgid "Removed no longer needed sandbox permission for accounts service"
-msgstr "Dihapus tidak lagi diperlukan izin kotak pasir untuk layanan akun"
+msgstr "Hapus izin sandbox yang tidak lagi dibutuhkan untuk layanan akun"
 
-#: data/io.elementary.calendar.appdata.xml.in:46
+#: data/calendar.metainfo.xml.in:101
 msgid "Fixed potential memory leak"
-msgstr "Memperbaiki potensi kebocoran memori"
-
-#: data/io.elementary.calendar.appdata.xml.in:54
-msgid "Ensure Calendar runs in the background on startup"
-msgstr "Pastikan Kalender berjalan di latar belakang saat startup"
-
-#: data/io.elementary.calendar.appdata.xml.in:55
-msgid "Fix memory leak when getting timezone information"
-msgstr "Perbaiki kebocoran memori saat mendapatkan informasi zona waktu"
-
-#: data/io.elementary.calendar.appdata.xml.in:56
-msgid "Reliably read Windows-style timezones"
-msgstr "Andal membaca zona waktu bergaya Windows"
-
-#: data/io.elementary.calendar.appdata.xml.in:68
-msgid "Fix notification icons in the notification indicator"
-msgstr "Perbaiki ikon notifikasi di indikator notifikasi"
-
-#: data/io.elementary.calendar.appdata.xml.in:69
-msgid "Fix an issue where event timezones were overwritten"
-msgstr "Perbaiki masalah di mana zona waktu acara ditimpa"
-
-#: data/io.elementary.calendar.appdata.xml.in:70
-msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "Pastikan Kalender diluncurkan saat notifikasi diklik"
-
-#: data/io.elementary.calendar.appdata.xml.in:82
-msgid "Fix broken calendar color with some online providers"
-msgstr "Perbaiki warna kalender yang rusak dengan beberapa penyedia online"
-
-#: data/io.elementary.calendar.appdata.xml.in:83
-msgid "Fix an issue with some all-day events"
-msgstr "Perbaiki masalah dengan beberapa acara sepanjang hari"
-
-#: data/io.elementary.calendar.appdata.xml.in:93
-#: data/io.elementary.calendar.appdata.xml.in:118
-msgid "New Features:"
-msgstr "Fitur Baru:"
-
-#: data/io.elementary.calendar.appdata.xml.in:95
-msgid "Import ICS files from the gear menu"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:96
-msgid "Support the dark style"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:100
-msgid "Properly show events on the last day of the month"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:101
-msgid "Fix end times for all-day events"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:102
-msgid "Notify for all alarms on an event"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:106
-msgid "Improved offline support"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:107
-msgid "New colorful avatar fallbacks"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:108
-msgid "Include \"film\" as an event icon keyword"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:109
-msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:110
-msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:111
-#: data/io.elementary.calendar.appdata.xml.in:189
-msgid "Performance improvements"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:120
-msgid "Add \"Duplicate...\" option to event context menu"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:124
-msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:125
-msgid ""
-"\"Mark as default calendar\" box is now correctly checked when editing a "
-"calendar"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:132
-msgid "Improvements:"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:134
-msgid "Allow modification of recurring events"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:135
-msgid "Improve handling of week start day"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:136
-msgid "Fix timezone errors with all-day events"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:140
-msgid "Don't resize the sidebar when resizing the window"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:149
-msgid "Fix issues with time zones not being recognized"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:158
-msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:167
-msgid "Correctly save event reminders"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:168
-msgid "Ellipsize event participant details if necessary"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:169
-msgid "Fix unwanted rescheduling when editing event title"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:176
-msgid "Fix crash when editing an event with no location"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:181
-msgid "Fix potential crash when loading events with no start or end time"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:186
-msgid "Make agenda pane fill the whole space"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:187
-msgid "Set the suggested time for new events to the next whole hour"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:188
-msgid "Fix issues with recurring events"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:195
-msgid "Present import window when opening ICS files"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:196
-msgid "Add a search entry for calendars"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:197
-msgid "Always use calendar icon in notifications"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:198
-msgid "Agenda view can now be navigated by keyboard"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:199
-msgid "Right-to-left improvements"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:200
-msgid "Various UI overhauls including lime accent color"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:201
-msgid "Overall code cleanup and rewrites"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:207
-msgid "Styling adjustments"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:208
-msgid "Fix location panel initialization"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:209
-msgid "New translations"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:214
-msgid "Update wingpanel-indicator-datetime settings path."
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:215
-msgid "New translations."
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:220
-#: data/io.elementary.calendar.appdata.xml.in:227
-msgid "Various bug fixes and improvements."
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:225
-msgid "Fixes for calendar accuracy and integrity issues."
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:226
-msgid "Fixes exporting, importing and printing calendars."
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:245
-#, fuzzy
-#| msgid "elementary LLC."
-msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "Perbaiki potensi kebocoran memori"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
@@ -340,6 +96,179 @@ msgstr "Maya;Perencana;Tanggal;Hari;Acara;Kalender;ics;caldav;evolution;"
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Tambah Acara"
+
+#~ msgid "Ensure Calendar runs in the background on startup"
+#~ msgstr "Pastikan Kalender berjalan di latar belakang saat mulai"
+
+#~ msgid "Fix memory leak when getting timezone information"
+#~ msgstr "Perbaiki kebocoran memori saat mendapatkan informasi zona waktu"
+
+#~ msgid "Reliably read Windows-style timezones"
+#~ msgstr "Baca dengan akurat zona waktu bergaya Windows"
+
+#~ msgid "Fix notification icons in the notification indicator"
+#~ msgstr "Perbaiki ikon pemberitahuan di indikator pemberitahuan"
+
+#~ msgid "Fix an issue where event timezones were overwritten"
+#~ msgstr "Perbaiki masalah di mana zona waktu acara ditimpa"
+
+#~ msgid "Ensure Calendar is launched when notifications are clicked"
+#~ msgstr "Pastikan Kalender dibuka ketika notifikasi diklik"
+
+#~ msgid "Fix broken calendar color with some online providers"
+#~ msgstr ""
+#~ "Perbaiki warna yang rusak pada kalender pada beberapa penyedia daring"
+
+#~ msgid "Fix an issue with some all-day events"
+#~ msgstr "Perbaiki masalah pada beberapa acara yang berlangsung seharian"
+
+#~ msgid "New Features:"
+#~ msgstr "Fitur Baru:"
+
+#~ msgid "Import ICS files from the gear menu"
+#~ msgstr "Impor berkas ICS dari menu roda gigi"
+
+#~ msgid "Support the dark style"
+#~ msgstr "Dukungan gaya gelap"
+
+#~ msgid "Properly show events on the last day of the month"
+#~ msgstr "Menampilkan acara dengan benar pada hari terakhir setiap bulan"
+
+#~ msgid "Fix end times for all-day events"
+#~ msgstr "Perbaikan waktu berakhir untuk acara sepanjang hari"
+
+#~ msgid "Notify for all alarms on an event"
+#~ msgstr "Memberi tahu semua alarm pada acara"
+
+#~ msgid "Improved offline support"
+#~ msgstr "Peningkatan dukungan luring"
+
+#~ msgid "New colorful avatar fallbacks"
+#~ msgstr "Latar avatar warna-warni baru"
+
+#~ msgid "Include \"film\" as an event icon keyword"
+#~ msgstr "Menyertakan \"film\" sebagai kata kunci ikon acara"
+
+#~ msgid "Add Mint and Bubblegum to calendar color chooser"
+#~ msgstr "Menambahkan Mint dan Bubblegum ke pemilih warna kalender"
+
+#~ msgid "Link to Online Accounts settings in the gear menu"
+#~ msgstr "Menautkan pengaturan Akun Daring di menu roda gigi"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Peningkatan kinerja"
+
+#~ msgid "Add \"Duplicate...\" option to event context menu"
+#~ msgstr "Tambahkan opsi \"Duplikat...\" untuk menu konteks acara"
+
+#~ msgid "Fix an issue where new events could appear twice in Calendar"
+#~ msgstr ""
+#~ "Memperbaiki masalah acara baru yang dapat muncul dua kali di Kalender"
+
+#~ msgid ""
+#~ "\"Mark as default calendar\" box is now correctly checked when editing a "
+#~ "calendar"
+#~ msgstr ""
+#~ "Kotak \"Tandai sebagai kalender bawaan\" sekarang dicentang dengan benar "
+#~ "saat menyunting kalender"
+
+#~ msgid "Improvements:"
+#~ msgstr "Peningkatan:"
+
+#~ msgid "Allow modification of recurring events"
+#~ msgstr "Mengizinkan modifikasi acara berulang"
+
+#~ msgid "Improve handling of week start day"
+#~ msgstr "Meningkatkan penanganan hari permulaan minggu"
+
+#~ msgid "Fix timezone errors with all-day events"
+#~ msgstr "Memperbaiki kesalahan zona waktu pada acara sepanjang hari"
+
+#~ msgid "Don't resize the sidebar when resizing the window"
+#~ msgstr "Jangan mengubah ukuran bilah sisi saat mengubah ukuran jendela"
+
+#~ msgid "Fix issues with time zones not being recognized"
+#~ msgstr "Memperbaiki masalah zona waktu yang tidak dikenali"
+
+#~ msgid "Fix several issues with adding and removing monthly recurring events"
+#~ msgstr ""
+#~ "Memperbaiki beberapa masalah terkait penambahan dan penghapusan acara "
+#~ "rutin bulanan"
+
+#~ msgid "Correctly save event reminders"
+#~ msgstr "Menyimpan pengingat acara dengan benar"
+
+#~ msgid "Ellipsize event participant details if necessary"
+#~ msgstr "Elipsis detail peserta acara jika perlu"
+
+#~ msgid "Fix unwanted rescheduling when editing event title"
+#~ msgstr ""
+#~ "Perbaikan penjadwalan ulang yang tidak diinginkan saat menyunting judul "
+#~ "acara"
+
+#~ msgid "Fix crash when editing an event with no location"
+#~ msgstr "Perbaikan kesalahan saat menyunting acara tanpa lokasi"
+
+#~ msgid "Fix potential crash when loading events with no start or end time"
+#~ msgstr ""
+#~ "Perbaikan potensi kesalahan saat memuat peristiwa tanpa waktu mulai atau "
+#~ "berakhir"
+
+#~ msgid "Make agenda pane fill the whole space"
+#~ msgstr "Membuat panel agenda mengisi seluruh ruang"
+
+#~ msgid "Set the suggested time for new events to the next whole hour"
+#~ msgstr ""
+#~ "Menetapkan waktu yang disarankan untuk acara baru ke satu jam penuh "
+#~ "berikutnya"
+
+#~ msgid "Fix issues with recurring events"
+#~ msgstr "Memperbaiki masalah terkait acara rutin"
+
+#~ msgid "Present import window when opening ICS files"
+#~ msgstr "Jendela impor saat membuka berkas ICS"
+
+#~ msgid "Add a search entry for calendars"
+#~ msgstr "Menambahkan entri penelusuran untuk kalender"
+
+#~ msgid "Always use calendar icon in notifications"
+#~ msgstr "Selalu gunakan ikon kalender di notifikasi"
+
+#~ msgid "Agenda view can now be navigated by keyboard"
+#~ msgstr "Tampilan agenda sekarang dapat dinavigasi dengan papan ketik"
+
+#~ msgid "Right-to-left improvements"
+#~ msgstr "Peningkatan Kanan-ke-kiri"
+
+#~ msgid "Various UI overhauls including lime accent color"
+#~ msgstr "Berbagai perombakan UI termasuk warna aksen jeruk nipis"
+
+#~ msgid "Overall code cleanup and rewrites"
+#~ msgstr "Pembersihan dan penulisan ulang kode secara keseluruhan"
+
+#~ msgid "Styling adjustments"
+#~ msgstr "Penyesuaian gaya"
+
+#~ msgid "Fix location panel initialization"
+#~ msgstr "Memperbaiki inisialisasi panel lokasi"
+
+#~ msgid "New translations"
+#~ msgstr "Terjemahan baru"
+
+#~ msgid "Update wingpanel-indicator-datetime settings path."
+#~ msgstr "Pembaruan jalur pengaturan indikator tanggal waktu wingpanel."
+
+#~ msgid "New translations."
+#~ msgstr "Terjemahan baru."
+
+#~ msgid "Various bug fixes and improvements."
+#~ msgstr "Berbagai perbaikan bug dan peningkatan."
+
+#~ msgid "Fixes for calendar accuracy and integrity issues."
+#~ msgstr "Perbaikan untuk masalah akurasi dan integritas kalender."
+
+#~ msgid "Fixes exporting, importing and printing calendars."
+#~ msgstr "Perbaikan pengeksporan, pengimporan, dan pencetakan kalender."
 
 #~ msgid "office-calendar"
 #~ msgstr "office-calendar"

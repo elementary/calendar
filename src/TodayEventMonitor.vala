@@ -16,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+[SingleInstance]
 public class Calendar.TodayEventMonitor : GLib.Object {
     private Gee.HashMultiMap<ECal.Component, string> event_uids;
 

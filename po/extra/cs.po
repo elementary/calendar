@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 02:27+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
 "PO-Revision-Date: 2022-01-25 21:04+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/extra/cs/"
@@ -20,18 +20,16 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:56+0000\n"
 
-#: data/io.elementary.calendar.appdata.xml.in:8
-#: data/io.elementary.calendar.desktop.in:4
+#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Kalendář"
 
-#: data/io.elementary.calendar.appdata.xml.in:9
-#: data/io.elementary.calendar.desktop.in:6
+#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Prohlížejte a plánujte události"
 
-#: data/io.elementary.calendar.appdata.xml.in:11
+#: data/calendar.metainfo.xml.in:13
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
@@ -39,66 +37,46 @@ msgstr ""
 "Malá a jednoduchá aplikace, umožňující synchronizaci a správu více kalendářů "
 "z jednoho místa, jako například Google Kalendáře, Outlooku a CalDAVu."
 
-#: data/io.elementary.calendar.appdata.xml.in:16
-#: data/io.elementary.calendar.appdata.xml.in:28
-#: data/io.elementary.calendar.appdata.xml.in:58
-#: data/io.elementary.calendar.appdata.xml.in:72
-#: data/io.elementary.calendar.appdata.xml.in:85
-#: data/io.elementary.calendar.appdata.xml.in:104
-#: data/io.elementary.calendar.appdata.xml.in:122
-#: data/io.elementary.calendar.appdata.xml.in:138
-#: data/io.elementary.calendar.appdata.xml.in:147
-#: data/io.elementary.calendar.appdata.xml.in:156
-#: data/io.elementary.calendar.appdata.xml.in:165
+#: data/calendar.metainfo.xml.in:51
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:82
 msgid "Minor Updates:"
 msgstr "Drobné aktualizace:"
 
-#: data/io.elementary.calendar.appdata.xml.in:18
-#: data/io.elementary.calendar.appdata.xml.in:31
-#: data/io.elementary.calendar.appdata.xml.in:60
-#: data/io.elementary.calendar.appdata.xml.in:74
-#: data/io.elementary.calendar.appdata.xml.in:87
-#: data/io.elementary.calendar.appdata.xml.in:112
-#: data/io.elementary.calendar.appdata.xml.in:126
-#: data/io.elementary.calendar.appdata.xml.in:141
-#: data/io.elementary.calendar.appdata.xml.in:150
-#: data/io.elementary.calendar.appdata.xml.in:159
-#: data/io.elementary.calendar.appdata.xml.in:170
-#: data/io.elementary.calendar.appdata.xml.in:190
-#: data/io.elementary.calendar.appdata.xml.in:202
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:85
 msgid "Updated translations"
 msgstr "Aktualizovány překlady"
 
-#: data/io.elementary.calendar.appdata.xml.in:30
+#: data/calendar.metainfo.xml.in:84
 #, fuzzy
 #| msgid "Updated translations"
 msgid "Updated app icon"
 msgstr "Aktualizovány překlady"
 
-#: data/io.elementary.calendar.appdata.xml.in:37
+#: data/calendar.metainfo.xml.in:92
 msgid "Features:"
 msgstr "Funkce:"
 
-#: data/io.elementary.calendar.appdata.xml.in:39
+#: data/calendar.metainfo.xml.in:94
 msgid "Ask for confirmation before deleting events"
 msgstr "Vyžadovat potvrzení před smazáním událostí"
 
-#: data/io.elementary.calendar.appdata.xml.in:40
+#: data/calendar.metainfo.xml.in:95
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "E-maily a odkazy na web v popisu události je možné následovat přidržením "
 "klávesy Ctrl a kliknutím na ně"
 
-#: data/io.elementary.calendar.appdata.xml.in:42
-#: data/io.elementary.calendar.appdata.xml.in:52
-#: data/io.elementary.calendar.appdata.xml.in:66
-#: data/io.elementary.calendar.appdata.xml.in:80
-#: data/io.elementary.calendar.appdata.xml.in:98
+#: data/calendar.metainfo.xml.in:97
 msgid "Fixes:"
 msgstr "Opravy:"
 
-#: data/io.elementary.calendar.appdata.xml.in:44
+#: data/calendar.metainfo.xml.in:99
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -106,247 +84,16 @@ msgstr ""
 "Pokud je daný kalendář pouze pro čtení, znepřístupněna v nastaveních pro něj "
 "zaškrtávací kolonka „Označit jako výchozí kalendář“"
 
-#: data/io.elementary.calendar.appdata.xml.in:45
+#: data/calendar.metainfo.xml.in:100
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 "Odebráno už nepotřebné oprávnění pro přístup ke službě účtů z ohraničeného "
 "prostředí (sandbox)"
 
-#: data/io.elementary.calendar.appdata.xml.in:46
+#: data/calendar.metainfo.xml.in:101
 msgid "Fixed potential memory leak"
 msgstr ""
 "Opraveno možné nevracení už nepoužívané paměti zpět systému (memory leak)"
-
-#: data/io.elementary.calendar.appdata.xml.in:54
-msgid "Ensure Calendar runs in the background on startup"
-msgstr "Zajištěno, že při startu je Kalendář spuštěn na pozadí"
-
-#: data/io.elementary.calendar.appdata.xml.in:55
-msgid "Fix memory leak when getting timezone information"
-msgstr "Opraven únik paměti při získávání informací o časovém pásmu"
-
-#: data/io.elementary.calendar.appdata.xml.in:56
-msgid "Reliably read Windows-style timezones"
-msgstr "Spolehlivé načítání časových pásem ve stylu Windows"
-
-#: data/io.elementary.calendar.appdata.xml.in:68
-msgid "Fix notification icons in the notification indicator"
-msgstr "Opraveny ikony upozornění v indikátoru upozornění"
-
-#: data/io.elementary.calendar.appdata.xml.in:69
-msgid "Fix an issue where event timezones were overwritten"
-msgstr "Opraven problém kdy byla časová pásma události přepisována"
-
-#: data/io.elementary.calendar.appdata.xml.in:70
-msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "Zajištěno, že když je kliknuto na upozornění, je spuštěn kalendář"
-
-#: data/io.elementary.calendar.appdata.xml.in:82
-msgid "Fix broken calendar color with some online providers"
-msgstr ""
-"Opraven problém kdy byly u některý online poskytovatelů rozbité barvy "
-"kalendáře"
-
-#: data/io.elementary.calendar.appdata.xml.in:83
-msgid "Fix an issue with some all-day events"
-msgstr "Opraven problém s některými celodenními událostmi"
-
-#: data/io.elementary.calendar.appdata.xml.in:93
-#: data/io.elementary.calendar.appdata.xml.in:118
-msgid "New Features:"
-msgstr "Nové vlastnosti:"
-
-#: data/io.elementary.calendar.appdata.xml.in:95
-msgid "Import ICS files from the gear menu"
-msgstr "Přidáno importování ICS souborů z nabídky pod ozubeným kolečkem"
-
-#: data/io.elementary.calendar.appdata.xml.in:96
-msgid "Support the dark style"
-msgstr "Podpora pro tmavý styl vzhedu"
-
-#: data/io.elementary.calendar.appdata.xml.in:100
-msgid "Properly show events on the last day of the month"
-msgstr "Správné zobrazování událostí v poslední den v měsíci"
-
-#: data/io.elementary.calendar.appdata.xml.in:101
-msgid "Fix end times for all-day events"
-msgstr "Opraveny časy konců pro celodenní události"
-
-#: data/io.elementary.calendar.appdata.xml.in:102
-msgid "Notify for all alarms on an event"
-msgstr "Upozornění na všechny výstrahy při události"
-
-#: data/io.elementary.calendar.appdata.xml.in:106
-msgid "Improved offline support"
-msgstr "Vylepšena podpora režimu práce bez připojení"
-
-#: data/io.elementary.calendar.appdata.xml.in:107
-msgid "New colorful avatar fallbacks"
-msgstr "Nové náhradní barevné profilové obrázky"
-
-#: data/io.elementary.calendar.appdata.xml.in:108
-msgid "Include \"film\" as an event icon keyword"
-msgstr "Do klíčových slov ikony události přidáno „film“"
-
-#: data/io.elementary.calendar.appdata.xml.in:109
-msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr "Do voliče barev kalendáře přidána žvýkačková a mátová"
-
-#: data/io.elementary.calendar.appdata.xml.in:110
-msgid "Link to Online Accounts settings in the gear menu"
-msgstr "Odkaz na nastavení Účty online v nabídce pod ozubeným kolečkem"
-
-#: data/io.elementary.calendar.appdata.xml.in:111
-#: data/io.elementary.calendar.appdata.xml.in:189
-msgid "Performance improvements"
-msgstr "Zlepšení výkonu"
-
-#: data/io.elementary.calendar.appdata.xml.in:120
-msgid "Add \"Duplicate...\" option to event context menu"
-msgstr "Do kontextové nabídky události přidána volba „Zduplikovat…“"
-
-#: data/io.elementary.calendar.appdata.xml.in:124
-msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr ""
-"Opraven problém kdy se nové události v Kalendáři mohly zobrazovat dvakrát"
-
-#: data/io.elementary.calendar.appdata.xml.in:125
-msgid ""
-"\"Mark as default calendar\" box is now correctly checked when editing a "
-"calendar"
-msgstr ""
-"Zaškrtávací kolonka „Označit jako výchozí kalendář“ je nyní při upravování "
-"kalendáře správně zaškrtnuto"
-
-#: data/io.elementary.calendar.appdata.xml.in:132
-msgid "Improvements:"
-msgstr "Vylepšení:"
-
-#: data/io.elementary.calendar.appdata.xml.in:134
-msgid "Allow modification of recurring events"
-msgstr "Umožnit upravování opakujících se událostí"
-
-#: data/io.elementary.calendar.appdata.xml.in:135
-msgid "Improve handling of week start day"
-msgstr "Vylepšeno nakládání s prvním dnem týdne"
-
-#: data/io.elementary.calendar.appdata.xml.in:136
-msgid "Fix timezone errors with all-day events"
-msgstr "Opraveny chyby v časových pásmech při celodenních událostech"
-
-#: data/io.elementary.calendar.appdata.xml.in:140
-msgid "Don't resize the sidebar when resizing the window"
-msgstr "Neměnění velikost postranního panelu při změně velikosti okna"
-
-#: data/io.elementary.calendar.appdata.xml.in:149
-msgid "Fix issues with time zones not being recognized"
-msgstr "Opraveny problémy s nerozpoznáváním časových zón"
-
-#: data/io.elementary.calendar.appdata.xml.in:158
-msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr ""
-"Opraveno několik problémů s přidáváním měsíčně se opakujícími událostmi"
-
-#: data/io.elementary.calendar.appdata.xml.in:167
-msgid "Correctly save event reminders"
-msgstr "Správně uložit připomínky událostí"
-
-#: data/io.elementary.calendar.appdata.xml.in:168
-msgid "Ellipsize event participant details if necessary"
-msgstr "V případě nutnosti nahradí podrobnosti o účastnících výpustky"
-
-#: data/io.elementary.calendar.appdata.xml.in:169
-msgid "Fix unwanted rescheduling when editing event title"
-msgstr "Oprava nechtěného přeplánování při upravování názvu události"
-
-#: data/io.elementary.calendar.appdata.xml.in:176
-msgid "Fix crash when editing an event with no location"
-msgstr "Oprava pádu při upravování události s nezadaným umístěním"
-
-#: data/io.elementary.calendar.appdata.xml.in:181
-msgid "Fix potential crash when loading events with no start or end time"
-msgstr ""
-"Oprava potenciálního pádu při načítání událostí s nezadaným časem začátku či "
-"konce"
-
-#: data/io.elementary.calendar.appdata.xml.in:186
-msgid "Make agenda pane fill the whole space"
-msgstr "Podokno s agendou vyplní celý prostor"
-
-#: data/io.elementary.calendar.appdata.xml.in:187
-msgid "Set the suggested time for new events to the next whole hour"
-msgstr "Nastavit doporučený čas pro nové události na celou další hodinu"
-
-#: data/io.elementary.calendar.appdata.xml.in:188
-msgid "Fix issues with recurring events"
-msgstr "Opravit problémy s opakujícími se událostmi"
-
-#: data/io.elementary.calendar.appdata.xml.in:195
-msgid "Present import window when opening ICS files"
-msgstr "Zobrazit okno importu při otevírání souborů ICS"
-
-#: data/io.elementary.calendar.appdata.xml.in:196
-msgid "Add a search entry for calendars"
-msgstr "Přidat záznam ve vyhledávání pro kalendáře"
-
-#: data/io.elementary.calendar.appdata.xml.in:197
-msgid "Always use calendar icon in notifications"
-msgstr "Vždy v notifikacích používat ikonu kalendáře"
-
-#: data/io.elementary.calendar.appdata.xml.in:198
-msgid "Agenda view can now be navigated by keyboard"
-msgstr "Pohled agendy lze nyní ovládat klávesnicí"
-
-#: data/io.elementary.calendar.appdata.xml.in:199
-msgid "Right-to-left improvements"
-msgstr "Vylepšení textu z prava do leva"
-
-#: data/io.elementary.calendar.appdata.xml.in:200
-msgid "Various UI overhauls including lime accent color"
-msgstr ""
-"Různé vylepšení uživatelského prostředí, včetně změny hlavní barvy na "
-"limetkovou"
-
-#: data/io.elementary.calendar.appdata.xml.in:201
-msgid "Overall code cleanup and rewrites"
-msgstr "Obecné pročištění kódu a přepsání"
-
-#: data/io.elementary.calendar.appdata.xml.in:207
-msgid "Styling adjustments"
-msgstr "Doladění stylů"
-
-#: data/io.elementary.calendar.appdata.xml.in:208
-msgid "Fix location panel initialization"
-msgstr "Opravit zavedení panelu lokalizace"
-
-#: data/io.elementary.calendar.appdata.xml.in:209
-msgid "New translations"
-msgstr "Nové překlady"
-
-#: data/io.elementary.calendar.appdata.xml.in:214
-msgid "Update wingpanel-indicator-datetime settings path."
-msgstr "Aktualizace popisu umístění nastavení wingpanel-indicator-datetime."
-
-#: data/io.elementary.calendar.appdata.xml.in:215
-msgid "New translations."
-msgstr "Nové překlady."
-
-#: data/io.elementary.calendar.appdata.xml.in:220
-#: data/io.elementary.calendar.appdata.xml.in:227
-msgid "Various bug fixes and improvements."
-msgstr "Různé opravy chyb a vylepšení."
-
-#: data/io.elementary.calendar.appdata.xml.in:225
-msgid "Fixes for calendar accuracy and integrity issues."
-msgstr "Opravy chyb v přesnosti a integritě kalendáře."
-
-#: data/io.elementary.calendar.appdata.xml.in:226
-msgid "Fixes exporting, importing and printing calendars."
-msgstr "Opravuje exportování, importování a tisk kalendářů."
-
-#: data/io.elementary.calendar.appdata.xml.in:245
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
@@ -355,6 +102,177 @@ msgstr "Maya;Plánovač;Termíny;Dny;Události;Kalendář;ics;caldav;evolution;"
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Přidat událost"
+
+#~ msgid "Ensure Calendar runs in the background on startup"
+#~ msgstr "Zajištěno, že při startu je Kalendář spuštěn na pozadí"
+
+#~ msgid "Fix memory leak when getting timezone information"
+#~ msgstr "Opraven únik paměti při získávání informací o časovém pásmu"
+
+#~ msgid "Reliably read Windows-style timezones"
+#~ msgstr "Spolehlivé načítání časových pásem ve stylu Windows"
+
+#~ msgid "Fix notification icons in the notification indicator"
+#~ msgstr "Opraveny ikony upozornění v indikátoru upozornění"
+
+#~ msgid "Fix an issue where event timezones were overwritten"
+#~ msgstr "Opraven problém kdy byla časová pásma události přepisována"
+
+#~ msgid "Ensure Calendar is launched when notifications are clicked"
+#~ msgstr "Zajištěno, že když je kliknuto na upozornění, je spuštěn kalendář"
+
+#~ msgid "Fix broken calendar color with some online providers"
+#~ msgstr ""
+#~ "Opraven problém kdy byly u některý online poskytovatelů rozbité barvy "
+#~ "kalendáře"
+
+#~ msgid "Fix an issue with some all-day events"
+#~ msgstr "Opraven problém s některými celodenními událostmi"
+
+#~ msgid "New Features:"
+#~ msgstr "Nové vlastnosti:"
+
+#~ msgid "Import ICS files from the gear menu"
+#~ msgstr "Přidáno importování ICS souborů z nabídky pod ozubeným kolečkem"
+
+#~ msgid "Support the dark style"
+#~ msgstr "Podpora pro tmavý styl vzhedu"
+
+#~ msgid "Properly show events on the last day of the month"
+#~ msgstr "Správné zobrazování událostí v poslední den v měsíci"
+
+#~ msgid "Fix end times for all-day events"
+#~ msgstr "Opraveny časy konců pro celodenní události"
+
+#~ msgid "Notify for all alarms on an event"
+#~ msgstr "Upozornění na všechny výstrahy při události"
+
+#~ msgid "Improved offline support"
+#~ msgstr "Vylepšena podpora režimu práce bez připojení"
+
+#~ msgid "New colorful avatar fallbacks"
+#~ msgstr "Nové náhradní barevné profilové obrázky"
+
+#~ msgid "Include \"film\" as an event icon keyword"
+#~ msgstr "Do klíčových slov ikony události přidáno „film“"
+
+#~ msgid "Add Mint and Bubblegum to calendar color chooser"
+#~ msgstr "Do voliče barev kalendáře přidána žvýkačková a mátová"
+
+#~ msgid "Link to Online Accounts settings in the gear menu"
+#~ msgstr "Odkaz na nastavení Účty online v nabídce pod ozubeným kolečkem"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Zlepšení výkonu"
+
+#~ msgid "Add \"Duplicate...\" option to event context menu"
+#~ msgstr "Do kontextové nabídky události přidána volba „Zduplikovat…“"
+
+#~ msgid "Fix an issue where new events could appear twice in Calendar"
+#~ msgstr ""
+#~ "Opraven problém kdy se nové události v Kalendáři mohly zobrazovat dvakrát"
+
+#~ msgid ""
+#~ "\"Mark as default calendar\" box is now correctly checked when editing a "
+#~ "calendar"
+#~ msgstr ""
+#~ "Zaškrtávací kolonka „Označit jako výchozí kalendář“ je nyní při "
+#~ "upravování kalendáře správně zaškrtnuto"
+
+#~ msgid "Improvements:"
+#~ msgstr "Vylepšení:"
+
+#~ msgid "Allow modification of recurring events"
+#~ msgstr "Umožnit upravování opakujících se událostí"
+
+#~ msgid "Improve handling of week start day"
+#~ msgstr "Vylepšeno nakládání s prvním dnem týdne"
+
+#~ msgid "Fix timezone errors with all-day events"
+#~ msgstr "Opraveny chyby v časových pásmech při celodenních událostech"
+
+#~ msgid "Don't resize the sidebar when resizing the window"
+#~ msgstr "Neměnění velikost postranního panelu při změně velikosti okna"
+
+#~ msgid "Fix issues with time zones not being recognized"
+#~ msgstr "Opraveny problémy s nerozpoznáváním časových zón"
+
+#~ msgid "Fix several issues with adding and removing monthly recurring events"
+#~ msgstr ""
+#~ "Opraveno několik problémů s přidáváním měsíčně se opakujícími událostmi"
+
+#~ msgid "Correctly save event reminders"
+#~ msgstr "Správně uložit připomínky událostí"
+
+#~ msgid "Ellipsize event participant details if necessary"
+#~ msgstr "V případě nutnosti nahradí podrobnosti o účastnících výpustky"
+
+#~ msgid "Fix unwanted rescheduling when editing event title"
+#~ msgstr "Oprava nechtěného přeplánování při upravování názvu události"
+
+#~ msgid "Fix crash when editing an event with no location"
+#~ msgstr "Oprava pádu při upravování události s nezadaným umístěním"
+
+#~ msgid "Fix potential crash when loading events with no start or end time"
+#~ msgstr ""
+#~ "Oprava potenciálního pádu při načítání událostí s nezadaným časem začátku "
+#~ "či konce"
+
+#~ msgid "Make agenda pane fill the whole space"
+#~ msgstr "Podokno s agendou vyplní celý prostor"
+
+#~ msgid "Set the suggested time for new events to the next whole hour"
+#~ msgstr "Nastavit doporučený čas pro nové události na celou další hodinu"
+
+#~ msgid "Fix issues with recurring events"
+#~ msgstr "Opravit problémy s opakujícími se událostmi"
+
+#~ msgid "Present import window when opening ICS files"
+#~ msgstr "Zobrazit okno importu při otevírání souborů ICS"
+
+#~ msgid "Add a search entry for calendars"
+#~ msgstr "Přidat záznam ve vyhledávání pro kalendáře"
+
+#~ msgid "Always use calendar icon in notifications"
+#~ msgstr "Vždy v notifikacích používat ikonu kalendáře"
+
+#~ msgid "Agenda view can now be navigated by keyboard"
+#~ msgstr "Pohled agendy lze nyní ovládat klávesnicí"
+
+#~ msgid "Right-to-left improvements"
+#~ msgstr "Vylepšení textu z prava do leva"
+
+#~ msgid "Various UI overhauls including lime accent color"
+#~ msgstr ""
+#~ "Různé vylepšení uživatelského prostředí, včetně změny hlavní barvy na "
+#~ "limetkovou"
+
+#~ msgid "Overall code cleanup and rewrites"
+#~ msgstr "Obecné pročištění kódu a přepsání"
+
+#~ msgid "Styling adjustments"
+#~ msgstr "Doladění stylů"
+
+#~ msgid "Fix location panel initialization"
+#~ msgstr "Opravit zavedení panelu lokalizace"
+
+#~ msgid "New translations"
+#~ msgstr "Nové překlady"
+
+#~ msgid "Update wingpanel-indicator-datetime settings path."
+#~ msgstr "Aktualizace popisu umístění nastavení wingpanel-indicator-datetime."
+
+#~ msgid "New translations."
+#~ msgstr "Nové překlady."
+
+#~ msgid "Various bug fixes and improvements."
+#~ msgstr "Různé opravy chyb a vylepšení."
+
+#~ msgid "Fixes for calendar accuracy and integrity issues."
+#~ msgstr "Opravy chyb v přesnosti a integritě kalendáře."
+
+#~ msgid "Fixes exporting, importing and printing calendars."
+#~ msgstr "Opravuje exportování, importování a tisk kalendářů."
 
 #~ msgid "office-calendar"
 #~ msgstr "office-calendar"

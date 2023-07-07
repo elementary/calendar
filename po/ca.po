@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2021-09-19 21:39+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"PO-Revision-Date: 2023-06-15 00:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/calendar/"
 "calendar/ca/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-19 05:51+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -104,19 +104,28 @@ msgstr "Aquest mes"
 msgid "Next Month"
 msgstr "El mes que ve"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 msgid "Create an event"
 msgstr "Crea un esdeveniment"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr "Focalitza el dia"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:182
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr ""
+"El Calendari s'iniciarà automàticament quan aquest dispositiu s'engegui i "
+"s'executarà quan se'n tanqui la finestra perquè pugui enviar notificacions "
+"d'esdeveniments."
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "Calendari"
 

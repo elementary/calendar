@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 02:27+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
 "PO-Revision-Date: 2015-10-24 09:47+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
@@ -103,20 +103,26 @@ msgstr ""
 msgid "Next Month"
 msgstr ""
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 #, fuzzy
 msgid "Create an event"
 msgstr "Izveidot jaunu notikumu"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr ""
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:182
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr ""
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "Kalendārs"
 

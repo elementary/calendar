@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 02:27+0000\n"
-"PO-Revision-Date: 2023-01-14 14:25+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"PO-Revision-Date: 2023-06-15 00:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -102,19 +102,26 @@ msgstr "今月"
 msgid "Next Month"
 msgstr "来月"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 msgid "Create an event"
 msgstr "予定を作成します"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "Focus the given day"
 msgstr "指定の日に移動します"
 
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "date"
 msgstr "日付"
 
-#: src/Application.vala:182
+#: src/Application.vala:185
+msgid ""
+"Calendar will automatically start when this device turns on and run when its "
+"window is closed so that it can send event notifications."
+msgstr "予定を通知できるよう、“カレンダー”はデバイス起動時に自動的にバックグラウンド"
+"で起動し、ウィンドウを閉じても常駐します。"
+
+#: src/Application.vala:216
 msgid "Calendar"
 msgstr "カレンダー"
 
