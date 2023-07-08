@@ -52,6 +52,8 @@ namespace Maya {
 
             application_id = Build.EXEC_NAME;
 
+            // FIXME: Remove once ported to Gtk.FileDialog
+            Environment.set_variable ("GTK_USE_PORTAL", "1", true);
             GLib.Intl.setlocale (LocaleCategory.ALL, "");
             GLib.Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
             GLib.Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
