@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:28+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
 "PO-Revision-Date: 2022-01-25 21:04+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/extra/cs/"
@@ -41,46 +41,42 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:67
-#: data/calendar.metainfo.xml.in:78 data/calendar.metainfo.xml.in:90
+#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:82
 msgid "Minor Updates:"
 msgstr "Drobné aktualizace:"
 
-#: data/calendar.metainfo.xml.in:60
-msgid "Ask the user's permission to run in background if required"
-msgstr ""
-
-#: data/calendar.metainfo.xml.in:69 data/calendar.metainfo.xml.in:80
-#: data/calendar.metainfo.xml.in:93
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:85
 msgid "Updated translations"
 msgstr "Aktualizovány překlady"
 
-#: data/calendar.metainfo.xml.in:92
+#: data/calendar.metainfo.xml.in:84
 #, fuzzy
 #| msgid "Updated translations"
 msgid "Updated app icon"
 msgstr "Aktualizovány překlady"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:92
 msgid "Features:"
 msgstr "Funkce:"
 
-#: data/calendar.metainfo.xml.in:102
+#: data/calendar.metainfo.xml.in:94
 msgid "Ask for confirmation before deleting events"
 msgstr "Vyžadovat potvrzení před smazáním událostí"
 
-#: data/calendar.metainfo.xml.in:103
+#: data/calendar.metainfo.xml.in:95
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "E-maily a odkazy na web v popisu události je možné následovat přidržením "
 "klávesy Ctrl a kliknutím na ně"
 
-#: data/calendar.metainfo.xml.in:105
+#: data/calendar.metainfo.xml.in:97
 msgid "Fixes:"
 msgstr "Opravy:"
 
-#: data/calendar.metainfo.xml.in:107
+#: data/calendar.metainfo.xml.in:99
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -88,13 +84,13 @@ msgstr ""
 "Pokud je daný kalendář pouze pro čtení, znepřístupněna v nastaveních pro něj "
 "zaškrtávací kolonka „Označit jako výchozí kalendář“"
 
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:100
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 "Odebráno už nepotřebné oprávnění pro přístup ke službě účtů z ohraničeného "
 "prostředí (sandbox)"
 
-#: data/calendar.metainfo.xml.in:109
+#: data/calendar.metainfo.xml.in:101
 msgid "Fixed potential memory leak"
 msgstr ""
 "Opraveno možné nevracení už nepoužívané paměti zpět systému (memory leak)"

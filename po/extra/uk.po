@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:28+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
 "PO-Revision-Date: 2023-05-02 22:06+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/extra/"
@@ -43,44 +43,40 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:67
-#: data/calendar.metainfo.xml.in:78 data/calendar.metainfo.xml.in:90
+#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:82
 msgid "Minor Updates:"
 msgstr "Незначні оновлення:"
 
-#: data/calendar.metainfo.xml.in:60
-msgid "Ask the user's permission to run in background if required"
-msgstr ""
-
-#: data/calendar.metainfo.xml.in:69 data/calendar.metainfo.xml.in:80
-#: data/calendar.metainfo.xml.in:93
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:85
 msgid "Updated translations"
 msgstr "Оновлено переклади"
 
-#: data/calendar.metainfo.xml.in:92
+#: data/calendar.metainfo.xml.in:84
 msgid "Updated app icon"
 msgstr "Оновлено піктограму застосунку"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:92
 msgid "Features:"
 msgstr "Функції:"
 
-#: data/calendar.metainfo.xml.in:102
+#: data/calendar.metainfo.xml.in:94
 msgid "Ask for confirmation before deleting events"
 msgstr "Запит підтвердження перед видаленням подій"
 
-#: data/calendar.metainfo.xml.in:103
+#: data/calendar.metainfo.xml.in:95
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Перехід за посиланнями електронної пошти та вебпосиланнями в описі події за "
 "допомогою Control + Клацання"
 
-#: data/calendar.metainfo.xml.in:105
+#: data/calendar.metainfo.xml.in:97
 msgid "Fixes:"
 msgstr "Виправлення:"
 
-#: data/calendar.metainfo.xml.in:107
+#: data/calendar.metainfo.xml.in:99
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -88,12 +84,12 @@ msgstr ""
 "Прапорець «Позначити типовим календарем» вимкнено у налаштуваннях календаря, "
 "якщо календар лише для читання"
 
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:100
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 "Вилучено більше не потрібний дозвіл пісочниці для служби облікових записів"
 
-#: data/calendar.metainfo.xml.in:109
+#: data/calendar.metainfo.xml.in:101
 msgid "Fixed potential memory leak"
 msgstr "Усунено можливий витік пам'яті"
 

@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:28+0000\n"
-"PO-Revision-Date: 2021-07-11 21:20+0000\n"
-"Last-Translator: Matheus Medeiros <dutra.md@hotmail.com>\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"PO-Revision-Date: 2023-07-08 14:07+0000\n"
+"Last-Translator: Deleted User <noreply+2895@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "calendar/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
@@ -41,60 +41,54 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:67
-#: data/calendar.metainfo.xml.in:78 data/calendar.metainfo.xml.in:90
+#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:82
 msgid "Minor Updates:"
 msgstr "Pequenas atualizações:"
 
-#: data/calendar.metainfo.xml.in:60
-msgid "Ask the user's permission to run in background if required"
-msgstr ""
-
-#: data/calendar.metainfo.xml.in:69 data/calendar.metainfo.xml.in:80
-#: data/calendar.metainfo.xml.in:93
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:85
 msgid "Updated translations"
 msgstr "Traduções atualizadas"
 
-#: data/calendar.metainfo.xml.in:92
-#, fuzzy
-#| msgid "Updated translations"
+#: data/calendar.metainfo.xml.in:84
 msgid "Updated app icon"
-msgstr "Traduções atualizadas"
+msgstr "Ícone do aplicativo atualizado"
 
-#: data/calendar.metainfo.xml.in:100
-#, fuzzy
-#| msgid "New Features:"
+#: data/calendar.metainfo.xml.in:92
 msgid "Features:"
-msgstr "Novas funcionalidades:"
+msgstr "Funcionalidades:"
 
-#: data/calendar.metainfo.xml.in:102
-#, fuzzy
-#| msgid "Allow modification of recurring events"
+#: data/calendar.metainfo.xml.in:94
 msgid "Ask for confirmation before deleting events"
-msgstr "Permitir alteração de eventos recorrentes"
+msgstr "Pedir confirmação antes de eliminar os eventos"
 
-#: data/calendar.metainfo.xml.in:103
+#: data/calendar.metainfo.xml.in:95
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
+"Acesse endereços de email e web na descrição do evento com Control + Clique"
 
-#: data/calendar.metainfo.xml.in:105
+#: data/calendar.metainfo.xml.in:97
 msgid "Fixes:"
-msgstr ""
+msgstr "Correções:"
 
-#: data/calendar.metainfo.xml.in:107
+#: data/calendar.metainfo.xml.in:99
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"Caixa de confirmação desativada \"Marque como calendário padrão\" nas "
+"configurações do calendário, se o calendário for apenas leitura"
 
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:100
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
+"Removida a permissão não mais necessária de sandbox para serviço de contas"
 
-#: data/calendar.metainfo.xml.in:109
+#: data/calendar.metainfo.xml.in:101
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "Corrigido o potencial vazamento de memória"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"

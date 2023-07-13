@@ -33,13 +33,25 @@ jobs:
 
     if: github.event.pull_request.merged == true && true == contains(join(github.event.pull_request.labels.*.name), 'Release')
 
+    strategy:
+      matrix:
+        arch: [x86_64, aarch64]
+      # Don't fail the whole workflow if one architecture fails
+      fail-fast: false
+
     container:
-      image: ghcr.io/elementary/flatpak-platform/runtime:6
+      image: ghcr.io/elementary/flatpak-platform/runtime:7.1-${{ matrix.arch }}
       options: --privileged
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Set up QEMU for aarch64 emulation
+        if: ${{ matrix.arch != 'x86_64' }}
+        uses: docker/setup-qemu-action@v2
+        with:
+          platforms: arm64
 
       - name: Build
         uses: flatpak/flatpak-github-actions/flatpak-builder@v6
@@ -51,6 +63,7 @@ jobs:
           repository-url: https://flatpak.elementary.io/repo.flatpakrepo
           cache-key: "flatpak-builder-${{ github.sha }}"
           branch: stable
+          arch: ${{ matrix.arch }}
 
       - name: Deploy
         uses: flatpak/flatpak-github-actions/flat-manager@v6
