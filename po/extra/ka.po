@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2023-03-16 13:25+0000\n"
+"PO-Revision-Date: 2023-07-19 12:07+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/extra/"
 "ka/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
@@ -33,6 +33,9 @@ msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
+"თხელი, მსუბუქი კალენდრის აპი, რომელსაც ბევრი ისეთი კალენდრის ერთდროული "
+"მართვა და სინქრონიზაცია შეუძლია, როგორიცაა Google Calendar, Outlook და "
+"CalDAV."
 
 #: data/calendar.metainfo.xml.in:51
 msgid "elementary, Inc."
@@ -64,6 +67,8 @@ msgstr "დადასტურების კითხვა მოვლე�
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
+"მოვლენის აღწერაში მოხსენებული ელფოსტებისა და ვებ-ბმულების მიყოლა Control + "
+"წკაპით"
 
 #: data/calendar.metainfo.xml.in:97
 msgid "Fixes:"
@@ -74,10 +79,12 @@ msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"თუ კალენდარი მხოლოდ-კითხვადია, მის მორგების ფანჯარაში \"ნაგულისხმევ "
+"კალენდრად დანიშვნა\" გამორთულია"
 
 #: data/calendar.metainfo.xml.in:100
 msgid "Removed no longer needed sandbox permission for accounts service"
-msgstr ""
+msgstr "ანგარიშების სერვისისთვის უკვე არასაჭირო სენდბოქსის წვდომა წაიშალა"
 
 #: data/calendar.metainfo.xml.in:101
 msgid "Fixed potential memory leak"
@@ -85,7 +92,7 @@ msgstr "მეხსიერების პოტენციური გა�
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
+msgstr "Maya;მგეგმავი;Dates;Days;მოვლენები;კალენდარი;ics;caldav;evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
