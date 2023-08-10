@@ -101,8 +101,10 @@ public class Maya.View.GridDay : Gtk.EventBox {
         Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
         Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
 
-        this.notify["date"].connect (() => {
-            label.label = date.get_day_of_month ().to_string ();
+        this.bind_property ("date", label, "label", BindingFlags.SYNC_CREATE, (binding, srcval, ref targetval) => {
+            unowned var date = (GLib.DateTime) srcval.get_boxed ();
+            targetval.take_string (date.get_day_of_month ().to_string ());
+            return true;
         });
     }
 
@@ -121,18 +123,10 @@ public class Maya.View.GridDay : Gtk.EventBox {
         var start = icalcomp.get_dtstart ();
         var end = icalcomp.get_dtend ();
         var gap = date.get_day_of_month () - start.get_day ();
-#if E_CAL_2_0
         start.set_day (start.get_day () + gap);
-#else
-        start.day += gap;
-#endif
 
         if (!end.is_null_time ()) {
-#if E_CAL_2_0
             end.set_day (end.get_day () + gap);
-#else
-            end.day += gap;
-#endif
             icalcomp.set_dtend (end);
         }
 

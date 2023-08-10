@@ -102,19 +102,11 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         foreach (var alarm_uid in parent_dialog.ecal.get_alarm_uids ()) {
             ECal.ComponentAlarm e_alarm = parent_dialog.ecal.get_alarm (alarm_uid);
             ECal.ComponentAlarmAction action;
-#if E_CAL_2_0
             action = e_alarm.get_action ();
-#else
-            e_alarm.get_action (out action);
-#endif
             switch (action) {
                 case (ECal.ComponentAlarmAction.DISPLAY):
                     ECal.ComponentAlarmTrigger trigger;
-#if E_CAL_2_0
                     trigger = e_alarm.get_trigger ();
-#else
-                    e_alarm.get_trigger (out trigger);
-#endif
                     if (trigger.get_kind () == ECal.ComponentAlarmTriggerKind.RELATIVE_START) {
                         ICal.Duration duration = trigger.get_duration ();
                         var reminder = add_reminder (alarm_uid);
@@ -137,16 +129,10 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 var alarm = new ECal.ComponentAlarm ();
                 alarm.set_action (ECal.ComponentAlarmAction.DISPLAY);
                 ECal.ComponentAlarmTrigger trigger;
-#if E_CAL_2_0
                 trigger = new ECal.ComponentAlarmTrigger.relative (
                     ECal.ComponentAlarmTriggerKind.RELATIVE_START,
                     reminder.get_duration ()
                 );
-#else
-                alarm.get_trigger (out trigger);
-                trigger.rel_duration = reminder.get_duration ();
-                trigger.type = ECal.ComponentAlarmTriggerKind.RELATIVE_START;
-#endif
 
                 alarm.set_trigger (trigger);
                 parent_dialog.ecal.add_alarm (alarm);
@@ -154,15 +140,9 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
                 var alarm = parent_dialog.ecal.get_alarm (reminder.uid).copy ();
                 alarm.set_action (ECal.ComponentAlarmAction.DISPLAY);
                 ECal.ComponentAlarmTrigger trigger;
-#if E_CAL_2_0
                 trigger = alarm.get_trigger ();
                 trigger.set_kind (ECal.ComponentAlarmTriggerKind.RELATIVE_START);
                 trigger.set_duration (reminder.get_duration ());
-#else
-                alarm.get_trigger (out trigger);
-                trigger.rel_duration = reminder.get_duration ();
-                trigger.type = ECal.ComponentAlarmTriggerKind.RELATIVE_START;
-#endif
                 alarm.set_trigger (trigger);
                 parent_dialog.ecal.remove_alarm (reminder.uid);
                 parent_dialog.ecal.add_alarm (alarm);
@@ -272,116 +252,52 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
     }
 
     public ICal.Duration get_duration () {
-#if E_CAL_2_0
         var duration = new ICal.Duration.null_duration ();
-#else
-        var duration = ICal.Duration.null_duration ();
-#endif
         switch (time.active) {
             case 1:
-#if E_CAL_2_0
                 duration.set_minutes (1);
-#else
-                duration.minutes = 1;
-#endif
                 break;
             case 2:
-#if E_CAL_2_0
                 duration.set_minutes (5);
-#else
-                duration.minutes = 5;
-#endif
                 break;
             case 3:
-#if E_CAL_2_0
                 duration.set_minutes (10);
-#else
-                duration.minutes = 10;
-#endif
                 break;
             case 4:
-#if E_CAL_2_0
                 duration.set_minutes (15);
-#else
-                duration.minutes = 15;
-#endif
                 break;
             case 5:
-#if E_CAL_2_0
                 duration.set_minutes (20);
-#else
-                duration.minutes = 20;
-#endif
                 break;
             case 6:
-#if E_CAL_2_0
                 duration.set_minutes (25);
-#else
-                duration.minutes = 25;
-#endif
                 break;
             case 7:
-#if E_CAL_2_0
                 duration.set_minutes (30);
-#else
-                duration.minutes = 30;
-#endif
                 break;
             case 8:
-#if E_CAL_2_0
                 duration.set_minutes (45);
-#else
-                duration.minutes = 45;
-#endif
                 break;
             case 9:
-#if E_CAL_2_0
                 duration.set_hours (1);
-#else
-                duration.hours = 1;
-#endif
                 break;
             case 10:
-#if E_CAL_2_0
                 duration.set_hours (2);
-#else
-                duration.hours = 2;
-#endif
                 break;
             case 11:
-#if E_CAL_2_0
                 duration.set_hours (3);
-#else
-                duration.hours = 3;
-#endif
                 break;
             case 12:
-#if E_CAL_2_0
                 duration.set_hours (12);
-#else
-                duration.hours = 12;
-#endif
                 break;
             case 13:
-#if E_CAL_2_0
                 duration.set_hours (24);
-#else
-                duration.hours = 24;
-#endif
                 break;
             case 14:
-#if E_CAL_2_0
                 duration.set_days (2);
-#else
-                duration.days = 2;
-#endif
                 break;
             case 15:
-#if E_CAL_2_0
                 duration.set_weeks (1);
-#else
-                duration.weeks = 1;
-#endif
                 break;
         }
         return duration;

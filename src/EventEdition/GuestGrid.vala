@@ -37,11 +37,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         var status_label_context = status_label.get_style_context ();
         status_label_context.add_class (Granite.STYLE_CLASS_H4_LABEL);
 
-#if E_CAL_2_0
         ICal.Parameter parameter;
-#else
-        unowned ICal.Parameter parameter;
-#endif
         parameter = attendee.get_first_parameter (ICal.ParameterKind.PARTSTAT_PARAMETER);
         if (parameter != null) {
             switch (parameter.get_partstat ()) {

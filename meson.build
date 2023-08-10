@@ -1,6 +1,7 @@
 project('io.elementary.calendar',
     'c', 'vala',
-    version: '6.1.1'
+    version: '7.0.0',
+    meson_version: '>=0.57.0'
 )
 
 add_project_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
@@ -28,25 +29,32 @@ gtk_dep = dependency('gtk+-3.0', version: '>=3.22')
 handy_dep = dependency('libhandy-1', version: '>=0.90.0')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>=3.8.0')
 libedataserverui_dep = dependency('libedataserverui-1.2', version: '>=3.8.0')
-libsoup_dep = dependency('libsoup-2.4')
+if (libedataserver_dep.version().version_compare ('>=3.46'))
+    libsoup_dep = []
+    geocode_glib_dep = dependency('geocode-glib-2.0')
+    add_project_arguments('--define', 'HAS_EDS_3_46', language: 'vala')
+else
+    geocode_glib_dep = dependency('geocode-glib-1.0')
+    libsoup_dep = dependency('libsoup-2.4')
+endif
 gmodule_dep = dependency('gmodule-2.0')
-champlain_dep = dependency('champlain-0.12')
-champlain_gtk_dep = dependency('champlain-gtk-0.12')
+champlain_dep = dependency('champlain-0.12', fallback: ['libchamplain', 'libchamplain_dep'], default_options: ['default_library=static', 'introspection=false', 'vapi=false'])
+champlain_gtk_dep = dependency('champlain-gtk-0.12', fallback: ['libchamplain', 'libchamplain_gtk_dep'], default_options: ['default_library=static', 'introspection=false', 'vapi=false'])
+# We need to force the inclusion of the Vapi in case of fallback
+if (champlain_dep.type_name() == 'internal')
+    vapi_dir = meson.current_source_dir() / 'vapi'
+    champlain_dep = [champlain_dep, meson.get_compiler('vala').find_library('champlain-0.12', dirs: vapi_dir)]
+    champlain_gtk_dep = [champlain_gtk_dep, meson.get_compiler('vala').find_library('champlain-gtk-0.12', dirs: vapi_dir)]
+endif
 clutter_dep = dependency('clutter-1.0')
 clutter_gtk_dep = dependency('clutter-gtk-1.0')
 folks_dep = dependency('folks')
-geocode_glib_dep = dependency('geocode-glib-1.0')
 gclue_dep = dependency('libgeoclue-2.0')
-libecal_dep = dependency('libecal-2.0', required: false)
-if libecal_dep.found()
-    libical_dep = dependency('libical-glib')
-    add_project_arguments('--define=E_CAL_2_0', language: 'vala')
-    add_project_arguments('-DLIBICAL_GLIB_UNSTABLE_API=1', language: 'c')
-else
-    libecal_dep = dependency('libecal-1.2', version: '>=3.8.0')
-    libical_dep = dependency('libical')
-    add_project_arguments('--vapidir', join_paths(meson.current_source_dir(), 'vapi'), language: 'vala')
-endif
+libecal_dep = dependency('libecal-2.0')
+libical_dep = dependency('libical-glib')
+libportal_dep = [ dependency('libportal'), dependency('libportal-gtk3') ]
+
+add_project_arguments('-DLIBICAL_GLIB_UNSTABLE_API=1', language: 'c')
 
 m_dep = meson.get_compiler('c').find_library('m', required : false)
 
@@ -62,4 +70,4 @@ subdir('src')
 subdir('plugins')
 subdir('po')
 
-meson.add_install_script('meson/post_install.py')
+gnome.post_install(glib_compile_schemas: true)

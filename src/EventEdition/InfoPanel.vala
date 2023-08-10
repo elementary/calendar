@@ -214,11 +214,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         // First, clear the comments
         int count = comp.count_properties (ICal.PropertyKind.DESCRIPTION_PROPERTY);
         for (int i = 0; i < count; i++) {
-#if E_CAL_2_0
             ICal.Property remove_prop;
-#else
-            unowned ICal.Property remove_prop;
-#endif
             remove_prop = comp.get_first_property (ICal.PropertyKind.COMMENT_PROPERTY);
             comp.remove_property (remove_prop);
         }
@@ -277,11 +273,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
                 to_time_picker.sensitive = false;
             }
 
-#if E_CAL_2_0
             ICal.Property property;
-#else
-            unowned ICal.Property property;
-#endif
             property = comp.get_first_property (ICal.PropertyKind.DESCRIPTION_PROPERTY);
             if (property != null) {
                 Gtk.TextBuffer buffer = new Gtk.TextBuffer (null);

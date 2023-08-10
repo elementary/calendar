@@ -1,0 +1,6 @@
+clutter-gtk-1.0
+cogl-pango-1.0
+gtk+-3.0
+atk
+pangocairo
+champlain-0.12

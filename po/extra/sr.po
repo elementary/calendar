@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 04:45+0000\n"
+"POT-Creation-Date: 2023-06-13 01:59+0000\n"
 "PO-Revision-Date: 2020-12-19 10:16+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/calendar/extra/"
@@ -21,18 +21,16 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-01-07 06:12+0000\n"
 
-#: data/io.elementary.calendar.appdata.xml.in:8
-#: data/io.elementary.calendar.desktop.in:4
+#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
 msgstr "Календар"
 
-#: data/io.elementary.calendar.appdata.xml.in:9
-#: data/io.elementary.calendar.desktop.in:6
+#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
 msgstr "Прегледајте и распоредите догађаје"
 
-#: data/io.elementary.calendar.appdata.xml.in:11
+#: data/calendar.metainfo.xml.in:13
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
@@ -40,322 +38,62 @@ msgstr ""
 "Мали, лаган календар који усклађује и управља са више календара на једном "
 "месту, као што је Гугл календар, Аутлук и КолДАВ."
 
-#: data/io.elementary.calendar.appdata.xml.in:16
-#: data/io.elementary.calendar.appdata.xml.in:46
-#: data/io.elementary.calendar.appdata.xml.in:60
-#: data/io.elementary.calendar.appdata.xml.in:73
-#: data/io.elementary.calendar.appdata.xml.in:92
-#: data/io.elementary.calendar.appdata.xml.in:110
-#: data/io.elementary.calendar.appdata.xml.in:126
-#: data/io.elementary.calendar.appdata.xml.in:135
-#: data/io.elementary.calendar.appdata.xml.in:144
-#: data/io.elementary.calendar.appdata.xml.in:153
-msgid "Minor Updates:"
-msgstr "Мања освежења:"
-
-#: data/io.elementary.calendar.appdata.xml.in:18
-#, fuzzy
-#| msgid "Updated translations"
-msgid "Updated app icon"
-msgstr "Освежени преводи"
-
-#: data/io.elementary.calendar.appdata.xml.in:19
-#: data/io.elementary.calendar.appdata.xml.in:48
-#: data/io.elementary.calendar.appdata.xml.in:62
-#: data/io.elementary.calendar.appdata.xml.in:75
-#: data/io.elementary.calendar.appdata.xml.in:100
-#: data/io.elementary.calendar.appdata.xml.in:114
-#: data/io.elementary.calendar.appdata.xml.in:129
-#: data/io.elementary.calendar.appdata.xml.in:138
-#: data/io.elementary.calendar.appdata.xml.in:147
-#: data/io.elementary.calendar.appdata.xml.in:158
-#: data/io.elementary.calendar.appdata.xml.in:178
-#: data/io.elementary.calendar.appdata.xml.in:190
-msgid "Updated translations"
-msgstr "Освежени преводи"
-
-#: data/io.elementary.calendar.appdata.xml.in:25
-#, fuzzy
-#| msgid "New Features:"
-msgid "Features:"
-msgstr "Нове функције:"
-
-#: data/io.elementary.calendar.appdata.xml.in:27
-#, fuzzy
-#| msgid "Allow modification of recurring events"
-msgid "Ask for confirmation before deleting events"
-msgstr "Дозвољава измену понављајућих догађаја"
-
-#: data/io.elementary.calendar.appdata.xml.in:28
-msgid ""
-"Follow email and web links in the event description with Control + Click"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:30
-#: data/io.elementary.calendar.appdata.xml.in:40
-#: data/io.elementary.calendar.appdata.xml.in:54
-#: data/io.elementary.calendar.appdata.xml.in:68
-#: data/io.elementary.calendar.appdata.xml.in:86
-msgid "Fixes:"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:32
-msgid ""
-"Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
-"calendar is read-only"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:33
-msgid "Removed no longer needed sandbox permission for accounts service"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:34
-msgid "Fixed potential memory leak"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:42
-msgid "Ensure Calendar runs in the background on startup"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:43
-msgid "Fix memory leak when getting timezone information"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:44
-msgid "Reliably read Windows-style timezones"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:56
-msgid "Fix notification icons in the notification indicator"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:57
-#, fuzzy
-#| msgid "Fix an issue where new events could appear twice in Calendar"
-msgid "Fix an issue where event timezones were overwritten"
-msgstr ""
-"Исправља проблем где би нови догађаји могли да се појаве два пута у Календару"
-
-#: data/io.elementary.calendar.appdata.xml.in:58
-#, fuzzy
-#| msgid "Always use calendar icon in notifications"
-msgid "Ensure Calendar is launched when notifications are clicked"
-msgstr "Увек користи иконицу календара у обавештењима"
-
-#: data/io.elementary.calendar.appdata.xml.in:70
-msgid "Fix broken calendar color with some online providers"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:71
-#, fuzzy
-#| msgid "Fix timezone errors with all-day events"
-msgid "Fix an issue with some all-day events"
-msgstr "Исправља грешке временске зоне са целодневним догађајима"
-
-#: data/io.elementary.calendar.appdata.xml.in:81
-#: data/io.elementary.calendar.appdata.xml.in:106
-msgid "New Features:"
-msgstr "Нове функције:"
-
-#: data/io.elementary.calendar.appdata.xml.in:83
-msgid "Import ICS files from the gear menu"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:84
-msgid "Support the dark style"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:88
-msgid "Properly show events on the last day of the month"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:89
-#, fuzzy
-#| msgid "Fix timezone errors with all-day events"
-msgid "Fix end times for all-day events"
-msgstr "Исправља грешке временске зоне са целодневним догађајима"
-
-#: data/io.elementary.calendar.appdata.xml.in:90
-msgid "Notify for all alarms on an event"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:94
-msgid "Improved offline support"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:95
-msgid "New colorful avatar fallbacks"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:96
-msgid "Include \"film\" as an event icon keyword"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:97
-msgid "Add Mint and Bubblegum to calendar color chooser"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:98
-msgid "Link to Online Accounts settings in the gear menu"
-msgstr ""
-
-#: data/io.elementary.calendar.appdata.xml.in:99
-#: data/io.elementary.calendar.appdata.xml.in:177
-msgid "Performance improvements"
-msgstr "Побољшања учинковитости"
-
-#: data/io.elementary.calendar.appdata.xml.in:108
-msgid "Add \"Duplicate...\" option to event context menu"
-msgstr "Додаје опцију „Удвостручи...“ приручном изборнику догађаја"
-
-#: data/io.elementary.calendar.appdata.xml.in:112
-msgid "Fix an issue where new events could appear twice in Calendar"
-msgstr ""
-"Исправља проблем где би нови догађаји могли да се појаве два пута у Календару"
-
-#: data/io.elementary.calendar.appdata.xml.in:113
-msgid ""
-"\"Mark as default calendar\" box is now correctly checked when editing a "
-"calendar"
-msgstr ""
-"Поље „Означи као подразумевани календар“ је сада исправно означено приликом "
-"уређивања календара"
-
-#: data/io.elementary.calendar.appdata.xml.in:120
-msgid "Improvements:"
-msgstr "Побољшања:"
-
-#: data/io.elementary.calendar.appdata.xml.in:122
-msgid "Allow modification of recurring events"
-msgstr "Дозвољава измену понављајућих догађаја"
-
-#: data/io.elementary.calendar.appdata.xml.in:123
-msgid "Improve handling of week start day"
-msgstr "Побољшава руковање почетним даном недеље"
-
-#: data/io.elementary.calendar.appdata.xml.in:124
-msgid "Fix timezone errors with all-day events"
-msgstr "Исправља грешке временске зоне са целодневним догађајима"
-
-#: data/io.elementary.calendar.appdata.xml.in:128
-msgid "Don't resize the sidebar when resizing the window"
-msgstr "Не мења величину бочне површи приликом промене величине прозора"
-
-#: data/io.elementary.calendar.appdata.xml.in:137
-msgid "Fix issues with time zones not being recognized"
-msgstr "Решава проблеме са временским зонама које нису препознате"
-
-#: data/io.elementary.calendar.appdata.xml.in:146
-msgid "Fix several issues with adding and removing monthly recurring events"
-msgstr ""
-"Поправља неколико проблема са додавањем и уклањањем месечних понављајућих "
-"догађаја"
-
-#: data/io.elementary.calendar.appdata.xml.in:155
-msgid "Correctly save event reminders"
-msgstr "Исправно чува потсетнике догађаја"
-
-#: data/io.elementary.calendar.appdata.xml.in:156
-msgid "Ellipsize event participant details if necessary"
-msgstr "Скраћује детаље учесника догађаја ако је неопходно"
-
-#: data/io.elementary.calendar.appdata.xml.in:157
-msgid "Fix unwanted rescheduling when editing event title"
-msgstr ""
-"Исправка нежељеног поновног заказивања приликом уређивања наслова догађаја"
-
-#: data/io.elementary.calendar.appdata.xml.in:164
-msgid "Fix crash when editing an event with no location"
-msgstr "Исправка урушавања приликом уређивања догађаја без локације"
-
-#: data/io.elementary.calendar.appdata.xml.in:169
-msgid "Fix potential crash when loading events with no start or end time"
-msgstr ""
-"Исправља потенцијално урушавање приликом учитавања догађаја без времена "
-"почетка или завршетка"
-
-#: data/io.elementary.calendar.appdata.xml.in:174
-msgid "Make agenda pane fill the whole space"
-msgstr "Чини да окно дневног реда попуни читав простор"
-
-#: data/io.elementary.calendar.appdata.xml.in:175
-msgid "Set the suggested time for new events to the next whole hour"
-msgstr "Поставите предложено време за нове догађаје на следећи цео сат времена"
-
-#: data/io.elementary.calendar.appdata.xml.in:176
-msgid "Fix issues with recurring events"
-msgstr "Поправља проблеме са понављајућим догађајима"
-
-#: data/io.elementary.calendar.appdata.xml.in:183
-msgid "Present import window when opening ICS files"
-msgstr "Приказује прозор увоза приликом отварања „ICS“ датотека"
-
-#: data/io.elementary.calendar.appdata.xml.in:184
-msgid "Add a search entry for calendars"
-msgstr "Додаје унос претраге за календаре"
-
-#: data/io.elementary.calendar.appdata.xml.in:185
-msgid "Always use calendar icon in notifications"
-msgstr "Увек користи иконицу календара у обавештењима"
-
-#: data/io.elementary.calendar.appdata.xml.in:186
-msgid "Agenda view can now be navigated by keyboard"
-msgstr "Прегледом дневног реда сада се може кретати помоћу тастатуре"
-
-#: data/io.elementary.calendar.appdata.xml.in:187
-msgid "Right-to-left improvements"
-msgstr "Побољшања са десно на лево"
-
-#: data/io.elementary.calendar.appdata.xml.in:188
-msgid "Various UI overhauls including lime accent color"
-msgstr "Разни ремонти корисничког сучеља, укључујући наглашену боју нане"
-
-#: data/io.elementary.calendar.appdata.xml.in:189
-msgid "Overall code cleanup and rewrites"
-msgstr "Свеукупно чишћење и преправљање кода"
-
-#: data/io.elementary.calendar.appdata.xml.in:195
-msgid "Styling adjustments"
-msgstr "Дотеривање стила"
-
-#: data/io.elementary.calendar.appdata.xml.in:196
-msgid "Fix location panel initialization"
-msgstr "Поправља покретање панела места"
-
-#: data/io.elementary.calendar.appdata.xml.in:197
-msgid "New translations"
-msgstr "Нови преводи"
-
-#: data/io.elementary.calendar.appdata.xml.in:202
-msgid "Update wingpanel-indicator-datetime settings path."
-msgstr "Освежава путању подешавања „wingpanel-indicator-datetime“."
-
-#: data/io.elementary.calendar.appdata.xml.in:203
-msgid "New translations."
-msgstr "Нови преводи."
-
-#: data/io.elementary.calendar.appdata.xml.in:208
-#: data/io.elementary.calendar.appdata.xml.in:215
-msgid "Various bug fixes and improvements."
-msgstr "Разне исправке грешака и побољшања."
-
-#: data/io.elementary.calendar.appdata.xml.in:213
-msgid "Fixes for calendar accuracy and integrity issues."
-msgstr "Исправке за тачност календара и проблеме целовитости."
-
-#: data/io.elementary.calendar.appdata.xml.in:214
-msgid "Fixes exporting, importing and printing calendars."
-msgstr "Поправке извоза, увоза и штампања календара."
-
-#: data/io.elementary.calendar.appdata.xml.in:233
+#: data/calendar.metainfo.xml.in:51
 #, fuzzy
 #| msgid "elementary LLC."
 msgid "elementary, Inc."
 msgstr "elementary LLC."
 
-#: data/io.elementary.calendar.desktop.in:8
-msgid "io.elementary.calendar"
-msgstr "io.elementary.calendar"
+#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:82
+msgid "Minor Updates:"
+msgstr "Мања освежења:"
+
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:85
+msgid "Updated translations"
+msgstr "Освежени преводи"
+
+#: data/calendar.metainfo.xml.in:84
+#, fuzzy
+#| msgid "Updated translations"
+msgid "Updated app icon"
+msgstr "Освежени преводи"
+
+#: data/calendar.metainfo.xml.in:92
+#, fuzzy
+#| msgid "New Features:"
+msgid "Features:"
+msgstr "Нове функције:"
+
+#: data/calendar.metainfo.xml.in:94
+#, fuzzy
+#| msgid "Allow modification of recurring events"
+msgid "Ask for confirmation before deleting events"
+msgstr "Дозвољава измену понављајућих догађаја"
+
+#: data/calendar.metainfo.xml.in:95
+msgid ""
+"Follow email and web links in the event description with Control + Click"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:97
+msgid "Fixes:"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:99
+msgid ""
+"Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
+"calendar is read-only"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:100
+msgid "Removed no longer needed sandbox permission for accounts service"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:101
+msgid "Fixed potential memory leak"
+msgstr ""
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
@@ -364,6 +102,148 @@ msgstr "маја;планер;датуми;дани;догађаји;кален�
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Додај догађај"
+
+#, fuzzy
+#~| msgid "Fix an issue where new events could appear twice in Calendar"
+#~ msgid "Fix an issue where event timezones were overwritten"
+#~ msgstr ""
+#~ "Исправља проблем где би нови догађаји могли да се појаве два пута у "
+#~ "Календару"
+
+#, fuzzy
+#~| msgid "Always use calendar icon in notifications"
+#~ msgid "Ensure Calendar is launched when notifications are clicked"
+#~ msgstr "Увек користи иконицу календара у обавештењима"
+
+#, fuzzy
+#~| msgid "Fix timezone errors with all-day events"
+#~ msgid "Fix an issue with some all-day events"
+#~ msgstr "Исправља грешке временске зоне са целодневним догађајима"
+
+#~ msgid "New Features:"
+#~ msgstr "Нове функције:"
+
+#, fuzzy
+#~| msgid "Fix timezone errors with all-day events"
+#~ msgid "Fix end times for all-day events"
+#~ msgstr "Исправља грешке временске зоне са целодневним догађајима"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Побољшања учинковитости"
+
+#~ msgid "Add \"Duplicate...\" option to event context menu"
+#~ msgstr "Додаје опцију „Удвостручи...“ приручном изборнику догађаја"
+
+#~ msgid "Fix an issue where new events could appear twice in Calendar"
+#~ msgstr ""
+#~ "Исправља проблем где би нови догађаји могли да се појаве два пута у "
+#~ "Календару"
+
+#~ msgid ""
+#~ "\"Mark as default calendar\" box is now correctly checked when editing a "
+#~ "calendar"
+#~ msgstr ""
+#~ "Поље „Означи као подразумевани календар“ је сада исправно означено "
+#~ "приликом уређивања календара"
+
+#~ msgid "Improvements:"
+#~ msgstr "Побољшања:"
+
+#~ msgid "Allow modification of recurring events"
+#~ msgstr "Дозвољава измену понављајућих догађаја"
+
+#~ msgid "Improve handling of week start day"
+#~ msgstr "Побољшава руковање почетним даном недеље"
+
+#~ msgid "Fix timezone errors with all-day events"
+#~ msgstr "Исправља грешке временске зоне са целодневним догађајима"
+
+#~ msgid "Don't resize the sidebar when resizing the window"
+#~ msgstr "Не мења величину бочне површи приликом промене величине прозора"
+
+#~ msgid "Fix issues with time zones not being recognized"
+#~ msgstr "Решава проблеме са временским зонама које нису препознате"
+
+#~ msgid "Fix several issues with adding and removing monthly recurring events"
+#~ msgstr ""
+#~ "Поправља неколико проблема са додавањем и уклањањем месечних понављајућих "
+#~ "догађаја"
+
+#~ msgid "Correctly save event reminders"
+#~ msgstr "Исправно чува потсетнике догађаја"
+
+#~ msgid "Ellipsize event participant details if necessary"
+#~ msgstr "Скраћује детаље учесника догађаја ако је неопходно"
+
+#~ msgid "Fix unwanted rescheduling when editing event title"
+#~ msgstr ""
+#~ "Исправка нежељеног поновног заказивања приликом уређивања наслова догађаја"
+
+#~ msgid "Fix crash when editing an event with no location"
+#~ msgstr "Исправка урушавања приликом уређивања догађаја без локације"
+
+#~ msgid "Fix potential crash when loading events with no start or end time"
+#~ msgstr ""
+#~ "Исправља потенцијално урушавање приликом учитавања догађаја без времена "
+#~ "почетка или завршетка"
+
+#~ msgid "Make agenda pane fill the whole space"
+#~ msgstr "Чини да окно дневног реда попуни читав простор"
+
+#~ msgid "Set the suggested time for new events to the next whole hour"
+#~ msgstr ""
+#~ "Поставите предложено време за нове догађаје на следећи цео сат времена"
+
+#~ msgid "Fix issues with recurring events"
+#~ msgstr "Поправља проблеме са понављајућим догађајима"
+
+#~ msgid "Present import window when opening ICS files"
+#~ msgstr "Приказује прозор увоза приликом отварања „ICS“ датотека"
+
+#~ msgid "Add a search entry for calendars"
+#~ msgstr "Додаје унос претраге за календаре"
+
+#~ msgid "Always use calendar icon in notifications"
+#~ msgstr "Увек користи иконицу календара у обавештењима"
+
+#~ msgid "Agenda view can now be navigated by keyboard"
+#~ msgstr "Прегледом дневног реда сада се може кретати помоћу тастатуре"
+
+#~ msgid "Right-to-left improvements"
+#~ msgstr "Побољшања са десно на лево"
+
+#~ msgid "Various UI overhauls including lime accent color"
+#~ msgstr "Разни ремонти корисничког сучеља, укључујући наглашену боју нане"
+
+#~ msgid "Overall code cleanup and rewrites"
+#~ msgstr "Свеукупно чишћење и преправљање кода"
+
+#~ msgid "Styling adjustments"
+#~ msgstr "Дотеривање стила"
+
+#~ msgid "Fix location panel initialization"
+#~ msgstr "Поправља покретање панела места"
+
+#~ msgid "New translations"
+#~ msgstr "Нови преводи"
+
+#~ msgid "Update wingpanel-indicator-datetime settings path."
+#~ msgstr "Освежава путању подешавања „wingpanel-indicator-datetime“."
+
+#~ msgid "New translations."
+#~ msgstr "Нови преводи."
+
+#~ msgid "Various bug fixes and improvements."
+#~ msgstr "Разне исправке грешака и побољшања."
+
+#~ msgid "Fixes for calendar accuracy and integrity issues."
+#~ msgstr "Исправке за тачност календара и проблеме целовитости."
+
+#~ msgid "Fixes exporting, importing and printing calendars."
+#~ msgstr "Поправке извоза, увоза и штампања календара."
+
+#~ msgid "io.elementary.calendar"
+#~ msgstr "io.elementary.calendar"
 
 #~ msgid "About Calendar"
 #~ msgstr "О календару"
