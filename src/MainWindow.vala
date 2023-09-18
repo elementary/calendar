@@ -59,8 +59,6 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/calendar");
 
-        var headerbar = new Calendar.Widgets.HeaderBar ();
-
         var error_label = new Gtk.Label (null);
         error_label.show ();
 
@@ -73,28 +71,38 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
 
         var info_bar = new Calendar.Widgets.ConnectivityInfoBar ();
 
+        var header_bar = new Calendar.Widgets.HeaderBar ();
+
+        calview = new View.CalendarView () {
+            vexpand = true
+        };
+
+        var cal_box = new Gtk.Box (VERTICAL, 0);
+        cal_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        cal_box.add (header_bar);
+        cal_box.add (error_bar);
+        cal_box.add (info_bar);
+        cal_box.add (calview);
+
         var sidebar = new View.AgendaView () {
             no_show_all = true,
             width_request = 160
         };
         sidebar.show ();
 
-        calview = new View.CalendarView () {
-            vexpand = true
-        };
-
         var hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-        hpaned.pack1 (calview, true, false);
+        hpaned.pack1 (cal_box, true, false);
         hpaned.pack2 (sidebar, false, false);
 
-        var grid = new Gtk.Grid ();
-        grid.orientation = Gtk.Orientation.VERTICAL;
-        grid.add (headerbar);
-        grid.add (error_bar);
-        grid.add (info_bar);
-        grid.add (hpaned);
+        add (hpaned);
 
-        add (grid);
+        var header_group = new Hdy.HeaderGroup ();
+        header_group.add_header_bar (header_bar);
+        header_group.add_header_bar (sidebar.header_bar);
+
+        var size_group = new Gtk.SizeGroup (VERTICAL);
+        size_group.add_widget (header_bar);
+        size_group.add_widget (sidebar.header_bar);
 
         calview.on_event_add.connect ((date) => on_tb_add_clicked (date));
         calview.selection_changed.connect ((date) => sidebar.set_selected_date (date));
