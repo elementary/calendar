@@ -35,10 +35,11 @@ public class Maya.View.AgendaView : Gtk.Box {
 
         var source_popover = new Calendar.Widgets.SourcePopover ();
 
-        var menu_button = new Gtk.MenuButton ();
-        menu_button.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
-        menu_button.popover = source_popover;
-        menu_button.tooltip_text = _("Manage Calendars");
+        var menu_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            popover = source_popover,
+            tooltip_text = _("Manage Calendars")
+        };
 
         header_bar = new Hdy.HeaderBar () {
             show_close_button = true

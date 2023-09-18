@@ -46,8 +46,9 @@ public class Calendar.Widgets.HeaderBar : Hdy.HeaderBar {
             valign = Gtk.Align.CENTER
         };
 
-        var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR);
-        button_add.action_name = Maya.MainWindow.ACTION_PREFIX + Maya.MainWindow.ACTION_NEW_EVENT;
+        var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = Maya.MainWindow.ACTION_PREFIX + Maya.MainWindow.ACTION_NEW_EVENT
+        };
         button_add.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (button_add.action_name),
             _("Create a new event")
