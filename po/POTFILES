@@ -42,10 +42,13 @@ src/SourceDialog/SourceDialog.vala
 src/TodayEventMonitor.vala
 src/Widgets/AgendaEventRow.vala
 src/Widgets/CalendarButton.vala
+src/Widgets/CalendarChooser.vala
+src/Widgets/ConnectivityInfoBar.vala
 src/Widgets/ContractorButtonWithMenu.vala
 src/Widgets/DateSwitcher.vala
 src/Widgets/DateTimePicker.vala
 src/Widgets/DynamicSpinner.vala
+src/Widgets/DeleteDialog.vala
 src/Widgets/EventMenu.vala
 src/Widgets/HeaderBar.vala
 src/Widgets/SourcePopover.vala
