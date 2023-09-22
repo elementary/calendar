@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
 "PO-Revision-Date: 2023-06-15 00:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/calendar/"
@@ -116,7 +116,7 @@ msgstr "Focalitza el dia"
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:185
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -125,7 +125,7 @@ msgstr ""
 "s'executarà quan se'n tanqui la finestra perquè pugui enviar notificacions "
 "d'esdeveniments."
 
-#: src/Application.vala:216
+#: src/Application.vala:214
 msgid "Calendar"
 msgstr "Calendari"
 
@@ -179,7 +179,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Repeteix"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Suprimeix l'esdeveniment"
 
@@ -764,6 +765,34 @@ msgstr "%s a %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Cerca als calendaris"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Cap resultat"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Proveu de canviar els termes de la cerca."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+#, fuzzy
+#| msgid "Online Accounts Settings…"
+msgid "Network Settings…"
+msgstr "Paràmetres dels comptes en línia…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -772,6 +801,54 @@ msgstr "Exporta el calendari…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendari.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "Suprimeix l'esdeveniment seleccionat"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Remove Occurrence"
+msgid "Delete Occurrence"
+msgstr "Suprimeix l'ocurrència"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Suprimeix l'esdeveniment"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Suprimeix l'esdeveniment"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "No es pot editar aquest esdeveniment"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -848,15 +925,6 @@ msgstr "S'ha suprimit \"%s\"."
 
 #~ msgid "Print debug information"
 #~ msgstr "Imprimeix la informació de depuració"
-
-#~ msgid "Search Calendars"
-#~ msgstr "Cerca als calendaris"
-
-#~ msgid "No Results"
-#~ msgstr "Cap resultat"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Proveu de canviar els termes de la cerca."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e %B de %Y"
@@ -959,9 +1027,6 @@ msgstr "S'ha suprimit \"%s\"."
 #~ msgid "Your event has to be named and has to have a valid date"
 #~ msgstr "L'esdeveniment ha de tenir un nom i una data vàlida"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Suprimeix l'esdeveniment seleccionat"
-
 #~ msgid "Add calendar"
 #~ msgstr "Afegeix un calendari"
 
@@ -979,9 +1044,6 @@ msgstr "S'ha suprimit \"%s\"."
 
 #~ msgid "$more more ..."
 #~ msgstr "$more més …"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "No es pot editar aquest esdeveniment"
 
 #~ msgid "Sync..."
 #~ msgstr "Sincronitza…"

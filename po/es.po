@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
 "PO-Revision-Date: 2021-09-21 18:32+0000\n"
 "Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
@@ -116,13 +116,13 @@ msgstr "Enfocar el día indicado"
 msgid "date"
 msgstr "fecha"
 
-#: src/Application.vala:185
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:214
 msgid "Calendar"
 msgstr "Calendario"
 
@@ -176,7 +176,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Repetir"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Eliminar evento"
 
@@ -763,6 +764,34 @@ msgstr "%s a las %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Buscar calendarios"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "No hay resultados"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Pruebe a cambiar los términos de búsqueda."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+#, fuzzy
+#| msgid "Online Accounts Settings…"
+msgid "Network Settings…"
+msgstr "Configuración de cuentas online …"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -771,6 +800,54 @@ msgstr "Exportar calendario…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendario.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "Eliminar el evento seleccionado"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Remove Occurrence"
+msgid "Delete Occurrence"
+msgstr "Eliminar ocurrencia"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Eliminar evento"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Eliminar evento"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "No se puede editar este evento"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -847,15 +924,6 @@ msgstr "Se ha quitado «%s»"
 
 #~ msgid "Print debug information"
 #~ msgstr "Imprimir información de depuración"
-
-#~ msgid "Search Calendars"
-#~ msgstr "Buscar calendarios"
-
-#~ msgid "No Results"
-#~ msgstr "No hay resultados"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Pruebe a cambiar los términos de búsqueda."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e de %B de %Y"
@@ -949,9 +1017,6 @@ msgstr "Se ha quitado «%s»"
 #~ msgid "Edit the selected event"
 #~ msgstr "Editar el evento seleccionado"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Eliminar el evento seleccionado"
-
 #~ msgid "Name or Email Address"
 #~ msgstr "Nombre o dirección de correo electrónico"
 
@@ -996,9 +1061,6 @@ msgstr "Se ha quitado «%s»"
 
 #~ msgid "$more more ..."
 #~ msgstr "$more más …"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "No se puede editar este evento"
 
 #~ msgid "Sync..."
 #~ msgstr "Sincronizar…"

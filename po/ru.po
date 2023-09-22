@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
 "PO-Revision-Date: 2023-06-15 00:07+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
@@ -116,7 +116,7 @@ msgstr "Сфокусироваться на этом дне"
 msgid "date"
 msgstr "дата"
 
-#: src/Application.vala:185
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -124,7 +124,7 @@ msgstr ""
 "Календарь автоматически запускается при включении этого устройства и "
 "работает, когда окно закрыто, чтобы вы могли получать уведомления о событиях."
 
-#: src/Application.vala:216
+#: src/Application.vala:214
 msgid "Calendar"
 msgstr "Календарь"
 
@@ -179,7 +179,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Повтор"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Удалить событие"
 
@@ -775,6 +776,35 @@ msgstr "%s в %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Создать календарь"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Нет результатов"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Попробуйте изменить условия поиска."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+#, fuzzy
+#| msgid "Online Accounts Settings…"
+msgid "Network Settings…"
+msgstr "Настройки онлайн-аккаунтов…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -783,6 +813,54 @@ msgstr "Экспортировать календарь…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "календарь.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "Удалить выбранное событие"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Remove Occurrence"
+msgid "Delete Occurrence"
+msgstr "Удалить событие"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Удалить событие"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Удалить событие"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "Это событие нельзя изменить"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -860,16 +938,6 @@ msgstr "«%s» удалён"
 #~ msgid "Print debug information"
 #~ msgstr "Распечатать отладочную информацию"
 
-#, fuzzy
-#~ msgid "Search Calendars"
-#~ msgstr "Создать календарь"
-
-#~ msgid "No Results"
-#~ msgstr "Нет результатов"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Попробуйте изменить условия поиска."
-
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
 
@@ -940,9 +1008,6 @@ msgstr "«%s» удалён"
 #~ msgid "Edit the selected event"
 #~ msgstr "Редактировать выбранное событие"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Удалить выбранное событие"
-
 #~ msgid "Comments"
 #~ msgstr "Комментарии"
 
@@ -1002,9 +1067,6 @@ msgstr "«%s» удалён"
 
 #~ msgid "Ends: \t"
 #~ msgstr "Конец: \t"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Это событие нельзя изменить"
 
 #~ msgid "$more more ..."
 #~ msgstr "$еще еще ..."

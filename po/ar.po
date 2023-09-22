@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
 "PO-Revision-Date: 2020-05-16 02:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -116,13 +116,13 @@ msgstr "ركز على اليوم المعطى"
 msgid "date"
 msgstr "تاريخ"
 
-#: src/Application.vala:185
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:214
 msgid "Calendar"
 msgstr "التقويم"
 
@@ -181,7 +181,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "لا اعادة"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "حذف الحدث"
 
@@ -787,6 +788,32 @@ msgstr "تاريخ %s الساعة %s"
 msgid "%s, %s – %s"
 msgstr "تاريخ %s من الساعة %s الى الساعة %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "البحث في التقاويم"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "لا توجد نتائج"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "جرب تغيير شروط البحث."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr ""
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -795,6 +822,54 @@ msgstr "تصدير التقويم …"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "إلغاء الحدث المحدد"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Remove Occurrence"
+msgid "Delete Occurrence"
+msgstr "حذف الحدث"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "حذف الحدث"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "حذف الحدث"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "هذه المناسبة لا يمكن تعديلها"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -874,15 +949,6 @@ msgstr "“%s” تم ازالته"
 #~ msgid "Print debug information"
 #~ msgstr "اطبع تفاصيل تدقيق الأخطاء (debug)"
 
-#~ msgid "Search Calendars"
-#~ msgstr "البحث في التقاويم"
-
-#~ msgid "No Results"
-#~ msgstr "لا توجد نتائج"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "جرب تغيير شروط البحث."
-
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
 
@@ -933,9 +999,6 @@ msgstr "“%s” تم ازالته"
 #~ msgid "Edit the selected event"
 #~ msgstr "تعديل الحدث المحدد"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "إلغاء الحدث المحدد"
-
 #~ msgid "Sync..."
 #~ msgstr "تزامن..."
 
@@ -971,9 +1034,6 @@ msgstr "“%s” تم ازالته"
 
 #~ msgid "all day"
 #~ msgstr "طوال النهار"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "هذه المناسبة لا يمكن تعديلها"
 
 #~ msgid "Ends: \t"
 #~ msgstr "Ends: \t"
