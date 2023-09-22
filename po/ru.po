@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-22 14:01+0000\n"
-"PO-Revision-Date: 2023-06-15 00:07+0000\n"
+"PO-Revision-Date: 2023-09-24 15:08+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
@@ -777,9 +777,8 @@ msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarChooser.vala:51
-#, fuzzy
 msgid "Search Calendars"
-msgstr "Создать календарь"
+msgstr "Искать календари"
 
 #: src/Widgets/CalendarChooser.vala:54
 msgid "No Results"
@@ -791,19 +790,19 @@ msgstr "Попробуйте изменить условия поиска."
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
-msgstr ""
+msgstr "Сеть недоступна."
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
+"Подключитесь к Интернету, чтобы посмотреть дополнительные детали и новые "
+"события из онлайн-календарей."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
-#, fuzzy
-#| msgid "Online Accounts Settings…"
 msgid "Network Settings…"
-msgstr "Настройки онлайн-аккаунтов…"
+msgstr "Настройки сетей…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -815,15 +814,13 @@ msgid "calendar.ics"
 msgstr "календарь.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
-#, fuzzy
-#| msgid "Delete the selected event"
 msgid "Delete this occurrence of event?"
-msgstr "Удалить выбранное событие"
+msgstr "Удалить только выбранное событие?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "Удалить только выбранное событие «%s»?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -831,36 +828,30 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
+"Это событие будет удалено, но все остальные повторения останутся на месте."
 
 #: src/Widgets/DeleteDialog.vala:18
-#, fuzzy
-#| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
 msgstr "Удалить событие"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete event?"
-msgstr "Удалить событие"
+msgstr "Удалить событие?"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
-#, fuzzy, c-format
-#| msgid "Delete Event"
+#, c-format
 msgid "Delete event “%s”?"
-msgstr "Удалить событие"
+msgstr "Удалить событие «%s»?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr ""
+msgstr "Это событие и все его повторения будут безвозвратно удалены."
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
-#, fuzzy
-#| msgid "This event can't be edited"
 msgid "This event will be permanently deleted."
-msgstr "Это событие нельзя изменить"
+msgstr "Это событие будет безвозвратно удалено."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
