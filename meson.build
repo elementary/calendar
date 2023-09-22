@@ -1,7 +1,7 @@
 project('io.elementary.calendar',
     'c', 'vala',
-    version: '6.1.3',
-    meson_version: '>=0.56.0'
+    version: '7.0.0',
+    meson_version: '>=0.57.0'
 )
 
 add_project_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
@@ -70,4 +70,4 @@ subdir('src')
 subdir('plugins')
 subdir('po')
 
-meson.add_install_script('meson/post_install.py')
+gnome.post_install(glib_compile_schemas: true)

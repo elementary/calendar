@@ -221,9 +221,9 @@ public class Maya.View.CalendarView : Gtk.Grid {
 
         if (previous_first != null) {
             if (previous_first.compare (days_grid.grid_range.first_dt) == -1) {
-                stack.transition_type = Gtk.StackTransitionType.SLIDE_UP;
+                stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
             } else {
-                stack.transition_type = Gtk.StackTransitionType.SLIDE_DOWN;
+                stack.transition_type = Gtk.StackTransitionType.SLIDE_RIGHT;
             }
         }
 

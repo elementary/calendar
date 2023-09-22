@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2021-07-02 04:42+0000\n"
+"PO-Revision-Date: 2023-06-16 10:07+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "calendar/extra/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
@@ -67,30 +67,33 @@ msgstr "Nye funksjoner:"
 
 #: data/calendar.metainfo.xml.in:94
 msgid "Ask for confirmation before deleting events"
-msgstr ""
+msgstr "Spør om bekreftelse før sletting av begivenheter"
 
 #: data/calendar.metainfo.xml.in:95
+#, fuzzy
 msgid ""
 "Follow email and web links in the event description with Control + Click"
-msgstr ""
+msgstr "Følg e-post og vev-lenker i begivenhetsbeskrivelse med Control+klikk"
 
 #: data/calendar.metainfo.xml.in:97
 msgid "Fixes:"
-msgstr ""
+msgstr "Fikser:"
 
 #: data/calendar.metainfo.xml.in:99
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"Avskrudd avkryssningsboks «Marker som forvalgt kalender» i "
+"kalenderinnstillinger, hvis kalenderen er skrivebeskyttet"
 
 #: data/calendar.metainfo.xml.in:100
 msgid "Removed no longer needed sandbox permission for accounts service"
-msgstr ""
+msgstr "Fjernet behov for sandkasse-tilgang for kontotjeneste"
 
 #: data/calendar.metainfo.xml.in:101
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "Fikset mulig minnelekkasje"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
