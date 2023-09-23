@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-22 14:01+0000\n"
-"PO-Revision-Date: 2023-06-15 00:07+0000\n"
+"PO-Revision-Date: 2023-09-24 15:08+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/calendar/"
 "he/>\n"
@@ -778,19 +778,19 @@ msgstr "מוטב לנסות להחליף את הביטויים בחיפוש."
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
-msgstr ""
+msgstr "הרשת לא זמינה."
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
+"יש להתחבר לאינטרנט כדי לצפות בפרטים נוספים ובאירועים חדשים מלוחות שנה "
+"מקוונים."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
-#, fuzzy
-#| msgid "Online Accounts Settings…"
 msgid "Network Settings…"
-msgstr "הגדרות חשבונות מקוונים…"
+msgstr "הגדרות רשת…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -802,52 +802,43 @@ msgid "calendar.ics"
 msgstr "קובץ calendar.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
-#, fuzzy
-#| msgid "Delete the selected event"
 msgid "Delete this occurrence of event?"
-msgstr "מחיקת האירוע הנבחר"
+msgstr "למחוק את המופע הזה של האירוע?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "למחוק את המופע הזה של האירוע „%s”?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
 msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
-msgstr ""
+msgstr "המופע הזה יימחק לצמיתות אך כל שאר המופיעים יישארו ללא שינוי."
 
 #: src/Widgets/DeleteDialog.vala:18
-#, fuzzy
-#| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
-msgstr "הסרת מופע"
+msgstr "מחיקת מופע"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete event?"
-msgstr "מחיקת אירוע"
+msgstr "למחוק אירוע?"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
-#, fuzzy, c-format
-#| msgid "Delete Event"
+#, c-format
 msgid "Delete event “%s”?"
-msgstr "מחיקת אירוע"
+msgstr "למחוק את האירוע „%s”?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr ""
+msgstr "האירוע הזה יימחק על כל המופעים שלו."
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
-#, fuzzy
-#| msgid "This event can't be edited"
 msgid "This event will be permanently deleted."
-msgstr "אירוע זה אינו ניתן לעריכה"
+msgstr "האירוע הזה יימחק לצמיתות."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
