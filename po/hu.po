@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-22 14:01+0000\n"
-"PO-Revision-Date: 2023-06-15 00:07+0000\n"
+"PO-Revision-Date: 2023-09-28 08:08+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/calendar/"
 "calendar/hu/>\n"
@@ -767,33 +767,32 @@ msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarChooser.vala:51
-#, fuzzy
 msgid "Search Calendars"
-msgstr "Naptár létrehozása"
+msgstr "Naptárak keresése"
 
 #: src/Widgets/CalendarChooser.vala:54
 msgid "No Results"
-msgstr ""
+msgstr "Nincsenek eredmények"
 
 #: src/Widgets/CalendarChooser.vala:55
 msgid "Try changing search terms."
-msgstr ""
+msgstr "Próbálja megváltoztatni a keresőszavakat."
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
-msgstr ""
+msgstr "A hálózat nem érhető el."
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
+"Csatlakozzon az internetre további részletekért és új eseményekért az online "
+"naptárakból."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
-#, fuzzy
-#| msgid "Online Accounts Settings…"
 msgid "Network Settings…"
-msgstr "Online fiókok beállításai…"
+msgstr "Hálózati beállítások…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -805,15 +804,13 @@ msgid "calendar.ics"
 msgstr "naptar.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
-#, fuzzy
-#| msgid "Delete the selected event"
 msgid "Delete this occurrence of event?"
-msgstr "Kiválasztott esemény törlése"
+msgstr "Az esemény ezen előfordulásának törlése?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "\"%s\" esemény ezen előfordulásának törlése?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -821,36 +818,31 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
+"Ez az előfordulás véglegesen törölve lesz, de az összes többi változtatlan "
+"marad."
 
 #: src/Widgets/DeleteDialog.vala:18
-#, fuzzy
-#| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
-msgstr "Előfordulás eltávolítása"
+msgstr "Előfordulás törlése"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete event?"
-msgstr "Esemény törlése"
+msgstr "Esemény törlése?"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
-#, fuzzy, c-format
-#| msgid "Delete Event"
+#, c-format
 msgid "Delete event “%s”?"
-msgstr "Esemény törlése"
+msgstr "\"%s\" esemény törlése?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr ""
+msgstr "Ez az esemény és az összes előfordulása véglegesen törölve lesz."
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
-#, fuzzy
-#| msgid "This event can't be edited"
 msgid "This event will be permanently deleted."
-msgstr "Az eseményt nem lehet szerkeszteni"
+msgstr "Ez az esemény véglegesen törölve lesz."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
