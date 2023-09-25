@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-22 14:01+0000\n"
-"PO-Revision-Date: 2023-06-16 10:07+0000\n"
+"PO-Revision-Date: 2023-09-28 08:08+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/calendar/calendar/"
 "fr/>\n"
@@ -123,7 +123,7 @@ msgid ""
 msgstr ""
 "Le calendrier démarre automatiquement lorsque l'appareil est allumé et "
 "s'exécute lorsque sa fenêtre est fermée afin d'envoyer des notifications "
-"d'événements."
+"d'évènements."
 
 #: src/Application.vala:214
 msgid "Calendar"
@@ -779,19 +779,19 @@ msgstr "Essayez de changer les termes de recherche."
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
-msgstr ""
+msgstr "Réseau indisponible."
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
+"Connectez-vous à Internet pour voir les informations supplémentaires et les "
+"nouveaux évènements des calendriers en ligne."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
-#, fuzzy
-#| msgid "Online Accounts Settings…"
 msgid "Network Settings…"
-msgstr "Paramètres des comptes en ligne…"
+msgstr "Paramètres réseau…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -803,15 +803,13 @@ msgid "calendar.ics"
 msgstr "calendrier.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
-#, fuzzy
-#| msgid "Delete the selected event"
 msgid "Delete this occurrence of event?"
-msgstr "Supprimer l'événement sélectionné"
+msgstr "Supprimer cette occurence de l'évènement ?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "Supprimer cette occurence de l'évènement « %s » ?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -819,36 +817,32 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
+"Cette occurence sera définitivement supprimée, mais toutes les autres "
+"resteront inchangées."
 
 #: src/Widgets/DeleteDialog.vala:18
-#, fuzzy
-#| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
 msgstr "Supprimer l'occurrence"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete event?"
-msgstr "Supprimer l'évènement"
+msgstr "Supprimer l'évènement ?"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
-#, fuzzy, c-format
-#| msgid "Delete Event"
+#, c-format
 msgid "Delete event “%s”?"
-msgstr "Supprimer l'évènement"
+msgstr "Supprimer l'évènement « %s » ?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
 msgstr ""
+"Cet événement et toutes ses occurrences seront définitivement supprimés."
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
-#, fuzzy
-#| msgid "This event can't be edited"
 msgid "This event will be permanently deleted."
-msgstr "Cet évnement ne peut pas être éditer"
+msgstr "Cet évènement sera définitivement supprimé."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
