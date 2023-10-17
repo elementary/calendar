@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
 "PO-Revision-Date: 2019-12-22 21:41+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/calendar/"
@@ -115,13 +115,13 @@ msgstr "Fokusiraj izbrani dan"
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:185
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:214
 msgid "Calendar"
 msgstr "Koledar"
 
@@ -178,7 +178,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Ponavljanje"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Izbriši dogodek"
 
@@ -774,6 +775,32 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Preišči koledarje"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Ni rezultatov"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Poskusite spremeniti iskalni pojem."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr ""
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -782,6 +809,54 @@ msgstr "Izvozi koledar…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "koledar.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "Izbriši izbrani dogodek"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Remove Occurrence"
+msgid "Delete Occurrence"
+msgstr "Izbriši to ponovitev dogodka"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Izbriši dogodek"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Izbriši dogodek"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "Tega dogodka ni mogoče urediti."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -860,15 +935,6 @@ msgstr "koledar \"%s\" odstranjen"
 
 #~ msgid "Print debug information"
 #~ msgstr "Izpiši podatke za razhroščevanje"
-
-#~ msgid "Search Calendars"
-#~ msgstr "Preišči koledarje"
-
-#~ msgid "No Results"
-#~ msgstr "Ni rezultatov"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Poskusite spremeniti iskalni pojem."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e. %B %Y"
@@ -950,9 +1016,6 @@ msgstr "koledar \"%s\" odstranjen"
 #~ msgid "Edit the selected event"
 #~ msgstr "Uredi izbrani dogodek"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Izbriši izbrani dogodek"
-
 #~ msgid "Contacts"
 #~ msgstr "Kontakti"
 
@@ -994,9 +1057,6 @@ msgstr "koledar \"%s\" odstranjen"
 
 #~ msgid "Name or Email Address"
 #~ msgstr "Ime ali e-poštni naslov"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Tega dogodka ni mogoče urediti."
 
 #~ msgid "Repeats"
 #~ msgstr "Se ponavlja"

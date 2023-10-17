@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2023-06-16 10:07+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"PO-Revision-Date: 2023-09-28 08:08+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/calendar/calendar/"
 "fr/>\n"
@@ -116,16 +116,16 @@ msgstr "Afficher le jour donné"
 msgid "date"
 msgstr "date"
 
-#: src/Application.vala:185
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 "Le calendrier démarre automatiquement lorsque l'appareil est allumé et "
 "s'exécute lorsque sa fenêtre est fermée afin d'envoyer des notifications "
-"d'événements."
+"d'évènements."
 
-#: src/Application.vala:216
+#: src/Application.vala:214
 msgid "Calendar"
 msgstr "Calendrier"
 
@@ -179,7 +179,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Répétition"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Supprimer l'évènement"
 
@@ -764,6 +765,34 @@ msgstr "%s à %s"
 msgid "%s, %s – %s"
 msgstr "%s de %s à %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Rechercher un calendrier"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Aucun résultat"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Essayez de changer les termes de recherche."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr "Réseau indisponible."
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"Connectez-vous à Internet pour voir les informations supplémentaires et les "
+"nouveaux évènements des calendriers en ligne."
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr "Paramètres réseau…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -772,6 +801,48 @@ msgstr "Exporter le calendrier…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendrier.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr "Supprimer cette occurence de l'évènement ?"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr "Supprimer cette occurence de l'évènement « %s » ?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+"Cette occurence sera définitivement supprimée, mais toutes les autres "
+"resteront inchangées."
+
+#: src/Widgets/DeleteDialog.vala:18
+msgid "Delete Occurrence"
+msgstr "Supprimer l'occurrence"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+msgid "Delete event?"
+msgstr "Supprimer l'évènement ?"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, c-format
+msgid "Delete event “%s”?"
+msgstr "Supprimer l'évènement « %s » ?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+"Cet événement et toutes ses occurrences seront définitivement supprimés."
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr "Cet évènement sera définitivement supprimé."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -848,15 +919,6 @@ msgstr "« %s » supprimé"
 
 #~ msgid "Print debug information"
 #~ msgstr "Afficher les informations de débogage"
-
-#~ msgid "Search Calendars"
-#~ msgstr "Rechercher un calendrier"
-
-#~ msgid "No Results"
-#~ msgstr "Aucun résultat"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Essayez de changer les termes de recherche."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e %B %Y"
@@ -950,9 +1012,6 @@ msgstr "« %s » supprimé"
 #~ msgid "Edit the selected event"
 #~ msgstr "Modifier l'événement sélectionné"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Supprimer l'événement sélectionné"
-
 #~ msgid "Contacts"
 #~ msgstr "Contacts"
 
@@ -988,9 +1047,6 @@ msgstr "« %s » supprimé"
 
 #~ msgid "$more more ..."
 #~ msgstr "$plus plus ..."
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Cet évnement ne peut pas être éditer"
 
 #~ msgid "Days"
 #~ msgstr "jours"

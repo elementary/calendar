@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2023-06-15 00:07+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"PO-Revision-Date: 2023-09-24 15:08+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/"
 "calendar/uk/>\n"
@@ -115,7 +115,7 @@ msgstr "Зосередитись на цьому дні"
 msgid "date"
 msgstr "дата"
 
-#: src/Application.vala:185
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -124,7 +124,7 @@ msgstr ""
 "працюватиме, коли його вікно буде закрито, щоб надсилати сповіщення про "
 "події."
 
-#: src/Application.vala:216
+#: src/Application.vala:214
 msgid "Calendar"
 msgstr "Календар"
 
@@ -179,7 +179,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Повторення"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Видалити подію"
 
@@ -769,6 +770,34 @@ msgstr "%s о %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Знайти календар"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Немає результатів"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Спробуйте змінити ключові слова."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr "Мережа недоступна."
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"Під'єднайтеся до інтернету, щоб переглянути додаткову інформацію та нові "
+"події з онлайн-календарів."
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr "Налаштування мережі…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -777,6 +806,47 @@ msgstr "Експортувати календар…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "календар.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr "Видалити подію з серії?"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr "Видалити з серії подію «%s»?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+"Подія з серії буде назавжди видалена, але всі інші події в серії залишаться "
+"без змін."
+
+#: src/Widgets/DeleteDialog.vala:18
+msgid "Delete Occurrence"
+msgstr "Видалити подію з серії"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+msgid "Delete event?"
+msgstr "Видалити подію?"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, c-format
+msgid "Delete event “%s”?"
+msgstr "Видалити подію «%s»?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr "Ця подія та всі її повторення будуть видалені назавжди."
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr "Ця подія буде видалена назавжди."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -853,15 +923,6 @@ msgstr "«%s» вилучено"
 
 #~ msgid "Print debug information"
 #~ msgstr "Показати відомості зневадження"
-
-#~ msgid "Search Calendars"
-#~ msgstr "Знайти календар"
-
-#~ msgid "No Results"
-#~ msgstr "Немає результатів"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Спробуйте змінити ключові слова."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
@@ -941,9 +1002,6 @@ msgstr "«%s» вилучено"
 #~ msgid "Edit the selected event"
 #~ msgstr "Редагувати обрану подію"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Знищити обрану подію"
-
 #~ msgid "Comments"
 #~ msgstr "Коментарі"
 
@@ -976,9 +1034,6 @@ msgstr "«%s» вилучено"
 
 #~ msgid "all day"
 #~ msgstr "весь день"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Ця подія не може бути змінена"
 
 #~ msgid "$more more ..."
 #~ msgstr "$more більше ..."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
 "PO-Revision-Date: 2023-02-17 10:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Azerbaijani <https://l10n.elementary.io/projects/calendar/"
@@ -116,13 +116,13 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:185
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:214
 msgid "Calendar"
 msgstr "Təqvim"
 
@@ -177,7 +177,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Təkrar"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Hadisəni sil"
 
@@ -782,6 +783,33 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Təqvim yarat"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr ""
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 #, fuzzy
@@ -791,6 +819,50 @@ msgstr "Təqvimi ixrac et..."
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "təqvim.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete Occurrence"
+msgstr "Hadisəni sil"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Hadisəni sil"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Hadisəni sil"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -871,10 +943,6 @@ msgstr "\"%s\" adlı təqvim silindi."
 #, fuzzy
 #~ msgid "Print debug information"
 #~ msgstr "Əsas məlumatlar"
-
-#, fuzzy
-#~ msgid "Search Calendars"
-#~ msgstr "Təqvim yarat"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"

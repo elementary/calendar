@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2023-06-15 00:07+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"PO-Revision-Date: 2023-09-28 08:08+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/calendar/"
 "calendar/hu/>\n"
@@ -115,7 +115,7 @@ msgstr "Megadott napra ugrás"
 msgid "date"
 msgstr "dátum"
 
-#: src/Application.vala:185
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -124,7 +124,7 @@ msgstr ""
 "is, ha az ablaka bezárásra kerül, hogy értesítéseket küldhessen az "
 "eseményekről."
 
-#: src/Application.vala:216
+#: src/Application.vala:214
 msgid "Calendar"
 msgstr "Naptár"
 
@@ -179,7 +179,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Ismétlődés"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Esemény törlése"
 
@@ -765,6 +766,34 @@ msgstr "%s %s-kor"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Naptárak keresése"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Nincsenek eredmények"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Próbálja megváltoztatni a keresőszavakat."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr "A hálózat nem érhető el."
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"Csatlakozzon az internetre további részletekért és új eseményekért az online "
+"naptárakból."
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr "Hálózati beállítások…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -773,6 +802,47 @@ msgstr "Naptár exportálása…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "naptar.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr "Az esemény ezen előfordulásának törlése?"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr "\"%s\" esemény ezen előfordulásának törlése?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+"Ez az előfordulás véglegesen törölve lesz, de az összes többi változtatlan "
+"marad."
+
+#: src/Widgets/DeleteDialog.vala:18
+msgid "Delete Occurrence"
+msgstr "Előfordulás törlése"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+msgid "Delete event?"
+msgstr "Esemény törlése?"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, c-format
+msgid "Delete event “%s”?"
+msgstr "\"%s\" esemény törlése?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr "Ez az esemény és az összes előfordulása véglegesen törölve lesz."
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr "Ez az esemény véglegesen törölve lesz."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -849,10 +919,6 @@ msgstr "\"%s\" eltávolítva"
 
 #~ msgid "Print debug information"
 #~ msgstr "Hibakeresési információk kiírása"
-
-#, fuzzy
-#~ msgid "Search Calendars"
-#~ msgstr "Naptár létrehozása"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%Y. %B. %e."
@@ -975,12 +1041,6 @@ msgstr "\"%s\" eltávolítva"
 
 #~ msgid "Ends: \t"
 #~ msgstr "Vég: \t"
-
-#~ msgid "Delete the selected event"
-#~ msgstr "Kiválasztott esemény törlése"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Az eseményt nem lehet szerkeszteni"
 
 #~ msgid "$more more ..."
 #~ msgstr "$more további ..."

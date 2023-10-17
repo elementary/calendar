@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
 "PO-Revision-Date: 2022-08-06 11:01+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -115,13 +115,13 @@ msgstr "선정한 날에 초점 맞추기"
 msgid "date"
 msgstr "날짜"
 
-#: src/Application.vala:185
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:214
 msgid "Calendar"
 msgstr "달력"
 
@@ -174,7 +174,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "반복"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "이벤트 삭제"
 
@@ -754,6 +755,34 @@ msgstr "%s %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "달력 검색"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "결과 없음"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "검색어를 바꿔보세요."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+#, fuzzy
+#| msgid "Online Accounts Settings…"
+msgid "Network Settings…"
+msgstr "온라인 계정 설정…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -762,6 +791,54 @@ msgstr "달력 내보내기…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "달력.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "선택한 이벤트를 삭제하기"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Remove Occurrence"
+msgid "Delete Occurrence"
+msgstr "추가 생성 삭제"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "이벤트 삭제"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "이벤트 삭제"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "이 일정은 편집할 수 없습니다"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -838,15 +915,6 @@ msgstr "\"%s\" 지움"
 
 #~ msgid "Print debug information"
 #~ msgstr "debug 정보 출력"
-
-#~ msgid "Search Calendars"
-#~ msgstr "달력 검색"
-
-#~ msgid "No Results"
-#~ msgstr "결과 없음"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "검색어를 바꿔보세요."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%Y년 %B %e일"
@@ -930,9 +998,6 @@ msgstr "\"%s\" 지움"
 #~ msgid "Edit the selected event"
 #~ msgstr "선택한 이벤트를 수정하기"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "선택한 이벤트를 삭제하기"
-
 #~ msgid "Participants"
 #~ msgstr "참가자"
 
@@ -971,9 +1036,6 @@ msgstr "\"%s\" 지움"
 
 #~ msgid "all day"
 #~ msgstr "하루 종일"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "이 일정은 편집할 수 없습니다"
 
 #~ msgid "$more more ..."
 #~ msgstr "$더보기 더보기 ..."

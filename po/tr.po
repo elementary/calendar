@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
 "PO-Revision-Date: 2021-09-18 16:05+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
@@ -116,13 +116,13 @@ msgstr "Verilen güne odaklan"
 msgid "date"
 msgstr "tarih"
 
-#: src/Application.vala:185
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:214
 msgid "Calendar"
 msgstr "Takvim"
 
@@ -176,7 +176,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Tekrar Et"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Etkinliği Sil"
 
@@ -767,6 +768,34 @@ msgstr "%s saat %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Takvimlerde Ara"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Sonuç Yok"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Arama kelimelerini değiştirmeyi deneyin."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+#, fuzzy
+#| msgid "Online Accounts Settings…"
+msgid "Network Settings…"
+msgstr "Çevrimiçi Hesap Ayarları…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -775,6 +804,54 @@ msgstr "Takvimi Dışarı Aktar…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "takvim.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "Seçili etkinliği sil"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Remove Occurrence"
+msgid "Delete Occurrence"
+msgstr "Oluşumu Kaldır"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Etkinliği Sil"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Etkinliği Sil"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "Bu etkinlik değiştirilemez"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -851,15 +928,6 @@ msgstr "\"%s\" kaldırıldı"
 
 #~ msgid "Print debug information"
 #~ msgstr "Hata ayıklama bilgisini yazdır"
-
-#~ msgid "Search Calendars"
-#~ msgstr "Takvimlerde Ara"
-
-#~ msgid "No Results"
-#~ msgstr "Sonuç Yok"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Arama kelimelerini değiştirmeyi deneyin."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e %B %Y"
@@ -951,9 +1019,6 @@ msgstr "\"%s\" kaldırıldı"
 #~ msgid "Edit the selected event"
 #~ msgstr "Seçili etkinliği düzenle"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Seçili etkinliği sil"
-
 #~ msgid "%l:%M %p"
 #~ msgstr "%l:%M %p"
 
@@ -997,9 +1062,6 @@ msgstr "\"%s\" kaldırıldı"
 
 #~ msgid "Starts: \t"
 #~ msgstr "Başlar: \t"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Bu etkinlik değiştirilemez"
 
 #~ msgid "Months"
 #~ msgstr "Ay"
