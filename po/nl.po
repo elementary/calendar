@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2023-08-09 05:08+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -68,7 +68,15 @@ msgstr "Gebruik een veilige verbinding"
 msgid "Server handles meeting invitations"
 msgstr "Uitnodigingen voor bijeenkomsten worden door de server afgehandeld"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "Exporteer of Deel de standaardagenda"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "Beheer agenda's"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -76,31 +84,31 @@ msgstr ""
 "Uw aanstaande gebeurtenissen zullen hier getoond worden wanneer u een datum "
 "met gebeurtenissen selecteert."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "Tijdens de dag"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "Hele dag"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr "Morgen"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 msgid "This Week"
 msgstr "Deze week"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 msgid "Next Week"
 msgstr "Volgende week"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 msgid "This Month"
 msgstr "Deze maand"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 msgid "Next Month"
 msgstr "Volgende maand"
 
@@ -627,11 +635,11 @@ msgstr "Za"
 msgid "Sun"
 msgstr "Zo"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Verberg weeknummers"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Weeknummers tonen"
 
@@ -872,20 +880,12 @@ msgid "Remove"
 msgstr "Verwijderen"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Maak een nieuwe gebeurtenis aan"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Ga naar vandaag"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Beheer agenda's"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "Exporteer of Deel de standaardagenda"
+msgid "Create a new event"
+msgstr "Maak een nieuwe gebeurtenis aan"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

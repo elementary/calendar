@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2015-11-23 20:50+0000\n"
 "Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
@@ -67,41 +67,49 @@ msgstr "Erabili konexio seguru bat"
 msgid "Server handles meeting invitations"
 msgstr "Zerbitzariak bileretara gonbidapenak kudeatzen ditu"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "Esportatu edo partekatu egutegi lehenetsia"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "Kudeatu egutegiak"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Zure hurrengo gertaerak hemen erakutsiko dira data bat hautatzen duzunean."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "Egunean zehar"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "Egun osoan"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 #, fuzzy
 msgid "This Week"
 msgstr "aste"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 #, fuzzy
 msgid "Next Week"
 msgstr "aste"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 #, fuzzy
 msgid "This Month"
 msgstr "hilabete"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 #, fuzzy
 msgid "Next Month"
 msgstr "hilabete"
@@ -645,11 +653,11 @@ msgstr "lr."
 msgid "Sun"
 msgstr "ig."
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Ezkutatu asteen zenbakiak"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Erakutsi asteen zenbakiak"
 
@@ -890,20 +898,12 @@ msgid "Remove"
 msgstr "Ezabatu"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Sortu gertaera berri bat"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Joan gaurko datara"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Kudeatu egutegiak"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "Esportatu edo partekatu egutegi lehenetsia"
+msgid "Create a new event"
+msgstr "Sortu gertaera berri bat"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

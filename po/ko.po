@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2022-08-06 11:01+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -68,38 +68,46 @@ msgstr "보안 연결 사용"
 msgid "Server handles meeting invitations"
 msgstr "서버에서 약속 초대를 관리합니다"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "기본 달력을 내보내거나 공유합니다"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "달력 관리"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "이벤트가 예정된 날짜를 선택하면 그 날짜에 일어날 이벤트를 볼 수 있습니다."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "하루 동안"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "하루 종일"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr "내일"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 msgid "This Week"
 msgstr "이번 주"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 msgid "Next Week"
 msgstr "다음 주"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 msgid "This Month"
 msgstr "이번 달"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 msgid "Next Month"
 msgstr "다음 달"
 
@@ -617,11 +625,11 @@ msgstr "토"
 msgid "Sun"
 msgstr "일"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "주 번호 숨기기"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "몇 번째 주인지 표시"
 
@@ -861,20 +869,12 @@ msgid "Remove"
 msgstr "제거"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "새 이벤트 추가하기"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "오늘 날짜로 가기"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "달력 관리"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "기본 달력을 내보내거나 공유합니다"
+msgid "Create a new event"
+msgstr "새 이벤트 추가하기"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

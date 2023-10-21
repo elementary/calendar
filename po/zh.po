@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2021-07-29 17:32+0000\n"
 "Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/calendar/"
@@ -63,40 +63,48 @@ msgstr "使用安全連線"
 msgid "Server handles meeting invitations"
 msgstr ""
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr ""
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr ""
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr ""
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr ""
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 #, fuzzy
 msgid "This Week"
 msgstr "周"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 #, fuzzy
 msgid "Next Week"
 msgstr "周"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 #, fuzzy
 msgid "This Month"
 msgstr "月"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 #, fuzzy
 msgid "Next Month"
 msgstr "月"
@@ -632,11 +640,11 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "隐藏周编号"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "显示周编号"
 
@@ -869,19 +877,11 @@ msgid "Remove"
 msgstr "移除"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr ""
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr ""
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr ""
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
+msgid "Create a new event"
 msgstr ""
 
 #: src/Widgets/SourcePopover.vala:59

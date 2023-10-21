@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2022-04-16 23:07+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
@@ -68,38 +68,46 @@ msgstr "सुरक्षित कनेक्शन वापरा"
 msgid "Server handles meeting invitations"
 msgstr "मीटिंगची आमंत्रणे सर्व्हरद्वारे सांभाळली जातात"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "डिफॉल्ट कॅलेंडर एक्स्पोर्ट अथवा शेअर करा"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "कॅलेंडर्स मॅनेज करा"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "जेव्हा आपण घटना असलेले दिवस सिलेक्ट कराल तेव्हा येणाऱ्या सर्व घटना आपल्याला दिसतील."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "दिवसा"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "संपूर्ण दिवस"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr "उद्या"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 msgid "This Week"
 msgstr "या आठवड्यात"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 msgid "Next Week"
 msgstr "पुढील आठवड्यात"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 msgid "This Month"
 msgstr "या महिन्यात"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 msgid "Next Month"
 msgstr "पुढील महिना"
 
@@ -623,11 +631,11 @@ msgstr "शनि"
 msgid "Sun"
 msgstr "रवि"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "आठवडा क्रमांक लपवा"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "आठवडा क्रमांक दाखवा"
 
@@ -863,20 +871,12 @@ msgid "Remove"
 msgstr "कॅलेंडर मिटवा"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "नवीन घटना बनवा"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "आजची तारीख बघा"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "कॅलेंडर्स मॅनेज करा"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "डिफॉल्ट कॅलेंडर एक्स्पोर्ट अथवा शेअर करा"
+msgid "Create a new event"
+msgstr "नवीन घटना बनवा"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

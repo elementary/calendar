@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2018-06-13 00:06+0000\n"
 "Last-Translator: Timothy <timty97@gmail.com>\n"
 "Language-Team: Malay <https://weblate.elementary.io/projects/calendar/"
@@ -68,7 +68,15 @@ msgstr "Guna sambungan selamat"
 msgid "Server handles meeting invitations"
 msgstr "Pelayan mengendali jemputan mesyuarat"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "Eksport atau Kongsi Kalendar lalai"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "Urus Kalendar"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -76,34 +84,34 @@ msgstr ""
 "Acara akan datang anda akan dipaparkan disini sejurus anda memilih tarikh "
 "yang ditandai"
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "Pada tarikh tersebut"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "Sepanjang Hari"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 #, fuzzy
 msgid "This Week"
 msgstr "Minggu"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 #, fuzzy
 msgid "Next Week"
 msgstr "Minggu"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 #, fuzzy
 msgid "This Month"
 msgstr "Bulan"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 #, fuzzy
 msgid "Next Month"
 msgstr "Bulan"
@@ -642,11 +650,11 @@ msgstr "Sab"
 msgid "Sun"
 msgstr "Ahd"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Sembunyikan Bilangan Minggu"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Papar Bilangan Minggu"
 
@@ -887,20 +895,12 @@ msgid "Remove"
 msgstr "Buang"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Cipta peristiwa baru"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Pergi ke tarikh hari ini"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Urus Kalendar"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "Eksport atau Kongsi Kalendar lalai"
+msgid "Create a new event"
+msgstr "Cipta peristiwa baru"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

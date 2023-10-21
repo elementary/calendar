@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2023-02-17 10:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Persian <https://l10n.elementary.io/projects/calendar/"
@@ -68,7 +68,15 @@ msgstr "استفاده از اتصال امن"
 msgid "Server handles meeting invitations"
 msgstr "دسته بندی دعوت نامه های مشاهده کنندگان سرور"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "خروجی گرفتن و یا اشتراک گذاری تقویم پیش‌فرض"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "مدیریت تقویم ها"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -76,32 +84,32 @@ msgstr ""
 "در صورت انتخاب روز دارای رویداد، رویدادهای آن روز در این قسمت نمایش داده "
 "می‌شوند."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "در طول روز"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "تمام روز"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 msgid "This Week"
 msgstr ""
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 msgid "Next Week"
 msgstr ""
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 #, fuzzy
 msgid "This Month"
 msgstr "ماه‌ها"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 #, fuzzy
 msgid "Next Month"
 msgstr "ماه‌ها"
@@ -644,11 +652,11 @@ msgstr "شنبه"
 msgid "Sun"
 msgstr "یک‌شنبه"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "مخفی نمودن شماره  هفته"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "نمایش شماره هفته"
 
@@ -887,20 +895,12 @@ msgid "Remove"
 msgstr "زدودن"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "ساخت یک رویداد"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "رفتن به تاریخ امروز"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "مدیریت تقویم ها"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "خروجی گرفتن و یا اشتراک گذاری تقویم پیش‌فرض"
+msgid "Create a new event"
+msgstr "ساخت یک رویداد"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

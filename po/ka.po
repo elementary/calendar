@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2023-10-03 12:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/"
@@ -63,38 +63,46 @@ msgstr "გამოიყენე დაცული კავშირი"
 msgid "Server handles meeting invitations"
 msgstr "შეხვედრის მოსაწვევებს სერვერი მართავს"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "ძირითადი კალენდრის გატანა ან გაზიარება"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "კალენდრების მართვა"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "ივენთებიანი თარიღის მონიშვნისას, თქვენი მომავალი ივენთები აქ გამოჩნდება."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "დღის განმავლობაში"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "მთელი დღე"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr "ხვალ"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 msgid "This Week"
 msgstr "ეს კვირა"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 msgid "Next Week"
 msgstr "შემდეგი კვირა"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 msgid "This Month"
 msgstr "ეს თვე"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 msgid "Next Month"
 msgstr "შემდეგი თვე"
 
@@ -615,11 +623,11 @@ msgstr "შაბ"
 msgid "Sun"
 msgstr "კვი"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "დაფარე კვირის ციფრები"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "გამოაჩინე კვირის ციფრები"
 
@@ -848,20 +856,12 @@ msgid "Remove"
 msgstr "წაშლა"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "ახალი ივენთის შექმნა"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "გადადი დღევანდელ თარიღზე"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "კალენდრების მართვა"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "ძირითადი კალენდრის გატანა ან გაზიარება"
+msgid "Create a new event"
+msgstr "ახალი ივენთის შექმნა"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2023-02-17 10:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -64,7 +64,15 @@ msgstr "Fa Connection a ɛyɛ secure di dwuma"
 msgid "Server handles meeting invitations"
 msgstr "Server no na ɛhwɛ to nsa frɛ afoforɔ"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "Ɛspɔɔte anaa wone afoforɔ nkyɛ kalɛnda a wode di dwuma no"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "Hyɛhyɛ Kalɛnda Ahoroɔ No"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -72,34 +80,34 @@ msgstr ""
 "Sɛ wopaw ɛda bi a woahyehyɛ dwuma bi a ɛreba ama no a, ɛho dwuma no bɛda adi "
 "wɔ ha."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "Wɔ adekyeɛ mu"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "Da mũ no nyinaa"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 #, fuzzy
 msgid "This Week"
 msgstr "Nnawɔtwe"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 #, fuzzy
 msgid "Next Week"
 msgstr "Nnawɔtwe"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 #, fuzzy
 msgid "This Month"
 msgstr "Bosome"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 #, fuzzy
 msgid "Next Month"
 msgstr "Bosome"
@@ -642,11 +650,11 @@ msgstr "Mem"
 msgid "Sun"
 msgstr "Kwa"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Hintaw Nnawotwe Nɔma Ahoroɔ No"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Da Nnawɔtwe Nɔma Ahoroɔ No Adi"
 
@@ -883,20 +891,12 @@ msgid "Remove"
 msgstr "Yi"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Yɛ dwuma foforɔ ka ho"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Kɔ ennɛ da"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Hyɛhyɛ Kalɛnda Ahoroɔ No"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "Ɛspɔɔte anaa wone afoforɔ nkyɛ kalɛnda a wode di dwuma no"
+msgid "Create a new event"
+msgstr "Yɛ dwuma foforɔ ka ho"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

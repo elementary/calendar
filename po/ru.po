@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2023-09-24 15:08+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
@@ -69,38 +69,46 @@ msgstr "Использовать защищённое соединение"
 msgid "Server handles meeting invitations"
 msgstr "Сервер обрабатывает приглашения на встречу"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "Экспортировать или поделиться календарём по умолчанию"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "Управление календарями"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Ваши грядущие события появятся здесь когда вы выберете дату с событиями."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "В течение дня"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "Весь день"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr "Завтра"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 msgid "This Week"
 msgstr "Неделя"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 msgid "Next Week"
 msgstr "Следующая неделя"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 msgid "This Month"
 msgstr "Месяц"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 msgid "Next Month"
 msgstr "Следующий месяц"
 
@@ -632,11 +640,11 @@ msgstr "Сб."
 msgid "Sun"
 msgstr "Вс."
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Скрыть номера недель"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Показать номера недель"
 
@@ -874,20 +882,12 @@ msgid "Remove"
 msgstr "Удалить"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Создать новое событие"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Перейти к сегодняшний дате"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Управление календарями"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "Экспортировать или поделиться календарём по умолчанию"
+msgid "Create a new event"
+msgstr "Создать новое событие"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2018-11-03 22:51+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/calendar/"
@@ -69,7 +69,15 @@ msgstr "Korisiti sigurnu konekciju"
 msgid "Server handles meeting invitations"
 msgstr "Server obrađuje pozivnice za sastanak"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "Eksportuj ili podijeli podrazumijevani kalendar"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "Upravljaj kalendarima"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -77,31 +85,31 @@ msgstr ""
 "Vaši nadolazeći događaji bit će prikazani ovdje kada odaberete datum s "
 "događajima."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "Tokom dana"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "Čitav dan"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr "Sutra"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 msgid "This Week"
 msgstr "Tekuća sedmica"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 msgid "Next Week"
 msgstr "Naredna sedmica"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 msgid "This Month"
 msgstr "Tekući mjesec"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 msgid "Next Month"
 msgstr "Sljedeći mjesec"
 
@@ -648,11 +656,11 @@ msgstr "Sub"
 msgid "Sun"
 msgstr "Ned"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Sakrij brojeve sedmica"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Prikaži brojeve sedmica"
 
@@ -887,20 +895,12 @@ msgid "Remove"
 msgstr "Ukloni"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Kreiraj novi događaj"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Pređi na današnji datum"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Upravljaj kalendarima"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "Eksportuj ili podijeli podrazumijevani kalendar"
+msgid "Create a new event"
+msgstr "Kreiraj novi događaj"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

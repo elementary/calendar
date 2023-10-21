@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2023-07-14 13:07+0000\n"
 "Last-Translator: Jakub Kyzr <jakubkyzr@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -68,37 +68,45 @@ msgstr "Používat zabezpečené připojení"
 msgid "Server handles meeting invitations"
 msgstr "Server spravuje pozvánky na schůzky"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "Exportovat nebo sdílet výchozí kalendář"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "Spravovat kalendáře"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Zde se zobrazí nadcházející události, až vyberete datum s událostmi."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "Během dne"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "Celý den"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr "Zítra"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 msgid "This Week"
 msgstr "Tento týden"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 msgid "Next Week"
 msgstr "Příští týden"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 msgid "This Month"
 msgstr "Tento měsíc"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 msgid "Next Month"
 msgstr "Příští měsíc"
 
@@ -630,11 +638,11 @@ msgstr "So"
 msgid "Sun"
 msgstr "Ne"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Skrýt čísla týdnů"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Zobrazovat čísla týdnů"
 
@@ -876,20 +884,12 @@ msgid "Remove"
 msgstr "Odstranit"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Vytvořit novou událost"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Vybrat dnešek"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Spravovat kalendáře"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "Exportovat nebo sdílet výchozí kalendář"
+msgid "Create a new event"
+msgstr "Vytvořit novou událost"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

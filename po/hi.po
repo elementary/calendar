@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2019-05-09 12:32+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -68,7 +68,15 @@ msgstr "सुरक्षित कनेक्शन का उपयोग �
 msgid "Server handles meeting invitations"
 msgstr "सर्वर मीटिंग आमंत्रण का प्रबंधन करता है"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "देफौल्ट कैलेंडर को बाँटे या निर्यात करें"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr ""
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -76,31 +84,31 @@ msgstr ""
 "आपकी आने वाली घटनाओं को प्रदर्शित किया जाएगा जब आप घटनाओं के साथ एक तिथि का चयन "
 "करेंगे."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "दिन में"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "पूरा दिन"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr "कल"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 msgid "This Week"
 msgstr "इस सप्ताह"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 msgid "Next Week"
 msgstr "अगले सप्ताह"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 msgid "This Month"
 msgstr "इस महीने"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 msgid "Next Month"
 msgstr "अगले महीने"
 
@@ -628,11 +636,11 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr ""
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "साप्ताहिक अंक दिखाएँ"
 
@@ -872,20 +880,12 @@ msgid "Remove"
 msgstr "हटाएँ"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "नई घटना बनाएँ"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr ""
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr ""
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "देफौल्ट कैलेंडर को बाँटे या निर्यात करें"
+msgid "Create a new event"
+msgstr "नई घटना बनाएँ"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

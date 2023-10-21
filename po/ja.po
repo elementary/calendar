@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2023-10-21 12:51+0000\n"
 "PO-Revision-Date: 2023-09-24 15:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
@@ -68,37 +68,45 @@ msgstr "安全な接続を使う"
 msgid "Server handles meeting invitations"
 msgstr "サーバーが会議の招待を処理"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:34
+msgid "Export or Share the default Calendar"
+msgstr "デフォルトのカレンダーをエクスポートまたは共有"
+
+#: src/AgendaView.vala:41
+msgid "Manage Calendars"
+msgstr "カレンダーを管理"
+
+#: src/AgendaView.vala:68
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "予定が入っている日付を選択すると、ここに予定の内容が表示されます。"
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:166
 msgid "During the day"
 msgstr "日中"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:174
 msgid "All day"
 msgstr "終日"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:291
 msgid "Tomorrow"
 msgstr "明日"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:294
 msgid "This Week"
 msgstr "今週"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:297
 msgid "Next Week"
 msgstr "来週"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:300
 msgid "This Month"
 msgstr "今月"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:303
 msgid "Next Month"
 msgstr "来月"
 
@@ -618,11 +626,11 @@ msgstr "土"
 msgid "Sun"
 msgstr "日"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "週番号を非表示"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "週番号を表示"
 
@@ -780,7 +788,8 @@ msgstr "ネットワークが利用できません。"
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
-msgstr "オンラインカレンダーで追加の詳細情報や新しい予定を見るには、インターネットに"
+msgstr ""
+"オンラインカレンダーで追加の詳細情報や新しい予定を見るには、インターネットに"
 "接続してください。"
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
@@ -856,20 +865,12 @@ msgid "Remove"
 msgstr "削除"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "新しい予定を作成"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "今日の日付へ移動"
 
 #: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "カレンダーを管理"
-
-#: src/Widgets/HeaderBar.vala:66
-msgid "Export or Share the default Calendar"
-msgstr "デフォルトのカレンダーをエクスポートまたは共有"
+msgid "Create a new event"
+msgstr "新しい予定を作成"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
