@@ -19,8 +19,10 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.AgendaView : Gtk.ScrolledWindow {
+public class Maya.View.AgendaView : Gtk.Box {
     public signal void event_removed (ECal.Component event);
+
+    public Hdy.HeaderBar header_bar { get; construct; }
 
     private Gtk.Label day_label;
     private Gtk.Label weekday_label;
@@ -29,6 +31,23 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
     private DateTime selected_date;
 
     construct {
+        var contractor = new Maya.View.Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
+
+        var source_popover = new Calendar.Widgets.SourcePopover ();
+
+        var menu_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            popover = source_popover,
+            tooltip_text = _("Manage Calendars")
+        };
+
+        header_bar = new Hdy.HeaderBar () {
+            show_close_button = true
+        };
+        header_bar.pack_start (contractor);
+        header_bar.pack_end (menu_button);
+        header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
         weekday_label = new Gtk.Label ("");
         weekday_label.xalign = 0;
         weekday_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
@@ -98,13 +117,20 @@ public class Maya.View.AgendaView : Gtk.ScrolledWindow {
 
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
-        grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         grid.add (selected_data_grid);
         grid.add (selected_date_events_list);
         grid.add (upcoming_events_list);
 
-        hscrollbar_policy = Gtk.PolicyType.NEVER;
-        add (grid);
+        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = NEVER,
+            child = grid,
+            vexpand = true
+        };
+
+        orientation = VERTICAL;
+        add (header_bar);
+        add (scrolled_window);
+        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
         // Listen to changes for events
         var calmodel = Calendar.EventStore.get_default ();
