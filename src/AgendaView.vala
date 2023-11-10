@@ -31,39 +31,35 @@ public class Maya.View.AgendaView : Gtk.Box {
     private DateTime selected_date;
 
     construct {
-        var contractor = new Maya.View.Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
+        var application_instance = ((Gtk.Application) GLib.Application.get_default ());
 
-        var source_popover = new Calendar.Widgets.SourcePopover ();
-
-        var menu_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
-            popover = source_popover,
-            tooltip_text = _("Manage Calendars")
+        var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = Maya.MainWindow.ACTION_PREFIX + Maya.MainWindow.ACTION_NEW_EVENT
         };
+        button_add.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (button_add.action_name),
+            _("Create a new event")
+        );
+
+        weekday_label = new Gtk.Label ("") {
+            margin_start = 6,
+            xalign = 0
+        };
+        weekday_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         header_bar = new Hdy.HeaderBar () {
             show_close_button = true
         };
-        header_bar.pack_start (contractor);
-        header_bar.pack_end (menu_button);
+        header_bar.pack_start (weekday_label);
+        header_bar.pack_end (button_add);
         header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        weekday_label = new Gtk.Label ("");
-        weekday_label.xalign = 0;
-        weekday_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-
-        day_label = new Gtk.Label ("");
-        day_label.xalign = 0;
+        day_label = new Gtk.Label ("") {
+            margin_start = 12,
+            margin_end = 12,
+            xalign = 0
+        };
         day_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-
-        var selected_data_grid = new Gtk.Grid ();
-        selected_data_grid.margin = 6;
-        selected_data_grid.margin_start = selected_data_grid.margin_end = 12;
-        selected_data_grid.hexpand = true;
-        selected_data_grid.row_spacing = 3;
-        selected_data_grid.orientation = Gtk.Orientation.VERTICAL;
-        selected_data_grid.add (weekday_label);
-        selected_data_grid.add (day_label);
 
         var placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
         placeholder_label.wrap = true;
@@ -117,7 +113,7 @@ public class Maya.View.AgendaView : Gtk.Box {
 
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
-        grid.add (selected_data_grid);
+        grid.add (day_label);
         grid.add (selected_date_events_list);
         grid.add (upcoming_events_list);
 
