@@ -149,10 +149,6 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
                 Gdk.Rectangle rect;
                 get_allocation (out rect);
                 Maya.Application.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
-
-                int root_x, root_y;
-                get_position (out root_x, out root_y);
-                Maya.Application.saved_state.set ("window-position", "(ii)", root_x, root_y);
             }
 
             return GLib.Source.REMOVE;
