@@ -46,14 +46,6 @@ public class Calendar.Widgets.HeaderBar : Hdy.HeaderBar {
             valign = Gtk.Align.CENTER
         };
 
-        var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = Maya.MainWindow.ACTION_PREFIX + Maya.MainWindow.ACTION_NEW_EVENT
-        };
-        button_add.tooltip_markup = Granite.markup_accel_tooltip (
-            application_instance.get_accels_for_action (button_add.action_name),
-            _("Create a new event")
-        );
-
         var calmodel = Calendar.EventStore.get_default ();
         set_switcher_date (calmodel.month_start);
 
@@ -65,8 +57,19 @@ public class Calendar.Widgets.HeaderBar : Hdy.HeaderBar {
 
         var spinner = new Maya.View.Widgets.DynamicSpinner ();
 
+        var contractor = new Maya.View.Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
+
+        var source_popover = new Calendar.Widgets.SourcePopover ();
+
+        var menu_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            popover = source_popover,
+            tooltip_text = _("Manage Calendars")
+        };
+
         pack_start (spinner);
-        pack_end (button_add);
+        pack_end (menu_button);
+        pack_end (contractor);
         set_custom_title (title_grid);
         get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
