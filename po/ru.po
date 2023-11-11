@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:51+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2023-09-24 15:08+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
@@ -69,46 +69,42 @@ msgstr "Использовать защищённое соединение"
 msgid "Server handles meeting invitations"
 msgstr "Сервер обрабатывает приглашения на встречу"
 
-#: src/AgendaView.vala:34
-msgid "Export or Share the default Calendar"
-msgstr "Экспортировать или поделиться календарём по умолчанию"
-
 #: src/AgendaView.vala:41
-msgid "Manage Calendars"
-msgstr "Управление календарями"
+msgid "Create a new event"
+msgstr "Создать новое событие"
 
-#: src/AgendaView.vala:68
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Ваши грядущие события появятся здесь когда вы выберете дату с событиями."
 
-#: src/AgendaView.vala:166
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "В течение дня"
 
-#: src/AgendaView.vala:174
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Весь день"
 
-#: src/AgendaView.vala:291
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "Завтра"
 
-#: src/AgendaView.vala:294
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "Неделя"
 
-#: src/AgendaView.vala:297
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "Следующая неделя"
 
-#: src/AgendaView.vala:300
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "Месяц"
 
-#: src/AgendaView.vala:303
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "Следующий месяц"
 
@@ -124,7 +120,7 @@ msgstr "Сфокусироваться на этом дне"
 msgid "date"
 msgstr "дата"
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -132,7 +128,7 @@ msgstr ""
 "Календарь автоматически запускается при включении этого устройства и "
 "работает, когда окно закрыто, чтобы вы могли получать уведомления о событиях."
 
-#: src/Application.vala:214
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Календарь"
 
@@ -885,9 +881,13 @@ msgstr "Удалить"
 msgid "Go to today's date"
 msgstr "Перейти к сегодняшний дате"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Create a new event"
-msgstr "Создать новое событие"
+#: src/Widgets/HeaderBar.vala:60
+msgid "Export or Share the default Calendar"
+msgstr "Экспортировать или поделиться календарём по умолчанию"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Управление календарями"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

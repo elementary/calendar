@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:51+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2023-09-28 08:08+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -68,15 +68,11 @@ msgstr "Use a secure connection"
 msgid "Server handles meeting invitations"
 msgstr "Server handles meeting invitations"
 
-#: src/AgendaView.vala:34
-msgid "Export or Share the default Calendar"
-msgstr "Export or Share the default Calendar"
-
 #: src/AgendaView.vala:41
-msgid "Manage Calendars"
-msgstr "Manage Calendars"
+msgid "Create a new event"
+msgstr "Create a new event"
 
-#: src/AgendaView.vala:68
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -84,31 +80,31 @@ msgstr ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 
-#: src/AgendaView.vala:166
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "During the day"
 
-#: src/AgendaView.vala:174
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "All day"
 
-#: src/AgendaView.vala:291
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "Tomorrow"
 
-#: src/AgendaView.vala:294
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "This week"
 
-#: src/AgendaView.vala:297
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "Next week"
 
-#: src/AgendaView.vala:300
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "This month"
 
-#: src/AgendaView.vala:303
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "Next month"
 
@@ -124,7 +120,7 @@ msgstr "Focus the given day"
 msgid "date"
 msgstr "date"
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -132,7 +128,7 @@ msgstr ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 
-#: src/Application.vala:214
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Calendar"
 
@@ -874,9 +870,13 @@ msgstr "Remove"
 msgid "Go to today's date"
 msgstr "Go to today's date"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Create a new event"
-msgstr "Create a new event"
+#: src/Widgets/HeaderBar.vala:60
+msgid "Export or Share the default Calendar"
+msgstr "Export or Share the default Calendar"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Manage Calendars"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

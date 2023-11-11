@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:51+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2016-02-10 22:46+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -67,48 +67,44 @@ msgstr "Turvalise ühenduse kasutamine"
 msgid "Server handles meeting invitations"
 msgstr "Kokkusaamiskutseid hallatakse serveri poolt"
 
-#: src/AgendaView.vala:34
-msgid "Export or Share the default Calendar"
-msgstr "Ekspordi või jaga vaikimisi kalendrit"
-
 #: src/AgendaView.vala:41
-msgid "Manage Calendars"
-msgstr "Kalendrite haldamine"
+msgid "Create a new event"
+msgstr "Uue sündmuse loomine"
 
-#: src/AgendaView.vala:68
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Kuupäeva valides kuvatakse valitud sündmused siia."
 
-#: src/AgendaView.vala:166
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Päeva jooksul"
 
-#: src/AgendaView.vala:174
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Kogu päev"
 
-#: src/AgendaView.vala:291
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:294
+#: src/AgendaView.vala:290
 #, fuzzy
 msgid "This Week"
 msgstr "Nädal"
 
-#: src/AgendaView.vala:297
+#: src/AgendaView.vala:293
 #, fuzzy
 msgid "Next Week"
 msgstr "Nädal"
 
-#: src/AgendaView.vala:300
+#: src/AgendaView.vala:296
 #, fuzzy
 msgid "This Month"
 msgstr "Kuu"
 
-#: src/AgendaView.vala:303
+#: src/AgendaView.vala:299
 #, fuzzy
 msgid "Next Month"
 msgstr "Kuu"
@@ -126,13 +122,13 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:214
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -900,9 +896,13 @@ msgstr "Eemalda"
 msgid "Go to today's date"
 msgstr "Tänase päeva sündmused"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Create a new event"
-msgstr "Uue sündmuse loomine"
+#: src/Widgets/HeaderBar.vala:60
+msgid "Export or Share the default Calendar"
+msgstr "Ekspordi või jaga vaikimisi kalendrit"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Kalendrite haldamine"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

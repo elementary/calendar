@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:51+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2018-05-04 00:03+0000\n"
 "Last-Translator: Park Evans <travellerpeira9@gmail.com>\n"
 "Language-Team: Thai <https://weblate.elementary.io/projects/calendar/"
@@ -68,48 +68,44 @@ msgstr "ใช้การเชื่อมต่อนิรภัย"
 msgid "Server handles meeting invitations"
 msgstr "ให้เซิร์ฟเวอร์จัดการการเชิญเข้ารุ่วมประชุม"
 
-#: src/AgendaView.vala:34
-msgid "Export or Share the default Calendar"
-msgstr "ส่งหรือแบ่งปันปฏิทินที่ตั้งไว้เป็นค่าเริ่มต้น"
-
 #: src/AgendaView.vala:41
-msgid "Manage Calendars"
-msgstr "จัดการปฏิทิน"
+msgid "Create a new event"
+msgstr "สร้างกิจกรรมใหม่"
 
-#: src/AgendaView.vala:68
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "กิจกรรมที่ใกล้จะมาถึงของคุณจะถูกแสดงที่นี่หากคุณเลือกวันที่ที่มีกิจกรรมอยู่"
 
-#: src/AgendaView.vala:166
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "ระหว่างวัน"
 
-#: src/AgendaView.vala:174
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "ทั้งวัน"
 
-#: src/AgendaView.vala:291
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:294
+#: src/AgendaView.vala:290
 #, fuzzy
 msgid "This Week"
 msgstr "สัปดาห์"
 
-#: src/AgendaView.vala:297
+#: src/AgendaView.vala:293
 #, fuzzy
 msgid "Next Week"
 msgstr "สัปดาห์"
 
-#: src/AgendaView.vala:300
+#: src/AgendaView.vala:296
 #, fuzzy
 msgid "This Month"
 msgstr "เดือน"
 
-#: src/AgendaView.vala:303
+#: src/AgendaView.vala:299
 #, fuzzy
 msgid "Next Month"
 msgstr "เดือน"
@@ -127,13 +123,13 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:214
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "ปฏิทิน"
 
@@ -895,9 +891,13 @@ msgstr "ลบออก"
 msgid "Go to today's date"
 msgstr "ไปยังวันที่ของวันนี้"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Create a new event"
-msgstr "สร้างกิจกรรมใหม่"
+#: src/Widgets/HeaderBar.vala:60
+msgid "Export or Share the default Calendar"
+msgstr "ส่งหรือแบ่งปันปฏิทินที่ตั้งไว้เป็นค่าเริ่มต้น"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "จัดการปฏิทิน"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:51+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2017-05-09 22:15+0000\n"
 "Last-Translator: Martin Tomov <martin.tomov@boomer.digital>\n"
 "Language-Team: Bulgarian <https://l10n.elementary.io/projects/calendar/"
@@ -68,49 +68,45 @@ msgstr "Ползвай надеждно-осигурена  свръзка"
 msgid "Server handles meeting invitations"
 msgstr "Сървъра обслужва поканите за среща"
 
-#: src/AgendaView.vala:34
-msgid "Export or Share the default Calendar"
-msgstr "Експортиране или Споделяне на Календара по подразбиране"
-
 #: src/AgendaView.vala:41
-msgid "Manage Calendars"
-msgstr "Уреди Календарите"
+msgid "Create a new event"
+msgstr "Създаване на ново събитие"
 
-#: src/AgendaView.vala:68
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "Предстоящите събития ще се появят тук, след като изберете дата със събития."
 
-#: src/AgendaView.vala:166
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "През деня"
 
-#: src/AgendaView.vala:174
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Целия ден"
 
-#: src/AgendaView.vala:291
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:294
+#: src/AgendaView.vala:290
 #, fuzzy
 msgid "This Week"
 msgstr "Седмица"
 
-#: src/AgendaView.vala:297
+#: src/AgendaView.vala:293
 #, fuzzy
 msgid "Next Week"
 msgstr "Седмица"
 
-#: src/AgendaView.vala:300
+#: src/AgendaView.vala:296
 #, fuzzy
 msgid "This Month"
 msgstr "Месец"
 
-#: src/AgendaView.vala:303
+#: src/AgendaView.vala:299
 #, fuzzy
 msgid "Next Month"
 msgstr "Месец"
@@ -128,13 +124,13 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:214
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Календар"
 
@@ -902,9 +898,13 @@ msgstr "Премахване"
 msgid "Go to today's date"
 msgstr "На днешен ден"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Create a new event"
-msgstr "Създаване на ново събитие"
+#: src/Widgets/HeaderBar.vala:60
+msgid "Export or Share the default Calendar"
+msgstr "Експортиране или Споделяне на Календара по подразбиране"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Уреди Календарите"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

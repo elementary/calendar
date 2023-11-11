@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:51+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2022-03-31 21:16+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -68,15 +68,11 @@ msgstr "بەکارهێنانی پەیوەندییەکای پارێزراو"
 msgid "Server handles meeting invitations"
 msgstr "رێزبەندی بانگهێشتەکانی بینەرانی ڕاژە"
 
-#: src/AgendaView.vala:34
-msgid "Export or Share the default Calendar"
-msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریمان"
-
 #: src/AgendaView.vala:41
-msgid "Manage Calendars"
-msgstr "بەڕێوەبردنی ڕۆژژمێرەکان"
+msgid "Create a new event"
+msgstr "دروستکردنی روداوێک"
 
-#: src/AgendaView.vala:68
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -84,31 +80,31 @@ msgstr ""
 "لە کاتی هەڵبژاردنی ڕۆژی هەبوونی ڕووداو، ڕووداوەکانی ئەو ڕۆژە لێرە نیشان "
 "دەدرێن."
 
-#: src/AgendaView.vala:166
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "لە مەودای ڕۆژەکەدا"
 
-#: src/AgendaView.vala:174
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "هەموو ڕۆژ"
 
-#: src/AgendaView.vala:291
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "سبەی"
 
-#: src/AgendaView.vala:294
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "ئەم هەفتەیە"
 
-#: src/AgendaView.vala:297
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "هەفتەی داهاتوو"
 
-#: src/AgendaView.vala:300
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "ئەم مانگە"
 
-#: src/AgendaView.vala:303
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "مانگی داهاتوو"
 
@@ -124,13 +120,13 @@ msgstr "سەرنج خستنە سەر ڕۆژی پێدراو"
 msgid "date"
 msgstr "بەرواو"
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:214
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "ڕۆژژمێر"
 
@@ -882,9 +878,13 @@ msgstr "سڕینەوە"
 msgid "Go to today's date"
 msgstr "ڕۆیشتن بۆ بەرواری ئەمڕۆ"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Create a new event"
-msgstr "دروستکردنی روداوێک"
+#: src/Widgets/HeaderBar.vala:60
+msgid "Export or Share the default Calendar"
+msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریمان"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "بەڕێوەبردنی ڕۆژژمێرەکان"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

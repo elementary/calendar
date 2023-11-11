@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:51+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2023-10-08 20:09+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/calendar/"
@@ -68,15 +68,11 @@ msgstr "Käytä salattua yhteyttä"
 msgid "Server handles meeting invitations"
 msgstr "Palvelin käsittelee kokouskutsut"
 
-#: src/AgendaView.vala:34
-msgid "Export or Share the default Calendar"
-msgstr "Vie tai jaa vakiokalenteri"
-
 #: src/AgendaView.vala:41
-msgid "Manage Calendars"
-msgstr "Hallitse kalentereita"
+msgid "Create a new event"
+msgstr "Luo uusi tapahtuma"
 
-#: src/AgendaView.vala:68
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -84,31 +80,31 @@ msgstr ""
 "Tulevat tapahtumat näytetään tässä, kun valitset tapahtumia sisältävän "
 "päivämäärän."
 
-#: src/AgendaView.vala:166
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Päivän aikana"
 
-#: src/AgendaView.vala:174
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Koko päivä"
 
-#: src/AgendaView.vala:291
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "Huomenna"
 
-#: src/AgendaView.vala:294
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "Tällä viikolla"
 
-#: src/AgendaView.vala:297
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "Ensi viikolla"
 
-#: src/AgendaView.vala:300
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "Tässä kuussa"
 
-#: src/AgendaView.vala:303
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "Ensi kuussa"
 
@@ -124,7 +120,7 @@ msgstr "Kohdista määrättyyn päivään"
 msgid "date"
 msgstr "päivä"
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -133,7 +129,7 @@ msgstr ""
 "käynnissä sovelluksen ikkunan sulkemisen jälkeen, jotta tapahtumailmoituksia "
 "on mahdollista lähettää."
 
-#: src/Application.vala:214
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Kalenteri"
 
@@ -876,9 +872,13 @@ msgstr "Poista"
 msgid "Go to today's date"
 msgstr "Siirry kuluvaan päivään"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Create a new event"
-msgstr "Luo uusi tapahtuma"
+#: src/Widgets/HeaderBar.vala:60
+msgid "Export or Share the default Calendar"
+msgstr "Vie tai jaa vakiokalenteri"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Hallitse kalentereita"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:51+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2021-07-11 07:42+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/calendar/"
@@ -63,45 +63,41 @@ msgstr "ආරක්ෂිත සම්බන්ධතාවයක් භාව�
 msgid "Server handles meeting invitations"
 msgstr "සේවාදායකය රැස්වීම් ආරාධනා හසුරුවයි"
 
-#: src/AgendaView.vala:34
-msgid "Export or Share the default Calendar"
-msgstr "පොදු දින දසුන නිර්යාත කරන්න හෝ බෙදාගන්න"
-
 #: src/AgendaView.vala:41
-msgid "Manage Calendars"
-msgstr "දින දසුන් කළමනාකරණය කරන්න"
+msgid "Create a new event"
+msgstr "නව සිද්ධියක් සාදන්න"
 
-#: src/AgendaView.vala:68
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "සිදුවීම් සහිත දිනයක් තෝරන විට ඔබගේ ඉදිරියට ඇති සිදුවීම් මෙහි දිස්වනු ඇත."
 
-#: src/AgendaView.vala:166
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "දිවා කාලයේදී"
 
-#: src/AgendaView.vala:174
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "දවස පුරා"
 
-#: src/AgendaView.vala:291
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "හෙට"
 
-#: src/AgendaView.vala:294
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "මෙම සතිය"
 
-#: src/AgendaView.vala:297
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "ඊලඟ සතිය"
 
-#: src/AgendaView.vala:300
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "මෙම මාසය"
 
-#: src/AgendaView.vala:303
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "ඊලඟ මාසය"
 
@@ -117,13 +113,13 @@ msgstr ""
 msgid "date"
 msgstr "දිනය"
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:214
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "දින දසුන"
 
@@ -885,9 +881,13 @@ msgstr "ඉවත් කරන්න"
 msgid "Go to today's date"
 msgstr "අද දිනට යන්න"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Create a new event"
-msgstr "නව සිද්ධියක් සාදන්න"
+#: src/Widgets/HeaderBar.vala:60
+msgid "Export or Share the default Calendar"
+msgstr "පොදු දින දසුන නිර්යාත කරන්න හෝ බෙදාගන්න"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "දින දසුන් කළමනාකරණය කරන්න"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

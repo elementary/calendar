@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:51+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2023-02-17 10:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -64,15 +64,11 @@ msgstr "Fa Connection a ɛyɛ secure di dwuma"
 msgid "Server handles meeting invitations"
 msgstr "Server no na ɛhwɛ to nsa frɛ afoforɔ"
 
-#: src/AgendaView.vala:34
-msgid "Export or Share the default Calendar"
-msgstr "Ɛspɔɔte anaa wone afoforɔ nkyɛ kalɛnda a wode di dwuma no"
-
 #: src/AgendaView.vala:41
-msgid "Manage Calendars"
-msgstr "Hyɛhyɛ Kalɛnda Ahoroɔ No"
+msgid "Create a new event"
+msgstr "Yɛ dwuma foforɔ ka ho"
 
-#: src/AgendaView.vala:68
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -80,34 +76,34 @@ msgstr ""
 "Sɛ wopaw ɛda bi a woahyehyɛ dwuma bi a ɛreba ama no a, ɛho dwuma no bɛda adi "
 "wɔ ha."
 
-#: src/AgendaView.vala:166
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Wɔ adekyeɛ mu"
 
-#: src/AgendaView.vala:174
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Da mũ no nyinaa"
 
-#: src/AgendaView.vala:291
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:294
+#: src/AgendaView.vala:290
 #, fuzzy
 msgid "This Week"
 msgstr "Nnawɔtwe"
 
-#: src/AgendaView.vala:297
+#: src/AgendaView.vala:293
 #, fuzzy
 msgid "Next Week"
 msgstr "Nnawɔtwe"
 
-#: src/AgendaView.vala:300
+#: src/AgendaView.vala:296
 #, fuzzy
 msgid "This Month"
 msgstr "Bosome"
 
-#: src/AgendaView.vala:303
+#: src/AgendaView.vala:299
 #, fuzzy
 msgid "Next Month"
 msgstr "Bosome"
@@ -125,13 +121,13 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:214
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Kalɛnda"
 
@@ -894,9 +890,13 @@ msgstr "Yi"
 msgid "Go to today's date"
 msgstr "Kɔ ennɛ da"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Create a new event"
-msgstr "Yɛ dwuma foforɔ ka ho"
+#: src/Widgets/HeaderBar.vala:60
+msgid "Export or Share the default Calendar"
+msgstr "Ɛspɔɔte anaa wone afoforɔ nkyɛ kalɛnda a wode di dwuma no"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Hyɛhyɛ Kalɛnda Ahoroɔ No"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"

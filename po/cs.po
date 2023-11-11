@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:51+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2023-07-14 13:07+0000\n"
 "Last-Translator: Jakub Kyzr <jakubkyzr@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -68,45 +68,41 @@ msgstr "Používat zabezpečené připojení"
 msgid "Server handles meeting invitations"
 msgstr "Server spravuje pozvánky na schůzky"
 
-#: src/AgendaView.vala:34
-msgid "Export or Share the default Calendar"
-msgstr "Exportovat nebo sdílet výchozí kalendář"
-
 #: src/AgendaView.vala:41
-msgid "Manage Calendars"
-msgstr "Spravovat kalendáře"
+msgid "Create a new event"
+msgstr "Vytvořit novou událost"
 
-#: src/AgendaView.vala:68
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Zde se zobrazí nadcházející události, až vyberete datum s událostmi."
 
-#: src/AgendaView.vala:166
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Během dne"
 
-#: src/AgendaView.vala:174
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Celý den"
 
-#: src/AgendaView.vala:291
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "Zítra"
 
-#: src/AgendaView.vala:294
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "Tento týden"
 
-#: src/AgendaView.vala:297
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "Příští týden"
 
-#: src/AgendaView.vala:300
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "Tento měsíc"
 
-#: src/AgendaView.vala:303
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "Příští měsíc"
 
@@ -122,7 +118,7 @@ msgstr "Zaměřit na daný den"
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -130,7 +126,7 @@ msgstr ""
 "Kalendář se spustí automaticky při startu zařízení a bude běžet i když bude "
 "okno aplikace zavřené, aby mohl posílat oznámení o událostech."
 
-#: src/Application.vala:214
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Kalendář"
 
@@ -887,9 +883,13 @@ msgstr "Odstranit"
 msgid "Go to today's date"
 msgstr "Vybrat dnešek"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Create a new event"
-msgstr "Vytvořit novou událost"
+#: src/Widgets/HeaderBar.vala:60
+msgid "Export or Share the default Calendar"
+msgstr "Exportovat nebo sdílet výchozí kalendář"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Spravovat kalendáře"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
