@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 04:58+0000\n"
-"PO-Revision-Date: 2023-11-14 16:10+0000\n"
+"PO-Revision-Date: 2023-11-16 12:10+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "calendar/calendar/nb/>\n"
@@ -70,15 +70,15 @@ msgstr "Tjeneren håndterer møteinvitasjoner"
 
 #: src/AgendaView.vala:41
 msgid "Create a new event"
-msgstr "Opprett ny hendelse"
+msgstr "Opprett ny begivenhet"
 
 #: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Dine kommende hendelser vil bli vist her når du velger en dato som har "
-"hendelser."
+"Dine kommende begivenheter vil bli vist her når du velger en dato som har "
+"begivenheter."
 
 #: src/AgendaView.vala:162
 msgid "During the day"
@@ -110,7 +110,7 @@ msgstr "Neste måned"
 
 #: src/Application.vala:34
 msgid "Create an event"
-msgstr "Opprett ny hendelse"
+msgstr "Opprett ny begivenhet"
 
 #: src/Application.vala:35
 msgid "Focus the given day"
@@ -139,14 +139,14 @@ msgstr "Velg en kalender å importere til"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Hendelser fra \"%s\" vil flettes med denne kalenderen:"
+msgstr "Begivenheter fra «%s» vil flettes med denne kalenderen:"
 
 #: src/ImportDialog.vala:47
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Hendelse fra %d vil bli flettet med denne kalenderen:"
-msgstr[1] "Hendelser fra %d vil bli flettet med denne kalenderen:"
+msgstr[0] "Begivenhet fra %d vil bli flettet med denne kalenderen:"
+msgstr[1] "Begivenheter fra %d vil bli flettet med denne kalenderen:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -154,11 +154,11 @@ msgstr "Importer"
 
 #: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
-msgstr "Opprett hendelse"
+msgstr "Opprett begivenhet"
 
 #: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
-msgstr "Rediger hendelse"
+msgstr "Rediger begivenhet"
 
 #: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
@@ -186,11 +186,11 @@ msgstr "Gjentagelse"
 #: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
 #: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
-msgstr "Slett hendelse"
+msgstr "Slett begivenhet"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
-msgstr "Opprett hendelse"
+msgstr "Opprett begivenhet"
 
 #: src/EventEdition/EventDialog.vala:164
 msgid "Save Changes"
@@ -248,11 +248,11 @@ msgstr "Tittel:"
 
 #: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
-msgstr "Navn på hendelse"
+msgstr "Begivenhetsnavn"
 
 #: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
-msgstr "Trykk \"Enter\" for å behandle hendelse"
+msgstr "Trykk \"Enter\" for å behandle begivenhet"
 
 #: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
@@ -284,7 +284,7 @@ msgstr "Legg til påminnelse"
 
 #: src/EventEdition/ReminderPanel.vala:172
 msgid "At time of event"
-msgstr "Ved hendelse"
+msgstr "Ved tidspunkt for begivenhet"
 
 #: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
@@ -808,10 +808,8 @@ msgid "calendar.ics"
 msgstr "kalender.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
-#, fuzzy
-#| msgid "Delete the selected event"
 msgid "Delete this occurrence of event?"
-msgstr "Slett den valgte hendelsen"
+msgstr "Slett denne forekomsten av begivenheten?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
@@ -826,22 +824,17 @@ msgid ""
 msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:18
-#, fuzzy
-#| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
-msgstr "Fjern hendelse"
+msgstr "Fjern forekomst"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete event?"
-msgstr "Slett hendelse"
+msgstr "Slett begivenhet?"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
-#, fuzzy, c-format
-#| msgid "Delete Event"
+#, c-format
 msgid "Delete event “%s”?"
-msgstr "Slett hendelse"
+msgstr "Slett begivenheten «%s»?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
@@ -850,10 +843,8 @@ msgstr ""
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
-#, fuzzy
-#| msgid "This event can't be edited"
 msgid "This event will be permanently deleted."
-msgstr "Denne hendelsen kan ikke endres"
+msgstr "Denne begivenheten vil slettes for godt."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -865,11 +856,11 @@ msgstr "Dupliser …"
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
-msgstr "Slett hendelse"
+msgstr "Slett begivenhet"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr "Fjern hendelse"
+msgstr "Fjern forekomst"
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
