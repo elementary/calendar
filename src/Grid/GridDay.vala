@@ -35,6 +35,10 @@ public class Maya.View.GridDay : Gtk.EventBox {
     public bool draw_left_border = true;
     private VAutoHider event_box;
     private GLib.HashTable<string, EventButton> event_buttons;
+    private Gtk.EventControllerKey enter_press_controller;
+    private Gtk.GestureMultiPress double_click_gesture;
+    private Gtk.EventControllerScroll scroll_controller;
+    private Gtk.GestureDrag drag_and_drop_controller;
 
     public bool in_current_month {
         set {
@@ -71,9 +75,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
         // EventBox Properties
         can_focus = true;
-        events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        events |= Gdk.EventMask.KEY_PRESS_MASK;
-        events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
 
         unowned Gtk.StyleContext style_context = get_style_context ();
         style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -94,12 +95,24 @@ public class Maya.View.GridDay : Gtk.EventBox {
         add (container_grid);
 
         // Signals and handlers
-        button_press_event.connect (on_button_press);
-        key_press_event.connect (on_key_press);
-        scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
+        enter_press_controller = new Gtk.EventControllerKey (this) {
+            propagation_phase = Gtk.PropagationPhase.BUBBLE
+        };
+        enter_press_controller.key_pressed.connect (on_key_press);
+        double_click_gesture = new Gtk.GestureMultiPress (this) {
+            button = Gdk.BUTTON_PRIMARY,
+            propagation_phase = Gtk.PropagationPhase.BUBBLE
+        };
+        double_click_gesture.released.connect (on_button_press);
+        scroll_controller = new Gtk.EventControllerScroll (this, Gtk.EventControllerScrollFlags.VERTICAL);
+        scroll_controller.scroll.connect (GesturesUtils.on_scroll_event_v2);
 
-        Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
-        Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
+        drag_and_drop_controller = new Gtk.GestureDrag (this);
+        drag_and_drop_controller.drag_begin.connect ((event, x, y) => message ("x %f, y %f", x, y));
+        drag_and_drop_controller.drag_update.connect ((event, x, y) => message ("x %f, y %f", x, y));
+        drag_and_drop_controller.drag_end.connect (on_drag_released);
+        //  Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
+        //  Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
 
         this.bind_property ("date", label, "label", BindingFlags.SYNC_CREATE, (binding, srcval, ref targetval) => {
             unowned var date = (GLib.DateTime) srcval.get_boxed ();
@@ -108,31 +121,12 @@ public class Maya.View.GridDay : Gtk.EventBox {
         });
     }
 
-    public override bool drag_drop (Gdk.DragContext context, int x, int y, uint time_) {
-        Gtk.drag_finish (context, true, false, time_);
-        Gdk.Atom atom = Gtk.drag_dest_find_target (this, context, Gtk.drag_dest_get_target_list (this));
-        Gtk.drag_get_data (this, context, atom, time_);
-        return true;
-    }
-
-    public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-        var calmodel = Calendar.EventStore.get_default ();
-        var comp = calmodel.drag_component;
-        unowned ICal.Component icalcomp = comp.get_icalcomponent ();
-        E.Source src = comp.get_data ("source");
-        var start = icalcomp.get_dtstart ();
-        var end = icalcomp.get_dtend ();
-        var gap = date.get_day_of_month () - start.get_day ();
-        start.set_day (start.get_day () + gap);
-
-        if (!end.is_null_time ()) {
-            end.set_day (end.get_day () + gap);
-            icalcomp.set_dtend (end);
-        }
-
-        icalcomp.set_dtstart (start);
-        calmodel.update_event (src, comp, ECal.ObjModType.ALL);
-    }
+    //  public override bool drag_drop (Gdk.DragContext context, int x, int y, uint time_) {
+    //      Gtk.drag_finish (context, true, false, time_);
+    //      Gdk.Atom atom = Gtk.drag_dest_find_target (this, context, Gtk.drag_dest_get_target_list (this));
+    //      Gtk.drag_get_data (this, context, atom, time_);
+    //      return true;
+    //  }
 
     public void add_event_button (EventButton button) {
         string uid = button.get_uid ();
@@ -184,20 +178,38 @@ public class Maya.View.GridDay : Gtk.EventBox {
         }
     }
 
-    private bool on_button_press (Gdk.EventButton event) {
-        if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY)
+    private void on_button_press (int n_press, double x, double y) {
+        if (n_press == 2)
             on_event_add (date);
 
         grab_focus ();
-        return false;
     }
 
-    private bool on_key_press (Gdk.EventKey event) {
-        if (event.keyval == Gdk.keyval_from_name ("Return") ) {
+    private bool on_key_press (Gtk.EventControllerKey event, uint keyval, uint keycode, Gdk.ModifierType state) {
+        if (keyval == Gdk.keyval_from_name ("Return") ) {
             on_event_add (date);
             return true;
         }
-
         return false;
+    }
+
+    private void on_drag_released (Gtk.GestureDrag drag, double x, double y) {
+        message ("drag related on position x %f and y %f", x, y);
+        var calmodel = Calendar.EventStore.get_default ();
+        var comp = calmodel.drag_component;
+        unowned ICal.Component icalcomp = comp.get_icalcomponent ();
+        E.Source src = comp.get_data ("source");
+        var start = icalcomp.get_dtstart ();
+        var end = icalcomp.get_dtend ();
+        var gap = date.get_day_of_month () - start.get_day ();
+        start.set_day (start.get_day () + gap);
+
+        if (!end.is_null_time ()) {
+            end.set_day (end.get_day () + gap);
+            icalcomp.set_dtend (end);
+        }
+
+        icalcomp.set_dtstart (start);
+        calmodel.update_event (src, comp, ECal.ObjModType.ALL);
     }
 }

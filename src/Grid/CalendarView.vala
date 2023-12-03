@@ -84,7 +84,7 @@ public class Maya.View.CalendarView : Gtk.Grid {
         events |= Gdk.EventMask.KEY_PRESS_MASK;
         events |= Gdk.EventMask.SCROLL_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
-        add (stack);
+        attach (stack, 1, 1);
     }
 
     public override bool scroll_event (Gdk.EventScroll event) {

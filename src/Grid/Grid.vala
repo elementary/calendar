@@ -166,6 +166,7 @@ public class Grid : Gtk.Grid {
             } else {
                 // Still update_day to get the color of etc. right
                 day = update_day (new GridDay (new_date), new_date, today, month_start);
+                message ("day updated for date %s", day.date.to_string ());
                 day.on_event_add.connect ((date) => on_event_add (date));
                 day.scroll_event.connect ((event) => {scroll_event (event); return false;});
                 day.focus_in_event.connect ((event) => {

@@ -24,6 +24,33 @@ namespace Maya.GesturesUtils {
     static bool has_scrolled = false;
     const uint INTERVAL = 500;
 
+    public void on_scroll_event_v2 (Gtk.EventControllerScroll event, double delta_x, double delta_y) {
+        double choice = delta_x;
+        if (((int)delta_x).abs () < ((int)delta_y).abs ()) {
+            choice = delta_y;
+        }
+
+        // It's mouse scroll !
+        if (choice == 1 || choice == -1) {
+            Calendar.EventStore.get_default ().change_month ((int) choice);
+            return;
+        }
+
+        if (has_scrolled == true) {
+            return;
+        }
+
+        if (choice > 0.3) {
+            reset_timer.begin ();
+            Calendar.EventStore.get_default ().change_month (1);
+        }
+
+        if (choice < -0.3) {
+            reset_timer.begin ();
+            Calendar.EventStore.get_default ().change_month (-1);
+        }
+    }
+
     public bool on_scroll_event (Gdk.EventScroll event) {
         double delta_x;
         double delta_y;

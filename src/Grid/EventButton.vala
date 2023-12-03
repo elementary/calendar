@@ -54,9 +54,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
         grid_style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var event_box = new Gtk.EventBox ();
-        event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        event_box.events |= Gdk.EventMask.SCROLL_MASK;
-        event_box.events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         event_box.add (internal_grid);
 
         add (event_box);
