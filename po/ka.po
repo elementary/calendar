@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 04:58+0000\n"
-"PO-Revision-Date: 2023-10-03 12:55+0000\n"
+"PO-Revision-Date: 2023-12-09 01:51+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ka/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
@@ -763,21 +763,23 @@ msgstr "კალენდრების ძებნა"
 
 #: src/Widgets/CalendarChooser.vala:54
 msgid "No Results"
-msgstr ""
+msgstr "შედეგების გარეშე"
 
 #: src/Widgets/CalendarChooser.vala:55
 msgid "Try changing search terms."
-msgstr ""
+msgstr "სცადეთ, ძებნის პირობები შეცვალოთ."
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
-msgstr ""
+msgstr "ქსელი ხელმისაწვდომი არაა."
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
+"მიუერთდით ინტერნეტს, რათა იხილოთ დამატებითი დეტალები და ახალი მოვლენები "
+"ონლაინ კალენდრებიდან."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
@@ -794,12 +796,12 @@ msgstr "კალენდარი.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
-msgstr ""
+msgstr "წავშალო ეს შემთხვევა მოვლენიდან?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "წავშალო ეს შემთხვევა მოვლენიდან \"%s\"?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -807,6 +809,8 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
+"ეს შემთხვევა შეუქცევადად წაიშლება, მაგრამ ყველა სხვა შემთხვევა შეუცვლელი "
+"დარჩება."
 
 #: src/Widgets/DeleteDialog.vala:18
 msgid "Delete Occurrence"
@@ -824,12 +828,12 @@ msgstr "წავშალო მოვლენა \"%s\"?"
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr ""
+msgstr "ეს მოვლენა და ყველა მისი შემთხვევა შეუქცევლად წაიშლება."
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
 msgid "This event will be permanently deleted."
-msgstr ""
+msgstr "ეს მოვლენა შეუქცევლად წაიშლება."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
