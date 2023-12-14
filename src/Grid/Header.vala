@@ -56,7 +56,6 @@ public class Header : Gtk.EventBox {
         // EventBox properties
         set_visible_window (true); // needed for style
         get_style_context ().add_provider (style_provider, 600);
-        get_style_context ().add_class ("header");
 
         labels = new Gtk.Label[7];
         for (int c = 0; c < 7; c++) {

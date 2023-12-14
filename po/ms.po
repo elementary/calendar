@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2018-06-13 00:06+0000\n"
 "Last-Translator: Timothy <timty97@gmail.com>\n"
 "Language-Team: Malay <https://weblate.elementary.io/projects/calendar/"
@@ -68,7 +68,11 @@ msgstr "Guna sambungan selamat"
 msgid "Server handles meeting invitations"
 msgstr "Pelayan mengendali jemputan mesyuarat"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "Cipta peristiwa baru"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -76,34 +80,34 @@ msgstr ""
 "Acara akan datang anda akan dipaparkan disini sejurus anda memilih tarikh "
 "yang ditandai"
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Pada tarikh tersebut"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Sepanjang Hari"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 #, fuzzy
 msgid "This Week"
 msgstr "Minggu"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 #, fuzzy
 msgid "Next Week"
 msgstr "Minggu"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 #, fuzzy
 msgid "This Month"
 msgstr "Bulan"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 #, fuzzy
 msgid "Next Month"
 msgstr "Bulan"
@@ -121,13 +125,13 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Kalendar"
 
@@ -183,7 +187,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Ulang"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Padam Peristiwa"
 
@@ -641,11 +646,11 @@ msgstr "Sab"
 msgid "Sun"
 msgstr "Ahd"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Sembunyikan Bilangan Minggu"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Papar Bilangan Minggu"
 
@@ -779,6 +784,33 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Cipta Kalendar"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr ""
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 #, fuzzy
@@ -788,6 +820,54 @@ msgstr "Eksport Kalendar..."
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "Padam peristiwa terpilih"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete Occurrence"
+msgstr "Padam Peristiwa"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Padam Peristiwa"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Padam Peristiwa"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "Peristiwa ini tidak boleh disunting"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -811,20 +891,16 @@ msgid "Remove"
 msgstr "Buang"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Cipta peristiwa baru"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Pergi ke tarikh hari ini"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Urus Kalendar"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "Eksport atau Kongsi Kalendar lalai"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Urus Kalendar"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -869,10 +945,6 @@ msgstr "Kalendar \"%s\" dibuang."
 #, fuzzy
 #~ msgid "Print debug information"
 #~ msgstr "Maklumat Am"
-
-#, fuzzy
-#~ msgid "Search Calendars"
-#~ msgstr "Cipta Kalendar"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
@@ -949,9 +1021,6 @@ msgstr "Kalendar \"%s\" dibuang."
 #~ msgid "Your event has to be named and has to have a valid date"
 #~ msgstr "Peristiwa anda telah dinamakan dan mempunyai tarikh yang sah"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Padam peristiwa terpilih"
-
 #~ msgid "Comments"
 #~ msgstr "Ulasan"
 
@@ -993,9 +1062,6 @@ msgstr "Kalendar \"%s\" dibuang."
 
 #~ msgid "$more more ..."
 #~ msgstr "$more lagi ..."
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Peristiwa ini tidak boleh disunting"
 
 #~ msgid "Days"
 #~ msgstr "Hari"

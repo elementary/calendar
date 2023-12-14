@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2023-06-15 00:07+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
+"PO-Revision-Date: 2023-09-24 15:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -68,37 +68,41 @@ msgstr "安全な接続を使う"
 msgid "Server handles meeting invitations"
 msgstr "サーバーが会議の招待を処理"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "新しい予定を作成"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "予定が入っている日付を選択すると、ここに予定の内容が表示されます。"
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "日中"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "終日"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "明日"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "今週"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "来週"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "今月"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "来月"
 
@@ -114,14 +118,15 @@ msgstr "指定の日に移動します"
 msgid "date"
 msgstr "日付"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
-msgstr "予定を通知できるよう、“カレンダー”はデバイス起動時に自動的にバックグラウンド"
+msgstr ""
+"予定を通知できるよう、“カレンダー”はデバイス起動時に自動的にバックグラウンド"
 "で起動し、ウィンドウを閉じても常駐します。"
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "カレンダー"
 
@@ -174,7 +179,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "繰り返し"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "予定を削除"
 
@@ -616,11 +622,11 @@ msgstr "土"
 msgid "Sun"
 msgstr "日"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "週番号を非表示"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "週番号を表示"
 
@@ -758,6 +764,34 @@ msgstr "%s %s"
 msgid "%s, %s – %s"
 msgstr "%s %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "カレンダーを検索"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "検索結果はありません"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "検索用語を変更してみてください。"
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr "ネットワークが利用できません。"
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"オンラインカレンダーで追加の詳細情報や新しい予定を見るには、インターネットに"
+"接続してください。"
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr "ネットワークの設定…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -766,6 +800,45 @@ msgstr "カレンダーをエクスポート…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "カレンダー.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr "予定のこの回を削除しますか？"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr "予定 “%s” のこの回を削除しますか？"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr "この回は完全に削除されますが、そのほかのすべての回は変更されません。"
+
+#: src/Widgets/DeleteDialog.vala:18
+msgid "Delete Occurrence"
+msgstr "この回を削除"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+msgid "Delete event?"
+msgstr "予定を削除しますか？"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, c-format
+msgid "Delete event “%s”?"
+msgstr "予定 “%s” を削除しますか？"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr "この予定とそのすべての回が完全に削除されます。"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr "この予定が完全に削除されます。"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -781,27 +854,23 @@ msgstr "予定を削除"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr "この予定のみを削除"
+msgstr "この回を削除"
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
 msgstr "削除"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "新しい予定を作成"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "今日の日付へ移動"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "カレンダーを管理"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "デフォルトのカレンダーをエクスポートまたは共有"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "カレンダーを管理"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -842,15 +911,6 @@ msgstr "\"%s\" は削除されました"
 
 #~ msgid "Print debug information"
 #~ msgstr "デバッグ情報を表示します"
-
-#~ msgid "Search Calendars"
-#~ msgstr "カレンダーを検索"
-
-#~ msgid "No Results"
-#~ msgstr "検索結果はありません"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "検索用語を変更してみてください。"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%Y年%B%e日"
@@ -937,9 +997,6 @@ msgstr "\"%s\" は削除されました"
 
 #~ msgid "Edit the selected event"
 #~ msgstr "選択された予定を編集"
-
-#~ msgid "Delete the selected event"
-#~ msgstr "選択された予定を削除"
 
 #~ msgid "Contacts"
 #~ msgstr "連絡先"

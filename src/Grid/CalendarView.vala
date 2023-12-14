@@ -22,13 +22,14 @@
 /**
  * Represents the entire calendar, including the headers, the week labels and the grid.
  */
-public class Maya.View.CalendarView : Gtk.Grid {
+public class Maya.View.CalendarView : Gtk.Box {
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
     public signal void on_event_add (DateTime date);
     public signal void selection_changed (DateTime new_date);
 
+    public Hdy.HeaderBar header_bar { get; construct; }
     public DateTime? selected_date { get; private set; }
 
     private WeekLabels weeks { get; private set; }
@@ -54,11 +55,24 @@ public class Maya.View.CalendarView : Gtk.Grid {
     construct {
         selected_date = Maya.Application.get_selected_datetime ();
 
+        var error_label = new Gtk.Label (null);
+        error_label.show ();
+
+        var error_bar = new Gtk.InfoBar () {
+            message_type = Gtk.MessageType.ERROR,
+            revealed = false,
+            show_close_button = true
+        };
+        error_bar.get_content_area ().add (error_label);
+
+        var info_bar = new Calendar.Widgets.ConnectivityInfoBar ();
+
+        header_bar = new Calendar.Widgets.HeaderBar ();
+
         stack = new Gtk.Stack ();
         stack.expand = true;
 
         sync_with_model (); // Populate stack with a grid
-        stack.show_all ();
 
         var model = Calendar.EventStore.get_default ();
         model.parameters_changed.connect (on_model_parameters_changed);
@@ -84,7 +98,23 @@ public class Maya.View.CalendarView : Gtk.Grid {
         events |= Gdk.EventMask.KEY_PRESS_MASK;
         events |= Gdk.EventMask.SCROLL_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
+        orientation = VERTICAL;
+        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        add (header_bar);
+        add (error_bar);
+        add (info_bar);
         add (stack);
+        show_all ();
+
+        error_bar.response.connect ((id) => error_bar.set_revealed (false));
+
+        Calendar.EventStore.get_default ().error_received.connect ((message) => {
+            Idle.add (() => {
+                error_label.label = message;
+                error_bar.set_revealed (true);
+                return false;
+            });
+        });
     }
 
     public override bool scroll_event (Gdk.EventScroll event) {

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2023-11-11 04:58+0000\n"
 "PO-Revision-Date: 2020-05-16 02:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -69,38 +69,42 @@ msgstr "استخدم الاتصال الآمن"
 msgid "Server handles meeting invitations"
 msgstr "الخادم يتعامل مع دعوات الاجتماع"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "إنشاء حدث جديد"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "يتم هنا عرض الأحداث القادمة الخاصة بك عند إختيارك لتاريخ مسجل به أحداث."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "خلال اليوم"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "كل الأيام"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "غدا"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "هذا الأسبوع"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "الأسبوع القادم"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "هذا الشهر"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "الشهر القادم"
 
@@ -116,13 +120,13 @@ msgstr "ركز على اليوم المعطى"
 msgid "date"
 msgstr "تاريخ"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "التقويم"
 
@@ -181,7 +185,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "لا اعادة"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "حذف الحدث"
 
@@ -648,11 +653,11 @@ msgstr "سبت"
 msgid "Sun"
 msgstr "أحد"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "إخفاء أرقام الأسبوع"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "إظهار أرقام الأسبوع"
 
@@ -787,6 +792,32 @@ msgstr "تاريخ %s الساعة %s"
 msgid "%s, %s – %s"
 msgstr "تاريخ %s من الساعة %s الى الساعة %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "البحث في التقاويم"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "لا توجد نتائج"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "جرب تغيير شروط البحث."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr ""
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -795,6 +826,54 @@ msgstr "تصدير التقويم …"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "إلغاء الحدث المحدد"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Remove Occurrence"
+msgid "Delete Occurrence"
+msgstr "حذف الحدث"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "حذف الحدث"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "حذف الحدث"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "هذه المناسبة لا يمكن تعديلها"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -817,20 +896,16 @@ msgid "Remove"
 msgstr "ازالة"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "إنشاء حدث جديد"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "اذهب إلى تاريخ اليوم"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "إدارة التقاويم"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "تصدير أو مشاركة التقويم الإفتراضي"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "إدارة التقاويم"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -873,15 +948,6 @@ msgstr "“%s” تم ازالته"
 
 #~ msgid "Print debug information"
 #~ msgstr "اطبع تفاصيل تدقيق الأخطاء (debug)"
-
-#~ msgid "Search Calendars"
-#~ msgstr "البحث في التقاويم"
-
-#~ msgid "No Results"
-#~ msgstr "لا توجد نتائج"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "جرب تغيير شروط البحث."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
@@ -933,9 +999,6 @@ msgstr "“%s” تم ازالته"
 #~ msgid "Edit the selected event"
 #~ msgstr "تعديل الحدث المحدد"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "إلغاء الحدث المحدد"
-
 #~ msgid "Sync..."
 #~ msgstr "تزامن..."
 
@@ -971,9 +1034,6 @@ msgstr "“%s” تم ازالته"
 
 #~ msgid "all day"
 #~ msgstr "طوال النهار"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "هذه المناسبة لا يمكن تعديلها"
 
 #~ msgid "Ends: \t"
 #~ msgstr "Ends: \t"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2023-06-16 10:07+0000\n"
+"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"PO-Revision-Date: 2023-11-16 12:10+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "calendar/extra/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
@@ -27,7 +27,7 @@ msgstr "Kalender"
 
 #: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr "Vis og planlegg hendelser"
+msgstr "Vis og planlegg begivenheter"
 
 #: data/calendar.metainfo.xml.in:13
 msgid ""
@@ -97,11 +97,12 @@ msgstr "Fikset mulig minnelekkasje"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr "Maya;Planlegger;Datoer;Dager;Hendelser;Kalender;ics,caldav;evolution;"
+msgstr ""
+"Maya;Planlegger;Datoer;Dager;Begivenheter;Kalender;ics,CalDAV;Evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
-msgstr "Opprett hendelse"
+msgstr "Opprett begivenhet"
 
 #~ msgid "New Features:"
 #~ msgstr "Nye funksjoner:"
