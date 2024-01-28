@@ -53,6 +53,9 @@ namespace Maya.Util {
             parent_source = registry.ref_source (parent_uid);
         }
 
+        if (source.parent == "webcal-stub") {
+            return _("On the web");
+        }
         return _("On this computer");
     }
 
