@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 04:58+0000\n"
-"PO-Revision-Date: 2024-02-05 21:39+0000\n"
-"Last-Translator: sashikknox <codecodition@gmail.com>\n"
+"PO-Revision-Date: 2024-02-06 22:11+0000\n"
+"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
 "Language: ru\n"
@@ -647,7 +647,7 @@ msgstr "Показать номера недель"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "%u больше…"
+msgstr "Ещё %u…"
 
 #: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
@@ -911,11 +911,11 @@ msgstr "Открыть"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
-msgstr "Не удаляемо"
+msgstr "Неудаляемый"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
-msgstr "Не редактируемый"
+msgstr "Неизменяемый"
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
