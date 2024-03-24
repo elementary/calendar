@@ -27,7 +27,7 @@ public Maya.Backend get_backend (Module module) {
     return b;
 }
 
-public static Maya.Backend backend;
+private static Maya.Backend backend;
 
 public class Maya.WebBackend : GLib.Object, Maya.Backend {
 
@@ -55,17 +55,20 @@ public class Maya.WebBackend : GLib.Object, Maya.Backend {
         collection.add (Maya.DefaultPlacementWidgets.get_keep_copy (0, keep_copy));
 
         var url_label = new PlacementWidget ();
-        url_label.widget = new Gtk.Label (_("URL:"));
-        ((Gtk.Label) url_label.widget).expand = true;
-        ((Gtk.Misc) url_label.widget).xalign = 1.0f;
+        url_label.widget = new Gtk.Label (_("URL:")) {
+            hexpand = true,
+            vexpand = true,
+            xalign = 1.0f
+        };
         url_label.row = 1;
         url_label.column = 0;
         url_label.ref_name = "url_label";
         collection.add (url_label);
 
         var url_entry = new PlacementWidget ();
-        url_entry.widget = new Gtk.Entry ();
-        ((Gtk.Entry)url_entry.widget).text = "http://";
+        url_entry.widget = new Gtk.Entry () {
+            placeholder_text = "https://example.com"
+        };
         url_entry.row = 1;
         url_entry.column = 1;
         url_entry.ref_name = "url_entry";
@@ -85,30 +88,21 @@ public class Maya.WebBackend : GLib.Object, Maya.Backend {
             }
         }
 
-        var secure_checkbutton = new PlacementWidget ();
-        secure_checkbutton.widget = new Gtk.CheckButton.with_label (_("Use a secure connection"));
-        secure_checkbutton.row = 3;
-        secure_checkbutton.column = 1;
-        secure_checkbutton.ref_name = "secure_checkbutton";
-        collection.add (secure_checkbutton);
-        if (to_edit != null) {
-            E.SourceSecurity security = (E.SourceSecurity)to_edit.get_extension (E.SOURCE_EXTENSION_SECURITY);
-            ((Gtk.CheckButton)secure_checkbutton.widget).active = security.secure;
-        }
-
         return collection;
     }
 
     public void add_new_calendar (string name, string color, bool set_default, Gee.Collection<PlacementWidget> widgets) {
         try {
-            var new_source = new E.Source (null, null);
-            new_source.display_name = name;
+            var new_source = new E.Source (null, null) {
+                display_name = name
+            };
             new_source.parent = get_uid ();
             E.SourceCalendar cal = (E.SourceCalendar)new_source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             cal.color = color;
             cal.backend_name = "webcal";
             E.SourceWebdav webdav = (E.SourceWebdav)new_source.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
-            E.SourceAuthentication auth = (E.SourceAuthentication)new_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+            // This creates the extension which we need, but we don't need to do anything with it
+            new_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
             E.SourceOffline offline = (E.SourceOffline)new_source.get_extension (E.SOURCE_EXTENSION_OFFLINE);
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
@@ -146,7 +140,8 @@ public class Maya.WebBackend : GLib.Object, Maya.Backend {
             E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
             cal.color = color;
             E.SourceWebdav webdav = (E.SourceWebdav)source.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
-            E.SourceAuthentication auth = (E.SourceAuthentication)source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+            // This creates the extension which we need, but we don't need to do anything with it
+            source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
             E.SourceOffline offline = (E.SourceOffline)source.get_extension (E.SOURCE_EXTENSION_OFFLINE);
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
