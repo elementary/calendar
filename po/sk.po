@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-11 04:58+0000\n"
+"POT-Creation-Date: 2024-03-25 22:29+0000\n"
 "PO-Revision-Date: 2023-10-27 10:10+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "Na tomto počítači"
 
@@ -43,6 +43,10 @@ msgstr "jožko@mrkvička.sk"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Uschovať lokálnu kópiu"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
