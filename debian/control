@@ -36,25 +36,25 @@ Depends: libmaya-calendar0 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Recommends: maya-calendar-plugin-caldav, maya-calendar-plugin-google
-Description: GTK+ calendar application
- Maya is a slim, lightweight, GTK+ calendar application written
- in Vala and designed for elementary OS.
+Description: Gtk calendar application
+ A slim, lightweight calendar app that syncs and manages multiple calendars
+ in one place.
  .
  It features an easy to use yet powerful user interface, provides a daemon
  to notify the user about upcoming events and supports synchronization with
- Google Calendar as well as CalDAV-supporting services such as OwnCloud.
+ most online services.
 
 Package: maya-calendar-common
 Section: oldlibs
 Architecture: all
 Depends: ${misc:Depends}
-Description: GTK+ calendar application (dummy transitional package)
- Maya is a slim, lightweight, GTK+ calendar application written
- in Vala and designed for elementary OS.
+Description: Gtk calendar application (dummy transitional package)
+ A slim, lightweight calendar app that syncs and manages multiple calendars
+ in one place.
  .
  It features an easy to use yet powerful user interface, provides a daemon
  to notify the user about upcoming events and supports synchronization with
- Google Calendar as well as CalDAV-supporting services such as OwnCloud.
+ most online services.
  .
  This package can be safely removed after upgrading to elementary OS 0.4 Loki.
 
@@ -70,29 +70,29 @@ Section: libs
 Multi-Arch: same
 Enhances: maya-calendar
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: GTK+ calendar application (shared library)
- Maya is a slim, lightweight, GTK+ calendar application written
- in Vala and designed for elementary OS.
+Description: Gtk calendar application (shared library)
+ A slim, lightweight calendar app that syncs and manages multiple calendars
+ in one place.
  .
  It features an easy to use yet powerful user interface, provides a daemon
  to notify the user about upcoming events and supports synchronization with
- Google Calendar as well as CalDAV-supporting services such as OwnCloud.
+ most online services.
  .
- This package provides the shared library used by Maya plugins.
+ This package provides the shared library used by plugins.
 
 Package: libmaya-calendar-dev
 Architecture: any
 Section: libdevel
 Depends: libmaya-calendar0 (= ${binary:Version}), ${misc:Depends}
-Description: GTK+ calendar application (development files)
- Maya is a slim, lightweight, GTK+ calendar application written
- in Vala and designed for elementary OS.
+Description: Gtk calendar application (development files)
+ A slim, lightweight calendar app that syncs and manages multiple calendars
+ in one place.
  .
  It features an easy to use yet powerful user interface, provides a daemon
  to notify the user about upcoming events and supports synchronization with
- Google Calendar as well as CalDAV-supporting services such as OwnCloud.
+ most online services.
  .
- This package provides the development files required to write Maya plugins.
+ This package provides the development files required to write plugins.
 
 Package: maya-calendar-plugin-google
 Architecture: any
@@ -101,13 +101,13 @@ Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: GTK+ calendar application (Google Calendar plugin)
- Maya is a slim, lightweight, GTK+ calendar application written
- in Vala, specifically forelementary OS.
+Description: Gtk calendar application (Google Calendar plugin)
+ A slim, lightweight calendar app that syncs and manages multiple calendars
+ in one place.
  .
  It features an easy to use yet powerful user interface, provides a daemon
  to notify the user about upcoming events and supports synchronization with
- Google Calendar as well as CalDAV-supporting services such as OwnCloud.
+ most online services.
  .
  This package provides Google Calendar integration.
 
@@ -118,12 +118,29 @@ Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: GTK+ calendar application (CalDAV plugin)
- Maya is a slim, lightweight, GTK+ calendar application written
- in Vala and designed for elementary OS.
+Description: Gtk calendar application (CalDAV plugin)
+ A slim, lightweight calendar app that syncs and manages multiple calendars
+ in one place.
  .
  It features an easy to use yet powerful user interface, provides a daemon
  to notify the user about upcoming events and supports synchronization with
- Google Calendar as well as CalDAV-supporting services such as OwnCloud.
+ most online services.
  .
  This package provides integration with CalDAV-supporting services.
+
+Package: maya-calendar-plugin-webdav
+Architecture: any
+Enhances: maya-calendar
+Depends: libmaya-calendar0 (= ${binary:Version}),
+         maya-calendar (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gtk calendar application (WebDAV plugin)
+ A slim, lightweight calendar app that syncs and manages multiple calendars
+ in one place.
+ .
+ It features an easy to use yet powerful user interface, provides a daemon
+ to notify the user about upcoming events and supports synchronization with
+ most online services.
+ .
+ This package provides integration with WebDAV-supporting services.
