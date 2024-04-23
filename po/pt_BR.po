@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-25 22:29+0000\n"
-"PO-Revision-Date: 2023-07-08 14:07+0000\n"
+"PO-Revision-Date: 2024-04-24 11:13+0000\n"
 "Last-Translator: Matheus Torres Carvalho <matheustcarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "calendar/calendar/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -46,7 +46,7 @@ msgstr "Mantenha uma cópia local"
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr ""
+msgstr "Na internet"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -795,12 +795,12 @@ msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
+"Conecte-se à Internet para ver detalhes adicionais e novos eventos dos "
+"calendários online."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
-#, fuzzy
-#| msgid "Online Accounts Settings…"
 msgid "Network Settings…"
-msgstr "Configurações de contas online …"
+msgstr "Configurações de Rede…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -812,15 +812,13 @@ msgid "calendar.ics"
 msgstr "calendario.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
-#, fuzzy
-#| msgid "Delete the selected event"
 msgid "Delete this occurrence of event?"
-msgstr "Deletar o evento selecionado"
+msgstr "Excluir esta ocorrência de evento?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "Excluir esta ocorrência de evento \"%s\"?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -828,36 +826,32 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
+"Esta ocorrência será permanentemente excluída, mas todas as outras "
+"ocorrências permanecerão inalteradas."
 
 #: src/Widgets/DeleteDialog.vala:18
-#, fuzzy
-#| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
-msgstr "Remover Ocorrência"
+msgstr "Excluir Ocorrência"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete event?"
-msgstr "Excluir evento"
+msgstr "Excluir evento?"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
-#, fuzzy, c-format
-#| msgid "Delete Event"
+#, c-format
 msgid "Delete event “%s”?"
-msgstr "Excluir evento"
+msgstr "Excluir evento \"%s\"?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
 msgstr ""
+"Este evento e todas as suas ocorrências serão permanentemente excluídos."
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
-#, fuzzy
-#| msgid "This event can't be edited"
 msgid "This event will be permanently deleted."
-msgstr "Este evento não pode ser editado"
+msgstr "Este evento será permanentemente excluído."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
