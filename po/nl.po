@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-25 22:29+0000\n"
-"PO-Revision-Date: 2023-12-05 21:24+0000\n"
-"Last-Translator: Jonathan Moerman <jonathanmoerman@gmail.com>\n"
+"PO-Revision-Date: 2024-05-13 08:31+0000\n"
+"Last-Translator: Sven <622b1a13-49d8-4ace-bca7-48bff17b4780@unbox.at>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/calendar/"
 "nl/>\n"
 "Language: nl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -46,7 +46,7 @@ msgstr "Houdt een lokale kopie"
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr ""
+msgstr "Op het web"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
