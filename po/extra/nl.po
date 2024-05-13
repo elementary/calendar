@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-22 14:01+0000\n"
 "PO-Revision-Date: 2024-05-14 09:13+0000\n"
-"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
+"Last-Translator: Sven <622b1a13-49d8-4ace-bca7-48bff17b4780@unbox.at>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/extra/nl/>"
 "\n"
 "Language: nl\n"
@@ -87,11 +87,11 @@ msgstr ""
 
 #: data/calendar.metainfo.xml.in:100
 msgid "Removed no longer needed sandbox permission for accounts service"
-msgstr ""
+msgstr "Niet langer nodige sandbox-toestemming verwijderd voor accountservice"
 
 #: data/calendar.metainfo.xml.in:101
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "Potentieel geheugenlek opgelost"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
