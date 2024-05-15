@@ -10,6 +10,30 @@ on:
       - synchronize
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [stable, unstable, development-target]
+    container:
+      image: ghcr.io/elementary/docker:${{ matrix.version }}
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install Dependencies
+      run: |
+        apt update
+        apt install -y libchamplain-0.12-dev libchamplain-gtk-0.12-dev libclutter-1.0-dev libecal2.0-dev libedataserver1.2-dev libedataserverui1.2-dev libfolks-dev libgee-0.8-dev libgeoclue-2-dev libgeocode-glib-dev libglib2.0-dev libgranite-dev libgtk-3-dev libhandy-1-dev libical-dev libportal-dev libportal-gtk3-dev meson valac
+    - name: Build and Test
+      env:
+        DESTDIR: out
+      run: |
+        meson setup build
+        ninja -C build install
+        ninja -C build test
+
   flatpak:
     name: Flatpak
     runs-on: ubuntu-latest
