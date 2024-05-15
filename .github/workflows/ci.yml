@@ -30,7 +30,7 @@ jobs:
       env:
         DESTDIR: out
       run: |
-        meson setup -Dintegration_tests=true build
+        meson setup build
         ninja -C build install
         ninja -C build test
 
