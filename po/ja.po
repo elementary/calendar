@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-25 22:29+0000\n"
-"PO-Revision-Date: 2024-05-07 05:13+0000\n"
+"PO-Revision-Date: 2024-05-26 07:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -288,63 +288,63 @@ msgstr "予定の時刻"
 
 #: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
-msgstr "1分前"
+msgstr "1 分前"
 
 #: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes before"
-msgstr "5分前"
+msgstr "5 分前"
 
 #: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
-msgstr "10分前"
+msgstr "10 分前"
 
 #: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
-msgstr "15分前"
+msgstr "15 分前"
 
 #: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes before"
-msgstr "20分前"
+msgstr "20 分前"
 
 #: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes before"
-msgstr "25分前"
+msgstr "25 分前"
 
 #: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes before"
-msgstr "30分前"
+msgstr "30 分前"
 
 #: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes before"
-msgstr "45分前"
+msgstr "45 分前"
 
 #: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour before"
-msgstr "1時間前"
+msgstr "1 時間前"
 
 #: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours before"
-msgstr "2時間前"
+msgstr "2 時間前"
 
 #: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours before"
-msgstr "3時間前"
+msgstr "3 時間前"
 
 #: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours before"
-msgstr "12時間前"
+msgstr "12 時間前"
 
 #: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours before"
-msgstr "24時間前"
+msgstr "24 時間前"
 
 #: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days before"
-msgstr "2日前"
+msgstr "2 日前"
 
 #: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week before"
-msgstr "1週間前"
+msgstr "1 週間前"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
@@ -778,7 +778,7 @@ msgstr "検索結果なし"
 
 #: src/Widgets/CalendarChooser.vala:55
 msgid "Try changing search terms."
-msgstr "検索用語を変更してみてください。"
+msgstr "検索語句を変更してみてください。"
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
