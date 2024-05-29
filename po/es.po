@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-25 22:29+0000\n"
-"PO-Revision-Date: 2024-05-29 12:48+0000\n"
-"Last-Translator: Juan Campos <juan.camposzambrana@gmail.com>\n"
+"PO-Revision-Date: 2024-05-29 13:58+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
 "calendar/es/>\n"
 "Language: es\n"
@@ -46,7 +46,7 @@ msgstr "Mantener una copia local"
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr ""
+msgstr "En la web"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -66,7 +66,7 @@ msgstr "URL:"
 
 #: plugins/CalDAV/CalDAVBackend.vala:99
 msgid "Use a secure connection"
-msgstr "Utilizar conexión segura"
+msgstr "Usar una conexión segura"
 
 #: plugins/CalDAV/CalDAVBackend.vala:127
 msgid "Server handles meeting invitations"
@@ -141,7 +141,7 @@ msgstr "Seleccionar los calendarios para importar"
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Los eventos de \"%s\" se mezclarán con este calendario:"
+msgstr "Los eventos de «%s» se combinarán con este calendario:"
 
 #: src/ImportDialog.vala:47
 #, c-format
@@ -840,10 +840,9 @@ msgid "Delete event?"
 msgstr "Eliminar evento"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
-#, fuzzy, c-format
-#| msgid "Delete Event"
+#, c-format
 msgid "Delete event “%s”?"
-msgstr "Eliminar evento"
+msgstr "¿Eliminar el evento «%s«?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
@@ -895,7 +894,7 @@ msgstr "Añadir calendario nuevo…"
 
 #: src/Widgets/SourcePopover.vala:63
 msgid "Import iCalendar File…"
-msgstr "Importar archivo iCalendar…"
+msgstr "Importar archivo de iCalendar…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
@@ -903,7 +902,7 @@ msgstr "Configuración de cuentas online …"
 
 #: src/Widgets/SourcePopover.vala:99
 msgid "Select ICS File to Import"
-msgstr "Seleccione el archivo ICS que se importará"
+msgstr "Seleccione el archivo ICS a importar"
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
