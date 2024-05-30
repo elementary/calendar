@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-25 22:29+0000\n"
-"PO-Revision-Date: 2023-11-16 12:10+0000\n"
+"PO-Revision-Date: 2024-05-31 15:13+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "calendar/calendar/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -46,7 +46,7 @@ msgstr "Behold kopi lokalt"
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr ""
+msgstr "På veven"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -792,10 +792,13 @@ msgid "Network Not Available."
 msgstr "Nettverk utilgjengelig."
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
+#, fuzzy
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
+"Koblet til Internett for å vise ytterligere detaljer og nye begivenheter fra "
+"nettbaserte kalendere."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
 #, fuzzy
@@ -818,14 +821,17 @@ msgstr "Slett denne forekomsten av begivenheten?"
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "Slett denne anledningen av begivenheten «%s»?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
+#, fuzzy
 msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
+"Denne anledningen slettes for godt, og alle andre anledninger forblir "
+"uendret."
 
 #: src/Widgets/DeleteDialog.vala:18
 msgid "Delete Occurrence"
@@ -843,7 +849,7 @@ msgstr "Slett begivenheten «%s»?"
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr ""
+msgstr "Denne begivenheten og alle anledninger av den slettes for godt."
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
