@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-22 14:01+0000\n"
 "PO-Revision-Date: 2024-06-04 19:13+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: javiezcobar <Drakoniante@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/extra/"
 "es/>\n"
 "Language: es\n"
@@ -52,10 +52,8 @@ msgid "Updated translations"
 msgstr "Traducciones actualizadas"
 
 #: data/calendar.metainfo.xml.in:84
-#, fuzzy
-#| msgid "Updated translations"
 msgid "Updated app icon"
-msgstr "Traducciones actualizadas"
+msgstr "Icono de la aplicación actualizado"
 
 #: data/calendar.metainfo.xml.in:92
 msgid "Features:"
