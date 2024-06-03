@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-25 22:29+0000\n"
-"PO-Revision-Date: 2024-05-29 22:21+0000\n"
+"PO-Revision-Date: 2024-06-04 19:13+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
 "calendar/es/>\n"
@@ -216,7 +216,7 @@ msgstr "Rechazado"
 
 #: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
-msgstr "Quizá"
+msgstr "Quizás"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -637,11 +637,11 @@ msgstr "dom."
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
-msgstr "Ocultar número de semana"
+msgstr "Ocultar números de semanas"
 
 #: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
-msgstr "Mostrar número de semana"
+msgstr "Mostrar números de semanas"
 
 #: src/Grid/VAutoHider.vala:109
 #, c-format
@@ -703,13 +703,13 @@ msgstr "llamada;móvil;teléfono;timbrar"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr "bar;cócteles;bebidas"
+msgstr "bar;cocteles;bebidas;hora feliz"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr "coche;conducir;viaje;"
+msgstr "carro;coche;conducir;viaje;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -722,8 +722,8 @@ msgstr "vuelo;aeropuerto;"
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
-"desayuno;desayuno tardío;cena;almuerzo;cena;asador;hamburguesa;comida;"
-"barbacoa"
+"desayuno;desayuno "
+"tardío;brunch;cena;almuerzo;cena;asado;rosticería;hamburguesa;comida;barbacoa"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -748,20 +748,20 @@ msgstr "boda"
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s - %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:317
 #, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:329
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s - %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:338
@@ -773,7 +773,7 @@ msgstr "%s a las %s"
 #: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarChooser.vala:51
 msgid "Search Calendars"
@@ -785,23 +785,23 @@ msgstr "No hay resultados"
 
 #: src/Widgets/CalendarChooser.vala:55
 msgid "Try changing search terms."
-msgstr "Pruebe a cambiar los términos de búsqueda."
+msgstr "Intente cambiar los términos de búsqueda."
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
-msgstr ""
+msgstr "Red no disponible."
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
+"Conéctese a Internet para obtener detalles adicionales y nuevos eventos de "
+"calendarios en línea."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
-#, fuzzy
-#| msgid "Online Accounts Settings…"
 msgid "Network Settings…"
-msgstr "Configuración de cuentas online …"
+msgstr "Configuración de red…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -813,15 +813,13 @@ msgid "calendar.ics"
 msgstr "calendario.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
-#, fuzzy
-#| msgid "Delete the selected event"
 msgid "Delete this occurrence of event?"
-msgstr "Eliminar el evento seleccionado"
+msgstr "¿Desea eliminar la repetición de este evento?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "¿Desea eliminar la repetición del evento «%s»?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -829,35 +827,31 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
+"Esta repetición será eliminada permanentemente, pero las demás permanecerán "
+"sin cambios."
 
 #: src/Widgets/DeleteDialog.vala:18
-#, fuzzy
-#| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
-msgstr "Eliminar ocurrencia"
+msgstr "Borrar repetición"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete event?"
-msgstr "Eliminar evento"
+msgstr "¿Desea eliminar este evento?"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
 #, c-format
 msgid "Delete event “%s”?"
-msgstr "¿Eliminar el evento «%s«?"
+msgstr "¿Desea eliminar el evento «%s«?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr ""
+msgstr "Este evento y todas sus repeticiones serán eliminadas permanentemente."
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
-#, fuzzy
-#| msgid "This event can't be edited"
 msgid "This event will be permanently deleted."
-msgstr "No se puede editar este evento"
+msgstr "Este evento será eliminado de manera permanente."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -873,7 +867,7 @@ msgstr "Eliminar evento"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr "Eliminar ocurrencia"
+msgstr "Eliminar repetición"
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
@@ -881,7 +875,7 @@ msgstr "Eliminar"
 
 #: src/Widgets/HeaderBar.vala:39
 msgid "Go to today's date"
-msgstr "Ir a hoy"
+msgstr "Ir a la fecha de hoy"
 
 #: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
@@ -913,7 +907,7 @@ msgstr "Abrir"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
-msgstr "No Eliminable"
+msgstr "No removible"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
