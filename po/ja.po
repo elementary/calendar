@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-25 22:29+0000\n"
-"PO-Revision-Date: 2024-05-26 07:13+0000\n"
+"PO-Revision-Date: 2024-06-19 20:58+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -812,7 +812,7 @@ msgstr "予定のこの回を削除しますか?"
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr "予定 “%s” のこの回を削除しますか?"
+msgstr "予定“%s”のこの回を削除しますか?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -832,7 +832,7 @@ msgstr "予定を削除しますか?"
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
 #, c-format
 msgid "Delete event “%s”?"
-msgstr "予定 “%s” を削除しますか?"
+msgstr "予定“%s”を削除しますか?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
