@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-22 14:01+0000\n"
-"PO-Revision-Date: 2021-09-29 23:30+0000\n"
-"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
+"PO-Revision-Date: 2024-06-13 00:26+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/extra/"
 "es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-02-10 05:35+0000\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
@@ -52,45 +52,44 @@ msgid "Updated translations"
 msgstr "Traducciones actualizadas"
 
 #: data/calendar.metainfo.xml.in:84
-#, fuzzy
-#| msgid "Updated translations"
 msgid "Updated app icon"
-msgstr "Traducciones actualizadas"
+msgstr "Icono de la aplicación actualizado"
 
 #: data/calendar.metainfo.xml.in:92
-#, fuzzy
-#| msgid "New Features:"
 msgid "Features:"
-msgstr "Funcionalidades nuevas:"
+msgstr "Características:"
 
 #: data/calendar.metainfo.xml.in:94
-#, fuzzy
-#| msgid "Allow modification of recurring events"
 msgid "Ask for confirmation before deleting events"
-msgstr "Se permite modificar los eventos recurrentes"
+msgstr "Ahora se pide confirmación antes de eliminar eventos"
 
 #: data/calendar.metainfo.xml.in:95
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
+"Ahora se pueden seguir enlaces de coreo y web en la descripción del evento "
+"haciendo «Ctrl + clic»"
 
 #: data/calendar.metainfo.xml.in:97
 msgid "Fixes:"
-msgstr "Arreglos:"
+msgstr "Correcciones:"
 
 #: data/calendar.metainfo.xml.in:99
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"Se deshabilitó la casilla «Marcar como calendario predeterminado» en la "
+"configuración si está en modo de solo lectura"
 
 #: data/calendar.metainfo.xml.in:100
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
+"Ya no se necesitan permisos de espacio aislado para el servicio de cuentas"
 
 #: data/calendar.metainfo.xml.in:101
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "Se corrigió una posible fuga de memoria"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"

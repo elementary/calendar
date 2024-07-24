@@ -1,122 +1,89 @@
-# Norwegian Bokmal translation for maya
-# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
-# This file is distributed under the same license as the maya package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: maya\n"
+"Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-22 14:01+0000\n"
-"PO-Revision-Date: 2024-07-05 14:16+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
-"calendar/extra/nb/>\n"
-"Language: nb\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_ZA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
-"X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
-msgstr "Kalender"
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr "Vis og planlegg begivenheter"
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:13
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
-"En slank og lett kalender applikasjon som synkroniserer og forvalter flere "
-"kalendere på ett sted, som Google Calendar, Outlook og CalDAV."
 
 #: data/calendar.metainfo.xml.in:51
-#, fuzzy
-#| msgid "elementary LLC."
 msgid "elementary, Inc."
-msgstr "elementary, Inc."
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
 #: data/calendar.metainfo.xml.in:82
 msgid "Minor Updates:"
-msgstr "Småoppdateringer:"
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
 #: data/calendar.metainfo.xml.in:85
 msgid "Updated translations"
-msgstr "Nye oversettelser"
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:84
 msgid "Updated app icon"
-msgstr "Oppdatert programikon"
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:92
 msgid "Features:"
-msgstr "Funksjoner:"
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:94
 msgid "Ask for confirmation before deleting events"
-msgstr "Spør om bekreftelse før sletting av begivenheter"
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:95
-#, fuzzy
 msgid ""
 "Follow email and web links in the event description with Control + Click"
-msgstr "Følg e-post og vev-lenker i begivenhetsbeskrivelse med Control+klikk"
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:97
 msgid "Fixes:"
-msgstr "Fikser:"
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:99
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
-"Avskrudd avkryssningsboks «Marker som forvalgt kalender» i "
-"kalenderinnstillinger, hvis kalenderen er skrivebeskyttet"
 
 #: data/calendar.metainfo.xml.in:100
 msgid "Removed no longer needed sandbox permission for accounts service"
-msgstr "Fjernet behov for sandkasse-tilgang for kontotjeneste"
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:101
 msgid "Fixed potential memory leak"
-msgstr "Fikset mulig minnelekkasje"
+msgstr ""
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr ""
-"Maya;Planlegger;Datoer;Dager;Begivenheter;Kalender;ics,CalDAV;Evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
-msgstr "Opprett begivenhet"
-
-#~ msgid "New Features:"
-#~ msgstr "Nye funksjoner:"
-
-#~ msgid "Improvements:"
-#~ msgstr "Forbedringer:"
-
-#~ msgid "io.elementary.calendar"
-#~ msgstr "io.elementary.calendar"
-
-#~ msgid "office-calendar"
-#~ msgstr "office-calendar"
-
-#~ msgid "About Calendar"
-#~ msgstr "Om Kalender"
-
-#~ msgid "Maya"
-#~ msgstr "Maya"
-
-#~ msgid "About Maya"
-#~ msgstr "Om Maya"
+msgstr ""
