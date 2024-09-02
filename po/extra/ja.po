@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-02 20:13+0000\n"
-"PO-Revision-Date: 2024-07-05 14:16+0000\n"
+"PO-Revision-Date: 2024-09-03 23:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/extra/"
 "ja/>\n"
@@ -44,7 +44,7 @@ msgstr "そのほかのアップデート:"
 
 #: data/calendar.metainfo.xml.in:62
 msgid "New flatter design"
-msgstr ""
+msgstr "新しいフラットなデザイン"
 
 #: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
 #: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
