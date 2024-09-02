@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2023-05-27 18:07+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -38,42 +38,42 @@ msgstr ""
 "beberapa kalender di satu tempat, seperti Google Kalender, Outlook, dan "
 "CalDAV."
 
-#: data/calendar.metainfo.xml.in:51
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
-
-#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
-#: data/calendar.metainfo.xml.in:82
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
 msgid "Minor Updates:"
 msgstr "Pembaruan Kecil:"
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
-#: data/calendar.metainfo.xml.in:85
+#: data/calendar.metainfo.xml.in:62
+msgid "New flatter design"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
+#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
 msgid "Updated translations"
 msgstr "Terjemahan yang diperbarui"
 
-#: data/calendar.metainfo.xml.in:84
+#: data/calendar.metainfo.xml.in:100
 msgid "Updated app icon"
 msgstr "Ikon aplikasi yang diperbarui"
 
-#: data/calendar.metainfo.xml.in:92
+#: data/calendar.metainfo.xml.in:108
 msgid "Features:"
 msgstr "Fitur:"
 
-#: data/calendar.metainfo.xml.in:94
+#: data/calendar.metainfo.xml.in:110
 msgid "Ask for confirmation before deleting events"
 msgstr "Konfirmasi sebelum menghapus acara"
 
-#: data/calendar.metainfo.xml.in:95
+#: data/calendar.metainfo.xml.in:111
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr "Buka surel dan tautan web dalam deskripsi acara dengan Kontrol + Klik"
 
-#: data/calendar.metainfo.xml.in:97
+#: data/calendar.metainfo.xml.in:113
 msgid "Fixes:"
 msgstr "Perbaikan:"
 
-#: data/calendar.metainfo.xml.in:99
+#: data/calendar.metainfo.xml.in:115
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -81,11 +81,11 @@ msgstr ""
 "Matikan checkbox \"Tandai sebagai kalender default\" di pengaturan kalender, "
 "jika kalender bersifat read-only"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:116
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr "Hapus izin sandbox yang tidak lagi dibutuhkan untuk layanan akun"
 
-#: data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:117
 msgid "Fixed potential memory leak"
 msgstr "Perbaiki potensi kebocoran memori"
 
@@ -96,6 +96,9 @@ msgstr "Maya;Perencana;Tanggal;Hari;Acara;Kalender;ics;caldav;evolution;"
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Tambah Acara"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr "Pastikan Kalender berjalan di latar belakang saat mulai"

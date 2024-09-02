@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2023-07-19 12:07+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/extra/"
@@ -37,44 +37,44 @@ msgstr ""
 "მართვა და სინქრონიზაცია შეუძლია, როგორიცაა Google Calendar, Outlook და "
 "CalDAV."
 
-#: data/calendar.metainfo.xml.in:51
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
-
-#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
-#: data/calendar.metainfo.xml.in:82
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
 msgid "Minor Updates:"
 msgstr "უმნიშვნელო განახლებები:"
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
-#: data/calendar.metainfo.xml.in:85
+#: data/calendar.metainfo.xml.in:62
+msgid "New flatter design"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
+#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
 msgid "Updated translations"
 msgstr "განახლებული თარგმანები"
 
-#: data/calendar.metainfo.xml.in:84
+#: data/calendar.metainfo.xml.in:100
 msgid "Updated app icon"
 msgstr "აპის ხატულის განახლება"
 
-#: data/calendar.metainfo.xml.in:92
+#: data/calendar.metainfo.xml.in:108
 msgid "Features:"
 msgstr "თვისებები:"
 
-#: data/calendar.metainfo.xml.in:94
+#: data/calendar.metainfo.xml.in:110
 msgid "Ask for confirmation before deleting events"
 msgstr "დადასტურების კითხვა მოვლენების წაშლამდე"
 
-#: data/calendar.metainfo.xml.in:95
+#: data/calendar.metainfo.xml.in:111
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "მოვლენის აღწერაში მოხსენებული ელფოსტებისა და ვებ-ბმულების მიყოლა Control + "
 "წკაპით"
 
-#: data/calendar.metainfo.xml.in:97
+#: data/calendar.metainfo.xml.in:113
 msgid "Fixes:"
 msgstr "შეცდომების გასწორებები:"
 
-#: data/calendar.metainfo.xml.in:99
+#: data/calendar.metainfo.xml.in:115
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -82,11 +82,11 @@ msgstr ""
 "თუ კალენდარი მხოლოდ-კითხვადია, მის მორგების ფანჯარაში \"ნაგულისხმევ "
 "კალენდრად დანიშვნა\" გამორთულია"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:116
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr "ანგარიშების სერვისისთვის უკვე არასაჭირო სენდბოქსის წვდომა წაიშალა"
 
-#: data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:117
 msgid "Fixed potential memory leak"
 msgstr "მეხსიერების პოტენციური გაჟონვის გასწორება"
 
@@ -97,6 +97,9 @@ msgstr "Maya;მგეგმავი;Dates;Days;მოვლენები;კ
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "მოვლენის დამატება"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
 
 #~ msgid "New Features:"
 #~ msgstr "ახალი ფუნქციები:"

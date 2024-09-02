@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2021-03-20 21:52+0000\n"
 "Last-Translator: Shukrullo <shukrullo@umail.uz>\n"
 "Language-Team: Uzbek <https://l10n.elementary.io/projects/calendar/extra/uz/"
@@ -34,52 +34,52 @@ msgid ""
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:51
-msgid "elementary, Inc."
-msgstr ""
-
-#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
-#: data/calendar.metainfo.xml.in:82
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
 msgid "Minor Updates:"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
-#: data/calendar.metainfo.xml.in:85
+#: data/calendar.metainfo.xml.in:62
+msgid "New flatter design"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
+#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
 msgid "Updated translations"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:84
+#: data/calendar.metainfo.xml.in:100
 msgid "Updated app icon"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:92
+#: data/calendar.metainfo.xml.in:108
 msgid "Features:"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:94
+#: data/calendar.metainfo.xml.in:110
 msgid "Ask for confirmation before deleting events"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:95
+#: data/calendar.metainfo.xml.in:111
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:97
+#: data/calendar.metainfo.xml.in:113
 msgid "Fixes:"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:99
+#: data/calendar.metainfo.xml.in:115
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:116
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:117
 msgid "Fixed potential memory leak"
 msgstr ""
 

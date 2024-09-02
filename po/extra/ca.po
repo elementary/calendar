@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2022-05-18 11:40+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/calendar/extra/"
@@ -37,44 +37,44 @@ msgstr ""
 "Una aplicació lleugera de calendari que sincronitza i gestiona diversos "
 "calendaris en un sol lloc, com ara Google Calendar, Outlook i CalDAV."
 
-#: data/calendar.metainfo.xml.in:51
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
-
-#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
-#: data/calendar.metainfo.xml.in:82
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
 msgid "Minor Updates:"
 msgstr "Actualitzacions menors:"
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
-#: data/calendar.metainfo.xml.in:85
+#: data/calendar.metainfo.xml.in:62
+msgid "New flatter design"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
+#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
-#: data/calendar.metainfo.xml.in:84
+#: data/calendar.metainfo.xml.in:100
 msgid "Updated app icon"
 msgstr "Icona de l'aplicació actualitzada"
 
-#: data/calendar.metainfo.xml.in:92
+#: data/calendar.metainfo.xml.in:108
 msgid "Features:"
 msgstr "Característiques:"
 
-#: data/calendar.metainfo.xml.in:94
+#: data/calendar.metainfo.xml.in:110
 msgid "Ask for confirmation before deleting events"
 msgstr "Demana confirmació abans de suprimir esdeveniments."
 
-#: data/calendar.metainfo.xml.in:95
+#: data/calendar.metainfo.xml.in:111
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Seguiu el correu electrònic i els enllaços web a la descripció de "
 "l'esdeveniment amb Control + clic."
 
-#: data/calendar.metainfo.xml.in:97
+#: data/calendar.metainfo.xml.in:113
 msgid "Fixes:"
 msgstr "Correccions:"
 
-#: data/calendar.metainfo.xml.in:99
+#: data/calendar.metainfo.xml.in:115
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -82,13 +82,13 @@ msgstr ""
 "S'ha desactivat la casella de selecció \"Marca com a calendari per defecte\" "
 "a la configuració del calendari, si el calendari és només de lectura."
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:116
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 "S'ha suprimit el permís de prova que ja no era necessari per al servei de "
 "comptes."
 
-#: data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:117
 msgid "Fixed potential memory leak"
 msgstr "Correcció de la possible fuita de memòria"
 
@@ -100,6 +100,9 @@ msgstr ""
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Afegeix un esdeveniment"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr "S'assegura que el Calendari s’executi en segon pla a l’inici."

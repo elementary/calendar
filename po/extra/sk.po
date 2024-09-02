@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 14:01+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2022-09-30 22:11+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/extra/sk/"
@@ -38,44 +38,44 @@ msgstr ""
 "viacerých kalendárov na jednom mieste, ako napríklad Google Kalendár, "
 "Outlook a CalDAV."
 
-#: data/calendar.metainfo.xml.in:51
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
-
-#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
-#: data/calendar.metainfo.xml.in:82
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
 msgid "Minor Updates:"
 msgstr "Menšie aktualizácie:"
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
-#: data/calendar.metainfo.xml.in:85
+#: data/calendar.metainfo.xml.in:62
+msgid "New flatter design"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
+#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
 msgid "Updated translations"
 msgstr "Aktualizované preklady"
 
-#: data/calendar.metainfo.xml.in:84
+#: data/calendar.metainfo.xml.in:100
 msgid "Updated app icon"
 msgstr "Aktualizovaná ikonka aplikácie"
 
-#: data/calendar.metainfo.xml.in:92
+#: data/calendar.metainfo.xml.in:108
 msgid "Features:"
 msgstr "Funkcie:"
 
-#: data/calendar.metainfo.xml.in:94
+#: data/calendar.metainfo.xml.in:110
 msgid "Ask for confirmation before deleting events"
 msgstr "Požadovať potvrdenie pred odstránením udalostí"
 
-#: data/calendar.metainfo.xml.in:95
+#: data/calendar.metainfo.xml.in:111
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "E-mailové a webové odkazy v popise udalostí je možné nasledovať stlačením "
 "klávesy Ctrl a kliknutím myšou"
 
-#: data/calendar.metainfo.xml.in:97
+#: data/calendar.metainfo.xml.in:113
 msgid "Fixes:"
 msgstr "Opravy:"
 
-#: data/calendar.metainfo.xml.in:99
+#: data/calendar.metainfo.xml.in:115
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -83,13 +83,13 @@ msgstr ""
 "Pokiaľ je kalendár určený iba na čítanie, začiarkovacie políčko „Označiť ako "
 "predvolený kalendár“ sa zneprístupní"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:116
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 "Odstránené už nepotrebné oprávnenie na prístup k službe účtov z "
 "kontajnerizovaného prostredia"
 
-#: data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:117
 msgid "Fixed potential memory leak"
 msgstr "Opravený potenciálny únik pamäte"
 
@@ -100,6 +100,9 @@ msgstr "Maya;Plánovač;Dátumy;Dni;Udalosti;Kalendár;ics;caldav;evolution;"
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Pridať udalosť"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr "Zabezpečené, že sa Kalendár spustí po štarte na pozadí"
