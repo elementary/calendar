@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-25 22:29+0000\n"
-"PO-Revision-Date: 2018-05-04 00:03+0000\n"
-"Last-Translator: Park Evans <travellerpeira9@gmail.com>\n"
-"Language-Team: Thai <https://weblate.elementary.io/projects/calendar/"
-"calendar/th/>\n"
+"PO-Revision-Date: 2024-09-02 20:05+0000\n"
+"Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
+"Language-Team: Thai <https://l10n.elementary.io/projects/calendar/calendar/"
+"th/>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -30,7 +30,7 @@ msgstr "ผู้ใช้:"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr ""
+msgstr "user.name"
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
@@ -38,7 +38,7 @@ msgstr "Email:"
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr ""
+msgstr "john@doe.com"
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
@@ -54,11 +54,11 @@ msgstr "Google"
 
 #: plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr ""
+msgstr "user.name หรือ user.name@gmail.com"
 
 #: plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr ""
+msgstr "CalDAV"
 
 #: plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
@@ -92,40 +92,35 @@ msgstr "ทั้งวัน"
 
 #: src/AgendaView.vala:287
 msgid "Tomorrow"
-msgstr ""
+msgstr "พรุ่งนี้"
 
 #: src/AgendaView.vala:290
-#, fuzzy
 msgid "This Week"
-msgstr "สัปดาห์"
+msgstr "สัปดาห์นี้"
 
 #: src/AgendaView.vala:293
-#, fuzzy
 msgid "Next Week"
-msgstr "สัปดาห์"
+msgstr "สัปดาห์ถัดไป"
 
 #: src/AgendaView.vala:296
-#, fuzzy
 msgid "This Month"
-msgstr "เดือน"
+msgstr "เดือนนี้"
 
 #: src/AgendaView.vala:299
-#, fuzzy
 msgid "Next Month"
-msgstr "เดือน"
+msgstr "เดือนถัดไป"
 
 #: src/Application.vala:34
-#, fuzzy
 msgid "Create an event"
-msgstr "สร้างกิจกรรมใหม่"
+msgstr "สร้างกิจกรรม"
 
 #: src/Application.vala:35
 msgid "Focus the given day"
-msgstr ""
+msgstr "ไปยังวันที่ระบุ"
 
 #: src/Application.vala:35
 msgid "date"
-msgstr ""
+msgstr "วันที่"
 
 #: src/Application.vala:176
 msgid ""
@@ -138,20 +133,19 @@ msgid "Calendar"
 msgstr "ปฏิทิน"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "เลือกปฏิทินที่จะแสดง"
+msgstr "เลือกปฏิทินที่จะนำเข้า"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "นำเข้ารายการกิจกรรมจากไฟล์ %d เข้าสู่ปฏิทินที่ระบุ"
+msgstr "กิจกรรมจาก \"%s\" จะถูกผสานเข้ากับปฏิทินนี้:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "นำเข้ารายการกิจกรรมจากไฟล์ %d เข้าสู่ปฏิทินที่ระบุ"
+msgstr[0] "กิจกรรมจาก %d ไฟล์จะถูกผสานเข้ากับปฏิทินนี้:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -159,7 +153,7 @@ msgstr "นำเข้า"
 
 #: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
-msgstr "เพิ่มกิจกรรม"
+msgstr "เพิ่มเหตุการณ์"
 
 #: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
@@ -183,10 +177,9 @@ msgstr "การเตือน"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr "การเตือนซ้า"
+msgstr "เตือนซ้ำ"
 
 #: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
 #: src/Widgets/DeleteDialog.vala:39
@@ -217,7 +210,7 @@ msgstr "ปฏิเสธแล้ว"
 
 #: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
-msgstr ""
+msgstr "ยังไม่แน่ใจ"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -245,7 +238,7 @@ msgstr "ถึง:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "โซนเวลา:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
@@ -273,7 +266,7 @@ msgstr "สถานที่:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr ""
+msgstr "สมชาย ใจดี หรือ ถนนตัวอย่าง"
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
@@ -288,84 +281,68 @@ msgid "Add Reminder"
 msgstr "เพิ่มการเตือนความจำ"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "At time of event"
-msgstr "ชื่อกิจกรรม"
+msgstr "เมื่อถึงเวลากิจกรรม"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute before"
-msgstr "1 นาที"
+msgstr "ก่อนถึงเวลา 1 นาที"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "5 minutes before"
-msgstr "5 นาที"
+msgstr "ก่อนถึงเวลา 5 นาที"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "10 minutes before"
-msgstr "10 นาที"
+msgstr "ก่อนถึงเวลา 10 นาที"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "15 minutes before"
-msgstr "15 นาที"
+msgstr "ก่อนถึงเวลา 15 นาที"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "20 minutes before"
-msgstr "20 นาที"
+msgstr "ก่อนถึงเวลา 20 นาที"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "25 minutes before"
-msgstr "25 นาที"
+msgstr "ก่อนถึงเวลา 25 นาที"
 
 #: src/EventEdition/ReminderPanel.vala:179
-#, fuzzy
 msgid "30 minutes before"
-msgstr "30 นาที"
+msgstr "ก่อนถึงเวลา 30 นาที"
 
 #: src/EventEdition/ReminderPanel.vala:180
-#, fuzzy
 msgid "45 minutes before"
-msgstr "45 นาที"
+msgstr "ก่อนถึงเวลา 45 นาที"
 
 #: src/EventEdition/ReminderPanel.vala:181
-#, fuzzy
 msgid "1 hour before"
-msgstr "1 ชั่วโมง"
+msgstr "ก่อนถึงเวลา 1 ชั่วโมง"
 
 #: src/EventEdition/ReminderPanel.vala:182
-#, fuzzy
 msgid "2 hours before"
-msgstr "2 ชั่วโมง"
+msgstr "ก่อนถึงเวลา 2 ชั่วโมง"
 
 #: src/EventEdition/ReminderPanel.vala:183
-#, fuzzy
 msgid "3 hours before"
-msgstr "3 ชั่วโมง"
+msgstr "ก่อนถึงเวลา 3 ชั่วโมง"
 
 #: src/EventEdition/ReminderPanel.vala:184
-#, fuzzy
 msgid "12 hours before"
-msgstr "12 ชั่วโมง"
+msgstr "ก่อนถึงเวลา 12 ชั่วโมง"
 
 #: src/EventEdition/ReminderPanel.vala:185
-#, fuzzy
 msgid "24 hours before"
-msgstr "24 ชั่วโมง"
+msgstr "ก่อนถึงเวลา 24 ชั่วโมง"
 
 #: src/EventEdition/ReminderPanel.vala:186
-#, fuzzy
 msgid "2 days before"
-msgstr "2 วัน"
+msgstr "ก่อนถึงเวลา 2 วัน"
 
 #: src/EventEdition/ReminderPanel.vala:187
-#, fuzzy
 msgid "1 week before"
-msgstr "1 สัปดาห์"
+msgstr "ก่อนถึงเวลา 1 สัปดาห์"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
