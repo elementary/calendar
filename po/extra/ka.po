@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-02 20:13+0000\n"
-"PO-Revision-Date: 2023-07-19 12:07+0000\n"
+"PO-Revision-Date: 2024-09-12 22:16+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/extra/"
 "ka/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
@@ -44,7 +44,7 @@ msgstr "უმნიშვნელო განახლებები:"
 
 #: data/calendar.metainfo.xml.in:62
 msgid "New flatter design"
-msgstr ""
+msgstr "ახალი, უფრო ბრტყელი დიზაინი"
 
 #: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
 #: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
