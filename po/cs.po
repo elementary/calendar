@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-02 20:13+0000\n"
-"PO-Revision-Date: 2023-07-14 13:07+0000\n"
-"Last-Translator: Jakub Kyzr <jakubkyzr@gmail.com>\n"
+"PO-Revision-Date: 2024-09-12 22:16+0000\n"
+"Last-Translator: Daniel Hejduk <danielhejduk@disroot.org>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/calendar/"
 "cs/>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:56+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -46,7 +46,7 @@ msgstr "Uchovat lokální kopii"
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr ""
+msgstr "Na webu"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -794,19 +794,18 @@ msgstr "Zkuste změnit podmínky hledání."
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
-msgstr ""
+msgstr "Internetové připojení není dostupné."
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
+"Připojte se k internetu pro dalši detaily a nové události z online kalendáře."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
-#, fuzzy
-#| msgid "Online Accounts Settings…"
 msgid "Network Settings…"
-msgstr "Nastavení online účtů…"
+msgstr "Nastavení sítě…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -818,15 +817,13 @@ msgid "calendar.ics"
 msgstr "kalendar.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
-#, fuzzy
-#| msgid "Delete the selected event"
 msgid "Delete this occurrence of event?"
-msgstr "Odstranit vybranou událost"
+msgstr "Smazat tento výskyt události?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "Chcete smazat tento výskyt události ”%s”?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -834,34 +831,31 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
+"Tato událost bude permanentně smazána, ale všechny ostatní výskyty zůstanou "
+"nezměněny."
 
 #: src/Widgets/DeleteDialog.vala:18
-#, fuzzy
-#| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
-msgstr "Smazat tento výskyt"
+msgstr "Odstranit tento výskyt"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete event?"
-msgstr "Smazat událost"
+msgstr "Smazat událost?"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
-#, fuzzy, c-format
-#| msgid "Delete Event"
+#, c-format
 msgid "Delete event “%s”?"
-msgstr "Smazat událost"
+msgstr "Smazat událost “%s”?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr ""
+msgstr "Tato událost a všechny její výskyty budu permanentně smazány."
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
 msgid "This event will be permanently deleted."
-msgstr ""
+msgstr "Tato událost bude permanentně odstraněna."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
