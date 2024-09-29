@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2024-09-30 12:07+0000\n"
-"Last-Translator: Hossein <hossein17@duck.com>\n"
+"Last-Translator: Hossein Farajzadeh <lenag43906@fsouda.com>\n"
 "Language-Team: Persian <https://l10n.elementary.io/projects/calendar/extra/"
 "fa/>\n"
 "Language: fa\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
-msgstr ""
+msgstr "تقویم"
 
 #: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
