@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2023-02-17 10:25+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
+"PO-Revision-Date: 2024-09-27 13:16+0000\n"
+"Last-Translator: Hossein <hossein17@duck.com>\n"
 "Language-Team: Persian <https://l10n.elementary.io/projects/calendar/"
 "calendar/fa/>\n"
 "Language: fa\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "بر روی این رایانه"
 
@@ -43,6 +43,10 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "ذخیره سازی نسخه محلی"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr "روی وب"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -68,7 +72,11 @@ msgstr "استفاده از اتصال امن"
 msgid "Server handles meeting invitations"
 msgstr "دسته بندی دعوت نامه های مشاهده کنندگان سرور"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "ساخت یک رویداد"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -76,74 +84,72 @@ msgstr ""
 "در صورت انتخاب روز دارای رویداد، رویدادهای آن روز در این قسمت نمایش داده "
 "می‌شوند."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "در طول روز"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "تمام روز"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
-msgstr ""
+msgstr "فردا"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
-msgstr ""
+msgstr "این هفته"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
-msgstr ""
+msgstr "هفته بعد"
 
-#: src/AgendaView.vala:274
-#, fuzzy
+#: src/AgendaView.vala:296
 msgid "This Month"
-msgstr "ماه‌ها"
+msgstr "این ماه"
 
-#: src/AgendaView.vala:277
-#, fuzzy
+#: src/AgendaView.vala:299
 msgid "Next Month"
-msgstr "ماه‌ها"
+msgstr "ماه بعدی"
 
 #: src/Application.vala:34
-#, fuzzy
 msgid "Create an event"
 msgstr "ساخت یک رویداد"
 
 #: src/Application.vala:35
 msgid "Focus the given day"
-msgstr ""
+msgstr "تمرکز روی روز معین"
 
 #: src/Application.vala:35
 msgid "date"
-msgstr ""
+msgstr "تاریخ"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
+"وقتی این دستگاه روشن می‌شود، تقویم به‌طور خودکار شروع می‌شود و وقتی پنجره آن "
+"بسته است اجرا می‌شود تا بتواند اعلان‌های رویداد را ارسال کند."
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "تقویم"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "انتخاب تقویم برای نمایش"
+msgstr "یک تقویم را برای وارد کردن به آن انتخاب کنید"
 
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "وارد نمودن رویداد ها از پوشه %s به تقویم پیشرو"
+msgstr "رویدادهای \"%s\" با این تقویم ادغام خواهند شد:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "وارد نمودن رویداد ها از پوشه %d به تقویم پیشرو"
+msgstr[0] "رویدادهای %d فایل با این تقویم ادغام خواهند شد:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -175,12 +181,12 @@ msgstr "یادآوری‌ها"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr ":تکرار"
+msgstr "تکرار"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "حذف رویداد"
 
@@ -208,7 +214,7 @@ msgstr "رد شده"
 
 #: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
-msgstr ""
+msgstr "شاید"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -236,7 +242,7 @@ msgstr "تا:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "منطقه زمانی:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
@@ -248,7 +254,7 @@ msgstr "نام رویداد"
 
 #: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
-msgstr ""
+msgstr "برای تجزیه رویداد، enter را فشار دهید"
 
 #: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
@@ -279,84 +285,68 @@ msgid "Add Reminder"
 msgstr "افزودن یادآوری"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "At time of event"
-msgstr "نام رویداد"
+msgstr "در زمان رویداد"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "1 minute before"
-msgstr "۱ دقیقه"
+msgstr "۱ دقیقه قبل"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "5 minutes before"
-msgstr "۵ دقیقه"
+msgstr "۵ دقیقه قبل"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "10 minutes before"
-msgstr "۱۰ دقیقه"
+msgstr "۱۰ دقیقه قبل"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "15 minutes before"
-msgstr "۱۵ دقیقه"
+msgstr "۱۵ دقیقه قبل"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "20 minutes before"
-msgstr "۲۰ دقیقه"
+msgstr "۲۰ دقیقه قبل"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "25 minutes before"
-msgstr "۲۵ دقیقه"
+msgstr "۲۵ دقیقه قبل"
 
 #: src/EventEdition/ReminderPanel.vala:179
-#, fuzzy
 msgid "30 minutes before"
-msgstr "۳۰ دقیقه"
+msgstr "۳۰ دقیقه قبل"
 
 #: src/EventEdition/ReminderPanel.vala:180
-#, fuzzy
 msgid "45 minutes before"
-msgstr "۴۵ دقیقه"
+msgstr "۴۵ دقیقه قبل"
 
 #: src/EventEdition/ReminderPanel.vala:181
-#, fuzzy
 msgid "1 hour before"
-msgstr "۱ ساعت"
+msgstr "۱ ساعت قبل"
 
 #: src/EventEdition/ReminderPanel.vala:182
-#, fuzzy
 msgid "2 hours before"
-msgstr "۲ ساعت"
+msgstr "۲ ساعت قبل"
 
 #: src/EventEdition/ReminderPanel.vala:183
-#, fuzzy
 msgid "3 hours before"
-msgstr "۳ ساعت"
+msgstr "۳ ساعت بقل"
 
 #: src/EventEdition/ReminderPanel.vala:184
-#, fuzzy
 msgid "12 hours before"
-msgstr "۱۲ ساعت"
+msgstr "۱۲ ساعت قبل"
 
 #: src/EventEdition/ReminderPanel.vala:185
-#, fuzzy
 msgid "24 hours before"
-msgstr "۲۴ ساعت"
+msgstr "۲۴ ساعت قبل"
 
 #: src/EventEdition/ReminderPanel.vala:186
-#, fuzzy
 msgid "2 days before"
-msgstr "۲ روز"
+msgstr "۲ روز قبل"
 
 #: src/EventEdition/ReminderPanel.vala:187
-#, fuzzy
 msgid "1 week before"
-msgstr "۱ هفته"
+msgstr "۱ هفته قبل"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
@@ -385,26 +375,22 @@ msgstr "هر:"
 #: src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "روز"
 
 #: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "هفته"
 
 #: src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ماه"
 
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "سال"
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
@@ -416,8 +402,7 @@ msgstr "پایان یافته با :"
 #: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "تکرار"
 
 #: src/EventEdition/RepeatPanel.vala:144
 msgid "Never"
@@ -643,11 +628,11 @@ msgstr "شنبه"
 msgid "Sun"
 msgstr "یک‌شنبه"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "مخفی نمودن شماره  هفته"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "نمایش شماره هفته"
 
@@ -693,103 +678,171 @@ msgstr "ذخیره"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr ""
+msgstr "قرار؛ ملاقات"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "تولد;سالگرد; مهمانی"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "تماس؛ تلفن همراه؛ تلفن؛ زنگ"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "بار؛ کوکتل؛ نوشیدنی؛ ساعت خوش"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "ماشین;رانندگی;رانندگی;سفر جاده ای;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr ""
+msgstr "پرواز;فرودگاه;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr ""
+msgstr "صبحانه؛ برانچ؛ شام؛ ناهار؛ شام؛ استیک خانه؛ برگر؛ غذا؛ باربیکیو"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
+msgstr "دادگاه; هیئت منصفه; مالیات; وکیل; قاضی؛ قرارداد"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie;film"
-msgstr ""
+msgstr "فیلم;فیلم"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr ""
+msgstr "عروسی"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
-#, fuzzy, c-format
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:317
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:329
-#, fuzzy, c-format
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s در %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:341
-#, fuzzy, c-format
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s"
+
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "جستجو تقویم ها"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "نتیجه ای نیست"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "سعی کنید عبارات جستجو را تغییر دهید."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr "اینترنت در دسترس نیست."
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"برای مشاهده جزئیات بیشتر و رویدادهای جدید از تقویم های آنلاین، به اینترنت "
+"متصل شوید."
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr "تنظیمات اینترنت…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "خروجی گرفتن از تقویم"
+msgstr "خروجی گرفتن از تقویم…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr "این رویداد حذف شود؟"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr "این رویداد \"%s\" حذف شود؟"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+"این اتفاق برای همیشه حذف خواهد شد، اما همه موارد دیگر بدون تغییر باقی خواهند "
+"ماند."
+
+#: src/Widgets/DeleteDialog.vala:18
+msgid "Delete Occurrence"
+msgstr "حذف رخداد"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+msgid "Delete event?"
+msgstr "حذف رویداد؟"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, c-format
+msgid "Delete event “%s”?"
+msgstr "رویداد %s حذف شود؟"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr "این رویداد و همه موارد آن برای همیشه حذف خواهند شد."
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr "این رویداد برای همیشه حذف خواهد شد."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -797,84 +850,72 @@ msgstr "ویرایش..."
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr ""
+msgstr "تکرار…"
 
 #: src/Widgets/EventMenu.vala:42
-#, fuzzy
 msgid "Remove Event"
 msgstr "حذف رویداد"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr ""
+msgstr "حذف رخداد"
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
 msgstr "زدودن"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "ساخت یک رویداد"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "رفتن به تاریخ امروز"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "مدیریت تقویم ها"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "خروجی گرفتن و یا اشتراک گذاری تقویم پیش‌فرض"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "مدیریت تقویم ها"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
 msgstr "اضافه نمودن تقویم جدید ..."
 
 #: src/Widgets/SourcePopover.vala:63
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "خروجی گرفتن از تقویم"
+msgstr "وارد کردن فایل iCalendar…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "تنظیمات اکانت آنلاین…"
 
 #: src/Widgets/SourcePopover.vala:99
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "انتخاب تقویم برای نمایش"
+msgstr "فایل ICS را برای وارد کردن انتخاب کنید"
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
-msgstr ""
+msgstr "باز کردن"
 
 #: src/Widgets/SourceRow.vala:75
-#, fuzzy
 msgid "Not Removable"
-msgstr "زدودن"
+msgstr "غیرقابل حذف"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
-msgstr ""
+msgstr "غیرقابل ویرایش کردن"
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
 msgstr "بر‌گرداندن"
 
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "تقویم \"%S\"  پاک شده است"
+msgstr "تقویم \"%S\" پاک شده است"
 
 #, fuzzy
 #~ msgid "Print debug information"
 #~ msgstr "اطلاعات عمومی"
-
-#, fuzzy
-#~ msgid "Search Calendars"
-#~ msgstr "ایجاد تقویم"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
@@ -948,9 +989,6 @@ msgstr "تقویم \"%S\"  پاک شده است"
 
 #~ msgid "Edit the selected event"
 #~ msgstr "ویرایش رویداد انتخاب شده"
-
-#~ msgid "Delete the selected event"
-#~ msgstr "حذف رویداد انتخاب شده"
 
 #~ msgid "Today"
 #~ msgstr "امروز"

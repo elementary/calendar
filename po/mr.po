@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2022-04-16 23:07+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "ह्या कॉम्प्युटरवर"
 
@@ -43,6 +43,10 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "एक प्रत लोकली ठेवा"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -68,38 +72,42 @@ msgstr "सुरक्षित कनेक्शन वापरा"
 msgid "Server handles meeting invitations"
 msgstr "मीटिंगची आमंत्रणे सर्व्हरद्वारे सांभाळली जातात"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "नवीन घटना बनवा"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "जेव्हा आपण घटना असलेले दिवस सिलेक्ट कराल तेव्हा येणाऱ्या सर्व घटना आपल्याला दिसतील."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "दिवसा"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "संपूर्ण दिवस"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "उद्या"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "या आठवड्यात"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "पुढील आठवड्यात"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "या महिन्यात"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "पुढील महिना"
 
@@ -115,13 +123,13 @@ msgstr "दिलेला दिवस निर्देशित करा"
 msgid "date"
 msgstr "तारीख"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "कॅलेंडर"
 
@@ -175,7 +183,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "पुनरावृत्ती"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "कार्यक्रम डिलीट करा"
 
@@ -622,11 +631,11 @@ msgstr "शनि"
 msgid "Sun"
 msgstr "रवि"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "आठवडा क्रमांक लपवा"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "आठवडा क्रमांक दाखवा"
 
@@ -760,6 +769,34 @@ msgstr "%s चे %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "कॅलेंडर शोधा"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "परिणाम नाहीत"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "शोध संज्ञा बदलून प्रयत्न करा."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+#, fuzzy
+#| msgid "Online Accounts Settings…"
+msgid "Network Settings…"
+msgstr "ऑनलाइन खाती सेटिंग्ज …"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -768,6 +805,50 @@ msgstr "एक्सपोर्ट कॅलेंडर…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendar.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Remove Occurrence"
+msgid "Delete Occurrence"
+msgstr "घटना काढा"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "कार्यक्रम डिलीट करा"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "कार्यक्रम डिलीट करा"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -790,20 +871,16 @@ msgid "Remove"
 msgstr "कॅलेंडर मिटवा"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "नवीन घटना बनवा"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "आजची तारीख बघा"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "कॅलेंडर्स मॅनेज करा"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "डिफॉल्ट कॅलेंडर एक्स्पोर्ट अथवा शेअर करा"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "कॅलेंडर्स मॅनेज करा"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -844,15 +921,6 @@ msgstr "\"%s\" मिटविले"
 
 #~ msgid "Print debug information"
 #~ msgstr "घटनेची साधारण माहिती"
-
-#~ msgid "Search Calendars"
-#~ msgstr "कॅलेंडर शोधा"
-
-#~ msgid "No Results"
-#~ msgstr "परिणाम नाहीत"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "शोध संज्ञा बदलून प्रयत्न करा."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"

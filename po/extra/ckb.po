@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2022-09-10 12:07+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -36,42 +36,42 @@ msgstr ""
 "ڕۆژژمێریکی سووکەڵە و ناسک کە سەرجەم ڕۆژژمێرەکانی ترت وەکو گوگڵ و ئاوتلوک و "
 "کاڵداڤ لەگەڵ خۆی هاوکات دەکات."
 
-#: data/calendar.metainfo.xml.in:51
-msgid "elementary, Inc."
-msgstr "کۆمپانیای ئێلەمێنتەری هاوپشک."
-
-#: data/calendar.metainfo.xml.in:58 data/calendar.metainfo.xml.in:70
-#: data/calendar.metainfo.xml.in:82
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
 msgid "Minor Updates:"
 msgstr "نوێکارییە بچووکەکان:"
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:72
-#: data/calendar.metainfo.xml.in:85
+#: data/calendar.metainfo.xml.in:62
+msgid "New flatter design"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
+#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
 msgid "Updated translations"
 msgstr "وەرگێڕانەکان نوێکراونەوە"
 
-#: data/calendar.metainfo.xml.in:84
+#: data/calendar.metainfo.xml.in:100
 msgid "Updated app icon"
 msgstr "ئایکۆنی ئەپ نوێکراوەتەوە"
 
-#: data/calendar.metainfo.xml.in:92
+#: data/calendar.metainfo.xml.in:108
 msgid "Features:"
 msgstr "تایبەتمەندییەکان:"
 
-#: data/calendar.metainfo.xml.in:94
+#: data/calendar.metainfo.xml.in:110
 msgid "Ask for confirmation before deleting events"
 msgstr "داواکردنی دڵنیایی کردنەوە پێش سڕینەوەی ڕووداوەکان"
 
-#: data/calendar.metainfo.xml.in:95
+#: data/calendar.metainfo.xml.in:111
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr "کردنەوەی ئیمێڵ و بەستەرەکان لە فرۆزەی ڕووداودا بە کۆنتڕۆل و کرتە"
 
-#: data/calendar.metainfo.xml.in:97
+#: data/calendar.metainfo.xml.in:113
 msgid "Fixes:"
 msgstr "چاککراوەکان:"
 
-#: data/calendar.metainfo.xml.in:99
+#: data/calendar.metainfo.xml.in:115
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -79,12 +79,12 @@ msgstr ""
 "ناچالاک کردنی دیاریخانەی \"دیاریکردن وەکو ڕۆژژمێری سەرەکی\" لە ڕێکخستنەکانی "
 "ڕۆژژمێر ئەگەر هاتوو ڕۆژژمێرەکە تەنها بخوێندرێتەوە"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:116
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 "سڕینەوەی ئەو مۆڵەتانەی ساندبۆکس کە چیتر بۆ خزمەتگوزاری هەژمارەکان پێویست نین"
 
-#: data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:117
 msgid "Fixed potential memory leak"
 msgstr "چارەسەرکردنی دزەکردنی بیرگە"
 
@@ -96,6 +96,9 @@ msgstr ""
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "زیادکردنی ڕووداو"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "کۆمپانیای ئێلەمێنتەری هاوپشک."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr ""

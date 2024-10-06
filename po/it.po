@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2020-11-12 23:17+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/calendar/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-03 05:42+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "Su questo computer"
 
@@ -43,6 +43,10 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Mantieni una copia locale"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -68,7 +72,11 @@ msgstr "Utilizzare una connessione sicura"
 msgid "Server handles meeting invitations"
 msgstr "Il server si occupa degli iniviti alle rinuoni"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "Crea un nuovo evento"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -76,31 +84,31 @@ msgstr ""
 "I prossimi eventi saranno mostrati qui non appena avrai selezionato una data "
 "con un evento."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Durante il giorno"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Tutto il giorno"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "Domani"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "Questa settimana"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "Prossima settimana"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "Questo mese"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "Prossimo mese"
 
@@ -116,13 +124,13 @@ msgstr "Seleziona il giorno indicato"
 msgid "date"
 msgstr "data"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Calendario"
 
@@ -176,7 +184,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Ripetizione"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Cancella evento"
 
@@ -623,11 +632,11 @@ msgstr "Sab"
 msgid "Sun"
 msgstr "Dom"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Nascondi i numeri delle settimane"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Mostra i numeri delle settimane"
 
@@ -761,6 +770,32 @@ msgstr "Il %s alle %s"
 msgid "%s, %s – %s"
 msgstr "%s dalle %s alle %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Cerca calendari"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Nessun risultato"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Prova a cambiare i termini di ricerca."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr ""
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -769,6 +804,54 @@ msgstr "Esporta calendario…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendario.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "Cancella l'evento selezionato"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Remove Occurrence"
+msgid "Delete Occurrence"
+msgstr "Elimina la ricorrenza"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Cancella evento"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Cancella evento"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "Questo evento non può essere modificato"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -791,20 +874,16 @@ msgid "Remove"
 msgstr "Rimuovi"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Crea un nuovo evento"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Vai alla data odierna"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Gestisci calendari"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "Esporta o condividi il calendario predefinito"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Gestisci calendari"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -845,15 +924,6 @@ msgstr "\"%s\" è stato rimosso"
 
 #~ msgid "Print debug information"
 #~ msgstr "Mostra le informazioni di debug"
-
-#~ msgid "Search Calendars"
-#~ msgstr "Cerca calendari"
-
-#~ msgid "No Results"
-#~ msgstr "Nessun risultato"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Prova a cambiare i termini di ricerca."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
@@ -938,9 +1008,6 @@ msgstr "\"%s\" è stato rimosso"
 #~ msgid "Edit the selected event"
 #~ msgstr "Modifica l'evento selezionato"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Cancella l'evento selezionato"
-
 #~ msgid "Sync..."
 #~ msgstr "Sincronizza..."
 
@@ -991,9 +1058,6 @@ msgstr "\"%s\" è stato rimosso"
 
 #~ msgid "$more more ..."
 #~ msgstr "$ di più di più ..."
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Questo evento non può essere modificato"
 
 #~ msgid "Days"
 #~ msgstr "Giorni"

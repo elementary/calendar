@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2018-01-21 00:04+0000\n"
 "Last-Translator: Laurence Bahiirwa <laurence@mediauganda.com>\n"
 "Language-Team: Ganda <https://weblate.elementary.io/projects/calendar/"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "Ku komputa enyo"
 
@@ -38,6 +38,10 @@ msgstr "yowana@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Tereka kopi ku komputa yo"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -63,40 +67,44 @@ msgstr "Kozessa yintaneti gyewekakasa"
 msgid "Server handles meeting invitations"
 msgstr "Sava ekola ku ebaluwa z'okuyiita abagenyi"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "Kola omukolo omupya"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Emikolo egiddako gyakutekebwa wano nga olonze enaku z'emikolo."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Ebiseera byemisana"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Olunaku lwona"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 #, fuzzy
 msgid "This Week"
 msgstr "Sabiti"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 #, fuzzy
 msgid "Next Week"
 msgstr "Sabiti"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 #, fuzzy
 msgid "This Month"
 msgstr "Mwezi"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 #, fuzzy
 msgid "Next Month"
 msgstr "Mwezi"
@@ -114,13 +122,13 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Kalenda"
 
@@ -175,7 +183,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Ddamu"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Gyako Omukolo"
 
@@ -638,11 +647,11 @@ msgstr "Lwamukaaga"
 msgid "Sun"
 msgstr "Sande"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Kweka enamba za wikki"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Ragga enamba za wikki"
 
@@ -776,6 +785,33 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Kola Kalenda empya"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr ""
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 #, fuzzy
@@ -785,6 +821,50 @@ msgstr "Terekka Kalenda ewalala..."
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "kalenda.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete Occurrence"
+msgstr "Gyako Omukolo"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Gyako Omukolo"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Gyako Omukolo"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -808,20 +888,16 @@ msgid "Remove"
 msgstr "Gyakko"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Kola omukolo omupya"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Genda ku lunaku lwalero"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Tegekka kalenda"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "Ffulumya oba gabana kalenda enkulu"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Tegekka kalenda"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -865,10 +941,6 @@ msgstr "Kalenda \"%s\" egidwamu."
 #, fuzzy
 #~ msgid "Print debug information"
 #~ msgstr "Eby'okumanya"
-
-#, fuzzy
-#~ msgid "Search Calendars"
-#~ msgstr "Kola Kalenda empya"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"

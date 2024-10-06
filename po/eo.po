@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2019-10-28 20:23+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/calendar/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "En ĉi tiu komputilo"
 
@@ -43,6 +43,10 @@ msgstr "ludoviko@provizanto.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Konservu kopion surlokan"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -68,7 +72,11 @@ msgstr "Uzu sekuran konekton"
 msgid "Server handles meeting invitations"
 msgstr "La servilo permesas kuniĝajn invitojn"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "Krei novan eventon"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -76,31 +84,31 @@ msgstr ""
 "Viaj venontaj eventoj estos montrataj ĉi tie, kiam vi elektas daton kun "
 "evento."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Dum la tago"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Tuttage"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "Morgaŭ"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "Ĉi Semajnon"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "Venontan Semajnon"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "Ĉi Monaton"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "Venontan Monaton"
 
@@ -116,13 +124,13 @@ msgstr "Montri la elektitan tagon"
 msgid "date"
 msgstr "dato"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Kalendaro"
 
@@ -177,7 +185,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Ripeto"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Forigi Eventon"
 
@@ -624,11 +633,11 @@ msgstr "Sab"
 msgid "Sun"
 msgstr "Dim"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Kaŝi Semajnajn Numerojn"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Montri Semajnajn Numerojn"
 
@@ -763,6 +772,32 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s %s ĝ. %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Serĉi Kalendaron"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Neniu Rezultato"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Provu ŝanĝi la serĉaĵon."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr ""
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -771,6 +806,52 @@ msgstr "Eksporti Kalendaron…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "kalendaro.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "Forigi la elektitan eventon"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Remove Occurrence"
+msgid "Delete Occurrence"
+msgstr "Forigi la Elementon"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Forigi Eventon"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Forigi Eventon"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -793,20 +874,16 @@ msgid "Remove"
 msgstr "Forigi"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Krei novan eventon"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Hodiaŭen"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Mastrumi Kalendarojn"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "Eksporti aŭ Kunhavigi la aprioran Kalendaron"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Mastrumi Kalendarojn"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -849,15 +926,6 @@ msgstr "„%s“ estis forigita"
 
 #~ msgid "Print debug information"
 #~ msgstr "Printi sencimigajn informojn"
-
-#~ msgid "Search Calendars"
-#~ msgstr "Serĉi Kalendaron"
-
-#~ msgid "No Results"
-#~ msgstr "Neniu Rezultato"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Provu ŝanĝi la serĉaĵon."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
@@ -916,9 +984,6 @@ msgstr "„%s“ estis forigita"
 
 #~ msgid "Edit the selected event"
 #~ msgstr "Redakti la elektitan eventon"
-
-#~ msgid "Delete the selected event"
-#~ msgstr "Forigi la elektitan eventon"
 
 #~ msgid "Contacts"
 #~ msgstr "Kontaktoj"

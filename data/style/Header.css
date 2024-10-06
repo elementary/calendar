@@ -15,15 +15,6 @@
 *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-.header {
-    background-image:
-        linear-gradient(
-            to bottom,
-            @bg_color,
-            shade(@bg_color, 1.2)
-        );
-}
-
 .daylabel {
     padding: 3px;
     border-left: solid 1px @menu_separator;

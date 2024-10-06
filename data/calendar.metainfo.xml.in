@@ -15,7 +15,7 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/elementary/calendar/7.0.0/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/elementary/calendar/8.0.0/data/screenshot.png</image>
     </screenshot>
   </screenshots>
 
@@ -48,11 +48,27 @@
   <url type="homepage">https://elementary.io/</url>
   <url type="translate">https://l10n.elementary.io/projects/calendar</url>
 
-  <developer_name>elementary, Inc.</developer_name>
+  <developer id="org.elementaryos">
+    <name>elementary, Inc.</name>
+  </developer>
   <project_group>elementary</project_group>
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="8.0.0" date="2024-07-25" urgency="medium">
+      <description>
+        <p>Minor Updates:</p>
+        <ul>
+          <li>New flatter design</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/calendar/issues/590">iCal (On The Web) support</issue>
+        <issue url="https://github.com/elementary/calendar/issues/745">Please add a function to subscribe a online ICS calender stream</issue>
+      </issues>
+    </release>
+
     <release version="7.0.0" date="2023-07-24" urgency="medium">
       <description>
         <p>Minor Updates:</p>

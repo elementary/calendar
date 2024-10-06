@@ -1,410 +1,398 @@
-# Slovak translation for maya
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
-# This file is distributed under the same license as the maya package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.elementary.calendar package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: maya\n"
+"Project-Id-Version: io.elementary.calendar\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-02 20:13+0000\n"
-"PO-Revision-Date: 2024-07-10 19:16+0000\n"
-"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
-"Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/calendar/"
-"sk/>\n"
-"Language: sk\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_ZA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Weblate 5.6.2\n"
-"X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
-msgstr "Na tomto počítači"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr "Používateľ:"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "user.name"
-msgstr "používateľské.meno"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:63
 msgid "Email:"
-msgstr "Email:"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "john@doe.com"
-msgstr "jožko@mrkvička.sk"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
-msgstr "Uschovať lokálnu kópiu"
+msgstr ""
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr "Na webe"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr "používateľské.meno alebo používateľské.meno@gmail.com"
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:39
 msgid "CalDAV"
-msgstr "CalDAV"
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:58
 msgid "URL:"
-msgstr "URL adresa:"
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:99
 msgid "Use a secure connection"
-msgstr "Použiť bezpečné pripojenie"
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:127
 msgid "Server handles meeting invitations"
-msgstr "Server spravuje pozvánky na udalosti"
+msgstr ""
 
 #: src/AgendaView.vala:41
 msgid "Create a new event"
-msgstr "Vytvoriť novú udalosť"
+msgstr ""
 
 #: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Vaše nadchádzajúce udalosti sa zobrazia tu, keď vyberiete dátum s udalosťami."
 
 #: src/AgendaView.vala:162
 msgid "During the day"
-msgstr "Počas dňa"
+msgstr ""
 
 #: src/AgendaView.vala:170
 msgid "All day"
-msgstr "Celý deň"
+msgstr ""
 
 #: src/AgendaView.vala:287
 msgid "Tomorrow"
-msgstr "Zajtra"
+msgstr ""
 
 #: src/AgendaView.vala:290
 msgid "This Week"
-msgstr "Tento týždeň"
+msgstr ""
 
 #: src/AgendaView.vala:293
 msgid "Next Week"
-msgstr "Budúci týždeň"
+msgstr ""
 
 #: src/AgendaView.vala:296
 msgid "This Month"
-msgstr "Tento mesiac"
+msgstr ""
 
 #: src/AgendaView.vala:299
 msgid "Next Month"
-msgstr "Budúci mesiac"
+msgstr ""
 
 #: src/Application.vala:34
 msgid "Create an event"
-msgstr "Vytvoriť udalosť"
+msgstr ""
 
 #: src/Application.vala:35
 msgid "Focus the given day"
-msgstr "Zamerať na daný deň"
+msgstr ""
 
 #: src/Application.vala:35
 msgid "date"
-msgstr "dátum"
+msgstr ""
 
 #: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
-"Kalendár sa automaticky spustí pri zapnutí zariadenia a zostane spustený aj "
-"keď bude okno aplikácie zatvorené, aby mohol posielať oznámenia o "
-"udalostiach."
 
 #: src/Application.vala:207
 msgid "Calendar"
-msgstr "Kalendár"
+msgstr ""
 
 #: src/ImportDialog.vala:28
 msgid "Select a Calendar to Import Into"
-msgstr "Vyberte kalendár, do ktorého chcete importovať"
+msgstr ""
 
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Udalosti z „%s“ budú zlúčené s týmto kalendárom:"
+msgstr ""
 
 #: src/ImportDialog.vala:47
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Udalosti z %d súborov budú zlúčené s týmto kalendárom:"
-msgstr[1] "Udalosti z %d súboru budú zlúčené s týmto kalendárom:"
-msgstr[2] "Udalosti z %d súborov budú zlúčené s týmto kalendárom:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/ImportDialog.vala:61
 msgid "Import"
-msgstr "Importovať"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
-msgstr "Pridať udalosť"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
-msgstr "Upraviť udalosť"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
-msgstr "Všeobecné informácie"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:121
 msgid "Location"
-msgstr "Miesto"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:122
 msgid "Guests"
-msgstr "Hostia"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:123
 msgid "Reminders"
-msgstr "Pripomienky"
+msgstr ""
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr "Opakovanie"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
 #: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
-msgstr "Odstrániť udalosť"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
-msgstr "Vytvoriť udalosť"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:164
 msgid "Save Changes"
-msgstr "Uložiť zmeny"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 #: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
-msgstr "Zrušiť"
+msgstr ""
 
 #: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
-msgstr "Prijaté"
+msgstr ""
 
 #: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
-msgstr "Odmietnuté"
+msgstr ""
 
 #: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
-msgstr "Možno"
+msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr "Účastníci:"
+msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
-msgstr "Žiadni účastníci"
+msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
-msgstr "Pozvať"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
-msgstr "Od:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:86
 msgid "All day:"
-msgstr "Celý deň:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:100
 msgid "To:"
-msgstr "Do:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr "Časové pásmo:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
-msgstr "Názov:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:113
 msgid "Name of Event"
-msgstr "Názov udalosti"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:123
 msgid "Press enter to parse event"
-msgstr "Stlačte Enter pre rozbor udalosti"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
-msgstr "Kalendár:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
-msgstr "Komentáre:"
+msgstr ""
 
 #: src/EventEdition/LocationPanel.vala:50
 msgid "Location:"
-msgstr "Miesto:"
+msgstr ""
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "Jožko Mrkvička ALEBO Nová ul."
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
-msgstr "Pripomienky:"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
-msgstr "Žiadne pripomienky"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:55
 msgid "Add Reminder"
-msgstr "Pridať pripomienku"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:172
 msgid "At time of event"
-msgstr "Počas udalosti"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
-msgstr "1 minútu vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes before"
-msgstr "5 minút vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
-msgstr "10 minút vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
-msgstr "15 minút vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes before"
-msgstr "20 minút vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes before"
-msgstr "25 minút vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes before"
-msgstr "30 minút vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes before"
-msgstr "45 minút vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour before"
-msgstr "1 hodinu vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours before"
-msgstr "2 hodiny vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours before"
-msgstr "3 hodiny vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours before"
-msgstr "12 hodín vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours before"
-msgstr "24 hodín vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days before"
-msgstr "2 dni vopred"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week before"
-msgstr "1 týždeň vopred"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
-msgstr "Opakovať:"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:57
 msgid "Daily"
-msgstr "Denne"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:58
 msgid "Weekly"
-msgstr "Týždenne"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:59
 msgid "Monthly"
-msgstr "Mesačne"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:60
 msgid "Yearly"
-msgstr "Ročne"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr "Každý:"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] "Dní"
-msgstr[1] "Deň"
-msgstr[2] "Dni"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] "Týždňov"
-msgstr[1] "Týždeň"
-msgstr[2] "Týždne"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] "Mesiacov"
-msgstr[1] "Mesiac"
-msgstr[2] "Mesiace"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] "Rokov"
-msgstr[1] "Rok"
-msgstr[2] "Roky"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr "Končí:"
+msgstr ""
 
 #. /Translators: Give a word to describe an event ending after a certain number of repeats.
 #. /This will be displayed in the format like: "Ends After 2 Repeats",
@@ -412,419 +400,414 @@ msgstr "Končí:"
 #: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] "Opakovaní"
-msgstr[1] "Opakovanie"
-msgstr[2] "Opakovania"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/EventEdition/RepeatPanel.vala:144
 msgid "Never"
-msgstr "Nikdy"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:145
 msgid "Until"
-msgstr "Do"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:146
 msgid "After"
-msgstr "Po"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:193
 msgid "The same day every month"
-msgstr "Rovnaký deň každý mesiac"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:204
 msgid "Exceptions:"
-msgstr "Výnimky:"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:206
 msgid "No Exceptions"
-msgstr "Žiadne výnimky"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:222
 msgid "Add Exception"
-msgstr "Pridať výnimku"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:385
 msgid "Every last Sunday"
-msgstr "Každú poslednú nedeľu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:388
 msgid "Every last Monday"
-msgstr "Každý posledný pondelok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:391
 msgid "Every last Tuesday"
-msgstr "Každý posledný utorok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:394
 msgid "Every last Wednesday"
-msgstr "Každú poslednú stredu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:397
 msgid "Every last Thursday"
-msgstr "Každý posledný štvrtok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:400
 msgid "Every last Friday"
-msgstr "Každý posledný piatok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:403
 msgid "Every last Saturday"
-msgstr "Každú poslednú sobotu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:410
 msgid "Every first Sunday"
-msgstr "Každú prvú nedeľu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:413
 msgid "Every first Monday"
-msgstr "Každý prvý pondelok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:416
 msgid "Every first Tuesday"
-msgstr "Každý prvý utorok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:419
 msgid "Every first Wednesday"
-msgstr "Každú prvú stredu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:422
 msgid "Every first Thursday"
-msgstr "Každý prvý štvrtok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:425
 msgid "Every first Friday"
-msgstr "Každý prvý piatok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:428
 msgid "Every first Saturday"
-msgstr "Každú prvú sobotu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:435
 msgid "Every second Sunday"
-msgstr "Každú druhú nedeľu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:438
 msgid "Every second Monday"
-msgstr "Každý druhý pondelok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:441
 msgid "Every second Tuesday"
-msgstr "Každý druhý utorok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:444
 msgid "Every second Wednesday"
-msgstr "Každú druhú stredu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:447
 msgid "Every second Thursday"
-msgstr "Každý druhý štvrtok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:450
 msgid "Every second Friday"
-msgstr "Každý druhý piatok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:453
 msgid "Every second Saturday"
-msgstr "Každú druhú sobotu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:460
 msgid "Every third Sunday"
-msgstr "Každú druhú nedeľu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:463
 msgid "Every third Monday"
-msgstr "Každý tretí pondelok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:466
 msgid "Every third Tuesday"
-msgstr "Každý tretí utorok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:469
 msgid "Every third Wednesday"
-msgstr "Každú tretiu stredu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:472
 msgid "Every third Thursday"
-msgstr "Každý tretí štvrtok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:475
 msgid "Every third Friday"
-msgstr "Každý tretí piatok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:478
 msgid "Every third Saturday"
-msgstr "Každú tretiu sobotu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:485
 msgid "Every fourth Sunday"
-msgstr "Každú štvrtú nedeľu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:488
 msgid "Every fourth Monday"
-msgstr "Každý štvrtý pondelok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:491
 msgid "Every fourth Tuesday"
-msgstr "Každý štvrtý utorok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:494
 msgid "Every fourth Wednesday"
-msgstr "Každú štvrtú streda"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:497
 msgid "Every fourth Thursday"
-msgstr "Každý štvrtý štvrtok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:500
 msgid "Every fourth Friday"
-msgstr "Každý štvrtý piatok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:503
 msgid "Every fourth Saturday"
-msgstr "Každú štvrtú sobotu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:510
 msgid "Every fifth Sunday"
-msgstr "Každú piatu nedeľu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:513
 msgid "Every fifth Monday"
-msgstr "Každý piaty pondelok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:516
 msgid "Every fifth Tuesday"
-msgstr "Každý piaty utorok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:519
 msgid "Every fifth Wednesday"
-msgstr "Každú piatu stredu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:522
 msgid "Every fifth Thursday"
-msgstr "Každý piaty štvrtok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:525
 msgid "Every fifth Friday"
-msgstr "Každý piaty piatok"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:528
 msgid "Every fifth Saturday"
-msgstr "Každú piatu sobotu"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:538
 msgid "Mon"
-msgstr "Pon"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:539
 msgid "Tue"
-msgstr "Uto"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:540
 msgid "Wed"
-msgstr "Str"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:541
 msgid "Thu"
-msgstr "Štv"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:542
 msgid "Fri"
-msgstr "Pia"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:543
 msgid "Sat"
-msgstr "Sob"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:544
 msgid "Sun"
-msgstr "Ned"
+msgstr ""
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
-msgstr "Skryť čísla týždňov"
+msgstr ""
 
 #: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
-msgstr "Zobraziť čísla týždňov"
+msgstr ""
 
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "%u viac…"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
-msgstr "Vytvoriť"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:66
 msgid "Name:"
-msgstr "Názov:"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:70
 msgid "Calendar Name"
-msgstr "Názov kalendára"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:93
 msgid "Type:"
-msgstr "Typ:"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:110
 msgid "Color:"
-msgstr "Farba:"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:190
 msgid "Mark as default calendar"
-msgstr "Označiť ako predvolený kalendár"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:259
 msgid "Create Calendar"
-msgstr "Vytvoriť kalendár"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:264
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
-msgstr "Uložiť"
+msgstr ""
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:65
 msgid "appointment;meeting"
-msgstr "schôdza;schôdzka;stretnutie;porada"
+msgstr ""
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:70
 msgid "birthday;anniversary;party"
-msgstr "narodeniny;narodeninová oslava;párty;výročie;oslava;oslava výročia"
+msgstr ""
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:75
 msgid "call;phone;telephone;ring"
-msgstr "volať;telefón;hovor;zvoniť;telefonovať;prezvoniť"
+msgstr ""
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr "bar;koktejly;nápoje;krčma;šťastná hodinka;happy hour"
+msgstr ""
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr "auto;riadiť;jazda;cestovať;ísť na výlet;výlet;cesta autom;"
+msgstr ""
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:90
 msgid "flight;airport;"
-msgstr "let;letisko;"
+msgstr ""
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
-"raňajky;neskoré raňajky;desiata;večera;obed;olovrant;dezert;steakhouse;jedlo;"
-"hamburger;grilovačka;grilovanie"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:100
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr "súd;sudca;daň;advokát;právnik;zmluva;kontrakt"
+msgstr ""
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
 msgid "movie;film"
-msgstr "film;kino;seriál"
+msgstr ""
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr "svadba"
+msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s – %s"
+msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:317
 #, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s – %s, %s"
+msgstr ""
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:329
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s – %s"
+msgstr ""
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgid "%s at %s"
-msgstr "%s o %s"
+msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s – %s"
+msgstr ""
 
 #: src/Widgets/CalendarChooser.vala:51
 msgid "Search Calendars"
-msgstr "Vyhľadať kalendáre"
+msgstr ""
 
 #: src/Widgets/CalendarChooser.vala:54
 msgid "No Results"
-msgstr "Žiadne výsledky"
+msgstr ""
 
 #: src/Widgets/CalendarChooser.vala:55
 msgid "Try changing search terms."
-msgstr "Pokúste sa zmeniť vyhľadávané výrazy."
+msgstr ""
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
-msgstr "Sieťové pripojenie je nedostupné."
+msgstr ""
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
-"Pripojte sa na internet pre zobrazenie dodatočných informácií a nových "
-"udalostí z online kalendárov."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
-msgstr "Nastavenia siete…"
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
-msgstr "Exportovať kalendár…"
+msgstr ""
 
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
-msgstr "kalendar.ics"
+msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
-msgstr "Zmazať tento výskyt udalosti?"
+msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr "Zmazať tento výskyt udalosti „%s“?"
+msgstr ""
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -832,269 +815,95 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
-"Tento výskyt bude natrvalo odstránený, ale všetky ostatné výskyty zostanú "
-"nezmenené."
 
 #: src/Widgets/DeleteDialog.vala:18
 msgid "Delete Occurrence"
-msgstr "Odstrániť výskyt"
+msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
 msgid "Delete event?"
-msgstr "Odstrániť udalosť?"
+msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
 #, c-format
 msgid "Delete event “%s”?"
-msgstr "Odstrániť udalosť „%s“?"
+msgstr ""
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr "Táto udalosť a všetky jej výskyty budú natrvalo odstránené."
+msgstr ""
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
 msgid "This event will be permanently deleted."
-msgstr "Táto udalosť bude natrvalo odstránená."
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
-msgstr "Upraviť…"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr "Duplikovať…"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
-msgstr "Odstrániť udalosť"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr "Odstrániť výskyt"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
-msgstr "Odstrániť"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:39
 msgid "Go to today's date"
-msgstr "Prejsť na dnešný dátum"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
-msgstr "Exportovať alebo zdieľať základný kalendár"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:67
 msgid "Manage Calendars"
-msgstr "Spravovať kalendáre"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
-msgstr "Pridať nový kalendár…"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:63
 msgid "Import iCalendar File…"
-msgstr "Importovať súbor iCalendar…"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
-msgstr "Nastavenia online účtov…"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:99
 msgid "Select ICS File to Import"
-msgstr "Vyberte súbor ICS, ktorý chcete importovať"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
-msgstr "Otvoriť"
+msgstr ""
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
-msgstr "Neodstrániteľné"
+msgstr ""
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
-msgstr "Neupravovateľné"
+msgstr ""
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
-msgstr "Späť"
+msgstr ""
 
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
 #, c-format
 msgid "\"%s\" removed"
-msgstr "„%s“ odstránené"
-
-#~ msgid "Print debug information"
-#~ msgstr "Zobraziť ladiace informácie"
-
-#~ msgid "%B %e, %Y"
-#~ msgstr "%B %e, %Y"
-
-#~ msgid "%a, %b %d"
-#~ msgstr "%a, %b %d"
-
-#~ msgid "0 minutes"
-#~ msgstr "0 minút"
-
-#~ msgid "Notification"
-#~ msgstr "Oznámenie"
-
-#, fuzzy
-#~ msgid "%s - %s"
-#~ msgstr "%s, %s - %s, %s"
-
-#~ msgid "Import events from \"%s\" into the following calendar:"
-#~ msgstr "Importuj udalosti z \"%s\" do nasledujúceho kalendára:"
-
-#~ msgid "Email"
-#~ msgstr "Email"
-
-#~ msgid "Search Events"
-#~ msgstr "Vyhľadať udalosti"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Launchpad Contributions:\n"
-#~ "  Adam Lukacovic https://launchpad.net/~lukacovic-adam\n"
-#~ "  Filip Fric https://launchpad.net/~filip-fric-sk\n"
-#~ "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-#~ "  Marek https://launchpad.net/~sveco86\n"
-#~ "  Martin Maričák https://launchpad.net/~matko-maricak\n"
-#~ "  Milan Slovák https://launchpad.net/~milboys\n"
-#~ "  Pavol_Ondercin https://launchpad.net/~pavol-ondercin\n"
-#~ "  Ľubomír Hlavko https://launchpad.net/~5lubo555"
-
-#~ msgid "View and schedule events"
-#~ msgstr "Prezerať a plánovať udalosti"
-
-#~ msgid "Maya;Planner;Dates;Days;Events;"
-#~ msgstr "Maya;Plánovač;Dátum;Dni;Udalosti;"
-
-#~ msgid "About Maya"
-#~ msgstr "O Maya"
-
-#~ msgid "About Calendar"
-#~ msgstr "O Kalendári"
-
-#~ msgid "Contacts"
-#~ msgstr "Kontakty"
-
-#~ msgid "Webcal"
-#~ msgstr "Webcal"
-
-#~ msgid "Personal"
-#~ msgstr "Osobné"
-
-#~ msgid "Title"
-#~ msgstr "Názov"
-
-#~ msgid "Your event has to be named and has to have a valid date"
-#~ msgstr "Vaša udalosť musí byť pomenovaná a musí mať valídny dátum"
-
-#~ msgid "Edit the selected event"
-#~ msgstr "Upraviť vybranú udalosť"
-
-#~ msgid "Participants"
-#~ msgstr "Účastníci"
-
-#~ msgid "Comments"
-#~ msgstr "Komentáre"
-
-#~ msgid "Name or Email Address"
-#~ msgstr "Meno alebo e-mailová adresa"
-
-#~ msgid "Sync..."
-#~ msgstr "Synchronizovať..."
-
-#~ msgid "Today"
-#~ msgstr "Dnes"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Na celú obrazovku"
-
-#~ msgid "Import..."
-#~ msgstr "Importovať..."
-
-#~ msgid "Add calendar"
-#~ msgstr "Pridať kalendár"
-
-#~ msgid "Starts: \t"
-#~ msgstr "Začiatok: \t"
-
-#~ msgid "About"
-#~ msgstr "O programe"
-
-#~ msgid "Ends: \t"
-#~ msgstr "Koniec: \t"
-
-#~ msgid "_Add Event"
-#~ msgstr "Pridať udalosť"
-
-#~ msgid "%l:%M %p"
-#~ msgstr "%l:%M %p"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
-
-#~ msgid "all day"
-#~ msgstr "každý deň"
-
-#~ msgid "$more more ..."
-#~ msgstr "$viac viac ..."
-
-#~ msgid "Days"
-#~ msgstr "Dni"
-
-#~ msgid "Months"
-#~ msgstr "Mesiace"
-
-#~ msgid "Weeks"
-#~ msgstr "Týždne"
-
-#~ msgid "Repeats"
-#~ msgstr "Opakovanie"
-
-#~ msgid "Years"
-#~ msgstr "Roky"
-
-#~ msgid "Saturday"
-#~ msgstr "Sobota"
-
-#~ msgid "Wednesday"
-#~ msgstr "Streda"
-
-#~ msgid "Tuesday"
-#~ msgstr "Utorok"
-
-#~ msgid "Friday"
-#~ msgstr "Piatok"
-
-#~ msgid "Thursday"
-#~ msgstr "Štvrtok"
-
-#~ msgid "Monday"
-#~ msgstr "Pondelok"
-
-#~ msgid "Sunday"
-#~ msgstr "Nedeľa"
-
-#~ msgid "Every last %s"
-#~ msgstr "Každý posledný %s"
-
-#~ msgid "Every fifth %s"
-#~ msgstr "Každý piaty %s"
-
-#~ msgid "Every first %s"
-#~ msgstr "Každý prvý %s"
-
-#~ msgid "Every second %s"
-#~ msgstr "Každú druhý %s"
-
-#~ msgid "Every third %s"
-#~ msgstr "Každý tretí %s"
-
-#~ msgid "Every fourth %s"
-#~ msgstr "Každý štvrtý %s"
+msgstr ""

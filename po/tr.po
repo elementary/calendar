@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2021-09-18 16:05+0000\n"
-"Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
+"PO-Revision-Date: 2024-09-20 09:43+0000\n"
+"Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
 "calendar/tr/>\n"
 "Language: tr\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "Bu bilgisayarda"
 
@@ -43,6 +43,10 @@ msgstr "kullanici@domain.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Yerel bir kopyasını sakla"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr "Web'de"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -68,7 +72,11 @@ msgstr "Güvenli bağlantı kullan"
 msgid "Server handles meeting invitations"
 msgstr "Toplantı davetiyelerini sunucuda topla"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "Yeni bir etkinlik oluştur"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -76,31 +84,31 @@ msgstr ""
 "Etkinlikler için bir tarih seçtiğinizde, gelecek etkinlikleriniz burada "
 "gösterilecek."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Gündüzleri"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Tüm gün"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "Yarın"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "Bu Hafta"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "Gelecek Hafta"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "Bu Ay"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "Gelecek Ay"
 
@@ -116,13 +124,15 @@ msgstr "Verilen güne odaklan"
 msgid "date"
 msgstr "tarih"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
+"Takvim, bu cihaz açıldığında otomatik olarak başlayacak ve penceresi "
+"kapatıldığında çalışacak, böylece etkinlik bildirimleri gönderilebilecek."
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Takvim"
 
@@ -176,7 +186,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Tekrar Et"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Etkinliği Sil"
 
@@ -623,11 +634,11 @@ msgstr "Cmt"
 msgid "Sun"
 msgstr "Paz"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Hafta Numaralarını Gizle"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Hafta Numaralarını Göster"
 
@@ -767,6 +778,34 @@ msgstr "%s saat %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Takvimlerde Ara"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Sonuç Yok"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Arama kelimelerini değiştirmeyi deneyin."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr "Ağ Mevcut Değil."
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"Çevrimiçi takvimlerdeki ek ayrıntıları ve yeni etkinlikleri görmek için "
+"İnternet'e bağlanın."
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr "Ağ Ayarları…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -775,6 +814,47 @@ msgstr "Takvimi Dışarı Aktar…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "takvim.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr "Bu olay kopyasını silmek istiyor musunuz?"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr "Bu “%s” olayının kopyası silinsin mi?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+"Bu olay kalıcı olarak silinecek, ancak diğer tüm olaylar değişmeden "
+"kalacaktır."
+
+#: src/Widgets/DeleteDialog.vala:18
+msgid "Delete Occurrence"
+msgstr "Oluşumu Sil"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+msgid "Delete event?"
+msgstr "Etkinlik silinsin mi?"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, c-format
+msgid "Delete event “%s”?"
+msgstr "“%s” etkinliği silinsin mi?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr "Bu etkinlik ve tüm tekrarları kalıcı olarak silinecektir."
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr "Bu etkinlik kalıcı olarak silinecektir."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -797,20 +877,16 @@ msgid "Remove"
 msgstr "Sil"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Yeni bir etkinlik oluştur"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Bugünün tarihine git"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Takvimleri Yönet"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Takvimleri Yönet"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -851,15 +927,6 @@ msgstr "\"%s\" kaldırıldı"
 
 #~ msgid "Print debug information"
 #~ msgstr "Hata ayıklama bilgisini yazdır"
-
-#~ msgid "Search Calendars"
-#~ msgstr "Takvimlerde Ara"
-
-#~ msgid "No Results"
-#~ msgstr "Sonuç Yok"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Arama kelimelerini değiştirmeyi deneyin."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e %B %Y"
@@ -951,9 +1018,6 @@ msgstr "\"%s\" kaldırıldı"
 #~ msgid "Edit the selected event"
 #~ msgstr "Seçili etkinliği düzenle"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Seçili etkinliği sil"
-
 #~ msgid "%l:%M %p"
 #~ msgstr "%l:%M %p"
 
@@ -997,9 +1061,6 @@ msgstr "\"%s\" kaldırıldı"
 
 #~ msgid "Starts: \t"
 #~ msgstr "Başlar: \t"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Bu etkinlik değiştirilemez"
 
 #~ msgid "Months"
 #~ msgstr "Ay"

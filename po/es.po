@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2021-09-21 18:32+0000\n"
-"Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
+"PO-Revision-Date: 2024-06-13 00:26+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
 "calendar/es/>\n"
 "Language: es\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-01-07 06:12+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "En este equipo"
 
@@ -44,6 +44,10 @@ msgstr "juan@perez.com"
 msgid "Keep a copy locally"
 msgstr "Mantener una copia local"
 
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr "En la web"
+
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
 msgstr "Google"
@@ -62,13 +66,17 @@ msgstr "URL:"
 
 #: plugins/CalDAV/CalDAVBackend.vala:99
 msgid "Use a secure connection"
-msgstr "Utilizar conexión segura"
+msgstr "Usar una conexión segura"
 
 #: plugins/CalDAV/CalDAVBackend.vala:127
 msgid "Server handles meeting invitations"
 msgstr "El servidor se encarga de las invitaciones a reuniones"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "Crear un evento nuevo"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -76,31 +84,31 @@ msgstr ""
 "Sus próximos eventos se mostrarán aquí cuando seleccione una fecha con "
 "eventos."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Durante el día"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Todo el día"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "Mañana"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "Esta semana"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "Próxima semana"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "Este mes"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "Próximo mes"
 
@@ -116,19 +124,22 @@ msgstr "Enfocar el día indicado"
 msgid "date"
 msgstr "fecha"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
+"Calendario se iniciará automáticamente cuando este equipo se encienda y "
+"seguirá ejecutándose cuando cierre esta ventana para poder enviar "
+"notificaciones de eventos."
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Calendario"
 
 #: src/ImportDialog.vala:28
 msgid "Select a Calendar to Import Into"
-msgstr "Seleccionar los calendarios para importar"
+msgstr "Seleccione los calendarios a importar"
 
 #: src/ImportDialog.vala:44
 #, c-format
@@ -176,7 +187,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Repetir"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Eliminar evento"
 
@@ -204,7 +216,7 @@ msgstr "Rechazado"
 
 #: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
-msgstr "Quizá"
+msgstr "Quizás"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -623,13 +635,13 @@ msgstr "sáb."
 msgid "Sun"
 msgstr "dom."
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
-msgstr "Ocultar número de semana"
+msgstr "Ocultar números de semanas"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
-msgstr "Mostrar número de semana"
+msgstr "Mostrar números de semanas"
 
 #: src/Grid/VAutoHider.vala:109
 #, c-format
@@ -691,13 +703,13 @@ msgstr "llamada;móvil;teléfono;timbrar"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:80
 msgid "bar;cocktails;drinks;happy hour"
-msgstr "bar;cócteles;bebidas"
+msgstr "bar;cocteles;bebidas;hora feliz"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:85
 msgid "car;drive;driving;road trip;"
-msgstr "coche;conducir;viaje;"
+msgstr "carro;coche;conducir;viaje;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -710,8 +722,8 @@ msgstr "vuelo;aeropuerto;"
 #: src/Widgets/AgendaEventRow.vala:95
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
-"desayuno;desayuno tardío;cena;almuerzo;cena;asador;hamburguesa;comida;"
-"barbacoa"
+"desayuno;desayuno tardío;brunch;cena;almuerzo;cena;asado;rosticería;"
+"hamburguesa;comida;barbacoa"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -736,20 +748,20 @@ msgstr "boda"
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s - %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:317
 #, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:329
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s - %s"
+msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:338
@@ -761,7 +773,35 @@ msgstr "%s a las %s"
 #: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s"
+msgstr "%s, %s – %s"
+
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Buscar calendarios"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "No hay resultados"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Intente cambiar los términos de búsqueda."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr "Red no disponible."
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"Conéctese a Internet para obtener detalles adicionales y nuevos eventos de "
+"calendarios en línea."
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr "Configuración de red…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -771,6 +811,47 @@ msgstr "Exportar calendario…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendario.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr "¿Desea eliminar la repetición de este evento?"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr "¿Desea eliminar la repetición del evento «%s»?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+"Esta repetición será eliminada permanentemente, pero las demás permanecerán "
+"sin cambios."
+
+#: src/Widgets/DeleteDialog.vala:18
+msgid "Delete Occurrence"
+msgstr "Borrar repetición"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+msgid "Delete event?"
+msgstr "¿Desea eliminar este evento?"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, c-format
+msgid "Delete event “%s”?"
+msgstr "¿Desea eliminar el evento «%s«?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr "Este evento y todas sus repeticiones serán eliminadas permanentemente."
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr "Este evento será eliminado de manera permanente."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -786,27 +867,23 @@ msgstr "Eliminar evento"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr "Eliminar ocurrencia"
+msgstr "Eliminar repetición"
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
 msgstr "Eliminar"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Crear un evento nuevo"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
-msgstr "Ir a hoy"
+msgstr "Ir a la fecha de hoy"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Gestionar calendarios"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "Exportar o compartir el calendario predeterminado"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Gestionar calendarios"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -814,7 +891,7 @@ msgstr "Añadir calendario nuevo…"
 
 #: src/Widgets/SourcePopover.vala:63
 msgid "Import iCalendar File…"
-msgstr "Importar archivo iCalendar…"
+msgstr "Importar archivo de iCalendar…"
 
 #: src/Widgets/SourcePopover.vala:67
 msgid "Online Accounts Settings…"
@@ -822,7 +899,7 @@ msgstr "Configuración de cuentas online …"
 
 #: src/Widgets/SourcePopover.vala:99
 msgid "Select ICS File to Import"
-msgstr "Seleccione el archivo ICS que se importará"
+msgstr "Seleccione el archivo ICS a importar"
 
 #: src/Widgets/SourcePopover.vala:102
 msgid "Open"
@@ -830,7 +907,7 @@ msgstr "Abrir"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
-msgstr "No Eliminable"
+msgstr "No removible"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
@@ -847,15 +924,6 @@ msgstr "Se ha quitado «%s»"
 
 #~ msgid "Print debug information"
 #~ msgstr "Imprimir información de depuración"
-
-#~ msgid "Search Calendars"
-#~ msgstr "Buscar calendarios"
-
-#~ msgid "No Results"
-#~ msgstr "No hay resultados"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Pruebe a cambiar los términos de búsqueda."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e de %B de %Y"
@@ -949,9 +1017,6 @@ msgstr "Se ha quitado «%s»"
 #~ msgid "Edit the selected event"
 #~ msgstr "Editar el evento seleccionado"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Eliminar el evento seleccionado"
-
 #~ msgid "Name or Email Address"
 #~ msgstr "Nombre o dirección de correo electrónico"
 
@@ -996,9 +1061,6 @@ msgstr "Se ha quitado «%s»"
 
 #~ msgid "$more more ..."
 #~ msgstr "$more más …"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "No se puede editar este evento"
 
 #~ msgid "Sync..."
 #~ msgstr "Sincronizar…"

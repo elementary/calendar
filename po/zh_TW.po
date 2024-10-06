@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2021-10-05 12:02+0000\n"
-"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
+"PO-Revision-Date: 2024-09-19 08:57+0000\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "calendar/calendar/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "在此電腦上"
 
@@ -42,6 +42,10 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "保留一份在本機上"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr "在網路上"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -67,37 +71,41 @@ msgstr "使用安全連線"
 msgid "Server handles meeting invitations"
 msgstr "伺服器處理會議邀請"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "建立新事件"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "當您選取的日子有活動事件時，未來的事件會顯示在這裡。"
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "當日"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "整天"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "明日"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "本週"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "下週"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "這個月"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "下個月"
 
@@ -113,13 +121,14 @@ msgstr "聚焦在給定的日期"
 msgid "date"
 msgstr "日期"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
-msgstr ""
+msgstr "《行事曆》會在此裝置開機時自動啟動，並在其視窗關閉時繼續執行，以便傳送活動通"
+"知。"
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "行事曆"
 
@@ -168,12 +177,12 @@ msgstr "提醒"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "重複"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "刪除事件"
 
@@ -615,11 +624,11 @@ msgstr "六"
 msgid "Sun"
 msgstr "日"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "隱藏週數"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "顯示週數"
 
@@ -714,15 +723,14 @@ msgstr "court;jury;tax;attorney;lawyer;contract;法院;法官;稅;委託人;律�
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:105
-#, fuzzy
 msgid "movie;film"
-msgstr "movie;電影"
+msgstr "movie;film;電影"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:110
 msgid "wedding"
-msgstr "wedding;婚禮"
+msgstr "wedding;婚禮;結婚典禮;結婚"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:314
@@ -756,6 +764,32 @@ msgstr "%s %s"
 msgid "%s, %s – %s"
 msgstr "%s，%s - %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "搜尋行事曆"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "找不到搜尋結果"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "請嘗試變更搜尋內容。"
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr "網路無法使用。"
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr "連線到網際網路來檢視來自線上行事曆的額外資訊和新活動。"
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr "網路設定值…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -764,6 +798,45 @@ msgstr "匯出行事曆…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "行事曆.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr "要刪除這一次的活動嗎？"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr "要刪除活動「%s」這一次重複嗎？"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr "活動這一次重複會被永久刪除，但其他每次重複會保留不變。"
+
+#: src/Widgets/DeleteDialog.vala:18
+msgid "Delete Occurrence"
+msgstr "刪除這次"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+msgid "Delete event?"
+msgstr "要刪除活動嗎？"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, c-format
+msgid "Delete event “%s”?"
+msgstr "要刪除活動「%s」嗎？"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr "此活動和它每次重複都會被永久刪除。"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr "此活動會被永久刪除。"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -786,20 +859,16 @@ msgid "Remove"
 msgstr "移除"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "建立新事件"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "前往今天的日期"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "管理行事曆"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "匯出或分享預設行事曆"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "管理行事曆"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -831,7 +900,7 @@ msgstr "不可編輯"
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
-msgstr "回復"
+msgstr "復原"
 
 #: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
 #, c-format
@@ -840,15 +909,6 @@ msgstr "「%s」已移除"
 
 #~ msgid "Print debug information"
 #~ msgstr "列印除錯資訊"
-
-#~ msgid "Search Calendars"
-#~ msgstr "搜尋行事曆"
-
-#~ msgid "No Results"
-#~ msgstr "找不到搜尋結果"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "請嘗試變更搜尋內容。"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%Y年%b%e日"
@@ -938,9 +998,6 @@ msgstr "「%s」已移除"
 #~ msgid "Edit the selected event"
 #~ msgstr "編輯所選事件"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "刪除所選事件"
-
 #~ msgid "Contacts"
 #~ msgstr "聯絡人"
 
@@ -973,9 +1030,6 @@ msgstr "「%s」已移除"
 
 #~ msgid "Ends: \t"
 #~ msgstr "結束： \t"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "無法編輯此事件"
 
 #~ msgid "$more more ..."
 #~ msgstr "還有其他 $more 項 ..."

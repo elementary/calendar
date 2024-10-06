@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2023-06-16 10:07+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
+"PO-Revision-Date: 2024-04-03 11:13+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/calendar/calendar/"
 "fr/>\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "Sur cet ordinateur"
 
@@ -43,6 +43,10 @@ msgstr "jean@dupont.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Garder une copie localement"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr "En ligne"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -68,7 +72,11 @@ msgstr "Utiliser une connexion sécurisée"
 msgid "Server handles meeting invitations"
 msgstr "Le serveur gère les invitations aux réunions"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "Créer un nouvel évènement"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -76,31 +84,31 @@ msgstr ""
 "Vos évènements à venir seront affichés ici lorsque vous sélectionnerez un "
 "jour comprenant des évènements."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Dans la journée"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Toute la journée"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "Demain"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "Cette semaine"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "La semaine prochaine"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "Ce mois"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "Le mois prochain"
 
@@ -116,16 +124,16 @@ msgstr "Afficher le jour donné"
 msgid "date"
 msgstr "date"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 "Le calendrier démarre automatiquement lorsque l'appareil est allumé et "
 "s'exécute lorsque sa fenêtre est fermée afin d'envoyer des notifications "
-"d'événements."
+"d'évènements."
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Calendrier"
 
@@ -179,7 +187,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Répétition"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Supprimer l'évènement"
 
@@ -626,11 +635,11 @@ msgstr "Sam"
 msgid "Sun"
 msgstr "Dim"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Masquer les numéros de semaine"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Afficher les numéros de semaine"
 
@@ -764,6 +773,34 @@ msgstr "%s à %s"
 msgid "%s, %s – %s"
 msgstr "%s de %s à %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Rechercher un calendrier"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Aucun résultat"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Essayez de changer les termes de recherche."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr "Réseau indisponible."
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"Connectez-vous à Internet pour voir les informations supplémentaires et les "
+"nouveaux évènements des calendriers en ligne."
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr "Paramètres réseau…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -772,6 +809,48 @@ msgstr "Exporter le calendrier…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "calendrier.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr "Supprimer cette occurence de l'évènement ?"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr "Supprimer cette occurence de l'évènement « %s » ?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+"Cette occurence sera définitivement supprimée, mais toutes les autres "
+"resteront inchangées."
+
+#: src/Widgets/DeleteDialog.vala:18
+msgid "Delete Occurrence"
+msgstr "Supprimer l'occurrence"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+msgid "Delete event?"
+msgstr "Supprimer l'évènement ?"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, c-format
+msgid "Delete event “%s”?"
+msgstr "Supprimer l'évènement « %s » ?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+"Cet événement et toutes ses occurrences seront définitivement supprimés."
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr "Cet évènement sera définitivement supprimé."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -794,20 +873,16 @@ msgid "Remove"
 msgstr "Supprimer"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Créer un nouvel évènement"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Aller à la date d'aujourd'hui"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Gérer les calendriers"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "Exporter ou partager le calendrier par défaut"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Gérer les calendriers"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -848,15 +923,6 @@ msgstr "« %s » supprimé"
 
 #~ msgid "Print debug information"
 #~ msgstr "Afficher les informations de débogage"
-
-#~ msgid "Search Calendars"
-#~ msgstr "Rechercher un calendrier"
-
-#~ msgid "No Results"
-#~ msgstr "Aucun résultat"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Essayez de changer les termes de recherche."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e %B %Y"
@@ -950,9 +1016,6 @@ msgstr "« %s » supprimé"
 #~ msgid "Edit the selected event"
 #~ msgstr "Modifier l'événement sélectionné"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Supprimer l'événement sélectionné"
-
 #~ msgid "Contacts"
 #~ msgstr "Contacts"
 
@@ -988,9 +1051,6 @@ msgstr "« %s » supprimé"
 
 #~ msgid "$more more ..."
 #~ msgstr "$plus plus ..."
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Cet évnement ne peut pas être éditer"
 
 #~ msgid "Days"
 #~ msgstr "jours"

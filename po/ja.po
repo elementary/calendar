@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2023-06-15 00:07+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
+"PO-Revision-Date: 2024-06-19 20:58+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "このコンピューター"
 
@@ -43,6 +43,10 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "ローカルにコピーを保管"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr "Web 上"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -68,37 +72,41 @@ msgstr "安全な接続を使う"
 msgid "Server handles meeting invitations"
 msgstr "サーバーが会議の招待を処理"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "新しい予定を作成"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "予定が入っている日付を選択すると、ここに予定の内容が表示されます。"
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "日中"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "終日"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "明日"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "今週"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "来週"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "今月"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "来月"
 
@@ -114,14 +122,15 @@ msgstr "指定の日に移動します"
 msgid "date"
 msgstr "日付"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
-msgstr "予定を通知できるよう、“カレンダー”はデバイス起動時に自動的にバックグラウンド"
+msgstr ""
+"予定を通知できるよう、“カレンダー”はデバイス起動時に自動的にバックグラウンド"
 "で起動し、ウィンドウを閉じても常駐します。"
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "カレンダー"
 
@@ -138,7 +147,7 @@ msgstr "\"%s\" にある予定は、以下のカレンダーと統合されま�
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "%d個のファイルにある予定は、以下のカレンダーと統合されます:"
+msgstr[0] "%d 個のファイルにある予定は、以下のカレンダーと統合されます:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -174,7 +183,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "繰り返し"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "予定を削除"
 
@@ -194,7 +204,7 @@ msgstr "キャンセル"
 
 #: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
-msgstr "受諾済"
+msgstr "承諾済み"
 
 #: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
@@ -210,7 +220,7 @@ msgstr "参加者:"
 
 #: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
-msgstr "参加者はいません"
+msgstr "参加者なし"
 
 #: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
@@ -266,7 +276,7 @@ msgstr "リマインダー:"
 
 #: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
-msgstr "リマインダーがありません"
+msgstr "リマインダーなし"
 
 #: src/EventEdition/ReminderPanel.vala:55
 msgid "Add Reminder"
@@ -278,63 +288,63 @@ msgstr "予定の時刻"
 
 #: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
-msgstr "1分前"
+msgstr "1 分前"
 
 #: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes before"
-msgstr "5分前"
+msgstr "5 分前"
 
 #: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
-msgstr "10分前"
+msgstr "10 分前"
 
 #: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
-msgstr "15分前"
+msgstr "15 分前"
 
 #: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes before"
-msgstr "20分前"
+msgstr "20 分前"
 
 #: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes before"
-msgstr "25分前"
+msgstr "25 分前"
 
 #: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes before"
-msgstr "30分前"
+msgstr "30 分前"
 
 #: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes before"
-msgstr "45分前"
+msgstr "45 分前"
 
 #: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour before"
-msgstr "1時間前"
+msgstr "1 時間前"
 
 #: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours before"
-msgstr "2時間前"
+msgstr "2 時間前"
 
 #: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours before"
-msgstr "3時間前"
+msgstr "3 時間前"
 
 #: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours before"
-msgstr "12時間前"
+msgstr "12 時間前"
 
 #: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours before"
-msgstr "24時間前"
+msgstr "24 時間前"
 
 #: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days before"
-msgstr "2日前"
+msgstr "2 日前"
 
 #: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week before"
-msgstr "1週間前"
+msgstr "1 週間前"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
@@ -414,7 +424,7 @@ msgstr "例外:"
 
 #: src/EventEdition/RepeatPanel.vala:206
 msgid "No Exceptions"
-msgstr "例外はありません"
+msgstr "例外なし"
 
 #: src/EventEdition/RepeatPanel.vala:222
 msgid "Add Exception"
@@ -616,18 +626,18 @@ msgstr "土"
 msgid "Sun"
 msgstr "日"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "週番号を非表示"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "週番号を表示"
 
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "ほか%u件…"
+msgstr "ほか %u 件…"
 
 #: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
@@ -758,6 +768,34 @@ msgstr "%s %s"
 msgid "%s, %s – %s"
 msgstr "%s %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "カレンダーを検索"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "検索結果なし"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "検索語句を変更してみてください。"
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr "ネットワークが利用できません。"
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"オンラインカレンダーで追加の詳細情報や新しい予定を見るには、インターネットに"
+"接続してください。"
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr "ネットワークの設定…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -766,6 +804,45 @@ msgstr "カレンダーをエクスポート…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "カレンダー.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr "予定のこの回を削除しますか?"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr "予定“%s”のこの回を削除しますか?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr "この回は完全に削除されますが、そのほかのすべての回は変更されません。"
+
+#: src/Widgets/DeleteDialog.vala:18
+msgid "Delete Occurrence"
+msgstr "この回を削除"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+msgid "Delete event?"
+msgstr "予定を削除しますか?"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, c-format
+msgid "Delete event “%s”?"
+msgstr "予定“%s”を削除しますか?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr "この予定とそのすべての回が完全に削除されます。"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr "この予定が完全に削除されます。"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -781,27 +858,23 @@ msgstr "予定を削除"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr "この予定のみを削除"
+msgstr "この回を削除"
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
 msgstr "削除"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "新しい予定を作成"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "今日の日付へ移動"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "カレンダーを管理"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "デフォルトのカレンダーをエクスポートまたは共有"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "カレンダーを管理"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -825,11 +898,11 @@ msgstr "開く"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
-msgstr "削除できません"
+msgstr "削除不可"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
-msgstr "編集できません"
+msgstr "編集不可"
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
@@ -842,15 +915,6 @@ msgstr "\"%s\" は削除されました"
 
 #~ msgid "Print debug information"
 #~ msgstr "デバッグ情報を表示します"
-
-#~ msgid "Search Calendars"
-#~ msgstr "カレンダーを検索"
-
-#~ msgid "No Results"
-#~ msgstr "検索結果はありません"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "検索用語を変更してみてください。"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%Y年%B%e日"
@@ -937,9 +1001,6 @@ msgstr "\"%s\" は削除されました"
 
 #~ msgid "Edit the selected event"
 #~ msgstr "選択された予定を編集"
-
-#~ msgid "Delete the selected event"
-#~ msgstr "選択された予定を削除"
 
 #~ msgid "Contacts"
 #~ msgstr "連絡先"

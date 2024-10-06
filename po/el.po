@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2017-01-21 09:04+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-01-22 05:35+0000\n"
 "X-Generator: Launchpad (build 18302)\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "Σε αυτόν τον υπολογιστή"
 
@@ -42,6 +42,10 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Διατήρηση ένος τοπικού αντιγράφου"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -67,7 +71,11 @@ msgstr "Χρήση μιας ασφαλούς σύνδεσης"
 msgid "Server handles meeting invitations"
 msgstr "Ο διακομιστής χειρίζεται τις προσκλήσεις συναντήσεων"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "Δημιουργία ενός νέου γεγονότος"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -75,34 +83,34 @@ msgstr ""
 "Τα προσεχή γεγονότα σας θα εμφανίζονται εδώ όταν επιλέξετε μια ημερομηνία με "
 "γεγονότα."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Κατά τη διάρκεια της ημέρας"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Όλη μέρα"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 #, fuzzy
 msgid "This Week"
 msgstr "Εβδομάδα"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 #, fuzzy
 msgid "Next Week"
 msgstr "Εβδομάδα"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 #, fuzzy
 msgid "This Month"
 msgstr "Μήνας"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 #, fuzzy
 msgid "Next Month"
 msgstr "Μήνας"
@@ -120,13 +128,13 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Ημερολόγιο"
 
@@ -182,7 +190,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Επανάληψη"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Διαγραφή Γεγονότος"
 
@@ -645,11 +654,11 @@ msgstr "Σαβ"
 msgid "Sun"
 msgstr "Κυρ"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Απόκρυψη Αριθμών Εβδομάδας"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Εμφάνιση αύξοντα αριθμού εβδομάδος"
 
@@ -783,6 +792,33 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Δημιουργία Ημερολογίου"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr ""
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 #, fuzzy
@@ -792,6 +828,54 @@ msgstr "Εξαγωγή Ημερολογίου..."
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "ημερολόγιο.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "Διαγραφή του επιλεγμένου γεγονότος"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete Occurrence"
+msgstr "Διαγραφή Γεγονότος"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Διαγραφή Γεγονότος"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Διαγραφή Γεγονότος"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "Το γεγονός αυτό δεν γίνεται να επαξεργαστεί"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -815,20 +899,16 @@ msgid "Remove"
 msgstr "Αφαίρεση"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Δημιουργία ενός νέου γεγονότος"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Μετάβαση στη σημερινή ημερομηνία"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Διαχείριση Ημερολογίων"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "Εξαγωγή ή Κοινή Χρήση του προεπιλεγμένου Ημερολογίου"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Διαχείριση Ημερολογίων"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -873,10 +953,6 @@ msgstr "Το ημερολόγιο \"%s\" αφαιρέθηκε."
 #, fuzzy
 #~ msgid "Print debug information"
 #~ msgstr "Γενικές Πληροφορίες"
-
-#, fuzzy
-#~ msgid "Search Calendars"
-#~ msgstr "Δημιουργία Ημερολογίου"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%b %e %Y"
@@ -998,12 +1074,6 @@ msgstr "Το ημερολόγιο \"%s\" αφαιρέθηκε."
 
 #~ msgid "Edit the selected event"
 #~ msgstr "Επεξεργασία του επιλεγμένου γεγονότος"
-
-#~ msgid "Delete the selected event"
-#~ msgstr "Διαγραφή του επιλεγμένου γεγονότος"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Το γεγονός αυτό δεν γίνεται να επαξεργαστεί"
 
 #~ msgid "Months"
 #~ msgstr "Μήνες"

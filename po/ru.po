@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
-"PO-Revision-Date: 2023-06-15 00:07+0000\n"
-"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
+"PO-Revision-Date: 2024-09-02 20:05+0000\n"
+"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/"
 "calendar/ru/>\n"
 "Language: ru\n"
@@ -18,10 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "На этом компьютере"
 
@@ -44,6 +44,10 @@ msgstr "john@doe.com"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Сохранить локальную копию"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr "По сети"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -69,38 +73,42 @@ msgstr "Использовать защищённое соединение"
 msgid "Server handles meeting invitations"
 msgstr "Сервер обрабатывает приглашения на встречу"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "Создать новое событие"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
-"Ваши грядущие события появятся здесь когда вы выберете дату с событиями."
+"Ваши предстоящие события появятся здесь, когда вы выберете дату с событиями."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "В течение дня"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Весь день"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr "Завтра"
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 msgid "This Week"
 msgstr "Неделя"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 msgid "Next Week"
 msgstr "Следующая неделя"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 msgid "This Month"
 msgstr "Месяц"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 msgid "Next Month"
 msgstr "Следующий месяц"
 
@@ -116,7 +124,7 @@ msgstr "Сфокусироваться на этом дне"
 msgid "date"
 msgstr "дата"
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -124,7 +132,7 @@ msgstr ""
 "Календарь автоматически запускается при включении этого устройства и "
 "работает, когда окно закрыто, чтобы вы могли получать уведомления о событиях."
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Календарь"
 
@@ -179,7 +187,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Повтор"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Удалить событие"
 
@@ -631,18 +640,18 @@ msgstr "Сб."
 msgid "Sun"
 msgstr "Вс."
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Скрыть номера недель"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Показать номера недель"
 
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "%u больше…"
+msgstr "Ещё %u…"
 
 #: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
@@ -775,6 +784,34 @@ msgstr "%s в %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+msgid "Search Calendars"
+msgstr "Искать календари"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr "Нет результатов"
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr "Попробуйте изменить условия поиска."
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr "Сеть недоступна."
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"Подключитесь к Интернету, чтобы посмотреть дополнительные детали и новые "
+"события из онлайн-календарей."
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr "Настройки сетей…"
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 msgid "Export Calendar…"
@@ -783,6 +820,46 @@ msgstr "Экспортировать календарь…"
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "календарь.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+msgid "Delete this occurrence of event?"
+msgstr "Удалить только выбранное событие?"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr "Удалить только выбранное событие «%s»?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+"Это событие будет удалено, но все остальные повторения останутся на месте."
+
+#: src/Widgets/DeleteDialog.vala:18
+msgid "Delete Occurrence"
+msgstr "Удалить вхождение"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+msgid "Delete event?"
+msgstr "Удалить событие?"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, c-format
+msgid "Delete event “%s”?"
+msgstr "Удалить событие «%s»?"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr "Это событие и все его повторения будут безвозвратно удалены."
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+msgid "This event will be permanently deleted."
+msgstr "Это событие будет безвозвратно удалено."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -798,27 +875,23 @@ msgstr "Удалить событие"
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr "Удалить событие"
+msgstr "Удалить вхождение"
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
 msgid "Remove"
 msgstr "Удалить"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Создать новое событие"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Перейти к сегодняшний дате"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Управление календарями"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "Экспортировать или поделиться календарём по умолчанию"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Управление календарями"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -842,11 +915,11 @@ msgstr "Открыть"
 
 #: src/Widgets/SourceRow.vala:75
 msgid "Not Removable"
-msgstr "Несъёмный"
+msgstr "Неудаляемый"
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Not Editable"
-msgstr "Не редактируемый"
+msgstr "Неизменяемый"
 
 #: src/Widgets/SourceRow.vala:110
 msgid "Undo"
@@ -859,16 +932,6 @@ msgstr "«%s» удалён"
 
 #~ msgid "Print debug information"
 #~ msgstr "Распечатать отладочную информацию"
-
-#, fuzzy
-#~ msgid "Search Calendars"
-#~ msgstr "Создать календарь"
-
-#~ msgid "No Results"
-#~ msgstr "Нет результатов"
-
-#~ msgid "Try changing search terms."
-#~ msgstr "Попробуйте изменить условия поиска."
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"
@@ -940,9 +1003,6 @@ msgstr "«%s» удалён"
 #~ msgid "Edit the selected event"
 #~ msgstr "Редактировать выбранное событие"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Удалить выбранное событие"
-
 #~ msgid "Comments"
 #~ msgstr "Комментарии"
 
@@ -1002,9 +1062,6 @@ msgstr "«%s» удалён"
 
 #~ msgid "Ends: \t"
 #~ msgstr "Конец: \t"
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Это событие нельзя изменить"
 
 #~ msgid "$more more ..."
 #~ msgstr "$еще еще ..."

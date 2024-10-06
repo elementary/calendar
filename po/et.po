@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 01:59+0000\n"
+"POT-Creation-Date: 2024-09-02 20:13+0000\n"
 "PO-Revision-Date: 2016-02-10 22:46+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
-#: core/Backends/LocalBackend.vala:27 core/Utils.vala:56
+#: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "Selles arvutis"
 
@@ -42,6 +42,10 @@ msgstr "juhan@julm.ee"
 #: core/Backends/PlacementWidget.vala:84
 msgid "Keep a copy locally"
 msgstr "Kohaliku koopia tegemine"
+
+#: core/Utils.vala:57
+msgid "On the web"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -67,40 +71,44 @@ msgstr "Turvalise ühenduse kasutamine"
 msgid "Server handles meeting invitations"
 msgstr "Kokkusaamiskutseid hallatakse serveri poolt"
 
-#: src/AgendaView.vala:49
+#: src/AgendaView.vala:41
+msgid "Create a new event"
+msgstr "Uue sündmuse loomine"
+
+#: src/AgendaView.vala:64
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Kuupäeva valides kuvatakse valitud sündmused siia."
 
-#: src/AgendaView.vala:140
+#: src/AgendaView.vala:162
 msgid "During the day"
 msgstr "Päeva jooksul"
 
-#: src/AgendaView.vala:148
+#: src/AgendaView.vala:170
 msgid "All day"
 msgstr "Kogu päev"
 
-#: src/AgendaView.vala:265
+#: src/AgendaView.vala:287
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:268
+#: src/AgendaView.vala:290
 #, fuzzy
 msgid "This Week"
 msgstr "Nädal"
 
-#: src/AgendaView.vala:271
+#: src/AgendaView.vala:293
 #, fuzzy
 msgid "Next Week"
 msgstr "Nädal"
 
-#: src/AgendaView.vala:274
+#: src/AgendaView.vala:296
 #, fuzzy
 msgid "This Month"
 msgstr "Kuu"
 
-#: src/AgendaView.vala:277
+#: src/AgendaView.vala:299
 #, fuzzy
 msgid "Next Month"
 msgstr "Kuu"
@@ -118,13 +126,13 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:185
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:216
+#: src/Application.vala:207
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -180,7 +188,8 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Kordus"
 
-#: src/EventEdition/EventDialog.vala:148
+#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
+#: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
 msgstr "Kustuta sündmus"
 
@@ -643,11 +652,11 @@ msgstr "L"
 msgid "Sun"
 msgstr "P"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:79
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Peida nädalate numbrid"
 
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:81
+#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
 msgstr "Näita nädalate numbreid"
 
@@ -781,6 +790,33 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
 
+#: src/Widgets/CalendarChooser.vala:51
+#, fuzzy
+msgid "Search Calendars"
+msgstr "Loo kalender"
+
+#: src/Widgets/CalendarChooser.vala:54
+msgid "No Results"
+msgstr ""
+
+#: src/Widgets/CalendarChooser.vala:55
+msgid "Try changing search terms."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:30
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:31
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Widgets/ConnectivityInfoBar.vala:39
+msgid "Network Settings…"
+msgstr ""
+
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
 #, fuzzy
@@ -790,6 +826,54 @@ msgstr "Ekspordi kalender..."
 #: src/Widgets/ContractorButtonWithMenu.vala:95
 msgid "calendar.ics"
 msgstr "kalender.ics"
+
+#: src/Widgets/DeleteDialog.vala:13
+#, fuzzy
+#| msgid "Delete the selected event"
+msgid "Delete this occurrence of event?"
+msgstr "Kustuta valitud sündmus"
+
+#: src/Widgets/DeleteDialog.vala:15
+#, c-format
+msgid "Delete this occurrence of event “%s”?"
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:17
+msgid ""
+"This occurrence will be permanently deleted, but all other occurrences will "
+"remain unchanged."
+msgstr ""
+
+#: src/Widgets/DeleteDialog.vala:18
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete Occurrence"
+msgstr "Kustuta sündmus"
+
+#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete event?"
+msgstr "Kustuta sündmus"
+
+#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#, fuzzy, c-format
+#| msgid "Delete Event"
+msgid "Delete event “%s”?"
+msgstr "Kustuta sündmus"
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:29
+msgid "This event and all its occurrences will be permanently deleted."
+msgstr ""
+
+#. Should question mark be in or out of quotes?
+#: src/Widgets/DeleteDialog.vala:38
+#, fuzzy
+#| msgid "This event can't be edited"
+msgid "This event will be permanently deleted."
+msgstr "Seda sündmust pole võimalik muuta"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
@@ -813,20 +897,16 @@ msgid "Remove"
 msgstr "Eemalda"
 
 #: src/Widgets/HeaderBar.vala:39
-msgid "Create a new event"
-msgstr "Uue sündmuse loomine"
-
-#: src/Widgets/HeaderBar.vala:46
 msgid "Go to today's date"
 msgstr "Tänase päeva sündmused"
 
-#: src/Widgets/HeaderBar.vala:54
-msgid "Manage Calendars"
-msgstr "Kalendrite haldamine"
-
-#: src/Widgets/HeaderBar.vala:66
+#: src/Widgets/HeaderBar.vala:60
 msgid "Export or Share the default Calendar"
 msgstr "Ekspordi või jaga vaikimisi kalendrit"
+
+#: src/Widgets/HeaderBar.vala:67
+msgid "Manage Calendars"
+msgstr "Kalendrite haldamine"
 
 #: src/Widgets/SourcePopover.vala:59
 msgid "Add New Calendar…"
@@ -871,10 +951,6 @@ msgstr "Kalender \"%s\" eemaldati."
 #, fuzzy
 #~ msgid "Print debug information"
 #~ msgstr "Üldinfo"
-
-#, fuzzy
-#~ msgid "Search Calendars"
-#~ msgstr "Loo kalender"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%e. %B, %Y"
@@ -942,9 +1018,6 @@ msgstr "Kalender \"%s\" eemaldati."
 #~ msgid "Edit the selected event"
 #~ msgstr "Muuda valitud sündmust"
 
-#~ msgid "Delete the selected event"
-#~ msgstr "Kustuta valitud sündmus"
-
 #~ msgid "Sync..."
 #~ msgstr "Sünkroniseeri..."
 
@@ -989,9 +1062,6 @@ msgstr "Kalender \"%s\" eemaldati."
 
 #~ msgid "$more more ..."
 #~ msgstr "$veel veel ..."
-
-#~ msgid "This event can't be edited"
-#~ msgstr "Seda sündmust pole võimalik muuta"
 
 #~ msgid "Days"
 #~ msgstr "Päevad"
