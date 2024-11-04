@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-02 20:13+0000\n"
-"PO-Revision-Date: 2022-05-18 11:40+0000\n"
+"PO-Revision-Date: 2024-11-04 16:27+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/calendar/extra/fr/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
@@ -44,7 +44,7 @@ msgstr "Mises à jour mineures :"
 
 #: data/calendar.metainfo.xml.in:62
 msgid "New flatter design"
-msgstr ""
+msgstr "Nouveau design plus plat"
 
 #: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
 #: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
