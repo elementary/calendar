@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-02 20:13+0000\n"
-"PO-Revision-Date: 2023-10-08 20:09+0000\n"
+"PO-Revision-Date: 2024-12-01 12:51+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/calendar/"
 "calendar/fi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -46,7 +46,7 @@ msgstr "Säilytä paikallinen kopio"
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr ""
+msgstr "Verkossa"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -828,6 +828,8 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
+"Tämä ilmentymä poistetaan pysyvästi, mutta kaikki muut ilmentymät pysyvät "
+"muuttumattomina."
 
 #: src/Widgets/DeleteDialog.vala:18
 msgid "Delete Occurrence"
