@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-02 20:13+0000\n"
-"PO-Revision-Date: 2015-10-24 09:47+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
-"Language-Team: Latvian <lv@li.org>\n"
+"PO-Revision-Date: 2024-12-08 10:16+0000\n"
+"Last-Translator: Jānis Greiškāns <greiskans.janis9@gmail.com>\n"
+"Language-Team: Latvian <https://l10n.elementary.io/projects/calendar/"
+"calendar/lv/>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
@@ -25,7 +26,7 @@ msgstr "Šajā datorā"
 
 #: core/Backends/PlacementWidget.vala:41
 msgid "User:"
-msgstr ""
+msgstr "Lietotājs:"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "user.name"
@@ -89,27 +90,27 @@ msgstr ""
 
 #: src/AgendaView.vala:170
 msgid "All day"
-msgstr ""
+msgstr "Visu dienu"
 
 #: src/AgendaView.vala:287
 msgid "Tomorrow"
-msgstr ""
+msgstr "Rīt"
 
 #: src/AgendaView.vala:290
 msgid "This Week"
-msgstr ""
+msgstr "Šonedēļ"
 
 #: src/AgendaView.vala:293
 msgid "Next Week"
-msgstr ""
+msgstr "Nākamnedēļ"
 
 #: src/AgendaView.vala:296
 msgid "This Month"
-msgstr ""
+msgstr "Šomēnes"
 
 #: src/AgendaView.vala:299
 msgid "Next Month"
-msgstr ""
+msgstr "Nākammēnes"
 
 #: src/Application.vala:34
 #, fuzzy
@@ -122,7 +123,7 @@ msgstr ""
 
 #: src/Application.vala:35
 msgid "date"
-msgstr ""
+msgstr "datums"
 
 #: src/Application.vala:176
 msgid ""
@@ -154,11 +155,11 @@ msgstr[2] ""
 
 #: src/ImportDialog.vala:61
 msgid "Import"
-msgstr ""
+msgstr "Importēt"
 
 #: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
-msgstr "Pievienot  notikumu"
+msgstr "Pievienot notikumu"
 
 #: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
@@ -166,7 +167,7 @@ msgstr "Rediģēt notikumu"
 
 #: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
-msgstr ""
+msgstr "Vispārēja Informācija"
 
 #: src/EventEdition/EventDialog.vala:121
 msgid "Location"
@@ -174,11 +175,11 @@ msgstr "Vieta"
 
 #: src/EventEdition/EventDialog.vala:122
 msgid "Guests"
-msgstr ""
+msgstr "Viesi"
 
 #: src/EventEdition/EventDialog.vala:123
 msgid "Reminders"
-msgstr ""
+msgstr "Atgādinājumi"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
@@ -189,7 +190,7 @@ msgstr ""
 #: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
 #: src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
-msgstr ""
+msgstr "Izdzēst Notikumu"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
@@ -203,7 +204,7 @@ msgstr "Saglabāt izmaiņas"
 #: src/Widgets/ContractorButtonWithMenu.vala:91
 #: src/Widgets/SourcePopover.vala:103
 msgid "Cancel"
-msgstr ""
+msgstr "Atcelt"
 
 #: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
@@ -219,11 +220,11 @@ msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr ""
+msgstr "Dalībnieki:"
 
 #: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
-msgstr ""
+msgstr "Nav Dalībnieku"
 
 #: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
@@ -243,7 +244,7 @@ msgstr "Līdz:"
 
 #: src/EventEdition/InfoPanel.vala:106
 msgid "Time zone:"
-msgstr ""
+msgstr "Laika josla:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Title:"
@@ -259,15 +260,15 @@ msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:138
 msgid "Calendar:"
-msgstr ""
+msgstr "Kalendārs:"
 
 #: src/EventEdition/InfoPanel.vala:145
 msgid "Comments:"
-msgstr ""
+msgstr "Komentāri:"
 
 #: src/EventEdition/LocationPanel.vala:50
 msgid "Location:"
-msgstr ""
+msgstr "Vieta:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
@@ -275,84 +276,83 @@ msgstr "Jānis Bērziņš VAI Brīvības iela"
 
 #: src/EventEdition/ReminderPanel.vala:34
 msgid "Reminders:"
-msgstr ""
+msgstr "Atgādinājumi:"
 
 #: src/EventEdition/ReminderPanel.vala:36
 msgid "No Reminders"
-msgstr ""
+msgstr "Nav Atgādinājumu"
 
 #: src/EventEdition/ReminderPanel.vala:55
 msgid "Add Reminder"
-msgstr ""
+msgstr "Pievienot Atgādinājumu"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "At time of event"
-msgstr "Notikuma nosaukums"
+msgstr "Notikuma laikā"
 
 #: src/EventEdition/ReminderPanel.vala:173
 msgid "1 minute before"
-msgstr ""
+msgstr "1 minūti pirms"
 
 #: src/EventEdition/ReminderPanel.vala:174
 msgid "5 minutes before"
-msgstr ""
+msgstr "5 minūtes pirms"
 
 #: src/EventEdition/ReminderPanel.vala:175
 msgid "10 minutes before"
-msgstr ""
+msgstr "10 minūtes pirms"
 
 #: src/EventEdition/ReminderPanel.vala:176
 msgid "15 minutes before"
-msgstr ""
+msgstr "15 minūtes pirms"
 
 #: src/EventEdition/ReminderPanel.vala:177
 msgid "20 minutes before"
-msgstr ""
+msgstr "20 minūtes pirms"
 
 #: src/EventEdition/ReminderPanel.vala:178
 msgid "25 minutes before"
-msgstr ""
+msgstr "25 minūtes pirms"
 
 #: src/EventEdition/ReminderPanel.vala:179
 msgid "30 minutes before"
-msgstr ""
+msgstr "30 minūtes pirms"
 
 #: src/EventEdition/ReminderPanel.vala:180
 msgid "45 minutes before"
-msgstr ""
+msgstr "45 minūtes pirms"
 
 #: src/EventEdition/ReminderPanel.vala:181
 msgid "1 hour before"
-msgstr ""
+msgstr "1 stundu pirms"
 
 #: src/EventEdition/ReminderPanel.vala:182
 msgid "2 hours before"
-msgstr ""
+msgstr "2 stundas pirms"
 
 #: src/EventEdition/ReminderPanel.vala:183
 msgid "3 hours before"
-msgstr ""
+msgstr "3 stundas pirms"
 
 #: src/EventEdition/ReminderPanel.vala:184
 msgid "12 hours before"
-msgstr ""
+msgstr "12 stundas pirms"
 
 #: src/EventEdition/ReminderPanel.vala:185
 msgid "24 hours before"
-msgstr ""
+msgstr "24 stundas pirms"
 
 #: src/EventEdition/ReminderPanel.vala:186
 msgid "2 days before"
-msgstr ""
+msgstr "2 dienas pirms"
 
 #: src/EventEdition/ReminderPanel.vala:187
 msgid "1 week before"
-msgstr ""
+msgstr "1 nedēļu pirms"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
-msgstr ""
+msgstr "Atkārtot:"
 
 #: src/EventEdition/RepeatPanel.vala:57
 msgid "Daily"
@@ -360,15 +360,15 @@ msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:58
 msgid "Weekly"
-msgstr ""
+msgstr "Katru nedēļu"
 
 #: src/EventEdition/RepeatPanel.vala:59
 msgid "Monthly"
-msgstr ""
+msgstr "Katru mēnesi"
 
 #: src/EventEdition/RepeatPanel.vala:60
 msgid "Yearly"
-msgstr ""
+msgstr "Katru gadu"
 
 #: src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
