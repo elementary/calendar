@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-02 20:13+0000\n"
-"PO-Revision-Date: 2022-04-16 23:07+0000\n"
+"PO-Revision-Date: 2025-02-20 08:16+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
 "calendar/mr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -46,7 +46,7 @@ msgstr "एक प्रत लोकली ठेवा"
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr ""
+msgstr "वेबवर"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -128,6 +128,8 @@ msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
+"जेव्हा हे डिव्हाइस चालू होईल तेव्हा कॅलेंडर स्वयंचलितपणे सुरू होईल आणि जेव्हा त्याची विंडो बंद असे"
+"ल तेव्हा चालू असेल जेणेकरून ते इव्हेंट सूचना पाठवू शकेल."
 
 #: src/Application.vala:207
 msgid "Calendar"
@@ -783,19 +785,18 @@ msgstr "शोध संज्ञा बदलून प्रयत्न क�
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
-msgstr ""
+msgstr "नेटवर्क उपलब्ध नाही."
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
+"ऑनलाइन कॅलेंडरमधील अतिरिक्त तपशील आणि नवीन कार्यक्रम पाहण्यासाठी इंटरनेटशी कनेक्ट करा."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
-#, fuzzy
-#| msgid "Online Accounts Settings…"
 msgid "Network Settings…"
-msgstr "ऑनलाइन खाती सेटिंग्ज …"
+msgstr "नेटवर्क सेटिंग्ज…"
 
 #: src/Widgets/ContractorButtonWithMenu.vala:72
 #: src/Widgets/ContractorButtonWithMenu.vala:87
@@ -808,47 +809,42 @@ msgstr "calendar.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
-msgstr ""
+msgstr "इव्हेंटची ही घटना हटवायची?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "“%s” इव्हेंटची ही घटना हटवायची?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
 msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
-msgstr ""
+msgstr "ही घटना कायमची हटवली जाईल, परंतु इतर सर्व घटना अपरिवर्तित राहतील."
 
 #: src/Widgets/DeleteDialog.vala:18
-#, fuzzy
-#| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
-msgstr "घटना काढा"
+msgstr "घटना हटवा"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete event?"
-msgstr "कार्यक्रम डिलीट करा"
+msgstr "इव्हेंट हटवायचा?"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
-#, fuzzy, c-format
-#| msgid "Delete Event"
+#, c-format
 msgid "Delete event “%s”?"
-msgstr "कार्यक्रम डिलीट करा"
+msgstr "“%s” इव्हेंट हटवायचा?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr ""
+msgstr "हा कार्यक्रम आणि त्याच्या सर्व घटना कायमस्वरूपी हटवल्या जातील."
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
 msgid "This event will be permanently deleted."
-msgstr ""
+msgstr "हा कार्यक्रम कायमचा हटवला जाईल."
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
 msgid "Edit…"
