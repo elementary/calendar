@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-02 20:13+0000\n"
+"POT-Creation-Date: 2025-02-26 16:16+0000\n"
 "PO-Revision-Date: 2018-07-10 11:19+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -30,6 +30,10 @@ msgstr ""
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:52
+msgid "elementary, Inc."
 msgstr ""
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74

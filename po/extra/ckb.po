@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-02 20:13+0000\n"
+"POT-Creation-Date: 2025-02-26 16:16+0000\n"
 "PO-Revision-Date: 2022-09-10 12:07+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -35,6 +35,10 @@ msgid ""
 msgstr ""
 "ڕۆژژمێریکی سووکەڵە و ناسک کە سەرجەم ڕۆژژمێرەکانی ترت وەکو گوگڵ و ئاوتلوک و "
 "کاڵداڤ لەگەڵ خۆی هاوکات دەکات."
+
+#: data/calendar.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr "کۆمپانیای ئێلەمێنتەری هاوپشک."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -96,9 +100,6 @@ msgstr ""
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "زیادکردنی ڕووداو"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "کۆمپانیای ئێلەمێنتەری هاوپشک."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr ""

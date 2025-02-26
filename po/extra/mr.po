@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-02 20:13+0000\n"
+"POT-Creation-Date: 2025-02-26 16:16+0000\n"
 "PO-Revision-Date: 2021-06-19 20:00+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/extra/"
@@ -35,6 +35,10 @@ msgid ""
 msgstr ""
 "Google कॅलेंडर, Outlook आणि CalDAV सारख्या एकाच ठिकाणी एकाधिक कॅलेंडर समक्रमित आणि "
 "व्यवस्थापित करणारे एक हलके कॅलेंडर अॅप."
+
+#: data/calendar.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -98,9 +102,6 @@ msgstr "माया; प्लॅनर; तारखा; दिवस; घट�
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "नवीन घटना जोडा"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #, fuzzy
 #~| msgid "Fix an issue where new events could appear twice in Calendar"
