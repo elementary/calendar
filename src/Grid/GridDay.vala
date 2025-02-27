@@ -61,8 +61,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
         // EventBox Properties
         can_focus = true;
-        events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        events |= Gdk.EventMask.KEY_PRESS_MASK;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
 
         unowned Gtk.StyleContext style_context = get_style_context ();
