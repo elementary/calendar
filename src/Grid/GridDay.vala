@@ -64,7 +64,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
             name = "date",
         };
 
-        var container_box = new Gtk.Box (VERTICAL, 0);
+        var container_box = new Gtk.Box (VERTICAL, 3);
         container_box.add (label);
         container_box.add (event_box);
 
