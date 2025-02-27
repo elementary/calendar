@@ -55,7 +55,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
         });
 
         event_box = new VAutoHider () {
-            expand = true
+            hexpand = true,
+            vexpand = true
         };
 
         var label = new Gtk.Label ("") {
@@ -72,7 +73,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         get_style_context ().add_class ("cell");
 
-        // Signals and handlers
         click_gesture = new Gtk.GestureMultiPress (this) {
             button = Gdk.BUTTON_PRIMARY,
             propagation_phase = BUBBLE
