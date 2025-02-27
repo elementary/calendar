@@ -10,7 +10,6 @@
  * Represents a single day on the grid.
  */
 public class Maya.View.GridDay : Gtk.EventBox {
-
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
@@ -35,15 +34,19 @@ public class Maya.View.GridDay : Gtk.EventBox {
         }
     }
 
-    private static Gtk.CssProvider style_provider;
-
     public GridDay (DateTime date) {
         Object (date: date);
     }
 
     static construct {
-        style_provider = new Gtk.CssProvider ();
+        var style_provider = new Gtk.CssProvider ();
         style_provider.load_from_resource ("/io/elementary/calendar/Grid.css");
+
+        Gtk.StyleContext.add_provider_for_screen (
+            Gdk.Screen.get_default (),
+            style_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
     }
 
     construct {
@@ -52,37 +55,22 @@ public class Maya.View.GridDay : Gtk.EventBox {
         });
 
         event_box = new VAutoHider () {
-            margin_top = 0,
-            margin_end = 3,
-            margin_bottom = 3,
-            margin_start = 3,
             expand = true
         };
 
-        // EventBox Properties
-        can_focus = true;
-        events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
-
-        unowned Gtk.StyleContext style_context = get_style_context ();
-        style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        style_context.add_class ("cell");
-
         var label = new Gtk.Label ("") {
             halign = END,
-            margin_top = 3,
-            margin_end = 3,
-            margin_bottom = 0,
-            margin_start = 3,
             name = "date",
         };
-        label.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        var container_grid = new Gtk.Grid ();
-        container_grid.attach (label, 0, 0);
-        container_grid.attach (event_box, 0, 1);
-        container_grid.show_all ();
+        var container_box = new Gtk.Box (VERTICAL, 0);
+        container_box.add (label);
+        container_box.add (event_box);
 
-        add (container_grid);
+        can_focus = true;
+        child = container_box;
+        events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
+        get_style_context ().add_class ("cell");
 
         // Signals and handlers
         click_gesture = new Gtk.GestureMultiPress (this) {
