@@ -35,8 +35,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
         }
     }
 
-    private const int EVENT_MARGIN = 3;
-
     private static Gtk.CssProvider style_provider;
 
     public GridDay (DateTime date) {
@@ -54,8 +52,10 @@ public class Maya.View.GridDay : Gtk.EventBox {
         });
 
         event_box = new VAutoHider () {
-            margin = EVENT_MARGIN,
             margin_top = 0,
+            margin_end = 3,
+            margin_bottom = 3,
+            margin_start = 3,
             expand = true
         };
 
@@ -71,8 +71,10 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
         var label = new Gtk.Label ("") {
             halign = END,
-            margin = EVENT_MARGIN,
+            margin_top = 3,
+            margin_end = 3,
             margin_bottom = 0,
+            margin_start = 3,
             name = "date",
         };
         label.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
