@@ -66,10 +66,11 @@ public class Maya.View.GridDay : Gtk.EventBox {
             ((EventButton)value_data).destroy_button ();
         });
 
-        event_box = new VAutoHider ();
-        event_box.margin = EVENT_MARGIN;
-        event_box.margin_top = 0;
-        event_box.expand = true;
+        event_box = new VAutoHider () {
+            margin = EVENT_MARGIN,
+            margin_top = 0,
+            expand = true
+        };
 
         // EventBox Properties
         can_focus = true;
@@ -81,16 +82,17 @@ public class Maya.View.GridDay : Gtk.EventBox {
         style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         style_context.add_class ("cell");
 
-        var label = new Gtk.Label ("");
-        label.halign = Gtk.Align.END;
+        var label = new Gtk.Label ("") {
+            halign = END,
+            margin = EVENT_MARGIN,
+            margin_bottom = 0,
+            name = "date",
+        };
         label.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        label.margin = EVENT_MARGIN;
-        label.margin_bottom = 0;
-        label.name = "date";
 
         var container_grid = new Gtk.Grid ();
-        container_grid.attach (label, 0, 0, 1, 1);
-        container_grid.attach (event_box, 0, 1, 1, 1);
+        container_grid.attach (label, 0, 0);
+        container_grid.attach (event_box, 0, 1);
         container_grid.show_all ();
 
         add (container_grid);
@@ -158,7 +160,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
         event_box.add (button);
         button.show_all ();
-
     }
 
     public bool update_event (ECal.Component modified_event) {
