@@ -35,6 +35,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
     public bool draw_left_border = true;
     private VAutoHider event_box;
     private GLib.HashTable<string, EventButton> event_buttons;
+    private Gtk.EventControllerKey key_controller;
+    private Gtk.GestureMultiPress click_gesture;
 
     public bool in_current_month {
         set {
@@ -94,8 +96,17 @@ public class Maya.View.GridDay : Gtk.EventBox {
         add (container_grid);
 
         // Signals and handlers
-        button_press_event.connect (on_button_press);
-        key_press_event.connect (on_key_press);
+        click_gesture = new Gtk.GestureMultiPress (this) {
+            button = Gdk.BUTTON_PRIMARY,
+            propagation_phase = BUBBLE
+        };
+        click_gesture.released.connect (on_button_press);
+
+        key_controller = new Gtk.EventControllerKey (this) {
+            propagation_phase = BUBBLE
+        };
+        key_controller.key_pressed.connect (on_key_press);
+
         scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
 
         Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
@@ -184,16 +195,16 @@ public class Maya.View.GridDay : Gtk.EventBox {
         }
     }
 
-    private bool on_button_press (Gdk.EventButton event) {
-        if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY)
+    private void on_button_press (int n_press, double x, double y) {
+        if (n_press == 2) {
             on_event_add (date);
+        }
 
         grab_focus ();
-        return false;
     }
 
-    private bool on_key_press (Gdk.EventKey event) {
-        if (event.keyval == Gdk.keyval_from_name ("Return") ) {
+    private bool on_key_press (Gtk.EventControllerKey event, uint keyval, uint keycode, Gdk.ModifierType state) {
+        if (keyval == Gdk.keyval_from_name ("Return") ) {
             on_event_add (date);
             return true;
         }
