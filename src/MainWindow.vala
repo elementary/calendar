@@ -56,9 +56,6 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
         }
 
-        weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-        default_theme.add_resource_path ("/io/elementary/calendar");
-
         calview = new View.CalendarView () {
             vexpand = true
         };
