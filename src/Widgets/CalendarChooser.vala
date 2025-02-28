@@ -28,23 +28,17 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
     public GLib.List<E.Source> sources;
     public E.Source current_source { get; set; }
 
+    private Calendar.EventStore calmodel;
+    private E.SourceRegistry registry;
     private Gtk.SearchEntry search_entry;
+    private Gtk.ListBox list_box;
 
     construct {
-        // Set up sources list
-        sources = new GLib.List<E.Source> ();
-        var calmodel = Calendar.EventStore.get_default ();
-        var registry = calmodel.registry;
-        foreach (var src in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
-            if (src.writable == true && src.enabled == true && calmodel.calclient_is_readonly (src) == false) {
-                sources.append (src);
-            }
-        }
-
-        // GUI setup
-
+        calmodel = Calendar.EventStore.get_default ();
+        registry = calmodel.registry;
         current_source = registry.default_calendar;
 
+        // GUI setup
         search_entry = new Gtk.SearchEntry ();
         search_entry.margin = 12;
         search_entry.margin_bottom = 6;
@@ -57,7 +51,7 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
         );
         placeholder.show_all ();
 
-        var list_box = new Gtk.ListBox ();
+        list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = true;
         list_box.set_placeholder (placeholder);
 
@@ -123,7 +117,24 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
             // TODO Should active calendar be re-selected?
         });
 
-        // Populate list_box
+        // Parse registry list_sources and render list_box;
+        render_sources ();
+
+        // Re-render sources when a new source connects;
+        calmodel.connected.connect (() => render_sources ());
+    }
+
+    private void render_sources () {
+        // Set up sources list
+        sources = new GLib.List<E.Source> ();
+        foreach (var src in registry.list_sources (E.SOURCE_EXTENSION_CALENDAR)) {
+            if (src.writable == true && src.enabled == true && calmodel.calclient_is_readonly (src) == false) {
+                sources.append (src);
+            }
+        }
+
+        // Render sources into list_box
+        list_box.foreach (element => list_box.remove (element));
         foreach (var source in sources) {
             var calrow = new CalendarRow (source);
             calrow.margin = 6;
