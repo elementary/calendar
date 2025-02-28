@@ -36,6 +36,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
     public Gtk.Revealer revealer { public get; private set; }
 
+    private Gtk.GestureMultiPress click_gesture;
+
     private Gtk.Image event_image;
     private Gtk.Label name_label;
     private Gtk.Label datetime_label;
@@ -259,22 +261,20 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             revealer.set_reveal_child (false);
         });
 
-        add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
-        button_press_event.connect (on_button_press);
+        click_gesture = new Gtk.GestureMultiPress (this) {
+            button = Gdk.BUTTON_SECONDARY,
+            propagation_phase = BUBBLE
+        };
+        click_gesture.released.connect (on_button_press);
 
         // Fill in the information
         update (calevent);
     }
 
-    private bool on_button_press (Gdk.EventButton event) {
-        if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-            var menu = new Maya.EventMenu (calevent);
-            menu.attach_to_widget (this, null);
-            menu.popup_at_pointer (event);
-            menu.show_all ();
-        }
-
-        return Gdk.EVENT_PROPAGATE;
+    private void on_button_press (int n_press, double x, double y) {
+        var menu = new Maya.EventMenu (calevent);
+        menu.attach_to_widget (this, null);
+        menu.popup_at_pointer ();
     }
 
     /**
