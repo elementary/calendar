@@ -1,18 +1,6 @@
 /*
- * Copyright 2011-2018 elementary, Inc. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Maxwell Barvian
  *              Niels Avonds <niels.avonds@gmail.com>
@@ -22,7 +10,7 @@
 public class Maya.View.AgendaView : Gtk.Box {
     public signal void event_removed (ECal.Component event);
 
-    public Hdy.HeaderBar header_bar { get; construct; }
+    public Hdy.HeaderBar header_bar { get; private set; }
 
     private Gtk.Label day_label;
     private Gtk.Label weekday_label;
@@ -61,20 +49,22 @@ public class Maya.View.AgendaView : Gtk.Box {
         };
         day_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events."));
-        placeholder_label.wrap = true;
-        placeholder_label.wrap_mode = Pango.WrapMode.WORD;
-        placeholder_label.margin_start = 12;
-        placeholder_label.margin_end = 12;
-        placeholder_label.justify = Gtk.Justification.CENTER;
+        var placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events.")) {
+            wrap = true,
+            wrap_mode = WORD,
+            margin_start = 12,
+            margin_end = 12,
+            justify = CENTER
+        };
         placeholder_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         placeholder_label.show_all ();
 
-        selected_date_events_list = new Gtk.ListBox ();
-        selected_date_events_list.activate_on_single_click = false;
-        selected_date_events_list.height_request = 128;
-        selected_date_events_list.hexpand = true;
-        selected_date_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
+        selected_date_events_list = new Gtk.ListBox () {
+            activate_on_single_click = false,
+            height_request = 128,
+            hexpand = true,
+            selection_mode = SINGLE
+        };
         selected_date_events_list.set_header_func (header_update_func);
         selected_date_events_list.set_placeholder (placeholder_label);
         selected_date_events_list.set_sort_func (selected_sort_function);
@@ -88,11 +78,12 @@ public class Maya.View.AgendaView : Gtk.Box {
             return Calendar.Util.ecalcomponent_is_on_day (event_row.calevent, selected_date);
         });
 
-        upcoming_events_list = new Gtk.ListBox ();
-        upcoming_events_list.activate_on_single_click = false;
-        upcoming_events_list.margin_top = 24;
-        upcoming_events_list.hexpand = true;
-        upcoming_events_list.selection_mode = Gtk.SelectionMode.SINGLE;
+        upcoming_events_list = new Gtk.ListBox () {
+            activate_on_single_click = false,
+            margin_top = 24,
+            hexpand = true,
+            selection_mode = SINGLE
+        };
         upcoming_events_list.set_header_func (upcoming_header_update_func);
         upcoming_events_list.set_sort_func (upcoming_sort_function);
 
@@ -111,15 +102,14 @@ public class Maya.View.AgendaView : Gtk.Box {
             return Calendar.Util.icalcomponent_is_in_range (comp, range);
         });
 
-        var grid = new Gtk.Grid ();
-        grid.orientation = Gtk.Orientation.VERTICAL;
-        grid.add (day_label);
-        grid.add (selected_date_events_list);
-        grid.add (upcoming_events_list);
+        var box = new Gtk.Box (VERTICAL, 0);
+        box.add (day_label);
+        box.add (selected_date_events_list);
+        box.add (upcoming_events_list);
 
         var scrolled_window = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = NEVER,
-            child = grid,
+            child = box,
             vexpand = true
         };
 
@@ -134,6 +124,7 @@ public class Maya.View.AgendaView : Gtk.Box {
         calmodel.events_removed.connect (on_events_removed);
         calmodel.events_updated.connect (on_events_updated);
         calmodel.parameters_changed.connect (on_model_parameters_changed);
+
         unowned var time_manager = Calendar.TimeManager.get_default ();
         time_manager.on_update_today.connect (on_today_changed);
 

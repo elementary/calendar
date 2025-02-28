@@ -1,19 +1,6 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2011-2023 elementary, Inc. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Maxwell Barvian <maxwell@elementary.io>
  *              Corentin Noël <corentin@elementary.io>
@@ -55,24 +42,19 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
         }
 
-        weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-        default_theme.add_resource_path ("/io/elementary/calendar");
-
         calview = new View.CalendarView () {
             vexpand = true
         };
 
         var sidebar = new View.AgendaView () {
-            no_show_all = true,
             width_request = 160
         };
-        sidebar.show ();
 
-        var hpaned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
+        var hpaned = new Gtk.Paned (HORIZONTAL);
         hpaned.pack1 (calview, true, false);
         hpaned.pack2 (sidebar, false, false);
 
-        add (hpaned);
+        child = hpaned;
 
         var header_group = new Hdy.HeaderGroup ();
         header_group.add_header_bar (calview.header_bar);
@@ -91,7 +73,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
 
     public void on_tb_add_clicked (DateTime dt) {
         var dialog = new Maya.View.EventDialog (null, dt, this);
-        dialog.show_all ();
+        dialog.present ();
     }
 
     private void action_new_event () {
@@ -123,9 +105,10 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         if (src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false) {
             var dup_comp = Util.copy_ecal_component (comp);
             dup_comp.set_uid (Util.mangle_uid (comp.get_id ().get_uid ()));
-            var dialog = new Maya.View.EventDialog (dup_comp, null, this);
-            dialog.transient_for = this;
 
+            var dialog = new Maya.View.EventDialog (dup_comp, null, this) {
+                transient_for = this
+            };
             dialog.present ();
         } else {
             Gdk.beep ();
