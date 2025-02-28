@@ -1,19 +1,6 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2011-2018 elementary, Inc. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Maxwell Barvian
  *              Corentin Noël <corentin@elementaryos.org>
@@ -23,7 +10,6 @@
  * Represents a single day on the grid.
  */
 public class Maya.View.GridDay : Gtk.EventBox {
-
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
@@ -35,6 +21,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
     public bool draw_left_border = true;
     private VAutoHider event_box;
     private GLib.HashTable<string, EventButton> event_buttons;
+    private Gtk.EventControllerKey key_controller;
+    private Gtk.GestureMultiPress click_gesture;
 
     public bool in_current_month {
         set {
@@ -46,17 +34,19 @@ public class Maya.View.GridDay : Gtk.EventBox {
         }
     }
 
-    private const int EVENT_MARGIN = 3;
-
-    private static Gtk.CssProvider style_provider;
-
     public GridDay (DateTime date) {
         Object (date: date);
     }
 
     static construct {
-        style_provider = new Gtk.CssProvider ();
+        var style_provider = new Gtk.CssProvider ();
         style_provider.load_from_resource ("/io/elementary/calendar/Grid.css");
+
+        Gtk.StyleContext.add_provider_for_screen (
+            Gdk.Screen.get_default (),
+            style_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
     }
 
     construct {
@@ -64,38 +54,36 @@ public class Maya.View.GridDay : Gtk.EventBox {
             ((EventButton)value_data).destroy_button ();
         });
 
-        event_box = new VAutoHider ();
-        event_box.margin = EVENT_MARGIN;
-        event_box.margin_top = 0;
-        event_box.expand = true;
+        event_box = new VAutoHider () {
+            hexpand = true,
+            vexpand = true
+        };
 
-        // EventBox Properties
+        var label = new Gtk.Label ("") {
+            halign = END,
+            name = "date",
+        };
+
+        var container_box = new Gtk.Box (VERTICAL, 3);
+        container_box.add (label);
+        container_box.add (event_box);
+
         can_focus = true;
-        events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        events |= Gdk.EventMask.KEY_PRESS_MASK;
+        child = container_box;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
+        get_style_context ().add_class ("cell");
 
-        unowned Gtk.StyleContext style_context = get_style_context ();
-        style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        style_context.add_class ("cell");
+        click_gesture = new Gtk.GestureMultiPress (this) {
+            button = Gdk.BUTTON_PRIMARY,
+            propagation_phase = BUBBLE
+        };
+        click_gesture.released.connect (on_button_press);
 
-        var label = new Gtk.Label ("");
-        label.halign = Gtk.Align.END;
-        label.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        label.margin = EVENT_MARGIN;
-        label.margin_bottom = 0;
-        label.name = "date";
+        key_controller = new Gtk.EventControllerKey (this) {
+            propagation_phase = BUBBLE
+        };
+        key_controller.key_pressed.connect (on_key_press);
 
-        var container_grid = new Gtk.Grid ();
-        container_grid.attach (label, 0, 0, 1, 1);
-        container_grid.attach (event_box, 0, 1, 1, 1);
-        container_grid.show_all ();
-
-        add (container_grid);
-
-        // Signals and handlers
-        button_press_event.connect (on_button_press);
-        key_press_event.connect (on_key_press);
         scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
 
         Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
@@ -147,7 +135,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
         event_box.add (button);
         button.show_all ();
-
     }
 
     public bool update_event (ECal.Component modified_event) {
@@ -184,16 +171,16 @@ public class Maya.View.GridDay : Gtk.EventBox {
         }
     }
 
-    private bool on_button_press (Gdk.EventButton event) {
-        if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY)
+    private void on_button_press (int n_press, double x, double y) {
+        if (n_press == 2) {
             on_event_add (date);
+        }
 
         grab_focus ();
-        return false;
     }
 
-    private bool on_key_press (Gdk.EventKey event) {
-        if (event.keyval == Gdk.keyval_from_name ("Return") ) {
+    private bool on_key_press (Gtk.EventControllerKey event, uint keyval, uint keycode, Gdk.ModifierType state) {
+        if (keyval == Gdk.keyval_from_name ("Return") ) {
             on_event_add (date);
             return true;
         }
