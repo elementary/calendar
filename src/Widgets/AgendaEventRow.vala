@@ -172,26 +172,28 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
 
-        event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU);
-        event_image.pixel_size = 16;
-        event_image.valign = Gtk.Align.START;
+        event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU) {
+            pixel_size = 16,
+            valign = START
+        };
 
         event_image_context = event_image.get_style_context ();
         event_image_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        name_label = new Gtk.Label ("");
-        name_label.selectable = false;
-        name_label.wrap = true;
-        name_label.wrap_mode = Pango.WrapMode.WORD_CHAR;
-        name_label.xalign = 0;
+        name_label = new Gtk.Label ("") {
+            selectable = false,
+            wrap = true,
+            wrap_mode = WORD_CHAR,
+            xalign = 0
+        };
 
         var name_label_context = name_label.get_style_context ();
         name_label_context.add_class ("title");
         name_label_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         datetime_label = new Gtk.Label ("") {
-            ellipsize = Pango.EllipsizeMode.END,
-            halign = Gtk.Align.START,
+            ellipsize = END,
+            halign = START,
             selectable = false,
             use_markup = true,
             xalign = 0
@@ -203,33 +205,39 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             margin_top = 6,
             selectable = false,
             wrap = true,
-            wrap_mode = Pango.WrapMode.WORD_CHAR,
+            wrap_mode = WORD_CHAR,
             xalign = 0
         };
 
         var location_revealer = new Gtk.Revealer ();
         location_revealer.add (location_label);
 
-        var main_grid = new Gtk.Grid ();
-        main_grid.column_spacing = 6;
-        main_grid.margin = 6;
-        main_grid.margin_start = main_grid.margin_end = 12;
-        main_grid.attach (event_image, 0, 0, 1, 1);
-        main_grid.attach (name_label, 1, 0, 1, 1);
-        main_grid.attach (datetime_label, 1, 1, 1, 1);
+        var main_grid = new Gtk.Grid () {
+            column_spacing = 6,
+            margin_top = 6,
+            margin_end = 12,
+            margin_bottom = 6,
+            margin_start = 12
+        };
+        main_grid.attach (event_image, 0, 0);
+        main_grid.attach (name_label, 1, 0);
+        main_grid.attach (datetime_label, 1, 1);
         main_grid.attach (location_revealer, 1, 2);
 
         main_grid_context = main_grid.get_style_context ();
         main_grid_context.add_class ("event");
         main_grid_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        var event_box = new Gtk.EventBox ();
-        event_box.add (main_grid);
+        var event_box = new Gtk.EventBox () {
+            child = main_grid
+        };
 
-        revealer = new Gtk.Revealer ();
-        revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN;
-        revealer.add (event_box);
-        add (revealer);
+        revealer = new Gtk.Revealer () {
+            child = event_box,
+            transition_type = SLIDE_DOWN
+        };
+
+        child = revealer;
 
         var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
