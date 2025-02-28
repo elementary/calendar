@@ -60,6 +60,27 @@ namespace Maya {
             GLib.Intl.textdomain (GETTEXT_PACKAGE);
         }
 
+        protected override void startup () {
+            base.startup ();
+
+            Hdy.init ();
+
+            var granite_settings = Granite.Settings.get_default ();
+            var gtk_settings = Gtk.Settings.get_default ();
+
+            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+
+            granite_settings.notify["prefers-color-scheme"].connect (() => {
+                gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+            });
+
+            var quit_action = new SimpleAction ("quit", null);
+            quit_action.activate.connect (quit);
+
+            add_action (quit_action);
+            set_accels_for_action ("app.quit", { "<Control>q" });
+        }
+
         protected override void activate () {
             new Calendar.TodayEventMonitor ();
             if (run_in_background) {
@@ -107,15 +128,6 @@ namespace Maya {
                     return false;
                 });
             }
-
-            var granite_settings = Granite.Settings.get_default ();
-            var gtk_settings = Gtk.Settings.get_default ();
-
-            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-
-            granite_settings.notify["prefers-color-scheme"].connect (() => {
-                gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-            });
         }
 
         public override void open (File[] files, string hint) {
@@ -150,16 +162,6 @@ namespace Maya {
             }
 
             window.destroy.connect (on_quit);
-
-            var quit_action = new SimpleAction ("quit", null);
-            quit_action.activate.connect (() => {
-                if (window != null) {
-                    window.destroy ();
-                }
-            });
-
-            add_action (quit_action);
-            set_accels_for_action ("app.quit", { "<Control>q" });
         }
 
         private void on_quit () {

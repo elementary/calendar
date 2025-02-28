@@ -49,7 +49,6 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
     }
 
     construct {
-        Hdy.init ();
         add_action_entries (ACTION_ENTRIES, this);
 
         foreach (var action in action_accelerators.get_keys ()) {
