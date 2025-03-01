@@ -27,7 +27,6 @@ calendar_files = files(
     'Grid/VAutoHider.vala',
     'SourceDialog/SourceDialog.vala',
     'Widgets/AgendaEventRow.vala',
-    'Widgets/CalendarButton.vala',
     'Widgets/CalendarChooser.vala',
     'Widgets/CalendarRow.vala',
     'Widgets/ContractorButtonWithMenu.vala',

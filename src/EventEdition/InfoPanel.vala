@@ -27,7 +27,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     private Granite.Widgets.TimePicker from_time_picker;
     private Granite.Widgets.TimePicker to_time_picker;
     private Gtk.Label timezone_label;
-    private Maya.View.Widgets.CalendarButton calendar_button;
+    private Widgets.CalendarChooser calchooser;
 
     private EventDialog parent_dialog;
 
@@ -136,10 +136,33 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         });
 
         var calendar_label = new Granite.HeaderLabel (_("Calendar:"));
-        calendar_button = new Maya.View.Widgets.CalendarButton ();
+
+        calchooser = new Widgets.CalendarChooser () {
+            margin_bottom = 6
+        };
+
+        var popover = new Gtk.Popover (null) {
+            child = calchooser,
+            width_request = 310
+        };
+
+        var current_calendar_grid = new CalendarRow (calchooser.current_source) {
+            halign = START,
+            hexpand = true
+        };
+
+        var button_box = new Gtk.Box (HORIZONTAL, 6);
+        button_box.add (current_calendar_grid);
+        button_box.add (new Gtk.Image.from_icon_name ("pan-down-symbolic", Gtk.IconSize.MENU));
+
+        var calendar_button = new Gtk.MenuButton () {
+            child = button_box,
+            popover = popover
+        };
+
         // Select the first calendar we can find, if none is default
         if (parent_dialog.source == null) {
-            parent_dialog.source = calendar_button.current_source;
+            parent_dialog.source = calchooser.current_source;
         }
 
         var comment_label = new Granite.HeaderLabel (_("Comments:"));
@@ -163,7 +186,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         // Row: title & calendar
         attach (title_label, 0, 0, 1, 1);
         attach (title_entry, 0, 1, 1, 1);
-        if (calendar_button.sources.length () > 1 && parent_dialog.can_edit) {
+        if (calchooser.sources.length () > 1 && parent_dialog.can_edit) {
             attach (calendar_label, 1, 0, 4, 1);
             attach (calendar_button, 1, 1, 4, 1);
         }
@@ -185,6 +208,17 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         attach (frame, 0, 9, 5, 1);
 
         load ();
+
+        calchooser.bind_property ("current-source", current_calendar_grid, "source", SYNC_CREATE);
+
+        calchooser.notify["current-source"].connect ((s, p) => {
+            calendar_button.tooltip_text = "%s—%s".printf (current_calendar_grid.label, current_calendar_grid.location);
+            popover.popdown ();
+        });
+
+        popover.unmap.connect (() => {
+            calchooser.clear_search_entry ();
+        });
     }
 
     /**
@@ -225,7 +259,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         comp.add_property (property);
 
         // Save the selected source
-        parent_dialog.source = calendar_button.current_source;
+        parent_dialog.source = calchooser.current_source;
     }
 
     //--- Helpers ---//
@@ -282,7 +316,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             }
 
             // Load the source
-            calendar_button.current_source = parent_dialog.original_source;
+            calchooser.current_source = parent_dialog.original_source;
         } else {
             parent_dialog.ecal = new ECal.Component ();
             parent_dialog.ecal.set_new_vtype (ECal.ComponentVType.EVENT);
@@ -313,7 +347,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             timezone = Calendar.TimeManager.get_default ().system_timezone;
 
             // Load the source
-            calendar_button.current_source = parent_dialog.source;
+            calchooser.current_source = parent_dialog.source;
         }
 
         // Populate timezone label with the timezone that was decided
