@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-26 16:16+0000\n"
-"PO-Revision-Date: 2024-06-19 20:58+0000\n"
+"PO-Revision-Date: 2025-03-02 04:12+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
 "calendar/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -637,7 +637,7 @@ msgstr "週番号を表示"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "ほか %u 件…"
+msgstr "他 %u 件…"
 
 #: src/SourceDialog/SourceDialog.vala:55
 msgid "Create"
@@ -819,7 +819,7 @@ msgstr "予定“%s”のこの回を削除しますか?"
 msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
-msgstr "この回は完全に削除されますが、そのほかのすべての回は変更されません。"
+msgstr "この回は完全に削除されますが、その他のすべての回は変更されません。"
 
 #: src/Widgets/DeleteDialog.vala:18
 msgid "Delete Occurrence"
