@@ -78,6 +78,9 @@ modules:
       - type: archive
         url: https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.4.tar.xz
         sha256: 1b36a839db1c8d898066e19be78b995930a0a2f2a886f149e4f64e1755f064f7
+        x-checker-data:
+          type: gnome
+          name: evolution-data-server
     modules:
       - name: intltool
         cleanup:
@@ -146,9 +149,12 @@ modules:
       - '-Dimport_tool=false'
       - '-Dinspect_tool=false'
     sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/folks.git
-        tag: '0.15.5'
+      - type: archive
+        url: https://download.gnome.org/sources/folks/0.15/folks-0.15.9.tar.xz
+        sha256: 2311b37355c351f33f163fdc394874a22a0a0682c319493d6d8a6e420711415f
+        x-checker-data:
+          type: gnome
+          name: folks
 
   - name: geocode-glib
     buildsystem: meson
@@ -160,6 +166,9 @@ modules:
       - type: archive
         url: https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz
         sha256: 2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa
+        xchecker-data:
+          type: gnome
+          name: geocode-glib
 
   - name: calendar
     buildsystem: meson
