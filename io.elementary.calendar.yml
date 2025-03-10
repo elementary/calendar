@@ -4,48 +4,48 @@ runtime-version: '8'
 sdk: io.elementary.Sdk
 command: io.elementary.calendar
 finish-args:
-  - '--share=ipc'
-  - '--share=network'
-  - '--socket=fallback-x11'
-  - '--socket=wayland'
-  - '--device=dri'
+  - --share=ipc
+  - --share=network
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
 
   # EDS DBus interfaces
-  - '--talk-name=org.gnome.evolution.dataserver.AddressBook10'
-  - '--talk-name=org.gnome.evolution.dataserver.Calendar8'
-  - '--talk-name=org.gnome.evolution.dataserver.Sources5'
-  - '--talk-name=org.gnome.evolution.dataserver.Subprocess.Backend.*'
+  - --talk-name=org.gnome.evolution.dataserver.AddressBook10
+  - --talk-name=org.gnome.evolution.dataserver.Calendar8
+  - --talk-name=org.gnome.evolution.dataserver.Sources5
+  - --talk-name=org.gnome.evolution.dataserver.Subprocess.Backend.*
 
-  - '--talk-name=org.elementary.Contractor'
-  - '--talk-name=org.freedesktop.Notifications'
-  - '--system-talk-name=org.freedesktop.GeoClue2'
-  - '--system-talk-name=org.freedesktop.login1'
+  - --talk-name=org.elementary.Contractor
+  - --talk-name=org.freedesktop.Notifications
+  - --system-talk-name=org.freedesktop.GeoClue2
+  - --system-talk-name=org.freedesktop.login1
 
-  - '--metadata=X-DConf=migrate-path=/io/elementary/calendar/'
+  - --metadata=X-DConf=migrate-path=/io/elementary/calendar/
 cleanup:
-  - '/include'
-  - '/lib/pkgconfig'
-  - '/lib/girepository-1.0'
-  - '/share/gir-1.0'
-  - '/share/vala'
+  - /include
+  - /lib/pkgconfig
+  - /lib/girepository-1.0
+  - /share/gir-1.0
+  - /share/vala
   - '*.a'
   - '*.la'
 modules:
   - name: libical
     buildsystem: cmake-ninja
     cleanup:
-      - '/lib/cmake'
+      - /lib/cmake
     config-opts:
-      - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
-      - '-DCMAKE_INSTALL_LIBDIR=/app/lib'
-      - '-DBUILD_SHARED_LIBS=ON'
-      - '-DICAL_GLIB=true'
-      - '-DICAL_GLIB_VAPI=true'
-      - '-DGOBJECT_INTROSPECTION=true'
-      - '-DICAL_BUILD_DOCS=false'
-      - '-DWITH_CXX_BINDINGS=false'
-      - '-DSHARED_ONLY=true'
-      - '-DLIBICAL_BUILD_TESTING=false'
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DCMAKE_INSTALL_LIBDIR=/app/lib
+      - -DBUILD_SHARED_LIBS=ON
+      - -DICAL_GLIB=true
+      - -DICAL_GLIB_VAPI=true
+      - -DGOBJECT_INTROSPECTION=true
+      - -DICAL_BUILD_DOCS=false
+      - -DWITH_CXX_BINDINGS=false
+      - -DSHARED_ONLY=true
+      - -DLIBICAL_BUILD_TESTING=false
     sources:
       - type: git
         url: https://github.com/libical/libical.git
@@ -54,30 +54,30 @@ modules:
   - name: evolution-data-server
     buildsystem: cmake-ninja
     cleanup:
-      - '/lib/evolution-data-server/*-backends'
-      - '/libexec'
-      - '/share/dbus-1/services'
+      - /lib/evolution-data-server/*-backends
+      - /libexec
+      - /share/dbus-1/services
     config-opts:
-      - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
-      - '-DENABLE_GTK=ON'
-      - '-DENABLE_CANBERRA=OFF'
-      - '-DENABLE_GOA=OFF'
-      - '-DENABLE_GOOGLE=ON'
-      - '-DENABLE_VALA_BINDINGS=ON'
-      - '-DENABLE_INTROSPECTION=ON'
-      - '-DENABLE_GOA=OFF'
-      - '-DENABLE_CANBERRA=OFF'
-      - '-DWITH_LIBDB=OFF'
-      - '-DENABLE_WEATHER=OFF'
-      - '-DWITH_OPENLDAP=OFF'
-      - '-DENABLE_INSTALLED_TESTS=OFF'
-      - '-DENABLE_TESTS=OFF'
-      - '-DENABLE_GTK_DOC=OFF'
-      - '-DENABLE_EXAMPLES=OFF'
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DENABLE_GTK=ON
+      - -DENABLE_CANBERRA=OFF
+      - -DENABLE_GOA=OFF
+      - -DENABLE_GOOGLE=ON
+      - -DENABLE_VALA_BINDINGS=ON
+      - -DENABLE_INTROSPECTION=ON
+      - -DENABLE_GOA=OFF
+      - -DENABLE_CANBERRA=OFF
+      - -DWITH_LIBDB=OFF
+      - -DENABLE_WEATHER=OFF
+      - -DWITH_OPENLDAP=OFF
+      - -DENABLE_INSTALLED_TESTS=OFF
+      - -DENABLE_TESTS=OFF
+      - -DENABLE_GTK_DOC=OFF
+      - -DENABLE_EXAMPLES=OFF
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.4.tar.xz
-        sha256: 1b36a839db1c8d898066e19be78b995930a0a2f2a886f149e4f64e1755f064f7
+        url: https://download.gnome.org/sources/evolution-data-server/3.54/evolution-data-server-3.54.3.tar.xz
+        sha256: 5108dc38ee5cc1f8ef9155e87f6c4129f9644550a0962c5ae23ff807b57cb8d0
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -92,7 +92,7 @@ modules:
 
   - name: clutter-gtk
     cleanup:
-      - "/share/gtk-doc"
+      - /share/gtk-doc
     sources:
       - type: archive
         url: https://download.gnome.org/sources/clutter-gtk/1.8/clutter-gtk-1.8.4.tar.xz
@@ -100,34 +100,34 @@ modules:
     modules:
       - name: cogl
         config-opts:
-          - "--disable-cogl-gst"
-          - "--disable-gtk-doc"
-          - "--enable-xlib-egl-platform"
-          - "--enable-wayland-egl-platform"
+          - --disable-cogl-gst
+          - --disable-gtk-doc
+          - --enable-xlib-egl-platform
+          - --enable-wayland-egl-platform
         cleanup:
-          - "/share/gtk-doc"
-          - "/share/cogl/examples-data"
+          - /share/gtk-doc
+          - /share/cogl/examples-data
         sources:
           - type: archive
             url: https://download.gnome.org/sources/cogl/1.22/cogl-1.22.8.tar.xz
             sha256: a805b2b019184710ff53d0496f9f0ce6dcca420c141a0f4f6fcc02131581d759
       - name: clutter
         config-opts:
-          - "--disable-gtk-doc"
-          - "--enable-egl-backend"
-          - "--enable-wayland-backend"
-          - "--enable-deprecated=no"
+          - --disable-gtk-doc
+          - --enable-egl-backend
+          - --enable-wayland-backend
+          - --enable-deprecated=no
         cleanup:
-          - "/share/gtk-doc"
+          - /share/gtk-doc
         sources:
           - type: archive
             url: https://download.gnome.org/sources/clutter/1.26/clutter-1.26.4.tar.xz
             sha256: 8b48fac159843f556d0a6be3dbfc6b083fc6d9c58a20a49a6b4919ab4263c4e6
       - name: clutter-gst
         config-opts:
-          - "--disable-gtk-doc"
+          - --disable-gtk-doc
         cleanup:
-          - "/share/gtk-doc"
+          - /share/gtk-doc
         sources:
           - type: archive
             url: https://download.gnome.org/sources/clutter-gst/3.0/clutter-gst-3.0.27.tar.xz
@@ -143,11 +143,11 @@ modules:
   - name: folks
     buildsystem: meson
     config-opts:
-      - '-Dbluez_backend=false'
-      - '-Dofono_backend=false'
-      - '-Dtelepathy_backend=false'
-      - '-Dimport_tool=false'
-      - '-Dinspect_tool=false'
+      - -Dbluez_backend=false
+      - -Dofono_backend=false
+      - -Dtelepathy_backend=false
+      - -Dimport_tool=false
+      - -Dinspect_tool=false
     sources:
       - type: archive
         url: https://download.gnome.org/sources/folks/0.15/folks-0.15.9.tar.xz
@@ -159,9 +159,9 @@ modules:
   - name: geocode-glib
     buildsystem: meson
     config-opts:
-      - '-Denable-installed-tests=false'
-      - '-Denable-gtk-doc=false'
-      - '-Dsoup2=false'
+      - -Denable-installed-tests=false
+      - -Denable-gtk-doc=false
+      - -Dsoup2=false
     sources:
       - type: archive
         url: https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz
