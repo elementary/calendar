@@ -15,4 +15,5 @@ X-GNOME-UsesNotifications=true
 
 [Desktop Action AddEvent]
 Name=Add Event
+Icon=io.elementary.calendar.event-new
 Exec=io.elementary.calendar -a

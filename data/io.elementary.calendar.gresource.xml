@@ -19,5 +19,10 @@
     <file alias="scalable/categories/event-wedding-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-wedding-symbolic.svg</file>
     <file alias="scalable/actions/calendar-go-today.svg" compressed="true" preprocess="xml-stripblanks">calendar-go-today.svg</file>
     <file alias="scalable/emblems/location-marker.svg" compressed="true" preprocess="xml-stripblanks">LocationMarker.svg</file>
+
+    <file alias="16x16/actions/event-new.svg" compressed="true" preprocess="xml-stripblanks">icons/16/event-new.svg</file>
+    <file alias="16x16@2/actions/event-new.svg" compressed="true" preprocess="xml-stripblanks">icons/16/event-new.svg</file>
+    <file alias="24x24/actions/event-new.svg" compressed="true" preprocess="xml-stripblanks">icons/24/event-new.svg</file>
+    <file alias="24x24@2/actions/event-new.svg" compressed="true" preprocess="xml-stripblanks">icons/24/event-new.svg</file>
   </gresource>
 </gresources>

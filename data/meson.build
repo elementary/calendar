@@ -13,6 +13,26 @@ foreach i : icon_sizes
     )
 endforeach
 
+action_sizes = ['16', '24']
+foreach i : action_sizes
+    install_data(
+        join_paths('icons', i, 'event-new.svg'),
+        install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', i + 'x' + i, 'actions'),
+        rename: meson.project_name() + '.event-new.svg'
+    )
+    install_data(
+        join_paths('icons', i, 'event-new.svg'),
+        install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', i + 'x' + i + '@2', 'actions'),
+        rename: meson.project_name() + '.event-new.svg'
+    )
+endforeach
+
+install_data(
+    join_paths('icons', '16', 'event-new-symbolic.svg'),
+    install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', 'scalable', 'actions'),
+    rename: meson.project_name() + '.event-new-symbolic.svg'
+)
+
 install_data(
     meson.project_name() + '.gschema.xml',
     install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'glib-2.0', 'schemas')
