@@ -76,8 +76,8 @@ modules:
       - -DENABLE_EXAMPLES=OFF
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.56/evolution-data-server-3.56.2.tar.xz
-        sha256: df4ec29950f29a76eac6fbe0f814c48d2cef7d3fdb905002a4a883dd761ce93c
+        url: https://download.gnome.org/sources/evolution-data-server/3.57/evolution-data-server-3.57.1.tar.xz
+        sha256: e23534f87599a16c17790aca05ea253781daca6fbe57ab318628e36aa064e8bd
         x-checker-data:
           type: gnome
           name: evolution-data-server
