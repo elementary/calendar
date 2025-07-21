@@ -17,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
+public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
 
     /** A searchable list of calendars for the user to choose from.
     *
@@ -45,10 +45,13 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
 
         current_source = registry.default_calendar;
 
-        search_entry = new Gtk.SearchEntry ();
-        search_entry.margin = 12;
-        search_entry.margin_bottom = 6;
-        search_entry.placeholder_text = _("Search Calendars");
+        search_entry = new Gtk.SearchEntry () {
+            margin_top = 12,
+            margin_end = 12,
+            margin_bottom = 6,
+            margin_start = 12,
+            placeholder_text = _("Search Calendars")
+        };
 
         var placeholder = new Granite.Widgets.AlertView (
             _("No Results"),
@@ -57,19 +60,22 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
         );
         placeholder.show_all ();
 
-        var list_box = new Gtk.ListBox ();
-        list_box.activate_on_single_click = true;
+        var list_box = new Gtk.ListBox () {
+            activate_on_single_click = true
+        };
         list_box.set_placeholder (placeholder);
 
-        var scrolled = new Gtk.ScrolledWindow (null, null);
-        scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        scrolled.add (list_box);
-        scrolled.max_content_height = 300;
-        scrolled.propagate_natural_height = true;
+        var scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = list_box,
+            hscrollbar_policy = NEVER,
+            max_content_height = 300,
+            propagate_natural_height = true
+        };
 
         margin_bottom = 6;
-        attach (search_entry, 0, 0);
-        attach (scrolled, 0, 1);
+        orientation = VERTICAL;
+        add (search_entry);
+        add (scrolled);
         show_all ();
 
         list_box.set_filter_func (filter_function);
@@ -125,12 +131,16 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
 
         // Populate list_box
         foreach (var source in sources) {
-            var calrow = new CalendarRow (source);
-            calrow.margin = 6;
-            calrow.margin_start = 12;
+            var calrow = new CalendarRow (source) {
+                margin_top = 6,
+                margin_end = 6,
+                margin_bottom = 6,
+                margin_start = 12
+            };
 
-            var row = new Gtk.ListBoxRow ();
-            row.add (calrow);
+            var row = new Gtk.ListBoxRow () {
+                child = calrow
+            };
             row.show_all ();
 
             list_box.add (row);
@@ -163,9 +173,11 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Grid {
             }
         }
 
-        var header = new Granite.HeaderLabel (row_location);
-        header.margin = 6;
-        header.margin_bottom = 0;
+        var header = new Granite.HeaderLabel (row_location) {
+                margin_top = 6,
+                margin_end = 6,
+                margin_start = 6
+        };
 
         row.set_header (header);
 
