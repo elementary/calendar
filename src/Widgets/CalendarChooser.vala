@@ -174,9 +174,9 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
         }
 
         var header = new Granite.HeaderLabel (row_location) {
-                margin_top = 6,
-                margin_end = 6,
-                margin_start = 6
+            margin_top = 6,
+            margin_end = 6,
+            margin_start = 6
         };
 
         row.set_header (header);
