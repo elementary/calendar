@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 14:24+0000\n"
+"POT-Creation-Date: 2025-07-22 18:21+0000\n"
 "PO-Revision-Date: 2024-09-20 09:43+0000\n"
 "Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
@@ -200,9 +200,8 @@ msgstr "Etkinlik Oluştur"
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
-#: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "Vazgeç"
 
@@ -635,17 +634,29 @@ msgstr "Cmt"
 msgid "Sun"
 msgstr "Paz"
 
-#: src/Grid/CalendarView.vala:81
+#: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
+msgid "Export Calendar…"
+msgstr "Takvimi Dışarı Aktar…"
+
+#: src/Grid/CalendarView.vala:131
 msgid "Go to today's date"
 msgstr "Bugünün tarihine git"
 
-#: src/Grid/CalendarView.vala:96
+#: src/Grid/CalendarView.vala:149
 msgid "Export or Share the default Calendar"
 msgstr "Ön tanımlı takvimi paylaş ya da dışa aktar"
 
-#: src/Grid/CalendarView.vala:103
+#: src/Grid/CalendarView.vala:157
 msgid "Manage Calendars"
 msgstr "Takvimleri Yönet"
+
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+msgid "Save"
+msgstr "Kaydet"
+
+#: src/Grid/CalendarView.vala:244
+msgid "calendar.ics"
+msgstr "takvim.ics"
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
@@ -687,11 +698,6 @@ msgstr "Varsayılan takvim olarak işaretle"
 #: src/SourceDialog/SourceDialog.vala:255
 msgid "Create Calendar"
 msgstr "Takvim Oluştur"
-
-#: src/SourceDialog/SourceDialog.vala:260
-#: src/Widgets/ContractorButtonWithMenu.vala:90
-msgid "Save"
-msgstr "Kaydet"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -817,15 +823,6 @@ msgstr ""
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
 msgstr "Ağ Ayarları…"
-
-#: src/Widgets/ContractorButtonWithMenu.vala:72
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Export Calendar…"
-msgstr "Takvimi Dışarı Aktar…"
-
-#: src/Widgets/ContractorButtonWithMenu.vala:95
-msgid "calendar.ics"
-msgstr "takvim.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
