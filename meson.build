@@ -29,14 +29,7 @@ granite_dep = dependency('granite-7', version: '>=7.0.0')
 gtk_dep = dependency('gtk4', version: '>=3.22')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>=3.45.1')
 libedataserverui_dep = dependency('libedataserverui4-1.0', version: '>= 3.46.4')
-if (libedataserver_dep.version().version_compare ('>=3.46'))
-    libsoup_dep = []
-    geocode_glib_dep = dependency('geocode-glib-2.0')
-    add_project_arguments('--define', 'HAS_EDS_3_46', language: 'vala')
-else
-    geocode_glib_dep = dependency('geocode-glib-1.0')
-    libsoup_dep = dependency('libsoup-2.4')
-endif
+geocode_glib_dep = dependency('geocode-glib-2.0')
 gmodule_dep = dependency('gmodule-2.0')
 clutter_dep = dependency('clutter-1.0')
 clutter_gtk_dep = dependency('clutter-gtk-1.0')

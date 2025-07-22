@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 14:24+0000\n"
+"POT-Creation-Date: 2025-07-22 18:21+0000\n"
 "PO-Revision-Date: 2025-02-21 00:27+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/calendar/"
@@ -201,9 +201,8 @@ msgstr "Esemény létrehozása"
 msgid "Save Changes"
 msgstr "A módosítások mentése"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
-#: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "Mégse"
 
@@ -636,17 +635,29 @@ msgstr "Szo"
 msgid "Sun"
 msgstr "V"
 
-#: src/Grid/CalendarView.vala:81
+#: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
+msgid "Export Calendar…"
+msgstr "Naptár exportálása…"
+
+#: src/Grid/CalendarView.vala:131
 msgid "Go to today's date"
 msgstr "Ugrás a mai dátumra"
 
-#: src/Grid/CalendarView.vala:96
+#: src/Grid/CalendarView.vala:149
 msgid "Export or Share the default Calendar"
 msgstr "Alapértelmezett naptár exportálása vagy megosztása"
 
-#: src/Grid/CalendarView.vala:103
+#: src/Grid/CalendarView.vala:157
 msgid "Manage Calendars"
 msgstr "Naptárak kezelése"
+
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+msgid "Save"
+msgstr "Mentés"
+
+#: src/Grid/CalendarView.vala:244
+msgid "calendar.ics"
+msgstr "naptar.ics"
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
@@ -688,11 +699,6 @@ msgstr "Megjelölés alapértelmezett naptárként"
 #: src/SourceDialog/SourceDialog.vala:255
 msgid "Create Calendar"
 msgstr "Naptár létrehozása"
-
-#: src/SourceDialog/SourceDialog.vala:260
-#: src/Widgets/ContractorButtonWithMenu.vala:90
-msgid "Save"
-msgstr "Mentés"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -814,15 +820,6 @@ msgstr ""
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
 msgstr "Hálózati beállítások…"
-
-#: src/Widgets/ContractorButtonWithMenu.vala:72
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Export Calendar…"
-msgstr "Naptár exportálása…"
-
-#: src/Widgets/ContractorButtonWithMenu.vala:95
-msgid "calendar.ics"
-msgstr "naptar.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"

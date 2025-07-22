@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 14:24+0000\n"
+"POT-Creation-Date: 2025-07-22 18:21+0000\n"
 "PO-Revision-Date: 2017-01-03 09:18+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: \n"
@@ -197,9 +197,8 @@ msgstr "پائالىيەت قۇرۇش"
 msgid "Save Changes"
 msgstr "ئۆزگەرتىشلەرنى ساقلاش"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
-#: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:98
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "ئەمەلدىن قالدۇرۇش"
 
@@ -643,17 +642,30 @@ msgstr "شەنبە"
 msgid "Sun"
 msgstr "يەكشەنبە"
 
-#: src/Grid/CalendarView.vala:81
+#: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
+#, fuzzy
+msgid "Export Calendar…"
+msgstr "كالېندارنى چىقىرىش...."
+
+#: src/Grid/CalendarView.vala:131
 msgid "Go to today's date"
 msgstr "بۈگۈننى كۆرسىتىش"
 
-#: src/Grid/CalendarView.vala:96
+#: src/Grid/CalendarView.vala:149
 msgid "Export or Share the default Calendar"
 msgstr "سۈكۈتتىكى كالېندارنى چىقىرىش ياكى ھەمبەھىرلەش"
 
-#: src/Grid/CalendarView.vala:103
+#: src/Grid/CalendarView.vala:157
 msgid "Manage Calendars"
 msgstr "كالېندارنى باشقۇرۇش"
+
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+msgid "Save"
+msgstr "ساقلاش"
+
+#: src/Grid/CalendarView.vala:244
+msgid "calendar.ics"
+msgstr "calendar.ics"
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
@@ -695,11 +707,6 @@ msgstr "سۈكۈتتىكى كالېندار قىلىپ تەڭشەش"
 #: src/SourceDialog/SourceDialog.vala:255
 msgid "Create Calendar"
 msgstr "كالېندار قۇرۇش"
-
-#: src/SourceDialog/SourceDialog.vala:260
-#: src/Widgets/ContractorButtonWithMenu.vala:90
-msgid "Save"
-msgstr "ساقلاش"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -819,16 +826,6 @@ msgstr ""
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
 msgstr ""
-
-#: src/Widgets/ContractorButtonWithMenu.vala:72
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-#, fuzzy
-msgid "Export Calendar…"
-msgstr "كالېندارنى چىقىرىش...."
-
-#: src/Widgets/ContractorButtonWithMenu.vala:95
-msgid "calendar.ics"
-msgstr "calendar.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
