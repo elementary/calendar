@@ -29,7 +29,6 @@ gtk_dep = dependency('gtk+-3.0', version: '>=3.22')
 handy_dep = dependency('libhandy-1', version: '>=0.90.0')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>=3.8.0')
 libedataserverui_dep = dependency('libedataserverui-1.2', version: '>=3.46')
-libsoup_dep = []
 geocode_glib_dep = dependency('geocode-glib-2.0')
 gmodule_dep = dependency('gmodule-2.0')
 champlain_dep = dependency('champlain-0.12', fallback: ['libchamplain', 'libchamplain_dep'], default_options: ['default_library=static', 'introspection=false', 'vapi=false'])
