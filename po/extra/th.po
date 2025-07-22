@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
+"POT-Creation-Date: 2025-07-22 12:19+0000\n"
 "PO-Revision-Date: 2024-09-02 20:05+0000\n"
 "Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/calendar/extra/th/"
@@ -35,10 +35,6 @@ msgid ""
 msgstr ""
 "แอปขนาดเบาและกะทัดรัดที่สามารถซิงค์และจัดการปฏิทินหลายอันได้ในที่เดียว เช่น Google "
 "Calendar, Outlook และ CalDAV"
-
-#: data/calendar.metainfo.xml.in:52
-msgid "elementary, Inc."
-msgstr ""
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -91,9 +87,7 @@ msgstr ""
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-"แพลนเนอร์;วันที่;วัน;เหตุการณ์;ปฏิทิน;Maya;Planner;Dates;Days;Events;Calendar;ics;"
-"caldav;evolution;"
+msgstr "แพลนเนอร์;วันที่;วัน;เหตุการณ์;ปฏิทิน;Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
