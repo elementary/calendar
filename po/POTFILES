@@ -43,7 +43,6 @@ src/TodayEventMonitor.vala
 src/Widgets/AgendaEventRow.vala
 src/Widgets/CalendarChooser.vala
 src/Widgets/ConnectivityInfoBar.vala
-src/Widgets/ContractorButtonWithMenu.vala
 src/Widgets/DateSwitcher.vala
 src/Widgets/DateTimePicker.vala
 src/Widgets/DynamicSpinner.vala
