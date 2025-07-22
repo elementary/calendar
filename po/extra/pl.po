@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
+"POT-Creation-Date: 2025-07-22 12:19+0000\n"
 "PO-Revision-Date: 2024-09-07 14:28+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/calendar/extra/pl/"
@@ -37,10 +37,6 @@ msgid ""
 msgstr ""
 "Niewielki i lekki program, który synchronizuje i zarządza wieloma "
 "kalendarzami w jednym miejscu, jak Google Calendar, Outlook i CalDAV."
-
-#: data/calendar.metainfo.xml.in:52
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -102,6 +98,9 @@ msgstr "Maya;Planista;Daty;Dni;Wydarzenia;Kalendarz;ics;caldav;evolution;"
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Dodaj wydarzenie"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr "Upewniono się, że Kalendarz uruchamia się w tle przy starcie"

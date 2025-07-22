@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
+"POT-Creation-Date: 2025-07-22 12:19+0000\n"
 "PO-Revision-Date: 2024-09-12 22:16+0000\n"
 "Last-Translator: Daniel Hejduk <danielhejduk@disroot.org>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -72,41 +72,41 @@ msgstr "Používat zabezpečené připojení"
 msgid "Server handles meeting invitations"
 msgstr "Server spravuje pozvánky na schůzky"
 
-#: src/AgendaView.vala:41
+#: src/AgendaView.vala:29
 msgid "Create a new event"
 msgstr "Vytvořit novou událost"
 
-#: src/AgendaView.vala:64
+#: src/AgendaView.vala:52
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr "Zde se zobrazí nadcházející události, až vyberete datum s událostmi."
 
-#: src/AgendaView.vala:162
+#: src/AgendaView.vala:153
 msgid "During the day"
 msgstr "Během dne"
 
-#: src/AgendaView.vala:170
+#: src/AgendaView.vala:161
 msgid "All day"
 msgstr "Celý den"
 
-#: src/AgendaView.vala:287
+#: src/AgendaView.vala:278
 msgid "Tomorrow"
 msgstr "Zítra"
 
-#: src/AgendaView.vala:290
+#: src/AgendaView.vala:281
 msgid "This Week"
 msgstr "Tento týden"
 
-#: src/AgendaView.vala:293
+#: src/AgendaView.vala:284
 msgid "Next Week"
 msgstr "Příští týden"
 
-#: src/AgendaView.vala:296
+#: src/AgendaView.vala:287
 msgid "This Month"
 msgstr "Tento měsíc"
 
-#: src/AgendaView.vala:299
+#: src/AgendaView.vala:290
 msgid "Next Month"
 msgstr "Příští měsíc"
 
@@ -122,7 +122,7 @@ msgstr "Zaměřit na daný den"
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:176
+#: src/Application.vala:178
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -130,7 +130,7 @@ msgstr ""
 "Kalendář se spustí automaticky při startu zařízení a bude běžet i když bude "
 "okno aplikace zavřené, aby mohl posílat oznámení o událostech."
 
-#: src/Application.vala:207
+#: src/Application.vala:209
 msgid "Calendar"
 msgstr "Kalendář"
 
@@ -185,9 +185,10 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Opakování"
 
-#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
-#: src/Widgets/DeleteDialog.vala:39
-msgid "Delete Event"
+#: src/EventEdition/EventDialog.vala:146
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete Event…"
 msgstr "Smazat událost"
 
 #: src/EventEdition/EventDialog.vala:161
@@ -260,7 +261,7 @@ msgstr "Stiskněte enter pro vložení události"
 msgid "Calendar:"
 msgstr "Kalendář:"
 
-#: src/EventEdition/InfoPanel.vala:145
+#: src/EventEdition/InfoPanel.vala:168
 msgid "Comments:"
 msgstr "Komentáře:"
 
@@ -686,13 +687,13 @@ msgstr "Uložit"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:65
+#: src/Widgets/AgendaEventRow.vala:67
 msgid "appointment;meeting"
 msgstr "schůzka;setkání;porada;sraz"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:70
+#: src/Widgets/AgendaEventRow.vala:72
 msgid "birthday;anniversary;party"
 msgstr ""
 "narozeniny;narozeninová oslava;párty;výročí;oslava;výroční oslava;oslava "
@@ -700,82 +701,82 @@ msgstr ""
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:75
+#: src/Widgets/AgendaEventRow.vala:77
 msgid "call;phone;telephone;ring"
 msgstr "volat;telefon;hovor;zvonit;telefonovat;prozvánět"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:80
+#: src/Widgets/AgendaEventRow.vala:82
 msgid "bar;cocktails;drinks;happy hour"
 msgstr "bar;koktejly;hospoda;putyka;happy hour"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:85
+#: src/Widgets/AgendaEventRow.vala:87
 msgid "car;drive;driving;road trip;"
 msgstr "auto;řídit;cestovat;jet na výlet;výlet;jet;řídím;řízení;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:90
+#: src/Widgets/AgendaEventRow.vala:92
 msgid "flight;airport;"
 msgstr "let;letiště;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:95
+#: src/Widgets/AgendaEventRow.vala:97
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
-"snídaně;pozdní snídaně;večeře;oběd;dezert;svačina;steakhouse;jídlo;"
-"grilovačka;grilování"
+"snídaně;pozdní "
+"snídaně;večeře;oběd;dezert;svačina;steakhouse;jídlo;grilovačka;grilování"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:100
+#: src/Widgets/AgendaEventRow.vala:102
 msgid "court;jury;tax;attorney;lawyer;contract"
 msgstr "soud;soudce;daň;advokát;právník;smlouva;kontrakt"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:105
+#: src/Widgets/AgendaEventRow.vala:107
 msgid "movie;film"
 msgstr "film"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:110
+#: src/Widgets/AgendaEventRow.vala:112
 msgid "wedding"
 msgstr "svatba"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:314
+#: src/Widgets/AgendaEventRow.vala:322
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:317
+#: src/Widgets/AgendaEventRow.vala:325
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:329
+#: src/Widgets/AgendaEventRow.vala:337
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:338
+#: src/Widgets/AgendaEventRow.vala:346
 #, c-format
 msgid "%s at %s"
 msgstr "%s v %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:341
+#: src/Widgets/AgendaEventRow.vala:349
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
@@ -851,6 +852,10 @@ msgstr "Smazat událost “%s”?"
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
 msgstr "Tato událost a všechny její výskyty budu permanentně smazány."
+
+#: src/Widgets/DeleteDialog.vala:30 src/Widgets/DeleteDialog.vala:39
+msgid "Delete Event"
+msgstr "Smazat událost"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
