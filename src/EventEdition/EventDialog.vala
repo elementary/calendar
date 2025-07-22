@@ -129,31 +129,31 @@ public class EventDialog : Granite.Dialog {
             stack.child_set_property (reminder_panel, "icon-name", "alarm-symbolic");
             stack.child_set_property (repeat_panel, "icon-name", "media-playlist-repeat-symbolic");
 
-            var stack_switcher = new Gtk.StackSwitcher ();
-            stack_switcher.homogeneous = true;
-            stack_switcher.margin = 12;
-            stack_switcher.margin_top = 0;
-            stack_switcher.stack = stack;
+            var stack_switcher = new Gtk.StackSwitcher () {
+                homogeneous = true,
+                margin_end = 12,
+                margin_start = 12,
+                stack = stack
+            };
 
-            var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
-            buttonbox.margin_top = 6;
-            buttonbox.margin_end = 12;
-            buttonbox.margin_start = 12;
-            buttonbox.spacing = 6;
-
-            buttonbox.baseline_position = Gtk.BaselinePosition.CENTER;
-            buttonbox.set_layout (Gtk.ButtonBoxStyle.END);
+            var buttonbox = new Gtk.Box (HORIZONTAL, 6) {
+                baseline_position = CENTER,
+                margin_end = 12,
+                margin_start = 12
+            };
 
             if (date_time == null) {
-                var delete_button = new Gtk.Button.with_label (_("Delete Event"));
+                var delete_button = new Gtk.Button.with_label (_("Delete Event…")) {
+                    halign = START,
+                    hexpand = true
+                };
                 delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
                 delete_button.clicked.connect (remove_event);
+
                 buttonbox.add (delete_button);
-                buttonbox.set_child_secondary (delete_button, true);
-                buttonbox.set_child_non_homogeneous (delete_button, true);
             }
 
-            Gtk.Button create_button = new Gtk.Button ();
+            var create_button = new Gtk.Button ();
             create_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             create_button.clicked.connect (save_dialog);
 
@@ -170,20 +170,22 @@ public class EventDialog : Granite.Dialog {
             buttonbox.add (cancel_button);
             buttonbox.add (create_button);
 
-            var grid = new Gtk.Grid ();
-            grid.row_spacing = 6;
-            grid.column_spacing = 12;
-            grid.attach (stack_switcher, 0, 0, 1, 1);
-            grid.attach (stack, 0, 1, 1, 1);
-            grid.attach (buttonbox, 0, 2, 1, 1);
+            var button_sizegroup = new Gtk.SizeGroup (HORIZONTAL);
+            button_sizegroup.add_widget (cancel_button);
+            button_sizegroup.add_widget (create_button);
 
-            ((Gtk.Container)get_content_area ()).add (grid);
+            var box = new Gtk.Box (VERTICAL, 24);
+            box.add (stack_switcher);
+            box.add (stack);
+            box.add (buttonbox);
+            box.show_all ();
+
+            get_content_area ().add (box);
 
             info_panel.valid_event.connect ((is_valid) => {
                 create_button.sensitive = is_valid;
             });
 
-            show_all ();
             stack.set_visible_child_name ("infopanel");
         }
 
@@ -216,12 +218,20 @@ public class EventDialog : Granite.Dialog {
         private void remove_event () {
             assert (original_source != null);
             var delete_dialog = new Calendar.DeleteEventDialog (original_source, ecal, mod_type) {
+                modal = true,
                 transient_for = this
             };
-            var response = delete_dialog.run_dialog ();
-            if (response == Gtk.ResponseType.YES) {
-                this.destroy ();
-            }
+
+            delete_dialog.response.connect ((response) => {
+                if (response == Gtk.ResponseType.YES) {
+                    destroy ();
+                }
+
+                delete_dialog.destroy ();
+            });
+
+            delete_dialog.present ();
+
         }
     }
 }
