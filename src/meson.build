@@ -35,7 +35,6 @@ calendar_files = files(
     'Widgets/DeleteDialog.vala',
     'Widgets/DynamicSpinner.vala',
     'Widgets/EventMenu.vala',
-    'Widgets/HeaderBar.vala',
     'Widgets/SourcePopover.vala',
     'Widgets/SourceRow.vala',
     'Widgets/ConnectivityInfoBar.vala'

@@ -49,6 +49,5 @@ src/Widgets/DateTimePicker.vala
 src/Widgets/DynamicSpinner.vala
 src/Widgets/DeleteDialog.vala
 src/Widgets/EventMenu.vala
-src/Widgets/HeaderBar.vala
 src/Widgets/SourcePopover.vala
 src/Widgets/SourceRow.vala

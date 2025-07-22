@@ -20,7 +20,6 @@
 public class Calendar.Widgets.SourcePopover : Gtk.Popover {
     private GLib.HashTable<string, SourceRow?> src_map;
 
-    private Gtk.Stack stack;
     private Maya.View.SourceDialog src_dialog = null;
 
     private Gtk.Grid main_grid;
@@ -68,6 +67,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         };
 
         main_grid = new Gtk.Grid () {
+            margin_bottom = 3,
             orientation = Gtk.Orientation.VERTICAL
         };
 
@@ -76,18 +76,13 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         main_grid.add (add_calendar_button);
         main_grid.add (import_calendar_button);
         main_grid.add (accounts_button);
+        main_grid.show_all ();
 
-        stack = new Gtk.Stack () {
-            margin_bottom = 3
-        };
-        stack.add_named (main_grid, "main");
-
-        add (stack);
+        add (main_grid);
         populate.begin ();
-        stack.show_all ();
 
         add_calendar_button.button_release_event.connect (() => {
-            create_source ();
+            edit_source ();
             return Gdk.EVENT_STOP;
         });
 
@@ -181,17 +176,6 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         source_item.source_has_changed ();
     }
 
-    private void create_source () {
-        if (src_dialog == null) {
-            src_dialog = new Maya.View.SourceDialog ();
-            src_dialog.go_back.connect (() => {switch_to_main ();});
-            stack.add_named (src_dialog, "source");
-        }
-
-        src_dialog.set_source (null);
-        switch_to_source ();
-    }
-
     private void add_source_to_view (E.Source source) {
         if (source.enabled == false)
             return;
@@ -234,30 +218,20 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         source_item.show_calendar_removed ();
     }
 
-    private void edit_source (E.Source source) {
+    private void edit_source (E.Source? source = null) {
         if (src_dialog == null) {
-            src_dialog = new Maya.View.SourceDialog ();
-            src_dialog.go_back.connect (() => {switch_to_main ();});
-            stack.add_named (src_dialog, "source");
+            src_dialog = new Maya.View.SourceDialog () {
+                modal = true,
+                transient_for = ((Gtk.Application) GLib.Application.get_default ()).active_window
+            };
+
+            src_dialog.go_back.connect (() => {
+                src_dialog.hide ();
+            });
         }
 
+        popdown ();
         src_dialog.set_source (source);
-        switch_to_source ();
-    }
-
-    private void switch_to_main () {
-        main_grid.no_show_all = false;
-        main_grid.show ();
-        stack.set_visible_child_full ("main", Gtk.StackTransitionType.SLIDE_RIGHT);
-        src_dialog.hide ();
-        src_dialog.no_show_all = true;
-    }
-
-    private void switch_to_source () {
-        src_dialog.no_show_all = false;
-        src_dialog.show ();
-        stack.set_visible_child_full ("source", Gtk.StackTransitionType.SLIDE_LEFT);
-        main_grid.hide ();
-        main_grid.no_show_all = true;
+        src_dialog.present ();
     }
 }
