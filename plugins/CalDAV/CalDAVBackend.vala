@@ -54,22 +54,29 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
 
         collection.add (Maya.DefaultPlacementWidgets.get_keep_copy (0, keep_copy));
 
-        var url_label = new PlacementWidget ();
-        url_label.widget = new Gtk.Label (_("URL:"));
-        ((Gtk.Label) url_label.widget).expand = true;
-        ((Gtk.Misc) url_label.widget).xalign = 1.0f;
-        url_label.row = 1;
-        url_label.column = 0;
-        url_label.ref_name = "url_label";
+        var url_label = new PlacementWidget () {
+            column = 0,
+            row = 1,
+            ref_name = "url_label"
+        };
+
+        url_label.widget = new Gtk.Label (_("URL:")) {
+            hexpand = true,
+            xalign = 1.0f
+        };
+
         collection.add (url_label);
 
-        var url_entry = new PlacementWidget ();
-        url_entry.widget = new Gtk.Entry ();
-        ((Gtk.Entry)url_entry.widget).text = "http://";
-        url_entry.row = 1;
-        url_entry.column = 1;
-        url_entry.ref_name = "url_entry";
-        url_entry.needed = true;
+        var url_entry = new PlacementWidget () {
+            column = 1,
+            row = 1,
+            needed = true,
+            ref_name = "url_entry",
+            widget = new Gtk.Entry () {
+                text = "http://"
+            }
+        };
+
         collection.add (url_entry);
         if (to_edit != null) {
             E.SourceWebdav webdav = (E.SourceWebdav)to_edit.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
@@ -95,11 +102,13 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
 
         };*/
 
-        var secure_checkbutton = new PlacementWidget ();
-        secure_checkbutton.widget = new Gtk.CheckButton.with_label (_("Use a secure connection"));
-        secure_checkbutton.row = 3;
-        secure_checkbutton.column = 1;
-        secure_checkbutton.ref_name = "secure_checkbutton";
+        var secure_checkbutton = new PlacementWidget () {
+            column = 1,
+            row = 3,
+            ref_name = "secure_checkbutton",
+            widget = new Gtk.CheckButton.with_label (_("Use a secure connection"))
+        };
+
         collection.add (secure_checkbutton);
         if (to_edit != null) {
             E.SourceSecurity security = (E.SourceSecurity)to_edit.get_extension (E.SOURCE_EXTENSION_SECURITY);
