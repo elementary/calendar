@@ -29,7 +29,11 @@ public class Maya.View.CalendarView : Gtk.Box {
     public signal void on_event_add (DateTime date);
     public signal void selection_changed (DateTime new_date);
 
-    public Hdy.HeaderBar header_bar { get; construct; }
+    public Gtk.SearchEntry search_bar;
+    private Calendar.Widgets.DateSwitcher month_switcher;
+    private Calendar.Widgets.DateSwitcher year_switcher;
+
+    public Hdy.HeaderBar header_bar { get; private set; }
     public DateTime? selected_date { get; private set; }
 
     private WeekLabels weeks { get; private set; }
@@ -67,7 +71,49 @@ public class Maya.View.CalendarView : Gtk.Box {
 
         var info_bar = new Calendar.Widgets.ConnectivityInfoBar ();
 
-        header_bar = new Calendar.Widgets.HeaderBar ();
+        var application_instance = ((Gtk.Application) GLib.Application.get_default ());
+
+        var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = Maya.MainWindow.ACTION_PREFIX + Maya.MainWindow.ACTION_SHOW_TODAY
+        };
+        button_today.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (button_today.action_name),
+            _("Go to today's date")
+        );
+
+        month_switcher = new Calendar.Widgets.DateSwitcher (10) {
+            valign = CENTER
+        };
+        year_switcher = new Calendar.Widgets.DateSwitcher (-1) {
+            valign = CENTER
+        };
+
+        var calmodel = Calendar.EventStore.get_default ();
+        set_switcher_date (calmodel.month_start);
+
+        var spinner = new Maya.View.Widgets.DynamicSpinner ();
+
+        var contractor = new Maya.View.Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
+
+        var source_popover = new Calendar.Widgets.SourcePopover ();
+
+        var menu_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            popover = source_popover,
+            tooltip_text = _("Manage Calendars")
+        };
+
+        header_bar = new Hdy.HeaderBar () {
+            show_close_button = true
+        };
+        header_bar.pack_start (month_switcher);
+        header_bar.pack_start (year_switcher);
+        header_bar.pack_start (button_today);
+        header_bar.pack_end (menu_button);
+        header_bar.pack_end (contractor);
+        header_bar.pack_end (spinner);
+
+        header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         stack = new Gtk.Stack ();
         stack.expand = true;
@@ -115,6 +161,19 @@ public class Maya.View.CalendarView : Gtk.Box {
                 return false;
             });
         });
+
+        month_switcher.left_clicked.connect (() => Calendar.EventStore.get_default ().change_month (-1));
+        month_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_month (1));
+        year_switcher.left_clicked.connect (() => Calendar.EventStore.get_default ().change_year (-1));
+        year_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_year (1));
+        calmodel.parameters_changed.connect (() => {
+            set_switcher_date (calmodel.month_start);
+        });
+    }
+
+    private void set_switcher_date (DateTime date) {
+        month_switcher.text = date.format ("%OB");
+        year_switcher.text = date.format ("%Y");
     }
 
     public override bool scroll_event (Gdk.EventScroll event) {
