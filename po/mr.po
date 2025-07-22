@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 12:19+0000\n"
+"POT-Creation-Date: 2025-07-22 14:24+0000\n"
 "PO-Revision-Date: 2025-02-20 08:16+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
@@ -201,7 +201,7 @@ msgstr "बदल सेव्ह करा"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:103
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "रद्द करा"
 
@@ -233,35 +233,35 @@ msgstr "आमंत्रित करा"
 msgid "From:"
 msgstr "पासून:"
 
-#: src/EventEdition/InfoPanel.vala:86
+#: src/EventEdition/InfoPanel.vala:92
 msgid "All day:"
 msgstr "संपुर्ण दिवस:"
 
-#: src/EventEdition/InfoPanel.vala:100
+#: src/EventEdition/InfoPanel.vala:103
 msgid "To:"
 msgstr "प्रति:"
 
-#: src/EventEdition/InfoPanel.vala:106
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Time zone:"
 msgstr "वेळ क्षेत्र:"
 
-#: src/EventEdition/InfoPanel.vala:111
-msgid "Title:"
-msgstr "शीर्षक:"
-
-#: src/EventEdition/InfoPanel.vala:113
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Name of Event"
 msgstr "घटनेचे नाव"
 
-#: src/EventEdition/InfoPanel.vala:123
+#: src/EventEdition/InfoPanel.vala:121
+msgid "Title:"
+msgstr "शीर्षक:"
+
+#: src/EventEdition/InfoPanel.vala:134
 msgid "Press enter to parse event"
 msgstr "घटना बघण्यासाठी \"Enter\" बटन दाबा"
 
-#: src/EventEdition/InfoPanel.vala:138
+#: src/EventEdition/InfoPanel.vala:172
 msgid "Calendar:"
 msgstr "कॅलेंडर:"
 
-#: src/EventEdition/InfoPanel.vala:168
+#: src/EventEdition/InfoPanel.vala:189
 msgid "Comments:"
 msgstr "टिका-टिप्पणी:"
 
@@ -634,6 +634,18 @@ msgstr "शनि"
 msgid "Sun"
 msgstr "रवि"
 
+#: src/Grid/CalendarView.vala:81
+msgid "Go to today's date"
+msgstr "आजची तारीख बघा"
+
+#: src/Grid/CalendarView.vala:96
+msgid "Export or Share the default Calendar"
+msgstr "डिफॉल्ट कॅलेंडर एक्स्पोर्ट अथवा शेअर करा"
+
+#: src/Grid/CalendarView.vala:103
+msgid "Manage Calendars"
+msgstr "कॅलेंडर्स मॅनेज करा"
+
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "आठवडा क्रमांक लपवा"
@@ -647,35 +659,35 @@ msgstr "आठवडा क्रमांक दाखवा"
 msgid "%u more…"
 msgstr "%u अधिक पर्याय…"
 
-#: src/SourceDialog/SourceDialog.vala:55
+#: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
 msgstr "नवीन बनवा"
 
-#: src/SourceDialog/SourceDialog.vala:66
+#: src/SourceDialog/SourceDialog.vala:61
 msgid "Name:"
 msgstr "नाव :"
 
-#: src/SourceDialog/SourceDialog.vala:70
+#: src/SourceDialog/SourceDialog.vala:65
 msgid "Calendar Name"
 msgstr "कॅलेंडरचे नाव"
 
-#: src/SourceDialog/SourceDialog.vala:93
+#: src/SourceDialog/SourceDialog.vala:88
 msgid "Type:"
 msgstr "प्रकार:"
 
-#: src/SourceDialog/SourceDialog.vala:110
+#: src/SourceDialog/SourceDialog.vala:105
 msgid "Color:"
 msgstr "रंग:"
 
-#: src/SourceDialog/SourceDialog.vala:190
+#: src/SourceDialog/SourceDialog.vala:185
 msgid "Mark as default calendar"
 msgstr "मूळ कॅलेंडर म्हणून दाखवा"
 
-#: src/SourceDialog/SourceDialog.vala:259
+#: src/SourceDialog/SourceDialog.vala:255
 msgid "Create Calendar"
 msgstr "नवीन कॅलेंडर बनवा"
 
-#: src/SourceDialog/SourceDialog.vala:264
+#: src/SourceDialog/SourceDialog.vala:260
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "सेव्ह करा"
@@ -772,15 +784,15 @@ msgstr "%s चे %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
 
-#: src/Widgets/CalendarChooser.vala:51
+#: src/Widgets/CalendarChooser.vala:53
 msgid "Search Calendars"
 msgstr "कॅलेंडर शोधा"
 
-#: src/Widgets/CalendarChooser.vala:54
+#: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
 msgstr "परिणाम नाहीत"
 
-#: src/Widgets/CalendarChooser.vala:55
+#: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr "शोध संज्ञा बदलून प्रयत्न करा."
 
@@ -871,35 +883,23 @@ msgstr "घटना काढा"
 msgid "Remove"
 msgstr "कॅलेंडर मिटवा"
 
-#: src/Widgets/HeaderBar.vala:39
-msgid "Go to today's date"
-msgstr "आजची तारीख बघा"
-
-#: src/Widgets/HeaderBar.vala:60
-msgid "Export or Share the default Calendar"
-msgstr "डिफॉल्ट कॅलेंडर एक्स्पोर्ट अथवा शेअर करा"
-
-#: src/Widgets/HeaderBar.vala:67
-msgid "Manage Calendars"
-msgstr "कॅलेंडर्स मॅनेज करा"
-
-#: src/Widgets/SourcePopover.vala:59
+#: src/Widgets/SourcePopover.vala:58
 msgid "Add New Calendar…"
 msgstr "नवीन कॅलेंडर बनवा…"
 
-#: src/Widgets/SourcePopover.vala:63
+#: src/Widgets/SourcePopover.vala:62
 msgid "Import iCalendar File…"
 msgstr "आयकॅलेंडर फाईल आयात करा…"
 
-#: src/Widgets/SourcePopover.vala:67
+#: src/Widgets/SourcePopover.vala:66
 msgid "Online Accounts Settings…"
 msgstr "ऑनलाइन खाती सेटिंग्ज …"
 
-#: src/Widgets/SourcePopover.vala:99
+#: src/Widgets/SourcePopover.vala:94
 msgid "Select ICS File to Import"
 msgstr "आयात करण्यासाठी ICS फाईल निवडा"
 
-#: src/Widgets/SourcePopover.vala:102
+#: src/Widgets/SourcePopover.vala:97
 msgid "Open"
 msgstr "उघडा"
 

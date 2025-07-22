@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 12:19+0000\n"
+"POT-Creation-Date: 2025-07-22 14:24+0000\n"
 "PO-Revision-Date: 2019-09-27 17:24+0000\n"
 "Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/calendar/"
@@ -202,7 +202,7 @@ msgstr "Gardar os cambios"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:103
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -234,35 +234,35 @@ msgstr "Convidar"
 msgid "From:"
 msgstr "Desde:"
 
-#: src/EventEdition/InfoPanel.vala:86
+#: src/EventEdition/InfoPanel.vala:92
 msgid "All day:"
 msgstr "Todo o día:"
 
-#: src/EventEdition/InfoPanel.vala:100
+#: src/EventEdition/InfoPanel.vala:103
 msgid "To:"
 msgstr "Ata:"
 
-#: src/EventEdition/InfoPanel.vala:106
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Time zone:"
 msgstr ""
 
-#: src/EventEdition/InfoPanel.vala:111
-msgid "Title:"
-msgstr "Título:"
-
-#: src/EventEdition/InfoPanel.vala:113
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Name of Event"
 msgstr "Nome da actividade"
 
-#: src/EventEdition/InfoPanel.vala:123
+#: src/EventEdition/InfoPanel.vala:121
+msgid "Title:"
+msgstr "Título:"
+
+#: src/EventEdition/InfoPanel.vala:134
 msgid "Press enter to parse event"
 msgstr "Preme intro para analizar o evento"
 
-#: src/EventEdition/InfoPanel.vala:138
+#: src/EventEdition/InfoPanel.vala:172
 msgid "Calendar:"
 msgstr "Calendario:"
 
-#: src/EventEdition/InfoPanel.vala:168
+#: src/EventEdition/InfoPanel.vala:189
 msgid "Comments:"
 msgstr "Comentarios:"
 
@@ -635,6 +635,18 @@ msgstr "sáb."
 msgid "Sun"
 msgstr "dom."
 
+#: src/Grid/CalendarView.vala:81
+msgid "Go to today's date"
+msgstr "Ir ao día de hoxe"
+
+#: src/Grid/CalendarView.vala:96
+msgid "Export or Share the default Calendar"
+msgstr "Exportar ou compartir o calendario predeterminado"
+
+#: src/Grid/CalendarView.vala:103
+msgid "Manage Calendars"
+msgstr "Xestionar os calendarios"
+
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Agochar os números de semana"
@@ -648,35 +660,35 @@ msgstr "Amosar o número da semana"
 msgid "%u more…"
 msgstr "%u máis…"
 
-#: src/SourceDialog/SourceDialog.vala:55
+#: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
 msgstr "Crear"
 
-#: src/SourceDialog/SourceDialog.vala:66
+#: src/SourceDialog/SourceDialog.vala:61
 msgid "Name:"
 msgstr "Nome:"
 
-#: src/SourceDialog/SourceDialog.vala:70
+#: src/SourceDialog/SourceDialog.vala:65
 msgid "Calendar Name"
 msgstr "Nome do calendario"
 
-#: src/SourceDialog/SourceDialog.vala:93
+#: src/SourceDialog/SourceDialog.vala:88
 msgid "Type:"
 msgstr "Tipo:"
 
-#: src/SourceDialog/SourceDialog.vala:110
+#: src/SourceDialog/SourceDialog.vala:105
 msgid "Color:"
 msgstr "Cor:"
 
-#: src/SourceDialog/SourceDialog.vala:190
+#: src/SourceDialog/SourceDialog.vala:185
 msgid "Mark as default calendar"
 msgstr "Marcar como calendario predefinido"
 
-#: src/SourceDialog/SourceDialog.vala:259
+#: src/SourceDialog/SourceDialog.vala:255
 msgid "Create Calendar"
 msgstr "Crear un calendario"
 
-#: src/SourceDialog/SourceDialog.vala:264
+#: src/SourceDialog/SourceDialog.vala:260
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Gardar"
@@ -773,15 +785,15 @@ msgstr ""
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
-#: src/Widgets/CalendarChooser.vala:51
+#: src/Widgets/CalendarChooser.vala:53
 msgid "Search Calendars"
 msgstr "Buscar calendarios"
 
-#: src/Widgets/CalendarChooser.vala:54
+#: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
 msgstr "Non hai resultados"
 
-#: src/Widgets/CalendarChooser.vala:55
+#: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr "Intente cambiar os termos de procura."
 
@@ -880,37 +892,25 @@ msgstr "Eliminar ocorrencia"
 msgid "Remove"
 msgstr "Retirar"
 
-#: src/Widgets/HeaderBar.vala:39
-msgid "Go to today's date"
-msgstr "Ir ao día de hoxe"
-
-#: src/Widgets/HeaderBar.vala:60
-msgid "Export or Share the default Calendar"
-msgstr "Exportar ou compartir o calendario predeterminado"
-
-#: src/Widgets/HeaderBar.vala:67
-msgid "Manage Calendars"
-msgstr "Xestionar os calendarios"
-
-#: src/Widgets/SourcePopover.vala:59
+#: src/Widgets/SourcePopover.vala:58
 msgid "Add New Calendar…"
 msgstr "Engadir un calendario novo…"
 
-#: src/Widgets/SourcePopover.vala:63
+#: src/Widgets/SourcePopover.vala:62
 #, fuzzy
 msgid "Import iCalendar File…"
 msgstr "Exportar calendario…"
 
-#: src/Widgets/SourcePopover.vala:67
+#: src/Widgets/SourcePopover.vala:66
 msgid "Online Accounts Settings…"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:99
+#: src/Widgets/SourcePopover.vala:94
 #, fuzzy
 msgid "Select ICS File to Import"
 msgstr "Seleccionar os calendarios para importar"
 
-#: src/Widgets/SourcePopover.vala:102
+#: src/Widgets/SourcePopover.vala:97
 msgid "Open"
 msgstr ""
 

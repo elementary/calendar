@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 12:19+0000\n"
+"POT-Creation-Date: 2025-07-22 14:24+0000\n"
 "PO-Revision-Date: 2022-03-31 21:16+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -200,7 +200,7 @@ msgstr "پاشکەوتی گۆڕانکاری"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:103
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "هەڵوەشاندنەوە"
 
@@ -232,35 +232,35 @@ msgstr "بانگهێشت"
 msgid "From:"
 msgstr "لە:"
 
-#: src/EventEdition/InfoPanel.vala:86
+#: src/EventEdition/InfoPanel.vala:92
 msgid "All day:"
 msgstr "هەموو ڕۆژ :"
 
-#: src/EventEdition/InfoPanel.vala:100
+#: src/EventEdition/InfoPanel.vala:103
 msgid "To:"
 msgstr "تا:"
 
-#: src/EventEdition/InfoPanel.vala:106
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Time zone:"
 msgstr "ناوچەی کات:"
 
-#: src/EventEdition/InfoPanel.vala:111
-msgid "Title:"
-msgstr "بابەت:"
-
-#: src/EventEdition/InfoPanel.vala:113
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Name of Event"
 msgstr "ناوی ڕوداو"
 
-#: src/EventEdition/InfoPanel.vala:123
+#: src/EventEdition/InfoPanel.vala:121
+msgid "Title:"
+msgstr "بابەت:"
+
+#: src/EventEdition/InfoPanel.vala:134
 msgid "Press enter to parse event"
 msgstr "دەست بنێ بە ئینتەردا بۆ شیکردنەوەی ڕووداو"
 
-#: src/EventEdition/InfoPanel.vala:138
+#: src/EventEdition/InfoPanel.vala:172
 msgid "Calendar:"
 msgstr "ڕۆژمێر:"
 
-#: src/EventEdition/InfoPanel.vala:168
+#: src/EventEdition/InfoPanel.vala:189
 msgid "Comments:"
 msgstr "بۆچوون:"
 
@@ -633,6 +633,18 @@ msgstr "شەممە"
 msgid "Sun"
 msgstr "یەک شەم"
 
+#: src/Grid/CalendarView.vala:81
+msgid "Go to today's date"
+msgstr "ڕۆیشتن بۆ بەرواری ئەمڕۆ"
+
+#: src/Grid/CalendarView.vala:96
+msgid "Export or Share the default Calendar"
+msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریمان"
+
+#: src/Grid/CalendarView.vala:103
+msgid "Manage Calendars"
+msgstr "بەڕێوەبردنی ڕۆژژمێرەکان"
+
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "شاردنەوەی ژمارەی هەفتە"
@@ -646,35 +658,35 @@ msgstr "نیشاندانی ژمارەی هەفتە"
 msgid "%u more…"
 msgstr "%u زۆرتر …"
 
-#: src/SourceDialog/SourceDialog.vala:55
+#: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
 msgstr "دروستکردن"
 
-#: src/SourceDialog/SourceDialog.vala:66
+#: src/SourceDialog/SourceDialog.vala:61
 msgid "Name:"
 msgstr "ناو:"
 
-#: src/SourceDialog/SourceDialog.vala:70
+#: src/SourceDialog/SourceDialog.vala:65
 msgid "Calendar Name"
 msgstr "ناوی ڕۆژژمێر"
 
-#: src/SourceDialog/SourceDialog.vala:93
+#: src/SourceDialog/SourceDialog.vala:88
 msgid "Type:"
 msgstr "جۆر :"
 
-#: src/SourceDialog/SourceDialog.vala:110
+#: src/SourceDialog/SourceDialog.vala:105
 msgid "Color:"
 msgstr "ڕەنگ:"
 
-#: src/SourceDialog/SourceDialog.vala:190
+#: src/SourceDialog/SourceDialog.vala:185
 msgid "Mark as default calendar"
 msgstr "دیاری کردن بۆ ڕۆژژمێری فەرمی"
 
-#: src/SourceDialog/SourceDialog.vala:259
+#: src/SourceDialog/SourceDialog.vala:255
 msgid "Create Calendar"
 msgstr "دروستکردنی ڕۆژمێر"
 
-#: src/SourceDialog/SourceDialog.vala:264
+#: src/SourceDialog/SourceDialog.vala:260
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "پاشەکەوت"
@@ -773,16 +785,16 @@ msgstr "%s کاتژمێر %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
-#: src/Widgets/CalendarChooser.vala:51
+#: src/Widgets/CalendarChooser.vala:53
 #, fuzzy
 msgid "Search Calendars"
 msgstr "دروستکردنی ڕۆژمێر"
 
-#: src/Widgets/CalendarChooser.vala:54
+#: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
 msgstr ""
 
-#: src/Widgets/CalendarChooser.vala:55
+#: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr ""
 
@@ -883,35 +895,23 @@ msgstr "ڕەشکردنەوەی ئامادەبوون"
 msgid "Remove"
 msgstr "سڕینەوە"
 
-#: src/Widgets/HeaderBar.vala:39
-msgid "Go to today's date"
-msgstr "ڕۆیشتن بۆ بەرواری ئەمڕۆ"
-
-#: src/Widgets/HeaderBar.vala:60
-msgid "Export or Share the default Calendar"
-msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریمان"
-
-#: src/Widgets/HeaderBar.vala:67
-msgid "Manage Calendars"
-msgstr "بەڕێوەبردنی ڕۆژژمێرەکان"
-
-#: src/Widgets/SourcePopover.vala:59
+#: src/Widgets/SourcePopover.vala:58
 msgid "Add New Calendar…"
 msgstr "زیاد کردنی ڕۆژژمێری نوێ …"
 
-#: src/Widgets/SourcePopover.vala:63
+#: src/Widgets/SourcePopover.vala:62
 msgid "Import iCalendar File…"
 msgstr "هێنانی پەڕگەی ئای کالێندەر…"
 
-#: src/Widgets/SourcePopover.vala:67
+#: src/Widgets/SourcePopover.vala:66
 msgid "Online Accounts Settings…"
 msgstr "ڕێکخستنەکانی هەژمارە سەرهێڵییەکان…"
 
-#: src/Widgets/SourcePopover.vala:99
+#: src/Widgets/SourcePopover.vala:94
 msgid "Select ICS File to Import"
 msgstr "دیاریکردنی پەڕگەی ICS بۆ هەناردن"
 
-#: src/Widgets/SourcePopover.vala:102
+#: src/Widgets/SourcePopover.vala:97
 msgid "Open"
 msgstr "کردنەوە"
 

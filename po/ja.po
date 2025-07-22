@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 12:19+0000\n"
+"POT-Creation-Date: 2025-07-22 14:24+0000\n"
 "PO-Revision-Date: 2025-03-02 04:12+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
@@ -199,7 +199,7 @@ msgstr "変更を保存"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:103
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -231,35 +231,35 @@ msgstr "招待"
 msgid "From:"
 msgstr "開始:"
 
-#: src/EventEdition/InfoPanel.vala:86
+#: src/EventEdition/InfoPanel.vala:92
 msgid "All day:"
 msgstr "終日:"
 
-#: src/EventEdition/InfoPanel.vala:100
+#: src/EventEdition/InfoPanel.vala:103
 msgid "To:"
 msgstr "終了:"
 
-#: src/EventEdition/InfoPanel.vala:106
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Time zone:"
 msgstr "タイムゾーン:"
 
-#: src/EventEdition/InfoPanel.vala:111
-msgid "Title:"
-msgstr "タイトル:"
-
-#: src/EventEdition/InfoPanel.vala:113
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Name of Event"
 msgstr "予定の名前"
 
-#: src/EventEdition/InfoPanel.vala:123
+#: src/EventEdition/InfoPanel.vala:121
+msgid "Title:"
+msgstr "タイトル:"
+
+#: src/EventEdition/InfoPanel.vala:134
 msgid "Press enter to parse event"
 msgstr "予定を解析するには Enter キーを押してください"
 
-#: src/EventEdition/InfoPanel.vala:138
+#: src/EventEdition/InfoPanel.vala:172
 msgid "Calendar:"
 msgstr "カレンダー:"
 
-#: src/EventEdition/InfoPanel.vala:168
+#: src/EventEdition/InfoPanel.vala:189
 msgid "Comments:"
 msgstr "コメント:"
 
@@ -627,6 +627,18 @@ msgstr "土"
 msgid "Sun"
 msgstr "日"
 
+#: src/Grid/CalendarView.vala:81
+msgid "Go to today's date"
+msgstr "今日の日付へ移動"
+
+#: src/Grid/CalendarView.vala:96
+msgid "Export or Share the default Calendar"
+msgstr "デフォルトのカレンダーをエクスポートまたは共有"
+
+#: src/Grid/CalendarView.vala:103
+msgid "Manage Calendars"
+msgstr "カレンダーを管理"
+
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "週番号を非表示"
@@ -640,35 +652,35 @@ msgstr "週番号を表示"
 msgid "%u more…"
 msgstr "他 %u 件…"
 
-#: src/SourceDialog/SourceDialog.vala:55
+#: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
 msgstr "作成"
 
-#: src/SourceDialog/SourceDialog.vala:66
+#: src/SourceDialog/SourceDialog.vala:61
 msgid "Name:"
 msgstr "名前:"
 
-#: src/SourceDialog/SourceDialog.vala:70
+#: src/SourceDialog/SourceDialog.vala:65
 msgid "Calendar Name"
 msgstr "カレンダー名"
 
-#: src/SourceDialog/SourceDialog.vala:93
+#: src/SourceDialog/SourceDialog.vala:88
 msgid "Type:"
 msgstr "種類:"
 
-#: src/SourceDialog/SourceDialog.vala:110
+#: src/SourceDialog/SourceDialog.vala:105
 msgid "Color:"
 msgstr "色:"
 
-#: src/SourceDialog/SourceDialog.vala:190
+#: src/SourceDialog/SourceDialog.vala:185
 msgid "Mark as default calendar"
 msgstr "デフォルトのカレンダーに設定"
 
-#: src/SourceDialog/SourceDialog.vala:259
+#: src/SourceDialog/SourceDialog.vala:255
 msgid "Create Calendar"
 msgstr "カレンダーを作成"
 
-#: src/SourceDialog/SourceDialog.vala:264
+#: src/SourceDialog/SourceDialog.vala:260
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "保存"
@@ -769,15 +781,15 @@ msgstr "%s %s"
 msgid "%s, %s – %s"
 msgstr "%s %s – %s"
 
-#: src/Widgets/CalendarChooser.vala:51
+#: src/Widgets/CalendarChooser.vala:53
 msgid "Search Calendars"
 msgstr "カレンダーを検索"
 
-#: src/Widgets/CalendarChooser.vala:54
+#: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
 msgstr "検索結果なし"
 
-#: src/Widgets/CalendarChooser.vala:55
+#: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr "検索語句を変更してみてください。"
 
@@ -869,35 +881,23 @@ msgstr "この回を削除"
 msgid "Remove"
 msgstr "削除"
 
-#: src/Widgets/HeaderBar.vala:39
-msgid "Go to today's date"
-msgstr "今日の日付へ移動"
-
-#: src/Widgets/HeaderBar.vala:60
-msgid "Export or Share the default Calendar"
-msgstr "デフォルトのカレンダーをエクスポートまたは共有"
-
-#: src/Widgets/HeaderBar.vala:67
-msgid "Manage Calendars"
-msgstr "カレンダーを管理"
-
-#: src/Widgets/SourcePopover.vala:59
+#: src/Widgets/SourcePopover.vala:58
 msgid "Add New Calendar…"
 msgstr "新しいカレンダーを作成…"
 
-#: src/Widgets/SourcePopover.vala:63
+#: src/Widgets/SourcePopover.vala:62
 msgid "Import iCalendar File…"
 msgstr "iCalendar ファイルをインポート…"
 
-#: src/Widgets/SourcePopover.vala:67
+#: src/Widgets/SourcePopover.vala:66
 msgid "Online Accounts Settings…"
 msgstr "オンラインアカウントの設定…"
 
-#: src/Widgets/SourcePopover.vala:99
+#: src/Widgets/SourcePopover.vala:94
 msgid "Select ICS File to Import"
 msgstr "インポートする ICS ファイルを選択"
 
-#: src/Widgets/SourcePopover.vala:102
+#: src/Widgets/SourcePopover.vala:97
 msgid "Open"
 msgstr "開く"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 12:19+0000\n"
+"POT-Creation-Date: 2025-07-22 14:24+0000\n"
 "PO-Revision-Date: 2024-05-31 15:13+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -203,7 +203,7 @@ msgstr "Lagre endringer"
 
 #: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
 #: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:103
+#: src/Widgets/SourcePopover.vala:98
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -235,35 +235,35 @@ msgstr "Inviter"
 msgid "From:"
 msgstr "Fra:"
 
-#: src/EventEdition/InfoPanel.vala:86
+#: src/EventEdition/InfoPanel.vala:92
 msgid "All day:"
 msgstr "Hele dagen:"
 
-#: src/EventEdition/InfoPanel.vala:100
+#: src/EventEdition/InfoPanel.vala:103
 msgid "To:"
 msgstr "Til:"
 
-#: src/EventEdition/InfoPanel.vala:106
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Time zone:"
 msgstr "Tidssone:"
 
-#: src/EventEdition/InfoPanel.vala:111
-msgid "Title:"
-msgstr "Tittel:"
-
-#: src/EventEdition/InfoPanel.vala:113
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Name of Event"
 msgstr "Begivenhetsnavn"
 
-#: src/EventEdition/InfoPanel.vala:123
+#: src/EventEdition/InfoPanel.vala:121
+msgid "Title:"
+msgstr "Tittel:"
+
+#: src/EventEdition/InfoPanel.vala:134
 msgid "Press enter to parse event"
 msgstr "Trykk \"Enter\" for å behandle begivenhet"
 
-#: src/EventEdition/InfoPanel.vala:138
+#: src/EventEdition/InfoPanel.vala:172
 msgid "Calendar:"
 msgstr "Kalender:"
 
-#: src/EventEdition/InfoPanel.vala:168
+#: src/EventEdition/InfoPanel.vala:189
 msgid "Comments:"
 msgstr "Kommentarer:"
 
@@ -636,6 +636,18 @@ msgstr "Lør"
 msgid "Sun"
 msgstr "Søn"
 
+#: src/Grid/CalendarView.vala:81
+msgid "Go to today's date"
+msgstr "Gå til dagens dato"
+
+#: src/Grid/CalendarView.vala:96
+msgid "Export or Share the default Calendar"
+msgstr "Eksporter eller del standard kalender"
+
+#: src/Grid/CalendarView.vala:103
+msgid "Manage Calendars"
+msgstr "Organiser kalendere"
+
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Skjul ukenummer"
@@ -649,35 +661,35 @@ msgstr "Vis ukenummer"
 msgid "%u more…"
 msgstr "%u mer…"
 
-#: src/SourceDialog/SourceDialog.vala:55
+#: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
 msgstr "Opprett"
 
-#: src/SourceDialog/SourceDialog.vala:66
+#: src/SourceDialog/SourceDialog.vala:61
 msgid "Name:"
 msgstr "Navn :"
 
-#: src/SourceDialog/SourceDialog.vala:70
+#: src/SourceDialog/SourceDialog.vala:65
 msgid "Calendar Name"
 msgstr "Kalendernavn"
 
-#: src/SourceDialog/SourceDialog.vala:93
+#: src/SourceDialog/SourceDialog.vala:88
 msgid "Type:"
 msgstr "Skriv:"
 
-#: src/SourceDialog/SourceDialog.vala:110
+#: src/SourceDialog/SourceDialog.vala:105
 msgid "Color:"
 msgstr "Farge:"
 
-#: src/SourceDialog/SourceDialog.vala:190
+#: src/SourceDialog/SourceDialog.vala:185
 msgid "Mark as default calendar"
 msgstr "Velg som hovedkalender"
 
-#: src/SourceDialog/SourceDialog.vala:259
+#: src/SourceDialog/SourceDialog.vala:255
 msgid "Create Calendar"
 msgstr "Opprett kalender"
 
-#: src/SourceDialog/SourceDialog.vala:264
+#: src/SourceDialog/SourceDialog.vala:260
 #: src/Widgets/ContractorButtonWithMenu.vala:90
 msgid "Save"
 msgstr "Lagre"
@@ -774,16 +786,16 @@ msgstr "%s klokken %s"
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
-#: src/Widgets/CalendarChooser.vala:51
+#: src/Widgets/CalendarChooser.vala:53
 #, fuzzy
 msgid "Search Calendars"
 msgstr "Søk i kalendere"
 
-#: src/Widgets/CalendarChooser.vala:54
+#: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
 msgstr "Resultatløst"
 
-#: src/Widgets/CalendarChooser.vala:55
+#: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr "Prøv å endre søket."
 
@@ -880,37 +892,25 @@ msgstr "Fjern forekomst"
 msgid "Remove"
 msgstr "Fjern"
 
-#: src/Widgets/HeaderBar.vala:39
-msgid "Go to today's date"
-msgstr "Gå til dagens dato"
-
-#: src/Widgets/HeaderBar.vala:60
-msgid "Export or Share the default Calendar"
-msgstr "Eksporter eller del standard kalender"
-
-#: src/Widgets/HeaderBar.vala:67
-msgid "Manage Calendars"
-msgstr "Organiser kalendere"
-
-#: src/Widgets/SourcePopover.vala:59
+#: src/Widgets/SourcePopover.vala:58
 msgid "Add New Calendar…"
 msgstr "Legg til ny kalender…"
 
-#: src/Widgets/SourcePopover.vala:63
+#: src/Widgets/SourcePopover.vala:62
 msgid "Import iCalendar File…"
 msgstr "Importer ICalendar-fil …"
 
-#: src/Widgets/SourcePopover.vala:67
+#: src/Widgets/SourcePopover.vala:66
 #, fuzzy
 msgid "Online Accounts Settings…"
 msgstr "Innstillinger for nettbaserte kontoer:"
 
-#: src/Widgets/SourcePopover.vala:99
+#: src/Widgets/SourcePopover.vala:94
 #, fuzzy
 msgid "Select ICS File to Import"
 msgstr "Velg ICS-fil å importere"
 
-#: src/Widgets/SourcePopover.vala:102
+#: src/Widgets/SourcePopover.vala:97
 msgid "Open"
 msgstr "Åpne"
 
