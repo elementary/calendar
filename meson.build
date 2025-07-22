@@ -28,15 +28,9 @@ granite_dep = dependency('granite', version: '>=6.2.0')
 gtk_dep = dependency('gtk+-3.0', version: '>=3.22')
 handy_dep = dependency('libhandy-1', version: '>=0.90.0')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>=3.8.0')
-libedataserverui_dep = dependency('libedataserverui-1.2', version: '>=3.8.0')
-if (libedataserver_dep.version().version_compare ('>=3.46'))
-    libsoup_dep = []
-    geocode_glib_dep = dependency('geocode-glib-2.0')
-    add_project_arguments('--define', 'HAS_EDS_3_46', language: 'vala')
-else
-    geocode_glib_dep = dependency('geocode-glib-1.0')
-    libsoup_dep = dependency('libsoup-2.4')
-endif
+libedataserverui_dep = dependency('libedataserverui-1.2', version: '>=3.46')
+libsoup_dep = []
+geocode_glib_dep = dependency('geocode-glib-2.0')
 gmodule_dep = dependency('gmodule-2.0')
 champlain_dep = dependency('champlain-0.12', fallback: ['libchamplain', 'libchamplain_dep'], default_options: ['default_library=static', 'introspection=false', 'vapi=false'])
 champlain_gtk_dep = dependency('champlain-gtk-0.12', fallback: ['libchamplain', 'libchamplain_gtk_dep'], default_options: ['default_library=static', 'introspection=false', 'vapi=false'])
