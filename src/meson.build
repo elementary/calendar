@@ -49,7 +49,6 @@ calendar_deps = [
     libedataserver_dep,
     libedataserverui_dep,
     libical_dep,
-    libsoup_dep,
     gmodule_dep,
     m_dep,
     champlain_dep,
