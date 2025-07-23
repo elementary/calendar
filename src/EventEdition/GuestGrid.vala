@@ -25,7 +25,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
     private Folks.Individual individual;
     private Gtk.Label name_label;
     private Gtk.Label mail_label;
-    private Hdy.Avatar avatar;
+    private Adw.Avatar avatar;
 
     public GuestGrid (ICal.Property attendee) {
         this.attendee = attendee.clone ();
@@ -75,7 +75,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
 
         get_contact_by_mail.begin (attendee.get_attendee ().replace ("mailto:", ""));
 
-        avatar = new Hdy.Avatar (ICON_SIZE, name_label.label, true);
+        avatar = new Adw.Avatar (ICON_SIZE, name_label.label, true);
 
         column_spacing = 12;
         margin = 6;

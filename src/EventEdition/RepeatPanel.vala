@@ -23,7 +23,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private Gtk.ComboBoxText repeat_combobox;
     private Gtk.ComboBoxText ends_combobox;
     private Gtk.SpinButton end_entry;
-    private Granite.Widgets.DatePicker end_datepicker;
+    private Granite.DatePicker end_datepicker;
     private Gtk.Box week_box;
     private Gtk.Grid month_grid;
     private Gtk.SpinButton every_entry;
@@ -174,7 +174,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         });
 
         var format = Granite.DateTime.get_default_date_format (false, true, true);
-        end_datepicker = new Granite.Widgets.DatePicker.with_format (format);
+        end_datepicker = new Granite.DatePicker.with_format (format);
         end_datepicker.no_show_all = true;
 
         var ends_grid = new Gtk.Grid ();
@@ -760,13 +760,13 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 }
 
 public class Maya.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
-    private Granite.Widgets.DatePicker date;
+    private Granite.DatePicker date;
     public ExceptionGrid (GLib.DateTime dt) {
         set_margin_top (6);
         set_margin_start (6);
         set_margin_end (6);
 
-        date = new Granite.Widgets.DatePicker ();
+        date = new Granite.DatePicker ();
         date.date = dt;
         date.hexpand = true;
 
