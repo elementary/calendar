@@ -1,19 +1,6 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2013-2015 Maya Developers (http://launchpad.net/maya)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2013-2025 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
@@ -27,7 +14,7 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
     public E.Source source { public get; private set; }
 
     private Gtk.Stack stack;
-    private Gtk.Grid info_grid;
+    private Gtk.Box info_box;
 
     private Gtk.Button delete_button;
     private Gtk.Revealer delete_revealer;
@@ -44,15 +31,18 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         // Source widget
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
-        calendar_name_label = new Gtk.Label (source.dup_display_name ());
-        calendar_name_label.xalign = 0;
-        calendar_name_label.hexpand = true;
+        calendar_name_label = new Gtk.Label (source.dup_display_name ()) {
+            hexpand = true,
+            xalign = 0
+        };
 
         label = source.dup_display_name ();
         location = Maya.Util.get_source_location (source);
 
-        visible_checkbutton = new Gtk.CheckButton ();
-        visible_checkbutton.active = cal.selected;
+        visible_checkbutton = new Gtk.CheckButton () {
+            active = cal.selected
+        };
+
         visible_checkbutton.toggled.connect (() => {
             var calmodel = Calendar.EventStore.get_default ();
             if (visible_checkbutton.active == true) {
@@ -71,64 +61,70 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
 
         style_calendar_color (cal.dup_color ());
 
-        delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
-        delete_button.tooltip_text = source.removable ? _("Remove") : _("Not Removable");
-        delete_button.relief = Gtk.ReliefStyle.NONE;
-        delete_button.sensitive = source.removable;
+        delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", MENU) {
+            relief = NONE,
+            sensitive = source.removable,
+            tooltip_text = source.removable ? _("Remove") : _("Not Removable")
+        };
         delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
-        delete_revealer = new Gtk.Revealer ();
-        delete_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-        delete_revealer.add (delete_button);
-        delete_revealer.show_all ();
-        delete_revealer.set_reveal_child (false);
+        delete_revealer = new Gtk.Revealer () {
+            child = delete_button,
+            reveal_child = false,
+            transition_type = CROSSFADE
+        };
 
-        edit_button = new Gtk.Button.from_icon_name ("edit-symbolic", Gtk.IconSize.MENU);
-        edit_button.tooltip_text = source.writable ? _("Edit…"): _("Not Editable");
-        edit_button.relief = Gtk.ReliefStyle.NONE;
-        edit_button.sensitive = source.writable;
+        edit_button = new Gtk.Button.from_icon_name ("edit-symbolic", MENU) {
+            relief = NONE,
+            sensitive = source.writable,
+            tooltip_text = source.writable ? _("Edit…"): _("Not Editable")
+        };
 
-        edit_revealer = new Gtk.Revealer ();
-        edit_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-        edit_revealer.add (edit_button);
-        edit_revealer.show_all ();
-        edit_revealer.set_reveal_child (false);
+        edit_revealer = new Gtk.Revealer () {
+            child = edit_button,
+            reveal_child = false,
+            transition_type = CROSSFADE
+        };
 
-        var calendar_grid = new Gtk.Grid ();
-        calendar_grid.column_spacing = 6;
-        calendar_grid.margin_start = 8;
-        calendar_grid.margin_end = 6;
-        calendar_grid.attach (visible_checkbutton, 0, 0, 1, 1);
-        calendar_grid.attach (calendar_name_label, 2, 0, 1, 1);
-        calendar_grid.attach (delete_revealer, 3, 0, 1, 1);
-        calendar_grid.attach (edit_revealer, 4, 0, 1, 1);
+        var calendar_box = new Gtk.Box (HORIZONTAL, 6) {
+            margin_top = 3,
+            margin_end = 12,
+            margin_bottom = 3,
+            margin_start = 12
+        };
+        calendar_box.add (visible_checkbutton);
+        calendar_box.add (calendar_name_label);
+        calendar_box.add (delete_revealer);
+        calendar_box.add (edit_revealer);
 
         var calendar_event_box = new Gtk.EventBox ();
-        calendar_event_box.add (calendar_grid);
+        calendar_event_box.add (calendar_box);
         calendar_event_box.show ();
 
-        var undo_button = new Gtk.Button.with_label (_("Undo"));
-        undo_button.margin_end = 6;
+        var undo_button = new Gtk.Button.with_label (_("Undo")) {
+            margin_end = 6
+        };
 
-        var close_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-        close_button.relief = Gtk.ReliefStyle.NONE;
+        var close_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", SMALL_TOOLBAR) {
+            relief = NONE
+        };
 
-        message_label = new Gtk.Label (_("\"%s\" removed").printf (source.display_name));
-        message_label.hexpand = true;
-        message_label.xalign = 0.0f;
+        message_label = new Gtk.Label (_("\"%s\" removed").printf (source.display_name)) {
+            hexpand = true,
+            xalign = 0
+        };
 
-        info_grid = new Gtk.Grid ();
-        info_grid.column_spacing = 12;
-        info_grid.row_spacing = 6;
-        info_grid.add (close_button);
-        info_grid.add (message_label);
-        info_grid.add (undo_button);
+        info_box = new Gtk.Box (HORIZONTAL, 12);
+        info_box.add (close_button);
+        info_box.add (message_label);
+        info_box.add (undo_button);
 
-        stack = new Gtk.Stack ();
-        stack.transition_type = Gtk.StackTransitionType.OVER_RIGHT_LEFT;
-        stack.add_named (info_grid, "info");
-        stack.add_named (calendar_event_box, "calendar");
-        stack.visible_child_name = "calendar";
+        stack = new Gtk.Stack () {
+            transition_type = OVER_RIGHT_LEFT
+        };
+        stack.add (info_box);
+        stack.add (calendar_event_box);
+        stack.visible_child = calendar_event_box;
 
         add (stack);
 
@@ -143,7 +139,7 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
 
         undo_button.clicked.connect (() => {
             Calendar.EventStore.get_default ().restore_calendar ();
-            stack.set_visible_child_name ("calendar");
+            stack.visible_child = calendar_event_box;
         });
 
         calendar_event_box.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK);
@@ -154,8 +150,9 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         });
 
         calendar_event_box.leave_notify_event.connect ((event) => {
-            if (event.detail == Gdk.NotifyType.INFERIOR)
+            if (event.detail == Gdk.NotifyType.INFERIOR) {
                 return false;
+            }
 
             delete_revealer.set_reveal_child (false);
             edit_revealer.set_reveal_child (false);
@@ -190,6 +187,6 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
     }
 
     public void show_calendar_removed () {
-        stack.set_visible_child_name ("info");
+        stack.visible_child = info_box;
     }
 }

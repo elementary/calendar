@@ -29,6 +29,9 @@ public class Maya.View.CalendarView : Gtk.Box {
     public signal void on_event_add (DateTime date);
     public signal void selection_changed (DateTime new_date);
 
+    private const string ACTION_GROUP_PREFIX = "calendar";
+    private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
+
     public Gtk.SearchEntry search_bar;
     private Calendar.Widgets.DateSwitcher month_switcher;
     private Calendar.Widgets.DateSwitcher year_switcher;
@@ -57,6 +60,53 @@ public class Maya.View.CalendarView : Gtk.Box {
     }
 
     construct {
+        var export_action = new SimpleAction ("export", null);
+        export_action.activate.connect (action_export);
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action (export_action);
+
+        var contractor_menu = new GLib.Menu ();
+
+        try {
+            var contracts = Granite.Services.ContractorProxy.get_contracts_by_mime ("text/calender");
+
+            int i = 0;
+            foreach (var contract in contracts) {
+                var contract_action = new SimpleAction ("contract-%i".printf (i), null);
+                contract_action.activate.connect (() => {
+                    /* creates a .ics file */
+                    Util.save_temp_selected_calendars ();
+
+                    var file_path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
+                    var cal_file = File.new_for_path (file_path);
+
+                    try {
+                        contract.execute_with_file (cal_file);
+                    } catch (Error err) {
+                        warning (err.message);
+                    }
+                });
+
+                action_group.add_action (contract_action);
+
+                contractor_menu.append (
+                    contract.get_display_name (),
+                    ACTION_PREFIX + "contract-%i".printf (i)
+                );
+                i++;
+            }
+        } catch (GLib.Error error) {
+            critical (error.message);
+        }
+
+        contractor_menu.append (
+            _("Export Calendar…"),
+            "calendar.export"
+        );
+
+        insert_action_group (ACTION_GROUP_PREFIX, action_group);
+
         selected_date = Maya.Application.get_selected_datetime ();
 
         var error_label = new Gtk.Label (null);
@@ -93,7 +143,11 @@ public class Maya.View.CalendarView : Gtk.Box {
 
         var spinner = new Maya.View.Widgets.DynamicSpinner ();
 
-        var contractor = new Maya.View.Widgets.ContractorButtonWithMenu (_("Export or Share the default Calendar"));
+        var contractor = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("document-export", LARGE_TOOLBAR),
+            popup = new Gtk.Menu.from_model (contractor_menu),
+            tooltip_text = _("Export or Share the default Calendar")
+        };
 
         var source_popover = new Calendar.Widgets.SourcePopover ();
 
@@ -169,6 +223,41 @@ public class Maya.View.CalendarView : Gtk.Box {
         calmodel.parameters_changed.connect (() => {
             set_switcher_date (calmodel.month_start);
         });
+    }
+
+    private void action_export () {
+        /* creates a .ics file */
+        Util.save_temp_selected_calendars ();
+
+        var filter = new Gtk.FileFilter ();
+        filter.add_mime_type ("text/calendar");
+
+        var filechooser = new Gtk.FileChooserNative (
+            _("Export Calendar…"),
+            null,
+            Gtk.FileChooserAction.SAVE,
+            _("Save"),
+            _("Cancel")
+        );
+        filechooser.do_overwrite_confirmation = true;
+        filechooser.filter = filter;
+        filechooser.set_current_name (_("calendar.ics"));
+
+        if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
+            var destination = filechooser.get_filename ();
+            if (destination == null) {
+                destination = filechooser.get_current_folder ();
+            } else if (!destination.has_suffix (".ics")) {
+                destination += ".ics";
+            }
+            try {
+                GLib.Process.spawn_command_line_async ("mv " + GLib.Environment.get_tmp_dir () + "/calendar.ics " + destination);
+            } catch (SpawnError e) {
+                warning (e.message);
+            }
+        }
+
+        filechooser.destroy ();
     }
 
     private void set_switcher_date (DateTime date) {
