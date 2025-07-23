@@ -78,19 +78,22 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         sensitive = parent_dialog.can_edit;
 
         var from_label = new Granite.HeaderLabel (_("From:"));
+
         from_date_picker = make_date_picker ();
         from_date_picker.notify["date"].connect (() => {on_date_modified (0);} );
+
         from_time_picker = make_time_picker ();
         from_time_picker.time_changed.connect (() => {on_time_modified (0);} );
 
-        var allday_label = new Gtk.Label (_("All day:"));
-        allday_label.set_alignment (1.0f, 0.5f);
-
-        allday_switch = new Gtk.Switch ();
-        var allday_switch_grid = new Gtk.Grid () {
-            valign = Gtk.Align.CENTER
+        allday_switch = new Gtk.Switch () {
+            valign = CENTER
         };
-        allday_switch_grid.attach (allday_switch, 0, 0, 1, 1);
+
+        var allday_label = new Gtk.Label (_("All day:")) {
+            mnemonic_widget = allday_switch,
+            xalign = 1
+        };
+
         allday_switch.notify["active"].connect (() => {
             on_date_modified (1);
             from_time_picker.sensitive = !allday_switch.get_active ();
@@ -98,19 +101,27 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         });
 
         var to_label = new Granite.HeaderLabel (_("To:"));
+
         to_date_picker = make_date_picker ();
         to_date_picker.notify["date"].connect (() => {on_date_modified (1);} );
+
         to_time_picker = make_time_picker ();
         to_time_picker.time_changed.connect (() => {on_time_modified (1);} );
 
         var timezone_header = new Granite.HeaderLabel (_("Time zone:"));
+
         timezone_label = new Gtk.Label (null) {
-            halign = Gtk.Align.START
+            halign = START
         };
 
-        var title_label = new Granite.HeaderLabel (_("Title:"));
-        title_entry = new Gtk.Entry ();
-        title_entry.placeholder_text = _("Name of Event");
+        title_entry = new Gtk.Entry () {
+            placeholder_text = _("Name of Event")
+        };
+
+        var title_label = new Granite.HeaderLabel (_("Title:")) {
+            mnemonic_widget = title_entry
+        };
+
         title_entry.changed.connect (on_title_entry_modified);
         title_entry.activate.connect (() => {
             parse_event (title_entry.get_text ());
@@ -135,8 +146,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             });
         });
 
-        var calendar_label = new Granite.HeaderLabel (_("Calendar:"));
-
         calchooser = new Widgets.CalendarChooser () {
             margin_bottom = 6
         };
@@ -160,12 +169,15 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             popover = popover
         };
 
+        var calendar_label = new Granite.HeaderLabel (_("Calendar:")) {
+            mnemonic_widget = calendar_button
+        };
+
         // Select the first calendar we can find, if none is default
         if (parent_dialog.source == null) {
             parent_dialog.source = calchooser.current_source;
         }
 
-        var comment_label = new Granite.HeaderLabel (_("Comments:"));
         comment_textview = new Granite.HyperTextView ();
         comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
         comment_textview.accepts_tab = false;
@@ -174,14 +186,21 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         comment_textview.set_border_window_size (Gtk.TextWindowType.TOP, 2);
         comment_textview.set_border_window_size (Gtk.TextWindowType.BOTTOM, 2);
 
-        var scrolled = new Gtk.ScrolledWindow (null, null);
-        scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        scrolled.add (comment_textview);
-        scrolled.height_request = 100;
-        scrolled.expand = true;
+        var comment_label = new Granite.HeaderLabel (_("Comments:")) {
+            mnemonic_widget = comment_textview
+        };
 
-        var frame = new Gtk.Frame (null);
-        frame.add (scrolled);
+        var scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = comment_textview,
+            height_request = 100,
+            hexpand = true,
+            vexpand = true,
+            hscrollbar_policy = NEVER
+        };
+
+        var frame = new Gtk.Frame (null) {
+            child = scrolled
+        };
 
         // Row: title & calendar
         attach (title_label, 0, 0, 1, 1);
@@ -195,7 +214,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         attach (from_date_picker, 0, 3, 1, 1);
         attach (from_time_picker, 1, 3, 1, 1);
         attach (allday_label, 2, 3, 1, 1);
-        attach (allday_switch_grid, 3, 3, 1, 1);
+        attach (allday_switch, 3, 3, 1, 1);
         // Row: end date/time
         attach (to_label, 0, 4, 2, 1);
         attach (to_date_picker, 0, 5, 1, 1);

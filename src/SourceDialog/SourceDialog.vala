@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.SourceDialog : Gtk.Grid {
+public class Maya.View.SourceDialog : Granite.Dialog {
     public EventType event_type { get; private set; default=EventType.EDIT;}
 
     private Gtk.Entry name_entry;
@@ -51,17 +51,12 @@ public class Maya.View.SourceDialog : Gtk.Grid {
     construct {
         widgets_checked = new Gee.HashMap<string, bool> (null, null);
 
-        var cancel_button = new Gtk.Button.with_label (_("Cancel"));
-        create_button = new Gtk.Button.with_label (_("Create"));
+        var cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
+
+        create_button = (Gtk.Button) add_button (_("Create") , Gtk.ResponseType.ACCEPT);
 
         create_button.clicked.connect (save);
         cancel_button.clicked.connect (() => go_back ());
-
-        var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
-        buttonbox.layout_style = Gtk.ButtonBoxStyle.END;
-        buttonbox.spacing = 6;
-        buttonbox.pack_end (cancel_button);
-        buttonbox.pack_end (create_button);
 
         var name_label = new Gtk.Label (_("Name:"));
         name_label.xalign = 1;
@@ -229,9 +224,15 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             hex_color = "#667885";
         });
 
-        main_grid = new Gtk.Grid ();
-        main_grid.row_spacing = 6;
-        main_grid.column_spacing = 12;
+        main_grid = new Gtk.Grid () {
+            margin_top = 12,
+            margin_end = 12,
+            margin_start = 12,
+            margin_bottom = 24,
+            column_spacing = 12,
+            row_spacing = 6,
+            vexpand = true
+        };
         main_grid.attach (type_label, 0, 0);
         main_grid.attach (type_combobox, 1, 0);
         main_grid.attach (name_label, 0, 1);
@@ -239,14 +240,9 @@ public class Maya.View.SourceDialog : Gtk.Grid {
         main_grid.attach (color_label, 0, 2);
         main_grid.attach (color_grid, 1, 2);
         main_grid.attach (is_default_check, 1, 3);
+        main_grid.show_all ();
 
-        margin = 12;
-        margin_bottom = 8;
-        row_spacing = 24;
-        attach (main_grid, 0, 0);
-        attach (buttonbox, 0, 1);
-
-        show_all ();
+        get_content_area ().add (main_grid);
     }
 
     public void set_source (E.Source? source = null) {

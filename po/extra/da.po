@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
+"POT-Creation-Date: 2025-07-22 18:21+0000\n"
 "PO-Revision-Date: 2020-08-25 13:13+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/calendar/extra/da/"
@@ -36,12 +36,6 @@ msgid ""
 msgstr ""
 "En enkel kalender app, der synkroniserer og samlet styrer flere kalendere, "
 "ligesom Google Kalender, Outlook og CalDAV."
-
-#: data/calendar.metainfo.xml.in:52
-#, fuzzy
-#| msgid "elementary LLC."
-msgid "elementary, Inc."
-msgstr "elementary ApS."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -98,12 +92,16 @@ msgstr ""
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-"Maya;Planlægning;Datoer;Dage;Begivenheder;Kalender;ics;caldav;evolution;"
+msgstr "Maya;Planlægning;Datoer;Dage;Begivenheder;Kalender;ics;caldav;evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Tilføj Event"
+
+#, fuzzy
+#~| msgid "elementary LLC."
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary ApS."
 
 #, fuzzy
 #~| msgid "Always use calendar icon in notifications"

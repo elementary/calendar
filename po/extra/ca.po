@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
+"POT-Creation-Date: 2025-07-22 18:21+0000\n"
 "PO-Revision-Date: 2024-09-04 14:43+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/calendar/extra/"
@@ -36,10 +36,6 @@ msgid ""
 msgstr ""
 "Una aplicació lleugera de calendari que sincronitza i gestiona diversos "
 "calendaris en un sol lloc, com ara Google Calendar, Outlook i CalDAV."
-
-#: data/calendar.metainfo.xml.in:52
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -98,12 +94,14 @@ msgstr "Correcció de la possible fuita de memòria"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-"Maya;Planificador;Dates;Dies;Esdeveniments;Calendari;ics;caldav;evolution;"
+msgstr "Maya;Planificador;Dates;Dies;Esdeveniments;Calendari;ics;caldav;evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Afegeix un esdeveniment"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr "S'assegura que el Calendari s’executi en segon pla a l’inici."

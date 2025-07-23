@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class CalendarRow : Gtk.Grid {
+public class CalendarRow : Gtk.Box {
 
     private const string CALENDAR_COLOR_STYLE = """
         .cal-color {
@@ -46,25 +46,27 @@ public class CalendarRow : Gtk.Grid {
     }
 
     construct {
-        column_spacing = 6;
-
-        var calendar_color = new Gtk.Grid ();
-        calendar_color.height_request = 12;
-        calendar_color.valign = Gtk.Align.CENTER;
-        calendar_color.width_request = 12;
+        var calendar_color = new Gtk.Grid () {
+            height_request = 12,
+            width_request = 12,
+            valign = CENTER
+        };
+        calendar_color.get_style_context ().add_class ("cal-color");
 
         calendar_color_context = calendar_color.get_style_context ();
-        calendar_color_context.add_class ("cal-color");
 
-        var calendar_name_label = new Gtk.Label ("");
-        calendar_name_label.xalign = 0;
-        calendar_name_label.hexpand = true;
-        calendar_name_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
+        var calendar_name_label = new Gtk.Label ("") {
+            hexpand = true,
+            ellipsize = MIDDLE,
+            xalign = 0
+        };
 
-        var selection_icon = new Gtk.Image.from_icon_name ("object-select-symbolic", Gtk.IconSize.MENU);
-        selection_icon.no_show_all = true;
-        selection_icon.visible = false;
+        var selection_icon = new Gtk.Image.from_icon_name ("object-select-symbolic", Gtk.IconSize.MENU) {
+            no_show_all = true,
+            visible = false
+        };
 
+        spacing = 6;
         add (calendar_color);
         add (calendar_name_label);
         add (selection_icon);

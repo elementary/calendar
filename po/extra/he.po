@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
+"POT-Creation-Date: 2025-07-22 18:21+0000\n"
 "PO-Revision-Date: 2024-09-03 23:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/calendar/extra/he/"
@@ -37,10 +37,6 @@ msgid ""
 msgstr ""
 "יישום לוח שנה קל ורזה שמסנכרן ומנהל לוחות שנה מרובים במקום אחד, כמו Google "
 "Calendar, Outlook ו־CalDAV."
-
-#: data/calendar.metainfo.xml.in:52
-msgid "elementary, Inc."
-msgstr "elementary בע״מ."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -100,6 +96,9 @@ msgstr "תכנון;תאריכים;פגישות;ימים;אירועים;יומן;
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "הוספת אירוע"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary בע״מ."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr "מתבצע וידאו שלוח השנה פועל ברקע עם ההפעלה"
