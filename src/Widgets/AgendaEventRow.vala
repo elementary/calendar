@@ -36,7 +36,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
     public Gtk.Revealer revealer { public get; private set; }
 
-    private Gtk.GestureMultiPress click_gesture;
+    private Gtk.GestureClick click_gesture;
 
     private Gtk.Image event_image;
     private Gtk.Label name_label;
@@ -261,7 +261,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             revealer.set_reveal_child (false);
         });
 
-        click_gesture = new Gtk.GestureMultiPress (this) {
+        click_gesture = new Gtk.GestureClick (this) {
             button = Gdk.BUTTON_SECONDARY,
             propagation_phase = BUBBLE
         };

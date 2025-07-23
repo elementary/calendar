@@ -38,8 +38,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private Gtk.ToggleButton sat_button;
     private Gtk.ToggleButton sun_button;
 
-    private Gtk.RadioButton every_radiobutton;
-    private Gtk.RadioButton same_radiobutton;
+    private Gtk.CheckButton every_radiobutton;
+    private Gtk.CheckButton same_radiobutton;
 
     public RepeatPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -190,8 +190,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         create_week_box ();
         week_box.sensitive = false;
 
-        same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
-        every_radiobutton = new Gtk.RadioButton.from_widget (same_radiobutton);
+        same_radiobutton = new Gtk.CheckButton.with_label (null, _("The same day every month"));
+        every_radiobutton = new Gtk.CheckButton.from_widget (same_radiobutton);
 
         month_grid = new Gtk.Grid ();
         month_grid.row_spacing = 6;
