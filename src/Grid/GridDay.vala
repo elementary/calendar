@@ -9,7 +9,7 @@
 /**
  * Represents a single day on the grid.
  */
-public class Maya.View.GridDay : Gtk.EventBox {
+public class Maya.View.GridDay : Granite.Bin {
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
