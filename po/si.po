@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 18:21+0000\n"
+"POT-Creation-Date: 2025-07-23 17:31+0000\n"
 "PO-Revision-Date: 2021-07-11 07:42+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/calendar/"
@@ -19,19 +19,19 @@ msgstr ""
 msgid "On this computer"
 msgstr "මෙම පරිගණකයේ"
 
-#: core/Backends/PlacementWidget.vala:41
+#: core/Backends/PlacementWidget.vala:28
 msgid "User:"
 msgstr "පරිශීලක:"
 
-#: core/Backends/PlacementWidget.vala:50
+#: core/Backends/PlacementWidget.vala:39
 msgid "user.name"
 msgstr "පරිශීලක.නාමය"
 
-#: core/Backends/PlacementWidget.vala:63
+#: core/Backends/PlacementWidget.vala:56
 msgid "Email:"
 msgstr "විද්යුත් තැපෑල:"
 
-#: core/Backends/PlacementWidget.vala:72
+#: core/Backends/PlacementWidget.vala:67
 msgid "john@doe.com"
 msgstr "කමල්@දිසානායක.ලංකා"
 
@@ -51,19 +51,19 @@ msgstr "ගූගල්"
 msgid "user.name or user.name@gmail.com"
 msgstr "පරිශිලක.නාමය හෝ පරිශීලක.නාමය@සේවය.ලංකා"
 
-#: plugins/CalDAV/CalDAVBackend.vala:39
+#: plugins/CalDAV/CalDAVBackend.vala:24
 msgid "CalDAV"
 msgstr ""
 
-#: plugins/CalDAV/CalDAVBackend.vala:58
+#: plugins/CalDAV/CalDAVBackend.vala:48
 msgid "URL:"
 msgstr "ඒ.ස.නි.:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:99
+#: plugins/CalDAV/CalDAVBackend.vala:90
 msgid "Use a secure connection"
 msgstr "ආරක්ෂිත සම්බන්ධතාවයක් භාවිතා කරන්න"
 
-#: plugins/CalDAV/CalDAVBackend.vala:127
+#: plugins/CalDAV/CalDAVBackend.vala:117
 msgid "Server handles meeting invitations"
 msgstr "සේවාදායකය රැස්වීම් ආරාධනා හසුරුවයි"
 
@@ -167,7 +167,7 @@ msgstr "ස්ථානය"
 msgid "Guests"
 msgstr "ආගන්තුකයන්"
 
-#: src/EventEdition/EventDialog.vala:123
+#: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:38
 msgid "Reminders"
 msgstr "සිහිගැන්වීම්"
 
@@ -192,7 +192,7 @@ msgid "Save Changes"
 msgstr "වෙනස්කම් සුරකින්න"
 
 #: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:98
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "අවලංගු කරන්න"
 
@@ -264,94 +264,90 @@ msgstr "ස්ථානය:"
 msgid "John Smith OR Example St."
 msgstr "ජෝන් ස්මිත් හෝ නිදර්ශන වීදිය."
 
-#: src/EventEdition/ReminderPanel.vala:34
-msgid "Reminders:"
-msgstr "සිහිගැන්වීම්:"
-
-#: src/EventEdition/ReminderPanel.vala:36
+#: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
 msgstr "සිහිගැන්වීම් නැත"
 
-#: src/EventEdition/ReminderPanel.vala:55
+#: src/EventEdition/ReminderPanel.vala:50
 msgid "Add Reminder"
 msgstr "සිහිගැන්වීම එක් කරන්න"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:169
 #, fuzzy
 msgid "At time of event"
 msgstr "සිදුවීම් නම"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:170
 #, fuzzy
 msgid "1 minute before"
 msgstr "විනාඩි 1 යි"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:171
 #, fuzzy
 msgid "5 minutes before"
 msgstr "විනාඩි 5 යි"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:172
 #, fuzzy
 msgid "10 minutes before"
 msgstr "විනාඩි 10 යි"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:173
 #, fuzzy
 msgid "15 minutes before"
 msgstr "විනාඩි 15 යි"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:174
 #, fuzzy
 msgid "20 minutes before"
 msgstr "විනාඩි 20 යි"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:175
 #, fuzzy
 msgid "25 minutes before"
 msgstr "විනාඩි 25 යි"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:176
 #, fuzzy
 msgid "30 minutes before"
 msgstr "විනාඩි 30 යි"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:177
 #, fuzzy
 msgid "45 minutes before"
 msgstr "විනාඩි 45 යි"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:178
 #, fuzzy
 msgid "1 hour before"
 msgstr "පැය 1 යි"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:179
 #, fuzzy
 msgid "2 hours before"
 msgstr "පැය 2 යි"
 
-#: src/EventEdition/ReminderPanel.vala:183
+#: src/EventEdition/ReminderPanel.vala:180
 #, fuzzy
 msgid "3 hours before"
 msgstr "පැය 3 යි"
 
-#: src/EventEdition/ReminderPanel.vala:184
+#: src/EventEdition/ReminderPanel.vala:181
 #, fuzzy
 msgid "12 hours before"
 msgstr "පැය 12 යි"
 
-#: src/EventEdition/ReminderPanel.vala:185
+#: src/EventEdition/ReminderPanel.vala:182
 #, fuzzy
 msgid "24 hours before"
 msgstr "පැය 24 යි"
 
-#: src/EventEdition/ReminderPanel.vala:186
+#: src/EventEdition/ReminderPanel.vala:183
 #, fuzzy
 msgid "2 days before"
 msgstr "දින 2 ක්"
 
-#: src/EventEdition/ReminderPanel.vala:187
+#: src/EventEdition/ReminderPanel.vala:184
 #, fuzzy
 msgid "1 week before"
 msgstr "සති 1 ක්"
@@ -875,7 +871,7 @@ msgstr "සිදුවීම මකන්න"
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
 msgid "Edit…"
 msgstr "සංස්කරණය කරන්න…"
 
@@ -891,46 +887,49 @@ msgstr "සිදුවීම ඉවත් කරන්න"
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
 msgid "Remove"
 msgstr "ඉවත් කරන්න"
 
-#: src/Widgets/SourcePopover.vala:58
+#: src/Widgets/SourcePopover.vala:44
 msgid "Add New Calendar…"
 msgstr "නව දින දසුන එකතු කරන්න…"
 
-#: src/Widgets/SourcePopover.vala:62
+#: src/Widgets/SourcePopover.vala:48
 msgid "Import iCalendar File…"
 msgstr "අයිදිනදසුන ආයාත කරන්න…"
 
-#: src/Widgets/SourcePopover.vala:66
+#: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
 msgstr "මාර්ගගත ගිණුම් සැකසුම්…"
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:82
 msgid "Open"
 msgstr "විවෘත කරන්න"
 
-#: src/Widgets/SourceRow.vala:75
+#: src/Widgets/SourceRow.vala:67
 msgid "Not Removable"
 msgstr "ඉවත් කළ නොහැකි"
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:80
 msgid "Not Editable"
 msgstr "සංස්කරණය කළ නොහැකි"
 
-#: src/Widgets/SourceRow.vala:110
+#: src/Widgets/SourceRow.vala:104
 msgid "Undo"
 msgstr "පෙරසේ"
 
-#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" ඉවත් කළා"
+
+#~ msgid "Reminders:"
+#~ msgstr "සිහිගැන්වීම්:"
 
 #~ msgid "%B %e, %Y"
 #~ msgstr "%B %e, %Y"

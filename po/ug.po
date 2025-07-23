@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 18:21+0000\n"
+"POT-Creation-Date: 2025-07-23 17:31+0000\n"
 "PO-Revision-Date: 2017-01-03 09:18+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: \n"
@@ -18,19 +18,19 @@ msgstr ""
 msgid "On this computer"
 msgstr "بۇ كومپىيۇتىردا"
 
-#: core/Backends/PlacementWidget.vala:41
+#: core/Backends/PlacementWidget.vala:28
 msgid "User:"
 msgstr "ئابونت:"
 
-#: core/Backends/PlacementWidget.vala:50
+#: core/Backends/PlacementWidget.vala:39
 msgid "user.name"
 msgstr "ئابونت ئىسمى"
 
-#: core/Backends/PlacementWidget.vala:63
+#: core/Backends/PlacementWidget.vala:56
 msgid "Email:"
 msgstr "ئېلخەت:"
 
-#: core/Backends/PlacementWidget.vala:72
+#: core/Backends/PlacementWidget.vala:67
 msgid "john@doe.com"
 msgstr "john@doe.com غا ئوخشاش"
 
@@ -50,19 +50,19 @@ msgstr "گۇگىل(Google)"
 msgid "user.name or user.name@gmail.com"
 msgstr "ئابونت ئىسمى ياكى ئابونت ئىسمى@gmail.com"
 
-#: plugins/CalDAV/CalDAVBackend.vala:39
+#: plugins/CalDAV/CalDAVBackend.vala:24
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:58
+#: plugins/CalDAV/CalDAVBackend.vala:48
 msgid "URL:"
 msgstr "تور ئادىرىسى:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:99
+#: plugins/CalDAV/CalDAVBackend.vala:90
 msgid "Use a secure connection"
 msgstr "بىخەتەر ئۇلىنىشنى ئىشلىتىش"
 
-#: plugins/CalDAV/CalDAVBackend.vala:127
+#: plugins/CalDAV/CalDAVBackend.vala:117
 msgid "Server handles meeting invitations"
 msgstr "مۇلازىمېتىر ئۇچرىشىش تەكلىپلىرىنى بىر تەرەپ قىلىدۇ"
 
@@ -172,7 +172,7 @@ msgstr "ئورنى"
 msgid "Guests"
 msgstr "مېھمانلار"
 
-#: src/EventEdition/EventDialog.vala:123
+#: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:38
 msgid "Reminders"
 msgstr "ئەسكەرتىش"
 
@@ -198,7 +198,7 @@ msgid "Save Changes"
 msgstr "ئۆزگەرتىشلەرنى ساقلاش"
 
 #: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:98
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "ئەمەلدىن قالدۇرۇش"
 
@@ -270,94 +270,90 @@ msgstr "ئورنى:"
 msgid "John Smith OR Example St."
 msgstr "ئورۇن ياكى كوچا ئىسمى"
 
-#: src/EventEdition/ReminderPanel.vala:34
-msgid "Reminders:"
-msgstr "ئەسكەرتىش:"
-
-#: src/EventEdition/ReminderPanel.vala:36
+#: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
 msgstr "ئەسكەرتىش يوق"
 
-#: src/EventEdition/ReminderPanel.vala:55
+#: src/EventEdition/ReminderPanel.vala:50
 msgid "Add Reminder"
 msgstr "ئەسكەرتكۈچ قوشۇش"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:169
 #, fuzzy
 msgid "At time of event"
 msgstr "پائالىيەت ئىسمى"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:170
 #, fuzzy
 msgid "1 minute before"
 msgstr "1 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:171
 #, fuzzy
 msgid "5 minutes before"
 msgstr "5 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:172
 #, fuzzy
 msgid "10 minutes before"
 msgstr "10 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:173
 #, fuzzy
 msgid "15 minutes before"
 msgstr "15 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:174
 #, fuzzy
 msgid "20 minutes before"
 msgstr "20 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:175
 #, fuzzy
 msgid "25 minutes before"
 msgstr "25 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:176
 #, fuzzy
 msgid "30 minutes before"
 msgstr "30 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:177
 #, fuzzy
 msgid "45 minutes before"
 msgstr "45 مىنۇت"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:178
 #, fuzzy
 msgid "1 hour before"
 msgstr "1سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:179
 #, fuzzy
 msgid "2 hours before"
 msgstr "2سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:183
+#: src/EventEdition/ReminderPanel.vala:180
 #, fuzzy
 msgid "3 hours before"
 msgstr "3 سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:184
+#: src/EventEdition/ReminderPanel.vala:181
 #, fuzzy
 msgid "12 hours before"
 msgstr "12سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:185
+#: src/EventEdition/ReminderPanel.vala:182
 #, fuzzy
 msgid "24 hours before"
 msgstr "24سائەت"
 
-#: src/EventEdition/ReminderPanel.vala:186
+#: src/EventEdition/ReminderPanel.vala:183
 #, fuzzy
 msgid "2 days before"
 msgstr "2 كۈن"
 
-#: src/EventEdition/ReminderPanel.vala:187
+#: src/EventEdition/ReminderPanel.vala:184
 #, fuzzy
 msgid "1 week before"
 msgstr "1 ھەپتە"
@@ -875,7 +871,7 @@ msgstr "پائالىيەتنى ئۆچۈرۈش"
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
 msgid "Edit…"
 msgstr "تەھرىرلەش...."
 
@@ -892,48 +888,51 @@ msgstr "پائالىيەتنى ئۆچۈرۈش"
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
 msgid "Remove"
 msgstr "ئۆچۈرۈش"
 
-#: src/Widgets/SourcePopover.vala:58
+#: src/Widgets/SourcePopover.vala:44
 msgid "Add New Calendar…"
 msgstr "يىڭى كالېندار قىتىش...."
 
-#: src/Widgets/SourcePopover.vala:62
+#: src/Widgets/SourcePopover.vala:48
 #, fuzzy
 msgid "Import iCalendar File…"
 msgstr "كالېندارنى چىقىرىش...."
 
-#: src/Widgets/SourcePopover.vala:66
+#: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:82
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:75
+#: src/Widgets/SourceRow.vala:67
 #, fuzzy
 msgid "Not Removable"
 msgstr "ئۆچۈرۈش"
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:80
 msgid "Not Editable"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:110
+#: src/Widgets/SourceRow.vala:104
 msgid "Undo"
 msgstr "بىكار قىلىش"
 
-#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "كالېندار \"%s\" ئۆچۈرۈلگەن."
+
+#~ msgid "Reminders:"
+#~ msgstr "ئەسكەرتىش:"
 
 #, fuzzy
 #~ msgid "Print debug information"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 18:21+0000\n"
+"POT-Creation-Date: 2025-07-23 17:31+0000\n"
 "PO-Revision-Date: 2024-06-13 00:26+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
@@ -24,19 +24,19 @@ msgstr ""
 msgid "On this computer"
 msgstr "En este equipo"
 
-#: core/Backends/PlacementWidget.vala:41
+#: core/Backends/PlacementWidget.vala:28
 msgid "User:"
 msgstr "Usuario:"
 
-#: core/Backends/PlacementWidget.vala:50
+#: core/Backends/PlacementWidget.vala:39
 msgid "user.name"
 msgstr "nombre.usuario"
 
-#: core/Backends/PlacementWidget.vala:63
+#: core/Backends/PlacementWidget.vala:56
 msgid "Email:"
 msgstr "Correo electrónico:"
 
-#: core/Backends/PlacementWidget.vala:72
+#: core/Backends/PlacementWidget.vala:67
 msgid "john@doe.com"
 msgstr "juan@perez.com"
 
@@ -56,19 +56,19 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "nombre.usuario o nombre.usuario@gmail.com"
 
-#: plugins/CalDAV/CalDAVBackend.vala:39
+#: plugins/CalDAV/CalDAVBackend.vala:24
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:58
+#: plugins/CalDAV/CalDAVBackend.vala:48
 msgid "URL:"
 msgstr "URL:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:99
+#: plugins/CalDAV/CalDAVBackend.vala:90
 msgid "Use a secure connection"
 msgstr "Usar una conexión segura"
 
-#: plugins/CalDAV/CalDAVBackend.vala:127
+#: plugins/CalDAV/CalDAVBackend.vala:117
 msgid "Server handles meeting invitations"
 msgstr "El servidor se encarga de las invitaciones a reuniones"
 
@@ -177,7 +177,7 @@ msgstr "Ubicación"
 msgid "Guests"
 msgstr "Invitados"
 
-#: src/EventEdition/EventDialog.vala:123
+#: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:38
 msgid "Reminders"
 msgstr "Recordatorios"
 
@@ -202,7 +202,7 @@ msgid "Save Changes"
 msgstr "Guardar cambios"
 
 #: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:98
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -274,79 +274,75 @@ msgstr "Ubicación:"
 msgid "John Smith OR Example St."
 msgstr "«Juan Pérez» o «Calle Ejemplo»."
 
-#: src/EventEdition/ReminderPanel.vala:34
-msgid "Reminders:"
-msgstr "Recordatorios:"
-
-#: src/EventEdition/ReminderPanel.vala:36
+#: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
 msgstr "Ningún recordatorio"
 
-#: src/EventEdition/ReminderPanel.vala:55
+#: src/EventEdition/ReminderPanel.vala:50
 msgid "Add Reminder"
 msgstr "Añadir recordatorio"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:169
 msgid "At time of event"
 msgstr "A la hora del evento"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:170
 msgid "1 minute before"
 msgstr "1 minuto antes"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:171
 msgid "5 minutes before"
 msgstr "5 minutos antes"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "10 minutes before"
 msgstr "10 minutos antes"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "15 minutes before"
 msgstr "15 minutos antes"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "20 minutes before"
 msgstr "20 minutos antes"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "25 minutes before"
 msgstr "25 minutos antes"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "30 minutes before"
 msgstr "30 minutos antes"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "45 minutes before"
 msgstr "45 minutos antes"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "1 hour before"
 msgstr "1 hora antes"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "2 hours before"
 msgstr "2 horas antes"
 
-#: src/EventEdition/ReminderPanel.vala:183
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "3 hours before"
 msgstr "3 horas antes"
 
-#: src/EventEdition/ReminderPanel.vala:184
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "12 hours before"
 msgstr "12 horas antes"
 
-#: src/EventEdition/ReminderPanel.vala:185
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "24 hours before"
 msgstr "24 horas antes"
 
-#: src/EventEdition/ReminderPanel.vala:186
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "2 days before"
 msgstr "2 días antes"
 
-#: src/EventEdition/ReminderPanel.vala:187
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "1 week before"
 msgstr "1 semana antes"
 
@@ -867,7 +863,7 @@ msgstr "Eliminar evento"
 msgid "This event will be permanently deleted."
 msgstr "Este evento será eliminado de manera permanente."
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
 msgid "Edit…"
 msgstr "Editar…"
 
@@ -883,46 +879,49 @@ msgstr "Eliminar evento"
 msgid "Remove Occurrence"
 msgstr "Eliminar repetición"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
 msgid "Remove"
 msgstr "Eliminar"
 
-#: src/Widgets/SourcePopover.vala:58
+#: src/Widgets/SourcePopover.vala:44
 msgid "Add New Calendar…"
 msgstr "Añadir calendario nuevo…"
 
-#: src/Widgets/SourcePopover.vala:62
+#: src/Widgets/SourcePopover.vala:48
 msgid "Import iCalendar File…"
 msgstr "Importar archivo de iCalendar…"
 
-#: src/Widgets/SourcePopover.vala:66
+#: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
 msgstr "Configuración de cuentas online …"
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
 msgstr "Seleccione el archivo ICS a importar"
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:82
 msgid "Open"
 msgstr "Abrir"
 
-#: src/Widgets/SourceRow.vala:75
+#: src/Widgets/SourceRow.vala:67
 msgid "Not Removable"
 msgstr "No removible"
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:80
 msgid "Not Editable"
 msgstr "No editable"
 
-#: src/Widgets/SourceRow.vala:110
+#: src/Widgets/SourceRow.vala:104
 msgid "Undo"
 msgstr "Deshacer"
 
-#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
 #, c-format
 msgid "\"%s\" removed"
 msgstr "Se ha quitado «%s»"
+
+#~ msgid "Reminders:"
+#~ msgstr "Recordatorios:"
 
 #~ msgid "Print debug information"
 #~ msgstr "Imprimir información de depuración"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 18:21+0000\n"
+"POT-Creation-Date: 2025-07-23 17:31+0000\n"
 "PO-Revision-Date: 2023-08-09 05:08+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -24,19 +24,19 @@ msgstr ""
 msgid "On this computer"
 msgstr "在本机上"
 
-#: core/Backends/PlacementWidget.vala:41
+#: core/Backends/PlacementWidget.vala:28
 msgid "User:"
 msgstr "用户："
 
-#: core/Backends/PlacementWidget.vala:50
+#: core/Backends/PlacementWidget.vala:39
 msgid "user.name"
 msgstr "用户名"
 
-#: core/Backends/PlacementWidget.vala:63
+#: core/Backends/PlacementWidget.vala:56
 msgid "Email:"
 msgstr "电子邮件："
 
-#: core/Backends/PlacementWidget.vala:72
+#: core/Backends/PlacementWidget.vala:67
 msgid "john@doe.com"
 msgstr "如 john@doe.com"
 
@@ -56,19 +56,19 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "用户名 或 用户名@gmail.com"
 
-#: plugins/CalDAV/CalDAVBackend.vala:39
+#: plugins/CalDAV/CalDAVBackend.vala:24
 msgid "CalDAV"
 msgstr "CalDAV帐户"
 
-#: plugins/CalDAV/CalDAVBackend.vala:58
+#: plugins/CalDAV/CalDAVBackend.vala:48
 msgid "URL:"
 msgstr "URL："
 
-#: plugins/CalDAV/CalDAVBackend.vala:99
+#: plugins/CalDAV/CalDAVBackend.vala:90
 msgid "Use a secure connection"
 msgstr "使用安全连接"
 
-#: plugins/CalDAV/CalDAVBackend.vala:127
+#: plugins/CalDAV/CalDAVBackend.vala:117
 msgid "Server handles meeting invitations"
 msgstr "服务器处理会议邀请"
 
@@ -172,7 +172,7 @@ msgstr "位置"
 msgid "Guests"
 msgstr "客人"
 
-#: src/EventEdition/EventDialog.vala:123
+#: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:38
 msgid "Reminders"
 msgstr "提醒"
 
@@ -197,7 +197,7 @@ msgid "Save Changes"
 msgstr "保存更改"
 
 #: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:98
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "取消"
 
@@ -269,79 +269,75 @@ msgstr "位置："
 msgid "John Smith OR Example St."
 msgstr "地点或街道名称。"
 
-#: src/EventEdition/ReminderPanel.vala:34
-msgid "Reminders:"
-msgstr "提醒："
-
-#: src/EventEdition/ReminderPanel.vala:36
+#: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
 msgstr "无提醒"
 
-#: src/EventEdition/ReminderPanel.vala:55
+#: src/EventEdition/ReminderPanel.vala:50
 msgid "Add Reminder"
 msgstr "添加提醒"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:169
 msgid "At time of event"
 msgstr "事件开始时"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:170
 msgid "1 minute before"
 msgstr "提前 1 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:171
 msgid "5 minutes before"
 msgstr "提前 5 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "10 minutes before"
 msgstr "提前 10 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "15 minutes before"
 msgstr "提前 15 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "20 minutes before"
 msgstr "提前 20 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "25 minutes before"
 msgstr "提前 25 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "30 minutes before"
 msgstr "提前 30 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "45 minutes before"
 msgstr "提前 45 分钟"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "1 hour before"
 msgstr "提前 1 小时"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "2 hours before"
 msgstr "提前 2 小时"
 
-#: src/EventEdition/ReminderPanel.vala:183
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "3 hours before"
 msgstr "提前 3 小时"
 
-#: src/EventEdition/ReminderPanel.vala:184
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "12 hours before"
 msgstr "提前 12 小时"
 
-#: src/EventEdition/ReminderPanel.vala:185
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "24 hours before"
 msgstr "提前 24 小时"
 
-#: src/EventEdition/ReminderPanel.vala:186
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "2 days before"
 msgstr "提前 2 天"
 
-#: src/EventEdition/ReminderPanel.vala:187
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "1 week before"
 msgstr "提前 1 周"
 
@@ -862,7 +858,7 @@ msgstr "删除事件"
 msgid "This event will be permanently deleted."
 msgstr "该活动无法编辑"
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
 msgid "Edit…"
 msgstr "编辑…"
 
@@ -878,46 +874,49 @@ msgstr "删除事件"
 msgid "Remove Occurrence"
 msgstr "删除触发"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
 msgid "Remove"
 msgstr "删除"
 
-#: src/Widgets/SourcePopover.vala:58
+#: src/Widgets/SourcePopover.vala:44
 msgid "Add New Calendar…"
 msgstr "添加新日历…"
 
-#: src/Widgets/SourcePopover.vala:62
+#: src/Widgets/SourcePopover.vala:48
 msgid "Import iCalendar File…"
 msgstr "导入 iCalendar 文件…"
 
-#: src/Widgets/SourcePopover.vala:66
+#: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
 msgstr "网络账户设置…"
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
 msgstr "选择要导入的 ICS 文件"
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:82
 msgid "Open"
 msgstr "打开"
 
-#: src/Widgets/SourceRow.vala:75
+#: src/Widgets/SourceRow.vala:67
 msgid "Not Removable"
 msgstr "无法删除"
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:80
 msgid "Not Editable"
 msgstr "不可编辑"
 
-#: src/Widgets/SourceRow.vala:110
+#: src/Widgets/SourceRow.vala:104
 msgid "Undo"
 msgstr "撤销"
 
-#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
 #, c-format
 msgid "\"%s\" removed"
 msgstr "日历“%s”已删除"
+
+#~ msgid "Reminders:"
+#~ msgstr "提醒："
 
 #~ msgid "Print debug information"
 #~ msgstr "打印调试信息"
