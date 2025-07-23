@@ -38,8 +38,6 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         }
 
         var url_entry = new PlacementWidget () {
-            column = 1,
-            row = 1,
             needed = true,
             ref_name = "url_entry",
             widget = new Gtk.Entry () {
@@ -48,13 +46,9 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         };
 
         var url_label = new PlacementWidget () {
-            column = 0,
-            row = 1,
             ref_name = "url_label",
-            widget = new Gtk.Label (_("URL")) {
-                hexpand = true,
-                mnemonic_widget = url_entry.widget,
-                xalign = 1.0f
+            widget = new Granite.HeaderLabel (_("URL")) {
+                mnemonic_widget = url_entry.widget
             }
         };
 
@@ -82,8 +76,6 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
         };*/
 
         var secure_checkbutton = new PlacementWidget () {
-            column = 1,
-            row = 3,
             ref_name = "secure_checkbutton",
             widget = new Gtk.CheckButton.with_label (_("Use a secure connection"))
         };
@@ -113,8 +105,6 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
 
         var server_checkbutton = new PlacementWidget ();
         server_checkbutton.widget = new Gtk.CheckButton.with_label (_("Server handles meeting invitations"));
-        server_checkbutton.row = 6;
-        server_checkbutton.column = 1;
         server_checkbutton.ref_name = "server_checkbutton";
         if (to_edit != null) {
             E.SourceWebdav webdav = (E.SourceWebdav)to_edit.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);

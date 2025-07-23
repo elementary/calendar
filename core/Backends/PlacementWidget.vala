@@ -13,8 +13,6 @@ public class Maya.PlacementWidget : GLib.Object {
     }
 
     public Gtk.Widget widget;
-    public int row = 0;
-    public int column = 0;
     public string ref_name;
     public bool needed = false; // Only usefull for Gtk.Entry and his derivates
 }
@@ -22,8 +20,6 @@ public class Maya.PlacementWidget : GLib.Object {
 namespace Maya.DefaultPlacementWidgets {
     public Gee.LinkedList<Maya.PlacementWidget> get_user (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
         var user_entry = new PlacementWidget () {
-            column = 1,
-            row = row,
             needed = needed,
             ref_name = "user_entry",
             widget = new Gtk.Entry () {
@@ -33,12 +29,9 @@ namespace Maya.DefaultPlacementWidgets {
         };
 
         var user_label = new PlacementWidget () {
-            column = 0,
-            row = row,
             ref_name = "user_label",
-            widget = new Gtk.Label (_("User")) {
-                mnemonic_widget = user_entry.widget,
-                xalign = 1.0f
+            widget = new Granite.HeaderLabel (_("User Name")) {
+                mnemonic_widget = user_entry.widget
             }
         };
 
@@ -51,23 +44,18 @@ namespace Maya.DefaultPlacementWidgets {
 
     public Gee.LinkedList<Maya.PlacementWidget> get_email (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
         var user_entry = new PlacementWidget () {
-            column = 1,
-            row = row,
             needed = needed,
             ref_name = "email_entry",
             widget = new Gtk.Entry () {
-                placeholder_text = ph_text ?? _("john@doe.com"),
+                placeholder_text = ph_text ?? _("ellie@example.com"),
                 text = entry_text
             }
         };
 
         var user_label = new PlacementWidget () {
-            column = 0,
-            row = row,
             ref_name = "email_label",
-            widget = new Gtk.Label (_("Email")) {
-                mnemonic_widget = user_entry.widget,
-                xalign = 1.0f
+            widget = new Granite.HeaderLabel (_("Email")) {
+                mnemonic_widget = user_entry.widget
             }
         };
 
@@ -80,8 +68,6 @@ namespace Maya.DefaultPlacementWidgets {
 
     public Maya.PlacementWidget get_keep_copy (int row, bool default_value = false) {
         var keep_check = new PlacementWidget () {
-            column = 1,
-            row = row,
             ref_name = "keep_copy",
             widget = new Gtk.CheckButton.with_label (_("Keep a copy locally")) {
                 active = default_value
