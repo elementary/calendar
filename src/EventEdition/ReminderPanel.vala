@@ -1,18 +1,6 @@
 /*
- * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Jaap Broekhuizen
  */
@@ -28,47 +16,56 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
 
         expand = true;
         margin_start = margin_end = 12;
-        orientation = Gtk.Orientation.VERTICAL;
+        orientation = VERTICAL;
         sensitive = parent_dialog.can_edit;
-
-        var reminder_label = new Granite.HeaderLabel (_("Reminders:"));
 
         var no_reminder_label = new Gtk.Label (_("No Reminders"));
         no_reminder_label.show ();
 
-        unowned Gtk.StyleContext no_reminder_context = no_reminder_label.get_style_context ();
-        no_reminder_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
-        no_reminder_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        no_reminder_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_reminder_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         reminders = new Gee.ArrayList<ReminderGrid> ();
         reminders_to_remove = new Gee.ArrayList<string> ();
 
-        reminder_list = new Gtk.ListBox ();
-        reminder_list.expand = true;
-        reminder_list.set_selection_mode (Gtk.SelectionMode.NONE);
+        reminder_list = new Gtk.ListBox () {
+            hexpand = true,
+            vexpand = true,
+            selection_mode = NONE
+        };
         reminder_list.set_placeholder (no_reminder_label);
 
-        var scrolled = new Gtk.ScrolledWindow (null, null);
-        scrolled.add (reminder_list);
-        scrolled.expand = true;
+        var reminder_label = new Granite.HeaderLabel (_("Reminders")) {
+            mnemonic_widget = reminder_list
+        };
 
-        var add_button = new Gtk.Button.with_label (_("Add Reminder"));
-        add_button.always_show_image = true;
-        add_button.image = new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON);
-        add_button.margin = 3;
+        var scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = reminder_list,
+            hexpand = true,
+            vexpand = true,
+        };
+
+        var add_button_box = new Gtk.Box (HORIZONTAL, 0);
+        add_button_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", BUTTON));
+        add_button_box.add (new Gtk.Label (_("Add Reminder")));
+
+        var add_button = new Gtk.Button () {
+            child = add_button_box
+        };
         add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var inline_toolbar = new Gtk.ActionBar ();
-        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         inline_toolbar.add (add_button);
 
-        var grid = new Gtk.Grid ();
-        grid.attach (scrolled, 0, 0);
-        grid.attach (inline_toolbar, 0, 1);
+        var box = new Gtk.Box (VERTICAL, 0);
+        box.add (scrolled);
+        box.add (inline_toolbar);
 
-        var frame = new Gtk.Frame (null);
-        frame.margin_top = 6;
-        frame.add (grid);
+        var frame = new Gtk.Frame (null) {
+            child = box,
+            margin_top = 6
+        };
 
         add (reminder_label);
         add (frame);
