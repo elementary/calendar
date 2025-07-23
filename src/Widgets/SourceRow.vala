@@ -17,9 +17,7 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
     private Gtk.Box info_box;
 
     private Gtk.Button delete_button;
-    private Gtk.Revealer delete_revealer;
     private Gtk.Button edit_button;
-    private Gtk.Revealer edit_revealer;
 
     private Gtk.Label calendar_name_label;
     private Gtk.Label message_label;
@@ -62,28 +60,13 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         style_calendar_color (cal.dup_color ());
 
         delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", MENU) {
-            relief = NONE,
             sensitive = source.removable,
             tooltip_text = source.removable ? _("Remove") : _("Not Removable")
         };
-        delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-
-        delete_revealer = new Gtk.Revealer () {
-            child = delete_button,
-            reveal_child = false,
-            transition_type = CROSSFADE
-        };
 
         edit_button = new Gtk.Button.from_icon_name ("edit-symbolic", MENU) {
-            relief = NONE,
             sensitive = source.writable,
             tooltip_text = source.writable ? _("Edit…"): _("Not Editable")
-        };
-
-        edit_revealer = new Gtk.Revealer () {
-            child = edit_button,
-            reveal_child = false,
-            transition_type = CROSSFADE
         };
 
         var calendar_box = new Gtk.Box (HORIZONTAL, 6) {
@@ -94,8 +77,8 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         };
         calendar_box.add (visible_checkbutton);
         calendar_box.add (calendar_name_label);
-        calendar_box.add (delete_revealer);
-        calendar_box.add (edit_revealer);
+        calendar_box.add (delete_button);
+        calendar_box.add (edit_button);
 
         var calendar_event_box = new Gtk.EventBox ();
         calendar_event_box.add (calendar_box);
@@ -140,23 +123,6 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         undo_button.clicked.connect (() => {
             Calendar.EventStore.get_default ().restore_calendar ();
             stack.visible_child = calendar_event_box;
-        });
-
-        calendar_event_box.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK);
-        calendar_event_box.enter_notify_event.connect ((event) => {
-            delete_revealer.set_reveal_child (true);
-            edit_revealer.set_reveal_child (true);
-            return false;
-        });
-
-        calendar_event_box.leave_notify_event.connect ((event) => {
-            if (event.detail == Gdk.NotifyType.INFERIOR) {
-                return false;
-            }
-
-            delete_revealer.set_reveal_child (false);
-            edit_revealer.set_reveal_child (false);
-            return false;
         });
 
         source.changed.connect (source_has_changed);
