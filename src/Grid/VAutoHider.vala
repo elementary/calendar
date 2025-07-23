@@ -94,11 +94,9 @@ namespace Maya.View {
                 }
 
                 if (should_hide) {
-                    hide_revealer_now ((Gtk.Revealer)child);
-                    child.hide ();
+                    ((Maya.View.EventButton) child).hide_without_animate ();
                 } else {
-                    show_revealer_now ((Gtk.Revealer)child);
-                    child.show ();
+                    ((Maya.View.EventButton) child).show_without_animate ();
                     shown_children++;
                 }
             }
@@ -110,28 +108,6 @@ namespace Maya.View {
             } else {
                 more_label.hide ();
             }
-        }
-
-        private void hide_revealer_now (Gtk.Revealer revealer) {
-            if (revealer.child_revealed == false)
-                return;
-
-            var reveal_duration = revealer.transition_duration;
-            revealer.transition_duration = 0;
-            revealer.set_reveal_child (false);
-            revealer.transition_duration = reveal_duration;
-            revealer.hide ();
-        }
-
-        private void show_revealer_now (Gtk.Revealer revealer) {
-            if (revealer.child_revealed == true)
-                return;
-
-            var reveal_duration = revealer.transition_duration;
-            revealer.transition_duration = 0;
-            revealer.set_reveal_child (true);
-            revealer.transition_duration = reveal_duration;
-            revealer.show ();
         }
 
         public override void get_preferred_width (out int minimum_width, out int natural_width) {
