@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
+"POT-Creation-Date: 2025-07-25 18:24+0000\n"
 "PO-Revision-Date: 2021-07-11 07:42+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/calendar/"
@@ -19,23 +19,25 @@ msgstr ""
 msgid "On this computer"
 msgstr "මෙම පරිගණකයේ"
 
-#: core/Backends/PlacementWidget.vala:28
-msgid "User:"
-msgstr "පරිශීලක:"
-
-#: core/Backends/PlacementWidget.vala:39
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "පරිශීලක.නාමය"
 
-#: core/Backends/PlacementWidget.vala:56
-msgid "Email:"
-msgstr "විද්යුත් තැපෑල:"
+#: core/Backends/PlacementWidget.vala:39
+#, fuzzy
+#| msgid "User:"
+msgid "User"
+msgstr "පරිශීලක:"
 
-#: core/Backends/PlacementWidget.vala:67
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "කමල්@දිසානායක.ලංකා"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+msgid "Email"
+msgstr "විද්‍යුත් තැපෑල"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "පිටපතක් ලඟ තබා ගන්න"
 
@@ -55,15 +57,17 @@ msgstr "පරිශිලක.නාමය හෝ පරිශීලක.නා�
 msgid "CalDAV"
 msgstr ""
 
-#: plugins/CalDAV/CalDAVBackend.vala:48
-msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:54
+#, fuzzy
+#| msgid "URL:"
+msgid "URL"
 msgstr "ඒ.ස.නි.:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:90
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "ආරක්ෂිත සම්බන්ධතාවයක් භාවිතා කරන්න"
 
-#: plugins/CalDAV/CalDAVBackend.vala:117
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "සේවාදායකය රැස්වීම් ආරාධනා හසුරුවයි"
 
@@ -653,7 +657,7 @@ msgstr "පොදු දින දසුන නිර්යාත කරන්�
 msgid "Manage Calendars"
 msgstr "දින දසුන් කළමනාකරණය කරන්න"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
 msgid "Save"
 msgstr "සුරකින්න"
 
@@ -678,27 +682,73 @@ msgstr "%u තව…"
 msgid "Create"
 msgstr "නිර්මාණය කරන්න"
 
-#: src/SourceDialog/SourceDialog.vala:61
-msgid "Name:"
-msgstr "නම:"
-
-#: src/SourceDialog/SourceDialog.vala:65
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "දිනදර්ශනයේ නම"
 
-#: src/SourceDialog/SourceDialog.vala:88
-msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:66
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "නම:"
+
+#: src/SourceDialog/SourceDialog.vala:91
+#, fuzzy
+#| msgid "Type:"
+msgid "Type"
 msgstr "වර්ගය:"
 
-#: src/SourceDialog/SourceDialog.vala:105
-msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:195
+#, fuzzy
+#| msgid "Color:"
+msgid "Color"
 msgstr "වර්ණය:"
 
-#: src/SourceDialog/SourceDialog.vala:185
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr "පෙරනිමි දිනදර්ශනය ලෙස සලකුණු කරන්න"
 
-#: src/SourceDialog/SourceDialog.vala:255
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr "දිනදර්ශනය සාදන්න"
 
@@ -928,6 +978,9 @@ msgstr "පෙරසේ"
 msgid "\"%s\" removed"
 msgstr "\"%s\" ඉවත් කළා"
 
+#~ msgid "Email:"
+#~ msgstr "විද්යුත් තැපෑල:"
+
 #~ msgid "Reminders:"
 #~ msgstr "සිහිගැන්වීම්:"
 
@@ -950,9 +1003,6 @@ msgstr "\"%s\" ඉවත් කළා"
 
 #~ msgid "Import events from \"%s\" into the following calendar:"
 #~ msgstr "\"%s\" වෙතින් පහත සඳහන් කැලැන්ඩරය වෙත ආයාත කරන්න:"
-
-#~ msgid "Email"
-#~ msgstr "විද්‍යුත් තැපෑල"
 
 #~ msgid "Search Events"
 #~ msgstr "සිදුවීම් සෙවුම"

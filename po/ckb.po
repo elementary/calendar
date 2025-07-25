@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
+"POT-Creation-Date: 2025-07-25 18:24+0000\n"
 "PO-Revision-Date: 2022-03-31 21:16+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -24,23 +24,25 @@ msgstr ""
 msgid "On this computer"
 msgstr "لە سەر ئەم کۆمپیوترە"
 
-#: core/Backends/PlacementWidget.vala:28
-msgid "User:"
-msgstr "بەکارهێنەر:"
-
-#: core/Backends/PlacementWidget.vala:39
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "ناوی.بەکارهێنەر"
 
-#: core/Backends/PlacementWidget.vala:56
-msgid "Email:"
-msgstr "ئیمەیل:"
+#: core/Backends/PlacementWidget.vala:39
+#, fuzzy
+#| msgid "User:"
+msgid "User"
+msgstr "بەکارهێنەر:"
 
-#: core/Backends/PlacementWidget.vala:67
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+msgid "Email"
+msgstr "ئیمەیل"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "پاشەکەوتی وەشانی ناوخۆیی"
 
@@ -60,15 +62,17 @@ msgstr "user.name or user.name@gmail.com"
 msgid "CalDAV"
 msgstr "کال-داڤ"
 
-#: plugins/CalDAV/CalDAVBackend.vala:48
-msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:54
+#, fuzzy
+#| msgid "URL:"
+msgid "URL"
 msgstr "ناونیشانی ماڵپەڕ :"
 
-#: plugins/CalDAV/CalDAVBackend.vala:90
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "بەکارهێنانی پەیوەندییەکای پارێزراو"
 
-#: plugins/CalDAV/CalDAVBackend.vala:117
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "رێزبەندی بانگهێشتەکانی بینەرانی ڕاژە"
 
@@ -644,7 +648,7 @@ msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریما�
 msgid "Manage Calendars"
 msgstr "بەڕێوەبردنی ڕۆژژمێرەکان"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
 msgid "Save"
 msgstr "پاشەکەوت"
 
@@ -669,27 +673,73 @@ msgstr "%u زۆرتر …"
 msgid "Create"
 msgstr "دروستکردن"
 
-#: src/SourceDialog/SourceDialog.vala:61
-msgid "Name:"
-msgstr "ناو:"
-
-#: src/SourceDialog/SourceDialog.vala:65
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "ناوی ڕۆژژمێر"
 
-#: src/SourceDialog/SourceDialog.vala:88
-msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:66
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "ناو:"
+
+#: src/SourceDialog/SourceDialog.vala:91
+#, fuzzy
+#| msgid "Type:"
+msgid "Type"
 msgstr "جۆر :"
 
-#: src/SourceDialog/SourceDialog.vala:105
-msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:195
+#, fuzzy
+#| msgid "Color:"
+msgid "Color"
 msgstr "ڕەنگ:"
 
-#: src/SourceDialog/SourceDialog.vala:185
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr "دیاری کردن بۆ ڕۆژژمێری فەرمی"
 
-#: src/SourceDialog/SourceDialog.vala:255
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr "دروستکردنی ڕۆژمێر"
 
@@ -925,6 +975,9 @@ msgstr "گەڕانەوە"
 msgid "\"%s\" removed"
 msgstr "ڕۆژژمێری \"%s\" سڕاوەتەوە"
 
+#~ msgid "Email:"
+#~ msgstr "ئیمەیل:"
+
 #~ msgid "Reminders:"
 #~ msgstr "بیرخەرەوەکان:"
 
@@ -951,9 +1004,6 @@ msgstr "ڕۆژژمێری \"%s\" سڕاوەتەوە"
 
 #~ msgid "Import events from \"%s\" into the following calendar:"
 #~ msgstr "وارد نمودن رویداد ها از \"%s\" به تقویم پیش رو:"
-
-#~ msgid "Email"
-#~ msgstr "ئیمەیل"
 
 #~ msgid "Search Events"
 #~ msgstr "گەڕان لە ڕوداوەکان"
