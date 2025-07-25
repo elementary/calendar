@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-25 18:24+0000\n"
-"PO-Revision-Date: 2024-06-13 00:26+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
-"Language-Team: Spanish <https://l10n.elementary.io/projects/calendar/"
+"PO-Revision-Date: 2025-07-26 18:55+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
+"Language-Team: Spanish <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-01-07 06:12+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -29,10 +29,8 @@ msgid "user.name"
 msgstr "nombre.usuario"
 
 #: core/Backends/PlacementWidget.vala:39
-#, fuzzy
-#| msgid "User:"
 msgid "User"
-msgstr "Usuario:"
+msgstr "Usuario"
 
 #: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
@@ -63,10 +61,8 @@ msgid "CalDAV"
 msgstr "CalDAV"
 
 #: plugins/CalDAV/CalDAVBackend.vala:54
-#, fuzzy
-#| msgid "URL:"
 msgid "URL"
-msgstr "URL:"
+msgstr "URL"
 
 #: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
@@ -192,10 +188,8 @@ msgid "Repeat"
 msgstr "Repetir"
 
 #: src/EventEdition/EventDialog.vala:146
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete Event…"
-msgstr "Eliminar evento"
+msgstr "Eliminar evento…"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
@@ -681,62 +675,56 @@ msgid "Calendar Name"
 msgstr "Nombre del calendario"
 
 #: src/SourceDialog/SourceDialog.vala:66
-#, fuzzy
-#| msgid "Name:"
 msgid "Name"
-msgstr "Nombre:"
+msgstr "Nombre"
 
 #: src/SourceDialog/SourceDialog.vala:91
-#, fuzzy
-#| msgid "Type:"
 msgid "Type"
-msgstr "Tipo:"
+msgstr "Tipo"
 
 #: src/SourceDialog/SourceDialog.vala:111
 msgid "Blueberry"
-msgstr ""
+msgstr "Arándano"
 
 #: src/SourceDialog/SourceDialog.vala:118
 msgid "Mint"
-msgstr ""
+msgstr "Menta"
 
 #: src/SourceDialog/SourceDialog.vala:125
 msgid "Lime"
-msgstr ""
+msgstr "Lima"
 
 #: src/SourceDialog/SourceDialog.vala:132
 msgid "Banana"
-msgstr ""
+msgstr "Plátano"
 
 #: src/SourceDialog/SourceDialog.vala:139
 msgid "Orange"
-msgstr ""
+msgstr "Naranja"
 
 #: src/SourceDialog/SourceDialog.vala:146
 msgid "Strawberry"
-msgstr ""
+msgstr "Fresa"
 
 #: src/SourceDialog/SourceDialog.vala:153
 msgid "Bubblegum"
-msgstr ""
+msgstr "Chicle"
 
 #: src/SourceDialog/SourceDialog.vala:160
 msgid "Grape"
-msgstr ""
+msgstr "Uva"
 
 #: src/SourceDialog/SourceDialog.vala:167
 msgid "Cocoa"
-msgstr ""
+msgstr "Cacao"
 
 #: src/SourceDialog/SourceDialog.vala:174
 msgid "Slate"
-msgstr ""
+msgstr "Pizarra"
 
 #: src/SourceDialog/SourceDialog.vala:195
-#, fuzzy
-#| msgid "Color:"
 msgid "Color"
-msgstr "Color:"
+msgstr "Color"
 
 #: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
