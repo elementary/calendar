@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-25 18:24+0000\n"
-"PO-Revision-Date: 2025-06-05 08:55+0000\n"
+"PO-Revision-Date: 2025-07-26 18:55+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/be/>\n"
@@ -30,20 +30,16 @@ msgid "user.name"
 msgstr "імя.карыстальніка"
 
 #: core/Backends/PlacementWidget.vala:39
-#, fuzzy
-#| msgid "User:"
 msgid "User"
-msgstr "Карыстальнік:"
+msgstr "Карыстальнік"
 
 #: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
 #: core/Backends/PlacementWidget.vala:68
-#, fuzzy
-#| msgid "Email:"
 msgid "Email"
-msgstr "Эл. пошта:"
+msgstr "Эл. пошта"
 
 #: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
@@ -66,10 +62,8 @@ msgid "CalDAV"
 msgstr "CalDAV"
 
 #: plugins/CalDAV/CalDAVBackend.vala:54
-#, fuzzy
-#| msgid "URL:"
 msgid "URL"
-msgstr "Спасылка:"
+msgstr "Спасылка"
 
 #: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
@@ -195,10 +189,8 @@ msgid "Repeat"
 msgstr "Паўтор"
 
 #: src/EventEdition/EventDialog.vala:146
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete Event…"
-msgstr "Выдаліць падзею"
+msgstr "Выдаліць падзею…"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
@@ -689,62 +681,56 @@ msgid "Calendar Name"
 msgstr "Назва календара"
 
 #: src/SourceDialog/SourceDialog.vala:66
-#, fuzzy
-#| msgid "Name:"
 msgid "Name"
-msgstr "Назва:"
+msgstr "Назва"
 
 #: src/SourceDialog/SourceDialog.vala:91
-#, fuzzy
-#| msgid "Type:"
 msgid "Type"
-msgstr "Тып:"
+msgstr "Тып"
 
 #: src/SourceDialog/SourceDialog.vala:111
 msgid "Blueberry"
-msgstr ""
+msgstr "Дурнічны"
 
 #: src/SourceDialog/SourceDialog.vala:118
 msgid "Mint"
-msgstr ""
+msgstr "Мятны"
 
 #: src/SourceDialog/SourceDialog.vala:125
 msgid "Lime"
-msgstr ""
+msgstr "Салатавы"
 
 #: src/SourceDialog/SourceDialog.vala:132
 msgid "Banana"
-msgstr ""
+msgstr "Бананавы"
 
 #: src/SourceDialog/SourceDialog.vala:139
 msgid "Orange"
-msgstr ""
+msgstr "Апельсін"
 
 #: src/SourceDialog/SourceDialog.vala:146
 msgid "Strawberry"
-msgstr ""
+msgstr "Клубніка"
 
 #: src/SourceDialog/SourceDialog.vala:153
 msgid "Bubblegum"
-msgstr ""
+msgstr "Бабл-гам"
 
 #: src/SourceDialog/SourceDialog.vala:160
 msgid "Grape"
-msgstr ""
+msgstr "Вінаградны"
 
 #: src/SourceDialog/SourceDialog.vala:167
 msgid "Cocoa"
-msgstr ""
+msgstr "Какававы"
 
 #: src/SourceDialog/SourceDialog.vala:174
 msgid "Slate"
-msgstr ""
+msgstr "Сланцавы"
 
 #: src/SourceDialog/SourceDialog.vala:195
-#, fuzzy
-#| msgid "Color:"
 msgid "Color"
-msgstr "Колер:"
+msgstr "Колер"
 
 #: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
