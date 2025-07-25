@@ -36,19 +36,6 @@ public class Maya.WebBackend : GLib.Object, Maya.Backend {
             keep_copy = source_offline.stay_synchronized;
         }
 
-        collection.add (Maya.DefaultPlacementWidgets.get_keep_copy (0, keep_copy));
-
-        var url_label = new PlacementWidget ();
-        url_label.widget = new Gtk.Label (_("URL:")) {
-            hexpand = true,
-            vexpand = true,
-            xalign = 1.0f
-        };
-        url_label.row = 1;
-        url_label.column = 0;
-        url_label.ref_name = "url_label";
-        collection.add (url_label);
-
         var url_entry = new PlacementWidget ();
         url_entry.widget = new Gtk.Entry () {
             placeholder_text = "https://example.com"
@@ -57,6 +44,19 @@ public class Maya.WebBackend : GLib.Object, Maya.Backend {
         url_entry.column = 1;
         url_entry.ref_name = "url_entry";
         url_entry.needed = true;
+
+        var url_label = new PlacementWidget ();
+        url_label.widget = new Gtk.Label (_("URL")) {
+            hexpand = true,
+            mnemonic_widget = url_entry.widget,
+            xalign = 1.0f
+        };
+        url_label.row = 1;
+        url_label.column = 0;
+        url_label.ref_name = "url_label";
+
+        collection.add (Maya.DefaultPlacementWidgets.get_keep_copy (0, keep_copy));
+        collection.add (url_label);
         collection.add (url_entry);
         if (to_edit != null) {
             E.SourceWebdav webdav = (E.SourceWebdav)to_edit.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
