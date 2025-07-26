@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
+"POT-Creation-Date: 2025-07-25 18:24+0000\n"
 "PO-Revision-Date: 2020-05-16 02:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -25,23 +25,27 @@ msgstr ""
 msgid "On this computer"
 msgstr "على هذا الكمبيوتر"
 
-#: core/Backends/PlacementWidget.vala:41
-msgid "User:"
-msgstr "اسم المستخدم:"
-
-#: core/Backends/PlacementWidget.vala:50
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "user.name"
 
-#: core/Backends/PlacementWidget.vala:63
-msgid "Email:"
-msgstr "البريد الإلكتروني:"
+#: core/Backends/PlacementWidget.vala:39
+#, fuzzy
+#| msgid "User:"
+msgid "User"
+msgstr "اسم المستخدم:"
 
-#: core/Backends/PlacementWidget.vala:72
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+#, fuzzy
+#| msgid "Email:"
+msgid "Email"
+msgstr "البريد الإلكتروني:"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "إحتفظ بنسخة محليا (على حاسبك)"
 
@@ -57,58 +61,60 @@ msgstr "قوقل"
 msgid "user.name or user.name@gmail.com"
 msgstr "user.name أو user.name@gmail.com"
 
-#: plugins/CalDAV/CalDAVBackend.vala:39
+#: plugins/CalDAV/CalDAVBackend.vala:24
 msgid "CalDAV"
 msgstr "بروتوكول CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:58
-msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:54
+#, fuzzy
+#| msgid "URL:"
+msgid "URL"
 msgstr "رابط:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:99
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "استخدم الاتصال الآمن"
 
-#: plugins/CalDAV/CalDAVBackend.vala:127
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "الخادم يتعامل مع دعوات الاجتماع"
 
-#: src/AgendaView.vala:41
+#: src/AgendaView.vala:29
 msgid "Create a new event"
 msgstr "إنشاء حدث جديد"
 
-#: src/AgendaView.vala:64
+#: src/AgendaView.vala:52
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
 msgstr ""
 "يتم هنا عرض الأحداث القادمة الخاصة بك عند إختيارك لتاريخ مسجل به أحداث."
 
-#: src/AgendaView.vala:162
+#: src/AgendaView.vala:153
 msgid "During the day"
 msgstr "خلال اليوم"
 
-#: src/AgendaView.vala:170
+#: src/AgendaView.vala:161
 msgid "All day"
 msgstr "كل الأيام"
 
-#: src/AgendaView.vala:287
+#: src/AgendaView.vala:278
 msgid "Tomorrow"
 msgstr "غدا"
 
-#: src/AgendaView.vala:290
+#: src/AgendaView.vala:281
 msgid "This Week"
 msgstr "هذا الأسبوع"
 
-#: src/AgendaView.vala:293
+#: src/AgendaView.vala:284
 msgid "Next Week"
 msgstr "الأسبوع القادم"
 
-#: src/AgendaView.vala:296
+#: src/AgendaView.vala:287
 msgid "This Month"
 msgstr "هذا الشهر"
 
-#: src/AgendaView.vala:299
+#: src/AgendaView.vala:290
 msgid "Next Month"
 msgstr "الشهر القادم"
 
@@ -124,13 +130,13 @@ msgstr "ركز على اليوم المعطى"
 msgid "date"
 msgstr "تاريخ"
 
-#: src/Application.vala:176
+#: src/Application.vala:178
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:207
+#: src/Application.vala:209
 msgid "Calendar"
 msgstr "التقويم"
 
@@ -178,7 +184,7 @@ msgstr "المكان"
 msgid "Guests"
 msgstr "ضيوف"
 
-#: src/EventEdition/EventDialog.vala:123
+#: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:38
 msgid "Reminders"
 msgstr "التذكيرات"
 
@@ -189,9 +195,10 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "لا اعادة"
 
-#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
-#: src/Widgets/DeleteDialog.vala:39
-msgid "Delete Event"
+#: src/EventEdition/EventDialog.vala:146
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete Event…"
 msgstr "حذف الحدث"
 
 #: src/EventEdition/EventDialog.vala:161
@@ -202,9 +209,8 @@ msgstr "إنشاء حدث"
 msgid "Save Changes"
 msgstr "حفظ التغييرات"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
-#: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:103
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "الغاء"
 
@@ -236,35 +242,35 @@ msgstr "ارسل دعوة"
 msgid "From:"
 msgstr "من:"
 
-#: src/EventEdition/InfoPanel.vala:86
+#: src/EventEdition/InfoPanel.vala:92
 msgid "All day:"
 msgstr "اليوم بأكمله:"
 
-#: src/EventEdition/InfoPanel.vala:100
+#: src/EventEdition/InfoPanel.vala:103
 msgid "To:"
 msgstr "إلى:"
 
-#: src/EventEdition/InfoPanel.vala:106
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Time zone:"
 msgstr ""
 
-#: src/EventEdition/InfoPanel.vala:111
-msgid "Title:"
-msgstr "العنوان:"
-
-#: src/EventEdition/InfoPanel.vala:113
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Name of Event"
 msgstr "اسم الحدث"
 
-#: src/EventEdition/InfoPanel.vala:123
+#: src/EventEdition/InfoPanel.vala:121
+msgid "Title:"
+msgstr "العنوان:"
+
+#: src/EventEdition/InfoPanel.vala:134
 msgid "Press enter to parse event"
 msgstr "اضغط Enter لتحليل الحدث"
 
-#: src/EventEdition/InfoPanel.vala:138
+#: src/EventEdition/InfoPanel.vala:172
 msgid "Calendar:"
 msgstr "التقويم:"
 
-#: src/EventEdition/InfoPanel.vala:145
+#: src/EventEdition/InfoPanel.vala:189
 msgid "Comments:"
 msgstr "التعليقات:"
 
@@ -276,79 +282,75 @@ msgstr "المكان:"
 msgid "John Smith OR Example St."
 msgstr "جون سميث أو شارع (اسم شارع)."
 
-#: src/EventEdition/ReminderPanel.vala:34
-msgid "Reminders:"
-msgstr "التذكيرات:"
-
-#: src/EventEdition/ReminderPanel.vala:36
+#: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
 msgstr "لا تذكيرات موجودة"
 
-#: src/EventEdition/ReminderPanel.vala:55
+#: src/EventEdition/ReminderPanel.vala:50
 msgid "Add Reminder"
 msgstr "اضافة تذكير"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:169
 msgid "At time of event"
 msgstr "في وقت الحدث"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:170
 msgid "1 minute before"
 msgstr "قبل دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:171
 msgid "5 minutes before"
 msgstr "قبل 5 دقائق"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "10 minutes before"
 msgstr "قبل 10 دقائق"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "15 minutes before"
 msgstr "قبل 15 دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "20 minutes before"
 msgstr "قبل 20 دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "25 minutes before"
 msgstr "قبل 25 دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "30 minutes before"
 msgstr "قبل 30 دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "45 minutes before"
 msgstr "قبل 45 دقيقة"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "1 hour before"
 msgstr "قبل ساعة"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "2 hours before"
 msgstr "قبل ساعتين"
 
-#: src/EventEdition/ReminderPanel.vala:183
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "3 hours before"
 msgstr "قبل 3 ساعات"
 
-#: src/EventEdition/ReminderPanel.vala:184
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "12 hours before"
 msgstr "قبل 12 ساعة"
 
-#: src/EventEdition/ReminderPanel.vala:185
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "24 hours before"
 msgstr "قبل 24 ساعة"
 
-#: src/EventEdition/ReminderPanel.vala:186
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "2 days before"
 msgstr "قبل يومين"
 
-#: src/EventEdition/ReminderPanel.vala:187
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "1 week before"
 msgstr "قبل أسبوع"
 
@@ -657,6 +659,30 @@ msgstr "سبت"
 msgid "Sun"
 msgstr "أحد"
 
+#: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
+msgid "Export Calendar…"
+msgstr "تصدير التقويم …"
+
+#: src/Grid/CalendarView.vala:131
+msgid "Go to today's date"
+msgstr "اذهب إلى تاريخ اليوم"
+
+#: src/Grid/CalendarView.vala:149
+msgid "Export or Share the default Calendar"
+msgstr "تصدير أو مشاركة التقويم الإفتراضي"
+
+#: src/Grid/CalendarView.vala:157
+msgid "Manage Calendars"
+msgstr "إدارة التقاويم"
+
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
+msgid "Save"
+msgstr "حفظ"
+
+#: src/Grid/CalendarView.vala:244
+msgid "calendar.ics"
+msgstr "calendar.ics"
+
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "إخفاء أرقام الأسبوع"
@@ -670,141 +696,182 @@ msgstr "إظهار أرقام الأسبوع"
 msgid "%u more…"
 msgstr "%u المزيد…"
 
-#: src/SourceDialog/SourceDialog.vala:55
+#: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
 msgstr "انشاء"
 
-#: src/SourceDialog/SourceDialog.vala:66
-msgid "Name:"
-msgstr "اسم:"
-
-#: src/SourceDialog/SourceDialog.vala:70
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "اسم التقويم"
 
-#: src/SourceDialog/SourceDialog.vala:93
-msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:66
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "اسم:"
+
+#: src/SourceDialog/SourceDialog.vala:91
+#, fuzzy
+#| msgid "Type:"
+msgid "Type"
 msgstr "نوعه:"
 
-#: src/SourceDialog/SourceDialog.vala:110
-msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:195
+#, fuzzy
+#| msgid "Color:"
+msgid "Color"
 msgstr "اللون:"
 
-#: src/SourceDialog/SourceDialog.vala:190
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr "علم كالتقويم الافتراضي"
 
-#: src/SourceDialog/SourceDialog.vala:259
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr "انشاء تقويم"
 
-#: src/SourceDialog/SourceDialog.vala:264
-#: src/Widgets/ContractorButtonWithMenu.vala:90
-msgid "Save"
-msgstr "حفظ"
-
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:65
+#: src/Widgets/AgendaEventRow.vala:67
 msgid "appointment;meeting"
 msgstr "اجتماع;موعد"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:70
+#: src/Widgets/AgendaEventRow.vala:72
 msgid "birthday;anniversary;party"
 msgstr "احتفال"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:75
+#: src/Widgets/AgendaEventRow.vala:77
 msgid "call;phone;telephone;ring"
 msgstr "اتصال"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:80
+#: src/Widgets/AgendaEventRow.vala:82
 msgid "bar;cocktails;drinks;happy hour"
 msgstr "ساعة سعيدة"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:85
+#: src/Widgets/AgendaEventRow.vala:87
 msgid "car;drive;driving;road trip;"
 msgstr "تنقل;سيارة;القيادة;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:90
+#: src/Widgets/AgendaEventRow.vala:92
 msgid "flight;airport;"
 msgstr "سفر;مطار;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:95
+#: src/Widgets/AgendaEventRow.vala:97
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr "وجبة;فطور;عشاء;غداء"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:100
+#: src/Widgets/AgendaEventRow.vala:102
 msgid "court;jury;tax;attorney;lawyer;contract"
 msgstr "قانوني"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:105
+#: src/Widgets/AgendaEventRow.vala:107
 #, fuzzy
 msgid "movie;film"
 msgstr "فلم"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:110
+#: src/Widgets/AgendaEventRow.vala:112
 msgid "wedding"
 msgstr "عرس"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:314
+#: src/Widgets/AgendaEventRow.vala:322
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:317
+#: src/Widgets/AgendaEventRow.vala:325
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:329
+#: src/Widgets/AgendaEventRow.vala:337
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:338
+#: src/Widgets/AgendaEventRow.vala:346
 #, c-format
 msgid "%s at %s"
 msgstr "تاريخ %s الساعة %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:341
+#: src/Widgets/AgendaEventRow.vala:349
 #, c-format
 msgid "%s, %s – %s"
 msgstr "تاريخ %s من الساعة %s الى الساعة %s"
 
-#: src/Widgets/CalendarChooser.vala:51
+#: src/Widgets/CalendarChooser.vala:53
 msgid "Search Calendars"
 msgstr "البحث في التقاويم"
 
-#: src/Widgets/CalendarChooser.vala:54
+#: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
 msgstr "لا توجد نتائج"
 
-#: src/Widgets/CalendarChooser.vala:55
+#: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr "جرب تغيير شروط البحث."
 
@@ -821,15 +888,6 @@ msgstr ""
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
 msgstr ""
-
-#: src/Widgets/ContractorButtonWithMenu.vala:72
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-msgid "Export Calendar…"
-msgstr "تصدير التقويم …"
-
-#: src/Widgets/ContractorButtonWithMenu.vala:95
-msgid "calendar.ics"
-msgstr "calendar.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
 #, fuzzy
@@ -872,6 +930,10 @@ msgstr "حذف الحدث"
 msgid "This event and all its occurrences will be permanently deleted."
 msgstr ""
 
+#: src/Widgets/DeleteDialog.vala:30 src/Widgets/DeleteDialog.vala:39
+msgid "Delete Event"
+msgstr "حذف الحدث"
+
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
 #, fuzzy
@@ -879,7 +941,7 @@ msgstr ""
 msgid "This event will be permanently deleted."
 msgstr "هذه المناسبة لا يمكن تعديلها"
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
 msgid "Edit…"
 msgstr "عدل…"
 
@@ -895,60 +957,51 @@ msgstr "حذف حدث"
 msgid "Remove Occurrence"
 msgstr "حذف الحدث"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
 msgid "Remove"
 msgstr "ازالة"
 
-#: src/Widgets/HeaderBar.vala:39
-msgid "Go to today's date"
-msgstr "اذهب إلى تاريخ اليوم"
-
-#: src/Widgets/HeaderBar.vala:60
-msgid "Export or Share the default Calendar"
-msgstr "تصدير أو مشاركة التقويم الإفتراضي"
-
-#: src/Widgets/HeaderBar.vala:67
-msgid "Manage Calendars"
-msgstr "إدارة التقاويم"
-
-#: src/Widgets/SourcePopover.vala:59
+#: src/Widgets/SourcePopover.vala:44
 msgid "Add New Calendar…"
 msgstr "اضافة تقويم جديد…"
 
-#: src/Widgets/SourcePopover.vala:63
+#: src/Widgets/SourcePopover.vala:48
 #, fuzzy
 msgid "Import iCalendar File…"
 msgstr "تصدير التقويم …"
 
-#: src/Widgets/SourcePopover.vala:67
+#: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:99
+#: src/Widgets/SourcePopover.vala:79
 #, fuzzy
 msgid "Select ICS File to Import"
 msgstr "إختر التقويم الذي تود استيراده"
 
-#: src/Widgets/SourcePopover.vala:102
+#: src/Widgets/SourcePopover.vala:82
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:75
+#: src/Widgets/SourceRow.vala:67
 msgid "Not Removable"
 msgstr "غير قابل للازالة"
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:80
 msgid "Not Editable"
 msgstr "غبر قابل للتعديل"
 
-#: src/Widgets/SourceRow.vala:110
+#: src/Widgets/SourceRow.vala:104
 msgid "Undo"
 msgstr "تراجع"
 
-#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
 #, c-format
 msgid "\"%s\" removed"
 msgstr "“%s” تم ازالته"
+
+#~ msgid "Reminders:"
+#~ msgstr "التذكيرات:"
 
 #~ msgid "Print debug information"
 #~ msgstr "اطبع تفاصيل تدقيق الأخطاء (debug)"

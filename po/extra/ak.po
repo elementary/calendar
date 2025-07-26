@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
+"POT-Creation-Date: 2025-07-25 18:24+0000\n"
 "PO-Revision-Date: 2019-05-16 02:02+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/calendar/extra/ak/"
@@ -36,10 +36,6 @@ msgid ""
 msgstr ""
 "Kalɛnda dwumadie a etumi hyehyɛ kalɛnda ahoroɔ te sɛ Google Kalɛnda, Outlook "
 "ne CalDAV wɔ baabi faako."
-
-#: data/calendar.metainfo.xml.in:52
-msgid "elementary, Inc."
-msgstr ""
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98

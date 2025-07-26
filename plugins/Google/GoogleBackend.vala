@@ -83,7 +83,6 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                         }
 
                         auth.user = decoded_user;
-#if HAS_EDS_3_46
                         webdav.uri = GLib.Uri.build (
                             GLib.UriFlags.NONE,
                             "https",
@@ -94,14 +93,6 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                             null,
                             null
                         );
-#else
-                        var soup_uri = new Soup.URI (null);
-                        soup_uri.set_host ("www.google.com");
-                        soup_uri.set_scheme ("https");
-                        soup_uri.set_user (decoded_user);
-                        soup_uri.set_path ("/calendar/dav/%s/events".printf (decoded_user));
-                        webdav.soup_uri = soup_uri;
-#endif
                         break;
                     case "keep_copy":
                         offline.set_stay_synchronized (((Gtk.CheckButton)widget.widget).active);
@@ -141,7 +132,6 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                         }
 
                         auth.user = decoded_user;
-#if HAS_EDS_3_46
                         webdav.uri = GLib.Uri.build (
                             GLib.UriFlags.NONE,
                             "https",
@@ -152,14 +142,6 @@ public class Maya.GoogleBackend : GLib.Object, Maya.Backend {
                             null,
                             null
                         );
-#else
-                        var soup_uri = new Soup.URI (null);
-                        soup_uri.set_host ("www.google.com");
-                        soup_uri.set_scheme ("https");
-                        soup_uri.set_user (decoded_user);
-                        soup_uri.set_path ("/calendar/dav/%s/events".printf (decoded_user));
-                        webdav.soup_uri = soup_uri;
-#endif
                         break;
                     case "keep_copy":
                         offline.set_stay_synchronized (((Gtk.CheckButton)widget.widget).active);

@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
-"PO-Revision-Date: 2021-06-19 20:00+0000\n"
+"POT-Creation-Date: 2025-07-25 18:24+0000\n"
+"PO-Revision-Date: 2025-03-16 12:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/extra/"
-"mr/>\n"
+"Language-Team: Marathi <https://l10n.elementaryos.org/projects/calendar/"
+"extra/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.10.2\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
@@ -36,10 +36,6 @@ msgstr ""
 "Google कॅलेंडर, Outlook आणि CalDAV सारख्या एकाच ठिकाणी एकाधिक कॅलेंडर समक्रमित आणि "
 "व्यवस्थापित करणारे एक हलके कॅलेंडर अॅप."
 
-#: data/calendar.metainfo.xml.in:52
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
-
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
 msgid "Minor Updates:"
@@ -47,7 +43,7 @@ msgstr "किरकोळ अद्यतने:"
 
 #: data/calendar.metainfo.xml.in:62
 msgid "New flatter design"
-msgstr ""
+msgstr "नवीन फ्लॅटर डिझाइन"
 
 #: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
 #: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
@@ -55,45 +51,41 @@ msgid "Updated translations"
 msgstr "अद्ययावत अनुवाद"
 
 #: data/calendar.metainfo.xml.in:100
-#, fuzzy
-#| msgid "Updated translations"
 msgid "Updated app icon"
-msgstr "अद्ययावत अनुवाद"
+msgstr "अपडेट केलेले ॲप चिन्ह"
 
 #: data/calendar.metainfo.xml.in:108
-#, fuzzy
-#| msgid "New Features:"
 msgid "Features:"
-msgstr "नवीन वैशिष्ट्ये:"
+msgstr "वैशिष्ट्ये:"
 
 #: data/calendar.metainfo.xml.in:110
-#, fuzzy
-#| msgid "Allow modification of recurring events"
 msgid "Ask for confirmation before deleting events"
-msgstr "आवर्ती इव्हेंटच्या सुधारणेस परवानगी द्या"
+msgstr "इव्हेंट हटवण्यापूर्वी पुष्टीकरणासाठी विचारा"
 
 #: data/calendar.metainfo.xml.in:111
 msgid ""
 "Follow email and web links in the event description with Control + Click"
-msgstr ""
+msgstr "ctrl + क्लिकसह इव्हेंट वर्णनात ईमेल आणि वेब लिंक्सचे अनुसरण करा"
 
 #: data/calendar.metainfo.xml.in:113
 msgid "Fixes:"
-msgstr ""
+msgstr "निराकरणे:"
 
 #: data/calendar.metainfo.xml.in:115
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"कॅलेंडर केवळ वाचनीय असल्यास, कॅलेंडर सेटिंग्जमध्ये \"डीफॉल्ट कॅलेंडर म्हणून चिन्हांकित करा\" "
+"चेकबॉक्स अक्षम केला आहे"
 
 #: data/calendar.metainfo.xml.in:116
 msgid "Removed no longer needed sandbox permission for accounts service"
-msgstr ""
+msgstr "खाते सेवेसाठी यापुढे सँडबॉक्स परवानगीची आवश्यकता नाही हे काढून टाकले आहे"
 
 #: data/calendar.metainfo.xml.in:117
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "निश्चित संभाव्य मेमरी गळती"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
@@ -102,6 +94,9 @@ msgstr "माया; प्लॅनर; तारखा; दिवस; घट�
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "नवीन घटना जोडा"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
 
 #, fuzzy
 #~| msgid "Fix an issue where new events could appear twice in Calendar"

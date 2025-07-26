@@ -1,18 +1,6 @@
 /*
- * Copyright 2013-2020 elementary, Inc. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2013-2025 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
@@ -20,16 +8,13 @@
 public class Calendar.Widgets.SourcePopover : Gtk.Popover {
     private GLib.HashTable<string, SourceRow?> src_map;
 
-    private Gtk.Stack stack;
     private Maya.View.SourceDialog src_dialog = null;
 
-    private Gtk.Grid main_grid;
     private Gtk.ListBox calendar_box;
-    private Gtk.ScrolledWindow scroll;
 
     construct {
         calendar_box = new Gtk.ListBox () {
-            selection_mode = Gtk.SelectionMode.NONE
+            selection_mode = BROWSE
         };
         calendar_box.set_header_func (header_update_func);
         calendar_box.set_sort_func ((child1, child2) => {
@@ -41,16 +26,16 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
            }
         });
 
-        scroll = new Gtk.ScrolledWindow (null, null) {
-            hscrollbar_policy = Gtk.PolicyType.NEVER,
+        var scroll = new Gtk.ScrolledWindow (null, null) {
+            child = calendar_box,
+            hscrollbar_policy = NEVER,
             max_content_height = 300,
             propagate_natural_height = true
         };
-        scroll.add (calendar_box);
 
         src_map = new GLib.HashTable<string, SourceRow?> (str_hash, str_equal);
 
-        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+        var separator = new Gtk.Separator (HORIZONTAL) {
             margin_top = 3,
             margin_bottom = 3
         };
@@ -67,27 +52,22 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             text = _("Online Accounts Settings…")
         };
 
-        main_grid = new Gtk.Grid () {
-            orientation = Gtk.Orientation.VERTICAL
+        var main_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 3,
         };
 
-        main_grid.add (scroll);
-        main_grid.add (separator);
-        main_grid.add (add_calendar_button);
-        main_grid.add (import_calendar_button);
-        main_grid.add (accounts_button);
+        main_box.add (scroll);
+        main_box.add (separator);
+        main_box.add (add_calendar_button);
+        main_box.add (import_calendar_button);
+        main_box.add (accounts_button);
+        main_box.show_all ();
 
-        stack = new Gtk.Stack () {
-            margin_bottom = 3
-        };
-        stack.add_named (main_grid, "main");
-
-        add (stack);
+        child = main_box;
         populate.begin ();
-        stack.show_all ();
 
         add_calendar_button.button_release_event.connect (() => {
-            create_source ();
+            edit_source ();
             return Gdk.EVENT_STOP;
         });
 
@@ -96,11 +76,11 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             ics_filter.add_mime_type ("application/ics");
 
             var file_chooser = new Gtk.FileChooserNative (
-                    _("Select ICS File to Import"),
-                    null,
-                    Gtk.FileChooserAction.OPEN,
-                    _("Open"),
-                    _("Cancel")
+                _("Select ICS File to Import"),
+                null,
+                Gtk.FileChooserAction.OPEN,
+                _("Open"),
+                _("Cancel")
             );
 
             file_chooser.set_local_only (true);
@@ -108,7 +88,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             file_chooser.set_filter (ics_filter);
 
             file_chooser.show ();
-            this.hide ();
+            popdown ();
 
             file_chooser.response.connect ((response_id) => {
                 GLib.File[] files = null;
@@ -181,49 +161,21 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         source_item.source_has_changed ();
     }
 
-    private void create_source () {
-        if (src_dialog == null) {
-            src_dialog = new Maya.View.SourceDialog ();
-            src_dialog.go_back.connect (() => {switch_to_main ();});
-            stack.add_named (src_dialog, "source");
+    private void add_source_to_view (E.Source source) {
+        if (source.enabled == false) {
+            return;
         }
 
-        src_dialog.set_source (null);
-        switch_to_source ();
-    }
-
-    private void add_source_to_view (E.Source source) {
-        if (source.enabled == false)
+        if (source.dup_uid () in src_map) {
             return;
-
-        if (source.dup_uid () in src_map)
-            return;
+        }
 
         var source_item = new SourceRow (source);
         source_item.edit_request.connect (edit_source);
         source_item.remove_request.connect (remove_source);
 
         calendar_box.add (source_item);
-
-        int minimum_height;
-        int natural_height;
         calendar_box.show_all ();
-        calendar_box.get_preferred_height (out minimum_height, out natural_height);
-        if (natural_height > 200) {
-            scroll.set_size_request (-1, 200);
-        } else {
-            scroll.set_size_request (-1, natural_height);
-        }
-
-        source_item.destroy.connect (() => {
-            calendar_box.show_all ();
-            calendar_box.get_preferred_height (out minimum_height, out natural_height);
-            if (natural_height > 200) {
-                scroll.set_size_request (-1, 200);
-            } else {
-                scroll.set_size_request (-1, natural_height);
-            }
-        });
 
         src_map.set (source.dup_uid (), source_item);
     }
@@ -234,30 +186,20 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         source_item.show_calendar_removed ();
     }
 
-    private void edit_source (E.Source source) {
+    private void edit_source (E.Source? source = null) {
         if (src_dialog == null) {
-            src_dialog = new Maya.View.SourceDialog ();
-            src_dialog.go_back.connect (() => {switch_to_main ();});
-            stack.add_named (src_dialog, "source");
+            src_dialog = new Maya.View.SourceDialog () {
+                modal = true,
+                transient_for = ((Gtk.Application) GLib.Application.get_default ()).active_window
+            };
+
+            src_dialog.go_back.connect (() => {
+                src_dialog.hide ();
+            });
         }
 
+        popdown ();
         src_dialog.set_source (source);
-        switch_to_source ();
-    }
-
-    private void switch_to_main () {
-        main_grid.no_show_all = false;
-        main_grid.show ();
-        stack.set_visible_child_full ("main", Gtk.StackTransitionType.SLIDE_RIGHT);
-        src_dialog.hide ();
-        src_dialog.no_show_all = true;
-    }
-
-    private void switch_to_source () {
-        src_dialog.no_show_all = false;
-        src_dialog.show ();
-        stack.set_visible_child_full ("source", Gtk.StackTransitionType.SLIDE_LEFT);
-        main_grid.hide ();
-        main_grid.no_show_all = true;
+        src_dialog.present ();
     }
 }

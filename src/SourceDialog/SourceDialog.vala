@@ -19,7 +19,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.SourceDialog : Gtk.Grid {
+public class Maya.View.SourceDialog : Granite.Dialog {
     public EventType event_type { get; private set; default=EventType.EDIT;}
 
     private Gtk.Entry name_entry;
@@ -51,24 +51,22 @@ public class Maya.View.SourceDialog : Gtk.Grid {
     construct {
         widgets_checked = new Gee.HashMap<string, bool> (null, null);
 
-        var cancel_button = new Gtk.Button.with_label (_("Cancel"));
-        create_button = new Gtk.Button.with_label (_("Create"));
+        var cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
+
+        create_button = (Gtk.Button) add_button (_("Create") , Gtk.ResponseType.ACCEPT);
 
         create_button.clicked.connect (save);
         cancel_button.clicked.connect (() => go_back ());
 
-        var buttonbox = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
-        buttonbox.layout_style = Gtk.ButtonBoxStyle.END;
-        buttonbox.spacing = 6;
-        buttonbox.pack_end (cancel_button);
-        buttonbox.pack_end (create_button);
+        name_entry = new Gtk.Entry () {
+            placeholder_text = _("Calendar Name")
+        };
+        name_entry.changed.connect (check_can_validate);
 
-        var name_label = new Gtk.Label (_("Name:"));
-        name_label.xalign = 1;
-
-        name_entry = new Gtk.Entry ();
-        name_entry.placeholder_text = _("Calendar Name");
-        name_entry.changed.connect (() => {check_can_validate ();});
+        var name_label = new Gtk.Label (_("Name")) {
+            mnemonic_widget = name_entry,
+            xalign = 1
+        };
 
         list_store = new Gtk.ListStore (2, typeof (string), typeof (Backend));
 
@@ -90,8 +88,10 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             add_backend_widgets ();
         });
 
-        var type_label = new Gtk.Label (_("Type:"));
-        type_label.xalign = 1.0f;
+        var type_label = new Gtk.Label (_("Type")) {
+            mnemonic_widget = type_combobox,
+            xalign = 1.0f
+        };
 
         Gtk.TreeIter iter;
         var backends_manager = BackendsManager.get_default ();
@@ -107,85 +107,95 @@ public class Maya.View.SourceDialog : Gtk.Grid {
 
         type_combobox.set_active (0);
 
-        var color_label = new Gtk.Label (_("Color:"));
-        color_label.xalign = 1;
+        color_button_blue = new Gtk.RadioButton (null) {
+            tooltip_text = _("Blueberry")
+        };
+        color_button_blue.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_blue.get_style_context ().add_class ("blue");
 
-        color_button_blue = new Gtk.RadioButton (null);
+        color_button_mint = new Gtk.RadioButton (null) {
+            group = color_button_blue,
+            tooltip_text = _("Mint")
+        };
+        color_button_mint.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_mint.get_style_context ().add_class ("mint");
 
-        var color_button_blue_context = color_button_blue.get_style_context ();
-        color_button_blue_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_blue_context.add_class ("blue");
+        color_button_green = new Gtk.RadioButton (null) {
+            group = color_button_blue,
+            tooltip_text = _("Lime")
+        };
+        color_button_green.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_green.get_style_context ().add_class ("green");
 
-        color_button_mint = new Gtk.RadioButton.from_widget (color_button_blue);
+        color_button_yellow = new Gtk.RadioButton (null) {
+            group = color_button_blue,
+            tooltip_text = _("Banana")
+        };
+        color_button_yellow.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_yellow.get_style_context ().add_class ("yellow");
 
-        var color_button_mint_context = color_button_mint.get_style_context ();
-        color_button_mint_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_mint_context.add_class ("mint");
+        color_button_orange = new Gtk.RadioButton (null) {
+            group = color_button_blue,
+            tooltip_text = _("Orange")
+        };
+        color_button_orange.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_orange.get_style_context ().add_class ("orange");
 
-        color_button_green = new Gtk.RadioButton.from_widget (color_button_blue);
+        color_button_red = new Gtk.RadioButton (null) {
+            group = color_button_blue,
+            tooltip_text = _("Strawberry")
+        };
+        color_button_red.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_red.get_style_context ().add_class ("red");
 
-        var color_button_green_context = color_button_green.get_style_context ();
-        color_button_green_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_green_context.add_class ("green");
+        color_button_pink = new Gtk.RadioButton (null) {
+            group = color_button_blue,
+            tooltip_text = _("Bubblegum")
+        };
+        color_button_pink.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_pink.get_style_context ().add_class ("pink");
 
-        color_button_yellow = new Gtk.RadioButton.from_widget (color_button_blue);
+        color_button_purple = new Gtk.RadioButton (null) {
+            group = color_button_blue,
+            tooltip_text = _("Grape")
+        };
+        color_button_purple.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_purple.get_style_context ().add_class ("purple");
 
-        var color_button_yellow_context = color_button_yellow.get_style_context ();
-        color_button_yellow_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_yellow_context.add_class ("yellow");
+        color_button_brown = new Gtk.RadioButton (null) {
+            group = color_button_blue,
+            tooltip_text = _("Cocoa")
+        };
+        color_button_brown.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_brown.get_style_context ().add_class ("brown");
 
-        color_button_orange = new Gtk.RadioButton.from_widget (color_button_blue);
+        color_button_slate = new Gtk.RadioButton (null) {
+            group = color_button_blue,
+            tooltip_text = _("Slate")
+        };
+        color_button_slate.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_slate.get_style_context ().add_class ("slate");
 
-        var color_button_orange_context = color_button_orange.get_style_context ();
-        color_button_orange_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_orange_context.add_class ("orange");
-
-        color_button_red = new Gtk.RadioButton.from_widget (color_button_blue);
-
-        var color_button_red_context = color_button_red.get_style_context ();
-        color_button_red_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_red_context.add_class ("red");
-
-        color_button_pink = new Gtk.RadioButton.from_widget (color_button_blue);
-
-        var color_button_pink_context = color_button_pink.get_style_context ();
-        color_button_pink_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_pink_context.add_class ("pink");
-
-        color_button_purple = new Gtk.RadioButton.from_widget (color_button_blue);
-
-        var color_button_purple_context = color_button_purple.get_style_context ();
-        color_button_purple_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_purple_context.add_class ("purple");
-
-        color_button_brown = new Gtk.RadioButton.from_widget (color_button_blue);
-
-        var color_button_brown_context = color_button_brown.get_style_context ();
-        color_button_brown_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_brown_context.add_class ("brown");
-
-        color_button_slate = new Gtk.RadioButton.from_widget (color_button_blue);
-
-        var color_button_slate_context = color_button_slate.get_style_context ();
-        color_button_slate_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_slate_context.add_class ("slate");
-
-        color_button_none = new Gtk.RadioButton.from_widget (color_button_blue);
-
-        var color_grid = new Gtk.Grid () {
-            column_spacing = 3
+        color_button_none = new Gtk.RadioButton (null) {
+            group = color_button_blue
         };
 
-        color_grid.add (color_button_blue);
-        color_grid.add (color_button_mint);
-        color_grid.add (color_button_green);
-        color_grid.add (color_button_yellow);
-        color_grid.add (color_button_orange);
-        color_grid.add (color_button_red);
-        color_grid.add (color_button_pink);
-        color_grid.add (color_button_purple);
-        color_grid.add (color_button_brown);
-        color_grid.add (color_button_slate);
+        var color_box = new Gtk.Box (HORIZONTAL, 6);
+        color_box.add (color_button_blue);
+        color_box.add (color_button_mint);
+        color_box.add (color_button_green);
+        color_box.add (color_button_yellow);
+        color_box.add (color_button_orange);
+        color_box.add (color_button_red);
+        color_box.add (color_button_pink);
+        color_box.add (color_button_purple);
+        color_box.add (color_button_brown);
+        color_box.add (color_button_slate);
+
+        var color_label = new Gtk.Label (_("Color")) {
+            mnemonic_widget = color_box,
+            xalign = 1
+        };
 
         is_default_check = new Gtk.CheckButton.with_label (_("Mark as default calendar"));
 
@@ -229,24 +239,25 @@ public class Maya.View.SourceDialog : Gtk.Grid {
             hex_color = "#667885";
         });
 
-        main_grid = new Gtk.Grid ();
-        main_grid.row_spacing = 6;
-        main_grid.column_spacing = 12;
+        main_grid = new Gtk.Grid () {
+            margin_top = 12,
+            margin_end = 12,
+            margin_start = 12,
+            margin_bottom = 24,
+            column_spacing = 12,
+            row_spacing = 12,
+            vexpand = true
+        };
         main_grid.attach (type_label, 0, 0);
         main_grid.attach (type_combobox, 1, 0);
         main_grid.attach (name_label, 0, 1);
         main_grid.attach (name_entry, 1, 1);
         main_grid.attach (color_label, 0, 2);
-        main_grid.attach (color_grid, 1, 2);
+        main_grid.attach (color_box, 1, 2);
         main_grid.attach (is_default_check, 1, 3);
+        main_grid.show_all ();
 
-        margin = 12;
-        margin_bottom = 8;
-        row_spacing = 24;
-        attach (main_grid, 0, 0);
-        attach (buttonbox, 0, 1);
-
-        show_all ();
+        get_content_area ().add (main_grid);
     }
 
     public void set_source (E.Source? source = null) {

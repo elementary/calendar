@@ -36,19 +36,6 @@ public class Maya.WebBackend : GLib.Object, Maya.Backend {
             keep_copy = source_offline.stay_synchronized;
         }
 
-        collection.add (Maya.DefaultPlacementWidgets.get_keep_copy (0, keep_copy));
-
-        var url_label = new PlacementWidget ();
-        url_label.widget = new Gtk.Label (_("URL:")) {
-            hexpand = true,
-            vexpand = true,
-            xalign = 1.0f
-        };
-        url_label.row = 1;
-        url_label.column = 0;
-        url_label.ref_name = "url_label";
-        collection.add (url_label);
-
         var url_entry = new PlacementWidget ();
         url_entry.widget = new Gtk.Entry () {
             placeholder_text = "https://example.com"
@@ -57,14 +44,23 @@ public class Maya.WebBackend : GLib.Object, Maya.Backend {
         url_entry.column = 1;
         url_entry.ref_name = "url_entry";
         url_entry.needed = true;
+
+        var url_label = new PlacementWidget ();
+        url_label.widget = new Gtk.Label (_("URL")) {
+            hexpand = true,
+            mnemonic_widget = url_entry.widget,
+            xalign = 1.0f
+        };
+        url_label.row = 1;
+        url_label.column = 0;
+        url_label.ref_name = "url_label";
+
+        collection.add (Maya.DefaultPlacementWidgets.get_keep_copy (0, keep_copy));
+        collection.add (url_label);
         collection.add (url_entry);
         if (to_edit != null) {
             E.SourceWebdav webdav = (E.SourceWebdav)to_edit.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
-#if HAS_EDS_3_46
             var uri = webdav.dup_uri ();
-#else
-            var uri = webdav.dup_soup_uri ();
-#endif
             if (uri.get_port () != 80) {
                 ((Gtk.Entry)url_entry.widget).text = "%s://%s:%u%s".printf (uri.get_scheme (), uri.get_host (), uri.get_port (), uri.get_path ());
             } else {
@@ -91,11 +87,7 @@ public class Maya.WebBackend : GLib.Object, Maya.Backend {
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
                     case "url_entry":
-#if HAS_EDS_3_46
                         webdav.uri = GLib.Uri.parse (((Gtk.Entry)widget.widget).text, GLib.UriFlags.NONE);
-#else
-                        webdav.soup_uri = new Soup.URI (((Gtk.Entry)widget.widget).text);
-#endif
                         break;
                     case "keep_copy":
                         offline.set_stay_synchronized (((Gtk.CheckButton)widget.widget).active);
@@ -130,11 +122,7 @@ public class Maya.WebBackend : GLib.Object, Maya.Backend {
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
                     case "url_entry":
-#if HAS_EDS_3_46
                         webdav.uri = GLib.Uri.parse (((Gtk.Entry)widget.widget).text, GLib.UriFlags.NONE);
-#else
-                        webdav.soup_uri = new Soup.URI (((Gtk.Entry)widget.widget).text);
-#endif
                         break;
                     case "keep_copy":
                         offline.set_stay_synchronized (((Gtk.CheckButton)widget.widget).active);

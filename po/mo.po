@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
+"POT-Creation-Date: 2025-07-25 18:24+0000\n"
 "PO-Revision-Date: 2023-02-17 10:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/calendar/"
@@ -19,23 +19,25 @@ msgstr ""
 msgid "On this computer"
 msgstr "Pe acest computer"
 
-#: core/Backends/PlacementWidget.vala:41
-msgid "User:"
-msgstr "Utilizator:"
-
-#: core/Backends/PlacementWidget.vala:50
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "nume de utilizator"
 
-#: core/Backends/PlacementWidget.vala:63
-msgid "Email:"
-msgstr "Poșta:"
+#: core/Backends/PlacementWidget.vala:39
+#, fuzzy
+#| msgid "User:"
+msgid "User"
+msgstr "Utilizator:"
 
-#: core/Backends/PlacementWidget.vala:72
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "ion@doe.com"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+msgid "Email"
+msgstr "Poșta"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "Păstrați o copie la nivel local"
 
@@ -51,27 +53,29 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "user.name sau user.name@gmail.com"
 
-#: plugins/CalDAV/CalDAVBackend.vala:39
+#: plugins/CalDAV/CalDAVBackend.vala:24
 msgid "CalDAV"
 msgstr "Cal DAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:58
-msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:54
+#, fuzzy
+#| msgid "URL:"
+msgid "URL"
 msgstr "URL:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:99
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "Utilizați o conexiune securizată"
 
-#: plugins/CalDAV/CalDAVBackend.vala:127
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "Serverul gestionează invitațiile la întâlniri"
 
-#: src/AgendaView.vala:41
+#: src/AgendaView.vala:29
 msgid "Create a new event"
 msgstr "Creează un eveniment nou"
 
-#: src/AgendaView.vala:64
+#: src/AgendaView.vala:52
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -79,34 +83,34 @@ msgstr ""
 "Evenimentele viitoare vor fi afișate aici când selectați o dată cu "
 "evenimente."
 
-#: src/AgendaView.vala:162
+#: src/AgendaView.vala:153
 msgid "During the day"
 msgstr "În timpul zilei"
 
-#: src/AgendaView.vala:170
+#: src/AgendaView.vala:161
 msgid "All day"
 msgstr "Toată ziua"
 
-#: src/AgendaView.vala:287
+#: src/AgendaView.vala:278
 msgid "Tomorrow"
 msgstr ""
 
-#: src/AgendaView.vala:290
+#: src/AgendaView.vala:281
 #, fuzzy
 msgid "This Week"
 msgstr "Săptămână"
 
-#: src/AgendaView.vala:293
+#: src/AgendaView.vala:284
 #, fuzzy
 msgid "Next Week"
 msgstr "Săptămână"
 
-#: src/AgendaView.vala:296
+#: src/AgendaView.vala:287
 #, fuzzy
 msgid "This Month"
 msgstr "Lună"
 
-#: src/AgendaView.vala:299
+#: src/AgendaView.vala:290
 #, fuzzy
 msgid "Next Month"
 msgstr "Lună"
@@ -124,13 +128,13 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:176
+#: src/Application.vala:178
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:207
+#: src/Application.vala:209
 msgid "Calendar"
 msgstr "Calendaru"
 
@@ -174,7 +178,7 @@ msgstr "Localizare"
 msgid "Guests"
 msgstr "Vizitatori"
 
-#: src/EventEdition/EventDialog.vala:123
+#: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:38
 msgid "Reminders"
 msgstr "Mementouri"
 
@@ -185,9 +189,10 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Repetă"
 
-#: src/EventEdition/EventDialog.vala:148 src/Widgets/DeleteDialog.vala:30
-#: src/Widgets/DeleteDialog.vala:39
-msgid "Delete Event"
+#: src/EventEdition/EventDialog.vala:146
+#, fuzzy
+#| msgid "Delete Event"
+msgid "Delete Event…"
 msgstr "Șterge evenimentul"
 
 #: src/EventEdition/EventDialog.vala:161
@@ -198,9 +203,8 @@ msgstr "Creează eveniment"
 msgid "Save Changes"
 msgstr "Salvează modificările"
 
-#: src/EventEdition/EventDialog.vala:167 src/SourceDialog/SourceDialog.vala:54
-#: src/Widgets/ContractorButtonWithMenu.vala:91
-#: src/Widgets/SourcePopover.vala:103
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "Anulare"
 
@@ -232,35 +236,35 @@ msgstr "Invită"
 msgid "From:"
 msgstr "De la:"
 
-#: src/EventEdition/InfoPanel.vala:86
+#: src/EventEdition/InfoPanel.vala:92
 msgid "All day:"
 msgstr "Toată ziua:"
 
-#: src/EventEdition/InfoPanel.vala:100
+#: src/EventEdition/InfoPanel.vala:103
 msgid "To:"
 msgstr "La:"
 
-#: src/EventEdition/InfoPanel.vala:106
+#: src/EventEdition/InfoPanel.vala:111
 msgid "Time zone:"
 msgstr ""
 
-#: src/EventEdition/InfoPanel.vala:111
-msgid "Title:"
-msgstr "Titlul:"
-
-#: src/EventEdition/InfoPanel.vala:113
+#: src/EventEdition/InfoPanel.vala:118
 msgid "Name of Event"
 msgstr "Nume de eveniment"
 
-#: src/EventEdition/InfoPanel.vala:123
+#: src/EventEdition/InfoPanel.vala:121
+msgid "Title:"
+msgstr "Titlul:"
+
+#: src/EventEdition/InfoPanel.vala:134
 msgid "Press enter to parse event"
 msgstr "Apăsați pe Enter pentru a analiza evenimentul"
 
-#: src/EventEdition/InfoPanel.vala:138
+#: src/EventEdition/InfoPanel.vala:172
 msgid "Calendar:"
 msgstr "Calendarul:"
 
-#: src/EventEdition/InfoPanel.vala:145
+#: src/EventEdition/InfoPanel.vala:189
 msgid "Comments:"
 msgstr "Comentarii:"
 
@@ -272,94 +276,90 @@ msgstr "Locație:"
 msgid "John Smith OR Example St."
 msgstr "John Smith sau exemplu St."
 
-#: src/EventEdition/ReminderPanel.vala:34
-msgid "Reminders:"
-msgstr "Mementouri:"
-
-#: src/EventEdition/ReminderPanel.vala:36
+#: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
 msgstr "Nu există mementouri"
 
-#: src/EventEdition/ReminderPanel.vala:55
+#: src/EventEdition/ReminderPanel.vala:50
 msgid "Add Reminder"
 msgstr "Adăugați memento"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:169
 #, fuzzy
 msgid "At time of event"
 msgstr "Nume de eveniment"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:170
 #, fuzzy
 msgid "1 minute before"
 msgstr "1 minut"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:171
 #, fuzzy
 msgid "5 minutes before"
 msgstr "5 minute"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:172
 #, fuzzy
 msgid "10 minutes before"
 msgstr "10 minute"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:173
 #, fuzzy
 msgid "15 minutes before"
 msgstr "15 minute"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:174
 #, fuzzy
 msgid "20 minutes before"
 msgstr "20 minute"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:175
 #, fuzzy
 msgid "25 minutes before"
 msgstr "25 minute"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:176
 #, fuzzy
 msgid "30 minutes before"
 msgstr "30 minute"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:177
 #, fuzzy
 msgid "45 minutes before"
 msgstr "45 minute"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:178
 #, fuzzy
 msgid "1 hour before"
 msgstr "1 oră"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:179
 #, fuzzy
 msgid "2 hours before"
 msgstr "2 ore"
 
-#: src/EventEdition/ReminderPanel.vala:183
+#: src/EventEdition/ReminderPanel.vala:180
 #, fuzzy
 msgid "3 hours before"
 msgstr "3 ore"
 
-#: src/EventEdition/ReminderPanel.vala:184
+#: src/EventEdition/ReminderPanel.vala:181
 #, fuzzy
 msgid "12 hours before"
 msgstr "12 ore"
 
-#: src/EventEdition/ReminderPanel.vala:185
+#: src/EventEdition/ReminderPanel.vala:182
 #, fuzzy
 msgid "24 hours before"
 msgstr "24 ore"
 
-#: src/EventEdition/ReminderPanel.vala:186
+#: src/EventEdition/ReminderPanel.vala:183
 #, fuzzy
 msgid "2 days before"
 msgstr "2 zile"
 
-#: src/EventEdition/ReminderPanel.vala:187
+#: src/EventEdition/ReminderPanel.vala:184
 #, fuzzy
 msgid "1 week before"
 msgstr "1 lună"
@@ -649,6 +649,31 @@ msgstr "Sâm"
 msgid "Sun"
 msgstr "Dum"
 
+#: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
+#, fuzzy
+msgid "Export Calendar…"
+msgstr "Exportați calendarul ..."
+
+#: src/Grid/CalendarView.vala:131
+msgid "Go to today's date"
+msgstr "Du-te la data de astăzi"
+
+#: src/Grid/CalendarView.vala:149
+msgid "Export or Share the default Calendar"
+msgstr "Exportați sau distribuiți calendarul implicit"
+
+#: src/Grid/CalendarView.vala:157
+msgid "Manage Calendars"
+msgstr "Gestionați calendarele"
+
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
+msgid "Save"
+msgstr "Salvează"
+
+#: src/Grid/CalendarView.vala:244
+msgid "calendar.ics"
+msgstr "calendar.ics"
+
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
 msgstr "Ascundeți numărul săptămânii"
@@ -662,141 +687,182 @@ msgstr "Afișați numărul săptămânii"
 msgid "%u more…"
 msgstr "%u mai mult…"
 
-#: src/SourceDialog/SourceDialog.vala:55
+#: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
 msgstr "Creare"
 
-#: src/SourceDialog/SourceDialog.vala:66
-msgid "Name:"
-msgstr "Nume:"
-
-#: src/SourceDialog/SourceDialog.vala:70
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "Nume calendar"
 
-#: src/SourceDialog/SourceDialog.vala:93
-msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:66
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "Nume:"
+
+#: src/SourceDialog/SourceDialog.vala:91
+#, fuzzy
+#| msgid "Type:"
+msgid "Type"
 msgstr "Tipul:"
 
-#: src/SourceDialog/SourceDialog.vala:110
-msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:195
+#, fuzzy
+#| msgid "Color:"
+msgid "Color"
 msgstr "Culoare::"
 
-#: src/SourceDialog/SourceDialog.vala:190
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr "Marchează ca calendar prestabilit"
 
-#: src/SourceDialog/SourceDialog.vala:259
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr "Creează calendar"
 
-#: src/SourceDialog/SourceDialog.vala:264
-#: src/Widgets/ContractorButtonWithMenu.vala:90
-msgid "Save"
-msgstr "Salvează"
-
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:65
+#: src/Widgets/AgendaEventRow.vala:67
 msgid "appointment;meeting"
 msgstr ""
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:70
+#: src/Widgets/AgendaEventRow.vala:72
 msgid "birthday;anniversary;party"
 msgstr ""
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:75
+#: src/Widgets/AgendaEventRow.vala:77
 msgid "call;phone;telephone;ring"
 msgstr ""
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:80
+#: src/Widgets/AgendaEventRow.vala:82
 msgid "bar;cocktails;drinks;happy hour"
 msgstr ""
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:85
+#: src/Widgets/AgendaEventRow.vala:87
 msgid "car;drive;driving;road trip;"
 msgstr ""
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:90
+#: src/Widgets/AgendaEventRow.vala:92
 msgid "flight;airport;"
 msgstr ""
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:95
+#: src/Widgets/AgendaEventRow.vala:97
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:100
+#: src/Widgets/AgendaEventRow.vala:102
 msgid "court;jury;tax;attorney;lawyer;contract"
 msgstr ""
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:105
+#: src/Widgets/AgendaEventRow.vala:107
 msgid "movie;film"
 msgstr ""
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:110
+#: src/Widgets/AgendaEventRow.vala:112
 msgid "wedding"
 msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:314
+#: src/Widgets/AgendaEventRow.vala:322
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:317
+#: src/Widgets/AgendaEventRow.vala:325
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:329
+#: src/Widgets/AgendaEventRow.vala:337
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:338
+#: src/Widgets/AgendaEventRow.vala:346
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:341
+#: src/Widgets/AgendaEventRow.vala:349
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
 
-#: src/Widgets/CalendarChooser.vala:51
+#: src/Widgets/CalendarChooser.vala:53
 #, fuzzy
 msgid "Search Calendars"
 msgstr "Creează calendar"
 
-#: src/Widgets/CalendarChooser.vala:54
+#: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
 msgstr ""
 
-#: src/Widgets/CalendarChooser.vala:55
+#: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr ""
 
@@ -813,16 +879,6 @@ msgstr ""
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
 msgstr ""
-
-#: src/Widgets/ContractorButtonWithMenu.vala:72
-#: src/Widgets/ContractorButtonWithMenu.vala:87
-#, fuzzy
-msgid "Export Calendar…"
-msgstr "Exportați calendarul ..."
-
-#: src/Widgets/ContractorButtonWithMenu.vala:95
-msgid "calendar.ics"
-msgstr "calendar.ics"
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
@@ -863,12 +919,16 @@ msgstr "Șterge evenimentul"
 msgid "This event and all its occurrences will be permanently deleted."
 msgstr ""
 
+#: src/Widgets/DeleteDialog.vala:30 src/Widgets/DeleteDialog.vala:39
+msgid "Delete Event"
+msgstr "Șterge evenimentul"
+
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
 msgid "Edit…"
 msgstr "Editare…"
 
@@ -885,60 +945,54 @@ msgstr "Șterge evenimentul"
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
 msgid "Remove"
 msgstr "Elimină"
 
-#: src/Widgets/HeaderBar.vala:39
-msgid "Go to today's date"
-msgstr "Du-te la data de astăzi"
-
-#: src/Widgets/HeaderBar.vala:60
-msgid "Export or Share the default Calendar"
-msgstr "Exportați sau distribuiți calendarul implicit"
-
-#: src/Widgets/HeaderBar.vala:67
-msgid "Manage Calendars"
-msgstr "Gestionați calendarele"
-
-#: src/Widgets/SourcePopover.vala:59
+#: src/Widgets/SourcePopover.vala:44
 msgid "Add New Calendar…"
 msgstr "Calendar nou…"
 
-#: src/Widgets/SourcePopover.vala:63
+#: src/Widgets/SourcePopover.vala:48
 #, fuzzy
 msgid "Import iCalendar File…"
 msgstr "Exportați calendarul ..."
 
-#: src/Widgets/SourcePopover.vala:67
+#: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:99
+#: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:102
+#: src/Widgets/SourcePopover.vala:82
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:75
+#: src/Widgets/SourceRow.vala:67
 #, fuzzy
 msgid "Not Removable"
 msgstr "Elimină"
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:80
 msgid "Not Editable"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:110
+#: src/Widgets/SourceRow.vala:104
 msgid "Undo"
 msgstr "Anulează"
 
-#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Calendar \"%s\" îndepărtat."
+
+#~ msgid "Email:"
+#~ msgstr "Poșta:"
+
+#~ msgid "Reminders:"
+#~ msgstr "Mementouri:"
 
 #, fuzzy
 #~ msgid "Print debug information"
@@ -965,9 +1019,6 @@ msgstr "Calendar \"%s\" îndepărtat."
 
 #~ msgid "Import events from \"%s\" into the following calendar:"
 #~ msgstr "Importați evenimente din \"% s\" în calendarul următor:"
-
-#~ msgid "Email"
-#~ msgstr "Poșta"
 
 #~ msgid "Search Events"
 #~ msgstr "Caută evenimente"

@@ -1,21 +1,6 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2013 Maya Developers (https://launchpad.net/maya)
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Library General Public
- * License as published by the Free Software Foundation; either
- * version 2 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Library General Public License for more details.
- *
- * You should have received a copy of the GNU Library General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
- * Boston, MA 02110-1301 USA.
+/*
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ * SPDX-FileCopyrightText: 2013-2025 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Corentin Noël <tintou@mailoo.org>
  */
@@ -52,32 +37,33 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
             keep_copy = source_offline.stay_synchronized;
         }
 
+        var url_entry = new PlacementWidget () {
+            column = 1,
+            row = 1,
+            needed = true,
+            ref_name = "url_entry",
+            widget = new Gtk.Entry () {
+                text = "http://"
+            }
+        };
+
+        var url_label = new PlacementWidget () {
+            column = 0,
+            row = 1,
+            ref_name = "url_label",
+            widget = new Gtk.Label (_("URL")) {
+                hexpand = true,
+                mnemonic_widget = url_entry.widget,
+                xalign = 1.0f
+            }
+        };
+
         collection.add (Maya.DefaultPlacementWidgets.get_keep_copy (0, keep_copy));
-
-        var url_label = new PlacementWidget ();
-        url_label.widget = new Gtk.Label (_("URL:"));
-        ((Gtk.Label) url_label.widget).expand = true;
-        ((Gtk.Misc) url_label.widget).xalign = 1.0f;
-        url_label.row = 1;
-        url_label.column = 0;
-        url_label.ref_name = "url_label";
         collection.add (url_label);
-
-        var url_entry = new PlacementWidget ();
-        url_entry.widget = new Gtk.Entry ();
-        ((Gtk.Entry)url_entry.widget).text = "http://";
-        url_entry.row = 1;
-        url_entry.column = 1;
-        url_entry.ref_name = "url_entry";
-        url_entry.needed = true;
         collection.add (url_entry);
         if (to_edit != null) {
             E.SourceWebdav webdav = (E.SourceWebdav)to_edit.get_extension (E.SOURCE_EXTENSION_WEBDAV_BACKEND);
-#if HAS_EDS_3_46
             var uri = webdav.dup_uri ();
-#else
-            var uri = webdav.dup_soup_uri ();
-#endif
             if (uri.get_port () != 80) {
                 ((Gtk.Entry)url_entry.widget).text = "%s://%s:%u%s".printf (uri.get_scheme (), uri.get_host (), uri.get_port (), uri.get_path ());
             } else {
@@ -95,11 +81,13 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
 
         };*/
 
-        var secure_checkbutton = new PlacementWidget ();
-        secure_checkbutton.widget = new Gtk.CheckButton.with_label (_("Use a secure connection"));
-        secure_checkbutton.row = 3;
-        secure_checkbutton.column = 1;
-        secure_checkbutton.ref_name = "secure_checkbutton";
+        var secure_checkbutton = new PlacementWidget () {
+            column = 1,
+            row = 3,
+            ref_name = "secure_checkbutton",
+            widget = new Gtk.CheckButton.with_label (_("Use a secure connection"))
+        };
+
         collection.add (secure_checkbutton);
         if (to_edit != null) {
             E.SourceSecurity security = (E.SourceSecurity)to_edit.get_extension (E.SOURCE_EXTENSION_SECURITY);
@@ -151,11 +139,7 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
                     case "url_entry":
-#if HAS_EDS_3_46
                         webdav.uri = GLib.Uri.parse (((Gtk.Entry)widget.widget).text, GLib.UriFlags.NONE);
-#else
-                        webdav.soup_uri = new Soup.URI (((Gtk.Entry)widget.widget).text);
-#endif
                         break;
                     case "user_entry":
                         auth.user = ((Gtk.Entry)widget.widget).text;
@@ -198,11 +182,7 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
             foreach (var widget in widgets) {
                 switch (widget.ref_name) {
                     case "url_entry":
-#if HAS_EDS_3_46
                         webdav.uri = GLib.Uri.parse (((Gtk.Entry)widget.widget).text, GLib.UriFlags.NONE);
-#else
-                        webdav.soup_uri = new Soup.URI (((Gtk.Entry)widget.widget).text);
-#endif
                         break;
                     case "user_entry":
                         auth.user = ((Gtk.Entry)widget.widget).text;

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
+"POT-Creation-Date: 2025-07-25 18:24+0000\n"
 "PO-Revision-Date: 2024-09-03 23:16+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/extra/"
@@ -38,10 +38,6 @@ msgstr ""
 "Витончений та легкий календар, що дає можливість синхронізувати та керувати "
 "кількома календарями в одному місці, такими як Google Календар, Outlook та "
 "CalDAV."
-
-#: data/calendar.metainfo.xml.in:52
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -99,12 +95,14 @@ msgstr "Усунено можливий витік пам'яті"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
-"Maya;Planner;Дати;Дні;Події;Календар;ics;caldav;evolution;Maya;Planner;"
+msgstr "Maya;Planner;Дати;Дні;Події;Календар;ics;caldav;evolution;Maya;Planner;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Додати подію"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr "Виправлено роботу календаря у фоновому режимі при запуску"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 16:16+0000\n"
+"POT-Creation-Date: 2025-07-25 18:24+0000\n"
 "PO-Revision-Date: 2020-12-22 13:16+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/calendar/extra/"
@@ -33,10 +33,6 @@ msgstr "Vizualizează și planifică evenimente"
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
-msgstr ""
-
-#: data/calendar.metainfo.xml.in:52
-msgid "elementary, Inc."
 msgstr ""
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
