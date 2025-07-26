@@ -30,6 +30,8 @@ cleanup:
   - /share/vala
   - '*.a'
   - '*.la'
+build-options:
+  libdir: /app/lib
 modules:
   - name: libical
     buildsystem: cmake-ninja
@@ -166,7 +168,7 @@ modules:
       - type: archive
         url: https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz
         sha256: 2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa
-        xchecker-data:
+        x-checker-data:
           type: gnome
           name: geocode-glib
 
