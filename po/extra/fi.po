@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:24+0000\n"
+"POT-Creation-Date: 2025-07-27 20:22+0000\n"
 "PO-Revision-Date: 2024-12-02 15:16+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/calendar/extra/"
@@ -37,6 +37,12 @@ msgstr ""
 "Näppärä kalenterisovellus, jonka avulla synkronoit ja hallitset useita "
 "kalentereita keskitetysti. Tuettuja ovat muun muassa Google-kalenteri, "
 "Outlook ja CalDAV-kalenterit."
+
+#: data/calendar.metainfo.xml.in:52
+#, fuzzy
+#| msgid "elementary LLC."
+msgid "elementary, Inc."
+msgstr "elementary LLC."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -94,11 +100,6 @@ msgstr "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;kalenteri;t
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Lisää tapahtuma"
-
-#, fuzzy
-#~| msgid "elementary LLC."
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary LLC."
 
 #, fuzzy
 #~| msgid "Always use calendar icon in notifications"

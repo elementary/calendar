@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:24+0000\n"
+"POT-Creation-Date: 2025-07-27 20:22+0000\n"
 "PO-Revision-Date: 2022-09-30 22:11+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/extra/sk/"
@@ -37,6 +37,10 @@ msgstr ""
 "Malá a jednoduchá aplikácia, ktorá umožňuje synchronizáciu a správu "
 "viacerých kalendárov na jednom mieste, ako napríklad Google Kalendár, "
 "Outlook a CalDAV."
+
+#: data/calendar.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -100,9 +104,6 @@ msgstr "Maya;Plánovač;Dátumy;Dni;Udalosti;Kalendár;ics;caldav;evolution;"
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Pridať udalosť"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr "Zabezpečené, že sa Kalendár spustí po štarte na pozadí"

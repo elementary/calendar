@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:24+0000\n"
+"POT-Creation-Date: 2025-07-27 20:22+0000\n"
 "PO-Revision-Date: 2024-09-03 23:16+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/calendar/extra/"
@@ -37,6 +37,10 @@ msgid ""
 msgstr ""
 "Лёгкий и изящный календарь, поддерживающий синхронизацию с Google "
 "Календарём, Outlook и CalDAV."
+
+#: data/calendar.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -98,9 +102,6 @@ msgstr "Майя;Планировщик;Даты;Дни;События;Кале�
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Добавить событие"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr "Исправлена работа календаря в фоновом режиме"
