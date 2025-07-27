@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-25 18:24+0000\n"
-"PO-Revision-Date: 2025-03-02 04:12+0000\n"
+"PO-Revision-Date: 2025-07-27 20:22+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
+"Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -29,10 +29,8 @@ msgid "user.name"
 msgstr "user.name"
 
 #: core/Backends/PlacementWidget.vala:39
-#, fuzzy
-#| msgid "User:"
 msgid "User"
-msgstr "ユーザー:"
+msgstr "ユーザー"
 
 #: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
@@ -63,10 +61,8 @@ msgid "CalDAV"
 msgstr "CalDAV"
 
 #: plugins/CalDAV/CalDAVBackend.vala:54
-#, fuzzy
-#| msgid "URL:"
 msgid "URL"
-msgstr "URL:"
+msgstr "URL"
 
 #: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
@@ -188,10 +184,8 @@ msgid "Repeat"
 msgstr "繰り返し"
 
 #: src/EventEdition/EventDialog.vala:146
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete Event…"
-msgstr "予定を削除"
+msgstr "予定を削除…"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
@@ -672,62 +666,56 @@ msgid "Calendar Name"
 msgstr "カレンダー名"
 
 #: src/SourceDialog/SourceDialog.vala:66
-#, fuzzy
-#| msgid "Name:"
 msgid "Name"
-msgstr "名前:"
+msgstr "名前"
 
 #: src/SourceDialog/SourceDialog.vala:91
-#, fuzzy
-#| msgid "Type:"
 msgid "Type"
-msgstr "種類:"
+msgstr "種類"
 
 #: src/SourceDialog/SourceDialog.vala:111
 msgid "Blueberry"
-msgstr ""
+msgstr "ブルーベリー"
 
 #: src/SourceDialog/SourceDialog.vala:118
 msgid "Mint"
-msgstr ""
+msgstr "ミント"
 
 #: src/SourceDialog/SourceDialog.vala:125
 msgid "Lime"
-msgstr ""
+msgstr "ライム"
 
 #: src/SourceDialog/SourceDialog.vala:132
 msgid "Banana"
-msgstr ""
+msgstr "バナナ"
 
 #: src/SourceDialog/SourceDialog.vala:139
 msgid "Orange"
-msgstr ""
+msgstr "オレンジ"
 
 #: src/SourceDialog/SourceDialog.vala:146
 msgid "Strawberry"
-msgstr ""
+msgstr "ストロベリー"
 
 #: src/SourceDialog/SourceDialog.vala:153
 msgid "Bubblegum"
-msgstr ""
+msgstr "ピンク"
 
 #: src/SourceDialog/SourceDialog.vala:160
 msgid "Grape"
-msgstr ""
+msgstr "グレープ"
 
 #: src/SourceDialog/SourceDialog.vala:167
 msgid "Cocoa"
-msgstr ""
+msgstr "ココア"
 
 #: src/SourceDialog/SourceDialog.vala:174
 msgid "Slate"
-msgstr ""
+msgstr "スレート"
 
 #: src/SourceDialog/SourceDialog.vala:195
-#, fuzzy
-#| msgid "Color:"
 msgid "Color"
-msgstr "色:"
+msgstr "色"
 
 #: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
