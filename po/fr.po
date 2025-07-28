@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 20:22+0000\n"
-"PO-Revision-Date: 2025-07-25 09:55+0000\n"
+"PO-Revision-Date: 2025-07-29 08:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/fr/>\n"
@@ -29,10 +29,8 @@ msgid "user.name"
 msgstr "nom.utilisateur"
 
 #: core/Backends/PlacementWidget.vala:39
-#, fuzzy
-#| msgid "User:"
 msgid "User"
-msgstr "Utilisateur :"
+msgstr "Utilisateur"
 
 #: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
@@ -63,10 +61,8 @@ msgid "CalDAV"
 msgstr "CalDAV"
 
 #: plugins/CalDAV/CalDAVBackend.vala:54
-#, fuzzy
-#| msgid "URL:"
 msgid "URL"
-msgstr "URL :"
+msgstr "URL"
 
 #: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
@@ -679,62 +675,56 @@ msgid "Calendar Name"
 msgstr "Nom du calendrier"
 
 #: src/SourceDialog/SourceDialog.vala:66
-#, fuzzy
-#| msgid "Name:"
 msgid "Name"
-msgstr "Nom :"
+msgstr "Nom"
 
 #: src/SourceDialog/SourceDialog.vala:91
-#, fuzzy
-#| msgid "Type:"
 msgid "Type"
-msgstr "Type :"
+msgstr "Type"
 
 #: src/SourceDialog/SourceDialog.vala:111
 msgid "Blueberry"
-msgstr ""
+msgstr "Myrtille"
 
 #: src/SourceDialog/SourceDialog.vala:118
 msgid "Mint"
-msgstr ""
+msgstr "Menthe"
 
 #: src/SourceDialog/SourceDialog.vala:125
 msgid "Lime"
-msgstr ""
+msgstr "Citron vert"
 
 #: src/SourceDialog/SourceDialog.vala:132
 msgid "Banana"
-msgstr ""
+msgstr "Banane"
 
 #: src/SourceDialog/SourceDialog.vala:139
 msgid "Orange"
-msgstr ""
+msgstr "Orange"
 
 #: src/SourceDialog/SourceDialog.vala:146
 msgid "Strawberry"
-msgstr ""
+msgstr "Fraise"
 
 #: src/SourceDialog/SourceDialog.vala:153
 msgid "Bubblegum"
-msgstr ""
+msgstr "Chewing-gum"
 
 #: src/SourceDialog/SourceDialog.vala:160
 msgid "Grape"
-msgstr ""
+msgstr "Raisin"
 
 #: src/SourceDialog/SourceDialog.vala:167
 msgid "Cocoa"
-msgstr ""
+msgstr "Cacao"
 
 #: src/SourceDialog/SourceDialog.vala:174
 msgid "Slate"
-msgstr ""
+msgstr "Ardoise"
 
 #: src/SourceDialog/SourceDialog.vala:195
-#, fuzzy
-#| msgid "Color:"
 msgid "Color"
-msgstr "Couleur :"
+msgstr "Couleur"
 
 #: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
