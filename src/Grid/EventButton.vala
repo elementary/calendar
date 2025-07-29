@@ -142,10 +142,13 @@ public class Maya.View.EventButton : Gtk.Bin {
         revealer.transition_duration = 0;
         revealer.reveal_child = false;
         revealer.transition_duration = reveal_duration;
+
         hide ();
     }
 
     public void show_without_animate () {
+        show ();
+
         if (revealer.child_revealed) {
             return;
         }
@@ -154,6 +157,5 @@ public class Maya.View.EventButton : Gtk.Bin {
         revealer.transition_duration = 0;
         revealer.reveal_child = true;
         revealer.transition_duration = reveal_duration;
-        show ();
     }
 }
