@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 20:22+0000\n"
-"PO-Revision-Date: 2025-08-03 11:55+0000\n"
+"PO-Revision-Date: 2025-08-08 13:55+0000\n"
 "Last-Translator: JieXu <xujie0739@qq.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "l10n.elementaryos.org/projects/calendar/calendar/zh_Hans/>\n"
@@ -843,45 +843,38 @@ msgid "Network Settings…"
 msgstr "网络设置…"
 
 #: src/Widgets/DeleteDialog.vala:13
-#, fuzzy
-#| msgid "Delete the selected event"
 msgid "Delete this occurrence of event?"
 msgstr "要删除这一事件吗？"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "要删除日程「%s」的当前这一条吗？"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
 msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
-msgstr ""
+msgstr "此条日程将被彻底删除，其他所有重复日程将不受影响。"
 
 #: src/Widgets/DeleteDialog.vala:18
-#, fuzzy
-#| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
-msgstr "删除触发"
+msgstr "删除这次"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete event?"
-msgstr "删除事件"
+msgstr "要删除事件吗？"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
-#, fuzzy, c-format
-#| msgid "Delete Event"
+#, c-format
 msgid "Delete event “%s”?"
-msgstr "删除事件"
+msgstr "要删除活动「%s」吗？"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr ""
+msgstr "此事件和所有相关的日程将被完全删除。"
 
 #: src/Widgets/DeleteDialog.vala:30 src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
@@ -889,10 +882,8 @@ msgstr "删除事件"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
-#, fuzzy
-#| msgid "This event can't be edited"
 msgid "This event will be permanently deleted."
-msgstr "该活动无法编辑"
+msgstr "该事件将被彻底删除。"
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
 msgid "Edit…"
