@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
+"POT-Creation-Date: 2025-07-27 20:22+0000\n"
 "PO-Revision-Date: 2019-12-22 21:41+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/calendar/extra/"
@@ -37,6 +37,12 @@ msgid ""
 msgstr ""
 "Vitka, lahkotna koledarska aplikacija, ki se usklajuje in upravlja z več "
 "koledarji na enem mestu, kot so Google koledar, Outlook ali CalDAV."
+
+#: data/calendar.metainfo.xml.in:52
+#, fuzzy
+#| msgid "elementary LLC."
+msgid "elementary, Inc."
+msgstr "elementary LLC."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -98,11 +104,6 @@ msgstr "Maya;Rokovnik;Datumi;Dnevi;Dogodki;Koledar;ics;caldav;evolution;"
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Dodaj dogodek"
-
-#, fuzzy
-#~| msgid "elementary LLC."
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary LLC."
 
 #, fuzzy
 #~| msgid "Always use calendar icon in notifications"

@@ -1,6 +1,6 @@
-app-id: io.elementary.calendar
+id: io.elementary.calendar
 runtime: io.elementary.Platform
-runtime-version: '8'
+runtime-version: '8.2'
 sdk: io.elementary.Sdk
 command: io.elementary.calendar
 finish-args:
@@ -30,6 +30,8 @@ cleanup:
   - /share/vala
   - '*.a'
   - '*.la'
+build-options:
+  libdir: /app/lib
 modules:
   - name: libical
     buildsystem: cmake-ninja
@@ -76,8 +78,8 @@ modules:
       - -DENABLE_EXAMPLES=OFF
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.57/evolution-data-server-3.57.1.tar.xz
-        sha256: e23534f87599a16c17790aca05ea253781daca6fbe57ab318628e36aa064e8bd
+        url: https://download.gnome.org/sources/evolution-data-server/3.57/evolution-data-server-3.57.2.tar.xz
+        sha256: 9b2647c4265e0a6767fe19c7d602eb9bdcf3f428e4f9c41617e962a7fff9eebd
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -166,7 +168,7 @@ modules:
       - type: archive
         url: https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz
         sha256: 2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa
-        xchecker-data:
+        x-checker-data:
           type: gnome
           name: geocode-glib
 

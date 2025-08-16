@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
+"POT-Creation-Date: 2025-07-27 20:22+0000\n"
 "PO-Revision-Date: 2019-04-05 22:52+0000\n"
 "Last-Translator: Cody Garver <cody@elementary.io>\n"
 "Language-Team: Malay <https://l10n.elementary.io/projects/calendar/extra/ms/"
@@ -37,6 +37,10 @@ msgstr ""
 "aplikasi kalendar yang tipis dan ringan yang menyegerak dan mengurusi "
 "beberapa kalendar-kalendar dalam satu tempat, seperti Google Calendar, "
 "Outlook, dan CalDAV."
+
+#: data/calendar.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr ""
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98

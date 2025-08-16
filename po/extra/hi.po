@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
+"POT-Creation-Date: 2025-07-27 20:22+0000\n"
 "PO-Revision-Date: 2019-04-12 13:25+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/calendar/extra/hi/"
@@ -36,6 +36,12 @@ msgid ""
 msgstr ""
 "एक हल्का कैलेंडर ऐप, जो Google कैलेंडर, आउटलुक और CalDAV जैसी एक जगह में कई कैलेंडर को सिंक "
 "और प्रबंधित करता है।"
+
+#: data/calendar.metainfo.xml.in:52
+#, fuzzy
+#| msgid "elementary LLC."
+msgid "elementary, Inc."
+msgstr "एलिमेंटरी LLC."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -93,11 +99,6 @@ msgstr "माया; योजनाकार; दिनांक; दिन; �
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "घटना जोडें"
-
-#, fuzzy
-#~| msgid "elementary LLC."
-#~ msgid "elementary, Inc."
-#~ msgstr "एलिमेंटरी LLC."
 
 #~ msgid "office-calendar"
 #~ msgstr "office-calendar"

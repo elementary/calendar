@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
+"POT-Creation-Date: 2025-07-27 20:22+0000\n"
 "PO-Revision-Date: 2025-06-05 08:55+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementaryos.org/projects/calendar/"
@@ -36,6 +36,10 @@ msgid ""
 msgstr ""
 "Лёгкі праграма, з якой вы можаце сінхранізаваць і кіраваць некалькімі "
 "календарамі ў адным месцы, напрыклад календаром Google, Outlook і CalDAV."
+
+#: data/calendar.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -98,6 +102,3 @@ msgstr "Maya;Майа;Майя;Планіроўшчык;Даты;Дні;Падз
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Дадаць падзею"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
