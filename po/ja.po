@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 20:22+0000\n"
-"PO-Revision-Date: 2025-07-27 20:22+0000\n"
+"PO-Revision-Date: 2025-08-17 00:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ja/>\n"
@@ -947,7 +947,7 @@ msgstr "元に戻す"
 #: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
 #, c-format
 msgid "\"%s\" removed"
-msgstr "\"%s\" は削除されました"
+msgstr "\"%s\" を削除しました"
 
 #~ msgid "Email:"
 #~ msgstr "メール:"
