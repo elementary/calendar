@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 20:22+0000\n"
-"PO-Revision-Date: 2025-08-17 00:55+0000\n"
+"PO-Revision-Date: 2025-08-30 22:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ja/>\n"
@@ -847,7 +847,7 @@ msgstr ""
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
-msgstr "ネットワークの設定…"
+msgstr "ネットワーク設定…"
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
@@ -922,7 +922,7 @@ msgstr "iCalendar ファイルをインポート…"
 
 #: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
-msgstr "オンラインアカウントの設定…"
+msgstr "オンラインアカウント設定…"
 
 #: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
