@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 20:22+0000\n"
-"PO-Revision-Date: 2025-08-30 22:55+0000\n"
+"PO-Revision-Date: 2025-09-02 12:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ja/>\n"
@@ -827,11 +827,11 @@ msgstr "カレンダーを検索"
 
 #: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
-msgstr "検索結果なし"
+msgstr "結果なし"
 
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
-msgstr "検索語句を変更してみてください。"
+msgstr "他のキーワードを試してください。"
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
