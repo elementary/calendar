@@ -452,7 +452,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             }
 
             if (description == "" && address != null) {
-               description = address;
+                description = address;
             }
 
             var location_value = apple_location_property.get_value_as_string ();
