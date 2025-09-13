@@ -206,6 +206,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         location_label = new Gtk.Label ("") {
             margin_top = 6,
             selectable = false,
+            use_markup = true,
             wrap = true,
             wrap_mode = WORD_CHAR,
             xalign = 0
@@ -353,7 +354,11 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         }
 
         datetime_label.label = datetime_string;
-        location_label.label = ical_event.get_location ();
+
+        string location_description, location_uri;
+        if (location_from_component (event, out location_description, out location_uri)) {
+            location_label.label = "<a href=\"%s\">%s</a>".printf (location_uri, location_description);
+        }
     }
 
     private void find_keywords (Category category, string phrase, ref Category current_category, ref int current_hits) {
@@ -390,5 +395,122 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                 keyword_map.@set (category, word);
             }
         }
+    }
+
+    private bool location_from_component (ECal.Component component, out string description, out string uri) {
+        string _description = "";
+        string _uri = "";
+
+        unowned ICal.Component? icalcomponent = component.get_icalcomponent ();
+        if (icalcomponent != null) {
+            _description = icalcomponent.get_location ();
+
+            var geo_property = icalcomponent.get_first_property (ICal.PropertyKind.GEO_PROPERTY);
+            if (geo_property != null) {
+                var geo = geo_property.get_geo ();
+
+                var location = new Geocode.Location (
+                    geo.get_lat (),
+                    geo.get_lon ()
+                );
+
+                _uri = location.to_uri (GEO);
+            }
+        }
+
+        if (_uri != "") {
+            description = _description;
+            uri = _uri;
+            return true;
+        }
+
+        string apple_description, apple_uri;
+        if (get_apple_location (component, out apple_description, out apple_uri)) {
+            if (apple_description != "") {
+                description = apple_description;
+            }
+
+            if (apple_uri != "") {
+                uri = apple_uri;
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool get_apple_location (ECal.Component component, out string description, out string geo_uri) {
+        ICal.Property? location_property = ECal.util_component_find_x_property (
+            component.get_icalcomponent (), "X-APPLE-STRUCTURED-LOCATION"
+        );
+
+        if (location_property == null && component.has_alarms ()) {
+            foreach (unowned var alarm in component.get_all_alarms ()) {
+                if (location_property != null) {
+                    break;
+                }
+
+                var ical_component = new ICal.Component.valarm ();
+                alarm.fill_component (ical_component);
+
+                location_property = ECal.util_component_find_x_property (ical_component, "X-APPLE-STRUCTURED-LOCATION");
+            }
+        }
+
+        if (location_property == null || location_property.get_value () == null) {
+            return false;
+        }
+
+        /*
+         * X-APPLE-STRUCTURED-LOCATION;
+         *   VALUE=URI;
+         *   X-ADDRESS=Via Monte Ceneri 1\\n6802 Rivera\\nSwitzerland;
+         *   X-APPLE-RADIUS=100;
+         *   X-APPLE-REFERENCEFRAME=1;
+         *   X-TITLE=Marco's Home:
+         *   geo:46.141813\,8.917549
+         */
+
+        string? address = null;
+        string? title = null;
+
+        var parameter = location_property.get_first_parameter (ICal.ParameterKind.X_PARAMETER);
+        while (parameter != null) {
+            switch (parameter.get_xname ()) {
+                case "X-ADDRESS":
+                    address = parameter.get_xvalue ();
+                    break;
+
+                case "X-TITLE":
+                    title = parameter.get_xvalue ();
+                    break;
+
+                default:
+                    break;
+            }
+
+            parameter = location_property.get_next_parameter (ICal.ParameterKind.X_PARAMETER);
+        }
+
+        string _description = "";
+        if (title != null) {
+            _description = title;
+        }
+
+        if (_description.strip () != "" && address != null) {
+           _description = address;
+        }
+
+        description = _description.replace ("\\\\n", " ").strip ();
+
+        var location_value = location_property.get_value_as_string ();
+        if (location_value != null && location_value.down ().contains ("geo:")) {
+            geo_uri = location_value.down ().replace ("\\", "");
+        } else {
+            geo_uri = "";
+        }
+
+        return true;
     }
 }
