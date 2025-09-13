@@ -357,7 +357,11 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         string location_description, location_uri;
         if (location_from_component (event, out location_description, out location_uri)) {
-            location_label.label = "<a href=\"%s\">%s</a>".printf (location_uri, location_description);
+            if (location_uri != "") {
+                location_label.label = "<a href=\"%s\">%s</a>".printf (location_uri, location_description);
+            } else {
+                location_label.label = location_description;
+            }
         }
     }
 
@@ -397,118 +401,64 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         }
     }
 
-    private bool location_from_component (ECal.Component component, out string description, out string uri) {
-        string _description = "";
-        string _uri = "";
+    private static bool location_from_component (ECal.Component component, out string description, out string uri) {
+        description = "";
+        uri = "";
 
         unowned ICal.Component? icalcomponent = component.get_icalcomponent ();
-        if (icalcomponent != null) {
-            _description = icalcomponent.get_location ();
-
-            var geo_property = icalcomponent.get_first_property (ICal.PropertyKind.GEO_PROPERTY);
-            if (geo_property != null) {
-                var geo = geo_property.get_geo ();
-
-                var location = new Geocode.Location (
-                    geo.get_lat (),
-                    geo.get_lon ()
-                );
-
-                _uri = location.to_uri (GEO);
-            }
-        }
-
-        if (_uri != "") {
-            description = _description;
-            uri = _uri;
-            return true;
-        }
-
-        string apple_description, apple_uri;
-        if (get_apple_location (component, out apple_description, out apple_uri)) {
-            if (apple_description != "") {
-                description = apple_description;
-            }
-
-            if (apple_uri != "") {
-                uri = apple_uri;
-            }
-
-            return true;
-        }
-
-        return false;
-    }
-
-    private bool get_apple_location (ECal.Component component, out string description, out string geo_uri) {
-        ICal.Property? location_property = ECal.util_component_find_x_property (
-            component.get_icalcomponent (), "X-APPLE-STRUCTURED-LOCATION"
-        );
-
-        if (location_property == null && component.has_alarms ()) {
-            foreach (unowned var alarm in component.get_all_alarms ()) {
-                if (location_property != null) {
-                    break;
-                }
-
-                var ical_component = new ICal.Component.valarm ();
-                alarm.fill_component (ical_component);
-
-                location_property = ECal.util_component_find_x_property (ical_component, "X-APPLE-STRUCTURED-LOCATION");
-            }
-        }
-
-        if (location_property == null || location_property.get_value () == null) {
+        if (icalcomponent == null || icalcomponent.get_location () == null) {
             return false;
         }
 
-        /*
-         * X-APPLE-STRUCTURED-LOCATION;
-         *   VALUE=URI;
-         *   X-ADDRESS=Via Monte Ceneri 1\\n6802 Rivera\\nSwitzerland;
-         *   X-APPLE-RADIUS=100;
-         *   X-APPLE-REFERENCEFRAME=1;
-         *   X-TITLE=Marco's Home:
-         *   geo:46.141813\,8.917549
-         */
+        description = icalcomponent.get_location ();
+        uri = "";
 
-        string? address = null;
-        string? title = null;
+        var geo_property = icalcomponent.get_first_property (ICal.PropertyKind.GEO_PROPERTY);
+        if (geo_property != null) {
+            var geo = geo_property.get_geo ();
+            if (geo != null) {
+                var location = new Geocode.Location (geo.get_lat (), geo.get_lon ());
+                uri = location.to_uri (GEO);
+            }
+        }
 
-        var parameter = location_property.get_first_parameter (ICal.ParameterKind.X_PARAMETER);
-        while (parameter != null) {
-            switch (parameter.get_xname ()) {
-                case "X-ADDRESS":
-                    address = parameter.get_xvalue ();
-                    break;
+        var apple_location_property = ECal.util_component_find_x_property (
+            icalcomponent, "X-APPLE-STRUCTURED-LOCATION"
+        );
+        if (apple_location_property != null && apple_location_property.get_value () != null) {
+            string? address = null;
+            string? title = null;
 
-                case "X-TITLE":
-                    title = parameter.get_xvalue ();
-                    break;
+            var parameter = apple_location_property.get_first_parameter (ICal.ParameterKind.X_PARAMETER);
+            while (parameter != null) {
+                switch (parameter.get_xname ()) {
+                    case "X-ADDRESS":
+                        address = parameter.get_xvalue ();
+                        break;
 
-                default:
-                    break;
+                    case "X-TITLE":
+                        title = parameter.get_xvalue ();
+                        break;
+
+                    default:
+                        break;
+                }
+
+                parameter = apple_location_property.get_next_parameter (ICal.ParameterKind.X_PARAMETER);
             }
 
-            parameter = location_property.get_next_parameter (ICal.ParameterKind.X_PARAMETER);
-        }
+            if (title != null) {
+                description = title;
+            }
 
-        string _description = "";
-        if (title != null) {
-            _description = title;
-        }
+            if (description == "" && address != null) {
+               description = address;
+            }
 
-        if (_description.strip () != "" && address != null) {
-           _description = address;
-        }
-
-        description = _description.replace ("\\\\n", " ").strip ();
-
-        var location_value = location_property.get_value_as_string ();
-        if (location_value != null && location_value.down ().contains ("geo:")) {
-            geo_uri = location_value.down ().replace ("\\", "");
-        } else {
-            geo_uri = "";
+            var location_value = apple_location_property.get_value_as_string ();
+            if (location_value != null && location_value.down ().contains ("geo:")) {
+                uri = location_value.down ().replace ("\\", "");
+            }
         }
 
         return true;
