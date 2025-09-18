@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 20:22+0000\n"
-"PO-Revision-Date: 2025-07-27 20:22+0000\n"
+"PO-Revision-Date: 2025-09-02 12:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ja/>\n"
@@ -827,11 +827,11 @@ msgstr "カレンダーを検索"
 
 #: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
-msgstr "検索結果なし"
+msgstr "結果なし"
 
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
-msgstr "検索語句を変更してみてください。"
+msgstr "他のキーワードを試してください。"
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
@@ -847,7 +847,7 @@ msgstr ""
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
-msgstr "ネットワークの設定…"
+msgstr "ネットワーク設定…"
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
@@ -922,7 +922,7 @@ msgstr "iCalendar ファイルをインポート…"
 
 #: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
-msgstr "オンラインアカウントの設定…"
+msgstr "オンラインアカウント設定…"
 
 #: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
@@ -947,7 +947,7 @@ msgstr "元に戻す"
 #: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
 #, c-format
 msgid "\"%s\" removed"
-msgstr "\"%s\" は削除されました"
+msgstr "\"%s\" を削除しました"
 
 #~ msgid "Email:"
 #~ msgstr "メール:"
