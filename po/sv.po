@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 20:22+0000\n"
-"PO-Revision-Date: 2025-10-22 09:45+0000\n"
+"PO-Revision-Date: 2025-10-22 10:00+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/sv/>\n"
@@ -145,11 +145,11 @@ msgid "Events from \"%s\" will be merged with this calendar:"
 msgstr "Händelser från \"%s\" kommer att slås samman med denna kalender:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Importera händelser från %d fil till följande kalender:"
-msgstr[1] "Importera händelser från %d filer till följande kalender:"
+msgstr[0] "Händelser från %d fil kommer att slås samman med denna kalender:"
+msgstr[1] "Händelser från %d filer kommer att slås samman med denna kalender:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -187,7 +187,7 @@ msgstr "Upprepning"
 
 #: src/EventEdition/EventDialog.vala:146
 msgid "Delete Event…"
-msgstr "Ta bort händelse.."
+msgstr "Ta bort händelse…"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
@@ -521,7 +521,7 @@ msgstr "Varje tredje söndag"
 
 #: src/EventEdition/RepeatPanel.vala:463
 msgid "Every third Monday"
-msgstr "Varje tredje  måndag"
+msgstr "Var tredje måndag"
 
 #: src/EventEdition/RepeatPanel.vala:466
 msgid "Every third Tuesday"
@@ -851,7 +851,7 @@ msgstr ""
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
-msgstr "Nätverksinställningar.."
+msgstr "Nätverksinställningar…"
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
@@ -873,7 +873,7 @@ msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:18
 msgid "Delete Occurrence"
-msgstr "Ta bort händelse"
+msgstr "Ta bort förekomst"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
 msgid "Delete event?"
@@ -924,11 +924,11 @@ msgstr "Lägg till en ny kalender…"
 
 #: src/Widgets/SourcePopover.vala:48
 msgid "Import iCalendar File…"
-msgstr "Importera iCalendar-fil.."
+msgstr "Importera iCalendar-fil…"
 
 #: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
-msgstr "Inställningar för onlinekonton .."
+msgstr "Inställningar för nätkonton…"
 
 #: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
