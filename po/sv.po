@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 20:22+0000\n"
-"PO-Revision-Date: 2025-10-22 10:00+0000\n"
+"PO-Revision-Date: 2025-10-23 13:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/sv/>\n"
@@ -706,7 +706,7 @@ msgstr "Jordgubbar"
 
 #: src/SourceDialog/SourceDialog.vala:153
 msgid "Bubblegum"
-msgstr "Bubblegum"
+msgstr "Tuggummi"
 
 #: src/SourceDialog/SourceDialog.vala:160
 msgid "Grape"
@@ -847,7 +847,7 @@ msgid ""
 "calendars."
 msgstr ""
 "Anslut till Internet för att se ytterligare detaljer och nya händelser från "
-"onlinekalendrar."
+"nätkalendrar."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
