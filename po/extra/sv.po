@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 20:22+0000\n"
-"PO-Revision-Date: 2025-10-22 09:45+0000\n"
+"PO-Revision-Date: 2025-10-30 13:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/calendar/"
 "extra/sv/>\n"
@@ -34,8 +34,8 @@ msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
-"Ett smidigt och lätt kalenderprogram som synkar och hanterar flera kalendrar "
-"på en plats, såsom Google Calendar, Outlook och CalDAV."
+"Ett smidigt och lätt kalenderprogram som synkroniserar och hanterar flera "
+"kalendrar på en plats, såsom Google Calendar, Outlook och CalDAV."
 
 #: data/calendar.metainfo.xml.in:52
 msgid "elementary, Inc."
@@ -65,12 +65,12 @@ msgstr "Funktioner:"
 
 #: data/calendar.metainfo.xml.in:110
 msgid "Ask for confirmation before deleting events"
-msgstr "Be om bekräftelse innan du tar bort händelser"
+msgstr "Fråga om bekräftelse innan händelser tas bort"
 
 #: data/calendar.metainfo.xml.in:111
 msgid ""
 "Follow email and web links in the event description with Control + Click"
-msgstr "Följ e-post- och webblänkar i händelsebeskrivningen med Control + Click"
+msgstr "Följ e-post- och webblänkar i händelsebeskrivningen med Control + klick"
 
 #: data/calendar.metainfo.xml.in:113
 msgid "Fixes:"
