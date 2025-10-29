@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 20:22+0000\n"
-"PO-Revision-Date: 2025-10-23 13:55+0000\n"
+"PO-Revision-Date: 2025-10-30 13:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/sv/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
-msgstr "På den här datorn"
+msgstr "På denna dator"
 
 #: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
@@ -97,7 +97,7 @@ msgstr "I morgon"
 
 #: src/AgendaView.vala:281
 msgid "This Week"
-msgstr "Den här veckan"
+msgstr "Denna vecka"
 
 #: src/AgendaView.vala:284
 msgid "Next Week"
@@ -105,7 +105,7 @@ msgstr "Nästa vecka"
 
 #: src/AgendaView.vala:287
 msgid "This Month"
-msgstr "Den här månaden"
+msgstr "Denna månad"
 
 #: src/AgendaView.vala:290
 msgid "Next Month"
@@ -284,7 +284,7 @@ msgstr "Vid tidpunkten för händelsen"
 
 #: src/EventEdition/ReminderPanel.vala:170
 msgid "1 minute before"
-msgstr "1 minut före"
+msgstr "1 minut innan"
 
 #: src/EventEdition/ReminderPanel.vala:171
 msgid "5 minutes before"
@@ -300,11 +300,11 @@ msgstr "15 minuter innan"
 
 #: src/EventEdition/ReminderPanel.vala:174
 msgid "20 minutes before"
-msgstr "20 minuter före"
+msgstr "20 minuter innan"
 
 #: src/EventEdition/ReminderPanel.vala:175
 msgid "25 minutes before"
-msgstr "25 minuter före"
+msgstr "25 minuter innan"
 
 #: src/EventEdition/ReminderPanel.vala:176
 msgid "30 minutes before"
@@ -409,7 +409,7 @@ msgstr "Aldrig"
 
 #: src/EventEdition/RepeatPanel.vala:145
 msgid "Until"
-msgstr "Till"
+msgstr "Tills"
 
 #: src/EventEdition/RepeatPanel.vala:146
 msgid "After"
@@ -629,7 +629,7 @@ msgstr "Sön"
 
 #: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
 msgid "Export Calendar…"
-msgstr "Exportera kalendern…"
+msgstr "Exportera kalender…"
 
 #: src/Grid/CalendarView.vala:131
 msgid "Go to today's date"
@@ -662,7 +662,7 @@ msgstr "Visa veckonummer"
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "%u mer…"
+msgstr "%u fler…"
 
 #: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
@@ -698,11 +698,11 @@ msgstr "Banan"
 
 #: src/SourceDialog/SourceDialog.vala:139
 msgid "Orange"
-msgstr "Orange"
+msgstr "Apelsin"
 
 #: src/SourceDialog/SourceDialog.vala:146
 msgid "Strawberry"
-msgstr "Jordgubbar"
+msgstr "Jordgubbe"
 
 #: src/SourceDialog/SourceDialog.vala:153
 msgid "Bubblegum"
@@ -726,7 +726,7 @@ msgstr "Färg"
 
 #: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
-msgstr "Använd som standardkalender"
+msgstr "Markera som standardkalender"
 
 #: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
@@ -736,7 +736,7 @@ msgstr "Skapa kalender"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:67
 msgid "appointment;meeting"
-msgstr "möte;möte"
+msgstr "bokad tid;möte"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -785,7 +785,7 @@ msgstr "domstol;jury;skatt;advokat;jurist;avtal"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:107
 msgid "movie;film"
-msgstr "film;film"
+msgstr "bio;film"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -817,7 +817,7 @@ msgstr "%s - %s"
 #: src/Widgets/AgendaEventRow.vala:346
 #, c-format
 msgid "%s at %s"
-msgstr "%s den %s"
+msgstr "%s klockan %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:349
@@ -827,11 +827,11 @@ msgstr "%s, %s - %s"
 
 #: src/Widgets/CalendarChooser.vala:53
 msgid "Search Calendars"
-msgstr "Sök Kalendrar"
+msgstr "Sök i kalendrar"
 
 #: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
-msgstr "Hittade inget"
+msgstr "Hittade ingenting"
 
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
@@ -855,12 +855,12 @@ msgstr "Nätverksinställningar…"
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
-msgstr "Ta bort den här händelsen?"
+msgstr "Ta bort denna förekomst av händelsen?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr "Ta bort denna händelse av händelsen \"%s\"?"
+msgstr "Ta bort denna förekomst av händelsen \"%s\"?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -877,7 +877,7 @@ msgstr "Ta bort förekomst"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
 msgid "Delete event?"
-msgstr "Radera händelse?"
+msgstr "Ta bort händelse?"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
 #, c-format
@@ -936,15 +936,15 @@ msgstr "Välj ICS-fil att importera"
 
 #: src/Widgets/SourcePopover.vala:82
 msgid "Open"
-msgstr "Öppen"
+msgstr "Öppna"
 
 #: src/Widgets/SourceRow.vala:67
 msgid "Not Removable"
-msgstr "Ej borttagbar"
+msgstr "Kan inte tas bort"
 
 #: src/Widgets/SourceRow.vala:80
 msgid "Not Editable"
-msgstr "Kan inte ändras"
+msgstr "Kan inte redigeras"
 
 #: src/Widgets/SourceRow.vala:104
 msgid "Undo"
