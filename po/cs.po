@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 20:22+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2024-09-12 22:16+0000\n"
 "Last-Translator: Daniel Hejduk <danielhejduk@disroot.org>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -917,7 +917,7 @@ msgstr "Smazat událost"
 msgid "This event will be permanently deleted."
 msgstr "Tato událost bude permanentně odstraněna."
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "Upravit…"
 
@@ -933,7 +933,7 @@ msgstr "Smazat událost"
 msgid "Remove Occurrence"
 msgstr "Smazat tento výskyt"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "Odstranit"
 
@@ -957,19 +957,19 @@ msgstr "Vyberte ICS soubor k importu"
 msgid "Open"
 msgstr "Otevřít"
 
-#: src/Widgets/SourceRow.vala:67
+#: src/Widgets/SourceRow.vala:64
 msgid "Not Removable"
 msgstr "Neodstranitelné"
 
-#: src/Widgets/SourceRow.vala:80
+#: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
 msgstr "Needitovatelné"
 
-#: src/Widgets/SourceRow.vala:104
+#: src/Widgets/SourceRow.vala:87
 msgid "Undo"
 msgstr "Zpět"
 
-#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
+#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" odstraněno"

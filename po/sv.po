@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 20:22+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2025-10-30 13:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/calendar/"
@@ -772,8 +772,7 @@ msgstr "flyg;flygplats;"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:97
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr ""
-"frukost;brunch;middag;lunch;kvällsmat;steakhouse;hamburgare;måltid;barbecue"
+msgstr "frukost;brunch;middag;lunch;kvällsmat;steakhouse;hamburgare;måltid;barbecue"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -898,7 +897,7 @@ msgstr "Ta bort händelse"
 msgid "This event will be permanently deleted."
 msgstr "Denna händelse kommer att raderas permanent."
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "Redigera…"
 
@@ -914,7 +913,7 @@ msgstr "Ta bort händelse"
 msgid "Remove Occurrence"
 msgstr "Ta bort förekomst"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "Ta bort"
 
@@ -938,19 +937,19 @@ msgstr "Välj ICS-fil att importera"
 msgid "Open"
 msgstr "Öppna"
 
-#: src/Widgets/SourceRow.vala:67
+#: src/Widgets/SourceRow.vala:64
 msgid "Not Removable"
 msgstr "Kan inte tas bort"
 
-#: src/Widgets/SourceRow.vala:80
+#: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
 msgstr "Kan inte redigeras"
 
-#: src/Widgets/SourceRow.vala:104
+#: src/Widgets/SourceRow.vala:87
 msgid "Undo"
 msgstr "Ångra"
 
-#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
+#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" togs bort"
