@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-30 17:37+0000\n"
-"PO-Revision-Date: 2025-10-30 13:55+0000\n"
+"PO-Revision-Date: 2025-10-31 18:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/calendar/"
 "extra/sv/>\n"
@@ -49,7 +49,7 @@ msgstr "Mindre uppdateringar:"
 
 #: data/calendar.metainfo.xml.in:62
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "Förbättra stöd för skärmläsare"
 
 #: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
