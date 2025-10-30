@@ -206,6 +206,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         location_label = new Gtk.Label ("") {
             margin_top = 6,
             selectable = false,
+            use_markup = true,
             wrap = true,
             wrap_mode = WORD_CHAR,
             xalign = 0
@@ -353,7 +354,15 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         }
 
         datetime_label.label = datetime_string;
-        location_label.label = ical_event.get_location ();
+
+        string location_description, location_uri;
+        if (location_from_component (event, out location_description, out location_uri)) {
+            if (location_uri != "") {
+                location_label.label = "<a href=\"%s\">%s</a>".printf (location_uri, location_description);
+            } else {
+                location_label.label = location_description;
+            }
+        }
     }
 
     private void find_keywords (Category category, string phrase, ref Category current_category, ref int current_hits) {
@@ -390,5 +399,68 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                 keyword_map.@set (category, word);
             }
         }
+    }
+
+    private static bool location_from_component (ECal.Component component, out string description, out string uri) {
+        description = "";
+        uri = "";
+
+        unowned ICal.Component? icalcomponent = component.get_icalcomponent ();
+        if (icalcomponent == null || icalcomponent.get_location () == null) {
+            return false;
+        }
+
+        description = icalcomponent.get_location ();
+        uri = "";
+
+        var geo_property = icalcomponent.get_first_property (ICal.PropertyKind.GEO_PROPERTY);
+        if (geo_property != null) {
+            var geo = geo_property.get_geo ();
+            if (geo != null) {
+                var location = new Geocode.Location (geo.get_lat (), geo.get_lon ());
+                uri = location.to_uri (GEO);
+            }
+        }
+
+        var apple_location_property = ECal.util_component_find_x_property (
+            icalcomponent, "X-APPLE-STRUCTURED-LOCATION"
+        );
+        if (apple_location_property != null && apple_location_property.get_value () != null) {
+            string? address = null;
+            string? title = null;
+
+            var parameter = apple_location_property.get_first_parameter (ICal.ParameterKind.X_PARAMETER);
+            while (parameter != null) {
+                switch (parameter.get_xname ()) {
+                    case "X-ADDRESS":
+                        address = parameter.get_xvalue ();
+                        break;
+
+                    case "X-TITLE":
+                        title = parameter.get_xvalue ();
+                        break;
+
+                    default:
+                        break;
+                }
+
+                parameter = apple_location_property.get_next_parameter (ICal.ParameterKind.X_PARAMETER);
+            }
+
+            if (title != null) {
+                description = title;
+            }
+
+            if (description == "" && address != null) {
+                description = address;
+            }
+
+            var location_value = apple_location_property.get_value_as_string ();
+            if (location_value != null && location_value.down ().contains ("geo:")) {
+                uri = location_value.down ().replace ("\\", "");
+            }
+        }
+
+        return true;
     }
 }
