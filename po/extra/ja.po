@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 20:22+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2025-08-30 22:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
@@ -41,55 +41,64 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
+#: data/calendar.metainfo.xml.in:108
 msgid "Minor Updates:"
 msgstr "マイナーアップデート:"
 
 #: data/calendar.metainfo.xml.in:62
-msgid "New flatter design"
-msgstr "新しいフラットなデザイン"
+#, fuzzy
+#| msgid "Improved offline support"
+msgid "Improve screen reader support"
+msgstr "オフラインへの対応を改善"
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
-#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:111
 msgid "Updated translations"
 msgstr "新しい翻訳"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:72
+msgid "New flatter design"
+msgstr "新しいフラットなデザイン"
+
+#: data/calendar.metainfo.xml.in:110
 msgid "Updated app icon"
 msgstr "アプリのアイコンを更新"
 
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:118
 msgid "Features:"
 msgstr "機能:"
 
-#: data/calendar.metainfo.xml.in:110
+#: data/calendar.metainfo.xml.in:120
 msgid "Ask for confirmation before deleting events"
 msgstr "予定を削除する前に確認画面を表示するように変更"
 
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:121
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Ctrl + クリックで予定の説明欄内のメールアドレスや Web リンクを開ける機能を追"
 "加"
 
-#: data/calendar.metainfo.xml.in:113
+#: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
 msgstr "修正点:"
 
-#: data/calendar.metainfo.xml.in:115
+#: data/calendar.metainfo.xml.in:125
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
-msgstr "カレンダーが読み取り専用の場合、カレンダー設定にある“デフォルトのカレンダーに"
+msgstr ""
+"カレンダーが読み取り専用の場合、カレンダー設定にある“デフォルトのカレンダーに"
 "設定”チェックボックスを無効にするように修正"
 
-#: data/calendar.metainfo.xml.in:116
+#: data/calendar.metainfo.xml.in:126
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr "AccountsService へのアクセス権限が不要になったので削除"
 
-#: data/calendar.metainfo.xml.in:117
+#: data/calendar.metainfo.xml.in:127
 msgid "Fixed potential memory leak"
 msgstr "メモリーリーク発生の可能性があった不具合を修正"
 
@@ -147,9 +156,6 @@ msgstr "予定を追加"
 
 #~ msgid "Notify for all alarms on an event"
 #~ msgstr "予定に設定されているすべてのアラームを通知"
-
-#~ msgid "Improved offline support"
-#~ msgstr "オフラインへの対応を改善"
 
 #~ msgid "New colorful avatar fallbacks"
 #~ msgstr "アバター画像未設定時に背景を色付きで表示するように変更"
