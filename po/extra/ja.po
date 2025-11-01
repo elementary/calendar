@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-30 17:37+0000\n"
-"PO-Revision-Date: 2025-08-30 22:55+0000\n"
+"PO-Revision-Date: 2025-11-02 07:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
 "extra/ja/>\n"
@@ -48,10 +48,8 @@ msgid "Minor Updates:"
 msgstr "マイナーアップデート:"
 
 #: data/calendar.metainfo.xml.in:62
-#, fuzzy
-#| msgid "Improved offline support"
 msgid "Improve screen reader support"
-msgstr "オフラインへの対応を改善"
+msgstr "スクリーンリーダーへの対応を改善"
 
 #: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
