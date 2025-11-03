@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-30 17:37+0000\n"
-"PO-Revision-Date: 2024-09-12 22:16+0000\n"
+"PO-Revision-Date: 2025-11-03 08:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <https://l10n.elementary.io/projects/calendar/extra/"
-"ka/>\n"
+"Language-Team: Georgian <https://l10n.elementaryos.org/projects/calendar/"
+"extra/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
@@ -48,10 +48,8 @@ msgid "Minor Updates:"
 msgstr "უმნიშვნელო განახლებები:"
 
 #: data/calendar.metainfo.xml.in:62
-#, fuzzy
-#| msgid "Improved offline support"
 msgid "Improve screen reader support"
-msgstr "ინტერნეტის გარეშე მუშაობის გაუმჯობესება"
+msgstr "ეკრანის წამკითხველის მხარდაჭერის გაუმჯობესება"
 
 #: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
