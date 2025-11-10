@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-30 17:37+0000\n"
-"PO-Revision-Date: 2024-09-03 23:16+0000\n"
+"PO-Revision-Date: 2025-11-11 13:55+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/calendar/extra/"
-"hu/>\n"
+"Language-Team: Hungarian <https://l10n.elementaryos.org/projects/calendar/"
+"extra/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
@@ -50,7 +50,7 @@ msgstr "Kisebb frissítések:"
 
 #: data/calendar.metainfo.xml.in:62
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "Képernyőolvasók jobb támogatása"
 
 #: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
