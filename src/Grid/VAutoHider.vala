@@ -80,7 +80,7 @@ namespace Maya.View {
                 int child_height;
                 child.show ();
                 child.get_preferred_height (out child_height, null);
-                child.hide ();
+                ((Maya.View.EventButton) child).hide_without_animate ();
 
                 bool should_hide;
                 if (global_height - more_label_height < child_height + height) {
