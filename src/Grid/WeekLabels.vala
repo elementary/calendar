@@ -59,24 +59,23 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
 
         show_weeks.bind ("show-weeks", this, "reveal-child", GLib.SettingsBindFlags.DEFAULT);
 
+        var action_show_weeks = show_weeks.create_action ("show-weeks");
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action (action_show_weeks);
+
+        insert_action_group ("header", action_group);
+
+        var menu = new GLib.Menu ();
+        menu.append (_("Show Week Numbers"), "header.show-weeks");
+
+        var gtk_menu = new Gtk.Menu.from_model (menu) {
+            attach_widget = this
+        };
+
         button_press_event.connect ((event) => {
             if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-                var show_weeks_menuitem = new Gtk.MenuItem ();
-                if (show_weeks.get_boolean ("show-weeks")) {
-                    show_weeks_menuitem.label = _("Hide Week Numbers");
-                } else {
-                    show_weeks_menuitem.label = _("Show Week Numbers");
-                }
-
-                show_weeks_menuitem.activate.connect (() => {
-                    show_weeks.set_boolean ("show-weeks", !show_weeks.get_boolean ("show-weeks"));
-                });
-
-                var menu = new Gtk.Menu ();
-                menu.attach_to_widget (this, null);
-                menu.add (show_weeks_menuitem);
-                menu.show_all ();
-                menu.popup_at_pointer (event);
+                gtk_menu.popup_at_pointer (event);
             }
 
             return false;
