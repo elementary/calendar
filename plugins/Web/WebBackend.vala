@@ -36,12 +36,13 @@ public class Maya.WebBackend : GLib.Object, Maya.Backend {
             keep_copy = source_offline.stay_synchronized;
         }
 
-        var url_entry = new PlacementWidget ();
-        url_entry.widget = new Gtk.Entry () {
-            placeholder_text = "https://example.com"
+        var url_entry = new PlacementWidget () {
+            needed = true,
+            ref_name = "url_entry",
+            widget = new Gtk.Entry () {
+                placeholder_text = "https://example.com"
+            }
         };
-        url_entry.ref_name = "url_entry";
-        url_entry.needed = true;
 
         var url_label = new PlacementWidget () {
             ref_name = "url_label",

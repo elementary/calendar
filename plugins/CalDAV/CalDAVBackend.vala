@@ -41,7 +41,7 @@ public class Maya.CalDavBackend : GLib.Object, Maya.Backend {
             needed = true,
             ref_name = "url_entry",
             widget = new Gtk.Entry () {
-                text = "http://"
+                placeholder_text = "https://example.com"
             }
         };
 
