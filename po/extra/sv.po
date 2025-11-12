@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 20:22+0000\n"
-"PO-Revision-Date: 2018-10-19 16:59+0000\n"
-"Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
-"Language-Team: Swedish <https://weblate.elementary.io/projects/calendar/"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
+"PO-Revision-Date: 2025-10-31 18:55+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <https://l10n.elementaryos.org/projects/calendar/"
 "extra/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
@@ -34,63 +34,70 @@ msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
-"Ett smidigt och lätt kalenderprogram som synkar och hanterar flera kalendrar "
-"på en plats, såsom Google Calendar, Outlook och CalDAV."
+"Ett smidigt och lätt kalenderprogram som synkroniserar och hanterar flera "
+"kalendrar på en plats, såsom Google Calendar, Outlook och CalDAV."
 
 #: data/calendar.metainfo.xml.in:52
-#, fuzzy
-#| msgid "elementary LLC."
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
+#: data/calendar.metainfo.xml.in:108
 msgid "Minor Updates:"
-msgstr ""
+msgstr "Mindre uppdateringar:"
 
 #: data/calendar.metainfo.xml.in:62
-msgid "New flatter design"
-msgstr ""
+msgid "Improve screen reader support"
+msgstr "Förbättra stöd för skärmläsare"
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
-#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:111
 msgid "Updated translations"
-msgstr ""
+msgstr "Uppdaterade översättningar"
 
-#: data/calendar.metainfo.xml.in:100
-msgid "Updated app icon"
-msgstr ""
-
-#: data/calendar.metainfo.xml.in:108
-msgid "Features:"
-msgstr ""
+#: data/calendar.metainfo.xml.in:72
+msgid "New flatter design"
+msgstr "Ny plattare design"
 
 #: data/calendar.metainfo.xml.in:110
-msgid "Ask for confirmation before deleting events"
-msgstr ""
+msgid "Updated app icon"
+msgstr "Uppdaterad app-ikon"
 
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:118
+msgid "Features:"
+msgstr "Funktioner:"
+
+#: data/calendar.metainfo.xml.in:120
+msgid "Ask for confirmation before deleting events"
+msgstr "Fråga om bekräftelse innan händelser tas bort"
+
+#: data/calendar.metainfo.xml.in:121
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
+"Följ e-post- och webblänkar i händelsebeskrivningen med Control + klick"
 
-#: data/calendar.metainfo.xml.in:113
+#: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
-msgstr ""
+msgstr "Åtgärdar:"
 
-#: data/calendar.metainfo.xml.in:115
+#: data/calendar.metainfo.xml.in:125
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"Inaktiverad kryssruta \"Markera som standardkalender\" i "
+"kalenderinställningarna om kalendern är skrivskyddad"
 
-#: data/calendar.metainfo.xml.in:116
+#: data/calendar.metainfo.xml.in:126
 msgid "Removed no longer needed sandbox permission for accounts service"
-msgstr ""
+msgstr "Borttagen sandlådebehörighet för kontotjänster som inte längre behövs"
 
-#: data/calendar.metainfo.xml.in:117
+#: data/calendar.metainfo.xml.in:127
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "Fixat potentiellt minnesläckage"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
