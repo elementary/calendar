@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 18:21+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2025-06-05 08:55+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementaryos.org/projects/calendar/"
@@ -37,43 +37,53 @@ msgstr ""
 "Лёгкі праграма, з якой вы можаце сінхранізаваць і кіраваць некалькімі "
 "календарамі ў адным месцы, напрыклад календаром Google, Outlook і CalDAV."
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
+#: data/calendar.metainfo.xml.in:108
 msgid "Minor Updates:"
 msgstr "Нязначныя абнаўленні:"
 
 #: data/calendar.metainfo.xml.in:62
-msgid "New flatter design"
-msgstr "Новы плоскі дызайн"
+msgid "Improve screen reader support"
+msgstr ""
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
-#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:111
 msgid "Updated translations"
 msgstr "Абноўлены пераклады"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:72
+msgid "New flatter design"
+msgstr "Новы плоскі дызайн"
+
+#: data/calendar.metainfo.xml.in:110
 msgid "Updated app icon"
 msgstr "Абноўлены значок праграмы"
 
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:118
 msgid "Features:"
 msgstr "Функцыі:"
 
-#: data/calendar.metainfo.xml.in:110
+#: data/calendar.metainfo.xml.in:120
 msgid "Ask for confirmation before deleting events"
 msgstr "Запыт пацвярджэння перад выдаленнем падзей"
 
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:121
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Пераход па спасылкам і адрасам электроннай пошты на Control + Націсканне"
 
-#: data/calendar.metainfo.xml.in:113
+#: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
 msgstr "Выпраўленні:"
 
-#: data/calendar.metainfo.xml.in:115
+#: data/calendar.metainfo.xml.in:125
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -81,13 +91,13 @@ msgstr ""
 "Адключэнне опцыі \"Пазначыць як прадвызначаны каляндар\" у наладах "
 "календара, калі ён толькі для чытання"
 
-#: data/calendar.metainfo.xml.in:116
+#: data/calendar.metainfo.xml.in:126
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 "Выдалены дазвол на выкарыстоўванне пясочніцы для ўліковых запісаў, таму што "
 "ён больш не патрэбны"
 
-#: data/calendar.metainfo.xml.in:117
+#: data/calendar.metainfo.xml.in:127
 msgid "Fixed potential memory leak"
 msgstr "Выпраўлена патэнцыяльная ўцечка інфармацыі"
 
@@ -98,6 +108,3 @@ msgstr "Maya;Майа;Майя;Планіроўшчык;Даты;Дні;Падз
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Дадаць падзею"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."

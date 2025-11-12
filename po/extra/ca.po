@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 18:21+0000\n"
-"PO-Revision-Date: 2024-09-04 14:43+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
+"PO-Revision-Date: 2025-10-31 18:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://l10n.elementary.io/projects/calendar/extra/"
-"ca/>\n"
+"Language-Team: Catalan <https://l10n.elementaryos.org/projects/calendar/"
+"extra/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-18 05:58+0000\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
@@ -37,44 +37,54 @@ msgstr ""
 "Una aplicació lleugera de calendari que sincronitza i gestiona diversos "
 "calendaris en un sol lloc, com ara Google Calendar, Outlook i CalDAV."
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
+#: data/calendar.metainfo.xml.in:108
 msgid "Minor Updates:"
 msgstr "Actualitzacions menors:"
 
 #: data/calendar.metainfo.xml.in:62
-msgid "New flatter design"
-msgstr "Un nou disseny més pla"
+msgid "Improve screen reader support"
+msgstr "Millora del suport del lector de pantalla"
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
-#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:111
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:72
+msgid "New flatter design"
+msgstr "Un nou disseny més pla"
+
+#: data/calendar.metainfo.xml.in:110
 msgid "Updated app icon"
 msgstr "Icona de l'aplicació actualitzada"
 
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:118
 msgid "Features:"
 msgstr "Característiques:"
 
-#: data/calendar.metainfo.xml.in:110
+#: data/calendar.metainfo.xml.in:120
 msgid "Ask for confirmation before deleting events"
 msgstr "Demana confirmació abans de suprimir esdeveniments."
 
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:121
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Seguiu el correu electrònic i els enllaços web a la descripció de "
 "l'esdeveniment amb Control + clic."
 
-#: data/calendar.metainfo.xml.in:113
+#: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
 msgstr "Correccions:"
 
-#: data/calendar.metainfo.xml.in:115
+#: data/calendar.metainfo.xml.in:125
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -82,13 +92,13 @@ msgstr ""
 "S'ha desactivat la casella de selecció \"Marca com a calendari per defecte\" "
 "a la configuració del calendari, si el calendari és només de lectura."
 
-#: data/calendar.metainfo.xml.in:116
+#: data/calendar.metainfo.xml.in:126
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 "S'ha suprimit el permís de prova que ja no era necessari per al servei de "
 "comptes."
 
-#: data/calendar.metainfo.xml.in:117
+#: data/calendar.metainfo.xml.in:127
 msgid "Fixed potential memory leak"
 msgstr "Correcció de la possible fuita de memòria"
 
@@ -99,9 +109,6 @@ msgstr "Maya;Planificador;Dates;Dies;Esdeveniments;Calendari;ics;caldav;evolutio
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "Afegeix un esdeveniment"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr "S'assegura que el Calendari s’executi en segon pla a l’inici."
@@ -152,9 +159,6 @@ msgstr "Afegeix un esdeveniment"
 
 #~ msgid "Notify for all alarms on an event"
 #~ msgstr "Notificació de totes les alarmes d'un esdeveniment"
-
-#~ msgid "Improved offline support"
-#~ msgstr "S'ha millorat l'assistència fora de línia."
 
 #~ msgid "New colorful avatar fallbacks"
 #~ msgstr "Avatar acolorit alternatiu nou"

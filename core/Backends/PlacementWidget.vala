@@ -21,15 +21,6 @@ public class Maya.PlacementWidget : GLib.Object {
 
 namespace Maya.DefaultPlacementWidgets {
     public Gee.LinkedList<Maya.PlacementWidget> get_user (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
-        var user_label = new PlacementWidget () {
-            column = 0,
-            row = row,
-            ref_name = "user_label",
-            widget = new Gtk.Label (_("User:")) {
-                xalign = 1.0f
-            }
-        };
-
         var user_entry = new PlacementWidget () {
             column = 1,
             row = row,
@@ -41,6 +32,16 @@ namespace Maya.DefaultPlacementWidgets {
             }
         };
 
+        var user_label = new PlacementWidget () {
+            column = 0,
+            row = row,
+            ref_name = "user_label",
+            widget = new Gtk.Label (_("User")) {
+                mnemonic_widget = user_entry.widget,
+                xalign = 1.0f
+            }
+        };
+
         var collection = new Gee.LinkedList<Maya.PlacementWidget> ();
         collection.add (user_label);
         collection.add (user_entry);
@@ -49,15 +50,6 @@ namespace Maya.DefaultPlacementWidgets {
     }
 
     public Gee.LinkedList<Maya.PlacementWidget> get_email (int row, bool needed = true, string entry_text = "", string? ph_text = null) {
-        var user_label = new PlacementWidget () {
-            column = 0,
-            row = row,
-            ref_name = "email_label",
-            widget = new Gtk.Label (_("Email:")) {
-                xalign = 1.0f
-            }
-        };
-
         var user_entry = new PlacementWidget () {
             column = 1,
             row = row,
@@ -66,6 +58,16 @@ namespace Maya.DefaultPlacementWidgets {
             widget = new Gtk.Entry () {
                 placeholder_text = ph_text ?? _("john@doe.com"),
                 text = entry_text
+            }
+        };
+
+        var user_label = new PlacementWidget () {
+            column = 0,
+            row = row,
+            ref_name = "email_label",
+            widget = new Gtk.Label (_("Email")) {
+                mnemonic_widget = user_entry.widget,
+                xalign = 1.0f
             }
         };
 

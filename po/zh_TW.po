@@ -6,40 +6,40 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 18:21+0000\n"
-"PO-Revision-Date: 2024-09-19 08:57+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
+"PO-Revision-Date: 2025-08-22 15:58+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
-"calendar/calendar/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional Han script) <https://"
+"l10n.elementaryos.org/projects/calendar/calendar/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "在此電腦上"
 
-#: core/Backends/PlacementWidget.vala:41
-msgid "User:"
-msgstr "使用者："
-
-#: core/Backends/PlacementWidget.vala:50
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "user.name"
 
-#: core/Backends/PlacementWidget.vala:63
-msgid "Email:"
-msgstr "電子郵件："
+#: core/Backends/PlacementWidget.vala:39
+msgid "User"
+msgstr "使用者"
 
-#: core/Backends/PlacementWidget.vala:72
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+msgid "Email"
+msgstr "電子郵件"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "保留一份在本機上"
 
@@ -55,19 +55,19 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "user.name 或 user.name@gmail.com"
 
-#: plugins/CalDAV/CalDAVBackend.vala:39
+#: plugins/CalDAV/CalDAVBackend.vala:24
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:58
-msgid "URL:"
-msgstr "URL："
+#: plugins/CalDAV/CalDAVBackend.vala:54
+msgid "URL"
+msgstr "URL"
 
-#: plugins/CalDAV/CalDAVBackend.vala:99
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "使用安全連線"
 
-#: plugins/CalDAV/CalDAVBackend.vala:127
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "伺服器處理會議邀請"
 
@@ -172,7 +172,7 @@ msgstr "地點"
 msgid "Guests"
 msgstr "客人"
 
-#: src/EventEdition/EventDialog.vala:123
+#: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:38
 msgid "Reminders"
 msgstr "提醒"
 
@@ -183,10 +183,8 @@ msgid "Repeat"
 msgstr "重複"
 
 #: src/EventEdition/EventDialog.vala:146
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete Event…"
-msgstr "刪除事件"
+msgstr "刪除事件…"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
@@ -197,7 +195,7 @@ msgid "Save Changes"
 msgstr "儲存變更"
 
 #: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:98
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "取消"
 
@@ -269,79 +267,75 @@ msgstr "位置："
 msgid "John Smith OR Example St."
 msgstr "王小明 或 某某街。"
 
-#: src/EventEdition/ReminderPanel.vala:34
-msgid "Reminders:"
-msgstr "提醒："
-
-#: src/EventEdition/ReminderPanel.vala:36
+#: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
 msgstr "沒有提醒"
 
-#: src/EventEdition/ReminderPanel.vala:55
+#: src/EventEdition/ReminderPanel.vala:50
 msgid "Add Reminder"
 msgstr "加入提醒"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:169
 msgid "At time of event"
 msgstr "事件時間"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:170
 msgid "1 minute before"
 msgstr "1 分鐘前"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:171
 msgid "5 minutes before"
 msgstr "5 分鐘前"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "10 minutes before"
 msgstr "10 分鐘前"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "15 minutes before"
 msgstr "15 分鐘前"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "20 minutes before"
 msgstr "20 分鐘前"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "25 minutes before"
 msgstr "25 分鐘前"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "30 minutes before"
 msgstr "30 分鐘前"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "45 minutes before"
 msgstr "45 分鐘前"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "1 hour before"
 msgstr "1 小時前"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "2 hours before"
 msgstr "2 小時前"
 
-#: src/EventEdition/ReminderPanel.vala:183
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "3 hours before"
 msgstr "3 小時前"
 
-#: src/EventEdition/ReminderPanel.vala:184
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "12 hours before"
 msgstr "12 小時前"
 
-#: src/EventEdition/ReminderPanel.vala:185
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "24 hours before"
 msgstr "24 小時前"
 
-#: src/EventEdition/ReminderPanel.vala:186
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "2 days before"
 msgstr "2 天前"
 
-#: src/EventEdition/ReminderPanel.vala:187
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "1 week before"
 msgstr "1 週前"
 
@@ -641,7 +635,7 @@ msgstr "匯出或分享預設行事曆"
 msgid "Manage Calendars"
 msgstr "管理行事曆"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
 msgid "Save"
 msgstr "儲存"
 
@@ -666,27 +660,67 @@ msgstr "還有 %u 個…"
 msgid "Create"
 msgstr "建立"
 
-#: src/SourceDialog/SourceDialog.vala:61
-msgid "Name:"
-msgstr "名稱："
-
-#: src/SourceDialog/SourceDialog.vala:65
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "行事曆名稱"
 
-#: src/SourceDialog/SourceDialog.vala:88
-msgid "Type:"
-msgstr "類型："
+#: src/SourceDialog/SourceDialog.vala:66
+msgid "Name"
+msgstr "名稱"
 
-#: src/SourceDialog/SourceDialog.vala:105
-msgid "Color:"
-msgstr "色彩："
+#: src/SourceDialog/SourceDialog.vala:91
+msgid "Type"
+msgstr "類型"
 
-#: src/SourceDialog/SourceDialog.vala:185
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr "藍莓"
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr "薄荷"
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr "萊姆"
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr "香蕉"
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr "橘色"
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr "草莓"
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr "粉色"
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr "葡萄"
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr "可可"
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr "石板"
+
+#: src/SourceDialog/SourceDialog.vala:195
+msgid "Color"
+msgstr "色彩"
+
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr "標記爲預設行事曆"
 
-#: src/SourceDialog/SourceDialog.vala:255
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr "新建行事曆"
 
@@ -853,7 +887,7 @@ msgstr "刪除事件"
 msgid "This event will be permanently deleted."
 msgstr "此活動會被永久刪除。"
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "編輯…"
 
@@ -869,46 +903,52 @@ msgstr "移除事件"
 msgid "Remove Occurrence"
 msgstr "移除這次"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "移除"
 
-#: src/Widgets/SourcePopover.vala:58
+#: src/Widgets/SourcePopover.vala:44
 msgid "Add New Calendar…"
 msgstr "新增行事曆…"
 
-#: src/Widgets/SourcePopover.vala:62
+#: src/Widgets/SourcePopover.vala:48
 msgid "Import iCalendar File…"
 msgstr "匯入 iCalendar 檔案…"
 
-#: src/Widgets/SourcePopover.vala:66
+#: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
 msgstr "線上帳號設定…"
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
 msgstr "選擇要匯入的 ICS 檔案"
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:82
 msgid "Open"
 msgstr "打開"
 
-#: src/Widgets/SourceRow.vala:75
+#: src/Widgets/SourceRow.vala:64
 msgid "Not Removable"
 msgstr "不可移除"
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
 msgstr "不可編輯"
 
-#: src/Widgets/SourceRow.vala:110
+#: src/Widgets/SourceRow.vala:87
 msgid "Undo"
 msgstr "復原"
 
-#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, c-format
 msgid "\"%s\" removed"
 msgstr "「%s」已移除"
+
+#~ msgid "Email:"
+#~ msgstr "電子郵件："
+
+#~ msgid "Reminders:"
+#~ msgstr "提醒："
 
 #~ msgid "Print debug information"
 #~ msgstr "列印除錯資訊"
@@ -939,9 +979,6 @@ msgstr "「%s」已移除"
 
 #~ msgid "Import events from \"%s\" into the following calendar:"
 #~ msgstr "從「%s」匯入事件到下列行事曆中："
-
-#~ msgid "Email"
-#~ msgstr "電子郵件"
 
 #~ msgid "Search Events"
 #~ msgstr "搜尋事件"

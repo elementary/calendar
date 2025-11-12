@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 18:21+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2022-03-31 21:16+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -24,23 +24,25 @@ msgstr ""
 msgid "On this computer"
 msgstr "لە سەر ئەم کۆمپیوترە"
 
-#: core/Backends/PlacementWidget.vala:41
-msgid "User:"
-msgstr "بەکارهێنەر:"
-
-#: core/Backends/PlacementWidget.vala:50
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "ناوی.بەکارهێنەر"
 
-#: core/Backends/PlacementWidget.vala:63
-msgid "Email:"
-msgstr "ئیمەیل:"
+#: core/Backends/PlacementWidget.vala:39
+#, fuzzy
+#| msgid "User:"
+msgid "User"
+msgstr "بەکارهێنەر:"
 
-#: core/Backends/PlacementWidget.vala:72
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+msgid "Email"
+msgstr "ئیمەیل"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "پاشەکەوتی وەشانی ناوخۆیی"
 
@@ -56,19 +58,21 @@ msgstr "گوگڵ"
 msgid "user.name or user.name@gmail.com"
 msgstr "user.name or user.name@gmail.com"
 
-#: plugins/CalDAV/CalDAVBackend.vala:39
+#: plugins/CalDAV/CalDAVBackend.vala:24
 msgid "CalDAV"
 msgstr "کال-داڤ"
 
-#: plugins/CalDAV/CalDAVBackend.vala:58
-msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:54
+#, fuzzy
+#| msgid "URL:"
+msgid "URL"
 msgstr "ناونیشانی ماڵپەڕ :"
 
-#: plugins/CalDAV/CalDAVBackend.vala:99
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "بەکارهێنانی پەیوەندییەکای پارێزراو"
 
-#: plugins/CalDAV/CalDAVBackend.vala:127
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "رێزبەندی بانگهێشتەکانی بینەرانی ڕاژە"
 
@@ -174,7 +178,7 @@ msgstr "شوێن (جێگا)"
 msgid "Guests"
 msgstr "میوانەکان"
 
-#: src/EventEdition/EventDialog.vala:123
+#: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:38
 msgid "Reminders"
 msgstr "بیرخەرەوەکان"
 
@@ -199,7 +203,7 @@ msgid "Save Changes"
 msgstr "پاشکەوتی گۆڕانکاری"
 
 #: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:98
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "هەڵوەشاندنەوە"
 
@@ -271,79 +275,75 @@ msgstr "شوێن:"
 msgid "John Smith OR Example St."
 msgstr "جۆن سمیس یان نموونەی هاوشێوە."
 
-#: src/EventEdition/ReminderPanel.vala:34
-msgid "Reminders:"
-msgstr "بیرخەرەوەکان:"
-
-#: src/EventEdition/ReminderPanel.vala:36
+#: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
 msgstr "بێ بیرخستنەوە"
 
-#: src/EventEdition/ReminderPanel.vala:55
+#: src/EventEdition/ReminderPanel.vala:50
 msgid "Add Reminder"
 msgstr "زیادکردنی بیرخەر"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:169
 msgid "At time of event"
 msgstr "لە کاتی ڕووداو"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:170
 msgid "1 minute before"
 msgstr "۱ خولەک پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:171
 msgid "5 minutes before"
 msgstr "۵ خولەک پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "10 minutes before"
 msgstr "۱۰ خولەک پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "15 minutes before"
 msgstr "۱۵ خولەک پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "20 minutes before"
 msgstr "۲۰ خولەک پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "25 minutes before"
 msgstr "۲۵ خولەک پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "30 minutes before"
 msgstr "۳۰ خولەک پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "45 minutes before"
 msgstr "٤٥ خولەک پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "1 hour before"
 msgstr "۱ کاتژمێر پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "2 hours before"
 msgstr "۲ کاتژمێر پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:183
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "3 hours before"
 msgstr "۳ کاتژمێر پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:184
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "12 hours before"
 msgstr "۱۲ کاتژمێر پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:185
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "24 hours before"
 msgstr "۲٤ کاتژمێر پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:186
+#: src/EventEdition/ReminderPanel.vala:183
 msgid "2 days before"
 msgstr "۲ ڕۆژ پێشتر"
 
-#: src/EventEdition/ReminderPanel.vala:187
+#: src/EventEdition/ReminderPanel.vala:184
 msgid "1 week before"
 msgstr "۱ هەفتە پێشتر"
 
@@ -648,7 +648,7 @@ msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریما�
 msgid "Manage Calendars"
 msgstr "بەڕێوەبردنی ڕۆژژمێرەکان"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
 msgid "Save"
 msgstr "پاشەکەوت"
 
@@ -673,27 +673,73 @@ msgstr "%u زۆرتر …"
 msgid "Create"
 msgstr "دروستکردن"
 
-#: src/SourceDialog/SourceDialog.vala:61
-msgid "Name:"
-msgstr "ناو:"
-
-#: src/SourceDialog/SourceDialog.vala:65
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "ناوی ڕۆژژمێر"
 
-#: src/SourceDialog/SourceDialog.vala:88
-msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:66
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "ناو:"
+
+#: src/SourceDialog/SourceDialog.vala:91
+#, fuzzy
+#| msgid "Type:"
+msgid "Type"
 msgstr "جۆر :"
 
-#: src/SourceDialog/SourceDialog.vala:105
-msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:195
+#, fuzzy
+#| msgid "Color:"
+msgid "Color"
 msgstr "ڕەنگ:"
 
-#: src/SourceDialog/SourceDialog.vala:185
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr "دیاری کردن بۆ ڕۆژژمێری فەرمی"
 
-#: src/SourceDialog/SourceDialog.vala:255
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr "دروستکردنی ڕۆژمێر"
 
@@ -872,7 +918,7 @@ msgstr "سڕینەوەی ڕووداو"
 msgid "This event will be permanently deleted."
 msgstr "ئەم ڕووداو دەستکاری ناکرێت"
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "دەستکاری…"
 
@@ -888,46 +934,52 @@ msgstr "سڕینەوەی ڕووداو"
 msgid "Remove Occurrence"
 msgstr "ڕەشکردنەوەی ئامادەبوون"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "سڕینەوە"
 
-#: src/Widgets/SourcePopover.vala:58
+#: src/Widgets/SourcePopover.vala:44
 msgid "Add New Calendar…"
 msgstr "زیاد کردنی ڕۆژژمێری نوێ …"
 
-#: src/Widgets/SourcePopover.vala:62
+#: src/Widgets/SourcePopover.vala:48
 msgid "Import iCalendar File…"
 msgstr "هێنانی پەڕگەی ئای کالێندەر…"
 
-#: src/Widgets/SourcePopover.vala:66
+#: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
 msgstr "ڕێکخستنەکانی هەژمارە سەرهێڵییەکان…"
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
 msgstr "دیاریکردنی پەڕگەی ICS بۆ هەناردن"
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:82
 msgid "Open"
 msgstr "کردنەوە"
 
-#: src/Widgets/SourceRow.vala:75
+#: src/Widgets/SourceRow.vala:64
 msgid "Not Removable"
 msgstr "نا سڕدرێتەوە"
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
 msgstr "دەستکاری ناکرێت"
 
-#: src/Widgets/SourceRow.vala:110
+#: src/Widgets/SourceRow.vala:87
 msgid "Undo"
 msgstr "گەڕانەوە"
 
-#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, c-format
 msgid "\"%s\" removed"
 msgstr "ڕۆژژمێری \"%s\" سڕاوەتەوە"
+
+#~ msgid "Email:"
+#~ msgstr "ئیمەیل:"
+
+#~ msgid "Reminders:"
+#~ msgstr "بیرخەرەوەکان:"
 
 #, fuzzy
 #~ msgid "Print debug information"
@@ -952,9 +1004,6 @@ msgstr "ڕۆژژمێری \"%s\" سڕاوەتەوە"
 
 #~ msgid "Import events from \"%s\" into the following calendar:"
 #~ msgstr "وارد نمودن رویداد ها از \"%s\" به تقویم پیش رو:"
-
-#~ msgid "Email"
-#~ msgstr "ئیمەیل"
 
 #~ msgid "Search Events"
 #~ msgstr "گەڕان لە ڕوداوەکان"

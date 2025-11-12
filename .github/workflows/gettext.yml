@@ -7,7 +7,7 @@ jobs:
     name: Gettext
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/elementary/flatpak-platform/runtime:8-x86_64
+      image: ghcr.io/elementary/flatpak-platform/runtime:8.2-x86_64
       options: --privileged
 
     steps:
@@ -17,7 +17,7 @@ jobs:
         apt-get install git jq python3-git -y
 
     - name: Clone repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         token: ${{ secrets.GIT_USER_TOKEN }}
 

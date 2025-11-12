@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 18:21+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2018-01-21 00:04+0000\n"
 "Last-Translator: Laurence Bahiirwa <laurence@mediauganda.com>\n"
 "Language-Team: Ganda <https://weblate.elementary.io/projects/calendar/"
@@ -19,23 +19,25 @@ msgstr ""
 msgid "On this computer"
 msgstr "Ku komputa enyo"
 
-#: core/Backends/PlacementWidget.vala:41
-msgid "User:"
-msgstr "Agikozesa:"
-
-#: core/Backends/PlacementWidget.vala:50
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "Erinnya lyo mukozesa"
 
-#: core/Backends/PlacementWidget.vala:63
-msgid "Email:"
-msgstr "Yimeiro:"
+#: core/Backends/PlacementWidget.vala:39
+#, fuzzy
+#| msgid "User:"
+msgid "User"
+msgstr "Agikozesa:"
 
-#: core/Backends/PlacementWidget.vala:72
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "yowana@doe.com"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+msgid "Email"
+msgstr "Yimeiro"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "Tereka kopi ku komputa yo"
 
@@ -51,19 +53,21 @@ msgstr "Google"
 msgid "user.name or user.name@gmail.com"
 msgstr "Imeiro yo eya gmail"
 
-#: plugins/CalDAV/CalDAVBackend.vala:39
+#: plugins/CalDAV/CalDAVBackend.vala:24
 msgid "CalDAV"
 msgstr "calDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:58
-msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:54
+#, fuzzy
+#| msgid "URL:"
+msgid "URL"
 msgstr "Erinnya lyo mukutu gwa yintaneti:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:99
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "Kozessa yintaneti gyewekakasa"
 
-#: plugins/CalDAV/CalDAVBackend.vala:127
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "Sava ekola ku ebaluwa z'okuyiita abagenyi"
 
@@ -172,7 +176,7 @@ msgstr "Ekifo"
 msgid "Guests"
 msgstr "Abagenyi"
 
-#: src/EventEdition/EventDialog.vala:123
+#: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:38
 msgid "Reminders"
 msgstr "Ebijjukizzo"
 
@@ -198,7 +202,7 @@ msgid "Save Changes"
 msgstr "Terekka byokyusizza"
 
 #: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:98
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "Sazzamu"
 
@@ -270,94 +274,90 @@ msgstr "Ekifo:"
 msgid "John Smith OR Example St."
 msgstr "Yowana Smiti oba Ekigezzo St."
 
-#: src/EventEdition/ReminderPanel.vala:34
-msgid "Reminders:"
-msgstr "Ebijjukizzo:"
-
-#: src/EventEdition/ReminderPanel.vala:36
+#: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
 msgstr "Teri bijjukizzo"
 
-#: src/EventEdition/ReminderPanel.vala:55
+#: src/EventEdition/ReminderPanel.vala:50
 msgid "Add Reminder"
 msgstr "Gatako Ekijjukizzo"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:169
 #, fuzzy
 msgid "At time of event"
 msgstr "Erinnya lyo mukolo"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:170
 #, fuzzy
 msgid "1 minute before"
 msgstr "Eddakika 1"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:171
 #, fuzzy
 msgid "5 minutes before"
 msgstr "Eddakika 5"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:172
 #, fuzzy
 msgid "10 minutes before"
 msgstr "Eddakika 10"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:173
 #, fuzzy
 msgid "15 minutes before"
 msgstr "Eddakika 15"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:174
 #, fuzzy
 msgid "20 minutes before"
 msgstr "Eddakika 20"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:175
 #, fuzzy
 msgid "25 minutes before"
 msgstr "Eddakika 25"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:176
 #, fuzzy
 msgid "30 minutes before"
 msgstr "Eddakika 30"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:177
 #, fuzzy
 msgid "45 minutes before"
 msgstr "Eddakika 45"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:178
 #, fuzzy
 msgid "1 hour before"
 msgstr "Essawa 1"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:179
 #, fuzzy
 msgid "2 hours before"
 msgstr "Essawa 2"
 
-#: src/EventEdition/ReminderPanel.vala:183
+#: src/EventEdition/ReminderPanel.vala:180
 #, fuzzy
 msgid "3 hours before"
 msgstr "Essawa 3"
 
-#: src/EventEdition/ReminderPanel.vala:184
+#: src/EventEdition/ReminderPanel.vala:181
 #, fuzzy
 msgid "12 hours before"
 msgstr "Essawa 12"
 
-#: src/EventEdition/ReminderPanel.vala:185
+#: src/EventEdition/ReminderPanel.vala:182
 #, fuzzy
 msgid "24 hours before"
 msgstr "Essawa 24"
 
-#: src/EventEdition/ReminderPanel.vala:186
+#: src/EventEdition/ReminderPanel.vala:183
 #, fuzzy
 msgid "2 days before"
 msgstr "Enaaku 2"
 
-#: src/EventEdition/ReminderPanel.vala:187
+#: src/EventEdition/ReminderPanel.vala:184
 #, fuzzy
 msgid "1 week before"
 msgstr "Sabiti 1"
@@ -664,7 +664,7 @@ msgstr "Ffulumya oba gabana kalenda enkulu"
 msgid "Manage Calendars"
 msgstr "Tegekka kalenda"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
 msgid "Save"
 msgstr "Terekka"
 
@@ -689,27 +689,73 @@ msgstr "%u enddala…"
 msgid "Create"
 msgstr "Kola ekipya"
 
-#: src/SourceDialog/SourceDialog.vala:61
-msgid "Name:"
-msgstr "Erinnya:"
-
-#: src/SourceDialog/SourceDialog.vala:65
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "Erinnya lya Kalenda"
 
-#: src/SourceDialog/SourceDialog.vala:88
-msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:66
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "Erinnya:"
+
+#: src/SourceDialog/SourceDialog.vala:91
+#, fuzzy
+#| msgid "Type:"
+msgid "Type"
 msgstr "Ekika:"
 
-#: src/SourceDialog/SourceDialog.vala:105
-msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:195
+#, fuzzy
+#| msgid "Color:"
+msgid "Color"
 msgstr "Langi:"
 
-#: src/SourceDialog/SourceDialog.vala:185
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr "Kalenda gifure Entandikwa"
 
-#: src/SourceDialog/SourceDialog.vala:255
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr "Kola Kalenda empya"
 
@@ -880,7 +926,7 @@ msgstr "Gyako Omukolo"
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:87
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "Terezza…"
 
@@ -897,48 +943,54 @@ msgstr "Gyako Omukolo"
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:75
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "Gyakko"
 
-#: src/Widgets/SourcePopover.vala:58
+#: src/Widgets/SourcePopover.vala:44
 msgid "Add New Calendar…"
 msgstr "Yongera ko Kalenda enddala…"
 
-#: src/Widgets/SourcePopover.vala:62
+#: src/Widgets/SourcePopover.vala:48
 #, fuzzy
 msgid "Import iCalendar File…"
 msgstr "Terekka Kalenda ewalala..."
 
-#: src/Widgets/SourcePopover.vala:66
+#: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:94
+#: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:97
+#: src/Widgets/SourcePopover.vala:82
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:75
+#: src/Widgets/SourceRow.vala:64
 #, fuzzy
 msgid "Not Removable"
 msgstr "Gyakko"
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:110
+#: src/Widgets/SourceRow.vala:87
 msgid "Undo"
 msgstr "Daayo emabegga"
 
-#: src/Widgets/SourceRow.vala:116 src/Widgets/SourceRow.vala:183
+#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Kalenda \"%s\" egidwamu."
+
+#~ msgid "Email:"
+#~ msgstr "Yimeiro:"
+
+#~ msgid "Reminders:"
+#~ msgstr "Ebijjukizzo:"
 
 #, fuzzy
 #~ msgid "Print debug information"
@@ -963,9 +1015,6 @@ msgstr "Kalenda \"%s\" egidwamu."
 
 #~ msgid "Import events from \"%s\" into the following calendar:"
 #~ msgstr "Yingiza emikolo okuva mu \"%s\" okuda mu kalenda eno:"
-
-#~ msgid "Email"
-#~ msgstr "Yimeiro"
 
 #~ msgid "Search Events"
 #~ msgstr "Nonnya emikolo"
