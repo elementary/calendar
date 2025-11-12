@@ -85,7 +85,6 @@ public class Maya.View.Widgets.DynamicSpinner : Gtk.Bin {
                 var widget = children_matcher.get (source.dup_uid ());
                 children_matcher.remove (source.dup_uid ());
                 if (widget != null)
-                    widget.unparent ();
                     widget.destroy ();
                 if (children_matcher.size () == 0) {
                     revealer.reveal_child = false;
