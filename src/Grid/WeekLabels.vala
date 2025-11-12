@@ -64,10 +64,10 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
         var action_group = new SimpleActionGroup ();
         action_group.add_action (action_show_weeks);
 
-        insert_action_group ("header", action_group);
+        insert_action_group ("week-labels", action_group);
 
         var menu = new GLib.Menu ();
-        menu.append (_("Show Week Numbers"), "header.show-weeks");
+        menu.append (_("Show Week Numbers"), "week-labels.show-weeks");
 
         var gtk_menu = new Gtk.Menu.from_model (menu) {
             attach_widget = this
