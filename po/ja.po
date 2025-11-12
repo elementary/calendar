@@ -7,40 +7,40 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
-"PO-Revision-Date: 2025-03-02 04:12+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
+"PO-Revision-Date: 2025-09-02 12:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/calendar/"
+"Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "このコンピューター"
 
-#: core/Backends/PlacementWidget.vala:28
-msgid "User:"
-msgstr "ユーザー:"
-
-#: core/Backends/PlacementWidget.vala:39
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "user.name"
 
-#: core/Backends/PlacementWidget.vala:56
-msgid "Email:"
-msgstr "メール:"
+#: core/Backends/PlacementWidget.vala:39
+msgid "User"
+msgstr "ユーザー"
 
-#: core/Backends/PlacementWidget.vala:67
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+msgid "Email"
+msgstr "メール"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "ローカルにコピーを保管"
 
@@ -60,15 +60,15 @@ msgstr "user.name または user.name@gmail.com"
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:48
-msgid "URL:"
-msgstr "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:54
+msgid "URL"
+msgstr "URL"
 
-#: plugins/CalDAV/CalDAVBackend.vala:90
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "安全な接続を使う"
 
-#: plugins/CalDAV/CalDAVBackend.vala:117
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "サーバーが会議の招待を処理"
 
@@ -184,10 +184,8 @@ msgid "Repeat"
 msgstr "繰り返し"
 
 #: src/EventEdition/EventDialog.vala:146
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete Event…"
-msgstr "予定を削除"
+msgstr "予定を削除…"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
@@ -638,7 +636,7 @@ msgstr "デフォルトのカレンダーをエクスポートまたは共有"
 msgid "Manage Calendars"
 msgstr "カレンダーを管理"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
 msgid "Save"
 msgstr "保存"
 
@@ -663,27 +661,67 @@ msgstr "他 %u 件…"
 msgid "Create"
 msgstr "作成"
 
-#: src/SourceDialog/SourceDialog.vala:61
-msgid "Name:"
-msgstr "名前:"
-
-#: src/SourceDialog/SourceDialog.vala:65
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "カレンダー名"
 
-#: src/SourceDialog/SourceDialog.vala:88
-msgid "Type:"
-msgstr "種類:"
+#: src/SourceDialog/SourceDialog.vala:66
+msgid "Name"
+msgstr "名前"
 
-#: src/SourceDialog/SourceDialog.vala:105
-msgid "Color:"
-msgstr "色:"
+#: src/SourceDialog/SourceDialog.vala:91
+msgid "Type"
+msgstr "種類"
 
-#: src/SourceDialog/SourceDialog.vala:185
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr "ブルーベリー"
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr "ミント"
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr "ライム"
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr "バナナ"
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr "オレンジ"
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr "ストロベリー"
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr "ピンク"
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr "グレープ"
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr "ココア"
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr "スレート"
+
+#: src/SourceDialog/SourceDialog.vala:195
+msgid "Color"
+msgstr "色"
+
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr "デフォルトのカレンダーに設定"
 
-#: src/SourceDialog/SourceDialog.vala:255
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr "カレンダーを作成"
 
@@ -789,11 +827,11 @@ msgstr "カレンダーを検索"
 
 #: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
-msgstr "検索結果なし"
+msgstr "結果なし"
 
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
-msgstr "検索語句を変更してみてください。"
+msgstr "他のキーワードを試してください。"
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
@@ -809,7 +847,7 @@ msgstr ""
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
-msgstr "ネットワークの設定…"
+msgstr "ネットワーク設定…"
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
@@ -854,7 +892,7 @@ msgstr "予定を削除"
 msgid "This event will be permanently deleted."
 msgstr "この予定が完全に削除されます。"
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "編集…"
 
@@ -870,7 +908,7 @@ msgstr "予定を削除"
 msgid "Remove Occurrence"
 msgstr "この回を削除"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "削除"
 
@@ -884,7 +922,7 @@ msgstr "iCalendar ファイルをインポート…"
 
 #: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
-msgstr "オンラインアカウントの設定…"
+msgstr "オンラインアカウント設定…"
 
 #: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
@@ -894,22 +932,25 @@ msgstr "インポートする ICS ファイルを選択"
 msgid "Open"
 msgstr "開く"
 
-#: src/Widgets/SourceRow.vala:67
+#: src/Widgets/SourceRow.vala:64
 msgid "Not Removable"
 msgstr "削除不可"
 
-#: src/Widgets/SourceRow.vala:80
+#: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
 msgstr "編集不可"
 
-#: src/Widgets/SourceRow.vala:104
+#: src/Widgets/SourceRow.vala:87
 msgid "Undo"
 msgstr "元に戻す"
 
-#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
+#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, c-format
 msgid "\"%s\" removed"
-msgstr "\"%s\" は削除されました"
+msgstr "\"%s\" を削除しました"
+
+#~ msgid "Email:"
+#~ msgstr "メール:"
 
 #~ msgid "Reminders:"
 #~ msgstr "リマインダー:"
@@ -943,9 +984,6 @@ msgstr "\"%s\" は削除されました"
 
 #~ msgid "Import events from \"%s\" into the following calendar:"
 #~ msgstr "\"%s\" から以下のカレンダーに予定をインポート:"
-
-#~ msgid "Email"
-#~ msgstr "メール"
 
 #~ msgid "Search Events"
 #~ msgstr "予定を検索"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2021-12-04 09:57+0000\n"
 "Last-Translator: Yuchen Deng <loaden@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -37,56 +37,68 @@ msgstr ""
 "简约的轻量级日历应用，一站式同步和管理多个日历，包括 Google 日历 、Outlook "
 "和 CalDAV。"
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
+#: data/calendar.metainfo.xml.in:108
 msgid "Minor Updates:"
 msgstr "次要更新："
 
 #: data/calendar.metainfo.xml.in:62
-msgid "New flatter design"
-msgstr ""
+#, fuzzy
+#| msgid "Improved offline support"
+msgid "Improve screen reader support"
+msgstr "改进的离线支持"
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
-#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:111
 msgid "Updated translations"
 msgstr "更新翻译"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:72
+msgid "New flatter design"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:110
 #, fuzzy
 #| msgid "Updated translations"
 msgid "Updated app icon"
 msgstr "更新翻译"
 
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:118
 msgid "Features:"
 msgstr "特性："
 
-#: data/calendar.metainfo.xml.in:110
+#: data/calendar.metainfo.xml.in:120
 #, fuzzy
 #| msgid "Allow modification of recurring events"
 msgid "Ask for confirmation before deleting events"
 msgstr "允许编辑循环事件"
 
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:121
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr "使用 Control + Click 关注事件描述中的电子邮件和 Web 链接"
 
-#: data/calendar.metainfo.xml.in:113
+#: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
 msgstr "修复："
 
-#: data/calendar.metainfo.xml.in:115
+#: data/calendar.metainfo.xml.in:125
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:116
+#: data/calendar.metainfo.xml.in:126
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:117
+#: data/calendar.metainfo.xml.in:127
 msgid "Fixed potential memory leak"
 msgstr ""
 
@@ -97,9 +109,6 @@ msgstr "日历;安排;约会;日期;活动;日历;ICS;CalDAV;Evolution;"
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
 msgstr "添加活动"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Ensure Calendar runs in the background on startup"
 #~ msgstr "确保日历在启动时后台运行"
@@ -142,9 +151,6 @@ msgstr "添加活动"
 
 #~ msgid "Notify for all alarms on an event"
 #~ msgstr "通知事件的所有警报"
-
-#~ msgid "Improved offline support"
-#~ msgstr "改进的离线支持"
 
 #~ msgid "New colorful avatar fallbacks"
 #~ msgstr "新的备用多彩头像"

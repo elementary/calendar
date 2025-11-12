@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2024-03-30 13:13+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -25,23 +25,25 @@ msgstr ""
 msgid "On this computer"
 msgstr "Na tym komputerze"
 
-#: core/Backends/PlacementWidget.vala:28
-msgid "User:"
-msgstr "Użytkownik:"
-
-#: core/Backends/PlacementWidget.vala:39
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "nazwa.użytkownika"
 
-#: core/Backends/PlacementWidget.vala:56
-msgid "Email:"
-msgstr "E-mail:"
+#: core/Backends/PlacementWidget.vala:39
+#, fuzzy
+#| msgid "User:"
+msgid "User"
+msgstr "Użytkownik:"
 
-#: core/Backends/PlacementWidget.vala:67
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "jan@kowalski.pl"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+msgid "Email"
+msgstr "Adres e-mail"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "Zachowaj lokalną kopię"
 
@@ -61,15 +63,17 @@ msgstr "nazwa.użytkownika lub nazwa.użytkownika@gmail.com"
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:48
-msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:54
+#, fuzzy
+#| msgid "URL:"
+msgid "URL"
 msgstr "Adres URL:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:90
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "Użyj bezpiecznego połączenia"
 
-#: plugins/CalDAV/CalDAVBackend.vala:117
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "Serwer obsługuje zaproszenia na spotkania"
 
@@ -653,7 +657,7 @@ msgstr "Eksportuje lub udostępnia domyślny kalendarz"
 msgid "Manage Calendars"
 msgstr "Zarządzaj kalendarzami"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
 msgid "Save"
 msgstr "Zapisz"
 
@@ -678,27 +682,73 @@ msgstr "%u więcej…"
 msgid "Create"
 msgstr "Utwórz"
 
-#: src/SourceDialog/SourceDialog.vala:61
-msgid "Name:"
-msgstr "Nazwa:"
-
-#: src/SourceDialog/SourceDialog.vala:65
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "Nazwa kalendarza"
 
-#: src/SourceDialog/SourceDialog.vala:88
-msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:66
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "Nazwa:"
+
+#: src/SourceDialog/SourceDialog.vala:91
+#, fuzzy
+#| msgid "Type:"
+msgid "Type"
 msgstr "Rodzaj:"
 
-#: src/SourceDialog/SourceDialog.vala:105
-msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:195
+#, fuzzy
+#| msgid "Color:"
+msgid "Color"
 msgstr "Kolor:"
 
-#: src/SourceDialog/SourceDialog.vala:185
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr "Oznacz jako domyślny kalendarz"
 
-#: src/SourceDialog/SourceDialog.vala:255
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr "Utwórz kalendarz"
 
@@ -867,7 +917,7 @@ msgstr "Usuń wydarzenie"
 msgid "This event will be permanently deleted."
 msgstr "To wydarzenie zostanie na trwałe usunięte."
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "Edycja…"
 
@@ -883,7 +933,7 @@ msgstr "Usuń wydarzenie"
 msgid "Remove Occurrence"
 msgstr "Usuń występowanie"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "Usuń"
 
@@ -907,22 +957,25 @@ msgstr "Wybierz plik ICS do zaimportowania"
 msgid "Open"
 msgstr "Otwórz"
 
-#: src/Widgets/SourceRow.vala:67
+#: src/Widgets/SourceRow.vala:64
 msgid "Not Removable"
 msgstr "Nieusuwalny"
 
-#: src/Widgets/SourceRow.vala:80
+#: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
 msgstr "Nieedytowalny"
 
-#: src/Widgets/SourceRow.vala:104
+#: src/Widgets/SourceRow.vala:87
 msgid "Undo"
 msgstr "Cofnij"
 
-#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
+#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, c-format
 msgid "\"%s\" removed"
 msgstr "Usunięto kalendarz \"%s\""
+
+#~ msgid "Email:"
+#~ msgstr "E-mail:"
 
 #~ msgid "Reminders:"
 #~ msgstr "Przypomnienia:"
@@ -956,9 +1009,6 @@ msgstr "Usunięto kalendarz \"%s\""
 
 #~ msgid "Import events from \"%s\" into the following calendar:"
 #~ msgstr "Importuj wydarzenia z \"%s\" do następującego kalendarza:"
-
-#~ msgid "Email"
-#~ msgstr "Adres e-mail"
 
 #~ msgid "Search Events"
 #~ msgstr "Szukaj wydarzeń"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2019-05-09 12:32+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -24,23 +24,25 @@ msgstr ""
 msgid "On this computer"
 msgstr "इस कंप्यूटर पर"
 
-#: core/Backends/PlacementWidget.vala:28
-msgid "User:"
-msgstr "उपयोगकर्ता:"
-
-#: core/Backends/PlacementWidget.vala:39
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "user.name"
 
-#: core/Backends/PlacementWidget.vala:56
-msgid "Email:"
-msgstr "ईमेल:"
+#: core/Backends/PlacementWidget.vala:39
+#, fuzzy
+#| msgid "User:"
+msgid "User"
+msgstr "उपयोगकर्ता:"
 
-#: core/Backends/PlacementWidget.vala:67
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+msgid "Email"
+msgstr "ईमेल"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "स्थानीय रूप से एक प्रति रखें"
 
@@ -60,15 +62,17 @@ msgstr "user.name or user.name@gmail.com"
 msgid "CalDAV"
 msgstr "कॅलडेव्ह"
 
-#: plugins/CalDAV/CalDAVBackend.vala:48
-msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:54
+#, fuzzy
+#| msgid "URL:"
+msgid "URL"
 msgstr "यूआरएल:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:90
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "सुरक्षित कनेक्शन का उपयोग करें"
 
-#: plugins/CalDAV/CalDAVBackend.vala:117
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "सर्वर मीटिंग आमंत्रण का प्रबंधन करता है"
 
@@ -649,7 +653,7 @@ msgstr "देफौल्ट कैलेंडर को बाँटे य�
 msgid "Manage Calendars"
 msgstr ""
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
 msgid "Save"
 msgstr ""
 
@@ -674,27 +678,73 @@ msgstr "%u ज्यादा…"
 msgid "Create"
 msgstr "बनाएँ"
 
-#: src/SourceDialog/SourceDialog.vala:61
-msgid "Name:"
-msgstr "नाम:"
-
-#: src/SourceDialog/SourceDialog.vala:65
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "कैलेंडर का नाम"
 
-#: src/SourceDialog/SourceDialog.vala:88
-msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:66
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "नाम:"
+
+#: src/SourceDialog/SourceDialog.vala:91
+#, fuzzy
+#| msgid "Type:"
+msgid "Type"
 msgstr "क़िस्म:"
 
-#: src/SourceDialog/SourceDialog.vala:105
-msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:195
+#, fuzzy
+#| msgid "Color:"
+msgid "Color"
 msgstr "रंग:"
 
-#: src/SourceDialog/SourceDialog.vala:185
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:255
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr ""
 
@@ -868,7 +918,7 @@ msgstr "ईवेंट हटाएँ"
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "संपादन…"
 
@@ -885,7 +935,7 @@ msgstr "घटना बनाएँ"
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "हटाएँ"
 
@@ -911,23 +961,26 @@ msgstr "कैलेंडर देखने के लिए चयन कर�
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:67
+#: src/Widgets/SourceRow.vala:64
 #, fuzzy
 msgid "Not Removable"
 msgstr "हटाएँ"
 
-#: src/Widgets/SourceRow.vala:80
+#: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:104
+#: src/Widgets/SourceRow.vala:87
 msgid "Undo"
 msgstr "पूर्ववत् करें"
 
-#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
+#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "कैलेंडर \"%s\" हटाया गया।"
+
+#~ msgid "Email:"
+#~ msgstr "ईमेल:"
 
 #~ msgid "Reminders:"
 #~ msgstr "अनुस्मारक:"
@@ -943,9 +996,6 @@ msgstr "कैलेंडर \"%s\" हटाया गया।"
 
 #~ msgid "Notification"
 #~ msgstr "अधिसूचना"
-
-#~ msgid "Email"
-#~ msgstr "ईमेल"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

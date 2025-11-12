@@ -43,11 +43,12 @@ public class Maya.WebBackend : GLib.Object, Maya.Backend {
         url_entry.ref_name = "url_entry";
         url_entry.needed = true;
 
-        var url_label = new PlacementWidget ();
-        url_label.widget = new Granite.HeaderLabel (_("URL")) {
-            mnemonic_widget = url_entry.widget
+        var url_label = new PlacementWidget () {
+            ref_name = "url_label",
+            widget = new Granite.HeaderLabel (_("URL")) {
+                mnemonic_widget = url_entry.widget
+            }
         };
-        url_label.ref_name = "url_label";
 
         collection.add (Maya.DefaultPlacementWidgets.get_keep_copy (0, keep_copy));
         collection.add (url_label);

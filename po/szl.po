@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2020-06-12 23:11+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/calendar/"
@@ -18,23 +18,27 @@ msgstr ""
 msgid "On this computer"
 msgstr "Na tym kōmputrze"
 
-#: core/Backends/PlacementWidget.vala:28
-msgid "User:"
-msgstr "Używocz:"
-
-#: core/Backends/PlacementWidget.vala:39
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "miano.używocza"
 
-#: core/Backends/PlacementWidget.vala:56
-msgid "Email:"
-msgstr "E-mail:"
+#: core/Backends/PlacementWidget.vala:39
+#, fuzzy
+#| msgid "User:"
+msgid "User"
+msgstr "Używocz:"
 
-#: core/Backends/PlacementWidget.vala:67
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "jon@nowok.pl"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+#, fuzzy
+#| msgid "Email:"
+msgid "Email"
+msgstr "E-mail:"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "Trzim lokalno kopijo"
 
@@ -54,15 +58,17 @@ msgstr "miano.używocza abo miano.używocza@gmail.com"
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:48
-msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:54
+#, fuzzy
+#| msgid "URL:"
+msgid "URL"
 msgstr "Adresa URL:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:90
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "Użycie bezpiecznego połōnczynio"
 
-#: plugins/CalDAV/CalDAVBackend.vala:117
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "Serwer ôbsuguje zaproszynia na zebrania"
 
@@ -645,7 +651,7 @@ msgstr "Eksportuje abo udostympnio wychodny kalyndorz"
 msgid "Manage Calendars"
 msgstr "Zarzōndzej kalyndorzami"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
 msgid "Save"
 msgstr "Spamiyntej"
 
@@ -670,27 +676,73 @@ msgstr "%u wiyncyj…"
 msgid "Create"
 msgstr "Utwōrz"
 
-#: src/SourceDialog/SourceDialog.vala:61
-msgid "Name:"
-msgstr "Miano:"
-
-#: src/SourceDialog/SourceDialog.vala:65
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "Miano kalyndorza"
 
-#: src/SourceDialog/SourceDialog.vala:88
-msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:66
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "Miano:"
+
+#: src/SourceDialog/SourceDialog.vala:91
+#, fuzzy
+#| msgid "Type:"
+msgid "Type"
 msgstr "Zorta:"
 
-#: src/SourceDialog/SourceDialog.vala:105
-msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:195
+#, fuzzy
+#| msgid "Color:"
+msgid "Color"
 msgstr "Farba:"
 
-#: src/SourceDialog/SourceDialog.vala:185
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr "Nasztaluj za wychodny kalyndorz"
 
-#: src/SourceDialog/SourceDialog.vala:255
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr "Stwōrz kalyndorz"
 
@@ -861,7 +913,7 @@ msgstr "Skasuj zdarzynie"
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "Edytuj…"
 
@@ -877,7 +929,7 @@ msgstr "Skasuj zdarzynie"
 msgid "Remove Occurrence"
 msgstr "Skasuj wystympowanie"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "Skasuj"
 
@@ -903,19 +955,19 @@ msgstr "Ôbier kalyndorz do zaimportowanio danych"
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:67
+#: src/Widgets/SourceRow.vala:64
 msgid "Not Removable"
 msgstr "Niykasowalny"
 
-#: src/Widgets/SourceRow.vala:80
+#: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
 msgstr "Niyedytowalny"
 
-#: src/Widgets/SourceRow.vala:104
+#: src/Widgets/SourceRow.vala:87
 msgid "Undo"
 msgstr "Cofnij"
 
-#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
+#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" skasowany"

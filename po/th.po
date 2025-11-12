@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 17:31+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2024-09-02 20:05+0000\n"
 "Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -24,23 +24,25 @@ msgstr ""
 msgid "On this computer"
 msgstr "บนคอมพิวเตอร์เครื่องนี้"
 
-#: core/Backends/PlacementWidget.vala:28
-msgid "User:"
-msgstr "ผู้ใช้:"
-
-#: core/Backends/PlacementWidget.vala:39
+#: core/Backends/PlacementWidget.vala:30
 msgid "user.name"
 msgstr "user.name"
 
-#: core/Backends/PlacementWidget.vala:56
-msgid "Email:"
-msgstr "Email:"
+#: core/Backends/PlacementWidget.vala:39
+#, fuzzy
+#| msgid "User:"
+msgid "User"
+msgstr "ผู้ใช้:"
 
-#: core/Backends/PlacementWidget.vala:67
+#: core/Backends/PlacementWidget.vala:59
 msgid "john@doe.com"
 msgstr "john@doe.com"
 
-#: core/Backends/PlacementWidget.vala:84
+#: core/Backends/PlacementWidget.vala:68
+msgid "Email"
+msgstr "อีเมล"
+
+#: core/Backends/PlacementWidget.vala:86
 msgid "Keep a copy locally"
 msgstr "เก็บสำเนาไว้ที่เครื่อง"
 
@@ -60,15 +62,17 @@ msgstr "user.name หรือ user.name@gmail.com"
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:48
-msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:54
+#, fuzzy
+#| msgid "URL:"
+msgid "URL"
 msgstr "ที่อยู่ URL:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:90
+#: plugins/CalDAV/CalDAVBackend.vala:88
 msgid "Use a secure connection"
 msgstr "ใช้การเชื่อมต่อนิรภัย"
 
-#: plugins/CalDAV/CalDAVBackend.vala:117
+#: plugins/CalDAV/CalDAVBackend.vala:115
 msgid "Server handles meeting invitations"
 msgstr "ให้เซิร์ฟเวอร์จัดการการเชิญเข้ารุ่วมประชุม"
 
@@ -637,7 +641,7 @@ msgstr "ส่งหรือแบ่งปันปฏิทินที่ต
 msgid "Manage Calendars"
 msgstr "จัดการปฏิทิน"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:260
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
 msgid "Save"
 msgstr "บันทึก"
 
@@ -662,27 +666,73 @@ msgstr "เพิ่มเติมเกี่ยวกับ %u . . ."
 msgid "Create"
 msgstr "สร้าง"
 
-#: src/SourceDialog/SourceDialog.vala:61
-msgid "Name:"
-msgstr "ชื่อ :"
-
-#: src/SourceDialog/SourceDialog.vala:65
+#: src/SourceDialog/SourceDialog.vala:62
 msgid "Calendar Name"
 msgstr "ชื่อปฏิทิน"
 
-#: src/SourceDialog/SourceDialog.vala:88
-msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:66
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "ชื่อ :"
+
+#: src/SourceDialog/SourceDialog.vala:91
+#, fuzzy
+#| msgid "Type:"
+msgid "Type"
 msgstr "ประเภท:"
 
-#: src/SourceDialog/SourceDialog.vala:105
-msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:111
+msgid "Blueberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:118
+msgid "Mint"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:125
+msgid "Lime"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:132
+msgid "Banana"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:139
+msgid "Orange"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:146
+msgid "Strawberry"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:153
+msgid "Bubblegum"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:160
+msgid "Grape"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:167
+msgid "Cocoa"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:174
+msgid "Slate"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:195
+#, fuzzy
+#| msgid "Color:"
+msgid "Color"
 msgstr "สี:"
 
-#: src/SourceDialog/SourceDialog.vala:185
+#: src/SourceDialog/SourceDialog.vala:200
 msgid "Mark as default calendar"
 msgstr "ทำเครื่องหมายเป็นปฏิทินปริยาย"
 
-#: src/SourceDialog/SourceDialog.vala:255
+#: src/SourceDialog/SourceDialog.vala:270
 msgid "Create Calendar"
 msgstr "สร้างปฏิทิน"
 
@@ -857,7 +907,7 @@ msgstr "ลบกิจกรรม"
 msgid "This event will be permanently deleted."
 msgstr "เหตุการณ์นี้ไม่สามารถแก้ไขได้"
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "แก้ไข..."
 
@@ -874,7 +924,7 @@ msgstr "ลบกิจกรรม"
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "ลบออก"
 
@@ -900,23 +950,26 @@ msgstr "เลือกปฏิทินที่จะแสดง"
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:67
+#: src/Widgets/SourceRow.vala:64
 #, fuzzy
 msgid "Not Removable"
 msgstr "ลบออก"
 
-#: src/Widgets/SourceRow.vala:80
+#: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:104
+#: src/Widgets/SourceRow.vala:87
 msgid "Undo"
 msgstr "ย้อนการกระทำ"
 
-#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
+#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "ปฏิทิน \"%s\" ถูกลบออกแล้ว"
+
+#~ msgid "Email:"
+#~ msgstr "Email:"
 
 #~ msgid "Reminders:"
 #~ msgstr "เตือนความจำ"
@@ -941,9 +994,6 @@ msgstr "ปฏิทิน \"%s\" ถูกลบออกแล้ว"
 #, fuzzy
 #~ msgid "%s - %s"
 #~ msgstr "%s, %s ถึง %s, %s"
-
-#~ msgid "Email"
-#~ msgstr "อีเมล"
 
 #~ msgid "Search Events"
 #~ msgstr "ค้นหากิจกรรม"
