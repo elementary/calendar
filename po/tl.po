@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 20:22+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2019-01-14 00:08+0000\n"
 "Last-Translator: Axel Philip Advento <badwolf.bloodseeker.rev@gmail.com>\n"
 "Language-Team: Tagalog <https://weblate.elementary.io/projects/calendar/"
@@ -922,7 +922,7 @@ msgstr "Burahin ang Event"
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:80
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "I-edit…"
 
@@ -939,7 +939,7 @@ msgstr "Burahin ang Event"
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:67
+#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "Tanggalin"
 
@@ -964,20 +964,20 @@ msgstr ""
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:67
+#: src/Widgets/SourceRow.vala:64
 #, fuzzy
 msgid "Not Removable"
 msgstr "Tanggalin"
 
-#: src/Widgets/SourceRow.vala:80
+#: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:104
+#: src/Widgets/SourceRow.vala:87
 msgid "Undo"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:112 src/Widgets/SourceRow.vala:180
+#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Ang Kalendaryong \"%s\" ay natanggal"

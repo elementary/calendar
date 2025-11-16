@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 20:22+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2024-09-20 09:43+0000\n"
 "Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/extra/"
@@ -42,44 +42,50 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
+#: data/calendar.metainfo.xml.in:108
 msgid "Minor Updates:"
 msgstr "Küçük düzeltmeler:"
 
 #: data/calendar.metainfo.xml.in:62
-msgid "New flatter design"
-msgstr "Yeni düz tasarım"
+msgid "Improve screen reader support"
+msgstr ""
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
-#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:111
 msgid "Updated translations"
 msgstr "Çeviriler güncellendi"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:72
+msgid "New flatter design"
+msgstr "Yeni düz tasarım"
+
+#: data/calendar.metainfo.xml.in:110
 msgid "Updated app icon"
 msgstr "Uygulama simgesi güncellendi"
 
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:118
 msgid "Features:"
 msgstr "Özellikler:"
 
-#: data/calendar.metainfo.xml.in:110
+#: data/calendar.metainfo.xml.in:120
 msgid "Ask for confirmation before deleting events"
 msgstr "Etkinlikleri silmeden önce uyar"
 
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:121
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Etkinlik açıklamasındaki e-posta ve web bağlantılarını CTRL+ Tıklama ile "
 "takip edin"
 
-#: data/calendar.metainfo.xml.in:113
+#: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
 msgstr "Düzeltmeler:"
 
-#: data/calendar.metainfo.xml.in:115
+#: data/calendar.metainfo.xml.in:125
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -87,11 +93,11 @@ msgstr ""
 "Takvim salt okunursa, takvim ayarlarında \"Varsayılan takvim olarak "
 "işaretle\" onay kutusu devre dışı bırakıldı"
 
-#: data/calendar.metainfo.xml.in:116
+#: data/calendar.metainfo.xml.in:126
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr "Hesaplar hizmeti için artık ihtiyaç duyulmayan sandbox izni kaldırıldı"
 
-#: data/calendar.metainfo.xml.in:117
+#: data/calendar.metainfo.xml.in:127
 msgid "Fixed potential memory leak"
 msgstr "Potansiyel bellek sızıntısı düzeltildi"
 

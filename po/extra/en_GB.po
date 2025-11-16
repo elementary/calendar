@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 20:22+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2024-09-29 02:16+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -40,43 +40,51 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
+#: data/calendar.metainfo.xml.in:108
 msgid "Minor Updates:"
 msgstr "Minor Updates:"
 
 #: data/calendar.metainfo.xml.in:62
-msgid "New flatter design"
-msgstr "New flatter design"
+#, fuzzy
+#| msgid "Improved offline support"
+msgid "Improve screen reader support"
+msgstr "Improved offline support"
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
-#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:111
 msgid "Updated translations"
 msgstr "Updated translations"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:72
+msgid "New flatter design"
+msgstr "New flatter design"
+
+#: data/calendar.metainfo.xml.in:110
 msgid "Updated app icon"
 msgstr "Updated app icon"
 
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:118
 msgid "Features:"
 msgstr "Features:"
 
-#: data/calendar.metainfo.xml.in:110
+#: data/calendar.metainfo.xml.in:120
 msgid "Ask for confirmation before deleting events"
 msgstr "Ask for confirmation before deleting events"
 
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:121
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Follow email and web links in the event description with Control + Click"
 
-#: data/calendar.metainfo.xml.in:113
+#: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
 msgstr "Fixes:"
 
-#: data/calendar.metainfo.xml.in:115
+#: data/calendar.metainfo.xml.in:125
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -84,11 +92,11 @@ msgstr ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 
-#: data/calendar.metainfo.xml.in:116
+#: data/calendar.metainfo.xml.in:126
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr "Removed no longer needed sandbox permission for accounts service"
 
-#: data/calendar.metainfo.xml.in:117
+#: data/calendar.metainfo.xml.in:127
 msgid "Fixed potential memory leak"
 msgstr "Fixed potential memory leak"
 
@@ -141,9 +149,6 @@ msgstr "Add Event"
 
 #~ msgid "Notify for all alarms on an event"
 #~ msgstr "Notify for all alarms on an event"
-
-#~ msgid "Improved offline support"
-#~ msgstr "Improved offline support"
 
 #~ msgid "New colorful avatar fallbacks"
 #~ msgstr "New colourful avatar fallbacks"

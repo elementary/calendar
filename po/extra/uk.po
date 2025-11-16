@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 20:22+0000\n"
+"POT-Creation-Date: 2025-10-30 17:37+0000\n"
 "PO-Revision-Date: 2024-09-03 23:16+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/calendar/extra/"
@@ -43,44 +43,52 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:74
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
+#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
+#: data/calendar.metainfo.xml.in:108
 msgid "Minor Updates:"
 msgstr "Незначні оновлення:"
 
 #: data/calendar.metainfo.xml.in:62
-msgid "New flatter design"
-msgstr "Новий пласкіший дизайн"
+#, fuzzy
+#| msgid "Improved offline support"
+msgid "Improve screen reader support"
+msgstr "Вдосконалено роботу в автономному режимі"
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:76
-#: data/calendar.metainfo.xml.in:88 data/calendar.metainfo.xml.in:101
+#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
+#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
+#: data/calendar.metainfo.xml.in:111
 msgid "Updated translations"
 msgstr "Оновлено переклади"
 
-#: data/calendar.metainfo.xml.in:100
+#: data/calendar.metainfo.xml.in:72
+msgid "New flatter design"
+msgstr "Новий пласкіший дизайн"
+
+#: data/calendar.metainfo.xml.in:110
 msgid "Updated app icon"
 msgstr "Оновлено піктограму застосунку"
 
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:118
 msgid "Features:"
 msgstr "Функції:"
 
-#: data/calendar.metainfo.xml.in:110
+#: data/calendar.metainfo.xml.in:120
 msgid "Ask for confirmation before deleting events"
 msgstr "Запит підтвердження перед видаленням подій"
 
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:121
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Перехід за посиланнями електронної пошти та вебпосиланнями в описі події за "
 "допомогою Control + Клацання"
 
-#: data/calendar.metainfo.xml.in:113
+#: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
 msgstr "Виправлення:"
 
-#: data/calendar.metainfo.xml.in:115
+#: data/calendar.metainfo.xml.in:125
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -88,12 +96,12 @@ msgstr ""
 "Прапорець «Позначити типовим календарем» вимкнено у налаштуваннях календаря, "
 "якщо календар лише для читання"
 
-#: data/calendar.metainfo.xml.in:116
+#: data/calendar.metainfo.xml.in:126
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 "Вилучено більше не потрібний дозвіл пісочниці для служби облікових записів"
 
-#: data/calendar.metainfo.xml.in:117
+#: data/calendar.metainfo.xml.in:127
 msgid "Fixed potential memory leak"
 msgstr "Усунено можливий витік пам'яті"
 
@@ -146,9 +154,6 @@ msgstr "Додати подію"
 
 #~ msgid "Notify for all alarms on an event"
 #~ msgstr "Сповіщення про всі нагадування про подію"
-
-#~ msgid "Improved offline support"
-#~ msgstr "Вдосконалено роботу в автономному режимі"
 
 #~ msgid "New colorful avatar fallbacks"
 #~ msgstr "Нові барвисті замінні аватари"
