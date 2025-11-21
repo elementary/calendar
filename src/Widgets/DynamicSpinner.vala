@@ -1,60 +1,53 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2014-2015 Maya Developers (http://launchpad.net/maya)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2014-2025 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.Widgets.DynamicSpinner : Gtk.Revealer {
+public class Maya.View.Widgets.DynamicSpinner : Gtk.Bin {
     private Gtk.ListBox list_box;
+    private Gtk.Revealer revealer;
 
-    HashTable<string, Gtk.Widget> children_matcher;
+    private HashTable<string, Gtk.Widget> children_matcher;
 
     construct {
-        transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-
         children_matcher = new HashTable<string, Gtk.Widget> (str_hash, str_equal);
 
         var spinner = new Gtk.Spinner ();
         spinner.start ();
 
-        list_box = new Gtk.ListBox ();
-        list_box.selection_mode = Gtk.SelectionMode.NONE;
+        list_box = new Gtk.ListBox () {
+            selection_mode = NONE
+        };
 
-        var info_popover = new Gtk.Popover (null);
-        info_popover.position = Gtk.PositionType.BOTTOM;
-        info_popover.add (list_box);
+        var info_popover = new Gtk.Popover (null) {
+            child = list_box,
+            position = BOTTOM
+        };
 
-        var button = new Gtk.MenuButton ();
-        button.image = spinner;
-        button.popover = info_popover;
-        button.valign = Gtk.Align.CENTER;
+        var button = new Gtk.MenuButton () {
+            child = spinner,
+            popover = info_popover,
+            valign = CENTER
+        };
 
         var calmodel = Calendar.EventStore.get_default ();
         calmodel.connecting.connect ((source, cancellable) => add_source.begin (source, cancellable));
         calmodel.connected.connect ((source) => remove_source.begin (source));
 
-        add (button);
+        revealer = new Gtk.Revealer () {
+            child = button,
+            transition_type = CROSSFADE
+        };
 
+        child = revealer;
         show_all ();
     }
 
     public async void add_source (E.Source source, Cancellable cancellable) {
         Idle.add (() => {
-            set_reveal_child (true);
+            revealer.reveal_child = true;
 
             var label = new Gtk.Label (source.get_display_name ());
 
@@ -65,18 +58,21 @@ public class Maya.View.Widgets.DynamicSpinner : Gtk.Revealer {
                 cancellable.cancel ();
             });
 
-            var grid = new Gtk.Grid ();
-            grid.margin = 6;
-            grid.column_spacing = 12;
-            grid.orientation = Gtk.Orientation.HORIZONTAL;
-            grid.add (label);
-            grid.add (stop_button);
+            var box = new Gtk.Box (HORIZONTAL, 12) {
+                margin_top = 6,
+                margin_end = 6,
+                margin_bottom = 6,
+                margin_start = 6
+            };
+
+            box.add (label);
+            box.add (stop_button);
 
             lock (children_matcher) {
-                children_matcher.insert (source.dup_uid (), grid);
+                children_matcher.insert (source.dup_uid (), box);
             }
 
-            list_box.add (grid);
+            list_box.add (box);
             list_box.show_all ();
 
             return false;
@@ -91,7 +87,7 @@ public class Maya.View.Widgets.DynamicSpinner : Gtk.Revealer {
                 if (widget != null)
                     widget.destroy ();
                 if (children_matcher.size () == 0) {
-                    set_reveal_child (false);
+                    revealer.reveal_child = false;
                 }
             }
 
