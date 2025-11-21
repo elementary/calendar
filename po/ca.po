@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-21 11:36+0000\n"
-"PO-Revision-Date: 2025-07-26 18:55+0000\n"
+"PO-Revision-Date: 2025-11-22 12:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ca/>\n"
@@ -29,14 +29,12 @@ msgid "user.name"
 msgstr "nom.usuari"
 
 #: core/Backends/PlacementWidget.vala:33
-#, fuzzy
-#| msgid "Calendar Name"
 msgid "User Name"
-msgstr "Nom del calendari"
+msgstr "Nom de l'usuari"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "ellie@example.com"
-msgstr ""
+msgstr "nom@exemple.com"
 
 #: core/Backends/PlacementWidget.vala:57
 msgid "Email"
@@ -674,7 +672,7 @@ msgstr "Crea"
 
 #: src/SourceDialog/SourceDialog.vala:62
 msgid "e.g. “Work” or “Personal”"
-msgstr ""
+msgstr "p. ex. «Feina» o «Personal»"
 
 #: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
