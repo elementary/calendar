@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-21 11:36+0000\n"
-"PO-Revision-Date: 2025-08-08 13:55+0000\n"
+"PO-Revision-Date: 2025-11-27 01:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ka/>\n"
@@ -24,14 +24,12 @@ msgid "user.name"
 msgstr "მომხმარებელი.სახელი"
 
 #: core/Backends/PlacementWidget.vala:33
-#, fuzzy
-#| msgid "Calendar Name"
 msgid "User Name"
-msgstr "კალენდრის სახელი"
+msgstr "მომხმარებლის სახელი"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "ellie@example.com"
-msgstr ""
+msgstr "ellie@example.com"
 
 #: core/Backends/PlacementWidget.vala:57
 msgid "Email"
@@ -662,7 +660,7 @@ msgstr "შექმნა"
 
 #: src/SourceDialog/SourceDialog.vala:62
 msgid "e.g. “Work” or “Personal”"
-msgstr ""
+msgstr "მაგ: \"სამსახური\" ან \"პირადი\""
 
 #: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
