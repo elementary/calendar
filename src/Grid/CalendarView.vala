@@ -36,7 +36,7 @@ public class Maya.View.CalendarView : Gtk.Box {
     private Calendar.Widgets.DateSwitcher month_switcher;
     private Calendar.Widgets.DateSwitcher year_switcher;
 
-    public Hdy.HeaderBar header_bar { get; private set; }
+    public Adw.HeaderBar header_bar { get; private set; }
     public DateTime? selected_date { get; private set; }
 
     private WeekLabels weeks { get; private set; }
@@ -157,7 +157,7 @@ public class Maya.View.CalendarView : Gtk.Box {
             tooltip_text = _("Manage Calendars")
         };
 
-        header_bar = new Hdy.HeaderBar () {
+        header_bar = new Adw.HeaderBar () {
             show_close_button = true
         };
         header_bar.pack_start (month_switcher);
