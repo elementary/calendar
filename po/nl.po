@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-21 11:36+0000\n"
-"PO-Revision-Date: 2024-05-13 08:31+0000\n"
-"Last-Translator: Sven <622b1a13-49d8-4ace-bca7-48bff17b4780@unbox.at>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/calendar/"
-"nl/>\n"
+"PO-Revision-Date: 2025-11-30 07:55+0000\n"
+"Last-Translator: Bas Ernst <bas@ernstgenova.it>\n"
+"Language-Team: Dutch <https://l10n.elementaryos.org/projects/calendar/"
+"calendar/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -29,14 +29,12 @@ msgid "user.name"
 msgstr "gebruiker.naam"
 
 #: core/Backends/PlacementWidget.vala:33
-#, fuzzy
-#| msgid "Calendar Name"
 msgid "User Name"
-msgstr "Agendanaam"
+msgstr "Gebruikersnaam"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "ellie@example.com"
-msgstr ""
+msgstr "ellie@voorbeeld.com"
 
 #: core/Backends/PlacementWidget.vala:57
 msgid "Email"
@@ -63,10 +61,8 @@ msgid "CalDAV"
 msgstr "CalDAV"
 
 #: plugins/CalDAV/CalDAVBackend.vala:50
-#, fuzzy
-#| msgid "URL:"
 msgid "URL"
-msgstr "URL:"
+msgstr "URL"
 
 #: plugins/CalDAV/CalDAVBackend.vala:80
 msgid "Use a secure connection"
@@ -192,10 +188,8 @@ msgid "Repeat"
 msgstr "Herhaal"
 
 #: src/EventEdition/EventDialog.vala:146
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete Event…"
-msgstr "Verwijder gebeurtenis"
+msgstr "Verwijder gebeurtenis…"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
@@ -678,63 +672,59 @@ msgstr "Aanmaken"
 
 #: src/SourceDialog/SourceDialog.vala:62
 msgid "e.g. “Work” or “Personal”"
-msgstr ""
+msgstr "bijvoorbeeld \"Werk\" of \"Persoonlijk\""
 
 #: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
 msgstr "Agendanaam"
 
 #: src/SourceDialog/SourceDialog.vala:96
-#, fuzzy
-#| msgid "Type:"
 msgid "Type"
-msgstr "Type:"
+msgstr "Type"
 
 #: src/SourceDialog/SourceDialog.vala:121
 msgid "Blueberry"
-msgstr ""
+msgstr "Bosbessen"
 
 #: src/SourceDialog/SourceDialog.vala:128
 msgid "Mint"
-msgstr ""
+msgstr "Munt"
 
 #: src/SourceDialog/SourceDialog.vala:135
 msgid "Lime"
-msgstr ""
+msgstr "Limoen"
 
 #: src/SourceDialog/SourceDialog.vala:142
 msgid "Banana"
-msgstr ""
+msgstr "Banaan"
 
 #: src/SourceDialog/SourceDialog.vala:149
 msgid "Orange"
-msgstr ""
+msgstr "Sinaasappel"
 
 #: src/SourceDialog/SourceDialog.vala:156
 msgid "Strawberry"
-msgstr ""
+msgstr "Aardbei"
 
 #: src/SourceDialog/SourceDialog.vala:163
 msgid "Bubblegum"
-msgstr ""
+msgstr "Kauwgom"
 
 #: src/SourceDialog/SourceDialog.vala:170
 msgid "Grape"
-msgstr ""
+msgstr "Druif"
 
 #: src/SourceDialog/SourceDialog.vala:177
 msgid "Cocoa"
-msgstr ""
+msgstr "Cacao"
 
 #: src/SourceDialog/SourceDialog.vala:184
 msgid "Slate"
-msgstr ""
+msgstr "Leisteen"
 
 #: src/SourceDialog/SourceDialog.vala:205
-#, fuzzy
-#| msgid "Color:"
 msgid "Color"
-msgstr "Kleur:"
+msgstr "Kleur"
 
 #: src/SourceDialog/SourceDialog.vala:215
 msgid "Mark as default calendar"
