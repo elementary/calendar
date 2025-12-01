@@ -6,7 +6,7 @@
  *              Corentin Noël <corentin@elementary.io>
  */
 
-public class Maya.MainWindow : Hdy.ApplicationWindow {
+public class Maya.MainWindow : Gtk.ApplicationWindow {
     public View.CalendarView calview;
 
     public const string ACTION_PREFIX = "win.";
@@ -56,7 +56,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
 
         child = hpaned;
 
-        var header_group = new Hdy.HeaderGroup ();
+        var header_group = new Adw.HeaderGroup ();
         header_group.add_header_bar (calview.header_bar);
         header_group.add_header_bar (sidebar.header_bar);
 

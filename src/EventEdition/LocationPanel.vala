@@ -25,7 +25,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
     private Gtk.EntryCompletion location_completion;
     private Gtk.ListStore location_store;
     private GtkChamplain.Embed champlain_embed;
-    private Maya.Marker point;
+    private Shumate.Marker point;
      // Only set the geo property if map_selected is true, this is a smart behavior!
     private bool map_selected = false;
     private GLib.Cancellable search_cancellable;
@@ -89,7 +89,11 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         attach (frame, 0, 2, 1, 1);
 
         // Load the location
-        point = new Maya.Marker ();
+        point = new Shumate.Marker () {
+            child = new Gtk.Image.from_icon_name ("location-marker") {
+                icon_size = LARGE
+            }
+        };
         point.draggable = parent_dialog.can_edit;
         point.drag_finish.connect (() => {
             map_selected = true;
@@ -300,26 +304,5 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
         location_entry.set_text (address.get_string ());
         compute_location.begin (address.get_string ());
         return true;
-    }
-}
-
-public class Maya.Marker : Champlain.Marker {
-    public Marker () {
-        try {
-            weak Gtk.IconTheme icon_theme = Gtk.IconTheme.get_default ();
-            var pixbuf = icon_theme.load_icon ("location-marker", 32, Gtk.IconLookupFlags.GENERIC_FALLBACK);
-            Clutter.Image image = new Clutter.Image ();
-            image.set_data (pixbuf.get_pixels (),
-                          pixbuf.has_alpha ? Cogl.PixelFormat.RGBA_8888 : Cogl.PixelFormat.RGB_888,
-                          pixbuf.width,
-                          pixbuf.height,
-                          pixbuf.rowstride);
-            content = image;
-            set_size (pixbuf.width, pixbuf.height);
-            translation_x = -pixbuf.width / 2;
-            translation_y = -pixbuf.height;
-        } catch (Error e) {
-            critical (e.message);
-        }
     }
 }

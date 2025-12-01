@@ -10,7 +10,7 @@
 public class Maya.View.AgendaView : Gtk.Box {
     public signal void event_removed (ECal.Component event);
 
-    public Hdy.HeaderBar header_bar { get; private set; }
+    public Adw.HeaderBar header_bar { get; private set; }
 
     private Gtk.Label day_label;
     private Gtk.Label weekday_label;
@@ -35,7 +35,7 @@ public class Maya.View.AgendaView : Gtk.Box {
         };
         weekday_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        header_bar = new Hdy.HeaderBar () {
+        header_bar = new Adw.HeaderBar () {
             show_close_button = true
         };
         header_bar.pack_start (weekday_label);
