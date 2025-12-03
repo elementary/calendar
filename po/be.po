@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-21 11:36+0000\n"
-"PO-Revision-Date: 2025-07-26 18:55+0000\n"
+"PO-Revision-Date: 2025-12-04 09:55+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/be/>\n"
@@ -30,14 +30,12 @@ msgid "user.name"
 msgstr "імя.карыстальніка"
 
 #: core/Backends/PlacementWidget.vala:33
-#, fuzzy
-#| msgid "Calendar Name"
 msgid "User Name"
-msgstr "Назва календара"
+msgstr "Імя карыстальніка"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "ellie@example.com"
-msgstr ""
+msgstr "ellie@pryklad.by"
 
 #: core/Backends/PlacementWidget.vala:57
 msgid "Email"
@@ -680,7 +678,7 @@ msgstr "Стварыць"
 
 #: src/SourceDialog/SourceDialog.vala:62
 msgid "e.g. “Work” or “Personal”"
-msgstr ""
+msgstr "Напрыклад «Працоўнае» або «Персанальнае»"
 
 #: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
