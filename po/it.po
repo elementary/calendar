@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
 "PO-Revision-Date: 2020-11-12 23:17+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/calendar/"
@@ -656,11 +656,7 @@ msgstr "Salva"
 msgid "calendar.ics"
 msgstr "calendario.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "Nascondi i numeri delle settimane"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "Mostra i numeri delle settimane"
 
@@ -967,6 +963,9 @@ msgstr "Annulla l'ultima azione"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" è stato rimosso"
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "Nascondi i numeri delle settimane"
 
 #, fuzzy
 #~| msgid "User:"

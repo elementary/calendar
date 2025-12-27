@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
 "PO-Revision-Date: 2025-11-22 12:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
@@ -644,11 +644,7 @@ msgstr "保存"
 msgid "calendar.ics"
 msgstr "カレンダー.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "週番号を非表示"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "週番号を表示"
 
@@ -948,6 +944,9 @@ msgstr "元に戻す"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" を削除しました"
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "週番号を非表示"
 
 #~ msgid "User"
 #~ msgstr "ユーザー"

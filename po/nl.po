@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
 "PO-Revision-Date: 2025-11-30 07:55+0000\n"
 "Last-Translator: Bas Ernst <bas@ernstgenova.it>\n"
 "Language-Team: Dutch <https://l10n.elementaryos.org/projects/calendar/"
@@ -653,11 +653,7 @@ msgstr "Opslaan"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "Verberg weeknummers"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "Weeknummers tonen"
 
@@ -956,6 +952,9 @@ msgstr "Ongedaan maken"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" is verwijderd"
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "Verberg weeknummers"
 
 #, fuzzy
 #~| msgid "User:"

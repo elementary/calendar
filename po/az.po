@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
 "PO-Revision-Date: 2023-02-17 10:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Azerbaijani <https://l10n.elementary.io/projects/calendar/"
@@ -678,11 +678,7 @@ msgstr "Yadda saxla"
 msgid "calendar.ics"
 msgstr "təqvim.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "Həftə nömrələrini gizlət"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "Həftə nömrələrini göstər"
 
@@ -989,6 +985,9 @@ msgstr "Geri al"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" adlı təqvim silindi."
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "Həftə nömrələrini gizlət"
 
 #, fuzzy
 #~| msgid "User:"

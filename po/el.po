@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
 "PO-Revision-Date: 2025-12-11 20:55+0000\n"
 "Last-Translator: Orionas Kakomoiroglou "
 "<209243298+OrionasKakomoiroglou@users.noreply.github.com>\n"
@@ -654,11 +654,7 @@ msgstr "Αποθήκευση"
 msgid "calendar.ics"
 msgstr "ημερολόγιο.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "Απόκρυψη αριθμών εβδομάδας"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "Εμφάνιση αριθμών εβδομάδας"
 
@@ -775,16 +771,13 @@ msgstr "πτήση;αεροδρόμιο;αερολιμένας;"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:97
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr ""
-"πρωινό;δεκατιανό;πρόγευμα;δείπνο;μεσημεριανό;απογευματινό;ψητοπωλείο;σουβλατζίδικο;σουβλάκι;ψήσιμο;γύρος;οβελιστήριο"
-""
+msgstr "πρωινό;δεκατιανό;πρόγευμα;δείπνο;μεσημεριανό;απογευματινό;ψητοπωλείο;σουβλατζίδικο;σουβλάκι;ψήσιμο;γύρος;οβελιστήριο"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:102
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr ""
-"δικαστήριο;δίκη;ένορκος;δικηγόρος;συμβόλαιο;συνήγορος;συμβολαιογράφος;φόρος"
+msgstr "δικαστήριο;δίκη;ένορκος;δικηγόρος;συμβόλαιο;συνήγορος;συμβολαιογράφος;φόρος"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -968,6 +961,9 @@ msgstr "Αναίρεση"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Το ημερολόγιο \"%s\" αφαιρέθηκε."
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "Απόκρυψη αριθμών εβδομάδας"
 
 #, fuzzy
 #~| msgid "User:"
