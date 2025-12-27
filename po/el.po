@@ -7,47 +7,47 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-30 17:37+0000\n"
-"PO-Revision-Date: 2017-01-21 09:04+0000\n"
-"Last-Translator: Jaap Broekhuizen <Unknown>\n"
-"Language-Team: Greek <el@li.org>\n"
+"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"PO-Revision-Date: 2025-12-11 20:55+0000\n"
+"Last-Translator: Orionas Kakomoiroglou "
+"<209243298+OrionasKakomoiroglou@users.noreply.github.com>\n"
+"Language-Team: Greek <https://l10n.elementaryos.org/projects/calendar/"
+"calendar/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-01-22 05:35+0000\n"
-"X-Generator: Launchpad (build 18302)\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "Σε αυτόν τον υπολογιστή"
 
-#: core/Backends/PlacementWidget.vala:30
+#: core/Backends/PlacementWidget.vala:26
 msgid "user.name"
-msgstr "user.name"
+msgstr "onoma.christi"
 
-#: core/Backends/PlacementWidget.vala:39
-#, fuzzy
-#| msgid "User:"
-msgid "User"
-msgstr "Χρήστης:"
+#: core/Backends/PlacementWidget.vala:33
+msgid "User Name"
+msgstr "Όνομα Χρήστη"
 
-#: core/Backends/PlacementWidget.vala:59
-msgid "john@doe.com"
-msgstr "john@doe.com"
+#: core/Backends/PlacementWidget.vala:50
+msgid "ellie@example.com"
+msgstr "ellie@paradeigma.com"
 
-#: core/Backends/PlacementWidget.vala:68
+#: core/Backends/PlacementWidget.vala:57
 msgid "Email"
 msgstr "Email"
 
-#: core/Backends/PlacementWidget.vala:86
+#: core/Backends/PlacementWidget.vala:72
 msgid "Keep a copy locally"
-msgstr "Διατήρηση ένος τοπικού αντιγράφου"
+msgstr "Διατήρηση ενός τοπικού αντιγράφου"
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr ""
+msgstr "Στον ιστό"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -55,29 +55,27 @@ msgstr "Google"
 
 #: plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr "user.name ή user.name@gmail.com"
+msgstr "onoma.christi ή onoma.christi@gmail.com"
 
 #: plugins/CalDAV/CalDAVBackend.vala:24
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:54
-#, fuzzy
-#| msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:50
 msgid "URL"
-msgstr "URL:"
+msgstr "URL"
 
-#: plugins/CalDAV/CalDAVBackend.vala:88
+#: plugins/CalDAV/CalDAVBackend.vala:80
 msgid "Use a secure connection"
-msgstr "Χρήση μιας ασφαλούς σύνδεσης"
+msgstr "Χρήση ασφαλούς σύνδεσης"
 
-#: plugins/CalDAV/CalDAVBackend.vala:115
+#: plugins/CalDAV/CalDAVBackend.vala:107
 msgid "Server handles meeting invitations"
 msgstr "Ο διακομιστής χειρίζεται τις προσκλήσεις συναντήσεων"
 
 #: src/AgendaView.vala:29
 msgid "Create a new event"
-msgstr "Δημιουργία ενός νέου γεγονότος"
+msgstr "Δημιουργία νέου γεγονότος"
 
 #: src/AgendaView.vala:52
 msgid ""
@@ -93,71 +91,68 @@ msgstr "Κατά τη διάρκεια της ημέρας"
 
 #: src/AgendaView.vala:161
 msgid "All day"
-msgstr "Όλη μέρα"
+msgstr "Όλη την ημέρα"
 
 #: src/AgendaView.vala:278
 msgid "Tomorrow"
-msgstr ""
+msgstr "Αύριο"
 
 #: src/AgendaView.vala:281
-#, fuzzy
 msgid "This Week"
-msgstr "Εβδομάδα"
+msgstr "Αυτή την εβδομάδα"
 
 #: src/AgendaView.vala:284
-#, fuzzy
 msgid "Next Week"
-msgstr "Εβδομάδα"
+msgstr "Επόμενη εβδομάδα"
 
 #: src/AgendaView.vala:287
-#, fuzzy
 msgid "This Month"
-msgstr "Μήνας"
+msgstr "Αυτός ο μήνας"
 
 #: src/AgendaView.vala:290
-#, fuzzy
 msgid "Next Month"
-msgstr "Μήνας"
+msgstr "Επόμενος μήνας"
 
 #: src/Application.vala:34
-#, fuzzy
 msgid "Create an event"
-msgstr "Δημιουργία ενός νέου γεγονότος"
+msgstr "Δημιουργία γεγονότος"
 
 #: src/Application.vala:35
 msgid "Focus the given day"
-msgstr ""
+msgstr "Εστίαση στην δεδομένη ημέρα"
 
 #: src/Application.vala:35
 msgid "date"
-msgstr ""
+msgstr "ημερομηνία"
 
 #: src/Application.vala:178
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
+"Το ημερολόγιο θα εκκινείται αυτόματα κατά την έναρξη της συσκευής και θα "
+"εκτελείται ακόμη και όταν το παράθυρό είναι κλειστό για να στέλνει "
+"ειδοποιήσεις για γεγονότα."
 
 #: src/Application.vala:209
 msgid "Calendar"
 msgstr "Ημερολόγιο"
 
 #: src/ImportDialog.vala:28
-#, fuzzy
 msgid "Select a Calendar to Import Into"
-msgstr "Επιλέξτε τα προς εμφάνιση ημερολόγια"
+msgstr "Επιλέξτε Ημερολόγιο για εισαγωγή"
 
 #: src/ImportDialog.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Εισαγωγή γεγονότων από %d αρχείο στο παρακάτω ημερολόγιο:"
+msgstr "Τα γεγονότα από το \"%s\" θα συγχωνευτούν με αυτό το ημερολόγιο:"
 
 #: src/ImportDialog.vala:47
-#, fuzzy, c-format
+#, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Εισαγωγή γεγονότων από %d αρχείο στο παρακάτω ημερολόγιο:"
-msgstr[1] "Εισαγωγή γεγονότων από %d αρχεία στο παρακάτω ημερολόγιο:"
+msgstr[0] "Τα γεγονότα από %d αρχείο θα συγχωνευτούν στο παρακάτω ημερολόγιο:"
+msgstr[1] "Τα γεγονότα από %d αρχεία θα συγχωνευτούν στο παρακάτω ημερολόγιο:"
 
 #: src/ImportDialog.vala:61
 msgid "Import"
@@ -189,16 +184,13 @@ msgstr "Υπενθυμίσεις"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Επανάληψη"
 
 #: src/EventEdition/EventDialog.vala:146
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete Event…"
-msgstr "Διαγραφή Γεγονότος"
+msgstr "Διαγραφή Γεγονότος…"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
@@ -211,7 +203,7 @@ msgstr "Αποθήκευση αλλαγών"
 #: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
-msgstr "Ακύρωση"
+msgstr "Ακύρωση"
 
 #: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
@@ -223,7 +215,7 @@ msgstr "Απορρίφθηκε"
 
 #: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
-msgstr ""
+msgstr "Ίσως"
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
@@ -243,7 +235,7 @@ msgstr "Από:"
 
 #: src/EventEdition/InfoPanel.vala:92
 msgid "All day:"
-msgstr "Όλη μέρα:"
+msgstr "Όλη την ημέρα:"
 
 #: src/EventEdition/InfoPanel.vala:103
 msgid "To:"
@@ -251,7 +243,7 @@ msgstr "Προς:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Time zone:"
-msgstr ""
+msgstr "Ζώνη ώρας:"
 
 #: src/EventEdition/InfoPanel.vala:118
 msgid "Name of Event"
@@ -279,7 +271,7 @@ msgstr "Τοποθεσία:"
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "Γιάννης Παπαδόπουλος ή Οδός Τάδε"
+msgstr "Γιάννης Παπαδόπουλος ή Οδός Τάδε."
 
 #: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
@@ -290,84 +282,68 @@ msgid "Add Reminder"
 msgstr "Προσθήκη Υπενθύμισης"
 
 #: src/EventEdition/ReminderPanel.vala:169
-#, fuzzy
 msgid "At time of event"
-msgstr "Όνομα γεγονότος"
+msgstr "Στην ώρα του γεγονότος"
 
 #: src/EventEdition/ReminderPanel.vala:170
-#, fuzzy
 msgid "1 minute before"
-msgstr "1 λεπτό"
+msgstr "1 λεπτό πριν"
 
 #: src/EventEdition/ReminderPanel.vala:171
-#, fuzzy
 msgid "5 minutes before"
-msgstr "5 λεπτά"
+msgstr "5 λεπτά πριν"
 
 #: src/EventEdition/ReminderPanel.vala:172
-#, fuzzy
 msgid "10 minutes before"
-msgstr "10 λεπτά"
+msgstr "10 λεπτά πριν"
 
 #: src/EventEdition/ReminderPanel.vala:173
-#, fuzzy
 msgid "15 minutes before"
-msgstr "15 λεπτά"
+msgstr "15 λεπτά πριν"
 
 #: src/EventEdition/ReminderPanel.vala:174
-#, fuzzy
 msgid "20 minutes before"
-msgstr "20 λεπτά"
+msgstr "20 λεπτά πριν"
 
 #: src/EventEdition/ReminderPanel.vala:175
-#, fuzzy
 msgid "25 minutes before"
-msgstr "25 λεπτά"
+msgstr "25 λεπτά πριν"
 
 #: src/EventEdition/ReminderPanel.vala:176
-#, fuzzy
 msgid "30 minutes before"
-msgstr "30 λεπτά"
+msgstr "30 λεπτά πριν"
 
 #: src/EventEdition/ReminderPanel.vala:177
-#, fuzzy
 msgid "45 minutes before"
-msgstr "45 λεπτά"
+msgstr "45 λεπτά πριν"
 
 #: src/EventEdition/ReminderPanel.vala:178
-#, fuzzy
 msgid "1 hour before"
-msgstr "1 ώρα"
+msgstr "1 ώρα πριν"
 
 #: src/EventEdition/ReminderPanel.vala:179
-#, fuzzy
 msgid "2 hours before"
-msgstr "2 ώρες"
+msgstr "2 ώρες πριν"
 
 #: src/EventEdition/ReminderPanel.vala:180
-#, fuzzy
 msgid "3 hours before"
-msgstr "3 ώρες"
+msgstr "3 ώρες πριν"
 
 #: src/EventEdition/ReminderPanel.vala:181
-#, fuzzy
 msgid "12 hours before"
-msgstr "12 ώρες"
+msgstr "12 ώρες πριν"
 
 #: src/EventEdition/ReminderPanel.vala:182
-#, fuzzy
 msgid "24 hours before"
-msgstr "24 ώρες"
+msgstr "24 ώρες πριν"
 
 #: src/EventEdition/ReminderPanel.vala:183
-#, fuzzy
 msgid "2 days before"
-msgstr "2 ημέρες"
+msgstr "2 ημέρες πριν"
 
 #: src/EventEdition/ReminderPanel.vala:184
-#, fuzzy
 msgid "1 week before"
-msgstr "1 εβδομάδα"
+msgstr "1 εβδομάδα πριν"
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
@@ -655,9 +631,8 @@ msgid "Sun"
 msgstr "Κυρ"
 
 #: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
-#, fuzzy
 msgid "Export Calendar…"
-msgstr "Εξαγωγή Ημερολογίου..."
+msgstr "Εξαγωγή Ημερολογίου…"
 
 #: src/Grid/CalendarView.vala:131
 msgid "Go to today's date"
@@ -671,7 +646,7 @@ msgstr "Εξαγωγή ή Κοινή Χρήση του προεπιλεγμέν�
 msgid "Manage Calendars"
 msgstr "Διαχείριση Ημερολογίων"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "Αποθήκευση"
 
@@ -681,11 +656,11 @@ msgstr "ημερολόγιο.ics"
 
 #: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
 msgid "Hide Week Numbers"
-msgstr "Απόκρυψη Αριθμών Εβδομάδας"
+msgstr "Απόκρυψη αριθμών εβδομάδας"
 
 #: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
 msgid "Show Week Numbers"
-msgstr "Εμφάνιση αύξοντα αριθμού εβδομάδος"
+msgstr "Εμφάνιση αριθμών εβδομάδας"
 
 #: src/Grid/VAutoHider.vala:109
 #, c-format
@@ -697,72 +672,66 @@ msgid "Create"
 msgstr "Δημιουργία"
 
 #: src/SourceDialog/SourceDialog.vala:62
+msgid "e.g. “Work” or “Personal”"
+msgstr "π.χ. \"Εργασία\" ή \"Προσωπικά\""
+
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
 msgstr "Όνομα Ημερολογίου"
 
-#: src/SourceDialog/SourceDialog.vala:66
-#, fuzzy
-#| msgid "Name:"
-msgid "Name"
-msgstr "Όνομα:"
-
-#: src/SourceDialog/SourceDialog.vala:91
-#, fuzzy
-#| msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:96
 msgid "Type"
-msgstr "Τύπος:"
+msgstr "Τύπος"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:121
 msgid "Blueberry"
-msgstr ""
+msgstr "Μύρτιλλο"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:128
 msgid "Mint"
-msgstr ""
+msgstr "Μέντα"
 
-#: src/SourceDialog/SourceDialog.vala:125
+#: src/SourceDialog/SourceDialog.vala:135
 msgid "Lime"
-msgstr ""
+msgstr "Μοσχολέμονο"
 
-#: src/SourceDialog/SourceDialog.vala:132
+#: src/SourceDialog/SourceDialog.vala:142
 msgid "Banana"
-msgstr ""
+msgstr "Μπανάνα"
 
-#: src/SourceDialog/SourceDialog.vala:139
+#: src/SourceDialog/SourceDialog.vala:149
 msgid "Orange"
-msgstr ""
+msgstr "Πορτοκάλι"
 
-#: src/SourceDialog/SourceDialog.vala:146
+#: src/SourceDialog/SourceDialog.vala:156
 msgid "Strawberry"
-msgstr ""
+msgstr "Φράουλα"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:163
 msgid "Bubblegum"
-msgstr ""
+msgstr "Τσιχλόφουσκα"
 
-#: src/SourceDialog/SourceDialog.vala:160
+#: src/SourceDialog/SourceDialog.vala:170
 msgid "Grape"
-msgstr ""
+msgstr "Σταφύλι"
 
-#: src/SourceDialog/SourceDialog.vala:167
+#: src/SourceDialog/SourceDialog.vala:177
 msgid "Cocoa"
-msgstr ""
+msgstr "Κακάο"
 
-#: src/SourceDialog/SourceDialog.vala:174
+#: src/SourceDialog/SourceDialog.vala:184
 msgid "Slate"
-msgstr ""
+msgstr "Γρανίτης"
 
-#: src/SourceDialog/SourceDialog.vala:195
-#, fuzzy
-#| msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:205
 msgid "Color"
-msgstr "Χρώμα:"
+msgstr "Χρώμα"
 
-#: src/SourceDialog/SourceDialog.vala:200
+#: src/SourceDialog/SourceDialog.vala:215
 msgid "Mark as default calendar"
-msgstr "Σήμανση ως προεπιλγμένο ημερολόγιο"
+msgstr "Σήμανση ως προεπιλεγμένο ημερολόγιο"
 
-#: src/SourceDialog/SourceDialog.vala:270
+#: src/SourceDialog/SourceDialog.vala:280
 msgid "Create Calendar"
 msgstr "Δημιουργία Ημερολογίου"
 
@@ -770,102 +739,104 @@ msgstr "Δημιουργία Ημερολογίου"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:67
 msgid "appointment;meeting"
-msgstr ""
+msgstr "ραντεβού;συνάντηση;μητινγκ;meeting"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:72
 msgid "birthday;anniversary;party"
-msgstr ""
+msgstr "γενέθλια;επέτειος;πάρτι;γιορτή;εορτή;ονομαστική"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:77
 msgid "call;phone;telephone;ring"
-msgstr ""
+msgstr "κλήση;τηλέφωνο;ήχος;χτύπημα"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:82
 msgid "bar;cocktails;drinks;happy hour"
-msgstr ""
+msgstr "μπαρ;κοκτέιλ;ποτά;μπίρες;κρασί;τσίπουρο;ούζο"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:87
 msgid "car;drive;driving;road trip;"
-msgstr ""
+msgstr "αυτοκίνητο;αμάξι;οδήγηση;ταξίδι;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:92
 msgid "flight;airport;"
-msgstr ""
+msgstr "πτήση;αεροδρόμιο;αερολιμένας;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:97
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
+"πρωινό;δεκατιανό;πρόγευμα;δείπνο;μεσημεριανό;απογευματινό;ψητοπωλείο;σουβλατζίδικο;σουβλάκι;ψήσιμο;γύρος;οβελιστήριο"
+""
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:102
 msgid "court;jury;tax;attorney;lawyer;contract"
 msgstr ""
+"δικαστήριο;δίκη;ένορκος;δικηγόρος;συμβόλαιο;συνήγορος;συμβολαιογράφος;φόρος"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:107
 msgid "movie;film"
-msgstr ""
+msgstr "ταινία;κινηματογράφος;σινεμά"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:112
 msgid "wedding"
-msgstr ""
+msgstr "γάμος"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:322
-#, fuzzy, c-format
+#: src/Widgets/AgendaEventRow.vala:323
+#, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "Από %s έως %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:325
-#, fuzzy, c-format
+#: src/Widgets/AgendaEventRow.vala:326
+#, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "Από %s στις %s έως %s στις %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:337
-#, fuzzy, c-format
+#: src/Widgets/AgendaEventRow.vala:338
+#, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "Από %s έως %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:346
+#: src/Widgets/AgendaEventRow.vala:347
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s στις %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:349
-#, fuzzy, c-format
+#: src/Widgets/AgendaEventRow.vala:350
+#, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s στις %s - %s στις %s"
 
 #: src/Widgets/CalendarChooser.vala:53
-#, fuzzy
 msgid "Search Calendars"
-msgstr "Δημιουργία Ημερολογίου"
+msgstr "Αναζήτηση Ημερολογίων"
 
 #: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
-msgstr ""
+msgstr "Δεν βρέθηκαν αποτελέσματα"
 
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
@@ -997,6 +968,19 @@ msgstr "Αναίρεση"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Το ημερολόγιο \"%s\" αφαιρέθηκε."
+
+#, fuzzy
+#~| msgid "User:"
+#~ msgid "User"
+#~ msgstr "Χρήστης:"
+
+#~ msgid "john@doe.com"
+#~ msgstr "john@doe.com"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgid "Name"
+#~ msgstr "Όνομα:"
 
 #~ msgid "Email:"
 #~ msgstr "Ηλ. διεύθυνση:"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-30 17:37+0000\n"
-"PO-Revision-Date: 2025-09-02 12:55+0000\n"
+"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"PO-Revision-Date: 2025-11-22 12:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ja/>\n"
@@ -24,23 +24,23 @@ msgstr ""
 msgid "On this computer"
 msgstr "このコンピューター"
 
-#: core/Backends/PlacementWidget.vala:30
+#: core/Backends/PlacementWidget.vala:26
 msgid "user.name"
 msgstr "user.name"
 
-#: core/Backends/PlacementWidget.vala:39
-msgid "User"
-msgstr "ユーザー"
+#: core/Backends/PlacementWidget.vala:33
+msgid "User Name"
+msgstr "ユーザー名"
 
-#: core/Backends/PlacementWidget.vala:59
-msgid "john@doe.com"
-msgstr "john@doe.com"
+#: core/Backends/PlacementWidget.vala:50
+msgid "ellie@example.com"
+msgstr "ellie@example.com"
 
-#: core/Backends/PlacementWidget.vala:68
+#: core/Backends/PlacementWidget.vala:57
 msgid "Email"
 msgstr "メール"
 
-#: core/Backends/PlacementWidget.vala:86
+#: core/Backends/PlacementWidget.vala:72
 msgid "Keep a copy locally"
 msgstr "ローカルにコピーを保管"
 
@@ -60,15 +60,15 @@ msgstr "user.name または user.name@gmail.com"
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:54
+#: plugins/CalDAV/CalDAVBackend.vala:50
 msgid "URL"
 msgstr "URL"
 
-#: plugins/CalDAV/CalDAVBackend.vala:88
+#: plugins/CalDAV/CalDAVBackend.vala:80
 msgid "Use a secure connection"
 msgstr "安全な接続を使う"
 
-#: plugins/CalDAV/CalDAVBackend.vala:115
+#: plugins/CalDAV/CalDAVBackend.vala:107
 msgid "Server handles meeting invitations"
 msgstr "サーバーが会議の招待を処理"
 
@@ -636,7 +636,7 @@ msgstr "デフォルトのカレンダーをエクスポートまたは共有"
 msgid "Manage Calendars"
 msgstr "カレンダーを管理"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "保存"
 
@@ -662,66 +662,66 @@ msgid "Create"
 msgstr "作成"
 
 #: src/SourceDialog/SourceDialog.vala:62
+msgid "e.g. “Work” or “Personal”"
+msgstr "例: “仕事用”や“個人用”など"
+
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
 msgstr "カレンダー名"
 
-#: src/SourceDialog/SourceDialog.vala:66
-msgid "Name"
-msgstr "名前"
-
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:96
 msgid "Type"
 msgstr "種類"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:121
 msgid "Blueberry"
 msgstr "ブルーベリー"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:128
 msgid "Mint"
 msgstr "ミント"
 
-#: src/SourceDialog/SourceDialog.vala:125
+#: src/SourceDialog/SourceDialog.vala:135
 msgid "Lime"
 msgstr "ライム"
 
-#: src/SourceDialog/SourceDialog.vala:132
+#: src/SourceDialog/SourceDialog.vala:142
 msgid "Banana"
 msgstr "バナナ"
 
-#: src/SourceDialog/SourceDialog.vala:139
+#: src/SourceDialog/SourceDialog.vala:149
 msgid "Orange"
 msgstr "オレンジ"
 
-#: src/SourceDialog/SourceDialog.vala:146
+#: src/SourceDialog/SourceDialog.vala:156
 msgid "Strawberry"
 msgstr "ストロベリー"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:163
 msgid "Bubblegum"
 msgstr "ピンク"
 
-#: src/SourceDialog/SourceDialog.vala:160
+#: src/SourceDialog/SourceDialog.vala:170
 msgid "Grape"
 msgstr "グレープ"
 
-#: src/SourceDialog/SourceDialog.vala:167
+#: src/SourceDialog/SourceDialog.vala:177
 msgid "Cocoa"
 msgstr "ココア"
 
-#: src/SourceDialog/SourceDialog.vala:174
+#: src/SourceDialog/SourceDialog.vala:184
 msgid "Slate"
 msgstr "スレート"
 
-#: src/SourceDialog/SourceDialog.vala:195
+#: src/SourceDialog/SourceDialog.vala:205
 msgid "Color"
 msgstr "色"
 
-#: src/SourceDialog/SourceDialog.vala:200
+#: src/SourceDialog/SourceDialog.vala:215
 msgid "Mark as default calendar"
 msgstr "デフォルトのカレンダーに設定"
 
-#: src/SourceDialog/SourceDialog.vala:270
+#: src/SourceDialog/SourceDialog.vala:280
 msgid "Create Calendar"
 msgstr "カレンダーを作成"
 
@@ -790,33 +790,33 @@ msgid "wedding"
 msgstr "結婚式;ウェディング"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:322
+#: src/Widgets/AgendaEventRow.vala:323
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:325
+#: src/Widgets/AgendaEventRow.vala:326
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s %s – %s %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:337
+#: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:346
+#: src/Widgets/AgendaEventRow.vala:347
 #, c-format
 msgid "%s at %s"
 msgstr "%s %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:349
+#: src/Widgets/AgendaEventRow.vala:350
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s %s – %s"
@@ -948,6 +948,15 @@ msgstr "元に戻す"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" を削除しました"
+
+#~ msgid "User"
+#~ msgstr "ユーザー"
+
+#~ msgid "john@doe.com"
+#~ msgstr "john@doe.com"
+
+#~ msgid "Name"
+#~ msgstr "名前"
 
 #~ msgid "Email:"
 #~ msgstr "メール:"
