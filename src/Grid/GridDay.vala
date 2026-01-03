@@ -180,11 +180,18 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     private bool on_key_press (Gtk.EventControllerKey event, uint keyval, uint keycode, Gdk.ModifierType state) {
-        if (keyval == Gdk.keyval_from_name ("Return") ) {
-            on_event_add (date);
-            return true;
+        switch (keyval) {
+            case Gdk.Key.Return:
+                on_event_add (date);
+                return true;
+            case Gdk.Key.Page_Up:
+                Calendar.EventStore.get_default ().change_month (1);
+                return true;
+            case Gdk.Key.Page_Down:
+                Calendar.EventStore.get_default ().change_month (-1);
+                return true;
+            default:
+                return false;
         }
-
-        return false;
     }
 }
