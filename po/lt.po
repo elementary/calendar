@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
 "PO-Revision-Date: 2019-01-08 13:02+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/calendar/"
@@ -664,11 +664,7 @@ msgstr "Įrašyti"
 msgid "calendar.ics"
 msgstr "kalendorius.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "Slėpti savaičių numerius"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "Rodyti savaičių numerius"
 
@@ -975,6 +971,9 @@ msgstr "Atšaukti"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" pašalintas"
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "Slėpti savaičių numerius"
 
 #, fuzzy
 #~| msgid "User:"

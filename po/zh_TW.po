@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
 "PO-Revision-Date: 2025-11-30 07:55+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
@@ -643,11 +643,7 @@ msgstr "儲存"
 msgid "calendar.ics"
 msgstr "行事曆.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "隱藏週數"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "顯示週數"
 
@@ -943,6 +939,9 @@ msgstr "復原"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "「%s」已移除"
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "隱藏週數"
 
 #~ msgid "User"
 #~ msgstr "使用者"

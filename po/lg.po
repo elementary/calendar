@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
 "PO-Revision-Date: 2018-01-21 00:04+0000\n"
 "Last-Translator: Laurence Bahiirwa <laurence@mediauganda.com>\n"
 "Language-Team: Ganda <https://weblate.elementary.io/projects/calendar/"
@@ -672,11 +672,7 @@ msgstr "Terekka"
 msgid "calendar.ics"
 msgstr "kalenda.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "Kweka enamba za wikki"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "Ragga enamba za wikki"
 
@@ -983,6 +979,9 @@ msgstr "Daayo emabegga"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Kalenda \"%s\" egidwamu."
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "Kweka enamba za wikki"
 
 #, fuzzy
 #~| msgid "User:"

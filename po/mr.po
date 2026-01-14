@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
 "PO-Revision-Date: 2025-02-20 08:16+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
@@ -657,11 +657,7 @@ msgstr "सेव्ह करा"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "आठवडा क्रमांक लपवा"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "आठवडा क्रमांक दाखवा"
 
@@ -960,6 +956,9 @@ msgstr "बदल काढा"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" मिटविले"
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "आठवडा क्रमांक लपवा"
 
 #, fuzzy
 #~| msgid "User:"

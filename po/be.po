@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:36+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
 "PO-Revision-Date: 2025-12-04 09:55+0000\n"
 "Last-Translator: lenify <lenify@tutanota.com>\n"
 "Language-Team: Belarusian <https://l10n.elementaryos.org/projects/calendar/"
@@ -659,11 +659,7 @@ msgstr "Захаваць"
 msgid "calendar.ics"
 msgstr "каляндар.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "Схаваць нумары тыдня"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "Паказваць нумары тыдняў"
 
@@ -961,6 +957,9 @@ msgstr "Адрабіць"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" быў выдалены"
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "Схаваць нумары тыдня"
 
 #~ msgid "User"
 #~ msgstr "Карыстальнік"
