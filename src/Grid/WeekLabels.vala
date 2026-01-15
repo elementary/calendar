@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2011-2019 elementary, Inc. (https://elementary.io)
+ * Copyright (c) 2011-2026 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,17 +44,16 @@ public class Maya.View.WeekLabels : Gtk.Bin {
     }
 
     construct {
-        day_grid = new Gtk.Grid ();
+        day_grid = new Gtk.Grid () {
+            row_homogeneous = true
+        };
+        day_grid.get_style_context ().add_class ("weeks");
+
         set_nr_of_weeks (5);
         day_grid.insert_row (1);
-        day_grid.set_column_homogeneous (true);
-        day_grid.set_row_homogeneous (true);
-        day_grid.row_spacing = 0;
-        day_grid.show ();
 
         unowned Gtk.StyleContext day_grid_context = day_grid.get_style_context ();
         day_grid_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        day_grid_context.add_class ("weeks");
 
         var revealer = new Gtk.Revealer () {
             child = day_grid,
@@ -119,13 +118,14 @@ public class Maya.View.WeekLabels : Gtk.Bin {
 
             labels = new Gtk.Label[nr_of_weeks];
             for (int c = 0; c < nr_of_weeks; c++) {
-                labels[c] = new Gtk.Label ("");
-                labels[c].valign = Gtk.Align.START;
-                labels[c].width_chars = 2;
+                labels[c] = new Gtk.Label ("") {
+                    valign = START,
+                    width_chars = 2
+                };
+                labels[c].get_style_context ().add_class ("weeklabel");
 
                 unowned Gtk.StyleContext label_context = labels[c].get_style_context ();
                 label_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-                label_context.add_class ("weeklabel");
 
                 day_grid.attach (labels[c], 0, c);
                 labels[c].show ();
