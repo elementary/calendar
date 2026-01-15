@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-30 17:37+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
 "PO-Revision-Date: 2022-08-06 11:01+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -24,25 +24,25 @@ msgstr ""
 msgid "On this computer"
 msgstr "이 컴퓨터에서"
 
-#: core/Backends/PlacementWidget.vala:30
+#: core/Backends/PlacementWidget.vala:26
 msgid "user.name"
 msgstr "사용자 이름"
 
-#: core/Backends/PlacementWidget.vala:39
+#: core/Backends/PlacementWidget.vala:33
 #, fuzzy
-#| msgid "User:"
-msgid "User"
-msgstr "사용자:"
+#| msgid "Calendar Name"
+msgid "User Name"
+msgstr "달력 이름"
 
-#: core/Backends/PlacementWidget.vala:59
-msgid "john@doe.com"
-msgstr "john@doe.com"
+#: core/Backends/PlacementWidget.vala:50
+msgid "ellie@example.com"
+msgstr ""
 
-#: core/Backends/PlacementWidget.vala:68
+#: core/Backends/PlacementWidget.vala:57
 msgid "Email"
 msgstr "이메일"
 
-#: core/Backends/PlacementWidget.vala:86
+#: core/Backends/PlacementWidget.vala:72
 msgid "Keep a copy locally"
 msgstr "컴퓨터에 사본 보관"
 
@@ -62,17 +62,17 @@ msgstr "사용자.이름 또는 사용자.이름@gmail.com"
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:54
+#: plugins/CalDAV/CalDAVBackend.vala:50
 #, fuzzy
 #| msgid "URL:"
 msgid "URL"
 msgstr "URL:"
 
-#: plugins/CalDAV/CalDAVBackend.vala:88
+#: plugins/CalDAV/CalDAVBackend.vala:80
 msgid "Use a secure connection"
 msgstr "보안 연결 사용"
 
-#: plugins/CalDAV/CalDAVBackend.vala:115
+#: plugins/CalDAV/CalDAVBackend.vala:107
 msgid "Server handles meeting invitations"
 msgstr "서버에서 약속 초대를 관리합니다"
 
@@ -641,7 +641,7 @@ msgstr "기본 달력을 내보내거나 공유합니다"
 msgid "Manage Calendars"
 msgstr "달력 관리"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "저장"
 
@@ -649,11 +649,7 @@ msgstr "저장"
 msgid "calendar.ics"
 msgstr "달력.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "주 번호 숨기기"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "몇 번째 주인지 표시"
 
@@ -667,72 +663,70 @@ msgid "Create"
 msgstr "추가"
 
 #: src/SourceDialog/SourceDialog.vala:62
+msgid "e.g. “Work” or “Personal”"
+msgstr ""
+
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
 msgstr "달력 이름"
 
-#: src/SourceDialog/SourceDialog.vala:66
-#, fuzzy
-#| msgid "Name:"
-msgid "Name"
-msgstr "이름:"
-
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:96
 #, fuzzy
 #| msgid "Type:"
 msgid "Type"
 msgstr "유형:"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:121
 msgid "Blueberry"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:128
 msgid "Mint"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:125
+#: src/SourceDialog/SourceDialog.vala:135
 msgid "Lime"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:132
+#: src/SourceDialog/SourceDialog.vala:142
 msgid "Banana"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:139
+#: src/SourceDialog/SourceDialog.vala:149
 msgid "Orange"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:146
+#: src/SourceDialog/SourceDialog.vala:156
 msgid "Strawberry"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:163
 msgid "Bubblegum"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:160
+#: src/SourceDialog/SourceDialog.vala:170
 msgid "Grape"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:167
+#: src/SourceDialog/SourceDialog.vala:177
 msgid "Cocoa"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:174
+#: src/SourceDialog/SourceDialog.vala:184
 msgid "Slate"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:195
+#: src/SourceDialog/SourceDialog.vala:205
 #, fuzzy
 #| msgid "Color:"
 msgid "Color"
 msgstr "색상:"
 
-#: src/SourceDialog/SourceDialog.vala:200
+#: src/SourceDialog/SourceDialog.vala:215
 msgid "Mark as default calendar"
 msgstr "기본 달력으로 설정"
 
-#: src/SourceDialog/SourceDialog.vala:270
+#: src/SourceDialog/SourceDialog.vala:280
 msgid "Create Calendar"
 msgstr "달력 만들기"
 
@@ -797,33 +791,33 @@ msgid "wedding"
 msgstr "결혼"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:322
+#: src/Widgets/AgendaEventRow.vala:323
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:325
+#: src/Widgets/AgendaEventRow.vala:326
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:337
+#: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:346
+#: src/Widgets/AgendaEventRow.vala:347
 #, c-format
 msgid "%s at %s"
 msgstr "%s %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:349
+#: src/Widgets/AgendaEventRow.vala:350
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
@@ -964,6 +958,22 @@ msgstr "실행 취소"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" 지움"
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "주 번호 숨기기"
+
+#, fuzzy
+#~| msgid "User:"
+#~ msgid "User"
+#~ msgstr "사용자:"
+
+#~ msgid "john@doe.com"
+#~ msgstr "john@doe.com"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgid "Name"
+#~ msgstr "이름:"
 
 #~ msgid "Email:"
 #~ msgstr "이메일:"

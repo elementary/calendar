@@ -7,42 +7,40 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-30 17:37+0000\n"
-"PO-Revision-Date: 2024-05-13 08:31+0000\n"
-"Last-Translator: Sven <622b1a13-49d8-4ace-bca7-48bff17b4780@unbox.at>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/calendar/calendar/"
-"nl/>\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
+"PO-Revision-Date: 2025-11-30 07:55+0000\n"
+"Last-Translator: Bas Ernst <bas@ernstgenova.it>\n"
+"Language-Team: Dutch <https://l10n.elementaryos.org/projects/calendar/"
+"calendar/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:14+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
 msgstr "Op deze computer"
 
-#: core/Backends/PlacementWidget.vala:30
+#: core/Backends/PlacementWidget.vala:26
 msgid "user.name"
 msgstr "gebruiker.naam"
 
-#: core/Backends/PlacementWidget.vala:39
-#, fuzzy
-#| msgid "User:"
-msgid "User"
-msgstr "Gebruiker:"
+#: core/Backends/PlacementWidget.vala:33
+msgid "User Name"
+msgstr "Gebruikersnaam"
 
-#: core/Backends/PlacementWidget.vala:59
-msgid "john@doe.com"
-msgstr "john@doe.com"
+#: core/Backends/PlacementWidget.vala:50
+msgid "ellie@example.com"
+msgstr "ellie@voorbeeld.com"
 
-#: core/Backends/PlacementWidget.vala:68
+#: core/Backends/PlacementWidget.vala:57
 msgid "Email"
 msgstr "E-mail"
 
-#: core/Backends/PlacementWidget.vala:86
+#: core/Backends/PlacementWidget.vala:72
 msgid "Keep a copy locally"
 msgstr "Houdt een lokale kopie"
 
@@ -62,17 +60,15 @@ msgstr "gebruiker.naam of gebruiker.naam@gmail.com"
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:54
-#, fuzzy
-#| msgid "URL:"
+#: plugins/CalDAV/CalDAVBackend.vala:50
 msgid "URL"
-msgstr "URL:"
+msgstr "URL"
 
-#: plugins/CalDAV/CalDAVBackend.vala:88
+#: plugins/CalDAV/CalDAVBackend.vala:80
 msgid "Use a secure connection"
 msgstr "Gebruik een veilige verbinding"
 
-#: plugins/CalDAV/CalDAVBackend.vala:115
+#: plugins/CalDAV/CalDAVBackend.vala:107
 msgid "Server handles meeting invitations"
 msgstr "Uitnodigingen voor bijeenkomsten worden door de server afgehandeld"
 
@@ -192,10 +188,8 @@ msgid "Repeat"
 msgstr "Herhaal"
 
 #: src/EventEdition/EventDialog.vala:146
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete Event…"
-msgstr "Verwijder gebeurtenis"
+msgstr "Verwijder gebeurtenis…"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
@@ -651,7 +645,7 @@ msgstr "Exporteer of Deel de standaardagenda"
 msgid "Manage Calendars"
 msgstr "Beheer agenda's"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "Opslaan"
 
@@ -659,11 +653,7 @@ msgstr "Opslaan"
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "Verberg weeknummers"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "Weeknummers tonen"
 
@@ -677,72 +667,66 @@ msgid "Create"
 msgstr "Aanmaken"
 
 #: src/SourceDialog/SourceDialog.vala:62
+msgid "e.g. “Work” or “Personal”"
+msgstr "bijvoorbeeld \"Werk\" of \"Persoonlijk\""
+
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
 msgstr "Agendanaam"
 
-#: src/SourceDialog/SourceDialog.vala:66
-#, fuzzy
-#| msgid "Name:"
-msgid "Name"
-msgstr "Naam:"
-
-#: src/SourceDialog/SourceDialog.vala:91
-#, fuzzy
-#| msgid "Type:"
+#: src/SourceDialog/SourceDialog.vala:96
 msgid "Type"
-msgstr "Type:"
+msgstr "Type"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:121
 msgid "Blueberry"
-msgstr ""
+msgstr "Bosbessen"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:128
 msgid "Mint"
-msgstr ""
+msgstr "Munt"
 
-#: src/SourceDialog/SourceDialog.vala:125
+#: src/SourceDialog/SourceDialog.vala:135
 msgid "Lime"
-msgstr ""
+msgstr "Limoen"
 
-#: src/SourceDialog/SourceDialog.vala:132
+#: src/SourceDialog/SourceDialog.vala:142
 msgid "Banana"
-msgstr ""
+msgstr "Banaan"
 
-#: src/SourceDialog/SourceDialog.vala:139
+#: src/SourceDialog/SourceDialog.vala:149
 msgid "Orange"
-msgstr ""
+msgstr "Sinaasappel"
 
-#: src/SourceDialog/SourceDialog.vala:146
+#: src/SourceDialog/SourceDialog.vala:156
 msgid "Strawberry"
-msgstr ""
+msgstr "Aardbei"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:163
 msgid "Bubblegum"
-msgstr ""
+msgstr "Kauwgom"
 
-#: src/SourceDialog/SourceDialog.vala:160
+#: src/SourceDialog/SourceDialog.vala:170
 msgid "Grape"
-msgstr ""
+msgstr "Druif"
 
-#: src/SourceDialog/SourceDialog.vala:167
+#: src/SourceDialog/SourceDialog.vala:177
 msgid "Cocoa"
-msgstr ""
+msgstr "Cacao"
 
-#: src/SourceDialog/SourceDialog.vala:174
+#: src/SourceDialog/SourceDialog.vala:184
 msgid "Slate"
-msgstr ""
+msgstr "Leisteen"
 
-#: src/SourceDialog/SourceDialog.vala:195
-#, fuzzy
-#| msgid "Color:"
+#: src/SourceDialog/SourceDialog.vala:205
 msgid "Color"
-msgstr "Kleur:"
+msgstr "Kleur"
 
-#: src/SourceDialog/SourceDialog.vala:200
+#: src/SourceDialog/SourceDialog.vala:215
 msgid "Mark as default calendar"
 msgstr "Markeer als standaard agenda"
 
-#: src/SourceDialog/SourceDialog.vala:270
+#: src/SourceDialog/SourceDialog.vala:280
 msgid "Create Calendar"
 msgstr "Agenda aanmaken"
 
@@ -807,33 +791,33 @@ msgid "wedding"
 msgstr "huwelijk;trouwen;bruiloft"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:322
+#: src/Widgets/AgendaEventRow.vala:323
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "van %s tot %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:325
+#: src/Widgets/AgendaEventRow.vala:326
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "van %s om %s tot %s om %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:337
+#: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "van %s tot %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:346
+#: src/Widgets/AgendaEventRow.vala:347
 #, c-format
 msgid "%s at %s"
 msgstr "%s om %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:349
+#: src/Widgets/AgendaEventRow.vala:350
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, van %s tot %s"
@@ -968,6 +952,22 @@ msgstr "Ongedaan maken"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" is verwijderd"
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "Verberg weeknummers"
+
+#, fuzzy
+#~| msgid "User:"
+#~ msgid "User"
+#~ msgstr "Gebruiker:"
+
+#~ msgid "john@doe.com"
+#~ msgstr "john@doe.com"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgid "Name"
+#~ msgstr "Naam:"
 
 #~ msgid "Email:"
 #~ msgstr "E-mail:"
