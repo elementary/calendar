@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-30 17:37+0000\n"
-"PO-Revision-Date: 2025-08-22 15:58+0000\n"
+"POT-Creation-Date: 2025-12-27 07:32+0000\n"
+"PO-Revision-Date: 2025-11-30 07:55+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
-"l10n.elementaryos.org/projects/calendar/calendar/zh_Hant/>\n"
+"l10n.elementaryos.org/projects/calendar/calendar/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,23 +23,23 @@ msgstr ""
 msgid "On this computer"
 msgstr "在此電腦上"
 
-#: core/Backends/PlacementWidget.vala:30
+#: core/Backends/PlacementWidget.vala:26
 msgid "user.name"
 msgstr "user.name"
 
-#: core/Backends/PlacementWidget.vala:39
-msgid "User"
-msgstr "使用者"
+#: core/Backends/PlacementWidget.vala:33
+msgid "User Name"
+msgstr "使用者名稱"
 
-#: core/Backends/PlacementWidget.vala:59
-msgid "john@doe.com"
-msgstr "john@doe.com"
+#: core/Backends/PlacementWidget.vala:50
+msgid "ellie@example.com"
+msgstr "ellie@example.com"
 
-#: core/Backends/PlacementWidget.vala:68
+#: core/Backends/PlacementWidget.vala:57
 msgid "Email"
 msgstr "電子郵件"
 
-#: core/Backends/PlacementWidget.vala:86
+#: core/Backends/PlacementWidget.vala:72
 msgid "Keep a copy locally"
 msgstr "保留一份在本機上"
 
@@ -59,15 +59,15 @@ msgstr "user.name 或 user.name@gmail.com"
 msgid "CalDAV"
 msgstr "CalDAV"
 
-#: plugins/CalDAV/CalDAVBackend.vala:54
+#: plugins/CalDAV/CalDAVBackend.vala:50
 msgid "URL"
 msgstr "URL"
 
-#: plugins/CalDAV/CalDAVBackend.vala:88
+#: plugins/CalDAV/CalDAVBackend.vala:80
 msgid "Use a secure connection"
 msgstr "使用安全連線"
 
-#: plugins/CalDAV/CalDAVBackend.vala:115
+#: plugins/CalDAV/CalDAVBackend.vala:107
 msgid "Server handles meeting invitations"
 msgstr "伺服器處理會議邀請"
 
@@ -635,7 +635,7 @@ msgstr "匯出或分享預設行事曆"
 msgid "Manage Calendars"
 msgstr "管理行事曆"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:275
+#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "儲存"
 
@@ -643,11 +643,7 @@ msgstr "儲存"
 msgid "calendar.ics"
 msgstr "行事曆.ics"
 
-#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:78
-msgid "Hide Week Numbers"
-msgstr "隱藏週數"
-
-#: src/Grid/WeekLabels.vala:68 src/Grid/Header.vala:80
+#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
 msgstr "顯示週數"
 
@@ -661,66 +657,66 @@ msgid "Create"
 msgstr "建立"
 
 #: src/SourceDialog/SourceDialog.vala:62
+msgid "e.g. “Work” or “Personal”"
+msgstr "如：「工作」或「個人」等等"
+
+#: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
 msgstr "行事曆名稱"
 
-#: src/SourceDialog/SourceDialog.vala:66
-msgid "Name"
-msgstr "名稱"
-
-#: src/SourceDialog/SourceDialog.vala:91
+#: src/SourceDialog/SourceDialog.vala:96
 msgid "Type"
 msgstr "類型"
 
-#: src/SourceDialog/SourceDialog.vala:111
+#: src/SourceDialog/SourceDialog.vala:121
 msgid "Blueberry"
 msgstr "藍莓"
 
-#: src/SourceDialog/SourceDialog.vala:118
+#: src/SourceDialog/SourceDialog.vala:128
 msgid "Mint"
 msgstr "薄荷"
 
-#: src/SourceDialog/SourceDialog.vala:125
+#: src/SourceDialog/SourceDialog.vala:135
 msgid "Lime"
 msgstr "萊姆"
 
-#: src/SourceDialog/SourceDialog.vala:132
+#: src/SourceDialog/SourceDialog.vala:142
 msgid "Banana"
 msgstr "香蕉"
 
-#: src/SourceDialog/SourceDialog.vala:139
+#: src/SourceDialog/SourceDialog.vala:149
 msgid "Orange"
 msgstr "橘色"
 
-#: src/SourceDialog/SourceDialog.vala:146
+#: src/SourceDialog/SourceDialog.vala:156
 msgid "Strawberry"
 msgstr "草莓"
 
-#: src/SourceDialog/SourceDialog.vala:153
+#: src/SourceDialog/SourceDialog.vala:163
 msgid "Bubblegum"
 msgstr "粉色"
 
-#: src/SourceDialog/SourceDialog.vala:160
+#: src/SourceDialog/SourceDialog.vala:170
 msgid "Grape"
 msgstr "葡萄"
 
-#: src/SourceDialog/SourceDialog.vala:167
+#: src/SourceDialog/SourceDialog.vala:177
 msgid "Cocoa"
 msgstr "可可"
 
-#: src/SourceDialog/SourceDialog.vala:174
+#: src/SourceDialog/SourceDialog.vala:184
 msgid "Slate"
 msgstr "石板"
 
-#: src/SourceDialog/SourceDialog.vala:195
+#: src/SourceDialog/SourceDialog.vala:205
 msgid "Color"
 msgstr "色彩"
 
-#: src/SourceDialog/SourceDialog.vala:200
+#: src/SourceDialog/SourceDialog.vala:215
 msgid "Mark as default calendar"
 msgstr "標記爲預設行事曆"
 
-#: src/SourceDialog/SourceDialog.vala:270
+#: src/SourceDialog/SourceDialog.vala:280
 msgid "Create Calendar"
 msgstr "新建行事曆"
 
@@ -787,33 +783,33 @@ msgid "wedding"
 msgstr "wedding;婚禮;結婚典禮;結婚"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:322
+#: src/Widgets/AgendaEventRow.vala:323
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s - %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:325
+#: src/Widgets/AgendaEventRow.vala:326
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:337
+#: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s - %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:346
+#: src/Widgets/AgendaEventRow.vala:347
 #, c-format
 msgid "%s at %s"
 msgstr "%s %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:349
+#: src/Widgets/AgendaEventRow.vala:350
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s，%s - %s"
@@ -943,6 +939,18 @@ msgstr "復原"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "「%s」已移除"
+
+#~ msgid "Hide Week Numbers"
+#~ msgstr "隱藏週數"
+
+#~ msgid "User"
+#~ msgstr "使用者"
+
+#~ msgid "john@doe.com"
+#~ msgstr "john@doe.com"
+
+#~ msgid "Name"
+#~ msgstr "名稱"
 
 #~ msgid "Email:"
 #~ msgstr "電子郵件："

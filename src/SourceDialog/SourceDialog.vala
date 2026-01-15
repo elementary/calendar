@@ -22,11 +22,11 @@
 public class Maya.View.SourceDialog : Granite.Dialog {
     public EventType event_type { get; private set; default=EventType.EDIT;}
 
+    private Gtk.Box main_box;
     private Gtk.Entry name_entry;
     private string hex_color = "#da3d41";
     private Backend current_backend;
     private Gee.Collection<PlacementWidget> backend_widgets;
-    private Gtk.Grid main_grid;
     private Gee.HashMap<string, bool> widgets_checked;
     private Gtk.Button create_button;
     private Gtk.ComboBox type_combobox;
@@ -59,14 +59,19 @@ public class Maya.View.SourceDialog : Granite.Dialog {
         cancel_button.clicked.connect (() => go_back ());
 
         name_entry = new Gtk.Entry () {
-            placeholder_text = _("Calendar Name")
+            placeholder_text = _("e.g. “Work” or “Personal”")
         };
         name_entry.changed.connect (check_can_validate);
 
-        var name_label = new Gtk.Label (_("Name")) {
-            mnemonic_widget = name_entry,
-            xalign = 1
+        var name_label = new Granite.HeaderLabel (_("Calendar Name")) {
+            mnemonic_widget = name_entry
         };
+
+        var name_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 12
+        };
+        name_box.add (name_label);
+        name_box.add (name_entry);
 
         list_store = new Gtk.ListStore (2, typeof (string), typeof (Backend));
 
@@ -88,10 +93,15 @@ public class Maya.View.SourceDialog : Granite.Dialog {
             add_backend_widgets ();
         });
 
-        var type_label = new Gtk.Label (_("Type")) {
-            mnemonic_widget = type_combobox,
-            xalign = 1.0f
+        var type_label = new Granite.HeaderLabel (_("Type")) {
+            mnemonic_widget = type_combobox
         };
+
+        var type_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 12
+        };
+        type_box.add (type_label);
+        type_box.add (type_combobox);
 
         Gtk.TreeIter iter;
         var backends_manager = BackendsManager.get_default ();
@@ -180,24 +190,31 @@ public class Maya.View.SourceDialog : Granite.Dialog {
             group = color_button_blue
         };
 
-        var color_box = new Gtk.Box (HORIZONTAL, 6);
-        color_box.add (color_button_blue);
-        color_box.add (color_button_mint);
-        color_box.add (color_button_green);
-        color_box.add (color_button_yellow);
-        color_box.add (color_button_orange);
-        color_box.add (color_button_red);
-        color_box.add (color_button_pink);
-        color_box.add (color_button_purple);
-        color_box.add (color_button_brown);
-        color_box.add (color_button_slate);
+        var color_button_box = new Gtk.Box (HORIZONTAL, 6);
+        color_button_box.add (color_button_blue);
+        color_button_box.add (color_button_mint);
+        color_button_box.add (color_button_green);
+        color_button_box.add (color_button_yellow);
+        color_button_box.add (color_button_orange);
+        color_button_box.add (color_button_red);
+        color_button_box.add (color_button_pink);
+        color_button_box.add (color_button_purple);
+        color_button_box.add (color_button_brown);
+        color_button_box.add (color_button_slate);
 
-        var color_label = new Gtk.Label (_("Color")) {
-            mnemonic_widget = color_box,
-            xalign = 1
+        var color_label = new Granite.HeaderLabel (_("Color")) {
+            mnemonic_widget = color_button_box
         };
 
-        is_default_check = new Gtk.CheckButton.with_label (_("Mark as default calendar"));
+        var color_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 12
+        };
+        color_box.add (color_label);
+        color_box.add (color_button_box);
+
+        is_default_check = new Gtk.CheckButton.with_label (_("Mark as default calendar")) {
+            margin_bottom = 12
+        };
 
         color_button_red.toggled.connect (() => {
             hex_color = "#da3d41";
@@ -239,25 +256,18 @@ public class Maya.View.SourceDialog : Granite.Dialog {
             hex_color = "#667885";
         });
 
-        main_grid = new Gtk.Grid () {
-            margin_top = 12,
+        main_box = new Gtk.Box (VERTICAL, 0) {
             margin_end = 12,
             margin_start = 12,
-            margin_bottom = 24,
-            column_spacing = 12,
-            row_spacing = 12,
             vexpand = true
         };
-        main_grid.attach (type_label, 0, 0);
-        main_grid.attach (type_combobox, 1, 0);
-        main_grid.attach (name_label, 0, 1);
-        main_grid.attach (name_entry, 1, 1);
-        main_grid.attach (color_label, 0, 2);
-        main_grid.attach (color_box, 1, 2);
-        main_grid.attach (is_default_check, 1, 3);
-        main_grid.show_all ();
+        main_box.add (type_box);
+        main_box.add (name_box);
+        main_box.add (color_box);
+        main_box.add (is_default_check);
+        main_box.show_all ();
 
-        get_content_area ().add (main_grid);
+        get_content_area ().add (main_box);
     }
 
     public void set_source (E.Source? source = null) {
@@ -358,14 +368,21 @@ public class Maya.View.SourceDialog : Granite.Dialog {
     private void add_backend_widgets () {
         widgets_checked.clear ();
         foreach (var widget in backend_widgets) {
-            main_grid.attach (widget.widget, widget.column, 4 + widget.row, 1, 1);
+
+            if (!(widget.widget is Granite.HeaderLabel)) {
+                widget.widget.margin_bottom = 12;
+            }
+
+            main_box.add (widget.widget);
+
             if (widget.needed == true && widget.widget is Gtk.Entry) {
                 var entry = widget.widget as Gtk.Entry;
                 entry.changed.connect (() => {entry_changed (widget);});
                 widgets_checked.set (widget.ref_name, ((Gtk.Entry)widget.widget).text != "");
             }
-            widget.widget.show ();
         }
+
+        main_box.show_all ();
         check_can_validate ();
     }
 

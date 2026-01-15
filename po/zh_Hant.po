@@ -1,404 +1,392 @@
-# Ukrainian translation for maya
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
-# This file is distributed under the same license as the maya package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.elementary.calendar package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: maya\n"
+"Project-Id-Version: io.elementary.calendar\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-27 07:32+0000\n"
-"PO-Revision-Date: 2025-12-18 23:55+0000\n"
-"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/calendar/"
-"calendar/uk/>\n"
-"Language: uk\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.11.4\n"
-"X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
 msgid "On this computer"
-msgstr "На цьому комп'ютері"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:26
 msgid "user.name"
-msgstr "ім’я.користувача"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:33
 msgid "User Name"
-msgstr "Ім'я користувача"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "ellie@example.com"
-msgstr "ellie@example.com"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:57
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #: core/Backends/PlacementWidget.vala:72
 msgid "Keep a copy locally"
-msgstr "Зберігати копію локально"
+msgstr ""
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr "В інтернеті"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: plugins/Google/GoogleBackend.vala:61
 msgid "user.name or user.name@gmail.com"
-msgstr "user.name або user.name@gmail.com"
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:24
 msgid "CalDAV"
-msgstr "CalDAV"
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:50
 msgid "URL"
-msgstr "URL-адреса"
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:80
 msgid "Use a secure connection"
-msgstr "Використовувати захищене з’єднання"
+msgstr ""
 
 #: plugins/CalDAV/CalDAVBackend.vala:107
 msgid "Server handles meeting invitations"
-msgstr "Сервер підтримує запрошення на зустрічі"
+msgstr ""
 
 #: src/AgendaView.vala:29
 msgid "Create a new event"
-msgstr "Створити нову подію"
+msgstr ""
 
 #: src/AgendaView.vala:52
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
-msgstr "Ваші прийдешні події з'являться тут коли ви виберете дату з подіями."
+msgstr ""
 
 #: src/AgendaView.vala:153
 msgid "During the day"
-msgstr "Впродовж дня"
+msgstr ""
 
 #: src/AgendaView.vala:161
 msgid "All day"
-msgstr "Весь день"
+msgstr ""
 
 #: src/AgendaView.vala:278
 msgid "Tomorrow"
-msgstr "Завтра"
+msgstr ""
 
 #: src/AgendaView.vala:281
 msgid "This Week"
-msgstr "Цього тижня"
+msgstr ""
 
 #: src/AgendaView.vala:284
 msgid "Next Week"
-msgstr "Наступного тижня"
+msgstr ""
 
 #: src/AgendaView.vala:287
 msgid "This Month"
-msgstr "Цього місяця"
+msgstr ""
 
 #: src/AgendaView.vala:290
 msgid "Next Month"
-msgstr "Наступного місяця"
+msgstr ""
 
 #: src/Application.vala:34
 msgid "Create an event"
-msgstr "Створити подію"
+msgstr ""
 
 #: src/Application.vala:35
 msgid "Focus the given day"
-msgstr "Зосередитись на цьому дні"
+msgstr ""
 
 #: src/Application.vala:35
 msgid "date"
-msgstr "дата"
+msgstr ""
 
 #: src/Application.vala:178
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
-"Календар автоматично запускатиметься, коли пристрій увімкнеться, і "
-"працюватиме, коли його вікно буде закрито, щоб надсилати сповіщення про "
-"події."
 
 #: src/Application.vala:209
 msgid "Calendar"
-msgstr "Календар"
+msgstr ""
 
 #: src/ImportDialog.vala:28
 msgid "Select a Calendar to Import Into"
-msgstr "Виберіть календар для імпорту"
+msgstr ""
 
 #: src/ImportDialog.vala:44
 #, c-format
 msgid "Events from \"%s\" will be merged with this calendar:"
-msgstr "Події з «%s» буде об'єднано з цим календарем:"
+msgstr ""
 
 #: src/ImportDialog.vala:47
 #, c-format
 msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
-msgstr[0] "Події із %d файлу буде об'єднано з цим календарем:"
-msgstr[1] "Події з %d файлів буде об'єднано з цим календарем:"
-msgstr[2] "Події з %d файлів буде об'єднано з цим календарем:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/ImportDialog.vala:61
 msgid "Import"
-msgstr "Імпорт"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:64
 msgid "Add Event"
-msgstr "Додати подію"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:67
 msgid "Edit Event"
-msgstr "Змінити подію"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:120
 msgid "General Informations"
-msgstr "Основні відомості"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:121
 msgid "Location"
-msgstr "Розташування"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:122
 msgid "Guests"
-msgstr "Запрошені"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:38
 msgid "Reminders"
-msgstr "Нагадування"
+msgstr ""
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
 msgctxt "Section Header"
 msgid "Repeat"
-msgstr "Повторення"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:146
 msgid "Delete Event…"
-msgstr "Видалити подію…"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
-msgstr "Створити подію"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:164
 msgid "Save Changes"
-msgstr "Зберегти зміни"
+msgstr ""
 
 #: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
-msgstr "Скасувати"
+msgstr ""
 
 #: src/EventEdition/GuestGrid.vala:45
 msgid "Accepted"
-msgstr "Прийнято"
+msgstr ""
 
 #: src/EventEdition/GuestGrid.vala:49
 msgid "Declined"
-msgstr "Відхилено"
+msgstr ""
 
 #: src/EventEdition/GuestGrid.vala:53
 msgid "Maybe"
-msgstr "Можливо"
+msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:53
 msgid "Participants:"
-msgstr "Учасники:"
+msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:57
 msgid "No Participants"
-msgstr "Немає учасників"
+msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:96
 msgid "Invite"
-msgstr "Запросити"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:80
 msgid "From:"
-msgstr "Від:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:92
 msgid "All day:"
-msgstr "Весь день:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:103
 msgid "To:"
-msgstr "До:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Time zone:"
-msgstr "Часовий пояс:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:118
 msgid "Name of Event"
-msgstr "Назва події"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:121
 msgid "Title:"
-msgstr "Заголовок:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:134
 msgid "Press enter to parse event"
-msgstr "Натисніть Enter для розбору події"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:172
 msgid "Calendar:"
-msgstr "Календар:"
+msgstr ""
 
 #: src/EventEdition/InfoPanel.vala:189
 msgid "Comments:"
-msgstr "Примітки:"
+msgstr ""
 
 #: src/EventEdition/LocationPanel.vala:50
 msgid "Location:"
-msgstr "Розташування:"
+msgstr ""
 
 #: src/EventEdition/LocationPanel.vala:52
 msgid "John Smith OR Example St."
-msgstr "Василь Петрович чи вул. Хрещатик."
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
-msgstr "Немає нагадувань"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:50
 msgid "Add Reminder"
-msgstr "Створити нагадування"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:169
 msgid "At time of event"
-msgstr "Під час події"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:170
 msgid "1 minute before"
-msgstr "за хвилину до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:171
 msgid "5 minutes before"
-msgstr "за 5 хвилин до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:172
 msgid "10 minutes before"
-msgstr "за 10 хвилин до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:173
 msgid "15 minutes before"
-msgstr "за 15 хвилин до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:174
 msgid "20 minutes before"
-msgstr "за 20 хвилин до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:175
 msgid "25 minutes before"
-msgstr "за 25 хвилин до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:176
 msgid "30 minutes before"
-msgstr "за 30 хвилин до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:177
 msgid "45 minutes before"
-msgstr "за 45 хвилин до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:178
 msgid "1 hour before"
-msgstr "за годину до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:179
 msgid "2 hours before"
-msgstr "за 2 години до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:180
 msgid "3 hours before"
-msgstr "за 3 години до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:181
 msgid "12 hours before"
-msgstr "за 12 годин до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:182
 msgid "24 hours before"
-msgstr "за 24 години до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:183
 msgid "2 days before"
-msgstr "за 2 дні до"
+msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:184
 msgid "1 week before"
-msgstr "за тиждень до"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:52
 msgid "Repeat:"
-msgstr "Повторювати:"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:57
 msgid "Daily"
-msgstr "Щодня"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:58
 msgid "Weekly"
-msgstr "Щотижня"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:59
 msgid "Monthly"
-msgstr "Щомісяця"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:60
 msgid "Yearly"
-msgstr "Щороку"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:104
 msgid "Every:"
-msgstr "Через:"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:111
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] "День"
-msgstr[1] "Дні"
-msgstr[2] "Днів"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] "Тиждень"
-msgstr[1] "Тижні"
-msgstr[2] "Тижнів"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/EventEdition/RepeatPanel.vala:117
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] "Місяць"
-msgstr[1] "Місяці"
-msgstr[2] "Місяців"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/EventEdition/RepeatPanel.vala:120
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] "Рік"
-msgstr[1] "Роки"
-msgstr[2] "Років"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/EventEdition/RepeatPanel.vala:135
 msgid "Ends:"
-msgstr "Завершується:"
+msgstr ""
 
 #. /Translators: Give a word to describe an event ending after a certain number of repeats.
 #. /This will be displayed in the format like: "Ends After 2 Repeats",
@@ -406,463 +394,460 @@ msgstr "Завершується:"
 #: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
 msgid "Repeat"
 msgid_plural "Repeats"
-msgstr[0] "Повтор"
-msgstr[1] "Повтори"
-msgstr[2] "Повторів"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/EventEdition/RepeatPanel.vala:144
 msgid "Never"
-msgstr "Ніколи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:145
 msgid "Until"
-msgstr "До"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:146
 msgid "After"
-msgstr "Через"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:193
 msgid "The same day every month"
-msgstr "Однаковий день щомісяця"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:204
 msgid "Exceptions:"
-msgstr "Винятки:"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:206
 msgid "No Exceptions"
-msgstr "Немає винятків"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:222
 msgid "Add Exception"
-msgstr "Додати виняток"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:385
 msgid "Every last Sunday"
-msgstr "Кожної останньої неділі"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:388
 msgid "Every last Monday"
-msgstr "Кожного останнього понеділка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:391
 msgid "Every last Tuesday"
-msgstr "Кожного останнього вівторка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:394
 msgid "Every last Wednesday"
-msgstr "Кожної останньої середи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:397
 msgid "Every last Thursday"
-msgstr "Кожного останнього четверга"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:400
 msgid "Every last Friday"
-msgstr "Кожної останньої п’ятниці"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:403
 msgid "Every last Saturday"
-msgstr "Кожної останньої суботи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:410
 msgid "Every first Sunday"
-msgstr "Кожної першої неділі"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:413
 msgid "Every first Monday"
-msgstr "Кожного першого понеділка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:416
 msgid "Every first Tuesday"
-msgstr "Кожного першого вівторка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:419
 msgid "Every first Wednesday"
-msgstr "Кожної першої середи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:422
 msgid "Every first Thursday"
-msgstr "Кожного першого четверга"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:425
 msgid "Every first Friday"
-msgstr "Кожної першої п’ятниці"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:428
 msgid "Every first Saturday"
-msgstr "Кожної першої суботи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:435
 msgid "Every second Sunday"
-msgstr "Кожної другої неділі"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:438
 msgid "Every second Monday"
-msgstr "Кожного другого понеділка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:441
 msgid "Every second Tuesday"
-msgstr "Кожного другого вівторка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:444
 msgid "Every second Wednesday"
-msgstr "Кожної другої середи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:447
 msgid "Every second Thursday"
-msgstr "Кожного другого четверга"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:450
 msgid "Every second Friday"
-msgstr "Кожної другої п’ятниці"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:453
 msgid "Every second Saturday"
-msgstr "Кожної другої суботи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:460
 msgid "Every third Sunday"
-msgstr "Кожної третьої неділі"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:463
 msgid "Every third Monday"
-msgstr "Кожного третього понеділка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:466
 msgid "Every third Tuesday"
-msgstr "Кожного третього вівторка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:469
 msgid "Every third Wednesday"
-msgstr "Кожної третьої середи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:472
 msgid "Every third Thursday"
-msgstr "Кожного третього четверга"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:475
 msgid "Every third Friday"
-msgstr "Кожної третьої п’ятниці"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:478
 msgid "Every third Saturday"
-msgstr "Кожної третьої суботи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:485
 msgid "Every fourth Sunday"
-msgstr "Кожної четвертої неділі"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:488
 msgid "Every fourth Monday"
-msgstr "Кожного четвертого понеділка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:491
 msgid "Every fourth Tuesday"
-msgstr "Кожного четвертого вівторка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:494
 msgid "Every fourth Wednesday"
-msgstr "Кожної четвертої середи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:497
 msgid "Every fourth Thursday"
-msgstr "Кожного четвертого четверга"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:500
 msgid "Every fourth Friday"
-msgstr "Кожної четвертої п’ятниці"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:503
 msgid "Every fourth Saturday"
-msgstr "Кожної четвертої суботи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:510
 msgid "Every fifth Sunday"
-msgstr "Кожної п’ятої неділі"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:513
 msgid "Every fifth Monday"
-msgstr "Кожного п’ятого понеділка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:516
 msgid "Every fifth Tuesday"
-msgstr "Кожного п’ятого вівторка"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:519
 msgid "Every fifth Wednesday"
-msgstr "Кожної п’ятої середи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:522
 msgid "Every fifth Thursday"
-msgstr "Кожного п’ятого четверга"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:525
 msgid "Every fifth Friday"
-msgstr "Кожної п’ятої п’ятниці"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:528
 msgid "Every fifth Saturday"
-msgstr "Кожної п’ятої суботи"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:538
 msgid "Mon"
-msgstr "Пн"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:539
 msgid "Tue"
-msgstr "Вт"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:540
 msgid "Wed"
-msgstr "Ср"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:541
 msgid "Thu"
-msgstr "Чт"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:542
 msgid "Fri"
-msgstr "Пт"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:543
 msgid "Sat"
-msgstr "Сб"
+msgstr ""
 
 #: src/EventEdition/RepeatPanel.vala:544
 msgid "Sun"
-msgstr "Нд"
+msgstr ""
 
 #: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
 msgid "Export Calendar…"
-msgstr "Експортувати календар…"
+msgstr ""
 
 #: src/Grid/CalendarView.vala:131
 msgid "Go to today's date"
-msgstr "Перейти до сьогоднішньої дати"
+msgstr ""
 
 #: src/Grid/CalendarView.vala:149
 msgid "Export or Share the default Calendar"
-msgstr "Експортувати чи поділитись типовим календарем"
+msgstr ""
 
 #: src/Grid/CalendarView.vala:157
 msgid "Manage Calendars"
-msgstr "Керувати календарями"
+msgstr ""
 
 #: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
-msgstr "Зберегти"
+msgstr ""
 
 #: src/Grid/CalendarView.vala:244
 msgid "calendar.ics"
-msgstr "календар.ics"
+msgstr ""
 
 #: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
 msgid "Show Week Numbers"
-msgstr "Показувати номери тижнів"
+msgstr ""
 
 #: src/Grid/VAutoHider.vala:109
 #, c-format
 msgid "%u more…"
-msgstr "%u більше…"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
-msgstr "Створити"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:62
 msgid "e.g. “Work” or “Personal”"
-msgstr "наприклад “Робота” or “Особистий”"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
-msgstr "Назва календаря"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:96
 msgid "Type"
-msgstr "Тип"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:121
 msgid "Blueberry"
-msgstr "Чорничний"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:128
 msgid "Mint"
-msgstr "М'ятний"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:135
 msgid "Lime"
-msgstr "Лаймовий"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:142
 msgid "Banana"
-msgstr "Банановий"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:149
 msgid "Orange"
-msgstr "Помаранчевий"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:156
 msgid "Strawberry"
-msgstr "Полуничний"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:163
 msgid "Bubblegum"
-msgstr "Жуйковий"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:170
 msgid "Grape"
-msgstr "Виноградний"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:177
 msgid "Cocoa"
-msgstr "Какаовий"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:184
 msgid "Slate"
-msgstr "Сланцевий"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:205
 msgid "Color"
-msgstr "Колір"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:215
 msgid "Mark as default calendar"
-msgstr "Позначити типовим календарем"
+msgstr ""
 
 #: src/SourceDialog/SourceDialog.vala:280
 msgid "Create Calendar"
-msgstr "Створити календар"
+msgstr ""
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:67
 msgid "appointment;meeting"
-msgstr "зустріч;зібрання;збори;мітинг;рандеву"
+msgstr ""
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:72
 msgid "birthday;anniversary;party"
-msgstr "день народження;вечірка;річниця;ювілей;гулянка;гостини"
+msgstr ""
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:77
 msgid "call;phone;telephone;ring"
-msgstr "телефонувати;дзвонити;телефон;дзвінок;слухавка"
+msgstr ""
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:82
 msgid "bar;cocktails;drinks;happy hour"
-msgstr "бар;коктейль;напої;пиття;щаслива година"
+msgstr ""
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:87
 msgid "car;drive;driving;road trip;"
-msgstr "автомобіль;їхати;водіння;подорож;водити;машина;авто;"
+msgstr ""
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:92
 msgid "flight;airport;"
-msgstr "політ;аеропорт;літак;"
+msgstr ""
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:97
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
-msgstr "сніданок;обід;вечеря;страва;пікнік;шашлик;сало;борщ;голубці"
+msgstr ""
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:102
 msgid "court;jury;tax;attorney;lawyer;contract"
-msgstr "суд;суддя;прокурор;адвокат;юрист;правозахисник;договір"
+msgstr ""
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:107
 msgid "movie;film"
-msgstr "кіно;фільм;стрічка"
+msgstr ""
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:112
 msgid "wedding"
-msgstr "весілля;заміжжя;одруження"
+msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
 #: src/Widgets/AgendaEventRow.vala:323
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
-msgstr "%s – %s"
+msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:326
 #, c-format
 msgid "%s, %s – %s, %s"
-msgstr "%s, %s – %s, %s"
+msgstr ""
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
-msgstr "%s – %s"
+msgstr ""
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:347
 #, c-format
 msgid "%s at %s"
-msgstr "%s о %s"
+msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:350
 #, c-format
 msgid "%s, %s – %s"
-msgstr "%s, %s – %s"
+msgstr ""
 
 #: src/Widgets/CalendarChooser.vala:53
 msgid "Search Calendars"
-msgstr "Знайти календар"
+msgstr ""
 
 #: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
-msgstr "Немає результатів"
+msgstr ""
 
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
-msgstr "Спробуйте змінити ключові слова."
+msgstr ""
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
-msgstr "Мережа недоступна."
+msgstr ""
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
-"Під'єднайтеся до інтернету, щоб переглянути додаткову інформацію та нові "
-"події з онлайн-календарів."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
-msgstr "Налаштування мережі…"
+msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:13
 msgid "Delete this occurrence of event?"
-msgstr "Видалити подію з серії?"
+msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr "Видалити з серії подію «%s»?"
+msgstr ""
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -870,246 +855,87 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
-"Подія з серії буде назавжди видалена, але всі інші події в серії залишаться "
-"без змін."
 
 #: src/Widgets/DeleteDialog.vala:18
 msgid "Delete Occurrence"
-msgstr "Видалити подію з серії"
+msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
 msgid "Delete event?"
-msgstr "Видалити подію?"
+msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
 #, c-format
 msgid "Delete event “%s”?"
-msgstr "Видалити подію «%s»?"
+msgstr ""
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr "Ця подія та всі її повторення будуть видалені назавжди."
+msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:30 src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
-msgstr "Видалити подію"
+msgstr ""
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
 msgid "This event will be permanently deleted."
-msgstr "Ця подія буде видалена назавжди."
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
-msgstr "Змінити…"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:37
 msgid "Duplicate…"
-msgstr "Дублювати…"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:42
 msgid "Remove Event"
-msgstr "Вилучити подію"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:44
 msgid "Remove Occurrence"
-msgstr "Вилучити подію"
+msgstr ""
 
 #: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
 msgid "Remove"
-msgstr "Вилучити"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:44
 msgid "Add New Calendar…"
-msgstr "Створити новий календар…"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:48
 msgid "Import iCalendar File…"
-msgstr "Імпортувати файл iCalendar…"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
-msgstr "Налаштування онлайнових облікових записів…"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:79
 msgid "Select ICS File to Import"
-msgstr "Виберіть файл ICS для імпорту"
+msgstr ""
 
 #: src/Widgets/SourcePopover.vala:82
 msgid "Open"
-msgstr "Відкрити"
+msgstr ""
 
 #: src/Widgets/SourceRow.vala:64
 msgid "Not Removable"
-msgstr "Незнімний"
+msgstr ""
 
 #: src/Widgets/SourceRow.vala:69
 msgid "Not Editable"
-msgstr "Не редагується"
+msgstr ""
 
 #: src/Widgets/SourceRow.vala:87
 msgid "Undo"
-msgstr "Повернути"
+msgstr ""
 
 #: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
 #, c-format
 msgid "\"%s\" removed"
-msgstr "«%s» вилучено"
-
-#~ msgid "Hide Week Numbers"
-#~ msgstr "Сховати номери тижнів"
-
-#~ msgid "User"
-#~ msgstr "Користувач"
-
-#~ msgid "john@doe.com"
-#~ msgstr "john@doe.com"
-
-#~ msgid "Name"
-#~ msgstr "Назва"
-
-#~ msgid "Email:"
-#~ msgstr "Ел. пошта:"
-
-#~ msgid "Reminders:"
-#~ msgstr "Нагадування:"
-
-#~ msgid "Print debug information"
-#~ msgstr "Показати відомості зневадження"
-
-#~ msgid "%B %e, %Y"
-#~ msgstr "%B %e, %Y"
-
-#, fuzzy
-#~ msgid "%a, %b %d"
-#~ msgstr "%A, %b %d"
-
-#~ msgid "0 minutes"
-#~ msgstr "0 хвилин"
-
-#~ msgid "Notification"
-#~ msgstr "Сповіщення"
-
-#, fuzzy
-#~ msgid "%s - %s"
-#~ msgstr "%s, %s - %s, %s"
-
-#~ msgid "Import events from \"%s\" into the following calendar:"
-#~ msgstr "Імпортувати події з \"%s\" в наступний календар:"
-
-#~ msgid "Search Events"
-#~ msgstr "Знайти Подію"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Launchpad Contributions:\n"
-#~ "  Asteo https://launchpad.net/~disterion-h\n"
-#~ "  Bogdan Lisnenko https://launchpad.net/~lem8r\n"
-#~ "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-#~ "  Leo Milano https://launchpad.net/~leonardomilano13\n"
-#~ "  Max_ym https://launchpad.net/~kontact-cat\n"
-#~ "  Mykola https://launchpad.net/~mykaua\n"
-#~ "  Roman Sytnyk https://launchpad.net/~roman-sytnyk\n"
-#~ "  Sergey Kostyuk https://launchpad.net/~ks-hot-ua\n"
-#~ "  Sergii Cynailo https://launchpad.net/~funeral20\n"
-#~ "  Sho0ter https://launchpad.net/~sho0ter\n"
-#~ "  Victor Markin https://launchpad.net/~marvic\n"
-#~ "  sawka6600 https://launchpad.net/~sawik87\n"
-#~ "  Ярослав Смук https://launchpad.net/~yalvex"
-
-#~ msgid "View and schedule events"
-#~ msgstr "Показати та скласти розклад подій"
-
-#~ msgid "Maya;Planner;Dates;Days;Events;"
-#~ msgstr "Maya;Планування;Планувальник;Planner;Дати;Дні;Dates;Days;Події;Events;Calendar;Календар;"
-
-#~ msgid "About Maya"
-#~ msgstr "Про Maya"
-
-#~ msgid "About Calendar"
-#~ msgstr "Про Календар"
-
-#~ msgid "Contacts"
-#~ msgstr "Контакти"
-
-#~ msgid "Personal"
-#~ msgstr "Особисте"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
-
-#~ msgid "Title"
-#~ msgstr "Назва"
-
-#~ msgid "Participants"
-#~ msgstr "Учасники"
-
-#~ msgid "Your event has to be named and has to have a valid date"
-#~ msgstr "Ваша подія повинна мати назву та коректний час"
-
-#~ msgid "Edit the selected event"
-#~ msgstr "Редагувати обрану подію"
-
-#~ msgid "Comments"
-#~ msgstr "Коментарі"
-
-#~ msgid "%l:%M %p"
-#~ msgstr "%l:%M %p"
-
-#~ msgid "Today"
-#~ msgstr "Сьогодні"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Повноекранний режим"
-
-#~ msgid "Import..."
-#~ msgstr "Імпортувати..."
-
-#~ msgid "Add calendar"
-#~ msgstr "Додати календар"
-
-#~ msgid "Webcal"
-#~ msgstr "Календар в інтеренеті"
-
-#~ msgid "_Add Event"
-#~ msgstr "Додати подію"
-
-#~ msgid "About"
-#~ msgstr "Про програму"
-
-#~ msgid "at"
-#~ msgstr "в"
-
-#~ msgid "all day"
-#~ msgstr "весь день"
-
-#~ msgid "$more more ..."
-#~ msgstr "$more більше ..."
-
-#~ msgid "Ends: \t"
-#~ msgstr "Закінчується: \t"
-
-#~ msgid "Starts: \t"
-#~ msgstr "Починається: \t"
-
-#~ msgid "Sync..."
-#~ msgstr "Синхронізувати..."
-
-#~ msgid "Name or Email Address"
-#~ msgstr "Ім'я або Електорнна Пошта"
-
-#~ msgid "Days"
-#~ msgstr "Дні"
-
-#~ msgid "Months"
-#~ msgstr "Місяці"
-
-#~ msgid "Years"
-#~ msgstr "Років"
-
-#~ msgid "Repeats"
-#~ msgstr "Повторів"
-
-#~ msgid "Weeks"
-#~ msgstr "Тижнів"
+msgstr ""
