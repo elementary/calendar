@@ -5,7 +5,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.Widgets.DynamicSpinner : Gtk.Bin {
+public class Maya.View.Widgets.DynamicSpinner : Granite.Bin {
     private Gtk.ListBox list_box;
     private Gtk.Revealer revealer;
 
