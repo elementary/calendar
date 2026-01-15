@@ -115,30 +115,6 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         }
     }
 
-    public override bool configure_event (Gdk.EventConfigure event) {
-        if (configure_id != 0) {
-            GLib.Source.remove (configure_id);
-        }
-
-        configure_id = Timeout.add (100, () => {
-            configure_id = 0;
-
-            if (is_maximized) {
-                Maya.Application.saved_state.set_boolean ("window-maximized", true);
-            } else {
-                Maya.Application.saved_state.set_boolean ("window-maximized", false);
-
-                Gdk.Rectangle rect;
-                get_allocation (out rect);
-                Maya.Application.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
-            }
-
-            return GLib.Source.REMOVE;
-        });
-
-        return base.configure_event (event);
-    }
-
     public override bool delete_event (Gdk.EventAny event) {
         ((Application) application).ask_for_background.begin ((obj, res) => {
             unowned var app = (Application) obj;
