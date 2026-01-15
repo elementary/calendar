@@ -21,7 +21,7 @@
 /**
  * Represent the week labels at the left side of the grid.
  */
-public class Maya.View.WeekLabels : Gtk.Revealer {
+public class Maya.View.WeekLabels : Gtk.Bin {
     private Gtk.Grid day_grid;
     private Gtk.Label[] labels;
     private int nr_of_weeks;
@@ -44,9 +44,6 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
     }
 
     construct {
-        transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;
-        vexpand = true;
-
         day_grid = new Gtk.Grid ();
         set_nr_of_weeks (5);
         day_grid.insert_row (1);
@@ -59,7 +56,15 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
         day_grid_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         day_grid_context.add_class ("weeks");
 
-        show_weeks.bind ("show-weeks", this, "reveal-child", GLib.SettingsBindFlags.DEFAULT);
+        var revealer = new Gtk.Revealer () {
+            child = day_grid,
+            transition_type = SLIDE_RIGHT
+        };
+
+        child = revealer;
+        vexpand = true;
+
+        show_weeks.bind ("show-weeks", revealer, "reveal-child", GLib.SettingsBindFlags.DEFAULT);
 
         var action_show_weeks = show_weeks.create_action ("show-weeks");
 
@@ -75,7 +80,7 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
             attach_widget = this
         };
 
-        click_gesture = new Gtk.GestureMultiPress (this) {
+        click_gesture = new Gtk.GestureMultiPress (revealer) {
             button = 0
         };
         click_gesture.pressed.connect ((n_press, x, y) => {
@@ -102,8 +107,6 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
             long_press_gesture.set_state (CLAIMED);
             long_press_gesture.reset ();
         });
-
-        add (day_grid);
     }
 
     public void update (DateTime date, int nr_of_weeks) {
