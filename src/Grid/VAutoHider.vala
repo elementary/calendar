@@ -20,7 +20,7 @@
  */
 
 namespace Maya.View {
-    public class VAutoHider : Gtk.EventBox {
+    public class VAutoHider : Gtk.Bin {
 
         Gtk.Label more_label;
         Gtk.Box main_box;
