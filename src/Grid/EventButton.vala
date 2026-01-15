@@ -27,6 +27,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
     private Gtk.StyleContext grid_style_context;
 
     private Gtk.GestureMultiPress click_gesture;
+    private Gtk.GestureLongPress long_press_gesture;
 
     public EventButton (ECal.Component comp) {
         Object (
@@ -75,20 +76,30 @@ public class Maya.View.EventButton : Gtk.Revealer {
             }
 
             if (event.triggers_context_menu ()) {
-                E.Source src = comp.get_data ("source");
-
-                bool sensitive = src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false;
-
                 var menu = new Maya.EventMenu (comp);
                 menu.attach_to_widget (this, null);
 
-                // context_menu.halign = START;
                 menu.popup_at_pointer (event);
-                menu.show_all ();
 
                 click_gesture.set_state (CLAIMED);
                 click_gesture.reset ();
             }
+        });
+
+        long_press_gesture = new Gtk.GestureLongPress (this) {
+            touch_only = true
+        };
+        long_press_gesture.pressed.connect ((x, y) => {
+            var sequence = long_press_gesture.get_current_sequence ();
+            var event = long_press_gesture.get_last_event (sequence);
+
+            var menu = new Maya.EventMenu (comp);
+            menu.attach_to_widget (this, null);
+
+            menu.popup_at_pointer (event);
+
+            long_press_gesture.set_state (CLAIMED);
+            long_press_gesture.reset ();
         });
 
         Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
