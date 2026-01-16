@@ -26,9 +26,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
     private Gtk.Label label;
     private Gtk.StyleContext grid_style_context;
 
-    private Gtk.GestureMultiPress click_gesture;
-    private Gtk.GestureLongPress long_press_gesture;
-
     public EventButton (ECal.Component comp) {
         Object (
              comp: comp
@@ -61,7 +58,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
         add (event_box);
 
-        click_gesture = new Gtk.GestureMultiPress (this) {
+        var click_gesture = new Gtk.GestureClick () {
             button = 0
         };
         click_gesture.pressed.connect ((n_press, x, y) => {
@@ -86,7 +83,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
             }
         });
 
-        long_press_gesture = new Gtk.GestureLongPress (this) {
+        var long_press_gesture = new Gtk.GestureLongPress () {
             touch_only = true
         };
         long_press_gesture.pressed.connect ((x, y) => {
@@ -101,6 +98,9 @@ public class Maya.View.EventButton : Gtk.Revealer {
             long_press_gesture.set_state (CLAIMED);
             long_press_gesture.reset ();
         });
+
+        add_controller (click_gesture);
+        add_controller (long_press_gesture);
 
         Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
         Gtk.TargetEntry dnd2 = {"text/uri-list", 0, 0};
