@@ -238,6 +238,9 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         child = revealer;
 
+        var context_menu = Maya.EventMenu.build (calevent);
+        context_menu.attach_to_widget (this, null);
+
         var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
         reload_css (cal.dup_color ());
@@ -266,10 +269,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             var event = click_gesture.get_last_event (sequence);
 
             if (event.triggers_context_menu ()) {
-                var menu = new Maya.EventMenu (calevent);
-                menu.attach_to_widget (this, null);
-
-                menu.popup_at_pointer (event);
+                context_menu.popup_at_pointer (event);
 
                 click_gesture.set_state (CLAIMED);
                 click_gesture.reset ();
@@ -283,10 +283,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             var sequence = long_press_gesture.get_current_sequence ();
             var event = long_press_gesture.get_last_event (sequence);
 
-            var menu = new Maya.EventMenu (calevent);
-            menu.attach_to_widget (this, null);
-
-            menu.popup_at_pointer (event);
+            context_menu.popup_at_pointer (event);
 
             long_press_gesture.set_state (CLAIMED);
             long_press_gesture.reset ();
