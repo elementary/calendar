@@ -15,6 +15,9 @@ public class Maya.View.EventButton : Gtk.Bin {
     private Gtk.Label label;
     private Gtk.StyleContext grid_style_context;
 
+    private Gtk.GestureMultiPress click_gesture;
+    private Gtk.GestureLongPress long_press_gesture;
+
     public EventButton (ECal.Component comp) {
         Object (
              comp: comp
@@ -42,9 +45,6 @@ public class Maya.View.EventButton : Gtk.Bin {
         grid_style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var event_box = new Gtk.EventBox ();
-        event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        event_box.events |= Gdk.EventMask.SCROLL_MASK;
-        event_box.events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         event_box.add (internal_grid);
 
         revealer = new Gtk.Revealer () {
@@ -54,24 +54,45 @@ public class Maya.View.EventButton : Gtk.Bin {
 
         child = revealer;
 
-        event_box.button_press_event.connect ((event) => {
-            if (event.type == Gdk.EventType.2BUTTON_PRESS && event.button == Gdk.BUTTON_PRIMARY) {
+        click_gesture = new Gtk.GestureMultiPress (this) {
+            button = 0
+        };
+        click_gesture.pressed.connect ((n_press, x, y) => {
+            var sequence = click_gesture.get_current_sequence ();
+            var event = click_gesture.get_last_event (sequence);
+
+            if (n_press == 2 && click_gesture.get_current_button () == Gdk.BUTTON_PRIMARY) {
                 ((Maya.Application) GLib.Application.get_default ()).window.on_modified (comp);
-            } else if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-                E.Source src = comp.get_data ("source");
+                click_gesture.set_state (CLAIMED);
+                click_gesture.reset ();
+                return;
+            }
 
-                bool sensitive = src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false;
-
+            if (event.triggers_context_menu ()) {
                 var menu = new Maya.EventMenu (comp);
                 menu.attach_to_widget (this, null);
 
                 menu.popup_at_pointer (event);
-                menu.show_all ();
-            } else {
-                return false;
-            }
 
-            return true;
+                click_gesture.set_state (CLAIMED);
+                click_gesture.reset ();
+            }
+        });
+
+        long_press_gesture = new Gtk.GestureLongPress (this) {
+            touch_only = true
+        };
+        long_press_gesture.pressed.connect ((x, y) => {
+            var sequence = long_press_gesture.get_current_sequence ();
+            var event = long_press_gesture.get_last_event (sequence);
+
+            var menu = new Maya.EventMenu (comp);
+            menu.attach_to_widget (this, null);
+
+            menu.popup_at_pointer (event);
+
+            long_press_gesture.set_state (CLAIMED);
+            long_press_gesture.reset ();
         });
 
         Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
