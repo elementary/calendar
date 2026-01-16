@@ -1,28 +1,14 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2026 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
+public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
     private EventDialog parent_dialog;
 
     private Gtk.SearchEntry location_entry;
-    private Gtk.EntryCompletion location_completion;
     private Gtk.ListStore location_store;
     private GtkChamplain.Embed champlain_embed;
     private Maya.Marker point;
@@ -39,26 +25,12 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
     public LocationPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
 
-        margin_start = 12;
-        margin_end = 12;
-        set_row_spacing (6);
-        set_column_spacing (12);
-        set_sensitive (parent_dialog.can_edit);
-
         location_store = new Gtk.ListStore (2, typeof (string), typeof (string));
 
-        var location_label = new Granite.HeaderLabel (_("Location:"));
-        location_entry = new Gtk.SearchEntry ();
-        location_entry.placeholder_text = _("John Smith OR Example St.");
-        location_entry.hexpand = true;
-        location_entry.activate.connect (() => {compute_location.begin (location_entry.text);});
-        attach (location_label, 0, 0, 1, 1);
-        attach (location_entry, 0, 1, 1, 1);
-
-        location_completion = new Gtk.EntryCompletion ();
-        location_completion.set_minimum_key_length (3);
-        location_entry.set_completion (location_completion);
-
+        var location_completion = new Gtk.EntryCompletion () {
+            minimum_key_length = 3,
+            model = location_store
+        };
         location_completion.set_match_func ((completion, key, iter) => {
             Value val1, val2;
             Gtk.ListStore model = (Gtk.ListStore)completion.get_model ();
@@ -71,24 +43,25 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
 
             return false;
         });
-        location_completion.set_model (location_store);
         location_completion.set_text_column (0);
         location_completion.set_text_column (1);
         location_completion.match_selected.connect ((model, iter) => suggestion_selected (model, iter));
 
+        location_entry = new Gtk.SearchEntry () {
+            completion = location_completion,
+            hexpand = true,
+            placeholder_text = _("John Smith OR Example St.")
+        };
+        location_entry.activate.connect (() => {
+            compute_location.begin (location_entry.text);
+        });
+
+        var location_label = new Granite.HeaderLabel (_("Location:")) {
+            mnemonic_widget = location_entry
+        };
+
         champlain_embed = new GtkChamplain.Embed ();
-        var view = champlain_embed.champlain_view;
-        var marker_layer = new Champlain.MarkerLayer.full (Champlain.SelectionMode.SINGLE);
-        view.add_layer (marker_layer);
 
-        load_contact.begin ();
-
-        var frame = new Gtk.Frame (null);
-        frame.add (champlain_embed);
-
-        attach (frame, 0, 2, 1, 1);
-
-        // Load the location
         point = new Maya.Marker ();
         point.draggable = parent_dialog.can_edit;
         point.drag_finish.connect (() => {
@@ -96,6 +69,32 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             find_location.begin (point.latitude, point.longitude);
         });
 
+        var marker_layer = new Champlain.MarkerLayer.full (SINGLE);
+        marker_layer.add_marker (point);
+
+        var view = champlain_embed.champlain_view;
+        view.zoom_level = 10;
+
+        view.goto_animation_duration = 500;
+        view.add_layer (marker_layer);
+        view.center_on (point.latitude, point.longitude);
+
+        load_contact.begin ();
+
+        var frame = new Gtk.Frame (null) {
+            child = champlain_embed
+        };
+
+        margin_start = 12;
+        margin_end = 12;
+        orientation = VERTICAL;
+        spacing = 6;
+        sensitive = parent_dialog.can_edit;
+        add (location_label);
+        add (location_entry);
+        add (frame);
+
+        // Load the location
         if (parent_dialog.ecal != null) {
             unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
             unowned string location = comp.get_location ();
@@ -130,11 +129,6 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
                 }
             }
         }
-
-        view.zoom_level = 10;
-        view.goto_animation_duration = 500;
-        view.center_on (point.latitude, point.longitude);
-        marker_layer.add_marker (point);
 
         destroy.connect (() => {
             if (search_cancellable != null)
@@ -231,8 +225,10 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
     }
 
     private async void discover_location () {
-        if (search_cancellable != null)
+        if (search_cancellable != null) {
             search_cancellable.cancel ();
+        }
+
         search_cancellable = new GLib.Cancellable ();
         try {
             var simple = yield new GClue.Simple ("io.elementary.calendar", GClue.AccuracyLevel.CITY, null);

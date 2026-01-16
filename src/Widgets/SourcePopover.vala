@@ -101,7 +101,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
 
                 if (files != null) {
                     var dialog = new Maya.View.ImportDialog (files);
-                    dialog.show_all ();
+                    dialog.present ();
                 }
             });
 

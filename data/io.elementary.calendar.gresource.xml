@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/elementary/calendar/">
-    <file alias="AgendaEventRow.css" compressed="true">style/AgendaEventRow.css</file>
-    <file alias="Grid.css" compressed="true">style/Grid.css</file>
-    <file alias="Header.css" compressed="true">style/Header.css</file>
-    <file alias="WeekLabels.css" compressed="true">style/WeekLabels.css</file>
+    <file compressed="true">Application.css</file>
   </gresource>
   <gresource prefix="/io/elementary/calendar/icons">
     <file alias="scalable/categories/event-appointment-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/event-appointment-symbolic.svg</file>
