@@ -46,12 +46,7 @@ public class Maya.View.CalendarView : Gtk.Box {
     private Gtk.Label spacer { get; private set; }
     private static GLib.Settings show_weeks;
 
-    private static Gtk.CssProvider style_provider;
-
     static construct {
-        style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_resource ("/io/elementary/calendar/WeekLabels.css");
-
         if (Application.wingpanel_settings != null) {
             show_weeks = Application.wingpanel_settings;
         } else {
@@ -343,10 +338,7 @@ public class Maya.View.CalendarView : Gtk.Box {
     Gtk.Grid create_big_grid () {
         spacer = new Gtk.Label ("");
         spacer.no_show_all = true;
-
-        unowned Gtk.StyleContext spacer_context = spacer.get_style_context ();
-        spacer_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        spacer_context.add_class ("weeks");
+        spacer.get_style_context ().add_class ("weeks");
 
         weeks = new WeekLabels ();
 

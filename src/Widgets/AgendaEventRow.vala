@@ -171,16 +171,12 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             split_keywords ((Category)cat);
         }
 
-        var css_provider = new Gtk.CssProvider ();
-        css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
-
         event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU) {
             pixel_size = 16,
             valign = START
         };
 
         event_image_context = event_image.get_style_context ();
-        event_image_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         name_label = new Gtk.Label ("") {
             selectable = false,
@@ -191,7 +187,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         var name_label_context = name_label.get_style_context ();
         name_label_context.add_class ("title");
-        name_label_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         datetime_label = new Gtk.Label ("") {
             ellipsize = END,
@@ -229,7 +224,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         main_grid_context = main_grid.get_style_context ();
         main_grid_context.add_class ("event");
-        main_grid_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var event_box = new Gtk.EventBox () {
             child = main_grid

@@ -21,8 +21,6 @@
 public class Maya.View.EventButton : Gtk.Revealer {
     public ECal.Component comp { get; construct set; }
 
-    private static Gtk.CssProvider css_provider;
-
     private Gtk.Label label;
     private Gtk.StyleContext grid_style_context;
 
@@ -30,11 +28,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
         Object (
              comp: comp
          );
-    }
-
-    static construct {
-        css_provider = new Gtk.CssProvider ();
-        css_provider.load_from_resource ("/io/elementary/calendar/AgendaEventRow.css");
     }
 
     construct {
@@ -51,7 +44,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
         grid_style_context = internal_grid.get_style_context ();
         grid_style_context.add_class ("event");
-        grid_style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var event_box = new Gtk.EventBox ();
         event_box.add (internal_grid);

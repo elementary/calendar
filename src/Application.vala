@@ -66,6 +66,15 @@ namespace Maya {
             Granite.init ();
             Adw.init ();
 
+            var style_provider = new Gtk.CssProvider ();
+            style_provider.load_from_resource ("/io/elementary/calendar/Application.css");
+
+            Gtk.StyleContext.add_provider_for_screen (
+                Gdk.Screen.get_default (),
+                style_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            );
+
             var granite_settings = Granite.Settings.get_default ();
             var gtk_settings = Gtk.Settings.get_default ();
 
@@ -121,7 +130,7 @@ namespace Maya {
             calmodel.load_all_sources ();
 
             init_gui ();
-            window.show_all ();
+            window.present ();
 
             if (add_event) {
                 Idle.add (() => {
@@ -137,14 +146,14 @@ namespace Maya {
                 calmodel.load_all_sources ();
 
                 init_gui ();
-                window.show_all ();
+                window.present ();
             } else {
                 get_windows ().data.present (); // present window if app is already running
             }
 
             var dialog = new Maya.View.ImportDialog (files);
             dialog.transient_for = window;
-            dialog.show_all ();
+            dialog.present ();
         }
 
         /**
