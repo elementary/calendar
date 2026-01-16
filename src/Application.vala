@@ -129,7 +129,7 @@ namespace Maya {
             calmodel.load_all_sources ();
 
             init_gui ();
-            window.show_all ();
+            window.present ();
 
             if (add_event) {
                 Idle.add (() => {
@@ -145,14 +145,14 @@ namespace Maya {
                 calmodel.load_all_sources ();
 
                 init_gui ();
-                window.show_all ();
+                window.present ();
             } else {
                 get_windows ().data.present (); // present window if app is already running
             }
 
             var dialog = new Maya.View.ImportDialog (files);
             dialog.transient_for = window;
-            dialog.show_all ();
+            dialog.present ();
         }
 
         /**
