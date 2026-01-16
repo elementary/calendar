@@ -6,7 +6,7 @@
  *              Corentin Noël <corentin@elementary.io>
  */
 
-public class Maya.MainWindow : Hdy.ApplicationWindow {
+public class Maya.MainWindow : Gtk.ApplicationWindow {
     public View.CalendarView calview;
 
     public const string ACTION_PREFIX = "win.";
@@ -57,7 +57,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         child = hpaned;
         show_all ();
 
-        var header_group = new Hdy.HeaderGroup ();
+        var header_group = new Adw.HeaderGroup ();
         header_group.add_header_bar (calview.header_bar);
         header_group.add_header_bar (sidebar.header_bar);
 
@@ -114,30 +114,6 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
         } else {
             Gdk.beep ();
         }
-    }
-
-    public override bool configure_event (Gdk.EventConfigure event) {
-        if (configure_id != 0) {
-            GLib.Source.remove (configure_id);
-        }
-
-        configure_id = Timeout.add (100, () => {
-            configure_id = 0;
-
-            if (is_maximized) {
-                Maya.Application.saved_state.set_boolean ("window-maximized", true);
-            } else {
-                Maya.Application.saved_state.set_boolean ("window-maximized", false);
-
-                Gdk.Rectangle rect;
-                get_allocation (out rect);
-                Maya.Application.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
-            }
-
-            return GLib.Source.REMOVE;
-        });
-
-        return base.configure_event (event);
     }
 
     public override bool delete_event (Gdk.EventAny event) {

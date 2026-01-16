@@ -63,7 +63,8 @@ namespace Maya {
         protected override void startup () {
             base.startup ();
 
-            Hdy.init ();
+            Granite.init ();
+            Adw.init ();
 
             var style_provider = new Gtk.CssProvider ();
             style_provider.load_from_resource ("/io/elementary/calendar/Application.css");
@@ -159,16 +160,22 @@ namespace Maya {
          * Initializes the graphical window and its components
          */
         void init_gui () {
-            var rect = Gtk.Allocation ();
-            saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
-
             window = new MainWindow (this);
             window.title = _(Build.APP_NAME);
-            window.set_allocation (rect);
 
-            if (saved_state.get_boolean ("window-maximized")) {
+            /*
+            * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
+            * Set maximize after height/width else window is min size on unmaximize
+            * Bind maximize as SET else get get bad sizes
+            */
+            settings.bind ("window-height", window, "default-height", SettingsBindFlags.DEFAULT);
+            settings.bind ("window-width", window, "default-width", SettingsBindFlags.DEFAULT);
+
+            if (settings.get_boolean ("window-maximized")) {
                 window.maximize ();
             }
+
+            settings.bind ("window-maximized", main_window, "maximized", SettingsBindFlags.SET);
 
             window.destroy.connect (on_quit);
         }

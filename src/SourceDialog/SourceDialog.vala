@@ -34,17 +34,17 @@ public class Maya.View.SourceDialog : Granite.Dialog {
     private Gtk.CheckButton is_default_check;
     private E.Source source = null;
 
-    private Gtk.RadioButton color_button_blue;
-    private Gtk.RadioButton color_button_mint;
-    private Gtk.RadioButton color_button_green;
-    private Gtk.RadioButton color_button_yellow;
-    private Gtk.RadioButton color_button_orange;
-    private Gtk.RadioButton color_button_red;
-    private Gtk.RadioButton color_button_pink;
-    private Gtk.RadioButton color_button_purple;
-    private Gtk.RadioButton color_button_brown;
-    private Gtk.RadioButton color_button_slate;
-    private Gtk.RadioButton color_button_none;
+    private Gtk.CheckButton color_button_blue;
+    private Gtk.CheckButton color_button_mint;
+    private Gtk.CheckButton color_button_green;
+    private Gtk.CheckButton color_button_yellow;
+    private Gtk.CheckButton color_button_orange;
+    private Gtk.CheckButton color_button_red;
+    private Gtk.CheckButton color_button_pink;
+    private Gtk.CheckButton color_button_purple;
+    private Gtk.CheckButton color_button_brown;
+    private Gtk.CheckButton color_button_slate;
+    private Gtk.CheckButton color_button_none;
 
     public signal void go_back ();
 
@@ -117,76 +117,76 @@ public class Maya.View.SourceDialog : Granite.Dialog {
 
         type_combobox.set_active (0);
 
-        color_button_blue = new Gtk.RadioButton (null) {
+        color_button_blue = new Gtk.CheckButton (null) {
             tooltip_text = _("Blueberry")
         };
         color_button_blue.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_blue.get_style_context ().add_class ("blue");
 
-        color_button_mint = new Gtk.RadioButton (null) {
+        color_button_mint = new Gtk.CheckButton (null) {
             group = color_button_blue,
             tooltip_text = _("Mint")
         };
         color_button_mint.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_mint.get_style_context ().add_class ("mint");
 
-        color_button_green = new Gtk.RadioButton (null) {
+        color_button_green = new Gtk.CheckButton (null) {
             group = color_button_blue,
             tooltip_text = _("Lime")
         };
         color_button_green.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_green.get_style_context ().add_class ("green");
 
-        color_button_yellow = new Gtk.RadioButton (null) {
+        color_button_yellow = new Gtk.CheckButton (null) {
             group = color_button_blue,
             tooltip_text = _("Banana")
         };
         color_button_yellow.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_yellow.get_style_context ().add_class ("yellow");
 
-        color_button_orange = new Gtk.RadioButton (null) {
+        color_button_orange = new Gtk.CheckButton (null) {
             group = color_button_blue,
             tooltip_text = _("Orange")
         };
         color_button_orange.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_orange.get_style_context ().add_class ("orange");
 
-        color_button_red = new Gtk.RadioButton (null) {
+        color_button_red = new Gtk.CheckButton (null) {
             group = color_button_blue,
             tooltip_text = _("Strawberry")
         };
         color_button_red.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_red.get_style_context ().add_class ("red");
 
-        color_button_pink = new Gtk.RadioButton (null) {
+        color_button_pink = new Gtk.CheckButton (null) {
             group = color_button_blue,
             tooltip_text = _("Bubblegum")
         };
         color_button_pink.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_pink.get_style_context ().add_class ("pink");
 
-        color_button_purple = new Gtk.RadioButton (null) {
+        color_button_purple = new Gtk.CheckButton (null) {
             group = color_button_blue,
             tooltip_text = _("Grape")
         };
         color_button_purple.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_purple.get_style_context ().add_class ("purple");
 
-        color_button_brown = new Gtk.RadioButton (null) {
+        color_button_brown = new Gtk.CheckButton (null) {
             group = color_button_blue,
             tooltip_text = _("Cocoa")
         };
         color_button_brown.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_brown.get_style_context ().add_class ("brown");
 
-        color_button_slate = new Gtk.RadioButton (null) {
+        color_button_slate = new Gtk.CheckButton (null) {
             group = color_button_blue,
             tooltip_text = _("Slate")
         };
         color_button_slate.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         color_button_slate.get_style_context ().add_class ("slate");
 
-        color_button_none = new Gtk.RadioButton (null) {
+        color_button_none = new Gtk.CheckButton (null) {
             group = color_button_blue
         };
 

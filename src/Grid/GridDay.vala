@@ -9,7 +9,7 @@
 /**
  * Represents a single day on the grid.
  */
-public class Maya.View.GridDay : Gtk.EventBox {
+public class Maya.View.GridDay : Granite.Bin {
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
@@ -22,7 +22,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
     private VAutoHider event_box;
     private GLib.HashTable<string, EventButton> event_buttons;
     private Gtk.EventControllerKey key_controller;
-    private Gtk.GestureMultiPress click_gesture;
+    private Gtk.GestureClick click_gesture;
 
     public bool in_current_month {
         set {
@@ -62,7 +62,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         get_style_context ().add_class ("cell");
 
-        click_gesture = new Gtk.GestureMultiPress (this) {
+        click_gesture = new Gtk.GestureClick (this) {
             button = Gdk.BUTTON_PRIMARY,
             propagation_phase = BUBBLE
         };
