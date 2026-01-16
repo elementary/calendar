@@ -267,7 +267,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     }
 
     private void on_button_press (int n_press, double x, double y) {
-        var menu = new Maya.EventMenu (calevent);
+        var menu = Maya.EventMenu.build (calevent);
         menu.attach_to_widget (this, null);
         menu.popup_at_pointer ();
     }
