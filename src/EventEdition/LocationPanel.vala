@@ -80,14 +80,14 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Grid {
             map_source = registry.get_by_id (Shumate.MAP_SOURCE_OSM_MAPNIK)
         };
 
-        var marker_layer = new Shumate.MarkerLayer.full (simple_map.viewport, SINGLE);;
+        var marker_layer = new Shumate.MarkerLayer.full (simple_map.viewport, SINGLE);
 
         var view = simple_map.viewport;
         view.zoom_level = 10;
 
         var map = simple_map.map;
         map.go_to_duration = 500;
-        map.add_layer (marker_layer););
+        map.add_layer (marker_layer);
         map.center_on (point.latitude, point.longitude);
 
         load_contact.begin ();
