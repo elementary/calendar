@@ -1,0 +1,117 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2018-2025 elementary, Inc. (https://elementary.io)
+ */
+
+.daylabel {
+    padding: 3px;
+    border-left: solid 1px @menu_separator;
+}
+
+.daylabel:first-child {
+    border-left: none;
+}
+
+.daylabel:dir(rtl) {
+    border-right: solid 1px @menu_separator;
+    border-left: none;
+}
+
+.daylabel:first-child:dir(rtl) {
+    border-right: none;
+}
+
+.weeks {
+    border-right: solid 1px @menu_separator;
+}
+
+.weeks:dir(rtl) {
+    border-left: solid 1px @menu_separator;
+    border-right: none;
+}
+
+.weeklabel {
+    border-top: solid 1px @menu_separator;
+    padding: 3px;
+}
+
+.cell {
+    background-color: @base_color;
+    border-radius: 0;
+    border-top: solid 1px @menu_separator;
+    border-left: solid 1px @menu_separator;
+    color: @fg_color;
+}
+
+.cell:dir(rtl) {
+    border-right: solid 1px @menu_separator;
+    border-left: none;
+}
+
+.cell.dim-label {
+    background-color: @bg_color;
+}
+
+.cell.firstcol {
+    border-left: none;
+}
+
+.cell.firstcol:dir(rtl) {
+    border-right: none;
+}
+
+.cell:selected #date {
+    background-color: shade(@bg_color, 0.86);
+    color: @fg_color;
+}
+
+.cell > box {
+    margin: 3px;
+}
+
+.event {
+    background: @selected_bg_color;
+    border-radius: 3px;
+    color: @selected_fg_color;
+    padding: 6px;
+}
+
+.cell .event {
+    padding: 3px 6px;
+    margin-bottom: 3px;
+}
+
+.cell.dim-label .event {
+    background: alpha (@base_color, 0.7);
+    color: @text_color;
+}
+
+.event .title {
+    font-weight: 600;
+}
+
+row:selected .event {
+    background: @base_color;
+    background-image: linear-gradient(to right, @selected_bg_color, @selected_bg_color);
+    box-shadow:
+       0 1px 2px alpha (#000, 0.2),
+       0 1px 3px alpha (@selected_bg_color, 0.15);
+   color: @selected_fg_color;
+}
+
+#date {
+    border-radius: 50%;
+    min-height: 24px;
+    min-width: 24px;
+}
+
+#today #date {
+    background-color: alpha (@accent_color, 0.15);
+    color: @accent_color;
+    font-weight: 700;
+}
+
+#today:selected #date {
+    background-color: @accent_color;
+    color: #fff;
+}

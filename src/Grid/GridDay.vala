@@ -38,17 +38,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
         Object (date: date);
     }
 
-    static construct {
-        var style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_resource ("/io/elementary/calendar/Grid.css");
-
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
-            style_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
-    }
-
     construct {
         event_buttons = new GLib.HashTable<string, EventButton>.full (str_hash, str_equal, null, (value_data) => {
             ((EventButton)value_data).destroy_button ();
