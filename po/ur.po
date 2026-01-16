@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 07:32+0000\n"
+"POT-Creation-Date: 2026-01-16 19:23+0000\n"
 "PO-Revision-Date: 2016-10-08 19:47+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,13 +119,13 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: src/Application.vala:178
+#: src/Application.vala:187
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:209
+#: src/Application.vala:218
 msgid "Calendar"
 msgstr ""
 
@@ -192,7 +192,7 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:235
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "منسوخ کریں"
@@ -257,12 +257,12 @@ msgstr ""
 msgid "Comments:"
 msgstr ""
 
-#: src/EventEdition/LocationPanel.vala:50
-msgid "Location:"
+#: src/EventEdition/LocationPanel.vala:53
+msgid "John Smith OR Example St."
 msgstr ""
 
-#: src/EventEdition/LocationPanel.vala:52
-msgid "John Smith OR Example St."
+#: src/EventEdition/LocationPanel.vala:59
+msgid "Location:"
 msgstr ""
 
 #: src/EventEdition/ReminderPanel.vala:22
@@ -622,32 +622,32 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
+#: src/Grid/CalendarView.vala:99 src/Grid/CalendarView.vala:231
 #, fuzzy
 msgid "Export Calendar…"
 msgstr "تقویم بنائیں"
 
-#: src/Grid/CalendarView.vala:131
+#: src/Grid/CalendarView.vala:126
 msgid "Go to today's date"
 msgstr ""
 
-#: src/Grid/CalendarView.vala:149
+#: src/Grid/CalendarView.vala:144
 msgid "Export or Share the default Calendar"
 msgstr ""
 
-#: src/Grid/CalendarView.vala:157
+#: src/Grid/CalendarView.vala:152
 msgid "Manage Calendars"
 msgstr ""
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:234 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "محفوظ کریں"
 
-#: src/Grid/CalendarView.vala:244
+#: src/Grid/CalendarView.vala:239
 msgid "calendar.ics"
 msgstr ""
 
-#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
+#: src/Grid/WeekLabels.vala:69 src/Grid/Header.vala:77
 msgid "Show Week Numbers"
 msgstr ""
 
@@ -789,33 +789,33 @@ msgid "wedding"
 msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:323
+#: src/Widgets/AgendaEventRow.vala:317
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:326
+#: src/Widgets/AgendaEventRow.vala:320
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr ""
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:338
+#: src/Widgets/AgendaEventRow.vala:332
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr ""
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:347
+#: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:350
+#: src/Widgets/AgendaEventRow.vala:344
 #, c-format
 msgid "%s, %s – %s"
 msgstr ""
@@ -891,24 +891,24 @@ msgstr ""
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
+#: src/Widgets/EventMenu.vala:49 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "تدوین کریں۔۔۔"
 
-#: src/Widgets/EventMenu.vala:37
+#: src/Widgets/EventMenu.vala:53
 msgid "Duplicate…"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:42
+#: src/Widgets/EventMenu.vala:59
 #, fuzzy
 msgid "Remove Event"
 msgstr "ہٹا دیں"
 
-#: src/Widgets/EventMenu.vala:44
+#: src/Widgets/EventMenu.vala:63
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
+#: src/Widgets/EventMenu.vala:69 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "ہٹا دیں"
 
@@ -942,11 +942,11 @@ msgstr "ہٹا دیں"
 msgid "Not Editable"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:83
 msgid "Undo"
 msgstr "کالعدم کریں"
 
-#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
+#: src/Widgets/SourceRow.vala:91 src/Widgets/SourceRow.vala:142
 #, c-format
 msgid "\"%s\" removed"
 msgstr ""

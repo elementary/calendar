@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 07:32+0000\n"
+"POT-Creation-Date: 2026-01-16 19:23+0000\n"
 "PO-Revision-Date: 2018-11-03 22:51+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/calendar/"
@@ -129,13 +129,13 @@ msgstr "Fokusiraj zadani dan"
 msgid "date"
 msgstr "datum"
 
-#: src/Application.vala:178
+#: src/Application.vala:187
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 
-#: src/Application.vala:209
+#: src/Application.vala:218
 msgid "Calendar"
 msgstr "Kalendar"
 
@@ -205,7 +205,7 @@ msgstr "napraviti dogadjaj"
 msgid "Save Changes"
 msgstr "Sačuvaj promjene"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:235
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "Otkaži"
@@ -270,13 +270,13 @@ msgstr "Kalendar:"
 msgid "Comments:"
 msgstr "Komentari:"
 
-#: src/EventEdition/LocationPanel.vala:50
-msgid "Location:"
-msgstr "Lokacija:"
-
-#: src/EventEdition/LocationPanel.vala:52
+#: src/EventEdition/LocationPanel.vala:53
 msgid "John Smith OR Example St."
 msgstr "John Smith ili Primjer Skr."
+
+#: src/EventEdition/LocationPanel.vala:59
+msgid "Location:"
+msgstr "Lokacija:"
 
 #: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
@@ -656,31 +656,31 @@ msgstr "Sub"
 msgid "Sun"
 msgstr "Ned"
 
-#: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
+#: src/Grid/CalendarView.vala:99 src/Grid/CalendarView.vala:231
 msgid "Export Calendar…"
 msgstr "Izvezi kalendar…"
 
-#: src/Grid/CalendarView.vala:131
+#: src/Grid/CalendarView.vala:126
 msgid "Go to today's date"
 msgstr "Pređi na današnji datum"
 
-#: src/Grid/CalendarView.vala:149
+#: src/Grid/CalendarView.vala:144
 msgid "Export or Share the default Calendar"
 msgstr "Eksportuj ili podijeli podrazumijevani kalendar"
 
-#: src/Grid/CalendarView.vala:157
+#: src/Grid/CalendarView.vala:152
 msgid "Manage Calendars"
 msgstr "Upravljaj kalendarima"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:234 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "Sačuvaj"
 
-#: src/Grid/CalendarView.vala:244
+#: src/Grid/CalendarView.vala:239
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
+#: src/Grid/WeekLabels.vala:69 src/Grid/Header.vala:77
 msgid "Show Week Numbers"
 msgstr "Prikaži brojeve sedmica"
 
@@ -822,33 +822,33 @@ msgid "wedding"
 msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:323
+#: src/Widgets/AgendaEventRow.vala:317
 #, fuzzy, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s, %s - %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:326
+#: src/Widgets/AgendaEventRow.vala:320
 #, fuzzy, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:338
+#: src/Widgets/AgendaEventRow.vala:332
 #, fuzzy, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s, %s - %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:347
+#: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:350
+#: src/Widgets/AgendaEventRow.vala:344
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
@@ -928,23 +928,23 @@ msgstr "Obriši događaj"
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
+#: src/Widgets/EventMenu.vala:49 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "Uredi…"
 
-#: src/Widgets/EventMenu.vala:37
+#: src/Widgets/EventMenu.vala:53
 msgid "Duplicate…"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:42
+#: src/Widgets/EventMenu.vala:59
 msgid "Remove Event"
 msgstr "Ukloni događaj"
 
-#: src/Widgets/EventMenu.vala:44
+#: src/Widgets/EventMenu.vala:63
 msgid "Remove Occurrence"
 msgstr "Ukloni ovo ponavljanje događaja"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
+#: src/Widgets/EventMenu.vala:69 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "Ukloni"
 
@@ -978,11 +978,11 @@ msgstr "Ukloni"
 msgid "Not Editable"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:83
 msgid "Undo"
 msgstr "Nazad"
 
-#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
+#: src/Widgets/SourceRow.vala:91 src/Widgets/SourceRow.vala:142
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Kalendar \"%s\" uklonjen."
