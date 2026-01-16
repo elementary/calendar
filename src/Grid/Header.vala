@@ -31,6 +31,9 @@ public class Header : Gtk.EventBox {
     private static GLib.Settings show_weeks;
     private static Gtk.CssProvider style_provider;
 
+    private Gtk.GestureMultiPress click_gesture;
+    private Gtk.GestureLongPress long_press_gesture;
+
     static construct {
         style_provider = new Gtk.CssProvider ();
         style_provider.load_from_resource ("/io/elementary/calendar/Header.css");
@@ -43,8 +46,6 @@ public class Header : Gtk.EventBox {
     }
 
     construct {
-        events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-
         header_grid = new Gtk.Grid ();
         header_grid.insert_column (7);
         header_grid.insert_row (1);
@@ -85,12 +86,32 @@ public class Header : Gtk.EventBox {
             attach_widget = this
         };
 
-        button_press_event.connect ((event) => {
-            if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-                gtk_menu.popup_at_pointer (event);
-            }
+        click_gesture = new Gtk.GestureMultiPress (this) {
+            button = 0
+        };
+        click_gesture.pressed.connect ((n_press, x, y) => {
+            var sequence = click_gesture.get_current_sequence ();
+            var event = click_gesture.get_last_event (sequence);
 
-            return false;
+            if (event.triggers_context_menu ()) {
+                gtk_menu.popup_at_pointer (event);
+
+                click_gesture.set_state (CLAIMED);
+                click_gesture.reset ();
+            }
+        });
+
+        long_press_gesture = new Gtk.GestureLongPress (this) {
+            touch_only = true
+        };
+        long_press_gesture.pressed.connect ((x, y) => {
+            var sequence = long_press_gesture.get_current_sequence ();
+            var event = long_press_gesture.get_last_event (sequence);
+
+            gtk_menu.popup_at_pointer (event);
+
+            long_press_gesture.set_state (CLAIMED);
+            long_press_gesture.reset ();
         });
     }
 
