@@ -27,15 +27,11 @@ public class Maya.View.WeekLabels : Gtk.Bin {
     private int nr_of_weeks;
 
     private static GLib.Settings show_weeks;
-    private static Gtk.CssProvider style_provider;
 
     private Gtk.GestureMultiPress click_gesture;
     private Gtk.GestureLongPress long_press_gesture;
 
     static construct {
-        style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_resource ("/io/elementary/calendar/WeekLabels.css");
-
         if (Application.wingpanel_settings != null) {
             show_weeks = Application.wingpanel_settings;
         } else {
@@ -51,9 +47,6 @@ public class Maya.View.WeekLabels : Gtk.Bin {
 
         set_nr_of_weeks (5);
         day_grid.insert_row (1);
-
-        unowned Gtk.StyleContext day_grid_context = day_grid.get_style_context ();
-        day_grid_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var revealer = new Gtk.Revealer () {
             child = day_grid,
@@ -123,9 +116,6 @@ public class Maya.View.WeekLabels : Gtk.Bin {
                     width_chars = 2
                 };
                 labels[c].get_style_context ().add_class ("weeklabel");
-
-                unowned Gtk.StyleContext label_context = labels[c].get_style_context ();
-                label_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
                 day_grid.attach (labels[c], 0, c);
                 labels[c].show ();

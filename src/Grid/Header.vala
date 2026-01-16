@@ -29,15 +29,11 @@ public class Header : Gtk.EventBox {
     private Gtk.Label[] labels;
 
     private static GLib.Settings show_weeks;
-    private static Gtk.CssProvider style_provider;
 
     private Gtk.GestureMultiPress click_gesture;
     private Gtk.GestureLongPress long_press_gesture;
 
     static construct {
-        style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_resource ("/io/elementary/calendar/Header.css");
-
         if (Application.wingpanel_settings != null) {
             show_weeks = Application.wingpanel_settings;
         } else {
@@ -56,7 +52,6 @@ public class Header : Gtk.EventBox {
 
         // EventBox properties
         set_visible_window (true); // needed for style
-        get_style_context ().add_provider (style_provider, 600);
 
         labels = new Gtk.Label[7];
         for (int c = 0; c < 7; c++) {
@@ -64,7 +59,6 @@ public class Header : Gtk.EventBox {
             labels[c].hexpand = true;
 
             unowned Gtk.StyleContext label_context = labels[c].get_style_context ();
-            label_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             label_context.add_class ("daylabel");
 
             header_grid.attach (labels[c], c, 0);
