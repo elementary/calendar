@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 07:32+0000\n"
+"POT-Creation-Date: 2026-01-16 19:23+0000\n"
 "PO-Revision-Date: 2024-07-10 19:16+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -127,7 +127,7 @@ msgstr "Zamerať na daný deň"
 msgid "date"
 msgstr "dátum"
 
-#: src/Application.vala:178
+#: src/Application.vala:187
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -136,7 +136,7 @@ msgstr ""
 "keď bude okno aplikácie zatvorené, aby mohol posielať oznámenia o "
 "udalostiach."
 
-#: src/Application.vala:209
+#: src/Application.vala:218
 msgid "Calendar"
 msgstr "Kalendár"
 
@@ -205,7 +205,7 @@ msgstr "Vytvoriť udalosť"
 msgid "Save Changes"
 msgstr "Uložiť zmeny"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:235
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "Zrušiť"
@@ -270,13 +270,13 @@ msgstr "Kalendár:"
 msgid "Comments:"
 msgstr "Komentáre:"
 
-#: src/EventEdition/LocationPanel.vala:50
-msgid "Location:"
-msgstr "Miesto:"
-
-#: src/EventEdition/LocationPanel.vala:52
+#: src/EventEdition/LocationPanel.vala:53
 msgid "John Smith OR Example St."
 msgstr "Jožko Mrkvička ALEBO Nová ul."
+
+#: src/EventEdition/LocationPanel.vala:59
+msgid "Location:"
+msgstr "Miesto:"
 
 #: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
@@ -640,31 +640,31 @@ msgstr "Sob"
 msgid "Sun"
 msgstr "Ned"
 
-#: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
+#: src/Grid/CalendarView.vala:99 src/Grid/CalendarView.vala:231
 msgid "Export Calendar…"
 msgstr "Exportovať kalendár…"
 
-#: src/Grid/CalendarView.vala:131
+#: src/Grid/CalendarView.vala:126
 msgid "Go to today's date"
 msgstr "Prejsť na dnešný dátum"
 
-#: src/Grid/CalendarView.vala:149
+#: src/Grid/CalendarView.vala:144
 msgid "Export or Share the default Calendar"
 msgstr "Exportovať alebo zdieľať základný kalendár"
 
-#: src/Grid/CalendarView.vala:157
+#: src/Grid/CalendarView.vala:152
 msgid "Manage Calendars"
 msgstr "Spravovať kalendáre"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:234 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "Uložiť"
 
-#: src/Grid/CalendarView.vala:244
+#: src/Grid/CalendarView.vala:239
 msgid "calendar.ics"
 msgstr "kalendar.ics"
 
-#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
+#: src/Grid/WeekLabels.vala:69 src/Grid/Header.vala:77
 msgid "Show Week Numbers"
 msgstr "Zobraziť čísla týždňov"
 
@@ -808,33 +808,33 @@ msgid "wedding"
 msgstr "svadba"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:323
+#: src/Widgets/AgendaEventRow.vala:317
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:326
+#: src/Widgets/AgendaEventRow.vala:320
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:338
+#: src/Widgets/AgendaEventRow.vala:332
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:347
+#: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s at %s"
 msgstr "%s o %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:350
+#: src/Widgets/AgendaEventRow.vala:344
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
@@ -912,23 +912,23 @@ msgstr "Odstrániť udalosť"
 msgid "This event will be permanently deleted."
 msgstr "Táto udalosť bude natrvalo odstránená."
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
+#: src/Widgets/EventMenu.vala:49 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "Upraviť…"
 
-#: src/Widgets/EventMenu.vala:37
+#: src/Widgets/EventMenu.vala:53
 msgid "Duplicate…"
 msgstr "Duplikovať…"
 
-#: src/Widgets/EventMenu.vala:42
+#: src/Widgets/EventMenu.vala:59
 msgid "Remove Event"
 msgstr "Odstrániť udalosť"
 
-#: src/Widgets/EventMenu.vala:44
+#: src/Widgets/EventMenu.vala:63
 msgid "Remove Occurrence"
 msgstr "Odstrániť výskyt"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
+#: src/Widgets/EventMenu.vala:69 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "Odstrániť"
 
@@ -960,11 +960,11 @@ msgstr "Neodstrániteľné"
 msgid "Not Editable"
 msgstr "Neupravovateľné"
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:83
 msgid "Undo"
 msgstr "Späť"
 
-#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
+#: src/Widgets/SourceRow.vala:91 src/Widgets/SourceRow.vala:142
 #, c-format
 msgid "\"%s\" removed"
 msgstr "„%s“ odstránené"
