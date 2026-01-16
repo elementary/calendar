@@ -37,7 +37,6 @@ public class Maya.EventMenu : Gtk.Menu {
         action_add_exception.set_enabled (sensitive);
         action_add_exception.activate.connect (add_exception);
 
-
         var action_group = new SimpleActionGroup ();
         action_group.add_action (action_edit);
         action_group.add_action (action_duplicate);
@@ -46,36 +45,19 @@ public class Maya.EventMenu : Gtk.Menu {
 
         insert_action_group ("event", action_group);
 
-        var edit_item = new Gtk.MenuItem.with_label (_("Edit…")) {
-            action_name = "event.edit"
-        };
+        var menu_model = new GLib.Menu ();
+        menu_model.append (_("Edit…"), "event.edit");
+        menu_model.append (_("Duplicate…"), "event.duplicate");
 
-        var duplicate_item = new Gtk.MenuItem.with_label (_("Duplicate…")) {
-            action_name = "event.duplicate"
-        };
-
-        Gtk.MenuItem remove_item;
-        if (comp.has_recurrences ()) {
-            remove_item = new Gtk.MenuItem.with_label (_("Remove Event")) {
-                action_name = "event.remove"
-            };
-
-            var exception_item = new Gtk.MenuItem.with_label (_("Remove Occurrence")) {
-                action_name = "event.add-exception"
-            };
-
-            append (exception_item);
-        } else {
-            remove_item = new Gtk.MenuItem.with_label (_("Remove")) {
-                action_name = "event.remove"
-            };
-        }
-
-        append (remove_item);
-        append (edit_item);
-        append (duplicate_item);
-
+        bind_model (menu_model, null, false);
         show_all ();
+
+        if (comp.has_recurrences ()) {
+            menu_model.prepend (_("Remove Event"), "event.remove");
+            menu_model.insert (1, _("Remove Occurrence"), "event.add-exception");
+        } else {
+            menu_model.prepend (_("Remove"), "event.remove");
+        }
     }
 
     private void remove_event () {
