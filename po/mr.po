@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 07:32+0000\n"
+"POT-Creation-Date: 2026-01-16 19:23+0000\n"
 "PO-Revision-Date: 2025-02-20 08:16+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/calendar/"
@@ -127,7 +127,7 @@ msgstr "दिलेला दिवस निर्देशित करा"
 msgid "date"
 msgstr "तारीख"
 
-#: src/Application.vala:178
+#: src/Application.vala:187
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -135,7 +135,7 @@ msgstr ""
 "जेव्हा हे डिव्हाइस चालू होईल तेव्हा कॅलेंडर स्वयंचलितपणे सुरू होईल आणि जेव्हा त्याची विंडो बंद "
 "असेल तेव्हा चालू असेल जेणेकरून ते इव्हेंट सूचना पाठवू शकेल."
 
-#: src/Application.vala:209
+#: src/Application.vala:218
 msgid "Calendar"
 msgstr "कॅलेंडर"
 
@@ -203,7 +203,7 @@ msgstr "घटना बनवा"
 msgid "Save Changes"
 msgstr "बदल सेव्ह करा"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:240
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:235
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "रद्द करा"
@@ -268,13 +268,13 @@ msgstr "कॅलेंडर:"
 msgid "Comments:"
 msgstr "टिका-टिप्पणी:"
 
-#: src/EventEdition/LocationPanel.vala:50
-msgid "Location:"
-msgstr "ठिकाण:"
-
-#: src/EventEdition/LocationPanel.vala:52
+#: src/EventEdition/LocationPanel.vala:53
 msgid "John Smith OR Example St."
 msgstr "John Smith किंवा Example St."
+
+#: src/EventEdition/LocationPanel.vala:59
+msgid "Location:"
+msgstr "ठिकाण:"
 
 #: src/EventEdition/ReminderPanel.vala:22
 msgid "No Reminders"
@@ -633,31 +633,31 @@ msgstr "शनि"
 msgid "Sun"
 msgstr "रवि"
 
-#: src/Grid/CalendarView.vala:104 src/Grid/CalendarView.vala:236
+#: src/Grid/CalendarView.vala:99 src/Grid/CalendarView.vala:231
 msgid "Export Calendar…"
 msgstr "एक्सपोर्ट कॅलेंडर…"
 
-#: src/Grid/CalendarView.vala:131
+#: src/Grid/CalendarView.vala:126
 msgid "Go to today's date"
 msgstr "आजची तारीख बघा"
 
-#: src/Grid/CalendarView.vala:149
+#: src/Grid/CalendarView.vala:144
 msgid "Export or Share the default Calendar"
 msgstr "डिफॉल्ट कॅलेंडर एक्स्पोर्ट अथवा शेअर करा"
 
-#: src/Grid/CalendarView.vala:157
+#: src/Grid/CalendarView.vala:152
 msgid "Manage Calendars"
 msgstr "कॅलेंडर्स मॅनेज करा"
 
-#: src/Grid/CalendarView.vala:239 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:234 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "सेव्ह करा"
 
-#: src/Grid/CalendarView.vala:244
+#: src/Grid/CalendarView.vala:239
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
-#: src/Grid/WeekLabels.vala:70 src/Grid/Header.vala:82
+#: src/Grid/WeekLabels.vala:69 src/Grid/Header.vala:77
 msgid "Show Week Numbers"
 msgstr "आठवडा क्रमांक दाखवा"
 
@@ -799,33 +799,33 @@ msgid "wedding"
 msgstr "लग्न"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:323
+#: src/Widgets/AgendaEventRow.vala:317
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:326
+#: src/Widgets/AgendaEventRow.vala:320
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:338
+#: src/Widgets/AgendaEventRow.vala:332
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:347
+#: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s at %s"
 msgstr "%s चे %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:350
+#: src/Widgets/AgendaEventRow.vala:344
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s"
@@ -900,23 +900,23 @@ msgstr "कार्यक्रम डिलीट करा"
 msgid "This event will be permanently deleted."
 msgstr "हा कार्यक्रम कायमचा हटवला जाईल."
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
+#: src/Widgets/EventMenu.vala:49 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "बदला…"
 
-#: src/Widgets/EventMenu.vala:37
+#: src/Widgets/EventMenu.vala:53
 msgid "Duplicate…"
 msgstr "नक्कल…"
 
-#: src/Widgets/EventMenu.vala:42
+#: src/Widgets/EventMenu.vala:59
 msgid "Remove Event"
 msgstr "आठवणीची खूण डिलीट करा"
 
-#: src/Widgets/EventMenu.vala:44
+#: src/Widgets/EventMenu.vala:63
 msgid "Remove Occurrence"
 msgstr "घटना काढा"
 
-#: src/Widgets/EventMenu.vala:50 src/Widgets/SourceRow.vala:64
+#: src/Widgets/EventMenu.vala:69 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "कॅलेंडर मिटवा"
 
@@ -948,11 +948,11 @@ msgstr "काढता येण्याजोगे नाही"
 msgid "Not Editable"
 msgstr "संपादनयोग्य नाही"
 
-#: src/Widgets/SourceRow.vala:87
+#: src/Widgets/SourceRow.vala:83
 msgid "Undo"
 msgstr "बदल काढा"
 
-#: src/Widgets/SourceRow.vala:95 src/Widgets/SourceRow.vala:146
+#: src/Widgets/SourceRow.vala:91 src/Widgets/SourceRow.vala:142
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" मिटविले"
