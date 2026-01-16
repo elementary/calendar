@@ -65,6 +65,15 @@ namespace Maya {
 
             Hdy.init ();
 
+            var style_provider = new Gtk.CssProvider ();
+            style_provider.load_from_resource ("/io/elementary/calendar/Application.css");
+
+            Gtk.StyleContext.add_provider_for_screen (
+                Gdk.Screen.get_default (),
+                style_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            );
+
             var granite_settings = Granite.Settings.get_default ();
             var gtk_settings = Gtk.Settings.get_default ();
 
