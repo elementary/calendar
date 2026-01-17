@@ -31,10 +31,6 @@ namespace Maya.View {
             main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             main_box.pack_end (more_label);
             base.add (main_box);
-
-            events |= Gdk.EventMask.SCROLL_MASK;
-            events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
-            scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
         }
 
         public override void add (Gtk.Widget widget) {
