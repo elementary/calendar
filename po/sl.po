@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-16 19:23+0000\n"
-"PO-Revision-Date: 2019-12-22 21:41+0000\n"
-"Last-Translator: Marko <marko.dolar@gmail.com>\n"
-"Language-Team: Slovenian <https://l10n.elementary.io/projects/calendar/"
+"PO-Revision-Date: 2026-01-20 15:55+0000\n"
+"Last-Translator: Jernej Virag <jernej@virag.si>\n"
+"Language-Team: Slovenian <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:15+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -30,14 +30,12 @@ msgid "user.name"
 msgstr "uporabniško.ime"
 
 #: core/Backends/PlacementWidget.vala:33
-#, fuzzy
-#| msgid "Calendar Name"
 msgid "User Name"
-msgstr "Ime koledarja"
+msgstr "Uporabniško ime"
 
 #: core/Backends/PlacementWidget.vala:50
 msgid "ellie@example.com"
-msgstr ""
+msgstr "novak@example.com"
 
 #: core/Backends/PlacementWidget.vala:57
 msgid "Email"
@@ -49,7 +47,7 @@ msgstr "Obdrži kopijo lokalno"
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr ""
+msgstr "Na spletu"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -64,10 +62,8 @@ msgid "CalDAV"
 msgstr "CalDAV"
 
 #: plugins/CalDAV/CalDAVBackend.vala:50
-#, fuzzy
-#| msgid "URL:"
 msgid "URL"
-msgstr "Naslov URL:"
+msgstr "Naslov URL"
 
 #: plugins/CalDAV/CalDAVBackend.vala:80
 msgid "Use a secure connection"
@@ -132,6 +128,8 @@ msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
+"Za potrebe pošiljanja obvestil se bo Koledar samodejno zagnal skupaj s to "
+"napravo in ostal zagnan tudi ko bo okno zaprto."
 
 #: src/Application.vala:218
 msgid "Calendar"
@@ -185,16 +183,13 @@ msgstr "Opomniki"
 
 #. /Translators: The name of the repeat panel tab
 #: src/EventEdition/EventDialog.vala:125
-#, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Ponavljanje"
 
 #: src/EventEdition/EventDialog.vala:146
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete Event…"
-msgstr "Izbriši dogodek"
+msgstr "Izbriši dogodek…"
 
 #: src/EventEdition/EventDialog.vala:161
 msgid "Create Event"
@@ -247,7 +242,7 @@ msgstr "Do:"
 
 #: src/EventEdition/InfoPanel.vala:111
 msgid "Time zone:"
-msgstr ""
+msgstr "Časovni pas:"
 
 #: src/EventEdition/InfoPanel.vala:118
 msgid "Name of Event"
@@ -683,63 +678,59 @@ msgstr "Ustvari"
 
 #: src/SourceDialog/SourceDialog.vala:62
 msgid "e.g. “Work” or “Personal”"
-msgstr ""
+msgstr "npr. \"Služben\" ali \"Oseben\""
 
 #: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
 msgstr "Ime koledarja"
 
 #: src/SourceDialog/SourceDialog.vala:96
-#, fuzzy
-#| msgid "Type:"
 msgid "Type"
-msgstr "Vrsta:"
+msgstr "Vrsta"
 
 #: src/SourceDialog/SourceDialog.vala:121
 msgid "Blueberry"
-msgstr ""
+msgstr "Borovnica"
 
 #: src/SourceDialog/SourceDialog.vala:128
 msgid "Mint"
-msgstr ""
+msgstr "Mentol"
 
 #: src/SourceDialog/SourceDialog.vala:135
 msgid "Lime"
-msgstr ""
+msgstr "Limeta"
 
 #: src/SourceDialog/SourceDialog.vala:142
 msgid "Banana"
-msgstr ""
+msgstr "Banana"
 
 #: src/SourceDialog/SourceDialog.vala:149
 msgid "Orange"
-msgstr ""
+msgstr "Pomaranča"
 
 #: src/SourceDialog/SourceDialog.vala:156
 msgid "Strawberry"
-msgstr ""
+msgstr "Jagoda"
 
 #: src/SourceDialog/SourceDialog.vala:163
 msgid "Bubblegum"
-msgstr ""
+msgstr "Žvečilni"
 
 #: src/SourceDialog/SourceDialog.vala:170
 msgid "Grape"
-msgstr ""
+msgstr "Grozdje"
 
 #: src/SourceDialog/SourceDialog.vala:177
 msgid "Cocoa"
-msgstr ""
+msgstr "Kakav"
 
 #: src/SourceDialog/SourceDialog.vala:184
 msgid "Slate"
-msgstr ""
+msgstr "Skrilavec"
 
 #: src/SourceDialog/SourceDialog.vala:205
-#, fuzzy
-#| msgid "Color:"
 msgid "Color"
-msgstr "Barva:"
+msgstr "Barva"
 
 #: src/SourceDialog/SourceDialog.vala:215
 msgid "Mark as default calendar"
@@ -800,9 +791,8 @@ msgstr "sodišče;porota;davek;odvetnik;odvetnica;pogodba"
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:107
-#, fuzzy
 msgid "movie;film"
-msgstr "film"
+msgstr "movie;film"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
@@ -834,7 +824,7 @@ msgstr "%s – %s"
 #: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s ob %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:344
@@ -856,28 +846,26 @@ msgstr "Poskusite spremeniti iskalni pojem."
 
 #: src/Widgets/ConnectivityInfoBar.vala:30
 msgid "Network Not Available."
-msgstr ""
+msgstr "Omrežje ni na voljo."
 
 #: src/Widgets/ConnectivityInfoBar.vala:31
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
-msgstr ""
+msgstr "Povežite se na internet za prikaz dodatnih podrobnosti in dogodkov."
 
 #: src/Widgets/ConnectivityInfoBar.vala:39
 msgid "Network Settings…"
-msgstr ""
+msgstr "Nastavitve omrežja…"
 
 #: src/Widgets/DeleteDialog.vala:13
-#, fuzzy
-#| msgid "Delete the selected event"
 msgid "Delete this occurrence of event?"
-msgstr "Izbriši izbrani dogodek"
+msgstr "Izbriši ta dogodek?"
 
 #: src/Widgets/DeleteDialog.vala:15
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
-msgstr ""
+msgstr "Izbriši ta dogodek “%s”?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:17
@@ -885,29 +873,26 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
+"Ta dogodek bo trajno izbrisan, ampak ostale ponovitve dogodka kasneje pa "
+"bodo ostale nespremenjene."
 
 #: src/Widgets/DeleteDialog.vala:18
-#, fuzzy
-#| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
 msgstr "Izbriši to ponovitev dogodka"
 
 #: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
-#, fuzzy
-#| msgid "Delete Event"
 msgid "Delete event?"
-msgstr "Izbriši dogodek"
+msgstr "Izbriši dogodek?"
 
 #: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
-#, fuzzy, c-format
-#| msgid "Delete Event"
+#, c-format
 msgid "Delete event “%s”?"
-msgstr "Izbriši dogodek"
+msgstr "Izbriši dogodek “%s”?"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:29
 msgid "This event and all its occurrences will be permanently deleted."
-msgstr ""
+msgstr "Ta dogodek in vse njegove ponovitve bodo trajno izbrisane."
 
 #: src/Widgets/DeleteDialog.vala:30 src/Widgets/DeleteDialog.vala:39
 msgid "Delete Event"
@@ -915,10 +900,8 @@ msgstr "Izbriši dogodek"
 
 #. Should question mark be in or out of quotes?
 #: src/Widgets/DeleteDialog.vala:38
-#, fuzzy
-#| msgid "This event can't be edited"
 msgid "This event will be permanently deleted."
-msgstr "Tega dogodka ni mogoče urediti."
+msgstr "Ta dogodek bo trajno izbrisan."
 
 #: src/Widgets/EventMenu.vala:49 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
@@ -926,7 +909,7 @@ msgstr "Uredi …"
 
 #: src/Widgets/EventMenu.vala:53
 msgid "Duplicate…"
-msgstr ""
+msgstr "Podvoji…"
 
 #: src/Widgets/EventMenu.vala:59
 msgid "Remove Event"
@@ -945,22 +928,20 @@ msgid "Add New Calendar…"
 msgstr "Dodaj nov koledar…"
 
 #: src/Widgets/SourcePopover.vala:48
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Izvozi koledar…"
+msgstr "Uvozi datoteko iCalendar…"
 
 #: src/Widgets/SourcePopover.vala:52
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "Nastavitve spletnih računov…"
 
 #: src/Widgets/SourcePopover.vala:79
-#, fuzzy
 msgid "Select ICS File to Import"
-msgstr "Izberite koledar v katerega bo uvoženo"
+msgstr "Izberite datoteko ICS za uvoz"
 
 #: src/Widgets/SourcePopover.vala:82
 msgid "Open"
-msgstr ""
+msgstr "Odpri"
 
 #: src/Widgets/SourceRow.vala:64
 msgid "Not Removable"
