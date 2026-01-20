@@ -73,8 +73,6 @@ public class Maya.View.GridDay : Granite.Bin {
         };
         key_controller.key_pressed.connect (on_key_press);
 
-        scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
-
         Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
         Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
 

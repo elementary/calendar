@@ -20,44 +20,41 @@
 
 // TODO: deprecate this in favor of the build-in Gtk 3.14 functions.
 namespace Maya.GesturesUtils {
-
     static bool has_scrolled = false;
     const uint INTERVAL = 500;
 
-    // public bool on_scroll_event (Gdk.EventScroll event) {
-    //     double delta_x;
-    //     double delta_y;
-    //     event.get_scroll_deltas (out delta_x, out delta_y);
+    public void on_scroll (Gtk.EventControllerScroll scroll_controller, double delta_x, double delta_y) {
+        double choice = delta_x;
+        if (((int)delta_x).abs () < ((int)delta_y).abs ()) {
+            choice = delta_y;
+        }
 
-    //     double choice = delta_x;
-    //     if (((int)delta_x).abs () < ((int)delta_y).abs ()) {
-    //         choice = delta_y;
-    //     }
+        // It's mouse scroll !
+        if (choice == 1 || choice == -1) {
+            Calendar.EventStore.get_default ().change_month ((int) choice);
+            scroll_controller.reset ();
+            return;
+        }
 
-    //     // It's mouse scroll !
-    //     if (choice == 1 || choice == -1) {
-    //         Calendar.EventStore.get_default ().change_month ((int) choice);
-    //         return true;
-    //     }
+        if (has_scrolled == true) {
+            scroll_controller.reset ();
+            return;
+        }
 
-    //     if (has_scrolled == true) {
-    //         return true;
-    //     }
+        if (choice > 0.3) {
+            reset_timer.begin ();
+            Calendar.EventStore.get_default ().change_month (1);
+            scroll_controller.reset ();
+            return;
+        }
 
-    //     if (choice > 0.3) {
-    //         reset_timer.begin ();
-    //         Calendar.EventStore.get_default ().change_month (1);
-    //         return true;
-    //     }
-
-    //     if (choice < -0.3) {
-    //         reset_timer.begin ();
-    //         Calendar.EventStore.get_default ().change_month (-1);
-    //         return true;
-    //     }
-
-    //     return false;
-    // }
+        if (choice < -0.3) {
+            reset_timer.begin ();
+            Calendar.EventStore.get_default ().change_month (-1);
+            scroll_controller.reset ();
+            return;
+        }
+    }
 
     public async void reset_timer () {
         has_scrolled = true;

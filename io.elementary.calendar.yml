@@ -78,8 +78,8 @@ modules:
       - -DENABLE_EXAMPLES=OFF
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.58/evolution-data-server-3.58.2.tar.xz
-        sha256: 6942ecfc39ebb36b0b4363adff00771c1c2dfa34f54e80ec92c3baa3feb020fb
+        url: https://download.gnome.org/sources/evolution-data-server/3.59/evolution-data-server-3.59.1.tar.xz
+        sha256: f4c178f6f87b4a44ddc553da636b7e874eb3ab93661d3f5ca3400ec9cb1c5f50
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -152,8 +152,8 @@ modules:
       - -Dinspect_tool=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/folks/0.15/folks-0.15.9.tar.xz
-        sha256: 2311b37355c351f33f163fdc394874a22a0a0682c319493d6d8a6e420711415f
+        url: https://download.gnome.org/sources/folks/0.15/folks-0.15.12.tar.xz
+        sha256: 21f44e2bdabb1ee7f8e41bb996d10ac7daf35c78c498177db0c00f580a20a914
         x-checker-data:
           type: gnome
           name: folks
