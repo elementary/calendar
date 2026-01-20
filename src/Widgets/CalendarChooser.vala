@@ -103,9 +103,9 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
             current_source = ((CalendarRow) (row.get_child ())).source;
 
             // Clear selected property
-            foreach (unowned Gtk.Widget deselect_row in list_box.get_children ()) {
-                var calrow = ((Gtk.ListBoxRow) deselect_row).get_child ();
-                ((CalendarRow) calrow).selected = false;
+            for (int i = 0; list_box.get_row_at_index (i) != null; i++) {
+                var calrow = (CalendarRow) list_box.get_row_at_index (i).get_child ();
+                calrow.selected = false;
             }
 
             // Select new row
@@ -114,9 +114,11 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
         });
 
         search_entry.activate.connect (() => {
-            foreach (unowned Gtk.Widget child in list_box.get_children ()) {
-                if (child.get_child_visible ()) {
-                    ((Gtk.ListBoxRow) child).activate ();
+            for (int i = 0; list_box.get_row_at_index (i) != null; i++) {
+                var row = list_box.get_row_at_index (i);
+                if (row.get_child_visible ()) {
+                    row.activate ();
+                    return;
                 }
             }
         });
