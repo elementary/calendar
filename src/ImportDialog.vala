@@ -52,11 +52,12 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
 
         calchooser = new Widgets.CalendarChooser ();
 
-        var frame = new Gtk.Frame (null);
-        frame.add (calchooser);
+        var frame = new Gtk.Frame (null) {
+            child = calchooser
+        };
         frame.add_css_class (Granite.STYLE_CLASS_VIEW);
 
-        custom_bin.add (frame);
+        custom_bin.append (frame);
 
         var ok_button = (Gtk.Button) add_button (_("Import"), Gtk.ResponseType.APPLY);
         ok_button.add_css_class (Granite.CssClass.SUGGESTED);

@@ -26,7 +26,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
            }
         });
 
-        var scroll = new Gtk.ScrolledWindow (null, null) {
+        var scroll = new Gtk.ScrolledWindow () {
             child = calendar_box,
             hscrollbar_policy = NEVER,
             max_content_height = 300,

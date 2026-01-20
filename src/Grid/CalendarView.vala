@@ -140,8 +140,8 @@ public class Maya.View.CalendarView : Gtk.Box {
         var spinner = new Maya.View.Widgets.DynamicSpinner ();
 
         var contractor = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("document-export", LARGE_TOOLBAR),
-            popup = new Gtk.Menu.from_model (contractor_menu),
+            icon_name = "document-export",
+            menu_model = contractor_menu,
             tooltip_text = _("Export or Share the default Calendar")
         };
 
@@ -333,7 +333,7 @@ public class Maya.View.CalendarView : Gtk.Box {
     Gtk.Grid create_big_grid () {
         spacer = new Gtk.Label ("");
         spacer.no_show_all = true;
-        spacer.get_style_context ().add_class ("weeks");
+        spacer.add_css_class ("weeks");
 
         weeks = new WeekLabels ();
 

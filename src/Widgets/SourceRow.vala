@@ -59,12 +59,12 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
 
         style_calendar_color (cal.dup_color ());
 
-        delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", MENU) {
+        delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
             sensitive = source.removable,
             tooltip_text = source.removable ? _("Remove") : _("Not Removable")
         };
 
-        edit_button = new Gtk.Button.from_icon_name ("edit-symbolic", MENU) {
+        edit_button = new Gtk.Button.from_icon_name ("edit-symbolic") {
             sensitive = source.writable,
             tooltip_text = source.writable ? _("Edit…"): _("Not Editable")
         };
@@ -84,8 +84,8 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
             margin_end = 6
         };
 
-        var close_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", SMALL_TOOLBAR) {
-            relief = NONE
+        var close_button = new Gtk.Button.from_icon_name ("process-stop-symbolic") {
+            has_frame = false
         };
 
         message_label = new Gtk.Label (_("\"%s\" removed").printf (source.display_name)) {
@@ -105,7 +105,7 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         stack.add (info_box);
         stack.visible_child = calendar_box;
 
-        add (stack);
+        child = stack;
 
         close_button.clicked.connect (() => {
             hide ();

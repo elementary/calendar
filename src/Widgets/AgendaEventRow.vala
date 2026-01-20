@@ -222,14 +222,10 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         main_grid.attach (location_revealer, 1, 2);
 
         main_grid_context = main_grid.get_style_context ();
-        main_grid_context.add_class ("event");
-
-        var event_box = new Gtk.EventBox () {
-            child = main_grid
-        };
+        main_grid.add_css_class ("event");
 
         revealer = new Gtk.Revealer () {
-            child = event_box,
+            child = main_grid,
             transition_type = SLIDE_DOWN
         };
 

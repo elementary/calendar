@@ -214,7 +214,6 @@ namespace Maya {
                 warning (e.message);
             }
 
-            GtkClutter.init (ref args);
             var app = new Application ();
 
             int res = app.run (args);
