@@ -116,16 +116,16 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         }
     }
 
-    public override bool delete_event (Gdk.EventAny event) {
-        ((Application) application).ask_for_background.begin ((obj, res) => {
-            unowned var app = (Application) obj;
-            if (app.ask_for_background.end (res)) {
-                hide ();
-            } else {
-                destroy ();
-            }
-        });
+    // public override bool delete_event (Gdk.EventAny event) {
+    //     ((Application) application).ask_for_background.begin ((obj, res) => {
+    //         unowned var app = (Application) obj;
+    //         if (app.ask_for_background.end (res)) {
+    //             hide ();
+    //         } else {
+    //             destroy ();
+    //         }
+    //     });
 
-        return Gdk.EVENT_STOP;
-    }
+    //     return Gdk.EVENT_STOP;
+    // }
 }

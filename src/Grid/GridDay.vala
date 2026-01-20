@@ -73,8 +73,8 @@ public class Maya.View.GridDay : Granite.Bin {
         };
         key_controller.key_pressed.connect (on_key_press);
 
-        Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
-        Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
+        // Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
+        // Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
 
         this.bind_property ("date", label, "label", BindingFlags.SYNC_CREATE, (binding, srcval, ref targetval) => {
             unowned var date = (GLib.DateTime) srcval.get_boxed ();
@@ -83,31 +83,31 @@ public class Maya.View.GridDay : Granite.Bin {
         });
     }
 
-    public override bool drag_drop (Gdk.DragContext context, int x, int y, uint time_) {
-        Gtk.drag_finish (context, true, false, time_);
-        Gdk.Atom atom = Gtk.drag_dest_find_target (this, context, Gtk.drag_dest_get_target_list (this));
-        Gtk.drag_get_data (this, context, atom, time_);
-        return true;
-    }
+    // public override bool drag_drop (Gdk.DragContext context, int x, int y, uint time_) {
+    //     Gtk.drag_finish (context, true, false, time_);
+    //     Gdk.Atom atom = Gtk.drag_dest_find_target (this, context, Gtk.drag_dest_get_target_list (this));
+    //     Gtk.drag_get_data (this, context, atom, time_);
+    //     return true;
+    // }
 
-    public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-        var calmodel = Calendar.EventStore.get_default ();
-        var comp = calmodel.drag_component;
-        unowned ICal.Component icalcomp = comp.get_icalcomponent ();
-        E.Source src = comp.get_data ("source");
-        var start = icalcomp.get_dtstart ();
-        var end = icalcomp.get_dtend ();
-        var gap = date.get_day_of_month () - start.get_day ();
-        start.set_day (start.get_day () + gap);
+    // public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
+    //     var calmodel = Calendar.EventStore.get_default ();
+    //     var comp = calmodel.drag_component;
+    //     unowned ICal.Component icalcomp = comp.get_icalcomponent ();
+    //     E.Source src = comp.get_data ("source");
+    //     var start = icalcomp.get_dtstart ();
+    //     var end = icalcomp.get_dtend ();
+    //     var gap = date.get_day_of_month () - start.get_day ();
+    //     start.set_day (start.get_day () + gap);
 
-        if (!end.is_null_time ()) {
-            end.set_day (end.get_day () + gap);
-            icalcomp.set_dtend (end);
-        }
+    //     if (!end.is_null_time ()) {
+    //         end.set_day (end.get_day () + gap);
+    //         icalcomp.set_dtend (end);
+    //     }
 
-        icalcomp.set_dtstart (start);
-        calmodel.update_event (src, comp, ECal.ObjModType.ALL);
-    }
+    //     icalcomp.set_dtstart (start);
+    //     calmodel.update_event (src, comp, ECal.ObjModType.ALL);
+    // }
 
     public void add_event_button (EventButton button) {
         string uid = button.get_uid ();

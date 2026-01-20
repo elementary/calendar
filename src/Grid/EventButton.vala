@@ -91,24 +91,24 @@ public class Maya.View.EventButton : Gtk.Revealer {
         add_controller (click_gesture);
         add_controller (long_press_gesture);
 
-        Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
-        Gtk.TargetEntry dnd2 = {"text/uri-list", 0, 0};
-        Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2}, Gdk.DragAction.MOVE);
+        // Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
+        // Gtk.TargetEntry dnd2 = {"text/uri-list", 0, 0};
+        // Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2}, Gdk.DragAction.MOVE);
 
-        event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
-            Calendar.EventStore.get_default ().drag_component = comp;
-            unowned ICal.Component icalcomp = comp.get_icalcomponent ();
-            var ical_str = icalcomp.as_ical_string ();
-            sel.set_text (ical_str, ical_str.length);
-            try {
-                var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
-                var file = File.new_for_path (path);
-                if (file.replace_contents (ical_str.data, null, false, FileCreateFlags.PRIVATE, null))
-                    sel.set_uris ({file.get_uri ()});
-            } catch (Error e) {
-                critical (e.message);
-            }
-        });
+        // event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
+        //     Calendar.EventStore.get_default ().drag_component = comp;
+        //     unowned ICal.Component icalcomp = comp.get_icalcomponent ();
+        //     var ical_str = icalcomp.as_ical_string ();
+        //     sel.set_text (ical_str, ical_str.length);
+        //     try {
+        //         var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
+        //         var file = File.new_for_path (path);
+        //         if (file.replace_contents (ical_str.data, null, false, FileCreateFlags.PRIVATE, null))
+        //             sel.set_uris ({file.get_uri ()});
+        //     } catch (Error e) {
+        //         critical (e.message);
+        //     }
+        // });
 
         E.Source source = comp.get_data ("source");
 
