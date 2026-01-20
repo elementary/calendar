@@ -8,9 +8,6 @@
 You'll need the following dependencies:
 
 * libadwaita-1-dev
-* libchamplain-0.12-dev
-* libchamplain-gtk-0.12-dev
-* libclutter-1.0-dev
 * libecal1.2-dev
 * libedataserverui1.2-dev >=3.46
 * libfolks-dev
@@ -21,6 +18,7 @@ You'll need the following dependencies:
 * libgranite-7-dev >= 7.7.0
 * libgtk-4-dev >= 4.12
 * libical-dev
+* libshumate-dev
 * meson
 * valac
 
