@@ -65,8 +65,9 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
         guest_list.set_placeholder (no_guests_label);
 
-        var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null);
-        guest_scrolledwindow.add (guest_list);
+        var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null) {
+            child = guest_list
+        };
         guest_scrolledwindow.expand = true;
 
         var frame = new Gtk.Frame (null) {
