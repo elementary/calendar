@@ -50,6 +50,9 @@ public class Maya.View.EventButton : Gtk.Revealer {
 
         add (event_box);
 
+        var context_menu = Maya.EventMenu.build (comp);
+        context_menu.attach_to_widget (this, null);
+
         var click_gesture = new Gtk.GestureClick () {
             button = 0
         };
@@ -65,10 +68,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
             }
 
             if (event.triggers_context_menu ()) {
-                var menu = new Maya.EventMenu (comp);
-                menu.attach_to_widget (this, null);
-
-                menu.popup_at_pointer (event);
+                context_menu.popup_at_pointer (event);
 
                 click_gesture.set_state (CLAIMED);
                 click_gesture.reset ();
@@ -82,10 +82,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
             var sequence = long_press_gesture.get_current_sequence ();
             var event = long_press_gesture.get_last_event (sequence);
 
-            var menu = new Maya.EventMenu (comp);
-            menu.attach_to_widget (this, null);
-
-            menu.popup_at_pointer (event);
+            context_menu.popup_at_pointer (event);
 
             long_press_gesture.set_state (CLAIMED);
             long_press_gesture.reset ();
