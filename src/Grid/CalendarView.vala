@@ -39,6 +39,7 @@ public class Maya.View.CalendarView : Gtk.Box {
     public Hdy.HeaderBar header_bar { get; private set; }
     public DateTime? selected_date { get; private set; }
 
+    private Gtk.EventControllerScroll scroll_controller;
     private WeekLabels weeks { get; private set; }
     private Header header { get; private set; }
     private Grid days_grid { get; private set; }
@@ -218,6 +219,9 @@ public class Maya.View.CalendarView : Gtk.Box {
         calmodel.parameters_changed.connect (() => {
             set_switcher_date (calmodel.month_start);
         });
+
+        scroll_controller = new Gtk.EventControllerScroll (this, Gtk.EventControllerScrollFlags.BOTH_AXES);
+        scroll_controller.scroll.connect (GesturesUtils.on_scroll);
     }
 
     private void action_export () {
@@ -258,10 +262,6 @@ public class Maya.View.CalendarView : Gtk.Box {
     private void set_switcher_date (DateTime date) {
         month_switcher.text = date.format ("%OB");
         year_switcher.text = date.format ("%Y");
-    }
-
-    public override bool scroll_event (Gdk.EventScroll event) {
-        return GesturesUtils.on_scroll_event (event);
     }
 
     //--- Public Methods ---//
