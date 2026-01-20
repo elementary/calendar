@@ -215,8 +215,9 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         exceptions_list.set_selection_mode (Gtk.SelectionMode.NONE);
         exceptions_list.set_placeholder (no_exceptions_label);
 
-        var exceptions_scrolled = new Gtk.ScrolledWindow (null, null);
-        exceptions_scrolled.add (exceptions_list);
+        var exceptions_scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = exceptions_list
+        };
         exceptions_scrolled.expand = true;
 
         var add_button = new Gtk.Button.with_label (_("Add Exception"));
