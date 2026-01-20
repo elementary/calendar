@@ -190,6 +190,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         attach (exceptions_frame, 1, 8);
 
         reorder_week_box ();
+        Calendar.EventStore.get_default ().notify["week-starts-on"].connect (reorder_week_box);
 
         add_button.clicked.connect (() => {
             var exception_grid = new ExceptionGrid (new GLib.DateTime.now_local ());
