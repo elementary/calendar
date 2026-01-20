@@ -75,10 +75,10 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
             margin_bottom = 3,
             margin_start = 12
         };
-        calendar_box.add (visible_checkbutton);
-        calendar_box.add (calendar_name_label);
-        calendar_box.add (delete_button);
-        calendar_box.add (edit_button);
+        calendar_box.append (visible_checkbutton);
+        calendar_box.append (calendar_name_label);
+        calendar_box.append (delete_button);
+        calendar_box.append (edit_button);
 
         var undo_button = new Gtk.Button.with_label (_("Undo")) {
             margin_end = 6
@@ -94,9 +94,9 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         };
 
         info_box = new Gtk.Box (HORIZONTAL, 12);
-        info_box.add (close_button);
-        info_box.add (message_label);
-        info_box.add (undo_button);
+        info_box.append (close_button);
+        info_box.append (message_label);
+        info_box.append (undo_button);
 
         stack = new Gtk.Stack () {
             transition_type = OVER_RIGHT_LEFT
@@ -130,7 +130,7 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         var style_provider = new Gtk.CssProvider ();
 
         try {
-            style_provider.load_from_data (css_color, css_color.length);
+            style_provider.load_from_string (css_color);
             visible_checkbutton.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (Error e) {
             warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);

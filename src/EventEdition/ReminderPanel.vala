@@ -23,7 +23,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         no_reminder_label.show ();
 
         no_reminder_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-        no_reminder_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        no_reminder_label.get_style_context ().add_class (Granite.CssClass.DIM_LABEL);
 
         reminders = new Gee.ArrayList<ReminderGrid> ();
         reminders_to_remove = new Gee.ArrayList<string> ();
@@ -46,21 +46,21 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         };
 
         var add_button_box = new Gtk.Box (HORIZONTAL, 0);
-        add_button_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", BUTTON));
-        add_button_box.add (new Gtk.Label (_("Add Reminder")));
+        add_button_box.append (new Gtk.Image.from_icon_name ("list-add-symbolic", BUTTON));
+        add_button_box.append (new Gtk.Label (_("Add Reminder")));
 
         var add_button = new Gtk.Button () {
             child = add_button_box
         };
-        add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        add_button.get_style_context ().add_class (Granite.CssClass.FLAT);
 
         var inline_toolbar = new Gtk.ActionBar ();
-        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        inline_toolbar.get_style_context ().add_class (Granite.CssClass.FLAT);
         inline_toolbar.add (add_button);
 
         var box = new Gtk.Box (VERTICAL, 0);
-        box.add (scrolled);
-        box.add (inline_toolbar);
+        box.append (scrolled);
+        box.append (inline_toolbar);
 
         var frame = new Gtk.Frame (null) {
             child = box,
@@ -190,9 +190,10 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
             }
         });
 
-        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);
-        remove_button.relief = Gtk.ReliefStyle.NONE;
-        remove_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
+            has_frame = false
+        };
+        remove_button.add_css_class (Granite.CssClass.DESTRUCTIVE);
 
         var grid = new Gtk.Grid ();
         grid.margin = 6;

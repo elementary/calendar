@@ -18,7 +18,7 @@ You'll need the following dependencies:
 * libgeoclue-2-dev
 * libglib2.0-dev
 * libgranite-7-dev >= 7.6.0
-* libgtk-3-dev
+* libgtk-4-dev >= 4.12
 * libical-dev
 * libhandy-1-dev >= 0.90.0
 * meson

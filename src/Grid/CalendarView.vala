@@ -119,7 +119,7 @@ public class Maya.View.CalendarView : Gtk.Box {
 
         var application_instance = ((Gtk.Application) GLib.Application.get_default ());
 
-        var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR) {
+        var button_today = new Gtk.Button.from_icon_name ("calendar-go-today") {
             action_name = Maya.MainWindow.ACTION_PREFIX + Maya.MainWindow.ACTION_SHOW_TODAY
         };
         button_today.tooltip_markup = Granite.markup_accel_tooltip (
@@ -148,7 +148,7 @@ public class Maya.View.CalendarView : Gtk.Box {
         var source_popover = new Calendar.Widgets.SourcePopover ();
 
         var menu_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            icon_name = "open-menu",
             popover = source_popover,
             tooltip_text = _("Manage Calendars")
         };
@@ -163,7 +163,7 @@ public class Maya.View.CalendarView : Gtk.Box {
         header_bar.pack_end (contractor);
         header_bar.pack_end (spinner);
 
-        header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         stack = new Gtk.Stack ();
         stack.expand = true;
@@ -190,17 +190,12 @@ public class Maya.View.CalendarView : Gtk.Box {
         show_weeks.changed["show-weeks"].connect (on_show_weeks_changed);
         show_weeks.get_value ("show-weeks");
 
-        events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        events |= Gdk.EventMask.KEY_PRESS_MASK;
-        events |= Gdk.EventMask.SCROLL_MASK;
-        events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         orientation = VERTICAL;
-        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        add (header_bar);
-        add (error_bar);
-        add (info_bar);
-        add (stack);
-        show_all ();
+        add_css_class (Granite.STYLE_CLASS_VIEW);
+        append (header_bar);
+        append (error_bar);
+        append (info_bar);
+        append (stack);
 
         error_bar.response.connect ((id) => error_bar.set_revealed (false));
 
@@ -357,7 +352,6 @@ public class Maya.View.CalendarView : Gtk.Box {
         new_big_grid.attach (header, 1, 0, 1, 1);
         new_big_grid.attach (days_grid, 1, 1, 1, 1);
         new_big_grid.attach (weeks, 0, 1, 1, 1);
-        new_big_grid.show_all ();
         new_big_grid.expand = true;
 
         update_spacer_visible ();

@@ -46,7 +46,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
         grid_style_context.add_class ("event");
 
         var event_box = new Gtk.EventBox ();
-        event_box.add (internal_grid);
+        event_box.append (internal_grid);
 
         add (event_box);
 

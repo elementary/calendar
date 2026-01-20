@@ -208,7 +208,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         unowned Gtk.StyleContext no_exceptions_context = no_exceptions_label.get_style_context ();
         no_exceptions_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
-        no_exceptions_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        no_exceptions_context.add_class (Granite.CssClass.DIM_LABEL);
 
         exceptions_list = new Gtk.ListBox ();
         exceptions_list.expand = true;
@@ -219,14 +219,15 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         exceptions_scrolled.add (exceptions_list);
         exceptions_scrolled.expand = true;
 
-        var add_button = new Gtk.Button.with_label (_("Add Exception"));
+        var add_button = new Gtk.Button.with_label (_("Add Exception")) {
+            has_frame = false
+        };
         add_button.always_show_image = true;
         add_button.image = new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON);
         add_button.margin = 3;
-        add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var inline_toolbar = new Gtk.ActionBar ();
-        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        inline_toolbar.get_style_context ().add_class (Granite.CssClass.INLINE_TOOLBAR);
         inline_toolbar.add (add_button);
 
         var exceptions_grid = new Gtk.Grid ();
@@ -542,71 +543,71 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         fri_button = new Gtk.ToggleButton.with_label (_("Fri"));
         sat_button = new Gtk.ToggleButton.with_label (_("Sat"));
         sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
-        week_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        week_box.get_style_context ().add_class (Granite.CssClass.LINKED);
         week_box.get_style_context ().add_class ("raised");
         switch (Calendar.EventStore.get_default ().week_starts_on) {
             case GLib.DateWeekday.TUESDAY:
-                week_box.add (thu_button);
-                week_box.add (fri_button);
-                week_box.add (sat_button);
-                week_box.add (sun_button);
-                week_box.add (mon_button);
-                week_box.add (tue_button);
-                week_box.add (wed_button);
+                week_box.append (thu_button);
+                week_box.append (fri_button);
+                week_box.append (sat_button);
+                week_box.append (sun_button);
+                week_box.append (mon_button);
+                week_box.append (tue_button);
+                week_box.append (wed_button);
                 break;
             case GLib.DateWeekday.WEDNESDAY:
-                week_box.add (wed_button);
-                week_box.add (thu_button);
-                week_box.add (fri_button);
-                week_box.add (sat_button);
-                week_box.add (sun_button);
-                week_box.add (mon_button);
-                week_box.add (tue_button);
+                week_box.append (wed_button);
+                week_box.append (thu_button);
+                week_box.append (fri_button);
+                week_box.append (sat_button);
+                week_box.append (sun_button);
+                week_box.append (mon_button);
+                week_box.append (tue_button);
                 break;
             case GLib.DateWeekday.THURSDAY:
-                week_box.add (thu_button);
-                week_box.add (fri_button);
-                week_box.add (sat_button);
-                week_box.add (sun_button);
-                week_box.add (mon_button);
-                week_box.add (tue_button);
-                week_box.add (wed_button);
+                week_box.append (thu_button);
+                week_box.append (fri_button);
+                week_box.append (sat_button);
+                week_box.append (sun_button);
+                week_box.append (mon_button);
+                week_box.append (tue_button);
+                week_box.append (wed_button);
                 break;
             case GLib.DateWeekday.FRIDAY:
-                week_box.add (fri_button);
-                week_box.add (sat_button);
-                week_box.add (sun_button);
-                week_box.add (mon_button);
-                week_box.add (tue_button);
-                week_box.add (wed_button);
-                week_box.add (thu_button);
+                week_box.append (fri_button);
+                week_box.append (sat_button);
+                week_box.append (sun_button);
+                week_box.append (mon_button);
+                week_box.append (tue_button);
+                week_box.append (wed_button);
+                week_box.append (thu_button);
                 break;
             case GLib.DateWeekday.SATURDAY:
-                week_box.add (sat_button);
-                week_box.add (sun_button);
-                week_box.add (mon_button);
-                week_box.add (tue_button);
-                week_box.add (wed_button);
-                week_box.add (thu_button);
-                week_box.add (fri_button);
+                week_box.append (sat_button);
+                week_box.append (sun_button);
+                week_box.append (mon_button);
+                week_box.append (tue_button);
+                week_box.append (wed_button);
+                week_box.append (thu_button);
+                week_box.append (fri_button);
                 break;
             case GLib.DateWeekday.SUNDAY:
-                week_box.add (sun_button);
-                week_box.add (mon_button);
-                week_box.add (tue_button);
-                week_box.add (wed_button);
-                week_box.add (thu_button);
-                week_box.add (fri_button);
-                week_box.add (sat_button);
+                week_box.append (sun_button);
+                week_box.append (mon_button);
+                week_box.append (tue_button);
+                week_box.append (wed_button);
+                week_box.append (thu_button);
+                week_box.append (fri_button);
+                week_box.append (sat_button);
                 break;
             default:
-                week_box.add (mon_button);
-                week_box.add (tue_button);
-                week_box.add (wed_button);
-                week_box.add (thu_button);
-                week_box.add (fri_button);
-                week_box.add (sat_button);
-                week_box.add (sun_button);
+                week_box.append (mon_button);
+                week_box.append (tue_button);
+                week_box.append (wed_button);
+                week_box.append (thu_button);
+                week_box.append (fri_button);
+                week_box.append (sat_button);
+                week_box.append (sun_button);
                 break;
         }
     }
@@ -770,8 +771,9 @@ public class Maya.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
         date.date = dt;
         date.hexpand = true;
 
-        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);
-        remove_button.relief = Gtk.ReliefStyle.NONE;
+        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
+            has_frame = false
+        };
         remove_button.clicked.connect (() => {hide (); destroy ();});
 
         var grid = new Gtk.Grid ();

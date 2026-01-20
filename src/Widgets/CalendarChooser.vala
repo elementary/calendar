@@ -58,7 +58,6 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
             _("Try changing search terms."),
             ""
         );
-        placeholder.show_all ();
 
         var list_box = new Gtk.ListBox () {
             activate_on_single_click = true
@@ -76,7 +75,6 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
         orientation = VERTICAL;
         add (search_entry);
         add (scrolled);
-        show_all ();
 
         list_box.set_filter_func (filter_function);
         list_box.set_header_func (header_update_func);
@@ -141,9 +139,8 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
             var row = new Gtk.ListBoxRow () {
                 child = calrow
             };
-            row.show_all ();
 
-            list_box.add (row);
+            list_box.append (row);
 
             if (source.dup_uid () == current_source.dup_uid ()) {
                 list_box.select_row (row);
@@ -181,7 +178,6 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
 
         row.set_header (header);
 
-        header.show_all ();
         if (before == null) {
             header.margin_top = 0;
         }

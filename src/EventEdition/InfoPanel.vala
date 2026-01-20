@@ -161,8 +161,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         };
 
         var button_box = new Gtk.Box (HORIZONTAL, 6);
-        button_box.add (current_calendar_grid);
-        button_box.add (new Gtk.Image.from_icon_name ("pan-down-symbolic", Gtk.IconSize.MENU));
+        button_box.append (current_calendar_grid);
+        button_box.append (new Gtk.Image.from_icon_name ("pan-down-symbolic"));
 
         var calendar_button = new Gtk.MenuButton () {
             child = button_box,

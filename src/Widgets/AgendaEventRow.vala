@@ -36,8 +36,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
     public Gtk.Revealer revealer { public get; private set; }
 
-    private Gtk.GestureClick click_gesture;
-
     private Gtk.Image event_image;
     private Gtk.Label name_label;
     private Gtk.Label datetime_label;
@@ -171,7 +169,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             split_keywords ((Category)cat);
         }
 
-        event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU) {
+        event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic") {
             pixel_size = 16,
             valign = START
         };
@@ -195,8 +193,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             use_markup = true,
             xalign = 0
         };
-        datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        datetime_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        datetime_label.add_css_class (Granite.CssClass.DIM);
+        datetime_label.add_css_class (Granite.CssClass.SMALL);
 
         location_label = new Gtk.Label ("") {
             margin_top = 6,
@@ -207,8 +205,9 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             xalign = 0
         };
 
-        var location_revealer = new Gtk.Revealer ();
-        location_revealer.add (location_label);
+        var location_revealer = new Gtk.Revealer () {
+            child = location_label
+        };
 
         var main_grid = new Gtk.Grid () {
             column_spacing = 6,
@@ -256,7 +255,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             revealer.set_reveal_child (false);
         });
 
-        click_gesture = new Gtk.GestureClick (this) {
+        //FIXME: long press and proper context menu events
+        var click_gesture = new Gtk.GestureClick () {
             button = Gdk.BUTTON_SECONDARY,
             propagation_phase = BUBBLE
         };
@@ -264,6 +264,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         // Fill in the information
         update (calevent);
+
+        add_controller (click_gesture);
     }
 
     private void on_button_press (int n_press, double x, double y) {
@@ -377,7 +379,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         var provider = new Gtk.CssProvider ();
         try {
             var colored_css = EVENT_CSS.printf (background_color.slice (0, 7));
-            provider.load_from_data (colored_css, colored_css.length);
+            provider.load_from_string (colored_css);
 
             event_image_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             main_grid_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);

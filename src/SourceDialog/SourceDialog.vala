@@ -70,8 +70,8 @@ public class Maya.View.SourceDialog : Granite.Dialog {
         var name_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 12
         };
-        name_box.add (name_label);
-        name_box.add (name_entry);
+        name_box.append (name_label);
+        name_box.append (name_entry);
 
         list_store = new Gtk.ListStore (2, typeof (string), typeof (Backend));
 
@@ -80,7 +80,7 @@ public class Maya.View.SourceDialog : Granite.Dialog {
         type_combobox = new Gtk.ComboBox.with_model (list_store);
         type_combobox.hexpand = true;
         type_combobox.pack_start (renderer, true);
-        type_combobox.add_attribute (renderer, "text", 0);
+        type_combobox.append_attribute (renderer, "text", 0);
 
         type_combobox.changed.connect (() => {
             GLib.Value backend;
@@ -100,8 +100,8 @@ public class Maya.View.SourceDialog : Granite.Dialog {
         var type_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 12
         };
-        type_box.add (type_label);
-        type_box.add (type_combobox);
+        type_box.append (type_label);
+        type_box.append (type_combobox);
 
         Gtk.TreeIter iter;
         var backends_manager = BackendsManager.get_default ();
@@ -191,16 +191,16 @@ public class Maya.View.SourceDialog : Granite.Dialog {
         };
 
         var color_button_box = new Gtk.Box (HORIZONTAL, 6);
-        color_button_box.add (color_button_blue);
-        color_button_box.add (color_button_mint);
-        color_button_box.add (color_button_green);
-        color_button_box.add (color_button_yellow);
-        color_button_box.add (color_button_orange);
-        color_button_box.add (color_button_red);
-        color_button_box.add (color_button_pink);
-        color_button_box.add (color_button_purple);
-        color_button_box.add (color_button_brown);
-        color_button_box.add (color_button_slate);
+        color_button_box.append (color_button_blue);
+        color_button_box.append (color_button_mint);
+        color_button_box.append (color_button_green);
+        color_button_box.append (color_button_yellow);
+        color_button_box.append (color_button_orange);
+        color_button_box.append (color_button_red);
+        color_button_box.append (color_button_pink);
+        color_button_box.append (color_button_purple);
+        color_button_box.append (color_button_brown);
+        color_button_box.append (color_button_slate);
 
         var color_label = new Granite.HeaderLabel (_("Color")) {
             mnemonic_widget = color_button_box
@@ -209,8 +209,8 @@ public class Maya.View.SourceDialog : Granite.Dialog {
         var color_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 12
         };
-        color_box.add (color_label);
-        color_box.add (color_button_box);
+        color_box.append (color_label);
+        color_box.append (color_button_box);
 
         is_default_check = new Gtk.CheckButton.with_label (_("Mark as default calendar")) {
             margin_bottom = 12
@@ -261,11 +261,10 @@ public class Maya.View.SourceDialog : Granite.Dialog {
             margin_start = 12,
             vexpand = true
         };
-        main_box.add (type_box);
-        main_box.add (name_box);
-        main_box.add (color_box);
-        main_box.add (is_default_check);
-        main_box.show_all ();
+        main_box.append (type_box);
+        main_box.append (name_box);
+        main_box.append (color_box);
+        main_box.append (is_default_check);
 
         get_content_area ().add (main_box);
     }
@@ -373,7 +372,7 @@ public class Maya.View.SourceDialog : Granite.Dialog {
                 widget.widget.margin_bottom = 12;
             }
 
-            main_box.add (widget.widget);
+            main_box.append (widget.widget);
 
             if (widget.needed == true && widget.widget is Gtk.Entry) {
                 var entry = widget.widget as Gtk.Entry;
@@ -382,7 +381,6 @@ public class Maya.View.SourceDialog : Granite.Dialog {
             }
         }
 
-        main_box.show_all ();
         check_can_validate ();
     }
 

@@ -27,9 +27,9 @@ public class Maya.View.GridDay : Granite.Bin {
     public bool in_current_month {
         set {
             if (value) {
-                get_style_context ().remove_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                get_style_context ().remove_class (Granite.CssClass.DIM_LABEL);
             } else {
-                get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                get_style_context ().add_class (Granite.CssClass.DIM_LABEL);
             }
         }
     }
@@ -54,8 +54,8 @@ public class Maya.View.GridDay : Granite.Bin {
         };
 
         var container_box = new Gtk.Box (VERTICAL, 3);
-        container_box.add (label);
-        container_box.add (event_box);
+        container_box.append (label);
+        container_box.append (event_box);
 
         can_focus = true;
         child = container_box;
@@ -120,8 +120,7 @@ public class Maya.View.GridDay : Granite.Bin {
             button.unparent ();
         }
 
-        event_box.add (button);
-        button.show_all ();
+        event_box.append (button);
     }
 
     public bool update_event (ECal.Component modified_event) {

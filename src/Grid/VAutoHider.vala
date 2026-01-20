@@ -40,7 +40,7 @@ namespace Maya.View {
             children.sort (compare_children);
 
             int index = children.index (widget);
-            main_box.add (widget);
+            main_box.append (widget);
             main_box.reorder_child (widget, index);
 
             widget.destroy.connect (() => {

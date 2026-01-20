@@ -56,12 +56,11 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             margin_bottom = 3,
         };
 
-        main_box.add (scroll);
-        main_box.add (separator);
-        main_box.add (add_calendar_button);
-        main_box.add (import_calendar_button);
-        main_box.add (accounts_button);
-        main_box.show_all ();
+        main_box.append (scroll);
+        main_box.append (separator);
+        main_box.append (add_calendar_button);
+        main_box.append (import_calendar_button);
+        main_box.append (accounts_button);
 
         child = main_box;
         populate.begin ();
@@ -146,7 +145,6 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
 
         var header = new Granite.HeaderLabel (row_location);
         row.set_header (header);
-        header.show_all ();
     }
 
     private void source_removed (E.Source source) {
@@ -174,8 +172,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         source_item.edit_request.connect (edit_source);
         source_item.remove_request.connect (remove_source);
 
-        calendar_box.add (source_item);
-        calendar_box.show_all ();
+        calendar_box.append (source_item);
 
         src_map.set (source.dup_uid (), source_item);
     }

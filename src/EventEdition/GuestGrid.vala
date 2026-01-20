@@ -47,11 +47,11 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                     break;
                 case ICal.ParameterPartstat.DECLINED:
                     status_label.label = _("Declined");
-                    status_label_context.add_class (Gtk.STYLE_CLASS_ERROR);
+                    status_label_context.add_class (Granite.CssClass.ERROR);
                     break;
                 case ICal.ParameterPartstat.TENTATIVE:
                     status_label.label = _("Maybe");
-                    status_label_context.add_class (Gtk.STYLE_CLASS_ERROR);
+                    status_label_context.add_class (Granite.CssClass.ERROR);
                     break;
                 default:
                     break;
@@ -69,9 +69,10 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         mail_label.hexpand = true;
         mail_label.xalign = 0;
 
-        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);
-        remove_button.relief = Gtk.ReliefStyle.NONE;
-        remove_button.valign = Gtk.Align.CENTER;
+        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
+            has_frame = false,
+            valign = CENTER
+        };
 
         get_contact_by_mail.begin (attendee.get_attendee ().replace ("mailto:", ""));
 

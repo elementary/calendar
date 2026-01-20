@@ -21,7 +21,7 @@ public class Maya.View.AgendaView : Gtk.Box {
     construct {
         var application_instance = ((Gtk.Application) GLib.Application.get_default ());
 
-        var button_add = new Gtk.Button.from_icon_name ("appointment-new", Gtk.IconSize.LARGE_TOOLBAR) {
+        var button_add = new Gtk.Button.from_icon_name ("appointment-new") {
             action_name = Maya.MainWindow.ACTION_PREFIX + Maya.MainWindow.ACTION_NEW_EVENT
         };
         button_add.tooltip_markup = Granite.markup_accel_tooltip (
@@ -33,21 +33,19 @@ public class Maya.View.AgendaView : Gtk.Box {
             margin_start = 6,
             xalign = 0
         };
-        weekday_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        weekday_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        header_bar = new Adw.HeaderBar () {
-            show_close_button = true
-        };
+        header_bar = new Adw.HeaderBar ();
         header_bar.pack_start (weekday_label);
         header_bar.pack_end (button_add);
-        header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         day_label = new Gtk.Label ("") {
             margin_start = 12,
             margin_end = 12,
             xalign = 0
         };
-        day_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        day_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events.")) {
             wrap = true,
@@ -56,8 +54,7 @@ public class Maya.View.AgendaView : Gtk.Box {
             margin_end = 12,
             justify = CENTER
         };
-        placeholder_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        placeholder_label.show_all ();
+        placeholder_label.add_css_class (Granite.CssClass.DIM);
 
         selected_date_events_list = new Gtk.ListBox () {
             activate_on_single_click = false,
@@ -103,20 +100,20 @@ public class Maya.View.AgendaView : Gtk.Box {
         });
 
         var box = new Gtk.Box (VERTICAL, 0);
-        box.add (day_label);
-        box.add (selected_date_events_list);
-        box.add (upcoming_events_list);
+        box.append (day_label);
+        box.append (selected_date_events_list);
+        box.append (upcoming_events_list);
 
-        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+        var scrolled_window = new Gtk.ScrolledWindow () {
             hscrollbar_policy = NEVER,
             child = box,
             vexpand = true
         };
 
         orientation = VERTICAL;
-        add (header_bar);
-        add (scrolled_window);
-        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        append (header_bar);
+        append (scrolled_window);
+        add_css_class (Granite.STYLE_CLASS_VIEW);
 
         // Listen to changes for events
         var calmodel = Calendar.EventStore.get_default ();
@@ -129,7 +126,6 @@ public class Maya.View.AgendaView : Gtk.Box {
         time_manager.on_update_today.connect (on_today_changed);
 
         set_selected_date (Maya.Application.get_selected_datetime ());
-        show_all ();
 
         selected_date_events_list.row_activated.connect (activate_eventrow);
         upcoming_events_list.row_activated.connect (activate_eventrow);
@@ -303,13 +299,11 @@ public class Maya.View.AgendaView : Gtk.Box {
         foreach (var event in events) {
             var row = new AgendaEventRow (source, event, false);
             row.removed.connect ((event) => (event_removed (event)));
-            row.show_all ();
-            selected_date_events_list.add (row);
+            selected_date_events_list.append (row);
 
             var row2 = new AgendaEventRow (source, event, true);
             row2.removed.connect ((event) => (event_removed (event)));
-            row2.show_all ();
-            upcoming_events_list.add (row2);
+            upcoming_events_list.append (row2);
         }
     }
 

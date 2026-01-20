@@ -42,7 +42,6 @@ public class Maya.View.Widgets.DynamicSpinner : Granite.Bin {
         };
 
         child = revealer;
-        show_all ();
     }
 
     public async void add_source (E.Source source, Cancellable cancellable) {
@@ -51,8 +50,9 @@ public class Maya.View.Widgets.DynamicSpinner : Granite.Bin {
 
             var label = new Gtk.Label (source.get_display_name ());
 
-            var stop_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.BUTTON);
-            stop_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+            var stop_button = new Gtk.Button.from_icon_name ("process-stop-symbolic") {
+                has_frame = false
+            };
 
             stop_button.clicked.connect (() => {
                 cancellable.cancel ();
@@ -65,15 +65,14 @@ public class Maya.View.Widgets.DynamicSpinner : Granite.Bin {
                 margin_start = 6
             };
 
-            box.add (label);
-            box.add (stop_button);
+            box.append (label);
+            box.append (stop_button);
 
             lock (children_matcher) {
                 children_matcher.insert (source.dup_uid (), box);
             }
 
-            list_box.add (box);
-            list_box.show_all ();
+            list_box.append (box);
 
             return false;
         });
