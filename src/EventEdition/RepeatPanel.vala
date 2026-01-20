@@ -1,18 +1,6 @@
-/*-
- * Copyright 2011-2020 elementary, Inc. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2026 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Jaap Broekhuizen
  */
@@ -25,9 +13,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private Gtk.SpinButton end_entry;
     private Granite.Widgets.DatePicker end_datepicker;
     private Gtk.Box week_box;
-    private Gtk.Grid month_grid;
     private Gtk.SpinButton every_entry;
-    private Gtk.Label every_unit_label;
     private Gtk.ListBox exceptions_list;
 
     private Gtk.ToggleButton mon_button;
@@ -43,24 +29,166 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
     public RepeatPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
-        margin_start = 12;
-        margin_end = 12;
-        row_spacing = 6;
-        column_spacing = 12;
         sensitive = parent_dialog.can_edit;
 
         var reminder_label = new Granite.HeaderLabel (_("Repeat:"));
 
-        repeat_switch = new Gtk.Switch ();
+        repeat_switch = new Gtk.Switch () {
+            valign = CENTER
+        };
 
-        repeat_combobox = new Gtk.ComboBoxText ();
+        repeat_combobox = new Gtk.ComboBoxText () {
+            hexpand = true,
+            sensitive = false
+        };
         repeat_combobox.append_text (_("Daily"));
         repeat_combobox.append_text (_("Weekly"));
         repeat_combobox.append_text (_("Monthly"));
         repeat_combobox.append_text (_("Yearly"));
         repeat_combobox.active = 1;
-        repeat_combobox.hexpand = true;
-        repeat_combobox.sensitive = false;
+
+        var repeat_box = new Gtk.Box (HORIZONTAL, 12);
+        repeat_box.add (repeat_switch);
+        repeat_box.add (repeat_combobox);
+
+        var every_label = new Granite.HeaderLabel (_("Every:"));
+
+        every_entry = new Gtk.SpinButton.with_range (1, 99, 1) {
+            hexpand = true
+        };
+
+        var every_unit_label = new Gtk.Label (ngettext ("Week", "Weeks", 1));
+
+        var every_box = new Gtk.Box (HORIZONTAL, 12) {
+            sensitive = false
+        };
+        every_box.add (every_entry);
+        every_box.add (every_unit_label);
+
+        var ends_label = new Granite.HeaderLabel (_("Ends:"));
+
+        ///Translators: Give a word to describe an event ending after a certain number of repeats.
+        ///This will be displayed in the format like: "Ends After 2 Repeats",
+        ///where this string always represents the last word in the phrase.
+        var end_label = new Gtk.Label (ngettext ("Repeat", "Repeats", 1)) {
+            no_show_all = true
+        };
+
+        ends_combobox = new Gtk.ComboBoxText () {
+            hexpand = true
+        };
+        ends_combobox.append_text (_("Never"));
+        ends_combobox.append_text (_("Until"));
+        ends_combobox.append_text (_("After"));
+        ends_combobox.active = 0;
+
+        end_entry = new Gtk.SpinButton.with_range (1, 99, 1) {
+            hexpand = true,
+            no_show_all = true
+        };
+
+        var format = Granite.DateTime.get_default_date_format (false, true, true);
+
+        end_datepicker = new Granite.Widgets.DatePicker.with_format (format) {
+            no_show_all = true
+        };
+
+        var ends_grid = new Gtk.Box (HORIZONTAL, 12) {
+            sensitive = false
+        };
+        ends_grid.add (ends_combobox);
+        ends_grid.add (end_entry);
+        ends_grid.add (end_label);
+        ends_grid.add (end_datepicker);
+
+        create_week_box ();
+        week_box.sensitive = false;
+
+        same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
+        every_radiobutton = new Gtk.RadioButton.from_widget (same_radiobutton);
+
+        var month_grid = new Gtk.Box (VERTICAL, 6) {
+            no_show_all = true,
+            sensitive = false
+        };
+        month_grid.add (same_radiobutton);
+        month_grid.add (every_radiobutton);
+
+        var exceptions_label = new Granite.HeaderLabel (_("Exceptions:"));
+
+        var no_exceptions_label = new Gtk.Label (_("No Exceptions"));
+        no_exceptions_label.show ();
+
+        no_exceptions_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_exceptions_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        exceptions_list = new Gtk.ListBox () {
+            hexpand = true,
+            vexpand = true,
+            selection_mode = NONE
+        };
+        exceptions_list.set_placeholder (no_exceptions_label);
+
+        var exceptions_scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = exceptions_list
+        };
+
+        var add_button = new Gtk.Button.with_label (_("Add Exception")) {
+            always_show_image = true,
+            image = new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON),
+            margin_top = 3,
+            margin_end = 3,
+            margin_bottom = 3,
+            margin_start = 3
+        };
+        add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        var inline_toolbar = new Gtk.ActionBar ();
+        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        inline_toolbar.add (add_button);
+
+        var exceptions_box = new Gtk.Box (VERTICAL, 0) {
+            sensitive = false
+        };
+        exceptions_box.add (exceptions_scrolled);
+        exceptions_box.add (inline_toolbar);
+
+        var exceptions_frame = new Gtk.Frame (null) {
+            child = exceptions_box
+        };
+
+        margin_start = 12;
+        margin_end = 12;
+        row_spacing = 6;
+        column_spacing = 12;
+        attach (reminder_label, 1, 0);
+        attach (repeat_box, 1, 1);
+        attach (every_label, 1, 2);
+        attach (every_box, 1, 3);
+        attach (week_box, 1, 4);
+        attach (month_grid, 1, 4);
+        attach (ends_label, 1, 5);
+        attach (ends_grid, 1, 6);
+        attach (exceptions_label, 1, 7);
+        attach (exceptions_frame, 1, 8);
+
+        add_button.clicked.connect (() => {
+            var exception_grid = new ExceptionGrid (new GLib.DateTime.now_local ());
+            exception_grid.show_all ();
+            exceptions_list.add (exception_grid);
+        });
+
+        repeat_switch.notify["active"].connect (() => {
+            bool active = repeat_switch.active;
+            repeat_combobox.sensitive = active;
+            every_box.sensitive = active;
+            week_box.sensitive = active;
+            month_grid.sensitive = active;
+            ends_grid.sensitive = active;
+            exceptions_box.sensitive = active;
+        });
+        repeat_switch.active = false;
+
         repeat_combobox.changed.connect (() => {
             switch (repeat_combobox.active) {
                 case 1:
@@ -90,21 +218,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             every_entry.value_changed ();
         });
 
-        var repeat_switch_grid = new Gtk.Grid ();
-        repeat_switch_grid.valign = Gtk.Align.CENTER;
-        repeat_switch_grid.add (repeat_switch);
-
-        var repeat_grid = new Gtk.Grid ();
-        repeat_grid.row_spacing = 6;
-        repeat_grid.column_spacing = 12;
-        repeat_grid.orientation = Gtk.Orientation.HORIZONTAL;
-        repeat_grid.add (repeat_switch_grid);
-        repeat_grid.add (repeat_combobox);
-
-        var every_label = new Granite.HeaderLabel (_("Every:"));
-
-        every_entry = new Gtk.SpinButton.with_range (1, 99, 1);
-        every_entry.hexpand = true;
         every_entry.value_changed.connect (() => {
             switch (repeat_combobox.active) {
                 case 0:
@@ -122,30 +235,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             }
         });
 
-        every_unit_label = new Gtk.Label (ngettext ("Week", "Weeks", 1));
-
-        var every_grid = new Gtk.Grid ();
-        every_grid.row_spacing = 6;
-        every_grid.column_spacing = 12;
-        every_grid.orientation = Gtk.Orientation.HORIZONTAL;
-        every_grid.sensitive = false;
-        every_grid.add (every_entry);
-        every_grid.add (every_unit_label);
-
-        var ends_label = new Granite.HeaderLabel (_("Ends:"));
-
-        ///Translators: Give a word to describe an event ending after a certain number of repeats.
-        ///This will be displayed in the format like: "Ends After 2 Repeats",
-        ///where this string always represents the last word in the phrase.
-        var end_label = new Gtk.Label (ngettext ("Repeat", "Repeats", 1));
-        end_label.no_show_all = true;
-
-        ends_combobox = new Gtk.ComboBoxText ();
-        ends_combobox.append_text (_("Never"));
-        ends_combobox.append_text (_("Until"));
-        ends_combobox.append_text (_("After"));
-        ends_combobox.hexpand = true;
-        ends_combobox.active = 0;
         ends_combobox.changed.connect (() => {
             switch (ends_combobox.active) {
                 case 0:
@@ -166,104 +255,9 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             }
         });
 
-        end_entry = new Gtk.SpinButton.with_range (1, 99, 1);
-        end_entry.no_show_all = true;
-        end_entry.hexpand = true;
         end_entry.value_changed.connect (() => {
             end_label.label = ngettext ("Repeat", "Repeats", (ulong)end_entry.value);
         });
-
-        var format = Granite.DateTime.get_default_date_format (false, true, true);
-        end_datepicker = new Granite.Widgets.DatePicker.with_format (format);
-        end_datepicker.no_show_all = true;
-
-        var ends_grid = new Gtk.Grid ();
-        ends_grid.row_spacing = 6;
-        ends_grid.column_spacing = 12;
-        ends_grid.orientation = Gtk.Orientation.HORIZONTAL;
-        ends_grid.sensitive = false;
-        ends_grid.add (ends_combobox);
-        ends_grid.add (end_entry);
-        ends_grid.add (end_label);
-        ends_grid.add (end_datepicker);
-
-        create_week_box ();
-        week_box.sensitive = false;
-
-        same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
-        every_radiobutton = new Gtk.RadioButton.from_widget (same_radiobutton);
-
-        month_grid = new Gtk.Grid ();
-        month_grid.row_spacing = 6;
-        month_grid.orientation = Gtk.Orientation.VERTICAL;
-        month_grid.no_show_all = true;
-        month_grid.sensitive = false;
-        month_grid.add (same_radiobutton);
-        month_grid.add (every_radiobutton);
-
-        var exceptions_label = new Granite.HeaderLabel (_("Exceptions:"));
-
-        var no_exceptions_label = new Gtk.Label (_("No Exceptions"));
-        no_exceptions_label.show ();
-
-        unowned Gtk.StyleContext no_exceptions_context = no_exceptions_label.get_style_context ();
-        no_exceptions_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
-        no_exceptions_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
-        exceptions_list = new Gtk.ListBox ();
-        exceptions_list.expand = true;
-        exceptions_list.set_selection_mode (Gtk.SelectionMode.NONE);
-        exceptions_list.set_placeholder (no_exceptions_label);
-
-        var exceptions_scrolled = new Gtk.ScrolledWindow (null, null);
-        exceptions_scrolled.add (exceptions_list);
-        exceptions_scrolled.expand = true;
-
-        var add_button = new Gtk.Button.with_label (_("Add Exception"));
-        add_button.always_show_image = true;
-        add_button.image = new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON);
-        add_button.margin = 3;
-        add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var inline_toolbar = new Gtk.ActionBar ();
-        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-        inline_toolbar.add (add_button);
-
-        var exceptions_grid = new Gtk.Grid ();
-        exceptions_grid.sensitive = false;
-        exceptions_grid.attach (exceptions_scrolled, 0, 0);
-        exceptions_grid.attach (inline_toolbar, 0, 1);
-
-        var exceptions_frame = new Gtk.Frame (null);
-        exceptions_frame.add (exceptions_grid);
-
-        attach (reminder_label, 1, 0);
-        attach (repeat_grid, 1, 1);
-        attach (every_label, 1, 2);
-        attach (every_grid, 1, 3);
-        attach (week_box, 1, 4);
-        attach (month_grid, 1, 4);
-        attach (ends_label, 1, 5);
-        attach (ends_grid, 1, 6);
-        attach (exceptions_label, 1, 7);
-        attach (exceptions_frame, 1, 8);
-
-        add_button.clicked.connect (() => {
-            var exception_grid = new ExceptionGrid (new GLib.DateTime.now_local ());
-            exception_grid.show_all ();
-            exceptions_list.add (exception_grid);
-        });
-
-        repeat_switch.notify["active"].connect (() => {
-            bool active = repeat_switch.active;
-            repeat_combobox.sensitive = active;
-            every_grid.sensitive = active;
-            week_box.sensitive = active;
-            month_grid.sensitive = active;
-            ends_grid.sensitive = active;
-            exceptions_grid.sensitive = active;
-        });
-        repeat_switch.active = false;
 
         load ();
 
@@ -533,8 +527,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     }
 
     private void create_week_box () {
-        week_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        week_box.homogeneous = true;
         mon_button = new Gtk.ToggleButton.with_label (_("Mon"));
         tue_button = new Gtk.ToggleButton.with_label (_("Tue"));
         wed_button = new Gtk.ToggleButton.with_label (_("Wed"));
@@ -542,8 +534,12 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         fri_button = new Gtk.ToggleButton.with_label (_("Fri"));
         sat_button = new Gtk.ToggleButton.with_label (_("Sat"));
         sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
+
+        week_box = new Gtk.Box (HORIZONTAL, 0) {
+            homogeneous = true
+        };
         week_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        week_box.get_style_context ().add_class ("raised");
+
         switch (Calendar.EventStore.get_default ().week_starts_on) {
             case GLib.DateWeekday.TUESDAY:
                 week_box.add (thu_button);
@@ -761,26 +757,30 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
 public class Maya.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
     private Granite.Widgets.DatePicker date;
+
     public ExceptionGrid (GLib.DateTime dt) {
-        set_margin_top (6);
-        set_margin_start (6);
-        set_margin_end (6);
+        date = new Granite.Widgets.DatePicker () {
+            date = dt,
+            hexpand = true
+        };
 
-        date = new Granite.Widgets.DatePicker ();
-        date.date = dt;
-        date.hexpand = true;
+        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", BUTTON) {
+            relief = NONE
+        };
 
-        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);
-        remove_button.relief = Gtk.ReliefStyle.NONE;
-        remove_button.clicked.connect (() => {hide (); destroy ();});
+        var box = new Gtk.Box (HORIZONTAL, 12);
+        box.add (date);
+        box.add (remove_button);
 
-        var grid = new Gtk.Grid ();
-        grid.row_spacing = 6;
-        grid.column_spacing = 12;
-        grid.attach (date, 0, 0, 1, 1);
-        grid.attach (remove_button, 2, 0, 1, 1);
+        margin_top = 6;
+        margin_start = 6;
+        margin_end = 6;
+        child = box;
 
-        add (grid);
+        remove_button.clicked.connect (() => {
+            hide ();
+            destroy ();
+        });
     }
 
     public GLib.DateTime get_date () {
