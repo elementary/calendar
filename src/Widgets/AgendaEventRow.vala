@@ -208,8 +208,9 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             xalign = 0
         };
 
-        var location_revealer = new Gtk.Revealer ();
-        location_revealer.add (location_label);
+        var location_revealer = new Gtk.Revealer () {
+            child = location_label
+        };
 
         var main_grid = new Gtk.Grid () {
             column_spacing = 6,
