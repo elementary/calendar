@@ -69,8 +69,9 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_scrolledwindow.add (guest_list);
         guest_scrolledwindow.expand = true;
 
-        var frame = new Gtk.Frame (null);
-        frame.add (guest_scrolledwindow);
+        var frame = new Gtk.Frame (null) {
+            child = guest_scrolledwindow
+        };
 
         guest_completion = new Gtk.EntryCompletion ();
         guest_completion.set_minimum_key_length (3);

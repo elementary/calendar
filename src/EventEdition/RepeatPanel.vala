@@ -234,8 +234,9 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         exceptions_grid.attach (exceptions_scrolled, 0, 0);
         exceptions_grid.attach (inline_toolbar, 0, 1);
 
-        var exceptions_frame = new Gtk.Frame (null);
-        exceptions_frame.add (exceptions_grid);
+        var exceptions_frame = new Gtk.Frame (null) {
+            child = exceptions_grid
+        };
 
         attach (reminder_label, 1, 0);
         attach (repeat_grid, 1, 1);
