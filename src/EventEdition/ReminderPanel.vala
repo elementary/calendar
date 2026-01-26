@@ -5,7 +5,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
+public class Maya.View.EventEdition.ReminderPanel : Gtk.Box {
     private EventDialog parent_dialog;
     private Gee.ArrayList<ReminderGrid> reminders;
     private Gee.ArrayList<string> reminders_to_remove;
@@ -14,16 +14,11 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
     public ReminderPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
 
-        expand = true;
-        margin_start = margin_end = 12;
-        orientation = VERTICAL;
-        sensitive = parent_dialog.can_edit;
-
         var no_reminder_label = new Gtk.Label (_("No Reminders"));
         no_reminder_label.show ();
 
-        no_reminder_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-        no_reminder_label.get_style_context ().add_class (Granite.CssClass.DIM_LABEL);
+        no_reminder_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_reminder_label.add_css_class (Granite.CssClass.DIM_LABEL);
 
         reminders = new Gee.ArrayList<ReminderGrid> ();
         reminders_to_remove = new Gee.ArrayList<string> ();
@@ -50,13 +45,13 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
         add_button_box.append (new Gtk.Label (_("Add Reminder")));
 
         var add_button = new Gtk.Button () {
-            child = add_button_box
+            child = add_button_box,
+            has_frame = false
         };
-        add_button.get_style_context ().add_class (Granite.CssClass.FLAT);
 
         var inline_toolbar = new Gtk.ActionBar ();
-        inline_toolbar.get_style_context ().add_class (Granite.CssClass.FLAT);
-        inline_toolbar.add (add_button);
+        inline_toolbar.add_css_class (Granite.CssClass.FLAT);
+        inline_toolbar.pack_start (add_button);
 
         var box = new Gtk.Box (VERTICAL, 0);
         box.append (scrolled);
@@ -67,8 +62,12 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
             margin_top = 6
         };
 
+        margin_start = margin_end = 12;
+        orientation = VERTICAL;
+        sensitive = parent_dialog.can_edit;
         add (reminder_label);
         add (frame);
+
         load ();
 
         add_button.clicked.connect (() => {
@@ -191,17 +190,20 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
         });
 
         var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
-            has_frame = false
+            relief = NONE
         };
         remove_button.add_css_class (Granite.CssClass.DESTRUCTIVE);
 
-        var grid = new Gtk.Grid ();
-        grid.margin = 6;
-        grid.column_spacing = 6;
-        grid.attach (time, 0, 0, 1, 1);
-        grid.attach (remove_button, 2, 0, 1, 1);
+        var box = new Gtk.Box (HORIZONTAL, 6) {
+            margin_top = 6,
+            margin_end = 6,
+            margin_bottom = 6,
+            margin_start = 6
+        };
+        box.append (time);
+        box.append (remove_button);
 
-        add (grid);
+        child = box;
 
         remove_button.clicked.connect (() => {
             removed ();

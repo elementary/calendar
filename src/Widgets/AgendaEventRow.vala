@@ -251,23 +251,45 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             revealer.set_reveal_child (false);
         });
 
-        //FIXME: long press and proper context menu events
         var click_gesture = new Gtk.GestureClick () {
-            button = Gdk.BUTTON_SECONDARY,
-            propagation_phase = BUBBLE
+            button = 0
         };
-        click_gesture.released.connect (on_button_press);
+        click_gesture.pressed.connect ((n_press, x, y) => {
+            var sequence = click_gesture.get_current_sequence ();
+            var event = click_gesture.get_last_event (sequence);
+
+            if (event.triggers_context_menu ()) {
+                var menu = new Maya.EventMenu (calevent);
+                menu.attach_to_widget (this, null);
+
+                menu.popup_at_pointer (event);
+
+                click_gesture.set_state (CLAIMED);
+                click_gesture.reset ();
+            }
+        });
+
+        var long_press_gesture = new Gtk.GestureLongPress () {
+            touch_only = true
+        };
+        long_press_gesture.pressed.connect ((x, y) => {
+            var sequence = long_press_gesture.get_current_sequence ();
+            var event = long_press_gesture.get_last_event (sequence);
+
+            var menu = new Maya.EventMenu (calevent);
+            menu.attach_to_widget (this, null);
+
+            menu.popup_at_pointer (event);
+
+            long_press_gesture.set_state (CLAIMED);
+            long_press_gesture.reset ();
+        });
 
         // Fill in the information
         update (calevent);
 
         add_controller (click_gesture);
-    }
-
-    private void on_button_press (int n_press, double x, double y) {
-        var menu = Maya.EventMenu.build (calevent);
-        menu.attach_to_widget (this, null);
-        menu.popup_at_pointer ();
+        add_controller (long_press_gesture);
     }
 
     /**
