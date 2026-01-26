@@ -37,6 +37,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     public Gtk.Revealer revealer { public get; private set; }
 
     private Gtk.GestureMultiPress click_gesture;
+    private Gtk.GestureLongPress long_press_gesture;
 
     private Gtk.Image event_image;
     private Gtk.Label name_label;
@@ -258,19 +259,41 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         });
 
         click_gesture = new Gtk.GestureMultiPress (this) {
-            button = Gdk.BUTTON_SECONDARY,
-            propagation_phase = BUBBLE
+            button = 0
         };
-        click_gesture.released.connect (on_button_press);
+        click_gesture.pressed.connect ((n_press, x, y) => {
+            var sequence = click_gesture.get_current_sequence ();
+            var event = click_gesture.get_last_event (sequence);
+
+            if (event.triggers_context_menu ()) {
+                var menu = new Maya.EventMenu (calevent);
+                menu.attach_to_widget (this, null);
+
+                menu.popup_at_pointer (event);
+
+                click_gesture.set_state (CLAIMED);
+                click_gesture.reset ();
+            }
+        });
+
+        long_press_gesture = new Gtk.GestureLongPress (this) {
+            touch_only = true
+        };
+        long_press_gesture.pressed.connect ((x, y) => {
+            var sequence = long_press_gesture.get_current_sequence ();
+            var event = long_press_gesture.get_last_event (sequence);
+
+            var menu = new Maya.EventMenu (calevent);
+            menu.attach_to_widget (this, null);
+
+            menu.popup_at_pointer (event);
+
+            long_press_gesture.set_state (CLAIMED);
+            long_press_gesture.reset ();
+        });
 
         // Fill in the information
         update (calevent);
-    }
-
-    private void on_button_press (int n_press, double x, double y) {
-        var menu = new Maya.EventMenu (calevent);
-        menu.attach_to_widget (this, null);
-        menu.popup_at_pointer ();
     }
 
     /**
