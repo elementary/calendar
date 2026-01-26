@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-16 19:23+0000\n"
+"POT-Creation-Date: 2026-01-20 21:57+0000\n"
 "PO-Revision-Date: 2021-07-11 07:42+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/calendar/"
@@ -147,7 +147,7 @@ msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "\"%d\" ගොනුවේ සිදුවීම් මෙම දින දසුන සමඟ සංයුක්ත කෙරේ:"
 msgstr[1] "\"%d\" ගොනුවල සිදුවීම් මෙම දින දසුන සමඟ සංයුක්ත කෙරේ:"
 
-#: src/ImportDialog.vala:61
+#: src/ImportDialog.vala:62
 msgid "Import"
 msgstr "ආයාත"
 
@@ -195,7 +195,7 @@ msgstr "සිදුවීම්ක් සාදන්න"
 msgid "Save Changes"
 msgstr "වෙනස්කම් සුරකින්න"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:235
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:239
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "අවලංගු කරන්න"
@@ -220,7 +220,7 @@ msgstr "සහභාගිවන්නන්:"
 msgid "No Participants"
 msgstr "සහභාගීවන්නන් නැත"
 
-#: src/EventEdition/GuestsPanel.vala:96
+#: src/EventEdition/GuestsPanel.vala:98
 msgid "Invite"
 msgstr "ආරාධනා කරන්න"
 
@@ -356,312 +356,312 @@ msgstr "දින 2 ක්"
 msgid "1 week before"
 msgstr "සති 1 ක්"
 
-#: src/EventEdition/RepeatPanel.vala:52
+#: src/EventEdition/RepeatPanel.vala:34
 msgid "Repeat:"
 msgstr "නැවත කිරීම:"
 
-#: src/EventEdition/RepeatPanel.vala:57
+#: src/EventEdition/RepeatPanel.vala:44
 msgid "Daily"
 msgstr "දිනපතා"
 
-#: src/EventEdition/RepeatPanel.vala:58
+#: src/EventEdition/RepeatPanel.vala:45
 msgid "Weekly"
 msgstr "සතිපතා"
 
-#: src/EventEdition/RepeatPanel.vala:59
+#: src/EventEdition/RepeatPanel.vala:46
 msgid "Monthly"
 msgstr "මාස්පතා"
 
-#: src/EventEdition/RepeatPanel.vala:60
+#: src/EventEdition/RepeatPanel.vala:47
 msgid "Yearly"
 msgstr "අවුරුදු පතා"
 
-#: src/EventEdition/RepeatPanel.vala:104
+#: src/EventEdition/RepeatPanel.vala:54
 msgid "Every:"
 msgstr "සෑම:"
 
-#: src/EventEdition/RepeatPanel.vala:111
-msgid "Day"
-msgid_plural "Days"
-msgstr[0] "දිනය"
-msgstr[1] "දින"
-
-#: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
+#: src/EventEdition/RepeatPanel.vala:60 src/EventEdition/RepeatPanel.vala:227
 msgid "Week"
 msgid_plural "Weeks"
 msgstr[0] "සතිය"
 msgstr[1] "සති"
 
-#: src/EventEdition/RepeatPanel.vala:117
-msgid "Month"
-msgid_plural "Months"
-msgstr[0] "මාසය"
-msgstr[1] "මාස"
-
-#: src/EventEdition/RepeatPanel.vala:120
-msgid "Year"
-msgid_plural "Years"
-msgstr[0] "අවුරුද්ද"
-msgstr[1] "අවුරුදු"
-
-#: src/EventEdition/RepeatPanel.vala:135
+#: src/EventEdition/RepeatPanel.vala:68
 msgid "Ends:"
 msgstr "අවසානය:"
 
 #. /Translators: Give a word to describe an event ending after a certain number of repeats.
 #. /This will be displayed in the format like: "Ends After 2 Repeats",
 #. /where this string always represents the last word in the phrase.
-#: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
+#: src/EventEdition/RepeatPanel.vala:73 src/EventEdition/RepeatPanel.vala:259
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "නැවත"
 msgstr[1] "නැවත නැවතත්"
 
-#: src/EventEdition/RepeatPanel.vala:144
+#: src/EventEdition/RepeatPanel.vala:80
 msgid "Never"
 msgstr "කවදාවත්"
 
-#: src/EventEdition/RepeatPanel.vala:145
+#: src/EventEdition/RepeatPanel.vala:81
 msgid "Until"
 msgstr "තුරු"
 
-#: src/EventEdition/RepeatPanel.vala:146
+#: src/EventEdition/RepeatPanel.vala:82
 msgid "After"
 msgstr "පසු"
 
-#: src/EventEdition/RepeatPanel.vala:193
+#: src/EventEdition/RepeatPanel.vala:107
 msgid "The same day every month"
 msgstr "සෑම මසකම එකම දිනය"
 
-#: src/EventEdition/RepeatPanel.vala:204
+#: src/EventEdition/RepeatPanel.vala:117
 msgid "Exceptions:"
 msgstr "ව්‍යතිරේක:"
 
-#: src/EventEdition/RepeatPanel.vala:206
+#: src/EventEdition/RepeatPanel.vala:119
 msgid "No Exceptions"
 msgstr "ව්යතිරේක නොමැත"
 
-#: src/EventEdition/RepeatPanel.vala:222
+#: src/EventEdition/RepeatPanel.vala:136
 msgid "Add Exception"
 msgstr "ව්යතිරේක එක් කරන්න"
 
-#: src/EventEdition/RepeatPanel.vala:385
+#: src/EventEdition/RepeatPanel.vala:224
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "දිනය"
+msgstr[1] "දින"
+
+#: src/EventEdition/RepeatPanel.vala:230
+msgid "Month"
+msgid_plural "Months"
+msgstr[0] "මාසය"
+msgstr[1] "මාස"
+
+#: src/EventEdition/RepeatPanel.vala:233
+msgid "Year"
+msgid_plural "Years"
+msgstr[0] "අවුරුද්ද"
+msgstr[1] "අවුරුදු"
+
+#: src/EventEdition/RepeatPanel.vala:379
 msgid "Every last Sunday"
 msgstr "සෑම අන්තිම ඉරිදා"
 
-#: src/EventEdition/RepeatPanel.vala:388
+#: src/EventEdition/RepeatPanel.vala:382
 msgid "Every last Monday"
 msgstr "සෑම අන්තිම සඳුදා"
 
-#: src/EventEdition/RepeatPanel.vala:391
+#: src/EventEdition/RepeatPanel.vala:385
 msgid "Every last Tuesday"
 msgstr "සෑම අන්තිම අඟහරුවාදා"
 
-#: src/EventEdition/RepeatPanel.vala:394
+#: src/EventEdition/RepeatPanel.vala:388
 msgid "Every last Wednesday"
 msgstr "සෑම අන්තිම බදාදා"
 
-#: src/EventEdition/RepeatPanel.vala:397
+#: src/EventEdition/RepeatPanel.vala:391
 msgid "Every last Thursday"
 msgstr "සෑම අන්තිම බ්රහස්පතින්දා"
 
-#: src/EventEdition/RepeatPanel.vala:400
+#: src/EventEdition/RepeatPanel.vala:394
 msgid "Every last Friday"
 msgstr "සෑම අන්තිම සිකුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:403
+#: src/EventEdition/RepeatPanel.vala:397
 msgid "Every last Saturday"
 msgstr "සෑම අන්තිම සෙනසුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:410
+#: src/EventEdition/RepeatPanel.vala:404
 msgid "Every first Sunday"
 msgstr "සෑම පලමු ඉරිදා"
 
-#: src/EventEdition/RepeatPanel.vala:413
+#: src/EventEdition/RepeatPanel.vala:407
 msgid "Every first Monday"
 msgstr "සෑම පලමු සඳුදා"
 
-#: src/EventEdition/RepeatPanel.vala:416
+#: src/EventEdition/RepeatPanel.vala:410
 msgid "Every first Tuesday"
 msgstr "සෑම පලමු අඟහරුවාදා"
 
-#: src/EventEdition/RepeatPanel.vala:419
+#: src/EventEdition/RepeatPanel.vala:413
 msgid "Every first Wednesday"
 msgstr "සෑම පලමු බදාදා"
 
-#: src/EventEdition/RepeatPanel.vala:422
+#: src/EventEdition/RepeatPanel.vala:416
 msgid "Every first Thursday"
 msgstr "සෑම පලමු බ්රහස්පතින්දා"
 
-#: src/EventEdition/RepeatPanel.vala:425
+#: src/EventEdition/RepeatPanel.vala:419
 msgid "Every first Friday"
 msgstr "සෑම පලමු සිකුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:428
+#: src/EventEdition/RepeatPanel.vala:422
 msgid "Every first Saturday"
 msgstr "සෑම පලමු සෙනසුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:435
+#: src/EventEdition/RepeatPanel.vala:429
 msgid "Every second Sunday"
 msgstr "සෑම දෙවැනි ඉරිදා"
 
-#: src/EventEdition/RepeatPanel.vala:438
+#: src/EventEdition/RepeatPanel.vala:432
 msgid "Every second Monday"
 msgstr "සෑම දෙවැනි සඳුදා"
 
-#: src/EventEdition/RepeatPanel.vala:441
+#: src/EventEdition/RepeatPanel.vala:435
 msgid "Every second Tuesday"
 msgstr "සෑම දෙවැනි අඟහරුවාදා"
 
-#: src/EventEdition/RepeatPanel.vala:444
+#: src/EventEdition/RepeatPanel.vala:438
 msgid "Every second Wednesday"
 msgstr "සෑම දෙවැනි බදාදා"
 
-#: src/EventEdition/RepeatPanel.vala:447
+#: src/EventEdition/RepeatPanel.vala:441
 msgid "Every second Thursday"
 msgstr "සෑම දෙවැනි බ්රහස්පතින්දා"
 
-#: src/EventEdition/RepeatPanel.vala:450
+#: src/EventEdition/RepeatPanel.vala:444
 msgid "Every second Friday"
 msgstr "සෑම දෙවැනි සිකුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:453
+#: src/EventEdition/RepeatPanel.vala:447
 msgid "Every second Saturday"
 msgstr "සෑම දෙවැනි සෙනසුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:460
+#: src/EventEdition/RepeatPanel.vala:454
 msgid "Every third Sunday"
 msgstr "සෑම තුන්වැනි ඉරිදා"
 
-#: src/EventEdition/RepeatPanel.vala:463
+#: src/EventEdition/RepeatPanel.vala:457
 msgid "Every third Monday"
 msgstr "සෑම තුන්වැනි සඳුදා"
 
-#: src/EventEdition/RepeatPanel.vala:466
+#: src/EventEdition/RepeatPanel.vala:460
 msgid "Every third Tuesday"
 msgstr "සෑම තුන්වැනි අඟහරුවාදා"
 
-#: src/EventEdition/RepeatPanel.vala:469
+#: src/EventEdition/RepeatPanel.vala:463
 msgid "Every third Wednesday"
 msgstr "සෑම තුන්වැනි බදාදා"
 
-#: src/EventEdition/RepeatPanel.vala:472
+#: src/EventEdition/RepeatPanel.vala:466
 msgid "Every third Thursday"
 msgstr "සෑම තුන්වැනි බ්රහස්පතින්දා"
 
-#: src/EventEdition/RepeatPanel.vala:475
+#: src/EventEdition/RepeatPanel.vala:469
 msgid "Every third Friday"
 msgstr "සෑම තුන්වැනි සිකුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:478
+#: src/EventEdition/RepeatPanel.vala:472
 msgid "Every third Saturday"
 msgstr "සෑම තුන්වැනි සෙනසුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:485
+#: src/EventEdition/RepeatPanel.vala:479
 msgid "Every fourth Sunday"
 msgstr "සෑම තුන්වැනි ඉරිදා"
 
-#: src/EventEdition/RepeatPanel.vala:488
+#: src/EventEdition/RepeatPanel.vala:482
 msgid "Every fourth Monday"
 msgstr "සෑම හතරවන සඳුදා"
 
-#: src/EventEdition/RepeatPanel.vala:491
+#: src/EventEdition/RepeatPanel.vala:485
 msgid "Every fourth Tuesday"
 msgstr "සෑම හතරවන අඟහරුවාදා"
 
-#: src/EventEdition/RepeatPanel.vala:494
+#: src/EventEdition/RepeatPanel.vala:488
 msgid "Every fourth Wednesday"
 msgstr "සෑම හතරවන බදාදා"
 
-#: src/EventEdition/RepeatPanel.vala:497
+#: src/EventEdition/RepeatPanel.vala:491
 msgid "Every fourth Thursday"
 msgstr "සෑම හතරවන බ්රහස්පතින්දා"
 
-#: src/EventEdition/RepeatPanel.vala:500
+#: src/EventEdition/RepeatPanel.vala:494
 msgid "Every fourth Friday"
 msgstr "සෑම හතරවන සිකුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:503
+#: src/EventEdition/RepeatPanel.vala:497
 msgid "Every fourth Saturday"
 msgstr "සෑම හතරවන සෙනසුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:510
+#: src/EventEdition/RepeatPanel.vala:504
 msgid "Every fifth Sunday"
 msgstr "සෑම පස්වන ඉරිදා"
 
-#: src/EventEdition/RepeatPanel.vala:513
+#: src/EventEdition/RepeatPanel.vala:507
 msgid "Every fifth Monday"
 msgstr "සෑම පස්වන සඳුදා"
 
-#: src/EventEdition/RepeatPanel.vala:516
+#: src/EventEdition/RepeatPanel.vala:510
 msgid "Every fifth Tuesday"
 msgstr "සෑම පස්වන අඟහරුවාදා"
 
-#: src/EventEdition/RepeatPanel.vala:519
+#: src/EventEdition/RepeatPanel.vala:513
 msgid "Every fifth Wednesday"
 msgstr "සෑම පස්වන බදාදා"
 
-#: src/EventEdition/RepeatPanel.vala:522
+#: src/EventEdition/RepeatPanel.vala:516
 msgid "Every fifth Thursday"
 msgstr "සෑම පස්වන බ්රහස්පතින්දා"
 
-#: src/EventEdition/RepeatPanel.vala:525
+#: src/EventEdition/RepeatPanel.vala:519
 msgid "Every fifth Friday"
 msgstr "සෑම පස්වන සිකුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:528
+#: src/EventEdition/RepeatPanel.vala:522
 msgid "Every fifth Saturday"
 msgstr "සෑම පස්වන සෙනසුරාදා"
 
-#: src/EventEdition/RepeatPanel.vala:538
+#: src/EventEdition/RepeatPanel.vala:530
 msgid "Mon"
 msgstr "සදු"
 
-#: src/EventEdition/RepeatPanel.vala:539
+#: src/EventEdition/RepeatPanel.vala:531
 msgid "Tue"
 msgstr "අඟ"
 
-#: src/EventEdition/RepeatPanel.vala:540
+#: src/EventEdition/RepeatPanel.vala:532
 msgid "Wed"
 msgstr "බදා"
 
-#: src/EventEdition/RepeatPanel.vala:541
+#: src/EventEdition/RepeatPanel.vala:533
 msgid "Thu"
 msgstr "බ්රහස්"
 
-#: src/EventEdition/RepeatPanel.vala:542
+#: src/EventEdition/RepeatPanel.vala:534
 msgid "Fri"
 msgstr "සිකු"
 
-#: src/EventEdition/RepeatPanel.vala:543
+#: src/EventEdition/RepeatPanel.vala:535
 msgid "Sat"
 msgstr "සෙන"
 
-#: src/EventEdition/RepeatPanel.vala:544
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Sun"
 msgstr "ඉරි"
 
-#: src/Grid/CalendarView.vala:99 src/Grid/CalendarView.vala:231
+#: src/Grid/CalendarView.vala:100 src/Grid/CalendarView.vala:235
 msgid "Export Calendar…"
 msgstr "දින දසුන නිර්යාත කරන්න…"
 
-#: src/Grid/CalendarView.vala:126
+#: src/Grid/CalendarView.vala:127
 msgid "Go to today's date"
 msgstr "අද දිනට යන්න"
 
-#: src/Grid/CalendarView.vala:144
+#: src/Grid/CalendarView.vala:145
 msgid "Export or Share the default Calendar"
 msgstr "පොදු දින දසුන නිර්යාත කරන්න හෝ බෙදාගන්න"
 
-#: src/Grid/CalendarView.vala:152
+#: src/Grid/CalendarView.vala:153
 msgid "Manage Calendars"
 msgstr "දින දසුන් කළමනාකරණය කරන්න"
 
-#: src/Grid/CalendarView.vala:234 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:238 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "සුරකින්න"
 
-#: src/Grid/CalendarView.vala:239
+#: src/Grid/CalendarView.vala:243
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
@@ -669,7 +669,7 @@ msgstr "calendar.ics"
 msgid "Show Week Numbers"
 msgstr "සතියේ අංක පෙන්වන්න"
 
-#: src/Grid/VAutoHider.vala:109
+#: src/Grid/VAutoHider.vala:105
 #, c-format
 msgid "%u more…"
 msgstr "%u තව…"
@@ -807,33 +807,33 @@ msgid "wedding"
 msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:317
+#: src/Widgets/AgendaEventRow.vala:318
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:320
+#: src/Widgets/AgendaEventRow.vala:321
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:332
+#: src/Widgets/AgendaEventRow.vala:333
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:341
+#: src/Widgets/AgendaEventRow.vala:342
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:344
+#: src/Widgets/AgendaEventRow.vala:345
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
