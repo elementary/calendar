@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-16 19:23+0000\n"
+"POT-Creation-Date: 2026-01-20 21:57+0000\n"
 "PO-Revision-Date: 2025-11-27 01:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementaryos.org/projects/calendar/"
@@ -146,7 +146,7 @@ msgid "Events from %d file will be merged with this calendar:"
 msgid_plural "Events from %d files will be merged with this calendar:"
 msgstr[0] "ამ კალენდარში მოვლენების შემოტანა \"%d\" ფაილიდან:"
 
-#: src/ImportDialog.vala:61
+#: src/ImportDialog.vala:62
 msgid "Import"
 msgstr "შემოტანა"
 
@@ -192,7 +192,7 @@ msgstr "ივენთის შექმნა"
 msgid "Save Changes"
 msgstr "ცვლილებების შენახვა"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:235
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:239
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "გაუქმება"
@@ -217,7 +217,7 @@ msgstr "მონაწილეები:"
 msgid "No Participants"
 msgstr "არავინ მონაწილეობს"
 
-#: src/EventEdition/GuestsPanel.vala:96
+#: src/EventEdition/GuestsPanel.vala:98
 msgid "Invite"
 msgstr "მოიწვიე"
 
@@ -337,307 +337,307 @@ msgstr "2 დღით ადრე"
 msgid "1 week before"
 msgstr "1 კვირით ადრე"
 
-#: src/EventEdition/RepeatPanel.vala:52
+#: src/EventEdition/RepeatPanel.vala:34
 msgid "Repeat:"
 msgstr "გამეორება:"
 
-#: src/EventEdition/RepeatPanel.vala:57
+#: src/EventEdition/RepeatPanel.vala:44
 msgid "Daily"
 msgstr "ყოველდღიურად"
 
-#: src/EventEdition/RepeatPanel.vala:58
+#: src/EventEdition/RepeatPanel.vala:45
 msgid "Weekly"
 msgstr "ყოველკვირეულად"
 
-#: src/EventEdition/RepeatPanel.vala:59
+#: src/EventEdition/RepeatPanel.vala:46
 msgid "Monthly"
 msgstr "ყოველთვიურად"
 
-#: src/EventEdition/RepeatPanel.vala:60
+#: src/EventEdition/RepeatPanel.vala:47
 msgid "Yearly"
 msgstr "ყოველწლიურად"
 
-#: src/EventEdition/RepeatPanel.vala:104
+#: src/EventEdition/RepeatPanel.vala:54
 msgid "Every:"
 msgstr "ყველა:"
 
-#: src/EventEdition/RepeatPanel.vala:111
-msgid "Day"
-msgid_plural "Days"
-msgstr[0] "დღე"
-
-#: src/EventEdition/RepeatPanel.vala:114 src/EventEdition/RepeatPanel.vala:125
+#: src/EventEdition/RepeatPanel.vala:60 src/EventEdition/RepeatPanel.vala:227
 msgid "Week"
 msgid_plural "Weeks"
 msgstr[0] "კვირა"
 
-#: src/EventEdition/RepeatPanel.vala:117
-msgid "Month"
-msgid_plural "Months"
-msgstr[0] "თვე"
-
-#: src/EventEdition/RepeatPanel.vala:120
-msgid "Year"
-msgid_plural "Years"
-msgstr[0] "წელი"
-
-#: src/EventEdition/RepeatPanel.vala:135
+#: src/EventEdition/RepeatPanel.vala:68
 msgid "Ends:"
 msgstr "მთავრდება:"
 
 #. /Translators: Give a word to describe an event ending after a certain number of repeats.
 #. /This will be displayed in the format like: "Ends After 2 Repeats",
 #. /where this string always represents the last word in the phrase.
-#: src/EventEdition/RepeatPanel.vala:140 src/EventEdition/RepeatPanel.vala:173
+#: src/EventEdition/RepeatPanel.vala:73 src/EventEdition/RepeatPanel.vala:259
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "გამეორება"
 
-#: src/EventEdition/RepeatPanel.vala:144
+#: src/EventEdition/RepeatPanel.vala:80
 msgid "Never"
 msgstr "არასდროს"
 
-#: src/EventEdition/RepeatPanel.vala:145
+#: src/EventEdition/RepeatPanel.vala:81
 msgid "Until"
 msgstr "სანამ"
 
-#: src/EventEdition/RepeatPanel.vala:146
+#: src/EventEdition/RepeatPanel.vala:82
 msgid "After"
 msgstr "შემდეგ"
 
-#: src/EventEdition/RepeatPanel.vala:193
+#: src/EventEdition/RepeatPanel.vala:107
 msgid "The same day every month"
 msgstr "იგივე დღეს ყოველთვიურად"
 
-#: src/EventEdition/RepeatPanel.vala:204
+#: src/EventEdition/RepeatPanel.vala:117
 msgid "Exceptions:"
 msgstr "გამონაკლისები:"
 
-#: src/EventEdition/RepeatPanel.vala:206
+#: src/EventEdition/RepeatPanel.vala:119
 msgid "No Exceptions"
 msgstr "გამონაკლისების გარეშე"
 
-#: src/EventEdition/RepeatPanel.vala:222
+#: src/EventEdition/RepeatPanel.vala:136
 msgid "Add Exception"
 msgstr "გამონაკლისის დამატება"
 
-#: src/EventEdition/RepeatPanel.vala:385
+#: src/EventEdition/RepeatPanel.vala:224
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "დღე"
+
+#: src/EventEdition/RepeatPanel.vala:230
+msgid "Month"
+msgid_plural "Months"
+msgstr[0] "თვე"
+
+#: src/EventEdition/RepeatPanel.vala:233
+msgid "Year"
+msgid_plural "Years"
+msgstr[0] "წელი"
+
+#: src/EventEdition/RepeatPanel.vala:379
 msgid "Every last Sunday"
 msgstr "ყოველი ბოლო კვირა"
 
-#: src/EventEdition/RepeatPanel.vala:388
+#: src/EventEdition/RepeatPanel.vala:382
 msgid "Every last Monday"
 msgstr "ყოველი ბოლო ორშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:391
+#: src/EventEdition/RepeatPanel.vala:385
 msgid "Every last Tuesday"
 msgstr "ყოველი ბოლო სამშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:394
+#: src/EventEdition/RepeatPanel.vala:388
 msgid "Every last Wednesday"
 msgstr "ყოველი ბოლო ოთხშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:397
+#: src/EventEdition/RepeatPanel.vala:391
 msgid "Every last Thursday"
 msgstr "ყოველი ბოლო ხუთშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:400
+#: src/EventEdition/RepeatPanel.vala:394
 msgid "Every last Friday"
 msgstr "ყოველი ბოლო პარასკევი"
 
-#: src/EventEdition/RepeatPanel.vala:403
+#: src/EventEdition/RepeatPanel.vala:397
 msgid "Every last Saturday"
 msgstr "ყოველი ბოლო შაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:410
+#: src/EventEdition/RepeatPanel.vala:404
 msgid "Every first Sunday"
 msgstr "ყოველი პირველი კვირა"
 
-#: src/EventEdition/RepeatPanel.vala:413
+#: src/EventEdition/RepeatPanel.vala:407
 msgid "Every first Monday"
 msgstr "ყოველი პირველი ორშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:416
+#: src/EventEdition/RepeatPanel.vala:410
 msgid "Every first Tuesday"
 msgstr "ყოველი პირველი სამშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:419
+#: src/EventEdition/RepeatPanel.vala:413
 msgid "Every first Wednesday"
 msgstr "ყოველი პირველი ოთხშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:422
+#: src/EventEdition/RepeatPanel.vala:416
 msgid "Every first Thursday"
 msgstr "ყოველი პირველი ხუთშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:425
+#: src/EventEdition/RepeatPanel.vala:419
 msgid "Every first Friday"
 msgstr "ყოველი პირველი პარასკევი"
 
-#: src/EventEdition/RepeatPanel.vala:428
+#: src/EventEdition/RepeatPanel.vala:422
 msgid "Every first Saturday"
 msgstr "ყოველი პირველი შაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:435
+#: src/EventEdition/RepeatPanel.vala:429
 msgid "Every second Sunday"
 msgstr "ყოველი პირველი კვირა"
 
-#: src/EventEdition/RepeatPanel.vala:438
+#: src/EventEdition/RepeatPanel.vala:432
 msgid "Every second Monday"
 msgstr "ყოველი მეორე ორშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:441
+#: src/EventEdition/RepeatPanel.vala:435
 msgid "Every second Tuesday"
 msgstr "ყოველი მეორე სამშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:444
+#: src/EventEdition/RepeatPanel.vala:438
 msgid "Every second Wednesday"
 msgstr "ყოველი მეორე ოთხშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:447
+#: src/EventEdition/RepeatPanel.vala:441
 msgid "Every second Thursday"
 msgstr "ყოველი მეორე ხუთშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:450
+#: src/EventEdition/RepeatPanel.vala:444
 msgid "Every second Friday"
 msgstr "ყოველი მეორე პარასკევი"
 
-#: src/EventEdition/RepeatPanel.vala:453
+#: src/EventEdition/RepeatPanel.vala:447
 msgid "Every second Saturday"
 msgstr "ყოველი მეორე შაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:460
+#: src/EventEdition/RepeatPanel.vala:454
 msgid "Every third Sunday"
 msgstr "ყოველი მესამე კვირა"
 
-#: src/EventEdition/RepeatPanel.vala:463
+#: src/EventEdition/RepeatPanel.vala:457
 msgid "Every third Monday"
 msgstr "ყოველი მესამე ორშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:466
+#: src/EventEdition/RepeatPanel.vala:460
 msgid "Every third Tuesday"
 msgstr "ყოველი მესამე სამშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:469
+#: src/EventEdition/RepeatPanel.vala:463
 msgid "Every third Wednesday"
 msgstr "ყოველი მესამე ოთხშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:472
+#: src/EventEdition/RepeatPanel.vala:466
 msgid "Every third Thursday"
 msgstr "ყოველი მესამე ხუთშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:475
+#: src/EventEdition/RepeatPanel.vala:469
 msgid "Every third Friday"
 msgstr "ყოველი მესამე პარასკევი"
 
-#: src/EventEdition/RepeatPanel.vala:478
+#: src/EventEdition/RepeatPanel.vala:472
 msgid "Every third Saturday"
 msgstr "ყოველი მესამე შაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:485
+#: src/EventEdition/RepeatPanel.vala:479
 msgid "Every fourth Sunday"
 msgstr "ყოველ მეოთხე კვირას"
 
-#: src/EventEdition/RepeatPanel.vala:488
+#: src/EventEdition/RepeatPanel.vala:482
 msgid "Every fourth Monday"
 msgstr "ყოველი მეოთხე ორშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:491
+#: src/EventEdition/RepeatPanel.vala:485
 msgid "Every fourth Tuesday"
 msgstr "ყოველი მეოთხე სამშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:494
+#: src/EventEdition/RepeatPanel.vala:488
 msgid "Every fourth Wednesday"
 msgstr "ყოველი მეოთხე ოთხშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:497
+#: src/EventEdition/RepeatPanel.vala:491
 msgid "Every fourth Thursday"
 msgstr "ყოველი მეოთხე ხუთშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:500
+#: src/EventEdition/RepeatPanel.vala:494
 msgid "Every fourth Friday"
 msgstr "ყოველი მეოთხე პარასკევი"
 
-#: src/EventEdition/RepeatPanel.vala:503
+#: src/EventEdition/RepeatPanel.vala:497
 msgid "Every fourth Saturday"
 msgstr "ყოველი მეოთხე შაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:510
+#: src/EventEdition/RepeatPanel.vala:504
 msgid "Every fifth Sunday"
 msgstr "ყოველი მეხუთე კვირა"
 
-#: src/EventEdition/RepeatPanel.vala:513
+#: src/EventEdition/RepeatPanel.vala:507
 msgid "Every fifth Monday"
 msgstr "ყოველი მეხუთე ორშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:516
+#: src/EventEdition/RepeatPanel.vala:510
 msgid "Every fifth Tuesday"
 msgstr "ყოველი მეხუთე სამშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:519
+#: src/EventEdition/RepeatPanel.vala:513
 msgid "Every fifth Wednesday"
 msgstr "ყოველი მეხუთე ოთხშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:522
+#: src/EventEdition/RepeatPanel.vala:516
 msgid "Every fifth Thursday"
 msgstr "ყოველი მეხუთე ხუთშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:525
+#: src/EventEdition/RepeatPanel.vala:519
 msgid "Every fifth Friday"
 msgstr "ყოველი მეხუთე პარასკევი"
 
-#: src/EventEdition/RepeatPanel.vala:528
+#: src/EventEdition/RepeatPanel.vala:522
 msgid "Every fifth Saturday"
 msgstr "ყოველი მეხუთე თშაბათი"
 
-#: src/EventEdition/RepeatPanel.vala:538
+#: src/EventEdition/RepeatPanel.vala:530
 msgid "Mon"
 msgstr "ორშ"
 
-#: src/EventEdition/RepeatPanel.vala:539
+#: src/EventEdition/RepeatPanel.vala:531
 msgid "Tue"
 msgstr "სამ"
 
-#: src/EventEdition/RepeatPanel.vala:540
+#: src/EventEdition/RepeatPanel.vala:532
 msgid "Wed"
 msgstr "ოთხ"
 
-#: src/EventEdition/RepeatPanel.vala:541
+#: src/EventEdition/RepeatPanel.vala:533
 msgid "Thu"
 msgstr "ხუთ"
 
-#: src/EventEdition/RepeatPanel.vala:542
+#: src/EventEdition/RepeatPanel.vala:534
 msgid "Fri"
 msgstr "პარ"
 
-#: src/EventEdition/RepeatPanel.vala:543
+#: src/EventEdition/RepeatPanel.vala:535
 msgid "Sat"
 msgstr "შაბ"
 
-#: src/EventEdition/RepeatPanel.vala:544
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Sun"
 msgstr "კვი"
 
-#: src/Grid/CalendarView.vala:99 src/Grid/CalendarView.vala:231
+#: src/Grid/CalendarView.vala:100 src/Grid/CalendarView.vala:235
 msgid "Export Calendar…"
 msgstr "კალენდარის გატანა…"
 
-#: src/Grid/CalendarView.vala:126
+#: src/Grid/CalendarView.vala:127
 msgid "Go to today's date"
 msgstr "გადადი დღევანდელ თარიღზე"
 
-#: src/Grid/CalendarView.vala:144
+#: src/Grid/CalendarView.vala:145
 msgid "Export or Share the default Calendar"
 msgstr "ძირითადი კალენდრის გატანა ან გაზიარება"
 
-#: src/Grid/CalendarView.vala:152
+#: src/Grid/CalendarView.vala:153
 msgid "Manage Calendars"
 msgstr "კალენდრების მართვა"
 
-#: src/Grid/CalendarView.vala:234 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:238 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "შენახვა"
 
-#: src/Grid/CalendarView.vala:239
+#: src/Grid/CalendarView.vala:243
 msgid "calendar.ics"
 msgstr "კალენდარი.ics"
 
@@ -645,7 +645,7 @@ msgstr "კალენდარი.ics"
 msgid "Show Week Numbers"
 msgstr "გამოაჩინე კვირის ციფრები"
 
-#: src/Grid/VAutoHider.vala:109
+#: src/Grid/VAutoHider.vala:105
 #, c-format
 msgid "%u more…"
 msgstr "%u მეტი…"
@@ -779,33 +779,33 @@ msgid "wedding"
 msgstr "ქორწილი"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:317
+#: src/Widgets/AgendaEventRow.vala:318
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:320
+#: src/Widgets/AgendaEventRow.vala:321
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:332
+#: src/Widgets/AgendaEventRow.vala:333
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:341
+#: src/Widgets/AgendaEventRow.vala:342
 #, c-format
 msgid "%s at %s"
 msgstr "%s %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:344
+#: src/Widgets/AgendaEventRow.vala:345
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
