@@ -194,16 +194,16 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
         };
         remove_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
-        var grid = new Gtk.Box (HORIZONTAL, 6) {
+        var box = new Gtk.Box (HORIZONTAL, 6) {
             margin_top = 6,
             margin_end = 6,
             margin_bottom = 6,
             margin_start = 6
         };
-        grid.add (time);
-        grid.add (remove_button);
+        box.add (time);
+        box.add (remove_button);
 
-        child = grid;
+        child = box;
 
         remove_button.clicked.connect (() => {
             removed ();
