@@ -5,7 +5,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
+public class Maya.View.EventEdition.ReminderPanel : Gtk.Box {
     private EventDialog parent_dialog;
     private Gee.ArrayList<ReminderGrid> reminders;
     private Gee.ArrayList<string> reminders_to_remove;
@@ -13,11 +13,6 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
 
     public ReminderPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
-
-        expand = true;
-        margin_start = margin_end = 12;
-        orientation = VERTICAL;
-        sensitive = parent_dialog.can_edit;
 
         var no_reminder_label = new Gtk.Label (_("No Reminders"));
         no_reminder_label.show ();
@@ -56,7 +51,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
 
         var inline_toolbar = new Gtk.ActionBar ();
         inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        inline_toolbar.add (add_button);
+        inline_toolbar.pack_start (add_button);
 
         var box = new Gtk.Box (VERTICAL, 0);
         box.add (scrolled);
@@ -67,8 +62,12 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Grid {
             margin_top = 6
         };
 
+        margin_start = margin_end = 12;
+        orientation = VERTICAL;
+        sensitive = parent_dialog.can_edit;
         add (reminder_label);
         add (frame);
+
         load ();
 
         add_button.clicked.connect (() => {
@@ -190,17 +189,21 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
             }
         });
 
-        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.BUTTON);
-        remove_button.relief = Gtk.ReliefStyle.NONE;
+        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", BUTTON) {
+            relief = NONE
+        };
         remove_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
-        var grid = new Gtk.Grid ();
-        grid.margin = 6;
-        grid.column_spacing = 6;
-        grid.attach (time, 0, 0, 1, 1);
-        grid.attach (remove_button, 2, 0, 1, 1);
+        var grid = new Gtk.Box (HORIZONTAL, 6) {
+            margin_top = 6,
+            margin_end = 6,
+            margin_bottom = 6,
+            margin_start = 6
+        };
+        grid.add (time);
+        grid.add (remove_button);
 
-        add (grid);
+        child = grid;
 
         remove_button.clicked.connect (() => {
             removed ();
