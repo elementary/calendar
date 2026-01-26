@@ -101,8 +101,25 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         ends_grid.add (end_label);
         ends_grid.add (end_datepicker);
 
-        create_week_box ();
-        week_box.sensitive = false;
+        mon_button = new Gtk.ToggleButton.with_label (_("Mon"));
+        tue_button = new Gtk.ToggleButton.with_label (_("Tue"));
+        wed_button = new Gtk.ToggleButton.with_label (_("Wed"));
+        thu_button = new Gtk.ToggleButton.with_label (_("Thu"));
+        fri_button = new Gtk.ToggleButton.with_label (_("Fri"));
+        sat_button = new Gtk.ToggleButton.with_label (_("Sat"));
+        sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
+
+        week_box = new Gtk.Box (HORIZONTAL, 6) {
+            homogeneous = true,
+            sensitive = false
+        };
+        week_box.add (mon_button);
+        week_box.add (tue_button);
+        week_box.add (wed_button);
+        week_box.add (thu_button);
+        week_box.add (fri_button);
+        week_box.add (sat_button);
+        week_box.add (sun_button);
 
         same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
         every_radiobutton = new Gtk.RadioButton.from_widget (same_radiobutton);
@@ -171,6 +188,9 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         attach (ends_grid, 1, 6);
         attach (exceptions_label, 1, 7);
         attach (exceptions_frame, 1, 8);
+
+        reorder_week_box ();
+        Calendar.EventStore.get_default ().notify["week-starts-on"].connect (reorder_week_box);
 
         add_button.clicked.connect (() => {
             var exception_grid = new ExceptionGrid (new GLib.DateTime.now_local ());
@@ -526,83 +546,72 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         }
     }
 
-    private void create_week_box () {
-        mon_button = new Gtk.ToggleButton.with_label (_("Mon"));
-        tue_button = new Gtk.ToggleButton.with_label (_("Tue"));
-        wed_button = new Gtk.ToggleButton.with_label (_("Wed"));
-        thu_button = new Gtk.ToggleButton.with_label (_("Thu"));
-        fri_button = new Gtk.ToggleButton.with_label (_("Fri"));
-        sat_button = new Gtk.ToggleButton.with_label (_("Sat"));
-        sun_button = new Gtk.ToggleButton.with_label (_("Sun"));
-
-        week_box = new Gtk.Box (HORIZONTAL, 0) {
-            homogeneous = true
-        };
-        week_box.add_css_class (Granite.CssClass.LINKED);
-
+    private void reorder_week_box () {
         switch (Calendar.EventStore.get_default ().week_starts_on) {
-            case GLib.DateWeekday.TUESDAY:
-                week_box.append (thu_button);
-                week_box.append (fri_button);
-                week_box.append (sat_button);
-                week_box.append (sun_button);
-                week_box.append (mon_button);
-                week_box.append (tue_button);
-                week_box.append (wed_button);
+            case MONDAY:
+                week_box.reorder_child (mon_button, 0);
+                week_box.reorder_child (tue_button, 1);
+                week_box.reorder_child (wed_button, 2);
+                week_box.reorder_child (thu_button, 3);
+                week_box.reorder_child (fri_button, 4);
+                week_box.reorder_child (sat_button, 5);
+                week_box.reorder_child (sun_button, 6);
                 break;
-            case GLib.DateWeekday.WEDNESDAY:
-                week_box.append (wed_button);
-                week_box.append (thu_button);
-                week_box.append (fri_button);
-                week_box.append (sat_button);
-                week_box.append (sun_button);
-                week_box.append (mon_button);
-                week_box.append (tue_button);
+            case TUESDAY:
+                week_box.reorder_child (tue_button, 0);
+                week_box.reorder_child (wed_button, 1);
+                week_box.reorder_child (thu_button, 2);
+                week_box.reorder_child (fri_button, 3);
+                week_box.reorder_child (sat_button, 4);
+                week_box.reorder_child (sun_button, 5);
+                week_box.reorder_child (mon_button, 6);
                 break;
-            case GLib.DateWeekday.THURSDAY:
-                week_box.append (thu_button);
-                week_box.append (fri_button);
-                week_box.append (sat_button);
-                week_box.append (sun_button);
-                week_box.append (mon_button);
-                week_box.append (tue_button);
-                week_box.append (wed_button);
+            case WEDNESDAY:
+                week_box.reorder_child (wed_button, 0);
+                week_box.reorder_child (thu_button, 1);
+                week_box.reorder_child (fri_button, 2);
+                week_box.reorder_child (sat_button, 3);
+                week_box.reorder_child (sun_button, 4);
+                week_box.reorder_child (mon_button, 5);
+                week_box.reorder_child (tue_button, 6);
                 break;
-            case GLib.DateWeekday.FRIDAY:
-                week_box.append (fri_button);
-                week_box.append (sat_button);
-                week_box.append (sun_button);
-                week_box.append (mon_button);
-                week_box.append (tue_button);
-                week_box.append (wed_button);
-                week_box.append (thu_button);
+            case THURSDAY:
+                week_box.reorder_child (thu_button, 0);
+                week_box.reorder_child (fri_button, 1);
+                week_box.reorder_child (sat_button, 2);
+                week_box.reorder_child (sun_button, 3);
+                week_box.reorder_child (mon_button, 4);
+                week_box.reorder_child (tue_button, 5);
+                week_box.reorder_child (wed_button, 6);
                 break;
-            case GLib.DateWeekday.SATURDAY:
-                week_box.append (sat_button);
-                week_box.append (sun_button);
-                week_box.append (mon_button);
-                week_box.append (tue_button);
-                week_box.append (wed_button);
-                week_box.append (thu_button);
-                week_box.append (fri_button);
+            case FRIDAY:
+                week_box.reorder_child (fri_button, 0);
+                week_box.reorder_child (sat_button, 1);
+                week_box.reorder_child (sun_button, 2);
+                week_box.reorder_child (mon_button, 3);
+                week_box.reorder_child (tue_button, 4);
+                week_box.reorder_child (wed_button, 5);
+                week_box.reorder_child (thu_button, 6);
                 break;
-            case GLib.DateWeekday.SUNDAY:
-                week_box.append (sun_button);
-                week_box.append (mon_button);
-                week_box.append (tue_button);
-                week_box.append (wed_button);
-                week_box.append (thu_button);
-                week_box.append (fri_button);
-                week_box.append (sat_button);
+            case SATURDAY:
+                week_box.reorder_child (sat_button, 0);
+                week_box.reorder_child (sun_button, 1);
+                week_box.reorder_child (mon_button, 2);
+                week_box.reorder_child (tue_button, 3);
+                week_box.reorder_child (wed_button, 4);
+                week_box.reorder_child (thu_button, 5);
+                week_box.reorder_child (fri_button, 6);
                 break;
-            default:
-                week_box.append (mon_button);
-                week_box.append (tue_button);
-                week_box.append (wed_button);
-                week_box.append (thu_button);
-                week_box.append (fri_button);
-                week_box.append (sat_button);
-                week_box.append (sun_button);
+            case SUNDAY:
+                week_box.reorder_child (sun_button, 0);
+                week_box.reorder_child (mon_button, 1);
+                week_box.reorder_child (tue_button, 2);
+                week_box.reorder_child (wed_button, 3);
+                week_box.reorder_child (thu_button, 4);
+                week_box.reorder_child (fri_button, 5);
+                week_box.reorder_child (sat_button, 6);
+                break;
+            case BAD_WEEKDAY:
                 break;
         }
     }
