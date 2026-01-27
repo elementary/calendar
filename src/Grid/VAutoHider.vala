@@ -9,15 +9,17 @@
 
 namespace Maya.View {
     public class VAutoHider : Gtk.Bin {
+        private Gtk.Label more_label;
+        private  Gtk.Box main_box;
 
-        Gtk.Label more_label;
-        Gtk.Box main_box;
+        construct {
+            more_label = new Gtk.Label ("") {
+                valign = END
+            };
 
-        public VAutoHider () {
-            more_label = new Gtk.Label ("");
-            more_label.set_alignment (0.5f, 1);
-            main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            main_box = new Gtk.Box (VERTICAL, 0);
             main_box.pack_end (more_label);
+
             base.add (main_box);
         }
 
