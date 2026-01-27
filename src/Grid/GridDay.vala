@@ -109,7 +109,9 @@ public class Maya.View.GridDay : Granite.Bin {
     //     calmodel.update_event (src, comp, ECal.ObjModType.ALL);
     // }
 
-    public void add_event_button (EventButton button) {
+    public void add_event (ECal.Component component) {
+        var button = new EventButton (component);
+
         string uid = button.get_uid ();
         lock (event_buttons) {
             event_buttons.remove (uid);
