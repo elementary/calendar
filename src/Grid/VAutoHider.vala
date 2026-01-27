@@ -8,7 +8,7 @@
 
 public class Maya.View.VAutoHider : Gtk.Bin {
     private Gtk.Label more_label;
-    private  Gtk.Box main_box;
+    private Gtk.Box main_box;
 
     construct {
         more_label = new Gtk.Label ("") {
