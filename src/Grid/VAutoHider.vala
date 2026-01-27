@@ -24,7 +24,7 @@ namespace Maya.View {
         }
 
         public override void add (Gtk.Widget widget) {
-            List<weak Gtk.Widget> children = main_box.get_children ();
+            var children = main_box.get_children ();
             children.append (widget);
 
             children.sort (compare_children);
@@ -38,6 +38,15 @@ namespace Maya.View {
             });
 
             queue_resize ();
+        }
+
+        public void update (Gtk.Widget widget) {
+            var children = main_box.get_children ();
+
+            children.sort (compare_children);
+
+            int index = children.index (widget);
+            main_box.reorder_child (widget, index);
         }
 
         public override void size_allocate (Gtk.Allocation allocation) {
@@ -134,14 +143,6 @@ namespace Maya.View {
                 natural_height = minimum_height;
         }
 
-        public void update (Gtk.Widget widget) {
-            List<weak Gtk.Widget> children = main_box.get_children ();
-
-            children.sort (compare_children);
-            int index = children.index (widget);
-            main_box.reorder_child (widget, index);
-        }
-
         public static GLib.CompareFunc<weak Gtk.Widget> compare_children = (a, b) => {
             EventButton a2 = a as EventButton;
             EventButton b2 = b as EventButton;
@@ -154,6 +155,5 @@ namespace Maya.View {
                 return Util.compare_events (a2.comp, b2.comp);
             }
         };
-
     }
 }
