@@ -46,7 +46,7 @@ namespace Maya.EventMenu {
 
         E.Source src = comp.get_data ("source");
         menu.popped_up.connect (() => {
-            var sensitive = src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false;
+            var sensitive = src.writable && !Calendar.EventStore.get_default ().calclient_is_readonly (src);
 
             action_edit.set_enabled (sensitive);
             action_duplicate.set_enabled (sensitive);
