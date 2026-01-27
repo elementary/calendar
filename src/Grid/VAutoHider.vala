@@ -6,7 +6,6 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-
 namespace Maya.View {
     public class VAutoHider : Gtk.Bin {
         private Gtk.Label more_label;
