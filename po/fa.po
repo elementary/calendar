@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-26 19:21+0000\n"
+"POT-Creation-Date: 2026-01-28 15:27+0000\n"
 "PO-Revision-Date: 2024-09-27 13:16+0000\n"
 "Last-Translator: Hossein <hossein17@duck.com>\n"
 "Language-Team: Persian <https://l10n.elementary.io/projects/calendar/"
@@ -175,9 +175,11 @@ msgstr "اطلاعات عمومی"
 msgid "Location"
 msgstr "مکان (نشانی)"
 
-#: src/EventEdition/EventDialog.vala:122
-msgid "Guests"
-msgstr "مهمان‌ها"
+#: src/EventEdition/EventDialog.vala:122 src/EventEdition/GuestsPanel.vala:53
+#, fuzzy
+#| msgid "Invite"
+msgid "Invitees"
+msgstr "دعوت"
 
 #: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
@@ -203,30 +205,28 @@ msgstr "ساخت رویداد"
 msgid "Save Changes"
 msgstr "ذخیره کردن تغییرات"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:239
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:228
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "انصراف"
 
-#: src/EventEdition/GuestGrid.vala:45
+#: src/EventEdition/GuestGrid.vala:63
 msgid "Accepted"
 msgstr "پذیرفته شده"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:67
 msgid "Declined"
 msgstr "رد شده"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:71
 msgid "Maybe"
 msgstr "شاید"
 
-#: src/EventEdition/GuestsPanel.vala:53
-msgid "Participants:"
-msgstr "شرکت کنندگان:"
-
 #: src/EventEdition/GuestsPanel.vala:57
-msgid "No Participants"
-msgstr "بدون شرکت کننده"
+#, fuzzy
+#| msgid "Invite"
+msgid "No Invitees"
+msgstr "دعوت"
 
 #: src/EventEdition/GuestsPanel.vala:98
 msgid "Invite"
@@ -628,27 +628,27 @@ msgstr "هر پنجمین جمعه"
 msgid "Every fifth Saturday"
 msgstr "هر پنجمین شنبه"
 
-#: src/Grid/CalendarView.vala:100 src/Grid/CalendarView.vala:235
+#: src/Grid/CalendarView.vala:85 src/Grid/CalendarView.vala:224
 msgid "Export Calendar…"
 msgstr "خروجی گرفتن از تقویم…"
 
-#: src/Grid/CalendarView.vala:127
+#: src/Grid/CalendarView.vala:112
 msgid "Go to today's date"
 msgstr "رفتن به تاریخ امروز"
 
-#: src/Grid/CalendarView.vala:145
+#: src/Grid/CalendarView.vala:129
 msgid "Export or Share the default Calendar"
 msgstr "خروجی گرفتن و یا اشتراک گذاری تقویم پیش‌فرض"
 
-#: src/Grid/CalendarView.vala:153
+#: src/Grid/CalendarView.vala:138
 msgid "Manage Calendars"
 msgstr "مدیریت تقویم ها"
 
-#: src/Grid/CalendarView.vala:238 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "ذخیره"
 
-#: src/Grid/CalendarView.vala:243
+#: src/Grid/CalendarView.vala:232
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
@@ -794,33 +794,33 @@ msgid "wedding"
 msgstr "عروسی"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:341
+#: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:344
+#: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:356
+#: src/Widgets/AgendaEventRow.vala:353
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:365
+#: src/Widgets/AgendaEventRow.vala:362
 #, c-format
 msgid "%s at %s"
 msgstr "%s در %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:368
+#: src/Widgets/AgendaEventRow.vala:365
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
@@ -898,23 +898,23 @@ msgstr "حذف رویداد"
 msgid "This event will be permanently deleted."
 msgstr "این رویداد برای همیشه حذف خواهد شد."
 
-#: src/Widgets/EventMenu.vala:49 src/Widgets/SourceRow.vala:69
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "ویرایش..."
 
-#: src/Widgets/EventMenu.vala:53
+#: src/Widgets/EventMenu.vala:35
 msgid "Duplicate…"
 msgstr "تکرار…"
 
-#: src/Widgets/EventMenu.vala:59
+#: src/Widgets/EventMenu.vala:38
 msgid "Remove Event"
 msgstr "حذف رویداد"
 
-#: src/Widgets/EventMenu.vala:63
+#: src/Widgets/EventMenu.vala:39
 msgid "Remove Occurrence"
 msgstr "حذف رخداد"
 
-#: src/Widgets/EventMenu.vala:69 src/Widgets/SourceRow.vala:64
+#: src/Widgets/EventMenu.vala:41 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "زدودن"
 
@@ -954,6 +954,15 @@ msgstr "بر‌گرداندن"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "تقویم \"%S\" پاک شده است"
+
+#~ msgid "Guests"
+#~ msgstr "مهمان‌ها"
+
+#~ msgid "Participants:"
+#~ msgstr "شرکت کنندگان:"
+
+#~ msgid "No Participants"
+#~ msgstr "بدون شرکت کننده"
 
 #~ msgid "Hide Week Numbers"
 #~ msgstr "مخفی نمودن شماره  هفته"

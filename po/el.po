@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-26 19:21+0000\n"
+"POT-Creation-Date: 2026-01-28 15:27+0000\n"
 "PO-Revision-Date: 2025-12-11 20:55+0000\n"
 "Last-Translator: Orionas Kakomoiroglou "
 "<209243298+OrionasKakomoiroglou@users.noreply.github.com>\n"
@@ -174,9 +174,11 @@ msgstr "Γενικές Πληροφορίες"
 msgid "Location"
 msgstr "Τοποθεσία"
 
-#: src/EventEdition/EventDialog.vala:122
-msgid "Guests"
-msgstr "Καλεσμένοι"
+#: src/EventEdition/EventDialog.vala:122 src/EventEdition/GuestsPanel.vala:53
+#, fuzzy
+#| msgid "Invite"
+msgid "Invitees"
+msgstr "Πρόσκληση"
 
 #: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
@@ -200,30 +202,28 @@ msgstr "Δημιουργία γεγονότος"
 msgid "Save Changes"
 msgstr "Αποθήκευση αλλαγών"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:239
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:228
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: src/EventEdition/GuestGrid.vala:45
+#: src/EventEdition/GuestGrid.vala:63
 msgid "Accepted"
 msgstr "Αποδέχτηκε"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:67
 msgid "Declined"
 msgstr "Απορρίφθηκε"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:71
 msgid "Maybe"
 msgstr "Ίσως"
 
-#: src/EventEdition/GuestsPanel.vala:53
-msgid "Participants:"
-msgstr "Συμμετέχοντες:"
-
 #: src/EventEdition/GuestsPanel.vala:57
-msgid "No Participants"
-msgstr "Κανείς Συμμετέχων"
+#, fuzzy
+#| msgid "Invite"
+msgid "No Invitees"
+msgstr "Πρόσκληση"
 
 #: src/EventEdition/GuestsPanel.vala:98
 msgid "Invite"
@@ -630,27 +630,27 @@ msgstr "Κάθε πέμπτη Παρασκευή"
 msgid "Every fifth Saturday"
 msgstr "Κάθε πέμπτο Σάββατο"
 
-#: src/Grid/CalendarView.vala:100 src/Grid/CalendarView.vala:235
+#: src/Grid/CalendarView.vala:85 src/Grid/CalendarView.vala:224
 msgid "Export Calendar…"
 msgstr "Εξαγωγή Ημερολογίου…"
 
-#: src/Grid/CalendarView.vala:127
+#: src/Grid/CalendarView.vala:112
 msgid "Go to today's date"
 msgstr "Μετάβαση στη σημερινή ημερομηνία"
 
-#: src/Grid/CalendarView.vala:145
+#: src/Grid/CalendarView.vala:129
 msgid "Export or Share the default Calendar"
 msgstr "Εξαγωγή ή Κοινή Χρήση του προεπιλεγμένου Ημερολογίου"
 
-#: src/Grid/CalendarView.vala:153
+#: src/Grid/CalendarView.vala:138
 msgid "Manage Calendars"
 msgstr "Διαχείριση Ημερολογίων"
 
-#: src/Grid/CalendarView.vala:238 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: src/Grid/CalendarView.vala:243
+#: src/Grid/CalendarView.vala:232
 msgid "calendar.ics"
 msgstr "ημερολόγιο.ics"
 
@@ -792,33 +792,33 @@ msgid "wedding"
 msgstr "γάμος"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:341
+#: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "Από %s έως %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:344
+#: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "Από %s στις %s έως %s στις %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:356
+#: src/Widgets/AgendaEventRow.vala:353
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "Από %s έως %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:365
+#: src/Widgets/AgendaEventRow.vala:362
 #, c-format
 msgid "%s at %s"
 msgstr "%s στις %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:368
+#: src/Widgets/AgendaEventRow.vala:365
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s στις %s - %s στις %s"
@@ -901,24 +901,24 @@ msgstr "Διαγραφή Γεγονότος"
 msgid "This event will be permanently deleted."
 msgstr "Το γεγονός αυτό δεν γίνεται να επαξεργαστεί"
 
-#: src/Widgets/EventMenu.vala:49 src/Widgets/SourceRow.vala:69
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "Επεξεργασία..."
 
-#: src/Widgets/EventMenu.vala:53
+#: src/Widgets/EventMenu.vala:35
 msgid "Duplicate…"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:59
+#: src/Widgets/EventMenu.vala:38
 #, fuzzy
 msgid "Remove Event"
 msgstr "Διαγραφή Γεγονότος"
 
-#: src/Widgets/EventMenu.vala:63
+#: src/Widgets/EventMenu.vala:39
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:69 src/Widgets/SourceRow.vala:64
+#: src/Widgets/EventMenu.vala:41 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "Αφαίρεση"
 
@@ -961,6 +961,15 @@ msgstr "Αναίρεση"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "Το ημερολόγιο \"%s\" αφαιρέθηκε."
+
+#~ msgid "Guests"
+#~ msgstr "Καλεσμένοι"
+
+#~ msgid "Participants:"
+#~ msgstr "Συμμετέχοντες:"
+
+#~ msgid "No Participants"
+#~ msgstr "Κανείς Συμμετέχων"
 
 #~ msgid "Hide Week Numbers"
 #~ msgstr "Απόκρυψη αριθμών εβδομάδας"
