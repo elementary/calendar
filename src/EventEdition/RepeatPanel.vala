@@ -11,7 +11,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private Gtk.ComboBoxText repeat_combobox;
     private Gtk.ComboBoxText ends_combobox;
     private Gtk.SpinButton end_entry;
-    private Granite.Widgets.DatePicker end_datepicker;
+    private Granite.DatePicker end_datepicker;
     private Gtk.Box week_box;
     private Gtk.SpinButton every_entry;
     private Gtk.ListBox exceptions_list;
@@ -24,8 +24,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
     private Gtk.ToggleButton sat_button;
     private Gtk.ToggleButton sun_button;
 
-    private Gtk.RadioButton every_radiobutton;
-    private Gtk.RadioButton same_radiobutton;
+    private Gtk.CheckButton every_radiobutton;
+    private Gtk.CheckButton same_radiobutton;
 
     public RepeatPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -765,7 +765,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 }
 
 public class Maya.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
-    private Granite.Widgets.DatePicker date;
+    private Granite.DatePicker date;
 
     public ExceptionGrid (GLib.DateTime dt) {
         date = new Granite.Widgets.DatePicker () {
@@ -773,13 +773,13 @@ public class Maya.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
             hexpand = true
         };
 
-        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", BUTTON) {
-            relief = NONE
+        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
+            has_frame = false
         };
 
         var box = new Gtk.Box (HORIZONTAL, 12);
-        box.add (date);
-        box.add (remove_button);
+        box.append (date);
+        box.append (remove_button);
 
         margin_top = 6;
         margin_start = 6;

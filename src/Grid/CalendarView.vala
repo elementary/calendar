@@ -21,7 +21,7 @@ public class Maya.View.CalendarView : Gtk.Box {
 
     public DateTime? selected_date { get; private set; }
     public Gtk.SearchEntry search_bar { get; private set; }
-    public Hdy.HeaderBar header_bar { get; private set; }
+    public Adw.HeaderBar header_bar { get; private set; }
 
     private Calendar.Widgets.DateSwitcher month_switcher;
     private Calendar.Widgets.DateSwitcher year_switcher;
@@ -104,7 +104,7 @@ public class Maya.View.CalendarView : Gtk.Box {
 
         var application_instance = ((Gtk.Application) GLib.Application.get_default ());
 
-        var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR) {
+        var button_today = new Gtk.Button.from_icon_name ("calendar-go-today") {
             action_name = Maya.MainWindow.ACTION_PREFIX + Maya.MainWindow.ACTION_SHOW_TODAY
         };
         button_today.tooltip_markup = Granite.markup_accel_tooltip (
@@ -124,7 +124,7 @@ public class Maya.View.CalendarView : Gtk.Box {
         var spinner = new Maya.View.Widgets.DynamicSpinner ();
 
         var contractor = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("document-export", LARGE_TOOLBAR),
+            icon_name = "document-export",
             menu_model = contractor_menu,
             tooltip_text = _("Export or Share the default Calendar"),
             use_popover = false
@@ -133,12 +133,12 @@ public class Maya.View.CalendarView : Gtk.Box {
         var source_popover = new Calendar.Widgets.SourcePopover ();
 
         var menu_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            icon_name = "open-menu",
             popover = source_popover,
             tooltip_text = _("Manage Calendars")
         };
 
-        header_bar = new Hdy.HeaderBar () {
+        header_bar = new Adw.HeaderBar () {
             show_close_button = true
         };
         header_bar.pack_start (month_switcher);
@@ -148,7 +148,7 @@ public class Maya.View.CalendarView : Gtk.Box {
         header_bar.pack_end (contractor);
         header_bar.pack_end (spinner);
 
-        header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         stack = new Gtk.Stack () {
             hexpand = true,
@@ -177,17 +177,12 @@ public class Maya.View.CalendarView : Gtk.Box {
         settings.changed["show-weeks"].connect (on_show_weeks_changed);
         settings.get_value ("show-weeks");
 
-        events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        events |= Gdk.EventMask.KEY_PRESS_MASK;
-        events |= Gdk.EventMask.SCROLL_MASK;
-        events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         orientation = VERTICAL;
-        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        add (header_bar);
-        add (error_bar);
-        add (info_bar);
-        add (stack);
-        show_all ();
+        add_css_class (Granite.STYLE_CLASS_VIEW);
+        append (header_bar);
+        append (error_bar);
+        append (info_bar);
+        append (stack);
 
         error_bar.response.connect ((id) => error_bar.set_revealed (false));
 
@@ -327,7 +322,7 @@ public class Maya.View.CalendarView : Gtk.Box {
         }
 
         var spacer = new Gtk.Label ("");
-        spacer.get_style_context ().add_class ("weeks");
+        spacer.add_css_class ("weeks");
 
         var spacer_revealer = new Gtk.Revealer () {
             child = spacer,
@@ -354,7 +349,6 @@ public class Maya.View.CalendarView : Gtk.Box {
         big_grid.attach (header, 1, 0);
         big_grid.attach (days_grid, 1, 1);
         big_grid.attach (weeks, 0, 1);
-        big_grid.show_all ();
 
         settings.bind ("show-weeks", spacer_revealer, "reveal-child", SettingsBindFlags.GET);
 

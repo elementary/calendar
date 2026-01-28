@@ -17,8 +17,8 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Box {
         var no_reminder_label = new Gtk.Label (_("No Reminders"));
         no_reminder_label.show ();
 
-        no_reminder_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-        no_reminder_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        no_reminder_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_reminder_label.add_css_class (Granite.CssClass.DIM_LABEL);
 
         reminders = new Gee.ArrayList<ReminderGrid> ();
         reminders_to_remove = new Gee.ArrayList<string> ();
@@ -41,21 +41,21 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Box {
         };
 
         var add_button_box = new Gtk.Box (HORIZONTAL, 0);
-        add_button_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", BUTTON));
-        add_button_box.add (new Gtk.Label (_("Add Reminder")));
+        add_button_box.append (new Gtk.Image.from_icon_name ("list-add-symbolic", BUTTON));
+        add_button_box.append (new Gtk.Label (_("Add Reminder")));
 
         var add_button = new Gtk.Button () {
-            child = add_button_box
+            child = add_button_box,
+            has_frame = false
         };
-        add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var inline_toolbar = new Gtk.ActionBar ();
-        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        inline_toolbar.add_css_class (Granite.CssClass.FLAT);
         inline_toolbar.pack_start (add_button);
 
         var box = new Gtk.Box (VERTICAL, 0);
-        box.add (scrolled);
-        box.add (inline_toolbar);
+        box.append (scrolled);
+        box.append (inline_toolbar);
 
         var frame = new Gtk.Frame (null) {
             child = box,
@@ -189,10 +189,10 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
             }
         });
 
-        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", BUTTON) {
+        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
             relief = NONE
         };
-        remove_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        remove_button.add_css_class (Granite.CssClass.DESTRUCTIVE);
 
         var box = new Gtk.Box (HORIZONTAL, 6) {
             margin_top = 6,
@@ -200,8 +200,8 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
             margin_bottom = 6,
             margin_start = 6
         };
-        box.add (time);
-        box.add (remove_button);
+        box.append (time);
+        box.append (remove_button);
 
         child = box;
 

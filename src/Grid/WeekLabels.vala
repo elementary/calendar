@@ -21,15 +21,12 @@
 /**
  * Represent the week labels at the left side of the grid.
  */
-public class Maya.View.WeekLabels : Gtk.Bin {
+public class Maya.View.WeekLabels : Granite.Bin {
     private Gtk.Grid day_grid;
     private Gtk.Label[] labels;
     private int nr_of_weeks;
 
     private static GLib.Settings show_weeks;
-
-    private Gtk.GestureMultiPress click_gesture;
-    private Gtk.GestureLongPress long_press_gesture;
 
     static construct {
         if (Application.wingpanel_settings != null) {
@@ -72,7 +69,7 @@ public class Maya.View.WeekLabels : Gtk.Bin {
             attach_widget = this
         };
 
-        click_gesture = new Gtk.GestureMultiPress (revealer) {
+        var click_gesture = new Gtk.GestureMultiPress () {
             button = 0
         };
         click_gesture.pressed.connect ((n_press, x, y) => {
@@ -87,7 +84,7 @@ public class Maya.View.WeekLabels : Gtk.Bin {
             }
         });
 
-        long_press_gesture = new Gtk.GestureLongPress (this) {
+        var long_press_gesture = new Gtk.GestureLongPress () {
             touch_only = true
         };
         long_press_gesture.pressed.connect ((x, y) => {
@@ -99,6 +96,9 @@ public class Maya.View.WeekLabels : Gtk.Bin {
             long_press_gesture.set_state (CLAIMED);
             long_press_gesture.reset ();
         });
+
+        add_controller (click_gesture);
+        add_controller (long_press_gesture);
     }
 
     public void update (DateTime date, int nr_of_weeks) {

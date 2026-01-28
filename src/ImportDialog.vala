@@ -55,12 +55,12 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
         var frame = new Gtk.Frame (null) {
             child = calchooser
         };
-        frame.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        frame.add_css_class (Granite.STYLE_CLASS_VIEW);
 
-        custom_bin.add (frame);
+        custom_bin.append (frame);
 
         var ok_button = (Gtk.Button) add_button (_("Import"), Gtk.ResponseType.APPLY);
-        ok_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        ok_button.add_css_class (Granite.CssClass.SUGGESTED);
 
         response.connect ((response_id) => {
             if (response_id == Gtk.ResponseType.APPLY) {

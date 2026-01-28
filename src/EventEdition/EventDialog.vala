@@ -147,14 +147,14 @@ public class EventDialog : Granite.Dialog {
                     halign = START,
                     hexpand = true
                 };
-                delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+                delete_button.add_css_class (Granite.CssClass.DESTRUCTIVE_ACTION);
                 delete_button.clicked.connect (remove_event);
 
-                buttonbox.add (delete_button);
+                buttonbox.append (delete_button);
             }
 
             var create_button = new Gtk.Button ();
-            create_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            create_button.add_css_class (Granite.CssClass.SUGGESTED_ACTION);
             create_button.clicked.connect (save_dialog);
 
             if (date_time != null) {
@@ -167,17 +167,17 @@ public class EventDialog : Granite.Dialog {
             var cancel_button = new Gtk.Button.with_label (_("Cancel"));
             cancel_button.clicked.connect (() => {this.destroy ();});
 
-            buttonbox.add (cancel_button);
-            buttonbox.add (create_button);
+            buttonbox.append (cancel_button);
+            buttonbox.append (create_button);
 
             var button_sizegroup = new Gtk.SizeGroup (HORIZONTAL);
             button_sizegroup.add_widget (cancel_button);
             button_sizegroup.add_widget (create_button);
 
             var box = new Gtk.Box (VERTICAL, 24);
-            box.add (stack_switcher);
-            box.add (stack);
-            box.add (buttonbox);
+            box.append (stack_switcher);
+            box.append (stack);
+            box.append (buttonbox);
             box.show_all ();
 
             get_content_area ().add (box);

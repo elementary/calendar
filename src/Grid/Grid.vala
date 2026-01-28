@@ -171,7 +171,6 @@ public class Grid : Gtk.Grid {
                 }
 
                 attach (day, col, row);
-                day.show_all ();
             }
 
             col = (col + 1) % 7;

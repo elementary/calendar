@@ -9,7 +9,7 @@
 /**
  * Represents a single day on the grid.
  */
-public class Maya.View.GridDay : Gtk.EventBox {
+public class Maya.View.GridDay : Granite.Bin {
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
@@ -22,14 +22,14 @@ public class Maya.View.GridDay : Gtk.EventBox {
     private VAutoHider event_box;
     private GLib.HashTable<string, EventButton> event_buttons;
     private Gtk.EventControllerKey key_controller;
-    private Gtk.GestureMultiPress click_gesture;
+    private Gtk.GestureClick click_gesture;
 
     public bool in_current_month {
         set {
             if (value) {
-                get_style_context ().remove_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                get_style_context ().remove_class (Granite.CssClass.DIM_LABEL);
             } else {
-                get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                get_style_context ().add_class (Granite.CssClass.DIM_LABEL);
             }
         }
     }
@@ -54,15 +54,15 @@ public class Maya.View.GridDay : Gtk.EventBox {
         };
 
         var container_box = new Gtk.Box (VERTICAL, 3);
-        container_box.add (label);
-        container_box.add (event_box);
+        container_box.append (label);
+        container_box.append (event_box);
 
         can_focus = true;
         child = container_box;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         get_style_context ().add_class ("cell");
 
-        click_gesture = new Gtk.GestureMultiPress (this) {
+        click_gesture = new Gtk.GestureClick (this) {
             button = Gdk.BUTTON_PRIMARY,
             propagation_phase = BUBBLE
         };
@@ -73,8 +73,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
         };
         key_controller.key_pressed.connect (on_key_press);
 
-        Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
-        Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
+        // Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
+        // Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
 
         this.bind_property ("date", label, "label", BindingFlags.SYNC_CREATE, (binding, srcval, ref targetval) => {
             unowned var date = (GLib.DateTime) srcval.get_boxed ();
@@ -83,31 +83,31 @@ public class Maya.View.GridDay : Gtk.EventBox {
         });
     }
 
-    public override bool drag_drop (Gdk.DragContext context, int x, int y, uint time_) {
-        Gtk.drag_finish (context, true, false, time_);
-        Gdk.Atom atom = Gtk.drag_dest_find_target (this, context, Gtk.drag_dest_get_target_list (this));
-        Gtk.drag_get_data (this, context, atom, time_);
-        return true;
-    }
+    // public override bool drag_drop (Gdk.DragContext context, int x, int y, uint time_) {
+    //     Gtk.drag_finish (context, true, false, time_);
+    //     Gdk.Atom atom = Gtk.drag_dest_find_target (this, context, Gtk.drag_dest_get_target_list (this));
+    //     Gtk.drag_get_data (this, context, atom, time_);
+    //     return true;
+    // }
 
-    public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-        var calmodel = Calendar.EventStore.get_default ();
-        var comp = calmodel.drag_component;
-        unowned ICal.Component icalcomp = comp.get_icalcomponent ();
-        E.Source src = comp.get_data ("source");
-        var start = icalcomp.get_dtstart ();
-        var end = icalcomp.get_dtend ();
-        var gap = date.get_day_of_month () - start.get_day ();
-        start.set_day (start.get_day () + gap);
+    // public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
+    //     var calmodel = Calendar.EventStore.get_default ();
+    //     var comp = calmodel.drag_component;
+    //     unowned ICal.Component icalcomp = comp.get_icalcomponent ();
+    //     E.Source src = comp.get_data ("source");
+    //     var start = icalcomp.get_dtstart ();
+    //     var end = icalcomp.get_dtend ();
+    //     var gap = date.get_day_of_month () - start.get_day ();
+    //     start.set_day (start.get_day () + gap);
 
-        if (!end.is_null_time ()) {
-            end.set_day (end.get_day () + gap);
-            icalcomp.set_dtend (end);
-        }
+    //     if (!end.is_null_time ()) {
+    //         end.set_day (end.get_day () + gap);
+    //         icalcomp.set_dtend (end);
+    //     }
 
-        icalcomp.set_dtstart (start);
-        calmodel.update_event (src, comp, ECal.ObjModType.ALL);
-    }
+    //     icalcomp.set_dtstart (start);
+    //     calmodel.update_event (src, comp, ECal.ObjModType.ALL);
+    // }
 
     public void add_event (ECal.Component component) {
         var button = new EventButton (component);
@@ -122,8 +122,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
             button.unparent ();
         }
 
-        event_box.add (button);
-        button.show_all ();
+        event_box.append (button);
     }
 
     public bool update_event (ECal.Component modified_event) {

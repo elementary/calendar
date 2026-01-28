@@ -24,9 +24,6 @@ public class Maya.View.EventButton : Gtk.Revealer {
     private Gtk.Label label;
     private Gtk.StyleContext grid_style_context;
 
-    private Gtk.GestureMultiPress click_gesture;
-    private Gtk.GestureLongPress long_press_gesture;
-
     public EventButton (ECal.Component comp) {
         Object (
              comp: comp
@@ -49,14 +46,14 @@ public class Maya.View.EventButton : Gtk.Revealer {
         grid_style_context.add_class ("event");
 
         var event_box = new Gtk.EventBox ();
-        event_box.add (internal_grid);
+        event_box.append (internal_grid);
 
         add (event_box);
 
         var context_menu = Maya.EventMenu.build (comp);
         context_menu.attach_to_widget (this, null);
 
-        click_gesture = new Gtk.GestureMultiPress (this) {
+        var click_gesture = new Gtk.GestureClick () {
             button = 0
         };
         click_gesture.pressed.connect ((n_press, x, y) => {
@@ -78,7 +75,7 @@ public class Maya.View.EventButton : Gtk.Revealer {
             }
         });
 
-        long_press_gesture = new Gtk.GestureLongPress (this) {
+        var long_press_gesture = new Gtk.GestureLongPress () {
             touch_only = true
         };
         long_press_gesture.pressed.connect ((x, y) => {
@@ -91,24 +88,27 @@ public class Maya.View.EventButton : Gtk.Revealer {
             long_press_gesture.reset ();
         });
 
-        Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
-        Gtk.TargetEntry dnd2 = {"text/uri-list", 0, 0};
-        Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2}, Gdk.DragAction.MOVE);
+        add_controller (click_gesture);
+        add_controller (long_press_gesture);
 
-        event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
-            Calendar.EventStore.get_default ().drag_component = comp;
-            unowned ICal.Component icalcomp = comp.get_icalcomponent ();
-            var ical_str = icalcomp.as_ical_string ();
-            sel.set_text (ical_str, ical_str.length);
-            try {
-                var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
-                var file = File.new_for_path (path);
-                if (file.replace_contents (ical_str.data, null, false, FileCreateFlags.PRIVATE, null))
-                    sel.set_uris ({file.get_uri ()});
-            } catch (Error e) {
-                critical (e.message);
-            }
-        });
+        // Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
+        // Gtk.TargetEntry dnd2 = {"text/uri-list", 0, 0};
+        // Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2}, Gdk.DragAction.MOVE);
+
+        // event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
+        //     Calendar.EventStore.get_default ().drag_component = comp;
+        //     unowned ICal.Component icalcomp = comp.get_icalcomponent ();
+        //     var ical_str = icalcomp.as_ical_string ();
+        //     sel.set_text (ical_str, ical_str.length);
+        //     try {
+        //         var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
+        //         var file = File.new_for_path (path);
+        //         if (file.replace_contents (ical_str.data, null, false, FileCreateFlags.PRIVATE, null))
+        //             sel.set_uris ({file.get_uri ()});
+        //     } catch (Error e) {
+        //         critical (e.message);
+        //     }
+        // });
 
         E.Source source = comp.get_data ("source");
 

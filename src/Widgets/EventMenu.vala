@@ -7,7 +7,7 @@
  */
 
 namespace Maya.EventMenu {
-    public static Gtk.Menu build (ECal.Component comp) {
+    public static Gtk.PopoverMenu build (ECal.Component comp) {
         var action_edit = new GLib.SimpleAction ("edit", null);
         action_edit.activate.connect (() => {
             ((Maya.Application) GLib.Application.get_default ()).window.on_modified (comp);
@@ -41,7 +41,7 @@ namespace Maya.EventMenu {
             menu_model.prepend (_("Remove"), "event.remove");
         }
 
-        var menu = new Gtk.Menu.from_model (menu_model);
+        var menu = new Gtk.PopoverMenu.from_model (menu_model);
         menu.insert_action_group ("event", action_group);
 
         E.Source src = comp.get_data ("source");

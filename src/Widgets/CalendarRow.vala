@@ -61,7 +61,7 @@ public class CalendarRow : Gtk.Box {
             xalign = 0
         };
 
-        var selection_icon = new Gtk.Image.from_icon_name ("object-select-symbolic", Gtk.IconSize.MENU) {
+        var selection_icon = new Gtk.Image.from_icon_name ("object-select-symbolic") {
             no_show_all = true,
             visible = false
         };
@@ -84,7 +84,7 @@ public class CalendarRow : Gtk.Box {
         var style_provider = new Gtk.CssProvider ();
 
         try {
-            style_provider.load_from_data (css_color, css_color.length);
+            style_provider.load_from_string (css_color);
             calendar_color_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (Error e) {
             warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
