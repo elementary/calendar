@@ -1,19 +1,6 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2026 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Maxwell Barvian
  *              Corentin Noël <corentin@elementaryos.org>
@@ -32,26 +19,24 @@ public class Maya.View.CalendarView : Gtk.Box {
     private const string ACTION_GROUP_PREFIX = "calendar";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
-    public Gtk.SearchEntry search_bar;
+    public DateTime? selected_date { get; private set; }
+    public Gtk.SearchEntry search_bar { get; private set; }
+    public Hdy.HeaderBar header_bar { get; private set; }
+
     private Calendar.Widgets.DateSwitcher month_switcher;
     private Calendar.Widgets.DateSwitcher year_switcher;
-
-    public Hdy.HeaderBar header_bar { get; private set; }
-    public DateTime? selected_date { get; private set; }
-
+    private Grid days_grid;
     private Gtk.EventControllerScroll scroll_controller;
-    private WeekLabels weeks { get; private set; }
-    private Header header { get; private set; }
-    private Grid days_grid { get; private set; }
-    private Gtk.Stack stack { get; private set; }
-    private Gtk.Label spacer { get; private set; }
-    private static GLib.Settings show_weeks;
+    private Gtk.Stack stack;
+    private WeekLabels weeks;
+
+    private static GLib.Settings settings;
 
     static construct {
         if (Application.wingpanel_settings != null) {
-            show_weeks = Application.wingpanel_settings;
+            settings = Application.wingpanel_settings;
         } else {
-            show_weeks = Application.saved_state;
+            settings = Application.saved_state;
         }
     }
 
@@ -135,14 +120,14 @@ public class Maya.View.CalendarView : Gtk.Box {
         };
 
         var calmodel = Calendar.EventStore.get_default ();
-        set_switcher_date (calmodel.month_start);
 
         var spinner = new Maya.View.Widgets.DynamicSpinner ();
 
         var contractor = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("document-export", LARGE_TOOLBAR),
-            popup = new Gtk.Menu.from_model (contractor_menu),
-            tooltip_text = _("Export or Share the default Calendar")
+            menu_model = contractor_menu,
+            tooltip_text = _("Export or Share the default Calendar"),
+            use_popover = false
         };
 
         var source_popover = new Calendar.Widgets.SourcePopover ();
@@ -165,8 +150,10 @@ public class Maya.View.CalendarView : Gtk.Box {
 
         header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        stack = new Gtk.Stack ();
-        stack.expand = true;
+        stack = new Gtk.Stack () {
+            hexpand = true,
+            vexpand = true
+        };
 
         sync_with_model (); // Populate stack with a grid
 
@@ -187,8 +174,8 @@ public class Maya.View.CalendarView : Gtk.Box {
             }
         });
 
-        show_weeks.changed["show-weeks"].connect (on_show_weeks_changed);
-        show_weeks.get_value ("show-weeks");
+        settings.changed["show-weeks"].connect (on_show_weeks_changed);
+        settings.get_value ("show-weeks");
 
         events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         events |= Gdk.EventMask.KEY_PRESS_MASK;
@@ -216,6 +203,8 @@ public class Maya.View.CalendarView : Gtk.Box {
         month_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_month (1));
         year_switcher.left_clicked.connect (() => Calendar.EventStore.get_default ().change_year (-1));
         year_switcher.right_clicked.connect (() => Calendar.EventStore.get_default ().change_year (1));
+
+        set_switcher_date (calmodel.month_start);
         calmodel.parameters_changed.connect (() => {
             set_switcher_date (calmodel.month_start);
         });
@@ -264,35 +253,24 @@ public class Maya.View.CalendarView : Gtk.Box {
         year_switcher.text = date.format ("%Y");
     }
 
-    //--- Public Methods ---//
-
     public void today () {
         var today = Calendar.Util.datetime_strip_time (new DateTime.now_local ());
         var calmodel = Calendar.EventStore.get_default ();
         var start = Calendar.Util.datetime_get_start_of_month (today);
-        if (!start.equal (calmodel.month_start))
+        if (!start.equal (calmodel.month_start)) {
             calmodel.month_start = start;
+        }
+
         sync_with_model ();
         days_grid.focus_date (today);
     }
 
-    //--- Signal Handlers ---//
-
-    void on_show_weeks_changed () {
+    private void on_show_weeks_changed () {
         var model = Calendar.EventStore.get_default ();
         weeks.update (model.data_range.first_dt, model.num_weeks);
-        update_spacer_visible ();
     }
 
-    private void update_spacer_visible () {
-        if (show_weeks.get_boolean ("show-weeks")) {
-            spacer.show ();
-        } else {
-            spacer.hide ();
-        }
-    }
-
-    void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
+    private void on_events_added (E.Source source, Gee.Collection<ECal.Component> events) {
         Idle.add ( () => {
             foreach (var event in events) {
                 add_event (source, event);
@@ -302,7 +280,7 @@ public class Maya.View.CalendarView : Gtk.Box {
         });
     }
 
-    void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
+    private void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
         Idle.add ( () => {
             foreach (var event in events) {
                 update_event (source, event);
@@ -312,7 +290,7 @@ public class Maya.View.CalendarView : Gtk.Box {
         });
     }
 
-    void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
+    private void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
         Idle.add ( () => {
             foreach (var event in events)
                 remove_event (source, event);
@@ -322,7 +300,7 @@ public class Maya.View.CalendarView : Gtk.Box {
     }
 
     /* Indicates the month has changed */
-    void on_model_parameters_changed () {
+    private void on_model_parameters_changed () {
         var model = Calendar.EventStore.get_default ();
         if (days_grid.grid_range != null && model.data_range.equals (days_grid.grid_range))
             return; // nothing to do
@@ -334,15 +312,32 @@ public class Maya.View.CalendarView : Gtk.Box {
         });
     }
 
-    //--- Helper Methods ---//
-    Gtk.Grid create_big_grid () {
-        spacer = new Gtk.Label ("");
-        spacer.no_show_all = true;
+    /* Sets the calendar widgets to the date range of the model */
+    private void sync_with_model () {
+        var model = Calendar.EventStore.get_default ();
+        DateTime previous_first = null;
+        if (days_grid != null) {
+            if (days_grid.grid_range != null && (model.data_range.equals (days_grid.grid_range) || days_grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0)) {
+                return; // nothing to do
+            }
+
+            if (days_grid.grid_range != null) {
+                previous_first = days_grid.grid_range.first_dt;
+            }
+        }
+
+        var spacer = new Gtk.Label ("");
         spacer.get_style_context ().add_class ("weeks");
+
+        var spacer_revealer = new Gtk.Revealer () {
+            child = spacer,
+            transition_type = CROSSFADE
+        };
 
         weeks = new WeekLabels ();
 
-        header = new Header ();
+        var header = new Header ();
+
         days_grid = new Grid ();
         days_grid.focus_date (selected_date);
         days_grid.on_event_add.connect ((date) => on_event_add (date));
@@ -351,32 +346,18 @@ public class Maya.View.CalendarView : Gtk.Box {
             selection_changed (date);
         });
 
-        // Grid properties
-        var new_big_grid = new Gtk.Grid ();
-        new_big_grid.attach (spacer, 0, 0, 1, 1);
-        new_big_grid.attach (header, 1, 0, 1, 1);
-        new_big_grid.attach (days_grid, 1, 1, 1, 1);
-        new_big_grid.attach (weeks, 0, 1, 1, 1);
-        new_big_grid.show_all ();
-        new_big_grid.expand = true;
+        var big_grid = new Gtk.Grid () {
+            hexpand = true,
+            vexpand = true
+        };
+        big_grid.attach (spacer_revealer, 0, 0);
+        big_grid.attach (header, 1, 0);
+        big_grid.attach (days_grid, 1, 1);
+        big_grid.attach (weeks, 0, 1);
+        big_grid.show_all ();
 
-        update_spacer_visible ();
+        settings.bind ("show-weeks", spacer_revealer, "reveal-child", SettingsBindFlags.GET);
 
-        return new_big_grid;
-    }
-
-    /* Sets the calendar widgets to the date range of the model */
-    void sync_with_model () {
-        var model = Calendar.EventStore.get_default ();
-        DateTime previous_first = null;
-        if (days_grid != null) {
-            if (days_grid.grid_range != null && (model.data_range.equals (days_grid.grid_range) || days_grid.grid_range.first_dt.compare (model.data_range.first_dt) == 0))
-                return; // nothing to do
-            if (days_grid.grid_range != null)
-                previous_first = days_grid.grid_range.first_dt;
-        }
-
-        var big_grid = create_big_grid ();
         stack.add (big_grid);
 
         header.update_columns (model.week_starts_on);
@@ -391,9 +372,9 @@ public class Maya.View.CalendarView : Gtk.Box {
 
         if (previous_first != null) {
             if (previous_first.compare (days_grid.grid_range.first_dt) == -1) {
-                stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
+                stack.transition_type = SLIDE_LEFT;
             } else {
-                stack.transition_type = Gtk.StackTransitionType.SLIDE_RIGHT;
+                stack.transition_type = SLIDE_RIGHT;
             }
         }
 
@@ -401,7 +382,7 @@ public class Maya.View.CalendarView : Gtk.Box {
     }
 
     /* Render new event on the grid */
-    void add_event (E.Source source, ECal.Component event) {
+    private void add_event (E.Source source, ECal.Component event) {
         /* The "source" data is added to events by the Calendar.EventStore. The grid must only show events that have
            been added to the model first */
         assert (event.get_data<E.Source> ("source") != null);
@@ -409,17 +390,17 @@ public class Maya.View.CalendarView : Gtk.Box {
     }
 
     /* Update the event on the grid */
-    void update_event (E.Source source, ECal.Component event) {
+    private void update_event (E.Source source, ECal.Component event) {
         days_grid.update_event (event);
     }
 
     /* Remove event from the grid */
-    void remove_event (E.Source source, ECal.Component event) {
+    private void remove_event (E.Source source, ECal.Component event) {
         days_grid.remove_event (event);
     }
 
     /* Remove all events from the grid */
-    void remove_all_events () {
+    private void remove_all_events () {
         days_grid.remove_all_events ();
     }
 }
