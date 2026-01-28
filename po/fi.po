@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-26 19:21+0000\n"
+"POT-Creation-Date: 2026-01-28 15:27+0000\n"
 "PO-Revision-Date: 2025-09-29 18:55+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementaryos.org/projects/calendar/"
@@ -175,9 +175,11 @@ msgstr "Yleiset tiedot"
 msgid "Location"
 msgstr "Paikka"
 
-#: src/EventEdition/EventDialog.vala:122
-msgid "Guests"
-msgstr "Vieraat"
+#: src/EventEdition/EventDialog.vala:122 src/EventEdition/GuestsPanel.vala:53
+#, fuzzy
+#| msgid "Invite"
+msgid "Invitees"
+msgstr "Kutsu"
 
 #: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
@@ -201,30 +203,28 @@ msgstr "Luo tapahtuma"
 msgid "Save Changes"
 msgstr "Tallenna muutokset"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:239
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:228
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "Peru"
 
-#: src/EventEdition/GuestGrid.vala:45
+#: src/EventEdition/GuestGrid.vala:63
 msgid "Accepted"
 msgstr "Hyväksynyt"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:67
 msgid "Declined"
 msgstr "Hylännyt"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:71
 msgid "Maybe"
 msgstr "Ehkä"
 
-#: src/EventEdition/GuestsPanel.vala:53
-msgid "Participants:"
-msgstr "Osanottajat:"
-
 #: src/EventEdition/GuestsPanel.vala:57
-msgid "No Participants"
-msgstr "Ei osanottajia"
+#, fuzzy
+#| msgid "Invite"
+msgid "No Invitees"
+msgstr "Kutsu"
 
 #: src/EventEdition/GuestsPanel.vala:98
 msgid "Invite"
@@ -631,27 +631,27 @@ msgstr "Aina viidentenä perjantaina"
 msgid "Every fifth Saturday"
 msgstr "Aina viidentenä lauantaina"
 
-#: src/Grid/CalendarView.vala:100 src/Grid/CalendarView.vala:235
+#: src/Grid/CalendarView.vala:85 src/Grid/CalendarView.vala:224
 msgid "Export Calendar…"
 msgstr "Vie kalenteri…"
 
-#: src/Grid/CalendarView.vala:127
+#: src/Grid/CalendarView.vala:112
 msgid "Go to today's date"
 msgstr "Siirry kuluvaan päivään"
 
-#: src/Grid/CalendarView.vala:145
+#: src/Grid/CalendarView.vala:129
 msgid "Export or Share the default Calendar"
 msgstr "Vie tai jaa vakiokalenteri"
 
-#: src/Grid/CalendarView.vala:153
+#: src/Grid/CalendarView.vala:138
 msgid "Manage Calendars"
 msgstr "Hallitse kalentereita"
 
-#: src/Grid/CalendarView.vala:238 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "Tallenna"
 
-#: src/Grid/CalendarView.vala:243
+#: src/Grid/CalendarView.vala:232
 msgid "calendar.ics"
 msgstr "kalenteri.ics"
 
@@ -793,33 +793,33 @@ msgid "wedding"
 msgstr "wedding;häät"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:341
+#: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:344
+#: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:356
+#: src/Widgets/AgendaEventRow.vala:353
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:365
+#: src/Widgets/AgendaEventRow.vala:362
 #, c-format
 msgid "%s at %s"
 msgstr "%s klo %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:368
+#: src/Widgets/AgendaEventRow.vala:365
 #, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s – %s"
@@ -897,23 +897,23 @@ msgstr "Poista tapahtuma"
 msgid "This event will be permanently deleted."
 msgstr "Tämä tapahtuma poistetaan pysyvästi."
 
-#: src/Widgets/EventMenu.vala:49 src/Widgets/SourceRow.vala:69
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "Muokkaa…"
 
-#: src/Widgets/EventMenu.vala:53
+#: src/Widgets/EventMenu.vala:35
 msgid "Duplicate…"
 msgstr "Tee kaksoiskappale…"
 
-#: src/Widgets/EventMenu.vala:59
+#: src/Widgets/EventMenu.vala:38
 msgid "Remove Event"
 msgstr "Poista tapahtuma"
 
-#: src/Widgets/EventMenu.vala:63
+#: src/Widgets/EventMenu.vala:39
 msgid "Remove Occurrence"
 msgstr "Poista toistuvuus"
 
-#: src/Widgets/EventMenu.vala:69 src/Widgets/SourceRow.vala:64
+#: src/Widgets/EventMenu.vala:41 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "Poista"
 
@@ -953,6 +953,15 @@ msgstr "Kumoa"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" poistettiin"
+
+#~ msgid "Guests"
+#~ msgstr "Vieraat"
+
+#~ msgid "Participants:"
+#~ msgstr "Osanottajat:"
+
+#~ msgid "No Participants"
+#~ msgstr "Ei osanottajia"
 
 #~ msgid "Hide Week Numbers"
 #~ msgstr "Piilota viikkonumerot"
