@@ -29,7 +29,7 @@ public class Maya.View.SourceDialog : Granite.Dialog {
     private Gee.Collection<PlacementWidget> backend_widgets;
     private Gee.HashMap<string, bool> widgets_checked;
     private Gtk.Button create_button;
-    private Gtk.ComboBox type_combobox;
+    private Gtk.ComboBoxText type_combobox;
     private Gtk.ListStore list_store;
     private Gtk.CheckButton is_default_check;
     private E.Source source = null;
@@ -75,12 +75,10 @@ public class Maya.View.SourceDialog : Granite.Dialog {
 
         list_store = new Gtk.ListStore (2, typeof (string), typeof (Backend));
 
-        var renderer = new Gtk.CellRendererText ();
-
-        type_combobox = new Gtk.ComboBox.with_model (list_store);
-        type_combobox.hexpand = true;
-        type_combobox.pack_start (renderer, true);
-        type_combobox.add_attribute (renderer, "text", 0);
+        type_combobox = new Gtk.ComboBoxText () {
+            hexpand = true,
+            model = list_store
+        };
 
         type_combobox.changed.connect (() => {
             GLib.Value backend;

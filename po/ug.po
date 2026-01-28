@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-26 19:21+0000\n"
+"POT-Creation-Date: 2026-01-28 15:27+0000\n"
 "PO-Revision-Date: 2017-01-03 09:18+0000\n"
 "Last-Translator: Jaap Broekhuizen <Unknown>\n"
 "Language-Team: \n"
@@ -172,9 +172,11 @@ msgstr "ئادەتتىكى ئۇچۇرلار"
 msgid "Location"
 msgstr "ئورنى"
 
-#: src/EventEdition/EventDialog.vala:122
-msgid "Guests"
-msgstr "مېھمانلار"
+#: src/EventEdition/EventDialog.vala:122 src/EventEdition/GuestsPanel.vala:53
+#, fuzzy
+#| msgid "Invite"
+msgid "Invitees"
+msgstr "تەكلىپ"
 
 #: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
@@ -201,30 +203,28 @@ msgstr "پائالىيەت قۇرۇش"
 msgid "Save Changes"
 msgstr "ئۆزگەرتىشلەرنى ساقلاش"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:239
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:228
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr "ئەمەلدىن قالدۇرۇش"
 
-#: src/EventEdition/GuestGrid.vala:45
+#: src/EventEdition/GuestGrid.vala:63
 msgid "Accepted"
 msgstr "قوبۇل قىلىنغان"
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:67
 msgid "Declined"
 msgstr "رەت قىلىنغان"
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:71
 msgid "Maybe"
 msgstr ""
 
-#: src/EventEdition/GuestsPanel.vala:53
-msgid "Participants:"
-msgstr "قاتناشقۇچىلار:"
-
 #: src/EventEdition/GuestsPanel.vala:57
-msgid "No Participants"
-msgstr "قاتناشقۇچىلار يوق"
+#, fuzzy
+#| msgid "Invite"
+msgid "No Invitees"
+msgstr "تەكلىپ"
 
 #: src/EventEdition/GuestsPanel.vala:98
 msgid "Invite"
@@ -642,28 +642,28 @@ msgstr "ھەرئاينىڭ بەشىنجى جۈمەسى"
 msgid "Every fifth Saturday"
 msgstr "ھەرئاينىڭ بەشىنجى شەنبىسى"
 
-#: src/Grid/CalendarView.vala:100 src/Grid/CalendarView.vala:235
+#: src/Grid/CalendarView.vala:85 src/Grid/CalendarView.vala:224
 #, fuzzy
 msgid "Export Calendar…"
 msgstr "كالېندارنى چىقىرىش...."
 
-#: src/Grid/CalendarView.vala:127
+#: src/Grid/CalendarView.vala:112
 msgid "Go to today's date"
 msgstr "بۈگۈننى كۆرسىتىش"
 
-#: src/Grid/CalendarView.vala:145
+#: src/Grid/CalendarView.vala:129
 msgid "Export or Share the default Calendar"
 msgstr "سۈكۈتتىكى كالېندارنى چىقىرىش ياكى ھەمبەھىرلەش"
 
-#: src/Grid/CalendarView.vala:153
+#: src/Grid/CalendarView.vala:138
 msgid "Manage Calendars"
 msgstr "كالېندارنى باشقۇرۇش"
 
-#: src/Grid/CalendarView.vala:238 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr "ساقلاش"
 
-#: src/Grid/CalendarView.vala:243
+#: src/Grid/CalendarView.vala:232
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
@@ -809,33 +809,33 @@ msgid "wedding"
 msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:341
+#: src/Widgets/AgendaEventRow.vala:338
 #, fuzzy, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:344
+#: src/Widgets/AgendaEventRow.vala:341
 #, fuzzy, c-format
 msgid "%s, %s – %s, %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:356
+#: src/Widgets/AgendaEventRow.vala:353
 #, fuzzy, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr "%s, %s - %s, %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:365
+#: src/Widgets/AgendaEventRow.vala:362
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:368
+#: src/Widgets/AgendaEventRow.vala:365
 #, fuzzy, c-format
 msgid "%s, %s – %s"
 msgstr "%s, %s - %s, %s"
@@ -915,24 +915,24 @@ msgstr "پائالىيەتنى ئۆچۈرۈش"
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:49 src/Widgets/SourceRow.vala:69
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr "تەھرىرلەش...."
 
-#: src/Widgets/EventMenu.vala:53
+#: src/Widgets/EventMenu.vala:35
 msgid "Duplicate…"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:59
+#: src/Widgets/EventMenu.vala:38
 #, fuzzy
 msgid "Remove Event"
 msgstr "پائالىيەتنى ئۆچۈرۈش"
 
-#: src/Widgets/EventMenu.vala:63
+#: src/Widgets/EventMenu.vala:39
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:69 src/Widgets/SourceRow.vala:64
+#: src/Widgets/EventMenu.vala:41 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr "ئۆچۈرۈش"
 
@@ -974,6 +974,15 @@ msgstr "بىكار قىلىش"
 #, fuzzy, c-format
 msgid "\"%s\" removed"
 msgstr "كالېندار \"%s\" ئۆچۈرۈلگەن."
+
+#~ msgid "Guests"
+#~ msgstr "مېھمانلار"
+
+#~ msgid "Participants:"
+#~ msgstr "قاتناشقۇچىلار:"
+
+#~ msgid "No Participants"
+#~ msgstr "قاتناشقۇچىلار يوق"
 
 #~ msgid "Hide Week Numbers"
 #~ msgstr "ھەپتە نومۇرىنى يوشۇرۇش"
