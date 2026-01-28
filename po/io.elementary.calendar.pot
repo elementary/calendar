@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.calendar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-26 19:21+0000\n"
+"POT-Creation-Date: 2026-01-28 15:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -166,8 +166,8 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: src/EventEdition/EventDialog.vala:122
-msgid "Guests"
+#: src/EventEdition/EventDialog.vala:122 src/EventEdition/GuestsPanel.vala:53
+msgid "Invitees"
 msgstr ""
 
 #: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:33
@@ -192,29 +192,25 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:239
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:228
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
 msgid "Cancel"
 msgstr ""
 
-#: src/EventEdition/GuestGrid.vala:45
+#: src/EventEdition/GuestGrid.vala:63
 msgid "Accepted"
 msgstr ""
 
-#: src/EventEdition/GuestGrid.vala:49
+#: src/EventEdition/GuestGrid.vala:67
 msgid "Declined"
 msgstr ""
 
-#: src/EventEdition/GuestGrid.vala:53
+#: src/EventEdition/GuestGrid.vala:71
 msgid "Maybe"
 msgstr ""
 
-#: src/EventEdition/GuestsPanel.vala:53
-msgid "Participants:"
-msgstr ""
-
 #: src/EventEdition/GuestsPanel.vala:57
-msgid "No Participants"
+msgid "No Invitees"
 msgstr ""
 
 #: src/EventEdition/GuestsPanel.vala:98
@@ -622,27 +618,27 @@ msgstr ""
 msgid "Every fifth Saturday"
 msgstr ""
 
-#: src/Grid/CalendarView.vala:100 src/Grid/CalendarView.vala:235
+#: src/Grid/CalendarView.vala:85 src/Grid/CalendarView.vala:224
 msgid "Export Calendar…"
 msgstr ""
 
-#: src/Grid/CalendarView.vala:127
+#: src/Grid/CalendarView.vala:112
 msgid "Go to today's date"
 msgstr ""
 
-#: src/Grid/CalendarView.vala:145
+#: src/Grid/CalendarView.vala:129
 msgid "Export or Share the default Calendar"
 msgstr ""
 
-#: src/Grid/CalendarView.vala:153
+#: src/Grid/CalendarView.vala:138
 msgid "Manage Calendars"
 msgstr ""
 
-#: src/Grid/CalendarView.vala:238 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:285
 msgid "Save"
 msgstr ""
 
-#: src/Grid/CalendarView.vala:243
+#: src/Grid/CalendarView.vala:232
 msgid "calendar.ics"
 msgstr ""
 
@@ -784,33 +780,33 @@ msgid "wedding"
 msgstr ""
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:341
+#: src/Widgets/AgendaEventRow.vala:338
 #, c-format
 msgctxt "date-range"
 msgid "%s – %s"
 msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:344
+#: src/Widgets/AgendaEventRow.vala:341
 #, c-format
 msgid "%s, %s – %s, %s"
 msgstr ""
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:356
+#: src/Widgets/AgendaEventRow.vala:353
 #, c-format
 msgctxt "time-range"
 msgid "%s – %s"
 msgstr ""
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:365
+#: src/Widgets/AgendaEventRow.vala:362
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:368
+#: src/Widgets/AgendaEventRow.vala:365
 #, c-format
 msgid "%s, %s – %s"
 msgstr ""
@@ -884,23 +880,23 @@ msgstr ""
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:49 src/Widgets/SourceRow.vala:69
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
 msgid "Edit…"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:53
+#: src/Widgets/EventMenu.vala:35
 msgid "Duplicate…"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:59
+#: src/Widgets/EventMenu.vala:38
 msgid "Remove Event"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:63
+#: src/Widgets/EventMenu.vala:39
 msgid "Remove Occurrence"
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:69 src/Widgets/SourceRow.vala:64
+#: src/Widgets/EventMenu.vala:41 src/Widgets/SourceRow.vala:64
 msgid "Remove"
 msgstr ""
 

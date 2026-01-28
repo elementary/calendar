@@ -50,11 +50,11 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
         guest_store = new Gtk.ListStore (2, typeof (string), typeof (string));
 
-        var guest_label = new Granite.HeaderLabel (_("Participants:"));
+        var guest_label = new Granite.HeaderLabel (_("Invitees"));
 
         load_contacts.begin ();
 
-        var no_guests_label = new Gtk.Label (_("No Participants"));
+        var no_guests_label = new Gtk.Label (_("No Invitees"));
         no_guests_label.show ();
 
         unowned Gtk.StyleContext no_guests_context = no_guests_label.get_style_context ();

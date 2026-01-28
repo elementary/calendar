@@ -307,27 +307,31 @@ public class Maya.View.AgendaView : Gtk.Box {
         }
     }
 
-    private static int search_calcomp (Gtk.Widget widget, ECal.Component comp) {
-        unowned AgendaEventRow row = widget as AgendaEventRow;
-        return Calendar.Util.ecalcomponent_compare_func (row.calevent, comp);
+    private bool find_row_for_component (Gtk.ListBox listbox, ECal.Component component, out AgendaEventRow? row) {
+        for (int i = 0; listbox.get_row_at_index (i) != null; i++) {
+            var current_row = (AgendaEventRow) listbox.get_row_at_index (i);
+            if (Calendar.Util.ecalcomponent_compare_func (current_row.calevent, component) == 0) {
+                row = current_row;
+                return true;
+            }
+        }
+
+        row = null;
+        return false;
     }
 
     /**
      * Events for the given source have been updated.
      */
     private void on_events_updated (E.Source source, Gee.Collection<ECal.Component> events) {
-        GLib.List<weak Gtk.Widget> selected_date_events_children = selected_date_events_list.get_children ();
-        GLib.List<weak Gtk.Widget> upcoming_events_children = upcoming_events_list.get_children ();
-
         foreach (var event in events) {
-            unowned List<weak Gtk.Widget> found = selected_date_events_children.search<ECal.Component> (event, search_calcomp);
-            if (found != null) {
-                ((AgendaEventRow) found.data).update (event);
+            AgendaEventRow row = null;
+            if (find_row_for_component (selected_date_events_list, event, out row)) {
+                row.update (event);
             }
 
-            unowned List<weak Gtk.Widget> found2 = upcoming_events_children.search<ECal.Component> (event, search_calcomp);
-            if (found2 != null) {
-                ((AgendaEventRow) found2.data).update (event);
+            if (find_row_for_component (upcoming_events_list, event, out row)) {
+                row.update (event);
             }
         }
     }
@@ -336,25 +340,21 @@ public class Maya.View.AgendaView : Gtk.Box {
      * Events for the given source have been removed.
      */
     private void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
-        GLib.List<weak Gtk.Widget> selected_date_events_children = selected_date_events_list.get_children ();
-        GLib.List<weak Gtk.Widget> upcoming_events_children = upcoming_events_list.get_children ();
-
         foreach (var event in events) {
-            unowned List<weak Gtk.Widget> found = selected_date_events_children.search<ECal.Component> (event, search_calcomp);
-            if (found != null) {
-                var row = ((AgendaEventRow) found.data);
-                row.revealer.set_reveal_child (false);
+            AgendaEventRow row = null;
+            if (find_row_for_component (selected_date_events_list, event, out row)) {
+                row.revealer.reveal_child = false;
                 GLib.Timeout.add (row.revealer.transition_duration, () => {
+                    row.unparent ();
                     row.destroy ();
                     return GLib.Source.REMOVE;
                 });
             }
 
-            unowned List<weak Gtk.Widget> found2 = upcoming_events_children.search<ECal.Component> (event, search_calcomp);
-            if (found2 != null) {
-                var row = ((AgendaEventRow) found2.data);
-                row.revealer.set_reveal_child (false);
+            if (find_row_for_component (upcoming_events_list, event, out row)) {
+                row.revealer.reveal_child = false;
                 GLib.Timeout.add (row.revealer.transition_duration, () => {
+                    row.unparent ();
                     row.destroy ();
                     return GLib.Source.REMOVE;
                 });
@@ -366,14 +366,11 @@ public class Maya.View.AgendaView : Gtk.Box {
      * Calendar model parameters have been updated.
      */
     private void on_model_parameters_changed () {
-        GLib.List<weak Gtk.Widget> selected_date_events_children = selected_date_events_list.get_children ();
-        GLib.List<weak Gtk.Widget> upcoming_events_children = upcoming_events_list.get_children ();
-
-        foreach (unowned Gtk.Widget row in selected_date_events_children) {
+        foreach (unowned var row in selected_date_events_list.get_children ()) {
             row.destroy ();
         }
 
-        foreach (unowned Gtk.Widget row in upcoming_events_children) {
+        foreach (unowned var row in upcoming_events_list.get_children ()) {
             row.destroy ();
         }
     }
