@@ -152,8 +152,8 @@ modules:
       - -Dinspect_tool=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/folks/0.15/folks-0.15.9.tar.xz
-        sha256: 2311b37355c351f33f163fdc394874a22a0a0682c319493d6d8a6e420711415f
+        url: https://download.gnome.org/sources/folks/0.15/folks-0.15.12.tar.xz
+        sha256: 21f44e2bdabb1ee7f8e41bb996d10ac7daf35c78c498177db0c00f580a20a914
         x-checker-data:
           type: gnome
           name: folks

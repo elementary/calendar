@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2011-2019 elementary, Inc. (https://elementary.io)
+ * Copyright (c) 2011-2026 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,18 +21,17 @@
 /**
  * Represent the week labels at the left side of the grid.
  */
-public class Maya.View.WeekLabels : Gtk.Revealer {
+public class Maya.View.WeekLabels : Gtk.Bin {
     private Gtk.Grid day_grid;
     private Gtk.Label[] labels;
     private int nr_of_weeks;
 
     private static GLib.Settings show_weeks;
-    private static Gtk.CssProvider style_provider;
+
+    private Gtk.GestureMultiPress click_gesture;
+    private Gtk.GestureLongPress long_press_gesture;
 
     static construct {
-        style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_resource ("/io/elementary/calendar/WeekLabels.css");
-
         if (Application.wingpanel_settings != null) {
             show_weeks = Application.wingpanel_settings;
         } else {
@@ -41,23 +40,23 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
     }
 
     construct {
-        events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;
-        vexpand = true;
+        day_grid = new Gtk.Grid () {
+            row_homogeneous = true
+        };
+        day_grid.get_style_context ().add_class ("weeks");
 
-        day_grid = new Gtk.Grid ();
         set_nr_of_weeks (5);
         day_grid.insert_row (1);
-        day_grid.set_column_homogeneous (true);
-        day_grid.set_row_homogeneous (true);
-        day_grid.row_spacing = 0;
-        day_grid.show ();
 
-        unowned Gtk.StyleContext day_grid_context = day_grid.get_style_context ();
-        day_grid_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        day_grid_context.add_class ("weeks");
+        var revealer = new Gtk.Revealer () {
+            child = day_grid,
+            transition_type = SLIDE_RIGHT
+        };
 
-        show_weeks.bind ("show-weeks", this, "reveal-child", GLib.SettingsBindFlags.DEFAULT);
+        child = revealer;
+        vexpand = true;
+
+        show_weeks.bind ("show-weeks", revealer, "reveal-child", GLib.SettingsBindFlags.DEFAULT);
 
         var action_show_weeks = show_weeks.create_action ("show-weeks");
 
@@ -73,15 +72,33 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
             attach_widget = this
         };
 
-        button_press_event.connect ((event) => {
-            if (event.type == Gdk.EventType.BUTTON_PRESS && event.button == Gdk.BUTTON_SECONDARY) {
-                gtk_menu.popup_at_pointer (event);
-            }
+        click_gesture = new Gtk.GestureMultiPress (revealer) {
+            button = 0
+        };
+        click_gesture.pressed.connect ((n_press, x, y) => {
+            var sequence = click_gesture.get_current_sequence ();
+            var event = click_gesture.get_last_event (sequence);
 
-            return false;
+            if (event.triggers_context_menu ()) {
+                gtk_menu.popup_at_pointer (event);
+
+                click_gesture.set_state (CLAIMED);
+                click_gesture.reset ();
+            }
         });
 
-        add (day_grid);
+        long_press_gesture = new Gtk.GestureLongPress (this) {
+            touch_only = true
+        };
+        long_press_gesture.pressed.connect ((x, y) => {
+            var sequence = long_press_gesture.get_current_sequence ();
+            var event = long_press_gesture.get_last_event (sequence);
+
+            gtk_menu.popup_at_pointer (event);
+
+            long_press_gesture.set_state (CLAIMED);
+            long_press_gesture.reset ();
+        });
     }
 
     public void update (DateTime date, int nr_of_weeks) {
@@ -94,13 +111,11 @@ public class Maya.View.WeekLabels : Gtk.Revealer {
 
             labels = new Gtk.Label[nr_of_weeks];
             for (int c = 0; c < nr_of_weeks; c++) {
-                labels[c] = new Gtk.Label ("");
-                labels[c].valign = Gtk.Align.START;
-                labels[c].width_chars = 2;
-
-                unowned Gtk.StyleContext label_context = labels[c].get_style_context ();
-                label_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-                label_context.add_class ("weeklabel");
+                labels[c] = new Gtk.Label ("") {
+                    valign = START,
+                    width_chars = 2
+                };
+                labels[c].get_style_context ().add_class ("weeklabel");
 
                 day_grid.attach (labels[c], 0, c);
                 labels[c].show ();

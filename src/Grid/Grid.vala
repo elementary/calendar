@@ -38,14 +38,7 @@ public class Grid : Gtk.Grid {
     public signal void selection_changed (DateTime new_date);
     private GridDay selected_gridday;
 
-    private static Gtk.CssProvider style_provider;
-
     private GridDay today_widget = null;
-
-    static construct {
-        style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_resource ("/io/elementary/calendar/Grid.css");
-    }
 
     construct {
         // Gtk.Grid properties
@@ -174,9 +167,7 @@ public class Grid : Gtk.Grid {
                 });
 
                 if (col == 0) {
-                    unowned Gtk.StyleContext day_context = day.get_style_context ();
-                    day_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-                    day_context.add_class ("firstcol");
+                    day.get_style_context ().add_class ("firstcol");
                 }
 
                 attach (day, col, row);
@@ -225,8 +216,7 @@ public class Grid : Gtk.Grid {
     public void add_event (ECal.Component event) {
         foreach (var grid_day in data.values) {
             if (Calendar.Util.ecalcomponent_is_on_day (event, grid_day.date)) {
-                var button = new EventButton (event);
-                grid_day.add_event_button (button);
+                grid_day.add_event (event);
             }
         }
     }
@@ -248,8 +238,7 @@ public class Grid : Gtk.Grid {
         foreach (var grid_day in data.values) {
             if (Calendar.Util.ecalcomponent_is_on_day (event, grid_day.date)) {
                 if (!grid_day.update_event (event)) {
-                    var button = new EventButton (event);
-                    grid_day.add_event_button (button);
+                    grid_day.add_event (event);
                 }
             } else {
                 grid_day.remove_event (event);

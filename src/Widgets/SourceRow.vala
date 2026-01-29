@@ -80,10 +80,6 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         calendar_box.add (delete_button);
         calendar_box.add (edit_button);
 
-        var calendar_event_box = new Gtk.EventBox ();
-        calendar_event_box.add (calendar_box);
-        calendar_event_box.show ();
-
         var undo_button = new Gtk.Button.with_label (_("Undo")) {
             margin_end = 6
         };
@@ -105,9 +101,9 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         stack = new Gtk.Stack () {
             transition_type = OVER_RIGHT_LEFT
         };
+        stack.add (calendar_box);
         stack.add (info_box);
-        stack.add (calendar_event_box);
-        stack.visible_child = calendar_event_box;
+        stack.visible_child = calendar_box;
 
         add (stack);
 
@@ -122,7 +118,7 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
 
         undo_button.clicked.connect (() => {
             Calendar.EventStore.get_default ().restore_calendar ();
-            stack.visible_child = calendar_event_box;
+            stack.visible_child = calendar_box;
         });
 
         source.changed.connect (source_has_changed);

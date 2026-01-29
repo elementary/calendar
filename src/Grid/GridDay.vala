@@ -38,17 +38,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
         Object (date: date);
     }
 
-    static construct {
-        var style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_resource ("/io/elementary/calendar/Grid.css");
-
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
-            style_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
-    }
-
     construct {
         event_buttons = new GLib.HashTable<string, EventButton>.full (str_hash, str_equal, null, (value_data) => {
             ((EventButton)value_data).destroy_button ();
@@ -83,8 +72,6 @@ public class Maya.View.GridDay : Gtk.EventBox {
             propagation_phase = BUBBLE
         };
         key_controller.key_pressed.connect (on_key_press);
-
-        scroll_event.connect ((event) => {return GesturesUtils.on_scroll_event (event);});
 
         Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
         Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
@@ -122,7 +109,9 @@ public class Maya.View.GridDay : Gtk.EventBox {
         calmodel.update_event (src, comp, ECal.ObjModType.ALL);
     }
 
-    public void add_event_button (EventButton button) {
+    public void add_event (ECal.Component component) {
+        var button = new EventButton (component);
+
         string uid = button.get_uid ();
         lock (event_buttons) {
             event_buttons.remove (uid);

@@ -50,11 +50,11 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
         guest_store = new Gtk.ListStore (2, typeof (string), typeof (string));
 
-        var guest_label = new Granite.HeaderLabel (_("Participants:"));
+        var guest_label = new Granite.HeaderLabel (_("Invitees"));
 
         load_contacts.begin ();
 
-        var no_guests_label = new Gtk.Label (_("No Participants"));
+        var no_guests_label = new Gtk.Label (_("No Invitees"));
         no_guests_label.show ();
 
         unowned Gtk.StyleContext no_guests_context = no_guests_label.get_style_context ();
@@ -65,12 +65,14 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
         guest_list.set_placeholder (no_guests_label);
 
-        var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null);
-        guest_scrolledwindow.add (guest_list);
+        var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null) {
+            child = guest_list
+        };
         guest_scrolledwindow.expand = true;
 
-        var frame = new Gtk.Frame (null);
-        frame.add (guest_scrolledwindow);
+        var frame = new Gtk.Frame (null) {
+            child = guest_scrolledwindow
+        };
 
         guest_completion = new Gtk.EntryCompletion ();
         guest_completion.set_minimum_key_length (3);
