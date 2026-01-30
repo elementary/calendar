@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-28 15:27+0000\n"
-"PO-Revision-Date: 2025-11-22 12:55+0000\n"
+"PO-Revision-Date: 2026-01-29 18:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ja/>\n"
@@ -170,10 +170,8 @@ msgid "Location"
 msgstr "場所"
 
 #: src/EventEdition/EventDialog.vala:122 src/EventEdition/GuestsPanel.vala:53
-#, fuzzy
-#| msgid "Invite"
 msgid "Invitees"
-msgstr "招待"
+msgstr "参加者"
 
 #: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
@@ -215,10 +213,8 @@ msgid "Maybe"
 msgstr "不確実"
 
 #: src/EventEdition/GuestsPanel.vala:57
-#, fuzzy
-#| msgid "Invite"
 msgid "No Invitees"
-msgstr "招待"
+msgstr "参加者なし"
 
 #: src/EventEdition/GuestsPanel.vala:98
 msgid "Invite"

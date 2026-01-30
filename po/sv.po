@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-28 15:27+0000\n"
-"PO-Revision-Date: 2025-11-24 13:55+0000\n"
+"PO-Revision-Date: 2026-01-29 18:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/sv/>\n"
@@ -172,10 +172,8 @@ msgid "Location"
 msgstr "Plats"
 
 #: src/EventEdition/EventDialog.vala:122 src/EventEdition/GuestsPanel.vala:53
-#, fuzzy
-#| msgid "Invite"
 msgid "Invitees"
-msgstr "Bjud in"
+msgstr "Inbjudna"
 
 #: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
@@ -217,10 +215,8 @@ msgid "Maybe"
 msgstr "Kanske"
 
 #: src/EventEdition/GuestsPanel.vala:57
-#, fuzzy
-#| msgid "Invite"
 msgid "No Invitees"
-msgstr "Bjud in"
+msgstr "Inga inbjudna"
 
 #: src/EventEdition/GuestsPanel.vala:98
 msgid "Invite"
