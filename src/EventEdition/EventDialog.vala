@@ -222,16 +222,7 @@ public class EventDialog : Granite.Dialog {
                 transient_for = this
             };
 
-            delete_dialog.response.connect ((response) => {
-                if (response == Gtk.ResponseType.YES) {
-                    destroy ();
-                }
-
-                delete_dialog.destroy ();
-            });
-
-            delete_dialog.present ();
-
+            delete_dialog.run_dialog (); // performs deletion and destroys itself
         }
     }
 }
