@@ -101,8 +101,8 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         stack = new Gtk.Stack () {
             transition_type = OVER_RIGHT_LEFT
         };
-        stack.add (calendar_box);
-        stack.add (info_box);
+        stack.add_child (calendar_box);
+        stack.add_child (info_box);
         stack.visible_child = calendar_box;
 
         child = stack;

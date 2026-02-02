@@ -26,7 +26,6 @@ public class Maya.View.CalendarView : Gtk.Box {
     private Calendar.Widgets.DateSwitcher month_switcher;
     private Calendar.Widgets.DateSwitcher year_switcher;
     private Grid days_grid;
-    private Gtk.EventControllerScroll scroll_controller;
     private Gtk.Stack stack;
     private WeekLabels weeks;
 
@@ -91,14 +90,13 @@ public class Maya.View.CalendarView : Gtk.Box {
         selected_date = Maya.Application.get_selected_datetime ();
 
         var error_label = new Gtk.Label (null);
-        error_label.show ();
 
         var error_bar = new Gtk.InfoBar () {
             message_type = Gtk.MessageType.ERROR,
             revealed = false,
             show_close_button = true
         };
-        error_bar.get_content_area ().add (error_label);
+        error_bar.add_child (error_label);
 
         var info_bar = new Calendar.Widgets.ConnectivityInfoBar ();
 
@@ -139,7 +137,7 @@ public class Maya.View.CalendarView : Gtk.Box {
         };
 
         header_bar = new Adw.HeaderBar () {
-            show_close_button = true
+            show_start_title_buttons = true
         };
         header_bar.pack_start (month_switcher);
         header_bar.pack_start (year_switcher);
@@ -204,8 +202,10 @@ public class Maya.View.CalendarView : Gtk.Box {
             set_switcher_date (calmodel.month_start);
         });
 
-        scroll_controller = new Gtk.EventControllerScroll (this, Gtk.EventControllerScrollFlags.BOTH_AXES);
+        var scroll_controller = new Gtk.EventControllerScroll (Gtk.EventControllerScrollFlags.BOTH_AXES);
         scroll_controller.scroll.connect (GesturesUtils.on_scroll);
+
+        add_controller (scroll_controller);
     }
 
     private void action_export () {

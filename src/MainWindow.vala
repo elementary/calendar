@@ -50,9 +50,14 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
             width_request = 160
         };
 
-        var hpaned = new Gtk.Paned (HORIZONTAL);
-        hpaned.pack1 (calview, true, false);
-        hpaned.pack2 (sidebar, false, false);
+        var hpaned = new Gtk.Paned (HORIZONTAL) {
+            start_child = calview,
+            resize_start_child = true,
+            shrink_start_child = false,
+            end_child = sidebar,
+            resize_end_child = false,
+            shrink_end_child = false
+        };
 
         child = hpaned;
 
@@ -95,7 +100,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
             var dialog = new Maya.View.EventDialog (comp, null, this);
             dialog.present ();
         } else {
-            Gdk.beep ();
+            Gdk.Display.get_default ().beep ();
         }
     }
 
@@ -111,7 +116,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
             };
             dialog.present ();
         } else {
-            Gdk.beep ();
+            Gdk.Display.get_default ().beep ();
         }
     }
 

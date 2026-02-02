@@ -150,14 +150,14 @@ namespace Maya {
             * Set maximize after height/width else window is min size on unmaximize
             * Bind maximize as SET else get get bad sizes
             */
-            settings.bind ("window-height", window, "default-height", SettingsBindFlags.DEFAULT);
-            settings.bind ("window-width", window, "default-width", SettingsBindFlags.DEFAULT);
+            saved_state.bind ("window-height", window, "default-height", SettingsBindFlags.DEFAULT);
+            saved_state.bind ("window-width", window, "default-width", SettingsBindFlags.DEFAULT);
 
-            if (settings.get_boolean ("window-maximized")) {
+            if (saved_state.get_boolean ("window-maximized")) {
                 window.maximize ();
             }
 
-            settings.bind ("window-maximized", main_window, "maximized", SettingsBindFlags.SET);
+            saved_state.bind ("window-maximized", window, "maximized", SettingsBindFlags.SET);
 
             window.destroy.connect (on_quit);
         }
