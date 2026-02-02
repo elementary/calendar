@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-28 15:27+0000\n"
-"PO-Revision-Date: 2025-11-22 12:55+0000\n"
+"PO-Revision-Date: 2026-01-29 18:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ca/>\n"
@@ -174,10 +174,8 @@ msgid "Location"
 msgstr "Ubicació"
 
 #: src/EventEdition/EventDialog.vala:122 src/EventEdition/GuestsPanel.vala:53
-#, fuzzy
-#| msgid "Invite"
 msgid "Invitees"
-msgstr "Invitació"
+msgstr "Convidats"
 
 #: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
@@ -219,10 +217,8 @@ msgid "Maybe"
 msgstr "Potser"
 
 #: src/EventEdition/GuestsPanel.vala:57
-#, fuzzy
-#| msgid "Invite"
 msgid "No Invitees"
-msgstr "Invitació"
+msgstr "Sense convidats"
 
 #: src/EventEdition/GuestsPanel.vala:98
 msgid "Invite"

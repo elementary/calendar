@@ -73,7 +73,7 @@ public class Maya.View.VAutoHider : Granite.Bin {
             int child_height;
             child.show ();
             child.get_preferred_height (out child_height, null);
-            child.hide ();
+            ((Maya.View.EventButton) child).hide_without_animate ();
 
             bool should_hide;
             if (global_height - more_label_height < child_height + height) {
@@ -87,11 +87,9 @@ public class Maya.View.VAutoHider : Granite.Bin {
             }
 
             if (should_hide) {
-                hide_revealer_now ((Gtk.Revealer)child);
-                child.hide ();
+                ((Maya.View.EventButton) child).hide_without_animate ();
             } else {
-                show_revealer_now ((Gtk.Revealer)child);
-                child.show ();
+                ((Maya.View.EventButton) child).show_without_animate ();
                 shown_children++;
             }
         }
@@ -103,28 +101,6 @@ public class Maya.View.VAutoHider : Granite.Bin {
         } else {
             more_label.hide ();
         }
-    }
-
-    private void hide_revealer_now (Gtk.Revealer revealer) {
-        if (revealer.child_revealed == false)
-            return;
-
-        var reveal_duration = revealer.transition_duration;
-        revealer.transition_duration = 0;
-        revealer.set_reveal_child (false);
-        revealer.transition_duration = reveal_duration;
-        revealer.hide ();
-    }
-
-    private void show_revealer_now (Gtk.Revealer revealer) {
-        if (revealer.child_revealed == true)
-            return;
-
-        var reveal_duration = revealer.transition_duration;
-        revealer.transition_duration = 0;
-        revealer.set_reveal_child (true);
-        revealer.transition_duration = reveal_duration;
-        revealer.show ();
     }
 
     public override void get_preferred_width (out int minimum_width, out int natural_width) {

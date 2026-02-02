@@ -752,10 +752,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             comp.remove_property (remove_prop);
         }
 
-        foreach (var child in exceptions_list.get_children ()) {
-            if (child is ExceptionGrid == false)
-                continue;
-            var exgrid = (ExceptionGrid)child;
+        for (int i = 0; exceptions_list.get_row_at_index (i) != null; i++) {
+            var exgrid = (ExceptionGrid) exceptions_list.get_row_at_index (i);
             var date = exgrid.get_date ();
             var exdate = new ICal.Property (ICal.PropertyKind.EXDATE_PROPERTY);
             exdate.set_exdate (Calendar.Util.datetimes_to_icaltime (date, null));

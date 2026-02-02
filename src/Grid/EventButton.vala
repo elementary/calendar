@@ -1,26 +1,15 @@
 /*
- * Copyright 2011-2018 elementary, Inc. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Maxwell Barvian
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.EventButton : Gtk.Revealer {
+public class Maya.View.EventButton : Gtk.Bin {
     public ECal.Component comp { get; construct set; }
 
+    private Gtk.Revealer revealer;
     private Gtk.Label label;
     private Gtk.StyleContext grid_style_context;
 
@@ -31,12 +20,11 @@ public class Maya.View.EventButton : Gtk.Revealer {
     }
 
     construct {
-        transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-
-        label = new Gtk.Label (comp.get_summary ().get_value ());
-        label.hexpand = true;
-        label.ellipsize = Pango.EllipsizeMode.END;
-        label.xalign = 0;
+        label = new Gtk.Label (comp.get_summary ().get_value ()) {
+            hexpand = true,
+            ellipsize = END,
+            xalign = 0
+        };
         label.show ();
 
         var internal_grid = new Gtk.Grid ();
@@ -48,7 +36,12 @@ public class Maya.View.EventButton : Gtk.Revealer {
         var event_box = new Gtk.EventBox ();
         event_box.append (internal_grid);
 
-        add (event_box);
+        revealer = new Gtk.Revealer () {
+            child = event_box,
+            transition_type = CROSSFADE
+        };
+
+        child = revealer;
 
         var context_menu = Maya.EventMenu.build (comp);
         context_menu.attach_to_widget (this, null);
@@ -143,10 +136,36 @@ public class Maya.View.EventButton : Gtk.Revealer {
     }
 
     public void destroy_button () {
-        set_reveal_child (false);
-        Timeout.add (transition_duration, () => {
+        revealer.reveal_child = false;
+        Timeout.add (revealer.transition_duration, () => {
             destroy ();
             return false;
         });
+    }
+
+    public void hide_without_animate () {
+        if (!revealer.child_revealed) {
+            return;
+        }
+
+        var reveal_duration = revealer.transition_duration;
+        revealer.transition_duration = 0;
+        revealer.reveal_child = false;
+        revealer.transition_duration = reveal_duration;
+
+        hide ();
+    }
+
+    public void show_without_animate () {
+        show ();
+
+        if (revealer.child_revealed) {
+            return;
+        }
+
+        var reveal_duration = revealer.transition_duration;
+        revealer.transition_duration = 0;
+        revealer.reveal_child = true;
+        revealer.transition_duration = reveal_duration;
     }
 }
