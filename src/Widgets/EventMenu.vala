@@ -63,7 +63,7 @@ namespace Maya.EventMenu {
         var delete_dialog = new Calendar.DeleteEventDialog (source, comp, ECal.ObjModType.ALL) {
             transient_for = application.active_window
         };
-        delete_dialog.run_dialog ();
+        delete_dialog.present ();
     }
 
     private static void add_exception (ECal.Component comp) {
@@ -72,6 +72,6 @@ namespace Maya.EventMenu {
         var delete_dialog = new Calendar.DeleteEventDialog (source, comp, ECal.ObjModType.THIS) {
             transient_for = application.active_window
         };
-        delete_dialog.run_dialog ();
+        delete_dialog.present ();
     }
 }
