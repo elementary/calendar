@@ -366,13 +366,8 @@ public class Maya.View.AgendaView : Gtk.Box {
      * Calendar model parameters have been updated.
      */
     private void on_model_parameters_changed () {
-        foreach (unowned var row in selected_date_events_list.get_children ()) {
-            row.destroy ();
-        }
-
-        foreach (unowned var row in upcoming_events_list.get_children ()) {
-            row.destroy ();
-        }
+        selected_date_events_list.remove_all ();
+        upcoming_events_list.remove_all ();
     }
 
     private void on_today_changed () {

@@ -6,7 +6,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.EventButton : Gtk.Bin {
+public class Maya.View.EventButton : Granite.Bin {
     public ECal.Component comp { get; construct set; }
 
     private Gtk.Revealer revealer;
