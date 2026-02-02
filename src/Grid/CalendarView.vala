@@ -100,7 +100,20 @@ public class Maya.View.CalendarView : Gtk.Box {
         };
         error_bar.get_content_area ().add (error_label);
 
-        var info_bar = new Calendar.Widgets.ConnectivityInfoBar ();
+        var info_label = new Gtk.Label ("<b>%s</b> %s".printf (
+            _("Network Not Available."),
+            _("Connect to the Internet to see additional details and new events from online calendars.")
+        )) {
+            use_markup = true,
+            wrap = true
+        };
+
+        var info_bar = new Gtk.InfoBar () {
+            message_type = WARNING,
+            revealed = false
+        };
+        info_bar.get_content_area ().add (info_label);
+        info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
         var application_instance = ((Gtk.Application) GLib.Application.get_default ());
 
@@ -188,6 +201,22 @@ public class Maya.View.CalendarView : Gtk.Box {
         add (info_bar);
         add (stack);
         show_all ();
+
+        var network_monitor = GLib.NetworkMonitor.get_default ();
+        network_monitor.network_changed.connect (() => {
+            info_bar.revealed = !(
+                network_monitor.get_network_available () &&
+                network_monitor.get_connectivity () == FULL
+            );
+        });
+
+        info_bar.response.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://network", null);
+            } catch (GLib.Error e) {
+                critical (e.message);
+            }
+        });
 
         error_bar.response.connect ((id) => error_bar.set_revealed (false));
 
