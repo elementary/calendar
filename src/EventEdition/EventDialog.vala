@@ -68,10 +68,6 @@ public class EventDialog : Granite.Dialog {
                 event_type = EventType.EDIT;
             }
 
-            // Dialog properties
-            window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
-            type_hint = Gdk.WindowTypeHint.DIALOG;
-
             guests_panel = new EventEdition.GuestsPanel (this);
             info_panel = new EventEdition.InfoPanel (this);
             location_panel = new EventEdition.LocationPanel (this);
