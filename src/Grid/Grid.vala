@@ -49,8 +49,6 @@ public class Grid : Gtk.Grid {
         row_spacing = 0;
 
         data = new Gee.HashMap<uint, GridDay> ();
-        events |= Gdk.EventMask.SCROLL_MASK;
-        events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
 
         unowned var time_manager = Calendar.TimeManager.get_default ();
         time_manager.on_update_today.connect (callback_update_today);
@@ -167,7 +165,7 @@ public class Grid : Gtk.Grid {
                 });
 
                 if (col == 0) {
-                    day.get_style_context ().add_class ("firstcol");
+                    day.add_css_class ("firstcol");
                 }
 
                 attach (day, col, row);

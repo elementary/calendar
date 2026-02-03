@@ -305,7 +305,7 @@ public class Maya.View.CalendarView : Gtk.Box {
 
         settings.bind ("show-weeks", spacer_revealer, "reveal-child", SettingsBindFlags.GET);
 
-        stack.add (big_grid);
+        stack.add_child (big_grid);
 
         header.update_columns (model.week_starts_on);
         weeks.update (model.data_range.first_dt, model.num_weeks);

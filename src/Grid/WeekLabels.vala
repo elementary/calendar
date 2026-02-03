@@ -40,7 +40,7 @@ public class Maya.View.WeekLabels : Granite.Bin {
         day_grid = new Gtk.Grid () {
             row_homogeneous = true
         };
-        day_grid.get_style_context ().add_class ("weeks");
+        day_grid.add_css_class ("weeks");
 
         set_nr_of_weeks (5);
         day_grid.insert_row (1);
@@ -65,11 +65,11 @@ public class Maya.View.WeekLabels : Granite.Bin {
         var menu = new GLib.Menu ();
         menu.append (_("Show Week Numbers"), "week-labels.show-weeks");
 
-        var gtk_menu = new Gtk.Menu.from_model (menu) {
+        var gtk_menu = new Gtk.PopoverMenu.from_model (menu) {
             attach_widget = this
         };
 
-        var click_gesture = new Gtk.GestureMultiPress () {
+        var click_gesture = new Gtk.GestureClick () {
             button = 0
         };
         click_gesture.pressed.connect ((n_press, x, y) => {
@@ -115,7 +115,7 @@ public class Maya.View.WeekLabels : Granite.Bin {
                     valign = START,
                     width_chars = 2
                 };
-                labels[c].get_style_context ().add_class ("weeklabel");
+                labels[c].add_css_class ("weeklabel");
 
                 day_grid.attach (labels[c], 0, c);
                 labels[c].show ();

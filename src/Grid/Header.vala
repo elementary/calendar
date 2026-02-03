@@ -70,7 +70,7 @@ public class Header : Granite.Bin {
         var menu = new GLib.Menu ();
         menu.append (_("Show Week Numbers"), "header.show-weeks");
 
-        var gtk_menu = new Gtk.Menu.from_model (menu) {
+        var gtk_menu = new Gtk.PopoverMenu.from_model (menu) {
             attach_widget = this
         };
 

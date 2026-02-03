@@ -61,15 +61,15 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
             switch (parameter.get_partstat ()) {
                 case ICal.ParameterPartstat.ACCEPTED:
                     status_label.label = _("Accepted");
-                    status_label.add_css_class ("success");
+                    status_label.add_css_class (Granite.CssClass.SUCCESS);
                     break;
                 case ICal.ParameterPartstat.DECLINED:
                     status_label.label = _("Declined");
-                    status_label.add_css_class (Gtk.STYLE_CLASS_ERROR);
+                    status_label.add_css_class (Granite.CssClass.ERROR);
                     break;
                 case ICal.ParameterPartstat.TENTATIVE:
                     status_label.label = _("Maybe");
-                    status_label.add_css_class (Gtk.STYLE_CLASS_ERROR);
+                    status_label.add_css_class (Granite.CssClass.WARNING);
                     break;
                 default:
                     break;

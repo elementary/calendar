@@ -174,13 +174,12 @@ public class EventDialog : Granite.Dialog {
             button_sizegroup.add_widget (cancel_button);
             button_sizegroup.add_widget (create_button);
 
-            var box = new Gtk.Box (VERTICAL, 24);
+            var box = new Granite.Box (VERTICAL, DOUBLE);
             box.append (stack_switcher);
             box.append (stack);
             box.append (buttonbox);
-            box.show_all ();
 
-            get_content_area ().add (box);
+            get_content_area ().append (box);
 
             info_panel.valid_event.connect ((is_valid) => {
                 create_button.sensitive = is_valid;

@@ -21,8 +21,6 @@ public class Maya.View.GridDay : Granite.Bin {
     public bool draw_left_border = true;
     private VAutoHider event_box;
     private GLib.HashTable<string, EventButton> event_buttons;
-    private Gtk.EventControllerKey key_controller;
-    private Gtk.GestureClick click_gesture;
 
     public bool in_current_month {
         set {
@@ -62,16 +60,19 @@ public class Maya.View.GridDay : Granite.Bin {
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         get_style_context ().add_class ("cell");
 
-        click_gesture = new Gtk.GestureClick (this) {
+        var click_gesture = new Gtk.GestureClick () {
             button = Gdk.BUTTON_PRIMARY,
             propagation_phase = BUBBLE
         };
         click_gesture.released.connect (on_button_press);
 
-        key_controller = new Gtk.EventControllerKey (this) {
+        var key_controller = new Gtk.EventControllerKey () {
             propagation_phase = BUBBLE
         };
         key_controller.key_pressed.connect (on_key_press);
+
+        add_controller (click_gesture);
+        add_controller (key_controller);
 
         // Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
         // Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
