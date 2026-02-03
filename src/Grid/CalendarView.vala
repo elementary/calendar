@@ -47,45 +47,6 @@ public class Maya.View.CalendarView : Gtk.Box {
         var action_group = new SimpleActionGroup ();
         action_group.add_action (export_action);
 
-        var contractor_menu = new GLib.Menu ();
-
-        try {
-            var contracts = Granite.Services.ContractorProxy.get_contracts_by_mime ("text/calender");
-
-            int i = 0;
-            foreach (var contract in contracts) {
-                var contract_action = new SimpleAction ("contract-%i".printf (i), null);
-                contract_action.activate.connect (() => {
-                    /* creates a .ics file */
-                    Util.save_temp_selected_calendars ();
-
-                    var file_path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
-                    var cal_file = File.new_for_path (file_path);
-
-                    try {
-                        contract.execute_with_file (cal_file);
-                    } catch (Error err) {
-                        warning (err.message);
-                    }
-                });
-
-                action_group.add_action (contract_action);
-
-                contractor_menu.append (
-                    contract.get_display_name (),
-                    ACTION_PREFIX + "contract-%i".printf (i)
-                );
-                i++;
-            }
-        } catch (GLib.Error error) {
-            critical (error.message);
-        }
-
-        contractor_menu.append (
-            _("Export Calendar…"),
-            "calendar.export"
-        );
-
         insert_action_group (ACTION_GROUP_PREFIX, action_group);
 
         selected_date = Maya.Application.get_selected_datetime ();
@@ -123,13 +84,6 @@ public class Maya.View.CalendarView : Gtk.Box {
 
         var spinner = new Maya.View.Widgets.DynamicSpinner ();
 
-        var contractor = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("document-export", LARGE_TOOLBAR),
-            menu_model = contractor_menu,
-            tooltip_text = _("Export or Share the default Calendar"),
-            use_popover = false
-        };
-
         var source_popover = new Calendar.Widgets.SourcePopover ();
 
         var menu_button = new Gtk.MenuButton () {
@@ -145,7 +99,6 @@ public class Maya.View.CalendarView : Gtk.Box {
         header_bar.pack_start (year_switcher);
         header_bar.pack_start (button_today);
         header_bar.pack_end (menu_button);
-        header_bar.pack_end (contractor);
         header_bar.pack_end (spinner);
 
         header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);

@@ -48,6 +48,11 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             text = _("Import iCalendar File…")
         };
 
+        var export_calendar_button = new Gtk.ModelButton () {
+            action_name = "calendar.export",
+            text = _("Export Calendar…")
+        };
+
         var accounts_button = new Gtk.ModelButton () {
             text = _("Online Accounts Settings…")
         };
@@ -60,6 +65,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         main_box.add (separator);
         main_box.add (add_calendar_button);
         main_box.add (import_calendar_button);
+        main_box.add (export_calendar_button);
         main_box.add (accounts_button);
         main_box.show_all ();
 
