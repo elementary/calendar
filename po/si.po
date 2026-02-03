@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 15:30+0000\n"
+"POT-Creation-Date: 2026-02-03 16:36+0000\n"
 "PO-Revision-Date: 2021-07-11 07:42+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/calendar/"
@@ -197,8 +197,8 @@ msgstr "සිදුවීම්ක් සාදන්න"
 msgid "Save Changes"
 msgstr "වෙනස්කම් සුරකින්න"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:228
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:181
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "අවලංගු කරන්න"
 
@@ -641,27 +641,23 @@ msgstr "සෑම පස්වන සිකුරාදා"
 msgid "Every fifth Saturday"
 msgstr "සෑම පස්වන සෙනසුරාදා"
 
-#: src/Grid/CalendarView.vala:85 src/Grid/CalendarView.vala:224
-msgid "Export Calendar…"
-msgstr "දින දසුන නිර්යාත කරන්න…"
-
-#: src/Grid/CalendarView.vala:112
+#: src/Grid/CalendarView.vala:73
 msgid "Go to today's date"
 msgstr "අද දිනට යන්න"
 
-#: src/Grid/CalendarView.vala:129
-msgid "Export or Share the default Calendar"
-msgstr "පොදු දින දසුන නිර්යාත කරන්න හෝ බෙදාගන්න"
-
-#: src/Grid/CalendarView.vala:138
+#: src/Grid/CalendarView.vala:92
 msgid "Manage Calendars"
 msgstr "දින දසුන් කළමනාකරණය කරන්න"
 
-#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:177 src/Widgets/SourcePopover.vala:53
+msgid "Export Calendar…"
+msgstr "දින දසුන නිර්යාත කරන්න…"
+
+#: src/Grid/CalendarView.vala:180 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "සුරකින්න"
 
-#: src/Grid/CalendarView.vala:232
+#: src/Grid/CalendarView.vala:185
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
@@ -942,15 +938,15 @@ msgstr "නව දින දසුන එකතු කරන්න…"
 msgid "Import iCalendar File…"
 msgstr "අයිදිනදසුන ආයාත කරන්න…"
 
-#: src/Widgets/SourcePopover.vala:52
+#: src/Widgets/SourcePopover.vala:57
 msgid "Online Accounts Settings…"
 msgstr "මාර්ගගත ගිණුම් සැකසුම්…"
 
-#: src/Widgets/SourcePopover.vala:79
+#: src/Widgets/SourcePopover.vala:85
 msgid "Select ICS File to Import"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:82
+#: src/Widgets/SourcePopover.vala:88
 msgid "Open"
 msgstr "විවෘත කරන්න"
 
@@ -970,6 +966,9 @@ msgstr "පෙරසේ"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" ඉවත් කළා"
+
+#~ msgid "Export or Share the default Calendar"
+#~ msgstr "පොදු දින දසුන නිර්යාත කරන්න හෝ බෙදාගන්න"
 
 #~ msgid "Guests"
 #~ msgstr "ආගන්තුකයන්"

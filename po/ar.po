@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 15:30+0000\n"
+"POT-Creation-Date: 2026-02-03 16:36+0000\n"
 "PO-Revision-Date: 2020-05-16 02:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -211,8 +211,8 @@ msgstr "إنشاء حدث"
 msgid "Save Changes"
 msgstr "حفظ التغييرات"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:228
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:181
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "الغاء"
 
@@ -659,27 +659,23 @@ msgstr "كل خامس جمعة"
 msgid "Every fifth Saturday"
 msgstr "كل خامس سبت"
 
-#: src/Grid/CalendarView.vala:85 src/Grid/CalendarView.vala:224
-msgid "Export Calendar…"
-msgstr "تصدير التقويم …"
-
-#: src/Grid/CalendarView.vala:112
+#: src/Grid/CalendarView.vala:73
 msgid "Go to today's date"
 msgstr "اذهب إلى تاريخ اليوم"
 
-#: src/Grid/CalendarView.vala:129
-msgid "Export or Share the default Calendar"
-msgstr "تصدير أو مشاركة التقويم الإفتراضي"
-
-#: src/Grid/CalendarView.vala:138
+#: src/Grid/CalendarView.vala:92
 msgid "Manage Calendars"
 msgstr "إدارة التقاويم"
 
-#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:177 src/Widgets/SourcePopover.vala:53
+msgid "Export Calendar…"
+msgstr "تصدير التقويم …"
+
+#: src/Grid/CalendarView.vala:180 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "حفظ"
 
-#: src/Grid/CalendarView.vala:232
+#: src/Grid/CalendarView.vala:185
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
@@ -963,16 +959,16 @@ msgstr "اضافة تقويم جديد…"
 msgid "Import iCalendar File…"
 msgstr "تصدير التقويم …"
 
-#: src/Widgets/SourcePopover.vala:52
+#: src/Widgets/SourcePopover.vala:57
 msgid "Online Accounts Settings…"
 msgstr ""
 
-#: src/Widgets/SourcePopover.vala:79
+#: src/Widgets/SourcePopover.vala:85
 #, fuzzy
 msgid "Select ICS File to Import"
 msgstr "إختر التقويم الذي تود استيراده"
 
-#: src/Widgets/SourcePopover.vala:82
+#: src/Widgets/SourcePopover.vala:88
 msgid "Open"
 msgstr ""
 
@@ -992,6 +988,9 @@ msgstr "تراجع"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "“%s” تم ازالته"
+
+#~ msgid "Export or Share the default Calendar"
+#~ msgstr "تصدير أو مشاركة التقويم الإفتراضي"
 
 #~ msgid "Guests"
 #~ msgstr "ضيوف"

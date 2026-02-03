@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 15:30+0000\n"
+"POT-Creation-Date: 2026-02-03 16:36+0000\n"
 "PO-Revision-Date: 2025-10-06 12:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementaryos.org/projects/calendar/"
@@ -200,8 +200,8 @@ msgstr "יצירת אירוע"
 msgid "Save Changes"
 msgstr "שמירת השינויים"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:228
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:181
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "ביטול"
 
@@ -628,27 +628,23 @@ msgstr "בכל יום שישי חמישי"
 msgid "Every fifth Saturday"
 msgstr "בכל יום שבת חמישי"
 
-#: src/Grid/CalendarView.vala:85 src/Grid/CalendarView.vala:224
-msgid "Export Calendar…"
-msgstr "יצוא לוח שנה…"
-
-#: src/Grid/CalendarView.vala:112
+#: src/Grid/CalendarView.vala:73
 msgid "Go to today's date"
 msgstr "מעבר לתאריך של היום"
 
-#: src/Grid/CalendarView.vala:129
-msgid "Export or Share the default Calendar"
-msgstr "יצוא או שיתוף יומן בררת המחדל"
-
-#: src/Grid/CalendarView.vala:138
+#: src/Grid/CalendarView.vala:92
 msgid "Manage Calendars"
 msgstr "ניהול לוחות שנה"
 
-#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:177 src/Widgets/SourcePopover.vala:53
+msgid "Export Calendar…"
+msgstr "יצוא לוח שנה…"
+
+#: src/Grid/CalendarView.vala:180 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "שמירה"
 
-#: src/Grid/CalendarView.vala:232
+#: src/Grid/CalendarView.vala:185
 msgid "calendar.ics"
 msgstr "קובץ calendar.ics"
 
@@ -921,15 +917,15 @@ msgstr "הוספת לוח שנה חדש…"
 msgid "Import iCalendar File…"
 msgstr "ייבוא קובץ iCalendar…"
 
-#: src/Widgets/SourcePopover.vala:52
+#: src/Widgets/SourcePopover.vala:57
 msgid "Online Accounts Settings…"
 msgstr "הגדרות חשבונות מקוונים…"
 
-#: src/Widgets/SourcePopover.vala:79
+#: src/Widgets/SourcePopover.vala:85
 msgid "Select ICS File to Import"
 msgstr "נא לבחור קובץ ICS לייבוא"
 
-#: src/Widgets/SourcePopover.vala:82
+#: src/Widgets/SourcePopover.vala:88
 msgid "Open"
 msgstr "פתיחה"
 
@@ -949,6 +945,9 @@ msgstr "החזרה"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "„%s” הוסר"
+
+#~ msgid "Export or Share the default Calendar"
+#~ msgstr "יצוא או שיתוף יומן בררת המחדל"
 
 #~ msgid "Guests"
 #~ msgstr "אורחים"
