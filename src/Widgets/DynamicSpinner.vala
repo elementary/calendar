@@ -21,7 +21,7 @@ public class Maya.View.Widgets.DynamicSpinner : Granite.Bin {
             selection_mode = NONE
         };
 
-        var info_popover = new Gtk.Popover (null) {
+        var info_popover = new Gtk.Popover () {
             child = list_box,
             position = BOTTOM
         };

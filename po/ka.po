@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-28 15:27+0000\n"
+"POT-Creation-Date: 2026-02-03 15:30+0000\n"
 "PO-Revision-Date: 2025-11-27 01:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementaryos.org/projects/calendar/"
@@ -633,7 +633,7 @@ msgstr "ძირითადი კალენდრის გატანა 
 msgid "Manage Calendars"
 msgstr "კალენდრების მართვა"
 
-#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "შენახვა"
 
@@ -645,7 +645,7 @@ msgstr "კალენდარი.ics"
 msgid "Show Week Numbers"
 msgstr "გამოაჩინე კვირის ციფრები"
 
-#: src/Grid/VAutoHider.vala:105
+#: src/Grid/VAutoHider.vala:100
 #, c-format
 msgid "%u more…"
 msgstr "%u მეტი…"
@@ -662,59 +662,59 @@ msgstr "მაგ: \"სამსახური\" ან \"პირადი\"
 msgid "Calendar Name"
 msgstr "კალენდრის სახელი"
 
-#: src/SourceDialog/SourceDialog.vala:96
+#: src/SourceDialog/SourceDialog.vala:94
 msgid "Type"
 msgstr "ტიპი"
 
-#: src/SourceDialog/SourceDialog.vala:121
+#: src/SourceDialog/SourceDialog.vala:119
 msgid "Blueberry"
 msgstr "მოცვიანი"
 
-#: src/SourceDialog/SourceDialog.vala:128
+#: src/SourceDialog/SourceDialog.vala:126
 msgid "Mint"
 msgstr "პიტნიანი"
 
-#: src/SourceDialog/SourceDialog.vala:135
+#: src/SourceDialog/SourceDialog.vala:133
 msgid "Lime"
 msgstr "ლაიმიანი"
 
-#: src/SourceDialog/SourceDialog.vala:142
+#: src/SourceDialog/SourceDialog.vala:140
 msgid "Banana"
 msgstr "ბანანიანი"
 
-#: src/SourceDialog/SourceDialog.vala:149
+#: src/SourceDialog/SourceDialog.vala:147
 msgid "Orange"
 msgstr "ფორთოხლიანი"
 
-#: src/SourceDialog/SourceDialog.vala:156
+#: src/SourceDialog/SourceDialog.vala:154
 msgid "Strawberry"
 msgstr "მარწყვიანი"
 
-#: src/SourceDialog/SourceDialog.vala:163
+#: src/SourceDialog/SourceDialog.vala:161
 msgid "Bubblegum"
 msgstr "კევიანი"
 
-#: src/SourceDialog/SourceDialog.vala:170
+#: src/SourceDialog/SourceDialog.vala:168
 msgid "Grape"
 msgstr "ყურძნიანი"
 
-#: src/SourceDialog/SourceDialog.vala:177
+#: src/SourceDialog/SourceDialog.vala:175
 msgid "Cocoa"
 msgstr "კაკაოიანი"
 
-#: src/SourceDialog/SourceDialog.vala:184
+#: src/SourceDialog/SourceDialog.vala:182
 msgid "Slate"
 msgstr "ფიქლიანი"
 
-#: src/SourceDialog/SourceDialog.vala:205
+#: src/SourceDialog/SourceDialog.vala:203
 msgid "Color"
 msgstr "ფერი"
 
-#: src/SourceDialog/SourceDialog.vala:215
+#: src/SourceDialog/SourceDialog.vala:213
 msgid "Mark as default calendar"
 msgstr "მონიშნე ძირითად კალენდარად"
 
-#: src/SourceDialog/SourceDialog.vala:280
+#: src/SourceDialog/SourceDialog.vala:278
 msgid "Create Calendar"
 msgstr "კალენდრის შექმნა"
 
@@ -838,17 +838,16 @@ msgstr ""
 msgid "Network Settings…"
 msgstr "ქსელის მორგება…"
 
-#: src/Widgets/DeleteDialog.vala:13
+#: src/Widgets/DeleteDialog.vala:22
 msgid "Delete this occurrence of event?"
 msgstr "წავშალო ეს შემთხვევა მოვლენიდან?"
 
-#: src/Widgets/DeleteDialog.vala:15
+#: src/Widgets/DeleteDialog.vala:24
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
 msgstr "წავშალო ეს შემთხვევა მოვლენიდან \"%s\"?"
 
-#. Should question mark be in or out of quotes?
-#: src/Widgets/DeleteDialog.vala:17
+#: src/Widgets/DeleteDialog.vala:26
 msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
@@ -856,30 +855,30 @@ msgstr ""
 "ეს შემთხვევა შეუქცევადად წაიშლება, მაგრამ ყველა სხვა შემთხვევა შეუცვლელი "
 "დარჩება."
 
-#: src/Widgets/DeleteDialog.vala:18
+#: src/Widgets/DeleteDialog.vala:27
 msgid "Delete Occurrence"
 msgstr "მოხდენის წაშლა"
 
-#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#: src/Widgets/DeleteDialog.vala:34 src/Widgets/DeleteDialog.vala:43
 msgid "Delete event?"
 msgstr "წავშალო მოვლენა?"
 
-#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#: src/Widgets/DeleteDialog.vala:36 src/Widgets/DeleteDialog.vala:45
 #, c-format
 msgid "Delete event “%s”?"
 msgstr "წავშალო მოვლენა \"%s\"?"
 
 #. Should question mark be in or out of quotes?
-#: src/Widgets/DeleteDialog.vala:29
+#: src/Widgets/DeleteDialog.vala:38
 msgid "This event and all its occurrences will be permanently deleted."
 msgstr "ეს მოვლენა და ყველა მისი შემთხვევა შეუქცევლად წაიშლება."
 
-#: src/Widgets/DeleteDialog.vala:30 src/Widgets/DeleteDialog.vala:39
+#: src/Widgets/DeleteDialog.vala:39 src/Widgets/DeleteDialog.vala:48
 msgid "Delete Event"
 msgstr "ივენთის წაშლა"
 
 #. Should question mark be in or out of quotes?
-#: src/Widgets/DeleteDialog.vala:38
+#: src/Widgets/DeleteDialog.vala:47
 msgid "This event will be permanently deleted."
 msgstr "ეს მოვლენა შეუქცევლად წაიშლება."
 

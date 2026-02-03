@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-28 15:27+0000\n"
+"POT-Creation-Date: 2026-02-03 15:30+0000\n"
 "PO-Revision-Date: 2026-01-31 08:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/calendar/"
@@ -641,7 +641,7 @@ msgstr "Exporter ou partager le calendrier par défaut"
 msgid "Manage Calendars"
 msgstr "Gérer les calendriers"
 
-#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -653,7 +653,7 @@ msgstr "calendrier.ics"
 msgid "Show Week Numbers"
 msgstr "Afficher les numéros de semaine"
 
-#: src/Grid/VAutoHider.vala:105
+#: src/Grid/VAutoHider.vala:100
 #, c-format
 msgid "%u more…"
 msgstr "%u en plus…"
@@ -670,59 +670,59 @@ msgstr "par ex. « Travail » ou « Perso »"
 msgid "Calendar Name"
 msgstr "Nom du calendrier"
 
-#: src/SourceDialog/SourceDialog.vala:96
+#: src/SourceDialog/SourceDialog.vala:94
 msgid "Type"
 msgstr "Type"
 
-#: src/SourceDialog/SourceDialog.vala:121
+#: src/SourceDialog/SourceDialog.vala:119
 msgid "Blueberry"
 msgstr "Myrtille"
 
-#: src/SourceDialog/SourceDialog.vala:128
+#: src/SourceDialog/SourceDialog.vala:126
 msgid "Mint"
 msgstr "Menthe"
 
-#: src/SourceDialog/SourceDialog.vala:135
+#: src/SourceDialog/SourceDialog.vala:133
 msgid "Lime"
 msgstr "Citron vert"
 
-#: src/SourceDialog/SourceDialog.vala:142
+#: src/SourceDialog/SourceDialog.vala:140
 msgid "Banana"
 msgstr "Banane"
 
-#: src/SourceDialog/SourceDialog.vala:149
+#: src/SourceDialog/SourceDialog.vala:147
 msgid "Orange"
 msgstr "Orange"
 
-#: src/SourceDialog/SourceDialog.vala:156
+#: src/SourceDialog/SourceDialog.vala:154
 msgid "Strawberry"
 msgstr "Fraise"
 
-#: src/SourceDialog/SourceDialog.vala:163
+#: src/SourceDialog/SourceDialog.vala:161
 msgid "Bubblegum"
 msgstr "Chewing-gum"
 
-#: src/SourceDialog/SourceDialog.vala:170
+#: src/SourceDialog/SourceDialog.vala:168
 msgid "Grape"
 msgstr "Raisin"
 
-#: src/SourceDialog/SourceDialog.vala:177
+#: src/SourceDialog/SourceDialog.vala:175
 msgid "Cocoa"
 msgstr "Cacao"
 
-#: src/SourceDialog/SourceDialog.vala:184
+#: src/SourceDialog/SourceDialog.vala:182
 msgid "Slate"
 msgstr "Ardoise"
 
-#: src/SourceDialog/SourceDialog.vala:205
+#: src/SourceDialog/SourceDialog.vala:203
 msgid "Color"
 msgstr "Couleur"
 
-#: src/SourceDialog/SourceDialog.vala:215
+#: src/SourceDialog/SourceDialog.vala:213
 msgid "Mark as default calendar"
 msgstr "Définir comme calendrier par défaut"
 
-#: src/SourceDialog/SourceDialog.vala:280
+#: src/SourceDialog/SourceDialog.vala:278
 msgid "Create Calendar"
 msgstr "Créer un calendrier"
 
@@ -846,17 +846,16 @@ msgstr ""
 msgid "Network Settings…"
 msgstr "Paramètres réseau…"
 
-#: src/Widgets/DeleteDialog.vala:13
+#: src/Widgets/DeleteDialog.vala:22
 msgid "Delete this occurrence of event?"
 msgstr "Supprimer cette occurence de l'évènement ?"
 
-#: src/Widgets/DeleteDialog.vala:15
+#: src/Widgets/DeleteDialog.vala:24
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
 msgstr "Supprimer cette occurence de l'évènement « %s » ?"
 
-#. Should question mark be in or out of quotes?
-#: src/Widgets/DeleteDialog.vala:17
+#: src/Widgets/DeleteDialog.vala:26
 msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
@@ -864,31 +863,31 @@ msgstr ""
 "Cette occurence sera définitivement supprimée, mais toutes les autres "
 "resteront inchangées."
 
-#: src/Widgets/DeleteDialog.vala:18
+#: src/Widgets/DeleteDialog.vala:27
 msgid "Delete Occurrence"
 msgstr "Supprimer l'occurrence"
 
-#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#: src/Widgets/DeleteDialog.vala:34 src/Widgets/DeleteDialog.vala:43
 msgid "Delete event?"
 msgstr "Supprimer l'évènement ?"
 
-#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#: src/Widgets/DeleteDialog.vala:36 src/Widgets/DeleteDialog.vala:45
 #, c-format
 msgid "Delete event “%s”?"
 msgstr "Supprimer l'évènement « %s » ?"
 
 #. Should question mark be in or out of quotes?
-#: src/Widgets/DeleteDialog.vala:29
+#: src/Widgets/DeleteDialog.vala:38
 msgid "This event and all its occurrences will be permanently deleted."
 msgstr ""
 "Cet événement et toutes ses occurrences seront définitivement supprimés."
 
-#: src/Widgets/DeleteDialog.vala:30 src/Widgets/DeleteDialog.vala:39
+#: src/Widgets/DeleteDialog.vala:39 src/Widgets/DeleteDialog.vala:48
 msgid "Delete Event"
 msgstr "Supprimer l'évènement"
 
 #. Should question mark be in or out of quotes?
-#: src/Widgets/DeleteDialog.vala:38
+#: src/Widgets/DeleteDialog.vala:47
 msgid "This event will be permanently deleted."
 msgstr "Cet évènement sera définitivement supprimé."
 
