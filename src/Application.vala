@@ -58,6 +58,8 @@ namespace Maya {
             GLib.Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
             GLib.Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
             GLib.Intl.textdomain (GETTEXT_PACKAGE);
+
+            add_main_option_entries (APP_OPTIONS);
         }
 
         protected override void startup () {
@@ -215,16 +217,6 @@ namespace Maya {
         }
 
         public static int main (string[] args) {
-            var context = new OptionContext (_("Calendar"));
-            context.add_main_entries (Application.APP_OPTIONS, "maya");
-            context.add_group (Gtk.get_option_group (true));
-
-            try {
-                context.parse (ref args);
-            } catch (Error e) {
-                warning (e.message);
-            }
-
             GtkClutter.init (ref args);
             var app = new Application ();
 
