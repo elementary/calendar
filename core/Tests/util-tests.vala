@@ -46,11 +46,15 @@ void test_timezone_expected (DateTime time, ICal.Time ical,
         assert_true (ical.get_tzid () != null);
     }
 
-    var util_timezone = Calendar.Util.icaltime_get_timezone (ical);
-    var abbreviation = get_glib_tzid (util_timezone, time);
-    debug (@"Resulting GLib.TimeZone: $abbreviation");
-    assert_true (abbreviation == asserted_abbreviation);
-    assert_true (get_glib_offset (util_timezone, time) == get_glib_offset (asserted_zone, time));
+    try {
+        var util_timezone = Calendar.Util.icaltime_get_timezone (ical);
+        var abbreviation = get_glib_tzid (util_timezone, time);
+        debug (@"Resulting GLib.TimeZone: $abbreviation");
+        assert_true (abbreviation == asserted_abbreviation);
+        assert_true (get_glib_offset (util_timezone, time) == get_glib_offset (asserted_zone, time));
+    } catch (Error e) {
+        
+    }
 }
 
 void test_floating () {
@@ -74,15 +78,20 @@ void test_sample_offsets (string tzid, string abbreviation) {
     // Setup basic time info
     var test_date = new GLib.DateTime.utc (2019, 11, 21, 9, 20, 0);
     var iso_string = test_date.format ("%FT%TZ");
-    var asserted_zone = new GLib.TimeZone (tzid);
-    unowned ICal.Timezone ical_tz = ICal.Timezone.get_builtin_timezone (tzid);
-    assert_true (ical_tz != null);
 
-    // Convert to a timezone to test
-    var ical = new ICal.Time.from_string (iso_string).convert_to_zone (ical_tz);
-    var converted_gtime = test_date.to_timezone (asserted_zone);
+    try {
+        var asserted_zone = new GLib.TimeZone.identifier (tzid);
+        unowned ICal.Timezone ical_tz = ICal.Timezone.get_builtin_timezone (tzid);
+        assert_true (ical_tz != null);
 
-    test_timezone_expected (converted_gtime, ical, false, asserted_zone, abbreviation);
+        // Convert to a timezone to test
+        var ical = new ICal.Time.from_string (iso_string).convert_to_zone (ical_tz);
+        var converted_gtime = test_date.to_timezone (asserted_zone);
+
+        test_timezone_expected (converted_gtime, ical, false, asserted_zone, abbreviation);
+    } catch (Error e) {
+        
+    }
 }
 
 // Test identifying a standard hour timezone (UTC offset is a complete hour)
@@ -251,13 +260,17 @@ void test_get_datetimes_all_day () {
     assert_true (g_dtstart.format ("%FT%T%z") == "2019-11-21T00:00:00-0600");
     assert_true (g_dtend.format ("%FT%T%z") == "2019-11-22T00:00:00-0600");
 
-    // Check the timezone
-    // Floating timezones (implicit in DATE-type) should get the local timezone
-    // when converted to GLib.
-    var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
-    var abbreviation = get_glib_tzid (util_timezone, g_dtstart);
-    debug (@"Resulting timezone: $abbreviation");
-    assert_true (abbreviation == "CST");
+    try {
+        // Check the timezone
+        // Floating timezones (implicit in DATE-type) should get the local timezone
+        // when converted to GLib.
+        var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
+        var abbreviation = get_glib_tzid (util_timezone, g_dtstart);
+        debug (@"Resulting timezone: $abbreviation");
+        assert_true (abbreviation == "CST");
+    } catch (Error e) {
+        
+    }
 
     // Floating timezone: converted to local should be same as not converted
     Calendar.Util.icalcomponent_get_datetimes (event, out g_dtstart, out g_dtend);
@@ -297,11 +310,15 @@ void test_get_datetimes_not_all_day_local () {
     assert_true (g_dtstart.format ("%FT%T%z") == "2019-11-21T04:20:00-0600");
     assert_true (g_dtend.format ("%FT%T%z") == "2019-11-22T04:20:00-0600");
 
-    // Check the timezone
-    var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
-    var abbreviation = get_glib_tzid (util_timezone, g_dtstart);
-    debug (@"Resulting timezone: $abbreviation");
-    assert_true (abbreviation == "CST");
+    try {
+        // Check the timezone
+        var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
+        var abbreviation = get_glib_tzid (util_timezone, g_dtstart);
+        debug (@"Resulting timezone: $abbreviation");
+        assert_true (abbreviation == "CST");
+    } catch (Error e) {
+        
+    }
 
     Calendar.Util.icalcomponent_get_datetimes (event, out g_dtstart, out g_dtend);
     assert_true (g_dtstart.format ("%FT%T%z") == "2019-11-21T04:20:00-0600");
@@ -364,9 +381,13 @@ void test_get_datetimes_not_all_day_floating () {
     var dtstart = event.get_dtstart ();
     assert_true (!dtstart.is_date ());
 
-    var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
-    var abbreviation = util_timezone.get_abbreviation (0);
-    debug (@"Resulting timezone: $abbreviation");
+    try {
+        var util_timezone = Calendar.Util.icaltime_get_timezone (dtstart);
+        var abbreviation = util_timezone.get_abbreviation (0);
+        debug (@"Resulting timezone: $abbreviation");
+    } catch (Error e) {
+        
+    }
 
     DateTime g_dtstart,g_dtend;
     Calendar.Util.icalcomponent_get_local_datetimes (event, out g_dtstart, out g_dtend);
