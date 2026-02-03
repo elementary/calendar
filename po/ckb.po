@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 15:30+0000\n"
+"POT-Creation-Date: 2026-02-03 16:36+0000\n"
 "PO-Revision-Date: 2022-03-31 21:16+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -204,8 +204,8 @@ msgstr "دروستکردنی ڕووداو"
 msgid "Save Changes"
 msgstr "پاشکەوتی گۆڕانکاری"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:228
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:181
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "هەڵوەشاندنەوە"
 
@@ -632,27 +632,23 @@ msgstr "هەموو پێنجەمین هەینییەک"
 msgid "Every fifth Saturday"
 msgstr "هەموو پێنجەمین شەممەیەک"
 
-#: src/Grid/CalendarView.vala:85 src/Grid/CalendarView.vala:224
-msgid "Export Calendar…"
-msgstr "هەناردەکردنی ڕۆژژمێر…"
-
-#: src/Grid/CalendarView.vala:112
+#: src/Grid/CalendarView.vala:73
 msgid "Go to today's date"
 msgstr "ڕۆیشتن بۆ بەرواری ئەمڕۆ"
 
-#: src/Grid/CalendarView.vala:129
-msgid "Export or Share the default Calendar"
-msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریمان"
-
-#: src/Grid/CalendarView.vala:138
+#: src/Grid/CalendarView.vala:92
 msgid "Manage Calendars"
 msgstr "بەڕێوەبردنی ڕۆژژمێرەکان"
 
-#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:177 src/Widgets/SourcePopover.vala:53
+msgid "Export Calendar…"
+msgstr "هەناردەکردنی ڕۆژژمێر…"
+
+#: src/Grid/CalendarView.vala:180 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "پاشەکەوت"
 
-#: src/Grid/CalendarView.vala:232
+#: src/Grid/CalendarView.vala:185
 msgid "calendar.ics"
 msgstr "calendar.ics"
 
@@ -939,15 +935,15 @@ msgstr "زیاد کردنی ڕۆژژمێری نوێ …"
 msgid "Import iCalendar File…"
 msgstr "هێنانی پەڕگەی ئای کالێندەر…"
 
-#: src/Widgets/SourcePopover.vala:52
+#: src/Widgets/SourcePopover.vala:57
 msgid "Online Accounts Settings…"
 msgstr "ڕێکخستنەکانی هەژمارە سەرهێڵییەکان…"
 
-#: src/Widgets/SourcePopover.vala:79
+#: src/Widgets/SourcePopover.vala:85
 msgid "Select ICS File to Import"
 msgstr "دیاریکردنی پەڕگەی ICS بۆ هەناردن"
 
-#: src/Widgets/SourcePopover.vala:82
+#: src/Widgets/SourcePopover.vala:88
 msgid "Open"
 msgstr "کردنەوە"
 
@@ -967,6 +963,9 @@ msgstr "گەڕانەوە"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "ڕۆژژمێری \"%s\" سڕاوەتەوە"
+
+#~ msgid "Export or Share the default Calendar"
+#~ msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریمان"
 
 #~ msgid "Guests"
 #~ msgstr "میوانەکان"

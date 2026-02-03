@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 15:30+0000\n"
+"POT-Creation-Date: 2026-02-03 16:36+0000\n"
 "PO-Revision-Date: 2026-01-20 15:55+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://l10n.elementaryos.org/projects/calendar/"
@@ -201,8 +201,8 @@ msgstr "Ustvari dogodek"
 msgid "Save Changes"
 msgstr "Shrani spremembe"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:228
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:181
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "Prekliči"
 
@@ -639,27 +639,23 @@ msgstr "Vsak peti petek"
 msgid "Every fifth Saturday"
 msgstr "Vsako peto soboto"
 
-#: src/Grid/CalendarView.vala:85 src/Grid/CalendarView.vala:224
-msgid "Export Calendar…"
-msgstr "Izvozi koledar…"
-
-#: src/Grid/CalendarView.vala:112
+#: src/Grid/CalendarView.vala:73
 msgid "Go to today's date"
 msgstr "Pojdi na današnji datum"
 
-#: src/Grid/CalendarView.vala:129
-msgid "Export or Share the default Calendar"
-msgstr "Izvozi ali souporabi privzeti koledar"
-
-#: src/Grid/CalendarView.vala:138
+#: src/Grid/CalendarView.vala:92
 msgid "Manage Calendars"
 msgstr "Upravljaj koledarje"
 
-#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:177 src/Widgets/SourcePopover.vala:53
+msgid "Export Calendar…"
+msgstr "Izvozi koledar…"
+
+#: src/Grid/CalendarView.vala:180 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "Shrani"
 
-#: src/Grid/CalendarView.vala:232
+#: src/Grid/CalendarView.vala:185
 msgid "calendar.ics"
 msgstr "koledar.ics"
 
@@ -930,15 +926,15 @@ msgstr "Dodaj nov koledar…"
 msgid "Import iCalendar File…"
 msgstr "Uvozi datoteko iCalendar…"
 
-#: src/Widgets/SourcePopover.vala:52
+#: src/Widgets/SourcePopover.vala:57
 msgid "Online Accounts Settings…"
 msgstr "Nastavitve spletnih računov…"
 
-#: src/Widgets/SourcePopover.vala:79
+#: src/Widgets/SourcePopover.vala:85
 msgid "Select ICS File to Import"
 msgstr "Izberite datoteko ICS za uvoz"
 
-#: src/Widgets/SourcePopover.vala:82
+#: src/Widgets/SourcePopover.vala:88
 msgid "Open"
 msgstr "Odpri"
 
@@ -958,6 +954,9 @@ msgstr "Razveljavi"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "koledar \"%s\" odstranjen"
+
+#~ msgid "Export or Share the default Calendar"
+#~ msgstr "Izvozi ali souporabi privzeti koledar"
 
 #~ msgid "Guests"
 #~ msgstr "Gosti"
