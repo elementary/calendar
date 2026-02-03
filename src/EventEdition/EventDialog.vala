@@ -147,14 +147,14 @@ public class EventDialog : Granite.Dialog {
                     halign = START,
                     hexpand = true
                 };
-                delete_button.add_css_class (Granite.CssClass.DESTRUCTIVE_ACTION);
+                delete_button.add_css_class (Granite.CssClass.DESTRUCTIVE);
                 delete_button.clicked.connect (remove_event);
 
                 buttonbox.append (delete_button);
             }
 
             var create_button = new Gtk.Button ();
-            create_button.add_css_class (Granite.CssClass.SUGGESTED_ACTION);
+            create_button.add_css_class (Granite.CssClass.SUGGESTED);
             create_button.clicked.connect (save_dialog);
 
             if (date_time != null) {
@@ -221,6 +221,13 @@ public class EventDialog : Granite.Dialog {
                 modal = true,
                 transient_for = this
             };
+
+            delete_dialog.response.connect ((response) => {
+                if (response == Gtk.ResponseType.YES) {
+                    close ();
+                }
+            });
+
             delete_dialog.present ();
 
         }
