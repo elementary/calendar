@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-28 15:27+0000\n"
+"POT-Creation-Date: 2026-02-03 15:30+0000\n"
 "PO-Revision-Date: 2022-03-31 21:16+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Sorani <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -648,7 +648,7 @@ msgstr "هەناردەو هاوبەسکردنی ڕۆژمێری پێشگریما�
 msgid "Manage Calendars"
 msgstr "بەڕێوەبردنی ڕۆژژمێرەکان"
 
-#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:285
+#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "پاشەکەوت"
 
@@ -660,7 +660,7 @@ msgstr "calendar.ics"
 msgid "Show Week Numbers"
 msgstr "نیشاندانی ژمارەی هەفتە"
 
-#: src/Grid/VAutoHider.vala:105
+#: src/Grid/VAutoHider.vala:100
 #, c-format
 msgid "%u more…"
 msgstr "%u زۆرتر …"
@@ -677,63 +677,63 @@ msgstr ""
 msgid "Calendar Name"
 msgstr "ناوی ڕۆژژمێر"
 
-#: src/SourceDialog/SourceDialog.vala:96
+#: src/SourceDialog/SourceDialog.vala:94
 #, fuzzy
 #| msgid "Type:"
 msgid "Type"
 msgstr "جۆر :"
 
-#: src/SourceDialog/SourceDialog.vala:121
+#: src/SourceDialog/SourceDialog.vala:119
 msgid "Blueberry"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:128
+#: src/SourceDialog/SourceDialog.vala:126
 msgid "Mint"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:135
+#: src/SourceDialog/SourceDialog.vala:133
 msgid "Lime"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:142
+#: src/SourceDialog/SourceDialog.vala:140
 msgid "Banana"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:149
+#: src/SourceDialog/SourceDialog.vala:147
 msgid "Orange"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:156
+#: src/SourceDialog/SourceDialog.vala:154
 msgid "Strawberry"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:163
+#: src/SourceDialog/SourceDialog.vala:161
 msgid "Bubblegum"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:170
+#: src/SourceDialog/SourceDialog.vala:168
 msgid "Grape"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:177
+#: src/SourceDialog/SourceDialog.vala:175
 msgid "Cocoa"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:184
+#: src/SourceDialog/SourceDialog.vala:182
 msgid "Slate"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:205
+#: src/SourceDialog/SourceDialog.vala:203
 #, fuzzy
 #| msgid "Color:"
 msgid "Color"
 msgstr "ڕەنگ:"
 
-#: src/SourceDialog/SourceDialog.vala:215
+#: src/SourceDialog/SourceDialog.vala:213
 msgid "Mark as default calendar"
 msgstr "دیاری کردن بۆ ڕۆژژمێری فەرمی"
 
-#: src/SourceDialog/SourceDialog.vala:280
+#: src/SourceDialog/SourceDialog.vala:278
 msgid "Create Calendar"
 msgstr "دروستکردنی ڕۆژمێر"
 
@@ -860,53 +860,52 @@ msgstr ""
 msgid "Network Settings…"
 msgstr "ڕێکخستنەکانی هەژمارە سەرهێڵییەکان…"
 
-#: src/Widgets/DeleteDialog.vala:13
+#: src/Widgets/DeleteDialog.vala:22
 #, fuzzy
 #| msgid "Delete the selected event"
 msgid "Delete this occurrence of event?"
 msgstr "حذف رویداد انتخاب شده"
 
-#: src/Widgets/DeleteDialog.vala:15
+#: src/Widgets/DeleteDialog.vala:24
 #, c-format
 msgid "Delete this occurrence of event “%s”?"
 msgstr ""
 
-#. Should question mark be in or out of quotes?
-#: src/Widgets/DeleteDialog.vala:17
+#: src/Widgets/DeleteDialog.vala:26
 msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
 
-#: src/Widgets/DeleteDialog.vala:18
+#: src/Widgets/DeleteDialog.vala:27
 #, fuzzy
 #| msgid "Remove Occurrence"
 msgid "Delete Occurrence"
 msgstr "ڕەشکردنەوەی ئامادەبوون"
 
-#: src/Widgets/DeleteDialog.vala:25 src/Widgets/DeleteDialog.vala:34
+#: src/Widgets/DeleteDialog.vala:34 src/Widgets/DeleteDialog.vala:43
 #, fuzzy
 #| msgid "Delete Event"
 msgid "Delete event?"
 msgstr "سڕینەوەی ڕووداو"
 
-#: src/Widgets/DeleteDialog.vala:27 src/Widgets/DeleteDialog.vala:36
+#: src/Widgets/DeleteDialog.vala:36 src/Widgets/DeleteDialog.vala:45
 #, fuzzy, c-format
 #| msgid "Delete Event"
 msgid "Delete event “%s”?"
 msgstr "سڕینەوەی ڕووداو"
 
 #. Should question mark be in or out of quotes?
-#: src/Widgets/DeleteDialog.vala:29
+#: src/Widgets/DeleteDialog.vala:38
 msgid "This event and all its occurrences will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/DeleteDialog.vala:30 src/Widgets/DeleteDialog.vala:39
+#: src/Widgets/DeleteDialog.vala:39 src/Widgets/DeleteDialog.vala:48
 msgid "Delete Event"
 msgstr "سڕینەوەی ڕووداو"
 
 #. Should question mark be in or out of quotes?
-#: src/Widgets/DeleteDialog.vala:38
+#: src/Widgets/DeleteDialog.vala:47
 #, fuzzy
 #| msgid "This event can't be edited"
 msgid "This event will be permanently deleted."
