@@ -158,7 +158,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             child = add_button_box,
             relief = NONE
         };
-        add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var inline_toolbar = new Gtk.ActionBar ();
         inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
