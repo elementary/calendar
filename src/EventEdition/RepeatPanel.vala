@@ -150,13 +150,13 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             child = exceptions_list
         };
 
-        var add_button = new Gtk.Button.with_label (_("Add Exception")) {
-            always_show_image = true,
-            image = new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.BUTTON),
-            margin_top = 3,
-            margin_end = 3,
-            margin_bottom = 3,
-            margin_start = 3
+        var add_button_box = new Gtk.Box (HORIZONTAL, 0);
+        add_button_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", BUTTON));
+        add_button_box.add (new Gtk.Label (_("Add Exception")));
+
+        var add_button = new Gtk.Button () {
+            child = add_button_box,
+            relief = NONE
         };
         add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
