@@ -38,9 +38,9 @@ public class Calendar.Widgets.DateSwitcher : Gtk.Grid {
     }
 
     construct {
-        var start_button = new Gtk.Button.from_icon_name ("pan-start-symbolic", Gtk.IconSize.MENU);
+        var start_button = new Gtk.Button.from_icon_name ("pan-start-symbolic");
 
-        var end_button = new Gtk.Button.from_icon_name ("pan-end-symbolic", Gtk.IconSize.MENU);
+        var end_button = new Gtk.Button.from_icon_name ("pan-end-symbolic");
 
         label = new Gtk.Label (null) {
             width_chars = width_chars
@@ -49,7 +49,7 @@ public class Calendar.Widgets.DateSwitcher : Gtk.Grid {
         var center_button = new Gtk.Button ();
         center_button.add (label);
 
-        get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        get_style_context ().add_class (Granite.CssClass.LINKED);
         add (start_button);
         add (center_button);
         add (end_button);

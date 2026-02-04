@@ -21,15 +21,12 @@
 /**
  * Represent the week labels at the left side of the grid.
  */
-public class Maya.View.WeekLabels : Gtk.Bin {
+public class Maya.View.WeekLabels : Granite.Bin {
     private Gtk.Grid day_grid;
     private Gtk.Label[] labels;
     private int nr_of_weeks;
 
     private static GLib.Settings show_weeks;
-
-    private Gtk.GestureMultiPress click_gesture;
-    private Gtk.GestureLongPress long_press_gesture;
 
     static construct {
         if (Application.wingpanel_settings != null) {
@@ -43,7 +40,7 @@ public class Maya.View.WeekLabels : Gtk.Bin {
         day_grid = new Gtk.Grid () {
             row_homogeneous = true
         };
-        day_grid.get_style_context ().add_class ("weeks");
+        day_grid.add_css_class ("weeks");
 
         set_nr_of_weeks (5);
         day_grid.insert_row (1);
@@ -68,11 +65,11 @@ public class Maya.View.WeekLabels : Gtk.Bin {
         var menu = new GLib.Menu ();
         menu.append (_("Show Week Numbers"), "week-labels.show-weeks");
 
-        var gtk_menu = new Gtk.Menu.from_model (menu) {
+        var gtk_menu = new Gtk.PopoverMenu.from_model (menu) {
             attach_widget = this
         };
 
-        click_gesture = new Gtk.GestureMultiPress (revealer) {
+        var click_gesture = new Gtk.GestureClick () {
             button = 0
         };
         click_gesture.pressed.connect ((n_press, x, y) => {
@@ -87,7 +84,7 @@ public class Maya.View.WeekLabels : Gtk.Bin {
             }
         });
 
-        long_press_gesture = new Gtk.GestureLongPress (this) {
+        var long_press_gesture = new Gtk.GestureLongPress () {
             touch_only = true
         };
         long_press_gesture.pressed.connect ((x, y) => {
@@ -99,6 +96,9 @@ public class Maya.View.WeekLabels : Gtk.Bin {
             long_press_gesture.set_state (CLAIMED);
             long_press_gesture.reset ();
         });
+
+        add_controller (click_gesture);
+        add_controller (long_press_gesture);
     }
 
     public void update (DateTime date, int nr_of_weeks) {
@@ -115,7 +115,7 @@ public class Maya.View.WeekLabels : Gtk.Bin {
                     valign = START,
                     width_chars = 2
                 };
-                labels[c].get_style_context ().add_class ("weeklabel");
+                labels[c].add_css_class ("weeklabel");
 
                 day_grid.attach (labels[c], 0, c);
                 labels[c].show ();

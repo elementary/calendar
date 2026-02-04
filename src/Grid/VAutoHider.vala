@@ -6,7 +6,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.VAutoHider : Gtk.Bin {
+public class Maya.View.VAutoHider : Granite.Bin {
     private Gtk.Label more_label;
     private Gtk.Box main_box;
 

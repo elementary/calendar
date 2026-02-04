@@ -10,8 +10,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
 
     private Gtk.SearchEntry location_entry;
     private Gtk.ListStore location_store;
-    private GtkChamplain.Embed champlain_embed;
-    private Maya.Marker point;
+    private Shumate.SimpleMap simple_map;
+    private Shumate.Marker point;
      // Only set the geo property if map_selected is true, this is a smart behavior!
     private bool map_selected = false;
     private GLib.Cancellable search_cancellable;
@@ -60,24 +60,31 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
             mnemonic_widget = location_entry
         };
 
-        champlain_embed = new GtkChamplain.Embed ();
+        simple_map = new Shumate.SimpleMap () {
+            map_source = registry.get_by_id (Shumate.MAP_SOURCE_OSM_MAPNIK)
+        };
 
-        point = new Maya.Marker ();
+        point = new Shumate.Marker () {
+            child = new Gtk.Image.from_icon_name ("location-marker") {
+                icon_size = LARGE
+            }
+        };
         point.draggable = parent_dialog.can_edit;
         point.drag_finish.connect (() => {
             map_selected = true;
             find_location.begin (point.latitude, point.longitude);
         });
 
-        var marker_layer = new Champlain.MarkerLayer.full (SINGLE);
+        var marker_layer = new Shumate.MarkerLayer.full (simple_map.viewport, SINGLE);
         marker_layer.add_marker (point);
 
-        var view = champlain_embed.champlain_view;
+        var view = simple_map.viewport;
         view.zoom_level = 10;
 
-        view.goto_animation_duration = 500;
-        view.add_layer (marker_layer);
-        view.center_on (point.latitude, point.longitude);
+        var map = simple_map.map;
+        map.go_to_duration = 500;
+        map.add_layer (marker_layer);
+        map.center_on (point.latitude, point.longitude);
 
         load_contact.begin ();
 
@@ -110,8 +117,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
             if (geo != null) {
                 var latitude = geo.get_lat ();
                 var longitude = geo.get_lon ();
-                if (latitude >= Champlain.MIN_LATITUDE && longitude >= Champlain.MIN_LONGITUDE &&
-                    latitude <= Champlain.MAX_LATITUDE && longitude <= Champlain.MAX_LONGITUDE) {
+                if (latitude >= Shumate.MIN_LATITUDE && longitude >= Shumate.MIN_LONGITUDE &&
+                    latitude <= Shumate.MAX_LATITUDE && longitude <= Shumate.MAX_LONGITUDE) {
                     need_relocation = false;
                     point.latitude = latitude;
                     point.longitude = longitude;
@@ -296,26 +303,5 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
         location_entry.set_text (address.get_string ());
         compute_location.begin (address.get_string ());
         return true;
-    }
-}
-
-public class Maya.Marker : Champlain.Marker {
-    public Marker () {
-        try {
-            weak Gtk.IconTheme icon_theme = Gtk.IconTheme.get_default ();
-            var pixbuf = icon_theme.load_icon ("location-marker", 32, Gtk.IconLookupFlags.GENERIC_FALLBACK);
-            Clutter.Image image = new Clutter.Image ();
-            image.set_data (pixbuf.get_pixels (),
-                          pixbuf.has_alpha ? Cogl.PixelFormat.RGBA_8888 : Cogl.PixelFormat.RGB_888,
-                          pixbuf.width,
-                          pixbuf.height,
-                          pixbuf.rowstride);
-            content = image;
-            set_size (pixbuf.width, pixbuf.height);
-            translation_x = -pixbuf.width / 2;
-            translation_y = -pixbuf.height;
-        } catch (Error e) {
-            critical (e.message);
-        }
     }
 }
