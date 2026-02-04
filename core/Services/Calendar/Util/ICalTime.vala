@@ -27,7 +27,7 @@ namespace Calendar.Util {
      * For floating times, returns the local timezone.
      * Dates (with no time component) are considered floating.
      */
-    public GLib.TimeZone? icaltime_get_timezone (ICal.Time date) throws Error {
+    public GLib.TimeZone icaltime_get_timezone (ICal.Time date) throws Error {
         // Special case: dates are floating, so return local time zone
         if (date.is_date ()) {
             return new GLib.TimeZone.local ();
