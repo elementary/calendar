@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 16:36+0000\n"
-"PO-Revision-Date: 2025-11-27 01:55+0000\n"
+"PO-Revision-Date: 2026-02-04 11:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ka/>\n"
@@ -167,10 +167,8 @@ msgid "Location"
 msgstr "ადგილმდებარეობა"
 
 #: src/EventEdition/EventDialog.vala:122 src/EventEdition/GuestsPanel.vala:53
-#, fuzzy
-#| msgid "Invite"
 msgid "Invitees"
-msgstr "მოიწვიე"
+msgstr "მოწვეულები"
 
 #: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
@@ -212,10 +210,8 @@ msgid "Maybe"
 msgstr "ალბათ"
 
 #: src/EventEdition/GuestsPanel.vala:57
-#, fuzzy
-#| msgid "Invite"
 msgid "No Invitees"
-msgstr "მოიწვიე"
+msgstr "მოწვეულების გარეშე"
 
 #: src/EventEdition/GuestsPanel.vala:98
 msgid "Invite"
