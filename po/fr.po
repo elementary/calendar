@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 15:30+0000\n"
+"POT-Creation-Date: 2026-02-03 16:36+0000\n"
 "PO-Revision-Date: 2026-01-31 08:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/calendar/"
@@ -199,8 +199,8 @@ msgstr "Créer un évènement"
 msgid "Save Changes"
 msgstr "Enregistrer les modifications"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:228
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:83
+#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:181
+#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -625,27 +625,23 @@ msgstr "Chaque cinquième vendredi"
 msgid "Every fifth Saturday"
 msgstr "Chaque cinquième samedi"
 
-#: src/Grid/CalendarView.vala:85 src/Grid/CalendarView.vala:224
-msgid "Export Calendar…"
-msgstr "Exporter le calendrier…"
-
-#: src/Grid/CalendarView.vala:112
+#: src/Grid/CalendarView.vala:73
 msgid "Go to today's date"
 msgstr "Aller à la date d'aujourd'hui"
 
-#: src/Grid/CalendarView.vala:129
-msgid "Export or Share the default Calendar"
-msgstr "Exporter ou partager le calendrier par défaut"
-
-#: src/Grid/CalendarView.vala:138
+#: src/Grid/CalendarView.vala:92
 msgid "Manage Calendars"
 msgstr "Gérer les calendriers"
 
-#: src/Grid/CalendarView.vala:227 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:177 src/Widgets/SourcePopover.vala:53
+msgid "Export Calendar…"
+msgstr "Exporter le calendrier…"
+
+#: src/Grid/CalendarView.vala:180 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "Enregistrer"
 
-#: src/Grid/CalendarView.vala:232
+#: src/Grid/CalendarView.vala:185
 msgid "calendar.ics"
 msgstr "calendrier.ics"
 
@@ -919,15 +915,15 @@ msgstr "Ajouter un nouveau calendrier…"
 msgid "Import iCalendar File…"
 msgstr "Importer un fichier ICalendar…"
 
-#: src/Widgets/SourcePopover.vala:52
+#: src/Widgets/SourcePopover.vala:57
 msgid "Online Accounts Settings…"
 msgstr "Paramètres des comptes en ligne…"
 
-#: src/Widgets/SourcePopover.vala:79
+#: src/Widgets/SourcePopover.vala:85
 msgid "Select ICS File to Import"
 msgstr "Sélectionner le fichier ICS à importer"
 
-#: src/Widgets/SourcePopover.vala:82
+#: src/Widgets/SourcePopover.vala:88
 msgid "Open"
 msgstr "Ouvrir"
 
@@ -947,6 +943,9 @@ msgstr "Annuler"
 #, c-format
 msgid "\"%s\" removed"
 msgstr "« %s » supprimé"
+
+#~ msgid "Export or Share the default Calendar"
+#~ msgstr "Exporter ou partager le calendrier par défaut"
 
 #~ msgid "Guests"
 #~ msgstr "Invités"
