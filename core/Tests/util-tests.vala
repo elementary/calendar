@@ -53,7 +53,7 @@ void test_timezone_expected (DateTime time, ICal.Time ical,
         assert_true (abbreviation == asserted_abbreviation);
         assert_true (get_glib_offset (util_timezone, time) == get_glib_offset (asserted_zone, time));
     } catch (Error e) {
-        
+        assert_no_error (e);
     }
 }
 
