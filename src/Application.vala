@@ -169,12 +169,6 @@ namespace Maya {
             if (saved_state.get_boolean ("window-maximized")) {
                 window.maximize ();
             }
-
-            window.destroy.connect (on_quit);
-        }
-
-        private void on_quit () {
-            Calendar.EventStore.get_default ().delete_trashed_calendars ();
         }
 
         public async bool ask_for_background () {
