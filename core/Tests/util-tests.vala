@@ -90,7 +90,7 @@ void test_sample_offsets (string tzid, string abbreviation) {
 
         test_timezone_expected (converted_gtime, ical, false, asserted_zone, abbreviation);
     } catch (Error e) {
-        
+        assert_no_error (e);
     }
 }
 
@@ -269,7 +269,7 @@ void test_get_datetimes_all_day () {
         debug (@"Resulting timezone: $abbreviation");
         assert_true (abbreviation == "CST");
     } catch (Error e) {
-        
+        assert_no_error (e);
     }
 
     // Floating timezone: converted to local should be same as not converted
@@ -317,7 +317,7 @@ void test_get_datetimes_not_all_day_local () {
         debug (@"Resulting timezone: $abbreviation");
         assert_true (abbreviation == "CST");
     } catch (Error e) {
-        
+        assert_no_error (e);
     }
 
     Calendar.Util.icalcomponent_get_datetimes (event, out g_dtstart, out g_dtend);
@@ -386,7 +386,7 @@ void test_get_datetimes_not_all_day_floating () {
         var abbreviation = util_timezone.get_abbreviation (0);
         debug (@"Resulting timezone: $abbreviation");
     } catch (Error e) {
-        
+        assert_no_error (e);
     }
 
     DateTime g_dtstart,g_dtend;
