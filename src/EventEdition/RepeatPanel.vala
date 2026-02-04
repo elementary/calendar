@@ -5,12 +5,12 @@
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
+public class Maya.View.EventEdition.RepeatPanel : Gtk.Box {
     private EventDialog parent_dialog;
     private Gtk.Switch repeat_switch;
     private Gtk.ComboBoxText repeat_combobox;
     private Gtk.ComboBoxText ends_combobox;
-    private Gtk.SpinButton end_entry;
+    private Gtk.SpinButton repeats_spinbutton;
     private Granite.Widgets.DatePicker end_datepicker;
     private Gtk.Box week_box;
     private Gtk.SpinButton every_entry;
@@ -67,13 +67,6 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         var ends_label = new Granite.HeaderLabel (_("Ends:"));
 
-        ///Translators: Give a word to describe an event ending after a certain number of repeats.
-        ///This will be displayed in the format like: "Ends After 2 Repeats",
-        ///where this string always represents the last word in the phrase.
-        var end_label = new Gtk.Label (ngettext ("Repeat", "Repeats", 1)) {
-            no_show_all = true
-        };
-
         ends_combobox = new Gtk.ComboBoxText () {
             hexpand = true
         };
@@ -82,24 +75,37 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         ends_combobox.append_text (_("After"));
         ends_combobox.active = 0;
 
-        end_entry = new Gtk.SpinButton.with_range (1, 99, 1) {
-            hexpand = true,
-            no_show_all = true
+        repeats_spinbutton = new Gtk.SpinButton.with_range (1, 99, 1) {
+            hexpand = true
+        };
+
+        ///Translators: Give a word to describe an event ending after a certain number of repeats.
+        ///This will be displayed in the format like: "Ends After 2 Repeats",
+        ///where this string always represents the last word in the phrase.
+        var repeats_label = new Gtk.Label (ngettext ("Repeat", "Repeats", 1));
+
+        var end_repeat_box = new Gtk.Box (HORIZONTAL, 12);
+        end_repeat_box.add (repeats_spinbutton);
+        end_repeat_box.add (repeats_label);
+
+        var end_repeat_revealer = new Gtk.Revealer () {
+            child = end_repeat_box
         };
 
         var format = Granite.DateTime.get_default_date_format (false, true, true);
 
-        end_datepicker = new Granite.Widgets.DatePicker.with_format (format) {
-            no_show_all = true
+        end_datepicker = new Granite.Widgets.DatePicker.with_format (format);
+
+        var end_date_revealer = new Gtk.Revealer () {
+            child = end_datepicker
         };
 
-        var ends_grid = new Gtk.Box (HORIZONTAL, 12) {
+        var ends_grid = new Gtk.Box (VERTICAL, 6) {
             sensitive = false
         };
         ends_grid.add (ends_combobox);
-        ends_grid.add (end_entry);
-        ends_grid.add (end_label);
-        ends_grid.add (end_datepicker);
+        ends_grid.add (end_date_revealer);
+        ends_grid.add (end_repeat_revealer);
 
         mon_button = new Gtk.ToggleButton.with_label (_("Mon"));
         tue_button = new Gtk.ToggleButton.with_label (_("Tue"));
@@ -121,15 +127,22 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         week_box.add (sat_button);
         week_box.add (sun_button);
 
+        var weekday_revealer = new Gtk.Revealer () {
+            child = week_box
+        };
+
         same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
         every_radiobutton = new Gtk.RadioButton.from_widget (same_radiobutton);
 
-        var month_grid = new Gtk.Box (VERTICAL, 6) {
-            no_show_all = true,
+        var monthly_box = new Gtk.Box (VERTICAL, 6) {
             sensitive = false
         };
-        month_grid.add (same_radiobutton);
-        month_grid.add (every_radiobutton);
+        monthly_box.add (same_radiobutton);
+        monthly_box.add (every_radiobutton);
+
+        var monthly_revealer = new Gtk.Revealer () {
+            child = monthly_box
+        };
 
         var exceptions_label = new Granite.HeaderLabel (_("Exceptions:"));
 
@@ -176,18 +189,19 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         margin_start = 12;
         margin_end = 12;
-        row_spacing = 6;
-        column_spacing = 12;
-        attach (reminder_label, 1, 0);
-        attach (repeat_box, 1, 1);
-        attach (every_label, 1, 2);
-        attach (every_box, 1, 3);
-        attach (week_box, 1, 4);
-        attach (month_grid, 1, 4);
-        attach (ends_label, 1, 5);
-        attach (ends_grid, 1, 6);
-        attach (exceptions_label, 1, 7);
-        attach (exceptions_frame, 1, 8);
+        spacing = 6;
+        orientation = VERTICAL;
+        add (reminder_label);
+        add (reminder_label);
+        add (repeat_box);
+        add (every_label);
+        add (every_box);
+        add (weekday_revealer);
+        add (monthly_revealer);
+        add (ends_label);
+        add (ends_grid);
+        add (exceptions_label);
+        add (exceptions_frame);
 
         reorder_week_box ();
         Calendar.EventStore.get_default ().notify["week-starts-on"].connect (reorder_week_box);
@@ -203,7 +217,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
             repeat_combobox.sensitive = active;
             every_box.sensitive = active;
             week_box.sensitive = active;
-            month_grid.sensitive = active;
+            monthly_box.sensitive = active;
             ends_grid.sensitive = active;
             exceptions_box.sensitive = active;
         });
@@ -211,30 +225,28 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
 
         repeat_combobox.changed.connect (() => {
             switch (repeat_combobox.active) {
+                // Weekly
                 case 1:
-                    week_box.no_show_all = false;
-                    week_box.show_all ();
-                    month_grid.no_show_all = true;
-                    month_grid.hide ();
+                    weekday_revealer.reveal_child = true;
+                    monthly_revealer.reveal_child = false;
                     break;
+                // Monthly
                 case 2:
                     int day_of_week = parent_dialog.date_time.get_day_of_week () + 1;
                     if (day_of_week > 7) {
                         day_of_week = 1;
                     }
                     set_every_day ((short)(day_of_week + Math.ceil ((double)parent_dialog.date_time.get_day_of_month () / (double)7) * 8));
-                    week_box.no_show_all = true;
-                    week_box.hide ();
-                    month_grid.no_show_all = false;
-                    month_grid.show_all ();
+
+                    weekday_revealer.reveal_child = false;
+                    monthly_revealer.reveal_child = true;
                     break;
                 default:
-                    month_grid.no_show_all = true;
-                    month_grid.hide ();
-                    week_box.no_show_all = true;
-                    week_box.hide ();
+                    monthly_revealer.reveal_child = false;
+                    weekday_revealer.reveal_child = false;
                     break;
             }
+
             every_entry.value_changed ();
         });
 
@@ -256,27 +268,15 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
         });
 
         ends_combobox.changed.connect (() => {
-            switch (ends_combobox.active) {
-                case 0:
-                    end_label.hide ();
-                    end_entry.hide ();
-                    end_datepicker.hide ();
-                    break;
-                case 1:
-                    end_label.hide ();
-                    end_entry.hide ();
-                    end_datepicker.show ();
-                    break;
-                case 2:
-                    end_label.show ();
-                    end_entry.show ();
-                    end_datepicker.hide ();
-                    break;
-            }
+            // On Date
+            end_date_revealer.reveal_child = ends_combobox.active == 1;
+
+            // After n repeats
+            end_repeat_revealer.reveal_child = ends_combobox.active == 2;
         });
 
-        end_entry.value_changed.connect (() => {
-            end_label.label = ngettext ("Repeat", "Repeats", (ulong)end_entry.value);
+        repeats_spinbutton.value_changed.connect (() => {
+            repeats_label.label = ngettext ("Repeat", "Repeats", (ulong)repeats_spinbutton.value);
         });
 
         load ();
@@ -370,7 +370,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 end_datepicker.date = Calendar.Util.icaltime_to_datetime (until);
             }
             if (rrule.get_count () > 0) {
-                end_entry.value = rrule.get_count ();
+                repeats_spinbutton.value = rrule.get_count ();
                 ends_combobox.active = 2;
             }
         }
@@ -736,7 +736,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Grid {
                 break;
         }
         if (ends_combobox.active == 2) {
-            rrule.set_count ((int)end_entry.value);
+            rrule.set_count ((int)repeats_spinbutton.value);
         } else if (ends_combobox.active == 1) {
             rrule.set_until (new ICal.Time.from_day_of_year (end_datepicker.date.get_day_of_year (), end_datepicker.date.get_year ()));
         }
