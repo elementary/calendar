@@ -61,18 +61,20 @@ public class CalendarRow : Gtk.Box {
             xalign = 0
         };
 
-        var selection_icon = new Gtk.Image.from_icon_name ("object-select-symbolic", Gtk.IconSize.MENU) {
-            no_show_all = true,
-            visible = false
+        var selection_icon = new Gtk.Image.from_icon_name ("emblem-default-symbolic", MENU);
+
+        var selection_revealer = new Gtk.Revealer () {
+            child = selection_icon,
+            transition_type = CROSSFADE
         };
 
         spacing = 6;
         add (calendar_color);
         add (calendar_name_label);
-        add (selection_icon);
+        add (selection_revealer);
 
         bind_property ("label", calendar_name_label, "label");
-        bind_property ("selected", selection_icon, "visible");
+        bind_property ("selected", selection_revealer, "reveal-child", SYNC_CREATE);
     }
 
     private void apply_source () {

@@ -5,7 +5,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.RepeatPanel : Gtk.Box {
+public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
     private EventDialog parent_dialog;
     private Gtk.Switch repeat_switch;
     private Gtk.ComboBoxText repeat_combobox;
@@ -146,22 +146,19 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Box {
 
         var exceptions_label = new Granite.HeaderLabel (_("Exceptions:"));
 
-        var no_exceptions_label = new Gtk.Label (_("No Exceptions"));
+        var no_exceptions_label = new Gtk.Label (_("No Exceptions")) {
+            margin_top = 12,
+            margin_bottom = 12
+        };
         no_exceptions_label.show ();
 
         no_exceptions_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
         no_exceptions_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         exceptions_list = new Gtk.ListBox () {
-            hexpand = true,
-            vexpand = true,
             selection_mode = NONE
         };
         exceptions_list.set_placeholder (no_exceptions_label);
-
-        var exceptions_scrolled = new Gtk.ScrolledWindow (null, null) {
-            child = exceptions_list
-        };
 
         var add_button = new Gtk.Button.with_label (_("Add Exception")) {
             always_show_image = true,
@@ -178,30 +175,33 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Box {
         inline_toolbar.add (add_button);
 
         var exceptions_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 12,
             sensitive = false
         };
-        exceptions_box.add (exceptions_scrolled);
+        exceptions_box.add (exceptions_list);
         exceptions_box.add (inline_toolbar);
+        exceptions_box.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
 
-        var exceptions_frame = new Gtk.Frame (null) {
-            child = exceptions_box
+        var main_box = new Gtk.Box (VERTICAL, 6) {
+            margin_start = 12,
+            margin_end = 12
+        };
+        main_box.add (reminder_label);
+        main_box.add (repeat_box);
+        main_box.add (every_label);
+        main_box.add (every_box);
+        main_box.add (weekday_revealer);
+        main_box.add (monthly_revealer);
+        main_box.add (ends_label);
+        main_box.add (ends_grid);
+        main_box.add (exceptions_label);
+        main_box.add (exceptions_box);
+
+        var scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = main_box
         };
 
-        margin_start = 12;
-        margin_end = 12;
-        spacing = 6;
-        orientation = VERTICAL;
-        add (reminder_label);
-        add (reminder_label);
-        add (repeat_box);
-        add (every_label);
-        add (every_box);
-        add (weekday_revealer);
-        add (monthly_revealer);
-        add (ends_label);
-        add (ends_grid);
-        add (exceptions_label);
-        add (exceptions_frame);
+        child = scrolled;
 
         reorder_week_box ();
         Calendar.EventStore.get_default ().notify["week-starts-on"].connect (reorder_week_box);
@@ -779,9 +779,10 @@ public class Maya.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
         box.add (date);
         box.add (remove_button);
 
-        margin_top = 6;
-        margin_start = 6;
-        margin_end = 6;
+        margin_top = 12;
+        margin_start = 12;
+        margin_end = 12;
+        margin_bottom = 12;
         child = box;
 
         remove_button.clicked.connect (() => {
