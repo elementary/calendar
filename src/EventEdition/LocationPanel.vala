@@ -242,10 +242,11 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
             });
 
         } catch (Error e) {
+            /* Do NOT attempt a fallback. User intent is that they not be located.
+             * Attempting to locate anywhere is perceived as a breach of consent
+             * https://github.com/elementary/calendar/issues/540
+             */
             warning ("Failed to connect to GeoClue2 service: %s", e.message);
-            // Fallback to timezone location
-
-            compute_location.begin (ECal.util_get_system_timezone_location ());
             return;
         }
     }
