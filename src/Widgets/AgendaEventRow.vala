@@ -39,6 +39,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
     private Gtk.GestureMultiPress click_gesture;
     private Gtk.GestureLongPress long_press_gesture;
 
+    private Gtk.Grid main_grid;
     private Gtk.Image event_image;
     private Gtk.Label name_label;
     private Gtk.Label datetime_label;
@@ -212,7 +213,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             child = location_label
         };
 
-        var main_grid = new Gtk.Grid () {
+        main_grid = new Gtk.Grid () {
             column_spacing = 6,
             margin_top = 6,
             margin_end = 12,
@@ -221,7 +222,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         };
         main_grid.attach (event_image, 0, 0);
         main_grid.attach (name_label, 1, 0);
-        main_grid.attach (datetime_label, 1, 1);
+        // leave space for datetime label
         main_grid.attach (location_revealer, 1, 2);
 
         main_grid_context = main_grid.get_style_context ();
@@ -321,54 +322,12 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         is_allday = Calendar.Util.datetime_is_all_day (start_date, end_date);
         is_multiday = Calendar.Util.icalcomponent_is_multiday (ical_event);
 
-        var date_format = Granite.DateTime.get_default_date_format (true, true, false);
-        string start_date_string = start_date.format (date_format);
-        string end_date_string = end_date.format (date_format);
-        string start_time_string = start_date.format (Settings.time_format ());
-        string end_time_string = end_date.format (Settings.time_format ());
-        string? datetime_string = null;
-
-        var is_same_time = start_time_string == end_time_string;
-
-        datetime_label.show ();
-        datetime_label.no_show_all = false;
-        if (is_multiday) {
-            if (is_allday) {
-                // TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-                datetime_string = C_("date-range", "%s – %s").printf (start_date_string, end_date_string);
-            } else {
-                // TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-                datetime_string = _("%s, %s – %s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
-            }
+        datetime_label.label = get_timespan_label (start_date, end_date);
+        if (datetime_label.label != "") {
+            main_grid.attach (datetime_label, 1, 1);
         } else {
-            if (!is_upcoming) {
-                if (is_allday) {
-                    datetime_label.hide ();
-                    datetime_label.no_show_all = true;
-                } else {
-                    if (is_same_time) {
-                        datetime_string = start_time_string;
-                    } else {
-                        // TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-                        datetime_string = C_("time-range", "%s – %s").printf (start_time_string, end_time_string);
-                    }
-                }
-            } else {
-                if (is_allday) {
-                    datetime_string = "%s".printf (start_date_string);
-                } else {
-                    if (is_same_time) {
-                        // TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-                        datetime_string = _("%s at %s").printf (start_date_string, start_time_string);
-                    } else {
-                        // TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-                        datetime_string = _("%s, %s – %s").printf (start_date_string, start_time_string, end_time_string);
-                    }
-                }
-            }
+            main_grid.remove (datetime_label);
         }
-
-        datetime_label.label = datetime_string;
 
         string location_description, location_uri;
         if (location_from_component (event, out location_description, out location_uri)) {
@@ -378,6 +337,52 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
                 location_label.label = location_description;
             }
         }
+    }
+
+    private string get_timespan_label (DateTime start_date, DateTime end_date) {
+        var date_format = Granite.DateTime.get_default_date_format (true, true, false);
+        var start_date_string = start_date.format (date_format);
+        var start_time_string = start_date.format (Settings.time_format ());
+        var end_time_string = end_date.format (Settings.time_format ());
+
+        if (is_multiday) {
+            var end_date_string = end_date.format (date_format);
+
+            if (is_allday) {
+                // TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21–Saturday, Dec 22"
+                return C_("date-range", "%s–%s").printf (start_date_string, end_date_string);
+            }
+
+            // TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM–Saturday, Dec 22, 12:00 AM"
+            return _("%s, %s–%s, %s").printf (start_date_string, start_time_string, end_date_string, end_time_string);
+        }
+
+        var is_same_time = start_date.equal (end_date);
+
+        if (!is_upcoming) {
+            if (is_allday) {
+                return "";
+            }
+
+            if (is_same_time) {
+                return start_time_string;
+            }
+
+            // TRANSLATORS: A range from start time to end time i.e. "7:00 PM–9:00 PM"
+            return C_("time-range", "%s–%s").printf (start_time_string, end_time_string);
+        }
+
+        if (is_allday) {
+            return start_date_string;
+        }
+
+        if (is_same_time) {
+            // TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
+            return _("%s at %s").printf (start_date_string, start_time_string);
+        }
+
+        // TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM–9:00 PM"
+        return _("%s, %s–%s").printf (start_date_string, start_time_string, end_time_string);
     }
 
     private void find_keywords (Category category, string phrase, ref Category current_category, ref int current_hits) {
