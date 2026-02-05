@@ -31,6 +31,7 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
 
         calendar_name_label = new Gtk.Label (source.dup_display_name ()) {
             hexpand = true,
+            wrap = true,
             xalign = 0
         };
 
