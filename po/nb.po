@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 16:36+0000\n"
+"POT-Creation-Date: 2026-02-05 20:16+0000\n"
 "PO-Revision-Date: 2024-05-31 15:13+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -128,17 +128,13 @@ msgstr "Fokuser gitt dag"
 msgid "date"
 msgstr "dato"
 
-#: src/Application.vala:187
+#: src/Application.vala:183
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
 "Kalenderen vil starte med enheten og kjøre selv når vinduet lukkes slik at "
 "den kan sende begivenhetsmerknader."
-
-#: src/Application.vala:218
-msgid "Calendar"
-msgstr "Kalender"
 
 #: src/ImportDialog.vala:28
 msgid "Select a Calendar to Import Into"
@@ -168,46 +164,46 @@ msgstr "Opprett begivenhet"
 msgid "Edit Event"
 msgstr "Rediger begivenhet"
 
-#: src/EventEdition/EventDialog.vala:120
+#: src/EventEdition/EventDialog.vala:116
 msgid "General Informations"
 msgstr "Generell informasjon"
 
-#: src/EventEdition/EventDialog.vala:121
+#: src/EventEdition/EventDialog.vala:117
 msgid "Location"
 msgstr "Sted"
 
-#: src/EventEdition/EventDialog.vala:122 src/EventEdition/GuestsPanel.vala:53
+#: src/EventEdition/EventDialog.vala:118 src/EventEdition/GuestsPanel.vala:53
 #, fuzzy
 #| msgid "Invite"
 msgid "Invitees"
 msgstr "Inviter"
 
-#: src/EventEdition/EventDialog.vala:123 src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/EventDialog.vala:119 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
 msgstr "Påminnelser"
 
 #. /Translators: The name of the repeat panel tab
-#: src/EventEdition/EventDialog.vala:125
+#: src/EventEdition/EventDialog.vala:121
 #, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Gjentagelse"
 
-#: src/EventEdition/EventDialog.vala:146
+#: src/EventEdition/EventDialog.vala:142
 #, fuzzy
 #| msgid "Delete Event"
 msgid "Delete Event…"
 msgstr "Slett begivenhet"
 
-#: src/EventEdition/EventDialog.vala:161
+#: src/EventEdition/EventDialog.vala:157
 msgid "Create Event"
 msgstr "Opprett begivenhet"
 
-#: src/EventEdition/EventDialog.vala:164
+#: src/EventEdition/EventDialog.vala:160
 msgid "Save Changes"
 msgstr "Lagre endringer"
 
-#: src/EventEdition/EventDialog.vala:167 src/Grid/CalendarView.vala:181
+#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:181
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "Avbryt"
@@ -374,7 +370,7 @@ msgstr "Årlig"
 msgid "Every:"
 msgstr "Hver:"
 
-#: src/EventEdition/RepeatPanel.vala:60 src/EventEdition/RepeatPanel.vala:247
+#: src/EventEdition/RepeatPanel.vala:60 src/EventEdition/RepeatPanel.vala:258
 msgid "Week"
 msgid_plural "Weeks"
 msgstr[0] "Uke"
@@ -384,254 +380,254 @@ msgstr[1] "Uker"
 msgid "Ends:"
 msgstr "Slutter:"
 
+#: src/EventEdition/RepeatPanel.vala:73
+msgid "Never"
+msgstr "Aldri"
+
+#: src/EventEdition/RepeatPanel.vala:74
+msgid "Until"
+msgstr "Til"
+
+#: src/EventEdition/RepeatPanel.vala:75
+msgid "After"
+msgstr "Etter"
+
 #. /Translators: Give a word to describe an event ending after a certain number of repeats.
 #. /This will be displayed in the format like: "Ends After 2 Repeats",
 #. /where this string always represents the last word in the phrase.
-#: src/EventEdition/RepeatPanel.vala:73 src/EventEdition/RepeatPanel.vala:279
+#: src/EventEdition/RepeatPanel.vala:85 src/EventEdition/RepeatPanel.vala:278
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Gjentagelse"
 msgstr[1] "Gjentagelser"
 
-#: src/EventEdition/RepeatPanel.vala:80
-msgid "Never"
-msgstr "Aldri"
-
-#: src/EventEdition/RepeatPanel.vala:81
-msgid "Until"
-msgstr "Til"
-
-#: src/EventEdition/RepeatPanel.vala:82
-msgid "After"
-msgstr "Etter"
-
-#: src/EventEdition/RepeatPanel.vala:104
+#: src/EventEdition/RepeatPanel.vala:110
 msgid "Mon"
 msgstr "Man"
 
-#: src/EventEdition/RepeatPanel.vala:105
+#: src/EventEdition/RepeatPanel.vala:111
 msgid "Tue"
 msgstr "Tirs"
 
-#: src/EventEdition/RepeatPanel.vala:106
+#: src/EventEdition/RepeatPanel.vala:112
 msgid "Wed"
 msgstr "Ons"
 
-#: src/EventEdition/RepeatPanel.vala:107
+#: src/EventEdition/RepeatPanel.vala:113
 msgid "Thu"
 msgstr "Tors"
 
-#: src/EventEdition/RepeatPanel.vala:108
+#: src/EventEdition/RepeatPanel.vala:114
 msgid "Fri"
 msgstr "Fre"
 
-#: src/EventEdition/RepeatPanel.vala:109
+#: src/EventEdition/RepeatPanel.vala:115
 msgid "Sat"
 msgstr "Lør"
 
-#: src/EventEdition/RepeatPanel.vala:110
+#: src/EventEdition/RepeatPanel.vala:116
 msgid "Sun"
 msgstr "Søn"
 
-#: src/EventEdition/RepeatPanel.vala:124
+#: src/EventEdition/RepeatPanel.vala:134
 msgid "The same day every month"
 msgstr "Samme dag hver måned"
 
-#: src/EventEdition/RepeatPanel.vala:134
+#: src/EventEdition/RepeatPanel.vala:147
 msgid "Exceptions:"
 msgstr "Unntak:"
 
-#: src/EventEdition/RepeatPanel.vala:136
+#: src/EventEdition/RepeatPanel.vala:149
 msgid "No Exceptions"
 msgstr "Ingen unntak"
 
-#: src/EventEdition/RepeatPanel.vala:153
+#: src/EventEdition/RepeatPanel.vala:165
 msgid "Add Exception"
 msgstr "Legg til unntak"
 
-#: src/EventEdition/RepeatPanel.vala:244
+#: src/EventEdition/RepeatPanel.vala:255
 msgid "Day"
 msgid_plural "Days"
 msgstr[0] "Dag"
 msgstr[1] "Dager"
 
-#: src/EventEdition/RepeatPanel.vala:250
+#: src/EventEdition/RepeatPanel.vala:261
 msgid "Month"
 msgid_plural "Months"
 msgstr[0] "Måned"
 msgstr[1] "Måneder"
 
-#: src/EventEdition/RepeatPanel.vala:253
+#: src/EventEdition/RepeatPanel.vala:264
 msgid "Year"
 msgid_plural "Years"
 msgstr[0] "År"
 msgstr[1] "År"
 
-#: src/EventEdition/RepeatPanel.vala:399
+#: src/EventEdition/RepeatPanel.vala:398
 msgid "Every last Sunday"
 msgstr "Den siste søndagen"
 
-#: src/EventEdition/RepeatPanel.vala:402
+#: src/EventEdition/RepeatPanel.vala:401
 msgid "Every last Monday"
 msgstr "Den siste mandagen"
 
-#: src/EventEdition/RepeatPanel.vala:405
+#: src/EventEdition/RepeatPanel.vala:404
 msgid "Every last Tuesday"
 msgstr "Den siste tirsdagen"
 
-#: src/EventEdition/RepeatPanel.vala:408
+#: src/EventEdition/RepeatPanel.vala:407
 msgid "Every last Wednesday"
 msgstr "Den siste onsdagen"
 
-#: src/EventEdition/RepeatPanel.vala:411
+#: src/EventEdition/RepeatPanel.vala:410
 msgid "Every last Thursday"
 msgstr "Den siste torsdagen"
 
-#: src/EventEdition/RepeatPanel.vala:414
+#: src/EventEdition/RepeatPanel.vala:413
 msgid "Every last Friday"
 msgstr "Den siste fredagen"
 
-#: src/EventEdition/RepeatPanel.vala:417
+#: src/EventEdition/RepeatPanel.vala:416
 msgid "Every last Saturday"
 msgstr "Den siste lørdagen"
 
-#: src/EventEdition/RepeatPanel.vala:424
+#: src/EventEdition/RepeatPanel.vala:423
 msgid "Every first Sunday"
 msgstr "Den første søndagen"
 
-#: src/EventEdition/RepeatPanel.vala:427
+#: src/EventEdition/RepeatPanel.vala:426
 msgid "Every first Monday"
 msgstr "Den første mandagen"
 
-#: src/EventEdition/RepeatPanel.vala:430
+#: src/EventEdition/RepeatPanel.vala:429
 msgid "Every first Tuesday"
 msgstr "Den første tirsdagen"
 
-#: src/EventEdition/RepeatPanel.vala:433
+#: src/EventEdition/RepeatPanel.vala:432
 msgid "Every first Wednesday"
 msgstr "Den første onsdagen"
 
-#: src/EventEdition/RepeatPanel.vala:436
+#: src/EventEdition/RepeatPanel.vala:435
 msgid "Every first Thursday"
 msgstr "Den første torsdagen"
 
-#: src/EventEdition/RepeatPanel.vala:439
+#: src/EventEdition/RepeatPanel.vala:438
 msgid "Every first Friday"
 msgstr "Den første fredagen"
 
-#: src/EventEdition/RepeatPanel.vala:442
+#: src/EventEdition/RepeatPanel.vala:441
 msgid "Every first Saturday"
 msgstr "Den første lørdagen"
 
-#: src/EventEdition/RepeatPanel.vala:449
+#: src/EventEdition/RepeatPanel.vala:448
 msgid "Every second Sunday"
 msgstr "Annenhver søndag"
 
-#: src/EventEdition/RepeatPanel.vala:452
+#: src/EventEdition/RepeatPanel.vala:451
 msgid "Every second Monday"
 msgstr "Annenhver mandag"
 
-#: src/EventEdition/RepeatPanel.vala:455
+#: src/EventEdition/RepeatPanel.vala:454
 msgid "Every second Tuesday"
 msgstr "Annenhver tirsdag"
 
-#: src/EventEdition/RepeatPanel.vala:458
+#: src/EventEdition/RepeatPanel.vala:457
 msgid "Every second Wednesday"
 msgstr "Annenhver onsdag"
 
-#: src/EventEdition/RepeatPanel.vala:461
+#: src/EventEdition/RepeatPanel.vala:460
 msgid "Every second Thursday"
 msgstr "Annenhver torsdag"
 
-#: src/EventEdition/RepeatPanel.vala:464
+#: src/EventEdition/RepeatPanel.vala:463
 msgid "Every second Friday"
 msgstr "Annenhver fredag"
 
-#: src/EventEdition/RepeatPanel.vala:467
+#: src/EventEdition/RepeatPanel.vala:466
 msgid "Every second Saturday"
 msgstr "Annenhver lørdag"
 
-#: src/EventEdition/RepeatPanel.vala:474
+#: src/EventEdition/RepeatPanel.vala:473
 msgid "Every third Sunday"
 msgstr "Hver tredje søndag"
 
-#: src/EventEdition/RepeatPanel.vala:477
+#: src/EventEdition/RepeatPanel.vala:476
 msgid "Every third Monday"
 msgstr "Hver tredje mandag"
 
-#: src/EventEdition/RepeatPanel.vala:480
+#: src/EventEdition/RepeatPanel.vala:479
 msgid "Every third Tuesday"
 msgstr "Hver tredje tirsdag"
 
-#: src/EventEdition/RepeatPanel.vala:483
+#: src/EventEdition/RepeatPanel.vala:482
 msgid "Every third Wednesday"
 msgstr "Hver tredje onsdag"
 
-#: src/EventEdition/RepeatPanel.vala:486
+#: src/EventEdition/RepeatPanel.vala:485
 msgid "Every third Thursday"
 msgstr "Hver tredje torsdag"
 
-#: src/EventEdition/RepeatPanel.vala:489
+#: src/EventEdition/RepeatPanel.vala:488
 msgid "Every third Friday"
 msgstr "Hver tredje fredag"
 
-#: src/EventEdition/RepeatPanel.vala:492
+#: src/EventEdition/RepeatPanel.vala:491
 msgid "Every third Saturday"
 msgstr "Hver tredje lørdag"
 
-#: src/EventEdition/RepeatPanel.vala:499
+#: src/EventEdition/RepeatPanel.vala:498
 msgid "Every fourth Sunday"
 msgstr "Hver fjerde søndag"
 
-#: src/EventEdition/RepeatPanel.vala:502
+#: src/EventEdition/RepeatPanel.vala:501
 msgid "Every fourth Monday"
 msgstr "Hver fjerde mandag"
 
-#: src/EventEdition/RepeatPanel.vala:505
+#: src/EventEdition/RepeatPanel.vala:504
 msgid "Every fourth Tuesday"
 msgstr "Hver fjerde tirsdag"
 
-#: src/EventEdition/RepeatPanel.vala:508
+#: src/EventEdition/RepeatPanel.vala:507
 msgid "Every fourth Wednesday"
 msgstr "Hver fjerde onsdag"
 
-#: src/EventEdition/RepeatPanel.vala:511
+#: src/EventEdition/RepeatPanel.vala:510
 msgid "Every fourth Thursday"
 msgstr "Hver fjerde torsdag"
 
-#: src/EventEdition/RepeatPanel.vala:514
+#: src/EventEdition/RepeatPanel.vala:513
 msgid "Every fourth Friday"
 msgstr "Hver fjerde fredag"
 
-#: src/EventEdition/RepeatPanel.vala:517
+#: src/EventEdition/RepeatPanel.vala:516
 msgid "Every fourth Saturday"
 msgstr "Hver fjerde lørdag"
 
-#: src/EventEdition/RepeatPanel.vala:524
+#: src/EventEdition/RepeatPanel.vala:523
 msgid "Every fifth Sunday"
 msgstr "Hver femte søndag"
 
-#: src/EventEdition/RepeatPanel.vala:527
+#: src/EventEdition/RepeatPanel.vala:526
 msgid "Every fifth Monday"
 msgstr "Hver femte mandag"
 
-#: src/EventEdition/RepeatPanel.vala:530
+#: src/EventEdition/RepeatPanel.vala:529
 msgid "Every fifth Tuesday"
 msgstr "Hver femte tirsdag"
 
-#: src/EventEdition/RepeatPanel.vala:533
+#: src/EventEdition/RepeatPanel.vala:532
 msgid "Every fifth Wednesday"
 msgstr "Hver femte onsdag"
 
-#: src/EventEdition/RepeatPanel.vala:536
+#: src/EventEdition/RepeatPanel.vala:535
 msgid "Every fifth Thursday"
 msgstr "Hver femte torsdag"
 
-#: src/EventEdition/RepeatPanel.vala:539
+#: src/EventEdition/RepeatPanel.vala:538
 msgid "Every fifth Friday"
 msgstr "Hver femte fredag"
 
-#: src/EventEdition/RepeatPanel.vala:542
+#: src/EventEdition/RepeatPanel.vala:541
 msgid "Every fifth Saturday"
 msgstr "Hver femte lørdag"
 
@@ -738,94 +734,96 @@ msgstr "Opprett kalender"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:68
+#: src/Widgets/AgendaEventRow.vala:69
 msgid "appointment;meeting"
 msgstr "avtale;møte"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:73
+#: src/Widgets/AgendaEventRow.vala:74
 msgid "birthday;anniversary;party"
 msgstr "geburtsdag;jubileum;fest"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:78
+#: src/Widgets/AgendaEventRow.vala:79
 msgid "call;phone;telephone;ring"
 msgstr "samtale;telefon;ringing;ring"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:83
+#: src/Widgets/AgendaEventRow.vala:84
 msgid "bar;cocktails;drinks;happy hour"
 msgstr "bar;cocktail;drinker;happy hour"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:88
+#: src/Widgets/AgendaEventRow.vala:89
 msgid "car;drive;driving;road trip;"
 msgstr "bil;kjøring;kjør;road trip;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:93
+#: src/Widgets/AgendaEventRow.vala:94
 msgid "flight;airport;"
 msgstr "fly;lufthavn;flyplass"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:98
+#: src/Widgets/AgendaEventRow.vala:99
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr "frokost;brunsj;middag;lunsj;aftensmat;restaurant;burger;måltid;grilling"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:103
+#: src/Widgets/AgendaEventRow.vala:104
 msgid "court;jury;tax;attorney;lawyer;contract"
 msgstr "rett;jurie;advokat;jurist;kontakt"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:108
+#: src/Widgets/AgendaEventRow.vala:109
 msgid "movie;film"
 msgstr "spillefilm;film;matine"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:113
+#: src/Widgets/AgendaEventRow.vala:114
 msgid "wedding"
 msgstr "bryllup"
 
-#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21 – Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:338
-#, fuzzy, c-format
-msgctxt "date-range"
-msgid "%s – %s"
-msgstr "%s – %s"
-
-#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM – Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:341
+#. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21–Saturday, Dec 22"
+#: src/Widgets/AgendaEventRow.vala:353
 #, c-format
-msgid "%s, %s – %s, %s"
+msgctxt "date-range"
+msgid "%s–%s"
+msgstr ""
+
+#. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM–Saturday, Dec 22, 12:00 AM"
+#: src/Widgets/AgendaEventRow.vala:357
+#, fuzzy, c-format
+#| msgid "%s, %s – %s, %s"
+msgid "%s, %s–%s, %s"
 msgstr "%s, %s – %s, %s"
 
-#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:353
-#, fuzzy, c-format
+#. TRANSLATORS: A range from start time to end time i.e. "7:00 PM–9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:372
+#, c-format
 msgctxt "time-range"
-msgid "%s – %s"
-msgstr "%s – %s"
+msgid "%s–%s"
+msgstr ""
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:362
+#: src/Widgets/AgendaEventRow.vala:381
 #, c-format
 msgid "%s at %s"
 msgstr "%s klokken %s"
 
-#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM – 9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:365
-#, c-format
-msgid "%s, %s – %s"
+#. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM–9:00 PM"
+#: src/Widgets/AgendaEventRow.vala:385
+#, fuzzy, c-format
+#| msgid "%s, %s – %s"
+msgid "%s, %s–%s"
 msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarChooser.vala:53
@@ -904,7 +902,7 @@ msgstr "Slett begivenhet"
 msgid "This event will be permanently deleted."
 msgstr "Denne begivenheten vil slettes for godt."
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:69
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:70
 msgid "Edit…"
 msgstr "Rediger…"
 
@@ -920,7 +918,7 @@ msgstr "Slett begivenhet"
 msgid "Remove Occurrence"
 msgstr "Fjern forekomst"
 
-#: src/Widgets/EventMenu.vala:41 src/Widgets/SourceRow.vala:64
+#: src/Widgets/EventMenu.vala:41 src/Widgets/SourceRow.vala:65
 msgid "Remove"
 msgstr "Fjern"
 
@@ -946,23 +944,36 @@ msgstr "Velg ICS-fil å importere"
 msgid "Open"
 msgstr "Åpne"
 
-#: src/Widgets/SourceRow.vala:64
+#: src/Widgets/SourceRow.vala:65
 msgid "Not Removable"
 msgstr "Kan ikke fjernes"
 
-#: src/Widgets/SourceRow.vala:69
+#: src/Widgets/SourceRow.vala:70
 #, fuzzy
 msgid "Not Editable"
 msgstr "Ikke redigerbar"
 
-#: src/Widgets/SourceRow.vala:83
+#: src/Widgets/SourceRow.vala:84
 msgid "Undo"
 msgstr "Angre"
 
-#: src/Widgets/SourceRow.vala:91 src/Widgets/SourceRow.vala:142
+#: src/Widgets/SourceRow.vala:92 src/Widgets/SourceRow.vala:143
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" fjernet"
+
+#~ msgid "Calendar"
+#~ msgstr "Kalender"
+
+#, fuzzy, c-format
+#~ msgctxt "date-range"
+#~ msgid "%s – %s"
+#~ msgstr "%s – %s"
+
+#, fuzzy, c-format
+#~ msgctxt "time-range"
+#~ msgid "%s – %s"
+#~ msgstr "%s – %s"
 
 #~ msgid "Export or Share the default Calendar"
 #~ msgstr "Eksporter eller del standard kalender"
