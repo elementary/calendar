@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-05 20:16+0000\n"
+"POT-Creation-Date: 2026-02-06 13:50+0000\n"
 "PO-Revision-Date: 2024-09-20 09:43+0000\n"
 "Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/calendar/"
@@ -202,7 +202,7 @@ msgstr "Etkinlik Oluştur"
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
 
-#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:181
+#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:210
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "Vazgeç"
@@ -630,23 +630,39 @@ msgstr "Her ayın beşinci Cuma günü"
 msgid "Every fifth Saturday"
 msgstr "Her ayın beşinci Cumartesi günü"
 
-#: src/Grid/CalendarView.vala:73
+#: src/Grid/CalendarView.vala:65
+msgid "Network Not Available."
+msgstr "Ağ Mevcut Değil."
+
+#: src/Grid/CalendarView.vala:66
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"Çevrimiçi takvimlerdeki ek ayrıntıları ve yeni etkinlikleri görmek için "
+"İnternet'e bağlanın."
+
+#: src/Grid/CalendarView.vala:77
+msgid "Network Settings…"
+msgstr "Ağ Ayarları…"
+
+#: src/Grid/CalendarView.vala:86
 msgid "Go to today's date"
 msgstr "Bugünün tarihine git"
 
-#: src/Grid/CalendarView.vala:92
+#: src/Grid/CalendarView.vala:105
 msgid "Manage Calendars"
 msgstr "Takvimleri Yönet"
 
-#: src/Grid/CalendarView.vala:177 src/Widgets/SourcePopover.vala:53
+#: src/Grid/CalendarView.vala:206 src/Widgets/SourcePopover.vala:53
 msgid "Export Calendar…"
 msgstr "Takvimi Dışarı Aktar…"
 
-#: src/Grid/CalendarView.vala:180 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:209 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "Kaydet"
 
-#: src/Grid/CalendarView.vala:185
+#: src/Grid/CalendarView.vala:214
 msgid "calendar.ics"
 msgstr "takvim.ics"
 
@@ -841,22 +857,6 @@ msgstr "Sonuç Yok"
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr "Arama kelimelerini değiştirmeyi deneyin."
-
-#: src/Widgets/ConnectivityInfoBar.vala:30
-msgid "Network Not Available."
-msgstr "Ağ Mevcut Değil."
-
-#: src/Widgets/ConnectivityInfoBar.vala:31
-msgid ""
-"Connect to the Internet to see additional details and new events from online "
-"calendars."
-msgstr ""
-"Çevrimiçi takvimlerdeki ek ayrıntıları ve yeni etkinlikleri görmek için "
-"İnternet'e bağlanın."
-
-#: src/Widgets/ConnectivityInfoBar.vala:39
-msgid "Network Settings…"
-msgstr "Ağ Ayarları…"
 
 #: src/Widgets/DeleteDialog.vala:22
 msgid "Delete this occurrence of event?"

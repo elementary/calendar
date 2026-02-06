@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-05 20:16+0000\n"
+"POT-Creation-Date: 2026-02-06 13:50+0000\n"
 "PO-Revision-Date: 2025-11-22 12:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/calendar/"
@@ -197,7 +197,7 @@ msgstr "Создать событие"
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
-#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:181
+#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:210
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "Отменить"
@@ -630,23 +630,39 @@ msgstr "Каждую пятую пятницу"
 msgid "Every fifth Saturday"
 msgstr "Каждую пятую субботу"
 
-#: src/Grid/CalendarView.vala:73
+#: src/Grid/CalendarView.vala:65
+msgid "Network Not Available."
+msgstr "Сеть недоступна."
+
+#: src/Grid/CalendarView.vala:66
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"Подключитесь к Интернету, чтобы посмотреть дополнительные детали и новые "
+"события из онлайн-календарей."
+
+#: src/Grid/CalendarView.vala:77
+msgid "Network Settings…"
+msgstr "Настройки сетей…"
+
+#: src/Grid/CalendarView.vala:86
 msgid "Go to today's date"
 msgstr "Перейти к сегодняшний дате"
 
-#: src/Grid/CalendarView.vala:92
+#: src/Grid/CalendarView.vala:105
 msgid "Manage Calendars"
 msgstr "Управление календарями"
 
-#: src/Grid/CalendarView.vala:177 src/Widgets/SourcePopover.vala:53
+#: src/Grid/CalendarView.vala:206 src/Widgets/SourcePopover.vala:53
 msgid "Export Calendar…"
 msgstr "Экспортировать календарь…"
 
-#: src/Grid/CalendarView.vala:180 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:209 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/Grid/CalendarView.vala:185
+#: src/Grid/CalendarView.vala:214
 msgid "calendar.ics"
 msgstr "календарь.ics"
 
@@ -834,22 +850,6 @@ msgstr "Нет результатов"
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr "Попробуйте изменить условия поиска."
-
-#: src/Widgets/ConnectivityInfoBar.vala:30
-msgid "Network Not Available."
-msgstr "Сеть недоступна."
-
-#: src/Widgets/ConnectivityInfoBar.vala:31
-msgid ""
-"Connect to the Internet to see additional details and new events from online "
-"calendars."
-msgstr ""
-"Подключитесь к Интернету, чтобы посмотреть дополнительные детали и новые "
-"события из онлайн-календарей."
-
-#: src/Widgets/ConnectivityInfoBar.vala:39
-msgid "Network Settings…"
-msgstr "Настройки сетей…"
 
 #: src/Widgets/DeleteDialog.vala:22
 msgid "Delete this occurrence of event?"

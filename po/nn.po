@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-05 20:16+0000\n"
+"POT-Creation-Date: 2026-02-06 13:50+0000\n"
 "PO-Revision-Date: 2020-07-17 12:12+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -202,7 +202,7 @@ msgstr "Lag hendinga"
 msgid "Save Changes"
 msgstr "Lagre endringar"
 
-#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:181
+#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:210
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "Avbryt"
@@ -630,23 +630,37 @@ msgstr "Kvar femte fredag"
 msgid "Every fifth Saturday"
 msgstr "Kvar femte laurdag"
 
-#: src/Grid/CalendarView.vala:73
+#: src/Grid/CalendarView.vala:65
+msgid "Network Not Available."
+msgstr ""
+
+#: src/Grid/CalendarView.vala:66
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+
+#: src/Grid/CalendarView.vala:77
+msgid "Network Settings…"
+msgstr ""
+
+#: src/Grid/CalendarView.vala:86
 msgid "Go to today's date"
 msgstr "Gå til i dag"
 
-#: src/Grid/CalendarView.vala:92
+#: src/Grid/CalendarView.vala:105
 msgid "Manage Calendars"
 msgstr "Organiser kalendarar"
 
-#: src/Grid/CalendarView.vala:177 src/Widgets/SourcePopover.vala:53
+#: src/Grid/CalendarView.vala:206 src/Widgets/SourcePopover.vala:53
 msgid "Export Calendar…"
 msgstr "Eksporter kalender…"
 
-#: src/Grid/CalendarView.vala:180 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:209 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "Lagra"
 
-#: src/Grid/CalendarView.vala:185
+#: src/Grid/CalendarView.vala:214
 msgid "calendar.ics"
 msgstr "kalendar.ics"
 
@@ -837,20 +851,6 @@ msgstr "Ingen treff"
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr "Prøv å endre søkekriterium."
-
-#: src/Widgets/ConnectivityInfoBar.vala:30
-msgid "Network Not Available."
-msgstr ""
-
-#: src/Widgets/ConnectivityInfoBar.vala:31
-msgid ""
-"Connect to the Internet to see additional details and new events from online "
-"calendars."
-msgstr ""
-
-#: src/Widgets/ConnectivityInfoBar.vala:39
-msgid "Network Settings…"
-msgstr ""
 
 #: src/Widgets/DeleteDialog.vala:22
 #, fuzzy

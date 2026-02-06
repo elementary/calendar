@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-05 20:16+0000\n"
+"POT-Creation-Date: 2026-02-06 13:50+0000\n"
 "PO-Revision-Date: 2026-02-06 13:50+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/calendar/"
@@ -195,7 +195,7 @@ msgstr "Crea un esdeveniment"
 msgid "Save Changes"
 msgstr "Desa els canvis"
 
-#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:181
+#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:210
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "Cancel·la"
@@ -621,23 +621,39 @@ msgstr "Cada cinquè divendres"
 msgid "Every fifth Saturday"
 msgstr "Cada cinquè dissabte"
 
-#: src/Grid/CalendarView.vala:73
+#: src/Grid/CalendarView.vala:65
+msgid "Network Not Available."
+msgstr "Xarxa no disponible."
+
+#: src/Grid/CalendarView.vala:66
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"Connecteu-vos a Internet per veure detalls addicionals i els esdeveniments "
+"nous dels calendaris en línia."
+
+#: src/Grid/CalendarView.vala:77
+msgid "Network Settings…"
+msgstr "Paràmetres de la xarxa…"
+
+#: src/Grid/CalendarView.vala:86
 msgid "Go to today's date"
 msgstr "Mostra el dia d'avui"
 
-#: src/Grid/CalendarView.vala:92
+#: src/Grid/CalendarView.vala:105
 msgid "Manage Calendars"
 msgstr "Administra els calendaris"
 
-#: src/Grid/CalendarView.vala:177 src/Widgets/SourcePopover.vala:53
+#: src/Grid/CalendarView.vala:206 src/Widgets/SourcePopover.vala:53
 msgid "Export Calendar…"
 msgstr "Exporta el calendari…"
 
-#: src/Grid/CalendarView.vala:180 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:209 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "Desa"
 
-#: src/Grid/CalendarView.vala:185
+#: src/Grid/CalendarView.vala:214
 msgid "calendar.ics"
 msgstr "calendari.ics"
 
@@ -821,22 +837,6 @@ msgstr "Cap resultat"
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr "Proveu de canviar els termes de la cerca."
-
-#: src/Widgets/ConnectivityInfoBar.vala:30
-msgid "Network Not Available."
-msgstr "Xarxa no disponible."
-
-#: src/Widgets/ConnectivityInfoBar.vala:31
-msgid ""
-"Connect to the Internet to see additional details and new events from online "
-"calendars."
-msgstr ""
-"Connecteu-vos a Internet per veure detalls addicionals i els esdeveniments "
-"nous dels calendaris en línia."
-
-#: src/Widgets/ConnectivityInfoBar.vala:39
-msgid "Network Settings…"
-msgstr "Paràmetres de la xarxa…"
 
 #: src/Widgets/DeleteDialog.vala:22
 msgid "Delete this occurrence of event?"

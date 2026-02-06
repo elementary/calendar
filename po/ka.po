@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-05 20:16+0000\n"
+"POT-Creation-Date: 2026-02-06 13:50+0000\n"
 "PO-Revision-Date: 2026-02-04 11:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementaryos.org/projects/calendar/"
@@ -188,7 +188,7 @@ msgstr "ივენთის შექმნა"
 msgid "Save Changes"
 msgstr "ცვლილებების შენახვა"
 
-#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:181
+#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:210
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "გაუქმება"
@@ -609,23 +609,39 @@ msgstr "ყოველი მეხუთე პარასკევი"
 msgid "Every fifth Saturday"
 msgstr "ყოველი მეხუთე თშაბათი"
 
-#: src/Grid/CalendarView.vala:73
+#: src/Grid/CalendarView.vala:65
+msgid "Network Not Available."
+msgstr "ქსელი ხელმისაწვდომი არაა."
+
+#: src/Grid/CalendarView.vala:66
+msgid ""
+"Connect to the Internet to see additional details and new events from online "
+"calendars."
+msgstr ""
+"მიუერთდით ინტერნეტს, რათა იხილოთ დამატებითი დეტალები და ახალი მოვლენები "
+"ონლაინ კალენდრებიდან."
+
+#: src/Grid/CalendarView.vala:77
+msgid "Network Settings…"
+msgstr "ქსელის მორგება…"
+
+#: src/Grid/CalendarView.vala:86
 msgid "Go to today's date"
 msgstr "გადადი დღევანდელ თარიღზე"
 
-#: src/Grid/CalendarView.vala:92
+#: src/Grid/CalendarView.vala:105
 msgid "Manage Calendars"
 msgstr "კალენდრების მართვა"
 
-#: src/Grid/CalendarView.vala:177 src/Widgets/SourcePopover.vala:53
+#: src/Grid/CalendarView.vala:206 src/Widgets/SourcePopover.vala:53
 msgid "Export Calendar…"
 msgstr "კალენდარის გატანა…"
 
-#: src/Grid/CalendarView.vala:180 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:209 src/SourceDialog/SourceDialog.vala:283
 msgid "Save"
 msgstr "შენახვა"
 
-#: src/Grid/CalendarView.vala:185
+#: src/Grid/CalendarView.vala:214
 msgid "calendar.ics"
 msgstr "კალენდარი.ics"
 
@@ -811,22 +827,6 @@ msgstr "შედეგების გარეშე"
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
 msgstr "სცადეთ, ძებნის პირობები შეცვალოთ."
-
-#: src/Widgets/ConnectivityInfoBar.vala:30
-msgid "Network Not Available."
-msgstr "ქსელი ხელმისაწვდომი არაა."
-
-#: src/Widgets/ConnectivityInfoBar.vala:31
-msgid ""
-"Connect to the Internet to see additional details and new events from online "
-"calendars."
-msgstr ""
-"მიუერთდით ინტერნეტს, რათა იხილოთ დამატებითი დეტალები და ახალი მოვლენები "
-"ონლაინ კალენდრებიდან."
-
-#: src/Widgets/ConnectivityInfoBar.vala:39
-msgid "Network Settings…"
-msgstr "ქსელის მორგება…"
 
 #: src/Widgets/DeleteDialog.vala:22
 msgid "Delete this occurrence of event?"
