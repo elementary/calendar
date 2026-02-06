@@ -130,15 +130,17 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
             }
         }
 
-        destroy.connect (() => {
-            if (search_cancellable != null)
-                search_cancellable.cancel ();
-            if (find_cancellable != null) {
-                find_cancellable.cancel ();
-            }
-        });
-
         location_entry.grab_focus ();
+    }
+
+    ~LocationPanel () {
+        if (search_cancellable != null) {
+            search_cancellable.cancel ();
+        }
+
+        if (find_cancellable != null) {
+            find_cancellable.cancel ();
+        }
     }
 
     /**
