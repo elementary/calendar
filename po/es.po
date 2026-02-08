@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-06 13:50+0000\n"
-"PO-Revision-Date: 2025-12-11 20:55+0000\n"
+"PO-Revision-Date: 2026-02-09 13:50+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/es/>\n"
@@ -170,10 +170,8 @@ msgid "Location"
 msgstr "Ubicación"
 
 #: src/EventEdition/EventDialog.vala:118 src/EventEdition/GuestsPanel.vala:53
-#, fuzzy
-#| msgid "Invite"
 msgid "Invitees"
-msgstr "Invitar"
+msgstr "Invitados"
 
 #: src/EventEdition/EventDialog.vala:119 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
@@ -215,10 +213,8 @@ msgid "Maybe"
 msgstr "Quizás"
 
 #: src/EventEdition/GuestsPanel.vala:57
-#, fuzzy
-#| msgid "Invite"
 msgid "No Invitees"
-msgstr "Invitar"
+msgstr "Sin invitados"
 
 #: src/EventEdition/GuestsPanel.vala:98
 msgid "Invite"
@@ -805,21 +801,20 @@ msgstr "boda"
 #, c-format
 msgctxt "date-range"
 msgid "%s–%s"
-msgstr ""
+msgstr "%s – %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM–Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:357
-#, fuzzy, c-format
-#| msgid "%s, %s – %s, %s"
+#, c-format
 msgid "%s, %s–%s, %s"
-msgstr "%s, %s – %s, %s"
+msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM–9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:372
 #, c-format
 msgctxt "time-range"
 msgid "%s–%s"
-msgstr ""
+msgstr "%s – %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:381
@@ -829,10 +824,9 @@ msgstr "%s a las %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM–9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:385
-#, fuzzy, c-format
-#| msgid "%s, %s – %s"
+#, c-format
 msgid "%s, %s–%s"
-msgstr "%s, %s – %s"
+msgstr "%s, %s – %s"
 
 #: src/Widgets/CalendarChooser.vala:53
 msgid "Search Calendars"
