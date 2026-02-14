@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-06 13:50+0000\n"
-"PO-Revision-Date: 2026-02-08 07:55+0000\n"
+"PO-Revision-Date: 2026-02-15 15:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ru/>\n"
@@ -713,7 +713,7 @@ msgstr "Клубничный"
 
 #: src/SourceDialog/SourceDialog.vala:161
 msgid "Bubblegum"
-msgstr "Бубльгумовый"
+msgstr "Бубль-гум"
 
 #: src/SourceDialog/SourceDialog.vala:168
 msgid "Grape"
