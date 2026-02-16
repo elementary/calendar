@@ -100,11 +100,4 @@ namespace Maya.Util {
         var result = original_uid.dup ();
         return result.reverse ();
     }
-
-    public static string escape_markup (string escaped_text) {
-        return escaped_text.replace ("&", "&amp;")
-                           .replace ("<", "&lt;")
-                           .replace (">", "&gt;")
-                           .replace ("'", "&#39;");
-    }
 }
