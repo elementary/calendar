@@ -197,32 +197,34 @@ public class Maya.View.CalendarView : Gtk.Box {
         var filter = new Gtk.FileFilter ();
         filter.add_mime_type ("text/calendar");
 
-        var filechooser = new Gtk.FileChooserNative (
-            _("Export Calendar…"),
-            null,
-            Gtk.FileChooserAction.SAVE,
-            _("Save"),
-            _("Cancel")
-        );
-        filechooser.do_overwrite_confirmation = true;
-        filechooser.filter = filter;
-        filechooser.set_current_name (_("calendar.ics"));
-
-        if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
-            var destination = filechooser.get_filename ();
-            if (destination == null) {
-                destination = filechooser.get_current_folder ();
-            } else if (!destination.has_suffix (".ics")) {
-                destination += ".ics";
-            }
-            try {
-                GLib.Process.spawn_command_line_async ("mv " + GLib.Environment.get_tmp_dir () + "/calendar.ics " + destination);
-            } catch (SpawnError e) {
-                warning (e.message);
-            }
+        var file_dialog = new Gtk.FileDialog () {
+            title = _("Export Calendar…"),
+            accept_label = _("Save"),
+            default_filter = filter,
+            initial_name = _("calendar.ics")
         }
 
-        filechooser.destroy ();
+        file_dialog.save.begin (window, null, (obj, res) => {
+            try {
+                var file = file_dialog.save.end (res);
+
+        //     var destination = filechooser.get_filename ();
+        //     if (destination == null) {
+        //         destination = filechooser.get_current_folder ();
+        //     } else if (!destination.has_suffix (".ics")) {
+        //         destination += ".ics";
+        //     }
+
+    //         GLib.Process.spawn_command_line_async ("mv " + GLib.Environment.get_tmp_dir () + "/calendar.ics " + destination);
+
+            } catch (Error e) {
+                if (e.matches (Gtk.DialogError.quark (), Gtk.DialogError.DISMISSED)) {
+                    return;
+                }
+
+                critical (e.message);
+            }
+        });
     }
 
     private void set_switcher_date (DateTime date) {
