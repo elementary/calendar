@@ -121,6 +121,8 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
     }
 
     // public override bool delete_event (Gdk.EventAny event) {
+    //     Calendar.EventStore.get_default ().delete_trashed_calendars ();
+
     //     ((Application) application).ask_for_background.begin ((obj, res) => {
     //         unowned var app = (Application) obj;
     //         if (app.ask_for_background.end (res)) {
