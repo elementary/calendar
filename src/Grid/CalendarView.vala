@@ -202,21 +202,21 @@ public class Maya.View.CalendarView : Gtk.Box {
             accept_label = _("Save"),
             default_filter = filter,
             initial_name = _("calendar.ics")
-        }
+        };
 
         file_dialog.save.begin (window, null, (obj, res) => {
             try {
+                var events = Calendar.EventStore.get_default ().get_events ();
+                var builder = new StringBuilder ();
+                builder.append ("BEGIN:VCALENDAR\n");
+                builder.append ("VERSION:2.0\n");
+                foreach (ECal.Component event in events) {
+                    builder.append (event.get_as_string ());
+                }
+                builder.append ("END:VCALENDAR");
+
                 var file = file_dialog.save.end (res);
-
-        //     var destination = filechooser.get_filename ();
-        //     if (destination == null) {
-        //         destination = filechooser.get_current_folder ();
-        //     } else if (!destination.has_suffix (".ics")) {
-        //         destination += ".ics";
-        //     }
-
-    //         GLib.Process.spawn_command_line_async ("mv " + GLib.Environment.get_tmp_dir () + "/calendar.ics " + destination);
-
+                file.replace_contents (builder.data, null, false, FileCreateFlags.REPLACE_DESTINATION, null);
             } catch (Error e) {
                 if (e.matches (Gtk.DialogError.quark (), Gtk.DialogError.DISMISSED)) {
                     return;

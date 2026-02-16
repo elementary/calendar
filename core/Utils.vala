@@ -60,30 +60,6 @@ namespace Maya.Util {
         return _("On this computer");
     }
 
-    /*
-     * ical Exportation
-     */
-
-    public void save_temp_selected_calendars () {
-        var calmodel = Calendar.EventStore.get_default ();
-        var events = calmodel.get_events ();
-        var builder = new StringBuilder ();
-        builder.append ("BEGIN:VCALENDAR\n");
-        builder.append ("VERSION:2.0\n");
-        foreach (ECal.Component event in events) {
-            builder.append (event.get_as_string ());
-        }
-        builder.append ("END:VCALENDAR");
-
-        string file_path = GLib.Environment.get_tmp_dir () + "/calendar.ics";
-        try {
-            var file = File.new_for_path (file_path);
-            file.replace_contents (builder.data, null, false, FileCreateFlags.REPLACE_DESTINATION, null);
-        } catch (Error e) {
-            warning ("%s\n", e.message);
-        }
-    }
-
     public ECal.Component? copy_ecal_component (ECal.Component? original) {
         if (original == null) {
             return null;
