@@ -181,20 +181,20 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
         exceptions_box.add (inline_toolbar);
         exceptions_box.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
 
-        var main_box = new Gtk.Box (VERTICAL, 6) {
+        var main_box = new Granite.Box (VERTICAL, HALF) {
             margin_start = 12,
             margin_end = 12
         };
-        main_box.add (reminder_label);
-        main_box.add (repeat_box);
-        main_box.add (every_label);
-        main_box.add (every_box);
-        main_box.add (weekday_revealer);
-        main_box.add (monthly_revealer);
-        main_box.add (ends_label);
-        main_box.add (ends_grid);
-        main_box.add (exceptions_label);
-        main_box.add (exceptions_box);
+        main_box.append (reminder_label);
+        main_box.append (repeat_box);
+        main_box.append (every_label);
+        main_box.append (every_box);
+        main_box.append (weekday_revealer);
+        main_box.append (monthly_revealer);
+        main_box.append (ends_label);
+        main_box.append (ends_grid);
+        main_box.append (exceptions_label);
+        main_box.append (exceptions_box);
 
         var scrolled = new Gtk.ScrolledWindow (null, null) {
             child = main_box
@@ -207,7 +207,6 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
 
         add_button.clicked.connect (() => {
             var exception_grid = new ExceptionGrid (new GLib.DateTime.now_local ());
-            exception_grid.show_all ();
             exceptions_list.add (exception_grid);
         });
 

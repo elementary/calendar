@@ -71,7 +71,7 @@ public class Maya.View.CalendarView : Gtk.Box {
             message_type = WARNING,
             revealed = false
         };
-        info_bar.get_content_area ().add (info_label);
+        info_bar.add_child (info_label);
         info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
         var application_instance = ((Gtk.Application) GLib.Application.get_default ());

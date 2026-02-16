@@ -25,9 +25,9 @@ public class Maya.View.GridDay : Granite.Bin {
     public bool in_current_month {
         set {
             if (value) {
-                get_style_context ().remove_class (Granite.CssClass.DIM_LABEL);
+                remove_css_class (Granite.CssClass.DIM);
             } else {
-                get_style_context ().add_class (Granite.CssClass.DIM_LABEL);
+                add_css_class (Granite.CssClass.DIM);
             }
         }
     }
@@ -58,7 +58,7 @@ public class Maya.View.GridDay : Granite.Bin {
         can_focus = true;
         child = container_box;
         events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
-        get_style_context ().add_class ("cell");
+        add_css_class ("cell");
 
         var click_gesture = new Gtk.GestureClick () {
             button = Gdk.BUTTON_PRIMARY,
