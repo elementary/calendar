@@ -69,9 +69,9 @@ public class CalendarRow : Gtk.Box {
         };
 
         spacing = 6;
-        add (calendar_color);
-        add (calendar_name_label);
-        add (selection_revealer);
+        append (calendar_color);
+        append (calendar_name_label);
+        append (selection_revealer);
 
         bind_property ("label", calendar_name_label, "label");
         bind_property ("selected", selection_revealer, "reveal-child", SYNC_CREATE);

@@ -20,7 +20,7 @@
 
 public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
     private EventDialog parent_dialog;
-    private Gtk.Entry guest_entry;
+    private Gtk.SearchEntry guest_entry;
     private Gtk.EntryCompletion guest_completion;
     private Gtk.ListBox guest_list;
     private Gee.ArrayList<unowned ICal.Property> attendees;
@@ -44,7 +44,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
 
         margin_start = 12;
         margin_end = 12;
-        row_spacing = 6;
+        spacing = 6;
         set_sensitive (parent_dialog.can_edit);
         orientation = VERTICAL;
 
@@ -61,14 +61,16 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
         no_guests_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
         no_guests_context.add_class (Granite.CssClass.DIM);
 
-        guest_list = new Gtk.ListBox ();
-        guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
+        guest_list = new Gtk.ListBox () {
+            hexpand = true,
+            vexpand = true,
+            selection_mode = NONE
+        };
         guest_list.set_placeholder (no_guests_label);
 
         var guest_scrolledwindow = new Gtk.ScrolledWindow () {
             child = guest_list
         };
-        guest_scrolledwindow.expand = true;
 
         var frame = new Gtk.Frame (null) {
             child = guest_scrolledwindow
@@ -97,7 +99,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
         guest_entry = new Gtk.SearchEntry ();
         guest_entry.placeholder_text = _("Invite");
         guest_entry.hexpand = true;
-        guest_entry.set_completion (guest_completion);
+        // guest_entry.set_completion (guest_completion);
         guest_entry.activate.connect (() => {
             var attendee = new ICal.Property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             attendee.set_attendee (guest_entry.text);
@@ -179,10 +181,13 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
     }
 
     private void add_guest (ICal.Property attendee) {
-        var row = new Gtk.ListBoxRow ();
         var guest_element = new GuestGrid (attendee);
-        row.add (guest_element);
-        guest_list.add (row);
+
+        var row = new Gtk.ListBoxRow () {
+            child = guest_element
+        };
+
+        guest_list.append (row);
 
         attendees.add (guest_element.attendee);
         guest_element.removed.connect (() => {

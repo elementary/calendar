@@ -47,7 +47,10 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         avatar = new Adw.Avatar (ICON_SIZE, name_label.label, true);
 
         column_spacing = 12;
-        margin = 6;
+        margin_top = 6;
+        margin_end = 6;
+        margin_bottom = 6;
+        margin_start = 6;
         attach (avatar, 0, 0, 1, 4);
         attach (name_label, 1, 1);
         attach (mail_label, 1, 2);
@@ -114,7 +117,17 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                 avatar.text = individual.display_name;
 
                 if (individual.avatar != null) {
-                    avatar.set_loadable_icon (individual.avatar);
+                    try {
+                        individual.avatar.load (ICON_SIZE, null);
+                        var avatar_image = new Gtk.Image.from_file (individual.avatar.to_string ()) {
+                            width_request = avatar.size,
+                            height_request = avatar.size
+                        };
+
+                        avatar.set_custom_image (new Gtk.WidgetPaintable (avatar_image));
+                    } catch (Error e) {
+                        critical (e.message);
+                    }
                 }
 
                 if (individual.full_name != null && individual.full_name != "") {

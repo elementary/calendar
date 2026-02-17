@@ -119,11 +119,12 @@ public class EventDialog : Granite.Dialog {
             stack.add_titled (reminder_panel, "reminderpanel", _("Reminders"));
             ///Translators: The name of the repeat panel tab
             stack.add_titled (repeat_panel, "repeatpanel", C_("Section Header", "Repeat")); //vala-lint=space-before-paren
-            stack.child_set_property (info_panel, "icon-name", "office-calendar-symbolic");
-            stack.child_set_property (location_panel, "icon-name", "mark-location-symbolic");
-            stack.child_set_property (guests_panel, "icon-name", "system-users-symbolic");
-            stack.child_set_property (reminder_panel, "icon-name", "alarm-symbolic");
-            stack.child_set_property (repeat_panel, "icon-name", "media-playlist-repeat-symbolic");
+
+            stack.get_page (info_panel).set_property ("icon-name", "office-calendar-symbolic");
+            location_panel.set_property ("icon-name", "mark-location-symbolic");
+            guests_panel.set_property ("icon-name", "system-users-symbolic");
+            reminder_panel.set_property ("icon-name", "alarm-symbolic");
+            repeat_panel.set_property ("icon-name", "media-playlist-repeat-symbolic");
 
             var stack_switcher = new Gtk.StackSwitcher () {
 
