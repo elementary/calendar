@@ -86,8 +86,6 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
                 _("Open"),
                 _("Cancel")
             );
-
-            file_chooser.set_local_only (true);
             file_chooser.set_select_multiple (true);
             file_chooser.set_filter (ics_filter);
 
@@ -98,8 +96,9 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
                 GLib.File[] files = null;
 
                 if (response_id == Gtk.ResponseType.ACCEPT) {
-                    foreach (unowned GLib.File selected_file in file_chooser.get_files ()) {
-                        files += selected_file;
+                    var file_list = file_chooser.get_files ();
+                    for (int i; i < file_list.get_n_items (); i++) {
+                        files += (File) file_list.get_item (i);
                     }
                 }
 
