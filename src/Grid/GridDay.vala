@@ -57,7 +57,6 @@ public class Maya.View.GridDay : Granite.Bin {
 
         can_focus = true;
         child = container_box;
-        events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         add_css_class ("cell");
 
         var click_gesture = new Gtk.GestureClick () {

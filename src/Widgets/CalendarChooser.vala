@@ -53,11 +53,9 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
             placeholder_text = _("Search Calendars")
         };
 
-        var placeholder = new Granite.Widgets.AlertView (
-            _("No Results"),
-            _("Try changing search terms."),
-            ""
-        );
+        var placeholder = new Granite.Placeholder (_("No Results")) {
+            description = _("Try changing search terms.")
+        };
 
         var list_box = new Gtk.ListBox () {
             activate_on_single_click = true

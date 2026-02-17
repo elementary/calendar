@@ -188,8 +188,6 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
         guest_element.removed.connect (() => {
             attendees.remove (guest_element.attendee);
         });
-
-        row.show_all ();
     }
 
     private bool suggestion_selected (Gtk.TreeModel model, Gtk.TreeIter iter) {

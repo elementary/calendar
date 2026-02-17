@@ -97,9 +97,9 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
         orientation = VERTICAL;
         spacing = 6;
         sensitive = parent_dialog.can_edit;
-        add (location_label);
-        add (location_entry);
-        add (frame);
+        append (location_label);
+        append (location_entry);
+        append (frame);
 
         // Load the location
         if (parent_dialog.ecal != null) {

@@ -126,11 +126,12 @@ public class EventDialog : Granite.Dialog {
             stack.child_set_property (repeat_panel, "icon-name", "media-playlist-repeat-symbolic");
 
             var stack_switcher = new Gtk.StackSwitcher () {
-                homogeneous = true,
+
                 margin_end = 12,
                 margin_start = 12,
                 stack = stack
             };
+            ((Gtk.BoxLayout) stack_switcher.layout_manager).homogeneous = true;
 
             var buttonbox = new Gtk.Box (HORIZONTAL, 6) {
                 baseline_position = CENTER,

@@ -94,7 +94,7 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
 
         var format = Granite.DateTime.get_default_date_format (false, true, true);
 
-        end_datepicker = new Granite.Widgets.DatePicker.with_format (format);
+        end_datepicker = new Granite.DatePicker.with_format (format);
 
         var end_date_revealer = new Gtk.Revealer () {
             child = end_datepicker
@@ -152,10 +152,8 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
             margin_top = 12,
             margin_bottom = 12
         };
-        no_exceptions_label.show ();
-
-        no_exceptions_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-        no_exceptions_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        no_exceptions_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_exceptions_label.add_css_class (Granite.CssClass.DIM);
 
         exceptions_list = new Gtk.ListBox () {
             selection_mode = NONE
@@ -173,7 +171,7 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
 
         var inline_toolbar = new Gtk.ActionBar ();
         inline_toolbar.add_css_class (Granite.STYLE_CLASS_FLAT);
-        inline_toolbar.add (add_button);
+        inline_toolbar.pack_start (add_button);
 
         var exceptions_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 12,
@@ -209,7 +207,7 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
 
         add_button.clicked.connect (() => {
             var exception_grid = new ExceptionGrid (new GLib.DateTime.now_local ());
-            exceptions_list.add (exception_grid);
+            exceptions_list.append (exception_grid);
         });
 
         repeat_switch.notify["active"].connect (() => {
@@ -218,7 +216,7 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
             every_box.sensitive = active;
             week_box.sensitive = active;
             monthly_box.sensitive = active;
-            ends_grid.sensitive = active;
+            ends_box.sensitive = active;
             exceptions_box.sensitive = active;
         });
         repeat_switch.active = false;
@@ -379,7 +377,6 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
         while (property != null) {
             var exdate = property.get_exdate ();
             var exception_grid = new ExceptionGrid (Calendar.Util.icaltime_to_datetime (exdate));
-            exception_grid.show_all ();
             exceptions_list.add (exception_grid);
             property = comp.get_next_property (ICal.PropertyKind.EXDATE_PROPERTY);
         }
@@ -766,7 +763,7 @@ public class Maya.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
     private Granite.DatePicker date;
 
     public ExceptionGrid (GLib.DateTime dt) {
-        date = new Granite.Widgets.DatePicker () {
+        date = new Granite.DatePicker () {
             date = dt,
             hexpand = true
         };
