@@ -28,23 +28,20 @@ public class Maya.View.EventButton : Granite.Bin {
         label.show ();
 
         var internal_grid = new Gtk.Grid ();
-        internal_grid.add (label);
+        internal_grid.attach (label, 0, 0);
 
         grid_style_context = internal_grid.get_style_context ();
         grid_style_context.add_class ("event");
 
-        var event_box = new Gtk.EventBox ();
-        event_box.append (internal_grid);
-
         revealer = new Gtk.Revealer () {
-            child = event_box,
+            child = internal_grid,
             transition_type = CROSSFADE
         };
 
         child = revealer;
 
         var context_menu = Maya.EventMenu.build (comp);
-        context_menu.attach_to_widget (this, null);
+        context_menu.set_parent (this);
 
         var click_gesture = new Gtk.GestureClick () {
             button = 0

@@ -17,7 +17,7 @@
  * Authored by: Maxwell Barvian
  */
 
-public class Calendar.Widgets.DateSwitcher : Gtk.Grid {
+public class Calendar.Widgets.DateSwitcher : Granite.Box {
     public signal void left_clicked ();
     public signal void right_clicked ();
 
@@ -46,13 +46,14 @@ public class Calendar.Widgets.DateSwitcher : Gtk.Grid {
             width_chars = width_chars
         };
 
-        var center_button = new Gtk.Button ();
-        center_button.add (label);
+        var center_button = new Gtk.Button () {
+            child = label
+        };
 
-        get_style_context ().add_class (Granite.CssClass.LINKED);
-        add (start_button);
-        add (center_button);
-        add (end_button);
+        child_spacing = LINKED;
+        append (start_button);
+        append (center_button);
+        append (end_button);
 
         start_button.clicked.connect (() => left_clicked ());
         end_button.clicked.connect (() => right_clicked ());

@@ -233,7 +233,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         child = revealer;
 
         var context_menu = Maya.EventMenu.build (calevent);
-        context_menu.attach_to_widget (this, null);
+        context_menu.set_parent (this);
 
         var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 

@@ -40,20 +40,20 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             margin_bottom = 3
         };
 
-        var add_calendar_button = new Gtk.ModelButton () {
+        var add_calendar_button = new PopoverMenuitem () {
             text = _("Add New Calendar…")
         };
 
-        var import_calendar_button = new Gtk.ModelButton () {
+        var import_calendar_button = new PopoverMenuitem () {
             text = _("Import iCalendar File…")
         };
 
-        var export_calendar_button = new Gtk.ModelButton () {
+        var export_calendar_button = new PopoverMenuitem () {
             action_name = "calendar.export",
             text = _("Export Calendar…")
         };
 
-        var accounts_button = new Gtk.ModelButton () {
+        var accounts_button = new PopoverMenuitem () {
             text = _("Online Accounts Settings…")
         };
 
@@ -204,5 +204,32 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         popdown ();
         src_dialog.set_source (source);
         src_dialog.present ();
+    }
+
+    private class PopoverMenuitem : Gtk.Button {
+        public string text {
+            set {
+                child = new Granite.AccelLabel (value) {
+                    action_name = this.action_name
+                };
+
+                update_property (Gtk.AccessibleProperty.LABEL, value, -1);
+            }
+        }
+
+        class construct {
+            set_css_name ("modelbutton");
+        }
+
+        construct {
+            accessible_role = MENU_ITEM;
+
+            clicked.connect (() => {
+                var popover = (Gtk.Popover) get_ancestor (typeof (Gtk.Popover));
+                if (popover != null) {
+                    popover.popdown ();
+                }
+            });
+        }
     }
 }
