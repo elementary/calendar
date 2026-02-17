@@ -47,7 +47,10 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         avatar = new Hdy.Avatar (ICON_SIZE, name_label.label, true);
 
         column_spacing = 12;
-        margin = 6;
+        margin_top = 6;
+        margin_end = 6;
+        margin_bottom = 6;
+        margin_start = 6;
         attach (avatar, 0, 0, 1, 4);
         attach (name_label, 1, 1);
         attach (mail_label, 1, 2);
