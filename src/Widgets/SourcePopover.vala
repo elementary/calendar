@@ -71,12 +71,11 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         child = main_box;
         populate.begin ();
 
-        add_calendar_button.button_release_event.connect (() => {
+        add_calendar_button.clicked.connect (() => {
             edit_source ();
-            return Gdk.EVENT_STOP;
         });
 
-        import_calendar_button.button_release_event.connect (() => {
+        import_calendar_button.clicked.connect (() => {
             var ics_filter = new Gtk.FileFilter ();
             ics_filter.add_mime_type ("application/ics");
 
@@ -109,8 +108,6 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
                     dialog.present ();
                 }
             });
-
-            return Gdk.EVENT_STOP;
         });
 
         accounts_button.clicked.connect (() => {

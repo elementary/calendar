@@ -377,7 +377,7 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
         while (property != null) {
             var exdate = property.get_exdate ();
             var exception_grid = new ExceptionGrid (Calendar.Util.icaltime_to_datetime (exdate));
-            exceptions_list.add (exception_grid);
+            exceptions_list.append (exception_grid);
             property = comp.get_next_property (ICal.PropertyKind.EXDATE_PROPERTY);
         }
     }

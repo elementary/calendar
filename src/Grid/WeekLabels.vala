@@ -76,7 +76,7 @@ public class Maya.View.WeekLabels : Granite.Bin {
             var event = click_gesture.get_last_event (sequence);
 
             if (event.triggers_context_menu ()) {
-                gtk_menu.popup_at_pointer (event);
+                Maya.EventMenu.popup_at_pointer (gtk_menu, x, y);
 
                 click_gesture.set_state (CLAIMED);
                 click_gesture.reset ();
@@ -87,10 +87,7 @@ public class Maya.View.WeekLabels : Granite.Bin {
             touch_only = true
         };
         long_press_gesture.pressed.connect ((x, y) => {
-            var sequence = long_press_gesture.get_current_sequence ();
-            var event = long_press_gesture.get_last_event (sequence);
-
-            gtk_menu.popup_at_pointer (event);
+            Maya.EventMenu.popup_at_pointer (gtk_menu, x, y);
 
             long_press_gesture.set_state (CLAIMED);
             long_press_gesture.reset ();

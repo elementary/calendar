@@ -76,7 +76,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Box {
     private ReminderGrid add_reminder (string uid) {
         var reminder = new ReminderGrid (uid);
 
-        reminder_list.add (reminder);
+        reminder_list.append (reminder);
 
         reminders.add (reminder);
 
