@@ -130,11 +130,15 @@ public class Maya.View.CalendarView : Gtk.Box {
 
         stack.notify["transition-running"].connect (() => {
             if (stack.transition_running == false) {
-                stack.get_children ().foreach ((child) => {
+                var child = stack.get_first_child ();
+                while (child != null) {
                     if (child != stack.visible_child) {
                         child.destroy ();
+                        child = stack.get_first_child ();
+                    } else {
+                        child = child.get_next_sibling ();
                     }
-                });
+                }
             }
         });
 

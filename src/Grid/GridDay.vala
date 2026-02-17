@@ -122,7 +122,7 @@ public class Maya.View.GridDay : Granite.Bin {
             button.unparent ();
         }
 
-        event_box.append (button);
+        event_box.add (button);
     }
 
     public bool update_event (ECal.Component modified_event) {
