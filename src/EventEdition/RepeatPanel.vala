@@ -48,8 +48,8 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
         repeat_combobox.active = 1;
 
         var repeat_box = new Gtk.Box (HORIZONTAL, 12);
-        repeat_box.add (repeat_switch);
-        repeat_box.add (repeat_combobox);
+        repeat_box.append (repeat_switch);
+        repeat_box.append (repeat_combobox);
 
         var every_label = new Granite.HeaderLabel (_("Every:"));
 
@@ -62,8 +62,8 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
         var every_box = new Gtk.Box (HORIZONTAL, 12) {
             sensitive = false
         };
-        every_box.add (every_entry);
-        every_box.add (every_unit_label);
+        every_box.append (every_entry);
+        every_box.append (every_unit_label);
 
         var ends_label = new Granite.HeaderLabel (_("Ends:"));
 
@@ -85,8 +85,8 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
         var repeats_label = new Gtk.Label (ngettext ("Repeat", "Repeats", 1));
 
         var end_repeat_box = new Gtk.Box (HORIZONTAL, 12);
-        end_repeat_box.add (repeats_spinbutton);
-        end_repeat_box.add (repeats_label);
+        end_repeat_box.append (repeats_spinbutton);
+        end_repeat_box.append (repeats_label);
 
         var end_repeat_revealer = new Gtk.Revealer () {
             child = end_repeat_box
@@ -100,12 +100,12 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
             child = end_datepicker
         };
 
-        var ends_grid = new Gtk.Box (VERTICAL, 6) {
+        var ends_box = new Granite.Box (VERTICAL, HALF) {
             sensitive = false
         };
-        ends_grid.add (ends_combobox);
-        ends_grid.add (end_date_revealer);
-        ends_grid.add (end_repeat_revealer);
+        ends_box.append (ends_combobox);
+        ends_box.append (end_date_revealer);
+        ends_box.append (end_repeat_revealer);
 
         mon_button = new Gtk.ToggleButton.with_label (_("Mon"));
         tue_button = new Gtk.ToggleButton.with_label (_("Tue"));
@@ -119,26 +119,28 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
             homogeneous = true,
             sensitive = false
         };
-        week_box.add (mon_button);
-        week_box.add (tue_button);
-        week_box.add (wed_button);
-        week_box.add (thu_button);
-        week_box.add (fri_button);
-        week_box.add (sat_button);
-        week_box.add (sun_button);
+        week_box.append (mon_button);
+        week_box.append (tue_button);
+        week_box.append (wed_button);
+        week_box.append (thu_button);
+        week_box.append (fri_button);
+        week_box.append (sat_button);
+        week_box.append (sun_button);
 
         var weekday_revealer = new Gtk.Revealer () {
             child = week_box
         };
 
-        same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
-        every_radiobutton = new Gtk.RadioButton.from_widget (same_radiobutton);
+        same_radiobutton = new Gtk.CheckButton.with_label (_("The same day every month"));
+        every_radiobutton = new Gtk.CheckButton () {
+            group = same_radiobutton
+        };
 
         var monthly_box = new Gtk.Box (VERTICAL, 6) {
             sensitive = false
         };
-        monthly_box.add (same_radiobutton);
-        monthly_box.add (every_radiobutton);
+        monthly_box.append (same_radiobutton);
+        monthly_box.append (every_radiobutton);
 
         var monthly_revealer = new Gtk.Revealer () {
             child = monthly_box
@@ -161,25 +163,25 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
         exceptions_list.set_placeholder (no_exceptions_label);
 
         var add_button_box = new Gtk.Box (HORIZONTAL, 0);
-        add_button_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", BUTTON));
-        add_button_box.add (new Gtk.Label (_("Add Exception")));
+        add_button_box.append (new Gtk.Image.from_icon_name ("list-add-symbolic"));
+        add_button_box.append (new Gtk.Label (_("Add Exception")));
 
         var add_button = new Gtk.Button () {
             child = add_button_box,
-            relief = NONE
+            has_frame = false
         };
 
         var inline_toolbar = new Gtk.ActionBar ();
-        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        inline_toolbar.add_css_class (Granite.STYLE_CLASS_FLAT);
         inline_toolbar.add (add_button);
 
         var exceptions_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 12,
             sensitive = false
         };
-        exceptions_box.add (exceptions_list);
-        exceptions_box.add (inline_toolbar);
-        exceptions_box.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
+        exceptions_box.append (exceptions_list);
+        exceptions_box.append (inline_toolbar);
+        exceptions_box.add_css_class (Granite.CssClass.CARD);
 
         var main_box = new Granite.Box (VERTICAL, HALF) {
             margin_start = 12,
@@ -192,11 +194,11 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
         main_box.append (weekday_revealer);
         main_box.append (monthly_revealer);
         main_box.append (ends_label);
-        main_box.append (ends_grid);
+        main_box.append (ends_box);
         main_box.append (exceptions_label);
         main_box.append (exceptions_box);
 
-        var scrolled = new Gtk.ScrolledWindow (null, null) {
+        var scrolled = new Gtk.ScrolledWindow () {
             child = main_box
         };
 

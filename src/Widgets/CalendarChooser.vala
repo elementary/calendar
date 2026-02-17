@@ -64,7 +64,7 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
         };
         list_box.set_placeholder (placeholder);
 
-        var scrolled = new Gtk.ScrolledWindow (null, null) {
+        var scrolled = new Gtk.ScrolledWindow () {
             child = list_box,
             hscrollbar_policy = NEVER,
             max_content_height = 300,
@@ -73,8 +73,8 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
 
         margin_bottom = 6;
         orientation = VERTICAL;
-        add (search_entry);
-        add (scrolled);
+        append (search_entry);
+        append (scrolled);
 
         list_box.set_filter_func (filter_function);
         list_box.set_header_func (header_update_func);

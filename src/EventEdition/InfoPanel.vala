@@ -150,7 +150,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             margin_bottom = 6
         };
 
-        var popover = new Gtk.Popover (null) {
+        var popover = new Gtk.Popover () {
             child = calchooser,
             width_request = 310
         };
@@ -190,7 +190,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             mnemonic_widget = comment_textview
         };
 
-        var scrolled = new Gtk.ScrolledWindow (null, null) {
+        var scrolled = new Gtk.ScrolledWindow () {
             child = comment_textview,
             height_request = 100,
             hexpand = true,

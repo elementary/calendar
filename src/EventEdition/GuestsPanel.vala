@@ -18,7 +18,7 @@
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
+public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
     private EventDialog parent_dialog;
     private Gtk.Entry guest_entry;
     private Gtk.EntryCompletion guest_completion;
@@ -46,7 +46,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         margin_end = 12;
         row_spacing = 6;
         set_sensitive (parent_dialog.can_edit);
-        orientation = Gtk.Orientation.VERTICAL;
+        orientation = VERTICAL;
 
         guest_store = new Gtk.ListStore (2, typeof (string), typeof (string));
 
@@ -59,13 +59,13 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
 
         unowned Gtk.StyleContext no_guests_context = no_guests_label.get_style_context ();
         no_guests_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
-        no_guests_context.add_class (Granite.CssClass.DIM_LABEL);
+        no_guests_context.add_class (Granite.CssClass.DIM);
 
         guest_list = new Gtk.ListBox ();
         guest_list.set_selection_mode (Gtk.SelectionMode.NONE);
         guest_list.set_placeholder (no_guests_label);
 
-        var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null) {
+        var guest_scrolledwindow = new Gtk.ScrolledWindow () {
             child = guest_list
         };
         guest_scrolledwindow.expand = true;
@@ -105,9 +105,9 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
             guest_entry.delete_text (0, -1);
         });
 
-        add (guest_label);
-        add (guest_entry);
-        add (frame);
+        append (guest_label);
+        append (guest_entry);
+        append (frame);
 
         if (parent_dialog.ecal != null) {
             unowned ICal.Component comp = parent_dialog.ecal.get_icalcomponent ();
@@ -123,8 +123,6 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
                 property = comp.get_next_property (ICal.PropertyKind.ATTENDEE_PROPERTY);
             }
         }
-
-        show_all ();
     }
 
     /**

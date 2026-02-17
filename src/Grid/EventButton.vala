@@ -127,7 +127,7 @@ public class Maya.View.EventButton : Granite.Bin {
         var provider = new Gtk.CssProvider ();
         try {
             var colored_css = EVENT_CSS.printf (background_color.slice (0, 7));
-            provider.load_from_data (colored_css, colored_css.length);
+            provider.load_from_string (colored_css);
 
             grid_style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         } catch (GLib.Error e) {

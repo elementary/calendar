@@ -61,10 +61,6 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         child = hpaned;
 
-        var header_group = new Adw.HeaderGroup ();
-        header_group.add_header_bar (calview.header_bar);
-        header_group.add_header_bar (sidebar.header_bar);
-
         var size_group = new Gtk.SizeGroup (VERTICAL);
         size_group.add_widget (calview.header_bar);
         size_group.add_widget (sidebar.header_bar);

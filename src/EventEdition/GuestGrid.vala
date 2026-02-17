@@ -40,7 +40,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         };
 
         var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
-            relief = NONE,
+            has_frame = false,
             valign = CENTER
         };
 
