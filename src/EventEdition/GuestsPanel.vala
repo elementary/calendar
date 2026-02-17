@@ -54,7 +54,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
         };
 
         var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null) {
-            child = guest_list,
+            child = guest_list
         };
 
         var frame = new Gtk.Frame (null) {
