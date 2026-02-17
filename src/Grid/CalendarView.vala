@@ -104,7 +104,8 @@ public class Maya.View.CalendarView : Gtk.Box {
         };
 
         header_bar = new Adw.HeaderBar () {
-            show_start_title_buttons = true
+            show_end_title_buttons = false,
+            show_title = false
         };
         header_bar.pack_start (month_switcher);
         header_bar.pack_start (year_switcher);

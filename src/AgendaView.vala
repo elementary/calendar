@@ -35,7 +35,10 @@ public class Maya.View.AgendaView : Gtk.Box {
         };
         weekday_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        header_bar = new Adw.HeaderBar ();
+        header_bar = new Adw.HeaderBar () {
+            show_start_title_buttons = false,
+            show_title = false
+        };
         header_bar.pack_start (weekday_label);
         header_bar.pack_end (button_add);
         header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);

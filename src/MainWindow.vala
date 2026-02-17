@@ -60,6 +60,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         };
 
         child = hpaned;
+        titlebar = new Gtk.Grid () { visible = false };
 
         var size_group = new Gtk.SizeGroup (VERTICAL);
         size_group.add_widget (calview.header_bar);
