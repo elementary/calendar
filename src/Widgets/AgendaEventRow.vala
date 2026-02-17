@@ -239,8 +239,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         child = revealer;
 
-        SimpleActionGroup action_group;
-        var context_menu = Maya.EventMenu.build (calevent, out action_group);
+        var context_menu = Maya.EventMenu.build (calevent);
         context_menu.attach_to_widget (this, null);
 
         var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
@@ -271,7 +270,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             var event = click_gesture.get_last_event (sequence);
 
             if (event.triggers_context_menu ()) {
-                Maya.EventMenu.set_action_sensitive (calevent, action_group);
                 context_menu.popup_at_pointer (event);
 
                 click_gesture.set_state (CLAIMED);
@@ -286,7 +284,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             var sequence = long_press_gesture.get_current_sequence ();
             var event = long_press_gesture.get_last_event (sequence);
 
-            Maya.EventMenu.set_action_sensitive (calevent, action_group);
             context_menu.popup_at_pointer (event);
 
             long_press_gesture.set_state (CLAIMED);

@@ -7,7 +7,7 @@
  */
 
 namespace Maya.EventMenu {
-    public static Gtk.Menu build (ECal.Component comp, out SimpleActionGroup action_group) {
+    public static Gtk.Menu build (ECal.Component comp) {
         var action_edit = new GLib.SimpleAction ("edit", null);
         action_edit.activate.connect (() => {
             ((Maya.Application) GLib.Application.get_default ()).window.on_modified (comp);
@@ -24,7 +24,7 @@ namespace Maya.EventMenu {
         var action_add_exception = new GLib.SimpleAction ("add-exception", null);
         action_add_exception.activate.connect (() => add_exception (comp));
 
-        action_group = new SimpleActionGroup ();
+        var action_group = new SimpleActionGroup ();
         action_group.add_action (action_edit);
         action_group.add_action (action_duplicate);
         action_group.add_action (action_remove);
@@ -44,18 +44,15 @@ namespace Maya.EventMenu {
         var menu = new Gtk.Menu.from_model (menu_model);
         menu.insert_action_group ("event", action_group);
 
-        return menu;
-    }
-
-    private static void set_action_sensitive (ECal.Component comp, SimpleActionGroup action_group) {
         E.Source src = comp.get_data ("source");
 
         var sensitive = src.writable && !Calendar.EventStore.get_default ().calclient_is_readonly (src);
+        action_edit.set_enabled (sensitive);
+        action_duplicate.set_enabled (sensitive);
+        action_remove.set_enabled (sensitive);
+        action_add_exception.set_enabled (sensitive);
 
-        ((SimpleAction) action_group.lookup_action ("edit")).set_enabled (sensitive);
-        ((SimpleAction) action_group.lookup_action ("duplicate")).set_enabled (sensitive);
-        ((SimpleAction) action_group.lookup_action ("remove")).set_enabled (sensitive);
-        ((SimpleAction) action_group.lookup_action ("add-exception")).set_enabled (sensitive);
+        return menu;
     }
 
     private static void remove_event (ECal.Component comp) {

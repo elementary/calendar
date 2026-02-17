@@ -46,8 +46,7 @@ public class Maya.View.EventButton : Gtk.Bin {
 
         child = revealer;
 
-        SimpleActionGroup action_group;
-        var context_menu = Maya.EventMenu.build (comp, out action_group);
+        var context_menu = Maya.EventMenu.build (comp);
         context_menu.attach_to_widget (this, null);
 
         click_gesture = new Gtk.GestureMultiPress (this) {
@@ -65,7 +64,6 @@ public class Maya.View.EventButton : Gtk.Bin {
             }
 
             if (event.triggers_context_menu ()) {
-                Maya.EventMenu.set_action_sensitive (comp, action_group);
                 context_menu.popup_at_pointer (event);
 
                 click_gesture.set_state (CLAIMED);
@@ -80,7 +78,6 @@ public class Maya.View.EventButton : Gtk.Bin {
             var sequence = long_press_gesture.get_current_sequence ();
             var event = long_press_gesture.get_last_event (sequence);
 
-            Maya.EventMenu.set_action_sensitive (comp, action_group);
             context_menu.popup_at_pointer (event);
 
             long_press_gesture.set_state (CLAIMED);
