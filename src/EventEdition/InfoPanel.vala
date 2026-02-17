@@ -178,13 +178,14 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             parent_dialog.source = calchooser.current_source;
         }
 
-        comment_textview = new Granite.HyperTextView ();
-        comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
-        comment_textview.accepts_tab = false;
-        comment_textview.set_border_window_size (Gtk.TextWindowType.LEFT, 2);
-        comment_textview.set_border_window_size (Gtk.TextWindowType.RIGHT, 2);
-        comment_textview.set_border_window_size (Gtk.TextWindowType.TOP, 2);
-        comment_textview.set_border_window_size (Gtk.TextWindowType.BOTTOM, 2);
+        comment_textview = new Granite.HyperTextView () {
+            accepts_tab = false,
+            wrap_mode = WORD_CHAR,
+            top_margin = 3,
+            right_margin = 3,
+            bottom_margin = 3,
+            left_margin = 3,
+        };
 
         var comment_label = new Granite.HeaderLabel (_("Comments:")) {
             mnemonic_widget = comment_textview
