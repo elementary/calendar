@@ -108,11 +108,6 @@ public class Maya.View.SourceDialog : Granite.Dialog {
             list_store.set (iter, 0, backend.get_name (), 1, backend);
         }
 
-        if (backends_manager.backends.size <= 1) {
-            type_combobox.no_show_all = true;
-            type_label.no_show_all = true;
-        }
-
         type_combobox.set_active (0);
 
         color_button_blue = new Gtk.RadioButton (null) {
@@ -259,7 +254,11 @@ public class Maya.View.SourceDialog : Granite.Dialog {
             margin_start = 12,
             vexpand = true
         };
-        main_box.add (type_box);
+
+        if (backends_manager.backends.size > 1) {
+            main_box.add (type_box);
+        }
+
         main_box.add (name_box);
         main_box.add (color_box);
         main_box.add (is_default_check);
