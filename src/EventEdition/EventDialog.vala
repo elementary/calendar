@@ -68,7 +68,7 @@ public class EventDialog : Granite.Dialog {
                 event_type = EventType.EDIT;
             }
 
-            guests_panel = new EventEdition.GuestsPanel (this);
+            guests_panel = new EventEdition.GuestsPanel (ecal.get_icalcomponent ());
             info_panel = new EventEdition.InfoPanel (this);
             location_panel = new EventEdition.LocationPanel (this);
             reminder_panel = new EventEdition.ReminderPanel (this);
