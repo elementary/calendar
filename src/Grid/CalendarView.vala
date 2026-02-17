@@ -205,6 +205,8 @@ public class Maya.View.CalendarView : Gtk.Box {
             initial_name = _("calendar.ics")
         };
 
+        var window = (Gtk.Window) get_root ();
+
         file_dialog.save.begin (window, null, (obj, res) => {
             try {
                 var events = Calendar.EventStore.get_default ().get_events ();

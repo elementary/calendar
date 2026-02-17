@@ -61,7 +61,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
         };
 
         simple_map = new Shumate.SimpleMap () {
-            map_source = registry.get_by_id (Shumate.MAP_SOURCE_OSM_MAPNIK)
+            // map_source = registry.get_by_id (Shumate.MAP_SOURCE_OSM_MAPNIK)
         };
 
         point = new Shumate.Marker () {
