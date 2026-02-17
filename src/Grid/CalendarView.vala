@@ -191,9 +191,6 @@ public class Maya.View.CalendarView : Gtk.Box {
     }
 
     private void action_export () {
-        /* creates a .ics file */
-        Util.save_temp_selected_calendars ();
-
         var filter = new Gtk.FileFilter ();
         filter.add_mime_type ("text/calendar");
 

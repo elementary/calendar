@@ -328,7 +328,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         string location_description, location_uri;
         if (location_from_component (event, out location_description, out location_uri)) {
             if (location_uri != "") {
-                location_label.label = "<a href=\"%s\">%s</a>".printf (location_uri, location_description);
+                location_label.label = "<a href=\"%s\">%s</a>".printf (location_uri, Markup.escape_text (location_description));
             } else {
                 location_label.label = location_description;
             }
