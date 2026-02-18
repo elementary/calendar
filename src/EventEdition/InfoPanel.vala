@@ -75,7 +75,6 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         margin_start = 12;
         margin_end = 12;
         column_spacing = 12;
-        sensitive = parent_dialog.can_edit;
 
         var from_label = new Granite.HeaderLabel (_("From:"));
 
@@ -205,7 +204,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         // Row: title & calendar
         attach (title_label, 0, 0, 1, 1);
         attach (title_entry, 0, 1, 1, 1);
-        if (calchooser.sources.length () > 1 && parent_dialog.can_edit) {
+        if (calchooser.sources.length () > 1) {
             attach (calendar_label, 1, 0, 4, 1);
             attach (calendar_button, 1, 1, 4, 1);
         }

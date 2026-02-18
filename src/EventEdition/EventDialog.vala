@@ -32,11 +32,6 @@ public class EventDialog : Granite.Dialog {
         public ECal.Component original_ecal { get; private set; }
         public DateTime date_time { get; set; }
 
-        /**
-         * A boolean indicating whether we can edit the current event.
-         */
-        public bool can_edit = true;
-
         private ECal.ObjModType mod_type { get; private set; default = ECal.ObjModType.ALL; }
         private EventType event_type { get; private set; }
 
