@@ -21,11 +21,11 @@
 public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
     private Gtk.Entry title_entry;
     private Granite.HyperTextView comment_textview;
-    private Granite.Widgets.DatePicker from_date_picker;
-    private Granite.Widgets.DatePicker to_date_picker;
+    private Granite.DatePicker from_date_picker;
+    private Granite.DatePicker to_date_picker;
     private Gtk.Switch allday_switch;
-    private Granite.Widgets.TimePicker from_time_picker;
-    private Granite.Widgets.TimePicker to_time_picker;
+    private Granite.TimePicker from_time_picker;
+    private Granite.TimePicker to_time_picker;
     private Gtk.Label timezone_label;
     private Widgets.CalendarChooser calchooser;
 
@@ -150,8 +150,9 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             margin_bottom = 6
         };
 
-        var popover = new Gtk.Popover (null) {
+        var popover = new Gtk.Popover () {
             child = calchooser,
+            has_arrow = false,
             width_request = 310
         };
 
@@ -161,8 +162,8 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         };
 
         var button_box = new Gtk.Box (HORIZONTAL, 6);
-        button_box.add (current_calendar_grid);
-        button_box.add (new Gtk.Image.from_icon_name ("pan-down-symbolic", Gtk.IconSize.MENU));
+        button_box.append (current_calendar_grid);
+        button_box.append (new Gtk.Image.from_icon_name ("pan-down-symbolic"));
 
         var calendar_button = new Gtk.MenuButton () {
             child = button_box,
@@ -178,19 +179,20 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
             parent_dialog.source = calchooser.current_source;
         }
 
-        comment_textview = new Granite.HyperTextView ();
-        comment_textview.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
-        comment_textview.accepts_tab = false;
-        comment_textview.set_border_window_size (Gtk.TextWindowType.LEFT, 2);
-        comment_textview.set_border_window_size (Gtk.TextWindowType.RIGHT, 2);
-        comment_textview.set_border_window_size (Gtk.TextWindowType.TOP, 2);
-        comment_textview.set_border_window_size (Gtk.TextWindowType.BOTTOM, 2);
+        comment_textview = new Granite.HyperTextView () {
+            accepts_tab = false,
+            wrap_mode = WORD_CHAR,
+            top_margin = 3,
+            right_margin = 3,
+            bottom_margin = 3,
+            left_margin = 3,
+        };
 
         var comment_label = new Granite.HeaderLabel (_("Comments:")) {
             mnemonic_widget = comment_textview
         };
 
-        var scrolled = new Gtk.ScrolledWindow (null, null) {
+        var scrolled = new Gtk.ScrolledWindow () {
             child = comment_textview,
             height_request = 100,
             hexpand = true,
@@ -373,15 +375,15 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
         timezone_label.label = timezone.get_display_name ();
     }
 
-    Granite.Widgets.DatePicker make_date_picker () {
+    Granite.DatePicker make_date_picker () {
         var format = Granite.DateTime.get_default_date_format (false, true, true);
-        var date_picker = new Granite.Widgets.DatePicker.with_format (format);
+        var date_picker = new Granite.DatePicker.with_format (format);
         date_picker.width_request = 200;
         return date_picker;
     }
 
-    Granite.Widgets.TimePicker make_time_picker () {
-        var time_picker = new Granite.Widgets.TimePicker ();
+    Granite.TimePicker make_time_picker () {
+        var time_picker = new Granite.TimePicker ();
         time_picker.width_request = 120;
         return time_picker;
     }

@@ -6,7 +6,7 @@
  *              Corentin Noël <corentin@elementary.io>
  */
 
-public class Maya.MainWindow : Hdy.ApplicationWindow {
+public class Maya.MainWindow : Gtk.ApplicationWindow {
     public View.CalendarView calview;
 
     public const string ACTION_PREFIX = "win.";
@@ -50,16 +50,17 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
             width_request = 160
         };
 
-        var hpaned = new Gtk.Paned (HORIZONTAL);
-        hpaned.pack1 (calview, true, false);
-        hpaned.pack2 (sidebar, false, false);
+        var hpaned = new Gtk.Paned (HORIZONTAL) {
+            start_child = calview,
+            resize_start_child = true,
+            shrink_start_child = false,
+            end_child = sidebar,
+            resize_end_child = false,
+            shrink_end_child = false
+        };
 
         child = hpaned;
-        show_all ();
-
-        var header_group = new Hdy.HeaderGroup ();
-        header_group.add_header_bar (calview.header_bar);
-        header_group.add_header_bar (sidebar.header_bar);
+        titlebar = new Gtk.Grid () { visible = false };
 
         var size_group = new Gtk.SizeGroup (VERTICAL);
         size_group.add_widget (calview.header_bar);
@@ -96,7 +97,7 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
             var dialog = new Maya.View.EventDialog (comp, null, this);
             dialog.present ();
         } else {
-            Gdk.beep ();
+            Gdk.Display.get_default ().beep ();
         }
     }
 
@@ -112,46 +113,22 @@ public class Maya.MainWindow : Hdy.ApplicationWindow {
             };
             dialog.present ();
         } else {
-            Gdk.beep ();
+            Gdk.Display.get_default ().beep ();
         }
     }
 
-    public override bool configure_event (Gdk.EventConfigure event) {
-        if (configure_id != 0) {
-            GLib.Source.remove (configure_id);
-        }
+    // public override bool delete_event (Gdk.EventAny event) {
+    //     Calendar.EventStore.get_default ().delete_trashed_calendars ();
 
-        configure_id = Timeout.add (100, () => {
-            configure_id = 0;
+    //     ((Application) application).ask_for_background.begin ((obj, res) => {
+    //         unowned var app = (Application) obj;
+    //         if (app.ask_for_background.end (res)) {
+    //             hide ();
+    //         } else {
+    //             destroy ();
+    //         }
+    //     });
 
-            if (is_maximized) {
-                Maya.Application.saved_state.set_boolean ("window-maximized", true);
-            } else {
-                Maya.Application.saved_state.set_boolean ("window-maximized", false);
-
-                Gdk.Rectangle rect;
-                get_allocation (out rect);
-                Maya.Application.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
-            }
-
-            return GLib.Source.REMOVE;
-        });
-
-        return base.configure_event (event);
-    }
-
-    public override bool delete_event (Gdk.EventAny event) {
-        Calendar.EventStore.get_default ().delete_trashed_calendars ();
-
-        ((Application) application).ask_for_background.begin ((obj, res) => {
-            unowned var app = (Application) obj;
-            if (app.ask_for_background.end (res)) {
-                hide ();
-            } else {
-                destroy ();
-            }
-        });
-
-        return Gdk.EVENT_STOP;
-    }
+    //     return Gdk.EVENT_STOP;
+    // }
 }
