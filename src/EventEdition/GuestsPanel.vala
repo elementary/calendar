@@ -32,7 +32,6 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
 
     construct {
         attendees = new Gee.ArrayList<unowned ICal.Property> ();
-
         guest_store = new Gtk.ListStore (2, typeof (string), typeof (string));
 
         load_contacts.begin ();

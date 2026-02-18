@@ -63,7 +63,6 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
         champlain_embed = new GtkChamplain.Embed ();
 
         point = new Maya.Marker ();
-        point.draggable = parent_dialog.can_edit;
         point.drag_finish.connect (() => {
             map_selected = true;
             find_location.begin (point.latitude, point.longitude);
@@ -89,7 +88,6 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
         margin_end = 12;
         orientation = VERTICAL;
         spacing = 6;
-        sensitive = parent_dialog.can_edit;
         add (location_label);
         add (location_entry);
         add (frame);
