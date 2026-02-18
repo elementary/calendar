@@ -394,15 +394,11 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
     private void reload_css (string background_color) {
         var provider = new Gtk.CssProvider ();
-        try {
-            var colored_css = EVENT_CSS.printf (background_color.slice (0, 7));
-            provider.load_from_string (colored_css);
+        var colored_css = EVENT_CSS.printf (background_color.slice (0, 7));
+        provider.load_from_string (colored_css);
 
-            event_image_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            main_grid_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (GLib.Error e) {
-            critical (e.message);
-        }
+        event_image_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        main_grid_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 
     private void split_keywords (Category category) {

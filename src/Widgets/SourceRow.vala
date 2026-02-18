@@ -129,13 +129,8 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         var css_color = "@define-color accent_color %s;".printf (color.slice (0, 7));
 
         var style_provider = new Gtk.CssProvider ();
-
-        try {
-            style_provider.load_from_string (css_color);
-            visible_checkbutton.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
-        }
+        style_provider.load_from_string (css_color);
+        visible_checkbutton.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 
     public void source_has_changed () {

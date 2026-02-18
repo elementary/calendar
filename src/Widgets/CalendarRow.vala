@@ -85,11 +85,7 @@ public class CalendarRow : Gtk.Box {
         var css_color = CALENDAR_COLOR_STYLE.printf (cal.dup_color ());
         var style_provider = new Gtk.CssProvider ();
 
-        try {
-            style_provider.load_from_string (css_color);
-            calendar_color_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
-        }
+        style_provider.load_from_string (css_color);
+        calendar_color_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 }

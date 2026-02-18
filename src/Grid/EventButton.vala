@@ -119,14 +119,10 @@ public class Maya.View.EventButton : Granite.Bin {
 
     private void reload_css (string background_color) {
         var provider = new Gtk.CssProvider ();
-        try {
-            var colored_css = EVENT_CSS.printf (background_color.slice (0, 7));
-            provider.load_from_string (colored_css);
+        var colored_css = EVENT_CSS.printf (background_color.slice (0, 7));
+        provider.load_from_string (colored_css);
 
-            grid_style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (GLib.Error e) {
-            critical (e.message);
-        }
+        grid_style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 
     public void destroy_button () {
