@@ -69,6 +69,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         main_box.append (accounts_button);
 
         child = main_box;
+        has_arrow = false;
         populate.begin ();
 
         add_calendar_button.clicked.connect (() => {

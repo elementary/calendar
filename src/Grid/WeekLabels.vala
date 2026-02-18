@@ -65,7 +65,9 @@ public class Maya.View.WeekLabels : Granite.Bin {
         var menu = new GLib.Menu ();
         menu.append (_("Show Week Numbers"), "week-labels.show-weeks");
 
-        var gtk_menu = new Gtk.PopoverMenu.from_model (menu);
+        var gtk_menu = new Gtk.PopoverMenu.from_model (menu) {
+            has_arrow = false
+        };
         gtk_menu.set_parent (this);
 
         var click_gesture = new Gtk.GestureClick () {

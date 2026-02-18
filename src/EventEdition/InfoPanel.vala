@@ -152,6 +152,7 @@ public class Maya.View.EventEdition.InfoPanel : Gtk.Grid {
 
         var popover = new Gtk.Popover () {
             child = calchooser,
+            has_arrow = false,
             width_request = 310
         };
 

@@ -41,7 +41,9 @@ namespace Maya.EventMenu {
             menu_model.prepend (_("Remove"), "event.remove");
         }
 
-        var menu = new Gtk.PopoverMenu.from_model (menu_model);
+        var menu = new Gtk.PopoverMenu.from_model (menu_model) {
+            has_arrow = false
+        };
         menu.insert_action_group ("event", action_group);
 
         E.Source src = comp.get_data ("source");
