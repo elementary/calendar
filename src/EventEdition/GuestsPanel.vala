@@ -55,11 +55,8 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
         load_contacts.begin ();
 
         var no_guests_label = new Gtk.Label (_("No Invitees"));
-        no_guests_label.show ();
-
-        unowned Gtk.StyleContext no_guests_context = no_guests_label.get_style_context ();
-        no_guests_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
-        no_guests_context.add_class (Granite.CssClass.DIM);
+        no_guests_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_guests_label.add_css_class (Granite.CssClass.DIM);
 
         guest_list = new Gtk.ListBox () {
             hexpand = true,

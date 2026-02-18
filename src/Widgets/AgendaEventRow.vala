@@ -183,9 +183,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             wrap_mode = WORD_CHAR,
             xalign = 0
         };
-
-        var name_label_context = name_label.get_style_context ();
-        name_label_context.add_class ("title");
+        name_label.add_css_class ("title");
 
         datetime_label = new Gtk.Label ("") {
             ellipsize = END,

@@ -31,7 +31,7 @@ public class Maya.View.EventButton : Granite.Bin {
         internal_grid.attach (label, 0, 0);
 
         grid_style_context = internal_grid.get_style_context ();
-        grid_style_context.add_class ("event");
+        internal_grid.add_css_class ("event");
 
         revealer = new Gtk.Revealer () {
             child = internal_grid,

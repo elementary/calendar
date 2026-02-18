@@ -52,8 +52,7 @@ public class Header : Granite.Bin {
             labels[c] = new Gtk.Label ("");
             labels[c].hexpand = true;
 
-            unowned Gtk.StyleContext label_context = labels[c].get_style_context ();
-            label_context.add_class ("daylabel");
+            labels[c].add_css_class ("daylabel");
 
             header_grid.attach (labels[c], c, 0);
         }

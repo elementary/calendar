@@ -51,7 +51,7 @@ public class CalendarRow : Gtk.Box {
             width_request = 12,
             valign = CENTER
         };
-        calendar_color.get_style_context ().add_class ("cal-color");
+        calendar_color.add_css_class ("cal-color");
 
         calendar_color_context = calendar_color.get_style_context ();
 
