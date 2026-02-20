@@ -45,7 +45,6 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Grid {
         margin_start = 12;
         margin_end = 12;
         row_spacing = 6;
-        set_sensitive (parent_dialog.can_edit);
         orientation = Gtk.Orientation.VERTICAL;
 
         guest_store = new Gtk.ListStore (2, typeof (string), typeof (string));

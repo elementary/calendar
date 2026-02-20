@@ -196,9 +196,6 @@ public class Maya.View.CalendarView : Gtk.Box {
     }
 
     private void action_export () {
-        /* creates a .ics file */
-        Util.save_temp_selected_calendars ();
-
         var filter = new Gtk.FileFilter ();
         filter.add_mime_type ("text/calendar");
 
@@ -214,16 +211,19 @@ public class Maya.View.CalendarView : Gtk.Box {
         filechooser.set_current_name (_("calendar.ics"));
 
         if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
-            var destination = filechooser.get_filename ();
-            if (destination == null) {
-                destination = filechooser.get_current_folder ();
-            } else if (!destination.has_suffix (".ics")) {
-                destination += ".ics";
+            var events = Calendar.EventStore.get_default ().get_events ();
+            var builder = new StringBuilder ();
+            builder.append ("BEGIN:VCALENDAR\n");
+            foreach (ECal.Component event in events) {
+                builder.append (event.get_as_string ());
             }
+            builder.append ("END:VCALENDAR");
+
+            var file = filechooser.get_file ();
             try {
-                GLib.Process.spawn_command_line_async ("mv " + GLib.Environment.get_tmp_dir () + "/calendar.ics " + destination);
-            } catch (SpawnError e) {
-                warning (e.message);
+                file.replace_contents (builder.data, null, false, FileCreateFlags.REPLACE_DESTINATION, null);
+            } catch (Error e) {
+                warning ("%s\n", e.message);
             }
         }
 
