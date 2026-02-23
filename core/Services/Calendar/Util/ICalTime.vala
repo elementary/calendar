@@ -27,7 +27,7 @@ namespace Calendar.Util {
      * For floating times, returns the local timezone.
      * Dates (with no time component) are considered floating.
      */
-    public GLib.TimeZone icaltime_get_timezone (ICal.Time date) {
+    public GLib.TimeZone icaltime_get_timezone (ICal.Time date) throws Error {
         // Special case: dates are floating, so return local time zone
         if (date.is_date ()) {
             return new GLib.TimeZone.local ();
@@ -54,11 +54,11 @@ namespace Calendar.Util {
         if (tzid.has_prefix (LIBICAL_TZ_PREFIX)) {
             // TZID has prefix "/freeassociation.sourceforge.net/",
             // indicating a libical TZID.
-            return new GLib.TimeZone (tzid.offset (LIBICAL_TZ_PREFIX.length));
+            return new GLib.TimeZone.identifier (tzid.offset (LIBICAL_TZ_PREFIX.length));
         } else {
             // TZID does not have libical prefix, potentially indicating an Olson
             // standard city name.
-            return new GLib.TimeZone (tzid);
+            return new GLib.TimeZone.identifier (tzid);
         }
     }
 
