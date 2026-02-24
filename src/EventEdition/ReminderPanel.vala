@@ -62,7 +62,6 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Box {
 
         margin_start = margin_end = 12;
         orientation = VERTICAL;
-        sensitive = parent_dialog.can_edit;
         append (reminder_label);
         append (frame);
 

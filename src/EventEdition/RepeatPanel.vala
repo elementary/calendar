@@ -29,7 +29,6 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
 
     public RepeatPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
-        sensitive = parent_dialog.can_edit;
 
         var reminder_label = new Granite.HeaderLabel (_("Repeat:"));
 

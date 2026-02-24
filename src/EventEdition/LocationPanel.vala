@@ -60,8 +60,10 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
             mnemonic_widget = location_entry
         };
 
+        var registry = new Shumate.MapSourceRegistry.with_defaults ();
+
         simple_map = new Shumate.SimpleMap () {
-            // map_source = registry.get_by_id (Shumate.MAP_SOURCE_OSM_MAPNIK)
+            map_source = registry.get_by_id (Shumate.MAP_SOURCE_OSM_MAPNIK)
         };
 
         point = new Shumate.Marker () {
@@ -69,7 +71,6 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
                 icon_size = LARGE
             }
         };
-        // point.draggable = parent_dialog.can_edit;
         // point.drag_finish.connect (() => {
         //     map_selected = true;
         //     find_location.begin (point.latitude, point.longitude);
@@ -89,14 +90,13 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
         load_contact.begin ();
 
         var frame = new Gtk.Frame (null) {
-            // child = champlain_embed
+            child = simple_map
         };
 
         margin_start = 12;
         margin_end = 12;
         orientation = VERTICAL;
         spacing = 6;
-        sensitive = parent_dialog.can_edit;
         append (location_label);
         append (location_entry);
         append (frame);
