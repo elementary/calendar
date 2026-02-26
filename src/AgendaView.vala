@@ -28,6 +28,7 @@ public class Maya.View.AgendaView : Gtk.Box {
             application_instance.get_accels_for_action (button_add.action_name),
             _("Create a new event")
         );
+        button_add.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         weekday_label = new Gtk.Label ("") {
             margin_start = 6,

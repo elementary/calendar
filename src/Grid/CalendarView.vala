@@ -83,6 +83,7 @@ public class Maya.View.CalendarView : Gtk.Box {
             application_instance.get_accels_for_action (button_today.action_name),
             _("Go to today's date")
         );
+        button_today.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         month_switcher = new Calendar.Widgets.DateSwitcher (10) {
             valign = CENTER
@@ -102,6 +103,7 @@ public class Maya.View.CalendarView : Gtk.Box {
             popover = source_popover,
             tooltip_text = _("Manage Calendars")
         };
+        menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         header_bar = new Adw.HeaderBar () {
             show_end_title_buttons = false,
@@ -131,14 +133,12 @@ public class Maya.View.CalendarView : Gtk.Box {
 
         stack.notify["transition-running"].connect (() => {
             if (stack.transition_running == false) {
-                var child = stack.get_first_child ();
-                while (child != null) {
-                    if (child != stack.visible_child) {
-                        child.destroy ();
-                        child = stack.get_first_child ();
-                    } else {
-                        child = child.get_next_sibling ();
-                    }
+                if (stack.get_first_child () != stack.visible_child) {
+                    stack.get_first_child ().destroy ();
+                }
+
+                if (stack.get_last_child () != stack.visible_child) {
+                    stack.get_last_child ().destroy ();
                 }
             }
         });
