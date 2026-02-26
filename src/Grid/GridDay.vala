@@ -55,7 +55,7 @@ public class Maya.View.GridDay : Granite.Bin {
         container_box.append (label);
         container_box.append (event_box);
 
-        can_focus = true;
+        focusable = true;
         child = container_box;
         add_css_class ("cell");
 
