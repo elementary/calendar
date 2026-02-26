@@ -91,29 +91,9 @@ public class Maya.View.GridDay : Gtk.EventBox {
     }
 
     public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-        string? compid = (string) selection_data.get_data ();
-        if (compid == null) {
-            return;
-        }
-
-        string uid;
-        string? rid = null;
-        if ("\n" in compid) {
-            var parts = compid.split ("\n", 2);
-            uid = parts[0];
-            rid = parts[1];
-        } else {
-            uid = compid;
-        }
-
         var calmodel = Calendar.EventStore.get_default ();
-        ECal.Component? comp = calmodel.get_event (uid, rid);
-
-        if (comp == null) {
-            return;
-        }
-
-        unowned var icalcomp = comp.get_icalcomponent ();
+        var comp = calmodel.drag_component;
+        unowned ICal.Component icalcomp = comp.get_icalcomponent ();
         E.Source src = comp.get_data ("source");
         var start = icalcomp.get_dtstart ();
         var end = icalcomp.get_dtend ();
