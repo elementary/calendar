@@ -9,8 +9,8 @@
 public class Maya.View.EventButton : Gtk.Bin {
     public ECal.Component comp { get; construct set; }
 
-    private const Gtk.TargetEntry DND = {"text/uri-list", 0, 1};
-    private const Gtk.TargetEntry DND2 = {"text/calendar", 0, 2};
+    private const Gtk.TargetEntry DND = {"binary/calendar", 0, 0};
+    private const Gtk.TargetEntry DND2 = {"text/uri-list", 0, 1};
 
     private Gtk.Revealer revealer;
     private Gtk.Label label;
@@ -106,6 +106,10 @@ public class Maya.View.EventButton : Gtk.Bin {
         unowned ICal.Component icalcomp = comp.get_icalcomponent ();
         switch (target_type) {
             case 0:
+                var ical_str = icalcomp.as_ical_string ();
+                selection_data.set_text (ical_str, ical_str.length);
+                break;
+            case 1:
                 var ical_str = comp.get_as_string ();
                 try {
                     var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
@@ -116,10 +120,6 @@ public class Maya.View.EventButton : Gtk.Bin {
                 } catch (Error e) {
                     critical (e.message);
                 }
-                break;
-            case 1:
-                var ical_str = icalcomp.as_ical_string ();
-                selection_data.set_text (ical_str, ical_str.length);
                 break;
         };
     }
