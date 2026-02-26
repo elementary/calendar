@@ -103,7 +103,8 @@ public class Maya.View.CalendarView : Gtk.Box {
             popover = source_popover,
             tooltip_text = _("Manage Calendars")
         };
-        menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
+        // FIXME: breaks popover icon size
+        // menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         header_bar = new Adw.HeaderBar () {
             show_end_title_buttons = false,

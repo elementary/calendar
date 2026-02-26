@@ -250,8 +250,6 @@ public class Maya.View.SourceDialog : Granite.Dialog {
         });
 
         main_box = new Gtk.Box (VERTICAL, 0) {
-            margin_end = 12,
-            margin_start = 12,
             vexpand = true
         };
 

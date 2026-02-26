@@ -174,6 +174,7 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
 
         var exceptions_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 12,
+            overflow = HIDDEN,
             sensitive = false
         };
         exceptions_box.append (exceptions_list);

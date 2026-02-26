@@ -129,6 +129,7 @@ public class EventDialog : Granite.Dialog {
             ((Gtk.BoxLayout) stack_switcher.layout_manager).homogeneous = true;
 
             var buttonbox = new Gtk.Box (HORIZONTAL, 6) {
+                halign = END,
                 baseline_position = CENTER,
                 margin_end = 12,
                 margin_start = 12
