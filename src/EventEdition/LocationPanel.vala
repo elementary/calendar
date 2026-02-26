@@ -8,7 +8,7 @@
 public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
     private EventDialog parent_dialog;
 
-    private Gtk.SearchEntry location_entry;
+    private Gtk.Entry location_entry;
     private Gtk.ListStore location_store;
     private Shumate.SimpleMap simple_map;
     private Shumate.Marker point;
@@ -47,8 +47,8 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
         location_completion.set_text_column (1);
         location_completion.match_selected.connect ((model, iter) => suggestion_selected (model, iter));
 
-        location_entry = new Gtk.SearchEntry () {
-            // completion = location_completion,
+        location_entry = new Gtk.Entry () {
+            completion = location_completion,
             hexpand = true,
             placeholder_text = _("John Smith OR Example St.")
         };
@@ -192,7 +192,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
                 point.longitude = place.location.longitude;
                 Idle.add (() => {
                     if (search_cancellable.is_cancelled () == false) {
-                        // champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
+                        simple_map.map.go_to (point.latitude, point.longitude);
                     }
 
                     return false;
@@ -251,7 +251,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
             point.longitude = simple.location.longitude;
             Idle.add (() => {
                 if (search_cancellable.is_cancelled () == false) {
-                    // champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
+                    simple_map.map.go_to (point.latitude, point.longitude);
                 }
 
                 return false;
