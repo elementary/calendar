@@ -50,8 +50,6 @@ calendar_deps = [
     libical_dep,
     gmodule_dep,
     m_dep,
-    # clutter_dep,
-    # clutter_gtk_dep,
     folks_dep,
     geocode_glib_dep,
     gclue_dep,
