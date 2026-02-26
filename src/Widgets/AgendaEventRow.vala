@@ -316,7 +316,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         datetime_label.label = get_timespan_label (start_date, end_date);
         if (datetime_label.label != "") {
             main_grid.attach (datetime_label, 1, 1);
-        } else {
+        } else if (datetime_label.parent != null){
             main_grid.remove (datetime_label);
         }
 
