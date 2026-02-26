@@ -245,7 +245,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             location_revealer.reveal_child = location_label.label != null && location_label.label != "";
         });
 
-        show.connect (() => {
+        map.connect (() => {
             revealer.set_reveal_child (true);
         });
 

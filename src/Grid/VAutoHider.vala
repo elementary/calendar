@@ -7,10 +7,13 @@
  */
 
 public class Maya.View.VAutoHider : Granite.Bin {
+    private List<unowned Gtk.Widget> children;
     private Gtk.Label more_label;
     private Gtk.Box main_box;
 
     construct {
+        children = new List<unowned Gtk.Widget> ();
+
         more_label = new Gtk.Label ("") {
             valign = END
         };
@@ -22,14 +25,10 @@ public class Maya.View.VAutoHider : Granite.Bin {
     }
 
     public void add (Gtk.Widget widget) {
-        // var children = main_box.get_children ();
-        // children.append (widget);
-
-        // children.sort (compare_children);
-
-        // int index = children.index (widget);
+        children.append (widget);
         main_box.append (widget);
-        // main_box.reorder_child (widget, index);
+
+        update (widget);
 
         widget.destroy.connect (() => {
             queue_resize ();
@@ -39,11 +38,9 @@ public class Maya.View.VAutoHider : Granite.Bin {
     }
 
     public void update (Gtk.Widget widget) {
-        // var children = main_box.get_children ();
+        children.sort (compare_children);
 
-        // children.sort (compare_children);
-
-        // int index = children.index (widget);
+        int index = children.index (widget);
         // main_box.reorder_child (widget, index);
     }
 
