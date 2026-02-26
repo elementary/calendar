@@ -8,7 +8,7 @@
 public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
     public ICal.Component component { get; construct; }
 
-    private Gtk.SearchEntry guest_entry;
+    private Gtk.Entry guest_entry;
     private Gtk.EntryCompletion guest_completion;
     private Gtk.ListBox guest_list;
     private Gee.ArrayList<unowned ICal.Property> attendees;
@@ -79,11 +79,11 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
             return false;
         });
 
-        guest_entry = new Gtk.SearchEntry () {
+        guest_entry = new Gtk.Entry () {
             hexpand = true,
             placeholder_text = _("Invite")
         };
-        // guest_entry.set_completion (guest_completion);
+        guest_entry.set_completion (guest_completion);
         guest_entry.activate.connect (() => {
             var attendee = new ICal.Property (ATTENDEE_PROPERTY);
             attendee.set_attendee (guest_entry.text);
