@@ -103,7 +103,9 @@ public class Maya.View.EventButton : Gtk.Bin {
     }
 
     private void on_drag_data_get (Gtk.Widget widget, Gdk.DragContext context, Gtk.SelectionData selection_data, uint target_type, uint time) {
-        unowned ICal.Component icalcomp = comp.get_icalcomponent ();
+        Calendar.EventStore.get_default ().drag_component = comp;
+
+        unowned var icalcomp = comp.get_icalcomponent ();
         var ical_str = icalcomp.as_ical_string ();
         switch (target_type) {
             case 0:
