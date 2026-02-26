@@ -104,13 +104,12 @@ public class Maya.View.EventButton : Gtk.Bin {
 
     private void on_drag_data_get (Gtk.Widget widget, Gdk.DragContext context, Gtk.SelectionData selection_data, uint target_type, uint time) {
         unowned ICal.Component icalcomp = comp.get_icalcomponent ();
+        var ical_str = icalcomp.as_ical_string ();
         switch (target_type) {
             case 0:
-                var ical_str = icalcomp.as_ical_string ();
                 selection_data.set_text (ical_str, ical_str.length);
                 break;
             case 1:
-                var ical_str = comp.get_as_string ();
                 try {
                     var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
                     var file = File.new_for_path (path);
