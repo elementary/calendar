@@ -99,12 +99,17 @@ public class Maya.View.CalendarView : Gtk.Box {
         var source_popover = new Calendar.Widgets.SourcePopover ();
 
         var menu_button = new Gtk.MenuButton () {
-            icon_name = "open-menu",
+            child = new Gtk.Image.from_icon_name ("open-menu") {
+                icon_size = LARGE
+            },
+            has_frame = false,
             popover = source_popover,
-            tooltip_text = _("Manage Calendars")
+            primary = true,
+            tooltip_markup = ("%s\n" + Granite.TOOLTIP_SECONDARY_TEXT_MARKUP).printf (
+                _("Manage Calendars"),
+                "F10"
+            )
         };
-        // FIXME: breaks popover icon size
-        // menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         header_bar = new Adw.HeaderBar () {
             show_end_title_buttons = false,
