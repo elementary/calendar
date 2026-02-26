@@ -158,7 +158,6 @@ public class Grid : Gtk.Grid {
                 // Still update_day to get the color of etc. right
                 day = update_day (new GridDay (new_date), new_date, today, month_start);
                 day.on_event_add.connect ((date) => on_event_add (date));
-                // day.scroll_event.connect ((event) => {scroll_event (event); return false;});
 
                 var focus_controller = new Gtk.EventControllerFocus ();
                 focus_controller.enter.connect (() => {
