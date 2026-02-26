@@ -99,6 +99,7 @@ public class Maya.View.CalendarView : Gtk.Box {
         var source_popover = new Calendar.Widgets.SourcePopover ();
 
         var menu_button = new Gtk.MenuButton () {
+            // FIXME: Workaround for stylesheet bug
             child = new Gtk.Image.from_icon_name ("open-menu") {
                 icon_size = LARGE
             },
