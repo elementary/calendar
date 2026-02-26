@@ -23,6 +23,8 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
     private Gtk.Label message_label;
     private Gtk.CheckButton visible_checkbutton;
 
+    private static Gee.HashMap<string, Gtk.CssProvider>? providers;
+
     public SourceRow (E.Source source) {
         this.source = source;
 
@@ -58,7 +60,7 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
             }
         });
 
-        style_calendar_color (cal.dup_color ());
+        set_accent_color (cal.dup_color ());
 
         delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", MENU) {
             sensitive = source.removable,
@@ -125,16 +127,46 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         source.changed.connect (source_has_changed);
     }
 
-    private void style_calendar_color (string color) {
-        var css_color = "@define-color accent_color %s;".printf (color.slice (0, 7));
+    private void set_accent_color (string? color) {
+        if (color == null) {
+            /* We automatically use the accent color */
+            return;
+        }
+
+        var color_class = color.replace ("#", "color-");
+        // FIXME: in GTK4 use css_classes to make sure we remove old ones
+        visible_checkbutton.get_style_context ().add_class (color_class);
+
+        if (providers == null) {
+            providers = new Gee.HashMap<string, Gtk.CssProvider> ();
+        }
+
+        if (providers.has_key (color)) {
+            return;
+        }
+
+        var bg_rgba = Gdk.RGBA ();
+        bg_rgba.parse (color);
+
+        string style = @"
+            checkbutton:checked.$color_class check {
+                background-color: $color;
+                -gtk-icon-shadow: 0 1px 1px shade($color, 0.7);
+            }
+        ";
 
         var style_provider = new Gtk.CssProvider ();
-
         try {
-            style_provider.load_from_data (css_color, css_color.length);
-            visible_checkbutton.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            style_provider.load_from_data (style);
+
+            providers[color] = style_provider;
+            Gtk.StyleContext.add_provider_for_screen (
+                Gdk.Screen.get_default (),
+                providers[color],
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            );
         } catch (Error e) {
-            warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
+            critical ("couldn't set source check color: %s", e.message);
         }
     }
 
@@ -144,7 +176,7 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
 
         E.SourceCalendar cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
-        style_calendar_color (cal.dup_color ());
+        set_accent_color (cal.dup_color ());
 
         visible_checkbutton.active = cal.selected;
     }
