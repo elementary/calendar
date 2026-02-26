@@ -9,6 +9,9 @@
 public class Maya.View.EventButton : Gtk.Bin {
     public ECal.Component comp { get; construct set; }
 
+    private const Gtk.TargetEntry DND = {"text/uri-list", 0, 1};
+    private const Gtk.TargetEntry DND2 = {"text/calendar", 0, 2};
+
     private Gtk.Revealer revealer;
     private Gtk.Label label;
     private Gtk.StyleContext grid_style_context;
@@ -84,24 +87,9 @@ public class Maya.View.EventButton : Gtk.Bin {
             long_press_gesture.reset ();
         });
 
-        Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
-        Gtk.TargetEntry dnd2 = {"text/uri-list", 0, 0};
-        Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {dnd, dnd2}, Gdk.DragAction.MOVE);
+        Gtk.drag_source_set (event_box, Gdk.ModifierType.BUTTON1_MASK, {DND, DND2}, Gdk.DragAction.MOVE);
 
-        event_box.drag_data_get.connect ( (ctx, sel, info, time) => {
-            Calendar.EventStore.get_default ().drag_component = comp;
-            unowned ICal.Component icalcomp = comp.get_icalcomponent ();
-            var ical_str = icalcomp.as_ical_string ();
-            sel.set_text (ical_str, ical_str.length);
-            try {
-                var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
-                var file = File.new_for_path (path);
-                if (file.replace_contents (ical_str.data, null, false, FileCreateFlags.PRIVATE, null))
-                    sel.set_uris ({file.get_uri ()});
-            } catch (Error e) {
-                critical (e.message);
-            }
-        });
+        event_box.drag_data_get.connect (on_drag_data_get);
 
         E.Source source = comp.get_data ("source");
 
@@ -112,6 +100,28 @@ public class Maya.View.EventButton : Gtk.Bin {
         cal.notify["color"].connect (() => {
             reload_css (cal.dup_color ());
         });
+    }
+
+    private void on_drag_data_get (Gtk.Widget widget, Gdk.DragContext context, Gtk.SelectionData selection_data, uint target_type, uint time) {
+        unowned ICal.Component icalcomp = comp.get_icalcomponent ();
+        switch (target_type) {
+            case 0:
+                var ical_str = comp.get_as_string ();
+                try {
+                    var path = GLib.Path.build_filename (GLib.Environment.get_tmp_dir (), icalcomp.get_summary () + ".ics");
+                    var file = File.new_for_path (path);
+                    if (file.replace_contents (ical_str.data, null, false, FileCreateFlags.PRIVATE, null)) {
+                        selection_data.set_uris ({file.get_uri ()});
+                    }
+                } catch (Error e) {
+                    critical (e.message);
+                }
+                break;
+            case 1:
+                var ical_str = icalcomp.as_ical_string ();
+                selection_data.set_text (ical_str, ical_str.length);
+                break;
+        };
     }
 
     public string get_uid () {
