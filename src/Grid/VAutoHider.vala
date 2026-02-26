@@ -40,79 +40,82 @@ public class Maya.View.VAutoHider : Granite.Bin {
     public void update (Gtk.Widget widget) {
         children.sort (compare_children);
 
-        int index = children.index (widget);
-        // main_box.reorder_child (widget, index);
+        while (main_box.get_first_child () != null) {
+            main_box.remove (main_box.get_first_child ());
+        }
+
+        foreach (var child in children) {
+            main_box.append (child);
+        }
     }
 
-    // public override void size_allocate (Gtk.Allocation allocation) {
-    //     base.size_allocate (allocation);
-    //     int global_height = allocation.height;
-    //     int children_length = (int)main_box.get_children ().length () - 1;
-    //     if (children_length == 0) {
-    //         more_label.hide ();
-    //         return;
-    //     }
+    public override void size_allocate (int width, int height, int baseline) {
+        base.size_allocate (width, height, baseline);
 
-    //     int height = 0;
-    //     int more_label_height;
-    //     int shown_children = 0;
-    //     more_label.show ();
-    //     more_label.vexpand = false;
-    //     more_label.get_preferred_height (out more_label_height, null);
-    //     more_label.vexpand = true;
-    //     more_label.hide ();
-    //     foreach (var child in main_box.get_children ()) {
-    //         if (child == more_label)
-    //             continue;
+        int children_length = (int) children.length ();
+        if (children_length == 0) {
+            more_label.hide ();
+            return;
+        }
 
-    //         bool last = (shown_children == children_length - 1);
 
-    //         int child_height;
-    //         child.show ();
-    //         child.get_preferred_height (out child_height, null);
-    //         ((Maya.View.EventButton) child).hide_without_animate ();
 
-    //         bool should_hide;
-    //         if (global_height - more_label_height < child_height + height) {
-    //             should_hide = true;
-    //             if (last && (global_height >= child_height + height)) {
-    //                 should_hide = false;
-    //             }
-    //         } else {
-    //             should_hide = false;
-    //             height += child_height;
-    //         }
+        more_label.show ();
+        more_label.vexpand = false;
+        var more_label_height = more_label.get_height ();
+        more_label.vexpand = true;
+        more_label.hide ();
 
-    //         if (should_hide) {
-    //             ((Maya.View.EventButton) child).hide_without_animate ();
-    //         } else {
-    //             ((Maya.View.EventButton) child).show_without_animate ();
-    //             shown_children++;
-    //         }
-    //     }
+        int internal_height = 0;
+        int shown_children = 0;
+        foreach (var child in children) {
+            if (child == more_label)
+                continue;
 
-    //     int more = children_length - shown_children;
-    //     if (shown_children != children_length && more > 0) {
-    //         more_label.show ();
-    //         more_label.set_label (_("%u more…").printf ((uint)more));
-    //     } else {
-    //         more_label.hide ();
-    //     }
-    // }
+            bool last = (shown_children == children_length - 1);
 
-    // public override void get_preferred_width (out int minimum_width, out int natural_width) {
-    //     base.get_preferred_width (out minimum_width, out natural_width);
-    //     more_label.get_preferred_width (out minimum_width, null);
-    //     if (minimum_width > natural_width)
-    //         natural_width = minimum_width;
-    // }
+            child.show ();
+            var child_height = child.get_height ();
+            ((Maya.View.EventButton) child).hide_without_animate ();
 
-    // public override void get_preferred_height (out int minimum_height, out int natural_height) {
-    //     base.get_preferred_height (out minimum_height, out natural_height);
-    //     more_label.get_preferred_height (out minimum_height, null);
-    //     if (minimum_height > natural_height)
-    //         natural_height = minimum_height;
-    // }
+            bool should_hide;
+            if (height - more_label_height < child_height + internal_height) {
+                should_hide = true;
+                if (last && (height >= child_height + internal_height)) {
+                    should_hide = false;
+                }
+            } else {
+                should_hide = false;
+                internal_height += child_height;
+            }
+
+            if (should_hide) {
+                ((Maya.View.EventButton) child).hide_without_animate ();
+            } else {
+                ((Maya.View.EventButton) child).show_without_animate ();
+                shown_children++;
+            }
+        }
+
+        int more = children_length - shown_children;
+        if (shown_children != children_length && more > 0) {
+            more_label.show ();
+            more_label.set_label (_("%u more…").printf ((uint)more));
+        } else {
+            more_label.hide ();
+        }
+    }
+
+    public override void measure (Gtk.Orientation orientation, int for_size, out int minimum, out int natural, out int minimum_baseline, out int natural_baseline) {
+        base.measure (orientation, for_size, out minimum, out natural, out minimum_baseline, out natural_baseline);
+
+        for_size = more_label.get_width ();
+
+        minimum = more_label.get_height ();
+        if (minimum > natural) {
+            natural = minimum;
+        }
+    }
 
     public static GLib.CompareFunc<weak Gtk.Widget> compare_children = (a, b) => {
         EventButton a2 = a as EventButton;
