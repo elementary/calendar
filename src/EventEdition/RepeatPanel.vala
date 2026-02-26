@@ -546,7 +546,6 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
     private void reorder_week_box () {
         switch (Calendar.EventStore.get_default ().week_starts_on) {
             case MONDAY:
-                // week_box.reorder_child (mon_button, 0);
                 week_box.reorder_child_after (tue_button, mon_button);
                 week_box.reorder_child_after (wed_button, tue_button);
                 week_box.reorder_child_after (thu_button, wed_button);
@@ -555,7 +554,6 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
                 week_box.reorder_child_after (sun_button, sat_button);
                 break;
             case TUESDAY:
-                // week_box.reorder_child (tue_button, 0);
                 week_box.reorder_child_after (wed_button, tue_button);
                 week_box.reorder_child_after (thu_button, wed_button);
                 week_box.reorder_child_after (fri_button, thu_button);
@@ -564,7 +562,6 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
                 week_box.reorder_child_after (mon_button, sun_button);
                 break;
             case WEDNESDAY:
-                // week_box.reorder_child (wed_button, 0);
                 week_box.reorder_child_after (thu_button, wed_button);
                 week_box.reorder_child_after (fri_button, thu_button);
                 week_box.reorder_child_after (sat_button, fri_button);
@@ -573,7 +570,6 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
                 week_box.reorder_child_after (tue_button, mon_button);
                 break;
             case THURSDAY:
-                // week_box.reorder_child (thu_button, 0);
                 week_box.reorder_child_after (fri_button, thu_button);
                 week_box.reorder_child_after (sat_button, fri_button);
                 week_box.reorder_child_after (sun_button, sat_button);
@@ -582,7 +578,6 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
                 week_box.reorder_child_after (wed_button, tue_button);
                 break;
             case FRIDAY:
-                // week_box.reorder_child (fri_button, 0);
                 week_box.reorder_child_after (sat_button, fri_button);
                 week_box.reorder_child_after (sun_button, sat_button);
                 week_box.reorder_child_after (mon_button, sun_button);
@@ -591,7 +586,6 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
                 week_box.reorder_child_after (thu_button, wed_button);
                 break;
             case SATURDAY:
-                // week_box.reorder_child (sat_button, 0);
                 week_box.reorder_child_after (sun_button, sat_button);
                 week_box.reorder_child_after (mon_button, sun_button);
                 week_box.reorder_child_after (tue_button, mon_button);
@@ -600,7 +594,6 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
                 week_box.reorder_child_after (fri_button, thu_button);
                 break;
             case SUNDAY:
-                // week_box.reorder_child (sun_button, 0);
                 week_box.reorder_child_after (mon_button, sun_button);
                 week_box.reorder_child_after (tue_button, mon_button);
                 week_box.reorder_child_after (wed_button, tue_button);
