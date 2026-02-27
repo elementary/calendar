@@ -36,9 +36,6 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
     public Gtk.Revealer revealer { public get; private set; }
 
-    private Gtk.GestureMultiPress click_gesture;
-    private Gtk.GestureLongPress long_press_gesture;
-
     private Gtk.Grid main_grid;
     private Gtk.Image event_image;
     private Gtk.Label name_label;
@@ -173,7 +170,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             split_keywords ((Category)cat);
         }
 
-        event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic", Gtk.IconSize.MENU) {
+        event_image = new Gtk.Image.from_icon_name ("office-calendar-symbolic") {
             pixel_size = 16,
             valign = START
         };
@@ -186,9 +183,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             wrap_mode = WORD_CHAR,
             xalign = 0
         };
-
-        var name_label_context = name_label.get_style_context ();
-        name_label_context.add_class ("title");
+        name_label.add_css_class ("title");
 
         datetime_label = new Gtk.Label ("") {
             ellipsize = END,
@@ -197,8 +192,8 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             use_markup = true,
             xalign = 0
         };
-        datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        datetime_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        datetime_label.add_css_class (Granite.CssClass.DIM);
+        datetime_label.add_css_class (Granite.CssClass.SMALL);
 
         location_label = new Gtk.Label ("") {
             margin_top = 6,
@@ -226,21 +221,17 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         main_grid.attach (location_revealer, 1, 2);
 
         main_grid_context = main_grid.get_style_context ();
-        main_grid_context.add_class ("event");
-
-        var event_box = new Gtk.EventBox () {
-            child = main_grid
-        };
+        main_grid.add_css_class ("event");
 
         revealer = new Gtk.Revealer () {
-            child = event_box,
+            child = main_grid,
             transition_type = SLIDE_DOWN
         };
 
         child = revealer;
 
         var context_menu = Maya.EventMenu.build (calevent);
-        context_menu.attach_to_widget (this, null);
+        context_menu.set_parent (this);
 
         var cal = (E.SourceCalendar)source.get_extension (E.SOURCE_EXTENSION_CALENDAR);
 
@@ -254,7 +245,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             location_revealer.reveal_child = location_label.label != null && location_label.label != "";
         });
 
-        show.connect (() => {
+        map.connect (() => {
             revealer.set_reveal_child (true);
         });
 
@@ -262,7 +253,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             revealer.set_reveal_child (false);
         });
 
-        click_gesture = new Gtk.GestureMultiPress (this) {
+        var click_gesture = new Gtk.GestureClick () {
             button = 0
         };
         click_gesture.pressed.connect ((n_press, x, y) => {
@@ -270,21 +261,18 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             var event = click_gesture.get_last_event (sequence);
 
             if (event.triggers_context_menu ()) {
-                context_menu.popup_at_pointer (event);
+                Maya.EventMenu.popup_at_pointer (context_menu, x, y);
 
                 click_gesture.set_state (CLAIMED);
                 click_gesture.reset ();
             }
         });
 
-        long_press_gesture = new Gtk.GestureLongPress (this) {
+        var long_press_gesture = new Gtk.GestureLongPress () {
             touch_only = true
         };
         long_press_gesture.pressed.connect ((x, y) => {
-            var sequence = long_press_gesture.get_current_sequence ();
-            var event = long_press_gesture.get_last_event (sequence);
-
-            context_menu.popup_at_pointer (event);
+            Maya.EventMenu.popup_at_pointer (context_menu, x, y);
 
             long_press_gesture.set_state (CLAIMED);
             long_press_gesture.reset ();
@@ -292,6 +280,9 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
         // Fill in the information
         update (calevent);
+
+        add_controller (click_gesture);
+        add_controller (long_press_gesture);
     }
 
     /**
@@ -325,7 +316,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
         datetime_label.label = get_timespan_label (start_date, end_date);
         if (datetime_label.label != "") {
             main_grid.attach (datetime_label, 1, 1);
-        } else {
+        } else if (datetime_label.parent != null){
             main_grid.remove (datetime_label);
         }
 
@@ -401,15 +392,11 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
 
     private void reload_css (string background_color) {
         var provider = new Gtk.CssProvider ();
-        try {
-            var colored_css = EVENT_CSS.printf (background_color.slice (0, 7));
-            provider.load_from_data (colored_css, colored_css.length);
+        var colored_css = EVENT_CSS.printf (background_color.slice (0, 7));
+        provider.load_from_string (colored_css);
 
-            event_image_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            main_grid_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (GLib.Error e) {
-            critical (e.message);
-        }
+        event_image_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        main_grid_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 
     private void split_keywords (Category category) {

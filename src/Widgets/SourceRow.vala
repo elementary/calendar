@@ -60,12 +60,12 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
 
         style_calendar_color (cal.dup_color ());
 
-        delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", MENU) {
+        delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
             sensitive = source.removable,
             tooltip_text = source.removable ? _("Remove") : _("Not Removable")
         };
 
-        edit_button = new Gtk.Button.from_icon_name ("edit-symbolic", MENU) {
+        edit_button = new Gtk.Button.from_icon_name ("edit-symbolic") {
             sensitive = source.writable,
             tooltip_text = source.writable ? _("Edit…"): _("Not Editable")
         };
@@ -76,17 +76,17 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
             margin_bottom = 3,
             margin_start = 12
         };
-        calendar_box.add (visible_checkbutton);
-        calendar_box.add (calendar_name_label);
-        calendar_box.add (delete_button);
-        calendar_box.add (edit_button);
+        calendar_box.append (visible_checkbutton);
+        calendar_box.append (calendar_name_label);
+        calendar_box.append (delete_button);
+        calendar_box.append (edit_button);
 
         var undo_button = new Gtk.Button.with_label (_("Undo")) {
             margin_end = 6
         };
 
-        var close_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", SMALL_TOOLBAR) {
-            relief = NONE
+        var close_button = new Gtk.Button.from_icon_name ("process-stop-symbolic") {
+            has_frame = false
         };
 
         message_label = new Gtk.Label (_("\"%s\" removed").printf (source.display_name)) {
@@ -95,18 +95,18 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         };
 
         info_box = new Gtk.Box (HORIZONTAL, 12);
-        info_box.add (close_button);
-        info_box.add (message_label);
-        info_box.add (undo_button);
+        info_box.append (close_button);
+        info_box.append (message_label);
+        info_box.append (undo_button);
 
         stack = new Gtk.Stack () {
             transition_type = OVER_RIGHT_LEFT
         };
-        stack.add (calendar_box);
-        stack.add (info_box);
+        stack.add_child (calendar_box);
+        stack.add_child (info_box);
         stack.visible_child = calendar_box;
 
-        add (stack);
+        child = stack;
 
         close_button.clicked.connect (() => {
             hide ();
@@ -129,13 +129,8 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         var css_color = "@define-color accent_color %s;".printf (color.slice (0, 7));
 
         var style_provider = new Gtk.CssProvider ();
-
-        try {
-            style_provider.load_from_data (css_color, css_color.length);
-            visible_checkbutton.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
-        }
+        style_provider.load_from_string (css_color);
+        visible_checkbutton.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 
     public void source_has_changed () {

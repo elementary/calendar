@@ -26,7 +26,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
            }
         });
 
-        var scroll = new Gtk.ScrolledWindow (null, null) {
+        var scroll = new Gtk.ScrolledWindow () {
             child = calendar_box,
             hscrollbar_policy = NEVER,
             max_content_height = 300,
@@ -40,20 +40,20 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             margin_bottom = 3
         };
 
-        var add_calendar_button = new Gtk.ModelButton () {
+        var add_calendar_button = new PopoverMenuitem () {
             text = _("Add New Calendar…")
         };
 
-        var import_calendar_button = new Gtk.ModelButton () {
+        var import_calendar_button = new PopoverMenuitem () {
             text = _("Import iCalendar File…")
         };
 
-        var export_calendar_button = new Gtk.ModelButton () {
+        var export_calendar_button = new PopoverMenuitem () {
             action_name = "calendar.export",
             text = _("Export Calendar…")
         };
 
-        var accounts_button = new Gtk.ModelButton () {
+        var accounts_button = new PopoverMenuitem () {
             text = _("Online Accounts Settings…")
         };
 
@@ -61,23 +61,22 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             margin_bottom = 3,
         };
 
-        main_box.add (scroll);
-        main_box.add (separator);
-        main_box.add (add_calendar_button);
-        main_box.add (import_calendar_button);
-        main_box.add (export_calendar_button);
-        main_box.add (accounts_button);
-        main_box.show_all ();
+        main_box.append (scroll);
+        main_box.append (separator);
+        main_box.append (add_calendar_button);
+        main_box.append (import_calendar_button);
+        main_box.append (export_calendar_button);
+        main_box.append (accounts_button);
 
         child = main_box;
+        has_arrow = false;
         populate.begin ();
 
-        add_calendar_button.button_release_event.connect (() => {
+        add_calendar_button.clicked.connect (() => {
             edit_source ();
-            return Gdk.EVENT_STOP;
         });
 
-        import_calendar_button.button_release_event.connect (() => {
+        import_calendar_button.clicked.connect (() => {
             var ics_filter = new Gtk.FileFilter ();
             ics_filter.add_mime_type ("application/ics");
 
@@ -88,8 +87,6 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
                 _("Open"),
                 _("Cancel")
             );
-
-            file_chooser.set_local_only (true);
             file_chooser.set_select_multiple (true);
             file_chooser.set_filter (ics_filter);
 
@@ -100,8 +97,9 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
                 GLib.File[] files = null;
 
                 if (response_id == Gtk.ResponseType.ACCEPT) {
-                    foreach (unowned GLib.File selected_file in file_chooser.get_files ()) {
-                        files += selected_file;
+                    var file_list = file_chooser.get_files ();
+                    for (int i; i < file_list.get_n_items (); i++) {
+                        files += (File) file_list.get_item (i);
                     }
                 }
 
@@ -110,8 +108,6 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
                     dialog.present ();
                 }
             });
-
-            return Gdk.EVENT_STOP;
         });
 
         accounts_button.clicked.connect (() => {
@@ -152,7 +148,6 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
 
         var header = new Granite.HeaderLabel (row_location);
         row.set_header (header);
-        header.show_all ();
     }
 
     private void source_removed (E.Source source) {
@@ -180,8 +175,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         source_item.edit_request.connect (edit_source);
         source_item.remove_request.connect (remove_source);
 
-        calendar_box.add (source_item);
-        calendar_box.show_all ();
+        calendar_box.append (source_item);
 
         src_map.set (source.dup_uid (), source_item);
     }
@@ -207,5 +201,32 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
         popdown ();
         src_dialog.set_source (source);
         src_dialog.present ();
+    }
+
+    private class PopoverMenuitem : Gtk.Button {
+        public string text {
+            set {
+                child = new Granite.AccelLabel (value) {
+                    action_name = this.action_name
+                };
+
+                update_property (Gtk.AccessibleProperty.LABEL, value, -1);
+            }
+        }
+
+        class construct {
+            set_css_name ("modelbutton");
+        }
+
+        construct {
+            accessible_role = MENU_ITEM;
+
+            clicked.connect (() => {
+                var popover = (Gtk.Popover) get_ancestor (typeof (Gtk.Popover));
+                if (popover != null) {
+                    popover.popdown ();
+                }
+            });
+        }
     }
 }

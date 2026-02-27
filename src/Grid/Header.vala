@@ -24,14 +24,11 @@ namespace Maya.View {
 /**
  * Represents the header at the top of the calendar grid.
  */
-public class Header : Gtk.EventBox {
+public class Header : Granite.Bin {
     private Gtk.Grid header_grid;
     private Gtk.Label[] labels;
 
     private static GLib.Settings show_weeks;
-
-    private Gtk.GestureMultiPress click_gesture;
-    private Gtk.GestureLongPress long_press_gesture;
 
     static construct {
         if (Application.wingpanel_settings != null) {
@@ -50,21 +47,17 @@ public class Header : Gtk.EventBox {
         header_grid.column_spacing = 0;
         header_grid.row_spacing = 0;
 
-        // EventBox properties
-        set_visible_window (true); // needed for style
-
         labels = new Gtk.Label[7];
         for (int c = 0; c < 7; c++) {
             labels[c] = new Gtk.Label ("");
             labels[c].hexpand = true;
 
-            unowned Gtk.StyleContext label_context = labels[c].get_style_context ();
-            label_context.add_class ("daylabel");
+            labels[c].add_css_class ("daylabel");
 
             header_grid.attach (labels[c], c, 0);
         }
 
-        add (header_grid);
+        child = header_grid;
 
         var action_show_weeks = show_weeks.create_action ("show-weeks");
 
@@ -76,11 +69,12 @@ public class Header : Gtk.EventBox {
         var menu = new GLib.Menu ();
         menu.append (_("Show Week Numbers"), "header.show-weeks");
 
-        var gtk_menu = new Gtk.Menu.from_model (menu) {
-            attach_widget = this
+        var gtk_menu = new Gtk.PopoverMenu.from_model (menu) {
+            has_arrow = false
         };
+        gtk_menu.set_parent (this);
 
-        click_gesture = new Gtk.GestureMultiPress (this) {
+        var click_gesture = new Gtk.GestureClick () {
             button = 0
         };
         click_gesture.pressed.connect ((n_press, x, y) => {
@@ -88,25 +82,25 @@ public class Header : Gtk.EventBox {
             var event = click_gesture.get_last_event (sequence);
 
             if (event.triggers_context_menu ()) {
-                gtk_menu.popup_at_pointer (event);
+                Maya.EventMenu.popup_at_pointer (gtk_menu, x, y);
 
                 click_gesture.set_state (CLAIMED);
                 click_gesture.reset ();
             }
         });
 
-        long_press_gesture = new Gtk.GestureLongPress (this) {
+        var long_press_gesture = new Gtk.GestureLongPress () {
             touch_only = true
         };
         long_press_gesture.pressed.connect ((x, y) => {
-            var sequence = long_press_gesture.get_current_sequence ();
-            var event = long_press_gesture.get_last_event (sequence);
-
-            gtk_menu.popup_at_pointer (event);
+            Maya.EventMenu.popup_at_pointer (gtk_menu, x, y);
 
             long_press_gesture.set_state (CLAIMED);
             long_press_gesture.reset ();
         });
+
+        add_controller (click_gesture);
+        add_controller (long_press_gesture);
     }
 
     public void update_columns (int week_starts_on) {
