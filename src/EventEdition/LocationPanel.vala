@@ -63,10 +63,6 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
         champlain_embed = new GtkChamplain.Embed ();
 
         point = new Maya.Marker ();
-        point.drag_finish.connect (() => {
-            map_selected = true;
-            find_location.begin (point.latitude, point.longitude);
-        });
 
         var marker_layer = new Champlain.MarkerLayer.full (SINGLE);
         marker_layer.add_marker (point);
@@ -190,35 +186,6 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
                 map_selected = true;
 
             location_entry.has_focus = true;
-        } catch (Error error) {
-            debug (error.message);
-        }
-    }
-
-    private async void find_location (double latitude, double longitude) {
-        if (find_cancellable != null) {
-            find_cancellable.cancel ();
-        }
-
-        find_cancellable = new GLib.Cancellable ();
-        Geocode.Location location = new Geocode.Location (latitude, longitude);
-        var reverse = new Geocode.Reverse.for_location (location);
-
-        try {
-            var address = yield reverse.resolve_async (find_cancellable);
-            var builder = new StringBuilder ();
-            if (address.street != null) {
-                builder.append (address.street);
-                add_address_line (builder, address.town);
-                add_address_line (builder, address.county);
-                add_address_line (builder, address.postal_code);
-                add_address_line (builder, address.country);
-            } else {
-                builder.append (address.name);
-                add_address_line (builder, address.country);
-            }
-
-            location_entry.text = builder.str;
         } catch (Error error) {
             debug (error.message);
         }
