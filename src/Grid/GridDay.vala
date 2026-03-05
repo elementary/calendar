@@ -9,7 +9,7 @@
 /**
  * Represents a single day on the grid.
  */
-public class Maya.View.GridDay : Gtk.EventBox {
+public class Maya.View.GridDay : Granite.Bin {
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
@@ -21,15 +21,13 @@ public class Maya.View.GridDay : Gtk.EventBox {
     public bool draw_left_border = true;
     private VAutoHider event_box;
     private GLib.HashTable<string, EventButton> event_buttons;
-    private Gtk.EventControllerKey key_controller;
-    private Gtk.GestureMultiPress click_gesture;
 
     public bool in_current_month {
         set {
             if (value) {
-                get_style_context ().remove_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                remove_css_class (Granite.CssClass.DIM);
             } else {
-                get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                add_css_class (Granite.CssClass.DIM);
             }
         }
     }
@@ -54,27 +52,32 @@ public class Maya.View.GridDay : Gtk.EventBox {
         };
 
         var container_box = new Gtk.Box (VERTICAL, 3);
-        container_box.add (label);
-        container_box.add (event_box);
+        container_box.append (label);
+        container_box.append (event_box);
 
-        can_focus = true;
+        focusable = true;
         child = container_box;
-        events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
-        get_style_context ().add_class ("cell");
+        add_css_class ("cell");
 
-        click_gesture = new Gtk.GestureMultiPress (this) {
+        var click_gesture = new Gtk.GestureClick () {
             button = Gdk.BUTTON_PRIMARY,
             propagation_phase = BUBBLE
         };
         click_gesture.released.connect (on_button_press);
 
-        key_controller = new Gtk.EventControllerKey (this) {
+        var key_controller = new Gtk.EventControllerKey () {
             propagation_phase = BUBBLE
         };
         key_controller.key_pressed.connect (on_key_press);
 
-        Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
-        Gtk.drag_dest_set (this, Gtk.DestDefaults.MOTION, {dnd}, Gdk.DragAction.MOVE);
+        // Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
+        var drop_target = new Gtk.DropTarget (typeof (string), Gdk.DragAction.MOVE);
+        drop_target.accept.connect (on_drop_accept);
+        drop_target.drop.connect (on_drag_drop);
+
+        add_controller (click_gesture);
+        add_controller (key_controller);
+        add_controller (drop_target);
 
         this.bind_property ("date", label, "label", BindingFlags.SYNC_CREATE, (binding, srcval, ref targetval) => {
             unowned var date = (GLib.DateTime) srcval.get_boxed ();
@@ -83,14 +86,11 @@ public class Maya.View.GridDay : Gtk.EventBox {
         });
     }
 
-    public override bool drag_drop (Gdk.DragContext context, int x, int y, uint time_) {
-        Gtk.drag_finish (context, true, false, time_);
-        Gdk.Atom atom = Gtk.drag_dest_find_target (this, context, Gtk.drag_dest_get_target_list (this));
-        Gtk.drag_get_data (this, context, atom, time_);
+    private bool on_drop_accept (Gdk.Drop drop) {
         return true;
     }
 
-    public override void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
+    private bool on_drag_drop (GLib.Value value, double x, double y) {
         var calmodel = Calendar.EventStore.get_default ();
         var comp = calmodel.drag_component;
         unowned ICal.Component icalcomp = comp.get_icalcomponent ();
@@ -107,6 +107,8 @@ public class Maya.View.GridDay : Gtk.EventBox {
 
         icalcomp.set_dtstart (start);
         calmodel.update_event (src, comp, ECal.ObjModType.ALL);
+
+        return true;
     }
 
     public void add_event (ECal.Component component) {
@@ -123,7 +125,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
         }
 
         event_box.add (button);
-        button.show_all ();
+        button.show_without_animate ();
     }
 
     public bool update_event (ECal.Component modified_event) {

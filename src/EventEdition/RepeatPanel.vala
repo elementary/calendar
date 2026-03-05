@@ -5,13 +5,13 @@
  * Authored by: Jaap Broekhuizen
  */
 
-public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
+public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
     private EventDialog parent_dialog;
     private Gtk.Switch repeat_switch;
     private Gtk.ComboBoxText repeat_combobox;
     private Gtk.ComboBoxText ends_combobox;
     private Gtk.SpinButton repeats_spinbutton;
-    private Granite.Widgets.DatePicker end_datepicker;
+    private Granite.DatePicker end_datepicker;
     private Gtk.Box week_box;
     private Gtk.SpinButton every_entry;
     private Gtk.ListBox exceptions_list;
@@ -24,8 +24,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
     private Gtk.ToggleButton sat_button;
     private Gtk.ToggleButton sun_button;
 
-    private Gtk.RadioButton every_radiobutton;
-    private Gtk.RadioButton same_radiobutton;
+    private Gtk.CheckButton every_radiobutton;
+    private Gtk.CheckButton same_radiobutton;
 
     public RepeatPanel (EventDialog parent_dialog) {
         this.parent_dialog = parent_dialog;
@@ -47,8 +47,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
         repeat_combobox.active = 1;
 
         var repeat_box = new Gtk.Box (HORIZONTAL, 12);
-        repeat_box.add (repeat_switch);
-        repeat_box.add (repeat_combobox);
+        repeat_box.append (repeat_switch);
+        repeat_box.append (repeat_combobox);
 
         var every_label = new Granite.HeaderLabel (_("Every:"));
 
@@ -61,8 +61,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
         var every_box = new Gtk.Box (HORIZONTAL, 12) {
             sensitive = false
         };
-        every_box.add (every_entry);
-        every_box.add (every_unit_label);
+        every_box.append (every_entry);
+        every_box.append (every_unit_label);
 
         var ends_label = new Granite.HeaderLabel (_("Ends:"));
 
@@ -84,8 +84,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
         var repeats_label = new Gtk.Label (ngettext ("Repeat", "Repeats", 1));
 
         var end_repeat_box = new Gtk.Box (HORIZONTAL, 12);
-        end_repeat_box.add (repeats_spinbutton);
-        end_repeat_box.add (repeats_label);
+        end_repeat_box.append (repeats_spinbutton);
+        end_repeat_box.append (repeats_label);
 
         var end_repeat_revealer = new Gtk.Revealer () {
             child = end_repeat_box
@@ -93,18 +93,18 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
 
         var format = Granite.DateTime.get_default_date_format (false, true, true);
 
-        end_datepicker = new Granite.Widgets.DatePicker.with_format (format);
+        end_datepicker = new Granite.DatePicker.with_format (format);
 
         var end_date_revealer = new Gtk.Revealer () {
             child = end_datepicker
         };
 
-        var ends_grid = new Gtk.Box (VERTICAL, 6) {
+        var ends_box = new Granite.Box (VERTICAL, HALF) {
             sensitive = false
         };
-        ends_grid.add (ends_combobox);
-        ends_grid.add (end_date_revealer);
-        ends_grid.add (end_repeat_revealer);
+        ends_box.append (ends_combobox);
+        ends_box.append (end_date_revealer);
+        ends_box.append (end_repeat_revealer);
 
         mon_button = new Gtk.ToggleButton.with_label (_("Mon"));
         tue_button = new Gtk.ToggleButton.with_label (_("Tue"));
@@ -118,26 +118,28 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
             homogeneous = true,
             sensitive = false
         };
-        week_box.add (mon_button);
-        week_box.add (tue_button);
-        week_box.add (wed_button);
-        week_box.add (thu_button);
-        week_box.add (fri_button);
-        week_box.add (sat_button);
-        week_box.add (sun_button);
+        week_box.append (mon_button);
+        week_box.append (tue_button);
+        week_box.append (wed_button);
+        week_box.append (thu_button);
+        week_box.append (fri_button);
+        week_box.append (sat_button);
+        week_box.append (sun_button);
 
         var weekday_revealer = new Gtk.Revealer () {
             child = week_box
         };
 
-        same_radiobutton = new Gtk.RadioButton.with_label (null, _("The same day every month"));
-        every_radiobutton = new Gtk.RadioButton.from_widget (same_radiobutton);
+        same_radiobutton = new Gtk.CheckButton.with_label (_("The same day every month"));
+        every_radiobutton = new Gtk.CheckButton () {
+            group = same_radiobutton
+        };
 
         var monthly_box = new Gtk.Box (VERTICAL, 6) {
             sensitive = false
         };
-        monthly_box.add (same_radiobutton);
-        monthly_box.add (every_radiobutton);
+        monthly_box.append (same_radiobutton);
+        monthly_box.append (every_radiobutton);
 
         var monthly_revealer = new Gtk.Revealer () {
             child = monthly_box
@@ -149,10 +151,8 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
             margin_top = 12,
             margin_bottom = 12
         };
-        no_exceptions_label.show ();
-
-        no_exceptions_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-        no_exceptions_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        no_exceptions_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_exceptions_label.add_css_class (Granite.CssClass.DIM);
 
         exceptions_list = new Gtk.ListBox () {
             selection_mode = NONE
@@ -160,42 +160,43 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
         exceptions_list.set_placeholder (no_exceptions_label);
 
         var add_button_box = new Gtk.Box (HORIZONTAL, 0);
-        add_button_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", BUTTON));
-        add_button_box.add (new Gtk.Label (_("Add Exception")));
+        add_button_box.append (new Gtk.Image.from_icon_name ("list-add-symbolic"));
+        add_button_box.append (new Gtk.Label (_("Add Exception")));
 
         var add_button = new Gtk.Button () {
             child = add_button_box,
-            relief = NONE
+            has_frame = false
         };
 
         var inline_toolbar = new Gtk.ActionBar ();
-        inline_toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        inline_toolbar.add (add_button);
+        inline_toolbar.add_css_class (Granite.STYLE_CLASS_FLAT);
+        inline_toolbar.pack_start (add_button);
 
         var exceptions_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 12,
+            overflow = HIDDEN,
             sensitive = false
         };
-        exceptions_box.add (exceptions_list);
-        exceptions_box.add (inline_toolbar);
-        exceptions_box.get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
+        exceptions_box.append (exceptions_list);
+        exceptions_box.append (inline_toolbar);
+        exceptions_box.add_css_class (Granite.CssClass.CARD);
 
-        var main_box = new Gtk.Box (VERTICAL, 6) {
+        var main_box = new Granite.Box (VERTICAL, HALF) {
             margin_start = 12,
             margin_end = 12
         };
-        main_box.add (reminder_label);
-        main_box.add (repeat_box);
-        main_box.add (every_label);
-        main_box.add (every_box);
-        main_box.add (weekday_revealer);
-        main_box.add (monthly_revealer);
-        main_box.add (ends_label);
-        main_box.add (ends_grid);
-        main_box.add (exceptions_label);
-        main_box.add (exceptions_box);
+        main_box.append (reminder_label);
+        main_box.append (repeat_box);
+        main_box.append (every_label);
+        main_box.append (every_box);
+        main_box.append (weekday_revealer);
+        main_box.append (monthly_revealer);
+        main_box.append (ends_label);
+        main_box.append (ends_box);
+        main_box.append (exceptions_label);
+        main_box.append (exceptions_box);
 
-        var scrolled = new Gtk.ScrolledWindow (null, null) {
+        var scrolled = new Gtk.ScrolledWindow () {
             child = main_box
         };
 
@@ -206,8 +207,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
 
         add_button.clicked.connect (() => {
             var exception_grid = new ExceptionGrid (new GLib.DateTime.now_local ());
-            exception_grid.show_all ();
-            exceptions_list.add (exception_grid);
+            exceptions_list.append (exception_grid);
         });
 
         repeat_switch.notify["active"].connect (() => {
@@ -216,7 +216,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
             every_box.sensitive = active;
             week_box.sensitive = active;
             monthly_box.sensitive = active;
-            ends_grid.sensitive = active;
+            ends_box.sensitive = active;
             exceptions_box.sensitive = active;
         });
         repeat_switch.active = false;
@@ -377,8 +377,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
         while (property != null) {
             var exdate = property.get_exdate ();
             var exception_grid = new ExceptionGrid (Calendar.Util.icaltime_to_datetime (exdate));
-            exception_grid.show_all ();
-            exceptions_list.add (exception_grid);
+            exceptions_list.append (exception_grid);
             property = comp.get_next_property (ICal.PropertyKind.EXDATE_PROPERTY);
         }
     }
@@ -547,67 +546,60 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
     private void reorder_week_box () {
         switch (Calendar.EventStore.get_default ().week_starts_on) {
             case MONDAY:
-                week_box.reorder_child (mon_button, 0);
-                week_box.reorder_child (tue_button, 1);
-                week_box.reorder_child (wed_button, 2);
-                week_box.reorder_child (thu_button, 3);
-                week_box.reorder_child (fri_button, 4);
-                week_box.reorder_child (sat_button, 5);
-                week_box.reorder_child (sun_button, 6);
+                week_box.reorder_child_after (tue_button, mon_button);
+                week_box.reorder_child_after (wed_button, tue_button);
+                week_box.reorder_child_after (thu_button, wed_button);
+                week_box.reorder_child_after (fri_button, thu_button);
+                week_box.reorder_child_after (sat_button, fri_button);
+                week_box.reorder_child_after (sun_button, sat_button);
                 break;
             case TUESDAY:
-                week_box.reorder_child (tue_button, 0);
-                week_box.reorder_child (wed_button, 1);
-                week_box.reorder_child (thu_button, 2);
-                week_box.reorder_child (fri_button, 3);
-                week_box.reorder_child (sat_button, 4);
-                week_box.reorder_child (sun_button, 5);
-                week_box.reorder_child (mon_button, 6);
+                week_box.reorder_child_after (wed_button, tue_button);
+                week_box.reorder_child_after (thu_button, wed_button);
+                week_box.reorder_child_after (fri_button, thu_button);
+                week_box.reorder_child_after (sat_button, fri_button);
+                week_box.reorder_child_after (sun_button, sat_button);
+                week_box.reorder_child_after (mon_button, sun_button);
                 break;
             case WEDNESDAY:
-                week_box.reorder_child (wed_button, 0);
-                week_box.reorder_child (thu_button, 1);
-                week_box.reorder_child (fri_button, 2);
-                week_box.reorder_child (sat_button, 3);
-                week_box.reorder_child (sun_button, 4);
-                week_box.reorder_child (mon_button, 5);
-                week_box.reorder_child (tue_button, 6);
+                week_box.reorder_child_after (thu_button, wed_button);
+                week_box.reorder_child_after (fri_button, thu_button);
+                week_box.reorder_child_after (sat_button, fri_button);
+                week_box.reorder_child_after (sun_button, sat_button);
+                week_box.reorder_child_after (mon_button, sun_button);
+                week_box.reorder_child_after (tue_button, mon_button);
                 break;
             case THURSDAY:
-                week_box.reorder_child (thu_button, 0);
-                week_box.reorder_child (fri_button, 1);
-                week_box.reorder_child (sat_button, 2);
-                week_box.reorder_child (sun_button, 3);
-                week_box.reorder_child (mon_button, 4);
-                week_box.reorder_child (tue_button, 5);
-                week_box.reorder_child (wed_button, 6);
+                week_box.reorder_child_after (fri_button, thu_button);
+                week_box.reorder_child_after (sat_button, fri_button);
+                week_box.reorder_child_after (sun_button, sat_button);
+                week_box.reorder_child_after (mon_button, sun_button);
+                week_box.reorder_child_after (tue_button, mon_button);
+                week_box.reorder_child_after (wed_button, tue_button);
                 break;
             case FRIDAY:
-                week_box.reorder_child (fri_button, 0);
-                week_box.reorder_child (sat_button, 1);
-                week_box.reorder_child (sun_button, 2);
-                week_box.reorder_child (mon_button, 3);
-                week_box.reorder_child (tue_button, 4);
-                week_box.reorder_child (wed_button, 5);
-                week_box.reorder_child (thu_button, 6);
+                week_box.reorder_child_after (sat_button, fri_button);
+                week_box.reorder_child_after (sun_button, sat_button);
+                week_box.reorder_child_after (mon_button, sun_button);
+                week_box.reorder_child_after (tue_button, mon_button);
+                week_box.reorder_child_after (wed_button, tue_button);
+                week_box.reorder_child_after (thu_button, wed_button);
                 break;
             case SATURDAY:
-                week_box.reorder_child (sat_button, 0);
-                week_box.reorder_child (sun_button, 1);
-                week_box.reorder_child (mon_button, 2);
-                week_box.reorder_child (tue_button, 3);
-                week_box.reorder_child (wed_button, 4);
-                week_box.reorder_child (thu_button, 5);
-                week_box.reorder_child (fri_button, 6);
+                week_box.reorder_child_after (sun_button, sat_button);
+                week_box.reorder_child_after (mon_button, sun_button);
+                week_box.reorder_child_after (tue_button, mon_button);
+                week_box.reorder_child_after (wed_button, tue_button);
+                week_box.reorder_child_after (thu_button, wed_button);
+                week_box.reorder_child_after (fri_button, thu_button);
                 break;
             case SUNDAY:
-                week_box.reorder_child (sun_button, 0);
-                week_box.reorder_child (mon_button, 1);
-                week_box.reorder_child (tue_button, 2);
-                week_box.reorder_child (wed_button, 3);
-                week_box.reorder_child (thu_button, 4);
-                week_box.reorder_child (fri_button, 5);
-                week_box.reorder_child (sat_button, 6);
+                week_box.reorder_child_after (mon_button, sun_button);
+                week_box.reorder_child_after (tue_button, mon_button);
+                week_box.reorder_child_after (wed_button, tue_button);
+                week_box.reorder_child_after (thu_button, wed_button);
+                week_box.reorder_child_after (fri_button, thu_button);
+                week_box.reorder_child_after (sat_button, fri_button);
                 break;
             case BAD_WEEKDAY:
                 break;
@@ -761,21 +753,21 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
 }
 
 public class Maya.View.EventEdition.ExceptionGrid : Gtk.ListBoxRow {
-    private Granite.Widgets.DatePicker date;
+    private Granite.DatePicker date;
 
     public ExceptionGrid (GLib.DateTime dt) {
-        date = new Granite.Widgets.DatePicker () {
+        date = new Granite.DatePicker () {
             date = dt,
             hexpand = true
         };
 
-        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", BUTTON) {
-            relief = NONE
+        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
+            has_frame = false
         };
 
         var box = new Gtk.Box (HORIZONTAL, 12);
-        box.add (date);
-        box.add (remove_button);
+        box.append (date);
+        box.append (remove_button);
 
         margin_top = 12;
         margin_start = 12;
