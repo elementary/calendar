@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-06 13:50+0000\n"
-"PO-Revision-Date: 2026-01-31 08:55+0000\n"
+"PO-Revision-Date: 2026-03-02 16:55+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
 "l10n.elementaryos.org/projects/calendar/calendar/zh_TW/>\n"
@@ -789,21 +789,20 @@ msgstr "wedding;婚禮;結婚典禮;結婚"
 #, c-format
 msgctxt "date-range"
 msgid "%s–%s"
-msgstr ""
+msgstr "%s 〜 %s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM–Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:357
-#, fuzzy, c-format
-#| msgid "%s, %s – %s, %s"
+#, c-format
 msgid "%s, %s–%s, %s"
-msgstr "%s, %s - %s, %s"
+msgstr "%s, %s ～ %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM–9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:372
 #, c-format
 msgctxt "time-range"
 msgid "%s–%s"
-msgstr ""
+msgstr "%s 〜 %s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:381
@@ -813,10 +812,9 @@ msgstr "%s %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM–9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:385
-#, fuzzy, c-format
-#| msgid "%s, %s – %s"
+#, c-format
 msgid "%s, %s–%s"
-msgstr "%s，%s - %s"
+msgstr "%s, %s ～ %s"
 
 #: src/Widgets/CalendarChooser.vala:53
 msgid "Search Calendars"
