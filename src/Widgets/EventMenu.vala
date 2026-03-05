@@ -45,14 +45,12 @@ namespace Maya.EventMenu {
         menu.insert_action_group ("event", action_group);
 
         E.Source src = comp.get_data ("source");
-        menu.popped_up.connect (() => {
-            var sensitive = src.writable && !Calendar.EventStore.get_default ().calclient_is_readonly (src);
 
-            action_edit.set_enabled (sensitive);
-            action_duplicate.set_enabled (sensitive);
-            action_remove.set_enabled (sensitive);
-            action_add_exception.set_enabled (sensitive);
-        });
+        var sensitive = src.writable && !Calendar.EventStore.get_default ().calclient_is_readonly (src);
+        action_edit.set_enabled (sensitive);
+        action_duplicate.set_enabled (sensitive);
+        action_remove.set_enabled (sensitive);
+        action_add_exception.set_enabled (sensitive);
 
         return menu;
     }
