@@ -127,6 +127,10 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         source.changed.connect (source_has_changed);
     }
 
+    static construct {
+        providers = new Gee.HashMap<string, Gtk.CssProvider> ();
+    }
+
     private void set_accent_color (string? color) {
         if (color == null) {
             /* We automatically use the accent color */
@@ -136,10 +140,6 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         var color_class = color.replace ("#", "color-");
         // FIXME: in GTK4 use css_classes to make sure we remove old ones
         visible_checkbutton.get_style_context ().add_class (color_class);
-
-        if (providers == null) {
-            providers = new Gee.HashMap<string, Gtk.CssProvider> ();
-        }
 
         if (providers.has_key (color)) {
             return;
