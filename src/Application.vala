@@ -65,25 +65,8 @@ namespace Maya {
         protected override void startup () {
             base.startup ();
 
-            Hdy.init ();
-
-            var style_provider = new Gtk.CssProvider ();
-            style_provider.load_from_resource ("/io/elementary/calendar/Application.css");
-
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
-                style_provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            );
-
-            var granite_settings = Granite.Settings.get_default ();
-            var gtk_settings = Gtk.Settings.get_default ();
-
-            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-
-            granite_settings.notify["prefers-color-scheme"].connect (() => {
-                gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-            });
+            Granite.init ();
+            Adw.init ();
 
             var quit_action = new SimpleAction ("quit", null);
             quit_action.activate.connect (quit);
@@ -161,16 +144,22 @@ namespace Maya {
          * Initializes the graphical window and its components
          */
         void init_gui () {
-            var rect = Gtk.Allocation ();
-            saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
-
             window = new MainWindow (this);
             window.title = _(Build.APP_NAME);
-            window.set_allocation (rect);
+
+            /*
+            * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
+            * Set maximize after height/width else window is min size on unmaximize
+            * Bind maximize as SET else get get bad sizes
+            */
+            saved_state.bind ("window-height", window, "default-height", SettingsBindFlags.DEFAULT);
+            saved_state.bind ("window-width", window, "default-width", SettingsBindFlags.DEFAULT);
 
             if (saved_state.get_boolean ("window-maximized")) {
                 window.maximize ();
             }
+
+            saved_state.bind ("window-maximized", window, "maximized", SettingsBindFlags.SET);
         }
 
         public async bool ask_for_background () {
@@ -211,7 +200,6 @@ namespace Maya {
         }
 
         public static int main (string[] args) {
-            GtkClutter.init (ref args);
             var app = new Application ();
 
             int res = app.run (args);

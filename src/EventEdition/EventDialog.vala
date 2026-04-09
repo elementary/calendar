@@ -114,20 +114,22 @@ public class EventDialog : Granite.Dialog {
             stack.add_titled (reminder_panel, "reminderpanel", _("Reminders"));
             ///Translators: The name of the repeat panel tab
             stack.add_titled (repeat_panel, "repeatpanel", C_("Section Header", "Repeat")); //vala-lint=space-before-paren
-            stack.child_set_property (info_panel, "icon-name", "office-calendar-symbolic");
-            stack.child_set_property (location_panel, "icon-name", "mark-location-symbolic");
-            stack.child_set_property (guests_panel, "icon-name", "system-users-symbolic");
-            stack.child_set_property (reminder_panel, "icon-name", "alarm-symbolic");
-            stack.child_set_property (repeat_panel, "icon-name", "media-playlist-repeat-symbolic");
+
+            stack.get_page (info_panel).set_property ("icon-name", "office-calendar-symbolic");
+            stack.get_page (location_panel).set_property ("icon-name", "mark-location-symbolic");
+            stack.get_page (guests_panel).set_property ("icon-name", "system-users-symbolic");
+            stack.get_page (reminder_panel).set_property ("icon-name", "alarm-symbolic");
+            stack.get_page (repeat_panel).set_property ("icon-name", "media-playlist-repeat-symbolic");
 
             var stack_switcher = new Gtk.StackSwitcher () {
-                homogeneous = true,
                 margin_end = 12,
                 margin_start = 12,
                 stack = stack
             };
+            ((Gtk.BoxLayout) stack_switcher.layout_manager).homogeneous = true;
 
             var buttonbox = new Gtk.Box (HORIZONTAL, 6) {
+                halign = END,
                 baseline_position = CENTER,
                 margin_end = 12,
                 margin_start = 12
@@ -138,14 +140,14 @@ public class EventDialog : Granite.Dialog {
                     halign = START,
                     hexpand = true
                 };
-                delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+                delete_button.add_css_class (Granite.CssClass.DESTRUCTIVE);
                 delete_button.clicked.connect (remove_event);
 
-                buttonbox.add (delete_button);
+                buttonbox.append (delete_button);
             }
 
             var create_button = new Gtk.Button ();
-            create_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            create_button.add_css_class (Granite.CssClass.SUGGESTED);
             create_button.clicked.connect (save_dialog);
 
             if (date_time != null) {
@@ -158,20 +160,19 @@ public class EventDialog : Granite.Dialog {
             var cancel_button = new Gtk.Button.with_label (_("Cancel"));
             cancel_button.clicked.connect (() => {this.destroy ();});
 
-            buttonbox.add (cancel_button);
-            buttonbox.add (create_button);
+            buttonbox.append (cancel_button);
+            buttonbox.append (create_button);
 
             var button_sizegroup = new Gtk.SizeGroup (HORIZONTAL);
             button_sizegroup.add_widget (cancel_button);
             button_sizegroup.add_widget (create_button);
 
-            var box = new Gtk.Box (VERTICAL, 24);
-            box.add (stack_switcher);
-            box.add (stack);
-            box.add (buttonbox);
-            box.show_all ();
+            var box = new Granite.Box (VERTICAL, DOUBLE);
+            box.append (stack_switcher);
+            box.append (stack);
+            box.append (buttonbox);
 
-            get_content_area ().add (box);
+            get_content_area ().append (box);
 
             info_panel.valid_event.connect ((is_valid) => {
                 create_button.sensitive = is_valid;
