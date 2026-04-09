@@ -156,11 +156,11 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
         ";
 
         var style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_string (css_color);
+        style_provider.load_from_string (style);
 
         providers[color] = style_provider;
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
+        Gtk.StyleContext.add_provider_for_display (
+            Gdk.Display.get_default (),
             providers[color],
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
