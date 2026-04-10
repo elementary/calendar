@@ -49,6 +49,7 @@ public class Maya.View.VAutoHider : Gtk.Bin {
 
     public override void size_allocate (Gtk.Allocation allocation) {
         base.size_allocate (allocation);
+
         int children_length = (int) main_box.get_children ().length () - 1;
         if (children_length == 0) {
             more_label.hide ();
@@ -61,8 +62,8 @@ public class Maya.View.VAutoHider : Gtk.Bin {
         more_label.get_preferred_height (out more_label_height, null);
         more_label.hide ();
 
+        int shown_children = 0;
         int shown_children_height = 0;
-        int hidden_children = 0;
         foreach (var child in main_box.get_children ()) {
             if (child == more_label) {
                 continue;
@@ -72,16 +73,20 @@ public class Maya.View.VAutoHider : Gtk.Bin {
             child.show ();
             child.get_preferred_height (out child_height, null);
 
-            if (allocation.height - more_label_height < shown_children_height + child_height) {
-                ((Maya.View.EventButton) child).hide_without_animate ();
-                hidden_children++;
-                continue;
+            if (shown_children_height + child_height > allocation.height - more_label_height) {
+                var last = shown_children == children_length - 1;
+                if (!last || shown_children_height + child_height > allocation.height) {
+                    ((Maya.View.EventButton) child).hide_without_animate ();
+                    continue;
+                }
             }
 
             ((Maya.View.EventButton) child).show_without_animate ();
+            shown_children++;
             shown_children_height += child_height;
         }
 
+        var hidden_children = children_length - shown_children;
         if (hidden_children > 0) {
             more_label.show ();
             more_label.label = _("%i more…").printf (hidden_children);
