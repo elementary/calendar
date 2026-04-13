@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-06 13:50+0000\n"
+"POT-Creation-Date: 2026-04-13 17:04+0000\n"
 "PO-Revision-Date: 2020-06-12 23:11+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/calendar/"
@@ -151,109 +151,109 @@ msgstr[2] "Zdarzynia ze zbioru %d bydōm połōnczōne z tym kalyndorzym:"
 msgid "Import"
 msgstr "Zaimportuj"
 
-#: src/EventEdition/EventDialog.vala:64
+#: src/EventEdition/EventDialog.vala:59
 msgid "Add Event"
 msgstr "Przidej zdarzynie"
 
-#: src/EventEdition/EventDialog.vala:67
+#: src/EventEdition/EventDialog.vala:62
 msgid "Edit Event"
 msgstr "Edytowanie zdarzynio"
 
-#: src/EventEdition/EventDialog.vala:116
+#: src/EventEdition/EventDialog.vala:111
 msgid "General Informations"
 msgstr "Ôgōlne informacyje"
 
-#: src/EventEdition/EventDialog.vala:117
+#: src/EventEdition/EventDialog.vala:112
 msgid "Location"
 msgstr "Położynie"
 
-#: src/EventEdition/EventDialog.vala:118 src/EventEdition/GuestsPanel.vala:53
+#: src/EventEdition/EventDialog.vala:113 src/EventEdition/GuestsPanel.vala:51
 #, fuzzy
 #| msgid "Invite"
 msgid "Invitees"
 msgstr "Zaproszynie"
 
-#: src/EventEdition/EventDialog.vala:119 src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/EventDialog.vala:114 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
 msgstr "Spōmniynia"
 
 #. /Translators: The name of the repeat panel tab
-#: src/EventEdition/EventDialog.vala:121
+#: src/EventEdition/EventDialog.vala:116
 #, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Powtōrzynie"
 
-#: src/EventEdition/EventDialog.vala:142
+#: src/EventEdition/EventDialog.vala:137
 #, fuzzy
 #| msgid "Delete Event"
 msgid "Delete Event…"
 msgstr "Skasuj zdarzynie"
 
-#: src/EventEdition/EventDialog.vala:157
+#: src/EventEdition/EventDialog.vala:152
 msgid "Create Event"
 msgstr "Stwōrz zdarzynie"
 
-#: src/EventEdition/EventDialog.vala:160
+#: src/EventEdition/EventDialog.vala:155
 msgid "Save Changes"
 msgstr "Spamiyntej zmiany"
 
-#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:210
+#: src/EventEdition/EventDialog.vala:158 src/Grid/CalendarView.vala:207
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "Pociep"
 
-#: src/EventEdition/GuestGrid.vala:63
+#: src/EventEdition/GuestGrid.vala:66
 msgid "Accepted"
 msgstr "Zaakceptowane"
 
-#: src/EventEdition/GuestGrid.vala:67
+#: src/EventEdition/GuestGrid.vala:70
 msgid "Declined"
 msgstr "Ôdciepniynte"
 
-#: src/EventEdition/GuestGrid.vala:71
+#: src/EventEdition/GuestGrid.vala:74
 msgid "Maybe"
 msgstr "Możno"
 
-#: src/EventEdition/GuestsPanel.vala:57
+#: src/EventEdition/GuestsPanel.vala:39
 #, fuzzy
 #| msgid "Invite"
 msgid "No Invitees"
 msgstr "Zaproszynie"
 
-#: src/EventEdition/GuestsPanel.vala:98
+#: src/EventEdition/GuestsPanel.vala:85
 msgid "Invite"
 msgstr "Zaproszynie"
 
-#: src/EventEdition/InfoPanel.vala:80
+#: src/EventEdition/InfoPanel.vala:79
 msgid "From:"
 msgstr "Ôd:"
 
-#: src/EventEdition/InfoPanel.vala:92
+#: src/EventEdition/InfoPanel.vala:91
 msgid "All day:"
 msgstr "Cołki dziyń:"
 
-#: src/EventEdition/InfoPanel.vala:103
+#: src/EventEdition/InfoPanel.vala:102
 msgid "To:"
 msgstr "Do:"
 
-#: src/EventEdition/InfoPanel.vala:111
+#: src/EventEdition/InfoPanel.vala:110
 msgid "Time zone:"
 msgstr ""
 
-#: src/EventEdition/InfoPanel.vala:118
+#: src/EventEdition/InfoPanel.vala:117
 msgid "Name of Event"
 msgstr "Miano zdarzynio"
 
-#: src/EventEdition/InfoPanel.vala:121
+#: src/EventEdition/InfoPanel.vala:120
 msgid "Title:"
 msgstr "Tytuł:"
 
-#: src/EventEdition/InfoPanel.vala:134
+#: src/EventEdition/InfoPanel.vala:133
 msgid "Press enter to parse event"
 msgstr "Naciś enter, coby przeanalizować zdarzynie"
 
-#: src/EventEdition/InfoPanel.vala:172
+#: src/EventEdition/InfoPanel.vala:171
 msgid "Calendar:"
 msgstr "Kalyndorz:"
 
@@ -277,357 +277,357 @@ msgstr "Brak spōmniyń"
 msgid "Add Reminder"
 msgstr "Przidej spōmniynie"
 
-#: src/EventEdition/ReminderPanel.vala:168
+#: src/EventEdition/ReminderPanel.vala:167
 msgid "At time of event"
 msgstr "Ô czasie zdarzynio"
 
-#: src/EventEdition/ReminderPanel.vala:169
+#: src/EventEdition/ReminderPanel.vala:168
 msgid "1 minute before"
 msgstr "1 minuta przed"
 
-#: src/EventEdition/ReminderPanel.vala:170
+#: src/EventEdition/ReminderPanel.vala:169
 msgid "5 minutes before"
 msgstr "5 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:171
+#: src/EventEdition/ReminderPanel.vala:170
 msgid "10 minutes before"
 msgstr "10 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:171
 msgid "15 minutes before"
 msgstr "15 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "20 minutes before"
 msgstr "20 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "25 minutes before"
 msgstr "25 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "30 minutes before"
 msgstr "30 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "45 minutes before"
 msgstr "45 minut przed"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "1 hour before"
 msgstr "godzina przed"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "2 hours before"
 msgstr "2 godziny przed"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "3 hours before"
 msgstr "3 godziny przed"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "12 hours before"
 msgstr "12 godzin przed"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "24 hours before"
 msgstr "24 godziny przed"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "2 days before"
 msgstr "2 dni przed"
 
-#: src/EventEdition/ReminderPanel.vala:183
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "1 week before"
 msgstr "1 tydziyń przed"
 
-#: src/EventEdition/RepeatPanel.vala:34
+#: src/EventEdition/RepeatPanel.vala:33
 msgid "Repeat:"
 msgstr "Powtorzanie:"
 
-#: src/EventEdition/RepeatPanel.vala:44
+#: src/EventEdition/RepeatPanel.vala:43
 msgid "Daily"
 msgstr "Dziynnie"
 
-#: src/EventEdition/RepeatPanel.vala:45
+#: src/EventEdition/RepeatPanel.vala:44
 msgid "Weekly"
 msgstr "Co tydziyń"
 
-#: src/EventEdition/RepeatPanel.vala:46
+#: src/EventEdition/RepeatPanel.vala:45
 msgid "Monthly"
 msgstr "Co miesiōnc"
 
-#: src/EventEdition/RepeatPanel.vala:47
+#: src/EventEdition/RepeatPanel.vala:46
 msgid "Yearly"
 msgstr "Co rok"
 
-#: src/EventEdition/RepeatPanel.vala:54
+#: src/EventEdition/RepeatPanel.vala:53
 msgid "Every:"
 msgstr "Co:"
 
-#: src/EventEdition/RepeatPanel.vala:60 src/EventEdition/RepeatPanel.vala:258
+#: src/EventEdition/RepeatPanel.vala:59 src/EventEdition/RepeatPanel.vala:257
 msgid "Week"
 msgid_plural "Weeks"
 msgstr[0] "Tydziyń"
 msgstr[1] "Tydnie"
 msgstr[2] "Tydni"
 
-#: src/EventEdition/RepeatPanel.vala:68
+#: src/EventEdition/RepeatPanel.vala:67
 msgid "Ends:"
 msgstr "Kōńczy sie:"
 
-#: src/EventEdition/RepeatPanel.vala:73
+#: src/EventEdition/RepeatPanel.vala:72
 msgid "Never"
 msgstr "Nigdy"
 
-#: src/EventEdition/RepeatPanel.vala:74
+#: src/EventEdition/RepeatPanel.vala:73
 msgid "Until"
 msgstr "Do"
 
-#: src/EventEdition/RepeatPanel.vala:75
+#: src/EventEdition/RepeatPanel.vala:74
 msgid "After"
 msgstr "Po"
 
 #. /Translators: Give a word to describe an event ending after a certain number of repeats.
 #. /This will be displayed in the format like: "Ends After 2 Repeats",
 #. /where this string always represents the last word in the phrase.
-#: src/EventEdition/RepeatPanel.vala:85 src/EventEdition/RepeatPanel.vala:278
+#: src/EventEdition/RepeatPanel.vala:84 src/EventEdition/RepeatPanel.vala:277
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Powtōrzynie"
 msgstr[1] "Powtōrzynia"
 msgstr[2] "Powtōrzyń"
 
-#: src/EventEdition/RepeatPanel.vala:110
+#: src/EventEdition/RepeatPanel.vala:109
 msgid "Mon"
 msgstr "Pyń"
 
-#: src/EventEdition/RepeatPanel.vala:111
+#: src/EventEdition/RepeatPanel.vala:110
 msgid "Tue"
 msgstr "Wto"
 
-#: src/EventEdition/RepeatPanel.vala:112
+#: src/EventEdition/RepeatPanel.vala:111
 msgid "Wed"
 msgstr "Strz"
 
-#: src/EventEdition/RepeatPanel.vala:113
+#: src/EventEdition/RepeatPanel.vala:112
 msgid "Thu"
 msgstr "Szt"
 
-#: src/EventEdition/RepeatPanel.vala:114
+#: src/EventEdition/RepeatPanel.vala:113
 msgid "Fri"
 msgstr "Piō"
 
-#: src/EventEdition/RepeatPanel.vala:115
+#: src/EventEdition/RepeatPanel.vala:114
 msgid "Sat"
 msgstr "Sob"
 
-#: src/EventEdition/RepeatPanel.vala:116
+#: src/EventEdition/RepeatPanel.vala:115
 msgid "Sun"
 msgstr "Niy"
 
-#: src/EventEdition/RepeatPanel.vala:134
+#: src/EventEdition/RepeatPanel.vala:133
 msgid "The same day every month"
 msgstr "Tyn sōm dziyń kożdego miesiōnca"
 
-#: src/EventEdition/RepeatPanel.vala:147
+#: src/EventEdition/RepeatPanel.vala:146
 msgid "Exceptions:"
 msgstr "Wyjōntki:"
 
-#: src/EventEdition/RepeatPanel.vala:149
+#: src/EventEdition/RepeatPanel.vala:148
 msgid "No Exceptions"
 msgstr "Bez wyjōntkōw"
 
-#: src/EventEdition/RepeatPanel.vala:165
+#: src/EventEdition/RepeatPanel.vala:164
 msgid "Add Exception"
 msgstr "Przidej wyjōntek"
 
-#: src/EventEdition/RepeatPanel.vala:255
+#: src/EventEdition/RepeatPanel.vala:254
 msgid "Day"
 msgid_plural "Days"
 msgstr[0] "Dziyń"
 msgstr[1] "Dni"
 msgstr[2] "Dni"
 
-#: src/EventEdition/RepeatPanel.vala:261
+#: src/EventEdition/RepeatPanel.vala:260
 msgid "Month"
 msgid_plural "Months"
 msgstr[0] "Miesiōnc"
 msgstr[1] "Miesiōnce"
 msgstr[2] "Miesiyncy"
 
-#: src/EventEdition/RepeatPanel.vala:264
+#: src/EventEdition/RepeatPanel.vala:263
 msgid "Year"
 msgid_plural "Years"
 msgstr[0] "Rok"
 msgstr[1] "Lata"
 msgstr[2] "Lot"
 
-#: src/EventEdition/RepeatPanel.vala:398
+#: src/EventEdition/RepeatPanel.vala:397
 msgid "Every last Sunday"
 msgstr "Kożdo ôstatnio niydziela"
 
-#: src/EventEdition/RepeatPanel.vala:401
+#: src/EventEdition/RepeatPanel.vala:400
 msgid "Every last Monday"
 msgstr "Kożdy ôstatni pyńdziałek"
 
-#: src/EventEdition/RepeatPanel.vala:404
+#: src/EventEdition/RepeatPanel.vala:403
 msgid "Every last Tuesday"
 msgstr "Kożdy ôstatni wtorek"
 
-#: src/EventEdition/RepeatPanel.vala:407
+#: src/EventEdition/RepeatPanel.vala:406
 msgid "Every last Wednesday"
 msgstr "Kożdo ôstatnio strzoda"
 
-#: src/EventEdition/RepeatPanel.vala:410
+#: src/EventEdition/RepeatPanel.vala:409
 msgid "Every last Thursday"
 msgstr "Kożdy ôstatni sztwortek"
 
-#: src/EventEdition/RepeatPanel.vala:413
+#: src/EventEdition/RepeatPanel.vala:412
 msgid "Every last Friday"
 msgstr "Kożdy ôstatni piōntek"
 
-#: src/EventEdition/RepeatPanel.vala:416
+#: src/EventEdition/RepeatPanel.vala:415
 msgid "Every last Saturday"
 msgstr "Kożdo ôstatnio sobota"
 
-#: src/EventEdition/RepeatPanel.vala:423
+#: src/EventEdition/RepeatPanel.vala:422
 msgid "Every first Sunday"
 msgstr "Kożdo piyrszo niydziela"
 
-#: src/EventEdition/RepeatPanel.vala:426
+#: src/EventEdition/RepeatPanel.vala:425
 msgid "Every first Monday"
 msgstr "Kożdy piyrszy pyńdziałek"
 
-#: src/EventEdition/RepeatPanel.vala:429
+#: src/EventEdition/RepeatPanel.vala:428
 msgid "Every first Tuesday"
 msgstr "Kożdy piyrszy wtorek"
 
-#: src/EventEdition/RepeatPanel.vala:432
+#: src/EventEdition/RepeatPanel.vala:431
 msgid "Every first Wednesday"
 msgstr "Kożdo piyrszo strzoda"
 
-#: src/EventEdition/RepeatPanel.vala:435
+#: src/EventEdition/RepeatPanel.vala:434
 msgid "Every first Thursday"
 msgstr "Kożdy piyrszy sztwortek"
 
-#: src/EventEdition/RepeatPanel.vala:438
+#: src/EventEdition/RepeatPanel.vala:437
 msgid "Every first Friday"
 msgstr "Kożdy piyrszy piōntek"
 
-#: src/EventEdition/RepeatPanel.vala:441
+#: src/EventEdition/RepeatPanel.vala:440
 msgid "Every first Saturday"
 msgstr "Kożdo piyrszo sobota"
 
-#: src/EventEdition/RepeatPanel.vala:448
+#: src/EventEdition/RepeatPanel.vala:447
 msgid "Every second Sunday"
 msgstr "Kożdo drugo niydziela"
 
-#: src/EventEdition/RepeatPanel.vala:451
+#: src/EventEdition/RepeatPanel.vala:450
 msgid "Every second Monday"
 msgstr "Kożdy drugi pyńdziałek"
 
-#: src/EventEdition/RepeatPanel.vala:454
+#: src/EventEdition/RepeatPanel.vala:453
 msgid "Every second Tuesday"
 msgstr "Kożdy drugi wtorek"
 
-#: src/EventEdition/RepeatPanel.vala:457
+#: src/EventEdition/RepeatPanel.vala:456
 msgid "Every second Wednesday"
 msgstr "Kożdo drugo strzoda"
 
-#: src/EventEdition/RepeatPanel.vala:460
+#: src/EventEdition/RepeatPanel.vala:459
 msgid "Every second Thursday"
 msgstr "Kożdy drugi sztwortek"
 
-#: src/EventEdition/RepeatPanel.vala:463
+#: src/EventEdition/RepeatPanel.vala:462
 msgid "Every second Friday"
 msgstr "Kożdy drugi piōntek"
 
-#: src/EventEdition/RepeatPanel.vala:466
+#: src/EventEdition/RepeatPanel.vala:465
 msgid "Every second Saturday"
 msgstr "Kożdo drugo sobota"
 
-#: src/EventEdition/RepeatPanel.vala:473
+#: src/EventEdition/RepeatPanel.vala:472
 msgid "Every third Sunday"
 msgstr "Kożdo trzecio niydziela"
 
-#: src/EventEdition/RepeatPanel.vala:476
+#: src/EventEdition/RepeatPanel.vala:475
 msgid "Every third Monday"
 msgstr "Kożdy trzeci pyńdziałek"
 
-#: src/EventEdition/RepeatPanel.vala:479
+#: src/EventEdition/RepeatPanel.vala:478
 msgid "Every third Tuesday"
 msgstr "Kożdy trzeci wtorek"
 
-#: src/EventEdition/RepeatPanel.vala:482
+#: src/EventEdition/RepeatPanel.vala:481
 msgid "Every third Wednesday"
 msgstr "Kożdo trzecio strzoda"
 
-#: src/EventEdition/RepeatPanel.vala:485
+#: src/EventEdition/RepeatPanel.vala:484
 msgid "Every third Thursday"
 msgstr "Kożdy trzeci sztwortek"
 
-#: src/EventEdition/RepeatPanel.vala:488
+#: src/EventEdition/RepeatPanel.vala:487
 msgid "Every third Friday"
 msgstr "Kożdy trzeci piōntek"
 
-#: src/EventEdition/RepeatPanel.vala:491
+#: src/EventEdition/RepeatPanel.vala:490
 msgid "Every third Saturday"
 msgstr "Kożdo trzecio sobota"
 
-#: src/EventEdition/RepeatPanel.vala:498
+#: src/EventEdition/RepeatPanel.vala:497
 msgid "Every fourth Sunday"
 msgstr "Kożdo sztworto niydziela"
 
-#: src/EventEdition/RepeatPanel.vala:501
+#: src/EventEdition/RepeatPanel.vala:500
 msgid "Every fourth Monday"
 msgstr "Kożdy sztworty pyńdziałek"
 
-#: src/EventEdition/RepeatPanel.vala:504
+#: src/EventEdition/RepeatPanel.vala:503
 msgid "Every fourth Tuesday"
 msgstr "Kożdy sztworty wtorek"
 
-#: src/EventEdition/RepeatPanel.vala:507
+#: src/EventEdition/RepeatPanel.vala:506
 msgid "Every fourth Wednesday"
 msgstr "Kożdo sztworto strzoda"
 
-#: src/EventEdition/RepeatPanel.vala:510
+#: src/EventEdition/RepeatPanel.vala:509
 msgid "Every fourth Thursday"
 msgstr "Kożdy sztworty sztwortek"
 
-#: src/EventEdition/RepeatPanel.vala:513
+#: src/EventEdition/RepeatPanel.vala:512
 msgid "Every fourth Friday"
 msgstr "Kożdy sztworty piōntek"
 
-#: src/EventEdition/RepeatPanel.vala:516
+#: src/EventEdition/RepeatPanel.vala:515
 msgid "Every fourth Saturday"
 msgstr "Kożdo sztworto sobota"
 
-#: src/EventEdition/RepeatPanel.vala:523
+#: src/EventEdition/RepeatPanel.vala:522
 msgid "Every fifth Sunday"
 msgstr "Kożdo piōnto niydziela"
 
-#: src/EventEdition/RepeatPanel.vala:526
+#: src/EventEdition/RepeatPanel.vala:525
 msgid "Every fifth Monday"
 msgstr "Kożdy piōnty pyńdziałek"
 
-#: src/EventEdition/RepeatPanel.vala:529
+#: src/EventEdition/RepeatPanel.vala:528
 msgid "Every fifth Tuesday"
 msgstr "Kożdy piōnty wtorek"
 
-#: src/EventEdition/RepeatPanel.vala:532
+#: src/EventEdition/RepeatPanel.vala:531
 msgid "Every fifth Wednesday"
 msgstr "Kożdo piōnto strzoda"
 
-#: src/EventEdition/RepeatPanel.vala:535
+#: src/EventEdition/RepeatPanel.vala:534
 msgid "Every fifth Thursday"
 msgstr "Kożdy piōnty sztwortek"
 
-#: src/EventEdition/RepeatPanel.vala:538
+#: src/EventEdition/RepeatPanel.vala:537
 msgid "Every fifth Friday"
 msgstr "Kożdy piōnty piōntek"
 
-#: src/EventEdition/RepeatPanel.vala:541
+#: src/EventEdition/RepeatPanel.vala:540
 msgid "Every fifth Saturday"
 msgstr "Kożdo piōnto sobota"
 
@@ -653,15 +653,15 @@ msgstr "Przejdź do dzisiyjszego dnia"
 msgid "Manage Calendars"
 msgstr "Zarzōndzej kalyndorzami"
 
-#: src/Grid/CalendarView.vala:206 src/Widgets/SourcePopover.vala:53
+#: src/Grid/CalendarView.vala:203 src/Widgets/SourcePopover.vala:53
 msgid "Export Calendar…"
 msgstr "Eksportuj kalyndorz…"
 
-#: src/Grid/CalendarView.vala:209 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:206 src/SourceDialog/SourceDialog.vala:282
 msgid "Save"
 msgstr "Spamiyntej"
 
-#: src/Grid/CalendarView.vala:214
+#: src/Grid/CalendarView.vala:211
 msgid "calendar.ics"
 msgstr "kalyndorz.ics"
 
@@ -669,9 +669,10 @@ msgstr "kalyndorz.ics"
 msgid "Show Week Numbers"
 msgstr "Pokazowanie numerōw tydni"
 
-#: src/Grid/VAutoHider.vala:100
-#, c-format
-msgid "%u more…"
+#: src/Grid/VAutoHider.vala:92
+#, fuzzy, c-format
+#| msgid "%u more…"
+msgid "%i more…"
 msgstr "%u wiyncyj…"
 
 #: src/SourceDialog/SourceDialog.vala:56
@@ -692,57 +693,57 @@ msgstr "Miano kalyndorza"
 msgid "Type"
 msgstr "Zorta:"
 
-#: src/SourceDialog/SourceDialog.vala:119
+#: src/SourceDialog/SourceDialog.vala:114
 msgid "Blueberry"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:126
+#: src/SourceDialog/SourceDialog.vala:121
 msgid "Mint"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:133
+#: src/SourceDialog/SourceDialog.vala:128
 msgid "Lime"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:140
+#: src/SourceDialog/SourceDialog.vala:135
 msgid "Banana"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:147
+#: src/SourceDialog/SourceDialog.vala:142
 msgid "Orange"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:154
+#: src/SourceDialog/SourceDialog.vala:149
 msgid "Strawberry"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:161
+#: src/SourceDialog/SourceDialog.vala:156
 msgid "Bubblegum"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:168
+#: src/SourceDialog/SourceDialog.vala:163
 msgid "Grape"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:175
+#: src/SourceDialog/SourceDialog.vala:170
 msgid "Cocoa"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:182
+#: src/SourceDialog/SourceDialog.vala:177
 msgid "Slate"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:203
+#: src/SourceDialog/SourceDialog.vala:198
 #, fuzzy
 #| msgid "Color:"
 msgid "Color"
 msgstr "Farba:"
 
-#: src/SourceDialog/SourceDialog.vala:213
+#: src/SourceDialog/SourceDialog.vala:208
 msgid "Mark as default calendar"
 msgstr "Nasztaluj za wychodny kalyndorz"
 
-#: src/SourceDialog/SourceDialog.vala:278
+#: src/SourceDialog/SourceDialog.vala:277
 msgid "Create Calendar"
 msgstr "Stwōrz kalyndorz"
 
@@ -900,7 +901,7 @@ msgstr "Skasuj zdarzynie"
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:70
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:72
 msgid "Edit…"
 msgstr "Edytuj…"
 
@@ -916,7 +917,7 @@ msgstr "Skasuj zdarzynie"
 msgid "Remove Occurrence"
 msgstr "Skasuj wystympowanie"
 
-#: src/Widgets/EventMenu.vala:41 src/Widgets/SourceRow.vala:65
+#: src/Widgets/EventMenu.vala:41 src/Widgets/SourceRow.vala:67
 msgid "Remove"
 msgstr "Skasuj"
 
@@ -942,19 +943,19 @@ msgstr "Ôbier kalyndorz do zaimportowanio danych"
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:65
+#: src/Widgets/SourceRow.vala:67
 msgid "Not Removable"
 msgstr "Niykasowalny"
 
-#: src/Widgets/SourceRow.vala:70
+#: src/Widgets/SourceRow.vala:72
 msgid "Not Editable"
 msgstr "Niyedytowalny"
 
-#: src/Widgets/SourceRow.vala:84
+#: src/Widgets/SourceRow.vala:86
 msgid "Undo"
 msgstr "Cofnij"
 
-#: src/Widgets/SourceRow.vala:92 src/Widgets/SourceRow.vala:143
+#: src/Widgets/SourceRow.vala:94 src/Widgets/SourceRow.vala:175
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" skasowany"
