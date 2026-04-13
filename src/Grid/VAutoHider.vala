@@ -8,7 +8,6 @@
 
 public class Maya.View.VAutoHider : Gtk.Bin {
     private Gtk.Label more_label;
-    private Gtk.ListBox list_box;
     private GLib.ListStore event_store;
 
     construct {
@@ -22,7 +21,7 @@ public class Maya.View.VAutoHider : Gtk.Bin {
         var list_box = new Gtk.ListBox ();
         list_box.bind_model (event_store, create_widget_func);
 
-        base.add (list_box);
+        child = list_box;
     }
 
     public void append (EventButton event_button) {
@@ -35,13 +34,13 @@ public class Maya.View.VAutoHider : Gtk.Bin {
         queue_resize ();
     }
 
-    public void update (Gtk.Widget widget) {
+    public void update (EventButton widget) {
         uint index = -1;
         if (event_store.find (widget, out index)) {
             event_store.remove (index);
         }
 
-        event_store.insert_sorted (widget, compare_func);
+        append (widget);
     }
 
     public override void size_allocate (Gtk.Allocation allocation) {
