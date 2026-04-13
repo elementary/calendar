@@ -8,26 +8,27 @@
 
 public class Maya.View.VAutoHider : Gtk.Bin {
     private Gtk.Label more_label;
-    private Gtk.ListBox main_box;
+    private Gtk.ListBox list_box;
+    private GLib.ListStore event_store;
 
     construct {
         more_label = new Gtk.Label ("") {
             valign = END
         };
 
-        main_box = new Gtk.ListBox ();
-        main_box.set_sort_func (sort_func);
+        event_store = new GLib.ListStore (typeof (Gtk.Widget));
+        event_store.append (more_label);
 
-        main_box.add (more_label);
+        var list_box = new Gtk.ListBox ();
+        list_box.bind_model (event_store, create_widget_func);
 
-        base.add (main_box);
+        base.add (list_box);
     }
 
-    public override void add (Gtk.Widget widget) {
-        main_box.add (widget);
-        main_box.invalidate_sort ();
+    public void append (EventButton event_button) {
+        event_store.insert_sorted (event_button, compare_func);
 
-        widget.destroy.connect (() => {
+        event_button.destroy.connect (() => {
             queue_resize ();
         });
 
@@ -35,13 +36,19 @@ public class Maya.View.VAutoHider : Gtk.Bin {
     }
 
     public void update (Gtk.Widget widget) {
-        main_box.invalidate_sort ();
+        uint index = -1;
+        if (event_store.find (widget, out index)) {
+            event_store.remove (index);
+        }
+
+        event_store.insert_sorted (widget, compare_func);
     }
 
     public override void size_allocate (Gtk.Allocation allocation) {
         base.size_allocate (allocation);
 
-        if (main_box.get_row_at_index (1) == null) {
+        var children_length = event_store.n_items - 1;
+        if (children_length == 0) {
             more_label.hide ();
             return;
         }
@@ -52,13 +59,11 @@ public class Maya.View.VAutoHider : Gtk.Bin {
         more_label.get_preferred_height (out more_label_height, null);
         more_label.hide ();
 
-        int global_height = allocation.height;
-        int height = 0;
         int shown_children = 0;
-        for (int i = 0; main_box.get_row_at_index (i) != null; i++) {
-            var child = main_box.get_row_at_index (i);
-
-            if (((Gtk.ListBoxRow) child).get_child () == more_label) {
+        int shown_children_height = 0;
+        for (int i = 0; i < event_store.n_items; i++) {
+            var child = (Gtk.Widget) event_store.get_item (i);
+            if (child == more_label) {
                 continue;
             }
 
@@ -66,22 +71,24 @@ public class Maya.View.VAutoHider : Gtk.Bin {
             child.show ();
             child.get_preferred_height (out child_height, null);
 
-            if (global_height - more_label_height < child_height + height) {
-                child.hide ();
-                continue;
+            if (shown_children_height + child_height > allocation.height - more_label_height) {
+                var last = shown_children == children_length - 1;
+                if (!last || shown_children_height + child_height > allocation.height) {
+                    ((Maya.View.EventButton) child).hide_without_animate ();
+                    continue;
+                }
             }
 
-            ((Maya.View.EventButton) ((Gtk.ListBoxRow) child).get_child ()).show_without_animate ();
-            height += child_height;
+            ((Maya.View.EventButton) child).show_without_animate ();
             shown_children++;
+            shown_children_height += child_height;
         }
 
-        var children_length = (int) main_box.get_children ().length () - 1;
-        var more = children_length - shown_children;
-        if (more > 0) {
+        var hidden_children = children_length - shown_children;
+        if (hidden_children > 0) {
             more_label.show ();
+            more_label.label = _("%u more…").printf (hidden_children);
             more_label.vexpand = true;
-            more_label.label = _("%i more…").printf (more);
         }
     }
 
@@ -99,18 +106,22 @@ public class Maya.View.VAutoHider : Gtk.Bin {
             natural_height = minimum_height;
     }
 
-    private static int sort_func (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
-        if (row1.get_child () is Gtk.Label) {
+    private static int compare_func (Object obj1, Object obj2) {
+        if (obj1 is Gtk.Label) {
             return 1;
         }
 
-        if (row2.get_child () is Gtk.Label) {
+        if (obj2 is Gtk.Label) {
             return -1;
         }
 
-        var button_1 = (EventButton) row1.get_child ();
-        var button_2 = (EventButton) row2.get_child ();
+        var button_1 = (EventButton) obj1;
+        var button_2 = (EventButton) obj2;
 
         return Util.compare_events (button_1.comp, button_2.comp);
+    }
+
+    private static Gtk.Widget create_widget_func (Object obj) {
+        return (Gtk.Widget) obj;
     }
 }
