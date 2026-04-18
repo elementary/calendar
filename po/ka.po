@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-02-08 07:55+0000\n"
+"PO-Revision-Date: 2026-04-19 04:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ka/>\n"
@@ -650,10 +650,9 @@ msgid "Show Week Numbers"
 msgstr "გამოაჩინე კვირის ციფრები"
 
 #: src/Grid/VAutoHider.vala:92
-#, fuzzy, c-format
-#| msgid "%u more…"
+#, c-format
 msgid "%i more…"
-msgstr "%u მეტი…"
+msgstr "კიდევ %i…"
 
 #: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
