@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-02-09 13:50+0000\n"
+"PO-Revision-Date: 2026-04-19 04:55+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/es/>\n"
@@ -662,10 +662,9 @@ msgid "Show Week Numbers"
 msgstr "Mostrar números de semanas"
 
 #: src/Grid/VAutoHider.vala:92
-#, fuzzy, c-format
-#| msgid "%u more…"
+#, c-format
 msgid "%i more…"
-msgstr "%u más…"
+msgstr "%i más…"
 
 #: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
