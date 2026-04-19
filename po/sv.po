@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-02-08 07:55+0000\n"
+"PO-Revision-Date: 2026-04-20 06:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/sv/>\n"
@@ -660,10 +660,9 @@ msgid "Show Week Numbers"
 msgstr "Visa veckonummer"
 
 #: src/Grid/VAutoHider.vala:92
-#, fuzzy, c-format
-#| msgid "%u more…"
+#, c-format
 msgid "%i more…"
-msgstr "%u fler…"
+msgstr "%i fler…"
 
 #: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
