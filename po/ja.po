@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-02-06 13:50+0000\n"
+"PO-Revision-Date: 2026-04-24 12:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/ja/>\n"
@@ -653,10 +653,9 @@ msgid "Show Week Numbers"
 msgstr "週番号を表示"
 
 #: src/Grid/VAutoHider.vala:92
-#, fuzzy, c-format
-#| msgid "%u more…"
+#, c-format
 msgid "%i more…"
-msgstr "他 %u 件…"
+msgstr "他 %i 件…"
 
 #: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
