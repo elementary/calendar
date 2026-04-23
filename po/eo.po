@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-06 13:50+0000\n"
+"POT-Creation-Date: 2026-04-13 17:04+0000\n"
 "PO-Revision-Date: 2019-10-28 20:23+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/calendar/"
@@ -154,109 +154,109 @@ msgstr[1] "Eventoj de %d dosieroj estos kunigitaj en ĉi kalendaron:"
 msgid "Import"
 msgstr "Importi"
 
-#: src/EventEdition/EventDialog.vala:64
+#: src/EventEdition/EventDialog.vala:59
 msgid "Add Event"
 msgstr "Aldoni eventon"
 
-#: src/EventEdition/EventDialog.vala:67
+#: src/EventEdition/EventDialog.vala:62
 msgid "Edit Event"
 msgstr "Redakti eventon"
 
-#: src/EventEdition/EventDialog.vala:116
+#: src/EventEdition/EventDialog.vala:111
 msgid "General Informations"
 msgstr "Ĝeneralaj informoj"
 
-#: src/EventEdition/EventDialog.vala:117
+#: src/EventEdition/EventDialog.vala:112
 msgid "Location"
 msgstr "Loko"
 
-#: src/EventEdition/EventDialog.vala:118 src/EventEdition/GuestsPanel.vala:53
+#: src/EventEdition/EventDialog.vala:113 src/EventEdition/GuestsPanel.vala:51
 #, fuzzy
 #| msgid "Invite"
 msgid "Invitees"
 msgstr "Inviti"
 
-#: src/EventEdition/EventDialog.vala:119 src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/EventDialog.vala:114 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
 msgstr "Memorigoj"
 
 #. /Translators: The name of the repeat panel tab
-#: src/EventEdition/EventDialog.vala:121
+#: src/EventEdition/EventDialog.vala:116
 #, fuzzy
 msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Ripeto"
 
-#: src/EventEdition/EventDialog.vala:142
+#: src/EventEdition/EventDialog.vala:137
 #, fuzzy
 #| msgid "Delete Event"
 msgid "Delete Event…"
 msgstr "Forigi Eventon"
 
-#: src/EventEdition/EventDialog.vala:157
+#: src/EventEdition/EventDialog.vala:152
 msgid "Create Event"
 msgstr "Krei Eventon"
 
-#: src/EventEdition/EventDialog.vala:160
+#: src/EventEdition/EventDialog.vala:155
 msgid "Save Changes"
 msgstr "Registri Ŝanĝojn"
 
-#: src/EventEdition/EventDialog.vala:163 src/Grid/CalendarView.vala:210
+#: src/EventEdition/EventDialog.vala:158 src/Grid/CalendarView.vala:207
 #: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
 msgid "Cancel"
 msgstr "Rezigni"
 
-#: src/EventEdition/GuestGrid.vala:63
+#: src/EventEdition/GuestGrid.vala:66
 msgid "Accepted"
 msgstr "Akceptita"
 
-#: src/EventEdition/GuestGrid.vala:67
+#: src/EventEdition/GuestGrid.vala:70
 msgid "Declined"
 msgstr "Malakceptita"
 
-#: src/EventEdition/GuestGrid.vala:71
+#: src/EventEdition/GuestGrid.vala:74
 msgid "Maybe"
 msgstr "Eble"
 
-#: src/EventEdition/GuestsPanel.vala:57
+#: src/EventEdition/GuestsPanel.vala:39
 #, fuzzy
 #| msgid "Invite"
 msgid "No Invitees"
 msgstr "Inviti"
 
-#: src/EventEdition/GuestsPanel.vala:98
+#: src/EventEdition/GuestsPanel.vala:85
 msgid "Invite"
 msgstr "Inviti"
 
-#: src/EventEdition/InfoPanel.vala:80
+#: src/EventEdition/InfoPanel.vala:79
 msgid "From:"
 msgstr "De:"
 
-#: src/EventEdition/InfoPanel.vala:92
+#: src/EventEdition/InfoPanel.vala:91
 msgid "All day:"
 msgstr "Tuttage:"
 
-#: src/EventEdition/InfoPanel.vala:103
+#: src/EventEdition/InfoPanel.vala:102
 msgid "To:"
 msgstr "Al:"
 
-#: src/EventEdition/InfoPanel.vala:111
+#: src/EventEdition/InfoPanel.vala:110
 msgid "Time zone:"
 msgstr ""
 
-#: src/EventEdition/InfoPanel.vala:118
+#: src/EventEdition/InfoPanel.vala:117
 msgid "Name of Event"
 msgstr "Nomo de la evento"
 
-#: src/EventEdition/InfoPanel.vala:121
+#: src/EventEdition/InfoPanel.vala:120
 msgid "Title:"
 msgstr "Titolo:"
 
-#: src/EventEdition/InfoPanel.vala:134
+#: src/EventEdition/InfoPanel.vala:133
 msgid "Press enter to parse event"
 msgstr "Premi la enigan klavon por analizi la eventon"
 
-#: src/EventEdition/InfoPanel.vala:172
+#: src/EventEdition/InfoPanel.vala:171
 msgid "Calendar:"
 msgstr "Kalendaro:"
 
@@ -280,352 +280,352 @@ msgstr "Neniu Memorigo"
 msgid "Add Reminder"
 msgstr "Aldoni Memorigon"
 
-#: src/EventEdition/ReminderPanel.vala:168
+#: src/EventEdition/ReminderPanel.vala:167
 msgid "At time of event"
 msgstr "Je tempo de la evento"
 
-#: src/EventEdition/ReminderPanel.vala:169
+#: src/EventEdition/ReminderPanel.vala:168
 msgid "1 minute before"
 msgstr "1 minuton antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:170
+#: src/EventEdition/ReminderPanel.vala:169
 msgid "5 minutes before"
 msgstr "5 minutojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:171
+#: src/EventEdition/ReminderPanel.vala:170
 msgid "10 minutes before"
 msgstr "10 minutojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:171
 msgid "15 minutes before"
 msgstr "15 minutojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "20 minutes before"
 msgstr "20 minutojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "25 minutes before"
 msgstr "25 minutojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "30 minutes before"
 msgstr "30 minutojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "45 minutes before"
 msgstr "45 minutojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "1 hour before"
 msgstr "1 horon antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "2 hours before"
 msgstr "2 horojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "3 hours before"
 msgstr "3 horojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "12 hours before"
 msgstr "12 horojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:180
 msgid "24 hours before"
 msgstr "24 horojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:181
 msgid "2 days before"
 msgstr "2 tagojn antaŭe"
 
-#: src/EventEdition/ReminderPanel.vala:183
+#: src/EventEdition/ReminderPanel.vala:182
 msgid "1 week before"
 msgstr "1 semajnon antaŭe"
 
-#: src/EventEdition/RepeatPanel.vala:34
+#: src/EventEdition/RepeatPanel.vala:33
 msgid "Repeat:"
 msgstr "Ripeti:"
 
-#: src/EventEdition/RepeatPanel.vala:44
+#: src/EventEdition/RepeatPanel.vala:43
 msgid "Daily"
 msgstr "Tage"
 
-#: src/EventEdition/RepeatPanel.vala:45
+#: src/EventEdition/RepeatPanel.vala:44
 msgid "Weekly"
 msgstr "Semajne"
 
-#: src/EventEdition/RepeatPanel.vala:46
+#: src/EventEdition/RepeatPanel.vala:45
 msgid "Monthly"
 msgstr "Monate"
 
-#: src/EventEdition/RepeatPanel.vala:47
+#: src/EventEdition/RepeatPanel.vala:46
 msgid "Yearly"
 msgstr "Jare"
 
-#: src/EventEdition/RepeatPanel.vala:54
+#: src/EventEdition/RepeatPanel.vala:53
 msgid "Every:"
 msgstr "Ĉiujn:"
 
-#: src/EventEdition/RepeatPanel.vala:60 src/EventEdition/RepeatPanel.vala:258
+#: src/EventEdition/RepeatPanel.vala:59 src/EventEdition/RepeatPanel.vala:257
 msgid "Week"
 msgid_plural "Weeks"
 msgstr[0] "Semajnon"
 msgstr[1] "Semajnojn"
 
-#: src/EventEdition/RepeatPanel.vala:68
+#: src/EventEdition/RepeatPanel.vala:67
 msgid "Ends:"
 msgstr "Ĉesas:"
 
-#: src/EventEdition/RepeatPanel.vala:73
+#: src/EventEdition/RepeatPanel.vala:72
 msgid "Never"
 msgstr "Neniam"
 
-#: src/EventEdition/RepeatPanel.vala:74
+#: src/EventEdition/RepeatPanel.vala:73
 msgid "Until"
 msgstr "Ĝis"
 
-#: src/EventEdition/RepeatPanel.vala:75
+#: src/EventEdition/RepeatPanel.vala:74
 msgid "After"
 msgstr "Post"
 
 #. /Translators: Give a word to describe an event ending after a certain number of repeats.
 #. /This will be displayed in the format like: "Ends After 2 Repeats",
 #. /where this string always represents the last word in the phrase.
-#: src/EventEdition/RepeatPanel.vala:85 src/EventEdition/RepeatPanel.vala:278
+#: src/EventEdition/RepeatPanel.vala:84 src/EventEdition/RepeatPanel.vala:277
 msgid "Repeat"
 msgid_plural "Repeats"
 msgstr[0] "Ripeto"
 msgstr[1] "Ripetoj"
 
-#: src/EventEdition/RepeatPanel.vala:110
+#: src/EventEdition/RepeatPanel.vala:109
 msgid "Mon"
 msgstr "Lun"
 
-#: src/EventEdition/RepeatPanel.vala:111
+#: src/EventEdition/RepeatPanel.vala:110
 msgid "Tue"
 msgstr "Mar"
 
-#: src/EventEdition/RepeatPanel.vala:112
+#: src/EventEdition/RepeatPanel.vala:111
 msgid "Wed"
 msgstr "Mer"
 
-#: src/EventEdition/RepeatPanel.vala:113
+#: src/EventEdition/RepeatPanel.vala:112
 msgid "Thu"
 msgstr "Ĵaŭ"
 
-#: src/EventEdition/RepeatPanel.vala:114
+#: src/EventEdition/RepeatPanel.vala:113
 msgid "Fri"
 msgstr "Ven"
 
-#: src/EventEdition/RepeatPanel.vala:115
+#: src/EventEdition/RepeatPanel.vala:114
 msgid "Sat"
 msgstr "Sab"
 
-#: src/EventEdition/RepeatPanel.vala:116
+#: src/EventEdition/RepeatPanel.vala:115
 msgid "Sun"
 msgstr "Dim"
 
-#: src/EventEdition/RepeatPanel.vala:134
+#: src/EventEdition/RepeatPanel.vala:133
 msgid "The same day every month"
 msgstr "La saman tagon ĉiun monaton"
 
-#: src/EventEdition/RepeatPanel.vala:147
+#: src/EventEdition/RepeatPanel.vala:146
 msgid "Exceptions:"
 msgstr "Esceptoj:"
 
-#: src/EventEdition/RepeatPanel.vala:149
+#: src/EventEdition/RepeatPanel.vala:148
 msgid "No Exceptions"
 msgstr "Neniu Escepto"
 
-#: src/EventEdition/RepeatPanel.vala:165
+#: src/EventEdition/RepeatPanel.vala:164
 msgid "Add Exception"
 msgstr "Aldoni Escepton"
 
-#: src/EventEdition/RepeatPanel.vala:255
+#: src/EventEdition/RepeatPanel.vala:254
 msgid "Day"
 msgid_plural "Days"
 msgstr[0] "Tagon"
 msgstr[1] "Tagojn"
 
-#: src/EventEdition/RepeatPanel.vala:261
+#: src/EventEdition/RepeatPanel.vala:260
 msgid "Month"
 msgid_plural "Months"
 msgstr[0] "Monaton"
 msgstr[1] "Monatojn"
 
-#: src/EventEdition/RepeatPanel.vala:264
+#: src/EventEdition/RepeatPanel.vala:263
 msgid "Year"
 msgid_plural "Years"
 msgstr[0] "Jaron"
 msgstr[1] "Jarojn"
 
-#: src/EventEdition/RepeatPanel.vala:398
+#: src/EventEdition/RepeatPanel.vala:397
 msgid "Every last Sunday"
 msgstr "Ĉiun lastan Dimanĉon"
 
-#: src/EventEdition/RepeatPanel.vala:401
+#: src/EventEdition/RepeatPanel.vala:400
 msgid "Every last Monday"
 msgstr "Ĉiun lastan Lundon"
 
-#: src/EventEdition/RepeatPanel.vala:404
+#: src/EventEdition/RepeatPanel.vala:403
 msgid "Every last Tuesday"
 msgstr "Ĉiun lastan Mardon"
 
-#: src/EventEdition/RepeatPanel.vala:407
+#: src/EventEdition/RepeatPanel.vala:406
 msgid "Every last Wednesday"
 msgstr "Ĉiun lastan Merkredon"
 
-#: src/EventEdition/RepeatPanel.vala:410
+#: src/EventEdition/RepeatPanel.vala:409
 msgid "Every last Thursday"
 msgstr "Ĉiun lastan Ĵaŭdon"
 
-#: src/EventEdition/RepeatPanel.vala:413
+#: src/EventEdition/RepeatPanel.vala:412
 msgid "Every last Friday"
 msgstr "Ĉiun lastan Vendredon"
 
-#: src/EventEdition/RepeatPanel.vala:416
+#: src/EventEdition/RepeatPanel.vala:415
 msgid "Every last Saturday"
 msgstr "Ĉiun lastan Sabaton"
 
-#: src/EventEdition/RepeatPanel.vala:423
+#: src/EventEdition/RepeatPanel.vala:422
 msgid "Every first Sunday"
 msgstr "Ĉiun unuan Dimanĉon"
 
-#: src/EventEdition/RepeatPanel.vala:426
+#: src/EventEdition/RepeatPanel.vala:425
 msgid "Every first Monday"
 msgstr "Ĉiun unuan Lundon"
 
-#: src/EventEdition/RepeatPanel.vala:429
+#: src/EventEdition/RepeatPanel.vala:428
 msgid "Every first Tuesday"
 msgstr "Ĉiun unuan Mardon"
 
-#: src/EventEdition/RepeatPanel.vala:432
+#: src/EventEdition/RepeatPanel.vala:431
 msgid "Every first Wednesday"
 msgstr "Ĉiun unuan Merkredon"
 
-#: src/EventEdition/RepeatPanel.vala:435
+#: src/EventEdition/RepeatPanel.vala:434
 msgid "Every first Thursday"
 msgstr "Ĉiun unuan Ĵaŭdon"
 
-#: src/EventEdition/RepeatPanel.vala:438
+#: src/EventEdition/RepeatPanel.vala:437
 msgid "Every first Friday"
 msgstr "Ĉiun unuan Vendredon"
 
-#: src/EventEdition/RepeatPanel.vala:441
+#: src/EventEdition/RepeatPanel.vala:440
 msgid "Every first Saturday"
 msgstr "Ĉiun unuan Sabaton"
 
-#: src/EventEdition/RepeatPanel.vala:448
+#: src/EventEdition/RepeatPanel.vala:447
 msgid "Every second Sunday"
 msgstr "Ĉiun duan Dimanĉon"
 
-#: src/EventEdition/RepeatPanel.vala:451
+#: src/EventEdition/RepeatPanel.vala:450
 msgid "Every second Monday"
 msgstr "Ĉiun duan Lundon"
 
-#: src/EventEdition/RepeatPanel.vala:454
+#: src/EventEdition/RepeatPanel.vala:453
 msgid "Every second Tuesday"
 msgstr "Ĉiun duan Mardon"
 
-#: src/EventEdition/RepeatPanel.vala:457
+#: src/EventEdition/RepeatPanel.vala:456
 msgid "Every second Wednesday"
 msgstr "Ĉiun duan Merkredon"
 
-#: src/EventEdition/RepeatPanel.vala:460
+#: src/EventEdition/RepeatPanel.vala:459
 msgid "Every second Thursday"
 msgstr "Ĉiun duan Ĵaŭdon"
 
-#: src/EventEdition/RepeatPanel.vala:463
+#: src/EventEdition/RepeatPanel.vala:462
 msgid "Every second Friday"
 msgstr "Ĉiun duan Vendredon"
 
-#: src/EventEdition/RepeatPanel.vala:466
+#: src/EventEdition/RepeatPanel.vala:465
 msgid "Every second Saturday"
 msgstr "Ĉiun duan Sabaton"
 
-#: src/EventEdition/RepeatPanel.vala:473
+#: src/EventEdition/RepeatPanel.vala:472
 msgid "Every third Sunday"
 msgstr "Ĉiun trian Dimanĉon"
 
-#: src/EventEdition/RepeatPanel.vala:476
+#: src/EventEdition/RepeatPanel.vala:475
 msgid "Every third Monday"
 msgstr "Ĉiun trian Lundon"
 
-#: src/EventEdition/RepeatPanel.vala:479
+#: src/EventEdition/RepeatPanel.vala:478
 msgid "Every third Tuesday"
 msgstr "Ĉiun trian Mardon"
 
-#: src/EventEdition/RepeatPanel.vala:482
+#: src/EventEdition/RepeatPanel.vala:481
 msgid "Every third Wednesday"
 msgstr "Ĉiun trian Merkredon"
 
-#: src/EventEdition/RepeatPanel.vala:485
+#: src/EventEdition/RepeatPanel.vala:484
 msgid "Every third Thursday"
 msgstr "Ĉiun trian Ĵaŭdon"
 
-#: src/EventEdition/RepeatPanel.vala:488
+#: src/EventEdition/RepeatPanel.vala:487
 msgid "Every third Friday"
 msgstr "Ĉiun trian Vendredon"
 
-#: src/EventEdition/RepeatPanel.vala:491
+#: src/EventEdition/RepeatPanel.vala:490
 msgid "Every third Saturday"
 msgstr "Ĉiun trian Sabaton"
 
-#: src/EventEdition/RepeatPanel.vala:498
+#: src/EventEdition/RepeatPanel.vala:497
 msgid "Every fourth Sunday"
 msgstr "Ĉiun kvaran Dimanĉon"
 
-#: src/EventEdition/RepeatPanel.vala:501
+#: src/EventEdition/RepeatPanel.vala:500
 msgid "Every fourth Monday"
 msgstr "Ĉiun kvaran Lundon"
 
-#: src/EventEdition/RepeatPanel.vala:504
+#: src/EventEdition/RepeatPanel.vala:503
 msgid "Every fourth Tuesday"
 msgstr "Ĉiun kvaran Mardon"
 
-#: src/EventEdition/RepeatPanel.vala:507
+#: src/EventEdition/RepeatPanel.vala:506
 msgid "Every fourth Wednesday"
 msgstr "Ĉiun kvaran Merkredon"
 
-#: src/EventEdition/RepeatPanel.vala:510
+#: src/EventEdition/RepeatPanel.vala:509
 msgid "Every fourth Thursday"
 msgstr "Ĉiun kvaran Ĵaŭdon"
 
-#: src/EventEdition/RepeatPanel.vala:513
+#: src/EventEdition/RepeatPanel.vala:512
 msgid "Every fourth Friday"
 msgstr "Ĉiun kvaran Vendredon"
 
-#: src/EventEdition/RepeatPanel.vala:516
+#: src/EventEdition/RepeatPanel.vala:515
 msgid "Every fourth Saturday"
 msgstr "Ĉiun kvaran Sabaton"
 
-#: src/EventEdition/RepeatPanel.vala:523
+#: src/EventEdition/RepeatPanel.vala:522
 msgid "Every fifth Sunday"
 msgstr "Ĉiun kvinan Dimanĉon"
 
-#: src/EventEdition/RepeatPanel.vala:526
+#: src/EventEdition/RepeatPanel.vala:525
 msgid "Every fifth Monday"
 msgstr "Ĉiun kvinan Lundon"
 
-#: src/EventEdition/RepeatPanel.vala:529
+#: src/EventEdition/RepeatPanel.vala:528
 msgid "Every fifth Tuesday"
 msgstr "Ĉiun kvinan Mardon"
 
-#: src/EventEdition/RepeatPanel.vala:532
+#: src/EventEdition/RepeatPanel.vala:531
 msgid "Every fifth Wednesday"
 msgstr "Ĉiun kvinan Merkredon"
 
-#: src/EventEdition/RepeatPanel.vala:535
+#: src/EventEdition/RepeatPanel.vala:534
 msgid "Every fifth Thursday"
 msgstr "Ĉiun kvinan Ĵaŭdon"
 
-#: src/EventEdition/RepeatPanel.vala:538
+#: src/EventEdition/RepeatPanel.vala:537
 msgid "Every fifth Friday"
 msgstr "Ĉiun kvinan Vendredon"
 
-#: src/EventEdition/RepeatPanel.vala:541
+#: src/EventEdition/RepeatPanel.vala:540
 msgid "Every fifth Saturday"
 msgstr "Ĉiun kvinan Sabaton"
 
@@ -651,15 +651,15 @@ msgstr "Hodiaŭen"
 msgid "Manage Calendars"
 msgstr "Mastrumi Kalendarojn"
 
-#: src/Grid/CalendarView.vala:206 src/Widgets/SourcePopover.vala:53
+#: src/Grid/CalendarView.vala:203 src/Widgets/SourcePopover.vala:53
 msgid "Export Calendar…"
 msgstr "Eksporti Kalendaron…"
 
-#: src/Grid/CalendarView.vala:209 src/SourceDialog/SourceDialog.vala:283
+#: src/Grid/CalendarView.vala:206 src/SourceDialog/SourceDialog.vala:282
 msgid "Save"
 msgstr "Konservi"
 
-#: src/Grid/CalendarView.vala:214
+#: src/Grid/CalendarView.vala:211
 msgid "calendar.ics"
 msgstr "kalendaro.ics"
 
@@ -667,9 +667,10 @@ msgstr "kalendaro.ics"
 msgid "Show Week Numbers"
 msgstr "Montri Semajnajn Numerojn"
 
-#: src/Grid/VAutoHider.vala:100
-#, c-format
-msgid "%u more…"
+#: src/Grid/VAutoHider.vala:92
+#, fuzzy, c-format
+#| msgid "%u more…"
+msgid "%i more…"
 msgstr "%u pli…"
 
 #: src/SourceDialog/SourceDialog.vala:56
@@ -690,57 +691,57 @@ msgstr "Kalendara Nomo"
 msgid "Type"
 msgstr "Tipo:"
 
-#: src/SourceDialog/SourceDialog.vala:119
+#: src/SourceDialog/SourceDialog.vala:114
 msgid "Blueberry"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:126
+#: src/SourceDialog/SourceDialog.vala:121
 msgid "Mint"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:133
+#: src/SourceDialog/SourceDialog.vala:128
 msgid "Lime"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:140
+#: src/SourceDialog/SourceDialog.vala:135
 msgid "Banana"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:147
+#: src/SourceDialog/SourceDialog.vala:142
 msgid "Orange"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:154
+#: src/SourceDialog/SourceDialog.vala:149
 msgid "Strawberry"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:161
+#: src/SourceDialog/SourceDialog.vala:156
 msgid "Bubblegum"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:168
+#: src/SourceDialog/SourceDialog.vala:163
 msgid "Grape"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:175
+#: src/SourceDialog/SourceDialog.vala:170
 msgid "Cocoa"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:182
+#: src/SourceDialog/SourceDialog.vala:177
 msgid "Slate"
 msgstr ""
 
-#: src/SourceDialog/SourceDialog.vala:203
+#: src/SourceDialog/SourceDialog.vala:198
 #, fuzzy
 #| msgid "Color:"
 msgid "Color"
 msgstr "Koloro:"
 
-#: src/SourceDialog/SourceDialog.vala:213
+#: src/SourceDialog/SourceDialog.vala:208
 msgid "Mark as default calendar"
 msgstr "Difini kiel aprioran kalendaron"
 
-#: src/SourceDialog/SourceDialog.vala:278
+#: src/SourceDialog/SourceDialog.vala:277
 msgid "Create Calendar"
 msgstr "Krei Kalendaron"
 
@@ -900,7 +901,7 @@ msgstr "Forigi Eventon"
 msgid "This event will be permanently deleted."
 msgstr ""
 
-#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:70
+#: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:72
 msgid "Edit…"
 msgstr "Redakti…"
 
@@ -916,7 +917,7 @@ msgstr "Forigi Eventon"
 msgid "Remove Occurrence"
 msgstr "Forigi la Elementon"
 
-#: src/Widgets/EventMenu.vala:41 src/Widgets/SourceRow.vala:65
+#: src/Widgets/EventMenu.vala:41 src/Widgets/SourceRow.vala:67
 msgid "Remove"
 msgstr "Forigi"
 
@@ -942,19 +943,19 @@ msgstr "Elekti kalendaron en kiu importi"
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/SourceRow.vala:65
+#: src/Widgets/SourceRow.vala:67
 msgid "Not Removable"
 msgstr "Neforigebla"
 
-#: src/Widgets/SourceRow.vala:70
+#: src/Widgets/SourceRow.vala:72
 msgid "Not Editable"
 msgstr "Neredaktebla"
 
-#: src/Widgets/SourceRow.vala:84
+#: src/Widgets/SourceRow.vala:86
 msgid "Undo"
 msgstr "Malfari"
 
-#: src/Widgets/SourceRow.vala:92 src/Widgets/SourceRow.vala:143
+#: src/Widgets/SourceRow.vala:94 src/Widgets/SourceRow.vala:175
 #, c-format
 msgid "\"%s\" removed"
 msgstr "„%s“ estis forigita"

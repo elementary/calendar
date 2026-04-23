@@ -109,8 +109,10 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
                     need_relocation = false;
                     point.latitude = latitude;
                     point.longitude = longitude;
-                    if (latitude == 0 && longitude == 0)
+                    if (latitude == 0 && longitude == 0) {
                         need_relocation = true;
+                    }
+
                 }
             }
 
@@ -165,8 +167,10 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
     }
 
     private async void compute_location (string loc) {
-        if (search_cancellable != null)
+        if (search_cancellable != null) {
             search_cancellable.cancel ();
+        }
+
         search_cancellable = new GLib.Cancellable ();
         var forward = new Geocode.Forward.for_string (loc);
         try {
@@ -176,16 +180,19 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
                 point.latitude = place.location.latitude;
                 point.longitude = place.location.longitude;
                 Idle.add (() => {
-                    if (search_cancellable.is_cancelled () == false)
+                    if (search_cancellable.is_cancelled () == false) {
                         champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
+                    }
+
                     return false;
                 });
             }
 
-            if (loc == location_entry.text)
+            if (loc == location_entry.text) {
                 map_selected = true;
+            }
 
-            location_entry.has_focus = true;
+            location_entry.grab_focus ();
         } catch (Error error) {
             debug (error.message);
         }
@@ -203,8 +210,10 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
             point.latitude = simple.location.latitude;
             point.longitude = simple.location.longitude;
             Idle.add (() => {
-                if (search_cancellable.is_cancelled () == false)
+                if (search_cancellable.is_cancelled () == false) {
                     champlain_embed.champlain_view.go_to (point.latitude, point.longitude);
+                }
+
                 return false;
             });
 
