@@ -1,7 +1,7 @@
 Source: maya-calendar
 Section: utils
 Priority: optional
-Maintainer: elementary, Inc. <builds@elementary.io>
+Maintainer: elementary <builds@elementary.io>
 Build-Depends: debhelper (>= 10.5.1),
                libchamplain-0.12-dev,
                libchamplain-gtk-0.12-dev,
