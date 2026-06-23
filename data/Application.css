@@ -69,6 +69,10 @@
     margin: 3px;
 }
 
+.cell list {
+    background: inherit;
+}
+
 .event {
     background: @selected_bg_color;
     border-radius: 3px;

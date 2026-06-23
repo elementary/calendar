@@ -122,7 +122,7 @@ public class Maya.View.GridDay : Gtk.EventBox {
             button.unparent ();
         }
 
-        event_box.add (button);
+        event_box.append (button);
         button.show_all ();
     }
 
