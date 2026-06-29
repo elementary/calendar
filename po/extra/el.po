@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-06-28 15:56+0000\n"
+"PO-Revision-Date: 2026-06-29 01:51+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/calendar/extra/"
 "el/>\n"
@@ -78,7 +78,7 @@ msgstr ""
 
 #: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
-msgstr ""
+msgstr "Διορθώσεις:"
 
 #: data/calendar.metainfo.xml.in:125
 msgid ""
