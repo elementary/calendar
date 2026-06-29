@@ -8,9 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2025-12-11 20:55+0000\n"
-"Last-Translator: Orionas Kakomoiroglou "
-"<209243298+OrionasKakomoiroglou@users.noreply.github.com>\n"
+"PO-Revision-Date: 2026-06-29 01:51+0000\n"
+"Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/el/>\n"
 "Language: el\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-01-22 05:35+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -204,10 +203,12 @@ msgid "Cancel"
 msgstr "Ακύρωση"
 
 #: src/EventEdition/GuestGrid.vala:66
+#, fuzzy
 msgid "Accepted"
 msgstr "Αποδέχτηκε"
 
 #: src/EventEdition/GuestGrid.vala:70
+#, fuzzy
 msgid "Declined"
 msgstr "Απορρίφθηκε"
 
@@ -235,7 +236,7 @@ msgstr "Όλη την ημέρα:"
 
 #: src/EventEdition/InfoPanel.vala:102
 msgid "To:"
-msgstr "Προς:"
+msgstr "Έως:"
 
 #: src/EventEdition/InfoPanel.vala:110
 msgid "Time zone:"
@@ -658,17 +659,16 @@ msgstr "Αποθήκευση"
 
 #: src/Grid/CalendarView.vala:211
 msgid "calendar.ics"
-msgstr "ημερολόγιο.ics"
+msgstr "calendar.ics"
 
 #: src/Grid/WeekLabels.vala:69 src/Grid/Header.vala:77
 msgid "Show Week Numbers"
 msgstr "Εμφάνιση αριθμών εβδομάδας"
 
 #: src/Grid/VAutoHider.vala:92
-#, fuzzy, c-format
-#| msgid "%u more…"
+#, c-format
 msgid "%i more…"
-msgstr "%u περισσότερα…"
+msgstr "%i ακόμη…"
 
 #: src/SourceDialog/SourceDialog.vala:56
 msgid "Create"
@@ -803,21 +803,20 @@ msgstr "γάμος"
 #, c-format
 msgctxt "date-range"
 msgid "%s–%s"
-msgstr ""
+msgstr "%s–%s"
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM–Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:357
-#, fuzzy, c-format
-#| msgid "%s, %s – %s, %s"
+#, c-format
 msgid "%s, %s–%s, %s"
-msgstr "Από %s στις %s έως %s στις %s"
+msgstr "%s, %s–%s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM–9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:372
 #, c-format
 msgctxt "time-range"
 msgid "%s–%s"
-msgstr ""
+msgstr "%s–%s"
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
 #: src/Widgets/AgendaEventRow.vala:381
@@ -827,22 +826,21 @@ msgstr "%s στις %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM–9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:385
-#, fuzzy, c-format
-#| msgid "%s, %s – %s"
+#, c-format
 msgid "%s, %s–%s"
-msgstr "%s στις %s - %s στις %s"
+msgstr "%s, %s–%s"
 
 #: src/Widgets/CalendarChooser.vala:53
 msgid "Search Calendars"
-msgstr "Αναζήτηση Ημερολογίων"
+msgstr "Αναζήτηση ημερολογίων"
 
 #: src/Widgets/CalendarChooser.vala:57
 msgid "No Results"
-msgstr "Δεν βρέθηκαν αποτελέσματα"
+msgstr "Κανένα αποτέλεσμα"
 
 #: src/Widgets/CalendarChooser.vala:58
 msgid "Try changing search terms."
-msgstr ""
+msgstr "Δοκιμάστε να αλλάξετε τους όρους αναζήτησης."
 
 #: src/Widgets/DeleteDialog.vala:22
 #, fuzzy
@@ -897,7 +895,7 @@ msgstr "Το γεγονός αυτό δεν γίνεται να επαξεργα
 
 #: src/Widgets/EventMenu.vala:34 src/Widgets/SourceRow.vala:72
 msgid "Edit…"
-msgstr "Επεξεργασία..."
+msgstr "Επεξεργασία…"
 
 #: src/Widgets/EventMenu.vala:35
 msgid "Duplicate…"
@@ -918,16 +916,15 @@ msgstr "Αφαίρεση"
 
 #: src/Widgets/SourcePopover.vala:44
 msgid "Add New Calendar…"
-msgstr "Προσθήκη Νέου Ημερολογίου..."
+msgstr "Προσθήκη νέου ημερολογίου…"
 
 #: src/Widgets/SourcePopover.vala:48
-#, fuzzy
 msgid "Import iCalendar File…"
-msgstr "Εξαγωγή Ημερολογίου..."
+msgstr "Εισαγωγή αρχείου iCalendar…"
 
 #: src/Widgets/SourcePopover.vala:57
 msgid "Online Accounts Settings…"
-msgstr ""
+msgstr "Ρυθμίσεις διαδικτυακών λογαριασμών…"
 
 #: src/Widgets/SourcePopover.vala:85
 #, fuzzy
@@ -936,7 +933,7 @@ msgstr "Επιλέξτε τα προς εμφάνιση ημερολόγια"
 
 #: src/Widgets/SourcePopover.vala:88
 msgid "Open"
-msgstr ""
+msgstr "Άνοιγμα"
 
 #: src/Widgets/SourceRow.vala:67
 #, fuzzy
