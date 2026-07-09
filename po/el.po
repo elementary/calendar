@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-06-29 01:51+0000\n"
+"PO-Revision-Date: 2026-07-10 15:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/el/>\n"
@@ -639,7 +639,7 @@ msgstr ""
 
 #: src/Grid/CalendarView.vala:77
 msgid "Network Settings…"
-msgstr ""
+msgstr "Ρυθμίσεις δικτύου…"
 
 #: src/Grid/CalendarView.vala:86
 msgid "Go to today's date"
@@ -949,9 +949,9 @@ msgid "Undo"
 msgstr "Αναίρεση"
 
 #: src/Widgets/SourceRow.vala:94 src/Widgets/SourceRow.vala:175
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" removed"
-msgstr "Το ημερολόγιο \"%s\" αφαιρέθηκε."
+msgstr "Το «%s» αφαιρέθηκε"
 
 #~ msgid "Calendar"
 #~ msgstr "Ημερολόγιο"
