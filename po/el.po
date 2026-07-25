@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-07-10 15:01+0000\n"
+"PO-Revision-Date: 2026-07-25 23:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/el/>\n"
@@ -26,7 +26,7 @@ msgstr "Σε αυτόν τον υπολογιστή"
 
 #: core/Backends/PlacementWidget.vala:26
 msgid "user.name"
-msgstr "onoma.christi"
+msgstr "όνομα_χρήστη"
 
 #: core/Backends/PlacementWidget.vala:33
 msgid "User Name"
@@ -129,9 +129,9 @@ msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
 msgstr ""
-"Το ημερολόγιο θα εκκινείται αυτόματα κατά την έναρξη της συσκευής και θα "
-"εκτελείται ακόμη και όταν το παράθυρό είναι κλειστό για να στέλνει "
-"ειδοποιήσεις για γεγονότα."
+"Η εφαρμογή «Ημερολόγιο» εκκινεί αυτόματα κατά την ενεργοποίηση της συσκευής "
+"και εκτελείται ακόμη κι όταν είναι κλειστό το παράθυρό της, ώστε να μπορεί "
+"να στέλνει ειδοποιήσεις."
 
 #: src/ImportDialog.vala:28
 msgid "Select a Calendar to Import Into"
