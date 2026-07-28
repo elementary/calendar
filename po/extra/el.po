@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-07-25 23:01+0000\n"
+"PO-Revision-Date: 2026-07-29 12:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/calendar/extra/"
 "el/>\n"
@@ -47,7 +47,7 @@ msgstr "Μικρές ενημερώσεις:"
 
 #: data/calendar.metainfo.xml.in:62
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "Βελτίωση της υποστήριξης για εφαρμογές ανάγνωσης οθόνης"
 
 #: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
@@ -57,7 +57,7 @@ msgstr "Ενημερωμένες μεταφράσεις"
 
 #: data/calendar.metainfo.xml.in:72
 msgid "New flatter design"
-msgstr ""
+msgstr "Νέα, πιο επίπεδη σχεδίαση"
 
 #: data/calendar.metainfo.xml.in:110
 msgid "Updated app icon"
