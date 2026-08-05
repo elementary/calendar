@@ -1,3 +1,9 @@
+maya-calendar (8.0.2) jammy; urgency=medium
+
+  * Release 8.0.2 (#952)
+
+ -- elementary <builds@elementary.io>  Wed, 05 Aug 2026 11:53:01 +0000
+
 maya-calendar (8.0.1) jammy; urgency=medium
 
   * Release 8.0.1 (#867)
