@@ -65,8 +65,8 @@
         </ul>
       </description>
       <issues>
-        <issue url="https://github.com/elementary/calendar/issues/494">Insufficient space for list of exceptions - popover and additional exceptions do not show</issue>      
-        <issue url="https://github.com/elementary/calendar/issues/540">Although the location service is deactivated, Calendar locates me in Paris</issue>      
+        <issue url="https://github.com/elementary/calendar/issues/494">Insufficient space for list of exceptions - popover and additional exceptions do not show</issue>
+        <issue url="https://github.com/elementary/calendar/issues/540">Although the location service is deactivated, Calendar locates me in Paris</issue>
         <issue url="https://github.com/elementary/calendar/issues/542">Participant tab in event creation has "Guests" tooltip</issue>
         <issue url="https://github.com/elementary/calendar/issues/688">The text from the calendar manager is cut off, depending on the size of the root window (the calendar window)</issue>
         <issue url="https://github.com/elementary/calendar/issues/698">Add keyboard shortcuts to move month pages</issue>
