@@ -7,10 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-06 13:50+0000\n"
-"PO-Revision-Date: 2025-12-11 20:55+0000\n"
-"Last-Translator: Orionas Kakomoiroglou "
-"<209243298+OrionasKakomoiroglou@users.noreply.github.com>\n"
+"POT-Creation-Date: 2026-04-13 17:04+0000\n"
+"PO-Revision-Date: 2026-07-29 12:01+0000\n"
+"Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/calendar/extra/"
 "el/>\n"
 "Language: el\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-01-23 05:58+0000\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
@@ -38,35 +37,35 @@ msgstr ""
 
 #: data/calendar.metainfo.xml.in:52
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
 #: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
 #: data/calendar.metainfo.xml.in:108
 msgid "Minor Updates:"
-msgstr ""
+msgstr "Μικρές ενημερώσεις:"
 
 #: data/calendar.metainfo.xml.in:62
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "Βελτίωση της υποστήριξης για εφαρμογές ανάγνωσης οθόνης"
 
 #: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
 #: data/calendar.metainfo.xml.in:111
 msgid "Updated translations"
-msgstr ""
+msgstr "Ενημερωμένες μεταφράσεις"
 
 #: data/calendar.metainfo.xml.in:72
 msgid "New flatter design"
-msgstr ""
+msgstr "Νέα, πιο επίπεδη σχεδίαση"
 
 #: data/calendar.metainfo.xml.in:110
 msgid "Updated app icon"
-msgstr ""
+msgstr "Ενημερωμένο εικονίδιο εφαρμογής"
 
 #: data/calendar.metainfo.xml.in:118
 msgid "Features:"
-msgstr ""
+msgstr "Λειτουργίες:"
 
 #: data/calendar.metainfo.xml.in:120
 msgid "Ask for confirmation before deleting events"
@@ -79,7 +78,7 @@ msgstr ""
 
 #: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
-msgstr ""
+msgstr "Διορθώσεις:"
 
 #: data/calendar.metainfo.xml.in:125
 msgid ""
@@ -98,6 +97,7 @@ msgstr ""
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr ""
+"Ατζέντα;Ημερολόγιο;Ημερομηνίες;Ημέρες;Εκδηλώσεις;Γεγονότα;Συμβάντα;Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
