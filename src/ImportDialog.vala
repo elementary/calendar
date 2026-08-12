@@ -56,6 +56,7 @@ public class Maya.View.ImportDialog : Granite.MessageDialog {
             child = calchooser
         };
         frame.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        frame.show ();
 
         custom_bin.add (frame);
 
