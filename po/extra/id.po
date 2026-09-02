@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
 "PO-Revision-Date: 2026-09-02 06:59+0000\n"
-"Last-Translator: Chairul Akmal <chairulakmal@protonmail.com>\n"
+"Last-Translator: \"@sandalian\" <yenisetiawan@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementaryos.org/projects/calendar/"
 "extra/id/>\n"
 "Language: id\n"
@@ -59,7 +59,7 @@ msgstr "Terjemahan yang diperbarui"
 
 #: data/calendar.metainfo.xml.in:72
 msgid "New flatter design"
-msgstr ""
+msgstr "Desain baru yang lebih rata"
 
 #: data/calendar.metainfo.xml.in:110
 msgid "Updated app icon"
