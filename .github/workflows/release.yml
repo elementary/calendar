@@ -16,7 +16,7 @@ jobs:
 
      steps:
        - name: Checkout
-         uses: actions/checkout@v6
+         uses: actions/checkout@v7
 
        - name: Release
          uses: elementary/actions/release@main
@@ -49,10 +49,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Build
-        uses: flatpak/flatpak-github-actions/flatpak-builder@v6.6
+        uses: flatpak/flatpak-github-actions/flatpak-builder@v6.7
         with:
           bundle: calendar.flatpak
           manifest-path: io.elementary.calendar.yml
@@ -64,7 +64,7 @@ jobs:
           arch: ${{ matrix.configuration.arch }}
 
       - name: Deploy
-        uses: flatpak/flatpak-github-actions/flat-manager@v6.6
+        uses: flatpak/flatpak-github-actions/flat-manager@v6.7
         with:
           repository: appcenter
           flat-manager-url: https://flatpak-api.elementary.io

@@ -52,57 +52,44 @@ public class Maya.View.VAutoHider : Granite.Bin {
     public override void size_allocate (int width, int height, int baseline) {
         base.size_allocate (width, height, baseline);
 
-        int children_length = (int) children.length ();
-        if (children_length == 0) {
+        if (children.length () == 0) {
             more_label.hide ();
             return;
         }
 
-
-
         more_label.show ();
         more_label.vexpand = false;
         var more_label_height = more_label.get_height ();
-        more_label.vexpand = true;
         more_label.hide ();
 
-        int internal_height = 0;
         int shown_children = 0;
+        int shown_children_height = 0;
         foreach (var child in children) {
-            if (child == more_label)
+            if (child == more_label) {
                 continue;
-
-            bool last = (shown_children == children_length - 1);
+            }
 
             child.show ();
             var child_height = child.get_height ();
-            ((Maya.View.EventButton) child).hide_without_animate ();
 
-            bool should_hide;
-            if (height - more_label_height < child_height + internal_height) {
-                should_hide = true;
-                if (last && (height >= child_height + internal_height)) {
-                    should_hide = false;
+            if (shown_children_height + child_height > get_height () - more_label_height) {
+                var last = shown_children == children.length () - 1;
+                if (!last || shown_children_height + child_height > get_height ()) {
+                    ((Maya.View.EventButton) child).hide_without_animate ();
+                    continue;
                 }
-            } else {
-                should_hide = false;
-                internal_height += child_height;
             }
 
-            if (should_hide) {
-                ((Maya.View.EventButton) child).hide_without_animate ();
-            } else {
-                ((Maya.View.EventButton) child).show_without_animate ();
-                shown_children++;
-            }
+            ((Maya.View.EventButton) child).show_without_animate ();
+            shown_children++;
+            shown_children_height += child_height;
         }
 
-        int more = children_length - shown_children;
-        if (shown_children != children_length && more > 0) {
+        var hidden_children = children.length () - shown_children;
+        if (hidden_children > 0) {
             more_label.show ();
-            more_label.set_label (_("%u more…").printf ((uint)more));
-        } else {
-            more_label.hide ();
+            more_label.label = _("%u more…").printf (hidden_children);
+            more_label.vexpand = true;
         }
     }
 

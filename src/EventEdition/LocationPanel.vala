@@ -123,8 +123,10 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
                     need_relocation = false;
                     point.latitude = latitude;
                     point.longitude = longitude;
-                    if (latitude == 0 && longitude == 0)
+                    if (latitude == 0 && longitude == 0) {
                         need_relocation = true;
+                    }
+
                 }
             }
 
@@ -233,7 +235,7 @@ public class Maya.View.EventEdition.LocationPanel : Gtk.Box {
                 add_address_line (builder, address.country);
             }
 
-            location_entry.text = builder.str;
+            location_entry.grab_focus ();
         } catch (Error error) {
             debug (error.message);
         }
