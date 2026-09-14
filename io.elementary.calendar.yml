@@ -39,18 +39,16 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DCMAKE_INSTALL_LIBDIR=/app/lib
-      - -DBUILD_SHARED_LIBS=ON
-      - -DICAL_GLIB=true
-      - -DICAL_GLIB_VAPI=true
-      - -DGOBJECT_INTROSPECTION=true
-      - -DICAL_BUILD_DOCS=false
-      - -DWITH_CXX_BINDINGS=false
-      - -DSHARED_ONLY=true
+      - -DLIBICAL_CXX_BINDINGS=false
+      - -DLIBICAL_JAVA_BINDINGS=false
+      - -DLIBICAL_GOBJECT_INTROSPECTION=true
+      - -DLIBICAL_BUILD_DOCS=false
+      - -DLIBICAL_GLIB_VAPI=true
       - -DLIBICAL_BUILD_TESTING=false
     sources:
-      - type: git
-        url: https://github.com/libical/libical.git
-        tag: v3.0.9
+      - type: archive
+        url: https://github.com/libical/libical/releases/download/v4.0.5/libical-4.0.5.tar.gz
+        sha256: cc09a3ac41d60e6144e644bd3fcf97d47106d659c4a0b8965102581401e67c9c
 
   - name: evolution-data-server
     buildsystem: cmake-ninja
