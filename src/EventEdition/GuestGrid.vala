@@ -14,7 +14,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
 
     private Gtk.Label mail_label;
     private Gtk.Label name_label;
-    private Hdy.Avatar avatar;
+    private Adw.Avatar avatar;
 
     public GuestGrid (ICal.Property attendee) {
         Object (attendee: attendee.clone ());
@@ -24,7 +24,7 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
         var status_label = new Gtk.Label ("") {
             justify = RIGHT
         };
-        status_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+        status_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var mail = attendee.get_attendee ().replace ("mailto:", "");
 
@@ -39,12 +39,12 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
             xalign = 0
         };
 
-        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", BUTTON) {
-            relief = NONE,
+        var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
+            has_frame = false,
             valign = CENTER
         };
 
-        avatar = new Hdy.Avatar (ICON_SIZE, name_label.label, true);
+        avatar = new Adw.Avatar (ICON_SIZE, name_label.label, true);
 
         column_spacing = 12;
         margin_top = 6;
@@ -64,15 +64,15 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
             switch (parameter.get_partstat ()) {
                 case ICal.ParameterPartstat.ACCEPTED:
                     status_label.label = _("Accepted");
-                    status_label.get_style_context ().add_class ("success");
+                    status_label.add_css_class (Granite.CssClass.SUCCESS);
                     break;
                 case ICal.ParameterPartstat.DECLINED:
                     status_label.label = _("Declined");
-                    status_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+                    status_label.add_css_class (Granite.CssClass.ERROR);
                     break;
                 case ICal.ParameterPartstat.TENTATIVE:
                     status_label.label = _("Maybe");
-                    status_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+                    status_label.add_css_class (Granite.CssClass.WARNING);
                     break;
                 default:
                     break;
@@ -117,7 +117,17 @@ public class Maya.View.EventEdition.GuestGrid : Gtk.Grid {
                 avatar.text = individual.display_name;
 
                 if (individual.avatar != null) {
-                    avatar.set_loadable_icon (individual.avatar);
+                    try {
+                        individual.avatar.load (ICON_SIZE, null);
+                        var avatar_image = new Gtk.Image.from_file (individual.avatar.to_string ()) {
+                            width_request = avatar.size,
+                            height_request = avatar.size
+                        };
+
+                        avatar.set_custom_image (new Gtk.WidgetPaintable (avatar_image));
+                    } catch (Error e) {
+                        critical (e.message);
+                    }
                 }
 
                 if (individual.full_name != null && individual.full_name != "") {

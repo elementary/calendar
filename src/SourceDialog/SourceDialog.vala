@@ -34,17 +34,17 @@ public class Maya.View.SourceDialog : Granite.Dialog {
     private Gtk.CheckButton is_default_check;
     private E.Source source = null;
 
-    private Gtk.RadioButton color_button_blue;
-    private Gtk.RadioButton color_button_mint;
-    private Gtk.RadioButton color_button_green;
-    private Gtk.RadioButton color_button_yellow;
-    private Gtk.RadioButton color_button_orange;
-    private Gtk.RadioButton color_button_red;
-    private Gtk.RadioButton color_button_pink;
-    private Gtk.RadioButton color_button_purple;
-    private Gtk.RadioButton color_button_brown;
-    private Gtk.RadioButton color_button_slate;
-    private Gtk.RadioButton color_button_none;
+    private Gtk.CheckButton color_button_blue;
+    private Gtk.CheckButton color_button_mint;
+    private Gtk.CheckButton color_button_green;
+    private Gtk.CheckButton color_button_yellow;
+    private Gtk.CheckButton color_button_orange;
+    private Gtk.CheckButton color_button_red;
+    private Gtk.CheckButton color_button_pink;
+    private Gtk.CheckButton color_button_purple;
+    private Gtk.CheckButton color_button_brown;
+    private Gtk.CheckButton color_button_slate;
+    private Gtk.CheckButton color_button_none;
 
     public signal void go_back ();
 
@@ -70,8 +70,8 @@ public class Maya.View.SourceDialog : Granite.Dialog {
         var name_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 12
         };
-        name_box.add (name_label);
-        name_box.add (name_entry);
+        name_box.append (name_label);
+        name_box.append (name_entry);
 
         list_store = new Gtk.ListStore (2, typeof (string), typeof (Backend));
 
@@ -98,8 +98,8 @@ public class Maya.View.SourceDialog : Granite.Dialog {
         var type_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 12
         };
-        type_box.add (type_label);
-        type_box.add (type_combobox);
+        type_box.append (type_label);
+        type_box.append (type_combobox);
 
         Gtk.TreeIter iter;
         var backends_manager = BackendsManager.get_default ();
@@ -110,90 +110,90 @@ public class Maya.View.SourceDialog : Granite.Dialog {
 
         type_combobox.set_active (0);
 
-        color_button_blue = new Gtk.RadioButton (null) {
+        color_button_blue = new Gtk.CheckButton () {
             tooltip_text = _("Blueberry")
         };
-        color_button_blue.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_blue.get_style_context ().add_class ("blue");
+        color_button_blue.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_blue.add_css_class ("blue");
 
-        color_button_mint = new Gtk.RadioButton (null) {
+        color_button_mint = new Gtk.CheckButton () {
             group = color_button_blue,
             tooltip_text = _("Mint")
         };
-        color_button_mint.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_mint.get_style_context ().add_class ("mint");
+        color_button_mint.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_mint.add_css_class ("mint");
 
-        color_button_green = new Gtk.RadioButton (null) {
+        color_button_green = new Gtk.CheckButton () {
             group = color_button_blue,
             tooltip_text = _("Lime")
         };
-        color_button_green.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_green.get_style_context ().add_class ("green");
+        color_button_green.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_green.add_css_class ("green");
 
-        color_button_yellow = new Gtk.RadioButton (null) {
+        color_button_yellow = new Gtk.CheckButton () {
             group = color_button_blue,
             tooltip_text = _("Banana")
         };
-        color_button_yellow.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_yellow.get_style_context ().add_class ("yellow");
+        color_button_yellow.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_yellow.add_css_class ("yellow");
 
-        color_button_orange = new Gtk.RadioButton (null) {
+        color_button_orange = new Gtk.CheckButton () {
             group = color_button_blue,
             tooltip_text = _("Orange")
         };
-        color_button_orange.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_orange.get_style_context ().add_class ("orange");
+        color_button_orange.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_orange.add_css_class ("orange");
 
-        color_button_red = new Gtk.RadioButton (null) {
+        color_button_red = new Gtk.CheckButton () {
             group = color_button_blue,
             tooltip_text = _("Strawberry")
         };
-        color_button_red.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_red.get_style_context ().add_class ("red");
+        color_button_red.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_red.add_css_class ("red");
 
-        color_button_pink = new Gtk.RadioButton (null) {
+        color_button_pink = new Gtk.CheckButton () {
             group = color_button_blue,
             tooltip_text = _("Bubblegum")
         };
-        color_button_pink.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_pink.get_style_context ().add_class ("pink");
+        color_button_pink.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_pink.add_css_class ("pink");
 
-        color_button_purple = new Gtk.RadioButton (null) {
+        color_button_purple = new Gtk.CheckButton () {
             group = color_button_blue,
             tooltip_text = _("Grape")
         };
-        color_button_purple.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_purple.get_style_context ().add_class ("purple");
+        color_button_purple.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_purple.add_css_class ("purple");
 
-        color_button_brown = new Gtk.RadioButton (null) {
+        color_button_brown = new Gtk.CheckButton () {
             group = color_button_blue,
             tooltip_text = _("Cocoa")
         };
-        color_button_brown.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_brown.get_style_context ().add_class ("brown");
+        color_button_brown.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_brown.add_css_class ("brown");
 
-        color_button_slate = new Gtk.RadioButton (null) {
+        color_button_slate = new Gtk.CheckButton () {
             group = color_button_blue,
             tooltip_text = _("Slate")
         };
-        color_button_slate.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        color_button_slate.get_style_context ().add_class ("slate");
+        color_button_slate.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        color_button_slate.add_css_class ("slate");
 
-        color_button_none = new Gtk.RadioButton (null) {
+        color_button_none = new Gtk.CheckButton () {
             group = color_button_blue
         };
 
         var color_button_box = new Gtk.Box (HORIZONTAL, 6);
-        color_button_box.add (color_button_blue);
-        color_button_box.add (color_button_mint);
-        color_button_box.add (color_button_green);
-        color_button_box.add (color_button_yellow);
-        color_button_box.add (color_button_orange);
-        color_button_box.add (color_button_red);
-        color_button_box.add (color_button_pink);
-        color_button_box.add (color_button_purple);
-        color_button_box.add (color_button_brown);
-        color_button_box.add (color_button_slate);
+        color_button_box.append (color_button_blue);
+        color_button_box.append (color_button_mint);
+        color_button_box.append (color_button_green);
+        color_button_box.append (color_button_yellow);
+        color_button_box.append (color_button_orange);
+        color_button_box.append (color_button_red);
+        color_button_box.append (color_button_pink);
+        color_button_box.append (color_button_purple);
+        color_button_box.append (color_button_brown);
+        color_button_box.append (color_button_slate);
 
         var color_label = new Granite.HeaderLabel (_("Color")) {
             mnemonic_widget = color_button_box
@@ -202,8 +202,8 @@ public class Maya.View.SourceDialog : Granite.Dialog {
         var color_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 12
         };
-        color_box.add (color_label);
-        color_box.add (color_button_box);
+        color_box.append (color_label);
+        color_box.append (color_button_box);
 
         is_default_check = new Gtk.CheckButton.with_label (_("Mark as default calendar")) {
             margin_bottom = 12
@@ -250,21 +250,18 @@ public class Maya.View.SourceDialog : Granite.Dialog {
         });
 
         main_box = new Gtk.Box (VERTICAL, 0) {
-            margin_end = 12,
-            margin_start = 12,
             vexpand = true
         };
 
         if (backends_manager.backends.size > 1) {
-            main_box.add (type_box);
+            main_box.append (type_box);
         }
 
-        main_box.add (name_box);
-        main_box.add (color_box);
-        main_box.add (is_default_check);
-        main_box.show_all ();
+        main_box.append (name_box);
+        main_box.append (color_box);
+        main_box.append (is_default_check);
 
-        get_content_area ().add (main_box);
+        get_content_area ().append (main_box);
     }
 
     public void set_source (E.Source? source = null) {
@@ -370,7 +367,7 @@ public class Maya.View.SourceDialog : Granite.Dialog {
                 widget.widget.margin_bottom = 12;
             }
 
-            main_box.add (widget.widget);
+            main_box.append (widget.widget);
 
             if (widget.needed == true && widget.widget is Gtk.Entry) {
                 var entry = widget.widget as Gtk.Entry;
@@ -379,7 +376,6 @@ public class Maya.View.SourceDialog : Granite.Dialog {
             }
         }
 
-        main_box.show_all ();
         check_can_validate ();
     }
 

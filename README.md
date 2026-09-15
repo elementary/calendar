@@ -7,9 +7,7 @@
 
 You'll need the following dependencies:
 
-* libchamplain-0.12-dev
-* libchamplain-gtk-0.12-dev
-* libclutter-1.0-dev
+* libadwaita-1-dev
 * libecal1.2-dev
 * libedataserverui1.2-dev >=3.46
 * libfolks-dev
@@ -17,10 +15,10 @@ You'll need the following dependencies:
 * libgeocode-glib-dev
 * libgeoclue-2-dev
 * libglib2.0-dev
-* libgranite-dev >= 6.2.0
-* libgtk-3-dev
+* libgranite-7-dev >= 7.7.0
+* libgtk-4-dev >= 4.12
 * libical-dev
-* libhandy-1-dev >= 0.90.0
+* libshumate-dev
 * meson
 * valac
 

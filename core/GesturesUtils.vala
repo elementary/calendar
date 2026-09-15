@@ -23,7 +23,7 @@ namespace Maya.GesturesUtils {
     static bool has_scrolled = false;
     const uint INTERVAL = 500;
 
-    public void on_scroll (Gtk.EventControllerScroll scroll_controller, double delta_x, double delta_y) {
+    public bool on_scroll (Gtk.EventControllerScroll scroll_controller, double delta_x, double delta_y) {
         double choice = delta_x;
         if (((int)delta_x).abs () < ((int)delta_y).abs ()) {
             choice = delta_y;
@@ -33,27 +33,29 @@ namespace Maya.GesturesUtils {
         if (choice == 1 || choice == -1) {
             Calendar.EventStore.get_default ().change_month ((int) choice);
             scroll_controller.reset ();
-            return;
+            return true;
         }
 
         if (has_scrolled == true) {
             scroll_controller.reset ();
-            return;
+            return true;
         }
 
         if (choice > 0.3) {
             reset_timer.begin ();
             Calendar.EventStore.get_default ().change_month (1);
             scroll_controller.reset ();
-            return;
+            return true;
         }
 
         if (choice < -0.3) {
             reset_timer.begin ();
             Calendar.EventStore.get_default ().change_month (-1);
             scroll_controller.reset ();
-            return;
+            return true;
         }
+
+        return false;
     }
 
     public async void reset_timer () {

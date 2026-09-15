@@ -39,25 +39,22 @@ calendar_files = files(
 )
 
 calendar_deps = [
+    adw_dep,
     core_dep,
     glib_dep,
     granite_dep,
     gtk_dep,
-    handy_dep,
     libecal_dep,
     libedataserver_dep,
     libedataserverui_dep,
     libical_dep,
     gmodule_dep,
     m_dep,
-    champlain_dep,
-    champlain_gtk_dep,
-    clutter_dep,
-    clutter_gtk_dep,
     folks_dep,
     geocode_glib_dep,
     gclue_dep,
-    libportal_dep
+    libportal_dep,
+    shumate_dep,
 ]
 
 executable(

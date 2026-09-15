@@ -28,13 +28,13 @@ namespace Maya.View.Widgets {
                     time_picker.time.get_second ()); }
         }
 
-        public Granite.Widgets.DatePicker date_picker { get; private set; }
-        public Granite.Widgets.TimePicker time_picker { get; private set; }
+        public Granite.DatePicker date_picker { get; private set; }
+        public Granite.TimePicker time_picker { get; private set; }
 
         public DateTimePicker () {
 
-            date_picker = new Granite.Widgets.DatePicker ();
-            time_picker = new Granite.Widgets.TimePicker ();
+            date_picker = new Granite.DatePicker ();
+            time_picker = new Granite.TimePicker ();
 
             // Grid properties
             set_column_spacing (10);

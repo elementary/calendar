@@ -6,30 +6,29 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.VAutoHider : Gtk.Bin {
+public class Maya.View.VAutoHider : Granite.Bin {
+    private List<unowned Gtk.Widget> children;
     private Gtk.Label more_label;
     private Gtk.Box main_box;
 
     construct {
+        children = new List<unowned Gtk.Widget> ();
+
         more_label = new Gtk.Label ("") {
             valign = END
         };
 
         main_box = new Gtk.Box (VERTICAL, 0);
-        main_box.pack_end (more_label);
+        main_box.append (more_label);
 
-        base.add (main_box);
+        child = main_box;
     }
 
-    public override void add (Gtk.Widget widget) {
-        var children = main_box.get_children ();
+    public void add (Gtk.Widget widget) {
         children.append (widget);
+        main_box.append (widget);
 
-        children.sort (compare_children);
-
-        int index = children.index (widget);
-        main_box.add (widget);
-        main_box.reorder_child (widget, index);
+        update (widget);
 
         widget.destroy.connect (() => {
             queue_resize ();
@@ -39,43 +38,43 @@ public class Maya.View.VAutoHider : Gtk.Bin {
     }
 
     public void update (Gtk.Widget widget) {
-        var children = main_box.get_children ();
-
         children.sort (compare_children);
 
-        int index = children.index (widget);
-        main_box.reorder_child (widget, index);
+        while (main_box.get_first_child () != null) {
+            main_box.remove (main_box.get_first_child ());
+        }
+
+        foreach (var child in children) {
+            main_box.append (child);
+        }
     }
 
-    public override void size_allocate (Gtk.Allocation allocation) {
-        base.size_allocate (allocation);
+    public override void size_allocate (int width, int height, int baseline) {
+        base.size_allocate (width, height, baseline);
 
-        int children_length = (int) main_box.get_children ().length () - 1;
-        if (children_length == 0) {
+        if (children.length () == 0) {
             more_label.hide ();
             return;
         }
 
-        int more_label_height;
         more_label.show ();
         more_label.vexpand = false;
-        more_label.get_preferred_height (out more_label_height, null);
+        var more_label_height = more_label.get_height ();
         more_label.hide ();
 
         int shown_children = 0;
         int shown_children_height = 0;
-        foreach (var child in main_box.get_children ()) {
+        foreach (var child in children) {
             if (child == more_label) {
                 continue;
             }
 
-            int child_height;
             child.show ();
-            child.get_preferred_height (out child_height, null);
+            var child_height = child.get_height ();
 
-            if (shown_children_height + child_height > allocation.height - more_label_height) {
-                var last = shown_children == children_length - 1;
-                if (!last || shown_children_height + child_height > allocation.height) {
+            if (shown_children_height + child_height > get_height () - more_label_height) {
+                var last = shown_children == children.length () - 1;
+                if (!last || shown_children_height + child_height > get_height ()) {
                     ((Maya.View.EventButton) child).hide_without_animate ();
                     continue;
                 }
@@ -86,26 +85,23 @@ public class Maya.View.VAutoHider : Gtk.Bin {
             shown_children_height += child_height;
         }
 
-        var hidden_children = children_length - shown_children;
+        var hidden_children = children.length () - shown_children;
         if (hidden_children > 0) {
             more_label.show ();
-            more_label.label = _("%i more…").printf (hidden_children);
+            more_label.label = _("%u more…").printf (hidden_children);
             more_label.vexpand = true;
         }
     }
 
-    public override void get_preferred_width (out int minimum_width, out int natural_width) {
-        base.get_preferred_width (out minimum_width, out natural_width);
-        more_label.get_preferred_width (out minimum_width, null);
-        if (minimum_width > natural_width)
-            natural_width = minimum_width;
-    }
+    public override void measure (Gtk.Orientation orientation, int for_size, out int minimum, out int natural, out int minimum_baseline, out int natural_baseline) {
+        base.measure (orientation, for_size, out minimum, out natural, out minimum_baseline, out natural_baseline);
 
-    public override void get_preferred_height (out int minimum_height, out int natural_height) {
-        base.get_preferred_height (out minimum_height, out natural_height);
-        more_label.get_preferred_height (out minimum_height, null);
-        if (minimum_height > natural_height)
-            natural_height = minimum_height;
+        for_size = more_label.get_width ();
+
+        minimum = more_label.get_height ();
+        if (minimum > natural) {
+            natural = minimum;
+        }
     }
 
     public static GLib.CompareFunc<weak Gtk.Widget> compare_children = (a, b) => {
