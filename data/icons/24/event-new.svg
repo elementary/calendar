@@ -5,12 +5,12 @@
    viewBox="0 0 24 24"
    fill="none"
    version="1.1"
-   id="svg70"
+   id="svg69"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <g
      clip-path="url(#clip0_686_3270)"
-     id="g41">
+     id="g40">
     <g
        opacity="0.4"
        id="g3">
@@ -56,7 +56,7 @@
        id="path8" />
     <g
        opacity="0.4"
-       id="g20">
+       id="g21">
       <path
          d="M18 11.5C18 11.2239 18.2239 11 18.5 11C18.7762 11 19 11.2239 19 11.5C19 11.7761 18.7762 12 18.5 12C18.2239 12 18 11.7761 18 11.5Z"
          fill="#3D211B"
@@ -105,106 +105,100 @@
          d="M6 17.5C6 17.2238 6.22385 17 6.5 17C6.77615 17 7 17.2238 7 17.5C7 17.7761 6.77615 18 6.5 18C6.22385 18 6 17.7761 6 17.5Z"
          fill="#3D211B"
          id="path20" />
+      <path
+         d="M9 14.5C9 14.2239 9.22385 14 9.5 14C9.77615 14 10 14.2239 10 14.5C10 14.7761 9.77615 15 9.5 15C9.22385 15 9 14.7761 9 14.5Z"
+         fill="#3D211B"
+         id="path21" />
     </g>
     <g
        opacity="0.1"
-       id="g33">
+       id="g35">
       <path
          d="M18 12C18 11.7239 18.2239 11.5 18.5 11.5C18.7762 11.5 19 11.7239 19 12C19 12.2762 18.7762 12.5 18.5 12.5C18.2239 12.5 18 12.2762 18 12Z"
          fill="white"
-         id="path21" />
+         id="path22" />
       <path
          d="M15 12C15 11.7239 15.2239 11.5 15.5 11.5C15.7762 11.5 16 11.7239 16 12C16 12.2762 15.7762 12.5 15.5 12.5C15.2239 12.5 15 12.2762 15 12Z"
          fill="white"
-         id="path22" />
+         id="path23" />
       <path
          d="M12 12C12 11.7239 12.2239 11.5 12.5 11.5C12.7762 11.5 13 11.7239 13 12C13 12.2762 12.7762 12.5 12.5 12.5C12.2239 12.5 12 12.2762 12 12Z"
          fill="white"
-         id="path23" />
+         id="path24" />
       <path
          d="M9 12C9 11.7239 9.22385 11.5 9.5 11.5C9.77615 11.5 10 11.7239 10 12C10 12.2762 9.77615 12.5 9.5 12.5C9.22385 12.5 9 12.2762 9 12Z"
          fill="white"
-         id="path24" />
-      <path
-         d="M18 15C18 14.7239 18.2239 14.5 18.5 14.5C18.7762 14.5 19 14.7239 19 15C19 15.2762 18.7762 15.5 18.5 15.5C18.2239 15.5 18 15.2762 18 15Z"
-         fill="white"
          id="path25" />
       <path
-         d="M15 15C15 14.7239 15.2239 14.5 15.5 14.5C15.7762 14.5 16 14.7239 16 15C16 15.2762 15.7762 15.5 15.5 15.5C15.2239 15.5 15 15.2762 15 15Z"
+         d="M18 15C18 14.7239 18.2239 14.5 18.5 14.5C18.7762 14.5 19 14.7239 19 15C19 15.2761 18.7762 15.5 18.5 15.5C18.2239 15.5 18 15.2761 18 15Z"
          fill="white"
          id="path26" />
       <path
-         d="M12 15C12 14.7239 12.2239 14.5 12.5 14.5C12.7762 14.5 13 14.7239 13 15C13 15.2762 12.7762 15.5 12.5 15.5C12.2239 15.5 12 15.2762 12 15Z"
+         d="M15 15C15 14.7239 15.2239 14.5 15.5 14.5C15.7762 14.5 16 14.7239 16 15C16 15.2761 15.7762 15.5 15.5 15.5C15.2239 15.5 15 15.2761 15 15Z"
          fill="white"
          id="path27" />
       <path
-         d="M18 18C18 17.7239 18.2239 17.5 18.5 17.5C18.7762 17.5 19 17.7239 19 18C19 18.2762 18.7762 18.5 18.5 18.5C18.2239 18.5 18 18.2762 18 18Z"
+         d="M12 15C12 14.7239 12.2239 14.5 12.5 14.5C12.7762 14.5 13 14.7239 13 15C13 15.2761 12.7762 15.5 12.5 15.5C12.2239 15.5 12 15.2761 12 15Z"
          fill="white"
          id="path28" />
       <path
-         d="M15 18C15 17.7239 15.2239 17.5 15.5 17.5C15.7762 17.5 16 17.7239 16 18C16 18.2762 15.7762 18.5 15.5 18.5C15.2239 18.5 15 18.2762 15 18Z"
+         d="M18 18C18 17.7239 18.2239 17.5 18.5 17.5C18.7762 17.5 19 17.7239 19 18C19 18.2762 18.7762 18.5 18.5 18.5C18.2239 18.5 18 18.2762 18 18Z"
          fill="white"
          id="path29" />
       <path
-         d="M12 18C12 17.7239 12.2239 17.5 12.5 17.5C12.7762 17.5 13 17.7239 13 18C13 18.2762 12.7762 18.5 12.5 18.5C12.2239 18.5 12 18.2762 12 18Z"
+         d="M15 18C15 17.7239 15.2239 17.5 15.5 17.5C15.7762 17.5 16 17.7239 16 18C16 18.2762 15.7762 18.5 15.5 18.5C15.2239 18.5 15 18.2762 15 18Z"
          fill="white"
          id="path30" />
       <path
-         d="M9 18C9 17.7239 9.22385 17.5 9.5 17.5C9.77615 17.5 10 17.7239 10 18C10 18.2762 9.77615 18.5 9.5 18.5C9.22385 18.5 9 18.2762 9 18Z"
+         d="M12 18C12 17.7239 12.2239 17.5 12.5 17.5C12.7762 17.5 13 17.7239 13 18C13 18.2762 12.7762 18.5 12.5 18.5C12.2239 18.5 12 18.2762 12 18Z"
          fill="white"
          id="path31" />
       <path
-         d="M6 15C6 14.7239 6.22385 14.5 6.5 14.5C6.77615 14.5 7 14.7239 7 15C7 15.2762 6.77615 15.5 6.5 15.5C6.22385 15.5 6 15.2762 6 15Z"
+         d="M9 18C9 17.7239 9.22385 17.5 9.5 17.5C9.77615 17.5 10 17.7239 10 18C10 18.2762 9.77615 18.5 9.5 18.5C9.22385 18.5 9 18.2762 9 18Z"
          fill="white"
          id="path32" />
       <path
-         d="M6 18C6 17.7239 6.22385 17.5 6.5 17.5C6.77615 17.5 7 17.7239 7 18C7 18.2762 6.77615 18.5 6.5 18.5C6.22385 18.5 6 18.2762 6 18Z"
+         d="M6 15C6 14.7239 6.22385 14.5 6.5 14.5C6.77615 14.5 7 14.7239 7 15C7 15.2761 6.77615 15.5 6.5 15.5C6.22385 15.5 6 15.2761 6 15Z"
          fill="white"
          id="path33" />
+      <path
+         d="M6 18C6 17.7239 6.22385 17.5 6.5 17.5C6.77615 17.5 7 17.7239 7 18C7 18.2762 6.77615 18.5 6.5 18.5C6.22385 18.5 6 18.2762 6 18Z"
+         fill="white"
+         id="path34" />
+      <path
+         d="M9 15C9 14.7239 9.22385 14.5 9.5 14.5C9.77615 14.5 10 14.7239 10 15C10 15.2761 9.77615 15.5 9.5 15.5C9.22385 15.5 9 15.2761 9 15Z"
+         fill="white"
+         id="path35" />
     </g>
-    <path
-       opacity="0.07"
-       d="M11.25 15.25C11.25 16.2165 10.4665 17 9.5 17C8.5335 17 7.75 16.2165 7.75 15.25C7.75 14.2835 8.5335 13.5 9.5 13.5C10.4665 13.5 11.25 14.2835 11.25 15.25Z"
-       fill="#C6262E"
-       id="path34" />
-    <path
-       opacity="0.15"
-       d="M9.50001 16.25C10.0523 16.25 10.5 15.8023 10.5 15.25C10.5 14.6977 10.0523 14.25 9.50001 14.25C8.94773 14.25 8.50002 14.6977 8.50002 15.25C8.50002 15.8023 8.94773 16.25 9.50001 16.25Z"
-       fill="#C6262E"
-       id="path35" />
-    <path
-       d="M9.5 15.5C10.0523 15.5 10.5 15.0523 10.5 14.5C10.5 13.9477 10.0523 13.5 9.5 13.5C8.94772 13.5 8.5 13.9477 8.5 14.5C8.5 15.0523 8.94772 15.5 9.5 15.5Z"
-       fill="#C6262E"
-       id="path36" />
     <path
        opacity="0.3"
        d="M2.5 8V19.5C2.5 20.608 3.392 21.5 4.5 21.5H19.5C20.608 21.5 21.5 20.608 21.5 19.5V8"
        stroke="black"
-       id="path37" />
+       id="path36" />
     <path
        d="M16.4821 16.5073V13.5073H20.4821V16.5073H23.4821V20.5073H20.4821V23.5073H16.4821V20.5073H13.4927V16.5073H16.4821Z"
        fill="url(#paint8_radial_686_3270)"
-       id="path38" />
+       id="path37" />
     <path
        opacity="0.5"
        d="M17.5 18.0044V14.5H19.5V18M19.5 19V22.5H17.5V19"
        stroke="url(#paint9_linear_686_3270)"
-       id="path39" />
+       id="path38" />
     <path
        opacity="0.5"
        d="M16.4821 16.5073V13.5073H20.4821V16.5073H23.4821V20.5073H20.4821V23.5073H16.4821V20.5073H13.4927V16.5073H16.4821Z"
        stroke="#0F5A00"
        stroke-linecap="round"
        stroke-linejoin="round"
-       id="path40" />
+       id="path39" />
     <path
        opacity="0.5"
        d="M20 17.5073L22.4822 17.5V19.5L20 19.5073M17 19.5073L14.5 19.5V17.5L17 17.5073"
        stroke="url(#paint10_linear_686_3270)"
-       id="path41" />
+       id="path40" />
   </g>
   <defs
-     id="defs70">
+     id="defs69">
     <radialGradient
        id="paint0_radial_686_3270"
        cx="0"
@@ -214,12 +208,12 @@
        gradientTransform="translate(20.1012 21.5) scale(2.90022 1.5)">
       <stop
          stop-color="#181818"
-         id="stop41" />
+         id="stop40" />
       <stop
          offset="1"
          stop-color="#181818"
          stop-opacity="0"
-         id="stop42" />
+         id="stop41" />
     </radialGradient>
     <radialGradient
        id="paint1_radial_686_3270"
@@ -230,12 +224,12 @@
        gradientTransform="translate(3.89884 21.5) rotate(180) scale(2.90022 1.5)">
       <stop
          stop-color="#181818"
-         id="stop43" />
+         id="stop42" />
       <stop
          offset="1"
          stop-color="#181818"
          stop-opacity="0"
-         id="stop44" />
+         id="stop43" />
     </radialGradient>
     <linearGradient
        id="paint2_linear_686_3270"
@@ -247,16 +241,16 @@
       <stop
          stop-color="#181818"
          stop-opacity="0"
-         id="stop45" />
+         id="stop44" />
       <stop
          offset="0.5"
          stop-color="#181818"
-         id="stop46" />
+         id="stop45" />
       <stop
          offset="1"
          stop-color="#181818"
          stop-opacity="0"
-         id="stop47" />
+         id="stop46" />
     </linearGradient>
     <linearGradient
        id="paint3_linear_686_3270"
@@ -267,11 +261,11 @@
        gradientUnits="userSpaceOnUse">
       <stop
          stop-color="#FAFAFA"
-         id="stop48" />
+         id="stop47" />
       <stop
          offset="1"
          stop-color="#E2E1DE"
-         id="stop49" />
+         id="stop48" />
     </linearGradient>
     <linearGradient
        id="paint4_linear_686_3270"
@@ -282,22 +276,22 @@
        gradientUnits="userSpaceOnUse">
       <stop
          stop-color="white"
-         id="stop50" />
+         id="stop49" />
       <stop
          offset="0.0631645"
          stop-color="white"
          stop-opacity="0.235294"
-         id="stop51" />
+         id="stop50" />
       <stop
          offset="0.950563"
          stop-color="white"
          stop-opacity="0.156863"
-         id="stop52" />
+         id="stop51" />
       <stop
          offset="1"
          stop-color="white"
          stop-opacity="0.392157"
-         id="stop53" />
+         id="stop52" />
     </linearGradient>
     <linearGradient
        id="paint5_linear_686_3270"
@@ -308,12 +302,12 @@
        gradientUnits="userSpaceOnUse">
       <stop
          stop-color="#7A0000"
-         id="stop54" />
+         id="stop53" />
       <stop
          offset="1"
          stop-color="#FF8C82"
          stop-opacity="0"
-         id="stop55" />
+         id="stop54" />
     </linearGradient>
     <linearGradient
        id="paint6_linear_686_3270"
@@ -324,11 +318,11 @@
        gradientUnits="userSpaceOnUse">
       <stop
          stop-color="#ED5353"
-         id="stop56" />
+         id="stop55" />
       <stop
          offset="1"
          stop-color="#C6262E"
-         id="stop57" />
+         id="stop56" />
     </linearGradient>
     <linearGradient
        id="paint7_linear_686_3270"
@@ -339,17 +333,17 @@
        gradientUnits="userSpaceOnUse">
       <stop
          stop-color="white"
-         id="stop58" />
+         id="stop57" />
       <stop
          offset="0.285346"
          stop-color="white"
          stop-opacity="0.235294"
-         id="stop59" />
+         id="stop58" />
       <stop
          offset="1"
          stop-color="white"
          stop-opacity="0.392157"
-         id="stop60" />
+         id="stop59" />
     </linearGradient>
     <radialGradient
        id="paint8_radial_686_3270"
@@ -360,19 +354,19 @@
        gradientTransform="translate(18.6316 13.1867) rotate(90) scale(16.289 17.7204)">
       <stop
          stop-color="#CDF87E"
-         id="stop61" />
+         id="stop60" />
       <stop
          offset="0.26238"
          stop-color="#A2E34F"
-         id="stop62" />
+         id="stop61" />
       <stop
          offset="0.66094"
          stop-color="#68B723"
-         id="stop63" />
+         id="stop62" />
       <stop
          offset="1"
          stop-color="#1D7E0D"
-         id="stop64" />
+         id="stop63" />
     </radialGradient>
     <linearGradient
        id="paint9_linear_686_3270"
@@ -383,17 +377,17 @@
        gradientUnits="userSpaceOnUse">
       <stop
          stop-color="white"
-         id="stop65" />
+         id="stop64" />
       <stop
          offset="2e-08"
          stop-color="white"
          stop-opacity="0.235294"
-         id="stop66" />
+         id="stop65" />
       <stop
          offset="1"
          stop-color="white"
          stop-opacity="0.392157"
-         id="stop67" />
+         id="stop66" />
     </linearGradient>
     <linearGradient
        id="paint10_linear_686_3270"
@@ -404,17 +398,17 @@
        gradientUnits="userSpaceOnUse">
       <stop
          stop-color="white"
-         id="stop68" />
+         id="stop67" />
       <stop
          offset="1.9e-07"
          stop-color="white"
          stop-opacity="0.235294"
-         id="stop69" />
+         id="stop68" />
       <stop
          offset="1"
          stop-color="white"
          stop-opacity="0.392157"
-         id="stop70" />
+         id="stop69" />
     </linearGradient>
     <clipPath
        id="clip0_686_3270">
@@ -422,7 +416,7 @@
          width="24"
          height="24"
          fill="white"
-         id="rect70" />
+         id="rect69" />
     </clipPath>
   </defs>
 </svg>
