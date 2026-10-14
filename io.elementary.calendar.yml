@@ -1,6 +1,6 @@
 id: io.elementary.calendar
 runtime: io.elementary.Platform
-runtime-version: '8.2'
+runtime-version: '9.1'
 sdk: io.elementary.Sdk
 command: io.elementary.calendar
 finish-args:
@@ -46,9 +46,10 @@ modules:
       - -DLIBICAL_GLIB_VAPI=true
       - -DLIBICAL_BUILD_TESTING=false
     sources:
-      - type: archive
-        url: https://github.com/libical/libical/releases/download/v4.0.5/libical-4.0.5.tar.gz
-        sha256: cc09a3ac41d60e6144e644bd3fcf97d47106d659c4a0b8965102581401e67c9c
+      - type: git
+        url: https://github.com/libical/libical.git
+        tag: v4.0.6
+        commit: 9cfca65c122fa23b9680a28e0c9225a2fd015fc5
 
   - name: evolution-data-server
     buildsystem: cmake-ninja
