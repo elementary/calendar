@@ -28,6 +28,7 @@ namespace Maya {
         private static bool add_event = false;
         private static string show_day = null;
 
+        private bool first_activation = true;
         private Xdp.Portal? portal = null;
 
         private const OptionEntry[] APP_OPTIONS = {
@@ -77,6 +78,11 @@ namespace Maya {
 
         protected override void activate () {
             new Calendar.TodayEventMonitor ();
+
+            if (first_activation) {
+                first_activation = false;
+                hold ();
+            }
 
             if (run_in_background) {
                 request_background.begin ();

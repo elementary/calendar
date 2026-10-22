@@ -122,7 +122,7 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
 
         // We have to wrap in Idle otherwise we crash because libportal hasn't unexported us yet.
         ((Application) application).request_background.begin (() =>
-            Idle.add_once (() => destroy ())
+            Idle.add_once (() => base.close_request ())
         );
 
         return Gdk.EVENT_STOP;
