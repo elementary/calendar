@@ -1,6 +1,6 @@
 id: io.elementary.calendar
 runtime: io.elementary.Platform
-runtime-version: '9'
+runtime-version: '9.1'
 sdk: io.elementary.Sdk
 command: io.elementary.calendar
 finish-args:
@@ -51,6 +51,7 @@ modules:
       - type: git
         url: https://github.com/libical/libical.git
         tag: v3.0.20
+        commit: 57ce34025066935f356fd539e6deb7a7a9952618
 
   - name: evolution-data-server
     buildsystem: cmake-ninja
@@ -77,8 +78,8 @@ modules:
       - -DENABLE_EXAMPLES=OFF
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.61/evolution-data-server-3.61.3.tar.xz
-        sha256: 1cb9c9b6a12fa53473f5c0332ac39fff32586fb22a932a26aa973c260bb13a83
+        url: https://download.gnome.org/sources/evolution-data-server/3.62/evolution-data-server-3.62.1.tar.xz
+        sha256: b75c823445d7d30bca797eee929809e8d389abbb8d471f68ae2af60972779f26
         x-checker-data:
           type: gnome
           name: evolution-data-server

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-04-20 06:55+0000\n"
+"PO-Revision-Date: 2026-10-19 08:17+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/sv/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2016-11-08 05:09+0000\n"
 
 #: core/Backends/LocalBackend.vala:27 core/Utils.vala:60
@@ -256,7 +256,7 @@ msgstr "Kommentarer:"
 
 #: src/EventEdition/LocationPanel.vala:53
 msgid "John Smith OR Example St."
-msgstr "Johan Svensson ELLER Exempelgatan"
+msgstr "Johan Svensson ELLER Exempelgatan."
 
 #: src/EventEdition/LocationPanel.vala:59
 msgid "Location:"
@@ -670,7 +670,7 @@ msgstr "Skapa"
 
 #: src/SourceDialog/SourceDialog.vala:62
 msgid "e.g. “Work” or “Personal”"
-msgstr "t.ex. “Arbete” or “Personligt”"
+msgstr "t.ex. ”Arbete” eller ”Personligt”"
 
 #: src/SourceDialog/SourceDialog.vala:66
 msgid "Calendar Name"
@@ -748,7 +748,7 @@ msgstr "födelsedag;jubileum;fest"
 #. /The number of words can differ from US English and need not be a direct translation.
 #: src/Widgets/AgendaEventRow.vala:79
 msgid "call;phone;telephone;ring"
-msgstr "samtal;telefon;telefon;ring"
+msgstr "samtal;telefon;ring"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
