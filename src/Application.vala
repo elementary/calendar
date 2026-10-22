@@ -77,16 +77,10 @@ namespace Maya {
 
         protected override void activate () {
             new Calendar.TodayEventMonitor ();
+
             if (run_in_background) {
+                request_background.begin ();
                 run_in_background = false;
-                hold ();
-
-                ask_for_background.begin ((obj, res) => {
-                    if (!ask_for_background.end (res)) {
-                        release ();
-                    }
-                });
-
                 return;
             }
 
@@ -162,28 +156,32 @@ namespace Maya {
             saved_state.bind ("window-maximized", window, "maximized", SettingsBindFlags.SET);
         }
 
-        public async bool ask_for_background () {
-            const string[] DAEMON_COMMAND = { "io.elementary.calendar", "--background" };
-            if (portal == null) {
-                portal = new Xdp.Portal ();
-            }
+        public async void request_background () {
+            var portal = new Xdp.Portal ();
 
-            string reason = _(
-                "Calendar will automatically start when this device turns on " +
-                "and run when its window is closed so that it can send event notifications."
-            );
-            var command = new GenericArray<unowned string> (2);
-            foreach (unowned var arg in DAEMON_COMMAND) {
-                command.add (arg);
-            }
+            Xdp.Parent? parent = active_window != null ? Xdp.parent_new_gtk (active_window) : null;
 
-            var window = Xdp.parent_new_gtk (active_window);
+            var command = new GenericArray<weak string> ();
+            command.add ("io.elementary.calendar");
+            command.add ("--background");
 
             try {
-                return yield portal.request_background (window, reason, command, AUTOSTART, null);
+                if (!yield portal.request_background (
+                    parent,
+                    _("Calendar will automatically start when this device turns on and run when its window is closed so that it can send event notifications."),
+                    (owned) command,
+                    Xdp.BackgroundFlags.AUTOSTART,
+                    null
+                )) {
+                    release ();
+                }
             } catch (Error e) {
-                warning ("Error during portal request: %s", e.message);
-                return e is IOError.FAILED;
+                if (e is IOError.CANCELLED) {
+                    debug ("Request for autostart and background permissions denied: %s", e.message);
+                    release ();
+                } else {
+                    warning ("Failed to request autostart and background permissions: %s", e.message);
+                }
             }
         }
 

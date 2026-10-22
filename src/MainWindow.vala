@@ -117,18 +117,14 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         }
     }
 
-    // public override bool delete_event (Gdk.EventAny event) {
-    //     Calendar.EventStore.get_default ().delete_trashed_calendars ();
+    public override bool close_request () {
+        Calendar.EventStore.get_default ().delete_trashed_calendars ();
 
-    //     ((Application) application).ask_for_background.begin ((obj, res) => {
-    //         unowned var app = (Application) obj;
-    //         if (app.ask_for_background.end (res)) {
-    //             hide ();
-    //         } else {
-    //             destroy ();
-    //         }
-    //     });
+        // We have to wrap in Idle otherwise we crash because libportal hasn't unexported us yet.
+        ((Application) application).request_background.begin (() =>
+            Idle.add_once (() => destroy ())
+        );
 
-    //     return Gdk.EVENT_STOP;
-    // }
+        return Gdk.EVENT_STOP;
+    }
 }
