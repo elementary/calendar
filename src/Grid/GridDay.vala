@@ -70,7 +70,6 @@ public class Maya.View.GridDay : Granite.Bin {
         };
         key_controller.key_pressed.connect (on_key_press);
 
-        // Gtk.TargetEntry dnd = {"binary/calendar", 0, 0};
         var drop_target = new Gtk.DropTarget (typeof (string), Gdk.DragAction.MOVE);
         drop_target.accept.connect (on_drop_accept);
         drop_target.drop.connect (on_drag_drop);
