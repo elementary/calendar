@@ -51,7 +51,7 @@ public class CalendarRow : Gtk.Box {
             width_request = 12,
             valign = CENTER
         };
-        calendar_color.get_style_context ().add_class ("cal-color");
+        calendar_color.add_css_class ("cal-color");
 
         calendar_color_context = calendar_color.get_style_context ();
 
@@ -61,7 +61,7 @@ public class CalendarRow : Gtk.Box {
             xalign = 0
         };
 
-        var selection_icon = new Gtk.Image.from_icon_name ("emblem-default-symbolic", MENU);
+        var selection_icon = new Gtk.Image.from_icon_name ("emblem-default-symbolic");
 
         var selection_revealer = new Gtk.Revealer () {
             child = selection_icon,
@@ -69,9 +69,9 @@ public class CalendarRow : Gtk.Box {
         };
 
         spacing = 6;
-        add (calendar_color);
-        add (calendar_name_label);
-        add (selection_revealer);
+        append (calendar_color);
+        append (calendar_name_label);
+        append (selection_revealer);
 
         bind_property ("label", calendar_name_label, "label");
         bind_property ("selected", selection_revealer, "reveal-child", SYNC_CREATE);
@@ -85,11 +85,7 @@ public class CalendarRow : Gtk.Box {
         var css_color = CALENDAR_COLOR_STYLE.printf (cal.dup_color ());
         var style_provider = new Gtk.CssProvider ();
 
-        try {
-            style_provider.load_from_data (css_color, css_color.length);
-            calendar_color_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, css_color);
-        }
+        style_provider.load_from_string (css_color);
+        calendar_color_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 }

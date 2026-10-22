@@ -28,6 +28,7 @@ namespace Maya {
         private static bool add_event = false;
         private static string show_day = null;
 
+        private bool first_activation = true;
         private Xdp.Portal? portal = null;
 
         private const OptionEntry[] APP_OPTIONS = {
@@ -65,25 +66,8 @@ namespace Maya {
         protected override void startup () {
             base.startup ();
 
-            Hdy.init ();
-
-            var style_provider = new Gtk.CssProvider ();
-            style_provider.load_from_resource ("/io/elementary/calendar/Application.css");
-
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
-                style_provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            );
-
-            var granite_settings = Granite.Settings.get_default ();
-            var gtk_settings = Gtk.Settings.get_default ();
-
-            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-
-            granite_settings.notify["prefers-color-scheme"].connect (() => {
-                gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-            });
+            Granite.init ();
+            Adw.init ();
 
             var quit_action = new SimpleAction ("quit", null);
             quit_action.activate.connect (quit);
@@ -94,16 +78,15 @@ namespace Maya {
 
         protected override void activate () {
             new Calendar.TodayEventMonitor ();
-            if (run_in_background) {
-                run_in_background = false;
+
+            if (first_activation) {
+                first_activation = false;
                 hold ();
+            }
 
-                ask_for_background.begin ((obj, res) => {
-                    if (!ask_for_background.end (res)) {
-                        release ();
-                    }
-                });
-
+            if (run_in_background) {
+                request_background.begin ();
+                run_in_background = false;
                 return;
             }
 
@@ -161,40 +144,50 @@ namespace Maya {
          * Initializes the graphical window and its components
          */
         void init_gui () {
-            var rect = Gtk.Allocation ();
-            saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
-
             window = new MainWindow (this);
             window.title = _(Build.APP_NAME);
-            window.set_allocation (rect);
+
+            /*
+            * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
+            * Set maximize after height/width else window is min size on unmaximize
+            * Bind maximize as SET else get get bad sizes
+            */
+            saved_state.bind ("window-height", window, "default-height", SettingsBindFlags.DEFAULT);
+            saved_state.bind ("window-width", window, "default-width", SettingsBindFlags.DEFAULT);
 
             if (saved_state.get_boolean ("window-maximized")) {
                 window.maximize ();
             }
+
+            saved_state.bind ("window-maximized", window, "maximized", SettingsBindFlags.SET);
         }
 
-        public async bool ask_for_background () {
-            const string[] DAEMON_COMMAND = { "io.elementary.calendar", "--background" };
-            if (portal == null) {
-                portal = new Xdp.Portal ();
-            }
+        public async void request_background () {
+            var portal = new Xdp.Portal ();
 
-            string reason = _(
-                "Calendar will automatically start when this device turns on " +
-                "and run when its window is closed so that it can send event notifications."
-            );
-            var command = new GenericArray<unowned string> (2);
-            foreach (unowned var arg in DAEMON_COMMAND) {
-                command.add (arg);
-            }
+            Xdp.Parent? parent = active_window != null ? Xdp.parent_new_gtk (active_window) : null;
 
-            var window = Xdp.parent_new_gtk (active_window);
+            var command = new GenericArray<weak string> ();
+            command.add ("io.elementary.calendar");
+            command.add ("--background");
 
             try {
-                return yield portal.request_background (window, reason, command, AUTOSTART, null);
+                if (!yield portal.request_background (
+                    parent,
+                    _("Calendar will automatically start when this device turns on and run when its window is closed so that it can send event notifications."),
+                    (owned) command,
+                    Xdp.BackgroundFlags.AUTOSTART,
+                    null
+                )) {
+                    release ();
+                }
             } catch (Error e) {
-                warning ("Error during portal request: %s", e.message);
-                return e is IOError.FAILED;
+                if (e is IOError.CANCELLED) {
+                    debug ("Request for autostart and background permissions denied: %s", e.message);
+                    release ();
+                } else {
+                    warning ("Failed to request autostart and background permissions: %s", e.message);
+                }
             }
         }
 
@@ -211,7 +204,6 @@ namespace Maya {
         }
 
         public static int main (string[] args) {
-            GtkClutter.init (ref args);
             var app = new Application ();
 
             int res = app.run (args);
