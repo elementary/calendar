@@ -9,7 +9,8 @@ You'll need the following dependencies:
 
 * libadwaita-1-dev >= 1.0.0
 * libecal1.2-dev
-* libedataserverui1.2-dev >=3.46
+* libedataserver1.2-dev >= 3.45.1
+* libedataserverui4-dev >= 3.46.4
 * libfolks-dev
 * libgee-0.8-dev
 * libgeocode-glib-dev
