@@ -7,7 +7,7 @@
 
 You'll need the following dependencies:
 
-* libadwaita-1-dev
+* libadwaita-1-dev >= 1.0.0
 * libecal1.2-dev
 * libedataserverui1.2-dev >=3.46
 * libfolks-dev
