@@ -19,6 +19,8 @@ You'll need the following dependencies:
 * libgranite-7-dev >= 7.7.0
 * libgtk-4-dev >= 4.12
 * libical-dev
+* libportal-dev
+* libportal-gtk4-dev
 * libshumate-dev
 * meson
 * valac
