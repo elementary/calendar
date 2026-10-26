@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-10-13 13:03+0000\n"
+"PO-Revision-Date: 2026-10-27 22:04+0000\n"
 "Last-Translator: CodeBeats <nicholai67@hotmail.com>\n"
 "Language-Team: Danish <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/da/>\n"
@@ -170,10 +170,8 @@ msgid "Location"
 msgstr "Placering"
 
 #: src/EventEdition/EventDialog.vala:113 src/EventEdition/GuestsPanel.vala:51
-#, fuzzy
-#| msgid "Invite"
 msgid "Invitees"
-msgstr "Inviter"
+msgstr "Inviterede"
 
 #: src/EventEdition/EventDialog.vala:114 src/EventEdition/ReminderPanel.vala:33
 msgid "Reminders"
