@@ -18,7 +18,6 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         { ACTION_SHOW_TODAY, action_show_today }
     };
 
-    private uint configure_id;
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
     public MainWindow (Gtk.Application application) {

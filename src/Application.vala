@@ -29,7 +29,6 @@ namespace Maya {
         private static string show_day = null;
 
         private bool first_activation = true;
-        private Xdp.Portal? portal = null;
 
         private const OptionEntry[] APP_OPTIONS = {
             { "add-event", 'a', 0, OptionArg.NONE, out add_event, N_("Create an event"), null },
