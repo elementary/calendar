@@ -42,6 +42,7 @@ public class Grid : Gtk.Grid {
 
     construct {
         // Gtk.Grid properties
+        hexpand = true;
         insert_column (7);
         set_column_homogeneous (true);
         set_row_homogeneous (true);
