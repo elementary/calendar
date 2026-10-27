@@ -126,6 +126,7 @@ public class EventDialog : Granite.Dialog {
                 margin_start = 12,
                 stack = stack
             };
+            // Make stack switcher buttons themselves homogeneous
             ((Gtk.BoxLayout) stack_switcher.layout_manager).homogeneous = true;
 
             var buttonbox = new Gtk.Box (HORIZONTAL, 6) {
