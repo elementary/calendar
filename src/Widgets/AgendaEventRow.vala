@@ -249,7 +249,7 @@ public class Maya.View.AgendaEventRow : Gtk.ListBoxRow {
             revealer.set_reveal_child (true);
         });
 
-        hide.connect (() => {
+        unmap.connect (() => {
             revealer.set_reveal_child (false);
         });
 
