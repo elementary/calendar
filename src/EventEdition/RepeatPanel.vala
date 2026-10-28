@@ -284,12 +284,17 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
 
     private void load_weekly_recurrence (ICal.Recurrence rrule) {
         repeat_combobox.active = 1;
+#if HAS_I_CAL_4_0_0
+        var by_day = rrule.get_by_array (ICal.RecurrenceByRule.BY_DAY);
+        for (uint i = 0; i < by_day.length; i++) {
+#else
         var by_day = rrule.get_by_day_array ();
         for (
             uint i = 0;
             i < by_day.length && (by_day.index (i) != ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX);
             i++
         ) {
+#endif /* HAS_I_CAL_4_0_0 */
             switch (ICal.Recurrence.day_day_of_week (by_day.index (i))) {
                 case ICal.RecurrenceWeekday.SUNDAY_WEEKDAY:
                     sun_button.active = true;
@@ -321,6 +326,17 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
 
     private void load_monthly_recurrence (ICal.Recurrence rrule) {
         repeat_combobox.active = 2;
+#if HAS_I_CAL_4_0_0
+        if (rrule.get_by (ICal.RecurrenceByRule.BY_MONTH_DAY, 0) > 0) {
+            same_radiobutton.active = true;
+        } else {
+            var by_day = rrule.get_by (ICal.RecurrenceByRule.BY_DAY, 0);
+            if (by_day > 0) {
+                set_every_day (by_day);
+                every_radiobutton.active = true;
+            }
+        }
+#else
         if (rrule.get_by_month_day (0) != ICal.RecurrenceArrayMaxValues.RECURRENCE_ARRAY_MAX) {
             same_radiobutton.active = true;
         } else {
@@ -330,6 +346,7 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
                 every_radiobutton.active = true;
             }
         }
+#endif /* HAS_I_CAL_4_0_0 */
     }
 
     private void load () {
@@ -685,7 +702,11 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
                     array.append_val (day);
                 }
 
+#if HAS_I_CAL_4_0_0
+                rrule.set_by_array (ICal.RecurrenceByRule.BY_DAY, array);
+#else
                 rrule.set_by_day_array (array);
+#endif /* HAS_I_CAL_4_0_0 */
                 break;
             case 2:
                 rrule.set_freq (ICal.RecurrenceFrequency.MONTHLY_RECURRENCE);
@@ -718,12 +739,20 @@ public class Maya.View.EventEdition.RepeatPanel : Gtk.Bin {
 
                     short day = encode_day (weekday, (int) Math.ceil ((double)parent_dialog.date_time.get_day_of_month () / (double)7));
                     array.append_val (day);
+#if HAS_I_CAL_4_0_0
+                    rrule.set_by_array (ICal.RecurrenceByRule.BY_DAY, array);
+#else
                     rrule.set_by_day_array (array);
+#endif /* HAS_I_CAL_4_0_0 */
                 } else {
                     var array = new GLib.Array<short>.sized (false, false, sizeof (short), 1);
                     var day_of_month = (short)parent_dialog.date_time.get_day_of_month ();
                     array.append_val (day_of_month);
+#if HAS_I_CAL_4_0_0
+                    rrule.set_by_array (ICal.RecurrenceByRule.BY_MONTH_DAY, array);
+#else
                     rrule.set_by_month_day_array (array);
+#endif /* HAS_I_CAL_4_0_0 */
                 }
                 break;
             case 3:
