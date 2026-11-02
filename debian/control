@@ -27,7 +27,6 @@ Homepage: https://github.com/elementary/calendar
 Package: maya-calendar
 Architecture: any
 Depends: libmaya-calendar0 (= ${binary:Version}),
-         maya-calendar-daemon,
          ${misc:Depends},
          ${shlibs:Depends}
 Recommends: maya-calendar-plugin-caldav, maya-calendar-plugin-google
