@@ -21,12 +21,11 @@ public class Maya.View.CalendarView : Gtk.Box {
 
     public DateTime? selected_date { get; private set; }
     public Gtk.SearchEntry search_bar { get; private set; }
-    public Hdy.HeaderBar header_bar { get; private set; }
+    public Adw.HeaderBar header_bar { get; private set; }
 
     private Calendar.Widgets.DateSwitcher month_switcher;
     private Calendar.Widgets.DateSwitcher year_switcher;
     private Grid days_grid;
-    private Gtk.EventControllerScroll scroll_controller;
     private Gtk.Stack stack;
     private WeekLabels weeks;
 
@@ -52,14 +51,13 @@ public class Maya.View.CalendarView : Gtk.Box {
         selected_date = Maya.Application.get_selected_datetime ();
 
         var error_label = new Gtk.Label (null);
-        error_label.show ();
 
         var error_bar = new Gtk.InfoBar () {
             message_type = Gtk.MessageType.ERROR,
             revealed = false,
             show_close_button = true
         };
-        error_bar.get_content_area ().add (error_label);
+        error_bar.add_child (error_label);
 
         var info_label = new Gtk.Label ("<b>%s</b> %s".printf (
             _("Network Not Available."),
@@ -73,18 +71,19 @@ public class Maya.View.CalendarView : Gtk.Box {
             message_type = WARNING,
             revealed = false
         };
-        info_bar.get_content_area ().add (info_label);
+        info_bar.add_child (info_label);
         info_bar.add_button (_("Network Settings…"), Gtk.ResponseType.ACCEPT);
 
         var application_instance = ((Gtk.Application) GLib.Application.get_default ());
 
-        var button_today = new Gtk.Button.from_icon_name ("calendar-go-today", Gtk.IconSize.LARGE_TOOLBAR) {
+        var button_today = new Gtk.Button.from_icon_name ("calendar-go-today") {
             action_name = Maya.MainWindow.ACTION_PREFIX + Maya.MainWindow.ACTION_SHOW_TODAY
         };
         button_today.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (button_today.action_name),
             _("Go to today's date")
         );
+        button_today.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         month_switcher = new Calendar.Widgets.DateSwitcher (10) {
             valign = CENTER
@@ -100,13 +99,22 @@ public class Maya.View.CalendarView : Gtk.Box {
         var source_popover = new Calendar.Widgets.SourcePopover ();
 
         var menu_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            // FIXME: Workaround for stylesheet bug
+            child = new Gtk.Image.from_icon_name ("open-menu") {
+                icon_size = LARGE
+            },
+            has_frame = false,
             popover = source_popover,
-            tooltip_text = _("Manage Calendars")
+            primary = true,
+            tooltip_markup = ("%s\n" + Granite.TOOLTIP_SECONDARY_TEXT_MARKUP).printf (
+                _("Manage Calendars"),
+                "F10"
+            )
         };
 
-        header_bar = new Hdy.HeaderBar () {
-            show_close_button = true
+        header_bar = new Adw.HeaderBar () {
+            show_end_title_buttons = false,
+            show_title = false
         };
         header_bar.pack_start (month_switcher);
         header_bar.pack_start (year_switcher);
@@ -114,7 +122,7 @@ public class Maya.View.CalendarView : Gtk.Box {
         header_bar.pack_end (menu_button);
         header_bar.pack_end (spinner);
 
-        header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         stack = new Gtk.Stack () {
             hexpand = true,
@@ -132,28 +140,25 @@ public class Maya.View.CalendarView : Gtk.Box {
 
         stack.notify["transition-running"].connect (() => {
             if (stack.transition_running == false) {
-                stack.get_children ().foreach ((child) => {
-                    if (child != stack.visible_child) {
-                        child.destroy ();
-                    }
-                });
+                if (stack.get_first_child () != stack.visible_child) {
+                    stack.get_first_child ().destroy ();
+                }
+
+                if (stack.get_last_child () != stack.visible_child) {
+                    stack.get_last_child ().destroy ();
+                }
             }
         });
 
         settings.changed["show-weeks"].connect (on_show_weeks_changed);
         settings.get_value ("show-weeks");
 
-        events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        events |= Gdk.EventMask.KEY_PRESS_MASK;
-        events |= Gdk.EventMask.SCROLL_MASK;
-        events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
         orientation = VERTICAL;
-        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        add (header_bar);
-        add (error_bar);
-        add (info_bar);
-        add (stack);
-        show_all ();
+        add_css_class (Granite.STYLE_CLASS_VIEW);
+        append (header_bar);
+        append (error_bar);
+        append (info_bar);
+        append (stack);
 
         var network_monitor = GLib.NetworkMonitor.get_default ();
         network_monitor.network_changed.connect (() => {
@@ -191,43 +196,46 @@ public class Maya.View.CalendarView : Gtk.Box {
             set_switcher_date (calmodel.month_start);
         });
 
-        scroll_controller = new Gtk.EventControllerScroll (this, Gtk.EventControllerScrollFlags.BOTH_AXES);
+        var scroll_controller = new Gtk.EventControllerScroll (Gtk.EventControllerScrollFlags.BOTH_AXES);
         scroll_controller.scroll.connect (GesturesUtils.on_scroll);
+
+        add_controller (scroll_controller);
     }
 
     private void action_export () {
         var filter = new Gtk.FileFilter ();
         filter.add_mime_type ("text/calendar");
 
-        var filechooser = new Gtk.FileChooserNative (
-            _("Export Calendar…"),
-            null,
-            Gtk.FileChooserAction.SAVE,
-            _("Save"),
-            _("Cancel")
-        );
-        filechooser.do_overwrite_confirmation = true;
-        filechooser.filter = filter;
-        filechooser.set_current_name (_("calendar.ics"));
+        var file_dialog = new Gtk.FileDialog () {
+            title = _("Export Calendar…"),
+            accept_label = _("Save"),
+            default_filter = filter,
+            initial_name = _("calendar.ics")
+        };
 
-        if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
-            var events = Calendar.EventStore.get_default ().get_events ();
-            var builder = new StringBuilder ();
-            builder.append ("BEGIN:VCALENDAR\n");
-            foreach (ECal.Component event in events) {
-                builder.append (event.get_as_string ());
-            }
-            builder.append ("END:VCALENDAR");
+        var window = (Gtk.Window) get_root ();
 
-            var file = filechooser.get_file ();
+        file_dialog.save.begin (window, null, (obj, res) => {
             try {
+                var events = Calendar.EventStore.get_default ().get_events ();
+                var builder = new StringBuilder ();
+                builder.append ("BEGIN:VCALENDAR\n");
+                builder.append ("VERSION:2.0\n");
+                foreach (ECal.Component event in events) {
+                    builder.append (event.get_as_string ());
+                }
+                builder.append ("END:VCALENDAR");
+
+                var file = file_dialog.save.end (res);
                 file.replace_contents (builder.data, null, false, FileCreateFlags.REPLACE_DESTINATION, null);
             } catch (Error e) {
-                warning ("%s\n", e.message);
-            }
-        }
+                if (e.matches (Gtk.DialogError.quark (), Gtk.DialogError.DISMISSED)) {
+                    return;
+                }
 
-        filechooser.destroy ();
+                critical (e.message);
+            }
+        });
     }
 
     private void set_switcher_date (DateTime date) {
@@ -309,7 +317,7 @@ public class Maya.View.CalendarView : Gtk.Box {
         }
 
         var spacer = new Gtk.Label ("");
-        spacer.get_style_context ().add_class ("weeks");
+        spacer.add_css_class ("weeks");
 
         var spacer_revealer = new Gtk.Revealer () {
             child = spacer,
@@ -336,11 +344,10 @@ public class Maya.View.CalendarView : Gtk.Box {
         big_grid.attach (header, 1, 0);
         big_grid.attach (days_grid, 1, 1);
         big_grid.attach (weeks, 0, 1);
-        big_grid.show_all ();
 
         settings.bind ("show-weeks", spacer_revealer, "reveal-child", SettingsBindFlags.GET);
 
-        stack.add (big_grid);
+        stack.add_child (big_grid);
 
         header.update_columns (model.week_starts_on);
         weeks.update (model.data_range.first_dt, model.num_weeks);

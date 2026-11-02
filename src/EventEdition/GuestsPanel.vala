@@ -37,9 +37,8 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
         load_contacts.begin ();
 
         var no_guests_label = new Gtk.Label (_("No Invitees"));
-        no_guests_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-        no_guests_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        no_guests_label.show ();
+        no_guests_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
+        no_guests_label.add_css_class (Granite.CssClass.DIM);
 
         guest_list = new Gtk.ListBox () {
             hexpand = true,
@@ -52,7 +51,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
             mnemonic_widget = guest_list
         };
 
-        var guest_scrolledwindow = new Gtk.ScrolledWindow (null, null) {
+        var guest_scrolledwindow = new Gtk.ScrolledWindow () {
             child = guest_list
         };
 
@@ -80,7 +79,7 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
             return false;
         });
 
-        guest_entry = new Gtk.SearchEntry () {
+        guest_entry = new Gtk.Entry () {
             hexpand = true,
             placeholder_text = _("Invite")
         };
@@ -96,9 +95,9 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
         margin_end = 12;
         spacing = 6;
         orientation = VERTICAL;
-        add (guest_label);
-        add (guest_entry);
-        add (frame);
+        append (guest_label);
+        append (guest_entry);
+        append (frame);
 
         var property = component.get_first_property (ATTENDEE_PROPERTY);
         for (int i = 0; i < component.count_properties (ATTENDEE_PROPERTY); i++) {
@@ -108,8 +107,6 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
 
             property = component.get_next_property (ATTENDEE_PROPERTY);
         }
-
-        show_all ();
     }
 
     /**
@@ -167,9 +164,8 @@ public class Maya.View.EventEdition.GuestsPanel : Gtk.Box {
         var row = new Gtk.ListBoxRow () {
             child = guest_element
         };
-        row.show_all ();
 
-        guest_list.add (row);
+        guest_list.append (row);
 
         attendees.add (guest_element.attendee);
 
