@@ -80,31 +80,29 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             var ics_filter = new Gtk.FileFilter ();
             ics_filter.add_mime_type ("application/ics");
 
-            var file_chooser = new Gtk.FileChooserNative (
-                _("Select ICS File to Import"),
-                null,
-                Gtk.FileChooserAction.OPEN,
-                _("Open"),
-                _("Cancel")
-            );
-            file_chooser.set_select_multiple (true);
-            file_chooser.set_filter (ics_filter);
+            var file_dialog = new Gtk.FileDialog () {
+                title = _("Select ICS File to Import"),
+                accept_label = _("Open"),
+                default_filter = ics_filter
+            };
 
-            file_chooser.show ();
             popdown ();
 
-            file_chooser.response.connect ((response_id) => {
-                GLib.File[] files = null;
+            var main_window = (Gtk.Window)((Gtk.Application) Application.get_default ()).active_window;
 
-                if (response_id == Gtk.ResponseType.ACCEPT) {
-                    var file_list = file_chooser.get_files ();
-                    for (int i; i < file_list.get_n_items (); i++) {
-                        files += (File) file_list.get_item (i);
-                    }
+            file_dialog.open_multiple.begin (main_window, null, (obj, res) => {
+                var file_model = file_dialog.open_multiple.end (res);
+
+                GLib.File[] files = null;
+                for (int i; i < file_model.get_n_items (); i++) {
+                    files += (File) file_model.get_item (i);
                 }
 
                 if (files != null) {
-                    var dialog = new Maya.View.ImportDialog (files);
+                    var dialog = new Maya.View.ImportDialog (files) {
+                        modal = true,
+                        transient_for = main_window
+                    };
                     dialog.present ();
                 }
             });
