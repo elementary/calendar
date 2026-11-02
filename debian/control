@@ -42,26 +42,6 @@ Description: Gtk calendar application
  to notify the user about upcoming events and supports synchronization with
  most online services.
 
-Package: maya-calendar-common
-Section: oldlibs
-Architecture: all
-Depends: ${misc:Depends}
-Description: Gtk calendar application (dummy transitional package)
- A slim, lightweight calendar app that syncs and manages multiple calendars
- in one place.
- .
- It features an easy to use yet powerful user interface, provides a daemon
- to notify the user about upcoming events and supports synchronization with
- most online services.
- .
- This package can be safely removed after upgrading to elementary OS 0.4 Loki.
-
-Package: maya-calendar-daemon
-Architecture: any
-Depends: maya-calendar (>=6.0.1+r2145+pkg137)
-Description: Transitional dummy package for maya-calendar
- This is a transitional dummy package. It can safely be removed.
-
 Package: libmaya-calendar0
 Architecture: any
 Section: libs
