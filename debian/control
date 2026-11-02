@@ -25,7 +25,6 @@ Standards-Version: 4.1.1
 Homepage: https://github.com/elementary/calendar
 
 Package: maya-calendar
-Provides: maya-calendar-daemon
 Architecture: any
 Depends: libmaya-calendar0 (= ${binary:Version}),
          maya-calendar-daemon,
