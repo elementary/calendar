@@ -53,19 +53,16 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
             placeholder_text = _("Search Calendars")
         };
 
-        var placeholder = new Granite.Widgets.AlertView (
-            _("No Results"),
-            _("Try changing search terms."),
-            ""
-        );
-        placeholder.show_all ();
+        var placeholder = new Granite.Placeholder (_("No Results")) {
+            description = _("Try changing search terms.")
+        };
 
         var list_box = new Gtk.ListBox () {
             activate_on_single_click = true
         };
         list_box.set_placeholder (placeholder);
 
-        var scrolled = new Gtk.ScrolledWindow (null, null) {
+        var scrolled = new Gtk.ScrolledWindow () {
             child = list_box,
             hscrollbar_policy = NEVER,
             max_content_height = 300,
@@ -74,9 +71,8 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
 
         margin_bottom = 6;
         orientation = VERTICAL;
-        add (search_entry);
-        add (scrolled);
-        show_all ();
+        append (search_entry);
+        append (scrolled);
 
         list_box.set_filter_func (filter_function);
         list_box.set_header_func (header_update_func);
@@ -143,9 +139,8 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
             var row = new Gtk.ListBoxRow () {
                 child = calrow
             };
-            row.show_all ();
 
-            list_box.add (row);
+            list_box.append (row);
 
             if (source.dup_uid () == current_source.dup_uid ()) {
                 list_box.select_row (row);
@@ -176,14 +171,11 @@ public class Maya.View.Widgets.CalendarChooser : Gtk.Box {
         }
 
         var header = new Granite.HeaderLabel (row_location) {
-            margin_top = 6,
-            margin_end = 6,
-            margin_start = 6
+            margin_top = 6
         };
 
         row.set_header (header);
 
-        header.show_all ();
         if (before == null) {
             header.margin_top = 0;
         }
