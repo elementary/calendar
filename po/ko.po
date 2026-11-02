@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 17:04+0000\n"
+"POT-Creation-Date: 2026-11-02 17:23+0000\n"
 "PO-Revision-Date: 2022-08-06 11:01+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/calendar/calendar/"
@@ -80,7 +80,7 @@ msgstr "서버에서 약속 초대를 관리합니다"
 msgid "Create a new event"
 msgstr "새 이벤트 추가하기"
 
-#: src/AgendaView.vala:52
+#: src/AgendaView.vala:54
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -127,7 +127,7 @@ msgstr "선정한 날에 초점 맞추기"
 msgid "date"
 msgstr "날짜"
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -168,13 +168,13 @@ msgstr "일반 정보"
 msgid "Location"
 msgstr "위치"
 
-#: src/EventEdition/EventDialog.vala:113 src/EventEdition/GuestsPanel.vala:51
+#: src/EventEdition/EventDialog.vala:113 src/EventEdition/GuestsPanel.vala:50
 #, fuzzy
 #| msgid "Invite"
 msgid "Invitees"
 msgstr "초대"
 
-#: src/EventEdition/EventDialog.vala:114 src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/EventDialog.vala:114 src/EventEdition/ReminderPanel.vala:31
 msgid "Reminders"
 msgstr "알림"
 
@@ -184,22 +184,22 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "반복"
 
-#: src/EventEdition/EventDialog.vala:137
+#: src/EventEdition/EventDialog.vala:140
 #, fuzzy
 #| msgid "Delete Event"
 msgid "Delete Event…"
 msgstr "이벤트 삭제"
 
-#: src/EventEdition/EventDialog.vala:152
+#: src/EventEdition/EventDialog.vala:155
 msgid "Create Event"
 msgstr "이벤트 추가하기"
 
-#: src/EventEdition/EventDialog.vala:155
+#: src/EventEdition/EventDialog.vala:158
 msgid "Save Changes"
 msgstr "변경 사항 저장"
 
-#: src/EventEdition/EventDialog.vala:158 src/Grid/CalendarView.vala:207
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
+#: src/EventEdition/EventDialog.vala:161 src/SourceDialog/SourceDialog.vala:54
+#: src/Widgets/SourcePopover.vala:88
 msgid "Cancel"
 msgstr "취소"
 
@@ -221,7 +221,7 @@ msgstr "아마도"
 msgid "No Invitees"
 msgstr "초대"
 
-#: src/EventEdition/GuestsPanel.vala:85
+#: src/EventEdition/GuestsPanel.vala:84
 msgid "Invite"
 msgstr "초대"
 
@@ -253,11 +253,11 @@ msgstr "제목:"
 msgid "Press enter to parse event"
 msgstr "이벤트를 분석하려면 엔터키를 누르세요"
 
-#: src/EventEdition/InfoPanel.vala:171
+#: src/EventEdition/InfoPanel.vala:172
 msgid "Calendar:"
 msgstr "일정표:"
 
-#: src/EventEdition/InfoPanel.vala:189
+#: src/EventEdition/InfoPanel.vala:190
 msgid "Comments:"
 msgstr "설명:"
 
@@ -273,71 +273,71 @@ msgstr "장소:"
 msgid "No Reminders"
 msgstr "알림 없음"
 
-#: src/EventEdition/ReminderPanel.vala:45
+#: src/EventEdition/ReminderPanel.vala:43
 msgid "Add Reminder"
 msgstr "알림 추가"
 
-#: src/EventEdition/ReminderPanel.vala:167
+#: src/EventEdition/ReminderPanel.vala:164
 msgid "At time of event"
 msgstr "이벤트 시각"
 
-#: src/EventEdition/ReminderPanel.vala:168
+#: src/EventEdition/ReminderPanel.vala:165
 msgid "1 minute before"
 msgstr "1 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:169
+#: src/EventEdition/ReminderPanel.vala:166
 msgid "5 minutes before"
 msgstr "5 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:170
+#: src/EventEdition/ReminderPanel.vala:167
 msgid "10 minutes before"
 msgstr "10 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:171
+#: src/EventEdition/ReminderPanel.vala:168
 msgid "15 minutes before"
 msgstr "15 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:169
 msgid "20 minutes before"
 msgstr "20 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:170
 msgid "25 minutes before"
 msgstr "25 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:171
 msgid "30 minutes before"
 msgstr "30 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "45 minutes before"
 msgstr "45 분 전"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "1 hour before"
 msgstr "1 시간 전"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "2 hours before"
 msgstr "2 시간 전"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "3 hours before"
 msgstr "3 시간 전"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "12 hours before"
 msgstr "12 시간 전"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "24 hours before"
 msgstr "24 시간 전"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "2 days before"
 msgstr "2 일 전"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "1 week before"
 msgstr "1 주 전"
 
@@ -426,11 +426,11 @@ msgstr "일"
 msgid "The same day every month"
 msgstr "매월 같은 날"
 
-#: src/EventEdition/RepeatPanel.vala:146
+#: src/EventEdition/RepeatPanel.vala:148
 msgid "Exceptions:"
 msgstr "예외:"
 
-#: src/EventEdition/RepeatPanel.vala:148
+#: src/EventEdition/RepeatPanel.vala:150
 msgid "No Exceptions"
 msgstr "예외 없음"
 
@@ -453,218 +453,218 @@ msgid "Year"
 msgid_plural "Years"
 msgstr[0] "년"
 
-#: src/EventEdition/RepeatPanel.vala:397
+#: src/EventEdition/RepeatPanel.vala:396
 msgid "Every last Sunday"
 msgstr "매 마지막 일요일"
 
-#: src/EventEdition/RepeatPanel.vala:400
+#: src/EventEdition/RepeatPanel.vala:399
 msgid "Every last Monday"
 msgstr "매 마지막 달"
 
-#: src/EventEdition/RepeatPanel.vala:403
+#: src/EventEdition/RepeatPanel.vala:402
 msgid "Every last Tuesday"
 msgstr "매 마지막 화요일"
 
-#: src/EventEdition/RepeatPanel.vala:406
+#: src/EventEdition/RepeatPanel.vala:405
 msgid "Every last Wednesday"
 msgstr "매 마지막 주"
 
-#: src/EventEdition/RepeatPanel.vala:409
+#: src/EventEdition/RepeatPanel.vala:408
 msgid "Every last Thursday"
 msgstr "매 마지막 목요일"
 
-#: src/EventEdition/RepeatPanel.vala:412
+#: src/EventEdition/RepeatPanel.vala:411
 msgid "Every last Friday"
 msgstr "매 마지막 금요일"
 
-#: src/EventEdition/RepeatPanel.vala:415
+#: src/EventEdition/RepeatPanel.vala:414
 msgid "Every last Saturday"
 msgstr "매 마지막 토요일"
 
-#: src/EventEdition/RepeatPanel.vala:422
+#: src/EventEdition/RepeatPanel.vala:421
 msgid "Every first Sunday"
 msgstr "매 첫 일요일"
 
-#: src/EventEdition/RepeatPanel.vala:425
+#: src/EventEdition/RepeatPanel.vala:424
 msgid "Every first Monday"
 msgstr "매 첫 월요일"
 
-#: src/EventEdition/RepeatPanel.vala:428
+#: src/EventEdition/RepeatPanel.vala:427
 msgid "Every first Tuesday"
 msgstr "매 첫 화요일"
 
-#: src/EventEdition/RepeatPanel.vala:431
+#: src/EventEdition/RepeatPanel.vala:430
 msgid "Every first Wednesday"
 msgstr "매 첫 수요일"
 
-#: src/EventEdition/RepeatPanel.vala:434
+#: src/EventEdition/RepeatPanel.vala:433
 msgid "Every first Thursday"
 msgstr "매 첫 목요일"
 
-#: src/EventEdition/RepeatPanel.vala:437
+#: src/EventEdition/RepeatPanel.vala:436
 msgid "Every first Friday"
 msgstr "매 첫 금요일"
 
-#: src/EventEdition/RepeatPanel.vala:440
+#: src/EventEdition/RepeatPanel.vala:439
 msgid "Every first Saturday"
 msgstr "매 첫 토요일"
 
-#: src/EventEdition/RepeatPanel.vala:447
+#: src/EventEdition/RepeatPanel.vala:446
 msgid "Every second Sunday"
 msgstr "매 둘째 일요일"
 
-#: src/EventEdition/RepeatPanel.vala:450
+#: src/EventEdition/RepeatPanel.vala:449
 msgid "Every second Monday"
 msgstr "매 둘째 월요일"
 
-#: src/EventEdition/RepeatPanel.vala:453
+#: src/EventEdition/RepeatPanel.vala:452
 msgid "Every second Tuesday"
 msgstr "매 둘째 화요일"
 
-#: src/EventEdition/RepeatPanel.vala:456
+#: src/EventEdition/RepeatPanel.vala:455
 msgid "Every second Wednesday"
 msgstr "매 둘째 수요일"
 
-#: src/EventEdition/RepeatPanel.vala:459
+#: src/EventEdition/RepeatPanel.vala:458
 msgid "Every second Thursday"
 msgstr "매 둘째 목요일"
 
-#: src/EventEdition/RepeatPanel.vala:462
+#: src/EventEdition/RepeatPanel.vala:461
 msgid "Every second Friday"
 msgstr "매 둘째 금요일"
 
-#: src/EventEdition/RepeatPanel.vala:465
+#: src/EventEdition/RepeatPanel.vala:464
 msgid "Every second Saturday"
 msgstr "매 둘째 토요일"
 
-#: src/EventEdition/RepeatPanel.vala:472
+#: src/EventEdition/RepeatPanel.vala:471
 msgid "Every third Sunday"
 msgstr "매 셋째 일요일"
 
-#: src/EventEdition/RepeatPanel.vala:475
+#: src/EventEdition/RepeatPanel.vala:474
 msgid "Every third Monday"
 msgstr "매 셋째 월요일"
 
-#: src/EventEdition/RepeatPanel.vala:478
+#: src/EventEdition/RepeatPanel.vala:477
 msgid "Every third Tuesday"
 msgstr "매 셋째 화요일"
 
-#: src/EventEdition/RepeatPanel.vala:481
+#: src/EventEdition/RepeatPanel.vala:480
 msgid "Every third Wednesday"
 msgstr "매 셋째 수요일"
 
-#: src/EventEdition/RepeatPanel.vala:484
+#: src/EventEdition/RepeatPanel.vala:483
 msgid "Every third Thursday"
 msgstr "매 셋째 화요일"
 
-#: src/EventEdition/RepeatPanel.vala:487
+#: src/EventEdition/RepeatPanel.vala:486
 msgid "Every third Friday"
 msgstr "매 셋째 금요일"
 
-#: src/EventEdition/RepeatPanel.vala:490
+#: src/EventEdition/RepeatPanel.vala:489
 msgid "Every third Saturday"
 msgstr "매 셋째 토요일"
 
-#: src/EventEdition/RepeatPanel.vala:497
+#: src/EventEdition/RepeatPanel.vala:496
 msgid "Every fourth Sunday"
 msgstr "매 넷째 일요일"
 
-#: src/EventEdition/RepeatPanel.vala:500
+#: src/EventEdition/RepeatPanel.vala:499
 msgid "Every fourth Monday"
 msgstr "매 넷째 월요일"
 
-#: src/EventEdition/RepeatPanel.vala:503
+#: src/EventEdition/RepeatPanel.vala:502
 msgid "Every fourth Tuesday"
 msgstr "매 넷째 화요일"
 
-#: src/EventEdition/RepeatPanel.vala:506
+#: src/EventEdition/RepeatPanel.vala:505
 msgid "Every fourth Wednesday"
 msgstr "매 넷째 수요일"
 
-#: src/EventEdition/RepeatPanel.vala:509
+#: src/EventEdition/RepeatPanel.vala:508
 msgid "Every fourth Thursday"
 msgstr "매 넷째 목요일"
 
-#: src/EventEdition/RepeatPanel.vala:512
+#: src/EventEdition/RepeatPanel.vala:511
 msgid "Every fourth Friday"
 msgstr "매 넷째 금요일"
 
-#: src/EventEdition/RepeatPanel.vala:515
+#: src/EventEdition/RepeatPanel.vala:514
 msgid "Every fourth Saturday"
 msgstr "매 넷째 토요일"
 
-#: src/EventEdition/RepeatPanel.vala:522
+#: src/EventEdition/RepeatPanel.vala:521
 msgid "Every fifth Sunday"
 msgstr "매 다섯째 일요일"
 
-#: src/EventEdition/RepeatPanel.vala:525
+#: src/EventEdition/RepeatPanel.vala:524
 msgid "Every fifth Monday"
 msgstr "매 다섯째 월요일"
 
-#: src/EventEdition/RepeatPanel.vala:528
+#: src/EventEdition/RepeatPanel.vala:527
 msgid "Every fifth Tuesday"
 msgstr "매 다섯째 화요일"
 
-#: src/EventEdition/RepeatPanel.vala:531
+#: src/EventEdition/RepeatPanel.vala:530
 msgid "Every fifth Wednesday"
 msgstr "매 다섯째 수요일"
 
-#: src/EventEdition/RepeatPanel.vala:534
+#: src/EventEdition/RepeatPanel.vala:533
 msgid "Every fifth Thursday"
 msgstr "매 다섯째 목요일"
 
-#: src/EventEdition/RepeatPanel.vala:537
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Every fifth Friday"
 msgstr "매 다섯째 금요일"
 
-#: src/EventEdition/RepeatPanel.vala:540
+#: src/EventEdition/RepeatPanel.vala:539
 msgid "Every fifth Saturday"
 msgstr "매 다섯째 토요일"
 
-#: src/Grid/CalendarView.vala:65
+#: src/Grid/CalendarView.vala:63
 msgid "Network Not Available."
 msgstr ""
 
-#: src/Grid/CalendarView.vala:66
+#: src/Grid/CalendarView.vala:64
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
 msgstr ""
 
-#: src/Grid/CalendarView.vala:77
+#: src/Grid/CalendarView.vala:75
 #, fuzzy
 #| msgid "Online Accounts Settings…"
 msgid "Network Settings…"
 msgstr "온라인 계정 설정…"
 
-#: src/Grid/CalendarView.vala:86
+#: src/Grid/CalendarView.vala:84
 msgid "Go to today's date"
 msgstr "오늘 날짜로 가기"
 
-#: src/Grid/CalendarView.vala:105
+#: src/Grid/CalendarView.vala:110
 msgid "Manage Calendars"
 msgstr "달력 관리"
 
-#: src/Grid/CalendarView.vala:203 src/Widgets/SourcePopover.vala:53
+#: src/Grid/CalendarView.vala:210 src/Widgets/SourcePopover.vala:53
 msgid "Export Calendar…"
 msgstr "달력 내보내기…"
 
-#: src/Grid/CalendarView.vala:206 src/SourceDialog/SourceDialog.vala:282
+#: src/Grid/CalendarView.vala:211 src/SourceDialog/SourceDialog.vala:279
 msgid "Save"
 msgstr "저장"
 
-#: src/Grid/CalendarView.vala:211
+#: src/Grid/CalendarView.vala:213
 msgid "calendar.ics"
 msgstr "달력.ics"
 
-#: src/Grid/WeekLabels.vala:69 src/Grid/Header.vala:77
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:70
 msgid "Show Week Numbers"
 msgstr "몇 번째 주인지 표시"
 
-#: src/Grid/VAutoHider.vala:92
+#: src/Grid/VAutoHider.vala:91
 #, fuzzy, c-format
 #| msgid "%u more…"
-msgid "%i more…"
+msgid "%u more…"
 msgstr "%u 더…"
 
 #: src/SourceDialog/SourceDialog.vala:56
@@ -735,99 +735,99 @@ msgstr "색상:"
 msgid "Mark as default calendar"
 msgstr "기본 달력으로 설정"
 
-#: src/SourceDialog/SourceDialog.vala:277
+#: src/SourceDialog/SourceDialog.vala:274
 msgid "Create Calendar"
 msgstr "달력 만들기"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:69
+#: src/Widgets/AgendaEventRow.vala:66
 msgid "appointment;meeting"
 msgstr "약속;회의"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:74
+#: src/Widgets/AgendaEventRow.vala:71
 msgid "birthday;anniversary;party"
 msgstr "생일;기념일;파티"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:79
+#: src/Widgets/AgendaEventRow.vala:76
 msgid "call;phone;telephone;ring"
 msgstr "전화걸기;전화;전화기;벨소리"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:84
+#: src/Widgets/AgendaEventRow.vala:81
 msgid "bar;cocktails;drinks;happy hour"
 msgstr "바;칵테일;음료;행복한 시간"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:89
+#: src/Widgets/AgendaEventRow.vala:86
 msgid "car;drive;driving;road trip;"
 msgstr "자동차;운전;드라이브;길;여행;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:94
+#: src/Widgets/AgendaEventRow.vala:91
 msgid "flight;airport;"
 msgstr "비행;공항;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:99
+#: src/Widgets/AgendaEventRow.vala:96
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr "아침;브런치;저녁;점심;저녁;스테이크하우스;버거;식사;바베큐"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:104
+#: src/Widgets/AgendaEventRow.vala:101
 msgid "court;jury;tax;attorney;lawyer;contract"
 msgstr "법원;배심원;세금;변호사;변호사;계약"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:109
+#: src/Widgets/AgendaEventRow.vala:106
 msgid "movie;film"
 msgstr "영화;필름"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:114
+#: src/Widgets/AgendaEventRow.vala:111
 msgid "wedding"
 msgstr "결혼"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21–Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:353
+#: src/Widgets/AgendaEventRow.vala:344
 #, c-format
 msgctxt "date-range"
 msgid "%s–%s"
 msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM–Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:357
+#: src/Widgets/AgendaEventRow.vala:348
 #, fuzzy, c-format
 #| msgid "%s, %s – %s, %s"
 msgid "%s, %s–%s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM–9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:372
+#: src/Widgets/AgendaEventRow.vala:363
 #, c-format
 msgctxt "time-range"
 msgid "%s–%s"
 msgstr ""
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:381
+#: src/Widgets/AgendaEventRow.vala:372
 #, c-format
 msgid "%s at %s"
 msgstr "%s %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM–9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:385
+#: src/Widgets/AgendaEventRow.vala:376
 #, fuzzy, c-format
 #| msgid "%s, %s – %s"
 msgid "%s, %s–%s"
@@ -837,11 +837,11 @@ msgstr "%s, %s – %s"
 msgid "Search Calendars"
 msgstr "달력 검색"
 
-#: src/Widgets/CalendarChooser.vala:57
+#: src/Widgets/CalendarChooser.vala:56
 msgid "No Results"
 msgstr "결과 없음"
 
-#: src/Widgets/CalendarChooser.vala:58
+#: src/Widgets/CalendarChooser.vala:57
 msgid "Try changing search terms."
 msgstr "검색어를 바꿔보세요."
 
@@ -928,11 +928,11 @@ msgstr "iCalendar 파일 가져오기…"
 msgid "Online Accounts Settings…"
 msgstr "온라인 계정 설정…"
 
-#: src/Widgets/SourcePopover.vala:85
+#: src/Widgets/SourcePopover.vala:84
 msgid "Select ICS File to Import"
 msgstr "가져올 ICS 파일 선택"
 
-#: src/Widgets/SourcePopover.vala:88
+#: src/Widgets/SourcePopover.vala:87
 msgid "Open"
 msgstr "열기"
 
@@ -948,7 +948,7 @@ msgstr "편집할 수 없음"
 msgid "Undo"
 msgstr "실행 취소"
 
-#: src/Widgets/SourceRow.vala:94 src/Widgets/SourceRow.vala:175
+#: src/Widgets/SourceRow.vala:94 src/Widgets/SourceRow.vala:171
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" 지움"

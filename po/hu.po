@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 17:04+0000\n"
+"POT-Creation-Date: 2026-11-02 17:23+0000\n"
 "PO-Revision-Date: 2025-11-22 12:55+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementaryos.org/projects/calendar/"
@@ -76,7 +76,7 @@ msgstr "A szerver kezeli az értekezlet-meghívókat"
 msgid "Create a new event"
 msgstr "Új esemény létrehozása"
 
-#: src/AgendaView.vala:52
+#: src/AgendaView.vala:54
 msgid ""
 "Your upcoming events will be displayed here when you select a date with "
 "events."
@@ -123,7 +123,7 @@ msgstr "Megadott napra ugrás"
 msgid "date"
 msgstr "dátum"
 
-#: src/Application.vala:183
+#: src/Application.vala:176
 msgid ""
 "Calendar will automatically start when this device turns on and run when its "
 "window is closed so that it can send event notifications."
@@ -169,13 +169,13 @@ msgstr "Általános információk"
 msgid "Location"
 msgstr "Hely"
 
-#: src/EventEdition/EventDialog.vala:113 src/EventEdition/GuestsPanel.vala:51
+#: src/EventEdition/EventDialog.vala:113 src/EventEdition/GuestsPanel.vala:50
 #, fuzzy
 #| msgid "Invite"
 msgid "Invitees"
 msgstr "Meghívás"
 
-#: src/EventEdition/EventDialog.vala:114 src/EventEdition/ReminderPanel.vala:33
+#: src/EventEdition/EventDialog.vala:114 src/EventEdition/ReminderPanel.vala:31
 msgid "Reminders"
 msgstr "Emlékeztetők"
 
@@ -185,20 +185,20 @@ msgctxt "Section Header"
 msgid "Repeat"
 msgstr "Ismétlődés"
 
-#: src/EventEdition/EventDialog.vala:137
+#: src/EventEdition/EventDialog.vala:140
 msgid "Delete Event…"
 msgstr "Esemény törlése…"
 
-#: src/EventEdition/EventDialog.vala:152
+#: src/EventEdition/EventDialog.vala:155
 msgid "Create Event"
 msgstr "Esemény létrehozása"
 
-#: src/EventEdition/EventDialog.vala:155
+#: src/EventEdition/EventDialog.vala:158
 msgid "Save Changes"
 msgstr "A módosítások mentése"
 
-#: src/EventEdition/EventDialog.vala:158 src/Grid/CalendarView.vala:207
-#: src/SourceDialog/SourceDialog.vala:54 src/Widgets/SourcePopover.vala:89
+#: src/EventEdition/EventDialog.vala:161 src/SourceDialog/SourceDialog.vala:54
+#: src/Widgets/SourcePopover.vala:88
 msgid "Cancel"
 msgstr "Mégse"
 
@@ -220,7 +220,7 @@ msgstr "Talán"
 msgid "No Invitees"
 msgstr "Meghívás"
 
-#: src/EventEdition/GuestsPanel.vala:85
+#: src/EventEdition/GuestsPanel.vala:84
 msgid "Invite"
 msgstr "Meghívás"
 
@@ -252,11 +252,11 @@ msgstr "Cím:"
 msgid "Press enter to parse event"
 msgstr "Az esemény elemzéséhez nyomja meg az enter billentyűt"
 
-#: src/EventEdition/InfoPanel.vala:171
+#: src/EventEdition/InfoPanel.vala:172
 msgid "Calendar:"
 msgstr "Naptár:"
 
-#: src/EventEdition/InfoPanel.vala:189
+#: src/EventEdition/InfoPanel.vala:190
 msgid "Comments:"
 msgstr "Megjegyzések:"
 
@@ -272,71 +272,71 @@ msgstr "Hely:"
 msgid "No Reminders"
 msgstr "Nincsenek emlékeztetők"
 
-#: src/EventEdition/ReminderPanel.vala:45
+#: src/EventEdition/ReminderPanel.vala:43
 msgid "Add Reminder"
 msgstr "Emlékeztető hozzáadása"
 
-#: src/EventEdition/ReminderPanel.vala:167
+#: src/EventEdition/ReminderPanel.vala:164
 msgid "At time of event"
 msgstr "Az esemény idejében"
 
-#: src/EventEdition/ReminderPanel.vala:168
+#: src/EventEdition/ReminderPanel.vala:165
 msgid "1 minute before"
 msgstr "1 perccel előtte"
 
-#: src/EventEdition/ReminderPanel.vala:169
+#: src/EventEdition/ReminderPanel.vala:166
 msgid "5 minutes before"
 msgstr "5 perccel előtte"
 
-#: src/EventEdition/ReminderPanel.vala:170
+#: src/EventEdition/ReminderPanel.vala:167
 msgid "10 minutes before"
 msgstr "10 perccel előtte"
 
-#: src/EventEdition/ReminderPanel.vala:171
+#: src/EventEdition/ReminderPanel.vala:168
 msgid "15 minutes before"
 msgstr "15 perccel előtte"
 
-#: src/EventEdition/ReminderPanel.vala:172
+#: src/EventEdition/ReminderPanel.vala:169
 msgid "20 minutes before"
 msgstr "20 perccel előtte"
 
-#: src/EventEdition/ReminderPanel.vala:173
+#: src/EventEdition/ReminderPanel.vala:170
 msgid "25 minutes before"
 msgstr "25 perccel előtte"
 
-#: src/EventEdition/ReminderPanel.vala:174
+#: src/EventEdition/ReminderPanel.vala:171
 msgid "30 minutes before"
 msgstr "30 perccel előtte"
 
-#: src/EventEdition/ReminderPanel.vala:175
+#: src/EventEdition/ReminderPanel.vala:172
 msgid "45 minutes before"
 msgstr "45 perccel előtte"
 
-#: src/EventEdition/ReminderPanel.vala:176
+#: src/EventEdition/ReminderPanel.vala:173
 msgid "1 hour before"
 msgstr "1 órával előtte"
 
-#: src/EventEdition/ReminderPanel.vala:177
+#: src/EventEdition/ReminderPanel.vala:174
 msgid "2 hours before"
 msgstr "2 órával előtte"
 
-#: src/EventEdition/ReminderPanel.vala:178
+#: src/EventEdition/ReminderPanel.vala:175
 msgid "3 hours before"
 msgstr "3 órával előtte"
 
-#: src/EventEdition/ReminderPanel.vala:179
+#: src/EventEdition/ReminderPanel.vala:176
 msgid "12 hours before"
 msgstr "12 órával előtte"
 
-#: src/EventEdition/ReminderPanel.vala:180
+#: src/EventEdition/ReminderPanel.vala:177
 msgid "24 hours before"
 msgstr "24 órával előtte"
 
-#: src/EventEdition/ReminderPanel.vala:181
+#: src/EventEdition/ReminderPanel.vala:178
 msgid "2 days before"
 msgstr "2 nappal előtte"
 
-#: src/EventEdition/ReminderPanel.vala:182
+#: src/EventEdition/ReminderPanel.vala:179
 msgid "1 week before"
 msgstr "1 héttel előtte"
 
@@ -427,11 +427,11 @@ msgstr "V"
 msgid "The same day every month"
 msgstr "Minden hónapban ugyanazon a napon"
 
-#: src/EventEdition/RepeatPanel.vala:146
+#: src/EventEdition/RepeatPanel.vala:148
 msgid "Exceptions:"
 msgstr "Kivételek:"
 
-#: src/EventEdition/RepeatPanel.vala:148
+#: src/EventEdition/RepeatPanel.vala:150
 msgid "No Exceptions"
 msgstr "Nincsenek kivételek"
 
@@ -457,179 +457,179 @@ msgid_plural "Years"
 msgstr[0] "Év"
 msgstr[1] "Év"
 
-#: src/EventEdition/RepeatPanel.vala:397
+#: src/EventEdition/RepeatPanel.vala:396
 msgid "Every last Sunday"
 msgstr "Minden utolsó vasárnap"
 
-#: src/EventEdition/RepeatPanel.vala:400
+#: src/EventEdition/RepeatPanel.vala:399
 msgid "Every last Monday"
 msgstr "Minden utolsó hétfőn"
 
-#: src/EventEdition/RepeatPanel.vala:403
+#: src/EventEdition/RepeatPanel.vala:402
 msgid "Every last Tuesday"
 msgstr "Minden utolsó kedden"
 
-#: src/EventEdition/RepeatPanel.vala:406
+#: src/EventEdition/RepeatPanel.vala:405
 msgid "Every last Wednesday"
 msgstr "Minden utolsó szerdán"
 
-#: src/EventEdition/RepeatPanel.vala:409
+#: src/EventEdition/RepeatPanel.vala:408
 msgid "Every last Thursday"
 msgstr "Minden utolsó csütörtökön"
 
-#: src/EventEdition/RepeatPanel.vala:412
+#: src/EventEdition/RepeatPanel.vala:411
 msgid "Every last Friday"
 msgstr "Minden utolsó pénteken"
 
-#: src/EventEdition/RepeatPanel.vala:415
+#: src/EventEdition/RepeatPanel.vala:414
 msgid "Every last Saturday"
 msgstr "Minden utolsó szombaton"
 
-#: src/EventEdition/RepeatPanel.vala:422
+#: src/EventEdition/RepeatPanel.vala:421
 msgid "Every first Sunday"
 msgstr "Minden első vasárnap"
 
-#: src/EventEdition/RepeatPanel.vala:425
+#: src/EventEdition/RepeatPanel.vala:424
 msgid "Every first Monday"
 msgstr "Minden első hétfőn"
 
-#: src/EventEdition/RepeatPanel.vala:428
+#: src/EventEdition/RepeatPanel.vala:427
 msgid "Every first Tuesday"
 msgstr "Minden első kedden"
 
-#: src/EventEdition/RepeatPanel.vala:431
+#: src/EventEdition/RepeatPanel.vala:430
 msgid "Every first Wednesday"
 msgstr "Minden első szerdán"
 
-#: src/EventEdition/RepeatPanel.vala:434
+#: src/EventEdition/RepeatPanel.vala:433
 msgid "Every first Thursday"
 msgstr "Minden első csütörtökön"
 
-#: src/EventEdition/RepeatPanel.vala:437
+#: src/EventEdition/RepeatPanel.vala:436
 msgid "Every first Friday"
 msgstr "Minden első pénteken"
 
-#: src/EventEdition/RepeatPanel.vala:440
+#: src/EventEdition/RepeatPanel.vala:439
 msgid "Every first Saturday"
 msgstr "Minden első szombaton"
 
-#: src/EventEdition/RepeatPanel.vala:447
+#: src/EventEdition/RepeatPanel.vala:446
 msgid "Every second Sunday"
 msgstr "Minden második vasárnap"
 
-#: src/EventEdition/RepeatPanel.vala:450
+#: src/EventEdition/RepeatPanel.vala:449
 msgid "Every second Monday"
 msgstr "Minden második hétfőn"
 
-#: src/EventEdition/RepeatPanel.vala:453
+#: src/EventEdition/RepeatPanel.vala:452
 msgid "Every second Tuesday"
 msgstr "Minden második kedden"
 
-#: src/EventEdition/RepeatPanel.vala:456
+#: src/EventEdition/RepeatPanel.vala:455
 msgid "Every second Wednesday"
 msgstr "Minden második szerdán"
 
-#: src/EventEdition/RepeatPanel.vala:459
+#: src/EventEdition/RepeatPanel.vala:458
 msgid "Every second Thursday"
 msgstr "Minden második csütörtökön"
 
-#: src/EventEdition/RepeatPanel.vala:462
+#: src/EventEdition/RepeatPanel.vala:461
 msgid "Every second Friday"
 msgstr "Minden második pénteken"
 
-#: src/EventEdition/RepeatPanel.vala:465
+#: src/EventEdition/RepeatPanel.vala:464
 msgid "Every second Saturday"
 msgstr "Minden második szombaton"
 
-#: src/EventEdition/RepeatPanel.vala:472
+#: src/EventEdition/RepeatPanel.vala:471
 msgid "Every third Sunday"
 msgstr "Minden harmadik vasárnap"
 
-#: src/EventEdition/RepeatPanel.vala:475
+#: src/EventEdition/RepeatPanel.vala:474
 msgid "Every third Monday"
 msgstr "Minden harmadik hétfőn"
 
-#: src/EventEdition/RepeatPanel.vala:478
+#: src/EventEdition/RepeatPanel.vala:477
 msgid "Every third Tuesday"
 msgstr "Minden harmadik kedden"
 
-#: src/EventEdition/RepeatPanel.vala:481
+#: src/EventEdition/RepeatPanel.vala:480
 msgid "Every third Wednesday"
 msgstr "Minden harmadik szerdán"
 
-#: src/EventEdition/RepeatPanel.vala:484
+#: src/EventEdition/RepeatPanel.vala:483
 msgid "Every third Thursday"
 msgstr "Minden harmadik csütörtökön"
 
-#: src/EventEdition/RepeatPanel.vala:487
+#: src/EventEdition/RepeatPanel.vala:486
 msgid "Every third Friday"
 msgstr "Minden harmadik pénteken"
 
-#: src/EventEdition/RepeatPanel.vala:490
+#: src/EventEdition/RepeatPanel.vala:489
 msgid "Every third Saturday"
 msgstr "Minden harmadik szombaton"
 
-#: src/EventEdition/RepeatPanel.vala:497
+#: src/EventEdition/RepeatPanel.vala:496
 msgid "Every fourth Sunday"
 msgstr "Minden negyedik vasárnap"
 
-#: src/EventEdition/RepeatPanel.vala:500
+#: src/EventEdition/RepeatPanel.vala:499
 msgid "Every fourth Monday"
 msgstr "Minden negyedik hétfőn"
 
-#: src/EventEdition/RepeatPanel.vala:503
+#: src/EventEdition/RepeatPanel.vala:502
 msgid "Every fourth Tuesday"
 msgstr "Minden negyedik kedden"
 
-#: src/EventEdition/RepeatPanel.vala:506
+#: src/EventEdition/RepeatPanel.vala:505
 msgid "Every fourth Wednesday"
 msgstr "Minden negyedik szerdán"
 
-#: src/EventEdition/RepeatPanel.vala:509
+#: src/EventEdition/RepeatPanel.vala:508
 msgid "Every fourth Thursday"
 msgstr "Minden negyedik csütörtökön"
 
-#: src/EventEdition/RepeatPanel.vala:512
+#: src/EventEdition/RepeatPanel.vala:511
 msgid "Every fourth Friday"
 msgstr "Minden negyedik pénteken"
 
-#: src/EventEdition/RepeatPanel.vala:515
+#: src/EventEdition/RepeatPanel.vala:514
 msgid "Every fourth Saturday"
 msgstr "Minden negyedik szombaton"
 
-#: src/EventEdition/RepeatPanel.vala:522
+#: src/EventEdition/RepeatPanel.vala:521
 msgid "Every fifth Sunday"
 msgstr "Minden ötödik vasárnap"
 
-#: src/EventEdition/RepeatPanel.vala:525
+#: src/EventEdition/RepeatPanel.vala:524
 msgid "Every fifth Monday"
 msgstr "Minden ötödik hétfőn"
 
-#: src/EventEdition/RepeatPanel.vala:528
+#: src/EventEdition/RepeatPanel.vala:527
 msgid "Every fifth Tuesday"
 msgstr "Minden ötödik kedden"
 
-#: src/EventEdition/RepeatPanel.vala:531
+#: src/EventEdition/RepeatPanel.vala:530
 msgid "Every fifth Wednesday"
 msgstr "Minden ötödik szerdán"
 
-#: src/EventEdition/RepeatPanel.vala:534
+#: src/EventEdition/RepeatPanel.vala:533
 msgid "Every fifth Thursday"
 msgstr "Minden ötödik csütörtökön"
 
-#: src/EventEdition/RepeatPanel.vala:537
+#: src/EventEdition/RepeatPanel.vala:536
 msgid "Every fifth Friday"
 msgstr "Minden ötödik pénteken"
 
-#: src/EventEdition/RepeatPanel.vala:540
+#: src/EventEdition/RepeatPanel.vala:539
 msgid "Every fifth Saturday"
 msgstr "Minden ötödik szombaton"
 
-#: src/Grid/CalendarView.vala:65
+#: src/Grid/CalendarView.vala:63
 msgid "Network Not Available."
 msgstr "A hálózat nem érhető el."
 
-#: src/Grid/CalendarView.vala:66
+#: src/Grid/CalendarView.vala:64
 msgid ""
 "Connect to the Internet to see additional details and new events from online "
 "calendars."
@@ -637,38 +637,38 @@ msgstr ""
 "Csatlakozzon az internetre további részletekért és új eseményekért az online "
 "naptárakból."
 
-#: src/Grid/CalendarView.vala:77
+#: src/Grid/CalendarView.vala:75
 msgid "Network Settings…"
 msgstr "Hálózati beállítások…"
 
-#: src/Grid/CalendarView.vala:86
+#: src/Grid/CalendarView.vala:84
 msgid "Go to today's date"
 msgstr "Ugrás a mai dátumra"
 
-#: src/Grid/CalendarView.vala:105
+#: src/Grid/CalendarView.vala:110
 msgid "Manage Calendars"
 msgstr "Naptárak kezelése"
 
-#: src/Grid/CalendarView.vala:203 src/Widgets/SourcePopover.vala:53
+#: src/Grid/CalendarView.vala:210 src/Widgets/SourcePopover.vala:53
 msgid "Export Calendar…"
 msgstr "Naptár exportálása…"
 
-#: src/Grid/CalendarView.vala:206 src/SourceDialog/SourceDialog.vala:282
+#: src/Grid/CalendarView.vala:211 src/SourceDialog/SourceDialog.vala:279
 msgid "Save"
 msgstr "Mentés"
 
-#: src/Grid/CalendarView.vala:211
+#: src/Grid/CalendarView.vala:213
 msgid "calendar.ics"
 msgstr "naptar.ics"
 
-#: src/Grid/WeekLabels.vala:69 src/Grid/Header.vala:77
+#: src/Grid/WeekLabels.vala:66 src/Grid/Header.vala:70
 msgid "Show Week Numbers"
 msgstr "Hetek számának megjelenítése"
 
-#: src/Grid/VAutoHider.vala:92
+#: src/Grid/VAutoHider.vala:91
 #, fuzzy, c-format
 #| msgid "%u more…"
-msgid "%i more…"
+msgid "%u more…"
 msgstr "%u további…"
 
 #: src/SourceDialog/SourceDialog.vala:56
@@ -735,100 +735,100 @@ msgstr "Szín"
 msgid "Mark as default calendar"
 msgstr "Megjelölés alapértelmezett naptárként"
 
-#: src/SourceDialog/SourceDialog.vala:277
+#: src/SourceDialog/SourceDialog.vala:274
 msgid "Create Calendar"
 msgstr "Naptár létrehozása"
 
 #. /Translators: Give a list of appointment related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:69
+#: src/Widgets/AgendaEventRow.vala:66
 msgid "appointment;meeting"
 msgstr "időpont;találkozó;meeting;megbeszélés;gyűlés"
 
 #. /Translators: Give a list of celebration (party) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:74
+#: src/Widgets/AgendaEventRow.vala:71
 msgid "birthday;anniversary;party"
 msgstr "születésnap;évforduló;parti;szülinap;buli"
 
 #. /Translators: Give a list of voice call related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:79
+#: src/Widgets/AgendaEventRow.vala:76
 msgid "call;phone;telephone;ring"
 msgstr "hívás;mobil;telefon;csengés;okostelefon"
 
 #. /Translators: Give a list of social drinking related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:84
+#: src/Widgets/AgendaEventRow.vala:81
 msgid "bar;cocktails;drinks;happy hour"
 msgstr "bár;koktélok;italok;boldog óra;sörözés;kofolázás"
 
 #. /Translators: Give a list of car driving related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:89
+#: src/Widgets/AgendaEventRow.vala:86
 msgid "car;drive;driving;road trip;"
 msgstr "autó;vezetni;vezet;kirándulás;"
 
 #. /Translators: Give a list of air travel related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:94
+#: src/Widgets/AgendaEventRow.vala:91
 msgid "flight;airport;"
 msgstr "repülő;reptér;"
 
 #. /Translators: Give a list of food consumption related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:99
+#: src/Widgets/AgendaEventRow.vala:96
 msgid "breakfast;brunch;dinner;lunch;supper;steakhouse;burger;meal;barbecue"
 msgstr ""
 "reggeli;tízórai,ebéd;uzsonna;vacsora;steak-ház;hamburger,étel;barbecue;bbq"
 
 #. /Translators: Give a list of law related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:104
+#: src/Widgets/AgendaEventRow.vala:101
 msgid "court;jury;tax;attorney;lawyer;contract"
 msgstr "bíróság;esküdtszék;adó;ügyész;ügyvéd;szerződés"
 
 #. /Translators: Give a list of movie (film) related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:109
+#: src/Widgets/AgendaEventRow.vala:106
 msgid "movie;film"
 msgstr "mozi;film;sorozat;epizód"
 
 #. /Translators: Give a list of wedding related keywords, separated by semicolons.
 #. /The number of words can differ from US English and need not be a direct translation.
-#: src/Widgets/AgendaEventRow.vala:114
+#: src/Widgets/AgendaEventRow.vala:111
 msgid "wedding"
 msgstr "esküvő"
 
 #. TRANSLATORS: A range from start date to end date i.e. "Friday, Dec 21–Saturday, Dec 22"
-#: src/Widgets/AgendaEventRow.vala:353
+#: src/Widgets/AgendaEventRow.vala:344
 #, c-format
 msgctxt "date-range"
 msgid "%s–%s"
 msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM–Saturday, Dec 22, 12:00 AM"
-#: src/Widgets/AgendaEventRow.vala:357
+#: src/Widgets/AgendaEventRow.vala:348
 #, fuzzy, c-format
 #| msgid "%s, %s – %s, %s"
 msgid "%s, %s–%s, %s"
 msgstr "%s, %s – %s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM–9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:372
+#: src/Widgets/AgendaEventRow.vala:363
 #, c-format
 msgctxt "time-range"
 msgid "%s–%s"
 msgstr ""
 
 #. TRANSLATORS: A single time from the start date i.e. "Friday, Dec 21 at 7:00 PM"
-#: src/Widgets/AgendaEventRow.vala:381
+#: src/Widgets/AgendaEventRow.vala:372
 #, c-format
 msgid "%s at %s"
 msgstr "%s %s-kor"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM–9:00 PM"
-#: src/Widgets/AgendaEventRow.vala:385
+#: src/Widgets/AgendaEventRow.vala:376
 #, fuzzy, c-format
 #| msgid "%s, %s – %s"
 msgid "%s, %s–%s"
@@ -838,11 +838,11 @@ msgstr "%s, %s – %s"
 msgid "Search Calendars"
 msgstr "Naptárak keresése"
 
-#: src/Widgets/CalendarChooser.vala:57
+#: src/Widgets/CalendarChooser.vala:56
 msgid "No Results"
 msgstr "Nincsenek eredmények"
 
-#: src/Widgets/CalendarChooser.vala:58
+#: src/Widgets/CalendarChooser.vala:57
 msgid "Try changing search terms."
 msgstr "Próbálja megváltoztatni a keresőszavakat."
 
@@ -922,11 +922,11 @@ msgstr "iCalendar-fájl importálása…"
 msgid "Online Accounts Settings…"
 msgstr "Online fiókok beállításai…"
 
-#: src/Widgets/SourcePopover.vala:85
+#: src/Widgets/SourcePopover.vala:84
 msgid "Select ICS File to Import"
 msgstr "Válassza ki az importálandó ICS-fájlt"
 
-#: src/Widgets/SourcePopover.vala:88
+#: src/Widgets/SourcePopover.vala:87
 msgid "Open"
 msgstr "Megnyitás"
 
@@ -942,7 +942,7 @@ msgstr "Nem szerkeszthető"
 msgid "Undo"
 msgstr "Visszavonás"
 
-#: src/Widgets/SourceRow.vala:94 src/Widgets/SourceRow.vala:175
+#: src/Widgets/SourceRow.vala:94 src/Widgets/SourceRow.vala:171
 #, c-format
 msgid "\"%s\" removed"
 msgstr "\"%s\" eltávolítva"
