@@ -91,11 +91,18 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
             var main_window = (Gtk.Window)((Gtk.Application) Application.get_default ()).active_window;
 
             file_dialog.open_multiple.begin (main_window, null, (obj, res) => {
-                var file_model = file_dialog.open_multiple.end (res);
-
                 GLib.File[] files = null;
-                for (int i; i < file_model.get_n_items (); i++) {
-                    files += (File) file_model.get_item (i);
+                try {
+                    var file_model = file_dialog.open_multiple.end (res);
+                    for (int i; i < file_model.get_n_items (); i++) {
+                        files += (File) file_model.get_item (i);
+                    }
+                } catch (Error e) {
+                    if (e.matches (Gtk.DialogError.quark (), Gtk.DialogError.DISMISSED)) {
+                        return;
+                    }
+
+                    critical (e.message);
                 }
 
                 if (files != null) {
