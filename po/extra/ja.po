@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 17:04+0000\n"
+"POT-Creation-Date: 2026-11-02 17:23+0000\n"
 "PO-Revision-Date: 2026-10-12 08:03+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/calendar/"
@@ -20,12 +20,12 @@ msgstr ""
 "X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
-#: data/io.elementary.calendar.desktop.in:5
+#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:3
+#: data/io.elementary.calendar.desktop.in:4
 msgid "Calendar"
 msgstr "カレンダー"
 
-#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
+#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:5
 msgid "View and schedule events"
 msgstr "予定の表示と計画をします"
 
@@ -41,50 +41,56 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
-#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:79
+#: data/calendar.metainfo.xml.in:89 data/calendar.metainfo.xml.in:103
+#: data/calendar.metainfo.xml.in:115 data/calendar.metainfo.xml.in:127
 msgid "Minor Updates:"
 msgstr "マイナーアップデート:"
 
-#: data/calendar.metainfo.xml.in:62
+#: data/calendar.metainfo.xml.in:62 data/calendar.metainfo.xml.in:81
 msgid "Improve screen reader support"
 msgstr "スクリーンリーダーへの対応を改善"
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:63
+#, fuzzy
+#| msgid "Improve screen reader support"
+msgid "Improve touch screen support"
+msgstr "スクリーンリーダーへの対応を改善"
+
+#: data/calendar.metainfo.xml.in:64 data/calendar.metainfo.xml.in:82
+#: data/calendar.metainfo.xml.in:92 data/calendar.metainfo.xml.in:105
+#: data/calendar.metainfo.xml.in:117 data/calendar.metainfo.xml.in:130
 msgid "Updated translations"
 msgstr "新しい翻訳"
 
-#: data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:91
 msgid "New flatter design"
 msgstr "新しいフラットなデザイン"
 
-#: data/calendar.metainfo.xml.in:110
+#: data/calendar.metainfo.xml.in:129
 msgid "Updated app icon"
 msgstr "アプリのアイコンを更新"
 
-#: data/calendar.metainfo.xml.in:118
+#: data/calendar.metainfo.xml.in:137
 msgid "Features:"
 msgstr "機能:"
 
-#: data/calendar.metainfo.xml.in:120
+#: data/calendar.metainfo.xml.in:139
 msgid "Ask for confirmation before deleting events"
 msgstr "予定を削除する前に確認画面を表示するように変更"
 
-#: data/calendar.metainfo.xml.in:121
+#: data/calendar.metainfo.xml.in:140
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 "Ctrl + クリックで予定の説明欄内のメールアドレスやウェブリンクを開ける機能を追"
 "加"
 
-#: data/calendar.metainfo.xml.in:123
+#: data/calendar.metainfo.xml.in:142
 msgid "Fixes:"
 msgstr "修正点:"
 
-#: data/calendar.metainfo.xml.in:125
+#: data/calendar.metainfo.xml.in:144
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -92,21 +98,21 @@ msgstr ""
 "カレンダーが読み取り専用の場合、カレンダー設定にある“デフォルトのカレンダーに"
 "設定”チェックボックスを無効にするように修正"
 
-#: data/calendar.metainfo.xml.in:126
+#: data/calendar.metainfo.xml.in:145
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr "AccountsService へのアクセス権限が不要になったので削除"
 
-#: data/calendar.metainfo.xml.in:127
+#: data/calendar.metainfo.xml.in:146
 msgid "Fixed potential memory leak"
 msgstr "メモリーリーク発生の可能性があった不具合を修正"
 
-#: data/io.elementary.calendar.desktop.in:13
+#: data/io.elementary.calendar.desktop.in:12
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr ""
 "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;日付;日;予定;カ"
 "レンダー;"
 
-#: data/io.elementary.calendar.desktop.in:18
+#: data/io.elementary.calendar.desktop.in:17
 msgid "Add Event"
 msgstr "予定を追加"
 

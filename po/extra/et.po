@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 17:04+0000\n"
+"POT-Creation-Date: 2026-11-02 17:23+0000\n"
 "PO-Revision-Date: 2019-04-05 22:52+0000\n"
 "Last-Translator: Cody Garver <cody@elementary.io>\n"
 "Language-Team: Estonian <https://l10n.elementary.io/projects/calendar/extra/"
@@ -20,12 +20,12 @@ msgstr ""
 "X-Generator: Weblate 3.5.1\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
-#: data/io.elementary.calendar.desktop.in:5
+#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:3
+#: data/io.elementary.calendar.desktop.in:4
 msgid "Calendar"
 msgstr "Kalender"
 
-#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
+#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:5
 msgid "View and schedule events"
 msgstr "Sündmuste planeerimine ja haldamine"
 
@@ -41,66 +41,70 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
-#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:79
+#: data/calendar.metainfo.xml.in:89 data/calendar.metainfo.xml.in:103
+#: data/calendar.metainfo.xml.in:115 data/calendar.metainfo.xml.in:127
 msgid "Minor Updates:"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:62
+#: data/calendar.metainfo.xml.in:62 data/calendar.metainfo.xml.in:81
 msgid "Improve screen reader support"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:63
+msgid "Improve touch screen support"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:64 data/calendar.metainfo.xml.in:82
+#: data/calendar.metainfo.xml.in:92 data/calendar.metainfo.xml.in:105
+#: data/calendar.metainfo.xml.in:117 data/calendar.metainfo.xml.in:130
 msgid "Updated translations"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:91
 msgid "New flatter design"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:110
+#: data/calendar.metainfo.xml.in:129
 msgid "Updated app icon"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:118
+#: data/calendar.metainfo.xml.in:137
 msgid "Features:"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:120
+#: data/calendar.metainfo.xml.in:139
 msgid "Ask for confirmation before deleting events"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:121
+#: data/calendar.metainfo.xml.in:140
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:123
+#: data/calendar.metainfo.xml.in:142
 msgid "Fixes:"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:125
+#: data/calendar.metainfo.xml.in:144
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:126
+#: data/calendar.metainfo.xml.in:145
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:127
+#: data/calendar.metainfo.xml.in:146
 msgid "Fixed potential memory leak"
 msgstr ""
 
-#: data/io.elementary.calendar.desktop.in:13
+#: data/io.elementary.calendar.desktop.in:12
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;planeerija;planeerimine;aeg;kuupäev;sündmused;tunnid;"
 
-#: data/io.elementary.calendar.desktop.in:18
+#: data/io.elementary.calendar.desktop.in:17
 msgid "Add Event"
 msgstr "Sündmuse lisamine"
 

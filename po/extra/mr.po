@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 17:04+0000\n"
+"POT-Creation-Date: 2026-11-02 17:23+0000\n"
 "PO-Revision-Date: 2025-03-16 12:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementaryos.org/projects/calendar/"
@@ -19,12 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 5.10.2\n"
 
-#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
-#: data/io.elementary.calendar.desktop.in:5
+#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:3
+#: data/io.elementary.calendar.desktop.in:4
 msgid "Calendar"
 msgstr "कॅलेंडर"
 
-#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
+#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:5
 msgid "View and schedule events"
 msgstr "कार्यक्रम पहा आणि शेड्यूल करा"
 
@@ -40,48 +40,52 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
-#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:79
+#: data/calendar.metainfo.xml.in:89 data/calendar.metainfo.xml.in:103
+#: data/calendar.metainfo.xml.in:115 data/calendar.metainfo.xml.in:127
 msgid "Minor Updates:"
 msgstr "किरकोळ अद्यतने:"
 
-#: data/calendar.metainfo.xml.in:62
+#: data/calendar.metainfo.xml.in:62 data/calendar.metainfo.xml.in:81
 msgid "Improve screen reader support"
 msgstr ""
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:63
+msgid "Improve touch screen support"
+msgstr ""
+
+#: data/calendar.metainfo.xml.in:64 data/calendar.metainfo.xml.in:82
+#: data/calendar.metainfo.xml.in:92 data/calendar.metainfo.xml.in:105
+#: data/calendar.metainfo.xml.in:117 data/calendar.metainfo.xml.in:130
 msgid "Updated translations"
 msgstr "अद्ययावत अनुवाद"
 
-#: data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:91
 msgid "New flatter design"
 msgstr "नवीन फ्लॅटर डिझाइन"
 
-#: data/calendar.metainfo.xml.in:110
+#: data/calendar.metainfo.xml.in:129
 msgid "Updated app icon"
 msgstr "अपडेट केलेले ॲप चिन्ह"
 
-#: data/calendar.metainfo.xml.in:118
+#: data/calendar.metainfo.xml.in:137
 msgid "Features:"
 msgstr "वैशिष्ट्ये:"
 
-#: data/calendar.metainfo.xml.in:120
+#: data/calendar.metainfo.xml.in:139
 msgid "Ask for confirmation before deleting events"
 msgstr "इव्हेंट हटवण्यापूर्वी पुष्टीकरणासाठी विचारा"
 
-#: data/calendar.metainfo.xml.in:121
+#: data/calendar.metainfo.xml.in:140
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr "ctrl + क्लिकसह इव्हेंट वर्णनात ईमेल आणि वेब लिंक्सचे अनुसरण करा"
 
-#: data/calendar.metainfo.xml.in:123
+#: data/calendar.metainfo.xml.in:142
 msgid "Fixes:"
 msgstr "निराकरणे:"
 
-#: data/calendar.metainfo.xml.in:125
+#: data/calendar.metainfo.xml.in:144
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -89,19 +93,19 @@ msgstr ""
 "कॅलेंडर केवळ वाचनीय असल्यास, कॅलेंडर सेटिंग्जमध्ये \"डीफॉल्ट कॅलेंडर म्हणून चिन्हांकित करा\" "
 "चेकबॉक्स अक्षम केला आहे"
 
-#: data/calendar.metainfo.xml.in:126
+#: data/calendar.metainfo.xml.in:145
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr "खाते सेवेसाठी यापुढे सँडबॉक्स परवानगीची आवश्यकता नाही हे काढून टाकले आहे"
 
-#: data/calendar.metainfo.xml.in:127
+#: data/calendar.metainfo.xml.in:146
 msgid "Fixed potential memory leak"
 msgstr "निश्चित संभाव्य मेमरी गळती"
 
-#: data/io.elementary.calendar.desktop.in:13
+#: data/io.elementary.calendar.desktop.in:12
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr "माया; प्लॅनर; तारखा; दिवस; घटना; कॅलेंडर; ics; caldav; उत्क्रांती;"
 
-#: data/io.elementary.calendar.desktop.in:18
+#: data/io.elementary.calendar.desktop.in:17
 msgid "Add Event"
 msgstr "नवीन घटना जोडा"
 

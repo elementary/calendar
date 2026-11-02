@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-13 17:04+0000\n"
+"POT-Creation-Date: 2026-11-02 17:23+0000\n"
 "PO-Revision-Date: 2026-09-03 11:01+0000\n"
 "Last-Translator: Chairul Akmal <chairulakmal@protonmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementaryos.org/projects/calendar/"
@@ -19,12 +19,12 @@ msgstr ""
 "X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2016-11-07 06:16+0000\n"
 
-#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
-#: data/io.elementary.calendar.desktop.in:5
+#: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:3
+#: data/io.elementary.calendar.desktop.in:4
 msgid "Calendar"
 msgstr "Kalender"
 
-#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
+#: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:5
 msgid "View and schedule events"
 msgstr "Lihat dan jadwalkan acara"
 
@@ -41,48 +41,54 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
-#: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
-#: data/calendar.metainfo.xml.in:108
+#: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:79
+#: data/calendar.metainfo.xml.in:89 data/calendar.metainfo.xml.in:103
+#: data/calendar.metainfo.xml.in:115 data/calendar.metainfo.xml.in:127
 msgid "Minor Updates:"
 msgstr "Pembaruan Kecil:"
 
-#: data/calendar.metainfo.xml.in:62
+#: data/calendar.metainfo.xml.in:62 data/calendar.metainfo.xml.in:81
 msgid "Improve screen reader support"
 msgstr "Tingkatkan dukungan pembaca layar"
 
-#: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
-#: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
-#: data/calendar.metainfo.xml.in:111
+#: data/calendar.metainfo.xml.in:63
+#, fuzzy
+#| msgid "Improve screen reader support"
+msgid "Improve touch screen support"
+msgstr "Tingkatkan dukungan pembaca layar"
+
+#: data/calendar.metainfo.xml.in:64 data/calendar.metainfo.xml.in:82
+#: data/calendar.metainfo.xml.in:92 data/calendar.metainfo.xml.in:105
+#: data/calendar.metainfo.xml.in:117 data/calendar.metainfo.xml.in:130
 msgid "Updated translations"
 msgstr "Terjemahan diperbarui"
 
-#: data/calendar.metainfo.xml.in:72
+#: data/calendar.metainfo.xml.in:91
 msgid "New flatter design"
 msgstr "Desain baru yang lebih rata"
 
-#: data/calendar.metainfo.xml.in:110
+#: data/calendar.metainfo.xml.in:129
 msgid "Updated app icon"
 msgstr "Ikon aplikasi yang diperbarui"
 
-#: data/calendar.metainfo.xml.in:118
+#: data/calendar.metainfo.xml.in:137
 msgid "Features:"
 msgstr "Fitur:"
 
-#: data/calendar.metainfo.xml.in:120
+#: data/calendar.metainfo.xml.in:139
 msgid "Ask for confirmation before deleting events"
 msgstr "Konfirmasi sebelum menghapus acara"
 
-#: data/calendar.metainfo.xml.in:121
+#: data/calendar.metainfo.xml.in:140
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr "Buka surel dan tautan web dalam deskripsi acara dengan Kontrol + Klik"
 
-#: data/calendar.metainfo.xml.in:123
+#: data/calendar.metainfo.xml.in:142
 msgid "Fixes:"
 msgstr "Perbaikan:"
 
-#: data/calendar.metainfo.xml.in:125
+#: data/calendar.metainfo.xml.in:144
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
@@ -90,19 +96,19 @@ msgstr ""
 "Matikan kotak centang \"Tandai sebagai kalender bawaan\" di pengaturan "
 "kalender, jika kalender bersifat hanya-baca"
 
-#: data/calendar.metainfo.xml.in:126
+#: data/calendar.metainfo.xml.in:145
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr "Hapus izin sandbox yang tidak lagi dibutuhkan untuk layanan akun"
 
-#: data/calendar.metainfo.xml.in:127
+#: data/calendar.metainfo.xml.in:146
 msgid "Fixed potential memory leak"
 msgstr "Perbaiki potensi kebocoran memori"
 
-#: data/io.elementary.calendar.desktop.in:13
+#: data/io.elementary.calendar.desktop.in:12
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 msgstr "Maya;Perencana;Tanggal;Hari;Acara;Kalender;ics;caldav;evolution;"
 
-#: data/io.elementary.calendar.desktop.in:18
+#: data/io.elementary.calendar.desktop.in:17
 msgid "Add Event"
 msgstr "Tambah Acara"
 
