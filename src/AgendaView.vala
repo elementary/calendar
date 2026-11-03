@@ -7,7 +7,7 @@
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-public class Maya.View.AgendaView : Gtk.Box {
+public class Maya.View.AgendaView : Granite.Bin {
     public signal void event_removed (ECal.Component event);
 
     public Adw.HeaderBar header_bar { get; private set; }
@@ -41,7 +41,6 @@ public class Maya.View.AgendaView : Gtk.Box {
         };
         header_bar.pack_start (weekday_label);
         header_bar.pack_end (button_add);
-        header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         day_label = new Granite.HeaderLabel ("") {
             size = H4,
@@ -112,10 +111,13 @@ public class Maya.View.AgendaView : Gtk.Box {
             vexpand = true
         };
 
-        orientation = VERTICAL;
-        append (header_bar);
-        append (scrolled_window);
+        var toolbar_view = new Adw.ToolbarView () {
+            content = scrolled_window
+        };
+        toolbar_view.add_top_bar (header_bar);
+
         add_css_class (Granite.STYLE_CLASS_VIEW);
+        child = toolbar_view;
 
         // Listen to changes for events
         var calmodel = Calendar.EventStore.get_default ();

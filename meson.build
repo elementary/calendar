@@ -40,6 +40,14 @@ shumate_dep = dependency('shumate-1.0')
 
 add_project_arguments('-DLIBICAL_GLIB_UNSTABLE_API=1', language: 'c')
 
+vala_flags = []
+
+if libical_dep.version().version_compare('>=4.0.0')
+    vala_flags += ['--define', 'HAS_I_CAL_4_0_0']
+endif
+
+add_project_arguments(vala_flags, language: 'vala')
+
 m_dep = meson.get_compiler('c').find_library('m', required : false)
 
 gresource_calendar = gnome.compile_resources(
