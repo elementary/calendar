@@ -88,7 +88,7 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
 
             popdown ();
 
-            var main_window = (Gtk.Window)((Gtk.Application) Application.get_default ()).active_window;
+            var main_window = ((Gtk.Application) Application.get_default ()).active_window;
 
             file_dialog.open_multiple.begin (main_window, null, (obj, res) => {
                 GLib.File[] files = null;
