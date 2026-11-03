@@ -12,8 +12,8 @@ public class Maya.View.AgendaView : Granite.Bin {
 
     public Adw.HeaderBar header_bar { get; private set; }
 
-    private Gtk.Label day_label;
-    private Gtk.Label weekday_label;
+    private Granite.HeaderLabel day_label;
+    private Granite.HeaderLabel weekday_label;
     private Gtk.ListBox selected_date_events_list;
     private Gtk.ListBox upcoming_events_list;
     private DateTime selected_date;
@@ -30,11 +30,10 @@ public class Maya.View.AgendaView : Granite.Bin {
         );
         button_add.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
-        weekday_label = new Gtk.Label ("") {
+        weekday_label = new Granite.HeaderLabel ("") {
             margin_start = 6,
-            xalign = 0
+            size = H2
         };
-        weekday_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         header_bar = new Adw.HeaderBar () {
             show_start_title_buttons = false,
@@ -43,12 +42,11 @@ public class Maya.View.AgendaView : Granite.Bin {
         header_bar.pack_start (weekday_label);
         header_bar.pack_end (button_add);
 
-        day_label = new Gtk.Label ("") {
+        day_label = new Granite.HeaderLabel ("") {
+            size = H4,
             margin_start = 12,
-            margin_end = 12,
-            xalign = 0
+            margin_end = 12
         };
-        day_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var placeholder_label = new Gtk.Label (_("Your upcoming events will be displayed here when you select a date with events.")) {
             wrap = true,
