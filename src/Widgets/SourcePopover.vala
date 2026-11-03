@@ -103,15 +103,14 @@ public class Calendar.Widgets.SourcePopover : Gtk.Popover {
                     }
 
                     critical (e.message);
+                    return;
                 }
 
-                if (files != null) {
-                    var dialog = new Maya.View.ImportDialog (files) {
-                        modal = true,
-                        transient_for = main_window
-                    };
-                    dialog.present ();
-                }
+                var dialog = new Maya.View.ImportDialog (files) {
+                    modal = true,
+                    transient_for = main_window
+                };
+                dialog.present ();
             });
         });
 
