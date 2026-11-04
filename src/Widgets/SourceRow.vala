@@ -67,7 +67,7 @@ public class Calendar.SourceRow : Gtk.ListBoxRow {
             tooltip_text = source.removable ? _("Remove") : _("Not Removable")
         };
 
-        edit_button = new Gtk.Button.from_icon_name ("edit-symbolic") {
+        edit_button = new Gtk.Button.from_icon_name ("document-edit-symbolic") {
             sensitive = source.writable,
             tooltip_text = source.writable ? _("Edit…"): _("Not Editable")
         };
