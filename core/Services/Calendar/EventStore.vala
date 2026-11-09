@@ -129,6 +129,35 @@ public class Calendar.EventStore : Object {
         return true;
     }
 
+    public ECal.Component get_master_component (E.Source source, ECal.Component event) {
+        if (event.get_icalcomponent ().get_recurrenceid ().is_null_time ()) {
+            return event;
+        }
+
+        ECal.Client? client;
+        lock (source_client) {
+            client = source_client.get (source.get_uid ());
+        }
+
+        if (client == null) {
+            warning ("No calendar client found for source '%s'", source.dup_display_name ());
+            return event;
+        }
+
+        try {
+            ICal.Component icalcomp;
+            client.get_object_sync (event.get_id ().get_uid (), null, out icalcomp);
+
+            var master = new ECal.Component.from_icalcomponent (icalcomp);
+            master.set_data<E.Source> ("source", source);
+
+            return master;
+        } catch (Error error) {
+            warning ("Could not retrieve master event: %s", error.message);
+            return event;
+        }
+    }
+
     private async void add_event_async (E.Source source, ECal.Component event) {
         unowned ICal.Component comp = event.get_icalcomponent ();
         debug (@"Adding event '$(comp.get_uid())'");
