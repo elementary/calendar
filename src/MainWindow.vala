@@ -93,7 +93,8 @@ public class Maya.MainWindow : Gtk.ApplicationWindow {
         E.Source src = comp.get_data ("source");
 
         if (src.writable == true && Calendar.EventStore.get_default ().calclient_is_readonly (src) == false) {
-            var dialog = new Maya.View.EventDialog (comp, null, this);
+            var event = Calendar.EventStore.get_default ().get_master_component (src, comp);
+            var dialog = new Maya.View.EventDialog (event, null, this);
             dialog.present ();
         } else {
             Gdk.Display.get_default ().beep ();
