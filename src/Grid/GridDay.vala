@@ -111,6 +111,8 @@ public class Maya.View.GridDay : Granite.Bin {
     }
 
     public void add_event (ECal.Component component) {
+        remove_event (component);
+
         var button = new EventButton (component);
 
         string uid = button.get_uid ();
@@ -143,6 +145,8 @@ public class Maya.View.GridDay : Granite.Bin {
 
     public void remove_event (ECal.Component comp) {
         string uid = comp.get_id ().get_uid ();
+
+        event_box.remove_events_for_component (comp);
 
         lock (event_buttons) {
             event_buttons.remove (uid);

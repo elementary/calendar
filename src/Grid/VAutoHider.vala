@@ -37,6 +37,27 @@ public class Maya.View.VAutoHider : Granite.Bin {
         queue_resize ();
     }
 
+    public void remove_events_for_component (ECal.Component component) {
+        var buttons = new Gee.ArrayList<EventButton> ();
+
+        foreach (var child in children) {
+            var button = child as EventButton;
+            if (button != null &&
+                Calendar.Util.ecalcomponent_compare_func (button.comp, component) == 0) {
+                buttons.add (button);
+            }
+        }
+
+        foreach (var button in buttons) {
+            children.remove (button);
+            if (button.get_parent () == main_box) {
+                main_box.remove (button);
+            }
+        }
+
+        queue_resize ();
+    }
+
     public void update (Gtk.Widget widget) {
         children.sort (compare_children);
 
