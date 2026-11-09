@@ -82,6 +82,7 @@ public class Maya.View.EventEdition.ReminderPanel : Gtk.Box {
         reminder.removed.connect (() => {
             reminders.remove (reminder);
             reminders_to_remove.add (reminder.uid);
+            reminder_list.remove (reminder);
         });
 
         return reminder;
@@ -203,7 +204,6 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
 
         remove_button.clicked.connect (() => {
             removed ();
-            destroy ();
         });
     }
 
