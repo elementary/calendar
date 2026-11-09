@@ -14,13 +14,14 @@ public class Maya.View.VAutoHider : Granite.Bin {
     construct {
         children = new List<unowned Gtk.Widget> ();
 
-        more_label = new Gtk.Label ("") {
+        more_label = new Gtk.Label (" ") {
             valign = END
         };
 
         main_box = new Gtk.Box (VERTICAL, 0);
         main_box.append (more_label);
 
+        set_layout_manager (new Gtk.CustomLayout (null, layout_measure, layout_allocate));
         child = main_box;
     }
 
@@ -44,63 +45,119 @@ public class Maya.View.VAutoHider : Granite.Bin {
             main_box.remove (main_box.get_first_child ());
         }
 
+        main_box.append (more_label);
         foreach (var child in children) {
             main_box.append (child);
         }
     }
 
-    public override void size_allocate (int width, int height, int baseline) {
-        base.size_allocate (width, height, baseline);
+    private static void layout_allocate (Gtk.Widget widget, int width, int height, int baseline) {
+        var self = (VAutoHider) widget;
 
-        if (children.length () == 0) {
-            more_label.hide ();
+        if (self.children.length () == 0) {
+            self.more_label.hide ();
+            self.main_box.allocate (width, height, baseline, null);
             return;
         }
 
-        more_label.show ();
-        more_label.vexpand = false;
-        var more_label_height = more_label.get_height ();
-        more_label.hide ();
+        self.more_label.label = _("%u more…").printf (self.children.length ());
+        int more_label_minimum;
+        int more_label_height;
+        int more_label_minimum_baseline;
+        int more_label_natural_baseline;
+        self.more_label.measure (
+            VERTICAL,
+            width,
+            out more_label_minimum,
+            out more_label_height,
+            out more_label_minimum_baseline,
+            out more_label_natural_baseline
+        );
 
         int shown_children = 0;
         int shown_children_height = 0;
-        foreach (var child in children) {
-            if (child == more_label) {
-                continue;
-            }
 
-            child.show ();
-            var child_height = child.get_height ();
+        foreach (var child in self.children) {
+            var event_button = (Maya.View.EventButton) child;
+            event_button.show_without_animate ();
 
-            if (shown_children_height + child_height > get_height () - more_label_height) {
-                var last = shown_children == children.length () - 1;
-                if (!last || shown_children_height + child_height > get_height ()) {
-                    ((Maya.View.EventButton) child).hide_without_animate ();
+            int child_minimum;
+            int child_height;
+            int child_minimum_baseline;
+            int child_natural_baseline;
+            child.measure (
+                VERTICAL,
+                width,
+                out child_minimum,
+                out child_height,
+                out child_minimum_baseline,
+                out child_natural_baseline
+            );
+
+            if (shown_children_height + child_height > height - more_label_height) {
+                var last = shown_children == self.children.length () - 1;
+
+                if (!last || shown_children_height + child_height > height) {
+                    event_button.hide_without_animate ();
                     continue;
                 }
             }
 
-            ((Maya.View.EventButton) child).show_without_animate ();
             shown_children++;
             shown_children_height += child_height;
         }
 
-        var hidden_children = children.length () - shown_children;
+        var hidden_children = self.children.length () - shown_children;
+
         if (hidden_children > 0) {
-            more_label.show ();
-            more_label.label = _("%u more…").printf (hidden_children);
-            more_label.vexpand = true;
+            self.more_label.label = _("%u more…").printf (hidden_children);
+            self.more_label.show ();
+            self.more_label.vexpand = true;
+        } else {
+            self.more_label.hide ();
+            self.more_label.vexpand = false;
         }
+
+        self.main_box.allocate (width, height, baseline, null);
     }
 
-    public override void measure (Gtk.Orientation orientation, int for_size, out int minimum, out int natural, out int minimum_baseline, out int natural_baseline) {
-        base.measure (orientation, for_size, out minimum, out natural, out minimum_baseline, out natural_baseline);
+    private static void layout_measure (
+        Gtk.Widget widget,
+        Gtk.Orientation orientation,
+        int for_size,
+        out int minimum,
+        out int natural,
+        out int minimum_baseline,
+        out int natural_baseline
+    ) {
+        var self = (VAutoHider) widget;
 
-        for_size = more_label.get_width ();
+        if (orientation == VERTICAL) {
+            if (self.children.length () == 0) {
+                minimum = 0;
+                natural = 0;
+                minimum_baseline = -1;
+                natural_baseline = -1;
+                return;
+            }
 
-        minimum = more_label.get_height ();
-        if (minimum > natural) {
-            natural = minimum;
+            self.more_label.measure (
+                orientation,
+                for_size,
+                out minimum,
+                out natural,
+                out minimum_baseline,
+                out natural_baseline
+            );
+        } else {
+            self.main_box.measure (
+                orientation,
+                for_size,
+                out minimum,
+                out natural,
+                out minimum_baseline,
+                out natural_baseline
+            );
         }
     }
 
