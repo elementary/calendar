@@ -311,6 +311,19 @@ public class Maya.View.AgendaView : Granite.Bin {
         }
     }
 
+    private void remove_rows_for_component (Gtk.ListBox listbox, ECal.Component component) {
+        for (int i = 0; listbox.get_row_at_index (i) != null; i++) {
+            var row = (AgendaEventRow) listbox.get_row_at_index (i);
+            if (Calendar.Util.ecalcomponent_compare_func (row.calevent, component) == 0) {
+                row.revealer.reveal_child = false;
+                GLib.Timeout.add (row.revealer.transition_duration, () => {
+                    listbox.remove (row);
+                    return GLib.Source.REMOVE;
+                });
+            }
+        }
+    }
+
     private bool find_row_for_component (Gtk.ListBox listbox, ECal.Component component, out AgendaEventRow? row) {
         for (int i = 0; listbox.get_row_at_index (i) != null; i++) {
             var current_row = (AgendaEventRow) listbox.get_row_at_index (i);
@@ -345,24 +358,8 @@ public class Maya.View.AgendaView : Granite.Bin {
      */
     private void on_events_removed (E.Source source, Gee.Collection<ECal.Component> events) {
         foreach (var event in events) {
-            AgendaEventRow row = null;
-            if (find_row_for_component (selected_date_events_list, event, out row)) {
-                row.revealer.reveal_child = false;
-                GLib.Timeout.add (row.revealer.transition_duration, () => {
-                    row.unparent ();
-                    row.destroy ();
-                    return GLib.Source.REMOVE;
-                });
-            }
-
-            if (find_row_for_component (upcoming_events_list, event, out row)) {
-                row.revealer.reveal_child = false;
-                GLib.Timeout.add (row.revealer.transition_duration, () => {
-                    row.unparent ();
-                    row.destroy ();
-                    return GLib.Source.REMOVE;
-                });
-            }
+            remove_rows_for_component (selected_date_events_list, event);
+            remove_rows_for_component (upcoming_events_list, event);
         }
     }
 
