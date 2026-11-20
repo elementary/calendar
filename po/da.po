@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-10-27 22:04+0000\n"
+"PO-Revision-Date: 2026-11-21 23:04+0000\n"
 "Last-Translator: CodeBeats <nicholai67@hotmail.com>\n"
 "Language-Team: Danish <https://l10n.elementaryos.org/projects/calendar/"
 "calendar/da/>\n"
@@ -46,7 +46,7 @@ msgstr "Behold en lokal kopi"
 
 #: core/Utils.vala:57
 msgid "On the web"
-msgstr ""
+msgstr "På internettet"
 
 #: plugins/Google/GoogleBackend.vala:38
 msgid "Google"
@@ -213,10 +213,8 @@ msgid "Maybe"
 msgstr "Måske"
 
 #: src/EventEdition/GuestsPanel.vala:39
-#, fuzzy
-#| msgid "Invite"
 msgid "No Invitees"
-msgstr "Inviter"
+msgstr "Ingen Inviterede"
 
 #: src/EventEdition/GuestsPanel.vala:85
 msgid "Invite"
@@ -806,10 +804,9 @@ msgstr ""
 
 #. TRANSLATORS: A range from start date and time to end date and time i.e. "Friday, Dec 21, 7:00 PM–Saturday, Dec 22, 12:00 AM"
 #: src/Widgets/AgendaEventRow.vala:357
-#, fuzzy, c-format
-#| msgid "%s, %s – %s, %s"
+#, c-format
 msgid "%s, %s–%s, %s"
-msgstr "%s, %s – %s, %s"
+msgstr "%s, %s–%s, %s"
 
 #. TRANSLATORS: A range from start time to end time i.e. "7:00 PM–9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:372
@@ -826,10 +823,9 @@ msgstr "%s kl. %s"
 
 #. TRANSLATORS: A range from start date and time to end time i.e. "Friday, Dec 21, 7:00 PM–9:00 PM"
 #: src/Widgets/AgendaEventRow.vala:385
-#, fuzzy, c-format
-#| msgid "%s, %s – %s"
+#, c-format
 msgid "%s, %s–%s"
-msgstr "%s, %s – %s"
+msgstr "%s, %s–%s"
 
 #: src/Widgets/CalendarChooser.vala:53
 msgid "Search Calendars"
@@ -857,6 +853,8 @@ msgid ""
 "This occurrence will be permanently deleted, but all other occurrences will "
 "remain unchanged."
 msgstr ""
+"Denne forekomst slettes permanent, men alle andre forekomster forbliver "
+"uændrede."
 
 #: src/Widgets/DeleteDialog.vala:27
 msgid "Delete Occurrence"
