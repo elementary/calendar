@@ -49,7 +49,7 @@ class Calendar.DeleteEventDialog : Granite.MessageDialog {
         }
 
         unowned var trash_button = add_button (delete_text, Gtk.ResponseType.YES);
-        trash_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        trash_button.add_css_class (Granite.CssClass.DESTRUCTIVE);
 
         response.connect ((response) => {
             if (response == Gtk.ResponseType.YES) {

@@ -34,7 +34,11 @@ namespace Calendar.Util {
         if (dt_end.is_null_time ()) {
             if (!component.get_duration ().is_null_duration ()) {
                 // Given duration
+#if HAS_I_CAL_4_0_0
+                dt_end = ICal.Duration.extend (dt_start, component.get_duration ());
+#else
                 dt_end = dt_start.add (component.get_duration ());
+#endif /* HAS_I_CAL_4_0_0 */
             } else if (dt_start.is_date ()) {
                 // Implicit duration for DATE-type: 1 day
                 dt_end = dt_start.clone ();

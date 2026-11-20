@@ -1,6 +1,6 @@
 id: io.elementary.calendar
 runtime: io.elementary.Platform
-runtime-version: '8.2'
+runtime-version: '9.1'
 sdk: io.elementary.Sdk
 command: io.elementary.calendar
 finish-args:
@@ -39,18 +39,17 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DCMAKE_INSTALL_LIBDIR=/app/lib
-      - -DBUILD_SHARED_LIBS=ON
-      - -DICAL_GLIB=true
-      - -DICAL_GLIB_VAPI=true
-      - -DGOBJECT_INTROSPECTION=true
-      - -DICAL_BUILD_DOCS=false
-      - -DWITH_CXX_BINDINGS=false
-      - -DSHARED_ONLY=true
+      - -DLIBICAL_CXX_BINDINGS=false
+      - -DLIBICAL_JAVA_BINDINGS=false
+      - -DLIBICAL_GOBJECT_INTROSPECTION=true
+      - -DLIBICAL_BUILD_DOCS=false
+      - -DLIBICAL_GLIB_VAPI=true
       - -DLIBICAL_BUILD_TESTING=false
     sources:
       - type: git
         url: https://github.com/libical/libical.git
-        tag: v3.0.9
+        tag: v4.0.6
+        commit: 9cfca65c122fa23b9680a28e0c9225a2fd015fc5
 
   - name: evolution-data-server
     buildsystem: cmake-ninja
@@ -77,8 +76,8 @@ modules:
       - -DENABLE_EXAMPLES=OFF
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.61/evolution-data-server-3.61.2.tar.xz
-        sha256: be0415353e388c2eed844a464391b43f07b47e3e1e937a3f364592f008b651fb
+        url: https://download.gnome.org/sources/evolution-data-server/3.62/evolution-data-server-3.62.1.tar.xz
+        sha256: b75c823445d7d30bca797eee929809e8d389abbb8d471f68ae2af60972779f26
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -91,55 +90,30 @@ modules:
             url: https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
             md5: 12e517cac2b57a0121cda351570f1e63
 
-  - name: clutter-gtk
-    cleanup:
-      - /share/gtk-doc
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/clutter-gtk/1.8/clutter-gtk-1.8.4.tar.xz
-        sha256: 521493ec038973c77edcb8bc5eac23eed41645117894aaee7300b2487cb42b06
-    modules:
-      - name: cogl
-        config-opts:
-          - --disable-cogl-gst
-          - --disable-gtk-doc
-          - --enable-xlib-egl-platform
-          - --enable-wayland-egl-platform
-        cleanup:
-          - /share/gtk-doc
-          - /share/cogl/examples-data
-        sources:
-          - type: archive
-            url: https://download.gnome.org/sources/cogl/1.22/cogl-1.22.8.tar.xz
-            sha256: a805b2b019184710ff53d0496f9f0ce6dcca420c141a0f4f6fcc02131581d759
-      - name: clutter
-        config-opts:
-          - --disable-gtk-doc
-          - --enable-egl-backend
-          - --enable-wayland-backend
-          - --enable-deprecated=no
-        cleanup:
-          - /share/gtk-doc
-        sources:
-          - type: archive
-            url: https://download.gnome.org/sources/clutter/1.26/clutter-1.26.4.tar.xz
-            sha256: 8b48fac159843f556d0a6be3dbfc6b083fc6d9c58a20a49a6b4919ab4263c4e6
-      - name: clutter-gst
-        config-opts:
-          - --disable-gtk-doc
-        cleanup:
-          - /share/gtk-doc
-        sources:
-          - type: archive
-            url: https://download.gnome.org/sources/clutter-gst/3.0/clutter-gst-3.0.27.tar.xz
-            sha256: fe69bd6c659d24ab30da3f091eb91cd1970026d431179b0724f13791e8ad9f9d
-
-  - name: champlain
+  - name: libshumate
     buildsystem: meson
+    config-opts:
+      - -Dgtk_doc=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.21.tar.xz
-        sha256: a915cd172a0c52944c5579fcb4683f8a878c571bf5e928254b5dafefc727e5a7
+        url: https://download.gnome.org/sources/libshumate/1.7/libshumate-1.7.0.tar.xz
+        sha256: 3896cc4b6a7bf83141c27df23ce48cdd68467603bc6b764960307cdcbbef80e5
+        x-checker-data:
+          type: gnome
+          name: libshumate
+    modules:
+      - name: protobuf-c
+        buildsystem: autotools
+        config-opts:
+          - --disable-protoc
+        sources:
+          - type: git
+            url: https://github.com/protobuf-c/protobuf-c.git
+            tag: v1.5.2
+            commit: 4719fdd7760624388c2c5b9d6759eb6a47490626
+            x-checker-data:
+              type: git
+              tag-pattern: ^v([\d.]+)$
 
   - name: folks
     buildsystem: meson
