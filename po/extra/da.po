@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2026-10-27 22:04+0000\n"
+"PO-Revision-Date: 2026-11-21 23:04+0000\n"
 "Last-Translator: CodeBeats <nicholai67@hotmail.com>\n"
 "Language-Team: Danish <https://l10n.elementaryos.org/projects/calendar/extra/"
 "da/>\n"
@@ -59,7 +59,7 @@ msgstr "Opdaterede oversættelser"
 
 #: data/calendar.metainfo.xml.in:72
 msgid "New flatter design"
-msgstr ""
+msgstr "Nyt fladere design"
 
 #: data/calendar.metainfo.xml.in:110
 msgid "Updated app icon"
@@ -76,7 +76,7 @@ msgstr "Bed om bekræftelse før begivenheder slettes"
 #: data/calendar.metainfo.xml.in:121
 msgid ""
 "Follow email and web links in the event description with Control + Click"
-msgstr ""
+msgstr "Følg e-mail og weblinks i begivenheds beskrivelsen med Control + Klik"
 
 #: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
