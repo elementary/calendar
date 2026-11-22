@@ -492,8 +492,8 @@ public class Calendar.EventStore : Object {
             var events_for_source = source_events.get (source);
             var events_for_uid = events_for_source.get (uid);
             if (events_for_uid.size > 1 ||
-                events_for_uid.to_array ()[0].get_icalcomponent ().get_recurrenceid ().as_ical_string () != null ||
-                comp.get_recurrenceid ().as_ical_string () != null) {
+                !events_for_uid.to_array ()[0].get_icalcomponent ().get_recurrenceid ().is_null_time () ||
+                !comp.get_recurrenceid ().is_null_time ()) {
 
                 /* Either original or new event is recurring: rebuild our set of recurrences with new data */
 
