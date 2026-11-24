@@ -209,41 +209,48 @@ public class Maya.View.EventEdition.ReminderGrid : Gtk.ListBoxRow {
 
     public void set_duration (ICal.Duration duration) {
         is_human_change = false;
-        if (duration.get_weeks () > 0) {
+
+        uint total_seconds =
+            duration.get_weeks () * 604800 +
+            duration.get_days () * 86400 +
+            duration.get_hours () * 3600 +
+            duration.get_minutes () * 60 +
+            duration.get_seconds ();
+
+        if (total_seconds >= 604800) {
             time.active = 15;
-        } else if (duration.get_days () > 1) {
+        } else if (total_seconds >= 172800) {
             time.active = 14;
-        } else if (duration.get_days () > 0) {
+        } else if (total_seconds >= 86400) {
             time.active = 13;
-        } else if (duration.get_hours () > 15) {
-            time.active = 13;
-        } else if (duration.get_hours () > 5) {
+        } else if (total_seconds >= 43200) {
             time.active = 12;
-        } else if (duration.get_hours () > 2) {
+        } else if (total_seconds >= 10800) {
             time.active = 11;
-        } else if (duration.get_hours () > 1) {
+        } else if (total_seconds >= 7200) {
             time.active = 10;
-        } else if (duration.get_hours () > 0) {
+        } else if (total_seconds >= 3600) {
             time.active = 9;
-        } else if (duration.get_minutes () > 30) {
+        } else if (total_seconds >= 2700) {
             time.active = 8;
-        } else if (duration.get_minutes () > 25) {
+        } else if (total_seconds >= 1800) {
             time.active = 7;
-        } else if (duration.get_minutes () > 20) {
+        } else if (total_seconds >= 1500) {
             time.active = 6;
-        } else if (duration.get_minutes () > 15) {
+        } else if (total_seconds >= 1200) {
             time.active = 5;
-        } else if (duration.get_minutes () > 10) {
+        } else if (total_seconds >= 900) {
             time.active = 4;
-        } else if (duration.get_minutes () > 5) {
+        } else if (total_seconds >= 600) {
             time.active = 3;
-        } else if (duration.get_minutes () > 1) {
+        } else if (total_seconds >= 300) {
             time.active = 2;
-        } else if (duration.get_minutes () > 0) {
+        } else if (total_seconds >= 60) {
             time.active = 1;
         } else {
             time.active = 0;
         }
+
         is_human_change = true;
     }
 
