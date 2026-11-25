@@ -654,7 +654,7 @@ public class Maya.View.EventEdition.RepeatPanel : Granite.Bin {
         // Add the rrule
         var property = new ICal.Property (ICal.PropertyKind.RRULE_PROPERTY);
 
-        var rrule = new ICal.Recurrence.from_string ("");
+        var rrule = new ICal.Recurrence ();
         switch (repeat_combobox.active) {
             case 1:
                 rrule.set_freq (ICal.RecurrenceFrequency.WEEKLY_RECURRENCE);
