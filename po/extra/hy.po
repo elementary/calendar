@@ -8,92 +8,102 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-13 17:04+0000\n"
-"PO-Revision-Date: 2018-07-10 11:19+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-11-27 01:42+0000\n"
+"Last-Translator: Davit Yedigaryan <davit.yedigaryan.1993@gmail.com>\n"
+"Language-Team: Armenian <https://l10n.elementaryos.org/projects/calendar/"
+"extra/hy/>\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2026.5\n"
 
 #: data/calendar.metainfo.xml.in:10 data/io.elementary.calendar.desktop.in:4
 #: data/io.elementary.calendar.desktop.in:5
 msgid "Calendar"
-msgstr ""
+msgstr "Օրացույց"
 
 #: data/calendar.metainfo.xml.in:11 data/io.elementary.calendar.desktop.in:6
 msgid "View and schedule events"
-msgstr ""
+msgstr "Դիտեք և պլանավորեք իրադարձություններ"
 
 #: data/calendar.metainfo.xml.in:13
 msgid ""
 "A slim, lightweight calendar app that syncs and manages multiple calendars "
 "in one place, like Google Calendar, Outlook and CalDAV."
 msgstr ""
+"Կոմպակտ և թեթև օրացույցային հավելված, որը մեկ տեղում համաժամացնում և "
+"կառավարում է մի քանի օրացույց, օրինակ՝ Google Calendar, Outlook և CalDAV։"
 
 #: data/calendar.metainfo.xml.in:52
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/calendar.metainfo.xml.in:60 data/calendar.metainfo.xml.in:70
 #: data/calendar.metainfo.xml.in:84 data/calendar.metainfo.xml.in:96
 #: data/calendar.metainfo.xml.in:108
 msgid "Minor Updates:"
-msgstr ""
+msgstr "Փոքր թարմացումներ՝"
 
 #: data/calendar.metainfo.xml.in:62
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "Բարելավվել է էկրանի ընթերցիչի աջակցությունը"
 
 #: data/calendar.metainfo.xml.in:63 data/calendar.metainfo.xml.in:73
 #: data/calendar.metainfo.xml.in:86 data/calendar.metainfo.xml.in:98
 #: data/calendar.metainfo.xml.in:111
 msgid "Updated translations"
-msgstr ""
+msgstr "Թարմացված թարգմանություններ"
 
 #: data/calendar.metainfo.xml.in:72
 msgid "New flatter design"
-msgstr ""
+msgstr "Նոր, ավելի հարթ ձևավորում"
 
 #: data/calendar.metainfo.xml.in:110
 msgid "Updated app icon"
-msgstr ""
+msgstr "Թարմացվել է հավելվածի պատկերակը"
 
 #: data/calendar.metainfo.xml.in:118
 msgid "Features:"
-msgstr ""
+msgstr "Հնարավորություններ՝"
 
 #: data/calendar.metainfo.xml.in:120
 msgid "Ask for confirmation before deleting events"
-msgstr ""
+msgstr "Իրադարձությունները ջնջելուց առաջ հայցվում է հաստատում"
 
 #: data/calendar.metainfo.xml.in:121
 msgid ""
 "Follow email and web links in the event description with Control + Click"
 msgstr ""
+"Իրադարձության նկարագրության էլ. փոստի և վեբ հղումները բացվում են Control + "
+"սեղմումով"
 
 #: data/calendar.metainfo.xml.in:123
 msgid "Fixes:"
-msgstr ""
+msgstr "Շտկումներ՝"
 
 #: data/calendar.metainfo.xml.in:125
 msgid ""
 "Disabled checkbox \"Mark as default calendar\" in calendar settings, if the "
 "calendar is read-only"
 msgstr ""
+"Օրացույցի կարգավորումներում «Նշել որպես լռելյայն օրացույց» վանդակն անջատվում "
+"է, եթե օրացույցը միայն կարդալու է"
 
 #: data/calendar.metainfo.xml.in:126
 msgid "Removed no longer needed sandbox permission for accounts service"
 msgstr ""
+"Հեռացվել է հաշիվների ծառայության ավազարկղի այլևս ոչ անհրաժեշտ թույլտվությունը"
 
 #: data/calendar.metainfo.xml.in:127
 msgid "Fixed potential memory leak"
-msgstr ""
+msgstr "Շտկվել է հիշողության հնարավոր արտահոսքը"
 
 #: data/io.elementary.calendar.desktop.in:13
 msgid "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
-msgstr ""
+msgstr "Maya;Planner;Dates;Days;Events;Calendar;ics;caldav;evolution;"
 
 #: data/io.elementary.calendar.desktop.in:18
 msgid "Add Event"
-msgstr ""
+msgstr "Ավելացնել իրադարձություն"
