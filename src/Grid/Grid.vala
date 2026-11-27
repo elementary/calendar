@@ -1,43 +1,25 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2011-2015 Maya Developers (http://launchpad.net/maya)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2026 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Maxwell Barvian
  *              Corentin Noël <corentin@elementaryos.org>
  */
 
-namespace Maya.View {
-
 /**
  * Represents the entire date grid as a table.
  */
-public class Grid : Gtk.Grid {
-
-    Gee.HashMap<uint, GridDay> data;
-
-    public Calendar.Util.DateRange grid_range { get; private set; }
-
+public class Maya.View.Grid : Gtk.Grid {
     /*
      * Event emitted when the day is double clicked or the ENTER key is pressed.
      */
     public signal void on_event_add (DateTime date);
-
     public signal void selection_changed (DateTime new_date);
-    private GridDay selected_gridday;
 
+    public Calendar.Util.DateRange grid_range { get; private set; }
+
+    private Gee.HashMap<uint, GridDay> data;
+    private GridDay selected_gridday;
     private GridDay today_widget = null;
 
     construct {
@@ -57,7 +39,7 @@ public class Grid : Gtk.Grid {
 
     /** Update the names of the current and previous "Today" cells, if necessary.
      */
-    void callback_update_today () {
+    private void callback_update_today () {
         var old_today_widget = today_widget;
 
         // Add label to the new widget, if it exists and is not up to date
@@ -90,7 +72,7 @@ public class Grid : Gtk.Grid {
         }
     }
 
-    void on_day_focus_in (GridDay day) {
+    private void on_day_focus_in (GridDay day) {
         if (selected_gridday != null)
             selected_gridday.set_selected (false);
         var selected_date = day.date;
@@ -198,7 +180,7 @@ public class Grid : Gtk.Grid {
     /**
      * Updates the given GridDay so that it shows the given date. Changes to its style etc.
      */
-    GridDay update_day (GridDay day, DateTime new_date, DateTime today, DateTime month_start) {
+    private GridDay update_day (GridDay day, DateTime new_date, DateTime today, DateTime month_start) {
         if (new_date.get_day_of_year () == today.get_day_of_year () && new_date.get_year () == today.get_year ()) {
             day.name = "today";
             today_widget = day;
@@ -221,7 +203,7 @@ public class Grid : Gtk.Grid {
         }
     }
 
-    uint day_hash (DateTime date) {
+    private uint day_hash (DateTime date) {
         return date.get_year () * 10000 + date.get_month () * 100 + date.get_day_of_month ();
     }
 
@@ -254,5 +236,4 @@ public class Grid : Gtk.Grid {
             grid_day.clear_events ();
         }
     }
-}
 }
